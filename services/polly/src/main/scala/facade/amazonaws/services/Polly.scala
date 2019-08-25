@@ -98,11 +98,11 @@ package polly {
     def apply(
         Name: LexiconName
     ): DeleteLexiconInput = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "Name" -> Name.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteLexiconInput]
+      __obj.asInstanceOf[DeleteLexiconInput]
     }
   }
 
@@ -112,10 +112,9 @@ package polly {
   object DeleteLexiconOutput {
     def apply(
         ): DeleteLexiconOutput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary.empty[js.Any]
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteLexiconOutput]
+      __obj.asInstanceOf[DeleteLexiconOutput]
     }
   }
 
@@ -132,19 +131,13 @@ package polly {
         LanguageCode: js.UndefOr[LanguageCode] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): DescribeVoicesInput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "IncludeAdditionalLanguageCodes" -> IncludeAdditionalLanguageCodes.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "LanguageCode" -> LanguageCode.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NextToken" -> NextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeVoicesInput]
+      val __obj = js.Dictionary.empty[js.Any]
+      IncludeAdditionalLanguageCodes.foreach(
+        __v => __obj.update("IncludeAdditionalLanguageCodes", __v.asInstanceOf[js.Any])
+      )
+      LanguageCode.foreach(__v => __obj.update("LanguageCode", __v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeVoicesInput]
     }
   }
 
@@ -159,16 +152,10 @@ package polly {
         NextToken: js.UndefOr[NextToken] = js.undefined,
         Voices: js.UndefOr[VoiceList] = js.undefined
     ): DescribeVoicesOutput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "NextToken" -> NextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Voices" -> Voices.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeVoicesOutput]
+      val __obj = js.Dictionary.empty[js.Any]
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      Voices.foreach(__v => __obj.update("Voices", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeVoicesOutput]
     }
   }
 
@@ -188,11 +175,11 @@ package polly {
     def apply(
         Name: LexiconName
     ): GetLexiconInput = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "Name" -> Name.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetLexiconInput]
+      __obj.asInstanceOf[GetLexiconInput]
     }
   }
 
@@ -207,16 +194,10 @@ package polly {
         Lexicon: js.UndefOr[Lexicon] = js.undefined,
         LexiconAttributes: js.UndefOr[LexiconAttributes] = js.undefined
     ): GetLexiconOutput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Lexicon" -> Lexicon.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "LexiconAttributes" -> LexiconAttributes.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetLexiconOutput]
+      val __obj = js.Dictionary.empty[js.Any]
+      Lexicon.foreach(__v => __obj.update("Lexicon", __v.asInstanceOf[js.Any]))
+      LexiconAttributes.foreach(__v => __obj.update("LexiconAttributes", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetLexiconOutput]
     }
   }
 
@@ -229,11 +210,11 @@ package polly {
     def apply(
         TaskId: TaskId
     ): GetSpeechSynthesisTaskInput = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "TaskId" -> TaskId.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetSpeechSynthesisTaskInput]
+      __obj.asInstanceOf[GetSpeechSynthesisTaskInput]
     }
   }
 
@@ -246,13 +227,9 @@ package polly {
     def apply(
         SynthesisTask: js.UndefOr[SynthesisTask] = js.undefined
     ): GetSpeechSynthesisTaskOutput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "SynthesisTask" -> SynthesisTask.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetSpeechSynthesisTaskOutput]
+      val __obj = js.Dictionary.empty[js.Any]
+      SynthesisTask.foreach(__v => __obj.update("SynthesisTask", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetSpeechSynthesisTaskOutput]
     }
   }
 
@@ -332,16 +309,10 @@ package polly {
         Content: js.UndefOr[LexiconContent] = js.undefined,
         Name: js.UndefOr[LexiconName] = js.undefined
     ): Lexicon = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Content" -> Content.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Name" -> Name.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Lexicon]
+      val __obj = js.Dictionary.empty[js.Any]
+      Content.foreach(__v => __obj.update("Content", __v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Lexicon]
     }
   }
 
@@ -367,28 +338,14 @@ package polly {
         LexiconArn: js.UndefOr[LexiconArn] = js.undefined,
         Size: js.UndefOr[Size] = js.undefined
     ): LexiconAttributes = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Alphabet" -> Alphabet.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "LanguageCode" -> LanguageCode.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "LastModified" -> LastModified.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "LexemesCount" -> LexemesCount.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "LexiconArn" -> LexiconArn.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Size" -> Size.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[LexiconAttributes]
+      val __obj = js.Dictionary.empty[js.Any]
+      Alphabet.foreach(__v => __obj.update("Alphabet", __v.asInstanceOf[js.Any]))
+      LanguageCode.foreach(__v => __obj.update("LanguageCode", __v.asInstanceOf[js.Any]))
+      LastModified.foreach(__v => __obj.update("LastModified", __v.asInstanceOf[js.Any]))
+      LexemesCount.foreach(__v => __obj.update("LexemesCount", __v.asInstanceOf[js.Any]))
+      LexiconArn.foreach(__v => __obj.update("LexiconArn", __v.asInstanceOf[js.Any]))
+      Size.foreach(__v => __obj.update("Size", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[LexiconAttributes]
     }
   }
 
@@ -406,16 +363,10 @@ package polly {
         Attributes: js.UndefOr[LexiconAttributes] = js.undefined,
         Name: js.UndefOr[LexiconName] = js.undefined
     ): LexiconDescription = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Attributes" -> Attributes.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Name" -> Name.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[LexiconDescription]
+      val __obj = js.Dictionary.empty[js.Any]
+      Attributes.foreach(__v => __obj.update("Attributes", __v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[LexiconDescription]
     }
   }
 
@@ -428,13 +379,9 @@ package polly {
     def apply(
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): ListLexiconsInput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "NextToken" -> NextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListLexiconsInput]
+      val __obj = js.Dictionary.empty[js.Any]
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListLexiconsInput]
     }
   }
 
@@ -449,16 +396,10 @@ package polly {
         Lexicons: js.UndefOr[LexiconDescriptionList] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): ListLexiconsOutput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Lexicons" -> Lexicons.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NextToken" -> NextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListLexiconsOutput]
+      val __obj = js.Dictionary.empty[js.Any]
+      Lexicons.foreach(__v => __obj.update("Lexicons", __v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListLexiconsOutput]
     }
   }
 
@@ -475,19 +416,11 @@ package polly {
         NextToken: js.UndefOr[NextToken] = js.undefined,
         Status: js.UndefOr[TaskStatus] = js.undefined
     ): ListSpeechSynthesisTasksInput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "MaxResults" -> MaxResults.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NextToken" -> NextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Status" -> Status.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListSpeechSynthesisTasksInput]
+      val __obj = js.Dictionary.empty[js.Any]
+      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.update("Status", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListSpeechSynthesisTasksInput]
     }
   }
 
@@ -502,16 +435,10 @@ package polly {
         NextToken: js.UndefOr[NextToken] = js.undefined,
         SynthesisTasks: js.UndefOr[SynthesisTasks] = js.undefined
     ): ListSpeechSynthesisTasksOutput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "NextToken" -> NextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SynthesisTasks" -> SynthesisTasks.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListSpeechSynthesisTasksOutput]
+      val __obj = js.Dictionary.empty[js.Any]
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      SynthesisTasks.foreach(__v => __obj.update("SynthesisTasks", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListSpeechSynthesisTasksOutput]
     }
   }
 
@@ -535,12 +462,12 @@ package polly {
         Content: LexiconContent,
         Name: LexiconName
     ): PutLexiconInput = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "Content" -> Content.asInstanceOf[js.Any],
         "Name"    -> Name.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PutLexiconInput]
+      __obj.asInstanceOf[PutLexiconInput]
     }
   }
 
@@ -550,10 +477,9 @@ package polly {
   object PutLexiconOutput {
     def apply(
         ): PutLexiconOutput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary.empty[js.Any]
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PutLexiconOutput]
+      __obj.asInstanceOf[PutLexiconOutput]
     }
   }
 
@@ -595,35 +521,21 @@ package polly {
         SpeechMarkTypes: js.UndefOr[SpeechMarkTypeList] = js.undefined,
         TextType: js.UndefOr[TextType] = js.undefined
     ): StartSpeechSynthesisTaskInput = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "OutputFormat"       -> OutputFormat.asInstanceOf[js.Any],
         "OutputS3BucketName" -> OutputS3BucketName.asInstanceOf[js.Any],
         "Text"               -> Text.asInstanceOf[js.Any],
-        "VoiceId"            -> VoiceId.asInstanceOf[js.Any],
-        "LanguageCode" -> LanguageCode.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "LexiconNames" -> LexiconNames.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "OutputS3KeyPrefix" -> OutputS3KeyPrefix.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SampleRate" -> SampleRate.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SnsTopicArn" -> SnsTopicArn.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SpeechMarkTypes" -> SpeechMarkTypes.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "TextType" -> TextType.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "VoiceId"            -> VoiceId.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StartSpeechSynthesisTaskInput]
+      LanguageCode.foreach(__v => __obj.update("LanguageCode", __v.asInstanceOf[js.Any]))
+      LexiconNames.foreach(__v => __obj.update("LexiconNames", __v.asInstanceOf[js.Any]))
+      OutputS3KeyPrefix.foreach(__v => __obj.update("OutputS3KeyPrefix", __v.asInstanceOf[js.Any]))
+      SampleRate.foreach(__v => __obj.update("SampleRate", __v.asInstanceOf[js.Any]))
+      SnsTopicArn.foreach(__v => __obj.update("SnsTopicArn", __v.asInstanceOf[js.Any]))
+      SpeechMarkTypes.foreach(__v => __obj.update("SpeechMarkTypes", __v.asInstanceOf[js.Any]))
+      TextType.foreach(__v => __obj.update("TextType", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[StartSpeechSynthesisTaskInput]
     }
   }
 
@@ -636,13 +548,9 @@ package polly {
     def apply(
         SynthesisTask: js.UndefOr[SynthesisTask] = js.undefined
     ): StartSpeechSynthesisTaskOutput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "SynthesisTask" -> SynthesisTask.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StartSpeechSynthesisTaskOutput]
+      val __obj = js.Dictionary.empty[js.Any]
+      SynthesisTask.foreach(__v => __obj.update("SynthesisTask", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[StartSpeechSynthesisTaskOutput]
     }
   }
 
@@ -684,52 +592,22 @@ package polly {
         TextType: js.UndefOr[TextType] = js.undefined,
         VoiceId: js.UndefOr[VoiceId] = js.undefined
     ): SynthesisTask = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "CreationTime" -> CreationTime.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "LanguageCode" -> LanguageCode.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "LexiconNames" -> LexiconNames.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "OutputFormat" -> OutputFormat.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "OutputUri" -> OutputUri.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "RequestCharacters" -> RequestCharacters.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SampleRate" -> SampleRate.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SnsTopicArn" -> SnsTopicArn.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SpeechMarkTypes" -> SpeechMarkTypes.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "TaskId" -> TaskId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "TaskStatus" -> TaskStatus.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "TaskStatusReason" -> TaskStatusReason.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "TextType" -> TextType.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "VoiceId" -> VoiceId.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SynthesisTask]
+      val __obj = js.Dictionary.empty[js.Any]
+      CreationTime.foreach(__v => __obj.update("CreationTime", __v.asInstanceOf[js.Any]))
+      LanguageCode.foreach(__v => __obj.update("LanguageCode", __v.asInstanceOf[js.Any]))
+      LexiconNames.foreach(__v => __obj.update("LexiconNames", __v.asInstanceOf[js.Any]))
+      OutputFormat.foreach(__v => __obj.update("OutputFormat", __v.asInstanceOf[js.Any]))
+      OutputUri.foreach(__v => __obj.update("OutputUri", __v.asInstanceOf[js.Any]))
+      RequestCharacters.foreach(__v => __obj.update("RequestCharacters", __v.asInstanceOf[js.Any]))
+      SampleRate.foreach(__v => __obj.update("SampleRate", __v.asInstanceOf[js.Any]))
+      SnsTopicArn.foreach(__v => __obj.update("SnsTopicArn", __v.asInstanceOf[js.Any]))
+      SpeechMarkTypes.foreach(__v => __obj.update("SpeechMarkTypes", __v.asInstanceOf[js.Any]))
+      TaskId.foreach(__v => __obj.update("TaskId", __v.asInstanceOf[js.Any]))
+      TaskStatus.foreach(__v => __obj.update("TaskStatus", __v.asInstanceOf[js.Any]))
+      TaskStatusReason.foreach(__v => __obj.update("TaskStatusReason", __v.asInstanceOf[js.Any]))
+      TextType.foreach(__v => __obj.update("TextType", __v.asInstanceOf[js.Any]))
+      VoiceId.foreach(__v => __obj.update("VoiceId", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[SynthesisTask]
     }
   }
 
@@ -756,28 +634,18 @@ package polly {
         SpeechMarkTypes: js.UndefOr[SpeechMarkTypeList] = js.undefined,
         TextType: js.UndefOr[TextType] = js.undefined
     ): SynthesizeSpeechInput = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "OutputFormat" -> OutputFormat.asInstanceOf[js.Any],
         "Text"         -> Text.asInstanceOf[js.Any],
-        "VoiceId"      -> VoiceId.asInstanceOf[js.Any],
-        "LanguageCode" -> LanguageCode.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "LexiconNames" -> LexiconNames.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SampleRate" -> SampleRate.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SpeechMarkTypes" -> SpeechMarkTypes.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "TextType" -> TextType.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "VoiceId"      -> VoiceId.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SynthesizeSpeechInput]
+      LanguageCode.foreach(__v => __obj.update("LanguageCode", __v.asInstanceOf[js.Any]))
+      LexiconNames.foreach(__v => __obj.update("LexiconNames", __v.asInstanceOf[js.Any]))
+      SampleRate.foreach(__v => __obj.update("SampleRate", __v.asInstanceOf[js.Any]))
+      SpeechMarkTypes.foreach(__v => __obj.update("SpeechMarkTypes", __v.asInstanceOf[js.Any]))
+      TextType.foreach(__v => __obj.update("TextType", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[SynthesizeSpeechInput]
     }
   }
 
@@ -794,19 +662,11 @@ package polly {
         ContentType: js.UndefOr[ContentType] = js.undefined,
         RequestCharacters: js.UndefOr[RequestCharacters] = js.undefined
     ): SynthesizeSpeechOutput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "AudioStream" -> AudioStream.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ContentType" -> ContentType.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "RequestCharacters" -> RequestCharacters.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SynthesizeSpeechOutput]
+      val __obj = js.Dictionary.empty[js.Any]
+      AudioStream.foreach(__v => __obj.update("AudioStream", __v.asInstanceOf[js.Any]))
+      ContentType.foreach(__v => __obj.update("ContentType", __v.asInstanceOf[js.Any]))
+      RequestCharacters.foreach(__v => __obj.update("RequestCharacters", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[SynthesizeSpeechOutput]
     }
   }
 
@@ -848,28 +708,14 @@ package polly {
         LanguageName: js.UndefOr[LanguageName] = js.undefined,
         Name: js.UndefOr[VoiceName] = js.undefined
     ): Voice = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "AdditionalLanguageCodes" -> AdditionalLanguageCodes.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Gender" -> Gender.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Id" -> Id.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "LanguageCode" -> LanguageCode.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "LanguageName" -> LanguageName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Name" -> Name.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Voice]
+      val __obj = js.Dictionary.empty[js.Any]
+      AdditionalLanguageCodes.foreach(__v => __obj.update("AdditionalLanguageCodes", __v.asInstanceOf[js.Any]))
+      Gender.foreach(__v => __obj.update("Gender", __v.asInstanceOf[js.Any]))
+      Id.foreach(__v => __obj.update("Id", __v.asInstanceOf[js.Any]))
+      LanguageCode.foreach(__v => __obj.update("LanguageCode", __v.asInstanceOf[js.Any]))
+      LanguageName.foreach(__v => __obj.update("LanguageName", __v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Voice]
     }
   }
 

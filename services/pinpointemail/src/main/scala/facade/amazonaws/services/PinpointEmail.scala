@@ -313,19 +313,11 @@ package pinpointemail {
         ListingTime: js.UndefOr[Timestamp] = js.undefined,
         RblName: js.UndefOr[RblName] = js.undefined
     ): BlacklistEntry = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Description" -> Description.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ListingTime" -> ListingTime.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "RblName" -> RblName.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[BlacklistEntry]
+      val __obj = js.Dictionary.empty[js.Any]
+      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
+      ListingTime.foreach(__v => __obj.update("ListingTime", __v.asInstanceOf[js.Any]))
+      RblName.foreach(__v => __obj.update("RblName", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[BlacklistEntry]
     }
   }
 
@@ -343,16 +335,10 @@ package pinpointemail {
         Html: js.UndefOr[Content] = js.undefined,
         Text: js.UndefOr[Content] = js.undefined
     ): Body = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Html" -> Html.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Text" -> Text.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Body]
+      val __obj = js.Dictionary.empty[js.Any]
+      Html.foreach(__v => __obj.update("Html", __v.asInstanceOf[js.Any]))
+      Text.foreach(__v => __obj.update("Text", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Body]
     }
   }
 
@@ -368,11 +354,11 @@ package pinpointemail {
     def apply(
         DimensionConfigurations: CloudWatchDimensionConfigurations
     ): CloudWatchDestination = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "DimensionConfigurations" -> DimensionConfigurations.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CloudWatchDestination]
+      __obj.asInstanceOf[CloudWatchDestination]
     }
   }
 
@@ -392,13 +378,13 @@ package pinpointemail {
         DimensionName: DimensionName,
         DimensionValueSource: DimensionValueSource
     ): CloudWatchDimensionConfiguration = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "DefaultDimensionValue" -> DefaultDimensionValue.asInstanceOf[js.Any],
         "DimensionName"         -> DimensionName.asInstanceOf[js.Any],
         "DimensionValueSource"  -> DimensionValueSource.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CloudWatchDimensionConfiguration]
+      __obj.asInstanceOf[CloudWatchDimensionConfiguration]
     }
   }
 
@@ -416,14 +402,12 @@ package pinpointemail {
         Data: MessageData,
         Charset: js.UndefOr[Charset] = js.undefined
     ): Content = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Data" -> Data.asInstanceOf[js.Any],
-        "Charset" -> Charset.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "Data" -> Data.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Content]
+      Charset.foreach(__v => __obj.update("Charset", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Content]
     }
   }
 
@@ -443,15 +427,13 @@ package pinpointemail {
         EventDestination: EventDestinationDefinition,
         EventDestinationName: EventDestinationName
     ): CreateConfigurationSetEventDestinationRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ConfigurationSetName" -> ConfigurationSetName.asInstanceOf[js.Any],
         "EventDestination"     -> EventDestination.asInstanceOf[js.Any],
         "EventDestinationName" -> EventDestinationName.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal
-        .applyDynamicNamed("apply")(_fields: _*)
-        .asInstanceOf[CreateConfigurationSetEventDestinationRequest]
+      __obj.asInstanceOf[CreateConfigurationSetEventDestinationRequest]
     }
   }
 
@@ -464,12 +446,9 @@ package pinpointemail {
   object CreateConfigurationSetEventDestinationResponse {
     def apply(
         ): CreateConfigurationSetEventDestinationResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary.empty[js.Any]
 
-      js.Dynamic.literal
-        .applyDynamicNamed("apply")(_fields: _*)
-        .asInstanceOf[CreateConfigurationSetEventDestinationResponse]
+      __obj.asInstanceOf[CreateConfigurationSetEventDestinationResponse]
     }
   }
 
@@ -495,28 +474,14 @@ package pinpointemail {
         Tags: js.UndefOr[TagList] = js.undefined,
         TrackingOptions: js.UndefOr[TrackingOptions] = js.undefined
     ): CreateConfigurationSetRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ConfigurationSetName" -> ConfigurationSetName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DeliveryOptions" -> DeliveryOptions.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ReputationOptions" -> ReputationOptions.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SendingOptions" -> SendingOptions.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Tags" -> Tags.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "TrackingOptions" -> TrackingOptions.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateConfigurationSetRequest]
+      val __obj = js.Dictionary.empty[js.Any]
+      ConfigurationSetName.foreach(__v => __obj.update("ConfigurationSetName", __v.asInstanceOf[js.Any]))
+      DeliveryOptions.foreach(__v => __obj.update("DeliveryOptions", __v.asInstanceOf[js.Any]))
+      ReputationOptions.foreach(__v => __obj.update("ReputationOptions", __v.asInstanceOf[js.Any]))
+      SendingOptions.foreach(__v => __obj.update("SendingOptions", __v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
+      TrackingOptions.foreach(__v => __obj.update("TrackingOptions", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateConfigurationSetRequest]
     }
   }
 
@@ -529,10 +494,9 @@ package pinpointemail {
   object CreateConfigurationSetResponse {
     def apply(
         ): CreateConfigurationSetResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary.empty[js.Any]
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateConfigurationSetResponse]
+      __obj.asInstanceOf[CreateConfigurationSetResponse]
     }
   }
 
@@ -550,14 +514,12 @@ package pinpointemail {
         PoolName: PoolName,
         Tags: js.UndefOr[TagList] = js.undefined
     ): CreateDedicatedIpPoolRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "PoolName" -> PoolName.asInstanceOf[js.Any],
-        "Tags" -> Tags.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "PoolName" -> PoolName.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateDedicatedIpPoolRequest]
+      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateDedicatedIpPoolRequest]
     }
   }
 
@@ -570,10 +532,9 @@ package pinpointemail {
   object CreateDedicatedIpPoolResponse {
     def apply(
         ): CreateDedicatedIpPoolResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary.empty[js.Any]
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateDedicatedIpPoolResponse]
+      __obj.asInstanceOf[CreateDedicatedIpPoolResponse]
     }
   }
 
@@ -595,18 +556,14 @@ package pinpointemail {
         ReportName: js.UndefOr[ReportName] = js.undefined,
         Tags: js.UndefOr[TagList] = js.undefined
     ): CreateDeliverabilityTestReportRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "Content"          -> Content.asInstanceOf[js.Any],
-        "FromEmailAddress" -> FromEmailAddress.asInstanceOf[js.Any],
-        "ReportName" -> ReportName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Tags" -> Tags.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "FromEmailAddress" -> FromEmailAddress.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateDeliverabilityTestReportRequest]
+      ReportName.foreach(__v => __obj.update("ReportName", __v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateDeliverabilityTestReportRequest]
     }
   }
 
@@ -624,12 +581,12 @@ package pinpointemail {
         DeliverabilityTestStatus: DeliverabilityTestStatus,
         ReportId: ReportId
     ): CreateDeliverabilityTestReportResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "DeliverabilityTestStatus" -> DeliverabilityTestStatus.asInstanceOf[js.Any],
         "ReportId"                 -> ReportId.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateDeliverabilityTestReportResponse]
+      __obj.asInstanceOf[CreateDeliverabilityTestReportResponse]
     }
   }
 
@@ -647,14 +604,12 @@ package pinpointemail {
         EmailIdentity: Identity,
         Tags: js.UndefOr[TagList] = js.undefined
     ): CreateEmailIdentityRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "EmailIdentity" -> EmailIdentity.asInstanceOf[js.Any],
-        "Tags" -> Tags.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "EmailIdentity" -> EmailIdentity.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateEmailIdentityRequest]
+      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateEmailIdentityRequest]
     }
   }
 
@@ -675,19 +630,11 @@ package pinpointemail {
         IdentityType: js.UndefOr[IdentityType] = js.undefined,
         VerifiedForSendingStatus: js.UndefOr[Enabled] = js.undefined
     ): CreateEmailIdentityResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "DkimAttributes" -> DkimAttributes.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "IdentityType" -> IdentityType.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "VerifiedForSendingStatus" -> VerifiedForSendingStatus.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateEmailIdentityResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      DkimAttributes.foreach(__v => __obj.update("DkimAttributes", __v.asInstanceOf[js.Any]))
+      IdentityType.foreach(__v => __obj.update("IdentityType", __v.asInstanceOf[js.Any]))
+      VerifiedForSendingStatus.foreach(__v => __obj.update("VerifiedForSendingStatus", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateEmailIdentityResponse]
     }
   }
 
@@ -707,19 +654,11 @@ package pinpointemail {
         StartDate: js.UndefOr[Timestamp] = js.undefined,
         VolumeStatistics: js.UndefOr[VolumeStatistics] = js.undefined
     ): DailyVolume = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "DomainIspPlacements" -> DomainIspPlacements.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "StartDate" -> StartDate.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "VolumeStatistics" -> VolumeStatistics.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DailyVolume]
+      val __obj = js.Dictionary.empty[js.Any]
+      DomainIspPlacements.foreach(__v => __obj.update("DomainIspPlacements", __v.asInstanceOf[js.Any]))
+      StartDate.foreach(__v => __obj.update("StartDate", __v.asInstanceOf[js.Any]))
+      VolumeStatistics.foreach(__v => __obj.update("VolumeStatistics", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DailyVolume]
     }
   }
 
@@ -742,16 +681,14 @@ package pinpointemail {
         WarmupStatus: WarmupStatus,
         PoolName: js.UndefOr[PoolName] = js.undefined
     ): DedicatedIp = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "Ip"               -> Ip.asInstanceOf[js.Any],
         "WarmupPercentage" -> WarmupPercentage.asInstanceOf[js.Any],
-        "WarmupStatus"     -> WarmupStatus.asInstanceOf[js.Any],
-        "PoolName" -> PoolName.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "WarmupStatus"     -> WarmupStatus.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DedicatedIp]
+      PoolName.foreach(__v => __obj.update("PoolName", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DedicatedIp]
     }
   }
 
@@ -769,14 +706,12 @@ package pinpointemail {
         ConfigurationSetName: ConfigurationSetName,
         EventDestinationName: EventDestinationName
     ): DeleteConfigurationSetEventDestinationRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ConfigurationSetName" -> ConfigurationSetName.asInstanceOf[js.Any],
         "EventDestinationName" -> EventDestinationName.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal
-        .applyDynamicNamed("apply")(_fields: _*)
-        .asInstanceOf[DeleteConfigurationSetEventDestinationRequest]
+      __obj.asInstanceOf[DeleteConfigurationSetEventDestinationRequest]
     }
   }
 
@@ -789,12 +724,9 @@ package pinpointemail {
   object DeleteConfigurationSetEventDestinationResponse {
     def apply(
         ): DeleteConfigurationSetEventDestinationResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary.empty[js.Any]
 
-      js.Dynamic.literal
-        .applyDynamicNamed("apply")(_fields: _*)
-        .asInstanceOf[DeleteConfigurationSetEventDestinationResponse]
+      __obj.asInstanceOf[DeleteConfigurationSetEventDestinationResponse]
     }
   }
 
@@ -810,11 +742,11 @@ package pinpointemail {
     def apply(
         ConfigurationSetName: ConfigurationSetName
     ): DeleteConfigurationSetRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ConfigurationSetName" -> ConfigurationSetName.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteConfigurationSetRequest]
+      __obj.asInstanceOf[DeleteConfigurationSetRequest]
     }
   }
 
@@ -827,10 +759,9 @@ package pinpointemail {
   object DeleteConfigurationSetResponse {
     def apply(
         ): DeleteConfigurationSetResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary.empty[js.Any]
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteConfigurationSetResponse]
+      __obj.asInstanceOf[DeleteConfigurationSetResponse]
     }
   }
 
@@ -846,11 +777,11 @@ package pinpointemail {
     def apply(
         PoolName: PoolName
     ): DeleteDedicatedIpPoolRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "PoolName" -> PoolName.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteDedicatedIpPoolRequest]
+      __obj.asInstanceOf[DeleteDedicatedIpPoolRequest]
     }
   }
 
@@ -863,10 +794,9 @@ package pinpointemail {
   object DeleteDedicatedIpPoolResponse {
     def apply(
         ): DeleteDedicatedIpPoolResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary.empty[js.Any]
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteDedicatedIpPoolResponse]
+      __obj.asInstanceOf[DeleteDedicatedIpPoolResponse]
     }
   }
 
@@ -882,11 +812,11 @@ package pinpointemail {
     def apply(
         EmailIdentity: Identity
     ): DeleteEmailIdentityRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "EmailIdentity" -> EmailIdentity.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteEmailIdentityRequest]
+      __obj.asInstanceOf[DeleteEmailIdentityRequest]
     }
   }
 
@@ -899,10 +829,9 @@ package pinpointemail {
   object DeleteEmailIdentityResponse {
     def apply(
         ): DeleteEmailIdentityResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary.empty[js.Any]
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteEmailIdentityResponse]
+      __obj.asInstanceOf[DeleteEmailIdentityResponse]
     }
   }
 
@@ -928,28 +857,14 @@ package pinpointemail {
         ReportName: js.UndefOr[ReportName] = js.undefined,
         Subject: js.UndefOr[DeliverabilityTestSubject] = js.undefined
     ): DeliverabilityTestReport = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "CreateDate" -> CreateDate.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DeliverabilityTestStatus" -> DeliverabilityTestStatus.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "FromEmailAddress" -> FromEmailAddress.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ReportId" -> ReportId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ReportName" -> ReportName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Subject" -> Subject.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeliverabilityTestReport]
+      val __obj = js.Dictionary.empty[js.Any]
+      CreateDate.foreach(__v => __obj.update("CreateDate", __v.asInstanceOf[js.Any]))
+      DeliverabilityTestStatus.foreach(__v => __obj.update("DeliverabilityTestStatus", __v.asInstanceOf[js.Any]))
+      FromEmailAddress.foreach(__v => __obj.update("FromEmailAddress", __v.asInstanceOf[js.Any]))
+      ReportId.foreach(__v => __obj.update("ReportId", __v.asInstanceOf[js.Any]))
+      ReportName.foreach(__v => __obj.update("ReportName", __v.asInstanceOf[js.Any]))
+      Subject.foreach(__v => __obj.update("Subject", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DeliverabilityTestReport]
     }
   }
 
@@ -975,13 +890,9 @@ package pinpointemail {
     def apply(
         SendingPoolName: js.UndefOr[PoolName] = js.undefined
     ): DeliveryOptions = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "SendingPoolName" -> SendingPoolName.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeliveryOptions]
+      val __obj = js.Dictionary.empty[js.Any]
+      SendingPoolName.foreach(__v => __obj.update("SendingPoolName", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DeliveryOptions]
     }
   }
 
@@ -1001,19 +912,11 @@ package pinpointemail {
         CcAddresses: js.UndefOr[EmailAddressList] = js.undefined,
         ToAddresses: js.UndefOr[EmailAddressList] = js.undefined
     ): Destination = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "BccAddresses" -> BccAddresses.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "CcAddresses" -> CcAddresses.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ToAddresses" -> ToAddresses.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Destination]
+      val __obj = js.Dictionary.empty[js.Any]
+      BccAddresses.foreach(__v => __obj.update("BccAddresses", __v.asInstanceOf[js.Any]))
+      CcAddresses.foreach(__v => __obj.update("CcAddresses", __v.asInstanceOf[js.Any]))
+      ToAddresses.foreach(__v => __obj.update("ToAddresses", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Destination]
     }
   }
 
@@ -1044,19 +947,11 @@ package pinpointemail {
         Status: js.UndefOr[DkimStatus] = js.undefined,
         Tokens: js.UndefOr[DnsTokenList] = js.undefined
     ): DkimAttributes = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "SigningEnabled" -> SigningEnabled.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Status" -> Status.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Tokens" -> Tokens.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DkimAttributes]
+      val __obj = js.Dictionary.empty[js.Any]
+      SigningEnabled.foreach(__v => __obj.update("SigningEnabled", __v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.update("Status", __v.asInstanceOf[js.Any]))
+      Tokens.foreach(__v => __obj.update("Tokens", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DkimAttributes]
     }
   }
 
@@ -1098,25 +993,13 @@ package pinpointemail {
         SpamPercentage: js.UndefOr[Percentage] = js.undefined,
         SpamRawCount: js.UndefOr[Volume] = js.undefined
     ): DomainIspPlacement = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "InboxPercentage" -> InboxPercentage.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "InboxRawCount" -> InboxRawCount.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "IspName" -> IspName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SpamPercentage" -> SpamPercentage.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SpamRawCount" -> SpamRawCount.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DomainIspPlacement]
+      val __obj = js.Dictionary.empty[js.Any]
+      InboxPercentage.foreach(__v => __obj.update("InboxPercentage", __v.asInstanceOf[js.Any]))
+      InboxRawCount.foreach(__v => __obj.update("InboxRawCount", __v.asInstanceOf[js.Any]))
+      IspName.foreach(__v => __obj.update("IspName", __v.asInstanceOf[js.Any]))
+      SpamPercentage.foreach(__v => __obj.update("SpamPercentage", __v.asInstanceOf[js.Any]))
+      SpamRawCount.foreach(__v => __obj.update("SpamRawCount", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DomainIspPlacement]
     }
   }
 
@@ -1134,16 +1017,10 @@ package pinpointemail {
         Raw: js.UndefOr[RawMessage] = js.undefined,
         Simple: js.UndefOr[Message] = js.undefined
     ): EmailContent = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Raw" -> Raw.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Simple" -> Simple.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[EmailContent]
+      val __obj = js.Dictionary.empty[js.Any]
+      Raw.foreach(__v => __obj.update("Raw", __v.asInstanceOf[js.Any]))
+      Simple.foreach(__v => __obj.update("Simple", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[EmailContent]
     }
   }
 
@@ -1171,27 +1048,17 @@ package pinpointemail {
         PinpointDestination: js.UndefOr[PinpointDestination] = js.undefined,
         SnsDestination: js.UndefOr[SnsDestination] = js.undefined
     ): EventDestination = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "MatchingEventTypes" -> MatchingEventTypes.asInstanceOf[js.Any],
-        "Name"               -> Name.asInstanceOf[js.Any],
-        "CloudWatchDestination" -> CloudWatchDestination.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Enabled" -> Enabled.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "KinesisFirehoseDestination" -> KinesisFirehoseDestination.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "PinpointDestination" -> PinpointDestination.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SnsDestination" -> SnsDestination.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "Name"               -> Name.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[EventDestination]
+      CloudWatchDestination.foreach(__v => __obj.update("CloudWatchDestination", __v.asInstanceOf[js.Any]))
+      Enabled.foreach(__v => __obj.update("Enabled", __v.asInstanceOf[js.Any]))
+      KinesisFirehoseDestination.foreach(__v => __obj.update("KinesisFirehoseDestination", __v.asInstanceOf[js.Any]))
+      PinpointDestination.foreach(__v => __obj.update("PinpointDestination", __v.asInstanceOf[js.Any]))
+      SnsDestination.foreach(__v => __obj.update("SnsDestination", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[EventDestination]
     }
   }
 
@@ -1217,28 +1084,14 @@ package pinpointemail {
         PinpointDestination: js.UndefOr[PinpointDestination] = js.undefined,
         SnsDestination: js.UndefOr[SnsDestination] = js.undefined
     ): EventDestinationDefinition = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "CloudWatchDestination" -> CloudWatchDestination.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Enabled" -> Enabled.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "KinesisFirehoseDestination" -> KinesisFirehoseDestination.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MatchingEventTypes" -> MatchingEventTypes.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "PinpointDestination" -> PinpointDestination.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SnsDestination" -> SnsDestination.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[EventDestinationDefinition]
+      val __obj = js.Dictionary.empty[js.Any]
+      CloudWatchDestination.foreach(__v => __obj.update("CloudWatchDestination", __v.asInstanceOf[js.Any]))
+      Enabled.foreach(__v => __obj.update("Enabled", __v.asInstanceOf[js.Any]))
+      KinesisFirehoseDestination.foreach(__v => __obj.update("KinesisFirehoseDestination", __v.asInstanceOf[js.Any]))
+      MatchingEventTypes.foreach(__v => __obj.update("MatchingEventTypes", __v.asInstanceOf[js.Any]))
+      PinpointDestination.foreach(__v => __obj.update("PinpointDestination", __v.asInstanceOf[js.Any]))
+      SnsDestination.foreach(__v => __obj.update("SnsDestination", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[EventDestinationDefinition]
     }
   }
 
@@ -1267,10 +1120,9 @@ package pinpointemail {
   object GetAccountRequest {
     def apply(
         ): GetAccountRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary.empty[js.Any]
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetAccountRequest]
+      __obj.asInstanceOf[GetAccountRequest]
     }
   }
 
@@ -1294,25 +1146,15 @@ package pinpointemail {
         SendQuota: js.UndefOr[SendQuota] = js.undefined,
         SendingEnabled: js.UndefOr[Enabled] = js.undefined
     ): GetAccountResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "DedicatedIpAutoWarmupEnabled" -> DedicatedIpAutoWarmupEnabled.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "EnforcementStatus" -> EnforcementStatus.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ProductionAccessEnabled" -> ProductionAccessEnabled.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SendQuota" -> SendQuota.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SendingEnabled" -> SendingEnabled.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetAccountResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      DedicatedIpAutoWarmupEnabled.foreach(
+        __v => __obj.update("DedicatedIpAutoWarmupEnabled", __v.asInstanceOf[js.Any])
+      )
+      EnforcementStatus.foreach(__v => __obj.update("EnforcementStatus", __v.asInstanceOf[js.Any]))
+      ProductionAccessEnabled.foreach(__v => __obj.update("ProductionAccessEnabled", __v.asInstanceOf[js.Any]))
+      SendQuota.foreach(__v => __obj.update("SendQuota", __v.asInstanceOf[js.Any]))
+      SendingEnabled.foreach(__v => __obj.update("SendingEnabled", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetAccountResponse]
     }
   }
 
@@ -1328,11 +1170,11 @@ package pinpointemail {
     def apply(
         BlacklistItemNames: BlacklistItemNames
     ): GetBlacklistReportsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "BlacklistItemNames" -> BlacklistItemNames.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetBlacklistReportsRequest]
+      __obj.asInstanceOf[GetBlacklistReportsRequest]
     }
   }
 
@@ -1348,11 +1190,11 @@ package pinpointemail {
     def apply(
         BlacklistReport: BlacklistReport
     ): GetBlacklistReportsResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "BlacklistReport" -> BlacklistReport.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetBlacklistReportsResponse]
+      __obj.asInstanceOf[GetBlacklistReportsResponse]
     }
   }
 
@@ -1368,13 +1210,11 @@ package pinpointemail {
     def apply(
         ConfigurationSetName: ConfigurationSetName
     ): GetConfigurationSetEventDestinationsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ConfigurationSetName" -> ConfigurationSetName.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal
-        .applyDynamicNamed("apply")(_fields: _*)
-        .asInstanceOf[GetConfigurationSetEventDestinationsRequest]
+      __obj.asInstanceOf[GetConfigurationSetEventDestinationsRequest]
     }
   }
 
@@ -1390,15 +1230,9 @@ package pinpointemail {
     def apply(
         EventDestinations: js.UndefOr[EventDestinations] = js.undefined
     ): GetConfigurationSetEventDestinationsResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "EventDestinations" -> EventDestinations.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal
-        .applyDynamicNamed("apply")(_fields: _*)
-        .asInstanceOf[GetConfigurationSetEventDestinationsResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      EventDestinations.foreach(__v => __obj.update("EventDestinations", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetConfigurationSetEventDestinationsResponse]
     }
   }
 
@@ -1414,11 +1248,11 @@ package pinpointemail {
     def apply(
         ConfigurationSetName: ConfigurationSetName
     ): GetConfigurationSetRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ConfigurationSetName" -> ConfigurationSetName.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetConfigurationSetRequest]
+      __obj.asInstanceOf[GetConfigurationSetRequest]
     }
   }
 
@@ -1442,25 +1276,13 @@ package pinpointemail {
         SendingOptions: js.UndefOr[SendingOptions] = js.undefined,
         TrackingOptions: js.UndefOr[TrackingOptions] = js.undefined
     ): GetConfigurationSetResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ConfigurationSetName" -> ConfigurationSetName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DeliveryOptions" -> DeliveryOptions.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ReputationOptions" -> ReputationOptions.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SendingOptions" -> SendingOptions.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "TrackingOptions" -> TrackingOptions.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetConfigurationSetResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      ConfigurationSetName.foreach(__v => __obj.update("ConfigurationSetName", __v.asInstanceOf[js.Any]))
+      DeliveryOptions.foreach(__v => __obj.update("DeliveryOptions", __v.asInstanceOf[js.Any]))
+      ReputationOptions.foreach(__v => __obj.update("ReputationOptions", __v.asInstanceOf[js.Any]))
+      SendingOptions.foreach(__v => __obj.update("SendingOptions", __v.asInstanceOf[js.Any]))
+      TrackingOptions.foreach(__v => __obj.update("TrackingOptions", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetConfigurationSetResponse]
     }
   }
 
@@ -1476,11 +1298,11 @@ package pinpointemail {
     def apply(
         Ip: Ip
     ): GetDedicatedIpRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "Ip" -> Ip.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetDedicatedIpRequest]
+      __obj.asInstanceOf[GetDedicatedIpRequest]
     }
   }
 
@@ -1496,13 +1318,9 @@ package pinpointemail {
     def apply(
         DedicatedIp: js.UndefOr[DedicatedIp] = js.undefined
     ): GetDedicatedIpResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "DedicatedIp" -> DedicatedIp.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetDedicatedIpResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      DedicatedIp.foreach(__v => __obj.update("DedicatedIp", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetDedicatedIpResponse]
     }
   }
 
@@ -1522,19 +1340,11 @@ package pinpointemail {
         PageSize: js.UndefOr[MaxItems] = js.undefined,
         PoolName: js.UndefOr[PoolName] = js.undefined
     ): GetDedicatedIpsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "NextToken" -> NextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "PageSize" -> PageSize.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "PoolName" -> PoolName.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetDedicatedIpsRequest]
+      val __obj = js.Dictionary.empty[js.Any]
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      PageSize.foreach(__v => __obj.update("PageSize", __v.asInstanceOf[js.Any]))
+      PoolName.foreach(__v => __obj.update("PoolName", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetDedicatedIpsRequest]
     }
   }
 
@@ -1552,16 +1362,10 @@ package pinpointemail {
         DedicatedIps: js.UndefOr[DedicatedIpList] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): GetDedicatedIpsResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "DedicatedIps" -> DedicatedIps.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NextToken" -> NextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetDedicatedIpsResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      DedicatedIps.foreach(__v => __obj.update("DedicatedIps", __v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetDedicatedIpsResponse]
     }
   }
 
@@ -1575,10 +1379,9 @@ package pinpointemail {
   object GetDeliverabilityDashboardOptionsRequest {
     def apply(
         ): GetDeliverabilityDashboardOptionsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary.empty[js.Any]
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetDeliverabilityDashboardOptionsRequest]
+      __obj.asInstanceOf[GetDeliverabilityDashboardOptionsRequest]
     }
   }
 
@@ -1594,11 +1397,11 @@ package pinpointemail {
     def apply(
         DashboardEnabled: Enabled
     ): GetDeliverabilityDashboardOptionsResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "DashboardEnabled" -> DashboardEnabled.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetDeliverabilityDashboardOptionsResponse]
+      __obj.asInstanceOf[GetDeliverabilityDashboardOptionsResponse]
     }
   }
 
@@ -1614,11 +1417,11 @@ package pinpointemail {
     def apply(
         ReportId: ReportId
     ): GetDeliverabilityTestReportRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ReportId" -> ReportId.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetDeliverabilityTestReportRequest]
+      __obj.asInstanceOf[GetDeliverabilityTestReportRequest]
     }
   }
 
@@ -1640,16 +1443,14 @@ package pinpointemail {
         OverallPlacement: PlacementStatistics,
         Message: js.UndefOr[MessageContent] = js.undefined
     ): GetDeliverabilityTestReportResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "DeliverabilityTestReport" -> DeliverabilityTestReport.asInstanceOf[js.Any],
         "IspPlacements"            -> IspPlacements.asInstanceOf[js.Any],
-        "OverallPlacement"         -> OverallPlacement.asInstanceOf[js.Any],
-        "Message" -> Message.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "OverallPlacement"         -> OverallPlacement.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetDeliverabilityTestReportResponse]
+      Message.foreach(__v => __obj.update("Message", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetDeliverabilityTestReportResponse]
     }
   }
 
@@ -1669,13 +1470,13 @@ package pinpointemail {
         EndDate: Timestamp,
         StartDate: Timestamp
     ): GetDomainStatisticsReportRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "Domain"    -> Domain.asInstanceOf[js.Any],
         "EndDate"   -> EndDate.asInstanceOf[js.Any],
         "StartDate" -> StartDate.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetDomainStatisticsReportRequest]
+      __obj.asInstanceOf[GetDomainStatisticsReportRequest]
     }
   }
 
@@ -1693,12 +1494,12 @@ package pinpointemail {
         DailyVolumes: DailyVolumes,
         OverallVolume: OverallVolume
     ): GetDomainStatisticsReportResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "DailyVolumes"  -> DailyVolumes.asInstanceOf[js.Any],
         "OverallVolume" -> OverallVolume.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetDomainStatisticsReportResponse]
+      __obj.asInstanceOf[GetDomainStatisticsReportResponse]
     }
   }
 
@@ -1714,11 +1515,11 @@ package pinpointemail {
     def apply(
         EmailIdentity: Identity
     ): GetEmailIdentityRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "EmailIdentity" -> EmailIdentity.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetEmailIdentityRequest]
+      __obj.asInstanceOf[GetEmailIdentityRequest]
     }
   }
 
@@ -1742,25 +1543,13 @@ package pinpointemail {
         MailFromAttributes: js.UndefOr[MailFromAttributes] = js.undefined,
         VerifiedForSendingStatus: js.UndefOr[Enabled] = js.undefined
     ): GetEmailIdentityResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "DkimAttributes" -> DkimAttributes.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "FeedbackForwardingStatus" -> FeedbackForwardingStatus.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "IdentityType" -> IdentityType.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MailFromAttributes" -> MailFromAttributes.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "VerifiedForSendingStatus" -> VerifiedForSendingStatus.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetEmailIdentityResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      DkimAttributes.foreach(__v => __obj.update("DkimAttributes", __v.asInstanceOf[js.Any]))
+      FeedbackForwardingStatus.foreach(__v => __obj.update("FeedbackForwardingStatus", __v.asInstanceOf[js.Any]))
+      IdentityType.foreach(__v => __obj.update("IdentityType", __v.asInstanceOf[js.Any]))
+      MailFromAttributes.foreach(__v => __obj.update("MailFromAttributes", __v.asInstanceOf[js.Any]))
+      VerifiedForSendingStatus.foreach(__v => __obj.update("VerifiedForSendingStatus", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetEmailIdentityResponse]
     }
   }
 
@@ -1780,19 +1569,11 @@ package pinpointemail {
         IdentityType: js.UndefOr[IdentityType] = js.undefined,
         SendingEnabled: js.UndefOr[Enabled] = js.undefined
     ): IdentityInfo = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "IdentityName" -> IdentityName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "IdentityType" -> IdentityType.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SendingEnabled" -> SendingEnabled.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[IdentityInfo]
+      val __obj = js.Dictionary.empty[js.Any]
+      IdentityName.foreach(__v => __obj.update("IdentityName", __v.asInstanceOf[js.Any]))
+      IdentityType.foreach(__v => __obj.update("IdentityType", __v.asInstanceOf[js.Any]))
+      SendingEnabled.foreach(__v => __obj.update("SendingEnabled", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[IdentityInfo]
     }
   }
 
@@ -1823,16 +1604,10 @@ package pinpointemail {
         IspName: js.UndefOr[IspName] = js.undefined,
         PlacementStatistics: js.UndefOr[PlacementStatistics] = js.undefined
     ): IspPlacement = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "IspName" -> IspName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "PlacementStatistics" -> PlacementStatistics.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[IspPlacement]
+      val __obj = js.Dictionary.empty[js.Any]
+      IspName.foreach(__v => __obj.update("IspName", __v.asInstanceOf[js.Any]))
+      PlacementStatistics.foreach(__v => __obj.update("PlacementStatistics", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[IspPlacement]
     }
   }
 
@@ -1850,12 +1625,12 @@ package pinpointemail {
         DeliveryStreamArn: AmazonResourceName,
         IamRoleArn: AmazonResourceName
     ): KinesisFirehoseDestination = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "DeliveryStreamArn" -> DeliveryStreamArn.asInstanceOf[js.Any],
         "IamRoleArn"        -> IamRoleArn.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[KinesisFirehoseDestination]
+      __obj.asInstanceOf[KinesisFirehoseDestination]
     }
   }
 
@@ -1873,16 +1648,10 @@ package pinpointemail {
         NextToken: js.UndefOr[NextToken] = js.undefined,
         PageSize: js.UndefOr[MaxItems] = js.undefined
     ): ListConfigurationSetsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "NextToken" -> NextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "PageSize" -> PageSize.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListConfigurationSetsRequest]
+      val __obj = js.Dictionary.empty[js.Any]
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      PageSize.foreach(__v => __obj.update("PageSize", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListConfigurationSetsRequest]
     }
   }
 
@@ -1900,16 +1669,10 @@ package pinpointemail {
         ConfigurationSets: js.UndefOr[ConfigurationSetNameList] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): ListConfigurationSetsResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ConfigurationSets" -> ConfigurationSets.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NextToken" -> NextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListConfigurationSetsResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      ConfigurationSets.foreach(__v => __obj.update("ConfigurationSets", __v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListConfigurationSetsResponse]
     }
   }
 
@@ -1927,16 +1690,10 @@ package pinpointemail {
         NextToken: js.UndefOr[NextToken] = js.undefined,
         PageSize: js.UndefOr[MaxItems] = js.undefined
     ): ListDedicatedIpPoolsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "NextToken" -> NextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "PageSize" -> PageSize.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListDedicatedIpPoolsRequest]
+      val __obj = js.Dictionary.empty[js.Any]
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      PageSize.foreach(__v => __obj.update("PageSize", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListDedicatedIpPoolsRequest]
     }
   }
 
@@ -1954,16 +1711,10 @@ package pinpointemail {
         DedicatedIpPools: js.UndefOr[ListOfDedicatedIpPools] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): ListDedicatedIpPoolsResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "DedicatedIpPools" -> DedicatedIpPools.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NextToken" -> NextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListDedicatedIpPoolsResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      DedicatedIpPools.foreach(__v => __obj.update("DedicatedIpPools", __v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListDedicatedIpPoolsResponse]
     }
   }
 
@@ -1981,16 +1732,10 @@ package pinpointemail {
         NextToken: js.UndefOr[NextToken] = js.undefined,
         PageSize: js.UndefOr[MaxItems] = js.undefined
     ): ListDeliverabilityTestReportsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "NextToken" -> NextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "PageSize" -> PageSize.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListDeliverabilityTestReportsRequest]
+      val __obj = js.Dictionary.empty[js.Any]
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      PageSize.foreach(__v => __obj.update("PageSize", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListDeliverabilityTestReportsRequest]
     }
   }
 
@@ -2008,14 +1753,12 @@ package pinpointemail {
         DeliverabilityTestReports: DeliverabilityTestReports,
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): ListDeliverabilityTestReportsResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "DeliverabilityTestReports" -> DeliverabilityTestReports.asInstanceOf[js.Any],
-        "NextToken" -> NextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "DeliverabilityTestReports" -> DeliverabilityTestReports.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListDeliverabilityTestReportsResponse]
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListDeliverabilityTestReportsResponse]
     }
   }
 
@@ -2033,16 +1776,10 @@ package pinpointemail {
         NextToken: js.UndefOr[NextToken] = js.undefined,
         PageSize: js.UndefOr[MaxItems] = js.undefined
     ): ListEmailIdentitiesRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "NextToken" -> NextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "PageSize" -> PageSize.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListEmailIdentitiesRequest]
+      val __obj = js.Dictionary.empty[js.Any]
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      PageSize.foreach(__v => __obj.update("PageSize", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListEmailIdentitiesRequest]
     }
   }
 
@@ -2060,16 +1797,10 @@ package pinpointemail {
         EmailIdentities: js.UndefOr[IdentityInfoList] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): ListEmailIdentitiesResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "EmailIdentities" -> EmailIdentities.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NextToken" -> NextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListEmailIdentitiesResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      EmailIdentities.foreach(__v => __obj.update("EmailIdentities", __v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListEmailIdentitiesResponse]
     }
   }
 
@@ -2082,11 +1813,11 @@ package pinpointemail {
     def apply(
         ResourceArn: AmazonResourceName
     ): ListTagsForResourceRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListTagsForResourceRequest]
+      __obj.asInstanceOf[ListTagsForResourceRequest]
     }
   }
 
@@ -2099,11 +1830,11 @@ package pinpointemail {
     def apply(
         Tags: TagList
     ): ListTagsForResourceResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "Tags" -> Tags.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListTagsForResourceResponse]
+      __obj.asInstanceOf[ListTagsForResourceResponse]
     }
   }
 
@@ -2123,13 +1854,13 @@ package pinpointemail {
         MailFromDomain: MailFromDomainName,
         MailFromDomainStatus: MailFromDomainStatus
     ): MailFromAttributes = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "BehaviorOnMxFailure"  -> BehaviorOnMxFailure.asInstanceOf[js.Any],
         "MailFromDomain"       -> MailFromDomain.asInstanceOf[js.Any],
         "MailFromDomainStatus" -> MailFromDomainStatus.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[MailFromAttributes]
+      __obj.asInstanceOf[MailFromAttributes]
     }
   }
 
@@ -2163,12 +1894,12 @@ package pinpointemail {
         Body: Body,
         Subject: Content
     ): Message = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "Body"    -> Body.asInstanceOf[js.Any],
         "Subject" -> Subject.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Message]
+      __obj.asInstanceOf[Message]
     }
   }
 
@@ -2186,12 +1917,12 @@ package pinpointemail {
         Name: MessageTagName,
         Value: MessageTagValue
     ): MessageTag = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "Name"  -> Name.asInstanceOf[js.Any],
         "Value" -> Value.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[MessageTag]
+      __obj.asInstanceOf[MessageTag]
     }
   }
 
@@ -2211,19 +1942,11 @@ package pinpointemail {
         ReadRatePercent: js.UndefOr[Percentage] = js.undefined,
         VolumeStatistics: js.UndefOr[VolumeStatistics] = js.undefined
     ): OverallVolume = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "DomainIspPlacements" -> DomainIspPlacements.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ReadRatePercent" -> ReadRatePercent.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "VolumeStatistics" -> VolumeStatistics.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[OverallVolume]
+      val __obj = js.Dictionary.empty[js.Any]
+      DomainIspPlacements.foreach(__v => __obj.update("DomainIspPlacements", __v.asInstanceOf[js.Any]))
+      ReadRatePercent.foreach(__v => __obj.update("ReadRatePercent", __v.asInstanceOf[js.Any]))
+      VolumeStatistics.foreach(__v => __obj.update("VolumeStatistics", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[OverallVolume]
     }
   }
 
@@ -2239,13 +1962,9 @@ package pinpointemail {
     def apply(
         ApplicationArn: js.UndefOr[AmazonResourceName] = js.undefined
     ): PinpointDestination = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ApplicationArn" -> ApplicationArn.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PinpointDestination]
+      val __obj = js.Dictionary.empty[js.Any]
+      ApplicationArn.foreach(__v => __obj.update("ApplicationArn", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PinpointDestination]
     }
   }
 
@@ -2269,25 +1988,13 @@ package pinpointemail {
         SpamPercentage: js.UndefOr[Percentage] = js.undefined,
         SpfPercentage: js.UndefOr[Percentage] = js.undefined
     ): PlacementStatistics = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "DkimPercentage" -> DkimPercentage.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "InboxPercentage" -> InboxPercentage.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MissingPercentage" -> MissingPercentage.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SpamPercentage" -> SpamPercentage.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SpfPercentage" -> SpfPercentage.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PlacementStatistics]
+      val __obj = js.Dictionary.empty[js.Any]
+      DkimPercentage.foreach(__v => __obj.update("DkimPercentage", __v.asInstanceOf[js.Any]))
+      InboxPercentage.foreach(__v => __obj.update("InboxPercentage", __v.asInstanceOf[js.Any]))
+      MissingPercentage.foreach(__v => __obj.update("MissingPercentage", __v.asInstanceOf[js.Any]))
+      SpamPercentage.foreach(__v => __obj.update("SpamPercentage", __v.asInstanceOf[js.Any]))
+      SpfPercentage.foreach(__v => __obj.update("SpfPercentage", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PlacementStatistics]
     }
   }
 
@@ -2303,15 +2010,9 @@ package pinpointemail {
     def apply(
         AutoWarmupEnabled: js.UndefOr[Enabled] = js.undefined
     ): PutAccountDedicatedIpWarmupAttributesRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "AutoWarmupEnabled" -> AutoWarmupEnabled.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal
-        .applyDynamicNamed("apply")(_fields: _*)
-        .asInstanceOf[PutAccountDedicatedIpWarmupAttributesRequest]
+      val __obj = js.Dictionary.empty[js.Any]
+      AutoWarmupEnabled.foreach(__v => __obj.update("AutoWarmupEnabled", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PutAccountDedicatedIpWarmupAttributesRequest]
     }
   }
 
@@ -2324,12 +2025,9 @@ package pinpointemail {
   object PutAccountDedicatedIpWarmupAttributesResponse {
     def apply(
         ): PutAccountDedicatedIpWarmupAttributesResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary.empty[js.Any]
 
-      js.Dynamic.literal
-        .applyDynamicNamed("apply")(_fields: _*)
-        .asInstanceOf[PutAccountDedicatedIpWarmupAttributesResponse]
+      __obj.asInstanceOf[PutAccountDedicatedIpWarmupAttributesResponse]
     }
   }
 
@@ -2345,13 +2043,9 @@ package pinpointemail {
     def apply(
         SendingEnabled: js.UndefOr[Enabled] = js.undefined
     ): PutAccountSendingAttributesRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "SendingEnabled" -> SendingEnabled.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PutAccountSendingAttributesRequest]
+      val __obj = js.Dictionary.empty[js.Any]
+      SendingEnabled.foreach(__v => __obj.update("SendingEnabled", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PutAccountSendingAttributesRequest]
     }
   }
 
@@ -2364,10 +2058,9 @@ package pinpointemail {
   object PutAccountSendingAttributesResponse {
     def apply(
         ): PutAccountSendingAttributesResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary.empty[js.Any]
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PutAccountSendingAttributesResponse]
+      __obj.asInstanceOf[PutAccountSendingAttributesResponse]
     }
   }
 
@@ -2385,14 +2078,12 @@ package pinpointemail {
         ConfigurationSetName: ConfigurationSetName,
         SendingPoolName: js.UndefOr[SendingPoolName] = js.undefined
     ): PutConfigurationSetDeliveryOptionsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ConfigurationSetName" -> ConfigurationSetName.asInstanceOf[js.Any],
-        "SendingPoolName" -> SendingPoolName.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "ConfigurationSetName" -> ConfigurationSetName.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PutConfigurationSetDeliveryOptionsRequest]
+      SendingPoolName.foreach(__v => __obj.update("SendingPoolName", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PutConfigurationSetDeliveryOptionsRequest]
     }
   }
 
@@ -2405,12 +2096,9 @@ package pinpointemail {
   object PutConfigurationSetDeliveryOptionsResponse {
     def apply(
         ): PutConfigurationSetDeliveryOptionsResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary.empty[js.Any]
 
-      js.Dynamic.literal
-        .applyDynamicNamed("apply")(_fields: _*)
-        .asInstanceOf[PutConfigurationSetDeliveryOptionsResponse]
+      __obj.asInstanceOf[PutConfigurationSetDeliveryOptionsResponse]
     }
   }
 
@@ -2428,16 +2116,12 @@ package pinpointemail {
         ConfigurationSetName: ConfigurationSetName,
         ReputationMetricsEnabled: js.UndefOr[Enabled] = js.undefined
     ): PutConfigurationSetReputationOptionsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ConfigurationSetName" -> ConfigurationSetName.asInstanceOf[js.Any],
-        "ReputationMetricsEnabled" -> ReputationMetricsEnabled.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "ConfigurationSetName" -> ConfigurationSetName.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal
-        .applyDynamicNamed("apply")(_fields: _*)
-        .asInstanceOf[PutConfigurationSetReputationOptionsRequest]
+      ReputationMetricsEnabled.foreach(__v => __obj.update("ReputationMetricsEnabled", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PutConfigurationSetReputationOptionsRequest]
     }
   }
 
@@ -2450,12 +2134,9 @@ package pinpointemail {
   object PutConfigurationSetReputationOptionsResponse {
     def apply(
         ): PutConfigurationSetReputationOptionsResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary.empty[js.Any]
 
-      js.Dynamic.literal
-        .applyDynamicNamed("apply")(_fields: _*)
-        .asInstanceOf[PutConfigurationSetReputationOptionsResponse]
+      __obj.asInstanceOf[PutConfigurationSetReputationOptionsResponse]
     }
   }
 
@@ -2473,14 +2154,12 @@ package pinpointemail {
         ConfigurationSetName: ConfigurationSetName,
         SendingEnabled: js.UndefOr[Enabled] = js.undefined
     ): PutConfigurationSetSendingOptionsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ConfigurationSetName" -> ConfigurationSetName.asInstanceOf[js.Any],
-        "SendingEnabled" -> SendingEnabled.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "ConfigurationSetName" -> ConfigurationSetName.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PutConfigurationSetSendingOptionsRequest]
+      SendingEnabled.foreach(__v => __obj.update("SendingEnabled", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PutConfigurationSetSendingOptionsRequest]
     }
   }
 
@@ -2493,10 +2172,9 @@ package pinpointemail {
   object PutConfigurationSetSendingOptionsResponse {
     def apply(
         ): PutConfigurationSetSendingOptionsResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary.empty[js.Any]
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PutConfigurationSetSendingOptionsResponse]
+      __obj.asInstanceOf[PutConfigurationSetSendingOptionsResponse]
     }
   }
 
@@ -2514,14 +2192,12 @@ package pinpointemail {
         ConfigurationSetName: ConfigurationSetName,
         CustomRedirectDomain: js.UndefOr[CustomRedirectDomain] = js.undefined
     ): PutConfigurationSetTrackingOptionsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ConfigurationSetName" -> ConfigurationSetName.asInstanceOf[js.Any],
-        "CustomRedirectDomain" -> CustomRedirectDomain.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "ConfigurationSetName" -> ConfigurationSetName.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PutConfigurationSetTrackingOptionsRequest]
+      CustomRedirectDomain.foreach(__v => __obj.update("CustomRedirectDomain", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PutConfigurationSetTrackingOptionsRequest]
     }
   }
 
@@ -2534,12 +2210,9 @@ package pinpointemail {
   object PutConfigurationSetTrackingOptionsResponse {
     def apply(
         ): PutConfigurationSetTrackingOptionsResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary.empty[js.Any]
 
-      js.Dynamic.literal
-        .applyDynamicNamed("apply")(_fields: _*)
-        .asInstanceOf[PutConfigurationSetTrackingOptionsResponse]
+      __obj.asInstanceOf[PutConfigurationSetTrackingOptionsResponse]
     }
   }
 
@@ -2557,12 +2230,12 @@ package pinpointemail {
         DestinationPoolName: PoolName,
         Ip: Ip
     ): PutDedicatedIpInPoolRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "DestinationPoolName" -> DestinationPoolName.asInstanceOf[js.Any],
         "Ip"                  -> Ip.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PutDedicatedIpInPoolRequest]
+      __obj.asInstanceOf[PutDedicatedIpInPoolRequest]
     }
   }
 
@@ -2575,10 +2248,9 @@ package pinpointemail {
   object PutDedicatedIpInPoolResponse {
     def apply(
         ): PutDedicatedIpInPoolResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary.empty[js.Any]
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PutDedicatedIpInPoolResponse]
+      __obj.asInstanceOf[PutDedicatedIpInPoolResponse]
     }
   }
 
@@ -2596,12 +2268,12 @@ package pinpointemail {
         Ip: Ip,
         WarmupPercentage: Percentage100Wrapper
     ): PutDedicatedIpWarmupAttributesRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "Ip"               -> Ip.asInstanceOf[js.Any],
         "WarmupPercentage" -> WarmupPercentage.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PutDedicatedIpWarmupAttributesRequest]
+      __obj.asInstanceOf[PutDedicatedIpWarmupAttributesRequest]
     }
   }
 
@@ -2614,10 +2286,9 @@ package pinpointemail {
   object PutDedicatedIpWarmupAttributesResponse {
     def apply(
         ): PutDedicatedIpWarmupAttributesResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary.empty[js.Any]
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PutDedicatedIpWarmupAttributesResponse]
+      __obj.asInstanceOf[PutDedicatedIpWarmupAttributesResponse]
     }
   }
 
@@ -2634,11 +2305,11 @@ package pinpointemail {
     def apply(
         DashboardEnabled: Enabled
     ): PutDeliverabilityDashboardOptionRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "DashboardEnabled" -> DashboardEnabled.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PutDeliverabilityDashboardOptionRequest]
+      __obj.asInstanceOf[PutDeliverabilityDashboardOptionRequest]
     }
   }
 
@@ -2651,10 +2322,9 @@ package pinpointemail {
   object PutDeliverabilityDashboardOptionResponse {
     def apply(
         ): PutDeliverabilityDashboardOptionResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary.empty[js.Any]
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PutDeliverabilityDashboardOptionResponse]
+      __obj.asInstanceOf[PutDeliverabilityDashboardOptionResponse]
     }
   }
 
@@ -2672,14 +2342,12 @@ package pinpointemail {
         EmailIdentity: Identity,
         SigningEnabled: js.UndefOr[Enabled] = js.undefined
     ): PutEmailIdentityDkimAttributesRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "EmailIdentity" -> EmailIdentity.asInstanceOf[js.Any],
-        "SigningEnabled" -> SigningEnabled.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "EmailIdentity" -> EmailIdentity.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PutEmailIdentityDkimAttributesRequest]
+      SigningEnabled.foreach(__v => __obj.update("SigningEnabled", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PutEmailIdentityDkimAttributesRequest]
     }
   }
 
@@ -2692,10 +2360,9 @@ package pinpointemail {
   object PutEmailIdentityDkimAttributesResponse {
     def apply(
         ): PutEmailIdentityDkimAttributesResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary.empty[js.Any]
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PutEmailIdentityDkimAttributesResponse]
+      __obj.asInstanceOf[PutEmailIdentityDkimAttributesResponse]
     }
   }
 
@@ -2713,14 +2380,12 @@ package pinpointemail {
         EmailIdentity: Identity,
         EmailForwardingEnabled: js.UndefOr[Enabled] = js.undefined
     ): PutEmailIdentityFeedbackAttributesRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "EmailIdentity" -> EmailIdentity.asInstanceOf[js.Any],
-        "EmailForwardingEnabled" -> EmailForwardingEnabled.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "EmailIdentity" -> EmailIdentity.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PutEmailIdentityFeedbackAttributesRequest]
+      EmailForwardingEnabled.foreach(__v => __obj.update("EmailForwardingEnabled", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PutEmailIdentityFeedbackAttributesRequest]
     }
   }
 
@@ -2733,12 +2398,9 @@ package pinpointemail {
   object PutEmailIdentityFeedbackAttributesResponse {
     def apply(
         ): PutEmailIdentityFeedbackAttributesResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary.empty[js.Any]
 
-      js.Dynamic.literal
-        .applyDynamicNamed("apply")(_fields: _*)
-        .asInstanceOf[PutEmailIdentityFeedbackAttributesResponse]
+      __obj.asInstanceOf[PutEmailIdentityFeedbackAttributesResponse]
     }
   }
 
@@ -2758,17 +2420,13 @@ package pinpointemail {
         BehaviorOnMxFailure: js.UndefOr[BehaviorOnMxFailure] = js.undefined,
         MailFromDomain: js.UndefOr[MailFromDomainName] = js.undefined
     ): PutEmailIdentityMailFromAttributesRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "EmailIdentity" -> EmailIdentity.asInstanceOf[js.Any],
-        "BehaviorOnMxFailure" -> BehaviorOnMxFailure.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MailFromDomain" -> MailFromDomain.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "EmailIdentity" -> EmailIdentity.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PutEmailIdentityMailFromAttributesRequest]
+      BehaviorOnMxFailure.foreach(__v => __obj.update("BehaviorOnMxFailure", __v.asInstanceOf[js.Any]))
+      MailFromDomain.foreach(__v => __obj.update("MailFromDomain", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PutEmailIdentityMailFromAttributesRequest]
     }
   }
 
@@ -2781,12 +2439,9 @@ package pinpointemail {
   object PutEmailIdentityMailFromAttributesResponse {
     def apply(
         ): PutEmailIdentityMailFromAttributesResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary.empty[js.Any]
 
-      js.Dynamic.literal
-        .applyDynamicNamed("apply")(_fields: _*)
-        .asInstanceOf[PutEmailIdentityMailFromAttributesResponse]
+      __obj.asInstanceOf[PutEmailIdentityMailFromAttributesResponse]
     }
   }
 
@@ -2802,11 +2457,11 @@ package pinpointemail {
     def apply(
         Data: RawMessageData
     ): RawMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "Data" -> Data.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RawMessage]
+      __obj.asInstanceOf[RawMessage]
     }
   }
 
@@ -2824,16 +2479,10 @@ package pinpointemail {
         LastFreshStart: js.UndefOr[LastFreshStart] = js.undefined,
         ReputationMetricsEnabled: js.UndefOr[Enabled] = js.undefined
     ): ReputationOptions = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "LastFreshStart" -> LastFreshStart.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ReputationMetricsEnabled" -> ReputationMetricsEnabled.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ReputationOptions]
+      val __obj = js.Dictionary.empty[js.Any]
+      LastFreshStart.foreach(__v => __obj.update("LastFreshStart", __v.asInstanceOf[js.Any]))
+      ReputationMetricsEnabled.foreach(__v => __obj.update("ReputationMetricsEnabled", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ReputationOptions]
     }
   }
 
@@ -2861,27 +2510,19 @@ package pinpointemail {
         FromEmailAddress: js.UndefOr[EmailAddress] = js.undefined,
         ReplyToAddresses: js.UndefOr[EmailAddressList] = js.undefined
     ): SendEmailRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "Content"     -> Content.asInstanceOf[js.Any],
-        "Destination" -> Destination.asInstanceOf[js.Any],
-        "ConfigurationSetName" -> ConfigurationSetName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "EmailTags" -> EmailTags.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "FeedbackForwardingEmailAddress" -> FeedbackForwardingEmailAddress.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "FromEmailAddress" -> FromEmailAddress.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ReplyToAddresses" -> ReplyToAddresses.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "Destination" -> Destination.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SendEmailRequest]
+      ConfigurationSetName.foreach(__v => __obj.update("ConfigurationSetName", __v.asInstanceOf[js.Any]))
+      EmailTags.foreach(__v => __obj.update("EmailTags", __v.asInstanceOf[js.Any]))
+      FeedbackForwardingEmailAddress.foreach(
+        __v => __obj.update("FeedbackForwardingEmailAddress", __v.asInstanceOf[js.Any])
+      )
+      FromEmailAddress.foreach(__v => __obj.update("FromEmailAddress", __v.asInstanceOf[js.Any]))
+      ReplyToAddresses.foreach(__v => __obj.update("ReplyToAddresses", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[SendEmailRequest]
     }
   }
 
@@ -2897,13 +2538,9 @@ package pinpointemail {
     def apply(
         MessageId: js.UndefOr[OutboundMessageId] = js.undefined
     ): SendEmailResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "MessageId" -> MessageId.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SendEmailResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      MessageId.foreach(__v => __obj.update("MessageId", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[SendEmailResponse]
     }
   }
 
@@ -2923,19 +2560,11 @@ package pinpointemail {
         MaxSendRate: js.UndefOr[MaxSendRate] = js.undefined,
         SentLast24Hours: js.UndefOr[SentLast24Hours] = js.undefined
     ): SendQuota = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Max24HourSend" -> Max24HourSend.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MaxSendRate" -> MaxSendRate.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SentLast24Hours" -> SentLast24Hours.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SendQuota]
+      val __obj = js.Dictionary.empty[js.Any]
+      Max24HourSend.foreach(__v => __obj.update("Max24HourSend", __v.asInstanceOf[js.Any]))
+      MaxSendRate.foreach(__v => __obj.update("MaxSendRate", __v.asInstanceOf[js.Any]))
+      SentLast24Hours.foreach(__v => __obj.update("SentLast24Hours", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[SendQuota]
     }
   }
 
@@ -2951,13 +2580,9 @@ package pinpointemail {
     def apply(
         SendingEnabled: js.UndefOr[Enabled] = js.undefined
     ): SendingOptions = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "SendingEnabled" -> SendingEnabled.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SendingOptions]
+      val __obj = js.Dictionary.empty[js.Any]
+      SendingEnabled.foreach(__v => __obj.update("SendingEnabled", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[SendingOptions]
     }
   }
 
@@ -2973,11 +2598,11 @@ package pinpointemail {
     def apply(
         TopicArn: AmazonResourceName
     ): SnsDestination = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "TopicArn" -> TopicArn.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SnsDestination]
+      __obj.asInstanceOf[SnsDestination]
     }
   }
 
@@ -3001,12 +2626,12 @@ package pinpointemail {
         Key: TagKey,
         Value: TagValue
     ): Tag = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "Key"   -> Key.asInstanceOf[js.Any],
         "Value" -> Value.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Tag]
+      __obj.asInstanceOf[Tag]
     }
   }
 
@@ -3021,12 +2646,12 @@ package pinpointemail {
         ResourceArn: AmazonResourceName,
         Tags: TagList
     ): TagResourceRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any],
         "Tags"        -> Tags.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[TagResourceRequest]
+      __obj.asInstanceOf[TagResourceRequest]
     }
   }
 
@@ -3036,10 +2661,9 @@ package pinpointemail {
   object TagResourceResponse {
     def apply(
         ): TagResourceResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary.empty[js.Any]
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[TagResourceResponse]
+      __obj.asInstanceOf[TagResourceResponse]
     }
   }
 
@@ -3056,11 +2680,11 @@ package pinpointemail {
     def apply(
         CustomRedirectDomain: CustomRedirectDomain
     ): TrackingOptions = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "CustomRedirectDomain" -> CustomRedirectDomain.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[TrackingOptions]
+      __obj.asInstanceOf[TrackingOptions]
     }
   }
 
@@ -3075,12 +2699,12 @@ package pinpointemail {
         ResourceArn: AmazonResourceName,
         TagKeys: TagKeyList
     ): UntagResourceRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any],
         "TagKeys"     -> TagKeys.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UntagResourceRequest]
+      __obj.asInstanceOf[UntagResourceRequest]
     }
   }
 
@@ -3090,10 +2714,9 @@ package pinpointemail {
   object UntagResourceResponse {
     def apply(
         ): UntagResourceResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary.empty[js.Any]
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UntagResourceResponse]
+      __obj.asInstanceOf[UntagResourceResponse]
     }
   }
 
@@ -3113,15 +2736,13 @@ package pinpointemail {
         EventDestination: EventDestinationDefinition,
         EventDestinationName: EventDestinationName
     ): UpdateConfigurationSetEventDestinationRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ConfigurationSetName" -> ConfigurationSetName.asInstanceOf[js.Any],
         "EventDestination"     -> EventDestination.asInstanceOf[js.Any],
         "EventDestinationName" -> EventDestinationName.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal
-        .applyDynamicNamed("apply")(_fields: _*)
-        .asInstanceOf[UpdateConfigurationSetEventDestinationRequest]
+      __obj.asInstanceOf[UpdateConfigurationSetEventDestinationRequest]
     }
   }
 
@@ -3134,12 +2755,9 @@ package pinpointemail {
   object UpdateConfigurationSetEventDestinationResponse {
     def apply(
         ): UpdateConfigurationSetEventDestinationResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary.empty[js.Any]
 
-      js.Dynamic.literal
-        .applyDynamicNamed("apply")(_fields: _*)
-        .asInstanceOf[UpdateConfigurationSetEventDestinationResponse]
+      __obj.asInstanceOf[UpdateConfigurationSetEventDestinationResponse]
     }
   }
 
@@ -3161,22 +2779,12 @@ package pinpointemail {
         ProjectedSpam: js.UndefOr[Volume] = js.undefined,
         SpamRawCount: js.UndefOr[Volume] = js.undefined
     ): VolumeStatistics = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "InboxRawCount" -> InboxRawCount.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ProjectedInbox" -> ProjectedInbox.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ProjectedSpam" -> ProjectedSpam.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SpamRawCount" -> SpamRawCount.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[VolumeStatistics]
+      val __obj = js.Dictionary.empty[js.Any]
+      InboxRawCount.foreach(__v => __obj.update("InboxRawCount", __v.asInstanceOf[js.Any]))
+      ProjectedInbox.foreach(__v => __obj.update("ProjectedInbox", __v.asInstanceOf[js.Any]))
+      ProjectedSpam.foreach(__v => __obj.update("ProjectedSpam", __v.asInstanceOf[js.Any]))
+      SpamRawCount.foreach(__v => __obj.update("SpamRawCount", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[VolumeStatistics]
     }
   }
 

@@ -52,13 +52,9 @@ package pricing {
     def apply(
         Value: js.UndefOr[String] = js.undefined
     ): AttributeValue = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Value" -> Value.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AttributeValue]
+      val __obj = js.Dictionary.empty[js.Any]
+      Value.foreach(__v => __obj.update("Value", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AttributeValue]
     }
   }
 
@@ -77,22 +73,12 @@ package pricing {
         NextToken: js.UndefOr[String] = js.undefined,
         ServiceCode: js.UndefOr[String] = js.undefined
     ): DescribeServicesRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "FormatVersion" -> FormatVersion.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MaxResults" -> MaxResults.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NextToken" -> NextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ServiceCode" -> ServiceCode.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeServicesRequest]
+      val __obj = js.Dictionary.empty[js.Any]
+      FormatVersion.foreach(__v => __obj.update("FormatVersion", __v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      ServiceCode.foreach(__v => __obj.update("ServiceCode", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeServicesRequest]
     }
   }
 
@@ -109,19 +95,11 @@ package pricing {
         NextToken: js.UndefOr[String] = js.undefined,
         Services: js.UndefOr[ServiceList] = js.undefined
     ): DescribeServicesResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "FormatVersion" -> FormatVersion.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NextToken" -> NextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Services" -> Services.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeServicesResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      FormatVersion.foreach(__v => __obj.update("FormatVersion", __v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      Services.foreach(__v => __obj.update("Services", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeServicesResponse]
     }
   }
 
@@ -149,13 +127,13 @@ package pricing {
         Type: FilterType,
         Value: String
     ): Filter = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "Field" -> Field.asInstanceOf[js.Any],
         "Type"  -> Type.asInstanceOf[js.Any],
         "Value" -> Value.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Filter]
+      __obj.asInstanceOf[Filter]
     }
   }
 
@@ -180,18 +158,14 @@ package pricing {
         MaxResults: js.UndefOr[BoxedInteger] = js.undefined,
         NextToken: js.UndefOr[String] = js.undefined
     ): GetAttributeValuesRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "AttributeName" -> AttributeName.asInstanceOf[js.Any],
-        "ServiceCode"   -> ServiceCode.asInstanceOf[js.Any],
-        "MaxResults" -> MaxResults.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NextToken" -> NextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "ServiceCode"   -> ServiceCode.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetAttributeValuesRequest]
+      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetAttributeValuesRequest]
     }
   }
 
@@ -206,16 +180,10 @@ package pricing {
         AttributeValues: js.UndefOr[AttributeValueList] = js.undefined,
         NextToken: js.UndefOr[String] = js.undefined
     ): GetAttributeValuesResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "AttributeValues" -> AttributeValues.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NextToken" -> NextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetAttributeValuesResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      AttributeValues.foreach(__v => __obj.update("AttributeValues", __v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetAttributeValuesResponse]
     }
   }
 
@@ -236,25 +204,13 @@ package pricing {
         NextToken: js.UndefOr[String] = js.undefined,
         ServiceCode: js.UndefOr[String] = js.undefined
     ): GetProductsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Filters" -> Filters.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "FormatVersion" -> FormatVersion.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MaxResults" -> MaxResults.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NextToken" -> NextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ServiceCode" -> ServiceCode.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetProductsRequest]
+      val __obj = js.Dictionary.empty[js.Any]
+      Filters.foreach(__v => __obj.update("Filters", __v.asInstanceOf[js.Any]))
+      FormatVersion.foreach(__v => __obj.update("FormatVersion", __v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      ServiceCode.foreach(__v => __obj.update("ServiceCode", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetProductsRequest]
     }
   }
 
@@ -271,19 +227,11 @@ package pricing {
         NextToken: js.UndefOr[String] = js.undefined,
         PriceList: js.UndefOr[PriceList] = js.undefined
     ): GetProductsResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "FormatVersion" -> FormatVersion.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NextToken" -> NextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "PriceList" -> PriceList.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetProductsResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      FormatVersion.foreach(__v => __obj.update("FormatVersion", __v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      PriceList.foreach(__v => __obj.update("PriceList", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetProductsResponse]
     }
   }
 
@@ -333,16 +281,10 @@ package pricing {
         AttributeNames: js.UndefOr[AttributeNameList] = js.undefined,
         ServiceCode: js.UndefOr[String] = js.undefined
     ): Service = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "AttributeNames" -> AttributeNames.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ServiceCode" -> ServiceCode.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Service]
+      val __obj = js.Dictionary.empty[js.Any]
+      AttributeNames.foreach(__v => __obj.update("AttributeNames", __v.asInstanceOf[js.Any]))
+      ServiceCode.foreach(__v => __obj.update("ServiceCode", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Service]
     }
   }
 }

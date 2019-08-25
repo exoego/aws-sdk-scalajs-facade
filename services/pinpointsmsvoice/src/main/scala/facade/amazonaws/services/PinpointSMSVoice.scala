@@ -84,13 +84,9 @@ package pinpointsmsvoice {
     def apply(
         Text: js.UndefOr[NonEmptyString] = js.undefined
     ): CallInstructionsMessageType = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Text" -> Text.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CallInstructionsMessageType]
+      val __obj = js.Dictionary.empty[js.Any]
+      Text.foreach(__v => __obj.update("Text", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CallInstructionsMessageType]
     }
   }
 
@@ -108,16 +104,10 @@ package pinpointsmsvoice {
         IamRoleArn: js.UndefOr[String] = js.undefined,
         LogGroupArn: js.UndefOr[String] = js.undefined
     ): CloudWatchLogsDestination = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "IamRoleArn" -> IamRoleArn.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "LogGroupArn" -> LogGroupArn.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CloudWatchLogsDestination]
+      val __obj = js.Dictionary.empty[js.Any]
+      IamRoleArn.foreach(__v => __obj.update("IamRoleArn", __v.asInstanceOf[js.Any]))
+      LogGroupArn.foreach(__v => __obj.update("LogGroupArn", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CloudWatchLogsDestination]
     }
   }
 
@@ -137,19 +127,13 @@ package pinpointsmsvoice {
         EventDestination: js.UndefOr[EventDestinationDefinition] = js.undefined,
         EventDestinationName: js.UndefOr[NonEmptyString] = js.undefined
     ): CreateConfigurationSetEventDestinationRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ConfigurationSetName" -> ConfigurationSetName.asInstanceOf[js.Any],
-        "EventDestination" -> EventDestination.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "EventDestinationName" -> EventDestinationName.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "ConfigurationSetName" -> ConfigurationSetName.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal
-        .applyDynamicNamed("apply")(_fields: _*)
-        .asInstanceOf[CreateConfigurationSetEventDestinationRequest]
+      EventDestination.foreach(__v => __obj.update("EventDestination", __v.asInstanceOf[js.Any]))
+      EventDestinationName.foreach(__v => __obj.update("EventDestinationName", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateConfigurationSetEventDestinationRequest]
     }
   }
 
@@ -162,12 +146,9 @@ package pinpointsmsvoice {
   object CreateConfigurationSetEventDestinationResponse {
     def apply(
         ): CreateConfigurationSetEventDestinationResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary.empty[js.Any]
 
-      js.Dynamic.literal
-        .applyDynamicNamed("apply")(_fields: _*)
-        .asInstanceOf[CreateConfigurationSetEventDestinationResponse]
+      __obj.asInstanceOf[CreateConfigurationSetEventDestinationResponse]
     }
   }
 
@@ -183,13 +164,9 @@ package pinpointsmsvoice {
     def apply(
         ConfigurationSetName: js.UndefOr[WordCharactersWithDelimiters] = js.undefined
     ): CreateConfigurationSetRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ConfigurationSetName" -> ConfigurationSetName.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateConfigurationSetRequest]
+      val __obj = js.Dictionary.empty[js.Any]
+      ConfigurationSetName.foreach(__v => __obj.update("ConfigurationSetName", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateConfigurationSetRequest]
     }
   }
 
@@ -202,10 +179,9 @@ package pinpointsmsvoice {
   object CreateConfigurationSetResponse {
     def apply(
         ): CreateConfigurationSetResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary.empty[js.Any]
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateConfigurationSetResponse]
+      __obj.asInstanceOf[CreateConfigurationSetResponse]
     }
   }
 
@@ -220,14 +196,12 @@ package pinpointsmsvoice {
         ConfigurationSetName: __string,
         EventDestinationName: __string
     ): DeleteConfigurationSetEventDestinationRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ConfigurationSetName" -> ConfigurationSetName.asInstanceOf[js.Any],
         "EventDestinationName" -> EventDestinationName.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal
-        .applyDynamicNamed("apply")(_fields: _*)
-        .asInstanceOf[DeleteConfigurationSetEventDestinationRequest]
+      __obj.asInstanceOf[DeleteConfigurationSetEventDestinationRequest]
     }
   }
 
@@ -240,12 +214,9 @@ package pinpointsmsvoice {
   object DeleteConfigurationSetEventDestinationResponse {
     def apply(
         ): DeleteConfigurationSetEventDestinationResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary.empty[js.Any]
 
-      js.Dynamic.literal
-        .applyDynamicNamed("apply")(_fields: _*)
-        .asInstanceOf[DeleteConfigurationSetEventDestinationResponse]
+      __obj.asInstanceOf[DeleteConfigurationSetEventDestinationResponse]
     }
   }
 
@@ -258,11 +229,11 @@ package pinpointsmsvoice {
     def apply(
         ConfigurationSetName: __string
     ): DeleteConfigurationSetRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ConfigurationSetName" -> ConfigurationSetName.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteConfigurationSetRequest]
+      __obj.asInstanceOf[DeleteConfigurationSetRequest]
     }
   }
 
@@ -275,10 +246,9 @@ package pinpointsmsvoice {
   object DeleteConfigurationSetResponse {
     def apply(
         ): DeleteConfigurationSetResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary.empty[js.Any]
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteConfigurationSetResponse]
+      __obj.asInstanceOf[DeleteConfigurationSetResponse]
     }
   }
 
@@ -304,28 +274,14 @@ package pinpointsmsvoice {
         Name: js.UndefOr[String] = js.undefined,
         SnsDestination: js.UndefOr[SnsDestination] = js.undefined
     ): EventDestination = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "CloudWatchLogsDestination" -> CloudWatchLogsDestination.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Enabled" -> Enabled.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "KinesisFirehoseDestination" -> KinesisFirehoseDestination.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MatchingEventTypes" -> MatchingEventTypes.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Name" -> Name.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SnsDestination" -> SnsDestination.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[EventDestination]
+      val __obj = js.Dictionary.empty[js.Any]
+      CloudWatchLogsDestination.foreach(__v => __obj.update("CloudWatchLogsDestination", __v.asInstanceOf[js.Any]))
+      Enabled.foreach(__v => __obj.update("Enabled", __v.asInstanceOf[js.Any]))
+      KinesisFirehoseDestination.foreach(__v => __obj.update("KinesisFirehoseDestination", __v.asInstanceOf[js.Any]))
+      MatchingEventTypes.foreach(__v => __obj.update("MatchingEventTypes", __v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
+      SnsDestination.foreach(__v => __obj.update("SnsDestination", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[EventDestination]
     }
   }
 
@@ -349,25 +305,13 @@ package pinpointsmsvoice {
         MatchingEventTypes: js.UndefOr[EventTypes] = js.undefined,
         SnsDestination: js.UndefOr[SnsDestination] = js.undefined
     ): EventDestinationDefinition = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "CloudWatchLogsDestination" -> CloudWatchLogsDestination.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Enabled" -> Enabled.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "KinesisFirehoseDestination" -> KinesisFirehoseDestination.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MatchingEventTypes" -> MatchingEventTypes.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SnsDestination" -> SnsDestination.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[EventDestinationDefinition]
+      val __obj = js.Dictionary.empty[js.Any]
+      CloudWatchLogsDestination.foreach(__v => __obj.update("CloudWatchLogsDestination", __v.asInstanceOf[js.Any]))
+      Enabled.foreach(__v => __obj.update("Enabled", __v.asInstanceOf[js.Any]))
+      KinesisFirehoseDestination.foreach(__v => __obj.update("KinesisFirehoseDestination", __v.asInstanceOf[js.Any]))
+      MatchingEventTypes.foreach(__v => __obj.update("MatchingEventTypes", __v.asInstanceOf[js.Any]))
+      SnsDestination.foreach(__v => __obj.update("SnsDestination", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[EventDestinationDefinition]
     }
   }
 
@@ -395,13 +339,11 @@ package pinpointsmsvoice {
     def apply(
         ConfigurationSetName: __string
     ): GetConfigurationSetEventDestinationsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ConfigurationSetName" -> ConfigurationSetName.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal
-        .applyDynamicNamed("apply")(_fields: _*)
-        .asInstanceOf[GetConfigurationSetEventDestinationsRequest]
+      __obj.asInstanceOf[GetConfigurationSetEventDestinationsRequest]
     }
   }
 
@@ -417,15 +359,9 @@ package pinpointsmsvoice {
     def apply(
         EventDestinations: js.UndefOr[EventDestinations] = js.undefined
     ): GetConfigurationSetEventDestinationsResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "EventDestinations" -> EventDestinations.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal
-        .applyDynamicNamed("apply")(_fields: _*)
-        .asInstanceOf[GetConfigurationSetEventDestinationsResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      EventDestinations.foreach(__v => __obj.update("EventDestinations", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetConfigurationSetEventDestinationsResponse]
     }
   }
 
@@ -443,16 +379,10 @@ package pinpointsmsvoice {
         DeliveryStreamArn: js.UndefOr[String] = js.undefined,
         IamRoleArn: js.UndefOr[String] = js.undefined
     ): KinesisFirehoseDestination = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "DeliveryStreamArn" -> DeliveryStreamArn.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "IamRoleArn" -> IamRoleArn.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[KinesisFirehoseDestination]
+      val __obj = js.Dictionary.empty[js.Any]
+      DeliveryStreamArn.foreach(__v => __obj.update("DeliveryStreamArn", __v.asInstanceOf[js.Any]))
+      IamRoleArn.foreach(__v => __obj.update("IamRoleArn", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[KinesisFirehoseDestination]
     }
   }
 
@@ -467,16 +397,10 @@ package pinpointsmsvoice {
         NextToken: js.UndefOr[__string] = js.undefined,
         PageSize: js.UndefOr[__string] = js.undefined
     ): ListConfigurationSetsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "NextToken" -> NextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "PageSize" -> PageSize.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListConfigurationSetsRequest]
+      val __obj = js.Dictionary.empty[js.Any]
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      PageSize.foreach(__v => __obj.update("PageSize", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListConfigurationSetsRequest]
     }
   }
 
@@ -494,16 +418,10 @@ package pinpointsmsvoice {
         ConfigurationSets: js.UndefOr[ConfigurationSets] = js.undefined,
         NextToken: js.UndefOr[NextTokenString] = js.undefined
     ): ListConfigurationSetsResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ConfigurationSets" -> ConfigurationSets.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NextToken" -> NextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListConfigurationSetsResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      ConfigurationSets.foreach(__v => __obj.update("ConfigurationSets", __v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListConfigurationSetsResponse]
     }
   }
 
@@ -523,19 +441,11 @@ package pinpointsmsvoice {
         Text: js.UndefOr[NonEmptyString] = js.undefined,
         VoiceId: js.UndefOr[String] = js.undefined
     ): PlainTextMessageType = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "LanguageCode" -> LanguageCode.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Text" -> Text.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "VoiceId" -> VoiceId.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PlainTextMessageType]
+      val __obj = js.Dictionary.empty[js.Any]
+      LanguageCode.foreach(__v => __obj.update("LanguageCode", __v.asInstanceOf[js.Any]))
+      Text.foreach(__v => __obj.update("Text", __v.asInstanceOf[js.Any]))
+      VoiceId.foreach(__v => __obj.update("VoiceId", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PlainTextMessageType]
     }
   }
 
@@ -555,19 +465,11 @@ package pinpointsmsvoice {
         Text: js.UndefOr[NonEmptyString] = js.undefined,
         VoiceId: js.UndefOr[String] = js.undefined
     ): SSMLMessageType = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "LanguageCode" -> LanguageCode.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Text" -> Text.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "VoiceId" -> VoiceId.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SSMLMessageType]
+      val __obj = js.Dictionary.empty[js.Any]
+      LanguageCode.foreach(__v => __obj.update("LanguageCode", __v.asInstanceOf[js.Any]))
+      Text.foreach(__v => __obj.update("Text", __v.asInstanceOf[js.Any]))
+      VoiceId.foreach(__v => __obj.update("VoiceId", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[SSMLMessageType]
     }
   }
 
@@ -591,25 +493,13 @@ package pinpointsmsvoice {
         DestinationPhoneNumber: js.UndefOr[NonEmptyString] = js.undefined,
         OriginationPhoneNumber: js.UndefOr[NonEmptyString] = js.undefined
     ): SendVoiceMessageRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "CallerId" -> CallerId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ConfigurationSetName" -> ConfigurationSetName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Content" -> Content.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DestinationPhoneNumber" -> DestinationPhoneNumber.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "OriginationPhoneNumber" -> OriginationPhoneNumber.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SendVoiceMessageRequest]
+      val __obj = js.Dictionary.empty[js.Any]
+      CallerId.foreach(__v => __obj.update("CallerId", __v.asInstanceOf[js.Any]))
+      ConfigurationSetName.foreach(__v => __obj.update("ConfigurationSetName", __v.asInstanceOf[js.Any]))
+      Content.foreach(__v => __obj.update("Content", __v.asInstanceOf[js.Any]))
+      DestinationPhoneNumber.foreach(__v => __obj.update("DestinationPhoneNumber", __v.asInstanceOf[js.Any]))
+      OriginationPhoneNumber.foreach(__v => __obj.update("OriginationPhoneNumber", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[SendVoiceMessageRequest]
     }
   }
 
@@ -625,13 +515,9 @@ package pinpointsmsvoice {
     def apply(
         MessageId: js.UndefOr[String] = js.undefined
     ): SendVoiceMessageResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "MessageId" -> MessageId.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SendVoiceMessageResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      MessageId.foreach(__v => __obj.update("MessageId", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[SendVoiceMessageResponse]
     }
   }
 
@@ -647,13 +533,9 @@ package pinpointsmsvoice {
     def apply(
         TopicArn: js.UndefOr[String] = js.undefined
     ): SnsDestination = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "TopicArn" -> TopicArn.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SnsDestination]
+      val __obj = js.Dictionary.empty[js.Any]
+      TopicArn.foreach(__v => __obj.update("TopicArn", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[SnsDestination]
     }
   }
 
@@ -673,17 +555,13 @@ package pinpointsmsvoice {
         EventDestinationName: __string,
         EventDestination: js.UndefOr[EventDestinationDefinition] = js.undefined
     ): UpdateConfigurationSetEventDestinationRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ConfigurationSetName" -> ConfigurationSetName.asInstanceOf[js.Any],
-        "EventDestinationName" -> EventDestinationName.asInstanceOf[js.Any],
-        "EventDestination" -> EventDestination.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "EventDestinationName" -> EventDestinationName.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal
-        .applyDynamicNamed("apply")(_fields: _*)
-        .asInstanceOf[UpdateConfigurationSetEventDestinationRequest]
+      EventDestination.foreach(__v => __obj.update("EventDestination", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateConfigurationSetEventDestinationRequest]
     }
   }
 
@@ -696,12 +574,9 @@ package pinpointsmsvoice {
   object UpdateConfigurationSetEventDestinationResponse {
     def apply(
         ): UpdateConfigurationSetEventDestinationResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary.empty[js.Any]
 
-      js.Dynamic.literal
-        .applyDynamicNamed("apply")(_fields: _*)
-        .asInstanceOf[UpdateConfigurationSetEventDestinationResponse]
+      __obj.asInstanceOf[UpdateConfigurationSetEventDestinationResponse]
     }
   }
 
@@ -721,19 +596,11 @@ package pinpointsmsvoice {
         PlainTextMessage: js.UndefOr[PlainTextMessageType] = js.undefined,
         SSMLMessage: js.UndefOr[SSMLMessageType] = js.undefined
     ): VoiceMessageContent = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "CallInstructionsMessage" -> CallInstructionsMessage.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "PlainTextMessage" -> PlainTextMessage.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SSMLMessage" -> SSMLMessage.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[VoiceMessageContent]
+      val __obj = js.Dictionary.empty[js.Any]
+      CallInstructionsMessage.foreach(__v => __obj.update("CallInstructionsMessage", __v.asInstanceOf[js.Any]))
+      PlainTextMessage.foreach(__v => __obj.update("PlainTextMessage", __v.asInstanceOf[js.Any]))
+      SSMLMessage.foreach(__v => __obj.update("SSMLMessage", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[VoiceMessageContent]
     }
   }
 }

@@ -54,25 +54,13 @@ package marketplaceentitlementservice {
         ProductCode: js.UndefOr[ProductCode] = js.undefined,
         Value: js.UndefOr[EntitlementValue] = js.undefined
     ): Entitlement = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "CustomerIdentifier" -> CustomerIdentifier.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Dimension" -> Dimension.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ExpirationDate" -> ExpirationDate.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ProductCode" -> ProductCode.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Value" -> Value.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Entitlement]
+      val __obj = js.Dictionary.empty[js.Any]
+      CustomerIdentifier.foreach(__v => __obj.update("CustomerIdentifier", __v.asInstanceOf[js.Any]))
+      Dimension.foreach(__v => __obj.update("Dimension", __v.asInstanceOf[js.Any]))
+      ExpirationDate.foreach(__v => __obj.update("ExpirationDate", __v.asInstanceOf[js.Any]))
+      ProductCode.foreach(__v => __obj.update("ProductCode", __v.asInstanceOf[js.Any]))
+      Value.foreach(__v => __obj.update("Value", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Entitlement]
     }
   }
 
@@ -94,22 +82,12 @@ package marketplaceentitlementservice {
         IntegerValue: js.UndefOr[Int] = js.undefined,
         StringValue: js.UndefOr[String] = js.undefined
     ): EntitlementValue = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "BooleanValue" -> BooleanValue.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DoubleValue" -> DoubleValue.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "IntegerValue" -> IntegerValue.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "StringValue" -> StringValue.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[EntitlementValue]
+      val __obj = js.Dictionary.empty[js.Any]
+      BooleanValue.foreach(__v => __obj.update("BooleanValue", __v.asInstanceOf[js.Any]))
+      DoubleValue.foreach(__v => __obj.update("DoubleValue", __v.asInstanceOf[js.Any]))
+      IntegerValue.foreach(__v => __obj.update("IntegerValue", __v.asInstanceOf[js.Any]))
+      StringValue.foreach(__v => __obj.update("StringValue", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[EntitlementValue]
     }
   }
 
@@ -138,20 +116,14 @@ package marketplaceentitlementservice {
         MaxResults: js.UndefOr[Int] = js.undefined,
         NextToken: js.UndefOr[NonEmptyString] = js.undefined
     ): GetEntitlementsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ProductCode" -> ProductCode.asInstanceOf[js.Any],
-        "Filter" -> Filter.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MaxResults" -> MaxResults.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NextToken" -> NextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "ProductCode" -> ProductCode.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetEntitlementsRequest]
+      Filter.foreach(__v => __obj.update("Filter", __v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetEntitlementsRequest]
     }
   }
 
@@ -169,16 +141,10 @@ package marketplaceentitlementservice {
         Entitlements: js.UndefOr[EntitlementList] = js.undefined,
         NextToken: js.UndefOr[NonEmptyString] = js.undefined
     ): GetEntitlementsResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Entitlements" -> Entitlements.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NextToken" -> NextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetEntitlementsResult]
+      val __obj = js.Dictionary.empty[js.Any]
+      Entitlements.foreach(__v => __obj.update("Entitlements", __v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetEntitlementsResult]
     }
   }
 

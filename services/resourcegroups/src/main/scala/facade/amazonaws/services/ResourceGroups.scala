@@ -96,18 +96,14 @@ package resourcegroups {
         Description: js.UndefOr[GroupDescription] = js.undefined,
         Tags: js.UndefOr[Tags] = js.undefined
     ): CreateGroupInput = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "Name"          -> Name.asInstanceOf[js.Any],
-        "ResourceQuery" -> ResourceQuery.asInstanceOf[js.Any],
-        "Description" -> Description.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Tags" -> Tags.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "ResourceQuery" -> ResourceQuery.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateGroupInput]
+      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateGroupInput]
     }
   }
 
@@ -124,19 +120,11 @@ package resourcegroups {
         ResourceQuery: js.UndefOr[ResourceQuery] = js.undefined,
         Tags: js.UndefOr[Tags] = js.undefined
     ): CreateGroupOutput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Group" -> Group.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ResourceQuery" -> ResourceQuery.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Tags" -> Tags.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateGroupOutput]
+      val __obj = js.Dictionary.empty[js.Any]
+      Group.foreach(__v => __obj.update("Group", __v.asInstanceOf[js.Any]))
+      ResourceQuery.foreach(__v => __obj.update("ResourceQuery", __v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateGroupOutput]
     }
   }
 
@@ -149,11 +137,11 @@ package resourcegroups {
     def apply(
         GroupName: GroupName
     ): DeleteGroupInput = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "GroupName" -> GroupName.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteGroupInput]
+      __obj.asInstanceOf[DeleteGroupInput]
     }
   }
 
@@ -166,13 +154,9 @@ package resourcegroups {
     def apply(
         Group: js.UndefOr[Group] = js.undefined
     ): DeleteGroupOutput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Group" -> Group.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteGroupOutput]
+      val __obj = js.Dictionary.empty[js.Any]
+      Group.foreach(__v => __obj.update("Group", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DeleteGroupOutput]
     }
   }
 
@@ -185,11 +169,11 @@ package resourcegroups {
     def apply(
         GroupName: GroupName
     ): GetGroupInput = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "GroupName" -> GroupName.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetGroupInput]
+      __obj.asInstanceOf[GetGroupInput]
     }
   }
 
@@ -202,13 +186,9 @@ package resourcegroups {
     def apply(
         Group: js.UndefOr[Group] = js.undefined
     ): GetGroupOutput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Group" -> Group.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetGroupOutput]
+      val __obj = js.Dictionary.empty[js.Any]
+      Group.foreach(__v => __obj.update("Group", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetGroupOutput]
     }
   }
 
@@ -221,11 +201,11 @@ package resourcegroups {
     def apply(
         GroupName: GroupName
     ): GetGroupQueryInput = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "GroupName" -> GroupName.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetGroupQueryInput]
+      __obj.asInstanceOf[GetGroupQueryInput]
     }
   }
 
@@ -238,13 +218,9 @@ package resourcegroups {
     def apply(
         GroupQuery: js.UndefOr[GroupQuery] = js.undefined
     ): GetGroupQueryOutput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "GroupQuery" -> GroupQuery.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetGroupQueryOutput]
+      val __obj = js.Dictionary.empty[js.Any]
+      GroupQuery.foreach(__v => __obj.update("GroupQuery", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetGroupQueryOutput]
     }
   }
 
@@ -257,11 +233,11 @@ package resourcegroups {
     def apply(
         Arn: GroupArn
     ): GetTagsInput = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "Arn" -> Arn.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetTagsInput]
+      __obj.asInstanceOf[GetTagsInput]
     }
   }
 
@@ -276,16 +252,10 @@ package resourcegroups {
         Arn: js.UndefOr[GroupArn] = js.undefined,
         Tags: js.UndefOr[Tags] = js.undefined
     ): GetTagsOutput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Arn" -> Arn.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Tags" -> Tags.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetTagsOutput]
+      val __obj = js.Dictionary.empty[js.Any]
+      Arn.foreach(__v => __obj.update("Arn", __v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetTagsOutput]
     }
   }
 
@@ -305,15 +275,13 @@ package resourcegroups {
         Name: GroupName,
         Description: js.UndefOr[GroupDescription] = js.undefined
     ): Group = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "GroupArn" -> GroupArn.asInstanceOf[js.Any],
-        "Name"     -> Name.asInstanceOf[js.Any],
-        "Description" -> Description.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "Name"     -> Name.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Group]
+      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Group]
     }
   }
 
@@ -331,12 +299,12 @@ package resourcegroups {
         Name: GroupFilterName,
         Values: GroupFilterValues
     ): GroupFilter = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "Name"   -> Name.asInstanceOf[js.Any],
         "Values" -> Values.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GroupFilter]
+      __obj.asInstanceOf[GroupFilter]
     }
   }
 
@@ -360,16 +328,10 @@ package resourcegroups {
         GroupArn: js.UndefOr[GroupArn] = js.undefined,
         GroupName: js.UndefOr[GroupName] = js.undefined
     ): GroupIdentifier = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "GroupArn" -> GroupArn.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "GroupName" -> GroupName.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GroupIdentifier]
+      val __obj = js.Dictionary.empty[js.Any]
+      GroupArn.foreach(__v => __obj.update("GroupArn", __v.asInstanceOf[js.Any]))
+      GroupName.foreach(__v => __obj.update("GroupName", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GroupIdentifier]
     }
   }
 
@@ -387,12 +349,12 @@ package resourcegroups {
         GroupName: GroupName,
         ResourceQuery: ResourceQuery
     ): GroupQuery = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "GroupName"     -> GroupName.asInstanceOf[js.Any],
         "ResourceQuery" -> ResourceQuery.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GroupQuery]
+      __obj.asInstanceOf[GroupQuery]
     }
   }
 
@@ -411,20 +373,14 @@ package resourcegroups {
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): ListGroupResourcesInput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "GroupName" -> GroupName.asInstanceOf[js.Any],
-        "Filters" -> Filters.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MaxResults" -> MaxResults.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NextToken" -> NextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "GroupName" -> GroupName.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListGroupResourcesInput]
+      Filters.foreach(__v => __obj.update("Filters", __v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListGroupResourcesInput]
     }
   }
 
@@ -441,19 +397,11 @@ package resourcegroups {
         QueryErrors: js.UndefOr[QueryErrorList] = js.undefined,
         ResourceIdentifiers: js.UndefOr[ResourceIdentifierList] = js.undefined
     ): ListGroupResourcesOutput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "NextToken" -> NextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "QueryErrors" -> QueryErrors.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ResourceIdentifiers" -> ResourceIdentifiers.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListGroupResourcesOutput]
+      val __obj = js.Dictionary.empty[js.Any]
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      QueryErrors.foreach(__v => __obj.update("QueryErrors", __v.asInstanceOf[js.Any]))
+      ResourceIdentifiers.foreach(__v => __obj.update("ResourceIdentifiers", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListGroupResourcesOutput]
     }
   }
 
@@ -470,19 +418,11 @@ package resourcegroups {
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): ListGroupsInput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Filters" -> Filters.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MaxResults" -> MaxResults.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NextToken" -> NextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListGroupsInput]
+      val __obj = js.Dictionary.empty[js.Any]
+      Filters.foreach(__v => __obj.update("Filters", __v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListGroupsInput]
     }
   }
 
@@ -499,19 +439,11 @@ package resourcegroups {
         Groups: js.UndefOr[GroupList] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): ListGroupsOutput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "GroupIdentifiers" -> GroupIdentifiers.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Groups" -> Groups.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NextToken" -> NextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListGroupsOutput]
+      val __obj = js.Dictionary.empty[js.Any]
+      GroupIdentifiers.foreach(__v => __obj.update("GroupIdentifiers", __v.asInstanceOf[js.Any]))
+      Groups.foreach(__v => __obj.update("Groups", __v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListGroupsOutput]
     }
   }
 
@@ -529,16 +461,10 @@ package resourcegroups {
         ErrorCode: js.UndefOr[QueryErrorCode] = js.undefined,
         Message: js.UndefOr[QueryErrorMessage] = js.undefined
     ): QueryError = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ErrorCode" -> ErrorCode.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Message" -> Message.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[QueryError]
+      val __obj = js.Dictionary.empty[js.Any]
+      ErrorCode.foreach(__v => __obj.update("ErrorCode", __v.asInstanceOf[js.Any]))
+      Message.foreach(__v => __obj.update("Message", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[QueryError]
     }
   }
 
@@ -570,12 +496,12 @@ package resourcegroups {
         Name: ResourceFilterName,
         Values: ResourceFilterValues
     ): ResourceFilter = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "Name"   -> Name.asInstanceOf[js.Any],
         "Values" -> Values.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ResourceFilter]
+      __obj.asInstanceOf[ResourceFilter]
     }
   }
 
@@ -599,16 +525,10 @@ package resourcegroups {
         ResourceArn: js.UndefOr[ResourceArn] = js.undefined,
         ResourceType: js.UndefOr[ResourceType] = js.undefined
     ): ResourceIdentifier = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ResourceArn" -> ResourceArn.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ResourceType" -> ResourceType.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ResourceIdentifier]
+      val __obj = js.Dictionary.empty[js.Any]
+      ResourceArn.foreach(__v => __obj.update("ResourceArn", __v.asInstanceOf[js.Any]))
+      ResourceType.foreach(__v => __obj.update("ResourceType", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ResourceIdentifier]
     }
   }
 
@@ -626,12 +546,12 @@ package resourcegroups {
         Query: Query,
         Type: QueryType
     ): ResourceQuery = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "Query" -> Query.asInstanceOf[js.Any],
         "Type"  -> Type.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ResourceQuery]
+      __obj.asInstanceOf[ResourceQuery]
     }
   }
 
@@ -648,17 +568,13 @@ package resourcegroups {
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): SearchResourcesInput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ResourceQuery" -> ResourceQuery.asInstanceOf[js.Any],
-        "MaxResults" -> MaxResults.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NextToken" -> NextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "ResourceQuery" -> ResourceQuery.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SearchResourcesInput]
+      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[SearchResourcesInput]
     }
   }
 
@@ -675,19 +591,11 @@ package resourcegroups {
         QueryErrors: js.UndefOr[QueryErrorList] = js.undefined,
         ResourceIdentifiers: js.UndefOr[ResourceIdentifierList] = js.undefined
     ): SearchResourcesOutput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "NextToken" -> NextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "QueryErrors" -> QueryErrors.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ResourceIdentifiers" -> ResourceIdentifiers.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SearchResourcesOutput]
+      val __obj = js.Dictionary.empty[js.Any]
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      QueryErrors.foreach(__v => __obj.update("QueryErrors", __v.asInstanceOf[js.Any]))
+      ResourceIdentifiers.foreach(__v => __obj.update("ResourceIdentifiers", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[SearchResourcesOutput]
     }
   }
 
@@ -702,12 +610,12 @@ package resourcegroups {
         Arn: GroupArn,
         Tags: Tags
     ): TagInput = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "Arn"  -> Arn.asInstanceOf[js.Any],
         "Tags" -> Tags.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[TagInput]
+      __obj.asInstanceOf[TagInput]
     }
   }
 
@@ -722,16 +630,10 @@ package resourcegroups {
         Arn: js.UndefOr[GroupArn] = js.undefined,
         Tags: js.UndefOr[Tags] = js.undefined
     ): TagOutput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Arn" -> Arn.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Tags" -> Tags.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[TagOutput]
+      val __obj = js.Dictionary.empty[js.Any]
+      Arn.foreach(__v => __obj.update("Arn", __v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[TagOutput]
     }
   }
 
@@ -746,12 +648,12 @@ package resourcegroups {
         Arn: GroupArn,
         Keys: TagKeyList
     ): UntagInput = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "Arn"  -> Arn.asInstanceOf[js.Any],
         "Keys" -> Keys.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UntagInput]
+      __obj.asInstanceOf[UntagInput]
     }
   }
 
@@ -766,16 +668,10 @@ package resourcegroups {
         Arn: js.UndefOr[GroupArn] = js.undefined,
         Keys: js.UndefOr[TagKeyList] = js.undefined
     ): UntagOutput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Arn" -> Arn.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Keys" -> Keys.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UntagOutput]
+      val __obj = js.Dictionary.empty[js.Any]
+      Arn.foreach(__v => __obj.update("Arn", __v.asInstanceOf[js.Any]))
+      Keys.foreach(__v => __obj.update("Keys", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UntagOutput]
     }
   }
 
@@ -790,14 +686,12 @@ package resourcegroups {
         GroupName: GroupName,
         Description: js.UndefOr[GroupDescription] = js.undefined
     ): UpdateGroupInput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "GroupName" -> GroupName.asInstanceOf[js.Any],
-        "Description" -> Description.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "GroupName" -> GroupName.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateGroupInput]
+      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateGroupInput]
     }
   }
 
@@ -810,13 +704,9 @@ package resourcegroups {
     def apply(
         Group: js.UndefOr[Group] = js.undefined
     ): UpdateGroupOutput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Group" -> Group.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateGroupOutput]
+      val __obj = js.Dictionary.empty[js.Any]
+      Group.foreach(__v => __obj.update("Group", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateGroupOutput]
     }
   }
 
@@ -831,12 +721,12 @@ package resourcegroups {
         GroupName: GroupName,
         ResourceQuery: ResourceQuery
     ): UpdateGroupQueryInput = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "GroupName"     -> GroupName.asInstanceOf[js.Any],
         "ResourceQuery" -> ResourceQuery.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateGroupQueryInput]
+      __obj.asInstanceOf[UpdateGroupQueryInput]
     }
   }
 
@@ -849,13 +739,9 @@ package resourcegroups {
     def apply(
         GroupQuery: js.UndefOr[GroupQuery] = js.undefined
     ): UpdateGroupQueryOutput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "GroupQuery" -> GroupQuery.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateGroupQueryOutput]
+      val __obj = js.Dictionary.empty[js.Any]
+      GroupQuery.foreach(__v => __obj.update("GroupQuery", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateGroupQueryOutput]
     }
   }
 }

@@ -373,16 +373,10 @@ package elasticbeanstalk {
         EnvironmentId: js.UndefOr[EnvironmentId] = js.undefined,
         EnvironmentName: js.UndefOr[EnvironmentName] = js.undefined
     ): AbortEnvironmentUpdateMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "EnvironmentId" -> EnvironmentId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "EnvironmentName" -> EnvironmentName.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AbortEnvironmentUpdateMessage]
+      val __obj = js.Dictionary.empty[js.Any]
+      EnvironmentId.foreach(__v => __obj.update("EnvironmentId", __v.asInstanceOf[js.Any]))
+      EnvironmentName.foreach(__v => __obj.update("EnvironmentName", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AbortEnvironmentUpdateMessage]
     }
   }
 
@@ -437,34 +431,16 @@ package elasticbeanstalk {
         ResourceLifecycleConfig: js.UndefOr[ApplicationResourceLifecycleConfig] = js.undefined,
         Versions: js.UndefOr[VersionLabelsList] = js.undefined
     ): ApplicationDescription = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ApplicationArn" -> ApplicationArn.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ApplicationName" -> ApplicationName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ConfigurationTemplates" -> ConfigurationTemplates.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DateCreated" -> DateCreated.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DateUpdated" -> DateUpdated.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Description" -> Description.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ResourceLifecycleConfig" -> ResourceLifecycleConfig.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Versions" -> Versions.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ApplicationDescription]
+      val __obj = js.Dictionary.empty[js.Any]
+      ApplicationArn.foreach(__v => __obj.update("ApplicationArn", __v.asInstanceOf[js.Any]))
+      ApplicationName.foreach(__v => __obj.update("ApplicationName", __v.asInstanceOf[js.Any]))
+      ConfigurationTemplates.foreach(__v => __obj.update("ConfigurationTemplates", __v.asInstanceOf[js.Any]))
+      DateCreated.foreach(__v => __obj.update("DateCreated", __v.asInstanceOf[js.Any]))
+      DateUpdated.foreach(__v => __obj.update("DateUpdated", __v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
+      ResourceLifecycleConfig.foreach(__v => __obj.update("ResourceLifecycleConfig", __v.asInstanceOf[js.Any]))
+      Versions.foreach(__v => __obj.update("Versions", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ApplicationDescription]
     }
   }
 
@@ -480,13 +456,9 @@ package elasticbeanstalk {
     def apply(
         Application: js.UndefOr[ApplicationDescription] = js.undefined
     ): ApplicationDescriptionMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Application" -> Application.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ApplicationDescriptionMessage]
+      val __obj = js.Dictionary.empty[js.Any]
+      Application.foreach(__v => __obj.update("Application", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ApplicationDescriptionMessage]
     }
   }
 
@@ -502,13 +474,9 @@ package elasticbeanstalk {
     def apply(
         Applications: js.UndefOr[ApplicationDescriptionList] = js.undefined
     ): ApplicationDescriptionsMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Applications" -> Applications.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ApplicationDescriptionsMessage]
+      val __obj = js.Dictionary.empty[js.Any]
+      Applications.foreach(__v => __obj.update("Applications", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ApplicationDescriptionsMessage]
     }
   }
 
@@ -530,22 +498,12 @@ package elasticbeanstalk {
         RequestCount: js.UndefOr[RequestCount] = js.undefined,
         StatusCodes: js.UndefOr[StatusCodes] = js.undefined
     ): ApplicationMetrics = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Duration" -> Duration.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Latency" -> Latency.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "RequestCount" -> RequestCount.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "StatusCodes" -> StatusCodes.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ApplicationMetrics]
+      val __obj = js.Dictionary.empty[js.Any]
+      Duration.foreach(__v => __obj.update("Duration", __v.asInstanceOf[js.Any]))
+      Latency.foreach(__v => __obj.update("Latency", __v.asInstanceOf[js.Any]))
+      RequestCount.foreach(__v => __obj.update("RequestCount", __v.asInstanceOf[js.Any]))
+      StatusCodes.foreach(__v => __obj.update("StatusCodes", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ApplicationMetrics]
     }
   }
 
@@ -563,16 +521,10 @@ package elasticbeanstalk {
         ServiceRole: js.UndefOr[String] = js.undefined,
         VersionLifecycleConfig: js.UndefOr[ApplicationVersionLifecycleConfig] = js.undefined
     ): ApplicationResourceLifecycleConfig = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ServiceRole" -> ServiceRole.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "VersionLifecycleConfig" -> VersionLifecycleConfig.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ApplicationResourceLifecycleConfig]
+      val __obj = js.Dictionary.empty[js.Any]
+      ServiceRole.foreach(__v => __obj.update("ServiceRole", __v.asInstanceOf[js.Any]))
+      VersionLifecycleConfig.foreach(__v => __obj.update("VersionLifecycleConfig", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ApplicationResourceLifecycleConfig]
     }
   }
 
@@ -587,18 +539,10 @@ package elasticbeanstalk {
         ApplicationName: js.UndefOr[ApplicationName] = js.undefined,
         ResourceLifecycleConfig: js.UndefOr[ApplicationResourceLifecycleConfig] = js.undefined
     ): ApplicationResourceLifecycleDescriptionMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ApplicationName" -> ApplicationName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ResourceLifecycleConfig" -> ResourceLifecycleConfig.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal
-        .applyDynamicNamed("apply")(_fields: _*)
-        .asInstanceOf[ApplicationResourceLifecycleDescriptionMessage]
+      val __obj = js.Dictionary.empty[js.Any]
+      ApplicationName.foreach(__v => __obj.update("ApplicationName", __v.asInstanceOf[js.Any]))
+      ResourceLifecycleConfig.foreach(__v => __obj.update("ResourceLifecycleConfig", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ApplicationResourceLifecycleDescriptionMessage]
     }
   }
 
@@ -632,40 +576,18 @@ package elasticbeanstalk {
         Status: js.UndefOr[ApplicationVersionStatus] = js.undefined,
         VersionLabel: js.UndefOr[VersionLabel] = js.undefined
     ): ApplicationVersionDescription = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ApplicationName" -> ApplicationName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ApplicationVersionArn" -> ApplicationVersionArn.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "BuildArn" -> BuildArn.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DateCreated" -> DateCreated.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DateUpdated" -> DateUpdated.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Description" -> Description.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SourceBuildInformation" -> SourceBuildInformation.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SourceBundle" -> SourceBundle.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Status" -> Status.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "VersionLabel" -> VersionLabel.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ApplicationVersionDescription]
+      val __obj = js.Dictionary.empty[js.Any]
+      ApplicationName.foreach(__v => __obj.update("ApplicationName", __v.asInstanceOf[js.Any]))
+      ApplicationVersionArn.foreach(__v => __obj.update("ApplicationVersionArn", __v.asInstanceOf[js.Any]))
+      BuildArn.foreach(__v => __obj.update("BuildArn", __v.asInstanceOf[js.Any]))
+      DateCreated.foreach(__v => __obj.update("DateCreated", __v.asInstanceOf[js.Any]))
+      DateUpdated.foreach(__v => __obj.update("DateUpdated", __v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
+      SourceBuildInformation.foreach(__v => __obj.update("SourceBuildInformation", __v.asInstanceOf[js.Any]))
+      SourceBundle.foreach(__v => __obj.update("SourceBundle", __v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.update("Status", __v.asInstanceOf[js.Any]))
+      VersionLabel.foreach(__v => __obj.update("VersionLabel", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ApplicationVersionDescription]
     }
   }
 
@@ -681,13 +603,9 @@ package elasticbeanstalk {
     def apply(
         ApplicationVersion: js.UndefOr[ApplicationVersionDescription] = js.undefined
     ): ApplicationVersionDescriptionMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ApplicationVersion" -> ApplicationVersion.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ApplicationVersionDescriptionMessage]
+      val __obj = js.Dictionary.empty[js.Any]
+      ApplicationVersion.foreach(__v => __obj.update("ApplicationVersion", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ApplicationVersionDescriptionMessage]
     }
   }
 
@@ -705,16 +623,10 @@ package elasticbeanstalk {
         ApplicationVersions: js.UndefOr[ApplicationVersionDescriptionList] = js.undefined,
         NextToken: js.UndefOr[Token] = js.undefined
     ): ApplicationVersionDescriptionsMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ApplicationVersions" -> ApplicationVersions.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NextToken" -> NextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ApplicationVersionDescriptionsMessage]
+      val __obj = js.Dictionary.empty[js.Any]
+      ApplicationVersions.foreach(__v => __obj.update("ApplicationVersions", __v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ApplicationVersionDescriptionsMessage]
     }
   }
 
@@ -733,16 +645,10 @@ package elasticbeanstalk {
         MaxAgeRule: js.UndefOr[MaxAgeRule] = js.undefined,
         MaxCountRule: js.UndefOr[MaxCountRule] = js.undefined
     ): ApplicationVersionLifecycleConfig = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "MaxAgeRule" -> MaxAgeRule.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MaxCountRule" -> MaxCountRule.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ApplicationVersionLifecycleConfig]
+      val __obj = js.Dictionary.empty[js.Any]
+      MaxAgeRule.foreach(__v => __obj.update("MaxAgeRule", __v.asInstanceOf[js.Any]))
+      MaxCountRule.foreach(__v => __obj.update("MaxCountRule", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ApplicationVersionLifecycleConfig]
     }
   }
 
@@ -772,17 +678,13 @@ package elasticbeanstalk {
         EnvironmentId: js.UndefOr[String] = js.undefined,
         EnvironmentName: js.UndefOr[String] = js.undefined
     ): ApplyEnvironmentManagedActionRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ActionId" -> ActionId.asInstanceOf[js.Any],
-        "EnvironmentId" -> EnvironmentId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "EnvironmentName" -> EnvironmentName.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "ActionId" -> ActionId.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ApplyEnvironmentManagedActionRequest]
+      EnvironmentId.foreach(__v => __obj.update("EnvironmentId", __v.asInstanceOf[js.Any]))
+      EnvironmentName.foreach(__v => __obj.update("EnvironmentName", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ApplyEnvironmentManagedActionRequest]
     }
   }
 
@@ -804,22 +706,12 @@ package elasticbeanstalk {
         ActionType: js.UndefOr[ActionType] = js.undefined,
         Status: js.UndefOr[String] = js.undefined
     ): ApplyEnvironmentManagedActionResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ActionDescription" -> ActionDescription.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ActionId" -> ActionId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ActionType" -> ActionType.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Status" -> Status.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ApplyEnvironmentManagedActionResult]
+      val __obj = js.Dictionary.empty[js.Any]
+      ActionDescription.foreach(__v => __obj.update("ActionDescription", __v.asInstanceOf[js.Any]))
+      ActionId.foreach(__v => __obj.update("ActionId", __v.asInstanceOf[js.Any]))
+      ActionType.foreach(__v => __obj.update("ActionType", __v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.update("Status", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ApplyEnvironmentManagedActionResult]
     }
   }
 
@@ -835,13 +727,9 @@ package elasticbeanstalk {
     def apply(
         Name: js.UndefOr[ResourceId] = js.undefined
     ): AutoScalingGroup = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Name" -> Name.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AutoScalingGroup]
+      val __obj = js.Dictionary.empty[js.Any]
+      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AutoScalingGroup]
     }
   }
 
@@ -865,21 +753,15 @@ package elasticbeanstalk {
         ComputeType: js.UndefOr[ComputeType] = js.undefined,
         TimeoutInMinutes: js.UndefOr[BoxedInt] = js.undefined
     ): BuildConfiguration = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "CodeBuildServiceRole" -> CodeBuildServiceRole.asInstanceOf[js.Any],
-        "Image"                -> Image.asInstanceOf[js.Any],
-        "ArtifactName" -> ArtifactName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ComputeType" -> ComputeType.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "TimeoutInMinutes" -> TimeoutInMinutes.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "Image"                -> Image.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[BuildConfiguration]
+      ArtifactName.foreach(__v => __obj.update("ArtifactName", __v.asInstanceOf[js.Any]))
+      ComputeType.foreach(__v => __obj.update("ComputeType", __v.asInstanceOf[js.Any]))
+      TimeoutInMinutes.foreach(__v => __obj.update("TimeoutInMinutes", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[BuildConfiguration]
     }
   }
 
@@ -895,13 +777,9 @@ package elasticbeanstalk {
     def apply(
         ARN: js.UndefOr[ARN] = js.undefined
     ): Builder = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ARN" -> ARN.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Builder]
+      val __obj = js.Dictionary.empty[js.Any]
+      ARN.foreach(__v => __obj.update("ARN", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Builder]
     }
   }
 
@@ -931,34 +809,16 @@ package elasticbeanstalk {
         System: js.UndefOr[NullableDouble] = js.undefined,
         User: js.UndefOr[NullableDouble] = js.undefined
     ): CPUUtilization = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "IOWait" -> IOWait.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "IRQ" -> IRQ.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Idle" -> Idle.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Nice" -> Nice.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Privileged" -> Privileged.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SoftIRQ" -> SoftIRQ.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "System" -> System.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "User" -> User.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CPUUtilization]
+      val __obj = js.Dictionary.empty[js.Any]
+      IOWait.foreach(__v => __obj.update("IOWait", __v.asInstanceOf[js.Any]))
+      IRQ.foreach(__v => __obj.update("IRQ", __v.asInstanceOf[js.Any]))
+      Idle.foreach(__v => __obj.update("Idle", __v.asInstanceOf[js.Any]))
+      Nice.foreach(__v => __obj.update("Nice", __v.asInstanceOf[js.Any]))
+      Privileged.foreach(__v => __obj.update("Privileged", __v.asInstanceOf[js.Any]))
+      SoftIRQ.foreach(__v => __obj.update("SoftIRQ", __v.asInstanceOf[js.Any]))
+      System.foreach(__v => __obj.update("System", __v.asInstanceOf[js.Any]))
+      User.foreach(__v => __obj.update("User", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CPUUtilization]
     }
   }
 
@@ -974,11 +834,11 @@ package elasticbeanstalk {
     def apply(
         CNAMEPrefix: DNSCnamePrefix
     ): CheckDNSAvailabilityMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "CNAMEPrefix" -> CNAMEPrefix.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CheckDNSAvailabilityMessage]
+      __obj.asInstanceOf[CheckDNSAvailabilityMessage]
     }
   }
 
@@ -996,16 +856,10 @@ package elasticbeanstalk {
         Available: js.UndefOr[CnameAvailability] = js.undefined,
         FullyQualifiedCNAME: js.UndefOr[DNSCname] = js.undefined
     ): CheckDNSAvailabilityResultMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Available" -> Available.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "FullyQualifiedCNAME" -> FullyQualifiedCNAME.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CheckDNSAvailabilityResultMessage]
+      val __obj = js.Dictionary.empty[js.Any]
+      Available.foreach(__v => __obj.update("Available", __v.asInstanceOf[js.Any]))
+      FullyQualifiedCNAME.foreach(__v => __obj.update("FullyQualifiedCNAME", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CheckDNSAvailabilityResultMessage]
     }
   }
 
@@ -1025,19 +879,11 @@ package elasticbeanstalk {
         GroupName: js.UndefOr[GroupName] = js.undefined,
         VersionLabels: js.UndefOr[VersionLabels] = js.undefined
     ): ComposeEnvironmentsMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ApplicationName" -> ApplicationName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "GroupName" -> GroupName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "VersionLabels" -> VersionLabels.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ComposeEnvironmentsMessage]
+      val __obj = js.Dictionary.empty[js.Any]
+      ApplicationName.foreach(__v => __obj.update("ApplicationName", __v.asInstanceOf[js.Any]))
+      GroupName.foreach(__v => __obj.update("GroupName", __v.asInstanceOf[js.Any]))
+      VersionLabels.foreach(__v => __obj.update("VersionLabels", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ComposeEnvironmentsMessage]
     }
   }
 
@@ -1089,43 +935,19 @@ package elasticbeanstalk {
         ValueOptions: js.UndefOr[ConfigurationOptionPossibleValues] = js.undefined,
         ValueType: js.UndefOr[ConfigurationOptionValueType] = js.undefined
     ): ConfigurationOptionDescription = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ChangeSeverity" -> ChangeSeverity.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DefaultValue" -> DefaultValue.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MaxLength" -> MaxLength.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MaxValue" -> MaxValue.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MinValue" -> MinValue.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Name" -> Name.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Namespace" -> Namespace.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Regex" -> Regex.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "UserDefined" -> UserDefined.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ValueOptions" -> ValueOptions.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ValueType" -> ValueType.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ConfigurationOptionDescription]
+      val __obj = js.Dictionary.empty[js.Any]
+      ChangeSeverity.foreach(__v => __obj.update("ChangeSeverity", __v.asInstanceOf[js.Any]))
+      DefaultValue.foreach(__v => __obj.update("DefaultValue", __v.asInstanceOf[js.Any]))
+      MaxLength.foreach(__v => __obj.update("MaxLength", __v.asInstanceOf[js.Any]))
+      MaxValue.foreach(__v => __obj.update("MaxValue", __v.asInstanceOf[js.Any]))
+      MinValue.foreach(__v => __obj.update("MinValue", __v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
+      Namespace.foreach(__v => __obj.update("Namespace", __v.asInstanceOf[js.Any]))
+      Regex.foreach(__v => __obj.update("Regex", __v.asInstanceOf[js.Any]))
+      UserDefined.foreach(__v => __obj.update("UserDefined", __v.asInstanceOf[js.Any]))
+      ValueOptions.foreach(__v => __obj.update("ValueOptions", __v.asInstanceOf[js.Any]))
+      ValueType.foreach(__v => __obj.update("ValueType", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ConfigurationOptionDescription]
     }
   }
 
@@ -1147,22 +969,12 @@ package elasticbeanstalk {
         ResourceName: js.UndefOr[ResourceName] = js.undefined,
         Value: js.UndefOr[ConfigurationOptionValue] = js.undefined
     ): ConfigurationOptionSetting = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Namespace" -> Namespace.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "OptionName" -> OptionName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ResourceName" -> ResourceName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Value" -> Value.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ConfigurationOptionSetting]
+      val __obj = js.Dictionary.empty[js.Any]
+      Namespace.foreach(__v => __obj.update("Namespace", __v.asInstanceOf[js.Any]))
+      OptionName.foreach(__v => __obj.update("OptionName", __v.asInstanceOf[js.Any]))
+      ResourceName.foreach(__v => __obj.update("ResourceName", __v.asInstanceOf[js.Any]))
+      Value.foreach(__v => __obj.update("Value", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ConfigurationOptionSetting]
     }
   }
 
@@ -1189,19 +1001,11 @@ package elasticbeanstalk {
         PlatformArn: js.UndefOr[PlatformArn] = js.undefined,
         SolutionStackName: js.UndefOr[SolutionStackName] = js.undefined
     ): ConfigurationOptionsDescription = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Options" -> Options.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "PlatformArn" -> PlatformArn.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SolutionStackName" -> SolutionStackName.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ConfigurationOptionsDescription]
+      val __obj = js.Dictionary.empty[js.Any]
+      Options.foreach(__v => __obj.update("Options", __v.asInstanceOf[js.Any]))
+      PlatformArn.foreach(__v => __obj.update("PlatformArn", __v.asInstanceOf[js.Any]))
+      SolutionStackName.foreach(__v => __obj.update("SolutionStackName", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ConfigurationOptionsDescription]
     }
   }
 
@@ -1235,40 +1039,18 @@ package elasticbeanstalk {
         SolutionStackName: js.UndefOr[SolutionStackName] = js.undefined,
         TemplateName: js.UndefOr[ConfigurationTemplateName] = js.undefined
     ): ConfigurationSettingsDescription = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ApplicationName" -> ApplicationName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DateCreated" -> DateCreated.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DateUpdated" -> DateUpdated.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DeploymentStatus" -> DeploymentStatus.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Description" -> Description.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "EnvironmentName" -> EnvironmentName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "OptionSettings" -> OptionSettings.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "PlatformArn" -> PlatformArn.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SolutionStackName" -> SolutionStackName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "TemplateName" -> TemplateName.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ConfigurationSettingsDescription]
+      val __obj = js.Dictionary.empty[js.Any]
+      ApplicationName.foreach(__v => __obj.update("ApplicationName", __v.asInstanceOf[js.Any]))
+      DateCreated.foreach(__v => __obj.update("DateCreated", __v.asInstanceOf[js.Any]))
+      DateUpdated.foreach(__v => __obj.update("DateUpdated", __v.asInstanceOf[js.Any]))
+      DeploymentStatus.foreach(__v => __obj.update("DeploymentStatus", __v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
+      EnvironmentName.foreach(__v => __obj.update("EnvironmentName", __v.asInstanceOf[js.Any]))
+      OptionSettings.foreach(__v => __obj.update("OptionSettings", __v.asInstanceOf[js.Any]))
+      PlatformArn.foreach(__v => __obj.update("PlatformArn", __v.asInstanceOf[js.Any]))
+      SolutionStackName.foreach(__v => __obj.update("SolutionStackName", __v.asInstanceOf[js.Any]))
+      TemplateName.foreach(__v => __obj.update("TemplateName", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ConfigurationSettingsDescription]
     }
   }
 
@@ -1284,13 +1066,9 @@ package elasticbeanstalk {
     def apply(
         ConfigurationSettings: js.UndefOr[ConfigurationSettingsDescriptionList] = js.undefined
     ): ConfigurationSettingsDescriptions = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ConfigurationSettings" -> ConfigurationSettings.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ConfigurationSettingsDescriptions]
+      val __obj = js.Dictionary.empty[js.Any]
+      ConfigurationSettings.foreach(__v => __obj.update("ConfigurationSettings", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ConfigurationSettingsDescriptions]
     }
   }
 
@@ -1306,13 +1084,9 @@ package elasticbeanstalk {
     def apply(
         Messages: js.UndefOr[ValidationMessagesList] = js.undefined
     ): ConfigurationSettingsValidationMessages = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Messages" -> Messages.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ConfigurationSettingsValidationMessages]
+      val __obj = js.Dictionary.empty[js.Any]
+      Messages.foreach(__v => __obj.update("Messages", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ConfigurationSettingsValidationMessages]
     }
   }
 
@@ -1334,20 +1108,14 @@ package elasticbeanstalk {
         ResourceLifecycleConfig: js.UndefOr[ApplicationResourceLifecycleConfig] = js.undefined,
         Tags: js.UndefOr[Tags] = js.undefined
     ): CreateApplicationMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ApplicationName" -> ApplicationName.asInstanceOf[js.Any],
-        "Description" -> Description.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ResourceLifecycleConfig" -> ResourceLifecycleConfig.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Tags" -> Tags.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "ApplicationName" -> ApplicationName.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateApplicationMessage]
+      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
+      ResourceLifecycleConfig.foreach(__v => __obj.update("ResourceLifecycleConfig", __v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateApplicationMessage]
     }
   }
 
@@ -1379,33 +1147,19 @@ package elasticbeanstalk {
         SourceBundle: js.UndefOr[S3Location] = js.undefined,
         Tags: js.UndefOr[Tags] = js.undefined
     ): CreateApplicationVersionMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ApplicationName" -> ApplicationName.asInstanceOf[js.Any],
-        "VersionLabel"    -> VersionLabel.asInstanceOf[js.Any],
-        "AutoCreateApplication" -> AutoCreateApplication.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "BuildConfiguration" -> BuildConfiguration.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Description" -> Description.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Process" -> Process.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SourceBuildInformation" -> SourceBuildInformation.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SourceBundle" -> SourceBundle.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Tags" -> Tags.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "VersionLabel"    -> VersionLabel.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateApplicationVersionMessage]
+      AutoCreateApplication.foreach(__v => __obj.update("AutoCreateApplication", __v.asInstanceOf[js.Any]))
+      BuildConfiguration.foreach(__v => __obj.update("BuildConfiguration", __v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
+      Process.foreach(__v => __obj.update("Process", __v.asInstanceOf[js.Any]))
+      SourceBuildInformation.foreach(__v => __obj.update("SourceBuildInformation", __v.asInstanceOf[js.Any]))
+      SourceBundle.foreach(__v => __obj.update("SourceBundle", __v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateApplicationVersionMessage]
     }
   }
 
@@ -1437,33 +1191,19 @@ package elasticbeanstalk {
         SourceConfiguration: js.UndefOr[SourceConfiguration] = js.undefined,
         Tags: js.UndefOr[Tags] = js.undefined
     ): CreateConfigurationTemplateMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ApplicationName" -> ApplicationName.asInstanceOf[js.Any],
-        "TemplateName"    -> TemplateName.asInstanceOf[js.Any],
-        "Description" -> Description.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "EnvironmentId" -> EnvironmentId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "OptionSettings" -> OptionSettings.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "PlatformArn" -> PlatformArn.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SolutionStackName" -> SolutionStackName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SourceConfiguration" -> SourceConfiguration.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Tags" -> Tags.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "TemplateName"    -> TemplateName.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateConfigurationTemplateMessage]
+      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
+      EnvironmentId.foreach(__v => __obj.update("EnvironmentId", __v.asInstanceOf[js.Any]))
+      OptionSettings.foreach(__v => __obj.update("OptionSettings", __v.asInstanceOf[js.Any]))
+      PlatformArn.foreach(__v => __obj.update("PlatformArn", __v.asInstanceOf[js.Any]))
+      SolutionStackName.foreach(__v => __obj.update("SolutionStackName", __v.asInstanceOf[js.Any]))
+      SourceConfiguration.foreach(__v => __obj.update("SourceConfiguration", __v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateConfigurationTemplateMessage]
     }
   }
 
@@ -1503,47 +1243,23 @@ package elasticbeanstalk {
         Tier: js.UndefOr[EnvironmentTier] = js.undefined,
         VersionLabel: js.UndefOr[VersionLabel] = js.undefined
     ): CreateEnvironmentMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ApplicationName" -> ApplicationName.asInstanceOf[js.Any],
-        "CNAMEPrefix" -> CNAMEPrefix.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Description" -> Description.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "EnvironmentName" -> EnvironmentName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "GroupName" -> GroupName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "OptionSettings" -> OptionSettings.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "OptionsToRemove" -> OptionsToRemove.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "PlatformArn" -> PlatformArn.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SolutionStackName" -> SolutionStackName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Tags" -> Tags.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "TemplateName" -> TemplateName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Tier" -> Tier.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "VersionLabel" -> VersionLabel.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "ApplicationName" -> ApplicationName.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateEnvironmentMessage]
+      CNAMEPrefix.foreach(__v => __obj.update("CNAMEPrefix", __v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
+      EnvironmentName.foreach(__v => __obj.update("EnvironmentName", __v.asInstanceOf[js.Any]))
+      GroupName.foreach(__v => __obj.update("GroupName", __v.asInstanceOf[js.Any]))
+      OptionSettings.foreach(__v => __obj.update("OptionSettings", __v.asInstanceOf[js.Any]))
+      OptionsToRemove.foreach(__v => __obj.update("OptionsToRemove", __v.asInstanceOf[js.Any]))
+      PlatformArn.foreach(__v => __obj.update("PlatformArn", __v.asInstanceOf[js.Any]))
+      SolutionStackName.foreach(__v => __obj.update("SolutionStackName", __v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
+      TemplateName.foreach(__v => __obj.update("TemplateName", __v.asInstanceOf[js.Any]))
+      Tier.foreach(__v => __obj.update("Tier", __v.asInstanceOf[js.Any]))
+      VersionLabel.foreach(__v => __obj.update("VersionLabel", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateEnvironmentMessage]
     }
   }
 
@@ -1569,22 +1285,16 @@ package elasticbeanstalk {
         OptionSettings: js.UndefOr[ConfigurationOptionSettingsList] = js.undefined,
         Tags: js.UndefOr[Tags] = js.undefined
     ): CreatePlatformVersionRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "PlatformDefinitionBundle" -> PlatformDefinitionBundle.asInstanceOf[js.Any],
         "PlatformName"             -> PlatformName.asInstanceOf[js.Any],
-        "PlatformVersion"          -> PlatformVersion.asInstanceOf[js.Any],
-        "EnvironmentName" -> EnvironmentName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "OptionSettings" -> OptionSettings.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Tags" -> Tags.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "PlatformVersion"          -> PlatformVersion.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreatePlatformVersionRequest]
+      EnvironmentName.foreach(__v => __obj.update("EnvironmentName", __v.asInstanceOf[js.Any]))
+      OptionSettings.foreach(__v => __obj.update("OptionSettings", __v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreatePlatformVersionRequest]
     }
   }
 
@@ -1599,16 +1309,10 @@ package elasticbeanstalk {
         Builder: js.UndefOr[Builder] = js.undefined,
         PlatformSummary: js.UndefOr[PlatformSummary] = js.undefined
     ): CreatePlatformVersionResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Builder" -> Builder.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "PlatformSummary" -> PlatformSummary.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreatePlatformVersionResult]
+      val __obj = js.Dictionary.empty[js.Any]
+      Builder.foreach(__v => __obj.update("Builder", __v.asInstanceOf[js.Any]))
+      PlatformSummary.foreach(__v => __obj.update("PlatformSummary", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreatePlatformVersionResult]
     }
   }
 
@@ -1624,13 +1328,9 @@ package elasticbeanstalk {
     def apply(
         S3Bucket: js.UndefOr[S3Bucket] = js.undefined
     ): CreateStorageLocationResultMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "S3Bucket" -> S3Bucket.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateStorageLocationResultMessage]
+      val __obj = js.Dictionary.empty[js.Any]
+      S3Bucket.foreach(__v => __obj.update("S3Bucket", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateStorageLocationResultMessage]
     }
   }
 
@@ -1648,16 +1348,10 @@ package elasticbeanstalk {
         ImageId: js.UndefOr[ImageId] = js.undefined,
         VirtualizationType: js.UndefOr[VirtualizationType] = js.undefined
     ): CustomAmi = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ImageId" -> ImageId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "VirtualizationType" -> VirtualizationType.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CustomAmi]
+      val __obj = js.Dictionary.empty[js.Any]
+      ImageId.foreach(__v => __obj.update("ImageId", __v.asInstanceOf[js.Any]))
+      VirtualizationType.foreach(__v => __obj.update("VirtualizationType", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CustomAmi]
     }
   }
 
@@ -1675,14 +1369,12 @@ package elasticbeanstalk {
         ApplicationName: ApplicationName,
         TerminateEnvByForce: js.UndefOr[TerminateEnvForce] = js.undefined
     ): DeleteApplicationMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ApplicationName" -> ApplicationName.asInstanceOf[js.Any],
-        "TerminateEnvByForce" -> TerminateEnvByForce.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "ApplicationName" -> ApplicationName.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteApplicationMessage]
+      TerminateEnvByForce.foreach(__v => __obj.update("TerminateEnvByForce", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DeleteApplicationMessage]
     }
   }
 
@@ -1702,15 +1394,13 @@ package elasticbeanstalk {
         VersionLabel: VersionLabel,
         DeleteSourceBundle: js.UndefOr[DeleteSourceBundle] = js.undefined
     ): DeleteApplicationVersionMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ApplicationName" -> ApplicationName.asInstanceOf[js.Any],
-        "VersionLabel"    -> VersionLabel.asInstanceOf[js.Any],
-        "DeleteSourceBundle" -> DeleteSourceBundle.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "VersionLabel"    -> VersionLabel.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteApplicationVersionMessage]
+      DeleteSourceBundle.foreach(__v => __obj.update("DeleteSourceBundle", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DeleteApplicationVersionMessage]
     }
   }
 
@@ -1728,12 +1418,12 @@ package elasticbeanstalk {
         ApplicationName: ApplicationName,
         TemplateName: ConfigurationTemplateName
     ): DeleteConfigurationTemplateMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ApplicationName" -> ApplicationName.asInstanceOf[js.Any],
         "TemplateName"    -> TemplateName.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteConfigurationTemplateMessage]
+      __obj.asInstanceOf[DeleteConfigurationTemplateMessage]
     }
   }
 
@@ -1751,12 +1441,12 @@ package elasticbeanstalk {
         ApplicationName: ApplicationName,
         EnvironmentName: EnvironmentName
     ): DeleteEnvironmentConfigurationMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ApplicationName" -> ApplicationName.asInstanceOf[js.Any],
         "EnvironmentName" -> EnvironmentName.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteEnvironmentConfigurationMessage]
+      __obj.asInstanceOf[DeleteEnvironmentConfigurationMessage]
     }
   }
 
@@ -1769,13 +1459,9 @@ package elasticbeanstalk {
     def apply(
         PlatformArn: js.UndefOr[PlatformArn] = js.undefined
     ): DeletePlatformVersionRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "PlatformArn" -> PlatformArn.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeletePlatformVersionRequest]
+      val __obj = js.Dictionary.empty[js.Any]
+      PlatformArn.foreach(__v => __obj.update("PlatformArn", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DeletePlatformVersionRequest]
     }
   }
 
@@ -1788,13 +1474,9 @@ package elasticbeanstalk {
     def apply(
         PlatformSummary: js.UndefOr[PlatformSummary] = js.undefined
     ): DeletePlatformVersionResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "PlatformSummary" -> PlatformSummary.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeletePlatformVersionResult]
+      val __obj = js.Dictionary.empty[js.Any]
+      PlatformSummary.foreach(__v => __obj.update("PlatformSummary", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DeletePlatformVersionResult]
     }
   }
 
@@ -1816,22 +1498,12 @@ package elasticbeanstalk {
         Status: js.UndefOr[String] = js.undefined,
         VersionLabel: js.UndefOr[String] = js.undefined
     ): Deployment = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "DeploymentId" -> DeploymentId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DeploymentTime" -> DeploymentTime.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Status" -> Status.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "VersionLabel" -> VersionLabel.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Deployment]
+      val __obj = js.Dictionary.empty[js.Any]
+      DeploymentId.foreach(__v => __obj.update("DeploymentId", __v.asInstanceOf[js.Any]))
+      DeploymentTime.foreach(__v => __obj.update("DeploymentTime", __v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.update("Status", __v.asInstanceOf[js.Any]))
+      VersionLabel.foreach(__v => __obj.update("VersionLabel", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Deployment]
     }
   }
 
@@ -1844,13 +1516,9 @@ package elasticbeanstalk {
     def apply(
         ResourceQuotas: js.UndefOr[ResourceQuotas] = js.undefined
     ): DescribeAccountAttributesResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ResourceQuotas" -> ResourceQuotas.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeAccountAttributesResult]
+      val __obj = js.Dictionary.empty[js.Any]
+      ResourceQuotas.foreach(__v => __obj.update("ResourceQuotas", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeAccountAttributesResult]
     }
   }
 
@@ -1872,22 +1540,12 @@ package elasticbeanstalk {
         NextToken: js.UndefOr[Token] = js.undefined,
         VersionLabels: js.UndefOr[VersionLabelsList] = js.undefined
     ): DescribeApplicationVersionsMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ApplicationName" -> ApplicationName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MaxRecords" -> MaxRecords.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NextToken" -> NextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "VersionLabels" -> VersionLabels.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeApplicationVersionsMessage]
+      val __obj = js.Dictionary.empty[js.Any]
+      ApplicationName.foreach(__v => __obj.update("ApplicationName", __v.asInstanceOf[js.Any]))
+      MaxRecords.foreach(__v => __obj.update("MaxRecords", __v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      VersionLabels.foreach(__v => __obj.update("VersionLabels", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeApplicationVersionsMessage]
     }
   }
 
@@ -1903,13 +1561,9 @@ package elasticbeanstalk {
     def apply(
         ApplicationNames: js.UndefOr[ApplicationNamesList] = js.undefined
     ): DescribeApplicationsMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ApplicationNames" -> ApplicationNames.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeApplicationsMessage]
+      val __obj = js.Dictionary.empty[js.Any]
+      ApplicationNames.foreach(__v => __obj.update("ApplicationNames", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeApplicationsMessage]
     }
   }
 
@@ -1935,28 +1589,14 @@ package elasticbeanstalk {
         SolutionStackName: js.UndefOr[SolutionStackName] = js.undefined,
         TemplateName: js.UndefOr[ConfigurationTemplateName] = js.undefined
     ): DescribeConfigurationOptionsMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ApplicationName" -> ApplicationName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "EnvironmentName" -> EnvironmentName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Options" -> Options.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "PlatformArn" -> PlatformArn.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SolutionStackName" -> SolutionStackName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "TemplateName" -> TemplateName.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeConfigurationOptionsMessage]
+      val __obj = js.Dictionary.empty[js.Any]
+      ApplicationName.foreach(__v => __obj.update("ApplicationName", __v.asInstanceOf[js.Any]))
+      EnvironmentName.foreach(__v => __obj.update("EnvironmentName", __v.asInstanceOf[js.Any]))
+      Options.foreach(__v => __obj.update("Options", __v.asInstanceOf[js.Any]))
+      PlatformArn.foreach(__v => __obj.update("PlatformArn", __v.asInstanceOf[js.Any]))
+      SolutionStackName.foreach(__v => __obj.update("SolutionStackName", __v.asInstanceOf[js.Any]))
+      TemplateName.foreach(__v => __obj.update("TemplateName", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeConfigurationOptionsMessage]
     }
   }
 
@@ -1976,17 +1616,13 @@ package elasticbeanstalk {
         EnvironmentName: js.UndefOr[EnvironmentName] = js.undefined,
         TemplateName: js.UndefOr[ConfigurationTemplateName] = js.undefined
     ): DescribeConfigurationSettingsMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ApplicationName" -> ApplicationName.asInstanceOf[js.Any],
-        "EnvironmentName" -> EnvironmentName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "TemplateName" -> TemplateName.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "ApplicationName" -> ApplicationName.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeConfigurationSettingsMessage]
+      EnvironmentName.foreach(__v => __obj.update("EnvironmentName", __v.asInstanceOf[js.Any]))
+      TemplateName.foreach(__v => __obj.update("TemplateName", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeConfigurationSettingsMessage]
     }
   }
 
@@ -2006,19 +1642,11 @@ package elasticbeanstalk {
         EnvironmentId: js.UndefOr[EnvironmentId] = js.undefined,
         EnvironmentName: js.UndefOr[EnvironmentName] = js.undefined
     ): DescribeEnvironmentHealthRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "AttributeNames" -> AttributeNames.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "EnvironmentId" -> EnvironmentId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "EnvironmentName" -> EnvironmentName.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeEnvironmentHealthRequest]
+      val __obj = js.Dictionary.empty[js.Any]
+      AttributeNames.foreach(__v => __obj.update("AttributeNames", __v.asInstanceOf[js.Any]))
+      EnvironmentId.foreach(__v => __obj.update("EnvironmentId", __v.asInstanceOf[js.Any]))
+      EnvironmentName.foreach(__v => __obj.update("EnvironmentName", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeEnvironmentHealthRequest]
     }
   }
 
@@ -2048,34 +1676,16 @@ package elasticbeanstalk {
         RefreshedAt: js.UndefOr[RefreshedAt] = js.undefined,
         Status: js.UndefOr[EnvironmentHealth] = js.undefined
     ): DescribeEnvironmentHealthResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ApplicationMetrics" -> ApplicationMetrics.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Causes" -> Causes.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Color" -> Color.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "EnvironmentName" -> EnvironmentName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "HealthStatus" -> HealthStatus.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "InstancesHealth" -> InstancesHealth.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "RefreshedAt" -> RefreshedAt.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Status" -> Status.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeEnvironmentHealthResult]
+      val __obj = js.Dictionary.empty[js.Any]
+      ApplicationMetrics.foreach(__v => __obj.update("ApplicationMetrics", __v.asInstanceOf[js.Any]))
+      Causes.foreach(__v => __obj.update("Causes", __v.asInstanceOf[js.Any]))
+      Color.foreach(__v => __obj.update("Color", __v.asInstanceOf[js.Any]))
+      EnvironmentName.foreach(__v => __obj.update("EnvironmentName", __v.asInstanceOf[js.Any]))
+      HealthStatus.foreach(__v => __obj.update("HealthStatus", __v.asInstanceOf[js.Any]))
+      InstancesHealth.foreach(__v => __obj.update("InstancesHealth", __v.asInstanceOf[js.Any]))
+      RefreshedAt.foreach(__v => __obj.update("RefreshedAt", __v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.update("Status", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeEnvironmentHealthResult]
     }
   }
 
@@ -2097,24 +1707,12 @@ package elasticbeanstalk {
         MaxItems: js.UndefOr[Int] = js.undefined,
         NextToken: js.UndefOr[String] = js.undefined
     ): DescribeEnvironmentManagedActionHistoryRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "EnvironmentId" -> EnvironmentId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "EnvironmentName" -> EnvironmentName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MaxItems" -> MaxItems.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NextToken" -> NextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal
-        .applyDynamicNamed("apply")(_fields: _*)
-        .asInstanceOf[DescribeEnvironmentManagedActionHistoryRequest]
+      val __obj = js.Dictionary.empty[js.Any]
+      EnvironmentId.foreach(__v => __obj.update("EnvironmentId", __v.asInstanceOf[js.Any]))
+      EnvironmentName.foreach(__v => __obj.update("EnvironmentName", __v.asInstanceOf[js.Any]))
+      MaxItems.foreach(__v => __obj.update("MaxItems", __v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeEnvironmentManagedActionHistoryRequest]
     }
   }
 
@@ -2132,18 +1730,10 @@ package elasticbeanstalk {
         ManagedActionHistoryItems: js.UndefOr[ManagedActionHistoryItems] = js.undefined,
         NextToken: js.UndefOr[String] = js.undefined
     ): DescribeEnvironmentManagedActionHistoryResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ManagedActionHistoryItems" -> ManagedActionHistoryItems.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NextToken" -> NextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal
-        .applyDynamicNamed("apply")(_fields: _*)
-        .asInstanceOf[DescribeEnvironmentManagedActionHistoryResult]
+      val __obj = js.Dictionary.empty[js.Any]
+      ManagedActionHistoryItems.foreach(__v => __obj.update("ManagedActionHistoryItems", __v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeEnvironmentManagedActionHistoryResult]
     }
   }
 
@@ -2163,19 +1753,11 @@ package elasticbeanstalk {
         EnvironmentName: js.UndefOr[String] = js.undefined,
         Status: js.UndefOr[ActionStatus] = js.undefined
     ): DescribeEnvironmentManagedActionsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "EnvironmentId" -> EnvironmentId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "EnvironmentName" -> EnvironmentName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Status" -> Status.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeEnvironmentManagedActionsRequest]
+      val __obj = js.Dictionary.empty[js.Any]
+      EnvironmentId.foreach(__v => __obj.update("EnvironmentId", __v.asInstanceOf[js.Any]))
+      EnvironmentName.foreach(__v => __obj.update("EnvironmentName", __v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.update("Status", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeEnvironmentManagedActionsRequest]
     }
   }
 
@@ -2191,13 +1773,9 @@ package elasticbeanstalk {
     def apply(
         ManagedActions: js.UndefOr[ManagedActions] = js.undefined
     ): DescribeEnvironmentManagedActionsResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ManagedActions" -> ManagedActions.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeEnvironmentManagedActionsResult]
+      val __obj = js.Dictionary.empty[js.Any]
+      ManagedActions.foreach(__v => __obj.update("ManagedActions", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeEnvironmentManagedActionsResult]
     }
   }
 
@@ -2215,16 +1793,10 @@ package elasticbeanstalk {
         EnvironmentId: js.UndefOr[EnvironmentId] = js.undefined,
         EnvironmentName: js.UndefOr[EnvironmentName] = js.undefined
     ): DescribeEnvironmentResourcesMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "EnvironmentId" -> EnvironmentId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "EnvironmentName" -> EnvironmentName.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeEnvironmentResourcesMessage]
+      val __obj = js.Dictionary.empty[js.Any]
+      EnvironmentId.foreach(__v => __obj.update("EnvironmentId", __v.asInstanceOf[js.Any]))
+      EnvironmentName.foreach(__v => __obj.update("EnvironmentName", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeEnvironmentResourcesMessage]
     }
   }
 
@@ -2254,34 +1826,16 @@ package elasticbeanstalk {
         NextToken: js.UndefOr[Token] = js.undefined,
         VersionLabel: js.UndefOr[VersionLabel] = js.undefined
     ): DescribeEnvironmentsMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ApplicationName" -> ApplicationName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "EnvironmentIds" -> EnvironmentIds.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "EnvironmentNames" -> EnvironmentNames.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "IncludeDeleted" -> IncludeDeleted.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "IncludedDeletedBackTo" -> IncludedDeletedBackTo.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MaxRecords" -> MaxRecords.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NextToken" -> NextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "VersionLabel" -> VersionLabel.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeEnvironmentsMessage]
+      val __obj = js.Dictionary.empty[js.Any]
+      ApplicationName.foreach(__v => __obj.update("ApplicationName", __v.asInstanceOf[js.Any]))
+      EnvironmentIds.foreach(__v => __obj.update("EnvironmentIds", __v.asInstanceOf[js.Any]))
+      EnvironmentNames.foreach(__v => __obj.update("EnvironmentNames", __v.asInstanceOf[js.Any]))
+      IncludeDeleted.foreach(__v => __obj.update("IncludeDeleted", __v.asInstanceOf[js.Any]))
+      IncludedDeletedBackTo.foreach(__v => __obj.update("IncludedDeletedBackTo", __v.asInstanceOf[js.Any]))
+      MaxRecords.foreach(__v => __obj.update("MaxRecords", __v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      VersionLabel.foreach(__v => __obj.update("VersionLabel", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeEnvironmentsMessage]
     }
   }
 
@@ -2319,46 +1873,20 @@ package elasticbeanstalk {
         TemplateName: js.UndefOr[ConfigurationTemplateName] = js.undefined,
         VersionLabel: js.UndefOr[VersionLabel] = js.undefined
     ): DescribeEventsMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ApplicationName" -> ApplicationName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "EndTime" -> EndTime.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "EnvironmentId" -> EnvironmentId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "EnvironmentName" -> EnvironmentName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MaxRecords" -> MaxRecords.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NextToken" -> NextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "PlatformArn" -> PlatformArn.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "RequestId" -> RequestId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Severity" -> Severity.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "StartTime" -> StartTime.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "TemplateName" -> TemplateName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "VersionLabel" -> VersionLabel.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeEventsMessage]
+      val __obj = js.Dictionary.empty[js.Any]
+      ApplicationName.foreach(__v => __obj.update("ApplicationName", __v.asInstanceOf[js.Any]))
+      EndTime.foreach(__v => __obj.update("EndTime", __v.asInstanceOf[js.Any]))
+      EnvironmentId.foreach(__v => __obj.update("EnvironmentId", __v.asInstanceOf[js.Any]))
+      EnvironmentName.foreach(__v => __obj.update("EnvironmentName", __v.asInstanceOf[js.Any]))
+      MaxRecords.foreach(__v => __obj.update("MaxRecords", __v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      PlatformArn.foreach(__v => __obj.update("PlatformArn", __v.asInstanceOf[js.Any]))
+      RequestId.foreach(__v => __obj.update("RequestId", __v.asInstanceOf[js.Any]))
+      Severity.foreach(__v => __obj.update("Severity", __v.asInstanceOf[js.Any]))
+      StartTime.foreach(__v => __obj.update("StartTime", __v.asInstanceOf[js.Any]))
+      TemplateName.foreach(__v => __obj.update("TemplateName", __v.asInstanceOf[js.Any]))
+      VersionLabel.foreach(__v => __obj.update("VersionLabel", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeEventsMessage]
     }
   }
 
@@ -2380,22 +1908,12 @@ package elasticbeanstalk {
         EnvironmentName: js.UndefOr[EnvironmentName] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): DescribeInstancesHealthRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "AttributeNames" -> AttributeNames.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "EnvironmentId" -> EnvironmentId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "EnvironmentName" -> EnvironmentName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NextToken" -> NextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeInstancesHealthRequest]
+      val __obj = js.Dictionary.empty[js.Any]
+      AttributeNames.foreach(__v => __obj.update("AttributeNames", __v.asInstanceOf[js.Any]))
+      EnvironmentId.foreach(__v => __obj.update("EnvironmentId", __v.asInstanceOf[js.Any]))
+      EnvironmentName.foreach(__v => __obj.update("EnvironmentName", __v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeInstancesHealthRequest]
     }
   }
 
@@ -2415,19 +1933,11 @@ package elasticbeanstalk {
         NextToken: js.UndefOr[NextToken] = js.undefined,
         RefreshedAt: js.UndefOr[RefreshedAt] = js.undefined
     ): DescribeInstancesHealthResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "InstanceHealthList" -> InstanceHealthList.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NextToken" -> NextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "RefreshedAt" -> RefreshedAt.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeInstancesHealthResult]
+      val __obj = js.Dictionary.empty[js.Any]
+      InstanceHealthList.foreach(__v => __obj.update("InstanceHealthList", __v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      RefreshedAt.foreach(__v => __obj.update("RefreshedAt", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeInstancesHealthResult]
     }
   }
 
@@ -2440,13 +1950,9 @@ package elasticbeanstalk {
     def apply(
         PlatformArn: js.UndefOr[PlatformArn] = js.undefined
     ): DescribePlatformVersionRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "PlatformArn" -> PlatformArn.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribePlatformVersionRequest]
+      val __obj = js.Dictionary.empty[js.Any]
+      PlatformArn.foreach(__v => __obj.update("PlatformArn", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribePlatformVersionRequest]
     }
   }
 
@@ -2459,13 +1965,9 @@ package elasticbeanstalk {
     def apply(
         PlatformDescription: js.UndefOr[PlatformDescription] = js.undefined
     ): DescribePlatformVersionResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "PlatformDescription" -> PlatformDescription.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribePlatformVersionResult]
+      val __obj = js.Dictionary.empty[js.Any]
+      PlatformDescription.foreach(__v => __obj.update("PlatformDescription", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribePlatformVersionResult]
     }
   }
 
@@ -2519,70 +2021,30 @@ package elasticbeanstalk {
         Tier: js.UndefOr[EnvironmentTier] = js.undefined,
         VersionLabel: js.UndefOr[VersionLabel] = js.undefined
     ): EnvironmentDescription = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "AbortableOperationInProgress" -> AbortableOperationInProgress.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ApplicationName" -> ApplicationName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "CNAME" -> CNAME.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DateCreated" -> DateCreated.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DateUpdated" -> DateUpdated.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Description" -> Description.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "EndpointURL" -> EndpointURL.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "EnvironmentArn" -> EnvironmentArn.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "EnvironmentId" -> EnvironmentId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "EnvironmentLinks" -> EnvironmentLinks.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "EnvironmentName" -> EnvironmentName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Health" -> Health.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "HealthStatus" -> HealthStatus.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "PlatformArn" -> PlatformArn.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Resources" -> Resources.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SolutionStackName" -> SolutionStackName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Status" -> Status.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "TemplateName" -> TemplateName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Tier" -> Tier.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "VersionLabel" -> VersionLabel.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[EnvironmentDescription]
+      val __obj = js.Dictionary.empty[js.Any]
+      AbortableOperationInProgress.foreach(
+        __v => __obj.update("AbortableOperationInProgress", __v.asInstanceOf[js.Any])
+      )
+      ApplicationName.foreach(__v => __obj.update("ApplicationName", __v.asInstanceOf[js.Any]))
+      CNAME.foreach(__v => __obj.update("CNAME", __v.asInstanceOf[js.Any]))
+      DateCreated.foreach(__v => __obj.update("DateCreated", __v.asInstanceOf[js.Any]))
+      DateUpdated.foreach(__v => __obj.update("DateUpdated", __v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
+      EndpointURL.foreach(__v => __obj.update("EndpointURL", __v.asInstanceOf[js.Any]))
+      EnvironmentArn.foreach(__v => __obj.update("EnvironmentArn", __v.asInstanceOf[js.Any]))
+      EnvironmentId.foreach(__v => __obj.update("EnvironmentId", __v.asInstanceOf[js.Any]))
+      EnvironmentLinks.foreach(__v => __obj.update("EnvironmentLinks", __v.asInstanceOf[js.Any]))
+      EnvironmentName.foreach(__v => __obj.update("EnvironmentName", __v.asInstanceOf[js.Any]))
+      Health.foreach(__v => __obj.update("Health", __v.asInstanceOf[js.Any]))
+      HealthStatus.foreach(__v => __obj.update("HealthStatus", __v.asInstanceOf[js.Any]))
+      PlatformArn.foreach(__v => __obj.update("PlatformArn", __v.asInstanceOf[js.Any]))
+      Resources.foreach(__v => __obj.update("Resources", __v.asInstanceOf[js.Any]))
+      SolutionStackName.foreach(__v => __obj.update("SolutionStackName", __v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.update("Status", __v.asInstanceOf[js.Any]))
+      TemplateName.foreach(__v => __obj.update("TemplateName", __v.asInstanceOf[js.Any]))
+      Tier.foreach(__v => __obj.update("Tier", __v.asInstanceOf[js.Any]))
+      VersionLabel.foreach(__v => __obj.update("VersionLabel", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[EnvironmentDescription]
     }
   }
 
@@ -2600,16 +2062,10 @@ package elasticbeanstalk {
         Environments: js.UndefOr[EnvironmentDescriptionsList] = js.undefined,
         NextToken: js.UndefOr[Token] = js.undefined
     ): EnvironmentDescriptionsMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Environments" -> Environments.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NextToken" -> NextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[EnvironmentDescriptionsMessage]
+      val __obj = js.Dictionary.empty[js.Any]
+      Environments.foreach(__v => __obj.update("Environments", __v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[EnvironmentDescriptionsMessage]
     }
   }
 
@@ -2667,22 +2123,12 @@ package elasticbeanstalk {
         Message: js.UndefOr[Message] = js.undefined,
         SampleTimestamp: js.UndefOr[SampleTimestamp] = js.undefined
     ): EnvironmentInfoDescription = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Ec2InstanceId" -> Ec2InstanceId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "InfoType" -> InfoType.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Message" -> Message.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SampleTimestamp" -> SampleTimestamp.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[EnvironmentInfoDescription]
+      val __obj = js.Dictionary.empty[js.Any]
+      Ec2InstanceId.foreach(__v => __obj.update("Ec2InstanceId", __v.asInstanceOf[js.Any]))
+      InfoType.foreach(__v => __obj.update("InfoType", __v.asInstanceOf[js.Any]))
+      Message.foreach(__v => __obj.update("Message", __v.asInstanceOf[js.Any]))
+      SampleTimestamp.foreach(__v => __obj.update("SampleTimestamp", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[EnvironmentInfoDescription]
     }
   }
 
@@ -2707,16 +2153,10 @@ package elasticbeanstalk {
         EnvironmentName: js.UndefOr[String] = js.undefined,
         LinkName: js.UndefOr[String] = js.undefined
     ): EnvironmentLink = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "EnvironmentName" -> EnvironmentName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "LinkName" -> LinkName.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[EnvironmentLink]
+      val __obj = js.Dictionary.empty[js.Any]
+      EnvironmentName.foreach(__v => __obj.update("EnvironmentName", __v.asInstanceOf[js.Any]))
+      LinkName.foreach(__v => __obj.update("LinkName", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[EnvironmentLink]
     }
   }
 
@@ -2746,34 +2186,16 @@ package elasticbeanstalk {
         Queues: js.UndefOr[QueueList] = js.undefined,
         Triggers: js.UndefOr[TriggerList] = js.undefined
     ): EnvironmentResourceDescription = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "AutoScalingGroups" -> AutoScalingGroups.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "EnvironmentName" -> EnvironmentName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Instances" -> Instances.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "LaunchConfigurations" -> LaunchConfigurations.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "LaunchTemplates" -> LaunchTemplates.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "LoadBalancers" -> LoadBalancers.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Queues" -> Queues.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Triggers" -> Triggers.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[EnvironmentResourceDescription]
+      val __obj = js.Dictionary.empty[js.Any]
+      AutoScalingGroups.foreach(__v => __obj.update("AutoScalingGroups", __v.asInstanceOf[js.Any]))
+      EnvironmentName.foreach(__v => __obj.update("EnvironmentName", __v.asInstanceOf[js.Any]))
+      Instances.foreach(__v => __obj.update("Instances", __v.asInstanceOf[js.Any]))
+      LaunchConfigurations.foreach(__v => __obj.update("LaunchConfigurations", __v.asInstanceOf[js.Any]))
+      LaunchTemplates.foreach(__v => __obj.update("LaunchTemplates", __v.asInstanceOf[js.Any]))
+      LoadBalancers.foreach(__v => __obj.update("LoadBalancers", __v.asInstanceOf[js.Any]))
+      Queues.foreach(__v => __obj.update("Queues", __v.asInstanceOf[js.Any]))
+      Triggers.foreach(__v => __obj.update("Triggers", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[EnvironmentResourceDescription]
     }
   }
 
@@ -2789,13 +2211,9 @@ package elasticbeanstalk {
     def apply(
         EnvironmentResources: js.UndefOr[EnvironmentResourceDescription] = js.undefined
     ): EnvironmentResourceDescriptionsMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "EnvironmentResources" -> EnvironmentResources.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[EnvironmentResourceDescriptionsMessage]
+      val __obj = js.Dictionary.empty[js.Any]
+      EnvironmentResources.foreach(__v => __obj.update("EnvironmentResources", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[EnvironmentResourceDescriptionsMessage]
     }
   }
 
@@ -2811,13 +2229,9 @@ package elasticbeanstalk {
     def apply(
         LoadBalancer: js.UndefOr[LoadBalancerDescription] = js.undefined
     ): EnvironmentResourcesDescription = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "LoadBalancer" -> LoadBalancer.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[EnvironmentResourcesDescription]
+      val __obj = js.Dictionary.empty[js.Any]
+      LoadBalancer.foreach(__v => __obj.update("LoadBalancer", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[EnvironmentResourcesDescription]
     }
   }
 
@@ -2847,19 +2261,11 @@ package elasticbeanstalk {
         Type: js.UndefOr[String] = js.undefined,
         Version: js.UndefOr[String] = js.undefined
     ): EnvironmentTier = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Name" -> Name.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Type" -> Type.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Version" -> Version.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[EnvironmentTier]
+      val __obj = js.Dictionary.empty[js.Any]
+      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
+      Type.foreach(__v => __obj.update("Type", __v.asInstanceOf[js.Any]))
+      Version.foreach(__v => __obj.update("Version", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[EnvironmentTier]
     }
   }
 
@@ -2891,37 +2297,17 @@ package elasticbeanstalk {
         TemplateName: js.UndefOr[ConfigurationTemplateName] = js.undefined,
         VersionLabel: js.UndefOr[VersionLabel] = js.undefined
     ): EventDescription = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ApplicationName" -> ApplicationName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "EnvironmentName" -> EnvironmentName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "EventDate" -> EventDate.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Message" -> Message.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "PlatformArn" -> PlatformArn.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "RequestId" -> RequestId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Severity" -> Severity.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "TemplateName" -> TemplateName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "VersionLabel" -> VersionLabel.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[EventDescription]
+      val __obj = js.Dictionary.empty[js.Any]
+      ApplicationName.foreach(__v => __obj.update("ApplicationName", __v.asInstanceOf[js.Any]))
+      EnvironmentName.foreach(__v => __obj.update("EnvironmentName", __v.asInstanceOf[js.Any]))
+      EventDate.foreach(__v => __obj.update("EventDate", __v.asInstanceOf[js.Any]))
+      Message.foreach(__v => __obj.update("Message", __v.asInstanceOf[js.Any]))
+      PlatformArn.foreach(__v => __obj.update("PlatformArn", __v.asInstanceOf[js.Any]))
+      RequestId.foreach(__v => __obj.update("RequestId", __v.asInstanceOf[js.Any]))
+      Severity.foreach(__v => __obj.update("Severity", __v.asInstanceOf[js.Any]))
+      TemplateName.foreach(__v => __obj.update("TemplateName", __v.asInstanceOf[js.Any]))
+      VersionLabel.foreach(__v => __obj.update("VersionLabel", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[EventDescription]
     }
   }
 
@@ -2939,16 +2325,10 @@ package elasticbeanstalk {
         Events: js.UndefOr[EventDescriptionList] = js.undefined,
         NextToken: js.UndefOr[Token] = js.undefined
     ): EventDescriptionsMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Events" -> Events.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NextToken" -> NextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[EventDescriptionsMessage]
+      val __obj = js.Dictionary.empty[js.Any]
+      Events.foreach(__v => __obj.update("Events", __v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[EventDescriptionsMessage]
     }
   }
 
@@ -2995,13 +2375,9 @@ package elasticbeanstalk {
     def apply(
         Id: js.UndefOr[ResourceId] = js.undefined
     ): Instance = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Id" -> Id.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Instance]
+      val __obj = js.Dictionary.empty[js.Any]
+      Id.foreach(__v => __obj.update("Id", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Instance]
     }
   }
 
@@ -3031,34 +2407,16 @@ package elasticbeanstalk {
         Unknown: js.UndefOr[NullableInteger] = js.undefined,
         Warning: js.UndefOr[NullableInteger] = js.undefined
     ): InstanceHealthSummary = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Degraded" -> Degraded.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Info" -> Info.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NoData" -> NoData.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Ok" -> Ok.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Pending" -> Pending.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Severe" -> Severe.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Unknown" -> Unknown.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Warning" -> Warning.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[InstanceHealthSummary]
+      val __obj = js.Dictionary.empty[js.Any]
+      Degraded.foreach(__v => __obj.update("Degraded", __v.asInstanceOf[js.Any]))
+      Info.foreach(__v => __obj.update("Info", __v.asInstanceOf[js.Any]))
+      NoData.foreach(__v => __obj.update("NoData", __v.asInstanceOf[js.Any]))
+      Ok.foreach(__v => __obj.update("Ok", __v.asInstanceOf[js.Any]))
+      Pending.foreach(__v => __obj.update("Pending", __v.asInstanceOf[js.Any]))
+      Severe.foreach(__v => __obj.update("Severe", __v.asInstanceOf[js.Any]))
+      Unknown.foreach(__v => __obj.update("Unknown", __v.asInstanceOf[js.Any]))
+      Warning.foreach(__v => __obj.update("Warning", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[InstanceHealthSummary]
     }
   }
 
@@ -3116,34 +2474,16 @@ package elasticbeanstalk {
         P99: js.UndefOr[NullableDouble] = js.undefined,
         P999: js.UndefOr[NullableDouble] = js.undefined
     ): Latency = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "P10" -> P10.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "P50" -> P50.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "P75" -> P75.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "P85" -> P85.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "P90" -> P90.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "P95" -> P95.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "P99" -> P99.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "P999" -> P999.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Latency]
+      val __obj = js.Dictionary.empty[js.Any]
+      P10.foreach(__v => __obj.update("P10", __v.asInstanceOf[js.Any]))
+      P50.foreach(__v => __obj.update("P50", __v.asInstanceOf[js.Any]))
+      P75.foreach(__v => __obj.update("P75", __v.asInstanceOf[js.Any]))
+      P85.foreach(__v => __obj.update("P85", __v.asInstanceOf[js.Any]))
+      P90.foreach(__v => __obj.update("P90", __v.asInstanceOf[js.Any]))
+      P95.foreach(__v => __obj.update("P95", __v.asInstanceOf[js.Any]))
+      P99.foreach(__v => __obj.update("P99", __v.asInstanceOf[js.Any]))
+      P999.foreach(__v => __obj.update("P999", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Latency]
     }
   }
 
@@ -3159,13 +2499,9 @@ package elasticbeanstalk {
     def apply(
         Name: js.UndefOr[ResourceId] = js.undefined
     ): LaunchConfiguration = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Name" -> Name.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[LaunchConfiguration]
+      val __obj = js.Dictionary.empty[js.Any]
+      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[LaunchConfiguration]
     }
   }
 
@@ -3181,13 +2517,9 @@ package elasticbeanstalk {
     def apply(
         Id: js.UndefOr[ResourceId] = js.undefined
     ): LaunchTemplate = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Id" -> Id.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[LaunchTemplate]
+      val __obj = js.Dictionary.empty[js.Any]
+      Id.foreach(__v => __obj.update("Id", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[LaunchTemplate]
     }
   }
 
@@ -3205,16 +2537,10 @@ package elasticbeanstalk {
         SolutionStackDetails: js.UndefOr[AvailableSolutionStackDetailsList] = js.undefined,
         SolutionStacks: js.UndefOr[AvailableSolutionStackNamesList] = js.undefined
     ): ListAvailableSolutionStacksResultMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "SolutionStackDetails" -> SolutionStackDetails.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SolutionStacks" -> SolutionStacks.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListAvailableSolutionStacksResultMessage]
+      val __obj = js.Dictionary.empty[js.Any]
+      SolutionStackDetails.foreach(__v => __obj.update("SolutionStackDetails", __v.asInstanceOf[js.Any]))
+      SolutionStacks.foreach(__v => __obj.update("SolutionStacks", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListAvailableSolutionStacksResultMessage]
     }
   }
 
@@ -3231,19 +2557,11 @@ package elasticbeanstalk {
         MaxRecords: js.UndefOr[PlatformMaxRecords] = js.undefined,
         NextToken: js.UndefOr[Token] = js.undefined
     ): ListPlatformVersionsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Filters" -> Filters.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MaxRecords" -> MaxRecords.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NextToken" -> NextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListPlatformVersionsRequest]
+      val __obj = js.Dictionary.empty[js.Any]
+      Filters.foreach(__v => __obj.update("Filters", __v.asInstanceOf[js.Any]))
+      MaxRecords.foreach(__v => __obj.update("MaxRecords", __v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListPlatformVersionsRequest]
     }
   }
 
@@ -3258,16 +2576,10 @@ package elasticbeanstalk {
         NextToken: js.UndefOr[Token] = js.undefined,
         PlatformSummaryList: js.UndefOr[PlatformSummaryList] = js.undefined
     ): ListPlatformVersionsResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "NextToken" -> NextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "PlatformSummaryList" -> PlatformSummaryList.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListPlatformVersionsResult]
+      val __obj = js.Dictionary.empty[js.Any]
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      PlatformSummaryList.foreach(__v => __obj.update("PlatformSummaryList", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListPlatformVersionsResult]
     }
   }
 
@@ -3280,11 +2592,11 @@ package elasticbeanstalk {
     def apply(
         ResourceArn: ResourceArn
     ): ListTagsForResourceMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListTagsForResourceMessage]
+      __obj.asInstanceOf[ListTagsForResourceMessage]
     }
   }
 
@@ -3302,16 +2614,10 @@ package elasticbeanstalk {
         Port: js.UndefOr[Int] = js.undefined,
         Protocol: js.UndefOr[String] = js.undefined
     ): Listener = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Port" -> Port.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Protocol" -> Protocol.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Listener]
+      val __obj = js.Dictionary.empty[js.Any]
+      Port.foreach(__v => __obj.update("Port", __v.asInstanceOf[js.Any]))
+      Protocol.foreach(__v => __obj.update("Protocol", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Listener]
     }
   }
 
@@ -3327,13 +2633,9 @@ package elasticbeanstalk {
     def apply(
         Name: js.UndefOr[ResourceId] = js.undefined
     ): LoadBalancer = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Name" -> Name.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[LoadBalancer]
+      val __obj = js.Dictionary.empty[js.Any]
+      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[LoadBalancer]
     }
   }
 
@@ -3353,19 +2655,11 @@ package elasticbeanstalk {
         Listeners: js.UndefOr[LoadBalancerListenersDescription] = js.undefined,
         LoadBalancerName: js.UndefOr[String] = js.undefined
     ): LoadBalancerDescription = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Domain" -> Domain.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Listeners" -> Listeners.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "LoadBalancerName" -> LoadBalancerName.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[LoadBalancerDescription]
+      val __obj = js.Dictionary.empty[js.Any]
+      Domain.foreach(__v => __obj.update("Domain", __v.asInstanceOf[js.Any]))
+      Listeners.foreach(__v => __obj.update("Listeners", __v.asInstanceOf[js.Any]))
+      LoadBalancerName.foreach(__v => __obj.update("LoadBalancerName", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[LoadBalancerDescription]
     }
   }
 
@@ -3389,25 +2683,13 @@ package elasticbeanstalk {
         Status: js.UndefOr[ActionStatus] = js.undefined,
         WindowStartTime: js.UndefOr[Timestamp] = js.undefined
     ): ManagedAction = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ActionDescription" -> ActionDescription.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ActionId" -> ActionId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ActionType" -> ActionType.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Status" -> Status.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "WindowStartTime" -> WindowStartTime.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ManagedAction]
+      val __obj = js.Dictionary.empty[js.Any]
+      ActionDescription.foreach(__v => __obj.update("ActionDescription", __v.asInstanceOf[js.Any]))
+      ActionId.foreach(__v => __obj.update("ActionId", __v.asInstanceOf[js.Any]))
+      ActionType.foreach(__v => __obj.update("ActionType", __v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.update("Status", __v.asInstanceOf[js.Any]))
+      WindowStartTime.foreach(__v => __obj.update("WindowStartTime", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ManagedAction]
     }
   }
 
@@ -3437,34 +2719,16 @@ package elasticbeanstalk {
         FinishedTime: js.UndefOr[Timestamp] = js.undefined,
         Status: js.UndefOr[ActionHistoryStatus] = js.undefined
     ): ManagedActionHistoryItem = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ActionDescription" -> ActionDescription.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ActionId" -> ActionId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ActionType" -> ActionType.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ExecutedTime" -> ExecutedTime.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "FailureDescription" -> FailureDescription.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "FailureType" -> FailureType.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "FinishedTime" -> FinishedTime.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Status" -> Status.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ManagedActionHistoryItem]
+      val __obj = js.Dictionary.empty[js.Any]
+      ActionDescription.foreach(__v => __obj.update("ActionDescription", __v.asInstanceOf[js.Any]))
+      ActionId.foreach(__v => __obj.update("ActionId", __v.asInstanceOf[js.Any]))
+      ActionType.foreach(__v => __obj.update("ActionType", __v.asInstanceOf[js.Any]))
+      ExecutedTime.foreach(__v => __obj.update("ExecutedTime", __v.asInstanceOf[js.Any]))
+      FailureDescription.foreach(__v => __obj.update("FailureDescription", __v.asInstanceOf[js.Any]))
+      FailureType.foreach(__v => __obj.update("FailureType", __v.asInstanceOf[js.Any]))
+      FinishedTime.foreach(__v => __obj.update("FinishedTime", __v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.update("Status", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ManagedActionHistoryItem]
     }
   }
 
@@ -3484,17 +2748,13 @@ package elasticbeanstalk {
         DeleteSourceFromS3: js.UndefOr[BoxedBoolean] = js.undefined,
         MaxAgeInDays: js.UndefOr[BoxedInt] = js.undefined
     ): MaxAgeRule = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Enabled" -> Enabled.asInstanceOf[js.Any],
-        "DeleteSourceFromS3" -> DeleteSourceFromS3.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MaxAgeInDays" -> MaxAgeInDays.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "Enabled" -> Enabled.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[MaxAgeRule]
+      DeleteSourceFromS3.foreach(__v => __obj.update("DeleteSourceFromS3", __v.asInstanceOf[js.Any]))
+      MaxAgeInDays.foreach(__v => __obj.update("MaxAgeInDays", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[MaxAgeRule]
     }
   }
 
@@ -3514,17 +2774,13 @@ package elasticbeanstalk {
         DeleteSourceFromS3: js.UndefOr[BoxedBoolean] = js.undefined,
         MaxCount: js.UndefOr[BoxedInt] = js.undefined
     ): MaxCountRule = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Enabled" -> Enabled.asInstanceOf[js.Any],
-        "DeleteSourceFromS3" -> DeleteSourceFromS3.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MaxCount" -> MaxCount.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "Enabled" -> Enabled.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[MaxCountRule]
+      DeleteSourceFromS3.foreach(__v => __obj.update("DeleteSourceFromS3", __v.asInstanceOf[js.Any]))
+      MaxCount.foreach(__v => __obj.update("MaxCount", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[MaxCountRule]
     }
   }
 
@@ -3542,16 +2798,10 @@ package elasticbeanstalk {
         Label: js.UndefOr[RegexLabel] = js.undefined,
         Pattern: js.UndefOr[RegexPattern] = js.undefined
     ): OptionRestrictionRegex = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Label" -> Label.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Pattern" -> Pattern.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[OptionRestrictionRegex]
+      val __obj = js.Dictionary.empty[js.Any]
+      Label.foreach(__v => __obj.update("Label", __v.asInstanceOf[js.Any]))
+      Pattern.foreach(__v => __obj.update("Pattern", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[OptionRestrictionRegex]
     }
   }
 
@@ -3571,19 +2821,11 @@ package elasticbeanstalk {
         OptionName: js.UndefOr[ConfigurationOptionName] = js.undefined,
         ResourceName: js.UndefOr[ResourceName] = js.undefined
     ): OptionSpecification = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Namespace" -> Namespace.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "OptionName" -> OptionName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ResourceName" -> ResourceName.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[OptionSpecification]
+      val __obj = js.Dictionary.empty[js.Any]
+      Namespace.foreach(__v => __obj.update("Namespace", __v.asInstanceOf[js.Any]))
+      OptionName.foreach(__v => __obj.update("OptionName", __v.asInstanceOf[js.Any]))
+      ResourceName.foreach(__v => __obj.update("ResourceName", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[OptionSpecification]
     }
   }
 
@@ -3633,64 +2875,26 @@ package elasticbeanstalk {
         SupportedAddonList: js.UndefOr[SupportedAddonList] = js.undefined,
         SupportedTierList: js.UndefOr[SupportedTierList] = js.undefined
     ): PlatformDescription = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "CustomAmiList" -> CustomAmiList.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DateCreated" -> DateCreated.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DateUpdated" -> DateUpdated.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Description" -> Description.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Frameworks" -> Frameworks.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Maintainer" -> Maintainer.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "OperatingSystemName" -> OperatingSystemName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "OperatingSystemVersion" -> OperatingSystemVersion.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "PlatformArn" -> PlatformArn.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "PlatformCategory" -> PlatformCategory.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "PlatformName" -> PlatformName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "PlatformOwner" -> PlatformOwner.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "PlatformStatus" -> PlatformStatus.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "PlatformVersion" -> PlatformVersion.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ProgrammingLanguages" -> ProgrammingLanguages.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SolutionStackName" -> SolutionStackName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SupportedAddonList" -> SupportedAddonList.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SupportedTierList" -> SupportedTierList.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PlatformDescription]
+      val __obj = js.Dictionary.empty[js.Any]
+      CustomAmiList.foreach(__v => __obj.update("CustomAmiList", __v.asInstanceOf[js.Any]))
+      DateCreated.foreach(__v => __obj.update("DateCreated", __v.asInstanceOf[js.Any]))
+      DateUpdated.foreach(__v => __obj.update("DateUpdated", __v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
+      Frameworks.foreach(__v => __obj.update("Frameworks", __v.asInstanceOf[js.Any]))
+      Maintainer.foreach(__v => __obj.update("Maintainer", __v.asInstanceOf[js.Any]))
+      OperatingSystemName.foreach(__v => __obj.update("OperatingSystemName", __v.asInstanceOf[js.Any]))
+      OperatingSystemVersion.foreach(__v => __obj.update("OperatingSystemVersion", __v.asInstanceOf[js.Any]))
+      PlatformArn.foreach(__v => __obj.update("PlatformArn", __v.asInstanceOf[js.Any]))
+      PlatformCategory.foreach(__v => __obj.update("PlatformCategory", __v.asInstanceOf[js.Any]))
+      PlatformName.foreach(__v => __obj.update("PlatformName", __v.asInstanceOf[js.Any]))
+      PlatformOwner.foreach(__v => __obj.update("PlatformOwner", __v.asInstanceOf[js.Any]))
+      PlatformStatus.foreach(__v => __obj.update("PlatformStatus", __v.asInstanceOf[js.Any]))
+      PlatformVersion.foreach(__v => __obj.update("PlatformVersion", __v.asInstanceOf[js.Any]))
+      ProgrammingLanguages.foreach(__v => __obj.update("ProgrammingLanguages", __v.asInstanceOf[js.Any]))
+      SolutionStackName.foreach(__v => __obj.update("SolutionStackName", __v.asInstanceOf[js.Any]))
+      SupportedAddonList.foreach(__v => __obj.update("SupportedAddonList", __v.asInstanceOf[js.Any]))
+      SupportedTierList.foreach(__v => __obj.update("SupportedTierList", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PlatformDescription]
     }
   }
 
@@ -3712,19 +2916,11 @@ package elasticbeanstalk {
         Type: js.UndefOr[PlatformFilterType] = js.undefined,
         Values: js.UndefOr[PlatformFilterValueList] = js.undefined
     ): PlatformFilter = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Operator" -> Operator.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Type" -> Type.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Values" -> Values.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PlatformFilter]
+      val __obj = js.Dictionary.empty[js.Any]
+      Operator.foreach(__v => __obj.update("Operator", __v.asInstanceOf[js.Any]))
+      Type.foreach(__v => __obj.update("Type", __v.asInstanceOf[js.Any]))
+      Values.foreach(__v => __obj.update("Values", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PlatformFilter]
     }
   }
 
@@ -3742,16 +2938,10 @@ package elasticbeanstalk {
         Name: js.UndefOr[String] = js.undefined,
         Version: js.UndefOr[String] = js.undefined
     ): PlatformFramework = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Name" -> Name.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Version" -> Version.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PlatformFramework]
+      val __obj = js.Dictionary.empty[js.Any]
+      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
+      Version.foreach(__v => __obj.update("Version", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PlatformFramework]
     }
   }
 
@@ -3769,16 +2959,10 @@ package elasticbeanstalk {
         Name: js.UndefOr[String] = js.undefined,
         Version: js.UndefOr[String] = js.undefined
     ): PlatformProgrammingLanguage = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Name" -> Name.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Version" -> Version.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PlatformProgrammingLanguage]
+      val __obj = js.Dictionary.empty[js.Any]
+      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
+      Version.foreach(__v => __obj.update("Version", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PlatformProgrammingLanguage]
     }
   }
 
@@ -3818,34 +3002,16 @@ package elasticbeanstalk {
         SupportedAddonList: js.UndefOr[SupportedAddonList] = js.undefined,
         SupportedTierList: js.UndefOr[SupportedTierList] = js.undefined
     ): PlatformSummary = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "OperatingSystemName" -> OperatingSystemName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "OperatingSystemVersion" -> OperatingSystemVersion.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "PlatformArn" -> PlatformArn.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "PlatformCategory" -> PlatformCategory.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "PlatformOwner" -> PlatformOwner.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "PlatformStatus" -> PlatformStatus.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SupportedAddonList" -> SupportedAddonList.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SupportedTierList" -> SupportedTierList.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PlatformSummary]
+      val __obj = js.Dictionary.empty[js.Any]
+      OperatingSystemName.foreach(__v => __obj.update("OperatingSystemName", __v.asInstanceOf[js.Any]))
+      OperatingSystemVersion.foreach(__v => __obj.update("OperatingSystemVersion", __v.asInstanceOf[js.Any]))
+      PlatformArn.foreach(__v => __obj.update("PlatformArn", __v.asInstanceOf[js.Any]))
+      PlatformCategory.foreach(__v => __obj.update("PlatformCategory", __v.asInstanceOf[js.Any]))
+      PlatformOwner.foreach(__v => __obj.update("PlatformOwner", __v.asInstanceOf[js.Any]))
+      PlatformStatus.foreach(__v => __obj.update("PlatformStatus", __v.asInstanceOf[js.Any]))
+      SupportedAddonList.foreach(__v => __obj.update("SupportedAddonList", __v.asInstanceOf[js.Any]))
+      SupportedTierList.foreach(__v => __obj.update("SupportedTierList", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PlatformSummary]
     }
   }
 
@@ -3863,16 +3029,10 @@ package elasticbeanstalk {
         Name: js.UndefOr[String] = js.undefined,
         URL: js.UndefOr[String] = js.undefined
     ): Queue = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Name" -> Name.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "URL" -> URL.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Queue]
+      val __obj = js.Dictionary.empty[js.Any]
+      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
+      URL.foreach(__v => __obj.update("URL", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Queue]
     }
   }
 
@@ -3890,16 +3050,10 @@ package elasticbeanstalk {
         EnvironmentId: js.UndefOr[EnvironmentId] = js.undefined,
         EnvironmentName: js.UndefOr[EnvironmentName] = js.undefined
     ): RebuildEnvironmentMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "EnvironmentId" -> EnvironmentId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "EnvironmentName" -> EnvironmentName.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RebuildEnvironmentMessage]
+      val __obj = js.Dictionary.empty[js.Any]
+      EnvironmentId.foreach(__v => __obj.update("EnvironmentId", __v.asInstanceOf[js.Any]))
+      EnvironmentName.foreach(__v => __obj.update("EnvironmentName", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[RebuildEnvironmentMessage]
     }
   }
 
@@ -3919,17 +3073,13 @@ package elasticbeanstalk {
         EnvironmentId: js.UndefOr[EnvironmentId] = js.undefined,
         EnvironmentName: js.UndefOr[EnvironmentName] = js.undefined
     ): RequestEnvironmentInfoMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "InfoType" -> InfoType.asInstanceOf[js.Any],
-        "EnvironmentId" -> EnvironmentId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "EnvironmentName" -> EnvironmentName.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "InfoType" -> InfoType.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RequestEnvironmentInfoMessage]
+      EnvironmentId.foreach(__v => __obj.update("EnvironmentId", __v.asInstanceOf[js.Any]))
+      EnvironmentName.foreach(__v => __obj.update("EnvironmentName", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[RequestEnvironmentInfoMessage]
     }
   }
 
@@ -3945,13 +3095,9 @@ package elasticbeanstalk {
     def apply(
         Maximum: js.UndefOr[BoxedInt] = js.undefined
     ): ResourceQuota = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Maximum" -> Maximum.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ResourceQuota]
+      val __obj = js.Dictionary.empty[js.Any]
+      Maximum.foreach(__v => __obj.update("Maximum", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ResourceQuota]
     }
   }
 
@@ -3975,25 +3121,13 @@ package elasticbeanstalk {
         CustomPlatformQuota: js.UndefOr[ResourceQuota] = js.undefined,
         EnvironmentQuota: js.UndefOr[ResourceQuota] = js.undefined
     ): ResourceQuotas = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ApplicationQuota" -> ApplicationQuota.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ApplicationVersionQuota" -> ApplicationVersionQuota.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ConfigurationTemplateQuota" -> ConfigurationTemplateQuota.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "CustomPlatformQuota" -> CustomPlatformQuota.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "EnvironmentQuota" -> EnvironmentQuota.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ResourceQuotas]
+      val __obj = js.Dictionary.empty[js.Any]
+      ApplicationQuota.foreach(__v => __obj.update("ApplicationQuota", __v.asInstanceOf[js.Any]))
+      ApplicationVersionQuota.foreach(__v => __obj.update("ApplicationVersionQuota", __v.asInstanceOf[js.Any]))
+      ConfigurationTemplateQuota.foreach(__v => __obj.update("ConfigurationTemplateQuota", __v.asInstanceOf[js.Any]))
+      CustomPlatformQuota.foreach(__v => __obj.update("CustomPlatformQuota", __v.asInstanceOf[js.Any]))
+      EnvironmentQuota.foreach(__v => __obj.update("EnvironmentQuota", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ResourceQuotas]
     }
   }
 
@@ -4008,16 +3142,10 @@ package elasticbeanstalk {
         ResourceArn: js.UndefOr[ResourceArn] = js.undefined,
         ResourceTags: js.UndefOr[TagList] = js.undefined
     ): ResourceTagsDescriptionMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ResourceArn" -> ResourceArn.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ResourceTags" -> ResourceTags.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ResourceTagsDescriptionMessage]
+      val __obj = js.Dictionary.empty[js.Any]
+      ResourceArn.foreach(__v => __obj.update("ResourceArn", __v.asInstanceOf[js.Any]))
+      ResourceTags.foreach(__v => __obj.update("ResourceTags", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ResourceTagsDescriptionMessage]
     }
   }
 
@@ -4035,16 +3163,10 @@ package elasticbeanstalk {
         EnvironmentId: js.UndefOr[EnvironmentId] = js.undefined,
         EnvironmentName: js.UndefOr[EnvironmentName] = js.undefined
     ): RestartAppServerMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "EnvironmentId" -> EnvironmentId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "EnvironmentName" -> EnvironmentName.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RestartAppServerMessage]
+      val __obj = js.Dictionary.empty[js.Any]
+      EnvironmentId.foreach(__v => __obj.update("EnvironmentId", __v.asInstanceOf[js.Any]))
+      EnvironmentName.foreach(__v => __obj.update("EnvironmentName", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[RestartAppServerMessage]
     }
   }
 
@@ -4064,17 +3186,13 @@ package elasticbeanstalk {
         EnvironmentId: js.UndefOr[EnvironmentId] = js.undefined,
         EnvironmentName: js.UndefOr[EnvironmentName] = js.undefined
     ): RetrieveEnvironmentInfoMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "InfoType" -> InfoType.asInstanceOf[js.Any],
-        "EnvironmentId" -> EnvironmentId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "EnvironmentName" -> EnvironmentName.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "InfoType" -> InfoType.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RetrieveEnvironmentInfoMessage]
+      EnvironmentId.foreach(__v => __obj.update("EnvironmentId", __v.asInstanceOf[js.Any]))
+      EnvironmentName.foreach(__v => __obj.update("EnvironmentName", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[RetrieveEnvironmentInfoMessage]
     }
   }
 
@@ -4090,13 +3208,9 @@ package elasticbeanstalk {
     def apply(
         EnvironmentInfo: js.UndefOr[EnvironmentInfoDescriptionList] = js.undefined
     ): RetrieveEnvironmentInfoResultMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "EnvironmentInfo" -> EnvironmentInfo.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RetrieveEnvironmentInfoResultMessage]
+      val __obj = js.Dictionary.empty[js.Any]
+      EnvironmentInfo.foreach(__v => __obj.update("EnvironmentInfo", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[RetrieveEnvironmentInfoResultMessage]
     }
   }
 
@@ -4114,16 +3228,10 @@ package elasticbeanstalk {
         S3Bucket: js.UndefOr[S3Bucket] = js.undefined,
         S3Key: js.UndefOr[S3Key] = js.undefined
     ): S3Location = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "S3Bucket" -> S3Bucket.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "S3Key" -> S3Key.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[S3Location]
+      val __obj = js.Dictionary.empty[js.Any]
+      S3Bucket.foreach(__v => __obj.update("S3Bucket", __v.asInstanceOf[js.Any]))
+      S3Key.foreach(__v => __obj.update("S3Key", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[S3Location]
     }
   }
 
@@ -4157,40 +3265,18 @@ package elasticbeanstalk {
         LaunchedAt: js.UndefOr[LaunchedAt] = js.undefined,
         System: js.UndefOr[SystemStatus] = js.undefined
     ): SingleInstanceHealth = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ApplicationMetrics" -> ApplicationMetrics.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "AvailabilityZone" -> AvailabilityZone.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Causes" -> Causes.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Color" -> Color.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Deployment" -> Deployment.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "HealthStatus" -> HealthStatus.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "InstanceId" -> InstanceId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "InstanceType" -> InstanceType.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "LaunchedAt" -> LaunchedAt.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "System" -> System.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SingleInstanceHealth]
+      val __obj = js.Dictionary.empty[js.Any]
+      ApplicationMetrics.foreach(__v => __obj.update("ApplicationMetrics", __v.asInstanceOf[js.Any]))
+      AvailabilityZone.foreach(__v => __obj.update("AvailabilityZone", __v.asInstanceOf[js.Any]))
+      Causes.foreach(__v => __obj.update("Causes", __v.asInstanceOf[js.Any]))
+      Color.foreach(__v => __obj.update("Color", __v.asInstanceOf[js.Any]))
+      Deployment.foreach(__v => __obj.update("Deployment", __v.asInstanceOf[js.Any]))
+      HealthStatus.foreach(__v => __obj.update("HealthStatus", __v.asInstanceOf[js.Any]))
+      InstanceId.foreach(__v => __obj.update("InstanceId", __v.asInstanceOf[js.Any]))
+      InstanceType.foreach(__v => __obj.update("InstanceType", __v.asInstanceOf[js.Any]))
+      LaunchedAt.foreach(__v => __obj.update("LaunchedAt", __v.asInstanceOf[js.Any]))
+      System.foreach(__v => __obj.update("System", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[SingleInstanceHealth]
     }
   }
 
@@ -4208,16 +3294,10 @@ package elasticbeanstalk {
         PermittedFileTypes: js.UndefOr[SolutionStackFileTypeList] = js.undefined,
         SolutionStackName: js.UndefOr[SolutionStackName] = js.undefined
     ): SolutionStackDescription = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "PermittedFileTypes" -> PermittedFileTypes.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SolutionStackName" -> SolutionStackName.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SolutionStackDescription]
+      val __obj = js.Dictionary.empty[js.Any]
+      PermittedFileTypes.foreach(__v => __obj.update("PermittedFileTypes", __v.asInstanceOf[js.Any]))
+      SolutionStackName.foreach(__v => __obj.update("SolutionStackName", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[SolutionStackDescription]
     }
   }
 
@@ -4237,13 +3317,13 @@ package elasticbeanstalk {
         SourceRepository: SourceRepository,
         SourceType: SourceType
     ): SourceBuildInformation = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "SourceLocation"   -> SourceLocation.asInstanceOf[js.Any],
         "SourceRepository" -> SourceRepository.asInstanceOf[js.Any],
         "SourceType"       -> SourceType.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SourceBuildInformation]
+      __obj.asInstanceOf[SourceBuildInformation]
     }
   }
 
@@ -4261,16 +3341,10 @@ package elasticbeanstalk {
         ApplicationName: js.UndefOr[ApplicationName] = js.undefined,
         TemplateName: js.UndefOr[ConfigurationTemplateName] = js.undefined
     ): SourceConfiguration = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ApplicationName" -> ApplicationName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "TemplateName" -> TemplateName.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SourceConfiguration]
+      val __obj = js.Dictionary.empty[js.Any]
+      ApplicationName.foreach(__v => __obj.update("ApplicationName", __v.asInstanceOf[js.Any]))
+      TemplateName.foreach(__v => __obj.update("TemplateName", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[SourceConfiguration]
     }
   }
 
@@ -4306,22 +3380,12 @@ package elasticbeanstalk {
         Status4xx: js.UndefOr[NullableInteger] = js.undefined,
         Status5xx: js.UndefOr[NullableInteger] = js.undefined
     ): StatusCodes = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Status2xx" -> Status2xx.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Status3xx" -> Status3xx.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Status4xx" -> Status4xx.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Status5xx" -> Status5xx.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StatusCodes]
+      val __obj = js.Dictionary.empty[js.Any]
+      Status2xx.foreach(__v => __obj.update("Status2xx", __v.asInstanceOf[js.Any]))
+      Status3xx.foreach(__v => __obj.update("Status3xx", __v.asInstanceOf[js.Any]))
+      Status4xx.foreach(__v => __obj.update("Status4xx", __v.asInstanceOf[js.Any]))
+      Status5xx.foreach(__v => __obj.update("Status5xx", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[StatusCodes]
     }
   }
 
@@ -4343,22 +3407,12 @@ package elasticbeanstalk {
         SourceEnvironmentId: js.UndefOr[EnvironmentId] = js.undefined,
         SourceEnvironmentName: js.UndefOr[EnvironmentName] = js.undefined
     ): SwapEnvironmentCNAMEsMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "DestinationEnvironmentId" -> DestinationEnvironmentId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DestinationEnvironmentName" -> DestinationEnvironmentName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SourceEnvironmentId" -> SourceEnvironmentId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SourceEnvironmentName" -> SourceEnvironmentName.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SwapEnvironmentCNAMEsMessage]
+      val __obj = js.Dictionary.empty[js.Any]
+      DestinationEnvironmentId.foreach(__v => __obj.update("DestinationEnvironmentId", __v.asInstanceOf[js.Any]))
+      DestinationEnvironmentName.foreach(__v => __obj.update("DestinationEnvironmentName", __v.asInstanceOf[js.Any]))
+      SourceEnvironmentId.foreach(__v => __obj.update("SourceEnvironmentId", __v.asInstanceOf[js.Any]))
+      SourceEnvironmentName.foreach(__v => __obj.update("SourceEnvironmentName", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[SwapEnvironmentCNAMEsMessage]
     }
   }
 
@@ -4376,16 +3430,10 @@ package elasticbeanstalk {
         CPUUtilization: js.UndefOr[CPUUtilization] = js.undefined,
         LoadAverage: js.UndefOr[LoadAverage] = js.undefined
     ): SystemStatus = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "CPUUtilization" -> CPUUtilization.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "LoadAverage" -> LoadAverage.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SystemStatus]
+      val __obj = js.Dictionary.empty[js.Any]
+      CPUUtilization.foreach(__v => __obj.update("CPUUtilization", __v.asInstanceOf[js.Any]))
+      LoadAverage.foreach(__v => __obj.update("LoadAverage", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[SystemStatus]
     }
   }
 
@@ -4403,16 +3451,10 @@ package elasticbeanstalk {
         Key: js.UndefOr[TagKey] = js.undefined,
         Value: js.UndefOr[TagValue] = js.undefined
     ): Tag = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Key" -> Key.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Value" -> Value.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Tag]
+      val __obj = js.Dictionary.empty[js.Any]
+      Key.foreach(__v => __obj.update("Key", __v.asInstanceOf[js.Any]))
+      Value.foreach(__v => __obj.update("Value", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Tag]
     }
   }
 
@@ -4434,22 +3476,12 @@ package elasticbeanstalk {
         ForceTerminate: js.UndefOr[ForceTerminate] = js.undefined,
         TerminateResources: js.UndefOr[TerminateEnvironmentResources] = js.undefined
     ): TerminateEnvironmentMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "EnvironmentId" -> EnvironmentId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "EnvironmentName" -> EnvironmentName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ForceTerminate" -> ForceTerminate.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "TerminateResources" -> TerminateResources.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[TerminateEnvironmentMessage]
+      val __obj = js.Dictionary.empty[js.Any]
+      EnvironmentId.foreach(__v => __obj.update("EnvironmentId", __v.asInstanceOf[js.Any]))
+      EnvironmentName.foreach(__v => __obj.update("EnvironmentName", __v.asInstanceOf[js.Any]))
+      ForceTerminate.foreach(__v => __obj.update("ForceTerminate", __v.asInstanceOf[js.Any]))
+      TerminateResources.foreach(__v => __obj.update("TerminateResources", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[TerminateEnvironmentMessage]
     }
   }
 
@@ -4465,13 +3497,9 @@ package elasticbeanstalk {
     def apply(
         Name: js.UndefOr[ResourceId] = js.undefined
     ): Trigger = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Name" -> Name.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Trigger]
+      val __obj = js.Dictionary.empty[js.Any]
+      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Trigger]
     }
   }
 
@@ -4489,14 +3517,12 @@ package elasticbeanstalk {
         ApplicationName: ApplicationName,
         Description: js.UndefOr[Description] = js.undefined
     ): UpdateApplicationMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ApplicationName" -> ApplicationName.asInstanceOf[js.Any],
-        "Description" -> Description.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "ApplicationName" -> ApplicationName.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateApplicationMessage]
+      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateApplicationMessage]
     }
   }
 
@@ -4511,12 +3537,12 @@ package elasticbeanstalk {
         ApplicationName: ApplicationName,
         ResourceLifecycleConfig: ApplicationResourceLifecycleConfig
     ): UpdateApplicationResourceLifecycleMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ApplicationName"         -> ApplicationName.asInstanceOf[js.Any],
         "ResourceLifecycleConfig" -> ResourceLifecycleConfig.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateApplicationResourceLifecycleMessage]
+      __obj.asInstanceOf[UpdateApplicationResourceLifecycleMessage]
     }
   }
 
@@ -4536,15 +3562,13 @@ package elasticbeanstalk {
         VersionLabel: VersionLabel,
         Description: js.UndefOr[Description] = js.undefined
     ): UpdateApplicationVersionMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ApplicationName" -> ApplicationName.asInstanceOf[js.Any],
-        "VersionLabel"    -> VersionLabel.asInstanceOf[js.Any],
-        "Description" -> Description.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "VersionLabel"    -> VersionLabel.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateApplicationVersionMessage]
+      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateApplicationVersionMessage]
     }
   }
 
@@ -4568,21 +3592,15 @@ package elasticbeanstalk {
         OptionSettings: js.UndefOr[ConfigurationOptionSettingsList] = js.undefined,
         OptionsToRemove: js.UndefOr[OptionsSpecifierList] = js.undefined
     ): UpdateConfigurationTemplateMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ApplicationName" -> ApplicationName.asInstanceOf[js.Any],
-        "TemplateName"    -> TemplateName.asInstanceOf[js.Any],
-        "Description" -> Description.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "OptionSettings" -> OptionSettings.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "OptionsToRemove" -> OptionsToRemove.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "TemplateName"    -> TemplateName.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateConfigurationTemplateMessage]
+      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
+      OptionSettings.foreach(__v => __obj.update("OptionSettings", __v.asInstanceOf[js.Any]))
+      OptionsToRemove.foreach(__v => __obj.update("OptionsToRemove", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateConfigurationTemplateMessage]
     }
   }
 
@@ -4620,46 +3638,20 @@ package elasticbeanstalk {
         Tier: js.UndefOr[EnvironmentTier] = js.undefined,
         VersionLabel: js.UndefOr[VersionLabel] = js.undefined
     ): UpdateEnvironmentMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ApplicationName" -> ApplicationName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Description" -> Description.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "EnvironmentId" -> EnvironmentId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "EnvironmentName" -> EnvironmentName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "GroupName" -> GroupName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "OptionSettings" -> OptionSettings.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "OptionsToRemove" -> OptionsToRemove.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "PlatformArn" -> PlatformArn.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SolutionStackName" -> SolutionStackName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "TemplateName" -> TemplateName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Tier" -> Tier.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "VersionLabel" -> VersionLabel.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateEnvironmentMessage]
+      val __obj = js.Dictionary.empty[js.Any]
+      ApplicationName.foreach(__v => __obj.update("ApplicationName", __v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
+      EnvironmentId.foreach(__v => __obj.update("EnvironmentId", __v.asInstanceOf[js.Any]))
+      EnvironmentName.foreach(__v => __obj.update("EnvironmentName", __v.asInstanceOf[js.Any]))
+      GroupName.foreach(__v => __obj.update("GroupName", __v.asInstanceOf[js.Any]))
+      OptionSettings.foreach(__v => __obj.update("OptionSettings", __v.asInstanceOf[js.Any]))
+      OptionsToRemove.foreach(__v => __obj.update("OptionsToRemove", __v.asInstanceOf[js.Any]))
+      PlatformArn.foreach(__v => __obj.update("PlatformArn", __v.asInstanceOf[js.Any]))
+      SolutionStackName.foreach(__v => __obj.update("SolutionStackName", __v.asInstanceOf[js.Any]))
+      TemplateName.foreach(__v => __obj.update("TemplateName", __v.asInstanceOf[js.Any]))
+      Tier.foreach(__v => __obj.update("Tier", __v.asInstanceOf[js.Any]))
+      VersionLabel.foreach(__v => __obj.update("VersionLabel", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateEnvironmentMessage]
     }
   }
 
@@ -4676,17 +3668,13 @@ package elasticbeanstalk {
         TagsToAdd: js.UndefOr[TagList] = js.undefined,
         TagsToRemove: js.UndefOr[TagKeyList] = js.undefined
     ): UpdateTagsForResourceMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ResourceArn" -> ResourceArn.asInstanceOf[js.Any],
-        "TagsToAdd" -> TagsToAdd.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "TagsToRemove" -> TagsToRemove.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "ResourceArn" -> ResourceArn.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateTagsForResourceMessage]
+      TagsToAdd.foreach(__v => __obj.update("TagsToAdd", __v.asInstanceOf[js.Any]))
+      TagsToRemove.foreach(__v => __obj.update("TagsToRemove", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateTagsForResourceMessage]
     }
   }
 
@@ -4708,18 +3696,14 @@ package elasticbeanstalk {
         EnvironmentName: js.UndefOr[EnvironmentName] = js.undefined,
         TemplateName: js.UndefOr[ConfigurationTemplateName] = js.undefined
     ): ValidateConfigurationSettingsMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ApplicationName" -> ApplicationName.asInstanceOf[js.Any],
-        "OptionSettings"  -> OptionSettings.asInstanceOf[js.Any],
-        "EnvironmentName" -> EnvironmentName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "TemplateName" -> TemplateName.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "OptionSettings"  -> OptionSettings.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ValidateConfigurationSettingsMessage]
+      EnvironmentName.foreach(__v => __obj.update("EnvironmentName", __v.asInstanceOf[js.Any]))
+      TemplateName.foreach(__v => __obj.update("TemplateName", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ValidateConfigurationSettingsMessage]
     }
   }
 
@@ -4741,22 +3725,12 @@ package elasticbeanstalk {
         OptionName: js.UndefOr[ConfigurationOptionName] = js.undefined,
         Severity: js.UndefOr[ValidationSeverity] = js.undefined
     ): ValidationMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Message" -> Message.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Namespace" -> Namespace.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "OptionName" -> OptionName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Severity" -> Severity.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ValidationMessage]
+      val __obj = js.Dictionary.empty[js.Any]
+      Message.foreach(__v => __obj.update("Message", __v.asInstanceOf[js.Any]))
+      Namespace.foreach(__v => __obj.update("Namespace", __v.asInstanceOf[js.Any]))
+      OptionName.foreach(__v => __obj.update("OptionName", __v.asInstanceOf[js.Any]))
+      Severity.foreach(__v => __obj.update("Severity", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ValidationMessage]
     }
   }
 

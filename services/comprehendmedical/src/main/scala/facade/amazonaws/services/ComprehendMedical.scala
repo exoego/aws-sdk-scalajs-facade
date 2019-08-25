@@ -62,34 +62,16 @@ package comprehendmedical {
         Traits: js.UndefOr[TraitList] = js.undefined,
         Type: js.UndefOr[EntitySubType] = js.undefined
     ): Attribute = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "BeginOffset" -> BeginOffset.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "EndOffset" -> EndOffset.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Id" -> Id.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "RelationshipScore" -> RelationshipScore.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Score" -> Score.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Text" -> Text.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Traits" -> Traits.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Type" -> Type.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Attribute]
+      val __obj = js.Dictionary.empty[js.Any]
+      BeginOffset.foreach(__v => __obj.update("BeginOffset", __v.asInstanceOf[js.Any]))
+      EndOffset.foreach(__v => __obj.update("EndOffset", __v.asInstanceOf[js.Any]))
+      Id.foreach(__v => __obj.update("Id", __v.asInstanceOf[js.Any]))
+      RelationshipScore.foreach(__v => __obj.update("RelationshipScore", __v.asInstanceOf[js.Any]))
+      Score.foreach(__v => __obj.update("Score", __v.asInstanceOf[js.Any]))
+      Text.foreach(__v => __obj.update("Text", __v.asInstanceOf[js.Any]))
+      Traits.foreach(__v => __obj.update("Traits", __v.asInstanceOf[js.Any]))
+      Type.foreach(__v => __obj.update("Type", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Attribute]
     }
   }
 
@@ -111,11 +93,11 @@ package comprehendmedical {
     def apply(
         Text: BoundedLengthString
     ): DetectEntitiesRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "Text" -> Text.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DetectEntitiesRequest]
+      __obj.asInstanceOf[DetectEntitiesRequest]
     }
   }
 
@@ -132,17 +114,13 @@ package comprehendmedical {
         PaginationToken: js.UndefOr[String] = js.undefined,
         UnmappedAttributes: js.UndefOr[UnmappedAttributeList] = js.undefined
     ): DetectEntitiesResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Entities" -> Entities.asInstanceOf[js.Any],
-        "PaginationToken" -> PaginationToken.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "UnmappedAttributes" -> UnmappedAttributes.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "Entities" -> Entities.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DetectEntitiesResponse]
+      PaginationToken.foreach(__v => __obj.update("PaginationToken", __v.asInstanceOf[js.Any]))
+      UnmappedAttributes.foreach(__v => __obj.update("UnmappedAttributes", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DetectEntitiesResponse]
     }
   }
 
@@ -155,11 +133,11 @@ package comprehendmedical {
     def apply(
         Text: BoundedLengthString
     ): DetectPHIRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "Text" -> Text.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DetectPHIRequest]
+      __obj.asInstanceOf[DetectPHIRequest]
     }
   }
 
@@ -174,14 +152,12 @@ package comprehendmedical {
         Entities: EntityList,
         PaginationToken: js.UndefOr[String] = js.undefined
     ): DetectPHIResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Entities" -> Entities.asInstanceOf[js.Any],
-        "PaginationToken" -> PaginationToken.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "Entities" -> Entities.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DetectPHIResponse]
+      PaginationToken.foreach(__v => __obj.update("PaginationToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DetectPHIResponse]
     }
   }
 
@@ -213,37 +189,17 @@ package comprehendmedical {
         Traits: js.UndefOr[TraitList] = js.undefined,
         Type: js.UndefOr[EntitySubType] = js.undefined
     ): Entity = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Attributes" -> Attributes.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "BeginOffset" -> BeginOffset.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Category" -> Category.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "EndOffset" -> EndOffset.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Id" -> Id.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Score" -> Score.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Text" -> Text.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Traits" -> Traits.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Type" -> Type.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Entity]
+      val __obj = js.Dictionary.empty[js.Any]
+      Attributes.foreach(__v => __obj.update("Attributes", __v.asInstanceOf[js.Any]))
+      BeginOffset.foreach(__v => __obj.update("BeginOffset", __v.asInstanceOf[js.Any]))
+      Category.foreach(__v => __obj.update("Category", __v.asInstanceOf[js.Any]))
+      EndOffset.foreach(__v => __obj.update("EndOffset", __v.asInstanceOf[js.Any]))
+      Id.foreach(__v => __obj.update("Id", __v.asInstanceOf[js.Any]))
+      Score.foreach(__v => __obj.update("Score", __v.asInstanceOf[js.Any]))
+      Text.foreach(__v => __obj.update("Text", __v.asInstanceOf[js.Any]))
+      Traits.foreach(__v => __obj.update("Traits", __v.asInstanceOf[js.Any]))
+      Type.foreach(__v => __obj.update("Type", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Entity]
     }
   }
 
@@ -334,16 +290,10 @@ package comprehendmedical {
         Name: js.UndefOr[AttributeName] = js.undefined,
         Score: js.UndefOr[Float] = js.undefined
     ): Trait = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Name" -> Name.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Score" -> Score.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Trait]
+      val __obj = js.Dictionary.empty[js.Any]
+      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
+      Score.foreach(__v => __obj.update("Score", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Trait]
     }
   }
 
@@ -361,16 +311,10 @@ package comprehendmedical {
         Attribute: js.UndefOr[Attribute] = js.undefined,
         Type: js.UndefOr[EntityType] = js.undefined
     ): UnmappedAttribute = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Attribute" -> Attribute.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Type" -> Type.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UnmappedAttribute]
+      val __obj = js.Dictionary.empty[js.Any]
+      Attribute.foreach(__v => __obj.update("Attribute", __v.asInstanceOf[js.Any]))
+      Type.foreach(__v => __obj.update("Type", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UnmappedAttribute]
     }
   }
 }

@@ -313,22 +313,12 @@ package ecs {
         status: js.UndefOr[String] = js.undefined,
         `type`: js.UndefOr[String] = js.undefined
     ): Attachment = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "details" -> details.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "id" -> id.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "status" -> status.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "`type`" -> `type`.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Attachment]
+      val __obj = js.Dictionary.empty[js.Any]
+      details.foreach(__v => __obj.update("details", __v.asInstanceOf[js.Any]))
+      id.foreach(__v => __obj.update("id", __v.asInstanceOf[js.Any]))
+      status.foreach(__v => __obj.update("status", __v.asInstanceOf[js.Any]))
+      `type`.foreach(__v => __obj.update("type", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Attachment]
     }
   }
 
@@ -346,12 +336,12 @@ package ecs {
         attachmentArn: String,
         status: String
     ): AttachmentStateChange = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "attachmentArn" -> attachmentArn.asInstanceOf[js.Any],
         "status"        -> status.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AttachmentStateChange]
+      __obj.asInstanceOf[AttachmentStateChange]
     }
   }
 
@@ -373,20 +363,14 @@ package ecs {
         targetType: js.UndefOr[TargetType] = js.undefined,
         value: js.UndefOr[String] = js.undefined
     ): Attribute = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "name" -> name.asInstanceOf[js.Any],
-        "targetId" -> targetId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "targetType" -> targetType.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "value" -> value.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "name" -> name.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Attribute]
+      targetId.foreach(__v => __obj.update("targetId", __v.asInstanceOf[js.Any]))
+      targetType.foreach(__v => __obj.update("targetType", __v.asInstanceOf[js.Any]))
+      value.foreach(__v => __obj.update("value", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Attribute]
     }
   }
 
@@ -406,17 +390,13 @@ package ecs {
         assignPublicIp: js.UndefOr[AssignPublicIp] = js.undefined,
         securityGroups: js.UndefOr[StringList] = js.undefined
     ): AwsVpcConfiguration = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "subnets" -> subnets.asInstanceOf[js.Any],
-        "assignPublicIp" -> assignPublicIp.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "securityGroups" -> securityGroups.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "subnets" -> subnets.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AwsVpcConfiguration]
+      assignPublicIp.foreach(__v => __obj.update("assignPublicIp", __v.asInstanceOf[js.Any]))
+      securityGroups.foreach(__v => __obj.update("securityGroups", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AwsVpcConfiguration]
     }
   }
 
@@ -448,37 +428,19 @@ package ecs {
         status: js.UndefOr[String] = js.undefined,
         tags: js.UndefOr[Tags] = js.undefined
     ): Cluster = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "activeServicesCount" -> activeServicesCount.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "clusterArn" -> clusterArn.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "clusterName" -> clusterName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "pendingTasksCount" -> pendingTasksCount.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "registeredContainerInstancesCount" -> registeredContainerInstancesCount.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "runningTasksCount" -> runningTasksCount.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "statistics" -> statistics.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "status" -> status.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "tags" -> tags.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Cluster]
+      val __obj = js.Dictionary.empty[js.Any]
+      activeServicesCount.foreach(__v => __obj.update("activeServicesCount", __v.asInstanceOf[js.Any]))
+      clusterArn.foreach(__v => __obj.update("clusterArn", __v.asInstanceOf[js.Any]))
+      clusterName.foreach(__v => __obj.update("clusterName", __v.asInstanceOf[js.Any]))
+      pendingTasksCount.foreach(__v => __obj.update("pendingTasksCount", __v.asInstanceOf[js.Any]))
+      registeredContainerInstancesCount.foreach(
+        __v => __obj.update("registeredContainerInstancesCount", __v.asInstanceOf[js.Any])
+      )
+      runningTasksCount.foreach(__v => __obj.update("runningTasksCount", __v.asInstanceOf[js.Any]))
+      statistics.foreach(__v => __obj.update("statistics", __v.asInstanceOf[js.Any]))
+      status.foreach(__v => __obj.update("status", __v.asInstanceOf[js.Any]))
+      tags.foreach(__v => __obj.update("tags", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Cluster]
     }
   }
 
@@ -539,49 +501,21 @@ package ecs {
         reason: js.UndefOr[String] = js.undefined,
         taskArn: js.UndefOr[String] = js.undefined
     ): Container = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "containerArn" -> containerArn.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "cpu" -> cpu.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "exitCode" -> exitCode.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "gpuIds" -> gpuIds.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "healthStatus" -> healthStatus.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "lastStatus" -> lastStatus.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "memory" -> memory.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "memoryReservation" -> memoryReservation.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "name" -> name.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "networkBindings" -> networkBindings.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "networkInterfaces" -> networkInterfaces.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "reason" -> reason.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "taskArn" -> taskArn.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Container]
+      val __obj = js.Dictionary.empty[js.Any]
+      containerArn.foreach(__v => __obj.update("containerArn", __v.asInstanceOf[js.Any]))
+      cpu.foreach(__v => __obj.update("cpu", __v.asInstanceOf[js.Any]))
+      exitCode.foreach(__v => __obj.update("exitCode", __v.asInstanceOf[js.Any]))
+      gpuIds.foreach(__v => __obj.update("gpuIds", __v.asInstanceOf[js.Any]))
+      healthStatus.foreach(__v => __obj.update("healthStatus", __v.asInstanceOf[js.Any]))
+      lastStatus.foreach(__v => __obj.update("lastStatus", __v.asInstanceOf[js.Any]))
+      memory.foreach(__v => __obj.update("memory", __v.asInstanceOf[js.Any]))
+      memoryReservation.foreach(__v => __obj.update("memoryReservation", __v.asInstanceOf[js.Any]))
+      name.foreach(__v => __obj.update("name", __v.asInstanceOf[js.Any]))
+      networkBindings.foreach(__v => __obj.update("networkBindings", __v.asInstanceOf[js.Any]))
+      networkInterfaces.foreach(__v => __obj.update("networkInterfaces", __v.asInstanceOf[js.Any]))
+      reason.foreach(__v => __obj.update("reason", __v.asInstanceOf[js.Any]))
+      taskArn.foreach(__v => __obj.update("taskArn", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Container]
     }
   }
 
@@ -678,121 +612,45 @@ package ecs {
         volumesFrom: js.UndefOr[VolumeFromList] = js.undefined,
         workingDirectory: js.UndefOr[String] = js.undefined
     ): ContainerDefinition = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "command" -> command.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "cpu" -> cpu.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "dependsOn" -> dependsOn.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "disableNetworking" -> disableNetworking.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "dnsSearchDomains" -> dnsSearchDomains.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "dnsServers" -> dnsServers.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "dockerLabels" -> dockerLabels.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "dockerSecurityOptions" -> dockerSecurityOptions.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "entryPoint" -> entryPoint.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "environment" -> environment.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "essential" -> essential.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "extraHosts" -> extraHosts.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "healthCheck" -> healthCheck.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "hostname" -> hostname.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "image" -> image.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "interactive" -> interactive.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "links" -> links.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "linuxParameters" -> linuxParameters.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "logConfiguration" -> logConfiguration.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "memory" -> memory.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "memoryReservation" -> memoryReservation.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "mountPoints" -> mountPoints.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "name" -> name.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "portMappings" -> portMappings.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "privileged" -> privileged.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "pseudoTerminal" -> pseudoTerminal.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "readonlyRootFilesystem" -> readonlyRootFilesystem.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "repositoryCredentials" -> repositoryCredentials.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "resourceRequirements" -> resourceRequirements.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "secrets" -> secrets.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "startTimeout" -> startTimeout.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "stopTimeout" -> stopTimeout.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "systemControls" -> systemControls.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ulimits" -> ulimits.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "user" -> user.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "volumesFrom" -> volumesFrom.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "workingDirectory" -> workingDirectory.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ContainerDefinition]
+      val __obj = js.Dictionary.empty[js.Any]
+      command.foreach(__v => __obj.update("command", __v.asInstanceOf[js.Any]))
+      cpu.foreach(__v => __obj.update("cpu", __v.asInstanceOf[js.Any]))
+      dependsOn.foreach(__v => __obj.update("dependsOn", __v.asInstanceOf[js.Any]))
+      disableNetworking.foreach(__v => __obj.update("disableNetworking", __v.asInstanceOf[js.Any]))
+      dnsSearchDomains.foreach(__v => __obj.update("dnsSearchDomains", __v.asInstanceOf[js.Any]))
+      dnsServers.foreach(__v => __obj.update("dnsServers", __v.asInstanceOf[js.Any]))
+      dockerLabels.foreach(__v => __obj.update("dockerLabels", __v.asInstanceOf[js.Any]))
+      dockerSecurityOptions.foreach(__v => __obj.update("dockerSecurityOptions", __v.asInstanceOf[js.Any]))
+      entryPoint.foreach(__v => __obj.update("entryPoint", __v.asInstanceOf[js.Any]))
+      environment.foreach(__v => __obj.update("environment", __v.asInstanceOf[js.Any]))
+      essential.foreach(__v => __obj.update("essential", __v.asInstanceOf[js.Any]))
+      extraHosts.foreach(__v => __obj.update("extraHosts", __v.asInstanceOf[js.Any]))
+      healthCheck.foreach(__v => __obj.update("healthCheck", __v.asInstanceOf[js.Any]))
+      hostname.foreach(__v => __obj.update("hostname", __v.asInstanceOf[js.Any]))
+      image.foreach(__v => __obj.update("image", __v.asInstanceOf[js.Any]))
+      interactive.foreach(__v => __obj.update("interactive", __v.asInstanceOf[js.Any]))
+      links.foreach(__v => __obj.update("links", __v.asInstanceOf[js.Any]))
+      linuxParameters.foreach(__v => __obj.update("linuxParameters", __v.asInstanceOf[js.Any]))
+      logConfiguration.foreach(__v => __obj.update("logConfiguration", __v.asInstanceOf[js.Any]))
+      memory.foreach(__v => __obj.update("memory", __v.asInstanceOf[js.Any]))
+      memoryReservation.foreach(__v => __obj.update("memoryReservation", __v.asInstanceOf[js.Any]))
+      mountPoints.foreach(__v => __obj.update("mountPoints", __v.asInstanceOf[js.Any]))
+      name.foreach(__v => __obj.update("name", __v.asInstanceOf[js.Any]))
+      portMappings.foreach(__v => __obj.update("portMappings", __v.asInstanceOf[js.Any]))
+      privileged.foreach(__v => __obj.update("privileged", __v.asInstanceOf[js.Any]))
+      pseudoTerminal.foreach(__v => __obj.update("pseudoTerminal", __v.asInstanceOf[js.Any]))
+      readonlyRootFilesystem.foreach(__v => __obj.update("readonlyRootFilesystem", __v.asInstanceOf[js.Any]))
+      repositoryCredentials.foreach(__v => __obj.update("repositoryCredentials", __v.asInstanceOf[js.Any]))
+      resourceRequirements.foreach(__v => __obj.update("resourceRequirements", __v.asInstanceOf[js.Any]))
+      secrets.foreach(__v => __obj.update("secrets", __v.asInstanceOf[js.Any]))
+      startTimeout.foreach(__v => __obj.update("startTimeout", __v.asInstanceOf[js.Any]))
+      stopTimeout.foreach(__v => __obj.update("stopTimeout", __v.asInstanceOf[js.Any]))
+      systemControls.foreach(__v => __obj.update("systemControls", __v.asInstanceOf[js.Any]))
+      ulimits.foreach(__v => __obj.update("ulimits", __v.asInstanceOf[js.Any]))
+      user.foreach(__v => __obj.update("user", __v.asInstanceOf[js.Any]))
+      volumesFrom.foreach(__v => __obj.update("volumesFrom", __v.asInstanceOf[js.Any]))
+      workingDirectory.foreach(__v => __obj.update("workingDirectory", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ContainerDefinition]
     }
   }
 
@@ -813,12 +671,12 @@ package ecs {
         condition: ContainerCondition,
         containerName: String
     ): ContainerDependency = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "condition"     -> condition.asInstanceOf[js.Any],
         "containerName" -> containerName.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ContainerDependency]
+      __obj.asInstanceOf[ContainerDependency]
     }
   }
 
@@ -862,55 +720,23 @@ package ecs {
         version: js.UndefOr[Double] = js.undefined,
         versionInfo: js.UndefOr[VersionInfo] = js.undefined
     ): ContainerInstance = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "agentConnected" -> agentConnected.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "agentUpdateStatus" -> agentUpdateStatus.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "attachments" -> attachments.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "attributes" -> attributes.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "containerInstanceArn" -> containerInstanceArn.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ec2InstanceId" -> ec2InstanceId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "pendingTasksCount" -> pendingTasksCount.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "registeredAt" -> registeredAt.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "registeredResources" -> registeredResources.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "remainingResources" -> remainingResources.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "runningTasksCount" -> runningTasksCount.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "status" -> status.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "tags" -> tags.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "version" -> version.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "versionInfo" -> versionInfo.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ContainerInstance]
+      val __obj = js.Dictionary.empty[js.Any]
+      agentConnected.foreach(__v => __obj.update("agentConnected", __v.asInstanceOf[js.Any]))
+      agentUpdateStatus.foreach(__v => __obj.update("agentUpdateStatus", __v.asInstanceOf[js.Any]))
+      attachments.foreach(__v => __obj.update("attachments", __v.asInstanceOf[js.Any]))
+      attributes.foreach(__v => __obj.update("attributes", __v.asInstanceOf[js.Any]))
+      containerInstanceArn.foreach(__v => __obj.update("containerInstanceArn", __v.asInstanceOf[js.Any]))
+      ec2InstanceId.foreach(__v => __obj.update("ec2InstanceId", __v.asInstanceOf[js.Any]))
+      pendingTasksCount.foreach(__v => __obj.update("pendingTasksCount", __v.asInstanceOf[js.Any]))
+      registeredAt.foreach(__v => __obj.update("registeredAt", __v.asInstanceOf[js.Any]))
+      registeredResources.foreach(__v => __obj.update("registeredResources", __v.asInstanceOf[js.Any]))
+      remainingResources.foreach(__v => __obj.update("remainingResources", __v.asInstanceOf[js.Any]))
+      runningTasksCount.foreach(__v => __obj.update("runningTasksCount", __v.asInstanceOf[js.Any]))
+      status.foreach(__v => __obj.update("status", __v.asInstanceOf[js.Any]))
+      tags.foreach(__v => __obj.update("tags", __v.asInstanceOf[js.Any]))
+      version.foreach(__v => __obj.update("version", __v.asInstanceOf[js.Any]))
+      versionInfo.foreach(__v => __obj.update("versionInfo", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ContainerInstance]
     }
   }
 
@@ -951,31 +777,15 @@ package ecs {
         name: js.UndefOr[String] = js.undefined,
         resourceRequirements: js.UndefOr[ResourceRequirements] = js.undefined
     ): ContainerOverride = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "command" -> command.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "cpu" -> cpu.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "environment" -> environment.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "memory" -> memory.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "memoryReservation" -> memoryReservation.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "name" -> name.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "resourceRequirements" -> resourceRequirements.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ContainerOverride]
+      val __obj = js.Dictionary.empty[js.Any]
+      command.foreach(__v => __obj.update("command", __v.asInstanceOf[js.Any]))
+      cpu.foreach(__v => __obj.update("cpu", __v.asInstanceOf[js.Any]))
+      environment.foreach(__v => __obj.update("environment", __v.asInstanceOf[js.Any]))
+      memory.foreach(__v => __obj.update("memory", __v.asInstanceOf[js.Any]))
+      memoryReservation.foreach(__v => __obj.update("memoryReservation", __v.asInstanceOf[js.Any]))
+      name.foreach(__v => __obj.update("name", __v.asInstanceOf[js.Any]))
+      resourceRequirements.foreach(__v => __obj.update("resourceRequirements", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ContainerOverride]
     }
   }
 
@@ -999,25 +809,13 @@ package ecs {
         reason: js.UndefOr[String] = js.undefined,
         status: js.UndefOr[String] = js.undefined
     ): ContainerStateChange = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "containerName" -> containerName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "exitCode" -> exitCode.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "networkBindings" -> networkBindings.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "reason" -> reason.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "status" -> status.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ContainerStateChange]
+      val __obj = js.Dictionary.empty[js.Any]
+      containerName.foreach(__v => __obj.update("containerName", __v.asInstanceOf[js.Any]))
+      exitCode.foreach(__v => __obj.update("exitCode", __v.asInstanceOf[js.Any]))
+      networkBindings.foreach(__v => __obj.update("networkBindings", __v.asInstanceOf[js.Any]))
+      reason.foreach(__v => __obj.update("reason", __v.asInstanceOf[js.Any]))
+      status.foreach(__v => __obj.update("status", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ContainerStateChange]
     }
   }
 
@@ -1032,16 +830,10 @@ package ecs {
         clusterName: js.UndefOr[String] = js.undefined,
         tags: js.UndefOr[Tags] = js.undefined
     ): CreateClusterRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "clusterName" -> clusterName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "tags" -> tags.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateClusterRequest]
+      val __obj = js.Dictionary.empty[js.Any]
+      clusterName.foreach(__v => __obj.update("clusterName", __v.asInstanceOf[js.Any]))
+      tags.foreach(__v => __obj.update("tags", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateClusterRequest]
     }
   }
 
@@ -1054,13 +846,9 @@ package ecs {
     def apply(
         cluster: js.UndefOr[Cluster] = js.undefined
     ): CreateClusterResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "cluster" -> cluster.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateClusterResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      cluster.foreach(__v => __obj.update("cluster", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateClusterResponse]
     }
   }
 
@@ -1111,68 +899,32 @@ package ecs {
         tags: js.UndefOr[Tags] = js.undefined,
         taskDefinition: js.UndefOr[String] = js.undefined
     ): CreateServiceRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "serviceName" -> serviceName.asInstanceOf[js.Any],
-        "clientToken" -> clientToken.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "cluster" -> cluster.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "deploymentConfiguration" -> deploymentConfiguration.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "deploymentController" -> deploymentController.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "desiredCount" -> desiredCount.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "enableECSManagedTags" -> enableECSManagedTags.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "healthCheckGracePeriodSeconds" -> healthCheckGracePeriodSeconds.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "launchType" -> launchType.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "loadBalancers" -> loadBalancers.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "networkConfiguration" -> networkConfiguration.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "placementConstraints" -> placementConstraints.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "placementStrategy" -> placementStrategy.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "platformVersion" -> platformVersion.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "propagateTags" -> propagateTags.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "role" -> role.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "schedulingStrategy" -> schedulingStrategy.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "serviceRegistries" -> serviceRegistries.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "tags" -> tags.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "taskDefinition" -> taskDefinition.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "serviceName" -> serviceName.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateServiceRequest]
+      clientToken.foreach(__v => __obj.update("clientToken", __v.asInstanceOf[js.Any]))
+      cluster.foreach(__v => __obj.update("cluster", __v.asInstanceOf[js.Any]))
+      deploymentConfiguration.foreach(__v => __obj.update("deploymentConfiguration", __v.asInstanceOf[js.Any]))
+      deploymentController.foreach(__v => __obj.update("deploymentController", __v.asInstanceOf[js.Any]))
+      desiredCount.foreach(__v => __obj.update("desiredCount", __v.asInstanceOf[js.Any]))
+      enableECSManagedTags.foreach(__v => __obj.update("enableECSManagedTags", __v.asInstanceOf[js.Any]))
+      healthCheckGracePeriodSeconds.foreach(
+        __v => __obj.update("healthCheckGracePeriodSeconds", __v.asInstanceOf[js.Any])
+      )
+      launchType.foreach(__v => __obj.update("launchType", __v.asInstanceOf[js.Any]))
+      loadBalancers.foreach(__v => __obj.update("loadBalancers", __v.asInstanceOf[js.Any]))
+      networkConfiguration.foreach(__v => __obj.update("networkConfiguration", __v.asInstanceOf[js.Any]))
+      placementConstraints.foreach(__v => __obj.update("placementConstraints", __v.asInstanceOf[js.Any]))
+      placementStrategy.foreach(__v => __obj.update("placementStrategy", __v.asInstanceOf[js.Any]))
+      platformVersion.foreach(__v => __obj.update("platformVersion", __v.asInstanceOf[js.Any]))
+      propagateTags.foreach(__v => __obj.update("propagateTags", __v.asInstanceOf[js.Any]))
+      role.foreach(__v => __obj.update("role", __v.asInstanceOf[js.Any]))
+      schedulingStrategy.foreach(__v => __obj.update("schedulingStrategy", __v.asInstanceOf[js.Any]))
+      serviceRegistries.foreach(__v => __obj.update("serviceRegistries", __v.asInstanceOf[js.Any]))
+      tags.foreach(__v => __obj.update("tags", __v.asInstanceOf[js.Any]))
+      taskDefinition.foreach(__v => __obj.update("taskDefinition", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateServiceRequest]
     }
   }
 
@@ -1185,13 +937,9 @@ package ecs {
     def apply(
         service: js.UndefOr[Service] = js.undefined
     ): CreateServiceResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "service" -> service.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateServiceResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      service.foreach(__v => __obj.update("service", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateServiceResponse]
     }
   }
 
@@ -1224,37 +972,21 @@ package ecs {
         scale: js.UndefOr[Scale] = js.undefined,
         serviceRegistries: js.UndefOr[ServiceRegistries] = js.undefined
     ): CreateTaskSetRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "cluster"        -> cluster.asInstanceOf[js.Any],
         "service"        -> service.asInstanceOf[js.Any],
-        "taskDefinition" -> taskDefinition.asInstanceOf[js.Any],
-        "clientToken" -> clientToken.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "externalId" -> externalId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "launchType" -> launchType.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "loadBalancers" -> loadBalancers.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "networkConfiguration" -> networkConfiguration.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "platformVersion" -> platformVersion.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "scale" -> scale.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "serviceRegistries" -> serviceRegistries.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "taskDefinition" -> taskDefinition.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateTaskSetRequest]
+      clientToken.foreach(__v => __obj.update("clientToken", __v.asInstanceOf[js.Any]))
+      externalId.foreach(__v => __obj.update("externalId", __v.asInstanceOf[js.Any]))
+      launchType.foreach(__v => __obj.update("launchType", __v.asInstanceOf[js.Any]))
+      loadBalancers.foreach(__v => __obj.update("loadBalancers", __v.asInstanceOf[js.Any]))
+      networkConfiguration.foreach(__v => __obj.update("networkConfiguration", __v.asInstanceOf[js.Any]))
+      platformVersion.foreach(__v => __obj.update("platformVersion", __v.asInstanceOf[js.Any]))
+      scale.foreach(__v => __obj.update("scale", __v.asInstanceOf[js.Any]))
+      serviceRegistries.foreach(__v => __obj.update("serviceRegistries", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateTaskSetRequest]
     }
   }
 
@@ -1267,13 +999,9 @@ package ecs {
     def apply(
         taskSet: js.UndefOr[TaskSet] = js.undefined
     ): CreateTaskSetResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "taskSet" -> taskSet.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateTaskSetResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      taskSet.foreach(__v => __obj.update("taskSet", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateTaskSetResponse]
     }
   }
 
@@ -1288,14 +1016,12 @@ package ecs {
         name: SettingName,
         principalArn: js.UndefOr[String] = js.undefined
     ): DeleteAccountSettingRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "name" -> name.asInstanceOf[js.Any],
-        "principalArn" -> principalArn.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "name" -> name.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteAccountSettingRequest]
+      principalArn.foreach(__v => __obj.update("principalArn", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DeleteAccountSettingRequest]
     }
   }
 
@@ -1308,13 +1034,9 @@ package ecs {
     def apply(
         setting: js.UndefOr[Setting] = js.undefined
     ): DeleteAccountSettingResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "setting" -> setting.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteAccountSettingResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      setting.foreach(__v => __obj.update("setting", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DeleteAccountSettingResponse]
     }
   }
 
@@ -1329,14 +1051,12 @@ package ecs {
         attributes: Attributes,
         cluster: js.UndefOr[String] = js.undefined
     ): DeleteAttributesRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "attributes" -> attributes.asInstanceOf[js.Any],
-        "cluster" -> cluster.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "attributes" -> attributes.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteAttributesRequest]
+      cluster.foreach(__v => __obj.update("cluster", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DeleteAttributesRequest]
     }
   }
 
@@ -1349,13 +1069,9 @@ package ecs {
     def apply(
         attributes: js.UndefOr[Attributes] = js.undefined
     ): DeleteAttributesResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "attributes" -> attributes.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteAttributesResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      attributes.foreach(__v => __obj.update("attributes", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DeleteAttributesResponse]
     }
   }
 
@@ -1368,11 +1084,11 @@ package ecs {
     def apply(
         cluster: String
     ): DeleteClusterRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "cluster" -> cluster.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteClusterRequest]
+      __obj.asInstanceOf[DeleteClusterRequest]
     }
   }
 
@@ -1385,13 +1101,9 @@ package ecs {
     def apply(
         cluster: js.UndefOr[Cluster] = js.undefined
     ): DeleteClusterResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "cluster" -> cluster.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteClusterResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      cluster.foreach(__v => __obj.update("cluster", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DeleteClusterResponse]
     }
   }
 
@@ -1408,17 +1120,13 @@ package ecs {
         cluster: js.UndefOr[String] = js.undefined,
         force: js.UndefOr[BoxedBoolean] = js.undefined
     ): DeleteServiceRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "service" -> service.asInstanceOf[js.Any],
-        "cluster" -> cluster.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "force" -> force.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "service" -> service.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteServiceRequest]
+      cluster.foreach(__v => __obj.update("cluster", __v.asInstanceOf[js.Any]))
+      force.foreach(__v => __obj.update("force", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DeleteServiceRequest]
     }
   }
 
@@ -1431,13 +1139,9 @@ package ecs {
     def apply(
         service: js.UndefOr[Service] = js.undefined
     ): DeleteServiceResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "service" -> service.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteServiceResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      service.foreach(__v => __obj.update("service", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DeleteServiceResponse]
     }
   }
 
@@ -1456,16 +1160,14 @@ package ecs {
         taskSet: String,
         force: js.UndefOr[BoxedBoolean] = js.undefined
     ): DeleteTaskSetRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "cluster" -> cluster.asInstanceOf[js.Any],
         "service" -> service.asInstanceOf[js.Any],
-        "taskSet" -> taskSet.asInstanceOf[js.Any],
-        "force" -> force.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "taskSet" -> taskSet.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteTaskSetRequest]
+      force.foreach(__v => __obj.update("force", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DeleteTaskSetRequest]
     }
   }
 
@@ -1478,13 +1180,9 @@ package ecs {
     def apply(
         taskSet: js.UndefOr[TaskSet] = js.undefined
     ): DeleteTaskSetResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "taskSet" -> taskSet.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteTaskSetResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      taskSet.foreach(__v => __obj.update("taskSet", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DeleteTaskSetResponse]
     }
   }
 
@@ -1520,43 +1218,19 @@ package ecs {
         taskDefinition: js.UndefOr[String] = js.undefined,
         updatedAt: js.UndefOr[Timestamp] = js.undefined
     ): Deployment = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "createdAt" -> createdAt.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "desiredCount" -> desiredCount.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "id" -> id.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "launchType" -> launchType.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "networkConfiguration" -> networkConfiguration.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "pendingCount" -> pendingCount.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "platformVersion" -> platformVersion.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "runningCount" -> runningCount.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "status" -> status.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "taskDefinition" -> taskDefinition.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "updatedAt" -> updatedAt.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Deployment]
+      val __obj = js.Dictionary.empty[js.Any]
+      createdAt.foreach(__v => __obj.update("createdAt", __v.asInstanceOf[js.Any]))
+      desiredCount.foreach(__v => __obj.update("desiredCount", __v.asInstanceOf[js.Any]))
+      id.foreach(__v => __obj.update("id", __v.asInstanceOf[js.Any]))
+      launchType.foreach(__v => __obj.update("launchType", __v.asInstanceOf[js.Any]))
+      networkConfiguration.foreach(__v => __obj.update("networkConfiguration", __v.asInstanceOf[js.Any]))
+      pendingCount.foreach(__v => __obj.update("pendingCount", __v.asInstanceOf[js.Any]))
+      platformVersion.foreach(__v => __obj.update("platformVersion", __v.asInstanceOf[js.Any]))
+      runningCount.foreach(__v => __obj.update("runningCount", __v.asInstanceOf[js.Any]))
+      status.foreach(__v => __obj.update("status", __v.asInstanceOf[js.Any]))
+      taskDefinition.foreach(__v => __obj.update("taskDefinition", __v.asInstanceOf[js.Any]))
+      updatedAt.foreach(__v => __obj.update("updatedAt", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Deployment]
     }
   }
 
@@ -1574,16 +1248,10 @@ package ecs {
         maximumPercent: js.UndefOr[BoxedInteger] = js.undefined,
         minimumHealthyPercent: js.UndefOr[BoxedInteger] = js.undefined
     ): DeploymentConfiguration = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "maximumPercent" -> maximumPercent.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "minimumHealthyPercent" -> minimumHealthyPercent.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeploymentConfiguration]
+      val __obj = js.Dictionary.empty[js.Any]
+      maximumPercent.foreach(__v => __obj.update("maximumPercent", __v.asInstanceOf[js.Any]))
+      minimumHealthyPercent.foreach(__v => __obj.update("minimumHealthyPercent", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DeploymentConfiguration]
     }
   }
 
@@ -1599,11 +1267,11 @@ package ecs {
     def apply(
         `type`: DeploymentControllerType
     ): DeploymentController = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "`type`" -> `type`.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "type" -> `type`.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeploymentController]
+      __obj.asInstanceOf[DeploymentController]
     }
   }
 
@@ -1628,17 +1296,13 @@ package ecs {
         cluster: js.UndefOr[String] = js.undefined,
         force: js.UndefOr[BoxedBoolean] = js.undefined
     ): DeregisterContainerInstanceRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "containerInstance" -> containerInstance.asInstanceOf[js.Any],
-        "cluster" -> cluster.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "force" -> force.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "containerInstance" -> containerInstance.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeregisterContainerInstanceRequest]
+      cluster.foreach(__v => __obj.update("cluster", __v.asInstanceOf[js.Any]))
+      force.foreach(__v => __obj.update("force", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DeregisterContainerInstanceRequest]
     }
   }
 
@@ -1651,13 +1315,9 @@ package ecs {
     def apply(
         containerInstance: js.UndefOr[ContainerInstance] = js.undefined
     ): DeregisterContainerInstanceResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "containerInstance" -> containerInstance.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeregisterContainerInstanceResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      containerInstance.foreach(__v => __obj.update("containerInstance", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DeregisterContainerInstanceResponse]
     }
   }
 
@@ -1670,11 +1330,11 @@ package ecs {
     def apply(
         taskDefinition: String
     ): DeregisterTaskDefinitionRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "taskDefinition" -> taskDefinition.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeregisterTaskDefinitionRequest]
+      __obj.asInstanceOf[DeregisterTaskDefinitionRequest]
     }
   }
 
@@ -1687,13 +1347,9 @@ package ecs {
     def apply(
         taskDefinition: js.UndefOr[TaskDefinition] = js.undefined
     ): DeregisterTaskDefinitionResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "taskDefinition" -> taskDefinition.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeregisterTaskDefinitionResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      taskDefinition.foreach(__v => __obj.update("taskDefinition", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DeregisterTaskDefinitionResponse]
     }
   }
 
@@ -1708,16 +1364,10 @@ package ecs {
         clusters: js.UndefOr[StringList] = js.undefined,
         include: js.UndefOr[ClusterFieldList] = js.undefined
     ): DescribeClustersRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "clusters" -> clusters.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "include" -> include.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeClustersRequest]
+      val __obj = js.Dictionary.empty[js.Any]
+      clusters.foreach(__v => __obj.update("clusters", __v.asInstanceOf[js.Any]))
+      include.foreach(__v => __obj.update("include", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeClustersRequest]
     }
   }
 
@@ -1732,16 +1382,10 @@ package ecs {
         clusters: js.UndefOr[Clusters] = js.undefined,
         failures: js.UndefOr[Failures] = js.undefined
     ): DescribeClustersResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "clusters" -> clusters.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "failures" -> failures.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeClustersResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      clusters.foreach(__v => __obj.update("clusters", __v.asInstanceOf[js.Any]))
+      failures.foreach(__v => __obj.update("failures", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeClustersResponse]
     }
   }
 
@@ -1758,17 +1402,13 @@ package ecs {
         cluster: js.UndefOr[String] = js.undefined,
         include: js.UndefOr[ContainerInstanceFieldList] = js.undefined
     ): DescribeContainerInstancesRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "containerInstances" -> containerInstances.asInstanceOf[js.Any],
-        "cluster" -> cluster.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "include" -> include.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "containerInstances" -> containerInstances.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeContainerInstancesRequest]
+      cluster.foreach(__v => __obj.update("cluster", __v.asInstanceOf[js.Any]))
+      include.foreach(__v => __obj.update("include", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeContainerInstancesRequest]
     }
   }
 
@@ -1783,16 +1423,10 @@ package ecs {
         containerInstances: js.UndefOr[ContainerInstances] = js.undefined,
         failures: js.UndefOr[Failures] = js.undefined
     ): DescribeContainerInstancesResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "containerInstances" -> containerInstances.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "failures" -> failures.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeContainerInstancesResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      containerInstances.foreach(__v => __obj.update("containerInstances", __v.asInstanceOf[js.Any]))
+      failures.foreach(__v => __obj.update("failures", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeContainerInstancesResponse]
     }
   }
 
@@ -1809,17 +1443,13 @@ package ecs {
         cluster: js.UndefOr[String] = js.undefined,
         include: js.UndefOr[ServiceFieldList] = js.undefined
     ): DescribeServicesRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "services" -> services.asInstanceOf[js.Any],
-        "cluster" -> cluster.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "include" -> include.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "services" -> services.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeServicesRequest]
+      cluster.foreach(__v => __obj.update("cluster", __v.asInstanceOf[js.Any]))
+      include.foreach(__v => __obj.update("include", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeServicesRequest]
     }
   }
 
@@ -1834,16 +1464,10 @@ package ecs {
         failures: js.UndefOr[Failures] = js.undefined,
         services: js.UndefOr[Services] = js.undefined
     ): DescribeServicesResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "failures" -> failures.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "services" -> services.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeServicesResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      failures.foreach(__v => __obj.update("failures", __v.asInstanceOf[js.Any]))
+      services.foreach(__v => __obj.update("services", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeServicesResponse]
     }
   }
 
@@ -1858,14 +1482,12 @@ package ecs {
         taskDefinition: String,
         include: js.UndefOr[TaskDefinitionFieldList] = js.undefined
     ): DescribeTaskDefinitionRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "taskDefinition" -> taskDefinition.asInstanceOf[js.Any],
-        "include" -> include.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "taskDefinition" -> taskDefinition.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeTaskDefinitionRequest]
+      include.foreach(__v => __obj.update("include", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeTaskDefinitionRequest]
     }
   }
 
@@ -1880,16 +1502,10 @@ package ecs {
         tags: js.UndefOr[Tags] = js.undefined,
         taskDefinition: js.UndefOr[TaskDefinition] = js.undefined
     ): DescribeTaskDefinitionResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "tags" -> tags.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "taskDefinition" -> taskDefinition.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeTaskDefinitionResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      tags.foreach(__v => __obj.update("tags", __v.asInstanceOf[js.Any]))
+      taskDefinition.foreach(__v => __obj.update("taskDefinition", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeTaskDefinitionResponse]
     }
   }
 
@@ -1906,15 +1522,13 @@ package ecs {
         service: String,
         taskSets: js.UndefOr[StringList] = js.undefined
     ): DescribeTaskSetsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "cluster" -> cluster.asInstanceOf[js.Any],
-        "service" -> service.asInstanceOf[js.Any],
-        "taskSets" -> taskSets.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "service" -> service.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeTaskSetsRequest]
+      taskSets.foreach(__v => __obj.update("taskSets", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeTaskSetsRequest]
     }
   }
 
@@ -1929,16 +1543,10 @@ package ecs {
         failures: js.UndefOr[Failures] = js.undefined,
         taskSets: js.UndefOr[TaskSets] = js.undefined
     ): DescribeTaskSetsResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "failures" -> failures.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "taskSets" -> taskSets.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeTaskSetsResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      failures.foreach(__v => __obj.update("failures", __v.asInstanceOf[js.Any]))
+      taskSets.foreach(__v => __obj.update("taskSets", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeTaskSetsResponse]
     }
   }
 
@@ -1955,17 +1563,13 @@ package ecs {
         cluster: js.UndefOr[String] = js.undefined,
         include: js.UndefOr[TaskFieldList] = js.undefined
     ): DescribeTasksRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "tasks" -> tasks.asInstanceOf[js.Any],
-        "cluster" -> cluster.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "include" -> include.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "tasks" -> tasks.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeTasksRequest]
+      cluster.foreach(__v => __obj.update("cluster", __v.asInstanceOf[js.Any]))
+      include.foreach(__v => __obj.update("include", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeTasksRequest]
     }
   }
 
@@ -1980,16 +1584,10 @@ package ecs {
         failures: js.UndefOr[Failures] = js.undefined,
         tasks: js.UndefOr[Tasks] = js.undefined
     ): DescribeTasksResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "failures" -> failures.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "tasks" -> tasks.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeTasksResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      failures.foreach(__v => __obj.update("failures", __v.asInstanceOf[js.Any]))
+      tasks.foreach(__v => __obj.update("tasks", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeTasksResponse]
     }
   }
 
@@ -2017,17 +1615,13 @@ package ecs {
         containerPath: js.UndefOr[String] = js.undefined,
         permissions: js.UndefOr[DeviceCgroupPermissions] = js.undefined
     ): Device = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "hostPath" -> hostPath.asInstanceOf[js.Any],
-        "containerPath" -> containerPath.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "permissions" -> permissions.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "hostPath" -> hostPath.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Device]
+      containerPath.foreach(__v => __obj.update("containerPath", __v.asInstanceOf[js.Any]))
+      permissions.foreach(__v => __obj.update("permissions", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Device]
     }
   }
 
@@ -2050,16 +1644,10 @@ package ecs {
         cluster: js.UndefOr[String] = js.undefined,
         containerInstance: js.UndefOr[String] = js.undefined
     ): DiscoverPollEndpointRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "cluster" -> cluster.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "containerInstance" -> containerInstance.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DiscoverPollEndpointRequest]
+      val __obj = js.Dictionary.empty[js.Any]
+      cluster.foreach(__v => __obj.update("cluster", __v.asInstanceOf[js.Any]))
+      containerInstance.foreach(__v => __obj.update("containerInstance", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DiscoverPollEndpointRequest]
     }
   }
 
@@ -2074,16 +1662,10 @@ package ecs {
         endpoint: js.UndefOr[String] = js.undefined,
         telemetryEndpoint: js.UndefOr[String] = js.undefined
     ): DiscoverPollEndpointResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "endpoint" -> endpoint.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "telemetryEndpoint" -> telemetryEndpoint.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DiscoverPollEndpointResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      endpoint.foreach(__v => __obj.update("endpoint", __v.asInstanceOf[js.Any]))
+      telemetryEndpoint.foreach(__v => __obj.update("telemetryEndpoint", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DiscoverPollEndpointResponse]
     }
   }
 
@@ -2107,25 +1689,13 @@ package ecs {
         labels: js.UndefOr[StringMap] = js.undefined,
         scope: js.UndefOr[Scope] = js.undefined
     ): DockerVolumeConfiguration = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "autoprovision" -> autoprovision.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "driver" -> driver.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "driverOpts" -> driverOpts.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "labels" -> labels.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "scope" -> scope.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DockerVolumeConfiguration]
+      val __obj = js.Dictionary.empty[js.Any]
+      autoprovision.foreach(__v => __obj.update("autoprovision", __v.asInstanceOf[js.Any]))
+      driver.foreach(__v => __obj.update("driver", __v.asInstanceOf[js.Any]))
+      driverOpts.foreach(__v => __obj.update("driverOpts", __v.asInstanceOf[js.Any]))
+      labels.foreach(__v => __obj.update("labels", __v.asInstanceOf[js.Any]))
+      scope.foreach(__v => __obj.update("scope", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DockerVolumeConfiguration]
     }
   }
 
@@ -2143,16 +1713,10 @@ package ecs {
         arn: js.UndefOr[String] = js.undefined,
         reason: js.UndefOr[String] = js.undefined
     ): Failure = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "arn" -> arn.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "reason" -> reason.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Failure]
+      val __obj = js.Dictionary.empty[js.Any]
+      arn.foreach(__v => __obj.update("arn", __v.asInstanceOf[js.Any]))
+      reason.foreach(__v => __obj.update("reason", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Failure]
     }
   }
 
@@ -2180,23 +1744,15 @@ package ecs {
         startPeriod: js.UndefOr[BoxedInteger] = js.undefined,
         timeout: js.UndefOr[BoxedInteger] = js.undefined
     ): HealthCheck = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "command" -> command.asInstanceOf[js.Any],
-        "interval" -> interval.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "retries" -> retries.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "startPeriod" -> startPeriod.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "timeout" -> timeout.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "command" -> command.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[HealthCheck]
+      interval.foreach(__v => __obj.update("interval", __v.asInstanceOf[js.Any]))
+      retries.foreach(__v => __obj.update("retries", __v.asInstanceOf[js.Any]))
+      startPeriod.foreach(__v => __obj.update("startPeriod", __v.asInstanceOf[js.Any]))
+      timeout.foreach(__v => __obj.update("timeout", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[HealthCheck]
     }
   }
 
@@ -2222,12 +1778,12 @@ package ecs {
         hostname: String,
         ipAddress: String
     ): HostEntry = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "hostname"  -> hostname.asInstanceOf[js.Any],
         "ipAddress" -> ipAddress.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[HostEntry]
+      __obj.asInstanceOf[HostEntry]
     }
   }
 
@@ -2243,13 +1799,9 @@ package ecs {
     def apply(
         sourcePath: js.UndefOr[String] = js.undefined
     ): HostVolumeProperties = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "sourcePath" -> sourcePath.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[HostVolumeProperties]
+      val __obj = js.Dictionary.empty[js.Any]
+      sourcePath.foreach(__v => __obj.update("sourcePath", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[HostVolumeProperties]
     }
   }
 
@@ -2275,16 +1827,10 @@ package ecs {
         add: js.UndefOr[StringList] = js.undefined,
         drop: js.UndefOr[StringList] = js.undefined
     ): KernelCapabilities = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "add" -> add.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "drop" -> drop.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[KernelCapabilities]
+      val __obj = js.Dictionary.empty[js.Any]
+      add.foreach(__v => __obj.update("add", __v.asInstanceOf[js.Any]))
+      drop.foreach(__v => __obj.update("drop", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[KernelCapabilities]
     }
   }
 
@@ -2302,16 +1848,10 @@ package ecs {
         name: js.UndefOr[String] = js.undefined,
         value: js.UndefOr[String] = js.undefined
     ): KeyValuePair = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "name" -> name.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "value" -> value.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[KeyValuePair]
+      val __obj = js.Dictionary.empty[js.Any]
+      name.foreach(__v => __obj.update("name", __v.asInstanceOf[js.Any]))
+      value.foreach(__v => __obj.update("value", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[KeyValuePair]
     }
   }
 
@@ -2342,25 +1882,13 @@ package ecs {
         sharedMemorySize: js.UndefOr[BoxedInteger] = js.undefined,
         tmpfs: js.UndefOr[TmpfsList] = js.undefined
     ): LinuxParameters = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "capabilities" -> capabilities.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "devices" -> devices.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "initProcessEnabled" -> initProcessEnabled.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "sharedMemorySize" -> sharedMemorySize.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "tmpfs" -> tmpfs.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[LinuxParameters]
+      val __obj = js.Dictionary.empty[js.Any]
+      capabilities.foreach(__v => __obj.update("capabilities", __v.asInstanceOf[js.Any]))
+      devices.foreach(__v => __obj.update("devices", __v.asInstanceOf[js.Any]))
+      initProcessEnabled.foreach(__v => __obj.update("initProcessEnabled", __v.asInstanceOf[js.Any]))
+      sharedMemorySize.foreach(__v => __obj.update("sharedMemorySize", __v.asInstanceOf[js.Any]))
+      tmpfs.foreach(__v => __obj.update("tmpfs", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[LinuxParameters]
     }
   }
 
@@ -2383,28 +1911,14 @@ package ecs {
         principalArn: js.UndefOr[String] = js.undefined,
         value: js.UndefOr[String] = js.undefined
     ): ListAccountSettingsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "effectiveSettings" -> effectiveSettings.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "maxResults" -> maxResults.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "name" -> name.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "nextToken" -> nextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "principalArn" -> principalArn.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "value" -> value.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListAccountSettingsRequest]
+      val __obj = js.Dictionary.empty[js.Any]
+      effectiveSettings.foreach(__v => __obj.update("effectiveSettings", __v.asInstanceOf[js.Any]))
+      maxResults.foreach(__v => __obj.update("maxResults", __v.asInstanceOf[js.Any]))
+      name.foreach(__v => __obj.update("name", __v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
+      principalArn.foreach(__v => __obj.update("principalArn", __v.asInstanceOf[js.Any]))
+      value.foreach(__v => __obj.update("value", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListAccountSettingsRequest]
     }
   }
 
@@ -2419,16 +1933,10 @@ package ecs {
         nextToken: js.UndefOr[String] = js.undefined,
         settings: js.UndefOr[Settings] = js.undefined
     ): ListAccountSettingsResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "nextToken" -> nextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "settings" -> settings.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListAccountSettingsResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
+      settings.foreach(__v => __obj.update("settings", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListAccountSettingsResponse]
     }
   }
 
@@ -2451,26 +1959,16 @@ package ecs {
         maxResults: js.UndefOr[BoxedInteger] = js.undefined,
         nextToken: js.UndefOr[String] = js.undefined
     ): ListAttributesRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "targetType" -> targetType.asInstanceOf[js.Any],
-        "attributeName" -> attributeName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "attributeValue" -> attributeValue.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "cluster" -> cluster.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "maxResults" -> maxResults.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "nextToken" -> nextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "targetType" -> targetType.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListAttributesRequest]
+      attributeName.foreach(__v => __obj.update("attributeName", __v.asInstanceOf[js.Any]))
+      attributeValue.foreach(__v => __obj.update("attributeValue", __v.asInstanceOf[js.Any]))
+      cluster.foreach(__v => __obj.update("cluster", __v.asInstanceOf[js.Any]))
+      maxResults.foreach(__v => __obj.update("maxResults", __v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListAttributesRequest]
     }
   }
 
@@ -2485,16 +1983,10 @@ package ecs {
         attributes: js.UndefOr[Attributes] = js.undefined,
         nextToken: js.UndefOr[String] = js.undefined
     ): ListAttributesResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "attributes" -> attributes.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "nextToken" -> nextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListAttributesResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      attributes.foreach(__v => __obj.update("attributes", __v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListAttributesResponse]
     }
   }
 
@@ -2509,16 +2001,10 @@ package ecs {
         maxResults: js.UndefOr[BoxedInteger] = js.undefined,
         nextToken: js.UndefOr[String] = js.undefined
     ): ListClustersRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "maxResults" -> maxResults.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "nextToken" -> nextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListClustersRequest]
+      val __obj = js.Dictionary.empty[js.Any]
+      maxResults.foreach(__v => __obj.update("maxResults", __v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListClustersRequest]
     }
   }
 
@@ -2533,16 +2019,10 @@ package ecs {
         clusterArns: js.UndefOr[StringList] = js.undefined,
         nextToken: js.UndefOr[String] = js.undefined
     ): ListClustersResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "clusterArns" -> clusterArns.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "nextToken" -> nextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListClustersResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      clusterArns.foreach(__v => __obj.update("clusterArns", __v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListClustersResponse]
     }
   }
 
@@ -2563,25 +2043,13 @@ package ecs {
         nextToken: js.UndefOr[String] = js.undefined,
         status: js.UndefOr[ContainerInstanceStatus] = js.undefined
     ): ListContainerInstancesRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "cluster" -> cluster.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "filter" -> filter.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "maxResults" -> maxResults.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "nextToken" -> nextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "status" -> status.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListContainerInstancesRequest]
+      val __obj = js.Dictionary.empty[js.Any]
+      cluster.foreach(__v => __obj.update("cluster", __v.asInstanceOf[js.Any]))
+      filter.foreach(__v => __obj.update("filter", __v.asInstanceOf[js.Any]))
+      maxResults.foreach(__v => __obj.update("maxResults", __v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
+      status.foreach(__v => __obj.update("status", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListContainerInstancesRequest]
     }
   }
 
@@ -2596,16 +2064,10 @@ package ecs {
         containerInstanceArns: js.UndefOr[StringList] = js.undefined,
         nextToken: js.UndefOr[String] = js.undefined
     ): ListContainerInstancesResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "containerInstanceArns" -> containerInstanceArns.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "nextToken" -> nextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListContainerInstancesResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      containerInstanceArns.foreach(__v => __obj.update("containerInstanceArns", __v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListContainerInstancesResponse]
     }
   }
 
@@ -2626,25 +2088,13 @@ package ecs {
         nextToken: js.UndefOr[String] = js.undefined,
         schedulingStrategy: js.UndefOr[SchedulingStrategy] = js.undefined
     ): ListServicesRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "cluster" -> cluster.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "launchType" -> launchType.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "maxResults" -> maxResults.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "nextToken" -> nextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "schedulingStrategy" -> schedulingStrategy.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListServicesRequest]
+      val __obj = js.Dictionary.empty[js.Any]
+      cluster.foreach(__v => __obj.update("cluster", __v.asInstanceOf[js.Any]))
+      launchType.foreach(__v => __obj.update("launchType", __v.asInstanceOf[js.Any]))
+      maxResults.foreach(__v => __obj.update("maxResults", __v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
+      schedulingStrategy.foreach(__v => __obj.update("schedulingStrategy", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListServicesRequest]
     }
   }
 
@@ -2659,16 +2109,10 @@ package ecs {
         nextToken: js.UndefOr[String] = js.undefined,
         serviceArns: js.UndefOr[StringList] = js.undefined
     ): ListServicesResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "nextToken" -> nextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "serviceArns" -> serviceArns.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListServicesResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
+      serviceArns.foreach(__v => __obj.update("serviceArns", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListServicesResponse]
     }
   }
 
@@ -2681,11 +2125,11 @@ package ecs {
     def apply(
         resourceArn: String
     ): ListTagsForResourceRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "resourceArn" -> resourceArn.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListTagsForResourceRequest]
+      __obj.asInstanceOf[ListTagsForResourceRequest]
     }
   }
 
@@ -2698,13 +2142,9 @@ package ecs {
     def apply(
         tags: js.UndefOr[Tags] = js.undefined
     ): ListTagsForResourceResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "tags" -> tags.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListTagsForResourceResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      tags.foreach(__v => __obj.update("tags", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListTagsForResourceResponse]
     }
   }
 
@@ -2723,22 +2163,12 @@ package ecs {
         nextToken: js.UndefOr[String] = js.undefined,
         status: js.UndefOr[TaskDefinitionFamilyStatus] = js.undefined
     ): ListTaskDefinitionFamiliesRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "familyPrefix" -> familyPrefix.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "maxResults" -> maxResults.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "nextToken" -> nextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "status" -> status.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListTaskDefinitionFamiliesRequest]
+      val __obj = js.Dictionary.empty[js.Any]
+      familyPrefix.foreach(__v => __obj.update("familyPrefix", __v.asInstanceOf[js.Any]))
+      maxResults.foreach(__v => __obj.update("maxResults", __v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
+      status.foreach(__v => __obj.update("status", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListTaskDefinitionFamiliesRequest]
     }
   }
 
@@ -2753,16 +2183,10 @@ package ecs {
         families: js.UndefOr[StringList] = js.undefined,
         nextToken: js.UndefOr[String] = js.undefined
     ): ListTaskDefinitionFamiliesResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "families" -> families.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "nextToken" -> nextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListTaskDefinitionFamiliesResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      families.foreach(__v => __obj.update("families", __v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListTaskDefinitionFamiliesResponse]
     }
   }
 
@@ -2783,25 +2207,13 @@ package ecs {
         sort: js.UndefOr[SortOrder] = js.undefined,
         status: js.UndefOr[TaskDefinitionStatus] = js.undefined
     ): ListTaskDefinitionsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "familyPrefix" -> familyPrefix.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "maxResults" -> maxResults.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "nextToken" -> nextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "sort" -> sort.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "status" -> status.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListTaskDefinitionsRequest]
+      val __obj = js.Dictionary.empty[js.Any]
+      familyPrefix.foreach(__v => __obj.update("familyPrefix", __v.asInstanceOf[js.Any]))
+      maxResults.foreach(__v => __obj.update("maxResults", __v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
+      sort.foreach(__v => __obj.update("sort", __v.asInstanceOf[js.Any]))
+      status.foreach(__v => __obj.update("status", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListTaskDefinitionsRequest]
     }
   }
 
@@ -2816,16 +2228,10 @@ package ecs {
         nextToken: js.UndefOr[String] = js.undefined,
         taskDefinitionArns: js.UndefOr[StringList] = js.undefined
     ): ListTaskDefinitionsResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "nextToken" -> nextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "taskDefinitionArns" -> taskDefinitionArns.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListTaskDefinitionsResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
+      taskDefinitionArns.foreach(__v => __obj.update("taskDefinitionArns", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListTaskDefinitionsResponse]
     }
   }
 
@@ -2854,37 +2260,17 @@ package ecs {
         serviceName: js.UndefOr[String] = js.undefined,
         startedBy: js.UndefOr[String] = js.undefined
     ): ListTasksRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "cluster" -> cluster.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "containerInstance" -> containerInstance.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "desiredStatus" -> desiredStatus.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "family" -> family.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "launchType" -> launchType.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "maxResults" -> maxResults.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "nextToken" -> nextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "serviceName" -> serviceName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "startedBy" -> startedBy.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListTasksRequest]
+      val __obj = js.Dictionary.empty[js.Any]
+      cluster.foreach(__v => __obj.update("cluster", __v.asInstanceOf[js.Any]))
+      containerInstance.foreach(__v => __obj.update("containerInstance", __v.asInstanceOf[js.Any]))
+      desiredStatus.foreach(__v => __obj.update("desiredStatus", __v.asInstanceOf[js.Any]))
+      family.foreach(__v => __obj.update("family", __v.asInstanceOf[js.Any]))
+      launchType.foreach(__v => __obj.update("launchType", __v.asInstanceOf[js.Any]))
+      maxResults.foreach(__v => __obj.update("maxResults", __v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
+      serviceName.foreach(__v => __obj.update("serviceName", __v.asInstanceOf[js.Any]))
+      startedBy.foreach(__v => __obj.update("startedBy", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListTasksRequest]
     }
   }
 
@@ -2899,16 +2285,10 @@ package ecs {
         nextToken: js.UndefOr[String] = js.undefined,
         taskArns: js.UndefOr[StringList] = js.undefined
     ): ListTasksResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "nextToken" -> nextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "taskArns" -> taskArns.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListTasksResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
+      taskArns.foreach(__v => __obj.update("taskArns", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListTasksResponse]
     }
   }
 
@@ -2933,22 +2313,12 @@ package ecs {
         loadBalancerName: js.UndefOr[String] = js.undefined,
         targetGroupArn: js.UndefOr[String] = js.undefined
     ): LoadBalancer = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "containerName" -> containerName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "containerPort" -> containerPort.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "loadBalancerName" -> loadBalancerName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "targetGroupArn" -> targetGroupArn.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[LoadBalancer]
+      val __obj = js.Dictionary.empty[js.Any]
+      containerName.foreach(__v => __obj.update("containerName", __v.asInstanceOf[js.Any]))
+      containerPort.foreach(__v => __obj.update("containerPort", __v.asInstanceOf[js.Any]))
+      loadBalancerName.foreach(__v => __obj.update("loadBalancerName", __v.asInstanceOf[js.Any]))
+      targetGroupArn.foreach(__v => __obj.update("targetGroupArn", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[LoadBalancer]
     }
   }
 
@@ -2966,14 +2336,12 @@ package ecs {
         logDriver: LogDriver,
         options: js.UndefOr[LogConfigurationOptionsMap] = js.undefined
     ): LogConfiguration = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "logDriver" -> logDriver.asInstanceOf[js.Any],
-        "options" -> options.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "logDriver" -> logDriver.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[LogConfiguration]
+      options.foreach(__v => __obj.update("options", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[LogConfiguration]
     }
   }
 
@@ -3005,19 +2373,11 @@ package ecs {
         readOnly: js.UndefOr[BoxedBoolean] = js.undefined,
         sourceVolume: js.UndefOr[String] = js.undefined
     ): MountPoint = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "containerPath" -> containerPath.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "readOnly" -> readOnly.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "sourceVolume" -> sourceVolume.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[MountPoint]
+      val __obj = js.Dictionary.empty[js.Any]
+      containerPath.foreach(__v => __obj.update("containerPath", __v.asInstanceOf[js.Any]))
+      readOnly.foreach(__v => __obj.update("readOnly", __v.asInstanceOf[js.Any]))
+      sourceVolume.foreach(__v => __obj.update("sourceVolume", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[MountPoint]
     }
   }
 
@@ -3039,22 +2399,12 @@ package ecs {
         hostPort: js.UndefOr[BoxedInteger] = js.undefined,
         protocol: js.UndefOr[TransportProtocol] = js.undefined
     ): NetworkBinding = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "bindIP" -> bindIP.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "containerPort" -> containerPort.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "hostPort" -> hostPort.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "protocol" -> protocol.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[NetworkBinding]
+      val __obj = js.Dictionary.empty[js.Any]
+      bindIP.foreach(__v => __obj.update("bindIP", __v.asInstanceOf[js.Any]))
+      containerPort.foreach(__v => __obj.update("containerPort", __v.asInstanceOf[js.Any]))
+      hostPort.foreach(__v => __obj.update("hostPort", __v.asInstanceOf[js.Any]))
+      protocol.foreach(__v => __obj.update("protocol", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[NetworkBinding]
     }
   }
 
@@ -3070,13 +2420,9 @@ package ecs {
     def apply(
         awsvpcConfiguration: js.UndefOr[AwsVpcConfiguration] = js.undefined
     ): NetworkConfiguration = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "awsvpcConfiguration" -> awsvpcConfiguration.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[NetworkConfiguration]
+      val __obj = js.Dictionary.empty[js.Any]
+      awsvpcConfiguration.foreach(__v => __obj.update("awsvpcConfiguration", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[NetworkConfiguration]
     }
   }
 
@@ -3096,19 +2442,11 @@ package ecs {
         ipv6Address: js.UndefOr[String] = js.undefined,
         privateIpv4Address: js.UndefOr[String] = js.undefined
     ): NetworkInterface = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "attachmentId" -> attachmentId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ipv6Address" -> ipv6Address.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "privateIpv4Address" -> privateIpv4Address.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[NetworkInterface]
+      val __obj = js.Dictionary.empty[js.Any]
+      attachmentId.foreach(__v => __obj.update("attachmentId", __v.asInstanceOf[js.Any]))
+      ipv6Address.foreach(__v => __obj.update("ipv6Address", __v.asInstanceOf[js.Any]))
+      privateIpv4Address.foreach(__v => __obj.update("privateIpv4Address", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[NetworkInterface]
     }
   }
 
@@ -3142,16 +2480,10 @@ package ecs {
         expression: js.UndefOr[String] = js.undefined,
         `type`: js.UndefOr[PlacementConstraintType] = js.undefined
     ): PlacementConstraint = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "expression" -> expression.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "`type`" -> `type`.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PlacementConstraint]
+      val __obj = js.Dictionary.empty[js.Any]
+      expression.foreach(__v => __obj.update("expression", __v.asInstanceOf[js.Any]))
+      `type`.foreach(__v => __obj.update("type", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PlacementConstraint]
     }
   }
 
@@ -3176,16 +2508,10 @@ package ecs {
         field: js.UndefOr[String] = js.undefined,
         `type`: js.UndefOr[PlacementStrategyType] = js.undefined
     ): PlacementStrategy = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "field" -> field.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "`type`" -> `type`.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PlacementStrategy]
+      val __obj = js.Dictionary.empty[js.Any]
+      field.foreach(__v => __obj.update("field", __v.asInstanceOf[js.Any]))
+      `type`.foreach(__v => __obj.update("type", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PlacementStrategy]
     }
   }
 
@@ -3211,12 +2537,12 @@ package ecs {
         id: String,
         `type`: PlatformDeviceType
     ): PlatformDevice = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "id"     -> id.asInstanceOf[js.Any],
-        "`type`" -> `type`.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "id"   -> id.asInstanceOf[js.Any],
+        "type" -> `type`.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PlatformDevice]
+      __obj.asInstanceOf[PlatformDevice]
     }
   }
 
@@ -3244,19 +2570,11 @@ package ecs {
         hostPort: js.UndefOr[BoxedInteger] = js.undefined,
         protocol: js.UndefOr[TransportProtocol] = js.undefined
     ): PortMapping = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "containerPort" -> containerPort.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "hostPort" -> hostPort.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "protocol" -> protocol.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PortMapping]
+      val __obj = js.Dictionary.empty[js.Any]
+      containerPort.foreach(__v => __obj.update("containerPort", __v.asInstanceOf[js.Any]))
+      hostPort.foreach(__v => __obj.update("hostPort", __v.asInstanceOf[js.Any]))
+      protocol.foreach(__v => __obj.update("protocol", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PortMapping]
     }
   }
 
@@ -3284,17 +2602,13 @@ package ecs {
         properties: js.UndefOr[ProxyConfigurationProperties] = js.undefined,
         `type`: js.UndefOr[ProxyConfigurationType] = js.undefined
     ): ProxyConfiguration = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "containerName" -> containerName.asInstanceOf[js.Any],
-        "properties" -> properties.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "`type`" -> `type`.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "containerName" -> containerName.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ProxyConfiguration]
+      properties.foreach(__v => __obj.update("properties", __v.asInstanceOf[js.Any]))
+      `type`.foreach(__v => __obj.update("type", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ProxyConfiguration]
     }
   }
 
@@ -3315,12 +2629,12 @@ package ecs {
         name: SettingName,
         value: String
     ): PutAccountSettingDefaultRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "name"  -> name.asInstanceOf[js.Any],
         "value" -> value.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PutAccountSettingDefaultRequest]
+      __obj.asInstanceOf[PutAccountSettingDefaultRequest]
     }
   }
 
@@ -3333,13 +2647,9 @@ package ecs {
     def apply(
         setting: js.UndefOr[Setting] = js.undefined
     ): PutAccountSettingDefaultResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "setting" -> setting.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PutAccountSettingDefaultResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      setting.foreach(__v => __obj.update("setting", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PutAccountSettingDefaultResponse]
     }
   }
 
@@ -3356,15 +2666,13 @@ package ecs {
         value: String,
         principalArn: js.UndefOr[String] = js.undefined
     ): PutAccountSettingRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "name"  -> name.asInstanceOf[js.Any],
-        "value" -> value.asInstanceOf[js.Any],
-        "principalArn" -> principalArn.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "value" -> value.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PutAccountSettingRequest]
+      principalArn.foreach(__v => __obj.update("principalArn", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PutAccountSettingRequest]
     }
   }
 
@@ -3377,13 +2685,9 @@ package ecs {
     def apply(
         setting: js.UndefOr[Setting] = js.undefined
     ): PutAccountSettingResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "setting" -> setting.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PutAccountSettingResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      setting.foreach(__v => __obj.update("setting", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PutAccountSettingResponse]
     }
   }
 
@@ -3398,14 +2702,12 @@ package ecs {
         attributes: Attributes,
         cluster: js.UndefOr[String] = js.undefined
     ): PutAttributesRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "attributes" -> attributes.asInstanceOf[js.Any],
-        "cluster" -> cluster.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "attributes" -> attributes.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PutAttributesRequest]
+      cluster.foreach(__v => __obj.update("cluster", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PutAttributesRequest]
     }
   }
 
@@ -3418,13 +2720,9 @@ package ecs {
     def apply(
         attributes: js.UndefOr[Attributes] = js.undefined
     ): PutAttributesResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "attributes" -> attributes.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PutAttributesResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      attributes.foreach(__v => __obj.update("attributes", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PutAttributesResponse]
     }
   }
 
@@ -3453,37 +2751,19 @@ package ecs {
         totalResources: js.UndefOr[Resources] = js.undefined,
         versionInfo: js.UndefOr[VersionInfo] = js.undefined
     ): RegisterContainerInstanceRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "attributes" -> attributes.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "cluster" -> cluster.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "containerInstanceArn" -> containerInstanceArn.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "instanceIdentityDocument" -> instanceIdentityDocument.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "instanceIdentityDocumentSignature" -> instanceIdentityDocumentSignature.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "platformDevices" -> platformDevices.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "tags" -> tags.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "totalResources" -> totalResources.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "versionInfo" -> versionInfo.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RegisterContainerInstanceRequest]
+      val __obj = js.Dictionary.empty[js.Any]
+      attributes.foreach(__v => __obj.update("attributes", __v.asInstanceOf[js.Any]))
+      cluster.foreach(__v => __obj.update("cluster", __v.asInstanceOf[js.Any]))
+      containerInstanceArn.foreach(__v => __obj.update("containerInstanceArn", __v.asInstanceOf[js.Any]))
+      instanceIdentityDocument.foreach(__v => __obj.update("instanceIdentityDocument", __v.asInstanceOf[js.Any]))
+      instanceIdentityDocumentSignature.foreach(
+        __v => __obj.update("instanceIdentityDocumentSignature", __v.asInstanceOf[js.Any])
+      )
+      platformDevices.foreach(__v => __obj.update("platformDevices", __v.asInstanceOf[js.Any]))
+      tags.foreach(__v => __obj.update("tags", __v.asInstanceOf[js.Any]))
+      totalResources.foreach(__v => __obj.update("totalResources", __v.asInstanceOf[js.Any]))
+      versionInfo.foreach(__v => __obj.update("versionInfo", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[RegisterContainerInstanceRequest]
     }
   }
 
@@ -3496,13 +2776,9 @@ package ecs {
     def apply(
         containerInstance: js.UndefOr[ContainerInstance] = js.undefined
     ): RegisterContainerInstanceResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "containerInstance" -> containerInstance.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RegisterContainerInstanceResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      containerInstance.foreach(__v => __obj.update("containerInstance", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[RegisterContainerInstanceResponse]
     }
   }
 
@@ -3541,48 +2817,24 @@ package ecs {
         taskRoleArn: js.UndefOr[String] = js.undefined,
         volumes: js.UndefOr[VolumeList] = js.undefined
     ): RegisterTaskDefinitionRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "containerDefinitions" -> containerDefinitions.asInstanceOf[js.Any],
-        "family"               -> family.asInstanceOf[js.Any],
-        "cpu" -> cpu.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "executionRoleArn" -> executionRoleArn.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ipcMode" -> ipcMode.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "memory" -> memory.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "networkMode" -> networkMode.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "pidMode" -> pidMode.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "placementConstraints" -> placementConstraints.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "proxyConfiguration" -> proxyConfiguration.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "requiresCompatibilities" -> requiresCompatibilities.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "tags" -> tags.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "taskRoleArn" -> taskRoleArn.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "volumes" -> volumes.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "family"               -> family.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RegisterTaskDefinitionRequest]
+      cpu.foreach(__v => __obj.update("cpu", __v.asInstanceOf[js.Any]))
+      executionRoleArn.foreach(__v => __obj.update("executionRoleArn", __v.asInstanceOf[js.Any]))
+      ipcMode.foreach(__v => __obj.update("ipcMode", __v.asInstanceOf[js.Any]))
+      memory.foreach(__v => __obj.update("memory", __v.asInstanceOf[js.Any]))
+      networkMode.foreach(__v => __obj.update("networkMode", __v.asInstanceOf[js.Any]))
+      pidMode.foreach(__v => __obj.update("pidMode", __v.asInstanceOf[js.Any]))
+      placementConstraints.foreach(__v => __obj.update("placementConstraints", __v.asInstanceOf[js.Any]))
+      proxyConfiguration.foreach(__v => __obj.update("proxyConfiguration", __v.asInstanceOf[js.Any]))
+      requiresCompatibilities.foreach(__v => __obj.update("requiresCompatibilities", __v.asInstanceOf[js.Any]))
+      tags.foreach(__v => __obj.update("tags", __v.asInstanceOf[js.Any]))
+      taskRoleArn.foreach(__v => __obj.update("taskRoleArn", __v.asInstanceOf[js.Any]))
+      volumes.foreach(__v => __obj.update("volumes", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[RegisterTaskDefinitionRequest]
     }
   }
 
@@ -3597,16 +2849,10 @@ package ecs {
         tags: js.UndefOr[Tags] = js.undefined,
         taskDefinition: js.UndefOr[TaskDefinition] = js.undefined
     ): RegisterTaskDefinitionResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "tags" -> tags.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "taskDefinition" -> taskDefinition.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RegisterTaskDefinitionResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      tags.foreach(__v => __obj.update("tags", __v.asInstanceOf[js.Any]))
+      taskDefinition.foreach(__v => __obj.update("taskDefinition", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[RegisterTaskDefinitionResponse]
     }
   }
 
@@ -3622,11 +2868,11 @@ package ecs {
     def apply(
         credentialsParameter: String
     ): RepositoryCredentials = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "credentialsParameter" -> credentialsParameter.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RepositoryCredentials]
+      __obj.asInstanceOf[RepositoryCredentials]
     }
   }
 
@@ -3652,28 +2898,14 @@ package ecs {
         stringSetValue: js.UndefOr[StringList] = js.undefined,
         `type`: js.UndefOr[String] = js.undefined
     ): Resource = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "doubleValue" -> doubleValue.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "integerValue" -> integerValue.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "longValue" -> longValue.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "name" -> name.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "stringSetValue" -> stringSetValue.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "`type`" -> `type`.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Resource]
+      val __obj = js.Dictionary.empty[js.Any]
+      doubleValue.foreach(__v => __obj.update("doubleValue", __v.asInstanceOf[js.Any]))
+      integerValue.foreach(__v => __obj.update("integerValue", __v.asInstanceOf[js.Any]))
+      longValue.foreach(__v => __obj.update("longValue", __v.asInstanceOf[js.Any]))
+      name.foreach(__v => __obj.update("name", __v.asInstanceOf[js.Any]))
+      stringSetValue.foreach(__v => __obj.update("stringSetValue", __v.asInstanceOf[js.Any]))
+      `type`.foreach(__v => __obj.update("type", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Resource]
     }
   }
 
@@ -3691,12 +2923,12 @@ package ecs {
         `type`: ResourceType,
         value: String
     ): ResourceRequirement = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "`type`" -> `type`.asInstanceOf[js.Any],
-        "value"  -> value.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "type"  -> `type`.asInstanceOf[js.Any],
+        "value" -> value.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ResourceRequirement]
+      __obj.asInstanceOf[ResourceRequirement]
     }
   }
 
@@ -3741,50 +2973,24 @@ package ecs {
         startedBy: js.UndefOr[String] = js.undefined,
         tags: js.UndefOr[Tags] = js.undefined
     ): RunTaskRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "taskDefinition" -> taskDefinition.asInstanceOf[js.Any],
-        "cluster" -> cluster.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "count" -> count.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "enableECSManagedTags" -> enableECSManagedTags.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "group" -> group.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "launchType" -> launchType.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "networkConfiguration" -> networkConfiguration.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "overrides" -> overrides.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "placementConstraints" -> placementConstraints.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "placementStrategy" -> placementStrategy.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "platformVersion" -> platformVersion.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "propagateTags" -> propagateTags.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "startedBy" -> startedBy.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "tags" -> tags.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "taskDefinition" -> taskDefinition.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RunTaskRequest]
+      cluster.foreach(__v => __obj.update("cluster", __v.asInstanceOf[js.Any]))
+      count.foreach(__v => __obj.update("count", __v.asInstanceOf[js.Any]))
+      enableECSManagedTags.foreach(__v => __obj.update("enableECSManagedTags", __v.asInstanceOf[js.Any]))
+      group.foreach(__v => __obj.update("group", __v.asInstanceOf[js.Any]))
+      launchType.foreach(__v => __obj.update("launchType", __v.asInstanceOf[js.Any]))
+      networkConfiguration.foreach(__v => __obj.update("networkConfiguration", __v.asInstanceOf[js.Any]))
+      overrides.foreach(__v => __obj.update("overrides", __v.asInstanceOf[js.Any]))
+      placementConstraints.foreach(__v => __obj.update("placementConstraints", __v.asInstanceOf[js.Any]))
+      placementStrategy.foreach(__v => __obj.update("placementStrategy", __v.asInstanceOf[js.Any]))
+      platformVersion.foreach(__v => __obj.update("platformVersion", __v.asInstanceOf[js.Any]))
+      propagateTags.foreach(__v => __obj.update("propagateTags", __v.asInstanceOf[js.Any]))
+      startedBy.foreach(__v => __obj.update("startedBy", __v.asInstanceOf[js.Any]))
+      tags.foreach(__v => __obj.update("tags", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[RunTaskRequest]
     }
   }
 
@@ -3799,16 +3005,10 @@ package ecs {
         failures: js.UndefOr[Failures] = js.undefined,
         tasks: js.UndefOr[Tasks] = js.undefined
     ): RunTaskResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "failures" -> failures.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "tasks" -> tasks.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RunTaskResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      failures.foreach(__v => __obj.update("failures", __v.asInstanceOf[js.Any]))
+      tasks.foreach(__v => __obj.update("tasks", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[RunTaskResponse]
     }
   }
 
@@ -3826,16 +3026,10 @@ package ecs {
         unit: js.UndefOr[ScaleUnit] = js.undefined,
         value: js.UndefOr[Double] = js.undefined
     ): Scale = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "unit" -> unit.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "value" -> value.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Scale]
+      val __obj = js.Dictionary.empty[js.Any]
+      unit.foreach(__v => __obj.update("unit", __v.asInstanceOf[js.Any]))
+      value.foreach(__v => __obj.update("value", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Scale]
     }
   }
 
@@ -3873,12 +3067,12 @@ package ecs {
         name: String,
         valueFrom: String
     ): Secret = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "name"      -> name.asInstanceOf[js.Any],
         "valueFrom" -> valueFrom.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Secret]
+      __obj.asInstanceOf[Secret]
     }
   }
 
@@ -3948,94 +3142,38 @@ package ecs {
         taskDefinition: js.UndefOr[String] = js.undefined,
         taskSets: js.UndefOr[TaskSets] = js.undefined
     ): Service = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "clusterArn" -> clusterArn.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "createdAt" -> createdAt.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "createdBy" -> createdBy.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "deploymentConfiguration" -> deploymentConfiguration.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "deploymentController" -> deploymentController.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "deployments" -> deployments.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "desiredCount" -> desiredCount.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "enableECSManagedTags" -> enableECSManagedTags.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "events" -> events.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "healthCheckGracePeriodSeconds" -> healthCheckGracePeriodSeconds.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "launchType" -> launchType.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "loadBalancers" -> loadBalancers.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "networkConfiguration" -> networkConfiguration.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "pendingCount" -> pendingCount.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "placementConstraints" -> placementConstraints.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "placementStrategy" -> placementStrategy.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "platformVersion" -> platformVersion.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "propagateTags" -> propagateTags.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "roleArn" -> roleArn.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "runningCount" -> runningCount.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "schedulingStrategy" -> schedulingStrategy.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "serviceArn" -> serviceArn.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "serviceName" -> serviceName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "serviceRegistries" -> serviceRegistries.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "status" -> status.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "tags" -> tags.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "taskDefinition" -> taskDefinition.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "taskSets" -> taskSets.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Service]
+      val __obj = js.Dictionary.empty[js.Any]
+      clusterArn.foreach(__v => __obj.update("clusterArn", __v.asInstanceOf[js.Any]))
+      createdAt.foreach(__v => __obj.update("createdAt", __v.asInstanceOf[js.Any]))
+      createdBy.foreach(__v => __obj.update("createdBy", __v.asInstanceOf[js.Any]))
+      deploymentConfiguration.foreach(__v => __obj.update("deploymentConfiguration", __v.asInstanceOf[js.Any]))
+      deploymentController.foreach(__v => __obj.update("deploymentController", __v.asInstanceOf[js.Any]))
+      deployments.foreach(__v => __obj.update("deployments", __v.asInstanceOf[js.Any]))
+      desiredCount.foreach(__v => __obj.update("desiredCount", __v.asInstanceOf[js.Any]))
+      enableECSManagedTags.foreach(__v => __obj.update("enableECSManagedTags", __v.asInstanceOf[js.Any]))
+      events.foreach(__v => __obj.update("events", __v.asInstanceOf[js.Any]))
+      healthCheckGracePeriodSeconds.foreach(
+        __v => __obj.update("healthCheckGracePeriodSeconds", __v.asInstanceOf[js.Any])
+      )
+      launchType.foreach(__v => __obj.update("launchType", __v.asInstanceOf[js.Any]))
+      loadBalancers.foreach(__v => __obj.update("loadBalancers", __v.asInstanceOf[js.Any]))
+      networkConfiguration.foreach(__v => __obj.update("networkConfiguration", __v.asInstanceOf[js.Any]))
+      pendingCount.foreach(__v => __obj.update("pendingCount", __v.asInstanceOf[js.Any]))
+      placementConstraints.foreach(__v => __obj.update("placementConstraints", __v.asInstanceOf[js.Any]))
+      placementStrategy.foreach(__v => __obj.update("placementStrategy", __v.asInstanceOf[js.Any]))
+      platformVersion.foreach(__v => __obj.update("platformVersion", __v.asInstanceOf[js.Any]))
+      propagateTags.foreach(__v => __obj.update("propagateTags", __v.asInstanceOf[js.Any]))
+      roleArn.foreach(__v => __obj.update("roleArn", __v.asInstanceOf[js.Any]))
+      runningCount.foreach(__v => __obj.update("runningCount", __v.asInstanceOf[js.Any]))
+      schedulingStrategy.foreach(__v => __obj.update("schedulingStrategy", __v.asInstanceOf[js.Any]))
+      serviceArn.foreach(__v => __obj.update("serviceArn", __v.asInstanceOf[js.Any]))
+      serviceName.foreach(__v => __obj.update("serviceName", __v.asInstanceOf[js.Any]))
+      serviceRegistries.foreach(__v => __obj.update("serviceRegistries", __v.asInstanceOf[js.Any]))
+      status.foreach(__v => __obj.update("status", __v.asInstanceOf[js.Any]))
+      tags.foreach(__v => __obj.update("tags", __v.asInstanceOf[js.Any]))
+      taskDefinition.foreach(__v => __obj.update("taskDefinition", __v.asInstanceOf[js.Any]))
+      taskSets.foreach(__v => __obj.update("taskSets", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Service]
     }
   }
 
@@ -4055,19 +3193,11 @@ package ecs {
         id: js.UndefOr[String] = js.undefined,
         message: js.UndefOr[String] = js.undefined
     ): ServiceEvent = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "createdAt" -> createdAt.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "id" -> id.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "message" -> message.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ServiceEvent]
+      val __obj = js.Dictionary.empty[js.Any]
+      createdAt.foreach(__v => __obj.update("createdAt", __v.asInstanceOf[js.Any]))
+      id.foreach(__v => __obj.update("id", __v.asInstanceOf[js.Any]))
+      message.foreach(__v => __obj.update("message", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ServiceEvent]
     }
   }
 
@@ -4095,22 +3225,12 @@ package ecs {
         port: js.UndefOr[BoxedInteger] = js.undefined,
         registryArn: js.UndefOr[String] = js.undefined
     ): ServiceRegistry = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "containerName" -> containerName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "containerPort" -> containerPort.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "port" -> port.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "registryArn" -> registryArn.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ServiceRegistry]
+      val __obj = js.Dictionary.empty[js.Any]
+      containerName.foreach(__v => __obj.update("containerName", __v.asInstanceOf[js.Any]))
+      containerPort.foreach(__v => __obj.update("containerPort", __v.asInstanceOf[js.Any]))
+      port.foreach(__v => __obj.update("port", __v.asInstanceOf[js.Any]))
+      registryArn.foreach(__v => __obj.update("registryArn", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ServiceRegistry]
     }
   }
 
@@ -4130,19 +3250,11 @@ package ecs {
         principalArn: js.UndefOr[String] = js.undefined,
         value: js.UndefOr[String] = js.undefined
     ): Setting = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "name" -> name.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "principalArn" -> principalArn.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "value" -> value.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Setting]
+      val __obj = js.Dictionary.empty[js.Any]
+      name.foreach(__v => __obj.update("name", __v.asInstanceOf[js.Any]))
+      principalArn.foreach(__v => __obj.update("principalArn", __v.asInstanceOf[js.Any]))
+      value.foreach(__v => __obj.update("value", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Setting]
     }
   }
 
@@ -4195,36 +3307,20 @@ package ecs {
         startedBy: js.UndefOr[String] = js.undefined,
         tags: js.UndefOr[Tags] = js.undefined
     ): StartTaskRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "containerInstances" -> containerInstances.asInstanceOf[js.Any],
-        "taskDefinition"     -> taskDefinition.asInstanceOf[js.Any],
-        "cluster" -> cluster.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "enableECSManagedTags" -> enableECSManagedTags.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "group" -> group.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "networkConfiguration" -> networkConfiguration.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "overrides" -> overrides.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "propagateTags" -> propagateTags.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "startedBy" -> startedBy.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "tags" -> tags.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "taskDefinition"     -> taskDefinition.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StartTaskRequest]
+      cluster.foreach(__v => __obj.update("cluster", __v.asInstanceOf[js.Any]))
+      enableECSManagedTags.foreach(__v => __obj.update("enableECSManagedTags", __v.asInstanceOf[js.Any]))
+      group.foreach(__v => __obj.update("group", __v.asInstanceOf[js.Any]))
+      networkConfiguration.foreach(__v => __obj.update("networkConfiguration", __v.asInstanceOf[js.Any]))
+      overrides.foreach(__v => __obj.update("overrides", __v.asInstanceOf[js.Any]))
+      propagateTags.foreach(__v => __obj.update("propagateTags", __v.asInstanceOf[js.Any]))
+      startedBy.foreach(__v => __obj.update("startedBy", __v.asInstanceOf[js.Any]))
+      tags.foreach(__v => __obj.update("tags", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[StartTaskRequest]
     }
   }
 
@@ -4239,16 +3335,10 @@ package ecs {
         failures: js.UndefOr[Failures] = js.undefined,
         tasks: js.UndefOr[Tasks] = js.undefined
     ): StartTaskResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "failures" -> failures.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "tasks" -> tasks.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StartTaskResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      failures.foreach(__v => __obj.update("failures", __v.asInstanceOf[js.Any]))
+      tasks.foreach(__v => __obj.update("tasks", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[StartTaskResponse]
     }
   }
 
@@ -4265,17 +3355,13 @@ package ecs {
         cluster: js.UndefOr[String] = js.undefined,
         reason: js.UndefOr[String] = js.undefined
     ): StopTaskRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "task" -> task.asInstanceOf[js.Any],
-        "cluster" -> cluster.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "reason" -> reason.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "task" -> task.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StopTaskRequest]
+      cluster.foreach(__v => __obj.update("cluster", __v.asInstanceOf[js.Any]))
+      reason.foreach(__v => __obj.update("reason", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[StopTaskRequest]
     }
   }
 
@@ -4288,13 +3374,9 @@ package ecs {
     def apply(
         task: js.UndefOr[Task] = js.undefined
     ): StopTaskResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "task" -> task.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StopTaskResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      task.foreach(__v => __obj.update("task", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[StopTaskResponse]
     }
   }
 
@@ -4319,31 +3401,15 @@ package ecs {
         status: js.UndefOr[String] = js.undefined,
         task: js.UndefOr[String] = js.undefined
     ): SubmitContainerStateChangeRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "cluster" -> cluster.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "containerName" -> containerName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "exitCode" -> exitCode.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "networkBindings" -> networkBindings.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "reason" -> reason.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "status" -> status.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "task" -> task.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SubmitContainerStateChangeRequest]
+      val __obj = js.Dictionary.empty[js.Any]
+      cluster.foreach(__v => __obj.update("cluster", __v.asInstanceOf[js.Any]))
+      containerName.foreach(__v => __obj.update("containerName", __v.asInstanceOf[js.Any]))
+      exitCode.foreach(__v => __obj.update("exitCode", __v.asInstanceOf[js.Any]))
+      networkBindings.foreach(__v => __obj.update("networkBindings", __v.asInstanceOf[js.Any]))
+      reason.foreach(__v => __obj.update("reason", __v.asInstanceOf[js.Any]))
+      status.foreach(__v => __obj.update("status", __v.asInstanceOf[js.Any]))
+      task.foreach(__v => __obj.update("task", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[SubmitContainerStateChangeRequest]
     }
   }
 
@@ -4356,13 +3422,9 @@ package ecs {
     def apply(
         acknowledgment: js.UndefOr[String] = js.undefined
     ): SubmitContainerStateChangeResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "acknowledgment" -> acknowledgment.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SubmitContainerStateChangeResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      acknowledgment.foreach(__v => __obj.update("acknowledgment", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[SubmitContainerStateChangeResponse]
     }
   }
 
@@ -4391,37 +3453,17 @@ package ecs {
         status: js.UndefOr[String] = js.undefined,
         task: js.UndefOr[String] = js.undefined
     ): SubmitTaskStateChangeRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "attachments" -> attachments.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "cluster" -> cluster.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "containers" -> containers.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "executionStoppedAt" -> executionStoppedAt.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "pullStartedAt" -> pullStartedAt.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "pullStoppedAt" -> pullStoppedAt.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "reason" -> reason.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "status" -> status.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "task" -> task.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SubmitTaskStateChangeRequest]
+      val __obj = js.Dictionary.empty[js.Any]
+      attachments.foreach(__v => __obj.update("attachments", __v.asInstanceOf[js.Any]))
+      cluster.foreach(__v => __obj.update("cluster", __v.asInstanceOf[js.Any]))
+      containers.foreach(__v => __obj.update("containers", __v.asInstanceOf[js.Any]))
+      executionStoppedAt.foreach(__v => __obj.update("executionStoppedAt", __v.asInstanceOf[js.Any]))
+      pullStartedAt.foreach(__v => __obj.update("pullStartedAt", __v.asInstanceOf[js.Any]))
+      pullStoppedAt.foreach(__v => __obj.update("pullStoppedAt", __v.asInstanceOf[js.Any]))
+      reason.foreach(__v => __obj.update("reason", __v.asInstanceOf[js.Any]))
+      status.foreach(__v => __obj.update("status", __v.asInstanceOf[js.Any]))
+      task.foreach(__v => __obj.update("task", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[SubmitTaskStateChangeRequest]
     }
   }
 
@@ -4434,13 +3476,9 @@ package ecs {
     def apply(
         acknowledgment: js.UndefOr[String] = js.undefined
     ): SubmitTaskStateChangeResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "acknowledgment" -> acknowledgment.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SubmitTaskStateChangeResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      acknowledgment.foreach(__v => __obj.update("acknowledgment", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[SubmitTaskStateChangeResponse]
     }
   }
 
@@ -4461,16 +3499,10 @@ package ecs {
         namespace: js.UndefOr[String] = js.undefined,
         value: js.UndefOr[String] = js.undefined
     ): SystemControl = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "namespace" -> namespace.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "value" -> value.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SystemControl]
+      val __obj = js.Dictionary.empty[js.Any]
+      namespace.foreach(__v => __obj.update("namespace", __v.asInstanceOf[js.Any]))
+      value.foreach(__v => __obj.update("value", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[SystemControl]
     }
   }
 
@@ -4488,16 +3520,10 @@ package ecs {
         key: js.UndefOr[TagKey] = js.undefined,
         value: js.UndefOr[TagValue] = js.undefined
     ): Tag = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "key" -> key.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "value" -> value.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Tag]
+      val __obj = js.Dictionary.empty[js.Any]
+      key.foreach(__v => __obj.update("key", __v.asInstanceOf[js.Any]))
+      value.foreach(__v => __obj.update("value", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Tag]
     }
   }
 
@@ -4512,12 +3538,12 @@ package ecs {
         resourceArn: String,
         tags: Tags
     ): TagResourceRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "resourceArn" -> resourceArn.asInstanceOf[js.Any],
         "tags"        -> tags.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[TagResourceRequest]
+      __obj.asInstanceOf[TagResourceRequest]
     }
   }
 
@@ -4527,10 +3553,9 @@ package ecs {
   object TagResourceResponse {
     def apply(
         ): TagResourceResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary.empty[js.Any]
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[TagResourceResponse]
+      __obj.asInstanceOf[TagResourceResponse]
     }
   }
 
@@ -4608,97 +3633,37 @@ package ecs {
         taskDefinitionArn: js.UndefOr[String] = js.undefined,
         version: js.UndefOr[Double] = js.undefined
     ): Task = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "attachments" -> attachments.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "clusterArn" -> clusterArn.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "connectivity" -> connectivity.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "connectivityAt" -> connectivityAt.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "containerInstanceArn" -> containerInstanceArn.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "containers" -> containers.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "cpu" -> cpu.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "createdAt" -> createdAt.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "desiredStatus" -> desiredStatus.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "executionStoppedAt" -> executionStoppedAt.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "group" -> group.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "healthStatus" -> healthStatus.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "lastStatus" -> lastStatus.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "launchType" -> launchType.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "memory" -> memory.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "overrides" -> overrides.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "platformVersion" -> platformVersion.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "pullStartedAt" -> pullStartedAt.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "pullStoppedAt" -> pullStoppedAt.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "startedAt" -> startedAt.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "startedBy" -> startedBy.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "stopCode" -> stopCode.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "stoppedAt" -> stoppedAt.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "stoppedReason" -> stoppedReason.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "stoppingAt" -> stoppingAt.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "tags" -> tags.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "taskArn" -> taskArn.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "taskDefinitionArn" -> taskDefinitionArn.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "version" -> version.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Task]
+      val __obj = js.Dictionary.empty[js.Any]
+      attachments.foreach(__v => __obj.update("attachments", __v.asInstanceOf[js.Any]))
+      clusterArn.foreach(__v => __obj.update("clusterArn", __v.asInstanceOf[js.Any]))
+      connectivity.foreach(__v => __obj.update("connectivity", __v.asInstanceOf[js.Any]))
+      connectivityAt.foreach(__v => __obj.update("connectivityAt", __v.asInstanceOf[js.Any]))
+      containerInstanceArn.foreach(__v => __obj.update("containerInstanceArn", __v.asInstanceOf[js.Any]))
+      containers.foreach(__v => __obj.update("containers", __v.asInstanceOf[js.Any]))
+      cpu.foreach(__v => __obj.update("cpu", __v.asInstanceOf[js.Any]))
+      createdAt.foreach(__v => __obj.update("createdAt", __v.asInstanceOf[js.Any]))
+      desiredStatus.foreach(__v => __obj.update("desiredStatus", __v.asInstanceOf[js.Any]))
+      executionStoppedAt.foreach(__v => __obj.update("executionStoppedAt", __v.asInstanceOf[js.Any]))
+      group.foreach(__v => __obj.update("group", __v.asInstanceOf[js.Any]))
+      healthStatus.foreach(__v => __obj.update("healthStatus", __v.asInstanceOf[js.Any]))
+      lastStatus.foreach(__v => __obj.update("lastStatus", __v.asInstanceOf[js.Any]))
+      launchType.foreach(__v => __obj.update("launchType", __v.asInstanceOf[js.Any]))
+      memory.foreach(__v => __obj.update("memory", __v.asInstanceOf[js.Any]))
+      overrides.foreach(__v => __obj.update("overrides", __v.asInstanceOf[js.Any]))
+      platformVersion.foreach(__v => __obj.update("platformVersion", __v.asInstanceOf[js.Any]))
+      pullStartedAt.foreach(__v => __obj.update("pullStartedAt", __v.asInstanceOf[js.Any]))
+      pullStoppedAt.foreach(__v => __obj.update("pullStoppedAt", __v.asInstanceOf[js.Any]))
+      startedAt.foreach(__v => __obj.update("startedAt", __v.asInstanceOf[js.Any]))
+      startedBy.foreach(__v => __obj.update("startedBy", __v.asInstanceOf[js.Any]))
+      stopCode.foreach(__v => __obj.update("stopCode", __v.asInstanceOf[js.Any]))
+      stoppedAt.foreach(__v => __obj.update("stoppedAt", __v.asInstanceOf[js.Any]))
+      stoppedReason.foreach(__v => __obj.update("stoppedReason", __v.asInstanceOf[js.Any]))
+      stoppingAt.foreach(__v => __obj.update("stoppingAt", __v.asInstanceOf[js.Any]))
+      tags.foreach(__v => __obj.update("tags", __v.asInstanceOf[js.Any]))
+      taskArn.foreach(__v => __obj.update("taskArn", __v.asInstanceOf[js.Any]))
+      taskDefinitionArn.foreach(__v => __obj.update("taskDefinitionArn", __v.asInstanceOf[js.Any]))
+      version.foreach(__v => __obj.update("version", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Task]
     }
   }
 
@@ -4748,64 +3713,26 @@ package ecs {
         taskRoleArn: js.UndefOr[String] = js.undefined,
         volumes: js.UndefOr[VolumeList] = js.undefined
     ): TaskDefinition = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "compatibilities" -> compatibilities.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "containerDefinitions" -> containerDefinitions.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "cpu" -> cpu.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "executionRoleArn" -> executionRoleArn.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "family" -> family.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ipcMode" -> ipcMode.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "memory" -> memory.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "networkMode" -> networkMode.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "pidMode" -> pidMode.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "placementConstraints" -> placementConstraints.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "proxyConfiguration" -> proxyConfiguration.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "requiresAttributes" -> requiresAttributes.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "requiresCompatibilities" -> requiresCompatibilities.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "revision" -> revision.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "status" -> status.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "taskDefinitionArn" -> taskDefinitionArn.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "taskRoleArn" -> taskRoleArn.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "volumes" -> volumes.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[TaskDefinition]
+      val __obj = js.Dictionary.empty[js.Any]
+      compatibilities.foreach(__v => __obj.update("compatibilities", __v.asInstanceOf[js.Any]))
+      containerDefinitions.foreach(__v => __obj.update("containerDefinitions", __v.asInstanceOf[js.Any]))
+      cpu.foreach(__v => __obj.update("cpu", __v.asInstanceOf[js.Any]))
+      executionRoleArn.foreach(__v => __obj.update("executionRoleArn", __v.asInstanceOf[js.Any]))
+      family.foreach(__v => __obj.update("family", __v.asInstanceOf[js.Any]))
+      ipcMode.foreach(__v => __obj.update("ipcMode", __v.asInstanceOf[js.Any]))
+      memory.foreach(__v => __obj.update("memory", __v.asInstanceOf[js.Any]))
+      networkMode.foreach(__v => __obj.update("networkMode", __v.asInstanceOf[js.Any]))
+      pidMode.foreach(__v => __obj.update("pidMode", __v.asInstanceOf[js.Any]))
+      placementConstraints.foreach(__v => __obj.update("placementConstraints", __v.asInstanceOf[js.Any]))
+      proxyConfiguration.foreach(__v => __obj.update("proxyConfiguration", __v.asInstanceOf[js.Any]))
+      requiresAttributes.foreach(__v => __obj.update("requiresAttributes", __v.asInstanceOf[js.Any]))
+      requiresCompatibilities.foreach(__v => __obj.update("requiresCompatibilities", __v.asInstanceOf[js.Any]))
+      revision.foreach(__v => __obj.update("revision", __v.asInstanceOf[js.Any]))
+      status.foreach(__v => __obj.update("status", __v.asInstanceOf[js.Any]))
+      taskDefinitionArn.foreach(__v => __obj.update("taskDefinitionArn", __v.asInstanceOf[js.Any]))
+      taskRoleArn.foreach(__v => __obj.update("taskRoleArn", __v.asInstanceOf[js.Any]))
+      volumes.foreach(__v => __obj.update("volumes", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[TaskDefinition]
     }
   }
 
@@ -4839,16 +3766,10 @@ package ecs {
         expression: js.UndefOr[String] = js.undefined,
         `type`: js.UndefOr[TaskDefinitionPlacementConstraintType] = js.undefined
     ): TaskDefinitionPlacementConstraint = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "expression" -> expression.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "`type`" -> `type`.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[TaskDefinitionPlacementConstraint]
+      val __obj = js.Dictionary.empty[js.Any]
+      expression.foreach(__v => __obj.update("expression", __v.asInstanceOf[js.Any]))
+      `type`.foreach(__v => __obj.update("type", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[TaskDefinitionPlacementConstraint]
     }
   }
 
@@ -4887,19 +3808,11 @@ package ecs {
         executionRoleArn: js.UndefOr[String] = js.undefined,
         taskRoleArn: js.UndefOr[String] = js.undefined
     ): TaskOverride = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "containerOverrides" -> containerOverrides.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "executionRoleArn" -> executionRoleArn.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "taskRoleArn" -> taskRoleArn.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[TaskOverride]
+      val __obj = js.Dictionary.empty[js.Any]
+      containerOverrides.foreach(__v => __obj.update("containerOverrides", __v.asInstanceOf[js.Any]))
+      executionRoleArn.foreach(__v => __obj.update("executionRoleArn", __v.asInstanceOf[js.Any]))
+      taskRoleArn.foreach(__v => __obj.update("taskRoleArn", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[TaskOverride]
     }
   }
 
@@ -4955,73 +3868,29 @@ package ecs {
         taskSetArn: js.UndefOr[String] = js.undefined,
         updatedAt: js.UndefOr[Timestamp] = js.undefined
     ): TaskSet = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "clusterArn" -> clusterArn.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "computedDesiredCount" -> computedDesiredCount.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "createdAt" -> createdAt.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "externalId" -> externalId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "id" -> id.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "launchType" -> launchType.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "loadBalancers" -> loadBalancers.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "networkConfiguration" -> networkConfiguration.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "pendingCount" -> pendingCount.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "platformVersion" -> platformVersion.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "runningCount" -> runningCount.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "scale" -> scale.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "serviceArn" -> serviceArn.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "serviceRegistries" -> serviceRegistries.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "stabilityStatus" -> stabilityStatus.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "stabilityStatusAt" -> stabilityStatusAt.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "startedBy" -> startedBy.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "status" -> status.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "taskDefinition" -> taskDefinition.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "taskSetArn" -> taskSetArn.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "updatedAt" -> updatedAt.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[TaskSet]
+      val __obj = js.Dictionary.empty[js.Any]
+      clusterArn.foreach(__v => __obj.update("clusterArn", __v.asInstanceOf[js.Any]))
+      computedDesiredCount.foreach(__v => __obj.update("computedDesiredCount", __v.asInstanceOf[js.Any]))
+      createdAt.foreach(__v => __obj.update("createdAt", __v.asInstanceOf[js.Any]))
+      externalId.foreach(__v => __obj.update("externalId", __v.asInstanceOf[js.Any]))
+      id.foreach(__v => __obj.update("id", __v.asInstanceOf[js.Any]))
+      launchType.foreach(__v => __obj.update("launchType", __v.asInstanceOf[js.Any]))
+      loadBalancers.foreach(__v => __obj.update("loadBalancers", __v.asInstanceOf[js.Any]))
+      networkConfiguration.foreach(__v => __obj.update("networkConfiguration", __v.asInstanceOf[js.Any]))
+      pendingCount.foreach(__v => __obj.update("pendingCount", __v.asInstanceOf[js.Any]))
+      platformVersion.foreach(__v => __obj.update("platformVersion", __v.asInstanceOf[js.Any]))
+      runningCount.foreach(__v => __obj.update("runningCount", __v.asInstanceOf[js.Any]))
+      scale.foreach(__v => __obj.update("scale", __v.asInstanceOf[js.Any]))
+      serviceArn.foreach(__v => __obj.update("serviceArn", __v.asInstanceOf[js.Any]))
+      serviceRegistries.foreach(__v => __obj.update("serviceRegistries", __v.asInstanceOf[js.Any]))
+      stabilityStatus.foreach(__v => __obj.update("stabilityStatus", __v.asInstanceOf[js.Any]))
+      stabilityStatusAt.foreach(__v => __obj.update("stabilityStatusAt", __v.asInstanceOf[js.Any]))
+      startedBy.foreach(__v => __obj.update("startedBy", __v.asInstanceOf[js.Any]))
+      status.foreach(__v => __obj.update("status", __v.asInstanceOf[js.Any]))
+      taskDefinition.foreach(__v => __obj.update("taskDefinition", __v.asInstanceOf[js.Any]))
+      taskSetArn.foreach(__v => __obj.update("taskSetArn", __v.asInstanceOf[js.Any]))
+      updatedAt.foreach(__v => __obj.update("updatedAt", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[TaskSet]
     }
   }
 
@@ -5049,15 +3918,13 @@ package ecs {
         size: Int,
         mountOptions: js.UndefOr[StringList] = js.undefined
     ): Tmpfs = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "containerPath" -> containerPath.asInstanceOf[js.Any],
-        "size"          -> size.asInstanceOf[js.Any],
-        "mountOptions" -> mountOptions.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "size"          -> size.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Tmpfs]
+      mountOptions.foreach(__v => __obj.update("mountOptions", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Tmpfs]
     }
   }
 
@@ -5084,13 +3951,13 @@ package ecs {
         name: UlimitName,
         softLimit: Int
     ): Ulimit = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "hardLimit" -> hardLimit.asInstanceOf[js.Any],
         "name"      -> name.asInstanceOf[js.Any],
         "softLimit" -> softLimit.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Ulimit]
+      __obj.asInstanceOf[Ulimit]
     }
   }
 
@@ -5141,12 +4008,12 @@ package ecs {
         resourceArn: String,
         tagKeys: TagKeys
     ): UntagResourceRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "resourceArn" -> resourceArn.asInstanceOf[js.Any],
         "tagKeys"     -> tagKeys.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UntagResourceRequest]
+      __obj.asInstanceOf[UntagResourceRequest]
     }
   }
 
@@ -5156,10 +4023,9 @@ package ecs {
   object UntagResourceResponse {
     def apply(
         ): UntagResourceResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary.empty[js.Any]
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UntagResourceResponse]
+      __obj.asInstanceOf[UntagResourceResponse]
     }
   }
 
@@ -5174,14 +4040,12 @@ package ecs {
         containerInstance: String,
         cluster: js.UndefOr[String] = js.undefined
     ): UpdateContainerAgentRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "containerInstance" -> containerInstance.asInstanceOf[js.Any],
-        "cluster" -> cluster.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "containerInstance" -> containerInstance.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateContainerAgentRequest]
+      cluster.foreach(__v => __obj.update("cluster", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateContainerAgentRequest]
     }
   }
 
@@ -5194,13 +4058,9 @@ package ecs {
     def apply(
         containerInstance: js.UndefOr[ContainerInstance] = js.undefined
     ): UpdateContainerAgentResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "containerInstance" -> containerInstance.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateContainerAgentResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      containerInstance.foreach(__v => __obj.update("containerInstance", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateContainerAgentResponse]
     }
   }
 
@@ -5217,15 +4077,13 @@ package ecs {
         status: ContainerInstanceStatus,
         cluster: js.UndefOr[String] = js.undefined
     ): UpdateContainerInstancesStateRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "containerInstances" -> containerInstances.asInstanceOf[js.Any],
-        "status"             -> status.asInstanceOf[js.Any],
-        "cluster" -> cluster.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "status"             -> status.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateContainerInstancesStateRequest]
+      cluster.foreach(__v => __obj.update("cluster", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateContainerInstancesStateRequest]
     }
   }
 
@@ -5240,16 +4098,10 @@ package ecs {
         containerInstances: js.UndefOr[ContainerInstances] = js.undefined,
         failures: js.UndefOr[Failures] = js.undefined
     ): UpdateContainerInstancesStateResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "containerInstances" -> containerInstances.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "failures" -> failures.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateContainerInstancesStateResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      containerInstances.foreach(__v => __obj.update("containerInstances", __v.asInstanceOf[js.Any]))
+      failures.foreach(__v => __obj.update("failures", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateContainerInstancesStateResponse]
     }
   }
 
@@ -5266,13 +4118,13 @@ package ecs {
         primaryTaskSet: String,
         service: String
     ): UpdateServicePrimaryTaskSetRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "cluster"        -> cluster.asInstanceOf[js.Any],
         "primaryTaskSet" -> primaryTaskSet.asInstanceOf[js.Any],
         "service"        -> service.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateServicePrimaryTaskSetRequest]
+      __obj.asInstanceOf[UpdateServicePrimaryTaskSetRequest]
     }
   }
 
@@ -5285,13 +4137,9 @@ package ecs {
     def apply(
         taskSet: js.UndefOr[TaskSet] = js.undefined
     ): UpdateServicePrimaryTaskSetResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "taskSet" -> taskSet.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateServicePrimaryTaskSetResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      taskSet.foreach(__v => __obj.update("taskSet", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateServicePrimaryTaskSetResponse]
     }
   }
 
@@ -5320,35 +4168,21 @@ package ecs {
         platformVersion: js.UndefOr[String] = js.undefined,
         taskDefinition: js.UndefOr[String] = js.undefined
     ): UpdateServiceRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "service" -> service.asInstanceOf[js.Any],
-        "cluster" -> cluster.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "deploymentConfiguration" -> deploymentConfiguration.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "desiredCount" -> desiredCount.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "forceNewDeployment" -> forceNewDeployment.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "healthCheckGracePeriodSeconds" -> healthCheckGracePeriodSeconds.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "networkConfiguration" -> networkConfiguration.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "platformVersion" -> platformVersion.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "taskDefinition" -> taskDefinition.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "service" -> service.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateServiceRequest]
+      cluster.foreach(__v => __obj.update("cluster", __v.asInstanceOf[js.Any]))
+      deploymentConfiguration.foreach(__v => __obj.update("deploymentConfiguration", __v.asInstanceOf[js.Any]))
+      desiredCount.foreach(__v => __obj.update("desiredCount", __v.asInstanceOf[js.Any]))
+      forceNewDeployment.foreach(__v => __obj.update("forceNewDeployment", __v.asInstanceOf[js.Any]))
+      healthCheckGracePeriodSeconds.foreach(
+        __v => __obj.update("healthCheckGracePeriodSeconds", __v.asInstanceOf[js.Any])
+      )
+      networkConfiguration.foreach(__v => __obj.update("networkConfiguration", __v.asInstanceOf[js.Any]))
+      platformVersion.foreach(__v => __obj.update("platformVersion", __v.asInstanceOf[js.Any]))
+      taskDefinition.foreach(__v => __obj.update("taskDefinition", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateServiceRequest]
     }
   }
 
@@ -5361,13 +4195,9 @@ package ecs {
     def apply(
         service: js.UndefOr[Service] = js.undefined
     ): UpdateServiceResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "service" -> service.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateServiceResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      service.foreach(__v => __obj.update("service", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateServiceResponse]
     }
   }
 
@@ -5386,14 +4216,14 @@ package ecs {
         service: String,
         taskSet: String
     ): UpdateTaskSetRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "cluster" -> cluster.asInstanceOf[js.Any],
         "scale"   -> scale.asInstanceOf[js.Any],
         "service" -> service.asInstanceOf[js.Any],
         "taskSet" -> taskSet.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateTaskSetRequest]
+      __obj.asInstanceOf[UpdateTaskSetRequest]
     }
   }
 
@@ -5406,13 +4236,9 @@ package ecs {
     def apply(
         taskSet: js.UndefOr[TaskSet] = js.undefined
     ): UpdateTaskSetResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "taskSet" -> taskSet.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateTaskSetResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      taskSet.foreach(__v => __obj.update("taskSet", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateTaskSetResponse]
     }
   }
 
@@ -5432,19 +4258,11 @@ package ecs {
         agentVersion: js.UndefOr[String] = js.undefined,
         dockerVersion: js.UndefOr[String] = js.undefined
     ): VersionInfo = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "agentHash" -> agentHash.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "agentVersion" -> agentVersion.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "dockerVersion" -> dockerVersion.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[VersionInfo]
+      val __obj = js.Dictionary.empty[js.Any]
+      agentHash.foreach(__v => __obj.update("agentHash", __v.asInstanceOf[js.Any]))
+      agentVersion.foreach(__v => __obj.update("agentVersion", __v.asInstanceOf[js.Any]))
+      dockerVersion.foreach(__v => __obj.update("dockerVersion", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[VersionInfo]
     }
   }
 
@@ -5464,19 +4282,11 @@ package ecs {
         host: js.UndefOr[HostVolumeProperties] = js.undefined,
         name: js.UndefOr[String] = js.undefined
     ): Volume = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "dockerVolumeConfiguration" -> dockerVolumeConfiguration.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "host" -> host.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "name" -> name.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Volume]
+      val __obj = js.Dictionary.empty[js.Any]
+      dockerVolumeConfiguration.foreach(__v => __obj.update("dockerVolumeConfiguration", __v.asInstanceOf[js.Any]))
+      host.foreach(__v => __obj.update("host", __v.asInstanceOf[js.Any]))
+      name.foreach(__v => __obj.update("name", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Volume]
     }
   }
 
@@ -5494,16 +4304,10 @@ package ecs {
         readOnly: js.UndefOr[BoxedBoolean] = js.undefined,
         sourceContainer: js.UndefOr[String] = js.undefined
     ): VolumeFrom = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "readOnly" -> readOnly.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "sourceContainer" -> sourceContainer.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[VolumeFrom]
+      val __obj = js.Dictionary.empty[js.Any]
+      readOnly.foreach(__v => __obj.update("readOnly", __v.asInstanceOf[js.Any]))
+      sourceContainer.foreach(__v => __obj.update("sourceContainer", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[VolumeFrom]
     }
   }
 }

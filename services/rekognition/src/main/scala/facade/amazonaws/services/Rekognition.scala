@@ -225,16 +225,10 @@ package rekognition {
         High: js.UndefOr[UInteger] = js.undefined,
         Low: js.UndefOr[UInteger] = js.undefined
     ): AgeRange = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "High" -> High.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Low" -> Low.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AgeRange]
+      val __obj = js.Dictionary.empty[js.Any]
+      High.foreach(__v => __obj.update("High", __v.asInstanceOf[js.Any]))
+      Low.foreach(__v => __obj.update("Low", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AgeRange]
     }
   }
 
@@ -259,16 +253,10 @@ package rekognition {
         Confidence: js.UndefOr[Percent] = js.undefined,
         Value: js.UndefOr[Boolean] = js.undefined
     ): Beard = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Confidence" -> Confidence.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Value" -> Value.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Beard]
+      val __obj = js.Dictionary.empty[js.Any]
+      Confidence.foreach(__v => __obj.update("Confidence", __v.asInstanceOf[js.Any]))
+      Value.foreach(__v => __obj.update("Value", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Beard]
     }
   }
 
@@ -294,22 +282,12 @@ package rekognition {
         Top: js.UndefOr[Float] = js.undefined,
         Width: js.UndefOr[Float] = js.undefined
     ): BoundingBox = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Height" -> Height.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Left" -> Left.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Top" -> Top.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Width" -> Width.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[BoundingBox]
+      val __obj = js.Dictionary.empty[js.Any]
+      Height.foreach(__v => __obj.update("Height", __v.asInstanceOf[js.Any]))
+      Left.foreach(__v => __obj.update("Left", __v.asInstanceOf[js.Any]))
+      Top.foreach(__v => __obj.update("Top", __v.asInstanceOf[js.Any]))
+      Width.foreach(__v => __obj.update("Width", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[BoundingBox]
     }
   }
 
@@ -333,25 +311,13 @@ package rekognition {
         Name: js.UndefOr[String] = js.undefined,
         Urls: js.UndefOr[Urls] = js.undefined
     ): Celebrity = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Face" -> Face.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Id" -> Id.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MatchConfidence" -> MatchConfidence.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Name" -> Name.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Urls" -> Urls.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Celebrity]
+      val __obj = js.Dictionary.empty[js.Any]
+      Face.foreach(__v => __obj.update("Face", __v.asInstanceOf[js.Any]))
+      Id.foreach(__v => __obj.update("Id", __v.asInstanceOf[js.Any]))
+      MatchConfidence.foreach(__v => __obj.update("MatchConfidence", __v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
+      Urls.foreach(__v => __obj.update("Urls", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Celebrity]
     }
   }
 
@@ -377,28 +343,14 @@ package rekognition {
         Name: js.UndefOr[String] = js.undefined,
         Urls: js.UndefOr[Urls] = js.undefined
     ): CelebrityDetail = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "BoundingBox" -> BoundingBox.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Confidence" -> Confidence.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Face" -> Face.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Id" -> Id.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Name" -> Name.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Urls" -> Urls.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CelebrityDetail]
+      val __obj = js.Dictionary.empty[js.Any]
+      BoundingBox.foreach(__v => __obj.update("BoundingBox", __v.asInstanceOf[js.Any]))
+      Confidence.foreach(__v => __obj.update("Confidence", __v.asInstanceOf[js.Any]))
+      Face.foreach(__v => __obj.update("Face", __v.asInstanceOf[js.Any]))
+      Id.foreach(__v => __obj.update("Id", __v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
+      Urls.foreach(__v => __obj.update("Urls", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CelebrityDetail]
     }
   }
 
@@ -416,16 +368,10 @@ package rekognition {
         Celebrity: js.UndefOr[CelebrityDetail] = js.undefined,
         Timestamp: js.UndefOr[Timestamp] = js.undefined
     ): CelebrityRecognition = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Celebrity" -> Celebrity.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Timestamp" -> Timestamp.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CelebrityRecognition]
+      val __obj = js.Dictionary.empty[js.Any]
+      Celebrity.foreach(__v => __obj.update("Celebrity", __v.asInstanceOf[js.Any]))
+      Timestamp.foreach(__v => __obj.update("Timestamp", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CelebrityRecognition]
     }
   }
 
@@ -450,16 +396,10 @@ package rekognition {
         Face: js.UndefOr[ComparedFace] = js.undefined,
         Similarity: js.UndefOr[Percent] = js.undefined
     ): CompareFacesMatch = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Face" -> Face.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Similarity" -> Similarity.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CompareFacesMatch]
+      val __obj = js.Dictionary.empty[js.Any]
+      Face.foreach(__v => __obj.update("Face", __v.asInstanceOf[js.Any]))
+      Similarity.foreach(__v => __obj.update("Similarity", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CompareFacesMatch]
     }
   }
 
@@ -476,15 +416,13 @@ package rekognition {
         TargetImage: Image,
         SimilarityThreshold: js.UndefOr[Percent] = js.undefined
     ): CompareFacesRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "SourceImage" -> SourceImage.asInstanceOf[js.Any],
-        "TargetImage" -> TargetImage.asInstanceOf[js.Any],
-        "SimilarityThreshold" -> SimilarityThreshold.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "TargetImage" -> TargetImage.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CompareFacesRequest]
+      SimilarityThreshold.foreach(__v => __obj.update("SimilarityThreshold", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CompareFacesRequest]
     }
   }
 
@@ -505,25 +443,17 @@ package rekognition {
         TargetImageOrientationCorrection: js.UndefOr[OrientationCorrection] = js.undefined,
         UnmatchedFaces: js.UndefOr[CompareFacesUnmatchList] = js.undefined
     ): CompareFacesResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "FaceMatches" -> FaceMatches.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SourceImageFace" -> SourceImageFace.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SourceImageOrientationCorrection" -> SourceImageOrientationCorrection.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "TargetImageOrientationCorrection" -> TargetImageOrientationCorrection.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "UnmatchedFaces" -> UnmatchedFaces.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CompareFacesResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      FaceMatches.foreach(__v => __obj.update("FaceMatches", __v.asInstanceOf[js.Any]))
+      SourceImageFace.foreach(__v => __obj.update("SourceImageFace", __v.asInstanceOf[js.Any]))
+      SourceImageOrientationCorrection.foreach(
+        __v => __obj.update("SourceImageOrientationCorrection", __v.asInstanceOf[js.Any])
+      )
+      TargetImageOrientationCorrection.foreach(
+        __v => __obj.update("TargetImageOrientationCorrection", __v.asInstanceOf[js.Any])
+      )
+      UnmatchedFaces.foreach(__v => __obj.update("UnmatchedFaces", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CompareFacesResponse]
     }
   }
 
@@ -547,25 +477,13 @@ package rekognition {
         Pose: js.UndefOr[Pose] = js.undefined,
         Quality: js.UndefOr[ImageQuality] = js.undefined
     ): ComparedFace = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "BoundingBox" -> BoundingBox.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Confidence" -> Confidence.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Landmarks" -> Landmarks.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Pose" -> Pose.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Quality" -> Quality.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ComparedFace]
+      val __obj = js.Dictionary.empty[js.Any]
+      BoundingBox.foreach(__v => __obj.update("BoundingBox", __v.asInstanceOf[js.Any]))
+      Confidence.foreach(__v => __obj.update("Confidence", __v.asInstanceOf[js.Any]))
+      Landmarks.foreach(__v => __obj.update("Landmarks", __v.asInstanceOf[js.Any]))
+      Pose.foreach(__v => __obj.update("Pose", __v.asInstanceOf[js.Any]))
+      Quality.foreach(__v => __obj.update("Quality", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ComparedFace]
     }
   }
 
@@ -583,16 +501,10 @@ package rekognition {
         BoundingBox: js.UndefOr[BoundingBox] = js.undefined,
         Confidence: js.UndefOr[Percent] = js.undefined
     ): ComparedSourceImageFace = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "BoundingBox" -> BoundingBox.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Confidence" -> Confidence.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ComparedSourceImageFace]
+      val __obj = js.Dictionary.empty[js.Any]
+      BoundingBox.foreach(__v => __obj.update("BoundingBox", __v.asInstanceOf[js.Any]))
+      Confidence.foreach(__v => __obj.update("Confidence", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ComparedSourceImageFace]
     }
   }
 
@@ -610,16 +522,10 @@ package rekognition {
         ModerationLabel: js.UndefOr[ModerationLabel] = js.undefined,
         Timestamp: js.UndefOr[Timestamp] = js.undefined
     ): ContentModerationDetection = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ModerationLabel" -> ModerationLabel.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Timestamp" -> Timestamp.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ContentModerationDetection]
+      val __obj = js.Dictionary.empty[js.Any]
+      ModerationLabel.foreach(__v => __obj.update("ModerationLabel", __v.asInstanceOf[js.Any]))
+      Timestamp.foreach(__v => __obj.update("Timestamp", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ContentModerationDetection]
     }
   }
 
@@ -639,11 +545,11 @@ package rekognition {
     def apply(
         CollectionId: CollectionId
     ): CreateCollectionRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "CollectionId" -> CollectionId.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateCollectionRequest]
+      __obj.asInstanceOf[CreateCollectionRequest]
     }
   }
 
@@ -660,19 +566,11 @@ package rekognition {
         FaceModelVersion: js.UndefOr[String] = js.undefined,
         StatusCode: js.UndefOr[UInteger] = js.undefined
     ): CreateCollectionResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "CollectionArn" -> CollectionArn.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "FaceModelVersion" -> FaceModelVersion.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "StatusCode" -> StatusCode.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateCollectionResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      CollectionArn.foreach(__v => __obj.update("CollectionArn", __v.asInstanceOf[js.Any]))
+      FaceModelVersion.foreach(__v => __obj.update("FaceModelVersion", __v.asInstanceOf[js.Any]))
+      StatusCode.foreach(__v => __obj.update("StatusCode", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateCollectionResponse]
     }
   }
 
@@ -693,15 +591,15 @@ package rekognition {
         RoleArn: RoleArn,
         Settings: StreamProcessorSettings
     ): CreateStreamProcessorRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "Input"    -> Input.asInstanceOf[js.Any],
         "Name"     -> Name.asInstanceOf[js.Any],
         "Output"   -> Output.asInstanceOf[js.Any],
         "RoleArn"  -> RoleArn.asInstanceOf[js.Any],
         "Settings" -> Settings.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateStreamProcessorRequest]
+      __obj.asInstanceOf[CreateStreamProcessorRequest]
     }
   }
 
@@ -714,13 +612,9 @@ package rekognition {
     def apply(
         StreamProcessorArn: js.UndefOr[StreamProcessorArn] = js.undefined
     ): CreateStreamProcessorResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "StreamProcessorArn" -> StreamProcessorArn.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateStreamProcessorResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      StreamProcessorArn.foreach(__v => __obj.update("StreamProcessorArn", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateStreamProcessorResponse]
     }
   }
 
@@ -733,11 +627,11 @@ package rekognition {
     def apply(
         CollectionId: CollectionId
     ): DeleteCollectionRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "CollectionId" -> CollectionId.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteCollectionRequest]
+      __obj.asInstanceOf[DeleteCollectionRequest]
     }
   }
 
@@ -750,13 +644,9 @@ package rekognition {
     def apply(
         StatusCode: js.UndefOr[UInteger] = js.undefined
     ): DeleteCollectionResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "StatusCode" -> StatusCode.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteCollectionResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      StatusCode.foreach(__v => __obj.update("StatusCode", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DeleteCollectionResponse]
     }
   }
 
@@ -771,12 +661,12 @@ package rekognition {
         CollectionId: CollectionId,
         FaceIds: FaceIdList
     ): DeleteFacesRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "CollectionId" -> CollectionId.asInstanceOf[js.Any],
         "FaceIds"      -> FaceIds.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteFacesRequest]
+      __obj.asInstanceOf[DeleteFacesRequest]
     }
   }
 
@@ -789,13 +679,9 @@ package rekognition {
     def apply(
         DeletedFaces: js.UndefOr[FaceIdList] = js.undefined
     ): DeleteFacesResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "DeletedFaces" -> DeletedFaces.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteFacesResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      DeletedFaces.foreach(__v => __obj.update("DeletedFaces", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DeleteFacesResponse]
     }
   }
 
@@ -808,11 +694,11 @@ package rekognition {
     def apply(
         Name: StreamProcessorName
     ): DeleteStreamProcessorRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "Name" -> Name.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteStreamProcessorRequest]
+      __obj.asInstanceOf[DeleteStreamProcessorRequest]
     }
   }
 
@@ -822,10 +708,9 @@ package rekognition {
   object DeleteStreamProcessorResponse {
     def apply(
         ): DeleteStreamProcessorResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary.empty[js.Any]
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteStreamProcessorResponse]
+      __obj.asInstanceOf[DeleteStreamProcessorResponse]
     }
   }
 
@@ -838,11 +723,11 @@ package rekognition {
     def apply(
         CollectionId: CollectionId
     ): DescribeCollectionRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "CollectionId" -> CollectionId.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeCollectionRequest]
+      __obj.asInstanceOf[DescribeCollectionRequest]
     }
   }
 
@@ -861,22 +746,12 @@ package rekognition {
         FaceCount: js.UndefOr[ULong] = js.undefined,
         FaceModelVersion: js.UndefOr[String] = js.undefined
     ): DescribeCollectionResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "CollectionARN" -> CollectionARN.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "CreationTimestamp" -> CreationTimestamp.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "FaceCount" -> FaceCount.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "FaceModelVersion" -> FaceModelVersion.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeCollectionResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      CollectionARN.foreach(__v => __obj.update("CollectionARN", __v.asInstanceOf[js.Any]))
+      CreationTimestamp.foreach(__v => __obj.update("CreationTimestamp", __v.asInstanceOf[js.Any]))
+      FaceCount.foreach(__v => __obj.update("FaceCount", __v.asInstanceOf[js.Any]))
+      FaceModelVersion.foreach(__v => __obj.update("FaceModelVersion", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeCollectionResponse]
     }
   }
 
@@ -889,11 +764,11 @@ package rekognition {
     def apply(
         Name: StreamProcessorName
     ): DescribeStreamProcessorRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "Name" -> Name.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeStreamProcessorRequest]
+      __obj.asInstanceOf[DescribeStreamProcessorRequest]
     }
   }
 
@@ -924,40 +799,18 @@ package rekognition {
         StatusMessage: js.UndefOr[String] = js.undefined,
         StreamProcessorArn: js.UndefOr[StreamProcessorArn] = js.undefined
     ): DescribeStreamProcessorResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "CreationTimestamp" -> CreationTimestamp.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Input" -> Input.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "LastUpdateTimestamp" -> LastUpdateTimestamp.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Name" -> Name.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Output" -> Output.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "RoleArn" -> RoleArn.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Settings" -> Settings.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Status" -> Status.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "StatusMessage" -> StatusMessage.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "StreamProcessorArn" -> StreamProcessorArn.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeStreamProcessorResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      CreationTimestamp.foreach(__v => __obj.update("CreationTimestamp", __v.asInstanceOf[js.Any]))
+      Input.foreach(__v => __obj.update("Input", __v.asInstanceOf[js.Any]))
+      LastUpdateTimestamp.foreach(__v => __obj.update("LastUpdateTimestamp", __v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
+      Output.foreach(__v => __obj.update("Output", __v.asInstanceOf[js.Any]))
+      RoleArn.foreach(__v => __obj.update("RoleArn", __v.asInstanceOf[js.Any]))
+      Settings.foreach(__v => __obj.update("Settings", __v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.update("Status", __v.asInstanceOf[js.Any]))
+      StatusMessage.foreach(__v => __obj.update("StatusMessage", __v.asInstanceOf[js.Any]))
+      StreamProcessorArn.foreach(__v => __obj.update("StreamProcessorArn", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeStreamProcessorResponse]
     }
   }
 
@@ -972,14 +825,12 @@ package rekognition {
         Image: Image,
         Attributes: js.UndefOr[Attributes] = js.undefined
     ): DetectFacesRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Image" -> Image.asInstanceOf[js.Any],
-        "Attributes" -> Attributes.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "Image" -> Image.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DetectFacesRequest]
+      Attributes.foreach(__v => __obj.update("Attributes", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DetectFacesRequest]
     }
   }
 
@@ -994,16 +845,10 @@ package rekognition {
         FaceDetails: js.UndefOr[FaceDetailList] = js.undefined,
         OrientationCorrection: js.UndefOr[OrientationCorrection] = js.undefined
     ): DetectFacesResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "FaceDetails" -> FaceDetails.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "OrientationCorrection" -> OrientationCorrection.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DetectFacesResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      FaceDetails.foreach(__v => __obj.update("FaceDetails", __v.asInstanceOf[js.Any]))
+      OrientationCorrection.foreach(__v => __obj.update("OrientationCorrection", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DetectFacesResponse]
     }
   }
 
@@ -1020,17 +865,13 @@ package rekognition {
         MaxLabels: js.UndefOr[UInteger] = js.undefined,
         MinConfidence: js.UndefOr[Percent] = js.undefined
     ): DetectLabelsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Image" -> Image.asInstanceOf[js.Any],
-        "MaxLabels" -> MaxLabels.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MinConfidence" -> MinConfidence.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "Image" -> Image.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DetectLabelsRequest]
+      MaxLabels.foreach(__v => __obj.update("MaxLabels", __v.asInstanceOf[js.Any]))
+      MinConfidence.foreach(__v => __obj.update("MinConfidence", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DetectLabelsRequest]
     }
   }
 
@@ -1047,19 +888,11 @@ package rekognition {
         Labels: js.UndefOr[Labels] = js.undefined,
         OrientationCorrection: js.UndefOr[OrientationCorrection] = js.undefined
     ): DetectLabelsResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "LabelModelVersion" -> LabelModelVersion.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Labels" -> Labels.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "OrientationCorrection" -> OrientationCorrection.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DetectLabelsResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      LabelModelVersion.foreach(__v => __obj.update("LabelModelVersion", __v.asInstanceOf[js.Any]))
+      Labels.foreach(__v => __obj.update("Labels", __v.asInstanceOf[js.Any]))
+      OrientationCorrection.foreach(__v => __obj.update("OrientationCorrection", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DetectLabelsResponse]
     }
   }
 
@@ -1074,14 +907,12 @@ package rekognition {
         Image: Image,
         MinConfidence: js.UndefOr[Percent] = js.undefined
     ): DetectModerationLabelsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Image" -> Image.asInstanceOf[js.Any],
-        "MinConfidence" -> MinConfidence.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "Image" -> Image.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DetectModerationLabelsRequest]
+      MinConfidence.foreach(__v => __obj.update("MinConfidence", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DetectModerationLabelsRequest]
     }
   }
 
@@ -1096,16 +927,10 @@ package rekognition {
         ModerationLabels: js.UndefOr[ModerationLabels] = js.undefined,
         ModerationModelVersion: js.UndefOr[String] = js.undefined
     ): DetectModerationLabelsResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ModerationLabels" -> ModerationLabels.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ModerationModelVersion" -> ModerationModelVersion.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DetectModerationLabelsResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      ModerationLabels.foreach(__v => __obj.update("ModerationLabels", __v.asInstanceOf[js.Any]))
+      ModerationModelVersion.foreach(__v => __obj.update("ModerationModelVersion", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DetectModerationLabelsResponse]
     }
   }
 
@@ -1118,11 +943,11 @@ package rekognition {
     def apply(
         Image: Image
     ): DetectTextRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "Image" -> Image.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DetectTextRequest]
+      __obj.asInstanceOf[DetectTextRequest]
     }
   }
 
@@ -1135,13 +960,9 @@ package rekognition {
     def apply(
         TextDetections: js.UndefOr[TextDetectionList] = js.undefined
     ): DetectTextResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "TextDetections" -> TextDetections.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DetectTextResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      TextDetections.foreach(__v => __obj.update("TextDetections", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DetectTextResponse]
     }
   }
 
@@ -1159,16 +980,10 @@ package rekognition {
         Confidence: js.UndefOr[Percent] = js.undefined,
         Type: js.UndefOr[EmotionName] = js.undefined
     ): Emotion = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Confidence" -> Confidence.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Type" -> Type.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Emotion]
+      val __obj = js.Dictionary.empty[js.Any]
+      Confidence.foreach(__v => __obj.update("Confidence", __v.asInstanceOf[js.Any]))
+      Type.foreach(__v => __obj.update("Type", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Emotion]
     }
   }
 
@@ -1199,16 +1014,10 @@ package rekognition {
         Confidence: js.UndefOr[Percent] = js.undefined,
         Value: js.UndefOr[Boolean] = js.undefined
     ): EyeOpen = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Confidence" -> Confidence.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Value" -> Value.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[EyeOpen]
+      val __obj = js.Dictionary.empty[js.Any]
+      Confidence.foreach(__v => __obj.update("Confidence", __v.asInstanceOf[js.Any]))
+      Value.foreach(__v => __obj.update("Value", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[EyeOpen]
     }
   }
 
@@ -1226,16 +1035,10 @@ package rekognition {
         Confidence: js.UndefOr[Percent] = js.undefined,
         Value: js.UndefOr[Boolean] = js.undefined
     ): Eyeglasses = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Confidence" -> Confidence.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Value" -> Value.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Eyeglasses]
+      val __obj = js.Dictionary.empty[js.Any]
+      Confidence.foreach(__v => __obj.update("Confidence", __v.asInstanceOf[js.Any]))
+      Value.foreach(__v => __obj.update("Value", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Eyeglasses]
     }
   }
 
@@ -1259,25 +1062,13 @@ package rekognition {
         FaceId: js.UndefOr[FaceId] = js.undefined,
         ImageId: js.UndefOr[ImageId] = js.undefined
     ): Face = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "BoundingBox" -> BoundingBox.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Confidence" -> Confidence.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ExternalImageId" -> ExternalImageId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "FaceId" -> FaceId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ImageId" -> ImageId.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Face]
+      val __obj = js.Dictionary.empty[js.Any]
+      BoundingBox.foreach(__v => __obj.update("BoundingBox", __v.asInstanceOf[js.Any]))
+      Confidence.foreach(__v => __obj.update("Confidence", __v.asInstanceOf[js.Any]))
+      ExternalImageId.foreach(__v => __obj.update("ExternalImageId", __v.asInstanceOf[js.Any]))
+      FaceId.foreach(__v => __obj.update("FaceId", __v.asInstanceOf[js.Any]))
+      ImageId.foreach(__v => __obj.update("ImageId", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Face]
     }
   }
 
@@ -1334,55 +1125,23 @@ package rekognition {
         Smile: js.UndefOr[Smile] = js.undefined,
         Sunglasses: js.UndefOr[Sunglasses] = js.undefined
     ): FaceDetail = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "AgeRange" -> AgeRange.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Beard" -> Beard.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "BoundingBox" -> BoundingBox.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Confidence" -> Confidence.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Emotions" -> Emotions.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Eyeglasses" -> Eyeglasses.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "EyesOpen" -> EyesOpen.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Gender" -> Gender.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Landmarks" -> Landmarks.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MouthOpen" -> MouthOpen.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Mustache" -> Mustache.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Pose" -> Pose.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Quality" -> Quality.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Smile" -> Smile.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Sunglasses" -> Sunglasses.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[FaceDetail]
+      val __obj = js.Dictionary.empty[js.Any]
+      AgeRange.foreach(__v => __obj.update("AgeRange", __v.asInstanceOf[js.Any]))
+      Beard.foreach(__v => __obj.update("Beard", __v.asInstanceOf[js.Any]))
+      BoundingBox.foreach(__v => __obj.update("BoundingBox", __v.asInstanceOf[js.Any]))
+      Confidence.foreach(__v => __obj.update("Confidence", __v.asInstanceOf[js.Any]))
+      Emotions.foreach(__v => __obj.update("Emotions", __v.asInstanceOf[js.Any]))
+      Eyeglasses.foreach(__v => __obj.update("Eyeglasses", __v.asInstanceOf[js.Any]))
+      EyesOpen.foreach(__v => __obj.update("EyesOpen", __v.asInstanceOf[js.Any]))
+      Gender.foreach(__v => __obj.update("Gender", __v.asInstanceOf[js.Any]))
+      Landmarks.foreach(__v => __obj.update("Landmarks", __v.asInstanceOf[js.Any]))
+      MouthOpen.foreach(__v => __obj.update("MouthOpen", __v.asInstanceOf[js.Any]))
+      Mustache.foreach(__v => __obj.update("Mustache", __v.asInstanceOf[js.Any]))
+      Pose.foreach(__v => __obj.update("Pose", __v.asInstanceOf[js.Any]))
+      Quality.foreach(__v => __obj.update("Quality", __v.asInstanceOf[js.Any]))
+      Smile.foreach(__v => __obj.update("Smile", __v.asInstanceOf[js.Any]))
+      Sunglasses.foreach(__v => __obj.update("Sunglasses", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[FaceDetail]
     }
   }
 
@@ -1400,16 +1159,10 @@ package rekognition {
         Face: js.UndefOr[FaceDetail] = js.undefined,
         Timestamp: js.UndefOr[Timestamp] = js.undefined
     ): FaceDetection = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Face" -> Face.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Timestamp" -> Timestamp.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[FaceDetection]
+      val __obj = js.Dictionary.empty[js.Any]
+      Face.foreach(__v => __obj.update("Face", __v.asInstanceOf[js.Any]))
+      Timestamp.foreach(__v => __obj.update("Timestamp", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[FaceDetection]
     }
   }
 
@@ -1427,16 +1180,10 @@ package rekognition {
         Face: js.UndefOr[Face] = js.undefined,
         Similarity: js.UndefOr[Percent] = js.undefined
     ): FaceMatch = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Face" -> Face.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Similarity" -> Similarity.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[FaceMatch]
+      val __obj = js.Dictionary.empty[js.Any]
+      Face.foreach(__v => __obj.update("Face", __v.asInstanceOf[js.Any]))
+      Similarity.foreach(__v => __obj.update("Similarity", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[FaceMatch]
     }
   }
 
@@ -1454,16 +1201,10 @@ package rekognition {
         Face: js.UndefOr[Face] = js.undefined,
         FaceDetail: js.UndefOr[FaceDetail] = js.undefined
     ): FaceRecord = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Face" -> Face.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "FaceDetail" -> FaceDetail.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[FaceRecord]
+      val __obj = js.Dictionary.empty[js.Any]
+      Face.foreach(__v => __obj.update("Face", __v.asInstanceOf[js.Any]))
+      FaceDetail.foreach(__v => __obj.update("FaceDetail", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[FaceRecord]
     }
   }
 
@@ -1481,16 +1222,10 @@ package rekognition {
         CollectionId: js.UndefOr[CollectionId] = js.undefined,
         FaceMatchThreshold: js.UndefOr[Percent] = js.undefined
     ): FaceSearchSettings = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "CollectionId" -> CollectionId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "FaceMatchThreshold" -> FaceMatchThreshold.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[FaceSearchSettings]
+      val __obj = js.Dictionary.empty[js.Any]
+      CollectionId.foreach(__v => __obj.update("CollectionId", __v.asInstanceOf[js.Any]))
+      FaceMatchThreshold.foreach(__v => __obj.update("FaceMatchThreshold", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[FaceSearchSettings]
     }
   }
 
@@ -1515,16 +1250,10 @@ package rekognition {
         Confidence: js.UndefOr[Percent] = js.undefined,
         Value: js.UndefOr[GenderType] = js.undefined
     ): Gender = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Confidence" -> Confidence.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Value" -> Value.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Gender]
+      val __obj = js.Dictionary.empty[js.Any]
+      Confidence.foreach(__v => __obj.update("Confidence", __v.asInstanceOf[js.Any]))
+      Value.foreach(__v => __obj.update("Value", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Gender]
     }
   }
 
@@ -1549,16 +1278,10 @@ package rekognition {
         BoundingBox: js.UndefOr[BoundingBox] = js.undefined,
         Polygon: js.UndefOr[Polygon] = js.undefined
     ): Geometry = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "BoundingBox" -> BoundingBox.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Polygon" -> Polygon.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Geometry]
+      val __obj = js.Dictionary.empty[js.Any]
+      BoundingBox.foreach(__v => __obj.update("BoundingBox", __v.asInstanceOf[js.Any]))
+      Polygon.foreach(__v => __obj.update("Polygon", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Geometry]
     }
   }
 
@@ -1571,11 +1294,11 @@ package rekognition {
     def apply(
         Id: RekognitionUniqueId
     ): GetCelebrityInfoRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "Id" -> Id.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetCelebrityInfoRequest]
+      __obj.asInstanceOf[GetCelebrityInfoRequest]
     }
   }
 
@@ -1590,16 +1313,10 @@ package rekognition {
         Name: js.UndefOr[String] = js.undefined,
         Urls: js.UndefOr[Urls] = js.undefined
     ): GetCelebrityInfoResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Name" -> Name.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Urls" -> Urls.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetCelebrityInfoResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
+      Urls.foreach(__v => __obj.update("Urls", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetCelebrityInfoResponse]
     }
   }
 
@@ -1618,20 +1335,14 @@ package rekognition {
         NextToken: js.UndefOr[PaginationToken] = js.undefined,
         SortBy: js.UndefOr[CelebrityRecognitionSortBy] = js.undefined
     ): GetCelebrityRecognitionRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "JobId" -> JobId.asInstanceOf[js.Any],
-        "MaxResults" -> MaxResults.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NextToken" -> NextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SortBy" -> SortBy.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "JobId" -> JobId.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetCelebrityRecognitionRequest]
+      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      SortBy.foreach(__v => __obj.update("SortBy", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetCelebrityRecognitionRequest]
     }
   }
 
@@ -1652,25 +1363,13 @@ package rekognition {
         StatusMessage: js.UndefOr[StatusMessage] = js.undefined,
         VideoMetadata: js.UndefOr[VideoMetadata] = js.undefined
     ): GetCelebrityRecognitionResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Celebrities" -> Celebrities.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "JobStatus" -> JobStatus.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NextToken" -> NextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "StatusMessage" -> StatusMessage.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "VideoMetadata" -> VideoMetadata.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetCelebrityRecognitionResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      Celebrities.foreach(__v => __obj.update("Celebrities", __v.asInstanceOf[js.Any]))
+      JobStatus.foreach(__v => __obj.update("JobStatus", __v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      StatusMessage.foreach(__v => __obj.update("StatusMessage", __v.asInstanceOf[js.Any]))
+      VideoMetadata.foreach(__v => __obj.update("VideoMetadata", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetCelebrityRecognitionResponse]
     }
   }
 
@@ -1689,20 +1388,14 @@ package rekognition {
         NextToken: js.UndefOr[PaginationToken] = js.undefined,
         SortBy: js.UndefOr[ContentModerationSortBy] = js.undefined
     ): GetContentModerationRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "JobId" -> JobId.asInstanceOf[js.Any],
-        "MaxResults" -> MaxResults.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NextToken" -> NextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SortBy" -> SortBy.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "JobId" -> JobId.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetContentModerationRequest]
+      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      SortBy.foreach(__v => __obj.update("SortBy", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetContentModerationRequest]
     }
   }
 
@@ -1725,28 +1418,14 @@ package rekognition {
         StatusMessage: js.UndefOr[StatusMessage] = js.undefined,
         VideoMetadata: js.UndefOr[VideoMetadata] = js.undefined
     ): GetContentModerationResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "JobStatus" -> JobStatus.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ModerationLabels" -> ModerationLabels.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ModerationModelVersion" -> ModerationModelVersion.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NextToken" -> NextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "StatusMessage" -> StatusMessage.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "VideoMetadata" -> VideoMetadata.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetContentModerationResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      JobStatus.foreach(__v => __obj.update("JobStatus", __v.asInstanceOf[js.Any]))
+      ModerationLabels.foreach(__v => __obj.update("ModerationLabels", __v.asInstanceOf[js.Any]))
+      ModerationModelVersion.foreach(__v => __obj.update("ModerationModelVersion", __v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      StatusMessage.foreach(__v => __obj.update("StatusMessage", __v.asInstanceOf[js.Any]))
+      VideoMetadata.foreach(__v => __obj.update("VideoMetadata", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetContentModerationResponse]
     }
   }
 
@@ -1763,17 +1442,13 @@ package rekognition {
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
         NextToken: js.UndefOr[PaginationToken] = js.undefined
     ): GetFaceDetectionRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "JobId" -> JobId.asInstanceOf[js.Any],
-        "MaxResults" -> MaxResults.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NextToken" -> NextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "JobId" -> JobId.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetFaceDetectionRequest]
+      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetFaceDetectionRequest]
     }
   }
 
@@ -1794,25 +1469,13 @@ package rekognition {
         StatusMessage: js.UndefOr[StatusMessage] = js.undefined,
         VideoMetadata: js.UndefOr[VideoMetadata] = js.undefined
     ): GetFaceDetectionResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Faces" -> Faces.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "JobStatus" -> JobStatus.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NextToken" -> NextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "StatusMessage" -> StatusMessage.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "VideoMetadata" -> VideoMetadata.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetFaceDetectionResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      Faces.foreach(__v => __obj.update("Faces", __v.asInstanceOf[js.Any]))
+      JobStatus.foreach(__v => __obj.update("JobStatus", __v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      StatusMessage.foreach(__v => __obj.update("StatusMessage", __v.asInstanceOf[js.Any]))
+      VideoMetadata.foreach(__v => __obj.update("VideoMetadata", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetFaceDetectionResponse]
     }
   }
 
@@ -1831,20 +1494,14 @@ package rekognition {
         NextToken: js.UndefOr[PaginationToken] = js.undefined,
         SortBy: js.UndefOr[FaceSearchSortBy] = js.undefined
     ): GetFaceSearchRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "JobId" -> JobId.asInstanceOf[js.Any],
-        "MaxResults" -> MaxResults.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NextToken" -> NextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SortBy" -> SortBy.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "JobId" -> JobId.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetFaceSearchRequest]
+      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      SortBy.foreach(__v => __obj.update("SortBy", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetFaceSearchRequest]
     }
   }
 
@@ -1865,25 +1522,13 @@ package rekognition {
         StatusMessage: js.UndefOr[StatusMessage] = js.undefined,
         VideoMetadata: js.UndefOr[VideoMetadata] = js.undefined
     ): GetFaceSearchResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "JobStatus" -> JobStatus.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NextToken" -> NextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Persons" -> Persons.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "StatusMessage" -> StatusMessage.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "VideoMetadata" -> VideoMetadata.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetFaceSearchResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      JobStatus.foreach(__v => __obj.update("JobStatus", __v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      Persons.foreach(__v => __obj.update("Persons", __v.asInstanceOf[js.Any]))
+      StatusMessage.foreach(__v => __obj.update("StatusMessage", __v.asInstanceOf[js.Any]))
+      VideoMetadata.foreach(__v => __obj.update("VideoMetadata", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetFaceSearchResponse]
     }
   }
 
@@ -1902,20 +1547,14 @@ package rekognition {
         NextToken: js.UndefOr[PaginationToken] = js.undefined,
         SortBy: js.UndefOr[LabelDetectionSortBy] = js.undefined
     ): GetLabelDetectionRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "JobId" -> JobId.asInstanceOf[js.Any],
-        "MaxResults" -> MaxResults.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NextToken" -> NextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SortBy" -> SortBy.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "JobId" -> JobId.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetLabelDetectionRequest]
+      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      SortBy.foreach(__v => __obj.update("SortBy", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetLabelDetectionRequest]
     }
   }
 
@@ -1938,28 +1577,14 @@ package rekognition {
         StatusMessage: js.UndefOr[StatusMessage] = js.undefined,
         VideoMetadata: js.UndefOr[VideoMetadata] = js.undefined
     ): GetLabelDetectionResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "JobStatus" -> JobStatus.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "LabelModelVersion" -> LabelModelVersion.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Labels" -> Labels.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NextToken" -> NextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "StatusMessage" -> StatusMessage.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "VideoMetadata" -> VideoMetadata.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetLabelDetectionResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      JobStatus.foreach(__v => __obj.update("JobStatus", __v.asInstanceOf[js.Any]))
+      LabelModelVersion.foreach(__v => __obj.update("LabelModelVersion", __v.asInstanceOf[js.Any]))
+      Labels.foreach(__v => __obj.update("Labels", __v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      StatusMessage.foreach(__v => __obj.update("StatusMessage", __v.asInstanceOf[js.Any]))
+      VideoMetadata.foreach(__v => __obj.update("VideoMetadata", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetLabelDetectionResponse]
     }
   }
 
@@ -1978,20 +1603,14 @@ package rekognition {
         NextToken: js.UndefOr[PaginationToken] = js.undefined,
         SortBy: js.UndefOr[PersonTrackingSortBy] = js.undefined
     ): GetPersonTrackingRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "JobId" -> JobId.asInstanceOf[js.Any],
-        "MaxResults" -> MaxResults.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NextToken" -> NextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SortBy" -> SortBy.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "JobId" -> JobId.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetPersonTrackingRequest]
+      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      SortBy.foreach(__v => __obj.update("SortBy", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetPersonTrackingRequest]
     }
   }
 
@@ -2012,25 +1631,13 @@ package rekognition {
         StatusMessage: js.UndefOr[StatusMessage] = js.undefined,
         VideoMetadata: js.UndefOr[VideoMetadata] = js.undefined
     ): GetPersonTrackingResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "JobStatus" -> JobStatus.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NextToken" -> NextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Persons" -> Persons.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "StatusMessage" -> StatusMessage.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "VideoMetadata" -> VideoMetadata.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetPersonTrackingResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      JobStatus.foreach(__v => __obj.update("JobStatus", __v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      Persons.foreach(__v => __obj.update("Persons", __v.asInstanceOf[js.Any]))
+      StatusMessage.foreach(__v => __obj.update("StatusMessage", __v.asInstanceOf[js.Any]))
+      VideoMetadata.foreach(__v => __obj.update("VideoMetadata", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetPersonTrackingResponse]
     }
   }
 
@@ -2054,16 +1661,10 @@ package rekognition {
         Bytes: js.UndefOr[ImageBlob] = js.undefined,
         S3Object: js.UndefOr[S3Object] = js.undefined
     ): Image = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Bytes" -> Bytes.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "S3Object" -> S3Object.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Image]
+      val __obj = js.Dictionary.empty[js.Any]
+      Bytes.foreach(__v => __obj.update("Bytes", __v.asInstanceOf[js.Any]))
+      S3Object.foreach(__v => __obj.update("S3Object", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Image]
     }
   }
 
@@ -2081,16 +1682,10 @@ package rekognition {
         Brightness: js.UndefOr[Float] = js.undefined,
         Sharpness: js.UndefOr[Float] = js.undefined
     ): ImageQuality = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Brightness" -> Brightness.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Sharpness" -> Sharpness.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ImageQuality]
+      val __obj = js.Dictionary.empty[js.Any]
+      Brightness.foreach(__v => __obj.update("Brightness", __v.asInstanceOf[js.Any]))
+      Sharpness.foreach(__v => __obj.update("Sharpness", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ImageQuality]
     }
   }
 
@@ -2113,24 +1708,16 @@ package rekognition {
         MaxFaces: js.UndefOr[MaxFacesToIndex] = js.undefined,
         QualityFilter: js.UndefOr[QualityFilter] = js.undefined
     ): IndexFacesRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "CollectionId" -> CollectionId.asInstanceOf[js.Any],
-        "Image"        -> Image.asInstanceOf[js.Any],
-        "DetectionAttributes" -> DetectionAttributes.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ExternalImageId" -> ExternalImageId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MaxFaces" -> MaxFaces.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "QualityFilter" -> QualityFilter.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "Image"        -> Image.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[IndexFacesRequest]
+      DetectionAttributes.foreach(__v => __obj.update("DetectionAttributes", __v.asInstanceOf[js.Any]))
+      ExternalImageId.foreach(__v => __obj.update("ExternalImageId", __v.asInstanceOf[js.Any]))
+      MaxFaces.foreach(__v => __obj.update("MaxFaces", __v.asInstanceOf[js.Any]))
+      QualityFilter.foreach(__v => __obj.update("QualityFilter", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[IndexFacesRequest]
     }
   }
 
@@ -2149,22 +1736,12 @@ package rekognition {
         OrientationCorrection: js.UndefOr[OrientationCorrection] = js.undefined,
         UnindexedFaces: js.UndefOr[UnindexedFaces] = js.undefined
     ): IndexFacesResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "FaceModelVersion" -> FaceModelVersion.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "FaceRecords" -> FaceRecords.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "OrientationCorrection" -> OrientationCorrection.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "UnindexedFaces" -> UnindexedFaces.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[IndexFacesResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      FaceModelVersion.foreach(__v => __obj.update("FaceModelVersion", __v.asInstanceOf[js.Any]))
+      FaceRecords.foreach(__v => __obj.update("FaceRecords", __v.asInstanceOf[js.Any]))
+      OrientationCorrection.foreach(__v => __obj.update("OrientationCorrection", __v.asInstanceOf[js.Any]))
+      UnindexedFaces.foreach(__v => __obj.update("UnindexedFaces", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[IndexFacesResponse]
     }
   }
 
@@ -2182,16 +1759,10 @@ package rekognition {
         BoundingBox: js.UndefOr[BoundingBox] = js.undefined,
         Confidence: js.UndefOr[Percent] = js.undefined
     ): Instance = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "BoundingBox" -> BoundingBox.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Confidence" -> Confidence.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Instance]
+      val __obj = js.Dictionary.empty[js.Any]
+      BoundingBox.foreach(__v => __obj.update("BoundingBox", __v.asInstanceOf[js.Any]))
+      Confidence.foreach(__v => __obj.update("Confidence", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Instance]
     }
   }
 
@@ -2207,13 +1778,9 @@ package rekognition {
     def apply(
         Arn: js.UndefOr[KinesisDataArn] = js.undefined
     ): KinesisDataStream = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Arn" -> Arn.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[KinesisDataStream]
+      val __obj = js.Dictionary.empty[js.Any]
+      Arn.foreach(__v => __obj.update("Arn", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[KinesisDataStream]
     }
   }
 
@@ -2229,13 +1796,9 @@ package rekognition {
     def apply(
         Arn: js.UndefOr[KinesisVideoArn] = js.undefined
     ): KinesisVideoStream = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Arn" -> Arn.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[KinesisVideoStream]
+      val __obj = js.Dictionary.empty[js.Any]
+      Arn.foreach(__v => __obj.update("Arn", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[KinesisVideoStream]
     }
   }
 
@@ -2258,22 +1821,12 @@ package rekognition {
         Name: js.UndefOr[String] = js.undefined,
         Parents: js.UndefOr[Parents] = js.undefined
     ): Label = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Confidence" -> Confidence.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Instances" -> Instances.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Name" -> Name.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Parents" -> Parents.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Label]
+      val __obj = js.Dictionary.empty[js.Any]
+      Confidence.foreach(__v => __obj.update("Confidence", __v.asInstanceOf[js.Any]))
+      Instances.foreach(__v => __obj.update("Instances", __v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
+      Parents.foreach(__v => __obj.update("Parents", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Label]
     }
   }
 
@@ -2291,16 +1844,10 @@ package rekognition {
         Label: js.UndefOr[Label] = js.undefined,
         Timestamp: js.UndefOr[Timestamp] = js.undefined
     ): LabelDetection = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Label" -> Label.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Timestamp" -> Timestamp.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[LabelDetection]
+      val __obj = js.Dictionary.empty[js.Any]
+      Label.foreach(__v => __obj.update("Label", __v.asInstanceOf[js.Any]))
+      Timestamp.foreach(__v => __obj.update("Timestamp", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[LabelDetection]
     }
   }
 
@@ -2327,19 +1874,11 @@ package rekognition {
         X: js.UndefOr[Float] = js.undefined,
         Y: js.UndefOr[Float] = js.undefined
     ): Landmark = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Type" -> Type.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "X" -> X.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Y" -> Y.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Landmark]
+      val __obj = js.Dictionary.empty[js.Any]
+      Type.foreach(__v => __obj.update("Type", __v.asInstanceOf[js.Any]))
+      X.foreach(__v => __obj.update("X", __v.asInstanceOf[js.Any]))
+      Y.foreach(__v => __obj.update("Y", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Landmark]
     }
   }
 
@@ -2420,16 +1959,10 @@ package rekognition {
         MaxResults: js.UndefOr[PageSize] = js.undefined,
         NextToken: js.UndefOr[PaginationToken] = js.undefined
     ): ListCollectionsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "MaxResults" -> MaxResults.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NextToken" -> NextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListCollectionsRequest]
+      val __obj = js.Dictionary.empty[js.Any]
+      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListCollectionsRequest]
     }
   }
 
@@ -2446,19 +1979,11 @@ package rekognition {
         FaceModelVersions: js.UndefOr[FaceModelVersionList] = js.undefined,
         NextToken: js.UndefOr[PaginationToken] = js.undefined
     ): ListCollectionsResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "CollectionIds" -> CollectionIds.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "FaceModelVersions" -> FaceModelVersions.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NextToken" -> NextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListCollectionsResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      CollectionIds.foreach(__v => __obj.update("CollectionIds", __v.asInstanceOf[js.Any]))
+      FaceModelVersions.foreach(__v => __obj.update("FaceModelVersions", __v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListCollectionsResponse]
     }
   }
 
@@ -2475,17 +2000,13 @@ package rekognition {
         MaxResults: js.UndefOr[PageSize] = js.undefined,
         NextToken: js.UndefOr[PaginationToken] = js.undefined
     ): ListFacesRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "CollectionId" -> CollectionId.asInstanceOf[js.Any],
-        "MaxResults" -> MaxResults.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NextToken" -> NextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "CollectionId" -> CollectionId.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListFacesRequest]
+      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListFacesRequest]
     }
   }
 
@@ -2502,19 +2023,11 @@ package rekognition {
         Faces: js.UndefOr[FaceList] = js.undefined,
         NextToken: js.UndefOr[String] = js.undefined
     ): ListFacesResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "FaceModelVersion" -> FaceModelVersion.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Faces" -> Faces.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NextToken" -> NextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListFacesResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      FaceModelVersion.foreach(__v => __obj.update("FaceModelVersion", __v.asInstanceOf[js.Any]))
+      Faces.foreach(__v => __obj.update("Faces", __v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListFacesResponse]
     }
   }
 
@@ -2529,16 +2042,10 @@ package rekognition {
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
         NextToken: js.UndefOr[PaginationToken] = js.undefined
     ): ListStreamProcessorsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "MaxResults" -> MaxResults.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NextToken" -> NextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListStreamProcessorsRequest]
+      val __obj = js.Dictionary.empty[js.Any]
+      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListStreamProcessorsRequest]
     }
   }
 
@@ -2553,16 +2060,10 @@ package rekognition {
         NextToken: js.UndefOr[PaginationToken] = js.undefined,
         StreamProcessors: js.UndefOr[StreamProcessorList] = js.undefined
     ): ListStreamProcessorsResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "NextToken" -> NextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "StreamProcessors" -> StreamProcessors.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListStreamProcessorsResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      StreamProcessors.foreach(__v => __obj.update("StreamProcessors", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListStreamProcessorsResponse]
     }
   }
 
@@ -2582,19 +2083,11 @@ package rekognition {
         Name: js.UndefOr[String] = js.undefined,
         ParentName: js.UndefOr[String] = js.undefined
     ): ModerationLabel = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Confidence" -> Confidence.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Name" -> Name.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ParentName" -> ParentName.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ModerationLabel]
+      val __obj = js.Dictionary.empty[js.Any]
+      Confidence.foreach(__v => __obj.update("Confidence", __v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
+      ParentName.foreach(__v => __obj.update("ParentName", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ModerationLabel]
     }
   }
 
@@ -2612,16 +2105,10 @@ package rekognition {
         Confidence: js.UndefOr[Percent] = js.undefined,
         Value: js.UndefOr[Boolean] = js.undefined
     ): MouthOpen = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Confidence" -> Confidence.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Value" -> Value.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[MouthOpen]
+      val __obj = js.Dictionary.empty[js.Any]
+      Confidence.foreach(__v => __obj.update("Confidence", __v.asInstanceOf[js.Any]))
+      Value.foreach(__v => __obj.update("Value", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[MouthOpen]
     }
   }
 
@@ -2639,16 +2126,10 @@ package rekognition {
         Confidence: js.UndefOr[Percent] = js.undefined,
         Value: js.UndefOr[Boolean] = js.undefined
     ): Mustache = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Confidence" -> Confidence.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Value" -> Value.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Mustache]
+      val __obj = js.Dictionary.empty[js.Any]
+      Confidence.foreach(__v => __obj.update("Confidence", __v.asInstanceOf[js.Any]))
+      Value.foreach(__v => __obj.update("Value", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Mustache]
     }
   }
 
@@ -2666,12 +2147,12 @@ package rekognition {
         RoleArn: RoleArn,
         SNSTopicArn: SNSTopicArn
     ): NotificationChannel = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "RoleArn"     -> RoleArn.asInstanceOf[js.Any],
         "SNSTopicArn" -> SNSTopicArn.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[NotificationChannel]
+      __obj.asInstanceOf[NotificationChannel]
     }
   }
 
@@ -2696,13 +2177,9 @@ package rekognition {
     def apply(
         Name: js.UndefOr[String] = js.undefined
     ): Parent = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Name" -> Name.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Parent]
+      val __obj = js.Dictionary.empty[js.Any]
+      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Parent]
     }
   }
 
@@ -2722,19 +2199,11 @@ package rekognition {
         Face: js.UndefOr[FaceDetail] = js.undefined,
         Index: js.UndefOr[PersonIndex] = js.undefined
     ): PersonDetail = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "BoundingBox" -> BoundingBox.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Face" -> Face.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Index" -> Index.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PersonDetail]
+      val __obj = js.Dictionary.empty[js.Any]
+      BoundingBox.foreach(__v => __obj.update("BoundingBox", __v.asInstanceOf[js.Any]))
+      Face.foreach(__v => __obj.update("Face", __v.asInstanceOf[js.Any]))
+      Index.foreach(__v => __obj.update("Index", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PersonDetail]
     }
   }
 
@@ -2753,16 +2222,10 @@ package rekognition {
         Person: js.UndefOr[PersonDetail] = js.undefined,
         Timestamp: js.UndefOr[Timestamp] = js.undefined
     ): PersonDetection = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Person" -> Person.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Timestamp" -> Timestamp.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PersonDetection]
+      val __obj = js.Dictionary.empty[js.Any]
+      Person.foreach(__v => __obj.update("Person", __v.asInstanceOf[js.Any]))
+      Timestamp.foreach(__v => __obj.update("Timestamp", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PersonDetection]
     }
   }
 
@@ -2782,19 +2245,11 @@ package rekognition {
         Person: js.UndefOr[PersonDetail] = js.undefined,
         Timestamp: js.UndefOr[Timestamp] = js.undefined
     ): PersonMatch = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "FaceMatches" -> FaceMatches.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Person" -> Person.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Timestamp" -> Timestamp.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PersonMatch]
+      val __obj = js.Dictionary.empty[js.Any]
+      FaceMatches.foreach(__v => __obj.update("FaceMatches", __v.asInstanceOf[js.Any]))
+      Person.foreach(__v => __obj.update("Person", __v.asInstanceOf[js.Any]))
+      Timestamp.foreach(__v => __obj.update("Timestamp", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PersonMatch]
     }
   }
 
@@ -2820,16 +2275,10 @@ package rekognition {
         X: js.UndefOr[Float] = js.undefined,
         Y: js.UndefOr[Float] = js.undefined
     ): Point = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "X" -> X.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Y" -> Y.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Point]
+      val __obj = js.Dictionary.empty[js.Any]
+      X.foreach(__v => __obj.update("X", __v.asInstanceOf[js.Any]))
+      Y.foreach(__v => __obj.update("Y", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Point]
     }
   }
 
@@ -2849,19 +2298,11 @@ package rekognition {
         Roll: js.UndefOr[Degree] = js.undefined,
         Yaw: js.UndefOr[Degree] = js.undefined
     ): Pose = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Pitch" -> Pitch.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Roll" -> Roll.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Yaw" -> Yaw.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Pose]
+      val __obj = js.Dictionary.empty[js.Any]
+      Pitch.foreach(__v => __obj.update("Pitch", __v.asInstanceOf[js.Any]))
+      Roll.foreach(__v => __obj.update("Roll", __v.asInstanceOf[js.Any]))
+      Yaw.foreach(__v => __obj.update("Yaw", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Pose]
     }
   }
 
@@ -2893,11 +2334,11 @@ package rekognition {
     def apply(
         Image: Image
     ): RecognizeCelebritiesRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "Image" -> Image.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RecognizeCelebritiesRequest]
+      __obj.asInstanceOf[RecognizeCelebritiesRequest]
     }
   }
 
@@ -2914,19 +2355,11 @@ package rekognition {
         OrientationCorrection: js.UndefOr[OrientationCorrection] = js.undefined,
         UnrecognizedFaces: js.UndefOr[ComparedFaceList] = js.undefined
     ): RecognizeCelebritiesResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "CelebrityFaces" -> CelebrityFaces.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "OrientationCorrection" -> OrientationCorrection.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "UnrecognizedFaces" -> UnrecognizedFaces.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RecognizeCelebritiesResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      CelebrityFaces.foreach(__v => __obj.update("CelebrityFaces", __v.asInstanceOf[js.Any]))
+      OrientationCorrection.foreach(__v => __obj.update("OrientationCorrection", __v.asInstanceOf[js.Any]))
+      UnrecognizedFaces.foreach(__v => __obj.update("UnrecognizedFaces", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[RecognizeCelebritiesResponse]
     }
   }
 
@@ -2948,19 +2381,11 @@ package rekognition {
         Name: js.UndefOr[S3ObjectName] = js.undefined,
         Version: js.UndefOr[S3ObjectVersion] = js.undefined
     ): S3Object = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Bucket" -> Bucket.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Name" -> Name.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Version" -> Version.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[S3Object]
+      val __obj = js.Dictionary.empty[js.Any]
+      Bucket.foreach(__v => __obj.update("Bucket", __v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
+      Version.foreach(__v => __obj.update("Version", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[S3Object]
     }
   }
 
@@ -2979,18 +2404,14 @@ package rekognition {
         FaceMatchThreshold: js.UndefOr[Percent] = js.undefined,
         MaxFaces: js.UndefOr[MaxFaces] = js.undefined
     ): SearchFacesByImageRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "CollectionId" -> CollectionId.asInstanceOf[js.Any],
-        "Image"        -> Image.asInstanceOf[js.Any],
-        "FaceMatchThreshold" -> FaceMatchThreshold.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MaxFaces" -> MaxFaces.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "Image"        -> Image.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SearchFacesByImageRequest]
+      FaceMatchThreshold.foreach(__v => __obj.update("FaceMatchThreshold", __v.asInstanceOf[js.Any]))
+      MaxFaces.foreach(__v => __obj.update("MaxFaces", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[SearchFacesByImageRequest]
     }
   }
 
@@ -3009,22 +2430,12 @@ package rekognition {
         SearchedFaceBoundingBox: js.UndefOr[BoundingBox] = js.undefined,
         SearchedFaceConfidence: js.UndefOr[Percent] = js.undefined
     ): SearchFacesByImageResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "FaceMatches" -> FaceMatches.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "FaceModelVersion" -> FaceModelVersion.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SearchedFaceBoundingBox" -> SearchedFaceBoundingBox.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SearchedFaceConfidence" -> SearchedFaceConfidence.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SearchFacesByImageResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      FaceMatches.foreach(__v => __obj.update("FaceMatches", __v.asInstanceOf[js.Any]))
+      FaceModelVersion.foreach(__v => __obj.update("FaceModelVersion", __v.asInstanceOf[js.Any]))
+      SearchedFaceBoundingBox.foreach(__v => __obj.update("SearchedFaceBoundingBox", __v.asInstanceOf[js.Any]))
+      SearchedFaceConfidence.foreach(__v => __obj.update("SearchedFaceConfidence", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[SearchFacesByImageResponse]
     }
   }
 
@@ -3043,18 +2454,14 @@ package rekognition {
         FaceMatchThreshold: js.UndefOr[Percent] = js.undefined,
         MaxFaces: js.UndefOr[MaxFaces] = js.undefined
     ): SearchFacesRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "CollectionId" -> CollectionId.asInstanceOf[js.Any],
-        "FaceId"       -> FaceId.asInstanceOf[js.Any],
-        "FaceMatchThreshold" -> FaceMatchThreshold.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MaxFaces" -> MaxFaces.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "FaceId"       -> FaceId.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SearchFacesRequest]
+      FaceMatchThreshold.foreach(__v => __obj.update("FaceMatchThreshold", __v.asInstanceOf[js.Any]))
+      MaxFaces.foreach(__v => __obj.update("MaxFaces", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[SearchFacesRequest]
     }
   }
 
@@ -3071,19 +2478,11 @@ package rekognition {
         FaceModelVersion: js.UndefOr[String] = js.undefined,
         SearchedFaceId: js.UndefOr[FaceId] = js.undefined
     ): SearchFacesResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "FaceMatches" -> FaceMatches.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "FaceModelVersion" -> FaceModelVersion.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SearchedFaceId" -> SearchedFaceId.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SearchFacesResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      FaceMatches.foreach(__v => __obj.update("FaceMatches", __v.asInstanceOf[js.Any]))
+      FaceModelVersion.foreach(__v => __obj.update("FaceModelVersion", __v.asInstanceOf[js.Any]))
+      SearchedFaceId.foreach(__v => __obj.update("SearchedFaceId", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[SearchFacesResponse]
     }
   }
 
@@ -3101,16 +2500,10 @@ package rekognition {
         Confidence: js.UndefOr[Percent] = js.undefined,
         Value: js.UndefOr[Boolean] = js.undefined
     ): Smile = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Confidence" -> Confidence.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Value" -> Value.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Smile]
+      val __obj = js.Dictionary.empty[js.Any]
+      Confidence.foreach(__v => __obj.update("Confidence", __v.asInstanceOf[js.Any]))
+      Value.foreach(__v => __obj.update("Value", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Smile]
     }
   }
 
@@ -3129,20 +2522,14 @@ package rekognition {
         JobTag: js.UndefOr[JobTag] = js.undefined,
         NotificationChannel: js.UndefOr[NotificationChannel] = js.undefined
     ): StartCelebrityRecognitionRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Video" -> Video.asInstanceOf[js.Any],
-        "ClientRequestToken" -> ClientRequestToken.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "JobTag" -> JobTag.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NotificationChannel" -> NotificationChannel.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "Video" -> Video.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StartCelebrityRecognitionRequest]
+      ClientRequestToken.foreach(__v => __obj.update("ClientRequestToken", __v.asInstanceOf[js.Any]))
+      JobTag.foreach(__v => __obj.update("JobTag", __v.asInstanceOf[js.Any]))
+      NotificationChannel.foreach(__v => __obj.update("NotificationChannel", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[StartCelebrityRecognitionRequest]
     }
   }
 
@@ -3155,13 +2542,9 @@ package rekognition {
     def apply(
         JobId: js.UndefOr[JobId] = js.undefined
     ): StartCelebrityRecognitionResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "JobId" -> JobId.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StartCelebrityRecognitionResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      JobId.foreach(__v => __obj.update("JobId", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[StartCelebrityRecognitionResponse]
     }
   }
 
@@ -3182,23 +2565,15 @@ package rekognition {
         MinConfidence: js.UndefOr[Percent] = js.undefined,
         NotificationChannel: js.UndefOr[NotificationChannel] = js.undefined
     ): StartContentModerationRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Video" -> Video.asInstanceOf[js.Any],
-        "ClientRequestToken" -> ClientRequestToken.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "JobTag" -> JobTag.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MinConfidence" -> MinConfidence.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NotificationChannel" -> NotificationChannel.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "Video" -> Video.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StartContentModerationRequest]
+      ClientRequestToken.foreach(__v => __obj.update("ClientRequestToken", __v.asInstanceOf[js.Any]))
+      JobTag.foreach(__v => __obj.update("JobTag", __v.asInstanceOf[js.Any]))
+      MinConfidence.foreach(__v => __obj.update("MinConfidence", __v.asInstanceOf[js.Any]))
+      NotificationChannel.foreach(__v => __obj.update("NotificationChannel", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[StartContentModerationRequest]
     }
   }
 
@@ -3211,13 +2586,9 @@ package rekognition {
     def apply(
         JobId: js.UndefOr[JobId] = js.undefined
     ): StartContentModerationResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "JobId" -> JobId.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StartContentModerationResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      JobId.foreach(__v => __obj.update("JobId", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[StartContentModerationResponse]
     }
   }
 
@@ -3238,23 +2609,15 @@ package rekognition {
         JobTag: js.UndefOr[JobTag] = js.undefined,
         NotificationChannel: js.UndefOr[NotificationChannel] = js.undefined
     ): StartFaceDetectionRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Video" -> Video.asInstanceOf[js.Any],
-        "ClientRequestToken" -> ClientRequestToken.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "FaceAttributes" -> FaceAttributes.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "JobTag" -> JobTag.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NotificationChannel" -> NotificationChannel.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "Video" -> Video.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StartFaceDetectionRequest]
+      ClientRequestToken.foreach(__v => __obj.update("ClientRequestToken", __v.asInstanceOf[js.Any]))
+      FaceAttributes.foreach(__v => __obj.update("FaceAttributes", __v.asInstanceOf[js.Any]))
+      JobTag.foreach(__v => __obj.update("JobTag", __v.asInstanceOf[js.Any]))
+      NotificationChannel.foreach(__v => __obj.update("NotificationChannel", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[StartFaceDetectionRequest]
     }
   }
 
@@ -3267,13 +2630,9 @@ package rekognition {
     def apply(
         JobId: js.UndefOr[JobId] = js.undefined
     ): StartFaceDetectionResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "JobId" -> JobId.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StartFaceDetectionResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      JobId.foreach(__v => __obj.update("JobId", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[StartFaceDetectionResponse]
     }
   }
 
@@ -3296,24 +2655,16 @@ package rekognition {
         JobTag: js.UndefOr[JobTag] = js.undefined,
         NotificationChannel: js.UndefOr[NotificationChannel] = js.undefined
     ): StartFaceSearchRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "CollectionId" -> CollectionId.asInstanceOf[js.Any],
-        "Video"        -> Video.asInstanceOf[js.Any],
-        "ClientRequestToken" -> ClientRequestToken.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "FaceMatchThreshold" -> FaceMatchThreshold.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "JobTag" -> JobTag.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NotificationChannel" -> NotificationChannel.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "Video"        -> Video.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StartFaceSearchRequest]
+      ClientRequestToken.foreach(__v => __obj.update("ClientRequestToken", __v.asInstanceOf[js.Any]))
+      FaceMatchThreshold.foreach(__v => __obj.update("FaceMatchThreshold", __v.asInstanceOf[js.Any]))
+      JobTag.foreach(__v => __obj.update("JobTag", __v.asInstanceOf[js.Any]))
+      NotificationChannel.foreach(__v => __obj.update("NotificationChannel", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[StartFaceSearchRequest]
     }
   }
 
@@ -3326,13 +2677,9 @@ package rekognition {
     def apply(
         JobId: js.UndefOr[JobId] = js.undefined
     ): StartFaceSearchResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "JobId" -> JobId.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StartFaceSearchResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      JobId.foreach(__v => __obj.update("JobId", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[StartFaceSearchResponse]
     }
   }
 
@@ -3353,23 +2700,15 @@ package rekognition {
         MinConfidence: js.UndefOr[Percent] = js.undefined,
         NotificationChannel: js.UndefOr[NotificationChannel] = js.undefined
     ): StartLabelDetectionRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Video" -> Video.asInstanceOf[js.Any],
-        "ClientRequestToken" -> ClientRequestToken.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "JobTag" -> JobTag.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MinConfidence" -> MinConfidence.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NotificationChannel" -> NotificationChannel.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "Video" -> Video.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StartLabelDetectionRequest]
+      ClientRequestToken.foreach(__v => __obj.update("ClientRequestToken", __v.asInstanceOf[js.Any]))
+      JobTag.foreach(__v => __obj.update("JobTag", __v.asInstanceOf[js.Any]))
+      MinConfidence.foreach(__v => __obj.update("MinConfidence", __v.asInstanceOf[js.Any]))
+      NotificationChannel.foreach(__v => __obj.update("NotificationChannel", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[StartLabelDetectionRequest]
     }
   }
 
@@ -3382,13 +2721,9 @@ package rekognition {
     def apply(
         JobId: js.UndefOr[JobId] = js.undefined
     ): StartLabelDetectionResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "JobId" -> JobId.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StartLabelDetectionResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      JobId.foreach(__v => __obj.update("JobId", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[StartLabelDetectionResponse]
     }
   }
 
@@ -3407,20 +2742,14 @@ package rekognition {
         JobTag: js.UndefOr[JobTag] = js.undefined,
         NotificationChannel: js.UndefOr[NotificationChannel] = js.undefined
     ): StartPersonTrackingRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Video" -> Video.asInstanceOf[js.Any],
-        "ClientRequestToken" -> ClientRequestToken.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "JobTag" -> JobTag.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NotificationChannel" -> NotificationChannel.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "Video" -> Video.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StartPersonTrackingRequest]
+      ClientRequestToken.foreach(__v => __obj.update("ClientRequestToken", __v.asInstanceOf[js.Any]))
+      JobTag.foreach(__v => __obj.update("JobTag", __v.asInstanceOf[js.Any]))
+      NotificationChannel.foreach(__v => __obj.update("NotificationChannel", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[StartPersonTrackingRequest]
     }
   }
 
@@ -3433,13 +2762,9 @@ package rekognition {
     def apply(
         JobId: js.UndefOr[JobId] = js.undefined
     ): StartPersonTrackingResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "JobId" -> JobId.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StartPersonTrackingResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      JobId.foreach(__v => __obj.update("JobId", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[StartPersonTrackingResponse]
     }
   }
 
@@ -3452,11 +2777,11 @@ package rekognition {
     def apply(
         Name: StreamProcessorName
     ): StartStreamProcessorRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "Name" -> Name.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StartStreamProcessorRequest]
+      __obj.asInstanceOf[StartStreamProcessorRequest]
     }
   }
 
@@ -3466,10 +2791,9 @@ package rekognition {
   object StartStreamProcessorResponse {
     def apply(
         ): StartStreamProcessorResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary.empty[js.Any]
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StartStreamProcessorResponse]
+      __obj.asInstanceOf[StartStreamProcessorResponse]
     }
   }
 
@@ -3482,11 +2806,11 @@ package rekognition {
     def apply(
         Name: StreamProcessorName
     ): StopStreamProcessorRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "Name" -> Name.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StopStreamProcessorRequest]
+      __obj.asInstanceOf[StopStreamProcessorRequest]
     }
   }
 
@@ -3496,10 +2820,9 @@ package rekognition {
   object StopStreamProcessorResponse {
     def apply(
         ): StopStreamProcessorResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary.empty[js.Any]
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StopStreamProcessorResponse]
+      __obj.asInstanceOf[StopStreamProcessorResponse]
     }
   }
 
@@ -3517,16 +2840,10 @@ package rekognition {
         Name: js.UndefOr[StreamProcessorName] = js.undefined,
         Status: js.UndefOr[StreamProcessorStatus] = js.undefined
     ): StreamProcessor = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Name" -> Name.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Status" -> Status.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StreamProcessor]
+      val __obj = js.Dictionary.empty[js.Any]
+      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.update("Status", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[StreamProcessor]
     }
   }
 
@@ -3542,13 +2859,9 @@ package rekognition {
     def apply(
         KinesisVideoStream: js.UndefOr[KinesisVideoStream] = js.undefined
     ): StreamProcessorInput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "KinesisVideoStream" -> KinesisVideoStream.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StreamProcessorInput]
+      val __obj = js.Dictionary.empty[js.Any]
+      KinesisVideoStream.foreach(__v => __obj.update("KinesisVideoStream", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[StreamProcessorInput]
     }
   }
 
@@ -3564,13 +2877,9 @@ package rekognition {
     def apply(
         KinesisDataStream: js.UndefOr[KinesisDataStream] = js.undefined
     ): StreamProcessorOutput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "KinesisDataStream" -> KinesisDataStream.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StreamProcessorOutput]
+      val __obj = js.Dictionary.empty[js.Any]
+      KinesisDataStream.foreach(__v => __obj.update("KinesisDataStream", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[StreamProcessorOutput]
     }
   }
 
@@ -3586,13 +2895,9 @@ package rekognition {
     def apply(
         FaceSearch: js.UndefOr[FaceSearchSettings] = js.undefined
     ): StreamProcessorSettings = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "FaceSearch" -> FaceSearch.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StreamProcessorSettings]
+      val __obj = js.Dictionary.empty[js.Any]
+      FaceSearch.foreach(__v => __obj.update("FaceSearch", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[StreamProcessorSettings]
     }
   }
 
@@ -3620,16 +2925,10 @@ package rekognition {
         Confidence: js.UndefOr[Percent] = js.undefined,
         Value: js.UndefOr[Boolean] = js.undefined
     ): Sunglasses = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Confidence" -> Confidence.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Value" -> Value.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Sunglasses]
+      val __obj = js.Dictionary.empty[js.Any]
+      Confidence.foreach(__v => __obj.update("Confidence", __v.asInstanceOf[js.Any]))
+      Value.foreach(__v => __obj.update("Value", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Sunglasses]
     }
   }
 
@@ -3658,28 +2957,14 @@ package rekognition {
         ParentId: js.UndefOr[UInteger] = js.undefined,
         Type: js.UndefOr[TextTypes] = js.undefined
     ): TextDetection = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Confidence" -> Confidence.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DetectedText" -> DetectedText.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Geometry" -> Geometry.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Id" -> Id.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ParentId" -> ParentId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Type" -> Type.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[TextDetection]
+      val __obj = js.Dictionary.empty[js.Any]
+      Confidence.foreach(__v => __obj.update("Confidence", __v.asInstanceOf[js.Any]))
+      DetectedText.foreach(__v => __obj.update("DetectedText", __v.asInstanceOf[js.Any]))
+      Geometry.foreach(__v => __obj.update("Geometry", __v.asInstanceOf[js.Any]))
+      Id.foreach(__v => __obj.update("Id", __v.asInstanceOf[js.Any]))
+      ParentId.foreach(__v => __obj.update("ParentId", __v.asInstanceOf[js.Any]))
+      Type.foreach(__v => __obj.update("Type", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[TextDetection]
     }
   }
 
@@ -3704,16 +2989,10 @@ package rekognition {
         FaceDetail: js.UndefOr[FaceDetail] = js.undefined,
         Reasons: js.UndefOr[Reasons] = js.undefined
     ): UnindexedFace = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "FaceDetail" -> FaceDetail.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Reasons" -> Reasons.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UnindexedFace]
+      val __obj = js.Dictionary.empty[js.Any]
+      FaceDetail.foreach(__v => __obj.update("FaceDetail", __v.asInstanceOf[js.Any]))
+      Reasons.foreach(__v => __obj.update("Reasons", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UnindexedFace]
     }
   }
 
@@ -3729,13 +3008,9 @@ package rekognition {
     def apply(
         S3Object: js.UndefOr[S3Object] = js.undefined
     ): Video = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "S3Object" -> S3Object.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Video]
+      val __obj = js.Dictionary.empty[js.Any]
+      S3Object.foreach(__v => __obj.update("S3Object", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Video]
     }
   }
 
@@ -3769,28 +3044,14 @@ package rekognition {
         FrameRate: js.UndefOr[Float] = js.undefined,
         FrameWidth: js.UndefOr[ULong] = js.undefined
     ): VideoMetadata = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Codec" -> Codec.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DurationMillis" -> DurationMillis.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Format" -> Format.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "FrameHeight" -> FrameHeight.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "FrameRate" -> FrameRate.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "FrameWidth" -> FrameWidth.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[VideoMetadata]
+      val __obj = js.Dictionary.empty[js.Any]
+      Codec.foreach(__v => __obj.update("Codec", __v.asInstanceOf[js.Any]))
+      DurationMillis.foreach(__v => __obj.update("DurationMillis", __v.asInstanceOf[js.Any]))
+      Format.foreach(__v => __obj.update("Format", __v.asInstanceOf[js.Any]))
+      FrameHeight.foreach(__v => __obj.update("FrameHeight", __v.asInstanceOf[js.Any]))
+      FrameRate.foreach(__v => __obj.update("FrameRate", __v.asInstanceOf[js.Any]))
+      FrameWidth.foreach(__v => __obj.update("FrameWidth", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[VideoMetadata]
     }
   }
 }

@@ -72,52 +72,22 @@ package rdsdataservice {
         `type`: js.UndefOr[Int] = js.undefined,
         typeName: js.UndefOr[String] = js.undefined
     ): ColumnMetadata = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "arrayBaseColumnType" -> arrayBaseColumnType.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "isAutoIncrement" -> isAutoIncrement.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "isCaseSensitive" -> isCaseSensitive.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "isCurrency" -> isCurrency.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "isSigned" -> isSigned.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "label" -> label.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "name" -> name.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "nullable" -> nullable.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "precision" -> precision.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "scale" -> scale.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "schemaName" -> schemaName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "tableName" -> tableName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "`type`" -> `type`.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "typeName" -> typeName.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ColumnMetadata]
+      val __obj = js.Dictionary.empty[js.Any]
+      arrayBaseColumnType.foreach(__v => __obj.update("arrayBaseColumnType", __v.asInstanceOf[js.Any]))
+      isAutoIncrement.foreach(__v => __obj.update("isAutoIncrement", __v.asInstanceOf[js.Any]))
+      isCaseSensitive.foreach(__v => __obj.update("isCaseSensitive", __v.asInstanceOf[js.Any]))
+      isCurrency.foreach(__v => __obj.update("isCurrency", __v.asInstanceOf[js.Any]))
+      isSigned.foreach(__v => __obj.update("isSigned", __v.asInstanceOf[js.Any]))
+      label.foreach(__v => __obj.update("label", __v.asInstanceOf[js.Any]))
+      name.foreach(__v => __obj.update("name", __v.asInstanceOf[js.Any]))
+      nullable.foreach(__v => __obj.update("nullable", __v.asInstanceOf[js.Any]))
+      precision.foreach(__v => __obj.update("precision", __v.asInstanceOf[js.Any]))
+      scale.foreach(__v => __obj.update("scale", __v.asInstanceOf[js.Any]))
+      schemaName.foreach(__v => __obj.update("schemaName", __v.asInstanceOf[js.Any]))
+      tableName.foreach(__v => __obj.update("tableName", __v.asInstanceOf[js.Any]))
+      `type`.foreach(__v => __obj.update("type", __v.asInstanceOf[js.Any]))
+      typeName.foreach(__v => __obj.update("typeName", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ColumnMetadata]
     }
   }
 
@@ -141,19 +111,15 @@ package rdsdataservice {
         database: js.UndefOr[DbName] = js.undefined,
         schema: js.UndefOr[DbName] = js.undefined
     ): ExecuteSqlRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "awsSecretStoreArn"      -> awsSecretStoreArn.asInstanceOf[js.Any],
         "dbClusterOrInstanceArn" -> dbClusterOrInstanceArn.asInstanceOf[js.Any],
-        "sqlStatements"          -> sqlStatements.asInstanceOf[js.Any],
-        "database" -> database.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "schema" -> schema.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "sqlStatements"          -> sqlStatements.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ExecuteSqlRequest]
+      database.foreach(__v => __obj.update("database", __v.asInstanceOf[js.Any]))
+      schema.foreach(__v => __obj.update("schema", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ExecuteSqlRequest]
     }
   }
 
@@ -169,11 +135,11 @@ package rdsdataservice {
     def apply(
         sqlStatementResults: SqlStatementResults
     ): ExecuteSqlResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "sqlStatementResults" -> sqlStatementResults.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ExecuteSqlResponse]
+      __obj.asInstanceOf[ExecuteSqlResponse]
     }
   }
 
@@ -189,13 +155,9 @@ package rdsdataservice {
     def apply(
         values: js.UndefOr[Row] = js.undefined
     ): Record = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "values" -> values.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Record]
+      val __obj = js.Dictionary.empty[js.Any]
+      values.foreach(__v => __obj.update("values", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Record]
     }
   }
 
@@ -213,16 +175,10 @@ package rdsdataservice {
         records: js.UndefOr[Records] = js.undefined,
         resultSetMetadata: js.UndefOr[ResultSetMetadata] = js.undefined
     ): ResultFrame = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "records" -> records.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "resultSetMetadata" -> resultSetMetadata.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ResultFrame]
+      val __obj = js.Dictionary.empty[js.Any]
+      records.foreach(__v => __obj.update("records", __v.asInstanceOf[js.Any]))
+      resultSetMetadata.foreach(__v => __obj.update("resultSetMetadata", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ResultFrame]
     }
   }
 
@@ -240,16 +196,10 @@ package rdsdataservice {
         columnCount: js.UndefOr[Double] = js.undefined,
         columnMetadata: js.UndefOr[ColumnMetadataList] = js.undefined
     ): ResultSetMetadata = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "columnCount" -> columnCount.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "columnMetadata" -> columnMetadata.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ResultSetMetadata]
+      val __obj = js.Dictionary.empty[js.Any]
+      columnCount.foreach(__v => __obj.update("columnCount", __v.asInstanceOf[js.Any]))
+      columnMetadata.foreach(__v => __obj.update("columnMetadata", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ResultSetMetadata]
     }
   }
 
@@ -267,16 +217,10 @@ package rdsdataservice {
         numberOfRecordsUpdated: js.UndefOr[Double] = js.undefined,
         resultFrame: js.UndefOr[ResultFrame] = js.undefined
     ): SqlStatementResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "numberOfRecordsUpdated" -> numberOfRecordsUpdated.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "resultFrame" -> resultFrame.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SqlStatementResult]
+      val __obj = js.Dictionary.empty[js.Any]
+      numberOfRecordsUpdated.foreach(__v => __obj.update("numberOfRecordsUpdated", __v.asInstanceOf[js.Any]))
+      resultFrame.foreach(__v => __obj.update("resultFrame", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[SqlStatementResult]
     }
   }
 
@@ -292,13 +236,9 @@ package rdsdataservice {
     def apply(
         attributes: js.UndefOr[ArrayValues] = js.undefined
     ): StructValue = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "attributes" -> attributes.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StructValue]
+      val __obj = js.Dictionary.empty[js.Any]
+      attributes.foreach(__v => __obj.update("attributes", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[StructValue]
     }
   }
 
@@ -332,40 +272,18 @@ package rdsdataservice {
         stringValue: js.UndefOr[String] = js.undefined,
         structValue: js.UndefOr[StructValue] = js.undefined
     ): Value = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "arrayValues" -> arrayValues.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "bigIntValue" -> bigIntValue.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "bitValue" -> bitValue.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "blobValue" -> blobValue.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "doubleValue" -> doubleValue.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "intValue" -> intValue.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "isNull" -> isNull.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "realValue" -> realValue.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "stringValue" -> stringValue.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "structValue" -> structValue.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Value]
+      val __obj = js.Dictionary.empty[js.Any]
+      arrayValues.foreach(__v => __obj.update("arrayValues", __v.asInstanceOf[js.Any]))
+      bigIntValue.foreach(__v => __obj.update("bigIntValue", __v.asInstanceOf[js.Any]))
+      bitValue.foreach(__v => __obj.update("bitValue", __v.asInstanceOf[js.Any]))
+      blobValue.foreach(__v => __obj.update("blobValue", __v.asInstanceOf[js.Any]))
+      doubleValue.foreach(__v => __obj.update("doubleValue", __v.asInstanceOf[js.Any]))
+      intValue.foreach(__v => __obj.update("intValue", __v.asInstanceOf[js.Any]))
+      isNull.foreach(__v => __obj.update("isNull", __v.asInstanceOf[js.Any]))
+      realValue.foreach(__v => __obj.update("realValue", __v.asInstanceOf[js.Any]))
+      stringValue.foreach(__v => __obj.update("stringValue", __v.asInstanceOf[js.Any]))
+      structValue.foreach(__v => __obj.update("structValue", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Value]
     }
   }
 }

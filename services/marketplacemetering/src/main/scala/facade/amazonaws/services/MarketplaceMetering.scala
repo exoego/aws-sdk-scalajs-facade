@@ -59,12 +59,12 @@ package marketplacemetering {
         ProductCode: ProductCode,
         UsageRecords: UsageRecordList
     ): BatchMeterUsageRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ProductCode"  -> ProductCode.asInstanceOf[js.Any],
         "UsageRecords" -> UsageRecords.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[BatchMeterUsageRequest]
+      __obj.asInstanceOf[BatchMeterUsageRequest]
     }
   }
 
@@ -82,16 +82,10 @@ package marketplacemetering {
         Results: js.UndefOr[UsageRecordResultList] = js.undefined,
         UnprocessedRecords: js.UndefOr[UsageRecordList] = js.undefined
     ): BatchMeterUsageResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Results" -> Results.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "UnprocessedRecords" -> UnprocessedRecords.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[BatchMeterUsageResult]
+      val __obj = js.Dictionary.empty[js.Any]
+      Results.foreach(__v => __obj.update("Results", __v.asInstanceOf[js.Any]))
+      UnprocessedRecords.foreach(__v => __obj.update("UnprocessedRecords", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[BatchMeterUsageResult]
     }
   }
 
@@ -112,19 +106,15 @@ package marketplacemetering {
         DryRun: js.UndefOr[Boolean] = js.undefined,
         UsageQuantity: js.UndefOr[UsageQuantity] = js.undefined
     ): MeterUsageRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ProductCode"    -> ProductCode.asInstanceOf[js.Any],
         "Timestamp"      -> Timestamp.asInstanceOf[js.Any],
-        "UsageDimension" -> UsageDimension.asInstanceOf[js.Any],
-        "DryRun" -> DryRun.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "UsageQuantity" -> UsageQuantity.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "UsageDimension" -> UsageDimension.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[MeterUsageRequest]
+      DryRun.foreach(__v => __obj.update("DryRun", __v.asInstanceOf[js.Any]))
+      UsageQuantity.foreach(__v => __obj.update("UsageQuantity", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[MeterUsageRequest]
     }
   }
 
@@ -137,13 +127,9 @@ package marketplacemetering {
     def apply(
         MeteringRecordId: js.UndefOr[String] = js.undefined
     ): MeterUsageResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "MeteringRecordId" -> MeteringRecordId.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[MeterUsageResult]
+      val __obj = js.Dictionary.empty[js.Any]
+      MeteringRecordId.foreach(__v => __obj.update("MeteringRecordId", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[MeterUsageResult]
     }
   }
 
@@ -160,15 +146,13 @@ package marketplacemetering {
         PublicKeyVersion: VersionInteger,
         Nonce: js.UndefOr[Nonce] = js.undefined
     ): RegisterUsageRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ProductCode"      -> ProductCode.asInstanceOf[js.Any],
-        "PublicKeyVersion" -> PublicKeyVersion.asInstanceOf[js.Any],
-        "Nonce" -> Nonce.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "PublicKeyVersion" -> PublicKeyVersion.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RegisterUsageRequest]
+      Nonce.foreach(__v => __obj.update("Nonce", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[RegisterUsageRequest]
     }
   }
 
@@ -183,16 +167,10 @@ package marketplacemetering {
         PublicKeyRotationTimestamp: js.UndefOr[Timestamp] = js.undefined,
         Signature: js.UndefOr[NonEmptyString] = js.undefined
     ): RegisterUsageResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "PublicKeyRotationTimestamp" -> PublicKeyRotationTimestamp.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Signature" -> Signature.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RegisterUsageResult]
+      val __obj = js.Dictionary.empty[js.Any]
+      PublicKeyRotationTimestamp.foreach(__v => __obj.update("PublicKeyRotationTimestamp", __v.asInstanceOf[js.Any]))
+      Signature.foreach(__v => __obj.update("Signature", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[RegisterUsageResult]
     }
   }
 
@@ -208,11 +186,11 @@ package marketplacemetering {
     def apply(
         RegistrationToken: NonEmptyString
     ): ResolveCustomerRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "RegistrationToken" -> RegistrationToken.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ResolveCustomerRequest]
+      __obj.asInstanceOf[ResolveCustomerRequest]
     }
   }
 
@@ -230,16 +208,10 @@ package marketplacemetering {
         CustomerIdentifier: js.UndefOr[CustomerIdentifier] = js.undefined,
         ProductCode: js.UndefOr[ProductCode] = js.undefined
     ): ResolveCustomerResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "CustomerIdentifier" -> CustomerIdentifier.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ProductCode" -> ProductCode.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ResolveCustomerResult]
+      val __obj = js.Dictionary.empty[js.Any]
+      CustomerIdentifier.foreach(__v => __obj.update("CustomerIdentifier", __v.asInstanceOf[js.Any]))
+      ProductCode.foreach(__v => __obj.update("ProductCode", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ResolveCustomerResult]
     }
   }
 
@@ -262,16 +234,14 @@ package marketplacemetering {
         Timestamp: Timestamp,
         Quantity: js.UndefOr[UsageQuantity] = js.undefined
     ): UsageRecord = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "CustomerIdentifier" -> CustomerIdentifier.asInstanceOf[js.Any],
         "Dimension"          -> Dimension.asInstanceOf[js.Any],
-        "Timestamp"          -> Timestamp.asInstanceOf[js.Any],
-        "Quantity" -> Quantity.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "Timestamp"          -> Timestamp.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UsageRecord]
+      Quantity.foreach(__v => __obj.update("Quantity", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UsageRecord]
     }
   }
 
@@ -291,19 +261,11 @@ package marketplacemetering {
         Status: js.UndefOr[UsageRecordResultStatus] = js.undefined,
         UsageRecord: js.UndefOr[UsageRecord] = js.undefined
     ): UsageRecordResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "MeteringRecordId" -> MeteringRecordId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Status" -> Status.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "UsageRecord" -> UsageRecord.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UsageRecordResult]
+      val __obj = js.Dictionary.empty[js.Any]
+      MeteringRecordId.foreach(__v => __obj.update("MeteringRecordId", __v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.update("Status", __v.asInstanceOf[js.Any]))
+      UsageRecord.foreach(__v => __obj.update("UsageRecord", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UsageRecordResult]
     }
   }
 

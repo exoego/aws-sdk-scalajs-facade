@@ -108,26 +108,16 @@ package kinesisvideo {
         MediaType: js.UndefOr[MediaType] = js.undefined,
         Tags: js.UndefOr[ResourceTags] = js.undefined
     ): CreateStreamInput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "StreamName" -> StreamName.asInstanceOf[js.Any],
-        "DataRetentionInHours" -> DataRetentionInHours.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DeviceName" -> DeviceName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "KmsKeyId" -> KmsKeyId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MediaType" -> MediaType.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Tags" -> Tags.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "StreamName" -> StreamName.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateStreamInput]
+      DataRetentionInHours.foreach(__v => __obj.update("DataRetentionInHours", __v.asInstanceOf[js.Any]))
+      DeviceName.foreach(__v => __obj.update("DeviceName", __v.asInstanceOf[js.Any]))
+      KmsKeyId.foreach(__v => __obj.update("KmsKeyId", __v.asInstanceOf[js.Any]))
+      MediaType.foreach(__v => __obj.update("MediaType", __v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateStreamInput]
     }
   }
 
@@ -140,13 +130,9 @@ package kinesisvideo {
     def apply(
         StreamARN: js.UndefOr[ResourceARN] = js.undefined
     ): CreateStreamOutput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "StreamARN" -> StreamARN.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateStreamOutput]
+      val __obj = js.Dictionary.empty[js.Any]
+      StreamARN.foreach(__v => __obj.update("StreamARN", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateStreamOutput]
     }
   }
 
@@ -161,14 +147,12 @@ package kinesisvideo {
         StreamARN: ResourceARN,
         CurrentVersion: js.UndefOr[Version] = js.undefined
     ): DeleteStreamInput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "StreamARN" -> StreamARN.asInstanceOf[js.Any],
-        "CurrentVersion" -> CurrentVersion.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "StreamARN" -> StreamARN.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteStreamInput]
+      CurrentVersion.foreach(__v => __obj.update("CurrentVersion", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DeleteStreamInput]
     }
   }
 
@@ -178,10 +162,9 @@ package kinesisvideo {
   object DeleteStreamOutput {
     def apply(
         ): DeleteStreamOutput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary.empty[js.Any]
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteStreamOutput]
+      __obj.asInstanceOf[DeleteStreamOutput]
     }
   }
 
@@ -196,16 +179,10 @@ package kinesisvideo {
         StreamARN: js.UndefOr[ResourceARN] = js.undefined,
         StreamName: js.UndefOr[StreamName] = js.undefined
     ): DescribeStreamInput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "StreamARN" -> StreamARN.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "StreamName" -> StreamName.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeStreamInput]
+      val __obj = js.Dictionary.empty[js.Any]
+      StreamARN.foreach(__v => __obj.update("StreamARN", __v.asInstanceOf[js.Any]))
+      StreamName.foreach(__v => __obj.update("StreamName", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeStreamInput]
     }
   }
 
@@ -218,13 +195,9 @@ package kinesisvideo {
     def apply(
         StreamInfo: js.UndefOr[StreamInfo] = js.undefined
     ): DescribeStreamOutput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "StreamInfo" -> StreamInfo.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeStreamOutput]
+      val __obj = js.Dictionary.empty[js.Any]
+      StreamInfo.foreach(__v => __obj.update("StreamInfo", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeStreamOutput]
     }
   }
 
@@ -241,17 +214,13 @@ package kinesisvideo {
         StreamARN: js.UndefOr[ResourceARN] = js.undefined,
         StreamName: js.UndefOr[StreamName] = js.undefined
     ): GetDataEndpointInput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "APIName" -> APIName.asInstanceOf[js.Any],
-        "StreamARN" -> StreamARN.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "StreamName" -> StreamName.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "APIName" -> APIName.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetDataEndpointInput]
+      StreamARN.foreach(__v => __obj.update("StreamARN", __v.asInstanceOf[js.Any]))
+      StreamName.foreach(__v => __obj.update("StreamName", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetDataEndpointInput]
     }
   }
 
@@ -264,13 +233,9 @@ package kinesisvideo {
     def apply(
         DataEndpoint: js.UndefOr[DataEndpoint] = js.undefined
     ): GetDataEndpointOutput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "DataEndpoint" -> DataEndpoint.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetDataEndpointOutput]
+      val __obj = js.Dictionary.empty[js.Any]
+      DataEndpoint.foreach(__v => __obj.update("DataEndpoint", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetDataEndpointOutput]
     }
   }
 
@@ -287,19 +252,11 @@ package kinesisvideo {
         NextToken: js.UndefOr[NextToken] = js.undefined,
         StreamNameCondition: js.UndefOr[StreamNameCondition] = js.undefined
     ): ListStreamsInput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "MaxResults" -> MaxResults.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NextToken" -> NextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "StreamNameCondition" -> StreamNameCondition.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListStreamsInput]
+      val __obj = js.Dictionary.empty[js.Any]
+      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      StreamNameCondition.foreach(__v => __obj.update("StreamNameCondition", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListStreamsInput]
     }
   }
 
@@ -314,16 +271,10 @@ package kinesisvideo {
         NextToken: js.UndefOr[NextToken] = js.undefined,
         StreamInfoList: js.UndefOr[StreamInfoList] = js.undefined
     ): ListStreamsOutput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "NextToken" -> NextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "StreamInfoList" -> StreamInfoList.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListStreamsOutput]
+      val __obj = js.Dictionary.empty[js.Any]
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      StreamInfoList.foreach(__v => __obj.update("StreamInfoList", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListStreamsOutput]
     }
   }
 
@@ -340,19 +291,11 @@ package kinesisvideo {
         StreamARN: js.UndefOr[ResourceARN] = js.undefined,
         StreamName: js.UndefOr[StreamName] = js.undefined
     ): ListTagsForStreamInput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "NextToken" -> NextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "StreamARN" -> StreamARN.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "StreamName" -> StreamName.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListTagsForStreamInput]
+      val __obj = js.Dictionary.empty[js.Any]
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      StreamARN.foreach(__v => __obj.update("StreamARN", __v.asInstanceOf[js.Any]))
+      StreamName.foreach(__v => __obj.update("StreamName", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListTagsForStreamInput]
     }
   }
 
@@ -367,16 +310,10 @@ package kinesisvideo {
         NextToken: js.UndefOr[NextToken] = js.undefined,
         Tags: js.UndefOr[ResourceTags] = js.undefined
     ): ListTagsForStreamOutput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "NextToken" -> NextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Tags" -> Tags.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListTagsForStreamOutput]
+      val __obj = js.Dictionary.empty[js.Any]
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListTagsForStreamOutput]
     }
   }
 
@@ -417,37 +354,17 @@ package kinesisvideo {
         StreamName: js.UndefOr[StreamName] = js.undefined,
         Version: js.UndefOr[Version] = js.undefined
     ): StreamInfo = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "CreationTime" -> CreationTime.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DataRetentionInHours" -> DataRetentionInHours.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DeviceName" -> DeviceName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "KmsKeyId" -> KmsKeyId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MediaType" -> MediaType.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Status" -> Status.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "StreamARN" -> StreamARN.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "StreamName" -> StreamName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Version" -> Version.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StreamInfo]
+      val __obj = js.Dictionary.empty[js.Any]
+      CreationTime.foreach(__v => __obj.update("CreationTime", __v.asInstanceOf[js.Any]))
+      DataRetentionInHours.foreach(__v => __obj.update("DataRetentionInHours", __v.asInstanceOf[js.Any]))
+      DeviceName.foreach(__v => __obj.update("DeviceName", __v.asInstanceOf[js.Any]))
+      KmsKeyId.foreach(__v => __obj.update("KmsKeyId", __v.asInstanceOf[js.Any]))
+      MediaType.foreach(__v => __obj.update("MediaType", __v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.update("Status", __v.asInstanceOf[js.Any]))
+      StreamARN.foreach(__v => __obj.update("StreamARN", __v.asInstanceOf[js.Any]))
+      StreamName.foreach(__v => __obj.update("StreamName", __v.asInstanceOf[js.Any]))
+      Version.foreach(__v => __obj.update("Version", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[StreamInfo]
     }
   }
 
@@ -465,16 +382,10 @@ package kinesisvideo {
         ComparisonOperator: js.UndefOr[ComparisonOperator] = js.undefined,
         ComparisonValue: js.UndefOr[StreamName] = js.undefined
     ): StreamNameCondition = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ComparisonOperator" -> ComparisonOperator.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ComparisonValue" -> ComparisonValue.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StreamNameCondition]
+      val __obj = js.Dictionary.empty[js.Any]
+      ComparisonOperator.foreach(__v => __obj.update("ComparisonOperator", __v.asInstanceOf[js.Any]))
+      ComparisonValue.foreach(__v => __obj.update("ComparisonValue", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[StreamNameCondition]
     }
   }
 
@@ -491,17 +402,13 @@ package kinesisvideo {
         StreamARN: js.UndefOr[ResourceARN] = js.undefined,
         StreamName: js.UndefOr[StreamName] = js.undefined
     ): TagStreamInput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Tags" -> Tags.asInstanceOf[js.Any],
-        "StreamARN" -> StreamARN.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "StreamName" -> StreamName.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "Tags" -> Tags.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[TagStreamInput]
+      StreamARN.foreach(__v => __obj.update("StreamARN", __v.asInstanceOf[js.Any]))
+      StreamName.foreach(__v => __obj.update("StreamName", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[TagStreamInput]
     }
   }
 
@@ -511,10 +418,9 @@ package kinesisvideo {
   object TagStreamOutput {
     def apply(
         ): TagStreamOutput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary.empty[js.Any]
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[TagStreamOutput]
+      __obj.asInstanceOf[TagStreamOutput]
     }
   }
 
@@ -531,17 +437,13 @@ package kinesisvideo {
         StreamARN: js.UndefOr[ResourceARN] = js.undefined,
         StreamName: js.UndefOr[StreamName] = js.undefined
     ): UntagStreamInput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "TagKeyList" -> TagKeyList.asInstanceOf[js.Any],
-        "StreamARN" -> StreamARN.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "StreamName" -> StreamName.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "TagKeyList" -> TagKeyList.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UntagStreamInput]
+      StreamARN.foreach(__v => __obj.update("StreamARN", __v.asInstanceOf[js.Any]))
+      StreamName.foreach(__v => __obj.update("StreamName", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UntagStreamInput]
     }
   }
 
@@ -551,10 +453,9 @@ package kinesisvideo {
   object UntagStreamOutput {
     def apply(
         ): UntagStreamOutput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary.empty[js.Any]
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UntagStreamOutput]
+      __obj.asInstanceOf[UntagStreamOutput]
     }
   }
 
@@ -575,19 +476,15 @@ package kinesisvideo {
         StreamARN: js.UndefOr[ResourceARN] = js.undefined,
         StreamName: js.UndefOr[StreamName] = js.undefined
     ): UpdateDataRetentionInput = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "CurrentVersion"             -> CurrentVersion.asInstanceOf[js.Any],
         "DataRetentionChangeInHours" -> DataRetentionChangeInHours.asInstanceOf[js.Any],
-        "Operation"                  -> Operation.asInstanceOf[js.Any],
-        "StreamARN" -> StreamARN.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "StreamName" -> StreamName.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "Operation"                  -> Operation.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateDataRetentionInput]
+      StreamARN.foreach(__v => __obj.update("StreamARN", __v.asInstanceOf[js.Any]))
+      StreamName.foreach(__v => __obj.update("StreamName", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateDataRetentionInput]
     }
   }
 
@@ -604,10 +501,9 @@ package kinesisvideo {
   object UpdateDataRetentionOutput {
     def apply(
         ): UpdateDataRetentionOutput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary.empty[js.Any]
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateDataRetentionOutput]
+      __obj.asInstanceOf[UpdateDataRetentionOutput]
     }
   }
 
@@ -628,23 +524,15 @@ package kinesisvideo {
         StreamARN: js.UndefOr[ResourceARN] = js.undefined,
         StreamName: js.UndefOr[StreamName] = js.undefined
     ): UpdateStreamInput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "CurrentVersion" -> CurrentVersion.asInstanceOf[js.Any],
-        "DeviceName" -> DeviceName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MediaType" -> MediaType.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "StreamARN" -> StreamARN.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "StreamName" -> StreamName.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "CurrentVersion" -> CurrentVersion.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateStreamInput]
+      DeviceName.foreach(__v => __obj.update("DeviceName", __v.asInstanceOf[js.Any]))
+      MediaType.foreach(__v => __obj.update("MediaType", __v.asInstanceOf[js.Any]))
+      StreamARN.foreach(__v => __obj.update("StreamARN", __v.asInstanceOf[js.Any]))
+      StreamName.foreach(__v => __obj.update("StreamName", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateStreamInput]
     }
   }
 
@@ -654,10 +542,9 @@ package kinesisvideo {
   object UpdateStreamOutput {
     def apply(
         ): UpdateStreamOutput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary.empty[js.Any]
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateStreamOutput]
+      __obj.asInstanceOf[UpdateStreamOutput]
     }
   }
 }

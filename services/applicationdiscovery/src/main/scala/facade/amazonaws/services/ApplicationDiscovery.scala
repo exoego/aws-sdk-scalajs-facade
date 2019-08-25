@@ -196,19 +196,11 @@ package applicationdiscovery {
         description: js.UndefOr[String] = js.undefined,
         operationSucceeded: js.UndefOr[Boolean] = js.undefined
     ): AgentConfigurationStatus = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "agentId" -> agentId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "description" -> description.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "operationSucceeded" -> operationSucceeded.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AgentConfigurationStatus]
+      val __obj = js.Dictionary.empty[js.Any]
+      agentId.foreach(__v => __obj.update("agentId", __v.asInstanceOf[js.Any]))
+      description.foreach(__v => __obj.update("description", __v.asInstanceOf[js.Any]))
+      operationSucceeded.foreach(__v => __obj.update("operationSucceeded", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AgentConfigurationStatus]
     }
   }
 
@@ -242,40 +234,18 @@ package applicationdiscovery {
         registeredTime: js.UndefOr[String] = js.undefined,
         version: js.UndefOr[String] = js.undefined
     ): AgentInfo = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "agentId" -> agentId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "agentNetworkInfoList" -> agentNetworkInfoList.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "agentType" -> agentType.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "collectionStatus" -> collectionStatus.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "connectorId" -> connectorId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "health" -> health.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "hostName" -> hostName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "lastHealthPingTime" -> lastHealthPingTime.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "registeredTime" -> registeredTime.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "version" -> version.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AgentInfo]
+      val __obj = js.Dictionary.empty[js.Any]
+      agentId.foreach(__v => __obj.update("agentId", __v.asInstanceOf[js.Any]))
+      agentNetworkInfoList.foreach(__v => __obj.update("agentNetworkInfoList", __v.asInstanceOf[js.Any]))
+      agentType.foreach(__v => __obj.update("agentType", __v.asInstanceOf[js.Any]))
+      collectionStatus.foreach(__v => __obj.update("collectionStatus", __v.asInstanceOf[js.Any]))
+      connectorId.foreach(__v => __obj.update("connectorId", __v.asInstanceOf[js.Any]))
+      health.foreach(__v => __obj.update("health", __v.asInstanceOf[js.Any]))
+      hostName.foreach(__v => __obj.update("hostName", __v.asInstanceOf[js.Any]))
+      lastHealthPingTime.foreach(__v => __obj.update("lastHealthPingTime", __v.asInstanceOf[js.Any]))
+      registeredTime.foreach(__v => __obj.update("registeredTime", __v.asInstanceOf[js.Any]))
+      version.foreach(__v => __obj.update("version", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AgentInfo]
     }
   }
 
@@ -293,16 +263,10 @@ package applicationdiscovery {
         ipAddress: js.UndefOr[String] = js.undefined,
         macAddress: js.UndefOr[String] = js.undefined
     ): AgentNetworkInfo = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ipAddress" -> ipAddress.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "macAddress" -> macAddress.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AgentNetworkInfo]
+      val __obj = js.Dictionary.empty[js.Any]
+      ipAddress.foreach(__v => __obj.update("ipAddress", __v.asInstanceOf[js.Any]))
+      macAddress.foreach(__v => __obj.update("macAddress", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AgentNetworkInfo]
     }
   }
 
@@ -328,14 +292,12 @@ package applicationdiscovery {
         applicationConfigurationId: ApplicationId,
         configurationIds: ConfigurationIdList
     ): AssociateConfigurationItemsToApplicationRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "applicationConfigurationId" -> applicationConfigurationId.asInstanceOf[js.Any],
         "configurationIds"           -> configurationIds.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal
-        .applyDynamicNamed("apply")(_fields: _*)
-        .asInstanceOf[AssociateConfigurationItemsToApplicationRequest]
+      __obj.asInstanceOf[AssociateConfigurationItemsToApplicationRequest]
     }
   }
 
@@ -345,12 +307,9 @@ package applicationdiscovery {
   object AssociateConfigurationItemsToApplicationResponse {
     def apply(
         ): AssociateConfigurationItemsToApplicationResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary.empty[js.Any]
 
-      js.Dynamic.literal
-        .applyDynamicNamed("apply")(_fields: _*)
-        .asInstanceOf[AssociateConfigurationItemsToApplicationResponse]
+      __obj.asInstanceOf[AssociateConfigurationItemsToApplicationResponse]
     }
   }
 
@@ -370,19 +329,11 @@ package applicationdiscovery {
         errorDescription: js.UndefOr[BatchDeleteImportDataErrorDescription] = js.undefined,
         importTaskId: js.UndefOr[ImportTaskIdentifier] = js.undefined
     ): BatchDeleteImportDataError = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "errorCode" -> errorCode.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "errorDescription" -> errorDescription.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "importTaskId" -> importTaskId.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[BatchDeleteImportDataError]
+      val __obj = js.Dictionary.empty[js.Any]
+      errorCode.foreach(__v => __obj.update("errorCode", __v.asInstanceOf[js.Any]))
+      errorDescription.foreach(__v => __obj.update("errorDescription", __v.asInstanceOf[js.Any]))
+      importTaskId.foreach(__v => __obj.update("importTaskId", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[BatchDeleteImportDataError]
     }
   }
 
@@ -402,11 +353,11 @@ package applicationdiscovery {
     def apply(
         importTaskIds: ToDeleteIdentifierList
     ): BatchDeleteImportDataRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "importTaskIds" -> importTaskIds.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[BatchDeleteImportDataRequest]
+      __obj.asInstanceOf[BatchDeleteImportDataRequest]
     }
   }
 
@@ -419,13 +370,9 @@ package applicationdiscovery {
     def apply(
         errors: js.UndefOr[BatchDeleteImportDataErrorList] = js.undefined
     ): BatchDeleteImportDataResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "errors" -> errors.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[BatchDeleteImportDataResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      errors.foreach(__v => __obj.update("errors", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[BatchDeleteImportDataResponse]
     }
   }
 
@@ -458,25 +405,13 @@ package applicationdiscovery {
         timeOfCreation: js.UndefOr[TimeStamp] = js.undefined,
         value: js.UndefOr[TagValue] = js.undefined
     ): ConfigurationTag = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "configurationId" -> configurationId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "configurationType" -> configurationType.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "key" -> key.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "timeOfCreation" -> timeOfCreation.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "value" -> value.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ConfigurationTag]
+      val __obj = js.Dictionary.empty[js.Any]
+      configurationId.foreach(__v => __obj.update("configurationId", __v.asInstanceOf[js.Any]))
+      configurationType.foreach(__v => __obj.update("configurationType", __v.asInstanceOf[js.Any]))
+      key.foreach(__v => __obj.update("key", __v.asInstanceOf[js.Any]))
+      timeOfCreation.foreach(__v => __obj.update("timeOfCreation", __v.asInstanceOf[js.Any]))
+      value.foreach(__v => __obj.update("value", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ConfigurationTag]
     }
   }
 
@@ -506,34 +441,16 @@ package applicationdiscovery {
         statusDetail: js.UndefOr[StringMax255] = js.undefined,
         stopTime: js.UndefOr[TimeStamp] = js.undefined
     ): ContinuousExportDescription = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "dataSource" -> dataSource.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "exportId" -> exportId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "s3Bucket" -> s3Bucket.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "schemaStorageConfig" -> schemaStorageConfig.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "startTime" -> startTime.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "status" -> status.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "statusDetail" -> statusDetail.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "stopTime" -> stopTime.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ContinuousExportDescription]
+      val __obj = js.Dictionary.empty[js.Any]
+      dataSource.foreach(__v => __obj.update("dataSource", __v.asInstanceOf[js.Any]))
+      exportId.foreach(__v => __obj.update("exportId", __v.asInstanceOf[js.Any]))
+      s3Bucket.foreach(__v => __obj.update("s3Bucket", __v.asInstanceOf[js.Any]))
+      schemaStorageConfig.foreach(__v => __obj.update("schemaStorageConfig", __v.asInstanceOf[js.Any]))
+      startTime.foreach(__v => __obj.update("startTime", __v.asInstanceOf[js.Any]))
+      status.foreach(__v => __obj.update("status", __v.asInstanceOf[js.Any]))
+      statusDetail.foreach(__v => __obj.update("statusDetail", __v.asInstanceOf[js.Any]))
+      stopTime.foreach(__v => __obj.update("stopTime", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ContinuousExportDescription]
     }
   }
 
@@ -560,14 +477,12 @@ package applicationdiscovery {
         name: String,
         description: js.UndefOr[String] = js.undefined
     ): CreateApplicationRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "name" -> name.asInstanceOf[js.Any],
-        "description" -> description.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "name" -> name.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateApplicationRequest]
+      description.foreach(__v => __obj.update("description", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateApplicationRequest]
     }
   }
 
@@ -580,13 +495,9 @@ package applicationdiscovery {
     def apply(
         configurationId: js.UndefOr[String] = js.undefined
     ): CreateApplicationResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "configurationId" -> configurationId.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateApplicationResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      configurationId.foreach(__v => __obj.update("configurationId", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateApplicationResponse]
     }
   }
 
@@ -601,12 +512,12 @@ package applicationdiscovery {
         configurationIds: ConfigurationIdList,
         tags: TagSet
     ): CreateTagsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "configurationIds" -> configurationIds.asInstanceOf[js.Any],
         "tags"             -> tags.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateTagsRequest]
+      __obj.asInstanceOf[CreateTagsRequest]
     }
   }
 
@@ -616,10 +527,9 @@ package applicationdiscovery {
   object CreateTagsResponse {
     def apply(
         ): CreateTagsResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary.empty[js.Any]
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateTagsResponse]
+      __obj.asInstanceOf[CreateTagsResponse]
     }
   }
 
@@ -647,7 +557,7 @@ package applicationdiscovery {
         unhealthyAgents: Int,
         unknownAgents: Int
     ): CustomerAgentInfo = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "activeAgents"      -> activeAgents.asInstanceOf[js.Any],
         "blackListedAgents" -> blackListedAgents.asInstanceOf[js.Any],
         "healthyAgents"     -> healthyAgents.asInstanceOf[js.Any],
@@ -655,9 +565,9 @@ package applicationdiscovery {
         "totalAgents"       -> totalAgents.asInstanceOf[js.Any],
         "unhealthyAgents"   -> unhealthyAgents.asInstanceOf[js.Any],
         "unknownAgents"     -> unknownAgents.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CustomerAgentInfo]
+      __obj.asInstanceOf[CustomerAgentInfo]
     }
   }
 
@@ -685,7 +595,7 @@ package applicationdiscovery {
         unhealthyConnectors: Int,
         unknownConnectors: Int
     ): CustomerConnectorInfo = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "activeConnectors"      -> activeConnectors.asInstanceOf[js.Any],
         "blackListedConnectors" -> blackListedConnectors.asInstanceOf[js.Any],
         "healthyConnectors"     -> healthyConnectors.asInstanceOf[js.Any],
@@ -693,9 +603,9 @@ package applicationdiscovery {
         "totalConnectors"       -> totalConnectors.asInstanceOf[js.Any],
         "unhealthyConnectors"   -> unhealthyConnectors.asInstanceOf[js.Any],
         "unknownConnectors"     -> unknownConnectors.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CustomerConnectorInfo]
+      __obj.asInstanceOf[CustomerConnectorInfo]
     }
   }
 
@@ -714,11 +624,11 @@ package applicationdiscovery {
     def apply(
         configurationIds: ApplicationIdsList
     ): DeleteApplicationsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "configurationIds" -> configurationIds.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteApplicationsRequest]
+      __obj.asInstanceOf[DeleteApplicationsRequest]
     }
   }
 
@@ -728,10 +638,9 @@ package applicationdiscovery {
   object DeleteApplicationsResponse {
     def apply(
         ): DeleteApplicationsResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary.empty[js.Any]
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteApplicationsResponse]
+      __obj.asInstanceOf[DeleteApplicationsResponse]
     }
   }
 
@@ -746,14 +655,12 @@ package applicationdiscovery {
         configurationIds: ConfigurationIdList,
         tags: js.UndefOr[TagSet] = js.undefined
     ): DeleteTagsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "configurationIds" -> configurationIds.asInstanceOf[js.Any],
-        "tags" -> tags.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "configurationIds" -> configurationIds.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteTagsRequest]
+      tags.foreach(__v => __obj.update("tags", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DeleteTagsRequest]
     }
   }
 
@@ -763,10 +670,9 @@ package applicationdiscovery {
   object DeleteTagsResponse {
     def apply(
         ): DeleteTagsResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary.empty[js.Any]
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteTagsResponse]
+      __obj.asInstanceOf[DeleteTagsResponse]
     }
   }
 
@@ -785,22 +691,12 @@ package applicationdiscovery {
         maxResults: js.UndefOr[Int] = js.undefined,
         nextToken: js.UndefOr[NextToken] = js.undefined
     ): DescribeAgentsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "agentIds" -> agentIds.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "filters" -> filters.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "maxResults" -> maxResults.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "nextToken" -> nextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeAgentsRequest]
+      val __obj = js.Dictionary.empty[js.Any]
+      agentIds.foreach(__v => __obj.update("agentIds", __v.asInstanceOf[js.Any]))
+      filters.foreach(__v => __obj.update("filters", __v.asInstanceOf[js.Any]))
+      maxResults.foreach(__v => __obj.update("maxResults", __v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeAgentsRequest]
     }
   }
 
@@ -815,16 +711,10 @@ package applicationdiscovery {
         agentsInfo: js.UndefOr[AgentsInfo] = js.undefined,
         nextToken: js.UndefOr[NextToken] = js.undefined
     ): DescribeAgentsResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "agentsInfo" -> agentsInfo.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "nextToken" -> nextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeAgentsResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      agentsInfo.foreach(__v => __obj.update("agentsInfo", __v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeAgentsResponse]
     }
   }
 
@@ -837,11 +727,11 @@ package applicationdiscovery {
     def apply(
         configurationIds: ConfigurationIdList
     ): DescribeConfigurationsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "configurationIds" -> configurationIds.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeConfigurationsRequest]
+      __obj.asInstanceOf[DescribeConfigurationsRequest]
     }
   }
 
@@ -854,13 +744,9 @@ package applicationdiscovery {
     def apply(
         configurations: js.UndefOr[DescribeConfigurationsAttributes] = js.undefined
     ): DescribeConfigurationsResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "configurations" -> configurations.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeConfigurationsResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      configurations.foreach(__v => __obj.update("configurations", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeConfigurationsResponse]
     }
   }
 
@@ -877,19 +763,11 @@ package applicationdiscovery {
         maxResults: js.UndefOr[DescribeContinuousExportsMaxResults] = js.undefined,
         nextToken: js.UndefOr[NextToken] = js.undefined
     ): DescribeContinuousExportsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "exportIds" -> exportIds.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "maxResults" -> maxResults.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "nextToken" -> nextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeContinuousExportsRequest]
+      val __obj = js.Dictionary.empty[js.Any]
+      exportIds.foreach(__v => __obj.update("exportIds", __v.asInstanceOf[js.Any]))
+      maxResults.foreach(__v => __obj.update("maxResults", __v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeContinuousExportsRequest]
     }
   }
 
@@ -904,16 +782,10 @@ package applicationdiscovery {
         descriptions: js.UndefOr[ContinuousExportDescriptions] = js.undefined,
         nextToken: js.UndefOr[NextToken] = js.undefined
     ): DescribeContinuousExportsResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "descriptions" -> descriptions.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "nextToken" -> nextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeContinuousExportsResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      descriptions.foreach(__v => __obj.update("descriptions", __v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeContinuousExportsResponse]
     }
   }
 
@@ -930,19 +802,11 @@ package applicationdiscovery {
         maxResults: js.UndefOr[Int] = js.undefined,
         nextToken: js.UndefOr[NextToken] = js.undefined
     ): DescribeExportConfigurationsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "exportIds" -> exportIds.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "maxResults" -> maxResults.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "nextToken" -> nextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeExportConfigurationsRequest]
+      val __obj = js.Dictionary.empty[js.Any]
+      exportIds.foreach(__v => __obj.update("exportIds", __v.asInstanceOf[js.Any]))
+      maxResults.foreach(__v => __obj.update("maxResults", __v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeExportConfigurationsRequest]
     }
   }
 
@@ -957,16 +821,10 @@ package applicationdiscovery {
         exportsInfo: js.UndefOr[ExportsInfo] = js.undefined,
         nextToken: js.UndefOr[NextToken] = js.undefined
     ): DescribeExportConfigurationsResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "exportsInfo" -> exportsInfo.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "nextToken" -> nextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeExportConfigurationsResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      exportsInfo.foreach(__v => __obj.update("exportsInfo", __v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeExportConfigurationsResponse]
     }
   }
 
@@ -985,22 +843,12 @@ package applicationdiscovery {
         maxResults: js.UndefOr[Int] = js.undefined,
         nextToken: js.UndefOr[NextToken] = js.undefined
     ): DescribeExportTasksRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "exportIds" -> exportIds.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "filters" -> filters.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "maxResults" -> maxResults.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "nextToken" -> nextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeExportTasksRequest]
+      val __obj = js.Dictionary.empty[js.Any]
+      exportIds.foreach(__v => __obj.update("exportIds", __v.asInstanceOf[js.Any]))
+      filters.foreach(__v => __obj.update("filters", __v.asInstanceOf[js.Any]))
+      maxResults.foreach(__v => __obj.update("maxResults", __v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeExportTasksRequest]
     }
   }
 
@@ -1015,16 +863,10 @@ package applicationdiscovery {
         exportsInfo: js.UndefOr[ExportsInfo] = js.undefined,
         nextToken: js.UndefOr[NextToken] = js.undefined
     ): DescribeExportTasksResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "exportsInfo" -> exportsInfo.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "nextToken" -> nextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeExportTasksResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      exportsInfo.foreach(__v => __obj.update("exportsInfo", __v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeExportTasksResponse]
     }
   }
 
@@ -1041,19 +883,11 @@ package applicationdiscovery {
         maxResults: js.UndefOr[DescribeImportTasksMaxResults] = js.undefined,
         nextToken: js.UndefOr[NextToken] = js.undefined
     ): DescribeImportTasksRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "filters" -> filters.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "maxResults" -> maxResults.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "nextToken" -> nextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeImportTasksRequest]
+      val __obj = js.Dictionary.empty[js.Any]
+      filters.foreach(__v => __obj.update("filters", __v.asInstanceOf[js.Any]))
+      maxResults.foreach(__v => __obj.update("maxResults", __v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeImportTasksRequest]
     }
   }
 
@@ -1068,16 +902,10 @@ package applicationdiscovery {
         nextToken: js.UndefOr[NextToken] = js.undefined,
         tasks: js.UndefOr[ImportTaskList] = js.undefined
     ): DescribeImportTasksResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "nextToken" -> nextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "tasks" -> tasks.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeImportTasksResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
+      tasks.foreach(__v => __obj.update("tasks", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeImportTasksResponse]
     }
   }
 
@@ -1094,19 +922,11 @@ package applicationdiscovery {
         maxResults: js.UndefOr[Int] = js.undefined,
         nextToken: js.UndefOr[NextToken] = js.undefined
     ): DescribeTagsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "filters" -> filters.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "maxResults" -> maxResults.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "nextToken" -> nextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeTagsRequest]
+      val __obj = js.Dictionary.empty[js.Any]
+      filters.foreach(__v => __obj.update("filters", __v.asInstanceOf[js.Any]))
+      maxResults.foreach(__v => __obj.update("maxResults", __v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeTagsRequest]
     }
   }
 
@@ -1121,16 +941,10 @@ package applicationdiscovery {
         nextToken: js.UndefOr[NextToken] = js.undefined,
         tags: js.UndefOr[ConfigurationTagSet] = js.undefined
     ): DescribeTagsResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "nextToken" -> nextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "tags" -> tags.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeTagsResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
+      tags.foreach(__v => __obj.update("tags", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeTagsResponse]
     }
   }
 
@@ -1145,14 +959,12 @@ package applicationdiscovery {
         applicationConfigurationId: ApplicationId,
         configurationIds: ConfigurationIdList
     ): DisassociateConfigurationItemsFromApplicationRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "applicationConfigurationId" -> applicationConfigurationId.asInstanceOf[js.Any],
         "configurationIds"           -> configurationIds.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal
-        .applyDynamicNamed("apply")(_fields: _*)
-        .asInstanceOf[DisassociateConfigurationItemsFromApplicationRequest]
+      __obj.asInstanceOf[DisassociateConfigurationItemsFromApplicationRequest]
     }
   }
 
@@ -1162,12 +974,9 @@ package applicationdiscovery {
   object DisassociateConfigurationItemsFromApplicationResponse {
     def apply(
         ): DisassociateConfigurationItemsFromApplicationResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary.empty[js.Any]
 
-      js.Dynamic.literal
-        .applyDynamicNamed("apply")(_fields: _*)
-        .asInstanceOf[DisassociateConfigurationItemsFromApplicationResponse]
+      __obj.asInstanceOf[DisassociateConfigurationItemsFromApplicationResponse]
     }
   }
 
@@ -1180,13 +989,9 @@ package applicationdiscovery {
     def apply(
         exportId: js.UndefOr[ConfigurationsExportId] = js.undefined
     ): ExportConfigurationsResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "exportId" -> exportId.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ExportConfigurationsResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      exportId.foreach(__v => __obj.update("exportId", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ExportConfigurationsResponse]
     }
   }
 
@@ -1213,13 +1018,13 @@ package applicationdiscovery {
         name: FilterName,
         values: FilterValues
     ): ExportFilter = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "condition" -> condition.asInstanceOf[js.Any],
         "name"      -> name.asInstanceOf[js.Any],
         "values"    -> values.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ExportFilter]
+      __obj.asInstanceOf[ExportFilter]
     }
   }
 
@@ -1249,26 +1054,18 @@ package applicationdiscovery {
         requestedEndTime: js.UndefOr[TimeStamp] = js.undefined,
         requestedStartTime: js.UndefOr[TimeStamp] = js.undefined
     ): ExportInfo = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "exportId"          -> exportId.asInstanceOf[js.Any],
         "exportRequestTime" -> exportRequestTime.asInstanceOf[js.Any],
         "exportStatus"      -> exportStatus.asInstanceOf[js.Any],
-        "statusMessage"     -> statusMessage.asInstanceOf[js.Any],
-        "configurationsDownloadUrl" -> configurationsDownloadUrl.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "isTruncated" -> isTruncated.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "requestedEndTime" -> requestedEndTime.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "requestedStartTime" -> requestedStartTime.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "statusMessage"     -> statusMessage.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ExportInfo]
+      configurationsDownloadUrl.foreach(__v => __obj.update("configurationsDownloadUrl", __v.asInstanceOf[js.Any]))
+      isTruncated.foreach(__v => __obj.update("isTruncated", __v.asInstanceOf[js.Any]))
+      requestedEndTime.foreach(__v => __obj.update("requestedEndTime", __v.asInstanceOf[js.Any]))
+      requestedStartTime.foreach(__v => __obj.update("requestedStartTime", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ExportInfo]
     }
   }
 
@@ -1297,13 +1094,13 @@ package applicationdiscovery {
         name: String,
         values: FilterValues
     ): Filter = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "condition" -> condition.asInstanceOf[js.Any],
         "name"      -> name.asInstanceOf[js.Any],
         "values"    -> values.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Filter]
+      __obj.asInstanceOf[Filter]
     }
   }
 
@@ -1313,10 +1110,9 @@ package applicationdiscovery {
   object GetDiscoverySummaryRequest {
     def apply(
         ): GetDiscoverySummaryRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary.empty[js.Any]
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetDiscoverySummaryRequest]
+      __obj.asInstanceOf[GetDiscoverySummaryRequest]
     }
   }
 
@@ -1339,28 +1135,14 @@ package applicationdiscovery {
         serversMappedToApplications: js.UndefOr[Double] = js.undefined,
         serversMappedtoTags: js.UndefOr[Double] = js.undefined
     ): GetDiscoverySummaryResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "agentSummary" -> agentSummary.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "applications" -> applications.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "connectorSummary" -> connectorSummary.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "servers" -> servers.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "serversMappedToApplications" -> serversMappedToApplications.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "serversMappedtoTags" -> serversMappedtoTags.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetDiscoverySummaryResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      agentSummary.foreach(__v => __obj.update("agentSummary", __v.asInstanceOf[js.Any]))
+      applications.foreach(__v => __obj.update("applications", __v.asInstanceOf[js.Any]))
+      connectorSummary.foreach(__v => __obj.update("connectorSummary", __v.asInstanceOf[js.Any]))
+      servers.foreach(__v => __obj.update("servers", __v.asInstanceOf[js.Any]))
+      serversMappedToApplications.foreach(__v => __obj.update("serversMappedToApplications", __v.asInstanceOf[js.Any]))
+      serversMappedtoTags.foreach(__v => __obj.update("serversMappedtoTags", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetDiscoverySummaryResponse]
     }
   }
 
@@ -1424,49 +1206,21 @@ package applicationdiscovery {
         serverImportSuccess: js.UndefOr[Int] = js.undefined,
         status: js.UndefOr[ImportStatus] = js.undefined
     ): ImportTask = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "applicationImportFailure" -> applicationImportFailure.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "applicationImportSuccess" -> applicationImportSuccess.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "clientRequestToken" -> clientRequestToken.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "errorsAndFailedEntriesZip" -> errorsAndFailedEntriesZip.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "importCompletionTime" -> importCompletionTime.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "importDeletedTime" -> importDeletedTime.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "importRequestTime" -> importRequestTime.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "importTaskId" -> importTaskId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "importUrl" -> importUrl.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "name" -> name.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "serverImportFailure" -> serverImportFailure.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "serverImportSuccess" -> serverImportSuccess.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "status" -> status.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ImportTask]
+      val __obj = js.Dictionary.empty[js.Any]
+      applicationImportFailure.foreach(__v => __obj.update("applicationImportFailure", __v.asInstanceOf[js.Any]))
+      applicationImportSuccess.foreach(__v => __obj.update("applicationImportSuccess", __v.asInstanceOf[js.Any]))
+      clientRequestToken.foreach(__v => __obj.update("clientRequestToken", __v.asInstanceOf[js.Any]))
+      errorsAndFailedEntriesZip.foreach(__v => __obj.update("errorsAndFailedEntriesZip", __v.asInstanceOf[js.Any]))
+      importCompletionTime.foreach(__v => __obj.update("importCompletionTime", __v.asInstanceOf[js.Any]))
+      importDeletedTime.foreach(__v => __obj.update("importDeletedTime", __v.asInstanceOf[js.Any]))
+      importRequestTime.foreach(__v => __obj.update("importRequestTime", __v.asInstanceOf[js.Any]))
+      importTaskId.foreach(__v => __obj.update("importTaskId", __v.asInstanceOf[js.Any]))
+      importUrl.foreach(__v => __obj.update("importUrl", __v.asInstanceOf[js.Any]))
+      name.foreach(__v => __obj.update("name", __v.asInstanceOf[js.Any]))
+      serverImportFailure.foreach(__v => __obj.update("serverImportFailure", __v.asInstanceOf[js.Any]))
+      serverImportSuccess.foreach(__v => __obj.update("serverImportSuccess", __v.asInstanceOf[js.Any]))
+      status.foreach(__v => __obj.update("status", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ImportTask]
     }
   }
 
@@ -1486,16 +1240,10 @@ package applicationdiscovery {
         name: js.UndefOr[ImportTaskFilterName] = js.undefined,
         values: js.UndefOr[ImportTaskFilterValueList] = js.undefined
     ): ImportTaskFilter = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "name" -> name.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "values" -> values.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ImportTaskFilter]
+      val __obj = js.Dictionary.empty[js.Any]
+      name.foreach(__v => __obj.update("name", __v.asInstanceOf[js.Any]))
+      values.foreach(__v => __obj.update("values", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ImportTaskFilter]
     }
   }
 
@@ -1524,23 +1272,15 @@ package applicationdiscovery {
         nextToken: js.UndefOr[NextToken] = js.undefined,
         orderBy: js.UndefOr[OrderByList] = js.undefined
     ): ListConfigurationsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "configurationType" -> configurationType.asInstanceOf[js.Any],
-        "filters" -> filters.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "maxResults" -> maxResults.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "nextToken" -> nextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "orderBy" -> orderBy.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "configurationType" -> configurationType.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListConfigurationsRequest]
+      filters.foreach(__v => __obj.update("filters", __v.asInstanceOf[js.Any]))
+      maxResults.foreach(__v => __obj.update("maxResults", __v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
+      orderBy.foreach(__v => __obj.update("orderBy", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListConfigurationsRequest]
     }
   }
 
@@ -1555,16 +1295,10 @@ package applicationdiscovery {
         configurations: js.UndefOr[Configurations] = js.undefined,
         nextToken: js.UndefOr[NextToken] = js.undefined
     ): ListConfigurationsResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "configurations" -> configurations.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "nextToken" -> nextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListConfigurationsResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      configurations.foreach(__v => __obj.update("configurations", __v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListConfigurationsResponse]
     }
   }
 
@@ -1585,23 +1319,15 @@ package applicationdiscovery {
         nextToken: js.UndefOr[String] = js.undefined,
         portInformationNeeded: js.UndefOr[Boolean] = js.undefined
     ): ListServerNeighborsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "configurationId" -> configurationId.asInstanceOf[js.Any],
-        "maxResults" -> maxResults.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "neighborConfigurationIds" -> neighborConfigurationIds.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "nextToken" -> nextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "portInformationNeeded" -> portInformationNeeded.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "configurationId" -> configurationId.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListServerNeighborsRequest]
+      maxResults.foreach(__v => __obj.update("maxResults", __v.asInstanceOf[js.Any]))
+      neighborConfigurationIds.foreach(__v => __obj.update("neighborConfigurationIds", __v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
+      portInformationNeeded.foreach(__v => __obj.update("portInformationNeeded", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListServerNeighborsRequest]
     }
   }
 
@@ -1618,17 +1344,13 @@ package applicationdiscovery {
         knownDependencyCount: js.UndefOr[Double] = js.undefined,
         nextToken: js.UndefOr[String] = js.undefined
     ): ListServerNeighborsResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "neighbors" -> neighbors.asInstanceOf[js.Any],
-        "knownDependencyCount" -> knownDependencyCount.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "nextToken" -> nextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "neighbors" -> neighbors.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListServerNeighborsResponse]
+      knownDependencyCount.foreach(__v => __obj.update("knownDependencyCount", __v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListServerNeighborsResponse]
     }
   }
 
@@ -1652,19 +1374,15 @@ package applicationdiscovery {
         destinationPort: js.UndefOr[BoxedInteger] = js.undefined,
         transportProtocol: js.UndefOr[String] = js.undefined
     ): NeighborConnectionDetail = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "connectionsCount"    -> connectionsCount.asInstanceOf[js.Any],
         "destinationServerId" -> destinationServerId.asInstanceOf[js.Any],
-        "sourceServerId"      -> sourceServerId.asInstanceOf[js.Any],
-        "destinationPort" -> destinationPort.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "transportProtocol" -> transportProtocol.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "sourceServerId"      -> sourceServerId.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[NeighborConnectionDetail]
+      destinationPort.foreach(__v => __obj.update("destinationPort", __v.asInstanceOf[js.Any]))
+      transportProtocol.foreach(__v => __obj.update("transportProtocol", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[NeighborConnectionDetail]
     }
   }
 
@@ -1682,14 +1400,12 @@ package applicationdiscovery {
         fieldName: String,
         sortOrder: js.UndefOr[orderString] = js.undefined
     ): OrderByElement = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "fieldName" -> fieldName.asInstanceOf[js.Any],
-        "sortOrder" -> sortOrder.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "fieldName" -> fieldName.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[OrderByElement]
+      sortOrder.foreach(__v => __obj.update("sortOrder", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[OrderByElement]
     }
   }
 
@@ -1699,10 +1415,9 @@ package applicationdiscovery {
   object StartContinuousExportRequest {
     def apply(
         ): StartContinuousExportRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary.empty[js.Any]
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StartContinuousExportRequest]
+      __obj.asInstanceOf[StartContinuousExportRequest]
     }
   }
 
@@ -1723,25 +1438,13 @@ package applicationdiscovery {
         schemaStorageConfig: js.UndefOr[SchemaStorageConfig] = js.undefined,
         startTime: js.UndefOr[TimeStamp] = js.undefined
     ): StartContinuousExportResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "dataSource" -> dataSource.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "exportId" -> exportId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "s3Bucket" -> s3Bucket.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "schemaStorageConfig" -> schemaStorageConfig.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "startTime" -> startTime.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StartContinuousExportResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      dataSource.foreach(__v => __obj.update("dataSource", __v.asInstanceOf[js.Any]))
+      exportId.foreach(__v => __obj.update("exportId", __v.asInstanceOf[js.Any]))
+      s3Bucket.foreach(__v => __obj.update("s3Bucket", __v.asInstanceOf[js.Any]))
+      schemaStorageConfig.foreach(__v => __obj.update("schemaStorageConfig", __v.asInstanceOf[js.Any]))
+      startTime.foreach(__v => __obj.update("startTime", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[StartContinuousExportResponse]
     }
   }
 
@@ -1754,11 +1457,11 @@ package applicationdiscovery {
     def apply(
         agentIds: AgentIds
     ): StartDataCollectionByAgentIdsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "agentIds" -> agentIds.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StartDataCollectionByAgentIdsRequest]
+      __obj.asInstanceOf[StartDataCollectionByAgentIdsRequest]
     }
   }
 
@@ -1771,13 +1474,9 @@ package applicationdiscovery {
     def apply(
         agentsConfigurationStatus: js.UndefOr[AgentConfigurationStatusList] = js.undefined
     ): StartDataCollectionByAgentIdsResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "agentsConfigurationStatus" -> agentsConfigurationStatus.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StartDataCollectionByAgentIdsResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      agentsConfigurationStatus.foreach(__v => __obj.update("agentsConfigurationStatus", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[StartDataCollectionByAgentIdsResponse]
     }
   }
 
@@ -1796,22 +1495,12 @@ package applicationdiscovery {
         filters: js.UndefOr[ExportFilters] = js.undefined,
         startTime: js.UndefOr[TimeStamp] = js.undefined
     ): StartExportTaskRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "endTime" -> endTime.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "exportDataFormat" -> exportDataFormat.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "filters" -> filters.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "startTime" -> startTime.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StartExportTaskRequest]
+      val __obj = js.Dictionary.empty[js.Any]
+      endTime.foreach(__v => __obj.update("endTime", __v.asInstanceOf[js.Any]))
+      exportDataFormat.foreach(__v => __obj.update("exportDataFormat", __v.asInstanceOf[js.Any]))
+      filters.foreach(__v => __obj.update("filters", __v.asInstanceOf[js.Any]))
+      startTime.foreach(__v => __obj.update("startTime", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[StartExportTaskRequest]
     }
   }
 
@@ -1824,13 +1513,9 @@ package applicationdiscovery {
     def apply(
         exportId: js.UndefOr[ConfigurationsExportId] = js.undefined
     ): StartExportTaskResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "exportId" -> exportId.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StartExportTaskResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      exportId.foreach(__v => __obj.update("exportId", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[StartExportTaskResponse]
     }
   }
 
@@ -1847,15 +1532,13 @@ package applicationdiscovery {
         name: ImportTaskName,
         clientRequestToken: js.UndefOr[ClientRequestToken] = js.undefined
     ): StartImportTaskRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "importUrl" -> importUrl.asInstanceOf[js.Any],
-        "name"      -> name.asInstanceOf[js.Any],
-        "clientRequestToken" -> clientRequestToken.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "name"      -> name.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StartImportTaskRequest]
+      clientRequestToken.foreach(__v => __obj.update("clientRequestToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[StartImportTaskRequest]
     }
   }
 
@@ -1868,13 +1551,9 @@ package applicationdiscovery {
     def apply(
         task: js.UndefOr[ImportTask] = js.undefined
     ): StartImportTaskResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "task" -> task.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StartImportTaskResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      task.foreach(__v => __obj.update("task", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[StartImportTaskResponse]
     }
   }
 
@@ -1887,11 +1566,11 @@ package applicationdiscovery {
     def apply(
         exportId: ConfigurationsExportId
     ): StopContinuousExportRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "exportId" -> exportId.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StopContinuousExportRequest]
+      __obj.asInstanceOf[StopContinuousExportRequest]
     }
   }
 
@@ -1906,16 +1585,10 @@ package applicationdiscovery {
         startTime: js.UndefOr[TimeStamp] = js.undefined,
         stopTime: js.UndefOr[TimeStamp] = js.undefined
     ): StopContinuousExportResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "startTime" -> startTime.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "stopTime" -> stopTime.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StopContinuousExportResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      startTime.foreach(__v => __obj.update("startTime", __v.asInstanceOf[js.Any]))
+      stopTime.foreach(__v => __obj.update("stopTime", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[StopContinuousExportResponse]
     }
   }
 
@@ -1928,11 +1601,11 @@ package applicationdiscovery {
     def apply(
         agentIds: AgentIds
     ): StopDataCollectionByAgentIdsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "agentIds" -> agentIds.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StopDataCollectionByAgentIdsRequest]
+      __obj.asInstanceOf[StopDataCollectionByAgentIdsRequest]
     }
   }
 
@@ -1945,13 +1618,9 @@ package applicationdiscovery {
     def apply(
         agentsConfigurationStatus: js.UndefOr[AgentConfigurationStatusList] = js.undefined
     ): StopDataCollectionByAgentIdsResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "agentsConfigurationStatus" -> agentsConfigurationStatus.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StopDataCollectionByAgentIdsResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      agentsConfigurationStatus.foreach(__v => __obj.update("agentsConfigurationStatus", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[StopDataCollectionByAgentIdsResponse]
     }
   }
 
@@ -1969,12 +1638,12 @@ package applicationdiscovery {
         key: TagKey,
         value: TagValue
     ): Tag = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "key"   -> key.asInstanceOf[js.Any],
         "value" -> value.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Tag]
+      __obj.asInstanceOf[Tag]
     }
   }
 
@@ -1992,12 +1661,12 @@ package applicationdiscovery {
         name: FilterName,
         values: FilterValues
     ): TagFilter = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "name"   -> name.asInstanceOf[js.Any],
         "values" -> values.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[TagFilter]
+      __obj.asInstanceOf[TagFilter]
     }
   }
 
@@ -2014,17 +1683,13 @@ package applicationdiscovery {
         description: js.UndefOr[String] = js.undefined,
         name: js.UndefOr[String] = js.undefined
     ): UpdateApplicationRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "configurationId" -> configurationId.asInstanceOf[js.Any],
-        "description" -> description.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "name" -> name.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "configurationId" -> configurationId.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateApplicationRequest]
+      description.foreach(__v => __obj.update("description", __v.asInstanceOf[js.Any]))
+      name.foreach(__v => __obj.update("name", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateApplicationRequest]
     }
   }
 
@@ -2034,10 +1699,9 @@ package applicationdiscovery {
   object UpdateApplicationResponse {
     def apply(
         ): UpdateApplicationResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary.empty[js.Any]
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateApplicationResponse]
+      __obj.asInstanceOf[UpdateApplicationResponse]
     }
   }
 

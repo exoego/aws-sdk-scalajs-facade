@@ -217,19 +217,11 @@ package kms {
         AliasName: js.UndefOr[AliasNameType] = js.undefined,
         TargetKeyId: js.UndefOr[KeyIdType] = js.undefined
     ): AliasListEntry = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "AliasArn" -> AliasArn.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "AliasName" -> AliasName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "TargetKeyId" -> TargetKeyId.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AliasListEntry]
+      val __obj = js.Dictionary.empty[js.Any]
+      AliasArn.foreach(__v => __obj.update("AliasArn", __v.asInstanceOf[js.Any]))
+      AliasName.foreach(__v => __obj.update("AliasName", __v.asInstanceOf[js.Any]))
+      TargetKeyId.foreach(__v => __obj.update("TargetKeyId", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AliasListEntry]
     }
   }
 
@@ -242,11 +234,11 @@ package kms {
     def apply(
         KeyId: KeyIdType
     ): CancelKeyDeletionRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "KeyId" -> KeyId.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CancelKeyDeletionRequest]
+      __obj.asInstanceOf[CancelKeyDeletionRequest]
     }
   }
 
@@ -259,13 +251,9 @@ package kms {
     def apply(
         KeyId: js.UndefOr[KeyIdType] = js.undefined
     ): CancelKeyDeletionResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "KeyId" -> KeyId.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CancelKeyDeletionResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      KeyId.foreach(__v => __obj.update("KeyId", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CancelKeyDeletionResponse]
     }
   }
 
@@ -278,11 +266,11 @@ package kms {
     def apply(
         CustomKeyStoreId: CustomKeyStoreIdType
     ): ConnectCustomKeyStoreRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "CustomKeyStoreId" -> CustomKeyStoreId.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ConnectCustomKeyStoreRequest]
+      __obj.asInstanceOf[ConnectCustomKeyStoreRequest]
     }
   }
 
@@ -292,10 +280,9 @@ package kms {
   object ConnectCustomKeyStoreResponse {
     def apply(
         ): ConnectCustomKeyStoreResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary.empty[js.Any]
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ConnectCustomKeyStoreResponse]
+      __obj.asInstanceOf[ConnectCustomKeyStoreResponse]
     }
   }
 
@@ -331,12 +318,12 @@ package kms {
         AliasName: AliasNameType,
         TargetKeyId: KeyIdType
     ): CreateAliasRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "AliasName"   -> AliasName.asInstanceOf[js.Any],
         "TargetKeyId" -> TargetKeyId.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateAliasRequest]
+      __obj.asInstanceOf[CreateAliasRequest]
     }
   }
 
@@ -355,14 +342,14 @@ package kms {
         KeyStorePassword: KeyStorePasswordType,
         TrustAnchorCertificate: TrustAnchorCertificateType
     ): CreateCustomKeyStoreRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "CloudHsmClusterId"      -> CloudHsmClusterId.asInstanceOf[js.Any],
         "CustomKeyStoreName"     -> CustomKeyStoreName.asInstanceOf[js.Any],
         "KeyStorePassword"       -> KeyStorePassword.asInstanceOf[js.Any],
         "TrustAnchorCertificate" -> TrustAnchorCertificate.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateCustomKeyStoreRequest]
+      __obj.asInstanceOf[CreateCustomKeyStoreRequest]
     }
   }
 
@@ -375,13 +362,9 @@ package kms {
     def apply(
         CustomKeyStoreId: js.UndefOr[CustomKeyStoreIdType] = js.undefined
     ): CreateCustomKeyStoreResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "CustomKeyStoreId" -> CustomKeyStoreId.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateCustomKeyStoreResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      CustomKeyStoreId.foreach(__v => __obj.update("CustomKeyStoreId", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateCustomKeyStoreResponse]
     }
   }
 
@@ -406,25 +389,17 @@ package kms {
         Name: js.UndefOr[GrantNameType] = js.undefined,
         RetiringPrincipal: js.UndefOr[PrincipalIdType] = js.undefined
     ): CreateGrantRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "GranteePrincipal" -> GranteePrincipal.asInstanceOf[js.Any],
         "KeyId"            -> KeyId.asInstanceOf[js.Any],
-        "Operations"       -> Operations.asInstanceOf[js.Any],
-        "Constraints" -> Constraints.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "GrantTokens" -> GrantTokens.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Name" -> Name.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "RetiringPrincipal" -> RetiringPrincipal.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "Operations"       -> Operations.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateGrantRequest]
+      Constraints.foreach(__v => __obj.update("Constraints", __v.asInstanceOf[js.Any]))
+      GrantTokens.foreach(__v => __obj.update("GrantTokens", __v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
+      RetiringPrincipal.foreach(__v => __obj.update("RetiringPrincipal", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateGrantRequest]
     }
   }
 
@@ -439,16 +414,10 @@ package kms {
         GrantId: js.UndefOr[GrantIdType] = js.undefined,
         GrantToken: js.UndefOr[GrantTokenType] = js.undefined
     ): CreateGrantResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "GrantId" -> GrantId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "GrantToken" -> GrantToken.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateGrantResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      GrantId.foreach(__v => __obj.update("GrantId", __v.asInstanceOf[js.Any]))
+      GrantToken.foreach(__v => __obj.update("GrantToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateGrantResponse]
     }
   }
 
@@ -473,31 +442,17 @@ package kms {
         Policy: js.UndefOr[PolicyType] = js.undefined,
         Tags: js.UndefOr[TagList] = js.undefined
     ): CreateKeyRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "BypassPolicyLockoutSafetyCheck" -> BypassPolicyLockoutSafetyCheck.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "CustomKeyStoreId" -> CustomKeyStoreId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Description" -> Description.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "KeyUsage" -> KeyUsage.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Origin" -> Origin.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Policy" -> Policy.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Tags" -> Tags.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateKeyRequest]
+      val __obj = js.Dictionary.empty[js.Any]
+      BypassPolicyLockoutSafetyCheck.foreach(
+        __v => __obj.update("BypassPolicyLockoutSafetyCheck", __v.asInstanceOf[js.Any])
+      )
+      CustomKeyStoreId.foreach(__v => __obj.update("CustomKeyStoreId", __v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
+      KeyUsage.foreach(__v => __obj.update("KeyUsage", __v.asInstanceOf[js.Any]))
+      Origin.foreach(__v => __obj.update("Origin", __v.asInstanceOf[js.Any]))
+      Policy.foreach(__v => __obj.update("Policy", __v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateKeyRequest]
     }
   }
 
@@ -510,13 +465,9 @@ package kms {
     def apply(
         KeyMetadata: js.UndefOr[KeyMetadata] = js.undefined
     ): CreateKeyResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "KeyMetadata" -> KeyMetadata.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateKeyResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      KeyMetadata.foreach(__v => __obj.update("KeyMetadata", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateKeyResponse]
     }
   }
 
@@ -544,31 +495,15 @@ package kms {
         CustomKeyStoreName: js.UndefOr[CustomKeyStoreNameType] = js.undefined,
         TrustAnchorCertificate: js.UndefOr[TrustAnchorCertificateType] = js.undefined
     ): CustomKeyStoresListEntry = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "CloudHsmClusterId" -> CloudHsmClusterId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ConnectionErrorCode" -> ConnectionErrorCode.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ConnectionState" -> ConnectionState.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "CreationDate" -> CreationDate.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "CustomKeyStoreId" -> CustomKeyStoreId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "CustomKeyStoreName" -> CustomKeyStoreName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "TrustAnchorCertificate" -> TrustAnchorCertificate.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CustomKeyStoresListEntry]
+      val __obj = js.Dictionary.empty[js.Any]
+      CloudHsmClusterId.foreach(__v => __obj.update("CloudHsmClusterId", __v.asInstanceOf[js.Any]))
+      ConnectionErrorCode.foreach(__v => __obj.update("ConnectionErrorCode", __v.asInstanceOf[js.Any]))
+      ConnectionState.foreach(__v => __obj.update("ConnectionState", __v.asInstanceOf[js.Any]))
+      CreationDate.foreach(__v => __obj.update("CreationDate", __v.asInstanceOf[js.Any]))
+      CustomKeyStoreId.foreach(__v => __obj.update("CustomKeyStoreId", __v.asInstanceOf[js.Any]))
+      CustomKeyStoreName.foreach(__v => __obj.update("CustomKeyStoreName", __v.asInstanceOf[js.Any]))
+      TrustAnchorCertificate.foreach(__v => __obj.update("TrustAnchorCertificate", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CustomKeyStoresListEntry]
     }
   }
 
@@ -592,17 +527,13 @@ package kms {
         EncryptionContext: js.UndefOr[EncryptionContextType] = js.undefined,
         GrantTokens: js.UndefOr[GrantTokenList] = js.undefined
     ): DecryptRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "CiphertextBlob" -> CiphertextBlob.asInstanceOf[js.Any],
-        "EncryptionContext" -> EncryptionContext.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "GrantTokens" -> GrantTokens.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "CiphertextBlob" -> CiphertextBlob.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DecryptRequest]
+      EncryptionContext.foreach(__v => __obj.update("EncryptionContext", __v.asInstanceOf[js.Any]))
+      GrantTokens.foreach(__v => __obj.update("GrantTokens", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DecryptRequest]
     }
   }
 
@@ -617,16 +548,10 @@ package kms {
         KeyId: js.UndefOr[KeyIdType] = js.undefined,
         Plaintext: js.UndefOr[PlaintextType] = js.undefined
     ): DecryptResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "KeyId" -> KeyId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Plaintext" -> Plaintext.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DecryptResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      KeyId.foreach(__v => __obj.update("KeyId", __v.asInstanceOf[js.Any]))
+      Plaintext.foreach(__v => __obj.update("Plaintext", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DecryptResponse]
     }
   }
 
@@ -639,11 +564,11 @@ package kms {
     def apply(
         AliasName: AliasNameType
     ): DeleteAliasRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "AliasName" -> AliasName.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteAliasRequest]
+      __obj.asInstanceOf[DeleteAliasRequest]
     }
   }
 
@@ -656,11 +581,11 @@ package kms {
     def apply(
         CustomKeyStoreId: CustomKeyStoreIdType
     ): DeleteCustomKeyStoreRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "CustomKeyStoreId" -> CustomKeyStoreId.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteCustomKeyStoreRequest]
+      __obj.asInstanceOf[DeleteCustomKeyStoreRequest]
     }
   }
 
@@ -670,10 +595,9 @@ package kms {
   object DeleteCustomKeyStoreResponse {
     def apply(
         ): DeleteCustomKeyStoreResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary.empty[js.Any]
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteCustomKeyStoreResponse]
+      __obj.asInstanceOf[DeleteCustomKeyStoreResponse]
     }
   }
 
@@ -686,11 +610,11 @@ package kms {
     def apply(
         KeyId: KeyIdType
     ): DeleteImportedKeyMaterialRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "KeyId" -> KeyId.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteImportedKeyMaterialRequest]
+      __obj.asInstanceOf[DeleteImportedKeyMaterialRequest]
     }
   }
 
@@ -709,22 +633,12 @@ package kms {
         Limit: js.UndefOr[LimitType] = js.undefined,
         Marker: js.UndefOr[MarkerType] = js.undefined
     ): DescribeCustomKeyStoresRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "CustomKeyStoreId" -> CustomKeyStoreId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "CustomKeyStoreName" -> CustomKeyStoreName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Limit" -> Limit.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Marker" -> Marker.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeCustomKeyStoresRequest]
+      val __obj = js.Dictionary.empty[js.Any]
+      CustomKeyStoreId.foreach(__v => __obj.update("CustomKeyStoreId", __v.asInstanceOf[js.Any]))
+      CustomKeyStoreName.foreach(__v => __obj.update("CustomKeyStoreName", __v.asInstanceOf[js.Any]))
+      Limit.foreach(__v => __obj.update("Limit", __v.asInstanceOf[js.Any]))
+      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeCustomKeyStoresRequest]
     }
   }
 
@@ -741,19 +655,11 @@ package kms {
         NextMarker: js.UndefOr[MarkerType] = js.undefined,
         Truncated: js.UndefOr[BooleanType] = js.undefined
     ): DescribeCustomKeyStoresResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "CustomKeyStores" -> CustomKeyStores.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NextMarker" -> NextMarker.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Truncated" -> Truncated.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeCustomKeyStoresResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      CustomKeyStores.foreach(__v => __obj.update("CustomKeyStores", __v.asInstanceOf[js.Any]))
+      NextMarker.foreach(__v => __obj.update("NextMarker", __v.asInstanceOf[js.Any]))
+      Truncated.foreach(__v => __obj.update("Truncated", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeCustomKeyStoresResponse]
     }
   }
 
@@ -768,14 +674,12 @@ package kms {
         KeyId: KeyIdType,
         GrantTokens: js.UndefOr[GrantTokenList] = js.undefined
     ): DescribeKeyRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "KeyId" -> KeyId.asInstanceOf[js.Any],
-        "GrantTokens" -> GrantTokens.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "KeyId" -> KeyId.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeKeyRequest]
+      GrantTokens.foreach(__v => __obj.update("GrantTokens", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeKeyRequest]
     }
   }
 
@@ -788,13 +692,9 @@ package kms {
     def apply(
         KeyMetadata: js.UndefOr[KeyMetadata] = js.undefined
     ): DescribeKeyResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "KeyMetadata" -> KeyMetadata.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeKeyResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      KeyMetadata.foreach(__v => __obj.update("KeyMetadata", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeKeyResponse]
     }
   }
 
@@ -807,11 +707,11 @@ package kms {
     def apply(
         KeyId: KeyIdType
     ): DisableKeyRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "KeyId" -> KeyId.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DisableKeyRequest]
+      __obj.asInstanceOf[DisableKeyRequest]
     }
   }
 
@@ -824,11 +724,11 @@ package kms {
     def apply(
         KeyId: KeyIdType
     ): DisableKeyRotationRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "KeyId" -> KeyId.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DisableKeyRotationRequest]
+      __obj.asInstanceOf[DisableKeyRotationRequest]
     }
   }
 
@@ -841,11 +741,11 @@ package kms {
     def apply(
         CustomKeyStoreId: CustomKeyStoreIdType
     ): DisconnectCustomKeyStoreRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "CustomKeyStoreId" -> CustomKeyStoreId.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DisconnectCustomKeyStoreRequest]
+      __obj.asInstanceOf[DisconnectCustomKeyStoreRequest]
     }
   }
 
@@ -855,10 +755,9 @@ package kms {
   object DisconnectCustomKeyStoreResponse {
     def apply(
         ): DisconnectCustomKeyStoreResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary.empty[js.Any]
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DisconnectCustomKeyStoreResponse]
+      __obj.asInstanceOf[DisconnectCustomKeyStoreResponse]
     }
   }
 
@@ -871,11 +770,11 @@ package kms {
     def apply(
         KeyId: KeyIdType
     ): EnableKeyRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "KeyId" -> KeyId.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[EnableKeyRequest]
+      __obj.asInstanceOf[EnableKeyRequest]
     }
   }
 
@@ -888,11 +787,11 @@ package kms {
     def apply(
         KeyId: KeyIdType
     ): EnableKeyRotationRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "KeyId" -> KeyId.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[EnableKeyRotationRequest]
+      __obj.asInstanceOf[EnableKeyRotationRequest]
     }
   }
 
@@ -911,18 +810,14 @@ package kms {
         EncryptionContext: js.UndefOr[EncryptionContextType] = js.undefined,
         GrantTokens: js.UndefOr[GrantTokenList] = js.undefined
     ): EncryptRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "KeyId"     -> KeyId.asInstanceOf[js.Any],
-        "Plaintext" -> Plaintext.asInstanceOf[js.Any],
-        "EncryptionContext" -> EncryptionContext.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "GrantTokens" -> GrantTokens.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "Plaintext" -> Plaintext.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[EncryptRequest]
+      EncryptionContext.foreach(__v => __obj.update("EncryptionContext", __v.asInstanceOf[js.Any]))
+      GrantTokens.foreach(__v => __obj.update("GrantTokens", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[EncryptRequest]
     }
   }
 
@@ -937,16 +832,10 @@ package kms {
         CiphertextBlob: js.UndefOr[CiphertextType] = js.undefined,
         KeyId: js.UndefOr[KeyIdType] = js.undefined
     ): EncryptResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "CiphertextBlob" -> CiphertextBlob.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "KeyId" -> KeyId.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[EncryptResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      CiphertextBlob.foreach(__v => __obj.update("CiphertextBlob", __v.asInstanceOf[js.Any]))
+      KeyId.foreach(__v => __obj.update("KeyId", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[EncryptResponse]
     }
   }
 
@@ -974,23 +863,15 @@ package kms {
         KeySpec: js.UndefOr[DataKeySpec] = js.undefined,
         NumberOfBytes: js.UndefOr[NumberOfBytesType] = js.undefined
     ): GenerateDataKeyRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "KeyId" -> KeyId.asInstanceOf[js.Any],
-        "EncryptionContext" -> EncryptionContext.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "GrantTokens" -> GrantTokens.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "KeySpec" -> KeySpec.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NumberOfBytes" -> NumberOfBytes.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "KeyId" -> KeyId.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GenerateDataKeyRequest]
+      EncryptionContext.foreach(__v => __obj.update("EncryptionContext", __v.asInstanceOf[js.Any]))
+      GrantTokens.foreach(__v => __obj.update("GrantTokens", __v.asInstanceOf[js.Any]))
+      KeySpec.foreach(__v => __obj.update("KeySpec", __v.asInstanceOf[js.Any]))
+      NumberOfBytes.foreach(__v => __obj.update("NumberOfBytes", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GenerateDataKeyRequest]
     }
   }
 
@@ -1007,19 +888,11 @@ package kms {
         KeyId: js.UndefOr[KeyIdType] = js.undefined,
         Plaintext: js.UndefOr[PlaintextType] = js.undefined
     ): GenerateDataKeyResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "CiphertextBlob" -> CiphertextBlob.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "KeyId" -> KeyId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Plaintext" -> Plaintext.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GenerateDataKeyResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      CiphertextBlob.foreach(__v => __obj.update("CiphertextBlob", __v.asInstanceOf[js.Any]))
+      KeyId.foreach(__v => __obj.update("KeyId", __v.asInstanceOf[js.Any]))
+      Plaintext.foreach(__v => __obj.update("Plaintext", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GenerateDataKeyResponse]
     }
   }
 
@@ -1040,23 +913,15 @@ package kms {
         KeySpec: js.UndefOr[DataKeySpec] = js.undefined,
         NumberOfBytes: js.UndefOr[NumberOfBytesType] = js.undefined
     ): GenerateDataKeyWithoutPlaintextRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "KeyId" -> KeyId.asInstanceOf[js.Any],
-        "EncryptionContext" -> EncryptionContext.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "GrantTokens" -> GrantTokens.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "KeySpec" -> KeySpec.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NumberOfBytes" -> NumberOfBytes.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "KeyId" -> KeyId.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GenerateDataKeyWithoutPlaintextRequest]
+      EncryptionContext.foreach(__v => __obj.update("EncryptionContext", __v.asInstanceOf[js.Any]))
+      GrantTokens.foreach(__v => __obj.update("GrantTokens", __v.asInstanceOf[js.Any]))
+      KeySpec.foreach(__v => __obj.update("KeySpec", __v.asInstanceOf[js.Any]))
+      NumberOfBytes.foreach(__v => __obj.update("NumberOfBytes", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GenerateDataKeyWithoutPlaintextRequest]
     }
   }
 
@@ -1071,16 +936,10 @@ package kms {
         CiphertextBlob: js.UndefOr[CiphertextType] = js.undefined,
         KeyId: js.UndefOr[KeyIdType] = js.undefined
     ): GenerateDataKeyWithoutPlaintextResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "CiphertextBlob" -> CiphertextBlob.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "KeyId" -> KeyId.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GenerateDataKeyWithoutPlaintextResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      CiphertextBlob.foreach(__v => __obj.update("CiphertextBlob", __v.asInstanceOf[js.Any]))
+      KeyId.foreach(__v => __obj.update("KeyId", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GenerateDataKeyWithoutPlaintextResponse]
     }
   }
 
@@ -1095,16 +954,10 @@ package kms {
         CustomKeyStoreId: js.UndefOr[CustomKeyStoreIdType] = js.undefined,
         NumberOfBytes: js.UndefOr[NumberOfBytesType] = js.undefined
     ): GenerateRandomRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "CustomKeyStoreId" -> CustomKeyStoreId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NumberOfBytes" -> NumberOfBytes.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GenerateRandomRequest]
+      val __obj = js.Dictionary.empty[js.Any]
+      CustomKeyStoreId.foreach(__v => __obj.update("CustomKeyStoreId", __v.asInstanceOf[js.Any]))
+      NumberOfBytes.foreach(__v => __obj.update("NumberOfBytes", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GenerateRandomRequest]
     }
   }
 
@@ -1117,13 +970,9 @@ package kms {
     def apply(
         Plaintext: js.UndefOr[PlaintextType] = js.undefined
     ): GenerateRandomResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Plaintext" -> Plaintext.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GenerateRandomResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      Plaintext.foreach(__v => __obj.update("Plaintext", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GenerateRandomResponse]
     }
   }
 
@@ -1138,12 +987,12 @@ package kms {
         KeyId: KeyIdType,
         PolicyName: PolicyNameType
     ): GetKeyPolicyRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "KeyId"      -> KeyId.asInstanceOf[js.Any],
         "PolicyName" -> PolicyName.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetKeyPolicyRequest]
+      __obj.asInstanceOf[GetKeyPolicyRequest]
     }
   }
 
@@ -1156,13 +1005,9 @@ package kms {
     def apply(
         Policy: js.UndefOr[PolicyType] = js.undefined
     ): GetKeyPolicyResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Policy" -> Policy.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetKeyPolicyResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      Policy.foreach(__v => __obj.update("Policy", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetKeyPolicyResponse]
     }
   }
 
@@ -1175,11 +1020,11 @@ package kms {
     def apply(
         KeyId: KeyIdType
     ): GetKeyRotationStatusRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "KeyId" -> KeyId.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetKeyRotationStatusRequest]
+      __obj.asInstanceOf[GetKeyRotationStatusRequest]
     }
   }
 
@@ -1192,13 +1037,9 @@ package kms {
     def apply(
         KeyRotationEnabled: js.UndefOr[BooleanType] = js.undefined
     ): GetKeyRotationStatusResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "KeyRotationEnabled" -> KeyRotationEnabled.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetKeyRotationStatusResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      KeyRotationEnabled.foreach(__v => __obj.update("KeyRotationEnabled", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetKeyRotationStatusResponse]
     }
   }
 
@@ -1215,13 +1056,13 @@ package kms {
         WrappingAlgorithm: AlgorithmSpec,
         WrappingKeySpec: WrappingKeySpec
     ): GetParametersForImportRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "KeyId"             -> KeyId.asInstanceOf[js.Any],
         "WrappingAlgorithm" -> WrappingAlgorithm.asInstanceOf[js.Any],
         "WrappingKeySpec"   -> WrappingKeySpec.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetParametersForImportRequest]
+      __obj.asInstanceOf[GetParametersForImportRequest]
     }
   }
 
@@ -1240,22 +1081,12 @@ package kms {
         ParametersValidTo: js.UndefOr[DateType] = js.undefined,
         PublicKey: js.UndefOr[PlaintextType] = js.undefined
     ): GetParametersForImportResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ImportToken" -> ImportToken.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "KeyId" -> KeyId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ParametersValidTo" -> ParametersValidTo.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "PublicKey" -> PublicKey.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetParametersForImportResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      ImportToken.foreach(__v => __obj.update("ImportToken", __v.asInstanceOf[js.Any]))
+      KeyId.foreach(__v => __obj.update("KeyId", __v.asInstanceOf[js.Any]))
+      ParametersValidTo.foreach(__v => __obj.update("ParametersValidTo", __v.asInstanceOf[js.Any]))
+      PublicKey.foreach(__v => __obj.update("PublicKey", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetParametersForImportResponse]
     }
   }
 
@@ -1274,16 +1105,10 @@ package kms {
         EncryptionContextEquals: js.UndefOr[EncryptionContextType] = js.undefined,
         EncryptionContextSubset: js.UndefOr[EncryptionContextType] = js.undefined
     ): GrantConstraints = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "EncryptionContextEquals" -> EncryptionContextEquals.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "EncryptionContextSubset" -> EncryptionContextSubset.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GrantConstraints]
+      val __obj = js.Dictionary.empty[js.Any]
+      EncryptionContextEquals.foreach(__v => __obj.update("EncryptionContextEquals", __v.asInstanceOf[js.Any]))
+      EncryptionContextSubset.foreach(__v => __obj.update("EncryptionContextSubset", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GrantConstraints]
     }
   }
 
@@ -1315,37 +1140,17 @@ package kms {
         Operations: js.UndefOr[GrantOperationList] = js.undefined,
         RetiringPrincipal: js.UndefOr[PrincipalIdType] = js.undefined
     ): GrantListEntry = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Constraints" -> Constraints.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "CreationDate" -> CreationDate.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "GrantId" -> GrantId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "GranteePrincipal" -> GranteePrincipal.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "IssuingAccount" -> IssuingAccount.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "KeyId" -> KeyId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Name" -> Name.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Operations" -> Operations.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "RetiringPrincipal" -> RetiringPrincipal.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GrantListEntry]
+      val __obj = js.Dictionary.empty[js.Any]
+      Constraints.foreach(__v => __obj.update("Constraints", __v.asInstanceOf[js.Any]))
+      CreationDate.foreach(__v => __obj.update("CreationDate", __v.asInstanceOf[js.Any]))
+      GrantId.foreach(__v => __obj.update("GrantId", __v.asInstanceOf[js.Any]))
+      GranteePrincipal.foreach(__v => __obj.update("GranteePrincipal", __v.asInstanceOf[js.Any]))
+      IssuingAccount.foreach(__v => __obj.update("IssuingAccount", __v.asInstanceOf[js.Any]))
+      KeyId.foreach(__v => __obj.update("KeyId", __v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
+      Operations.foreach(__v => __obj.update("Operations", __v.asInstanceOf[js.Any]))
+      RetiringPrincipal.foreach(__v => __obj.update("RetiringPrincipal", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GrantListEntry]
     }
   }
 
@@ -1390,19 +1195,15 @@ package kms {
         ExpirationModel: js.UndefOr[ExpirationModelType] = js.undefined,
         ValidTo: js.UndefOr[DateType] = js.undefined
     ): ImportKeyMaterialRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "EncryptedKeyMaterial" -> EncryptedKeyMaterial.asInstanceOf[js.Any],
         "ImportToken"          -> ImportToken.asInstanceOf[js.Any],
-        "KeyId"                -> KeyId.asInstanceOf[js.Any],
-        "ExpirationModel" -> ExpirationModel.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ValidTo" -> ValidTo.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "KeyId"                -> KeyId.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ImportKeyMaterialRequest]
+      ExpirationModel.foreach(__v => __obj.update("ExpirationModel", __v.asInstanceOf[js.Any]))
+      ValidTo.foreach(__v => __obj.update("ValidTo", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ImportKeyMaterialRequest]
     }
   }
 
@@ -1412,10 +1213,9 @@ package kms {
   object ImportKeyMaterialResponse {
     def apply(
         ): ImportKeyMaterialResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary.empty[js.Any]
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ImportKeyMaterialResponse]
+      __obj.asInstanceOf[ImportKeyMaterialResponse]
     }
   }
 
@@ -1433,16 +1233,10 @@ package kms {
         KeyArn: js.UndefOr[ArnType] = js.undefined,
         KeyId: js.UndefOr[KeyIdType] = js.undefined
     ): KeyListEntry = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "KeyArn" -> KeyArn.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "KeyId" -> KeyId.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[KeyListEntry]
+      val __obj = js.Dictionary.empty[js.Any]
+      KeyArn.foreach(__v => __obj.update("KeyArn", __v.asInstanceOf[js.Any]))
+      KeyId.foreach(__v => __obj.update("KeyId", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[KeyListEntry]
     }
   }
 
@@ -1494,53 +1288,25 @@ package kms {
         Origin: js.UndefOr[OriginType] = js.undefined,
         ValidTo: js.UndefOr[DateType] = js.undefined
     ): KeyMetadata = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "KeyId" -> KeyId.asInstanceOf[js.Any],
-        "AWSAccountId" -> AWSAccountId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Arn" -> Arn.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "CloudHsmClusterId" -> CloudHsmClusterId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "CreationDate" -> CreationDate.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "CustomKeyStoreId" -> CustomKeyStoreId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DeletionDate" -> DeletionDate.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Description" -> Description.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Enabled" -> Enabled.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ExpirationModel" -> ExpirationModel.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "KeyManager" -> KeyManager.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "KeyState" -> KeyState.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "KeyUsage" -> KeyUsage.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Origin" -> Origin.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ValidTo" -> ValidTo.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "KeyId" -> KeyId.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[KeyMetadata]
+      AWSAccountId.foreach(__v => __obj.update("AWSAccountId", __v.asInstanceOf[js.Any]))
+      Arn.foreach(__v => __obj.update("Arn", __v.asInstanceOf[js.Any]))
+      CloudHsmClusterId.foreach(__v => __obj.update("CloudHsmClusterId", __v.asInstanceOf[js.Any]))
+      CreationDate.foreach(__v => __obj.update("CreationDate", __v.asInstanceOf[js.Any]))
+      CustomKeyStoreId.foreach(__v => __obj.update("CustomKeyStoreId", __v.asInstanceOf[js.Any]))
+      DeletionDate.foreach(__v => __obj.update("DeletionDate", __v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
+      Enabled.foreach(__v => __obj.update("Enabled", __v.asInstanceOf[js.Any]))
+      ExpirationModel.foreach(__v => __obj.update("ExpirationModel", __v.asInstanceOf[js.Any]))
+      KeyManager.foreach(__v => __obj.update("KeyManager", __v.asInstanceOf[js.Any]))
+      KeyState.foreach(__v => __obj.update("KeyState", __v.asInstanceOf[js.Any]))
+      KeyUsage.foreach(__v => __obj.update("KeyUsage", __v.asInstanceOf[js.Any]))
+      Origin.foreach(__v => __obj.update("Origin", __v.asInstanceOf[js.Any]))
+      ValidTo.foreach(__v => __obj.update("ValidTo", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[KeyMetadata]
     }
   }
 
@@ -1573,19 +1339,11 @@ package kms {
         Limit: js.UndefOr[LimitType] = js.undefined,
         Marker: js.UndefOr[MarkerType] = js.undefined
     ): ListAliasesRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "KeyId" -> KeyId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Limit" -> Limit.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Marker" -> Marker.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListAliasesRequest]
+      val __obj = js.Dictionary.empty[js.Any]
+      KeyId.foreach(__v => __obj.update("KeyId", __v.asInstanceOf[js.Any]))
+      Limit.foreach(__v => __obj.update("Limit", __v.asInstanceOf[js.Any]))
+      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListAliasesRequest]
     }
   }
 
@@ -1602,19 +1360,11 @@ package kms {
         NextMarker: js.UndefOr[MarkerType] = js.undefined,
         Truncated: js.UndefOr[BooleanType] = js.undefined
     ): ListAliasesResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Aliases" -> Aliases.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NextMarker" -> NextMarker.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Truncated" -> Truncated.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListAliasesResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      Aliases.foreach(__v => __obj.update("Aliases", __v.asInstanceOf[js.Any]))
+      NextMarker.foreach(__v => __obj.update("NextMarker", __v.asInstanceOf[js.Any]))
+      Truncated.foreach(__v => __obj.update("Truncated", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListAliasesResponse]
     }
   }
 
@@ -1631,17 +1381,13 @@ package kms {
         Limit: js.UndefOr[LimitType] = js.undefined,
         Marker: js.UndefOr[MarkerType] = js.undefined
     ): ListGrantsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "KeyId" -> KeyId.asInstanceOf[js.Any],
-        "Limit" -> Limit.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Marker" -> Marker.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "KeyId" -> KeyId.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListGrantsRequest]
+      Limit.foreach(__v => __obj.update("Limit", __v.asInstanceOf[js.Any]))
+      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListGrantsRequest]
     }
   }
 
@@ -1658,19 +1404,11 @@ package kms {
         NextMarker: js.UndefOr[MarkerType] = js.undefined,
         Truncated: js.UndefOr[BooleanType] = js.undefined
     ): ListGrantsResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Grants" -> Grants.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NextMarker" -> NextMarker.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Truncated" -> Truncated.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListGrantsResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      Grants.foreach(__v => __obj.update("Grants", __v.asInstanceOf[js.Any]))
+      NextMarker.foreach(__v => __obj.update("NextMarker", __v.asInstanceOf[js.Any]))
+      Truncated.foreach(__v => __obj.update("Truncated", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListGrantsResponse]
     }
   }
 
@@ -1687,17 +1425,13 @@ package kms {
         Limit: js.UndefOr[LimitType] = js.undefined,
         Marker: js.UndefOr[MarkerType] = js.undefined
     ): ListKeyPoliciesRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "KeyId" -> KeyId.asInstanceOf[js.Any],
-        "Limit" -> Limit.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Marker" -> Marker.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "KeyId" -> KeyId.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListKeyPoliciesRequest]
+      Limit.foreach(__v => __obj.update("Limit", __v.asInstanceOf[js.Any]))
+      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListKeyPoliciesRequest]
     }
   }
 
@@ -1714,19 +1448,11 @@ package kms {
         PolicyNames: js.UndefOr[PolicyNameList] = js.undefined,
         Truncated: js.UndefOr[BooleanType] = js.undefined
     ): ListKeyPoliciesResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "NextMarker" -> NextMarker.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "PolicyNames" -> PolicyNames.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Truncated" -> Truncated.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListKeyPoliciesResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      NextMarker.foreach(__v => __obj.update("NextMarker", __v.asInstanceOf[js.Any]))
+      PolicyNames.foreach(__v => __obj.update("PolicyNames", __v.asInstanceOf[js.Any]))
+      Truncated.foreach(__v => __obj.update("Truncated", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListKeyPoliciesResponse]
     }
   }
 
@@ -1741,16 +1467,10 @@ package kms {
         Limit: js.UndefOr[LimitType] = js.undefined,
         Marker: js.UndefOr[MarkerType] = js.undefined
     ): ListKeysRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Limit" -> Limit.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Marker" -> Marker.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListKeysRequest]
+      val __obj = js.Dictionary.empty[js.Any]
+      Limit.foreach(__v => __obj.update("Limit", __v.asInstanceOf[js.Any]))
+      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListKeysRequest]
     }
   }
 
@@ -1767,19 +1487,11 @@ package kms {
         NextMarker: js.UndefOr[MarkerType] = js.undefined,
         Truncated: js.UndefOr[BooleanType] = js.undefined
     ): ListKeysResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Keys" -> Keys.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NextMarker" -> NextMarker.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Truncated" -> Truncated.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListKeysResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      Keys.foreach(__v => __obj.update("Keys", __v.asInstanceOf[js.Any]))
+      NextMarker.foreach(__v => __obj.update("NextMarker", __v.asInstanceOf[js.Any]))
+      Truncated.foreach(__v => __obj.update("Truncated", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListKeysResponse]
     }
   }
 
@@ -1796,17 +1508,13 @@ package kms {
         Limit: js.UndefOr[LimitType] = js.undefined,
         Marker: js.UndefOr[MarkerType] = js.undefined
     ): ListResourceTagsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "KeyId" -> KeyId.asInstanceOf[js.Any],
-        "Limit" -> Limit.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Marker" -> Marker.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "KeyId" -> KeyId.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListResourceTagsRequest]
+      Limit.foreach(__v => __obj.update("Limit", __v.asInstanceOf[js.Any]))
+      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListResourceTagsRequest]
     }
   }
 
@@ -1823,19 +1531,11 @@ package kms {
         Tags: js.UndefOr[TagList] = js.undefined,
         Truncated: js.UndefOr[BooleanType] = js.undefined
     ): ListResourceTagsResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "NextMarker" -> NextMarker.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Tags" -> Tags.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Truncated" -> Truncated.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListResourceTagsResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      NextMarker.foreach(__v => __obj.update("NextMarker", __v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
+      Truncated.foreach(__v => __obj.update("Truncated", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListResourceTagsResponse]
     }
   }
 
@@ -1852,17 +1552,13 @@ package kms {
         Limit: js.UndefOr[LimitType] = js.undefined,
         Marker: js.UndefOr[MarkerType] = js.undefined
     ): ListRetirableGrantsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "RetiringPrincipal" -> RetiringPrincipal.asInstanceOf[js.Any],
-        "Limit" -> Limit.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Marker" -> Marker.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "RetiringPrincipal" -> RetiringPrincipal.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListRetirableGrantsRequest]
+      Limit.foreach(__v => __obj.update("Limit", __v.asInstanceOf[js.Any]))
+      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListRetirableGrantsRequest]
     }
   }
 
@@ -1889,16 +1585,16 @@ package kms {
         PolicyName: PolicyNameType,
         BypassPolicyLockoutSafetyCheck: js.UndefOr[BooleanType] = js.undefined
     ): PutKeyPolicyRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "KeyId"      -> KeyId.asInstanceOf[js.Any],
         "Policy"     -> Policy.asInstanceOf[js.Any],
-        "PolicyName" -> PolicyName.asInstanceOf[js.Any],
-        "BypassPolicyLockoutSafetyCheck" -> BypassPolicyLockoutSafetyCheck.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "PolicyName" -> PolicyName.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PutKeyPolicyRequest]
+      BypassPolicyLockoutSafetyCheck.foreach(
+        __v => __obj.update("BypassPolicyLockoutSafetyCheck", __v.asInstanceOf[js.Any])
+      )
+      __obj.asInstanceOf[PutKeyPolicyRequest]
     }
   }
 
@@ -1919,21 +1615,17 @@ package kms {
         GrantTokens: js.UndefOr[GrantTokenList] = js.undefined,
         SourceEncryptionContext: js.UndefOr[EncryptionContextType] = js.undefined
     ): ReEncryptRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "CiphertextBlob"   -> CiphertextBlob.asInstanceOf[js.Any],
-        "DestinationKeyId" -> DestinationKeyId.asInstanceOf[js.Any],
-        "DestinationEncryptionContext" -> DestinationEncryptionContext.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "GrantTokens" -> GrantTokens.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SourceEncryptionContext" -> SourceEncryptionContext.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "DestinationKeyId" -> DestinationKeyId.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ReEncryptRequest]
+      DestinationEncryptionContext.foreach(
+        __v => __obj.update("DestinationEncryptionContext", __v.asInstanceOf[js.Any])
+      )
+      GrantTokens.foreach(__v => __obj.update("GrantTokens", __v.asInstanceOf[js.Any]))
+      SourceEncryptionContext.foreach(__v => __obj.update("SourceEncryptionContext", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ReEncryptRequest]
     }
   }
 
@@ -1950,19 +1642,11 @@ package kms {
         KeyId: js.UndefOr[KeyIdType] = js.undefined,
         SourceKeyId: js.UndefOr[KeyIdType] = js.undefined
     ): ReEncryptResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "CiphertextBlob" -> CiphertextBlob.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "KeyId" -> KeyId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SourceKeyId" -> SourceKeyId.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ReEncryptResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      CiphertextBlob.foreach(__v => __obj.update("CiphertextBlob", __v.asInstanceOf[js.Any]))
+      KeyId.foreach(__v => __obj.update("KeyId", __v.asInstanceOf[js.Any]))
+      SourceKeyId.foreach(__v => __obj.update("SourceKeyId", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ReEncryptResponse]
     }
   }
 
@@ -1979,19 +1663,11 @@ package kms {
         GrantToken: js.UndefOr[GrantTokenType] = js.undefined,
         KeyId: js.UndefOr[KeyIdType] = js.undefined
     ): RetireGrantRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "GrantId" -> GrantId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "GrantToken" -> GrantToken.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "KeyId" -> KeyId.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RetireGrantRequest]
+      val __obj = js.Dictionary.empty[js.Any]
+      GrantId.foreach(__v => __obj.update("GrantId", __v.asInstanceOf[js.Any]))
+      GrantToken.foreach(__v => __obj.update("GrantToken", __v.asInstanceOf[js.Any]))
+      KeyId.foreach(__v => __obj.update("KeyId", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[RetireGrantRequest]
     }
   }
 
@@ -2006,12 +1682,12 @@ package kms {
         GrantId: GrantIdType,
         KeyId: KeyIdType
     ): RevokeGrantRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "GrantId" -> GrantId.asInstanceOf[js.Any],
         "KeyId"   -> KeyId.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RevokeGrantRequest]
+      __obj.asInstanceOf[RevokeGrantRequest]
     }
   }
 
@@ -2026,14 +1702,12 @@ package kms {
         KeyId: KeyIdType,
         PendingWindowInDays: js.UndefOr[PendingWindowInDaysType] = js.undefined
     ): ScheduleKeyDeletionRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "KeyId" -> KeyId.asInstanceOf[js.Any],
-        "PendingWindowInDays" -> PendingWindowInDays.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "KeyId" -> KeyId.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ScheduleKeyDeletionRequest]
+      PendingWindowInDays.foreach(__v => __obj.update("PendingWindowInDays", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ScheduleKeyDeletionRequest]
     }
   }
 
@@ -2048,16 +1722,10 @@ package kms {
         DeletionDate: js.UndefOr[DateType] = js.undefined,
         KeyId: js.UndefOr[KeyIdType] = js.undefined
     ): ScheduleKeyDeletionResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "DeletionDate" -> DeletionDate.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "KeyId" -> KeyId.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ScheduleKeyDeletionResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      DeletionDate.foreach(__v => __obj.update("DeletionDate", __v.asInstanceOf[js.Any]))
+      KeyId.foreach(__v => __obj.update("KeyId", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ScheduleKeyDeletionResponse]
     }
   }
 
@@ -2076,12 +1744,12 @@ package kms {
         TagKey: TagKeyType,
         TagValue: TagValueType
     ): Tag = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "TagKey"   -> TagKey.asInstanceOf[js.Any],
         "TagValue" -> TagValue.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Tag]
+      __obj.asInstanceOf[Tag]
     }
   }
 
@@ -2096,12 +1764,12 @@ package kms {
         KeyId: KeyIdType,
         Tags: TagList
     ): TagResourceRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "KeyId" -> KeyId.asInstanceOf[js.Any],
         "Tags"  -> Tags.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[TagResourceRequest]
+      __obj.asInstanceOf[TagResourceRequest]
     }
   }
 
@@ -2116,12 +1784,12 @@ package kms {
         KeyId: KeyIdType,
         TagKeys: TagKeyList
     ): UntagResourceRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "KeyId"   -> KeyId.asInstanceOf[js.Any],
         "TagKeys" -> TagKeys.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UntagResourceRequest]
+      __obj.asInstanceOf[UntagResourceRequest]
     }
   }
 
@@ -2136,12 +1804,12 @@ package kms {
         AliasName: AliasNameType,
         TargetKeyId: KeyIdType
     ): UpdateAliasRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "AliasName"   -> AliasName.asInstanceOf[js.Any],
         "TargetKeyId" -> TargetKeyId.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateAliasRequest]
+      __obj.asInstanceOf[UpdateAliasRequest]
     }
   }
 
@@ -2160,20 +1828,14 @@ package kms {
         KeyStorePassword: js.UndefOr[KeyStorePasswordType] = js.undefined,
         NewCustomKeyStoreName: js.UndefOr[CustomKeyStoreNameType] = js.undefined
     ): UpdateCustomKeyStoreRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "CustomKeyStoreId" -> CustomKeyStoreId.asInstanceOf[js.Any],
-        "CloudHsmClusterId" -> CloudHsmClusterId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "KeyStorePassword" -> KeyStorePassword.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NewCustomKeyStoreName" -> NewCustomKeyStoreName.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "CustomKeyStoreId" -> CustomKeyStoreId.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateCustomKeyStoreRequest]
+      CloudHsmClusterId.foreach(__v => __obj.update("CloudHsmClusterId", __v.asInstanceOf[js.Any]))
+      KeyStorePassword.foreach(__v => __obj.update("KeyStorePassword", __v.asInstanceOf[js.Any]))
+      NewCustomKeyStoreName.foreach(__v => __obj.update("NewCustomKeyStoreName", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateCustomKeyStoreRequest]
     }
   }
 
@@ -2183,10 +1845,9 @@ package kms {
   object UpdateCustomKeyStoreResponse {
     def apply(
         ): UpdateCustomKeyStoreResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary.empty[js.Any]
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateCustomKeyStoreResponse]
+      __obj.asInstanceOf[UpdateCustomKeyStoreResponse]
     }
   }
 
@@ -2201,12 +1862,12 @@ package kms {
         Description: DescriptionType,
         KeyId: KeyIdType
     ): UpdateKeyDescriptionRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "Description" -> Description.asInstanceOf[js.Any],
         "KeyId"       -> KeyId.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateKeyDescriptionRequest]
+      __obj.asInstanceOf[UpdateKeyDescriptionRequest]
     }
   }
 

@@ -328,12 +328,12 @@ package neptune {
         DBClusterIdentifier: String,
         RoleArn: String
     ): AddRoleToDBClusterMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "DBClusterIdentifier" -> DBClusterIdentifier.asInstanceOf[js.Any],
         "RoleArn"             -> RoleArn.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AddRoleToDBClusterMessage]
+      __obj.asInstanceOf[AddRoleToDBClusterMessage]
     }
   }
 
@@ -351,12 +351,12 @@ package neptune {
         SourceIdentifier: String,
         SubscriptionName: String
     ): AddSourceIdentifierToSubscriptionMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "SourceIdentifier" -> SourceIdentifier.asInstanceOf[js.Any],
         "SubscriptionName" -> SubscriptionName.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AddSourceIdentifierToSubscriptionMessage]
+      __obj.asInstanceOf[AddSourceIdentifierToSubscriptionMessage]
     }
   }
 
@@ -369,13 +369,9 @@ package neptune {
     def apply(
         EventSubscription: js.UndefOr[EventSubscription] = js.undefined
     ): AddSourceIdentifierToSubscriptionResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "EventSubscription" -> EventSubscription.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AddSourceIdentifierToSubscriptionResult]
+      val __obj = js.Dictionary.empty[js.Any]
+      EventSubscription.foreach(__v => __obj.update("EventSubscription", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AddSourceIdentifierToSubscriptionResult]
     }
   }
 
@@ -393,12 +389,12 @@ package neptune {
         ResourceName: String,
         Tags: TagList
     ): AddTagsToResourceMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ResourceName" -> ResourceName.asInstanceOf[js.Any],
         "Tags"         -> Tags.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AddTagsToResourceMessage]
+      __obj.asInstanceOf[AddTagsToResourceMessage]
     }
   }
 
@@ -425,13 +421,13 @@ package neptune {
         OptInType: String,
         ResourceIdentifier: String
     ): ApplyPendingMaintenanceActionMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ApplyAction"        -> ApplyAction.asInstanceOf[js.Any],
         "OptInType"          -> OptInType.asInstanceOf[js.Any],
         "ResourceIdentifier" -> ResourceIdentifier.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ApplyPendingMaintenanceActionMessage]
+      __obj.asInstanceOf[ApplyPendingMaintenanceActionMessage]
     }
   }
 
@@ -444,13 +440,11 @@ package neptune {
     def apply(
         ResourcePendingMaintenanceActions: js.UndefOr[ResourcePendingMaintenanceActions] = js.undefined
     ): ApplyPendingMaintenanceActionResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ResourcePendingMaintenanceActions" -> ResourcePendingMaintenanceActions.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ApplyPendingMaintenanceActionResult]
+      val __obj = js.Dictionary.empty[js.Any]
+      ResourcePendingMaintenanceActions.foreach(
+        __v => __obj.update("ResourcePendingMaintenanceActions", __v.asInstanceOf[js.Any])
+      )
+      __obj.asInstanceOf[ApplyPendingMaintenanceActionResult]
     }
   }
 
@@ -475,13 +469,9 @@ package neptune {
     def apply(
         Name: js.UndefOr[String] = js.undefined
     ): AvailabilityZone = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Name" -> Name.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AvailabilityZone]
+      val __obj = js.Dictionary.empty[js.Any]
+      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AvailabilityZone]
     }
   }
 
@@ -505,16 +495,10 @@ package neptune {
         CharacterSetDescription: js.UndefOr[String] = js.undefined,
         CharacterSetName: js.UndefOr[String] = js.undefined
     ): CharacterSet = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "CharacterSetDescription" -> CharacterSetDescription.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "CharacterSetName" -> CharacterSetName.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CharacterSet]
+      val __obj = js.Dictionary.empty[js.Any]
+      CharacterSetDescription.foreach(__v => __obj.update("CharacterSetDescription", __v.asInstanceOf[js.Any]))
+      CharacterSetName.foreach(__v => __obj.update("CharacterSetName", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CharacterSet]
     }
   }
 
@@ -532,16 +516,10 @@ package neptune {
         DisableLogTypes: js.UndefOr[LogTypeList] = js.undefined,
         EnableLogTypes: js.UndefOr[LogTypeList] = js.undefined
     ): CloudwatchLogsExportConfiguration = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "DisableLogTypes" -> DisableLogTypes.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "EnableLogTypes" -> EnableLogTypes.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CloudwatchLogsExportConfiguration]
+      val __obj = js.Dictionary.empty[js.Any]
+      DisableLogTypes.foreach(__v => __obj.update("DisableLogTypes", __v.asInstanceOf[js.Any]))
+      EnableLogTypes.foreach(__v => __obj.update("EnableLogTypes", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CloudwatchLogsExportConfiguration]
     }
   }
 
@@ -560,16 +538,14 @@ package neptune {
         TargetDBClusterParameterGroupIdentifier: String,
         Tags: js.UndefOr[TagList] = js.undefined
     ): CopyDBClusterParameterGroupMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "SourceDBClusterParameterGroupIdentifier"  -> SourceDBClusterParameterGroupIdentifier.asInstanceOf[js.Any],
         "TargetDBClusterParameterGroupDescription" -> TargetDBClusterParameterGroupDescription.asInstanceOf[js.Any],
-        "TargetDBClusterParameterGroupIdentifier"  -> TargetDBClusterParameterGroupIdentifier.asInstanceOf[js.Any],
-        "Tags" -> Tags.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "TargetDBClusterParameterGroupIdentifier"  -> TargetDBClusterParameterGroupIdentifier.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CopyDBClusterParameterGroupMessage]
+      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CopyDBClusterParameterGroupMessage]
     }
   }
 
@@ -582,13 +558,9 @@ package neptune {
     def apply(
         DBClusterParameterGroup: js.UndefOr[DBClusterParameterGroup] = js.undefined
     ): CopyDBClusterParameterGroupResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "DBClusterParameterGroup" -> DBClusterParameterGroup.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CopyDBClusterParameterGroupResult]
+      val __obj = js.Dictionary.empty[js.Any]
+      DBClusterParameterGroup.foreach(__v => __obj.update("DBClusterParameterGroup", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CopyDBClusterParameterGroupResult]
     }
   }
 
@@ -614,24 +586,16 @@ package neptune {
         PreSignedUrl: js.UndefOr[String] = js.undefined,
         Tags: js.UndefOr[TagList] = js.undefined
     ): CopyDBClusterSnapshotMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "SourceDBClusterSnapshotIdentifier" -> SourceDBClusterSnapshotIdentifier.asInstanceOf[js.Any],
-        "TargetDBClusterSnapshotIdentifier" -> TargetDBClusterSnapshotIdentifier.asInstanceOf[js.Any],
-        "CopyTags" -> CopyTags.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "KmsKeyId" -> KmsKeyId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "PreSignedUrl" -> PreSignedUrl.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Tags" -> Tags.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "TargetDBClusterSnapshotIdentifier" -> TargetDBClusterSnapshotIdentifier.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CopyDBClusterSnapshotMessage]
+      CopyTags.foreach(__v => __obj.update("CopyTags", __v.asInstanceOf[js.Any]))
+      KmsKeyId.foreach(__v => __obj.update("KmsKeyId", __v.asInstanceOf[js.Any]))
+      PreSignedUrl.foreach(__v => __obj.update("PreSignedUrl", __v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CopyDBClusterSnapshotMessage]
     }
   }
 
@@ -644,13 +608,9 @@ package neptune {
     def apply(
         DBClusterSnapshot: js.UndefOr[DBClusterSnapshot] = js.undefined
     ): CopyDBClusterSnapshotResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "DBClusterSnapshot" -> DBClusterSnapshot.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CopyDBClusterSnapshotResult]
+      val __obj = js.Dictionary.empty[js.Any]
+      DBClusterSnapshot.foreach(__v => __obj.update("DBClusterSnapshot", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CopyDBClusterSnapshotResult]
     }
   }
 
@@ -672,16 +632,14 @@ package neptune {
         TargetDBParameterGroupIdentifier: String,
         Tags: js.UndefOr[TagList] = js.undefined
     ): CopyDBParameterGroupMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "SourceDBParameterGroupIdentifier"  -> SourceDBParameterGroupIdentifier.asInstanceOf[js.Any],
         "TargetDBParameterGroupDescription" -> TargetDBParameterGroupDescription.asInstanceOf[js.Any],
-        "TargetDBParameterGroupIdentifier"  -> TargetDBParameterGroupIdentifier.asInstanceOf[js.Any],
-        "Tags" -> Tags.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "TargetDBParameterGroupIdentifier"  -> TargetDBParameterGroupIdentifier.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CopyDBParameterGroupMessage]
+      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CopyDBParameterGroupMessage]
     }
   }
 
@@ -694,13 +652,9 @@ package neptune {
     def apply(
         DBParameterGroup: js.UndefOr[DBParameterGroup] = js.undefined
     ): CopyDBParameterGroupResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "DBParameterGroup" -> DBParameterGroup.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CopyDBParameterGroupResult]
+      val __obj = js.Dictionary.empty[js.Any]
+      DBParameterGroup.foreach(__v => __obj.update("DBParameterGroup", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CopyDBParameterGroupResult]
     }
   }
 
@@ -758,72 +712,34 @@ package neptune {
         Tags: js.UndefOr[TagList] = js.undefined,
         VpcSecurityGroupIds: js.UndefOr[VpcSecurityGroupIdList] = js.undefined
     ): CreateDBClusterMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "DBClusterIdentifier" -> DBClusterIdentifier.asInstanceOf[js.Any],
-        "Engine"              -> Engine.asInstanceOf[js.Any],
-        "AvailabilityZones" -> AvailabilityZones.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "BackupRetentionPeriod" -> BackupRetentionPeriod.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "CharacterSetName" -> CharacterSetName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DBClusterParameterGroupName" -> DBClusterParameterGroupName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DBSubnetGroupName" -> DBSubnetGroupName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DatabaseName" -> DatabaseName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "EnableIAMDatabaseAuthentication" -> EnableIAMDatabaseAuthentication.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "EngineVersion" -> EngineVersion.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "KmsKeyId" -> KmsKeyId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MasterUserPassword" -> MasterUserPassword.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MasterUsername" -> MasterUsername.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "OptionGroupName" -> OptionGroupName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Port" -> Port.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "PreSignedUrl" -> PreSignedUrl.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "PreferredBackupWindow" -> PreferredBackupWindow.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "PreferredMaintenanceWindow" -> PreferredMaintenanceWindow.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ReplicationSourceIdentifier" -> ReplicationSourceIdentifier.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "StorageEncrypted" -> StorageEncrypted.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Tags" -> Tags.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "VpcSecurityGroupIds" -> VpcSecurityGroupIds.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "Engine"              -> Engine.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateDBClusterMessage]
+      AvailabilityZones.foreach(__v => __obj.update("AvailabilityZones", __v.asInstanceOf[js.Any]))
+      BackupRetentionPeriod.foreach(__v => __obj.update("BackupRetentionPeriod", __v.asInstanceOf[js.Any]))
+      CharacterSetName.foreach(__v => __obj.update("CharacterSetName", __v.asInstanceOf[js.Any]))
+      DBClusterParameterGroupName.foreach(__v => __obj.update("DBClusterParameterGroupName", __v.asInstanceOf[js.Any]))
+      DBSubnetGroupName.foreach(__v => __obj.update("DBSubnetGroupName", __v.asInstanceOf[js.Any]))
+      DatabaseName.foreach(__v => __obj.update("DatabaseName", __v.asInstanceOf[js.Any]))
+      EnableIAMDatabaseAuthentication.foreach(
+        __v => __obj.update("EnableIAMDatabaseAuthentication", __v.asInstanceOf[js.Any])
+      )
+      EngineVersion.foreach(__v => __obj.update("EngineVersion", __v.asInstanceOf[js.Any]))
+      KmsKeyId.foreach(__v => __obj.update("KmsKeyId", __v.asInstanceOf[js.Any]))
+      MasterUserPassword.foreach(__v => __obj.update("MasterUserPassword", __v.asInstanceOf[js.Any]))
+      MasterUsername.foreach(__v => __obj.update("MasterUsername", __v.asInstanceOf[js.Any]))
+      OptionGroupName.foreach(__v => __obj.update("OptionGroupName", __v.asInstanceOf[js.Any]))
+      Port.foreach(__v => __obj.update("Port", __v.asInstanceOf[js.Any]))
+      PreSignedUrl.foreach(__v => __obj.update("PreSignedUrl", __v.asInstanceOf[js.Any]))
+      PreferredBackupWindow.foreach(__v => __obj.update("PreferredBackupWindow", __v.asInstanceOf[js.Any]))
+      PreferredMaintenanceWindow.foreach(__v => __obj.update("PreferredMaintenanceWindow", __v.asInstanceOf[js.Any]))
+      ReplicationSourceIdentifier.foreach(__v => __obj.update("ReplicationSourceIdentifier", __v.asInstanceOf[js.Any]))
+      StorageEncrypted.foreach(__v => __obj.update("StorageEncrypted", __v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
+      VpcSecurityGroupIds.foreach(__v => __obj.update("VpcSecurityGroupIds", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateDBClusterMessage]
     }
   }
 
@@ -845,16 +761,14 @@ package neptune {
         Description: String,
         Tags: js.UndefOr[TagList] = js.undefined
     ): CreateDBClusterParameterGroupMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "DBClusterParameterGroupName" -> DBClusterParameterGroupName.asInstanceOf[js.Any],
         "DBParameterGroupFamily"      -> DBParameterGroupFamily.asInstanceOf[js.Any],
-        "Description"                 -> Description.asInstanceOf[js.Any],
-        "Tags" -> Tags.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "Description"                 -> Description.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateDBClusterParameterGroupMessage]
+      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateDBClusterParameterGroupMessage]
     }
   }
 
@@ -867,13 +781,9 @@ package neptune {
     def apply(
         DBClusterParameterGroup: js.UndefOr[DBClusterParameterGroup] = js.undefined
     ): CreateDBClusterParameterGroupResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "DBClusterParameterGroup" -> DBClusterParameterGroup.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateDBClusterParameterGroupResult]
+      val __obj = js.Dictionary.empty[js.Any]
+      DBClusterParameterGroup.foreach(__v => __obj.update("DBClusterParameterGroup", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateDBClusterParameterGroupResult]
     }
   }
 
@@ -886,13 +796,9 @@ package neptune {
     def apply(
         DBCluster: js.UndefOr[DBCluster] = js.undefined
     ): CreateDBClusterResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "DBCluster" -> DBCluster.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateDBClusterResult]
+      val __obj = js.Dictionary.empty[js.Any]
+      DBCluster.foreach(__v => __obj.update("DBCluster", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateDBClusterResult]
     }
   }
 
@@ -912,15 +818,13 @@ package neptune {
         DBClusterSnapshotIdentifier: String,
         Tags: js.UndefOr[TagList] = js.undefined
     ): CreateDBClusterSnapshotMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "DBClusterIdentifier"         -> DBClusterIdentifier.asInstanceOf[js.Any],
-        "DBClusterSnapshotIdentifier" -> DBClusterSnapshotIdentifier.asInstanceOf[js.Any],
-        "Tags" -> Tags.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "DBClusterSnapshotIdentifier" -> DBClusterSnapshotIdentifier.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateDBClusterSnapshotMessage]
+      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateDBClusterSnapshotMessage]
     }
   }
 
@@ -933,13 +837,9 @@ package neptune {
     def apply(
         DBClusterSnapshot: js.UndefOr[DBClusterSnapshot] = js.undefined
     ): CreateDBClusterSnapshotResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "DBClusterSnapshot" -> DBClusterSnapshot.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateDBClusterSnapshotResult]
+      val __obj = js.Dictionary.empty[js.Any]
+      DBClusterSnapshot.foreach(__v => __obj.update("DBClusterSnapshot", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateDBClusterSnapshotResult]
     }
   }
 
@@ -1037,130 +937,54 @@ package neptune {
         Timezone: js.UndefOr[String] = js.undefined,
         VpcSecurityGroupIds: js.UndefOr[VpcSecurityGroupIdList] = js.undefined
     ): CreateDBInstanceMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "DBInstanceClass"      -> DBInstanceClass.asInstanceOf[js.Any],
         "DBInstanceIdentifier" -> DBInstanceIdentifier.asInstanceOf[js.Any],
-        "Engine"               -> Engine.asInstanceOf[js.Any],
-        "AllocatedStorage" -> AllocatedStorage.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "AutoMinorVersionUpgrade" -> AutoMinorVersionUpgrade.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "AvailabilityZone" -> AvailabilityZone.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "BackupRetentionPeriod" -> BackupRetentionPeriod.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "CharacterSetName" -> CharacterSetName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "CopyTagsToSnapshot" -> CopyTagsToSnapshot.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DBClusterIdentifier" -> DBClusterIdentifier.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DBName" -> DBName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DBParameterGroupName" -> DBParameterGroupName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DBSecurityGroups" -> DBSecurityGroups.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DBSubnetGroupName" -> DBSubnetGroupName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Domain" -> Domain.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DomainIAMRoleName" -> DomainIAMRoleName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "EnableCloudwatchLogsExports" -> EnableCloudwatchLogsExports.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "EnableIAMDatabaseAuthentication" -> EnableIAMDatabaseAuthentication.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "EnablePerformanceInsights" -> EnablePerformanceInsights.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "EngineVersion" -> EngineVersion.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Iops" -> Iops.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "KmsKeyId" -> KmsKeyId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "LicenseModel" -> LicenseModel.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MasterUserPassword" -> MasterUserPassword.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MasterUsername" -> MasterUsername.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MonitoringInterval" -> MonitoringInterval.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MonitoringRoleArn" -> MonitoringRoleArn.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MultiAZ" -> MultiAZ.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "OptionGroupName" -> OptionGroupName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "PerformanceInsightsKMSKeyId" -> PerformanceInsightsKMSKeyId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Port" -> Port.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "PreferredBackupWindow" -> PreferredBackupWindow.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "PreferredMaintenanceWindow" -> PreferredMaintenanceWindow.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "PromotionTier" -> PromotionTier.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "PubliclyAccessible" -> PubliclyAccessible.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "StorageEncrypted" -> StorageEncrypted.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "StorageType" -> StorageType.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Tags" -> Tags.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "TdeCredentialArn" -> TdeCredentialArn.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "TdeCredentialPassword" -> TdeCredentialPassword.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Timezone" -> Timezone.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "VpcSecurityGroupIds" -> VpcSecurityGroupIds.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "Engine"               -> Engine.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateDBInstanceMessage]
+      AllocatedStorage.foreach(__v => __obj.update("AllocatedStorage", __v.asInstanceOf[js.Any]))
+      AutoMinorVersionUpgrade.foreach(__v => __obj.update("AutoMinorVersionUpgrade", __v.asInstanceOf[js.Any]))
+      AvailabilityZone.foreach(__v => __obj.update("AvailabilityZone", __v.asInstanceOf[js.Any]))
+      BackupRetentionPeriod.foreach(__v => __obj.update("BackupRetentionPeriod", __v.asInstanceOf[js.Any]))
+      CharacterSetName.foreach(__v => __obj.update("CharacterSetName", __v.asInstanceOf[js.Any]))
+      CopyTagsToSnapshot.foreach(__v => __obj.update("CopyTagsToSnapshot", __v.asInstanceOf[js.Any]))
+      DBClusterIdentifier.foreach(__v => __obj.update("DBClusterIdentifier", __v.asInstanceOf[js.Any]))
+      DBName.foreach(__v => __obj.update("DBName", __v.asInstanceOf[js.Any]))
+      DBParameterGroupName.foreach(__v => __obj.update("DBParameterGroupName", __v.asInstanceOf[js.Any]))
+      DBSecurityGroups.foreach(__v => __obj.update("DBSecurityGroups", __v.asInstanceOf[js.Any]))
+      DBSubnetGroupName.foreach(__v => __obj.update("DBSubnetGroupName", __v.asInstanceOf[js.Any]))
+      Domain.foreach(__v => __obj.update("Domain", __v.asInstanceOf[js.Any]))
+      DomainIAMRoleName.foreach(__v => __obj.update("DomainIAMRoleName", __v.asInstanceOf[js.Any]))
+      EnableCloudwatchLogsExports.foreach(__v => __obj.update("EnableCloudwatchLogsExports", __v.asInstanceOf[js.Any]))
+      EnableIAMDatabaseAuthentication.foreach(
+        __v => __obj.update("EnableIAMDatabaseAuthentication", __v.asInstanceOf[js.Any])
+      )
+      EnablePerformanceInsights.foreach(__v => __obj.update("EnablePerformanceInsights", __v.asInstanceOf[js.Any]))
+      EngineVersion.foreach(__v => __obj.update("EngineVersion", __v.asInstanceOf[js.Any]))
+      Iops.foreach(__v => __obj.update("Iops", __v.asInstanceOf[js.Any]))
+      KmsKeyId.foreach(__v => __obj.update("KmsKeyId", __v.asInstanceOf[js.Any]))
+      LicenseModel.foreach(__v => __obj.update("LicenseModel", __v.asInstanceOf[js.Any]))
+      MasterUserPassword.foreach(__v => __obj.update("MasterUserPassword", __v.asInstanceOf[js.Any]))
+      MasterUsername.foreach(__v => __obj.update("MasterUsername", __v.asInstanceOf[js.Any]))
+      MonitoringInterval.foreach(__v => __obj.update("MonitoringInterval", __v.asInstanceOf[js.Any]))
+      MonitoringRoleArn.foreach(__v => __obj.update("MonitoringRoleArn", __v.asInstanceOf[js.Any]))
+      MultiAZ.foreach(__v => __obj.update("MultiAZ", __v.asInstanceOf[js.Any]))
+      OptionGroupName.foreach(__v => __obj.update("OptionGroupName", __v.asInstanceOf[js.Any]))
+      PerformanceInsightsKMSKeyId.foreach(__v => __obj.update("PerformanceInsightsKMSKeyId", __v.asInstanceOf[js.Any]))
+      Port.foreach(__v => __obj.update("Port", __v.asInstanceOf[js.Any]))
+      PreferredBackupWindow.foreach(__v => __obj.update("PreferredBackupWindow", __v.asInstanceOf[js.Any]))
+      PreferredMaintenanceWindow.foreach(__v => __obj.update("PreferredMaintenanceWindow", __v.asInstanceOf[js.Any]))
+      PromotionTier.foreach(__v => __obj.update("PromotionTier", __v.asInstanceOf[js.Any]))
+      PubliclyAccessible.foreach(__v => __obj.update("PubliclyAccessible", __v.asInstanceOf[js.Any]))
+      StorageEncrypted.foreach(__v => __obj.update("StorageEncrypted", __v.asInstanceOf[js.Any]))
+      StorageType.foreach(__v => __obj.update("StorageType", __v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
+      TdeCredentialArn.foreach(__v => __obj.update("TdeCredentialArn", __v.asInstanceOf[js.Any]))
+      TdeCredentialPassword.foreach(__v => __obj.update("TdeCredentialPassword", __v.asInstanceOf[js.Any]))
+      Timezone.foreach(__v => __obj.update("Timezone", __v.asInstanceOf[js.Any]))
+      VpcSecurityGroupIds.foreach(__v => __obj.update("VpcSecurityGroupIds", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateDBInstanceMessage]
     }
   }
 
@@ -1173,13 +997,9 @@ package neptune {
     def apply(
         DBInstance: js.UndefOr[DBInstance] = js.undefined
     ): CreateDBInstanceResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "DBInstance" -> DBInstance.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateDBInstanceResult]
+      val __obj = js.Dictionary.empty[js.Any]
+      DBInstance.foreach(__v => __obj.update("DBInstance", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateDBInstanceResult]
     }
   }
 
@@ -1201,16 +1021,14 @@ package neptune {
         Description: String,
         Tags: js.UndefOr[TagList] = js.undefined
     ): CreateDBParameterGroupMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "DBParameterGroupFamily" -> DBParameterGroupFamily.asInstanceOf[js.Any],
         "DBParameterGroupName"   -> DBParameterGroupName.asInstanceOf[js.Any],
-        "Description"            -> Description.asInstanceOf[js.Any],
-        "Tags" -> Tags.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "Description"            -> Description.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateDBParameterGroupMessage]
+      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateDBParameterGroupMessage]
     }
   }
 
@@ -1223,13 +1041,9 @@ package neptune {
     def apply(
         DBParameterGroup: js.UndefOr[DBParameterGroup] = js.undefined
     ): CreateDBParameterGroupResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "DBParameterGroup" -> DBParameterGroup.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateDBParameterGroupResult]
+      val __obj = js.Dictionary.empty[js.Any]
+      DBParameterGroup.foreach(__v => __obj.update("DBParameterGroup", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateDBParameterGroupResult]
     }
   }
 
@@ -1251,16 +1065,14 @@ package neptune {
         SubnetIds: SubnetIdentifierList,
         Tags: js.UndefOr[TagList] = js.undefined
     ): CreateDBSubnetGroupMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "DBSubnetGroupDescription" -> DBSubnetGroupDescription.asInstanceOf[js.Any],
         "DBSubnetGroupName"        -> DBSubnetGroupName.asInstanceOf[js.Any],
-        "SubnetIds"                -> SubnetIds.asInstanceOf[js.Any],
-        "Tags" -> Tags.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "SubnetIds"                -> SubnetIds.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateDBSubnetGroupMessage]
+      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateDBSubnetGroupMessage]
     }
   }
 
@@ -1273,13 +1085,9 @@ package neptune {
     def apply(
         DBSubnetGroup: js.UndefOr[DBSubnetGroup] = js.undefined
     ): CreateDBSubnetGroupResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "DBSubnetGroup" -> DBSubnetGroup.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateDBSubnetGroupResult]
+      val __obj = js.Dictionary.empty[js.Any]
+      DBSubnetGroup.foreach(__v => __obj.update("DBSubnetGroup", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateDBSubnetGroupResult]
     }
   }
 
@@ -1307,27 +1115,17 @@ package neptune {
         SourceType: js.UndefOr[String] = js.undefined,
         Tags: js.UndefOr[TagList] = js.undefined
     ): CreateEventSubscriptionMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "SnsTopicArn"      -> SnsTopicArn.asInstanceOf[js.Any],
-        "SubscriptionName" -> SubscriptionName.asInstanceOf[js.Any],
-        "Enabled" -> Enabled.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "EventCategories" -> EventCategories.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SourceIds" -> SourceIds.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SourceType" -> SourceType.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Tags" -> Tags.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "SubscriptionName" -> SubscriptionName.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateEventSubscriptionMessage]
+      Enabled.foreach(__v => __obj.update("Enabled", __v.asInstanceOf[js.Any]))
+      EventCategories.foreach(__v => __obj.update("EventCategories", __v.asInstanceOf[js.Any]))
+      SourceIds.foreach(__v => __obj.update("SourceIds", __v.asInstanceOf[js.Any]))
+      SourceType.foreach(__v => __obj.update("SourceType", __v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateEventSubscriptionMessage]
     }
   }
 
@@ -1340,13 +1138,9 @@ package neptune {
     def apply(
         EventSubscription: js.UndefOr[EventSubscription] = js.undefined
     ): CreateEventSubscriptionResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "EventSubscription" -> EventSubscription.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateEventSubscriptionResult]
+      val __obj = js.Dictionary.empty[js.Any]
+      EventSubscription.foreach(__v => __obj.update("EventSubscription", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateEventSubscriptionResult]
     }
   }
 
@@ -1431,115 +1225,47 @@ package neptune {
         StorageEncrypted: js.UndefOr[Boolean] = js.undefined,
         VpcSecurityGroups: js.UndefOr[VpcSecurityGroupMembershipList] = js.undefined
     ): DBCluster = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "AllocatedStorage" -> AllocatedStorage.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "AssociatedRoles" -> AssociatedRoles.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "AvailabilityZones" -> AvailabilityZones.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "BackupRetentionPeriod" -> BackupRetentionPeriod.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "CharacterSetName" -> CharacterSetName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "CloneGroupId" -> CloneGroupId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ClusterCreateTime" -> ClusterCreateTime.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DBClusterArn" -> DBClusterArn.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DBClusterIdentifier" -> DBClusterIdentifier.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DBClusterMembers" -> DBClusterMembers.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DBClusterOptionGroupMemberships" -> DBClusterOptionGroupMemberships.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DBClusterParameterGroup" -> DBClusterParameterGroup.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DBSubnetGroup" -> DBSubnetGroup.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DatabaseName" -> DatabaseName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DbClusterResourceId" -> DbClusterResourceId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "EarliestRestorableTime" -> EarliestRestorableTime.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Endpoint" -> Endpoint.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Engine" -> Engine.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "EngineVersion" -> EngineVersion.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "HostedZoneId" -> HostedZoneId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "IAMDatabaseAuthenticationEnabled" -> IAMDatabaseAuthenticationEnabled.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "KmsKeyId" -> KmsKeyId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "LatestRestorableTime" -> LatestRestorableTime.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MasterUsername" -> MasterUsername.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MultiAZ" -> MultiAZ.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "PercentProgress" -> PercentProgress.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Port" -> Port.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "PreferredBackupWindow" -> PreferredBackupWindow.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "PreferredMaintenanceWindow" -> PreferredMaintenanceWindow.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ReadReplicaIdentifiers" -> ReadReplicaIdentifiers.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ReaderEndpoint" -> ReaderEndpoint.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ReplicationSourceIdentifier" -> ReplicationSourceIdentifier.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Status" -> Status.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "StorageEncrypted" -> StorageEncrypted.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "VpcSecurityGroups" -> VpcSecurityGroups.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DBCluster]
+      val __obj = js.Dictionary.empty[js.Any]
+      AllocatedStorage.foreach(__v => __obj.update("AllocatedStorage", __v.asInstanceOf[js.Any]))
+      AssociatedRoles.foreach(__v => __obj.update("AssociatedRoles", __v.asInstanceOf[js.Any]))
+      AvailabilityZones.foreach(__v => __obj.update("AvailabilityZones", __v.asInstanceOf[js.Any]))
+      BackupRetentionPeriod.foreach(__v => __obj.update("BackupRetentionPeriod", __v.asInstanceOf[js.Any]))
+      CharacterSetName.foreach(__v => __obj.update("CharacterSetName", __v.asInstanceOf[js.Any]))
+      CloneGroupId.foreach(__v => __obj.update("CloneGroupId", __v.asInstanceOf[js.Any]))
+      ClusterCreateTime.foreach(__v => __obj.update("ClusterCreateTime", __v.asInstanceOf[js.Any]))
+      DBClusterArn.foreach(__v => __obj.update("DBClusterArn", __v.asInstanceOf[js.Any]))
+      DBClusterIdentifier.foreach(__v => __obj.update("DBClusterIdentifier", __v.asInstanceOf[js.Any]))
+      DBClusterMembers.foreach(__v => __obj.update("DBClusterMembers", __v.asInstanceOf[js.Any]))
+      DBClusterOptionGroupMemberships.foreach(
+        __v => __obj.update("DBClusterOptionGroupMemberships", __v.asInstanceOf[js.Any])
+      )
+      DBClusterParameterGroup.foreach(__v => __obj.update("DBClusterParameterGroup", __v.asInstanceOf[js.Any]))
+      DBSubnetGroup.foreach(__v => __obj.update("DBSubnetGroup", __v.asInstanceOf[js.Any]))
+      DatabaseName.foreach(__v => __obj.update("DatabaseName", __v.asInstanceOf[js.Any]))
+      DbClusterResourceId.foreach(__v => __obj.update("DbClusterResourceId", __v.asInstanceOf[js.Any]))
+      EarliestRestorableTime.foreach(__v => __obj.update("EarliestRestorableTime", __v.asInstanceOf[js.Any]))
+      Endpoint.foreach(__v => __obj.update("Endpoint", __v.asInstanceOf[js.Any]))
+      Engine.foreach(__v => __obj.update("Engine", __v.asInstanceOf[js.Any]))
+      EngineVersion.foreach(__v => __obj.update("EngineVersion", __v.asInstanceOf[js.Any]))
+      HostedZoneId.foreach(__v => __obj.update("HostedZoneId", __v.asInstanceOf[js.Any]))
+      IAMDatabaseAuthenticationEnabled.foreach(
+        __v => __obj.update("IAMDatabaseAuthenticationEnabled", __v.asInstanceOf[js.Any])
+      )
+      KmsKeyId.foreach(__v => __obj.update("KmsKeyId", __v.asInstanceOf[js.Any]))
+      LatestRestorableTime.foreach(__v => __obj.update("LatestRestorableTime", __v.asInstanceOf[js.Any]))
+      MasterUsername.foreach(__v => __obj.update("MasterUsername", __v.asInstanceOf[js.Any]))
+      MultiAZ.foreach(__v => __obj.update("MultiAZ", __v.asInstanceOf[js.Any]))
+      PercentProgress.foreach(__v => __obj.update("PercentProgress", __v.asInstanceOf[js.Any]))
+      Port.foreach(__v => __obj.update("Port", __v.asInstanceOf[js.Any]))
+      PreferredBackupWindow.foreach(__v => __obj.update("PreferredBackupWindow", __v.asInstanceOf[js.Any]))
+      PreferredMaintenanceWindow.foreach(__v => __obj.update("PreferredMaintenanceWindow", __v.asInstanceOf[js.Any]))
+      ReadReplicaIdentifiers.foreach(__v => __obj.update("ReadReplicaIdentifiers", __v.asInstanceOf[js.Any]))
+      ReaderEndpoint.foreach(__v => __obj.update("ReaderEndpoint", __v.asInstanceOf[js.Any]))
+      ReplicationSourceIdentifier.foreach(__v => __obj.update("ReplicationSourceIdentifier", __v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.update("Status", __v.asInstanceOf[js.Any]))
+      StorageEncrypted.foreach(__v => __obj.update("StorageEncrypted", __v.asInstanceOf[js.Any]))
+      VpcSecurityGroups.foreach(__v => __obj.update("VpcSecurityGroups", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DBCluster]
     }
   }
 
@@ -1567,22 +1293,14 @@ package neptune {
         IsClusterWriter: js.UndefOr[Boolean] = js.undefined,
         PromotionTier: js.UndefOr[IntegerOptional] = js.undefined
     ): DBClusterMember = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "DBClusterParameterGroupStatus" -> DBClusterParameterGroupStatus.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DBInstanceIdentifier" -> DBInstanceIdentifier.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "IsClusterWriter" -> IsClusterWriter.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "PromotionTier" -> PromotionTier.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DBClusterMember]
+      val __obj = js.Dictionary.empty[js.Any]
+      DBClusterParameterGroupStatus.foreach(
+        __v => __obj.update("DBClusterParameterGroupStatus", __v.asInstanceOf[js.Any])
+      )
+      DBInstanceIdentifier.foreach(__v => __obj.update("DBInstanceIdentifier", __v.asInstanceOf[js.Any]))
+      IsClusterWriter.foreach(__v => __obj.update("IsClusterWriter", __v.asInstanceOf[js.Any]))
+      PromotionTier.foreach(__v => __obj.update("PromotionTier", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DBClusterMember]
     }
   }
 
@@ -1600,16 +1318,10 @@ package neptune {
         DBClusters: js.UndefOr[DBClusterList] = js.undefined,
         Marker: js.UndefOr[String] = js.undefined
     ): DBClusterMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "DBClusters" -> DBClusters.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Marker" -> Marker.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DBClusterMessage]
+      val __obj = js.Dictionary.empty[js.Any]
+      DBClusters.foreach(__v => __obj.update("DBClusters", __v.asInstanceOf[js.Any]))
+      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DBClusterMessage]
     }
   }
 
@@ -1633,16 +1345,10 @@ package neptune {
         DBClusterOptionGroupName: js.UndefOr[String] = js.undefined,
         Status: js.UndefOr[String] = js.undefined
     ): DBClusterOptionGroupStatus = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "DBClusterOptionGroupName" -> DBClusterOptionGroupName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Status" -> Status.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DBClusterOptionGroupStatus]
+      val __obj = js.Dictionary.empty[js.Any]
+      DBClusterOptionGroupName.foreach(__v => __obj.update("DBClusterOptionGroupName", __v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.update("Status", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DBClusterOptionGroupStatus]
     }
   }
 
@@ -1665,22 +1371,12 @@ package neptune {
         DBParameterGroupFamily: js.UndefOr[String] = js.undefined,
         Description: js.UndefOr[String] = js.undefined
     ): DBClusterParameterGroup = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "DBClusterParameterGroupArn" -> DBClusterParameterGroupArn.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DBClusterParameterGroupName" -> DBClusterParameterGroupName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DBParameterGroupFamily" -> DBParameterGroupFamily.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Description" -> Description.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DBClusterParameterGroup]
+      val __obj = js.Dictionary.empty[js.Any]
+      DBClusterParameterGroupArn.foreach(__v => __obj.update("DBClusterParameterGroupArn", __v.asInstanceOf[js.Any]))
+      DBClusterParameterGroupName.foreach(__v => __obj.update("DBClusterParameterGroupName", __v.asInstanceOf[js.Any]))
+      DBParameterGroupFamily.foreach(__v => __obj.update("DBParameterGroupFamily", __v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DBClusterParameterGroup]
     }
   }
 
@@ -1698,16 +1394,10 @@ package neptune {
         Marker: js.UndefOr[String] = js.undefined,
         Parameters: js.UndefOr[ParametersList] = js.undefined
     ): DBClusterParameterGroupDetails = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Marker" -> Marker.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Parameters" -> Parameters.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DBClusterParameterGroupDetails]
+      val __obj = js.Dictionary.empty[js.Any]
+      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
+      Parameters.foreach(__v => __obj.update("Parameters", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DBClusterParameterGroupDetails]
     }
   }
 
@@ -1723,13 +1413,9 @@ package neptune {
     def apply(
         DBClusterParameterGroupName: js.UndefOr[String] = js.undefined
     ): DBClusterParameterGroupNameMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "DBClusterParameterGroupName" -> DBClusterParameterGroupName.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DBClusterParameterGroupNameMessage]
+      val __obj = js.Dictionary.empty[js.Any]
+      DBClusterParameterGroupName.foreach(__v => __obj.update("DBClusterParameterGroupName", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DBClusterParameterGroupNameMessage]
     }
   }
 
@@ -1753,16 +1439,10 @@ package neptune {
         DBClusterParameterGroups: js.UndefOr[DBClusterParameterGroupList] = js.undefined,
         Marker: js.UndefOr[String] = js.undefined
     ): DBClusterParameterGroupsMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "DBClusterParameterGroups" -> DBClusterParameterGroups.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Marker" -> Marker.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DBClusterParameterGroupsMessage]
+      val __obj = js.Dictionary.empty[js.Any]
+      DBClusterParameterGroups.foreach(__v => __obj.update("DBClusterParameterGroups", __v.asInstanceOf[js.Any]))
+      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DBClusterParameterGroupsMessage]
     }
   }
 
@@ -1786,16 +1466,10 @@ package neptune {
         RoleArn: js.UndefOr[String] = js.undefined,
         Status: js.UndefOr[String] = js.undefined
     ): DBClusterRole = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "RoleArn" -> RoleArn.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Status" -> Status.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DBClusterRole]
+      val __obj = js.Dictionary.empty[js.Any]
+      RoleArn.foreach(__v => __obj.update("RoleArn", __v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.update("Status", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DBClusterRole]
     }
   }
 
@@ -1868,70 +1542,30 @@ package neptune {
         StorageEncrypted: js.UndefOr[Boolean] = js.undefined,
         VpcId: js.UndefOr[String] = js.undefined
     ): DBClusterSnapshot = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "AllocatedStorage" -> AllocatedStorage.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "AvailabilityZones" -> AvailabilityZones.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ClusterCreateTime" -> ClusterCreateTime.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DBClusterIdentifier" -> DBClusterIdentifier.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DBClusterSnapshotArn" -> DBClusterSnapshotArn.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DBClusterSnapshotIdentifier" -> DBClusterSnapshotIdentifier.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Engine" -> Engine.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "EngineVersion" -> EngineVersion.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "IAMDatabaseAuthenticationEnabled" -> IAMDatabaseAuthenticationEnabled.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "KmsKeyId" -> KmsKeyId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "LicenseModel" -> LicenseModel.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MasterUsername" -> MasterUsername.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "PercentProgress" -> PercentProgress.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Port" -> Port.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SnapshotCreateTime" -> SnapshotCreateTime.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SnapshotType" -> SnapshotType.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SourceDBClusterSnapshotArn" -> SourceDBClusterSnapshotArn.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Status" -> Status.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "StorageEncrypted" -> StorageEncrypted.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "VpcId" -> VpcId.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DBClusterSnapshot]
+      val __obj = js.Dictionary.empty[js.Any]
+      AllocatedStorage.foreach(__v => __obj.update("AllocatedStorage", __v.asInstanceOf[js.Any]))
+      AvailabilityZones.foreach(__v => __obj.update("AvailabilityZones", __v.asInstanceOf[js.Any]))
+      ClusterCreateTime.foreach(__v => __obj.update("ClusterCreateTime", __v.asInstanceOf[js.Any]))
+      DBClusterIdentifier.foreach(__v => __obj.update("DBClusterIdentifier", __v.asInstanceOf[js.Any]))
+      DBClusterSnapshotArn.foreach(__v => __obj.update("DBClusterSnapshotArn", __v.asInstanceOf[js.Any]))
+      DBClusterSnapshotIdentifier.foreach(__v => __obj.update("DBClusterSnapshotIdentifier", __v.asInstanceOf[js.Any]))
+      Engine.foreach(__v => __obj.update("Engine", __v.asInstanceOf[js.Any]))
+      EngineVersion.foreach(__v => __obj.update("EngineVersion", __v.asInstanceOf[js.Any]))
+      IAMDatabaseAuthenticationEnabled.foreach(
+        __v => __obj.update("IAMDatabaseAuthenticationEnabled", __v.asInstanceOf[js.Any])
+      )
+      KmsKeyId.foreach(__v => __obj.update("KmsKeyId", __v.asInstanceOf[js.Any]))
+      LicenseModel.foreach(__v => __obj.update("LicenseModel", __v.asInstanceOf[js.Any]))
+      MasterUsername.foreach(__v => __obj.update("MasterUsername", __v.asInstanceOf[js.Any]))
+      PercentProgress.foreach(__v => __obj.update("PercentProgress", __v.asInstanceOf[js.Any]))
+      Port.foreach(__v => __obj.update("Port", __v.asInstanceOf[js.Any]))
+      SnapshotCreateTime.foreach(__v => __obj.update("SnapshotCreateTime", __v.asInstanceOf[js.Any]))
+      SnapshotType.foreach(__v => __obj.update("SnapshotType", __v.asInstanceOf[js.Any]))
+      SourceDBClusterSnapshotArn.foreach(__v => __obj.update("SourceDBClusterSnapshotArn", __v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.update("Status", __v.asInstanceOf[js.Any]))
+      StorageEncrypted.foreach(__v => __obj.update("StorageEncrypted", __v.asInstanceOf[js.Any]))
+      VpcId.foreach(__v => __obj.update("VpcId", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DBClusterSnapshot]
     }
   }
 
@@ -1956,16 +1590,10 @@ package neptune {
         AttributeName: js.UndefOr[String] = js.undefined,
         AttributeValues: js.UndefOr[AttributeValueList] = js.undefined
     ): DBClusterSnapshotAttribute = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "AttributeName" -> AttributeName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "AttributeValues" -> AttributeValues.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DBClusterSnapshotAttribute]
+      val __obj = js.Dictionary.empty[js.Any]
+      AttributeName.foreach(__v => __obj.update("AttributeName", __v.asInstanceOf[js.Any]))
+      AttributeValues.foreach(__v => __obj.update("AttributeValues", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DBClusterSnapshotAttribute]
     }
   }
 
@@ -1984,16 +1612,10 @@ package neptune {
         DBClusterSnapshotAttributes: js.UndefOr[DBClusterSnapshotAttributeList] = js.undefined,
         DBClusterSnapshotIdentifier: js.UndefOr[String] = js.undefined
     ): DBClusterSnapshotAttributesResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "DBClusterSnapshotAttributes" -> DBClusterSnapshotAttributes.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DBClusterSnapshotIdentifier" -> DBClusterSnapshotIdentifier.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DBClusterSnapshotAttributesResult]
+      val __obj = js.Dictionary.empty[js.Any]
+      DBClusterSnapshotAttributes.foreach(__v => __obj.update("DBClusterSnapshotAttributes", __v.asInstanceOf[js.Any]))
+      DBClusterSnapshotIdentifier.foreach(__v => __obj.update("DBClusterSnapshotIdentifier", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DBClusterSnapshotAttributesResult]
     }
   }
 
@@ -2011,16 +1633,10 @@ package neptune {
         DBClusterSnapshots: js.UndefOr[DBClusterSnapshotList] = js.undefined,
         Marker: js.UndefOr[String] = js.undefined
     ): DBClusterSnapshotMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "DBClusterSnapshots" -> DBClusterSnapshots.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Marker" -> Marker.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DBClusterSnapshotMessage]
+      val __obj = js.Dictionary.empty[js.Any]
+      DBClusterSnapshots.foreach(__v => __obj.update("DBClusterSnapshots", __v.asInstanceOf[js.Any]))
+      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DBClusterSnapshotMessage]
     }
   }
 
@@ -2064,46 +1680,22 @@ package neptune {
         SupportsReadReplica: js.UndefOr[Boolean] = js.undefined,
         ValidUpgradeTarget: js.UndefOr[ValidUpgradeTargetList] = js.undefined
     ): DBEngineVersion = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "DBEngineDescription" -> DBEngineDescription.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DBEngineVersionDescription" -> DBEngineVersionDescription.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DBParameterGroupFamily" -> DBParameterGroupFamily.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DefaultCharacterSet" -> DefaultCharacterSet.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Engine" -> Engine.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "EngineVersion" -> EngineVersion.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ExportableLogTypes" -> ExportableLogTypes.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SupportedCharacterSets" -> SupportedCharacterSets.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SupportedTimezones" -> SupportedTimezones.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SupportsLogExportsToCloudwatchLogs" -> SupportsLogExportsToCloudwatchLogs.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SupportsReadReplica" -> SupportsReadReplica.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ValidUpgradeTarget" -> ValidUpgradeTarget.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DBEngineVersion]
+      val __obj = js.Dictionary.empty[js.Any]
+      DBEngineDescription.foreach(__v => __obj.update("DBEngineDescription", __v.asInstanceOf[js.Any]))
+      DBEngineVersionDescription.foreach(__v => __obj.update("DBEngineVersionDescription", __v.asInstanceOf[js.Any]))
+      DBParameterGroupFamily.foreach(__v => __obj.update("DBParameterGroupFamily", __v.asInstanceOf[js.Any]))
+      DefaultCharacterSet.foreach(__v => __obj.update("DefaultCharacterSet", __v.asInstanceOf[js.Any]))
+      Engine.foreach(__v => __obj.update("Engine", __v.asInstanceOf[js.Any]))
+      EngineVersion.foreach(__v => __obj.update("EngineVersion", __v.asInstanceOf[js.Any]))
+      ExportableLogTypes.foreach(__v => __obj.update("ExportableLogTypes", __v.asInstanceOf[js.Any]))
+      SupportedCharacterSets.foreach(__v => __obj.update("SupportedCharacterSets", __v.asInstanceOf[js.Any]))
+      SupportedTimezones.foreach(__v => __obj.update("SupportedTimezones", __v.asInstanceOf[js.Any]))
+      SupportsLogExportsToCloudwatchLogs.foreach(
+        __v => __obj.update("SupportsLogExportsToCloudwatchLogs", __v.asInstanceOf[js.Any])
+      )
+      SupportsReadReplica.foreach(__v => __obj.update("SupportsReadReplica", __v.asInstanceOf[js.Any]))
+      ValidUpgradeTarget.foreach(__v => __obj.update("ValidUpgradeTarget", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DBEngineVersion]
     }
   }
 
@@ -2121,16 +1713,10 @@ package neptune {
         DBEngineVersions: js.UndefOr[DBEngineVersionList] = js.undefined,
         Marker: js.UndefOr[String] = js.undefined
     ): DBEngineVersionMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "DBEngineVersions" -> DBEngineVersions.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Marker" -> Marker.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DBEngineVersionMessage]
+      val __obj = js.Dictionary.empty[js.Any]
+      DBEngineVersions.foreach(__v => __obj.update("DBEngineVersions", __v.asInstanceOf[js.Any]))
+      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DBEngineVersionMessage]
     }
   }
 
@@ -2249,166 +1835,72 @@ package neptune {
         Timezone: js.UndefOr[String] = js.undefined,
         VpcSecurityGroups: js.UndefOr[VpcSecurityGroupMembershipList] = js.undefined
     ): DBInstance = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "AllocatedStorage" -> AllocatedStorage.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "AutoMinorVersionUpgrade" -> AutoMinorVersionUpgrade.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "AvailabilityZone" -> AvailabilityZone.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "BackupRetentionPeriod" -> BackupRetentionPeriod.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "CACertificateIdentifier" -> CACertificateIdentifier.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "CharacterSetName" -> CharacterSetName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "CopyTagsToSnapshot" -> CopyTagsToSnapshot.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DBClusterIdentifier" -> DBClusterIdentifier.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DBInstanceArn" -> DBInstanceArn.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DBInstanceClass" -> DBInstanceClass.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DBInstanceIdentifier" -> DBInstanceIdentifier.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DBInstanceStatus" -> DBInstanceStatus.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DBName" -> DBName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DBParameterGroups" -> DBParameterGroups.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DBSecurityGroups" -> DBSecurityGroups.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DBSubnetGroup" -> DBSubnetGroup.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DbInstancePort" -> DbInstancePort.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DbiResourceId" -> DbiResourceId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DomainMemberships" -> DomainMemberships.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "EnabledCloudwatchLogsExports" -> EnabledCloudwatchLogsExports.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Endpoint" -> Endpoint.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Engine" -> Engine.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "EngineVersion" -> EngineVersion.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "EnhancedMonitoringResourceArn" -> EnhancedMonitoringResourceArn.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "IAMDatabaseAuthenticationEnabled" -> IAMDatabaseAuthenticationEnabled.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "InstanceCreateTime" -> InstanceCreateTime.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Iops" -> Iops.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "KmsKeyId" -> KmsKeyId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "LatestRestorableTime" -> LatestRestorableTime.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "LicenseModel" -> LicenseModel.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MasterUsername" -> MasterUsername.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MonitoringInterval" -> MonitoringInterval.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MonitoringRoleArn" -> MonitoringRoleArn.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MultiAZ" -> MultiAZ.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "OptionGroupMemberships" -> OptionGroupMemberships.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "PendingModifiedValues" -> PendingModifiedValues.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "PerformanceInsightsEnabled" -> PerformanceInsightsEnabled.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "PerformanceInsightsKMSKeyId" -> PerformanceInsightsKMSKeyId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "PreferredBackupWindow" -> PreferredBackupWindow.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "PreferredMaintenanceWindow" -> PreferredMaintenanceWindow.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "PromotionTier" -> PromotionTier.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "PubliclyAccessible" -> PubliclyAccessible.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ReadReplicaDBClusterIdentifiers" -> ReadReplicaDBClusterIdentifiers.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ReadReplicaDBInstanceIdentifiers" -> ReadReplicaDBInstanceIdentifiers.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ReadReplicaSourceDBInstanceIdentifier" -> ReadReplicaSourceDBInstanceIdentifier.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SecondaryAvailabilityZone" -> SecondaryAvailabilityZone.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "StatusInfos" -> StatusInfos.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "StorageEncrypted" -> StorageEncrypted.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "StorageType" -> StorageType.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "TdeCredentialArn" -> TdeCredentialArn.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Timezone" -> Timezone.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "VpcSecurityGroups" -> VpcSecurityGroups.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DBInstance]
+      val __obj = js.Dictionary.empty[js.Any]
+      AllocatedStorage.foreach(__v => __obj.update("AllocatedStorage", __v.asInstanceOf[js.Any]))
+      AutoMinorVersionUpgrade.foreach(__v => __obj.update("AutoMinorVersionUpgrade", __v.asInstanceOf[js.Any]))
+      AvailabilityZone.foreach(__v => __obj.update("AvailabilityZone", __v.asInstanceOf[js.Any]))
+      BackupRetentionPeriod.foreach(__v => __obj.update("BackupRetentionPeriod", __v.asInstanceOf[js.Any]))
+      CACertificateIdentifier.foreach(__v => __obj.update("CACertificateIdentifier", __v.asInstanceOf[js.Any]))
+      CharacterSetName.foreach(__v => __obj.update("CharacterSetName", __v.asInstanceOf[js.Any]))
+      CopyTagsToSnapshot.foreach(__v => __obj.update("CopyTagsToSnapshot", __v.asInstanceOf[js.Any]))
+      DBClusterIdentifier.foreach(__v => __obj.update("DBClusterIdentifier", __v.asInstanceOf[js.Any]))
+      DBInstanceArn.foreach(__v => __obj.update("DBInstanceArn", __v.asInstanceOf[js.Any]))
+      DBInstanceClass.foreach(__v => __obj.update("DBInstanceClass", __v.asInstanceOf[js.Any]))
+      DBInstanceIdentifier.foreach(__v => __obj.update("DBInstanceIdentifier", __v.asInstanceOf[js.Any]))
+      DBInstanceStatus.foreach(__v => __obj.update("DBInstanceStatus", __v.asInstanceOf[js.Any]))
+      DBName.foreach(__v => __obj.update("DBName", __v.asInstanceOf[js.Any]))
+      DBParameterGroups.foreach(__v => __obj.update("DBParameterGroups", __v.asInstanceOf[js.Any]))
+      DBSecurityGroups.foreach(__v => __obj.update("DBSecurityGroups", __v.asInstanceOf[js.Any]))
+      DBSubnetGroup.foreach(__v => __obj.update("DBSubnetGroup", __v.asInstanceOf[js.Any]))
+      DbInstancePort.foreach(__v => __obj.update("DbInstancePort", __v.asInstanceOf[js.Any]))
+      DbiResourceId.foreach(__v => __obj.update("DbiResourceId", __v.asInstanceOf[js.Any]))
+      DomainMemberships.foreach(__v => __obj.update("DomainMemberships", __v.asInstanceOf[js.Any]))
+      EnabledCloudwatchLogsExports.foreach(
+        __v => __obj.update("EnabledCloudwatchLogsExports", __v.asInstanceOf[js.Any])
+      )
+      Endpoint.foreach(__v => __obj.update("Endpoint", __v.asInstanceOf[js.Any]))
+      Engine.foreach(__v => __obj.update("Engine", __v.asInstanceOf[js.Any]))
+      EngineVersion.foreach(__v => __obj.update("EngineVersion", __v.asInstanceOf[js.Any]))
+      EnhancedMonitoringResourceArn.foreach(
+        __v => __obj.update("EnhancedMonitoringResourceArn", __v.asInstanceOf[js.Any])
+      )
+      IAMDatabaseAuthenticationEnabled.foreach(
+        __v => __obj.update("IAMDatabaseAuthenticationEnabled", __v.asInstanceOf[js.Any])
+      )
+      InstanceCreateTime.foreach(__v => __obj.update("InstanceCreateTime", __v.asInstanceOf[js.Any]))
+      Iops.foreach(__v => __obj.update("Iops", __v.asInstanceOf[js.Any]))
+      KmsKeyId.foreach(__v => __obj.update("KmsKeyId", __v.asInstanceOf[js.Any]))
+      LatestRestorableTime.foreach(__v => __obj.update("LatestRestorableTime", __v.asInstanceOf[js.Any]))
+      LicenseModel.foreach(__v => __obj.update("LicenseModel", __v.asInstanceOf[js.Any]))
+      MasterUsername.foreach(__v => __obj.update("MasterUsername", __v.asInstanceOf[js.Any]))
+      MonitoringInterval.foreach(__v => __obj.update("MonitoringInterval", __v.asInstanceOf[js.Any]))
+      MonitoringRoleArn.foreach(__v => __obj.update("MonitoringRoleArn", __v.asInstanceOf[js.Any]))
+      MultiAZ.foreach(__v => __obj.update("MultiAZ", __v.asInstanceOf[js.Any]))
+      OptionGroupMemberships.foreach(__v => __obj.update("OptionGroupMemberships", __v.asInstanceOf[js.Any]))
+      PendingModifiedValues.foreach(__v => __obj.update("PendingModifiedValues", __v.asInstanceOf[js.Any]))
+      PerformanceInsightsEnabled.foreach(__v => __obj.update("PerformanceInsightsEnabled", __v.asInstanceOf[js.Any]))
+      PerformanceInsightsKMSKeyId.foreach(__v => __obj.update("PerformanceInsightsKMSKeyId", __v.asInstanceOf[js.Any]))
+      PreferredBackupWindow.foreach(__v => __obj.update("PreferredBackupWindow", __v.asInstanceOf[js.Any]))
+      PreferredMaintenanceWindow.foreach(__v => __obj.update("PreferredMaintenanceWindow", __v.asInstanceOf[js.Any]))
+      PromotionTier.foreach(__v => __obj.update("PromotionTier", __v.asInstanceOf[js.Any]))
+      PubliclyAccessible.foreach(__v => __obj.update("PubliclyAccessible", __v.asInstanceOf[js.Any]))
+      ReadReplicaDBClusterIdentifiers.foreach(
+        __v => __obj.update("ReadReplicaDBClusterIdentifiers", __v.asInstanceOf[js.Any])
+      )
+      ReadReplicaDBInstanceIdentifiers.foreach(
+        __v => __obj.update("ReadReplicaDBInstanceIdentifiers", __v.asInstanceOf[js.Any])
+      )
+      ReadReplicaSourceDBInstanceIdentifier.foreach(
+        __v => __obj.update("ReadReplicaSourceDBInstanceIdentifier", __v.asInstanceOf[js.Any])
+      )
+      SecondaryAvailabilityZone.foreach(__v => __obj.update("SecondaryAvailabilityZone", __v.asInstanceOf[js.Any]))
+      StatusInfos.foreach(__v => __obj.update("StatusInfos", __v.asInstanceOf[js.Any]))
+      StorageEncrypted.foreach(__v => __obj.update("StorageEncrypted", __v.asInstanceOf[js.Any]))
+      StorageType.foreach(__v => __obj.update("StorageType", __v.asInstanceOf[js.Any]))
+      TdeCredentialArn.foreach(__v => __obj.update("TdeCredentialArn", __v.asInstanceOf[js.Any]))
+      Timezone.foreach(__v => __obj.update("Timezone", __v.asInstanceOf[js.Any]))
+      VpcSecurityGroups.foreach(__v => __obj.update("VpcSecurityGroups", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DBInstance]
     }
   }
 
@@ -2432,16 +1924,10 @@ package neptune {
         DBInstances: js.UndefOr[DBInstanceList] = js.undefined,
         Marker: js.UndefOr[String] = js.undefined
     ): DBInstanceMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "DBInstances" -> DBInstances.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Marker" -> Marker.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DBInstanceMessage]
+      val __obj = js.Dictionary.empty[js.Any]
+      DBInstances.foreach(__v => __obj.update("DBInstances", __v.asInstanceOf[js.Any]))
+      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DBInstanceMessage]
     }
   }
 
@@ -2469,22 +1955,12 @@ package neptune {
         Status: js.UndefOr[String] = js.undefined,
         StatusType: js.UndefOr[String] = js.undefined
     ): DBInstanceStatusInfo = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Message" -> Message.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Normal" -> Normal.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Status" -> Status.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "StatusType" -> StatusType.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DBInstanceStatusInfo]
+      val __obj = js.Dictionary.empty[js.Any]
+      Message.foreach(__v => __obj.update("Message", __v.asInstanceOf[js.Any]))
+      Normal.foreach(__v => __obj.update("Normal", __v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.update("Status", __v.asInstanceOf[js.Any]))
+      StatusType.foreach(__v => __obj.update("StatusType", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DBInstanceStatusInfo]
     }
   }
 
@@ -2507,22 +1983,12 @@ package neptune {
         DBParameterGroupName: js.UndefOr[String] = js.undefined,
         Description: js.UndefOr[String] = js.undefined
     ): DBParameterGroup = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "DBParameterGroupArn" -> DBParameterGroupArn.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DBParameterGroupFamily" -> DBParameterGroupFamily.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DBParameterGroupName" -> DBParameterGroupName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Description" -> Description.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DBParameterGroup]
+      val __obj = js.Dictionary.empty[js.Any]
+      DBParameterGroupArn.foreach(__v => __obj.update("DBParameterGroupArn", __v.asInstanceOf[js.Any]))
+      DBParameterGroupFamily.foreach(__v => __obj.update("DBParameterGroupFamily", __v.asInstanceOf[js.Any]))
+      DBParameterGroupName.foreach(__v => __obj.update("DBParameterGroupName", __v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DBParameterGroup]
     }
   }
 
@@ -2546,16 +2012,10 @@ package neptune {
         Marker: js.UndefOr[String] = js.undefined,
         Parameters: js.UndefOr[ParametersList] = js.undefined
     ): DBParameterGroupDetails = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Marker" -> Marker.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Parameters" -> Parameters.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DBParameterGroupDetails]
+      val __obj = js.Dictionary.empty[js.Any]
+      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
+      Parameters.foreach(__v => __obj.update("Parameters", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DBParameterGroupDetails]
     }
   }
 
@@ -2571,13 +2031,9 @@ package neptune {
     def apply(
         DBParameterGroupName: js.UndefOr[String] = js.undefined
     ): DBParameterGroupNameMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "DBParameterGroupName" -> DBParameterGroupName.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DBParameterGroupNameMessage]
+      val __obj = js.Dictionary.empty[js.Any]
+      DBParameterGroupName.foreach(__v => __obj.update("DBParameterGroupName", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DBParameterGroupNameMessage]
     }
   }
 
@@ -2612,16 +2068,10 @@ package neptune {
         DBParameterGroupName: js.UndefOr[String] = js.undefined,
         ParameterApplyStatus: js.UndefOr[String] = js.undefined
     ): DBParameterGroupStatus = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "DBParameterGroupName" -> DBParameterGroupName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ParameterApplyStatus" -> ParameterApplyStatus.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DBParameterGroupStatus]
+      val __obj = js.Dictionary.empty[js.Any]
+      DBParameterGroupName.foreach(__v => __obj.update("DBParameterGroupName", __v.asInstanceOf[js.Any]))
+      ParameterApplyStatus.foreach(__v => __obj.update("ParameterApplyStatus", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DBParameterGroupStatus]
     }
   }
 
@@ -2639,16 +2089,10 @@ package neptune {
         DBParameterGroups: js.UndefOr[DBParameterGroupList] = js.undefined,
         Marker: js.UndefOr[String] = js.undefined
     ): DBParameterGroupsMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "DBParameterGroups" -> DBParameterGroups.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Marker" -> Marker.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DBParameterGroupsMessage]
+      val __obj = js.Dictionary.empty[js.Any]
+      DBParameterGroups.foreach(__v => __obj.update("DBParameterGroups", __v.asInstanceOf[js.Any]))
+      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DBParameterGroupsMessage]
     }
   }
 
@@ -2668,16 +2112,10 @@ package neptune {
         DBSecurityGroupName: js.UndefOr[String] = js.undefined,
         Status: js.UndefOr[String] = js.undefined
     ): DBSecurityGroupMembership = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "DBSecurityGroupName" -> DBSecurityGroupName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Status" -> Status.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DBSecurityGroupMembership]
+      val __obj = js.Dictionary.empty[js.Any]
+      DBSecurityGroupName.foreach(__v => __obj.update("DBSecurityGroupName", __v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.update("Status", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DBSecurityGroupMembership]
     }
   }
 
@@ -2722,28 +2160,14 @@ package neptune {
         Subnets: js.UndefOr[SubnetList] = js.undefined,
         VpcId: js.UndefOr[String] = js.undefined
     ): DBSubnetGroup = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "DBSubnetGroupArn" -> DBSubnetGroupArn.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DBSubnetGroupDescription" -> DBSubnetGroupDescription.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DBSubnetGroupName" -> DBSubnetGroupName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SubnetGroupStatus" -> SubnetGroupStatus.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Subnets" -> Subnets.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "VpcId" -> VpcId.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DBSubnetGroup]
+      val __obj = js.Dictionary.empty[js.Any]
+      DBSubnetGroupArn.foreach(__v => __obj.update("DBSubnetGroupArn", __v.asInstanceOf[js.Any]))
+      DBSubnetGroupDescription.foreach(__v => __obj.update("DBSubnetGroupDescription", __v.asInstanceOf[js.Any]))
+      DBSubnetGroupName.foreach(__v => __obj.update("DBSubnetGroupName", __v.asInstanceOf[js.Any]))
+      SubnetGroupStatus.foreach(__v => __obj.update("SubnetGroupStatus", __v.asInstanceOf[js.Any]))
+      Subnets.foreach(__v => __obj.update("Subnets", __v.asInstanceOf[js.Any]))
+      VpcId.foreach(__v => __obj.update("VpcId", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DBSubnetGroup]
     }
   }
 
@@ -2773,16 +2197,10 @@ package neptune {
         DBSubnetGroups: js.UndefOr[DBSubnetGroups] = js.undefined,
         Marker: js.UndefOr[String] = js.undefined
     ): DBSubnetGroupMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "DBSubnetGroups" -> DBSubnetGroups.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Marker" -> Marker.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DBSubnetGroupMessage]
+      val __obj = js.Dictionary.empty[js.Any]
+      DBSubnetGroups.foreach(__v => __obj.update("DBSubnetGroups", __v.asInstanceOf[js.Any]))
+      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DBSubnetGroupMessage]
     }
   }
 
@@ -2826,17 +2244,13 @@ package neptune {
         FinalDBSnapshotIdentifier: js.UndefOr[String] = js.undefined,
         SkipFinalSnapshot: js.UndefOr[Boolean] = js.undefined
     ): DeleteDBClusterMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "DBClusterIdentifier" -> DBClusterIdentifier.asInstanceOf[js.Any],
-        "FinalDBSnapshotIdentifier" -> FinalDBSnapshotIdentifier.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SkipFinalSnapshot" -> SkipFinalSnapshot.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "DBClusterIdentifier" -> DBClusterIdentifier.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteDBClusterMessage]
+      FinalDBSnapshotIdentifier.foreach(__v => __obj.update("FinalDBSnapshotIdentifier", __v.asInstanceOf[js.Any]))
+      SkipFinalSnapshot.foreach(__v => __obj.update("SkipFinalSnapshot", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DeleteDBClusterMessage]
     }
   }
 
@@ -2852,11 +2266,11 @@ package neptune {
     def apply(
         DBClusterParameterGroupName: String
     ): DeleteDBClusterParameterGroupMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "DBClusterParameterGroupName" -> DBClusterParameterGroupName.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteDBClusterParameterGroupMessage]
+      __obj.asInstanceOf[DeleteDBClusterParameterGroupMessage]
     }
   }
 
@@ -2869,13 +2283,9 @@ package neptune {
     def apply(
         DBCluster: js.UndefOr[DBCluster] = js.undefined
     ): DeleteDBClusterResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "DBCluster" -> DBCluster.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteDBClusterResult]
+      val __obj = js.Dictionary.empty[js.Any]
+      DBCluster.foreach(__v => __obj.update("DBCluster", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DeleteDBClusterResult]
     }
   }
 
@@ -2891,11 +2301,11 @@ package neptune {
     def apply(
         DBClusterSnapshotIdentifier: String
     ): DeleteDBClusterSnapshotMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "DBClusterSnapshotIdentifier" -> DBClusterSnapshotIdentifier.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteDBClusterSnapshotMessage]
+      __obj.asInstanceOf[DeleteDBClusterSnapshotMessage]
     }
   }
 
@@ -2908,13 +2318,9 @@ package neptune {
     def apply(
         DBClusterSnapshot: js.UndefOr[DBClusterSnapshot] = js.undefined
     ): DeleteDBClusterSnapshotResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "DBClusterSnapshot" -> DBClusterSnapshot.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteDBClusterSnapshotResult]
+      val __obj = js.Dictionary.empty[js.Any]
+      DBClusterSnapshot.foreach(__v => __obj.update("DBClusterSnapshot", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DeleteDBClusterSnapshotResult]
     }
   }
 
@@ -2934,17 +2340,13 @@ package neptune {
         FinalDBSnapshotIdentifier: js.UndefOr[String] = js.undefined,
         SkipFinalSnapshot: js.UndefOr[Boolean] = js.undefined
     ): DeleteDBInstanceMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "DBInstanceIdentifier" -> DBInstanceIdentifier.asInstanceOf[js.Any],
-        "FinalDBSnapshotIdentifier" -> FinalDBSnapshotIdentifier.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SkipFinalSnapshot" -> SkipFinalSnapshot.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "DBInstanceIdentifier" -> DBInstanceIdentifier.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteDBInstanceMessage]
+      FinalDBSnapshotIdentifier.foreach(__v => __obj.update("FinalDBSnapshotIdentifier", __v.asInstanceOf[js.Any]))
+      SkipFinalSnapshot.foreach(__v => __obj.update("SkipFinalSnapshot", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DeleteDBInstanceMessage]
     }
   }
 
@@ -2957,13 +2359,9 @@ package neptune {
     def apply(
         DBInstance: js.UndefOr[DBInstance] = js.undefined
     ): DeleteDBInstanceResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "DBInstance" -> DBInstance.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteDBInstanceResult]
+      val __obj = js.Dictionary.empty[js.Any]
+      DBInstance.foreach(__v => __obj.update("DBInstance", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DeleteDBInstanceResult]
     }
   }
 
@@ -2979,11 +2377,11 @@ package neptune {
     def apply(
         DBParameterGroupName: String
     ): DeleteDBParameterGroupMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "DBParameterGroupName" -> DBParameterGroupName.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteDBParameterGroupMessage]
+      __obj.asInstanceOf[DeleteDBParameterGroupMessage]
     }
   }
 
@@ -2999,11 +2397,11 @@ package neptune {
     def apply(
         DBSubnetGroupName: String
     ): DeleteDBSubnetGroupMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "DBSubnetGroupName" -> DBSubnetGroupName.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteDBSubnetGroupMessage]
+      __obj.asInstanceOf[DeleteDBSubnetGroupMessage]
     }
   }
 
@@ -3019,11 +2417,11 @@ package neptune {
     def apply(
         SubscriptionName: String
     ): DeleteEventSubscriptionMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "SubscriptionName" -> SubscriptionName.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteEventSubscriptionMessage]
+      __obj.asInstanceOf[DeleteEventSubscriptionMessage]
     }
   }
 
@@ -3036,13 +2434,9 @@ package neptune {
     def apply(
         EventSubscription: js.UndefOr[EventSubscription] = js.undefined
     ): DeleteEventSubscriptionResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "EventSubscription" -> EventSubscription.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteEventSubscriptionResult]
+      val __obj = js.Dictionary.empty[js.Any]
+      EventSubscription.foreach(__v => __obj.update("EventSubscription", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DeleteEventSubscriptionResult]
     }
   }
 
@@ -3064,22 +2458,12 @@ package neptune {
         Marker: js.UndefOr[String] = js.undefined,
         MaxRecords: js.UndefOr[IntegerOptional] = js.undefined
     ): DescribeDBClusterParameterGroupsMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "DBClusterParameterGroupName" -> DBClusterParameterGroupName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Filters" -> Filters.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Marker" -> Marker.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MaxRecords" -> MaxRecords.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeDBClusterParameterGroupsMessage]
+      val __obj = js.Dictionary.empty[js.Any]
+      DBClusterParameterGroupName.foreach(__v => __obj.update("DBClusterParameterGroupName", __v.asInstanceOf[js.Any]))
+      Filters.foreach(__v => __obj.update("Filters", __v.asInstanceOf[js.Any]))
+      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
+      MaxRecords.foreach(__v => __obj.update("MaxRecords", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeDBClusterParameterGroupsMessage]
     }
   }
 
@@ -3103,23 +2487,15 @@ package neptune {
         MaxRecords: js.UndefOr[IntegerOptional] = js.undefined,
         Source: js.UndefOr[String] = js.undefined
     ): DescribeDBClusterParametersMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "DBClusterParameterGroupName" -> DBClusterParameterGroupName.asInstanceOf[js.Any],
-        "Filters" -> Filters.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Marker" -> Marker.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MaxRecords" -> MaxRecords.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Source" -> Source.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "DBClusterParameterGroupName" -> DBClusterParameterGroupName.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeDBClusterParametersMessage]
+      Filters.foreach(__v => __obj.update("Filters", __v.asInstanceOf[js.Any]))
+      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
+      MaxRecords.foreach(__v => __obj.update("MaxRecords", __v.asInstanceOf[js.Any]))
+      Source.foreach(__v => __obj.update("Source", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeDBClusterParametersMessage]
     }
   }
 
@@ -3135,13 +2511,11 @@ package neptune {
     def apply(
         DBClusterSnapshotIdentifier: String
     ): DescribeDBClusterSnapshotAttributesMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "DBClusterSnapshotIdentifier" -> DBClusterSnapshotIdentifier.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal
-        .applyDynamicNamed("apply")(_fields: _*)
-        .asInstanceOf[DescribeDBClusterSnapshotAttributesMessage]
+      __obj.asInstanceOf[DescribeDBClusterSnapshotAttributesMessage]
     }
   }
 
@@ -3154,13 +2528,11 @@ package neptune {
     def apply(
         DBClusterSnapshotAttributesResult: js.UndefOr[DBClusterSnapshotAttributesResult] = js.undefined
     ): DescribeDBClusterSnapshotAttributesResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "DBClusterSnapshotAttributesResult" -> DBClusterSnapshotAttributesResult.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeDBClusterSnapshotAttributesResult]
+      val __obj = js.Dictionary.empty[js.Any]
+      DBClusterSnapshotAttributesResult.foreach(
+        __v => __obj.update("DBClusterSnapshotAttributesResult", __v.asInstanceOf[js.Any])
+      )
+      __obj.asInstanceOf[DescribeDBClusterSnapshotAttributesResult]
     }
   }
 
@@ -3190,34 +2562,16 @@ package neptune {
         MaxRecords: js.UndefOr[IntegerOptional] = js.undefined,
         SnapshotType: js.UndefOr[String] = js.undefined
     ): DescribeDBClusterSnapshotsMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "DBClusterIdentifier" -> DBClusterIdentifier.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DBClusterSnapshotIdentifier" -> DBClusterSnapshotIdentifier.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Filters" -> Filters.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "IncludePublic" -> IncludePublic.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "IncludeShared" -> IncludeShared.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Marker" -> Marker.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MaxRecords" -> MaxRecords.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SnapshotType" -> SnapshotType.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeDBClusterSnapshotsMessage]
+      val __obj = js.Dictionary.empty[js.Any]
+      DBClusterIdentifier.foreach(__v => __obj.update("DBClusterIdentifier", __v.asInstanceOf[js.Any]))
+      DBClusterSnapshotIdentifier.foreach(__v => __obj.update("DBClusterSnapshotIdentifier", __v.asInstanceOf[js.Any]))
+      Filters.foreach(__v => __obj.update("Filters", __v.asInstanceOf[js.Any]))
+      IncludePublic.foreach(__v => __obj.update("IncludePublic", __v.asInstanceOf[js.Any]))
+      IncludeShared.foreach(__v => __obj.update("IncludeShared", __v.asInstanceOf[js.Any]))
+      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
+      MaxRecords.foreach(__v => __obj.update("MaxRecords", __v.asInstanceOf[js.Any]))
+      SnapshotType.foreach(__v => __obj.update("SnapshotType", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeDBClusterSnapshotsMessage]
     }
   }
 
@@ -3239,22 +2593,12 @@ package neptune {
         Marker: js.UndefOr[String] = js.undefined,
         MaxRecords: js.UndefOr[IntegerOptional] = js.undefined
     ): DescribeDBClustersMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "DBClusterIdentifier" -> DBClusterIdentifier.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Filters" -> Filters.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Marker" -> Marker.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MaxRecords" -> MaxRecords.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeDBClustersMessage]
+      val __obj = js.Dictionary.empty[js.Any]
+      DBClusterIdentifier.foreach(__v => __obj.update("DBClusterIdentifier", __v.asInstanceOf[js.Any]))
+      Filters.foreach(__v => __obj.update("Filters", __v.asInstanceOf[js.Any]))
+      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
+      MaxRecords.foreach(__v => __obj.update("MaxRecords", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeDBClustersMessage]
     }
   }
 
@@ -3283,37 +2627,17 @@ package neptune {
         Marker: js.UndefOr[String] = js.undefined,
         MaxRecords: js.UndefOr[IntegerOptional] = js.undefined
     ): DescribeDBEngineVersionsMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "DBParameterGroupFamily" -> DBParameterGroupFamily.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DefaultOnly" -> DefaultOnly.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Engine" -> Engine.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "EngineVersion" -> EngineVersion.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Filters" -> Filters.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ListSupportedCharacterSets" -> ListSupportedCharacterSets.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ListSupportedTimezones" -> ListSupportedTimezones.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Marker" -> Marker.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MaxRecords" -> MaxRecords.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeDBEngineVersionsMessage]
+      val __obj = js.Dictionary.empty[js.Any]
+      DBParameterGroupFamily.foreach(__v => __obj.update("DBParameterGroupFamily", __v.asInstanceOf[js.Any]))
+      DefaultOnly.foreach(__v => __obj.update("DefaultOnly", __v.asInstanceOf[js.Any]))
+      Engine.foreach(__v => __obj.update("Engine", __v.asInstanceOf[js.Any]))
+      EngineVersion.foreach(__v => __obj.update("EngineVersion", __v.asInstanceOf[js.Any]))
+      Filters.foreach(__v => __obj.update("Filters", __v.asInstanceOf[js.Any]))
+      ListSupportedCharacterSets.foreach(__v => __obj.update("ListSupportedCharacterSets", __v.asInstanceOf[js.Any]))
+      ListSupportedTimezones.foreach(__v => __obj.update("ListSupportedTimezones", __v.asInstanceOf[js.Any]))
+      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
+      MaxRecords.foreach(__v => __obj.update("MaxRecords", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeDBEngineVersionsMessage]
     }
   }
 
@@ -3335,22 +2659,12 @@ package neptune {
         Marker: js.UndefOr[String] = js.undefined,
         MaxRecords: js.UndefOr[IntegerOptional] = js.undefined
     ): DescribeDBInstancesMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "DBInstanceIdentifier" -> DBInstanceIdentifier.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Filters" -> Filters.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Marker" -> Marker.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MaxRecords" -> MaxRecords.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeDBInstancesMessage]
+      val __obj = js.Dictionary.empty[js.Any]
+      DBInstanceIdentifier.foreach(__v => __obj.update("DBInstanceIdentifier", __v.asInstanceOf[js.Any]))
+      Filters.foreach(__v => __obj.update("Filters", __v.asInstanceOf[js.Any]))
+      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
+      MaxRecords.foreach(__v => __obj.update("MaxRecords", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeDBInstancesMessage]
     }
   }
 
@@ -3372,22 +2686,12 @@ package neptune {
         Marker: js.UndefOr[String] = js.undefined,
         MaxRecords: js.UndefOr[IntegerOptional] = js.undefined
     ): DescribeDBParameterGroupsMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "DBParameterGroupName" -> DBParameterGroupName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Filters" -> Filters.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Marker" -> Marker.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MaxRecords" -> MaxRecords.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeDBParameterGroupsMessage]
+      val __obj = js.Dictionary.empty[js.Any]
+      DBParameterGroupName.foreach(__v => __obj.update("DBParameterGroupName", __v.asInstanceOf[js.Any]))
+      Filters.foreach(__v => __obj.update("Filters", __v.asInstanceOf[js.Any]))
+      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
+      MaxRecords.foreach(__v => __obj.update("MaxRecords", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeDBParameterGroupsMessage]
     }
   }
 
@@ -3408,23 +2712,15 @@ package neptune {
         MaxRecords: js.UndefOr[IntegerOptional] = js.undefined,
         Source: js.UndefOr[String] = js.undefined
     ): DescribeDBParametersMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "DBParameterGroupName" -> DBParameterGroupName.asInstanceOf[js.Any],
-        "Filters" -> Filters.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Marker" -> Marker.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MaxRecords" -> MaxRecords.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Source" -> Source.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "DBParameterGroupName" -> DBParameterGroupName.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeDBParametersMessage]
+      Filters.foreach(__v => __obj.update("Filters", __v.asInstanceOf[js.Any]))
+      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
+      MaxRecords.foreach(__v => __obj.update("MaxRecords", __v.asInstanceOf[js.Any]))
+      Source.foreach(__v => __obj.update("Source", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeDBParametersMessage]
     }
   }
 
@@ -3446,22 +2742,12 @@ package neptune {
         Marker: js.UndefOr[String] = js.undefined,
         MaxRecords: js.UndefOr[IntegerOptional] = js.undefined
     ): DescribeDBSubnetGroupsMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "DBSubnetGroupName" -> DBSubnetGroupName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Filters" -> Filters.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Marker" -> Marker.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MaxRecords" -> MaxRecords.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeDBSubnetGroupsMessage]
+      val __obj = js.Dictionary.empty[js.Any]
+      DBSubnetGroupName.foreach(__v => __obj.update("DBSubnetGroupName", __v.asInstanceOf[js.Any]))
+      Filters.foreach(__v => __obj.update("Filters", __v.asInstanceOf[js.Any]))
+      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
+      MaxRecords.foreach(__v => __obj.update("MaxRecords", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeDBSubnetGroupsMessage]
     }
   }
 
@@ -3483,22 +2769,14 @@ package neptune {
         Marker: js.UndefOr[String] = js.undefined,
         MaxRecords: js.UndefOr[IntegerOptional] = js.undefined
     ): DescribeEngineDefaultClusterParametersMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "DBParameterGroupFamily" -> DBParameterGroupFamily.asInstanceOf[js.Any],
-        "Filters" -> Filters.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Marker" -> Marker.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MaxRecords" -> MaxRecords.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "DBParameterGroupFamily" -> DBParameterGroupFamily.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal
-        .applyDynamicNamed("apply")(_fields: _*)
-        .asInstanceOf[DescribeEngineDefaultClusterParametersMessage]
+      Filters.foreach(__v => __obj.update("Filters", __v.asInstanceOf[js.Any]))
+      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
+      MaxRecords.foreach(__v => __obj.update("MaxRecords", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeEngineDefaultClusterParametersMessage]
     }
   }
 
@@ -3511,15 +2789,9 @@ package neptune {
     def apply(
         EngineDefaults: js.UndefOr[EngineDefaults] = js.undefined
     ): DescribeEngineDefaultClusterParametersResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "EngineDefaults" -> EngineDefaults.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal
-        .applyDynamicNamed("apply")(_fields: _*)
-        .asInstanceOf[DescribeEngineDefaultClusterParametersResult]
+      val __obj = js.Dictionary.empty[js.Any]
+      EngineDefaults.foreach(__v => __obj.update("EngineDefaults", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeEngineDefaultClusterParametersResult]
     }
   }
 
@@ -3541,20 +2813,14 @@ package neptune {
         Marker: js.UndefOr[String] = js.undefined,
         MaxRecords: js.UndefOr[IntegerOptional] = js.undefined
     ): DescribeEngineDefaultParametersMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "DBParameterGroupFamily" -> DBParameterGroupFamily.asInstanceOf[js.Any],
-        "Filters" -> Filters.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Marker" -> Marker.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MaxRecords" -> MaxRecords.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "DBParameterGroupFamily" -> DBParameterGroupFamily.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeEngineDefaultParametersMessage]
+      Filters.foreach(__v => __obj.update("Filters", __v.asInstanceOf[js.Any]))
+      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
+      MaxRecords.foreach(__v => __obj.update("MaxRecords", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeEngineDefaultParametersMessage]
     }
   }
 
@@ -3567,13 +2833,9 @@ package neptune {
     def apply(
         EngineDefaults: js.UndefOr[EngineDefaults] = js.undefined
     ): DescribeEngineDefaultParametersResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "EngineDefaults" -> EngineDefaults.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeEngineDefaultParametersResult]
+      val __obj = js.Dictionary.empty[js.Any]
+      EngineDefaults.foreach(__v => __obj.update("EngineDefaults", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeEngineDefaultParametersResult]
     }
   }
 
@@ -3591,16 +2853,10 @@ package neptune {
         Filters: js.UndefOr[FilterList] = js.undefined,
         SourceType: js.UndefOr[String] = js.undefined
     ): DescribeEventCategoriesMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Filters" -> Filters.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SourceType" -> SourceType.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeEventCategoriesMessage]
+      val __obj = js.Dictionary.empty[js.Any]
+      Filters.foreach(__v => __obj.update("Filters", __v.asInstanceOf[js.Any]))
+      SourceType.foreach(__v => __obj.update("SourceType", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeEventCategoriesMessage]
     }
   }
 
@@ -3622,22 +2878,12 @@ package neptune {
         MaxRecords: js.UndefOr[IntegerOptional] = js.undefined,
         SubscriptionName: js.UndefOr[String] = js.undefined
     ): DescribeEventSubscriptionsMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Filters" -> Filters.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Marker" -> Marker.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MaxRecords" -> MaxRecords.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SubscriptionName" -> SubscriptionName.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeEventSubscriptionsMessage]
+      val __obj = js.Dictionary.empty[js.Any]
+      Filters.foreach(__v => __obj.update("Filters", __v.asInstanceOf[js.Any]))
+      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
+      MaxRecords.foreach(__v => __obj.update("MaxRecords", __v.asInstanceOf[js.Any]))
+      SubscriptionName.foreach(__v => __obj.update("SubscriptionName", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeEventSubscriptionsMessage]
     }
   }
 
@@ -3669,37 +2915,17 @@ package neptune {
         SourceType: js.UndefOr[SourceType] = js.undefined,
         StartTime: js.UndefOr[TStamp] = js.undefined
     ): DescribeEventsMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Duration" -> Duration.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "EndTime" -> EndTime.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "EventCategories" -> EventCategories.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Filters" -> Filters.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Marker" -> Marker.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MaxRecords" -> MaxRecords.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SourceIdentifier" -> SourceIdentifier.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SourceType" -> SourceType.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "StartTime" -> StartTime.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeEventsMessage]
+      val __obj = js.Dictionary.empty[js.Any]
+      Duration.foreach(__v => __obj.update("Duration", __v.asInstanceOf[js.Any]))
+      EndTime.foreach(__v => __obj.update("EndTime", __v.asInstanceOf[js.Any]))
+      EventCategories.foreach(__v => __obj.update("EventCategories", __v.asInstanceOf[js.Any]))
+      Filters.foreach(__v => __obj.update("Filters", __v.asInstanceOf[js.Any]))
+      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
+      MaxRecords.foreach(__v => __obj.update("MaxRecords", __v.asInstanceOf[js.Any]))
+      SourceIdentifier.foreach(__v => __obj.update("SourceIdentifier", __v.asInstanceOf[js.Any]))
+      SourceType.foreach(__v => __obj.update("SourceType", __v.asInstanceOf[js.Any]))
+      StartTime.foreach(__v => __obj.update("StartTime", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeEventsMessage]
     }
   }
 
@@ -3729,32 +2955,18 @@ package neptune {
         MaxRecords: js.UndefOr[IntegerOptional] = js.undefined,
         Vpc: js.UndefOr[BooleanOptional] = js.undefined
     ): DescribeOrderableDBInstanceOptionsMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Engine" -> Engine.asInstanceOf[js.Any],
-        "DBInstanceClass" -> DBInstanceClass.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "EngineVersion" -> EngineVersion.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Filters" -> Filters.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "LicenseModel" -> LicenseModel.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Marker" -> Marker.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MaxRecords" -> MaxRecords.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Vpc" -> Vpc.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "Engine" -> Engine.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeOrderableDBInstanceOptionsMessage]
+      DBInstanceClass.foreach(__v => __obj.update("DBInstanceClass", __v.asInstanceOf[js.Any]))
+      EngineVersion.foreach(__v => __obj.update("EngineVersion", __v.asInstanceOf[js.Any]))
+      Filters.foreach(__v => __obj.update("Filters", __v.asInstanceOf[js.Any]))
+      LicenseModel.foreach(__v => __obj.update("LicenseModel", __v.asInstanceOf[js.Any]))
+      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
+      MaxRecords.foreach(__v => __obj.update("MaxRecords", __v.asInstanceOf[js.Any]))
+      Vpc.foreach(__v => __obj.update("Vpc", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeOrderableDBInstanceOptionsMessage]
     }
   }
 
@@ -3776,22 +2988,12 @@ package neptune {
         MaxRecords: js.UndefOr[IntegerOptional] = js.undefined,
         ResourceIdentifier: js.UndefOr[String] = js.undefined
     ): DescribePendingMaintenanceActionsMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Filters" -> Filters.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Marker" -> Marker.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MaxRecords" -> MaxRecords.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ResourceIdentifier" -> ResourceIdentifier.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribePendingMaintenanceActionsMessage]
+      val __obj = js.Dictionary.empty[js.Any]
+      Filters.foreach(__v => __obj.update("Filters", __v.asInstanceOf[js.Any]))
+      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
+      MaxRecords.foreach(__v => __obj.update("MaxRecords", __v.asInstanceOf[js.Any]))
+      ResourceIdentifier.foreach(__v => __obj.update("ResourceIdentifier", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribePendingMaintenanceActionsMessage]
     }
   }
 
@@ -3807,13 +3009,11 @@ package neptune {
     def apply(
         DBInstanceIdentifier: String
     ): DescribeValidDBInstanceModificationsMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "DBInstanceIdentifier" -> DBInstanceIdentifier.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal
-        .applyDynamicNamed("apply")(_fields: _*)
-        .asInstanceOf[DescribeValidDBInstanceModificationsMessage]
+      __obj.asInstanceOf[DescribeValidDBInstanceModificationsMessage]
     }
   }
 
@@ -3826,15 +3026,11 @@ package neptune {
     def apply(
         ValidDBInstanceModificationsMessage: js.UndefOr[ValidDBInstanceModificationsMessage] = js.undefined
     ): DescribeValidDBInstanceModificationsResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ValidDBInstanceModificationsMessage" -> ValidDBInstanceModificationsMessage.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal
-        .applyDynamicNamed("apply")(_fields: _*)
-        .asInstanceOf[DescribeValidDBInstanceModificationsResult]
+      val __obj = js.Dictionary.empty[js.Any]
+      ValidDBInstanceModificationsMessage.foreach(
+        __v => __obj.update("ValidDBInstanceModificationsMessage", __v.asInstanceOf[js.Any])
+      )
+      __obj.asInstanceOf[DescribeValidDBInstanceModificationsResult]
     }
   }
 
@@ -3856,22 +3052,12 @@ package neptune {
         IAMRoleName: js.UndefOr[String] = js.undefined,
         Status: js.UndefOr[String] = js.undefined
     ): DomainMembership = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Domain" -> Domain.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "FQDN" -> FQDN.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "IAMRoleName" -> IAMRoleName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Status" -> Status.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DomainMembership]
+      val __obj = js.Dictionary.empty[js.Any]
+      Domain.foreach(__v => __obj.update("Domain", __v.asInstanceOf[js.Any]))
+      FQDN.foreach(__v => __obj.update("FQDN", __v.asInstanceOf[js.Any]))
+      IAMRoleName.foreach(__v => __obj.update("IAMRoleName", __v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.update("Status", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DomainMembership]
     }
   }
 
@@ -3895,16 +3081,10 @@ package neptune {
         From: js.UndefOr[Double] = js.undefined,
         To: js.UndefOr[Double] = js.undefined
     ): DoubleRange = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "From" -> From.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "To" -> To.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DoubleRange]
+      val __obj = js.Dictionary.empty[js.Any]
+      From.foreach(__v => __obj.update("From", __v.asInstanceOf[js.Any]))
+      To.foreach(__v => __obj.update("To", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DoubleRange]
     }
   }
 
@@ -3927,19 +3107,11 @@ package neptune {
         HostedZoneId: js.UndefOr[String] = js.undefined,
         Port: js.UndefOr[Int] = js.undefined
     ): Endpoint = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Address" -> Address.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "HostedZoneId" -> HostedZoneId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Port" -> Port.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Endpoint]
+      val __obj = js.Dictionary.empty[js.Any]
+      Address.foreach(__v => __obj.update("Address", __v.asInstanceOf[js.Any]))
+      HostedZoneId.foreach(__v => __obj.update("HostedZoneId", __v.asInstanceOf[js.Any]))
+      Port.foreach(__v => __obj.update("Port", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Endpoint]
     }
   }
 
@@ -3959,19 +3131,11 @@ package neptune {
         Marker: js.UndefOr[String] = js.undefined,
         Parameters: js.UndefOr[ParametersList] = js.undefined
     ): EngineDefaults = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "DBParameterGroupFamily" -> DBParameterGroupFamily.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Marker" -> Marker.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Parameters" -> Parameters.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[EngineDefaults]
+      val __obj = js.Dictionary.empty[js.Any]
+      DBParameterGroupFamily.foreach(__v => __obj.update("DBParameterGroupFamily", __v.asInstanceOf[js.Any]))
+      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
+      Parameters.foreach(__v => __obj.update("Parameters", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[EngineDefaults]
     }
   }
 
@@ -3997,28 +3161,14 @@ package neptune {
         SourceIdentifier: js.UndefOr[String] = js.undefined,
         SourceType: js.UndefOr[SourceType] = js.undefined
     ): Event = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Date" -> Date.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "EventCategories" -> EventCategories.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Message" -> Message.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SourceArn" -> SourceArn.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SourceIdentifier" -> SourceIdentifier.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SourceType" -> SourceType.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Event]
+      val __obj = js.Dictionary.empty[js.Any]
+      Date.foreach(__v => __obj.update("Date", __v.asInstanceOf[js.Any]))
+      EventCategories.foreach(__v => __obj.update("EventCategories", __v.asInstanceOf[js.Any]))
+      Message.foreach(__v => __obj.update("Message", __v.asInstanceOf[js.Any]))
+      SourceArn.foreach(__v => __obj.update("SourceArn", __v.asInstanceOf[js.Any]))
+      SourceIdentifier.foreach(__v => __obj.update("SourceIdentifier", __v.asInstanceOf[js.Any]))
+      SourceType.foreach(__v => __obj.update("SourceType", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Event]
     }
   }
 
@@ -4036,16 +3186,10 @@ package neptune {
         EventCategories: js.UndefOr[EventCategoriesList] = js.undefined,
         SourceType: js.UndefOr[String] = js.undefined
     ): EventCategoriesMap = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "EventCategories" -> EventCategories.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SourceType" -> SourceType.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[EventCategoriesMap]
+      val __obj = js.Dictionary.empty[js.Any]
+      EventCategories.foreach(__v => __obj.update("EventCategories", __v.asInstanceOf[js.Any]))
+      SourceType.foreach(__v => __obj.update("SourceType", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[EventCategoriesMap]
     }
   }
 
@@ -4061,13 +3205,9 @@ package neptune {
     def apply(
         EventCategoriesMapList: js.UndefOr[EventCategoriesMapList] = js.undefined
     ): EventCategoriesMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "EventCategoriesMapList" -> EventCategoriesMapList.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[EventCategoriesMessage]
+      val __obj = js.Dictionary.empty[js.Any]
+      EventCategoriesMapList.foreach(__v => __obj.update("EventCategoriesMapList", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[EventCategoriesMessage]
     }
   }
 
@@ -4101,40 +3241,18 @@ package neptune {
         Status: js.UndefOr[String] = js.undefined,
         SubscriptionCreationTime: js.UndefOr[String] = js.undefined
     ): EventSubscription = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "CustSubscriptionId" -> CustSubscriptionId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "CustomerAwsId" -> CustomerAwsId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Enabled" -> Enabled.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "EventCategoriesList" -> EventCategoriesList.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "EventSubscriptionArn" -> EventSubscriptionArn.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SnsTopicArn" -> SnsTopicArn.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SourceIdsList" -> SourceIdsList.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SourceType" -> SourceType.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Status" -> Status.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SubscriptionCreationTime" -> SubscriptionCreationTime.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[EventSubscription]
+      val __obj = js.Dictionary.empty[js.Any]
+      CustSubscriptionId.foreach(__v => __obj.update("CustSubscriptionId", __v.asInstanceOf[js.Any]))
+      CustomerAwsId.foreach(__v => __obj.update("CustomerAwsId", __v.asInstanceOf[js.Any]))
+      Enabled.foreach(__v => __obj.update("Enabled", __v.asInstanceOf[js.Any]))
+      EventCategoriesList.foreach(__v => __obj.update("EventCategoriesList", __v.asInstanceOf[js.Any]))
+      EventSubscriptionArn.foreach(__v => __obj.update("EventSubscriptionArn", __v.asInstanceOf[js.Any]))
+      SnsTopicArn.foreach(__v => __obj.update("SnsTopicArn", __v.asInstanceOf[js.Any]))
+      SourceIdsList.foreach(__v => __obj.update("SourceIdsList", __v.asInstanceOf[js.Any]))
+      SourceType.foreach(__v => __obj.update("SourceType", __v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.update("Status", __v.asInstanceOf[js.Any]))
+      SubscriptionCreationTime.foreach(__v => __obj.update("SubscriptionCreationTime", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[EventSubscription]
     }
   }
 
@@ -4155,16 +3273,10 @@ package neptune {
         EventSubscriptionsList: js.UndefOr[EventSubscriptionsList] = js.undefined,
         Marker: js.UndefOr[String] = js.undefined
     ): EventSubscriptionsMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "EventSubscriptionsList" -> EventSubscriptionsList.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Marker" -> Marker.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[EventSubscriptionsMessage]
+      val __obj = js.Dictionary.empty[js.Any]
+      EventSubscriptionsList.foreach(__v => __obj.update("EventSubscriptionsList", __v.asInstanceOf[js.Any]))
+      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[EventSubscriptionsMessage]
     }
   }
 
@@ -4182,16 +3294,10 @@ package neptune {
         Events: js.UndefOr[EventList] = js.undefined,
         Marker: js.UndefOr[String] = js.undefined
     ): EventsMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Events" -> Events.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Marker" -> Marker.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[EventsMessage]
+      val __obj = js.Dictionary.empty[js.Any]
+      Events.foreach(__v => __obj.update("Events", __v.asInstanceOf[js.Any]))
+      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[EventsMessage]
     }
   }
 
@@ -4209,16 +3315,10 @@ package neptune {
         DBClusterIdentifier: js.UndefOr[String] = js.undefined,
         TargetDBInstanceIdentifier: js.UndefOr[String] = js.undefined
     ): FailoverDBClusterMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "DBClusterIdentifier" -> DBClusterIdentifier.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "TargetDBInstanceIdentifier" -> TargetDBInstanceIdentifier.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[FailoverDBClusterMessage]
+      val __obj = js.Dictionary.empty[js.Any]
+      DBClusterIdentifier.foreach(__v => __obj.update("DBClusterIdentifier", __v.asInstanceOf[js.Any]))
+      TargetDBInstanceIdentifier.foreach(__v => __obj.update("TargetDBInstanceIdentifier", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[FailoverDBClusterMessage]
     }
   }
 
@@ -4231,13 +3331,9 @@ package neptune {
     def apply(
         DBCluster: js.UndefOr[DBCluster] = js.undefined
     ): FailoverDBClusterResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "DBCluster" -> DBCluster.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[FailoverDBClusterResult]
+      val __obj = js.Dictionary.empty[js.Any]
+      DBCluster.foreach(__v => __obj.update("DBCluster", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[FailoverDBClusterResult]
     }
   }
 
@@ -4255,12 +3351,12 @@ package neptune {
         Name: String,
         Values: FilterValueList
     ): Filter = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "Name"   -> Name.asInstanceOf[js.Any],
         "Values" -> Values.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Filter]
+      __obj.asInstanceOf[Filter]
     }
   }
 
@@ -4377,14 +3473,12 @@ package neptune {
         ResourceName: String,
         Filters: js.UndefOr[FilterList] = js.undefined
     ): ListTagsForResourceMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ResourceName" -> ResourceName.asInstanceOf[js.Any],
-        "Filters" -> Filters.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "ResourceName" -> ResourceName.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListTagsForResourceMessage]
+      Filters.foreach(__v => __obj.update("Filters", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListTagsForResourceMessage]
     }
   }
 
@@ -4424,47 +3518,25 @@ package neptune {
         PreferredMaintenanceWindow: js.UndefOr[String] = js.undefined,
         VpcSecurityGroupIds: js.UndefOr[VpcSecurityGroupIdList] = js.undefined
     ): ModifyDBClusterMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "DBClusterIdentifier" -> DBClusterIdentifier.asInstanceOf[js.Any],
-        "ApplyImmediately" -> ApplyImmediately.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "BackupRetentionPeriod" -> BackupRetentionPeriod.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DBClusterParameterGroupName" -> DBClusterParameterGroupName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "EnableIAMDatabaseAuthentication" -> EnableIAMDatabaseAuthentication.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "EngineVersion" -> EngineVersion.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MasterUserPassword" -> MasterUserPassword.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NewDBClusterIdentifier" -> NewDBClusterIdentifier.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "OptionGroupName" -> OptionGroupName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Port" -> Port.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "PreferredBackupWindow" -> PreferredBackupWindow.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "PreferredMaintenanceWindow" -> PreferredMaintenanceWindow.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "VpcSecurityGroupIds" -> VpcSecurityGroupIds.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "DBClusterIdentifier" -> DBClusterIdentifier.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ModifyDBClusterMessage]
+      ApplyImmediately.foreach(__v => __obj.update("ApplyImmediately", __v.asInstanceOf[js.Any]))
+      BackupRetentionPeriod.foreach(__v => __obj.update("BackupRetentionPeriod", __v.asInstanceOf[js.Any]))
+      DBClusterParameterGroupName.foreach(__v => __obj.update("DBClusterParameterGroupName", __v.asInstanceOf[js.Any]))
+      EnableIAMDatabaseAuthentication.foreach(
+        __v => __obj.update("EnableIAMDatabaseAuthentication", __v.asInstanceOf[js.Any])
+      )
+      EngineVersion.foreach(__v => __obj.update("EngineVersion", __v.asInstanceOf[js.Any]))
+      MasterUserPassword.foreach(__v => __obj.update("MasterUserPassword", __v.asInstanceOf[js.Any]))
+      NewDBClusterIdentifier.foreach(__v => __obj.update("NewDBClusterIdentifier", __v.asInstanceOf[js.Any]))
+      OptionGroupName.foreach(__v => __obj.update("OptionGroupName", __v.asInstanceOf[js.Any]))
+      Port.foreach(__v => __obj.update("Port", __v.asInstanceOf[js.Any]))
+      PreferredBackupWindow.foreach(__v => __obj.update("PreferredBackupWindow", __v.asInstanceOf[js.Any]))
+      PreferredMaintenanceWindow.foreach(__v => __obj.update("PreferredMaintenanceWindow", __v.asInstanceOf[js.Any]))
+      VpcSecurityGroupIds.foreach(__v => __obj.update("VpcSecurityGroupIds", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ModifyDBClusterMessage]
     }
   }
 
@@ -4482,12 +3554,12 @@ package neptune {
         DBClusterParameterGroupName: String,
         Parameters: ParametersList
     ): ModifyDBClusterParameterGroupMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "DBClusterParameterGroupName" -> DBClusterParameterGroupName.asInstanceOf[js.Any],
         "Parameters"                  -> Parameters.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ModifyDBClusterParameterGroupMessage]
+      __obj.asInstanceOf[ModifyDBClusterParameterGroupMessage]
     }
   }
 
@@ -4500,13 +3572,9 @@ package neptune {
     def apply(
         DBCluster: js.UndefOr[DBCluster] = js.undefined
     ): ModifyDBClusterResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "DBCluster" -> DBCluster.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ModifyDBClusterResult]
+      val __obj = js.Dictionary.empty[js.Any]
+      DBCluster.foreach(__v => __obj.update("DBCluster", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ModifyDBClusterResult]
     }
   }
 
@@ -4528,18 +3596,14 @@ package neptune {
         ValuesToAdd: js.UndefOr[AttributeValueList] = js.undefined,
         ValuesToRemove: js.UndefOr[AttributeValueList] = js.undefined
     ): ModifyDBClusterSnapshotAttributeMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "AttributeName"               -> AttributeName.asInstanceOf[js.Any],
-        "DBClusterSnapshotIdentifier" -> DBClusterSnapshotIdentifier.asInstanceOf[js.Any],
-        "ValuesToAdd" -> ValuesToAdd.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ValuesToRemove" -> ValuesToRemove.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "DBClusterSnapshotIdentifier" -> DBClusterSnapshotIdentifier.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ModifyDBClusterSnapshotAttributeMessage]
+      ValuesToAdd.foreach(__v => __obj.update("ValuesToAdd", __v.asInstanceOf[js.Any]))
+      ValuesToRemove.foreach(__v => __obj.update("ValuesToRemove", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ModifyDBClusterSnapshotAttributeMessage]
     }
   }
 
@@ -4552,13 +3616,11 @@ package neptune {
     def apply(
         DBClusterSnapshotAttributesResult: js.UndefOr[DBClusterSnapshotAttributesResult] = js.undefined
     ): ModifyDBClusterSnapshotAttributeResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "DBClusterSnapshotAttributesResult" -> DBClusterSnapshotAttributesResult.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ModifyDBClusterSnapshotAttributeResult]
+      val __obj = js.Dictionary.empty[js.Any]
+      DBClusterSnapshotAttributesResult.foreach(
+        __v => __obj.update("DBClusterSnapshotAttributesResult", __v.asInstanceOf[js.Any])
+      )
+      __obj.asInstanceOf[ModifyDBClusterSnapshotAttributeResult]
     }
   }
 
@@ -4644,116 +3706,50 @@ package neptune {
         TdeCredentialPassword: js.UndefOr[String] = js.undefined,
         VpcSecurityGroupIds: js.UndefOr[VpcSecurityGroupIdList] = js.undefined
     ): ModifyDBInstanceMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "DBInstanceIdentifier" -> DBInstanceIdentifier.asInstanceOf[js.Any],
-        "AllocatedStorage" -> AllocatedStorage.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "AllowMajorVersionUpgrade" -> AllowMajorVersionUpgrade.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ApplyImmediately" -> ApplyImmediately.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "AutoMinorVersionUpgrade" -> AutoMinorVersionUpgrade.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "BackupRetentionPeriod" -> BackupRetentionPeriod.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "CACertificateIdentifier" -> CACertificateIdentifier.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "CloudwatchLogsExportConfiguration" -> CloudwatchLogsExportConfiguration.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "CopyTagsToSnapshot" -> CopyTagsToSnapshot.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DBInstanceClass" -> DBInstanceClass.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DBParameterGroupName" -> DBParameterGroupName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DBPortNumber" -> DBPortNumber.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DBSecurityGroups" -> DBSecurityGroups.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DBSubnetGroupName" -> DBSubnetGroupName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Domain" -> Domain.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DomainIAMRoleName" -> DomainIAMRoleName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "EnableIAMDatabaseAuthentication" -> EnableIAMDatabaseAuthentication.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "EnablePerformanceInsights" -> EnablePerformanceInsights.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "EngineVersion" -> EngineVersion.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Iops" -> Iops.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "LicenseModel" -> LicenseModel.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MasterUserPassword" -> MasterUserPassword.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MonitoringInterval" -> MonitoringInterval.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MonitoringRoleArn" -> MonitoringRoleArn.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MultiAZ" -> MultiAZ.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NewDBInstanceIdentifier" -> NewDBInstanceIdentifier.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "OptionGroupName" -> OptionGroupName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "PerformanceInsightsKMSKeyId" -> PerformanceInsightsKMSKeyId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "PreferredBackupWindow" -> PreferredBackupWindow.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "PreferredMaintenanceWindow" -> PreferredMaintenanceWindow.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "PromotionTier" -> PromotionTier.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "PubliclyAccessible" -> PubliclyAccessible.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "StorageType" -> StorageType.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "TdeCredentialArn" -> TdeCredentialArn.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "TdeCredentialPassword" -> TdeCredentialPassword.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "VpcSecurityGroupIds" -> VpcSecurityGroupIds.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "DBInstanceIdentifier" -> DBInstanceIdentifier.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ModifyDBInstanceMessage]
+      AllocatedStorage.foreach(__v => __obj.update("AllocatedStorage", __v.asInstanceOf[js.Any]))
+      AllowMajorVersionUpgrade.foreach(__v => __obj.update("AllowMajorVersionUpgrade", __v.asInstanceOf[js.Any]))
+      ApplyImmediately.foreach(__v => __obj.update("ApplyImmediately", __v.asInstanceOf[js.Any]))
+      AutoMinorVersionUpgrade.foreach(__v => __obj.update("AutoMinorVersionUpgrade", __v.asInstanceOf[js.Any]))
+      BackupRetentionPeriod.foreach(__v => __obj.update("BackupRetentionPeriod", __v.asInstanceOf[js.Any]))
+      CACertificateIdentifier.foreach(__v => __obj.update("CACertificateIdentifier", __v.asInstanceOf[js.Any]))
+      CloudwatchLogsExportConfiguration.foreach(
+        __v => __obj.update("CloudwatchLogsExportConfiguration", __v.asInstanceOf[js.Any])
+      )
+      CopyTagsToSnapshot.foreach(__v => __obj.update("CopyTagsToSnapshot", __v.asInstanceOf[js.Any]))
+      DBInstanceClass.foreach(__v => __obj.update("DBInstanceClass", __v.asInstanceOf[js.Any]))
+      DBParameterGroupName.foreach(__v => __obj.update("DBParameterGroupName", __v.asInstanceOf[js.Any]))
+      DBPortNumber.foreach(__v => __obj.update("DBPortNumber", __v.asInstanceOf[js.Any]))
+      DBSecurityGroups.foreach(__v => __obj.update("DBSecurityGroups", __v.asInstanceOf[js.Any]))
+      DBSubnetGroupName.foreach(__v => __obj.update("DBSubnetGroupName", __v.asInstanceOf[js.Any]))
+      Domain.foreach(__v => __obj.update("Domain", __v.asInstanceOf[js.Any]))
+      DomainIAMRoleName.foreach(__v => __obj.update("DomainIAMRoleName", __v.asInstanceOf[js.Any]))
+      EnableIAMDatabaseAuthentication.foreach(
+        __v => __obj.update("EnableIAMDatabaseAuthentication", __v.asInstanceOf[js.Any])
+      )
+      EnablePerformanceInsights.foreach(__v => __obj.update("EnablePerformanceInsights", __v.asInstanceOf[js.Any]))
+      EngineVersion.foreach(__v => __obj.update("EngineVersion", __v.asInstanceOf[js.Any]))
+      Iops.foreach(__v => __obj.update("Iops", __v.asInstanceOf[js.Any]))
+      LicenseModel.foreach(__v => __obj.update("LicenseModel", __v.asInstanceOf[js.Any]))
+      MasterUserPassword.foreach(__v => __obj.update("MasterUserPassword", __v.asInstanceOf[js.Any]))
+      MonitoringInterval.foreach(__v => __obj.update("MonitoringInterval", __v.asInstanceOf[js.Any]))
+      MonitoringRoleArn.foreach(__v => __obj.update("MonitoringRoleArn", __v.asInstanceOf[js.Any]))
+      MultiAZ.foreach(__v => __obj.update("MultiAZ", __v.asInstanceOf[js.Any]))
+      NewDBInstanceIdentifier.foreach(__v => __obj.update("NewDBInstanceIdentifier", __v.asInstanceOf[js.Any]))
+      OptionGroupName.foreach(__v => __obj.update("OptionGroupName", __v.asInstanceOf[js.Any]))
+      PerformanceInsightsKMSKeyId.foreach(__v => __obj.update("PerformanceInsightsKMSKeyId", __v.asInstanceOf[js.Any]))
+      PreferredBackupWindow.foreach(__v => __obj.update("PreferredBackupWindow", __v.asInstanceOf[js.Any]))
+      PreferredMaintenanceWindow.foreach(__v => __obj.update("PreferredMaintenanceWindow", __v.asInstanceOf[js.Any]))
+      PromotionTier.foreach(__v => __obj.update("PromotionTier", __v.asInstanceOf[js.Any]))
+      PubliclyAccessible.foreach(__v => __obj.update("PubliclyAccessible", __v.asInstanceOf[js.Any]))
+      StorageType.foreach(__v => __obj.update("StorageType", __v.asInstanceOf[js.Any]))
+      TdeCredentialArn.foreach(__v => __obj.update("TdeCredentialArn", __v.asInstanceOf[js.Any]))
+      TdeCredentialPassword.foreach(__v => __obj.update("TdeCredentialPassword", __v.asInstanceOf[js.Any]))
+      VpcSecurityGroupIds.foreach(__v => __obj.update("VpcSecurityGroupIds", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ModifyDBInstanceMessage]
     }
   }
 
@@ -4766,13 +3762,9 @@ package neptune {
     def apply(
         DBInstance: js.UndefOr[DBInstance] = js.undefined
     ): ModifyDBInstanceResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "DBInstance" -> DBInstance.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ModifyDBInstanceResult]
+      val __obj = js.Dictionary.empty[js.Any]
+      DBInstance.foreach(__v => __obj.update("DBInstance", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ModifyDBInstanceResult]
     }
   }
 
@@ -4790,12 +3782,12 @@ package neptune {
         DBParameterGroupName: String,
         Parameters: ParametersList
     ): ModifyDBParameterGroupMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "DBParameterGroupName" -> DBParameterGroupName.asInstanceOf[js.Any],
         "Parameters"           -> Parameters.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ModifyDBParameterGroupMessage]
+      __obj.asInstanceOf[ModifyDBParameterGroupMessage]
     }
   }
 
@@ -4815,15 +3807,13 @@ package neptune {
         SubnetIds: SubnetIdentifierList,
         DBSubnetGroupDescription: js.UndefOr[String] = js.undefined
     ): ModifyDBSubnetGroupMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "DBSubnetGroupName" -> DBSubnetGroupName.asInstanceOf[js.Any],
-        "SubnetIds"         -> SubnetIds.asInstanceOf[js.Any],
-        "DBSubnetGroupDescription" -> DBSubnetGroupDescription.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "SubnetIds"         -> SubnetIds.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ModifyDBSubnetGroupMessage]
+      DBSubnetGroupDescription.foreach(__v => __obj.update("DBSubnetGroupDescription", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ModifyDBSubnetGroupMessage]
     }
   }
 
@@ -4836,13 +3826,9 @@ package neptune {
     def apply(
         DBSubnetGroup: js.UndefOr[DBSubnetGroup] = js.undefined
     ): ModifyDBSubnetGroupResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "DBSubnetGroup" -> DBSubnetGroup.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ModifyDBSubnetGroupResult]
+      val __obj = js.Dictionary.empty[js.Any]
+      DBSubnetGroup.foreach(__v => __obj.update("DBSubnetGroup", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ModifyDBSubnetGroupResult]
     }
   }
 
@@ -4866,23 +3852,15 @@ package neptune {
         SnsTopicArn: js.UndefOr[String] = js.undefined,
         SourceType: js.UndefOr[String] = js.undefined
     ): ModifyEventSubscriptionMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "SubscriptionName" -> SubscriptionName.asInstanceOf[js.Any],
-        "Enabled" -> Enabled.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "EventCategories" -> EventCategories.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SnsTopicArn" -> SnsTopicArn.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SourceType" -> SourceType.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "SubscriptionName" -> SubscriptionName.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ModifyEventSubscriptionMessage]
+      Enabled.foreach(__v => __obj.update("Enabled", __v.asInstanceOf[js.Any]))
+      EventCategories.foreach(__v => __obj.update("EventCategories", __v.asInstanceOf[js.Any]))
+      SnsTopicArn.foreach(__v => __obj.update("SnsTopicArn", __v.asInstanceOf[js.Any]))
+      SourceType.foreach(__v => __obj.update("SourceType", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ModifyEventSubscriptionMessage]
     }
   }
 
@@ -4895,13 +3873,9 @@ package neptune {
     def apply(
         EventSubscription: js.UndefOr[EventSubscription] = js.undefined
     ): ModifyEventSubscriptionResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "EventSubscription" -> EventSubscription.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ModifyEventSubscriptionResult]
+      val __obj = js.Dictionary.empty[js.Any]
+      EventSubscription.foreach(__v => __obj.update("EventSubscription", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ModifyEventSubscriptionResult]
     }
   }
 
@@ -4919,16 +3893,10 @@ package neptune {
         OptionGroupName: js.UndefOr[String] = js.undefined,
         Status: js.UndefOr[String] = js.undefined
     ): OptionGroupMembership = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "OptionGroupName" -> OptionGroupName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Status" -> Status.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[OptionGroupMembership]
+      val __obj = js.Dictionary.empty[js.Any]
+      OptionGroupName.foreach(__v => __obj.update("OptionGroupName", __v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.update("Status", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[OptionGroupMembership]
     }
   }
 
@@ -4986,70 +3954,30 @@ package neptune {
         SupportsStorageEncryption: js.UndefOr[Boolean] = js.undefined,
         Vpc: js.UndefOr[Boolean] = js.undefined
     ): OrderableDBInstanceOption = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "AvailabilityZones" -> AvailabilityZones.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DBInstanceClass" -> DBInstanceClass.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Engine" -> Engine.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "EngineVersion" -> EngineVersion.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "LicenseModel" -> LicenseModel.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MaxIopsPerDbInstance" -> MaxIopsPerDbInstance.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MaxIopsPerGib" -> MaxIopsPerGib.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MaxStorageSize" -> MaxStorageSize.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MinIopsPerDbInstance" -> MinIopsPerDbInstance.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MinIopsPerGib" -> MinIopsPerGib.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MinStorageSize" -> MinStorageSize.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MultiAZCapable" -> MultiAZCapable.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ReadReplicaCapable" -> ReadReplicaCapable.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "StorageType" -> StorageType.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SupportsEnhancedMonitoring" -> SupportsEnhancedMonitoring.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SupportsIAMDatabaseAuthentication" -> SupportsIAMDatabaseAuthentication.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SupportsIops" -> SupportsIops.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SupportsPerformanceInsights" -> SupportsPerformanceInsights.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SupportsStorageEncryption" -> SupportsStorageEncryption.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Vpc" -> Vpc.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[OrderableDBInstanceOption]
+      val __obj = js.Dictionary.empty[js.Any]
+      AvailabilityZones.foreach(__v => __obj.update("AvailabilityZones", __v.asInstanceOf[js.Any]))
+      DBInstanceClass.foreach(__v => __obj.update("DBInstanceClass", __v.asInstanceOf[js.Any]))
+      Engine.foreach(__v => __obj.update("Engine", __v.asInstanceOf[js.Any]))
+      EngineVersion.foreach(__v => __obj.update("EngineVersion", __v.asInstanceOf[js.Any]))
+      LicenseModel.foreach(__v => __obj.update("LicenseModel", __v.asInstanceOf[js.Any]))
+      MaxIopsPerDbInstance.foreach(__v => __obj.update("MaxIopsPerDbInstance", __v.asInstanceOf[js.Any]))
+      MaxIopsPerGib.foreach(__v => __obj.update("MaxIopsPerGib", __v.asInstanceOf[js.Any]))
+      MaxStorageSize.foreach(__v => __obj.update("MaxStorageSize", __v.asInstanceOf[js.Any]))
+      MinIopsPerDbInstance.foreach(__v => __obj.update("MinIopsPerDbInstance", __v.asInstanceOf[js.Any]))
+      MinIopsPerGib.foreach(__v => __obj.update("MinIopsPerGib", __v.asInstanceOf[js.Any]))
+      MinStorageSize.foreach(__v => __obj.update("MinStorageSize", __v.asInstanceOf[js.Any]))
+      MultiAZCapable.foreach(__v => __obj.update("MultiAZCapable", __v.asInstanceOf[js.Any]))
+      ReadReplicaCapable.foreach(__v => __obj.update("ReadReplicaCapable", __v.asInstanceOf[js.Any]))
+      StorageType.foreach(__v => __obj.update("StorageType", __v.asInstanceOf[js.Any]))
+      SupportsEnhancedMonitoring.foreach(__v => __obj.update("SupportsEnhancedMonitoring", __v.asInstanceOf[js.Any]))
+      SupportsIAMDatabaseAuthentication.foreach(
+        __v => __obj.update("SupportsIAMDatabaseAuthentication", __v.asInstanceOf[js.Any])
+      )
+      SupportsIops.foreach(__v => __obj.update("SupportsIops", __v.asInstanceOf[js.Any]))
+      SupportsPerformanceInsights.foreach(__v => __obj.update("SupportsPerformanceInsights", __v.asInstanceOf[js.Any]))
+      SupportsStorageEncryption.foreach(__v => __obj.update("SupportsStorageEncryption", __v.asInstanceOf[js.Any]))
+      Vpc.foreach(__v => __obj.update("Vpc", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[OrderableDBInstanceOption]
     }
   }
 
@@ -5067,16 +3995,10 @@ package neptune {
         Marker: js.UndefOr[String] = js.undefined,
         OrderableDBInstanceOptions: js.UndefOr[OrderableDBInstanceOptionsList] = js.undefined
     ): OrderableDBInstanceOptionsMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Marker" -> Marker.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "OrderableDBInstanceOptions" -> OrderableDBInstanceOptions.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[OrderableDBInstanceOptionsMessage]
+      val __obj = js.Dictionary.empty[js.Any]
+      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
+      OrderableDBInstanceOptions.foreach(__v => __obj.update("OrderableDBInstanceOptions", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[OrderableDBInstanceOptionsMessage]
     }
   }
 
@@ -5111,40 +4033,18 @@ package neptune {
         ParameterValue: js.UndefOr[String] = js.undefined,
         Source: js.UndefOr[String] = js.undefined
     ): Parameter = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "AllowedValues" -> AllowedValues.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ApplyMethod" -> ApplyMethod.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ApplyType" -> ApplyType.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DataType" -> DataType.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Description" -> Description.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "IsModifiable" -> IsModifiable.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MinimumEngineVersion" -> MinimumEngineVersion.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ParameterName" -> ParameterName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ParameterValue" -> ParameterValue.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Source" -> Source.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Parameter]
+      val __obj = js.Dictionary.empty[js.Any]
+      AllowedValues.foreach(__v => __obj.update("AllowedValues", __v.asInstanceOf[js.Any]))
+      ApplyMethod.foreach(__v => __obj.update("ApplyMethod", __v.asInstanceOf[js.Any]))
+      ApplyType.foreach(__v => __obj.update("ApplyType", __v.asInstanceOf[js.Any]))
+      DataType.foreach(__v => __obj.update("DataType", __v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
+      IsModifiable.foreach(__v => __obj.update("IsModifiable", __v.asInstanceOf[js.Any]))
+      MinimumEngineVersion.foreach(__v => __obj.update("MinimumEngineVersion", __v.asInstanceOf[js.Any]))
+      ParameterName.foreach(__v => __obj.update("ParameterName", __v.asInstanceOf[js.Any]))
+      ParameterValue.foreach(__v => __obj.update("ParameterValue", __v.asInstanceOf[js.Any]))
+      Source.foreach(__v => __obj.update("Source", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Parameter]
     }
   }
 
@@ -5162,16 +4062,10 @@ package neptune {
         LogTypesToDisable: js.UndefOr[LogTypeList] = js.undefined,
         LogTypesToEnable: js.UndefOr[LogTypeList] = js.undefined
     ): PendingCloudwatchLogsExports = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "LogTypesToDisable" -> LogTypesToDisable.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "LogTypesToEnable" -> LogTypesToEnable.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PendingCloudwatchLogsExports]
+      val __obj = js.Dictionary.empty[js.Any]
+      LogTypesToDisable.foreach(__v => __obj.update("LogTypesToDisable", __v.asInstanceOf[js.Any]))
+      LogTypesToEnable.foreach(__v => __obj.update("LogTypesToEnable", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PendingCloudwatchLogsExports]
     }
   }
 
@@ -5197,28 +4091,14 @@ package neptune {
         ForcedApplyDate: js.UndefOr[TStamp] = js.undefined,
         OptInStatus: js.UndefOr[String] = js.undefined
     ): PendingMaintenanceAction = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Action" -> Action.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "AutoAppliedAfterDate" -> AutoAppliedAfterDate.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "CurrentApplyDate" -> CurrentApplyDate.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Description" -> Description.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ForcedApplyDate" -> ForcedApplyDate.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "OptInStatus" -> OptInStatus.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PendingMaintenanceAction]
+      val __obj = js.Dictionary.empty[js.Any]
+      Action.foreach(__v => __obj.update("Action", __v.asInstanceOf[js.Any]))
+      AutoAppliedAfterDate.foreach(__v => __obj.update("AutoAppliedAfterDate", __v.asInstanceOf[js.Any]))
+      CurrentApplyDate.foreach(__v => __obj.update("CurrentApplyDate", __v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
+      ForcedApplyDate.foreach(__v => __obj.update("ForcedApplyDate", __v.asInstanceOf[js.Any]))
+      OptInStatus.foreach(__v => __obj.update("OptInStatus", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PendingMaintenanceAction]
     }
   }
 
@@ -5236,16 +4116,10 @@ package neptune {
         Marker: js.UndefOr[String] = js.undefined,
         PendingMaintenanceActions: js.UndefOr[PendingMaintenanceActions] = js.undefined
     ): PendingMaintenanceActionsMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Marker" -> Marker.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "PendingMaintenanceActions" -> PendingMaintenanceActions.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PendingMaintenanceActionsMessage]
+      val __obj = js.Dictionary.empty[js.Any]
+      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
+      PendingMaintenanceActions.foreach(__v => __obj.update("PendingMaintenanceActions", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PendingMaintenanceActionsMessage]
     }
   }
 
@@ -5287,52 +4161,24 @@ package neptune {
         Port: js.UndefOr[IntegerOptional] = js.undefined,
         StorageType: js.UndefOr[String] = js.undefined
     ): PendingModifiedValues = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "AllocatedStorage" -> AllocatedStorage.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "BackupRetentionPeriod" -> BackupRetentionPeriod.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "CACertificateIdentifier" -> CACertificateIdentifier.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DBInstanceClass" -> DBInstanceClass.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DBInstanceIdentifier" -> DBInstanceIdentifier.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DBSubnetGroupName" -> DBSubnetGroupName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "EngineVersion" -> EngineVersion.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Iops" -> Iops.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "LicenseModel" -> LicenseModel.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MasterUserPassword" -> MasterUserPassword.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MultiAZ" -> MultiAZ.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "PendingCloudwatchLogsExports" -> PendingCloudwatchLogsExports.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Port" -> Port.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "StorageType" -> StorageType.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PendingModifiedValues]
+      val __obj = js.Dictionary.empty[js.Any]
+      AllocatedStorage.foreach(__v => __obj.update("AllocatedStorage", __v.asInstanceOf[js.Any]))
+      BackupRetentionPeriod.foreach(__v => __obj.update("BackupRetentionPeriod", __v.asInstanceOf[js.Any]))
+      CACertificateIdentifier.foreach(__v => __obj.update("CACertificateIdentifier", __v.asInstanceOf[js.Any]))
+      DBInstanceClass.foreach(__v => __obj.update("DBInstanceClass", __v.asInstanceOf[js.Any]))
+      DBInstanceIdentifier.foreach(__v => __obj.update("DBInstanceIdentifier", __v.asInstanceOf[js.Any]))
+      DBSubnetGroupName.foreach(__v => __obj.update("DBSubnetGroupName", __v.asInstanceOf[js.Any]))
+      EngineVersion.foreach(__v => __obj.update("EngineVersion", __v.asInstanceOf[js.Any]))
+      Iops.foreach(__v => __obj.update("Iops", __v.asInstanceOf[js.Any]))
+      LicenseModel.foreach(__v => __obj.update("LicenseModel", __v.asInstanceOf[js.Any]))
+      MasterUserPassword.foreach(__v => __obj.update("MasterUserPassword", __v.asInstanceOf[js.Any]))
+      MultiAZ.foreach(__v => __obj.update("MultiAZ", __v.asInstanceOf[js.Any]))
+      PendingCloudwatchLogsExports.foreach(
+        __v => __obj.update("PendingCloudwatchLogsExports", __v.asInstanceOf[js.Any])
+      )
+      Port.foreach(__v => __obj.update("Port", __v.asInstanceOf[js.Any]))
+      StorageType.foreach(__v => __obj.update("StorageType", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PendingModifiedValues]
     }
   }
 
@@ -5348,11 +4194,11 @@ package neptune {
     def apply(
         DBClusterIdentifier: String
     ): PromoteReadReplicaDBClusterMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "DBClusterIdentifier" -> DBClusterIdentifier.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PromoteReadReplicaDBClusterMessage]
+      __obj.asInstanceOf[PromoteReadReplicaDBClusterMessage]
     }
   }
 
@@ -5365,13 +4211,9 @@ package neptune {
     def apply(
         DBCluster: js.UndefOr[DBCluster] = js.undefined
     ): PromoteReadReplicaDBClusterResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "DBCluster" -> DBCluster.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PromoteReadReplicaDBClusterResult]
+      val __obj = js.Dictionary.empty[js.Any]
+      DBCluster.foreach(__v => __obj.update("DBCluster", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PromoteReadReplicaDBClusterResult]
     }
   }
 
@@ -5397,19 +4239,11 @@ package neptune {
         Step: js.UndefOr[IntegerOptional] = js.undefined,
         To: js.UndefOr[Int] = js.undefined
     ): Range = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "From" -> From.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Step" -> Step.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "To" -> To.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Range]
+      val __obj = js.Dictionary.empty[js.Any]
+      From.foreach(__v => __obj.update("From", __v.asInstanceOf[js.Any]))
+      Step.foreach(__v => __obj.update("Step", __v.asInstanceOf[js.Any]))
+      To.foreach(__v => __obj.update("To", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Range]
     }
   }
 
@@ -5427,14 +4261,12 @@ package neptune {
         DBInstanceIdentifier: String,
         ForceFailover: js.UndefOr[BooleanOptional] = js.undefined
     ): RebootDBInstanceMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "DBInstanceIdentifier" -> DBInstanceIdentifier.asInstanceOf[js.Any],
-        "ForceFailover" -> ForceFailover.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "DBInstanceIdentifier" -> DBInstanceIdentifier.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RebootDBInstanceMessage]
+      ForceFailover.foreach(__v => __obj.update("ForceFailover", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[RebootDBInstanceMessage]
     }
   }
 
@@ -5447,13 +4279,9 @@ package neptune {
     def apply(
         DBInstance: js.UndefOr[DBInstance] = js.undefined
     ): RebootDBInstanceResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "DBInstance" -> DBInstance.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RebootDBInstanceResult]
+      val __obj = js.Dictionary.empty[js.Any]
+      DBInstance.foreach(__v => __obj.update("DBInstance", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[RebootDBInstanceResult]
     }
   }
 
@@ -5468,12 +4296,12 @@ package neptune {
         DBClusterIdentifier: String,
         RoleArn: String
     ): RemoveRoleFromDBClusterMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "DBClusterIdentifier" -> DBClusterIdentifier.asInstanceOf[js.Any],
         "RoleArn"             -> RoleArn.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RemoveRoleFromDBClusterMessage]
+      __obj.asInstanceOf[RemoveRoleFromDBClusterMessage]
     }
   }
 
@@ -5491,14 +4319,12 @@ package neptune {
         SourceIdentifier: String,
         SubscriptionName: String
     ): RemoveSourceIdentifierFromSubscriptionMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "SourceIdentifier" -> SourceIdentifier.asInstanceOf[js.Any],
         "SubscriptionName" -> SubscriptionName.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal
-        .applyDynamicNamed("apply")(_fields: _*)
-        .asInstanceOf[RemoveSourceIdentifierFromSubscriptionMessage]
+      __obj.asInstanceOf[RemoveSourceIdentifierFromSubscriptionMessage]
     }
   }
 
@@ -5511,15 +4337,9 @@ package neptune {
     def apply(
         EventSubscription: js.UndefOr[EventSubscription] = js.undefined
     ): RemoveSourceIdentifierFromSubscriptionResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "EventSubscription" -> EventSubscription.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal
-        .applyDynamicNamed("apply")(_fields: _*)
-        .asInstanceOf[RemoveSourceIdentifierFromSubscriptionResult]
+      val __obj = js.Dictionary.empty[js.Any]
+      EventSubscription.foreach(__v => __obj.update("EventSubscription", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[RemoveSourceIdentifierFromSubscriptionResult]
     }
   }
 
@@ -5537,12 +4357,12 @@ package neptune {
         ResourceName: String,
         TagKeys: KeyList
     ): RemoveTagsFromResourceMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ResourceName" -> ResourceName.asInstanceOf[js.Any],
         "TagKeys"      -> TagKeys.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RemoveTagsFromResourceMessage]
+      __obj.asInstanceOf[RemoveTagsFromResourceMessage]
     }
   }
 
@@ -5562,17 +4382,13 @@ package neptune {
         Parameters: js.UndefOr[ParametersList] = js.undefined,
         ResetAllParameters: js.UndefOr[Boolean] = js.undefined
     ): ResetDBClusterParameterGroupMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "DBClusterParameterGroupName" -> DBClusterParameterGroupName.asInstanceOf[js.Any],
-        "Parameters" -> Parameters.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ResetAllParameters" -> ResetAllParameters.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "DBClusterParameterGroupName" -> DBClusterParameterGroupName.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ResetDBClusterParameterGroupMessage]
+      Parameters.foreach(__v => __obj.update("Parameters", __v.asInstanceOf[js.Any]))
+      ResetAllParameters.foreach(__v => __obj.update("ResetAllParameters", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ResetDBClusterParameterGroupMessage]
     }
   }
 
@@ -5592,17 +4408,13 @@ package neptune {
         Parameters: js.UndefOr[ParametersList] = js.undefined,
         ResetAllParameters: js.UndefOr[Boolean] = js.undefined
     ): ResetDBParameterGroupMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "DBParameterGroupName" -> DBParameterGroupName.asInstanceOf[js.Any],
-        "Parameters" -> Parameters.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ResetAllParameters" -> ResetAllParameters.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "DBParameterGroupName" -> DBParameterGroupName.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ResetDBParameterGroupMessage]
+      Parameters.foreach(__v => __obj.update("Parameters", __v.asInstanceOf[js.Any]))
+      ResetAllParameters.foreach(__v => __obj.update("ResetAllParameters", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ResetDBParameterGroupMessage]
     }
   }
 
@@ -5626,16 +4438,12 @@ package neptune {
         PendingMaintenanceActionDetails: js.UndefOr[PendingMaintenanceActionDetails] = js.undefined,
         ResourceIdentifier: js.UndefOr[String] = js.undefined
     ): ResourcePendingMaintenanceActions = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "PendingMaintenanceActionDetails" -> PendingMaintenanceActionDetails.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ResourceIdentifier" -> ResourceIdentifier.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ResourcePendingMaintenanceActions]
+      val __obj = js.Dictionary.empty[js.Any]
+      PendingMaintenanceActionDetails.foreach(
+        __v => __obj.update("PendingMaintenanceActionDetails", __v.asInstanceOf[js.Any])
+      )
+      ResourceIdentifier.foreach(__v => __obj.update("ResourceIdentifier", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ResourcePendingMaintenanceActions]
     }
   }
 
@@ -5675,43 +4483,25 @@ package neptune {
         Tags: js.UndefOr[TagList] = js.undefined,
         VpcSecurityGroupIds: js.UndefOr[VpcSecurityGroupIdList] = js.undefined
     ): RestoreDBClusterFromSnapshotMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "DBClusterIdentifier" -> DBClusterIdentifier.asInstanceOf[js.Any],
         "Engine"              -> Engine.asInstanceOf[js.Any],
-        "SnapshotIdentifier"  -> SnapshotIdentifier.asInstanceOf[js.Any],
-        "AvailabilityZones" -> AvailabilityZones.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DBSubnetGroupName" -> DBSubnetGroupName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DatabaseName" -> DatabaseName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "EnableIAMDatabaseAuthentication" -> EnableIAMDatabaseAuthentication.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "EngineVersion" -> EngineVersion.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "KmsKeyId" -> KmsKeyId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "OptionGroupName" -> OptionGroupName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Port" -> Port.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Tags" -> Tags.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "VpcSecurityGroupIds" -> VpcSecurityGroupIds.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "SnapshotIdentifier"  -> SnapshotIdentifier.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RestoreDBClusterFromSnapshotMessage]
+      AvailabilityZones.foreach(__v => __obj.update("AvailabilityZones", __v.asInstanceOf[js.Any]))
+      DBSubnetGroupName.foreach(__v => __obj.update("DBSubnetGroupName", __v.asInstanceOf[js.Any]))
+      DatabaseName.foreach(__v => __obj.update("DatabaseName", __v.asInstanceOf[js.Any]))
+      EnableIAMDatabaseAuthentication.foreach(
+        __v => __obj.update("EnableIAMDatabaseAuthentication", __v.asInstanceOf[js.Any])
+      )
+      EngineVersion.foreach(__v => __obj.update("EngineVersion", __v.asInstanceOf[js.Any]))
+      KmsKeyId.foreach(__v => __obj.update("KmsKeyId", __v.asInstanceOf[js.Any]))
+      OptionGroupName.foreach(__v => __obj.update("OptionGroupName", __v.asInstanceOf[js.Any]))
+      Port.foreach(__v => __obj.update("Port", __v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
+      VpcSecurityGroupIds.foreach(__v => __obj.update("VpcSecurityGroupIds", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[RestoreDBClusterFromSnapshotMessage]
     }
   }
 
@@ -5724,13 +4514,9 @@ package neptune {
     def apply(
         DBCluster: js.UndefOr[DBCluster] = js.undefined
     ): RestoreDBClusterFromSnapshotResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "DBCluster" -> DBCluster.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RestoreDBClusterFromSnapshotResult]
+      val __obj = js.Dictionary.empty[js.Any]
+      DBCluster.foreach(__v => __obj.update("DBCluster", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[RestoreDBClusterFromSnapshotResult]
     }
   }
 
@@ -5768,42 +4554,24 @@ package neptune {
         UseLatestRestorableTime: js.UndefOr[Boolean] = js.undefined,
         VpcSecurityGroupIds: js.UndefOr[VpcSecurityGroupIdList] = js.undefined
     ): RestoreDBClusterToPointInTimeMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "DBClusterIdentifier"       -> DBClusterIdentifier.asInstanceOf[js.Any],
-        "SourceDBClusterIdentifier" -> SourceDBClusterIdentifier.asInstanceOf[js.Any],
-        "DBSubnetGroupName" -> DBSubnetGroupName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "EnableIAMDatabaseAuthentication" -> EnableIAMDatabaseAuthentication.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "KmsKeyId" -> KmsKeyId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "OptionGroupName" -> OptionGroupName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Port" -> Port.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "RestoreToTime" -> RestoreToTime.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "RestoreType" -> RestoreType.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Tags" -> Tags.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "UseLatestRestorableTime" -> UseLatestRestorableTime.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "VpcSecurityGroupIds" -> VpcSecurityGroupIds.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "SourceDBClusterIdentifier" -> SourceDBClusterIdentifier.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RestoreDBClusterToPointInTimeMessage]
+      DBSubnetGroupName.foreach(__v => __obj.update("DBSubnetGroupName", __v.asInstanceOf[js.Any]))
+      EnableIAMDatabaseAuthentication.foreach(
+        __v => __obj.update("EnableIAMDatabaseAuthentication", __v.asInstanceOf[js.Any])
+      )
+      KmsKeyId.foreach(__v => __obj.update("KmsKeyId", __v.asInstanceOf[js.Any]))
+      OptionGroupName.foreach(__v => __obj.update("OptionGroupName", __v.asInstanceOf[js.Any]))
+      Port.foreach(__v => __obj.update("Port", __v.asInstanceOf[js.Any]))
+      RestoreToTime.foreach(__v => __obj.update("RestoreToTime", __v.asInstanceOf[js.Any]))
+      RestoreType.foreach(__v => __obj.update("RestoreType", __v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
+      UseLatestRestorableTime.foreach(__v => __obj.update("UseLatestRestorableTime", __v.asInstanceOf[js.Any]))
+      VpcSecurityGroupIds.foreach(__v => __obj.update("VpcSecurityGroupIds", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[RestoreDBClusterToPointInTimeMessage]
     }
   }
 
@@ -5816,13 +4584,9 @@ package neptune {
     def apply(
         DBCluster: js.UndefOr[DBCluster] = js.undefined
     ): RestoreDBClusterToPointInTimeResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "DBCluster" -> DBCluster.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RestoreDBClusterToPointInTimeResult]
+      val __obj = js.Dictionary.empty[js.Any]
+      DBCluster.foreach(__v => __obj.update("DBCluster", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[RestoreDBClusterToPointInTimeResult]
     }
   }
 
@@ -5896,19 +4660,11 @@ package neptune {
         SubnetIdentifier: js.UndefOr[String] = js.undefined,
         SubnetStatus: js.UndefOr[String] = js.undefined
     ): Subnet = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "SubnetAvailabilityZone" -> SubnetAvailabilityZone.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SubnetIdentifier" -> SubnetIdentifier.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SubnetStatus" -> SubnetStatus.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Subnet]
+      val __obj = js.Dictionary.empty[js.Any]
+      SubnetAvailabilityZone.foreach(__v => __obj.update("SubnetAvailabilityZone", __v.asInstanceOf[js.Any]))
+      SubnetIdentifier.foreach(__v => __obj.update("SubnetIdentifier", __v.asInstanceOf[js.Any]))
+      SubnetStatus.foreach(__v => __obj.update("SubnetStatus", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Subnet]
     }
   }
 
@@ -5941,16 +4697,10 @@ package neptune {
         Key: js.UndefOr[String] = js.undefined,
         Value: js.UndefOr[String] = js.undefined
     ): Tag = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Key" -> Key.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Value" -> Value.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Tag]
+      val __obj = js.Dictionary.empty[js.Any]
+      Key.foreach(__v => __obj.update("Key", __v.asInstanceOf[js.Any]))
+      Value.foreach(__v => __obj.update("Value", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Tag]
     }
   }
 
@@ -5966,13 +4716,9 @@ package neptune {
     def apply(
         TagList: js.UndefOr[TagList] = js.undefined
     ): TagListMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "TagList" -> TagList.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[TagListMessage]
+      val __obj = js.Dictionary.empty[js.Any]
+      TagList.foreach(__v => __obj.update("TagList", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[TagListMessage]
     }
   }
 
@@ -5988,13 +4734,9 @@ package neptune {
     def apply(
         TimezoneName: js.UndefOr[String] = js.undefined
     ): Timezone = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "TimezoneName" -> TimezoneName.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Timezone]
+      val __obj = js.Dictionary.empty[js.Any]
+      TimezoneName.foreach(__v => __obj.update("TimezoneName", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Timezone]
     }
   }
 
@@ -6018,25 +4760,13 @@ package neptune {
         EngineVersion: js.UndefOr[String] = js.undefined,
         IsMajorVersionUpgrade: js.UndefOr[Boolean] = js.undefined
     ): UpgradeTarget = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "AutoUpgrade" -> AutoUpgrade.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Description" -> Description.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Engine" -> Engine.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "EngineVersion" -> EngineVersion.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "IsMajorVersionUpgrade" -> IsMajorVersionUpgrade.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpgradeTarget]
+      val __obj = js.Dictionary.empty[js.Any]
+      AutoUpgrade.foreach(__v => __obj.update("AutoUpgrade", __v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
+      Engine.foreach(__v => __obj.update("Engine", __v.asInstanceOf[js.Any]))
+      EngineVersion.foreach(__v => __obj.update("EngineVersion", __v.asInstanceOf[js.Any]))
+      IsMajorVersionUpgrade.foreach(__v => __obj.update("IsMajorVersionUpgrade", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpgradeTarget]
     }
   }
 
@@ -6052,13 +4782,9 @@ package neptune {
     def apply(
         Storage: js.UndefOr[ValidStorageOptionsList] = js.undefined
     ): ValidDBInstanceModificationsMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Storage" -> Storage.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ValidDBInstanceModificationsMessage]
+      val __obj = js.Dictionary.empty[js.Any]
+      Storage.foreach(__v => __obj.update("Storage", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ValidDBInstanceModificationsMessage]
     }
   }
 
@@ -6080,22 +4806,12 @@ package neptune {
         StorageSize: js.UndefOr[RangeList] = js.undefined,
         StorageType: js.UndefOr[String] = js.undefined
     ): ValidStorageOptions = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "IopsToStorageRatio" -> IopsToStorageRatio.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ProvisionedIops" -> ProvisionedIops.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "StorageSize" -> StorageSize.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "StorageType" -> StorageType.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ValidStorageOptions]
+      val __obj = js.Dictionary.empty[js.Any]
+      IopsToStorageRatio.foreach(__v => __obj.update("IopsToStorageRatio", __v.asInstanceOf[js.Any]))
+      ProvisionedIops.foreach(__v => __obj.update("ProvisionedIops", __v.asInstanceOf[js.Any]))
+      StorageSize.foreach(__v => __obj.update("StorageSize", __v.asInstanceOf[js.Any]))
+      StorageType.foreach(__v => __obj.update("StorageType", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ValidStorageOptions]
     }
   }
 
@@ -6113,16 +4829,10 @@ package neptune {
         Status: js.UndefOr[String] = js.undefined,
         VpcSecurityGroupId: js.UndefOr[String] = js.undefined
     ): VpcSecurityGroupMembership = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Status" -> Status.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "VpcSecurityGroupId" -> VpcSecurityGroupId.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[VpcSecurityGroupMembership]
+      val __obj = js.Dictionary.empty[js.Any]
+      Status.foreach(__v => __obj.update("Status", __v.asInstanceOf[js.Any]))
+      VpcSecurityGroupId.foreach(__v => __obj.update("VpcSecurityGroupId", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[VpcSecurityGroupMembership]
     }
   }
 }

@@ -199,31 +199,15 @@ package elastictranscoder {
         PaddingPolicy: js.UndefOr[PaddingPolicy] = js.undefined,
         SizingPolicy: js.UndefOr[SizingPolicy] = js.undefined
     ): Artwork = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "AlbumArtFormat" -> AlbumArtFormat.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Encryption" -> Encryption.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "InputKey" -> InputKey.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MaxHeight" -> MaxHeight.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MaxWidth" -> MaxWidth.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "PaddingPolicy" -> PaddingPolicy.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SizingPolicy" -> SizingPolicy.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Artwork]
+      val __obj = js.Dictionary.empty[js.Any]
+      AlbumArtFormat.foreach(__v => __obj.update("AlbumArtFormat", __v.asInstanceOf[js.Any]))
+      Encryption.foreach(__v => __obj.update("Encryption", __v.asInstanceOf[js.Any]))
+      InputKey.foreach(__v => __obj.update("InputKey", __v.asInstanceOf[js.Any]))
+      MaxHeight.foreach(__v => __obj.update("MaxHeight", __v.asInstanceOf[js.Any]))
+      MaxWidth.foreach(__v => __obj.update("MaxWidth", __v.asInstanceOf[js.Any]))
+      PaddingPolicy.foreach(__v => __obj.update("PaddingPolicy", __v.asInstanceOf[js.Any]))
+      SizingPolicy.foreach(__v => __obj.update("SizingPolicy", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Artwork]
     }
   }
 
@@ -245,22 +229,12 @@ package elastictranscoder {
         Profile: js.UndefOr[AudioCodecProfile] = js.undefined,
         Signed: js.UndefOr[AudioSigned] = js.undefined
     ): AudioCodecOptions = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "BitDepth" -> BitDepth.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "BitOrder" -> BitOrder.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Profile" -> Profile.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Signed" -> Signed.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AudioCodecOptions]
+      val __obj = js.Dictionary.empty[js.Any]
+      BitDepth.foreach(__v => __obj.update("BitDepth", __v.asInstanceOf[js.Any]))
+      BitOrder.foreach(__v => __obj.update("BitOrder", __v.asInstanceOf[js.Any]))
+      Profile.foreach(__v => __obj.update("Profile", __v.asInstanceOf[js.Any]))
+      Signed.foreach(__v => __obj.update("Signed", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AudioCodecOptions]
     }
   }
 
@@ -286,28 +260,14 @@ package elastictranscoder {
         CodecOptions: js.UndefOr[AudioCodecOptions] = js.undefined,
         SampleRate: js.UndefOr[AudioSampleRate] = js.undefined
     ): AudioParameters = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "AudioPackingMode" -> AudioPackingMode.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "BitRate" -> BitRate.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Channels" -> Channels.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Codec" -> Codec.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "CodecOptions" -> CodecOptions.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SampleRate" -> SampleRate.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AudioParameters]
+      val __obj = js.Dictionary.empty[js.Any]
+      AudioPackingMode.foreach(__v => __obj.update("AudioPackingMode", __v.asInstanceOf[js.Any]))
+      BitRate.foreach(__v => __obj.update("BitRate", __v.asInstanceOf[js.Any]))
+      Channels.foreach(__v => __obj.update("Channels", __v.asInstanceOf[js.Any]))
+      Codec.foreach(__v => __obj.update("Codec", __v.asInstanceOf[js.Any]))
+      CodecOptions.foreach(__v => __obj.update("CodecOptions", __v.asInstanceOf[js.Any]))
+      SampleRate.foreach(__v => __obj.update("SampleRate", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AudioParameters]
     }
   }
 
@@ -323,11 +283,11 @@ package elastictranscoder {
     def apply(
         Id: Id
     ): CancelJobRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "Id" -> Id.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CancelJobRequest]
+      __obj.asInstanceOf[CancelJobRequest]
     }
   }
 
@@ -340,10 +300,9 @@ package elastictranscoder {
   object CancelJobResponse {
     def apply(
         ): CancelJobResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary.empty[js.Any]
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CancelJobResponse]
+      __obj.asInstanceOf[CancelJobResponse]
     }
   }
 
@@ -363,19 +322,11 @@ package elastictranscoder {
         Format: js.UndefOr[CaptionFormatFormat] = js.undefined,
         Pattern: js.UndefOr[CaptionFormatPattern] = js.undefined
     ): CaptionFormat = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Encryption" -> Encryption.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Format" -> Format.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Pattern" -> Pattern.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CaptionFormat]
+      val __obj = js.Dictionary.empty[js.Any]
+      Encryption.foreach(__v => __obj.update("Encryption", __v.asInstanceOf[js.Any]))
+      Format.foreach(__v => __obj.update("Format", __v.asInstanceOf[js.Any]))
+      Pattern.foreach(__v => __obj.update("Pattern", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CaptionFormat]
     }
   }
 
@@ -399,25 +350,13 @@ package elastictranscoder {
         Language: js.UndefOr[Key] = js.undefined,
         TimeOffset: js.UndefOr[TimeOffset] = js.undefined
     ): CaptionSource = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Encryption" -> Encryption.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Key" -> Key.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Label" -> Label.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Language" -> Language.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "TimeOffset" -> TimeOffset.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CaptionSource]
+      val __obj = js.Dictionary.empty[js.Any]
+      Encryption.foreach(__v => __obj.update("Encryption", __v.asInstanceOf[js.Any]))
+      Key.foreach(__v => __obj.update("Key", __v.asInstanceOf[js.Any]))
+      Label.foreach(__v => __obj.update("Label", __v.asInstanceOf[js.Any]))
+      Language.foreach(__v => __obj.update("Language", __v.asInstanceOf[js.Any]))
+      TimeOffset.foreach(__v => __obj.update("TimeOffset", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CaptionSource]
     }
   }
 
@@ -437,19 +376,11 @@ package elastictranscoder {
         CaptionSources: js.UndefOr[CaptionSources] = js.undefined,
         MergePolicy: js.UndefOr[CaptionMergePolicy] = js.undefined
     ): Captions = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "CaptionFormats" -> CaptionFormats.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "CaptionSources" -> CaptionSources.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MergePolicy" -> MergePolicy.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Captions]
+      val __obj = js.Dictionary.empty[js.Any]
+      CaptionFormats.foreach(__v => __obj.update("CaptionFormats", __v.asInstanceOf[js.Any]))
+      CaptionSources.foreach(__v => __obj.update("CaptionSources", __v.asInstanceOf[js.Any]))
+      MergePolicy.foreach(__v => __obj.update("MergePolicy", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Captions]
     }
   }
 
@@ -466,13 +397,9 @@ package elastictranscoder {
     def apply(
         TimeSpan: js.UndefOr[TimeSpan] = js.undefined
     ): Clip = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "TimeSpan" -> TimeSpan.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Clip]
+      val __obj = js.Dictionary.empty[js.Any]
+      TimeSpan.foreach(__v => __obj.update("TimeSpan", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Clip]
     }
   }
 
@@ -508,43 +435,19 @@ package elastictranscoder {
         ThumbnailPattern: js.UndefOr[ThumbnailPattern] = js.undefined,
         Watermarks: js.UndefOr[JobWatermarks] = js.undefined
     ): CreateJobOutput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "AlbumArt" -> AlbumArt.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Captions" -> Captions.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Composition" -> Composition.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Encryption" -> Encryption.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Key" -> Key.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "PresetId" -> PresetId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Rotate" -> Rotate.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SegmentDuration" -> SegmentDuration.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ThumbnailEncryption" -> ThumbnailEncryption.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ThumbnailPattern" -> ThumbnailPattern.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Watermarks" -> Watermarks.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateJobOutput]
+      val __obj = js.Dictionary.empty[js.Any]
+      AlbumArt.foreach(__v => __obj.update("AlbumArt", __v.asInstanceOf[js.Any]))
+      Captions.foreach(__v => __obj.update("Captions", __v.asInstanceOf[js.Any]))
+      Composition.foreach(__v => __obj.update("Composition", __v.asInstanceOf[js.Any]))
+      Encryption.foreach(__v => __obj.update("Encryption", __v.asInstanceOf[js.Any]))
+      Key.foreach(__v => __obj.update("Key", __v.asInstanceOf[js.Any]))
+      PresetId.foreach(__v => __obj.update("PresetId", __v.asInstanceOf[js.Any]))
+      Rotate.foreach(__v => __obj.update("Rotate", __v.asInstanceOf[js.Any]))
+      SegmentDuration.foreach(__v => __obj.update("SegmentDuration", __v.asInstanceOf[js.Any]))
+      ThumbnailEncryption.foreach(__v => __obj.update("ThumbnailEncryption", __v.asInstanceOf[js.Any]))
+      ThumbnailPattern.foreach(__v => __obj.update("ThumbnailPattern", __v.asInstanceOf[js.Any]))
+      Watermarks.foreach(__v => __obj.update("Watermarks", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateJobOutput]
     }
   }
 
@@ -568,25 +471,13 @@ package elastictranscoder {
         OutputKeys: js.UndefOr[OutputKeys] = js.undefined,
         PlayReadyDrm: js.UndefOr[PlayReadyDrm] = js.undefined
     ): CreateJobPlaylist = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Format" -> Format.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "HlsContentProtection" -> HlsContentProtection.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Name" -> Name.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "OutputKeys" -> OutputKeys.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "PlayReadyDrm" -> PlayReadyDrm.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateJobPlaylist]
+      val __obj = js.Dictionary.empty[js.Any]
+      Format.foreach(__v => __obj.update("Format", __v.asInstanceOf[js.Any]))
+      HlsContentProtection.foreach(__v => __obj.update("HlsContentProtection", __v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
+      OutputKeys.foreach(__v => __obj.update("OutputKeys", __v.asInstanceOf[js.Any]))
+      PlayReadyDrm.foreach(__v => __obj.update("PlayReadyDrm", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateJobPlaylist]
     }
   }
 
@@ -616,32 +507,18 @@ package elastictranscoder {
         Playlists: js.UndefOr[CreateJobPlaylists] = js.undefined,
         UserMetadata: js.UndefOr[UserMetadata] = js.undefined
     ): CreateJobRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "PipelineId" -> PipelineId.asInstanceOf[js.Any],
-        "Input" -> Input.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Inputs" -> Inputs.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Output" -> Output.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "OutputKeyPrefix" -> OutputKeyPrefix.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Outputs" -> Outputs.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Playlists" -> Playlists.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "UserMetadata" -> UserMetadata.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "PipelineId" -> PipelineId.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateJobRequest]
+      Input.foreach(__v => __obj.update("Input", __v.asInstanceOf[js.Any]))
+      Inputs.foreach(__v => __obj.update("Inputs", __v.asInstanceOf[js.Any]))
+      Output.foreach(__v => __obj.update("Output", __v.asInstanceOf[js.Any]))
+      OutputKeyPrefix.foreach(__v => __obj.update("OutputKeyPrefix", __v.asInstanceOf[js.Any]))
+      Outputs.foreach(__v => __obj.update("Outputs", __v.asInstanceOf[js.Any]))
+      Playlists.foreach(__v => __obj.update("Playlists", __v.asInstanceOf[js.Any]))
+      UserMetadata.foreach(__v => __obj.update("UserMetadata", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateJobRequest]
     }
   }
 
@@ -657,13 +534,9 @@ package elastictranscoder {
     def apply(
         Job: js.UndefOr[Job] = js.undefined
     ): CreateJobResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Job" -> Job.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateJobResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      Job.foreach(__v => __obj.update("Job", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateJobResponse]
     }
   }
 
@@ -693,28 +566,18 @@ package elastictranscoder {
         OutputBucket: js.UndefOr[BucketName] = js.undefined,
         ThumbnailConfig: js.UndefOr[PipelineOutputConfig] = js.undefined
     ): CreatePipelineRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "InputBucket" -> InputBucket.asInstanceOf[js.Any],
         "Name"        -> Name.asInstanceOf[js.Any],
-        "Role"        -> Role.asInstanceOf[js.Any],
-        "AwsKmsKeyArn" -> AwsKmsKeyArn.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ContentConfig" -> ContentConfig.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Notifications" -> Notifications.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "OutputBucket" -> OutputBucket.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ThumbnailConfig" -> ThumbnailConfig.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "Role"        -> Role.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreatePipelineRequest]
+      AwsKmsKeyArn.foreach(__v => __obj.update("AwsKmsKeyArn", __v.asInstanceOf[js.Any]))
+      ContentConfig.foreach(__v => __obj.update("ContentConfig", __v.asInstanceOf[js.Any]))
+      Notifications.foreach(__v => __obj.update("Notifications", __v.asInstanceOf[js.Any]))
+      OutputBucket.foreach(__v => __obj.update("OutputBucket", __v.asInstanceOf[js.Any]))
+      ThumbnailConfig.foreach(__v => __obj.update("ThumbnailConfig", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreatePipelineRequest]
     }
   }
 
@@ -732,16 +595,10 @@ package elastictranscoder {
         Pipeline: js.UndefOr[Pipeline] = js.undefined,
         Warnings: js.UndefOr[Warnings] = js.undefined
     ): CreatePipelineResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Pipeline" -> Pipeline.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Warnings" -> Warnings.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreatePipelineResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      Pipeline.foreach(__v => __obj.update("Pipeline", __v.asInstanceOf[js.Any]))
+      Warnings.foreach(__v => __obj.update("Warnings", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreatePipelineResponse]
     }
   }
 
@@ -767,24 +624,16 @@ package elastictranscoder {
         Thumbnails: js.UndefOr[Thumbnails] = js.undefined,
         Video: js.UndefOr[VideoParameters] = js.undefined
     ): CreatePresetRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "Container" -> Container.asInstanceOf[js.Any],
-        "Name"      -> Name.asInstanceOf[js.Any],
-        "Audio" -> Audio.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Description" -> Description.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Thumbnails" -> Thumbnails.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Video" -> Video.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "Name"      -> Name.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreatePresetRequest]
+      Audio.foreach(__v => __obj.update("Audio", __v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
+      Thumbnails.foreach(__v => __obj.update("Thumbnails", __v.asInstanceOf[js.Any]))
+      Video.foreach(__v => __obj.update("Video", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreatePresetRequest]
     }
   }
 
@@ -802,16 +651,10 @@ package elastictranscoder {
         Preset: js.UndefOr[Preset] = js.undefined,
         Warning: js.UndefOr[String] = js.undefined
     ): CreatePresetResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Preset" -> Preset.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Warning" -> Warning.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreatePresetResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      Preset.foreach(__v => __obj.update("Preset", __v.asInstanceOf[js.Any]))
+      Warning.foreach(__v => __obj.update("Warning", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreatePresetResponse]
     }
   }
 
@@ -827,11 +670,11 @@ package elastictranscoder {
     def apply(
         Id: Id
     ): DeletePipelineRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "Id" -> Id.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeletePipelineRequest]
+      __obj.asInstanceOf[DeletePipelineRequest]
     }
   }
 
@@ -844,10 +687,9 @@ package elastictranscoder {
   object DeletePipelineResponse {
     def apply(
         ): DeletePipelineResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary.empty[js.Any]
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeletePipelineResponse]
+      __obj.asInstanceOf[DeletePipelineResponse]
     }
   }
 
@@ -863,11 +705,11 @@ package elastictranscoder {
     def apply(
         Id: Id
     ): DeletePresetRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "Id" -> Id.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeletePresetRequest]
+      __obj.asInstanceOf[DeletePresetRequest]
     }
   }
 
@@ -880,10 +722,9 @@ package elastictranscoder {
   object DeletePresetResponse {
     def apply(
         ): DeletePresetResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary.empty[js.Any]
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeletePresetResponse]
+      __obj.asInstanceOf[DeletePresetResponse]
     }
   }
 
@@ -907,25 +748,13 @@ package elastictranscoder {
         Height: js.UndefOr[NullableInteger] = js.undefined,
         Width: js.UndefOr[NullableInteger] = js.undefined
     ): DetectedProperties = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "DurationMillis" -> DurationMillis.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "FileSize" -> FileSize.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "FrameRate" -> FrameRate.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Height" -> Height.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Width" -> Width.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DetectedProperties]
+      val __obj = js.Dictionary.empty[js.Any]
+      DurationMillis.foreach(__v => __obj.update("DurationMillis", __v.asInstanceOf[js.Any]))
+      FileSize.foreach(__v => __obj.update("FileSize", __v.asInstanceOf[js.Any]))
+      FrameRate.foreach(__v => __obj.update("FrameRate", __v.asInstanceOf[js.Any]))
+      Height.foreach(__v => __obj.update("Height", __v.asInstanceOf[js.Any]))
+      Width.foreach(__v => __obj.update("Width", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DetectedProperties]
     }
   }
 
@@ -947,22 +776,12 @@ package elastictranscoder {
         KeyMd5: js.UndefOr[Base64EncodedString] = js.undefined,
         Mode: js.UndefOr[EncryptionMode] = js.undefined
     ): Encryption = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "InitializationVector" -> InitializationVector.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Key" -> Key.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "KeyMd5" -> KeyMd5.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Mode" -> Mode.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Encryption]
+      val __obj = js.Dictionary.empty[js.Any]
+      InitializationVector.foreach(__v => __obj.update("InitializationVector", __v.asInstanceOf[js.Any]))
+      Key.foreach(__v => __obj.update("Key", __v.asInstanceOf[js.Any]))
+      KeyMd5.foreach(__v => __obj.update("KeyMd5", __v.asInstanceOf[js.Any]))
+      Mode.foreach(__v => __obj.update("Mode", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Encryption]
     }
   }
 
@@ -988,28 +807,14 @@ package elastictranscoder {
         LicenseAcquisitionUrl: js.UndefOr[ZeroTo512String] = js.undefined,
         Method: js.UndefOr[HlsContentProtectionMethod] = js.undefined
     ): HlsContentProtection = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "InitializationVector" -> InitializationVector.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Key" -> Key.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "KeyMd5" -> KeyMd5.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "KeyStoragePolicy" -> KeyStoragePolicy.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "LicenseAcquisitionUrl" -> LicenseAcquisitionUrl.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Method" -> Method.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[HlsContentProtection]
+      val __obj = js.Dictionary.empty[js.Any]
+      InitializationVector.foreach(__v => __obj.update("InitializationVector", __v.asInstanceOf[js.Any]))
+      Key.foreach(__v => __obj.update("Key", __v.asInstanceOf[js.Any]))
+      KeyMd5.foreach(__v => __obj.update("KeyMd5", __v.asInstanceOf[js.Any]))
+      KeyStoragePolicy.foreach(__v => __obj.update("KeyStoragePolicy", __v.asInstanceOf[js.Any]))
+      LicenseAcquisitionUrl.foreach(__v => __obj.update("LicenseAcquisitionUrl", __v.asInstanceOf[js.Any]))
+      Method.foreach(__v => __obj.update("Method", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[HlsContentProtection]
     }
   }
 
@@ -1027,16 +832,10 @@ package elastictranscoder {
         CaptionSources: js.UndefOr[CaptionSources] = js.undefined,
         MergePolicy: js.UndefOr[CaptionMergePolicy] = js.undefined
     ): InputCaptions = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "CaptionSources" -> CaptionSources.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MergePolicy" -> MergePolicy.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[InputCaptions]
+      val __obj = js.Dictionary.empty[js.Any]
+      CaptionSources.foreach(__v => __obj.update("CaptionSources", __v.asInstanceOf[js.Any]))
+      MergePolicy.foreach(__v => __obj.update("MergePolicy", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[InputCaptions]
     }
   }
 
@@ -1074,46 +873,20 @@ package elastictranscoder {
         Timing: js.UndefOr[Timing] = js.undefined,
         UserMetadata: js.UndefOr[UserMetadata] = js.undefined
     ): Job = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Arn" -> Arn.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Id" -> Id.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Input" -> Input.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Inputs" -> Inputs.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Output" -> Output.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "OutputKeyPrefix" -> OutputKeyPrefix.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Outputs" -> Outputs.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "PipelineId" -> PipelineId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Playlists" -> Playlists.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Status" -> Status.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Timing" -> Timing.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "UserMetadata" -> UserMetadata.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Job]
+      val __obj = js.Dictionary.empty[js.Any]
+      Arn.foreach(__v => __obj.update("Arn", __v.asInstanceOf[js.Any]))
+      Id.foreach(__v => __obj.update("Id", __v.asInstanceOf[js.Any]))
+      Input.foreach(__v => __obj.update("Input", __v.asInstanceOf[js.Any]))
+      Inputs.foreach(__v => __obj.update("Inputs", __v.asInstanceOf[js.Any]))
+      Output.foreach(__v => __obj.update("Output", __v.asInstanceOf[js.Any]))
+      OutputKeyPrefix.foreach(__v => __obj.update("OutputKeyPrefix", __v.asInstanceOf[js.Any]))
+      Outputs.foreach(__v => __obj.update("Outputs", __v.asInstanceOf[js.Any]))
+      PipelineId.foreach(__v => __obj.update("PipelineId", __v.asInstanceOf[js.Any]))
+      Playlists.foreach(__v => __obj.update("Playlists", __v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.update("Status", __v.asInstanceOf[js.Any]))
+      Timing.foreach(__v => __obj.update("Timing", __v.asInstanceOf[js.Any]))
+      UserMetadata.foreach(__v => __obj.update("UserMetadata", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Job]
     }
   }
 
@@ -1131,16 +904,10 @@ package elastictranscoder {
         Artwork: js.UndefOr[Artworks] = js.undefined,
         MergePolicy: js.UndefOr[MergePolicy] = js.undefined
     ): JobAlbumArt = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Artwork" -> Artwork.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MergePolicy" -> MergePolicy.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[JobAlbumArt]
+      val __obj = js.Dictionary.empty[js.Any]
+      Artwork.foreach(__v => __obj.update("Artwork", __v.asInstanceOf[js.Any]))
+      MergePolicy.foreach(__v => __obj.update("MergePolicy", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[JobAlbumArt]
     }
   }
 
@@ -1174,40 +941,18 @@ package elastictranscoder {
         Resolution: js.UndefOr[Resolution] = js.undefined,
         TimeSpan: js.UndefOr[TimeSpan] = js.undefined
     ): JobInput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "AspectRatio" -> AspectRatio.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Container" -> Container.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DetectedProperties" -> DetectedProperties.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Encryption" -> Encryption.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "FrameRate" -> FrameRate.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "InputCaptions" -> InputCaptions.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Interlaced" -> Interlaced.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Key" -> Key.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Resolution" -> Resolution.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "TimeSpan" -> TimeSpan.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[JobInput]
+      val __obj = js.Dictionary.empty[js.Any]
+      AspectRatio.foreach(__v => __obj.update("AspectRatio", __v.asInstanceOf[js.Any]))
+      Container.foreach(__v => __obj.update("Container", __v.asInstanceOf[js.Any]))
+      DetectedProperties.foreach(__v => __obj.update("DetectedProperties", __v.asInstanceOf[js.Any]))
+      Encryption.foreach(__v => __obj.update("Encryption", __v.asInstanceOf[js.Any]))
+      FrameRate.foreach(__v => __obj.update("FrameRate", __v.asInstanceOf[js.Any]))
+      InputCaptions.foreach(__v => __obj.update("InputCaptions", __v.asInstanceOf[js.Any]))
+      Interlaced.foreach(__v => __obj.update("Interlaced", __v.asInstanceOf[js.Any]))
+      Key.foreach(__v => __obj.update("Key", __v.asInstanceOf[js.Any]))
+      Resolution.foreach(__v => __obj.update("Resolution", __v.asInstanceOf[js.Any]))
+      TimeSpan.foreach(__v => __obj.update("TimeSpan", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[JobInput]
     }
   }
 
@@ -1264,73 +1009,29 @@ package elastictranscoder {
         Watermarks: js.UndefOr[JobWatermarks] = js.undefined,
         Width: js.UndefOr[NullableInteger] = js.undefined
     ): JobOutput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "AlbumArt" -> AlbumArt.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "AppliedColorSpaceConversion" -> AppliedColorSpaceConversion.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Captions" -> Captions.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Composition" -> Composition.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Duration" -> Duration.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DurationMillis" -> DurationMillis.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Encryption" -> Encryption.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "FileSize" -> FileSize.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "FrameRate" -> FrameRate.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Height" -> Height.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Id" -> Id.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Key" -> Key.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "PresetId" -> PresetId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Rotate" -> Rotate.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SegmentDuration" -> SegmentDuration.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Status" -> Status.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "StatusDetail" -> StatusDetail.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ThumbnailEncryption" -> ThumbnailEncryption.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ThumbnailPattern" -> ThumbnailPattern.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Watermarks" -> Watermarks.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Width" -> Width.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[JobOutput]
+      val __obj = js.Dictionary.empty[js.Any]
+      AlbumArt.foreach(__v => __obj.update("AlbumArt", __v.asInstanceOf[js.Any]))
+      AppliedColorSpaceConversion.foreach(__v => __obj.update("AppliedColorSpaceConversion", __v.asInstanceOf[js.Any]))
+      Captions.foreach(__v => __obj.update("Captions", __v.asInstanceOf[js.Any]))
+      Composition.foreach(__v => __obj.update("Composition", __v.asInstanceOf[js.Any]))
+      Duration.foreach(__v => __obj.update("Duration", __v.asInstanceOf[js.Any]))
+      DurationMillis.foreach(__v => __obj.update("DurationMillis", __v.asInstanceOf[js.Any]))
+      Encryption.foreach(__v => __obj.update("Encryption", __v.asInstanceOf[js.Any]))
+      FileSize.foreach(__v => __obj.update("FileSize", __v.asInstanceOf[js.Any]))
+      FrameRate.foreach(__v => __obj.update("FrameRate", __v.asInstanceOf[js.Any]))
+      Height.foreach(__v => __obj.update("Height", __v.asInstanceOf[js.Any]))
+      Id.foreach(__v => __obj.update("Id", __v.asInstanceOf[js.Any]))
+      Key.foreach(__v => __obj.update("Key", __v.asInstanceOf[js.Any]))
+      PresetId.foreach(__v => __obj.update("PresetId", __v.asInstanceOf[js.Any]))
+      Rotate.foreach(__v => __obj.update("Rotate", __v.asInstanceOf[js.Any]))
+      SegmentDuration.foreach(__v => __obj.update("SegmentDuration", __v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.update("Status", __v.asInstanceOf[js.Any]))
+      StatusDetail.foreach(__v => __obj.update("StatusDetail", __v.asInstanceOf[js.Any]))
+      ThumbnailEncryption.foreach(__v => __obj.update("ThumbnailEncryption", __v.asInstanceOf[js.Any]))
+      ThumbnailPattern.foreach(__v => __obj.update("ThumbnailPattern", __v.asInstanceOf[js.Any]))
+      Watermarks.foreach(__v => __obj.update("Watermarks", __v.asInstanceOf[js.Any]))
+      Width.foreach(__v => __obj.update("Width", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[JobOutput]
     }
   }
 
@@ -1350,19 +1051,11 @@ package elastictranscoder {
         InputKey: js.UndefOr[WatermarkKey] = js.undefined,
         PresetWatermarkId: js.UndefOr[PresetWatermarkId] = js.undefined
     ): JobWatermark = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Encryption" -> Encryption.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "InputKey" -> InputKey.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "PresetWatermarkId" -> PresetWatermarkId.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[JobWatermark]
+      val __obj = js.Dictionary.empty[js.Any]
+      Encryption.foreach(__v => __obj.update("Encryption", __v.asInstanceOf[js.Any]))
+      InputKey.foreach(__v => __obj.update("InputKey", __v.asInstanceOf[js.Any]))
+      PresetWatermarkId.foreach(__v => __obj.update("PresetWatermarkId", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[JobWatermark]
     }
   }
 
@@ -1382,17 +1075,13 @@ package elastictranscoder {
         Ascending: js.UndefOr[Ascending] = js.undefined,
         PageToken: js.UndefOr[Id] = js.undefined
     ): ListJobsByPipelineRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "PipelineId" -> PipelineId.asInstanceOf[js.Any],
-        "Ascending" -> Ascending.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "PageToken" -> PageToken.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "PipelineId" -> PipelineId.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListJobsByPipelineRequest]
+      Ascending.foreach(__v => __obj.update("Ascending", __v.asInstanceOf[js.Any]))
+      PageToken.foreach(__v => __obj.update("PageToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListJobsByPipelineRequest]
     }
   }
 
@@ -1410,16 +1099,10 @@ package elastictranscoder {
         Jobs: js.UndefOr[Jobs] = js.undefined,
         NextPageToken: js.UndefOr[Id] = js.undefined
     ): ListJobsByPipelineResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Jobs" -> Jobs.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NextPageToken" -> NextPageToken.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListJobsByPipelineResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      Jobs.foreach(__v => __obj.update("Jobs", __v.asInstanceOf[js.Any]))
+      NextPageToken.foreach(__v => __obj.update("NextPageToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListJobsByPipelineResponse]
     }
   }
 
@@ -1439,17 +1122,13 @@ package elastictranscoder {
         Ascending: js.UndefOr[Ascending] = js.undefined,
         PageToken: js.UndefOr[Id] = js.undefined
     ): ListJobsByStatusRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Status" -> Status.asInstanceOf[js.Any],
-        "Ascending" -> Ascending.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "PageToken" -> PageToken.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "Status" -> Status.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListJobsByStatusRequest]
+      Ascending.foreach(__v => __obj.update("Ascending", __v.asInstanceOf[js.Any]))
+      PageToken.foreach(__v => __obj.update("PageToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListJobsByStatusRequest]
     }
   }
 
@@ -1467,16 +1146,10 @@ package elastictranscoder {
         Jobs: js.UndefOr[Jobs] = js.undefined,
         NextPageToken: js.UndefOr[Id] = js.undefined
     ): ListJobsByStatusResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Jobs" -> Jobs.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NextPageToken" -> NextPageToken.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListJobsByStatusResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      Jobs.foreach(__v => __obj.update("Jobs", __v.asInstanceOf[js.Any]))
+      NextPageToken.foreach(__v => __obj.update("NextPageToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListJobsByStatusResponse]
     }
   }
 
@@ -1494,16 +1167,10 @@ package elastictranscoder {
         Ascending: js.UndefOr[Ascending] = js.undefined,
         PageToken: js.UndefOr[Id] = js.undefined
     ): ListPipelinesRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Ascending" -> Ascending.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "PageToken" -> PageToken.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListPipelinesRequest]
+      val __obj = js.Dictionary.empty[js.Any]
+      Ascending.foreach(__v => __obj.update("Ascending", __v.asInstanceOf[js.Any]))
+      PageToken.foreach(__v => __obj.update("PageToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListPipelinesRequest]
     }
   }
 
@@ -1521,16 +1188,10 @@ package elastictranscoder {
         NextPageToken: js.UndefOr[Id] = js.undefined,
         Pipelines: js.UndefOr[Pipelines] = js.undefined
     ): ListPipelinesResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "NextPageToken" -> NextPageToken.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Pipelines" -> Pipelines.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListPipelinesResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      NextPageToken.foreach(__v => __obj.update("NextPageToken", __v.asInstanceOf[js.Any]))
+      Pipelines.foreach(__v => __obj.update("Pipelines", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListPipelinesResponse]
     }
   }
 
@@ -1548,16 +1209,10 @@ package elastictranscoder {
         Ascending: js.UndefOr[Ascending] = js.undefined,
         PageToken: js.UndefOr[Id] = js.undefined
     ): ListPresetsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Ascending" -> Ascending.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "PageToken" -> PageToken.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListPresetsRequest]
+      val __obj = js.Dictionary.empty[js.Any]
+      Ascending.foreach(__v => __obj.update("Ascending", __v.asInstanceOf[js.Any]))
+      PageToken.foreach(__v => __obj.update("PageToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListPresetsRequest]
     }
   }
 
@@ -1575,16 +1230,10 @@ package elastictranscoder {
         NextPageToken: js.UndefOr[Id] = js.undefined,
         Presets: js.UndefOr[Presets] = js.undefined
     ): ListPresetsResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "NextPageToken" -> NextPageToken.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Presets" -> Presets.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListPresetsResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      NextPageToken.foreach(__v => __obj.update("NextPageToken", __v.asInstanceOf[js.Any]))
+      Presets.foreach(__v => __obj.update("Presets", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListPresetsResponse]
     }
   }
 
@@ -1608,22 +1257,12 @@ package elastictranscoder {
         Progressing: js.UndefOr[SnsTopic] = js.undefined,
         Warning: js.UndefOr[SnsTopic] = js.undefined
     ): Notifications = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Completed" -> Completed.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Error" -> Error.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Progressing" -> Progressing.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Warning" -> Warning.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Notifications]
+      val __obj = js.Dictionary.empty[js.Any]
+      Completed.foreach(__v => __obj.update("Completed", __v.asInstanceOf[js.Any]))
+      Error.foreach(__v => __obj.update("Error", __v.asInstanceOf[js.Any]))
+      Progressing.foreach(__v => __obj.update("Progressing", __v.asInstanceOf[js.Any]))
+      Warning.foreach(__v => __obj.update("Warning", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Notifications]
     }
   }
 
@@ -1643,19 +1282,11 @@ package elastictranscoder {
         Grantee: js.UndefOr[Grantee] = js.undefined,
         GranteeType: js.UndefOr[GranteeType] = js.undefined
     ): Permission = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Access" -> Access.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Grantee" -> Grantee.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "GranteeType" -> GranteeType.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Permission]
+      val __obj = js.Dictionary.empty[js.Any]
+      Access.foreach(__v => __obj.update("Access", __v.asInstanceOf[js.Any]))
+      Grantee.foreach(__v => __obj.update("Grantee", __v.asInstanceOf[js.Any]))
+      GranteeType.foreach(__v => __obj.update("GranteeType", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Permission]
     }
   }
 
@@ -1691,43 +1322,19 @@ package elastictranscoder {
         Status: js.UndefOr[PipelineStatus] = js.undefined,
         ThumbnailConfig: js.UndefOr[PipelineOutputConfig] = js.undefined
     ): Pipeline = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Arn" -> Arn.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "AwsKmsKeyArn" -> AwsKmsKeyArn.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ContentConfig" -> ContentConfig.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Id" -> Id.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "InputBucket" -> InputBucket.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Name" -> Name.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Notifications" -> Notifications.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "OutputBucket" -> OutputBucket.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Role" -> Role.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Status" -> Status.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ThumbnailConfig" -> ThumbnailConfig.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Pipeline]
+      val __obj = js.Dictionary.empty[js.Any]
+      Arn.foreach(__v => __obj.update("Arn", __v.asInstanceOf[js.Any]))
+      AwsKmsKeyArn.foreach(__v => __obj.update("AwsKmsKeyArn", __v.asInstanceOf[js.Any]))
+      ContentConfig.foreach(__v => __obj.update("ContentConfig", __v.asInstanceOf[js.Any]))
+      Id.foreach(__v => __obj.update("Id", __v.asInstanceOf[js.Any]))
+      InputBucket.foreach(__v => __obj.update("InputBucket", __v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
+      Notifications.foreach(__v => __obj.update("Notifications", __v.asInstanceOf[js.Any]))
+      OutputBucket.foreach(__v => __obj.update("OutputBucket", __v.asInstanceOf[js.Any]))
+      Role.foreach(__v => __obj.update("Role", __v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.update("Status", __v.asInstanceOf[js.Any]))
+      ThumbnailConfig.foreach(__v => __obj.update("ThumbnailConfig", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Pipeline]
     }
   }
 
@@ -1747,19 +1354,11 @@ package elastictranscoder {
         Permissions: js.UndefOr[Permissions] = js.undefined,
         StorageClass: js.UndefOr[StorageClass] = js.undefined
     ): PipelineOutputConfig = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Bucket" -> Bucket.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Permissions" -> Permissions.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "StorageClass" -> StorageClass.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PipelineOutputConfig]
+      val __obj = js.Dictionary.empty[js.Any]
+      Bucket.foreach(__v => __obj.update("Bucket", __v.asInstanceOf[js.Any]))
+      Permissions.foreach(__v => __obj.update("Permissions", __v.asInstanceOf[js.Any]))
+      StorageClass.foreach(__v => __obj.update("StorageClass", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PipelineOutputConfig]
     }
   }
 
@@ -1787,28 +1386,14 @@ package elastictranscoder {
         KeyMd5: js.UndefOr[NonEmptyBase64EncodedString] = js.undefined,
         LicenseAcquisitionUrl: js.UndefOr[OneTo512String] = js.undefined
     ): PlayReadyDrm = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Format" -> Format.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "InitializationVector" -> InitializationVector.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Key" -> Key.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "KeyId" -> KeyId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "KeyMd5" -> KeyMd5.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "LicenseAcquisitionUrl" -> LicenseAcquisitionUrl.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PlayReadyDrm]
+      val __obj = js.Dictionary.empty[js.Any]
+      Format.foreach(__v => __obj.update("Format", __v.asInstanceOf[js.Any]))
+      InitializationVector.foreach(__v => __obj.update("InitializationVector", __v.asInstanceOf[js.Any]))
+      Key.foreach(__v => __obj.update("Key", __v.asInstanceOf[js.Any]))
+      KeyId.foreach(__v => __obj.update("KeyId", __v.asInstanceOf[js.Any]))
+      KeyMd5.foreach(__v => __obj.update("KeyMd5", __v.asInstanceOf[js.Any]))
+      LicenseAcquisitionUrl.foreach(__v => __obj.update("LicenseAcquisitionUrl", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PlayReadyDrm]
     }
   }
 
@@ -1836,31 +1421,15 @@ package elastictranscoder {
         Status: js.UndefOr[JobStatus] = js.undefined,
         StatusDetail: js.UndefOr[Description] = js.undefined
     ): Playlist = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Format" -> Format.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "HlsContentProtection" -> HlsContentProtection.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Name" -> Name.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "OutputKeys" -> OutputKeys.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "PlayReadyDrm" -> PlayReadyDrm.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Status" -> Status.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "StatusDetail" -> StatusDetail.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Playlist]
+      val __obj = js.Dictionary.empty[js.Any]
+      Format.foreach(__v => __obj.update("Format", __v.asInstanceOf[js.Any]))
+      HlsContentProtection.foreach(__v => __obj.update("HlsContentProtection", __v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
+      OutputKeys.foreach(__v => __obj.update("OutputKeys", __v.asInstanceOf[js.Any]))
+      PlayReadyDrm.foreach(__v => __obj.update("PlayReadyDrm", __v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.update("Status", __v.asInstanceOf[js.Any]))
+      StatusDetail.foreach(__v => __obj.update("StatusDetail", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Playlist]
     }
   }
 
@@ -1892,37 +1461,17 @@ package elastictranscoder {
         Type: js.UndefOr[PresetType] = js.undefined,
         Video: js.UndefOr[VideoParameters] = js.undefined
     ): Preset = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Arn" -> Arn.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Audio" -> Audio.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Container" -> Container.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Description" -> Description.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Id" -> Id.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Name" -> Name.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Thumbnails" -> Thumbnails.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Type" -> Type.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Video" -> Video.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Preset]
+      val __obj = js.Dictionary.empty[js.Any]
+      Arn.foreach(__v => __obj.update("Arn", __v.asInstanceOf[js.Any]))
+      Audio.foreach(__v => __obj.update("Audio", __v.asInstanceOf[js.Any]))
+      Container.foreach(__v => __obj.update("Container", __v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
+      Id.foreach(__v => __obj.update("Id", __v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
+      Thumbnails.foreach(__v => __obj.update("Thumbnails", __v.asInstanceOf[js.Any]))
+      Type.foreach(__v => __obj.update("Type", __v.asInstanceOf[js.Any]))
+      Video.foreach(__v => __obj.update("Video", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Preset]
     }
   }
 
@@ -1958,40 +1507,18 @@ package elastictranscoder {
         VerticalAlign: js.UndefOr[VerticalAlign] = js.undefined,
         VerticalOffset: js.UndefOr[PixelsOrPercent] = js.undefined
     ): PresetWatermark = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "HorizontalAlign" -> HorizontalAlign.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "HorizontalOffset" -> HorizontalOffset.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Id" -> Id.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MaxHeight" -> MaxHeight.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MaxWidth" -> MaxWidth.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Opacity" -> Opacity.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SizingPolicy" -> SizingPolicy.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Target" -> Target.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "VerticalAlign" -> VerticalAlign.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "VerticalOffset" -> VerticalOffset.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PresetWatermark]
+      val __obj = js.Dictionary.empty[js.Any]
+      HorizontalAlign.foreach(__v => __obj.update("HorizontalAlign", __v.asInstanceOf[js.Any]))
+      HorizontalOffset.foreach(__v => __obj.update("HorizontalOffset", __v.asInstanceOf[js.Any]))
+      Id.foreach(__v => __obj.update("Id", __v.asInstanceOf[js.Any]))
+      MaxHeight.foreach(__v => __obj.update("MaxHeight", __v.asInstanceOf[js.Any]))
+      MaxWidth.foreach(__v => __obj.update("MaxWidth", __v.asInstanceOf[js.Any]))
+      Opacity.foreach(__v => __obj.update("Opacity", __v.asInstanceOf[js.Any]))
+      SizingPolicy.foreach(__v => __obj.update("SizingPolicy", __v.asInstanceOf[js.Any]))
+      Target.foreach(__v => __obj.update("Target", __v.asInstanceOf[js.Any]))
+      VerticalAlign.foreach(__v => __obj.update("VerticalAlign", __v.asInstanceOf[js.Any]))
+      VerticalOffset.foreach(__v => __obj.update("VerticalOffset", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PresetWatermark]
     }
   }
 
@@ -2007,11 +1534,11 @@ package elastictranscoder {
     def apply(
         Id: Id
     ): ReadJobRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "Id" -> Id.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ReadJobRequest]
+      __obj.asInstanceOf[ReadJobRequest]
     }
   }
 
@@ -2027,13 +1554,9 @@ package elastictranscoder {
     def apply(
         Job: js.UndefOr[Job] = js.undefined
     ): ReadJobResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Job" -> Job.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ReadJobResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      Job.foreach(__v => __obj.update("Job", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ReadJobResponse]
     }
   }
 
@@ -2049,11 +1572,11 @@ package elastictranscoder {
     def apply(
         Id: Id
     ): ReadPipelineRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "Id" -> Id.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ReadPipelineRequest]
+      __obj.asInstanceOf[ReadPipelineRequest]
     }
   }
 
@@ -2071,16 +1594,10 @@ package elastictranscoder {
         Pipeline: js.UndefOr[Pipeline] = js.undefined,
         Warnings: js.UndefOr[Warnings] = js.undefined
     ): ReadPipelineResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Pipeline" -> Pipeline.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Warnings" -> Warnings.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ReadPipelineResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      Pipeline.foreach(__v => __obj.update("Pipeline", __v.asInstanceOf[js.Any]))
+      Warnings.foreach(__v => __obj.update("Warnings", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ReadPipelineResponse]
     }
   }
 
@@ -2096,11 +1613,11 @@ package elastictranscoder {
     def apply(
         Id: Id
     ): ReadPresetRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "Id" -> Id.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ReadPresetRequest]
+      __obj.asInstanceOf[ReadPresetRequest]
     }
   }
 
@@ -2116,13 +1633,9 @@ package elastictranscoder {
     def apply(
         Preset: js.UndefOr[Preset] = js.undefined
     ): ReadPresetResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Preset" -> Preset.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ReadPresetResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      Preset.foreach(__v => __obj.update("Preset", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ReadPresetResponse]
     }
   }
 
@@ -2145,14 +1658,14 @@ package elastictranscoder {
         Role: Role,
         Topics: SnsTopics
     ): TestRoleRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "InputBucket"  -> InputBucket.asInstanceOf[js.Any],
         "OutputBucket" -> OutputBucket.asInstanceOf[js.Any],
         "Role"         -> Role.asInstanceOf[js.Any],
         "Topics"       -> Topics.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[TestRoleRequest]
+      __obj.asInstanceOf[TestRoleRequest]
     }
   }
 
@@ -2171,16 +1684,10 @@ package elastictranscoder {
         Messages: js.UndefOr[ExceptionMessages] = js.undefined,
         Success: js.UndefOr[Success] = js.undefined
     ): TestRoleResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Messages" -> Messages.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Success" -> Success.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[TestRoleResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      Messages.foreach(__v => __obj.update("Messages", __v.asInstanceOf[js.Any]))
+      Success.foreach(__v => __obj.update("Success", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[TestRoleResponse]
     }
   }
 
@@ -2210,34 +1717,16 @@ package elastictranscoder {
         Resolution: js.UndefOr[ThumbnailResolution] = js.undefined,
         SizingPolicy: js.UndefOr[SizingPolicy] = js.undefined
     ): Thumbnails = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "AspectRatio" -> AspectRatio.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Format" -> Format.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Interval" -> Interval.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MaxHeight" -> MaxHeight.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MaxWidth" -> MaxWidth.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "PaddingPolicy" -> PaddingPolicy.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Resolution" -> Resolution.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SizingPolicy" -> SizingPolicy.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Thumbnails]
+      val __obj = js.Dictionary.empty[js.Any]
+      AspectRatio.foreach(__v => __obj.update("AspectRatio", __v.asInstanceOf[js.Any]))
+      Format.foreach(__v => __obj.update("Format", __v.asInstanceOf[js.Any]))
+      Interval.foreach(__v => __obj.update("Interval", __v.asInstanceOf[js.Any]))
+      MaxHeight.foreach(__v => __obj.update("MaxHeight", __v.asInstanceOf[js.Any]))
+      MaxWidth.foreach(__v => __obj.update("MaxWidth", __v.asInstanceOf[js.Any]))
+      PaddingPolicy.foreach(__v => __obj.update("PaddingPolicy", __v.asInstanceOf[js.Any]))
+      Resolution.foreach(__v => __obj.update("Resolution", __v.asInstanceOf[js.Any]))
+      SizingPolicy.foreach(__v => __obj.update("SizingPolicy", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Thumbnails]
     }
   }
 
@@ -2255,16 +1744,10 @@ package elastictranscoder {
         Duration: js.UndefOr[Time] = js.undefined,
         StartTime: js.UndefOr[Time] = js.undefined
     ): TimeSpan = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Duration" -> Duration.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "StartTime" -> StartTime.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[TimeSpan]
+      val __obj = js.Dictionary.empty[js.Any]
+      Duration.foreach(__v => __obj.update("Duration", __v.asInstanceOf[js.Any]))
+      StartTime.foreach(__v => __obj.update("StartTime", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[TimeSpan]
     }
   }
 
@@ -2284,19 +1767,11 @@ package elastictranscoder {
         StartTimeMillis: js.UndefOr[NullableLong] = js.undefined,
         SubmitTimeMillis: js.UndefOr[NullableLong] = js.undefined
     ): Timing = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "FinishTimeMillis" -> FinishTimeMillis.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "StartTimeMillis" -> StartTimeMillis.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SubmitTimeMillis" -> SubmitTimeMillis.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Timing]
+      val __obj = js.Dictionary.empty[js.Any]
+      FinishTimeMillis.foreach(__v => __obj.update("FinishTimeMillis", __v.asInstanceOf[js.Any]))
+      StartTimeMillis.foreach(__v => __obj.update("StartTimeMillis", __v.asInstanceOf[js.Any]))
+      SubmitTimeMillis.foreach(__v => __obj.update("SubmitTimeMillis", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Timing]
     }
   }
 
@@ -2314,12 +1789,12 @@ package elastictranscoder {
         Id: Id,
         Notifications: Notifications
     ): UpdatePipelineNotificationsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "Id"            -> Id.asInstanceOf[js.Any],
         "Notifications" -> Notifications.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdatePipelineNotificationsRequest]
+      __obj.asInstanceOf[UpdatePipelineNotificationsRequest]
     }
   }
 
@@ -2335,13 +1810,9 @@ package elastictranscoder {
     def apply(
         Pipeline: js.UndefOr[Pipeline] = js.undefined
     ): UpdatePipelineNotificationsResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Pipeline" -> Pipeline.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdatePipelineNotificationsResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      Pipeline.foreach(__v => __obj.update("Pipeline", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdatePipelineNotificationsResponse]
     }
   }
 
@@ -2371,32 +1842,18 @@ package elastictranscoder {
         Role: js.UndefOr[Role] = js.undefined,
         ThumbnailConfig: js.UndefOr[PipelineOutputConfig] = js.undefined
     ): UpdatePipelineRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Id" -> Id.asInstanceOf[js.Any],
-        "AwsKmsKeyArn" -> AwsKmsKeyArn.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ContentConfig" -> ContentConfig.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "InputBucket" -> InputBucket.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Name" -> Name.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Notifications" -> Notifications.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Role" -> Role.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ThumbnailConfig" -> ThumbnailConfig.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "Id" -> Id.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdatePipelineRequest]
+      AwsKmsKeyArn.foreach(__v => __obj.update("AwsKmsKeyArn", __v.asInstanceOf[js.Any]))
+      ContentConfig.foreach(__v => __obj.update("ContentConfig", __v.asInstanceOf[js.Any]))
+      InputBucket.foreach(__v => __obj.update("InputBucket", __v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
+      Notifications.foreach(__v => __obj.update("Notifications", __v.asInstanceOf[js.Any]))
+      Role.foreach(__v => __obj.update("Role", __v.asInstanceOf[js.Any]))
+      ThumbnailConfig.foreach(__v => __obj.update("ThumbnailConfig", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdatePipelineRequest]
     }
   }
 
@@ -2414,16 +1871,10 @@ package elastictranscoder {
         Pipeline: js.UndefOr[Pipeline] = js.undefined,
         Warnings: js.UndefOr[Warnings] = js.undefined
     ): UpdatePipelineResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Pipeline" -> Pipeline.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Warnings" -> Warnings.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdatePipelineResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      Pipeline.foreach(__v => __obj.update("Pipeline", __v.asInstanceOf[js.Any]))
+      Warnings.foreach(__v => __obj.update("Warnings", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdatePipelineResponse]
     }
   }
 
@@ -2441,12 +1892,12 @@ package elastictranscoder {
         Id: Id,
         Status: PipelineStatus
     ): UpdatePipelineStatusRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "Id"     -> Id.asInstanceOf[js.Any],
         "Status" -> Status.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdatePipelineStatusRequest]
+      __obj.asInstanceOf[UpdatePipelineStatusRequest]
     }
   }
 
@@ -2462,13 +1913,9 @@ package elastictranscoder {
     def apply(
         Pipeline: js.UndefOr[Pipeline] = js.undefined
     ): UpdatePipelineStatusResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Pipeline" -> Pipeline.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdatePipelineStatusResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      Pipeline.foreach(__v => __obj.update("Pipeline", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdatePipelineStatusResponse]
     }
   }
 
@@ -2512,55 +1959,23 @@ package elastictranscoder {
         SizingPolicy: js.UndefOr[SizingPolicy] = js.undefined,
         Watermarks: js.UndefOr[PresetWatermarks] = js.undefined
     ): VideoParameters = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "AspectRatio" -> AspectRatio.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "BitRate" -> BitRate.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Codec" -> Codec.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "CodecOptions" -> CodecOptions.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DisplayAspectRatio" -> DisplayAspectRatio.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "FixedGOP" -> FixedGOP.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "FrameRate" -> FrameRate.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "KeyframesMaxDist" -> KeyframesMaxDist.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MaxFrameRate" -> MaxFrameRate.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MaxHeight" -> MaxHeight.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MaxWidth" -> MaxWidth.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "PaddingPolicy" -> PaddingPolicy.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Resolution" -> Resolution.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SizingPolicy" -> SizingPolicy.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Watermarks" -> Watermarks.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[VideoParameters]
+      val __obj = js.Dictionary.empty[js.Any]
+      AspectRatio.foreach(__v => __obj.update("AspectRatio", __v.asInstanceOf[js.Any]))
+      BitRate.foreach(__v => __obj.update("BitRate", __v.asInstanceOf[js.Any]))
+      Codec.foreach(__v => __obj.update("Codec", __v.asInstanceOf[js.Any]))
+      CodecOptions.foreach(__v => __obj.update("CodecOptions", __v.asInstanceOf[js.Any]))
+      DisplayAspectRatio.foreach(__v => __obj.update("DisplayAspectRatio", __v.asInstanceOf[js.Any]))
+      FixedGOP.foreach(__v => __obj.update("FixedGOP", __v.asInstanceOf[js.Any]))
+      FrameRate.foreach(__v => __obj.update("FrameRate", __v.asInstanceOf[js.Any]))
+      KeyframesMaxDist.foreach(__v => __obj.update("KeyframesMaxDist", __v.asInstanceOf[js.Any]))
+      MaxFrameRate.foreach(__v => __obj.update("MaxFrameRate", __v.asInstanceOf[js.Any]))
+      MaxHeight.foreach(__v => __obj.update("MaxHeight", __v.asInstanceOf[js.Any]))
+      MaxWidth.foreach(__v => __obj.update("MaxWidth", __v.asInstanceOf[js.Any]))
+      PaddingPolicy.foreach(__v => __obj.update("PaddingPolicy", __v.asInstanceOf[js.Any]))
+      Resolution.foreach(__v => __obj.update("Resolution", __v.asInstanceOf[js.Any]))
+      SizingPolicy.foreach(__v => __obj.update("SizingPolicy", __v.asInstanceOf[js.Any]))
+      Watermarks.foreach(__v => __obj.update("Watermarks", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[VideoParameters]
     }
   }
 
@@ -2579,16 +1994,10 @@ package elastictranscoder {
         Code: js.UndefOr[String] = js.undefined,
         Message: js.UndefOr[String] = js.undefined
     ): Warning = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Code" -> Code.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Message" -> Message.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Warning]
+      val __obj = js.Dictionary.empty[js.Any]
+      Code.foreach(__v => __obj.update("Code", __v.asInstanceOf[js.Any]))
+      Message.foreach(__v => __obj.update("Message", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Warning]
     }
   }
 }

@@ -129,13 +129,9 @@ package batch {
     def apply(
         size: js.UndefOr[Int] = js.undefined
     ): ArrayProperties = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "size" -> size.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ArrayProperties]
+      val __obj = js.Dictionary.empty[js.Any]
+      size.foreach(__v => __obj.update("size", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ArrayProperties]
     }
   }
 
@@ -155,19 +151,11 @@ package batch {
         size: js.UndefOr[Int] = js.undefined,
         statusSummary: js.UndefOr[ArrayJobStatusSummary] = js.undefined
     ): ArrayPropertiesDetail = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "index" -> index.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "size" -> size.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "statusSummary" -> statusSummary.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ArrayPropertiesDetail]
+      val __obj = js.Dictionary.empty[js.Any]
+      index.foreach(__v => __obj.update("index", __v.asInstanceOf[js.Any]))
+      size.foreach(__v => __obj.update("size", __v.asInstanceOf[js.Any]))
+      statusSummary.foreach(__v => __obj.update("statusSummary", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ArrayPropertiesDetail]
     }
   }
 
@@ -185,16 +173,10 @@ package batch {
         index: js.UndefOr[Int] = js.undefined,
         size: js.UndefOr[Int] = js.undefined
     ): ArrayPropertiesSummary = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "index" -> index.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "size" -> size.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ArrayPropertiesSummary]
+      val __obj = js.Dictionary.empty[js.Any]
+      index.foreach(__v => __obj.update("index", __v.asInstanceOf[js.Any]))
+      size.foreach(__v => __obj.update("size", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ArrayPropertiesSummary]
     }
   }
 
@@ -220,28 +202,14 @@ package batch {
         reason: js.UndefOr[String] = js.undefined,
         taskArn: js.UndefOr[String] = js.undefined
     ): AttemptContainerDetail = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "containerInstanceArn" -> containerInstanceArn.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "exitCode" -> exitCode.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "logStreamName" -> logStreamName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "networkInterfaces" -> networkInterfaces.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "reason" -> reason.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "taskArn" -> taskArn.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AttemptContainerDetail]
+      val __obj = js.Dictionary.empty[js.Any]
+      containerInstanceArn.foreach(__v => __obj.update("containerInstanceArn", __v.asInstanceOf[js.Any]))
+      exitCode.foreach(__v => __obj.update("exitCode", __v.asInstanceOf[js.Any]))
+      logStreamName.foreach(__v => __obj.update("logStreamName", __v.asInstanceOf[js.Any]))
+      networkInterfaces.foreach(__v => __obj.update("networkInterfaces", __v.asInstanceOf[js.Any]))
+      reason.foreach(__v => __obj.update("reason", __v.asInstanceOf[js.Any]))
+      taskArn.foreach(__v => __obj.update("taskArn", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AttemptContainerDetail]
     }
   }
 
@@ -263,22 +231,12 @@ package batch {
         statusReason: js.UndefOr[String] = js.undefined,
         stoppedAt: js.UndefOr[Double] = js.undefined
     ): AttemptDetail = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "container" -> container.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "startedAt" -> startedAt.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "statusReason" -> statusReason.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "stoppedAt" -> stoppedAt.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AttemptDetail]
+      val __obj = js.Dictionary.empty[js.Any]
+      container.foreach(__v => __obj.update("container", __v.asInstanceOf[js.Any]))
+      startedAt.foreach(__v => __obj.update("startedAt", __v.asInstanceOf[js.Any]))
+      statusReason.foreach(__v => __obj.update("statusReason", __v.asInstanceOf[js.Any]))
+      stoppedAt.foreach(__v => __obj.update("stoppedAt", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AttemptDetail]
     }
   }
 
@@ -325,12 +283,12 @@ package batch {
         jobId: String,
         reason: String
     ): CancelJobRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "jobId"  -> jobId.asInstanceOf[js.Any],
         "reason" -> reason.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CancelJobRequest]
+      __obj.asInstanceOf[CancelJobRequest]
     }
   }
 
@@ -340,10 +298,9 @@ package batch {
   object CancelJobResponse {
     def apply(
         ): CancelJobResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary.empty[js.Any]
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CancelJobResponse]
+      __obj.asInstanceOf[CancelJobResponse]
     }
   }
 
@@ -375,31 +332,19 @@ package batch {
         statusReason: js.UndefOr[String] = js.undefined,
         `type`: js.UndefOr[CEType] = js.undefined
     ): ComputeEnvironmentDetail = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "computeEnvironmentArn"  -> computeEnvironmentArn.asInstanceOf[js.Any],
         "computeEnvironmentName" -> computeEnvironmentName.asInstanceOf[js.Any],
-        "ecsClusterArn"          -> ecsClusterArn.asInstanceOf[js.Any],
-        "computeResources" -> computeResources.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "serviceRole" -> serviceRole.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "state" -> state.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "status" -> status.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "statusReason" -> statusReason.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "`type`" -> `type`.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "ecsClusterArn"          -> ecsClusterArn.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ComputeEnvironmentDetail]
+      computeResources.foreach(__v => __obj.update("computeResources", __v.asInstanceOf[js.Any]))
+      serviceRole.foreach(__v => __obj.update("serviceRole", __v.asInstanceOf[js.Any]))
+      state.foreach(__v => __obj.update("state", __v.asInstanceOf[js.Any]))
+      status.foreach(__v => __obj.update("status", __v.asInstanceOf[js.Any]))
+      statusReason.foreach(__v => __obj.update("statusReason", __v.asInstanceOf[js.Any]))
+      `type`.foreach(__v => __obj.update("type", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ComputeEnvironmentDetail]
     }
   }
 
@@ -417,12 +362,12 @@ package batch {
         computeEnvironment: String,
         order: Int
     ): ComputeEnvironmentOrder = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "computeEnvironment" -> computeEnvironment.asInstanceOf[js.Any],
         "order"              -> order.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ComputeEnvironmentOrder]
+      __obj.asInstanceOf[ComputeEnvironmentOrder]
     }
   }
 
@@ -466,43 +411,25 @@ package batch {
         spotIamFleetRole: js.UndefOr[String] = js.undefined,
         tags: js.UndefOr[TagsMap] = js.undefined
     ): ComputeResource = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "instanceRole"  -> instanceRole.asInstanceOf[js.Any],
         "instanceTypes" -> instanceTypes.asInstanceOf[js.Any],
         "maxvCpus"      -> maxvCpus.asInstanceOf[js.Any],
         "minvCpus"      -> minvCpus.asInstanceOf[js.Any],
         "subnets"       -> subnets.asInstanceOf[js.Any],
-        "`type`"        -> `type`.asInstanceOf[js.Any],
-        "bidPercentage" -> bidPercentage.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "desiredvCpus" -> desiredvCpus.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ec2KeyPair" -> ec2KeyPair.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "imageId" -> imageId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "launchTemplate" -> launchTemplate.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "placementGroup" -> placementGroup.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "securityGroupIds" -> securityGroupIds.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "spotIamFleetRole" -> spotIamFleetRole.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "tags" -> tags.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "type"          -> `type`.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ComputeResource]
+      bidPercentage.foreach(__v => __obj.update("bidPercentage", __v.asInstanceOf[js.Any]))
+      desiredvCpus.foreach(__v => __obj.update("desiredvCpus", __v.asInstanceOf[js.Any]))
+      ec2KeyPair.foreach(__v => __obj.update("ec2KeyPair", __v.asInstanceOf[js.Any]))
+      imageId.foreach(__v => __obj.update("imageId", __v.asInstanceOf[js.Any]))
+      launchTemplate.foreach(__v => __obj.update("launchTemplate", __v.asInstanceOf[js.Any]))
+      placementGroup.foreach(__v => __obj.update("placementGroup", __v.asInstanceOf[js.Any]))
+      securityGroupIds.foreach(__v => __obj.update("securityGroupIds", __v.asInstanceOf[js.Any]))
+      spotIamFleetRole.foreach(__v => __obj.update("spotIamFleetRole", __v.asInstanceOf[js.Any]))
+      tags.foreach(__v => __obj.update("tags", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ComputeResource]
     }
   }
 
@@ -522,19 +449,11 @@ package batch {
         maxvCpus: js.UndefOr[Int] = js.undefined,
         minvCpus: js.UndefOr[Int] = js.undefined
     ): ComputeResourceUpdate = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "desiredvCpus" -> desiredvCpus.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "maxvCpus" -> maxvCpus.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "minvCpus" -> minvCpus.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ComputeResourceUpdate]
+      val __obj = js.Dictionary.empty[js.Any]
+      desiredvCpus.foreach(__v => __obj.update("desiredvCpus", __v.asInstanceOf[js.Any]))
+      maxvCpus.foreach(__v => __obj.update("maxvCpus", __v.asInstanceOf[js.Any]))
+      minvCpus.foreach(__v => __obj.update("minvCpus", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ComputeResourceUpdate]
     }
   }
 
@@ -588,70 +507,28 @@ package batch {
         vcpus: js.UndefOr[Int] = js.undefined,
         volumes: js.UndefOr[Volumes] = js.undefined
     ): ContainerDetail = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "command" -> command.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "containerInstanceArn" -> containerInstanceArn.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "environment" -> environment.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "exitCode" -> exitCode.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "image" -> image.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "instanceType" -> instanceType.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "jobRoleArn" -> jobRoleArn.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "logStreamName" -> logStreamName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "memory" -> memory.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "mountPoints" -> mountPoints.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "networkInterfaces" -> networkInterfaces.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "privileged" -> privileged.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "readonlyRootFilesystem" -> readonlyRootFilesystem.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "reason" -> reason.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "resourceRequirements" -> resourceRequirements.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "taskArn" -> taskArn.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ulimits" -> ulimits.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "user" -> user.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "vcpus" -> vcpus.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "volumes" -> volumes.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ContainerDetail]
+      val __obj = js.Dictionary.empty[js.Any]
+      command.foreach(__v => __obj.update("command", __v.asInstanceOf[js.Any]))
+      containerInstanceArn.foreach(__v => __obj.update("containerInstanceArn", __v.asInstanceOf[js.Any]))
+      environment.foreach(__v => __obj.update("environment", __v.asInstanceOf[js.Any]))
+      exitCode.foreach(__v => __obj.update("exitCode", __v.asInstanceOf[js.Any]))
+      image.foreach(__v => __obj.update("image", __v.asInstanceOf[js.Any]))
+      instanceType.foreach(__v => __obj.update("instanceType", __v.asInstanceOf[js.Any]))
+      jobRoleArn.foreach(__v => __obj.update("jobRoleArn", __v.asInstanceOf[js.Any]))
+      logStreamName.foreach(__v => __obj.update("logStreamName", __v.asInstanceOf[js.Any]))
+      memory.foreach(__v => __obj.update("memory", __v.asInstanceOf[js.Any]))
+      mountPoints.foreach(__v => __obj.update("mountPoints", __v.asInstanceOf[js.Any]))
+      networkInterfaces.foreach(__v => __obj.update("networkInterfaces", __v.asInstanceOf[js.Any]))
+      privileged.foreach(__v => __obj.update("privileged", __v.asInstanceOf[js.Any]))
+      readonlyRootFilesystem.foreach(__v => __obj.update("readonlyRootFilesystem", __v.asInstanceOf[js.Any]))
+      reason.foreach(__v => __obj.update("reason", __v.asInstanceOf[js.Any]))
+      resourceRequirements.foreach(__v => __obj.update("resourceRequirements", __v.asInstanceOf[js.Any]))
+      taskArn.foreach(__v => __obj.update("taskArn", __v.asInstanceOf[js.Any]))
+      ulimits.foreach(__v => __obj.update("ulimits", __v.asInstanceOf[js.Any]))
+      user.foreach(__v => __obj.update("user", __v.asInstanceOf[js.Any]))
+      vcpus.foreach(__v => __obj.update("vcpus", __v.asInstanceOf[js.Any]))
+      volumes.foreach(__v => __obj.update("volumes", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ContainerDetail]
     }
   }
 
@@ -677,28 +554,14 @@ package batch {
         resourceRequirements: js.UndefOr[ResourceRequirements] = js.undefined,
         vcpus: js.UndefOr[Int] = js.undefined
     ): ContainerOverrides = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "command" -> command.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "environment" -> environment.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "instanceType" -> instanceType.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "memory" -> memory.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "resourceRequirements" -> resourceRequirements.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "vcpus" -> vcpus.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ContainerOverrides]
+      val __obj = js.Dictionary.empty[js.Any]
+      command.foreach(__v => __obj.update("command", __v.asInstanceOf[js.Any]))
+      environment.foreach(__v => __obj.update("environment", __v.asInstanceOf[js.Any]))
+      instanceType.foreach(__v => __obj.update("instanceType", __v.asInstanceOf[js.Any]))
+      memory.foreach(__v => __obj.update("memory", __v.asInstanceOf[js.Any]))
+      resourceRequirements.foreach(__v => __obj.update("resourceRequirements", __v.asInstanceOf[js.Any]))
+      vcpus.foreach(__v => __obj.update("vcpus", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ContainerOverrides]
     }
   }
 
@@ -740,52 +603,22 @@ package batch {
         vcpus: js.UndefOr[Int] = js.undefined,
         volumes: js.UndefOr[Volumes] = js.undefined
     ): ContainerProperties = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "command" -> command.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "environment" -> environment.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "image" -> image.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "instanceType" -> instanceType.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "jobRoleArn" -> jobRoleArn.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "memory" -> memory.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "mountPoints" -> mountPoints.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "privileged" -> privileged.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "readonlyRootFilesystem" -> readonlyRootFilesystem.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "resourceRequirements" -> resourceRequirements.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ulimits" -> ulimits.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "user" -> user.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "vcpus" -> vcpus.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "volumes" -> volumes.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ContainerProperties]
+      val __obj = js.Dictionary.empty[js.Any]
+      command.foreach(__v => __obj.update("command", __v.asInstanceOf[js.Any]))
+      environment.foreach(__v => __obj.update("environment", __v.asInstanceOf[js.Any]))
+      image.foreach(__v => __obj.update("image", __v.asInstanceOf[js.Any]))
+      instanceType.foreach(__v => __obj.update("instanceType", __v.asInstanceOf[js.Any]))
+      jobRoleArn.foreach(__v => __obj.update("jobRoleArn", __v.asInstanceOf[js.Any]))
+      memory.foreach(__v => __obj.update("memory", __v.asInstanceOf[js.Any]))
+      mountPoints.foreach(__v => __obj.update("mountPoints", __v.asInstanceOf[js.Any]))
+      privileged.foreach(__v => __obj.update("privileged", __v.asInstanceOf[js.Any]))
+      readonlyRootFilesystem.foreach(__v => __obj.update("readonlyRootFilesystem", __v.asInstanceOf[js.Any]))
+      resourceRequirements.foreach(__v => __obj.update("resourceRequirements", __v.asInstanceOf[js.Any]))
+      ulimits.foreach(__v => __obj.update("ulimits", __v.asInstanceOf[js.Any]))
+      user.foreach(__v => __obj.update("user", __v.asInstanceOf[js.Any]))
+      vcpus.foreach(__v => __obj.update("vcpus", __v.asInstanceOf[js.Any]))
+      volumes.foreach(__v => __obj.update("volumes", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ContainerProperties]
     }
   }
 
@@ -803,16 +636,10 @@ package batch {
         exitCode: js.UndefOr[Int] = js.undefined,
         reason: js.UndefOr[String] = js.undefined
     ): ContainerSummary = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "exitCode" -> exitCode.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "reason" -> reason.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ContainerSummary]
+      val __obj = js.Dictionary.empty[js.Any]
+      exitCode.foreach(__v => __obj.update("exitCode", __v.asInstanceOf[js.Any]))
+      reason.foreach(__v => __obj.update("reason", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ContainerSummary]
     }
   }
 
@@ -833,19 +660,15 @@ package batch {
         computeResources: js.UndefOr[ComputeResource] = js.undefined,
         state: js.UndefOr[CEState] = js.undefined
     ): CreateComputeEnvironmentRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "computeEnvironmentName" -> computeEnvironmentName.asInstanceOf[js.Any],
         "serviceRole"            -> serviceRole.asInstanceOf[js.Any],
-        "`type`"                 -> `type`.asInstanceOf[js.Any],
-        "computeResources" -> computeResources.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "state" -> state.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "type"                   -> `type`.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateComputeEnvironmentRequest]
+      computeResources.foreach(__v => __obj.update("computeResources", __v.asInstanceOf[js.Any]))
+      state.foreach(__v => __obj.update("state", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateComputeEnvironmentRequest]
     }
   }
 
@@ -860,16 +683,10 @@ package batch {
         computeEnvironmentArn: js.UndefOr[String] = js.undefined,
         computeEnvironmentName: js.UndefOr[String] = js.undefined
     ): CreateComputeEnvironmentResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "computeEnvironmentArn" -> computeEnvironmentArn.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "computeEnvironmentName" -> computeEnvironmentName.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateComputeEnvironmentResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      computeEnvironmentArn.foreach(__v => __obj.update("computeEnvironmentArn", __v.asInstanceOf[js.Any]))
+      computeEnvironmentName.foreach(__v => __obj.update("computeEnvironmentName", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateComputeEnvironmentResponse]
     }
   }
 
@@ -888,16 +705,14 @@ package batch {
         priority: Int,
         state: js.UndefOr[JQState] = js.undefined
     ): CreateJobQueueRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "computeEnvironmentOrder" -> computeEnvironmentOrder.asInstanceOf[js.Any],
         "jobQueueName"            -> jobQueueName.asInstanceOf[js.Any],
-        "priority"                -> priority.asInstanceOf[js.Any],
-        "state" -> state.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "priority"                -> priority.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateJobQueueRequest]
+      state.foreach(__v => __obj.update("state", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateJobQueueRequest]
     }
   }
 
@@ -912,12 +727,12 @@ package batch {
         jobQueueArn: String,
         jobQueueName: String
     ): CreateJobQueueResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "jobQueueArn"  -> jobQueueArn.asInstanceOf[js.Any],
         "jobQueueName" -> jobQueueName.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateJobQueueResponse]
+      __obj.asInstanceOf[CreateJobQueueResponse]
     }
   }
 
@@ -930,11 +745,11 @@ package batch {
     def apply(
         computeEnvironment: String
     ): DeleteComputeEnvironmentRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "computeEnvironment" -> computeEnvironment.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteComputeEnvironmentRequest]
+      __obj.asInstanceOf[DeleteComputeEnvironmentRequest]
     }
   }
 
@@ -944,10 +759,9 @@ package batch {
   object DeleteComputeEnvironmentResponse {
     def apply(
         ): DeleteComputeEnvironmentResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary.empty[js.Any]
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteComputeEnvironmentResponse]
+      __obj.asInstanceOf[DeleteComputeEnvironmentResponse]
     }
   }
 
@@ -960,11 +774,11 @@ package batch {
     def apply(
         jobQueue: String
     ): DeleteJobQueueRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "jobQueue" -> jobQueue.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteJobQueueRequest]
+      __obj.asInstanceOf[DeleteJobQueueRequest]
     }
   }
 
@@ -974,10 +788,9 @@ package batch {
   object DeleteJobQueueResponse {
     def apply(
         ): DeleteJobQueueResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary.empty[js.Any]
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteJobQueueResponse]
+      __obj.asInstanceOf[DeleteJobQueueResponse]
     }
   }
 
@@ -990,11 +803,11 @@ package batch {
     def apply(
         jobDefinition: String
     ): DeregisterJobDefinitionRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "jobDefinition" -> jobDefinition.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeregisterJobDefinitionRequest]
+      __obj.asInstanceOf[DeregisterJobDefinitionRequest]
     }
   }
 
@@ -1004,10 +817,9 @@ package batch {
   object DeregisterJobDefinitionResponse {
     def apply(
         ): DeregisterJobDefinitionResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary.empty[js.Any]
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeregisterJobDefinitionResponse]
+      __obj.asInstanceOf[DeregisterJobDefinitionResponse]
     }
   }
 
@@ -1024,19 +836,11 @@ package batch {
         maxResults: js.UndefOr[Int] = js.undefined,
         nextToken: js.UndefOr[String] = js.undefined
     ): DescribeComputeEnvironmentsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "computeEnvironments" -> computeEnvironments.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "maxResults" -> maxResults.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "nextToken" -> nextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeComputeEnvironmentsRequest]
+      val __obj = js.Dictionary.empty[js.Any]
+      computeEnvironments.foreach(__v => __obj.update("computeEnvironments", __v.asInstanceOf[js.Any]))
+      maxResults.foreach(__v => __obj.update("maxResults", __v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeComputeEnvironmentsRequest]
     }
   }
 
@@ -1051,16 +855,10 @@ package batch {
         computeEnvironments: js.UndefOr[ComputeEnvironmentDetailList] = js.undefined,
         nextToken: js.UndefOr[String] = js.undefined
     ): DescribeComputeEnvironmentsResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "computeEnvironments" -> computeEnvironments.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "nextToken" -> nextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeComputeEnvironmentsResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      computeEnvironments.foreach(__v => __obj.update("computeEnvironments", __v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeComputeEnvironmentsResponse]
     }
   }
 
@@ -1081,25 +879,13 @@ package batch {
         nextToken: js.UndefOr[String] = js.undefined,
         status: js.UndefOr[String] = js.undefined
     ): DescribeJobDefinitionsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "jobDefinitionName" -> jobDefinitionName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "jobDefinitions" -> jobDefinitions.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "maxResults" -> maxResults.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "nextToken" -> nextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "status" -> status.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeJobDefinitionsRequest]
+      val __obj = js.Dictionary.empty[js.Any]
+      jobDefinitionName.foreach(__v => __obj.update("jobDefinitionName", __v.asInstanceOf[js.Any]))
+      jobDefinitions.foreach(__v => __obj.update("jobDefinitions", __v.asInstanceOf[js.Any]))
+      maxResults.foreach(__v => __obj.update("maxResults", __v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
+      status.foreach(__v => __obj.update("status", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeJobDefinitionsRequest]
     }
   }
 
@@ -1114,16 +900,10 @@ package batch {
         jobDefinitions: js.UndefOr[JobDefinitionList] = js.undefined,
         nextToken: js.UndefOr[String] = js.undefined
     ): DescribeJobDefinitionsResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "jobDefinitions" -> jobDefinitions.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "nextToken" -> nextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeJobDefinitionsResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      jobDefinitions.foreach(__v => __obj.update("jobDefinitions", __v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeJobDefinitionsResponse]
     }
   }
 
@@ -1140,19 +920,11 @@ package batch {
         maxResults: js.UndefOr[Int] = js.undefined,
         nextToken: js.UndefOr[String] = js.undefined
     ): DescribeJobQueuesRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "jobQueues" -> jobQueues.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "maxResults" -> maxResults.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "nextToken" -> nextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeJobQueuesRequest]
+      val __obj = js.Dictionary.empty[js.Any]
+      jobQueues.foreach(__v => __obj.update("jobQueues", __v.asInstanceOf[js.Any]))
+      maxResults.foreach(__v => __obj.update("maxResults", __v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeJobQueuesRequest]
     }
   }
 
@@ -1167,16 +939,10 @@ package batch {
         jobQueues: js.UndefOr[JobQueueDetailList] = js.undefined,
         nextToken: js.UndefOr[String] = js.undefined
     ): DescribeJobQueuesResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "jobQueues" -> jobQueues.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "nextToken" -> nextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeJobQueuesResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      jobQueues.foreach(__v => __obj.update("jobQueues", __v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeJobQueuesResponse]
     }
   }
 
@@ -1189,11 +955,11 @@ package batch {
     def apply(
         jobs: StringList
     ): DescribeJobsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "jobs" -> jobs.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeJobsRequest]
+      __obj.asInstanceOf[DescribeJobsRequest]
     }
   }
 
@@ -1206,13 +972,9 @@ package batch {
     def apply(
         jobs: js.UndefOr[JobDetailList] = js.undefined
     ): DescribeJobsResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "jobs" -> jobs.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeJobsResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      jobs.foreach(__v => __obj.update("jobs", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeJobsResponse]
     }
   }
 
@@ -1228,13 +990,9 @@ package batch {
     def apply(
         sourcePath: js.UndefOr[String] = js.undefined
     ): Host = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "sourcePath" -> sourcePath.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Host]
+      val __obj = js.Dictionary.empty[js.Any]
+      sourcePath.foreach(__v => __obj.update("sourcePath", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Host]
     }
   }
 
@@ -1286,32 +1044,20 @@ package batch {
         status: js.UndefOr[String] = js.undefined,
         timeout: js.UndefOr[JobTimeout] = js.undefined
     ): JobDefinition = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "jobDefinitionArn"  -> jobDefinitionArn.asInstanceOf[js.Any],
         "jobDefinitionName" -> jobDefinitionName.asInstanceOf[js.Any],
         "revision"          -> revision.asInstanceOf[js.Any],
-        "`type`"            -> `type`.asInstanceOf[js.Any],
-        "containerProperties" -> containerProperties.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "nodeProperties" -> nodeProperties.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "parameters" -> parameters.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "retryStrategy" -> retryStrategy.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "status" -> status.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "timeout" -> timeout.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "type"              -> `type`.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[JobDefinition]
+      containerProperties.foreach(__v => __obj.update("containerProperties", __v.asInstanceOf[js.Any]))
+      nodeProperties.foreach(__v => __obj.update("nodeProperties", __v.asInstanceOf[js.Any]))
+      parameters.foreach(__v => __obj.update("parameters", __v.asInstanceOf[js.Any]))
+      retryStrategy.foreach(__v => __obj.update("retryStrategy", __v.asInstanceOf[js.Any]))
+      status.foreach(__v => __obj.update("status", __v.asInstanceOf[js.Any]))
+      timeout.foreach(__v => __obj.update("timeout", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[JobDefinition]
     }
   }
 
@@ -1336,16 +1082,10 @@ package batch {
         jobId: js.UndefOr[String] = js.undefined,
         `type`: js.UndefOr[ArrayJobDependency] = js.undefined
     ): JobDependency = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "jobId" -> jobId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "`type`" -> `type`.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[JobDependency]
+      val __obj = js.Dictionary.empty[js.Any]
+      jobId.foreach(__v => __obj.update("jobId", __v.asInstanceOf[js.Any]))
+      `type`.foreach(__v => __obj.update("type", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[JobDependency]
     }
   }
 
@@ -1395,52 +1135,28 @@ package batch {
         stoppedAt: js.UndefOr[Double] = js.undefined,
         timeout: js.UndefOr[JobTimeout] = js.undefined
     ): JobDetail = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "jobDefinition" -> jobDefinition.asInstanceOf[js.Any],
         "jobId"         -> jobId.asInstanceOf[js.Any],
         "jobName"       -> jobName.asInstanceOf[js.Any],
         "jobQueue"      -> jobQueue.asInstanceOf[js.Any],
         "startedAt"     -> startedAt.asInstanceOf[js.Any],
-        "status"        -> status.asInstanceOf[js.Any],
-        "arrayProperties" -> arrayProperties.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "attempts" -> attempts.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "container" -> container.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "createdAt" -> createdAt.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "dependsOn" -> dependsOn.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "nodeDetails" -> nodeDetails.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "nodeProperties" -> nodeProperties.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "parameters" -> parameters.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "retryStrategy" -> retryStrategy.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "statusReason" -> statusReason.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "stoppedAt" -> stoppedAt.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "timeout" -> timeout.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "status"        -> status.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[JobDetail]
+      arrayProperties.foreach(__v => __obj.update("arrayProperties", __v.asInstanceOf[js.Any]))
+      attempts.foreach(__v => __obj.update("attempts", __v.asInstanceOf[js.Any]))
+      container.foreach(__v => __obj.update("container", __v.asInstanceOf[js.Any]))
+      createdAt.foreach(__v => __obj.update("createdAt", __v.asInstanceOf[js.Any]))
+      dependsOn.foreach(__v => __obj.update("dependsOn", __v.asInstanceOf[js.Any]))
+      nodeDetails.foreach(__v => __obj.update("nodeDetails", __v.asInstanceOf[js.Any]))
+      nodeProperties.foreach(__v => __obj.update("nodeProperties", __v.asInstanceOf[js.Any]))
+      parameters.foreach(__v => __obj.update("parameters", __v.asInstanceOf[js.Any]))
+      retryStrategy.foreach(__v => __obj.update("retryStrategy", __v.asInstanceOf[js.Any]))
+      statusReason.foreach(__v => __obj.update("statusReason", __v.asInstanceOf[js.Any]))
+      stoppedAt.foreach(__v => __obj.update("stoppedAt", __v.asInstanceOf[js.Any]))
+      timeout.foreach(__v => __obj.update("timeout", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[JobDetail]
     }
   }
 
@@ -1468,21 +1184,17 @@ package batch {
         status: js.UndefOr[JQStatus] = js.undefined,
         statusReason: js.UndefOr[String] = js.undefined
     ): JobQueueDetail = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "computeEnvironmentOrder" -> computeEnvironmentOrder.asInstanceOf[js.Any],
         "jobQueueArn"             -> jobQueueArn.asInstanceOf[js.Any],
         "jobQueueName"            -> jobQueueName.asInstanceOf[js.Any],
         "priority"                -> priority.asInstanceOf[js.Any],
-        "state"                   -> state.asInstanceOf[js.Any],
-        "status" -> status.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "statusReason" -> statusReason.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "state"                   -> state.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[JobQueueDetail]
+      status.foreach(__v => __obj.update("status", __v.asInstanceOf[js.Any]))
+      statusReason.foreach(__v => __obj.update("statusReason", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[JobQueueDetail]
     }
   }
 
@@ -1528,36 +1240,20 @@ package batch {
         statusReason: js.UndefOr[String] = js.undefined,
         stoppedAt: js.UndefOr[Double] = js.undefined
     ): JobSummary = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "jobId"   -> jobId.asInstanceOf[js.Any],
-        "jobName" -> jobName.asInstanceOf[js.Any],
-        "arrayProperties" -> arrayProperties.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "container" -> container.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "createdAt" -> createdAt.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "nodeProperties" -> nodeProperties.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "startedAt" -> startedAt.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "status" -> status.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "statusReason" -> statusReason.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "stoppedAt" -> stoppedAt.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "jobName" -> jobName.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[JobSummary]
+      arrayProperties.foreach(__v => __obj.update("arrayProperties", __v.asInstanceOf[js.Any]))
+      container.foreach(__v => __obj.update("container", __v.asInstanceOf[js.Any]))
+      createdAt.foreach(__v => __obj.update("createdAt", __v.asInstanceOf[js.Any]))
+      nodeProperties.foreach(__v => __obj.update("nodeProperties", __v.asInstanceOf[js.Any]))
+      startedAt.foreach(__v => __obj.update("startedAt", __v.asInstanceOf[js.Any]))
+      status.foreach(__v => __obj.update("status", __v.asInstanceOf[js.Any]))
+      statusReason.foreach(__v => __obj.update("statusReason", __v.asInstanceOf[js.Any]))
+      stoppedAt.foreach(__v => __obj.update("stoppedAt", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[JobSummary]
     }
   }
 
@@ -1573,13 +1269,9 @@ package batch {
     def apply(
         attemptDurationSeconds: js.UndefOr[Int] = js.undefined
     ): JobTimeout = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "attemptDurationSeconds" -> attemptDurationSeconds.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[JobTimeout]
+      val __obj = js.Dictionary.empty[js.Any]
+      attemptDurationSeconds.foreach(__v => __obj.update("attemptDurationSeconds", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[JobTimeout]
     }
   }
 
@@ -1597,16 +1289,10 @@ package batch {
         name: js.UndefOr[String] = js.undefined,
         value: js.UndefOr[String] = js.undefined
     ): KeyValuePair = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "name" -> name.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "value" -> value.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[KeyValuePair]
+      val __obj = js.Dictionary.empty[js.Any]
+      name.foreach(__v => __obj.update("name", __v.asInstanceOf[js.Any]))
+      value.foreach(__v => __obj.update("value", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[KeyValuePair]
     }
   }
 
@@ -1626,19 +1312,11 @@ package batch {
         launchTemplateName: js.UndefOr[String] = js.undefined,
         version: js.UndefOr[String] = js.undefined
     ): LaunchTemplateSpecification = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "launchTemplateId" -> launchTemplateId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "launchTemplateName" -> launchTemplateName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "version" -> version.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[LaunchTemplateSpecification]
+      val __obj = js.Dictionary.empty[js.Any]
+      launchTemplateId.foreach(__v => __obj.update("launchTemplateId", __v.asInstanceOf[js.Any]))
+      launchTemplateName.foreach(__v => __obj.update("launchTemplateName", __v.asInstanceOf[js.Any]))
+      version.foreach(__v => __obj.update("version", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[LaunchTemplateSpecification]
     }
   }
 
@@ -1661,28 +1339,14 @@ package batch {
         multiNodeJobId: js.UndefOr[String] = js.undefined,
         nextToken: js.UndefOr[String] = js.undefined
     ): ListJobsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "arrayJobId" -> arrayJobId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "jobQueue" -> jobQueue.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "jobStatus" -> jobStatus.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "maxResults" -> maxResults.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "multiNodeJobId" -> multiNodeJobId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "nextToken" -> nextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListJobsRequest]
+      val __obj = js.Dictionary.empty[js.Any]
+      arrayJobId.foreach(__v => __obj.update("arrayJobId", __v.asInstanceOf[js.Any]))
+      jobQueue.foreach(__v => __obj.update("jobQueue", __v.asInstanceOf[js.Any]))
+      jobStatus.foreach(__v => __obj.update("jobStatus", __v.asInstanceOf[js.Any]))
+      maxResults.foreach(__v => __obj.update("maxResults", __v.asInstanceOf[js.Any]))
+      multiNodeJobId.foreach(__v => __obj.update("multiNodeJobId", __v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListJobsRequest]
     }
   }
 
@@ -1697,14 +1361,12 @@ package batch {
         jobSummaryList: JobSummaryList,
         nextToken: js.UndefOr[String] = js.undefined
     ): ListJobsResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "jobSummaryList" -> jobSummaryList.asInstanceOf[js.Any],
-        "nextToken" -> nextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "jobSummaryList" -> jobSummaryList.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListJobsResponse]
+      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListJobsResponse]
     }
   }
 
@@ -1724,19 +1386,11 @@ package batch {
         readOnly: js.UndefOr[Boolean] = js.undefined,
         sourceVolume: js.UndefOr[String] = js.undefined
     ): MountPoint = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "containerPath" -> containerPath.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "readOnly" -> readOnly.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "sourceVolume" -> sourceVolume.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[MountPoint]
+      val __obj = js.Dictionary.empty[js.Any]
+      containerPath.foreach(__v => __obj.update("containerPath", __v.asInstanceOf[js.Any]))
+      readOnly.foreach(__v => __obj.update("readOnly", __v.asInstanceOf[js.Any]))
+      sourceVolume.foreach(__v => __obj.update("sourceVolume", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[MountPoint]
     }
   }
 
@@ -1756,19 +1410,11 @@ package batch {
         ipv6Address: js.UndefOr[String] = js.undefined,
         privateIpv4Address: js.UndefOr[String] = js.undefined
     ): NetworkInterface = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "attachmentId" -> attachmentId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ipv6Address" -> ipv6Address.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "privateIpv4Address" -> privateIpv4Address.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[NetworkInterface]
+      val __obj = js.Dictionary.empty[js.Any]
+      attachmentId.foreach(__v => __obj.update("attachmentId", __v.asInstanceOf[js.Any]))
+      ipv6Address.foreach(__v => __obj.update("ipv6Address", __v.asInstanceOf[js.Any]))
+      privateIpv4Address.foreach(__v => __obj.update("privateIpv4Address", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[NetworkInterface]
     }
   }
 
@@ -1786,16 +1432,10 @@ package batch {
         isMainNode: js.UndefOr[Boolean] = js.undefined,
         nodeIndex: js.UndefOr[Int] = js.undefined
     ): NodeDetails = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "isMainNode" -> isMainNode.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "nodeIndex" -> nodeIndex.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[NodeDetails]
+      val __obj = js.Dictionary.empty[js.Any]
+      isMainNode.foreach(__v => __obj.update("isMainNode", __v.asInstanceOf[js.Any]))
+      nodeIndex.foreach(__v => __obj.update("nodeIndex", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[NodeDetails]
     }
   }
 
@@ -1813,16 +1453,10 @@ package batch {
         nodePropertyOverrides: js.UndefOr[NodePropertyOverrides] = js.undefined,
         numNodes: js.UndefOr[Int] = js.undefined
     ): NodeOverrides = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "nodePropertyOverrides" -> nodePropertyOverrides.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "numNodes" -> numNodes.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[NodeOverrides]
+      val __obj = js.Dictionary.empty[js.Any]
+      nodePropertyOverrides.foreach(__v => __obj.update("nodePropertyOverrides", __v.asInstanceOf[js.Any]))
+      numNodes.foreach(__v => __obj.update("numNodes", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[NodeOverrides]
     }
   }
 
@@ -1842,13 +1476,13 @@ package batch {
         nodeRangeProperties: NodeRangeProperties,
         numNodes: Int
     ): NodeProperties = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "mainNode"            -> mainNode.asInstanceOf[js.Any],
         "nodeRangeProperties" -> nodeRangeProperties.asInstanceOf[js.Any],
         "numNodes"            -> numNodes.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[NodeProperties]
+      __obj.asInstanceOf[NodeProperties]
     }
   }
 
@@ -1868,19 +1502,11 @@ package batch {
         nodeIndex: js.UndefOr[Int] = js.undefined,
         numNodes: js.UndefOr[Int] = js.undefined
     ): NodePropertiesSummary = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "isMainNode" -> isMainNode.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "nodeIndex" -> nodeIndex.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "numNodes" -> numNodes.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[NodePropertiesSummary]
+      val __obj = js.Dictionary.empty[js.Any]
+      isMainNode.foreach(__v => __obj.update("isMainNode", __v.asInstanceOf[js.Any]))
+      nodeIndex.foreach(__v => __obj.update("nodeIndex", __v.asInstanceOf[js.Any]))
+      numNodes.foreach(__v => __obj.update("numNodes", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[NodePropertiesSummary]
     }
   }
 
@@ -1898,14 +1524,12 @@ package batch {
         targetNodes: String,
         containerOverrides: js.UndefOr[ContainerOverrides] = js.undefined
     ): NodePropertyOverride = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "targetNodes" -> targetNodes.asInstanceOf[js.Any],
-        "containerOverrides" -> containerOverrides.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "targetNodes" -> targetNodes.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[NodePropertyOverride]
+      containerOverrides.foreach(__v => __obj.update("containerOverrides", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[NodePropertyOverride]
     }
   }
 
@@ -1923,14 +1547,12 @@ package batch {
         targetNodes: String,
         container: js.UndefOr[ContainerProperties] = js.undefined
     ): NodeRangeProperty = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "targetNodes" -> targetNodes.asInstanceOf[js.Any],
-        "container" -> container.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "targetNodes" -> targetNodes.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[NodeRangeProperty]
+      container.foreach(__v => __obj.update("container", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[NodeRangeProperty]
     }
   }
 
@@ -1955,27 +1577,17 @@ package batch {
         retryStrategy: js.UndefOr[RetryStrategy] = js.undefined,
         timeout: js.UndefOr[JobTimeout] = js.undefined
     ): RegisterJobDefinitionRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "jobDefinitionName" -> jobDefinitionName.asInstanceOf[js.Any],
-        "`type`"            -> `type`.asInstanceOf[js.Any],
-        "containerProperties" -> containerProperties.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "nodeProperties" -> nodeProperties.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "parameters" -> parameters.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "retryStrategy" -> retryStrategy.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "timeout" -> timeout.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "type"              -> `type`.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RegisterJobDefinitionRequest]
+      containerProperties.foreach(__v => __obj.update("containerProperties", __v.asInstanceOf[js.Any]))
+      nodeProperties.foreach(__v => __obj.update("nodeProperties", __v.asInstanceOf[js.Any]))
+      parameters.foreach(__v => __obj.update("parameters", __v.asInstanceOf[js.Any]))
+      retryStrategy.foreach(__v => __obj.update("retryStrategy", __v.asInstanceOf[js.Any]))
+      timeout.foreach(__v => __obj.update("timeout", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[RegisterJobDefinitionRequest]
     }
   }
 
@@ -1992,13 +1604,13 @@ package batch {
         jobDefinitionName: String,
         revision: Int
     ): RegisterJobDefinitionResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "jobDefinitionArn"  -> jobDefinitionArn.asInstanceOf[js.Any],
         "jobDefinitionName" -> jobDefinitionName.asInstanceOf[js.Any],
         "revision"          -> revision.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RegisterJobDefinitionResponse]
+      __obj.asInstanceOf[RegisterJobDefinitionResponse]
     }
   }
 
@@ -2016,12 +1628,12 @@ package batch {
         `type`: ResourceType,
         value: String
     ): ResourceRequirement = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "`type`" -> `type`.asInstanceOf[js.Any],
-        "value"  -> value.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "type"  -> `type`.asInstanceOf[js.Any],
+        "value" -> value.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ResourceRequirement]
+      __obj.asInstanceOf[ResourceRequirement]
     }
   }
 
@@ -2043,13 +1655,9 @@ package batch {
     def apply(
         attempts: js.UndefOr[Int] = js.undefined
     ): RetryStrategy = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "attempts" -> attempts.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RetryStrategy]
+      val __obj = js.Dictionary.empty[js.Any]
+      attempts.foreach(__v => __obj.update("attempts", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[RetryStrategy]
     }
   }
 
@@ -2080,34 +1688,20 @@ package batch {
         retryStrategy: js.UndefOr[RetryStrategy] = js.undefined,
         timeout: js.UndefOr[JobTimeout] = js.undefined
     ): SubmitJobRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "jobDefinition" -> jobDefinition.asInstanceOf[js.Any],
         "jobName"       -> jobName.asInstanceOf[js.Any],
-        "jobQueue"      -> jobQueue.asInstanceOf[js.Any],
-        "arrayProperties" -> arrayProperties.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "containerOverrides" -> containerOverrides.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "dependsOn" -> dependsOn.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "nodeOverrides" -> nodeOverrides.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "parameters" -> parameters.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "retryStrategy" -> retryStrategy.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "timeout" -> timeout.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "jobQueue"      -> jobQueue.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SubmitJobRequest]
+      arrayProperties.foreach(__v => __obj.update("arrayProperties", __v.asInstanceOf[js.Any]))
+      containerOverrides.foreach(__v => __obj.update("containerOverrides", __v.asInstanceOf[js.Any]))
+      dependsOn.foreach(__v => __obj.update("dependsOn", __v.asInstanceOf[js.Any]))
+      nodeOverrides.foreach(__v => __obj.update("nodeOverrides", __v.asInstanceOf[js.Any]))
+      parameters.foreach(__v => __obj.update("parameters", __v.asInstanceOf[js.Any]))
+      retryStrategy.foreach(__v => __obj.update("retryStrategy", __v.asInstanceOf[js.Any]))
+      timeout.foreach(__v => __obj.update("timeout", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[SubmitJobRequest]
     }
   }
 
@@ -2122,12 +1716,12 @@ package batch {
         jobId: String,
         jobName: String
     ): SubmitJobResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "jobId"   -> jobId.asInstanceOf[js.Any],
         "jobName" -> jobName.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SubmitJobResponse]
+      __obj.asInstanceOf[SubmitJobResponse]
     }
   }
 
@@ -2142,12 +1736,12 @@ package batch {
         jobId: String,
         reason: String
     ): TerminateJobRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "jobId"  -> jobId.asInstanceOf[js.Any],
         "reason" -> reason.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[TerminateJobRequest]
+      __obj.asInstanceOf[TerminateJobRequest]
     }
   }
 
@@ -2157,10 +1751,9 @@ package batch {
   object TerminateJobResponse {
     def apply(
         ): TerminateJobResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary.empty[js.Any]
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[TerminateJobResponse]
+      __obj.asInstanceOf[TerminateJobResponse]
     }
   }
 
@@ -2180,13 +1773,13 @@ package batch {
         name: String,
         softLimit: Int
     ): Ulimit = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "hardLimit" -> hardLimit.asInstanceOf[js.Any],
         "name"      -> name.asInstanceOf[js.Any],
         "softLimit" -> softLimit.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Ulimit]
+      __obj.asInstanceOf[Ulimit]
     }
   }
 
@@ -2205,20 +1798,14 @@ package batch {
         serviceRole: js.UndefOr[String] = js.undefined,
         state: js.UndefOr[CEState] = js.undefined
     ): UpdateComputeEnvironmentRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "computeEnvironment" -> computeEnvironment.asInstanceOf[js.Any],
-        "computeResources" -> computeResources.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "serviceRole" -> serviceRole.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "state" -> state.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "computeEnvironment" -> computeEnvironment.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateComputeEnvironmentRequest]
+      computeResources.foreach(__v => __obj.update("computeResources", __v.asInstanceOf[js.Any]))
+      serviceRole.foreach(__v => __obj.update("serviceRole", __v.asInstanceOf[js.Any]))
+      state.foreach(__v => __obj.update("state", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateComputeEnvironmentRequest]
     }
   }
 
@@ -2233,16 +1820,10 @@ package batch {
         computeEnvironmentArn: js.UndefOr[String] = js.undefined,
         computeEnvironmentName: js.UndefOr[String] = js.undefined
     ): UpdateComputeEnvironmentResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "computeEnvironmentArn" -> computeEnvironmentArn.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "computeEnvironmentName" -> computeEnvironmentName.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateComputeEnvironmentResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      computeEnvironmentArn.foreach(__v => __obj.update("computeEnvironmentArn", __v.asInstanceOf[js.Any]))
+      computeEnvironmentName.foreach(__v => __obj.update("computeEnvironmentName", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateComputeEnvironmentResponse]
     }
   }
 
@@ -2261,20 +1842,14 @@ package batch {
         priority: js.UndefOr[Int] = js.undefined,
         state: js.UndefOr[JQState] = js.undefined
     ): UpdateJobQueueRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "jobQueue" -> jobQueue.asInstanceOf[js.Any],
-        "computeEnvironmentOrder" -> computeEnvironmentOrder.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "priority" -> priority.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "state" -> state.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "jobQueue" -> jobQueue.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateJobQueueRequest]
+      computeEnvironmentOrder.foreach(__v => __obj.update("computeEnvironmentOrder", __v.asInstanceOf[js.Any]))
+      priority.foreach(__v => __obj.update("priority", __v.asInstanceOf[js.Any]))
+      state.foreach(__v => __obj.update("state", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateJobQueueRequest]
     }
   }
 
@@ -2289,16 +1864,10 @@ package batch {
         jobQueueArn: js.UndefOr[String] = js.undefined,
         jobQueueName: js.UndefOr[String] = js.undefined
     ): UpdateJobQueueResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "jobQueueArn" -> jobQueueArn.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "jobQueueName" -> jobQueueName.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateJobQueueResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      jobQueueArn.foreach(__v => __obj.update("jobQueueArn", __v.asInstanceOf[js.Any]))
+      jobQueueName.foreach(__v => __obj.update("jobQueueName", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateJobQueueResponse]
     }
   }
 
@@ -2316,16 +1885,10 @@ package batch {
         host: js.UndefOr[Host] = js.undefined,
         name: js.UndefOr[String] = js.undefined
     ): Volume = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "host" -> host.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "name" -> name.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Volume]
+      val __obj = js.Dictionary.empty[js.Any]
+      host.foreach(__v => __obj.update("host", __v.asInstanceOf[js.Any]))
+      name.foreach(__v => __obj.update("name", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Volume]
     }
   }
 }

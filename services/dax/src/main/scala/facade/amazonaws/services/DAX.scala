@@ -172,61 +172,25 @@ package dax {
         SubnetGroup: js.UndefOr[String] = js.undefined,
         TotalNodes: js.UndefOr[IntegerOptional] = js.undefined
     ): Cluster = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ActiveNodes" -> ActiveNodes.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ClusterArn" -> ClusterArn.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ClusterDiscoveryEndpoint" -> ClusterDiscoveryEndpoint.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ClusterName" -> ClusterName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Description" -> Description.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "IamRoleArn" -> IamRoleArn.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NodeIdsToRemove" -> NodeIdsToRemove.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NodeType" -> NodeType.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Nodes" -> Nodes.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NotificationConfiguration" -> NotificationConfiguration.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ParameterGroup" -> ParameterGroup.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "PreferredMaintenanceWindow" -> PreferredMaintenanceWindow.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SSEDescription" -> SSEDescription.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SecurityGroups" -> SecurityGroups.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Status" -> Status.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SubnetGroup" -> SubnetGroup.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "TotalNodes" -> TotalNodes.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Cluster]
+      val __obj = js.Dictionary.empty[js.Any]
+      ActiveNodes.foreach(__v => __obj.update("ActiveNodes", __v.asInstanceOf[js.Any]))
+      ClusterArn.foreach(__v => __obj.update("ClusterArn", __v.asInstanceOf[js.Any]))
+      ClusterDiscoveryEndpoint.foreach(__v => __obj.update("ClusterDiscoveryEndpoint", __v.asInstanceOf[js.Any]))
+      ClusterName.foreach(__v => __obj.update("ClusterName", __v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
+      IamRoleArn.foreach(__v => __obj.update("IamRoleArn", __v.asInstanceOf[js.Any]))
+      NodeIdsToRemove.foreach(__v => __obj.update("NodeIdsToRemove", __v.asInstanceOf[js.Any]))
+      NodeType.foreach(__v => __obj.update("NodeType", __v.asInstanceOf[js.Any]))
+      Nodes.foreach(__v => __obj.update("Nodes", __v.asInstanceOf[js.Any]))
+      NotificationConfiguration.foreach(__v => __obj.update("NotificationConfiguration", __v.asInstanceOf[js.Any]))
+      ParameterGroup.foreach(__v => __obj.update("ParameterGroup", __v.asInstanceOf[js.Any]))
+      PreferredMaintenanceWindow.foreach(__v => __obj.update("PreferredMaintenanceWindow", __v.asInstanceOf[js.Any]))
+      SSEDescription.foreach(__v => __obj.update("SSEDescription", __v.asInstanceOf[js.Any]))
+      SecurityGroups.foreach(__v => __obj.update("SecurityGroups", __v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.update("Status", __v.asInstanceOf[js.Any]))
+      SubnetGroup.foreach(__v => __obj.update("SubnetGroup", __v.asInstanceOf[js.Any]))
+      TotalNodes.foreach(__v => __obj.update("TotalNodes", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Cluster]
     }
   }
 
@@ -263,41 +227,23 @@ package dax {
         SubnetGroupName: js.UndefOr[String] = js.undefined,
         Tags: js.UndefOr[TagList] = js.undefined
     ): CreateClusterRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ClusterName"       -> ClusterName.asInstanceOf[js.Any],
         "IamRoleArn"        -> IamRoleArn.asInstanceOf[js.Any],
         "NodeType"          -> NodeType.asInstanceOf[js.Any],
-        "ReplicationFactor" -> ReplicationFactor.asInstanceOf[js.Any],
-        "AvailabilityZones" -> AvailabilityZones.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Description" -> Description.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NotificationTopicArn" -> NotificationTopicArn.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ParameterGroupName" -> ParameterGroupName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "PreferredMaintenanceWindow" -> PreferredMaintenanceWindow.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SSESpecification" -> SSESpecification.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SecurityGroupIds" -> SecurityGroupIds.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SubnetGroupName" -> SubnetGroupName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Tags" -> Tags.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "ReplicationFactor" -> ReplicationFactor.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateClusterRequest]
+      AvailabilityZones.foreach(__v => __obj.update("AvailabilityZones", __v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
+      NotificationTopicArn.foreach(__v => __obj.update("NotificationTopicArn", __v.asInstanceOf[js.Any]))
+      ParameterGroupName.foreach(__v => __obj.update("ParameterGroupName", __v.asInstanceOf[js.Any]))
+      PreferredMaintenanceWindow.foreach(__v => __obj.update("PreferredMaintenanceWindow", __v.asInstanceOf[js.Any]))
+      SSESpecification.foreach(__v => __obj.update("SSESpecification", __v.asInstanceOf[js.Any]))
+      SecurityGroupIds.foreach(__v => __obj.update("SecurityGroupIds", __v.asInstanceOf[js.Any]))
+      SubnetGroupName.foreach(__v => __obj.update("SubnetGroupName", __v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateClusterRequest]
     }
   }
 
@@ -310,13 +256,9 @@ package dax {
     def apply(
         Cluster: js.UndefOr[Cluster] = js.undefined
     ): CreateClusterResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Cluster" -> Cluster.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateClusterResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      Cluster.foreach(__v => __obj.update("Cluster", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateClusterResponse]
     }
   }
 
@@ -331,14 +273,12 @@ package dax {
         ParameterGroupName: String,
         Description: js.UndefOr[String] = js.undefined
     ): CreateParameterGroupRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ParameterGroupName" -> ParameterGroupName.asInstanceOf[js.Any],
-        "Description" -> Description.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "ParameterGroupName" -> ParameterGroupName.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateParameterGroupRequest]
+      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateParameterGroupRequest]
     }
   }
 
@@ -351,13 +291,9 @@ package dax {
     def apply(
         ParameterGroup: js.UndefOr[ParameterGroup] = js.undefined
     ): CreateParameterGroupResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ParameterGroup" -> ParameterGroup.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateParameterGroupResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      ParameterGroup.foreach(__v => __obj.update("ParameterGroup", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateParameterGroupResponse]
     }
   }
 
@@ -374,15 +310,13 @@ package dax {
         SubnetIds: SubnetIdentifierList,
         Description: js.UndefOr[String] = js.undefined
     ): CreateSubnetGroupRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "SubnetGroupName" -> SubnetGroupName.asInstanceOf[js.Any],
-        "SubnetIds"       -> SubnetIds.asInstanceOf[js.Any],
-        "Description" -> Description.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "SubnetIds"       -> SubnetIds.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateSubnetGroupRequest]
+      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateSubnetGroupRequest]
     }
   }
 
@@ -395,13 +329,9 @@ package dax {
     def apply(
         SubnetGroup: js.UndefOr[SubnetGroup] = js.undefined
     ): CreateSubnetGroupResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "SubnetGroup" -> SubnetGroup.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateSubnetGroupResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      SubnetGroup.foreach(__v => __obj.update("SubnetGroup", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateSubnetGroupResponse]
     }
   }
 
@@ -420,18 +350,14 @@ package dax {
         AvailabilityZones: js.UndefOr[AvailabilityZoneList] = js.undefined,
         NodeIdsToRemove: js.UndefOr[NodeIdentifierList] = js.undefined
     ): DecreaseReplicationFactorRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ClusterName"          -> ClusterName.asInstanceOf[js.Any],
-        "NewReplicationFactor" -> NewReplicationFactor.asInstanceOf[js.Any],
-        "AvailabilityZones" -> AvailabilityZones.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NodeIdsToRemove" -> NodeIdsToRemove.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "NewReplicationFactor" -> NewReplicationFactor.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DecreaseReplicationFactorRequest]
+      AvailabilityZones.foreach(__v => __obj.update("AvailabilityZones", __v.asInstanceOf[js.Any]))
+      NodeIdsToRemove.foreach(__v => __obj.update("NodeIdsToRemove", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DecreaseReplicationFactorRequest]
     }
   }
 
@@ -444,13 +370,9 @@ package dax {
     def apply(
         Cluster: js.UndefOr[Cluster] = js.undefined
     ): DecreaseReplicationFactorResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Cluster" -> Cluster.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DecreaseReplicationFactorResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      Cluster.foreach(__v => __obj.update("Cluster", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DecreaseReplicationFactorResponse]
     }
   }
 
@@ -463,11 +385,11 @@ package dax {
     def apply(
         ClusterName: String
     ): DeleteClusterRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ClusterName" -> ClusterName.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteClusterRequest]
+      __obj.asInstanceOf[DeleteClusterRequest]
     }
   }
 
@@ -480,13 +402,9 @@ package dax {
     def apply(
         Cluster: js.UndefOr[Cluster] = js.undefined
     ): DeleteClusterResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Cluster" -> Cluster.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteClusterResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      Cluster.foreach(__v => __obj.update("Cluster", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DeleteClusterResponse]
     }
   }
 
@@ -499,11 +417,11 @@ package dax {
     def apply(
         ParameterGroupName: String
     ): DeleteParameterGroupRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ParameterGroupName" -> ParameterGroupName.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteParameterGroupRequest]
+      __obj.asInstanceOf[DeleteParameterGroupRequest]
     }
   }
 
@@ -516,13 +434,9 @@ package dax {
     def apply(
         DeletionMessage: js.UndefOr[String] = js.undefined
     ): DeleteParameterGroupResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "DeletionMessage" -> DeletionMessage.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteParameterGroupResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      DeletionMessage.foreach(__v => __obj.update("DeletionMessage", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DeleteParameterGroupResponse]
     }
   }
 
@@ -535,11 +449,11 @@ package dax {
     def apply(
         SubnetGroupName: String
     ): DeleteSubnetGroupRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "SubnetGroupName" -> SubnetGroupName.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteSubnetGroupRequest]
+      __obj.asInstanceOf[DeleteSubnetGroupRequest]
     }
   }
 
@@ -552,13 +466,9 @@ package dax {
     def apply(
         DeletionMessage: js.UndefOr[String] = js.undefined
     ): DeleteSubnetGroupResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "DeletionMessage" -> DeletionMessage.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteSubnetGroupResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      DeletionMessage.foreach(__v => __obj.update("DeletionMessage", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DeleteSubnetGroupResponse]
     }
   }
 
@@ -575,19 +485,11 @@ package dax {
         MaxResults: js.UndefOr[IntegerOptional] = js.undefined,
         NextToken: js.UndefOr[String] = js.undefined
     ): DescribeClustersRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ClusterNames" -> ClusterNames.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MaxResults" -> MaxResults.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NextToken" -> NextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeClustersRequest]
+      val __obj = js.Dictionary.empty[js.Any]
+      ClusterNames.foreach(__v => __obj.update("ClusterNames", __v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeClustersRequest]
     }
   }
 
@@ -602,16 +504,10 @@ package dax {
         Clusters: js.UndefOr[ClusterList] = js.undefined,
         NextToken: js.UndefOr[String] = js.undefined
     ): DescribeClustersResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Clusters" -> Clusters.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NextToken" -> NextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeClustersResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      Clusters.foreach(__v => __obj.update("Clusters", __v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeClustersResponse]
     }
   }
 
@@ -626,16 +522,10 @@ package dax {
         MaxResults: js.UndefOr[IntegerOptional] = js.undefined,
         NextToken: js.UndefOr[String] = js.undefined
     ): DescribeDefaultParametersRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "MaxResults" -> MaxResults.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NextToken" -> NextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeDefaultParametersRequest]
+      val __obj = js.Dictionary.empty[js.Any]
+      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeDefaultParametersRequest]
     }
   }
 
@@ -650,16 +540,10 @@ package dax {
         NextToken: js.UndefOr[String] = js.undefined,
         Parameters: js.UndefOr[ParameterList] = js.undefined
     ): DescribeDefaultParametersResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "NextToken" -> NextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Parameters" -> Parameters.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeDefaultParametersResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      Parameters.foreach(__v => __obj.update("Parameters", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeDefaultParametersResponse]
     }
   }
 
@@ -684,31 +568,15 @@ package dax {
         SourceType: js.UndefOr[SourceType] = js.undefined,
         StartTime: js.UndefOr[TStamp] = js.undefined
     ): DescribeEventsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Duration" -> Duration.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "EndTime" -> EndTime.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MaxResults" -> MaxResults.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NextToken" -> NextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SourceName" -> SourceName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SourceType" -> SourceType.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "StartTime" -> StartTime.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeEventsRequest]
+      val __obj = js.Dictionary.empty[js.Any]
+      Duration.foreach(__v => __obj.update("Duration", __v.asInstanceOf[js.Any]))
+      EndTime.foreach(__v => __obj.update("EndTime", __v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      SourceName.foreach(__v => __obj.update("SourceName", __v.asInstanceOf[js.Any]))
+      SourceType.foreach(__v => __obj.update("SourceType", __v.asInstanceOf[js.Any]))
+      StartTime.foreach(__v => __obj.update("StartTime", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeEventsRequest]
     }
   }
 
@@ -723,16 +591,10 @@ package dax {
         Events: js.UndefOr[EventList] = js.undefined,
         NextToken: js.UndefOr[String] = js.undefined
     ): DescribeEventsResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Events" -> Events.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NextToken" -> NextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeEventsResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      Events.foreach(__v => __obj.update("Events", __v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeEventsResponse]
     }
   }
 
@@ -749,19 +611,11 @@ package dax {
         NextToken: js.UndefOr[String] = js.undefined,
         ParameterGroupNames: js.UndefOr[ParameterGroupNameList] = js.undefined
     ): DescribeParameterGroupsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "MaxResults" -> MaxResults.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NextToken" -> NextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ParameterGroupNames" -> ParameterGroupNames.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeParameterGroupsRequest]
+      val __obj = js.Dictionary.empty[js.Any]
+      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      ParameterGroupNames.foreach(__v => __obj.update("ParameterGroupNames", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeParameterGroupsRequest]
     }
   }
 
@@ -776,16 +630,10 @@ package dax {
         NextToken: js.UndefOr[String] = js.undefined,
         ParameterGroups: js.UndefOr[ParameterGroupList] = js.undefined
     ): DescribeParameterGroupsResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "NextToken" -> NextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ParameterGroups" -> ParameterGroups.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeParameterGroupsResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      ParameterGroups.foreach(__v => __obj.update("ParameterGroups", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeParameterGroupsResponse]
     }
   }
 
@@ -804,20 +652,14 @@ package dax {
         NextToken: js.UndefOr[String] = js.undefined,
         Source: js.UndefOr[String] = js.undefined
     ): DescribeParametersRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ParameterGroupName" -> ParameterGroupName.asInstanceOf[js.Any],
-        "MaxResults" -> MaxResults.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NextToken" -> NextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Source" -> Source.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "ParameterGroupName" -> ParameterGroupName.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeParametersRequest]
+      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      Source.foreach(__v => __obj.update("Source", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeParametersRequest]
     }
   }
 
@@ -832,16 +674,10 @@ package dax {
         NextToken: js.UndefOr[String] = js.undefined,
         Parameters: js.UndefOr[ParameterList] = js.undefined
     ): DescribeParametersResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "NextToken" -> NextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Parameters" -> Parameters.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeParametersResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      Parameters.foreach(__v => __obj.update("Parameters", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeParametersResponse]
     }
   }
 
@@ -858,19 +694,11 @@ package dax {
         NextToken: js.UndefOr[String] = js.undefined,
         SubnetGroupNames: js.UndefOr[SubnetGroupNameList] = js.undefined
     ): DescribeSubnetGroupsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "MaxResults" -> MaxResults.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NextToken" -> NextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SubnetGroupNames" -> SubnetGroupNames.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeSubnetGroupsRequest]
+      val __obj = js.Dictionary.empty[js.Any]
+      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      SubnetGroupNames.foreach(__v => __obj.update("SubnetGroupNames", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeSubnetGroupsRequest]
     }
   }
 
@@ -885,16 +713,10 @@ package dax {
         NextToken: js.UndefOr[String] = js.undefined,
         SubnetGroups: js.UndefOr[SubnetGroupList] = js.undefined
     ): DescribeSubnetGroupsResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "NextToken" -> NextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SubnetGroups" -> SubnetGroups.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeSubnetGroupsResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      SubnetGroups.foreach(__v => __obj.update("SubnetGroups", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeSubnetGroupsResponse]
     }
   }
 
@@ -912,16 +734,10 @@ package dax {
         Address: js.UndefOr[String] = js.undefined,
         Port: js.UndefOr[Int] = js.undefined
     ): Endpoint = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Address" -> Address.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Port" -> Port.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Endpoint]
+      val __obj = js.Dictionary.empty[js.Any]
+      Address.foreach(__v => __obj.update("Address", __v.asInstanceOf[js.Any]))
+      Port.foreach(__v => __obj.update("Port", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Endpoint]
     }
   }
 
@@ -943,22 +759,12 @@ package dax {
         SourceName: js.UndefOr[String] = js.undefined,
         SourceType: js.UndefOr[SourceType] = js.undefined
     ): Event = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Date" -> Date.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Message" -> Message.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SourceName" -> SourceName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SourceType" -> SourceType.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Event]
+      val __obj = js.Dictionary.empty[js.Any]
+      Date.foreach(__v => __obj.update("Date", __v.asInstanceOf[js.Any]))
+      Message.foreach(__v => __obj.update("Message", __v.asInstanceOf[js.Any]))
+      SourceName.foreach(__v => __obj.update("SourceName", __v.asInstanceOf[js.Any]))
+      SourceType.foreach(__v => __obj.update("SourceType", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Event]
     }
   }
 
@@ -975,15 +781,13 @@ package dax {
         NewReplicationFactor: Int,
         AvailabilityZones: js.UndefOr[AvailabilityZoneList] = js.undefined
     ): IncreaseReplicationFactorRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ClusterName"          -> ClusterName.asInstanceOf[js.Any],
-        "NewReplicationFactor" -> NewReplicationFactor.asInstanceOf[js.Any],
-        "AvailabilityZones" -> AvailabilityZones.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "NewReplicationFactor" -> NewReplicationFactor.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[IncreaseReplicationFactorRequest]
+      AvailabilityZones.foreach(__v => __obj.update("AvailabilityZones", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[IncreaseReplicationFactorRequest]
     }
   }
 
@@ -996,13 +800,9 @@ package dax {
     def apply(
         Cluster: js.UndefOr[Cluster] = js.undefined
     ): IncreaseReplicationFactorResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Cluster" -> Cluster.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[IncreaseReplicationFactorResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      Cluster.foreach(__v => __obj.update("Cluster", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[IncreaseReplicationFactorResponse]
     }
   }
 
@@ -1025,14 +825,12 @@ package dax {
         ResourceName: String,
         NextToken: js.UndefOr[String] = js.undefined
     ): ListTagsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ResourceName" -> ResourceName.asInstanceOf[js.Any],
-        "NextToken" -> NextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "ResourceName" -> ResourceName.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListTagsRequest]
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListTagsRequest]
     }
   }
 
@@ -1047,16 +845,10 @@ package dax {
         NextToken: js.UndefOr[String] = js.undefined,
         Tags: js.UndefOr[TagList] = js.undefined
     ): ListTagsResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "NextToken" -> NextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Tags" -> Tags.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListTagsResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListTagsResponse]
     }
   }
 
@@ -1082,28 +874,14 @@ package dax {
         NodeStatus: js.UndefOr[String] = js.undefined,
         ParameterGroupStatus: js.UndefOr[String] = js.undefined
     ): Node = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "AvailabilityZone" -> AvailabilityZone.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Endpoint" -> Endpoint.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NodeCreateTime" -> NodeCreateTime.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NodeId" -> NodeId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NodeStatus" -> NodeStatus.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ParameterGroupStatus" -> ParameterGroupStatus.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Node]
+      val __obj = js.Dictionary.empty[js.Any]
+      AvailabilityZone.foreach(__v => __obj.update("AvailabilityZone", __v.asInstanceOf[js.Any]))
+      Endpoint.foreach(__v => __obj.update("Endpoint", __v.asInstanceOf[js.Any]))
+      NodeCreateTime.foreach(__v => __obj.update("NodeCreateTime", __v.asInstanceOf[js.Any]))
+      NodeId.foreach(__v => __obj.update("NodeId", __v.asInstanceOf[js.Any]))
+      NodeStatus.foreach(__v => __obj.update("NodeStatus", __v.asInstanceOf[js.Any]))
+      ParameterGroupStatus.foreach(__v => __obj.update("ParameterGroupStatus", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Node]
     }
   }
 
@@ -1121,16 +899,10 @@ package dax {
         NodeType: js.UndefOr[String] = js.undefined,
         Value: js.UndefOr[String] = js.undefined
     ): NodeTypeSpecificValue = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "NodeType" -> NodeType.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Value" -> Value.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[NodeTypeSpecificValue]
+      val __obj = js.Dictionary.empty[js.Any]
+      NodeType.foreach(__v => __obj.update("NodeType", __v.asInstanceOf[js.Any]))
+      Value.foreach(__v => __obj.update("Value", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[NodeTypeSpecificValue]
     }
   }
 
@@ -1148,16 +920,10 @@ package dax {
         TopicArn: js.UndefOr[String] = js.undefined,
         TopicStatus: js.UndefOr[String] = js.undefined
     ): NotificationConfiguration = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "TopicArn" -> TopicArn.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "TopicStatus" -> TopicStatus.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[NotificationConfiguration]
+      val __obj = js.Dictionary.empty[js.Any]
+      TopicArn.foreach(__v => __obj.update("TopicArn", __v.asInstanceOf[js.Any]))
+      TopicStatus.foreach(__v => __obj.update("TopicStatus", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[NotificationConfiguration]
     }
   }
 
@@ -1191,40 +957,18 @@ package dax {
         ParameterValue: js.UndefOr[String] = js.undefined,
         Source: js.UndefOr[String] = js.undefined
     ): Parameter = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "AllowedValues" -> AllowedValues.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ChangeType" -> ChangeType.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DataType" -> DataType.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Description" -> Description.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "IsModifiable" -> IsModifiable.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NodeTypeSpecificValues" -> NodeTypeSpecificValues.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ParameterName" -> ParameterName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ParameterType" -> ParameterType.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ParameterValue" -> ParameterValue.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Source" -> Source.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Parameter]
+      val __obj = js.Dictionary.empty[js.Any]
+      AllowedValues.foreach(__v => __obj.update("AllowedValues", __v.asInstanceOf[js.Any]))
+      ChangeType.foreach(__v => __obj.update("ChangeType", __v.asInstanceOf[js.Any]))
+      DataType.foreach(__v => __obj.update("DataType", __v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
+      IsModifiable.foreach(__v => __obj.update("IsModifiable", __v.asInstanceOf[js.Any]))
+      NodeTypeSpecificValues.foreach(__v => __obj.update("NodeTypeSpecificValues", __v.asInstanceOf[js.Any]))
+      ParameterName.foreach(__v => __obj.update("ParameterName", __v.asInstanceOf[js.Any]))
+      ParameterType.foreach(__v => __obj.update("ParameterType", __v.asInstanceOf[js.Any]))
+      ParameterValue.foreach(__v => __obj.update("ParameterValue", __v.asInstanceOf[js.Any]))
+      Source.foreach(__v => __obj.update("Source", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Parameter]
     }
   }
 
@@ -1242,16 +986,10 @@ package dax {
         Description: js.UndefOr[String] = js.undefined,
         ParameterGroupName: js.UndefOr[String] = js.undefined
     ): ParameterGroup = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Description" -> Description.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ParameterGroupName" -> ParameterGroupName.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ParameterGroup]
+      val __obj = js.Dictionary.empty[js.Any]
+      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
+      ParameterGroupName.foreach(__v => __obj.update("ParameterGroupName", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ParameterGroup]
     }
   }
 
@@ -1271,19 +1009,11 @@ package dax {
         ParameterApplyStatus: js.UndefOr[String] = js.undefined,
         ParameterGroupName: js.UndefOr[String] = js.undefined
     ): ParameterGroupStatus = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "NodeIdsToReboot" -> NodeIdsToReboot.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ParameterApplyStatus" -> ParameterApplyStatus.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ParameterGroupName" -> ParameterGroupName.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ParameterGroupStatus]
+      val __obj = js.Dictionary.empty[js.Any]
+      NodeIdsToReboot.foreach(__v => __obj.update("NodeIdsToReboot", __v.asInstanceOf[js.Any]))
+      ParameterApplyStatus.foreach(__v => __obj.update("ParameterApplyStatus", __v.asInstanceOf[js.Any]))
+      ParameterGroupName.foreach(__v => __obj.update("ParameterGroupName", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ParameterGroupStatus]
     }
   }
 
@@ -1301,16 +1031,10 @@ package dax {
         ParameterName: js.UndefOr[String] = js.undefined,
         ParameterValue: js.UndefOr[String] = js.undefined
     ): ParameterNameValue = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ParameterName" -> ParameterName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ParameterValue" -> ParameterValue.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ParameterNameValue]
+      val __obj = js.Dictionary.empty[js.Any]
+      ParameterName.foreach(__v => __obj.update("ParameterName", __v.asInstanceOf[js.Any]))
+      ParameterValue.foreach(__v => __obj.update("ParameterValue", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ParameterNameValue]
     }
   }
 
@@ -1332,12 +1056,12 @@ package dax {
         ClusterName: String,
         NodeId: String
     ): RebootNodeRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ClusterName" -> ClusterName.asInstanceOf[js.Any],
         "NodeId"      -> NodeId.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RebootNodeRequest]
+      __obj.asInstanceOf[RebootNodeRequest]
     }
   }
 
@@ -1350,13 +1074,9 @@ package dax {
     def apply(
         Cluster: js.UndefOr[Cluster] = js.undefined
     ): RebootNodeResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Cluster" -> Cluster.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RebootNodeResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      Cluster.foreach(__v => __obj.update("Cluster", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[RebootNodeResponse]
     }
   }
 
@@ -1372,13 +1092,9 @@ package dax {
     def apply(
         Status: js.UndefOr[SSEStatus] = js.undefined
     ): SSEDescription = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Status" -> Status.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SSEDescription]
+      val __obj = js.Dictionary.empty[js.Any]
+      Status.foreach(__v => __obj.update("Status", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[SSEDescription]
     }
   }
 
@@ -1394,11 +1110,11 @@ package dax {
     def apply(
         Enabled: SSEEnabled
     ): SSESpecification = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "Enabled" -> Enabled.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SSESpecification]
+      __obj.asInstanceOf[SSESpecification]
     }
   }
 
@@ -1425,16 +1141,10 @@ package dax {
         SecurityGroupIdentifier: js.UndefOr[String] = js.undefined,
         Status: js.UndefOr[String] = js.undefined
     ): SecurityGroupMembership = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "SecurityGroupIdentifier" -> SecurityGroupIdentifier.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Status" -> Status.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SecurityGroupMembership]
+      val __obj = js.Dictionary.empty[js.Any]
+      SecurityGroupIdentifier.foreach(__v => __obj.update("SecurityGroupIdentifier", __v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.update("Status", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[SecurityGroupMembership]
     }
   }
 
@@ -1460,16 +1170,10 @@ package dax {
         SubnetAvailabilityZone: js.UndefOr[String] = js.undefined,
         SubnetIdentifier: js.UndefOr[String] = js.undefined
     ): Subnet = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "SubnetAvailabilityZone" -> SubnetAvailabilityZone.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SubnetIdentifier" -> SubnetIdentifier.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Subnet]
+      val __obj = js.Dictionary.empty[js.Any]
+      SubnetAvailabilityZone.foreach(__v => __obj.update("SubnetAvailabilityZone", __v.asInstanceOf[js.Any]))
+      SubnetIdentifier.foreach(__v => __obj.update("SubnetIdentifier", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Subnet]
     }
   }
 
@@ -1493,22 +1197,12 @@ package dax {
         Subnets: js.UndefOr[SubnetList] = js.undefined,
         VpcId: js.UndefOr[String] = js.undefined
     ): SubnetGroup = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Description" -> Description.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SubnetGroupName" -> SubnetGroupName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Subnets" -> Subnets.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "VpcId" -> VpcId.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SubnetGroup]
+      val __obj = js.Dictionary.empty[js.Any]
+      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
+      SubnetGroupName.foreach(__v => __obj.update("SubnetGroupName", __v.asInstanceOf[js.Any]))
+      Subnets.foreach(__v => __obj.update("Subnets", __v.asInstanceOf[js.Any]))
+      VpcId.foreach(__v => __obj.update("VpcId", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[SubnetGroup]
     }
   }
 
@@ -1528,16 +1222,10 @@ package dax {
         Key: js.UndefOr[String] = js.undefined,
         Value: js.UndefOr[String] = js.undefined
     ): Tag = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Key" -> Key.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Value" -> Value.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Tag]
+      val __obj = js.Dictionary.empty[js.Any]
+      Key.foreach(__v => __obj.update("Key", __v.asInstanceOf[js.Any]))
+      Value.foreach(__v => __obj.update("Value", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Tag]
     }
   }
 
@@ -1552,12 +1240,12 @@ package dax {
         ResourceName: String,
         Tags: TagList
     ): TagResourceRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ResourceName" -> ResourceName.asInstanceOf[js.Any],
         "Tags"         -> Tags.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[TagResourceRequest]
+      __obj.asInstanceOf[TagResourceRequest]
     }
   }
 
@@ -1570,13 +1258,9 @@ package dax {
     def apply(
         Tags: js.UndefOr[TagList] = js.undefined
     ): TagResourceResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Tags" -> Tags.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[TagResourceResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[TagResourceResponse]
     }
   }
 
@@ -1591,12 +1275,12 @@ package dax {
         ResourceName: String,
         TagKeys: KeyList
     ): UntagResourceRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ResourceName" -> ResourceName.asInstanceOf[js.Any],
         "TagKeys"      -> TagKeys.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UntagResourceRequest]
+      __obj.asInstanceOf[UntagResourceRequest]
     }
   }
 
@@ -1609,13 +1293,9 @@ package dax {
     def apply(
         Tags: js.UndefOr[TagList] = js.undefined
     ): UntagResourceResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Tags" -> Tags.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UntagResourceResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UntagResourceResponse]
     }
   }
 
@@ -1640,29 +1320,17 @@ package dax {
         PreferredMaintenanceWindow: js.UndefOr[String] = js.undefined,
         SecurityGroupIds: js.UndefOr[SecurityGroupIdentifierList] = js.undefined
     ): UpdateClusterRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ClusterName" -> ClusterName.asInstanceOf[js.Any],
-        "Description" -> Description.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NotificationTopicArn" -> NotificationTopicArn.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NotificationTopicStatus" -> NotificationTopicStatus.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ParameterGroupName" -> ParameterGroupName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "PreferredMaintenanceWindow" -> PreferredMaintenanceWindow.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SecurityGroupIds" -> SecurityGroupIds.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "ClusterName" -> ClusterName.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateClusterRequest]
+      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
+      NotificationTopicArn.foreach(__v => __obj.update("NotificationTopicArn", __v.asInstanceOf[js.Any]))
+      NotificationTopicStatus.foreach(__v => __obj.update("NotificationTopicStatus", __v.asInstanceOf[js.Any]))
+      ParameterGroupName.foreach(__v => __obj.update("ParameterGroupName", __v.asInstanceOf[js.Any]))
+      PreferredMaintenanceWindow.foreach(__v => __obj.update("PreferredMaintenanceWindow", __v.asInstanceOf[js.Any]))
+      SecurityGroupIds.foreach(__v => __obj.update("SecurityGroupIds", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateClusterRequest]
     }
   }
 
@@ -1675,13 +1343,9 @@ package dax {
     def apply(
         Cluster: js.UndefOr[Cluster] = js.undefined
     ): UpdateClusterResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Cluster" -> Cluster.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateClusterResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      Cluster.foreach(__v => __obj.update("Cluster", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateClusterResponse]
     }
   }
 
@@ -1696,12 +1360,12 @@ package dax {
         ParameterGroupName: String,
         ParameterNameValues: ParameterNameValueList
     ): UpdateParameterGroupRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ParameterGroupName"  -> ParameterGroupName.asInstanceOf[js.Any],
         "ParameterNameValues" -> ParameterNameValues.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateParameterGroupRequest]
+      __obj.asInstanceOf[UpdateParameterGroupRequest]
     }
   }
 
@@ -1714,13 +1378,9 @@ package dax {
     def apply(
         ParameterGroup: js.UndefOr[ParameterGroup] = js.undefined
     ): UpdateParameterGroupResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ParameterGroup" -> ParameterGroup.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateParameterGroupResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      ParameterGroup.foreach(__v => __obj.update("ParameterGroup", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateParameterGroupResponse]
     }
   }
 
@@ -1737,17 +1397,13 @@ package dax {
         Description: js.UndefOr[String] = js.undefined,
         SubnetIds: js.UndefOr[SubnetIdentifierList] = js.undefined
     ): UpdateSubnetGroupRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "SubnetGroupName" -> SubnetGroupName.asInstanceOf[js.Any],
-        "Description" -> Description.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SubnetIds" -> SubnetIds.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "SubnetGroupName" -> SubnetGroupName.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateSubnetGroupRequest]
+      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
+      SubnetIds.foreach(__v => __obj.update("SubnetIds", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateSubnetGroupRequest]
     }
   }
 
@@ -1760,13 +1416,9 @@ package dax {
     def apply(
         SubnetGroup: js.UndefOr[SubnetGroup] = js.undefined
     ): UpdateSubnetGroupResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "SubnetGroup" -> SubnetGroup.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateSubnetGroupResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      SubnetGroup.foreach(__v => __obj.update("SubnetGroup", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateSubnetGroupResponse]
     }
   }
 }

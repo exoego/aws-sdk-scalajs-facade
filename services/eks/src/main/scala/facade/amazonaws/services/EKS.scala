@@ -74,13 +74,9 @@ package eks {
     def apply(
         data: js.UndefOr[String] = js.undefined
     ): Certificate = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "data" -> data.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Certificate]
+      val __obj = js.Dictionary.empty[js.Any]
+      data.foreach(__v => __obj.update("data", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Certificate]
     }
   }
 
@@ -118,46 +114,20 @@ package eks {
         status: js.UndefOr[ClusterStatus] = js.undefined,
         version: js.UndefOr[String] = js.undefined
     ): Cluster = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "arn" -> arn.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "certificateAuthority" -> certificateAuthority.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "clientRequestToken" -> clientRequestToken.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "createdAt" -> createdAt.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "endpoint" -> endpoint.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "logging" -> logging.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "name" -> name.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "platformVersion" -> platformVersion.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "resourcesVpcConfig" -> resourcesVpcConfig.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "roleArn" -> roleArn.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "status" -> status.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "version" -> version.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Cluster]
+      val __obj = js.Dictionary.empty[js.Any]
+      arn.foreach(__v => __obj.update("arn", __v.asInstanceOf[js.Any]))
+      certificateAuthority.foreach(__v => __obj.update("certificateAuthority", __v.asInstanceOf[js.Any]))
+      clientRequestToken.foreach(__v => __obj.update("clientRequestToken", __v.asInstanceOf[js.Any]))
+      createdAt.foreach(__v => __obj.update("createdAt", __v.asInstanceOf[js.Any]))
+      endpoint.foreach(__v => __obj.update("endpoint", __v.asInstanceOf[js.Any]))
+      logging.foreach(__v => __obj.update("logging", __v.asInstanceOf[js.Any]))
+      name.foreach(__v => __obj.update("name", __v.asInstanceOf[js.Any]))
+      platformVersion.foreach(__v => __obj.update("platformVersion", __v.asInstanceOf[js.Any]))
+      resourcesVpcConfig.foreach(__v => __obj.update("resourcesVpcConfig", __v.asInstanceOf[js.Any]))
+      roleArn.foreach(__v => __obj.update("roleArn", __v.asInstanceOf[js.Any]))
+      status.foreach(__v => __obj.update("status", __v.asInstanceOf[js.Any]))
+      version.foreach(__v => __obj.update("version", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Cluster]
     }
   }
 
@@ -189,22 +159,16 @@ package eks {
         logging: js.UndefOr[Logging] = js.undefined,
         version: js.UndefOr[String] = js.undefined
     ): CreateClusterRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "name"               -> name.asInstanceOf[js.Any],
         "resourcesVpcConfig" -> resourcesVpcConfig.asInstanceOf[js.Any],
-        "roleArn"            -> roleArn.asInstanceOf[js.Any],
-        "clientRequestToken" -> clientRequestToken.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "logging" -> logging.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "version" -> version.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "roleArn"            -> roleArn.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateClusterRequest]
+      clientRequestToken.foreach(__v => __obj.update("clientRequestToken", __v.asInstanceOf[js.Any]))
+      logging.foreach(__v => __obj.update("logging", __v.asInstanceOf[js.Any]))
+      version.foreach(__v => __obj.update("version", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateClusterRequest]
     }
   }
 
@@ -217,13 +181,9 @@ package eks {
     def apply(
         cluster: js.UndefOr[Cluster] = js.undefined
     ): CreateClusterResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "cluster" -> cluster.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateClusterResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      cluster.foreach(__v => __obj.update("cluster", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateClusterResponse]
     }
   }
 
@@ -236,11 +196,11 @@ package eks {
     def apply(
         name: String
     ): DeleteClusterRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "name" -> name.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteClusterRequest]
+      __obj.asInstanceOf[DeleteClusterRequest]
     }
   }
 
@@ -253,13 +213,9 @@ package eks {
     def apply(
         cluster: js.UndefOr[Cluster] = js.undefined
     ): DeleteClusterResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "cluster" -> cluster.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteClusterResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      cluster.foreach(__v => __obj.update("cluster", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DeleteClusterResponse]
     }
   }
 
@@ -272,11 +228,11 @@ package eks {
     def apply(
         name: String
     ): DescribeClusterRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "name" -> name.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeClusterRequest]
+      __obj.asInstanceOf[DescribeClusterRequest]
     }
   }
 
@@ -289,13 +245,9 @@ package eks {
     def apply(
         cluster: js.UndefOr[Cluster] = js.undefined
     ): DescribeClusterResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "cluster" -> cluster.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeClusterResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      cluster.foreach(__v => __obj.update("cluster", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeClusterResponse]
     }
   }
 
@@ -310,12 +262,12 @@ package eks {
         name: String,
         updateId: String
     ): DescribeUpdateRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "name"     -> name.asInstanceOf[js.Any],
         "updateId" -> updateId.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeUpdateRequest]
+      __obj.asInstanceOf[DescribeUpdateRequest]
     }
   }
 
@@ -328,13 +280,9 @@ package eks {
     def apply(
         update: js.UndefOr[Update] = js.undefined
     ): DescribeUpdateResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "update" -> update.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeUpdateResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      update.foreach(__v => __obj.update("update", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeUpdateResponse]
     }
   }
 
@@ -376,19 +324,11 @@ package eks {
         errorMessage: js.UndefOr[String] = js.undefined,
         resourceIds: js.UndefOr[StringList] = js.undefined
     ): ErrorDetail = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "errorCode" -> errorCode.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "errorMessage" -> errorMessage.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "resourceIds" -> resourceIds.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ErrorDetail]
+      val __obj = js.Dictionary.empty[js.Any]
+      errorCode.foreach(__v => __obj.update("errorCode", __v.asInstanceOf[js.Any]))
+      errorMessage.foreach(__v => __obj.update("errorMessage", __v.asInstanceOf[js.Any]))
+      resourceIds.foreach(__v => __obj.update("resourceIds", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ErrorDetail]
     }
   }
 
@@ -403,16 +343,10 @@ package eks {
         maxResults: js.UndefOr[ListClustersRequestMaxResults] = js.undefined,
         nextToken: js.UndefOr[String] = js.undefined
     ): ListClustersRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "maxResults" -> maxResults.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "nextToken" -> nextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListClustersRequest]
+      val __obj = js.Dictionary.empty[js.Any]
+      maxResults.foreach(__v => __obj.update("maxResults", __v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListClustersRequest]
     }
   }
 
@@ -427,16 +361,10 @@ package eks {
         clusters: js.UndefOr[StringList] = js.undefined,
         nextToken: js.UndefOr[String] = js.undefined
     ): ListClustersResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "clusters" -> clusters.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "nextToken" -> nextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListClustersResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      clusters.foreach(__v => __obj.update("clusters", __v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListClustersResponse]
     }
   }
 
@@ -453,17 +381,13 @@ package eks {
         maxResults: js.UndefOr[ListUpdatesRequestMaxResults] = js.undefined,
         nextToken: js.UndefOr[String] = js.undefined
     ): ListUpdatesRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "name" -> name.asInstanceOf[js.Any],
-        "maxResults" -> maxResults.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "nextToken" -> nextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "name" -> name.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListUpdatesRequest]
+      maxResults.foreach(__v => __obj.update("maxResults", __v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListUpdatesRequest]
     }
   }
 
@@ -478,16 +402,10 @@ package eks {
         nextToken: js.UndefOr[String] = js.undefined,
         updateIds: js.UndefOr[StringList] = js.undefined
     ): ListUpdatesResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "nextToken" -> nextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "updateIds" -> updateIds.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListUpdatesResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
+      updateIds.foreach(__v => __obj.update("updateIds", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListUpdatesResponse]
     }
   }
 
@@ -505,16 +423,10 @@ package eks {
         enabled: js.UndefOr[BoxedBoolean] = js.undefined,
         types: js.UndefOr[LogTypes] = js.undefined
     ): LogSetup = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "enabled" -> enabled.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "types" -> types.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[LogSetup]
+      val __obj = js.Dictionary.empty[js.Any]
+      enabled.foreach(__v => __obj.update("enabled", __v.asInstanceOf[js.Any]))
+      types.foreach(__v => __obj.update("types", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[LogSetup]
     }
   }
 
@@ -540,13 +452,9 @@ package eks {
     def apply(
         clusterLogging: js.UndefOr[LogSetups] = js.undefined
     ): Logging = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "clusterLogging" -> clusterLogging.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Logging]
+      val __obj = js.Dictionary.empty[js.Any]
+      clusterLogging.foreach(__v => __obj.update("clusterLogging", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Logging]
     }
   }
 
@@ -572,28 +480,14 @@ package eks {
         status: js.UndefOr[UpdateStatus] = js.undefined,
         `type`: js.UndefOr[UpdateType] = js.undefined
     ): Update = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "createdAt" -> createdAt.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "errors" -> errors.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "id" -> id.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "params" -> params.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "status" -> status.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "`type`" -> `type`.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Update]
+      val __obj = js.Dictionary.empty[js.Any]
+      createdAt.foreach(__v => __obj.update("createdAt", __v.asInstanceOf[js.Any]))
+      errors.foreach(__v => __obj.update("errors", __v.asInstanceOf[js.Any]))
+      id.foreach(__v => __obj.update("id", __v.asInstanceOf[js.Any]))
+      params.foreach(__v => __obj.update("params", __v.asInstanceOf[js.Any]))
+      status.foreach(__v => __obj.update("status", __v.asInstanceOf[js.Any]))
+      `type`.foreach(__v => __obj.update("type", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Update]
     }
   }
 
@@ -612,20 +506,14 @@ package eks {
         logging: js.UndefOr[Logging] = js.undefined,
         resourcesVpcConfig: js.UndefOr[VpcConfigRequest] = js.undefined
     ): UpdateClusterConfigRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "name" -> name.asInstanceOf[js.Any],
-        "clientRequestToken" -> clientRequestToken.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "logging" -> logging.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "resourcesVpcConfig" -> resourcesVpcConfig.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "name" -> name.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateClusterConfigRequest]
+      clientRequestToken.foreach(__v => __obj.update("clientRequestToken", __v.asInstanceOf[js.Any]))
+      logging.foreach(__v => __obj.update("logging", __v.asInstanceOf[js.Any]))
+      resourcesVpcConfig.foreach(__v => __obj.update("resourcesVpcConfig", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateClusterConfigRequest]
     }
   }
 
@@ -638,13 +526,9 @@ package eks {
     def apply(
         update: js.UndefOr[Update] = js.undefined
     ): UpdateClusterConfigResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "update" -> update.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateClusterConfigResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      update.foreach(__v => __obj.update("update", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateClusterConfigResponse]
     }
   }
 
@@ -661,15 +545,13 @@ package eks {
         version: String,
         clientRequestToken: js.UndefOr[String] = js.undefined
     ): UpdateClusterVersionRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "name"    -> name.asInstanceOf[js.Any],
-        "version" -> version.asInstanceOf[js.Any],
-        "clientRequestToken" -> clientRequestToken.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "version" -> version.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateClusterVersionRequest]
+      clientRequestToken.foreach(__v => __obj.update("clientRequestToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateClusterVersionRequest]
     }
   }
 
@@ -682,13 +564,9 @@ package eks {
     def apply(
         update: js.UndefOr[Update] = js.undefined
     ): UpdateClusterVersionResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "update" -> update.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateClusterVersionResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      update.foreach(__v => __obj.update("update", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateClusterVersionResponse]
     }
   }
 
@@ -706,16 +584,10 @@ package eks {
         `type`: js.UndefOr[UpdateParamType] = js.undefined,
         value: js.UndefOr[String] = js.undefined
     ): UpdateParam = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "`type`" -> `type`.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "value" -> value.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateParam]
+      val __obj = js.Dictionary.empty[js.Any]
+      `type`.foreach(__v => __obj.update("type", __v.asInstanceOf[js.Any]))
+      value.foreach(__v => __obj.update("value", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateParam]
     }
   }
 
@@ -764,22 +636,12 @@ package eks {
         securityGroupIds: js.UndefOr[StringList] = js.undefined,
         subnetIds: js.UndefOr[StringList] = js.undefined
     ): VpcConfigRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "endpointPrivateAccess" -> endpointPrivateAccess.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "endpointPublicAccess" -> endpointPublicAccess.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "securityGroupIds" -> securityGroupIds.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "subnetIds" -> subnetIds.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[VpcConfigRequest]
+      val __obj = js.Dictionary.empty[js.Any]
+      endpointPrivateAccess.foreach(__v => __obj.update("endpointPrivateAccess", __v.asInstanceOf[js.Any]))
+      endpointPublicAccess.foreach(__v => __obj.update("endpointPublicAccess", __v.asInstanceOf[js.Any]))
+      securityGroupIds.foreach(__v => __obj.update("securityGroupIds", __v.asInstanceOf[js.Any]))
+      subnetIds.foreach(__v => __obj.update("subnetIds", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[VpcConfigRequest]
     }
   }
 
@@ -803,25 +665,13 @@ package eks {
         subnetIds: js.UndefOr[StringList] = js.undefined,
         vpcId: js.UndefOr[String] = js.undefined
     ): VpcConfigResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "endpointPrivateAccess" -> endpointPrivateAccess.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "endpointPublicAccess" -> endpointPublicAccess.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "securityGroupIds" -> securityGroupIds.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "subnetIds" -> subnetIds.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "vpcId" -> vpcId.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[VpcConfigResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      endpointPrivateAccess.foreach(__v => __obj.update("endpointPrivateAccess", __v.asInstanceOf[js.Any]))
+      endpointPublicAccess.foreach(__v => __obj.update("endpointPublicAccess", __v.asInstanceOf[js.Any]))
+      securityGroupIds.foreach(__v => __obj.update("securityGroupIds", __v.asInstanceOf[js.Any]))
+      subnetIds.foreach(__v => __obj.update("subnetIds", __v.asInstanceOf[js.Any]))
+      vpcId.foreach(__v => __obj.update("vpcId", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[VpcConfigResponse]
     }
   }
 }

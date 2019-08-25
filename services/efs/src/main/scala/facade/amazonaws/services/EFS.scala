@@ -122,29 +122,19 @@ package efs {
         Tags: js.UndefOr[Tags] = js.undefined,
         ThroughputMode: js.UndefOr[ThroughputMode] = js.undefined
     ): CreateFileSystemRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "CreationToken" -> CreationToken.asInstanceOf[js.Any],
-        "Encrypted" -> Encrypted.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "KmsKeyId" -> KmsKeyId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "PerformanceMode" -> PerformanceMode.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ProvisionedThroughputInMibps" -> ProvisionedThroughputInMibps.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Tags" -> Tags.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ThroughputMode" -> ThroughputMode.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "CreationToken" -> CreationToken.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateFileSystemRequest]
+      Encrypted.foreach(__v => __obj.update("Encrypted", __v.asInstanceOf[js.Any]))
+      KmsKeyId.foreach(__v => __obj.update("KmsKeyId", __v.asInstanceOf[js.Any]))
+      PerformanceMode.foreach(__v => __obj.update("PerformanceMode", __v.asInstanceOf[js.Any]))
+      ProvisionedThroughputInMibps.foreach(
+        __v => __obj.update("ProvisionedThroughputInMibps", __v.asInstanceOf[js.Any])
+      )
+      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
+      ThroughputMode.foreach(__v => __obj.update("ThroughputMode", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateFileSystemRequest]
     }
   }
 
@@ -166,18 +156,14 @@ package efs {
         IpAddress: js.UndefOr[IpAddress] = js.undefined,
         SecurityGroups: js.UndefOr[SecurityGroups] = js.undefined
     ): CreateMountTargetRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "FileSystemId" -> FileSystemId.asInstanceOf[js.Any],
-        "SubnetId"     -> SubnetId.asInstanceOf[js.Any],
-        "IpAddress" -> IpAddress.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SecurityGroups" -> SecurityGroups.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "SubnetId"     -> SubnetId.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateMountTargetRequest]
+      IpAddress.foreach(__v => __obj.update("IpAddress", __v.asInstanceOf[js.Any]))
+      SecurityGroups.foreach(__v => __obj.update("SecurityGroups", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateMountTargetRequest]
     }
   }
 
@@ -195,12 +181,12 @@ package efs {
         FileSystemId: FileSystemId,
         Tags: Tags
     ): CreateTagsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "FileSystemId" -> FileSystemId.asInstanceOf[js.Any],
         "Tags"         -> Tags.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateTagsRequest]
+      __obj.asInstanceOf[CreateTagsRequest]
     }
   }
 
@@ -216,11 +202,11 @@ package efs {
     def apply(
         FileSystemId: FileSystemId
     ): DeleteFileSystemRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "FileSystemId" -> FileSystemId.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteFileSystemRequest]
+      __obj.asInstanceOf[DeleteFileSystemRequest]
     }
   }
 
@@ -236,11 +222,11 @@ package efs {
     def apply(
         MountTargetId: MountTargetId
     ): DeleteMountTargetRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "MountTargetId" -> MountTargetId.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteMountTargetRequest]
+      __obj.asInstanceOf[DeleteMountTargetRequest]
     }
   }
 
@@ -258,12 +244,12 @@ package efs {
         FileSystemId: FileSystemId,
         TagKeys: TagKeys
     ): DeleteTagsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "FileSystemId" -> FileSystemId.asInstanceOf[js.Any],
         "TagKeys"      -> TagKeys.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteTagsRequest]
+      __obj.asInstanceOf[DeleteTagsRequest]
     }
   }
 
@@ -285,22 +271,12 @@ package efs {
         Marker: js.UndefOr[Marker] = js.undefined,
         MaxItems: js.UndefOr[MaxItems] = js.undefined
     ): DescribeFileSystemsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "CreationToken" -> CreationToken.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "FileSystemId" -> FileSystemId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Marker" -> Marker.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MaxItems" -> MaxItems.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeFileSystemsRequest]
+      val __obj = js.Dictionary.empty[js.Any]
+      CreationToken.foreach(__v => __obj.update("CreationToken", __v.asInstanceOf[js.Any]))
+      FileSystemId.foreach(__v => __obj.update("FileSystemId", __v.asInstanceOf[js.Any]))
+      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
+      MaxItems.foreach(__v => __obj.update("MaxItems", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeFileSystemsRequest]
     }
   }
 
@@ -317,19 +293,11 @@ package efs {
         Marker: js.UndefOr[Marker] = js.undefined,
         NextMarker: js.UndefOr[Marker] = js.undefined
     ): DescribeFileSystemsResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "FileSystems" -> FileSystems.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Marker" -> Marker.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NextMarker" -> NextMarker.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeFileSystemsResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      FileSystems.foreach(__v => __obj.update("FileSystems", __v.asInstanceOf[js.Any]))
+      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
+      NextMarker.foreach(__v => __obj.update("NextMarker", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeFileSystemsResponse]
     }
   }
 
@@ -342,11 +310,11 @@ package efs {
     def apply(
         FileSystemId: FileSystemId
     ): DescribeLifecycleConfigurationRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "FileSystemId" -> FileSystemId.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeLifecycleConfigurationRequest]
+      __obj.asInstanceOf[DescribeLifecycleConfigurationRequest]
     }
   }
 
@@ -362,11 +330,11 @@ package efs {
     def apply(
         MountTargetId: MountTargetId
     ): DescribeMountTargetSecurityGroupsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "MountTargetId" -> MountTargetId.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeMountTargetSecurityGroupsRequest]
+      __obj.asInstanceOf[DescribeMountTargetSecurityGroupsRequest]
     }
   }
 
@@ -379,11 +347,11 @@ package efs {
     def apply(
         SecurityGroups: SecurityGroups
     ): DescribeMountTargetSecurityGroupsResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "SecurityGroups" -> SecurityGroups.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeMountTargetSecurityGroupsResponse]
+      __obj.asInstanceOf[DescribeMountTargetSecurityGroupsResponse]
     }
   }
 
@@ -405,22 +373,12 @@ package efs {
         MaxItems: js.UndefOr[MaxItems] = js.undefined,
         MountTargetId: js.UndefOr[MountTargetId] = js.undefined
     ): DescribeMountTargetsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "FileSystemId" -> FileSystemId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Marker" -> Marker.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MaxItems" -> MaxItems.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MountTargetId" -> MountTargetId.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeMountTargetsRequest]
+      val __obj = js.Dictionary.empty[js.Any]
+      FileSystemId.foreach(__v => __obj.update("FileSystemId", __v.asInstanceOf[js.Any]))
+      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
+      MaxItems.foreach(__v => __obj.update("MaxItems", __v.asInstanceOf[js.Any]))
+      MountTargetId.foreach(__v => __obj.update("MountTargetId", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeMountTargetsRequest]
     }
   }
 
@@ -440,19 +398,11 @@ package efs {
         MountTargets: js.UndefOr[MountTargetDescriptions] = js.undefined,
         NextMarker: js.UndefOr[Marker] = js.undefined
     ): DescribeMountTargetsResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Marker" -> Marker.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MountTargets" -> MountTargets.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NextMarker" -> NextMarker.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeMountTargetsResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
+      MountTargets.foreach(__v => __obj.update("MountTargets", __v.asInstanceOf[js.Any]))
+      NextMarker.foreach(__v => __obj.update("NextMarker", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeMountTargetsResponse]
     }
   }
 
@@ -472,17 +422,13 @@ package efs {
         Marker: js.UndefOr[Marker] = js.undefined,
         MaxItems: js.UndefOr[MaxItems] = js.undefined
     ): DescribeTagsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "FileSystemId" -> FileSystemId.asInstanceOf[js.Any],
-        "Marker" -> Marker.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MaxItems" -> MaxItems.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "FileSystemId" -> FileSystemId.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeTagsRequest]
+      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
+      MaxItems.foreach(__v => __obj.update("MaxItems", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeTagsRequest]
     }
   }
 
@@ -502,17 +448,13 @@ package efs {
         Marker: js.UndefOr[Marker] = js.undefined,
         NextMarker: js.UndefOr[Marker] = js.undefined
     ): DescribeTagsResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Tags" -> Tags.asInstanceOf[js.Any],
-        "Marker" -> Marker.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NextMarker" -> NextMarker.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "Tags" -> Tags.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeTagsResponse]
+      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
+      NextMarker.foreach(__v => __obj.update("NextMarker", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeTagsResponse]
     }
   }
 
@@ -554,7 +496,7 @@ package efs {
         ProvisionedThroughputInMibps: js.UndefOr[ProvisionedThroughputInMibps] = js.undefined,
         ThroughputMode: js.UndefOr[ThroughputMode] = js.undefined
     ): FileSystemDescription = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "CreationTime"         -> CreationTime.asInstanceOf[js.Any],
         "CreationToken"        -> CreationToken.asInstanceOf[js.Any],
         "FileSystemId"         -> FileSystemId.asInstanceOf[js.Any],
@@ -563,25 +505,17 @@ package efs {
         "OwnerId"              -> OwnerId.asInstanceOf[js.Any],
         "PerformanceMode"      -> PerformanceMode.asInstanceOf[js.Any],
         "SizeInBytes"          -> SizeInBytes.asInstanceOf[js.Any],
-        "Tags"                 -> Tags.asInstanceOf[js.Any],
-        "Encrypted" -> Encrypted.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "KmsKeyId" -> KmsKeyId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Name" -> Name.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ProvisionedThroughputInMibps" -> ProvisionedThroughputInMibps.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ThroughputMode" -> ThroughputMode.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "Tags"                 -> Tags.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[FileSystemDescription]
+      Encrypted.foreach(__v => __obj.update("Encrypted", __v.asInstanceOf[js.Any]))
+      KmsKeyId.foreach(__v => __obj.update("KmsKeyId", __v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
+      ProvisionedThroughputInMibps.foreach(
+        __v => __obj.update("ProvisionedThroughputInMibps", __v.asInstanceOf[js.Any])
+      )
+      ThroughputMode.foreach(__v => __obj.update("ThroughputMode", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[FileSystemDescription]
     }
   }
 
@@ -603,20 +537,14 @@ package efs {
         ValueInIA: js.UndefOr[FileSystemNullableSizeValue] = js.undefined,
         ValueInStandard: js.UndefOr[FileSystemNullableSizeValue] = js.undefined
     ): FileSystemSize = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Value" -> Value.asInstanceOf[js.Any],
-        "Timestamp" -> Timestamp.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ValueInIA" -> ValueInIA.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ValueInStandard" -> ValueInStandard.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "Value" -> Value.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[FileSystemSize]
+      Timestamp.foreach(__v => __obj.update("Timestamp", __v.asInstanceOf[js.Any]))
+      ValueInIA.foreach(__v => __obj.update("ValueInIA", __v.asInstanceOf[js.Any]))
+      ValueInStandard.foreach(__v => __obj.update("ValueInStandard", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[FileSystemSize]
     }
   }
 
@@ -639,13 +567,9 @@ package efs {
     def apply(
         LifecyclePolicies: js.UndefOr[LifecyclePolicies] = js.undefined
     ): LifecycleConfigurationDescription = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "LifecyclePolicies" -> LifecyclePolicies.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[LifecycleConfigurationDescription]
+      val __obj = js.Dictionary.empty[js.Any]
+      LifecyclePolicies.foreach(__v => __obj.update("LifecyclePolicies", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[LifecycleConfigurationDescription]
     }
   }
 
@@ -661,13 +585,9 @@ package efs {
     def apply(
         TransitionToIA: js.UndefOr[TransitionToIARules] = js.undefined
     ): LifecyclePolicy = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "TransitionToIA" -> TransitionToIA.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[LifecyclePolicy]
+      val __obj = js.Dictionary.empty[js.Any]
+      TransitionToIA.foreach(__v => __obj.update("TransitionToIA", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[LifecyclePolicy]
     }
   }
 
@@ -685,14 +605,12 @@ package efs {
         MountTargetId: MountTargetId,
         SecurityGroups: js.UndefOr[SecurityGroups] = js.undefined
     ): ModifyMountTargetSecurityGroupsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "MountTargetId" -> MountTargetId.asInstanceOf[js.Any],
-        "SecurityGroups" -> SecurityGroups.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "MountTargetId" -> MountTargetId.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ModifyMountTargetSecurityGroupsRequest]
+      SecurityGroups.foreach(__v => __obj.update("SecurityGroups", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ModifyMountTargetSecurityGroupsRequest]
     }
   }
 
@@ -720,23 +638,17 @@ package efs {
         NetworkInterfaceId: js.UndefOr[NetworkInterfaceId] = js.undefined,
         OwnerId: js.UndefOr[AwsAccountId] = js.undefined
     ): MountTargetDescription = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "FileSystemId"   -> FileSystemId.asInstanceOf[js.Any],
         "LifeCycleState" -> LifeCycleState.asInstanceOf[js.Any],
         "MountTargetId"  -> MountTargetId.asInstanceOf[js.Any],
-        "SubnetId"       -> SubnetId.asInstanceOf[js.Any],
-        "IpAddress" -> IpAddress.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NetworkInterfaceId" -> NetworkInterfaceId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "OwnerId" -> OwnerId.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "SubnetId"       -> SubnetId.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[MountTargetDescription]
+      IpAddress.foreach(__v => __obj.update("IpAddress", __v.asInstanceOf[js.Any]))
+      NetworkInterfaceId.foreach(__v => __obj.update("NetworkInterfaceId", __v.asInstanceOf[js.Any]))
+      OwnerId.foreach(__v => __obj.update("OwnerId", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[MountTargetDescription]
     }
   }
 
@@ -758,12 +670,12 @@ package efs {
         FileSystemId: FileSystemId,
         LifecyclePolicies: LifecyclePolicies
     ): PutLifecycleConfigurationRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "FileSystemId"      -> FileSystemId.asInstanceOf[js.Any],
         "LifecyclePolicies" -> LifecyclePolicies.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PutLifecycleConfigurationRequest]
+      __obj.asInstanceOf[PutLifecycleConfigurationRequest]
     }
   }
 
@@ -781,12 +693,12 @@ package efs {
         Key: TagKey,
         Value: TagValue
     ): Tag = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "Key"   -> Key.asInstanceOf[js.Any],
         "Value" -> Value.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Tag]
+      __obj.asInstanceOf[Tag]
     }
   }
 
@@ -816,17 +728,15 @@ package efs {
         ProvisionedThroughputInMibps: js.UndefOr[ProvisionedThroughputInMibps] = js.undefined,
         ThroughputMode: js.UndefOr[ThroughputMode] = js.undefined
     ): UpdateFileSystemRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "FileSystemId" -> FileSystemId.asInstanceOf[js.Any],
-        "ProvisionedThroughputInMibps" -> ProvisionedThroughputInMibps.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ThroughputMode" -> ThroughputMode.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "FileSystemId" -> FileSystemId.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateFileSystemRequest]
+      ProvisionedThroughputInMibps.foreach(
+        __v => __obj.update("ProvisionedThroughputInMibps", __v.asInstanceOf[js.Any])
+      )
+      ThroughputMode.foreach(__v => __obj.update("ThroughputMode", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateFileSystemRequest]
     }
   }
 }

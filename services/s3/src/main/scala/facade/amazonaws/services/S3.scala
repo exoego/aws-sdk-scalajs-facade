@@ -575,13 +575,9 @@ package s3 {
     def apply(
         DaysAfterInitiation: js.UndefOr[DaysAfterInitiation] = js.undefined
     ): AbortIncompleteMultipartUpload = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "DaysAfterInitiation" -> DaysAfterInitiation.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AbortIncompleteMultipartUpload]
+      val __obj = js.Dictionary.empty[js.Any]
+      DaysAfterInitiation.foreach(__v => __obj.update("DaysAfterInitiation", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AbortIncompleteMultipartUpload]
     }
   }
 
@@ -594,13 +590,9 @@ package s3 {
     def apply(
         RequestCharged: js.UndefOr[RequestCharged] = js.undefined
     ): AbortMultipartUploadOutput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "RequestCharged" -> RequestCharged.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AbortMultipartUploadOutput]
+      val __obj = js.Dictionary.empty[js.Any]
+      RequestCharged.foreach(__v => __obj.update("RequestCharged", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AbortMultipartUploadOutput]
     }
   }
 
@@ -619,16 +611,14 @@ package s3 {
         UploadId: MultipartUploadId,
         RequestPayer: js.UndefOr[RequestPayer] = js.undefined
     ): AbortMultipartUploadRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "Bucket"   -> Bucket.asInstanceOf[js.Any],
         "Key"      -> Key.asInstanceOf[js.Any],
-        "UploadId" -> UploadId.asInstanceOf[js.Any],
-        "RequestPayer" -> RequestPayer.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "UploadId" -> UploadId.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AbortMultipartUploadRequest]
+      RequestPayer.foreach(__v => __obj.update("RequestPayer", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AbortMultipartUploadRequest]
     }
   }
 
@@ -644,13 +634,9 @@ package s3 {
     def apply(
         Status: js.UndefOr[BucketAccelerateStatus] = js.undefined
     ): AccelerateConfiguration = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Status" -> Status.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AccelerateConfiguration]
+      val __obj = js.Dictionary.empty[js.Any]
+      Status.foreach(__v => __obj.update("Status", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AccelerateConfiguration]
     }
   }
 
@@ -668,16 +654,10 @@ package s3 {
         Grants: js.UndefOr[Grants] = js.undefined,
         Owner: js.UndefOr[Owner] = js.undefined
     ): AccessControlPolicy = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Grants" -> Grants.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Owner" -> Owner.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AccessControlPolicy]
+      val __obj = js.Dictionary.empty[js.Any]
+      Grants.foreach(__v => __obj.update("Grants", __v.asInstanceOf[js.Any]))
+      Owner.foreach(__v => __obj.update("Owner", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AccessControlPolicy]
     }
   }
 
@@ -693,11 +673,11 @@ package s3 {
     def apply(
         Owner: OwnerOverride
     ): AccessControlTranslation = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "Owner" -> Owner.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AccessControlTranslation]
+      __obj.asInstanceOf[AccessControlTranslation]
     }
   }
 
@@ -715,16 +695,10 @@ package s3 {
         Prefix: js.UndefOr[Prefix] = js.undefined,
         Tags: js.UndefOr[TagSet] = js.undefined
     ): AnalyticsAndOperator = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Prefix" -> Prefix.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Tags" -> Tags.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AnalyticsAndOperator]
+      val __obj = js.Dictionary.empty[js.Any]
+      Prefix.foreach(__v => __obj.update("Prefix", __v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AnalyticsAndOperator]
     }
   }
 
@@ -744,15 +718,13 @@ package s3 {
         StorageClassAnalysis: StorageClassAnalysis,
         Filter: js.UndefOr[AnalyticsFilter] = js.undefined
     ): AnalyticsConfiguration = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "Id"                   -> Id.asInstanceOf[js.Any],
-        "StorageClassAnalysis" -> StorageClassAnalysis.asInstanceOf[js.Any],
-        "Filter" -> Filter.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "StorageClassAnalysis" -> StorageClassAnalysis.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AnalyticsConfiguration]
+      Filter.foreach(__v => __obj.update("Filter", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AnalyticsConfiguration]
     }
   }
 
@@ -768,11 +740,11 @@ package s3 {
     def apply(
         S3BucketDestination: AnalyticsS3BucketDestination
     ): AnalyticsExportDestination = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "S3BucketDestination" -> S3BucketDestination.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AnalyticsExportDestination]
+      __obj.asInstanceOf[AnalyticsExportDestination]
     }
   }
 
@@ -792,19 +764,11 @@ package s3 {
         Prefix: js.UndefOr[Prefix] = js.undefined,
         Tag: js.UndefOr[Tag] = js.undefined
     ): AnalyticsFilter = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "And" -> And.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Prefix" -> Prefix.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Tag" -> Tag.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AnalyticsFilter]
+      val __obj = js.Dictionary.empty[js.Any]
+      And.foreach(__v => __obj.update("And", __v.asInstanceOf[js.Any]))
+      Prefix.foreach(__v => __obj.update("Prefix", __v.asInstanceOf[js.Any]))
+      Tag.foreach(__v => __obj.update("Tag", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AnalyticsFilter]
     }
   }
 
@@ -826,18 +790,14 @@ package s3 {
         BucketAccountId: js.UndefOr[AccountId] = js.undefined,
         Prefix: js.UndefOr[Prefix] = js.undefined
     ): AnalyticsS3BucketDestination = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "Bucket" -> Bucket.asInstanceOf[js.Any],
-        "Format" -> Format.asInstanceOf[js.Any],
-        "BucketAccountId" -> BucketAccountId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Prefix" -> Prefix.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "Format" -> Format.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AnalyticsS3BucketDestination]
+      BucketAccountId.foreach(__v => __obj.update("BucketAccountId", __v.asInstanceOf[js.Any]))
+      Prefix.foreach(__v => __obj.update("Prefix", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AnalyticsS3BucketDestination]
     }
   }
 
@@ -861,16 +821,10 @@ package s3 {
         CreationDate: js.UndefOr[CreationDate] = js.undefined,
         Name: js.UndefOr[BucketName] = js.undefined
     ): Bucket = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "CreationDate" -> CreationDate.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Name" -> Name.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Bucket]
+      val __obj = js.Dictionary.empty[js.Any]
+      CreationDate.foreach(__v => __obj.update("CreationDate", __v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Bucket]
     }
   }
 
@@ -902,11 +856,11 @@ package s3 {
     def apply(
         Rules: LifecycleRules
     ): BucketLifecycleConfiguration = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "Rules" -> Rules.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[BucketLifecycleConfiguration]
+      __obj.asInstanceOf[BucketLifecycleConfiguration]
     }
   }
 
@@ -950,13 +904,9 @@ package s3 {
     def apply(
         LoggingEnabled: js.UndefOr[LoggingEnabled] = js.undefined
     ): BucketLoggingStatus = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "LoggingEnabled" -> LoggingEnabled.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[BucketLoggingStatus]
+      val __obj = js.Dictionary.empty[js.Any]
+      LoggingEnabled.foreach(__v => __obj.update("LoggingEnabled", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[BucketLoggingStatus]
     }
   }
 
@@ -987,11 +937,11 @@ package s3 {
     def apply(
         CORSRules: CORSRules
     ): CORSConfiguration = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "CORSRules" -> CORSRules.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CORSConfiguration]
+      __obj.asInstanceOf[CORSConfiguration]
     }
   }
 
@@ -1015,21 +965,15 @@ package s3 {
         ExposeHeaders: js.UndefOr[ExposeHeaders] = js.undefined,
         MaxAgeSeconds: js.UndefOr[MaxAgeSeconds] = js.undefined
     ): CORSRule = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "AllowedMethods" -> AllowedMethods.asInstanceOf[js.Any],
-        "AllowedOrigins" -> AllowedOrigins.asInstanceOf[js.Any],
-        "AllowedHeaders" -> AllowedHeaders.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ExposeHeaders" -> ExposeHeaders.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MaxAgeSeconds" -> MaxAgeSeconds.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "AllowedOrigins" -> AllowedOrigins.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CORSRule]
+      AllowedHeaders.foreach(__v => __obj.update("AllowedHeaders", __v.asInstanceOf[js.Any]))
+      ExposeHeaders.foreach(__v => __obj.update("ExposeHeaders", __v.asInstanceOf[js.Any]))
+      MaxAgeSeconds.foreach(__v => __obj.update("MaxAgeSeconds", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CORSRule]
     }
   }
 
@@ -1057,31 +1001,15 @@ package s3 {
         QuoteEscapeCharacter: js.UndefOr[QuoteEscapeCharacter] = js.undefined,
         RecordDelimiter: js.UndefOr[RecordDelimiter] = js.undefined
     ): CSVInput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "AllowQuotedRecordDelimiter" -> AllowQuotedRecordDelimiter.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Comments" -> Comments.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "FieldDelimiter" -> FieldDelimiter.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "FileHeaderInfo" -> FileHeaderInfo.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "QuoteCharacter" -> QuoteCharacter.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "QuoteEscapeCharacter" -> QuoteEscapeCharacter.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "RecordDelimiter" -> RecordDelimiter.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CSVInput]
+      val __obj = js.Dictionary.empty[js.Any]
+      AllowQuotedRecordDelimiter.foreach(__v => __obj.update("AllowQuotedRecordDelimiter", __v.asInstanceOf[js.Any]))
+      Comments.foreach(__v => __obj.update("Comments", __v.asInstanceOf[js.Any]))
+      FieldDelimiter.foreach(__v => __obj.update("FieldDelimiter", __v.asInstanceOf[js.Any]))
+      FileHeaderInfo.foreach(__v => __obj.update("FileHeaderInfo", __v.asInstanceOf[js.Any]))
+      QuoteCharacter.foreach(__v => __obj.update("QuoteCharacter", __v.asInstanceOf[js.Any]))
+      QuoteEscapeCharacter.foreach(__v => __obj.update("QuoteEscapeCharacter", __v.asInstanceOf[js.Any]))
+      RecordDelimiter.foreach(__v => __obj.update("RecordDelimiter", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CSVInput]
     }
   }
 
@@ -1105,25 +1033,13 @@ package s3 {
         QuoteFields: js.UndefOr[QuoteFields] = js.undefined,
         RecordDelimiter: js.UndefOr[RecordDelimiter] = js.undefined
     ): CSVOutput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "FieldDelimiter" -> FieldDelimiter.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "QuoteCharacter" -> QuoteCharacter.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "QuoteEscapeCharacter" -> QuoteEscapeCharacter.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "QuoteFields" -> QuoteFields.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "RecordDelimiter" -> RecordDelimiter.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CSVOutput]
+      val __obj = js.Dictionary.empty[js.Any]
+      FieldDelimiter.foreach(__v => __obj.update("FieldDelimiter", __v.asInstanceOf[js.Any]))
+      QuoteCharacter.foreach(__v => __obj.update("QuoteCharacter", __v.asInstanceOf[js.Any]))
+      QuoteEscapeCharacter.foreach(__v => __obj.update("QuoteEscapeCharacter", __v.asInstanceOf[js.Any]))
+      QuoteFields.foreach(__v => __obj.update("QuoteFields", __v.asInstanceOf[js.Any]))
+      RecordDelimiter.foreach(__v => __obj.update("RecordDelimiter", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CSVOutput]
     }
   }
 
@@ -1147,25 +1063,13 @@ package s3 {
         Id: js.UndefOr[NotificationId] = js.undefined,
         InvocationRole: js.UndefOr[CloudFunctionInvocationRole] = js.undefined
     ): CloudFunctionConfiguration = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "CloudFunction" -> CloudFunction.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Event" -> Event.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Events" -> Events.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Id" -> Id.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "InvocationRole" -> InvocationRole.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CloudFunctionConfiguration]
+      val __obj = js.Dictionary.empty[js.Any]
+      CloudFunction.foreach(__v => __obj.update("CloudFunction", __v.asInstanceOf[js.Any]))
+      Event.foreach(__v => __obj.update("Event", __v.asInstanceOf[js.Any]))
+      Events.foreach(__v => __obj.update("Events", __v.asInstanceOf[js.Any]))
+      Id.foreach(__v => __obj.update("Id", __v.asInstanceOf[js.Any]))
+      InvocationRole.foreach(__v => __obj.update("InvocationRole", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CloudFunctionConfiguration]
     }
   }
 
@@ -1181,13 +1085,9 @@ package s3 {
     def apply(
         Prefix: js.UndefOr[Prefix] = js.undefined
     ): CommonPrefix = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Prefix" -> Prefix.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CommonPrefix]
+      val __obj = js.Dictionary.empty[js.Any]
+      Prefix.foreach(__v => __obj.update("Prefix", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CommonPrefix]
     }
   }
 
@@ -1216,37 +1116,17 @@ package s3 {
         ServerSideEncryption: js.UndefOr[ServerSideEncryption] = js.undefined,
         VersionId: js.UndefOr[ObjectVersionId] = js.undefined
     ): CompleteMultipartUploadOutput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Bucket" -> Bucket.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ETag" -> ETag.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Expiration" -> Expiration.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Key" -> Key.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Location" -> Location.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "RequestCharged" -> RequestCharged.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SSEKMSKeyId" -> SSEKMSKeyId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ServerSideEncryption" -> ServerSideEncryption.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "VersionId" -> VersionId.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CompleteMultipartUploadOutput]
+      val __obj = js.Dictionary.empty[js.Any]
+      Bucket.foreach(__v => __obj.update("Bucket", __v.asInstanceOf[js.Any]))
+      ETag.foreach(__v => __obj.update("ETag", __v.asInstanceOf[js.Any]))
+      Expiration.foreach(__v => __obj.update("Expiration", __v.asInstanceOf[js.Any]))
+      Key.foreach(__v => __obj.update("Key", __v.asInstanceOf[js.Any]))
+      Location.foreach(__v => __obj.update("Location", __v.asInstanceOf[js.Any]))
+      RequestCharged.foreach(__v => __obj.update("RequestCharged", __v.asInstanceOf[js.Any]))
+      SSEKMSKeyId.foreach(__v => __obj.update("SSEKMSKeyId", __v.asInstanceOf[js.Any]))
+      ServerSideEncryption.foreach(__v => __obj.update("ServerSideEncryption", __v.asInstanceOf[js.Any]))
+      VersionId.foreach(__v => __obj.update("VersionId", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CompleteMultipartUploadOutput]
     }
   }
 
@@ -1267,19 +1147,15 @@ package s3 {
         MultipartUpload: js.UndefOr[CompletedMultipartUpload] = js.undefined,
         RequestPayer: js.UndefOr[RequestPayer] = js.undefined
     ): CompleteMultipartUploadRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "Bucket"   -> Bucket.asInstanceOf[js.Any],
         "Key"      -> Key.asInstanceOf[js.Any],
-        "UploadId" -> UploadId.asInstanceOf[js.Any],
-        "MultipartUpload" -> MultipartUpload.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "RequestPayer" -> RequestPayer.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "UploadId" -> UploadId.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CompleteMultipartUploadRequest]
+      MultipartUpload.foreach(__v => __obj.update("MultipartUpload", __v.asInstanceOf[js.Any]))
+      RequestPayer.foreach(__v => __obj.update("RequestPayer", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CompleteMultipartUploadRequest]
     }
   }
 
@@ -1295,13 +1171,9 @@ package s3 {
     def apply(
         Parts: js.UndefOr[CompletedPartList] = js.undefined
     ): CompletedMultipartUpload = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Parts" -> Parts.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CompletedMultipartUpload]
+      val __obj = js.Dictionary.empty[js.Any]
+      Parts.foreach(__v => __obj.update("Parts", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CompletedMultipartUpload]
     }
   }
 
@@ -1319,16 +1191,10 @@ package s3 {
         ETag: js.UndefOr[ETag] = js.undefined,
         PartNumber: js.UndefOr[PartNumber] = js.undefined
     ): CompletedPart = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ETag" -> ETag.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "PartNumber" -> PartNumber.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CompletedPart]
+      val __obj = js.Dictionary.empty[js.Any]
+      ETag.foreach(__v => __obj.update("ETag", __v.asInstanceOf[js.Any]))
+      PartNumber.foreach(__v => __obj.update("PartNumber", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CompletedPart]
     }
   }
 
@@ -1354,16 +1220,10 @@ package s3 {
         HttpErrorCodeReturnedEquals: js.UndefOr[HttpErrorCodeReturnedEquals] = js.undefined,
         KeyPrefixEquals: js.UndefOr[KeyPrefixEquals] = js.undefined
     ): Condition = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "HttpErrorCodeReturnedEquals" -> HttpErrorCodeReturnedEquals.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "KeyPrefixEquals" -> KeyPrefixEquals.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Condition]
+      val __obj = js.Dictionary.empty[js.Any]
+      HttpErrorCodeReturnedEquals.foreach(__v => __obj.update("HttpErrorCodeReturnedEquals", __v.asInstanceOf[js.Any]))
+      KeyPrefixEquals.foreach(__v => __obj.update("KeyPrefixEquals", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Condition]
     }
   }
 
@@ -1376,10 +1236,9 @@ package s3 {
   object ContinuationEvent {
     def apply(
         ): ContinuationEvent = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary.empty[js.Any]
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ContinuationEvent]
+      __obj.asInstanceOf[ContinuationEvent]
     }
   }
 
@@ -1408,37 +1267,17 @@ package s3 {
         ServerSideEncryption: js.UndefOr[ServerSideEncryption] = js.undefined,
         VersionId: js.UndefOr[ObjectVersionId] = js.undefined
     ): CopyObjectOutput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "CopyObjectResult" -> CopyObjectResult.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "CopySourceVersionId" -> CopySourceVersionId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Expiration" -> Expiration.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "RequestCharged" -> RequestCharged.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SSECustomerAlgorithm" -> SSECustomerAlgorithm.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SSECustomerKeyMD5" -> SSECustomerKeyMD5.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SSEKMSKeyId" -> SSEKMSKeyId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ServerSideEncryption" -> ServerSideEncryption.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "VersionId" -> VersionId.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CopyObjectOutput]
+      val __obj = js.Dictionary.empty[js.Any]
+      CopyObjectResult.foreach(__v => __obj.update("CopyObjectResult", __v.asInstanceOf[js.Any]))
+      CopySourceVersionId.foreach(__v => __obj.update("CopySourceVersionId", __v.asInstanceOf[js.Any]))
+      Expiration.foreach(__v => __obj.update("Expiration", __v.asInstanceOf[js.Any]))
+      RequestCharged.foreach(__v => __obj.update("RequestCharged", __v.asInstanceOf[js.Any]))
+      SSECustomerAlgorithm.foreach(__v => __obj.update("SSECustomerAlgorithm", __v.asInstanceOf[js.Any]))
+      SSECustomerKeyMD5.foreach(__v => __obj.update("SSECustomerKeyMD5", __v.asInstanceOf[js.Any]))
+      SSEKMSKeyId.foreach(__v => __obj.update("SSEKMSKeyId", __v.asInstanceOf[js.Any]))
+      ServerSideEncryption.foreach(__v => __obj.update("ServerSideEncryption", __v.asInstanceOf[js.Any]))
+      VersionId.foreach(__v => __obj.update("VersionId", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CopyObjectOutput]
     }
   }
 
@@ -1521,112 +1360,48 @@ package s3 {
         TaggingDirective: js.UndefOr[TaggingDirective] = js.undefined,
         WebsiteRedirectLocation: js.UndefOr[WebsiteRedirectLocation] = js.undefined
     ): CopyObjectRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "Bucket"     -> Bucket.asInstanceOf[js.Any],
         "CopySource" -> CopySource.asInstanceOf[js.Any],
-        "Key"        -> Key.asInstanceOf[js.Any],
-        "ACL" -> ACL.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "CacheControl" -> CacheControl.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ContentDisposition" -> ContentDisposition.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ContentEncoding" -> ContentEncoding.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ContentLanguage" -> ContentLanguage.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ContentType" -> ContentType.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "CopySourceIfMatch" -> CopySourceIfMatch.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "CopySourceIfModifiedSince" -> CopySourceIfModifiedSince.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "CopySourceIfNoneMatch" -> CopySourceIfNoneMatch.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "CopySourceIfUnmodifiedSince" -> CopySourceIfUnmodifiedSince.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "CopySourceSSECustomerAlgorithm" -> CopySourceSSECustomerAlgorithm.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "CopySourceSSECustomerKey" -> CopySourceSSECustomerKey.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "CopySourceSSECustomerKeyMD5" -> CopySourceSSECustomerKeyMD5.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Expires" -> Expires.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "GrantFullControl" -> GrantFullControl.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "GrantRead" -> GrantRead.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "GrantReadACP" -> GrantReadACP.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "GrantWriteACP" -> GrantWriteACP.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Metadata" -> Metadata.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MetadataDirective" -> MetadataDirective.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ObjectLockLegalHoldStatus" -> ObjectLockLegalHoldStatus.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ObjectLockMode" -> ObjectLockMode.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ObjectLockRetainUntilDate" -> ObjectLockRetainUntilDate.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "RequestPayer" -> RequestPayer.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SSECustomerAlgorithm" -> SSECustomerAlgorithm.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SSECustomerKey" -> SSECustomerKey.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SSECustomerKeyMD5" -> SSECustomerKeyMD5.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SSEKMSKeyId" -> SSEKMSKeyId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ServerSideEncryption" -> ServerSideEncryption.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "StorageClass" -> StorageClass.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Tagging" -> Tagging.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "TaggingDirective" -> TaggingDirective.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "WebsiteRedirectLocation" -> WebsiteRedirectLocation.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "Key"        -> Key.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CopyObjectRequest]
+      ACL.foreach(__v => __obj.update("ACL", __v.asInstanceOf[js.Any]))
+      CacheControl.foreach(__v => __obj.update("CacheControl", __v.asInstanceOf[js.Any]))
+      ContentDisposition.foreach(__v => __obj.update("ContentDisposition", __v.asInstanceOf[js.Any]))
+      ContentEncoding.foreach(__v => __obj.update("ContentEncoding", __v.asInstanceOf[js.Any]))
+      ContentLanguage.foreach(__v => __obj.update("ContentLanguage", __v.asInstanceOf[js.Any]))
+      ContentType.foreach(__v => __obj.update("ContentType", __v.asInstanceOf[js.Any]))
+      CopySourceIfMatch.foreach(__v => __obj.update("CopySourceIfMatch", __v.asInstanceOf[js.Any]))
+      CopySourceIfModifiedSince.foreach(__v => __obj.update("CopySourceIfModifiedSince", __v.asInstanceOf[js.Any]))
+      CopySourceIfNoneMatch.foreach(__v => __obj.update("CopySourceIfNoneMatch", __v.asInstanceOf[js.Any]))
+      CopySourceIfUnmodifiedSince.foreach(__v => __obj.update("CopySourceIfUnmodifiedSince", __v.asInstanceOf[js.Any]))
+      CopySourceSSECustomerAlgorithm.foreach(
+        __v => __obj.update("CopySourceSSECustomerAlgorithm", __v.asInstanceOf[js.Any])
+      )
+      CopySourceSSECustomerKey.foreach(__v => __obj.update("CopySourceSSECustomerKey", __v.asInstanceOf[js.Any]))
+      CopySourceSSECustomerKeyMD5.foreach(__v => __obj.update("CopySourceSSECustomerKeyMD5", __v.asInstanceOf[js.Any]))
+      Expires.foreach(__v => __obj.update("Expires", __v.asInstanceOf[js.Any]))
+      GrantFullControl.foreach(__v => __obj.update("GrantFullControl", __v.asInstanceOf[js.Any]))
+      GrantRead.foreach(__v => __obj.update("GrantRead", __v.asInstanceOf[js.Any]))
+      GrantReadACP.foreach(__v => __obj.update("GrantReadACP", __v.asInstanceOf[js.Any]))
+      GrantWriteACP.foreach(__v => __obj.update("GrantWriteACP", __v.asInstanceOf[js.Any]))
+      Metadata.foreach(__v => __obj.update("Metadata", __v.asInstanceOf[js.Any]))
+      MetadataDirective.foreach(__v => __obj.update("MetadataDirective", __v.asInstanceOf[js.Any]))
+      ObjectLockLegalHoldStatus.foreach(__v => __obj.update("ObjectLockLegalHoldStatus", __v.asInstanceOf[js.Any]))
+      ObjectLockMode.foreach(__v => __obj.update("ObjectLockMode", __v.asInstanceOf[js.Any]))
+      ObjectLockRetainUntilDate.foreach(__v => __obj.update("ObjectLockRetainUntilDate", __v.asInstanceOf[js.Any]))
+      RequestPayer.foreach(__v => __obj.update("RequestPayer", __v.asInstanceOf[js.Any]))
+      SSECustomerAlgorithm.foreach(__v => __obj.update("SSECustomerAlgorithm", __v.asInstanceOf[js.Any]))
+      SSECustomerKey.foreach(__v => __obj.update("SSECustomerKey", __v.asInstanceOf[js.Any]))
+      SSECustomerKeyMD5.foreach(__v => __obj.update("SSECustomerKeyMD5", __v.asInstanceOf[js.Any]))
+      SSEKMSKeyId.foreach(__v => __obj.update("SSEKMSKeyId", __v.asInstanceOf[js.Any]))
+      ServerSideEncryption.foreach(__v => __obj.update("ServerSideEncryption", __v.asInstanceOf[js.Any]))
+      StorageClass.foreach(__v => __obj.update("StorageClass", __v.asInstanceOf[js.Any]))
+      Tagging.foreach(__v => __obj.update("Tagging", __v.asInstanceOf[js.Any]))
+      TaggingDirective.foreach(__v => __obj.update("TaggingDirective", __v.asInstanceOf[js.Any]))
+      WebsiteRedirectLocation.foreach(__v => __obj.update("WebsiteRedirectLocation", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CopyObjectRequest]
     }
   }
 
@@ -1644,16 +1419,10 @@ package s3 {
         ETag: js.UndefOr[ETag] = js.undefined,
         LastModified: js.UndefOr[LastModified] = js.undefined
     ): CopyObjectResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ETag" -> ETag.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "LastModified" -> LastModified.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CopyObjectResult]
+      val __obj = js.Dictionary.empty[js.Any]
+      ETag.foreach(__v => __obj.update("ETag", __v.asInstanceOf[js.Any]))
+      LastModified.foreach(__v => __obj.update("LastModified", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CopyObjectResult]
     }
   }
 
@@ -1671,16 +1440,10 @@ package s3 {
         ETag: js.UndefOr[ETag] = js.undefined,
         LastModified: js.UndefOr[LastModified] = js.undefined
     ): CopyPartResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ETag" -> ETag.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "LastModified" -> LastModified.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CopyPartResult]
+      val __obj = js.Dictionary.empty[js.Any]
+      ETag.foreach(__v => __obj.update("ETag", __v.asInstanceOf[js.Any]))
+      LastModified.foreach(__v => __obj.update("LastModified", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CopyPartResult]
     }
   }
 
@@ -1696,13 +1459,9 @@ package s3 {
     def apply(
         LocationConstraint: js.UndefOr[BucketLocationConstraint] = js.undefined
     ): CreateBucketConfiguration = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "LocationConstraint" -> LocationConstraint.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateBucketConfiguration]
+      val __obj = js.Dictionary.empty[js.Any]
+      LocationConstraint.foreach(__v => __obj.update("LocationConstraint", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateBucketConfiguration]
     }
   }
 
@@ -1715,13 +1474,9 @@ package s3 {
     def apply(
         Location: js.UndefOr[Location] = js.undefined
     ): CreateBucketOutput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Location" -> Location.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateBucketOutput]
+      val __obj = js.Dictionary.empty[js.Any]
+      Location.foreach(__v => __obj.update("Location", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateBucketOutput]
     }
   }
 
@@ -1750,35 +1505,19 @@ package s3 {
         GrantWriteACP: js.UndefOr[GrantWriteACP] = js.undefined,
         ObjectLockEnabledForBucket: js.UndefOr[ObjectLockEnabledForBucket] = js.undefined
     ): CreateBucketRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Bucket" -> Bucket.asInstanceOf[js.Any],
-        "ACL" -> ACL.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "CreateBucketConfiguration" -> CreateBucketConfiguration.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "GrantFullControl" -> GrantFullControl.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "GrantRead" -> GrantRead.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "GrantReadACP" -> GrantReadACP.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "GrantWrite" -> GrantWrite.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "GrantWriteACP" -> GrantWriteACP.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ObjectLockEnabledForBucket" -> ObjectLockEnabledForBucket.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "Bucket" -> Bucket.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateBucketRequest]
+      ACL.foreach(__v => __obj.update("ACL", __v.asInstanceOf[js.Any]))
+      CreateBucketConfiguration.foreach(__v => __obj.update("CreateBucketConfiguration", __v.asInstanceOf[js.Any]))
+      GrantFullControl.foreach(__v => __obj.update("GrantFullControl", __v.asInstanceOf[js.Any]))
+      GrantRead.foreach(__v => __obj.update("GrantRead", __v.asInstanceOf[js.Any]))
+      GrantReadACP.foreach(__v => __obj.update("GrantReadACP", __v.asInstanceOf[js.Any]))
+      GrantWrite.foreach(__v => __obj.update("GrantWrite", __v.asInstanceOf[js.Any]))
+      GrantWriteACP.foreach(__v => __obj.update("GrantWriteACP", __v.asInstanceOf[js.Any]))
+      ObjectLockEnabledForBucket.foreach(__v => __obj.update("ObjectLockEnabledForBucket", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateBucketRequest]
     }
   }
 
@@ -1809,40 +1548,18 @@ package s3 {
         ServerSideEncryption: js.UndefOr[ServerSideEncryption] = js.undefined,
         UploadId: js.UndefOr[MultipartUploadId] = js.undefined
     ): CreateMultipartUploadOutput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "AbortDate" -> AbortDate.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "AbortRuleId" -> AbortRuleId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Bucket" -> Bucket.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Key" -> Key.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "RequestCharged" -> RequestCharged.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SSECustomerAlgorithm" -> SSECustomerAlgorithm.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SSECustomerKeyMD5" -> SSECustomerKeyMD5.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SSEKMSKeyId" -> SSEKMSKeyId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ServerSideEncryption" -> ServerSideEncryption.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "UploadId" -> UploadId.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateMultipartUploadOutput]
+      val __obj = js.Dictionary.empty[js.Any]
+      AbortDate.foreach(__v => __obj.update("AbortDate", __v.asInstanceOf[js.Any]))
+      AbortRuleId.foreach(__v => __obj.update("AbortRuleId", __v.asInstanceOf[js.Any]))
+      Bucket.foreach(__v => __obj.update("Bucket", __v.asInstanceOf[js.Any]))
+      Key.foreach(__v => __obj.update("Key", __v.asInstanceOf[js.Any]))
+      RequestCharged.foreach(__v => __obj.update("RequestCharged", __v.asInstanceOf[js.Any]))
+      SSECustomerAlgorithm.foreach(__v => __obj.update("SSECustomerAlgorithm", __v.asInstanceOf[js.Any]))
+      SSECustomerKeyMD5.foreach(__v => __obj.update("SSECustomerKeyMD5", __v.asInstanceOf[js.Any]))
+      SSEKMSKeyId.foreach(__v => __obj.update("SSEKMSKeyId", __v.asInstanceOf[js.Any]))
+      ServerSideEncryption.foreach(__v => __obj.update("ServerSideEncryption", __v.asInstanceOf[js.Any]))
+      UploadId.foreach(__v => __obj.update("UploadId", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateMultipartUploadOutput]
     }
   }
 
@@ -1905,84 +1622,36 @@ package s3 {
         Tagging: js.UndefOr[TaggingHeader] = js.undefined,
         WebsiteRedirectLocation: js.UndefOr[WebsiteRedirectLocation] = js.undefined
     ): CreateMultipartUploadRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "Bucket" -> Bucket.asInstanceOf[js.Any],
-        "Key"    -> Key.asInstanceOf[js.Any],
-        "ACL" -> ACL.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "CacheControl" -> CacheControl.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ContentDisposition" -> ContentDisposition.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ContentEncoding" -> ContentEncoding.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ContentLanguage" -> ContentLanguage.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ContentType" -> ContentType.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Expires" -> Expires.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "GrantFullControl" -> GrantFullControl.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "GrantRead" -> GrantRead.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "GrantReadACP" -> GrantReadACP.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "GrantWriteACP" -> GrantWriteACP.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Metadata" -> Metadata.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ObjectLockLegalHoldStatus" -> ObjectLockLegalHoldStatus.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ObjectLockMode" -> ObjectLockMode.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ObjectLockRetainUntilDate" -> ObjectLockRetainUntilDate.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "RequestPayer" -> RequestPayer.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SSECustomerAlgorithm" -> SSECustomerAlgorithm.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SSECustomerKey" -> SSECustomerKey.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SSECustomerKeyMD5" -> SSECustomerKeyMD5.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SSEKMSKeyId" -> SSEKMSKeyId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ServerSideEncryption" -> ServerSideEncryption.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "StorageClass" -> StorageClass.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Tagging" -> Tagging.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "WebsiteRedirectLocation" -> WebsiteRedirectLocation.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "Key"    -> Key.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateMultipartUploadRequest]
+      ACL.foreach(__v => __obj.update("ACL", __v.asInstanceOf[js.Any]))
+      CacheControl.foreach(__v => __obj.update("CacheControl", __v.asInstanceOf[js.Any]))
+      ContentDisposition.foreach(__v => __obj.update("ContentDisposition", __v.asInstanceOf[js.Any]))
+      ContentEncoding.foreach(__v => __obj.update("ContentEncoding", __v.asInstanceOf[js.Any]))
+      ContentLanguage.foreach(__v => __obj.update("ContentLanguage", __v.asInstanceOf[js.Any]))
+      ContentType.foreach(__v => __obj.update("ContentType", __v.asInstanceOf[js.Any]))
+      Expires.foreach(__v => __obj.update("Expires", __v.asInstanceOf[js.Any]))
+      GrantFullControl.foreach(__v => __obj.update("GrantFullControl", __v.asInstanceOf[js.Any]))
+      GrantRead.foreach(__v => __obj.update("GrantRead", __v.asInstanceOf[js.Any]))
+      GrantReadACP.foreach(__v => __obj.update("GrantReadACP", __v.asInstanceOf[js.Any]))
+      GrantWriteACP.foreach(__v => __obj.update("GrantWriteACP", __v.asInstanceOf[js.Any]))
+      Metadata.foreach(__v => __obj.update("Metadata", __v.asInstanceOf[js.Any]))
+      ObjectLockLegalHoldStatus.foreach(__v => __obj.update("ObjectLockLegalHoldStatus", __v.asInstanceOf[js.Any]))
+      ObjectLockMode.foreach(__v => __obj.update("ObjectLockMode", __v.asInstanceOf[js.Any]))
+      ObjectLockRetainUntilDate.foreach(__v => __obj.update("ObjectLockRetainUntilDate", __v.asInstanceOf[js.Any]))
+      RequestPayer.foreach(__v => __obj.update("RequestPayer", __v.asInstanceOf[js.Any]))
+      SSECustomerAlgorithm.foreach(__v => __obj.update("SSECustomerAlgorithm", __v.asInstanceOf[js.Any]))
+      SSECustomerKey.foreach(__v => __obj.update("SSECustomerKey", __v.asInstanceOf[js.Any]))
+      SSECustomerKeyMD5.foreach(__v => __obj.update("SSECustomerKeyMD5", __v.asInstanceOf[js.Any]))
+      SSEKMSKeyId.foreach(__v => __obj.update("SSEKMSKeyId", __v.asInstanceOf[js.Any]))
+      ServerSideEncryption.foreach(__v => __obj.update("ServerSideEncryption", __v.asInstanceOf[js.Any]))
+      StorageClass.foreach(__v => __obj.update("StorageClass", __v.asInstanceOf[js.Any]))
+      Tagging.foreach(__v => __obj.update("Tagging", __v.asInstanceOf[js.Any]))
+      WebsiteRedirectLocation.foreach(__v => __obj.update("WebsiteRedirectLocation", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateMultipartUploadRequest]
     }
   }
 
@@ -2002,19 +1671,11 @@ package s3 {
         Mode: js.UndefOr[ObjectLockRetentionMode] = js.undefined,
         Years: js.UndefOr[Years] = js.undefined
     ): DefaultRetention = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Days" -> Days.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Mode" -> Mode.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Years" -> Years.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DefaultRetention]
+      val __obj = js.Dictionary.empty[js.Any]
+      Days.foreach(__v => __obj.update("Days", __v.asInstanceOf[js.Any]))
+      Mode.foreach(__v => __obj.update("Mode", __v.asInstanceOf[js.Any]))
+      Years.foreach(__v => __obj.update("Years", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DefaultRetention]
     }
   }
 
@@ -2032,14 +1693,12 @@ package s3 {
         Objects: ObjectIdentifierList,
         Quiet: js.UndefOr[Quiet] = js.undefined
     ): Delete = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Objects" -> Objects.asInstanceOf[js.Any],
-        "Quiet" -> Quiet.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "Objects" -> Objects.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Delete]
+      Quiet.foreach(__v => __obj.update("Quiet", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Delete]
     }
   }
 
@@ -2054,12 +1713,12 @@ package s3 {
         Bucket: BucketName,
         Id: AnalyticsId
     ): DeleteBucketAnalyticsConfigurationRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "Bucket" -> Bucket.asInstanceOf[js.Any],
         "Id"     -> Id.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteBucketAnalyticsConfigurationRequest]
+      __obj.asInstanceOf[DeleteBucketAnalyticsConfigurationRequest]
     }
   }
 
@@ -2072,11 +1731,11 @@ package s3 {
     def apply(
         Bucket: BucketName
     ): DeleteBucketCorsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "Bucket" -> Bucket.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteBucketCorsRequest]
+      __obj.asInstanceOf[DeleteBucketCorsRequest]
     }
   }
 
@@ -2089,11 +1748,11 @@ package s3 {
     def apply(
         Bucket: BucketName
     ): DeleteBucketEncryptionRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "Bucket" -> Bucket.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteBucketEncryptionRequest]
+      __obj.asInstanceOf[DeleteBucketEncryptionRequest]
     }
   }
 
@@ -2108,12 +1767,12 @@ package s3 {
         Bucket: BucketName,
         Id: InventoryId
     ): DeleteBucketInventoryConfigurationRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "Bucket" -> Bucket.asInstanceOf[js.Any],
         "Id"     -> Id.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteBucketInventoryConfigurationRequest]
+      __obj.asInstanceOf[DeleteBucketInventoryConfigurationRequest]
     }
   }
 
@@ -2126,11 +1785,11 @@ package s3 {
     def apply(
         Bucket: BucketName
     ): DeleteBucketLifecycleRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "Bucket" -> Bucket.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteBucketLifecycleRequest]
+      __obj.asInstanceOf[DeleteBucketLifecycleRequest]
     }
   }
 
@@ -2145,12 +1804,12 @@ package s3 {
         Bucket: BucketName,
         Id: MetricsId
     ): DeleteBucketMetricsConfigurationRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "Bucket" -> Bucket.asInstanceOf[js.Any],
         "Id"     -> Id.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteBucketMetricsConfigurationRequest]
+      __obj.asInstanceOf[DeleteBucketMetricsConfigurationRequest]
     }
   }
 
@@ -2163,11 +1822,11 @@ package s3 {
     def apply(
         Bucket: BucketName
     ): DeleteBucketPolicyRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "Bucket" -> Bucket.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteBucketPolicyRequest]
+      __obj.asInstanceOf[DeleteBucketPolicyRequest]
     }
   }
 
@@ -2180,11 +1839,11 @@ package s3 {
     def apply(
         Bucket: BucketName
     ): DeleteBucketReplicationRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "Bucket" -> Bucket.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteBucketReplicationRequest]
+      __obj.asInstanceOf[DeleteBucketReplicationRequest]
     }
   }
 
@@ -2197,11 +1856,11 @@ package s3 {
     def apply(
         Bucket: BucketName
     ): DeleteBucketRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "Bucket" -> Bucket.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteBucketRequest]
+      __obj.asInstanceOf[DeleteBucketRequest]
     }
   }
 
@@ -2214,11 +1873,11 @@ package s3 {
     def apply(
         Bucket: BucketName
     ): DeleteBucketTaggingRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "Bucket" -> Bucket.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteBucketTaggingRequest]
+      __obj.asInstanceOf[DeleteBucketTaggingRequest]
     }
   }
 
@@ -2231,11 +1890,11 @@ package s3 {
     def apply(
         Bucket: BucketName
     ): DeleteBucketWebsiteRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "Bucket" -> Bucket.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteBucketWebsiteRequest]
+      __obj.asInstanceOf[DeleteBucketWebsiteRequest]
     }
   }
 
@@ -2259,25 +1918,13 @@ package s3 {
         Owner: js.UndefOr[Owner] = js.undefined,
         VersionId: js.UndefOr[ObjectVersionId] = js.undefined
     ): DeleteMarkerEntry = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "IsLatest" -> IsLatest.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Key" -> Key.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "LastModified" -> LastModified.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Owner" -> Owner.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "VersionId" -> VersionId.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteMarkerEntry]
+      val __obj = js.Dictionary.empty[js.Any]
+      IsLatest.foreach(__v => __obj.update("IsLatest", __v.asInstanceOf[js.Any]))
+      Key.foreach(__v => __obj.update("Key", __v.asInstanceOf[js.Any]))
+      LastModified.foreach(__v => __obj.update("LastModified", __v.asInstanceOf[js.Any]))
+      Owner.foreach(__v => __obj.update("Owner", __v.asInstanceOf[js.Any]))
+      VersionId.foreach(__v => __obj.update("VersionId", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DeleteMarkerEntry]
     }
   }
 
@@ -2293,13 +1940,9 @@ package s3 {
     def apply(
         Status: js.UndefOr[DeleteMarkerReplicationStatus] = js.undefined
     ): DeleteMarkerReplication = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Status" -> Status.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteMarkerReplication]
+      val __obj = js.Dictionary.empty[js.Any]
+      Status.foreach(__v => __obj.update("Status", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DeleteMarkerReplication]
     }
   }
 
@@ -2323,19 +1966,11 @@ package s3 {
         RequestCharged: js.UndefOr[RequestCharged] = js.undefined,
         VersionId: js.UndefOr[ObjectVersionId] = js.undefined
     ): DeleteObjectOutput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "DeleteMarker" -> DeleteMarker.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "RequestCharged" -> RequestCharged.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "VersionId" -> VersionId.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteObjectOutput]
+      val __obj = js.Dictionary.empty[js.Any]
+      DeleteMarker.foreach(__v => __obj.update("DeleteMarker", __v.asInstanceOf[js.Any]))
+      RequestCharged.foreach(__v => __obj.update("RequestCharged", __v.asInstanceOf[js.Any]))
+      VersionId.foreach(__v => __obj.update("VersionId", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DeleteObjectOutput]
     }
   }
 
@@ -2358,24 +1993,16 @@ package s3 {
         RequestPayer: js.UndefOr[RequestPayer] = js.undefined,
         VersionId: js.UndefOr[ObjectVersionId] = js.undefined
     ): DeleteObjectRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "Bucket" -> Bucket.asInstanceOf[js.Any],
-        "Key"    -> Key.asInstanceOf[js.Any],
-        "BypassGovernanceRetention" -> BypassGovernanceRetention.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MFA" -> MFA.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "RequestPayer" -> RequestPayer.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "VersionId" -> VersionId.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "Key"    -> Key.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteObjectRequest]
+      BypassGovernanceRetention.foreach(__v => __obj.update("BypassGovernanceRetention", __v.asInstanceOf[js.Any]))
+      MFA.foreach(__v => __obj.update("MFA", __v.asInstanceOf[js.Any]))
+      RequestPayer.foreach(__v => __obj.update("RequestPayer", __v.asInstanceOf[js.Any]))
+      VersionId.foreach(__v => __obj.update("VersionId", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DeleteObjectRequest]
     }
   }
 
@@ -2388,13 +2015,9 @@ package s3 {
     def apply(
         VersionId: js.UndefOr[ObjectVersionId] = js.undefined
     ): DeleteObjectTaggingOutput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "VersionId" -> VersionId.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteObjectTaggingOutput]
+      val __obj = js.Dictionary.empty[js.Any]
+      VersionId.foreach(__v => __obj.update("VersionId", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DeleteObjectTaggingOutput]
     }
   }
 
@@ -2411,15 +2034,13 @@ package s3 {
         Key: ObjectKey,
         VersionId: js.UndefOr[ObjectVersionId] = js.undefined
     ): DeleteObjectTaggingRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "Bucket" -> Bucket.asInstanceOf[js.Any],
-        "Key"    -> Key.asInstanceOf[js.Any],
-        "VersionId" -> VersionId.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "Key"    -> Key.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteObjectTaggingRequest]
+      VersionId.foreach(__v => __obj.update("VersionId", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DeleteObjectTaggingRequest]
     }
   }
 
@@ -2436,19 +2057,11 @@ package s3 {
         Errors: js.UndefOr[Errors] = js.undefined,
         RequestCharged: js.UndefOr[RequestCharged] = js.undefined
     ): DeleteObjectsOutput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Deleted" -> Deleted.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Errors" -> Errors.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "RequestCharged" -> RequestCharged.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteObjectsOutput]
+      val __obj = js.Dictionary.empty[js.Any]
+      Deleted.foreach(__v => __obj.update("Deleted", __v.asInstanceOf[js.Any]))
+      Errors.foreach(__v => __obj.update("Errors", __v.asInstanceOf[js.Any]))
+      RequestCharged.foreach(__v => __obj.update("RequestCharged", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DeleteObjectsOutput]
     }
   }
 
@@ -2469,21 +2082,15 @@ package s3 {
         MFA: js.UndefOr[MFA] = js.undefined,
         RequestPayer: js.UndefOr[RequestPayer] = js.undefined
     ): DeleteObjectsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "Bucket" -> Bucket.asInstanceOf[js.Any],
-        "Delete" -> Delete.asInstanceOf[js.Any],
-        "BypassGovernanceRetention" -> BypassGovernanceRetention.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MFA" -> MFA.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "RequestPayer" -> RequestPayer.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "Delete" -> Delete.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteObjectsRequest]
+      BypassGovernanceRetention.foreach(__v => __obj.update("BypassGovernanceRetention", __v.asInstanceOf[js.Any]))
+      MFA.foreach(__v => __obj.update("MFA", __v.asInstanceOf[js.Any]))
+      RequestPayer.foreach(__v => __obj.update("RequestPayer", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DeleteObjectsRequest]
     }
   }
 
@@ -2496,11 +2103,11 @@ package s3 {
     def apply(
         Bucket: BucketName
     ): DeletePublicAccessBlockRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "Bucket" -> Bucket.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeletePublicAccessBlockRequest]
+      __obj.asInstanceOf[DeletePublicAccessBlockRequest]
     }
   }
 
@@ -2522,22 +2129,12 @@ package s3 {
         Key: js.UndefOr[ObjectKey] = js.undefined,
         VersionId: js.UndefOr[ObjectVersionId] = js.undefined
     ): DeletedObject = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "DeleteMarker" -> DeleteMarker.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DeleteMarkerVersionId" -> DeleteMarkerVersionId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Key" -> Key.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "VersionId" -> VersionId.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeletedObject]
+      val __obj = js.Dictionary.empty[js.Any]
+      DeleteMarker.foreach(__v => __obj.update("DeleteMarker", __v.asInstanceOf[js.Any]))
+      DeleteMarkerVersionId.foreach(__v => __obj.update("DeleteMarkerVersionId", __v.asInstanceOf[js.Any]))
+      Key.foreach(__v => __obj.update("Key", __v.asInstanceOf[js.Any]))
+      VersionId.foreach(__v => __obj.update("VersionId", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DeletedObject]
     }
   }
 
@@ -2561,23 +2158,15 @@ package s3 {
         EncryptionConfiguration: js.UndefOr[EncryptionConfiguration] = js.undefined,
         StorageClass: js.UndefOr[StorageClass] = js.undefined
     ): Destination = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Bucket" -> Bucket.asInstanceOf[js.Any],
-        "AccessControlTranslation" -> AccessControlTranslation.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Account" -> Account.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "EncryptionConfiguration" -> EncryptionConfiguration.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "StorageClass" -> StorageClass.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "Bucket" -> Bucket.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Destination]
+      AccessControlTranslation.foreach(__v => __obj.update("AccessControlTranslation", __v.asInstanceOf[js.Any]))
+      Account.foreach(__v => __obj.update("Account", __v.asInstanceOf[js.Any]))
+      EncryptionConfiguration.foreach(__v => __obj.update("EncryptionConfiguration", __v.asInstanceOf[js.Any]))
+      StorageClass.foreach(__v => __obj.update("StorageClass", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Destination]
     }
   }
 
@@ -2606,17 +2195,13 @@ package s3 {
         KMSContext: js.UndefOr[KMSContext] = js.undefined,
         KMSKeyId: js.UndefOr[SSEKMSKeyId] = js.undefined
     ): Encryption = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "EncryptionType" -> EncryptionType.asInstanceOf[js.Any],
-        "KMSContext" -> KMSContext.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "KMSKeyId" -> KMSKeyId.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "EncryptionType" -> EncryptionType.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Encryption]
+      KMSContext.foreach(__v => __obj.update("KMSContext", __v.asInstanceOf[js.Any]))
+      KMSKeyId.foreach(__v => __obj.update("KMSKeyId", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Encryption]
     }
   }
 
@@ -2632,13 +2217,9 @@ package s3 {
     def apply(
         ReplicaKmsKeyID: js.UndefOr[ReplicaKmsKeyID] = js.undefined
     ): EncryptionConfiguration = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ReplicaKmsKeyID" -> ReplicaKmsKeyID.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[EncryptionConfiguration]
+      val __obj = js.Dictionary.empty[js.Any]
+      ReplicaKmsKeyID.foreach(__v => __obj.update("ReplicaKmsKeyID", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[EncryptionConfiguration]
     }
   }
 
@@ -2651,10 +2232,9 @@ package s3 {
   object EndEvent {
     def apply(
         ): EndEvent = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary.empty[js.Any]
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[EndEvent]
+      __obj.asInstanceOf[EndEvent]
     }
   }
 
@@ -2676,22 +2256,12 @@ package s3 {
         Message: js.UndefOr[Message] = js.undefined,
         VersionId: js.UndefOr[ObjectVersionId] = js.undefined
     ): Error = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Code" -> Code.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Key" -> Key.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Message" -> Message.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "VersionId" -> VersionId.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Error]
+      val __obj = js.Dictionary.empty[js.Any]
+      Code.foreach(__v => __obj.update("Code", __v.asInstanceOf[js.Any]))
+      Key.foreach(__v => __obj.update("Key", __v.asInstanceOf[js.Any]))
+      Message.foreach(__v => __obj.update("Message", __v.asInstanceOf[js.Any]))
+      VersionId.foreach(__v => __obj.update("VersionId", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Error]
     }
   }
 
@@ -2707,11 +2277,11 @@ package s3 {
     def apply(
         Key: ObjectKey
     ): ErrorDocument = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "Key" -> Key.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ErrorDocument]
+      __obj.asInstanceOf[ErrorDocument]
     }
   }
 
@@ -2781,16 +2351,10 @@ package s3 {
         Name: js.UndefOr[FilterRuleName] = js.undefined,
         Value: js.UndefOr[FilterRuleValue] = js.undefined
     ): FilterRule = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Name" -> Name.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Value" -> Value.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[FilterRule]
+      val __obj = js.Dictionary.empty[js.Any]
+      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
+      Value.foreach(__v => __obj.update("Value", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[FilterRule]
     }
   }
 
@@ -2810,13 +2374,9 @@ package s3 {
     def apply(
         Status: js.UndefOr[BucketAccelerateStatus] = js.undefined
     ): GetBucketAccelerateConfigurationOutput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Status" -> Status.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetBucketAccelerateConfigurationOutput]
+      val __obj = js.Dictionary.empty[js.Any]
+      Status.foreach(__v => __obj.update("Status", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetBucketAccelerateConfigurationOutput]
     }
   }
 
@@ -2829,11 +2389,11 @@ package s3 {
     def apply(
         Bucket: BucketName
     ): GetBucketAccelerateConfigurationRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "Bucket" -> Bucket.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetBucketAccelerateConfigurationRequest]
+      __obj.asInstanceOf[GetBucketAccelerateConfigurationRequest]
     }
   }
 
@@ -2848,16 +2408,10 @@ package s3 {
         Grants: js.UndefOr[Grants] = js.undefined,
         Owner: js.UndefOr[Owner] = js.undefined
     ): GetBucketAclOutput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Grants" -> Grants.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Owner" -> Owner.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetBucketAclOutput]
+      val __obj = js.Dictionary.empty[js.Any]
+      Grants.foreach(__v => __obj.update("Grants", __v.asInstanceOf[js.Any]))
+      Owner.foreach(__v => __obj.update("Owner", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetBucketAclOutput]
     }
   }
 
@@ -2870,11 +2424,11 @@ package s3 {
     def apply(
         Bucket: BucketName
     ): GetBucketAclRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "Bucket" -> Bucket.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetBucketAclRequest]
+      __obj.asInstanceOf[GetBucketAclRequest]
     }
   }
 
@@ -2887,13 +2441,9 @@ package s3 {
     def apply(
         AnalyticsConfiguration: js.UndefOr[AnalyticsConfiguration] = js.undefined
     ): GetBucketAnalyticsConfigurationOutput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "AnalyticsConfiguration" -> AnalyticsConfiguration.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetBucketAnalyticsConfigurationOutput]
+      val __obj = js.Dictionary.empty[js.Any]
+      AnalyticsConfiguration.foreach(__v => __obj.update("AnalyticsConfiguration", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetBucketAnalyticsConfigurationOutput]
     }
   }
 
@@ -2908,12 +2458,12 @@ package s3 {
         Bucket: BucketName,
         Id: AnalyticsId
     ): GetBucketAnalyticsConfigurationRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "Bucket" -> Bucket.asInstanceOf[js.Any],
         "Id"     -> Id.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetBucketAnalyticsConfigurationRequest]
+      __obj.asInstanceOf[GetBucketAnalyticsConfigurationRequest]
     }
   }
 
@@ -2926,13 +2476,9 @@ package s3 {
     def apply(
         CORSRules: js.UndefOr[CORSRules] = js.undefined
     ): GetBucketCorsOutput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "CORSRules" -> CORSRules.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetBucketCorsOutput]
+      val __obj = js.Dictionary.empty[js.Any]
+      CORSRules.foreach(__v => __obj.update("CORSRules", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetBucketCorsOutput]
     }
   }
 
@@ -2945,11 +2491,11 @@ package s3 {
     def apply(
         Bucket: BucketName
     ): GetBucketCorsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "Bucket" -> Bucket.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetBucketCorsRequest]
+      __obj.asInstanceOf[GetBucketCorsRequest]
     }
   }
 
@@ -2962,13 +2508,11 @@ package s3 {
     def apply(
         ServerSideEncryptionConfiguration: js.UndefOr[ServerSideEncryptionConfiguration] = js.undefined
     ): GetBucketEncryptionOutput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ServerSideEncryptionConfiguration" -> ServerSideEncryptionConfiguration.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetBucketEncryptionOutput]
+      val __obj = js.Dictionary.empty[js.Any]
+      ServerSideEncryptionConfiguration.foreach(
+        __v => __obj.update("ServerSideEncryptionConfiguration", __v.asInstanceOf[js.Any])
+      )
+      __obj.asInstanceOf[GetBucketEncryptionOutput]
     }
   }
 
@@ -2981,11 +2525,11 @@ package s3 {
     def apply(
         Bucket: BucketName
     ): GetBucketEncryptionRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "Bucket" -> Bucket.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetBucketEncryptionRequest]
+      __obj.asInstanceOf[GetBucketEncryptionRequest]
     }
   }
 
@@ -2998,13 +2542,9 @@ package s3 {
     def apply(
         InventoryConfiguration: js.UndefOr[InventoryConfiguration] = js.undefined
     ): GetBucketInventoryConfigurationOutput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "InventoryConfiguration" -> InventoryConfiguration.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetBucketInventoryConfigurationOutput]
+      val __obj = js.Dictionary.empty[js.Any]
+      InventoryConfiguration.foreach(__v => __obj.update("InventoryConfiguration", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetBucketInventoryConfigurationOutput]
     }
   }
 
@@ -3019,12 +2559,12 @@ package s3 {
         Bucket: BucketName,
         Id: InventoryId
     ): GetBucketInventoryConfigurationRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "Bucket" -> Bucket.asInstanceOf[js.Any],
         "Id"     -> Id.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetBucketInventoryConfigurationRequest]
+      __obj.asInstanceOf[GetBucketInventoryConfigurationRequest]
     }
   }
 
@@ -3037,13 +2577,9 @@ package s3 {
     def apply(
         Rules: js.UndefOr[LifecycleRules] = js.undefined
     ): GetBucketLifecycleConfigurationOutput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Rules" -> Rules.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetBucketLifecycleConfigurationOutput]
+      val __obj = js.Dictionary.empty[js.Any]
+      Rules.foreach(__v => __obj.update("Rules", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetBucketLifecycleConfigurationOutput]
     }
   }
 
@@ -3056,11 +2592,11 @@ package s3 {
     def apply(
         Bucket: BucketName
     ): GetBucketLifecycleConfigurationRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "Bucket" -> Bucket.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetBucketLifecycleConfigurationRequest]
+      __obj.asInstanceOf[GetBucketLifecycleConfigurationRequest]
     }
   }
 
@@ -3073,13 +2609,9 @@ package s3 {
     def apply(
         Rules: js.UndefOr[Rules] = js.undefined
     ): GetBucketLifecycleOutput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Rules" -> Rules.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetBucketLifecycleOutput]
+      val __obj = js.Dictionary.empty[js.Any]
+      Rules.foreach(__v => __obj.update("Rules", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetBucketLifecycleOutput]
     }
   }
 
@@ -3092,11 +2624,11 @@ package s3 {
     def apply(
         Bucket: BucketName
     ): GetBucketLifecycleRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "Bucket" -> Bucket.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetBucketLifecycleRequest]
+      __obj.asInstanceOf[GetBucketLifecycleRequest]
     }
   }
 
@@ -3109,13 +2641,9 @@ package s3 {
     def apply(
         LocationConstraint: js.UndefOr[BucketLocationConstraint] = js.undefined
     ): GetBucketLocationOutput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "LocationConstraint" -> LocationConstraint.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetBucketLocationOutput]
+      val __obj = js.Dictionary.empty[js.Any]
+      LocationConstraint.foreach(__v => __obj.update("LocationConstraint", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetBucketLocationOutput]
     }
   }
 
@@ -3128,11 +2656,11 @@ package s3 {
     def apply(
         Bucket: BucketName
     ): GetBucketLocationRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "Bucket" -> Bucket.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetBucketLocationRequest]
+      __obj.asInstanceOf[GetBucketLocationRequest]
     }
   }
 
@@ -3145,13 +2673,9 @@ package s3 {
     def apply(
         LoggingEnabled: js.UndefOr[LoggingEnabled] = js.undefined
     ): GetBucketLoggingOutput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "LoggingEnabled" -> LoggingEnabled.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetBucketLoggingOutput]
+      val __obj = js.Dictionary.empty[js.Any]
+      LoggingEnabled.foreach(__v => __obj.update("LoggingEnabled", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetBucketLoggingOutput]
     }
   }
 
@@ -3164,11 +2688,11 @@ package s3 {
     def apply(
         Bucket: BucketName
     ): GetBucketLoggingRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "Bucket" -> Bucket.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetBucketLoggingRequest]
+      __obj.asInstanceOf[GetBucketLoggingRequest]
     }
   }
 
@@ -3181,13 +2705,9 @@ package s3 {
     def apply(
         MetricsConfiguration: js.UndefOr[MetricsConfiguration] = js.undefined
     ): GetBucketMetricsConfigurationOutput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "MetricsConfiguration" -> MetricsConfiguration.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetBucketMetricsConfigurationOutput]
+      val __obj = js.Dictionary.empty[js.Any]
+      MetricsConfiguration.foreach(__v => __obj.update("MetricsConfiguration", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetBucketMetricsConfigurationOutput]
     }
   }
 
@@ -3202,12 +2722,12 @@ package s3 {
         Bucket: BucketName,
         Id: MetricsId
     ): GetBucketMetricsConfigurationRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "Bucket" -> Bucket.asInstanceOf[js.Any],
         "Id"     -> Id.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetBucketMetricsConfigurationRequest]
+      __obj.asInstanceOf[GetBucketMetricsConfigurationRequest]
     }
   }
 
@@ -3220,11 +2740,11 @@ package s3 {
     def apply(
         Bucket: BucketName
     ): GetBucketNotificationConfigurationRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "Bucket" -> Bucket.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetBucketNotificationConfigurationRequest]
+      __obj.asInstanceOf[GetBucketNotificationConfigurationRequest]
     }
   }
 
@@ -3237,13 +2757,9 @@ package s3 {
     def apply(
         Policy: js.UndefOr[Policy] = js.undefined
     ): GetBucketPolicyOutput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Policy" -> Policy.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetBucketPolicyOutput]
+      val __obj = js.Dictionary.empty[js.Any]
+      Policy.foreach(__v => __obj.update("Policy", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetBucketPolicyOutput]
     }
   }
 
@@ -3256,11 +2772,11 @@ package s3 {
     def apply(
         Bucket: BucketName
     ): GetBucketPolicyRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "Bucket" -> Bucket.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetBucketPolicyRequest]
+      __obj.asInstanceOf[GetBucketPolicyRequest]
     }
   }
 
@@ -3273,13 +2789,9 @@ package s3 {
     def apply(
         PolicyStatus: js.UndefOr[PolicyStatus] = js.undefined
     ): GetBucketPolicyStatusOutput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "PolicyStatus" -> PolicyStatus.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetBucketPolicyStatusOutput]
+      val __obj = js.Dictionary.empty[js.Any]
+      PolicyStatus.foreach(__v => __obj.update("PolicyStatus", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetBucketPolicyStatusOutput]
     }
   }
 
@@ -3292,11 +2804,11 @@ package s3 {
     def apply(
         Bucket: BucketName
     ): GetBucketPolicyStatusRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "Bucket" -> Bucket.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetBucketPolicyStatusRequest]
+      __obj.asInstanceOf[GetBucketPolicyStatusRequest]
     }
   }
 
@@ -3309,13 +2821,9 @@ package s3 {
     def apply(
         ReplicationConfiguration: js.UndefOr[ReplicationConfiguration] = js.undefined
     ): GetBucketReplicationOutput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ReplicationConfiguration" -> ReplicationConfiguration.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetBucketReplicationOutput]
+      val __obj = js.Dictionary.empty[js.Any]
+      ReplicationConfiguration.foreach(__v => __obj.update("ReplicationConfiguration", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetBucketReplicationOutput]
     }
   }
 
@@ -3328,11 +2836,11 @@ package s3 {
     def apply(
         Bucket: BucketName
     ): GetBucketReplicationRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "Bucket" -> Bucket.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetBucketReplicationRequest]
+      __obj.asInstanceOf[GetBucketReplicationRequest]
     }
   }
 
@@ -3345,13 +2853,9 @@ package s3 {
     def apply(
         Payer: js.UndefOr[Payer] = js.undefined
     ): GetBucketRequestPaymentOutput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Payer" -> Payer.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetBucketRequestPaymentOutput]
+      val __obj = js.Dictionary.empty[js.Any]
+      Payer.foreach(__v => __obj.update("Payer", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetBucketRequestPaymentOutput]
     }
   }
 
@@ -3364,11 +2868,11 @@ package s3 {
     def apply(
         Bucket: BucketName
     ): GetBucketRequestPaymentRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "Bucket" -> Bucket.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetBucketRequestPaymentRequest]
+      __obj.asInstanceOf[GetBucketRequestPaymentRequest]
     }
   }
 
@@ -3381,11 +2885,11 @@ package s3 {
     def apply(
         TagSet: TagSet
     ): GetBucketTaggingOutput = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "TagSet" -> TagSet.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetBucketTaggingOutput]
+      __obj.asInstanceOf[GetBucketTaggingOutput]
     }
   }
 
@@ -3398,11 +2902,11 @@ package s3 {
     def apply(
         Bucket: BucketName
     ): GetBucketTaggingRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "Bucket" -> Bucket.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetBucketTaggingRequest]
+      __obj.asInstanceOf[GetBucketTaggingRequest]
     }
   }
 
@@ -3417,16 +2921,10 @@ package s3 {
         MFADelete: js.UndefOr[MFADeleteStatus] = js.undefined,
         Status: js.UndefOr[BucketVersioningStatus] = js.undefined
     ): GetBucketVersioningOutput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "MFADelete" -> MFADelete.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Status" -> Status.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetBucketVersioningOutput]
+      val __obj = js.Dictionary.empty[js.Any]
+      MFADelete.foreach(__v => __obj.update("MFADelete", __v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.update("Status", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetBucketVersioningOutput]
     }
   }
 
@@ -3439,11 +2937,11 @@ package s3 {
     def apply(
         Bucket: BucketName
     ): GetBucketVersioningRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "Bucket" -> Bucket.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetBucketVersioningRequest]
+      __obj.asInstanceOf[GetBucketVersioningRequest]
     }
   }
 
@@ -3462,22 +2960,12 @@ package s3 {
         RedirectAllRequestsTo: js.UndefOr[RedirectAllRequestsTo] = js.undefined,
         RoutingRules: js.UndefOr[RoutingRules] = js.undefined
     ): GetBucketWebsiteOutput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ErrorDocument" -> ErrorDocument.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "IndexDocument" -> IndexDocument.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "RedirectAllRequestsTo" -> RedirectAllRequestsTo.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "RoutingRules" -> RoutingRules.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetBucketWebsiteOutput]
+      val __obj = js.Dictionary.empty[js.Any]
+      ErrorDocument.foreach(__v => __obj.update("ErrorDocument", __v.asInstanceOf[js.Any]))
+      IndexDocument.foreach(__v => __obj.update("IndexDocument", __v.asInstanceOf[js.Any]))
+      RedirectAllRequestsTo.foreach(__v => __obj.update("RedirectAllRequestsTo", __v.asInstanceOf[js.Any]))
+      RoutingRules.foreach(__v => __obj.update("RoutingRules", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetBucketWebsiteOutput]
     }
   }
 
@@ -3490,11 +2978,11 @@ package s3 {
     def apply(
         Bucket: BucketName
     ): GetBucketWebsiteRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "Bucket" -> Bucket.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetBucketWebsiteRequest]
+      __obj.asInstanceOf[GetBucketWebsiteRequest]
     }
   }
 
@@ -3511,19 +2999,11 @@ package s3 {
         Owner: js.UndefOr[Owner] = js.undefined,
         RequestCharged: js.UndefOr[RequestCharged] = js.undefined
     ): GetObjectAclOutput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Grants" -> Grants.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Owner" -> Owner.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "RequestCharged" -> RequestCharged.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetObjectAclOutput]
+      val __obj = js.Dictionary.empty[js.Any]
+      Grants.foreach(__v => __obj.update("Grants", __v.asInstanceOf[js.Any]))
+      Owner.foreach(__v => __obj.update("Owner", __v.asInstanceOf[js.Any]))
+      RequestCharged.foreach(__v => __obj.update("RequestCharged", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetObjectAclOutput]
     }
   }
 
@@ -3542,18 +3022,14 @@ package s3 {
         RequestPayer: js.UndefOr[RequestPayer] = js.undefined,
         VersionId: js.UndefOr[ObjectVersionId] = js.undefined
     ): GetObjectAclRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "Bucket" -> Bucket.asInstanceOf[js.Any],
-        "Key"    -> Key.asInstanceOf[js.Any],
-        "RequestPayer" -> RequestPayer.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "VersionId" -> VersionId.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "Key"    -> Key.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetObjectAclRequest]
+      RequestPayer.foreach(__v => __obj.update("RequestPayer", __v.asInstanceOf[js.Any]))
+      VersionId.foreach(__v => __obj.update("VersionId", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetObjectAclRequest]
     }
   }
 
@@ -3566,13 +3042,9 @@ package s3 {
     def apply(
         LegalHold: js.UndefOr[ObjectLockLegalHold] = js.undefined
     ): GetObjectLegalHoldOutput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "LegalHold" -> LegalHold.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetObjectLegalHoldOutput]
+      val __obj = js.Dictionary.empty[js.Any]
+      LegalHold.foreach(__v => __obj.update("LegalHold", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetObjectLegalHoldOutput]
     }
   }
 
@@ -3591,18 +3063,14 @@ package s3 {
         RequestPayer: js.UndefOr[RequestPayer] = js.undefined,
         VersionId: js.UndefOr[ObjectVersionId] = js.undefined
     ): GetObjectLegalHoldRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "Bucket" -> Bucket.asInstanceOf[js.Any],
-        "Key"    -> Key.asInstanceOf[js.Any],
-        "RequestPayer" -> RequestPayer.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "VersionId" -> VersionId.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "Key"    -> Key.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetObjectLegalHoldRequest]
+      RequestPayer.foreach(__v => __obj.update("RequestPayer", __v.asInstanceOf[js.Any]))
+      VersionId.foreach(__v => __obj.update("VersionId", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetObjectLegalHoldRequest]
     }
   }
 
@@ -3615,13 +3083,9 @@ package s3 {
     def apply(
         ObjectLockConfiguration: js.UndefOr[ObjectLockConfiguration] = js.undefined
     ): GetObjectLockConfigurationOutput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ObjectLockConfiguration" -> ObjectLockConfiguration.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetObjectLockConfigurationOutput]
+      val __obj = js.Dictionary.empty[js.Any]
+      ObjectLockConfiguration.foreach(__v => __obj.update("ObjectLockConfiguration", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetObjectLockConfigurationOutput]
     }
   }
 
@@ -3634,11 +3098,11 @@ package s3 {
     def apply(
         Bucket: BucketName
     ): GetObjectLockConfigurationRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "Bucket" -> Bucket.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetObjectLockConfigurationRequest]
+      __obj.asInstanceOf[GetObjectLockConfigurationRequest]
     }
   }
 
@@ -3711,103 +3175,39 @@ package s3 {
         VersionId: js.UndefOr[ObjectVersionId] = js.undefined,
         WebsiteRedirectLocation: js.UndefOr[WebsiteRedirectLocation] = js.undefined
     ): GetObjectOutput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "AcceptRanges" -> AcceptRanges.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Body" -> Body.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "CacheControl" -> CacheControl.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ContentDisposition" -> ContentDisposition.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ContentEncoding" -> ContentEncoding.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ContentLanguage" -> ContentLanguage.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ContentLength" -> ContentLength.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ContentRange" -> ContentRange.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ContentType" -> ContentType.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DeleteMarker" -> DeleteMarker.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ETag" -> ETag.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Expiration" -> Expiration.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Expires" -> Expires.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "LastModified" -> LastModified.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Metadata" -> Metadata.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MissingMeta" -> MissingMeta.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ObjectLockLegalHoldStatus" -> ObjectLockLegalHoldStatus.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ObjectLockMode" -> ObjectLockMode.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ObjectLockRetainUntilDate" -> ObjectLockRetainUntilDate.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "PartsCount" -> PartsCount.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ReplicationStatus" -> ReplicationStatus.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "RequestCharged" -> RequestCharged.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Restore" -> Restore.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SSECustomerAlgorithm" -> SSECustomerAlgorithm.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SSECustomerKeyMD5" -> SSECustomerKeyMD5.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SSEKMSKeyId" -> SSEKMSKeyId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ServerSideEncryption" -> ServerSideEncryption.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "StorageClass" -> StorageClass.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "TagCount" -> TagCount.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "VersionId" -> VersionId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "WebsiteRedirectLocation" -> WebsiteRedirectLocation.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetObjectOutput]
+      val __obj = js.Dictionary.empty[js.Any]
+      AcceptRanges.foreach(__v => __obj.update("AcceptRanges", __v.asInstanceOf[js.Any]))
+      Body.foreach(__v => __obj.update("Body", __v.asInstanceOf[js.Any]))
+      CacheControl.foreach(__v => __obj.update("CacheControl", __v.asInstanceOf[js.Any]))
+      ContentDisposition.foreach(__v => __obj.update("ContentDisposition", __v.asInstanceOf[js.Any]))
+      ContentEncoding.foreach(__v => __obj.update("ContentEncoding", __v.asInstanceOf[js.Any]))
+      ContentLanguage.foreach(__v => __obj.update("ContentLanguage", __v.asInstanceOf[js.Any]))
+      ContentLength.foreach(__v => __obj.update("ContentLength", __v.asInstanceOf[js.Any]))
+      ContentRange.foreach(__v => __obj.update("ContentRange", __v.asInstanceOf[js.Any]))
+      ContentType.foreach(__v => __obj.update("ContentType", __v.asInstanceOf[js.Any]))
+      DeleteMarker.foreach(__v => __obj.update("DeleteMarker", __v.asInstanceOf[js.Any]))
+      ETag.foreach(__v => __obj.update("ETag", __v.asInstanceOf[js.Any]))
+      Expiration.foreach(__v => __obj.update("Expiration", __v.asInstanceOf[js.Any]))
+      Expires.foreach(__v => __obj.update("Expires", __v.asInstanceOf[js.Any]))
+      LastModified.foreach(__v => __obj.update("LastModified", __v.asInstanceOf[js.Any]))
+      Metadata.foreach(__v => __obj.update("Metadata", __v.asInstanceOf[js.Any]))
+      MissingMeta.foreach(__v => __obj.update("MissingMeta", __v.asInstanceOf[js.Any]))
+      ObjectLockLegalHoldStatus.foreach(__v => __obj.update("ObjectLockLegalHoldStatus", __v.asInstanceOf[js.Any]))
+      ObjectLockMode.foreach(__v => __obj.update("ObjectLockMode", __v.asInstanceOf[js.Any]))
+      ObjectLockRetainUntilDate.foreach(__v => __obj.update("ObjectLockRetainUntilDate", __v.asInstanceOf[js.Any]))
+      PartsCount.foreach(__v => __obj.update("PartsCount", __v.asInstanceOf[js.Any]))
+      ReplicationStatus.foreach(__v => __obj.update("ReplicationStatus", __v.asInstanceOf[js.Any]))
+      RequestCharged.foreach(__v => __obj.update("RequestCharged", __v.asInstanceOf[js.Any]))
+      Restore.foreach(__v => __obj.update("Restore", __v.asInstanceOf[js.Any]))
+      SSECustomerAlgorithm.foreach(__v => __obj.update("SSECustomerAlgorithm", __v.asInstanceOf[js.Any]))
+      SSECustomerKeyMD5.foreach(__v => __obj.update("SSECustomerKeyMD5", __v.asInstanceOf[js.Any]))
+      SSEKMSKeyId.foreach(__v => __obj.update("SSEKMSKeyId", __v.asInstanceOf[js.Any]))
+      ServerSideEncryption.foreach(__v => __obj.update("ServerSideEncryption", __v.asInstanceOf[js.Any]))
+      StorageClass.foreach(__v => __obj.update("StorageClass", __v.asInstanceOf[js.Any]))
+      TagCount.foreach(__v => __obj.update("TagCount", __v.asInstanceOf[js.Any]))
+      VersionId.foreach(__v => __obj.update("VersionId", __v.asInstanceOf[js.Any]))
+      WebsiteRedirectLocation.foreach(__v => __obj.update("WebsiteRedirectLocation", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetObjectOutput]
     }
   }
 
@@ -3856,63 +3256,29 @@ package s3 {
         SSECustomerKeyMD5: js.UndefOr[SSECustomerKeyMD5] = js.undefined,
         VersionId: js.UndefOr[ObjectVersionId] = js.undefined
     ): GetObjectRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "Bucket" -> Bucket.asInstanceOf[js.Any],
-        "Key"    -> Key.asInstanceOf[js.Any],
-        "IfMatch" -> IfMatch.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "IfModifiedSince" -> IfModifiedSince.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "IfNoneMatch" -> IfNoneMatch.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "IfUnmodifiedSince" -> IfUnmodifiedSince.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "PartNumber" -> PartNumber.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Range" -> Range.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "RequestPayer" -> RequestPayer.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ResponseCacheControl" -> ResponseCacheControl.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ResponseContentDisposition" -> ResponseContentDisposition.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ResponseContentEncoding" -> ResponseContentEncoding.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ResponseContentLanguage" -> ResponseContentLanguage.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ResponseContentType" -> ResponseContentType.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ResponseExpires" -> ResponseExpires.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SSECustomerAlgorithm" -> SSECustomerAlgorithm.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SSECustomerKey" -> SSECustomerKey.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SSECustomerKeyMD5" -> SSECustomerKeyMD5.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "VersionId" -> VersionId.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "Key"    -> Key.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetObjectRequest]
+      IfMatch.foreach(__v => __obj.update("IfMatch", __v.asInstanceOf[js.Any]))
+      IfModifiedSince.foreach(__v => __obj.update("IfModifiedSince", __v.asInstanceOf[js.Any]))
+      IfNoneMatch.foreach(__v => __obj.update("IfNoneMatch", __v.asInstanceOf[js.Any]))
+      IfUnmodifiedSince.foreach(__v => __obj.update("IfUnmodifiedSince", __v.asInstanceOf[js.Any]))
+      PartNumber.foreach(__v => __obj.update("PartNumber", __v.asInstanceOf[js.Any]))
+      Range.foreach(__v => __obj.update("Range", __v.asInstanceOf[js.Any]))
+      RequestPayer.foreach(__v => __obj.update("RequestPayer", __v.asInstanceOf[js.Any]))
+      ResponseCacheControl.foreach(__v => __obj.update("ResponseCacheControl", __v.asInstanceOf[js.Any]))
+      ResponseContentDisposition.foreach(__v => __obj.update("ResponseContentDisposition", __v.asInstanceOf[js.Any]))
+      ResponseContentEncoding.foreach(__v => __obj.update("ResponseContentEncoding", __v.asInstanceOf[js.Any]))
+      ResponseContentLanguage.foreach(__v => __obj.update("ResponseContentLanguage", __v.asInstanceOf[js.Any]))
+      ResponseContentType.foreach(__v => __obj.update("ResponseContentType", __v.asInstanceOf[js.Any]))
+      ResponseExpires.foreach(__v => __obj.update("ResponseExpires", __v.asInstanceOf[js.Any]))
+      SSECustomerAlgorithm.foreach(__v => __obj.update("SSECustomerAlgorithm", __v.asInstanceOf[js.Any]))
+      SSECustomerKey.foreach(__v => __obj.update("SSECustomerKey", __v.asInstanceOf[js.Any]))
+      SSECustomerKeyMD5.foreach(__v => __obj.update("SSECustomerKeyMD5", __v.asInstanceOf[js.Any]))
+      VersionId.foreach(__v => __obj.update("VersionId", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetObjectRequest]
     }
   }
 
@@ -3925,13 +3291,9 @@ package s3 {
     def apply(
         Retention: js.UndefOr[ObjectLockRetention] = js.undefined
     ): GetObjectRetentionOutput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Retention" -> Retention.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetObjectRetentionOutput]
+      val __obj = js.Dictionary.empty[js.Any]
+      Retention.foreach(__v => __obj.update("Retention", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetObjectRetentionOutput]
     }
   }
 
@@ -3950,18 +3312,14 @@ package s3 {
         RequestPayer: js.UndefOr[RequestPayer] = js.undefined,
         VersionId: js.UndefOr[ObjectVersionId] = js.undefined
     ): GetObjectRetentionRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "Bucket" -> Bucket.asInstanceOf[js.Any],
-        "Key"    -> Key.asInstanceOf[js.Any],
-        "RequestPayer" -> RequestPayer.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "VersionId" -> VersionId.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "Key"    -> Key.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetObjectRetentionRequest]
+      RequestPayer.foreach(__v => __obj.update("RequestPayer", __v.asInstanceOf[js.Any]))
+      VersionId.foreach(__v => __obj.update("VersionId", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetObjectRetentionRequest]
     }
   }
 
@@ -3976,14 +3334,12 @@ package s3 {
         TagSet: TagSet,
         VersionId: js.UndefOr[ObjectVersionId] = js.undefined
     ): GetObjectTaggingOutput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "TagSet" -> TagSet.asInstanceOf[js.Any],
-        "VersionId" -> VersionId.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "TagSet" -> TagSet.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetObjectTaggingOutput]
+      VersionId.foreach(__v => __obj.update("VersionId", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetObjectTaggingOutput]
     }
   }
 
@@ -4000,15 +3356,13 @@ package s3 {
         Key: ObjectKey,
         VersionId: js.UndefOr[ObjectVersionId] = js.undefined
     ): GetObjectTaggingRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "Bucket" -> Bucket.asInstanceOf[js.Any],
-        "Key"    -> Key.asInstanceOf[js.Any],
-        "VersionId" -> VersionId.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "Key"    -> Key.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetObjectTaggingRequest]
+      VersionId.foreach(__v => __obj.update("VersionId", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetObjectTaggingRequest]
     }
   }
 
@@ -4023,16 +3377,10 @@ package s3 {
         Body: js.UndefOr[Body] = js.undefined,
         RequestCharged: js.UndefOr[RequestCharged] = js.undefined
     ): GetObjectTorrentOutput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Body" -> Body.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "RequestCharged" -> RequestCharged.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetObjectTorrentOutput]
+      val __obj = js.Dictionary.empty[js.Any]
+      Body.foreach(__v => __obj.update("Body", __v.asInstanceOf[js.Any]))
+      RequestCharged.foreach(__v => __obj.update("RequestCharged", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetObjectTorrentOutput]
     }
   }
 
@@ -4049,15 +3397,13 @@ package s3 {
         Key: ObjectKey,
         RequestPayer: js.UndefOr[RequestPayer] = js.undefined
     ): GetObjectTorrentRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "Bucket" -> Bucket.asInstanceOf[js.Any],
-        "Key"    -> Key.asInstanceOf[js.Any],
-        "RequestPayer" -> RequestPayer.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "Key"    -> Key.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetObjectTorrentRequest]
+      RequestPayer.foreach(__v => __obj.update("RequestPayer", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetObjectTorrentRequest]
     }
   }
 
@@ -4070,13 +3416,11 @@ package s3 {
     def apply(
         PublicAccessBlockConfiguration: js.UndefOr[PublicAccessBlockConfiguration] = js.undefined
     ): GetPublicAccessBlockOutput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "PublicAccessBlockConfiguration" -> PublicAccessBlockConfiguration.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetPublicAccessBlockOutput]
+      val __obj = js.Dictionary.empty[js.Any]
+      PublicAccessBlockConfiguration.foreach(
+        __v => __obj.update("PublicAccessBlockConfiguration", __v.asInstanceOf[js.Any])
+      )
+      __obj.asInstanceOf[GetPublicAccessBlockOutput]
     }
   }
 
@@ -4089,11 +3433,11 @@ package s3 {
     def apply(
         Bucket: BucketName
     ): GetPublicAccessBlockRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "Bucket" -> Bucket.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetPublicAccessBlockRequest]
+      __obj.asInstanceOf[GetPublicAccessBlockRequest]
     }
   }
 
@@ -4109,11 +3453,11 @@ package s3 {
     def apply(
         Tier: Tier
     ): GlacierJobParameters = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "Tier" -> Tier.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GlacierJobParameters]
+      __obj.asInstanceOf[GlacierJobParameters]
     }
   }
 
@@ -4131,16 +3475,10 @@ package s3 {
         Grantee: js.UndefOr[Grantee] = js.undefined,
         Permission: js.UndefOr[Permission] = js.undefined
     ): Grant = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Grantee" -> Grantee.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Permission" -> Permission.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Grant]
+      val __obj = js.Dictionary.empty[js.Any]
+      Grantee.foreach(__v => __obj.update("Grantee", __v.asInstanceOf[js.Any]))
+      Permission.foreach(__v => __obj.update("Permission", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Grant]
     }
   }
 
@@ -4164,23 +3502,15 @@ package s3 {
         ID: js.UndefOr[ID] = js.undefined,
         URI: js.UndefOr[URI] = js.undefined
     ): Grantee = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Type" -> Type.asInstanceOf[js.Any],
-        "DisplayName" -> DisplayName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "EmailAddress" -> EmailAddress.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ID" -> ID.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "URI" -> URI.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "Type" -> Type.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Grantee]
+      DisplayName.foreach(__v => __obj.update("DisplayName", __v.asInstanceOf[js.Any]))
+      EmailAddress.foreach(__v => __obj.update("EmailAddress", __v.asInstanceOf[js.Any]))
+      ID.foreach(__v => __obj.update("ID", __v.asInstanceOf[js.Any]))
+      URI.foreach(__v => __obj.update("URI", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Grantee]
     }
   }
 
@@ -4193,11 +3523,11 @@ package s3 {
     def apply(
         Bucket: BucketName
     ): HeadBucketRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "Bucket" -> Bucket.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[HeadBucketRequest]
+      __obj.asInstanceOf[HeadBucketRequest]
     }
   }
 
@@ -4264,94 +3594,36 @@ package s3 {
         VersionId: js.UndefOr[ObjectVersionId] = js.undefined,
         WebsiteRedirectLocation: js.UndefOr[WebsiteRedirectLocation] = js.undefined
     ): HeadObjectOutput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "AcceptRanges" -> AcceptRanges.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "CacheControl" -> CacheControl.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ContentDisposition" -> ContentDisposition.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ContentEncoding" -> ContentEncoding.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ContentLanguage" -> ContentLanguage.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ContentLength" -> ContentLength.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ContentType" -> ContentType.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DeleteMarker" -> DeleteMarker.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ETag" -> ETag.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Expiration" -> Expiration.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Expires" -> Expires.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "LastModified" -> LastModified.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Metadata" -> Metadata.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MissingMeta" -> MissingMeta.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ObjectLockLegalHoldStatus" -> ObjectLockLegalHoldStatus.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ObjectLockMode" -> ObjectLockMode.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ObjectLockRetainUntilDate" -> ObjectLockRetainUntilDate.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "PartsCount" -> PartsCount.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ReplicationStatus" -> ReplicationStatus.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "RequestCharged" -> RequestCharged.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Restore" -> Restore.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SSECustomerAlgorithm" -> SSECustomerAlgorithm.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SSECustomerKeyMD5" -> SSECustomerKeyMD5.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SSEKMSKeyId" -> SSEKMSKeyId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ServerSideEncryption" -> ServerSideEncryption.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "StorageClass" -> StorageClass.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "VersionId" -> VersionId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "WebsiteRedirectLocation" -> WebsiteRedirectLocation.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[HeadObjectOutput]
+      val __obj = js.Dictionary.empty[js.Any]
+      AcceptRanges.foreach(__v => __obj.update("AcceptRanges", __v.asInstanceOf[js.Any]))
+      CacheControl.foreach(__v => __obj.update("CacheControl", __v.asInstanceOf[js.Any]))
+      ContentDisposition.foreach(__v => __obj.update("ContentDisposition", __v.asInstanceOf[js.Any]))
+      ContentEncoding.foreach(__v => __obj.update("ContentEncoding", __v.asInstanceOf[js.Any]))
+      ContentLanguage.foreach(__v => __obj.update("ContentLanguage", __v.asInstanceOf[js.Any]))
+      ContentLength.foreach(__v => __obj.update("ContentLength", __v.asInstanceOf[js.Any]))
+      ContentType.foreach(__v => __obj.update("ContentType", __v.asInstanceOf[js.Any]))
+      DeleteMarker.foreach(__v => __obj.update("DeleteMarker", __v.asInstanceOf[js.Any]))
+      ETag.foreach(__v => __obj.update("ETag", __v.asInstanceOf[js.Any]))
+      Expiration.foreach(__v => __obj.update("Expiration", __v.asInstanceOf[js.Any]))
+      Expires.foreach(__v => __obj.update("Expires", __v.asInstanceOf[js.Any]))
+      LastModified.foreach(__v => __obj.update("LastModified", __v.asInstanceOf[js.Any]))
+      Metadata.foreach(__v => __obj.update("Metadata", __v.asInstanceOf[js.Any]))
+      MissingMeta.foreach(__v => __obj.update("MissingMeta", __v.asInstanceOf[js.Any]))
+      ObjectLockLegalHoldStatus.foreach(__v => __obj.update("ObjectLockLegalHoldStatus", __v.asInstanceOf[js.Any]))
+      ObjectLockMode.foreach(__v => __obj.update("ObjectLockMode", __v.asInstanceOf[js.Any]))
+      ObjectLockRetainUntilDate.foreach(__v => __obj.update("ObjectLockRetainUntilDate", __v.asInstanceOf[js.Any]))
+      PartsCount.foreach(__v => __obj.update("PartsCount", __v.asInstanceOf[js.Any]))
+      ReplicationStatus.foreach(__v => __obj.update("ReplicationStatus", __v.asInstanceOf[js.Any]))
+      RequestCharged.foreach(__v => __obj.update("RequestCharged", __v.asInstanceOf[js.Any]))
+      Restore.foreach(__v => __obj.update("Restore", __v.asInstanceOf[js.Any]))
+      SSECustomerAlgorithm.foreach(__v => __obj.update("SSECustomerAlgorithm", __v.asInstanceOf[js.Any]))
+      SSECustomerKeyMD5.foreach(__v => __obj.update("SSECustomerKeyMD5", __v.asInstanceOf[js.Any]))
+      SSEKMSKeyId.foreach(__v => __obj.update("SSEKMSKeyId", __v.asInstanceOf[js.Any]))
+      ServerSideEncryption.foreach(__v => __obj.update("ServerSideEncryption", __v.asInstanceOf[js.Any]))
+      StorageClass.foreach(__v => __obj.update("StorageClass", __v.asInstanceOf[js.Any]))
+      VersionId.foreach(__v => __obj.update("VersionId", __v.asInstanceOf[js.Any]))
+      WebsiteRedirectLocation.foreach(__v => __obj.update("WebsiteRedirectLocation", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[HeadObjectOutput]
     }
   }
 
@@ -4388,45 +3660,23 @@ package s3 {
         SSECustomerKeyMD5: js.UndefOr[SSECustomerKeyMD5] = js.undefined,
         VersionId: js.UndefOr[ObjectVersionId] = js.undefined
     ): HeadObjectRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "Bucket" -> Bucket.asInstanceOf[js.Any],
-        "Key"    -> Key.asInstanceOf[js.Any],
-        "IfMatch" -> IfMatch.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "IfModifiedSince" -> IfModifiedSince.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "IfNoneMatch" -> IfNoneMatch.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "IfUnmodifiedSince" -> IfUnmodifiedSince.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "PartNumber" -> PartNumber.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Range" -> Range.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "RequestPayer" -> RequestPayer.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SSECustomerAlgorithm" -> SSECustomerAlgorithm.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SSECustomerKey" -> SSECustomerKey.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SSECustomerKeyMD5" -> SSECustomerKeyMD5.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "VersionId" -> VersionId.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "Key"    -> Key.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[HeadObjectRequest]
+      IfMatch.foreach(__v => __obj.update("IfMatch", __v.asInstanceOf[js.Any]))
+      IfModifiedSince.foreach(__v => __obj.update("IfModifiedSince", __v.asInstanceOf[js.Any]))
+      IfNoneMatch.foreach(__v => __obj.update("IfNoneMatch", __v.asInstanceOf[js.Any]))
+      IfUnmodifiedSince.foreach(__v => __obj.update("IfUnmodifiedSince", __v.asInstanceOf[js.Any]))
+      PartNumber.foreach(__v => __obj.update("PartNumber", __v.asInstanceOf[js.Any]))
+      Range.foreach(__v => __obj.update("Range", __v.asInstanceOf[js.Any]))
+      RequestPayer.foreach(__v => __obj.update("RequestPayer", __v.asInstanceOf[js.Any]))
+      SSECustomerAlgorithm.foreach(__v => __obj.update("SSECustomerAlgorithm", __v.asInstanceOf[js.Any]))
+      SSECustomerKey.foreach(__v => __obj.update("SSECustomerKey", __v.asInstanceOf[js.Any]))
+      SSECustomerKeyMD5.foreach(__v => __obj.update("SSECustomerKeyMD5", __v.asInstanceOf[js.Any]))
+      VersionId.foreach(__v => __obj.update("VersionId", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[HeadObjectRequest]
     }
   }
 
@@ -4442,11 +3692,11 @@ package s3 {
     def apply(
         Suffix: Suffix
     ): IndexDocument = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "Suffix" -> Suffix.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[IndexDocument]
+      __obj.asInstanceOf[IndexDocument]
     }
   }
 
@@ -4464,16 +3714,10 @@ package s3 {
         DisplayName: js.UndefOr[DisplayName] = js.undefined,
         ID: js.UndefOr[ID] = js.undefined
     ): Initiator = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "DisplayName" -> DisplayName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ID" -> ID.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Initiator]
+      val __obj = js.Dictionary.empty[js.Any]
+      DisplayName.foreach(__v => __obj.update("DisplayName", __v.asInstanceOf[js.Any]))
+      ID.foreach(__v => __obj.update("ID", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Initiator]
     }
   }
 
@@ -4495,22 +3739,12 @@ package s3 {
         JSON: js.UndefOr[JSONInput] = js.undefined,
         Parquet: js.UndefOr[ParquetInput] = js.undefined
     ): InputSerialization = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "CSV" -> CSV.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "CompressionType" -> CompressionType.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "JSON" -> JSON.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Parquet" -> Parquet.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[InputSerialization]
+      val __obj = js.Dictionary.empty[js.Any]
+      CSV.foreach(__v => __obj.update("CSV", __v.asInstanceOf[js.Any]))
+      CompressionType.foreach(__v => __obj.update("CompressionType", __v.asInstanceOf[js.Any]))
+      JSON.foreach(__v => __obj.update("JSON", __v.asInstanceOf[js.Any]))
+      Parquet.foreach(__v => __obj.update("Parquet", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[InputSerialization]
     }
   }
 
@@ -4538,21 +3772,17 @@ package s3 {
         Filter: js.UndefOr[InventoryFilter] = js.undefined,
         OptionalFields: js.UndefOr[InventoryOptionalFields] = js.undefined
     ): InventoryConfiguration = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "Destination"            -> Destination.asInstanceOf[js.Any],
         "Id"                     -> Id.asInstanceOf[js.Any],
         "IncludedObjectVersions" -> IncludedObjectVersions.asInstanceOf[js.Any],
         "IsEnabled"              -> IsEnabled.asInstanceOf[js.Any],
-        "Schedule"               -> Schedule.asInstanceOf[js.Any],
-        "Filter" -> Filter.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "OptionalFields" -> OptionalFields.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "Schedule"               -> Schedule.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[InventoryConfiguration]
+      Filter.foreach(__v => __obj.update("Filter", __v.asInstanceOf[js.Any]))
+      OptionalFields.foreach(__v => __obj.update("OptionalFields", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[InventoryConfiguration]
     }
   }
 
@@ -4568,11 +3798,11 @@ package s3 {
     def apply(
         S3BucketDestination: InventoryS3BucketDestination
     ): InventoryDestination = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "S3BucketDestination" -> S3BucketDestination.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[InventoryDestination]
+      __obj.asInstanceOf[InventoryDestination]
     }
   }
 
@@ -4590,16 +3820,10 @@ package s3 {
         SSEKMS: js.UndefOr[SSEKMS] = js.undefined,
         SSES3: js.UndefOr[SSES3] = js.undefined
     ): InventoryEncryption = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "SSEKMS" -> SSEKMS.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SSES3" -> SSES3.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[InventoryEncryption]
+      val __obj = js.Dictionary.empty[js.Any]
+      SSEKMS.foreach(__v => __obj.update("SSEKMS", __v.asInstanceOf[js.Any]))
+      SSES3.foreach(__v => __obj.update("SSES3", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[InventoryEncryption]
     }
   }
 
@@ -4615,11 +3839,11 @@ package s3 {
     def apply(
         Prefix: Prefix
     ): InventoryFilter = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "Prefix" -> Prefix.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[InventoryFilter]
+      __obj.asInstanceOf[InventoryFilter]
     }
   }
 
@@ -4691,21 +3915,15 @@ package s3 {
         Encryption: js.UndefOr[InventoryEncryption] = js.undefined,
         Prefix: js.UndefOr[Prefix] = js.undefined
     ): InventoryS3BucketDestination = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "Bucket" -> Bucket.asInstanceOf[js.Any],
-        "Format" -> Format.asInstanceOf[js.Any],
-        "AccountId" -> AccountId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Encryption" -> Encryption.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Prefix" -> Prefix.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "Format" -> Format.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[InventoryS3BucketDestination]
+      AccountId.foreach(__v => __obj.update("AccountId", __v.asInstanceOf[js.Any]))
+      Encryption.foreach(__v => __obj.update("Encryption", __v.asInstanceOf[js.Any]))
+      Prefix.foreach(__v => __obj.update("Prefix", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[InventoryS3BucketDestination]
     }
   }
 
@@ -4721,11 +3939,11 @@ package s3 {
     def apply(
         Frequency: InventoryFrequency
     ): InventorySchedule = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "Frequency" -> Frequency.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[InventorySchedule]
+      __obj.asInstanceOf[InventorySchedule]
     }
   }
 
@@ -4741,13 +3959,9 @@ package s3 {
     def apply(
         Type: js.UndefOr[JSONType] = js.undefined
     ): JSONInput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Type" -> Type.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[JSONInput]
+      val __obj = js.Dictionary.empty[js.Any]
+      Type.foreach(__v => __obj.update("Type", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[JSONInput]
     }
   }
 
@@ -4763,13 +3977,9 @@ package s3 {
     def apply(
         RecordDelimiter: js.UndefOr[RecordDelimiter] = js.undefined
     ): JSONOutput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "RecordDelimiter" -> RecordDelimiter.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[JSONOutput]
+      val __obj = js.Dictionary.empty[js.Any]
+      RecordDelimiter.foreach(__v => __obj.update("RecordDelimiter", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[JSONOutput]
     }
   }
 
@@ -4798,18 +4008,14 @@ package s3 {
         Filter: js.UndefOr[NotificationConfigurationFilter] = js.undefined,
         Id: js.UndefOr[NotificationId] = js.undefined
     ): LambdaFunctionConfiguration = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "Events"            -> Events.asInstanceOf[js.Any],
-        "LambdaFunctionArn" -> LambdaFunctionArn.asInstanceOf[js.Any],
-        "Filter" -> Filter.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Id" -> Id.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "LambdaFunctionArn" -> LambdaFunctionArn.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[LambdaFunctionConfiguration]
+      Filter.foreach(__v => __obj.update("Filter", __v.asInstanceOf[js.Any]))
+      Id.foreach(__v => __obj.update("Id", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[LambdaFunctionConfiguration]
     }
   }
 
@@ -4825,11 +4031,11 @@ package s3 {
     def apply(
         Rules: Rules
     ): LifecycleConfiguration = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "Rules" -> Rules.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[LifecycleConfiguration]
+      __obj.asInstanceOf[LifecycleConfiguration]
     }
   }
 
@@ -4849,19 +4055,11 @@ package s3 {
         Days: js.UndefOr[Days] = js.undefined,
         ExpiredObjectDeleteMarker: js.UndefOr[ExpiredObjectDeleteMarker] = js.undefined
     ): LifecycleExpiration = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Date" -> Date.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Days" -> Days.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ExpiredObjectDeleteMarker" -> ExpiredObjectDeleteMarker.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[LifecycleExpiration]
+      val __obj = js.Dictionary.empty[js.Any]
+      Date.foreach(__v => __obj.update("Date", __v.asInstanceOf[js.Any]))
+      Days.foreach(__v => __obj.update("Days", __v.asInstanceOf[js.Any]))
+      ExpiredObjectDeleteMarker.foreach(__v => __obj.update("ExpiredObjectDeleteMarker", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[LifecycleExpiration]
     }
   }
 
@@ -4893,35 +4091,23 @@ package s3 {
         Prefix: js.UndefOr[Prefix] = js.undefined,
         Transitions: js.UndefOr[TransitionList] = js.undefined
     ): LifecycleRule = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Status" -> Status.asInstanceOf[js.Any],
-        "AbortIncompleteMultipartUpload" -> AbortIncompleteMultipartUpload.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Expiration" -> Expiration.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Filter" -> Filter.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ID" -> ID.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NoncurrentVersionExpiration" -> NoncurrentVersionExpiration.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NoncurrentVersionTransitions" -> NoncurrentVersionTransitions.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Prefix" -> Prefix.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Transitions" -> Transitions.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "Status" -> Status.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[LifecycleRule]
+      AbortIncompleteMultipartUpload.foreach(
+        __v => __obj.update("AbortIncompleteMultipartUpload", __v.asInstanceOf[js.Any])
+      )
+      Expiration.foreach(__v => __obj.update("Expiration", __v.asInstanceOf[js.Any]))
+      Filter.foreach(__v => __obj.update("Filter", __v.asInstanceOf[js.Any]))
+      ID.foreach(__v => __obj.update("ID", __v.asInstanceOf[js.Any]))
+      NoncurrentVersionExpiration.foreach(__v => __obj.update("NoncurrentVersionExpiration", __v.asInstanceOf[js.Any]))
+      NoncurrentVersionTransitions.foreach(
+        __v => __obj.update("NoncurrentVersionTransitions", __v.asInstanceOf[js.Any])
+      )
+      Prefix.foreach(__v => __obj.update("Prefix", __v.asInstanceOf[js.Any]))
+      Transitions.foreach(__v => __obj.update("Transitions", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[LifecycleRule]
     }
   }
 
@@ -4939,16 +4125,10 @@ package s3 {
         Prefix: js.UndefOr[Prefix] = js.undefined,
         Tags: js.UndefOr[TagSet] = js.undefined
     ): LifecycleRuleAndOperator = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Prefix" -> Prefix.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Tags" -> Tags.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[LifecycleRuleAndOperator]
+      val __obj = js.Dictionary.empty[js.Any]
+      Prefix.foreach(__v => __obj.update("Prefix", __v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[LifecycleRuleAndOperator]
     }
   }
 
@@ -4968,19 +4148,11 @@ package s3 {
         Prefix: js.UndefOr[Prefix] = js.undefined,
         Tag: js.UndefOr[Tag] = js.undefined
     ): LifecycleRuleFilter = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "And" -> And.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Prefix" -> Prefix.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Tag" -> Tag.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[LifecycleRuleFilter]
+      val __obj = js.Dictionary.empty[js.Any]
+      And.foreach(__v => __obj.update("And", __v.asInstanceOf[js.Any]))
+      Prefix.foreach(__v => __obj.update("Prefix", __v.asInstanceOf[js.Any]))
+      Tag.foreach(__v => __obj.update("Tag", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[LifecycleRuleFilter]
     }
   }
 
@@ -4999,22 +4171,12 @@ package s3 {
         IsTruncated: js.UndefOr[IsTruncated] = js.undefined,
         NextContinuationToken: js.UndefOr[NextToken] = js.undefined
     ): ListBucketAnalyticsConfigurationsOutput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "AnalyticsConfigurationList" -> AnalyticsConfigurationList.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ContinuationToken" -> ContinuationToken.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "IsTruncated" -> IsTruncated.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NextContinuationToken" -> NextContinuationToken.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListBucketAnalyticsConfigurationsOutput]
+      val __obj = js.Dictionary.empty[js.Any]
+      AnalyticsConfigurationList.foreach(__v => __obj.update("AnalyticsConfigurationList", __v.asInstanceOf[js.Any]))
+      ContinuationToken.foreach(__v => __obj.update("ContinuationToken", __v.asInstanceOf[js.Any]))
+      IsTruncated.foreach(__v => __obj.update("IsTruncated", __v.asInstanceOf[js.Any]))
+      NextContinuationToken.foreach(__v => __obj.update("NextContinuationToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListBucketAnalyticsConfigurationsOutput]
     }
   }
 
@@ -5029,14 +4191,12 @@ package s3 {
         Bucket: BucketName,
         ContinuationToken: js.UndefOr[Token] = js.undefined
     ): ListBucketAnalyticsConfigurationsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Bucket" -> Bucket.asInstanceOf[js.Any],
-        "ContinuationToken" -> ContinuationToken.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "Bucket" -> Bucket.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListBucketAnalyticsConfigurationsRequest]
+      ContinuationToken.foreach(__v => __obj.update("ContinuationToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListBucketAnalyticsConfigurationsRequest]
     }
   }
 
@@ -5055,22 +4215,12 @@ package s3 {
         IsTruncated: js.UndefOr[IsTruncated] = js.undefined,
         NextContinuationToken: js.UndefOr[NextToken] = js.undefined
     ): ListBucketInventoryConfigurationsOutput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ContinuationToken" -> ContinuationToken.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "InventoryConfigurationList" -> InventoryConfigurationList.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "IsTruncated" -> IsTruncated.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NextContinuationToken" -> NextContinuationToken.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListBucketInventoryConfigurationsOutput]
+      val __obj = js.Dictionary.empty[js.Any]
+      ContinuationToken.foreach(__v => __obj.update("ContinuationToken", __v.asInstanceOf[js.Any]))
+      InventoryConfigurationList.foreach(__v => __obj.update("InventoryConfigurationList", __v.asInstanceOf[js.Any]))
+      IsTruncated.foreach(__v => __obj.update("IsTruncated", __v.asInstanceOf[js.Any]))
+      NextContinuationToken.foreach(__v => __obj.update("NextContinuationToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListBucketInventoryConfigurationsOutput]
     }
   }
 
@@ -5085,14 +4235,12 @@ package s3 {
         Bucket: BucketName,
         ContinuationToken: js.UndefOr[Token] = js.undefined
     ): ListBucketInventoryConfigurationsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Bucket" -> Bucket.asInstanceOf[js.Any],
-        "ContinuationToken" -> ContinuationToken.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "Bucket" -> Bucket.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListBucketInventoryConfigurationsRequest]
+      ContinuationToken.foreach(__v => __obj.update("ContinuationToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListBucketInventoryConfigurationsRequest]
     }
   }
 
@@ -5111,22 +4259,12 @@ package s3 {
         MetricsConfigurationList: js.UndefOr[MetricsConfigurationList] = js.undefined,
         NextContinuationToken: js.UndefOr[NextToken] = js.undefined
     ): ListBucketMetricsConfigurationsOutput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ContinuationToken" -> ContinuationToken.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "IsTruncated" -> IsTruncated.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MetricsConfigurationList" -> MetricsConfigurationList.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NextContinuationToken" -> NextContinuationToken.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListBucketMetricsConfigurationsOutput]
+      val __obj = js.Dictionary.empty[js.Any]
+      ContinuationToken.foreach(__v => __obj.update("ContinuationToken", __v.asInstanceOf[js.Any]))
+      IsTruncated.foreach(__v => __obj.update("IsTruncated", __v.asInstanceOf[js.Any]))
+      MetricsConfigurationList.foreach(__v => __obj.update("MetricsConfigurationList", __v.asInstanceOf[js.Any]))
+      NextContinuationToken.foreach(__v => __obj.update("NextContinuationToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListBucketMetricsConfigurationsOutput]
     }
   }
 
@@ -5141,14 +4279,12 @@ package s3 {
         Bucket: BucketName,
         ContinuationToken: js.UndefOr[Token] = js.undefined
     ): ListBucketMetricsConfigurationsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Bucket" -> Bucket.asInstanceOf[js.Any],
-        "ContinuationToken" -> ContinuationToken.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "Bucket" -> Bucket.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListBucketMetricsConfigurationsRequest]
+      ContinuationToken.foreach(__v => __obj.update("ContinuationToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListBucketMetricsConfigurationsRequest]
     }
   }
 
@@ -5163,16 +4299,10 @@ package s3 {
         Buckets: js.UndefOr[Buckets] = js.undefined,
         Owner: js.UndefOr[Owner] = js.undefined
     ): ListBucketsOutput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Buckets" -> Buckets.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Owner" -> Owner.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListBucketsOutput]
+      val __obj = js.Dictionary.empty[js.Any]
+      Buckets.foreach(__v => __obj.update("Buckets", __v.asInstanceOf[js.Any]))
+      Owner.foreach(__v => __obj.update("Owner", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListBucketsOutput]
     }
   }
 
@@ -5207,46 +4337,20 @@ package s3 {
         UploadIdMarker: js.UndefOr[UploadIdMarker] = js.undefined,
         Uploads: js.UndefOr[MultipartUploadList] = js.undefined
     ): ListMultipartUploadsOutput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Bucket" -> Bucket.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "CommonPrefixes" -> CommonPrefixes.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Delimiter" -> Delimiter.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "EncodingType" -> EncodingType.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "IsTruncated" -> IsTruncated.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "KeyMarker" -> KeyMarker.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MaxUploads" -> MaxUploads.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NextKeyMarker" -> NextKeyMarker.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NextUploadIdMarker" -> NextUploadIdMarker.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Prefix" -> Prefix.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "UploadIdMarker" -> UploadIdMarker.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Uploads" -> Uploads.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListMultipartUploadsOutput]
+      val __obj = js.Dictionary.empty[js.Any]
+      Bucket.foreach(__v => __obj.update("Bucket", __v.asInstanceOf[js.Any]))
+      CommonPrefixes.foreach(__v => __obj.update("CommonPrefixes", __v.asInstanceOf[js.Any]))
+      Delimiter.foreach(__v => __obj.update("Delimiter", __v.asInstanceOf[js.Any]))
+      EncodingType.foreach(__v => __obj.update("EncodingType", __v.asInstanceOf[js.Any]))
+      IsTruncated.foreach(__v => __obj.update("IsTruncated", __v.asInstanceOf[js.Any]))
+      KeyMarker.foreach(__v => __obj.update("KeyMarker", __v.asInstanceOf[js.Any]))
+      MaxUploads.foreach(__v => __obj.update("MaxUploads", __v.asInstanceOf[js.Any]))
+      NextKeyMarker.foreach(__v => __obj.update("NextKeyMarker", __v.asInstanceOf[js.Any]))
+      NextUploadIdMarker.foreach(__v => __obj.update("NextUploadIdMarker", __v.asInstanceOf[js.Any]))
+      Prefix.foreach(__v => __obj.update("Prefix", __v.asInstanceOf[js.Any]))
+      UploadIdMarker.foreach(__v => __obj.update("UploadIdMarker", __v.asInstanceOf[js.Any]))
+      Uploads.foreach(__v => __obj.update("Uploads", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListMultipartUploadsOutput]
     }
   }
 
@@ -5271,29 +4375,17 @@ package s3 {
         Prefix: js.UndefOr[Prefix] = js.undefined,
         UploadIdMarker: js.UndefOr[UploadIdMarker] = js.undefined
     ): ListMultipartUploadsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Bucket" -> Bucket.asInstanceOf[js.Any],
-        "Delimiter" -> Delimiter.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "EncodingType" -> EncodingType.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "KeyMarker" -> KeyMarker.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MaxUploads" -> MaxUploads.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Prefix" -> Prefix.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "UploadIdMarker" -> UploadIdMarker.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "Bucket" -> Bucket.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListMultipartUploadsRequest]
+      Delimiter.foreach(__v => __obj.update("Delimiter", __v.asInstanceOf[js.Any]))
+      EncodingType.foreach(__v => __obj.update("EncodingType", __v.asInstanceOf[js.Any]))
+      KeyMarker.foreach(__v => __obj.update("KeyMarker", __v.asInstanceOf[js.Any]))
+      MaxUploads.foreach(__v => __obj.update("MaxUploads", __v.asInstanceOf[js.Any]))
+      Prefix.foreach(__v => __obj.update("Prefix", __v.asInstanceOf[js.Any]))
+      UploadIdMarker.foreach(__v => __obj.update("UploadIdMarker", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListMultipartUploadsRequest]
     }
   }
 
@@ -5330,49 +4422,21 @@ package s3 {
         VersionIdMarker: js.UndefOr[VersionIdMarker] = js.undefined,
         Versions: js.UndefOr[ObjectVersionList] = js.undefined
     ): ListObjectVersionsOutput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "CommonPrefixes" -> CommonPrefixes.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DeleteMarkers" -> DeleteMarkers.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Delimiter" -> Delimiter.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "EncodingType" -> EncodingType.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "IsTruncated" -> IsTruncated.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "KeyMarker" -> KeyMarker.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MaxKeys" -> MaxKeys.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Name" -> Name.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NextKeyMarker" -> NextKeyMarker.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NextVersionIdMarker" -> NextVersionIdMarker.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Prefix" -> Prefix.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "VersionIdMarker" -> VersionIdMarker.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Versions" -> Versions.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListObjectVersionsOutput]
+      val __obj = js.Dictionary.empty[js.Any]
+      CommonPrefixes.foreach(__v => __obj.update("CommonPrefixes", __v.asInstanceOf[js.Any]))
+      DeleteMarkers.foreach(__v => __obj.update("DeleteMarkers", __v.asInstanceOf[js.Any]))
+      Delimiter.foreach(__v => __obj.update("Delimiter", __v.asInstanceOf[js.Any]))
+      EncodingType.foreach(__v => __obj.update("EncodingType", __v.asInstanceOf[js.Any]))
+      IsTruncated.foreach(__v => __obj.update("IsTruncated", __v.asInstanceOf[js.Any]))
+      KeyMarker.foreach(__v => __obj.update("KeyMarker", __v.asInstanceOf[js.Any]))
+      MaxKeys.foreach(__v => __obj.update("MaxKeys", __v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
+      NextKeyMarker.foreach(__v => __obj.update("NextKeyMarker", __v.asInstanceOf[js.Any]))
+      NextVersionIdMarker.foreach(__v => __obj.update("NextVersionIdMarker", __v.asInstanceOf[js.Any]))
+      Prefix.foreach(__v => __obj.update("Prefix", __v.asInstanceOf[js.Any]))
+      VersionIdMarker.foreach(__v => __obj.update("VersionIdMarker", __v.asInstanceOf[js.Any]))
+      Versions.foreach(__v => __obj.update("Versions", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListObjectVersionsOutput]
     }
   }
 
@@ -5397,29 +4461,17 @@ package s3 {
         Prefix: js.UndefOr[Prefix] = js.undefined,
         VersionIdMarker: js.UndefOr[VersionIdMarker] = js.undefined
     ): ListObjectVersionsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Bucket" -> Bucket.asInstanceOf[js.Any],
-        "Delimiter" -> Delimiter.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "EncodingType" -> EncodingType.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "KeyMarker" -> KeyMarker.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MaxKeys" -> MaxKeys.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Prefix" -> Prefix.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "VersionIdMarker" -> VersionIdMarker.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "Bucket" -> Bucket.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListObjectVersionsRequest]
+      Delimiter.foreach(__v => __obj.update("Delimiter", __v.asInstanceOf[js.Any]))
+      EncodingType.foreach(__v => __obj.update("EncodingType", __v.asInstanceOf[js.Any]))
+      KeyMarker.foreach(__v => __obj.update("KeyMarker", __v.asInstanceOf[js.Any]))
+      MaxKeys.foreach(__v => __obj.update("MaxKeys", __v.asInstanceOf[js.Any]))
+      Prefix.foreach(__v => __obj.update("Prefix", __v.asInstanceOf[js.Any]))
+      VersionIdMarker.foreach(__v => __obj.update("VersionIdMarker", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListObjectVersionsRequest]
     }
   }
 
@@ -5450,40 +4502,18 @@ package s3 {
         NextMarker: js.UndefOr[NextMarker] = js.undefined,
         Prefix: js.UndefOr[Prefix] = js.undefined
     ): ListObjectsOutput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "CommonPrefixes" -> CommonPrefixes.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Contents" -> Contents.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Delimiter" -> Delimiter.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "EncodingType" -> EncodingType.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "IsTruncated" -> IsTruncated.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Marker" -> Marker.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MaxKeys" -> MaxKeys.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Name" -> Name.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NextMarker" -> NextMarker.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Prefix" -> Prefix.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListObjectsOutput]
+      val __obj = js.Dictionary.empty[js.Any]
+      CommonPrefixes.foreach(__v => __obj.update("CommonPrefixes", __v.asInstanceOf[js.Any]))
+      Contents.foreach(__v => __obj.update("Contents", __v.asInstanceOf[js.Any]))
+      Delimiter.foreach(__v => __obj.update("Delimiter", __v.asInstanceOf[js.Any]))
+      EncodingType.foreach(__v => __obj.update("EncodingType", __v.asInstanceOf[js.Any]))
+      IsTruncated.foreach(__v => __obj.update("IsTruncated", __v.asInstanceOf[js.Any]))
+      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
+      MaxKeys.foreach(__v => __obj.update("MaxKeys", __v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
+      NextMarker.foreach(__v => __obj.update("NextMarker", __v.asInstanceOf[js.Any]))
+      Prefix.foreach(__v => __obj.update("Prefix", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListObjectsOutput]
     }
   }
 
@@ -5508,29 +4538,17 @@ package s3 {
         Prefix: js.UndefOr[Prefix] = js.undefined,
         RequestPayer: js.UndefOr[RequestPayer] = js.undefined
     ): ListObjectsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Bucket" -> Bucket.asInstanceOf[js.Any],
-        "Delimiter" -> Delimiter.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "EncodingType" -> EncodingType.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Marker" -> Marker.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MaxKeys" -> MaxKeys.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Prefix" -> Prefix.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "RequestPayer" -> RequestPayer.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "Bucket" -> Bucket.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListObjectsRequest]
+      Delimiter.foreach(__v => __obj.update("Delimiter", __v.asInstanceOf[js.Any]))
+      EncodingType.foreach(__v => __obj.update("EncodingType", __v.asInstanceOf[js.Any]))
+      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
+      MaxKeys.foreach(__v => __obj.update("MaxKeys", __v.asInstanceOf[js.Any]))
+      Prefix.foreach(__v => __obj.update("Prefix", __v.asInstanceOf[js.Any]))
+      RequestPayer.foreach(__v => __obj.update("RequestPayer", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListObjectsRequest]
     }
   }
 
@@ -5565,46 +4583,20 @@ package s3 {
         Prefix: js.UndefOr[Prefix] = js.undefined,
         StartAfter: js.UndefOr[StartAfter] = js.undefined
     ): ListObjectsV2Output = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "CommonPrefixes" -> CommonPrefixes.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Contents" -> Contents.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ContinuationToken" -> ContinuationToken.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Delimiter" -> Delimiter.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "EncodingType" -> EncodingType.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "IsTruncated" -> IsTruncated.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "KeyCount" -> KeyCount.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MaxKeys" -> MaxKeys.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Name" -> Name.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NextContinuationToken" -> NextContinuationToken.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Prefix" -> Prefix.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "StartAfter" -> StartAfter.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListObjectsV2Output]
+      val __obj = js.Dictionary.empty[js.Any]
+      CommonPrefixes.foreach(__v => __obj.update("CommonPrefixes", __v.asInstanceOf[js.Any]))
+      Contents.foreach(__v => __obj.update("Contents", __v.asInstanceOf[js.Any]))
+      ContinuationToken.foreach(__v => __obj.update("ContinuationToken", __v.asInstanceOf[js.Any]))
+      Delimiter.foreach(__v => __obj.update("Delimiter", __v.asInstanceOf[js.Any]))
+      EncodingType.foreach(__v => __obj.update("EncodingType", __v.asInstanceOf[js.Any]))
+      IsTruncated.foreach(__v => __obj.update("IsTruncated", __v.asInstanceOf[js.Any]))
+      KeyCount.foreach(__v => __obj.update("KeyCount", __v.asInstanceOf[js.Any]))
+      MaxKeys.foreach(__v => __obj.update("MaxKeys", __v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
+      NextContinuationToken.foreach(__v => __obj.update("NextContinuationToken", __v.asInstanceOf[js.Any]))
+      Prefix.foreach(__v => __obj.update("Prefix", __v.asInstanceOf[js.Any]))
+      StartAfter.foreach(__v => __obj.update("StartAfter", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListObjectsV2Output]
     }
   }
 
@@ -5633,35 +4625,19 @@ package s3 {
         RequestPayer: js.UndefOr[RequestPayer] = js.undefined,
         StartAfter: js.UndefOr[StartAfter] = js.undefined
     ): ListObjectsV2Request = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Bucket" -> Bucket.asInstanceOf[js.Any],
-        "ContinuationToken" -> ContinuationToken.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Delimiter" -> Delimiter.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "EncodingType" -> EncodingType.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "FetchOwner" -> FetchOwner.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MaxKeys" -> MaxKeys.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Prefix" -> Prefix.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "RequestPayer" -> RequestPayer.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "StartAfter" -> StartAfter.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "Bucket" -> Bucket.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListObjectsV2Request]
+      ContinuationToken.foreach(__v => __obj.update("ContinuationToken", __v.asInstanceOf[js.Any]))
+      Delimiter.foreach(__v => __obj.update("Delimiter", __v.asInstanceOf[js.Any]))
+      EncodingType.foreach(__v => __obj.update("EncodingType", __v.asInstanceOf[js.Any]))
+      FetchOwner.foreach(__v => __obj.update("FetchOwner", __v.asInstanceOf[js.Any]))
+      MaxKeys.foreach(__v => __obj.update("MaxKeys", __v.asInstanceOf[js.Any]))
+      Prefix.foreach(__v => __obj.update("Prefix", __v.asInstanceOf[js.Any]))
+      RequestPayer.foreach(__v => __obj.update("RequestPayer", __v.asInstanceOf[js.Any]))
+      StartAfter.foreach(__v => __obj.update("StartAfter", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListObjectsV2Request]
     }
   }
 
@@ -5700,52 +4676,22 @@ package s3 {
         StorageClass: js.UndefOr[StorageClass] = js.undefined,
         UploadId: js.UndefOr[MultipartUploadId] = js.undefined
     ): ListPartsOutput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "AbortDate" -> AbortDate.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "AbortRuleId" -> AbortRuleId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Bucket" -> Bucket.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Initiator" -> Initiator.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "IsTruncated" -> IsTruncated.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Key" -> Key.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MaxParts" -> MaxParts.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NextPartNumberMarker" -> NextPartNumberMarker.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Owner" -> Owner.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "PartNumberMarker" -> PartNumberMarker.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Parts" -> Parts.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "RequestCharged" -> RequestCharged.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "StorageClass" -> StorageClass.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "UploadId" -> UploadId.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListPartsOutput]
+      val __obj = js.Dictionary.empty[js.Any]
+      AbortDate.foreach(__v => __obj.update("AbortDate", __v.asInstanceOf[js.Any]))
+      AbortRuleId.foreach(__v => __obj.update("AbortRuleId", __v.asInstanceOf[js.Any]))
+      Bucket.foreach(__v => __obj.update("Bucket", __v.asInstanceOf[js.Any]))
+      Initiator.foreach(__v => __obj.update("Initiator", __v.asInstanceOf[js.Any]))
+      IsTruncated.foreach(__v => __obj.update("IsTruncated", __v.asInstanceOf[js.Any]))
+      Key.foreach(__v => __obj.update("Key", __v.asInstanceOf[js.Any]))
+      MaxParts.foreach(__v => __obj.update("MaxParts", __v.asInstanceOf[js.Any]))
+      NextPartNumberMarker.foreach(__v => __obj.update("NextPartNumberMarker", __v.asInstanceOf[js.Any]))
+      Owner.foreach(__v => __obj.update("Owner", __v.asInstanceOf[js.Any]))
+      PartNumberMarker.foreach(__v => __obj.update("PartNumberMarker", __v.asInstanceOf[js.Any]))
+      Parts.foreach(__v => __obj.update("Parts", __v.asInstanceOf[js.Any]))
+      RequestCharged.foreach(__v => __obj.update("RequestCharged", __v.asInstanceOf[js.Any]))
+      StorageClass.foreach(__v => __obj.update("StorageClass", __v.asInstanceOf[js.Any]))
+      UploadId.foreach(__v => __obj.update("UploadId", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListPartsOutput]
     }
   }
 
@@ -5768,22 +4714,16 @@ package s3 {
         PartNumberMarker: js.UndefOr[PartNumberMarker] = js.undefined,
         RequestPayer: js.UndefOr[RequestPayer] = js.undefined
     ): ListPartsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "Bucket"   -> Bucket.asInstanceOf[js.Any],
         "Key"      -> Key.asInstanceOf[js.Any],
-        "UploadId" -> UploadId.asInstanceOf[js.Any],
-        "MaxParts" -> MaxParts.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "PartNumberMarker" -> PartNumberMarker.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "RequestPayer" -> RequestPayer.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "UploadId" -> UploadId.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListPartsRequest]
+      MaxParts.foreach(__v => __obj.update("MaxParts", __v.asInstanceOf[js.Any]))
+      PartNumberMarker.foreach(__v => __obj.update("PartNumberMarker", __v.asInstanceOf[js.Any]))
+      RequestPayer.foreach(__v => __obj.update("RequestPayer", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListPartsRequest]
     }
   }
 
@@ -5803,15 +4743,13 @@ package s3 {
         TargetPrefix: TargetPrefix,
         TargetGrants: js.UndefOr[TargetGrants] = js.undefined
     ): LoggingEnabled = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "TargetBucket" -> TargetBucket.asInstanceOf[js.Any],
-        "TargetPrefix" -> TargetPrefix.asInstanceOf[js.Any],
-        "TargetGrants" -> TargetGrants.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "TargetPrefix" -> TargetPrefix.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[LoggingEnabled]
+      TargetGrants.foreach(__v => __obj.update("TargetGrants", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[LoggingEnabled]
     }
   }
 
@@ -5850,16 +4788,10 @@ package s3 {
         Name: js.UndefOr[MetadataKey] = js.undefined,
         Value: js.UndefOr[MetadataValue] = js.undefined
     ): MetadataEntry = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Name" -> Name.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Value" -> Value.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[MetadataEntry]
+      val __obj = js.Dictionary.empty[js.Any]
+      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
+      Value.foreach(__v => __obj.update("Value", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[MetadataEntry]
     }
   }
 
@@ -5877,16 +4809,10 @@ package s3 {
         Prefix: js.UndefOr[Prefix] = js.undefined,
         Tags: js.UndefOr[TagSet] = js.undefined
     ): MetricsAndOperator = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Prefix" -> Prefix.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Tags" -> Tags.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[MetricsAndOperator]
+      val __obj = js.Dictionary.empty[js.Any]
+      Prefix.foreach(__v => __obj.update("Prefix", __v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[MetricsAndOperator]
     }
   }
 
@@ -5904,14 +4830,12 @@ package s3 {
         Id: MetricsId,
         Filter: js.UndefOr[MetricsFilter] = js.undefined
     ): MetricsConfiguration = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Id" -> Id.asInstanceOf[js.Any],
-        "Filter" -> Filter.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "Id" -> Id.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[MetricsConfiguration]
+      Filter.foreach(__v => __obj.update("Filter", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[MetricsConfiguration]
     }
   }
 
@@ -5931,19 +4855,11 @@ package s3 {
         Prefix: js.UndefOr[Prefix] = js.undefined,
         Tag: js.UndefOr[Tag] = js.undefined
     ): MetricsFilter = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "And" -> And.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Prefix" -> Prefix.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Tag" -> Tag.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[MetricsFilter]
+      val __obj = js.Dictionary.empty[js.Any]
+      And.foreach(__v => __obj.update("And", __v.asInstanceOf[js.Any]))
+      Prefix.foreach(__v => __obj.update("Prefix", __v.asInstanceOf[js.Any]))
+      Tag.foreach(__v => __obj.update("Tag", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[MetricsFilter]
     }
   }
 
@@ -5969,28 +4885,14 @@ package s3 {
         StorageClass: js.UndefOr[StorageClass] = js.undefined,
         UploadId: js.UndefOr[MultipartUploadId] = js.undefined
     ): MultipartUpload = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Initiated" -> Initiated.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Initiator" -> Initiator.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Key" -> Key.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Owner" -> Owner.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "StorageClass" -> StorageClass.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "UploadId" -> UploadId.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[MultipartUpload]
+      val __obj = js.Dictionary.empty[js.Any]
+      Initiated.foreach(__v => __obj.update("Initiated", __v.asInstanceOf[js.Any]))
+      Initiator.foreach(__v => __obj.update("Initiator", __v.asInstanceOf[js.Any]))
+      Key.foreach(__v => __obj.update("Key", __v.asInstanceOf[js.Any]))
+      Owner.foreach(__v => __obj.update("Owner", __v.asInstanceOf[js.Any]))
+      StorageClass.foreach(__v => __obj.update("StorageClass", __v.asInstanceOf[js.Any]))
+      UploadId.foreach(__v => __obj.update("UploadId", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[MultipartUpload]
     }
   }
 
@@ -6006,13 +4908,9 @@ package s3 {
     def apply(
         NoncurrentDays: js.UndefOr[Days] = js.undefined
     ): NoncurrentVersionExpiration = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "NoncurrentDays" -> NoncurrentDays.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[NoncurrentVersionExpiration]
+      val __obj = js.Dictionary.empty[js.Any]
+      NoncurrentDays.foreach(__v => __obj.update("NoncurrentDays", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[NoncurrentVersionExpiration]
     }
   }
 
@@ -6030,16 +4928,10 @@ package s3 {
         NoncurrentDays: js.UndefOr[Days] = js.undefined,
         StorageClass: js.UndefOr[TransitionStorageClass] = js.undefined
     ): NoncurrentVersionTransition = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "NoncurrentDays" -> NoncurrentDays.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "StorageClass" -> StorageClass.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[NoncurrentVersionTransition]
+      val __obj = js.Dictionary.empty[js.Any]
+      NoncurrentDays.foreach(__v => __obj.update("NoncurrentDays", __v.asInstanceOf[js.Any]))
+      StorageClass.foreach(__v => __obj.update("StorageClass", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[NoncurrentVersionTransition]
     }
   }
 
@@ -6059,19 +4951,13 @@ package s3 {
         QueueConfigurations: js.UndefOr[QueueConfigurationList] = js.undefined,
         TopicConfigurations: js.UndefOr[TopicConfigurationList] = js.undefined
     ): NotificationConfiguration = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "LambdaFunctionConfigurations" -> LambdaFunctionConfigurations.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "QueueConfigurations" -> QueueConfigurations.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "TopicConfigurations" -> TopicConfigurations.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[NotificationConfiguration]
+      val __obj = js.Dictionary.empty[js.Any]
+      LambdaFunctionConfigurations.foreach(
+        __v => __obj.update("LambdaFunctionConfigurations", __v.asInstanceOf[js.Any])
+      )
+      QueueConfigurations.foreach(__v => __obj.update("QueueConfigurations", __v.asInstanceOf[js.Any]))
+      TopicConfigurations.foreach(__v => __obj.update("TopicConfigurations", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[NotificationConfiguration]
     }
   }
 
@@ -6088,19 +4974,11 @@ package s3 {
         QueueConfiguration: js.UndefOr[QueueConfigurationDeprecated] = js.undefined,
         TopicConfiguration: js.UndefOr[TopicConfigurationDeprecated] = js.undefined
     ): NotificationConfigurationDeprecated = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "CloudFunctionConfiguration" -> CloudFunctionConfiguration.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "QueueConfiguration" -> QueueConfiguration.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "TopicConfiguration" -> TopicConfiguration.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[NotificationConfigurationDeprecated]
+      val __obj = js.Dictionary.empty[js.Any]
+      CloudFunctionConfiguration.foreach(__v => __obj.update("CloudFunctionConfiguration", __v.asInstanceOf[js.Any]))
+      QueueConfiguration.foreach(__v => __obj.update("QueueConfiguration", __v.asInstanceOf[js.Any]))
+      TopicConfiguration.foreach(__v => __obj.update("TopicConfiguration", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[NotificationConfigurationDeprecated]
     }
   }
 
@@ -6116,13 +4994,9 @@ package s3 {
     def apply(
         Key: js.UndefOr[S3KeyFilter] = js.undefined
     ): NotificationConfigurationFilter = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Key" -> Key.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[NotificationConfigurationFilter]
+      val __obj = js.Dictionary.empty[js.Any]
+      Key.foreach(__v => __obj.update("Key", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[NotificationConfigurationFilter]
     }
   }
 
@@ -6148,28 +5022,14 @@ package s3 {
         Size: js.UndefOr[Size] = js.undefined,
         StorageClass: js.UndefOr[ObjectStorageClass] = js.undefined
     ): Object = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ETag" -> ETag.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Key" -> Key.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "LastModified" -> LastModified.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Owner" -> Owner.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Size" -> Size.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "StorageClass" -> StorageClass.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Object]
+      val __obj = js.Dictionary.empty[js.Any]
+      ETag.foreach(__v => __obj.update("ETag", __v.asInstanceOf[js.Any]))
+      Key.foreach(__v => __obj.update("Key", __v.asInstanceOf[js.Any]))
+      LastModified.foreach(__v => __obj.update("LastModified", __v.asInstanceOf[js.Any]))
+      Owner.foreach(__v => __obj.update("Owner", __v.asInstanceOf[js.Any]))
+      Size.foreach(__v => __obj.update("Size", __v.asInstanceOf[js.Any]))
+      StorageClass.foreach(__v => __obj.update("StorageClass", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Object]
     }
   }
 
@@ -6207,14 +5067,12 @@ package s3 {
         Key: ObjectKey,
         VersionId: js.UndefOr[ObjectVersionId] = js.undefined
     ): ObjectIdentifier = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Key" -> Key.asInstanceOf[js.Any],
-        "VersionId" -> VersionId.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "Key" -> Key.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ObjectIdentifier]
+      VersionId.foreach(__v => __obj.update("VersionId", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ObjectIdentifier]
     }
   }
 
@@ -6232,16 +5090,10 @@ package s3 {
         ObjectLockEnabled: js.UndefOr[ObjectLockEnabled] = js.undefined,
         Rule: js.UndefOr[ObjectLockRule] = js.undefined
     ): ObjectLockConfiguration = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ObjectLockEnabled" -> ObjectLockEnabled.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Rule" -> Rule.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ObjectLockConfiguration]
+      val __obj = js.Dictionary.empty[js.Any]
+      ObjectLockEnabled.foreach(__v => __obj.update("ObjectLockEnabled", __v.asInstanceOf[js.Any]))
+      Rule.foreach(__v => __obj.update("Rule", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ObjectLockConfiguration]
     }
   }
 
@@ -6263,13 +5115,9 @@ package s3 {
     def apply(
         Status: js.UndefOr[ObjectLockLegalHoldStatus] = js.undefined
     ): ObjectLockLegalHold = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Status" -> Status.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ObjectLockLegalHold]
+      val __obj = js.Dictionary.empty[js.Any]
+      Status.foreach(__v => __obj.update("Status", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ObjectLockLegalHold]
     }
   }
 
@@ -6301,16 +5149,10 @@ package s3 {
         Mode: js.UndefOr[ObjectLockRetentionMode] = js.undefined,
         RetainUntilDate: js.UndefOr[Date] = js.undefined
     ): ObjectLockRetention = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Mode" -> Mode.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "RetainUntilDate" -> RetainUntilDate.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ObjectLockRetention]
+      val __obj = js.Dictionary.empty[js.Any]
+      Mode.foreach(__v => __obj.update("Mode", __v.asInstanceOf[js.Any]))
+      RetainUntilDate.foreach(__v => __obj.update("RetainUntilDate", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ObjectLockRetention]
     }
   }
 
@@ -6333,13 +5175,9 @@ package s3 {
     def apply(
         DefaultRetention: js.UndefOr[DefaultRetention] = js.undefined
     ): ObjectLockRule = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "DefaultRetention" -> DefaultRetention.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ObjectLockRule]
+      val __obj = js.Dictionary.empty[js.Any]
+      DefaultRetention.foreach(__v => __obj.update("DefaultRetention", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ObjectLockRule]
     }
   }
 
@@ -6382,34 +5220,16 @@ package s3 {
         StorageClass: js.UndefOr[ObjectVersionStorageClass] = js.undefined,
         VersionId: js.UndefOr[ObjectVersionId] = js.undefined
     ): ObjectVersion = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ETag" -> ETag.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "IsLatest" -> IsLatest.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Key" -> Key.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "LastModified" -> LastModified.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Owner" -> Owner.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Size" -> Size.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "StorageClass" -> StorageClass.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "VersionId" -> VersionId.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ObjectVersion]
+      val __obj = js.Dictionary.empty[js.Any]
+      ETag.foreach(__v => __obj.update("ETag", __v.asInstanceOf[js.Any]))
+      IsLatest.foreach(__v => __obj.update("IsLatest", __v.asInstanceOf[js.Any]))
+      Key.foreach(__v => __obj.update("Key", __v.asInstanceOf[js.Any]))
+      LastModified.foreach(__v => __obj.update("LastModified", __v.asInstanceOf[js.Any]))
+      Owner.foreach(__v => __obj.update("Owner", __v.asInstanceOf[js.Any]))
+      Size.foreach(__v => __obj.update("Size", __v.asInstanceOf[js.Any]))
+      StorageClass.foreach(__v => __obj.update("StorageClass", __v.asInstanceOf[js.Any]))
+      VersionId.foreach(__v => __obj.update("VersionId", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ObjectVersion]
     }
   }
 
@@ -6431,13 +5251,9 @@ package s3 {
     def apply(
         S3: js.UndefOr[S3Location] = js.undefined
     ): OutputLocation = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "S3" -> S3.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[OutputLocation]
+      val __obj = js.Dictionary.empty[js.Any]
+      S3.foreach(__v => __obj.update("S3", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[OutputLocation]
     }
   }
 
@@ -6455,16 +5271,10 @@ package s3 {
         CSV: js.UndefOr[CSVOutput] = js.undefined,
         JSON: js.UndefOr[JSONOutput] = js.undefined
     ): OutputSerialization = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "CSV" -> CSV.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "JSON" -> JSON.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[OutputSerialization]
+      val __obj = js.Dictionary.empty[js.Any]
+      CSV.foreach(__v => __obj.update("CSV", __v.asInstanceOf[js.Any]))
+      JSON.foreach(__v => __obj.update("JSON", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[OutputSerialization]
     }
   }
 
@@ -6482,16 +5292,10 @@ package s3 {
         DisplayName: js.UndefOr[DisplayName] = js.undefined,
         ID: js.UndefOr[ID] = js.undefined
     ): Owner = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "DisplayName" -> DisplayName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ID" -> ID.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Owner]
+      val __obj = js.Dictionary.empty[js.Any]
+      DisplayName.foreach(__v => __obj.update("DisplayName", __v.asInstanceOf[js.Any]))
+      ID.foreach(__v => __obj.update("ID", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Owner]
     }
   }
 
@@ -6510,10 +5314,9 @@ package s3 {
   object ParquetInput {
     def apply(
         ): ParquetInput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary.empty[js.Any]
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ParquetInput]
+      __obj.asInstanceOf[ParquetInput]
     }
   }
 
@@ -6535,22 +5338,12 @@ package s3 {
         PartNumber: js.UndefOr[PartNumber] = js.undefined,
         Size: js.UndefOr[Size] = js.undefined
     ): Part = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ETag" -> ETag.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "LastModified" -> LastModified.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "PartNumber" -> PartNumber.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Size" -> Size.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Part]
+      val __obj = js.Dictionary.empty[js.Any]
+      ETag.foreach(__v => __obj.update("ETag", __v.asInstanceOf[js.Any]))
+      LastModified.foreach(__v => __obj.update("LastModified", __v.asInstanceOf[js.Any]))
+      PartNumber.foreach(__v => __obj.update("PartNumber", __v.asInstanceOf[js.Any]))
+      Size.foreach(__v => __obj.update("Size", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Part]
     }
   }
 
@@ -6583,13 +5376,9 @@ package s3 {
     def apply(
         IsPublic: js.UndefOr[IsPublic] = js.undefined
     ): PolicyStatus = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "IsPublic" -> IsPublic.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PolicyStatus]
+      val __obj = js.Dictionary.empty[js.Any]
+      IsPublic.foreach(__v => __obj.update("IsPublic", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PolicyStatus]
     }
   }
 
@@ -6609,19 +5398,11 @@ package s3 {
         BytesReturned: js.UndefOr[BytesReturned] = js.undefined,
         BytesScanned: js.UndefOr[BytesScanned] = js.undefined
     ): Progress = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "BytesProcessed" -> BytesProcessed.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "BytesReturned" -> BytesReturned.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "BytesScanned" -> BytesScanned.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Progress]
+      val __obj = js.Dictionary.empty[js.Any]
+      BytesProcessed.foreach(__v => __obj.update("BytesProcessed", __v.asInstanceOf[js.Any]))
+      BytesReturned.foreach(__v => __obj.update("BytesReturned", __v.asInstanceOf[js.Any]))
+      BytesScanned.foreach(__v => __obj.update("BytesScanned", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Progress]
     }
   }
 
@@ -6637,13 +5418,9 @@ package s3 {
     def apply(
         Details: js.UndefOr[Progress] = js.undefined
     ): ProgressEvent = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Details" -> Details.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ProgressEvent]
+      val __obj = js.Dictionary.empty[js.Any]
+      Details.foreach(__v => __obj.update("Details", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ProgressEvent]
     }
   }
 
@@ -6672,22 +5449,12 @@ package s3 {
         IgnorePublicAcls: js.UndefOr[Setting] = js.undefined,
         RestrictPublicBuckets: js.UndefOr[Setting] = js.undefined
     ): PublicAccessBlockConfiguration = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "BlockPublicAcls" -> BlockPublicAcls.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "BlockPublicPolicy" -> BlockPublicPolicy.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "IgnorePublicAcls" -> IgnorePublicAcls.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "RestrictPublicBuckets" -> RestrictPublicBuckets.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PublicAccessBlockConfiguration]
+      val __obj = js.Dictionary.empty[js.Any]
+      BlockPublicAcls.foreach(__v => __obj.update("BlockPublicAcls", __v.asInstanceOf[js.Any]))
+      BlockPublicPolicy.foreach(__v => __obj.update("BlockPublicPolicy", __v.asInstanceOf[js.Any]))
+      IgnorePublicAcls.foreach(__v => __obj.update("IgnorePublicAcls", __v.asInstanceOf[js.Any]))
+      RestrictPublicBuckets.foreach(__v => __obj.update("RestrictPublicBuckets", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PublicAccessBlockConfiguration]
     }
   }
 
@@ -6702,12 +5469,12 @@ package s3 {
         AccelerateConfiguration: AccelerateConfiguration,
         Bucket: BucketName
     ): PutBucketAccelerateConfigurationRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "AccelerateConfiguration" -> AccelerateConfiguration.asInstanceOf[js.Any],
         "Bucket"                  -> Bucket.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PutBucketAccelerateConfigurationRequest]
+      __obj.asInstanceOf[PutBucketAccelerateConfigurationRequest]
     }
   }
 
@@ -6736,35 +5503,19 @@ package s3 {
         GrantWrite: js.UndefOr[GrantWrite] = js.undefined,
         GrantWriteACP: js.UndefOr[GrantWriteACP] = js.undefined
     ): PutBucketAclRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Bucket" -> Bucket.asInstanceOf[js.Any],
-        "ACL" -> ACL.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "AccessControlPolicy" -> AccessControlPolicy.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ContentMD5" -> ContentMD5.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "GrantFullControl" -> GrantFullControl.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "GrantRead" -> GrantRead.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "GrantReadACP" -> GrantReadACP.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "GrantWrite" -> GrantWrite.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "GrantWriteACP" -> GrantWriteACP.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "Bucket" -> Bucket.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PutBucketAclRequest]
+      ACL.foreach(__v => __obj.update("ACL", __v.asInstanceOf[js.Any]))
+      AccessControlPolicy.foreach(__v => __obj.update("AccessControlPolicy", __v.asInstanceOf[js.Any]))
+      ContentMD5.foreach(__v => __obj.update("ContentMD5", __v.asInstanceOf[js.Any]))
+      GrantFullControl.foreach(__v => __obj.update("GrantFullControl", __v.asInstanceOf[js.Any]))
+      GrantRead.foreach(__v => __obj.update("GrantRead", __v.asInstanceOf[js.Any]))
+      GrantReadACP.foreach(__v => __obj.update("GrantReadACP", __v.asInstanceOf[js.Any]))
+      GrantWrite.foreach(__v => __obj.update("GrantWrite", __v.asInstanceOf[js.Any]))
+      GrantWriteACP.foreach(__v => __obj.update("GrantWriteACP", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PutBucketAclRequest]
     }
   }
 
@@ -6781,13 +5532,13 @@ package s3 {
         Bucket: BucketName,
         Id: AnalyticsId
     ): PutBucketAnalyticsConfigurationRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "AnalyticsConfiguration" -> AnalyticsConfiguration.asInstanceOf[js.Any],
         "Bucket"                 -> Bucket.asInstanceOf[js.Any],
         "Id"                     -> Id.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PutBucketAnalyticsConfigurationRequest]
+      __obj.asInstanceOf[PutBucketAnalyticsConfigurationRequest]
     }
   }
 
@@ -6804,15 +5555,13 @@ package s3 {
         CORSConfiguration: CORSConfiguration,
         ContentMD5: js.UndefOr[ContentMD5] = js.undefined
     ): PutBucketCorsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "Bucket"            -> Bucket.asInstanceOf[js.Any],
-        "CORSConfiguration" -> CORSConfiguration.asInstanceOf[js.Any],
-        "ContentMD5" -> ContentMD5.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "CORSConfiguration" -> CORSConfiguration.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PutBucketCorsRequest]
+      ContentMD5.foreach(__v => __obj.update("ContentMD5", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PutBucketCorsRequest]
     }
   }
 
@@ -6829,15 +5578,13 @@ package s3 {
         ServerSideEncryptionConfiguration: ServerSideEncryptionConfiguration,
         ContentMD5: js.UndefOr[ContentMD5] = js.undefined
     ): PutBucketEncryptionRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "Bucket"                            -> Bucket.asInstanceOf[js.Any],
-        "ServerSideEncryptionConfiguration" -> ServerSideEncryptionConfiguration.asInstanceOf[js.Any],
-        "ContentMD5" -> ContentMD5.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "ServerSideEncryptionConfiguration" -> ServerSideEncryptionConfiguration.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PutBucketEncryptionRequest]
+      ContentMD5.foreach(__v => __obj.update("ContentMD5", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PutBucketEncryptionRequest]
     }
   }
 
@@ -6854,13 +5601,13 @@ package s3 {
         Id: InventoryId,
         InventoryConfiguration: InventoryConfiguration
     ): PutBucketInventoryConfigurationRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "Bucket"                 -> Bucket.asInstanceOf[js.Any],
         "Id"                     -> Id.asInstanceOf[js.Any],
         "InventoryConfiguration" -> InventoryConfiguration.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PutBucketInventoryConfigurationRequest]
+      __obj.asInstanceOf[PutBucketInventoryConfigurationRequest]
     }
   }
 
@@ -6875,14 +5622,12 @@ package s3 {
         Bucket: BucketName,
         LifecycleConfiguration: js.UndefOr[BucketLifecycleConfiguration] = js.undefined
     ): PutBucketLifecycleConfigurationRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Bucket" -> Bucket.asInstanceOf[js.Any],
-        "LifecycleConfiguration" -> LifecycleConfiguration.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "Bucket" -> Bucket.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PutBucketLifecycleConfigurationRequest]
+      LifecycleConfiguration.foreach(__v => __obj.update("LifecycleConfiguration", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PutBucketLifecycleConfigurationRequest]
     }
   }
 
@@ -6899,17 +5644,13 @@ package s3 {
         ContentMD5: js.UndefOr[ContentMD5] = js.undefined,
         LifecycleConfiguration: js.UndefOr[LifecycleConfiguration] = js.undefined
     ): PutBucketLifecycleRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Bucket" -> Bucket.asInstanceOf[js.Any],
-        "ContentMD5" -> ContentMD5.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "LifecycleConfiguration" -> LifecycleConfiguration.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "Bucket" -> Bucket.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PutBucketLifecycleRequest]
+      ContentMD5.foreach(__v => __obj.update("ContentMD5", __v.asInstanceOf[js.Any]))
+      LifecycleConfiguration.foreach(__v => __obj.update("LifecycleConfiguration", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PutBucketLifecycleRequest]
     }
   }
 
@@ -6926,15 +5667,13 @@ package s3 {
         BucketLoggingStatus: BucketLoggingStatus,
         ContentMD5: js.UndefOr[ContentMD5] = js.undefined
     ): PutBucketLoggingRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "Bucket"              -> Bucket.asInstanceOf[js.Any],
-        "BucketLoggingStatus" -> BucketLoggingStatus.asInstanceOf[js.Any],
-        "ContentMD5" -> ContentMD5.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "BucketLoggingStatus" -> BucketLoggingStatus.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PutBucketLoggingRequest]
+      ContentMD5.foreach(__v => __obj.update("ContentMD5", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PutBucketLoggingRequest]
     }
   }
 
@@ -6951,13 +5690,13 @@ package s3 {
         Id: MetricsId,
         MetricsConfiguration: MetricsConfiguration
     ): PutBucketMetricsConfigurationRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "Bucket"               -> Bucket.asInstanceOf[js.Any],
         "Id"                   -> Id.asInstanceOf[js.Any],
         "MetricsConfiguration" -> MetricsConfiguration.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PutBucketMetricsConfigurationRequest]
+      __obj.asInstanceOf[PutBucketMetricsConfigurationRequest]
     }
   }
 
@@ -6972,12 +5711,12 @@ package s3 {
         Bucket: BucketName,
         NotificationConfiguration: NotificationConfiguration
     ): PutBucketNotificationConfigurationRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "Bucket"                    -> Bucket.asInstanceOf[js.Any],
         "NotificationConfiguration" -> NotificationConfiguration.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PutBucketNotificationConfigurationRequest]
+      __obj.asInstanceOf[PutBucketNotificationConfigurationRequest]
     }
   }
 
@@ -6994,15 +5733,13 @@ package s3 {
         NotificationConfiguration: NotificationConfigurationDeprecated,
         ContentMD5: js.UndefOr[ContentMD5] = js.undefined
     ): PutBucketNotificationRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "Bucket"                    -> Bucket.asInstanceOf[js.Any],
-        "NotificationConfiguration" -> NotificationConfiguration.asInstanceOf[js.Any],
-        "ContentMD5" -> ContentMD5.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "NotificationConfiguration" -> NotificationConfiguration.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PutBucketNotificationRequest]
+      ContentMD5.foreach(__v => __obj.update("ContentMD5", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PutBucketNotificationRequest]
     }
   }
 
@@ -7021,18 +5758,16 @@ package s3 {
         ConfirmRemoveSelfBucketAccess: js.UndefOr[ConfirmRemoveSelfBucketAccess] = js.undefined,
         ContentMD5: js.UndefOr[ContentMD5] = js.undefined
     ): PutBucketPolicyRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "Bucket" -> Bucket.asInstanceOf[js.Any],
-        "Policy" -> Policy.asInstanceOf[js.Any],
-        "ConfirmRemoveSelfBucketAccess" -> ConfirmRemoveSelfBucketAccess.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ContentMD5" -> ContentMD5.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "Policy" -> Policy.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PutBucketPolicyRequest]
+      ConfirmRemoveSelfBucketAccess.foreach(
+        __v => __obj.update("ConfirmRemoveSelfBucketAccess", __v.asInstanceOf[js.Any])
+      )
+      ContentMD5.foreach(__v => __obj.update("ContentMD5", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PutBucketPolicyRequest]
     }
   }
 
@@ -7049,15 +5784,13 @@ package s3 {
         ReplicationConfiguration: ReplicationConfiguration,
         ContentMD5: js.UndefOr[ContentMD5] = js.undefined
     ): PutBucketReplicationRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "Bucket"                   -> Bucket.asInstanceOf[js.Any],
-        "ReplicationConfiguration" -> ReplicationConfiguration.asInstanceOf[js.Any],
-        "ContentMD5" -> ContentMD5.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "ReplicationConfiguration" -> ReplicationConfiguration.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PutBucketReplicationRequest]
+      ContentMD5.foreach(__v => __obj.update("ContentMD5", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PutBucketReplicationRequest]
     }
   }
 
@@ -7074,15 +5807,13 @@ package s3 {
         RequestPaymentConfiguration: RequestPaymentConfiguration,
         ContentMD5: js.UndefOr[ContentMD5] = js.undefined
     ): PutBucketRequestPaymentRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "Bucket"                      -> Bucket.asInstanceOf[js.Any],
-        "RequestPaymentConfiguration" -> RequestPaymentConfiguration.asInstanceOf[js.Any],
-        "ContentMD5" -> ContentMD5.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "RequestPaymentConfiguration" -> RequestPaymentConfiguration.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PutBucketRequestPaymentRequest]
+      ContentMD5.foreach(__v => __obj.update("ContentMD5", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PutBucketRequestPaymentRequest]
     }
   }
 
@@ -7099,15 +5830,13 @@ package s3 {
         Tagging: Tagging,
         ContentMD5: js.UndefOr[ContentMD5] = js.undefined
     ): PutBucketTaggingRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "Bucket"  -> Bucket.asInstanceOf[js.Any],
-        "Tagging" -> Tagging.asInstanceOf[js.Any],
-        "ContentMD5" -> ContentMD5.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "Tagging" -> Tagging.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PutBucketTaggingRequest]
+      ContentMD5.foreach(__v => __obj.update("ContentMD5", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PutBucketTaggingRequest]
     }
   }
 
@@ -7126,18 +5855,14 @@ package s3 {
         ContentMD5: js.UndefOr[ContentMD5] = js.undefined,
         MFA: js.UndefOr[MFA] = js.undefined
     ): PutBucketVersioningRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "Bucket"                  -> Bucket.asInstanceOf[js.Any],
-        "VersioningConfiguration" -> VersioningConfiguration.asInstanceOf[js.Any],
-        "ContentMD5" -> ContentMD5.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MFA" -> MFA.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "VersioningConfiguration" -> VersioningConfiguration.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PutBucketVersioningRequest]
+      ContentMD5.foreach(__v => __obj.update("ContentMD5", __v.asInstanceOf[js.Any]))
+      MFA.foreach(__v => __obj.update("MFA", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PutBucketVersioningRequest]
     }
   }
 
@@ -7154,15 +5879,13 @@ package s3 {
         WebsiteConfiguration: WebsiteConfiguration,
         ContentMD5: js.UndefOr[ContentMD5] = js.undefined
     ): PutBucketWebsiteRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "Bucket"               -> Bucket.asInstanceOf[js.Any],
-        "WebsiteConfiguration" -> WebsiteConfiguration.asInstanceOf[js.Any],
-        "ContentMD5" -> ContentMD5.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "WebsiteConfiguration" -> WebsiteConfiguration.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PutBucketWebsiteRequest]
+      ContentMD5.foreach(__v => __obj.update("ContentMD5", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PutBucketWebsiteRequest]
     }
   }
 
@@ -7175,13 +5898,9 @@ package s3 {
     def apply(
         RequestCharged: js.UndefOr[RequestCharged] = js.undefined
     ): PutObjectAclOutput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "RequestCharged" -> RequestCharged.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PutObjectAclOutput]
+      val __obj = js.Dictionary.empty[js.Any]
+      RequestCharged.foreach(__v => __obj.update("RequestCharged", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PutObjectAclOutput]
     }
   }
 
@@ -7216,42 +5935,22 @@ package s3 {
         RequestPayer: js.UndefOr[RequestPayer] = js.undefined,
         VersionId: js.UndefOr[ObjectVersionId] = js.undefined
     ): PutObjectAclRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "Bucket" -> Bucket.asInstanceOf[js.Any],
-        "Key"    -> Key.asInstanceOf[js.Any],
-        "ACL" -> ACL.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "AccessControlPolicy" -> AccessControlPolicy.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ContentMD5" -> ContentMD5.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "GrantFullControl" -> GrantFullControl.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "GrantRead" -> GrantRead.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "GrantReadACP" -> GrantReadACP.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "GrantWrite" -> GrantWrite.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "GrantWriteACP" -> GrantWriteACP.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "RequestPayer" -> RequestPayer.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "VersionId" -> VersionId.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "Key"    -> Key.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PutObjectAclRequest]
+      ACL.foreach(__v => __obj.update("ACL", __v.asInstanceOf[js.Any]))
+      AccessControlPolicy.foreach(__v => __obj.update("AccessControlPolicy", __v.asInstanceOf[js.Any]))
+      ContentMD5.foreach(__v => __obj.update("ContentMD5", __v.asInstanceOf[js.Any]))
+      GrantFullControl.foreach(__v => __obj.update("GrantFullControl", __v.asInstanceOf[js.Any]))
+      GrantRead.foreach(__v => __obj.update("GrantRead", __v.asInstanceOf[js.Any]))
+      GrantReadACP.foreach(__v => __obj.update("GrantReadACP", __v.asInstanceOf[js.Any]))
+      GrantWrite.foreach(__v => __obj.update("GrantWrite", __v.asInstanceOf[js.Any]))
+      GrantWriteACP.foreach(__v => __obj.update("GrantWriteACP", __v.asInstanceOf[js.Any]))
+      RequestPayer.foreach(__v => __obj.update("RequestPayer", __v.asInstanceOf[js.Any]))
+      VersionId.foreach(__v => __obj.update("VersionId", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PutObjectAclRequest]
     }
   }
 
@@ -7264,13 +5963,9 @@ package s3 {
     def apply(
         RequestCharged: js.UndefOr[RequestCharged] = js.undefined
     ): PutObjectLegalHoldOutput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "RequestCharged" -> RequestCharged.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PutObjectLegalHoldOutput]
+      val __obj = js.Dictionary.empty[js.Any]
+      RequestCharged.foreach(__v => __obj.update("RequestCharged", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PutObjectLegalHoldOutput]
     }
   }
 
@@ -7293,24 +5988,16 @@ package s3 {
         RequestPayer: js.UndefOr[RequestPayer] = js.undefined,
         VersionId: js.UndefOr[ObjectVersionId] = js.undefined
     ): PutObjectLegalHoldRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "Bucket" -> Bucket.asInstanceOf[js.Any],
-        "Key"    -> Key.asInstanceOf[js.Any],
-        "ContentMD5" -> ContentMD5.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "LegalHold" -> LegalHold.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "RequestPayer" -> RequestPayer.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "VersionId" -> VersionId.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "Key"    -> Key.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PutObjectLegalHoldRequest]
+      ContentMD5.foreach(__v => __obj.update("ContentMD5", __v.asInstanceOf[js.Any]))
+      LegalHold.foreach(__v => __obj.update("LegalHold", __v.asInstanceOf[js.Any]))
+      RequestPayer.foreach(__v => __obj.update("RequestPayer", __v.asInstanceOf[js.Any]))
+      VersionId.foreach(__v => __obj.update("VersionId", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PutObjectLegalHoldRequest]
     }
   }
 
@@ -7323,13 +6010,9 @@ package s3 {
     def apply(
         RequestCharged: js.UndefOr[RequestCharged] = js.undefined
     ): PutObjectLockConfigurationOutput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "RequestCharged" -> RequestCharged.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PutObjectLockConfigurationOutput]
+      val __obj = js.Dictionary.empty[js.Any]
+      RequestCharged.foreach(__v => __obj.update("RequestCharged", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PutObjectLockConfigurationOutput]
     }
   }
 
@@ -7350,23 +6033,15 @@ package s3 {
         RequestPayer: js.UndefOr[RequestPayer] = js.undefined,
         Token: js.UndefOr[ObjectLockToken] = js.undefined
     ): PutObjectLockConfigurationRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Bucket" -> Bucket.asInstanceOf[js.Any],
-        "ContentMD5" -> ContentMD5.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ObjectLockConfiguration" -> ObjectLockConfiguration.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "RequestPayer" -> RequestPayer.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Token" -> Token.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "Bucket" -> Bucket.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PutObjectLockConfigurationRequest]
+      ContentMD5.foreach(__v => __obj.update("ContentMD5", __v.asInstanceOf[js.Any]))
+      ObjectLockConfiguration.foreach(__v => __obj.update("ObjectLockConfiguration", __v.asInstanceOf[js.Any]))
+      RequestPayer.foreach(__v => __obj.update("RequestPayer", __v.asInstanceOf[js.Any]))
+      Token.foreach(__v => __obj.update("Token", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PutObjectLockConfigurationRequest]
     }
   }
 
@@ -7393,34 +6068,16 @@ package s3 {
         ServerSideEncryption: js.UndefOr[ServerSideEncryption] = js.undefined,
         VersionId: js.UndefOr[ObjectVersionId] = js.undefined
     ): PutObjectOutput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ETag" -> ETag.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Expiration" -> Expiration.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "RequestCharged" -> RequestCharged.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SSECustomerAlgorithm" -> SSECustomerAlgorithm.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SSECustomerKeyMD5" -> SSECustomerKeyMD5.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SSEKMSKeyId" -> SSEKMSKeyId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ServerSideEncryption" -> ServerSideEncryption.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "VersionId" -> VersionId.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PutObjectOutput]
+      val __obj = js.Dictionary.empty[js.Any]
+      ETag.foreach(__v => __obj.update("ETag", __v.asInstanceOf[js.Any]))
+      Expiration.foreach(__v => __obj.update("Expiration", __v.asInstanceOf[js.Any]))
+      RequestCharged.foreach(__v => __obj.update("RequestCharged", __v.asInstanceOf[js.Any]))
+      SSECustomerAlgorithm.foreach(__v => __obj.update("SSECustomerAlgorithm", __v.asInstanceOf[js.Any]))
+      SSECustomerKeyMD5.foreach(__v => __obj.update("SSECustomerKeyMD5", __v.asInstanceOf[js.Any]))
+      SSEKMSKeyId.foreach(__v => __obj.update("SSEKMSKeyId", __v.asInstanceOf[js.Any]))
+      ServerSideEncryption.foreach(__v => __obj.update("ServerSideEncryption", __v.asInstanceOf[js.Any]))
+      VersionId.foreach(__v => __obj.update("VersionId", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PutObjectOutput]
     }
   }
 
@@ -7489,93 +6146,39 @@ package s3 {
         Tagging: js.UndefOr[TaggingHeader] = js.undefined,
         WebsiteRedirectLocation: js.UndefOr[WebsiteRedirectLocation] = js.undefined
     ): PutObjectRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "Bucket" -> Bucket.asInstanceOf[js.Any],
-        "Key"    -> Key.asInstanceOf[js.Any],
-        "ACL" -> ACL.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Body" -> Body.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "CacheControl" -> CacheControl.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ContentDisposition" -> ContentDisposition.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ContentEncoding" -> ContentEncoding.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ContentLanguage" -> ContentLanguage.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ContentLength" -> ContentLength.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ContentMD5" -> ContentMD5.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ContentType" -> ContentType.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Expires" -> Expires.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "GrantFullControl" -> GrantFullControl.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "GrantRead" -> GrantRead.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "GrantReadACP" -> GrantReadACP.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "GrantWriteACP" -> GrantWriteACP.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Metadata" -> Metadata.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ObjectLockLegalHoldStatus" -> ObjectLockLegalHoldStatus.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ObjectLockMode" -> ObjectLockMode.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ObjectLockRetainUntilDate" -> ObjectLockRetainUntilDate.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "RequestPayer" -> RequestPayer.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SSECustomerAlgorithm" -> SSECustomerAlgorithm.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SSECustomerKey" -> SSECustomerKey.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SSECustomerKeyMD5" -> SSECustomerKeyMD5.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SSEKMSKeyId" -> SSEKMSKeyId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ServerSideEncryption" -> ServerSideEncryption.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "StorageClass" -> StorageClass.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Tagging" -> Tagging.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "WebsiteRedirectLocation" -> WebsiteRedirectLocation.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "Key"    -> Key.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PutObjectRequest]
+      ACL.foreach(__v => __obj.update("ACL", __v.asInstanceOf[js.Any]))
+      Body.foreach(__v => __obj.update("Body", __v.asInstanceOf[js.Any]))
+      CacheControl.foreach(__v => __obj.update("CacheControl", __v.asInstanceOf[js.Any]))
+      ContentDisposition.foreach(__v => __obj.update("ContentDisposition", __v.asInstanceOf[js.Any]))
+      ContentEncoding.foreach(__v => __obj.update("ContentEncoding", __v.asInstanceOf[js.Any]))
+      ContentLanguage.foreach(__v => __obj.update("ContentLanguage", __v.asInstanceOf[js.Any]))
+      ContentLength.foreach(__v => __obj.update("ContentLength", __v.asInstanceOf[js.Any]))
+      ContentMD5.foreach(__v => __obj.update("ContentMD5", __v.asInstanceOf[js.Any]))
+      ContentType.foreach(__v => __obj.update("ContentType", __v.asInstanceOf[js.Any]))
+      Expires.foreach(__v => __obj.update("Expires", __v.asInstanceOf[js.Any]))
+      GrantFullControl.foreach(__v => __obj.update("GrantFullControl", __v.asInstanceOf[js.Any]))
+      GrantRead.foreach(__v => __obj.update("GrantRead", __v.asInstanceOf[js.Any]))
+      GrantReadACP.foreach(__v => __obj.update("GrantReadACP", __v.asInstanceOf[js.Any]))
+      GrantWriteACP.foreach(__v => __obj.update("GrantWriteACP", __v.asInstanceOf[js.Any]))
+      Metadata.foreach(__v => __obj.update("Metadata", __v.asInstanceOf[js.Any]))
+      ObjectLockLegalHoldStatus.foreach(__v => __obj.update("ObjectLockLegalHoldStatus", __v.asInstanceOf[js.Any]))
+      ObjectLockMode.foreach(__v => __obj.update("ObjectLockMode", __v.asInstanceOf[js.Any]))
+      ObjectLockRetainUntilDate.foreach(__v => __obj.update("ObjectLockRetainUntilDate", __v.asInstanceOf[js.Any]))
+      RequestPayer.foreach(__v => __obj.update("RequestPayer", __v.asInstanceOf[js.Any]))
+      SSECustomerAlgorithm.foreach(__v => __obj.update("SSECustomerAlgorithm", __v.asInstanceOf[js.Any]))
+      SSECustomerKey.foreach(__v => __obj.update("SSECustomerKey", __v.asInstanceOf[js.Any]))
+      SSECustomerKeyMD5.foreach(__v => __obj.update("SSECustomerKeyMD5", __v.asInstanceOf[js.Any]))
+      SSEKMSKeyId.foreach(__v => __obj.update("SSEKMSKeyId", __v.asInstanceOf[js.Any]))
+      ServerSideEncryption.foreach(__v => __obj.update("ServerSideEncryption", __v.asInstanceOf[js.Any]))
+      StorageClass.foreach(__v => __obj.update("StorageClass", __v.asInstanceOf[js.Any]))
+      Tagging.foreach(__v => __obj.update("Tagging", __v.asInstanceOf[js.Any]))
+      WebsiteRedirectLocation.foreach(__v => __obj.update("WebsiteRedirectLocation", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PutObjectRequest]
     }
   }
 
@@ -7588,13 +6191,9 @@ package s3 {
     def apply(
         RequestCharged: js.UndefOr[RequestCharged] = js.undefined
     ): PutObjectRetentionOutput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "RequestCharged" -> RequestCharged.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PutObjectRetentionOutput]
+      val __obj = js.Dictionary.empty[js.Any]
+      RequestCharged.foreach(__v => __obj.update("RequestCharged", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PutObjectRetentionOutput]
     }
   }
 
@@ -7619,27 +6218,17 @@ package s3 {
         Retention: js.UndefOr[ObjectLockRetention] = js.undefined,
         VersionId: js.UndefOr[ObjectVersionId] = js.undefined
     ): PutObjectRetentionRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "Bucket" -> Bucket.asInstanceOf[js.Any],
-        "Key"    -> Key.asInstanceOf[js.Any],
-        "BypassGovernanceRetention" -> BypassGovernanceRetention.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ContentMD5" -> ContentMD5.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "RequestPayer" -> RequestPayer.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Retention" -> Retention.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "VersionId" -> VersionId.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "Key"    -> Key.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PutObjectRetentionRequest]
+      BypassGovernanceRetention.foreach(__v => __obj.update("BypassGovernanceRetention", __v.asInstanceOf[js.Any]))
+      ContentMD5.foreach(__v => __obj.update("ContentMD5", __v.asInstanceOf[js.Any]))
+      RequestPayer.foreach(__v => __obj.update("RequestPayer", __v.asInstanceOf[js.Any]))
+      Retention.foreach(__v => __obj.update("Retention", __v.asInstanceOf[js.Any]))
+      VersionId.foreach(__v => __obj.update("VersionId", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PutObjectRetentionRequest]
     }
   }
 
@@ -7652,13 +6241,9 @@ package s3 {
     def apply(
         VersionId: js.UndefOr[ObjectVersionId] = js.undefined
     ): PutObjectTaggingOutput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "VersionId" -> VersionId.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PutObjectTaggingOutput]
+      val __obj = js.Dictionary.empty[js.Any]
+      VersionId.foreach(__v => __obj.update("VersionId", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PutObjectTaggingOutput]
     }
   }
 
@@ -7679,19 +6264,15 @@ package s3 {
         ContentMD5: js.UndefOr[ContentMD5] = js.undefined,
         VersionId: js.UndefOr[ObjectVersionId] = js.undefined
     ): PutObjectTaggingRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "Bucket"  -> Bucket.asInstanceOf[js.Any],
         "Key"     -> Key.asInstanceOf[js.Any],
-        "Tagging" -> Tagging.asInstanceOf[js.Any],
-        "ContentMD5" -> ContentMD5.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "VersionId" -> VersionId.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "Tagging" -> Tagging.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PutObjectTaggingRequest]
+      ContentMD5.foreach(__v => __obj.update("ContentMD5", __v.asInstanceOf[js.Any]))
+      VersionId.foreach(__v => __obj.update("VersionId", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PutObjectTaggingRequest]
     }
   }
 
@@ -7708,15 +6289,13 @@ package s3 {
         PublicAccessBlockConfiguration: PublicAccessBlockConfiguration,
         ContentMD5: js.UndefOr[ContentMD5] = js.undefined
     ): PutPublicAccessBlockRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "Bucket"                         -> Bucket.asInstanceOf[js.Any],
-        "PublicAccessBlockConfiguration" -> PublicAccessBlockConfiguration.asInstanceOf[js.Any],
-        "ContentMD5" -> ContentMD5.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "PublicAccessBlockConfiguration" -> PublicAccessBlockConfiguration.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PutPublicAccessBlockRequest]
+      ContentMD5.foreach(__v => __obj.update("ContentMD5", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PutPublicAccessBlockRequest]
     }
   }
 
@@ -7738,18 +6317,14 @@ package s3 {
         Filter: js.UndefOr[NotificationConfigurationFilter] = js.undefined,
         Id: js.UndefOr[NotificationId] = js.undefined
     ): QueueConfiguration = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "Events"   -> Events.asInstanceOf[js.Any],
-        "QueueArn" -> QueueArn.asInstanceOf[js.Any],
-        "Filter" -> Filter.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Id" -> Id.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "QueueArn" -> QueueArn.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[QueueConfiguration]
+      Filter.foreach(__v => __obj.update("Filter", __v.asInstanceOf[js.Any]))
+      Id.foreach(__v => __obj.update("Id", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[QueueConfiguration]
     }
   }
 
@@ -7771,22 +6346,12 @@ package s3 {
         Id: js.UndefOr[NotificationId] = js.undefined,
         Queue: js.UndefOr[QueueArn] = js.undefined
     ): QueueConfigurationDeprecated = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Event" -> Event.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Events" -> Events.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Id" -> Id.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Queue" -> Queue.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[QueueConfigurationDeprecated]
+      val __obj = js.Dictionary.empty[js.Any]
+      Event.foreach(__v => __obj.update("Event", __v.asInstanceOf[js.Any]))
+      Events.foreach(__v => __obj.update("Events", __v.asInstanceOf[js.Any]))
+      Id.foreach(__v => __obj.update("Id", __v.asInstanceOf[js.Any]))
+      Queue.foreach(__v => __obj.update("Queue", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[QueueConfigurationDeprecated]
     }
   }
 
@@ -7809,13 +6374,9 @@ package s3 {
     def apply(
         Payload: js.UndefOr[Body] = js.undefined
     ): RecordsEvent = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Payload" -> Payload.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RecordsEvent]
+      val __obj = js.Dictionary.empty[js.Any]
+      Payload.foreach(__v => __obj.update("Payload", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[RecordsEvent]
     }
   }
 
@@ -7839,25 +6400,13 @@ package s3 {
         ReplaceKeyPrefixWith: js.UndefOr[ReplaceKeyPrefixWith] = js.undefined,
         ReplaceKeyWith: js.UndefOr[ReplaceKeyWith] = js.undefined
     ): Redirect = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "HostName" -> HostName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "HttpRedirectCode" -> HttpRedirectCode.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Protocol" -> Protocol.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ReplaceKeyPrefixWith" -> ReplaceKeyPrefixWith.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ReplaceKeyWith" -> ReplaceKeyWith.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Redirect]
+      val __obj = js.Dictionary.empty[js.Any]
+      HostName.foreach(__v => __obj.update("HostName", __v.asInstanceOf[js.Any]))
+      HttpRedirectCode.foreach(__v => __obj.update("HttpRedirectCode", __v.asInstanceOf[js.Any]))
+      Protocol.foreach(__v => __obj.update("Protocol", __v.asInstanceOf[js.Any]))
+      ReplaceKeyPrefixWith.foreach(__v => __obj.update("ReplaceKeyPrefixWith", __v.asInstanceOf[js.Any]))
+      ReplaceKeyWith.foreach(__v => __obj.update("ReplaceKeyWith", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Redirect]
     }
   }
 
@@ -7875,14 +6424,12 @@ package s3 {
         HostName: HostName,
         Protocol: js.UndefOr[Protocol] = js.undefined
     ): RedirectAllRequestsTo = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "HostName" -> HostName.asInstanceOf[js.Any],
-        "Protocol" -> Protocol.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "HostName" -> HostName.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RedirectAllRequestsTo]
+      Protocol.foreach(__v => __obj.update("Protocol", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[RedirectAllRequestsTo]
     }
   }
 
@@ -7900,12 +6447,12 @@ package s3 {
         Role: Role,
         Rules: ReplicationRules
     ): ReplicationConfiguration = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "Role"  -> Role.asInstanceOf[js.Any],
         "Rules" -> Rules.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ReplicationConfiguration]
+      __obj.asInstanceOf[ReplicationConfiguration]
     }
   }
 
@@ -7935,30 +6482,18 @@ package s3 {
         Priority: js.UndefOr[Priority] = js.undefined,
         SourceSelectionCriteria: js.UndefOr[SourceSelectionCriteria] = js.undefined
     ): ReplicationRule = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "Destination" -> Destination.asInstanceOf[js.Any],
-        "Status"      -> Status.asInstanceOf[js.Any],
-        "DeleteMarkerReplication" -> DeleteMarkerReplication.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Filter" -> Filter.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ID" -> ID.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Prefix" -> Prefix.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Priority" -> Priority.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SourceSelectionCriteria" -> SourceSelectionCriteria.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "Status"      -> Status.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ReplicationRule]
+      DeleteMarkerReplication.foreach(__v => __obj.update("DeleteMarkerReplication", __v.asInstanceOf[js.Any]))
+      Filter.foreach(__v => __obj.update("Filter", __v.asInstanceOf[js.Any]))
+      ID.foreach(__v => __obj.update("ID", __v.asInstanceOf[js.Any]))
+      Prefix.foreach(__v => __obj.update("Prefix", __v.asInstanceOf[js.Any]))
+      Priority.foreach(__v => __obj.update("Priority", __v.asInstanceOf[js.Any]))
+      SourceSelectionCriteria.foreach(__v => __obj.update("SourceSelectionCriteria", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ReplicationRule]
     }
   }
 
@@ -7976,16 +6511,10 @@ package s3 {
         Prefix: js.UndefOr[Prefix] = js.undefined,
         Tags: js.UndefOr[TagSet] = js.undefined
     ): ReplicationRuleAndOperator = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Prefix" -> Prefix.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Tags" -> Tags.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ReplicationRuleAndOperator]
+      val __obj = js.Dictionary.empty[js.Any]
+      Prefix.foreach(__v => __obj.update("Prefix", __v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ReplicationRuleAndOperator]
     }
   }
 
@@ -8005,19 +6534,11 @@ package s3 {
         Prefix: js.UndefOr[Prefix] = js.undefined,
         Tag: js.UndefOr[Tag] = js.undefined
     ): ReplicationRuleFilter = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "And" -> And.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Prefix" -> Prefix.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Tag" -> Tag.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ReplicationRuleFilter]
+      val __obj = js.Dictionary.empty[js.Any]
+      And.foreach(__v => __obj.update("And", __v.asInstanceOf[js.Any]))
+      Prefix.foreach(__v => __obj.update("Prefix", __v.asInstanceOf[js.Any]))
+      Tag.foreach(__v => __obj.update("Tag", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ReplicationRuleFilter]
     }
   }
 
@@ -8067,11 +6588,11 @@ package s3 {
     def apply(
         Payer: Payer
     ): RequestPaymentConfiguration = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "Payer" -> Payer.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RequestPaymentConfiguration]
+      __obj.asInstanceOf[RequestPaymentConfiguration]
     }
   }
 
@@ -8087,13 +6608,9 @@ package s3 {
     def apply(
         Enabled: js.UndefOr[EnableRequestProgress] = js.undefined
     ): RequestProgress = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Enabled" -> Enabled.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RequestProgress]
+      val __obj = js.Dictionary.empty[js.Any]
+      Enabled.foreach(__v => __obj.update("Enabled", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[RequestProgress]
     }
   }
 
@@ -8108,16 +6625,10 @@ package s3 {
         RequestCharged: js.UndefOr[RequestCharged] = js.undefined,
         RestoreOutputPath: js.UndefOr[RestoreOutputPath] = js.undefined
     ): RestoreObjectOutput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "RequestCharged" -> RequestCharged.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "RestoreOutputPath" -> RestoreOutputPath.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RestoreObjectOutput]
+      val __obj = js.Dictionary.empty[js.Any]
+      RequestCharged.foreach(__v => __obj.update("RequestCharged", __v.asInstanceOf[js.Any]))
+      RestoreOutputPath.foreach(__v => __obj.update("RestoreOutputPath", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[RestoreObjectOutput]
     }
   }
 
@@ -8138,21 +6649,15 @@ package s3 {
         RestoreRequest: js.UndefOr[RestoreRequest] = js.undefined,
         VersionId: js.UndefOr[ObjectVersionId] = js.undefined
     ): RestoreObjectRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "Bucket" -> Bucket.asInstanceOf[js.Any],
-        "Key"    -> Key.asInstanceOf[js.Any],
-        "RequestPayer" -> RequestPayer.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "RestoreRequest" -> RestoreRequest.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "VersionId" -> VersionId.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "Key"    -> Key.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RestoreObjectRequest]
+      RequestPayer.foreach(__v => __obj.update("RequestPayer", __v.asInstanceOf[js.Any]))
+      RestoreRequest.foreach(__v => __obj.update("RestoreRequest", __v.asInstanceOf[js.Any]))
+      VersionId.foreach(__v => __obj.update("VersionId", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[RestoreObjectRequest]
     }
   }
 
@@ -8180,31 +6685,15 @@ package s3 {
         Tier: js.UndefOr[Tier] = js.undefined,
         Type: js.UndefOr[RestoreRequestType] = js.undefined
     ): RestoreRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Days" -> Days.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Description" -> Description.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "GlacierJobParameters" -> GlacierJobParameters.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "OutputLocation" -> OutputLocation.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SelectParameters" -> SelectParameters.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Tier" -> Tier.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Type" -> Type.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RestoreRequest]
+      val __obj = js.Dictionary.empty[js.Any]
+      Days.foreach(__v => __obj.update("Days", __v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
+      GlacierJobParameters.foreach(__v => __obj.update("GlacierJobParameters", __v.asInstanceOf[js.Any]))
+      OutputLocation.foreach(__v => __obj.update("OutputLocation", __v.asInstanceOf[js.Any]))
+      SelectParameters.foreach(__v => __obj.update("SelectParameters", __v.asInstanceOf[js.Any]))
+      Tier.foreach(__v => __obj.update("Tier", __v.asInstanceOf[js.Any]))
+      Type.foreach(__v => __obj.update("Type", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[RestoreRequest]
     }
   }
 
@@ -8228,14 +6717,12 @@ package s3 {
         Redirect: Redirect,
         Condition: js.UndefOr[Condition] = js.undefined
     ): RoutingRule = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Redirect" -> Redirect.asInstanceOf[js.Any],
-        "Condition" -> Condition.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "Redirect" -> Redirect.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RoutingRule]
+      Condition.foreach(__v => __obj.update("Condition", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[RoutingRule]
     }
   }
 
@@ -8265,30 +6752,20 @@ package s3 {
         NoncurrentVersionTransition: js.UndefOr[NoncurrentVersionTransition] = js.undefined,
         Transition: js.UndefOr[Transition] = js.undefined
     ): Rule = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "Prefix" -> Prefix.asInstanceOf[js.Any],
-        "Status" -> Status.asInstanceOf[js.Any],
-        "AbortIncompleteMultipartUpload" -> AbortIncompleteMultipartUpload.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Expiration" -> Expiration.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ID" -> ID.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NoncurrentVersionExpiration" -> NoncurrentVersionExpiration.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NoncurrentVersionTransition" -> NoncurrentVersionTransition.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Transition" -> Transition.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "Status" -> Status.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Rule]
+      AbortIncompleteMultipartUpload.foreach(
+        __v => __obj.update("AbortIncompleteMultipartUpload", __v.asInstanceOf[js.Any])
+      )
+      Expiration.foreach(__v => __obj.update("Expiration", __v.asInstanceOf[js.Any]))
+      ID.foreach(__v => __obj.update("ID", __v.asInstanceOf[js.Any]))
+      NoncurrentVersionExpiration.foreach(__v => __obj.update("NoncurrentVersionExpiration", __v.asInstanceOf[js.Any]))
+      NoncurrentVersionTransition.foreach(__v => __obj.update("NoncurrentVersionTransition", __v.asInstanceOf[js.Any]))
+      Transition.foreach(__v => __obj.update("Transition", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Rule]
     }
   }
 
@@ -8304,13 +6781,9 @@ package s3 {
     def apply(
         FilterRules: js.UndefOr[FilterRuleList] = js.undefined
     ): S3KeyFilter = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "FilterRules" -> FilterRules.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[S3KeyFilter]
+      val __obj = js.Dictionary.empty[js.Any]
+      FilterRules.foreach(__v => __obj.update("FilterRules", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[S3KeyFilter]
     }
   }
 
@@ -8340,30 +6813,18 @@ package s3 {
         Tagging: js.UndefOr[Tagging] = js.undefined,
         UserMetadata: js.UndefOr[UserMetadata] = js.undefined
     ): S3Location = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "BucketName" -> BucketName.asInstanceOf[js.Any],
-        "Prefix"     -> Prefix.asInstanceOf[js.Any],
-        "AccessControlList" -> AccessControlList.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "CannedACL" -> CannedACL.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Encryption" -> Encryption.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "StorageClass" -> StorageClass.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Tagging" -> Tagging.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "UserMetadata" -> UserMetadata.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "Prefix"     -> Prefix.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[S3Location]
+      AccessControlList.foreach(__v => __obj.update("AccessControlList", __v.asInstanceOf[js.Any]))
+      CannedACL.foreach(__v => __obj.update("CannedACL", __v.asInstanceOf[js.Any]))
+      Encryption.foreach(__v => __obj.update("Encryption", __v.asInstanceOf[js.Any]))
+      StorageClass.foreach(__v => __obj.update("StorageClass", __v.asInstanceOf[js.Any]))
+      Tagging.foreach(__v => __obj.update("Tagging", __v.asInstanceOf[js.Any]))
+      UserMetadata.foreach(__v => __obj.update("UserMetadata", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[S3Location]
     }
   }
 
@@ -8379,11 +6840,11 @@ package s3 {
     def apply(
         KeyId: SSEKMSKeyId
     ): SSEKMS = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "KeyId" -> KeyId.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SSEKMS]
+      __obj.asInstanceOf[SSEKMS]
     }
   }
 
@@ -8396,10 +6857,9 @@ package s3 {
   object SSES3 {
     def apply(
         ): SSES3 = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary.empty[js.Any]
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SSES3]
+      __obj.asInstanceOf[SSES3]
     }
   }
 
@@ -8423,25 +6883,13 @@ package s3 {
         Records: js.UndefOr[RecordsEvent] = js.undefined,
         Stats: js.UndefOr[StatsEvent] = js.undefined
     ): SelectObjectContentEventStream = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Cont" -> Cont.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "End" -> End.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Progress" -> Progress.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Records" -> Records.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Stats" -> Stats.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SelectObjectContentEventStream]
+      val __obj = js.Dictionary.empty[js.Any]
+      Cont.foreach(__v => __obj.update("Cont", __v.asInstanceOf[js.Any]))
+      End.foreach(__v => __obj.update("End", __v.asInstanceOf[js.Any]))
+      Progress.foreach(__v => __obj.update("Progress", __v.asInstanceOf[js.Any]))
+      Records.foreach(__v => __obj.update("Records", __v.asInstanceOf[js.Any]))
+      Stats.foreach(__v => __obj.update("Stats", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[SelectObjectContentEventStream]
     }
   }
 
@@ -8454,13 +6902,9 @@ package s3 {
     def apply(
         Payload: js.UndefOr[SelectObjectContentEventStream] = js.undefined
     ): SelectObjectContentOutput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Payload" -> Payload.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SelectObjectContentOutput]
+      val __obj = js.Dictionary.empty[js.Any]
+      Payload.foreach(__v => __obj.update("Payload", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[SelectObjectContentOutput]
     }
   }
 
@@ -8494,28 +6938,20 @@ package s3 {
         SSECustomerKey: js.UndefOr[SSECustomerKey] = js.undefined,
         SSECustomerKeyMD5: js.UndefOr[SSECustomerKeyMD5] = js.undefined
     ): SelectObjectContentRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "Bucket"              -> Bucket.asInstanceOf[js.Any],
         "Expression"          -> Expression.asInstanceOf[js.Any],
         "ExpressionType"      -> ExpressionType.asInstanceOf[js.Any],
         "InputSerialization"  -> InputSerialization.asInstanceOf[js.Any],
         "Key"                 -> Key.asInstanceOf[js.Any],
-        "OutputSerialization" -> OutputSerialization.asInstanceOf[js.Any],
-        "RequestProgress" -> RequestProgress.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SSECustomerAlgorithm" -> SSECustomerAlgorithm.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SSECustomerKey" -> SSECustomerKey.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SSECustomerKeyMD5" -> SSECustomerKeyMD5.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "OutputSerialization" -> OutputSerialization.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SelectObjectContentRequest]
+      RequestProgress.foreach(__v => __obj.update("RequestProgress", __v.asInstanceOf[js.Any]))
+      SSECustomerAlgorithm.foreach(__v => __obj.update("SSECustomerAlgorithm", __v.asInstanceOf[js.Any]))
+      SSECustomerKey.foreach(__v => __obj.update("SSECustomerKey", __v.asInstanceOf[js.Any]))
+      SSECustomerKeyMD5.foreach(__v => __obj.update("SSECustomerKeyMD5", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[SelectObjectContentRequest]
     }
   }
 
@@ -8537,14 +6973,14 @@ package s3 {
         InputSerialization: InputSerialization,
         OutputSerialization: OutputSerialization
     ): SelectParameters = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "Expression"          -> Expression.asInstanceOf[js.Any],
         "ExpressionType"      -> ExpressionType.asInstanceOf[js.Any],
         "InputSerialization"  -> InputSerialization.asInstanceOf[js.Any],
         "OutputSerialization" -> OutputSerialization.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SelectParameters]
+      __obj.asInstanceOf[SelectParameters]
     }
   }
 
@@ -8569,14 +7005,12 @@ package s3 {
         SSEAlgorithm: ServerSideEncryption,
         KMSMasterKeyID: js.UndefOr[SSEKMSKeyId] = js.undefined
     ): ServerSideEncryptionByDefault = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "SSEAlgorithm" -> SSEAlgorithm.asInstanceOf[js.Any],
-        "KMSMasterKeyID" -> KMSMasterKeyID.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "SSEAlgorithm" -> SSEAlgorithm.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ServerSideEncryptionByDefault]
+      KMSMasterKeyID.foreach(__v => __obj.update("KMSMasterKeyID", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ServerSideEncryptionByDefault]
     }
   }
 
@@ -8592,11 +7026,11 @@ package s3 {
     def apply(
         Rules: ServerSideEncryptionRules
     ): ServerSideEncryptionConfiguration = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "Rules" -> Rules.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ServerSideEncryptionConfiguration]
+      __obj.asInstanceOf[ServerSideEncryptionConfiguration]
     }
   }
 
@@ -8612,13 +7046,11 @@ package s3 {
     def apply(
         ApplyServerSideEncryptionByDefault: js.UndefOr[ServerSideEncryptionByDefault] = js.undefined
     ): ServerSideEncryptionRule = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ApplyServerSideEncryptionByDefault" -> ApplyServerSideEncryptionByDefault.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ServerSideEncryptionRule]
+      val __obj = js.Dictionary.empty[js.Any]
+      ApplyServerSideEncryptionByDefault.foreach(
+        __v => __obj.update("ApplyServerSideEncryptionByDefault", __v.asInstanceOf[js.Any])
+      )
+      __obj.asInstanceOf[ServerSideEncryptionRule]
     }
   }
 
@@ -8634,13 +7066,9 @@ package s3 {
     def apply(
         SseKmsEncryptedObjects: js.UndefOr[SseKmsEncryptedObjects] = js.undefined
     ): SourceSelectionCriteria = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "SseKmsEncryptedObjects" -> SseKmsEncryptedObjects.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SourceSelectionCriteria]
+      val __obj = js.Dictionary.empty[js.Any]
+      SseKmsEncryptedObjects.foreach(__v => __obj.update("SseKmsEncryptedObjects", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[SourceSelectionCriteria]
     }
   }
 
@@ -8656,11 +7084,11 @@ package s3 {
     def apply(
         Status: SseKmsEncryptedObjectsStatus
     ): SseKmsEncryptedObjects = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "Status" -> Status.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SseKmsEncryptedObjects]
+      __obj.asInstanceOf[SseKmsEncryptedObjects]
     }
   }
 
@@ -8687,19 +7115,11 @@ package s3 {
         BytesReturned: js.UndefOr[BytesReturned] = js.undefined,
         BytesScanned: js.UndefOr[BytesScanned] = js.undefined
     ): Stats = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "BytesProcessed" -> BytesProcessed.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "BytesReturned" -> BytesReturned.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "BytesScanned" -> BytesScanned.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Stats]
+      val __obj = js.Dictionary.empty[js.Any]
+      BytesProcessed.foreach(__v => __obj.update("BytesProcessed", __v.asInstanceOf[js.Any]))
+      BytesReturned.foreach(__v => __obj.update("BytesReturned", __v.asInstanceOf[js.Any]))
+      BytesScanned.foreach(__v => __obj.update("BytesScanned", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Stats]
     }
   }
 
@@ -8715,13 +7135,9 @@ package s3 {
     def apply(
         Details: js.UndefOr[Stats] = js.undefined
     ): StatsEvent = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Details" -> Details.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StatsEvent]
+      val __obj = js.Dictionary.empty[js.Any]
+      Details.foreach(__v => __obj.update("Details", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[StatsEvent]
     }
   }
 
@@ -8750,13 +7166,9 @@ package s3 {
     def apply(
         DataExport: js.UndefOr[StorageClassAnalysisDataExport] = js.undefined
     ): StorageClassAnalysis = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "DataExport" -> DataExport.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StorageClassAnalysis]
+      val __obj = js.Dictionary.empty[js.Any]
+      DataExport.foreach(__v => __obj.update("DataExport", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[StorageClassAnalysis]
     }
   }
 
@@ -8774,12 +7186,12 @@ package s3 {
         Destination: AnalyticsExportDestination,
         OutputSchemaVersion: StorageClassAnalysisSchemaVersion
     ): StorageClassAnalysisDataExport = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "Destination"         -> Destination.asInstanceOf[js.Any],
         "OutputSchemaVersion" -> OutputSchemaVersion.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StorageClassAnalysisDataExport]
+      __obj.asInstanceOf[StorageClassAnalysisDataExport]
     }
   }
 
@@ -8803,12 +7215,12 @@ package s3 {
         Key: ObjectKey,
         Value: Value
     ): Tag = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "Key"   -> Key.asInstanceOf[js.Any],
         "Value" -> Value.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Tag]
+      __obj.asInstanceOf[Tag]
     }
   }
 
@@ -8824,11 +7236,11 @@ package s3 {
     def apply(
         TagSet: TagSet
     ): Tagging = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "TagSet" -> TagSet.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Tagging]
+      __obj.asInstanceOf[Tagging]
     }
   }
 
@@ -8853,16 +7265,10 @@ package s3 {
         Grantee: js.UndefOr[Grantee] = js.undefined,
         Permission: js.UndefOr[BucketLogsPermission] = js.undefined
     ): TargetGrant = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Grantee" -> Grantee.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Permission" -> Permission.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[TargetGrant]
+      val __obj = js.Dictionary.empty[js.Any]
+      Grantee.foreach(__v => __obj.update("Grantee", __v.asInstanceOf[js.Any]))
+      Permission.foreach(__v => __obj.update("Permission", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[TargetGrant]
     }
   }
 
@@ -8892,18 +7298,14 @@ package s3 {
         Filter: js.UndefOr[NotificationConfigurationFilter] = js.undefined,
         Id: js.UndefOr[NotificationId] = js.undefined
     ): TopicConfiguration = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "Events"   -> Events.asInstanceOf[js.Any],
-        "TopicArn" -> TopicArn.asInstanceOf[js.Any],
-        "Filter" -> Filter.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Id" -> Id.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "TopicArn" -> TopicArn.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[TopicConfiguration]
+      Filter.foreach(__v => __obj.update("Filter", __v.asInstanceOf[js.Any]))
+      Id.foreach(__v => __obj.update("Id", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[TopicConfiguration]
     }
   }
 
@@ -8925,22 +7327,12 @@ package s3 {
         Id: js.UndefOr[NotificationId] = js.undefined,
         Topic: js.UndefOr[TopicArn] = js.undefined
     ): TopicConfigurationDeprecated = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Event" -> Event.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Events" -> Events.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Id" -> Id.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Topic" -> Topic.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[TopicConfigurationDeprecated]
+      val __obj = js.Dictionary.empty[js.Any]
+      Event.foreach(__v => __obj.update("Event", __v.asInstanceOf[js.Any]))
+      Events.foreach(__v => __obj.update("Events", __v.asInstanceOf[js.Any]))
+      Id.foreach(__v => __obj.update("Id", __v.asInstanceOf[js.Any]))
+      Topic.foreach(__v => __obj.update("Topic", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[TopicConfigurationDeprecated]
     }
   }
 
@@ -8960,19 +7352,11 @@ package s3 {
         Days: js.UndefOr[Days] = js.undefined,
         StorageClass: js.UndefOr[TransitionStorageClass] = js.undefined
     ): Transition = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Date" -> Date.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Days" -> Days.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "StorageClass" -> StorageClass.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Transition]
+      val __obj = js.Dictionary.empty[js.Any]
+      Date.foreach(__v => __obj.update("Date", __v.asInstanceOf[js.Any]))
+      Days.foreach(__v => __obj.update("Days", __v.asInstanceOf[js.Any]))
+      StorageClass.foreach(__v => __obj.update("StorageClass", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Transition]
     }
   }
 
@@ -9015,31 +7399,15 @@ package s3 {
         SSEKMSKeyId: js.UndefOr[SSEKMSKeyId] = js.undefined,
         ServerSideEncryption: js.UndefOr[ServerSideEncryption] = js.undefined
     ): UploadPartCopyOutput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "CopyPartResult" -> CopyPartResult.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "CopySourceVersionId" -> CopySourceVersionId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "RequestCharged" -> RequestCharged.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SSECustomerAlgorithm" -> SSECustomerAlgorithm.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SSECustomerKeyMD5" -> SSECustomerKeyMD5.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SSEKMSKeyId" -> SSEKMSKeyId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ServerSideEncryption" -> ServerSideEncryption.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UploadPartCopyOutput]
+      val __obj = js.Dictionary.empty[js.Any]
+      CopyPartResult.foreach(__v => __obj.update("CopyPartResult", __v.asInstanceOf[js.Any]))
+      CopySourceVersionId.foreach(__v => __obj.update("CopySourceVersionId", __v.asInstanceOf[js.Any]))
+      RequestCharged.foreach(__v => __obj.update("RequestCharged", __v.asInstanceOf[js.Any]))
+      SSECustomerAlgorithm.foreach(__v => __obj.update("SSECustomerAlgorithm", __v.asInstanceOf[js.Any]))
+      SSECustomerKeyMD5.foreach(__v => __obj.update("SSECustomerKeyMD5", __v.asInstanceOf[js.Any]))
+      SSEKMSKeyId.foreach(__v => __obj.update("SSEKMSKeyId", __v.asInstanceOf[js.Any]))
+      ServerSideEncryption.foreach(__v => __obj.update("ServerSideEncryption", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UploadPartCopyOutput]
     }
   }
 
@@ -9084,51 +7452,29 @@ package s3 {
         SSECustomerKey: js.UndefOr[SSECustomerKey] = js.undefined,
         SSECustomerKeyMD5: js.UndefOr[SSECustomerKeyMD5] = js.undefined
     ): UploadPartCopyRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "Bucket"     -> Bucket.asInstanceOf[js.Any],
         "CopySource" -> CopySource.asInstanceOf[js.Any],
         "Key"        -> Key.asInstanceOf[js.Any],
         "PartNumber" -> PartNumber.asInstanceOf[js.Any],
-        "UploadId"   -> UploadId.asInstanceOf[js.Any],
-        "CopySourceIfMatch" -> CopySourceIfMatch.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "CopySourceIfModifiedSince" -> CopySourceIfModifiedSince.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "CopySourceIfNoneMatch" -> CopySourceIfNoneMatch.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "CopySourceIfUnmodifiedSince" -> CopySourceIfUnmodifiedSince.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "CopySourceRange" -> CopySourceRange.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "CopySourceSSECustomerAlgorithm" -> CopySourceSSECustomerAlgorithm.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "CopySourceSSECustomerKey" -> CopySourceSSECustomerKey.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "CopySourceSSECustomerKeyMD5" -> CopySourceSSECustomerKeyMD5.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "RequestPayer" -> RequestPayer.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SSECustomerAlgorithm" -> SSECustomerAlgorithm.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SSECustomerKey" -> SSECustomerKey.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SSECustomerKeyMD5" -> SSECustomerKeyMD5.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "UploadId"   -> UploadId.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UploadPartCopyRequest]
+      CopySourceIfMatch.foreach(__v => __obj.update("CopySourceIfMatch", __v.asInstanceOf[js.Any]))
+      CopySourceIfModifiedSince.foreach(__v => __obj.update("CopySourceIfModifiedSince", __v.asInstanceOf[js.Any]))
+      CopySourceIfNoneMatch.foreach(__v => __obj.update("CopySourceIfNoneMatch", __v.asInstanceOf[js.Any]))
+      CopySourceIfUnmodifiedSince.foreach(__v => __obj.update("CopySourceIfUnmodifiedSince", __v.asInstanceOf[js.Any]))
+      CopySourceRange.foreach(__v => __obj.update("CopySourceRange", __v.asInstanceOf[js.Any]))
+      CopySourceSSECustomerAlgorithm.foreach(
+        __v => __obj.update("CopySourceSSECustomerAlgorithm", __v.asInstanceOf[js.Any])
+      )
+      CopySourceSSECustomerKey.foreach(__v => __obj.update("CopySourceSSECustomerKey", __v.asInstanceOf[js.Any]))
+      CopySourceSSECustomerKeyMD5.foreach(__v => __obj.update("CopySourceSSECustomerKeyMD5", __v.asInstanceOf[js.Any]))
+      RequestPayer.foreach(__v => __obj.update("RequestPayer", __v.asInstanceOf[js.Any]))
+      SSECustomerAlgorithm.foreach(__v => __obj.update("SSECustomerAlgorithm", __v.asInstanceOf[js.Any]))
+      SSECustomerKey.foreach(__v => __obj.update("SSECustomerKey", __v.asInstanceOf[js.Any]))
+      SSECustomerKeyMD5.foreach(__v => __obj.update("SSECustomerKeyMD5", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UploadPartCopyRequest]
     }
   }
 
@@ -9151,28 +7497,14 @@ package s3 {
         SSEKMSKeyId: js.UndefOr[SSEKMSKeyId] = js.undefined,
         ServerSideEncryption: js.UndefOr[ServerSideEncryption] = js.undefined
     ): UploadPartOutput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ETag" -> ETag.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "RequestCharged" -> RequestCharged.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SSECustomerAlgorithm" -> SSECustomerAlgorithm.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SSECustomerKeyMD5" -> SSECustomerKeyMD5.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SSEKMSKeyId" -> SSEKMSKeyId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ServerSideEncryption" -> ServerSideEncryption.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UploadPartOutput]
+      val __obj = js.Dictionary.empty[js.Any]
+      ETag.foreach(__v => __obj.update("ETag", __v.asInstanceOf[js.Any]))
+      RequestCharged.foreach(__v => __obj.update("RequestCharged", __v.asInstanceOf[js.Any]))
+      SSECustomerAlgorithm.foreach(__v => __obj.update("SSECustomerAlgorithm", __v.asInstanceOf[js.Any]))
+      SSECustomerKeyMD5.foreach(__v => __obj.update("SSECustomerKeyMD5", __v.asInstanceOf[js.Any]))
+      SSEKMSKeyId.foreach(__v => __obj.update("SSEKMSKeyId", __v.asInstanceOf[js.Any]))
+      ServerSideEncryption.foreach(__v => __obj.update("ServerSideEncryption", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UploadPartOutput]
     }
   }
 
@@ -9205,35 +7537,21 @@ package s3 {
         SSECustomerKey: js.UndefOr[SSECustomerKey] = js.undefined,
         SSECustomerKeyMD5: js.UndefOr[SSECustomerKeyMD5] = js.undefined
     ): UploadPartRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "Bucket"     -> Bucket.asInstanceOf[js.Any],
         "Key"        -> Key.asInstanceOf[js.Any],
         "PartNumber" -> PartNumber.asInstanceOf[js.Any],
-        "UploadId"   -> UploadId.asInstanceOf[js.Any],
-        "Body" -> Body.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ContentLength" -> ContentLength.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ContentMD5" -> ContentMD5.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "RequestPayer" -> RequestPayer.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SSECustomerAlgorithm" -> SSECustomerAlgorithm.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SSECustomerKey" -> SSECustomerKey.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SSECustomerKeyMD5" -> SSECustomerKeyMD5.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "UploadId"   -> UploadId.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UploadPartRequest]
+      Body.foreach(__v => __obj.update("Body", __v.asInstanceOf[js.Any]))
+      ContentLength.foreach(__v => __obj.update("ContentLength", __v.asInstanceOf[js.Any]))
+      ContentMD5.foreach(__v => __obj.update("ContentMD5", __v.asInstanceOf[js.Any]))
+      RequestPayer.foreach(__v => __obj.update("RequestPayer", __v.asInstanceOf[js.Any]))
+      SSECustomerAlgorithm.foreach(__v => __obj.update("SSECustomerAlgorithm", __v.asInstanceOf[js.Any]))
+      SSECustomerKey.foreach(__v => __obj.update("SSECustomerKey", __v.asInstanceOf[js.Any]))
+      SSECustomerKeyMD5.foreach(__v => __obj.update("SSECustomerKeyMD5", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UploadPartRequest]
     }
   }
 
@@ -9251,16 +7569,10 @@ package s3 {
         MFADelete: js.UndefOr[MFADelete] = js.undefined,
         Status: js.UndefOr[BucketVersioningStatus] = js.undefined
     ): VersioningConfiguration = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "MFADelete" -> MFADelete.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Status" -> Status.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[VersioningConfiguration]
+      val __obj = js.Dictionary.empty[js.Any]
+      MFADelete.foreach(__v => __obj.update("MFADelete", __v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.update("Status", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[VersioningConfiguration]
     }
   }
 
@@ -9282,22 +7594,12 @@ package s3 {
         RedirectAllRequestsTo: js.UndefOr[RedirectAllRequestsTo] = js.undefined,
         RoutingRules: js.UndefOr[RoutingRules] = js.undefined
     ): WebsiteConfiguration = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ErrorDocument" -> ErrorDocument.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "IndexDocument" -> IndexDocument.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "RedirectAllRequestsTo" -> RedirectAllRequestsTo.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "RoutingRules" -> RoutingRules.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[WebsiteConfiguration]
+      val __obj = js.Dictionary.empty[js.Any]
+      ErrorDocument.foreach(__v => __obj.update("ErrorDocument", __v.asInstanceOf[js.Any]))
+      IndexDocument.foreach(__v => __obj.update("IndexDocument", __v.asInstanceOf[js.Any]))
+      RedirectAllRequestsTo.foreach(__v => __obj.update("RedirectAllRequestsTo", __v.asInstanceOf[js.Any]))
+      RoutingRules.foreach(__v => __obj.update("RoutingRules", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[WebsiteConfiguration]
     }
   }
 }

@@ -91,16 +91,10 @@ package importexport {
         Description: js.UndefOr[Description] = js.undefined,
         URL: js.UndefOr[URL] = js.undefined
     ): Artifact = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Description" -> Description.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "URL" -> URL.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Artifact]
+      val __obj = js.Dictionary.empty[js.Any]
+      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
+      URL.foreach(__v => __obj.update("URL", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Artifact]
     }
   }
 
@@ -126,14 +120,12 @@ package importexport {
         JobId: JobId,
         APIVersion: js.UndefOr[APIVersion] = js.undefined
     ): CancelJobInput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "JobId" -> JobId.asInstanceOf[js.Any],
-        "APIVersion" -> APIVersion.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "JobId" -> JobId.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CancelJobInput]
+      APIVersion.foreach(__v => __obj.update("APIVersion", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CancelJobInput]
     }
   }
 
@@ -149,13 +141,9 @@ package importexport {
     def apply(
         Success: js.UndefOr[Success] = js.undefined
     ): CancelJobOutput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Success" -> Success.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CancelJobOutput]
+      val __obj = js.Dictionary.empty[js.Any]
+      Success.foreach(__v => __obj.update("Success", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CancelJobOutput]
     }
   }
 
@@ -187,19 +175,15 @@ package importexport {
         APIVersion: js.UndefOr[APIVersion] = js.undefined,
         ManifestAddendum: js.UndefOr[ManifestAddendum] = js.undefined
     ): CreateJobInput = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "JobType"      -> JobType.asInstanceOf[js.Any],
         "Manifest"     -> Manifest.asInstanceOf[js.Any],
-        "ValidateOnly" -> ValidateOnly.asInstanceOf[js.Any],
-        "APIVersion" -> APIVersion.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ManifestAddendum" -> ManifestAddendum.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "ValidateOnly" -> ValidateOnly.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateJobInput]
+      APIVersion.foreach(__v => __obj.update("APIVersion", __v.asInstanceOf[js.Any]))
+      ManifestAddendum.foreach(__v => __obj.update("ManifestAddendum", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateJobInput]
     }
   }
 
@@ -225,28 +209,14 @@ package importexport {
         SignatureFileContents: js.UndefOr[SignatureFileContents] = js.undefined,
         WarningMessage: js.UndefOr[WarningMessage] = js.undefined
     ): CreateJobOutput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ArtifactList" -> ArtifactList.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "JobId" -> JobId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "JobType" -> JobType.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Signature" -> Signature.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SignatureFileContents" -> SignatureFileContents.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "WarningMessage" -> WarningMessage.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateJobOutput]
+      val __obj = js.Dictionary.empty[js.Any]
+      ArtifactList.foreach(__v => __obj.update("ArtifactList", __v.asInstanceOf[js.Any]))
+      JobId.foreach(__v => __obj.update("JobId", __v.asInstanceOf[js.Any]))
+      JobType.foreach(__v => __obj.update("JobType", __v.asInstanceOf[js.Any]))
+      Signature.foreach(__v => __obj.update("Signature", __v.asInstanceOf[js.Any]))
+      SignatureFileContents.foreach(__v => __obj.update("SignatureFileContents", __v.asInstanceOf[js.Any]))
+      WarningMessage.foreach(__v => __obj.update("WarningMessage", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateJobOutput]
     }
   }
 
@@ -297,44 +267,22 @@ package importexport {
         street2: js.UndefOr[street2] = js.undefined,
         street3: js.UndefOr[street3] = js.undefined
     ): GetShippingLabelInput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "jobIds" -> jobIds.asInstanceOf[js.Any],
-        "APIVersion" -> APIVersion.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "city" -> city.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "company" -> company.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "country" -> country.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "name" -> name.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "phoneNumber" -> phoneNumber.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "postalCode" -> postalCode.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "stateOrProvince" -> stateOrProvince.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "street1" -> street1.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "street2" -> street2.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "street3" -> street3.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "jobIds" -> jobIds.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetShippingLabelInput]
+      APIVersion.foreach(__v => __obj.update("APIVersion", __v.asInstanceOf[js.Any]))
+      city.foreach(__v => __obj.update("city", __v.asInstanceOf[js.Any]))
+      company.foreach(__v => __obj.update("company", __v.asInstanceOf[js.Any]))
+      country.foreach(__v => __obj.update("country", __v.asInstanceOf[js.Any]))
+      name.foreach(__v => __obj.update("name", __v.asInstanceOf[js.Any]))
+      phoneNumber.foreach(__v => __obj.update("phoneNumber", __v.asInstanceOf[js.Any]))
+      postalCode.foreach(__v => __obj.update("postalCode", __v.asInstanceOf[js.Any]))
+      stateOrProvince.foreach(__v => __obj.update("stateOrProvince", __v.asInstanceOf[js.Any]))
+      street1.foreach(__v => __obj.update("street1", __v.asInstanceOf[js.Any]))
+      street2.foreach(__v => __obj.update("street2", __v.asInstanceOf[js.Any]))
+      street3.foreach(__v => __obj.update("street3", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetShippingLabelInput]
     }
   }
 
@@ -349,16 +297,10 @@ package importexport {
         ShippingLabelURL: js.UndefOr[GenericString] = js.undefined,
         Warning: js.UndefOr[GenericString] = js.undefined
     ): GetShippingLabelOutput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ShippingLabelURL" -> ShippingLabelURL.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Warning" -> Warning.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetShippingLabelOutput]
+      val __obj = js.Dictionary.empty[js.Any]
+      ShippingLabelURL.foreach(__v => __obj.update("ShippingLabelURL", __v.asInstanceOf[js.Any]))
+      Warning.foreach(__v => __obj.update("Warning", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetShippingLabelOutput]
     }
   }
 
@@ -376,14 +318,12 @@ package importexport {
         JobId: JobId,
         APIVersion: js.UndefOr[APIVersion] = js.undefined
     ): GetStatusInput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "JobId" -> JobId.asInstanceOf[js.Any],
-        "APIVersion" -> APIVersion.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "JobId" -> JobId.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetStatusInput]
+      APIVersion.foreach(__v => __obj.update("APIVersion", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetStatusInput]
     }
   }
 
@@ -429,58 +369,24 @@ package importexport {
         SignatureFileContents: js.UndefOr[Signature] = js.undefined,
         TrackingNumber: js.UndefOr[TrackingNumber] = js.undefined
     ): GetStatusOutput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ArtifactList" -> ArtifactList.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Carrier" -> Carrier.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "CreationDate" -> CreationDate.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "CurrentManifest" -> CurrentManifest.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ErrorCount" -> ErrorCount.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "JobId" -> JobId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "JobType" -> JobType.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "LocationCode" -> LocationCode.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "LocationMessage" -> LocationMessage.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "LogBucket" -> LogBucket.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "LogKey" -> LogKey.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ProgressCode" -> ProgressCode.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ProgressMessage" -> ProgressMessage.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Signature" -> Signature.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SignatureFileContents" -> SignatureFileContents.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "TrackingNumber" -> TrackingNumber.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetStatusOutput]
+      val __obj = js.Dictionary.empty[js.Any]
+      ArtifactList.foreach(__v => __obj.update("ArtifactList", __v.asInstanceOf[js.Any]))
+      Carrier.foreach(__v => __obj.update("Carrier", __v.asInstanceOf[js.Any]))
+      CreationDate.foreach(__v => __obj.update("CreationDate", __v.asInstanceOf[js.Any]))
+      CurrentManifest.foreach(__v => __obj.update("CurrentManifest", __v.asInstanceOf[js.Any]))
+      ErrorCount.foreach(__v => __obj.update("ErrorCount", __v.asInstanceOf[js.Any]))
+      JobId.foreach(__v => __obj.update("JobId", __v.asInstanceOf[js.Any]))
+      JobType.foreach(__v => __obj.update("JobType", __v.asInstanceOf[js.Any]))
+      LocationCode.foreach(__v => __obj.update("LocationCode", __v.asInstanceOf[js.Any]))
+      LocationMessage.foreach(__v => __obj.update("LocationMessage", __v.asInstanceOf[js.Any]))
+      LogBucket.foreach(__v => __obj.update("LogBucket", __v.asInstanceOf[js.Any]))
+      LogKey.foreach(__v => __obj.update("LogKey", __v.asInstanceOf[js.Any]))
+      ProgressCode.foreach(__v => __obj.update("ProgressCode", __v.asInstanceOf[js.Any]))
+      ProgressMessage.foreach(__v => __obj.update("ProgressMessage", __v.asInstanceOf[js.Any]))
+      Signature.foreach(__v => __obj.update("Signature", __v.asInstanceOf[js.Any]))
+      SignatureFileContents.foreach(__v => __obj.update("SignatureFileContents", __v.asInstanceOf[js.Any]))
+      TrackingNumber.foreach(__v => __obj.update("TrackingNumber", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetStatusOutput]
     }
   }
 
@@ -566,22 +472,12 @@ package importexport {
         JobId: js.UndefOr[JobId] = js.undefined,
         JobType: js.UndefOr[JobType] = js.undefined
     ): Job = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "CreationDate" -> CreationDate.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "IsCanceled" -> IsCanceled.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "JobId" -> JobId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "JobType" -> JobType.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Job]
+      val __obj = js.Dictionary.empty[js.Any]
+      CreationDate.foreach(__v => __obj.update("CreationDate", __v.asInstanceOf[js.Any]))
+      IsCanceled.foreach(__v => __obj.update("IsCanceled", __v.asInstanceOf[js.Any]))
+      JobId.foreach(__v => __obj.update("JobId", __v.asInstanceOf[js.Any]))
+      JobType.foreach(__v => __obj.update("JobType", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Job]
     }
   }
 
@@ -611,19 +507,11 @@ package importexport {
         Marker: js.UndefOr[Marker] = js.undefined,
         MaxJobs: js.UndefOr[MaxJobs] = js.undefined
     ): ListJobsInput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "APIVersion" -> APIVersion.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Marker" -> Marker.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MaxJobs" -> MaxJobs.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListJobsInput]
+      val __obj = js.Dictionary.empty[js.Any]
+      APIVersion.foreach(__v => __obj.update("APIVersion", __v.asInstanceOf[js.Any]))
+      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
+      MaxJobs.foreach(__v => __obj.update("MaxJobs", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListJobsInput]
     }
   }
 
@@ -641,16 +529,10 @@ package importexport {
         IsTruncated: js.UndefOr[IsTruncated] = js.undefined,
         Jobs: js.UndefOr[JobsList] = js.undefined
     ): ListJobsOutput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "IsTruncated" -> IsTruncated.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Jobs" -> Jobs.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListJobsOutput]
+      val __obj = js.Dictionary.empty[js.Any]
+      IsTruncated.foreach(__v => __obj.update("IsTruncated", __v.asInstanceOf[js.Any]))
+      Jobs.foreach(__v => __obj.update("Jobs", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListJobsOutput]
     }
   }
 
@@ -738,17 +620,15 @@ package importexport {
         ValidateOnly: ValidateOnly,
         APIVersion: js.UndefOr[APIVersion] = js.undefined
     ): UpdateJobInput = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "JobId"        -> JobId.asInstanceOf[js.Any],
         "JobType"      -> JobType.asInstanceOf[js.Any],
         "Manifest"     -> Manifest.asInstanceOf[js.Any],
-        "ValidateOnly" -> ValidateOnly.asInstanceOf[js.Any],
-        "APIVersion" -> APIVersion.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "ValidateOnly" -> ValidateOnly.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateJobInput]
+      APIVersion.foreach(__v => __obj.update("APIVersion", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateJobInput]
     }
   }
 
@@ -768,19 +648,11 @@ package importexport {
         Success: js.UndefOr[Success] = js.undefined,
         WarningMessage: js.UndefOr[WarningMessage] = js.undefined
     ): UpdateJobOutput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ArtifactList" -> ArtifactList.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Success" -> Success.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "WarningMessage" -> WarningMessage.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateJobOutput]
+      val __obj = js.Dictionary.empty[js.Any]
+      ArtifactList.foreach(__v => __obj.update("ArtifactList", __v.asInstanceOf[js.Any]))
+      Success.foreach(__v => __obj.update("Success", __v.asInstanceOf[js.Any]))
+      WarningMessage.foreach(__v => __obj.update("WarningMessage", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateJobOutput]
     }
   }
 }

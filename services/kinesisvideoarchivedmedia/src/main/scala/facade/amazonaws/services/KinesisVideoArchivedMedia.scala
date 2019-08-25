@@ -93,25 +93,15 @@ package kinesisvideoarchivedmedia {
         ProducerTimestamp: js.UndefOr[Timestamp] = js.undefined,
         ServerTimestamp: js.UndefOr[Timestamp] = js.undefined
     ): Fragment = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "FragmentLengthInMilliseconds" -> FragmentLengthInMilliseconds.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "FragmentNumber" -> FragmentNumber.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "FragmentSizeInBytes" -> FragmentSizeInBytes.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ProducerTimestamp" -> ProducerTimestamp.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ServerTimestamp" -> ServerTimestamp.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Fragment]
+      val __obj = js.Dictionary.empty[js.Any]
+      FragmentLengthInMilliseconds.foreach(
+        __v => __obj.update("FragmentLengthInMilliseconds", __v.asInstanceOf[js.Any])
+      )
+      FragmentNumber.foreach(__v => __obj.update("FragmentNumber", __v.asInstanceOf[js.Any]))
+      FragmentSizeInBytes.foreach(__v => __obj.update("FragmentSizeInBytes", __v.asInstanceOf[js.Any]))
+      ProducerTimestamp.foreach(__v => __obj.update("ProducerTimestamp", __v.asInstanceOf[js.Any]))
+      ServerTimestamp.foreach(__v => __obj.update("ServerTimestamp", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Fragment]
     }
   }
 
@@ -135,12 +125,12 @@ package kinesisvideoarchivedmedia {
         FragmentSelectorType: FragmentSelectorType,
         TimestampRange: TimestampRange
     ): FragmentSelector = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "FragmentSelectorType" -> FragmentSelectorType.asInstanceOf[js.Any],
         "TimestampRange"       -> TimestampRange.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[FragmentSelector]
+      __obj.asInstanceOf[FragmentSelector]
     }
   }
 
@@ -176,37 +166,19 @@ package kinesisvideoarchivedmedia {
         StreamARN: js.UndefOr[ResourceARN] = js.undefined,
         StreamName: js.UndefOr[StreamName] = js.undefined
     ): GetHLSStreamingSessionURLInput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ContainerFormat" -> ContainerFormat.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DiscontinuityMode" -> DiscontinuityMode.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DisplayFragmentTimestamp" -> DisplayFragmentTimestamp.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Expires" -> Expires.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "HLSFragmentSelector" -> HLSFragmentSelector.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MaxMediaPlaylistFragmentResults" -> MaxMediaPlaylistFragmentResults.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "PlaybackMode" -> PlaybackMode.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "StreamARN" -> StreamARN.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "StreamName" -> StreamName.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetHLSStreamingSessionURLInput]
+      val __obj = js.Dictionary.empty[js.Any]
+      ContainerFormat.foreach(__v => __obj.update("ContainerFormat", __v.asInstanceOf[js.Any]))
+      DiscontinuityMode.foreach(__v => __obj.update("DiscontinuityMode", __v.asInstanceOf[js.Any]))
+      DisplayFragmentTimestamp.foreach(__v => __obj.update("DisplayFragmentTimestamp", __v.asInstanceOf[js.Any]))
+      Expires.foreach(__v => __obj.update("Expires", __v.asInstanceOf[js.Any]))
+      HLSFragmentSelector.foreach(__v => __obj.update("HLSFragmentSelector", __v.asInstanceOf[js.Any]))
+      MaxMediaPlaylistFragmentResults.foreach(
+        __v => __obj.update("MaxMediaPlaylistFragmentResults", __v.asInstanceOf[js.Any])
+      )
+      PlaybackMode.foreach(__v => __obj.update("PlaybackMode", __v.asInstanceOf[js.Any]))
+      StreamARN.foreach(__v => __obj.update("StreamARN", __v.asInstanceOf[js.Any]))
+      StreamName.foreach(__v => __obj.update("StreamName", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetHLSStreamingSessionURLInput]
     }
   }
 
@@ -219,13 +191,9 @@ package kinesisvideoarchivedmedia {
     def apply(
         HLSStreamingSessionURL: js.UndefOr[HLSStreamingSessionURL] = js.undefined
     ): GetHLSStreamingSessionURLOutput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "HLSStreamingSessionURL" -> HLSStreamingSessionURL.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetHLSStreamingSessionURLOutput]
+      val __obj = js.Dictionary.empty[js.Any]
+      HLSStreamingSessionURL.foreach(__v => __obj.update("HLSStreamingSessionURL", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetHLSStreamingSessionURLOutput]
     }
   }
 
@@ -240,12 +208,12 @@ package kinesisvideoarchivedmedia {
         Fragments: FragmentNumberList,
         StreamName: StreamName
     ): GetMediaForFragmentListInput = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "Fragments"  -> Fragments.asInstanceOf[js.Any],
         "StreamName" -> StreamName.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetMediaForFragmentListInput]
+      __obj.asInstanceOf[GetMediaForFragmentListInput]
     }
   }
 
@@ -260,16 +228,10 @@ package kinesisvideoarchivedmedia {
         ContentType: js.UndefOr[ContentType] = js.undefined,
         Payload: js.UndefOr[Payload] = js.undefined
     ): GetMediaForFragmentListOutput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ContentType" -> ContentType.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Payload" -> Payload.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetMediaForFragmentListOutput]
+      val __obj = js.Dictionary.empty[js.Any]
+      ContentType.foreach(__v => __obj.update("ContentType", __v.asInstanceOf[js.Any]))
+      Payload.foreach(__v => __obj.update("Payload", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetMediaForFragmentListOutput]
     }
   }
 
@@ -287,16 +249,10 @@ package kinesisvideoarchivedmedia {
         FragmentSelectorType: js.UndefOr[HLSFragmentSelectorType] = js.undefined,
         TimestampRange: js.UndefOr[HLSTimestampRange] = js.undefined
     ): HLSFragmentSelector = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "FragmentSelectorType" -> FragmentSelectorType.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "TimestampRange" -> TimestampRange.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[HLSFragmentSelector]
+      val __obj = js.Dictionary.empty[js.Any]
+      FragmentSelectorType.foreach(__v => __obj.update("FragmentSelectorType", __v.asInstanceOf[js.Any]))
+      TimestampRange.foreach(__v => __obj.update("TimestampRange", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[HLSFragmentSelector]
     }
   }
 
@@ -324,16 +280,10 @@ package kinesisvideoarchivedmedia {
         EndTimestamp: js.UndefOr[Timestamp] = js.undefined,
         StartTimestamp: js.UndefOr[Timestamp] = js.undefined
     ): HLSTimestampRange = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "EndTimestamp" -> EndTimestamp.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "StartTimestamp" -> StartTimestamp.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[HLSTimestampRange]
+      val __obj = js.Dictionary.empty[js.Any]
+      EndTimestamp.foreach(__v => __obj.update("EndTimestamp", __v.asInstanceOf[js.Any]))
+      StartTimestamp.foreach(__v => __obj.update("StartTimestamp", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[HLSTimestampRange]
     }
   }
 
@@ -352,20 +302,14 @@ package kinesisvideoarchivedmedia {
         MaxResults: js.UndefOr[PageLimit] = js.undefined,
         NextToken: js.UndefOr[String] = js.undefined
     ): ListFragmentsInput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "StreamName" -> StreamName.asInstanceOf[js.Any],
-        "FragmentSelector" -> FragmentSelector.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MaxResults" -> MaxResults.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NextToken" -> NextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "StreamName" -> StreamName.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListFragmentsInput]
+      FragmentSelector.foreach(__v => __obj.update("FragmentSelector", __v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListFragmentsInput]
     }
   }
 
@@ -380,16 +324,10 @@ package kinesisvideoarchivedmedia {
         Fragments: js.UndefOr[FragmentList] = js.undefined,
         NextToken: js.UndefOr[String] = js.undefined
     ): ListFragmentsOutput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Fragments" -> Fragments.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NextToken" -> NextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListFragmentsOutput]
+      val __obj = js.Dictionary.empty[js.Any]
+      Fragments.foreach(__v => __obj.update("Fragments", __v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListFragmentsOutput]
     }
   }
 
@@ -414,12 +352,12 @@ package kinesisvideoarchivedmedia {
         EndTimestamp: Timestamp,
         StartTimestamp: Timestamp
     ): TimestampRange = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "EndTimestamp"   -> EndTimestamp.asInstanceOf[js.Any],
         "StartTimestamp" -> StartTimestamp.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[TimestampRange]
+      __obj.asInstanceOf[TimestampRange]
     }
   }
 }

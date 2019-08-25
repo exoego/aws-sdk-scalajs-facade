@@ -282,31 +282,15 @@ package appstream {
         Metadata: js.UndefOr[Metadata] = js.undefined,
         Name: js.UndefOr[String] = js.undefined
     ): Application = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "DisplayName" -> DisplayName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Enabled" -> Enabled.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "IconURL" -> IconURL.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "LaunchParameters" -> LaunchParameters.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "LaunchPath" -> LaunchPath.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Metadata" -> Metadata.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Name" -> Name.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Application]
+      val __obj = js.Dictionary.empty[js.Any]
+      DisplayName.foreach(__v => __obj.update("DisplayName", __v.asInstanceOf[js.Any]))
+      Enabled.foreach(__v => __obj.update("Enabled", __v.asInstanceOf[js.Any]))
+      IconURL.foreach(__v => __obj.update("IconURL", __v.asInstanceOf[js.Any]))
+      LaunchParameters.foreach(__v => __obj.update("LaunchParameters", __v.asInstanceOf[js.Any]))
+      LaunchPath.foreach(__v => __obj.update("LaunchPath", __v.asInstanceOf[js.Any]))
+      Metadata.foreach(__v => __obj.update("Metadata", __v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Application]
     }
   }
 
@@ -324,14 +308,12 @@ package appstream {
         Enabled: Boolean,
         SettingsGroup: js.UndefOr[SettingsGroup] = js.undefined
     ): ApplicationSettings = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Enabled" -> Enabled.asInstanceOf[js.Any],
-        "SettingsGroup" -> SettingsGroup.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "Enabled" -> Enabled.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ApplicationSettings]
+      SettingsGroup.foreach(__v => __obj.update("SettingsGroup", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ApplicationSettings]
     }
   }
 
@@ -351,19 +333,11 @@ package appstream {
         S3BucketName: js.UndefOr[String] = js.undefined,
         SettingsGroup: js.UndefOr[SettingsGroup] = js.undefined
     ): ApplicationSettingsResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Enabled" -> Enabled.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "S3BucketName" -> S3BucketName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SettingsGroup" -> SettingsGroup.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ApplicationSettingsResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      Enabled.foreach(__v => __obj.update("Enabled", __v.asInstanceOf[js.Any]))
+      S3BucketName.foreach(__v => __obj.update("S3BucketName", __v.asInstanceOf[js.Any]))
+      SettingsGroup.foreach(__v => __obj.update("SettingsGroup", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ApplicationSettingsResponse]
     }
   }
 
@@ -378,12 +352,12 @@ package appstream {
         FleetName: String,
         StackName: String
     ): AssociateFleetRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "FleetName" -> FleetName.asInstanceOf[js.Any],
         "StackName" -> StackName.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AssociateFleetRequest]
+      __obj.asInstanceOf[AssociateFleetRequest]
     }
   }
 
@@ -393,10 +367,9 @@ package appstream {
   object AssociateFleetResult {
     def apply(
         ): AssociateFleetResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary.empty[js.Any]
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AssociateFleetResult]
+      __obj.asInstanceOf[AssociateFleetResult]
     }
   }
 
@@ -417,11 +390,11 @@ package appstream {
     def apply(
         UserStackAssociations: UserStackAssociationList
     ): BatchAssociateUserStackRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "UserStackAssociations" -> UserStackAssociations.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[BatchAssociateUserStackRequest]
+      __obj.asInstanceOf[BatchAssociateUserStackRequest]
     }
   }
 
@@ -434,13 +407,9 @@ package appstream {
     def apply(
         errors: js.UndefOr[UserStackAssociationErrorList] = js.undefined
     ): BatchAssociateUserStackResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "errors" -> errors.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[BatchAssociateUserStackResult]
+      val __obj = js.Dictionary.empty[js.Any]
+      errors.foreach(__v => __obj.update("errors", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[BatchAssociateUserStackResult]
     }
   }
 
@@ -453,11 +422,11 @@ package appstream {
     def apply(
         UserStackAssociations: UserStackAssociationList
     ): BatchDisassociateUserStackRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "UserStackAssociations" -> UserStackAssociations.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[BatchDisassociateUserStackRequest]
+      __obj.asInstanceOf[BatchDisassociateUserStackRequest]
     }
   }
 
@@ -470,13 +439,9 @@ package appstream {
     def apply(
         errors: js.UndefOr[UserStackAssociationErrorList] = js.undefined
     ): BatchDisassociateUserStackResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "errors" -> errors.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[BatchDisassociateUserStackResult]
+      val __obj = js.Dictionary.empty[js.Any]
+      errors.foreach(__v => __obj.update("errors", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[BatchDisassociateUserStackResult]
     }
   }
 
@@ -492,11 +457,11 @@ package appstream {
     def apply(
         DesiredInstances: Int
     ): ComputeCapacity = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "DesiredInstances" -> DesiredInstances.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ComputeCapacity]
+      __obj.asInstanceOf[ComputeCapacity]
     }
   }
 
@@ -518,20 +483,14 @@ package appstream {
         InUse: js.UndefOr[Int] = js.undefined,
         Running: js.UndefOr[Int] = js.undefined
     ): ComputeCapacityStatus = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Desired" -> Desired.asInstanceOf[js.Any],
-        "Available" -> Available.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "InUse" -> InUse.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Running" -> Running.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "Desired" -> Desired.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ComputeCapacityStatus]
+      Available.foreach(__v => __obj.update("Available", __v.asInstanceOf[js.Any]))
+      InUse.foreach(__v => __obj.update("InUse", __v.asInstanceOf[js.Any]))
+      Running.foreach(__v => __obj.update("Running", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ComputeCapacityStatus]
     }
   }
 
@@ -550,16 +509,14 @@ package appstream {
         SourceImageName: Name,
         DestinationImageDescription: js.UndefOr[Description] = js.undefined
     ): CopyImageRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "DestinationImageName" -> DestinationImageName.asInstanceOf[js.Any],
         "DestinationRegion"    -> DestinationRegion.asInstanceOf[js.Any],
-        "SourceImageName"      -> SourceImageName.asInstanceOf[js.Any],
-        "DestinationImageDescription" -> DestinationImageDescription.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "SourceImageName"      -> SourceImageName.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CopyImageRequest]
+      DestinationImageDescription.foreach(__v => __obj.update("DestinationImageDescription", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CopyImageRequest]
     }
   }
 
@@ -572,13 +529,9 @@ package appstream {
     def apply(
         DestinationImageName: js.UndefOr[Name] = js.undefined
     ): CopyImageResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "DestinationImageName" -> DestinationImageName.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CopyImageResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      DestinationImageName.foreach(__v => __obj.update("DestinationImageName", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CopyImageResponse]
     }
   }
 
@@ -595,13 +548,13 @@ package appstream {
         OrganizationalUnitDistinguishedNames: OrganizationalUnitDistinguishedNamesList,
         ServiceAccountCredentials: ServiceAccountCredentials
     ): CreateDirectoryConfigRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "DirectoryName"                        -> DirectoryName.asInstanceOf[js.Any],
         "OrganizationalUnitDistinguishedNames" -> OrganizationalUnitDistinguishedNames.asInstanceOf[js.Any],
         "ServiceAccountCredentials"            -> ServiceAccountCredentials.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateDirectoryConfigRequest]
+      __obj.asInstanceOf[CreateDirectoryConfigRequest]
     }
   }
 
@@ -614,13 +567,9 @@ package appstream {
     def apply(
         DirectoryConfig: js.UndefOr[DirectoryConfig] = js.undefined
     ): CreateDirectoryConfigResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "DirectoryConfig" -> DirectoryConfig.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateDirectoryConfigResult]
+      val __obj = js.Dictionary.empty[js.Any]
+      DirectoryConfig.foreach(__v => __obj.update("DirectoryConfig", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateDirectoryConfigResult]
     }
   }
 
@@ -659,46 +608,24 @@ package appstream {
         Tags: js.UndefOr[Tags] = js.undefined,
         VpcConfig: js.UndefOr[VpcConfig] = js.undefined
     ): CreateFleetRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ComputeCapacity" -> ComputeCapacity.asInstanceOf[js.Any],
         "InstanceType"    -> InstanceType.asInstanceOf[js.Any],
-        "Name"            -> Name.asInstanceOf[js.Any],
-        "Description" -> Description.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DisconnectTimeoutInSeconds" -> DisconnectTimeoutInSeconds.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DisplayName" -> DisplayName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DomainJoinInfo" -> DomainJoinInfo.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "EnableDefaultInternetAccess" -> EnableDefaultInternetAccess.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "FleetType" -> FleetType.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ImageArn" -> ImageArn.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ImageName" -> ImageName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MaxUserDurationInSeconds" -> MaxUserDurationInSeconds.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Tags" -> Tags.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "VpcConfig" -> VpcConfig.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "Name"            -> Name.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateFleetRequest]
+      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
+      DisconnectTimeoutInSeconds.foreach(__v => __obj.update("DisconnectTimeoutInSeconds", __v.asInstanceOf[js.Any]))
+      DisplayName.foreach(__v => __obj.update("DisplayName", __v.asInstanceOf[js.Any]))
+      DomainJoinInfo.foreach(__v => __obj.update("DomainJoinInfo", __v.asInstanceOf[js.Any]))
+      EnableDefaultInternetAccess.foreach(__v => __obj.update("EnableDefaultInternetAccess", __v.asInstanceOf[js.Any]))
+      FleetType.foreach(__v => __obj.update("FleetType", __v.asInstanceOf[js.Any]))
+      ImageArn.foreach(__v => __obj.update("ImageArn", __v.asInstanceOf[js.Any]))
+      ImageName.foreach(__v => __obj.update("ImageName", __v.asInstanceOf[js.Any]))
+      MaxUserDurationInSeconds.foreach(__v => __obj.update("MaxUserDurationInSeconds", __v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
+      VpcConfig.foreach(__v => __obj.update("VpcConfig", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateFleetRequest]
     }
   }
 
@@ -711,13 +638,9 @@ package appstream {
     def apply(
         Fleet: js.UndefOr[Fleet] = js.undefined
     ): CreateFleetResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Fleet" -> Fleet.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateFleetResult]
+      val __obj = js.Dictionary.empty[js.Any]
+      Fleet.foreach(__v => __obj.update("Fleet", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateFleetResult]
     }
   }
 
@@ -750,39 +673,21 @@ package appstream {
         Tags: js.UndefOr[Tags] = js.undefined,
         VpcConfig: js.UndefOr[VpcConfig] = js.undefined
     ): CreateImageBuilderRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "InstanceType" -> InstanceType.asInstanceOf[js.Any],
-        "Name"         -> Name.asInstanceOf[js.Any],
-        "AppstreamAgentVersion" -> AppstreamAgentVersion.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Description" -> Description.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DisplayName" -> DisplayName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DomainJoinInfo" -> DomainJoinInfo.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "EnableDefaultInternetAccess" -> EnableDefaultInternetAccess.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ImageArn" -> ImageArn.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ImageName" -> ImageName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Tags" -> Tags.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "VpcConfig" -> VpcConfig.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "Name"         -> Name.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateImageBuilderRequest]
+      AppstreamAgentVersion.foreach(__v => __obj.update("AppstreamAgentVersion", __v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
+      DisplayName.foreach(__v => __obj.update("DisplayName", __v.asInstanceOf[js.Any]))
+      DomainJoinInfo.foreach(__v => __obj.update("DomainJoinInfo", __v.asInstanceOf[js.Any]))
+      EnableDefaultInternetAccess.foreach(__v => __obj.update("EnableDefaultInternetAccess", __v.asInstanceOf[js.Any]))
+      ImageArn.foreach(__v => __obj.update("ImageArn", __v.asInstanceOf[js.Any]))
+      ImageName.foreach(__v => __obj.update("ImageName", __v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
+      VpcConfig.foreach(__v => __obj.update("VpcConfig", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateImageBuilderRequest]
     }
   }
 
@@ -795,13 +700,9 @@ package appstream {
     def apply(
         ImageBuilder: js.UndefOr[ImageBuilder] = js.undefined
     ): CreateImageBuilderResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ImageBuilder" -> ImageBuilder.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateImageBuilderResult]
+      val __obj = js.Dictionary.empty[js.Any]
+      ImageBuilder.foreach(__v => __obj.update("ImageBuilder", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateImageBuilderResult]
     }
   }
 
@@ -816,14 +717,12 @@ package appstream {
         Name: String,
         Validity: js.UndefOr[Double] = js.undefined
     ): CreateImageBuilderStreamingURLRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Name" -> Name.asInstanceOf[js.Any],
-        "Validity" -> Validity.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "Name" -> Name.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateImageBuilderStreamingURLRequest]
+      Validity.foreach(__v => __obj.update("Validity", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateImageBuilderStreamingURLRequest]
     }
   }
 
@@ -838,16 +737,10 @@ package appstream {
         Expires: js.UndefOr[Timestamp] = js.undefined,
         StreamingURL: js.UndefOr[String] = js.undefined
     ): CreateImageBuilderStreamingURLResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Expires" -> Expires.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "StreamingURL" -> StreamingURL.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateImageBuilderStreamingURLResult]
+      val __obj = js.Dictionary.empty[js.Any]
+      Expires.foreach(__v => __obj.update("Expires", __v.asInstanceOf[js.Any]))
+      StreamingURL.foreach(__v => __obj.update("StreamingURL", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateImageBuilderStreamingURLResult]
     }
   }
 
@@ -876,35 +769,19 @@ package appstream {
         Tags: js.UndefOr[Tags] = js.undefined,
         UserSettings: js.UndefOr[UserSettingList] = js.undefined
     ): CreateStackRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Name" -> Name.asInstanceOf[js.Any],
-        "ApplicationSettings" -> ApplicationSettings.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Description" -> Description.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DisplayName" -> DisplayName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "FeedbackURL" -> FeedbackURL.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "RedirectURL" -> RedirectURL.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "StorageConnectors" -> StorageConnectors.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Tags" -> Tags.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "UserSettings" -> UserSettings.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "Name" -> Name.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateStackRequest]
+      ApplicationSettings.foreach(__v => __obj.update("ApplicationSettings", __v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
+      DisplayName.foreach(__v => __obj.update("DisplayName", __v.asInstanceOf[js.Any]))
+      FeedbackURL.foreach(__v => __obj.update("FeedbackURL", __v.asInstanceOf[js.Any]))
+      RedirectURL.foreach(__v => __obj.update("RedirectURL", __v.asInstanceOf[js.Any]))
+      StorageConnectors.foreach(__v => __obj.update("StorageConnectors", __v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
+      UserSettings.foreach(__v => __obj.update("UserSettings", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateStackRequest]
     }
   }
 
@@ -917,13 +794,9 @@ package appstream {
     def apply(
         Stack: js.UndefOr[Stack] = js.undefined
     ): CreateStackResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Stack" -> Stack.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateStackResult]
+      val __obj = js.Dictionary.empty[js.Any]
+      Stack.foreach(__v => __obj.update("Stack", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateStackResult]
     }
   }
 
@@ -946,22 +819,16 @@ package appstream {
         SessionContext: js.UndefOr[String] = js.undefined,
         Validity: js.UndefOr[Double] = js.undefined
     ): CreateStreamingURLRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "FleetName" -> FleetName.asInstanceOf[js.Any],
         "StackName" -> StackName.asInstanceOf[js.Any],
-        "UserId"    -> UserId.asInstanceOf[js.Any],
-        "ApplicationId" -> ApplicationId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SessionContext" -> SessionContext.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Validity" -> Validity.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "UserId"    -> UserId.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateStreamingURLRequest]
+      ApplicationId.foreach(__v => __obj.update("ApplicationId", __v.asInstanceOf[js.Any]))
+      SessionContext.foreach(__v => __obj.update("SessionContext", __v.asInstanceOf[js.Any]))
+      Validity.foreach(__v => __obj.update("Validity", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateStreamingURLRequest]
     }
   }
 
@@ -976,16 +843,10 @@ package appstream {
         Expires: js.UndefOr[Timestamp] = js.undefined,
         StreamingURL: js.UndefOr[String] = js.undefined
     ): CreateStreamingURLResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Expires" -> Expires.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "StreamingURL" -> StreamingURL.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateStreamingURLResult]
+      val __obj = js.Dictionary.empty[js.Any]
+      Expires.foreach(__v => __obj.update("Expires", __v.asInstanceOf[js.Any]))
+      StreamingURL.foreach(__v => __obj.update("StreamingURL", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateStreamingURLResult]
     }
   }
 
@@ -1006,21 +867,15 @@ package appstream {
         LastName: js.UndefOr[UserAttributeValue] = js.undefined,
         MessageAction: js.UndefOr[MessageAction] = js.undefined
     ): CreateUserRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "AuthenticationType" -> AuthenticationType.asInstanceOf[js.Any],
-        "UserName"           -> UserName.asInstanceOf[js.Any],
-        "FirstName" -> FirstName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "LastName" -> LastName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MessageAction" -> MessageAction.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "UserName"           -> UserName.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateUserRequest]
+      FirstName.foreach(__v => __obj.update("FirstName", __v.asInstanceOf[js.Any]))
+      LastName.foreach(__v => __obj.update("LastName", __v.asInstanceOf[js.Any]))
+      MessageAction.foreach(__v => __obj.update("MessageAction", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateUserRequest]
     }
   }
 
@@ -1030,10 +885,9 @@ package appstream {
   object CreateUserResult {
     def apply(
         ): CreateUserResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary.empty[js.Any]
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateUserResult]
+      __obj.asInstanceOf[CreateUserResult]
     }
   }
 
@@ -1046,11 +900,11 @@ package appstream {
     def apply(
         DirectoryName: DirectoryName
     ): DeleteDirectoryConfigRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "DirectoryName" -> DirectoryName.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteDirectoryConfigRequest]
+      __obj.asInstanceOf[DeleteDirectoryConfigRequest]
     }
   }
 
@@ -1060,10 +914,9 @@ package appstream {
   object DeleteDirectoryConfigResult {
     def apply(
         ): DeleteDirectoryConfigResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary.empty[js.Any]
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteDirectoryConfigResult]
+      __obj.asInstanceOf[DeleteDirectoryConfigResult]
     }
   }
 
@@ -1076,11 +929,11 @@ package appstream {
     def apply(
         Name: String
     ): DeleteFleetRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "Name" -> Name.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteFleetRequest]
+      __obj.asInstanceOf[DeleteFleetRequest]
     }
   }
 
@@ -1090,10 +943,9 @@ package appstream {
   object DeleteFleetResult {
     def apply(
         ): DeleteFleetResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary.empty[js.Any]
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteFleetResult]
+      __obj.asInstanceOf[DeleteFleetResult]
     }
   }
 
@@ -1106,11 +958,11 @@ package appstream {
     def apply(
         Name: Name
     ): DeleteImageBuilderRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "Name" -> Name.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteImageBuilderRequest]
+      __obj.asInstanceOf[DeleteImageBuilderRequest]
     }
   }
 
@@ -1123,13 +975,9 @@ package appstream {
     def apply(
         ImageBuilder: js.UndefOr[ImageBuilder] = js.undefined
     ): DeleteImageBuilderResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ImageBuilder" -> ImageBuilder.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteImageBuilderResult]
+      val __obj = js.Dictionary.empty[js.Any]
+      ImageBuilder.foreach(__v => __obj.update("ImageBuilder", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DeleteImageBuilderResult]
     }
   }
 
@@ -1144,12 +992,12 @@ package appstream {
         Name: Name,
         SharedAccountId: AwsAccountId
     ): DeleteImagePermissionsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "Name"            -> Name.asInstanceOf[js.Any],
         "SharedAccountId" -> SharedAccountId.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteImagePermissionsRequest]
+      __obj.asInstanceOf[DeleteImagePermissionsRequest]
     }
   }
 
@@ -1159,10 +1007,9 @@ package appstream {
   object DeleteImagePermissionsResult {
     def apply(
         ): DeleteImagePermissionsResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary.empty[js.Any]
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteImagePermissionsResult]
+      __obj.asInstanceOf[DeleteImagePermissionsResult]
     }
   }
 
@@ -1175,11 +1022,11 @@ package appstream {
     def apply(
         Name: Name
     ): DeleteImageRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "Name" -> Name.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteImageRequest]
+      __obj.asInstanceOf[DeleteImageRequest]
     }
   }
 
@@ -1192,13 +1039,9 @@ package appstream {
     def apply(
         Image: js.UndefOr[Image] = js.undefined
     ): DeleteImageResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Image" -> Image.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteImageResult]
+      val __obj = js.Dictionary.empty[js.Any]
+      Image.foreach(__v => __obj.update("Image", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DeleteImageResult]
     }
   }
 
@@ -1211,11 +1054,11 @@ package appstream {
     def apply(
         Name: String
     ): DeleteStackRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "Name" -> Name.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteStackRequest]
+      __obj.asInstanceOf[DeleteStackRequest]
     }
   }
 
@@ -1225,10 +1068,9 @@ package appstream {
   object DeleteStackResult {
     def apply(
         ): DeleteStackResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary.empty[js.Any]
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteStackResult]
+      __obj.asInstanceOf[DeleteStackResult]
     }
   }
 
@@ -1243,12 +1085,12 @@ package appstream {
         AuthenticationType: AuthenticationType,
         UserName: Username
     ): DeleteUserRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "AuthenticationType" -> AuthenticationType.asInstanceOf[js.Any],
         "UserName"           -> UserName.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteUserRequest]
+      __obj.asInstanceOf[DeleteUserRequest]
     }
   }
 
@@ -1258,10 +1100,9 @@ package appstream {
   object DeleteUserResult {
     def apply(
         ): DeleteUserResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary.empty[js.Any]
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteUserResult]
+      __obj.asInstanceOf[DeleteUserResult]
     }
   }
 
@@ -1278,19 +1119,11 @@ package appstream {
         MaxResults: js.UndefOr[Int] = js.undefined,
         NextToken: js.UndefOr[String] = js.undefined
     ): DescribeDirectoryConfigsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "DirectoryNames" -> DirectoryNames.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MaxResults" -> MaxResults.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NextToken" -> NextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeDirectoryConfigsRequest]
+      val __obj = js.Dictionary.empty[js.Any]
+      DirectoryNames.foreach(__v => __obj.update("DirectoryNames", __v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeDirectoryConfigsRequest]
     }
   }
 
@@ -1305,16 +1138,10 @@ package appstream {
         DirectoryConfigs: js.UndefOr[DirectoryConfigList] = js.undefined,
         NextToken: js.UndefOr[String] = js.undefined
     ): DescribeDirectoryConfigsResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "DirectoryConfigs" -> DirectoryConfigs.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NextToken" -> NextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeDirectoryConfigsResult]
+      val __obj = js.Dictionary.empty[js.Any]
+      DirectoryConfigs.foreach(__v => __obj.update("DirectoryConfigs", __v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeDirectoryConfigsResult]
     }
   }
 
@@ -1329,16 +1156,10 @@ package appstream {
         Names: js.UndefOr[StringList] = js.undefined,
         NextToken: js.UndefOr[String] = js.undefined
     ): DescribeFleetsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Names" -> Names.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NextToken" -> NextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeFleetsRequest]
+      val __obj = js.Dictionary.empty[js.Any]
+      Names.foreach(__v => __obj.update("Names", __v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeFleetsRequest]
     }
   }
 
@@ -1353,16 +1174,10 @@ package appstream {
         Fleets: js.UndefOr[FleetList] = js.undefined,
         NextToken: js.UndefOr[String] = js.undefined
     ): DescribeFleetsResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Fleets" -> Fleets.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NextToken" -> NextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeFleetsResult]
+      val __obj = js.Dictionary.empty[js.Any]
+      Fleets.foreach(__v => __obj.update("Fleets", __v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeFleetsResult]
     }
   }
 
@@ -1379,19 +1194,11 @@ package appstream {
         Names: js.UndefOr[StringList] = js.undefined,
         NextToken: js.UndefOr[String] = js.undefined
     ): DescribeImageBuildersRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "MaxResults" -> MaxResults.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Names" -> Names.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NextToken" -> NextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeImageBuildersRequest]
+      val __obj = js.Dictionary.empty[js.Any]
+      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
+      Names.foreach(__v => __obj.update("Names", __v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeImageBuildersRequest]
     }
   }
 
@@ -1406,16 +1213,10 @@ package appstream {
         ImageBuilders: js.UndefOr[ImageBuilderList] = js.undefined,
         NextToken: js.UndefOr[String] = js.undefined
     ): DescribeImageBuildersResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ImageBuilders" -> ImageBuilders.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NextToken" -> NextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeImageBuildersResult]
+      val __obj = js.Dictionary.empty[js.Any]
+      ImageBuilders.foreach(__v => __obj.update("ImageBuilders", __v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeImageBuildersResult]
     }
   }
 
@@ -1434,20 +1235,14 @@ package appstream {
         NextToken: js.UndefOr[String] = js.undefined,
         SharedAwsAccountIds: js.UndefOr[AwsAccountIdList] = js.undefined
     ): DescribeImagePermissionsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Name" -> Name.asInstanceOf[js.Any],
-        "MaxResults" -> MaxResults.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NextToken" -> NextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SharedAwsAccountIds" -> SharedAwsAccountIds.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "Name" -> Name.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeImagePermissionsRequest]
+      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      SharedAwsAccountIds.foreach(__v => __obj.update("SharedAwsAccountIds", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeImagePermissionsRequest]
     }
   }
 
@@ -1464,19 +1259,11 @@ package appstream {
         NextToken: js.UndefOr[String] = js.undefined,
         SharedImagePermissionsList: js.UndefOr[SharedImagePermissionsList] = js.undefined
     ): DescribeImagePermissionsResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Name" -> Name.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NextToken" -> NextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SharedImagePermissionsList" -> SharedImagePermissionsList.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeImagePermissionsResult]
+      val __obj = js.Dictionary.empty[js.Any]
+      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      SharedImagePermissionsList.foreach(__v => __obj.update("SharedImagePermissionsList", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeImagePermissionsResult]
     }
   }
 
@@ -1497,25 +1284,13 @@ package appstream {
         NextToken: js.UndefOr[String] = js.undefined,
         Type: js.UndefOr[VisibilityType] = js.undefined
     ): DescribeImagesRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Arns" -> Arns.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MaxResults" -> MaxResults.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Names" -> Names.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NextToken" -> NextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Type" -> Type.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeImagesRequest]
+      val __obj = js.Dictionary.empty[js.Any]
+      Arns.foreach(__v => __obj.update("Arns", __v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
+      Names.foreach(__v => __obj.update("Names", __v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      Type.foreach(__v => __obj.update("Type", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeImagesRequest]
     }
   }
 
@@ -1530,16 +1305,10 @@ package appstream {
         Images: js.UndefOr[ImageList] = js.undefined,
         NextToken: js.UndefOr[String] = js.undefined
     ): DescribeImagesResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Images" -> Images.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NextToken" -> NextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeImagesResult]
+      val __obj = js.Dictionary.empty[js.Any]
+      Images.foreach(__v => __obj.update("Images", __v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeImagesResult]
     }
   }
 
@@ -1562,24 +1331,16 @@ package appstream {
         NextToken: js.UndefOr[String] = js.undefined,
         UserId: js.UndefOr[UserId] = js.undefined
     ): DescribeSessionsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "FleetName" -> FleetName.asInstanceOf[js.Any],
-        "StackName" -> StackName.asInstanceOf[js.Any],
-        "AuthenticationType" -> AuthenticationType.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Limit" -> Limit.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NextToken" -> NextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "UserId" -> UserId.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "StackName" -> StackName.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeSessionsRequest]
+      AuthenticationType.foreach(__v => __obj.update("AuthenticationType", __v.asInstanceOf[js.Any]))
+      Limit.foreach(__v => __obj.update("Limit", __v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      UserId.foreach(__v => __obj.update("UserId", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeSessionsRequest]
     }
   }
 
@@ -1594,16 +1355,10 @@ package appstream {
         NextToken: js.UndefOr[String] = js.undefined,
         Sessions: js.UndefOr[SessionList] = js.undefined
     ): DescribeSessionsResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "NextToken" -> NextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Sessions" -> Sessions.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeSessionsResult]
+      val __obj = js.Dictionary.empty[js.Any]
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      Sessions.foreach(__v => __obj.update("Sessions", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeSessionsResult]
     }
   }
 
@@ -1618,16 +1373,10 @@ package appstream {
         Names: js.UndefOr[StringList] = js.undefined,
         NextToken: js.UndefOr[String] = js.undefined
     ): DescribeStacksRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Names" -> Names.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NextToken" -> NextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeStacksRequest]
+      val __obj = js.Dictionary.empty[js.Any]
+      Names.foreach(__v => __obj.update("Names", __v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeStacksRequest]
     }
   }
 
@@ -1642,16 +1391,10 @@ package appstream {
         NextToken: js.UndefOr[String] = js.undefined,
         Stacks: js.UndefOr[StackList] = js.undefined
     ): DescribeStacksResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "NextToken" -> NextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Stacks" -> Stacks.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeStacksResult]
+      val __obj = js.Dictionary.empty[js.Any]
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      Stacks.foreach(__v => __obj.update("Stacks", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeStacksResult]
     }
   }
 
@@ -1672,25 +1415,13 @@ package appstream {
         StackName: js.UndefOr[String] = js.undefined,
         UserName: js.UndefOr[Username] = js.undefined
     ): DescribeUserStackAssociationsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "AuthenticationType" -> AuthenticationType.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MaxResults" -> MaxResults.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NextToken" -> NextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "StackName" -> StackName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "UserName" -> UserName.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeUserStackAssociationsRequest]
+      val __obj = js.Dictionary.empty[js.Any]
+      AuthenticationType.foreach(__v => __obj.update("AuthenticationType", __v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      StackName.foreach(__v => __obj.update("StackName", __v.asInstanceOf[js.Any]))
+      UserName.foreach(__v => __obj.update("UserName", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeUserStackAssociationsRequest]
     }
   }
 
@@ -1705,16 +1436,10 @@ package appstream {
         NextToken: js.UndefOr[String] = js.undefined,
         UserStackAssociations: js.UndefOr[UserStackAssociationList] = js.undefined
     ): DescribeUserStackAssociationsResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "NextToken" -> NextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "UserStackAssociations" -> UserStackAssociations.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeUserStackAssociationsResult]
+      val __obj = js.Dictionary.empty[js.Any]
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      UserStackAssociations.foreach(__v => __obj.update("UserStackAssociations", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeUserStackAssociationsResult]
     }
   }
 
@@ -1731,17 +1456,13 @@ package appstream {
         MaxResults: js.UndefOr[Int] = js.undefined,
         NextToken: js.UndefOr[String] = js.undefined
     ): DescribeUsersRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "AuthenticationType" -> AuthenticationType.asInstanceOf[js.Any],
-        "MaxResults" -> MaxResults.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NextToken" -> NextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "AuthenticationType" -> AuthenticationType.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeUsersRequest]
+      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeUsersRequest]
     }
   }
 
@@ -1756,16 +1477,10 @@ package appstream {
         NextToken: js.UndefOr[String] = js.undefined,
         Users: js.UndefOr[UserList] = js.undefined
     ): DescribeUsersResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "NextToken" -> NextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Users" -> Users.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeUsersResult]
+      val __obj = js.Dictionary.empty[js.Any]
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      Users.foreach(__v => __obj.update("Users", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeUsersResult]
     }
   }
 
@@ -1787,20 +1502,16 @@ package appstream {
         OrganizationalUnitDistinguishedNames: js.UndefOr[OrganizationalUnitDistinguishedNamesList] = js.undefined,
         ServiceAccountCredentials: js.UndefOr[ServiceAccountCredentials] = js.undefined
     ): DirectoryConfig = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "DirectoryName" -> DirectoryName.asInstanceOf[js.Any],
-        "CreatedTime" -> CreatedTime.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "OrganizationalUnitDistinguishedNames" -> OrganizationalUnitDistinguishedNames.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ServiceAccountCredentials" -> ServiceAccountCredentials.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "DirectoryName" -> DirectoryName.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DirectoryConfig]
+      CreatedTime.foreach(__v => __obj.update("CreatedTime", __v.asInstanceOf[js.Any]))
+      OrganizationalUnitDistinguishedNames.foreach(
+        __v => __obj.update("OrganizationalUnitDistinguishedNames", __v.asInstanceOf[js.Any])
+      )
+      ServiceAccountCredentials.foreach(__v => __obj.update("ServiceAccountCredentials", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DirectoryConfig]
     }
   }
 
@@ -1815,12 +1526,12 @@ package appstream {
         AuthenticationType: AuthenticationType,
         UserName: Username
     ): DisableUserRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "AuthenticationType" -> AuthenticationType.asInstanceOf[js.Any],
         "UserName"           -> UserName.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DisableUserRequest]
+      __obj.asInstanceOf[DisableUserRequest]
     }
   }
 
@@ -1830,10 +1541,9 @@ package appstream {
   object DisableUserResult {
     def apply(
         ): DisableUserResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary.empty[js.Any]
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DisableUserResult]
+      __obj.asInstanceOf[DisableUserResult]
     }
   }
 
@@ -1848,12 +1558,12 @@ package appstream {
         FleetName: String,
         StackName: String
     ): DisassociateFleetRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "FleetName" -> FleetName.asInstanceOf[js.Any],
         "StackName" -> StackName.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DisassociateFleetRequest]
+      __obj.asInstanceOf[DisassociateFleetRequest]
     }
   }
 
@@ -1863,10 +1573,9 @@ package appstream {
   object DisassociateFleetResult {
     def apply(
         ): DisassociateFleetResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary.empty[js.Any]
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DisassociateFleetResult]
+      __obj.asInstanceOf[DisassociateFleetResult]
     }
   }
 
@@ -1884,16 +1593,12 @@ package appstream {
         DirectoryName: js.UndefOr[DirectoryName] = js.undefined,
         OrganizationalUnitDistinguishedName: js.UndefOr[OrganizationalUnitDistinguishedName] = js.undefined
     ): DomainJoinInfo = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "DirectoryName" -> DirectoryName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "OrganizationalUnitDistinguishedName" -> OrganizationalUnitDistinguishedName.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DomainJoinInfo]
+      val __obj = js.Dictionary.empty[js.Any]
+      DirectoryName.foreach(__v => __obj.update("DirectoryName", __v.asInstanceOf[js.Any]))
+      OrganizationalUnitDistinguishedName.foreach(
+        __v => __obj.update("OrganizationalUnitDistinguishedName", __v.asInstanceOf[js.Any])
+      )
+      __obj.asInstanceOf[DomainJoinInfo]
     }
   }
 
@@ -1908,12 +1613,12 @@ package appstream {
         AuthenticationType: AuthenticationType,
         UserName: Username
     ): EnableUserRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "AuthenticationType" -> AuthenticationType.asInstanceOf[js.Any],
         "UserName"           -> UserName.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[EnableUserRequest]
+      __obj.asInstanceOf[EnableUserRequest]
     }
   }
 
@@ -1923,10 +1628,9 @@ package appstream {
   object EnableUserResult {
     def apply(
         ): EnableUserResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary.empty[js.Any]
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[EnableUserResult]
+      __obj.asInstanceOf[EnableUserResult]
     }
   }
 
@@ -1939,11 +1643,11 @@ package appstream {
     def apply(
         SessionId: String
     ): ExpireSessionRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "SessionId" -> SessionId.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ExpireSessionRequest]
+      __obj.asInstanceOf[ExpireSessionRequest]
     }
   }
 
@@ -1953,10 +1657,9 @@ package appstream {
   object ExpireSessionResult {
     def apply(
         ): ExpireSessionResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary.empty[js.Any]
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ExpireSessionResult]
+      __obj.asInstanceOf[ExpireSessionResult]
     }
   }
 
@@ -2004,51 +1707,27 @@ package appstream {
         MaxUserDurationInSeconds: js.UndefOr[Int] = js.undefined,
         VpcConfig: js.UndefOr[VpcConfig] = js.undefined
     ): Fleet = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "Arn"                   -> Arn.asInstanceOf[js.Any],
         "ComputeCapacityStatus" -> ComputeCapacityStatus.asInstanceOf[js.Any],
         "InstanceType"          -> InstanceType.asInstanceOf[js.Any],
         "Name"                  -> Name.asInstanceOf[js.Any],
-        "State"                 -> State.asInstanceOf[js.Any],
-        "CreatedTime" -> CreatedTime.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Description" -> Description.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DisconnectTimeoutInSeconds" -> DisconnectTimeoutInSeconds.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DisplayName" -> DisplayName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DomainJoinInfo" -> DomainJoinInfo.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "EnableDefaultInternetAccess" -> EnableDefaultInternetAccess.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "FleetErrors" -> FleetErrors.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "FleetType" -> FleetType.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ImageArn" -> ImageArn.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ImageName" -> ImageName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MaxUserDurationInSeconds" -> MaxUserDurationInSeconds.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "VpcConfig" -> VpcConfig.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "State"                 -> State.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Fleet]
+      CreatedTime.foreach(__v => __obj.update("CreatedTime", __v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
+      DisconnectTimeoutInSeconds.foreach(__v => __obj.update("DisconnectTimeoutInSeconds", __v.asInstanceOf[js.Any]))
+      DisplayName.foreach(__v => __obj.update("DisplayName", __v.asInstanceOf[js.Any]))
+      DomainJoinInfo.foreach(__v => __obj.update("DomainJoinInfo", __v.asInstanceOf[js.Any]))
+      EnableDefaultInternetAccess.foreach(__v => __obj.update("EnableDefaultInternetAccess", __v.asInstanceOf[js.Any]))
+      FleetErrors.foreach(__v => __obj.update("FleetErrors", __v.asInstanceOf[js.Any]))
+      FleetType.foreach(__v => __obj.update("FleetType", __v.asInstanceOf[js.Any]))
+      ImageArn.foreach(__v => __obj.update("ImageArn", __v.asInstanceOf[js.Any]))
+      ImageName.foreach(__v => __obj.update("ImageName", __v.asInstanceOf[js.Any]))
+      MaxUserDurationInSeconds.foreach(__v => __obj.update("MaxUserDurationInSeconds", __v.asInstanceOf[js.Any]))
+      VpcConfig.foreach(__v => __obj.update("VpcConfig", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Fleet]
     }
   }
 
@@ -2077,16 +1756,10 @@ package appstream {
         ErrorCode: js.UndefOr[FleetErrorCode] = js.undefined,
         ErrorMessage: js.UndefOr[String] = js.undefined
     ): FleetError = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ErrorCode" -> ErrorCode.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ErrorMessage" -> ErrorMessage.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[FleetError]
+      val __obj = js.Dictionary.empty[js.Any]
+      ErrorCode.foreach(__v => __obj.update("ErrorCode", __v.asInstanceOf[js.Any]))
+      ErrorMessage.foreach(__v => __obj.update("ErrorMessage", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[FleetError]
     }
   }
 
@@ -2205,53 +1878,25 @@ package appstream {
         StateChangeReason: js.UndefOr[ImageStateChangeReason] = js.undefined,
         Visibility: js.UndefOr[VisibilityType] = js.undefined
     ): Image = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Name" -> Name.asInstanceOf[js.Any],
-        "Applications" -> Applications.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "AppstreamAgentVersion" -> AppstreamAgentVersion.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Arn" -> Arn.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "BaseImageArn" -> BaseImageArn.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "CreatedTime" -> CreatedTime.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Description" -> Description.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DisplayName" -> DisplayName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ImageBuilderSupported" -> ImageBuilderSupported.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ImagePermissions" -> ImagePermissions.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Platform" -> Platform.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "PublicBaseImageReleasedDate" -> PublicBaseImageReleasedDate.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "State" -> State.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "StateChangeReason" -> StateChangeReason.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Visibility" -> Visibility.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "Name" -> Name.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Image]
+      Applications.foreach(__v => __obj.update("Applications", __v.asInstanceOf[js.Any]))
+      AppstreamAgentVersion.foreach(__v => __obj.update("AppstreamAgentVersion", __v.asInstanceOf[js.Any]))
+      Arn.foreach(__v => __obj.update("Arn", __v.asInstanceOf[js.Any]))
+      BaseImageArn.foreach(__v => __obj.update("BaseImageArn", __v.asInstanceOf[js.Any]))
+      CreatedTime.foreach(__v => __obj.update("CreatedTime", __v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
+      DisplayName.foreach(__v => __obj.update("DisplayName", __v.asInstanceOf[js.Any]))
+      ImageBuilderSupported.foreach(__v => __obj.update("ImageBuilderSupported", __v.asInstanceOf[js.Any]))
+      ImagePermissions.foreach(__v => __obj.update("ImagePermissions", __v.asInstanceOf[js.Any]))
+      Platform.foreach(__v => __obj.update("Platform", __v.asInstanceOf[js.Any]))
+      PublicBaseImageReleasedDate.foreach(__v => __obj.update("PublicBaseImageReleasedDate", __v.asInstanceOf[js.Any]))
+      State.foreach(__v => __obj.update("State", __v.asInstanceOf[js.Any]))
+      StateChangeReason.foreach(__v => __obj.update("StateChangeReason", __v.asInstanceOf[js.Any]))
+      Visibility.foreach(__v => __obj.update("Visibility", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Image]
     }
   }
 
@@ -2295,53 +1940,25 @@ package appstream {
         StateChangeReason: js.UndefOr[ImageBuilderStateChangeReason] = js.undefined,
         VpcConfig: js.UndefOr[VpcConfig] = js.undefined
     ): ImageBuilder = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Name" -> Name.asInstanceOf[js.Any],
-        "AppstreamAgentVersion" -> AppstreamAgentVersion.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Arn" -> Arn.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "CreatedTime" -> CreatedTime.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Description" -> Description.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DisplayName" -> DisplayName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DomainJoinInfo" -> DomainJoinInfo.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "EnableDefaultInternetAccess" -> EnableDefaultInternetAccess.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ImageArn" -> ImageArn.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ImageBuilderErrors" -> ImageBuilderErrors.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "InstanceType" -> InstanceType.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Platform" -> Platform.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "State" -> State.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "StateChangeReason" -> StateChangeReason.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "VpcConfig" -> VpcConfig.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "Name" -> Name.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ImageBuilder]
+      AppstreamAgentVersion.foreach(__v => __obj.update("AppstreamAgentVersion", __v.asInstanceOf[js.Any]))
+      Arn.foreach(__v => __obj.update("Arn", __v.asInstanceOf[js.Any]))
+      CreatedTime.foreach(__v => __obj.update("CreatedTime", __v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
+      DisplayName.foreach(__v => __obj.update("DisplayName", __v.asInstanceOf[js.Any]))
+      DomainJoinInfo.foreach(__v => __obj.update("DomainJoinInfo", __v.asInstanceOf[js.Any]))
+      EnableDefaultInternetAccess.foreach(__v => __obj.update("EnableDefaultInternetAccess", __v.asInstanceOf[js.Any]))
+      ImageArn.foreach(__v => __obj.update("ImageArn", __v.asInstanceOf[js.Any]))
+      ImageBuilderErrors.foreach(__v => __obj.update("ImageBuilderErrors", __v.asInstanceOf[js.Any]))
+      InstanceType.foreach(__v => __obj.update("InstanceType", __v.asInstanceOf[js.Any]))
+      Platform.foreach(__v => __obj.update("Platform", __v.asInstanceOf[js.Any]))
+      State.foreach(__v => __obj.update("State", __v.asInstanceOf[js.Any]))
+      StateChangeReason.foreach(__v => __obj.update("StateChangeReason", __v.asInstanceOf[js.Any]))
+      VpcConfig.foreach(__v => __obj.update("VpcConfig", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ImageBuilder]
     }
   }
 
@@ -2374,16 +1991,10 @@ package appstream {
         Code: js.UndefOr[ImageBuilderStateChangeReasonCode] = js.undefined,
         Message: js.UndefOr[String] = js.undefined
     ): ImageBuilderStateChangeReason = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Code" -> Code.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Message" -> Message.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ImageBuilderStateChangeReason]
+      val __obj = js.Dictionary.empty[js.Any]
+      Code.foreach(__v => __obj.update("Code", __v.asInstanceOf[js.Any]))
+      Message.foreach(__v => __obj.update("Message", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ImageBuilderStateChangeReason]
     }
   }
 
@@ -2408,16 +2019,10 @@ package appstream {
         allowFleet: js.UndefOr[BooleanObject] = js.undefined,
         allowImageBuilder: js.UndefOr[BooleanObject] = js.undefined
     ): ImagePermissions = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "allowFleet" -> allowFleet.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "allowImageBuilder" -> allowImageBuilder.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ImagePermissions]
+      val __obj = js.Dictionary.empty[js.Any]
+      allowFleet.foreach(__v => __obj.update("allowFleet", __v.asInstanceOf[js.Any]))
+      allowImageBuilder.foreach(__v => __obj.update("allowImageBuilder", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ImagePermissions]
     }
   }
 
@@ -2445,16 +2050,10 @@ package appstream {
         Code: js.UndefOr[ImageStateChangeReasonCode] = js.undefined,
         Message: js.UndefOr[String] = js.undefined
     ): ImageStateChangeReason = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Code" -> Code.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Message" -> Message.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ImageStateChangeReason]
+      val __obj = js.Dictionary.empty[js.Any]
+      Code.foreach(__v => __obj.update("Code", __v.asInstanceOf[js.Any]))
+      Message.foreach(__v => __obj.update("Message", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ImageStateChangeReason]
     }
   }
 
@@ -2477,14 +2076,12 @@ package appstream {
         StackName: String,
         NextToken: js.UndefOr[String] = js.undefined
     ): ListAssociatedFleetsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "StackName" -> StackName.asInstanceOf[js.Any],
-        "NextToken" -> NextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "StackName" -> StackName.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListAssociatedFleetsRequest]
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListAssociatedFleetsRequest]
     }
   }
 
@@ -2499,16 +2096,10 @@ package appstream {
         Names: js.UndefOr[StringList] = js.undefined,
         NextToken: js.UndefOr[String] = js.undefined
     ): ListAssociatedFleetsResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Names" -> Names.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NextToken" -> NextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListAssociatedFleetsResult]
+      val __obj = js.Dictionary.empty[js.Any]
+      Names.foreach(__v => __obj.update("Names", __v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListAssociatedFleetsResult]
     }
   }
 
@@ -2523,14 +2114,12 @@ package appstream {
         FleetName: String,
         NextToken: js.UndefOr[String] = js.undefined
     ): ListAssociatedStacksRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "FleetName" -> FleetName.asInstanceOf[js.Any],
-        "NextToken" -> NextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "FleetName" -> FleetName.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListAssociatedStacksRequest]
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListAssociatedStacksRequest]
     }
   }
 
@@ -2545,16 +2134,10 @@ package appstream {
         Names: js.UndefOr[StringList] = js.undefined,
         NextToken: js.UndefOr[String] = js.undefined
     ): ListAssociatedStacksResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Names" -> Names.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NextToken" -> NextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListAssociatedStacksResult]
+      val __obj = js.Dictionary.empty[js.Any]
+      Names.foreach(__v => __obj.update("Names", __v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListAssociatedStacksResult]
     }
   }
 
@@ -2567,11 +2150,11 @@ package appstream {
     def apply(
         ResourceArn: Arn
     ): ListTagsForResourceRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListTagsForResourceRequest]
+      __obj.asInstanceOf[ListTagsForResourceRequest]
     }
   }
 
@@ -2584,13 +2167,9 @@ package appstream {
     def apply(
         Tags: js.UndefOr[Tags] = js.undefined
     ): ListTagsForResourceResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Tags" -> Tags.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListTagsForResourceResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListTagsForResourceResponse]
     }
   }
 
@@ -2615,16 +2194,10 @@ package appstream {
         EniId: js.UndefOr[String] = js.undefined,
         EniPrivateIpAddress: js.UndefOr[String] = js.undefined
     ): NetworkAccessConfiguration = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "EniId" -> EniId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "EniPrivateIpAddress" -> EniPrivateIpAddress.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[NetworkAccessConfiguration]
+      val __obj = js.Dictionary.empty[js.Any]
+      EniId.foreach(__v => __obj.update("EniId", __v.asInstanceOf[js.Any]))
+      EniPrivateIpAddress.foreach(__v => __obj.update("EniPrivateIpAddress", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[NetworkAccessConfiguration]
     }
   }
 
@@ -2657,19 +2230,11 @@ package appstream {
         ErrorMessage: js.UndefOr[String] = js.undefined,
         ErrorTimestamp: js.UndefOr[Timestamp] = js.undefined
     ): ResourceError = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ErrorCode" -> ErrorCode.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ErrorMessage" -> ErrorMessage.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ErrorTimestamp" -> ErrorTimestamp.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ResourceError]
+      val __obj = js.Dictionary.empty[js.Any]
+      ErrorCode.foreach(__v => __obj.update("ErrorCode", __v.asInstanceOf[js.Any]))
+      ErrorMessage.foreach(__v => __obj.update("ErrorMessage", __v.asInstanceOf[js.Any]))
+      ErrorTimestamp.foreach(__v => __obj.update("ErrorTimestamp", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ResourceError]
     }
   }
 
@@ -2687,12 +2252,12 @@ package appstream {
         AccountName: AccountName,
         AccountPassword: AccountPassword
     ): ServiceAccountCredentials = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "AccountName"     -> AccountName.asInstanceOf[js.Any],
         "AccountPassword" -> AccountPassword.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ServiceAccountCredentials]
+      __obj.asInstanceOf[ServiceAccountCredentials]
     }
   }
 
@@ -2726,30 +2291,20 @@ package appstream {
         NetworkAccessConfiguration: js.UndefOr[NetworkAccessConfiguration] = js.undefined,
         StartTime: js.UndefOr[Timestamp] = js.undefined
     ): Session = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "FleetName" -> FleetName.asInstanceOf[js.Any],
         "Id"        -> Id.asInstanceOf[js.Any],
         "StackName" -> StackName.asInstanceOf[js.Any],
         "State"     -> State.asInstanceOf[js.Any],
-        "UserId"    -> UserId.asInstanceOf[js.Any],
-        "AuthenticationType" -> AuthenticationType.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ConnectionState" -> ConnectionState.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MaxExpirationTime" -> MaxExpirationTime.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NetworkAccessConfiguration" -> NetworkAccessConfiguration.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "StartTime" -> StartTime.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "UserId"    -> UserId.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Session]
+      AuthenticationType.foreach(__v => __obj.update("AuthenticationType", __v.asInstanceOf[js.Any]))
+      ConnectionState.foreach(__v => __obj.update("ConnectionState", __v.asInstanceOf[js.Any]))
+      MaxExpirationTime.foreach(__v => __obj.update("MaxExpirationTime", __v.asInstanceOf[js.Any]))
+      NetworkAccessConfiguration.foreach(__v => __obj.update("NetworkAccessConfiguration", __v.asInstanceOf[js.Any]))
+      StartTime.foreach(__v => __obj.update("StartTime", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Session]
     }
   }
 
@@ -2782,12 +2337,12 @@ package appstream {
         imagePermissions: ImagePermissions,
         sharedAccountId: AwsAccountId
     ): SharedImagePermissions = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "imagePermissions" -> imagePermissions.asInstanceOf[js.Any],
         "sharedAccountId"  -> sharedAccountId.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SharedImagePermissions]
+      __obj.asInstanceOf[SharedImagePermissions]
     }
   }
 
@@ -2823,41 +2378,21 @@ package appstream {
         StorageConnectors: js.UndefOr[StorageConnectorList] = js.undefined,
         UserSettings: js.UndefOr[UserSettingList] = js.undefined
     ): Stack = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Name" -> Name.asInstanceOf[js.Any],
-        "ApplicationSettings" -> ApplicationSettings.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Arn" -> Arn.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "CreatedTime" -> CreatedTime.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Description" -> Description.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DisplayName" -> DisplayName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "FeedbackURL" -> FeedbackURL.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "RedirectURL" -> RedirectURL.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "StackErrors" -> StackErrors.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "StorageConnectors" -> StorageConnectors.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "UserSettings" -> UserSettings.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "Name" -> Name.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Stack]
+      ApplicationSettings.foreach(__v => __obj.update("ApplicationSettings", __v.asInstanceOf[js.Any]))
+      Arn.foreach(__v => __obj.update("Arn", __v.asInstanceOf[js.Any]))
+      CreatedTime.foreach(__v => __obj.update("CreatedTime", __v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
+      DisplayName.foreach(__v => __obj.update("DisplayName", __v.asInstanceOf[js.Any]))
+      FeedbackURL.foreach(__v => __obj.update("FeedbackURL", __v.asInstanceOf[js.Any]))
+      RedirectURL.foreach(__v => __obj.update("RedirectURL", __v.asInstanceOf[js.Any]))
+      StackErrors.foreach(__v => __obj.update("StackErrors", __v.asInstanceOf[js.Any]))
+      StorageConnectors.foreach(__v => __obj.update("StorageConnectors", __v.asInstanceOf[js.Any]))
+      UserSettings.foreach(__v => __obj.update("UserSettings", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Stack]
     }
   }
 
@@ -2897,16 +2432,10 @@ package appstream {
         ErrorCode: js.UndefOr[StackErrorCode] = js.undefined,
         ErrorMessage: js.UndefOr[String] = js.undefined
     ): StackError = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ErrorCode" -> ErrorCode.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ErrorMessage" -> ErrorMessage.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StackError]
+      val __obj = js.Dictionary.empty[js.Any]
+      ErrorCode.foreach(__v => __obj.update("ErrorCode", __v.asInstanceOf[js.Any]))
+      ErrorMessage.foreach(__v => __obj.update("ErrorMessage", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[StackError]
     }
   }
 
@@ -2926,11 +2455,11 @@ package appstream {
     def apply(
         Name: String
     ): StartFleetRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "Name" -> Name.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StartFleetRequest]
+      __obj.asInstanceOf[StartFleetRequest]
     }
   }
 
@@ -2940,10 +2469,9 @@ package appstream {
   object StartFleetResult {
     def apply(
         ): StartFleetResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary.empty[js.Any]
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StartFleetResult]
+      __obj.asInstanceOf[StartFleetResult]
     }
   }
 
@@ -2958,14 +2486,12 @@ package appstream {
         Name: String,
         AppstreamAgentVersion: js.UndefOr[AppstreamAgentVersion] = js.undefined
     ): StartImageBuilderRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Name" -> Name.asInstanceOf[js.Any],
-        "AppstreamAgentVersion" -> AppstreamAgentVersion.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "Name" -> Name.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StartImageBuilderRequest]
+      AppstreamAgentVersion.foreach(__v => __obj.update("AppstreamAgentVersion", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[StartImageBuilderRequest]
     }
   }
 
@@ -2978,13 +2504,9 @@ package appstream {
     def apply(
         ImageBuilder: js.UndefOr[ImageBuilder] = js.undefined
     ): StartImageBuilderResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ImageBuilder" -> ImageBuilder.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StartImageBuilderResult]
+      val __obj = js.Dictionary.empty[js.Any]
+      ImageBuilder.foreach(__v => __obj.update("ImageBuilder", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[StartImageBuilderResult]
     }
   }
 
@@ -2997,11 +2519,11 @@ package appstream {
     def apply(
         Name: String
     ): StopFleetRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "Name" -> Name.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StopFleetRequest]
+      __obj.asInstanceOf[StopFleetRequest]
     }
   }
 
@@ -3011,10 +2533,9 @@ package appstream {
   object StopFleetResult {
     def apply(
         ): StopFleetResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary.empty[js.Any]
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StopFleetResult]
+      __obj.asInstanceOf[StopFleetResult]
     }
   }
 
@@ -3027,11 +2548,11 @@ package appstream {
     def apply(
         Name: String
     ): StopImageBuilderRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "Name" -> Name.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StopImageBuilderRequest]
+      __obj.asInstanceOf[StopImageBuilderRequest]
     }
   }
 
@@ -3044,13 +2565,9 @@ package appstream {
     def apply(
         ImageBuilder: js.UndefOr[ImageBuilder] = js.undefined
     ): StopImageBuilderResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ImageBuilder" -> ImageBuilder.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StopImageBuilderResult]
+      val __obj = js.Dictionary.empty[js.Any]
+      ImageBuilder.foreach(__v => __obj.update("ImageBuilder", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[StopImageBuilderResult]
     }
   }
 
@@ -3070,17 +2587,13 @@ package appstream {
         Domains: js.UndefOr[DomainList] = js.undefined,
         ResourceIdentifier: js.UndefOr[ResourceIdentifier] = js.undefined
     ): StorageConnector = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ConnectorType" -> ConnectorType.asInstanceOf[js.Any],
-        "Domains" -> Domains.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ResourceIdentifier" -> ResourceIdentifier.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "ConnectorType" -> ConnectorType.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StorageConnector]
+      Domains.foreach(__v => __obj.update("Domains", __v.asInstanceOf[js.Any]))
+      ResourceIdentifier.foreach(__v => __obj.update("ResourceIdentifier", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[StorageConnector]
     }
   }
 
@@ -3106,12 +2619,12 @@ package appstream {
         ResourceArn: Arn,
         Tags: Tags
     ): TagResourceRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any],
         "Tags"        -> Tags.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[TagResourceRequest]
+      __obj.asInstanceOf[TagResourceRequest]
     }
   }
 
@@ -3121,10 +2634,9 @@ package appstream {
   object TagResourceResponse {
     def apply(
         ): TagResourceResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary.empty[js.Any]
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[TagResourceResponse]
+      __obj.asInstanceOf[TagResourceResponse]
     }
   }
 
@@ -3139,12 +2651,12 @@ package appstream {
         ResourceArn: Arn,
         TagKeys: TagKeyList
     ): UntagResourceRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any],
         "TagKeys"     -> TagKeys.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UntagResourceRequest]
+      __obj.asInstanceOf[UntagResourceRequest]
     }
   }
 
@@ -3154,10 +2666,9 @@ package appstream {
   object UntagResourceResponse {
     def apply(
         ): UntagResourceResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary.empty[js.Any]
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UntagResourceResponse]
+      __obj.asInstanceOf[UntagResourceResponse]
     }
   }
 
@@ -3174,17 +2685,15 @@ package appstream {
         OrganizationalUnitDistinguishedNames: js.UndefOr[OrganizationalUnitDistinguishedNamesList] = js.undefined,
         ServiceAccountCredentials: js.UndefOr[ServiceAccountCredentials] = js.undefined
     ): UpdateDirectoryConfigRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "DirectoryName" -> DirectoryName.asInstanceOf[js.Any],
-        "OrganizationalUnitDistinguishedNames" -> OrganizationalUnitDistinguishedNames.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ServiceAccountCredentials" -> ServiceAccountCredentials.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "DirectoryName" -> DirectoryName.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateDirectoryConfigRequest]
+      OrganizationalUnitDistinguishedNames.foreach(
+        __v => __obj.update("OrganizationalUnitDistinguishedNames", __v.asInstanceOf[js.Any])
+      )
+      ServiceAccountCredentials.foreach(__v => __obj.update("ServiceAccountCredentials", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateDirectoryConfigRequest]
     }
   }
 
@@ -3197,13 +2706,9 @@ package appstream {
     def apply(
         DirectoryConfig: js.UndefOr[DirectoryConfig] = js.undefined
     ): UpdateDirectoryConfigResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "DirectoryConfig" -> DirectoryConfig.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateDirectoryConfigResult]
+      val __obj = js.Dictionary.empty[js.Any]
+      DirectoryConfig.foreach(__v => __obj.update("DirectoryConfig", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateDirectoryConfigResult]
     }
   }
 
@@ -3242,52 +2747,22 @@ package appstream {
         Name: js.UndefOr[String] = js.undefined,
         VpcConfig: js.UndefOr[VpcConfig] = js.undefined
     ): UpdateFleetRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "AttributesToDelete" -> AttributesToDelete.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ComputeCapacity" -> ComputeCapacity.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DeleteVpcConfig" -> DeleteVpcConfig.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Description" -> Description.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DisconnectTimeoutInSeconds" -> DisconnectTimeoutInSeconds.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DisplayName" -> DisplayName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DomainJoinInfo" -> DomainJoinInfo.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "EnableDefaultInternetAccess" -> EnableDefaultInternetAccess.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ImageArn" -> ImageArn.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ImageName" -> ImageName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "InstanceType" -> InstanceType.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MaxUserDurationInSeconds" -> MaxUserDurationInSeconds.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Name" -> Name.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "VpcConfig" -> VpcConfig.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateFleetRequest]
+      val __obj = js.Dictionary.empty[js.Any]
+      AttributesToDelete.foreach(__v => __obj.update("AttributesToDelete", __v.asInstanceOf[js.Any]))
+      ComputeCapacity.foreach(__v => __obj.update("ComputeCapacity", __v.asInstanceOf[js.Any]))
+      DeleteVpcConfig.foreach(__v => __obj.update("DeleteVpcConfig", __v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
+      DisconnectTimeoutInSeconds.foreach(__v => __obj.update("DisconnectTimeoutInSeconds", __v.asInstanceOf[js.Any]))
+      DisplayName.foreach(__v => __obj.update("DisplayName", __v.asInstanceOf[js.Any]))
+      DomainJoinInfo.foreach(__v => __obj.update("DomainJoinInfo", __v.asInstanceOf[js.Any]))
+      EnableDefaultInternetAccess.foreach(__v => __obj.update("EnableDefaultInternetAccess", __v.asInstanceOf[js.Any]))
+      ImageArn.foreach(__v => __obj.update("ImageArn", __v.asInstanceOf[js.Any]))
+      ImageName.foreach(__v => __obj.update("ImageName", __v.asInstanceOf[js.Any]))
+      InstanceType.foreach(__v => __obj.update("InstanceType", __v.asInstanceOf[js.Any]))
+      MaxUserDurationInSeconds.foreach(__v => __obj.update("MaxUserDurationInSeconds", __v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
+      VpcConfig.foreach(__v => __obj.update("VpcConfig", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateFleetRequest]
     }
   }
 
@@ -3300,13 +2775,9 @@ package appstream {
     def apply(
         Fleet: js.UndefOr[Fleet] = js.undefined
     ): UpdateFleetResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Fleet" -> Fleet.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateFleetResult]
+      val __obj = js.Dictionary.empty[js.Any]
+      Fleet.foreach(__v => __obj.update("Fleet", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateFleetResult]
     }
   }
 
@@ -3323,13 +2794,13 @@ package appstream {
         Name: Name,
         SharedAccountId: AwsAccountId
     ): UpdateImagePermissionsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ImagePermissions" -> ImagePermissions.asInstanceOf[js.Any],
         "Name"             -> Name.asInstanceOf[js.Any],
         "SharedAccountId"  -> SharedAccountId.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateImagePermissionsRequest]
+      __obj.asInstanceOf[UpdateImagePermissionsRequest]
     }
   }
 
@@ -3339,10 +2810,9 @@ package appstream {
   object UpdateImagePermissionsResult {
     def apply(
         ): UpdateImagePermissionsResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary.empty[js.Any]
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateImagePermissionsResult]
+      __obj.asInstanceOf[UpdateImagePermissionsResult]
     }
   }
 
@@ -3373,38 +2843,20 @@ package appstream {
         StorageConnectors: js.UndefOr[StorageConnectorList] = js.undefined,
         UserSettings: js.UndefOr[UserSettingList] = js.undefined
     ): UpdateStackRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Name" -> Name.asInstanceOf[js.Any],
-        "ApplicationSettings" -> ApplicationSettings.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "AttributesToDelete" -> AttributesToDelete.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DeleteStorageConnectors" -> DeleteStorageConnectors.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Description" -> Description.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DisplayName" -> DisplayName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "FeedbackURL" -> FeedbackURL.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "RedirectURL" -> RedirectURL.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "StorageConnectors" -> StorageConnectors.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "UserSettings" -> UserSettings.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "Name" -> Name.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateStackRequest]
+      ApplicationSettings.foreach(__v => __obj.update("ApplicationSettings", __v.asInstanceOf[js.Any]))
+      AttributesToDelete.foreach(__v => __obj.update("AttributesToDelete", __v.asInstanceOf[js.Any]))
+      DeleteStorageConnectors.foreach(__v => __obj.update("DeleteStorageConnectors", __v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
+      DisplayName.foreach(__v => __obj.update("DisplayName", __v.asInstanceOf[js.Any]))
+      FeedbackURL.foreach(__v => __obj.update("FeedbackURL", __v.asInstanceOf[js.Any]))
+      RedirectURL.foreach(__v => __obj.update("RedirectURL", __v.asInstanceOf[js.Any]))
+      StorageConnectors.foreach(__v => __obj.update("StorageConnectors", __v.asInstanceOf[js.Any]))
+      UserSettings.foreach(__v => __obj.update("UserSettings", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateStackRequest]
     }
   }
 
@@ -3417,13 +2869,9 @@ package appstream {
     def apply(
         Stack: js.UndefOr[Stack] = js.undefined
     ): UpdateStackResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Stack" -> Stack.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateStackResult]
+      val __obj = js.Dictionary.empty[js.Any]
+      Stack.foreach(__v => __obj.update("Stack", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateStackResult]
     }
   }
 
@@ -3453,32 +2901,18 @@ package appstream {
         Status: js.UndefOr[String] = js.undefined,
         UserName: js.UndefOr[Username] = js.undefined
     ): User = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "AuthenticationType" -> AuthenticationType.asInstanceOf[js.Any],
-        "Arn" -> Arn.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "CreatedTime" -> CreatedTime.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Enabled" -> Enabled.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "FirstName" -> FirstName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "LastName" -> LastName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Status" -> Status.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "UserName" -> UserName.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "AuthenticationType" -> AuthenticationType.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[User]
+      Arn.foreach(__v => __obj.update("Arn", __v.asInstanceOf[js.Any]))
+      CreatedTime.foreach(__v => __obj.update("CreatedTime", __v.asInstanceOf[js.Any]))
+      Enabled.foreach(__v => __obj.update("Enabled", __v.asInstanceOf[js.Any]))
+      FirstName.foreach(__v => __obj.update("FirstName", __v.asInstanceOf[js.Any]))
+      LastName.foreach(__v => __obj.update("LastName", __v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.update("Status", __v.asInstanceOf[js.Any]))
+      UserName.foreach(__v => __obj.update("UserName", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[User]
     }
   }
 
@@ -3496,12 +2930,12 @@ package appstream {
         Action: Action,
         Permission: Permission
     ): UserSetting = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "Action"     -> Action.asInstanceOf[js.Any],
         "Permission" -> Permission.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UserSetting]
+      __obj.asInstanceOf[UserSetting]
     }
   }
 
@@ -3523,16 +2957,14 @@ package appstream {
         UserName: Username,
         SendEmailNotification: js.UndefOr[Boolean] = js.undefined
     ): UserStackAssociation = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "AuthenticationType" -> AuthenticationType.asInstanceOf[js.Any],
         "StackName"          -> StackName.asInstanceOf[js.Any],
-        "UserName"           -> UserName.asInstanceOf[js.Any],
-        "SendEmailNotification" -> SendEmailNotification.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "UserName"           -> UserName.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UserStackAssociation]
+      SendEmailNotification.foreach(__v => __obj.update("SendEmailNotification", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UserStackAssociation]
     }
   }
 
@@ -3552,19 +2984,11 @@ package appstream {
         ErrorMessage: js.UndefOr[String] = js.undefined,
         UserStackAssociation: js.UndefOr[UserStackAssociation] = js.undefined
     ): UserStackAssociationError = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ErrorCode" -> ErrorCode.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ErrorMessage" -> ErrorMessage.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "UserStackAssociation" -> UserStackAssociation.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UserStackAssociationError]
+      val __obj = js.Dictionary.empty[js.Any]
+      ErrorCode.foreach(__v => __obj.update("ErrorCode", __v.asInstanceOf[js.Any]))
+      ErrorMessage.foreach(__v => __obj.update("ErrorMessage", __v.asInstanceOf[js.Any]))
+      UserStackAssociation.foreach(__v => __obj.update("UserStackAssociation", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UserStackAssociationError]
     }
   }
 
@@ -3598,16 +3022,10 @@ package appstream {
         SecurityGroupIds: js.UndefOr[SecurityGroupIdList] = js.undefined,
         SubnetIds: js.UndefOr[SubnetIdList] = js.undefined
     ): VpcConfig = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "SecurityGroupIds" -> SecurityGroupIds.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SubnetIds" -> SubnetIds.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[VpcConfig]
+      val __obj = js.Dictionary.empty[js.Any]
+      SecurityGroupIds.foreach(__v => __obj.update("SecurityGroupIds", __v.asInstanceOf[js.Any]))
+      SubnetIds.foreach(__v => __obj.update("SubnetIds", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[VpcConfig]
     }
   }
 }

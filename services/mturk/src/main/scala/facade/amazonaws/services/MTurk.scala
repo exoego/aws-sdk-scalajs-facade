@@ -234,14 +234,12 @@ package mturk {
         QualificationRequestId: String,
         IntegerValue: js.UndefOr[Int] = js.undefined
     ): AcceptQualificationRequestRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "QualificationRequestId" -> QualificationRequestId.asInstanceOf[js.Any],
-        "IntegerValue" -> IntegerValue.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "QualificationRequestId" -> QualificationRequestId.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AcceptQualificationRequestRequest]
+      IntegerValue.foreach(__v => __obj.update("IntegerValue", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AcceptQualificationRequestRequest]
     }
   }
 
@@ -251,10 +249,9 @@ package mturk {
   object AcceptQualificationRequestResponse {
     def apply(
         ): AcceptQualificationRequestResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary.empty[js.Any]
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AcceptQualificationRequestResponse]
+      __obj.asInstanceOf[AcceptQualificationRequestResponse]
     }
   }
 
@@ -271,17 +268,13 @@ package mturk {
         OverrideRejection: js.UndefOr[Boolean] = js.undefined,
         RequesterFeedback: js.UndefOr[String] = js.undefined
     ): ApproveAssignmentRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "AssignmentId" -> AssignmentId.asInstanceOf[js.Any],
-        "OverrideRejection" -> OverrideRejection.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "RequesterFeedback" -> RequesterFeedback.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "AssignmentId" -> AssignmentId.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ApproveAssignmentRequest]
+      OverrideRejection.foreach(__v => __obj.update("OverrideRejection", __v.asInstanceOf[js.Any]))
+      RequesterFeedback.foreach(__v => __obj.update("RequesterFeedback", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ApproveAssignmentRequest]
     }
   }
 
@@ -291,10 +284,9 @@ package mturk {
   object ApproveAssignmentResponse {
     def apply(
         ): ApproveAssignmentResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary.empty[js.Any]
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ApproveAssignmentResponse]
+      __obj.asInstanceOf[ApproveAssignmentResponse]
     }
   }
 
@@ -332,46 +324,20 @@ package mturk {
         SubmitTime: js.UndefOr[Timestamp] = js.undefined,
         WorkerId: js.UndefOr[CustomerId] = js.undefined
     ): Assignment = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "AcceptTime" -> AcceptTime.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Answer" -> Answer.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ApprovalTime" -> ApprovalTime.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "AssignmentId" -> AssignmentId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "AssignmentStatus" -> AssignmentStatus.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "AutoApprovalTime" -> AutoApprovalTime.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Deadline" -> Deadline.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "HITId" -> HITId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "RejectionTime" -> RejectionTime.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "RequesterFeedback" -> RequesterFeedback.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SubmitTime" -> SubmitTime.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "WorkerId" -> WorkerId.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Assignment]
+      val __obj = js.Dictionary.empty[js.Any]
+      AcceptTime.foreach(__v => __obj.update("AcceptTime", __v.asInstanceOf[js.Any]))
+      Answer.foreach(__v => __obj.update("Answer", __v.asInstanceOf[js.Any]))
+      ApprovalTime.foreach(__v => __obj.update("ApprovalTime", __v.asInstanceOf[js.Any]))
+      AssignmentId.foreach(__v => __obj.update("AssignmentId", __v.asInstanceOf[js.Any]))
+      AssignmentStatus.foreach(__v => __obj.update("AssignmentStatus", __v.asInstanceOf[js.Any]))
+      AutoApprovalTime.foreach(__v => __obj.update("AutoApprovalTime", __v.asInstanceOf[js.Any]))
+      Deadline.foreach(__v => __obj.update("Deadline", __v.asInstanceOf[js.Any]))
+      HITId.foreach(__v => __obj.update("HITId", __v.asInstanceOf[js.Any]))
+      RejectionTime.foreach(__v => __obj.update("RejectionTime", __v.asInstanceOf[js.Any]))
+      RequesterFeedback.foreach(__v => __obj.update("RequesterFeedback", __v.asInstanceOf[js.Any]))
+      SubmitTime.foreach(__v => __obj.update("SubmitTime", __v.asInstanceOf[js.Any]))
+      WorkerId.foreach(__v => __obj.update("WorkerId", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Assignment]
     }
   }
 
@@ -398,18 +364,14 @@ package mturk {
         IntegerValue: js.UndefOr[Int] = js.undefined,
         SendNotification: js.UndefOr[Boolean] = js.undefined
     ): AssociateQualificationWithWorkerRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "QualificationTypeId" -> QualificationTypeId.asInstanceOf[js.Any],
-        "WorkerId"            -> WorkerId.asInstanceOf[js.Any],
-        "IntegerValue" -> IntegerValue.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SendNotification" -> SendNotification.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "WorkerId"            -> WorkerId.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AssociateQualificationWithWorkerRequest]
+      IntegerValue.foreach(__v => __obj.update("IntegerValue", __v.asInstanceOf[js.Any]))
+      SendNotification.foreach(__v => __obj.update("SendNotification", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AssociateQualificationWithWorkerRequest]
     }
   }
 
@@ -419,10 +381,9 @@ package mturk {
   object AssociateQualificationWithWorkerResponse {
     def apply(
         ): AssociateQualificationWithWorkerResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary.empty[js.Any]
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AssociateQualificationWithWorkerResponse]
+      __obj.asInstanceOf[AssociateQualificationWithWorkerResponse]
     }
   }
 
@@ -446,25 +407,13 @@ package mturk {
         Reason: js.UndefOr[String] = js.undefined,
         WorkerId: js.UndefOr[CustomerId] = js.undefined
     ): BonusPayment = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "AssignmentId" -> AssignmentId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "BonusAmount" -> BonusAmount.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "GrantTime" -> GrantTime.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Reason" -> Reason.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "WorkerId" -> WorkerId.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[BonusPayment]
+      val __obj = js.Dictionary.empty[js.Any]
+      AssignmentId.foreach(__v => __obj.update("AssignmentId", __v.asInstanceOf[js.Any]))
+      BonusAmount.foreach(__v => __obj.update("BonusAmount", __v.asInstanceOf[js.Any]))
+      GrantTime.foreach(__v => __obj.update("GrantTime", __v.asInstanceOf[js.Any]))
+      Reason.foreach(__v => __obj.update("Reason", __v.asInstanceOf[js.Any]))
+      WorkerId.foreach(__v => __obj.update("WorkerId", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[BonusPayment]
     }
   }
 
@@ -507,15 +456,13 @@ package mturk {
         NumberOfAdditionalAssignments: Int,
         UniqueRequestToken: js.UndefOr[IdempotencyToken] = js.undefined
     ): CreateAdditionalAssignmentsForHITRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "HITId"                         -> HITId.asInstanceOf[js.Any],
-        "NumberOfAdditionalAssignments" -> NumberOfAdditionalAssignments.asInstanceOf[js.Any],
-        "UniqueRequestToken" -> UniqueRequestToken.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "NumberOfAdditionalAssignments" -> NumberOfAdditionalAssignments.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateAdditionalAssignmentsForHITRequest]
+      UniqueRequestToken.foreach(__v => __obj.update("UniqueRequestToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateAdditionalAssignmentsForHITRequest]
     }
   }
 
@@ -525,10 +472,9 @@ package mturk {
   object CreateAdditionalAssignmentsForHITResponse {
     def apply(
         ): CreateAdditionalAssignmentsForHITResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary.empty[js.Any]
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateAdditionalAssignmentsForHITResponse]
+      __obj.asInstanceOf[CreateAdditionalAssignmentsForHITResponse]
     }
   }
 
@@ -571,48 +517,26 @@ package mturk {
         RequesterAnnotation: js.UndefOr[String] = js.undefined,
         UniqueRequestToken: js.UndefOr[IdempotencyToken] = js.undefined
     ): CreateHITRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "AssignmentDurationInSeconds" -> AssignmentDurationInSeconds.asInstanceOf[js.Any],
         "Description"                 -> Description.asInstanceOf[js.Any],
         "LifetimeInSeconds"           -> LifetimeInSeconds.asInstanceOf[js.Any],
         "Reward"                      -> Reward.asInstanceOf[js.Any],
-        "Title"                       -> Title.asInstanceOf[js.Any],
-        "AssignmentReviewPolicy" -> AssignmentReviewPolicy.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "AutoApprovalDelayInSeconds" -> AutoApprovalDelayInSeconds.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "HITLayoutId" -> HITLayoutId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "HITLayoutParameters" -> HITLayoutParameters.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "HITReviewPolicy" -> HITReviewPolicy.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Keywords" -> Keywords.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MaxAssignments" -> MaxAssignments.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "QualificationRequirements" -> QualificationRequirements.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Question" -> Question.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "RequesterAnnotation" -> RequesterAnnotation.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "UniqueRequestToken" -> UniqueRequestToken.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "Title"                       -> Title.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateHITRequest]
+      AssignmentReviewPolicy.foreach(__v => __obj.update("AssignmentReviewPolicy", __v.asInstanceOf[js.Any]))
+      AutoApprovalDelayInSeconds.foreach(__v => __obj.update("AutoApprovalDelayInSeconds", __v.asInstanceOf[js.Any]))
+      HITLayoutId.foreach(__v => __obj.update("HITLayoutId", __v.asInstanceOf[js.Any]))
+      HITLayoutParameters.foreach(__v => __obj.update("HITLayoutParameters", __v.asInstanceOf[js.Any]))
+      HITReviewPolicy.foreach(__v => __obj.update("HITReviewPolicy", __v.asInstanceOf[js.Any]))
+      Keywords.foreach(__v => __obj.update("Keywords", __v.asInstanceOf[js.Any]))
+      MaxAssignments.foreach(__v => __obj.update("MaxAssignments", __v.asInstanceOf[js.Any]))
+      QualificationRequirements.foreach(__v => __obj.update("QualificationRequirements", __v.asInstanceOf[js.Any]))
+      Question.foreach(__v => __obj.update("Question", __v.asInstanceOf[js.Any]))
+      RequesterAnnotation.foreach(__v => __obj.update("RequesterAnnotation", __v.asInstanceOf[js.Any]))
+      UniqueRequestToken.foreach(__v => __obj.update("UniqueRequestToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateHITRequest]
     }
   }
 
@@ -625,13 +549,9 @@ package mturk {
     def apply(
         HIT: js.UndefOr[HIT] = js.undefined
     ): CreateHITResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "HIT" -> HIT.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateHITResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      HIT.foreach(__v => __obj.update("HIT", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateHITResponse]
     }
   }
 
@@ -656,23 +576,17 @@ package mturk {
         Keywords: js.UndefOr[String] = js.undefined,
         QualificationRequirements: js.UndefOr[QualificationRequirementList] = js.undefined
     ): CreateHITTypeRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "AssignmentDurationInSeconds" -> AssignmentDurationInSeconds.asInstanceOf[js.Any],
         "Description"                 -> Description.asInstanceOf[js.Any],
         "Reward"                      -> Reward.asInstanceOf[js.Any],
-        "Title"                       -> Title.asInstanceOf[js.Any],
-        "AutoApprovalDelayInSeconds" -> AutoApprovalDelayInSeconds.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Keywords" -> Keywords.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "QualificationRequirements" -> QualificationRequirements.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "Title"                       -> Title.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateHITTypeRequest]
+      AutoApprovalDelayInSeconds.foreach(__v => __obj.update("AutoApprovalDelayInSeconds", __v.asInstanceOf[js.Any]))
+      Keywords.foreach(__v => __obj.update("Keywords", __v.asInstanceOf[js.Any]))
+      QualificationRequirements.foreach(__v => __obj.update("QualificationRequirements", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateHITTypeRequest]
     }
   }
 
@@ -685,13 +599,9 @@ package mturk {
     def apply(
         HITTypeId: js.UndefOr[EntityId] = js.undefined
     ): CreateHITTypeResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "HITTypeId" -> HITTypeId.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateHITTypeResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      HITTypeId.foreach(__v => __obj.update("HITTypeId", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateHITTypeResponse]
     }
   }
 
@@ -722,36 +632,20 @@ package mturk {
         RequesterAnnotation: js.UndefOr[String] = js.undefined,
         UniqueRequestToken: js.UndefOr[IdempotencyToken] = js.undefined
     ): CreateHITWithHITTypeRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "HITTypeId"         -> HITTypeId.asInstanceOf[js.Any],
-        "LifetimeInSeconds" -> LifetimeInSeconds.asInstanceOf[js.Any],
-        "AssignmentReviewPolicy" -> AssignmentReviewPolicy.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "HITLayoutId" -> HITLayoutId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "HITLayoutParameters" -> HITLayoutParameters.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "HITReviewPolicy" -> HITReviewPolicy.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MaxAssignments" -> MaxAssignments.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Question" -> Question.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "RequesterAnnotation" -> RequesterAnnotation.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "UniqueRequestToken" -> UniqueRequestToken.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "LifetimeInSeconds" -> LifetimeInSeconds.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateHITWithHITTypeRequest]
+      AssignmentReviewPolicy.foreach(__v => __obj.update("AssignmentReviewPolicy", __v.asInstanceOf[js.Any]))
+      HITLayoutId.foreach(__v => __obj.update("HITLayoutId", __v.asInstanceOf[js.Any]))
+      HITLayoutParameters.foreach(__v => __obj.update("HITLayoutParameters", __v.asInstanceOf[js.Any]))
+      HITReviewPolicy.foreach(__v => __obj.update("HITReviewPolicy", __v.asInstanceOf[js.Any]))
+      MaxAssignments.foreach(__v => __obj.update("MaxAssignments", __v.asInstanceOf[js.Any]))
+      Question.foreach(__v => __obj.update("Question", __v.asInstanceOf[js.Any]))
+      RequesterAnnotation.foreach(__v => __obj.update("RequesterAnnotation", __v.asInstanceOf[js.Any]))
+      UniqueRequestToken.foreach(__v => __obj.update("UniqueRequestToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateHITWithHITTypeRequest]
     }
   }
 
@@ -764,13 +658,9 @@ package mturk {
     def apply(
         HIT: js.UndefOr[HIT] = js.undefined
     ): CreateHITWithHITTypeResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "HIT" -> HIT.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateHITWithHITTypeResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      HIT.foreach(__v => __obj.update("HIT", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateHITWithHITTypeResponse]
     }
   }
 
@@ -801,34 +691,20 @@ package mturk {
         Test: js.UndefOr[String] = js.undefined,
         TestDurationInSeconds: js.UndefOr[Double] = js.undefined
     ): CreateQualificationTypeRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "Description"             -> Description.asInstanceOf[js.Any],
         "Name"                    -> Name.asInstanceOf[js.Any],
-        "QualificationTypeStatus" -> QualificationTypeStatus.asInstanceOf[js.Any],
-        "AnswerKey" -> AnswerKey.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "AutoGranted" -> AutoGranted.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "AutoGrantedValue" -> AutoGrantedValue.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Keywords" -> Keywords.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "RetryDelayInSeconds" -> RetryDelayInSeconds.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Test" -> Test.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "TestDurationInSeconds" -> TestDurationInSeconds.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "QualificationTypeStatus" -> QualificationTypeStatus.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateQualificationTypeRequest]
+      AnswerKey.foreach(__v => __obj.update("AnswerKey", __v.asInstanceOf[js.Any]))
+      AutoGranted.foreach(__v => __obj.update("AutoGranted", __v.asInstanceOf[js.Any]))
+      AutoGrantedValue.foreach(__v => __obj.update("AutoGrantedValue", __v.asInstanceOf[js.Any]))
+      Keywords.foreach(__v => __obj.update("Keywords", __v.asInstanceOf[js.Any]))
+      RetryDelayInSeconds.foreach(__v => __obj.update("RetryDelayInSeconds", __v.asInstanceOf[js.Any]))
+      Test.foreach(__v => __obj.update("Test", __v.asInstanceOf[js.Any]))
+      TestDurationInSeconds.foreach(__v => __obj.update("TestDurationInSeconds", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateQualificationTypeRequest]
     }
   }
 
@@ -841,13 +717,9 @@ package mturk {
     def apply(
         QualificationType: js.UndefOr[QualificationType] = js.undefined
     ): CreateQualificationTypeResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "QualificationType" -> QualificationType.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateQualificationTypeResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      QualificationType.foreach(__v => __obj.update("QualificationType", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateQualificationTypeResponse]
     }
   }
 
@@ -862,12 +734,12 @@ package mturk {
         Reason: String,
         WorkerId: CustomerId
     ): CreateWorkerBlockRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "Reason"   -> Reason.asInstanceOf[js.Any],
         "WorkerId" -> WorkerId.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateWorkerBlockRequest]
+      __obj.asInstanceOf[CreateWorkerBlockRequest]
     }
   }
 
@@ -877,10 +749,9 @@ package mturk {
   object CreateWorkerBlockResponse {
     def apply(
         ): CreateWorkerBlockResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary.empty[js.Any]
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateWorkerBlockResponse]
+      __obj.asInstanceOf[CreateWorkerBlockResponse]
     }
   }
 
@@ -893,11 +764,11 @@ package mturk {
     def apply(
         HITId: EntityId
     ): DeleteHITRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "HITId" -> HITId.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteHITRequest]
+      __obj.asInstanceOf[DeleteHITRequest]
     }
   }
 
@@ -907,10 +778,9 @@ package mturk {
   object DeleteHITResponse {
     def apply(
         ): DeleteHITResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary.empty[js.Any]
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteHITResponse]
+      __obj.asInstanceOf[DeleteHITResponse]
     }
   }
 
@@ -923,11 +793,11 @@ package mturk {
     def apply(
         QualificationTypeId: EntityId
     ): DeleteQualificationTypeRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "QualificationTypeId" -> QualificationTypeId.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteQualificationTypeRequest]
+      __obj.asInstanceOf[DeleteQualificationTypeRequest]
     }
   }
 
@@ -937,10 +807,9 @@ package mturk {
   object DeleteQualificationTypeResponse {
     def apply(
         ): DeleteQualificationTypeResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary.empty[js.Any]
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteQualificationTypeResponse]
+      __obj.asInstanceOf[DeleteQualificationTypeResponse]
     }
   }
 
@@ -955,14 +824,12 @@ package mturk {
         WorkerId: CustomerId,
         Reason: js.UndefOr[String] = js.undefined
     ): DeleteWorkerBlockRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "WorkerId" -> WorkerId.asInstanceOf[js.Any],
-        "Reason" -> Reason.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "WorkerId" -> WorkerId.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteWorkerBlockRequest]
+      Reason.foreach(__v => __obj.update("Reason", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DeleteWorkerBlockRequest]
     }
   }
 
@@ -972,10 +839,9 @@ package mturk {
   object DeleteWorkerBlockResponse {
     def apply(
         ): DeleteWorkerBlockResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary.empty[js.Any]
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteWorkerBlockResponse]
+      __obj.asInstanceOf[DeleteWorkerBlockResponse]
     }
   }
 
@@ -992,17 +858,13 @@ package mturk {
         WorkerId: CustomerId,
         Reason: js.UndefOr[String] = js.undefined
     ): DisassociateQualificationFromWorkerRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "QualificationTypeId" -> QualificationTypeId.asInstanceOf[js.Any],
-        "WorkerId"            -> WorkerId.asInstanceOf[js.Any],
-        "Reason" -> Reason.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "WorkerId"            -> WorkerId.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal
-        .applyDynamicNamed("apply")(_fields: _*)
-        .asInstanceOf[DisassociateQualificationFromWorkerRequest]
+      Reason.foreach(__v => __obj.update("Reason", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DisassociateQualificationFromWorkerRequest]
     }
   }
 
@@ -1012,12 +874,9 @@ package mturk {
   object DisassociateQualificationFromWorkerResponse {
     def apply(
         ): DisassociateQualificationFromWorkerResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary.empty[js.Any]
 
-      js.Dynamic.literal
-        .applyDynamicNamed("apply")(_fields: _*)
-        .asInstanceOf[DisassociateQualificationFromWorkerResponse]
+      __obj.asInstanceOf[DisassociateQualificationFromWorkerResponse]
     }
   }
 
@@ -1057,10 +916,9 @@ package mturk {
   object GetAccountBalanceRequest {
     def apply(
         ): GetAccountBalanceRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary.empty[js.Any]
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetAccountBalanceRequest]
+      __obj.asInstanceOf[GetAccountBalanceRequest]
     }
   }
 
@@ -1075,16 +933,10 @@ package mturk {
         AvailableBalance: js.UndefOr[CurrencyAmount] = js.undefined,
         OnHoldBalance: js.UndefOr[CurrencyAmount] = js.undefined
     ): GetAccountBalanceResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "AvailableBalance" -> AvailableBalance.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "OnHoldBalance" -> OnHoldBalance.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetAccountBalanceResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      AvailableBalance.foreach(__v => __obj.update("AvailableBalance", __v.asInstanceOf[js.Any]))
+      OnHoldBalance.foreach(__v => __obj.update("OnHoldBalance", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetAccountBalanceResponse]
     }
   }
 
@@ -1097,11 +949,11 @@ package mturk {
     def apply(
         AssignmentId: EntityId
     ): GetAssignmentRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "AssignmentId" -> AssignmentId.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetAssignmentRequest]
+      __obj.asInstanceOf[GetAssignmentRequest]
     }
   }
 
@@ -1116,16 +968,10 @@ package mturk {
         Assignment: js.UndefOr[Assignment] = js.undefined,
         HIT: js.UndefOr[HIT] = js.undefined
     ): GetAssignmentResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Assignment" -> Assignment.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "HIT" -> HIT.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetAssignmentResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      Assignment.foreach(__v => __obj.update("Assignment", __v.asInstanceOf[js.Any]))
+      HIT.foreach(__v => __obj.update("HIT", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetAssignmentResponse]
     }
   }
 
@@ -1140,12 +986,12 @@ package mturk {
         AssignmentId: EntityId,
         QuestionIdentifier: String
     ): GetFileUploadURLRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "AssignmentId"       -> AssignmentId.asInstanceOf[js.Any],
         "QuestionIdentifier" -> QuestionIdentifier.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetFileUploadURLRequest]
+      __obj.asInstanceOf[GetFileUploadURLRequest]
     }
   }
 
@@ -1158,13 +1004,9 @@ package mturk {
     def apply(
         FileUploadURL: js.UndefOr[String] = js.undefined
     ): GetFileUploadURLResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "FileUploadURL" -> FileUploadURL.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetFileUploadURLResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      FileUploadURL.foreach(__v => __obj.update("FileUploadURL", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetFileUploadURLResponse]
     }
   }
 
@@ -1177,11 +1019,11 @@ package mturk {
     def apply(
         HITId: EntityId
     ): GetHITRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "HITId" -> HITId.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetHITRequest]
+      __obj.asInstanceOf[GetHITRequest]
     }
   }
 
@@ -1194,13 +1036,9 @@ package mturk {
     def apply(
         HIT: js.UndefOr[HIT] = js.undefined
     ): GetHITResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "HIT" -> HIT.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetHITResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      HIT.foreach(__v => __obj.update("HIT", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetHITResponse]
     }
   }
 
@@ -1215,12 +1053,12 @@ package mturk {
         QualificationTypeId: EntityId,
         WorkerId: CustomerId
     ): GetQualificationScoreRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "QualificationTypeId" -> QualificationTypeId.asInstanceOf[js.Any],
         "WorkerId"            -> WorkerId.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetQualificationScoreRequest]
+      __obj.asInstanceOf[GetQualificationScoreRequest]
     }
   }
 
@@ -1233,13 +1071,9 @@ package mturk {
     def apply(
         Qualification: js.UndefOr[Qualification] = js.undefined
     ): GetQualificationScoreResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Qualification" -> Qualification.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetQualificationScoreResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      Qualification.foreach(__v => __obj.update("Qualification", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetQualificationScoreResponse]
     }
   }
 
@@ -1252,11 +1086,11 @@ package mturk {
     def apply(
         QualificationTypeId: EntityId
     ): GetQualificationTypeRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "QualificationTypeId" -> QualificationTypeId.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetQualificationTypeRequest]
+      __obj.asInstanceOf[GetQualificationTypeRequest]
     }
   }
 
@@ -1269,13 +1103,9 @@ package mturk {
     def apply(
         QualificationType: js.UndefOr[QualificationType] = js.undefined
     ): GetQualificationTypeResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "QualificationType" -> QualificationType.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetQualificationTypeResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      QualificationType.foreach(__v => __obj.update("QualificationType", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetQualificationTypeResponse]
     }
   }
 
@@ -1331,73 +1161,33 @@ package mturk {
         Reward: js.UndefOr[CurrencyAmount] = js.undefined,
         Title: js.UndefOr[String] = js.undefined
     ): HIT = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "AssignmentDurationInSeconds" -> AssignmentDurationInSeconds.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "AutoApprovalDelayInSeconds" -> AutoApprovalDelayInSeconds.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "CreationTime" -> CreationTime.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Description" -> Description.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Expiration" -> Expiration.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "HITGroupId" -> HITGroupId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "HITId" -> HITId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "HITLayoutId" -> HITLayoutId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "HITReviewStatus" -> HITReviewStatus.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "HITStatus" -> HITStatus.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "HITTypeId" -> HITTypeId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Keywords" -> Keywords.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MaxAssignments" -> MaxAssignments.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NumberOfAssignmentsAvailable" -> NumberOfAssignmentsAvailable.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NumberOfAssignmentsCompleted" -> NumberOfAssignmentsCompleted.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NumberOfAssignmentsPending" -> NumberOfAssignmentsPending.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "QualificationRequirements" -> QualificationRequirements.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Question" -> Question.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "RequesterAnnotation" -> RequesterAnnotation.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Reward" -> Reward.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Title" -> Title.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[HIT]
+      val __obj = js.Dictionary.empty[js.Any]
+      AssignmentDurationInSeconds.foreach(__v => __obj.update("AssignmentDurationInSeconds", __v.asInstanceOf[js.Any]))
+      AutoApprovalDelayInSeconds.foreach(__v => __obj.update("AutoApprovalDelayInSeconds", __v.asInstanceOf[js.Any]))
+      CreationTime.foreach(__v => __obj.update("CreationTime", __v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
+      Expiration.foreach(__v => __obj.update("Expiration", __v.asInstanceOf[js.Any]))
+      HITGroupId.foreach(__v => __obj.update("HITGroupId", __v.asInstanceOf[js.Any]))
+      HITId.foreach(__v => __obj.update("HITId", __v.asInstanceOf[js.Any]))
+      HITLayoutId.foreach(__v => __obj.update("HITLayoutId", __v.asInstanceOf[js.Any]))
+      HITReviewStatus.foreach(__v => __obj.update("HITReviewStatus", __v.asInstanceOf[js.Any]))
+      HITStatus.foreach(__v => __obj.update("HITStatus", __v.asInstanceOf[js.Any]))
+      HITTypeId.foreach(__v => __obj.update("HITTypeId", __v.asInstanceOf[js.Any]))
+      Keywords.foreach(__v => __obj.update("Keywords", __v.asInstanceOf[js.Any]))
+      MaxAssignments.foreach(__v => __obj.update("MaxAssignments", __v.asInstanceOf[js.Any]))
+      NumberOfAssignmentsAvailable.foreach(
+        __v => __obj.update("NumberOfAssignmentsAvailable", __v.asInstanceOf[js.Any])
+      )
+      NumberOfAssignmentsCompleted.foreach(
+        __v => __obj.update("NumberOfAssignmentsCompleted", __v.asInstanceOf[js.Any])
+      )
+      NumberOfAssignmentsPending.foreach(__v => __obj.update("NumberOfAssignmentsPending", __v.asInstanceOf[js.Any]))
+      QualificationRequirements.foreach(__v => __obj.update("QualificationRequirements", __v.asInstanceOf[js.Any]))
+      Question.foreach(__v => __obj.update("Question", __v.asInstanceOf[js.Any]))
+      RequesterAnnotation.foreach(__v => __obj.update("RequesterAnnotation", __v.asInstanceOf[js.Any]))
+      Reward.foreach(__v => __obj.update("Reward", __v.asInstanceOf[js.Any]))
+      Title.foreach(__v => __obj.update("Title", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[HIT]
     }
   }
 
@@ -1423,12 +1213,12 @@ package mturk {
         Name: String,
         Value: String
     ): HITLayoutParameter = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "Name"  -> Name.asInstanceOf[js.Any],
         "Value" -> Value.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[HITLayoutParameter]
+      __obj.asInstanceOf[HITLayoutParameter]
     }
   }
 
@@ -1466,20 +1256,14 @@ package mturk {
         MaxResults: js.UndefOr[ResultSize] = js.undefined,
         NextToken: js.UndefOr[PaginationToken] = js.undefined
     ): ListAssignmentsForHITRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "HITId" -> HITId.asInstanceOf[js.Any],
-        "AssignmentStatuses" -> AssignmentStatuses.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MaxResults" -> MaxResults.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NextToken" -> NextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "HITId" -> HITId.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListAssignmentsForHITRequest]
+      AssignmentStatuses.foreach(__v => __obj.update("AssignmentStatuses", __v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListAssignmentsForHITRequest]
     }
   }
 
@@ -1496,19 +1280,11 @@ package mturk {
         NextToken: js.UndefOr[PaginationToken] = js.undefined,
         NumResults: js.UndefOr[Int] = js.undefined
     ): ListAssignmentsForHITResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Assignments" -> Assignments.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NextToken" -> NextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NumResults" -> NumResults.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListAssignmentsForHITResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      Assignments.foreach(__v => __obj.update("Assignments", __v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      NumResults.foreach(__v => __obj.update("NumResults", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListAssignmentsForHITResponse]
     }
   }
 
@@ -1527,22 +1303,12 @@ package mturk {
         MaxResults: js.UndefOr[ResultSize] = js.undefined,
         NextToken: js.UndefOr[PaginationToken] = js.undefined
     ): ListBonusPaymentsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "AssignmentId" -> AssignmentId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "HITId" -> HITId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MaxResults" -> MaxResults.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NextToken" -> NextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListBonusPaymentsRequest]
+      val __obj = js.Dictionary.empty[js.Any]
+      AssignmentId.foreach(__v => __obj.update("AssignmentId", __v.asInstanceOf[js.Any]))
+      HITId.foreach(__v => __obj.update("HITId", __v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListBonusPaymentsRequest]
     }
   }
 
@@ -1559,19 +1325,11 @@ package mturk {
         NextToken: js.UndefOr[PaginationToken] = js.undefined,
         NumResults: js.UndefOr[Int] = js.undefined
     ): ListBonusPaymentsResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "BonusPayments" -> BonusPayments.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NextToken" -> NextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NumResults" -> NumResults.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListBonusPaymentsResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      BonusPayments.foreach(__v => __obj.update("BonusPayments", __v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      NumResults.foreach(__v => __obj.update("NumResults", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListBonusPaymentsResponse]
     }
   }
 
@@ -1588,17 +1346,13 @@ package mturk {
         MaxResults: js.UndefOr[ResultSize] = js.undefined,
         NextToken: js.UndefOr[PaginationToken] = js.undefined
     ): ListHITsForQualificationTypeRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "QualificationTypeId" -> QualificationTypeId.asInstanceOf[js.Any],
-        "MaxResults" -> MaxResults.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NextToken" -> NextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "QualificationTypeId" -> QualificationTypeId.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListHITsForQualificationTypeRequest]
+      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListHITsForQualificationTypeRequest]
     }
   }
 
@@ -1615,19 +1369,11 @@ package mturk {
         NextToken: js.UndefOr[PaginationToken] = js.undefined,
         NumResults: js.UndefOr[Int] = js.undefined
     ): ListHITsForQualificationTypeResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "HITs" -> HITs.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NextToken" -> NextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NumResults" -> NumResults.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListHITsForQualificationTypeResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      HITs.foreach(__v => __obj.update("HITs", __v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      NumResults.foreach(__v => __obj.update("NumResults", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListHITsForQualificationTypeResponse]
     }
   }
 
@@ -1642,16 +1388,10 @@ package mturk {
         MaxResults: js.UndefOr[ResultSize] = js.undefined,
         NextToken: js.UndefOr[PaginationToken] = js.undefined
     ): ListHITsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "MaxResults" -> MaxResults.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NextToken" -> NextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListHITsRequest]
+      val __obj = js.Dictionary.empty[js.Any]
+      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListHITsRequest]
     }
   }
 
@@ -1668,19 +1408,11 @@ package mturk {
         NextToken: js.UndefOr[PaginationToken] = js.undefined,
         NumResults: js.UndefOr[Int] = js.undefined
     ): ListHITsResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "HITs" -> HITs.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NextToken" -> NextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NumResults" -> NumResults.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListHITsResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      HITs.foreach(__v => __obj.update("HITs", __v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      NumResults.foreach(__v => __obj.update("NumResults", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListHITsResponse]
     }
   }
 
@@ -1697,19 +1429,11 @@ package mturk {
         NextToken: js.UndefOr[PaginationToken] = js.undefined,
         QualificationTypeId: js.UndefOr[EntityId] = js.undefined
     ): ListQualificationRequestsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "MaxResults" -> MaxResults.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NextToken" -> NextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "QualificationTypeId" -> QualificationTypeId.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListQualificationRequestsRequest]
+      val __obj = js.Dictionary.empty[js.Any]
+      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      QualificationTypeId.foreach(__v => __obj.update("QualificationTypeId", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListQualificationRequestsRequest]
     }
   }
 
@@ -1726,19 +1450,11 @@ package mturk {
         NumResults: js.UndefOr[Int] = js.undefined,
         QualificationRequests: js.UndefOr[QualificationRequestList] = js.undefined
     ): ListQualificationRequestsResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "NextToken" -> NextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NumResults" -> NumResults.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "QualificationRequests" -> QualificationRequests.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListQualificationRequestsResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      NumResults.foreach(__v => __obj.update("NumResults", __v.asInstanceOf[js.Any]))
+      QualificationRequests.foreach(__v => __obj.update("QualificationRequests", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListQualificationRequestsResponse]
     }
   }
 
@@ -1759,23 +1475,15 @@ package mturk {
         NextToken: js.UndefOr[PaginationToken] = js.undefined,
         Query: js.UndefOr[String] = js.undefined
     ): ListQualificationTypesRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "MustBeRequestable" -> MustBeRequestable.asInstanceOf[js.Any],
-        "MaxResults" -> MaxResults.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MustBeOwnedByCaller" -> MustBeOwnedByCaller.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NextToken" -> NextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Query" -> Query.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "MustBeRequestable" -> MustBeRequestable.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListQualificationTypesRequest]
+      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
+      MustBeOwnedByCaller.foreach(__v => __obj.update("MustBeOwnedByCaller", __v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      Query.foreach(__v => __obj.update("Query", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListQualificationTypesRequest]
     }
   }
 
@@ -1792,19 +1500,11 @@ package mturk {
         NumResults: js.UndefOr[Int] = js.undefined,
         QualificationTypes: js.UndefOr[QualificationTypeList] = js.undefined
     ): ListQualificationTypesResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "NextToken" -> NextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NumResults" -> NumResults.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "QualificationTypes" -> QualificationTypes.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListQualificationTypesResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      NumResults.foreach(__v => __obj.update("NumResults", __v.asInstanceOf[js.Any]))
+      QualificationTypes.foreach(__v => __obj.update("QualificationTypes", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListQualificationTypesResponse]
     }
   }
 
@@ -1827,26 +1527,16 @@ package mturk {
         RetrieveActions: js.UndefOr[Boolean] = js.undefined,
         RetrieveResults: js.UndefOr[Boolean] = js.undefined
     ): ListReviewPolicyResultsForHITRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "HITId" -> HITId.asInstanceOf[js.Any],
-        "MaxResults" -> MaxResults.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NextToken" -> NextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "PolicyLevels" -> PolicyLevels.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "RetrieveActions" -> RetrieveActions.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "RetrieveResults" -> RetrieveResults.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "HITId" -> HITId.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListReviewPolicyResultsForHITRequest]
+      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      PolicyLevels.foreach(__v => __obj.update("PolicyLevels", __v.asInstanceOf[js.Any]))
+      RetrieveActions.foreach(__v => __obj.update("RetrieveActions", __v.asInstanceOf[js.Any]))
+      RetrieveResults.foreach(__v => __obj.update("RetrieveResults", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListReviewPolicyResultsForHITRequest]
     }
   }
 
@@ -1869,28 +1559,14 @@ package mturk {
         HITReviewReport: js.UndefOr[ReviewReport] = js.undefined,
         NextToken: js.UndefOr[PaginationToken] = js.undefined
     ): ListReviewPolicyResultsForHITResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "AssignmentReviewPolicy" -> AssignmentReviewPolicy.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "AssignmentReviewReport" -> AssignmentReviewReport.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "HITId" -> HITId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "HITReviewPolicy" -> HITReviewPolicy.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "HITReviewReport" -> HITReviewReport.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NextToken" -> NextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListReviewPolicyResultsForHITResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      AssignmentReviewPolicy.foreach(__v => __obj.update("AssignmentReviewPolicy", __v.asInstanceOf[js.Any]))
+      AssignmentReviewReport.foreach(__v => __obj.update("AssignmentReviewReport", __v.asInstanceOf[js.Any]))
+      HITId.foreach(__v => __obj.update("HITId", __v.asInstanceOf[js.Any]))
+      HITReviewPolicy.foreach(__v => __obj.update("HITReviewPolicy", __v.asInstanceOf[js.Any]))
+      HITReviewReport.foreach(__v => __obj.update("HITReviewReport", __v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListReviewPolicyResultsForHITResponse]
     }
   }
 
@@ -1909,22 +1585,12 @@ package mturk {
         NextToken: js.UndefOr[PaginationToken] = js.undefined,
         Status: js.UndefOr[ReviewableHITStatus] = js.undefined
     ): ListReviewableHITsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "HITTypeId" -> HITTypeId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MaxResults" -> MaxResults.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NextToken" -> NextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Status" -> Status.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListReviewableHITsRequest]
+      val __obj = js.Dictionary.empty[js.Any]
+      HITTypeId.foreach(__v => __obj.update("HITTypeId", __v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.update("Status", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListReviewableHITsRequest]
     }
   }
 
@@ -1941,19 +1607,11 @@ package mturk {
         NextToken: js.UndefOr[PaginationToken] = js.undefined,
         NumResults: js.UndefOr[Int] = js.undefined
     ): ListReviewableHITsResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "HITs" -> HITs.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NextToken" -> NextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NumResults" -> NumResults.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListReviewableHITsResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      HITs.foreach(__v => __obj.update("HITs", __v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      NumResults.foreach(__v => __obj.update("NumResults", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListReviewableHITsResponse]
     }
   }
 
@@ -1968,16 +1626,10 @@ package mturk {
         MaxResults: js.UndefOr[ResultSize] = js.undefined,
         NextToken: js.UndefOr[PaginationToken] = js.undefined
     ): ListWorkerBlocksRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "MaxResults" -> MaxResults.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NextToken" -> NextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListWorkerBlocksRequest]
+      val __obj = js.Dictionary.empty[js.Any]
+      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListWorkerBlocksRequest]
     }
   }
 
@@ -1994,19 +1646,11 @@ package mturk {
         NumResults: js.UndefOr[Int] = js.undefined,
         WorkerBlocks: js.UndefOr[WorkerBlockList] = js.undefined
     ): ListWorkerBlocksResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "NextToken" -> NextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NumResults" -> NumResults.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "WorkerBlocks" -> WorkerBlocks.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListWorkerBlocksResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      NumResults.foreach(__v => __obj.update("NumResults", __v.asInstanceOf[js.Any]))
+      WorkerBlocks.foreach(__v => __obj.update("WorkerBlocks", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListWorkerBlocksResponse]
     }
   }
 
@@ -2025,20 +1669,14 @@ package mturk {
         NextToken: js.UndefOr[PaginationToken] = js.undefined,
         Status: js.UndefOr[QualificationStatus] = js.undefined
     ): ListWorkersWithQualificationTypeRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "QualificationTypeId" -> QualificationTypeId.asInstanceOf[js.Any],
-        "MaxResults" -> MaxResults.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NextToken" -> NextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Status" -> Status.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "QualificationTypeId" -> QualificationTypeId.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListWorkersWithQualificationTypeRequest]
+      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.update("Status", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListWorkersWithQualificationTypeRequest]
     }
   }
 
@@ -2055,19 +1693,11 @@ package mturk {
         NumResults: js.UndefOr[Int] = js.undefined,
         Qualifications: js.UndefOr[QualificationList] = js.undefined
     ): ListWorkersWithQualificationTypeResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "NextToken" -> NextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NumResults" -> NumResults.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Qualifications" -> Qualifications.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListWorkersWithQualificationTypeResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      NumResults.foreach(__v => __obj.update("NumResults", __v.asInstanceOf[js.Any]))
+      Qualifications.foreach(__v => __obj.update("Qualifications", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListWorkersWithQualificationTypeResponse]
     }
   }
 
@@ -2085,14 +1715,12 @@ package mturk {
         Country: CountryParameters,
         Subdivision: js.UndefOr[CountryParameters] = js.undefined
     ): Locale = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Country" -> Country.asInstanceOf[js.Any],
-        "Subdivision" -> Subdivision.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "Country" -> Country.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Locale]
+      Subdivision.foreach(__v => __obj.update("Subdivision", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Locale]
     }
   }
 
@@ -2114,14 +1742,14 @@ package mturk {
         Transport: NotificationTransport,
         Version: String
     ): NotificationSpecification = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "Destination" -> Destination.asInstanceOf[js.Any],
         "EventTypes"  -> EventTypes.asInstanceOf[js.Any],
         "Transport"   -> Transport.asInstanceOf[js.Any],
         "Version"     -> Version.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[NotificationSpecification]
+      __obj.asInstanceOf[NotificationSpecification]
     }
   }
 
@@ -2156,19 +1784,11 @@ package mturk {
         NotifyWorkersFailureMessage: js.UndefOr[String] = js.undefined,
         WorkerId: js.UndefOr[CustomerId] = js.undefined
     ): NotifyWorkersFailureStatus = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "NotifyWorkersFailureCode" -> NotifyWorkersFailureCode.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NotifyWorkersFailureMessage" -> NotifyWorkersFailureMessage.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "WorkerId" -> WorkerId.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[NotifyWorkersFailureStatus]
+      val __obj = js.Dictionary.empty[js.Any]
+      NotifyWorkersFailureCode.foreach(__v => __obj.update("NotifyWorkersFailureCode", __v.asInstanceOf[js.Any]))
+      NotifyWorkersFailureMessage.foreach(__v => __obj.update("NotifyWorkersFailureMessage", __v.asInstanceOf[js.Any]))
+      WorkerId.foreach(__v => __obj.update("WorkerId", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[NotifyWorkersFailureStatus]
     }
   }
 
@@ -2185,13 +1805,13 @@ package mturk {
         Subject: String,
         WorkerIds: CustomerIdList
     ): NotifyWorkersRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "MessageText" -> MessageText.asInstanceOf[js.Any],
         "Subject"     -> Subject.asInstanceOf[js.Any],
         "WorkerIds"   -> WorkerIds.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[NotifyWorkersRequest]
+      __obj.asInstanceOf[NotifyWorkersRequest]
     }
   }
 
@@ -2204,13 +1824,11 @@ package mturk {
     def apply(
         NotifyWorkersFailureStatuses: js.UndefOr[NotifyWorkersFailureStatusList] = js.undefined
     ): NotifyWorkersResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "NotifyWorkersFailureStatuses" -> NotifyWorkersFailureStatuses.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[NotifyWorkersResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      NotifyWorkersFailureStatuses.foreach(
+        __v => __obj.update("NotifyWorkersFailureStatuses", __v.asInstanceOf[js.Any])
+      )
+      __obj.asInstanceOf[NotifyWorkersResponse]
     }
   }
 
@@ -2228,16 +1846,10 @@ package mturk {
         Key: js.UndefOr[String] = js.undefined,
         Values: js.UndefOr[StringList] = js.undefined
     ): ParameterMapEntry = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Key" -> Key.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Values" -> Values.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ParameterMapEntry]
+      val __obj = js.Dictionary.empty[js.Any]
+      Key.foreach(__v => __obj.update("Key", __v.asInstanceOf[js.Any]))
+      Values.foreach(__v => __obj.update("Values", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ParameterMapEntry]
     }
   }
 
@@ -2257,19 +1869,11 @@ package mturk {
         MapEntries: js.UndefOr[ParameterMapEntryList] = js.undefined,
         Values: js.UndefOr[StringList] = js.undefined
     ): PolicyParameter = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Key" -> Key.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MapEntries" -> MapEntries.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Values" -> Values.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PolicyParameter]
+      val __obj = js.Dictionary.empty[js.Any]
+      Key.foreach(__v => __obj.update("Key", __v.asInstanceOf[js.Any]))
+      MapEntries.foreach(__v => __obj.update("MapEntries", __v.asInstanceOf[js.Any]))
+      Values.foreach(__v => __obj.update("Values", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PolicyParameter]
     }
   }
 
@@ -2295,28 +1899,14 @@ package mturk {
         Status: js.UndefOr[QualificationStatus] = js.undefined,
         WorkerId: js.UndefOr[CustomerId] = js.undefined
     ): Qualification = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "GrantTime" -> GrantTime.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "IntegerValue" -> IntegerValue.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "LocaleValue" -> LocaleValue.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "QualificationTypeId" -> QualificationTypeId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Status" -> Status.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "WorkerId" -> WorkerId.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Qualification]
+      val __obj = js.Dictionary.empty[js.Any]
+      GrantTime.foreach(__v => __obj.update("GrantTime", __v.asInstanceOf[js.Any]))
+      IntegerValue.foreach(__v => __obj.update("IntegerValue", __v.asInstanceOf[js.Any]))
+      LocaleValue.foreach(__v => __obj.update("LocaleValue", __v.asInstanceOf[js.Any]))
+      QualificationTypeId.foreach(__v => __obj.update("QualificationTypeId", __v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.update("Status", __v.asInstanceOf[js.Any]))
+      WorkerId.foreach(__v => __obj.update("WorkerId", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Qualification]
     }
   }
 
@@ -2342,28 +1932,14 @@ package mturk {
         Test: js.UndefOr[String] = js.undefined,
         WorkerId: js.UndefOr[CustomerId] = js.undefined
     ): QualificationRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Answer" -> Answer.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "QualificationRequestId" -> QualificationRequestId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "QualificationTypeId" -> QualificationTypeId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SubmitTime" -> SubmitTime.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Test" -> Test.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "WorkerId" -> WorkerId.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[QualificationRequest]
+      val __obj = js.Dictionary.empty[js.Any]
+      Answer.foreach(__v => __obj.update("Answer", __v.asInstanceOf[js.Any]))
+      QualificationRequestId.foreach(__v => __obj.update("QualificationRequestId", __v.asInstanceOf[js.Any]))
+      QualificationTypeId.foreach(__v => __obj.update("QualificationTypeId", __v.asInstanceOf[js.Any]))
+      SubmitTime.foreach(__v => __obj.update("SubmitTime", __v.asInstanceOf[js.Any]))
+      Test.foreach(__v => __obj.update("Test", __v.asInstanceOf[js.Any]))
+      WorkerId.foreach(__v => __obj.update("WorkerId", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[QualificationRequest]
     }
   }
 
@@ -2389,24 +1965,16 @@ package mturk {
         LocaleValues: js.UndefOr[LocaleList] = js.undefined,
         RequiredToPreview: js.UndefOr[Boolean] = js.undefined
     ): QualificationRequirement = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "Comparator"          -> Comparator.asInstanceOf[js.Any],
-        "QualificationTypeId" -> QualificationTypeId.asInstanceOf[js.Any],
-        "ActionsGuarded" -> ActionsGuarded.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "IntegerValues" -> IntegerValues.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "LocaleValues" -> LocaleValues.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "RequiredToPreview" -> RequiredToPreview.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "QualificationTypeId" -> QualificationTypeId.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[QualificationRequirement]
+      ActionsGuarded.foreach(__v => __obj.update("ActionsGuarded", __v.asInstanceOf[js.Any]))
+      IntegerValues.foreach(__v => __obj.update("IntegerValues", __v.asInstanceOf[js.Any]))
+      LocaleValues.foreach(__v => __obj.update("LocaleValues", __v.asInstanceOf[js.Any]))
+      RequiredToPreview.foreach(__v => __obj.update("RequiredToPreview", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[QualificationRequirement]
     }
   }
 
@@ -2453,49 +2021,21 @@ package mturk {
         Test: js.UndefOr[String] = js.undefined,
         TestDurationInSeconds: js.UndefOr[Double] = js.undefined
     ): QualificationType = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "AnswerKey" -> AnswerKey.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "AutoGranted" -> AutoGranted.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "AutoGrantedValue" -> AutoGrantedValue.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "CreationTime" -> CreationTime.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Description" -> Description.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "IsRequestable" -> IsRequestable.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Keywords" -> Keywords.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Name" -> Name.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "QualificationTypeId" -> QualificationTypeId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "QualificationTypeStatus" -> QualificationTypeStatus.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "RetryDelayInSeconds" -> RetryDelayInSeconds.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Test" -> Test.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "TestDurationInSeconds" -> TestDurationInSeconds.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[QualificationType]
+      val __obj = js.Dictionary.empty[js.Any]
+      AnswerKey.foreach(__v => __obj.update("AnswerKey", __v.asInstanceOf[js.Any]))
+      AutoGranted.foreach(__v => __obj.update("AutoGranted", __v.asInstanceOf[js.Any]))
+      AutoGrantedValue.foreach(__v => __obj.update("AutoGrantedValue", __v.asInstanceOf[js.Any]))
+      CreationTime.foreach(__v => __obj.update("CreationTime", __v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
+      IsRequestable.foreach(__v => __obj.update("IsRequestable", __v.asInstanceOf[js.Any]))
+      Keywords.foreach(__v => __obj.update("Keywords", __v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
+      QualificationTypeId.foreach(__v => __obj.update("QualificationTypeId", __v.asInstanceOf[js.Any]))
+      QualificationTypeStatus.foreach(__v => __obj.update("QualificationTypeStatus", __v.asInstanceOf[js.Any]))
+      RetryDelayInSeconds.foreach(__v => __obj.update("RetryDelayInSeconds", __v.asInstanceOf[js.Any]))
+      Test.foreach(__v => __obj.update("Test", __v.asInstanceOf[js.Any]))
+      TestDurationInSeconds.foreach(__v => __obj.update("TestDurationInSeconds", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[QualificationType]
     }
   }
 
@@ -2517,12 +2057,12 @@ package mturk {
         AssignmentId: EntityId,
         RequesterFeedback: String
     ): RejectAssignmentRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "AssignmentId"      -> AssignmentId.asInstanceOf[js.Any],
         "RequesterFeedback" -> RequesterFeedback.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RejectAssignmentRequest]
+      __obj.asInstanceOf[RejectAssignmentRequest]
     }
   }
 
@@ -2532,10 +2072,9 @@ package mturk {
   object RejectAssignmentResponse {
     def apply(
         ): RejectAssignmentResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary.empty[js.Any]
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RejectAssignmentResponse]
+      __obj.asInstanceOf[RejectAssignmentResponse]
     }
   }
 
@@ -2550,14 +2089,12 @@ package mturk {
         QualificationRequestId: String,
         Reason: js.UndefOr[String] = js.undefined
     ): RejectQualificationRequestRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "QualificationRequestId" -> QualificationRequestId.asInstanceOf[js.Any],
-        "Reason" -> Reason.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "QualificationRequestId" -> QualificationRequestId.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RejectQualificationRequestRequest]
+      Reason.foreach(__v => __obj.update("Reason", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[RejectQualificationRequestRequest]
     }
   }
 
@@ -2567,10 +2104,9 @@ package mturk {
   object RejectQualificationRequestResponse {
     def apply(
         ): RejectQualificationRequestResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary.empty[js.Any]
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RejectQualificationRequestResponse]
+      __obj.asInstanceOf[RejectQualificationRequestResponse]
     }
   }
 
@@ -2609,34 +2145,16 @@ package mturk {
         TargetId: js.UndefOr[EntityId] = js.undefined,
         TargetType: js.UndefOr[String] = js.undefined
     ): ReviewActionDetail = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ActionId" -> ActionId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ActionName" -> ActionName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "CompleteTime" -> CompleteTime.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ErrorCode" -> ErrorCode.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Result" -> Result.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Status" -> Status.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "TargetId" -> TargetId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "TargetType" -> TargetType.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ReviewActionDetail]
+      val __obj = js.Dictionary.empty[js.Any]
+      ActionId.foreach(__v => __obj.update("ActionId", __v.asInstanceOf[js.Any]))
+      ActionName.foreach(__v => __obj.update("ActionName", __v.asInstanceOf[js.Any]))
+      CompleteTime.foreach(__v => __obj.update("CompleteTime", __v.asInstanceOf[js.Any]))
+      ErrorCode.foreach(__v => __obj.update("ErrorCode", __v.asInstanceOf[js.Any]))
+      Result.foreach(__v => __obj.update("Result", __v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.update("Status", __v.asInstanceOf[js.Any]))
+      TargetId.foreach(__v => __obj.update("TargetId", __v.asInstanceOf[js.Any]))
+      TargetType.foreach(__v => __obj.update("TargetType", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ReviewActionDetail]
     }
   }
 
@@ -2663,14 +2181,12 @@ package mturk {
         PolicyName: String,
         Parameters: js.UndefOr[PolicyParameterList] = js.undefined
     ): ReviewPolicy = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "PolicyName" -> PolicyName.asInstanceOf[js.Any],
-        "Parameters" -> Parameters.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "PolicyName" -> PolicyName.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ReviewPolicy]
+      Parameters.foreach(__v => __obj.update("Parameters", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ReviewPolicy]
     }
   }
 
@@ -2695,16 +2211,10 @@ package mturk {
         ReviewActions: js.UndefOr[ReviewActionDetailList] = js.undefined,
         ReviewResults: js.UndefOr[ReviewResultDetailList] = js.undefined
     ): ReviewReport = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ReviewActions" -> ReviewActions.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ReviewResults" -> ReviewResults.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ReviewReport]
+      val __obj = js.Dictionary.empty[js.Any]
+      ReviewActions.foreach(__v => __obj.update("ReviewActions", __v.asInstanceOf[js.Any]))
+      ReviewResults.foreach(__v => __obj.update("ReviewResults", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ReviewReport]
     }
   }
 
@@ -2730,28 +2240,14 @@ package mturk {
         SubjectType: js.UndefOr[String] = js.undefined,
         Value: js.UndefOr[String] = js.undefined
     ): ReviewResultDetail = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ActionId" -> ActionId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Key" -> Key.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "QuestionId" -> QuestionId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SubjectId" -> SubjectId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SubjectType" -> SubjectType.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Value" -> Value.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ReviewResultDetail]
+      val __obj = js.Dictionary.empty[js.Any]
+      ActionId.foreach(__v => __obj.update("ActionId", __v.asInstanceOf[js.Any]))
+      Key.foreach(__v => __obj.update("Key", __v.asInstanceOf[js.Any]))
+      QuestionId.foreach(__v => __obj.update("QuestionId", __v.asInstanceOf[js.Any]))
+      SubjectId.foreach(__v => __obj.update("SubjectId", __v.asInstanceOf[js.Any]))
+      SubjectType.foreach(__v => __obj.update("SubjectType", __v.asInstanceOf[js.Any]))
+      Value.foreach(__v => __obj.update("Value", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ReviewResultDetail]
     }
   }
 
@@ -2779,17 +2275,15 @@ package mturk {
         WorkerId: CustomerId,
         UniqueRequestToken: js.UndefOr[IdempotencyToken] = js.undefined
     ): SendBonusRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "AssignmentId" -> AssignmentId.asInstanceOf[js.Any],
         "BonusAmount"  -> BonusAmount.asInstanceOf[js.Any],
         "Reason"       -> Reason.asInstanceOf[js.Any],
-        "WorkerId"     -> WorkerId.asInstanceOf[js.Any],
-        "UniqueRequestToken" -> UniqueRequestToken.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "WorkerId"     -> WorkerId.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SendBonusRequest]
+      UniqueRequestToken.foreach(__v => __obj.update("UniqueRequestToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[SendBonusRequest]
     }
   }
 
@@ -2799,10 +2293,9 @@ package mturk {
   object SendBonusResponse {
     def apply(
         ): SendBonusResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary.empty[js.Any]
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SendBonusResponse]
+      __obj.asInstanceOf[SendBonusResponse]
     }
   }
 
@@ -2817,12 +2310,12 @@ package mturk {
         Notification: NotificationSpecification,
         TestEventType: EventType
     ): SendTestEventNotificationRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "Notification"  -> Notification.asInstanceOf[js.Any],
         "TestEventType" -> TestEventType.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SendTestEventNotificationRequest]
+      __obj.asInstanceOf[SendTestEventNotificationRequest]
     }
   }
 
@@ -2832,10 +2325,9 @@ package mturk {
   object SendTestEventNotificationResponse {
     def apply(
         ): SendTestEventNotificationResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary.empty[js.Any]
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SendTestEventNotificationResponse]
+      __obj.asInstanceOf[SendTestEventNotificationResponse]
     }
   }
 
@@ -2859,12 +2351,12 @@ package mturk {
         ExpireAt: Timestamp,
         HITId: EntityId
     ): UpdateExpirationForHITRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ExpireAt" -> ExpireAt.asInstanceOf[js.Any],
         "HITId"    -> HITId.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateExpirationForHITRequest]
+      __obj.asInstanceOf[UpdateExpirationForHITRequest]
     }
   }
 
@@ -2874,10 +2366,9 @@ package mturk {
   object UpdateExpirationForHITResponse {
     def apply(
         ): UpdateExpirationForHITResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary.empty[js.Any]
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateExpirationForHITResponse]
+      __obj.asInstanceOf[UpdateExpirationForHITResponse]
     }
   }
 
@@ -2892,14 +2383,12 @@ package mturk {
         HITId: EntityId,
         Revert: js.UndefOr[Boolean] = js.undefined
     ): UpdateHITReviewStatusRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "HITId" -> HITId.asInstanceOf[js.Any],
-        "Revert" -> Revert.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "HITId" -> HITId.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateHITReviewStatusRequest]
+      Revert.foreach(__v => __obj.update("Revert", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateHITReviewStatusRequest]
     }
   }
 
@@ -2909,10 +2398,9 @@ package mturk {
   object UpdateHITReviewStatusResponse {
     def apply(
         ): UpdateHITReviewStatusResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary.empty[js.Any]
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateHITReviewStatusResponse]
+      __obj.asInstanceOf[UpdateHITReviewStatusResponse]
     }
   }
 
@@ -2927,12 +2415,12 @@ package mturk {
         HITId: EntityId,
         HITTypeId: EntityId
     ): UpdateHITTypeOfHITRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "HITId"     -> HITId.asInstanceOf[js.Any],
         "HITTypeId" -> HITTypeId.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateHITTypeOfHITRequest]
+      __obj.asInstanceOf[UpdateHITTypeOfHITRequest]
     }
   }
 
@@ -2942,10 +2430,9 @@ package mturk {
   object UpdateHITTypeOfHITResponse {
     def apply(
         ): UpdateHITTypeOfHITResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary.empty[js.Any]
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateHITTypeOfHITResponse]
+      __obj.asInstanceOf[UpdateHITTypeOfHITResponse]
     }
   }
 
@@ -2962,17 +2449,13 @@ package mturk {
         Active: js.UndefOr[Boolean] = js.undefined,
         Notification: js.UndefOr[NotificationSpecification] = js.undefined
     ): UpdateNotificationSettingsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "HITTypeId" -> HITTypeId.asInstanceOf[js.Any],
-        "Active" -> Active.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Notification" -> Notification.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "HITTypeId" -> HITTypeId.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateNotificationSettingsRequest]
+      Active.foreach(__v => __obj.update("Active", __v.asInstanceOf[js.Any]))
+      Notification.foreach(__v => __obj.update("Notification", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateNotificationSettingsRequest]
     }
   }
 
@@ -2982,10 +2465,9 @@ package mturk {
   object UpdateNotificationSettingsResponse {
     def apply(
         ): UpdateNotificationSettingsResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary.empty[js.Any]
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateNotificationSettingsResponse]
+      __obj.asInstanceOf[UpdateNotificationSettingsResponse]
     }
   }
 
@@ -3014,35 +2496,19 @@ package mturk {
         Test: js.UndefOr[String] = js.undefined,
         TestDurationInSeconds: js.UndefOr[Double] = js.undefined
     ): UpdateQualificationTypeRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "QualificationTypeId" -> QualificationTypeId.asInstanceOf[js.Any],
-        "AnswerKey" -> AnswerKey.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "AutoGranted" -> AutoGranted.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "AutoGrantedValue" -> AutoGrantedValue.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Description" -> Description.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "QualificationTypeStatus" -> QualificationTypeStatus.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "RetryDelayInSeconds" -> RetryDelayInSeconds.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Test" -> Test.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "TestDurationInSeconds" -> TestDurationInSeconds.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "QualificationTypeId" -> QualificationTypeId.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateQualificationTypeRequest]
+      AnswerKey.foreach(__v => __obj.update("AnswerKey", __v.asInstanceOf[js.Any]))
+      AutoGranted.foreach(__v => __obj.update("AutoGranted", __v.asInstanceOf[js.Any]))
+      AutoGrantedValue.foreach(__v => __obj.update("AutoGrantedValue", __v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
+      QualificationTypeStatus.foreach(__v => __obj.update("QualificationTypeStatus", __v.asInstanceOf[js.Any]))
+      RetryDelayInSeconds.foreach(__v => __obj.update("RetryDelayInSeconds", __v.asInstanceOf[js.Any]))
+      Test.foreach(__v => __obj.update("Test", __v.asInstanceOf[js.Any]))
+      TestDurationInSeconds.foreach(__v => __obj.update("TestDurationInSeconds", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateQualificationTypeRequest]
     }
   }
 
@@ -3055,13 +2521,9 @@ package mturk {
     def apply(
         QualificationType: js.UndefOr[QualificationType] = js.undefined
     ): UpdateQualificationTypeResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "QualificationType" -> QualificationType.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateQualificationTypeResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      QualificationType.foreach(__v => __obj.update("QualificationType", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateQualificationTypeResponse]
     }
   }
 
@@ -3079,16 +2541,10 @@ package mturk {
         Reason: js.UndefOr[String] = js.undefined,
         WorkerId: js.UndefOr[CustomerId] = js.undefined
     ): WorkerBlock = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Reason" -> Reason.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "WorkerId" -> WorkerId.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[WorkerBlock]
+      val __obj = js.Dictionary.empty[js.Any]
+      Reason.foreach(__v => __obj.update("Reason", __v.asInstanceOf[js.Any]))
+      WorkerId.foreach(__v => __obj.update("WorkerId", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[WorkerBlock]
     }
   }
 }

@@ -72,18 +72,14 @@ package iotjobsdataplane {
         executionNumber: js.UndefOr[ExecutionNumber] = js.undefined,
         includeJobDocument: js.UndefOr[IncludeJobDocument] = js.undefined
     ): DescribeJobExecutionRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "jobId"     -> jobId.asInstanceOf[js.Any],
-        "thingName" -> thingName.asInstanceOf[js.Any],
-        "executionNumber" -> executionNumber.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "includeJobDocument" -> includeJobDocument.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "thingName" -> thingName.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeJobExecutionRequest]
+      executionNumber.foreach(__v => __obj.update("executionNumber", __v.asInstanceOf[js.Any]))
+      includeJobDocument.foreach(__v => __obj.update("includeJobDocument", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeJobExecutionRequest]
     }
   }
 
@@ -96,13 +92,9 @@ package iotjobsdataplane {
     def apply(
         execution: js.UndefOr[JobExecution] = js.undefined
     ): DescribeJobExecutionResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "execution" -> execution.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeJobExecutionResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      execution.foreach(__v => __obj.update("execution", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeJobExecutionResponse]
     }
   }
 
@@ -115,11 +107,11 @@ package iotjobsdataplane {
     def apply(
         thingName: ThingName
     ): GetPendingJobExecutionsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "thingName" -> thingName.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetPendingJobExecutionsRequest]
+      __obj.asInstanceOf[GetPendingJobExecutionsRequest]
     }
   }
 
@@ -134,16 +126,10 @@ package iotjobsdataplane {
         inProgressJobs: js.UndefOr[JobExecutionSummaryList] = js.undefined,
         queuedJobs: js.UndefOr[JobExecutionSummaryList] = js.undefined
     ): GetPendingJobExecutionsResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "inProgressJobs" -> inProgressJobs.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "queuedJobs" -> queuedJobs.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetPendingJobExecutionsResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      inProgressJobs.foreach(__v => __obj.update("inProgressJobs", __v.asInstanceOf[js.Any]))
+      queuedJobs.foreach(__v => __obj.update("queuedJobs", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetPendingJobExecutionsResponse]
     }
   }
 
@@ -179,43 +165,21 @@ package iotjobsdataplane {
         thingName: js.UndefOr[ThingName] = js.undefined,
         versionNumber: js.UndefOr[VersionNumber] = js.undefined
     ): JobExecution = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "approximateSecondsBeforeTimedOut" -> approximateSecondsBeforeTimedOut.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "executionNumber" -> executionNumber.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "jobDocument" -> jobDocument.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "jobId" -> jobId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "lastUpdatedAt" -> lastUpdatedAt.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "queuedAt" -> queuedAt.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "startedAt" -> startedAt.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "status" -> status.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "statusDetails" -> statusDetails.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "thingName" -> thingName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "versionNumber" -> versionNumber.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[JobExecution]
+      val __obj = js.Dictionary.empty[js.Any]
+      approximateSecondsBeforeTimedOut.foreach(
+        __v => __obj.update("approximateSecondsBeforeTimedOut", __v.asInstanceOf[js.Any])
+      )
+      executionNumber.foreach(__v => __obj.update("executionNumber", __v.asInstanceOf[js.Any]))
+      jobDocument.foreach(__v => __obj.update("jobDocument", __v.asInstanceOf[js.Any]))
+      jobId.foreach(__v => __obj.update("jobId", __v.asInstanceOf[js.Any]))
+      lastUpdatedAt.foreach(__v => __obj.update("lastUpdatedAt", __v.asInstanceOf[js.Any]))
+      queuedAt.foreach(__v => __obj.update("queuedAt", __v.asInstanceOf[js.Any]))
+      startedAt.foreach(__v => __obj.update("startedAt", __v.asInstanceOf[js.Any]))
+      status.foreach(__v => __obj.update("status", __v.asInstanceOf[js.Any]))
+      statusDetails.foreach(__v => __obj.update("statusDetails", __v.asInstanceOf[js.Any]))
+      thingName.foreach(__v => __obj.update("thingName", __v.asInstanceOf[js.Any]))
+      versionNumber.foreach(__v => __obj.update("versionNumber", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[JobExecution]
     }
   }
 
@@ -235,19 +199,11 @@ package iotjobsdataplane {
         statusDetails: js.UndefOr[DetailsMap] = js.undefined,
         versionNumber: js.UndefOr[VersionNumber] = js.undefined
     ): JobExecutionState = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "status" -> status.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "statusDetails" -> statusDetails.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "versionNumber" -> versionNumber.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[JobExecutionState]
+      val __obj = js.Dictionary.empty[js.Any]
+      status.foreach(__v => __obj.update("status", __v.asInstanceOf[js.Any]))
+      statusDetails.foreach(__v => __obj.update("statusDetails", __v.asInstanceOf[js.Any]))
+      versionNumber.foreach(__v => __obj.update("versionNumber", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[JobExecutionState]
     }
   }
 
@@ -286,28 +242,14 @@ package iotjobsdataplane {
         startedAt: js.UndefOr[StartedAt] = js.undefined,
         versionNumber: js.UndefOr[VersionNumber] = js.undefined
     ): JobExecutionSummary = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "executionNumber" -> executionNumber.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "jobId" -> jobId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "lastUpdatedAt" -> lastUpdatedAt.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "queuedAt" -> queuedAt.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "startedAt" -> startedAt.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "versionNumber" -> versionNumber.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[JobExecutionSummary]
+      val __obj = js.Dictionary.empty[js.Any]
+      executionNumber.foreach(__v => __obj.update("executionNumber", __v.asInstanceOf[js.Any]))
+      jobId.foreach(__v => __obj.update("jobId", __v.asInstanceOf[js.Any]))
+      lastUpdatedAt.foreach(__v => __obj.update("lastUpdatedAt", __v.asInstanceOf[js.Any]))
+      queuedAt.foreach(__v => __obj.update("queuedAt", __v.asInstanceOf[js.Any]))
+      startedAt.foreach(__v => __obj.update("startedAt", __v.asInstanceOf[js.Any]))
+      versionNumber.foreach(__v => __obj.update("versionNumber", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[JobExecutionSummary]
     }
   }
 
@@ -324,17 +266,13 @@ package iotjobsdataplane {
         statusDetails: js.UndefOr[DetailsMap] = js.undefined,
         stepTimeoutInMinutes: js.UndefOr[StepTimeoutInMinutes] = js.undefined
     ): StartNextPendingJobExecutionRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "thingName" -> thingName.asInstanceOf[js.Any],
-        "statusDetails" -> statusDetails.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "stepTimeoutInMinutes" -> stepTimeoutInMinutes.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "thingName" -> thingName.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StartNextPendingJobExecutionRequest]
+      statusDetails.foreach(__v => __obj.update("statusDetails", __v.asInstanceOf[js.Any]))
+      stepTimeoutInMinutes.foreach(__v => __obj.update("stepTimeoutInMinutes", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[StartNextPendingJobExecutionRequest]
     }
   }
 
@@ -347,13 +285,9 @@ package iotjobsdataplane {
     def apply(
         execution: js.UndefOr[JobExecution] = js.undefined
     ): StartNextPendingJobExecutionResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "execution" -> execution.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StartNextPendingJobExecutionResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      execution.foreach(__v => __obj.update("execution", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[StartNextPendingJobExecutionResponse]
     }
   }
 
@@ -382,31 +316,19 @@ package iotjobsdataplane {
         statusDetails: js.UndefOr[DetailsMap] = js.undefined,
         stepTimeoutInMinutes: js.UndefOr[StepTimeoutInMinutes] = js.undefined
     ): UpdateJobExecutionRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "jobId"     -> jobId.asInstanceOf[js.Any],
         "status"    -> status.asInstanceOf[js.Any],
-        "thingName" -> thingName.asInstanceOf[js.Any],
-        "executionNumber" -> executionNumber.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "expectedVersion" -> expectedVersion.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "includeJobDocument" -> includeJobDocument.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "includeJobExecutionState" -> includeJobExecutionState.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "statusDetails" -> statusDetails.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "stepTimeoutInMinutes" -> stepTimeoutInMinutes.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "thingName" -> thingName.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateJobExecutionRequest]
+      executionNumber.foreach(__v => __obj.update("executionNumber", __v.asInstanceOf[js.Any]))
+      expectedVersion.foreach(__v => __obj.update("expectedVersion", __v.asInstanceOf[js.Any]))
+      includeJobDocument.foreach(__v => __obj.update("includeJobDocument", __v.asInstanceOf[js.Any]))
+      includeJobExecutionState.foreach(__v => __obj.update("includeJobExecutionState", __v.asInstanceOf[js.Any]))
+      statusDetails.foreach(__v => __obj.update("statusDetails", __v.asInstanceOf[js.Any]))
+      stepTimeoutInMinutes.foreach(__v => __obj.update("stepTimeoutInMinutes", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateJobExecutionRequest]
     }
   }
 
@@ -421,16 +343,10 @@ package iotjobsdataplane {
         executionState: js.UndefOr[JobExecutionState] = js.undefined,
         jobDocument: js.UndefOr[JobDocument] = js.undefined
     ): UpdateJobExecutionResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "executionState" -> executionState.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "jobDocument" -> jobDocument.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateJobExecutionResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      executionState.foreach(__v => __obj.update("executionState", __v.asInstanceOf[js.Any]))
+      jobDocument.foreach(__v => __obj.update("jobDocument", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateJobExecutionResponse]
     }
   }
 }

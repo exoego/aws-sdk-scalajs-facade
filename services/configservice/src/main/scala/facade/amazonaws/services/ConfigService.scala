@@ -447,17 +447,13 @@ package configservice {
         AllAwsRegions: js.UndefOr[Boolean] = js.undefined,
         AwsRegions: js.UndefOr[AggregatorRegionList] = js.undefined
     ): AccountAggregationSource = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "AccountIds" -> AccountIds.asInstanceOf[js.Any],
-        "AllAwsRegions" -> AllAwsRegions.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "AwsRegions" -> AwsRegions.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "AccountIds" -> AccountIds.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AccountAggregationSource]
+      AllAwsRegions.foreach(__v => __obj.update("AllAwsRegions", __v.asInstanceOf[js.Any]))
+      AwsRegions.foreach(__v => __obj.update("AwsRegions", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AccountAggregationSource]
     }
   }
 
@@ -480,22 +476,12 @@ package configservice {
         Compliance: js.UndefOr[Compliance] = js.undefined,
         ConfigRuleName: js.UndefOr[ConfigRuleName] = js.undefined
     ): AggregateComplianceByConfigRule = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "AccountId" -> AccountId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "AwsRegion" -> AwsRegion.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Compliance" -> Compliance.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ConfigRuleName" -> ConfigRuleName.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AggregateComplianceByConfigRule]
+      val __obj = js.Dictionary.empty[js.Any]
+      AccountId.foreach(__v => __obj.update("AccountId", __v.asInstanceOf[js.Any]))
+      AwsRegion.foreach(__v => __obj.update("AwsRegion", __v.asInstanceOf[js.Any]))
+      Compliance.foreach(__v => __obj.update("Compliance", __v.asInstanceOf[js.Any]))
+      ConfigRuleName.foreach(__v => __obj.update("ConfigRuleName", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AggregateComplianceByConfigRule]
     }
   }
 
@@ -513,16 +499,10 @@ package configservice {
         ComplianceSummary: js.UndefOr[ComplianceSummary] = js.undefined,
         GroupName: js.UndefOr[StringWithCharLimit256] = js.undefined
     ): AggregateComplianceCount = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ComplianceSummary" -> ComplianceSummary.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "GroupName" -> GroupName.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AggregateComplianceCount]
+      val __obj = js.Dictionary.empty[js.Any]
+      ComplianceSummary.foreach(__v => __obj.update("ComplianceSummary", __v.asInstanceOf[js.Any]))
+      GroupName.foreach(__v => __obj.update("GroupName", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AggregateComplianceCount]
     }
   }
 
@@ -550,31 +530,15 @@ package configservice {
         EvaluationResultIdentifier: js.UndefOr[EvaluationResultIdentifier] = js.undefined,
         ResultRecordedTime: js.UndefOr[Date] = js.undefined
     ): AggregateEvaluationResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "AccountId" -> AccountId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Annotation" -> Annotation.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "AwsRegion" -> AwsRegion.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ComplianceType" -> ComplianceType.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ConfigRuleInvokedTime" -> ConfigRuleInvokedTime.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "EvaluationResultIdentifier" -> EvaluationResultIdentifier.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ResultRecordedTime" -> ResultRecordedTime.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AggregateEvaluationResult]
+      val __obj = js.Dictionary.empty[js.Any]
+      AccountId.foreach(__v => __obj.update("AccountId", __v.asInstanceOf[js.Any]))
+      Annotation.foreach(__v => __obj.update("Annotation", __v.asInstanceOf[js.Any]))
+      AwsRegion.foreach(__v => __obj.update("AwsRegion", __v.asInstanceOf[js.Any]))
+      ComplianceType.foreach(__v => __obj.update("ComplianceType", __v.asInstanceOf[js.Any]))
+      ConfigRuleInvokedTime.foreach(__v => __obj.update("ConfigRuleInvokedTime", __v.asInstanceOf[js.Any]))
+      EvaluationResultIdentifier.foreach(__v => __obj.update("EvaluationResultIdentifier", __v.asInstanceOf[js.Any]))
+      ResultRecordedTime.foreach(__v => __obj.update("ResultRecordedTime", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AggregateEvaluationResult]
     }
   }
 
@@ -598,17 +562,15 @@ package configservice {
         SourceRegion: AwsRegion,
         ResourceName: js.UndefOr[ResourceName] = js.undefined
     ): AggregateResourceIdentifier = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ResourceId"      -> ResourceId.asInstanceOf[js.Any],
         "ResourceType"    -> ResourceType.asInstanceOf[js.Any],
         "SourceAccountId" -> SourceAccountId.asInstanceOf[js.Any],
-        "SourceRegion"    -> SourceRegion.asInstanceOf[js.Any],
-        "ResourceName" -> ResourceName.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "SourceRegion"    -> SourceRegion.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AggregateResourceIdentifier]
+      ResourceName.foreach(__v => __obj.update("ResourceName", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AggregateResourceIdentifier]
     }
   }
 
@@ -636,31 +598,15 @@ package configservice {
         SourceId: js.UndefOr[String] = js.undefined,
         SourceType: js.UndefOr[AggregatedSourceType] = js.undefined
     ): AggregatedSourceStatus = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "AwsRegion" -> AwsRegion.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "LastErrorCode" -> LastErrorCode.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "LastErrorMessage" -> LastErrorMessage.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "LastUpdateStatus" -> LastUpdateStatus.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "LastUpdateTime" -> LastUpdateTime.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SourceId" -> SourceId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SourceType" -> SourceType.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AggregatedSourceStatus]
+      val __obj = js.Dictionary.empty[js.Any]
+      AwsRegion.foreach(__v => __obj.update("AwsRegion", __v.asInstanceOf[js.Any]))
+      LastErrorCode.foreach(__v => __obj.update("LastErrorCode", __v.asInstanceOf[js.Any]))
+      LastErrorMessage.foreach(__v => __obj.update("LastErrorMessage", __v.asInstanceOf[js.Any]))
+      LastUpdateStatus.foreach(__v => __obj.update("LastUpdateStatus", __v.asInstanceOf[js.Any]))
+      LastUpdateTime.foreach(__v => __obj.update("LastUpdateTime", __v.asInstanceOf[js.Any]))
+      SourceId.foreach(__v => __obj.update("SourceId", __v.asInstanceOf[js.Any]))
+      SourceType.foreach(__v => __obj.update("SourceType", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AggregatedSourceStatus]
     }
   }
 
@@ -697,22 +643,12 @@ package configservice {
         AuthorizedAwsRegion: js.UndefOr[AwsRegion] = js.undefined,
         CreationTime: js.UndefOr[Date] = js.undefined
     ): AggregationAuthorization = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "AggregationAuthorizationArn" -> AggregationAuthorizationArn.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "AuthorizedAccountId" -> AuthorizedAccountId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "AuthorizedAwsRegion" -> AuthorizedAwsRegion.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "CreationTime" -> CreationTime.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AggregationAuthorization]
+      val __obj = js.Dictionary.empty[js.Any]
+      AggregationAuthorizationArn.foreach(__v => __obj.update("AggregationAuthorizationArn", __v.asInstanceOf[js.Any]))
+      AuthorizedAccountId.foreach(__v => __obj.update("AuthorizedAccountId", __v.asInstanceOf[js.Any]))
+      AuthorizedAwsRegion.foreach(__v => __obj.update("AuthorizedAwsRegion", __v.asInstanceOf[js.Any]))
+      CreationTime.foreach(__v => __obj.update("CreationTime", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AggregationAuthorization]
     }
   }
 
@@ -754,52 +690,24 @@ package configservice {
         supplementaryConfiguration: js.UndefOr[SupplementaryConfiguration] = js.undefined,
         version: js.UndefOr[Version] = js.undefined
     ): BaseConfigurationItem = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "accountId" -> accountId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "arn" -> arn.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "availabilityZone" -> availabilityZone.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "awsRegion" -> awsRegion.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "configuration" -> configuration.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "configurationItemCaptureTime" -> configurationItemCaptureTime.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "configurationItemStatus" -> configurationItemStatus.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "configurationStateId" -> configurationStateId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "resourceCreationTime" -> resourceCreationTime.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "resourceId" -> resourceId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "resourceName" -> resourceName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "resourceType" -> resourceType.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "supplementaryConfiguration" -> supplementaryConfiguration.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "version" -> version.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[BaseConfigurationItem]
+      val __obj = js.Dictionary.empty[js.Any]
+      accountId.foreach(__v => __obj.update("accountId", __v.asInstanceOf[js.Any]))
+      arn.foreach(__v => __obj.update("arn", __v.asInstanceOf[js.Any]))
+      availabilityZone.foreach(__v => __obj.update("availabilityZone", __v.asInstanceOf[js.Any]))
+      awsRegion.foreach(__v => __obj.update("awsRegion", __v.asInstanceOf[js.Any]))
+      configuration.foreach(__v => __obj.update("configuration", __v.asInstanceOf[js.Any]))
+      configurationItemCaptureTime.foreach(
+        __v => __obj.update("configurationItemCaptureTime", __v.asInstanceOf[js.Any])
+      )
+      configurationItemStatus.foreach(__v => __obj.update("configurationItemStatus", __v.asInstanceOf[js.Any]))
+      configurationStateId.foreach(__v => __obj.update("configurationStateId", __v.asInstanceOf[js.Any]))
+      resourceCreationTime.foreach(__v => __obj.update("resourceCreationTime", __v.asInstanceOf[js.Any]))
+      resourceId.foreach(__v => __obj.update("resourceId", __v.asInstanceOf[js.Any]))
+      resourceName.foreach(__v => __obj.update("resourceName", __v.asInstanceOf[js.Any]))
+      resourceType.foreach(__v => __obj.update("resourceType", __v.asInstanceOf[js.Any]))
+      supplementaryConfiguration.foreach(__v => __obj.update("supplementaryConfiguration", __v.asInstanceOf[js.Any]))
+      version.foreach(__v => __obj.update("version", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[BaseConfigurationItem]
     }
   }
 
@@ -814,12 +722,12 @@ package configservice {
         ConfigurationAggregatorName: ConfigurationAggregatorName,
         ResourceIdentifiers: ResourceIdentifiersList
     ): BatchGetAggregateResourceConfigRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ConfigurationAggregatorName" -> ConfigurationAggregatorName.asInstanceOf[js.Any],
         "ResourceIdentifiers"         -> ResourceIdentifiers.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[BatchGetAggregateResourceConfigRequest]
+      __obj.asInstanceOf[BatchGetAggregateResourceConfigRequest]
     }
   }
 
@@ -834,16 +742,12 @@ package configservice {
         BaseConfigurationItems: js.UndefOr[BaseConfigurationItems] = js.undefined,
         UnprocessedResourceIdentifiers: js.UndefOr[UnprocessedResourceIdentifierList] = js.undefined
     ): BatchGetAggregateResourceConfigResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "BaseConfigurationItems" -> BaseConfigurationItems.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "UnprocessedResourceIdentifiers" -> UnprocessedResourceIdentifiers.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[BatchGetAggregateResourceConfigResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      BaseConfigurationItems.foreach(__v => __obj.update("BaseConfigurationItems", __v.asInstanceOf[js.Any]))
+      UnprocessedResourceIdentifiers.foreach(
+        __v => __obj.update("UnprocessedResourceIdentifiers", __v.asInstanceOf[js.Any])
+      )
+      __obj.asInstanceOf[BatchGetAggregateResourceConfigResponse]
     }
   }
 
@@ -856,11 +760,11 @@ package configservice {
     def apply(
         resourceKeys: ResourceKeys
     ): BatchGetResourceConfigRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "resourceKeys" -> resourceKeys.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[BatchGetResourceConfigRequest]
+      __obj.asInstanceOf[BatchGetResourceConfigRequest]
     }
   }
 
@@ -875,16 +779,10 @@ package configservice {
         baseConfigurationItems: js.UndefOr[BaseConfigurationItems] = js.undefined,
         unprocessedResourceKeys: js.UndefOr[ResourceKeys] = js.undefined
     ): BatchGetResourceConfigResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "baseConfigurationItems" -> baseConfigurationItems.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "unprocessedResourceKeys" -> unprocessedResourceKeys.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[BatchGetResourceConfigResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      baseConfigurationItems.foreach(__v => __obj.update("baseConfigurationItems", __v.asInstanceOf[js.Any]))
+      unprocessedResourceKeys.foreach(__v => __obj.update("unprocessedResourceKeys", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[BatchGetResourceConfigResponse]
     }
   }
 
@@ -909,16 +807,10 @@ package configservice {
         ComplianceContributorCount: js.UndefOr[ComplianceContributorCount] = js.undefined,
         ComplianceType: js.UndefOr[ComplianceType] = js.undefined
     ): Compliance = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ComplianceContributorCount" -> ComplianceContributorCount.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ComplianceType" -> ComplianceType.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Compliance]
+      val __obj = js.Dictionary.empty[js.Any]
+      ComplianceContributorCount.foreach(__v => __obj.update("ComplianceContributorCount", __v.asInstanceOf[js.Any]))
+      ComplianceType.foreach(__v => __obj.update("ComplianceType", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Compliance]
     }
   }
 
@@ -936,16 +828,10 @@ package configservice {
         Compliance: js.UndefOr[Compliance] = js.undefined,
         ConfigRuleName: js.UndefOr[StringWithCharLimit64] = js.undefined
     ): ComplianceByConfigRule = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Compliance" -> Compliance.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ConfigRuleName" -> ConfigRuleName.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ComplianceByConfigRule]
+      val __obj = js.Dictionary.empty[js.Any]
+      Compliance.foreach(__v => __obj.update("Compliance", __v.asInstanceOf[js.Any]))
+      ConfigRuleName.foreach(__v => __obj.update("ConfigRuleName", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ComplianceByConfigRule]
     }
   }
 
@@ -965,19 +851,11 @@ package configservice {
         ResourceId: js.UndefOr[BaseResourceId] = js.undefined,
         ResourceType: js.UndefOr[StringWithCharLimit256] = js.undefined
     ): ComplianceByResource = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Compliance" -> Compliance.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ResourceId" -> ResourceId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ResourceType" -> ResourceType.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ComplianceByResource]
+      val __obj = js.Dictionary.empty[js.Any]
+      Compliance.foreach(__v => __obj.update("Compliance", __v.asInstanceOf[js.Any]))
+      ResourceId.foreach(__v => __obj.update("ResourceId", __v.asInstanceOf[js.Any]))
+      ResourceType.foreach(__v => __obj.update("ResourceType", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ComplianceByResource]
     }
   }
 
@@ -995,16 +873,10 @@ package configservice {
         CapExceeded: js.UndefOr[Boolean] = js.undefined,
         CappedCount: js.UndefOr[Int] = js.undefined
     ): ComplianceContributorCount = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "CapExceeded" -> CapExceeded.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "CappedCount" -> CappedCount.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ComplianceContributorCount]
+      val __obj = js.Dictionary.empty[js.Any]
+      CapExceeded.foreach(__v => __obj.update("CapExceeded", __v.asInstanceOf[js.Any]))
+      CappedCount.foreach(__v => __obj.update("CappedCount", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ComplianceContributorCount]
     }
   }
 
@@ -1024,19 +896,11 @@ package configservice {
         CompliantResourceCount: js.UndefOr[ComplianceContributorCount] = js.undefined,
         NonCompliantResourceCount: js.UndefOr[ComplianceContributorCount] = js.undefined
     ): ComplianceSummary = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ComplianceSummaryTimestamp" -> ComplianceSummaryTimestamp.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "CompliantResourceCount" -> CompliantResourceCount.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NonCompliantResourceCount" -> NonCompliantResourceCount.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ComplianceSummary]
+      val __obj = js.Dictionary.empty[js.Any]
+      ComplianceSummaryTimestamp.foreach(__v => __obj.update("ComplianceSummaryTimestamp", __v.asInstanceOf[js.Any]))
+      CompliantResourceCount.foreach(__v => __obj.update("CompliantResourceCount", __v.asInstanceOf[js.Any]))
+      NonCompliantResourceCount.foreach(__v => __obj.update("NonCompliantResourceCount", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ComplianceSummary]
     }
   }
 
@@ -1054,16 +918,10 @@ package configservice {
         ComplianceSummary: js.UndefOr[ComplianceSummary] = js.undefined,
         ResourceType: js.UndefOr[StringWithCharLimit256] = js.undefined
     ): ComplianceSummaryByResourceType = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ComplianceSummary" -> ComplianceSummary.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ResourceType" -> ResourceType.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ComplianceSummaryByResourceType]
+      val __obj = js.Dictionary.empty[js.Any]
+      ComplianceSummary.foreach(__v => __obj.update("ComplianceSummary", __v.asInstanceOf[js.Any]))
+      ResourceType.foreach(__v => __obj.update("ResourceType", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ComplianceSummaryByResourceType]
     }
   }
 
@@ -1098,28 +956,14 @@ package configservice {
         lastSuccessfulTime: js.UndefOr[Date] = js.undefined,
         nextDeliveryTime: js.UndefOr[Date] = js.undefined
     ): ConfigExportDeliveryInfo = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "lastAttemptTime" -> lastAttemptTime.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "lastErrorCode" -> lastErrorCode.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "lastErrorMessage" -> lastErrorMessage.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "lastStatus" -> lastStatus.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "lastSuccessfulTime" -> lastSuccessfulTime.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "nextDeliveryTime" -> nextDeliveryTime.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ConfigExportDeliveryInfo]
+      val __obj = js.Dictionary.empty[js.Any]
+      lastAttemptTime.foreach(__v => __obj.update("lastAttemptTime", __v.asInstanceOf[js.Any]))
+      lastErrorCode.foreach(__v => __obj.update("lastErrorCode", __v.asInstanceOf[js.Any]))
+      lastErrorMessage.foreach(__v => __obj.update("lastErrorMessage", __v.asInstanceOf[js.Any]))
+      lastStatus.foreach(__v => __obj.update("lastStatus", __v.asInstanceOf[js.Any]))
+      lastSuccessfulTime.foreach(__v => __obj.update("lastSuccessfulTime", __v.asInstanceOf[js.Any]))
+      nextDeliveryTime.foreach(__v => __obj.update("nextDeliveryTime", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ConfigExportDeliveryInfo]
     }
   }
 
@@ -1156,38 +1000,20 @@ package configservice {
         MaximumExecutionFrequency: js.UndefOr[MaximumExecutionFrequency] = js.undefined,
         Scope: js.UndefOr[Scope] = js.undefined
     ): ConfigRule = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Source" -> Source.asInstanceOf[js.Any],
-        "ConfigRuleArn" -> ConfigRuleArn.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ConfigRuleId" -> ConfigRuleId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ConfigRuleName" -> ConfigRuleName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ConfigRuleState" -> ConfigRuleState.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "CreatedBy" -> CreatedBy.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Description" -> Description.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "InputParameters" -> InputParameters.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MaximumExecutionFrequency" -> MaximumExecutionFrequency.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Scope" -> Scope.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "Source" -> Source.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ConfigRule]
+      ConfigRuleArn.foreach(__v => __obj.update("ConfigRuleArn", __v.asInstanceOf[js.Any]))
+      ConfigRuleId.foreach(__v => __obj.update("ConfigRuleId", __v.asInstanceOf[js.Any]))
+      ConfigRuleName.foreach(__v => __obj.update("ConfigRuleName", __v.asInstanceOf[js.Any]))
+      ConfigRuleState.foreach(__v => __obj.update("ConfigRuleState", __v.asInstanceOf[js.Any]))
+      CreatedBy.foreach(__v => __obj.update("CreatedBy", __v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
+      InputParameters.foreach(__v => __obj.update("InputParameters", __v.asInstanceOf[js.Any]))
+      MaximumExecutionFrequency.foreach(__v => __obj.update("MaximumExecutionFrequency", __v.asInstanceOf[js.Any]))
+      Scope.foreach(__v => __obj.update("Scope", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ConfigRule]
     }
   }
 
@@ -1209,22 +1035,12 @@ package configservice {
         ComplianceType: js.UndefOr[ComplianceType] = js.undefined,
         ConfigRuleName: js.UndefOr[ConfigRuleName] = js.undefined
     ): ConfigRuleComplianceFilters = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "AccountId" -> AccountId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "AwsRegion" -> AwsRegion.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ComplianceType" -> ComplianceType.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ConfigRuleName" -> ConfigRuleName.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ConfigRuleComplianceFilters]
+      val __obj = js.Dictionary.empty[js.Any]
+      AccountId.foreach(__v => __obj.update("AccountId", __v.asInstanceOf[js.Any]))
+      AwsRegion.foreach(__v => __obj.update("AwsRegion", __v.asInstanceOf[js.Any]))
+      ComplianceType.foreach(__v => __obj.update("ComplianceType", __v.asInstanceOf[js.Any]))
+      ConfigRuleName.foreach(__v => __obj.update("ConfigRuleName", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ConfigRuleComplianceFilters]
     }
   }
 
@@ -1242,16 +1058,10 @@ package configservice {
         AccountId: js.UndefOr[AccountId] = js.undefined,
         AwsRegion: js.UndefOr[AwsRegion] = js.undefined
     ): ConfigRuleComplianceSummaryFilters = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "AccountId" -> AccountId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "AwsRegion" -> AwsRegion.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ConfigRuleComplianceSummaryFilters]
+      val __obj = js.Dictionary.empty[js.Any]
+      AccountId.foreach(__v => __obj.update("AccountId", __v.asInstanceOf[js.Any]))
+      AwsRegion.foreach(__v => __obj.update("AwsRegion", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ConfigRuleComplianceSummaryFilters]
     }
   }
 
@@ -1295,43 +1105,23 @@ package configservice {
         LastSuccessfulEvaluationTime: js.UndefOr[Date] = js.undefined,
         LastSuccessfulInvocationTime: js.UndefOr[Date] = js.undefined
     ): ConfigRuleEvaluationStatus = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ConfigRuleArn" -> ConfigRuleArn.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ConfigRuleId" -> ConfigRuleId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ConfigRuleName" -> ConfigRuleName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "FirstActivatedTime" -> FirstActivatedTime.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "FirstEvaluationStarted" -> FirstEvaluationStarted.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "LastErrorCode" -> LastErrorCode.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "LastErrorMessage" -> LastErrorMessage.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "LastFailedEvaluationTime" -> LastFailedEvaluationTime.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "LastFailedInvocationTime" -> LastFailedInvocationTime.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "LastSuccessfulEvaluationTime" -> LastSuccessfulEvaluationTime.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "LastSuccessfulInvocationTime" -> LastSuccessfulInvocationTime.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ConfigRuleEvaluationStatus]
+      val __obj = js.Dictionary.empty[js.Any]
+      ConfigRuleArn.foreach(__v => __obj.update("ConfigRuleArn", __v.asInstanceOf[js.Any]))
+      ConfigRuleId.foreach(__v => __obj.update("ConfigRuleId", __v.asInstanceOf[js.Any]))
+      ConfigRuleName.foreach(__v => __obj.update("ConfigRuleName", __v.asInstanceOf[js.Any]))
+      FirstActivatedTime.foreach(__v => __obj.update("FirstActivatedTime", __v.asInstanceOf[js.Any]))
+      FirstEvaluationStarted.foreach(__v => __obj.update("FirstEvaluationStarted", __v.asInstanceOf[js.Any]))
+      LastErrorCode.foreach(__v => __obj.update("LastErrorCode", __v.asInstanceOf[js.Any]))
+      LastErrorMessage.foreach(__v => __obj.update("LastErrorMessage", __v.asInstanceOf[js.Any]))
+      LastFailedEvaluationTime.foreach(__v => __obj.update("LastFailedEvaluationTime", __v.asInstanceOf[js.Any]))
+      LastFailedInvocationTime.foreach(__v => __obj.update("LastFailedInvocationTime", __v.asInstanceOf[js.Any]))
+      LastSuccessfulEvaluationTime.foreach(
+        __v => __obj.update("LastSuccessfulEvaluationTime", __v.asInstanceOf[js.Any])
+      )
+      LastSuccessfulInvocationTime.foreach(
+        __v => __obj.update("LastSuccessfulInvocationTime", __v.asInstanceOf[js.Any])
+      )
+      __obj.asInstanceOf[ConfigRuleEvaluationStatus]
     }
   }
 
@@ -1368,13 +1158,9 @@ package configservice {
     def apply(
         deliveryFrequency: js.UndefOr[MaximumExecutionFrequency] = js.undefined
     ): ConfigSnapshotDeliveryProperties = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "deliveryFrequency" -> deliveryFrequency.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ConfigSnapshotDeliveryProperties]
+      val __obj = js.Dictionary.empty[js.Any]
+      deliveryFrequency.foreach(__v => __obj.update("deliveryFrequency", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ConfigSnapshotDeliveryProperties]
     }
   }
 
@@ -1396,22 +1182,12 @@ package configservice {
         lastStatus: js.UndefOr[DeliveryStatus] = js.undefined,
         lastStatusChangeTime: js.UndefOr[Date] = js.undefined
     ): ConfigStreamDeliveryInfo = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "lastErrorCode" -> lastErrorCode.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "lastErrorMessage" -> lastErrorMessage.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "lastStatus" -> lastStatus.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "lastStatusChangeTime" -> lastStatusChangeTime.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ConfigStreamDeliveryInfo]
+      val __obj = js.Dictionary.empty[js.Any]
+      lastErrorCode.foreach(__v => __obj.update("lastErrorCode", __v.asInstanceOf[js.Any]))
+      lastErrorMessage.foreach(__v => __obj.update("lastErrorMessage", __v.asInstanceOf[js.Any]))
+      lastStatus.foreach(__v => __obj.update("lastStatus", __v.asInstanceOf[js.Any]))
+      lastStatusChangeTime.foreach(__v => __obj.update("lastStatusChangeTime", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ConfigStreamDeliveryInfo]
     }
   }
 
@@ -1437,28 +1213,16 @@ package configservice {
         LastUpdatedTime: js.UndefOr[Date] = js.undefined,
         OrganizationAggregationSource: js.UndefOr[OrganizationAggregationSource] = js.undefined
     ): ConfigurationAggregator = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "AccountAggregationSources" -> AccountAggregationSources.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ConfigurationAggregatorArn" -> ConfigurationAggregatorArn.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ConfigurationAggregatorName" -> ConfigurationAggregatorName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "CreationTime" -> CreationTime.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "LastUpdatedTime" -> LastUpdatedTime.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "OrganizationAggregationSource" -> OrganizationAggregationSource.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ConfigurationAggregator]
+      val __obj = js.Dictionary.empty[js.Any]
+      AccountAggregationSources.foreach(__v => __obj.update("AccountAggregationSources", __v.asInstanceOf[js.Any]))
+      ConfigurationAggregatorArn.foreach(__v => __obj.update("ConfigurationAggregatorArn", __v.asInstanceOf[js.Any]))
+      ConfigurationAggregatorName.foreach(__v => __obj.update("ConfigurationAggregatorName", __v.asInstanceOf[js.Any]))
+      CreationTime.foreach(__v => __obj.update("CreationTime", __v.asInstanceOf[js.Any]))
+      LastUpdatedTime.foreach(__v => __obj.update("LastUpdatedTime", __v.asInstanceOf[js.Any]))
+      OrganizationAggregationSource.foreach(
+        __v => __obj.update("OrganizationAggregationSource", __v.asInstanceOf[js.Any])
+      )
+      __obj.asInstanceOf[ConfigurationAggregator]
     }
   }
 
@@ -1508,64 +1272,28 @@ package configservice {
         tags: js.UndefOr[Tags] = js.undefined,
         version: js.UndefOr[Version] = js.undefined
     ): ConfigurationItem = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "accountId" -> accountId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "arn" -> arn.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "availabilityZone" -> availabilityZone.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "awsRegion" -> awsRegion.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "configuration" -> configuration.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "configurationItemCaptureTime" -> configurationItemCaptureTime.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "configurationItemMD5Hash" -> configurationItemMD5Hash.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "configurationItemStatus" -> configurationItemStatus.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "configurationStateId" -> configurationStateId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "relatedEvents" -> relatedEvents.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "relationships" -> relationships.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "resourceCreationTime" -> resourceCreationTime.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "resourceId" -> resourceId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "resourceName" -> resourceName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "resourceType" -> resourceType.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "supplementaryConfiguration" -> supplementaryConfiguration.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "tags" -> tags.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "version" -> version.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ConfigurationItem]
+      val __obj = js.Dictionary.empty[js.Any]
+      accountId.foreach(__v => __obj.update("accountId", __v.asInstanceOf[js.Any]))
+      arn.foreach(__v => __obj.update("arn", __v.asInstanceOf[js.Any]))
+      availabilityZone.foreach(__v => __obj.update("availabilityZone", __v.asInstanceOf[js.Any]))
+      awsRegion.foreach(__v => __obj.update("awsRegion", __v.asInstanceOf[js.Any]))
+      configuration.foreach(__v => __obj.update("configuration", __v.asInstanceOf[js.Any]))
+      configurationItemCaptureTime.foreach(
+        __v => __obj.update("configurationItemCaptureTime", __v.asInstanceOf[js.Any])
+      )
+      configurationItemMD5Hash.foreach(__v => __obj.update("configurationItemMD5Hash", __v.asInstanceOf[js.Any]))
+      configurationItemStatus.foreach(__v => __obj.update("configurationItemStatus", __v.asInstanceOf[js.Any]))
+      configurationStateId.foreach(__v => __obj.update("configurationStateId", __v.asInstanceOf[js.Any]))
+      relatedEvents.foreach(__v => __obj.update("relatedEvents", __v.asInstanceOf[js.Any]))
+      relationships.foreach(__v => __obj.update("relationships", __v.asInstanceOf[js.Any]))
+      resourceCreationTime.foreach(__v => __obj.update("resourceCreationTime", __v.asInstanceOf[js.Any]))
+      resourceId.foreach(__v => __obj.update("resourceId", __v.asInstanceOf[js.Any]))
+      resourceName.foreach(__v => __obj.update("resourceName", __v.asInstanceOf[js.Any]))
+      resourceType.foreach(__v => __obj.update("resourceType", __v.asInstanceOf[js.Any]))
+      supplementaryConfiguration.foreach(__v => __obj.update("supplementaryConfiguration", __v.asInstanceOf[js.Any]))
+      tags.foreach(__v => __obj.update("tags", __v.asInstanceOf[js.Any]))
+      version.foreach(__v => __obj.update("version", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ConfigurationItem]
     }
   }
 
@@ -1595,19 +1323,11 @@ package configservice {
         recordingGroup: js.UndefOr[RecordingGroup] = js.undefined,
         roleARN: js.UndefOr[String] = js.undefined
     ): ConfigurationRecorder = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "name" -> name.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "recordingGroup" -> recordingGroup.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "roleARN" -> roleARN.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ConfigurationRecorder]
+      val __obj = js.Dictionary.empty[js.Any]
+      name.foreach(__v => __obj.update("name", __v.asInstanceOf[js.Any]))
+      recordingGroup.foreach(__v => __obj.update("recordingGroup", __v.asInstanceOf[js.Any]))
+      roleARN.foreach(__v => __obj.update("roleARN", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ConfigurationRecorder]
     }
   }
 
@@ -1637,34 +1357,16 @@ package configservice {
         name: js.UndefOr[String] = js.undefined,
         recording: js.UndefOr[Boolean] = js.undefined
     ): ConfigurationRecorderStatus = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "lastErrorCode" -> lastErrorCode.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "lastErrorMessage" -> lastErrorMessage.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "lastStartTime" -> lastStartTime.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "lastStatus" -> lastStatus.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "lastStatusChangeTime" -> lastStatusChangeTime.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "lastStopTime" -> lastStopTime.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "name" -> name.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "recording" -> recording.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ConfigurationRecorderStatus]
+      val __obj = js.Dictionary.empty[js.Any]
+      lastErrorCode.foreach(__v => __obj.update("lastErrorCode", __v.asInstanceOf[js.Any]))
+      lastErrorMessage.foreach(__v => __obj.update("lastErrorMessage", __v.asInstanceOf[js.Any]))
+      lastStartTime.foreach(__v => __obj.update("lastStartTime", __v.asInstanceOf[js.Any]))
+      lastStatus.foreach(__v => __obj.update("lastStatus", __v.asInstanceOf[js.Any]))
+      lastStatusChangeTime.foreach(__v => __obj.update("lastStatusChangeTime", __v.asInstanceOf[js.Any]))
+      lastStopTime.foreach(__v => __obj.update("lastStopTime", __v.asInstanceOf[js.Any]))
+      name.foreach(__v => __obj.update("name", __v.asInstanceOf[js.Any]))
+      recording.foreach(__v => __obj.update("recording", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ConfigurationRecorderStatus]
     }
   }
 
@@ -1679,12 +1381,12 @@ package configservice {
         AuthorizedAccountId: AccountId,
         AuthorizedAwsRegion: AwsRegion
     ): DeleteAggregationAuthorizationRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "AuthorizedAccountId" -> AuthorizedAccountId.asInstanceOf[js.Any],
         "AuthorizedAwsRegion" -> AuthorizedAwsRegion.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteAggregationAuthorizationRequest]
+      __obj.asInstanceOf[DeleteAggregationAuthorizationRequest]
     }
   }
 
@@ -1700,11 +1402,11 @@ package configservice {
     def apply(
         ConfigRuleName: StringWithCharLimit64
     ): DeleteConfigRuleRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ConfigRuleName" -> ConfigRuleName.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteConfigRuleRequest]
+      __obj.asInstanceOf[DeleteConfigRuleRequest]
     }
   }
 
@@ -1717,11 +1419,11 @@ package configservice {
     def apply(
         ConfigurationAggregatorName: ConfigurationAggregatorName
     ): DeleteConfigurationAggregatorRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ConfigurationAggregatorName" -> ConfigurationAggregatorName.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteConfigurationAggregatorRequest]
+      __obj.asInstanceOf[DeleteConfigurationAggregatorRequest]
     }
   }
 
@@ -1737,11 +1439,11 @@ package configservice {
     def apply(
         ConfigurationRecorderName: RecorderName
     ): DeleteConfigurationRecorderRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ConfigurationRecorderName" -> ConfigurationRecorderName.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteConfigurationRecorderRequest]
+      __obj.asInstanceOf[DeleteConfigurationRecorderRequest]
     }
   }
 
@@ -1757,11 +1459,11 @@ package configservice {
     def apply(
         DeliveryChannelName: ChannelName
     ): DeleteDeliveryChannelRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "DeliveryChannelName" -> DeliveryChannelName.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteDeliveryChannelRequest]
+      __obj.asInstanceOf[DeleteDeliveryChannelRequest]
     }
   }
 
@@ -1777,11 +1479,11 @@ package configservice {
     def apply(
         ConfigRuleName: StringWithCharLimit64
     ): DeleteEvaluationResultsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ConfigRuleName" -> ConfigRuleName.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteEvaluationResultsRequest]
+      __obj.asInstanceOf[DeleteEvaluationResultsRequest]
     }
   }
 
@@ -1794,10 +1496,9 @@ package configservice {
   object DeleteEvaluationResultsResponse {
     def apply(
         ): DeleteEvaluationResultsResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary.empty[js.Any]
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteEvaluationResultsResponse]
+      __obj.asInstanceOf[DeleteEvaluationResultsResponse]
     }
   }
 
@@ -1812,12 +1513,12 @@ package configservice {
         RequesterAccountId: AccountId,
         RequesterAwsRegion: AwsRegion
     ): DeletePendingAggregationRequestRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "RequesterAccountId" -> RequesterAccountId.asInstanceOf[js.Any],
         "RequesterAwsRegion" -> RequesterAwsRegion.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeletePendingAggregationRequestRequest]
+      __obj.asInstanceOf[DeletePendingAggregationRequestRequest]
     }
   }
 
@@ -1832,14 +1533,12 @@ package configservice {
         ConfigRuleName: StringWithCharLimit64,
         ResourceType: js.UndefOr[String] = js.undefined
     ): DeleteRemediationConfigurationRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ConfigRuleName" -> ConfigRuleName.asInstanceOf[js.Any],
-        "ResourceType" -> ResourceType.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "ConfigRuleName" -> ConfigRuleName.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteRemediationConfigurationRequest]
+      ResourceType.foreach(__v => __obj.update("ResourceType", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DeleteRemediationConfigurationRequest]
     }
   }
 
@@ -1849,10 +1548,9 @@ package configservice {
   object DeleteRemediationConfigurationResponse {
     def apply(
         ): DeleteRemediationConfigurationResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary.empty[js.Any]
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteRemediationConfigurationResponse]
+      __obj.asInstanceOf[DeleteRemediationConfigurationResponse]
     }
   }
 
@@ -1865,11 +1563,11 @@ package configservice {
     def apply(
         RetentionConfigurationName: RetentionConfigurationName
     ): DeleteRetentionConfigurationRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "RetentionConfigurationName" -> RetentionConfigurationName.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteRetentionConfigurationRequest]
+      __obj.asInstanceOf[DeleteRetentionConfigurationRequest]
     }
   }
 
@@ -1885,11 +1583,11 @@ package configservice {
     def apply(
         deliveryChannelName: ChannelName
     ): DeliverConfigSnapshotRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "deliveryChannelName" -> deliveryChannelName.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeliverConfigSnapshotRequest]
+      __obj.asInstanceOf[DeliverConfigSnapshotRequest]
     }
   }
 
@@ -1905,13 +1603,9 @@ package configservice {
     def apply(
         configSnapshotId: js.UndefOr[String] = js.undefined
     ): DeliverConfigSnapshotResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "configSnapshotId" -> configSnapshotId.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeliverConfigSnapshotResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      configSnapshotId.foreach(__v => __obj.update("configSnapshotId", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DeliverConfigSnapshotResponse]
     }
   }
 
@@ -1935,25 +1629,15 @@ package configservice {
         s3KeyPrefix: js.UndefOr[String] = js.undefined,
         snsTopicARN: js.UndefOr[String] = js.undefined
     ): DeliveryChannel = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "configSnapshotDeliveryProperties" -> configSnapshotDeliveryProperties.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "name" -> name.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "s3BucketName" -> s3BucketName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "s3KeyPrefix" -> s3KeyPrefix.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "snsTopicARN" -> snsTopicARN.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeliveryChannel]
+      val __obj = js.Dictionary.empty[js.Any]
+      configSnapshotDeliveryProperties.foreach(
+        __v => __obj.update("configSnapshotDeliveryProperties", __v.asInstanceOf[js.Any])
+      )
+      name.foreach(__v => __obj.update("name", __v.asInstanceOf[js.Any]))
+      s3BucketName.foreach(__v => __obj.update("s3BucketName", __v.asInstanceOf[js.Any]))
+      s3KeyPrefix.foreach(__v => __obj.update("s3KeyPrefix", __v.asInstanceOf[js.Any]))
+      snsTopicARN.foreach(__v => __obj.update("snsTopicARN", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DeliveryChannel]
     }
   }
 
@@ -1976,22 +1660,12 @@ package configservice {
         configStreamDeliveryInfo: js.UndefOr[ConfigStreamDeliveryInfo] = js.undefined,
         name: js.UndefOr[String] = js.undefined
     ): DeliveryChannelStatus = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "configHistoryDeliveryInfo" -> configHistoryDeliveryInfo.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "configSnapshotDeliveryInfo" -> configSnapshotDeliveryInfo.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "configStreamDeliveryInfo" -> configStreamDeliveryInfo.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "name" -> name.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeliveryChannelStatus]
+      val __obj = js.Dictionary.empty[js.Any]
+      configHistoryDeliveryInfo.foreach(__v => __obj.update("configHistoryDeliveryInfo", __v.asInstanceOf[js.Any]))
+      configSnapshotDeliveryInfo.foreach(__v => __obj.update("configSnapshotDeliveryInfo", __v.asInstanceOf[js.Any]))
+      configStreamDeliveryInfo.foreach(__v => __obj.update("configStreamDeliveryInfo", __v.asInstanceOf[js.Any]))
+      name.foreach(__v => __obj.update("name", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DeliveryChannelStatus]
     }
   }
 
@@ -2018,22 +1692,14 @@ package configservice {
         Limit: js.UndefOr[GroupByAPILimit] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): DescribeAggregateComplianceByConfigRulesRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ConfigurationAggregatorName" -> ConfigurationAggregatorName.asInstanceOf[js.Any],
-        "Filters" -> Filters.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Limit" -> Limit.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NextToken" -> NextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "ConfigurationAggregatorName" -> ConfigurationAggregatorName.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal
-        .applyDynamicNamed("apply")(_fields: _*)
-        .asInstanceOf[DescribeAggregateComplianceByConfigRulesRequest]
+      Filters.foreach(__v => __obj.update("Filters", __v.asInstanceOf[js.Any]))
+      Limit.foreach(__v => __obj.update("Limit", __v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeAggregateComplianceByConfigRulesRequest]
     }
   }
 
@@ -2048,18 +1714,12 @@ package configservice {
         AggregateComplianceByConfigRules: js.UndefOr[AggregateComplianceByConfigRuleList] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): DescribeAggregateComplianceByConfigRulesResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "AggregateComplianceByConfigRules" -> AggregateComplianceByConfigRules.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NextToken" -> NextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal
-        .applyDynamicNamed("apply")(_fields: _*)
-        .asInstanceOf[DescribeAggregateComplianceByConfigRulesResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      AggregateComplianceByConfigRules.foreach(
+        __v => __obj.update("AggregateComplianceByConfigRules", __v.asInstanceOf[js.Any])
+      )
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeAggregateComplianceByConfigRulesResponse]
     }
   }
 
@@ -2074,16 +1734,10 @@ package configservice {
         Limit: js.UndefOr[Limit] = js.undefined,
         NextToken: js.UndefOr[String] = js.undefined
     ): DescribeAggregationAuthorizationsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Limit" -> Limit.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NextToken" -> NextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeAggregationAuthorizationsRequest]
+      val __obj = js.Dictionary.empty[js.Any]
+      Limit.foreach(__v => __obj.update("Limit", __v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeAggregationAuthorizationsRequest]
     }
   }
 
@@ -2098,16 +1752,10 @@ package configservice {
         AggregationAuthorizations: js.UndefOr[AggregationAuthorizationList] = js.undefined,
         NextToken: js.UndefOr[String] = js.undefined
     ): DescribeAggregationAuthorizationsResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "AggregationAuthorizations" -> AggregationAuthorizations.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NextToken" -> NextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeAggregationAuthorizationsResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      AggregationAuthorizations.foreach(__v => __obj.update("AggregationAuthorizations", __v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeAggregationAuthorizationsResponse]
     }
   }
 
@@ -2127,19 +1775,11 @@ package configservice {
         ConfigRuleNames: js.UndefOr[ConfigRuleNames] = js.undefined,
         NextToken: js.UndefOr[String] = js.undefined
     ): DescribeComplianceByConfigRuleRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ComplianceTypes" -> ComplianceTypes.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ConfigRuleNames" -> ConfigRuleNames.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NextToken" -> NextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeComplianceByConfigRuleRequest]
+      val __obj = js.Dictionary.empty[js.Any]
+      ComplianceTypes.foreach(__v => __obj.update("ComplianceTypes", __v.asInstanceOf[js.Any]))
+      ConfigRuleNames.foreach(__v => __obj.update("ConfigRuleNames", __v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeComplianceByConfigRuleRequest]
     }
   }
 
@@ -2157,16 +1797,10 @@ package configservice {
         ComplianceByConfigRules: js.UndefOr[ComplianceByConfigRules] = js.undefined,
         NextToken: js.UndefOr[String] = js.undefined
     ): DescribeComplianceByConfigRuleResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ComplianceByConfigRules" -> ComplianceByConfigRules.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NextToken" -> NextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeComplianceByConfigRuleResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      ComplianceByConfigRules.foreach(__v => __obj.update("ComplianceByConfigRules", __v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeComplianceByConfigRuleResponse]
     }
   }
 
@@ -2190,25 +1824,13 @@ package configservice {
         ResourceId: js.UndefOr[BaseResourceId] = js.undefined,
         ResourceType: js.UndefOr[StringWithCharLimit256] = js.undefined
     ): DescribeComplianceByResourceRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ComplianceTypes" -> ComplianceTypes.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Limit" -> Limit.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NextToken" -> NextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ResourceId" -> ResourceId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ResourceType" -> ResourceType.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeComplianceByResourceRequest]
+      val __obj = js.Dictionary.empty[js.Any]
+      ComplianceTypes.foreach(__v => __obj.update("ComplianceTypes", __v.asInstanceOf[js.Any]))
+      Limit.foreach(__v => __obj.update("Limit", __v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      ResourceId.foreach(__v => __obj.update("ResourceId", __v.asInstanceOf[js.Any]))
+      ResourceType.foreach(__v => __obj.update("ResourceType", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeComplianceByResourceRequest]
     }
   }
 
@@ -2226,16 +1848,10 @@ package configservice {
         ComplianceByResources: js.UndefOr[ComplianceByResources] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): DescribeComplianceByResourceResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ComplianceByResources" -> ComplianceByResources.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NextToken" -> NextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeComplianceByResourceResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      ComplianceByResources.foreach(__v => __obj.update("ComplianceByResources", __v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeComplianceByResourceResponse]
     }
   }
 
@@ -2255,19 +1871,11 @@ package configservice {
         Limit: js.UndefOr[RuleLimit] = js.undefined,
         NextToken: js.UndefOr[String] = js.undefined
     ): DescribeConfigRuleEvaluationStatusRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ConfigRuleNames" -> ConfigRuleNames.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Limit" -> Limit.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NextToken" -> NextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeConfigRuleEvaluationStatusRequest]
+      val __obj = js.Dictionary.empty[js.Any]
+      ConfigRuleNames.foreach(__v => __obj.update("ConfigRuleNames", __v.asInstanceOf[js.Any]))
+      Limit.foreach(__v => __obj.update("Limit", __v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeConfigRuleEvaluationStatusRequest]
     }
   }
 
@@ -2285,18 +1893,10 @@ package configservice {
         ConfigRulesEvaluationStatus: js.UndefOr[ConfigRuleEvaluationStatusList] = js.undefined,
         NextToken: js.UndefOr[String] = js.undefined
     ): DescribeConfigRuleEvaluationStatusResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ConfigRulesEvaluationStatus" -> ConfigRulesEvaluationStatus.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NextToken" -> NextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal
-        .applyDynamicNamed("apply")(_fields: _*)
-        .asInstanceOf[DescribeConfigRuleEvaluationStatusResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      ConfigRulesEvaluationStatus.foreach(__v => __obj.update("ConfigRulesEvaluationStatus", __v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeConfigRuleEvaluationStatusResponse]
     }
   }
 
@@ -2314,16 +1914,10 @@ package configservice {
         ConfigRuleNames: js.UndefOr[ConfigRuleNames] = js.undefined,
         NextToken: js.UndefOr[String] = js.undefined
     ): DescribeConfigRulesRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ConfigRuleNames" -> ConfigRuleNames.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NextToken" -> NextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeConfigRulesRequest]
+      val __obj = js.Dictionary.empty[js.Any]
+      ConfigRuleNames.foreach(__v => __obj.update("ConfigRuleNames", __v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeConfigRulesRequest]
     }
   }
 
@@ -2341,16 +1935,10 @@ package configservice {
         ConfigRules: js.UndefOr[ConfigRules] = js.undefined,
         NextToken: js.UndefOr[String] = js.undefined
     ): DescribeConfigRulesResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ConfigRules" -> ConfigRules.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NextToken" -> NextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeConfigRulesResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      ConfigRules.foreach(__v => __obj.update("ConfigRules", __v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeConfigRulesResponse]
     }
   }
 
@@ -2369,22 +1957,14 @@ package configservice {
         NextToken: js.UndefOr[String] = js.undefined,
         UpdateStatus: js.UndefOr[AggregatedSourceStatusTypeList] = js.undefined
     ): DescribeConfigurationAggregatorSourcesStatusRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ConfigurationAggregatorName" -> ConfigurationAggregatorName.asInstanceOf[js.Any],
-        "Limit" -> Limit.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NextToken" -> NextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "UpdateStatus" -> UpdateStatus.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "ConfigurationAggregatorName" -> ConfigurationAggregatorName.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal
-        .applyDynamicNamed("apply")(_fields: _*)
-        .asInstanceOf[DescribeConfigurationAggregatorSourcesStatusRequest]
+      Limit.foreach(__v => __obj.update("Limit", __v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      UpdateStatus.foreach(__v => __obj.update("UpdateStatus", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeConfigurationAggregatorSourcesStatusRequest]
     }
   }
 
@@ -2399,18 +1979,10 @@ package configservice {
         AggregatedSourceStatusList: js.UndefOr[AggregatedSourceStatusList] = js.undefined,
         NextToken: js.UndefOr[String] = js.undefined
     ): DescribeConfigurationAggregatorSourcesStatusResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "AggregatedSourceStatusList" -> AggregatedSourceStatusList.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NextToken" -> NextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal
-        .applyDynamicNamed("apply")(_fields: _*)
-        .asInstanceOf[DescribeConfigurationAggregatorSourcesStatusResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      AggregatedSourceStatusList.foreach(__v => __obj.update("AggregatedSourceStatusList", __v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeConfigurationAggregatorSourcesStatusResponse]
     }
   }
 
@@ -2427,19 +1999,13 @@ package configservice {
         Limit: js.UndefOr[Limit] = js.undefined,
         NextToken: js.UndefOr[String] = js.undefined
     ): DescribeConfigurationAggregatorsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ConfigurationAggregatorNames" -> ConfigurationAggregatorNames.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Limit" -> Limit.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NextToken" -> NextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeConfigurationAggregatorsRequest]
+      val __obj = js.Dictionary.empty[js.Any]
+      ConfigurationAggregatorNames.foreach(
+        __v => __obj.update("ConfigurationAggregatorNames", __v.asInstanceOf[js.Any])
+      )
+      Limit.foreach(__v => __obj.update("Limit", __v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeConfigurationAggregatorsRequest]
     }
   }
 
@@ -2454,16 +2020,10 @@ package configservice {
         ConfigurationAggregators: js.UndefOr[ConfigurationAggregatorList] = js.undefined,
         NextToken: js.UndefOr[String] = js.undefined
     ): DescribeConfigurationAggregatorsResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ConfigurationAggregators" -> ConfigurationAggregators.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NextToken" -> NextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeConfigurationAggregatorsResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      ConfigurationAggregators.foreach(__v => __obj.update("ConfigurationAggregators", __v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeConfigurationAggregatorsResponse]
     }
   }
 
@@ -2479,15 +2039,9 @@ package configservice {
     def apply(
         ConfigurationRecorderNames: js.UndefOr[ConfigurationRecorderNameList] = js.undefined
     ): DescribeConfigurationRecorderStatusRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ConfigurationRecorderNames" -> ConfigurationRecorderNames.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal
-        .applyDynamicNamed("apply")(_fields: _*)
-        .asInstanceOf[DescribeConfigurationRecorderStatusRequest]
+      val __obj = js.Dictionary.empty[js.Any]
+      ConfigurationRecorderNames.foreach(__v => __obj.update("ConfigurationRecorderNames", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeConfigurationRecorderStatusRequest]
     }
   }
 
@@ -2503,15 +2057,11 @@ package configservice {
     def apply(
         ConfigurationRecordersStatus: js.UndefOr[ConfigurationRecorderStatusList] = js.undefined
     ): DescribeConfigurationRecorderStatusResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ConfigurationRecordersStatus" -> ConfigurationRecordersStatus.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal
-        .applyDynamicNamed("apply")(_fields: _*)
-        .asInstanceOf[DescribeConfigurationRecorderStatusResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      ConfigurationRecordersStatus.foreach(
+        __v => __obj.update("ConfigurationRecordersStatus", __v.asInstanceOf[js.Any])
+      )
+      __obj.asInstanceOf[DescribeConfigurationRecorderStatusResponse]
     }
   }
 
@@ -2527,13 +2077,9 @@ package configservice {
     def apply(
         ConfigurationRecorderNames: js.UndefOr[ConfigurationRecorderNameList] = js.undefined
     ): DescribeConfigurationRecordersRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ConfigurationRecorderNames" -> ConfigurationRecorderNames.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeConfigurationRecordersRequest]
+      val __obj = js.Dictionary.empty[js.Any]
+      ConfigurationRecorderNames.foreach(__v => __obj.update("ConfigurationRecorderNames", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeConfigurationRecordersRequest]
     }
   }
 
@@ -2549,13 +2095,9 @@ package configservice {
     def apply(
         ConfigurationRecorders: js.UndefOr[ConfigurationRecorderList] = js.undefined
     ): DescribeConfigurationRecordersResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ConfigurationRecorders" -> ConfigurationRecorders.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeConfigurationRecordersResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      ConfigurationRecorders.foreach(__v => __obj.update("ConfigurationRecorders", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeConfigurationRecordersResponse]
     }
   }
 
@@ -2571,13 +2113,9 @@ package configservice {
     def apply(
         DeliveryChannelNames: js.UndefOr[DeliveryChannelNameList] = js.undefined
     ): DescribeDeliveryChannelStatusRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "DeliveryChannelNames" -> DeliveryChannelNames.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeDeliveryChannelStatusRequest]
+      val __obj = js.Dictionary.empty[js.Any]
+      DeliveryChannelNames.foreach(__v => __obj.update("DeliveryChannelNames", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeDeliveryChannelStatusRequest]
     }
   }
 
@@ -2593,13 +2131,9 @@ package configservice {
     def apply(
         DeliveryChannelsStatus: js.UndefOr[DeliveryChannelStatusList] = js.undefined
     ): DescribeDeliveryChannelStatusResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "DeliveryChannelsStatus" -> DeliveryChannelsStatus.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeDeliveryChannelStatusResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      DeliveryChannelsStatus.foreach(__v => __obj.update("DeliveryChannelsStatus", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeDeliveryChannelStatusResponse]
     }
   }
 
@@ -2615,13 +2149,9 @@ package configservice {
     def apply(
         DeliveryChannelNames: js.UndefOr[DeliveryChannelNameList] = js.undefined
     ): DescribeDeliveryChannelsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "DeliveryChannelNames" -> DeliveryChannelNames.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeDeliveryChannelsRequest]
+      val __obj = js.Dictionary.empty[js.Any]
+      DeliveryChannelNames.foreach(__v => __obj.update("DeliveryChannelNames", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeDeliveryChannelsRequest]
     }
   }
 
@@ -2637,13 +2167,9 @@ package configservice {
     def apply(
         DeliveryChannels: js.UndefOr[DeliveryChannelList] = js.undefined
     ): DescribeDeliveryChannelsResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "DeliveryChannels" -> DeliveryChannels.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeDeliveryChannelsResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      DeliveryChannels.foreach(__v => __obj.update("DeliveryChannels", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeDeliveryChannelsResponse]
     }
   }
 
@@ -2658,16 +2184,10 @@ package configservice {
         Limit: js.UndefOr[DescribePendingAggregationRequestsLimit] = js.undefined,
         NextToken: js.UndefOr[String] = js.undefined
     ): DescribePendingAggregationRequestsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Limit" -> Limit.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NextToken" -> NextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribePendingAggregationRequestsRequest]
+      val __obj = js.Dictionary.empty[js.Any]
+      Limit.foreach(__v => __obj.update("Limit", __v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribePendingAggregationRequestsRequest]
     }
   }
 
@@ -2682,18 +2202,10 @@ package configservice {
         NextToken: js.UndefOr[String] = js.undefined,
         PendingAggregationRequests: js.UndefOr[PendingAggregationRequestList] = js.undefined
     ): DescribePendingAggregationRequestsResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "NextToken" -> NextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "PendingAggregationRequests" -> PendingAggregationRequests.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal
-        .applyDynamicNamed("apply")(_fields: _*)
-        .asInstanceOf[DescribePendingAggregationRequestsResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      PendingAggregationRequests.foreach(__v => __obj.update("PendingAggregationRequests", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribePendingAggregationRequestsResponse]
     }
   }
 
@@ -2706,11 +2218,11 @@ package configservice {
     def apply(
         ConfigRuleNames: ConfigRuleNames
     ): DescribeRemediationConfigurationsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ConfigRuleNames" -> ConfigRuleNames.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeRemediationConfigurationsRequest]
+      __obj.asInstanceOf[DescribeRemediationConfigurationsRequest]
     }
   }
 
@@ -2723,13 +2235,9 @@ package configservice {
     def apply(
         RemediationConfigurations: js.UndefOr[RemediationConfigurations] = js.undefined
     ): DescribeRemediationConfigurationsResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "RemediationConfigurations" -> RemediationConfigurations.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeRemediationConfigurationsResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      RemediationConfigurations.foreach(__v => __obj.update("RemediationConfigurations", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeRemediationConfigurationsResponse]
     }
   }
 
@@ -2748,20 +2256,14 @@ package configservice {
         NextToken: js.UndefOr[StringWithCharLimit256] = js.undefined,
         ResourceKeys: js.UndefOr[ResourceKeys] = js.undefined
     ): DescribeRemediationExecutionStatusRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ConfigRuleName" -> ConfigRuleName.asInstanceOf[js.Any],
-        "Limit" -> Limit.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NextToken" -> NextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ResourceKeys" -> ResourceKeys.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "ConfigRuleName" -> ConfigRuleName.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeRemediationExecutionStatusRequest]
+      Limit.foreach(__v => __obj.update("Limit", __v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      ResourceKeys.foreach(__v => __obj.update("ResourceKeys", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeRemediationExecutionStatusRequest]
     }
   }
 
@@ -2776,18 +2278,12 @@ package configservice {
         NextToken: js.UndefOr[StringWithCharLimit256] = js.undefined,
         RemediationExecutionStatuses: js.UndefOr[RemediationExecutionStatuses] = js.undefined
     ): DescribeRemediationExecutionStatusResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "NextToken" -> NextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "RemediationExecutionStatuses" -> RemediationExecutionStatuses.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal
-        .applyDynamicNamed("apply")(_fields: _*)
-        .asInstanceOf[DescribeRemediationExecutionStatusResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      RemediationExecutionStatuses.foreach(
+        __v => __obj.update("RemediationExecutionStatuses", __v.asInstanceOf[js.Any])
+      )
+      __obj.asInstanceOf[DescribeRemediationExecutionStatusResponse]
     }
   }
 
@@ -2802,16 +2298,10 @@ package configservice {
         NextToken: js.UndefOr[NextToken] = js.undefined,
         RetentionConfigurationNames: js.UndefOr[RetentionConfigurationNameList] = js.undefined
     ): DescribeRetentionConfigurationsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "NextToken" -> NextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "RetentionConfigurationNames" -> RetentionConfigurationNames.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeRetentionConfigurationsRequest]
+      val __obj = js.Dictionary.empty[js.Any]
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      RetentionConfigurationNames.foreach(__v => __obj.update("RetentionConfigurationNames", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeRetentionConfigurationsRequest]
     }
   }
 
@@ -2826,16 +2316,10 @@ package configservice {
         NextToken: js.UndefOr[NextToken] = js.undefined,
         RetentionConfigurations: js.UndefOr[RetentionConfigurationList] = js.undefined
     ): DescribeRetentionConfigurationsResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "NextToken" -> NextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "RetentionConfigurations" -> RetentionConfigurations.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeRetentionConfigurationsResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      RetentionConfigurations.foreach(__v => __obj.update("RetentionConfigurations", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeRetentionConfigurationsResponse]
     }
   }
 
@@ -2859,17 +2343,15 @@ package configservice {
         OrderingTimestamp: OrderingTimestamp,
         Annotation: js.UndefOr[StringWithCharLimit256] = js.undefined
     ): Evaluation = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ComplianceResourceId"   -> ComplianceResourceId.asInstanceOf[js.Any],
         "ComplianceResourceType" -> ComplianceResourceType.asInstanceOf[js.Any],
         "ComplianceType"         -> ComplianceType.asInstanceOf[js.Any],
-        "OrderingTimestamp"      -> OrderingTimestamp.asInstanceOf[js.Any],
-        "Annotation" -> Annotation.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "OrderingTimestamp"      -> OrderingTimestamp.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Evaluation]
+      Annotation.foreach(__v => __obj.update("Annotation", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Evaluation]
     }
   }
 
@@ -2895,28 +2377,14 @@ package configservice {
         ResultRecordedTime: js.UndefOr[Date] = js.undefined,
         ResultToken: js.UndefOr[String] = js.undefined
     ): EvaluationResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Annotation" -> Annotation.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ComplianceType" -> ComplianceType.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ConfigRuleInvokedTime" -> ConfigRuleInvokedTime.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "EvaluationResultIdentifier" -> EvaluationResultIdentifier.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ResultRecordedTime" -> ResultRecordedTime.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ResultToken" -> ResultToken.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[EvaluationResult]
+      val __obj = js.Dictionary.empty[js.Any]
+      Annotation.foreach(__v => __obj.update("Annotation", __v.asInstanceOf[js.Any]))
+      ComplianceType.foreach(__v => __obj.update("ComplianceType", __v.asInstanceOf[js.Any]))
+      ConfigRuleInvokedTime.foreach(__v => __obj.update("ConfigRuleInvokedTime", __v.asInstanceOf[js.Any]))
+      EvaluationResultIdentifier.foreach(__v => __obj.update("EvaluationResultIdentifier", __v.asInstanceOf[js.Any]))
+      ResultRecordedTime.foreach(__v => __obj.update("ResultRecordedTime", __v.asInstanceOf[js.Any]))
+      ResultToken.foreach(__v => __obj.update("ResultToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[EvaluationResult]
     }
   }
 
@@ -2934,16 +2402,10 @@ package configservice {
         EvaluationResultQualifier: js.UndefOr[EvaluationResultQualifier] = js.undefined,
         OrderingTimestamp: js.UndefOr[Date] = js.undefined
     ): EvaluationResultIdentifier = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "EvaluationResultQualifier" -> EvaluationResultQualifier.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "OrderingTimestamp" -> OrderingTimestamp.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[EvaluationResultIdentifier]
+      val __obj = js.Dictionary.empty[js.Any]
+      EvaluationResultQualifier.foreach(__v => __obj.update("EvaluationResultQualifier", __v.asInstanceOf[js.Any]))
+      OrderingTimestamp.foreach(__v => __obj.update("OrderingTimestamp", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[EvaluationResultIdentifier]
     }
   }
 
@@ -2963,19 +2425,11 @@ package configservice {
         ResourceId: js.UndefOr[BaseResourceId] = js.undefined,
         ResourceType: js.UndefOr[StringWithCharLimit256] = js.undefined
     ): EvaluationResultQualifier = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ConfigRuleName" -> ConfigRuleName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ResourceId" -> ResourceId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ResourceType" -> ResourceType.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[EvaluationResultQualifier]
+      val __obj = js.Dictionary.empty[js.Any]
+      ConfigRuleName.foreach(__v => __obj.update("ConfigRuleName", __v.asInstanceOf[js.Any]))
+      ResourceId.foreach(__v => __obj.update("ResourceId", __v.asInstanceOf[js.Any]))
+      ResourceType.foreach(__v => __obj.update("ResourceType", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[EvaluationResultQualifier]
     }
   }
 
@@ -2999,16 +2453,10 @@ package configservice {
         FailedItems: js.UndefOr[RemediationConfigurations] = js.undefined,
         FailureMessage: js.UndefOr[String] = js.undefined
     ): FailedRemediationBatch = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "FailedItems" -> FailedItems.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "FailureMessage" -> FailureMessage.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[FailedRemediationBatch]
+      val __obj = js.Dictionary.empty[js.Any]
+      FailedItems.foreach(__v => __obj.update("FailedItems", __v.asInstanceOf[js.Any]))
+      FailureMessage.foreach(__v => __obj.update("FailureMessage", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[FailedRemediationBatch]
     }
   }
 
@@ -3024,13 +2472,9 @@ package configservice {
     def apply(
         Name: js.UndefOr[FieldName] = js.undefined
     ): FieldInfo = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Name" -> Name.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[FieldInfo]
+      val __obj = js.Dictionary.empty[js.Any]
+      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[FieldInfo]
     }
   }
 
@@ -3055,25 +2499,17 @@ package configservice {
         Limit: js.UndefOr[Limit] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): GetAggregateComplianceDetailsByConfigRuleRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "AccountId"                   -> AccountId.asInstanceOf[js.Any],
         "AwsRegion"                   -> AwsRegion.asInstanceOf[js.Any],
         "ConfigRuleName"              -> ConfigRuleName.asInstanceOf[js.Any],
-        "ConfigurationAggregatorName" -> ConfigurationAggregatorName.asInstanceOf[js.Any],
-        "ComplianceType" -> ComplianceType.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Limit" -> Limit.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NextToken" -> NextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "ConfigurationAggregatorName" -> ConfigurationAggregatorName.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal
-        .applyDynamicNamed("apply")(_fields: _*)
-        .asInstanceOf[GetAggregateComplianceDetailsByConfigRuleRequest]
+      ComplianceType.foreach(__v => __obj.update("ComplianceType", __v.asInstanceOf[js.Any]))
+      Limit.foreach(__v => __obj.update("Limit", __v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetAggregateComplianceDetailsByConfigRuleRequest]
     }
   }
 
@@ -3088,18 +2524,10 @@ package configservice {
         AggregateEvaluationResults: js.UndefOr[AggregateEvaluationResultList] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): GetAggregateComplianceDetailsByConfigRuleResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "AggregateEvaluationResults" -> AggregateEvaluationResults.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NextToken" -> NextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal
-        .applyDynamicNamed("apply")(_fields: _*)
-        .asInstanceOf[GetAggregateComplianceDetailsByConfigRuleResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      AggregateEvaluationResults.foreach(__v => __obj.update("AggregateEvaluationResults", __v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetAggregateComplianceDetailsByConfigRuleResponse]
     }
   }
 
@@ -3120,25 +2548,15 @@ package configservice {
         Limit: js.UndefOr[GroupByAPILimit] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): GetAggregateConfigRuleComplianceSummaryRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ConfigurationAggregatorName" -> ConfigurationAggregatorName.asInstanceOf[js.Any],
-        "Filters" -> Filters.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "GroupByKey" -> GroupByKey.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Limit" -> Limit.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NextToken" -> NextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "ConfigurationAggregatorName" -> ConfigurationAggregatorName.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal
-        .applyDynamicNamed("apply")(_fields: _*)
-        .asInstanceOf[GetAggregateConfigRuleComplianceSummaryRequest]
+      Filters.foreach(__v => __obj.update("Filters", __v.asInstanceOf[js.Any]))
+      GroupByKey.foreach(__v => __obj.update("GroupByKey", __v.asInstanceOf[js.Any]))
+      Limit.foreach(__v => __obj.update("Limit", __v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetAggregateConfigRuleComplianceSummaryRequest]
     }
   }
 
@@ -3155,21 +2573,11 @@ package configservice {
         GroupByKey: js.UndefOr[StringWithCharLimit256] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): GetAggregateConfigRuleComplianceSummaryResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "AggregateComplianceCounts" -> AggregateComplianceCounts.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "GroupByKey" -> GroupByKey.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NextToken" -> NextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal
-        .applyDynamicNamed("apply")(_fields: _*)
-        .asInstanceOf[GetAggregateConfigRuleComplianceSummaryResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      AggregateComplianceCounts.foreach(__v => __obj.update("AggregateComplianceCounts", __v.asInstanceOf[js.Any]))
+      GroupByKey.foreach(__v => __obj.update("GroupByKey", __v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetAggregateConfigRuleComplianceSummaryResponse]
     }
   }
 
@@ -3190,25 +2598,15 @@ package configservice {
         Limit: js.UndefOr[GroupByAPILimit] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): GetAggregateDiscoveredResourceCountsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ConfigurationAggregatorName" -> ConfigurationAggregatorName.asInstanceOf[js.Any],
-        "Filters" -> Filters.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "GroupByKey" -> GroupByKey.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Limit" -> Limit.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NextToken" -> NextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "ConfigurationAggregatorName" -> ConfigurationAggregatorName.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal
-        .applyDynamicNamed("apply")(_fields: _*)
-        .asInstanceOf[GetAggregateDiscoveredResourceCountsRequest]
+      Filters.foreach(__v => __obj.update("Filters", __v.asInstanceOf[js.Any]))
+      GroupByKey.foreach(__v => __obj.update("GroupByKey", __v.asInstanceOf[js.Any]))
+      Limit.foreach(__v => __obj.update("Limit", __v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetAggregateDiscoveredResourceCountsRequest]
     }
   }
 
@@ -3227,22 +2625,14 @@ package configservice {
         GroupedResourceCounts: js.UndefOr[GroupedResourceCountList] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): GetAggregateDiscoveredResourceCountsResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "TotalDiscoveredResources" -> TotalDiscoveredResources.asInstanceOf[js.Any],
-        "GroupByKey" -> GroupByKey.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "GroupedResourceCounts" -> GroupedResourceCounts.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NextToken" -> NextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "TotalDiscoveredResources" -> TotalDiscoveredResources.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal
-        .applyDynamicNamed("apply")(_fields: _*)
-        .asInstanceOf[GetAggregateDiscoveredResourceCountsResponse]
+      GroupByKey.foreach(__v => __obj.update("GroupByKey", __v.asInstanceOf[js.Any]))
+      GroupedResourceCounts.foreach(__v => __obj.update("GroupedResourceCounts", __v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetAggregateDiscoveredResourceCountsResponse]
     }
   }
 
@@ -3257,12 +2647,12 @@ package configservice {
         ConfigurationAggregatorName: ConfigurationAggregatorName,
         ResourceIdentifier: AggregateResourceIdentifier
     ): GetAggregateResourceConfigRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ConfigurationAggregatorName" -> ConfigurationAggregatorName.asInstanceOf[js.Any],
         "ResourceIdentifier"          -> ResourceIdentifier.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetAggregateResourceConfigRequest]
+      __obj.asInstanceOf[GetAggregateResourceConfigRequest]
     }
   }
 
@@ -3275,13 +2665,9 @@ package configservice {
     def apply(
         ConfigurationItem: js.UndefOr[ConfigurationItem] = js.undefined
     ): GetAggregateResourceConfigResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ConfigurationItem" -> ConfigurationItem.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetAggregateResourceConfigResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      ConfigurationItem.foreach(__v => __obj.update("ConfigurationItem", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetAggregateResourceConfigResponse]
     }
   }
 
@@ -3303,20 +2689,14 @@ package configservice {
         Limit: js.UndefOr[Limit] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): GetComplianceDetailsByConfigRuleRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ConfigRuleName" -> ConfigRuleName.asInstanceOf[js.Any],
-        "ComplianceTypes" -> ComplianceTypes.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Limit" -> Limit.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NextToken" -> NextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "ConfigRuleName" -> ConfigRuleName.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetComplianceDetailsByConfigRuleRequest]
+      ComplianceTypes.foreach(__v => __obj.update("ComplianceTypes", __v.asInstanceOf[js.Any]))
+      Limit.foreach(__v => __obj.update("Limit", __v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetComplianceDetailsByConfigRuleRequest]
     }
   }
 
@@ -3334,16 +2714,10 @@ package configservice {
         EvaluationResults: js.UndefOr[EvaluationResults] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): GetComplianceDetailsByConfigRuleResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "EvaluationResults" -> EvaluationResults.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NextToken" -> NextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetComplianceDetailsByConfigRuleResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      EvaluationResults.foreach(__v => __obj.update("EvaluationResults", __v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetComplianceDetailsByConfigRuleResponse]
     }
   }
 
@@ -3365,18 +2739,14 @@ package configservice {
         ComplianceTypes: js.UndefOr[ComplianceTypes] = js.undefined,
         NextToken: js.UndefOr[String] = js.undefined
     ): GetComplianceDetailsByResourceRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ResourceId"   -> ResourceId.asInstanceOf[js.Any],
-        "ResourceType" -> ResourceType.asInstanceOf[js.Any],
-        "ComplianceTypes" -> ComplianceTypes.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NextToken" -> NextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "ResourceType" -> ResourceType.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetComplianceDetailsByResourceRequest]
+      ComplianceTypes.foreach(__v => __obj.update("ComplianceTypes", __v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetComplianceDetailsByResourceRequest]
     }
   }
 
@@ -3394,16 +2764,10 @@ package configservice {
         EvaluationResults: js.UndefOr[EvaluationResults] = js.undefined,
         NextToken: js.UndefOr[String] = js.undefined
     ): GetComplianceDetailsByResourceResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "EvaluationResults" -> EvaluationResults.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NextToken" -> NextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetComplianceDetailsByResourceResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      EvaluationResults.foreach(__v => __obj.update("EvaluationResults", __v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetComplianceDetailsByResourceResponse]
     }
   }
 
@@ -3419,13 +2783,9 @@ package configservice {
     def apply(
         ComplianceSummary: js.UndefOr[ComplianceSummary] = js.undefined
     ): GetComplianceSummaryByConfigRuleResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ComplianceSummary" -> ComplianceSummary.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetComplianceSummaryByConfigRuleResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      ComplianceSummary.foreach(__v => __obj.update("ComplianceSummary", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetComplianceSummaryByConfigRuleResponse]
     }
   }
 
@@ -3441,13 +2801,9 @@ package configservice {
     def apply(
         ResourceTypes: js.UndefOr[ResourceTypes] = js.undefined
     ): GetComplianceSummaryByResourceTypeRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ResourceTypes" -> ResourceTypes.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetComplianceSummaryByResourceTypeRequest]
+      val __obj = js.Dictionary.empty[js.Any]
+      ResourceTypes.foreach(__v => __obj.update("ResourceTypes", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetComplianceSummaryByResourceTypeRequest]
     }
   }
 
@@ -3463,15 +2819,11 @@ package configservice {
     def apply(
         ComplianceSummariesByResourceType: js.UndefOr[ComplianceSummariesByResourceType] = js.undefined
     ): GetComplianceSummaryByResourceTypeResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ComplianceSummariesByResourceType" -> ComplianceSummariesByResourceType.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal
-        .applyDynamicNamed("apply")(_fields: _*)
-        .asInstanceOf[GetComplianceSummaryByResourceTypeResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      ComplianceSummariesByResourceType.foreach(
+        __v => __obj.update("ComplianceSummariesByResourceType", __v.asInstanceOf[js.Any])
+      )
+      __obj.asInstanceOf[GetComplianceSummaryByResourceTypeResponse]
     }
   }
 
@@ -3488,19 +2840,11 @@ package configservice {
         nextToken: js.UndefOr[NextToken] = js.undefined,
         resourceTypes: js.UndefOr[ResourceTypes] = js.undefined
     ): GetDiscoveredResourceCountsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "limit" -> limit.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "nextToken" -> nextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "resourceTypes" -> resourceTypes.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetDiscoveredResourceCountsRequest]
+      val __obj = js.Dictionary.empty[js.Any]
+      limit.foreach(__v => __obj.update("limit", __v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
+      resourceTypes.foreach(__v => __obj.update("resourceTypes", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetDiscoveredResourceCountsRequest]
     }
   }
 
@@ -3517,19 +2861,11 @@ package configservice {
         resourceCounts: js.UndefOr[ResourceCounts] = js.undefined,
         totalDiscoveredResources: js.UndefOr[Double] = js.undefined
     ): GetDiscoveredResourceCountsResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "nextToken" -> nextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "resourceCounts" -> resourceCounts.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "totalDiscoveredResources" -> totalDiscoveredResources.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetDiscoveredResourceCountsResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
+      resourceCounts.foreach(__v => __obj.update("resourceCounts", __v.asInstanceOf[js.Any]))
+      totalDiscoveredResources.foreach(__v => __obj.update("totalDiscoveredResources", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetDiscoveredResourceCountsResponse]
     }
   }
 
@@ -3557,27 +2893,17 @@ package configservice {
         limit: js.UndefOr[Limit] = js.undefined,
         nextToken: js.UndefOr[NextToken] = js.undefined
     ): GetResourceConfigHistoryRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "resourceId"   -> resourceId.asInstanceOf[js.Any],
-        "resourceType" -> resourceType.asInstanceOf[js.Any],
-        "chronologicalOrder" -> chronologicalOrder.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "earlierTime" -> earlierTime.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "laterTime" -> laterTime.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "limit" -> limit.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "nextToken" -> nextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "resourceType" -> resourceType.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetResourceConfigHistoryRequest]
+      chronologicalOrder.foreach(__v => __obj.update("chronologicalOrder", __v.asInstanceOf[js.Any]))
+      earlierTime.foreach(__v => __obj.update("earlierTime", __v.asInstanceOf[js.Any]))
+      laterTime.foreach(__v => __obj.update("laterTime", __v.asInstanceOf[js.Any]))
+      limit.foreach(__v => __obj.update("limit", __v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetResourceConfigHistoryRequest]
     }
   }
 
@@ -3595,16 +2921,10 @@ package configservice {
         configurationItems: js.UndefOr[ConfigurationItemList] = js.undefined,
         nextToken: js.UndefOr[NextToken] = js.undefined
     ): GetResourceConfigHistoryResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "configurationItems" -> configurationItems.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "nextToken" -> nextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetResourceConfigHistoryResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      configurationItems.foreach(__v => __obj.update("configurationItems", __v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetResourceConfigHistoryResponse]
     }
   }
 
@@ -3622,12 +2942,12 @@ package configservice {
         GroupName: StringWithCharLimit256,
         ResourceCount: Double
     ): GroupedResourceCount = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "GroupName"     -> GroupName.asInstanceOf[js.Any],
         "ResourceCount" -> ResourceCount.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GroupedResourceCount]
+      __obj.asInstanceOf[GroupedResourceCount]
     }
   }
 
@@ -3648,21 +2968,15 @@ package configservice {
         Limit: js.UndefOr[Limit] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): ListAggregateDiscoveredResourcesRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ConfigurationAggregatorName" -> ConfigurationAggregatorName.asInstanceOf[js.Any],
-        "ResourceType"                -> ResourceType.asInstanceOf[js.Any],
-        "Filters" -> Filters.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Limit" -> Limit.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NextToken" -> NextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "ResourceType"                -> ResourceType.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListAggregateDiscoveredResourcesRequest]
+      Filters.foreach(__v => __obj.update("Filters", __v.asInstanceOf[js.Any]))
+      Limit.foreach(__v => __obj.update("Limit", __v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListAggregateDiscoveredResourcesRequest]
     }
   }
 
@@ -3677,16 +2991,10 @@ package configservice {
         NextToken: js.UndefOr[NextToken] = js.undefined,
         ResourceIdentifiers: js.UndefOr[DiscoveredResourceIdentifierList] = js.undefined
     ): ListAggregateDiscoveredResourcesResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "NextToken" -> NextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ResourceIdentifiers" -> ResourceIdentifiers.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListAggregateDiscoveredResourcesResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      ResourceIdentifiers.foreach(__v => __obj.update("ResourceIdentifiers", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListAggregateDiscoveredResourcesResponse]
     }
   }
 
@@ -3712,26 +3020,16 @@ package configservice {
         resourceIds: js.UndefOr[ResourceIdList] = js.undefined,
         resourceName: js.UndefOr[ResourceName] = js.undefined
     ): ListDiscoveredResourcesRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "resourceType" -> resourceType.asInstanceOf[js.Any],
-        "includeDeletedResources" -> includeDeletedResources.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "limit" -> limit.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "nextToken" -> nextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "resourceIds" -> resourceIds.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "resourceName" -> resourceName.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "resourceType" -> resourceType.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListDiscoveredResourcesRequest]
+      includeDeletedResources.foreach(__v => __obj.update("includeDeletedResources", __v.asInstanceOf[js.Any]))
+      limit.foreach(__v => __obj.update("limit", __v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
+      resourceIds.foreach(__v => __obj.update("resourceIds", __v.asInstanceOf[js.Any]))
+      resourceName.foreach(__v => __obj.update("resourceName", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListDiscoveredResourcesRequest]
     }
   }
 
@@ -3749,16 +3047,10 @@ package configservice {
         nextToken: js.UndefOr[NextToken] = js.undefined,
         resourceIdentifiers: js.UndefOr[ResourceIdentifierList] = js.undefined
     ): ListDiscoveredResourcesResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "nextToken" -> nextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "resourceIdentifiers" -> resourceIdentifiers.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListDiscoveredResourcesResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
+      resourceIdentifiers.foreach(__v => __obj.update("resourceIdentifiers", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListDiscoveredResourcesResponse]
     }
   }
 
@@ -3775,17 +3067,13 @@ package configservice {
         Limit: js.UndefOr[Limit] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): ListTagsForResourceRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ResourceArn" -> ResourceArn.asInstanceOf[js.Any],
-        "Limit" -> Limit.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NextToken" -> NextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "ResourceArn" -> ResourceArn.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListTagsForResourceRequest]
+      Limit.foreach(__v => __obj.update("Limit", __v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListTagsForResourceRequest]
     }
   }
 
@@ -3800,16 +3088,10 @@ package configservice {
         NextToken: js.UndefOr[NextToken] = js.undefined,
         Tags: js.UndefOr[TagList] = js.undefined
     ): ListTagsForResourceResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "NextToken" -> NextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Tags" -> Tags.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListTagsForResourceResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListTagsForResourceResponse]
     }
   }
 
@@ -3853,17 +3135,13 @@ package configservice {
         AllAwsRegions: js.UndefOr[Boolean] = js.undefined,
         AwsRegions: js.UndefOr[AggregatorRegionList] = js.undefined
     ): OrganizationAggregationSource = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "RoleArn" -> RoleArn.asInstanceOf[js.Any],
-        "AllAwsRegions" -> AllAwsRegions.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "AwsRegions" -> AwsRegions.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "RoleArn" -> RoleArn.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[OrganizationAggregationSource]
+      AllAwsRegions.foreach(__v => __obj.update("AllAwsRegions", __v.asInstanceOf[js.Any]))
+      AwsRegions.foreach(__v => __obj.update("AwsRegions", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[OrganizationAggregationSource]
     }
   }
 
@@ -3888,16 +3166,10 @@ package configservice {
         RequesterAccountId: js.UndefOr[AccountId] = js.undefined,
         RequesterAwsRegion: js.UndefOr[AwsRegion] = js.undefined
     ): PendingAggregationRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "RequesterAccountId" -> RequesterAccountId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "RequesterAwsRegion" -> RequesterAwsRegion.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PendingAggregationRequest]
+      val __obj = js.Dictionary.empty[js.Any]
+      RequesterAccountId.foreach(__v => __obj.update("RequesterAccountId", __v.asInstanceOf[js.Any]))
+      RequesterAwsRegion.foreach(__v => __obj.update("RequesterAwsRegion", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PendingAggregationRequest]
     }
   }
 
@@ -3912,12 +3184,12 @@ package configservice {
         AuthorizedAccountId: AccountId,
         AuthorizedAwsRegion: AwsRegion
     ): PutAggregationAuthorizationRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "AuthorizedAccountId" -> AuthorizedAccountId.asInstanceOf[js.Any],
         "AuthorizedAwsRegion" -> AuthorizedAwsRegion.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PutAggregationAuthorizationRequest]
+      __obj.asInstanceOf[PutAggregationAuthorizationRequest]
     }
   }
 
@@ -3930,13 +3202,9 @@ package configservice {
     def apply(
         AggregationAuthorization: js.UndefOr[AggregationAuthorization] = js.undefined
     ): PutAggregationAuthorizationResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "AggregationAuthorization" -> AggregationAuthorization.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PutAggregationAuthorizationResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      AggregationAuthorization.foreach(__v => __obj.update("AggregationAuthorization", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PutAggregationAuthorizationResponse]
     }
   }
 
@@ -3949,11 +3217,11 @@ package configservice {
     def apply(
         ConfigRule: ConfigRule
     ): PutConfigRuleRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ConfigRule" -> ConfigRule.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PutConfigRuleRequest]
+      __obj.asInstanceOf[PutConfigRuleRequest]
     }
   }
 
@@ -3970,17 +3238,15 @@ package configservice {
         AccountAggregationSources: js.UndefOr[AccountAggregationSourceList] = js.undefined,
         OrganizationAggregationSource: js.UndefOr[OrganizationAggregationSource] = js.undefined
     ): PutConfigurationAggregatorRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ConfigurationAggregatorName" -> ConfigurationAggregatorName.asInstanceOf[js.Any],
-        "AccountAggregationSources" -> AccountAggregationSources.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "OrganizationAggregationSource" -> OrganizationAggregationSource.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "ConfigurationAggregatorName" -> ConfigurationAggregatorName.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PutConfigurationAggregatorRequest]
+      AccountAggregationSources.foreach(__v => __obj.update("AccountAggregationSources", __v.asInstanceOf[js.Any]))
+      OrganizationAggregationSource.foreach(
+        __v => __obj.update("OrganizationAggregationSource", __v.asInstanceOf[js.Any])
+      )
+      __obj.asInstanceOf[PutConfigurationAggregatorRequest]
     }
   }
 
@@ -3993,13 +3259,9 @@ package configservice {
     def apply(
         ConfigurationAggregator: js.UndefOr[ConfigurationAggregator] = js.undefined
     ): PutConfigurationAggregatorResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ConfigurationAggregator" -> ConfigurationAggregator.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PutConfigurationAggregatorResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      ConfigurationAggregator.foreach(__v => __obj.update("ConfigurationAggregator", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PutConfigurationAggregatorResponse]
     }
   }
 
@@ -4015,11 +3277,11 @@ package configservice {
     def apply(
         ConfigurationRecorder: ConfigurationRecorder
     ): PutConfigurationRecorderRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ConfigurationRecorder" -> ConfigurationRecorder.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PutConfigurationRecorderRequest]
+      __obj.asInstanceOf[PutConfigurationRecorderRequest]
     }
   }
 
@@ -4035,11 +3297,11 @@ package configservice {
     def apply(
         DeliveryChannel: DeliveryChannel
     ): PutDeliveryChannelRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "DeliveryChannel" -> DeliveryChannel.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PutDeliveryChannelRequest]
+      __obj.asInstanceOf[PutDeliveryChannelRequest]
     }
   }
 
@@ -4059,17 +3321,13 @@ package configservice {
         Evaluations: js.UndefOr[Evaluations] = js.undefined,
         TestMode: js.UndefOr[Boolean] = js.undefined
     ): PutEvaluationsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ResultToken" -> ResultToken.asInstanceOf[js.Any],
-        "Evaluations" -> Evaluations.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "TestMode" -> TestMode.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "ResultToken" -> ResultToken.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PutEvaluationsRequest]
+      Evaluations.foreach(__v => __obj.update("Evaluations", __v.asInstanceOf[js.Any]))
+      TestMode.foreach(__v => __obj.update("TestMode", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PutEvaluationsRequest]
     }
   }
 
@@ -4085,13 +3343,9 @@ package configservice {
     def apply(
         FailedEvaluations: js.UndefOr[Evaluations] = js.undefined
     ): PutEvaluationsResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "FailedEvaluations" -> FailedEvaluations.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PutEvaluationsResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      FailedEvaluations.foreach(__v => __obj.update("FailedEvaluations", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PutEvaluationsResponse]
     }
   }
 
@@ -4104,11 +3358,11 @@ package configservice {
     def apply(
         RemediationConfigurations: RemediationConfigurations
     ): PutRemediationConfigurationsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "RemediationConfigurations" -> RemediationConfigurations.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PutRemediationConfigurationsRequest]
+      __obj.asInstanceOf[PutRemediationConfigurationsRequest]
     }
   }
 
@@ -4121,13 +3375,9 @@ package configservice {
     def apply(
         FailedBatches: js.UndefOr[FailedRemediationBatches] = js.undefined
     ): PutRemediationConfigurationsResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "FailedBatches" -> FailedBatches.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PutRemediationConfigurationsResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      FailedBatches.foreach(__v => __obj.update("FailedBatches", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PutRemediationConfigurationsResponse]
     }
   }
 
@@ -4140,11 +3390,11 @@ package configservice {
     def apply(
         RetentionPeriodInDays: RetentionPeriodInDays
     ): PutRetentionConfigurationRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "RetentionPeriodInDays" -> RetentionPeriodInDays.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PutRetentionConfigurationRequest]
+      __obj.asInstanceOf[PutRetentionConfigurationRequest]
     }
   }
 
@@ -4157,13 +3407,9 @@ package configservice {
     def apply(
         RetentionConfiguration: js.UndefOr[RetentionConfiguration] = js.undefined
     ): PutRetentionConfigurationResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "RetentionConfiguration" -> RetentionConfiguration.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PutRetentionConfigurationResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      RetentionConfiguration.foreach(__v => __obj.update("RetentionConfiguration", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PutRetentionConfigurationResponse]
     }
   }
 
@@ -4179,13 +3425,9 @@ package configservice {
     def apply(
         SelectFields: js.UndefOr[FieldInfoList] = js.undefined
     ): QueryInfo = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "SelectFields" -> SelectFields.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[QueryInfo]
+      val __obj = js.Dictionary.empty[js.Any]
+      SelectFields.foreach(__v => __obj.update("SelectFields", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[QueryInfo]
     }
   }
 
@@ -4220,19 +3462,11 @@ package configservice {
         includeGlobalResourceTypes: js.UndefOr[IncludeGlobalResourceTypes] = js.undefined,
         resourceTypes: js.UndefOr[ResourceTypeList] = js.undefined
     ): RecordingGroup = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "allSupported" -> allSupported.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "includeGlobalResourceTypes" -> includeGlobalResourceTypes.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "resourceTypes" -> resourceTypes.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RecordingGroup]
+      val __obj = js.Dictionary.empty[js.Any]
+      allSupported.foreach(__v => __obj.update("allSupported", __v.asInstanceOf[js.Any]))
+      includeGlobalResourceTypes.foreach(__v => __obj.update("includeGlobalResourceTypes", __v.asInstanceOf[js.Any]))
+      resourceTypes.foreach(__v => __obj.update("resourceTypes", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[RecordingGroup]
     }
   }
 
@@ -4254,22 +3488,12 @@ package configservice {
         resourceName: js.UndefOr[ResourceName] = js.undefined,
         resourceType: js.UndefOr[ResourceType] = js.undefined
     ): Relationship = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "relationshipName" -> relationshipName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "resourceId" -> resourceId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "resourceName" -> resourceName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "resourceType" -> resourceType.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Relationship]
+      val __obj = js.Dictionary.empty[js.Any]
+      relationshipName.foreach(__v => __obj.update("relationshipName", __v.asInstanceOf[js.Any]))
+      resourceId.foreach(__v => __obj.update("resourceId", __v.asInstanceOf[js.Any]))
+      resourceName.foreach(__v => __obj.update("resourceName", __v.asInstanceOf[js.Any]))
+      resourceType.foreach(__v => __obj.update("resourceType", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Relationship]
     }
   }
 
@@ -4295,22 +3519,16 @@ package configservice {
         ResourceType: js.UndefOr[String] = js.undefined,
         TargetVersion: js.UndefOr[String] = js.undefined
     ): RemediationConfiguration = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ConfigRuleName" -> ConfigRuleName.asInstanceOf[js.Any],
         "TargetId"       -> TargetId.asInstanceOf[js.Any],
-        "TargetType"     -> TargetType.asInstanceOf[js.Any],
-        "Parameters" -> Parameters.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ResourceType" -> ResourceType.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "TargetVersion" -> TargetVersion.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "TargetType"     -> TargetType.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RemediationConfiguration]
+      Parameters.foreach(__v => __obj.update("Parameters", __v.asInstanceOf[js.Any]))
+      ResourceType.foreach(__v => __obj.update("ResourceType", __v.asInstanceOf[js.Any]))
+      TargetVersion.foreach(__v => __obj.update("TargetVersion", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[RemediationConfiguration]
     }
   }
 
@@ -4343,25 +3561,13 @@ package configservice {
         State: js.UndefOr[RemediationExecutionState] = js.undefined,
         StepDetails: js.UndefOr[RemediationExecutionSteps] = js.undefined
     ): RemediationExecutionStatus = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "InvocationTime" -> InvocationTime.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "LastUpdatedTime" -> LastUpdatedTime.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ResourceKey" -> ResourceKey.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "State" -> State.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "StepDetails" -> StepDetails.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RemediationExecutionStatus]
+      val __obj = js.Dictionary.empty[js.Any]
+      InvocationTime.foreach(__v => __obj.update("InvocationTime", __v.asInstanceOf[js.Any]))
+      LastUpdatedTime.foreach(__v => __obj.update("LastUpdatedTime", __v.asInstanceOf[js.Any]))
+      ResourceKey.foreach(__v => __obj.update("ResourceKey", __v.asInstanceOf[js.Any]))
+      State.foreach(__v => __obj.update("State", __v.asInstanceOf[js.Any]))
+      StepDetails.foreach(__v => __obj.update("StepDetails", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[RemediationExecutionStatus]
     }
   }
 
@@ -4385,25 +3591,13 @@ package configservice {
         State: js.UndefOr[RemediationExecutionStepState] = js.undefined,
         StopTime: js.UndefOr[Date] = js.undefined
     ): RemediationExecutionStep = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ErrorMessage" -> ErrorMessage.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Name" -> Name.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "StartTime" -> StartTime.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "State" -> State.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "StopTime" -> StopTime.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RemediationExecutionStep]
+      val __obj = js.Dictionary.empty[js.Any]
+      ErrorMessage.foreach(__v => __obj.update("ErrorMessage", __v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
+      StartTime.foreach(__v => __obj.update("StartTime", __v.asInstanceOf[js.Any]))
+      State.foreach(__v => __obj.update("State", __v.asInstanceOf[js.Any]))
+      StopTime.foreach(__v => __obj.update("StopTime", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[RemediationExecutionStep]
     }
   }
 
@@ -4429,16 +3623,10 @@ package configservice {
         ResourceValue: js.UndefOr[ResourceValue] = js.undefined,
         StaticValue: js.UndefOr[StaticValue] = js.undefined
     ): RemediationParameterValue = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ResourceValue" -> ResourceValue.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "StaticValue" -> StaticValue.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RemediationParameterValue]
+      val __obj = js.Dictionary.empty[js.Any]
+      ResourceValue.foreach(__v => __obj.update("ResourceValue", __v.asInstanceOf[js.Any]))
+      StaticValue.foreach(__v => __obj.update("StaticValue", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[RemediationParameterValue]
     }
   }
 
@@ -4462,16 +3650,10 @@ package configservice {
         count: js.UndefOr[Double] = js.undefined,
         resourceType: js.UndefOr[ResourceType] = js.undefined
     ): ResourceCount = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "count" -> count.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "resourceType" -> resourceType.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ResourceCount]
+      val __obj = js.Dictionary.empty[js.Any]
+      count.foreach(__v => __obj.update("count", __v.asInstanceOf[js.Any]))
+      resourceType.foreach(__v => __obj.update("resourceType", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ResourceCount]
     }
   }
 
@@ -4491,19 +3673,11 @@ package configservice {
         Region: js.UndefOr[AwsRegion] = js.undefined,
         ResourceType: js.UndefOr[ResourceType] = js.undefined
     ): ResourceCountFilters = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "AccountId" -> AccountId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Region" -> Region.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ResourceType" -> ResourceType.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ResourceCountFilters]
+      val __obj = js.Dictionary.empty[js.Any]
+      AccountId.foreach(__v => __obj.update("AccountId", __v.asInstanceOf[js.Any]))
+      Region.foreach(__v => __obj.update("Region", __v.asInstanceOf[js.Any]))
+      ResourceType.foreach(__v => __obj.update("ResourceType", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ResourceCountFilters]
     }
   }
 
@@ -4533,22 +3707,12 @@ package configservice {
         ResourceId: js.UndefOr[ResourceId] = js.undefined,
         ResourceName: js.UndefOr[ResourceName] = js.undefined
     ): ResourceFilters = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "AccountId" -> AccountId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Region" -> Region.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ResourceId" -> ResourceId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ResourceName" -> ResourceName.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ResourceFilters]
+      val __obj = js.Dictionary.empty[js.Any]
+      AccountId.foreach(__v => __obj.update("AccountId", __v.asInstanceOf[js.Any]))
+      Region.foreach(__v => __obj.update("Region", __v.asInstanceOf[js.Any]))
+      ResourceId.foreach(__v => __obj.update("ResourceId", __v.asInstanceOf[js.Any]))
+      ResourceName.foreach(__v => __obj.update("ResourceName", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ResourceFilters]
     }
   }
 
@@ -4570,22 +3734,12 @@ package configservice {
         resourceName: js.UndefOr[ResourceName] = js.undefined,
         resourceType: js.UndefOr[ResourceType] = js.undefined
     ): ResourceIdentifier = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "resourceDeletionTime" -> resourceDeletionTime.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "resourceId" -> resourceId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "resourceName" -> resourceName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "resourceType" -> resourceType.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ResourceIdentifier]
+      val __obj = js.Dictionary.empty[js.Any]
+      resourceDeletionTime.foreach(__v => __obj.update("resourceDeletionTime", __v.asInstanceOf[js.Any]))
+      resourceId.foreach(__v => __obj.update("resourceId", __v.asInstanceOf[js.Any]))
+      resourceName.foreach(__v => __obj.update("resourceName", __v.asInstanceOf[js.Any]))
+      resourceType.foreach(__v => __obj.update("resourceType", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ResourceIdentifier]
     }
   }
 
@@ -4603,12 +3757,12 @@ package configservice {
         resourceId: ResourceId,
         resourceType: ResourceType
     ): ResourceKey = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "resourceId"   -> resourceId.asInstanceOf[js.Any],
         "resourceType" -> resourceType.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ResourceKey]
+      __obj.asInstanceOf[ResourceKey]
     }
   }
 
@@ -4758,13 +3912,9 @@ package configservice {
     def apply(
         Value: js.UndefOr[ResourceValueType] = js.undefined
     ): ResourceValue = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Value" -> Value.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ResourceValue]
+      val __obj = js.Dictionary.empty[js.Any]
+      Value.foreach(__v => __obj.update("Value", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ResourceValue]
     }
   }
 
@@ -4788,12 +3938,12 @@ package configservice {
         Name: RetentionConfigurationName,
         RetentionPeriodInDays: RetentionPeriodInDays
     ): RetentionConfiguration = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "Name"                  -> Name.asInstanceOf[js.Any],
         "RetentionPeriodInDays" -> RetentionPeriodInDays.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RetentionConfiguration]
+      __obj.asInstanceOf[RetentionConfiguration]
     }
   }
 
@@ -4815,22 +3965,12 @@ package configservice {
         TagKey: js.UndefOr[StringWithCharLimit128] = js.undefined,
         TagValue: js.UndefOr[StringWithCharLimit256] = js.undefined
     ): Scope = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ComplianceResourceId" -> ComplianceResourceId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ComplianceResourceTypes" -> ComplianceResourceTypes.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "TagKey" -> TagKey.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "TagValue" -> TagValue.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Scope]
+      val __obj = js.Dictionary.empty[js.Any]
+      ComplianceResourceId.foreach(__v => __obj.update("ComplianceResourceId", __v.asInstanceOf[js.Any]))
+      ComplianceResourceTypes.foreach(__v => __obj.update("ComplianceResourceTypes", __v.asInstanceOf[js.Any]))
+      TagKey.foreach(__v => __obj.update("TagKey", __v.asInstanceOf[js.Any]))
+      TagValue.foreach(__v => __obj.update("TagValue", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Scope]
     }
   }
 
@@ -4847,17 +3987,13 @@ package configservice {
         Limit: js.UndefOr[Limit] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): SelectResourceConfigRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Expression" -> Expression.asInstanceOf[js.Any],
-        "Limit" -> Limit.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NextToken" -> NextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "Expression" -> Expression.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SelectResourceConfigRequest]
+      Limit.foreach(__v => __obj.update("Limit", __v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[SelectResourceConfigRequest]
     }
   }
 
@@ -4874,19 +4010,11 @@ package configservice {
         QueryInfo: js.UndefOr[QueryInfo] = js.undefined,
         Results: js.UndefOr[Results] = js.undefined
     ): SelectResourceConfigResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "NextToken" -> NextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "QueryInfo" -> QueryInfo.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Results" -> Results.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SelectResourceConfigResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      QueryInfo.foreach(__v => __obj.update("QueryInfo", __v.asInstanceOf[js.Any]))
+      Results.foreach(__v => __obj.update("Results", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[SelectResourceConfigResponse]
     }
   }
 
@@ -4906,15 +4034,13 @@ package configservice {
         SourceIdentifier: StringWithCharLimit256,
         SourceDetails: js.UndefOr[SourceDetails] = js.undefined
     ): Source = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "Owner"            -> Owner.asInstanceOf[js.Any],
-        "SourceIdentifier" -> SourceIdentifier.asInstanceOf[js.Any],
-        "SourceDetails" -> SourceDetails.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "SourceIdentifier" -> SourceIdentifier.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Source]
+      SourceDetails.foreach(__v => __obj.update("SourceDetails", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Source]
     }
   }
 
@@ -4934,19 +4060,11 @@ package configservice {
         MaximumExecutionFrequency: js.UndefOr[MaximumExecutionFrequency] = js.undefined,
         MessageType: js.UndefOr[MessageType] = js.undefined
     ): SourceDetail = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "EventSource" -> EventSource.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MaximumExecutionFrequency" -> MaximumExecutionFrequency.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MessageType" -> MessageType.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SourceDetail]
+      val __obj = js.Dictionary.empty[js.Any]
+      EventSource.foreach(__v => __obj.update("EventSource", __v.asInstanceOf[js.Any]))
+      MaximumExecutionFrequency.foreach(__v => __obj.update("MaximumExecutionFrequency", __v.asInstanceOf[js.Any]))
+      MessageType.foreach(__v => __obj.update("MessageType", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[SourceDetail]
     }
   }
 
@@ -4962,13 +4080,9 @@ package configservice {
     def apply(
         ConfigRuleNames: js.UndefOr[ReevaluateConfigRuleNames] = js.undefined
     ): StartConfigRulesEvaluationRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ConfigRuleNames" -> ConfigRuleNames.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StartConfigRulesEvaluationRequest]
+      val __obj = js.Dictionary.empty[js.Any]
+      ConfigRuleNames.foreach(__v => __obj.update("ConfigRuleNames", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[StartConfigRulesEvaluationRequest]
     }
   }
 
@@ -4981,10 +4095,9 @@ package configservice {
   object StartConfigRulesEvaluationResponse {
     def apply(
         ): StartConfigRulesEvaluationResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary.empty[js.Any]
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StartConfigRulesEvaluationResponse]
+      __obj.asInstanceOf[StartConfigRulesEvaluationResponse]
     }
   }
 
@@ -5000,11 +4113,11 @@ package configservice {
     def apply(
         ConfigurationRecorderName: RecorderName
     ): StartConfigurationRecorderRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ConfigurationRecorderName" -> ConfigurationRecorderName.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StartConfigurationRecorderRequest]
+      __obj.asInstanceOf[StartConfigurationRecorderRequest]
     }
   }
 
@@ -5019,12 +4132,12 @@ package configservice {
         ConfigRuleName: StringWithCharLimit64,
         ResourceKeys: ResourceKeys
     ): StartRemediationExecutionRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ConfigRuleName" -> ConfigRuleName.asInstanceOf[js.Any],
         "ResourceKeys"   -> ResourceKeys.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StartRemediationExecutionRequest]
+      __obj.asInstanceOf[StartRemediationExecutionRequest]
     }
   }
 
@@ -5039,16 +4152,10 @@ package configservice {
         FailedItems: js.UndefOr[ResourceKeys] = js.undefined,
         FailureMessage: js.UndefOr[String] = js.undefined
     ): StartRemediationExecutionResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "FailedItems" -> FailedItems.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "FailureMessage" -> FailureMessage.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StartRemediationExecutionResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      FailedItems.foreach(__v => __obj.update("FailedItems", __v.asInstanceOf[js.Any]))
+      FailureMessage.foreach(__v => __obj.update("FailureMessage", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[StartRemediationExecutionResponse]
     }
   }
 
@@ -5064,13 +4171,9 @@ package configservice {
     def apply(
         Values: js.UndefOr[StaticParameterValues] = js.undefined
     ): StaticValue = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Values" -> Values.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StaticValue]
+      val __obj = js.Dictionary.empty[js.Any]
+      Values.foreach(__v => __obj.update("Values", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[StaticValue]
     }
   }
 
@@ -5086,11 +4189,11 @@ package configservice {
     def apply(
         ConfigurationRecorderName: RecorderName
     ): StopConfigurationRecorderRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ConfigurationRecorderName" -> ConfigurationRecorderName.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StopConfigurationRecorderRequest]
+      __obj.asInstanceOf[StopConfigurationRecorderRequest]
     }
   }
 
@@ -5108,16 +4211,10 @@ package configservice {
         Key: js.UndefOr[TagKey] = js.undefined,
         Value: js.UndefOr[TagValue] = js.undefined
     ): Tag = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Key" -> Key.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Value" -> Value.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Tag]
+      val __obj = js.Dictionary.empty[js.Any]
+      Key.foreach(__v => __obj.update("Key", __v.asInstanceOf[js.Any]))
+      Value.foreach(__v => __obj.update("Value", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Tag]
     }
   }
 
@@ -5132,12 +4229,12 @@ package configservice {
         ResourceArn: AmazonResourceName,
         Tags: TagList
     ): TagResourceRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any],
         "Tags"        -> Tags.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[TagResourceRequest]
+      __obj.asInstanceOf[TagResourceRequest]
     }
   }
 
@@ -5152,12 +4249,12 @@ package configservice {
         ResourceArn: AmazonResourceName,
         TagKeys: TagKeyList
     ): UntagResourceRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any],
         "TagKeys"     -> TagKeys.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UntagResourceRequest]
+      __obj.asInstanceOf[UntagResourceRequest]
     }
   }
 }

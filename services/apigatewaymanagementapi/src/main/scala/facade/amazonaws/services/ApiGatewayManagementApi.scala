@@ -38,12 +38,12 @@ package apigatewaymanagementapi {
         ConnectionId: __string,
         Data: Data
     ): PostToConnectionRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ConnectionId" -> ConnectionId.asInstanceOf[js.Any],
         "Data"         -> Data.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PostToConnectionRequest]
+      __obj.asInstanceOf[PostToConnectionRequest]
     }
   }
 }

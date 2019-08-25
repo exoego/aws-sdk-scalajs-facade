@@ -569,13 +569,9 @@ package rds {
     def apply(
         AccountQuotas: js.UndefOr[AccountQuotaList] = js.undefined
     ): AccountAttributesMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "AccountQuotas" -> AccountQuotas.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AccountAttributesMessage]
+      val __obj = js.Dictionary.empty[js.Any]
+      AccountQuotas.foreach(__v => __obj.update("AccountQuotas", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AccountAttributesMessage]
     }
   }
 
@@ -595,19 +591,11 @@ package rds {
         Max: js.UndefOr[Double] = js.undefined,
         Used: js.UndefOr[Double] = js.undefined
     ): AccountQuota = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "AccountQuotaName" -> AccountQuotaName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Max" -> Max.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Used" -> Used.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AccountQuota]
+      val __obj = js.Dictionary.empty[js.Any]
+      AccountQuotaName.foreach(__v => __obj.update("AccountQuotaName", __v.asInstanceOf[js.Any]))
+      Max.foreach(__v => __obj.update("Max", __v.asInstanceOf[js.Any]))
+      Used.foreach(__v => __obj.update("Used", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AccountQuota]
     }
   }
 
@@ -622,12 +610,12 @@ package rds {
         DBClusterIdentifier: String,
         RoleArn: String
     ): AddRoleToDBClusterMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "DBClusterIdentifier" -> DBClusterIdentifier.asInstanceOf[js.Any],
         "RoleArn"             -> RoleArn.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AddRoleToDBClusterMessage]
+      __obj.asInstanceOf[AddRoleToDBClusterMessage]
     }
   }
 
@@ -644,13 +632,13 @@ package rds {
         FeatureName: String,
         RoleArn: String
     ): AddRoleToDBInstanceMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "DBInstanceIdentifier" -> DBInstanceIdentifier.asInstanceOf[js.Any],
         "FeatureName"          -> FeatureName.asInstanceOf[js.Any],
         "RoleArn"              -> RoleArn.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AddRoleToDBInstanceMessage]
+      __obj.asInstanceOf[AddRoleToDBInstanceMessage]
     }
   }
 
@@ -668,12 +656,12 @@ package rds {
         SourceIdentifier: String,
         SubscriptionName: String
     ): AddSourceIdentifierToSubscriptionMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "SourceIdentifier" -> SourceIdentifier.asInstanceOf[js.Any],
         "SubscriptionName" -> SubscriptionName.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AddSourceIdentifierToSubscriptionMessage]
+      __obj.asInstanceOf[AddSourceIdentifierToSubscriptionMessage]
     }
   }
 
@@ -686,13 +674,9 @@ package rds {
     def apply(
         EventSubscription: js.UndefOr[EventSubscription] = js.undefined
     ): AddSourceIdentifierToSubscriptionResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "EventSubscription" -> EventSubscription.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AddSourceIdentifierToSubscriptionResult]
+      val __obj = js.Dictionary.empty[js.Any]
+      EventSubscription.foreach(__v => __obj.update("EventSubscription", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AddSourceIdentifierToSubscriptionResult]
     }
   }
 
@@ -710,12 +694,12 @@ package rds {
         ResourceName: String,
         Tags: TagList
     ): AddTagsToResourceMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ResourceName" -> ResourceName.asInstanceOf[js.Any],
         "Tags"         -> Tags.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AddTagsToResourceMessage]
+      __obj.asInstanceOf[AddTagsToResourceMessage]
     }
   }
 
@@ -742,13 +726,13 @@ package rds {
         OptInType: String,
         ResourceIdentifier: String
     ): ApplyPendingMaintenanceActionMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ApplyAction"        -> ApplyAction.asInstanceOf[js.Any],
         "OptInType"          -> OptInType.asInstanceOf[js.Any],
         "ResourceIdentifier" -> ResourceIdentifier.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ApplyPendingMaintenanceActionMessage]
+      __obj.asInstanceOf[ApplyPendingMaintenanceActionMessage]
     }
   }
 
@@ -761,13 +745,11 @@ package rds {
     def apply(
         ResourcePendingMaintenanceActions: js.UndefOr[ResourcePendingMaintenanceActions] = js.undefined
     ): ApplyPendingMaintenanceActionResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ResourcePendingMaintenanceActions" -> ResourcePendingMaintenanceActions.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ApplyPendingMaintenanceActionResult]
+      val __obj = js.Dictionary.empty[js.Any]
+      ResourcePendingMaintenanceActions.foreach(
+        __v => __obj.update("ResourcePendingMaintenanceActions", __v.asInstanceOf[js.Any])
+      )
+      __obj.asInstanceOf[ApplyPendingMaintenanceActionResult]
     }
   }
 
@@ -791,23 +773,15 @@ package rds {
         EC2SecurityGroupName: js.UndefOr[String] = js.undefined,
         EC2SecurityGroupOwnerId: js.UndefOr[String] = js.undefined
     ): AuthorizeDBSecurityGroupIngressMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "DBSecurityGroupName" -> DBSecurityGroupName.asInstanceOf[js.Any],
-        "CIDRIP" -> CIDRIP.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "EC2SecurityGroupId" -> EC2SecurityGroupId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "EC2SecurityGroupName" -> EC2SecurityGroupName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "EC2SecurityGroupOwnerId" -> EC2SecurityGroupOwnerId.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "DBSecurityGroupName" -> DBSecurityGroupName.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AuthorizeDBSecurityGroupIngressMessage]
+      CIDRIP.foreach(__v => __obj.update("CIDRIP", __v.asInstanceOf[js.Any]))
+      EC2SecurityGroupId.foreach(__v => __obj.update("EC2SecurityGroupId", __v.asInstanceOf[js.Any]))
+      EC2SecurityGroupName.foreach(__v => __obj.update("EC2SecurityGroupName", __v.asInstanceOf[js.Any]))
+      EC2SecurityGroupOwnerId.foreach(__v => __obj.update("EC2SecurityGroupOwnerId", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AuthorizeDBSecurityGroupIngressMessage]
     }
   }
 
@@ -820,13 +794,9 @@ package rds {
     def apply(
         DBSecurityGroup: js.UndefOr[DBSecurityGroup] = js.undefined
     ): AuthorizeDBSecurityGroupIngressResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "DBSecurityGroup" -> DBSecurityGroup.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AuthorizeDBSecurityGroupIngressResult]
+      val __obj = js.Dictionary.empty[js.Any]
+      DBSecurityGroup.foreach(__v => __obj.update("DBSecurityGroup", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AuthorizeDBSecurityGroupIngressResult]
     }
   }
 
@@ -844,13 +814,9 @@ package rds {
     def apply(
         Name: js.UndefOr[String] = js.undefined
     ): AvailabilityZone = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Name" -> Name.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AvailabilityZone]
+      val __obj = js.Dictionary.empty[js.Any]
+      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AvailabilityZone]
     }
   }
 
@@ -871,19 +837,11 @@ package rds {
         DefaultValue: js.UndefOr[String] = js.undefined,
         Name: js.UndefOr[String] = js.undefined
     ): AvailableProcessorFeature = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "AllowedValues" -> AllowedValues.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DefaultValue" -> DefaultValue.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Name" -> Name.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AvailableProcessorFeature]
+      val __obj = js.Dictionary.empty[js.Any]
+      AllowedValues.foreach(__v => __obj.update("AllowedValues", __v.asInstanceOf[js.Any]))
+      DefaultValue.foreach(__v => __obj.update("DefaultValue", __v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AvailableProcessorFeature]
     }
   }
 
@@ -905,18 +863,16 @@ package rds {
         Force: js.UndefOr[BooleanOptional] = js.undefined,
         UseEarliestTimeOnPointInTimeUnavailable: js.UndefOr[BooleanOptional] = js.undefined
     ): BacktrackDBClusterMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "BacktrackTo"         -> BacktrackTo.asInstanceOf[js.Any],
-        "DBClusterIdentifier" -> DBClusterIdentifier.asInstanceOf[js.Any],
-        "Force" -> Force.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "UseEarliestTimeOnPointInTimeUnavailable" -> UseEarliestTimeOnPointInTimeUnavailable.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "DBClusterIdentifier" -> DBClusterIdentifier.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[BacktrackDBClusterMessage]
+      Force.foreach(__v => __obj.update("Force", __v.asInstanceOf[js.Any]))
+      UseEarliestTimeOnPointInTimeUnavailable.foreach(
+        __v => __obj.update("UseEarliestTimeOnPointInTimeUnavailable", __v.asInstanceOf[js.Any])
+      )
+      __obj.asInstanceOf[BacktrackDBClusterMessage]
     }
   }
 
@@ -942,28 +898,14 @@ package rds {
         ValidFrom: js.UndefOr[TStamp] = js.undefined,
         ValidTill: js.UndefOr[TStamp] = js.undefined
     ): Certificate = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "CertificateArn" -> CertificateArn.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "CertificateIdentifier" -> CertificateIdentifier.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "CertificateType" -> CertificateType.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Thumbprint" -> Thumbprint.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ValidFrom" -> ValidFrom.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ValidTill" -> ValidTill.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Certificate]
+      val __obj = js.Dictionary.empty[js.Any]
+      CertificateArn.foreach(__v => __obj.update("CertificateArn", __v.asInstanceOf[js.Any]))
+      CertificateIdentifier.foreach(__v => __obj.update("CertificateIdentifier", __v.asInstanceOf[js.Any]))
+      CertificateType.foreach(__v => __obj.update("CertificateType", __v.asInstanceOf[js.Any]))
+      Thumbprint.foreach(__v => __obj.update("Thumbprint", __v.asInstanceOf[js.Any]))
+      ValidFrom.foreach(__v => __obj.update("ValidFrom", __v.asInstanceOf[js.Any]))
+      ValidTill.foreach(__v => __obj.update("ValidTill", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Certificate]
     }
   }
 
@@ -981,16 +923,10 @@ package rds {
         Certificates: js.UndefOr[CertificateList] = js.undefined,
         Marker: js.UndefOr[String] = js.undefined
     ): CertificateMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Certificates" -> Certificates.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Marker" -> Marker.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CertificateMessage]
+      val __obj = js.Dictionary.empty[js.Any]
+      Certificates.foreach(__v => __obj.update("Certificates", __v.asInstanceOf[js.Any]))
+      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CertificateMessage]
     }
   }
 
@@ -1008,16 +944,10 @@ package rds {
         CharacterSetDescription: js.UndefOr[String] = js.undefined,
         CharacterSetName: js.UndefOr[String] = js.undefined
     ): CharacterSet = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "CharacterSetDescription" -> CharacterSetDescription.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "CharacterSetName" -> CharacterSetName.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CharacterSet]
+      val __obj = js.Dictionary.empty[js.Any]
+      CharacterSetDescription.foreach(__v => __obj.update("CharacterSetDescription", __v.asInstanceOf[js.Any]))
+      CharacterSetName.foreach(__v => __obj.update("CharacterSetName", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CharacterSet]
     }
   }
 
@@ -1036,16 +966,10 @@ package rds {
         DisableLogTypes: js.UndefOr[LogTypeList] = js.undefined,
         EnableLogTypes: js.UndefOr[LogTypeList] = js.undefined
     ): CloudwatchLogsExportConfiguration = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "DisableLogTypes" -> DisableLogTypes.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "EnableLogTypes" -> EnableLogTypes.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CloudwatchLogsExportConfiguration]
+      val __obj = js.Dictionary.empty[js.Any]
+      DisableLogTypes.foreach(__v => __obj.update("DisableLogTypes", __v.asInstanceOf[js.Any]))
+      EnableLogTypes.foreach(__v => __obj.update("EnableLogTypes", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CloudwatchLogsExportConfiguration]
     }
   }
 
@@ -1064,16 +988,14 @@ package rds {
         TargetDBClusterParameterGroupIdentifier: String,
         Tags: js.UndefOr[TagList] = js.undefined
     ): CopyDBClusterParameterGroupMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "SourceDBClusterParameterGroupIdentifier"  -> SourceDBClusterParameterGroupIdentifier.asInstanceOf[js.Any],
         "TargetDBClusterParameterGroupDescription" -> TargetDBClusterParameterGroupDescription.asInstanceOf[js.Any],
-        "TargetDBClusterParameterGroupIdentifier"  -> TargetDBClusterParameterGroupIdentifier.asInstanceOf[js.Any],
-        "Tags" -> Tags.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "TargetDBClusterParameterGroupIdentifier"  -> TargetDBClusterParameterGroupIdentifier.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CopyDBClusterParameterGroupMessage]
+      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CopyDBClusterParameterGroupMessage]
     }
   }
 
@@ -1086,13 +1008,9 @@ package rds {
     def apply(
         DBClusterParameterGroup: js.UndefOr[DBClusterParameterGroup] = js.undefined
     ): CopyDBClusterParameterGroupResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "DBClusterParameterGroup" -> DBClusterParameterGroup.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CopyDBClusterParameterGroupResult]
+      val __obj = js.Dictionary.empty[js.Any]
+      DBClusterParameterGroup.foreach(__v => __obj.update("DBClusterParameterGroup", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CopyDBClusterParameterGroupResult]
     }
   }
 
@@ -1120,27 +1038,17 @@ package rds {
         SourceRegion: js.UndefOr[String] = js.undefined,
         Tags: js.UndefOr[TagList] = js.undefined
     ): CopyDBClusterSnapshotMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "SourceDBClusterSnapshotIdentifier" -> SourceDBClusterSnapshotIdentifier.asInstanceOf[js.Any],
-        "TargetDBClusterSnapshotIdentifier" -> TargetDBClusterSnapshotIdentifier.asInstanceOf[js.Any],
-        "CopyTags" -> CopyTags.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "KmsKeyId" -> KmsKeyId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "PreSignedUrl" -> PreSignedUrl.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SourceRegion" -> SourceRegion.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Tags" -> Tags.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "TargetDBClusterSnapshotIdentifier" -> TargetDBClusterSnapshotIdentifier.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CopyDBClusterSnapshotMessage]
+      CopyTags.foreach(__v => __obj.update("CopyTags", __v.asInstanceOf[js.Any]))
+      KmsKeyId.foreach(__v => __obj.update("KmsKeyId", __v.asInstanceOf[js.Any]))
+      PreSignedUrl.foreach(__v => __obj.update("PreSignedUrl", __v.asInstanceOf[js.Any]))
+      SourceRegion.foreach(__v => __obj.update("SourceRegion", __v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CopyDBClusterSnapshotMessage]
     }
   }
 
@@ -1153,13 +1061,9 @@ package rds {
     def apply(
         DBClusterSnapshot: js.UndefOr[DBClusterSnapshot] = js.undefined
     ): CopyDBClusterSnapshotResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "DBClusterSnapshot" -> DBClusterSnapshot.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CopyDBClusterSnapshotResult]
+      val __obj = js.Dictionary.empty[js.Any]
+      DBClusterSnapshot.foreach(__v => __obj.update("DBClusterSnapshot", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CopyDBClusterSnapshotResult]
     }
   }
 
@@ -1181,16 +1085,14 @@ package rds {
         TargetDBParameterGroupIdentifier: String,
         Tags: js.UndefOr[TagList] = js.undefined
     ): CopyDBParameterGroupMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "SourceDBParameterGroupIdentifier"  -> SourceDBParameterGroupIdentifier.asInstanceOf[js.Any],
         "TargetDBParameterGroupDescription" -> TargetDBParameterGroupDescription.asInstanceOf[js.Any],
-        "TargetDBParameterGroupIdentifier"  -> TargetDBParameterGroupIdentifier.asInstanceOf[js.Any],
-        "Tags" -> Tags.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "TargetDBParameterGroupIdentifier"  -> TargetDBParameterGroupIdentifier.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CopyDBParameterGroupMessage]
+      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CopyDBParameterGroupMessage]
     }
   }
 
@@ -1203,13 +1105,9 @@ package rds {
     def apply(
         DBParameterGroup: js.UndefOr[DBParameterGroup] = js.undefined
     ): CopyDBParameterGroupResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "DBParameterGroup" -> DBParameterGroup.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CopyDBParameterGroupResult]
+      val __obj = js.Dictionary.empty[js.Any]
+      DBParameterGroup.foreach(__v => __obj.update("DBParameterGroup", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CopyDBParameterGroupResult]
     }
   }
 
@@ -1239,30 +1137,18 @@ package rds {
         SourceRegion: js.UndefOr[String] = js.undefined,
         Tags: js.UndefOr[TagList] = js.undefined
     ): CopyDBSnapshotMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "SourceDBSnapshotIdentifier" -> SourceDBSnapshotIdentifier.asInstanceOf[js.Any],
-        "TargetDBSnapshotIdentifier" -> TargetDBSnapshotIdentifier.asInstanceOf[js.Any],
-        "CopyTags" -> CopyTags.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "KmsKeyId" -> KmsKeyId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "OptionGroupName" -> OptionGroupName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "PreSignedUrl" -> PreSignedUrl.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SourceRegion" -> SourceRegion.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Tags" -> Tags.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "TargetDBSnapshotIdentifier" -> TargetDBSnapshotIdentifier.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CopyDBSnapshotMessage]
+      CopyTags.foreach(__v => __obj.update("CopyTags", __v.asInstanceOf[js.Any]))
+      KmsKeyId.foreach(__v => __obj.update("KmsKeyId", __v.asInstanceOf[js.Any]))
+      OptionGroupName.foreach(__v => __obj.update("OptionGroupName", __v.asInstanceOf[js.Any]))
+      PreSignedUrl.foreach(__v => __obj.update("PreSignedUrl", __v.asInstanceOf[js.Any]))
+      SourceRegion.foreach(__v => __obj.update("SourceRegion", __v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CopyDBSnapshotMessage]
     }
   }
 
@@ -1275,13 +1161,9 @@ package rds {
     def apply(
         DBSnapshot: js.UndefOr[DBSnapshot] = js.undefined
     ): CopyDBSnapshotResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "DBSnapshot" -> DBSnapshot.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CopyDBSnapshotResult]
+      val __obj = js.Dictionary.empty[js.Any]
+      DBSnapshot.foreach(__v => __obj.update("DBSnapshot", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CopyDBSnapshotResult]
     }
   }
 
@@ -1303,16 +1185,14 @@ package rds {
         TargetOptionGroupIdentifier: String,
         Tags: js.UndefOr[TagList] = js.undefined
     ): CopyOptionGroupMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "SourceOptionGroupIdentifier"  -> SourceOptionGroupIdentifier.asInstanceOf[js.Any],
         "TargetOptionGroupDescription" -> TargetOptionGroupDescription.asInstanceOf[js.Any],
-        "TargetOptionGroupIdentifier"  -> TargetOptionGroupIdentifier.asInstanceOf[js.Any],
-        "Tags" -> Tags.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "TargetOptionGroupIdentifier"  -> TargetOptionGroupIdentifier.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CopyOptionGroupMessage]
+      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CopyOptionGroupMessage]
     }
   }
 
@@ -1325,13 +1205,9 @@ package rds {
     def apply(
         OptionGroup: js.UndefOr[OptionGroup] = js.undefined
     ): CopyOptionGroupResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "OptionGroup" -> OptionGroup.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CopyOptionGroupResult]
+      val __obj = js.Dictionary.empty[js.Any]
+      OptionGroup.foreach(__v => __obj.update("OptionGroup", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CopyOptionGroupResult]
     }
   }
 
@@ -1352,19 +1228,15 @@ package rds {
         ExcludedMembers: js.UndefOr[StringList] = js.undefined,
         StaticMembers: js.UndefOr[StringList] = js.undefined
     ): CreateDBClusterEndpointMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "DBClusterEndpointIdentifier" -> DBClusterEndpointIdentifier.asInstanceOf[js.Any],
         "DBClusterIdentifier"         -> DBClusterIdentifier.asInstanceOf[js.Any],
-        "EndpointType"                -> EndpointType.asInstanceOf[js.Any],
-        "ExcludedMembers" -> ExcludedMembers.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "StaticMembers" -> StaticMembers.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "EndpointType"                -> EndpointType.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateDBClusterEndpointMessage]
+      ExcludedMembers.foreach(__v => __obj.update("ExcludedMembers", __v.asInstanceOf[js.Any]))
+      StaticMembers.foreach(__v => __obj.update("StaticMembers", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateDBClusterEndpointMessage]
     }
   }
 
@@ -1438,96 +1310,42 @@ package rds {
         Tags: js.UndefOr[TagList] = js.undefined,
         VpcSecurityGroupIds: js.UndefOr[VpcSecurityGroupIdList] = js.undefined
     ): CreateDBClusterMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "DBClusterIdentifier" -> DBClusterIdentifier.asInstanceOf[js.Any],
-        "Engine"              -> Engine.asInstanceOf[js.Any],
-        "AvailabilityZones" -> AvailabilityZones.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "BacktrackWindow" -> BacktrackWindow.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "BackupRetentionPeriod" -> BackupRetentionPeriod.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "CharacterSetName" -> CharacterSetName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "CopyTagsToSnapshot" -> CopyTagsToSnapshot.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DBClusterParameterGroupName" -> DBClusterParameterGroupName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DBSubnetGroupName" -> DBSubnetGroupName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DatabaseName" -> DatabaseName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DeletionProtection" -> DeletionProtection.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "EnableCloudwatchLogsExports" -> EnableCloudwatchLogsExports.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "EnableIAMDatabaseAuthentication" -> EnableIAMDatabaseAuthentication.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "EngineMode" -> EngineMode.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "EngineVersion" -> EngineVersion.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "GlobalClusterIdentifier" -> GlobalClusterIdentifier.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "KmsKeyId" -> KmsKeyId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MasterUserPassword" -> MasterUserPassword.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MasterUsername" -> MasterUsername.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "OptionGroupName" -> OptionGroupName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Port" -> Port.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "PreSignedUrl" -> PreSignedUrl.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "PreferredBackupWindow" -> PreferredBackupWindow.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "PreferredMaintenanceWindow" -> PreferredMaintenanceWindow.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ReplicationSourceIdentifier" -> ReplicationSourceIdentifier.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ScalingConfiguration" -> ScalingConfiguration.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SourceRegion" -> SourceRegion.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "StorageEncrypted" -> StorageEncrypted.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Tags" -> Tags.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "VpcSecurityGroupIds" -> VpcSecurityGroupIds.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "Engine"              -> Engine.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateDBClusterMessage]
+      AvailabilityZones.foreach(__v => __obj.update("AvailabilityZones", __v.asInstanceOf[js.Any]))
+      BacktrackWindow.foreach(__v => __obj.update("BacktrackWindow", __v.asInstanceOf[js.Any]))
+      BackupRetentionPeriod.foreach(__v => __obj.update("BackupRetentionPeriod", __v.asInstanceOf[js.Any]))
+      CharacterSetName.foreach(__v => __obj.update("CharacterSetName", __v.asInstanceOf[js.Any]))
+      CopyTagsToSnapshot.foreach(__v => __obj.update("CopyTagsToSnapshot", __v.asInstanceOf[js.Any]))
+      DBClusterParameterGroupName.foreach(__v => __obj.update("DBClusterParameterGroupName", __v.asInstanceOf[js.Any]))
+      DBSubnetGroupName.foreach(__v => __obj.update("DBSubnetGroupName", __v.asInstanceOf[js.Any]))
+      DatabaseName.foreach(__v => __obj.update("DatabaseName", __v.asInstanceOf[js.Any]))
+      DeletionProtection.foreach(__v => __obj.update("DeletionProtection", __v.asInstanceOf[js.Any]))
+      EnableCloudwatchLogsExports.foreach(__v => __obj.update("EnableCloudwatchLogsExports", __v.asInstanceOf[js.Any]))
+      EnableIAMDatabaseAuthentication.foreach(
+        __v => __obj.update("EnableIAMDatabaseAuthentication", __v.asInstanceOf[js.Any])
+      )
+      EngineMode.foreach(__v => __obj.update("EngineMode", __v.asInstanceOf[js.Any]))
+      EngineVersion.foreach(__v => __obj.update("EngineVersion", __v.asInstanceOf[js.Any]))
+      GlobalClusterIdentifier.foreach(__v => __obj.update("GlobalClusterIdentifier", __v.asInstanceOf[js.Any]))
+      KmsKeyId.foreach(__v => __obj.update("KmsKeyId", __v.asInstanceOf[js.Any]))
+      MasterUserPassword.foreach(__v => __obj.update("MasterUserPassword", __v.asInstanceOf[js.Any]))
+      MasterUsername.foreach(__v => __obj.update("MasterUsername", __v.asInstanceOf[js.Any]))
+      OptionGroupName.foreach(__v => __obj.update("OptionGroupName", __v.asInstanceOf[js.Any]))
+      Port.foreach(__v => __obj.update("Port", __v.asInstanceOf[js.Any]))
+      PreSignedUrl.foreach(__v => __obj.update("PreSignedUrl", __v.asInstanceOf[js.Any]))
+      PreferredBackupWindow.foreach(__v => __obj.update("PreferredBackupWindow", __v.asInstanceOf[js.Any]))
+      PreferredMaintenanceWindow.foreach(__v => __obj.update("PreferredMaintenanceWindow", __v.asInstanceOf[js.Any]))
+      ReplicationSourceIdentifier.foreach(__v => __obj.update("ReplicationSourceIdentifier", __v.asInstanceOf[js.Any]))
+      ScalingConfiguration.foreach(__v => __obj.update("ScalingConfiguration", __v.asInstanceOf[js.Any]))
+      SourceRegion.foreach(__v => __obj.update("SourceRegion", __v.asInstanceOf[js.Any]))
+      StorageEncrypted.foreach(__v => __obj.update("StorageEncrypted", __v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
+      VpcSecurityGroupIds.foreach(__v => __obj.update("VpcSecurityGroupIds", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateDBClusterMessage]
     }
   }
 
@@ -1549,16 +1367,14 @@ package rds {
         Description: String,
         Tags: js.UndefOr[TagList] = js.undefined
     ): CreateDBClusterParameterGroupMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "DBClusterParameterGroupName" -> DBClusterParameterGroupName.asInstanceOf[js.Any],
         "DBParameterGroupFamily"      -> DBParameterGroupFamily.asInstanceOf[js.Any],
-        "Description"                 -> Description.asInstanceOf[js.Any],
-        "Tags" -> Tags.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "Description"                 -> Description.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateDBClusterParameterGroupMessage]
+      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateDBClusterParameterGroupMessage]
     }
   }
 
@@ -1571,13 +1387,9 @@ package rds {
     def apply(
         DBClusterParameterGroup: js.UndefOr[DBClusterParameterGroup] = js.undefined
     ): CreateDBClusterParameterGroupResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "DBClusterParameterGroup" -> DBClusterParameterGroup.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateDBClusterParameterGroupResult]
+      val __obj = js.Dictionary.empty[js.Any]
+      DBClusterParameterGroup.foreach(__v => __obj.update("DBClusterParameterGroup", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateDBClusterParameterGroupResult]
     }
   }
 
@@ -1590,13 +1402,9 @@ package rds {
     def apply(
         DBCluster: js.UndefOr[DBCluster] = js.undefined
     ): CreateDBClusterResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "DBCluster" -> DBCluster.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateDBClusterResult]
+      val __obj = js.Dictionary.empty[js.Any]
+      DBCluster.foreach(__v => __obj.update("DBCluster", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateDBClusterResult]
     }
   }
 
@@ -1616,15 +1424,13 @@ package rds {
         DBClusterSnapshotIdentifier: String,
         Tags: js.UndefOr[TagList] = js.undefined
     ): CreateDBClusterSnapshotMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "DBClusterIdentifier"         -> DBClusterIdentifier.asInstanceOf[js.Any],
-        "DBClusterSnapshotIdentifier" -> DBClusterSnapshotIdentifier.asInstanceOf[js.Any],
-        "Tags" -> Tags.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "DBClusterSnapshotIdentifier" -> DBClusterSnapshotIdentifier.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateDBClusterSnapshotMessage]
+      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateDBClusterSnapshotMessage]
     }
   }
 
@@ -1637,13 +1443,9 @@ package rds {
     def apply(
         DBClusterSnapshot: js.UndefOr[DBClusterSnapshot] = js.undefined
     ): CreateDBClusterSnapshotResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "DBClusterSnapshot" -> DBClusterSnapshot.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateDBClusterSnapshotResult]
+      val __obj = js.Dictionary.empty[js.Any]
+      DBClusterSnapshot.foreach(__v => __obj.update("DBClusterSnapshot", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateDBClusterSnapshotResult]
     }
   }
 
@@ -1747,139 +1549,59 @@ package rds {
         Timezone: js.UndefOr[String] = js.undefined,
         VpcSecurityGroupIds: js.UndefOr[VpcSecurityGroupIdList] = js.undefined
     ): CreateDBInstanceMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "DBInstanceClass"      -> DBInstanceClass.asInstanceOf[js.Any],
         "DBInstanceIdentifier" -> DBInstanceIdentifier.asInstanceOf[js.Any],
-        "Engine"               -> Engine.asInstanceOf[js.Any],
-        "AllocatedStorage" -> AllocatedStorage.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "AutoMinorVersionUpgrade" -> AutoMinorVersionUpgrade.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "AvailabilityZone" -> AvailabilityZone.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "BackupRetentionPeriod" -> BackupRetentionPeriod.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "CharacterSetName" -> CharacterSetName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "CopyTagsToSnapshot" -> CopyTagsToSnapshot.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DBClusterIdentifier" -> DBClusterIdentifier.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DBName" -> DBName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DBParameterGroupName" -> DBParameterGroupName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DBSecurityGroups" -> DBSecurityGroups.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DBSubnetGroupName" -> DBSubnetGroupName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DeletionProtection" -> DeletionProtection.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Domain" -> Domain.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DomainIAMRoleName" -> DomainIAMRoleName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "EnableCloudwatchLogsExports" -> EnableCloudwatchLogsExports.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "EnableIAMDatabaseAuthentication" -> EnableIAMDatabaseAuthentication.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "EnablePerformanceInsights" -> EnablePerformanceInsights.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "EngineVersion" -> EngineVersion.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Iops" -> Iops.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "KmsKeyId" -> KmsKeyId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "LicenseModel" -> LicenseModel.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MasterUserPassword" -> MasterUserPassword.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MasterUsername" -> MasterUsername.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MonitoringInterval" -> MonitoringInterval.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MonitoringRoleArn" -> MonitoringRoleArn.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MultiAZ" -> MultiAZ.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "OptionGroupName" -> OptionGroupName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "PerformanceInsightsKMSKeyId" -> PerformanceInsightsKMSKeyId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "PerformanceInsightsRetentionPeriod" -> PerformanceInsightsRetentionPeriod.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Port" -> Port.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "PreferredBackupWindow" -> PreferredBackupWindow.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "PreferredMaintenanceWindow" -> PreferredMaintenanceWindow.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ProcessorFeatures" -> ProcessorFeatures.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "PromotionTier" -> PromotionTier.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "PubliclyAccessible" -> PubliclyAccessible.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "StorageEncrypted" -> StorageEncrypted.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "StorageType" -> StorageType.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Tags" -> Tags.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "TdeCredentialArn" -> TdeCredentialArn.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "TdeCredentialPassword" -> TdeCredentialPassword.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Timezone" -> Timezone.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "VpcSecurityGroupIds" -> VpcSecurityGroupIds.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "Engine"               -> Engine.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateDBInstanceMessage]
+      AllocatedStorage.foreach(__v => __obj.update("AllocatedStorage", __v.asInstanceOf[js.Any]))
+      AutoMinorVersionUpgrade.foreach(__v => __obj.update("AutoMinorVersionUpgrade", __v.asInstanceOf[js.Any]))
+      AvailabilityZone.foreach(__v => __obj.update("AvailabilityZone", __v.asInstanceOf[js.Any]))
+      BackupRetentionPeriod.foreach(__v => __obj.update("BackupRetentionPeriod", __v.asInstanceOf[js.Any]))
+      CharacterSetName.foreach(__v => __obj.update("CharacterSetName", __v.asInstanceOf[js.Any]))
+      CopyTagsToSnapshot.foreach(__v => __obj.update("CopyTagsToSnapshot", __v.asInstanceOf[js.Any]))
+      DBClusterIdentifier.foreach(__v => __obj.update("DBClusterIdentifier", __v.asInstanceOf[js.Any]))
+      DBName.foreach(__v => __obj.update("DBName", __v.asInstanceOf[js.Any]))
+      DBParameterGroupName.foreach(__v => __obj.update("DBParameterGroupName", __v.asInstanceOf[js.Any]))
+      DBSecurityGroups.foreach(__v => __obj.update("DBSecurityGroups", __v.asInstanceOf[js.Any]))
+      DBSubnetGroupName.foreach(__v => __obj.update("DBSubnetGroupName", __v.asInstanceOf[js.Any]))
+      DeletionProtection.foreach(__v => __obj.update("DeletionProtection", __v.asInstanceOf[js.Any]))
+      Domain.foreach(__v => __obj.update("Domain", __v.asInstanceOf[js.Any]))
+      DomainIAMRoleName.foreach(__v => __obj.update("DomainIAMRoleName", __v.asInstanceOf[js.Any]))
+      EnableCloudwatchLogsExports.foreach(__v => __obj.update("EnableCloudwatchLogsExports", __v.asInstanceOf[js.Any]))
+      EnableIAMDatabaseAuthentication.foreach(
+        __v => __obj.update("EnableIAMDatabaseAuthentication", __v.asInstanceOf[js.Any])
+      )
+      EnablePerformanceInsights.foreach(__v => __obj.update("EnablePerformanceInsights", __v.asInstanceOf[js.Any]))
+      EngineVersion.foreach(__v => __obj.update("EngineVersion", __v.asInstanceOf[js.Any]))
+      Iops.foreach(__v => __obj.update("Iops", __v.asInstanceOf[js.Any]))
+      KmsKeyId.foreach(__v => __obj.update("KmsKeyId", __v.asInstanceOf[js.Any]))
+      LicenseModel.foreach(__v => __obj.update("LicenseModel", __v.asInstanceOf[js.Any]))
+      MasterUserPassword.foreach(__v => __obj.update("MasterUserPassword", __v.asInstanceOf[js.Any]))
+      MasterUsername.foreach(__v => __obj.update("MasterUsername", __v.asInstanceOf[js.Any]))
+      MonitoringInterval.foreach(__v => __obj.update("MonitoringInterval", __v.asInstanceOf[js.Any]))
+      MonitoringRoleArn.foreach(__v => __obj.update("MonitoringRoleArn", __v.asInstanceOf[js.Any]))
+      MultiAZ.foreach(__v => __obj.update("MultiAZ", __v.asInstanceOf[js.Any]))
+      OptionGroupName.foreach(__v => __obj.update("OptionGroupName", __v.asInstanceOf[js.Any]))
+      PerformanceInsightsKMSKeyId.foreach(__v => __obj.update("PerformanceInsightsKMSKeyId", __v.asInstanceOf[js.Any]))
+      PerformanceInsightsRetentionPeriod.foreach(
+        __v => __obj.update("PerformanceInsightsRetentionPeriod", __v.asInstanceOf[js.Any])
+      )
+      Port.foreach(__v => __obj.update("Port", __v.asInstanceOf[js.Any]))
+      PreferredBackupWindow.foreach(__v => __obj.update("PreferredBackupWindow", __v.asInstanceOf[js.Any]))
+      PreferredMaintenanceWindow.foreach(__v => __obj.update("PreferredMaintenanceWindow", __v.asInstanceOf[js.Any]))
+      ProcessorFeatures.foreach(__v => __obj.update("ProcessorFeatures", __v.asInstanceOf[js.Any]))
+      PromotionTier.foreach(__v => __obj.update("PromotionTier", __v.asInstanceOf[js.Any]))
+      PubliclyAccessible.foreach(__v => __obj.update("PubliclyAccessible", __v.asInstanceOf[js.Any]))
+      StorageEncrypted.foreach(__v => __obj.update("StorageEncrypted", __v.asInstanceOf[js.Any]))
+      StorageType.foreach(__v => __obj.update("StorageType", __v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
+      TdeCredentialArn.foreach(__v => __obj.update("TdeCredentialArn", __v.asInstanceOf[js.Any]))
+      TdeCredentialPassword.foreach(__v => __obj.update("TdeCredentialPassword", __v.asInstanceOf[js.Any]))
+      Timezone.foreach(__v => __obj.update("Timezone", __v.asInstanceOf[js.Any]))
+      VpcSecurityGroupIds.foreach(__v => __obj.update("VpcSecurityGroupIds", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateDBInstanceMessage]
     }
   }
 
@@ -1946,90 +1668,42 @@ package rds {
         UseDefaultProcessorFeatures: js.UndefOr[BooleanOptional] = js.undefined,
         VpcSecurityGroupIds: js.UndefOr[VpcSecurityGroupIdList] = js.undefined
     ): CreateDBInstanceReadReplicaMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "DBInstanceIdentifier"       -> DBInstanceIdentifier.asInstanceOf[js.Any],
-        "SourceDBInstanceIdentifier" -> SourceDBInstanceIdentifier.asInstanceOf[js.Any],
-        "AutoMinorVersionUpgrade" -> AutoMinorVersionUpgrade.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "AvailabilityZone" -> AvailabilityZone.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "CopyTagsToSnapshot" -> CopyTagsToSnapshot.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DBInstanceClass" -> DBInstanceClass.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DBSubnetGroupName" -> DBSubnetGroupName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DeletionProtection" -> DeletionProtection.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "EnableCloudwatchLogsExports" -> EnableCloudwatchLogsExports.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "EnableIAMDatabaseAuthentication" -> EnableIAMDatabaseAuthentication.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "EnablePerformanceInsights" -> EnablePerformanceInsights.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Iops" -> Iops.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "KmsKeyId" -> KmsKeyId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MonitoringInterval" -> MonitoringInterval.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MonitoringRoleArn" -> MonitoringRoleArn.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MultiAZ" -> MultiAZ.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "OptionGroupName" -> OptionGroupName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "PerformanceInsightsKMSKeyId" -> PerformanceInsightsKMSKeyId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "PerformanceInsightsRetentionPeriod" -> PerformanceInsightsRetentionPeriod.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Port" -> Port.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "PreSignedUrl" -> PreSignedUrl.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ProcessorFeatures" -> ProcessorFeatures.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "PubliclyAccessible" -> PubliclyAccessible.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SourceRegion" -> SourceRegion.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "StorageType" -> StorageType.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Tags" -> Tags.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "UseDefaultProcessorFeatures" -> UseDefaultProcessorFeatures.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "VpcSecurityGroupIds" -> VpcSecurityGroupIds.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "SourceDBInstanceIdentifier" -> SourceDBInstanceIdentifier.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateDBInstanceReadReplicaMessage]
+      AutoMinorVersionUpgrade.foreach(__v => __obj.update("AutoMinorVersionUpgrade", __v.asInstanceOf[js.Any]))
+      AvailabilityZone.foreach(__v => __obj.update("AvailabilityZone", __v.asInstanceOf[js.Any]))
+      CopyTagsToSnapshot.foreach(__v => __obj.update("CopyTagsToSnapshot", __v.asInstanceOf[js.Any]))
+      DBInstanceClass.foreach(__v => __obj.update("DBInstanceClass", __v.asInstanceOf[js.Any]))
+      DBSubnetGroupName.foreach(__v => __obj.update("DBSubnetGroupName", __v.asInstanceOf[js.Any]))
+      DeletionProtection.foreach(__v => __obj.update("DeletionProtection", __v.asInstanceOf[js.Any]))
+      EnableCloudwatchLogsExports.foreach(__v => __obj.update("EnableCloudwatchLogsExports", __v.asInstanceOf[js.Any]))
+      EnableIAMDatabaseAuthentication.foreach(
+        __v => __obj.update("EnableIAMDatabaseAuthentication", __v.asInstanceOf[js.Any])
+      )
+      EnablePerformanceInsights.foreach(__v => __obj.update("EnablePerformanceInsights", __v.asInstanceOf[js.Any]))
+      Iops.foreach(__v => __obj.update("Iops", __v.asInstanceOf[js.Any]))
+      KmsKeyId.foreach(__v => __obj.update("KmsKeyId", __v.asInstanceOf[js.Any]))
+      MonitoringInterval.foreach(__v => __obj.update("MonitoringInterval", __v.asInstanceOf[js.Any]))
+      MonitoringRoleArn.foreach(__v => __obj.update("MonitoringRoleArn", __v.asInstanceOf[js.Any]))
+      MultiAZ.foreach(__v => __obj.update("MultiAZ", __v.asInstanceOf[js.Any]))
+      OptionGroupName.foreach(__v => __obj.update("OptionGroupName", __v.asInstanceOf[js.Any]))
+      PerformanceInsightsKMSKeyId.foreach(__v => __obj.update("PerformanceInsightsKMSKeyId", __v.asInstanceOf[js.Any]))
+      PerformanceInsightsRetentionPeriod.foreach(
+        __v => __obj.update("PerformanceInsightsRetentionPeriod", __v.asInstanceOf[js.Any])
+      )
+      Port.foreach(__v => __obj.update("Port", __v.asInstanceOf[js.Any]))
+      PreSignedUrl.foreach(__v => __obj.update("PreSignedUrl", __v.asInstanceOf[js.Any]))
+      ProcessorFeatures.foreach(__v => __obj.update("ProcessorFeatures", __v.asInstanceOf[js.Any]))
+      PubliclyAccessible.foreach(__v => __obj.update("PubliclyAccessible", __v.asInstanceOf[js.Any]))
+      SourceRegion.foreach(__v => __obj.update("SourceRegion", __v.asInstanceOf[js.Any]))
+      StorageType.foreach(__v => __obj.update("StorageType", __v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
+      UseDefaultProcessorFeatures.foreach(__v => __obj.update("UseDefaultProcessorFeatures", __v.asInstanceOf[js.Any]))
+      VpcSecurityGroupIds.foreach(__v => __obj.update("VpcSecurityGroupIds", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateDBInstanceReadReplicaMessage]
     }
   }
 
@@ -2042,13 +1716,9 @@ package rds {
     def apply(
         DBInstance: js.UndefOr[DBInstance] = js.undefined
     ): CreateDBInstanceReadReplicaResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "DBInstance" -> DBInstance.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateDBInstanceReadReplicaResult]
+      val __obj = js.Dictionary.empty[js.Any]
+      DBInstance.foreach(__v => __obj.update("DBInstance", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateDBInstanceReadReplicaResult]
     }
   }
 
@@ -2061,13 +1731,9 @@ package rds {
     def apply(
         DBInstance: js.UndefOr[DBInstance] = js.undefined
     ): CreateDBInstanceResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "DBInstance" -> DBInstance.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateDBInstanceResult]
+      val __obj = js.Dictionary.empty[js.Any]
+      DBInstance.foreach(__v => __obj.update("DBInstance", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateDBInstanceResult]
     }
   }
 
@@ -2089,16 +1755,14 @@ package rds {
         Description: String,
         Tags: js.UndefOr[TagList] = js.undefined
     ): CreateDBParameterGroupMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "DBParameterGroupFamily" -> DBParameterGroupFamily.asInstanceOf[js.Any],
         "DBParameterGroupName"   -> DBParameterGroupName.asInstanceOf[js.Any],
-        "Description"            -> Description.asInstanceOf[js.Any],
-        "Tags" -> Tags.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "Description"            -> Description.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateDBParameterGroupMessage]
+      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateDBParameterGroupMessage]
     }
   }
 
@@ -2111,13 +1775,9 @@ package rds {
     def apply(
         DBParameterGroup: js.UndefOr[DBParameterGroup] = js.undefined
     ): CreateDBParameterGroupResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "DBParameterGroup" -> DBParameterGroup.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateDBParameterGroupResult]
+      val __obj = js.Dictionary.empty[js.Any]
+      DBParameterGroup.foreach(__v => __obj.update("DBParameterGroup", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateDBParameterGroupResult]
     }
   }
 
@@ -2137,15 +1797,13 @@ package rds {
         DBSecurityGroupName: String,
         Tags: js.UndefOr[TagList] = js.undefined
     ): CreateDBSecurityGroupMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "DBSecurityGroupDescription" -> DBSecurityGroupDescription.asInstanceOf[js.Any],
-        "DBSecurityGroupName"        -> DBSecurityGroupName.asInstanceOf[js.Any],
-        "Tags" -> Tags.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "DBSecurityGroupName"        -> DBSecurityGroupName.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateDBSecurityGroupMessage]
+      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateDBSecurityGroupMessage]
     }
   }
 
@@ -2158,13 +1816,9 @@ package rds {
     def apply(
         DBSecurityGroup: js.UndefOr[DBSecurityGroup] = js.undefined
     ): CreateDBSecurityGroupResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "DBSecurityGroup" -> DBSecurityGroup.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateDBSecurityGroupResult]
+      val __obj = js.Dictionary.empty[js.Any]
+      DBSecurityGroup.foreach(__v => __obj.update("DBSecurityGroup", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateDBSecurityGroupResult]
     }
   }
 
@@ -2184,15 +1838,13 @@ package rds {
         DBSnapshotIdentifier: String,
         Tags: js.UndefOr[TagList] = js.undefined
     ): CreateDBSnapshotMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "DBInstanceIdentifier" -> DBInstanceIdentifier.asInstanceOf[js.Any],
-        "DBSnapshotIdentifier" -> DBSnapshotIdentifier.asInstanceOf[js.Any],
-        "Tags" -> Tags.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "DBSnapshotIdentifier" -> DBSnapshotIdentifier.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateDBSnapshotMessage]
+      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateDBSnapshotMessage]
     }
   }
 
@@ -2205,13 +1857,9 @@ package rds {
     def apply(
         DBSnapshot: js.UndefOr[DBSnapshot] = js.undefined
     ): CreateDBSnapshotResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "DBSnapshot" -> DBSnapshot.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateDBSnapshotResult]
+      val __obj = js.Dictionary.empty[js.Any]
+      DBSnapshot.foreach(__v => __obj.update("DBSnapshot", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateDBSnapshotResult]
     }
   }
 
@@ -2233,16 +1881,14 @@ package rds {
         SubnetIds: SubnetIdentifierList,
         Tags: js.UndefOr[TagList] = js.undefined
     ): CreateDBSubnetGroupMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "DBSubnetGroupDescription" -> DBSubnetGroupDescription.asInstanceOf[js.Any],
         "DBSubnetGroupName"        -> DBSubnetGroupName.asInstanceOf[js.Any],
-        "SubnetIds"                -> SubnetIds.asInstanceOf[js.Any],
-        "Tags" -> Tags.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "SubnetIds"                -> SubnetIds.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateDBSubnetGroupMessage]
+      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateDBSubnetGroupMessage]
     }
   }
 
@@ -2255,13 +1901,9 @@ package rds {
     def apply(
         DBSubnetGroup: js.UndefOr[DBSubnetGroup] = js.undefined
     ): CreateDBSubnetGroupResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "DBSubnetGroup" -> DBSubnetGroup.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateDBSubnetGroupResult]
+      val __obj = js.Dictionary.empty[js.Any]
+      DBSubnetGroup.foreach(__v => __obj.update("DBSubnetGroup", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateDBSubnetGroupResult]
     }
   }
 
@@ -2289,27 +1931,17 @@ package rds {
         SourceType: js.UndefOr[String] = js.undefined,
         Tags: js.UndefOr[TagList] = js.undefined
     ): CreateEventSubscriptionMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "SnsTopicArn"      -> SnsTopicArn.asInstanceOf[js.Any],
-        "SubscriptionName" -> SubscriptionName.asInstanceOf[js.Any],
-        "Enabled" -> Enabled.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "EventCategories" -> EventCategories.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SourceIds" -> SourceIds.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SourceType" -> SourceType.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Tags" -> Tags.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "SubscriptionName" -> SubscriptionName.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateEventSubscriptionMessage]
+      Enabled.foreach(__v => __obj.update("Enabled", __v.asInstanceOf[js.Any]))
+      EventCategories.foreach(__v => __obj.update("EventCategories", __v.asInstanceOf[js.Any]))
+      SourceIds.foreach(__v => __obj.update("SourceIds", __v.asInstanceOf[js.Any]))
+      SourceType.foreach(__v => __obj.update("SourceType", __v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateEventSubscriptionMessage]
     }
   }
 
@@ -2322,13 +1954,9 @@ package rds {
     def apply(
         EventSubscription: js.UndefOr[EventSubscription] = js.undefined
     ): CreateEventSubscriptionResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "EventSubscription" -> EventSubscription.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateEventSubscriptionResult]
+      val __obj = js.Dictionary.empty[js.Any]
+      EventSubscription.foreach(__v => __obj.update("EventSubscription", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateEventSubscriptionResult]
     }
   }
 
@@ -2353,31 +1981,15 @@ package rds {
         SourceDBClusterIdentifier: js.UndefOr[String] = js.undefined,
         StorageEncrypted: js.UndefOr[BooleanOptional] = js.undefined
     ): CreateGlobalClusterMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "DatabaseName" -> DatabaseName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DeletionProtection" -> DeletionProtection.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Engine" -> Engine.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "EngineVersion" -> EngineVersion.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "GlobalClusterIdentifier" -> GlobalClusterIdentifier.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SourceDBClusterIdentifier" -> SourceDBClusterIdentifier.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "StorageEncrypted" -> StorageEncrypted.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateGlobalClusterMessage]
+      val __obj = js.Dictionary.empty[js.Any]
+      DatabaseName.foreach(__v => __obj.update("DatabaseName", __v.asInstanceOf[js.Any]))
+      DeletionProtection.foreach(__v => __obj.update("DeletionProtection", __v.asInstanceOf[js.Any]))
+      Engine.foreach(__v => __obj.update("Engine", __v.asInstanceOf[js.Any]))
+      EngineVersion.foreach(__v => __obj.update("EngineVersion", __v.asInstanceOf[js.Any]))
+      GlobalClusterIdentifier.foreach(__v => __obj.update("GlobalClusterIdentifier", __v.asInstanceOf[js.Any]))
+      SourceDBClusterIdentifier.foreach(__v => __obj.update("SourceDBClusterIdentifier", __v.asInstanceOf[js.Any]))
+      StorageEncrypted.foreach(__v => __obj.update("StorageEncrypted", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateGlobalClusterMessage]
     }
   }
 
@@ -2390,13 +2002,9 @@ package rds {
     def apply(
         GlobalCluster: js.UndefOr[GlobalCluster] = js.undefined
     ): CreateGlobalClusterResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "GlobalCluster" -> GlobalCluster.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateGlobalClusterResult]
+      val __obj = js.Dictionary.empty[js.Any]
+      GlobalCluster.foreach(__v => __obj.update("GlobalCluster", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateGlobalClusterResult]
     }
   }
 
@@ -2420,17 +2028,15 @@ package rds {
         OptionGroupName: String,
         Tags: js.UndefOr[TagList] = js.undefined
     ): CreateOptionGroupMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "EngineName"             -> EngineName.asInstanceOf[js.Any],
         "MajorEngineVersion"     -> MajorEngineVersion.asInstanceOf[js.Any],
         "OptionGroupDescription" -> OptionGroupDescription.asInstanceOf[js.Any],
-        "OptionGroupName"        -> OptionGroupName.asInstanceOf[js.Any],
-        "Tags" -> Tags.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "OptionGroupName"        -> OptionGroupName.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateOptionGroupMessage]
+      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateOptionGroupMessage]
     }
   }
 
@@ -2443,13 +2049,9 @@ package rds {
     def apply(
         OptionGroup: js.UndefOr[OptionGroup] = js.undefined
     ): CreateOptionGroupResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "OptionGroup" -> OptionGroup.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateOptionGroupResult]
+      val __obj = js.Dictionary.empty[js.Any]
+      OptionGroup.foreach(__v => __obj.update("OptionGroup", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateOptionGroupResult]
     }
   }
 
@@ -2556,148 +2158,62 @@ package rds {
         StorageEncrypted: js.UndefOr[Boolean] = js.undefined,
         VpcSecurityGroups: js.UndefOr[VpcSecurityGroupMembershipList] = js.undefined
     ): DBCluster = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "AllocatedStorage" -> AllocatedStorage.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "AssociatedRoles" -> AssociatedRoles.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "AvailabilityZones" -> AvailabilityZones.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "BacktrackConsumedChangeRecords" -> BacktrackConsumedChangeRecords.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "BacktrackWindow" -> BacktrackWindow.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "BackupRetentionPeriod" -> BackupRetentionPeriod.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Capacity" -> Capacity.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "CharacterSetName" -> CharacterSetName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "CloneGroupId" -> CloneGroupId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ClusterCreateTime" -> ClusterCreateTime.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "CopyTagsToSnapshot" -> CopyTagsToSnapshot.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "CustomEndpoints" -> CustomEndpoints.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DBClusterArn" -> DBClusterArn.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DBClusterIdentifier" -> DBClusterIdentifier.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DBClusterMembers" -> DBClusterMembers.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DBClusterOptionGroupMemberships" -> DBClusterOptionGroupMemberships.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DBClusterParameterGroup" -> DBClusterParameterGroup.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DBSubnetGroup" -> DBSubnetGroup.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DatabaseName" -> DatabaseName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DbClusterResourceId" -> DbClusterResourceId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DeletionProtection" -> DeletionProtection.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "EarliestBacktrackTime" -> EarliestBacktrackTime.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "EarliestRestorableTime" -> EarliestRestorableTime.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "EnabledCloudwatchLogsExports" -> EnabledCloudwatchLogsExports.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Endpoint" -> Endpoint.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Engine" -> Engine.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "EngineMode" -> EngineMode.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "EngineVersion" -> EngineVersion.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "HostedZoneId" -> HostedZoneId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "HttpEndpointEnabled" -> HttpEndpointEnabled.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "IAMDatabaseAuthenticationEnabled" -> IAMDatabaseAuthenticationEnabled.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "KmsKeyId" -> KmsKeyId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "LatestRestorableTime" -> LatestRestorableTime.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MasterUsername" -> MasterUsername.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MultiAZ" -> MultiAZ.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "PercentProgress" -> PercentProgress.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Port" -> Port.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "PreferredBackupWindow" -> PreferredBackupWindow.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "PreferredMaintenanceWindow" -> PreferredMaintenanceWindow.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ReadReplicaIdentifiers" -> ReadReplicaIdentifiers.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ReaderEndpoint" -> ReaderEndpoint.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ReplicationSourceIdentifier" -> ReplicationSourceIdentifier.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ScalingConfigurationInfo" -> ScalingConfigurationInfo.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Status" -> Status.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "StorageEncrypted" -> StorageEncrypted.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "VpcSecurityGroups" -> VpcSecurityGroups.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DBCluster]
+      val __obj = js.Dictionary.empty[js.Any]
+      AllocatedStorage.foreach(__v => __obj.update("AllocatedStorage", __v.asInstanceOf[js.Any]))
+      AssociatedRoles.foreach(__v => __obj.update("AssociatedRoles", __v.asInstanceOf[js.Any]))
+      AvailabilityZones.foreach(__v => __obj.update("AvailabilityZones", __v.asInstanceOf[js.Any]))
+      BacktrackConsumedChangeRecords.foreach(
+        __v => __obj.update("BacktrackConsumedChangeRecords", __v.asInstanceOf[js.Any])
+      )
+      BacktrackWindow.foreach(__v => __obj.update("BacktrackWindow", __v.asInstanceOf[js.Any]))
+      BackupRetentionPeriod.foreach(__v => __obj.update("BackupRetentionPeriod", __v.asInstanceOf[js.Any]))
+      Capacity.foreach(__v => __obj.update("Capacity", __v.asInstanceOf[js.Any]))
+      CharacterSetName.foreach(__v => __obj.update("CharacterSetName", __v.asInstanceOf[js.Any]))
+      CloneGroupId.foreach(__v => __obj.update("CloneGroupId", __v.asInstanceOf[js.Any]))
+      ClusterCreateTime.foreach(__v => __obj.update("ClusterCreateTime", __v.asInstanceOf[js.Any]))
+      CopyTagsToSnapshot.foreach(__v => __obj.update("CopyTagsToSnapshot", __v.asInstanceOf[js.Any]))
+      CustomEndpoints.foreach(__v => __obj.update("CustomEndpoints", __v.asInstanceOf[js.Any]))
+      DBClusterArn.foreach(__v => __obj.update("DBClusterArn", __v.asInstanceOf[js.Any]))
+      DBClusterIdentifier.foreach(__v => __obj.update("DBClusterIdentifier", __v.asInstanceOf[js.Any]))
+      DBClusterMembers.foreach(__v => __obj.update("DBClusterMembers", __v.asInstanceOf[js.Any]))
+      DBClusterOptionGroupMemberships.foreach(
+        __v => __obj.update("DBClusterOptionGroupMemberships", __v.asInstanceOf[js.Any])
+      )
+      DBClusterParameterGroup.foreach(__v => __obj.update("DBClusterParameterGroup", __v.asInstanceOf[js.Any]))
+      DBSubnetGroup.foreach(__v => __obj.update("DBSubnetGroup", __v.asInstanceOf[js.Any]))
+      DatabaseName.foreach(__v => __obj.update("DatabaseName", __v.asInstanceOf[js.Any]))
+      DbClusterResourceId.foreach(__v => __obj.update("DbClusterResourceId", __v.asInstanceOf[js.Any]))
+      DeletionProtection.foreach(__v => __obj.update("DeletionProtection", __v.asInstanceOf[js.Any]))
+      EarliestBacktrackTime.foreach(__v => __obj.update("EarliestBacktrackTime", __v.asInstanceOf[js.Any]))
+      EarliestRestorableTime.foreach(__v => __obj.update("EarliestRestorableTime", __v.asInstanceOf[js.Any]))
+      EnabledCloudwatchLogsExports.foreach(
+        __v => __obj.update("EnabledCloudwatchLogsExports", __v.asInstanceOf[js.Any])
+      )
+      Endpoint.foreach(__v => __obj.update("Endpoint", __v.asInstanceOf[js.Any]))
+      Engine.foreach(__v => __obj.update("Engine", __v.asInstanceOf[js.Any]))
+      EngineMode.foreach(__v => __obj.update("EngineMode", __v.asInstanceOf[js.Any]))
+      EngineVersion.foreach(__v => __obj.update("EngineVersion", __v.asInstanceOf[js.Any]))
+      HostedZoneId.foreach(__v => __obj.update("HostedZoneId", __v.asInstanceOf[js.Any]))
+      HttpEndpointEnabled.foreach(__v => __obj.update("HttpEndpointEnabled", __v.asInstanceOf[js.Any]))
+      IAMDatabaseAuthenticationEnabled.foreach(
+        __v => __obj.update("IAMDatabaseAuthenticationEnabled", __v.asInstanceOf[js.Any])
+      )
+      KmsKeyId.foreach(__v => __obj.update("KmsKeyId", __v.asInstanceOf[js.Any]))
+      LatestRestorableTime.foreach(__v => __obj.update("LatestRestorableTime", __v.asInstanceOf[js.Any]))
+      MasterUsername.foreach(__v => __obj.update("MasterUsername", __v.asInstanceOf[js.Any]))
+      MultiAZ.foreach(__v => __obj.update("MultiAZ", __v.asInstanceOf[js.Any]))
+      PercentProgress.foreach(__v => __obj.update("PercentProgress", __v.asInstanceOf[js.Any]))
+      Port.foreach(__v => __obj.update("Port", __v.asInstanceOf[js.Any]))
+      PreferredBackupWindow.foreach(__v => __obj.update("PreferredBackupWindow", __v.asInstanceOf[js.Any]))
+      PreferredMaintenanceWindow.foreach(__v => __obj.update("PreferredMaintenanceWindow", __v.asInstanceOf[js.Any]))
+      ReadReplicaIdentifiers.foreach(__v => __obj.update("ReadReplicaIdentifiers", __v.asInstanceOf[js.Any]))
+      ReaderEndpoint.foreach(__v => __obj.update("ReaderEndpoint", __v.asInstanceOf[js.Any]))
+      ReplicationSourceIdentifier.foreach(__v => __obj.update("ReplicationSourceIdentifier", __v.asInstanceOf[js.Any]))
+      ScalingConfigurationInfo.foreach(__v => __obj.update("ScalingConfigurationInfo", __v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.update("Status", __v.asInstanceOf[js.Any]))
+      StorageEncrypted.foreach(__v => __obj.update("StorageEncrypted", __v.asInstanceOf[js.Any]))
+      VpcSecurityGroups.foreach(__v => __obj.update("VpcSecurityGroups", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DBCluster]
     }
   }
 
@@ -2723,28 +2239,16 @@ package rds {
         DBClusterIdentifier: js.UndefOr[String] = js.undefined,
         Status: js.UndefOr[String] = js.undefined
     ): DBClusterBacktrack = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "BacktrackIdentifier" -> BacktrackIdentifier.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "BacktrackRequestCreationTime" -> BacktrackRequestCreationTime.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "BacktrackTo" -> BacktrackTo.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "BacktrackedFrom" -> BacktrackedFrom.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DBClusterIdentifier" -> DBClusterIdentifier.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Status" -> Status.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DBClusterBacktrack]
+      val __obj = js.Dictionary.empty[js.Any]
+      BacktrackIdentifier.foreach(__v => __obj.update("BacktrackIdentifier", __v.asInstanceOf[js.Any]))
+      BacktrackRequestCreationTime.foreach(
+        __v => __obj.update("BacktrackRequestCreationTime", __v.asInstanceOf[js.Any])
+      )
+      BacktrackTo.foreach(__v => __obj.update("BacktrackTo", __v.asInstanceOf[js.Any]))
+      BacktrackedFrom.foreach(__v => __obj.update("BacktrackedFrom", __v.asInstanceOf[js.Any]))
+      DBClusterIdentifier.foreach(__v => __obj.update("DBClusterIdentifier", __v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.update("Status", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DBClusterBacktrack]
     }
   }
 
@@ -2762,16 +2266,10 @@ package rds {
         DBClusterBacktracks: js.UndefOr[DBClusterBacktrackList] = js.undefined,
         Marker: js.UndefOr[String] = js.undefined
     ): DBClusterBacktrackMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "DBClusterBacktracks" -> DBClusterBacktracks.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Marker" -> Marker.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DBClusterBacktrackMessage]
+      val __obj = js.Dictionary.empty[js.Any]
+      DBClusterBacktracks.foreach(__v => __obj.update("DBClusterBacktracks", __v.asInstanceOf[js.Any]))
+      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DBClusterBacktrackMessage]
     }
   }
 
@@ -2792,25 +2290,13 @@ package rds {
         SecondsBeforeTimeout: js.UndefOr[IntegerOptional] = js.undefined,
         TimeoutAction: js.UndefOr[String] = js.undefined
     ): DBClusterCapacityInfo = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "CurrentCapacity" -> CurrentCapacity.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DBClusterIdentifier" -> DBClusterIdentifier.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "PendingCapacity" -> PendingCapacity.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SecondsBeforeTimeout" -> SecondsBeforeTimeout.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "TimeoutAction" -> TimeoutAction.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DBClusterCapacityInfo]
+      val __obj = js.Dictionary.empty[js.Any]
+      CurrentCapacity.foreach(__v => __obj.update("CurrentCapacity", __v.asInstanceOf[js.Any]))
+      DBClusterIdentifier.foreach(__v => __obj.update("DBClusterIdentifier", __v.asInstanceOf[js.Any]))
+      PendingCapacity.foreach(__v => __obj.update("PendingCapacity", __v.asInstanceOf[js.Any]))
+      SecondsBeforeTimeout.foreach(__v => __obj.update("SecondsBeforeTimeout", __v.asInstanceOf[js.Any]))
+      TimeoutAction.foreach(__v => __obj.update("TimeoutAction", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DBClusterCapacityInfo]
     }
   }
 
@@ -2849,40 +2335,20 @@ package rds {
         StaticMembers: js.UndefOr[StringList] = js.undefined,
         Status: js.UndefOr[String] = js.undefined
     ): DBClusterEndpoint = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "CustomEndpointType" -> CustomEndpointType.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DBClusterEndpointArn" -> DBClusterEndpointArn.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DBClusterEndpointIdentifier" -> DBClusterEndpointIdentifier.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DBClusterEndpointResourceIdentifier" -> DBClusterEndpointResourceIdentifier.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DBClusterIdentifier" -> DBClusterIdentifier.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Endpoint" -> Endpoint.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "EndpointType" -> EndpointType.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ExcludedMembers" -> ExcludedMembers.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "StaticMembers" -> StaticMembers.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Status" -> Status.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DBClusterEndpoint]
+      val __obj = js.Dictionary.empty[js.Any]
+      CustomEndpointType.foreach(__v => __obj.update("CustomEndpointType", __v.asInstanceOf[js.Any]))
+      DBClusterEndpointArn.foreach(__v => __obj.update("DBClusterEndpointArn", __v.asInstanceOf[js.Any]))
+      DBClusterEndpointIdentifier.foreach(__v => __obj.update("DBClusterEndpointIdentifier", __v.asInstanceOf[js.Any]))
+      DBClusterEndpointResourceIdentifier.foreach(
+        __v => __obj.update("DBClusterEndpointResourceIdentifier", __v.asInstanceOf[js.Any])
+      )
+      DBClusterIdentifier.foreach(__v => __obj.update("DBClusterIdentifier", __v.asInstanceOf[js.Any]))
+      Endpoint.foreach(__v => __obj.update("Endpoint", __v.asInstanceOf[js.Any]))
+      EndpointType.foreach(__v => __obj.update("EndpointType", __v.asInstanceOf[js.Any]))
+      ExcludedMembers.foreach(__v => __obj.update("ExcludedMembers", __v.asInstanceOf[js.Any]))
+      StaticMembers.foreach(__v => __obj.update("StaticMembers", __v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.update("Status", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DBClusterEndpoint]
     }
   }
 
@@ -2897,16 +2363,10 @@ package rds {
         DBClusterEndpoints: js.UndefOr[DBClusterEndpointList] = js.undefined,
         Marker: js.UndefOr[String] = js.undefined
     ): DBClusterEndpointMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "DBClusterEndpoints" -> DBClusterEndpoints.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Marker" -> Marker.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DBClusterEndpointMessage]
+      val __obj = js.Dictionary.empty[js.Any]
+      DBClusterEndpoints.foreach(__v => __obj.update("DBClusterEndpoints", __v.asInstanceOf[js.Any]))
+      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DBClusterEndpointMessage]
     }
   }
 
@@ -2928,22 +2388,14 @@ package rds {
         IsClusterWriter: js.UndefOr[Boolean] = js.undefined,
         PromotionTier: js.UndefOr[IntegerOptional] = js.undefined
     ): DBClusterMember = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "DBClusterParameterGroupStatus" -> DBClusterParameterGroupStatus.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DBInstanceIdentifier" -> DBInstanceIdentifier.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "IsClusterWriter" -> IsClusterWriter.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "PromotionTier" -> PromotionTier.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DBClusterMember]
+      val __obj = js.Dictionary.empty[js.Any]
+      DBClusterParameterGroupStatus.foreach(
+        __v => __obj.update("DBClusterParameterGroupStatus", __v.asInstanceOf[js.Any])
+      )
+      DBInstanceIdentifier.foreach(__v => __obj.update("DBInstanceIdentifier", __v.asInstanceOf[js.Any]))
+      IsClusterWriter.foreach(__v => __obj.update("IsClusterWriter", __v.asInstanceOf[js.Any]))
+      PromotionTier.foreach(__v => __obj.update("PromotionTier", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DBClusterMember]
     }
   }
 
@@ -2961,16 +2413,10 @@ package rds {
         DBClusters: js.UndefOr[DBClusterList] = js.undefined,
         Marker: js.UndefOr[String] = js.undefined
     ): DBClusterMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "DBClusters" -> DBClusters.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Marker" -> Marker.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DBClusterMessage]
+      val __obj = js.Dictionary.empty[js.Any]
+      DBClusters.foreach(__v => __obj.update("DBClusters", __v.asInstanceOf[js.Any]))
+      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DBClusterMessage]
     }
   }
 
@@ -2988,16 +2434,10 @@ package rds {
         DBClusterOptionGroupName: js.UndefOr[String] = js.undefined,
         Status: js.UndefOr[String] = js.undefined
     ): DBClusterOptionGroupStatus = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "DBClusterOptionGroupName" -> DBClusterOptionGroupName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Status" -> Status.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DBClusterOptionGroupStatus]
+      val __obj = js.Dictionary.empty[js.Any]
+      DBClusterOptionGroupName.foreach(__v => __obj.update("DBClusterOptionGroupName", __v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.update("Status", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DBClusterOptionGroupStatus]
     }
   }
 
@@ -3020,22 +2460,12 @@ package rds {
         DBParameterGroupFamily: js.UndefOr[String] = js.undefined,
         Description: js.UndefOr[String] = js.undefined
     ): DBClusterParameterGroup = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "DBClusterParameterGroupArn" -> DBClusterParameterGroupArn.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DBClusterParameterGroupName" -> DBClusterParameterGroupName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DBParameterGroupFamily" -> DBParameterGroupFamily.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Description" -> Description.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DBClusterParameterGroup]
+      val __obj = js.Dictionary.empty[js.Any]
+      DBClusterParameterGroupArn.foreach(__v => __obj.update("DBClusterParameterGroupArn", __v.asInstanceOf[js.Any]))
+      DBClusterParameterGroupName.foreach(__v => __obj.update("DBClusterParameterGroupName", __v.asInstanceOf[js.Any]))
+      DBParameterGroupFamily.foreach(__v => __obj.update("DBParameterGroupFamily", __v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DBClusterParameterGroup]
     }
   }
 
@@ -3053,16 +2483,10 @@ package rds {
         Marker: js.UndefOr[String] = js.undefined,
         Parameters: js.UndefOr[ParametersList] = js.undefined
     ): DBClusterParameterGroupDetails = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Marker" -> Marker.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Parameters" -> Parameters.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DBClusterParameterGroupDetails]
+      val __obj = js.Dictionary.empty[js.Any]
+      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
+      Parameters.foreach(__v => __obj.update("Parameters", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DBClusterParameterGroupDetails]
     }
   }
 
@@ -3078,13 +2502,9 @@ package rds {
     def apply(
         DBClusterParameterGroupName: js.UndefOr[String] = js.undefined
     ): DBClusterParameterGroupNameMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "DBClusterParameterGroupName" -> DBClusterParameterGroupName.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DBClusterParameterGroupNameMessage]
+      val __obj = js.Dictionary.empty[js.Any]
+      DBClusterParameterGroupName.foreach(__v => __obj.update("DBClusterParameterGroupName", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DBClusterParameterGroupNameMessage]
     }
   }
 
@@ -3102,16 +2522,10 @@ package rds {
         DBClusterParameterGroups: js.UndefOr[DBClusterParameterGroupList] = js.undefined,
         Marker: js.UndefOr[String] = js.undefined
     ): DBClusterParameterGroupsMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "DBClusterParameterGroups" -> DBClusterParameterGroups.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Marker" -> Marker.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DBClusterParameterGroupsMessage]
+      val __obj = js.Dictionary.empty[js.Any]
+      DBClusterParameterGroups.foreach(__v => __obj.update("DBClusterParameterGroups", __v.asInstanceOf[js.Any]))
+      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DBClusterParameterGroupsMessage]
     }
   }
 
@@ -3131,19 +2545,11 @@ package rds {
         RoleArn: js.UndefOr[String] = js.undefined,
         Status: js.UndefOr[String] = js.undefined
     ): DBClusterRole = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "FeatureName" -> FeatureName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "RoleArn" -> RoleArn.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Status" -> Status.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DBClusterRole]
+      val __obj = js.Dictionary.empty[js.Any]
+      FeatureName.foreach(__v => __obj.update("FeatureName", __v.asInstanceOf[js.Any]))
+      RoleArn.foreach(__v => __obj.update("RoleArn", __v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.update("Status", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DBClusterRole]
     }
   }
 
@@ -3198,70 +2604,30 @@ package rds {
         StorageEncrypted: js.UndefOr[Boolean] = js.undefined,
         VpcId: js.UndefOr[String] = js.undefined
     ): DBClusterSnapshot = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "AllocatedStorage" -> AllocatedStorage.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "AvailabilityZones" -> AvailabilityZones.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ClusterCreateTime" -> ClusterCreateTime.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DBClusterIdentifier" -> DBClusterIdentifier.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DBClusterSnapshotArn" -> DBClusterSnapshotArn.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DBClusterSnapshotIdentifier" -> DBClusterSnapshotIdentifier.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Engine" -> Engine.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "EngineVersion" -> EngineVersion.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "IAMDatabaseAuthenticationEnabled" -> IAMDatabaseAuthenticationEnabled.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "KmsKeyId" -> KmsKeyId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "LicenseModel" -> LicenseModel.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MasterUsername" -> MasterUsername.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "PercentProgress" -> PercentProgress.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Port" -> Port.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SnapshotCreateTime" -> SnapshotCreateTime.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SnapshotType" -> SnapshotType.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SourceDBClusterSnapshotArn" -> SourceDBClusterSnapshotArn.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Status" -> Status.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "StorageEncrypted" -> StorageEncrypted.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "VpcId" -> VpcId.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DBClusterSnapshot]
+      val __obj = js.Dictionary.empty[js.Any]
+      AllocatedStorage.foreach(__v => __obj.update("AllocatedStorage", __v.asInstanceOf[js.Any]))
+      AvailabilityZones.foreach(__v => __obj.update("AvailabilityZones", __v.asInstanceOf[js.Any]))
+      ClusterCreateTime.foreach(__v => __obj.update("ClusterCreateTime", __v.asInstanceOf[js.Any]))
+      DBClusterIdentifier.foreach(__v => __obj.update("DBClusterIdentifier", __v.asInstanceOf[js.Any]))
+      DBClusterSnapshotArn.foreach(__v => __obj.update("DBClusterSnapshotArn", __v.asInstanceOf[js.Any]))
+      DBClusterSnapshotIdentifier.foreach(__v => __obj.update("DBClusterSnapshotIdentifier", __v.asInstanceOf[js.Any]))
+      Engine.foreach(__v => __obj.update("Engine", __v.asInstanceOf[js.Any]))
+      EngineVersion.foreach(__v => __obj.update("EngineVersion", __v.asInstanceOf[js.Any]))
+      IAMDatabaseAuthenticationEnabled.foreach(
+        __v => __obj.update("IAMDatabaseAuthenticationEnabled", __v.asInstanceOf[js.Any])
+      )
+      KmsKeyId.foreach(__v => __obj.update("KmsKeyId", __v.asInstanceOf[js.Any]))
+      LicenseModel.foreach(__v => __obj.update("LicenseModel", __v.asInstanceOf[js.Any]))
+      MasterUsername.foreach(__v => __obj.update("MasterUsername", __v.asInstanceOf[js.Any]))
+      PercentProgress.foreach(__v => __obj.update("PercentProgress", __v.asInstanceOf[js.Any]))
+      Port.foreach(__v => __obj.update("Port", __v.asInstanceOf[js.Any]))
+      SnapshotCreateTime.foreach(__v => __obj.update("SnapshotCreateTime", __v.asInstanceOf[js.Any]))
+      SnapshotType.foreach(__v => __obj.update("SnapshotType", __v.asInstanceOf[js.Any]))
+      SourceDBClusterSnapshotArn.foreach(__v => __obj.update("SourceDBClusterSnapshotArn", __v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.update("Status", __v.asInstanceOf[js.Any]))
+      StorageEncrypted.foreach(__v => __obj.update("StorageEncrypted", __v.asInstanceOf[js.Any]))
+      VpcId.foreach(__v => __obj.update("VpcId", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DBClusterSnapshot]
     }
   }
 
@@ -3280,16 +2646,10 @@ package rds {
         AttributeName: js.UndefOr[String] = js.undefined,
         AttributeValues: js.UndefOr[AttributeValueList] = js.undefined
     ): DBClusterSnapshotAttribute = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "AttributeName" -> AttributeName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "AttributeValues" -> AttributeValues.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DBClusterSnapshotAttribute]
+      val __obj = js.Dictionary.empty[js.Any]
+      AttributeName.foreach(__v => __obj.update("AttributeName", __v.asInstanceOf[js.Any]))
+      AttributeValues.foreach(__v => __obj.update("AttributeValues", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DBClusterSnapshotAttribute]
     }
   }
 
@@ -3308,16 +2668,10 @@ package rds {
         DBClusterSnapshotAttributes: js.UndefOr[DBClusterSnapshotAttributeList] = js.undefined,
         DBClusterSnapshotIdentifier: js.UndefOr[String] = js.undefined
     ): DBClusterSnapshotAttributesResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "DBClusterSnapshotAttributes" -> DBClusterSnapshotAttributes.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DBClusterSnapshotIdentifier" -> DBClusterSnapshotIdentifier.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DBClusterSnapshotAttributesResult]
+      val __obj = js.Dictionary.empty[js.Any]
+      DBClusterSnapshotAttributes.foreach(__v => __obj.update("DBClusterSnapshotAttributes", __v.asInstanceOf[js.Any]))
+      DBClusterSnapshotIdentifier.foreach(__v => __obj.update("DBClusterSnapshotIdentifier", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DBClusterSnapshotAttributesResult]
     }
   }
 
@@ -3335,16 +2689,10 @@ package rds {
         DBClusterSnapshots: js.UndefOr[DBClusterSnapshotList] = js.undefined,
         Marker: js.UndefOr[String] = js.undefined
     ): DBClusterSnapshotMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "DBClusterSnapshots" -> DBClusterSnapshots.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Marker" -> Marker.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DBClusterSnapshotMessage]
+      val __obj = js.Dictionary.empty[js.Any]
+      DBClusterSnapshots.foreach(__v => __obj.update("DBClusterSnapshots", __v.asInstanceOf[js.Any]))
+      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DBClusterSnapshotMessage]
     }
   }
 
@@ -3386,52 +2734,24 @@ package rds {
         SupportsReadReplica: js.UndefOr[Boolean] = js.undefined,
         ValidUpgradeTarget: js.UndefOr[ValidUpgradeTargetList] = js.undefined
     ): DBEngineVersion = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "DBEngineDescription" -> DBEngineDescription.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DBEngineVersionDescription" -> DBEngineVersionDescription.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DBParameterGroupFamily" -> DBParameterGroupFamily.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DefaultCharacterSet" -> DefaultCharacterSet.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Engine" -> Engine.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "EngineVersion" -> EngineVersion.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ExportableLogTypes" -> ExportableLogTypes.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SupportedCharacterSets" -> SupportedCharacterSets.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SupportedEngineModes" -> SupportedEngineModes.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SupportedFeatureNames" -> SupportedFeatureNames.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SupportedTimezones" -> SupportedTimezones.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SupportsLogExportsToCloudwatchLogs" -> SupportsLogExportsToCloudwatchLogs.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SupportsReadReplica" -> SupportsReadReplica.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ValidUpgradeTarget" -> ValidUpgradeTarget.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DBEngineVersion]
+      val __obj = js.Dictionary.empty[js.Any]
+      DBEngineDescription.foreach(__v => __obj.update("DBEngineDescription", __v.asInstanceOf[js.Any]))
+      DBEngineVersionDescription.foreach(__v => __obj.update("DBEngineVersionDescription", __v.asInstanceOf[js.Any]))
+      DBParameterGroupFamily.foreach(__v => __obj.update("DBParameterGroupFamily", __v.asInstanceOf[js.Any]))
+      DefaultCharacterSet.foreach(__v => __obj.update("DefaultCharacterSet", __v.asInstanceOf[js.Any]))
+      Engine.foreach(__v => __obj.update("Engine", __v.asInstanceOf[js.Any]))
+      EngineVersion.foreach(__v => __obj.update("EngineVersion", __v.asInstanceOf[js.Any]))
+      ExportableLogTypes.foreach(__v => __obj.update("ExportableLogTypes", __v.asInstanceOf[js.Any]))
+      SupportedCharacterSets.foreach(__v => __obj.update("SupportedCharacterSets", __v.asInstanceOf[js.Any]))
+      SupportedEngineModes.foreach(__v => __obj.update("SupportedEngineModes", __v.asInstanceOf[js.Any]))
+      SupportedFeatureNames.foreach(__v => __obj.update("SupportedFeatureNames", __v.asInstanceOf[js.Any]))
+      SupportedTimezones.foreach(__v => __obj.update("SupportedTimezones", __v.asInstanceOf[js.Any]))
+      SupportsLogExportsToCloudwatchLogs.foreach(
+        __v => __obj.update("SupportsLogExportsToCloudwatchLogs", __v.asInstanceOf[js.Any])
+      )
+      SupportsReadReplica.foreach(__v => __obj.update("SupportsReadReplica", __v.asInstanceOf[js.Any]))
+      ValidUpgradeTarget.foreach(__v => __obj.update("ValidUpgradeTarget", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DBEngineVersion]
     }
   }
 
@@ -3449,16 +2769,10 @@ package rds {
         DBEngineVersions: js.UndefOr[DBEngineVersionList] = js.undefined,
         Marker: js.UndefOr[String] = js.undefined
     ): DBEngineVersionMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "DBEngineVersions" -> DBEngineVersions.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Marker" -> Marker.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DBEngineVersionMessage]
+      val __obj = js.Dictionary.empty[js.Any]
+      DBEngineVersions.foreach(__v => __obj.update("DBEngineVersions", __v.asInstanceOf[js.Any]))
+      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DBEngineVersionMessage]
     }
   }
 
@@ -3587,181 +2901,79 @@ package rds {
         Timezone: js.UndefOr[String] = js.undefined,
         VpcSecurityGroups: js.UndefOr[VpcSecurityGroupMembershipList] = js.undefined
     ): DBInstance = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "AllocatedStorage" -> AllocatedStorage.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "AssociatedRoles" -> AssociatedRoles.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "AutoMinorVersionUpgrade" -> AutoMinorVersionUpgrade.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "AvailabilityZone" -> AvailabilityZone.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "BackupRetentionPeriod" -> BackupRetentionPeriod.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "CACertificateIdentifier" -> CACertificateIdentifier.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "CharacterSetName" -> CharacterSetName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "CopyTagsToSnapshot" -> CopyTagsToSnapshot.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DBClusterIdentifier" -> DBClusterIdentifier.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DBInstanceArn" -> DBInstanceArn.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DBInstanceClass" -> DBInstanceClass.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DBInstanceIdentifier" -> DBInstanceIdentifier.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DBInstanceStatus" -> DBInstanceStatus.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DBName" -> DBName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DBParameterGroups" -> DBParameterGroups.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DBSecurityGroups" -> DBSecurityGroups.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DBSubnetGroup" -> DBSubnetGroup.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DbInstancePort" -> DbInstancePort.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DbiResourceId" -> DbiResourceId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DeletionProtection" -> DeletionProtection.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DomainMemberships" -> DomainMemberships.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "EnabledCloudwatchLogsExports" -> EnabledCloudwatchLogsExports.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Endpoint" -> Endpoint.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Engine" -> Engine.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "EngineVersion" -> EngineVersion.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "EnhancedMonitoringResourceArn" -> EnhancedMonitoringResourceArn.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "IAMDatabaseAuthenticationEnabled" -> IAMDatabaseAuthenticationEnabled.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "InstanceCreateTime" -> InstanceCreateTime.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Iops" -> Iops.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "KmsKeyId" -> KmsKeyId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "LatestRestorableTime" -> LatestRestorableTime.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "LicenseModel" -> LicenseModel.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ListenerEndpoint" -> ListenerEndpoint.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MasterUsername" -> MasterUsername.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MonitoringInterval" -> MonitoringInterval.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MonitoringRoleArn" -> MonitoringRoleArn.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MultiAZ" -> MultiAZ.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "OptionGroupMemberships" -> OptionGroupMemberships.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "PendingModifiedValues" -> PendingModifiedValues.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "PerformanceInsightsEnabled" -> PerformanceInsightsEnabled.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "PerformanceInsightsKMSKeyId" -> PerformanceInsightsKMSKeyId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "PerformanceInsightsRetentionPeriod" -> PerformanceInsightsRetentionPeriod.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "PreferredBackupWindow" -> PreferredBackupWindow.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "PreferredMaintenanceWindow" -> PreferredMaintenanceWindow.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ProcessorFeatures" -> ProcessorFeatures.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "PromotionTier" -> PromotionTier.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "PubliclyAccessible" -> PubliclyAccessible.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ReadReplicaDBClusterIdentifiers" -> ReadReplicaDBClusterIdentifiers.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ReadReplicaDBInstanceIdentifiers" -> ReadReplicaDBInstanceIdentifiers.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ReadReplicaSourceDBInstanceIdentifier" -> ReadReplicaSourceDBInstanceIdentifier.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SecondaryAvailabilityZone" -> SecondaryAvailabilityZone.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "StatusInfos" -> StatusInfos.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "StorageEncrypted" -> StorageEncrypted.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "StorageType" -> StorageType.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "TdeCredentialArn" -> TdeCredentialArn.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Timezone" -> Timezone.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "VpcSecurityGroups" -> VpcSecurityGroups.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DBInstance]
+      val __obj = js.Dictionary.empty[js.Any]
+      AllocatedStorage.foreach(__v => __obj.update("AllocatedStorage", __v.asInstanceOf[js.Any]))
+      AssociatedRoles.foreach(__v => __obj.update("AssociatedRoles", __v.asInstanceOf[js.Any]))
+      AutoMinorVersionUpgrade.foreach(__v => __obj.update("AutoMinorVersionUpgrade", __v.asInstanceOf[js.Any]))
+      AvailabilityZone.foreach(__v => __obj.update("AvailabilityZone", __v.asInstanceOf[js.Any]))
+      BackupRetentionPeriod.foreach(__v => __obj.update("BackupRetentionPeriod", __v.asInstanceOf[js.Any]))
+      CACertificateIdentifier.foreach(__v => __obj.update("CACertificateIdentifier", __v.asInstanceOf[js.Any]))
+      CharacterSetName.foreach(__v => __obj.update("CharacterSetName", __v.asInstanceOf[js.Any]))
+      CopyTagsToSnapshot.foreach(__v => __obj.update("CopyTagsToSnapshot", __v.asInstanceOf[js.Any]))
+      DBClusterIdentifier.foreach(__v => __obj.update("DBClusterIdentifier", __v.asInstanceOf[js.Any]))
+      DBInstanceArn.foreach(__v => __obj.update("DBInstanceArn", __v.asInstanceOf[js.Any]))
+      DBInstanceClass.foreach(__v => __obj.update("DBInstanceClass", __v.asInstanceOf[js.Any]))
+      DBInstanceIdentifier.foreach(__v => __obj.update("DBInstanceIdentifier", __v.asInstanceOf[js.Any]))
+      DBInstanceStatus.foreach(__v => __obj.update("DBInstanceStatus", __v.asInstanceOf[js.Any]))
+      DBName.foreach(__v => __obj.update("DBName", __v.asInstanceOf[js.Any]))
+      DBParameterGroups.foreach(__v => __obj.update("DBParameterGroups", __v.asInstanceOf[js.Any]))
+      DBSecurityGroups.foreach(__v => __obj.update("DBSecurityGroups", __v.asInstanceOf[js.Any]))
+      DBSubnetGroup.foreach(__v => __obj.update("DBSubnetGroup", __v.asInstanceOf[js.Any]))
+      DbInstancePort.foreach(__v => __obj.update("DbInstancePort", __v.asInstanceOf[js.Any]))
+      DbiResourceId.foreach(__v => __obj.update("DbiResourceId", __v.asInstanceOf[js.Any]))
+      DeletionProtection.foreach(__v => __obj.update("DeletionProtection", __v.asInstanceOf[js.Any]))
+      DomainMemberships.foreach(__v => __obj.update("DomainMemberships", __v.asInstanceOf[js.Any]))
+      EnabledCloudwatchLogsExports.foreach(
+        __v => __obj.update("EnabledCloudwatchLogsExports", __v.asInstanceOf[js.Any])
+      )
+      Endpoint.foreach(__v => __obj.update("Endpoint", __v.asInstanceOf[js.Any]))
+      Engine.foreach(__v => __obj.update("Engine", __v.asInstanceOf[js.Any]))
+      EngineVersion.foreach(__v => __obj.update("EngineVersion", __v.asInstanceOf[js.Any]))
+      EnhancedMonitoringResourceArn.foreach(
+        __v => __obj.update("EnhancedMonitoringResourceArn", __v.asInstanceOf[js.Any])
+      )
+      IAMDatabaseAuthenticationEnabled.foreach(
+        __v => __obj.update("IAMDatabaseAuthenticationEnabled", __v.asInstanceOf[js.Any])
+      )
+      InstanceCreateTime.foreach(__v => __obj.update("InstanceCreateTime", __v.asInstanceOf[js.Any]))
+      Iops.foreach(__v => __obj.update("Iops", __v.asInstanceOf[js.Any]))
+      KmsKeyId.foreach(__v => __obj.update("KmsKeyId", __v.asInstanceOf[js.Any]))
+      LatestRestorableTime.foreach(__v => __obj.update("LatestRestorableTime", __v.asInstanceOf[js.Any]))
+      LicenseModel.foreach(__v => __obj.update("LicenseModel", __v.asInstanceOf[js.Any]))
+      ListenerEndpoint.foreach(__v => __obj.update("ListenerEndpoint", __v.asInstanceOf[js.Any]))
+      MasterUsername.foreach(__v => __obj.update("MasterUsername", __v.asInstanceOf[js.Any]))
+      MonitoringInterval.foreach(__v => __obj.update("MonitoringInterval", __v.asInstanceOf[js.Any]))
+      MonitoringRoleArn.foreach(__v => __obj.update("MonitoringRoleArn", __v.asInstanceOf[js.Any]))
+      MultiAZ.foreach(__v => __obj.update("MultiAZ", __v.asInstanceOf[js.Any]))
+      OptionGroupMemberships.foreach(__v => __obj.update("OptionGroupMemberships", __v.asInstanceOf[js.Any]))
+      PendingModifiedValues.foreach(__v => __obj.update("PendingModifiedValues", __v.asInstanceOf[js.Any]))
+      PerformanceInsightsEnabled.foreach(__v => __obj.update("PerformanceInsightsEnabled", __v.asInstanceOf[js.Any]))
+      PerformanceInsightsKMSKeyId.foreach(__v => __obj.update("PerformanceInsightsKMSKeyId", __v.asInstanceOf[js.Any]))
+      PerformanceInsightsRetentionPeriod.foreach(
+        __v => __obj.update("PerformanceInsightsRetentionPeriod", __v.asInstanceOf[js.Any])
+      )
+      PreferredBackupWindow.foreach(__v => __obj.update("PreferredBackupWindow", __v.asInstanceOf[js.Any]))
+      PreferredMaintenanceWindow.foreach(__v => __obj.update("PreferredMaintenanceWindow", __v.asInstanceOf[js.Any]))
+      ProcessorFeatures.foreach(__v => __obj.update("ProcessorFeatures", __v.asInstanceOf[js.Any]))
+      PromotionTier.foreach(__v => __obj.update("PromotionTier", __v.asInstanceOf[js.Any]))
+      PubliclyAccessible.foreach(__v => __obj.update("PubliclyAccessible", __v.asInstanceOf[js.Any]))
+      ReadReplicaDBClusterIdentifiers.foreach(
+        __v => __obj.update("ReadReplicaDBClusterIdentifiers", __v.asInstanceOf[js.Any])
+      )
+      ReadReplicaDBInstanceIdentifiers.foreach(
+        __v => __obj.update("ReadReplicaDBInstanceIdentifiers", __v.asInstanceOf[js.Any])
+      )
+      ReadReplicaSourceDBInstanceIdentifier.foreach(
+        __v => __obj.update("ReadReplicaSourceDBInstanceIdentifier", __v.asInstanceOf[js.Any])
+      )
+      SecondaryAvailabilityZone.foreach(__v => __obj.update("SecondaryAvailabilityZone", __v.asInstanceOf[js.Any]))
+      StatusInfos.foreach(__v => __obj.update("StatusInfos", __v.asInstanceOf[js.Any]))
+      StorageEncrypted.foreach(__v => __obj.update("StorageEncrypted", __v.asInstanceOf[js.Any]))
+      StorageType.foreach(__v => __obj.update("StorageType", __v.asInstanceOf[js.Any]))
+      TdeCredentialArn.foreach(__v => __obj.update("TdeCredentialArn", __v.asInstanceOf[js.Any]))
+      Timezone.foreach(__v => __obj.update("Timezone", __v.asInstanceOf[js.Any]))
+      VpcSecurityGroups.foreach(__v => __obj.update("VpcSecurityGroups", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DBInstance]
     }
   }
 
@@ -3821,79 +3033,33 @@ package rds {
         Timezone: js.UndefOr[String] = js.undefined,
         VpcId: js.UndefOr[String] = js.undefined
     ): DBInstanceAutomatedBackup = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "AllocatedStorage" -> AllocatedStorage.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "AvailabilityZone" -> AvailabilityZone.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DBInstanceArn" -> DBInstanceArn.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DBInstanceIdentifier" -> DBInstanceIdentifier.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DbiResourceId" -> DbiResourceId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Encrypted" -> Encrypted.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Engine" -> Engine.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "EngineVersion" -> EngineVersion.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "IAMDatabaseAuthenticationEnabled" -> IAMDatabaseAuthenticationEnabled.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "InstanceCreateTime" -> InstanceCreateTime.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Iops" -> Iops.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "KmsKeyId" -> KmsKeyId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "LicenseModel" -> LicenseModel.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MasterUsername" -> MasterUsername.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "OptionGroupName" -> OptionGroupName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Port" -> Port.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Region" -> Region.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "RestoreWindow" -> RestoreWindow.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Status" -> Status.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "StorageType" -> StorageType.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "TdeCredentialArn" -> TdeCredentialArn.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Timezone" -> Timezone.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "VpcId" -> VpcId.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DBInstanceAutomatedBackup]
+      val __obj = js.Dictionary.empty[js.Any]
+      AllocatedStorage.foreach(__v => __obj.update("AllocatedStorage", __v.asInstanceOf[js.Any]))
+      AvailabilityZone.foreach(__v => __obj.update("AvailabilityZone", __v.asInstanceOf[js.Any]))
+      DBInstanceArn.foreach(__v => __obj.update("DBInstanceArn", __v.asInstanceOf[js.Any]))
+      DBInstanceIdentifier.foreach(__v => __obj.update("DBInstanceIdentifier", __v.asInstanceOf[js.Any]))
+      DbiResourceId.foreach(__v => __obj.update("DbiResourceId", __v.asInstanceOf[js.Any]))
+      Encrypted.foreach(__v => __obj.update("Encrypted", __v.asInstanceOf[js.Any]))
+      Engine.foreach(__v => __obj.update("Engine", __v.asInstanceOf[js.Any]))
+      EngineVersion.foreach(__v => __obj.update("EngineVersion", __v.asInstanceOf[js.Any]))
+      IAMDatabaseAuthenticationEnabled.foreach(
+        __v => __obj.update("IAMDatabaseAuthenticationEnabled", __v.asInstanceOf[js.Any])
+      )
+      InstanceCreateTime.foreach(__v => __obj.update("InstanceCreateTime", __v.asInstanceOf[js.Any]))
+      Iops.foreach(__v => __obj.update("Iops", __v.asInstanceOf[js.Any]))
+      KmsKeyId.foreach(__v => __obj.update("KmsKeyId", __v.asInstanceOf[js.Any]))
+      LicenseModel.foreach(__v => __obj.update("LicenseModel", __v.asInstanceOf[js.Any]))
+      MasterUsername.foreach(__v => __obj.update("MasterUsername", __v.asInstanceOf[js.Any]))
+      OptionGroupName.foreach(__v => __obj.update("OptionGroupName", __v.asInstanceOf[js.Any]))
+      Port.foreach(__v => __obj.update("Port", __v.asInstanceOf[js.Any]))
+      Region.foreach(__v => __obj.update("Region", __v.asInstanceOf[js.Any]))
+      RestoreWindow.foreach(__v => __obj.update("RestoreWindow", __v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.update("Status", __v.asInstanceOf[js.Any]))
+      StorageType.foreach(__v => __obj.update("StorageType", __v.asInstanceOf[js.Any]))
+      TdeCredentialArn.foreach(__v => __obj.update("TdeCredentialArn", __v.asInstanceOf[js.Any]))
+      Timezone.foreach(__v => __obj.update("Timezone", __v.asInstanceOf[js.Any]))
+      VpcId.foreach(__v => __obj.update("VpcId", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DBInstanceAutomatedBackup]
     }
   }
 
@@ -3911,16 +3077,10 @@ package rds {
         DBInstanceAutomatedBackups: js.UndefOr[DBInstanceAutomatedBackupList] = js.undefined,
         Marker: js.UndefOr[String] = js.undefined
     ): DBInstanceAutomatedBackupMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "DBInstanceAutomatedBackups" -> DBInstanceAutomatedBackups.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Marker" -> Marker.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DBInstanceAutomatedBackupMessage]
+      val __obj = js.Dictionary.empty[js.Any]
+      DBInstanceAutomatedBackups.foreach(__v => __obj.update("DBInstanceAutomatedBackups", __v.asInstanceOf[js.Any]))
+      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DBInstanceAutomatedBackupMessage]
     }
   }
 
@@ -3938,16 +3098,10 @@ package rds {
         DBInstances: js.UndefOr[DBInstanceList] = js.undefined,
         Marker: js.UndefOr[String] = js.undefined
     ): DBInstanceMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "DBInstances" -> DBInstances.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Marker" -> Marker.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DBInstanceMessage]
+      val __obj = js.Dictionary.empty[js.Any]
+      DBInstances.foreach(__v => __obj.update("DBInstances", __v.asInstanceOf[js.Any]))
+      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DBInstanceMessage]
     }
   }
 
@@ -3967,19 +3121,11 @@ package rds {
         RoleArn: js.UndefOr[String] = js.undefined,
         Status: js.UndefOr[String] = js.undefined
     ): DBInstanceRole = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "FeatureName" -> FeatureName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "RoleArn" -> RoleArn.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Status" -> Status.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DBInstanceRole]
+      val __obj = js.Dictionary.empty[js.Any]
+      FeatureName.foreach(__v => __obj.update("FeatureName", __v.asInstanceOf[js.Any]))
+      RoleArn.foreach(__v => __obj.update("RoleArn", __v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.update("Status", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DBInstanceRole]
     }
   }
 
@@ -4001,22 +3147,12 @@ package rds {
         Status: js.UndefOr[String] = js.undefined,
         StatusType: js.UndefOr[String] = js.undefined
     ): DBInstanceStatusInfo = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Message" -> Message.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Normal" -> Normal.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Status" -> Status.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "StatusType" -> StatusType.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DBInstanceStatusInfo]
+      val __obj = js.Dictionary.empty[js.Any]
+      Message.foreach(__v => __obj.update("Message", __v.asInstanceOf[js.Any]))
+      Normal.foreach(__v => __obj.update("Normal", __v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.update("Status", __v.asInstanceOf[js.Any]))
+      StatusType.foreach(__v => __obj.update("StatusType", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DBInstanceStatusInfo]
     }
   }
 
@@ -4039,22 +3175,12 @@ package rds {
         DBParameterGroupName: js.UndefOr[String] = js.undefined,
         Description: js.UndefOr[String] = js.undefined
     ): DBParameterGroup = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "DBParameterGroupArn" -> DBParameterGroupArn.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DBParameterGroupFamily" -> DBParameterGroupFamily.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DBParameterGroupName" -> DBParameterGroupName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Description" -> Description.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DBParameterGroup]
+      val __obj = js.Dictionary.empty[js.Any]
+      DBParameterGroupArn.foreach(__v => __obj.update("DBParameterGroupArn", __v.asInstanceOf[js.Any]))
+      DBParameterGroupFamily.foreach(__v => __obj.update("DBParameterGroupFamily", __v.asInstanceOf[js.Any]))
+      DBParameterGroupName.foreach(__v => __obj.update("DBParameterGroupName", __v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DBParameterGroup]
     }
   }
 
@@ -4072,16 +3198,10 @@ package rds {
         Marker: js.UndefOr[String] = js.undefined,
         Parameters: js.UndefOr[ParametersList] = js.undefined
     ): DBParameterGroupDetails = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Marker" -> Marker.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Parameters" -> Parameters.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DBParameterGroupDetails]
+      val __obj = js.Dictionary.empty[js.Any]
+      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
+      Parameters.foreach(__v => __obj.update("Parameters", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DBParameterGroupDetails]
     }
   }
 
@@ -4097,13 +3217,9 @@ package rds {
     def apply(
         DBParameterGroupName: js.UndefOr[String] = js.undefined
     ): DBParameterGroupNameMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "DBParameterGroupName" -> DBParameterGroupName.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DBParameterGroupNameMessage]
+      val __obj = js.Dictionary.empty[js.Any]
+      DBParameterGroupName.foreach(__v => __obj.update("DBParameterGroupName", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DBParameterGroupNameMessage]
     }
   }
 
@@ -4128,16 +3244,10 @@ package rds {
         DBParameterGroupName: js.UndefOr[String] = js.undefined,
         ParameterApplyStatus: js.UndefOr[String] = js.undefined
     ): DBParameterGroupStatus = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "DBParameterGroupName" -> DBParameterGroupName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ParameterApplyStatus" -> ParameterApplyStatus.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DBParameterGroupStatus]
+      val __obj = js.Dictionary.empty[js.Any]
+      DBParameterGroupName.foreach(__v => __obj.update("DBParameterGroupName", __v.asInstanceOf[js.Any]))
+      ParameterApplyStatus.foreach(__v => __obj.update("ParameterApplyStatus", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DBParameterGroupStatus]
     }
   }
 
@@ -4155,16 +3265,10 @@ package rds {
         DBParameterGroups: js.UndefOr[DBParameterGroupList] = js.undefined,
         Marker: js.UndefOr[String] = js.undefined
     ): DBParameterGroupsMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "DBParameterGroups" -> DBParameterGroups.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Marker" -> Marker.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DBParameterGroupsMessage]
+      val __obj = js.Dictionary.empty[js.Any]
+      DBParameterGroups.foreach(__v => __obj.update("DBParameterGroups", __v.asInstanceOf[js.Any]))
+      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DBParameterGroupsMessage]
     }
   }
 
@@ -4193,31 +3297,15 @@ package rds {
         OwnerId: js.UndefOr[String] = js.undefined,
         VpcId: js.UndefOr[String] = js.undefined
     ): DBSecurityGroup = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "DBSecurityGroupArn" -> DBSecurityGroupArn.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DBSecurityGroupDescription" -> DBSecurityGroupDescription.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DBSecurityGroupName" -> DBSecurityGroupName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "EC2SecurityGroups" -> EC2SecurityGroups.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "IPRanges" -> IPRanges.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "OwnerId" -> OwnerId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "VpcId" -> VpcId.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DBSecurityGroup]
+      val __obj = js.Dictionary.empty[js.Any]
+      DBSecurityGroupArn.foreach(__v => __obj.update("DBSecurityGroupArn", __v.asInstanceOf[js.Any]))
+      DBSecurityGroupDescription.foreach(__v => __obj.update("DBSecurityGroupDescription", __v.asInstanceOf[js.Any]))
+      DBSecurityGroupName.foreach(__v => __obj.update("DBSecurityGroupName", __v.asInstanceOf[js.Any]))
+      EC2SecurityGroups.foreach(__v => __obj.update("EC2SecurityGroups", __v.asInstanceOf[js.Any]))
+      IPRanges.foreach(__v => __obj.update("IPRanges", __v.asInstanceOf[js.Any]))
+      OwnerId.foreach(__v => __obj.update("OwnerId", __v.asInstanceOf[js.Any]))
+      VpcId.foreach(__v => __obj.update("VpcId", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DBSecurityGroup]
     }
   }
 
@@ -4239,16 +3327,10 @@ package rds {
         DBSecurityGroupName: js.UndefOr[String] = js.undefined,
         Status: js.UndefOr[String] = js.undefined
     ): DBSecurityGroupMembership = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "DBSecurityGroupName" -> DBSecurityGroupName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Status" -> Status.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DBSecurityGroupMembership]
+      val __obj = js.Dictionary.empty[js.Any]
+      DBSecurityGroupName.foreach(__v => __obj.update("DBSecurityGroupName", __v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.update("Status", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DBSecurityGroupMembership]
     }
   }
 
@@ -4266,16 +3348,10 @@ package rds {
         DBSecurityGroups: js.UndefOr[DBSecurityGroups] = js.undefined,
         Marker: js.UndefOr[String] = js.undefined
     ): DBSecurityGroupMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "DBSecurityGroups" -> DBSecurityGroups.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Marker" -> Marker.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DBSecurityGroupMessage]
+      val __obj = js.Dictionary.empty[js.Any]
+      DBSecurityGroups.foreach(__v => __obj.update("DBSecurityGroups", __v.asInstanceOf[js.Any]))
+      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DBSecurityGroupMessage]
     }
   }
 
@@ -4346,94 +3422,38 @@ package rds {
         Timezone: js.UndefOr[String] = js.undefined,
         VpcId: js.UndefOr[String] = js.undefined
     ): DBSnapshot = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "AllocatedStorage" -> AllocatedStorage.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "AvailabilityZone" -> AvailabilityZone.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DBInstanceIdentifier" -> DBInstanceIdentifier.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DBSnapshotArn" -> DBSnapshotArn.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DBSnapshotIdentifier" -> DBSnapshotIdentifier.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DbiResourceId" -> DbiResourceId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Encrypted" -> Encrypted.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Engine" -> Engine.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "EngineVersion" -> EngineVersion.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "IAMDatabaseAuthenticationEnabled" -> IAMDatabaseAuthenticationEnabled.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "InstanceCreateTime" -> InstanceCreateTime.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Iops" -> Iops.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "KmsKeyId" -> KmsKeyId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "LicenseModel" -> LicenseModel.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MasterUsername" -> MasterUsername.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "OptionGroupName" -> OptionGroupName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "PercentProgress" -> PercentProgress.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Port" -> Port.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ProcessorFeatures" -> ProcessorFeatures.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SnapshotCreateTime" -> SnapshotCreateTime.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SnapshotType" -> SnapshotType.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SourceDBSnapshotIdentifier" -> SourceDBSnapshotIdentifier.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SourceRegion" -> SourceRegion.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Status" -> Status.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "StorageType" -> StorageType.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "TdeCredentialArn" -> TdeCredentialArn.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Timezone" -> Timezone.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "VpcId" -> VpcId.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DBSnapshot]
+      val __obj = js.Dictionary.empty[js.Any]
+      AllocatedStorage.foreach(__v => __obj.update("AllocatedStorage", __v.asInstanceOf[js.Any]))
+      AvailabilityZone.foreach(__v => __obj.update("AvailabilityZone", __v.asInstanceOf[js.Any]))
+      DBInstanceIdentifier.foreach(__v => __obj.update("DBInstanceIdentifier", __v.asInstanceOf[js.Any]))
+      DBSnapshotArn.foreach(__v => __obj.update("DBSnapshotArn", __v.asInstanceOf[js.Any]))
+      DBSnapshotIdentifier.foreach(__v => __obj.update("DBSnapshotIdentifier", __v.asInstanceOf[js.Any]))
+      DbiResourceId.foreach(__v => __obj.update("DbiResourceId", __v.asInstanceOf[js.Any]))
+      Encrypted.foreach(__v => __obj.update("Encrypted", __v.asInstanceOf[js.Any]))
+      Engine.foreach(__v => __obj.update("Engine", __v.asInstanceOf[js.Any]))
+      EngineVersion.foreach(__v => __obj.update("EngineVersion", __v.asInstanceOf[js.Any]))
+      IAMDatabaseAuthenticationEnabled.foreach(
+        __v => __obj.update("IAMDatabaseAuthenticationEnabled", __v.asInstanceOf[js.Any])
+      )
+      InstanceCreateTime.foreach(__v => __obj.update("InstanceCreateTime", __v.asInstanceOf[js.Any]))
+      Iops.foreach(__v => __obj.update("Iops", __v.asInstanceOf[js.Any]))
+      KmsKeyId.foreach(__v => __obj.update("KmsKeyId", __v.asInstanceOf[js.Any]))
+      LicenseModel.foreach(__v => __obj.update("LicenseModel", __v.asInstanceOf[js.Any]))
+      MasterUsername.foreach(__v => __obj.update("MasterUsername", __v.asInstanceOf[js.Any]))
+      OptionGroupName.foreach(__v => __obj.update("OptionGroupName", __v.asInstanceOf[js.Any]))
+      PercentProgress.foreach(__v => __obj.update("PercentProgress", __v.asInstanceOf[js.Any]))
+      Port.foreach(__v => __obj.update("Port", __v.asInstanceOf[js.Any]))
+      ProcessorFeatures.foreach(__v => __obj.update("ProcessorFeatures", __v.asInstanceOf[js.Any]))
+      SnapshotCreateTime.foreach(__v => __obj.update("SnapshotCreateTime", __v.asInstanceOf[js.Any]))
+      SnapshotType.foreach(__v => __obj.update("SnapshotType", __v.asInstanceOf[js.Any]))
+      SourceDBSnapshotIdentifier.foreach(__v => __obj.update("SourceDBSnapshotIdentifier", __v.asInstanceOf[js.Any]))
+      SourceRegion.foreach(__v => __obj.update("SourceRegion", __v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.update("Status", __v.asInstanceOf[js.Any]))
+      StorageType.foreach(__v => __obj.update("StorageType", __v.asInstanceOf[js.Any]))
+      TdeCredentialArn.foreach(__v => __obj.update("TdeCredentialArn", __v.asInstanceOf[js.Any]))
+      Timezone.foreach(__v => __obj.update("Timezone", __v.asInstanceOf[js.Any]))
+      VpcId.foreach(__v => __obj.update("VpcId", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DBSnapshot]
     }
   }
 
@@ -4452,16 +3472,10 @@ package rds {
         AttributeName: js.UndefOr[String] = js.undefined,
         AttributeValues: js.UndefOr[AttributeValueList] = js.undefined
     ): DBSnapshotAttribute = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "AttributeName" -> AttributeName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "AttributeValues" -> AttributeValues.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DBSnapshotAttribute]
+      val __obj = js.Dictionary.empty[js.Any]
+      AttributeName.foreach(__v => __obj.update("AttributeName", __v.asInstanceOf[js.Any]))
+      AttributeValues.foreach(__v => __obj.update("AttributeValues", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DBSnapshotAttribute]
     }
   }
 
@@ -4480,16 +3494,10 @@ package rds {
         DBSnapshotAttributes: js.UndefOr[DBSnapshotAttributeList] = js.undefined,
         DBSnapshotIdentifier: js.UndefOr[String] = js.undefined
     ): DBSnapshotAttributesResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "DBSnapshotAttributes" -> DBSnapshotAttributes.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DBSnapshotIdentifier" -> DBSnapshotIdentifier.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DBSnapshotAttributesResult]
+      val __obj = js.Dictionary.empty[js.Any]
+      DBSnapshotAttributes.foreach(__v => __obj.update("DBSnapshotAttributes", __v.asInstanceOf[js.Any]))
+      DBSnapshotIdentifier.foreach(__v => __obj.update("DBSnapshotIdentifier", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DBSnapshotAttributesResult]
     }
   }
 
@@ -4507,16 +3515,10 @@ package rds {
         DBSnapshots: js.UndefOr[DBSnapshotList] = js.undefined,
         Marker: js.UndefOr[String] = js.undefined
     ): DBSnapshotMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "DBSnapshots" -> DBSnapshots.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Marker" -> Marker.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DBSnapshotMessage]
+      val __obj = js.Dictionary.empty[js.Any]
+      DBSnapshots.foreach(__v => __obj.update("DBSnapshots", __v.asInstanceOf[js.Any]))
+      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DBSnapshotMessage]
     }
   }
 
@@ -4543,28 +3545,14 @@ package rds {
         Subnets: js.UndefOr[SubnetList] = js.undefined,
         VpcId: js.UndefOr[String] = js.undefined
     ): DBSubnetGroup = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "DBSubnetGroupArn" -> DBSubnetGroupArn.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DBSubnetGroupDescription" -> DBSubnetGroupDescription.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DBSubnetGroupName" -> DBSubnetGroupName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SubnetGroupStatus" -> SubnetGroupStatus.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Subnets" -> Subnets.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "VpcId" -> VpcId.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DBSubnetGroup]
+      val __obj = js.Dictionary.empty[js.Any]
+      DBSubnetGroupArn.foreach(__v => __obj.update("DBSubnetGroupArn", __v.asInstanceOf[js.Any]))
+      DBSubnetGroupDescription.foreach(__v => __obj.update("DBSubnetGroupDescription", __v.asInstanceOf[js.Any]))
+      DBSubnetGroupName.foreach(__v => __obj.update("DBSubnetGroupName", __v.asInstanceOf[js.Any]))
+      SubnetGroupStatus.foreach(__v => __obj.update("SubnetGroupStatus", __v.asInstanceOf[js.Any]))
+      Subnets.foreach(__v => __obj.update("Subnets", __v.asInstanceOf[js.Any]))
+      VpcId.foreach(__v => __obj.update("VpcId", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DBSubnetGroup]
     }
   }
 
@@ -4582,16 +3570,10 @@ package rds {
         DBSubnetGroups: js.UndefOr[DBSubnetGroups] = js.undefined,
         Marker: js.UndefOr[String] = js.undefined
     ): DBSubnetGroupMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "DBSubnetGroups" -> DBSubnetGroups.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Marker" -> Marker.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DBSubnetGroupMessage]
+      val __obj = js.Dictionary.empty[js.Any]
+      DBSubnetGroups.foreach(__v => __obj.update("DBSubnetGroups", __v.asInstanceOf[js.Any]))
+      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DBSubnetGroupMessage]
     }
   }
 
@@ -4604,11 +3586,11 @@ package rds {
     def apply(
         DBClusterEndpointIdentifier: String
     ): DeleteDBClusterEndpointMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "DBClusterEndpointIdentifier" -> DBClusterEndpointIdentifier.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteDBClusterEndpointMessage]
+      __obj.asInstanceOf[DeleteDBClusterEndpointMessage]
     }
   }
 
@@ -4628,17 +3610,13 @@ package rds {
         FinalDBSnapshotIdentifier: js.UndefOr[String] = js.undefined,
         SkipFinalSnapshot: js.UndefOr[Boolean] = js.undefined
     ): DeleteDBClusterMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "DBClusterIdentifier" -> DBClusterIdentifier.asInstanceOf[js.Any],
-        "FinalDBSnapshotIdentifier" -> FinalDBSnapshotIdentifier.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SkipFinalSnapshot" -> SkipFinalSnapshot.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "DBClusterIdentifier" -> DBClusterIdentifier.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteDBClusterMessage]
+      FinalDBSnapshotIdentifier.foreach(__v => __obj.update("FinalDBSnapshotIdentifier", __v.asInstanceOf[js.Any]))
+      SkipFinalSnapshot.foreach(__v => __obj.update("SkipFinalSnapshot", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DeleteDBClusterMessage]
     }
   }
 
@@ -4654,11 +3632,11 @@ package rds {
     def apply(
         DBClusterParameterGroupName: String
     ): DeleteDBClusterParameterGroupMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "DBClusterParameterGroupName" -> DBClusterParameterGroupName.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteDBClusterParameterGroupMessage]
+      __obj.asInstanceOf[DeleteDBClusterParameterGroupMessage]
     }
   }
 
@@ -4671,13 +3649,9 @@ package rds {
     def apply(
         DBCluster: js.UndefOr[DBCluster] = js.undefined
     ): DeleteDBClusterResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "DBCluster" -> DBCluster.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteDBClusterResult]
+      val __obj = js.Dictionary.empty[js.Any]
+      DBCluster.foreach(__v => __obj.update("DBCluster", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DeleteDBClusterResult]
     }
   }
 
@@ -4693,11 +3667,11 @@ package rds {
     def apply(
         DBClusterSnapshotIdentifier: String
     ): DeleteDBClusterSnapshotMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "DBClusterSnapshotIdentifier" -> DBClusterSnapshotIdentifier.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteDBClusterSnapshotMessage]
+      __obj.asInstanceOf[DeleteDBClusterSnapshotMessage]
     }
   }
 
@@ -4710,13 +3684,9 @@ package rds {
     def apply(
         DBClusterSnapshot: js.UndefOr[DBClusterSnapshot] = js.undefined
     ): DeleteDBClusterSnapshotResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "DBClusterSnapshot" -> DBClusterSnapshot.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteDBClusterSnapshotResult]
+      val __obj = js.Dictionary.empty[js.Any]
+      DBClusterSnapshot.foreach(__v => __obj.update("DBClusterSnapshot", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DeleteDBClusterSnapshotResult]
     }
   }
 
@@ -4732,11 +3702,11 @@ package rds {
     def apply(
         DbiResourceId: String
     ): DeleteDBInstanceAutomatedBackupMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "DbiResourceId" -> DbiResourceId.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteDBInstanceAutomatedBackupMessage]
+      __obj.asInstanceOf[DeleteDBInstanceAutomatedBackupMessage]
     }
   }
 
@@ -4749,13 +3719,9 @@ package rds {
     def apply(
         DBInstanceAutomatedBackup: js.UndefOr[DBInstanceAutomatedBackup] = js.undefined
     ): DeleteDBInstanceAutomatedBackupResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "DBInstanceAutomatedBackup" -> DBInstanceAutomatedBackup.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteDBInstanceAutomatedBackupResult]
+      val __obj = js.Dictionary.empty[js.Any]
+      DBInstanceAutomatedBackup.foreach(__v => __obj.update("DBInstanceAutomatedBackup", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DeleteDBInstanceAutomatedBackupResult]
     }
   }
 
@@ -4777,20 +3743,14 @@ package rds {
         FinalDBSnapshotIdentifier: js.UndefOr[String] = js.undefined,
         SkipFinalSnapshot: js.UndefOr[Boolean] = js.undefined
     ): DeleteDBInstanceMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "DBInstanceIdentifier" -> DBInstanceIdentifier.asInstanceOf[js.Any],
-        "DeleteAutomatedBackups" -> DeleteAutomatedBackups.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "FinalDBSnapshotIdentifier" -> FinalDBSnapshotIdentifier.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SkipFinalSnapshot" -> SkipFinalSnapshot.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "DBInstanceIdentifier" -> DBInstanceIdentifier.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteDBInstanceMessage]
+      DeleteAutomatedBackups.foreach(__v => __obj.update("DeleteAutomatedBackups", __v.asInstanceOf[js.Any]))
+      FinalDBSnapshotIdentifier.foreach(__v => __obj.update("FinalDBSnapshotIdentifier", __v.asInstanceOf[js.Any]))
+      SkipFinalSnapshot.foreach(__v => __obj.update("SkipFinalSnapshot", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DeleteDBInstanceMessage]
     }
   }
 
@@ -4803,13 +3763,9 @@ package rds {
     def apply(
         DBInstance: js.UndefOr[DBInstance] = js.undefined
     ): DeleteDBInstanceResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "DBInstance" -> DBInstance.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteDBInstanceResult]
+      val __obj = js.Dictionary.empty[js.Any]
+      DBInstance.foreach(__v => __obj.update("DBInstance", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DeleteDBInstanceResult]
     }
   }
 
@@ -4825,11 +3781,11 @@ package rds {
     def apply(
         DBParameterGroupName: String
     ): DeleteDBParameterGroupMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "DBParameterGroupName" -> DBParameterGroupName.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteDBParameterGroupMessage]
+      __obj.asInstanceOf[DeleteDBParameterGroupMessage]
     }
   }
 
@@ -4845,11 +3801,11 @@ package rds {
     def apply(
         DBSecurityGroupName: String
     ): DeleteDBSecurityGroupMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "DBSecurityGroupName" -> DBSecurityGroupName.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteDBSecurityGroupMessage]
+      __obj.asInstanceOf[DeleteDBSecurityGroupMessage]
     }
   }
 
@@ -4865,11 +3821,11 @@ package rds {
     def apply(
         DBSnapshotIdentifier: String
     ): DeleteDBSnapshotMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "DBSnapshotIdentifier" -> DBSnapshotIdentifier.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteDBSnapshotMessage]
+      __obj.asInstanceOf[DeleteDBSnapshotMessage]
     }
   }
 
@@ -4882,13 +3838,9 @@ package rds {
     def apply(
         DBSnapshot: js.UndefOr[DBSnapshot] = js.undefined
     ): DeleteDBSnapshotResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "DBSnapshot" -> DBSnapshot.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteDBSnapshotResult]
+      val __obj = js.Dictionary.empty[js.Any]
+      DBSnapshot.foreach(__v => __obj.update("DBSnapshot", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DeleteDBSnapshotResult]
     }
   }
 
@@ -4904,11 +3856,11 @@ package rds {
     def apply(
         DBSubnetGroupName: String
     ): DeleteDBSubnetGroupMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "DBSubnetGroupName" -> DBSubnetGroupName.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteDBSubnetGroupMessage]
+      __obj.asInstanceOf[DeleteDBSubnetGroupMessage]
     }
   }
 
@@ -4924,11 +3876,11 @@ package rds {
     def apply(
         SubscriptionName: String
     ): DeleteEventSubscriptionMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "SubscriptionName" -> SubscriptionName.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteEventSubscriptionMessage]
+      __obj.asInstanceOf[DeleteEventSubscriptionMessage]
     }
   }
 
@@ -4941,13 +3893,9 @@ package rds {
     def apply(
         EventSubscription: js.UndefOr[EventSubscription] = js.undefined
     ): DeleteEventSubscriptionResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "EventSubscription" -> EventSubscription.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteEventSubscriptionResult]
+      val __obj = js.Dictionary.empty[js.Any]
+      EventSubscription.foreach(__v => __obj.update("EventSubscription", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DeleteEventSubscriptionResult]
     }
   }
 
@@ -4960,11 +3908,11 @@ package rds {
     def apply(
         GlobalClusterIdentifier: String
     ): DeleteGlobalClusterMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "GlobalClusterIdentifier" -> GlobalClusterIdentifier.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteGlobalClusterMessage]
+      __obj.asInstanceOf[DeleteGlobalClusterMessage]
     }
   }
 
@@ -4977,13 +3925,9 @@ package rds {
     def apply(
         GlobalCluster: js.UndefOr[GlobalCluster] = js.undefined
     ): DeleteGlobalClusterResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "GlobalCluster" -> GlobalCluster.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteGlobalClusterResult]
+      val __obj = js.Dictionary.empty[js.Any]
+      GlobalCluster.foreach(__v => __obj.update("GlobalCluster", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DeleteGlobalClusterResult]
     }
   }
 
@@ -4999,11 +3943,11 @@ package rds {
     def apply(
         OptionGroupName: String
     ): DeleteOptionGroupMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "OptionGroupName" -> OptionGroupName.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteOptionGroupMessage]
+      __obj.asInstanceOf[DeleteOptionGroupMessage]
     }
   }
 
@@ -5016,10 +3960,9 @@ package rds {
   object DescribeAccountAttributesMessage {
     def apply(
         ): DescribeAccountAttributesMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary.empty[js.Any]
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeAccountAttributesMessage]
+      __obj.asInstanceOf[DescribeAccountAttributesMessage]
     }
   }
 
@@ -5041,22 +3984,12 @@ package rds {
         Marker: js.UndefOr[String] = js.undefined,
         MaxRecords: js.UndefOr[IntegerOptional] = js.undefined
     ): DescribeCertificatesMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "CertificateIdentifier" -> CertificateIdentifier.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Filters" -> Filters.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Marker" -> Marker.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MaxRecords" -> MaxRecords.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeCertificatesMessage]
+      val __obj = js.Dictionary.empty[js.Any]
+      CertificateIdentifier.foreach(__v => __obj.update("CertificateIdentifier", __v.asInstanceOf[js.Any]))
+      Filters.foreach(__v => __obj.update("Filters", __v.asInstanceOf[js.Any]))
+      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
+      MaxRecords.foreach(__v => __obj.update("MaxRecords", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeCertificatesMessage]
     }
   }
 
@@ -5080,23 +4013,15 @@ package rds {
         Marker: js.UndefOr[String] = js.undefined,
         MaxRecords: js.UndefOr[IntegerOptional] = js.undefined
     ): DescribeDBClusterBacktracksMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "DBClusterIdentifier" -> DBClusterIdentifier.asInstanceOf[js.Any],
-        "BacktrackIdentifier" -> BacktrackIdentifier.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Filters" -> Filters.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Marker" -> Marker.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MaxRecords" -> MaxRecords.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "DBClusterIdentifier" -> DBClusterIdentifier.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeDBClusterBacktracksMessage]
+      BacktrackIdentifier.foreach(__v => __obj.update("BacktrackIdentifier", __v.asInstanceOf[js.Any]))
+      Filters.foreach(__v => __obj.update("Filters", __v.asInstanceOf[js.Any]))
+      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
+      MaxRecords.foreach(__v => __obj.update("MaxRecords", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeDBClusterBacktracksMessage]
     }
   }
 
@@ -5117,25 +4042,13 @@ package rds {
         Marker: js.UndefOr[String] = js.undefined,
         MaxRecords: js.UndefOr[IntegerOptional] = js.undefined
     ): DescribeDBClusterEndpointsMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "DBClusterEndpointIdentifier" -> DBClusterEndpointIdentifier.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DBClusterIdentifier" -> DBClusterIdentifier.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Filters" -> Filters.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Marker" -> Marker.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MaxRecords" -> MaxRecords.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeDBClusterEndpointsMessage]
+      val __obj = js.Dictionary.empty[js.Any]
+      DBClusterEndpointIdentifier.foreach(__v => __obj.update("DBClusterEndpointIdentifier", __v.asInstanceOf[js.Any]))
+      DBClusterIdentifier.foreach(__v => __obj.update("DBClusterIdentifier", __v.asInstanceOf[js.Any]))
+      Filters.foreach(__v => __obj.update("Filters", __v.asInstanceOf[js.Any]))
+      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
+      MaxRecords.foreach(__v => __obj.update("MaxRecords", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeDBClusterEndpointsMessage]
     }
   }
 
@@ -5157,22 +4070,12 @@ package rds {
         Marker: js.UndefOr[String] = js.undefined,
         MaxRecords: js.UndefOr[IntegerOptional] = js.undefined
     ): DescribeDBClusterParameterGroupsMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "DBClusterParameterGroupName" -> DBClusterParameterGroupName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Filters" -> Filters.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Marker" -> Marker.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MaxRecords" -> MaxRecords.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeDBClusterParameterGroupsMessage]
+      val __obj = js.Dictionary.empty[js.Any]
+      DBClusterParameterGroupName.foreach(__v => __obj.update("DBClusterParameterGroupName", __v.asInstanceOf[js.Any]))
+      Filters.foreach(__v => __obj.update("Filters", __v.asInstanceOf[js.Any]))
+      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
+      MaxRecords.foreach(__v => __obj.update("MaxRecords", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeDBClusterParameterGroupsMessage]
     }
   }
 
@@ -5196,23 +4099,15 @@ package rds {
         MaxRecords: js.UndefOr[IntegerOptional] = js.undefined,
         Source: js.UndefOr[String] = js.undefined
     ): DescribeDBClusterParametersMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "DBClusterParameterGroupName" -> DBClusterParameterGroupName.asInstanceOf[js.Any],
-        "Filters" -> Filters.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Marker" -> Marker.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MaxRecords" -> MaxRecords.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Source" -> Source.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "DBClusterParameterGroupName" -> DBClusterParameterGroupName.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeDBClusterParametersMessage]
+      Filters.foreach(__v => __obj.update("Filters", __v.asInstanceOf[js.Any]))
+      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
+      MaxRecords.foreach(__v => __obj.update("MaxRecords", __v.asInstanceOf[js.Any]))
+      Source.foreach(__v => __obj.update("Source", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeDBClusterParametersMessage]
     }
   }
 
@@ -5228,13 +4123,11 @@ package rds {
     def apply(
         DBClusterSnapshotIdentifier: String
     ): DescribeDBClusterSnapshotAttributesMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "DBClusterSnapshotIdentifier" -> DBClusterSnapshotIdentifier.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal
-        .applyDynamicNamed("apply")(_fields: _*)
-        .asInstanceOf[DescribeDBClusterSnapshotAttributesMessage]
+      __obj.asInstanceOf[DescribeDBClusterSnapshotAttributesMessage]
     }
   }
 
@@ -5247,13 +4140,11 @@ package rds {
     def apply(
         DBClusterSnapshotAttributesResult: js.UndefOr[DBClusterSnapshotAttributesResult] = js.undefined
     ): DescribeDBClusterSnapshotAttributesResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "DBClusterSnapshotAttributesResult" -> DBClusterSnapshotAttributesResult.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeDBClusterSnapshotAttributesResult]
+      val __obj = js.Dictionary.empty[js.Any]
+      DBClusterSnapshotAttributesResult.foreach(
+        __v => __obj.update("DBClusterSnapshotAttributesResult", __v.asInstanceOf[js.Any])
+      )
+      __obj.asInstanceOf[DescribeDBClusterSnapshotAttributesResult]
     }
   }
 
@@ -5283,34 +4174,16 @@ package rds {
         MaxRecords: js.UndefOr[IntegerOptional] = js.undefined,
         SnapshotType: js.UndefOr[String] = js.undefined
     ): DescribeDBClusterSnapshotsMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "DBClusterIdentifier" -> DBClusterIdentifier.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DBClusterSnapshotIdentifier" -> DBClusterSnapshotIdentifier.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Filters" -> Filters.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "IncludePublic" -> IncludePublic.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "IncludeShared" -> IncludeShared.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Marker" -> Marker.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MaxRecords" -> MaxRecords.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SnapshotType" -> SnapshotType.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeDBClusterSnapshotsMessage]
+      val __obj = js.Dictionary.empty[js.Any]
+      DBClusterIdentifier.foreach(__v => __obj.update("DBClusterIdentifier", __v.asInstanceOf[js.Any]))
+      DBClusterSnapshotIdentifier.foreach(__v => __obj.update("DBClusterSnapshotIdentifier", __v.asInstanceOf[js.Any]))
+      Filters.foreach(__v => __obj.update("Filters", __v.asInstanceOf[js.Any]))
+      IncludePublic.foreach(__v => __obj.update("IncludePublic", __v.asInstanceOf[js.Any]))
+      IncludeShared.foreach(__v => __obj.update("IncludeShared", __v.asInstanceOf[js.Any]))
+      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
+      MaxRecords.foreach(__v => __obj.update("MaxRecords", __v.asInstanceOf[js.Any]))
+      SnapshotType.foreach(__v => __obj.update("SnapshotType", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeDBClusterSnapshotsMessage]
     }
   }
 
@@ -5332,22 +4205,12 @@ package rds {
         Marker: js.UndefOr[String] = js.undefined,
         MaxRecords: js.UndefOr[IntegerOptional] = js.undefined
     ): DescribeDBClustersMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "DBClusterIdentifier" -> DBClusterIdentifier.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Filters" -> Filters.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Marker" -> Marker.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MaxRecords" -> MaxRecords.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeDBClustersMessage]
+      val __obj = js.Dictionary.empty[js.Any]
+      DBClusterIdentifier.foreach(__v => __obj.update("DBClusterIdentifier", __v.asInstanceOf[js.Any]))
+      Filters.foreach(__v => __obj.update("Filters", __v.asInstanceOf[js.Any]))
+      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
+      MaxRecords.foreach(__v => __obj.update("MaxRecords", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeDBClustersMessage]
     }
   }
 
@@ -5376,37 +4239,17 @@ package rds {
         Marker: js.UndefOr[String] = js.undefined,
         MaxRecords: js.UndefOr[IntegerOptional] = js.undefined
     ): DescribeDBEngineVersionsMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "DBParameterGroupFamily" -> DBParameterGroupFamily.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DefaultOnly" -> DefaultOnly.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Engine" -> Engine.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "EngineVersion" -> EngineVersion.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Filters" -> Filters.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ListSupportedCharacterSets" -> ListSupportedCharacterSets.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ListSupportedTimezones" -> ListSupportedTimezones.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Marker" -> Marker.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MaxRecords" -> MaxRecords.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeDBEngineVersionsMessage]
+      val __obj = js.Dictionary.empty[js.Any]
+      DBParameterGroupFamily.foreach(__v => __obj.update("DBParameterGroupFamily", __v.asInstanceOf[js.Any]))
+      DefaultOnly.foreach(__v => __obj.update("DefaultOnly", __v.asInstanceOf[js.Any]))
+      Engine.foreach(__v => __obj.update("Engine", __v.asInstanceOf[js.Any]))
+      EngineVersion.foreach(__v => __obj.update("EngineVersion", __v.asInstanceOf[js.Any]))
+      Filters.foreach(__v => __obj.update("Filters", __v.asInstanceOf[js.Any]))
+      ListSupportedCharacterSets.foreach(__v => __obj.update("ListSupportedCharacterSets", __v.asInstanceOf[js.Any]))
+      ListSupportedTimezones.foreach(__v => __obj.update("ListSupportedTimezones", __v.asInstanceOf[js.Any]))
+      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
+      MaxRecords.foreach(__v => __obj.update("MaxRecords", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeDBEngineVersionsMessage]
     }
   }
 
@@ -5430,25 +4273,13 @@ package rds {
         Marker: js.UndefOr[String] = js.undefined,
         MaxRecords: js.UndefOr[IntegerOptional] = js.undefined
     ): DescribeDBInstanceAutomatedBackupsMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "DBInstanceIdentifier" -> DBInstanceIdentifier.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DbiResourceId" -> DbiResourceId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Filters" -> Filters.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Marker" -> Marker.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MaxRecords" -> MaxRecords.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeDBInstanceAutomatedBackupsMessage]
+      val __obj = js.Dictionary.empty[js.Any]
+      DBInstanceIdentifier.foreach(__v => __obj.update("DBInstanceIdentifier", __v.asInstanceOf[js.Any]))
+      DbiResourceId.foreach(__v => __obj.update("DbiResourceId", __v.asInstanceOf[js.Any]))
+      Filters.foreach(__v => __obj.update("Filters", __v.asInstanceOf[js.Any]))
+      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
+      MaxRecords.foreach(__v => __obj.update("MaxRecords", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeDBInstanceAutomatedBackupsMessage]
     }
   }
 
@@ -5470,22 +4301,12 @@ package rds {
         Marker: js.UndefOr[String] = js.undefined,
         MaxRecords: js.UndefOr[IntegerOptional] = js.undefined
     ): DescribeDBInstancesMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "DBInstanceIdentifier" -> DBInstanceIdentifier.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Filters" -> Filters.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Marker" -> Marker.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MaxRecords" -> MaxRecords.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeDBInstancesMessage]
+      val __obj = js.Dictionary.empty[js.Any]
+      DBInstanceIdentifier.foreach(__v => __obj.update("DBInstanceIdentifier", __v.asInstanceOf[js.Any]))
+      Filters.foreach(__v => __obj.update("Filters", __v.asInstanceOf[js.Any]))
+      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
+      MaxRecords.foreach(__v => __obj.update("MaxRecords", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeDBInstancesMessage]
     }
   }
 
@@ -5505,19 +4326,11 @@ package rds {
         LogFileName: js.UndefOr[String] = js.undefined,
         Size: js.UndefOr[Double] = js.undefined
     ): DescribeDBLogFilesDetails = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "LastWritten" -> LastWritten.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "LogFileName" -> LogFileName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Size" -> Size.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeDBLogFilesDetails]
+      val __obj = js.Dictionary.empty[js.Any]
+      LastWritten.foreach(__v => __obj.update("LastWritten", __v.asInstanceOf[js.Any]))
+      LogFileName.foreach(__v => __obj.update("LogFileName", __v.asInstanceOf[js.Any]))
+      Size.foreach(__v => __obj.update("Size", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeDBLogFilesDetails]
     }
   }
 
@@ -5545,29 +4358,17 @@ package rds {
         Marker: js.UndefOr[String] = js.undefined,
         MaxRecords: js.UndefOr[IntegerOptional] = js.undefined
     ): DescribeDBLogFilesMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "DBInstanceIdentifier" -> DBInstanceIdentifier.asInstanceOf[js.Any],
-        "FileLastWritten" -> FileLastWritten.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "FileSize" -> FileSize.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "FilenameContains" -> FilenameContains.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Filters" -> Filters.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Marker" -> Marker.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MaxRecords" -> MaxRecords.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "DBInstanceIdentifier" -> DBInstanceIdentifier.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeDBLogFilesMessage]
+      FileLastWritten.foreach(__v => __obj.update("FileLastWritten", __v.asInstanceOf[js.Any]))
+      FileSize.foreach(__v => __obj.update("FileSize", __v.asInstanceOf[js.Any]))
+      FilenameContains.foreach(__v => __obj.update("FilenameContains", __v.asInstanceOf[js.Any]))
+      Filters.foreach(__v => __obj.update("Filters", __v.asInstanceOf[js.Any]))
+      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
+      MaxRecords.foreach(__v => __obj.update("MaxRecords", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeDBLogFilesMessage]
     }
   }
 
@@ -5585,16 +4386,10 @@ package rds {
         DescribeDBLogFiles: js.UndefOr[DescribeDBLogFilesList] = js.undefined,
         Marker: js.UndefOr[String] = js.undefined
     ): DescribeDBLogFilesResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "DescribeDBLogFiles" -> DescribeDBLogFiles.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Marker" -> Marker.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeDBLogFilesResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      DescribeDBLogFiles.foreach(__v => __obj.update("DescribeDBLogFiles", __v.asInstanceOf[js.Any]))
+      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeDBLogFilesResponse]
     }
   }
 
@@ -5616,22 +4411,12 @@ package rds {
         Marker: js.UndefOr[String] = js.undefined,
         MaxRecords: js.UndefOr[IntegerOptional] = js.undefined
     ): DescribeDBParameterGroupsMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "DBParameterGroupName" -> DBParameterGroupName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Filters" -> Filters.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Marker" -> Marker.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MaxRecords" -> MaxRecords.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeDBParameterGroupsMessage]
+      val __obj = js.Dictionary.empty[js.Any]
+      DBParameterGroupName.foreach(__v => __obj.update("DBParameterGroupName", __v.asInstanceOf[js.Any]))
+      Filters.foreach(__v => __obj.update("Filters", __v.asInstanceOf[js.Any]))
+      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
+      MaxRecords.foreach(__v => __obj.update("MaxRecords", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeDBParameterGroupsMessage]
     }
   }
 
@@ -5652,23 +4437,15 @@ package rds {
         MaxRecords: js.UndefOr[IntegerOptional] = js.undefined,
         Source: js.UndefOr[String] = js.undefined
     ): DescribeDBParametersMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "DBParameterGroupName" -> DBParameterGroupName.asInstanceOf[js.Any],
-        "Filters" -> Filters.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Marker" -> Marker.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MaxRecords" -> MaxRecords.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Source" -> Source.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "DBParameterGroupName" -> DBParameterGroupName.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeDBParametersMessage]
+      Filters.foreach(__v => __obj.update("Filters", __v.asInstanceOf[js.Any]))
+      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
+      MaxRecords.foreach(__v => __obj.update("MaxRecords", __v.asInstanceOf[js.Any]))
+      Source.foreach(__v => __obj.update("Source", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeDBParametersMessage]
     }
   }
 
@@ -5690,22 +4467,12 @@ package rds {
         Marker: js.UndefOr[String] = js.undefined,
         MaxRecords: js.UndefOr[IntegerOptional] = js.undefined
     ): DescribeDBSecurityGroupsMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "DBSecurityGroupName" -> DBSecurityGroupName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Filters" -> Filters.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Marker" -> Marker.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MaxRecords" -> MaxRecords.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeDBSecurityGroupsMessage]
+      val __obj = js.Dictionary.empty[js.Any]
+      DBSecurityGroupName.foreach(__v => __obj.update("DBSecurityGroupName", __v.asInstanceOf[js.Any]))
+      Filters.foreach(__v => __obj.update("Filters", __v.asInstanceOf[js.Any]))
+      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
+      MaxRecords.foreach(__v => __obj.update("MaxRecords", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeDBSecurityGroupsMessage]
     }
   }
 
@@ -5721,11 +4488,11 @@ package rds {
     def apply(
         DBSnapshotIdentifier: String
     ): DescribeDBSnapshotAttributesMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "DBSnapshotIdentifier" -> DBSnapshotIdentifier.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeDBSnapshotAttributesMessage]
+      __obj.asInstanceOf[DescribeDBSnapshotAttributesMessage]
     }
   }
 
@@ -5738,13 +4505,9 @@ package rds {
     def apply(
         DBSnapshotAttributesResult: js.UndefOr[DBSnapshotAttributesResult] = js.undefined
     ): DescribeDBSnapshotAttributesResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "DBSnapshotAttributesResult" -> DBSnapshotAttributesResult.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeDBSnapshotAttributesResult]
+      val __obj = js.Dictionary.empty[js.Any]
+      DBSnapshotAttributesResult.foreach(__v => __obj.update("DBSnapshotAttributesResult", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeDBSnapshotAttributesResult]
     }
   }
 
@@ -5776,37 +4539,17 @@ package rds {
         MaxRecords: js.UndefOr[IntegerOptional] = js.undefined,
         SnapshotType: js.UndefOr[String] = js.undefined
     ): DescribeDBSnapshotsMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "DBInstanceIdentifier" -> DBInstanceIdentifier.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DBSnapshotIdentifier" -> DBSnapshotIdentifier.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DbiResourceId" -> DbiResourceId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Filters" -> Filters.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "IncludePublic" -> IncludePublic.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "IncludeShared" -> IncludeShared.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Marker" -> Marker.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MaxRecords" -> MaxRecords.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SnapshotType" -> SnapshotType.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeDBSnapshotsMessage]
+      val __obj = js.Dictionary.empty[js.Any]
+      DBInstanceIdentifier.foreach(__v => __obj.update("DBInstanceIdentifier", __v.asInstanceOf[js.Any]))
+      DBSnapshotIdentifier.foreach(__v => __obj.update("DBSnapshotIdentifier", __v.asInstanceOf[js.Any]))
+      DbiResourceId.foreach(__v => __obj.update("DbiResourceId", __v.asInstanceOf[js.Any]))
+      Filters.foreach(__v => __obj.update("Filters", __v.asInstanceOf[js.Any]))
+      IncludePublic.foreach(__v => __obj.update("IncludePublic", __v.asInstanceOf[js.Any]))
+      IncludeShared.foreach(__v => __obj.update("IncludeShared", __v.asInstanceOf[js.Any]))
+      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
+      MaxRecords.foreach(__v => __obj.update("MaxRecords", __v.asInstanceOf[js.Any]))
+      SnapshotType.foreach(__v => __obj.update("SnapshotType", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeDBSnapshotsMessage]
     }
   }
 
@@ -5828,22 +4571,12 @@ package rds {
         Marker: js.UndefOr[String] = js.undefined,
         MaxRecords: js.UndefOr[IntegerOptional] = js.undefined
     ): DescribeDBSubnetGroupsMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "DBSubnetGroupName" -> DBSubnetGroupName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Filters" -> Filters.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Marker" -> Marker.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MaxRecords" -> MaxRecords.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeDBSubnetGroupsMessage]
+      val __obj = js.Dictionary.empty[js.Any]
+      DBSubnetGroupName.foreach(__v => __obj.update("DBSubnetGroupName", __v.asInstanceOf[js.Any]))
+      Filters.foreach(__v => __obj.update("Filters", __v.asInstanceOf[js.Any]))
+      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
+      MaxRecords.foreach(__v => __obj.update("MaxRecords", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeDBSubnetGroupsMessage]
     }
   }
 
@@ -5865,22 +4598,14 @@ package rds {
         Marker: js.UndefOr[String] = js.undefined,
         MaxRecords: js.UndefOr[IntegerOptional] = js.undefined
     ): DescribeEngineDefaultClusterParametersMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "DBParameterGroupFamily" -> DBParameterGroupFamily.asInstanceOf[js.Any],
-        "Filters" -> Filters.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Marker" -> Marker.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MaxRecords" -> MaxRecords.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "DBParameterGroupFamily" -> DBParameterGroupFamily.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal
-        .applyDynamicNamed("apply")(_fields: _*)
-        .asInstanceOf[DescribeEngineDefaultClusterParametersMessage]
+      Filters.foreach(__v => __obj.update("Filters", __v.asInstanceOf[js.Any]))
+      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
+      MaxRecords.foreach(__v => __obj.update("MaxRecords", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeEngineDefaultClusterParametersMessage]
     }
   }
 
@@ -5893,15 +4618,9 @@ package rds {
     def apply(
         EngineDefaults: js.UndefOr[EngineDefaults] = js.undefined
     ): DescribeEngineDefaultClusterParametersResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "EngineDefaults" -> EngineDefaults.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal
-        .applyDynamicNamed("apply")(_fields: _*)
-        .asInstanceOf[DescribeEngineDefaultClusterParametersResult]
+      val __obj = js.Dictionary.empty[js.Any]
+      EngineDefaults.foreach(__v => __obj.update("EngineDefaults", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeEngineDefaultClusterParametersResult]
     }
   }
 
@@ -5923,20 +4642,14 @@ package rds {
         Marker: js.UndefOr[String] = js.undefined,
         MaxRecords: js.UndefOr[IntegerOptional] = js.undefined
     ): DescribeEngineDefaultParametersMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "DBParameterGroupFamily" -> DBParameterGroupFamily.asInstanceOf[js.Any],
-        "Filters" -> Filters.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Marker" -> Marker.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MaxRecords" -> MaxRecords.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "DBParameterGroupFamily" -> DBParameterGroupFamily.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeEngineDefaultParametersMessage]
+      Filters.foreach(__v => __obj.update("Filters", __v.asInstanceOf[js.Any]))
+      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
+      MaxRecords.foreach(__v => __obj.update("MaxRecords", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeEngineDefaultParametersMessage]
     }
   }
 
@@ -5949,13 +4662,9 @@ package rds {
     def apply(
         EngineDefaults: js.UndefOr[EngineDefaults] = js.undefined
     ): DescribeEngineDefaultParametersResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "EngineDefaults" -> EngineDefaults.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeEngineDefaultParametersResult]
+      val __obj = js.Dictionary.empty[js.Any]
+      EngineDefaults.foreach(__v => __obj.update("EngineDefaults", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeEngineDefaultParametersResult]
     }
   }
 
@@ -5973,16 +4682,10 @@ package rds {
         Filters: js.UndefOr[FilterList] = js.undefined,
         SourceType: js.UndefOr[String] = js.undefined
     ): DescribeEventCategoriesMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Filters" -> Filters.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SourceType" -> SourceType.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeEventCategoriesMessage]
+      val __obj = js.Dictionary.empty[js.Any]
+      Filters.foreach(__v => __obj.update("Filters", __v.asInstanceOf[js.Any]))
+      SourceType.foreach(__v => __obj.update("SourceType", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeEventCategoriesMessage]
     }
   }
 
@@ -6004,22 +4707,12 @@ package rds {
         MaxRecords: js.UndefOr[IntegerOptional] = js.undefined,
         SubscriptionName: js.UndefOr[String] = js.undefined
     ): DescribeEventSubscriptionsMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Filters" -> Filters.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Marker" -> Marker.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MaxRecords" -> MaxRecords.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SubscriptionName" -> SubscriptionName.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeEventSubscriptionsMessage]
+      val __obj = js.Dictionary.empty[js.Any]
+      Filters.foreach(__v => __obj.update("Filters", __v.asInstanceOf[js.Any]))
+      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
+      MaxRecords.foreach(__v => __obj.update("MaxRecords", __v.asInstanceOf[js.Any]))
+      SubscriptionName.foreach(__v => __obj.update("SubscriptionName", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeEventSubscriptionsMessage]
     }
   }
 
@@ -6051,37 +4744,17 @@ package rds {
         SourceType: js.UndefOr[SourceType] = js.undefined,
         StartTime: js.UndefOr[TStamp] = js.undefined
     ): DescribeEventsMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Duration" -> Duration.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "EndTime" -> EndTime.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "EventCategories" -> EventCategories.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Filters" -> Filters.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Marker" -> Marker.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MaxRecords" -> MaxRecords.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SourceIdentifier" -> SourceIdentifier.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SourceType" -> SourceType.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "StartTime" -> StartTime.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeEventsMessage]
+      val __obj = js.Dictionary.empty[js.Any]
+      Duration.foreach(__v => __obj.update("Duration", __v.asInstanceOf[js.Any]))
+      EndTime.foreach(__v => __obj.update("EndTime", __v.asInstanceOf[js.Any]))
+      EventCategories.foreach(__v => __obj.update("EventCategories", __v.asInstanceOf[js.Any]))
+      Filters.foreach(__v => __obj.update("Filters", __v.asInstanceOf[js.Any]))
+      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
+      MaxRecords.foreach(__v => __obj.update("MaxRecords", __v.asInstanceOf[js.Any]))
+      SourceIdentifier.foreach(__v => __obj.update("SourceIdentifier", __v.asInstanceOf[js.Any]))
+      SourceType.foreach(__v => __obj.update("SourceType", __v.asInstanceOf[js.Any]))
+      StartTime.foreach(__v => __obj.update("StartTime", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeEventsMessage]
     }
   }
 
@@ -6100,22 +4773,12 @@ package rds {
         Marker: js.UndefOr[String] = js.undefined,
         MaxRecords: js.UndefOr[IntegerOptional] = js.undefined
     ): DescribeGlobalClustersMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Filters" -> Filters.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "GlobalClusterIdentifier" -> GlobalClusterIdentifier.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Marker" -> Marker.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MaxRecords" -> MaxRecords.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeGlobalClustersMessage]
+      val __obj = js.Dictionary.empty[js.Any]
+      Filters.foreach(__v => __obj.update("Filters", __v.asInstanceOf[js.Any]))
+      GlobalClusterIdentifier.foreach(__v => __obj.update("GlobalClusterIdentifier", __v.asInstanceOf[js.Any]))
+      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
+      MaxRecords.foreach(__v => __obj.update("MaxRecords", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeGlobalClustersMessage]
     }
   }
 
@@ -6139,23 +4802,15 @@ package rds {
         Marker: js.UndefOr[String] = js.undefined,
         MaxRecords: js.UndefOr[IntegerOptional] = js.undefined
     ): DescribeOptionGroupOptionsMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "EngineName" -> EngineName.asInstanceOf[js.Any],
-        "Filters" -> Filters.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MajorEngineVersion" -> MajorEngineVersion.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Marker" -> Marker.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MaxRecords" -> MaxRecords.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "EngineName" -> EngineName.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeOptionGroupOptionsMessage]
+      Filters.foreach(__v => __obj.update("Filters", __v.asInstanceOf[js.Any]))
+      MajorEngineVersion.foreach(__v => __obj.update("MajorEngineVersion", __v.asInstanceOf[js.Any]))
+      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
+      MaxRecords.foreach(__v => __obj.update("MaxRecords", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeOptionGroupOptionsMessage]
     }
   }
 
@@ -6181,28 +4836,14 @@ package rds {
         MaxRecords: js.UndefOr[IntegerOptional] = js.undefined,
         OptionGroupName: js.UndefOr[String] = js.undefined
     ): DescribeOptionGroupsMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "EngineName" -> EngineName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Filters" -> Filters.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MajorEngineVersion" -> MajorEngineVersion.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Marker" -> Marker.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MaxRecords" -> MaxRecords.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "OptionGroupName" -> OptionGroupName.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeOptionGroupsMessage]
+      val __obj = js.Dictionary.empty[js.Any]
+      EngineName.foreach(__v => __obj.update("EngineName", __v.asInstanceOf[js.Any]))
+      Filters.foreach(__v => __obj.update("Filters", __v.asInstanceOf[js.Any]))
+      MajorEngineVersion.foreach(__v => __obj.update("MajorEngineVersion", __v.asInstanceOf[js.Any]))
+      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
+      MaxRecords.foreach(__v => __obj.update("MaxRecords", __v.asInstanceOf[js.Any]))
+      OptionGroupName.foreach(__v => __obj.update("OptionGroupName", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeOptionGroupsMessage]
     }
   }
 
@@ -6232,32 +4873,18 @@ package rds {
         MaxRecords: js.UndefOr[IntegerOptional] = js.undefined,
         Vpc: js.UndefOr[BooleanOptional] = js.undefined
     ): DescribeOrderableDBInstanceOptionsMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Engine" -> Engine.asInstanceOf[js.Any],
-        "DBInstanceClass" -> DBInstanceClass.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "EngineVersion" -> EngineVersion.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Filters" -> Filters.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "LicenseModel" -> LicenseModel.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Marker" -> Marker.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MaxRecords" -> MaxRecords.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Vpc" -> Vpc.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "Engine" -> Engine.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeOrderableDBInstanceOptionsMessage]
+      DBInstanceClass.foreach(__v => __obj.update("DBInstanceClass", __v.asInstanceOf[js.Any]))
+      EngineVersion.foreach(__v => __obj.update("EngineVersion", __v.asInstanceOf[js.Any]))
+      Filters.foreach(__v => __obj.update("Filters", __v.asInstanceOf[js.Any]))
+      LicenseModel.foreach(__v => __obj.update("LicenseModel", __v.asInstanceOf[js.Any]))
+      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
+      MaxRecords.foreach(__v => __obj.update("MaxRecords", __v.asInstanceOf[js.Any]))
+      Vpc.foreach(__v => __obj.update("Vpc", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeOrderableDBInstanceOptionsMessage]
     }
   }
 
@@ -6279,22 +4906,12 @@ package rds {
         MaxRecords: js.UndefOr[IntegerOptional] = js.undefined,
         ResourceIdentifier: js.UndefOr[String] = js.undefined
     ): DescribePendingMaintenanceActionsMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Filters" -> Filters.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Marker" -> Marker.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MaxRecords" -> MaxRecords.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ResourceIdentifier" -> ResourceIdentifier.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribePendingMaintenanceActionsMessage]
+      val __obj = js.Dictionary.empty[js.Any]
+      Filters.foreach(__v => __obj.update("Filters", __v.asInstanceOf[js.Any]))
+      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
+      MaxRecords.foreach(__v => __obj.update("MaxRecords", __v.asInstanceOf[js.Any]))
+      ResourceIdentifier.foreach(__v => __obj.update("ResourceIdentifier", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribePendingMaintenanceActionsMessage]
     }
   }
 
@@ -6328,40 +4945,20 @@ package rds {
         ReservedDBInstanceId: js.UndefOr[String] = js.undefined,
         ReservedDBInstancesOfferingId: js.UndefOr[String] = js.undefined
     ): DescribeReservedDBInstancesMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "DBInstanceClass" -> DBInstanceClass.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Duration" -> Duration.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Filters" -> Filters.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Marker" -> Marker.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MaxRecords" -> MaxRecords.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MultiAZ" -> MultiAZ.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "OfferingType" -> OfferingType.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ProductDescription" -> ProductDescription.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ReservedDBInstanceId" -> ReservedDBInstanceId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ReservedDBInstancesOfferingId" -> ReservedDBInstancesOfferingId.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeReservedDBInstancesMessage]
+      val __obj = js.Dictionary.empty[js.Any]
+      DBInstanceClass.foreach(__v => __obj.update("DBInstanceClass", __v.asInstanceOf[js.Any]))
+      Duration.foreach(__v => __obj.update("Duration", __v.asInstanceOf[js.Any]))
+      Filters.foreach(__v => __obj.update("Filters", __v.asInstanceOf[js.Any]))
+      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
+      MaxRecords.foreach(__v => __obj.update("MaxRecords", __v.asInstanceOf[js.Any]))
+      MultiAZ.foreach(__v => __obj.update("MultiAZ", __v.asInstanceOf[js.Any]))
+      OfferingType.foreach(__v => __obj.update("OfferingType", __v.asInstanceOf[js.Any]))
+      ProductDescription.foreach(__v => __obj.update("ProductDescription", __v.asInstanceOf[js.Any]))
+      ReservedDBInstanceId.foreach(__v => __obj.update("ReservedDBInstanceId", __v.asInstanceOf[js.Any]))
+      ReservedDBInstancesOfferingId.foreach(
+        __v => __obj.update("ReservedDBInstancesOfferingId", __v.asInstanceOf[js.Any])
+      )
+      __obj.asInstanceOf[DescribeReservedDBInstancesMessage]
     }
   }
 
@@ -6393,39 +4990,19 @@ package rds {
         ProductDescription: js.UndefOr[String] = js.undefined,
         ReservedDBInstancesOfferingId: js.UndefOr[String] = js.undefined
     ): DescribeReservedDBInstancesOfferingsMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "DBInstanceClass" -> DBInstanceClass.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Duration" -> Duration.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Filters" -> Filters.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Marker" -> Marker.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MaxRecords" -> MaxRecords.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MultiAZ" -> MultiAZ.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "OfferingType" -> OfferingType.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ProductDescription" -> ProductDescription.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ReservedDBInstancesOfferingId" -> ReservedDBInstancesOfferingId.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal
-        .applyDynamicNamed("apply")(_fields: _*)
-        .asInstanceOf[DescribeReservedDBInstancesOfferingsMessage]
+      val __obj = js.Dictionary.empty[js.Any]
+      DBInstanceClass.foreach(__v => __obj.update("DBInstanceClass", __v.asInstanceOf[js.Any]))
+      Duration.foreach(__v => __obj.update("Duration", __v.asInstanceOf[js.Any]))
+      Filters.foreach(__v => __obj.update("Filters", __v.asInstanceOf[js.Any]))
+      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
+      MaxRecords.foreach(__v => __obj.update("MaxRecords", __v.asInstanceOf[js.Any]))
+      MultiAZ.foreach(__v => __obj.update("MultiAZ", __v.asInstanceOf[js.Any]))
+      OfferingType.foreach(__v => __obj.update("OfferingType", __v.asInstanceOf[js.Any]))
+      ProductDescription.foreach(__v => __obj.update("ProductDescription", __v.asInstanceOf[js.Any]))
+      ReservedDBInstancesOfferingId.foreach(
+        __v => __obj.update("ReservedDBInstancesOfferingId", __v.asInstanceOf[js.Any])
+      )
+      __obj.asInstanceOf[DescribeReservedDBInstancesOfferingsMessage]
     }
   }
 
@@ -6447,22 +5024,12 @@ package rds {
         MaxRecords: js.UndefOr[IntegerOptional] = js.undefined,
         RegionName: js.UndefOr[String] = js.undefined
     ): DescribeSourceRegionsMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Filters" -> Filters.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Marker" -> Marker.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MaxRecords" -> MaxRecords.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "RegionName" -> RegionName.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeSourceRegionsMessage]
+      val __obj = js.Dictionary.empty[js.Any]
+      Filters.foreach(__v => __obj.update("Filters", __v.asInstanceOf[js.Any]))
+      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
+      MaxRecords.foreach(__v => __obj.update("MaxRecords", __v.asInstanceOf[js.Any]))
+      RegionName.foreach(__v => __obj.update("RegionName", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeSourceRegionsMessage]
     }
   }
 
@@ -6478,13 +5045,11 @@ package rds {
     def apply(
         DBInstanceIdentifier: String
     ): DescribeValidDBInstanceModificationsMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "DBInstanceIdentifier" -> DBInstanceIdentifier.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal
-        .applyDynamicNamed("apply")(_fields: _*)
-        .asInstanceOf[DescribeValidDBInstanceModificationsMessage]
+      __obj.asInstanceOf[DescribeValidDBInstanceModificationsMessage]
     }
   }
 
@@ -6497,15 +5062,11 @@ package rds {
     def apply(
         ValidDBInstanceModificationsMessage: js.UndefOr[ValidDBInstanceModificationsMessage] = js.undefined
     ): DescribeValidDBInstanceModificationsResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ValidDBInstanceModificationsMessage" -> ValidDBInstanceModificationsMessage.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal
-        .applyDynamicNamed("apply")(_fields: _*)
-        .asInstanceOf[DescribeValidDBInstanceModificationsResult]
+      val __obj = js.Dictionary.empty[js.Any]
+      ValidDBInstanceModificationsMessage.foreach(
+        __v => __obj.update("ValidDBInstanceModificationsMessage", __v.asInstanceOf[js.Any])
+      )
+      __obj.asInstanceOf[DescribeValidDBInstanceModificationsResult]
     }
   }
 
@@ -6527,22 +5088,12 @@ package rds {
         IAMRoleName: js.UndefOr[String] = js.undefined,
         Status: js.UndefOr[String] = js.undefined
     ): DomainMembership = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Domain" -> Domain.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "FQDN" -> FQDN.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "IAMRoleName" -> IAMRoleName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Status" -> Status.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DomainMembership]
+      val __obj = js.Dictionary.empty[js.Any]
+      Domain.foreach(__v => __obj.update("Domain", __v.asInstanceOf[js.Any]))
+      FQDN.foreach(__v => __obj.update("FQDN", __v.asInstanceOf[js.Any]))
+      IAMRoleName.foreach(__v => __obj.update("IAMRoleName", __v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.update("Status", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DomainMembership]
     }
   }
 
@@ -6560,16 +5111,10 @@ package rds {
         From: js.UndefOr[Double] = js.undefined,
         To: js.UndefOr[Double] = js.undefined
     ): DoubleRange = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "From" -> From.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "To" -> To.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DoubleRange]
+      val __obj = js.Dictionary.empty[js.Any]
+      From.foreach(__v => __obj.update("From", __v.asInstanceOf[js.Any]))
+      To.foreach(__v => __obj.update("To", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DoubleRange]
     }
   }
 
@@ -6589,19 +5134,11 @@ package rds {
         LogFileData: js.UndefOr[String] = js.undefined,
         Marker: js.UndefOr[String] = js.undefined
     ): DownloadDBLogFilePortionDetails = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "AdditionalDataPending" -> AdditionalDataPending.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "LogFileData" -> LogFileData.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Marker" -> Marker.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DownloadDBLogFilePortionDetails]
+      val __obj = js.Dictionary.empty[js.Any]
+      AdditionalDataPending.foreach(__v => __obj.update("AdditionalDataPending", __v.asInstanceOf[js.Any]))
+      LogFileData.foreach(__v => __obj.update("LogFileData", __v.asInstanceOf[js.Any]))
+      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DownloadDBLogFilePortionDetails]
     }
   }
 
@@ -6623,18 +5160,14 @@ package rds {
         Marker: js.UndefOr[String] = js.undefined,
         NumberOfLines: js.UndefOr[Int] = js.undefined
     ): DownloadDBLogFilePortionMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "DBInstanceIdentifier" -> DBInstanceIdentifier.asInstanceOf[js.Any],
-        "LogFileName"          -> LogFileName.asInstanceOf[js.Any],
-        "Marker" -> Marker.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NumberOfLines" -> NumberOfLines.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "LogFileName"          -> LogFileName.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DownloadDBLogFilePortionMessage]
+      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
+      NumberOfLines.foreach(__v => __obj.update("NumberOfLines", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DownloadDBLogFilePortionMessage]
     }
   }
 
@@ -6659,22 +5192,12 @@ package rds {
         EC2SecurityGroupOwnerId: js.UndefOr[String] = js.undefined,
         Status: js.UndefOr[String] = js.undefined
     ): EC2SecurityGroup = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "EC2SecurityGroupId" -> EC2SecurityGroupId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "EC2SecurityGroupName" -> EC2SecurityGroupName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "EC2SecurityGroupOwnerId" -> EC2SecurityGroupOwnerId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Status" -> Status.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[EC2SecurityGroup]
+      val __obj = js.Dictionary.empty[js.Any]
+      EC2SecurityGroupId.foreach(__v => __obj.update("EC2SecurityGroupId", __v.asInstanceOf[js.Any]))
+      EC2SecurityGroupName.foreach(__v => __obj.update("EC2SecurityGroupName", __v.asInstanceOf[js.Any]))
+      EC2SecurityGroupOwnerId.foreach(__v => __obj.update("EC2SecurityGroupOwnerId", __v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.update("Status", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[EC2SecurityGroup]
     }
   }
 
@@ -6698,19 +5221,11 @@ package rds {
         HostedZoneId: js.UndefOr[String] = js.undefined,
         Port: js.UndefOr[Int] = js.undefined
     ): Endpoint = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Address" -> Address.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "HostedZoneId" -> HostedZoneId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Port" -> Port.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Endpoint]
+      val __obj = js.Dictionary.empty[js.Any]
+      Address.foreach(__v => __obj.update("Address", __v.asInstanceOf[js.Any]))
+      HostedZoneId.foreach(__v => __obj.update("HostedZoneId", __v.asInstanceOf[js.Any]))
+      Port.foreach(__v => __obj.update("Port", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Endpoint]
     }
   }
 
@@ -6730,19 +5245,11 @@ package rds {
         Marker: js.UndefOr[String] = js.undefined,
         Parameters: js.UndefOr[ParametersList] = js.undefined
     ): EngineDefaults = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "DBParameterGroupFamily" -> DBParameterGroupFamily.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Marker" -> Marker.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Parameters" -> Parameters.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[EngineDefaults]
+      val __obj = js.Dictionary.empty[js.Any]
+      DBParameterGroupFamily.foreach(__v => __obj.update("DBParameterGroupFamily", __v.asInstanceOf[js.Any]))
+      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
+      Parameters.foreach(__v => __obj.update("Parameters", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[EngineDefaults]
     }
   }
 
@@ -6768,28 +5275,14 @@ package rds {
         SourceIdentifier: js.UndefOr[String] = js.undefined,
         SourceType: js.UndefOr[SourceType] = js.undefined
     ): Event = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Date" -> Date.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "EventCategories" -> EventCategories.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Message" -> Message.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SourceArn" -> SourceArn.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SourceIdentifier" -> SourceIdentifier.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SourceType" -> SourceType.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Event]
+      val __obj = js.Dictionary.empty[js.Any]
+      Date.foreach(__v => __obj.update("Date", __v.asInstanceOf[js.Any]))
+      EventCategories.foreach(__v => __obj.update("EventCategories", __v.asInstanceOf[js.Any]))
+      Message.foreach(__v => __obj.update("Message", __v.asInstanceOf[js.Any]))
+      SourceArn.foreach(__v => __obj.update("SourceArn", __v.asInstanceOf[js.Any]))
+      SourceIdentifier.foreach(__v => __obj.update("SourceIdentifier", __v.asInstanceOf[js.Any]))
+      SourceType.foreach(__v => __obj.update("SourceType", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Event]
     }
   }
 
@@ -6807,16 +5300,10 @@ package rds {
         EventCategories: js.UndefOr[EventCategoriesList] = js.undefined,
         SourceType: js.UndefOr[String] = js.undefined
     ): EventCategoriesMap = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "EventCategories" -> EventCategories.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SourceType" -> SourceType.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[EventCategoriesMap]
+      val __obj = js.Dictionary.empty[js.Any]
+      EventCategories.foreach(__v => __obj.update("EventCategories", __v.asInstanceOf[js.Any]))
+      SourceType.foreach(__v => __obj.update("SourceType", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[EventCategoriesMap]
     }
   }
 
@@ -6832,13 +5319,9 @@ package rds {
     def apply(
         EventCategoriesMapList: js.UndefOr[EventCategoriesMapList] = js.undefined
     ): EventCategoriesMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "EventCategoriesMapList" -> EventCategoriesMapList.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[EventCategoriesMessage]
+      val __obj = js.Dictionary.empty[js.Any]
+      EventCategoriesMapList.foreach(__v => __obj.update("EventCategoriesMapList", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[EventCategoriesMessage]
     }
   }
 
@@ -6872,40 +5355,18 @@ package rds {
         Status: js.UndefOr[String] = js.undefined,
         SubscriptionCreationTime: js.UndefOr[String] = js.undefined
     ): EventSubscription = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "CustSubscriptionId" -> CustSubscriptionId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "CustomerAwsId" -> CustomerAwsId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Enabled" -> Enabled.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "EventCategoriesList" -> EventCategoriesList.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "EventSubscriptionArn" -> EventSubscriptionArn.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SnsTopicArn" -> SnsTopicArn.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SourceIdsList" -> SourceIdsList.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SourceType" -> SourceType.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Status" -> Status.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SubscriptionCreationTime" -> SubscriptionCreationTime.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[EventSubscription]
+      val __obj = js.Dictionary.empty[js.Any]
+      CustSubscriptionId.foreach(__v => __obj.update("CustSubscriptionId", __v.asInstanceOf[js.Any]))
+      CustomerAwsId.foreach(__v => __obj.update("CustomerAwsId", __v.asInstanceOf[js.Any]))
+      Enabled.foreach(__v => __obj.update("Enabled", __v.asInstanceOf[js.Any]))
+      EventCategoriesList.foreach(__v => __obj.update("EventCategoriesList", __v.asInstanceOf[js.Any]))
+      EventSubscriptionArn.foreach(__v => __obj.update("EventSubscriptionArn", __v.asInstanceOf[js.Any]))
+      SnsTopicArn.foreach(__v => __obj.update("SnsTopicArn", __v.asInstanceOf[js.Any]))
+      SourceIdsList.foreach(__v => __obj.update("SourceIdsList", __v.asInstanceOf[js.Any]))
+      SourceType.foreach(__v => __obj.update("SourceType", __v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.update("Status", __v.asInstanceOf[js.Any]))
+      SubscriptionCreationTime.foreach(__v => __obj.update("SubscriptionCreationTime", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[EventSubscription]
     }
   }
 
@@ -6923,16 +5384,10 @@ package rds {
         EventSubscriptionsList: js.UndefOr[EventSubscriptionsList] = js.undefined,
         Marker: js.UndefOr[String] = js.undefined
     ): EventSubscriptionsMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "EventSubscriptionsList" -> EventSubscriptionsList.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Marker" -> Marker.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[EventSubscriptionsMessage]
+      val __obj = js.Dictionary.empty[js.Any]
+      EventSubscriptionsList.foreach(__v => __obj.update("EventSubscriptionsList", __v.asInstanceOf[js.Any]))
+      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[EventSubscriptionsMessage]
     }
   }
 
@@ -6950,16 +5405,10 @@ package rds {
         Events: js.UndefOr[EventList] = js.undefined,
         Marker: js.UndefOr[String] = js.undefined
     ): EventsMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Events" -> Events.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Marker" -> Marker.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[EventsMessage]
+      val __obj = js.Dictionary.empty[js.Any]
+      Events.foreach(__v => __obj.update("Events", __v.asInstanceOf[js.Any]))
+      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[EventsMessage]
     }
   }
 
@@ -6977,14 +5426,12 @@ package rds {
         DBClusterIdentifier: String,
         TargetDBInstanceIdentifier: js.UndefOr[String] = js.undefined
     ): FailoverDBClusterMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "DBClusterIdentifier" -> DBClusterIdentifier.asInstanceOf[js.Any],
-        "TargetDBInstanceIdentifier" -> TargetDBInstanceIdentifier.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "DBClusterIdentifier" -> DBClusterIdentifier.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[FailoverDBClusterMessage]
+      TargetDBInstanceIdentifier.foreach(__v => __obj.update("TargetDBInstanceIdentifier", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[FailoverDBClusterMessage]
     }
   }
 
@@ -6997,13 +5444,9 @@ package rds {
     def apply(
         DBCluster: js.UndefOr[DBCluster] = js.undefined
     ): FailoverDBClusterResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "DBCluster" -> DBCluster.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[FailoverDBClusterResult]
+      val __obj = js.Dictionary.empty[js.Any]
+      DBCluster.foreach(__v => __obj.update("DBCluster", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[FailoverDBClusterResult]
     }
   }
 
@@ -7029,12 +5472,12 @@ package rds {
         Name: String,
         Values: FilterValueList
     ): Filter = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "Name"   -> Name.asInstanceOf[js.Any],
         "Values" -> Values.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Filter]
+      __obj.asInstanceOf[Filter]
     }
   }
 
@@ -7068,40 +5511,18 @@ package rds {
         Status: js.UndefOr[String] = js.undefined,
         StorageEncrypted: js.UndefOr[BooleanOptional] = js.undefined
     ): GlobalCluster = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "DatabaseName" -> DatabaseName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DeletionProtection" -> DeletionProtection.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Engine" -> Engine.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "EngineVersion" -> EngineVersion.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "GlobalClusterArn" -> GlobalClusterArn.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "GlobalClusterIdentifier" -> GlobalClusterIdentifier.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "GlobalClusterMembers" -> GlobalClusterMembers.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "GlobalClusterResourceId" -> GlobalClusterResourceId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Status" -> Status.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "StorageEncrypted" -> StorageEncrypted.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GlobalCluster]
+      val __obj = js.Dictionary.empty[js.Any]
+      DatabaseName.foreach(__v => __obj.update("DatabaseName", __v.asInstanceOf[js.Any]))
+      DeletionProtection.foreach(__v => __obj.update("DeletionProtection", __v.asInstanceOf[js.Any]))
+      Engine.foreach(__v => __obj.update("Engine", __v.asInstanceOf[js.Any]))
+      EngineVersion.foreach(__v => __obj.update("EngineVersion", __v.asInstanceOf[js.Any]))
+      GlobalClusterArn.foreach(__v => __obj.update("GlobalClusterArn", __v.asInstanceOf[js.Any]))
+      GlobalClusterIdentifier.foreach(__v => __obj.update("GlobalClusterIdentifier", __v.asInstanceOf[js.Any]))
+      GlobalClusterMembers.foreach(__v => __obj.update("GlobalClusterMembers", __v.asInstanceOf[js.Any]))
+      GlobalClusterResourceId.foreach(__v => __obj.update("GlobalClusterResourceId", __v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.update("Status", __v.asInstanceOf[js.Any]))
+      StorageEncrypted.foreach(__v => __obj.update("StorageEncrypted", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GlobalCluster]
     }
   }
 
@@ -7121,19 +5542,11 @@ package rds {
         IsWriter: js.UndefOr[Boolean] = js.undefined,
         Readers: js.UndefOr[ReadersArnList] = js.undefined
     ): GlobalClusterMember = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "DBClusterArn" -> DBClusterArn.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "IsWriter" -> IsWriter.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Readers" -> Readers.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GlobalClusterMember]
+      val __obj = js.Dictionary.empty[js.Any]
+      DBClusterArn.foreach(__v => __obj.update("DBClusterArn", __v.asInstanceOf[js.Any]))
+      IsWriter.foreach(__v => __obj.update("IsWriter", __v.asInstanceOf[js.Any]))
+      Readers.foreach(__v => __obj.update("Readers", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GlobalClusterMember]
     }
   }
 
@@ -7148,16 +5561,10 @@ package rds {
         GlobalClusters: js.UndefOr[GlobalClusterList] = js.undefined,
         Marker: js.UndefOr[String] = js.undefined
     ): GlobalClustersMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "GlobalClusters" -> GlobalClusters.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Marker" -> Marker.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GlobalClustersMessage]
+      val __obj = js.Dictionary.empty[js.Any]
+      GlobalClusters.foreach(__v => __obj.update("GlobalClusters", __v.asInstanceOf[js.Any]))
+      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GlobalClustersMessage]
     }
   }
 
@@ -7175,16 +5582,10 @@ package rds {
         CIDRIP: js.UndefOr[String] = js.undefined,
         Status: js.UndefOr[String] = js.undefined
     ): IPRange = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "CIDRIP" -> CIDRIP.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Status" -> Status.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[IPRange]
+      val __obj = js.Dictionary.empty[js.Any]
+      CIDRIP.foreach(__v => __obj.update("CIDRIP", __v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.update("Status", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[IPRange]
     }
   }
 
@@ -7202,14 +5603,12 @@ package rds {
         ResourceName: String,
         Filters: js.UndefOr[FilterList] = js.undefined
     ): ListTagsForResourceMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ResourceName" -> ResourceName.asInstanceOf[js.Any],
-        "Filters" -> Filters.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "ResourceName" -> ResourceName.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListTagsForResourceMessage]
+      Filters.foreach(__v => __obj.update("Filters", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListTagsForResourceMessage]
     }
   }
 
@@ -7227,16 +5626,10 @@ package rds {
         AllowedValue: js.UndefOr[String] = js.undefined,
         MinimumEngineVersion: js.UndefOr[String] = js.undefined
     ): MinimumEngineVersionPerAllowedValue = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "AllowedValue" -> AllowedValue.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MinimumEngineVersion" -> MinimumEngineVersion.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[MinimumEngineVersionPerAllowedValue]
+      val __obj = js.Dictionary.empty[js.Any]
+      AllowedValue.foreach(__v => __obj.update("AllowedValue", __v.asInstanceOf[js.Any]))
+      MinimumEngineVersion.foreach(__v => __obj.update("MinimumEngineVersion", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[MinimumEngineVersionPerAllowedValue]
     }
   }
 
@@ -7255,20 +5648,14 @@ package rds {
         SecondsBeforeTimeout: js.UndefOr[IntegerOptional] = js.undefined,
         TimeoutAction: js.UndefOr[String] = js.undefined
     ): ModifyCurrentDBClusterCapacityMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "DBClusterIdentifier" -> DBClusterIdentifier.asInstanceOf[js.Any],
-        "Capacity" -> Capacity.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SecondsBeforeTimeout" -> SecondsBeforeTimeout.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "TimeoutAction" -> TimeoutAction.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "DBClusterIdentifier" -> DBClusterIdentifier.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ModifyCurrentDBClusterCapacityMessage]
+      Capacity.foreach(__v => __obj.update("Capacity", __v.asInstanceOf[js.Any]))
+      SecondsBeforeTimeout.foreach(__v => __obj.update("SecondsBeforeTimeout", __v.asInstanceOf[js.Any]))
+      TimeoutAction.foreach(__v => __obj.update("TimeoutAction", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ModifyCurrentDBClusterCapacityMessage]
     }
   }
 
@@ -7287,20 +5674,14 @@ package rds {
         ExcludedMembers: js.UndefOr[StringList] = js.undefined,
         StaticMembers: js.UndefOr[StringList] = js.undefined
     ): ModifyDBClusterEndpointMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "DBClusterEndpointIdentifier" -> DBClusterEndpointIdentifier.asInstanceOf[js.Any],
-        "EndpointType" -> EndpointType.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ExcludedMembers" -> ExcludedMembers.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "StaticMembers" -> StaticMembers.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "DBClusterEndpointIdentifier" -> DBClusterEndpointIdentifier.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ModifyDBClusterEndpointMessage]
+      EndpointType.foreach(__v => __obj.update("EndpointType", __v.asInstanceOf[js.Any]))
+      ExcludedMembers.foreach(__v => __obj.update("ExcludedMembers", __v.asInstanceOf[js.Any]))
+      StaticMembers.foreach(__v => __obj.update("StaticMembers", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ModifyDBClusterEndpointMessage]
     }
   }
 
@@ -7352,65 +5733,33 @@ package rds {
         ScalingConfiguration: js.UndefOr[ScalingConfiguration] = js.undefined,
         VpcSecurityGroupIds: js.UndefOr[VpcSecurityGroupIdList] = js.undefined
     ): ModifyDBClusterMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "DBClusterIdentifier" -> DBClusterIdentifier.asInstanceOf[js.Any],
-        "ApplyImmediately" -> ApplyImmediately.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "BacktrackWindow" -> BacktrackWindow.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "BackupRetentionPeriod" -> BackupRetentionPeriod.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "CloudwatchLogsExportConfiguration" -> CloudwatchLogsExportConfiguration.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "CopyTagsToSnapshot" -> CopyTagsToSnapshot.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DBClusterParameterGroupName" -> DBClusterParameterGroupName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DeletionProtection" -> DeletionProtection.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "EnableHttpEndpoint" -> EnableHttpEndpoint.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "EnableIAMDatabaseAuthentication" -> EnableIAMDatabaseAuthentication.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "EngineVersion" -> EngineVersion.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MasterUserPassword" -> MasterUserPassword.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NewDBClusterIdentifier" -> NewDBClusterIdentifier.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "OptionGroupName" -> OptionGroupName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Port" -> Port.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "PreferredBackupWindow" -> PreferredBackupWindow.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "PreferredMaintenanceWindow" -> PreferredMaintenanceWindow.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ScalingConfiguration" -> ScalingConfiguration.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "VpcSecurityGroupIds" -> VpcSecurityGroupIds.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "DBClusterIdentifier" -> DBClusterIdentifier.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ModifyDBClusterMessage]
+      ApplyImmediately.foreach(__v => __obj.update("ApplyImmediately", __v.asInstanceOf[js.Any]))
+      BacktrackWindow.foreach(__v => __obj.update("BacktrackWindow", __v.asInstanceOf[js.Any]))
+      BackupRetentionPeriod.foreach(__v => __obj.update("BackupRetentionPeriod", __v.asInstanceOf[js.Any]))
+      CloudwatchLogsExportConfiguration.foreach(
+        __v => __obj.update("CloudwatchLogsExportConfiguration", __v.asInstanceOf[js.Any])
+      )
+      CopyTagsToSnapshot.foreach(__v => __obj.update("CopyTagsToSnapshot", __v.asInstanceOf[js.Any]))
+      DBClusterParameterGroupName.foreach(__v => __obj.update("DBClusterParameterGroupName", __v.asInstanceOf[js.Any]))
+      DeletionProtection.foreach(__v => __obj.update("DeletionProtection", __v.asInstanceOf[js.Any]))
+      EnableHttpEndpoint.foreach(__v => __obj.update("EnableHttpEndpoint", __v.asInstanceOf[js.Any]))
+      EnableIAMDatabaseAuthentication.foreach(
+        __v => __obj.update("EnableIAMDatabaseAuthentication", __v.asInstanceOf[js.Any])
+      )
+      EngineVersion.foreach(__v => __obj.update("EngineVersion", __v.asInstanceOf[js.Any]))
+      MasterUserPassword.foreach(__v => __obj.update("MasterUserPassword", __v.asInstanceOf[js.Any]))
+      NewDBClusterIdentifier.foreach(__v => __obj.update("NewDBClusterIdentifier", __v.asInstanceOf[js.Any]))
+      OptionGroupName.foreach(__v => __obj.update("OptionGroupName", __v.asInstanceOf[js.Any]))
+      Port.foreach(__v => __obj.update("Port", __v.asInstanceOf[js.Any]))
+      PreferredBackupWindow.foreach(__v => __obj.update("PreferredBackupWindow", __v.asInstanceOf[js.Any]))
+      PreferredMaintenanceWindow.foreach(__v => __obj.update("PreferredMaintenanceWindow", __v.asInstanceOf[js.Any]))
+      ScalingConfiguration.foreach(__v => __obj.update("ScalingConfiguration", __v.asInstanceOf[js.Any]))
+      VpcSecurityGroupIds.foreach(__v => __obj.update("VpcSecurityGroupIds", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ModifyDBClusterMessage]
     }
   }
 
@@ -7428,12 +5777,12 @@ package rds {
         DBClusterParameterGroupName: String,
         Parameters: ParametersList
     ): ModifyDBClusterParameterGroupMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "DBClusterParameterGroupName" -> DBClusterParameterGroupName.asInstanceOf[js.Any],
         "Parameters"                  -> Parameters.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ModifyDBClusterParameterGroupMessage]
+      __obj.asInstanceOf[ModifyDBClusterParameterGroupMessage]
     }
   }
 
@@ -7446,13 +5795,9 @@ package rds {
     def apply(
         DBCluster: js.UndefOr[DBCluster] = js.undefined
     ): ModifyDBClusterResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "DBCluster" -> DBCluster.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ModifyDBClusterResult]
+      val __obj = js.Dictionary.empty[js.Any]
+      DBCluster.foreach(__v => __obj.update("DBCluster", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ModifyDBClusterResult]
     }
   }
 
@@ -7474,18 +5819,14 @@ package rds {
         ValuesToAdd: js.UndefOr[AttributeValueList] = js.undefined,
         ValuesToRemove: js.UndefOr[AttributeValueList] = js.undefined
     ): ModifyDBClusterSnapshotAttributeMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "AttributeName"               -> AttributeName.asInstanceOf[js.Any],
-        "DBClusterSnapshotIdentifier" -> DBClusterSnapshotIdentifier.asInstanceOf[js.Any],
-        "ValuesToAdd" -> ValuesToAdd.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ValuesToRemove" -> ValuesToRemove.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "DBClusterSnapshotIdentifier" -> DBClusterSnapshotIdentifier.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ModifyDBClusterSnapshotAttributeMessage]
+      ValuesToAdd.foreach(__v => __obj.update("ValuesToAdd", __v.asInstanceOf[js.Any]))
+      ValuesToRemove.foreach(__v => __obj.update("ValuesToRemove", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ModifyDBClusterSnapshotAttributeMessage]
     }
   }
 
@@ -7498,13 +5839,11 @@ package rds {
     def apply(
         DBClusterSnapshotAttributesResult: js.UndefOr[DBClusterSnapshotAttributesResult] = js.undefined
     ): ModifyDBClusterSnapshotAttributeResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "DBClusterSnapshotAttributesResult" -> DBClusterSnapshotAttributesResult.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ModifyDBClusterSnapshotAttributeResult]
+      val __obj = js.Dictionary.empty[js.Any]
+      DBClusterSnapshotAttributesResult.foreach(
+        __v => __obj.update("DBClusterSnapshotAttributesResult", __v.asInstanceOf[js.Any])
+      )
+      __obj.asInstanceOf[ModifyDBClusterSnapshotAttributeResult]
     }
   }
 
@@ -7598,128 +5937,56 @@ package rds {
         UseDefaultProcessorFeatures: js.UndefOr[BooleanOptional] = js.undefined,
         VpcSecurityGroupIds: js.UndefOr[VpcSecurityGroupIdList] = js.undefined
     ): ModifyDBInstanceMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "DBInstanceIdentifier" -> DBInstanceIdentifier.asInstanceOf[js.Any],
-        "AllocatedStorage" -> AllocatedStorage.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "AllowMajorVersionUpgrade" -> AllowMajorVersionUpgrade.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ApplyImmediately" -> ApplyImmediately.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "AutoMinorVersionUpgrade" -> AutoMinorVersionUpgrade.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "BackupRetentionPeriod" -> BackupRetentionPeriod.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "CACertificateIdentifier" -> CACertificateIdentifier.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "CloudwatchLogsExportConfiguration" -> CloudwatchLogsExportConfiguration.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "CopyTagsToSnapshot" -> CopyTagsToSnapshot.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DBInstanceClass" -> DBInstanceClass.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DBParameterGroupName" -> DBParameterGroupName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DBPortNumber" -> DBPortNumber.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DBSecurityGroups" -> DBSecurityGroups.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DBSubnetGroupName" -> DBSubnetGroupName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DeletionProtection" -> DeletionProtection.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Domain" -> Domain.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DomainIAMRoleName" -> DomainIAMRoleName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "EnableIAMDatabaseAuthentication" -> EnableIAMDatabaseAuthentication.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "EnablePerformanceInsights" -> EnablePerformanceInsights.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "EngineVersion" -> EngineVersion.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Iops" -> Iops.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "LicenseModel" -> LicenseModel.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MasterUserPassword" -> MasterUserPassword.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MonitoringInterval" -> MonitoringInterval.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MonitoringRoleArn" -> MonitoringRoleArn.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MultiAZ" -> MultiAZ.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NewDBInstanceIdentifier" -> NewDBInstanceIdentifier.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "OptionGroupName" -> OptionGroupName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "PerformanceInsightsKMSKeyId" -> PerformanceInsightsKMSKeyId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "PerformanceInsightsRetentionPeriod" -> PerformanceInsightsRetentionPeriod.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "PreferredBackupWindow" -> PreferredBackupWindow.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "PreferredMaintenanceWindow" -> PreferredMaintenanceWindow.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ProcessorFeatures" -> ProcessorFeatures.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "PromotionTier" -> PromotionTier.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "PubliclyAccessible" -> PubliclyAccessible.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "StorageType" -> StorageType.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "TdeCredentialArn" -> TdeCredentialArn.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "TdeCredentialPassword" -> TdeCredentialPassword.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "UseDefaultProcessorFeatures" -> UseDefaultProcessorFeatures.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "VpcSecurityGroupIds" -> VpcSecurityGroupIds.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "DBInstanceIdentifier" -> DBInstanceIdentifier.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ModifyDBInstanceMessage]
+      AllocatedStorage.foreach(__v => __obj.update("AllocatedStorage", __v.asInstanceOf[js.Any]))
+      AllowMajorVersionUpgrade.foreach(__v => __obj.update("AllowMajorVersionUpgrade", __v.asInstanceOf[js.Any]))
+      ApplyImmediately.foreach(__v => __obj.update("ApplyImmediately", __v.asInstanceOf[js.Any]))
+      AutoMinorVersionUpgrade.foreach(__v => __obj.update("AutoMinorVersionUpgrade", __v.asInstanceOf[js.Any]))
+      BackupRetentionPeriod.foreach(__v => __obj.update("BackupRetentionPeriod", __v.asInstanceOf[js.Any]))
+      CACertificateIdentifier.foreach(__v => __obj.update("CACertificateIdentifier", __v.asInstanceOf[js.Any]))
+      CloudwatchLogsExportConfiguration.foreach(
+        __v => __obj.update("CloudwatchLogsExportConfiguration", __v.asInstanceOf[js.Any])
+      )
+      CopyTagsToSnapshot.foreach(__v => __obj.update("CopyTagsToSnapshot", __v.asInstanceOf[js.Any]))
+      DBInstanceClass.foreach(__v => __obj.update("DBInstanceClass", __v.asInstanceOf[js.Any]))
+      DBParameterGroupName.foreach(__v => __obj.update("DBParameterGroupName", __v.asInstanceOf[js.Any]))
+      DBPortNumber.foreach(__v => __obj.update("DBPortNumber", __v.asInstanceOf[js.Any]))
+      DBSecurityGroups.foreach(__v => __obj.update("DBSecurityGroups", __v.asInstanceOf[js.Any]))
+      DBSubnetGroupName.foreach(__v => __obj.update("DBSubnetGroupName", __v.asInstanceOf[js.Any]))
+      DeletionProtection.foreach(__v => __obj.update("DeletionProtection", __v.asInstanceOf[js.Any]))
+      Domain.foreach(__v => __obj.update("Domain", __v.asInstanceOf[js.Any]))
+      DomainIAMRoleName.foreach(__v => __obj.update("DomainIAMRoleName", __v.asInstanceOf[js.Any]))
+      EnableIAMDatabaseAuthentication.foreach(
+        __v => __obj.update("EnableIAMDatabaseAuthentication", __v.asInstanceOf[js.Any])
+      )
+      EnablePerformanceInsights.foreach(__v => __obj.update("EnablePerformanceInsights", __v.asInstanceOf[js.Any]))
+      EngineVersion.foreach(__v => __obj.update("EngineVersion", __v.asInstanceOf[js.Any]))
+      Iops.foreach(__v => __obj.update("Iops", __v.asInstanceOf[js.Any]))
+      LicenseModel.foreach(__v => __obj.update("LicenseModel", __v.asInstanceOf[js.Any]))
+      MasterUserPassword.foreach(__v => __obj.update("MasterUserPassword", __v.asInstanceOf[js.Any]))
+      MonitoringInterval.foreach(__v => __obj.update("MonitoringInterval", __v.asInstanceOf[js.Any]))
+      MonitoringRoleArn.foreach(__v => __obj.update("MonitoringRoleArn", __v.asInstanceOf[js.Any]))
+      MultiAZ.foreach(__v => __obj.update("MultiAZ", __v.asInstanceOf[js.Any]))
+      NewDBInstanceIdentifier.foreach(__v => __obj.update("NewDBInstanceIdentifier", __v.asInstanceOf[js.Any]))
+      OptionGroupName.foreach(__v => __obj.update("OptionGroupName", __v.asInstanceOf[js.Any]))
+      PerformanceInsightsKMSKeyId.foreach(__v => __obj.update("PerformanceInsightsKMSKeyId", __v.asInstanceOf[js.Any]))
+      PerformanceInsightsRetentionPeriod.foreach(
+        __v => __obj.update("PerformanceInsightsRetentionPeriod", __v.asInstanceOf[js.Any])
+      )
+      PreferredBackupWindow.foreach(__v => __obj.update("PreferredBackupWindow", __v.asInstanceOf[js.Any]))
+      PreferredMaintenanceWindow.foreach(__v => __obj.update("PreferredMaintenanceWindow", __v.asInstanceOf[js.Any]))
+      ProcessorFeatures.foreach(__v => __obj.update("ProcessorFeatures", __v.asInstanceOf[js.Any]))
+      PromotionTier.foreach(__v => __obj.update("PromotionTier", __v.asInstanceOf[js.Any]))
+      PubliclyAccessible.foreach(__v => __obj.update("PubliclyAccessible", __v.asInstanceOf[js.Any]))
+      StorageType.foreach(__v => __obj.update("StorageType", __v.asInstanceOf[js.Any]))
+      TdeCredentialArn.foreach(__v => __obj.update("TdeCredentialArn", __v.asInstanceOf[js.Any]))
+      TdeCredentialPassword.foreach(__v => __obj.update("TdeCredentialPassword", __v.asInstanceOf[js.Any]))
+      UseDefaultProcessorFeatures.foreach(__v => __obj.update("UseDefaultProcessorFeatures", __v.asInstanceOf[js.Any]))
+      VpcSecurityGroupIds.foreach(__v => __obj.update("VpcSecurityGroupIds", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ModifyDBInstanceMessage]
     }
   }
 
@@ -7732,13 +5999,9 @@ package rds {
     def apply(
         DBInstance: js.UndefOr[DBInstance] = js.undefined
     ): ModifyDBInstanceResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "DBInstance" -> DBInstance.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ModifyDBInstanceResult]
+      val __obj = js.Dictionary.empty[js.Any]
+      DBInstance.foreach(__v => __obj.update("DBInstance", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ModifyDBInstanceResult]
     }
   }
 
@@ -7756,12 +6019,12 @@ package rds {
         DBParameterGroupName: String,
         Parameters: ParametersList
     ): ModifyDBParameterGroupMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "DBParameterGroupName" -> DBParameterGroupName.asInstanceOf[js.Any],
         "Parameters"           -> Parameters.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ModifyDBParameterGroupMessage]
+      __obj.asInstanceOf[ModifyDBParameterGroupMessage]
     }
   }
 
@@ -7783,18 +6046,14 @@ package rds {
         ValuesToAdd: js.UndefOr[AttributeValueList] = js.undefined,
         ValuesToRemove: js.UndefOr[AttributeValueList] = js.undefined
     ): ModifyDBSnapshotAttributeMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "AttributeName"        -> AttributeName.asInstanceOf[js.Any],
-        "DBSnapshotIdentifier" -> DBSnapshotIdentifier.asInstanceOf[js.Any],
-        "ValuesToAdd" -> ValuesToAdd.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ValuesToRemove" -> ValuesToRemove.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "DBSnapshotIdentifier" -> DBSnapshotIdentifier.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ModifyDBSnapshotAttributeMessage]
+      ValuesToAdd.foreach(__v => __obj.update("ValuesToAdd", __v.asInstanceOf[js.Any]))
+      ValuesToRemove.foreach(__v => __obj.update("ValuesToRemove", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ModifyDBSnapshotAttributeMessage]
     }
   }
 
@@ -7807,13 +6066,9 @@ package rds {
     def apply(
         DBSnapshotAttributesResult: js.UndefOr[DBSnapshotAttributesResult] = js.undefined
     ): ModifyDBSnapshotAttributeResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "DBSnapshotAttributesResult" -> DBSnapshotAttributesResult.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ModifyDBSnapshotAttributeResult]
+      val __obj = js.Dictionary.empty[js.Any]
+      DBSnapshotAttributesResult.foreach(__v => __obj.update("DBSnapshotAttributesResult", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ModifyDBSnapshotAttributeResult]
     }
   }
 
@@ -7830,17 +6085,13 @@ package rds {
         EngineVersion: js.UndefOr[String] = js.undefined,
         OptionGroupName: js.UndefOr[String] = js.undefined
     ): ModifyDBSnapshotMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "DBSnapshotIdentifier" -> DBSnapshotIdentifier.asInstanceOf[js.Any],
-        "EngineVersion" -> EngineVersion.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "OptionGroupName" -> OptionGroupName.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "DBSnapshotIdentifier" -> DBSnapshotIdentifier.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ModifyDBSnapshotMessage]
+      EngineVersion.foreach(__v => __obj.update("EngineVersion", __v.asInstanceOf[js.Any]))
+      OptionGroupName.foreach(__v => __obj.update("OptionGroupName", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ModifyDBSnapshotMessage]
     }
   }
 
@@ -7853,13 +6104,9 @@ package rds {
     def apply(
         DBSnapshot: js.UndefOr[DBSnapshot] = js.undefined
     ): ModifyDBSnapshotResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "DBSnapshot" -> DBSnapshot.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ModifyDBSnapshotResult]
+      val __obj = js.Dictionary.empty[js.Any]
+      DBSnapshot.foreach(__v => __obj.update("DBSnapshot", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ModifyDBSnapshotResult]
     }
   }
 
@@ -7879,15 +6126,13 @@ package rds {
         SubnetIds: SubnetIdentifierList,
         DBSubnetGroupDescription: js.UndefOr[String] = js.undefined
     ): ModifyDBSubnetGroupMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "DBSubnetGroupName" -> DBSubnetGroupName.asInstanceOf[js.Any],
-        "SubnetIds"         -> SubnetIds.asInstanceOf[js.Any],
-        "DBSubnetGroupDescription" -> DBSubnetGroupDescription.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "SubnetIds"         -> SubnetIds.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ModifyDBSubnetGroupMessage]
+      DBSubnetGroupDescription.foreach(__v => __obj.update("DBSubnetGroupDescription", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ModifyDBSubnetGroupMessage]
     }
   }
 
@@ -7900,13 +6145,9 @@ package rds {
     def apply(
         DBSubnetGroup: js.UndefOr[DBSubnetGroup] = js.undefined
     ): ModifyDBSubnetGroupResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "DBSubnetGroup" -> DBSubnetGroup.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ModifyDBSubnetGroupResult]
+      val __obj = js.Dictionary.empty[js.Any]
+      DBSubnetGroup.foreach(__v => __obj.update("DBSubnetGroup", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ModifyDBSubnetGroupResult]
     }
   }
 
@@ -7930,23 +6171,15 @@ package rds {
         SnsTopicArn: js.UndefOr[String] = js.undefined,
         SourceType: js.UndefOr[String] = js.undefined
     ): ModifyEventSubscriptionMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "SubscriptionName" -> SubscriptionName.asInstanceOf[js.Any],
-        "Enabled" -> Enabled.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "EventCategories" -> EventCategories.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SnsTopicArn" -> SnsTopicArn.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SourceType" -> SourceType.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "SubscriptionName" -> SubscriptionName.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ModifyEventSubscriptionMessage]
+      Enabled.foreach(__v => __obj.update("Enabled", __v.asInstanceOf[js.Any]))
+      EventCategories.foreach(__v => __obj.update("EventCategories", __v.asInstanceOf[js.Any]))
+      SnsTopicArn.foreach(__v => __obj.update("SnsTopicArn", __v.asInstanceOf[js.Any]))
+      SourceType.foreach(__v => __obj.update("SourceType", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ModifyEventSubscriptionMessage]
     }
   }
 
@@ -7959,13 +6192,9 @@ package rds {
     def apply(
         EventSubscription: js.UndefOr[EventSubscription] = js.undefined
     ): ModifyEventSubscriptionResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "EventSubscription" -> EventSubscription.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ModifyEventSubscriptionResult]
+      val __obj = js.Dictionary.empty[js.Any]
+      EventSubscription.foreach(__v => __obj.update("EventSubscription", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ModifyEventSubscriptionResult]
     }
   }
 
@@ -7982,19 +6211,11 @@ package rds {
         GlobalClusterIdentifier: js.UndefOr[String] = js.undefined,
         NewGlobalClusterIdentifier: js.UndefOr[String] = js.undefined
     ): ModifyGlobalClusterMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "DeletionProtection" -> DeletionProtection.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "GlobalClusterIdentifier" -> GlobalClusterIdentifier.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NewGlobalClusterIdentifier" -> NewGlobalClusterIdentifier.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ModifyGlobalClusterMessage]
+      val __obj = js.Dictionary.empty[js.Any]
+      DeletionProtection.foreach(__v => __obj.update("DeletionProtection", __v.asInstanceOf[js.Any]))
+      GlobalClusterIdentifier.foreach(__v => __obj.update("GlobalClusterIdentifier", __v.asInstanceOf[js.Any]))
+      NewGlobalClusterIdentifier.foreach(__v => __obj.update("NewGlobalClusterIdentifier", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ModifyGlobalClusterMessage]
     }
   }
 
@@ -8007,13 +6228,9 @@ package rds {
     def apply(
         GlobalCluster: js.UndefOr[GlobalCluster] = js.undefined
     ): ModifyGlobalClusterResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "GlobalCluster" -> GlobalCluster.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ModifyGlobalClusterResult]
+      val __obj = js.Dictionary.empty[js.Any]
+      GlobalCluster.foreach(__v => __obj.update("GlobalCluster", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ModifyGlobalClusterResult]
     }
   }
 
@@ -8035,20 +6252,14 @@ package rds {
         OptionsToInclude: js.UndefOr[OptionConfigurationList] = js.undefined,
         OptionsToRemove: js.UndefOr[OptionNamesList] = js.undefined
     ): ModifyOptionGroupMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "OptionGroupName" -> OptionGroupName.asInstanceOf[js.Any],
-        "ApplyImmediately" -> ApplyImmediately.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "OptionsToInclude" -> OptionsToInclude.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "OptionsToRemove" -> OptionsToRemove.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "OptionGroupName" -> OptionGroupName.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ModifyOptionGroupMessage]
+      ApplyImmediately.foreach(__v => __obj.update("ApplyImmediately", __v.asInstanceOf[js.Any]))
+      OptionsToInclude.foreach(__v => __obj.update("OptionsToInclude", __v.asInstanceOf[js.Any]))
+      OptionsToRemove.foreach(__v => __obj.update("OptionsToRemove", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ModifyOptionGroupMessage]
     }
   }
 
@@ -8061,13 +6272,9 @@ package rds {
     def apply(
         OptionGroup: js.UndefOr[OptionGroup] = js.undefined
     ): ModifyOptionGroupResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "OptionGroup" -> OptionGroup.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ModifyOptionGroupResult]
+      val __obj = js.Dictionary.empty[js.Any]
+      OptionGroup.foreach(__v => __obj.update("OptionGroup", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ModifyOptionGroupResult]
     }
   }
 
@@ -8099,37 +6306,17 @@ package rds {
         Port: js.UndefOr[IntegerOptional] = js.undefined,
         VpcSecurityGroupMemberships: js.UndefOr[VpcSecurityGroupMembershipList] = js.undefined
     ): Option = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "DBSecurityGroupMemberships" -> DBSecurityGroupMemberships.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "OptionDescription" -> OptionDescription.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "OptionName" -> OptionName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "OptionSettings" -> OptionSettings.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "OptionVersion" -> OptionVersion.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Permanent" -> Permanent.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Persistent" -> Persistent.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Port" -> Port.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "VpcSecurityGroupMemberships" -> VpcSecurityGroupMemberships.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Option]
+      val __obj = js.Dictionary.empty[js.Any]
+      DBSecurityGroupMemberships.foreach(__v => __obj.update("DBSecurityGroupMemberships", __v.asInstanceOf[js.Any]))
+      OptionDescription.foreach(__v => __obj.update("OptionDescription", __v.asInstanceOf[js.Any]))
+      OptionName.foreach(__v => __obj.update("OptionName", __v.asInstanceOf[js.Any]))
+      OptionSettings.foreach(__v => __obj.update("OptionSettings", __v.asInstanceOf[js.Any]))
+      OptionVersion.foreach(__v => __obj.update("OptionVersion", __v.asInstanceOf[js.Any]))
+      Permanent.foreach(__v => __obj.update("Permanent", __v.asInstanceOf[js.Any]))
+      Persistent.foreach(__v => __obj.update("Persistent", __v.asInstanceOf[js.Any]))
+      Port.foreach(__v => __obj.update("Port", __v.asInstanceOf[js.Any]))
+      VpcSecurityGroupMemberships.foreach(__v => __obj.update("VpcSecurityGroupMemberships", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Option]
     }
   }
 
@@ -8155,26 +6342,16 @@ package rds {
         Port: js.UndefOr[IntegerOptional] = js.undefined,
         VpcSecurityGroupMemberships: js.UndefOr[VpcSecurityGroupIdList] = js.undefined
     ): OptionConfiguration = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "OptionName" -> OptionName.asInstanceOf[js.Any],
-        "DBSecurityGroupMemberships" -> DBSecurityGroupMemberships.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "OptionSettings" -> OptionSettings.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "OptionVersion" -> OptionVersion.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Port" -> Port.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "VpcSecurityGroupMemberships" -> VpcSecurityGroupMemberships.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "OptionName" -> OptionName.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[OptionConfiguration]
+      DBSecurityGroupMemberships.foreach(__v => __obj.update("DBSecurityGroupMemberships", __v.asInstanceOf[js.Any]))
+      OptionSettings.foreach(__v => __obj.update("OptionSettings", __v.asInstanceOf[js.Any]))
+      OptionVersion.foreach(__v => __obj.update("OptionVersion", __v.asInstanceOf[js.Any]))
+      Port.foreach(__v => __obj.update("Port", __v.asInstanceOf[js.Any]))
+      VpcSecurityGroupMemberships.foreach(__v => __obj.update("VpcSecurityGroupMemberships", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[OptionConfiguration]
     }
   }
 
@@ -8204,34 +6381,18 @@ package rds {
         Options: js.UndefOr[OptionsList] = js.undefined,
         VpcId: js.UndefOr[String] = js.undefined
     ): OptionGroup = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "AllowsVpcAndNonVpcInstanceMemberships" -> AllowsVpcAndNonVpcInstanceMemberships.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "EngineName" -> EngineName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MajorEngineVersion" -> MajorEngineVersion.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "OptionGroupArn" -> OptionGroupArn.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "OptionGroupDescription" -> OptionGroupDescription.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "OptionGroupName" -> OptionGroupName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Options" -> Options.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "VpcId" -> VpcId.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[OptionGroup]
+      val __obj = js.Dictionary.empty[js.Any]
+      AllowsVpcAndNonVpcInstanceMemberships.foreach(
+        __v => __obj.update("AllowsVpcAndNonVpcInstanceMemberships", __v.asInstanceOf[js.Any])
+      )
+      EngineName.foreach(__v => __obj.update("EngineName", __v.asInstanceOf[js.Any]))
+      MajorEngineVersion.foreach(__v => __obj.update("MajorEngineVersion", __v.asInstanceOf[js.Any]))
+      OptionGroupArn.foreach(__v => __obj.update("OptionGroupArn", __v.asInstanceOf[js.Any]))
+      OptionGroupDescription.foreach(__v => __obj.update("OptionGroupDescription", __v.asInstanceOf[js.Any]))
+      OptionGroupName.foreach(__v => __obj.update("OptionGroupName", __v.asInstanceOf[js.Any]))
+      Options.foreach(__v => __obj.update("Options", __v.asInstanceOf[js.Any]))
+      VpcId.foreach(__v => __obj.update("VpcId", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[OptionGroup]
     }
   }
 
@@ -8249,16 +6410,10 @@ package rds {
         OptionGroupName: js.UndefOr[String] = js.undefined,
         Status: js.UndefOr[String] = js.undefined
     ): OptionGroupMembership = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "OptionGroupName" -> OptionGroupName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Status" -> Status.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[OptionGroupMembership]
+      val __obj = js.Dictionary.empty[js.Any]
+      OptionGroupName.foreach(__v => __obj.update("OptionGroupName", __v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.update("Status", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[OptionGroupMembership]
     }
   }
 
@@ -8304,58 +6459,30 @@ package rds {
         SupportsOptionVersionDowngrade: js.UndefOr[BooleanOptional] = js.undefined,
         VpcOnly: js.UndefOr[Boolean] = js.undefined
     ): OptionGroupOption = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "DefaultPort" -> DefaultPort.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Description" -> Description.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "EngineName" -> EngineName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MajorEngineVersion" -> MajorEngineVersion.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MinimumRequiredMinorEngineVersion" -> MinimumRequiredMinorEngineVersion.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Name" -> Name.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "OptionGroupOptionSettings" -> OptionGroupOptionSettings.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "OptionGroupOptionVersions" -> OptionGroupOptionVersions.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "OptionsConflictsWith" -> OptionsConflictsWith.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "OptionsDependedOn" -> OptionsDependedOn.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Permanent" -> Permanent.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Persistent" -> Persistent.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "PortRequired" -> PortRequired.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "RequiresAutoMinorEngineVersionUpgrade" -> RequiresAutoMinorEngineVersionUpgrade.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SupportsOptionVersionDowngrade" -> SupportsOptionVersionDowngrade.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "VpcOnly" -> VpcOnly.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[OptionGroupOption]
+      val __obj = js.Dictionary.empty[js.Any]
+      DefaultPort.foreach(__v => __obj.update("DefaultPort", __v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
+      EngineName.foreach(__v => __obj.update("EngineName", __v.asInstanceOf[js.Any]))
+      MajorEngineVersion.foreach(__v => __obj.update("MajorEngineVersion", __v.asInstanceOf[js.Any]))
+      MinimumRequiredMinorEngineVersion.foreach(
+        __v => __obj.update("MinimumRequiredMinorEngineVersion", __v.asInstanceOf[js.Any])
+      )
+      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
+      OptionGroupOptionSettings.foreach(__v => __obj.update("OptionGroupOptionSettings", __v.asInstanceOf[js.Any]))
+      OptionGroupOptionVersions.foreach(__v => __obj.update("OptionGroupOptionVersions", __v.asInstanceOf[js.Any]))
+      OptionsConflictsWith.foreach(__v => __obj.update("OptionsConflictsWith", __v.asInstanceOf[js.Any]))
+      OptionsDependedOn.foreach(__v => __obj.update("OptionsDependedOn", __v.asInstanceOf[js.Any]))
+      Permanent.foreach(__v => __obj.update("Permanent", __v.asInstanceOf[js.Any]))
+      Persistent.foreach(__v => __obj.update("Persistent", __v.asInstanceOf[js.Any]))
+      PortRequired.foreach(__v => __obj.update("PortRequired", __v.asInstanceOf[js.Any]))
+      RequiresAutoMinorEngineVersionUpgrade.foreach(
+        __v => __obj.update("RequiresAutoMinorEngineVersionUpgrade", __v.asInstanceOf[js.Any])
+      )
+      SupportsOptionVersionDowngrade.foreach(
+        __v => __obj.update("SupportsOptionVersionDowngrade", __v.asInstanceOf[js.Any])
+      )
+      VpcOnly.foreach(__v => __obj.update("VpcOnly", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[OptionGroupOption]
     }
   }
 
@@ -8385,34 +6512,18 @@ package rds {
         SettingDescription: js.UndefOr[String] = js.undefined,
         SettingName: js.UndefOr[String] = js.undefined
     ): OptionGroupOptionSetting = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "AllowedValues" -> AllowedValues.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ApplyType" -> ApplyType.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DefaultValue" -> DefaultValue.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "IsModifiable" -> IsModifiable.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "IsRequired" -> IsRequired.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MinimumEngineVersionPerAllowedValue" -> MinimumEngineVersionPerAllowedValue.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SettingDescription" -> SettingDescription.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SettingName" -> SettingName.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[OptionGroupOptionSetting]
+      val __obj = js.Dictionary.empty[js.Any]
+      AllowedValues.foreach(__v => __obj.update("AllowedValues", __v.asInstanceOf[js.Any]))
+      ApplyType.foreach(__v => __obj.update("ApplyType", __v.asInstanceOf[js.Any]))
+      DefaultValue.foreach(__v => __obj.update("DefaultValue", __v.asInstanceOf[js.Any]))
+      IsModifiable.foreach(__v => __obj.update("IsModifiable", __v.asInstanceOf[js.Any]))
+      IsRequired.foreach(__v => __obj.update("IsRequired", __v.asInstanceOf[js.Any]))
+      MinimumEngineVersionPerAllowedValue.foreach(
+        __v => __obj.update("MinimumEngineVersionPerAllowedValue", __v.asInstanceOf[js.Any])
+      )
+      SettingDescription.foreach(__v => __obj.update("SettingDescription", __v.asInstanceOf[js.Any]))
+      SettingName.foreach(__v => __obj.update("SettingName", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[OptionGroupOptionSetting]
     }
   }
 
@@ -8430,16 +6541,10 @@ package rds {
         Marker: js.UndefOr[String] = js.undefined,
         OptionGroupOptions: js.UndefOr[OptionGroupOptionsList] = js.undefined
     ): OptionGroupOptionsMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Marker" -> Marker.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "OptionGroupOptions" -> OptionGroupOptions.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[OptionGroupOptionsMessage]
+      val __obj = js.Dictionary.empty[js.Any]
+      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
+      OptionGroupOptions.foreach(__v => __obj.update("OptionGroupOptions", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[OptionGroupOptionsMessage]
     }
   }
 
@@ -8457,16 +6562,10 @@ package rds {
         Marker: js.UndefOr[String] = js.undefined,
         OptionGroupsList: js.UndefOr[OptionGroupsList] = js.undefined
     ): OptionGroups = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Marker" -> Marker.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "OptionGroupsList" -> OptionGroupsList.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[OptionGroups]
+      val __obj = js.Dictionary.empty[js.Any]
+      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
+      OptionGroupsList.foreach(__v => __obj.update("OptionGroupsList", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[OptionGroups]
     }
   }
 
@@ -8498,37 +6597,17 @@ package rds {
         Name: js.UndefOr[String] = js.undefined,
         Value: js.UndefOr[String] = js.undefined
     ): OptionSetting = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "AllowedValues" -> AllowedValues.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ApplyType" -> ApplyType.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DataType" -> DataType.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DefaultValue" -> DefaultValue.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Description" -> Description.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "IsCollection" -> IsCollection.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "IsModifiable" -> IsModifiable.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Name" -> Name.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Value" -> Value.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[OptionSetting]
+      val __obj = js.Dictionary.empty[js.Any]
+      AllowedValues.foreach(__v => __obj.update("AllowedValues", __v.asInstanceOf[js.Any]))
+      ApplyType.foreach(__v => __obj.update("ApplyType", __v.asInstanceOf[js.Any]))
+      DataType.foreach(__v => __obj.update("DataType", __v.asInstanceOf[js.Any]))
+      DefaultValue.foreach(__v => __obj.update("DefaultValue", __v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
+      IsCollection.foreach(__v => __obj.update("IsCollection", __v.asInstanceOf[js.Any]))
+      IsModifiable.foreach(__v => __obj.update("IsModifiable", __v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
+      Value.foreach(__v => __obj.update("Value", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[OptionSetting]
     }
   }
 
@@ -8546,16 +6625,10 @@ package rds {
         IsDefault: js.UndefOr[Boolean] = js.undefined,
         Version: js.UndefOr[String] = js.undefined
     ): OptionVersion = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "IsDefault" -> IsDefault.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Version" -> Version.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[OptionVersion]
+      val __obj = js.Dictionary.empty[js.Any]
+      IsDefault.foreach(__v => __obj.update("IsDefault", __v.asInstanceOf[js.Any]))
+      Version.foreach(__v => __obj.update("Version", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[OptionVersion]
     }
   }
 
@@ -8614,76 +6687,32 @@ package rds {
         SupportsStorageEncryption: js.UndefOr[Boolean] = js.undefined,
         Vpc: js.UndefOr[Boolean] = js.undefined
     ): OrderableDBInstanceOption = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "AvailabilityZones" -> AvailabilityZones.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "AvailableProcessorFeatures" -> AvailableProcessorFeatures.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DBInstanceClass" -> DBInstanceClass.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Engine" -> Engine.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "EngineVersion" -> EngineVersion.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "LicenseModel" -> LicenseModel.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MaxIopsPerDbInstance" -> MaxIopsPerDbInstance.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MaxIopsPerGib" -> MaxIopsPerGib.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MaxStorageSize" -> MaxStorageSize.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MinIopsPerDbInstance" -> MinIopsPerDbInstance.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MinIopsPerGib" -> MinIopsPerGib.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MinStorageSize" -> MinStorageSize.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MultiAZCapable" -> MultiAZCapable.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ReadReplicaCapable" -> ReadReplicaCapable.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "StorageType" -> StorageType.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SupportedEngineModes" -> SupportedEngineModes.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SupportsEnhancedMonitoring" -> SupportsEnhancedMonitoring.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SupportsIAMDatabaseAuthentication" -> SupportsIAMDatabaseAuthentication.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SupportsIops" -> SupportsIops.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SupportsPerformanceInsights" -> SupportsPerformanceInsights.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SupportsStorageEncryption" -> SupportsStorageEncryption.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Vpc" -> Vpc.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[OrderableDBInstanceOption]
+      val __obj = js.Dictionary.empty[js.Any]
+      AvailabilityZones.foreach(__v => __obj.update("AvailabilityZones", __v.asInstanceOf[js.Any]))
+      AvailableProcessorFeatures.foreach(__v => __obj.update("AvailableProcessorFeatures", __v.asInstanceOf[js.Any]))
+      DBInstanceClass.foreach(__v => __obj.update("DBInstanceClass", __v.asInstanceOf[js.Any]))
+      Engine.foreach(__v => __obj.update("Engine", __v.asInstanceOf[js.Any]))
+      EngineVersion.foreach(__v => __obj.update("EngineVersion", __v.asInstanceOf[js.Any]))
+      LicenseModel.foreach(__v => __obj.update("LicenseModel", __v.asInstanceOf[js.Any]))
+      MaxIopsPerDbInstance.foreach(__v => __obj.update("MaxIopsPerDbInstance", __v.asInstanceOf[js.Any]))
+      MaxIopsPerGib.foreach(__v => __obj.update("MaxIopsPerGib", __v.asInstanceOf[js.Any]))
+      MaxStorageSize.foreach(__v => __obj.update("MaxStorageSize", __v.asInstanceOf[js.Any]))
+      MinIopsPerDbInstance.foreach(__v => __obj.update("MinIopsPerDbInstance", __v.asInstanceOf[js.Any]))
+      MinIopsPerGib.foreach(__v => __obj.update("MinIopsPerGib", __v.asInstanceOf[js.Any]))
+      MinStorageSize.foreach(__v => __obj.update("MinStorageSize", __v.asInstanceOf[js.Any]))
+      MultiAZCapable.foreach(__v => __obj.update("MultiAZCapable", __v.asInstanceOf[js.Any]))
+      ReadReplicaCapable.foreach(__v => __obj.update("ReadReplicaCapable", __v.asInstanceOf[js.Any]))
+      StorageType.foreach(__v => __obj.update("StorageType", __v.asInstanceOf[js.Any]))
+      SupportedEngineModes.foreach(__v => __obj.update("SupportedEngineModes", __v.asInstanceOf[js.Any]))
+      SupportsEnhancedMonitoring.foreach(__v => __obj.update("SupportsEnhancedMonitoring", __v.asInstanceOf[js.Any]))
+      SupportsIAMDatabaseAuthentication.foreach(
+        __v => __obj.update("SupportsIAMDatabaseAuthentication", __v.asInstanceOf[js.Any])
+      )
+      SupportsIops.foreach(__v => __obj.update("SupportsIops", __v.asInstanceOf[js.Any]))
+      SupportsPerformanceInsights.foreach(__v => __obj.update("SupportsPerformanceInsights", __v.asInstanceOf[js.Any]))
+      SupportsStorageEncryption.foreach(__v => __obj.update("SupportsStorageEncryption", __v.asInstanceOf[js.Any]))
+      Vpc.foreach(__v => __obj.update("Vpc", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[OrderableDBInstanceOption]
     }
   }
 
@@ -8701,16 +6730,10 @@ package rds {
         Marker: js.UndefOr[String] = js.undefined,
         OrderableDBInstanceOptions: js.UndefOr[OrderableDBInstanceOptionsList] = js.undefined
     ): OrderableDBInstanceOptionsMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Marker" -> Marker.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "OrderableDBInstanceOptions" -> OrderableDBInstanceOptions.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[OrderableDBInstanceOptionsMessage]
+      val __obj = js.Dictionary.empty[js.Any]
+      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
+      OrderableDBInstanceOptions.foreach(__v => __obj.update("OrderableDBInstanceOptions", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[OrderableDBInstanceOptionsMessage]
     }
   }
 
@@ -8747,43 +6770,19 @@ package rds {
         Source: js.UndefOr[String] = js.undefined,
         SupportedEngineModes: js.UndefOr[EngineModeList] = js.undefined
     ): Parameter = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "AllowedValues" -> AllowedValues.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ApplyMethod" -> ApplyMethod.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ApplyType" -> ApplyType.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DataType" -> DataType.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Description" -> Description.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "IsModifiable" -> IsModifiable.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MinimumEngineVersion" -> MinimumEngineVersion.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ParameterName" -> ParameterName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ParameterValue" -> ParameterValue.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Source" -> Source.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SupportedEngineModes" -> SupportedEngineModes.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Parameter]
+      val __obj = js.Dictionary.empty[js.Any]
+      AllowedValues.foreach(__v => __obj.update("AllowedValues", __v.asInstanceOf[js.Any]))
+      ApplyMethod.foreach(__v => __obj.update("ApplyMethod", __v.asInstanceOf[js.Any]))
+      ApplyType.foreach(__v => __obj.update("ApplyType", __v.asInstanceOf[js.Any]))
+      DataType.foreach(__v => __obj.update("DataType", __v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
+      IsModifiable.foreach(__v => __obj.update("IsModifiable", __v.asInstanceOf[js.Any]))
+      MinimumEngineVersion.foreach(__v => __obj.update("MinimumEngineVersion", __v.asInstanceOf[js.Any]))
+      ParameterName.foreach(__v => __obj.update("ParameterName", __v.asInstanceOf[js.Any]))
+      ParameterValue.foreach(__v => __obj.update("ParameterValue", __v.asInstanceOf[js.Any]))
+      Source.foreach(__v => __obj.update("Source", __v.asInstanceOf[js.Any]))
+      SupportedEngineModes.foreach(__v => __obj.update("SupportedEngineModes", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Parameter]
     }
   }
 
@@ -8801,16 +6800,10 @@ package rds {
         LogTypesToDisable: js.UndefOr[LogTypeList] = js.undefined,
         LogTypesToEnable: js.UndefOr[LogTypeList] = js.undefined
     ): PendingCloudwatchLogsExports = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "LogTypesToDisable" -> LogTypesToDisable.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "LogTypesToEnable" -> LogTypesToEnable.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PendingCloudwatchLogsExports]
+      val __obj = js.Dictionary.empty[js.Any]
+      LogTypesToDisable.foreach(__v => __obj.update("LogTypesToDisable", __v.asInstanceOf[js.Any]))
+      LogTypesToEnable.foreach(__v => __obj.update("LogTypesToEnable", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PendingCloudwatchLogsExports]
     }
   }
 
@@ -8836,28 +6829,14 @@ package rds {
         ForcedApplyDate: js.UndefOr[TStamp] = js.undefined,
         OptInStatus: js.UndefOr[String] = js.undefined
     ): PendingMaintenanceAction = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Action" -> Action.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "AutoAppliedAfterDate" -> AutoAppliedAfterDate.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "CurrentApplyDate" -> CurrentApplyDate.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Description" -> Description.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ForcedApplyDate" -> ForcedApplyDate.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "OptInStatus" -> OptInStatus.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PendingMaintenanceAction]
+      val __obj = js.Dictionary.empty[js.Any]
+      Action.foreach(__v => __obj.update("Action", __v.asInstanceOf[js.Any]))
+      AutoAppliedAfterDate.foreach(__v => __obj.update("AutoAppliedAfterDate", __v.asInstanceOf[js.Any]))
+      CurrentApplyDate.foreach(__v => __obj.update("CurrentApplyDate", __v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
+      ForcedApplyDate.foreach(__v => __obj.update("ForcedApplyDate", __v.asInstanceOf[js.Any]))
+      OptInStatus.foreach(__v => __obj.update("OptInStatus", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PendingMaintenanceAction]
     }
   }
 
@@ -8875,16 +6854,10 @@ package rds {
         Marker: js.UndefOr[String] = js.undefined,
         PendingMaintenanceActions: js.UndefOr[PendingMaintenanceActions] = js.undefined
     ): PendingMaintenanceActionsMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Marker" -> Marker.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "PendingMaintenanceActions" -> PendingMaintenanceActions.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PendingMaintenanceActionsMessage]
+      val __obj = js.Dictionary.empty[js.Any]
+      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
+      PendingMaintenanceActions.foreach(__v => __obj.update("PendingMaintenanceActions", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PendingMaintenanceActionsMessage]
     }
   }
 
@@ -8928,55 +6901,25 @@ package rds {
         ProcessorFeatures: js.UndefOr[ProcessorFeatureList] = js.undefined,
         StorageType: js.UndefOr[String] = js.undefined
     ): PendingModifiedValues = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "AllocatedStorage" -> AllocatedStorage.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "BackupRetentionPeriod" -> BackupRetentionPeriod.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "CACertificateIdentifier" -> CACertificateIdentifier.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DBInstanceClass" -> DBInstanceClass.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DBInstanceIdentifier" -> DBInstanceIdentifier.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DBSubnetGroupName" -> DBSubnetGroupName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "EngineVersion" -> EngineVersion.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Iops" -> Iops.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "LicenseModel" -> LicenseModel.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MasterUserPassword" -> MasterUserPassword.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MultiAZ" -> MultiAZ.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "PendingCloudwatchLogsExports" -> PendingCloudwatchLogsExports.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Port" -> Port.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ProcessorFeatures" -> ProcessorFeatures.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "StorageType" -> StorageType.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PendingModifiedValues]
+      val __obj = js.Dictionary.empty[js.Any]
+      AllocatedStorage.foreach(__v => __obj.update("AllocatedStorage", __v.asInstanceOf[js.Any]))
+      BackupRetentionPeriod.foreach(__v => __obj.update("BackupRetentionPeriod", __v.asInstanceOf[js.Any]))
+      CACertificateIdentifier.foreach(__v => __obj.update("CACertificateIdentifier", __v.asInstanceOf[js.Any]))
+      DBInstanceClass.foreach(__v => __obj.update("DBInstanceClass", __v.asInstanceOf[js.Any]))
+      DBInstanceIdentifier.foreach(__v => __obj.update("DBInstanceIdentifier", __v.asInstanceOf[js.Any]))
+      DBSubnetGroupName.foreach(__v => __obj.update("DBSubnetGroupName", __v.asInstanceOf[js.Any]))
+      EngineVersion.foreach(__v => __obj.update("EngineVersion", __v.asInstanceOf[js.Any]))
+      Iops.foreach(__v => __obj.update("Iops", __v.asInstanceOf[js.Any]))
+      LicenseModel.foreach(__v => __obj.update("LicenseModel", __v.asInstanceOf[js.Any]))
+      MasterUserPassword.foreach(__v => __obj.update("MasterUserPassword", __v.asInstanceOf[js.Any]))
+      MultiAZ.foreach(__v => __obj.update("MultiAZ", __v.asInstanceOf[js.Any]))
+      PendingCloudwatchLogsExports.foreach(
+        __v => __obj.update("PendingCloudwatchLogsExports", __v.asInstanceOf[js.Any])
+      )
+      Port.foreach(__v => __obj.update("Port", __v.asInstanceOf[js.Any]))
+      ProcessorFeatures.foreach(__v => __obj.update("ProcessorFeatures", __v.asInstanceOf[js.Any]))
+      StorageType.foreach(__v => __obj.update("StorageType", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PendingModifiedValues]
     }
   }
 
@@ -9007,16 +6950,10 @@ package rds {
         Name: js.UndefOr[String] = js.undefined,
         Value: js.UndefOr[String] = js.undefined
     ): ProcessorFeature = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Name" -> Name.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Value" -> Value.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ProcessorFeature]
+      val __obj = js.Dictionary.empty[js.Any]
+      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
+      Value.foreach(__v => __obj.update("Value", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ProcessorFeature]
     }
   }
 
@@ -9032,11 +6969,11 @@ package rds {
     def apply(
         DBClusterIdentifier: String
     ): PromoteReadReplicaDBClusterMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "DBClusterIdentifier" -> DBClusterIdentifier.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PromoteReadReplicaDBClusterMessage]
+      __obj.asInstanceOf[PromoteReadReplicaDBClusterMessage]
     }
   }
 
@@ -9049,13 +6986,9 @@ package rds {
     def apply(
         DBCluster: js.UndefOr[DBCluster] = js.undefined
     ): PromoteReadReplicaDBClusterResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "DBCluster" -> DBCluster.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PromoteReadReplicaDBClusterResult]
+      val __obj = js.Dictionary.empty[js.Any]
+      DBCluster.foreach(__v => __obj.update("DBCluster", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PromoteReadReplicaDBClusterResult]
     }
   }
 
@@ -9075,17 +7008,13 @@ package rds {
         BackupRetentionPeriod: js.UndefOr[IntegerOptional] = js.undefined,
         PreferredBackupWindow: js.UndefOr[String] = js.undefined
     ): PromoteReadReplicaMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "DBInstanceIdentifier" -> DBInstanceIdentifier.asInstanceOf[js.Any],
-        "BackupRetentionPeriod" -> BackupRetentionPeriod.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "PreferredBackupWindow" -> PreferredBackupWindow.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "DBInstanceIdentifier" -> DBInstanceIdentifier.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PromoteReadReplicaMessage]
+      BackupRetentionPeriod.foreach(__v => __obj.update("BackupRetentionPeriod", __v.asInstanceOf[js.Any]))
+      PreferredBackupWindow.foreach(__v => __obj.update("PreferredBackupWindow", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PromoteReadReplicaMessage]
     }
   }
 
@@ -9098,13 +7027,9 @@ package rds {
     def apply(
         DBInstance: js.UndefOr[DBInstance] = js.undefined
     ): PromoteReadReplicaResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "DBInstance" -> DBInstance.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PromoteReadReplicaResult]
+      val __obj = js.Dictionary.empty[js.Any]
+      DBInstance.foreach(__v => __obj.update("DBInstance", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PromoteReadReplicaResult]
     }
   }
 
@@ -9126,22 +7051,14 @@ package rds {
         ReservedDBInstanceId: js.UndefOr[String] = js.undefined,
         Tags: js.UndefOr[TagList] = js.undefined
     ): PurchaseReservedDBInstancesOfferingMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ReservedDBInstancesOfferingId" -> ReservedDBInstancesOfferingId.asInstanceOf[js.Any],
-        "DBInstanceCount" -> DBInstanceCount.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ReservedDBInstanceId" -> ReservedDBInstanceId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Tags" -> Tags.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "ReservedDBInstancesOfferingId" -> ReservedDBInstancesOfferingId.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal
-        .applyDynamicNamed("apply")(_fields: _*)
-        .asInstanceOf[PurchaseReservedDBInstancesOfferingMessage]
+      DBInstanceCount.foreach(__v => __obj.update("DBInstanceCount", __v.asInstanceOf[js.Any]))
+      ReservedDBInstanceId.foreach(__v => __obj.update("ReservedDBInstanceId", __v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PurchaseReservedDBInstancesOfferingMessage]
     }
   }
 
@@ -9154,13 +7071,9 @@ package rds {
     def apply(
         ReservedDBInstance: js.UndefOr[ReservedDBInstance] = js.undefined
     ): PurchaseReservedDBInstancesOfferingResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ReservedDBInstance" -> ReservedDBInstance.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PurchaseReservedDBInstancesOfferingResult]
+      val __obj = js.Dictionary.empty[js.Any]
+      ReservedDBInstance.foreach(__v => __obj.update("ReservedDBInstance", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PurchaseReservedDBInstancesOfferingResult]
     }
   }
 
@@ -9180,19 +7093,11 @@ package rds {
         Step: js.UndefOr[IntegerOptional] = js.undefined,
         To: js.UndefOr[Int] = js.undefined
     ): Range = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "From" -> From.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Step" -> Step.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "To" -> To.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Range]
+      val __obj = js.Dictionary.empty[js.Any]
+      From.foreach(__v => __obj.update("From", __v.asInstanceOf[js.Any]))
+      Step.foreach(__v => __obj.update("Step", __v.asInstanceOf[js.Any]))
+      To.foreach(__v => __obj.update("To", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Range]
     }
   }
 
@@ -9210,14 +7115,12 @@ package rds {
         DBInstanceIdentifier: String,
         ForceFailover: js.UndefOr[BooleanOptional] = js.undefined
     ): RebootDBInstanceMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "DBInstanceIdentifier" -> DBInstanceIdentifier.asInstanceOf[js.Any],
-        "ForceFailover" -> ForceFailover.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "DBInstanceIdentifier" -> DBInstanceIdentifier.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RebootDBInstanceMessage]
+      ForceFailover.foreach(__v => __obj.update("ForceFailover", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[RebootDBInstanceMessage]
     }
   }
 
@@ -9230,13 +7133,9 @@ package rds {
     def apply(
         DBInstance: js.UndefOr[DBInstance] = js.undefined
     ): RebootDBInstanceResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "DBInstance" -> DBInstance.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RebootDBInstanceResult]
+      val __obj = js.Dictionary.empty[js.Any]
+      DBInstance.foreach(__v => __obj.update("DBInstance", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[RebootDBInstanceResult]
     }
   }
 
@@ -9254,16 +7153,10 @@ package rds {
         RecurringChargeAmount: js.UndefOr[Double] = js.undefined,
         RecurringChargeFrequency: js.UndefOr[String] = js.undefined
     ): RecurringCharge = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "RecurringChargeAmount" -> RecurringChargeAmount.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "RecurringChargeFrequency" -> RecurringChargeFrequency.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RecurringCharge]
+      val __obj = js.Dictionary.empty[js.Any]
+      RecurringChargeAmount.foreach(__v => __obj.update("RecurringChargeAmount", __v.asInstanceOf[js.Any]))
+      RecurringChargeFrequency.foreach(__v => __obj.update("RecurringChargeFrequency", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[RecurringCharge]
     }
   }
 
@@ -9278,16 +7171,10 @@ package rds {
         DbClusterIdentifier: js.UndefOr[String] = js.undefined,
         GlobalClusterIdentifier: js.UndefOr[String] = js.undefined
     ): RemoveFromGlobalClusterMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "DbClusterIdentifier" -> DbClusterIdentifier.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "GlobalClusterIdentifier" -> GlobalClusterIdentifier.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RemoveFromGlobalClusterMessage]
+      val __obj = js.Dictionary.empty[js.Any]
+      DbClusterIdentifier.foreach(__v => __obj.update("DbClusterIdentifier", __v.asInstanceOf[js.Any]))
+      GlobalClusterIdentifier.foreach(__v => __obj.update("GlobalClusterIdentifier", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[RemoveFromGlobalClusterMessage]
     }
   }
 
@@ -9300,13 +7187,9 @@ package rds {
     def apply(
         GlobalCluster: js.UndefOr[GlobalCluster] = js.undefined
     ): RemoveFromGlobalClusterResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "GlobalCluster" -> GlobalCluster.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RemoveFromGlobalClusterResult]
+      val __obj = js.Dictionary.empty[js.Any]
+      GlobalCluster.foreach(__v => __obj.update("GlobalCluster", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[RemoveFromGlobalClusterResult]
     }
   }
 
@@ -9321,12 +7204,12 @@ package rds {
         DBClusterIdentifier: String,
         RoleArn: String
     ): RemoveRoleFromDBClusterMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "DBClusterIdentifier" -> DBClusterIdentifier.asInstanceOf[js.Any],
         "RoleArn"             -> RoleArn.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RemoveRoleFromDBClusterMessage]
+      __obj.asInstanceOf[RemoveRoleFromDBClusterMessage]
     }
   }
 
@@ -9343,13 +7226,13 @@ package rds {
         FeatureName: String,
         RoleArn: String
     ): RemoveRoleFromDBInstanceMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "DBInstanceIdentifier" -> DBInstanceIdentifier.asInstanceOf[js.Any],
         "FeatureName"          -> FeatureName.asInstanceOf[js.Any],
         "RoleArn"              -> RoleArn.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RemoveRoleFromDBInstanceMessage]
+      __obj.asInstanceOf[RemoveRoleFromDBInstanceMessage]
     }
   }
 
@@ -9367,14 +7250,12 @@ package rds {
         SourceIdentifier: String,
         SubscriptionName: String
     ): RemoveSourceIdentifierFromSubscriptionMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "SourceIdentifier" -> SourceIdentifier.asInstanceOf[js.Any],
         "SubscriptionName" -> SubscriptionName.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal
-        .applyDynamicNamed("apply")(_fields: _*)
-        .asInstanceOf[RemoveSourceIdentifierFromSubscriptionMessage]
+      __obj.asInstanceOf[RemoveSourceIdentifierFromSubscriptionMessage]
     }
   }
 
@@ -9387,15 +7268,9 @@ package rds {
     def apply(
         EventSubscription: js.UndefOr[EventSubscription] = js.undefined
     ): RemoveSourceIdentifierFromSubscriptionResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "EventSubscription" -> EventSubscription.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal
-        .applyDynamicNamed("apply")(_fields: _*)
-        .asInstanceOf[RemoveSourceIdentifierFromSubscriptionResult]
+      val __obj = js.Dictionary.empty[js.Any]
+      EventSubscription.foreach(__v => __obj.update("EventSubscription", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[RemoveSourceIdentifierFromSubscriptionResult]
     }
   }
 
@@ -9413,12 +7288,12 @@ package rds {
         ResourceName: String,
         TagKeys: KeyList
     ): RemoveTagsFromResourceMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ResourceName" -> ResourceName.asInstanceOf[js.Any],
         "TagKeys"      -> TagKeys.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RemoveTagsFromResourceMessage]
+      __obj.asInstanceOf[RemoveTagsFromResourceMessage]
     }
   }
 
@@ -9462,55 +7337,25 @@ package rds {
         State: js.UndefOr[String] = js.undefined,
         UsagePrice: js.UndefOr[Double] = js.undefined
     ): ReservedDBInstance = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "CurrencyCode" -> CurrencyCode.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DBInstanceClass" -> DBInstanceClass.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DBInstanceCount" -> DBInstanceCount.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Duration" -> Duration.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "FixedPrice" -> FixedPrice.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MultiAZ" -> MultiAZ.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "OfferingType" -> OfferingType.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ProductDescription" -> ProductDescription.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "RecurringCharges" -> RecurringCharges.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ReservedDBInstanceArn" -> ReservedDBInstanceArn.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ReservedDBInstanceId" -> ReservedDBInstanceId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ReservedDBInstancesOfferingId" -> ReservedDBInstancesOfferingId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "StartTime" -> StartTime.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "State" -> State.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "UsagePrice" -> UsagePrice.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ReservedDBInstance]
+      val __obj = js.Dictionary.empty[js.Any]
+      CurrencyCode.foreach(__v => __obj.update("CurrencyCode", __v.asInstanceOf[js.Any]))
+      DBInstanceClass.foreach(__v => __obj.update("DBInstanceClass", __v.asInstanceOf[js.Any]))
+      DBInstanceCount.foreach(__v => __obj.update("DBInstanceCount", __v.asInstanceOf[js.Any]))
+      Duration.foreach(__v => __obj.update("Duration", __v.asInstanceOf[js.Any]))
+      FixedPrice.foreach(__v => __obj.update("FixedPrice", __v.asInstanceOf[js.Any]))
+      MultiAZ.foreach(__v => __obj.update("MultiAZ", __v.asInstanceOf[js.Any]))
+      OfferingType.foreach(__v => __obj.update("OfferingType", __v.asInstanceOf[js.Any]))
+      ProductDescription.foreach(__v => __obj.update("ProductDescription", __v.asInstanceOf[js.Any]))
+      RecurringCharges.foreach(__v => __obj.update("RecurringCharges", __v.asInstanceOf[js.Any]))
+      ReservedDBInstanceArn.foreach(__v => __obj.update("ReservedDBInstanceArn", __v.asInstanceOf[js.Any]))
+      ReservedDBInstanceId.foreach(__v => __obj.update("ReservedDBInstanceId", __v.asInstanceOf[js.Any]))
+      ReservedDBInstancesOfferingId.foreach(
+        __v => __obj.update("ReservedDBInstancesOfferingId", __v.asInstanceOf[js.Any])
+      )
+      StartTime.foreach(__v => __obj.update("StartTime", __v.asInstanceOf[js.Any]))
+      State.foreach(__v => __obj.update("State", __v.asInstanceOf[js.Any]))
+      UsagePrice.foreach(__v => __obj.update("UsagePrice", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ReservedDBInstance]
     }
   }
 
@@ -9528,16 +7373,10 @@ package rds {
         Marker: js.UndefOr[String] = js.undefined,
         ReservedDBInstances: js.UndefOr[ReservedDBInstanceList] = js.undefined
     ): ReservedDBInstanceMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Marker" -> Marker.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ReservedDBInstances" -> ReservedDBInstances.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ReservedDBInstanceMessage]
+      val __obj = js.Dictionary.empty[js.Any]
+      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
+      ReservedDBInstances.foreach(__v => __obj.update("ReservedDBInstances", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ReservedDBInstanceMessage]
     }
   }
 
@@ -9571,40 +7410,20 @@ package rds {
         ReservedDBInstancesOfferingId: js.UndefOr[String] = js.undefined,
         UsagePrice: js.UndefOr[Double] = js.undefined
     ): ReservedDBInstancesOffering = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "CurrencyCode" -> CurrencyCode.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DBInstanceClass" -> DBInstanceClass.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Duration" -> Duration.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "FixedPrice" -> FixedPrice.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MultiAZ" -> MultiAZ.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "OfferingType" -> OfferingType.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ProductDescription" -> ProductDescription.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "RecurringCharges" -> RecurringCharges.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ReservedDBInstancesOfferingId" -> ReservedDBInstancesOfferingId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "UsagePrice" -> UsagePrice.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ReservedDBInstancesOffering]
+      val __obj = js.Dictionary.empty[js.Any]
+      CurrencyCode.foreach(__v => __obj.update("CurrencyCode", __v.asInstanceOf[js.Any]))
+      DBInstanceClass.foreach(__v => __obj.update("DBInstanceClass", __v.asInstanceOf[js.Any]))
+      Duration.foreach(__v => __obj.update("Duration", __v.asInstanceOf[js.Any]))
+      FixedPrice.foreach(__v => __obj.update("FixedPrice", __v.asInstanceOf[js.Any]))
+      MultiAZ.foreach(__v => __obj.update("MultiAZ", __v.asInstanceOf[js.Any]))
+      OfferingType.foreach(__v => __obj.update("OfferingType", __v.asInstanceOf[js.Any]))
+      ProductDescription.foreach(__v => __obj.update("ProductDescription", __v.asInstanceOf[js.Any]))
+      RecurringCharges.foreach(__v => __obj.update("RecurringCharges", __v.asInstanceOf[js.Any]))
+      ReservedDBInstancesOfferingId.foreach(
+        __v => __obj.update("ReservedDBInstancesOfferingId", __v.asInstanceOf[js.Any])
+      )
+      UsagePrice.foreach(__v => __obj.update("UsagePrice", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ReservedDBInstancesOffering]
     }
   }
 
@@ -9622,16 +7441,12 @@ package rds {
         Marker: js.UndefOr[String] = js.undefined,
         ReservedDBInstancesOfferings: js.UndefOr[ReservedDBInstancesOfferingList] = js.undefined
     ): ReservedDBInstancesOfferingMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Marker" -> Marker.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ReservedDBInstancesOfferings" -> ReservedDBInstancesOfferings.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ReservedDBInstancesOfferingMessage]
+      val __obj = js.Dictionary.empty[js.Any]
+      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
+      ReservedDBInstancesOfferings.foreach(
+        __v => __obj.update("ReservedDBInstancesOfferings", __v.asInstanceOf[js.Any])
+      )
+      __obj.asInstanceOf[ReservedDBInstancesOfferingMessage]
     }
   }
 
@@ -9651,17 +7466,13 @@ package rds {
         Parameters: js.UndefOr[ParametersList] = js.undefined,
         ResetAllParameters: js.UndefOr[Boolean] = js.undefined
     ): ResetDBClusterParameterGroupMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "DBClusterParameterGroupName" -> DBClusterParameterGroupName.asInstanceOf[js.Any],
-        "Parameters" -> Parameters.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ResetAllParameters" -> ResetAllParameters.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "DBClusterParameterGroupName" -> DBClusterParameterGroupName.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ResetDBClusterParameterGroupMessage]
+      Parameters.foreach(__v => __obj.update("Parameters", __v.asInstanceOf[js.Any]))
+      ResetAllParameters.foreach(__v => __obj.update("ResetAllParameters", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ResetDBClusterParameterGroupMessage]
     }
   }
 
@@ -9681,17 +7492,13 @@ package rds {
         Parameters: js.UndefOr[ParametersList] = js.undefined,
         ResetAllParameters: js.UndefOr[Boolean] = js.undefined
     ): ResetDBParameterGroupMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "DBParameterGroupName" -> DBParameterGroupName.asInstanceOf[js.Any],
-        "Parameters" -> Parameters.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ResetAllParameters" -> ResetAllParameters.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "DBParameterGroupName" -> DBParameterGroupName.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ResetDBParameterGroupMessage]
+      Parameters.foreach(__v => __obj.update("Parameters", __v.asInstanceOf[js.Any]))
+      ResetAllParameters.foreach(__v => __obj.update("ResetAllParameters", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ResetDBParameterGroupMessage]
     }
   }
 
@@ -9709,16 +7516,12 @@ package rds {
         PendingMaintenanceActionDetails: js.UndefOr[PendingMaintenanceActionDetails] = js.undefined,
         ResourceIdentifier: js.UndefOr[String] = js.undefined
     ): ResourcePendingMaintenanceActions = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "PendingMaintenanceActionDetails" -> PendingMaintenanceActionDetails.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ResourceIdentifier" -> ResourceIdentifier.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ResourcePendingMaintenanceActions]
+      val __obj = js.Dictionary.empty[js.Any]
+      PendingMaintenanceActionDetails.foreach(
+        __v => __obj.update("PendingMaintenanceActionDetails", __v.asInstanceOf[js.Any])
+      )
+      ResourceIdentifier.foreach(__v => __obj.update("ResourceIdentifier", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ResourcePendingMaintenanceActions]
     }
   }
 
@@ -9787,7 +7590,7 @@ package rds {
         Tags: js.UndefOr[TagList] = js.undefined,
         VpcSecurityGroupIds: js.UndefOr[VpcSecurityGroupIdList] = js.undefined
     ): RestoreDBClusterFromS3Message = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "DBClusterIdentifier" -> DBClusterIdentifier.asInstanceOf[js.Any],
         "Engine"              -> Engine.asInstanceOf[js.Any],
         "MasterUserPassword"  -> MasterUserPassword.asInstanceOf[js.Any],
@@ -9795,73 +7598,33 @@ package rds {
         "S3BucketName"        -> S3BucketName.asInstanceOf[js.Any],
         "S3IngestionRoleArn"  -> S3IngestionRoleArn.asInstanceOf[js.Any],
         "SourceEngine"        -> SourceEngine.asInstanceOf[js.Any],
-        "SourceEngineVersion" -> SourceEngineVersion.asInstanceOf[js.Any],
-        "AvailabilityZones" -> AvailabilityZones.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "BacktrackWindow" -> BacktrackWindow.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "BackupRetentionPeriod" -> BackupRetentionPeriod.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "CharacterSetName" -> CharacterSetName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "CopyTagsToSnapshot" -> CopyTagsToSnapshot.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DBClusterParameterGroupName" -> DBClusterParameterGroupName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DBSubnetGroupName" -> DBSubnetGroupName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DatabaseName" -> DatabaseName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DeletionProtection" -> DeletionProtection.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "EnableCloudwatchLogsExports" -> EnableCloudwatchLogsExports.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "EnableIAMDatabaseAuthentication" -> EnableIAMDatabaseAuthentication.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "EngineVersion" -> EngineVersion.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "KmsKeyId" -> KmsKeyId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "OptionGroupName" -> OptionGroupName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Port" -> Port.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "PreferredBackupWindow" -> PreferredBackupWindow.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "PreferredMaintenanceWindow" -> PreferredMaintenanceWindow.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "S3Prefix" -> S3Prefix.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "StorageEncrypted" -> StorageEncrypted.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Tags" -> Tags.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "VpcSecurityGroupIds" -> VpcSecurityGroupIds.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "SourceEngineVersion" -> SourceEngineVersion.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RestoreDBClusterFromS3Message]
+      AvailabilityZones.foreach(__v => __obj.update("AvailabilityZones", __v.asInstanceOf[js.Any]))
+      BacktrackWindow.foreach(__v => __obj.update("BacktrackWindow", __v.asInstanceOf[js.Any]))
+      BackupRetentionPeriod.foreach(__v => __obj.update("BackupRetentionPeriod", __v.asInstanceOf[js.Any]))
+      CharacterSetName.foreach(__v => __obj.update("CharacterSetName", __v.asInstanceOf[js.Any]))
+      CopyTagsToSnapshot.foreach(__v => __obj.update("CopyTagsToSnapshot", __v.asInstanceOf[js.Any]))
+      DBClusterParameterGroupName.foreach(__v => __obj.update("DBClusterParameterGroupName", __v.asInstanceOf[js.Any]))
+      DBSubnetGroupName.foreach(__v => __obj.update("DBSubnetGroupName", __v.asInstanceOf[js.Any]))
+      DatabaseName.foreach(__v => __obj.update("DatabaseName", __v.asInstanceOf[js.Any]))
+      DeletionProtection.foreach(__v => __obj.update("DeletionProtection", __v.asInstanceOf[js.Any]))
+      EnableCloudwatchLogsExports.foreach(__v => __obj.update("EnableCloudwatchLogsExports", __v.asInstanceOf[js.Any]))
+      EnableIAMDatabaseAuthentication.foreach(
+        __v => __obj.update("EnableIAMDatabaseAuthentication", __v.asInstanceOf[js.Any])
+      )
+      EngineVersion.foreach(__v => __obj.update("EngineVersion", __v.asInstanceOf[js.Any]))
+      KmsKeyId.foreach(__v => __obj.update("KmsKeyId", __v.asInstanceOf[js.Any]))
+      OptionGroupName.foreach(__v => __obj.update("OptionGroupName", __v.asInstanceOf[js.Any]))
+      Port.foreach(__v => __obj.update("Port", __v.asInstanceOf[js.Any]))
+      PreferredBackupWindow.foreach(__v => __obj.update("PreferredBackupWindow", __v.asInstanceOf[js.Any]))
+      PreferredMaintenanceWindow.foreach(__v => __obj.update("PreferredMaintenanceWindow", __v.asInstanceOf[js.Any]))
+      S3Prefix.foreach(__v => __obj.update("S3Prefix", __v.asInstanceOf[js.Any]))
+      StorageEncrypted.foreach(__v => __obj.update("StorageEncrypted", __v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
+      VpcSecurityGroupIds.foreach(__v => __obj.update("VpcSecurityGroupIds", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[RestoreDBClusterFromS3Message]
     }
   }
 
@@ -9874,13 +7637,9 @@ package rds {
     def apply(
         DBCluster: js.UndefOr[DBCluster] = js.undefined
     ): RestoreDBClusterFromS3Result = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "DBCluster" -> DBCluster.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RestoreDBClusterFromS3Result]
+      val __obj = js.Dictionary.empty[js.Any]
+      DBCluster.foreach(__v => __obj.update("DBCluster", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[RestoreDBClusterFromS3Result]
     }
   }
 
@@ -9934,64 +7693,32 @@ package rds {
         Tags: js.UndefOr[TagList] = js.undefined,
         VpcSecurityGroupIds: js.UndefOr[VpcSecurityGroupIdList] = js.undefined
     ): RestoreDBClusterFromSnapshotMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "DBClusterIdentifier" -> DBClusterIdentifier.asInstanceOf[js.Any],
         "Engine"              -> Engine.asInstanceOf[js.Any],
-        "SnapshotIdentifier"  -> SnapshotIdentifier.asInstanceOf[js.Any],
-        "AvailabilityZones" -> AvailabilityZones.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "BacktrackWindow" -> BacktrackWindow.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "CopyTagsToSnapshot" -> CopyTagsToSnapshot.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DBClusterParameterGroupName" -> DBClusterParameterGroupName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DBSubnetGroupName" -> DBSubnetGroupName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DatabaseName" -> DatabaseName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DeletionProtection" -> DeletionProtection.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "EnableCloudwatchLogsExports" -> EnableCloudwatchLogsExports.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "EnableIAMDatabaseAuthentication" -> EnableIAMDatabaseAuthentication.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "EngineMode" -> EngineMode.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "EngineVersion" -> EngineVersion.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "KmsKeyId" -> KmsKeyId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "OptionGroupName" -> OptionGroupName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Port" -> Port.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ScalingConfiguration" -> ScalingConfiguration.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Tags" -> Tags.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "VpcSecurityGroupIds" -> VpcSecurityGroupIds.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "SnapshotIdentifier"  -> SnapshotIdentifier.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RestoreDBClusterFromSnapshotMessage]
+      AvailabilityZones.foreach(__v => __obj.update("AvailabilityZones", __v.asInstanceOf[js.Any]))
+      BacktrackWindow.foreach(__v => __obj.update("BacktrackWindow", __v.asInstanceOf[js.Any]))
+      CopyTagsToSnapshot.foreach(__v => __obj.update("CopyTagsToSnapshot", __v.asInstanceOf[js.Any]))
+      DBClusterParameterGroupName.foreach(__v => __obj.update("DBClusterParameterGroupName", __v.asInstanceOf[js.Any]))
+      DBSubnetGroupName.foreach(__v => __obj.update("DBSubnetGroupName", __v.asInstanceOf[js.Any]))
+      DatabaseName.foreach(__v => __obj.update("DatabaseName", __v.asInstanceOf[js.Any]))
+      DeletionProtection.foreach(__v => __obj.update("DeletionProtection", __v.asInstanceOf[js.Any]))
+      EnableCloudwatchLogsExports.foreach(__v => __obj.update("EnableCloudwatchLogsExports", __v.asInstanceOf[js.Any]))
+      EnableIAMDatabaseAuthentication.foreach(
+        __v => __obj.update("EnableIAMDatabaseAuthentication", __v.asInstanceOf[js.Any])
+      )
+      EngineMode.foreach(__v => __obj.update("EngineMode", __v.asInstanceOf[js.Any]))
+      EngineVersion.foreach(__v => __obj.update("EngineVersion", __v.asInstanceOf[js.Any]))
+      KmsKeyId.foreach(__v => __obj.update("KmsKeyId", __v.asInstanceOf[js.Any]))
+      OptionGroupName.foreach(__v => __obj.update("OptionGroupName", __v.asInstanceOf[js.Any]))
+      Port.foreach(__v => __obj.update("Port", __v.asInstanceOf[js.Any]))
+      ScalingConfiguration.foreach(__v => __obj.update("ScalingConfiguration", __v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
+      VpcSecurityGroupIds.foreach(__v => __obj.update("VpcSecurityGroupIds", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[RestoreDBClusterFromSnapshotMessage]
     }
   }
 
@@ -10004,13 +7731,9 @@ package rds {
     def apply(
         DBCluster: js.UndefOr[DBCluster] = js.undefined
     ): RestoreDBClusterFromSnapshotResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "DBCluster" -> DBCluster.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RestoreDBClusterFromSnapshotResult]
+      val __obj = js.Dictionary.empty[js.Any]
+      DBCluster.foreach(__v => __obj.update("DBCluster", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[RestoreDBClusterFromSnapshotResult]
     }
   }
 
@@ -10058,57 +7781,29 @@ package rds {
         UseLatestRestorableTime: js.UndefOr[Boolean] = js.undefined,
         VpcSecurityGroupIds: js.UndefOr[VpcSecurityGroupIdList] = js.undefined
     ): RestoreDBClusterToPointInTimeMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "DBClusterIdentifier"       -> DBClusterIdentifier.asInstanceOf[js.Any],
-        "SourceDBClusterIdentifier" -> SourceDBClusterIdentifier.asInstanceOf[js.Any],
-        "BacktrackWindow" -> BacktrackWindow.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "CopyTagsToSnapshot" -> CopyTagsToSnapshot.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DBClusterParameterGroupName" -> DBClusterParameterGroupName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DBSubnetGroupName" -> DBSubnetGroupName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DeletionProtection" -> DeletionProtection.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "EnableCloudwatchLogsExports" -> EnableCloudwatchLogsExports.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "EnableIAMDatabaseAuthentication" -> EnableIAMDatabaseAuthentication.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "KmsKeyId" -> KmsKeyId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "OptionGroupName" -> OptionGroupName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Port" -> Port.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "RestoreToTime" -> RestoreToTime.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "RestoreType" -> RestoreType.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Tags" -> Tags.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "UseLatestRestorableTime" -> UseLatestRestorableTime.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "VpcSecurityGroupIds" -> VpcSecurityGroupIds.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "SourceDBClusterIdentifier" -> SourceDBClusterIdentifier.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RestoreDBClusterToPointInTimeMessage]
+      BacktrackWindow.foreach(__v => __obj.update("BacktrackWindow", __v.asInstanceOf[js.Any]))
+      CopyTagsToSnapshot.foreach(__v => __obj.update("CopyTagsToSnapshot", __v.asInstanceOf[js.Any]))
+      DBClusterParameterGroupName.foreach(__v => __obj.update("DBClusterParameterGroupName", __v.asInstanceOf[js.Any]))
+      DBSubnetGroupName.foreach(__v => __obj.update("DBSubnetGroupName", __v.asInstanceOf[js.Any]))
+      DeletionProtection.foreach(__v => __obj.update("DeletionProtection", __v.asInstanceOf[js.Any]))
+      EnableCloudwatchLogsExports.foreach(__v => __obj.update("EnableCloudwatchLogsExports", __v.asInstanceOf[js.Any]))
+      EnableIAMDatabaseAuthentication.foreach(
+        __v => __obj.update("EnableIAMDatabaseAuthentication", __v.asInstanceOf[js.Any])
+      )
+      KmsKeyId.foreach(__v => __obj.update("KmsKeyId", __v.asInstanceOf[js.Any]))
+      OptionGroupName.foreach(__v => __obj.update("OptionGroupName", __v.asInstanceOf[js.Any]))
+      Port.foreach(__v => __obj.update("Port", __v.asInstanceOf[js.Any]))
+      RestoreToTime.foreach(__v => __obj.update("RestoreToTime", __v.asInstanceOf[js.Any]))
+      RestoreType.foreach(__v => __obj.update("RestoreType", __v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
+      UseLatestRestorableTime.foreach(__v => __obj.update("UseLatestRestorableTime", __v.asInstanceOf[js.Any]))
+      VpcSecurityGroupIds.foreach(__v => __obj.update("VpcSecurityGroupIds", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[RestoreDBClusterToPointInTimeMessage]
     }
   }
 
@@ -10121,13 +7816,9 @@ package rds {
     def apply(
         DBCluster: js.UndefOr[DBCluster] = js.undefined
     ): RestoreDBClusterToPointInTimeResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "DBCluster" -> DBCluster.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RestoreDBClusterToPointInTimeResult]
+      val __obj = js.Dictionary.empty[js.Any]
+      DBCluster.foreach(__v => __obj.update("DBCluster", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[RestoreDBClusterToPointInTimeResult]
     }
   }
 
@@ -10197,90 +7888,40 @@ package rds {
         UseDefaultProcessorFeatures: js.UndefOr[BooleanOptional] = js.undefined,
         VpcSecurityGroupIds: js.UndefOr[VpcSecurityGroupIdList] = js.undefined
     ): RestoreDBInstanceFromDBSnapshotMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "DBInstanceIdentifier" -> DBInstanceIdentifier.asInstanceOf[js.Any],
-        "DBSnapshotIdentifier" -> DBSnapshotIdentifier.asInstanceOf[js.Any],
-        "AutoMinorVersionUpgrade" -> AutoMinorVersionUpgrade.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "AvailabilityZone" -> AvailabilityZone.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "CopyTagsToSnapshot" -> CopyTagsToSnapshot.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DBInstanceClass" -> DBInstanceClass.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DBName" -> DBName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DBParameterGroupName" -> DBParameterGroupName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DBSubnetGroupName" -> DBSubnetGroupName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DeletionProtection" -> DeletionProtection.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Domain" -> Domain.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DomainIAMRoleName" -> DomainIAMRoleName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "EnableCloudwatchLogsExports" -> EnableCloudwatchLogsExports.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "EnableIAMDatabaseAuthentication" -> EnableIAMDatabaseAuthentication.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Engine" -> Engine.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Iops" -> Iops.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "LicenseModel" -> LicenseModel.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MultiAZ" -> MultiAZ.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "OptionGroupName" -> OptionGroupName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Port" -> Port.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ProcessorFeatures" -> ProcessorFeatures.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "PubliclyAccessible" -> PubliclyAccessible.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "StorageType" -> StorageType.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Tags" -> Tags.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "TdeCredentialArn" -> TdeCredentialArn.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "TdeCredentialPassword" -> TdeCredentialPassword.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "UseDefaultProcessorFeatures" -> UseDefaultProcessorFeatures.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "VpcSecurityGroupIds" -> VpcSecurityGroupIds.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "DBSnapshotIdentifier" -> DBSnapshotIdentifier.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RestoreDBInstanceFromDBSnapshotMessage]
+      AutoMinorVersionUpgrade.foreach(__v => __obj.update("AutoMinorVersionUpgrade", __v.asInstanceOf[js.Any]))
+      AvailabilityZone.foreach(__v => __obj.update("AvailabilityZone", __v.asInstanceOf[js.Any]))
+      CopyTagsToSnapshot.foreach(__v => __obj.update("CopyTagsToSnapshot", __v.asInstanceOf[js.Any]))
+      DBInstanceClass.foreach(__v => __obj.update("DBInstanceClass", __v.asInstanceOf[js.Any]))
+      DBName.foreach(__v => __obj.update("DBName", __v.asInstanceOf[js.Any]))
+      DBParameterGroupName.foreach(__v => __obj.update("DBParameterGroupName", __v.asInstanceOf[js.Any]))
+      DBSubnetGroupName.foreach(__v => __obj.update("DBSubnetGroupName", __v.asInstanceOf[js.Any]))
+      DeletionProtection.foreach(__v => __obj.update("DeletionProtection", __v.asInstanceOf[js.Any]))
+      Domain.foreach(__v => __obj.update("Domain", __v.asInstanceOf[js.Any]))
+      DomainIAMRoleName.foreach(__v => __obj.update("DomainIAMRoleName", __v.asInstanceOf[js.Any]))
+      EnableCloudwatchLogsExports.foreach(__v => __obj.update("EnableCloudwatchLogsExports", __v.asInstanceOf[js.Any]))
+      EnableIAMDatabaseAuthentication.foreach(
+        __v => __obj.update("EnableIAMDatabaseAuthentication", __v.asInstanceOf[js.Any])
+      )
+      Engine.foreach(__v => __obj.update("Engine", __v.asInstanceOf[js.Any]))
+      Iops.foreach(__v => __obj.update("Iops", __v.asInstanceOf[js.Any]))
+      LicenseModel.foreach(__v => __obj.update("LicenseModel", __v.asInstanceOf[js.Any]))
+      MultiAZ.foreach(__v => __obj.update("MultiAZ", __v.asInstanceOf[js.Any]))
+      OptionGroupName.foreach(__v => __obj.update("OptionGroupName", __v.asInstanceOf[js.Any]))
+      Port.foreach(__v => __obj.update("Port", __v.asInstanceOf[js.Any]))
+      ProcessorFeatures.foreach(__v => __obj.update("ProcessorFeatures", __v.asInstanceOf[js.Any]))
+      PubliclyAccessible.foreach(__v => __obj.update("PubliclyAccessible", __v.asInstanceOf[js.Any]))
+      StorageType.foreach(__v => __obj.update("StorageType", __v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
+      TdeCredentialArn.foreach(__v => __obj.update("TdeCredentialArn", __v.asInstanceOf[js.Any]))
+      TdeCredentialPassword.foreach(__v => __obj.update("TdeCredentialPassword", __v.asInstanceOf[js.Any]))
+      UseDefaultProcessorFeatures.foreach(__v => __obj.update("UseDefaultProcessorFeatures", __v.asInstanceOf[js.Any]))
+      VpcSecurityGroupIds.foreach(__v => __obj.update("VpcSecurityGroupIds", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[RestoreDBInstanceFromDBSnapshotMessage]
     }
   }
 
@@ -10293,13 +7934,9 @@ package rds {
     def apply(
         DBInstance: js.UndefOr[DBInstance] = js.undefined
     ): RestoreDBInstanceFromDBSnapshotResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "DBInstance" -> DBInstance.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RestoreDBInstanceFromDBSnapshotResult]
+      val __obj = js.Dictionary.empty[js.Any]
+      DBInstance.foreach(__v => __obj.update("DBInstance", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[RestoreDBInstanceFromDBSnapshotResult]
     }
   }
 
@@ -10396,125 +8033,57 @@ package rds {
         UseDefaultProcessorFeatures: js.UndefOr[BooleanOptional] = js.undefined,
         VpcSecurityGroupIds: js.UndefOr[VpcSecurityGroupIdList] = js.undefined
     ): RestoreDBInstanceFromS3Message = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "DBInstanceClass"      -> DBInstanceClass.asInstanceOf[js.Any],
         "DBInstanceIdentifier" -> DBInstanceIdentifier.asInstanceOf[js.Any],
         "Engine"               -> Engine.asInstanceOf[js.Any],
         "S3BucketName"         -> S3BucketName.asInstanceOf[js.Any],
         "S3IngestionRoleArn"   -> S3IngestionRoleArn.asInstanceOf[js.Any],
         "SourceEngine"         -> SourceEngine.asInstanceOf[js.Any],
-        "SourceEngineVersion"  -> SourceEngineVersion.asInstanceOf[js.Any],
-        "AllocatedStorage" -> AllocatedStorage.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "AutoMinorVersionUpgrade" -> AutoMinorVersionUpgrade.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "AvailabilityZone" -> AvailabilityZone.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "BackupRetentionPeriod" -> BackupRetentionPeriod.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "CopyTagsToSnapshot" -> CopyTagsToSnapshot.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DBName" -> DBName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DBParameterGroupName" -> DBParameterGroupName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DBSecurityGroups" -> DBSecurityGroups.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DBSubnetGroupName" -> DBSubnetGroupName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DeletionProtection" -> DeletionProtection.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "EnableCloudwatchLogsExports" -> EnableCloudwatchLogsExports.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "EnableIAMDatabaseAuthentication" -> EnableIAMDatabaseAuthentication.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "EnablePerformanceInsights" -> EnablePerformanceInsights.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "EngineVersion" -> EngineVersion.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Iops" -> Iops.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "KmsKeyId" -> KmsKeyId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "LicenseModel" -> LicenseModel.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MasterUserPassword" -> MasterUserPassword.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MasterUsername" -> MasterUsername.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MonitoringInterval" -> MonitoringInterval.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MonitoringRoleArn" -> MonitoringRoleArn.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MultiAZ" -> MultiAZ.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "OptionGroupName" -> OptionGroupName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "PerformanceInsightsKMSKeyId" -> PerformanceInsightsKMSKeyId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "PerformanceInsightsRetentionPeriod" -> PerformanceInsightsRetentionPeriod.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Port" -> Port.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "PreferredBackupWindow" -> PreferredBackupWindow.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "PreferredMaintenanceWindow" -> PreferredMaintenanceWindow.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ProcessorFeatures" -> ProcessorFeatures.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "PubliclyAccessible" -> PubliclyAccessible.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "S3Prefix" -> S3Prefix.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "StorageEncrypted" -> StorageEncrypted.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "StorageType" -> StorageType.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Tags" -> Tags.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "UseDefaultProcessorFeatures" -> UseDefaultProcessorFeatures.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "VpcSecurityGroupIds" -> VpcSecurityGroupIds.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "SourceEngineVersion"  -> SourceEngineVersion.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RestoreDBInstanceFromS3Message]
+      AllocatedStorage.foreach(__v => __obj.update("AllocatedStorage", __v.asInstanceOf[js.Any]))
+      AutoMinorVersionUpgrade.foreach(__v => __obj.update("AutoMinorVersionUpgrade", __v.asInstanceOf[js.Any]))
+      AvailabilityZone.foreach(__v => __obj.update("AvailabilityZone", __v.asInstanceOf[js.Any]))
+      BackupRetentionPeriod.foreach(__v => __obj.update("BackupRetentionPeriod", __v.asInstanceOf[js.Any]))
+      CopyTagsToSnapshot.foreach(__v => __obj.update("CopyTagsToSnapshot", __v.asInstanceOf[js.Any]))
+      DBName.foreach(__v => __obj.update("DBName", __v.asInstanceOf[js.Any]))
+      DBParameterGroupName.foreach(__v => __obj.update("DBParameterGroupName", __v.asInstanceOf[js.Any]))
+      DBSecurityGroups.foreach(__v => __obj.update("DBSecurityGroups", __v.asInstanceOf[js.Any]))
+      DBSubnetGroupName.foreach(__v => __obj.update("DBSubnetGroupName", __v.asInstanceOf[js.Any]))
+      DeletionProtection.foreach(__v => __obj.update("DeletionProtection", __v.asInstanceOf[js.Any]))
+      EnableCloudwatchLogsExports.foreach(__v => __obj.update("EnableCloudwatchLogsExports", __v.asInstanceOf[js.Any]))
+      EnableIAMDatabaseAuthentication.foreach(
+        __v => __obj.update("EnableIAMDatabaseAuthentication", __v.asInstanceOf[js.Any])
+      )
+      EnablePerformanceInsights.foreach(__v => __obj.update("EnablePerformanceInsights", __v.asInstanceOf[js.Any]))
+      EngineVersion.foreach(__v => __obj.update("EngineVersion", __v.asInstanceOf[js.Any]))
+      Iops.foreach(__v => __obj.update("Iops", __v.asInstanceOf[js.Any]))
+      KmsKeyId.foreach(__v => __obj.update("KmsKeyId", __v.asInstanceOf[js.Any]))
+      LicenseModel.foreach(__v => __obj.update("LicenseModel", __v.asInstanceOf[js.Any]))
+      MasterUserPassword.foreach(__v => __obj.update("MasterUserPassword", __v.asInstanceOf[js.Any]))
+      MasterUsername.foreach(__v => __obj.update("MasterUsername", __v.asInstanceOf[js.Any]))
+      MonitoringInterval.foreach(__v => __obj.update("MonitoringInterval", __v.asInstanceOf[js.Any]))
+      MonitoringRoleArn.foreach(__v => __obj.update("MonitoringRoleArn", __v.asInstanceOf[js.Any]))
+      MultiAZ.foreach(__v => __obj.update("MultiAZ", __v.asInstanceOf[js.Any]))
+      OptionGroupName.foreach(__v => __obj.update("OptionGroupName", __v.asInstanceOf[js.Any]))
+      PerformanceInsightsKMSKeyId.foreach(__v => __obj.update("PerformanceInsightsKMSKeyId", __v.asInstanceOf[js.Any]))
+      PerformanceInsightsRetentionPeriod.foreach(
+        __v => __obj.update("PerformanceInsightsRetentionPeriod", __v.asInstanceOf[js.Any])
+      )
+      Port.foreach(__v => __obj.update("Port", __v.asInstanceOf[js.Any]))
+      PreferredBackupWindow.foreach(__v => __obj.update("PreferredBackupWindow", __v.asInstanceOf[js.Any]))
+      PreferredMaintenanceWindow.foreach(__v => __obj.update("PreferredMaintenanceWindow", __v.asInstanceOf[js.Any]))
+      ProcessorFeatures.foreach(__v => __obj.update("ProcessorFeatures", __v.asInstanceOf[js.Any]))
+      PubliclyAccessible.foreach(__v => __obj.update("PubliclyAccessible", __v.asInstanceOf[js.Any]))
+      S3Prefix.foreach(__v => __obj.update("S3Prefix", __v.asInstanceOf[js.Any]))
+      StorageEncrypted.foreach(__v => __obj.update("StorageEncrypted", __v.asInstanceOf[js.Any]))
+      StorageType.foreach(__v => __obj.update("StorageType", __v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
+      UseDefaultProcessorFeatures.foreach(__v => __obj.update("UseDefaultProcessorFeatures", __v.asInstanceOf[js.Any]))
+      VpcSecurityGroupIds.foreach(__v => __obj.update("VpcSecurityGroupIds", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[RestoreDBInstanceFromS3Message]
     }
   }
 
@@ -10527,13 +8096,9 @@ package rds {
     def apply(
         DBInstance: js.UndefOr[DBInstance] = js.undefined
     ): RestoreDBInstanceFromS3Result = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "DBInstance" -> DBInstance.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RestoreDBInstanceFromS3Result]
+      val __obj = js.Dictionary.empty[js.Any]
+      DBInstance.foreach(__v => __obj.update("DBInstance", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[RestoreDBInstanceFromS3Result]
     }
   }
 
@@ -10609,101 +8174,43 @@ package rds {
         UseLatestRestorableTime: js.UndefOr[Boolean] = js.undefined,
         VpcSecurityGroupIds: js.UndefOr[VpcSecurityGroupIdList] = js.undefined
     ): RestoreDBInstanceToPointInTimeMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "TargetDBInstanceIdentifier" -> TargetDBInstanceIdentifier.asInstanceOf[js.Any],
-        "AutoMinorVersionUpgrade" -> AutoMinorVersionUpgrade.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "AvailabilityZone" -> AvailabilityZone.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "CopyTagsToSnapshot" -> CopyTagsToSnapshot.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DBInstanceClass" -> DBInstanceClass.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DBName" -> DBName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DBParameterGroupName" -> DBParameterGroupName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DBSubnetGroupName" -> DBSubnetGroupName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DeletionProtection" -> DeletionProtection.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Domain" -> Domain.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DomainIAMRoleName" -> DomainIAMRoleName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "EnableCloudwatchLogsExports" -> EnableCloudwatchLogsExports.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "EnableIAMDatabaseAuthentication" -> EnableIAMDatabaseAuthentication.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Engine" -> Engine.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Iops" -> Iops.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "LicenseModel" -> LicenseModel.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MultiAZ" -> MultiAZ.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "OptionGroupName" -> OptionGroupName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Port" -> Port.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ProcessorFeatures" -> ProcessorFeatures.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "PubliclyAccessible" -> PubliclyAccessible.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "RestoreTime" -> RestoreTime.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SourceDBInstanceIdentifier" -> SourceDBInstanceIdentifier.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SourceDbiResourceId" -> SourceDbiResourceId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "StorageType" -> StorageType.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Tags" -> Tags.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "TdeCredentialArn" -> TdeCredentialArn.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "TdeCredentialPassword" -> TdeCredentialPassword.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "UseDefaultProcessorFeatures" -> UseDefaultProcessorFeatures.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "UseLatestRestorableTime" -> UseLatestRestorableTime.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "VpcSecurityGroupIds" -> VpcSecurityGroupIds.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "TargetDBInstanceIdentifier" -> TargetDBInstanceIdentifier.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RestoreDBInstanceToPointInTimeMessage]
+      AutoMinorVersionUpgrade.foreach(__v => __obj.update("AutoMinorVersionUpgrade", __v.asInstanceOf[js.Any]))
+      AvailabilityZone.foreach(__v => __obj.update("AvailabilityZone", __v.asInstanceOf[js.Any]))
+      CopyTagsToSnapshot.foreach(__v => __obj.update("CopyTagsToSnapshot", __v.asInstanceOf[js.Any]))
+      DBInstanceClass.foreach(__v => __obj.update("DBInstanceClass", __v.asInstanceOf[js.Any]))
+      DBName.foreach(__v => __obj.update("DBName", __v.asInstanceOf[js.Any]))
+      DBParameterGroupName.foreach(__v => __obj.update("DBParameterGroupName", __v.asInstanceOf[js.Any]))
+      DBSubnetGroupName.foreach(__v => __obj.update("DBSubnetGroupName", __v.asInstanceOf[js.Any]))
+      DeletionProtection.foreach(__v => __obj.update("DeletionProtection", __v.asInstanceOf[js.Any]))
+      Domain.foreach(__v => __obj.update("Domain", __v.asInstanceOf[js.Any]))
+      DomainIAMRoleName.foreach(__v => __obj.update("DomainIAMRoleName", __v.asInstanceOf[js.Any]))
+      EnableCloudwatchLogsExports.foreach(__v => __obj.update("EnableCloudwatchLogsExports", __v.asInstanceOf[js.Any]))
+      EnableIAMDatabaseAuthentication.foreach(
+        __v => __obj.update("EnableIAMDatabaseAuthentication", __v.asInstanceOf[js.Any])
+      )
+      Engine.foreach(__v => __obj.update("Engine", __v.asInstanceOf[js.Any]))
+      Iops.foreach(__v => __obj.update("Iops", __v.asInstanceOf[js.Any]))
+      LicenseModel.foreach(__v => __obj.update("LicenseModel", __v.asInstanceOf[js.Any]))
+      MultiAZ.foreach(__v => __obj.update("MultiAZ", __v.asInstanceOf[js.Any]))
+      OptionGroupName.foreach(__v => __obj.update("OptionGroupName", __v.asInstanceOf[js.Any]))
+      Port.foreach(__v => __obj.update("Port", __v.asInstanceOf[js.Any]))
+      ProcessorFeatures.foreach(__v => __obj.update("ProcessorFeatures", __v.asInstanceOf[js.Any]))
+      PubliclyAccessible.foreach(__v => __obj.update("PubliclyAccessible", __v.asInstanceOf[js.Any]))
+      RestoreTime.foreach(__v => __obj.update("RestoreTime", __v.asInstanceOf[js.Any]))
+      SourceDBInstanceIdentifier.foreach(__v => __obj.update("SourceDBInstanceIdentifier", __v.asInstanceOf[js.Any]))
+      SourceDbiResourceId.foreach(__v => __obj.update("SourceDbiResourceId", __v.asInstanceOf[js.Any]))
+      StorageType.foreach(__v => __obj.update("StorageType", __v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
+      TdeCredentialArn.foreach(__v => __obj.update("TdeCredentialArn", __v.asInstanceOf[js.Any]))
+      TdeCredentialPassword.foreach(__v => __obj.update("TdeCredentialPassword", __v.asInstanceOf[js.Any]))
+      UseDefaultProcessorFeatures.foreach(__v => __obj.update("UseDefaultProcessorFeatures", __v.asInstanceOf[js.Any]))
+      UseLatestRestorableTime.foreach(__v => __obj.update("UseLatestRestorableTime", __v.asInstanceOf[js.Any]))
+      VpcSecurityGroupIds.foreach(__v => __obj.update("VpcSecurityGroupIds", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[RestoreDBInstanceToPointInTimeMessage]
     }
   }
 
@@ -10716,13 +8223,9 @@ package rds {
     def apply(
         DBInstance: js.UndefOr[DBInstance] = js.undefined
     ): RestoreDBInstanceToPointInTimeResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "DBInstance" -> DBInstance.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RestoreDBInstanceToPointInTimeResult]
+      val __obj = js.Dictionary.empty[js.Any]
+      DBInstance.foreach(__v => __obj.update("DBInstance", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[RestoreDBInstanceToPointInTimeResult]
     }
   }
 
@@ -10740,16 +8243,10 @@ package rds {
         EarliestTime: js.UndefOr[TStamp] = js.undefined,
         LatestTime: js.UndefOr[TStamp] = js.undefined
     ): RestoreWindow = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "EarliestTime" -> EarliestTime.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "LatestTime" -> LatestTime.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RestoreWindow]
+      val __obj = js.Dictionary.empty[js.Any]
+      EarliestTime.foreach(__v => __obj.update("EarliestTime", __v.asInstanceOf[js.Any]))
+      LatestTime.foreach(__v => __obj.update("LatestTime", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[RestoreWindow]
     }
   }
 
@@ -10773,23 +8270,15 @@ package rds {
         EC2SecurityGroupName: js.UndefOr[String] = js.undefined,
         EC2SecurityGroupOwnerId: js.UndefOr[String] = js.undefined
     ): RevokeDBSecurityGroupIngressMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "DBSecurityGroupName" -> DBSecurityGroupName.asInstanceOf[js.Any],
-        "CIDRIP" -> CIDRIP.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "EC2SecurityGroupId" -> EC2SecurityGroupId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "EC2SecurityGroupName" -> EC2SecurityGroupName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "EC2SecurityGroupOwnerId" -> EC2SecurityGroupOwnerId.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "DBSecurityGroupName" -> DBSecurityGroupName.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RevokeDBSecurityGroupIngressMessage]
+      CIDRIP.foreach(__v => __obj.update("CIDRIP", __v.asInstanceOf[js.Any]))
+      EC2SecurityGroupId.foreach(__v => __obj.update("EC2SecurityGroupId", __v.asInstanceOf[js.Any]))
+      EC2SecurityGroupName.foreach(__v => __obj.update("EC2SecurityGroupName", __v.asInstanceOf[js.Any]))
+      EC2SecurityGroupOwnerId.foreach(__v => __obj.update("EC2SecurityGroupOwnerId", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[RevokeDBSecurityGroupIngressMessage]
     }
   }
 
@@ -10802,13 +8291,9 @@ package rds {
     def apply(
         DBSecurityGroup: js.UndefOr[DBSecurityGroup] = js.undefined
     ): RevokeDBSecurityGroupIngressResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "DBSecurityGroup" -> DBSecurityGroup.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RevokeDBSecurityGroupIngressResult]
+      val __obj = js.Dictionary.empty[js.Any]
+      DBSecurityGroup.foreach(__v => __obj.update("DBSecurityGroup", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[RevokeDBSecurityGroupIngressResult]
     }
   }
 
@@ -10831,22 +8316,12 @@ package rds {
         MinCapacity: js.UndefOr[IntegerOptional] = js.undefined,
         SecondsUntilAutoPause: js.UndefOr[IntegerOptional] = js.undefined
     ): ScalingConfiguration = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "AutoPause" -> AutoPause.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MaxCapacity" -> MaxCapacity.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MinCapacity" -> MinCapacity.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SecondsUntilAutoPause" -> SecondsUntilAutoPause.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ScalingConfiguration]
+      val __obj = js.Dictionary.empty[js.Any]
+      AutoPause.foreach(__v => __obj.update("AutoPause", __v.asInstanceOf[js.Any]))
+      MaxCapacity.foreach(__v => __obj.update("MaxCapacity", __v.asInstanceOf[js.Any]))
+      MinCapacity.foreach(__v => __obj.update("MinCapacity", __v.asInstanceOf[js.Any]))
+      SecondsUntilAutoPause.foreach(__v => __obj.update("SecondsUntilAutoPause", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ScalingConfiguration]
     }
   }
 
@@ -10869,22 +8344,12 @@ package rds {
         MinCapacity: js.UndefOr[IntegerOptional] = js.undefined,
         SecondsUntilAutoPause: js.UndefOr[IntegerOptional] = js.undefined
     ): ScalingConfigurationInfo = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "AutoPause" -> AutoPause.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MaxCapacity" -> MaxCapacity.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MinCapacity" -> MinCapacity.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SecondsUntilAutoPause" -> SecondsUntilAutoPause.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ScalingConfigurationInfo]
+      val __obj = js.Dictionary.empty[js.Any]
+      AutoPause.foreach(__v => __obj.update("AutoPause", __v.asInstanceOf[js.Any]))
+      MaxCapacity.foreach(__v => __obj.update("MaxCapacity", __v.asInstanceOf[js.Any]))
+      MinCapacity.foreach(__v => __obj.update("MinCapacity", __v.asInstanceOf[js.Any]))
+      SecondsUntilAutoPause.foreach(__v => __obj.update("SecondsUntilAutoPause", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ScalingConfigurationInfo]
     }
   }
 
@@ -10904,19 +8369,11 @@ package rds {
         RegionName: js.UndefOr[String] = js.undefined,
         Status: js.UndefOr[String] = js.undefined
     ): SourceRegion = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Endpoint" -> Endpoint.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "RegionName" -> RegionName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Status" -> Status.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SourceRegion]
+      val __obj = js.Dictionary.empty[js.Any]
+      Endpoint.foreach(__v => __obj.update("Endpoint", __v.asInstanceOf[js.Any]))
+      RegionName.foreach(__v => __obj.update("RegionName", __v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.update("Status", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[SourceRegion]
     }
   }
 
@@ -10934,16 +8391,10 @@ package rds {
         Marker: js.UndefOr[String] = js.undefined,
         SourceRegions: js.UndefOr[SourceRegionList] = js.undefined
     ): SourceRegionMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Marker" -> Marker.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SourceRegions" -> SourceRegions.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SourceRegionMessage]
+      val __obj = js.Dictionary.empty[js.Any]
+      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
+      SourceRegions.foreach(__v => __obj.update("SourceRegions", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[SourceRegionMessage]
     }
   }
 
@@ -10974,11 +8425,11 @@ package rds {
     def apply(
         DBClusterIdentifier: String
     ): StartDBClusterMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "DBClusterIdentifier" -> DBClusterIdentifier.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StartDBClusterMessage]
+      __obj.asInstanceOf[StartDBClusterMessage]
     }
   }
 
@@ -10991,13 +8442,9 @@ package rds {
     def apply(
         DBCluster: js.UndefOr[DBCluster] = js.undefined
     ): StartDBClusterResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "DBCluster" -> DBCluster.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StartDBClusterResult]
+      val __obj = js.Dictionary.empty[js.Any]
+      DBCluster.foreach(__v => __obj.update("DBCluster", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[StartDBClusterResult]
     }
   }
 
@@ -11010,11 +8457,11 @@ package rds {
     def apply(
         DBInstanceIdentifier: String
     ): StartDBInstanceMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "DBInstanceIdentifier" -> DBInstanceIdentifier.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StartDBInstanceMessage]
+      __obj.asInstanceOf[StartDBInstanceMessage]
     }
   }
 
@@ -11027,13 +8474,9 @@ package rds {
     def apply(
         DBInstance: js.UndefOr[DBInstance] = js.undefined
     ): StartDBInstanceResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "DBInstance" -> DBInstance.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StartDBInstanceResult]
+      val __obj = js.Dictionary.empty[js.Any]
+      DBInstance.foreach(__v => __obj.update("DBInstance", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[StartDBInstanceResult]
     }
   }
 
@@ -11046,11 +8489,11 @@ package rds {
     def apply(
         DBClusterIdentifier: String
     ): StopDBClusterMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "DBClusterIdentifier" -> DBClusterIdentifier.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StopDBClusterMessage]
+      __obj.asInstanceOf[StopDBClusterMessage]
     }
   }
 
@@ -11063,13 +8506,9 @@ package rds {
     def apply(
         DBCluster: js.UndefOr[DBCluster] = js.undefined
     ): StopDBClusterResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "DBCluster" -> DBCluster.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StopDBClusterResult]
+      val __obj = js.Dictionary.empty[js.Any]
+      DBCluster.foreach(__v => __obj.update("DBCluster", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[StopDBClusterResult]
     }
   }
 
@@ -11084,14 +8523,12 @@ package rds {
         DBInstanceIdentifier: String,
         DBSnapshotIdentifier: js.UndefOr[String] = js.undefined
     ): StopDBInstanceMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "DBInstanceIdentifier" -> DBInstanceIdentifier.asInstanceOf[js.Any],
-        "DBSnapshotIdentifier" -> DBSnapshotIdentifier.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "DBInstanceIdentifier" -> DBInstanceIdentifier.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StopDBInstanceMessage]
+      DBSnapshotIdentifier.foreach(__v => __obj.update("DBSnapshotIdentifier", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[StopDBInstanceMessage]
     }
   }
 
@@ -11104,13 +8541,9 @@ package rds {
     def apply(
         DBInstance: js.UndefOr[DBInstance] = js.undefined
     ): StopDBInstanceResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "DBInstance" -> DBInstance.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StopDBInstanceResult]
+      val __obj = js.Dictionary.empty[js.Any]
+      DBInstance.foreach(__v => __obj.update("DBInstance", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[StopDBInstanceResult]
     }
   }
 
@@ -11130,19 +8563,11 @@ package rds {
         SubnetIdentifier: js.UndefOr[String] = js.undefined,
         SubnetStatus: js.UndefOr[String] = js.undefined
     ): Subnet = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "SubnetAvailabilityZone" -> SubnetAvailabilityZone.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SubnetIdentifier" -> SubnetIdentifier.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SubnetStatus" -> SubnetStatus.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Subnet]
+      val __obj = js.Dictionary.empty[js.Any]
+      SubnetAvailabilityZone.foreach(__v => __obj.update("SubnetAvailabilityZone", __v.asInstanceOf[js.Any]))
+      SubnetIdentifier.foreach(__v => __obj.update("SubnetIdentifier", __v.asInstanceOf[js.Any]))
+      SubnetStatus.foreach(__v => __obj.update("SubnetStatus", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Subnet]
     }
   }
 
@@ -11160,16 +8585,10 @@ package rds {
         Key: js.UndefOr[String] = js.undefined,
         Value: js.UndefOr[String] = js.undefined
     ): Tag = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Key" -> Key.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Value" -> Value.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Tag]
+      val __obj = js.Dictionary.empty[js.Any]
+      Key.foreach(__v => __obj.update("Key", __v.asInstanceOf[js.Any]))
+      Value.foreach(__v => __obj.update("Value", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Tag]
     }
   }
 
@@ -11185,13 +8604,9 @@ package rds {
     def apply(
         TagList: js.UndefOr[TagList] = js.undefined
     ): TagListMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "TagList" -> TagList.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[TagListMessage]
+      val __obj = js.Dictionary.empty[js.Any]
+      TagList.foreach(__v => __obj.update("TagList", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[TagListMessage]
     }
   }
 
@@ -11207,13 +8622,9 @@ package rds {
     def apply(
         TimezoneName: js.UndefOr[String] = js.undefined
     ): Timezone = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "TimezoneName" -> TimezoneName.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Timezone]
+      val __obj = js.Dictionary.empty[js.Any]
+      TimezoneName.foreach(__v => __obj.update("TimezoneName", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Timezone]
     }
   }
 
@@ -11237,25 +8648,13 @@ package rds {
         EngineVersion: js.UndefOr[String] = js.undefined,
         IsMajorVersionUpgrade: js.UndefOr[Boolean] = js.undefined
     ): UpgradeTarget = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "AutoUpgrade" -> AutoUpgrade.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Description" -> Description.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Engine" -> Engine.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "EngineVersion" -> EngineVersion.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "IsMajorVersionUpgrade" -> IsMajorVersionUpgrade.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpgradeTarget]
+      val __obj = js.Dictionary.empty[js.Any]
+      AutoUpgrade.foreach(__v => __obj.update("AutoUpgrade", __v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
+      Engine.foreach(__v => __obj.update("Engine", __v.asInstanceOf[js.Any]))
+      EngineVersion.foreach(__v => __obj.update("EngineVersion", __v.asInstanceOf[js.Any]))
+      IsMajorVersionUpgrade.foreach(__v => __obj.update("IsMajorVersionUpgrade", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpgradeTarget]
     }
   }
 
@@ -11273,16 +8672,10 @@ package rds {
         Storage: js.UndefOr[ValidStorageOptionsList] = js.undefined,
         ValidProcessorFeatures: js.UndefOr[AvailableProcessorFeatureList] = js.undefined
     ): ValidDBInstanceModificationsMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Storage" -> Storage.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ValidProcessorFeatures" -> ValidProcessorFeatures.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ValidDBInstanceModificationsMessage]
+      val __obj = js.Dictionary.empty[js.Any]
+      Storage.foreach(__v => __obj.update("Storage", __v.asInstanceOf[js.Any]))
+      ValidProcessorFeatures.foreach(__v => __obj.update("ValidProcessorFeatures", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ValidDBInstanceModificationsMessage]
     }
   }
 
@@ -11304,22 +8697,12 @@ package rds {
         StorageSize: js.UndefOr[RangeList] = js.undefined,
         StorageType: js.UndefOr[String] = js.undefined
     ): ValidStorageOptions = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "IopsToStorageRatio" -> IopsToStorageRatio.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ProvisionedIops" -> ProvisionedIops.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "StorageSize" -> StorageSize.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "StorageType" -> StorageType.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ValidStorageOptions]
+      val __obj = js.Dictionary.empty[js.Any]
+      IopsToStorageRatio.foreach(__v => __obj.update("IopsToStorageRatio", __v.asInstanceOf[js.Any]))
+      ProvisionedIops.foreach(__v => __obj.update("ProvisionedIops", __v.asInstanceOf[js.Any]))
+      StorageSize.foreach(__v => __obj.update("StorageSize", __v.asInstanceOf[js.Any]))
+      StorageType.foreach(__v => __obj.update("StorageType", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ValidStorageOptions]
     }
   }
 
@@ -11337,16 +8720,10 @@ package rds {
         Status: js.UndefOr[String] = js.undefined,
         VpcSecurityGroupId: js.UndefOr[String] = js.undefined
     ): VpcSecurityGroupMembership = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Status" -> Status.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "VpcSecurityGroupId" -> VpcSecurityGroupId.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[VpcSecurityGroupMembership]
+      val __obj = js.Dictionary.empty[js.Any]
+      Status.foreach(__v => __obj.update("Status", __v.asInstanceOf[js.Any]))
+      VpcSecurityGroupId.foreach(__v => __obj.update("VpcSecurityGroupId", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[VpcSecurityGroupMembership]
     }
   }
 }

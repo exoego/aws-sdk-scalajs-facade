@@ -106,12 +106,12 @@ package serverlessapplicationrepository {
         ApplicationId: __string,
         SemanticVersion: __string
     ): ApplicationDependencySummary = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ApplicationId"   -> ApplicationId.asInstanceOf[js.Any],
         "SemanticVersion" -> SemanticVersion.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ApplicationDependencySummary]
+      __obj.asInstanceOf[ApplicationDependencySummary]
     }
   }
 
@@ -131,15 +131,13 @@ package serverlessapplicationrepository {
         Principals: __listOf__string,
         StatementId: js.UndefOr[__string] = js.undefined
     ): ApplicationPolicyStatement = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "Actions"    -> Actions.asInstanceOf[js.Any],
-        "Principals" -> Principals.asInstanceOf[js.Any],
-        "StatementId" -> StatementId.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "Principals" -> Principals.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ApplicationPolicyStatement]
+      StatementId.foreach(__v => __obj.update("StatementId", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ApplicationPolicyStatement]
     }
   }
 
@@ -169,26 +167,18 @@ package serverlessapplicationrepository {
         Labels: js.UndefOr[__listOf__string] = js.undefined,
         SpdxLicenseId: js.UndefOr[__string] = js.undefined
     ): ApplicationSummary = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ApplicationId" -> ApplicationId.asInstanceOf[js.Any],
         "Author"        -> Author.asInstanceOf[js.Any],
         "Description"   -> Description.asInstanceOf[js.Any],
-        "Name"          -> Name.asInstanceOf[js.Any],
-        "CreationTime" -> CreationTime.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "HomePageUrl" -> HomePageUrl.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Labels" -> Labels.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SpdxLicenseId" -> SpdxLicenseId.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "Name"          -> Name.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ApplicationSummary]
+      CreationTime.foreach(__v => __obj.update("CreationTime", __v.asInstanceOf[js.Any]))
+      HomePageUrl.foreach(__v => __obj.update("HomePageUrl", __v.asInstanceOf[js.Any]))
+      Labels.foreach(__v => __obj.update("Labels", __v.asInstanceOf[js.Any]))
+      SpdxLicenseId.foreach(__v => __obj.update("SpdxLicenseId", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ApplicationSummary]
     }
   }
 
@@ -241,49 +231,25 @@ package serverlessapplicationrepository {
         TemplateBody: js.UndefOr[__string] = js.undefined,
         TemplateUrl: js.UndefOr[__string] = js.undefined
     ): CreateApplicationRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "Author"      -> Author.asInstanceOf[js.Any],
         "Description" -> Description.asInstanceOf[js.Any],
-        "Name"        -> Name.asInstanceOf[js.Any],
-        "HomePageUrl" -> HomePageUrl.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Labels" -> Labels.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "LicenseBody" -> LicenseBody.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "LicenseUrl" -> LicenseUrl.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ReadmeBody" -> ReadmeBody.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ReadmeUrl" -> ReadmeUrl.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SemanticVersion" -> SemanticVersion.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SourceCodeArchiveUrl" -> SourceCodeArchiveUrl.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SourceCodeUrl" -> SourceCodeUrl.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SpdxLicenseId" -> SpdxLicenseId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "TemplateBody" -> TemplateBody.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "TemplateUrl" -> TemplateUrl.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "Name"        -> Name.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateApplicationRequest]
+      HomePageUrl.foreach(__v => __obj.update("HomePageUrl", __v.asInstanceOf[js.Any]))
+      Labels.foreach(__v => __obj.update("Labels", __v.asInstanceOf[js.Any]))
+      LicenseBody.foreach(__v => __obj.update("LicenseBody", __v.asInstanceOf[js.Any]))
+      LicenseUrl.foreach(__v => __obj.update("LicenseUrl", __v.asInstanceOf[js.Any]))
+      ReadmeBody.foreach(__v => __obj.update("ReadmeBody", __v.asInstanceOf[js.Any]))
+      ReadmeUrl.foreach(__v => __obj.update("ReadmeUrl", __v.asInstanceOf[js.Any]))
+      SemanticVersion.foreach(__v => __obj.update("SemanticVersion", __v.asInstanceOf[js.Any]))
+      SourceCodeArchiveUrl.foreach(__v => __obj.update("SourceCodeArchiveUrl", __v.asInstanceOf[js.Any]))
+      SourceCodeUrl.foreach(__v => __obj.update("SourceCodeUrl", __v.asInstanceOf[js.Any]))
+      SpdxLicenseId.foreach(__v => __obj.update("SpdxLicenseId", __v.asInstanceOf[js.Any]))
+      TemplateBody.foreach(__v => __obj.update("TemplateBody", __v.asInstanceOf[js.Any]))
+      TemplateUrl.foreach(__v => __obj.update("TemplateUrl", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateApplicationRequest]
     }
   }
 
@@ -316,43 +282,19 @@ package serverlessapplicationrepository {
         SpdxLicenseId: js.UndefOr[__string] = js.undefined,
         Version: js.UndefOr[Version] = js.undefined
     ): CreateApplicationResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ApplicationId" -> ApplicationId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Author" -> Author.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "CreationTime" -> CreationTime.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Description" -> Description.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "HomePageUrl" -> HomePageUrl.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Labels" -> Labels.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "LicenseUrl" -> LicenseUrl.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Name" -> Name.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ReadmeUrl" -> ReadmeUrl.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SpdxLicenseId" -> SpdxLicenseId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Version" -> Version.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateApplicationResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      ApplicationId.foreach(__v => __obj.update("ApplicationId", __v.asInstanceOf[js.Any]))
+      Author.foreach(__v => __obj.update("Author", __v.asInstanceOf[js.Any]))
+      CreationTime.foreach(__v => __obj.update("CreationTime", __v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
+      HomePageUrl.foreach(__v => __obj.update("HomePageUrl", __v.asInstanceOf[js.Any]))
+      Labels.foreach(__v => __obj.update("Labels", __v.asInstanceOf[js.Any]))
+      LicenseUrl.foreach(__v => __obj.update("LicenseUrl", __v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
+      ReadmeUrl.foreach(__v => __obj.update("ReadmeUrl", __v.asInstanceOf[js.Any]))
+      SpdxLicenseId.foreach(__v => __obj.update("SpdxLicenseId", __v.asInstanceOf[js.Any]))
+      Version.foreach(__v => __obj.update("Version", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateApplicationResponse]
     }
   }
 
@@ -375,24 +317,16 @@ package serverlessapplicationrepository {
         TemplateBody: js.UndefOr[__string] = js.undefined,
         TemplateUrl: js.UndefOr[__string] = js.undefined
     ): CreateApplicationVersionRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ApplicationId"   -> ApplicationId.asInstanceOf[js.Any],
-        "SemanticVersion" -> SemanticVersion.asInstanceOf[js.Any],
-        "SourceCodeArchiveUrl" -> SourceCodeArchiveUrl.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SourceCodeUrl" -> SourceCodeUrl.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "TemplateBody" -> TemplateBody.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "TemplateUrl" -> TemplateUrl.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "SemanticVersion" -> SemanticVersion.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateApplicationVersionRequest]
+      SourceCodeArchiveUrl.foreach(__v => __obj.update("SourceCodeArchiveUrl", __v.asInstanceOf[js.Any]))
+      SourceCodeUrl.foreach(__v => __obj.update("SourceCodeUrl", __v.asInstanceOf[js.Any]))
+      TemplateBody.foreach(__v => __obj.update("TemplateBody", __v.asInstanceOf[js.Any]))
+      TemplateUrl.foreach(__v => __obj.update("TemplateUrl", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateApplicationVersionRequest]
     }
   }
 
@@ -421,37 +355,17 @@ package serverlessapplicationrepository {
         SourceCodeUrl: js.UndefOr[__string] = js.undefined,
         TemplateUrl: js.UndefOr[__string] = js.undefined
     ): CreateApplicationVersionResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ApplicationId" -> ApplicationId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "CreationTime" -> CreationTime.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ParameterDefinitions" -> ParameterDefinitions.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "RequiredCapabilities" -> RequiredCapabilities.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ResourcesSupported" -> ResourcesSupported.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SemanticVersion" -> SemanticVersion.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SourceCodeArchiveUrl" -> SourceCodeArchiveUrl.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SourceCodeUrl" -> SourceCodeUrl.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "TemplateUrl" -> TemplateUrl.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateApplicationVersionResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      ApplicationId.foreach(__v => __obj.update("ApplicationId", __v.asInstanceOf[js.Any]))
+      CreationTime.foreach(__v => __obj.update("CreationTime", __v.asInstanceOf[js.Any]))
+      ParameterDefinitions.foreach(__v => __obj.update("ParameterDefinitions", __v.asInstanceOf[js.Any]))
+      RequiredCapabilities.foreach(__v => __obj.update("RequiredCapabilities", __v.asInstanceOf[js.Any]))
+      ResourcesSupported.foreach(__v => __obj.update("ResourcesSupported", __v.asInstanceOf[js.Any]))
+      SemanticVersion.foreach(__v => __obj.update("SemanticVersion", __v.asInstanceOf[js.Any]))
+      SourceCodeArchiveUrl.foreach(__v => __obj.update("SourceCodeArchiveUrl", __v.asInstanceOf[js.Any]))
+      SourceCodeUrl.foreach(__v => __obj.update("SourceCodeUrl", __v.asInstanceOf[js.Any]))
+      TemplateUrl.foreach(__v => __obj.update("TemplateUrl", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateApplicationVersionResponse]
     }
   }
 
@@ -488,45 +402,23 @@ package serverlessapplicationrepository {
         Tags: js.UndefOr[__listOfTag] = js.undefined,
         TemplateId: js.UndefOr[__string] = js.undefined
     ): CreateCloudFormationChangeSetRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ApplicationId" -> ApplicationId.asInstanceOf[js.Any],
-        "StackName"     -> StackName.asInstanceOf[js.Any],
-        "Capabilities" -> Capabilities.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ChangeSetName" -> ChangeSetName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ClientToken" -> ClientToken.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Description" -> Description.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NotificationArns" -> NotificationArns.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ParameterOverrides" -> ParameterOverrides.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ResourceTypes" -> ResourceTypes.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "RollbackConfiguration" -> RollbackConfiguration.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SemanticVersion" -> SemanticVersion.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Tags" -> Tags.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "TemplateId" -> TemplateId.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "StackName"     -> StackName.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateCloudFormationChangeSetRequest]
+      Capabilities.foreach(__v => __obj.update("Capabilities", __v.asInstanceOf[js.Any]))
+      ChangeSetName.foreach(__v => __obj.update("ChangeSetName", __v.asInstanceOf[js.Any]))
+      ClientToken.foreach(__v => __obj.update("ClientToken", __v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
+      NotificationArns.foreach(__v => __obj.update("NotificationArns", __v.asInstanceOf[js.Any]))
+      ParameterOverrides.foreach(__v => __obj.update("ParameterOverrides", __v.asInstanceOf[js.Any]))
+      ResourceTypes.foreach(__v => __obj.update("ResourceTypes", __v.asInstanceOf[js.Any]))
+      RollbackConfiguration.foreach(__v => __obj.update("RollbackConfiguration", __v.asInstanceOf[js.Any]))
+      SemanticVersion.foreach(__v => __obj.update("SemanticVersion", __v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
+      TemplateId.foreach(__v => __obj.update("TemplateId", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateCloudFormationChangeSetRequest]
     }
   }
 
@@ -545,22 +437,12 @@ package serverlessapplicationrepository {
         SemanticVersion: js.UndefOr[__string] = js.undefined,
         StackId: js.UndefOr[__string] = js.undefined
     ): CreateCloudFormationChangeSetResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ApplicationId" -> ApplicationId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ChangeSetId" -> ChangeSetId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SemanticVersion" -> SemanticVersion.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "StackId" -> StackId.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateCloudFormationChangeSetResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      ApplicationId.foreach(__v => __obj.update("ApplicationId", __v.asInstanceOf[js.Any]))
+      ChangeSetId.foreach(__v => __obj.update("ChangeSetId", __v.asInstanceOf[js.Any]))
+      SemanticVersion.foreach(__v => __obj.update("SemanticVersion", __v.asInstanceOf[js.Any]))
+      StackId.foreach(__v => __obj.update("StackId", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateCloudFormationChangeSetResponse]
     }
   }
 
@@ -575,14 +457,12 @@ package serverlessapplicationrepository {
         ApplicationId: __string,
         SemanticVersion: js.UndefOr[__string] = js.undefined
     ): CreateCloudFormationTemplateRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ApplicationId" -> ApplicationId.asInstanceOf[js.Any],
-        "SemanticVersion" -> SemanticVersion.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "ApplicationId" -> ApplicationId.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateCloudFormationTemplateRequest]
+      SemanticVersion.foreach(__v => __obj.update("SemanticVersion", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateCloudFormationTemplateRequest]
     }
   }
 
@@ -607,31 +487,15 @@ package serverlessapplicationrepository {
         TemplateId: js.UndefOr[__string] = js.undefined,
         TemplateUrl: js.UndefOr[__string] = js.undefined
     ): CreateCloudFormationTemplateResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ApplicationId" -> ApplicationId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "CreationTime" -> CreationTime.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ExpirationTime" -> ExpirationTime.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SemanticVersion" -> SemanticVersion.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Status" -> Status.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "TemplateId" -> TemplateId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "TemplateUrl" -> TemplateUrl.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateCloudFormationTemplateResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      ApplicationId.foreach(__v => __obj.update("ApplicationId", __v.asInstanceOf[js.Any]))
+      CreationTime.foreach(__v => __obj.update("CreationTime", __v.asInstanceOf[js.Any]))
+      ExpirationTime.foreach(__v => __obj.update("ExpirationTime", __v.asInstanceOf[js.Any]))
+      SemanticVersion.foreach(__v => __obj.update("SemanticVersion", __v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.update("Status", __v.asInstanceOf[js.Any]))
+      TemplateId.foreach(__v => __obj.update("TemplateId", __v.asInstanceOf[js.Any]))
+      TemplateUrl.foreach(__v => __obj.update("TemplateUrl", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateCloudFormationTemplateResponse]
     }
   }
 
@@ -644,11 +508,11 @@ package serverlessapplicationrepository {
     def apply(
         ApplicationId: __string
     ): DeleteApplicationRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ApplicationId" -> ApplicationId.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteApplicationRequest]
+      __obj.asInstanceOf[DeleteApplicationRequest]
     }
   }
 
@@ -661,11 +525,11 @@ package serverlessapplicationrepository {
     def apply(
         ApplicationId: __string
     ): GetApplicationPolicyRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ApplicationId" -> ApplicationId.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetApplicationPolicyRequest]
+      __obj.asInstanceOf[GetApplicationPolicyRequest]
     }
   }
 
@@ -678,13 +542,9 @@ package serverlessapplicationrepository {
     def apply(
         Statements: js.UndefOr[__listOfApplicationPolicyStatement] = js.undefined
     ): GetApplicationPolicyResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Statements" -> Statements.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetApplicationPolicyResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      Statements.foreach(__v => __obj.update("Statements", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetApplicationPolicyResponse]
     }
   }
 
@@ -699,14 +559,12 @@ package serverlessapplicationrepository {
         ApplicationId: __string,
         SemanticVersion: js.UndefOr[__string] = js.undefined
     ): GetApplicationRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ApplicationId" -> ApplicationId.asInstanceOf[js.Any],
-        "SemanticVersion" -> SemanticVersion.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "ApplicationId" -> ApplicationId.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetApplicationRequest]
+      SemanticVersion.foreach(__v => __obj.update("SemanticVersion", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetApplicationRequest]
     }
   }
 
@@ -739,43 +597,19 @@ package serverlessapplicationrepository {
         SpdxLicenseId: js.UndefOr[__string] = js.undefined,
         Version: js.UndefOr[Version] = js.undefined
     ): GetApplicationResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ApplicationId" -> ApplicationId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Author" -> Author.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "CreationTime" -> CreationTime.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Description" -> Description.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "HomePageUrl" -> HomePageUrl.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Labels" -> Labels.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "LicenseUrl" -> LicenseUrl.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Name" -> Name.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ReadmeUrl" -> ReadmeUrl.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SpdxLicenseId" -> SpdxLicenseId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Version" -> Version.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetApplicationResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      ApplicationId.foreach(__v => __obj.update("ApplicationId", __v.asInstanceOf[js.Any]))
+      Author.foreach(__v => __obj.update("Author", __v.asInstanceOf[js.Any]))
+      CreationTime.foreach(__v => __obj.update("CreationTime", __v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
+      HomePageUrl.foreach(__v => __obj.update("HomePageUrl", __v.asInstanceOf[js.Any]))
+      Labels.foreach(__v => __obj.update("Labels", __v.asInstanceOf[js.Any]))
+      LicenseUrl.foreach(__v => __obj.update("LicenseUrl", __v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
+      ReadmeUrl.foreach(__v => __obj.update("ReadmeUrl", __v.asInstanceOf[js.Any]))
+      SpdxLicenseId.foreach(__v => __obj.update("SpdxLicenseId", __v.asInstanceOf[js.Any]))
+      Version.foreach(__v => __obj.update("Version", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetApplicationResponse]
     }
   }
 
@@ -790,12 +624,12 @@ package serverlessapplicationrepository {
         ApplicationId: __string,
         TemplateId: __string
     ): GetCloudFormationTemplateRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ApplicationId" -> ApplicationId.asInstanceOf[js.Any],
         "TemplateId"    -> TemplateId.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetCloudFormationTemplateRequest]
+      __obj.asInstanceOf[GetCloudFormationTemplateRequest]
     }
   }
 
@@ -820,31 +654,15 @@ package serverlessapplicationrepository {
         TemplateId: js.UndefOr[__string] = js.undefined,
         TemplateUrl: js.UndefOr[__string] = js.undefined
     ): GetCloudFormationTemplateResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ApplicationId" -> ApplicationId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "CreationTime" -> CreationTime.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ExpirationTime" -> ExpirationTime.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SemanticVersion" -> SemanticVersion.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Status" -> Status.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "TemplateId" -> TemplateId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "TemplateUrl" -> TemplateUrl.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetCloudFormationTemplateResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      ApplicationId.foreach(__v => __obj.update("ApplicationId", __v.asInstanceOf[js.Any]))
+      CreationTime.foreach(__v => __obj.update("CreationTime", __v.asInstanceOf[js.Any]))
+      ExpirationTime.foreach(__v => __obj.update("ExpirationTime", __v.asInstanceOf[js.Any]))
+      SemanticVersion.foreach(__v => __obj.update("SemanticVersion", __v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.update("Status", __v.asInstanceOf[js.Any]))
+      TemplateId.foreach(__v => __obj.update("TemplateId", __v.asInstanceOf[js.Any]))
+      TemplateUrl.foreach(__v => __obj.update("TemplateUrl", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetCloudFormationTemplateResponse]
     }
   }
 
@@ -863,20 +681,14 @@ package serverlessapplicationrepository {
         NextToken: js.UndefOr[__string] = js.undefined,
         SemanticVersion: js.UndefOr[__string] = js.undefined
     ): ListApplicationDependenciesRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ApplicationId" -> ApplicationId.asInstanceOf[js.Any],
-        "MaxItems" -> MaxItems.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NextToken" -> NextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SemanticVersion" -> SemanticVersion.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "ApplicationId" -> ApplicationId.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListApplicationDependenciesRequest]
+      MaxItems.foreach(__v => __obj.update("MaxItems", __v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      SemanticVersion.foreach(__v => __obj.update("SemanticVersion", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListApplicationDependenciesRequest]
     }
   }
 
@@ -891,16 +703,10 @@ package serverlessapplicationrepository {
         Dependencies: js.UndefOr[__listOfApplicationDependencySummary] = js.undefined,
         NextToken: js.UndefOr[__string] = js.undefined
     ): ListApplicationDependenciesResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Dependencies" -> Dependencies.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NextToken" -> NextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListApplicationDependenciesResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      Dependencies.foreach(__v => __obj.update("Dependencies", __v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListApplicationDependenciesResponse]
     }
   }
 
@@ -917,17 +723,13 @@ package serverlessapplicationrepository {
         MaxItems: js.UndefOr[MaxItems] = js.undefined,
         NextToken: js.UndefOr[__string] = js.undefined
     ): ListApplicationVersionsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ApplicationId" -> ApplicationId.asInstanceOf[js.Any],
-        "MaxItems" -> MaxItems.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NextToken" -> NextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "ApplicationId" -> ApplicationId.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListApplicationVersionsRequest]
+      MaxItems.foreach(__v => __obj.update("MaxItems", __v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListApplicationVersionsRequest]
     }
   }
 
@@ -942,16 +744,10 @@ package serverlessapplicationrepository {
         NextToken: js.UndefOr[__string] = js.undefined,
         Versions: js.UndefOr[__listOfVersionSummary] = js.undefined
     ): ListApplicationVersionsResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "NextToken" -> NextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Versions" -> Versions.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListApplicationVersionsResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      Versions.foreach(__v => __obj.update("Versions", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListApplicationVersionsResponse]
     }
   }
 
@@ -966,16 +762,10 @@ package serverlessapplicationrepository {
         MaxItems: js.UndefOr[MaxItems] = js.undefined,
         NextToken: js.UndefOr[__string] = js.undefined
     ): ListApplicationsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "MaxItems" -> MaxItems.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NextToken" -> NextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListApplicationsRequest]
+      val __obj = js.Dictionary.empty[js.Any]
+      MaxItems.foreach(__v => __obj.update("MaxItems", __v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListApplicationsRequest]
     }
   }
 
@@ -990,16 +780,10 @@ package serverlessapplicationrepository {
         Applications: js.UndefOr[__listOfApplicationSummary] = js.undefined,
         NextToken: js.UndefOr[__string] = js.undefined
     ): ListApplicationsResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Applications" -> Applications.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NextToken" -> NextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListApplicationsResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      Applications.foreach(__v => __obj.update("Applications", __v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListApplicationsResponse]
     }
   }
 
@@ -1039,45 +823,23 @@ package serverlessapplicationrepository {
         NoEcho: js.UndefOr[__boolean] = js.undefined,
         Type: js.UndefOr[__string] = js.undefined
     ): ParameterDefinition = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "Name"                  -> Name.asInstanceOf[js.Any],
-        "ReferencedByResources" -> ReferencedByResources.asInstanceOf[js.Any],
-        "AllowedPattern" -> AllowedPattern.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "AllowedValues" -> AllowedValues.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ConstraintDescription" -> ConstraintDescription.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DefaultValue" -> DefaultValue.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Description" -> Description.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MaxLength" -> MaxLength.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MaxValue" -> MaxValue.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MinLength" -> MinLength.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MinValue" -> MinValue.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NoEcho" -> NoEcho.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Type" -> Type.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "ReferencedByResources" -> ReferencedByResources.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ParameterDefinition]
+      AllowedPattern.foreach(__v => __obj.update("AllowedPattern", __v.asInstanceOf[js.Any]))
+      AllowedValues.foreach(__v => __obj.update("AllowedValues", __v.asInstanceOf[js.Any]))
+      ConstraintDescription.foreach(__v => __obj.update("ConstraintDescription", __v.asInstanceOf[js.Any]))
+      DefaultValue.foreach(__v => __obj.update("DefaultValue", __v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
+      MaxLength.foreach(__v => __obj.update("MaxLength", __v.asInstanceOf[js.Any]))
+      MaxValue.foreach(__v => __obj.update("MaxValue", __v.asInstanceOf[js.Any]))
+      MinLength.foreach(__v => __obj.update("MinLength", __v.asInstanceOf[js.Any]))
+      MinValue.foreach(__v => __obj.update("MinValue", __v.asInstanceOf[js.Any]))
+      NoEcho.foreach(__v => __obj.update("NoEcho", __v.asInstanceOf[js.Any]))
+      Type.foreach(__v => __obj.update("Type", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ParameterDefinition]
     }
   }
 
@@ -1095,12 +857,12 @@ package serverlessapplicationrepository {
         Name: __string,
         Value: __string
     ): ParameterValue = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "Name"  -> Name.asInstanceOf[js.Any],
         "Value" -> Value.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ParameterValue]
+      __obj.asInstanceOf[ParameterValue]
     }
   }
 
@@ -1115,12 +877,12 @@ package serverlessapplicationrepository {
         ApplicationId: __string,
         Statements: __listOfApplicationPolicyStatement
     ): PutApplicationPolicyRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ApplicationId" -> ApplicationId.asInstanceOf[js.Any],
         "Statements"    -> Statements.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PutApplicationPolicyRequest]
+      __obj.asInstanceOf[PutApplicationPolicyRequest]
     }
   }
 
@@ -1133,13 +895,9 @@ package serverlessapplicationrepository {
     def apply(
         Statements: js.UndefOr[__listOfApplicationPolicyStatement] = js.undefined
     ): PutApplicationPolicyResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Statements" -> Statements.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PutApplicationPolicyResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      Statements.foreach(__v => __obj.update("Statements", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PutApplicationPolicyResponse]
     }
   }
 
@@ -1158,16 +916,10 @@ package serverlessapplicationrepository {
         MonitoringTimeInMinutes: js.UndefOr[__integer] = js.undefined,
         RollbackTriggers: js.UndefOr[__listOfRollbackTrigger] = js.undefined
     ): RollbackConfiguration = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "MonitoringTimeInMinutes" -> MonitoringTimeInMinutes.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "RollbackTriggers" -> RollbackTriggers.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RollbackConfiguration]
+      val __obj = js.Dictionary.empty[js.Any]
+      MonitoringTimeInMinutes.foreach(__v => __obj.update("MonitoringTimeInMinutes", __v.asInstanceOf[js.Any]))
+      RollbackTriggers.foreach(__v => __obj.update("RollbackTriggers", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[RollbackConfiguration]
     }
   }
 
@@ -1186,12 +938,12 @@ package serverlessapplicationrepository {
         Arn: __string,
         Type: __string
     ): RollbackTrigger = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "Arn"  -> Arn.asInstanceOf[js.Any],
         "Type" -> Type.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RollbackTrigger]
+      __obj.asInstanceOf[RollbackTrigger]
     }
   }
 
@@ -1218,12 +970,12 @@ package serverlessapplicationrepository {
         Key: __string,
         Value: __string
     ): Tag = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "Key"   -> Key.asInstanceOf[js.Any],
         "Value" -> Value.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Tag]
+      __obj.asInstanceOf[Tag]
     }
   }
 
@@ -1248,29 +1000,17 @@ package serverlessapplicationrepository {
         ReadmeBody: js.UndefOr[__string] = js.undefined,
         ReadmeUrl: js.UndefOr[__string] = js.undefined
     ): UpdateApplicationRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ApplicationId" -> ApplicationId.asInstanceOf[js.Any],
-        "Author" -> Author.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Description" -> Description.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "HomePageUrl" -> HomePageUrl.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Labels" -> Labels.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ReadmeBody" -> ReadmeBody.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ReadmeUrl" -> ReadmeUrl.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "ApplicationId" -> ApplicationId.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateApplicationRequest]
+      Author.foreach(__v => __obj.update("Author", __v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
+      HomePageUrl.foreach(__v => __obj.update("HomePageUrl", __v.asInstanceOf[js.Any]))
+      Labels.foreach(__v => __obj.update("Labels", __v.asInstanceOf[js.Any]))
+      ReadmeBody.foreach(__v => __obj.update("ReadmeBody", __v.asInstanceOf[js.Any]))
+      ReadmeUrl.foreach(__v => __obj.update("ReadmeUrl", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateApplicationRequest]
     }
   }
 
@@ -1303,43 +1043,19 @@ package serverlessapplicationrepository {
         SpdxLicenseId: js.UndefOr[__string] = js.undefined,
         Version: js.UndefOr[Version] = js.undefined
     ): UpdateApplicationResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ApplicationId" -> ApplicationId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Author" -> Author.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "CreationTime" -> CreationTime.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Description" -> Description.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "HomePageUrl" -> HomePageUrl.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Labels" -> Labels.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "LicenseUrl" -> LicenseUrl.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Name" -> Name.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ReadmeUrl" -> ReadmeUrl.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SpdxLicenseId" -> SpdxLicenseId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Version" -> Version.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateApplicationResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      ApplicationId.foreach(__v => __obj.update("ApplicationId", __v.asInstanceOf[js.Any]))
+      Author.foreach(__v => __obj.update("Author", __v.asInstanceOf[js.Any]))
+      CreationTime.foreach(__v => __obj.update("CreationTime", __v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
+      HomePageUrl.foreach(__v => __obj.update("HomePageUrl", __v.asInstanceOf[js.Any]))
+      Labels.foreach(__v => __obj.update("Labels", __v.asInstanceOf[js.Any]))
+      LicenseUrl.foreach(__v => __obj.update("LicenseUrl", __v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
+      ReadmeUrl.foreach(__v => __obj.update("ReadmeUrl", __v.asInstanceOf[js.Any]))
+      SpdxLicenseId.foreach(__v => __obj.update("SpdxLicenseId", __v.asInstanceOf[js.Any]))
+      Version.foreach(__v => __obj.update("Version", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateApplicationResponse]
     }
   }
 
@@ -1371,23 +1087,19 @@ package serverlessapplicationrepository {
         SourceCodeArchiveUrl: js.UndefOr[__string] = js.undefined,
         SourceCodeUrl: js.UndefOr[__string] = js.undefined
     ): Version = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ApplicationId"        -> ApplicationId.asInstanceOf[js.Any],
         "CreationTime"         -> CreationTime.asInstanceOf[js.Any],
         "ParameterDefinitions" -> ParameterDefinitions.asInstanceOf[js.Any],
         "RequiredCapabilities" -> RequiredCapabilities.asInstanceOf[js.Any],
         "ResourcesSupported"   -> ResourcesSupported.asInstanceOf[js.Any],
         "SemanticVersion"      -> SemanticVersion.asInstanceOf[js.Any],
-        "TemplateUrl"          -> TemplateUrl.asInstanceOf[js.Any],
-        "SourceCodeArchiveUrl" -> SourceCodeArchiveUrl.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SourceCodeUrl" -> SourceCodeUrl.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "TemplateUrl"          -> TemplateUrl.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Version]
+      SourceCodeArchiveUrl.foreach(__v => __obj.update("SourceCodeArchiveUrl", __v.asInstanceOf[js.Any]))
+      SourceCodeUrl.foreach(__v => __obj.update("SourceCodeUrl", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Version]
     }
   }
 
@@ -1409,16 +1121,14 @@ package serverlessapplicationrepository {
         SemanticVersion: __string,
         SourceCodeUrl: js.UndefOr[__string] = js.undefined
     ): VersionSummary = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ApplicationId"   -> ApplicationId.asInstanceOf[js.Any],
         "CreationTime"    -> CreationTime.asInstanceOf[js.Any],
-        "SemanticVersion" -> SemanticVersion.asInstanceOf[js.Any],
-        "SourceCodeUrl" -> SourceCodeUrl.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "SemanticVersion" -> SemanticVersion.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[VersionSummary]
+      SourceCodeUrl.foreach(__v => __obj.update("SourceCodeUrl", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[VersionSummary]
     }
   }
 }

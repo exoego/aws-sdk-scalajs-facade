@@ -158,12 +158,12 @@ package kinesis {
         StreamName: StreamName,
         Tags: TagMap
     ): AddTagsToStreamInput = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "StreamName" -> StreamName.asInstanceOf[js.Any],
         "Tags"       -> Tags.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AddTagsToStreamInput]
+      __obj.asInstanceOf[AddTagsToStreamInput]
     }
   }
 
@@ -185,14 +185,14 @@ package kinesis {
         ConsumerName: ConsumerName,
         ConsumerStatus: ConsumerStatus
     ): Consumer = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ConsumerARN"               -> ConsumerARN.asInstanceOf[js.Any],
         "ConsumerCreationTimestamp" -> ConsumerCreationTimestamp.asInstanceOf[js.Any],
         "ConsumerName"              -> ConsumerName.asInstanceOf[js.Any],
         "ConsumerStatus"            -> ConsumerStatus.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Consumer]
+      __obj.asInstanceOf[Consumer]
     }
   }
 
@@ -216,15 +216,15 @@ package kinesis {
         ConsumerStatus: ConsumerStatus,
         StreamARN: StreamARN
     ): ConsumerDescription = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ConsumerARN"               -> ConsumerARN.asInstanceOf[js.Any],
         "ConsumerCreationTimestamp" -> ConsumerCreationTimestamp.asInstanceOf[js.Any],
         "ConsumerName"              -> ConsumerName.asInstanceOf[js.Any],
         "ConsumerStatus"            -> ConsumerStatus.asInstanceOf[js.Any],
         "StreamARN"                 -> StreamARN.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ConsumerDescription]
+      __obj.asInstanceOf[ConsumerDescription]
     }
   }
 
@@ -250,12 +250,12 @@ package kinesis {
         ShardCount: PositiveIntegerObject,
         StreamName: StreamName
     ): CreateStreamInput = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ShardCount" -> ShardCount.asInstanceOf[js.Any],
         "StreamName" -> StreamName.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateStreamInput]
+      __obj.asInstanceOf[CreateStreamInput]
     }
   }
 
@@ -273,12 +273,12 @@ package kinesis {
         RetentionPeriodHours: RetentionPeriodHours,
         StreamName: StreamName
     ): DecreaseStreamRetentionPeriodInput = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "RetentionPeriodHours" -> RetentionPeriodHours.asInstanceOf[js.Any],
         "StreamName"           -> StreamName.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DecreaseStreamRetentionPeriodInput]
+      __obj.asInstanceOf[DecreaseStreamRetentionPeriodInput]
     }
   }
 
@@ -296,14 +296,12 @@ package kinesis {
         StreamName: StreamName,
         EnforceConsumerDeletion: js.UndefOr[BooleanObject] = js.undefined
     ): DeleteStreamInput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "StreamName" -> StreamName.asInstanceOf[js.Any],
-        "EnforceConsumerDeletion" -> EnforceConsumerDeletion.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "StreamName" -> StreamName.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteStreamInput]
+      EnforceConsumerDeletion.foreach(__v => __obj.update("EnforceConsumerDeletion", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DeleteStreamInput]
     }
   }
 
@@ -320,19 +318,11 @@ package kinesis {
         ConsumerName: js.UndefOr[ConsumerName] = js.undefined,
         StreamARN: js.UndefOr[StreamARN] = js.undefined
     ): DeregisterStreamConsumerInput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ConsumerARN" -> ConsumerARN.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ConsumerName" -> ConsumerName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "StreamARN" -> StreamARN.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeregisterStreamConsumerInput]
+      val __obj = js.Dictionary.empty[js.Any]
+      ConsumerARN.foreach(__v => __obj.update("ConsumerARN", __v.asInstanceOf[js.Any]))
+      ConsumerName.foreach(__v => __obj.update("ConsumerName", __v.asInstanceOf[js.Any]))
+      StreamARN.foreach(__v => __obj.update("StreamARN", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DeregisterStreamConsumerInput]
     }
   }
 
@@ -342,10 +332,9 @@ package kinesis {
   object DescribeLimitsInput {
     def apply(
         ): DescribeLimitsInput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary.empty[js.Any]
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeLimitsInput]
+      __obj.asInstanceOf[DescribeLimitsInput]
     }
   }
 
@@ -360,12 +349,12 @@ package kinesis {
         OpenShardCount: ShardCountObject,
         ShardLimit: ShardCountObject
     ): DescribeLimitsOutput = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "OpenShardCount" -> OpenShardCount.asInstanceOf[js.Any],
         "ShardLimit"     -> ShardLimit.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeLimitsOutput]
+      __obj.asInstanceOf[DescribeLimitsOutput]
     }
   }
 
@@ -382,19 +371,11 @@ package kinesis {
         ConsumerName: js.UndefOr[ConsumerName] = js.undefined,
         StreamARN: js.UndefOr[StreamARN] = js.undefined
     ): DescribeStreamConsumerInput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ConsumerARN" -> ConsumerARN.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ConsumerName" -> ConsumerName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "StreamARN" -> StreamARN.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeStreamConsumerInput]
+      val __obj = js.Dictionary.empty[js.Any]
+      ConsumerARN.foreach(__v => __obj.update("ConsumerARN", __v.asInstanceOf[js.Any]))
+      ConsumerName.foreach(__v => __obj.update("ConsumerName", __v.asInstanceOf[js.Any]))
+      StreamARN.foreach(__v => __obj.update("StreamARN", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeStreamConsumerInput]
     }
   }
 
@@ -407,11 +388,11 @@ package kinesis {
     def apply(
         ConsumerDescription: ConsumerDescription
     ): DescribeStreamConsumerOutput = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ConsumerDescription" -> ConsumerDescription.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeStreamConsumerOutput]
+      __obj.asInstanceOf[DescribeStreamConsumerOutput]
     }
   }
 
@@ -431,17 +412,13 @@ package kinesis {
         ExclusiveStartShardId: js.UndefOr[ShardId] = js.undefined,
         Limit: js.UndefOr[DescribeStreamInputLimit] = js.undefined
     ): DescribeStreamInput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "StreamName" -> StreamName.asInstanceOf[js.Any],
-        "ExclusiveStartShardId" -> ExclusiveStartShardId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Limit" -> Limit.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "StreamName" -> StreamName.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeStreamInput]
+      ExclusiveStartShardId.foreach(__v => __obj.update("ExclusiveStartShardId", __v.asInstanceOf[js.Any]))
+      Limit.foreach(__v => __obj.update("Limit", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeStreamInput]
     }
   }
 
@@ -457,11 +434,11 @@ package kinesis {
     def apply(
         StreamDescription: StreamDescription
     ): DescribeStreamOutput = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "StreamDescription" -> StreamDescription.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeStreamOutput]
+      __obj.asInstanceOf[DescribeStreamOutput]
     }
   }
 
@@ -474,11 +451,11 @@ package kinesis {
     def apply(
         StreamName: StreamName
     ): DescribeStreamSummaryInput = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "StreamName" -> StreamName.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeStreamSummaryInput]
+      __obj.asInstanceOf[DescribeStreamSummaryInput]
     }
   }
 
@@ -491,11 +468,11 @@ package kinesis {
     def apply(
         StreamDescriptionSummary: StreamDescriptionSummary
     ): DescribeStreamSummaryOutput = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "StreamDescriptionSummary" -> StreamDescriptionSummary.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeStreamSummaryOutput]
+      __obj.asInstanceOf[DescribeStreamSummaryOutput]
     }
   }
 
@@ -513,12 +490,12 @@ package kinesis {
         ShardLevelMetrics: MetricsNameList,
         StreamName: StreamName
     ): DisableEnhancedMonitoringInput = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ShardLevelMetrics" -> ShardLevelMetrics.asInstanceOf[js.Any],
         "StreamName"        -> StreamName.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DisableEnhancedMonitoringInput]
+      __obj.asInstanceOf[DisableEnhancedMonitoringInput]
     }
   }
 
@@ -536,12 +513,12 @@ package kinesis {
         ShardLevelMetrics: MetricsNameList,
         StreamName: StreamName
     ): EnableEnhancedMonitoringInput = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ShardLevelMetrics" -> ShardLevelMetrics.asInstanceOf[js.Any],
         "StreamName"        -> StreamName.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[EnableEnhancedMonitoringInput]
+      __obj.asInstanceOf[EnableEnhancedMonitoringInput]
     }
   }
 
@@ -564,13 +541,9 @@ package kinesis {
     def apply(
         ShardLevelMetrics: js.UndefOr[MetricsNameList] = js.undefined
     ): EnhancedMetrics = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ShardLevelMetrics" -> ShardLevelMetrics.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[EnhancedMetrics]
+      val __obj = js.Dictionary.empty[js.Any]
+      ShardLevelMetrics.foreach(__v => __obj.update("ShardLevelMetrics", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[EnhancedMetrics]
     }
   }
 
@@ -590,19 +563,11 @@ package kinesis {
         DesiredShardLevelMetrics: js.UndefOr[MetricsNameList] = js.undefined,
         StreamName: js.UndefOr[StreamName] = js.undefined
     ): EnhancedMonitoringOutput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "CurrentShardLevelMetrics" -> CurrentShardLevelMetrics.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DesiredShardLevelMetrics" -> DesiredShardLevelMetrics.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "StreamName" -> StreamName.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[EnhancedMonitoringOutput]
+      val __obj = js.Dictionary.empty[js.Any]
+      CurrentShardLevelMetrics.foreach(__v => __obj.update("CurrentShardLevelMetrics", __v.asInstanceOf[js.Any]))
+      DesiredShardLevelMetrics.foreach(__v => __obj.update("DesiredShardLevelMetrics", __v.asInstanceOf[js.Any]))
+      StreamName.foreach(__v => __obj.update("StreamName", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[EnhancedMonitoringOutput]
     }
   }
 
@@ -636,14 +601,12 @@ package kinesis {
         ShardIterator: ShardIterator,
         Limit: js.UndefOr[GetRecordsInputLimit] = js.undefined
     ): GetRecordsInput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ShardIterator" -> ShardIterator.asInstanceOf[js.Any],
-        "Limit" -> Limit.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "ShardIterator" -> ShardIterator.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetRecordsInput]
+      Limit.foreach(__v => __obj.update("Limit", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetRecordsInput]
     }
   }
 
@@ -663,17 +626,13 @@ package kinesis {
         MillisBehindLatest: js.UndefOr[MillisBehindLatest] = js.undefined,
         NextShardIterator: js.UndefOr[ShardIterator] = js.undefined
     ): GetRecordsOutput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Records" -> Records.asInstanceOf[js.Any],
-        "MillisBehindLatest" -> MillisBehindLatest.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NextShardIterator" -> NextShardIterator.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "Records" -> Records.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetRecordsOutput]
+      MillisBehindLatest.foreach(__v => __obj.update("MillisBehindLatest", __v.asInstanceOf[js.Any]))
+      NextShardIterator.foreach(__v => __obj.update("NextShardIterator", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetRecordsOutput]
     }
   }
 
@@ -697,19 +656,15 @@ package kinesis {
         StartingSequenceNumber: js.UndefOr[SequenceNumber] = js.undefined,
         Timestamp: js.UndefOr[Timestamp] = js.undefined
     ): GetShardIteratorInput = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ShardId"           -> ShardId.asInstanceOf[js.Any],
         "ShardIteratorType" -> ShardIteratorType.asInstanceOf[js.Any],
-        "StreamName"        -> StreamName.asInstanceOf[js.Any],
-        "StartingSequenceNumber" -> StartingSequenceNumber.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Timestamp" -> Timestamp.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "StreamName"        -> StreamName.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetShardIteratorInput]
+      StartingSequenceNumber.foreach(__v => __obj.update("StartingSequenceNumber", __v.asInstanceOf[js.Any]))
+      Timestamp.foreach(__v => __obj.update("Timestamp", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetShardIteratorInput]
     }
   }
 
@@ -725,13 +680,9 @@ package kinesis {
     def apply(
         ShardIterator: js.UndefOr[ShardIterator] = js.undefined
     ): GetShardIteratorOutput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ShardIterator" -> ShardIterator.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetShardIteratorOutput]
+      val __obj = js.Dictionary.empty[js.Any]
+      ShardIterator.foreach(__v => __obj.update("ShardIterator", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetShardIteratorOutput]
     }
   }
 
@@ -749,12 +700,12 @@ package kinesis {
         EndingHashKey: HashKey,
         StartingHashKey: HashKey
     ): HashKeyRange = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "EndingHashKey"   -> EndingHashKey.asInstanceOf[js.Any],
         "StartingHashKey" -> StartingHashKey.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[HashKeyRange]
+      __obj.asInstanceOf[HashKeyRange]
     }
   }
 
@@ -772,12 +723,12 @@ package kinesis {
         RetentionPeriodHours: RetentionPeriodHours,
         StreamName: StreamName
     ): IncreaseStreamRetentionPeriodInput = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "RetentionPeriodHours" -> RetentionPeriodHours.asInstanceOf[js.Any],
         "StreamName"           -> StreamName.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[IncreaseStreamRetentionPeriodInput]
+      __obj.asInstanceOf[IncreaseStreamRetentionPeriodInput]
     }
   }
 
@@ -867,25 +818,13 @@ package kinesis {
         StreamCreationTimestamp: js.UndefOr[Timestamp] = js.undefined,
         StreamName: js.UndefOr[StreamName] = js.undefined
     ): ListShardsInput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ExclusiveStartShardId" -> ExclusiveStartShardId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MaxResults" -> MaxResults.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NextToken" -> NextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "StreamCreationTimestamp" -> StreamCreationTimestamp.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "StreamName" -> StreamName.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListShardsInput]
+      val __obj = js.Dictionary.empty[js.Any]
+      ExclusiveStartShardId.foreach(__v => __obj.update("ExclusiveStartShardId", __v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      StreamCreationTimestamp.foreach(__v => __obj.update("StreamCreationTimestamp", __v.asInstanceOf[js.Any]))
+      StreamName.foreach(__v => __obj.update("StreamName", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListShardsInput]
     }
   }
 
@@ -900,16 +839,10 @@ package kinesis {
         NextToken: js.UndefOr[NextToken] = js.undefined,
         Shards: js.UndefOr[ShardList] = js.undefined
     ): ListShardsOutput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "NextToken" -> NextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Shards" -> Shards.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListShardsOutput]
+      val __obj = js.Dictionary.empty[js.Any]
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      Shards.foreach(__v => __obj.update("Shards", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListShardsOutput]
     }
   }
 
@@ -928,20 +861,14 @@ package kinesis {
         NextToken: js.UndefOr[NextToken] = js.undefined,
         StreamCreationTimestamp: js.UndefOr[Timestamp] = js.undefined
     ): ListStreamConsumersInput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "StreamARN" -> StreamARN.asInstanceOf[js.Any],
-        "MaxResults" -> MaxResults.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NextToken" -> NextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "StreamCreationTimestamp" -> StreamCreationTimestamp.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "StreamARN" -> StreamARN.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListStreamConsumersInput]
+      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      StreamCreationTimestamp.foreach(__v => __obj.update("StreamCreationTimestamp", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListStreamConsumersInput]
     }
   }
 
@@ -956,16 +883,10 @@ package kinesis {
         Consumers: js.UndefOr[ConsumerList] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): ListStreamConsumersOutput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Consumers" -> Consumers.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NextToken" -> NextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListStreamConsumersOutput]
+      val __obj = js.Dictionary.empty[js.Any]
+      Consumers.foreach(__v => __obj.update("Consumers", __v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListStreamConsumersOutput]
     }
   }
 
@@ -983,16 +904,10 @@ package kinesis {
         ExclusiveStartStreamName: js.UndefOr[StreamName] = js.undefined,
         Limit: js.UndefOr[ListStreamsInputLimit] = js.undefined
     ): ListStreamsInput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ExclusiveStartStreamName" -> ExclusiveStartStreamName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Limit" -> Limit.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListStreamsInput]
+      val __obj = js.Dictionary.empty[js.Any]
+      ExclusiveStartStreamName.foreach(__v => __obj.update("ExclusiveStartStreamName", __v.asInstanceOf[js.Any]))
+      Limit.foreach(__v => __obj.update("Limit", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListStreamsInput]
     }
   }
 
@@ -1010,12 +925,12 @@ package kinesis {
         HasMoreStreams: BooleanObject,
         StreamNames: StreamNameList
     ): ListStreamsOutput = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "HasMoreStreams" -> HasMoreStreams.asInstanceOf[js.Any],
         "StreamNames"    -> StreamNames.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListStreamsOutput]
+      __obj.asInstanceOf[ListStreamsOutput]
     }
   }
 
@@ -1035,17 +950,13 @@ package kinesis {
         ExclusiveStartTagKey: js.UndefOr[TagKey] = js.undefined,
         Limit: js.UndefOr[ListTagsForStreamInputLimit] = js.undefined
     ): ListTagsForStreamInput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "StreamName" -> StreamName.asInstanceOf[js.Any],
-        "ExclusiveStartTagKey" -> ExclusiveStartTagKey.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Limit" -> Limit.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "StreamName" -> StreamName.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListTagsForStreamInput]
+      ExclusiveStartTagKey.foreach(__v => __obj.update("ExclusiveStartTagKey", __v.asInstanceOf[js.Any]))
+      Limit.foreach(__v => __obj.update("Limit", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListTagsForStreamInput]
     }
   }
 
@@ -1063,12 +974,12 @@ package kinesis {
         HasMoreTags: BooleanObject,
         Tags: TagList
     ): ListTagsForStreamOutput = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "HasMoreTags" -> HasMoreTags.asInstanceOf[js.Any],
         "Tags"        -> Tags.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListTagsForStreamOutput]
+      __obj.asInstanceOf[ListTagsForStreamOutput]
     }
   }
 
@@ -1088,13 +999,13 @@ package kinesis {
         ShardToMerge: ShardId,
         StreamName: StreamName
     ): MergeShardsInput = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "AdjacentShardToMerge" -> AdjacentShardToMerge.asInstanceOf[js.Any],
         "ShardToMerge"         -> ShardToMerge.asInstanceOf[js.Any],
         "StreamName"           -> StreamName.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[MergeShardsInput]
+      __obj.asInstanceOf[MergeShardsInput]
     }
   }
 
@@ -1148,19 +1059,15 @@ package kinesis {
         ExplicitHashKey: js.UndefOr[HashKey] = js.undefined,
         SequenceNumberForOrdering: js.UndefOr[SequenceNumber] = js.undefined
     ): PutRecordInput = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "Data"         -> Data.asInstanceOf[js.Any],
         "PartitionKey" -> PartitionKey.asInstanceOf[js.Any],
-        "StreamName"   -> StreamName.asInstanceOf[js.Any],
-        "ExplicitHashKey" -> ExplicitHashKey.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SequenceNumberForOrdering" -> SequenceNumberForOrdering.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "StreamName"   -> StreamName.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PutRecordInput]
+      ExplicitHashKey.foreach(__v => __obj.update("ExplicitHashKey", __v.asInstanceOf[js.Any]))
+      SequenceNumberForOrdering.foreach(__v => __obj.update("SequenceNumberForOrdering", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PutRecordInput]
     }
   }
 
@@ -1180,15 +1087,13 @@ package kinesis {
         ShardId: ShardId,
         EncryptionType: js.UndefOr[EncryptionType] = js.undefined
     ): PutRecordOutput = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "SequenceNumber" -> SequenceNumber.asInstanceOf[js.Any],
-        "ShardId"        -> ShardId.asInstanceOf[js.Any],
-        "EncryptionType" -> EncryptionType.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "ShardId"        -> ShardId.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PutRecordOutput]
+      EncryptionType.foreach(__v => __obj.update("EncryptionType", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PutRecordOutput]
     }
   }
 
@@ -1206,12 +1111,12 @@ package kinesis {
         Records: PutRecordsRequestEntryList,
         StreamName: StreamName
     ): PutRecordsInput = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "Records"    -> Records.asInstanceOf[js.Any],
         "StreamName" -> StreamName.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PutRecordsInput]
+      __obj.asInstanceOf[PutRecordsInput]
     }
   }
 
@@ -1231,17 +1136,13 @@ package kinesis {
         EncryptionType: js.UndefOr[EncryptionType] = js.undefined,
         FailedRecordCount: js.UndefOr[PositiveIntegerObject] = js.undefined
     ): PutRecordsOutput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Records" -> Records.asInstanceOf[js.Any],
-        "EncryptionType" -> EncryptionType.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "FailedRecordCount" -> FailedRecordCount.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "Records" -> Records.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PutRecordsOutput]
+      EncryptionType.foreach(__v => __obj.update("EncryptionType", __v.asInstanceOf[js.Any]))
+      FailedRecordCount.foreach(__v => __obj.update("FailedRecordCount", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PutRecordsOutput]
     }
   }
 
@@ -1261,15 +1162,13 @@ package kinesis {
         PartitionKey: PartitionKey,
         ExplicitHashKey: js.UndefOr[HashKey] = js.undefined
     ): PutRecordsRequestEntry = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "Data"         -> Data.asInstanceOf[js.Any],
-        "PartitionKey" -> PartitionKey.asInstanceOf[js.Any],
-        "ExplicitHashKey" -> ExplicitHashKey.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "PartitionKey" -> PartitionKey.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PutRecordsRequestEntry]
+      ExplicitHashKey.foreach(__v => __obj.update("ExplicitHashKey", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PutRecordsRequestEntry]
     }
   }
 
@@ -1291,22 +1190,12 @@ package kinesis {
         SequenceNumber: js.UndefOr[SequenceNumber] = js.undefined,
         ShardId: js.UndefOr[ShardId] = js.undefined
     ): PutRecordsResultEntry = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ErrorCode" -> ErrorCode.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ErrorMessage" -> ErrorMessage.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SequenceNumber" -> SequenceNumber.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ShardId" -> ShardId.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PutRecordsResultEntry]
+      val __obj = js.Dictionary.empty[js.Any]
+      ErrorCode.foreach(__v => __obj.update("ErrorCode", __v.asInstanceOf[js.Any]))
+      ErrorMessage.foreach(__v => __obj.update("ErrorMessage", __v.asInstanceOf[js.Any]))
+      SequenceNumber.foreach(__v => __obj.update("SequenceNumber", __v.asInstanceOf[js.Any]))
+      ShardId.foreach(__v => __obj.update("ShardId", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PutRecordsResultEntry]
     }
   }
 
@@ -1330,19 +1219,15 @@ package kinesis {
         ApproximateArrivalTimestamp: js.UndefOr[Timestamp] = js.undefined,
         EncryptionType: js.UndefOr[EncryptionType] = js.undefined
     ): Record = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "Data"           -> Data.asInstanceOf[js.Any],
         "PartitionKey"   -> PartitionKey.asInstanceOf[js.Any],
-        "SequenceNumber" -> SequenceNumber.asInstanceOf[js.Any],
-        "ApproximateArrivalTimestamp" -> ApproximateArrivalTimestamp.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "EncryptionType" -> EncryptionType.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "SequenceNumber" -> SequenceNumber.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Record]
+      ApproximateArrivalTimestamp.foreach(__v => __obj.update("ApproximateArrivalTimestamp", __v.asInstanceOf[js.Any]))
+      EncryptionType.foreach(__v => __obj.update("EncryptionType", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Record]
     }
   }
 
@@ -1357,12 +1242,12 @@ package kinesis {
         ConsumerName: ConsumerName,
         StreamARN: StreamARN
     ): RegisterStreamConsumerInput = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ConsumerName" -> ConsumerName.asInstanceOf[js.Any],
         "StreamARN"    -> StreamARN.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RegisterStreamConsumerInput]
+      __obj.asInstanceOf[RegisterStreamConsumerInput]
     }
   }
 
@@ -1375,11 +1260,11 @@ package kinesis {
     def apply(
         Consumer: Consumer
     ): RegisterStreamConsumerOutput = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "Consumer" -> Consumer.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RegisterStreamConsumerOutput]
+      __obj.asInstanceOf[RegisterStreamConsumerOutput]
     }
   }
 
@@ -1397,12 +1282,12 @@ package kinesis {
         StreamName: StreamName,
         TagKeys: TagKeyList
     ): RemoveTagsFromStreamInput = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "StreamName" -> StreamName.asInstanceOf[js.Any],
         "TagKeys"    -> TagKeys.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RemoveTagsFromStreamInput]
+      __obj.asInstanceOf[RemoveTagsFromStreamInput]
     }
   }
 
@@ -1442,14 +1327,12 @@ package kinesis {
         StartingSequenceNumber: SequenceNumber,
         EndingSequenceNumber: js.UndefOr[SequenceNumber] = js.undefined
     ): SequenceNumberRange = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "StartingSequenceNumber" -> StartingSequenceNumber.asInstanceOf[js.Any],
-        "EndingSequenceNumber" -> EndingSequenceNumber.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "StartingSequenceNumber" -> StartingSequenceNumber.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SequenceNumberRange]
+      EndingSequenceNumber.foreach(__v => __obj.update("EndingSequenceNumber", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[SequenceNumberRange]
     }
   }
 
@@ -1473,19 +1356,15 @@ package kinesis {
         AdjacentParentShardId: js.UndefOr[ShardId] = js.undefined,
         ParentShardId: js.UndefOr[ShardId] = js.undefined
     ): Shard = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "HashKeyRange"        -> HashKeyRange.asInstanceOf[js.Any],
         "SequenceNumberRange" -> SequenceNumberRange.asInstanceOf[js.Any],
-        "ShardId"             -> ShardId.asInstanceOf[js.Any],
-        "AdjacentParentShardId" -> AdjacentParentShardId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ParentShardId" -> ParentShardId.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "ShardId"             -> ShardId.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Shard]
+      AdjacentParentShardId.foreach(__v => __obj.update("AdjacentParentShardId", __v.asInstanceOf[js.Any]))
+      ParentShardId.foreach(__v => __obj.update("ParentShardId", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Shard]
     }
   }
 
@@ -1515,13 +1394,13 @@ package kinesis {
         ShardToSplit: ShardId,
         StreamName: StreamName
     ): SplitShardInput = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "NewStartingHashKey" -> NewStartingHashKey.asInstanceOf[js.Any],
         "ShardToSplit"       -> ShardToSplit.asInstanceOf[js.Any],
         "StreamName"         -> StreamName.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SplitShardInput]
+      __obj.asInstanceOf[SplitShardInput]
     }
   }
 
@@ -1538,13 +1417,13 @@ package kinesis {
         KeyId: KeyId,
         StreamName: StreamName
     ): StartStreamEncryptionInput = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "EncryptionType" -> EncryptionType.asInstanceOf[js.Any],
         "KeyId"          -> KeyId.asInstanceOf[js.Any],
         "StreamName"     -> StreamName.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StartStreamEncryptionInput]
+      __obj.asInstanceOf[StartStreamEncryptionInput]
     }
   }
 
@@ -1561,17 +1440,13 @@ package kinesis {
         SequenceNumber: js.UndefOr[SequenceNumber] = js.undefined,
         Timestamp: js.UndefOr[Timestamp] = js.undefined
     ): StartingPosition = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Type" -> Type.asInstanceOf[js.Any],
-        "SequenceNumber" -> SequenceNumber.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Timestamp" -> Timestamp.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "Type" -> Type.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StartingPosition]
+      SequenceNumber.foreach(__v => __obj.update("SequenceNumber", __v.asInstanceOf[js.Any]))
+      Timestamp.foreach(__v => __obj.update("Timestamp", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[StartingPosition]
     }
   }
 
@@ -1588,13 +1463,13 @@ package kinesis {
         KeyId: KeyId,
         StreamName: StreamName
     ): StopStreamEncryptionInput = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "EncryptionType" -> EncryptionType.asInstanceOf[js.Any],
         "KeyId"          -> KeyId.asInstanceOf[js.Any],
         "StreamName"     -> StreamName.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StopStreamEncryptionInput]
+      __obj.asInstanceOf[StopStreamEncryptionInput]
     }
   }
 
@@ -1628,7 +1503,7 @@ package kinesis {
         EncryptionType: js.UndefOr[EncryptionType] = js.undefined,
         KeyId: js.UndefOr[KeyId] = js.undefined
     ): StreamDescription = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "EnhancedMonitoring"      -> EnhancedMonitoring.asInstanceOf[js.Any],
         "HasMoreShards"           -> HasMoreShards.asInstanceOf[js.Any],
         "RetentionPeriodHours"    -> RetentionPeriodHours.asInstanceOf[js.Any],
@@ -1636,16 +1511,12 @@ package kinesis {
         "StreamARN"               -> StreamARN.asInstanceOf[js.Any],
         "StreamCreationTimestamp" -> StreamCreationTimestamp.asInstanceOf[js.Any],
         "StreamName"              -> StreamName.asInstanceOf[js.Any],
-        "StreamStatus"            -> StreamStatus.asInstanceOf[js.Any],
-        "EncryptionType" -> EncryptionType.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "KeyId" -> KeyId.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "StreamStatus"            -> StreamStatus.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StreamDescription]
+      EncryptionType.foreach(__v => __obj.update("EncryptionType", __v.asInstanceOf[js.Any]))
+      KeyId.foreach(__v => __obj.update("KeyId", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[StreamDescription]
     }
   }
 
@@ -1679,26 +1550,20 @@ package kinesis {
         EncryptionType: js.UndefOr[EncryptionType] = js.undefined,
         KeyId: js.UndefOr[KeyId] = js.undefined
     ): StreamDescriptionSummary = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "EnhancedMonitoring"      -> EnhancedMonitoring.asInstanceOf[js.Any],
         "OpenShardCount"          -> OpenShardCount.asInstanceOf[js.Any],
         "RetentionPeriodHours"    -> RetentionPeriodHours.asInstanceOf[js.Any],
         "StreamARN"               -> StreamARN.asInstanceOf[js.Any],
         "StreamCreationTimestamp" -> StreamCreationTimestamp.asInstanceOf[js.Any],
         "StreamName"              -> StreamName.asInstanceOf[js.Any],
-        "StreamStatus"            -> StreamStatus.asInstanceOf[js.Any],
-        "ConsumerCount" -> ConsumerCount.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "EncryptionType" -> EncryptionType.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "KeyId" -> KeyId.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "StreamStatus"            -> StreamStatus.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StreamDescriptionSummary]
+      ConsumerCount.foreach(__v => __obj.update("ConsumerCount", __v.asInstanceOf[js.Any]))
+      EncryptionType.foreach(__v => __obj.update("EncryptionType", __v.asInstanceOf[js.Any]))
+      KeyId.foreach(__v => __obj.update("KeyId", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[StreamDescriptionSummary]
     }
   }
 
@@ -1727,13 +1592,13 @@ package kinesis {
         MillisBehindLatest: MillisBehindLatest,
         Records: RecordList
     ): SubscribeToShardEvent = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ContinuationSequenceNumber" -> ContinuationSequenceNumber.asInstanceOf[js.Any],
         "MillisBehindLatest"         -> MillisBehindLatest.asInstanceOf[js.Any],
         "Records"                    -> Records.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SubscribeToShardEvent]
+      __obj.asInstanceOf[SubscribeToShardEvent]
     }
   }
 
@@ -1746,11 +1611,11 @@ package kinesis {
     def apply(
         SubscribeToShardEvent: SubscribeToShardEvent
     ): SubscribeToShardEventStream = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "SubscribeToShardEvent" -> SubscribeToShardEvent.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SubscribeToShardEventStream]
+      __obj.asInstanceOf[SubscribeToShardEventStream]
     }
   }
 
@@ -1767,13 +1632,13 @@ package kinesis {
         ShardId: ShardId,
         StartingPosition: StartingPosition
     ): SubscribeToShardInput = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ConsumerARN"      -> ConsumerARN.asInstanceOf[js.Any],
         "ShardId"          -> ShardId.asInstanceOf[js.Any],
         "StartingPosition" -> StartingPosition.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SubscribeToShardInput]
+      __obj.asInstanceOf[SubscribeToShardInput]
     }
   }
 
@@ -1786,11 +1651,11 @@ package kinesis {
     def apply(
         EventStream: SubscribeToShardEventStream
     ): SubscribeToShardOutput = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "EventStream" -> EventStream.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SubscribeToShardOutput]
+      __obj.asInstanceOf[SubscribeToShardOutput]
     }
   }
 
@@ -1808,14 +1673,12 @@ package kinesis {
         Key: TagKey,
         Value: js.UndefOr[TagValue] = js.undefined
     ): Tag = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Key" -> Key.asInstanceOf[js.Any],
-        "Value" -> Value.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "Key" -> Key.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Tag]
+      Value.foreach(__v => __obj.update("Value", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Tag]
     }
   }
 
@@ -1832,13 +1695,13 @@ package kinesis {
         StreamName: StreamName,
         TargetShardCount: PositiveIntegerObject
     ): UpdateShardCountInput = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ScalingType"      -> ScalingType.asInstanceOf[js.Any],
         "StreamName"       -> StreamName.asInstanceOf[js.Any],
         "TargetShardCount" -> TargetShardCount.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateShardCountInput]
+      __obj.asInstanceOf[UpdateShardCountInput]
     }
   }
 
@@ -1855,19 +1718,11 @@ package kinesis {
         StreamName: js.UndefOr[StreamName] = js.undefined,
         TargetShardCount: js.UndefOr[PositiveIntegerObject] = js.undefined
     ): UpdateShardCountOutput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "CurrentShardCount" -> CurrentShardCount.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "StreamName" -> StreamName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "TargetShardCount" -> TargetShardCount.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateShardCountOutput]
+      val __obj = js.Dictionary.empty[js.Any]
+      CurrentShardCount.foreach(__v => __obj.update("CurrentShardCount", __v.asInstanceOf[js.Any]))
+      StreamName.foreach(__v => __obj.update("StreamName", __v.asInstanceOf[js.Any]))
+      TargetShardCount.foreach(__v => __obj.update("TargetShardCount", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateShardCountOutput]
     }
   }
 }

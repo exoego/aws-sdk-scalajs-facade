@@ -442,12 +442,12 @@ package redshift {
         ReservedNodeId: String,
         TargetReservedNodeOfferingId: String
     ): AcceptReservedNodeExchangeInputMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ReservedNodeId"               -> ReservedNodeId.asInstanceOf[js.Any],
         "TargetReservedNodeOfferingId" -> TargetReservedNodeOfferingId.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AcceptReservedNodeExchangeInputMessage]
+      __obj.asInstanceOf[AcceptReservedNodeExchangeInputMessage]
     }
   }
 
@@ -460,13 +460,9 @@ package redshift {
     def apply(
         ExchangedReservedNode: js.UndefOr[ReservedNode] = js.undefined
     ): AcceptReservedNodeExchangeOutputMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ExchangedReservedNode" -> ExchangedReservedNode.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AcceptReservedNodeExchangeOutputMessage]
+      val __obj = js.Dictionary.empty[js.Any]
+      ExchangedReservedNode.foreach(__v => __obj.update("ExchangedReservedNode", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AcceptReservedNodeExchangeOutputMessage]
     }
   }
 
@@ -484,16 +480,10 @@ package redshift {
         AttributeName: js.UndefOr[String] = js.undefined,
         AttributeValues: js.UndefOr[AttributeValueList] = js.undefined
     ): AccountAttribute = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "AttributeName" -> AttributeName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "AttributeValues" -> AttributeValues.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AccountAttribute]
+      val __obj = js.Dictionary.empty[js.Any]
+      AttributeName.foreach(__v => __obj.update("AttributeName", __v.asInstanceOf[js.Any]))
+      AttributeValues.foreach(__v => __obj.update("AttributeValues", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AccountAttribute]
     }
   }
 
@@ -506,13 +496,9 @@ package redshift {
     def apply(
         AccountAttributes: js.UndefOr[AttributeList] = js.undefined
     ): AccountAttributeList = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "AccountAttributes" -> AccountAttributes.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AccountAttributeList]
+      val __obj = js.Dictionary.empty[js.Any]
+      AccountAttributes.foreach(__v => __obj.update("AccountAttributes", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AccountAttributeList]
     }
   }
 
@@ -530,16 +516,10 @@ package redshift {
         AccountAlias: js.UndefOr[String] = js.undefined,
         AccountId: js.UndefOr[String] = js.undefined
     ): AccountWithRestoreAccess = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "AccountAlias" -> AccountAlias.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "AccountId" -> AccountId.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AccountWithRestoreAccess]
+      val __obj = js.Dictionary.empty[js.Any]
+      AccountAlias.foreach(__v => __obj.update("AccountAlias", __v.asInstanceOf[js.Any]))
+      AccountId.foreach(__v => __obj.update("AccountId", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AccountWithRestoreAccess]
     }
   }
 
@@ -555,13 +535,9 @@ package redshift {
     def apply(
         AttributeValue: js.UndefOr[String] = js.undefined
     ): AttributeValueTarget = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "AttributeValue" -> AttributeValue.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AttributeValueTarget]
+      val __obj = js.Dictionary.empty[js.Any]
+      AttributeValue.foreach(__v => __obj.update("AttributeValue", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AttributeValueTarget]
     }
   }
 
@@ -583,22 +559,14 @@ package redshift {
         EC2SecurityGroupName: js.UndefOr[String] = js.undefined,
         EC2SecurityGroupOwnerId: js.UndefOr[String] = js.undefined
     ): AuthorizeClusterSecurityGroupIngressMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ClusterSecurityGroupName" -> ClusterSecurityGroupName.asInstanceOf[js.Any],
-        "CIDRIP" -> CIDRIP.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "EC2SecurityGroupName" -> EC2SecurityGroupName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "EC2SecurityGroupOwnerId" -> EC2SecurityGroupOwnerId.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "ClusterSecurityGroupName" -> ClusterSecurityGroupName.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal
-        .applyDynamicNamed("apply")(_fields: _*)
-        .asInstanceOf[AuthorizeClusterSecurityGroupIngressMessage]
+      CIDRIP.foreach(__v => __obj.update("CIDRIP", __v.asInstanceOf[js.Any]))
+      EC2SecurityGroupName.foreach(__v => __obj.update("EC2SecurityGroupName", __v.asInstanceOf[js.Any]))
+      EC2SecurityGroupOwnerId.foreach(__v => __obj.update("EC2SecurityGroupOwnerId", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AuthorizeClusterSecurityGroupIngressMessage]
     }
   }
 
@@ -611,15 +579,9 @@ package redshift {
     def apply(
         ClusterSecurityGroup: js.UndefOr[ClusterSecurityGroup] = js.undefined
     ): AuthorizeClusterSecurityGroupIngressResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ClusterSecurityGroup" -> ClusterSecurityGroup.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal
-        .applyDynamicNamed("apply")(_fields: _*)
-        .asInstanceOf[AuthorizeClusterSecurityGroupIngressResult]
+      val __obj = js.Dictionary.empty[js.Any]
+      ClusterSecurityGroup.foreach(__v => __obj.update("ClusterSecurityGroup", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AuthorizeClusterSecurityGroupIngressResult]
     }
   }
 
@@ -639,15 +601,13 @@ package redshift {
         SnapshotIdentifier: String,
         SnapshotClusterIdentifier: js.UndefOr[String] = js.undefined
     ): AuthorizeSnapshotAccessMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "AccountWithRestoreAccess" -> AccountWithRestoreAccess.asInstanceOf[js.Any],
-        "SnapshotIdentifier"       -> SnapshotIdentifier.asInstanceOf[js.Any],
-        "SnapshotClusterIdentifier" -> SnapshotClusterIdentifier.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "SnapshotIdentifier"       -> SnapshotIdentifier.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AuthorizeSnapshotAccessMessage]
+      SnapshotClusterIdentifier.foreach(__v => __obj.update("SnapshotClusterIdentifier", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AuthorizeSnapshotAccessMessage]
     }
   }
 
@@ -660,13 +620,9 @@ package redshift {
     def apply(
         Snapshot: js.UndefOr[Snapshot] = js.undefined
     ): AuthorizeSnapshotAccessResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Snapshot" -> Snapshot.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AuthorizeSnapshotAccessResult]
+      val __obj = js.Dictionary.empty[js.Any]
+      Snapshot.foreach(__v => __obj.update("Snapshot", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AuthorizeSnapshotAccessResult]
     }
   }
 
@@ -684,16 +640,10 @@ package redshift {
         Name: js.UndefOr[String] = js.undefined,
         SupportedPlatforms: js.UndefOr[SupportedPlatformsList] = js.undefined
     ): AvailabilityZone = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Name" -> Name.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SupportedPlatforms" -> SupportedPlatforms.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AvailabilityZone]
+      val __obj = js.Dictionary.empty[js.Any]
+      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
+      SupportedPlatforms.foreach(__v => __obj.update("SupportedPlatforms", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AvailabilityZone]
     }
   }
 
@@ -706,11 +656,11 @@ package redshift {
     def apply(
         Identifiers: DeleteClusterSnapshotMessageList
     ): BatchDeleteClusterSnapshotsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "Identifiers" -> Identifiers.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[BatchDeleteClusterSnapshotsRequest]
+      __obj.asInstanceOf[BatchDeleteClusterSnapshotsRequest]
     }
   }
 
@@ -725,16 +675,10 @@ package redshift {
         Errors: js.UndefOr[BatchSnapshotOperationErrorList] = js.undefined,
         Resources: js.UndefOr[SnapshotIdentifierList] = js.undefined
     ): BatchDeleteClusterSnapshotsResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Errors" -> Errors.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Resources" -> Resources.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[BatchDeleteClusterSnapshotsResult]
+      val __obj = js.Dictionary.empty[js.Any]
+      Errors.foreach(__v => __obj.update("Errors", __v.asInstanceOf[js.Any]))
+      Resources.foreach(__v => __obj.update("Resources", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[BatchDeleteClusterSnapshotsResult]
     }
   }
 
@@ -751,17 +695,15 @@ package redshift {
         Force: js.UndefOr[Boolean] = js.undefined,
         ManualSnapshotRetentionPeriod: js.UndefOr[IntegerOptional] = js.undefined
     ): BatchModifyClusterSnapshotsMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "SnapshotIdentifierList" -> SnapshotIdentifierList.asInstanceOf[js.Any],
-        "Force" -> Force.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ManualSnapshotRetentionPeriod" -> ManualSnapshotRetentionPeriod.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "SnapshotIdentifierList" -> SnapshotIdentifierList.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[BatchModifyClusterSnapshotsMessage]
+      Force.foreach(__v => __obj.update("Force", __v.asInstanceOf[js.Any]))
+      ManualSnapshotRetentionPeriod.foreach(
+        __v => __obj.update("ManualSnapshotRetentionPeriod", __v.asInstanceOf[js.Any])
+      )
+      __obj.asInstanceOf[BatchModifyClusterSnapshotsMessage]
     }
   }
 
@@ -776,16 +718,10 @@ package redshift {
         Errors: js.UndefOr[BatchSnapshotOperationErrors] = js.undefined,
         Resources: js.UndefOr[SnapshotIdentifierList] = js.undefined
     ): BatchModifyClusterSnapshotsOutputMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Errors" -> Errors.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Resources" -> Resources.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[BatchModifyClusterSnapshotsOutputMessage]
+      val __obj = js.Dictionary.empty[js.Any]
+      Errors.foreach(__v => __obj.update("Errors", __v.asInstanceOf[js.Any]))
+      Resources.foreach(__v => __obj.update("Resources", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[BatchModifyClusterSnapshotsOutputMessage]
     }
   }
 
@@ -798,11 +734,11 @@ package redshift {
     def apply(
         ClusterIdentifier: String
     ): CancelResizeMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ClusterIdentifier" -> ClusterIdentifier.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CancelResizeMessage]
+      __obj.asInstanceOf[CancelResizeMessage]
     }
   }
 
@@ -900,136 +836,56 @@ package redshift {
         VpcId: js.UndefOr[String] = js.undefined,
         VpcSecurityGroups: js.UndefOr[VpcSecurityGroupMembershipList] = js.undefined
     ): Cluster = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "AllowVersionUpgrade" -> AllowVersionUpgrade.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "AutomatedSnapshotRetentionPeriod" -> AutomatedSnapshotRetentionPeriod.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "AvailabilityZone" -> AvailabilityZone.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ClusterCreateTime" -> ClusterCreateTime.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ClusterIdentifier" -> ClusterIdentifier.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ClusterNodes" -> ClusterNodes.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ClusterParameterGroups" -> ClusterParameterGroups.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ClusterPublicKey" -> ClusterPublicKey.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ClusterRevisionNumber" -> ClusterRevisionNumber.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ClusterSecurityGroups" -> ClusterSecurityGroups.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ClusterSnapshotCopyStatus" -> ClusterSnapshotCopyStatus.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ClusterStatus" -> ClusterStatus.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ClusterSubnetGroupName" -> ClusterSubnetGroupName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ClusterVersion" -> ClusterVersion.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DBName" -> DBName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DataTransferProgress" -> DataTransferProgress.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DeferredMaintenanceWindows" -> DeferredMaintenanceWindows.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ElasticIpStatus" -> ElasticIpStatus.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ElasticResizeNumberOfNodeOptions" -> ElasticResizeNumberOfNodeOptions.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Encrypted" -> Encrypted.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Endpoint" -> Endpoint.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "EnhancedVpcRouting" -> EnhancedVpcRouting.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "HsmStatus" -> HsmStatus.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "IamRoles" -> IamRoles.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "KmsKeyId" -> KmsKeyId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MaintenanceTrackName" -> MaintenanceTrackName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ManualSnapshotRetentionPeriod" -> ManualSnapshotRetentionPeriod.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MasterUsername" -> MasterUsername.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ModifyStatus" -> ModifyStatus.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NodeType" -> NodeType.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NumberOfNodes" -> NumberOfNodes.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "PendingActions" -> PendingActions.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "PendingModifiedValues" -> PendingModifiedValues.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "PreferredMaintenanceWindow" -> PreferredMaintenanceWindow.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "PubliclyAccessible" -> PubliclyAccessible.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ResizeInfo" -> ResizeInfo.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "RestoreStatus" -> RestoreStatus.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SnapshotScheduleIdentifier" -> SnapshotScheduleIdentifier.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SnapshotScheduleState" -> SnapshotScheduleState.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Tags" -> Tags.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "VpcId" -> VpcId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "VpcSecurityGroups" -> VpcSecurityGroups.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Cluster]
+      val __obj = js.Dictionary.empty[js.Any]
+      AllowVersionUpgrade.foreach(__v => __obj.update("AllowVersionUpgrade", __v.asInstanceOf[js.Any]))
+      AutomatedSnapshotRetentionPeriod.foreach(
+        __v => __obj.update("AutomatedSnapshotRetentionPeriod", __v.asInstanceOf[js.Any])
+      )
+      AvailabilityZone.foreach(__v => __obj.update("AvailabilityZone", __v.asInstanceOf[js.Any]))
+      ClusterCreateTime.foreach(__v => __obj.update("ClusterCreateTime", __v.asInstanceOf[js.Any]))
+      ClusterIdentifier.foreach(__v => __obj.update("ClusterIdentifier", __v.asInstanceOf[js.Any]))
+      ClusterNodes.foreach(__v => __obj.update("ClusterNodes", __v.asInstanceOf[js.Any]))
+      ClusterParameterGroups.foreach(__v => __obj.update("ClusterParameterGroups", __v.asInstanceOf[js.Any]))
+      ClusterPublicKey.foreach(__v => __obj.update("ClusterPublicKey", __v.asInstanceOf[js.Any]))
+      ClusterRevisionNumber.foreach(__v => __obj.update("ClusterRevisionNumber", __v.asInstanceOf[js.Any]))
+      ClusterSecurityGroups.foreach(__v => __obj.update("ClusterSecurityGroups", __v.asInstanceOf[js.Any]))
+      ClusterSnapshotCopyStatus.foreach(__v => __obj.update("ClusterSnapshotCopyStatus", __v.asInstanceOf[js.Any]))
+      ClusterStatus.foreach(__v => __obj.update("ClusterStatus", __v.asInstanceOf[js.Any]))
+      ClusterSubnetGroupName.foreach(__v => __obj.update("ClusterSubnetGroupName", __v.asInstanceOf[js.Any]))
+      ClusterVersion.foreach(__v => __obj.update("ClusterVersion", __v.asInstanceOf[js.Any]))
+      DBName.foreach(__v => __obj.update("DBName", __v.asInstanceOf[js.Any]))
+      DataTransferProgress.foreach(__v => __obj.update("DataTransferProgress", __v.asInstanceOf[js.Any]))
+      DeferredMaintenanceWindows.foreach(__v => __obj.update("DeferredMaintenanceWindows", __v.asInstanceOf[js.Any]))
+      ElasticIpStatus.foreach(__v => __obj.update("ElasticIpStatus", __v.asInstanceOf[js.Any]))
+      ElasticResizeNumberOfNodeOptions.foreach(
+        __v => __obj.update("ElasticResizeNumberOfNodeOptions", __v.asInstanceOf[js.Any])
+      )
+      Encrypted.foreach(__v => __obj.update("Encrypted", __v.asInstanceOf[js.Any]))
+      Endpoint.foreach(__v => __obj.update("Endpoint", __v.asInstanceOf[js.Any]))
+      EnhancedVpcRouting.foreach(__v => __obj.update("EnhancedVpcRouting", __v.asInstanceOf[js.Any]))
+      HsmStatus.foreach(__v => __obj.update("HsmStatus", __v.asInstanceOf[js.Any]))
+      IamRoles.foreach(__v => __obj.update("IamRoles", __v.asInstanceOf[js.Any]))
+      KmsKeyId.foreach(__v => __obj.update("KmsKeyId", __v.asInstanceOf[js.Any]))
+      MaintenanceTrackName.foreach(__v => __obj.update("MaintenanceTrackName", __v.asInstanceOf[js.Any]))
+      ManualSnapshotRetentionPeriod.foreach(
+        __v => __obj.update("ManualSnapshotRetentionPeriod", __v.asInstanceOf[js.Any])
+      )
+      MasterUsername.foreach(__v => __obj.update("MasterUsername", __v.asInstanceOf[js.Any]))
+      ModifyStatus.foreach(__v => __obj.update("ModifyStatus", __v.asInstanceOf[js.Any]))
+      NodeType.foreach(__v => __obj.update("NodeType", __v.asInstanceOf[js.Any]))
+      NumberOfNodes.foreach(__v => __obj.update("NumberOfNodes", __v.asInstanceOf[js.Any]))
+      PendingActions.foreach(__v => __obj.update("PendingActions", __v.asInstanceOf[js.Any]))
+      PendingModifiedValues.foreach(__v => __obj.update("PendingModifiedValues", __v.asInstanceOf[js.Any]))
+      PreferredMaintenanceWindow.foreach(__v => __obj.update("PreferredMaintenanceWindow", __v.asInstanceOf[js.Any]))
+      PubliclyAccessible.foreach(__v => __obj.update("PubliclyAccessible", __v.asInstanceOf[js.Any]))
+      ResizeInfo.foreach(__v => __obj.update("ResizeInfo", __v.asInstanceOf[js.Any]))
+      RestoreStatus.foreach(__v => __obj.update("RestoreStatus", __v.asInstanceOf[js.Any]))
+      SnapshotScheduleIdentifier.foreach(__v => __obj.update("SnapshotScheduleIdentifier", __v.asInstanceOf[js.Any]))
+      SnapshotScheduleState.foreach(__v => __obj.update("SnapshotScheduleState", __v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
+      VpcId.foreach(__v => __obj.update("VpcId", __v.asInstanceOf[js.Any]))
+      VpcSecurityGroups.foreach(__v => __obj.update("VpcSecurityGroups", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Cluster]
     }
   }
 
@@ -1044,16 +900,10 @@ package redshift {
         ClusterIdentifier: js.UndefOr[String] = js.undefined,
         ScheduleAssociationState: js.UndefOr[ScheduleState] = js.undefined
     ): ClusterAssociatedToSchedule = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ClusterIdentifier" -> ClusterIdentifier.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ScheduleAssociationState" -> ScheduleAssociationState.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ClusterAssociatedToSchedule]
+      val __obj = js.Dictionary.empty[js.Any]
+      ClusterIdentifier.foreach(__v => __obj.update("ClusterIdentifier", __v.asInstanceOf[js.Any]))
+      ScheduleAssociationState.foreach(__v => __obj.update("ScheduleAssociationState", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ClusterAssociatedToSchedule]
     }
   }
 
@@ -1073,19 +923,11 @@ package redshift {
         DbUser: js.UndefOr[String] = js.undefined,
         Expiration: js.UndefOr[TStamp] = js.undefined
     ): ClusterCredentials = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "DbPassword" -> DbPassword.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DbUser" -> DbUser.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Expiration" -> Expiration.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ClusterCredentials]
+      val __obj = js.Dictionary.empty[js.Any]
+      DbPassword.foreach(__v => __obj.update("DbPassword", __v.asInstanceOf[js.Any]))
+      DbUser.foreach(__v => __obj.update("DbUser", __v.asInstanceOf[js.Any]))
+      Expiration.foreach(__v => __obj.update("Expiration", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ClusterCredentials]
     }
   }
 
@@ -1107,22 +949,12 @@ package redshift {
         DatabaseRevisionReleaseDate: js.UndefOr[TStamp] = js.undefined,
         RevisionTargets: js.UndefOr[RevisionTargetsList] = js.undefined
     ): ClusterDbRevision = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ClusterIdentifier" -> ClusterIdentifier.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "CurrentDatabaseRevision" -> CurrentDatabaseRevision.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DatabaseRevisionReleaseDate" -> DatabaseRevisionReleaseDate.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "RevisionTargets" -> RevisionTargets.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ClusterDbRevision]
+      val __obj = js.Dictionary.empty[js.Any]
+      ClusterIdentifier.foreach(__v => __obj.update("ClusterIdentifier", __v.asInstanceOf[js.Any]))
+      CurrentDatabaseRevision.foreach(__v => __obj.update("CurrentDatabaseRevision", __v.asInstanceOf[js.Any]))
+      DatabaseRevisionReleaseDate.foreach(__v => __obj.update("DatabaseRevisionReleaseDate", __v.asInstanceOf[js.Any]))
+      RevisionTargets.foreach(__v => __obj.update("RevisionTargets", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ClusterDbRevision]
     }
   }
 
@@ -1137,16 +969,10 @@ package redshift {
         ClusterDbRevisions: js.UndefOr[ClusterDbRevisionsList] = js.undefined,
         Marker: js.UndefOr[String] = js.undefined
     ): ClusterDbRevisionsMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ClusterDbRevisions" -> ClusterDbRevisions.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Marker" -> Marker.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ClusterDbRevisionsMessage]
+      val __obj = js.Dictionary.empty[js.Any]
+      ClusterDbRevisions.foreach(__v => __obj.update("ClusterDbRevisions", __v.asInstanceOf[js.Any]))
+      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ClusterDbRevisionsMessage]
     }
   }
 
@@ -1164,16 +990,10 @@ package redshift {
         ApplyStatus: js.UndefOr[String] = js.undefined,
         IamRoleArn: js.UndefOr[String] = js.undefined
     ): ClusterIamRole = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ApplyStatus" -> ApplyStatus.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "IamRoleArn" -> IamRoleArn.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ClusterIamRole]
+      val __obj = js.Dictionary.empty[js.Any]
+      ApplyStatus.foreach(__v => __obj.update("ApplyStatus", __v.asInstanceOf[js.Any]))
+      IamRoleArn.foreach(__v => __obj.update("IamRoleArn", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ClusterIamRole]
     }
   }
 
@@ -1193,19 +1013,11 @@ package redshift {
         PrivateIPAddress: js.UndefOr[String] = js.undefined,
         PublicIPAddress: js.UndefOr[String] = js.undefined
     ): ClusterNode = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "NodeRole" -> NodeRole.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "PrivateIPAddress" -> PrivateIPAddress.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "PublicIPAddress" -> PublicIPAddress.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ClusterNode]
+      val __obj = js.Dictionary.empty[js.Any]
+      NodeRole.foreach(__v => __obj.update("NodeRole", __v.asInstanceOf[js.Any]))
+      PrivateIPAddress.foreach(__v => __obj.update("PrivateIPAddress", __v.asInstanceOf[js.Any]))
+      PublicIPAddress.foreach(__v => __obj.update("PublicIPAddress", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ClusterNode]
     }
   }
 
@@ -1227,22 +1039,12 @@ package redshift {
         ParameterGroupName: js.UndefOr[String] = js.undefined,
         Tags: js.UndefOr[TagList] = js.undefined
     ): ClusterParameterGroup = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Description" -> Description.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ParameterGroupFamily" -> ParameterGroupFamily.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ParameterGroupName" -> ParameterGroupName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Tags" -> Tags.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ClusterParameterGroup]
+      val __obj = js.Dictionary.empty[js.Any]
+      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
+      ParameterGroupFamily.foreach(__v => __obj.update("ParameterGroupFamily", __v.asInstanceOf[js.Any]))
+      ParameterGroupName.foreach(__v => __obj.update("ParameterGroupName", __v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ClusterParameterGroup]
     }
   }
 
@@ -1260,16 +1062,10 @@ package redshift {
         Marker: js.UndefOr[String] = js.undefined,
         Parameters: js.UndefOr[ParametersList] = js.undefined
     ): ClusterParameterGroupDetails = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Marker" -> Marker.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Parameters" -> Parameters.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ClusterParameterGroupDetails]
+      val __obj = js.Dictionary.empty[js.Any]
+      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
+      Parameters.foreach(__v => __obj.update("Parameters", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ClusterParameterGroupDetails]
     }
   }
 
@@ -1287,16 +1083,10 @@ package redshift {
         ParameterGroupName: js.UndefOr[String] = js.undefined,
         ParameterGroupStatus: js.UndefOr[String] = js.undefined
     ): ClusterParameterGroupNameMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ParameterGroupName" -> ParameterGroupName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ParameterGroupStatus" -> ParameterGroupStatus.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ClusterParameterGroupNameMessage]
+      val __obj = js.Dictionary.empty[js.Any]
+      ParameterGroupName.foreach(__v => __obj.update("ParameterGroupName", __v.asInstanceOf[js.Any]))
+      ParameterGroupStatus.foreach(__v => __obj.update("ParameterGroupStatus", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ClusterParameterGroupNameMessage]
     }
   }
 
@@ -1316,19 +1106,11 @@ package redshift {
         ParameterApplyStatus: js.UndefOr[String] = js.undefined,
         ParameterGroupName: js.UndefOr[String] = js.undefined
     ): ClusterParameterGroupStatus = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ClusterParameterStatusList" -> ClusterParameterStatusList.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ParameterApplyStatus" -> ParameterApplyStatus.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ParameterGroupName" -> ParameterGroupName.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ClusterParameterGroupStatus]
+      val __obj = js.Dictionary.empty[js.Any]
+      ClusterParameterStatusList.foreach(__v => __obj.update("ClusterParameterStatusList", __v.asInstanceOf[js.Any]))
+      ParameterApplyStatus.foreach(__v => __obj.update("ParameterApplyStatus", __v.asInstanceOf[js.Any]))
+      ParameterGroupName.foreach(__v => __obj.update("ParameterGroupName", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ClusterParameterGroupStatus]
     }
   }
 
@@ -1346,16 +1128,10 @@ package redshift {
         Marker: js.UndefOr[String] = js.undefined,
         ParameterGroups: js.UndefOr[ParameterGroupList] = js.undefined
     ): ClusterParameterGroupsMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Marker" -> Marker.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ParameterGroups" -> ParameterGroups.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ClusterParameterGroupsMessage]
+      val __obj = js.Dictionary.empty[js.Any]
+      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
+      ParameterGroups.foreach(__v => __obj.update("ParameterGroups", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ClusterParameterGroupsMessage]
     }
   }
 
@@ -1375,19 +1151,13 @@ package redshift {
         ParameterApplyStatus: js.UndefOr[String] = js.undefined,
         ParameterName: js.UndefOr[String] = js.undefined
     ): ClusterParameterStatus = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ParameterApplyErrorDescription" -> ParameterApplyErrorDescription.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ParameterApplyStatus" -> ParameterApplyStatus.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ParameterName" -> ParameterName.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ClusterParameterStatus]
+      val __obj = js.Dictionary.empty[js.Any]
+      ParameterApplyErrorDescription.foreach(
+        __v => __obj.update("ParameterApplyErrorDescription", __v.asInstanceOf[js.Any])
+      )
+      ParameterApplyStatus.foreach(__v => __obj.update("ParameterApplyStatus", __v.asInstanceOf[js.Any]))
+      ParameterName.foreach(__v => __obj.update("ParameterName", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ClusterParameterStatus]
     }
   }
 
@@ -1411,25 +1181,13 @@ package redshift {
         IPRanges: js.UndefOr[IPRangeList] = js.undefined,
         Tags: js.UndefOr[TagList] = js.undefined
     ): ClusterSecurityGroup = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ClusterSecurityGroupName" -> ClusterSecurityGroupName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Description" -> Description.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "EC2SecurityGroups" -> EC2SecurityGroups.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "IPRanges" -> IPRanges.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Tags" -> Tags.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ClusterSecurityGroup]
+      val __obj = js.Dictionary.empty[js.Any]
+      ClusterSecurityGroupName.foreach(__v => __obj.update("ClusterSecurityGroupName", __v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
+      EC2SecurityGroups.foreach(__v => __obj.update("EC2SecurityGroups", __v.asInstanceOf[js.Any]))
+      IPRanges.foreach(__v => __obj.update("IPRanges", __v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ClusterSecurityGroup]
     }
   }
 
@@ -1447,16 +1205,10 @@ package redshift {
         ClusterSecurityGroupName: js.UndefOr[String] = js.undefined,
         Status: js.UndefOr[String] = js.undefined
     ): ClusterSecurityGroupMembership = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ClusterSecurityGroupName" -> ClusterSecurityGroupName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Status" -> Status.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ClusterSecurityGroupMembership]
+      val __obj = js.Dictionary.empty[js.Any]
+      ClusterSecurityGroupName.foreach(__v => __obj.update("ClusterSecurityGroupName", __v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.update("Status", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ClusterSecurityGroupMembership]
     }
   }
 
@@ -1474,16 +1226,10 @@ package redshift {
         ClusterSecurityGroups: js.UndefOr[ClusterSecurityGroups] = js.undefined,
         Marker: js.UndefOr[String] = js.undefined
     ): ClusterSecurityGroupMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ClusterSecurityGroups" -> ClusterSecurityGroups.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Marker" -> Marker.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ClusterSecurityGroupMessage]
+      val __obj = js.Dictionary.empty[js.Any]
+      ClusterSecurityGroups.foreach(__v => __obj.update("ClusterSecurityGroups", __v.asInstanceOf[js.Any]))
+      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ClusterSecurityGroupMessage]
     }
   }
 
@@ -1505,22 +1251,14 @@ package redshift {
         RetentionPeriod: js.UndefOr[Double] = js.undefined,
         SnapshotCopyGrantName: js.UndefOr[String] = js.undefined
     ): ClusterSnapshotCopyStatus = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "DestinationRegion" -> DestinationRegion.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ManualSnapshotRetentionPeriod" -> ManualSnapshotRetentionPeriod.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "RetentionPeriod" -> RetentionPeriod.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SnapshotCopyGrantName" -> SnapshotCopyGrantName.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ClusterSnapshotCopyStatus]
+      val __obj = js.Dictionary.empty[js.Any]
+      DestinationRegion.foreach(__v => __obj.update("DestinationRegion", __v.asInstanceOf[js.Any]))
+      ManualSnapshotRetentionPeriod.foreach(
+        __v => __obj.update("ManualSnapshotRetentionPeriod", __v.asInstanceOf[js.Any])
+      )
+      RetentionPeriod.foreach(__v => __obj.update("RetentionPeriod", __v.asInstanceOf[js.Any]))
+      SnapshotCopyGrantName.foreach(__v => __obj.update("SnapshotCopyGrantName", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ClusterSnapshotCopyStatus]
     }
   }
 
@@ -1546,28 +1284,14 @@ package redshift {
         Tags: js.UndefOr[TagList] = js.undefined,
         VpcId: js.UndefOr[String] = js.undefined
     ): ClusterSubnetGroup = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ClusterSubnetGroupName" -> ClusterSubnetGroupName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Description" -> Description.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SubnetGroupStatus" -> SubnetGroupStatus.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Subnets" -> Subnets.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Tags" -> Tags.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "VpcId" -> VpcId.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ClusterSubnetGroup]
+      val __obj = js.Dictionary.empty[js.Any]
+      ClusterSubnetGroupName.foreach(__v => __obj.update("ClusterSubnetGroupName", __v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
+      SubnetGroupStatus.foreach(__v => __obj.update("SubnetGroupStatus", __v.asInstanceOf[js.Any]))
+      Subnets.foreach(__v => __obj.update("Subnets", __v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
+      VpcId.foreach(__v => __obj.update("VpcId", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ClusterSubnetGroup]
     }
   }
 
@@ -1585,16 +1309,10 @@ package redshift {
         ClusterSubnetGroups: js.UndefOr[ClusterSubnetGroups] = js.undefined,
         Marker: js.UndefOr[String] = js.undefined
     ): ClusterSubnetGroupMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ClusterSubnetGroups" -> ClusterSubnetGroups.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Marker" -> Marker.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ClusterSubnetGroupMessage]
+      val __obj = js.Dictionary.empty[js.Any]
+      ClusterSubnetGroups.foreach(__v => __obj.update("ClusterSubnetGroups", __v.asInstanceOf[js.Any]))
+      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ClusterSubnetGroupMessage]
     }
   }
 
@@ -1614,19 +1332,11 @@ package redshift {
         ClusterVersion: js.UndefOr[String] = js.undefined,
         Description: js.UndefOr[String] = js.undefined
     ): ClusterVersion = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ClusterParameterGroupFamily" -> ClusterParameterGroupFamily.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ClusterVersion" -> ClusterVersion.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Description" -> Description.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ClusterVersion]
+      val __obj = js.Dictionary.empty[js.Any]
+      ClusterParameterGroupFamily.foreach(__v => __obj.update("ClusterParameterGroupFamily", __v.asInstanceOf[js.Any]))
+      ClusterVersion.foreach(__v => __obj.update("ClusterVersion", __v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ClusterVersion]
     }
   }
 
@@ -1644,16 +1354,10 @@ package redshift {
         ClusterVersions: js.UndefOr[ClusterVersionList] = js.undefined,
         Marker: js.UndefOr[String] = js.undefined
     ): ClusterVersionsMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ClusterVersions" -> ClusterVersions.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Marker" -> Marker.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ClusterVersionsMessage]
+      val __obj = js.Dictionary.empty[js.Any]
+      ClusterVersions.foreach(__v => __obj.update("ClusterVersions", __v.asInstanceOf[js.Any]))
+      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ClusterVersionsMessage]
     }
   }
 
@@ -1671,16 +1375,10 @@ package redshift {
         Clusters: js.UndefOr[ClusterList] = js.undefined,
         Marker: js.UndefOr[String] = js.undefined
     ): ClustersMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Clusters" -> Clusters.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Marker" -> Marker.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ClustersMessage]
+      val __obj = js.Dictionary.empty[js.Any]
+      Clusters.foreach(__v => __obj.update("Clusters", __v.asInstanceOf[js.Any]))
+      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ClustersMessage]
     }
   }
 
@@ -1702,18 +1400,18 @@ package redshift {
         ManualSnapshotRetentionPeriod: js.UndefOr[IntegerOptional] = js.undefined,
         SourceSnapshotClusterIdentifier: js.UndefOr[String] = js.undefined
     ): CopyClusterSnapshotMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "SourceSnapshotIdentifier" -> SourceSnapshotIdentifier.asInstanceOf[js.Any],
-        "TargetSnapshotIdentifier" -> TargetSnapshotIdentifier.asInstanceOf[js.Any],
-        "ManualSnapshotRetentionPeriod" -> ManualSnapshotRetentionPeriod.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SourceSnapshotClusterIdentifier" -> SourceSnapshotClusterIdentifier.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "TargetSnapshotIdentifier" -> TargetSnapshotIdentifier.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CopyClusterSnapshotMessage]
+      ManualSnapshotRetentionPeriod.foreach(
+        __v => __obj.update("ManualSnapshotRetentionPeriod", __v.asInstanceOf[js.Any])
+      )
+      SourceSnapshotClusterIdentifier.foreach(
+        __v => __obj.update("SourceSnapshotClusterIdentifier", __v.asInstanceOf[js.Any])
+      )
+      __obj.asInstanceOf[CopyClusterSnapshotMessage]
     }
   }
 
@@ -1726,13 +1424,9 @@ package redshift {
     def apply(
         Snapshot: js.UndefOr[Snapshot] = js.undefined
     ): CopyClusterSnapshotResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Snapshot" -> Snapshot.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CopyClusterSnapshotResult]
+      val __obj = js.Dictionary.empty[js.Any]
+      Snapshot.foreach(__v => __obj.update("Snapshot", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CopyClusterSnapshotResult]
     }
   }
 
@@ -1806,92 +1500,46 @@ package redshift {
         Tags: js.UndefOr[TagList] = js.undefined,
         VpcSecurityGroupIds: js.UndefOr[VpcSecurityGroupIdList] = js.undefined
     ): CreateClusterMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ClusterIdentifier"  -> ClusterIdentifier.asInstanceOf[js.Any],
         "MasterUserPassword" -> MasterUserPassword.asInstanceOf[js.Any],
         "MasterUsername"     -> MasterUsername.asInstanceOf[js.Any],
-        "NodeType"           -> NodeType.asInstanceOf[js.Any],
-        "AdditionalInfo" -> AdditionalInfo.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "AllowVersionUpgrade" -> AllowVersionUpgrade.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "AutomatedSnapshotRetentionPeriod" -> AutomatedSnapshotRetentionPeriod.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "AvailabilityZone" -> AvailabilityZone.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ClusterParameterGroupName" -> ClusterParameterGroupName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ClusterSecurityGroups" -> ClusterSecurityGroups.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ClusterSubnetGroupName" -> ClusterSubnetGroupName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ClusterType" -> ClusterType.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ClusterVersion" -> ClusterVersion.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DBName" -> DBName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ElasticIp" -> ElasticIp.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Encrypted" -> Encrypted.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "EnhancedVpcRouting" -> EnhancedVpcRouting.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "HsmClientCertificateIdentifier" -> HsmClientCertificateIdentifier.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "HsmConfigurationIdentifier" -> HsmConfigurationIdentifier.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "IamRoles" -> IamRoles.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "KmsKeyId" -> KmsKeyId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MaintenanceTrackName" -> MaintenanceTrackName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ManualSnapshotRetentionPeriod" -> ManualSnapshotRetentionPeriod.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NumberOfNodes" -> NumberOfNodes.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Port" -> Port.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "PreferredMaintenanceWindow" -> PreferredMaintenanceWindow.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "PubliclyAccessible" -> PubliclyAccessible.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SnapshotScheduleIdentifier" -> SnapshotScheduleIdentifier.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Tags" -> Tags.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "VpcSecurityGroupIds" -> VpcSecurityGroupIds.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "NodeType"           -> NodeType.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateClusterMessage]
+      AdditionalInfo.foreach(__v => __obj.update("AdditionalInfo", __v.asInstanceOf[js.Any]))
+      AllowVersionUpgrade.foreach(__v => __obj.update("AllowVersionUpgrade", __v.asInstanceOf[js.Any]))
+      AutomatedSnapshotRetentionPeriod.foreach(
+        __v => __obj.update("AutomatedSnapshotRetentionPeriod", __v.asInstanceOf[js.Any])
+      )
+      AvailabilityZone.foreach(__v => __obj.update("AvailabilityZone", __v.asInstanceOf[js.Any]))
+      ClusterParameterGroupName.foreach(__v => __obj.update("ClusterParameterGroupName", __v.asInstanceOf[js.Any]))
+      ClusterSecurityGroups.foreach(__v => __obj.update("ClusterSecurityGroups", __v.asInstanceOf[js.Any]))
+      ClusterSubnetGroupName.foreach(__v => __obj.update("ClusterSubnetGroupName", __v.asInstanceOf[js.Any]))
+      ClusterType.foreach(__v => __obj.update("ClusterType", __v.asInstanceOf[js.Any]))
+      ClusterVersion.foreach(__v => __obj.update("ClusterVersion", __v.asInstanceOf[js.Any]))
+      DBName.foreach(__v => __obj.update("DBName", __v.asInstanceOf[js.Any]))
+      ElasticIp.foreach(__v => __obj.update("ElasticIp", __v.asInstanceOf[js.Any]))
+      Encrypted.foreach(__v => __obj.update("Encrypted", __v.asInstanceOf[js.Any]))
+      EnhancedVpcRouting.foreach(__v => __obj.update("EnhancedVpcRouting", __v.asInstanceOf[js.Any]))
+      HsmClientCertificateIdentifier.foreach(
+        __v => __obj.update("HsmClientCertificateIdentifier", __v.asInstanceOf[js.Any])
+      )
+      HsmConfigurationIdentifier.foreach(__v => __obj.update("HsmConfigurationIdentifier", __v.asInstanceOf[js.Any]))
+      IamRoles.foreach(__v => __obj.update("IamRoles", __v.asInstanceOf[js.Any]))
+      KmsKeyId.foreach(__v => __obj.update("KmsKeyId", __v.asInstanceOf[js.Any]))
+      MaintenanceTrackName.foreach(__v => __obj.update("MaintenanceTrackName", __v.asInstanceOf[js.Any]))
+      ManualSnapshotRetentionPeriod.foreach(
+        __v => __obj.update("ManualSnapshotRetentionPeriod", __v.asInstanceOf[js.Any])
+      )
+      NumberOfNodes.foreach(__v => __obj.update("NumberOfNodes", __v.asInstanceOf[js.Any]))
+      Port.foreach(__v => __obj.update("Port", __v.asInstanceOf[js.Any]))
+      PreferredMaintenanceWindow.foreach(__v => __obj.update("PreferredMaintenanceWindow", __v.asInstanceOf[js.Any]))
+      PubliclyAccessible.foreach(__v => __obj.update("PubliclyAccessible", __v.asInstanceOf[js.Any]))
+      SnapshotScheduleIdentifier.foreach(__v => __obj.update("SnapshotScheduleIdentifier", __v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
+      VpcSecurityGroupIds.foreach(__v => __obj.update("VpcSecurityGroupIds", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateClusterMessage]
     }
   }
 
@@ -1913,16 +1561,14 @@ package redshift {
         ParameterGroupName: String,
         Tags: js.UndefOr[TagList] = js.undefined
     ): CreateClusterParameterGroupMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "Description"          -> Description.asInstanceOf[js.Any],
         "ParameterGroupFamily" -> ParameterGroupFamily.asInstanceOf[js.Any],
-        "ParameterGroupName"   -> ParameterGroupName.asInstanceOf[js.Any],
-        "Tags" -> Tags.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "ParameterGroupName"   -> ParameterGroupName.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateClusterParameterGroupMessage]
+      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateClusterParameterGroupMessage]
     }
   }
 
@@ -1935,13 +1581,9 @@ package redshift {
     def apply(
         ClusterParameterGroup: js.UndefOr[ClusterParameterGroup] = js.undefined
     ): CreateClusterParameterGroupResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ClusterParameterGroup" -> ClusterParameterGroup.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateClusterParameterGroupResult]
+      val __obj = js.Dictionary.empty[js.Any]
+      ClusterParameterGroup.foreach(__v => __obj.update("ClusterParameterGroup", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateClusterParameterGroupResult]
     }
   }
 
@@ -1954,13 +1596,9 @@ package redshift {
     def apply(
         Cluster: js.UndefOr[Cluster] = js.undefined
     ): CreateClusterResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Cluster" -> Cluster.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateClusterResult]
+      val __obj = js.Dictionary.empty[js.Any]
+      Cluster.foreach(__v => __obj.update("Cluster", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateClusterResult]
     }
   }
 
@@ -1980,15 +1618,13 @@ package redshift {
         Description: String,
         Tags: js.UndefOr[TagList] = js.undefined
     ): CreateClusterSecurityGroupMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ClusterSecurityGroupName" -> ClusterSecurityGroupName.asInstanceOf[js.Any],
-        "Description"              -> Description.asInstanceOf[js.Any],
-        "Tags" -> Tags.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "Description"              -> Description.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateClusterSecurityGroupMessage]
+      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateClusterSecurityGroupMessage]
     }
   }
 
@@ -2001,13 +1637,9 @@ package redshift {
     def apply(
         ClusterSecurityGroup: js.UndefOr[ClusterSecurityGroup] = js.undefined
     ): CreateClusterSecurityGroupResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ClusterSecurityGroup" -> ClusterSecurityGroup.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateClusterSecurityGroupResult]
+      val __obj = js.Dictionary.empty[js.Any]
+      ClusterSecurityGroup.foreach(__v => __obj.update("ClusterSecurityGroup", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateClusterSecurityGroupResult]
     }
   }
 
@@ -2029,18 +1661,16 @@ package redshift {
         ManualSnapshotRetentionPeriod: js.UndefOr[IntegerOptional] = js.undefined,
         Tags: js.UndefOr[TagList] = js.undefined
     ): CreateClusterSnapshotMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ClusterIdentifier"  -> ClusterIdentifier.asInstanceOf[js.Any],
-        "SnapshotIdentifier" -> SnapshotIdentifier.asInstanceOf[js.Any],
-        "ManualSnapshotRetentionPeriod" -> ManualSnapshotRetentionPeriod.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Tags" -> Tags.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "SnapshotIdentifier" -> SnapshotIdentifier.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateClusterSnapshotMessage]
+      ManualSnapshotRetentionPeriod.foreach(
+        __v => __obj.update("ManualSnapshotRetentionPeriod", __v.asInstanceOf[js.Any])
+      )
+      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateClusterSnapshotMessage]
     }
   }
 
@@ -2053,13 +1683,9 @@ package redshift {
     def apply(
         Snapshot: js.UndefOr[Snapshot] = js.undefined
     ): CreateClusterSnapshotResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Snapshot" -> Snapshot.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateClusterSnapshotResult]
+      val __obj = js.Dictionary.empty[js.Any]
+      Snapshot.foreach(__v => __obj.update("Snapshot", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateClusterSnapshotResult]
     }
   }
 
@@ -2081,16 +1707,14 @@ package redshift {
         SubnetIds: SubnetIdentifierList,
         Tags: js.UndefOr[TagList] = js.undefined
     ): CreateClusterSubnetGroupMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ClusterSubnetGroupName" -> ClusterSubnetGroupName.asInstanceOf[js.Any],
         "Description"            -> Description.asInstanceOf[js.Any],
-        "SubnetIds"              -> SubnetIds.asInstanceOf[js.Any],
-        "Tags" -> Tags.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "SubnetIds"              -> SubnetIds.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateClusterSubnetGroupMessage]
+      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateClusterSubnetGroupMessage]
     }
   }
 
@@ -2103,13 +1727,9 @@ package redshift {
     def apply(
         ClusterSubnetGroup: js.UndefOr[ClusterSubnetGroup] = js.undefined
     ): CreateClusterSubnetGroupResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ClusterSubnetGroup" -> ClusterSubnetGroup.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateClusterSubnetGroupResult]
+      val __obj = js.Dictionary.empty[js.Any]
+      ClusterSubnetGroup.foreach(__v => __obj.update("ClusterSubnetGroup", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateClusterSubnetGroupResult]
     }
   }
 
@@ -2139,30 +1759,18 @@ package redshift {
         SourceType: js.UndefOr[String] = js.undefined,
         Tags: js.UndefOr[TagList] = js.undefined
     ): CreateEventSubscriptionMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "SnsTopicArn"      -> SnsTopicArn.asInstanceOf[js.Any],
-        "SubscriptionName" -> SubscriptionName.asInstanceOf[js.Any],
-        "Enabled" -> Enabled.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "EventCategories" -> EventCategories.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Severity" -> Severity.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SourceIds" -> SourceIds.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SourceType" -> SourceType.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Tags" -> Tags.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "SubscriptionName" -> SubscriptionName.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateEventSubscriptionMessage]
+      Enabled.foreach(__v => __obj.update("Enabled", __v.asInstanceOf[js.Any]))
+      EventCategories.foreach(__v => __obj.update("EventCategories", __v.asInstanceOf[js.Any]))
+      Severity.foreach(__v => __obj.update("Severity", __v.asInstanceOf[js.Any]))
+      SourceIds.foreach(__v => __obj.update("SourceIds", __v.asInstanceOf[js.Any]))
+      SourceType.foreach(__v => __obj.update("SourceType", __v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateEventSubscriptionMessage]
     }
   }
 
@@ -2175,13 +1783,9 @@ package redshift {
     def apply(
         EventSubscription: js.UndefOr[EventSubscription] = js.undefined
     ): CreateEventSubscriptionResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "EventSubscription" -> EventSubscription.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateEventSubscriptionResult]
+      val __obj = js.Dictionary.empty[js.Any]
+      EventSubscription.foreach(__v => __obj.update("EventSubscription", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateEventSubscriptionResult]
     }
   }
 
@@ -2199,14 +1803,12 @@ package redshift {
         HsmClientCertificateIdentifier: String,
         Tags: js.UndefOr[TagList] = js.undefined
     ): CreateHsmClientCertificateMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "HsmClientCertificateIdentifier" -> HsmClientCertificateIdentifier.asInstanceOf[js.Any],
-        "Tags" -> Tags.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "HsmClientCertificateIdentifier" -> HsmClientCertificateIdentifier.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateHsmClientCertificateMessage]
+      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateHsmClientCertificateMessage]
     }
   }
 
@@ -2219,13 +1821,9 @@ package redshift {
     def apply(
         HsmClientCertificate: js.UndefOr[HsmClientCertificate] = js.undefined
     ): CreateHsmClientCertificateResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "HsmClientCertificate" -> HsmClientCertificate.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateHsmClientCertificateResult]
+      val __obj = js.Dictionary.empty[js.Any]
+      HsmClientCertificate.foreach(__v => __obj.update("HsmClientCertificate", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateHsmClientCertificateResult]
     }
   }
 
@@ -2253,19 +1851,17 @@ package redshift {
         HsmServerPublicCertificate: String,
         Tags: js.UndefOr[TagList] = js.undefined
     ): CreateHsmConfigurationMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "Description"                -> Description.asInstanceOf[js.Any],
         "HsmConfigurationIdentifier" -> HsmConfigurationIdentifier.asInstanceOf[js.Any],
         "HsmIpAddress"               -> HsmIpAddress.asInstanceOf[js.Any],
         "HsmPartitionName"           -> HsmPartitionName.asInstanceOf[js.Any],
         "HsmPartitionPassword"       -> HsmPartitionPassword.asInstanceOf[js.Any],
-        "HsmServerPublicCertificate" -> HsmServerPublicCertificate.asInstanceOf[js.Any],
-        "Tags" -> Tags.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "HsmServerPublicCertificate" -> HsmServerPublicCertificate.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateHsmConfigurationMessage]
+      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateHsmConfigurationMessage]
     }
   }
 
@@ -2278,13 +1874,9 @@ package redshift {
     def apply(
         HsmConfiguration: js.UndefOr[HsmConfiguration] = js.undefined
     ): CreateHsmConfigurationResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "HsmConfiguration" -> HsmConfiguration.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateHsmConfigurationResult]
+      val __obj = js.Dictionary.empty[js.Any]
+      HsmConfiguration.foreach(__v => __obj.update("HsmConfiguration", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateHsmConfigurationResult]
     }
   }
 
@@ -2304,17 +1896,13 @@ package redshift {
         KmsKeyId: js.UndefOr[String] = js.undefined,
         Tags: js.UndefOr[TagList] = js.undefined
     ): CreateSnapshotCopyGrantMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "SnapshotCopyGrantName" -> SnapshotCopyGrantName.asInstanceOf[js.Any],
-        "KmsKeyId" -> KmsKeyId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Tags" -> Tags.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "SnapshotCopyGrantName" -> SnapshotCopyGrantName.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateSnapshotCopyGrantMessage]
+      KmsKeyId.foreach(__v => __obj.update("KmsKeyId", __v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateSnapshotCopyGrantMessage]
     }
   }
 
@@ -2327,13 +1915,9 @@ package redshift {
     def apply(
         SnapshotCopyGrant: js.UndefOr[SnapshotCopyGrant] = js.undefined
     ): CreateSnapshotCopyGrantResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "SnapshotCopyGrant" -> SnapshotCopyGrant.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateSnapshotCopyGrantResult]
+      val __obj = js.Dictionary.empty[js.Any]
+      SnapshotCopyGrant.foreach(__v => __obj.update("SnapshotCopyGrant", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateSnapshotCopyGrantResult]
     }
   }
 
@@ -2356,28 +1940,14 @@ package redshift {
         ScheduleIdentifier: js.UndefOr[String] = js.undefined,
         Tags: js.UndefOr[TagList] = js.undefined
     ): CreateSnapshotScheduleMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "DryRun" -> DryRun.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NextInvocations" -> NextInvocations.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ScheduleDefinitions" -> ScheduleDefinitions.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ScheduleDescription" -> ScheduleDescription.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ScheduleIdentifier" -> ScheduleIdentifier.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Tags" -> Tags.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateSnapshotScheduleMessage]
+      val __obj = js.Dictionary.empty[js.Any]
+      DryRun.foreach(__v => __obj.update("DryRun", __v.asInstanceOf[js.Any]))
+      NextInvocations.foreach(__v => __obj.update("NextInvocations", __v.asInstanceOf[js.Any]))
+      ScheduleDefinitions.foreach(__v => __obj.update("ScheduleDefinitions", __v.asInstanceOf[js.Any]))
+      ScheduleDescription.foreach(__v => __obj.update("ScheduleDescription", __v.asInstanceOf[js.Any]))
+      ScheduleIdentifier.foreach(__v => __obj.update("ScheduleIdentifier", __v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateSnapshotScheduleMessage]
     }
   }
 
@@ -2395,12 +1965,12 @@ package redshift {
         ResourceName: String,
         Tags: TagList
     ): CreateTagsMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ResourceName" -> ResourceName.asInstanceOf[js.Any],
         "Tags"         -> Tags.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateTagsMessage]
+      __obj.asInstanceOf[CreateTagsMessage]
     }
   }
 
@@ -2415,16 +1985,12 @@ package redshift {
         TotalBackupSizeInMegaBytes: js.UndefOr[Double] = js.undefined,
         TotalProvisionedStorageInMegaBytes: js.UndefOr[Double] = js.undefined
     ): CustomerStorageMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "TotalBackupSizeInMegaBytes" -> TotalBackupSizeInMegaBytes.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "TotalProvisionedStorageInMegaBytes" -> TotalProvisionedStorageInMegaBytes.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CustomerStorageMessage]
+      val __obj = js.Dictionary.empty[js.Any]
+      TotalBackupSizeInMegaBytes.foreach(__v => __obj.update("TotalBackupSizeInMegaBytes", __v.asInstanceOf[js.Any]))
+      TotalProvisionedStorageInMegaBytes.foreach(
+        __v => __obj.update("TotalProvisionedStorageInMegaBytes", __v.asInstanceOf[js.Any])
+      )
+      __obj.asInstanceOf[CustomerStorageMessage]
     }
   }
 
@@ -2450,28 +2016,18 @@ package redshift {
         Status: js.UndefOr[String] = js.undefined,
         TotalDataInMegaBytes: js.UndefOr[Double] = js.undefined
     ): DataTransferProgress = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "CurrentRateInMegaBytesPerSecond" -> CurrentRateInMegaBytesPerSecond.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DataTransferredInMegaBytes" -> DataTransferredInMegaBytes.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ElapsedTimeInSeconds" -> ElapsedTimeInSeconds.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "EstimatedTimeToCompletionInSeconds" -> EstimatedTimeToCompletionInSeconds.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Status" -> Status.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "TotalDataInMegaBytes" -> TotalDataInMegaBytes.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DataTransferProgress]
+      val __obj = js.Dictionary.empty[js.Any]
+      CurrentRateInMegaBytesPerSecond.foreach(
+        __v => __obj.update("CurrentRateInMegaBytesPerSecond", __v.asInstanceOf[js.Any])
+      )
+      DataTransferredInMegaBytes.foreach(__v => __obj.update("DataTransferredInMegaBytes", __v.asInstanceOf[js.Any]))
+      ElapsedTimeInSeconds.foreach(__v => __obj.update("ElapsedTimeInSeconds", __v.asInstanceOf[js.Any]))
+      EstimatedTimeToCompletionInSeconds.foreach(
+        __v => __obj.update("EstimatedTimeToCompletionInSeconds", __v.asInstanceOf[js.Any])
+      )
+      Status.foreach(__v => __obj.update("Status", __v.asInstanceOf[js.Any]))
+      TotalDataInMegaBytes.foreach(__v => __obj.update("TotalDataInMegaBytes", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DataTransferProgress]
     }
   }
 
@@ -2491,19 +2047,11 @@ package redshift {
         ParameterGroupFamily: js.UndefOr[String] = js.undefined,
         Parameters: js.UndefOr[ParametersList] = js.undefined
     ): DefaultClusterParameters = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Marker" -> Marker.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ParameterGroupFamily" -> ParameterGroupFamily.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Parameters" -> Parameters.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DefaultClusterParameters]
+      val __obj = js.Dictionary.empty[js.Any]
+      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
+      ParameterGroupFamily.foreach(__v => __obj.update("ParameterGroupFamily", __v.asInstanceOf[js.Any]))
+      Parameters.foreach(__v => __obj.update("Parameters", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DefaultClusterParameters]
     }
   }
 
@@ -2523,19 +2071,11 @@ package redshift {
         DeferMaintenanceIdentifier: js.UndefOr[String] = js.undefined,
         DeferMaintenanceStartTime: js.UndefOr[TStamp] = js.undefined
     ): DeferredMaintenanceWindow = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "DeferMaintenanceEndTime" -> DeferMaintenanceEndTime.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DeferMaintenanceIdentifier" -> DeferMaintenanceIdentifier.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DeferMaintenanceStartTime" -> DeferMaintenanceStartTime.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeferredMaintenanceWindow]
+      val __obj = js.Dictionary.empty[js.Any]
+      DeferMaintenanceEndTime.foreach(__v => __obj.update("DeferMaintenanceEndTime", __v.asInstanceOf[js.Any]))
+      DeferMaintenanceIdentifier.foreach(__v => __obj.update("DeferMaintenanceIdentifier", __v.asInstanceOf[js.Any]))
+      DeferMaintenanceStartTime.foreach(__v => __obj.update("DeferMaintenanceStartTime", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DeferredMaintenanceWindow]
     }
   }
 
@@ -2557,20 +2097,18 @@ package redshift {
         FinalClusterSnapshotRetentionPeriod: js.UndefOr[IntegerOptional] = js.undefined,
         SkipFinalClusterSnapshot: js.UndefOr[Boolean] = js.undefined
     ): DeleteClusterMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ClusterIdentifier" -> ClusterIdentifier.asInstanceOf[js.Any],
-        "FinalClusterSnapshotIdentifier" -> FinalClusterSnapshotIdentifier.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "FinalClusterSnapshotRetentionPeriod" -> FinalClusterSnapshotRetentionPeriod.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SkipFinalClusterSnapshot" -> SkipFinalClusterSnapshot.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "ClusterIdentifier" -> ClusterIdentifier.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteClusterMessage]
+      FinalClusterSnapshotIdentifier.foreach(
+        __v => __obj.update("FinalClusterSnapshotIdentifier", __v.asInstanceOf[js.Any])
+      )
+      FinalClusterSnapshotRetentionPeriod.foreach(
+        __v => __obj.update("FinalClusterSnapshotRetentionPeriod", __v.asInstanceOf[js.Any])
+      )
+      SkipFinalClusterSnapshot.foreach(__v => __obj.update("SkipFinalClusterSnapshot", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DeleteClusterMessage]
     }
   }
 
@@ -2586,11 +2124,11 @@ package redshift {
     def apply(
         ParameterGroupName: String
     ): DeleteClusterParameterGroupMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ParameterGroupName" -> ParameterGroupName.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteClusterParameterGroupMessage]
+      __obj.asInstanceOf[DeleteClusterParameterGroupMessage]
     }
   }
 
@@ -2603,13 +2141,9 @@ package redshift {
     def apply(
         Cluster: js.UndefOr[Cluster] = js.undefined
     ): DeleteClusterResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Cluster" -> Cluster.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteClusterResult]
+      val __obj = js.Dictionary.empty[js.Any]
+      Cluster.foreach(__v => __obj.update("Cluster", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DeleteClusterResult]
     }
   }
 
@@ -2625,11 +2159,11 @@ package redshift {
     def apply(
         ClusterSecurityGroupName: String
     ): DeleteClusterSecurityGroupMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ClusterSecurityGroupName" -> ClusterSecurityGroupName.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteClusterSecurityGroupMessage]
+      __obj.asInstanceOf[DeleteClusterSecurityGroupMessage]
     }
   }
 
@@ -2647,14 +2181,12 @@ package redshift {
         SnapshotIdentifier: String,
         SnapshotClusterIdentifier: js.UndefOr[String] = js.undefined
     ): DeleteClusterSnapshotMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "SnapshotIdentifier" -> SnapshotIdentifier.asInstanceOf[js.Any],
-        "SnapshotClusterIdentifier" -> SnapshotClusterIdentifier.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "SnapshotIdentifier" -> SnapshotIdentifier.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteClusterSnapshotMessage]
+      SnapshotClusterIdentifier.foreach(__v => __obj.update("SnapshotClusterIdentifier", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DeleteClusterSnapshotMessage]
     }
   }
 
@@ -2667,13 +2199,9 @@ package redshift {
     def apply(
         Snapshot: js.UndefOr[Snapshot] = js.undefined
     ): DeleteClusterSnapshotResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Snapshot" -> Snapshot.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteClusterSnapshotResult]
+      val __obj = js.Dictionary.empty[js.Any]
+      Snapshot.foreach(__v => __obj.update("Snapshot", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DeleteClusterSnapshotResult]
     }
   }
 
@@ -2689,11 +2217,11 @@ package redshift {
     def apply(
         ClusterSubnetGroupName: String
     ): DeleteClusterSubnetGroupMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ClusterSubnetGroupName" -> ClusterSubnetGroupName.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteClusterSubnetGroupMessage]
+      __obj.asInstanceOf[DeleteClusterSubnetGroupMessage]
     }
   }
 
@@ -2709,11 +2237,11 @@ package redshift {
     def apply(
         SubscriptionName: String
     ): DeleteEventSubscriptionMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "SubscriptionName" -> SubscriptionName.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteEventSubscriptionMessage]
+      __obj.asInstanceOf[DeleteEventSubscriptionMessage]
     }
   }
 
@@ -2729,11 +2257,11 @@ package redshift {
     def apply(
         HsmClientCertificateIdentifier: String
     ): DeleteHsmClientCertificateMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "HsmClientCertificateIdentifier" -> HsmClientCertificateIdentifier.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteHsmClientCertificateMessage]
+      __obj.asInstanceOf[DeleteHsmClientCertificateMessage]
     }
   }
 
@@ -2749,11 +2277,11 @@ package redshift {
     def apply(
         HsmConfigurationIdentifier: String
     ): DeleteHsmConfigurationMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "HsmConfigurationIdentifier" -> HsmConfigurationIdentifier.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteHsmConfigurationMessage]
+      __obj.asInstanceOf[DeleteHsmConfigurationMessage]
     }
   }
 
@@ -2769,11 +2297,11 @@ package redshift {
     def apply(
         SnapshotCopyGrantName: String
     ): DeleteSnapshotCopyGrantMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "SnapshotCopyGrantName" -> SnapshotCopyGrantName.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteSnapshotCopyGrantMessage]
+      __obj.asInstanceOf[DeleteSnapshotCopyGrantMessage]
     }
   }
 
@@ -2786,11 +2314,11 @@ package redshift {
     def apply(
         ScheduleIdentifier: String
     ): DeleteSnapshotScheduleMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ScheduleIdentifier" -> ScheduleIdentifier.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteSnapshotScheduleMessage]
+      __obj.asInstanceOf[DeleteSnapshotScheduleMessage]
     }
   }
 
@@ -2808,12 +2336,12 @@ package redshift {
         ResourceName: String,
         TagKeys: TagKeyList
     ): DeleteTagsMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ResourceName" -> ResourceName.asInstanceOf[js.Any],
         "TagKeys"      -> TagKeys.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteTagsMessage]
+      __obj.asInstanceOf[DeleteTagsMessage]
     }
   }
 
@@ -2826,13 +2354,9 @@ package redshift {
     def apply(
         AttributeNames: js.UndefOr[AttributeNameList] = js.undefined
     ): DescribeAccountAttributesMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "AttributeNames" -> AttributeNames.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeAccountAttributesMessage]
+      val __obj = js.Dictionary.empty[js.Any]
+      AttributeNames.foreach(__v => __obj.update("AttributeNames", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeAccountAttributesMessage]
     }
   }
 
@@ -2849,19 +2373,11 @@ package redshift {
         Marker: js.UndefOr[String] = js.undefined,
         MaxRecords: js.UndefOr[IntegerOptional] = js.undefined
     ): DescribeClusterDbRevisionsMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ClusterIdentifier" -> ClusterIdentifier.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Marker" -> Marker.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MaxRecords" -> MaxRecords.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeClusterDbRevisionsMessage]
+      val __obj = js.Dictionary.empty[js.Any]
+      ClusterIdentifier.foreach(__v => __obj.update("ClusterIdentifier", __v.asInstanceOf[js.Any]))
+      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
+      MaxRecords.foreach(__v => __obj.update("MaxRecords", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeClusterDbRevisionsMessage]
     }
   }
 
@@ -2885,25 +2401,13 @@ package redshift {
         TagKeys: js.UndefOr[TagKeyList] = js.undefined,
         TagValues: js.UndefOr[TagValueList] = js.undefined
     ): DescribeClusterParameterGroupsMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Marker" -> Marker.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MaxRecords" -> MaxRecords.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ParameterGroupName" -> ParameterGroupName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "TagKeys" -> TagKeys.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "TagValues" -> TagValues.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeClusterParameterGroupsMessage]
+      val __obj = js.Dictionary.empty[js.Any]
+      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
+      MaxRecords.foreach(__v => __obj.update("MaxRecords", __v.asInstanceOf[js.Any]))
+      ParameterGroupName.foreach(__v => __obj.update("ParameterGroupName", __v.asInstanceOf[js.Any]))
+      TagKeys.foreach(__v => __obj.update("TagKeys", __v.asInstanceOf[js.Any]))
+      TagValues.foreach(__v => __obj.update("TagValues", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeClusterParameterGroupsMessage]
     }
   }
 
@@ -2925,20 +2429,14 @@ package redshift {
         MaxRecords: js.UndefOr[IntegerOptional] = js.undefined,
         Source: js.UndefOr[String] = js.undefined
     ): DescribeClusterParametersMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ParameterGroupName" -> ParameterGroupName.asInstanceOf[js.Any],
-        "Marker" -> Marker.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MaxRecords" -> MaxRecords.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Source" -> Source.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "ParameterGroupName" -> ParameterGroupName.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeClusterParametersMessage]
+      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
+      MaxRecords.foreach(__v => __obj.update("MaxRecords", __v.asInstanceOf[js.Any]))
+      Source.foreach(__v => __obj.update("Source", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeClusterParametersMessage]
     }
   }
 
@@ -2962,25 +2460,13 @@ package redshift {
         TagKeys: js.UndefOr[TagKeyList] = js.undefined,
         TagValues: js.UndefOr[TagValueList] = js.undefined
     ): DescribeClusterSecurityGroupsMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ClusterSecurityGroupName" -> ClusterSecurityGroupName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Marker" -> Marker.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MaxRecords" -> MaxRecords.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "TagKeys" -> TagKeys.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "TagValues" -> TagValues.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeClusterSecurityGroupsMessage]
+      val __obj = js.Dictionary.empty[js.Any]
+      ClusterSecurityGroupName.foreach(__v => __obj.update("ClusterSecurityGroupName", __v.asInstanceOf[js.Any]))
+      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
+      MaxRecords.foreach(__v => __obj.update("MaxRecords", __v.asInstanceOf[js.Any]))
+      TagKeys.foreach(__v => __obj.update("TagKeys", __v.asInstanceOf[js.Any]))
+      TagValues.foreach(__v => __obj.update("TagValues", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeClusterSecurityGroupsMessage]
     }
   }
 
@@ -3018,46 +2504,20 @@ package redshift {
         TagKeys: js.UndefOr[TagKeyList] = js.undefined,
         TagValues: js.UndefOr[TagValueList] = js.undefined
     ): DescribeClusterSnapshotsMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ClusterExists" -> ClusterExists.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ClusterIdentifier" -> ClusterIdentifier.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "EndTime" -> EndTime.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Marker" -> Marker.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MaxRecords" -> MaxRecords.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "OwnerAccount" -> OwnerAccount.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SnapshotIdentifier" -> SnapshotIdentifier.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SnapshotType" -> SnapshotType.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SortingEntities" -> SortingEntities.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "StartTime" -> StartTime.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "TagKeys" -> TagKeys.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "TagValues" -> TagValues.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeClusterSnapshotsMessage]
+      val __obj = js.Dictionary.empty[js.Any]
+      ClusterExists.foreach(__v => __obj.update("ClusterExists", __v.asInstanceOf[js.Any]))
+      ClusterIdentifier.foreach(__v => __obj.update("ClusterIdentifier", __v.asInstanceOf[js.Any]))
+      EndTime.foreach(__v => __obj.update("EndTime", __v.asInstanceOf[js.Any]))
+      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
+      MaxRecords.foreach(__v => __obj.update("MaxRecords", __v.asInstanceOf[js.Any]))
+      OwnerAccount.foreach(__v => __obj.update("OwnerAccount", __v.asInstanceOf[js.Any]))
+      SnapshotIdentifier.foreach(__v => __obj.update("SnapshotIdentifier", __v.asInstanceOf[js.Any]))
+      SnapshotType.foreach(__v => __obj.update("SnapshotType", __v.asInstanceOf[js.Any]))
+      SortingEntities.foreach(__v => __obj.update("SortingEntities", __v.asInstanceOf[js.Any]))
+      StartTime.foreach(__v => __obj.update("StartTime", __v.asInstanceOf[js.Any]))
+      TagKeys.foreach(__v => __obj.update("TagKeys", __v.asInstanceOf[js.Any]))
+      TagValues.foreach(__v => __obj.update("TagValues", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeClusterSnapshotsMessage]
     }
   }
 
@@ -3081,25 +2541,13 @@ package redshift {
         TagKeys: js.UndefOr[TagKeyList] = js.undefined,
         TagValues: js.UndefOr[TagValueList] = js.undefined
     ): DescribeClusterSubnetGroupsMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ClusterSubnetGroupName" -> ClusterSubnetGroupName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Marker" -> Marker.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MaxRecords" -> MaxRecords.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "TagKeys" -> TagKeys.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "TagValues" -> TagValues.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeClusterSubnetGroupsMessage]
+      val __obj = js.Dictionary.empty[js.Any]
+      ClusterSubnetGroupName.foreach(__v => __obj.update("ClusterSubnetGroupName", __v.asInstanceOf[js.Any]))
+      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
+      MaxRecords.foreach(__v => __obj.update("MaxRecords", __v.asInstanceOf[js.Any]))
+      TagKeys.foreach(__v => __obj.update("TagKeys", __v.asInstanceOf[js.Any]))
+      TagValues.foreach(__v => __obj.update("TagValues", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeClusterSubnetGroupsMessage]
     }
   }
 
@@ -3116,19 +2564,11 @@ package redshift {
         Marker: js.UndefOr[String] = js.undefined,
         MaxRecords: js.UndefOr[IntegerOptional] = js.undefined
     ): DescribeClusterTracksMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "MaintenanceTrackName" -> MaintenanceTrackName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Marker" -> Marker.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MaxRecords" -> MaxRecords.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeClusterTracksMessage]
+      val __obj = js.Dictionary.empty[js.Any]
+      MaintenanceTrackName.foreach(__v => __obj.update("MaintenanceTrackName", __v.asInstanceOf[js.Any]))
+      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
+      MaxRecords.foreach(__v => __obj.update("MaxRecords", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeClusterTracksMessage]
     }
   }
 
@@ -3150,22 +2590,12 @@ package redshift {
         Marker: js.UndefOr[String] = js.undefined,
         MaxRecords: js.UndefOr[IntegerOptional] = js.undefined
     ): DescribeClusterVersionsMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ClusterParameterGroupFamily" -> ClusterParameterGroupFamily.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ClusterVersion" -> ClusterVersion.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Marker" -> Marker.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MaxRecords" -> MaxRecords.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeClusterVersionsMessage]
+      val __obj = js.Dictionary.empty[js.Any]
+      ClusterParameterGroupFamily.foreach(__v => __obj.update("ClusterParameterGroupFamily", __v.asInstanceOf[js.Any]))
+      ClusterVersion.foreach(__v => __obj.update("ClusterVersion", __v.asInstanceOf[js.Any]))
+      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
+      MaxRecords.foreach(__v => __obj.update("MaxRecords", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeClusterVersionsMessage]
     }
   }
 
@@ -3189,25 +2619,13 @@ package redshift {
         TagKeys: js.UndefOr[TagKeyList] = js.undefined,
         TagValues: js.UndefOr[TagValueList] = js.undefined
     ): DescribeClustersMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ClusterIdentifier" -> ClusterIdentifier.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Marker" -> Marker.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MaxRecords" -> MaxRecords.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "TagKeys" -> TagKeys.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "TagValues" -> TagValues.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeClustersMessage]
+      val __obj = js.Dictionary.empty[js.Any]
+      ClusterIdentifier.foreach(__v => __obj.update("ClusterIdentifier", __v.asInstanceOf[js.Any]))
+      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
+      MaxRecords.foreach(__v => __obj.update("MaxRecords", __v.asInstanceOf[js.Any]))
+      TagKeys.foreach(__v => __obj.update("TagKeys", __v.asInstanceOf[js.Any]))
+      TagValues.foreach(__v => __obj.update("TagValues", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeClustersMessage]
     }
   }
 
@@ -3227,17 +2645,13 @@ package redshift {
         Marker: js.UndefOr[String] = js.undefined,
         MaxRecords: js.UndefOr[IntegerOptional] = js.undefined
     ): DescribeDefaultClusterParametersMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ParameterGroupFamily" -> ParameterGroupFamily.asInstanceOf[js.Any],
-        "Marker" -> Marker.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MaxRecords" -> MaxRecords.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "ParameterGroupFamily" -> ParameterGroupFamily.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeDefaultClusterParametersMessage]
+      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
+      MaxRecords.foreach(__v => __obj.update("MaxRecords", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeDefaultClusterParametersMessage]
     }
   }
 
@@ -3250,13 +2664,9 @@ package redshift {
     def apply(
         DefaultClusterParameters: js.UndefOr[DefaultClusterParameters] = js.undefined
     ): DescribeDefaultClusterParametersResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "DefaultClusterParameters" -> DefaultClusterParameters.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeDefaultClusterParametersResult]
+      val __obj = js.Dictionary.empty[js.Any]
+      DefaultClusterParameters.foreach(__v => __obj.update("DefaultClusterParameters", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeDefaultClusterParametersResult]
     }
   }
 
@@ -3272,13 +2682,9 @@ package redshift {
     def apply(
         SourceType: js.UndefOr[String] = js.undefined
     ): DescribeEventCategoriesMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "SourceType" -> SourceType.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeEventCategoriesMessage]
+      val __obj = js.Dictionary.empty[js.Any]
+      SourceType.foreach(__v => __obj.update("SourceType", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeEventCategoriesMessage]
     }
   }
 
@@ -3302,25 +2708,13 @@ package redshift {
         TagKeys: js.UndefOr[TagKeyList] = js.undefined,
         TagValues: js.UndefOr[TagValueList] = js.undefined
     ): DescribeEventSubscriptionsMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Marker" -> Marker.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MaxRecords" -> MaxRecords.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SubscriptionName" -> SubscriptionName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "TagKeys" -> TagKeys.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "TagValues" -> TagValues.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeEventSubscriptionsMessage]
+      val __obj = js.Dictionary.empty[js.Any]
+      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
+      MaxRecords.foreach(__v => __obj.update("MaxRecords", __v.asInstanceOf[js.Any]))
+      SubscriptionName.foreach(__v => __obj.update("SubscriptionName", __v.asInstanceOf[js.Any]))
+      TagKeys.foreach(__v => __obj.update("TagKeys", __v.asInstanceOf[js.Any]))
+      TagValues.foreach(__v => __obj.update("TagValues", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeEventSubscriptionsMessage]
     }
   }
 
@@ -3348,31 +2742,15 @@ package redshift {
         SourceType: js.UndefOr[SourceType] = js.undefined,
         StartTime: js.UndefOr[TStamp] = js.undefined
     ): DescribeEventsMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Duration" -> Duration.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "EndTime" -> EndTime.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Marker" -> Marker.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MaxRecords" -> MaxRecords.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SourceIdentifier" -> SourceIdentifier.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SourceType" -> SourceType.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "StartTime" -> StartTime.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeEventsMessage]
+      val __obj = js.Dictionary.empty[js.Any]
+      Duration.foreach(__v => __obj.update("Duration", __v.asInstanceOf[js.Any]))
+      EndTime.foreach(__v => __obj.update("EndTime", __v.asInstanceOf[js.Any]))
+      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
+      MaxRecords.foreach(__v => __obj.update("MaxRecords", __v.asInstanceOf[js.Any]))
+      SourceIdentifier.foreach(__v => __obj.update("SourceIdentifier", __v.asInstanceOf[js.Any]))
+      SourceType.foreach(__v => __obj.update("SourceType", __v.asInstanceOf[js.Any]))
+      StartTime.foreach(__v => __obj.update("StartTime", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeEventsMessage]
     }
   }
 
@@ -3396,25 +2774,15 @@ package redshift {
         TagKeys: js.UndefOr[TagKeyList] = js.undefined,
         TagValues: js.UndefOr[TagValueList] = js.undefined
     ): DescribeHsmClientCertificatesMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "HsmClientCertificateIdentifier" -> HsmClientCertificateIdentifier.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Marker" -> Marker.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MaxRecords" -> MaxRecords.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "TagKeys" -> TagKeys.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "TagValues" -> TagValues.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeHsmClientCertificatesMessage]
+      val __obj = js.Dictionary.empty[js.Any]
+      HsmClientCertificateIdentifier.foreach(
+        __v => __obj.update("HsmClientCertificateIdentifier", __v.asInstanceOf[js.Any])
+      )
+      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
+      MaxRecords.foreach(__v => __obj.update("MaxRecords", __v.asInstanceOf[js.Any]))
+      TagKeys.foreach(__v => __obj.update("TagKeys", __v.asInstanceOf[js.Any]))
+      TagValues.foreach(__v => __obj.update("TagValues", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeHsmClientCertificatesMessage]
     }
   }
 
@@ -3438,25 +2806,13 @@ package redshift {
         TagKeys: js.UndefOr[TagKeyList] = js.undefined,
         TagValues: js.UndefOr[TagValueList] = js.undefined
     ): DescribeHsmConfigurationsMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "HsmConfigurationIdentifier" -> HsmConfigurationIdentifier.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Marker" -> Marker.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MaxRecords" -> MaxRecords.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "TagKeys" -> TagKeys.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "TagValues" -> TagValues.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeHsmConfigurationsMessage]
+      val __obj = js.Dictionary.empty[js.Any]
+      HsmConfigurationIdentifier.foreach(__v => __obj.update("HsmConfigurationIdentifier", __v.asInstanceOf[js.Any]))
+      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
+      MaxRecords.foreach(__v => __obj.update("MaxRecords", __v.asInstanceOf[js.Any]))
+      TagKeys.foreach(__v => __obj.update("TagKeys", __v.asInstanceOf[js.Any]))
+      TagValues.foreach(__v => __obj.update("TagValues", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeHsmConfigurationsMessage]
     }
   }
 
@@ -3472,11 +2828,11 @@ package redshift {
     def apply(
         ClusterIdentifier: String
     ): DescribeLoggingStatusMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ClusterIdentifier" -> ClusterIdentifier.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeLoggingStatusMessage]
+      __obj.asInstanceOf[DescribeLoggingStatusMessage]
     }
   }
 
@@ -3498,22 +2854,12 @@ package redshift {
         MaxRecords: js.UndefOr[IntegerOptional] = js.undefined,
         NodeType: js.UndefOr[String] = js.undefined
     ): DescribeOrderableClusterOptionsMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ClusterVersion" -> ClusterVersion.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Marker" -> Marker.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MaxRecords" -> MaxRecords.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NodeType" -> NodeType.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeOrderableClusterOptionsMessage]
+      val __obj = js.Dictionary.empty[js.Any]
+      ClusterVersion.foreach(__v => __obj.update("ClusterVersion", __v.asInstanceOf[js.Any]))
+      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
+      MaxRecords.foreach(__v => __obj.update("MaxRecords", __v.asInstanceOf[js.Any]))
+      NodeType.foreach(__v => __obj.update("NodeType", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeOrderableClusterOptionsMessage]
     }
   }
 
@@ -3533,19 +2879,11 @@ package redshift {
         MaxRecords: js.UndefOr[IntegerOptional] = js.undefined,
         ReservedNodeOfferingId: js.UndefOr[String] = js.undefined
     ): DescribeReservedNodeOfferingsMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Marker" -> Marker.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MaxRecords" -> MaxRecords.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ReservedNodeOfferingId" -> ReservedNodeOfferingId.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeReservedNodeOfferingsMessage]
+      val __obj = js.Dictionary.empty[js.Any]
+      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
+      MaxRecords.foreach(__v => __obj.update("MaxRecords", __v.asInstanceOf[js.Any]))
+      ReservedNodeOfferingId.foreach(__v => __obj.update("ReservedNodeOfferingId", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeReservedNodeOfferingsMessage]
     }
   }
 
@@ -3565,19 +2903,11 @@ package redshift {
         MaxRecords: js.UndefOr[IntegerOptional] = js.undefined,
         ReservedNodeId: js.UndefOr[String] = js.undefined
     ): DescribeReservedNodesMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Marker" -> Marker.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MaxRecords" -> MaxRecords.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ReservedNodeId" -> ReservedNodeId.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeReservedNodesMessage]
+      val __obj = js.Dictionary.empty[js.Any]
+      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
+      MaxRecords.foreach(__v => __obj.update("MaxRecords", __v.asInstanceOf[js.Any]))
+      ReservedNodeId.foreach(__v => __obj.update("ReservedNodeId", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeReservedNodesMessage]
     }
   }
 
@@ -3593,11 +2923,11 @@ package redshift {
     def apply(
         ClusterIdentifier: String
     ): DescribeResizeMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ClusterIdentifier" -> ClusterIdentifier.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeResizeMessage]
+      __obj.asInstanceOf[DescribeResizeMessage]
     }
   }
 
@@ -3621,25 +2951,13 @@ package redshift {
         TagKeys: js.UndefOr[TagKeyList] = js.undefined,
         TagValues: js.UndefOr[TagValueList] = js.undefined
     ): DescribeSnapshotCopyGrantsMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Marker" -> Marker.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MaxRecords" -> MaxRecords.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SnapshotCopyGrantName" -> SnapshotCopyGrantName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "TagKeys" -> TagKeys.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "TagValues" -> TagValues.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeSnapshotCopyGrantsMessage]
+      val __obj = js.Dictionary.empty[js.Any]
+      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
+      MaxRecords.foreach(__v => __obj.update("MaxRecords", __v.asInstanceOf[js.Any]))
+      SnapshotCopyGrantName.foreach(__v => __obj.update("SnapshotCopyGrantName", __v.asInstanceOf[js.Any]))
+      TagKeys.foreach(__v => __obj.update("TagKeys", __v.asInstanceOf[js.Any]))
+      TagValues.foreach(__v => __obj.update("TagValues", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeSnapshotCopyGrantsMessage]
     }
   }
 
@@ -3662,28 +2980,14 @@ package redshift {
         TagKeys: js.UndefOr[TagKeyList] = js.undefined,
         TagValues: js.UndefOr[TagValueList] = js.undefined
     ): DescribeSnapshotSchedulesMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ClusterIdentifier" -> ClusterIdentifier.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Marker" -> Marker.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MaxRecords" -> MaxRecords.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ScheduleIdentifier" -> ScheduleIdentifier.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "TagKeys" -> TagKeys.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "TagValues" -> TagValues.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeSnapshotSchedulesMessage]
+      val __obj = js.Dictionary.empty[js.Any]
+      ClusterIdentifier.foreach(__v => __obj.update("ClusterIdentifier", __v.asInstanceOf[js.Any]))
+      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
+      MaxRecords.foreach(__v => __obj.update("MaxRecords", __v.asInstanceOf[js.Any]))
+      ScheduleIdentifier.foreach(__v => __obj.update("ScheduleIdentifier", __v.asInstanceOf[js.Any]))
+      TagKeys.foreach(__v => __obj.update("TagKeys", __v.asInstanceOf[js.Any]))
+      TagValues.foreach(__v => __obj.update("TagValues", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeSnapshotSchedulesMessage]
     }
   }
 
@@ -3698,16 +3002,10 @@ package redshift {
         Marker: js.UndefOr[String] = js.undefined,
         SnapshotSchedules: js.UndefOr[SnapshotScheduleList] = js.undefined
     ): DescribeSnapshotSchedulesOutputMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Marker" -> Marker.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SnapshotSchedules" -> SnapshotSchedules.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeSnapshotSchedulesOutputMessage]
+      val __obj = js.Dictionary.empty[js.Any]
+      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
+      SnapshotSchedules.foreach(__v => __obj.update("SnapshotSchedules", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeSnapshotSchedulesOutputMessage]
     }
   }
 
@@ -3729,22 +3027,12 @@ package redshift {
         MaxRecords: js.UndefOr[IntegerOptional] = js.undefined,
         TableRestoreRequestId: js.UndefOr[String] = js.undefined
     ): DescribeTableRestoreStatusMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ClusterIdentifier" -> ClusterIdentifier.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Marker" -> Marker.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MaxRecords" -> MaxRecords.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "TableRestoreRequestId" -> TableRestoreRequestId.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeTableRestoreStatusMessage]
+      val __obj = js.Dictionary.empty[js.Any]
+      ClusterIdentifier.foreach(__v => __obj.update("ClusterIdentifier", __v.asInstanceOf[js.Any]))
+      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
+      MaxRecords.foreach(__v => __obj.update("MaxRecords", __v.asInstanceOf[js.Any]))
+      TableRestoreRequestId.foreach(__v => __obj.update("TableRestoreRequestId", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeTableRestoreStatusMessage]
     }
   }
 
@@ -3770,28 +3058,14 @@ package redshift {
         TagKeys: js.UndefOr[TagKeyList] = js.undefined,
         TagValues: js.UndefOr[TagValueList] = js.undefined
     ): DescribeTagsMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Marker" -> Marker.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MaxRecords" -> MaxRecords.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ResourceName" -> ResourceName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ResourceType" -> ResourceType.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "TagKeys" -> TagKeys.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "TagValues" -> TagValues.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeTagsMessage]
+      val __obj = js.Dictionary.empty[js.Any]
+      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
+      MaxRecords.foreach(__v => __obj.update("MaxRecords", __v.asInstanceOf[js.Any]))
+      ResourceName.foreach(__v => __obj.update("ResourceName", __v.asInstanceOf[js.Any]))
+      ResourceType.foreach(__v => __obj.update("ResourceType", __v.asInstanceOf[js.Any]))
+      TagKeys.foreach(__v => __obj.update("TagKeys", __v.asInstanceOf[js.Any]))
+      TagValues.foreach(__v => __obj.update("TagValues", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeTagsMessage]
     }
   }
 
@@ -3807,11 +3081,11 @@ package redshift {
     def apply(
         ClusterIdentifier: String
     ): DisableLoggingMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ClusterIdentifier" -> ClusterIdentifier.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DisableLoggingMessage]
+      __obj.asInstanceOf[DisableLoggingMessage]
     }
   }
 
@@ -3827,11 +3101,11 @@ package redshift {
     def apply(
         ClusterIdentifier: String
     ): DisableSnapshotCopyMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ClusterIdentifier" -> ClusterIdentifier.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DisableSnapshotCopyMessage]
+      __obj.asInstanceOf[DisableSnapshotCopyMessage]
     }
   }
 
@@ -3844,13 +3118,9 @@ package redshift {
     def apply(
         Cluster: js.UndefOr[Cluster] = js.undefined
     ): DisableSnapshotCopyResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Cluster" -> Cluster.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DisableSnapshotCopyResult]
+      val __obj = js.Dictionary.empty[js.Any]
+      Cluster.foreach(__v => __obj.update("Cluster", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DisableSnapshotCopyResult]
     }
   }
 
@@ -3872,22 +3142,12 @@ package redshift {
         Status: js.UndefOr[String] = js.undefined,
         Tags: js.UndefOr[TagList] = js.undefined
     ): EC2SecurityGroup = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "EC2SecurityGroupName" -> EC2SecurityGroupName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "EC2SecurityGroupOwnerId" -> EC2SecurityGroupOwnerId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Status" -> Status.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Tags" -> Tags.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[EC2SecurityGroup]
+      val __obj = js.Dictionary.empty[js.Any]
+      EC2SecurityGroupName.foreach(__v => __obj.update("EC2SecurityGroupName", __v.asInstanceOf[js.Any]))
+      EC2SecurityGroupOwnerId.foreach(__v => __obj.update("EC2SecurityGroupOwnerId", __v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.update("Status", __v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[EC2SecurityGroup]
     }
   }
 
@@ -3905,16 +3165,10 @@ package redshift {
         ElasticIp: js.UndefOr[String] = js.undefined,
         Status: js.UndefOr[String] = js.undefined
     ): ElasticIpStatus = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ElasticIp" -> ElasticIp.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Status" -> Status.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ElasticIpStatus]
+      val __obj = js.Dictionary.empty[js.Any]
+      ElasticIp.foreach(__v => __obj.update("ElasticIp", __v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.update("Status", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ElasticIpStatus]
     }
   }
 
@@ -3934,15 +3188,13 @@ package redshift {
         ClusterIdentifier: String,
         S3KeyPrefix: js.UndefOr[String] = js.undefined
     ): EnableLoggingMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "BucketName"        -> BucketName.asInstanceOf[js.Any],
-        "ClusterIdentifier" -> ClusterIdentifier.asInstanceOf[js.Any],
-        "S3KeyPrefix" -> S3KeyPrefix.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "ClusterIdentifier" -> ClusterIdentifier.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[EnableLoggingMessage]
+      S3KeyPrefix.foreach(__v => __obj.update("S3KeyPrefix", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[EnableLoggingMessage]
     }
   }
 
@@ -3966,21 +3218,17 @@ package redshift {
         RetentionPeriod: js.UndefOr[IntegerOptional] = js.undefined,
         SnapshotCopyGrantName: js.UndefOr[String] = js.undefined
     ): EnableSnapshotCopyMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ClusterIdentifier" -> ClusterIdentifier.asInstanceOf[js.Any],
-        "DestinationRegion" -> DestinationRegion.asInstanceOf[js.Any],
-        "ManualSnapshotRetentionPeriod" -> ManualSnapshotRetentionPeriod.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "RetentionPeriod" -> RetentionPeriod.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SnapshotCopyGrantName" -> SnapshotCopyGrantName.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "DestinationRegion" -> DestinationRegion.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[EnableSnapshotCopyMessage]
+      ManualSnapshotRetentionPeriod.foreach(
+        __v => __obj.update("ManualSnapshotRetentionPeriod", __v.asInstanceOf[js.Any])
+      )
+      RetentionPeriod.foreach(__v => __obj.update("RetentionPeriod", __v.asInstanceOf[js.Any]))
+      SnapshotCopyGrantName.foreach(__v => __obj.update("SnapshotCopyGrantName", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[EnableSnapshotCopyMessage]
     }
   }
 
@@ -3993,13 +3241,9 @@ package redshift {
     def apply(
         Cluster: js.UndefOr[Cluster] = js.undefined
     ): EnableSnapshotCopyResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Cluster" -> Cluster.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[EnableSnapshotCopyResult]
+      val __obj = js.Dictionary.empty[js.Any]
+      Cluster.foreach(__v => __obj.update("Cluster", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[EnableSnapshotCopyResult]
     }
   }
 
@@ -4017,16 +3261,10 @@ package redshift {
         Address: js.UndefOr[String] = js.undefined,
         Port: js.UndefOr[Int] = js.undefined
     ): Endpoint = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Address" -> Address.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Port" -> Port.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Endpoint]
+      val __obj = js.Dictionary.empty[js.Any]
+      Address.foreach(__v => __obj.update("Address", __v.asInstanceOf[js.Any]))
+      Port.foreach(__v => __obj.update("Port", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Endpoint]
     }
   }
 
@@ -4054,31 +3292,15 @@ package redshift {
         SourceIdentifier: js.UndefOr[String] = js.undefined,
         SourceType: js.UndefOr[SourceType] = js.undefined
     ): Event = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Date" -> Date.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "EventCategories" -> EventCategories.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "EventId" -> EventId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Message" -> Message.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Severity" -> Severity.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SourceIdentifier" -> SourceIdentifier.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SourceType" -> SourceType.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Event]
+      val __obj = js.Dictionary.empty[js.Any]
+      Date.foreach(__v => __obj.update("Date", __v.asInstanceOf[js.Any]))
+      EventCategories.foreach(__v => __obj.update("EventCategories", __v.asInstanceOf[js.Any]))
+      EventId.foreach(__v => __obj.update("EventId", __v.asInstanceOf[js.Any]))
+      Message.foreach(__v => __obj.update("Message", __v.asInstanceOf[js.Any]))
+      Severity.foreach(__v => __obj.update("Severity", __v.asInstanceOf[js.Any]))
+      SourceIdentifier.foreach(__v => __obj.update("SourceIdentifier", __v.asInstanceOf[js.Any]))
+      SourceType.foreach(__v => __obj.update("SourceType", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Event]
     }
   }
 
@@ -4096,16 +3318,10 @@ package redshift {
         Events: js.UndefOr[EventInfoMapList] = js.undefined,
         SourceType: js.UndefOr[String] = js.undefined
     ): EventCategoriesMap = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Events" -> Events.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SourceType" -> SourceType.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[EventCategoriesMap]
+      val __obj = js.Dictionary.empty[js.Any]
+      Events.foreach(__v => __obj.update("Events", __v.asInstanceOf[js.Any]))
+      SourceType.foreach(__v => __obj.update("SourceType", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[EventCategoriesMap]
     }
   }
 
@@ -4121,13 +3337,9 @@ package redshift {
     def apply(
         EventCategoriesMapList: js.UndefOr[EventCategoriesMapList] = js.undefined
     ): EventCategoriesMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "EventCategoriesMapList" -> EventCategoriesMapList.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[EventCategoriesMessage]
+      val __obj = js.Dictionary.empty[js.Any]
+      EventCategoriesMapList.foreach(__v => __obj.update("EventCategoriesMapList", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[EventCategoriesMessage]
     }
   }
 
@@ -4149,22 +3361,12 @@ package redshift {
         EventId: js.UndefOr[String] = js.undefined,
         Severity: js.UndefOr[String] = js.undefined
     ): EventInfoMap = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "EventCategories" -> EventCategories.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "EventDescription" -> EventDescription.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "EventId" -> EventId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Severity" -> Severity.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[EventInfoMap]
+      val __obj = js.Dictionary.empty[js.Any]
+      EventCategories.foreach(__v => __obj.update("EventCategories", __v.asInstanceOf[js.Any]))
+      EventDescription.foreach(__v => __obj.update("EventDescription", __v.asInstanceOf[js.Any]))
+      EventId.foreach(__v => __obj.update("EventId", __v.asInstanceOf[js.Any]))
+      Severity.foreach(__v => __obj.update("Severity", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[EventInfoMap]
     }
   }
 
@@ -4200,43 +3402,19 @@ package redshift {
         SubscriptionCreationTime: js.UndefOr[TStamp] = js.undefined,
         Tags: js.UndefOr[TagList] = js.undefined
     ): EventSubscription = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "CustSubscriptionId" -> CustSubscriptionId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "CustomerAwsId" -> CustomerAwsId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Enabled" -> Enabled.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "EventCategoriesList" -> EventCategoriesList.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Severity" -> Severity.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SnsTopicArn" -> SnsTopicArn.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SourceIdsList" -> SourceIdsList.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SourceType" -> SourceType.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Status" -> Status.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SubscriptionCreationTime" -> SubscriptionCreationTime.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Tags" -> Tags.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[EventSubscription]
+      val __obj = js.Dictionary.empty[js.Any]
+      CustSubscriptionId.foreach(__v => __obj.update("CustSubscriptionId", __v.asInstanceOf[js.Any]))
+      CustomerAwsId.foreach(__v => __obj.update("CustomerAwsId", __v.asInstanceOf[js.Any]))
+      Enabled.foreach(__v => __obj.update("Enabled", __v.asInstanceOf[js.Any]))
+      EventCategoriesList.foreach(__v => __obj.update("EventCategoriesList", __v.asInstanceOf[js.Any]))
+      Severity.foreach(__v => __obj.update("Severity", __v.asInstanceOf[js.Any]))
+      SnsTopicArn.foreach(__v => __obj.update("SnsTopicArn", __v.asInstanceOf[js.Any]))
+      SourceIdsList.foreach(__v => __obj.update("SourceIdsList", __v.asInstanceOf[js.Any]))
+      SourceType.foreach(__v => __obj.update("SourceType", __v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.update("Status", __v.asInstanceOf[js.Any]))
+      SubscriptionCreationTime.foreach(__v => __obj.update("SubscriptionCreationTime", __v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[EventSubscription]
     }
   }
 
@@ -4254,16 +3432,10 @@ package redshift {
         EventSubscriptionsList: js.UndefOr[EventSubscriptionsList] = js.undefined,
         Marker: js.UndefOr[String] = js.undefined
     ): EventSubscriptionsMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "EventSubscriptionsList" -> EventSubscriptionsList.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Marker" -> Marker.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[EventSubscriptionsMessage]
+      val __obj = js.Dictionary.empty[js.Any]
+      EventSubscriptionsList.foreach(__v => __obj.update("EventSubscriptionsList", __v.asInstanceOf[js.Any]))
+      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[EventSubscriptionsMessage]
     }
   }
 
@@ -4281,16 +3453,10 @@ package redshift {
         Events: js.UndefOr[EventList] = js.undefined,
         Marker: js.UndefOr[String] = js.undefined
     ): EventsMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Events" -> Events.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Marker" -> Marker.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[EventsMessage]
+      val __obj = js.Dictionary.empty[js.Any]
+      Events.foreach(__v => __obj.update("Events", __v.asInstanceOf[js.Any]))
+      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[EventsMessage]
     }
   }
 
@@ -4316,24 +3482,16 @@ package redshift {
         DbName: js.UndefOr[String] = js.undefined,
         DurationSeconds: js.UndefOr[IntegerOptional] = js.undefined
     ): GetClusterCredentialsMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ClusterIdentifier" -> ClusterIdentifier.asInstanceOf[js.Any],
-        "DbUser"            -> DbUser.asInstanceOf[js.Any],
-        "AutoCreate" -> AutoCreate.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DbGroups" -> DbGroups.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DbName" -> DbName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DurationSeconds" -> DurationSeconds.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "DbUser"            -> DbUser.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetClusterCredentialsMessage]
+      AutoCreate.foreach(__v => __obj.update("AutoCreate", __v.asInstanceOf[js.Any]))
+      DbGroups.foreach(__v => __obj.update("DbGroups", __v.asInstanceOf[js.Any]))
+      DbName.foreach(__v => __obj.update("DbName", __v.asInstanceOf[js.Any]))
+      DurationSeconds.foreach(__v => __obj.update("DurationSeconds", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetClusterCredentialsMessage]
     }
   }
 
@@ -4353,19 +3511,13 @@ package redshift {
         Marker: js.UndefOr[String] = js.undefined,
         MaxRecords: js.UndefOr[IntegerOptional] = js.undefined
     ): GetReservedNodeExchangeOfferingsInputMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ReservedNodeId" -> ReservedNodeId.asInstanceOf[js.Any],
-        "Marker" -> Marker.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MaxRecords" -> MaxRecords.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "ReservedNodeId" -> ReservedNodeId.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal
-        .applyDynamicNamed("apply")(_fields: _*)
-        .asInstanceOf[GetReservedNodeExchangeOfferingsInputMessage]
+      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
+      MaxRecords.foreach(__v => __obj.update("MaxRecords", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetReservedNodeExchangeOfferingsInputMessage]
     }
   }
 
@@ -4380,18 +3532,10 @@ package redshift {
         Marker: js.UndefOr[String] = js.undefined,
         ReservedNodeOfferings: js.UndefOr[ReservedNodeOfferingList] = js.undefined
     ): GetReservedNodeExchangeOfferingsOutputMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Marker" -> Marker.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ReservedNodeOfferings" -> ReservedNodeOfferings.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal
-        .applyDynamicNamed("apply")(_fields: _*)
-        .asInstanceOf[GetReservedNodeExchangeOfferingsOutputMessage]
+      val __obj = js.Dictionary.empty[js.Any]
+      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
+      ReservedNodeOfferings.foreach(__v => __obj.update("ReservedNodeOfferings", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetReservedNodeExchangeOfferingsOutputMessage]
     }
   }
 
@@ -4411,19 +3555,15 @@ package redshift {
         HsmClientCertificatePublicKey: js.UndefOr[String] = js.undefined,
         Tags: js.UndefOr[TagList] = js.undefined
     ): HsmClientCertificate = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "HsmClientCertificateIdentifier" -> HsmClientCertificateIdentifier.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "HsmClientCertificatePublicKey" -> HsmClientCertificatePublicKey.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Tags" -> Tags.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[HsmClientCertificate]
+      val __obj = js.Dictionary.empty[js.Any]
+      HsmClientCertificateIdentifier.foreach(
+        __v => __obj.update("HsmClientCertificateIdentifier", __v.asInstanceOf[js.Any])
+      )
+      HsmClientCertificatePublicKey.foreach(
+        __v => __obj.update("HsmClientCertificatePublicKey", __v.asInstanceOf[js.Any])
+      )
+      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[HsmClientCertificate]
     }
   }
 
@@ -4441,16 +3581,10 @@ package redshift {
         HsmClientCertificates: js.UndefOr[HsmClientCertificateList] = js.undefined,
         Marker: js.UndefOr[String] = js.undefined
     ): HsmClientCertificateMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "HsmClientCertificates" -> HsmClientCertificates.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Marker" -> Marker.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[HsmClientCertificateMessage]
+      val __obj = js.Dictionary.empty[js.Any]
+      HsmClientCertificates.foreach(__v => __obj.update("HsmClientCertificates", __v.asInstanceOf[js.Any]))
+      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[HsmClientCertificateMessage]
     }
   }
 
@@ -4474,25 +3608,13 @@ package redshift {
         HsmPartitionName: js.UndefOr[String] = js.undefined,
         Tags: js.UndefOr[TagList] = js.undefined
     ): HsmConfiguration = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Description" -> Description.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "HsmConfigurationIdentifier" -> HsmConfigurationIdentifier.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "HsmIpAddress" -> HsmIpAddress.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "HsmPartitionName" -> HsmPartitionName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Tags" -> Tags.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[HsmConfiguration]
+      val __obj = js.Dictionary.empty[js.Any]
+      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
+      HsmConfigurationIdentifier.foreach(__v => __obj.update("HsmConfigurationIdentifier", __v.asInstanceOf[js.Any]))
+      HsmIpAddress.foreach(__v => __obj.update("HsmIpAddress", __v.asInstanceOf[js.Any]))
+      HsmPartitionName.foreach(__v => __obj.update("HsmPartitionName", __v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[HsmConfiguration]
     }
   }
 
@@ -4510,16 +3632,10 @@ package redshift {
         HsmConfigurations: js.UndefOr[HsmConfigurationList] = js.undefined,
         Marker: js.UndefOr[String] = js.undefined
     ): HsmConfigurationMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "HsmConfigurations" -> HsmConfigurations.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Marker" -> Marker.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[HsmConfigurationMessage]
+      val __obj = js.Dictionary.empty[js.Any]
+      HsmConfigurations.foreach(__v => __obj.update("HsmConfigurations", __v.asInstanceOf[js.Any]))
+      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[HsmConfigurationMessage]
     }
   }
 
@@ -4539,19 +3655,13 @@ package redshift {
         HsmConfigurationIdentifier: js.UndefOr[String] = js.undefined,
         Status: js.UndefOr[String] = js.undefined
     ): HsmStatus = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "HsmClientCertificateIdentifier" -> HsmClientCertificateIdentifier.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "HsmConfigurationIdentifier" -> HsmConfigurationIdentifier.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Status" -> Status.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[HsmStatus]
+      val __obj = js.Dictionary.empty[js.Any]
+      HsmClientCertificateIdentifier.foreach(
+        __v => __obj.update("HsmClientCertificateIdentifier", __v.asInstanceOf[js.Any])
+      )
+      HsmConfigurationIdentifier.foreach(__v => __obj.update("HsmConfigurationIdentifier", __v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.update("Status", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[HsmStatus]
     }
   }
 
@@ -4571,19 +3681,11 @@ package redshift {
         Status: js.UndefOr[String] = js.undefined,
         Tags: js.UndefOr[TagList] = js.undefined
     ): IPRange = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "CIDRIP" -> CIDRIP.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Status" -> Status.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Tags" -> Tags.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[IPRange]
+      val __obj = js.Dictionary.empty[js.Any]
+      CIDRIP.foreach(__v => __obj.update("CIDRIP", __v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.update("Status", __v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[IPRange]
     }
   }
 
@@ -4609,28 +3711,14 @@ package redshift {
         LoggingEnabled: js.UndefOr[Boolean] = js.undefined,
         S3KeyPrefix: js.UndefOr[String] = js.undefined
     ): LoggingStatus = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "BucketName" -> BucketName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "LastFailureMessage" -> LastFailureMessage.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "LastFailureTime" -> LastFailureTime.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "LastSuccessfulDeliveryTime" -> LastSuccessfulDeliveryTime.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "LoggingEnabled" -> LoggingEnabled.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "S3KeyPrefix" -> S3KeyPrefix.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[LoggingStatus]
+      val __obj = js.Dictionary.empty[js.Any]
+      BucketName.foreach(__v => __obj.update("BucketName", __v.asInstanceOf[js.Any]))
+      LastFailureMessage.foreach(__v => __obj.update("LastFailureMessage", __v.asInstanceOf[js.Any]))
+      LastFailureTime.foreach(__v => __obj.update("LastFailureTime", __v.asInstanceOf[js.Any]))
+      LastSuccessfulDeliveryTime.foreach(__v => __obj.update("LastSuccessfulDeliveryTime", __v.asInstanceOf[js.Any]))
+      LoggingEnabled.foreach(__v => __obj.update("LoggingEnabled", __v.asInstanceOf[js.Any]))
+      S3KeyPrefix.foreach(__v => __obj.update("S3KeyPrefix", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[LoggingStatus]
     }
   }
 
@@ -4650,19 +3738,11 @@ package redshift {
         MaintenanceTrackName: js.UndefOr[String] = js.undefined,
         UpdateTargets: js.UndefOr[EligibleTracksToUpdateList] = js.undefined
     ): MaintenanceTrack = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "DatabaseVersion" -> DatabaseVersion.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MaintenanceTrackName" -> MaintenanceTrackName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "UpdateTargets" -> UpdateTargets.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[MaintenanceTrack]
+      val __obj = js.Dictionary.empty[js.Any]
+      DatabaseVersion.foreach(__v => __obj.update("DatabaseVersion", __v.asInstanceOf[js.Any]))
+      MaintenanceTrackName.foreach(__v => __obj.update("MaintenanceTrackName", __v.asInstanceOf[js.Any]))
+      UpdateTargets.foreach(__v => __obj.update("UpdateTargets", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[MaintenanceTrack]
     }
   }
 
@@ -4677,12 +3757,12 @@ package redshift {
         ClusterIdentifier: String,
         RevisionTarget: String
     ): ModifyClusterDbRevisionMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ClusterIdentifier" -> ClusterIdentifier.asInstanceOf[js.Any],
         "RevisionTarget"    -> RevisionTarget.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ModifyClusterDbRevisionMessage]
+      __obj.asInstanceOf[ModifyClusterDbRevisionMessage]
     }
   }
 
@@ -4695,13 +3775,9 @@ package redshift {
     def apply(
         Cluster: js.UndefOr[Cluster] = js.undefined
     ): ModifyClusterDbRevisionResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Cluster" -> Cluster.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ModifyClusterDbRevisionResult]
+      val __obj = js.Dictionary.empty[js.Any]
+      Cluster.foreach(__v => __obj.update("Cluster", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ModifyClusterDbRevisionResult]
     }
   }
 
@@ -4721,17 +3797,13 @@ package redshift {
         AddIamRoles: js.UndefOr[IamRoleArnList] = js.undefined,
         RemoveIamRoles: js.UndefOr[IamRoleArnList] = js.undefined
     ): ModifyClusterIamRolesMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ClusterIdentifier" -> ClusterIdentifier.asInstanceOf[js.Any],
-        "AddIamRoles" -> AddIamRoles.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "RemoveIamRoles" -> RemoveIamRoles.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "ClusterIdentifier" -> ClusterIdentifier.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ModifyClusterIamRolesMessage]
+      AddIamRoles.foreach(__v => __obj.update("AddIamRoles", __v.asInstanceOf[js.Any]))
+      RemoveIamRoles.foreach(__v => __obj.update("RemoveIamRoles", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ModifyClusterIamRolesMessage]
     }
   }
 
@@ -4744,13 +3816,9 @@ package redshift {
     def apply(
         Cluster: js.UndefOr[Cluster] = js.undefined
     ): ModifyClusterIamRolesResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Cluster" -> Cluster.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ModifyClusterIamRolesResult]
+      val __obj = js.Dictionary.empty[js.Any]
+      Cluster.foreach(__v => __obj.update("Cluster", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ModifyClusterIamRolesResult]
     }
   }
 
@@ -4773,26 +3841,16 @@ package redshift {
         DeferMaintenanceIdentifier: js.UndefOr[String] = js.undefined,
         DeferMaintenanceStartTime: js.UndefOr[TStamp] = js.undefined
     ): ModifyClusterMaintenanceMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ClusterIdentifier" -> ClusterIdentifier.asInstanceOf[js.Any],
-        "DeferMaintenance" -> DeferMaintenance.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DeferMaintenanceDuration" -> DeferMaintenanceDuration.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DeferMaintenanceEndTime" -> DeferMaintenanceEndTime.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DeferMaintenanceIdentifier" -> DeferMaintenanceIdentifier.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DeferMaintenanceStartTime" -> DeferMaintenanceStartTime.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "ClusterIdentifier" -> ClusterIdentifier.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ModifyClusterMaintenanceMessage]
+      DeferMaintenance.foreach(__v => __obj.update("DeferMaintenance", __v.asInstanceOf[js.Any]))
+      DeferMaintenanceDuration.foreach(__v => __obj.update("DeferMaintenanceDuration", __v.asInstanceOf[js.Any]))
+      DeferMaintenanceEndTime.foreach(__v => __obj.update("DeferMaintenanceEndTime", __v.asInstanceOf[js.Any]))
+      DeferMaintenanceIdentifier.foreach(__v => __obj.update("DeferMaintenanceIdentifier", __v.asInstanceOf[js.Any]))
+      DeferMaintenanceStartTime.foreach(__v => __obj.update("DeferMaintenanceStartTime", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ModifyClusterMaintenanceMessage]
     }
   }
 
@@ -4805,13 +3863,9 @@ package redshift {
     def apply(
         Cluster: js.UndefOr[Cluster] = js.undefined
     ): ModifyClusterMaintenanceResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Cluster" -> Cluster.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ModifyClusterMaintenanceResult]
+      val __obj = js.Dictionary.empty[js.Any]
+      Cluster.foreach(__v => __obj.update("Cluster", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ModifyClusterMaintenanceResult]
     }
   }
 
@@ -4869,74 +3923,38 @@ package redshift {
         PubliclyAccessible: js.UndefOr[BooleanOptional] = js.undefined,
         VpcSecurityGroupIds: js.UndefOr[VpcSecurityGroupIdList] = js.undefined
     ): ModifyClusterMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ClusterIdentifier" -> ClusterIdentifier.asInstanceOf[js.Any],
-        "AllowVersionUpgrade" -> AllowVersionUpgrade.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "AutomatedSnapshotRetentionPeriod" -> AutomatedSnapshotRetentionPeriod.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ClusterParameterGroupName" -> ClusterParameterGroupName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ClusterSecurityGroups" -> ClusterSecurityGroups.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ClusterType" -> ClusterType.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ClusterVersion" -> ClusterVersion.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ElasticIp" -> ElasticIp.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Encrypted" -> Encrypted.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "EnhancedVpcRouting" -> EnhancedVpcRouting.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "HsmClientCertificateIdentifier" -> HsmClientCertificateIdentifier.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "HsmConfigurationIdentifier" -> HsmConfigurationIdentifier.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "KmsKeyId" -> KmsKeyId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MaintenanceTrackName" -> MaintenanceTrackName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ManualSnapshotRetentionPeriod" -> ManualSnapshotRetentionPeriod.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MasterUserPassword" -> MasterUserPassword.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NewClusterIdentifier" -> NewClusterIdentifier.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NodeType" -> NodeType.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NumberOfNodes" -> NumberOfNodes.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "PreferredMaintenanceWindow" -> PreferredMaintenanceWindow.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "PubliclyAccessible" -> PubliclyAccessible.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "VpcSecurityGroupIds" -> VpcSecurityGroupIds.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "ClusterIdentifier" -> ClusterIdentifier.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ModifyClusterMessage]
+      AllowVersionUpgrade.foreach(__v => __obj.update("AllowVersionUpgrade", __v.asInstanceOf[js.Any]))
+      AutomatedSnapshotRetentionPeriod.foreach(
+        __v => __obj.update("AutomatedSnapshotRetentionPeriod", __v.asInstanceOf[js.Any])
+      )
+      ClusterParameterGroupName.foreach(__v => __obj.update("ClusterParameterGroupName", __v.asInstanceOf[js.Any]))
+      ClusterSecurityGroups.foreach(__v => __obj.update("ClusterSecurityGroups", __v.asInstanceOf[js.Any]))
+      ClusterType.foreach(__v => __obj.update("ClusterType", __v.asInstanceOf[js.Any]))
+      ClusterVersion.foreach(__v => __obj.update("ClusterVersion", __v.asInstanceOf[js.Any]))
+      ElasticIp.foreach(__v => __obj.update("ElasticIp", __v.asInstanceOf[js.Any]))
+      Encrypted.foreach(__v => __obj.update("Encrypted", __v.asInstanceOf[js.Any]))
+      EnhancedVpcRouting.foreach(__v => __obj.update("EnhancedVpcRouting", __v.asInstanceOf[js.Any]))
+      HsmClientCertificateIdentifier.foreach(
+        __v => __obj.update("HsmClientCertificateIdentifier", __v.asInstanceOf[js.Any])
+      )
+      HsmConfigurationIdentifier.foreach(__v => __obj.update("HsmConfigurationIdentifier", __v.asInstanceOf[js.Any]))
+      KmsKeyId.foreach(__v => __obj.update("KmsKeyId", __v.asInstanceOf[js.Any]))
+      MaintenanceTrackName.foreach(__v => __obj.update("MaintenanceTrackName", __v.asInstanceOf[js.Any]))
+      ManualSnapshotRetentionPeriod.foreach(
+        __v => __obj.update("ManualSnapshotRetentionPeriod", __v.asInstanceOf[js.Any])
+      )
+      MasterUserPassword.foreach(__v => __obj.update("MasterUserPassword", __v.asInstanceOf[js.Any]))
+      NewClusterIdentifier.foreach(__v => __obj.update("NewClusterIdentifier", __v.asInstanceOf[js.Any]))
+      NodeType.foreach(__v => __obj.update("NodeType", __v.asInstanceOf[js.Any]))
+      NumberOfNodes.foreach(__v => __obj.update("NumberOfNodes", __v.asInstanceOf[js.Any]))
+      PreferredMaintenanceWindow.foreach(__v => __obj.update("PreferredMaintenanceWindow", __v.asInstanceOf[js.Any]))
+      PubliclyAccessible.foreach(__v => __obj.update("PubliclyAccessible", __v.asInstanceOf[js.Any]))
+      VpcSecurityGroupIds.foreach(__v => __obj.update("VpcSecurityGroupIds", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ModifyClusterMessage]
     }
   }
 
@@ -4954,12 +3972,12 @@ package redshift {
         ParameterGroupName: String,
         Parameters: ParametersList
     ): ModifyClusterParameterGroupMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ParameterGroupName" -> ParameterGroupName.asInstanceOf[js.Any],
         "Parameters"         -> Parameters.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ModifyClusterParameterGroupMessage]
+      __obj.asInstanceOf[ModifyClusterParameterGroupMessage]
     }
   }
 
@@ -4972,13 +3990,9 @@ package redshift {
     def apply(
         Cluster: js.UndefOr[Cluster] = js.undefined
     ): ModifyClusterResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Cluster" -> Cluster.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ModifyClusterResult]
+      val __obj = js.Dictionary.empty[js.Any]
+      Cluster.foreach(__v => __obj.update("Cluster", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ModifyClusterResult]
     }
   }
 
@@ -4995,17 +4009,15 @@ package redshift {
         Force: js.UndefOr[Boolean] = js.undefined,
         ManualSnapshotRetentionPeriod: js.UndefOr[IntegerOptional] = js.undefined
     ): ModifyClusterSnapshotMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "SnapshotIdentifier" -> SnapshotIdentifier.asInstanceOf[js.Any],
-        "Force" -> Force.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ManualSnapshotRetentionPeriod" -> ManualSnapshotRetentionPeriod.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "SnapshotIdentifier" -> SnapshotIdentifier.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ModifyClusterSnapshotMessage]
+      Force.foreach(__v => __obj.update("Force", __v.asInstanceOf[js.Any]))
+      ManualSnapshotRetentionPeriod.foreach(
+        __v => __obj.update("ManualSnapshotRetentionPeriod", __v.asInstanceOf[js.Any])
+      )
+      __obj.asInstanceOf[ModifyClusterSnapshotMessage]
     }
   }
 
@@ -5018,13 +4030,9 @@ package redshift {
     def apply(
         Snapshot: js.UndefOr[Snapshot] = js.undefined
     ): ModifyClusterSnapshotResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Snapshot" -> Snapshot.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ModifyClusterSnapshotResult]
+      val __obj = js.Dictionary.empty[js.Any]
+      Snapshot.foreach(__v => __obj.update("Snapshot", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ModifyClusterSnapshotResult]
     }
   }
 
@@ -5041,17 +4049,13 @@ package redshift {
         DisassociateSchedule: js.UndefOr[BooleanOptional] = js.undefined,
         ScheduleIdentifier: js.UndefOr[String] = js.undefined
     ): ModifyClusterSnapshotScheduleMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ClusterIdentifier" -> ClusterIdentifier.asInstanceOf[js.Any],
-        "DisassociateSchedule" -> DisassociateSchedule.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ScheduleIdentifier" -> ScheduleIdentifier.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "ClusterIdentifier" -> ClusterIdentifier.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ModifyClusterSnapshotScheduleMessage]
+      DisassociateSchedule.foreach(__v => __obj.update("DisassociateSchedule", __v.asInstanceOf[js.Any]))
+      ScheduleIdentifier.foreach(__v => __obj.update("ScheduleIdentifier", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ModifyClusterSnapshotScheduleMessage]
     }
   }
 
@@ -5071,15 +4075,13 @@ package redshift {
         SubnetIds: SubnetIdentifierList,
         Description: js.UndefOr[String] = js.undefined
     ): ModifyClusterSubnetGroupMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ClusterSubnetGroupName" -> ClusterSubnetGroupName.asInstanceOf[js.Any],
-        "SubnetIds"              -> SubnetIds.asInstanceOf[js.Any],
-        "Description" -> Description.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "SubnetIds"              -> SubnetIds.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ModifyClusterSubnetGroupMessage]
+      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ModifyClusterSubnetGroupMessage]
     }
   }
 
@@ -5092,13 +4094,9 @@ package redshift {
     def apply(
         ClusterSubnetGroup: js.UndefOr[ClusterSubnetGroup] = js.undefined
     ): ModifyClusterSubnetGroupResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ClusterSubnetGroup" -> ClusterSubnetGroup.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ModifyClusterSubnetGroupResult]
+      val __obj = js.Dictionary.empty[js.Any]
+      ClusterSubnetGroup.foreach(__v => __obj.update("ClusterSubnetGroup", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ModifyClusterSubnetGroupResult]
     }
   }
 
@@ -5126,29 +4124,17 @@ package redshift {
         SourceIds: js.UndefOr[SourceIdsList] = js.undefined,
         SourceType: js.UndefOr[String] = js.undefined
     ): ModifyEventSubscriptionMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "SubscriptionName" -> SubscriptionName.asInstanceOf[js.Any],
-        "Enabled" -> Enabled.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "EventCategories" -> EventCategories.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Severity" -> Severity.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SnsTopicArn" -> SnsTopicArn.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SourceIds" -> SourceIds.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SourceType" -> SourceType.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "SubscriptionName" -> SubscriptionName.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ModifyEventSubscriptionMessage]
+      Enabled.foreach(__v => __obj.update("Enabled", __v.asInstanceOf[js.Any]))
+      EventCategories.foreach(__v => __obj.update("EventCategories", __v.asInstanceOf[js.Any]))
+      Severity.foreach(__v => __obj.update("Severity", __v.asInstanceOf[js.Any]))
+      SnsTopicArn.foreach(__v => __obj.update("SnsTopicArn", __v.asInstanceOf[js.Any]))
+      SourceIds.foreach(__v => __obj.update("SourceIds", __v.asInstanceOf[js.Any]))
+      SourceType.foreach(__v => __obj.update("SourceType", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ModifyEventSubscriptionMessage]
     }
   }
 
@@ -5161,13 +4147,9 @@ package redshift {
     def apply(
         EventSubscription: js.UndefOr[EventSubscription] = js.undefined
     ): ModifyEventSubscriptionResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "EventSubscription" -> EventSubscription.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ModifyEventSubscriptionResult]
+      val __obj = js.Dictionary.empty[js.Any]
+      EventSubscription.foreach(__v => __obj.update("EventSubscription", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ModifyEventSubscriptionResult]
     }
   }
 
@@ -5187,15 +4169,13 @@ package redshift {
         RetentionPeriod: Int,
         Manual: js.UndefOr[Boolean] = js.undefined
     ): ModifySnapshotCopyRetentionPeriodMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ClusterIdentifier" -> ClusterIdentifier.asInstanceOf[js.Any],
-        "RetentionPeriod"   -> RetentionPeriod.asInstanceOf[js.Any],
-        "Manual" -> Manual.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "RetentionPeriod"   -> RetentionPeriod.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ModifySnapshotCopyRetentionPeriodMessage]
+      Manual.foreach(__v => __obj.update("Manual", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ModifySnapshotCopyRetentionPeriodMessage]
     }
   }
 
@@ -5208,13 +4188,9 @@ package redshift {
     def apply(
         Cluster: js.UndefOr[Cluster] = js.undefined
     ): ModifySnapshotCopyRetentionPeriodResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Cluster" -> Cluster.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ModifySnapshotCopyRetentionPeriodResult]
+      val __obj = js.Dictionary.empty[js.Any]
+      Cluster.foreach(__v => __obj.update("Cluster", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ModifySnapshotCopyRetentionPeriodResult]
     }
   }
 
@@ -5229,12 +4205,12 @@ package redshift {
         ScheduleDefinitions: ScheduleDefinitionList,
         ScheduleIdentifier: String
     ): ModifySnapshotScheduleMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ScheduleDefinitions" -> ScheduleDefinitions.asInstanceOf[js.Any],
         "ScheduleIdentifier"  -> ScheduleIdentifier.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ModifySnapshotScheduleMessage]
+      __obj.asInstanceOf[ModifySnapshotScheduleMessage]
     }
   }
 
@@ -5256,22 +4232,12 @@ package redshift {
         ClusterVersion: js.UndefOr[String] = js.undefined,
         NodeType: js.UndefOr[String] = js.undefined
     ): OrderableClusterOption = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "AvailabilityZones" -> AvailabilityZones.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ClusterType" -> ClusterType.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ClusterVersion" -> ClusterVersion.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NodeType" -> NodeType.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[OrderableClusterOption]
+      val __obj = js.Dictionary.empty[js.Any]
+      AvailabilityZones.foreach(__v => __obj.update("AvailabilityZones", __v.asInstanceOf[js.Any]))
+      ClusterType.foreach(__v => __obj.update("ClusterType", __v.asInstanceOf[js.Any]))
+      ClusterVersion.foreach(__v => __obj.update("ClusterVersion", __v.asInstanceOf[js.Any]))
+      NodeType.foreach(__v => __obj.update("NodeType", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[OrderableClusterOption]
     }
   }
 
@@ -5289,16 +4255,10 @@ package redshift {
         Marker: js.UndefOr[String] = js.undefined,
         OrderableClusterOptions: js.UndefOr[OrderableClusterOptionsList] = js.undefined
     ): OrderableClusterOptionsMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Marker" -> Marker.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "OrderableClusterOptions" -> OrderableClusterOptions.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[OrderableClusterOptionsMessage]
+      val __obj = js.Dictionary.empty[js.Any]
+      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
+      OrderableClusterOptions.foreach(__v => __obj.update("OrderableClusterOptions", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[OrderableClusterOptionsMessage]
     }
   }
 
@@ -5330,37 +4290,17 @@ package redshift {
         ParameterValue: js.UndefOr[String] = js.undefined,
         Source: js.UndefOr[String] = js.undefined
     ): Parameter = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "AllowedValues" -> AllowedValues.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ApplyType" -> ApplyType.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DataType" -> DataType.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Description" -> Description.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "IsModifiable" -> IsModifiable.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MinimumEngineVersion" -> MinimumEngineVersion.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ParameterName" -> ParameterName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ParameterValue" -> ParameterValue.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Source" -> Source.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Parameter]
+      val __obj = js.Dictionary.empty[js.Any]
+      AllowedValues.foreach(__v => __obj.update("AllowedValues", __v.asInstanceOf[js.Any]))
+      ApplyType.foreach(__v => __obj.update("ApplyType", __v.asInstanceOf[js.Any]))
+      DataType.foreach(__v => __obj.update("DataType", __v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
+      IsModifiable.foreach(__v => __obj.update("IsModifiable", __v.asInstanceOf[js.Any]))
+      MinimumEngineVersion.foreach(__v => __obj.update("MinimumEngineVersion", __v.asInstanceOf[js.Any]))
+      ParameterName.foreach(__v => __obj.update("ParameterName", __v.asInstanceOf[js.Any]))
+      ParameterValue.foreach(__v => __obj.update("ParameterValue", __v.asInstanceOf[js.Any]))
+      Source.foreach(__v => __obj.update("Source", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Parameter]
     }
   }
 
@@ -5403,43 +4343,21 @@ package redshift {
         NumberOfNodes: js.UndefOr[IntegerOptional] = js.undefined,
         PubliclyAccessible: js.UndefOr[BooleanOptional] = js.undefined
     ): PendingModifiedValues = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "AutomatedSnapshotRetentionPeriod" -> AutomatedSnapshotRetentionPeriod.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ClusterIdentifier" -> ClusterIdentifier.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ClusterType" -> ClusterType.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ClusterVersion" -> ClusterVersion.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "EncryptionType" -> EncryptionType.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "EnhancedVpcRouting" -> EnhancedVpcRouting.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MaintenanceTrackName" -> MaintenanceTrackName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MasterUserPassword" -> MasterUserPassword.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NodeType" -> NodeType.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NumberOfNodes" -> NumberOfNodes.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "PubliclyAccessible" -> PubliclyAccessible.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PendingModifiedValues]
+      val __obj = js.Dictionary.empty[js.Any]
+      AutomatedSnapshotRetentionPeriod.foreach(
+        __v => __obj.update("AutomatedSnapshotRetentionPeriod", __v.asInstanceOf[js.Any])
+      )
+      ClusterIdentifier.foreach(__v => __obj.update("ClusterIdentifier", __v.asInstanceOf[js.Any]))
+      ClusterType.foreach(__v => __obj.update("ClusterType", __v.asInstanceOf[js.Any]))
+      ClusterVersion.foreach(__v => __obj.update("ClusterVersion", __v.asInstanceOf[js.Any]))
+      EncryptionType.foreach(__v => __obj.update("EncryptionType", __v.asInstanceOf[js.Any]))
+      EnhancedVpcRouting.foreach(__v => __obj.update("EnhancedVpcRouting", __v.asInstanceOf[js.Any]))
+      MaintenanceTrackName.foreach(__v => __obj.update("MaintenanceTrackName", __v.asInstanceOf[js.Any]))
+      MasterUserPassword.foreach(__v => __obj.update("MasterUserPassword", __v.asInstanceOf[js.Any]))
+      NodeType.foreach(__v => __obj.update("NodeType", __v.asInstanceOf[js.Any]))
+      NumberOfNodes.foreach(__v => __obj.update("NumberOfNodes", __v.asInstanceOf[js.Any]))
+      PubliclyAccessible.foreach(__v => __obj.update("PubliclyAccessible", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PendingModifiedValues]
     }
   }
 
@@ -5457,14 +4375,12 @@ package redshift {
         ReservedNodeOfferingId: String,
         NodeCount: js.UndefOr[IntegerOptional] = js.undefined
     ): PurchaseReservedNodeOfferingMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ReservedNodeOfferingId" -> ReservedNodeOfferingId.asInstanceOf[js.Any],
-        "NodeCount" -> NodeCount.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "ReservedNodeOfferingId" -> ReservedNodeOfferingId.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PurchaseReservedNodeOfferingMessage]
+      NodeCount.foreach(__v => __obj.update("NodeCount", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PurchaseReservedNodeOfferingMessage]
     }
   }
 
@@ -5477,13 +4393,9 @@ package redshift {
     def apply(
         ReservedNode: js.UndefOr[ReservedNode] = js.undefined
     ): PurchaseReservedNodeOfferingResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ReservedNode" -> ReservedNode.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PurchaseReservedNodeOfferingResult]
+      val __obj = js.Dictionary.empty[js.Any]
+      ReservedNode.foreach(__v => __obj.update("ReservedNode", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PurchaseReservedNodeOfferingResult]
     }
   }
 
@@ -5499,11 +4411,11 @@ package redshift {
     def apply(
         ClusterIdentifier: String
     ): RebootClusterMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ClusterIdentifier" -> ClusterIdentifier.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RebootClusterMessage]
+      __obj.asInstanceOf[RebootClusterMessage]
     }
   }
 
@@ -5516,13 +4428,9 @@ package redshift {
     def apply(
         Cluster: js.UndefOr[Cluster] = js.undefined
     ): RebootClusterResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Cluster" -> Cluster.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RebootClusterResult]
+      val __obj = js.Dictionary.empty[js.Any]
+      Cluster.foreach(__v => __obj.update("Cluster", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[RebootClusterResult]
     }
   }
 
@@ -5540,16 +4448,10 @@ package redshift {
         RecurringChargeAmount: js.UndefOr[Double] = js.undefined,
         RecurringChargeFrequency: js.UndefOr[String] = js.undefined
     ): RecurringCharge = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "RecurringChargeAmount" -> RecurringChargeAmount.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "RecurringChargeFrequency" -> RecurringChargeFrequency.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RecurringCharge]
+      val __obj = js.Dictionary.empty[js.Any]
+      RecurringChargeAmount.foreach(__v => __obj.update("RecurringChargeAmount", __v.asInstanceOf[js.Any]))
+      RecurringChargeFrequency.foreach(__v => __obj.update("RecurringChargeFrequency", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[RecurringCharge]
     }
   }
 
@@ -5589,49 +4491,21 @@ package redshift {
         State: js.UndefOr[String] = js.undefined,
         UsagePrice: js.UndefOr[Double] = js.undefined
     ): ReservedNode = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "CurrencyCode" -> CurrencyCode.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Duration" -> Duration.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "FixedPrice" -> FixedPrice.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NodeCount" -> NodeCount.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NodeType" -> NodeType.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "OfferingType" -> OfferingType.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "RecurringCharges" -> RecurringCharges.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ReservedNodeId" -> ReservedNodeId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ReservedNodeOfferingId" -> ReservedNodeOfferingId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ReservedNodeOfferingType" -> ReservedNodeOfferingType.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "StartTime" -> StartTime.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "State" -> State.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "UsagePrice" -> UsagePrice.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ReservedNode]
+      val __obj = js.Dictionary.empty[js.Any]
+      CurrencyCode.foreach(__v => __obj.update("CurrencyCode", __v.asInstanceOf[js.Any]))
+      Duration.foreach(__v => __obj.update("Duration", __v.asInstanceOf[js.Any]))
+      FixedPrice.foreach(__v => __obj.update("FixedPrice", __v.asInstanceOf[js.Any]))
+      NodeCount.foreach(__v => __obj.update("NodeCount", __v.asInstanceOf[js.Any]))
+      NodeType.foreach(__v => __obj.update("NodeType", __v.asInstanceOf[js.Any]))
+      OfferingType.foreach(__v => __obj.update("OfferingType", __v.asInstanceOf[js.Any]))
+      RecurringCharges.foreach(__v => __obj.update("RecurringCharges", __v.asInstanceOf[js.Any]))
+      ReservedNodeId.foreach(__v => __obj.update("ReservedNodeId", __v.asInstanceOf[js.Any]))
+      ReservedNodeOfferingId.foreach(__v => __obj.update("ReservedNodeOfferingId", __v.asInstanceOf[js.Any]))
+      ReservedNodeOfferingType.foreach(__v => __obj.update("ReservedNodeOfferingType", __v.asInstanceOf[js.Any]))
+      StartTime.foreach(__v => __obj.update("StartTime", __v.asInstanceOf[js.Any]))
+      State.foreach(__v => __obj.update("State", __v.asInstanceOf[js.Any]))
+      UsagePrice.foreach(__v => __obj.update("UsagePrice", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ReservedNode]
     }
   }
 
@@ -5663,37 +4537,17 @@ package redshift {
         ReservedNodeOfferingType: js.UndefOr[ReservedNodeOfferingType] = js.undefined,
         UsagePrice: js.UndefOr[Double] = js.undefined
     ): ReservedNodeOffering = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "CurrencyCode" -> CurrencyCode.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Duration" -> Duration.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "FixedPrice" -> FixedPrice.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NodeType" -> NodeType.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "OfferingType" -> OfferingType.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "RecurringCharges" -> RecurringCharges.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ReservedNodeOfferingId" -> ReservedNodeOfferingId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ReservedNodeOfferingType" -> ReservedNodeOfferingType.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "UsagePrice" -> UsagePrice.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ReservedNodeOffering]
+      val __obj = js.Dictionary.empty[js.Any]
+      CurrencyCode.foreach(__v => __obj.update("CurrencyCode", __v.asInstanceOf[js.Any]))
+      Duration.foreach(__v => __obj.update("Duration", __v.asInstanceOf[js.Any]))
+      FixedPrice.foreach(__v => __obj.update("FixedPrice", __v.asInstanceOf[js.Any]))
+      NodeType.foreach(__v => __obj.update("NodeType", __v.asInstanceOf[js.Any]))
+      OfferingType.foreach(__v => __obj.update("OfferingType", __v.asInstanceOf[js.Any]))
+      RecurringCharges.foreach(__v => __obj.update("RecurringCharges", __v.asInstanceOf[js.Any]))
+      ReservedNodeOfferingId.foreach(__v => __obj.update("ReservedNodeOfferingId", __v.asInstanceOf[js.Any]))
+      ReservedNodeOfferingType.foreach(__v => __obj.update("ReservedNodeOfferingType", __v.asInstanceOf[js.Any]))
+      UsagePrice.foreach(__v => __obj.update("UsagePrice", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ReservedNodeOffering]
     }
   }
 
@@ -5718,16 +4572,10 @@ package redshift {
         Marker: js.UndefOr[String] = js.undefined,
         ReservedNodeOfferings: js.UndefOr[ReservedNodeOfferingList] = js.undefined
     ): ReservedNodeOfferingsMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Marker" -> Marker.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ReservedNodeOfferings" -> ReservedNodeOfferings.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ReservedNodeOfferingsMessage]
+      val __obj = js.Dictionary.empty[js.Any]
+      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
+      ReservedNodeOfferings.foreach(__v => __obj.update("ReservedNodeOfferings", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ReservedNodeOfferingsMessage]
     }
   }
 
@@ -5745,16 +4593,10 @@ package redshift {
         Marker: js.UndefOr[String] = js.undefined,
         ReservedNodes: js.UndefOr[ReservedNodeList] = js.undefined
     ): ReservedNodesMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Marker" -> Marker.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ReservedNodes" -> ReservedNodes.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ReservedNodesMessage]
+      val __obj = js.Dictionary.empty[js.Any]
+      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
+      ReservedNodes.foreach(__v => __obj.update("ReservedNodes", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ReservedNodesMessage]
     }
   }
 
@@ -5774,17 +4616,13 @@ package redshift {
         Parameters: js.UndefOr[ParametersList] = js.undefined,
         ResetAllParameters: js.UndefOr[Boolean] = js.undefined
     ): ResetClusterParameterGroupMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ParameterGroupName" -> ParameterGroupName.asInstanceOf[js.Any],
-        "Parameters" -> Parameters.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ResetAllParameters" -> ResetAllParameters.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "ParameterGroupName" -> ParameterGroupName.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ResetClusterParameterGroupMessage]
+      Parameters.foreach(__v => __obj.update("Parameters", __v.asInstanceOf[js.Any]))
+      ResetAllParameters.foreach(__v => __obj.update("ResetAllParameters", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ResetClusterParameterGroupMessage]
     }
   }
 
@@ -5805,21 +4643,15 @@ package redshift {
         ClusterType: js.UndefOr[String] = js.undefined,
         NodeType: js.UndefOr[String] = js.undefined
     ): ResizeClusterMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ClusterIdentifier" -> ClusterIdentifier.asInstanceOf[js.Any],
-        "NumberOfNodes"     -> NumberOfNodes.asInstanceOf[js.Any],
-        "Classic" -> Classic.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ClusterType" -> ClusterType.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NodeType" -> NodeType.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "NumberOfNodes"     -> NumberOfNodes.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ResizeClusterMessage]
+      Classic.foreach(__v => __obj.update("Classic", __v.asInstanceOf[js.Any]))
+      ClusterType.foreach(__v => __obj.update("ClusterType", __v.asInstanceOf[js.Any]))
+      NodeType.foreach(__v => __obj.update("NodeType", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ResizeClusterMessage]
     }
   }
 
@@ -5832,13 +4664,9 @@ package redshift {
     def apply(
         Cluster: js.UndefOr[Cluster] = js.undefined
     ): ResizeClusterResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Cluster" -> Cluster.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ResizeClusterResult]
+      val __obj = js.Dictionary.empty[js.Any]
+      Cluster.foreach(__v => __obj.update("Cluster", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ResizeClusterResult]
     }
   }
 
@@ -5856,16 +4684,10 @@ package redshift {
         AllowCancelResize: js.UndefOr[Boolean] = js.undefined,
         ResizeType: js.UndefOr[String] = js.undefined
     ): ResizeInfo = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "AllowCancelResize" -> AllowCancelResize.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ResizeType" -> ResizeType.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ResizeInfo]
+      val __obj = js.Dictionary.empty[js.Any]
+      AllowCancelResize.foreach(__v => __obj.update("AllowCancelResize", __v.asInstanceOf[js.Any]))
+      ResizeType.foreach(__v => __obj.update("ResizeType", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ResizeInfo]
     }
   }
 
@@ -5909,55 +4731,27 @@ package redshift {
         TargetNumberOfNodes: js.UndefOr[IntegerOptional] = js.undefined,
         TotalResizeDataInMegaBytes: js.UndefOr[LongOptional] = js.undefined
     ): ResizeProgressMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "AvgResizeRateInMegaBytesPerSecond" -> AvgResizeRateInMegaBytesPerSecond.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ElapsedTimeInSeconds" -> ElapsedTimeInSeconds.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "EstimatedTimeToCompletionInSeconds" -> EstimatedTimeToCompletionInSeconds.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ImportTablesCompleted" -> ImportTablesCompleted.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ImportTablesInProgress" -> ImportTablesInProgress.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ImportTablesNotStarted" -> ImportTablesNotStarted.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Message" -> Message.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ProgressInMegaBytes" -> ProgressInMegaBytes.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ResizeType" -> ResizeType.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Status" -> Status.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "TargetClusterType" -> TargetClusterType.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "TargetEncryptionType" -> TargetEncryptionType.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "TargetNodeType" -> TargetNodeType.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "TargetNumberOfNodes" -> TargetNumberOfNodes.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "TotalResizeDataInMegaBytes" -> TotalResizeDataInMegaBytes.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ResizeProgressMessage]
+      val __obj = js.Dictionary.empty[js.Any]
+      AvgResizeRateInMegaBytesPerSecond.foreach(
+        __v => __obj.update("AvgResizeRateInMegaBytesPerSecond", __v.asInstanceOf[js.Any])
+      )
+      ElapsedTimeInSeconds.foreach(__v => __obj.update("ElapsedTimeInSeconds", __v.asInstanceOf[js.Any]))
+      EstimatedTimeToCompletionInSeconds.foreach(
+        __v => __obj.update("EstimatedTimeToCompletionInSeconds", __v.asInstanceOf[js.Any])
+      )
+      ImportTablesCompleted.foreach(__v => __obj.update("ImportTablesCompleted", __v.asInstanceOf[js.Any]))
+      ImportTablesInProgress.foreach(__v => __obj.update("ImportTablesInProgress", __v.asInstanceOf[js.Any]))
+      ImportTablesNotStarted.foreach(__v => __obj.update("ImportTablesNotStarted", __v.asInstanceOf[js.Any]))
+      Message.foreach(__v => __obj.update("Message", __v.asInstanceOf[js.Any]))
+      ProgressInMegaBytes.foreach(__v => __obj.update("ProgressInMegaBytes", __v.asInstanceOf[js.Any]))
+      ResizeType.foreach(__v => __obj.update("ResizeType", __v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.update("Status", __v.asInstanceOf[js.Any]))
+      TargetClusterType.foreach(__v => __obj.update("TargetClusterType", __v.asInstanceOf[js.Any]))
+      TargetEncryptionType.foreach(__v => __obj.update("TargetEncryptionType", __v.asInstanceOf[js.Any]))
+      TargetNodeType.foreach(__v => __obj.update("TargetNodeType", __v.asInstanceOf[js.Any]))
+      TargetNumberOfNodes.foreach(__v => __obj.update("TargetNumberOfNodes", __v.asInstanceOf[js.Any]))
+      TotalResizeDataInMegaBytes.foreach(__v => __obj.update("TotalResizeDataInMegaBytes", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ResizeProgressMessage]
     }
   }
 
@@ -6021,81 +4815,41 @@ package redshift {
         SnapshotScheduleIdentifier: js.UndefOr[String] = js.undefined,
         VpcSecurityGroupIds: js.UndefOr[VpcSecurityGroupIdList] = js.undefined
     ): RestoreFromClusterSnapshotMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ClusterIdentifier"  -> ClusterIdentifier.asInstanceOf[js.Any],
-        "SnapshotIdentifier" -> SnapshotIdentifier.asInstanceOf[js.Any],
-        "AdditionalInfo" -> AdditionalInfo.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "AllowVersionUpgrade" -> AllowVersionUpgrade.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "AutomatedSnapshotRetentionPeriod" -> AutomatedSnapshotRetentionPeriod.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "AvailabilityZone" -> AvailabilityZone.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ClusterParameterGroupName" -> ClusterParameterGroupName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ClusterSecurityGroups" -> ClusterSecurityGroups.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ClusterSubnetGroupName" -> ClusterSubnetGroupName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ElasticIp" -> ElasticIp.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "EnhancedVpcRouting" -> EnhancedVpcRouting.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "HsmClientCertificateIdentifier" -> HsmClientCertificateIdentifier.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "HsmConfigurationIdentifier" -> HsmConfigurationIdentifier.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "IamRoles" -> IamRoles.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "KmsKeyId" -> KmsKeyId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MaintenanceTrackName" -> MaintenanceTrackName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ManualSnapshotRetentionPeriod" -> ManualSnapshotRetentionPeriod.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NodeType" -> NodeType.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "OwnerAccount" -> OwnerAccount.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Port" -> Port.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "PreferredMaintenanceWindow" -> PreferredMaintenanceWindow.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "PubliclyAccessible" -> PubliclyAccessible.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SnapshotClusterIdentifier" -> SnapshotClusterIdentifier.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SnapshotScheduleIdentifier" -> SnapshotScheduleIdentifier.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "VpcSecurityGroupIds" -> VpcSecurityGroupIds.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "SnapshotIdentifier" -> SnapshotIdentifier.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RestoreFromClusterSnapshotMessage]
+      AdditionalInfo.foreach(__v => __obj.update("AdditionalInfo", __v.asInstanceOf[js.Any]))
+      AllowVersionUpgrade.foreach(__v => __obj.update("AllowVersionUpgrade", __v.asInstanceOf[js.Any]))
+      AutomatedSnapshotRetentionPeriod.foreach(
+        __v => __obj.update("AutomatedSnapshotRetentionPeriod", __v.asInstanceOf[js.Any])
+      )
+      AvailabilityZone.foreach(__v => __obj.update("AvailabilityZone", __v.asInstanceOf[js.Any]))
+      ClusterParameterGroupName.foreach(__v => __obj.update("ClusterParameterGroupName", __v.asInstanceOf[js.Any]))
+      ClusterSecurityGroups.foreach(__v => __obj.update("ClusterSecurityGroups", __v.asInstanceOf[js.Any]))
+      ClusterSubnetGroupName.foreach(__v => __obj.update("ClusterSubnetGroupName", __v.asInstanceOf[js.Any]))
+      ElasticIp.foreach(__v => __obj.update("ElasticIp", __v.asInstanceOf[js.Any]))
+      EnhancedVpcRouting.foreach(__v => __obj.update("EnhancedVpcRouting", __v.asInstanceOf[js.Any]))
+      HsmClientCertificateIdentifier.foreach(
+        __v => __obj.update("HsmClientCertificateIdentifier", __v.asInstanceOf[js.Any])
+      )
+      HsmConfigurationIdentifier.foreach(__v => __obj.update("HsmConfigurationIdentifier", __v.asInstanceOf[js.Any]))
+      IamRoles.foreach(__v => __obj.update("IamRoles", __v.asInstanceOf[js.Any]))
+      KmsKeyId.foreach(__v => __obj.update("KmsKeyId", __v.asInstanceOf[js.Any]))
+      MaintenanceTrackName.foreach(__v => __obj.update("MaintenanceTrackName", __v.asInstanceOf[js.Any]))
+      ManualSnapshotRetentionPeriod.foreach(
+        __v => __obj.update("ManualSnapshotRetentionPeriod", __v.asInstanceOf[js.Any])
+      )
+      NodeType.foreach(__v => __obj.update("NodeType", __v.asInstanceOf[js.Any]))
+      OwnerAccount.foreach(__v => __obj.update("OwnerAccount", __v.asInstanceOf[js.Any]))
+      Port.foreach(__v => __obj.update("Port", __v.asInstanceOf[js.Any]))
+      PreferredMaintenanceWindow.foreach(__v => __obj.update("PreferredMaintenanceWindow", __v.asInstanceOf[js.Any]))
+      PubliclyAccessible.foreach(__v => __obj.update("PubliclyAccessible", __v.asInstanceOf[js.Any]))
+      SnapshotClusterIdentifier.foreach(__v => __obj.update("SnapshotClusterIdentifier", __v.asInstanceOf[js.Any]))
+      SnapshotScheduleIdentifier.foreach(__v => __obj.update("SnapshotScheduleIdentifier", __v.asInstanceOf[js.Any]))
+      VpcSecurityGroupIds.foreach(__v => __obj.update("VpcSecurityGroupIds", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[RestoreFromClusterSnapshotMessage]
     }
   }
 
@@ -6108,13 +4862,9 @@ package redshift {
     def apply(
         Cluster: js.UndefOr[Cluster] = js.undefined
     ): RestoreFromClusterSnapshotResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Cluster" -> Cluster.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RestoreFromClusterSnapshotResult]
+      val __obj = js.Dictionary.empty[js.Any]
+      Cluster.foreach(__v => __obj.update("Cluster", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[RestoreFromClusterSnapshotResult]
     }
   }
 
@@ -6140,28 +4890,18 @@ package redshift {
         SnapshotSizeInMegaBytes: js.UndefOr[Double] = js.undefined,
         Status: js.UndefOr[String] = js.undefined
     ): RestoreStatus = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "CurrentRestoreRateInMegaBytesPerSecond" -> CurrentRestoreRateInMegaBytesPerSecond.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ElapsedTimeInSeconds" -> ElapsedTimeInSeconds.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "EstimatedTimeToCompletionInSeconds" -> EstimatedTimeToCompletionInSeconds.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ProgressInMegaBytes" -> ProgressInMegaBytes.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SnapshotSizeInMegaBytes" -> SnapshotSizeInMegaBytes.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Status" -> Status.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RestoreStatus]
+      val __obj = js.Dictionary.empty[js.Any]
+      CurrentRestoreRateInMegaBytesPerSecond.foreach(
+        __v => __obj.update("CurrentRestoreRateInMegaBytesPerSecond", __v.asInstanceOf[js.Any])
+      )
+      ElapsedTimeInSeconds.foreach(__v => __obj.update("ElapsedTimeInSeconds", __v.asInstanceOf[js.Any]))
+      EstimatedTimeToCompletionInSeconds.foreach(
+        __v => __obj.update("EstimatedTimeToCompletionInSeconds", __v.asInstanceOf[js.Any])
+      )
+      ProgressInMegaBytes.foreach(__v => __obj.update("ProgressInMegaBytes", __v.asInstanceOf[js.Any]))
+      SnapshotSizeInMegaBytes.foreach(__v => __obj.update("SnapshotSizeInMegaBytes", __v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.update("Status", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[RestoreStatus]
     }
   }
 
@@ -6191,24 +4931,18 @@ package redshift {
         TargetDatabaseName: js.UndefOr[String] = js.undefined,
         TargetSchemaName: js.UndefOr[String] = js.undefined
     ): RestoreTableFromClusterSnapshotMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ClusterIdentifier"  -> ClusterIdentifier.asInstanceOf[js.Any],
         "NewTableName"       -> NewTableName.asInstanceOf[js.Any],
         "SnapshotIdentifier" -> SnapshotIdentifier.asInstanceOf[js.Any],
         "SourceDatabaseName" -> SourceDatabaseName.asInstanceOf[js.Any],
-        "SourceTableName"    -> SourceTableName.asInstanceOf[js.Any],
-        "SourceSchemaName" -> SourceSchemaName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "TargetDatabaseName" -> TargetDatabaseName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "TargetSchemaName" -> TargetSchemaName.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "SourceTableName"    -> SourceTableName.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RestoreTableFromClusterSnapshotMessage]
+      SourceSchemaName.foreach(__v => __obj.update("SourceSchemaName", __v.asInstanceOf[js.Any]))
+      TargetDatabaseName.foreach(__v => __obj.update("TargetDatabaseName", __v.asInstanceOf[js.Any]))
+      TargetSchemaName.foreach(__v => __obj.update("TargetSchemaName", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[RestoreTableFromClusterSnapshotMessage]
     }
   }
 
@@ -6221,13 +4955,9 @@ package redshift {
     def apply(
         TableRestoreStatus: js.UndefOr[TableRestoreStatus] = js.undefined
     ): RestoreTableFromClusterSnapshotResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "TableRestoreStatus" -> TableRestoreStatus.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RestoreTableFromClusterSnapshotResult]
+      val __obj = js.Dictionary.empty[js.Any]
+      TableRestoreStatus.foreach(__v => __obj.update("TableRestoreStatus", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[RestoreTableFromClusterSnapshotResult]
     }
   }
 
@@ -6247,19 +4977,11 @@ package redshift {
         DatabaseRevisionReleaseDate: js.UndefOr[TStamp] = js.undefined,
         Description: js.UndefOr[String] = js.undefined
     ): RevisionTarget = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "DatabaseRevision" -> DatabaseRevision.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DatabaseRevisionReleaseDate" -> DatabaseRevisionReleaseDate.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Description" -> Description.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RevisionTarget]
+      val __obj = js.Dictionary.empty[js.Any]
+      DatabaseRevision.foreach(__v => __obj.update("DatabaseRevision", __v.asInstanceOf[js.Any]))
+      DatabaseRevisionReleaseDate.foreach(__v => __obj.update("DatabaseRevisionReleaseDate", __v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[RevisionTarget]
     }
   }
 
@@ -6281,20 +5003,14 @@ package redshift {
         EC2SecurityGroupName: js.UndefOr[String] = js.undefined,
         EC2SecurityGroupOwnerId: js.UndefOr[String] = js.undefined
     ): RevokeClusterSecurityGroupIngressMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ClusterSecurityGroupName" -> ClusterSecurityGroupName.asInstanceOf[js.Any],
-        "CIDRIP" -> CIDRIP.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "EC2SecurityGroupName" -> EC2SecurityGroupName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "EC2SecurityGroupOwnerId" -> EC2SecurityGroupOwnerId.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "ClusterSecurityGroupName" -> ClusterSecurityGroupName.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RevokeClusterSecurityGroupIngressMessage]
+      CIDRIP.foreach(__v => __obj.update("CIDRIP", __v.asInstanceOf[js.Any]))
+      EC2SecurityGroupName.foreach(__v => __obj.update("EC2SecurityGroupName", __v.asInstanceOf[js.Any]))
+      EC2SecurityGroupOwnerId.foreach(__v => __obj.update("EC2SecurityGroupOwnerId", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[RevokeClusterSecurityGroupIngressMessage]
     }
   }
 
@@ -6307,13 +5023,9 @@ package redshift {
     def apply(
         ClusterSecurityGroup: js.UndefOr[ClusterSecurityGroup] = js.undefined
     ): RevokeClusterSecurityGroupIngressResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ClusterSecurityGroup" -> ClusterSecurityGroup.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RevokeClusterSecurityGroupIngressResult]
+      val __obj = js.Dictionary.empty[js.Any]
+      ClusterSecurityGroup.foreach(__v => __obj.update("ClusterSecurityGroup", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[RevokeClusterSecurityGroupIngressResult]
     }
   }
 
@@ -6333,15 +5045,13 @@ package redshift {
         SnapshotIdentifier: String,
         SnapshotClusterIdentifier: js.UndefOr[String] = js.undefined
     ): RevokeSnapshotAccessMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "AccountWithRestoreAccess" -> AccountWithRestoreAccess.asInstanceOf[js.Any],
-        "SnapshotIdentifier"       -> SnapshotIdentifier.asInstanceOf[js.Any],
-        "SnapshotClusterIdentifier" -> SnapshotClusterIdentifier.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "SnapshotIdentifier"       -> SnapshotIdentifier.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RevokeSnapshotAccessMessage]
+      SnapshotClusterIdentifier.foreach(__v => __obj.update("SnapshotClusterIdentifier", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[RevokeSnapshotAccessMessage]
     }
   }
 
@@ -6354,13 +5064,9 @@ package redshift {
     def apply(
         Snapshot: js.UndefOr[Snapshot] = js.undefined
     ): RevokeSnapshotAccessResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Snapshot" -> Snapshot.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RevokeSnapshotAccessResult]
+      val __obj = js.Dictionary.empty[js.Any]
+      Snapshot.foreach(__v => __obj.update("Snapshot", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[RevokeSnapshotAccessResult]
     }
   }
 
@@ -6376,11 +5082,11 @@ package redshift {
     def apply(
         ClusterIdentifier: String
     ): RotateEncryptionKeyMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ClusterIdentifier" -> ClusterIdentifier.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RotateEncryptionKeyMessage]
+      __obj.asInstanceOf[RotateEncryptionKeyMessage]
     }
   }
 
@@ -6393,13 +5099,9 @@ package redshift {
     def apply(
         Cluster: js.UndefOr[Cluster] = js.undefined
     ): RotateEncryptionKeyResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Cluster" -> Cluster.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RotateEncryptionKeyResult]
+      val __obj = js.Dictionary.empty[js.Any]
+      Cluster.foreach(__v => __obj.update("Cluster", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[RotateEncryptionKeyResult]
     }
   }
 
@@ -6487,109 +5189,49 @@ package redshift {
         TotalBackupSizeInMegaBytes: js.UndefOr[Double] = js.undefined,
         VpcId: js.UndefOr[String] = js.undefined
     ): Snapshot = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "AccountsWithRestoreAccess" -> AccountsWithRestoreAccess.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ActualIncrementalBackupSizeInMegaBytes" -> ActualIncrementalBackupSizeInMegaBytes.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "AvailabilityZone" -> AvailabilityZone.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "BackupProgressInMegaBytes" -> BackupProgressInMegaBytes.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ClusterCreateTime" -> ClusterCreateTime.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ClusterIdentifier" -> ClusterIdentifier.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ClusterVersion" -> ClusterVersion.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "CurrentBackupRateInMegaBytesPerSecond" -> CurrentBackupRateInMegaBytesPerSecond.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DBName" -> DBName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ElapsedTimeInSeconds" -> ElapsedTimeInSeconds.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Encrypted" -> Encrypted.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "EncryptedWithHSM" -> EncryptedWithHSM.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "EnhancedVpcRouting" -> EnhancedVpcRouting.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "EstimatedSecondsToCompletion" -> EstimatedSecondsToCompletion.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "KmsKeyId" -> KmsKeyId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MaintenanceTrackName" -> MaintenanceTrackName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ManualSnapshotRemainingDays" -> ManualSnapshotRemainingDays.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ManualSnapshotRetentionPeriod" -> ManualSnapshotRetentionPeriod.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MasterUsername" -> MasterUsername.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NodeType" -> NodeType.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NumberOfNodes" -> NumberOfNodes.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "OwnerAccount" -> OwnerAccount.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Port" -> Port.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "RestorableNodeTypes" -> RestorableNodeTypes.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SnapshotCreateTime" -> SnapshotCreateTime.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SnapshotIdentifier" -> SnapshotIdentifier.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SnapshotRetentionStartTime" -> SnapshotRetentionStartTime.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SnapshotType" -> SnapshotType.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SourceRegion" -> SourceRegion.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Status" -> Status.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Tags" -> Tags.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "TotalBackupSizeInMegaBytes" -> TotalBackupSizeInMegaBytes.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "VpcId" -> VpcId.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Snapshot]
+      val __obj = js.Dictionary.empty[js.Any]
+      AccountsWithRestoreAccess.foreach(__v => __obj.update("AccountsWithRestoreAccess", __v.asInstanceOf[js.Any]))
+      ActualIncrementalBackupSizeInMegaBytes.foreach(
+        __v => __obj.update("ActualIncrementalBackupSizeInMegaBytes", __v.asInstanceOf[js.Any])
+      )
+      AvailabilityZone.foreach(__v => __obj.update("AvailabilityZone", __v.asInstanceOf[js.Any]))
+      BackupProgressInMegaBytes.foreach(__v => __obj.update("BackupProgressInMegaBytes", __v.asInstanceOf[js.Any]))
+      ClusterCreateTime.foreach(__v => __obj.update("ClusterCreateTime", __v.asInstanceOf[js.Any]))
+      ClusterIdentifier.foreach(__v => __obj.update("ClusterIdentifier", __v.asInstanceOf[js.Any]))
+      ClusterVersion.foreach(__v => __obj.update("ClusterVersion", __v.asInstanceOf[js.Any]))
+      CurrentBackupRateInMegaBytesPerSecond.foreach(
+        __v => __obj.update("CurrentBackupRateInMegaBytesPerSecond", __v.asInstanceOf[js.Any])
+      )
+      DBName.foreach(__v => __obj.update("DBName", __v.asInstanceOf[js.Any]))
+      ElapsedTimeInSeconds.foreach(__v => __obj.update("ElapsedTimeInSeconds", __v.asInstanceOf[js.Any]))
+      Encrypted.foreach(__v => __obj.update("Encrypted", __v.asInstanceOf[js.Any]))
+      EncryptedWithHSM.foreach(__v => __obj.update("EncryptedWithHSM", __v.asInstanceOf[js.Any]))
+      EnhancedVpcRouting.foreach(__v => __obj.update("EnhancedVpcRouting", __v.asInstanceOf[js.Any]))
+      EstimatedSecondsToCompletion.foreach(
+        __v => __obj.update("EstimatedSecondsToCompletion", __v.asInstanceOf[js.Any])
+      )
+      KmsKeyId.foreach(__v => __obj.update("KmsKeyId", __v.asInstanceOf[js.Any]))
+      MaintenanceTrackName.foreach(__v => __obj.update("MaintenanceTrackName", __v.asInstanceOf[js.Any]))
+      ManualSnapshotRemainingDays.foreach(__v => __obj.update("ManualSnapshotRemainingDays", __v.asInstanceOf[js.Any]))
+      ManualSnapshotRetentionPeriod.foreach(
+        __v => __obj.update("ManualSnapshotRetentionPeriod", __v.asInstanceOf[js.Any])
+      )
+      MasterUsername.foreach(__v => __obj.update("MasterUsername", __v.asInstanceOf[js.Any]))
+      NodeType.foreach(__v => __obj.update("NodeType", __v.asInstanceOf[js.Any]))
+      NumberOfNodes.foreach(__v => __obj.update("NumberOfNodes", __v.asInstanceOf[js.Any]))
+      OwnerAccount.foreach(__v => __obj.update("OwnerAccount", __v.asInstanceOf[js.Any]))
+      Port.foreach(__v => __obj.update("Port", __v.asInstanceOf[js.Any]))
+      RestorableNodeTypes.foreach(__v => __obj.update("RestorableNodeTypes", __v.asInstanceOf[js.Any]))
+      SnapshotCreateTime.foreach(__v => __obj.update("SnapshotCreateTime", __v.asInstanceOf[js.Any]))
+      SnapshotIdentifier.foreach(__v => __obj.update("SnapshotIdentifier", __v.asInstanceOf[js.Any]))
+      SnapshotRetentionStartTime.foreach(__v => __obj.update("SnapshotRetentionStartTime", __v.asInstanceOf[js.Any]))
+      SnapshotType.foreach(__v => __obj.update("SnapshotType", __v.asInstanceOf[js.Any]))
+      SourceRegion.foreach(__v => __obj.update("SourceRegion", __v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.update("Status", __v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
+      TotalBackupSizeInMegaBytes.foreach(__v => __obj.update("TotalBackupSizeInMegaBytes", __v.asInstanceOf[js.Any]))
+      VpcId.foreach(__v => __obj.update("VpcId", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Snapshot]
     }
   }
 
@@ -6618,19 +5260,11 @@ package redshift {
         SnapshotCopyGrantName: js.UndefOr[String] = js.undefined,
         Tags: js.UndefOr[TagList] = js.undefined
     ): SnapshotCopyGrant = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "KmsKeyId" -> KmsKeyId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SnapshotCopyGrantName" -> SnapshotCopyGrantName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Tags" -> Tags.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SnapshotCopyGrant]
+      val __obj = js.Dictionary.empty[js.Any]
+      KmsKeyId.foreach(__v => __obj.update("KmsKeyId", __v.asInstanceOf[js.Any]))
+      SnapshotCopyGrantName.foreach(__v => __obj.update("SnapshotCopyGrantName", __v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[SnapshotCopyGrant]
     }
   }
 
@@ -6648,16 +5282,10 @@ package redshift {
         Marker: js.UndefOr[String] = js.undefined,
         SnapshotCopyGrants: js.UndefOr[SnapshotCopyGrantList] = js.undefined
     ): SnapshotCopyGrantMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Marker" -> Marker.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SnapshotCopyGrants" -> SnapshotCopyGrants.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SnapshotCopyGrantMessage]
+      val __obj = js.Dictionary.empty[js.Any]
+      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
+      SnapshotCopyGrants.foreach(__v => __obj.update("SnapshotCopyGrants", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[SnapshotCopyGrantMessage]
     }
   }
 
@@ -6679,22 +5307,12 @@ package redshift {
         SnapshotClusterIdentifier: js.UndefOr[String] = js.undefined,
         SnapshotIdentifier: js.UndefOr[String] = js.undefined
     ): SnapshotErrorMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "FailureCode" -> FailureCode.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "FailureReason" -> FailureReason.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SnapshotClusterIdentifier" -> SnapshotClusterIdentifier.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SnapshotIdentifier" -> SnapshotIdentifier.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SnapshotErrorMessage]
+      val __obj = js.Dictionary.empty[js.Any]
+      FailureCode.foreach(__v => __obj.update("FailureCode", __v.asInstanceOf[js.Any]))
+      FailureReason.foreach(__v => __obj.update("FailureReason", __v.asInstanceOf[js.Any]))
+      SnapshotClusterIdentifier.foreach(__v => __obj.update("SnapshotClusterIdentifier", __v.asInstanceOf[js.Any]))
+      SnapshotIdentifier.foreach(__v => __obj.update("SnapshotIdentifier", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[SnapshotErrorMessage]
     }
   }
 
@@ -6712,16 +5330,10 @@ package redshift {
         Marker: js.UndefOr[String] = js.undefined,
         Snapshots: js.UndefOr[SnapshotList] = js.undefined
     ): SnapshotMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Marker" -> Marker.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Snapshots" -> Snapshots.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SnapshotMessage]
+      val __obj = js.Dictionary.empty[js.Any]
+      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
+      Snapshots.foreach(__v => __obj.update("Snapshots", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[SnapshotMessage]
     }
   }
 
@@ -6749,31 +5361,15 @@ package redshift {
         ScheduleIdentifier: js.UndefOr[String] = js.undefined,
         Tags: js.UndefOr[TagList] = js.undefined
     ): SnapshotSchedule = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "AssociatedClusterCount" -> AssociatedClusterCount.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "AssociatedClusters" -> AssociatedClusters.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NextInvocations" -> NextInvocations.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ScheduleDefinitions" -> ScheduleDefinitions.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ScheduleDescription" -> ScheduleDescription.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ScheduleIdentifier" -> ScheduleIdentifier.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Tags" -> Tags.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SnapshotSchedule]
+      val __obj = js.Dictionary.empty[js.Any]
+      AssociatedClusterCount.foreach(__v => __obj.update("AssociatedClusterCount", __v.asInstanceOf[js.Any]))
+      AssociatedClusters.foreach(__v => __obj.update("AssociatedClusters", __v.asInstanceOf[js.Any]))
+      NextInvocations.foreach(__v => __obj.update("NextInvocations", __v.asInstanceOf[js.Any]))
+      ScheduleDefinitions.foreach(__v => __obj.update("ScheduleDefinitions", __v.asInstanceOf[js.Any]))
+      ScheduleDescription.foreach(__v => __obj.update("ScheduleDescription", __v.asInstanceOf[js.Any]))
+      ScheduleIdentifier.foreach(__v => __obj.update("ScheduleIdentifier", __v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[SnapshotSchedule]
     }
   }
 
@@ -6791,14 +5387,12 @@ package redshift {
         Attribute: SnapshotAttributeToSortBy,
         SortOrder: js.UndefOr[SortByOrder] = js.undefined
     ): SnapshotSortingEntity = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Attribute" -> Attribute.asInstanceOf[js.Any],
-        "SortOrder" -> SortOrder.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "Attribute" -> Attribute.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SnapshotSortingEntity]
+      SortOrder.foreach(__v => __obj.update("SortOrder", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[SnapshotSortingEntity]
     }
   }
 
@@ -6834,19 +5428,11 @@ package redshift {
         SubnetIdentifier: js.UndefOr[String] = js.undefined,
         SubnetStatus: js.UndefOr[String] = js.undefined
     ): Subnet = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "SubnetAvailabilityZone" -> SubnetAvailabilityZone.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SubnetIdentifier" -> SubnetIdentifier.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SubnetStatus" -> SubnetStatus.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Subnet]
+      val __obj = js.Dictionary.empty[js.Any]
+      SubnetAvailabilityZone.foreach(__v => __obj.update("SubnetAvailabilityZone", __v.asInstanceOf[js.Any]))
+      SubnetIdentifier.foreach(__v => __obj.update("SubnetIdentifier", __v.asInstanceOf[js.Any]))
+      SubnetStatus.foreach(__v => __obj.update("SubnetStatus", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Subnet]
     }
   }
 
@@ -6862,13 +5448,9 @@ package redshift {
     def apply(
         OperationName: js.UndefOr[String] = js.undefined
     ): SupportedOperation = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "OperationName" -> OperationName.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SupportedOperation]
+      val __obj = js.Dictionary.empty[js.Any]
+      OperationName.foreach(__v => __obj.update("OperationName", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[SupportedOperation]
     }
   }
 
@@ -6884,13 +5466,9 @@ package redshift {
     def apply(
         Name: js.UndefOr[String] = js.undefined
     ): SupportedPlatform = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Name" -> Name.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SupportedPlatform]
+      val __obj = js.Dictionary.empty[js.Any]
+      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[SupportedPlatform]
     }
   }
 
@@ -6932,52 +5510,22 @@ package redshift {
         TargetSchemaName: js.UndefOr[String] = js.undefined,
         TotalDataInMegaBytes: js.UndefOr[LongOptional] = js.undefined
     ): TableRestoreStatus = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ClusterIdentifier" -> ClusterIdentifier.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Message" -> Message.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NewTableName" -> NewTableName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ProgressInMegaBytes" -> ProgressInMegaBytes.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "RequestTime" -> RequestTime.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SnapshotIdentifier" -> SnapshotIdentifier.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SourceDatabaseName" -> SourceDatabaseName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SourceSchemaName" -> SourceSchemaName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SourceTableName" -> SourceTableName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Status" -> Status.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "TableRestoreRequestId" -> TableRestoreRequestId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "TargetDatabaseName" -> TargetDatabaseName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "TargetSchemaName" -> TargetSchemaName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "TotalDataInMegaBytes" -> TotalDataInMegaBytes.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[TableRestoreStatus]
+      val __obj = js.Dictionary.empty[js.Any]
+      ClusterIdentifier.foreach(__v => __obj.update("ClusterIdentifier", __v.asInstanceOf[js.Any]))
+      Message.foreach(__v => __obj.update("Message", __v.asInstanceOf[js.Any]))
+      NewTableName.foreach(__v => __obj.update("NewTableName", __v.asInstanceOf[js.Any]))
+      ProgressInMegaBytes.foreach(__v => __obj.update("ProgressInMegaBytes", __v.asInstanceOf[js.Any]))
+      RequestTime.foreach(__v => __obj.update("RequestTime", __v.asInstanceOf[js.Any]))
+      SnapshotIdentifier.foreach(__v => __obj.update("SnapshotIdentifier", __v.asInstanceOf[js.Any]))
+      SourceDatabaseName.foreach(__v => __obj.update("SourceDatabaseName", __v.asInstanceOf[js.Any]))
+      SourceSchemaName.foreach(__v => __obj.update("SourceSchemaName", __v.asInstanceOf[js.Any]))
+      SourceTableName.foreach(__v => __obj.update("SourceTableName", __v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.update("Status", __v.asInstanceOf[js.Any]))
+      TableRestoreRequestId.foreach(__v => __obj.update("TableRestoreRequestId", __v.asInstanceOf[js.Any]))
+      TargetDatabaseName.foreach(__v => __obj.update("TargetDatabaseName", __v.asInstanceOf[js.Any]))
+      TargetSchemaName.foreach(__v => __obj.update("TargetSchemaName", __v.asInstanceOf[js.Any]))
+      TotalDataInMegaBytes.foreach(__v => __obj.update("TotalDataInMegaBytes", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[TableRestoreStatus]
     }
   }
 
@@ -6995,16 +5543,10 @@ package redshift {
         Marker: js.UndefOr[String] = js.undefined,
         TableRestoreStatusDetails: js.UndefOr[TableRestoreStatusList] = js.undefined
     ): TableRestoreStatusMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Marker" -> Marker.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "TableRestoreStatusDetails" -> TableRestoreStatusDetails.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[TableRestoreStatusMessage]
+      val __obj = js.Dictionary.empty[js.Any]
+      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
+      TableRestoreStatusDetails.foreach(__v => __obj.update("TableRestoreStatusDetails", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[TableRestoreStatusMessage]
     }
   }
 
@@ -7032,16 +5574,10 @@ package redshift {
         Key: js.UndefOr[String] = js.undefined,
         Value: js.UndefOr[String] = js.undefined
     ): Tag = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Key" -> Key.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Value" -> Value.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Tag]
+      val __obj = js.Dictionary.empty[js.Any]
+      Key.foreach(__v => __obj.update("Key", __v.asInstanceOf[js.Any]))
+      Value.foreach(__v => __obj.update("Value", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Tag]
     }
   }
 
@@ -7061,19 +5597,11 @@ package redshift {
         ResourceType: js.UndefOr[String] = js.undefined,
         Tag: js.UndefOr[Tag] = js.undefined
     ): TaggedResource = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ResourceName" -> ResourceName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ResourceType" -> ResourceType.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Tag" -> Tag.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[TaggedResource]
+      val __obj = js.Dictionary.empty[js.Any]
+      ResourceName.foreach(__v => __obj.update("ResourceName", __v.asInstanceOf[js.Any]))
+      ResourceType.foreach(__v => __obj.update("ResourceType", __v.asInstanceOf[js.Any]))
+      Tag.foreach(__v => __obj.update("Tag", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[TaggedResource]
     }
   }
 
@@ -7091,16 +5619,10 @@ package redshift {
         Marker: js.UndefOr[String] = js.undefined,
         TaggedResources: js.UndefOr[TaggedResourceList] = js.undefined
     ): TaggedResourceListMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Marker" -> Marker.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "TaggedResources" -> TaggedResources.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[TaggedResourceListMessage]
+      val __obj = js.Dictionary.empty[js.Any]
+      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
+      TaggedResources.foreach(__v => __obj.update("TaggedResources", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[TaggedResourceListMessage]
     }
   }
 
@@ -7115,16 +5637,10 @@ package redshift {
         MaintenanceTracks: js.UndefOr[TrackList] = js.undefined,
         Marker: js.UndefOr[String] = js.undefined
     ): TrackListMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "MaintenanceTracks" -> MaintenanceTracks.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Marker" -> Marker.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[TrackListMessage]
+      val __obj = js.Dictionary.empty[js.Any]
+      MaintenanceTracks.foreach(__v => __obj.update("MaintenanceTracks", __v.asInstanceOf[js.Any]))
+      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[TrackListMessage]
     }
   }
 
@@ -7144,19 +5660,11 @@ package redshift {
         MaintenanceTrackName: js.UndefOr[String] = js.undefined,
         SupportedOperations: js.UndefOr[SupportedOperationList] = js.undefined
     ): UpdateTarget = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "DatabaseVersion" -> DatabaseVersion.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MaintenanceTrackName" -> MaintenanceTrackName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SupportedOperations" -> SupportedOperations.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateTarget]
+      val __obj = js.Dictionary.empty[js.Any]
+      DatabaseVersion.foreach(__v => __obj.update("DatabaseVersion", __v.asInstanceOf[js.Any]))
+      MaintenanceTrackName.foreach(__v => __obj.update("MaintenanceTrackName", __v.asInstanceOf[js.Any]))
+      SupportedOperations.foreach(__v => __obj.update("SupportedOperations", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateTarget]
     }
   }
 
@@ -7174,16 +5682,10 @@ package redshift {
         Status: js.UndefOr[String] = js.undefined,
         VpcSecurityGroupId: js.UndefOr[String] = js.undefined
     ): VpcSecurityGroupMembership = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Status" -> Status.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "VpcSecurityGroupId" -> VpcSecurityGroupId.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[VpcSecurityGroupMembership]
+      val __obj = js.Dictionary.empty[js.Any]
+      Status.foreach(__v => __obj.update("Status", __v.asInstanceOf[js.Any]))
+      VpcSecurityGroupId.foreach(__v => __obj.update("VpcSecurityGroupId", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[VpcSecurityGroupMembership]
     }
   }
 }
