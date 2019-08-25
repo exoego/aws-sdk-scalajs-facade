@@ -6,7 +6,6 @@ scala:
   - 2.13.0
 
 jdk:
-  - openjdk8
   - openjdk11
 
 script:
@@ -15,7 +14,6 @@ script:
 matrix:
   include:
     - scala: 2.13.0
-      jdk: openjdk11
       script: sbt -jvm-opts .travis/jvmopts ++$TRAVIS_SCALA_VERSION scalafmtSbtCheck scalafmtCheck test:scalafmtCheck
       env: JOB_NAME=FORMAT_CHECK_ONLY
 
