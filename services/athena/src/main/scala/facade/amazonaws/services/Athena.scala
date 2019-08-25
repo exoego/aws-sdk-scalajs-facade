@@ -129,11 +129,11 @@ package athena {
     def apply(
         NamedQueryIds: NamedQueryIdList
     ): BatchGetNamedQueryInput = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "NamedQueryIds" -> NamedQueryIds.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[BatchGetNamedQueryInput]
+      __obj.asInstanceOf[BatchGetNamedQueryInput]
     }
   }
 
@@ -148,16 +148,10 @@ package athena {
         NamedQueries: js.UndefOr[NamedQueryList] = js.undefined,
         UnprocessedNamedQueryIds: js.UndefOr[UnprocessedNamedQueryIdList] = js.undefined
     ): BatchGetNamedQueryOutput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "NamedQueries" -> NamedQueries.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "UnprocessedNamedQueryIds" -> UnprocessedNamedQueryIds.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[BatchGetNamedQueryOutput]
+      val __obj = js.Dictionary.empty[js.Any]
+      NamedQueries.foreach(__v => __obj.update("NamedQueries", __v.asInstanceOf[js.Any]))
+      UnprocessedNamedQueryIds.foreach(__v => __obj.update("UnprocessedNamedQueryIds", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[BatchGetNamedQueryOutput]
     }
   }
 
@@ -170,11 +164,11 @@ package athena {
     def apply(
         QueryExecutionIds: QueryExecutionIdList
     ): BatchGetQueryExecutionInput = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "QueryExecutionIds" -> QueryExecutionIds.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[BatchGetQueryExecutionInput]
+      __obj.asInstanceOf[BatchGetQueryExecutionInput]
     }
   }
 
@@ -189,16 +183,12 @@ package athena {
         QueryExecutions: js.UndefOr[QueryExecutionList] = js.undefined,
         UnprocessedQueryExecutionIds: js.UndefOr[UnprocessedQueryExecutionIdList] = js.undefined
     ): BatchGetQueryExecutionOutput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "QueryExecutions" -> QueryExecutions.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "UnprocessedQueryExecutionIds" -> UnprocessedQueryExecutionIds.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[BatchGetQueryExecutionOutput]
+      val __obj = js.Dictionary.empty[js.Any]
+      QueryExecutions.foreach(__v => __obj.update("QueryExecutions", __v.asInstanceOf[js.Any]))
+      UnprocessedQueryExecutionIds.foreach(
+        __v => __obj.update("UnprocessedQueryExecutionIds", __v.asInstanceOf[js.Any])
+      )
+      __obj.asInstanceOf[BatchGetQueryExecutionOutput]
     }
   }
 
@@ -232,36 +222,20 @@ package athena {
         SchemaName: js.UndefOr[String] = js.undefined,
         TableName: js.UndefOr[String] = js.undefined
     ): ColumnInfo = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "Name" -> Name.asInstanceOf[js.Any],
-        "Type" -> Type.asInstanceOf[js.Any],
-        "CaseSensitive" -> CaseSensitive.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "CatalogName" -> CatalogName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Label" -> Label.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Nullable" -> Nullable.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Precision" -> Precision.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Scale" -> Scale.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SchemaName" -> SchemaName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "TableName" -> TableName.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "Type" -> Type.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ColumnInfo]
+      CaseSensitive.foreach(__v => __obj.update("CaseSensitive", __v.asInstanceOf[js.Any]))
+      CatalogName.foreach(__v => __obj.update("CatalogName", __v.asInstanceOf[js.Any]))
+      Label.foreach(__v => __obj.update("Label", __v.asInstanceOf[js.Any]))
+      Nullable.foreach(__v => __obj.update("Nullable", __v.asInstanceOf[js.Any]))
+      Precision.foreach(__v => __obj.update("Precision", __v.asInstanceOf[js.Any]))
+      Scale.foreach(__v => __obj.update("Scale", __v.asInstanceOf[js.Any]))
+      SchemaName.foreach(__v => __obj.update("SchemaName", __v.asInstanceOf[js.Any]))
+      TableName.foreach(__v => __obj.update("TableName", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ColumnInfo]
     }
   }
 
@@ -292,22 +266,16 @@ package athena {
         Description: js.UndefOr[DescriptionString] = js.undefined,
         WorkGroup: js.UndefOr[WorkGroupName] = js.undefined
     ): CreateNamedQueryInput = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "Database"    -> Database.asInstanceOf[js.Any],
         "Name"        -> Name.asInstanceOf[js.Any],
-        "QueryString" -> QueryString.asInstanceOf[js.Any],
-        "ClientRequestToken" -> ClientRequestToken.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Description" -> Description.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "WorkGroup" -> WorkGroup.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "QueryString" -> QueryString.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateNamedQueryInput]
+      ClientRequestToken.foreach(__v => __obj.update("ClientRequestToken", __v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
+      WorkGroup.foreach(__v => __obj.update("WorkGroup", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateNamedQueryInput]
     }
   }
 
@@ -320,13 +288,9 @@ package athena {
     def apply(
         NamedQueryId: js.UndefOr[NamedQueryId] = js.undefined
     ): CreateNamedQueryOutput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "NamedQueryId" -> NamedQueryId.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateNamedQueryOutput]
+      val __obj = js.Dictionary.empty[js.Any]
+      NamedQueryId.foreach(__v => __obj.update("NamedQueryId", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateNamedQueryOutput]
     }
   }
 
@@ -345,20 +309,14 @@ package athena {
         Description: js.UndefOr[WorkGroupDescriptionString] = js.undefined,
         Tags: js.UndefOr[TagList] = js.undefined
     ): CreateWorkGroupInput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Name" -> Name.asInstanceOf[js.Any],
-        "Configuration" -> Configuration.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Description" -> Description.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Tags" -> Tags.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "Name" -> Name.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateWorkGroupInput]
+      Configuration.foreach(__v => __obj.update("Configuration", __v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateWorkGroupInput]
     }
   }
 
@@ -368,10 +326,9 @@ package athena {
   object CreateWorkGroupOutput {
     def apply(
         ): CreateWorkGroupOutput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary.empty[js.Any]
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateWorkGroupOutput]
+      __obj.asInstanceOf[CreateWorkGroupOutput]
     }
   }
 
@@ -387,13 +344,9 @@ package athena {
     def apply(
         VarCharValue: js.UndefOr[datumString] = js.undefined
     ): Datum = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "VarCharValue" -> VarCharValue.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Datum]
+      val __obj = js.Dictionary.empty[js.Any]
+      VarCharValue.foreach(__v => __obj.update("VarCharValue", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Datum]
     }
   }
 
@@ -406,11 +359,11 @@ package athena {
     def apply(
         NamedQueryId: NamedQueryId
     ): DeleteNamedQueryInput = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "NamedQueryId" -> NamedQueryId.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteNamedQueryInput]
+      __obj.asInstanceOf[DeleteNamedQueryInput]
     }
   }
 
@@ -420,10 +373,9 @@ package athena {
   object DeleteNamedQueryOutput {
     def apply(
         ): DeleteNamedQueryOutput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary.empty[js.Any]
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteNamedQueryOutput]
+      __obj.asInstanceOf[DeleteNamedQueryOutput]
     }
   }
 
@@ -438,14 +390,12 @@ package athena {
         WorkGroup: WorkGroupName,
         RecursiveDeleteOption: js.UndefOr[BoxedBoolean] = js.undefined
     ): DeleteWorkGroupInput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "WorkGroup" -> WorkGroup.asInstanceOf[js.Any],
-        "RecursiveDeleteOption" -> RecursiveDeleteOption.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "WorkGroup" -> WorkGroup.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteWorkGroupInput]
+      RecursiveDeleteOption.foreach(__v => __obj.update("RecursiveDeleteOption", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DeleteWorkGroupInput]
     }
   }
 
@@ -455,10 +405,9 @@ package athena {
   object DeleteWorkGroupOutput {
     def apply(
         ): DeleteWorkGroupOutput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary.empty[js.Any]
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteWorkGroupOutput]
+      __obj.asInstanceOf[DeleteWorkGroupOutput]
     }
   }
 
@@ -476,14 +425,12 @@ package athena {
         EncryptionOption: EncryptionOption,
         KmsKey: js.UndefOr[String] = js.undefined
     ): EncryptionConfiguration = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "EncryptionOption" -> EncryptionOption.asInstanceOf[js.Any],
-        "KmsKey" -> KmsKey.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "EncryptionOption" -> EncryptionOption.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[EncryptionConfiguration]
+      KmsKey.foreach(__v => __obj.update("KmsKey", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[EncryptionConfiguration]
     }
   }
 
@@ -504,11 +451,11 @@ package athena {
     def apply(
         NamedQueryId: NamedQueryId
     ): GetNamedQueryInput = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "NamedQueryId" -> NamedQueryId.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetNamedQueryInput]
+      __obj.asInstanceOf[GetNamedQueryInput]
     }
   }
 
@@ -521,13 +468,9 @@ package athena {
     def apply(
         NamedQuery: js.UndefOr[NamedQuery] = js.undefined
     ): GetNamedQueryOutput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "NamedQuery" -> NamedQuery.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetNamedQueryOutput]
+      val __obj = js.Dictionary.empty[js.Any]
+      NamedQuery.foreach(__v => __obj.update("NamedQuery", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetNamedQueryOutput]
     }
   }
 
@@ -540,11 +483,11 @@ package athena {
     def apply(
         QueryExecutionId: QueryExecutionId
     ): GetQueryExecutionInput = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "QueryExecutionId" -> QueryExecutionId.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetQueryExecutionInput]
+      __obj.asInstanceOf[GetQueryExecutionInput]
     }
   }
 
@@ -557,13 +500,9 @@ package athena {
     def apply(
         QueryExecution: js.UndefOr[QueryExecution] = js.undefined
     ): GetQueryExecutionOutput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "QueryExecution" -> QueryExecution.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetQueryExecutionOutput]
+      val __obj = js.Dictionary.empty[js.Any]
+      QueryExecution.foreach(__v => __obj.update("QueryExecution", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetQueryExecutionOutput]
     }
   }
 
@@ -580,17 +519,13 @@ package athena {
         MaxResults: js.UndefOr[MaxQueryResults] = js.undefined,
         NextToken: js.UndefOr[Token] = js.undefined
     ): GetQueryResultsInput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "QueryExecutionId" -> QueryExecutionId.asInstanceOf[js.Any],
-        "MaxResults" -> MaxResults.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NextToken" -> NextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "QueryExecutionId" -> QueryExecutionId.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetQueryResultsInput]
+      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetQueryResultsInput]
     }
   }
 
@@ -607,19 +542,11 @@ package athena {
         ResultSet: js.UndefOr[ResultSet] = js.undefined,
         UpdateCount: js.UndefOr[Double] = js.undefined
     ): GetQueryResultsOutput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "NextToken" -> NextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ResultSet" -> ResultSet.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "UpdateCount" -> UpdateCount.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetQueryResultsOutput]
+      val __obj = js.Dictionary.empty[js.Any]
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      ResultSet.foreach(__v => __obj.update("ResultSet", __v.asInstanceOf[js.Any]))
+      UpdateCount.foreach(__v => __obj.update("UpdateCount", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetQueryResultsOutput]
     }
   }
 
@@ -632,11 +559,11 @@ package athena {
     def apply(
         WorkGroup: WorkGroupName
     ): GetWorkGroupInput = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "WorkGroup" -> WorkGroup.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetWorkGroupInput]
+      __obj.asInstanceOf[GetWorkGroupInput]
     }
   }
 
@@ -649,13 +576,9 @@ package athena {
     def apply(
         WorkGroup: js.UndefOr[WorkGroup] = js.undefined
     ): GetWorkGroupOutput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "WorkGroup" -> WorkGroup.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetWorkGroupOutput]
+      val __obj = js.Dictionary.empty[js.Any]
+      WorkGroup.foreach(__v => __obj.update("WorkGroup", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetWorkGroupOutput]
     }
   }
 
@@ -672,19 +595,11 @@ package athena {
         NextToken: js.UndefOr[Token] = js.undefined,
         WorkGroup: js.UndefOr[WorkGroupName] = js.undefined
     ): ListNamedQueriesInput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "MaxResults" -> MaxResults.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NextToken" -> NextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "WorkGroup" -> WorkGroup.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListNamedQueriesInput]
+      val __obj = js.Dictionary.empty[js.Any]
+      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      WorkGroup.foreach(__v => __obj.update("WorkGroup", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListNamedQueriesInput]
     }
   }
 
@@ -699,16 +614,10 @@ package athena {
         NamedQueryIds: js.UndefOr[NamedQueryIdList] = js.undefined,
         NextToken: js.UndefOr[Token] = js.undefined
     ): ListNamedQueriesOutput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "NamedQueryIds" -> NamedQueryIds.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NextToken" -> NextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListNamedQueriesOutput]
+      val __obj = js.Dictionary.empty[js.Any]
+      NamedQueryIds.foreach(__v => __obj.update("NamedQueryIds", __v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListNamedQueriesOutput]
     }
   }
 
@@ -725,19 +634,11 @@ package athena {
         NextToken: js.UndefOr[Token] = js.undefined,
         WorkGroup: js.UndefOr[WorkGroupName] = js.undefined
     ): ListQueryExecutionsInput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "MaxResults" -> MaxResults.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NextToken" -> NextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "WorkGroup" -> WorkGroup.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListQueryExecutionsInput]
+      val __obj = js.Dictionary.empty[js.Any]
+      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      WorkGroup.foreach(__v => __obj.update("WorkGroup", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListQueryExecutionsInput]
     }
   }
 
@@ -752,16 +653,10 @@ package athena {
         NextToken: js.UndefOr[Token] = js.undefined,
         QueryExecutionIds: js.UndefOr[QueryExecutionIdList] = js.undefined
     ): ListQueryExecutionsOutput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "NextToken" -> NextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "QueryExecutionIds" -> QueryExecutionIds.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListQueryExecutionsOutput]
+      val __obj = js.Dictionary.empty[js.Any]
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      QueryExecutionIds.foreach(__v => __obj.update("QueryExecutionIds", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListQueryExecutionsOutput]
     }
   }
 
@@ -778,17 +673,13 @@ package athena {
         MaxResults: js.UndefOr[MaxTagsCount] = js.undefined,
         NextToken: js.UndefOr[Token] = js.undefined
     ): ListTagsForResourceInput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ResourceARN" -> ResourceARN.asInstanceOf[js.Any],
-        "MaxResults" -> MaxResults.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NextToken" -> NextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "ResourceARN" -> ResourceARN.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListTagsForResourceInput]
+      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListTagsForResourceInput]
     }
   }
 
@@ -803,16 +694,10 @@ package athena {
         NextToken: js.UndefOr[Token] = js.undefined,
         Tags: js.UndefOr[TagList] = js.undefined
     ): ListTagsForResourceOutput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "NextToken" -> NextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Tags" -> Tags.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListTagsForResourceOutput]
+      val __obj = js.Dictionary.empty[js.Any]
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListTagsForResourceOutput]
     }
   }
 
@@ -827,16 +712,10 @@ package athena {
         MaxResults: js.UndefOr[MaxWorkGroupsCount] = js.undefined,
         NextToken: js.UndefOr[Token] = js.undefined
     ): ListWorkGroupsInput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "MaxResults" -> MaxResults.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NextToken" -> NextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListWorkGroupsInput]
+      val __obj = js.Dictionary.empty[js.Any]
+      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListWorkGroupsInput]
     }
   }
 
@@ -851,16 +730,10 @@ package athena {
         NextToken: js.UndefOr[Token] = js.undefined,
         WorkGroups: js.UndefOr[WorkGroupsList] = js.undefined
     ): ListWorkGroupsOutput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "NextToken" -> NextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "WorkGroups" -> WorkGroups.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListWorkGroupsOutput]
+      val __obj = js.Dictionary.empty[js.Any]
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      WorkGroups.foreach(__v => __obj.update("WorkGroups", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListWorkGroupsOutput]
     }
   }
 
@@ -886,22 +759,16 @@ package athena {
         NamedQueryId: js.UndefOr[NamedQueryId] = js.undefined,
         WorkGroup: js.UndefOr[WorkGroupName] = js.undefined
     ): NamedQuery = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "Database"    -> Database.asInstanceOf[js.Any],
         "Name"        -> Name.asInstanceOf[js.Any],
-        "QueryString" -> QueryString.asInstanceOf[js.Any],
-        "Description" -> Description.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NamedQueryId" -> NamedQueryId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "WorkGroup" -> WorkGroup.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "QueryString" -> QueryString.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[NamedQuery]
+      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
+      NamedQueryId.foreach(__v => __obj.update("NamedQueryId", __v.asInstanceOf[js.Any]))
+      WorkGroup.foreach(__v => __obj.update("WorkGroup", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[NamedQuery]
     }
   }
 
@@ -931,34 +798,16 @@ package athena {
         Status: js.UndefOr[QueryExecutionStatus] = js.undefined,
         WorkGroup: js.UndefOr[WorkGroupName] = js.undefined
     ): QueryExecution = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Query" -> Query.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "QueryExecutionContext" -> QueryExecutionContext.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "QueryExecutionId" -> QueryExecutionId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ResultConfiguration" -> ResultConfiguration.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "StatementType" -> StatementType.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Statistics" -> Statistics.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Status" -> Status.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "WorkGroup" -> WorkGroup.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[QueryExecution]
+      val __obj = js.Dictionary.empty[js.Any]
+      Query.foreach(__v => __obj.update("Query", __v.asInstanceOf[js.Any]))
+      QueryExecutionContext.foreach(__v => __obj.update("QueryExecutionContext", __v.asInstanceOf[js.Any]))
+      QueryExecutionId.foreach(__v => __obj.update("QueryExecutionId", __v.asInstanceOf[js.Any]))
+      ResultConfiguration.foreach(__v => __obj.update("ResultConfiguration", __v.asInstanceOf[js.Any]))
+      StatementType.foreach(__v => __obj.update("StatementType", __v.asInstanceOf[js.Any]))
+      Statistics.foreach(__v => __obj.update("Statistics", __v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.update("Status", __v.asInstanceOf[js.Any]))
+      WorkGroup.foreach(__v => __obj.update("WorkGroup", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[QueryExecution]
     }
   }
 
@@ -974,13 +823,9 @@ package athena {
     def apply(
         Database: js.UndefOr[DatabaseString] = js.undefined
     ): QueryExecutionContext = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Database" -> Database.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[QueryExecutionContext]
+      val __obj = js.Dictionary.empty[js.Any]
+      Database.foreach(__v => __obj.update("Database", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[QueryExecutionContext]
     }
   }
 
@@ -1008,16 +853,10 @@ package athena {
         DataScannedInBytes: js.UndefOr[Double] = js.undefined,
         EngineExecutionTimeInMillis: js.UndefOr[Double] = js.undefined
     ): QueryExecutionStatistics = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "DataScannedInBytes" -> DataScannedInBytes.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "EngineExecutionTimeInMillis" -> EngineExecutionTimeInMillis.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[QueryExecutionStatistics]
+      val __obj = js.Dictionary.empty[js.Any]
+      DataScannedInBytes.foreach(__v => __obj.update("DataScannedInBytes", __v.asInstanceOf[js.Any]))
+      EngineExecutionTimeInMillis.foreach(__v => __obj.update("EngineExecutionTimeInMillis", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[QueryExecutionStatistics]
     }
   }
 
@@ -1039,22 +878,12 @@ package athena {
         StateChangeReason: js.UndefOr[String] = js.undefined,
         SubmissionDateTime: js.UndefOr[Date] = js.undefined
     ): QueryExecutionStatus = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "CompletionDateTime" -> CompletionDateTime.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "State" -> State.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "StateChangeReason" -> StateChangeReason.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SubmissionDateTime" -> SubmissionDateTime.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[QueryExecutionStatus]
+      val __obj = js.Dictionary.empty[js.Any]
+      CompletionDateTime.foreach(__v => __obj.update("CompletionDateTime", __v.asInstanceOf[js.Any]))
+      State.foreach(__v => __obj.update("State", __v.asInstanceOf[js.Any]))
+      StateChangeReason.foreach(__v => __obj.update("StateChangeReason", __v.asInstanceOf[js.Any]))
+      SubmissionDateTime.foreach(__v => __obj.update("SubmissionDateTime", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[QueryExecutionStatus]
     }
   }
 
@@ -1072,16 +901,10 @@ package athena {
         EncryptionConfiguration: js.UndefOr[EncryptionConfiguration] = js.undefined,
         OutputLocation: js.UndefOr[String] = js.undefined
     ): ResultConfiguration = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "EncryptionConfiguration" -> EncryptionConfiguration.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "OutputLocation" -> OutputLocation.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ResultConfiguration]
+      val __obj = js.Dictionary.empty[js.Any]
+      EncryptionConfiguration.foreach(__v => __obj.update("EncryptionConfiguration", __v.asInstanceOf[js.Any]))
+      OutputLocation.foreach(__v => __obj.update("OutputLocation", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ResultConfiguration]
     }
   }
 
@@ -1103,22 +926,14 @@ package athena {
         RemoveEncryptionConfiguration: js.UndefOr[BoxedBoolean] = js.undefined,
         RemoveOutputLocation: js.UndefOr[BoxedBoolean] = js.undefined
     ): ResultConfigurationUpdates = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "EncryptionConfiguration" -> EncryptionConfiguration.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "OutputLocation" -> OutputLocation.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "RemoveEncryptionConfiguration" -> RemoveEncryptionConfiguration.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "RemoveOutputLocation" -> RemoveOutputLocation.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ResultConfigurationUpdates]
+      val __obj = js.Dictionary.empty[js.Any]
+      EncryptionConfiguration.foreach(__v => __obj.update("EncryptionConfiguration", __v.asInstanceOf[js.Any]))
+      OutputLocation.foreach(__v => __obj.update("OutputLocation", __v.asInstanceOf[js.Any]))
+      RemoveEncryptionConfiguration.foreach(
+        __v => __obj.update("RemoveEncryptionConfiguration", __v.asInstanceOf[js.Any])
+      )
+      RemoveOutputLocation.foreach(__v => __obj.update("RemoveOutputLocation", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ResultConfigurationUpdates]
     }
   }
 
@@ -1136,16 +951,10 @@ package athena {
         ResultSetMetadata: js.UndefOr[ResultSetMetadata] = js.undefined,
         Rows: js.UndefOr[RowList] = js.undefined
     ): ResultSet = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ResultSetMetadata" -> ResultSetMetadata.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Rows" -> Rows.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ResultSet]
+      val __obj = js.Dictionary.empty[js.Any]
+      ResultSetMetadata.foreach(__v => __obj.update("ResultSetMetadata", __v.asInstanceOf[js.Any]))
+      Rows.foreach(__v => __obj.update("Rows", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ResultSet]
     }
   }
 
@@ -1161,13 +970,9 @@ package athena {
     def apply(
         ColumnInfo: js.UndefOr[ColumnInfoList] = js.undefined
     ): ResultSetMetadata = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ColumnInfo" -> ColumnInfo.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ResultSetMetadata]
+      val __obj = js.Dictionary.empty[js.Any]
+      ColumnInfo.foreach(__v => __obj.update("ColumnInfo", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ResultSetMetadata]
     }
   }
 
@@ -1183,13 +988,9 @@ package athena {
     def apply(
         Data: js.UndefOr[datumList] = js.undefined
     ): Row = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Data" -> Data.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Row]
+      val __obj = js.Dictionary.empty[js.Any]
+      Data.foreach(__v => __obj.update("Data", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Row]
     }
   }
 
@@ -1210,23 +1011,15 @@ package athena {
         ResultConfiguration: js.UndefOr[ResultConfiguration] = js.undefined,
         WorkGroup: js.UndefOr[WorkGroupName] = js.undefined
     ): StartQueryExecutionInput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "QueryString" -> QueryString.asInstanceOf[js.Any],
-        "ClientRequestToken" -> ClientRequestToken.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "QueryExecutionContext" -> QueryExecutionContext.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ResultConfiguration" -> ResultConfiguration.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "WorkGroup" -> WorkGroup.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "QueryString" -> QueryString.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StartQueryExecutionInput]
+      ClientRequestToken.foreach(__v => __obj.update("ClientRequestToken", __v.asInstanceOf[js.Any]))
+      QueryExecutionContext.foreach(__v => __obj.update("QueryExecutionContext", __v.asInstanceOf[js.Any]))
+      ResultConfiguration.foreach(__v => __obj.update("ResultConfiguration", __v.asInstanceOf[js.Any]))
+      WorkGroup.foreach(__v => __obj.update("WorkGroup", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[StartQueryExecutionInput]
     }
   }
 
@@ -1239,13 +1032,9 @@ package athena {
     def apply(
         QueryExecutionId: js.UndefOr[QueryExecutionId] = js.undefined
     ): StartQueryExecutionOutput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "QueryExecutionId" -> QueryExecutionId.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StartQueryExecutionOutput]
+      val __obj = js.Dictionary.empty[js.Any]
+      QueryExecutionId.foreach(__v => __obj.update("QueryExecutionId", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[StartQueryExecutionOutput]
     }
   }
 
@@ -1266,11 +1055,11 @@ package athena {
     def apply(
         QueryExecutionId: QueryExecutionId
     ): StopQueryExecutionInput = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "QueryExecutionId" -> QueryExecutionId.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StopQueryExecutionInput]
+      __obj.asInstanceOf[StopQueryExecutionInput]
     }
   }
 
@@ -1280,10 +1069,9 @@ package athena {
   object StopQueryExecutionOutput {
     def apply(
         ): StopQueryExecutionOutput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary.empty[js.Any]
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StopQueryExecutionOutput]
+      __obj.asInstanceOf[StopQueryExecutionOutput]
     }
   }
 
@@ -1301,16 +1089,10 @@ package athena {
         Key: js.UndefOr[TagKey] = js.undefined,
         Value: js.UndefOr[TagValue] = js.undefined
     ): Tag = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Key" -> Key.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Value" -> Value.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Tag]
+      val __obj = js.Dictionary.empty[js.Any]
+      Key.foreach(__v => __obj.update("Key", __v.asInstanceOf[js.Any]))
+      Value.foreach(__v => __obj.update("Value", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Tag]
     }
   }
 
@@ -1325,12 +1107,12 @@ package athena {
         ResourceARN: AmazonResourceName,
         Tags: TagList
     ): TagResourceInput = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ResourceARN" -> ResourceARN.asInstanceOf[js.Any],
         "Tags"        -> Tags.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[TagResourceInput]
+      __obj.asInstanceOf[TagResourceInput]
     }
   }
 
@@ -1340,10 +1122,9 @@ package athena {
   object TagResourceOutput {
     def apply(
         ): TagResourceOutput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary.empty[js.Any]
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[TagResourceOutput]
+      __obj.asInstanceOf[TagResourceOutput]
     }
   }
 
@@ -1363,19 +1144,11 @@ package athena {
         ErrorMessage: js.UndefOr[ErrorMessage] = js.undefined,
         NamedQueryId: js.UndefOr[NamedQueryId] = js.undefined
     ): UnprocessedNamedQueryId = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ErrorCode" -> ErrorCode.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ErrorMessage" -> ErrorMessage.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NamedQueryId" -> NamedQueryId.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UnprocessedNamedQueryId]
+      val __obj = js.Dictionary.empty[js.Any]
+      ErrorCode.foreach(__v => __obj.update("ErrorCode", __v.asInstanceOf[js.Any]))
+      ErrorMessage.foreach(__v => __obj.update("ErrorMessage", __v.asInstanceOf[js.Any]))
+      NamedQueryId.foreach(__v => __obj.update("NamedQueryId", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UnprocessedNamedQueryId]
     }
   }
 
@@ -1395,19 +1168,11 @@ package athena {
         ErrorMessage: js.UndefOr[ErrorMessage] = js.undefined,
         QueryExecutionId: js.UndefOr[QueryExecutionId] = js.undefined
     ): UnprocessedQueryExecutionId = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ErrorCode" -> ErrorCode.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ErrorMessage" -> ErrorMessage.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "QueryExecutionId" -> QueryExecutionId.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UnprocessedQueryExecutionId]
+      val __obj = js.Dictionary.empty[js.Any]
+      ErrorCode.foreach(__v => __obj.update("ErrorCode", __v.asInstanceOf[js.Any]))
+      ErrorMessage.foreach(__v => __obj.update("ErrorMessage", __v.asInstanceOf[js.Any]))
+      QueryExecutionId.foreach(__v => __obj.update("QueryExecutionId", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UnprocessedQueryExecutionId]
     }
   }
 
@@ -1422,12 +1187,12 @@ package athena {
         ResourceARN: AmazonResourceName,
         TagKeys: TagKeyList
     ): UntagResourceInput = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ResourceARN" -> ResourceARN.asInstanceOf[js.Any],
         "TagKeys"     -> TagKeys.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UntagResourceInput]
+      __obj.asInstanceOf[UntagResourceInput]
     }
   }
 
@@ -1437,10 +1202,9 @@ package athena {
   object UntagResourceOutput {
     def apply(
         ): UntagResourceOutput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary.empty[js.Any]
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UntagResourceOutput]
+      __obj.asInstanceOf[UntagResourceOutput]
     }
   }
 
@@ -1459,20 +1223,14 @@ package athena {
         Description: js.UndefOr[WorkGroupDescriptionString] = js.undefined,
         State: js.UndefOr[WorkGroupState] = js.undefined
     ): UpdateWorkGroupInput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "WorkGroup" -> WorkGroup.asInstanceOf[js.Any],
-        "ConfigurationUpdates" -> ConfigurationUpdates.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Description" -> Description.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "State" -> State.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "WorkGroup" -> WorkGroup.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateWorkGroupInput]
+      ConfigurationUpdates.foreach(__v => __obj.update("ConfigurationUpdates", __v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
+      State.foreach(__v => __obj.update("State", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateWorkGroupInput]
     }
   }
 
@@ -1482,10 +1240,9 @@ package athena {
   object UpdateWorkGroupOutput {
     def apply(
         ): UpdateWorkGroupOutput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary.empty[js.Any]
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateWorkGroupOutput]
+      __obj.asInstanceOf[UpdateWorkGroupOutput]
     }
   }
 
@@ -1509,23 +1266,15 @@ package athena {
         Description: js.UndefOr[WorkGroupDescriptionString] = js.undefined,
         State: js.UndefOr[WorkGroupState] = js.undefined
     ): WorkGroup = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Name" -> Name.asInstanceOf[js.Any],
-        "Configuration" -> Configuration.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "CreationTime" -> CreationTime.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Description" -> Description.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "State" -> State.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "Name" -> Name.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[WorkGroup]
+      Configuration.foreach(__v => __obj.update("Configuration", __v.asInstanceOf[js.Any]))
+      CreationTime.foreach(__v => __obj.update("CreationTime", __v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
+      State.foreach(__v => __obj.update("State", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[WorkGroup]
     }
   }
 
@@ -1547,22 +1296,16 @@ package athena {
         PublishCloudWatchMetricsEnabled: js.UndefOr[BoxedBoolean] = js.undefined,
         ResultConfiguration: js.UndefOr[ResultConfiguration] = js.undefined
     ): WorkGroupConfiguration = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "BytesScannedCutoffPerQuery" -> BytesScannedCutoffPerQuery.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "EnforceWorkGroupConfiguration" -> EnforceWorkGroupConfiguration.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "PublishCloudWatchMetricsEnabled" -> PublishCloudWatchMetricsEnabled.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ResultConfiguration" -> ResultConfiguration.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[WorkGroupConfiguration]
+      val __obj = js.Dictionary.empty[js.Any]
+      BytesScannedCutoffPerQuery.foreach(__v => __obj.update("BytesScannedCutoffPerQuery", __v.asInstanceOf[js.Any]))
+      EnforceWorkGroupConfiguration.foreach(
+        __v => __obj.update("EnforceWorkGroupConfiguration", __v.asInstanceOf[js.Any])
+      )
+      PublishCloudWatchMetricsEnabled.foreach(
+        __v => __obj.update("PublishCloudWatchMetricsEnabled", __v.asInstanceOf[js.Any])
+      )
+      ResultConfiguration.foreach(__v => __obj.update("ResultConfiguration", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[WorkGroupConfiguration]
     }
   }
 
@@ -1586,25 +1329,19 @@ package athena {
         RemoveBytesScannedCutoffPerQuery: js.UndefOr[BoxedBoolean] = js.undefined,
         ResultConfigurationUpdates: js.UndefOr[ResultConfigurationUpdates] = js.undefined
     ): WorkGroupConfigurationUpdates = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "BytesScannedCutoffPerQuery" -> BytesScannedCutoffPerQuery.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "EnforceWorkGroupConfiguration" -> EnforceWorkGroupConfiguration.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "PublishCloudWatchMetricsEnabled" -> PublishCloudWatchMetricsEnabled.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "RemoveBytesScannedCutoffPerQuery" -> RemoveBytesScannedCutoffPerQuery.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ResultConfigurationUpdates" -> ResultConfigurationUpdates.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[WorkGroupConfigurationUpdates]
+      val __obj = js.Dictionary.empty[js.Any]
+      BytesScannedCutoffPerQuery.foreach(__v => __obj.update("BytesScannedCutoffPerQuery", __v.asInstanceOf[js.Any]))
+      EnforceWorkGroupConfiguration.foreach(
+        __v => __obj.update("EnforceWorkGroupConfiguration", __v.asInstanceOf[js.Any])
+      )
+      PublishCloudWatchMetricsEnabled.foreach(
+        __v => __obj.update("PublishCloudWatchMetricsEnabled", __v.asInstanceOf[js.Any])
+      )
+      RemoveBytesScannedCutoffPerQuery.foreach(
+        __v => __obj.update("RemoveBytesScannedCutoffPerQuery", __v.asInstanceOf[js.Any])
+      )
+      ResultConfigurationUpdates.foreach(__v => __obj.update("ResultConfigurationUpdates", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[WorkGroupConfigurationUpdates]
     }
   }
 
@@ -1633,22 +1370,12 @@ package athena {
         Name: js.UndefOr[WorkGroupName] = js.undefined,
         State: js.UndefOr[WorkGroupState] = js.undefined
     ): WorkGroupSummary = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "CreationTime" -> CreationTime.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Description" -> Description.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Name" -> Name.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "State" -> State.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[WorkGroupSummary]
+      val __obj = js.Dictionary.empty[js.Any]
+      CreationTime.foreach(__v => __obj.update("CreationTime", __v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
+      State.foreach(__v => __obj.update("State", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[WorkGroupSummary]
     }
   }
 }

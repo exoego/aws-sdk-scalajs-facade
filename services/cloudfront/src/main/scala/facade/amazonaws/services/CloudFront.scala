@@ -306,15 +306,13 @@ package cloudfront {
         Quantity: Int,
         Items: js.UndefOr[SignerList] = js.undefined
     ): ActiveTrustedSigners = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "Enabled"  -> Enabled.asInstanceOf[js.Any],
-        "Quantity" -> Quantity.asInstanceOf[js.Any],
-        "Items" -> Items.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "Quantity" -> Quantity.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ActiveTrustedSigners]
+      Items.foreach(__v => __obj.update("Items", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ActiveTrustedSigners]
     }
   }
 
@@ -332,14 +330,12 @@ package cloudfront {
         Quantity: Int,
         Items: js.UndefOr[AliasList] = js.undefined
     ): Aliases = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Quantity" -> Quantity.asInstanceOf[js.Any],
-        "Items" -> Items.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "Quantity" -> Quantity.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Aliases]
+      Items.foreach(__v => __obj.update("Items", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Aliases]
     }
   }
 
@@ -363,15 +359,13 @@ package cloudfront {
         Quantity: Int,
         CachedMethods: js.UndefOr[CachedMethods] = js.undefined
     ): AllowedMethods = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "Items"    -> Items.asInstanceOf[js.Any],
-        "Quantity" -> Quantity.asInstanceOf[js.Any],
-        "CachedMethods" -> CachedMethods.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "Quantity" -> Quantity.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AllowedMethods]
+      CachedMethods.foreach(__v => __obj.update("CachedMethods", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AllowedMethods]
     }
   }
 
@@ -417,37 +411,23 @@ package cloudfront {
         MaxTTL: js.UndefOr[Double] = js.undefined,
         SmoothStreaming: js.UndefOr[Boolean] = js.undefined
     ): CacheBehavior = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ForwardedValues"      -> ForwardedValues.asInstanceOf[js.Any],
         "MinTTL"               -> MinTTL.asInstanceOf[js.Any],
         "PathPattern"          -> PathPattern.asInstanceOf[js.Any],
         "TargetOriginId"       -> TargetOriginId.asInstanceOf[js.Any],
         "TrustedSigners"       -> TrustedSigners.asInstanceOf[js.Any],
-        "ViewerProtocolPolicy" -> ViewerProtocolPolicy.asInstanceOf[js.Any],
-        "AllowedMethods" -> AllowedMethods.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Compress" -> Compress.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DefaultTTL" -> DefaultTTL.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "FieldLevelEncryptionId" -> FieldLevelEncryptionId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "LambdaFunctionAssociations" -> LambdaFunctionAssociations.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MaxTTL" -> MaxTTL.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SmoothStreaming" -> SmoothStreaming.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "ViewerProtocolPolicy" -> ViewerProtocolPolicy.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CacheBehavior]
+      AllowedMethods.foreach(__v => __obj.update("AllowedMethods", __v.asInstanceOf[js.Any]))
+      Compress.foreach(__v => __obj.update("Compress", __v.asInstanceOf[js.Any]))
+      DefaultTTL.foreach(__v => __obj.update("DefaultTTL", __v.asInstanceOf[js.Any]))
+      FieldLevelEncryptionId.foreach(__v => __obj.update("FieldLevelEncryptionId", __v.asInstanceOf[js.Any]))
+      LambdaFunctionAssociations.foreach(__v => __obj.update("LambdaFunctionAssociations", __v.asInstanceOf[js.Any]))
+      MaxTTL.foreach(__v => __obj.update("MaxTTL", __v.asInstanceOf[js.Any]))
+      SmoothStreaming.foreach(__v => __obj.update("SmoothStreaming", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CacheBehavior]
     }
   }
 
@@ -465,14 +445,12 @@ package cloudfront {
         Quantity: Int,
         Items: js.UndefOr[CacheBehaviorList] = js.undefined
     ): CacheBehaviors = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Quantity" -> Quantity.asInstanceOf[js.Any],
-        "Items" -> Items.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "Quantity" -> Quantity.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CacheBehaviors]
+      Items.foreach(__v => __obj.update("Items", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CacheBehaviors]
     }
   }
 
@@ -493,12 +471,12 @@ package cloudfront {
         Items: MethodsList,
         Quantity: Int
     ): CachedMethods = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "Items"    -> Items.asInstanceOf[js.Any],
         "Quantity" -> Quantity.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CachedMethods]
+      __obj.asInstanceOf[CachedMethods]
     }
   }
 
@@ -526,15 +504,15 @@ package cloudfront {
         S3CanonicalUserId: String,
         CloudFrontOriginAccessIdentityConfig: js.UndefOr[CloudFrontOriginAccessIdentityConfig] = js.undefined
     ): CloudFrontOriginAccessIdentity = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "Id"                -> Id.asInstanceOf[js.Any],
-        "S3CanonicalUserId" -> S3CanonicalUserId.asInstanceOf[js.Any],
-        "CloudFrontOriginAccessIdentityConfig" -> CloudFrontOriginAccessIdentityConfig.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "S3CanonicalUserId" -> S3CanonicalUserId.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CloudFrontOriginAccessIdentity]
+      CloudFrontOriginAccessIdentityConfig.foreach(
+        __v => __obj.update("CloudFrontOriginAccessIdentityConfig", __v.asInstanceOf[js.Any])
+      )
+      __obj.asInstanceOf[CloudFrontOriginAccessIdentity]
     }
   }
 
@@ -552,12 +530,12 @@ package cloudfront {
         CallerReference: String,
         Comment: String
     ): CloudFrontOriginAccessIdentityConfig = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "CallerReference" -> CallerReference.asInstanceOf[js.Any],
         "Comment"         -> Comment.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CloudFrontOriginAccessIdentityConfig]
+      __obj.asInstanceOf[CloudFrontOriginAccessIdentityConfig]
     }
   }
 
@@ -583,20 +561,16 @@ package cloudfront {
         Items: js.UndefOr[CloudFrontOriginAccessIdentitySummaryList] = js.undefined,
         NextMarker: js.UndefOr[String] = js.undefined
     ): CloudFrontOriginAccessIdentityList = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "IsTruncated" -> IsTruncated.asInstanceOf[js.Any],
         "Marker"      -> Marker.asInstanceOf[js.Any],
         "MaxItems"    -> MaxItems.asInstanceOf[js.Any],
-        "Quantity"    -> Quantity.asInstanceOf[js.Any],
-        "Items" -> Items.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NextMarker" -> NextMarker.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "Quantity"    -> Quantity.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CloudFrontOriginAccessIdentityList]
+      Items.foreach(__v => __obj.update("Items", __v.asInstanceOf[js.Any]))
+      NextMarker.foreach(__v => __obj.update("NextMarker", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CloudFrontOriginAccessIdentityList]
     }
   }
 
@@ -616,13 +590,13 @@ package cloudfront {
         Id: String,
         S3CanonicalUserId: String
     ): CloudFrontOriginAccessIdentitySummary = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "Comment"           -> Comment.asInstanceOf[js.Any],
         "Id"                -> Id.asInstanceOf[js.Any],
         "S3CanonicalUserId" -> S3CanonicalUserId.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CloudFrontOriginAccessIdentitySummary]
+      __obj.asInstanceOf[CloudFrontOriginAccessIdentitySummary]
     }
   }
 
@@ -642,15 +616,13 @@ package cloudfront {
         Format: Format,
         ProfileId: js.UndefOr[String] = js.undefined
     ): ContentTypeProfile = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ContentType" -> ContentType.asInstanceOf[js.Any],
-        "Format"      -> Format.asInstanceOf[js.Any],
-        "ProfileId" -> ProfileId.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "Format"      -> Format.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ContentTypeProfile]
+      ProfileId.foreach(__v => __obj.update("ProfileId", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ContentTypeProfile]
     }
   }
 
@@ -668,14 +640,12 @@ package cloudfront {
         ForwardWhenContentTypeIsUnknown: Boolean,
         ContentTypeProfiles: js.UndefOr[ContentTypeProfiles] = js.undefined
     ): ContentTypeProfileConfig = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ForwardWhenContentTypeIsUnknown" -> ForwardWhenContentTypeIsUnknown.asInstanceOf[js.Any],
-        "ContentTypeProfiles" -> ContentTypeProfiles.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "ForwardWhenContentTypeIsUnknown" -> ForwardWhenContentTypeIsUnknown.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ContentTypeProfileConfig]
+      ContentTypeProfiles.foreach(__v => __obj.update("ContentTypeProfiles", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ContentTypeProfileConfig]
     }
   }
 
@@ -693,14 +663,12 @@ package cloudfront {
         Quantity: Int,
         Items: js.UndefOr[ContentTypeProfileList] = js.undefined
     ): ContentTypeProfiles = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Quantity" -> Quantity.asInstanceOf[js.Any],
-        "Items" -> Items.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "Quantity" -> Quantity.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ContentTypeProfiles]
+      Items.foreach(__v => __obj.update("Items", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ContentTypeProfiles]
     }
   }
 
@@ -718,14 +686,12 @@ package cloudfront {
         Quantity: Int,
         Items: js.UndefOr[CookieNameList] = js.undefined
     ): CookieNames = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Quantity" -> Quantity.asInstanceOf[js.Any],
-        "Items" -> Items.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "Quantity" -> Quantity.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CookieNames]
+      Items.foreach(__v => __obj.update("Items", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CookieNames]
     }
   }
 
@@ -743,14 +709,12 @@ package cloudfront {
         Forward: ItemSelection,
         WhitelistedNames: js.UndefOr[CookieNames] = js.undefined
     ): CookiePreference = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Forward" -> Forward.asInstanceOf[js.Any],
-        "WhitelistedNames" -> WhitelistedNames.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "Forward" -> Forward.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CookiePreference]
+      WhitelistedNames.foreach(__v => __obj.update("WhitelistedNames", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CookiePreference]
     }
   }
 
@@ -766,13 +730,11 @@ package cloudfront {
     def apply(
         CloudFrontOriginAccessIdentityConfig: CloudFrontOriginAccessIdentityConfig
     ): CreateCloudFrontOriginAccessIdentityRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "CloudFrontOriginAccessIdentityConfig" -> CloudFrontOriginAccessIdentityConfig.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal
-        .applyDynamicNamed("apply")(_fields: _*)
-        .asInstanceOf[CreateCloudFrontOriginAccessIdentityRequest]
+      __obj.asInstanceOf[CreateCloudFrontOriginAccessIdentityRequest]
     }
   }
 
@@ -792,21 +754,13 @@ package cloudfront {
         ETag: js.UndefOr[String] = js.undefined,
         Location: js.UndefOr[String] = js.undefined
     ): CreateCloudFrontOriginAccessIdentityResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "CloudFrontOriginAccessIdentity" -> CloudFrontOriginAccessIdentity.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ETag" -> ETag.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Location" -> Location.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal
-        .applyDynamicNamed("apply")(_fields: _*)
-        .asInstanceOf[CreateCloudFrontOriginAccessIdentityResult]
+      val __obj = js.Dictionary.empty[js.Any]
+      CloudFrontOriginAccessIdentity.foreach(
+        __v => __obj.update("CloudFrontOriginAccessIdentity", __v.asInstanceOf[js.Any])
+      )
+      ETag.foreach(__v => __obj.update("ETag", __v.asInstanceOf[js.Any]))
+      Location.foreach(__v => __obj.update("Location", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateCloudFrontOriginAccessIdentityResult]
     }
   }
 
@@ -822,11 +776,11 @@ package cloudfront {
     def apply(
         DistributionConfig: DistributionConfig
     ): CreateDistributionRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "DistributionConfig" -> DistributionConfig.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateDistributionRequest]
+      __obj.asInstanceOf[CreateDistributionRequest]
     }
   }
 
@@ -846,19 +800,11 @@ package cloudfront {
         ETag: js.UndefOr[String] = js.undefined,
         Location: js.UndefOr[String] = js.undefined
     ): CreateDistributionResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Distribution" -> Distribution.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ETag" -> ETag.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Location" -> Location.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateDistributionResult]
+      val __obj = js.Dictionary.empty[js.Any]
+      Distribution.foreach(__v => __obj.update("Distribution", __v.asInstanceOf[js.Any]))
+      ETag.foreach(__v => __obj.update("ETag", __v.asInstanceOf[js.Any]))
+      Location.foreach(__v => __obj.update("Location", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateDistributionResult]
     }
   }
 
@@ -874,11 +820,11 @@ package cloudfront {
     def apply(
         DistributionConfigWithTags: DistributionConfigWithTags
     ): CreateDistributionWithTagsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "DistributionConfigWithTags" -> DistributionConfigWithTags.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateDistributionWithTagsRequest]
+      __obj.asInstanceOf[CreateDistributionWithTagsRequest]
     }
   }
 
@@ -898,19 +844,11 @@ package cloudfront {
         ETag: js.UndefOr[String] = js.undefined,
         Location: js.UndefOr[String] = js.undefined
     ): CreateDistributionWithTagsResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Distribution" -> Distribution.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ETag" -> ETag.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Location" -> Location.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateDistributionWithTagsResult]
+      val __obj = js.Dictionary.empty[js.Any]
+      Distribution.foreach(__v => __obj.update("Distribution", __v.asInstanceOf[js.Any]))
+      ETag.foreach(__v => __obj.update("ETag", __v.asInstanceOf[js.Any]))
+      Location.foreach(__v => __obj.update("Location", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateDistributionWithTagsResult]
     }
   }
 
@@ -923,11 +861,11 @@ package cloudfront {
     def apply(
         FieldLevelEncryptionConfig: FieldLevelEncryptionConfig
     ): CreateFieldLevelEncryptionConfigRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "FieldLevelEncryptionConfig" -> FieldLevelEncryptionConfig.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateFieldLevelEncryptionConfigRequest]
+      __obj.asInstanceOf[CreateFieldLevelEncryptionConfigRequest]
     }
   }
 
@@ -944,19 +882,11 @@ package cloudfront {
         FieldLevelEncryption: js.UndefOr[FieldLevelEncryption] = js.undefined,
         Location: js.UndefOr[String] = js.undefined
     ): CreateFieldLevelEncryptionConfigResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ETag" -> ETag.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "FieldLevelEncryption" -> FieldLevelEncryption.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Location" -> Location.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateFieldLevelEncryptionConfigResult]
+      val __obj = js.Dictionary.empty[js.Any]
+      ETag.foreach(__v => __obj.update("ETag", __v.asInstanceOf[js.Any]))
+      FieldLevelEncryption.foreach(__v => __obj.update("FieldLevelEncryption", __v.asInstanceOf[js.Any]))
+      Location.foreach(__v => __obj.update("Location", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateFieldLevelEncryptionConfigResult]
     }
   }
 
@@ -969,11 +899,11 @@ package cloudfront {
     def apply(
         FieldLevelEncryptionProfileConfig: FieldLevelEncryptionProfileConfig
     ): CreateFieldLevelEncryptionProfileRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "FieldLevelEncryptionProfileConfig" -> FieldLevelEncryptionProfileConfig.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateFieldLevelEncryptionProfileRequest]
+      __obj.asInstanceOf[CreateFieldLevelEncryptionProfileRequest]
     }
   }
 
@@ -990,19 +920,11 @@ package cloudfront {
         FieldLevelEncryptionProfile: js.UndefOr[FieldLevelEncryptionProfile] = js.undefined,
         Location: js.UndefOr[String] = js.undefined
     ): CreateFieldLevelEncryptionProfileResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ETag" -> ETag.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "FieldLevelEncryptionProfile" -> FieldLevelEncryptionProfile.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Location" -> Location.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateFieldLevelEncryptionProfileResult]
+      val __obj = js.Dictionary.empty[js.Any]
+      ETag.foreach(__v => __obj.update("ETag", __v.asInstanceOf[js.Any]))
+      FieldLevelEncryptionProfile.foreach(__v => __obj.update("FieldLevelEncryptionProfile", __v.asInstanceOf[js.Any]))
+      Location.foreach(__v => __obj.update("Location", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateFieldLevelEncryptionProfileResult]
     }
   }
 
@@ -1020,12 +942,12 @@ package cloudfront {
         DistributionId: String,
         InvalidationBatch: InvalidationBatch
     ): CreateInvalidationRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "DistributionId"    -> DistributionId.asInstanceOf[js.Any],
         "InvalidationBatch" -> InvalidationBatch.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateInvalidationRequest]
+      __obj.asInstanceOf[CreateInvalidationRequest]
     }
   }
 
@@ -1043,16 +965,10 @@ package cloudfront {
         Invalidation: js.UndefOr[Invalidation] = js.undefined,
         Location: js.UndefOr[String] = js.undefined
     ): CreateInvalidationResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Invalidation" -> Invalidation.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Location" -> Location.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateInvalidationResult]
+      val __obj = js.Dictionary.empty[js.Any]
+      Invalidation.foreach(__v => __obj.update("Invalidation", __v.asInstanceOf[js.Any]))
+      Location.foreach(__v => __obj.update("Location", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateInvalidationResult]
     }
   }
 
@@ -1065,11 +981,11 @@ package cloudfront {
     def apply(
         PublicKeyConfig: PublicKeyConfig
     ): CreatePublicKeyRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "PublicKeyConfig" -> PublicKeyConfig.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreatePublicKeyRequest]
+      __obj.asInstanceOf[CreatePublicKeyRequest]
     }
   }
 
@@ -1086,19 +1002,11 @@ package cloudfront {
         Location: js.UndefOr[String] = js.undefined,
         PublicKey: js.UndefOr[PublicKey] = js.undefined
     ): CreatePublicKeyResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ETag" -> ETag.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Location" -> Location.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "PublicKey" -> PublicKey.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreatePublicKeyResult]
+      val __obj = js.Dictionary.empty[js.Any]
+      ETag.foreach(__v => __obj.update("ETag", __v.asInstanceOf[js.Any]))
+      Location.foreach(__v => __obj.update("Location", __v.asInstanceOf[js.Any]))
+      PublicKey.foreach(__v => __obj.update("PublicKey", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreatePublicKeyResult]
     }
   }
 
@@ -1114,11 +1022,11 @@ package cloudfront {
     def apply(
         StreamingDistributionConfig: StreamingDistributionConfig
     ): CreateStreamingDistributionRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "StreamingDistributionConfig" -> StreamingDistributionConfig.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateStreamingDistributionRequest]
+      __obj.asInstanceOf[CreateStreamingDistributionRequest]
     }
   }
 
@@ -1138,19 +1046,11 @@ package cloudfront {
         Location: js.UndefOr[String] = js.undefined,
         StreamingDistribution: js.UndefOr[StreamingDistribution] = js.undefined
     ): CreateStreamingDistributionResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ETag" -> ETag.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Location" -> Location.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "StreamingDistribution" -> StreamingDistribution.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateStreamingDistributionResult]
+      val __obj = js.Dictionary.empty[js.Any]
+      ETag.foreach(__v => __obj.update("ETag", __v.asInstanceOf[js.Any]))
+      Location.foreach(__v => __obj.update("Location", __v.asInstanceOf[js.Any]))
+      StreamingDistribution.foreach(__v => __obj.update("StreamingDistribution", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateStreamingDistributionResult]
     }
   }
 
@@ -1166,13 +1066,11 @@ package cloudfront {
     def apply(
         StreamingDistributionConfigWithTags: StreamingDistributionConfigWithTags
     ): CreateStreamingDistributionWithTagsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "StreamingDistributionConfigWithTags" -> StreamingDistributionConfigWithTags.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal
-        .applyDynamicNamed("apply")(_fields: _*)
-        .asInstanceOf[CreateStreamingDistributionWithTagsRequest]
+      __obj.asInstanceOf[CreateStreamingDistributionWithTagsRequest]
     }
   }
 
@@ -1192,19 +1090,11 @@ package cloudfront {
         Location: js.UndefOr[String] = js.undefined,
         StreamingDistribution: js.UndefOr[StreamingDistribution] = js.undefined
     ): CreateStreamingDistributionWithTagsResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ETag" -> ETag.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Location" -> Location.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "StreamingDistribution" -> StreamingDistribution.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateStreamingDistributionWithTagsResult]
+      val __obj = js.Dictionary.empty[js.Any]
+      ETag.foreach(__v => __obj.update("ETag", __v.asInstanceOf[js.Any]))
+      Location.foreach(__v => __obj.update("Location", __v.asInstanceOf[js.Any]))
+      StreamingDistribution.foreach(__v => __obj.update("StreamingDistribution", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateStreamingDistributionWithTagsResult]
     }
   }
 
@@ -1229,20 +1119,14 @@ package cloudfront {
         ResponseCode: js.UndefOr[String] = js.undefined,
         ResponsePagePath: js.UndefOr[String] = js.undefined
     ): CustomErrorResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ErrorCode" -> ErrorCode.asInstanceOf[js.Any],
-        "ErrorCachingMinTTL" -> ErrorCachingMinTTL.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ResponseCode" -> ResponseCode.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ResponsePagePath" -> ResponsePagePath.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "ErrorCode" -> ErrorCode.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CustomErrorResponse]
+      ErrorCachingMinTTL.foreach(__v => __obj.update("ErrorCachingMinTTL", __v.asInstanceOf[js.Any]))
+      ResponseCode.foreach(__v => __obj.update("ResponseCode", __v.asInstanceOf[js.Any]))
+      ResponsePagePath.foreach(__v => __obj.update("ResponsePagePath", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CustomErrorResponse]
     }
   }
 
@@ -1263,14 +1147,12 @@ package cloudfront {
         Quantity: Int,
         Items: js.UndefOr[CustomErrorResponseList] = js.undefined
     ): CustomErrorResponses = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Quantity" -> Quantity.asInstanceOf[js.Any],
-        "Items" -> Items.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "Quantity" -> Quantity.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CustomErrorResponses]
+      Items.foreach(__v => __obj.update("Items", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CustomErrorResponses]
     }
   }
 
@@ -1288,14 +1170,12 @@ package cloudfront {
         Quantity: Int,
         Items: js.UndefOr[OriginCustomHeadersList] = js.undefined
     ): CustomHeaders = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Quantity" -> Quantity.asInstanceOf[js.Any],
-        "Items" -> Items.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "Quantity" -> Quantity.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CustomHeaders]
+      Items.foreach(__v => __obj.update("Items", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CustomHeaders]
     }
   }
 
@@ -1321,22 +1201,16 @@ package cloudfront {
         OriginReadTimeout: js.UndefOr[Int] = js.undefined,
         OriginSslProtocols: js.UndefOr[OriginSslProtocols] = js.undefined
     ): CustomOriginConfig = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "HTTPPort"             -> HTTPPort.asInstanceOf[js.Any],
         "HTTPSPort"            -> HTTPSPort.asInstanceOf[js.Any],
-        "OriginProtocolPolicy" -> OriginProtocolPolicy.asInstanceOf[js.Any],
-        "OriginKeepaliveTimeout" -> OriginKeepaliveTimeout.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "OriginReadTimeout" -> OriginReadTimeout.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "OriginSslProtocols" -> OriginSslProtocols.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "OriginProtocolPolicy" -> OriginProtocolPolicy.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CustomOriginConfig]
+      OriginKeepaliveTimeout.foreach(__v => __obj.update("OriginKeepaliveTimeout", __v.asInstanceOf[js.Any]))
+      OriginReadTimeout.foreach(__v => __obj.update("OriginReadTimeout", __v.asInstanceOf[js.Any]))
+      OriginSslProtocols.foreach(__v => __obj.update("OriginSslProtocols", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CustomOriginConfig]
     }
   }
 
@@ -1374,36 +1248,22 @@ package cloudfront {
         MaxTTL: js.UndefOr[Double] = js.undefined,
         SmoothStreaming: js.UndefOr[Boolean] = js.undefined
     ): DefaultCacheBehavior = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ForwardedValues"      -> ForwardedValues.asInstanceOf[js.Any],
         "MinTTL"               -> MinTTL.asInstanceOf[js.Any],
         "TargetOriginId"       -> TargetOriginId.asInstanceOf[js.Any],
         "TrustedSigners"       -> TrustedSigners.asInstanceOf[js.Any],
-        "ViewerProtocolPolicy" -> ViewerProtocolPolicy.asInstanceOf[js.Any],
-        "AllowedMethods" -> AllowedMethods.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Compress" -> Compress.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DefaultTTL" -> DefaultTTL.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "FieldLevelEncryptionId" -> FieldLevelEncryptionId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "LambdaFunctionAssociations" -> LambdaFunctionAssociations.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MaxTTL" -> MaxTTL.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SmoothStreaming" -> SmoothStreaming.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "ViewerProtocolPolicy" -> ViewerProtocolPolicy.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DefaultCacheBehavior]
+      AllowedMethods.foreach(__v => __obj.update("AllowedMethods", __v.asInstanceOf[js.Any]))
+      Compress.foreach(__v => __obj.update("Compress", __v.asInstanceOf[js.Any]))
+      DefaultTTL.foreach(__v => __obj.update("DefaultTTL", __v.asInstanceOf[js.Any]))
+      FieldLevelEncryptionId.foreach(__v => __obj.update("FieldLevelEncryptionId", __v.asInstanceOf[js.Any]))
+      LambdaFunctionAssociations.foreach(__v => __obj.update("LambdaFunctionAssociations", __v.asInstanceOf[js.Any]))
+      MaxTTL.foreach(__v => __obj.update("MaxTTL", __v.asInstanceOf[js.Any]))
+      SmoothStreaming.foreach(__v => __obj.update("SmoothStreaming", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DefaultCacheBehavior]
     }
   }
 
@@ -1421,16 +1281,12 @@ package cloudfront {
         Id: String,
         IfMatch: js.UndefOr[String] = js.undefined
     ): DeleteCloudFrontOriginAccessIdentityRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Id" -> Id.asInstanceOf[js.Any],
-        "IfMatch" -> IfMatch.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "Id" -> Id.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal
-        .applyDynamicNamed("apply")(_fields: _*)
-        .asInstanceOf[DeleteCloudFrontOriginAccessIdentityRequest]
+      IfMatch.foreach(__v => __obj.update("IfMatch", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DeleteCloudFrontOriginAccessIdentityRequest]
     }
   }
 
@@ -1458,14 +1314,12 @@ package cloudfront {
         Id: String,
         IfMatch: js.UndefOr[String] = js.undefined
     ): DeleteDistributionRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Id" -> Id.asInstanceOf[js.Any],
-        "IfMatch" -> IfMatch.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "Id" -> Id.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteDistributionRequest]
+      IfMatch.foreach(__v => __obj.update("IfMatch", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DeleteDistributionRequest]
     }
   }
 
@@ -1480,14 +1334,12 @@ package cloudfront {
         Id: String,
         IfMatch: js.UndefOr[String] = js.undefined
     ): DeleteFieldLevelEncryptionConfigRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Id" -> Id.asInstanceOf[js.Any],
-        "IfMatch" -> IfMatch.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "Id" -> Id.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteFieldLevelEncryptionConfigRequest]
+      IfMatch.foreach(__v => __obj.update("IfMatch", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DeleteFieldLevelEncryptionConfigRequest]
     }
   }
 
@@ -1502,14 +1354,12 @@ package cloudfront {
         Id: String,
         IfMatch: js.UndefOr[String] = js.undefined
     ): DeleteFieldLevelEncryptionProfileRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Id" -> Id.asInstanceOf[js.Any],
-        "IfMatch" -> IfMatch.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "Id" -> Id.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteFieldLevelEncryptionProfileRequest]
+      IfMatch.foreach(__v => __obj.update("IfMatch", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DeleteFieldLevelEncryptionProfileRequest]
     }
   }
 
@@ -1524,14 +1374,12 @@ package cloudfront {
         Id: String,
         IfMatch: js.UndefOr[String] = js.undefined
     ): DeletePublicKeyRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Id" -> Id.asInstanceOf[js.Any],
-        "IfMatch" -> IfMatch.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "Id" -> Id.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeletePublicKeyRequest]
+      IfMatch.foreach(__v => __obj.update("IfMatch", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DeletePublicKeyRequest]
     }
   }
 
@@ -1549,14 +1397,12 @@ package cloudfront {
         Id: String,
         IfMatch: js.UndefOr[String] = js.undefined
     ): DeleteStreamingDistributionRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Id" -> Id.asInstanceOf[js.Any],
-        "IfMatch" -> IfMatch.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "Id" -> Id.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteStreamingDistributionRequest]
+      IfMatch.foreach(__v => __obj.update("IfMatch", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DeleteStreamingDistributionRequest]
     }
   }
 
@@ -1586,7 +1432,7 @@ package cloudfront {
         LastModifiedTime: timestamp,
         Status: String
     ): Distribution = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ARN"                           -> ARN.asInstanceOf[js.Any],
         "ActiveTrustedSigners"          -> ActiveTrustedSigners.asInstanceOf[js.Any],
         "DistributionConfig"            -> DistributionConfig.asInstanceOf[js.Any],
@@ -1595,9 +1441,9 @@ package cloudfront {
         "InProgressInvalidationBatches" -> InProgressInvalidationBatches.asInstanceOf[js.Any],
         "LastModifiedTime"              -> LastModifiedTime.asInstanceOf[js.Any],
         "Status"                        -> Status.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Distribution]
+      __obj.asInstanceOf[Distribution]
     }
   }
 
@@ -1645,51 +1491,27 @@ package cloudfront {
         ViewerCertificate: js.UndefOr[ViewerCertificate] = js.undefined,
         WebACLId: js.UndefOr[String] = js.undefined
     ): DistributionConfig = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "CallerReference"      -> CallerReference.asInstanceOf[js.Any],
         "Comment"              -> Comment.asInstanceOf[js.Any],
         "DefaultCacheBehavior" -> DefaultCacheBehavior.asInstanceOf[js.Any],
         "Enabled"              -> Enabled.asInstanceOf[js.Any],
-        "Origins"              -> Origins.asInstanceOf[js.Any],
-        "Aliases" -> Aliases.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "CacheBehaviors" -> CacheBehaviors.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "CustomErrorResponses" -> CustomErrorResponses.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DefaultRootObject" -> DefaultRootObject.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "HttpVersion" -> HttpVersion.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "IsIPV6Enabled" -> IsIPV6Enabled.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Logging" -> Logging.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "OriginGroups" -> OriginGroups.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "PriceClass" -> PriceClass.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Restrictions" -> Restrictions.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ViewerCertificate" -> ViewerCertificate.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "WebACLId" -> WebACLId.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "Origins"              -> Origins.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DistributionConfig]
+      Aliases.foreach(__v => __obj.update("Aliases", __v.asInstanceOf[js.Any]))
+      CacheBehaviors.foreach(__v => __obj.update("CacheBehaviors", __v.asInstanceOf[js.Any]))
+      CustomErrorResponses.foreach(__v => __obj.update("CustomErrorResponses", __v.asInstanceOf[js.Any]))
+      DefaultRootObject.foreach(__v => __obj.update("DefaultRootObject", __v.asInstanceOf[js.Any]))
+      HttpVersion.foreach(__v => __obj.update("HttpVersion", __v.asInstanceOf[js.Any]))
+      IsIPV6Enabled.foreach(__v => __obj.update("IsIPV6Enabled", __v.asInstanceOf[js.Any]))
+      Logging.foreach(__v => __obj.update("Logging", __v.asInstanceOf[js.Any]))
+      OriginGroups.foreach(__v => __obj.update("OriginGroups", __v.asInstanceOf[js.Any]))
+      PriceClass.foreach(__v => __obj.update("PriceClass", __v.asInstanceOf[js.Any]))
+      Restrictions.foreach(__v => __obj.update("Restrictions", __v.asInstanceOf[js.Any]))
+      ViewerCertificate.foreach(__v => __obj.update("ViewerCertificate", __v.asInstanceOf[js.Any]))
+      WebACLId.foreach(__v => __obj.update("WebACLId", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DistributionConfig]
     }
   }
 
@@ -1707,12 +1529,12 @@ package cloudfront {
         DistributionConfig: DistributionConfig,
         Tags: Tags
     ): DistributionConfigWithTags = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "DistributionConfig" -> DistributionConfig.asInstanceOf[js.Any],
         "Tags"               -> Tags.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DistributionConfigWithTags]
+      __obj.asInstanceOf[DistributionConfigWithTags]
     }
   }
 
@@ -1738,20 +1560,16 @@ package cloudfront {
         Items: js.UndefOr[DistributionSummaryList] = js.undefined,
         NextMarker: js.UndefOr[String] = js.undefined
     ): DistributionList = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "IsTruncated" -> IsTruncated.asInstanceOf[js.Any],
         "Marker"      -> Marker.asInstanceOf[js.Any],
         "MaxItems"    -> MaxItems.asInstanceOf[js.Any],
-        "Quantity"    -> Quantity.asInstanceOf[js.Any],
-        "Items" -> Items.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NextMarker" -> NextMarker.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "Quantity"    -> Quantity.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DistributionList]
+      Items.foreach(__v => __obj.update("Items", __v.asInstanceOf[js.Any]))
+      NextMarker.foreach(__v => __obj.update("NextMarker", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DistributionList]
     }
   }
 
@@ -1803,7 +1621,7 @@ package cloudfront {
         WebACLId: String,
         OriginGroups: js.UndefOr[OriginGroups] = js.undefined
     ): DistributionSummary = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ARN"                  -> ARN.asInstanceOf[js.Any],
         "Aliases"              -> Aliases.asInstanceOf[js.Any],
         "CacheBehaviors"       -> CacheBehaviors.asInstanceOf[js.Any],
@@ -1821,13 +1639,11 @@ package cloudfront {
         "Restrictions"         -> Restrictions.asInstanceOf[js.Any],
         "Status"               -> Status.asInstanceOf[js.Any],
         "ViewerCertificate"    -> ViewerCertificate.asInstanceOf[js.Any],
-        "WebACLId"             -> WebACLId.asInstanceOf[js.Any],
-        "OriginGroups" -> OriginGroups.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "WebACLId"             -> WebACLId.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DistributionSummary]
+      OriginGroups.foreach(__v => __obj.update("OriginGroups", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DistributionSummary]
     }
   }
 
@@ -1845,14 +1661,12 @@ package cloudfront {
         Quantity: Int,
         Items: js.UndefOr[EncryptionEntityList] = js.undefined
     ): EncryptionEntities = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Quantity" -> Quantity.asInstanceOf[js.Any],
-        "Items" -> Items.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "Quantity" -> Quantity.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[EncryptionEntities]
+      Items.foreach(__v => __obj.update("Items", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[EncryptionEntities]
     }
   }
 
@@ -1872,13 +1686,13 @@ package cloudfront {
         ProviderId: String,
         PublicKeyId: String
     ): EncryptionEntity = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "FieldPatterns" -> FieldPatterns.asInstanceOf[js.Any],
         "ProviderId"    -> ProviderId.asInstanceOf[js.Any],
         "PublicKeyId"   -> PublicKeyId.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[EncryptionEntity]
+      __obj.asInstanceOf[EncryptionEntity]
     }
   }
 
@@ -1907,13 +1721,13 @@ package cloudfront {
         Id: String,
         LastModifiedTime: timestamp
     ): FieldLevelEncryption = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "FieldLevelEncryptionConfig" -> FieldLevelEncryptionConfig.asInstanceOf[js.Any],
         "Id"                         -> Id.asInstanceOf[js.Any],
         "LastModifiedTime"           -> LastModifiedTime.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[FieldLevelEncryption]
+      __obj.asInstanceOf[FieldLevelEncryption]
     }
   }
 
@@ -1935,20 +1749,14 @@ package cloudfront {
         ContentTypeProfileConfig: js.UndefOr[ContentTypeProfileConfig] = js.undefined,
         QueryArgProfileConfig: js.UndefOr[QueryArgProfileConfig] = js.undefined
     ): FieldLevelEncryptionConfig = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "CallerReference" -> CallerReference.asInstanceOf[js.Any],
-        "Comment" -> Comment.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ContentTypeProfileConfig" -> ContentTypeProfileConfig.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "QueryArgProfileConfig" -> QueryArgProfileConfig.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "CallerReference" -> CallerReference.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[FieldLevelEncryptionConfig]
+      Comment.foreach(__v => __obj.update("Comment", __v.asInstanceOf[js.Any]))
+      ContentTypeProfileConfig.foreach(__v => __obj.update("ContentTypeProfileConfig", __v.asInstanceOf[js.Any]))
+      QueryArgProfileConfig.foreach(__v => __obj.update("QueryArgProfileConfig", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[FieldLevelEncryptionConfig]
     }
   }
 
@@ -1970,18 +1778,14 @@ package cloudfront {
         Items: js.UndefOr[FieldLevelEncryptionSummaryList] = js.undefined,
         NextMarker: js.UndefOr[String] = js.undefined
     ): FieldLevelEncryptionList = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "MaxItems" -> MaxItems.asInstanceOf[js.Any],
-        "Quantity" -> Quantity.asInstanceOf[js.Any],
-        "Items" -> Items.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NextMarker" -> NextMarker.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "Quantity" -> Quantity.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[FieldLevelEncryptionList]
+      Items.foreach(__v => __obj.update("Items", __v.asInstanceOf[js.Any]))
+      NextMarker.foreach(__v => __obj.update("NextMarker", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[FieldLevelEncryptionList]
     }
   }
 
@@ -2001,13 +1805,13 @@ package cloudfront {
         Id: String,
         LastModifiedTime: timestamp
     ): FieldLevelEncryptionProfile = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "FieldLevelEncryptionProfileConfig" -> FieldLevelEncryptionProfileConfig.asInstanceOf[js.Any],
         "Id"                                -> Id.asInstanceOf[js.Any],
         "LastModifiedTime"                  -> LastModifiedTime.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[FieldLevelEncryptionProfile]
+      __obj.asInstanceOf[FieldLevelEncryptionProfile]
     }
   }
 
@@ -2029,16 +1833,14 @@ package cloudfront {
         Name: String,
         Comment: js.UndefOr[String] = js.undefined
     ): FieldLevelEncryptionProfileConfig = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "CallerReference"    -> CallerReference.asInstanceOf[js.Any],
         "EncryptionEntities" -> EncryptionEntities.asInstanceOf[js.Any],
-        "Name"               -> Name.asInstanceOf[js.Any],
-        "Comment" -> Comment.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "Name"               -> Name.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[FieldLevelEncryptionProfileConfig]
+      Comment.foreach(__v => __obj.update("Comment", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[FieldLevelEncryptionProfileConfig]
     }
   }
 
@@ -2060,18 +1862,14 @@ package cloudfront {
         Items: js.UndefOr[FieldLevelEncryptionProfileSummaryList] = js.undefined,
         NextMarker: js.UndefOr[String] = js.undefined
     ): FieldLevelEncryptionProfileList = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "MaxItems" -> MaxItems.asInstanceOf[js.Any],
-        "Quantity" -> Quantity.asInstanceOf[js.Any],
-        "Items" -> Items.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NextMarker" -> NextMarker.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "Quantity" -> Quantity.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[FieldLevelEncryptionProfileList]
+      Items.foreach(__v => __obj.update("Items", __v.asInstanceOf[js.Any]))
+      NextMarker.foreach(__v => __obj.update("NextMarker", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[FieldLevelEncryptionProfileList]
     }
   }
 
@@ -2095,17 +1893,15 @@ package cloudfront {
         Name: String,
         Comment: js.UndefOr[String] = js.undefined
     ): FieldLevelEncryptionProfileSummary = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "EncryptionEntities" -> EncryptionEntities.asInstanceOf[js.Any],
         "Id"                 -> Id.asInstanceOf[js.Any],
         "LastModifiedTime"   -> LastModifiedTime.asInstanceOf[js.Any],
-        "Name"               -> Name.asInstanceOf[js.Any],
-        "Comment" -> Comment.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "Name"               -> Name.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[FieldLevelEncryptionProfileSummary]
+      Comment.foreach(__v => __obj.update("Comment", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[FieldLevelEncryptionProfileSummary]
     }
   }
 
@@ -2129,21 +1925,15 @@ package cloudfront {
         ContentTypeProfileConfig: js.UndefOr[ContentTypeProfileConfig] = js.undefined,
         QueryArgProfileConfig: js.UndefOr[QueryArgProfileConfig] = js.undefined
     ): FieldLevelEncryptionSummary = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "Id"               -> Id.asInstanceOf[js.Any],
-        "LastModifiedTime" -> LastModifiedTime.asInstanceOf[js.Any],
-        "Comment" -> Comment.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ContentTypeProfileConfig" -> ContentTypeProfileConfig.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "QueryArgProfileConfig" -> QueryArgProfileConfig.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "LastModifiedTime" -> LastModifiedTime.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[FieldLevelEncryptionSummary]
+      Comment.foreach(__v => __obj.update("Comment", __v.asInstanceOf[js.Any]))
+      ContentTypeProfileConfig.foreach(__v => __obj.update("ContentTypeProfileConfig", __v.asInstanceOf[js.Any]))
+      QueryArgProfileConfig.foreach(__v => __obj.update("QueryArgProfileConfig", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[FieldLevelEncryptionSummary]
     }
   }
 
@@ -2161,14 +1951,12 @@ package cloudfront {
         Quantity: Int,
         Items: js.UndefOr[FieldPatternList] = js.undefined
     ): FieldPatterns = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Quantity" -> Quantity.asInstanceOf[js.Any],
-        "Items" -> Items.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "Quantity" -> Quantity.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[FieldPatterns]
+      Items.foreach(__v => __obj.update("Items", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[FieldPatterns]
     }
   }
 
@@ -2196,18 +1984,14 @@ package cloudfront {
         Headers: js.UndefOr[Headers] = js.undefined,
         QueryStringCacheKeys: js.UndefOr[QueryStringCacheKeys] = js.undefined
     ): ForwardedValues = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "Cookies"     -> Cookies.asInstanceOf[js.Any],
-        "QueryString" -> QueryString.asInstanceOf[js.Any],
-        "Headers" -> Headers.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "QueryStringCacheKeys" -> QueryStringCacheKeys.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "QueryString" -> QueryString.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ForwardedValues]
+      Headers.foreach(__v => __obj.update("Headers", __v.asInstanceOf[js.Any]))
+      QueryStringCacheKeys.foreach(__v => __obj.update("QueryStringCacheKeys", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ForwardedValues]
     }
   }
 
@@ -2227,15 +2011,13 @@ package cloudfront {
         RestrictionType: GeoRestrictionType,
         Items: js.UndefOr[LocationList] = js.undefined
     ): GeoRestriction = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "Quantity"        -> Quantity.asInstanceOf[js.Any],
-        "RestrictionType" -> RestrictionType.asInstanceOf[js.Any],
-        "Items" -> Items.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "RestrictionType" -> RestrictionType.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GeoRestriction]
+      Items.foreach(__v => __obj.update("Items", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GeoRestriction]
     }
   }
 
@@ -2259,13 +2041,11 @@ package cloudfront {
     def apply(
         Id: String
     ): GetCloudFrontOriginAccessIdentityConfigRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "Id" -> Id.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal
-        .applyDynamicNamed("apply")(_fields: _*)
-        .asInstanceOf[GetCloudFrontOriginAccessIdentityConfigRequest]
+      __obj.asInstanceOf[GetCloudFrontOriginAccessIdentityConfigRequest]
     }
   }
 
@@ -2283,18 +2063,12 @@ package cloudfront {
         CloudFrontOriginAccessIdentityConfig: js.UndefOr[CloudFrontOriginAccessIdentityConfig] = js.undefined,
         ETag: js.UndefOr[String] = js.undefined
     ): GetCloudFrontOriginAccessIdentityConfigResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "CloudFrontOriginAccessIdentityConfig" -> CloudFrontOriginAccessIdentityConfig.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ETag" -> ETag.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal
-        .applyDynamicNamed("apply")(_fields: _*)
-        .asInstanceOf[GetCloudFrontOriginAccessIdentityConfigResult]
+      val __obj = js.Dictionary.empty[js.Any]
+      CloudFrontOriginAccessIdentityConfig.foreach(
+        __v => __obj.update("CloudFrontOriginAccessIdentityConfig", __v.asInstanceOf[js.Any])
+      )
+      ETag.foreach(__v => __obj.update("ETag", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetCloudFrontOriginAccessIdentityConfigResult]
     }
   }
 
@@ -2310,11 +2084,11 @@ package cloudfront {
     def apply(
         Id: String
     ): GetCloudFrontOriginAccessIdentityRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "Id" -> Id.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetCloudFrontOriginAccessIdentityRequest]
+      __obj.asInstanceOf[GetCloudFrontOriginAccessIdentityRequest]
     }
   }
 
@@ -2332,16 +2106,12 @@ package cloudfront {
         CloudFrontOriginAccessIdentity: js.UndefOr[CloudFrontOriginAccessIdentity] = js.undefined,
         ETag: js.UndefOr[String] = js.undefined
     ): GetCloudFrontOriginAccessIdentityResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "CloudFrontOriginAccessIdentity" -> CloudFrontOriginAccessIdentity.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ETag" -> ETag.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetCloudFrontOriginAccessIdentityResult]
+      val __obj = js.Dictionary.empty[js.Any]
+      CloudFrontOriginAccessIdentity.foreach(
+        __v => __obj.update("CloudFrontOriginAccessIdentity", __v.asInstanceOf[js.Any])
+      )
+      ETag.foreach(__v => __obj.update("ETag", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetCloudFrontOriginAccessIdentityResult]
     }
   }
 
@@ -2357,11 +2127,11 @@ package cloudfront {
     def apply(
         Id: String
     ): GetDistributionConfigRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "Id" -> Id.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetDistributionConfigRequest]
+      __obj.asInstanceOf[GetDistributionConfigRequest]
     }
   }
 
@@ -2379,16 +2149,10 @@ package cloudfront {
         DistributionConfig: js.UndefOr[DistributionConfig] = js.undefined,
         ETag: js.UndefOr[String] = js.undefined
     ): GetDistributionConfigResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "DistributionConfig" -> DistributionConfig.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ETag" -> ETag.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetDistributionConfigResult]
+      val __obj = js.Dictionary.empty[js.Any]
+      DistributionConfig.foreach(__v => __obj.update("DistributionConfig", __v.asInstanceOf[js.Any]))
+      ETag.foreach(__v => __obj.update("ETag", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetDistributionConfigResult]
     }
   }
 
@@ -2404,11 +2168,11 @@ package cloudfront {
     def apply(
         Id: String
     ): GetDistributionRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "Id" -> Id.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetDistributionRequest]
+      __obj.asInstanceOf[GetDistributionRequest]
     }
   }
 
@@ -2426,16 +2190,10 @@ package cloudfront {
         Distribution: js.UndefOr[Distribution] = js.undefined,
         ETag: js.UndefOr[String] = js.undefined
     ): GetDistributionResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Distribution" -> Distribution.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ETag" -> ETag.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetDistributionResult]
+      val __obj = js.Dictionary.empty[js.Any]
+      Distribution.foreach(__v => __obj.update("Distribution", __v.asInstanceOf[js.Any]))
+      ETag.foreach(__v => __obj.update("ETag", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetDistributionResult]
     }
   }
 
@@ -2448,11 +2206,11 @@ package cloudfront {
     def apply(
         Id: String
     ): GetFieldLevelEncryptionConfigRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "Id" -> Id.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetFieldLevelEncryptionConfigRequest]
+      __obj.asInstanceOf[GetFieldLevelEncryptionConfigRequest]
     }
   }
 
@@ -2467,16 +2225,10 @@ package cloudfront {
         ETag: js.UndefOr[String] = js.undefined,
         FieldLevelEncryptionConfig: js.UndefOr[FieldLevelEncryptionConfig] = js.undefined
     ): GetFieldLevelEncryptionConfigResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ETag" -> ETag.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "FieldLevelEncryptionConfig" -> FieldLevelEncryptionConfig.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetFieldLevelEncryptionConfigResult]
+      val __obj = js.Dictionary.empty[js.Any]
+      ETag.foreach(__v => __obj.update("ETag", __v.asInstanceOf[js.Any]))
+      FieldLevelEncryptionConfig.foreach(__v => __obj.update("FieldLevelEncryptionConfig", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetFieldLevelEncryptionConfigResult]
     }
   }
 
@@ -2489,13 +2241,11 @@ package cloudfront {
     def apply(
         Id: String
     ): GetFieldLevelEncryptionProfileConfigRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "Id" -> Id.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal
-        .applyDynamicNamed("apply")(_fields: _*)
-        .asInstanceOf[GetFieldLevelEncryptionProfileConfigRequest]
+      __obj.asInstanceOf[GetFieldLevelEncryptionProfileConfigRequest]
     }
   }
 
@@ -2510,18 +2260,12 @@ package cloudfront {
         ETag: js.UndefOr[String] = js.undefined,
         FieldLevelEncryptionProfileConfig: js.UndefOr[FieldLevelEncryptionProfileConfig] = js.undefined
     ): GetFieldLevelEncryptionProfileConfigResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ETag" -> ETag.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "FieldLevelEncryptionProfileConfig" -> FieldLevelEncryptionProfileConfig.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal
-        .applyDynamicNamed("apply")(_fields: _*)
-        .asInstanceOf[GetFieldLevelEncryptionProfileConfigResult]
+      val __obj = js.Dictionary.empty[js.Any]
+      ETag.foreach(__v => __obj.update("ETag", __v.asInstanceOf[js.Any]))
+      FieldLevelEncryptionProfileConfig.foreach(
+        __v => __obj.update("FieldLevelEncryptionProfileConfig", __v.asInstanceOf[js.Any])
+      )
+      __obj.asInstanceOf[GetFieldLevelEncryptionProfileConfigResult]
     }
   }
 
@@ -2534,11 +2278,11 @@ package cloudfront {
     def apply(
         Id: String
     ): GetFieldLevelEncryptionProfileRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "Id" -> Id.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetFieldLevelEncryptionProfileRequest]
+      __obj.asInstanceOf[GetFieldLevelEncryptionProfileRequest]
     }
   }
 
@@ -2553,16 +2297,10 @@ package cloudfront {
         ETag: js.UndefOr[String] = js.undefined,
         FieldLevelEncryptionProfile: js.UndefOr[FieldLevelEncryptionProfile] = js.undefined
     ): GetFieldLevelEncryptionProfileResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ETag" -> ETag.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "FieldLevelEncryptionProfile" -> FieldLevelEncryptionProfile.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetFieldLevelEncryptionProfileResult]
+      val __obj = js.Dictionary.empty[js.Any]
+      ETag.foreach(__v => __obj.update("ETag", __v.asInstanceOf[js.Any]))
+      FieldLevelEncryptionProfile.foreach(__v => __obj.update("FieldLevelEncryptionProfile", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetFieldLevelEncryptionProfileResult]
     }
   }
 
@@ -2575,11 +2313,11 @@ package cloudfront {
     def apply(
         Id: String
     ): GetFieldLevelEncryptionRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "Id" -> Id.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetFieldLevelEncryptionRequest]
+      __obj.asInstanceOf[GetFieldLevelEncryptionRequest]
     }
   }
 
@@ -2594,16 +2332,10 @@ package cloudfront {
         ETag: js.UndefOr[String] = js.undefined,
         FieldLevelEncryption: js.UndefOr[FieldLevelEncryption] = js.undefined
     ): GetFieldLevelEncryptionResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ETag" -> ETag.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "FieldLevelEncryption" -> FieldLevelEncryption.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetFieldLevelEncryptionResult]
+      val __obj = js.Dictionary.empty[js.Any]
+      ETag.foreach(__v => __obj.update("ETag", __v.asInstanceOf[js.Any]))
+      FieldLevelEncryption.foreach(__v => __obj.update("FieldLevelEncryption", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetFieldLevelEncryptionResult]
     }
   }
 
@@ -2621,12 +2353,12 @@ package cloudfront {
         DistributionId: String,
         Id: String
     ): GetInvalidationRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "DistributionId" -> DistributionId.asInstanceOf[js.Any],
         "Id"             -> Id.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetInvalidationRequest]
+      __obj.asInstanceOf[GetInvalidationRequest]
     }
   }
 
@@ -2642,13 +2374,9 @@ package cloudfront {
     def apply(
         Invalidation: js.UndefOr[Invalidation] = js.undefined
     ): GetInvalidationResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Invalidation" -> Invalidation.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetInvalidationResult]
+      val __obj = js.Dictionary.empty[js.Any]
+      Invalidation.foreach(__v => __obj.update("Invalidation", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetInvalidationResult]
     }
   }
 
@@ -2661,11 +2389,11 @@ package cloudfront {
     def apply(
         Id: String
     ): GetPublicKeyConfigRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "Id" -> Id.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetPublicKeyConfigRequest]
+      __obj.asInstanceOf[GetPublicKeyConfigRequest]
     }
   }
 
@@ -2680,16 +2408,10 @@ package cloudfront {
         ETag: js.UndefOr[String] = js.undefined,
         PublicKeyConfig: js.UndefOr[PublicKeyConfig] = js.undefined
     ): GetPublicKeyConfigResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ETag" -> ETag.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "PublicKeyConfig" -> PublicKeyConfig.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetPublicKeyConfigResult]
+      val __obj = js.Dictionary.empty[js.Any]
+      ETag.foreach(__v => __obj.update("ETag", __v.asInstanceOf[js.Any]))
+      PublicKeyConfig.foreach(__v => __obj.update("PublicKeyConfig", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetPublicKeyConfigResult]
     }
   }
 
@@ -2702,11 +2424,11 @@ package cloudfront {
     def apply(
         Id: String
     ): GetPublicKeyRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "Id" -> Id.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetPublicKeyRequest]
+      __obj.asInstanceOf[GetPublicKeyRequest]
     }
   }
 
@@ -2721,16 +2443,10 @@ package cloudfront {
         ETag: js.UndefOr[String] = js.undefined,
         PublicKey: js.UndefOr[PublicKey] = js.undefined
     ): GetPublicKeyResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ETag" -> ETag.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "PublicKey" -> PublicKey.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetPublicKeyResult]
+      val __obj = js.Dictionary.empty[js.Any]
+      ETag.foreach(__v => __obj.update("ETag", __v.asInstanceOf[js.Any]))
+      PublicKey.foreach(__v => __obj.update("PublicKey", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetPublicKeyResult]
     }
   }
 
@@ -2746,11 +2462,11 @@ package cloudfront {
     def apply(
         Id: String
     ): GetStreamingDistributionConfigRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "Id" -> Id.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetStreamingDistributionConfigRequest]
+      __obj.asInstanceOf[GetStreamingDistributionConfigRequest]
     }
   }
 
@@ -2768,16 +2484,10 @@ package cloudfront {
         ETag: js.UndefOr[String] = js.undefined,
         StreamingDistributionConfig: js.UndefOr[StreamingDistributionConfig] = js.undefined
     ): GetStreamingDistributionConfigResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ETag" -> ETag.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "StreamingDistributionConfig" -> StreamingDistributionConfig.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetStreamingDistributionConfigResult]
+      val __obj = js.Dictionary.empty[js.Any]
+      ETag.foreach(__v => __obj.update("ETag", __v.asInstanceOf[js.Any]))
+      StreamingDistributionConfig.foreach(__v => __obj.update("StreamingDistributionConfig", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetStreamingDistributionConfigResult]
     }
   }
 
@@ -2793,11 +2503,11 @@ package cloudfront {
     def apply(
         Id: String
     ): GetStreamingDistributionRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "Id" -> Id.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetStreamingDistributionRequest]
+      __obj.asInstanceOf[GetStreamingDistributionRequest]
     }
   }
 
@@ -2815,16 +2525,10 @@ package cloudfront {
         ETag: js.UndefOr[String] = js.undefined,
         StreamingDistribution: js.UndefOr[StreamingDistribution] = js.undefined
     ): GetStreamingDistributionResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ETag" -> ETag.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "StreamingDistribution" -> StreamingDistribution.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetStreamingDistributionResult]
+      val __obj = js.Dictionary.empty[js.Any]
+      ETag.foreach(__v => __obj.update("ETag", __v.asInstanceOf[js.Any]))
+      StreamingDistribution.foreach(__v => __obj.update("StreamingDistribution", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetStreamingDistributionResult]
     }
   }
 
@@ -2843,14 +2547,12 @@ package cloudfront {
         Quantity: Int,
         Items: js.UndefOr[HeaderList] = js.undefined
     ): Headers = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Quantity" -> Quantity.asInstanceOf[js.Any],
-        "Items" -> Items.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "Quantity" -> Quantity.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Headers]
+      Items.foreach(__v => __obj.update("Items", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Headers]
     }
   }
 
@@ -2879,14 +2581,14 @@ package cloudfront {
         InvalidationBatch: InvalidationBatch,
         Status: String
     ): Invalidation = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "CreateTime"        -> CreateTime.asInstanceOf[js.Any],
         "Id"                -> Id.asInstanceOf[js.Any],
         "InvalidationBatch" -> InvalidationBatch.asInstanceOf[js.Any],
         "Status"            -> Status.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Invalidation]
+      __obj.asInstanceOf[Invalidation]
     }
   }
 
@@ -2904,12 +2606,12 @@ package cloudfront {
         CallerReference: String,
         Paths: Paths
     ): InvalidationBatch = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "CallerReference" -> CallerReference.asInstanceOf[js.Any],
         "Paths"           -> Paths.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[InvalidationBatch]
+      __obj.asInstanceOf[InvalidationBatch]
     }
   }
 
@@ -2935,20 +2637,16 @@ package cloudfront {
         Items: js.UndefOr[InvalidationSummaryList] = js.undefined,
         NextMarker: js.UndefOr[String] = js.undefined
     ): InvalidationList = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "IsTruncated" -> IsTruncated.asInstanceOf[js.Any],
         "Marker"      -> Marker.asInstanceOf[js.Any],
         "MaxItems"    -> MaxItems.asInstanceOf[js.Any],
-        "Quantity"    -> Quantity.asInstanceOf[js.Any],
-        "Items" -> Items.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NextMarker" -> NextMarker.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "Quantity"    -> Quantity.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[InvalidationList]
+      Items.foreach(__v => __obj.update("Items", __v.asInstanceOf[js.Any]))
+      NextMarker.foreach(__v => __obj.update("NextMarker", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[InvalidationList]
     }
   }
 
@@ -2968,13 +2666,13 @@ package cloudfront {
         Id: String,
         Status: String
     ): InvalidationSummary = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "CreateTime" -> CreateTime.asInstanceOf[js.Any],
         "Id"         -> Id.asInstanceOf[js.Any],
         "Status"     -> Status.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[InvalidationSummary]
+      __obj.asInstanceOf[InvalidationSummary]
     }
   }
 
@@ -3001,14 +2699,12 @@ package cloudfront {
         Quantity: Int,
         Items: js.UndefOr[KeyPairIdList] = js.undefined
     ): KeyPairIds = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Quantity" -> Quantity.asInstanceOf[js.Any],
-        "Items" -> Items.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "Quantity" -> Quantity.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[KeyPairIds]
+      Items.foreach(__v => __obj.update("Items", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[KeyPairIds]
     }
   }
 
@@ -3028,15 +2724,13 @@ package cloudfront {
         LambdaFunctionARN: LambdaFunctionARN,
         IncludeBody: js.UndefOr[Boolean] = js.undefined
     ): LambdaFunctionAssociation = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "EventType"         -> EventType.asInstanceOf[js.Any],
-        "LambdaFunctionARN" -> LambdaFunctionARN.asInstanceOf[js.Any],
-        "IncludeBody" -> IncludeBody.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "LambdaFunctionARN" -> LambdaFunctionARN.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[LambdaFunctionAssociation]
+      IncludeBody.foreach(__v => __obj.update("IncludeBody", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[LambdaFunctionAssociation]
     }
   }
 
@@ -3056,14 +2750,12 @@ package cloudfront {
         Quantity: Int,
         Items: js.UndefOr[LambdaFunctionAssociationList] = js.undefined
     ): LambdaFunctionAssociations = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Quantity" -> Quantity.asInstanceOf[js.Any],
-        "Items" -> Items.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "Quantity" -> Quantity.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[LambdaFunctionAssociations]
+      Items.foreach(__v => __obj.update("Items", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[LambdaFunctionAssociations]
     }
   }
 
@@ -3081,18 +2773,10 @@ package cloudfront {
         Marker: js.UndefOr[String] = js.undefined,
         MaxItems: js.UndefOr[String] = js.undefined
     ): ListCloudFrontOriginAccessIdentitiesRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Marker" -> Marker.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MaxItems" -> MaxItems.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal
-        .applyDynamicNamed("apply")(_fields: _*)
-        .asInstanceOf[ListCloudFrontOriginAccessIdentitiesRequest]
+      val __obj = js.Dictionary.empty[js.Any]
+      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
+      MaxItems.foreach(__v => __obj.update("MaxItems", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListCloudFrontOriginAccessIdentitiesRequest]
     }
   }
 
@@ -3108,15 +2792,11 @@ package cloudfront {
     def apply(
         CloudFrontOriginAccessIdentityList: js.UndefOr[CloudFrontOriginAccessIdentityList] = js.undefined
     ): ListCloudFrontOriginAccessIdentitiesResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "CloudFrontOriginAccessIdentityList" -> CloudFrontOriginAccessIdentityList.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal
-        .applyDynamicNamed("apply")(_fields: _*)
-        .asInstanceOf[ListCloudFrontOriginAccessIdentitiesResult]
+      val __obj = js.Dictionary.empty[js.Any]
+      CloudFrontOriginAccessIdentityList.foreach(
+        __v => __obj.update("CloudFrontOriginAccessIdentityList", __v.asInstanceOf[js.Any])
+      )
+      __obj.asInstanceOf[ListCloudFrontOriginAccessIdentitiesResult]
     }
   }
 
@@ -3136,17 +2816,13 @@ package cloudfront {
         Marker: js.UndefOr[String] = js.undefined,
         MaxItems: js.UndefOr[String] = js.undefined
     ): ListDistributionsByWebACLIdRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "WebACLId" -> WebACLId.asInstanceOf[js.Any],
-        "Marker" -> Marker.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MaxItems" -> MaxItems.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "WebACLId" -> WebACLId.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListDistributionsByWebACLIdRequest]
+      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
+      MaxItems.foreach(__v => __obj.update("MaxItems", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListDistributionsByWebACLIdRequest]
     }
   }
 
@@ -3162,13 +2838,9 @@ package cloudfront {
     def apply(
         DistributionList: js.UndefOr[DistributionList] = js.undefined
     ): ListDistributionsByWebACLIdResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "DistributionList" -> DistributionList.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListDistributionsByWebACLIdResult]
+      val __obj = js.Dictionary.empty[js.Any]
+      DistributionList.foreach(__v => __obj.update("DistributionList", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListDistributionsByWebACLIdResult]
     }
   }
 
@@ -3186,16 +2858,10 @@ package cloudfront {
         Marker: js.UndefOr[String] = js.undefined,
         MaxItems: js.UndefOr[String] = js.undefined
     ): ListDistributionsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Marker" -> Marker.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MaxItems" -> MaxItems.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListDistributionsRequest]
+      val __obj = js.Dictionary.empty[js.Any]
+      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
+      MaxItems.foreach(__v => __obj.update("MaxItems", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListDistributionsRequest]
     }
   }
 
@@ -3211,13 +2877,9 @@ package cloudfront {
     def apply(
         DistributionList: js.UndefOr[DistributionList] = js.undefined
     ): ListDistributionsResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "DistributionList" -> DistributionList.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListDistributionsResult]
+      val __obj = js.Dictionary.empty[js.Any]
+      DistributionList.foreach(__v => __obj.update("DistributionList", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListDistributionsResult]
     }
   }
 
@@ -3232,16 +2894,10 @@ package cloudfront {
         Marker: js.UndefOr[String] = js.undefined,
         MaxItems: js.UndefOr[String] = js.undefined
     ): ListFieldLevelEncryptionConfigsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Marker" -> Marker.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MaxItems" -> MaxItems.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListFieldLevelEncryptionConfigsRequest]
+      val __obj = js.Dictionary.empty[js.Any]
+      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
+      MaxItems.foreach(__v => __obj.update("MaxItems", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListFieldLevelEncryptionConfigsRequest]
     }
   }
 
@@ -3254,13 +2910,9 @@ package cloudfront {
     def apply(
         FieldLevelEncryptionList: js.UndefOr[FieldLevelEncryptionList] = js.undefined
     ): ListFieldLevelEncryptionConfigsResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "FieldLevelEncryptionList" -> FieldLevelEncryptionList.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListFieldLevelEncryptionConfigsResult]
+      val __obj = js.Dictionary.empty[js.Any]
+      FieldLevelEncryptionList.foreach(__v => __obj.update("FieldLevelEncryptionList", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListFieldLevelEncryptionConfigsResult]
     }
   }
 
@@ -3275,16 +2927,10 @@ package cloudfront {
         Marker: js.UndefOr[String] = js.undefined,
         MaxItems: js.UndefOr[String] = js.undefined
     ): ListFieldLevelEncryptionProfilesRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Marker" -> Marker.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MaxItems" -> MaxItems.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListFieldLevelEncryptionProfilesRequest]
+      val __obj = js.Dictionary.empty[js.Any]
+      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
+      MaxItems.foreach(__v => __obj.update("MaxItems", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListFieldLevelEncryptionProfilesRequest]
     }
   }
 
@@ -3297,13 +2943,11 @@ package cloudfront {
     def apply(
         FieldLevelEncryptionProfileList: js.UndefOr[FieldLevelEncryptionProfileList] = js.undefined
     ): ListFieldLevelEncryptionProfilesResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "FieldLevelEncryptionProfileList" -> FieldLevelEncryptionProfileList.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListFieldLevelEncryptionProfilesResult]
+      val __obj = js.Dictionary.empty[js.Any]
+      FieldLevelEncryptionProfileList.foreach(
+        __v => __obj.update("FieldLevelEncryptionProfileList", __v.asInstanceOf[js.Any])
+      )
+      __obj.asInstanceOf[ListFieldLevelEncryptionProfilesResult]
     }
   }
 
@@ -3323,17 +2967,13 @@ package cloudfront {
         Marker: js.UndefOr[String] = js.undefined,
         MaxItems: js.UndefOr[String] = js.undefined
     ): ListInvalidationsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "DistributionId" -> DistributionId.asInstanceOf[js.Any],
-        "Marker" -> Marker.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MaxItems" -> MaxItems.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "DistributionId" -> DistributionId.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListInvalidationsRequest]
+      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
+      MaxItems.foreach(__v => __obj.update("MaxItems", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListInvalidationsRequest]
     }
   }
 
@@ -3349,13 +2989,9 @@ package cloudfront {
     def apply(
         InvalidationList: js.UndefOr[InvalidationList] = js.undefined
     ): ListInvalidationsResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "InvalidationList" -> InvalidationList.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListInvalidationsResult]
+      val __obj = js.Dictionary.empty[js.Any]
+      InvalidationList.foreach(__v => __obj.update("InvalidationList", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListInvalidationsResult]
     }
   }
 
@@ -3370,16 +3006,10 @@ package cloudfront {
         Marker: js.UndefOr[String] = js.undefined,
         MaxItems: js.UndefOr[String] = js.undefined
     ): ListPublicKeysRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Marker" -> Marker.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MaxItems" -> MaxItems.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListPublicKeysRequest]
+      val __obj = js.Dictionary.empty[js.Any]
+      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
+      MaxItems.foreach(__v => __obj.update("MaxItems", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListPublicKeysRequest]
     }
   }
 
@@ -3392,13 +3022,9 @@ package cloudfront {
     def apply(
         PublicKeyList: js.UndefOr[PublicKeyList] = js.undefined
     ): ListPublicKeysResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "PublicKeyList" -> PublicKeyList.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListPublicKeysResult]
+      val __obj = js.Dictionary.empty[js.Any]
+      PublicKeyList.foreach(__v => __obj.update("PublicKeyList", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListPublicKeysResult]
     }
   }
 
@@ -3416,16 +3042,10 @@ package cloudfront {
         Marker: js.UndefOr[String] = js.undefined,
         MaxItems: js.UndefOr[String] = js.undefined
     ): ListStreamingDistributionsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Marker" -> Marker.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MaxItems" -> MaxItems.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListStreamingDistributionsRequest]
+      val __obj = js.Dictionary.empty[js.Any]
+      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
+      MaxItems.foreach(__v => __obj.update("MaxItems", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListStreamingDistributionsRequest]
     }
   }
 
@@ -3441,13 +3061,9 @@ package cloudfront {
     def apply(
         StreamingDistributionList: js.UndefOr[StreamingDistributionList] = js.undefined
     ): ListStreamingDistributionsResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "StreamingDistributionList" -> StreamingDistributionList.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListStreamingDistributionsResult]
+      val __obj = js.Dictionary.empty[js.Any]
+      StreamingDistributionList.foreach(__v => __obj.update("StreamingDistributionList", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListStreamingDistributionsResult]
     }
   }
 
@@ -3463,11 +3079,11 @@ package cloudfront {
     def apply(
         Resource: ResourceARN
     ): ListTagsForResourceRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "Resource" -> Resource.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListTagsForResourceRequest]
+      __obj.asInstanceOf[ListTagsForResourceRequest]
     }
   }
 
@@ -3483,11 +3099,11 @@ package cloudfront {
     def apply(
         Tags: Tags
     ): ListTagsForResourceResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "Tags" -> Tags.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListTagsForResourceResult]
+      __obj.asInstanceOf[ListTagsForResourceResult]
     }
   }
 
@@ -3509,14 +3125,14 @@ package cloudfront {
         IncludeCookies: Boolean,
         Prefix: String
     ): LoggingConfig = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "Bucket"         -> Bucket.asInstanceOf[js.Any],
         "Enabled"        -> Enabled.asInstanceOf[js.Any],
         "IncludeCookies" -> IncludeCookies.asInstanceOf[js.Any],
         "Prefix"         -> Prefix.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[LoggingConfig]
+      __obj.asInstanceOf[LoggingConfig]
     }
   }
 
@@ -3565,24 +3181,16 @@ package cloudfront {
         OriginPath: js.UndefOr[String] = js.undefined,
         S3OriginConfig: js.UndefOr[S3OriginConfig] = js.undefined
     ): Origin = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "DomainName" -> DomainName.asInstanceOf[js.Any],
-        "Id"         -> Id.asInstanceOf[js.Any],
-        "CustomHeaders" -> CustomHeaders.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "CustomOriginConfig" -> CustomOriginConfig.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "OriginPath" -> OriginPath.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "S3OriginConfig" -> S3OriginConfig.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "Id"         -> Id.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Origin]
+      CustomHeaders.foreach(__v => __obj.update("CustomHeaders", __v.asInstanceOf[js.Any]))
+      CustomOriginConfig.foreach(__v => __obj.update("CustomOriginConfig", __v.asInstanceOf[js.Any]))
+      OriginPath.foreach(__v => __obj.update("OriginPath", __v.asInstanceOf[js.Any]))
+      S3OriginConfig.foreach(__v => __obj.update("S3OriginConfig", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Origin]
     }
   }
 
@@ -3600,12 +3208,12 @@ package cloudfront {
         HeaderName: String,
         HeaderValue: String
     ): OriginCustomHeader = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "HeaderName"  -> HeaderName.asInstanceOf[js.Any],
         "HeaderValue" -> HeaderValue.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[OriginCustomHeader]
+      __obj.asInstanceOf[OriginCustomHeader]
     }
   }
 
@@ -3625,13 +3233,13 @@ package cloudfront {
         Id: String,
         Members: OriginGroupMembers
     ): OriginGroup = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "FailoverCriteria" -> FailoverCriteria.asInstanceOf[js.Any],
         "Id"               -> Id.asInstanceOf[js.Any],
         "Members"          -> Members.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[OriginGroup]
+      __obj.asInstanceOf[OriginGroup]
     }
   }
 
@@ -3647,11 +3255,11 @@ package cloudfront {
     def apply(
         StatusCodes: StatusCodes
     ): OriginGroupFailoverCriteria = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "StatusCodes" -> StatusCodes.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[OriginGroupFailoverCriteria]
+      __obj.asInstanceOf[OriginGroupFailoverCriteria]
     }
   }
 
@@ -3667,11 +3275,11 @@ package cloudfront {
     def apply(
         OriginId: String
     ): OriginGroupMember = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "OriginId" -> OriginId.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[OriginGroupMember]
+      __obj.asInstanceOf[OriginGroupMember]
     }
   }
 
@@ -3689,12 +3297,12 @@ package cloudfront {
         Items: OriginGroupMemberList,
         Quantity: Int
     ): OriginGroupMembers = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "Items"    -> Items.asInstanceOf[js.Any],
         "Quantity" -> Quantity.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[OriginGroupMembers]
+      __obj.asInstanceOf[OriginGroupMembers]
     }
   }
 
@@ -3712,14 +3320,12 @@ package cloudfront {
         Quantity: Int,
         Items: js.UndefOr[OriginGroupList] = js.undefined
     ): OriginGroups = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Quantity" -> Quantity.asInstanceOf[js.Any],
-        "Items" -> Items.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "Quantity" -> Quantity.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[OriginGroups]
+      Items.foreach(__v => __obj.update("Items", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[OriginGroups]
     }
   }
 
@@ -3745,12 +3351,12 @@ package cloudfront {
         Items: SslProtocolsList,
         Quantity: Int
     ): OriginSslProtocols = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "Items"    -> Items.asInstanceOf[js.Any],
         "Quantity" -> Quantity.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[OriginSslProtocols]
+      __obj.asInstanceOf[OriginSslProtocols]
     }
   }
 
@@ -3768,12 +3374,12 @@ package cloudfront {
         Items: OriginList,
         Quantity: Int
     ): Origins = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "Items"    -> Items.asInstanceOf[js.Any],
         "Quantity" -> Quantity.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Origins]
+      __obj.asInstanceOf[Origins]
     }
   }
 
@@ -3791,14 +3397,12 @@ package cloudfront {
         Quantity: Int,
         Items: js.UndefOr[PathList] = js.undefined
     ): Paths = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Quantity" -> Quantity.asInstanceOf[js.Any],
-        "Items" -> Items.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "Quantity" -> Quantity.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Paths]
+      Items.foreach(__v => __obj.update("Items", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Paths]
     }
   }
 
@@ -3826,13 +3430,13 @@ package cloudfront {
         Id: String,
         PublicKeyConfig: PublicKeyConfig
     ): PublicKey = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "CreatedTime"     -> CreatedTime.asInstanceOf[js.Any],
         "Id"              -> Id.asInstanceOf[js.Any],
         "PublicKeyConfig" -> PublicKeyConfig.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PublicKey]
+      __obj.asInstanceOf[PublicKey]
     }
   }
 
@@ -3854,16 +3458,14 @@ package cloudfront {
         Name: String,
         Comment: js.UndefOr[String] = js.undefined
     ): PublicKeyConfig = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "CallerReference" -> CallerReference.asInstanceOf[js.Any],
         "EncodedKey"      -> EncodedKey.asInstanceOf[js.Any],
-        "Name"            -> Name.asInstanceOf[js.Any],
-        "Comment" -> Comment.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "Name"            -> Name.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PublicKeyConfig]
+      Comment.foreach(__v => __obj.update("Comment", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PublicKeyConfig]
     }
   }
 
@@ -3885,18 +3487,14 @@ package cloudfront {
         Items: js.UndefOr[PublicKeySummaryList] = js.undefined,
         NextMarker: js.UndefOr[String] = js.undefined
     ): PublicKeyList = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "MaxItems" -> MaxItems.asInstanceOf[js.Any],
-        "Quantity" -> Quantity.asInstanceOf[js.Any],
-        "Items" -> Items.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NextMarker" -> NextMarker.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "Quantity" -> Quantity.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PublicKeyList]
+      Items.foreach(__v => __obj.update("Items", __v.asInstanceOf[js.Any]))
+      NextMarker.foreach(__v => __obj.update("NextMarker", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PublicKeyList]
     }
   }
 
@@ -3920,17 +3518,15 @@ package cloudfront {
         Name: String,
         Comment: js.UndefOr[String] = js.undefined
     ): PublicKeySummary = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "CreatedTime" -> CreatedTime.asInstanceOf[js.Any],
         "EncodedKey"  -> EncodedKey.asInstanceOf[js.Any],
         "Id"          -> Id.asInstanceOf[js.Any],
-        "Name"        -> Name.asInstanceOf[js.Any],
-        "Comment" -> Comment.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "Name"        -> Name.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PublicKeySummary]
+      Comment.foreach(__v => __obj.update("Comment", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PublicKeySummary]
     }
   }
 
@@ -3948,12 +3544,12 @@ package cloudfront {
         ProfileId: String,
         QueryArg: String
     ): QueryArgProfile = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ProfileId" -> ProfileId.asInstanceOf[js.Any],
         "QueryArg"  -> QueryArg.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[QueryArgProfile]
+      __obj.asInstanceOf[QueryArgProfile]
     }
   }
 
@@ -3971,14 +3567,12 @@ package cloudfront {
         ForwardWhenQueryArgProfileIsUnknown: Boolean,
         QueryArgProfiles: js.UndefOr[QueryArgProfiles] = js.undefined
     ): QueryArgProfileConfig = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ForwardWhenQueryArgProfileIsUnknown" -> ForwardWhenQueryArgProfileIsUnknown.asInstanceOf[js.Any],
-        "QueryArgProfiles" -> QueryArgProfiles.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "ForwardWhenQueryArgProfileIsUnknown" -> ForwardWhenQueryArgProfileIsUnknown.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[QueryArgProfileConfig]
+      QueryArgProfiles.foreach(__v => __obj.update("QueryArgProfiles", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[QueryArgProfileConfig]
     }
   }
 
@@ -3996,14 +3590,12 @@ package cloudfront {
         Quantity: Int,
         Items: js.UndefOr[QueryArgProfileList] = js.undefined
     ): QueryArgProfiles = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Quantity" -> Quantity.asInstanceOf[js.Any],
-        "Items" -> Items.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "Quantity" -> Quantity.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[QueryArgProfiles]
+      Items.foreach(__v => __obj.update("Items", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[QueryArgProfiles]
     }
   }
 
@@ -4018,14 +3610,12 @@ package cloudfront {
         Quantity: Int,
         Items: js.UndefOr[QueryStringCacheKeysList] = js.undefined
     ): QueryStringCacheKeys = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Quantity" -> Quantity.asInstanceOf[js.Any],
-        "Items" -> Items.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "Quantity" -> Quantity.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[QueryStringCacheKeys]
+      Items.foreach(__v => __obj.update("Items", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[QueryStringCacheKeys]
     }
   }
 
@@ -4041,11 +3631,11 @@ package cloudfront {
     def apply(
         GeoRestriction: GeoRestriction
     ): Restrictions = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "GeoRestriction" -> GeoRestriction.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Restrictions]
+      __obj.asInstanceOf[Restrictions]
     }
   }
 
@@ -4063,12 +3653,12 @@ package cloudfront {
         DomainName: String,
         OriginAccessIdentity: String
     ): S3Origin = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "DomainName"           -> DomainName.asInstanceOf[js.Any],
         "OriginAccessIdentity" -> OriginAccessIdentity.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[S3Origin]
+      __obj.asInstanceOf[S3Origin]
     }
   }
 
@@ -4084,11 +3674,11 @@ package cloudfront {
     def apply(
         OriginAccessIdentity: String
     ): S3OriginConfig = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "OriginAccessIdentity" -> OriginAccessIdentity.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[S3OriginConfig]
+      __obj.asInstanceOf[S3OriginConfig]
     }
   }
 
@@ -4113,16 +3703,10 @@ package cloudfront {
         AwsAccountNumber: js.UndefOr[String] = js.undefined,
         KeyPairIds: js.UndefOr[KeyPairIds] = js.undefined
     ): Signer = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "AwsAccountNumber" -> AwsAccountNumber.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "KeyPairIds" -> KeyPairIds.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Signer]
+      val __obj = js.Dictionary.empty[js.Any]
+      AwsAccountNumber.foreach(__v => __obj.update("AwsAccountNumber", __v.asInstanceOf[js.Any]))
+      KeyPairIds.foreach(__v => __obj.update("KeyPairIds", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Signer]
     }
   }
 
@@ -4149,12 +3733,12 @@ package cloudfront {
         Items: StatusCodeList,
         Quantity: Int
     ): StatusCodes = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "Items"    -> Items.asInstanceOf[js.Any],
         "Quantity" -> Quantity.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StatusCodes]
+      __obj.asInstanceOf[StatusCodes]
     }
   }
 
@@ -4182,19 +3766,17 @@ package cloudfront {
         StreamingDistributionConfig: StreamingDistributionConfig,
         LastModifiedTime: js.UndefOr[timestamp] = js.undefined
     ): StreamingDistribution = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ARN"                         -> ARN.asInstanceOf[js.Any],
         "ActiveTrustedSigners"        -> ActiveTrustedSigners.asInstanceOf[js.Any],
         "DomainName"                  -> DomainName.asInstanceOf[js.Any],
         "Id"                          -> Id.asInstanceOf[js.Any],
         "Status"                      -> Status.asInstanceOf[js.Any],
-        "StreamingDistributionConfig" -> StreamingDistributionConfig.asInstanceOf[js.Any],
-        "LastModifiedTime" -> LastModifiedTime.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "StreamingDistributionConfig" -> StreamingDistributionConfig.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StreamingDistribution]
+      LastModifiedTime.foreach(__v => __obj.update("LastModifiedTime", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[StreamingDistribution]
     }
   }
 
@@ -4224,24 +3806,18 @@ package cloudfront {
         Logging: js.UndefOr[StreamingLoggingConfig] = js.undefined,
         PriceClass: js.UndefOr[PriceClass] = js.undefined
     ): StreamingDistributionConfig = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "CallerReference" -> CallerReference.asInstanceOf[js.Any],
         "Comment"         -> Comment.asInstanceOf[js.Any],
         "Enabled"         -> Enabled.asInstanceOf[js.Any],
         "S3Origin"        -> S3Origin.asInstanceOf[js.Any],
-        "TrustedSigners"  -> TrustedSigners.asInstanceOf[js.Any],
-        "Aliases" -> Aliases.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Logging" -> Logging.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "PriceClass" -> PriceClass.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "TrustedSigners"  -> TrustedSigners.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StreamingDistributionConfig]
+      Aliases.foreach(__v => __obj.update("Aliases", __v.asInstanceOf[js.Any]))
+      Logging.foreach(__v => __obj.update("Logging", __v.asInstanceOf[js.Any]))
+      PriceClass.foreach(__v => __obj.update("PriceClass", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[StreamingDistributionConfig]
     }
   }
 
@@ -4259,12 +3835,12 @@ package cloudfront {
         StreamingDistributionConfig: StreamingDistributionConfig,
         Tags: Tags
     ): StreamingDistributionConfigWithTags = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "StreamingDistributionConfig" -> StreamingDistributionConfig.asInstanceOf[js.Any],
         "Tags"                        -> Tags.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StreamingDistributionConfigWithTags]
+      __obj.asInstanceOf[StreamingDistributionConfigWithTags]
     }
   }
 
@@ -4290,20 +3866,16 @@ package cloudfront {
         Items: js.UndefOr[StreamingDistributionSummaryList] = js.undefined,
         NextMarker: js.UndefOr[String] = js.undefined
     ): StreamingDistributionList = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "IsTruncated" -> IsTruncated.asInstanceOf[js.Any],
         "Marker"      -> Marker.asInstanceOf[js.Any],
         "MaxItems"    -> MaxItems.asInstanceOf[js.Any],
-        "Quantity"    -> Quantity.asInstanceOf[js.Any],
-        "Items" -> Items.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NextMarker" -> NextMarker.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "Quantity"    -> Quantity.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StreamingDistributionList]
+      Items.foreach(__v => __obj.update("Items", __v.asInstanceOf[js.Any]))
+      NextMarker.foreach(__v => __obj.update("NextMarker", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[StreamingDistributionList]
     }
   }
 
@@ -4339,7 +3911,7 @@ package cloudfront {
         Status: String,
         TrustedSigners: TrustedSigners
     ): StreamingDistributionSummary = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ARN"              -> ARN.asInstanceOf[js.Any],
         "Aliases"          -> Aliases.asInstanceOf[js.Any],
         "Comment"          -> Comment.asInstanceOf[js.Any],
@@ -4351,9 +3923,9 @@ package cloudfront {
         "S3Origin"         -> S3Origin.asInstanceOf[js.Any],
         "Status"           -> Status.asInstanceOf[js.Any],
         "TrustedSigners"   -> TrustedSigners.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StreamingDistributionSummary]
+      __obj.asInstanceOf[StreamingDistributionSummary]
     }
   }
 
@@ -4373,13 +3945,13 @@ package cloudfront {
         Enabled: Boolean,
         Prefix: String
     ): StreamingLoggingConfig = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "Bucket"  -> Bucket.asInstanceOf[js.Any],
         "Enabled" -> Enabled.asInstanceOf[js.Any],
         "Prefix"  -> Prefix.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StreamingLoggingConfig]
+      __obj.asInstanceOf[StreamingLoggingConfig]
     }
   }
 
@@ -4397,14 +3969,12 @@ package cloudfront {
         Key: TagKey,
         Value: js.UndefOr[TagValue] = js.undefined
     ): Tag = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Key" -> Key.asInstanceOf[js.Any],
-        "Value" -> Value.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "Key" -> Key.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Tag]
+      Value.foreach(__v => __obj.update("Value", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Tag]
     }
   }
 
@@ -4420,13 +3990,9 @@ package cloudfront {
     def apply(
         Items: js.UndefOr[TagKeyList] = js.undefined
     ): TagKeys = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Items" -> Items.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[TagKeys]
+      val __obj = js.Dictionary.empty[js.Any]
+      Items.foreach(__v => __obj.update("Items", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[TagKeys]
     }
   }
 
@@ -4444,12 +4010,12 @@ package cloudfront {
         Resource: ResourceARN,
         Tags: Tags
     ): TagResourceRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "Resource" -> Resource.asInstanceOf[js.Any],
         "Tags"     -> Tags.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[TagResourceRequest]
+      __obj.asInstanceOf[TagResourceRequest]
     }
   }
 
@@ -4465,13 +4031,9 @@ package cloudfront {
     def apply(
         Items: js.UndefOr[TagList] = js.undefined
     ): Tags = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Items" -> Items.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Tags]
+      val __obj = js.Dictionary.empty[js.Any]
+      Items.foreach(__v => __obj.update("Items", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Tags]
     }
   }
 
@@ -4495,15 +4057,13 @@ package cloudfront {
         Quantity: Int,
         Items: js.UndefOr[AwsAccountNumberList] = js.undefined
     ): TrustedSigners = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "Enabled"  -> Enabled.asInstanceOf[js.Any],
-        "Quantity" -> Quantity.asInstanceOf[js.Any],
-        "Items" -> Items.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "Quantity" -> Quantity.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[TrustedSigners]
+      Items.foreach(__v => __obj.update("Items", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[TrustedSigners]
     }
   }
 
@@ -4521,12 +4081,12 @@ package cloudfront {
         Resource: ResourceARN,
         TagKeys: TagKeys
     ): UntagResourceRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "Resource" -> Resource.asInstanceOf[js.Any],
         "TagKeys"  -> TagKeys.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UntagResourceRequest]
+      __obj.asInstanceOf[UntagResourceRequest]
     }
   }
 
@@ -4546,17 +4106,13 @@ package cloudfront {
         Id: String,
         IfMatch: js.UndefOr[String] = js.undefined
     ): UpdateCloudFrontOriginAccessIdentityRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "CloudFrontOriginAccessIdentityConfig" -> CloudFrontOriginAccessIdentityConfig.asInstanceOf[js.Any],
-        "Id"                                   -> Id.asInstanceOf[js.Any],
-        "IfMatch" -> IfMatch.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "Id"                                   -> Id.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal
-        .applyDynamicNamed("apply")(_fields: _*)
-        .asInstanceOf[UpdateCloudFrontOriginAccessIdentityRequest]
+      IfMatch.foreach(__v => __obj.update("IfMatch", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateCloudFrontOriginAccessIdentityRequest]
     }
   }
 
@@ -4574,18 +4130,12 @@ package cloudfront {
         CloudFrontOriginAccessIdentity: js.UndefOr[CloudFrontOriginAccessIdentity] = js.undefined,
         ETag: js.UndefOr[String] = js.undefined
     ): UpdateCloudFrontOriginAccessIdentityResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "CloudFrontOriginAccessIdentity" -> CloudFrontOriginAccessIdentity.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ETag" -> ETag.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal
-        .applyDynamicNamed("apply")(_fields: _*)
-        .asInstanceOf[UpdateCloudFrontOriginAccessIdentityResult]
+      val __obj = js.Dictionary.empty[js.Any]
+      CloudFrontOriginAccessIdentity.foreach(
+        __v => __obj.update("CloudFrontOriginAccessIdentity", __v.asInstanceOf[js.Any])
+      )
+      ETag.foreach(__v => __obj.update("ETag", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateCloudFrontOriginAccessIdentityResult]
     }
   }
 
@@ -4605,15 +4155,13 @@ package cloudfront {
         Id: String,
         IfMatch: js.UndefOr[String] = js.undefined
     ): UpdateDistributionRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "DistributionConfig" -> DistributionConfig.asInstanceOf[js.Any],
-        "Id"                 -> Id.asInstanceOf[js.Any],
-        "IfMatch" -> IfMatch.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "Id"                 -> Id.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateDistributionRequest]
+      IfMatch.foreach(__v => __obj.update("IfMatch", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateDistributionRequest]
     }
   }
 
@@ -4631,16 +4179,10 @@ package cloudfront {
         Distribution: js.UndefOr[Distribution] = js.undefined,
         ETag: js.UndefOr[String] = js.undefined
     ): UpdateDistributionResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Distribution" -> Distribution.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ETag" -> ETag.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateDistributionResult]
+      val __obj = js.Dictionary.empty[js.Any]
+      Distribution.foreach(__v => __obj.update("Distribution", __v.asInstanceOf[js.Any]))
+      ETag.foreach(__v => __obj.update("ETag", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateDistributionResult]
     }
   }
 
@@ -4657,15 +4199,13 @@ package cloudfront {
         Id: String,
         IfMatch: js.UndefOr[String] = js.undefined
     ): UpdateFieldLevelEncryptionConfigRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "FieldLevelEncryptionConfig" -> FieldLevelEncryptionConfig.asInstanceOf[js.Any],
-        "Id"                         -> Id.asInstanceOf[js.Any],
-        "IfMatch" -> IfMatch.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "Id"                         -> Id.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateFieldLevelEncryptionConfigRequest]
+      IfMatch.foreach(__v => __obj.update("IfMatch", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateFieldLevelEncryptionConfigRequest]
     }
   }
 
@@ -4680,16 +4220,10 @@ package cloudfront {
         ETag: js.UndefOr[String] = js.undefined,
         FieldLevelEncryption: js.UndefOr[FieldLevelEncryption] = js.undefined
     ): UpdateFieldLevelEncryptionConfigResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ETag" -> ETag.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "FieldLevelEncryption" -> FieldLevelEncryption.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateFieldLevelEncryptionConfigResult]
+      val __obj = js.Dictionary.empty[js.Any]
+      ETag.foreach(__v => __obj.update("ETag", __v.asInstanceOf[js.Any]))
+      FieldLevelEncryption.foreach(__v => __obj.update("FieldLevelEncryption", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateFieldLevelEncryptionConfigResult]
     }
   }
 
@@ -4706,15 +4240,13 @@ package cloudfront {
         Id: String,
         IfMatch: js.UndefOr[String] = js.undefined
     ): UpdateFieldLevelEncryptionProfileRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "FieldLevelEncryptionProfileConfig" -> FieldLevelEncryptionProfileConfig.asInstanceOf[js.Any],
-        "Id"                                -> Id.asInstanceOf[js.Any],
-        "IfMatch" -> IfMatch.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "Id"                                -> Id.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateFieldLevelEncryptionProfileRequest]
+      IfMatch.foreach(__v => __obj.update("IfMatch", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateFieldLevelEncryptionProfileRequest]
     }
   }
 
@@ -4729,16 +4261,10 @@ package cloudfront {
         ETag: js.UndefOr[String] = js.undefined,
         FieldLevelEncryptionProfile: js.UndefOr[FieldLevelEncryptionProfile] = js.undefined
     ): UpdateFieldLevelEncryptionProfileResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ETag" -> ETag.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "FieldLevelEncryptionProfile" -> FieldLevelEncryptionProfile.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateFieldLevelEncryptionProfileResult]
+      val __obj = js.Dictionary.empty[js.Any]
+      ETag.foreach(__v => __obj.update("ETag", __v.asInstanceOf[js.Any]))
+      FieldLevelEncryptionProfile.foreach(__v => __obj.update("FieldLevelEncryptionProfile", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateFieldLevelEncryptionProfileResult]
     }
   }
 
@@ -4755,15 +4281,13 @@ package cloudfront {
         PublicKeyConfig: PublicKeyConfig,
         IfMatch: js.UndefOr[String] = js.undefined
     ): UpdatePublicKeyRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "Id"              -> Id.asInstanceOf[js.Any],
-        "PublicKeyConfig" -> PublicKeyConfig.asInstanceOf[js.Any],
-        "IfMatch" -> IfMatch.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "PublicKeyConfig" -> PublicKeyConfig.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdatePublicKeyRequest]
+      IfMatch.foreach(__v => __obj.update("IfMatch", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdatePublicKeyRequest]
     }
   }
 
@@ -4778,16 +4302,10 @@ package cloudfront {
         ETag: js.UndefOr[String] = js.undefined,
         PublicKey: js.UndefOr[PublicKey] = js.undefined
     ): UpdatePublicKeyResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ETag" -> ETag.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "PublicKey" -> PublicKey.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdatePublicKeyResult]
+      val __obj = js.Dictionary.empty[js.Any]
+      ETag.foreach(__v => __obj.update("ETag", __v.asInstanceOf[js.Any]))
+      PublicKey.foreach(__v => __obj.update("PublicKey", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdatePublicKeyResult]
     }
   }
 
@@ -4807,15 +4325,13 @@ package cloudfront {
         StreamingDistributionConfig: StreamingDistributionConfig,
         IfMatch: js.UndefOr[String] = js.undefined
     ): UpdateStreamingDistributionRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "Id"                          -> Id.asInstanceOf[js.Any],
-        "StreamingDistributionConfig" -> StreamingDistributionConfig.asInstanceOf[js.Any],
-        "IfMatch" -> IfMatch.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "StreamingDistributionConfig" -> StreamingDistributionConfig.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateStreamingDistributionRequest]
+      IfMatch.foreach(__v => __obj.update("IfMatch", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateStreamingDistributionRequest]
     }
   }
 
@@ -4833,16 +4349,10 @@ package cloudfront {
         ETag: js.UndefOr[String] = js.undefined,
         StreamingDistribution: js.UndefOr[StreamingDistribution] = js.undefined
     ): UpdateStreamingDistributionResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ETag" -> ETag.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "StreamingDistribution" -> StreamingDistribution.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateStreamingDistributionResult]
+      val __obj = js.Dictionary.empty[js.Any]
+      ETag.foreach(__v => __obj.update("ETag", __v.asInstanceOf[js.Any]))
+      StreamingDistribution.foreach(__v => __obj.update("StreamingDistribution", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateStreamingDistributionResult]
     }
   }
 
@@ -4898,31 +4408,17 @@ package cloudfront {
         MinimumProtocolVersion: js.UndefOr[MinimumProtocolVersion] = js.undefined,
         SSLSupportMethod: js.UndefOr[SSLSupportMethod] = js.undefined
     ): ViewerCertificate = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ACMCertificateArn" -> ACMCertificateArn.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Certificate" -> Certificate.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "CertificateSource" -> CertificateSource.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "CloudFrontDefaultCertificate" -> CloudFrontDefaultCertificate.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "IAMCertificateId" -> IAMCertificateId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MinimumProtocolVersion" -> MinimumProtocolVersion.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SSLSupportMethod" -> SSLSupportMethod.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ViewerCertificate]
+      val __obj = js.Dictionary.empty[js.Any]
+      ACMCertificateArn.foreach(__v => __obj.update("ACMCertificateArn", __v.asInstanceOf[js.Any]))
+      Certificate.foreach(__v => __obj.update("Certificate", __v.asInstanceOf[js.Any]))
+      CertificateSource.foreach(__v => __obj.update("CertificateSource", __v.asInstanceOf[js.Any]))
+      CloudFrontDefaultCertificate.foreach(
+        __v => __obj.update("CloudFrontDefaultCertificate", __v.asInstanceOf[js.Any])
+      )
+      IAMCertificateId.foreach(__v => __obj.update("IAMCertificateId", __v.asInstanceOf[js.Any]))
+      MinimumProtocolVersion.foreach(__v => __obj.update("MinimumProtocolVersion", __v.asInstanceOf[js.Any]))
+      SSLSupportMethod.foreach(__v => __obj.update("SSLSupportMethod", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ViewerCertificate]
     }
   }
 

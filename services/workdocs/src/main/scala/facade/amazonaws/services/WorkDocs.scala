@@ -255,15 +255,13 @@ package workdocs {
         VersionId: DocumentVersionIdType,
         AuthenticationToken: js.UndefOr[AuthenticationHeaderType] = js.undefined
     ): AbortDocumentVersionUploadRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "DocumentId" -> DocumentId.asInstanceOf[js.Any],
-        "VersionId"  -> VersionId.asInstanceOf[js.Any],
-        "AuthenticationToken" -> AuthenticationToken.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "VersionId"  -> VersionId.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AbortDocumentVersionUploadRequest]
+      AuthenticationToken.foreach(__v => __obj.update("AuthenticationToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AbortDocumentVersionUploadRequest]
     }
   }
 
@@ -278,14 +276,12 @@ package workdocs {
         UserId: IdType,
         AuthenticationToken: js.UndefOr[AuthenticationHeaderType] = js.undefined
     ): ActivateUserRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "UserId" -> UserId.asInstanceOf[js.Any],
-        "AuthenticationToken" -> AuthenticationToken.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "UserId" -> UserId.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ActivateUserRequest]
+      AuthenticationToken.foreach(__v => __obj.update("AuthenticationToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ActivateUserRequest]
     }
   }
 
@@ -298,13 +294,9 @@ package workdocs {
     def apply(
         User: js.UndefOr[User] = js.undefined
     ): ActivateUserResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "User" -> User.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ActivateUserResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      User.foreach(__v => __obj.update("User", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ActivateUserResponse]
     }
   }
 
@@ -336,37 +328,17 @@ package workdocs {
         TimeStamp: js.UndefOr[TimestampType] = js.undefined,
         Type: js.UndefOr[ActivityType] = js.undefined
     ): Activity = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "CommentMetadata" -> CommentMetadata.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Initiator" -> Initiator.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "IsIndirectActivity" -> IsIndirectActivity.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "OrganizationId" -> OrganizationId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "OriginalParent" -> OriginalParent.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Participants" -> Participants.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ResourceMetadata" -> ResourceMetadata.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "TimeStamp" -> TimeStamp.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Type" -> Type.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Activity]
+      val __obj = js.Dictionary.empty[js.Any]
+      CommentMetadata.foreach(__v => __obj.update("CommentMetadata", __v.asInstanceOf[js.Any]))
+      Initiator.foreach(__v => __obj.update("Initiator", __v.asInstanceOf[js.Any]))
+      IsIndirectActivity.foreach(__v => __obj.update("IsIndirectActivity", __v.asInstanceOf[js.Any]))
+      OrganizationId.foreach(__v => __obj.update("OrganizationId", __v.asInstanceOf[js.Any]))
+      OriginalParent.foreach(__v => __obj.update("OriginalParent", __v.asInstanceOf[js.Any]))
+      Participants.foreach(__v => __obj.update("Participants", __v.asInstanceOf[js.Any]))
+      ResourceMetadata.foreach(__v => __obj.update("ResourceMetadata", __v.asInstanceOf[js.Any]))
+      TimeStamp.foreach(__v => __obj.update("TimeStamp", __v.asInstanceOf[js.Any]))
+      Type.foreach(__v => __obj.update("Type", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Activity]
     }
   }
 
@@ -457,18 +429,14 @@ package workdocs {
         AuthenticationToken: js.UndefOr[AuthenticationHeaderType] = js.undefined,
         NotificationOptions: js.UndefOr[NotificationOptions] = js.undefined
     ): AddResourcePermissionsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "Principals" -> Principals.asInstanceOf[js.Any],
-        "ResourceId" -> ResourceId.asInstanceOf[js.Any],
-        "AuthenticationToken" -> AuthenticationToken.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NotificationOptions" -> NotificationOptions.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "ResourceId" -> ResourceId.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AddResourcePermissionsRequest]
+      AuthenticationToken.foreach(__v => __obj.update("AuthenticationToken", __v.asInstanceOf[js.Any]))
+      NotificationOptions.foreach(__v => __obj.update("NotificationOptions", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AddResourcePermissionsRequest]
     }
   }
 
@@ -481,13 +449,9 @@ package workdocs {
     def apply(
         ShareResults: js.UndefOr[ShareResultsList] = js.undefined
     ): AddResourcePermissionsResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ShareResults" -> ShareResults.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AddResourcePermissionsResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      ShareResults.foreach(__v => __obj.update("ShareResults", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AddResourcePermissionsResponse]
     }
   }
 
@@ -526,35 +490,19 @@ package workdocs {
         ThreadId: js.UndefOr[CommentIdType] = js.undefined,
         Visibility: js.UndefOr[CommentVisibilityType] = js.undefined
     ): Comment = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "CommentId" -> CommentId.asInstanceOf[js.Any],
-        "Contributor" -> Contributor.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "CreatedTimestamp" -> CreatedTimestamp.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ParentId" -> ParentId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "RecipientId" -> RecipientId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Status" -> Status.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Text" -> Text.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ThreadId" -> ThreadId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Visibility" -> Visibility.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "CommentId" -> CommentId.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Comment]
+      Contributor.foreach(__v => __obj.update("Contributor", __v.asInstanceOf[js.Any]))
+      CreatedTimestamp.foreach(__v => __obj.update("CreatedTimestamp", __v.asInstanceOf[js.Any]))
+      ParentId.foreach(__v => __obj.update("ParentId", __v.asInstanceOf[js.Any]))
+      RecipientId.foreach(__v => __obj.update("RecipientId", __v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.update("Status", __v.asInstanceOf[js.Any]))
+      Text.foreach(__v => __obj.update("Text", __v.asInstanceOf[js.Any]))
+      ThreadId.foreach(__v => __obj.update("ThreadId", __v.asInstanceOf[js.Any]))
+      Visibility.foreach(__v => __obj.update("Visibility", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Comment]
     }
   }
 
@@ -578,25 +526,13 @@ package workdocs {
         CreatedTimestamp: js.UndefOr[TimestampType] = js.undefined,
         RecipientId: js.UndefOr[IdType] = js.undefined
     ): CommentMetadata = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "CommentId" -> CommentId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "CommentStatus" -> CommentStatus.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Contributor" -> Contributor.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "CreatedTimestamp" -> CreatedTimestamp.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "RecipientId" -> RecipientId.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CommentMetadata]
+      val __obj = js.Dictionary.empty[js.Any]
+      CommentId.foreach(__v => __obj.update("CommentId", __v.asInstanceOf[js.Any]))
+      CommentStatus.foreach(__v => __obj.update("CommentStatus", __v.asInstanceOf[js.Any]))
+      Contributor.foreach(__v => __obj.update("Contributor", __v.asInstanceOf[js.Any]))
+      CreatedTimestamp.foreach(__v => __obj.update("CreatedTimestamp", __v.asInstanceOf[js.Any]))
+      RecipientId.foreach(__v => __obj.update("RecipientId", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CommentMetadata]
     }
   }
 
@@ -638,28 +574,18 @@ package workdocs {
         ThreadId: js.UndefOr[CommentIdType] = js.undefined,
         Visibility: js.UndefOr[CommentVisibilityType] = js.undefined
     ): CreateCommentRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "DocumentId" -> DocumentId.asInstanceOf[js.Any],
         "Text"       -> Text.asInstanceOf[js.Any],
-        "VersionId"  -> VersionId.asInstanceOf[js.Any],
-        "AuthenticationToken" -> AuthenticationToken.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NotifyCollaborators" -> NotifyCollaborators.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ParentId" -> ParentId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ThreadId" -> ThreadId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Visibility" -> Visibility.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "VersionId"  -> VersionId.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateCommentRequest]
+      AuthenticationToken.foreach(__v => __obj.update("AuthenticationToken", __v.asInstanceOf[js.Any]))
+      NotifyCollaborators.foreach(__v => __obj.update("NotifyCollaborators", __v.asInstanceOf[js.Any]))
+      ParentId.foreach(__v => __obj.update("ParentId", __v.asInstanceOf[js.Any]))
+      ThreadId.foreach(__v => __obj.update("ThreadId", __v.asInstanceOf[js.Any]))
+      Visibility.foreach(__v => __obj.update("Visibility", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateCommentRequest]
     }
   }
 
@@ -672,13 +598,9 @@ package workdocs {
     def apply(
         Comment: js.UndefOr[Comment] = js.undefined
     ): CreateCommentResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Comment" -> Comment.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateCommentResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      Comment.foreach(__v => __obj.update("Comment", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateCommentResponse]
     }
   }
 
@@ -697,18 +619,14 @@ package workdocs {
         AuthenticationToken: js.UndefOr[AuthenticationHeaderType] = js.undefined,
         VersionId: js.UndefOr[DocumentVersionIdType] = js.undefined
     ): CreateCustomMetadataRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "CustomMetadata" -> CustomMetadata.asInstanceOf[js.Any],
-        "ResourceId"     -> ResourceId.asInstanceOf[js.Any],
-        "AuthenticationToken" -> AuthenticationToken.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "VersionId" -> VersionId.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "ResourceId"     -> ResourceId.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateCustomMetadataRequest]
+      AuthenticationToken.foreach(__v => __obj.update("AuthenticationToken", __v.asInstanceOf[js.Any]))
+      VersionId.foreach(__v => __obj.update("VersionId", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateCustomMetadataRequest]
     }
   }
 
@@ -718,10 +636,9 @@ package workdocs {
   object CreateCustomMetadataResponse {
     def apply(
         ): CreateCustomMetadataResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary.empty[js.Any]
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateCustomMetadataResponse]
+      __obj.asInstanceOf[CreateCustomMetadataResponse]
     }
   }
 
@@ -738,17 +655,13 @@ package workdocs {
         AuthenticationToken: js.UndefOr[AuthenticationHeaderType] = js.undefined,
         Name: js.UndefOr[ResourceNameType] = js.undefined
     ): CreateFolderRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ParentFolderId" -> ParentFolderId.asInstanceOf[js.Any],
-        "AuthenticationToken" -> AuthenticationToken.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Name" -> Name.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "ParentFolderId" -> ParentFolderId.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateFolderRequest]
+      AuthenticationToken.foreach(__v => __obj.update("AuthenticationToken", __v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateFolderRequest]
     }
   }
 
@@ -761,13 +674,9 @@ package workdocs {
     def apply(
         Metadata: js.UndefOr[FolderMetadata] = js.undefined
     ): CreateFolderResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Metadata" -> Metadata.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateFolderResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      Metadata.foreach(__v => __obj.update("Metadata", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateFolderResponse]
     }
   }
 
@@ -784,15 +693,13 @@ package workdocs {
         ResourceId: ResourceIdType,
         AuthenticationToken: js.UndefOr[AuthenticationHeaderType] = js.undefined
     ): CreateLabelsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "Labels"     -> Labels.asInstanceOf[js.Any],
-        "ResourceId" -> ResourceId.asInstanceOf[js.Any],
-        "AuthenticationToken" -> AuthenticationToken.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "ResourceId" -> ResourceId.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateLabelsRequest]
+      AuthenticationToken.foreach(__v => __obj.update("AuthenticationToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateLabelsRequest]
     }
   }
 
@@ -802,10 +709,9 @@ package workdocs {
   object CreateLabelsResponse {
     def apply(
         ): CreateLabelsResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary.empty[js.Any]
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateLabelsResponse]
+      __obj.asInstanceOf[CreateLabelsResponse]
     }
   }
 
@@ -824,14 +730,14 @@ package workdocs {
         Protocol: SubscriptionProtocolType,
         SubscriptionType: SubscriptionType
     ): CreateNotificationSubscriptionRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "Endpoint"         -> Endpoint.asInstanceOf[js.Any],
         "OrganizationId"   -> OrganizationId.asInstanceOf[js.Any],
         "Protocol"         -> Protocol.asInstanceOf[js.Any],
         "SubscriptionType" -> SubscriptionType.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateNotificationSubscriptionRequest]
+      __obj.asInstanceOf[CreateNotificationSubscriptionRequest]
     }
   }
 
@@ -844,13 +750,9 @@ package workdocs {
     def apply(
         Subscription: js.UndefOr[Subscription] = js.undefined
     ): CreateNotificationSubscriptionResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Subscription" -> Subscription.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateNotificationSubscriptionResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      Subscription.foreach(__v => __obj.update("Subscription", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateNotificationSubscriptionResponse]
     }
   }
 
@@ -879,29 +781,19 @@ package workdocs {
         StorageRule: js.UndefOr[StorageRuleType] = js.undefined,
         TimeZoneId: js.UndefOr[TimeZoneIdType] = js.undefined
     ): CreateUserRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "GivenName" -> GivenName.asInstanceOf[js.Any],
         "Password"  -> Password.asInstanceOf[js.Any],
         "Surname"   -> Surname.asInstanceOf[js.Any],
-        "Username"  -> Username.asInstanceOf[js.Any],
-        "AuthenticationToken" -> AuthenticationToken.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "EmailAddress" -> EmailAddress.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "OrganizationId" -> OrganizationId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "StorageRule" -> StorageRule.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "TimeZoneId" -> TimeZoneId.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "Username"  -> Username.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateUserRequest]
+      AuthenticationToken.foreach(__v => __obj.update("AuthenticationToken", __v.asInstanceOf[js.Any]))
+      EmailAddress.foreach(__v => __obj.update("EmailAddress", __v.asInstanceOf[js.Any]))
+      OrganizationId.foreach(__v => __obj.update("OrganizationId", __v.asInstanceOf[js.Any]))
+      StorageRule.foreach(__v => __obj.update("StorageRule", __v.asInstanceOf[js.Any]))
+      TimeZoneId.foreach(__v => __obj.update("TimeZoneId", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateUserRequest]
     }
   }
 
@@ -914,13 +806,9 @@ package workdocs {
     def apply(
         User: js.UndefOr[User] = js.undefined
     ): CreateUserResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "User" -> User.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateUserResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      User.foreach(__v => __obj.update("User", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateUserResponse]
     }
   }
 
@@ -935,14 +823,12 @@ package workdocs {
         UserId: IdType,
         AuthenticationToken: js.UndefOr[AuthenticationHeaderType] = js.undefined
     ): DeactivateUserRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "UserId" -> UserId.asInstanceOf[js.Any],
-        "AuthenticationToken" -> AuthenticationToken.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "UserId" -> UserId.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeactivateUserRequest]
+      AuthenticationToken.foreach(__v => __obj.update("AuthenticationToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DeactivateUserRequest]
     }
   }
 
@@ -961,16 +847,14 @@ package workdocs {
         VersionId: DocumentVersionIdType,
         AuthenticationToken: js.UndefOr[AuthenticationHeaderType] = js.undefined
     ): DeleteCommentRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "CommentId"  -> CommentId.asInstanceOf[js.Any],
         "DocumentId" -> DocumentId.asInstanceOf[js.Any],
-        "VersionId"  -> VersionId.asInstanceOf[js.Any],
-        "AuthenticationToken" -> AuthenticationToken.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "VersionId"  -> VersionId.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteCommentRequest]
+      AuthenticationToken.foreach(__v => __obj.update("AuthenticationToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DeleteCommentRequest]
     }
   }
 
@@ -991,23 +875,15 @@ package workdocs {
         Keys: js.UndefOr[CustomMetadataKeyList] = js.undefined,
         VersionId: js.UndefOr[DocumentVersionIdType] = js.undefined
     ): DeleteCustomMetadataRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ResourceId" -> ResourceId.asInstanceOf[js.Any],
-        "AuthenticationToken" -> AuthenticationToken.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DeleteAll" -> DeleteAll.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Keys" -> Keys.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "VersionId" -> VersionId.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "ResourceId" -> ResourceId.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteCustomMetadataRequest]
+      AuthenticationToken.foreach(__v => __obj.update("AuthenticationToken", __v.asInstanceOf[js.Any]))
+      DeleteAll.foreach(__v => __obj.update("DeleteAll", __v.asInstanceOf[js.Any]))
+      Keys.foreach(__v => __obj.update("Keys", __v.asInstanceOf[js.Any]))
+      VersionId.foreach(__v => __obj.update("VersionId", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DeleteCustomMetadataRequest]
     }
   }
 
@@ -1017,10 +893,9 @@ package workdocs {
   object DeleteCustomMetadataResponse {
     def apply(
         ): DeleteCustomMetadataResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary.empty[js.Any]
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteCustomMetadataResponse]
+      __obj.asInstanceOf[DeleteCustomMetadataResponse]
     }
   }
 
@@ -1035,14 +910,12 @@ package workdocs {
         DocumentId: ResourceIdType,
         AuthenticationToken: js.UndefOr[AuthenticationHeaderType] = js.undefined
     ): DeleteDocumentRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "DocumentId" -> DocumentId.asInstanceOf[js.Any],
-        "AuthenticationToken" -> AuthenticationToken.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "DocumentId" -> DocumentId.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteDocumentRequest]
+      AuthenticationToken.foreach(__v => __obj.update("AuthenticationToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DeleteDocumentRequest]
     }
   }
 
@@ -1057,14 +930,12 @@ package workdocs {
         FolderId: ResourceIdType,
         AuthenticationToken: js.UndefOr[AuthenticationHeaderType] = js.undefined
     ): DeleteFolderContentsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "FolderId" -> FolderId.asInstanceOf[js.Any],
-        "AuthenticationToken" -> AuthenticationToken.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "FolderId" -> FolderId.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteFolderContentsRequest]
+      AuthenticationToken.foreach(__v => __obj.update("AuthenticationToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DeleteFolderContentsRequest]
     }
   }
 
@@ -1079,14 +950,12 @@ package workdocs {
         FolderId: ResourceIdType,
         AuthenticationToken: js.UndefOr[AuthenticationHeaderType] = js.undefined
     ): DeleteFolderRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "FolderId" -> FolderId.asInstanceOf[js.Any],
-        "AuthenticationToken" -> AuthenticationToken.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "FolderId" -> FolderId.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteFolderRequest]
+      AuthenticationToken.foreach(__v => __obj.update("AuthenticationToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DeleteFolderRequest]
     }
   }
 
@@ -1105,20 +974,14 @@ package workdocs {
         DeleteAll: js.UndefOr[BooleanType] = js.undefined,
         Labels: js.UndefOr[SharedLabels] = js.undefined
     ): DeleteLabelsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ResourceId" -> ResourceId.asInstanceOf[js.Any],
-        "AuthenticationToken" -> AuthenticationToken.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DeleteAll" -> DeleteAll.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Labels" -> Labels.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "ResourceId" -> ResourceId.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteLabelsRequest]
+      AuthenticationToken.foreach(__v => __obj.update("AuthenticationToken", __v.asInstanceOf[js.Any]))
+      DeleteAll.foreach(__v => __obj.update("DeleteAll", __v.asInstanceOf[js.Any]))
+      Labels.foreach(__v => __obj.update("Labels", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DeleteLabelsRequest]
     }
   }
 
@@ -1128,10 +991,9 @@ package workdocs {
   object DeleteLabelsResponse {
     def apply(
         ): DeleteLabelsResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary.empty[js.Any]
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteLabelsResponse]
+      __obj.asInstanceOf[DeleteLabelsResponse]
     }
   }
 
@@ -1146,12 +1008,12 @@ package workdocs {
         OrganizationId: IdType,
         SubscriptionId: IdType
     ): DeleteNotificationSubscriptionRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "OrganizationId" -> OrganizationId.asInstanceOf[js.Any],
         "SubscriptionId" -> SubscriptionId.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteNotificationSubscriptionRequest]
+      __obj.asInstanceOf[DeleteNotificationSubscriptionRequest]
     }
   }
 
@@ -1166,14 +1028,12 @@ package workdocs {
         UserId: IdType,
         AuthenticationToken: js.UndefOr[AuthenticationHeaderType] = js.undefined
     ): DeleteUserRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "UserId" -> UserId.asInstanceOf[js.Any],
-        "AuthenticationToken" -> AuthenticationToken.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "UserId" -> UserId.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteUserRequest]
+      AuthenticationToken.foreach(__v => __obj.update("AuthenticationToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DeleteUserRequest]
     }
   }
 
@@ -1204,40 +1064,18 @@ package workdocs {
         StartTime: js.UndefOr[TimestampType] = js.undefined,
         UserId: js.UndefOr[IdType] = js.undefined
     ): DescribeActivitiesRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ActivityTypes" -> ActivityTypes.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "AuthenticationToken" -> AuthenticationToken.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "EndTime" -> EndTime.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "IncludeIndirectActivities" -> IncludeIndirectActivities.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Limit" -> Limit.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Marker" -> Marker.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "OrganizationId" -> OrganizationId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ResourceId" -> ResourceId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "StartTime" -> StartTime.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "UserId" -> UserId.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeActivitiesRequest]
+      val __obj = js.Dictionary.empty[js.Any]
+      ActivityTypes.foreach(__v => __obj.update("ActivityTypes", __v.asInstanceOf[js.Any]))
+      AuthenticationToken.foreach(__v => __obj.update("AuthenticationToken", __v.asInstanceOf[js.Any]))
+      EndTime.foreach(__v => __obj.update("EndTime", __v.asInstanceOf[js.Any]))
+      IncludeIndirectActivities.foreach(__v => __obj.update("IncludeIndirectActivities", __v.asInstanceOf[js.Any]))
+      Limit.foreach(__v => __obj.update("Limit", __v.asInstanceOf[js.Any]))
+      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
+      OrganizationId.foreach(__v => __obj.update("OrganizationId", __v.asInstanceOf[js.Any]))
+      ResourceId.foreach(__v => __obj.update("ResourceId", __v.asInstanceOf[js.Any]))
+      StartTime.foreach(__v => __obj.update("StartTime", __v.asInstanceOf[js.Any]))
+      UserId.foreach(__v => __obj.update("UserId", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeActivitiesRequest]
     }
   }
 
@@ -1252,16 +1090,10 @@ package workdocs {
         Marker: js.UndefOr[MarkerType] = js.undefined,
         UserActivities: js.UndefOr[UserActivities] = js.undefined
     ): DescribeActivitiesResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Marker" -> Marker.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "UserActivities" -> UserActivities.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeActivitiesResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
+      UserActivities.foreach(__v => __obj.update("UserActivities", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeActivitiesResponse]
     }
   }
 
@@ -1282,21 +1114,15 @@ package workdocs {
         Limit: js.UndefOr[LimitType] = js.undefined,
         Marker: js.UndefOr[MarkerType] = js.undefined
     ): DescribeCommentsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "DocumentId" -> DocumentId.asInstanceOf[js.Any],
-        "VersionId"  -> VersionId.asInstanceOf[js.Any],
-        "AuthenticationToken" -> AuthenticationToken.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Limit" -> Limit.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Marker" -> Marker.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "VersionId"  -> VersionId.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeCommentsRequest]
+      AuthenticationToken.foreach(__v => __obj.update("AuthenticationToken", __v.asInstanceOf[js.Any]))
+      Limit.foreach(__v => __obj.update("Limit", __v.asInstanceOf[js.Any]))
+      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeCommentsRequest]
     }
   }
 
@@ -1311,16 +1137,10 @@ package workdocs {
         Comments: js.UndefOr[CommentList] = js.undefined,
         Marker: js.UndefOr[MarkerType] = js.undefined
     ): DescribeCommentsResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Comments" -> Comments.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Marker" -> Marker.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeCommentsResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      Comments.foreach(__v => __obj.update("Comments", __v.asInstanceOf[js.Any]))
+      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeCommentsResponse]
     }
   }
 
@@ -1343,26 +1163,16 @@ package workdocs {
         Limit: js.UndefOr[LimitType] = js.undefined,
         Marker: js.UndefOr[PageMarkerType] = js.undefined
     ): DescribeDocumentVersionsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "DocumentId" -> DocumentId.asInstanceOf[js.Any],
-        "AuthenticationToken" -> AuthenticationToken.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Fields" -> Fields.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Include" -> Include.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Limit" -> Limit.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Marker" -> Marker.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "DocumentId" -> DocumentId.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeDocumentVersionsRequest]
+      AuthenticationToken.foreach(__v => __obj.update("AuthenticationToken", __v.asInstanceOf[js.Any]))
+      Fields.foreach(__v => __obj.update("Fields", __v.asInstanceOf[js.Any]))
+      Include.foreach(__v => __obj.update("Include", __v.asInstanceOf[js.Any]))
+      Limit.foreach(__v => __obj.update("Limit", __v.asInstanceOf[js.Any]))
+      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeDocumentVersionsRequest]
     }
   }
 
@@ -1377,16 +1187,10 @@ package workdocs {
         DocumentVersions: js.UndefOr[DocumentVersionMetadataList] = js.undefined,
         Marker: js.UndefOr[PageMarkerType] = js.undefined
     ): DescribeDocumentVersionsResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "DocumentVersions" -> DocumentVersions.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Marker" -> Marker.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeDocumentVersionsResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      DocumentVersions.foreach(__v => __obj.update("DocumentVersions", __v.asInstanceOf[js.Any]))
+      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeDocumentVersionsResponse]
     }
   }
 
@@ -1413,32 +1217,18 @@ package workdocs {
         Sort: js.UndefOr[ResourceSortType] = js.undefined,
         Type: js.UndefOr[FolderContentType] = js.undefined
     ): DescribeFolderContentsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "FolderId" -> FolderId.asInstanceOf[js.Any],
-        "AuthenticationToken" -> AuthenticationToken.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Include" -> Include.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Limit" -> Limit.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Marker" -> Marker.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Order" -> Order.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Sort" -> Sort.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Type" -> Type.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "FolderId" -> FolderId.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeFolderContentsRequest]
+      AuthenticationToken.foreach(__v => __obj.update("AuthenticationToken", __v.asInstanceOf[js.Any]))
+      Include.foreach(__v => __obj.update("Include", __v.asInstanceOf[js.Any]))
+      Limit.foreach(__v => __obj.update("Limit", __v.asInstanceOf[js.Any]))
+      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
+      Order.foreach(__v => __obj.update("Order", __v.asInstanceOf[js.Any]))
+      Sort.foreach(__v => __obj.update("Sort", __v.asInstanceOf[js.Any]))
+      Type.foreach(__v => __obj.update("Type", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeFolderContentsRequest]
     }
   }
 
@@ -1455,19 +1245,11 @@ package workdocs {
         Folders: js.UndefOr[FolderMetadataList] = js.undefined,
         Marker: js.UndefOr[PageMarkerType] = js.undefined
     ): DescribeFolderContentsResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Documents" -> Documents.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Folders" -> Folders.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Marker" -> Marker.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeFolderContentsResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      Documents.foreach(__v => __obj.update("Documents", __v.asInstanceOf[js.Any]))
+      Folders.foreach(__v => __obj.update("Folders", __v.asInstanceOf[js.Any]))
+      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeFolderContentsResponse]
     }
   }
 
@@ -1488,23 +1270,15 @@ package workdocs {
         Marker: js.UndefOr[MarkerType] = js.undefined,
         OrganizationId: js.UndefOr[IdType] = js.undefined
     ): DescribeGroupsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "SearchQuery" -> SearchQuery.asInstanceOf[js.Any],
-        "AuthenticationToken" -> AuthenticationToken.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Limit" -> Limit.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Marker" -> Marker.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "OrganizationId" -> OrganizationId.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "SearchQuery" -> SearchQuery.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeGroupsRequest]
+      AuthenticationToken.foreach(__v => __obj.update("AuthenticationToken", __v.asInstanceOf[js.Any]))
+      Limit.foreach(__v => __obj.update("Limit", __v.asInstanceOf[js.Any]))
+      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
+      OrganizationId.foreach(__v => __obj.update("OrganizationId", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeGroupsRequest]
     }
   }
 
@@ -1519,16 +1293,10 @@ package workdocs {
         Groups: js.UndefOr[GroupMetadataList] = js.undefined,
         Marker: js.UndefOr[MarkerType] = js.undefined
     ): DescribeGroupsResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Groups" -> Groups.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Marker" -> Marker.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeGroupsResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      Groups.foreach(__v => __obj.update("Groups", __v.asInstanceOf[js.Any]))
+      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeGroupsResponse]
     }
   }
 
@@ -1545,17 +1313,13 @@ package workdocs {
         Limit: js.UndefOr[LimitType] = js.undefined,
         Marker: js.UndefOr[PageMarkerType] = js.undefined
     ): DescribeNotificationSubscriptionsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "OrganizationId" -> OrganizationId.asInstanceOf[js.Any],
-        "Limit" -> Limit.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Marker" -> Marker.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "OrganizationId" -> OrganizationId.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeNotificationSubscriptionsRequest]
+      Limit.foreach(__v => __obj.update("Limit", __v.asInstanceOf[js.Any]))
+      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeNotificationSubscriptionsRequest]
     }
   }
 
@@ -1570,16 +1334,10 @@ package workdocs {
         Marker: js.UndefOr[PageMarkerType] = js.undefined,
         Subscriptions: js.UndefOr[SubscriptionList] = js.undefined
     ): DescribeNotificationSubscriptionsResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Marker" -> Marker.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Subscriptions" -> Subscriptions.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeNotificationSubscriptionsResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
+      Subscriptions.foreach(__v => __obj.update("Subscriptions", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeNotificationSubscriptionsResponse]
     }
   }
 
@@ -1600,23 +1358,15 @@ package workdocs {
         Marker: js.UndefOr[PageMarkerType] = js.undefined,
         PrincipalId: js.UndefOr[IdType] = js.undefined
     ): DescribeResourcePermissionsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ResourceId" -> ResourceId.asInstanceOf[js.Any],
-        "AuthenticationToken" -> AuthenticationToken.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Limit" -> Limit.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Marker" -> Marker.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "PrincipalId" -> PrincipalId.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "ResourceId" -> ResourceId.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeResourcePermissionsRequest]
+      AuthenticationToken.foreach(__v => __obj.update("AuthenticationToken", __v.asInstanceOf[js.Any]))
+      Limit.foreach(__v => __obj.update("Limit", __v.asInstanceOf[js.Any]))
+      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
+      PrincipalId.foreach(__v => __obj.update("PrincipalId", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeResourcePermissionsRequest]
     }
   }
 
@@ -1631,16 +1381,10 @@ package workdocs {
         Marker: js.UndefOr[PageMarkerType] = js.undefined,
         Principals: js.UndefOr[PrincipalList] = js.undefined
     ): DescribeResourcePermissionsResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Marker" -> Marker.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Principals" -> Principals.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeResourcePermissionsResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
+      Principals.foreach(__v => __obj.update("Principals", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeResourcePermissionsResponse]
     }
   }
 
@@ -1657,17 +1401,13 @@ package workdocs {
         Limit: js.UndefOr[LimitType] = js.undefined,
         Marker: js.UndefOr[PageMarkerType] = js.undefined
     ): DescribeRootFoldersRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "AuthenticationToken" -> AuthenticationToken.asInstanceOf[js.Any],
-        "Limit" -> Limit.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Marker" -> Marker.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "AuthenticationToken" -> AuthenticationToken.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeRootFoldersRequest]
+      Limit.foreach(__v => __obj.update("Limit", __v.asInstanceOf[js.Any]))
+      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeRootFoldersRequest]
     }
   }
 
@@ -1682,16 +1422,10 @@ package workdocs {
         Folders: js.UndefOr[FolderMetadataList] = js.undefined,
         Marker: js.UndefOr[PageMarkerType] = js.undefined
     ): DescribeRootFoldersResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Folders" -> Folders.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Marker" -> Marker.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeRootFoldersResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      Folders.foreach(__v => __obj.update("Folders", __v.asInstanceOf[js.Any]))
+      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeRootFoldersResponse]
     }
   }
 
@@ -1722,40 +1456,18 @@ package workdocs {
         Sort: js.UndefOr[UserSortType] = js.undefined,
         UserIds: js.UndefOr[UserIdsType] = js.undefined
     ): DescribeUsersRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "AuthenticationToken" -> AuthenticationToken.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Fields" -> Fields.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Include" -> Include.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Limit" -> Limit.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Marker" -> Marker.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Order" -> Order.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "OrganizationId" -> OrganizationId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Query" -> Query.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Sort" -> Sort.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "UserIds" -> UserIds.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeUsersRequest]
+      val __obj = js.Dictionary.empty[js.Any]
+      AuthenticationToken.foreach(__v => __obj.update("AuthenticationToken", __v.asInstanceOf[js.Any]))
+      Fields.foreach(__v => __obj.update("Fields", __v.asInstanceOf[js.Any]))
+      Include.foreach(__v => __obj.update("Include", __v.asInstanceOf[js.Any]))
+      Limit.foreach(__v => __obj.update("Limit", __v.asInstanceOf[js.Any]))
+      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
+      Order.foreach(__v => __obj.update("Order", __v.asInstanceOf[js.Any]))
+      OrganizationId.foreach(__v => __obj.update("OrganizationId", __v.asInstanceOf[js.Any]))
+      Query.foreach(__v => __obj.update("Query", __v.asInstanceOf[js.Any]))
+      Sort.foreach(__v => __obj.update("Sort", __v.asInstanceOf[js.Any]))
+      UserIds.foreach(__v => __obj.update("UserIds", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeUsersRequest]
     }
   }
 
@@ -1772,19 +1484,11 @@ package workdocs {
         TotalNumberOfUsers: js.UndefOr[SizeType] = js.undefined,
         Users: js.UndefOr[OrganizationUserList] = js.undefined
     ): DescribeUsersResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Marker" -> Marker.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "TotalNumberOfUsers" -> TotalNumberOfUsers.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Users" -> Users.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeUsersResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
+      TotalNumberOfUsers.foreach(__v => __obj.update("TotalNumberOfUsers", __v.asInstanceOf[js.Any]))
+      Users.foreach(__v => __obj.update("Users", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeUsersResponse]
     }
   }
 
@@ -1814,34 +1518,16 @@ package workdocs {
         ParentFolderId: js.UndefOr[ResourceIdType] = js.undefined,
         ResourceState: js.UndefOr[ResourceStateType] = js.undefined
     ): DocumentMetadata = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "CreatedTimestamp" -> CreatedTimestamp.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "CreatorId" -> CreatorId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Id" -> Id.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Labels" -> Labels.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "LatestVersionMetadata" -> LatestVersionMetadata.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ModifiedTimestamp" -> ModifiedTimestamp.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ParentFolderId" -> ParentFolderId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ResourceState" -> ResourceState.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DocumentMetadata]
+      val __obj = js.Dictionary.empty[js.Any]
+      CreatedTimestamp.foreach(__v => __obj.update("CreatedTimestamp", __v.asInstanceOf[js.Any]))
+      CreatorId.foreach(__v => __obj.update("CreatorId", __v.asInstanceOf[js.Any]))
+      Id.foreach(__v => __obj.update("Id", __v.asInstanceOf[js.Any]))
+      Labels.foreach(__v => __obj.update("Labels", __v.asInstanceOf[js.Any]))
+      LatestVersionMetadata.foreach(__v => __obj.update("LatestVersionMetadata", __v.asInstanceOf[js.Any]))
+      ModifiedTimestamp.foreach(__v => __obj.update("ModifiedTimestamp", __v.asInstanceOf[js.Any]))
+      ParentFolderId.foreach(__v => __obj.update("ParentFolderId", __v.asInstanceOf[js.Any]))
+      ResourceState.foreach(__v => __obj.update("ResourceState", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DocumentMetadata]
     }
   }
 
@@ -1903,49 +1589,21 @@ package workdocs {
         Status: js.UndefOr[DocumentStatusType] = js.undefined,
         Thumbnail: js.UndefOr[DocumentThumbnailUrlMap] = js.undefined
     ): DocumentVersionMetadata = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ContentCreatedTimestamp" -> ContentCreatedTimestamp.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ContentModifiedTimestamp" -> ContentModifiedTimestamp.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ContentType" -> ContentType.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "CreatedTimestamp" -> CreatedTimestamp.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "CreatorId" -> CreatorId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Id" -> Id.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ModifiedTimestamp" -> ModifiedTimestamp.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Name" -> Name.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Signature" -> Signature.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Size" -> Size.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Source" -> Source.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Status" -> Status.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Thumbnail" -> Thumbnail.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DocumentVersionMetadata]
+      val __obj = js.Dictionary.empty[js.Any]
+      ContentCreatedTimestamp.foreach(__v => __obj.update("ContentCreatedTimestamp", __v.asInstanceOf[js.Any]))
+      ContentModifiedTimestamp.foreach(__v => __obj.update("ContentModifiedTimestamp", __v.asInstanceOf[js.Any]))
+      ContentType.foreach(__v => __obj.update("ContentType", __v.asInstanceOf[js.Any]))
+      CreatedTimestamp.foreach(__v => __obj.update("CreatedTimestamp", __v.asInstanceOf[js.Any]))
+      CreatorId.foreach(__v => __obj.update("CreatorId", __v.asInstanceOf[js.Any]))
+      Id.foreach(__v => __obj.update("Id", __v.asInstanceOf[js.Any]))
+      ModifiedTimestamp.foreach(__v => __obj.update("ModifiedTimestamp", __v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
+      Signature.foreach(__v => __obj.update("Signature", __v.asInstanceOf[js.Any]))
+      Size.foreach(__v => __obj.update("Size", __v.asInstanceOf[js.Any]))
+      Source.foreach(__v => __obj.update("Source", __v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.update("Status", __v.asInstanceOf[js.Any]))
+      Thumbnail.foreach(__v => __obj.update("Thumbnail", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DocumentVersionMetadata]
     }
   }
 
@@ -1995,43 +1653,19 @@ package workdocs {
         Signature: js.UndefOr[HashType] = js.undefined,
         Size: js.UndefOr[SizeType] = js.undefined
     ): FolderMetadata = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "CreatedTimestamp" -> CreatedTimestamp.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "CreatorId" -> CreatorId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Id" -> Id.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Labels" -> Labels.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "LatestVersionSize" -> LatestVersionSize.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ModifiedTimestamp" -> ModifiedTimestamp.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Name" -> Name.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ParentFolderId" -> ParentFolderId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ResourceState" -> ResourceState.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Signature" -> Signature.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Size" -> Size.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[FolderMetadata]
+      val __obj = js.Dictionary.empty[js.Any]
+      CreatedTimestamp.foreach(__v => __obj.update("CreatedTimestamp", __v.asInstanceOf[js.Any]))
+      CreatorId.foreach(__v => __obj.update("CreatorId", __v.asInstanceOf[js.Any]))
+      Id.foreach(__v => __obj.update("Id", __v.asInstanceOf[js.Any]))
+      Labels.foreach(__v => __obj.update("Labels", __v.asInstanceOf[js.Any]))
+      LatestVersionSize.foreach(__v => __obj.update("LatestVersionSize", __v.asInstanceOf[js.Any]))
+      ModifiedTimestamp.foreach(__v => __obj.update("ModifiedTimestamp", __v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
+      ParentFolderId.foreach(__v => __obj.update("ParentFolderId", __v.asInstanceOf[js.Any]))
+      ResourceState.foreach(__v => __obj.update("ResourceState", __v.asInstanceOf[js.Any]))
+      Signature.foreach(__v => __obj.update("Signature", __v.asInstanceOf[js.Any]))
+      Size.foreach(__v => __obj.update("Size", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[FolderMetadata]
     }
   }
 
@@ -2044,11 +1678,11 @@ package workdocs {
     def apply(
         AuthenticationToken: AuthenticationHeaderType
     ): GetCurrentUserRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "AuthenticationToken" -> AuthenticationToken.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetCurrentUserRequest]
+      __obj.asInstanceOf[GetCurrentUserRequest]
     }
   }
 
@@ -2061,13 +1695,9 @@ package workdocs {
     def apply(
         User: js.UndefOr[User] = js.undefined
     ): GetCurrentUserResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "User" -> User.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetCurrentUserResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      User.foreach(__v => __obj.update("User", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetCurrentUserResponse]
     }
   }
 
@@ -2088,23 +1718,15 @@ package workdocs {
         Limit: js.UndefOr[LimitType] = js.undefined,
         Marker: js.UndefOr[PageMarkerType] = js.undefined
     ): GetDocumentPathRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "DocumentId" -> DocumentId.asInstanceOf[js.Any],
-        "AuthenticationToken" -> AuthenticationToken.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Fields" -> Fields.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Limit" -> Limit.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Marker" -> Marker.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "DocumentId" -> DocumentId.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetDocumentPathRequest]
+      AuthenticationToken.foreach(__v => __obj.update("AuthenticationToken", __v.asInstanceOf[js.Any]))
+      Fields.foreach(__v => __obj.update("Fields", __v.asInstanceOf[js.Any]))
+      Limit.foreach(__v => __obj.update("Limit", __v.asInstanceOf[js.Any]))
+      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetDocumentPathRequest]
     }
   }
 
@@ -2117,13 +1739,9 @@ package workdocs {
     def apply(
         Path: js.UndefOr[ResourcePath] = js.undefined
     ): GetDocumentPathResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Path" -> Path.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetDocumentPathResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      Path.foreach(__v => __obj.update("Path", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetDocumentPathResponse]
     }
   }
 
@@ -2140,17 +1758,13 @@ package workdocs {
         AuthenticationToken: js.UndefOr[AuthenticationHeaderType] = js.undefined,
         IncludeCustomMetadata: js.UndefOr[BooleanType] = js.undefined
     ): GetDocumentRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "DocumentId" -> DocumentId.asInstanceOf[js.Any],
-        "AuthenticationToken" -> AuthenticationToken.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "IncludeCustomMetadata" -> IncludeCustomMetadata.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "DocumentId" -> DocumentId.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetDocumentRequest]
+      AuthenticationToken.foreach(__v => __obj.update("AuthenticationToken", __v.asInstanceOf[js.Any]))
+      IncludeCustomMetadata.foreach(__v => __obj.update("IncludeCustomMetadata", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetDocumentRequest]
     }
   }
 
@@ -2165,16 +1779,10 @@ package workdocs {
         CustomMetadata: js.UndefOr[CustomMetadataMap] = js.undefined,
         Metadata: js.UndefOr[DocumentMetadata] = js.undefined
     ): GetDocumentResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "CustomMetadata" -> CustomMetadata.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Metadata" -> Metadata.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetDocumentResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      CustomMetadata.foreach(__v => __obj.update("CustomMetadata", __v.asInstanceOf[js.Any]))
+      Metadata.foreach(__v => __obj.update("Metadata", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetDocumentResponse]
     }
   }
 
@@ -2195,21 +1803,15 @@ package workdocs {
         Fields: js.UndefOr[FieldNamesType] = js.undefined,
         IncludeCustomMetadata: js.UndefOr[BooleanType] = js.undefined
     ): GetDocumentVersionRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "DocumentId" -> DocumentId.asInstanceOf[js.Any],
-        "VersionId"  -> VersionId.asInstanceOf[js.Any],
-        "AuthenticationToken" -> AuthenticationToken.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Fields" -> Fields.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "IncludeCustomMetadata" -> IncludeCustomMetadata.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "VersionId"  -> VersionId.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetDocumentVersionRequest]
+      AuthenticationToken.foreach(__v => __obj.update("AuthenticationToken", __v.asInstanceOf[js.Any]))
+      Fields.foreach(__v => __obj.update("Fields", __v.asInstanceOf[js.Any]))
+      IncludeCustomMetadata.foreach(__v => __obj.update("IncludeCustomMetadata", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetDocumentVersionRequest]
     }
   }
 
@@ -2224,16 +1826,10 @@ package workdocs {
         CustomMetadata: js.UndefOr[CustomMetadataMap] = js.undefined,
         Metadata: js.UndefOr[DocumentVersionMetadata] = js.undefined
     ): GetDocumentVersionResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "CustomMetadata" -> CustomMetadata.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Metadata" -> Metadata.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetDocumentVersionResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      CustomMetadata.foreach(__v => __obj.update("CustomMetadata", __v.asInstanceOf[js.Any]))
+      Metadata.foreach(__v => __obj.update("Metadata", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetDocumentVersionResponse]
     }
   }
 
@@ -2254,23 +1850,15 @@ package workdocs {
         Limit: js.UndefOr[LimitType] = js.undefined,
         Marker: js.UndefOr[PageMarkerType] = js.undefined
     ): GetFolderPathRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "FolderId" -> FolderId.asInstanceOf[js.Any],
-        "AuthenticationToken" -> AuthenticationToken.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Fields" -> Fields.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Limit" -> Limit.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Marker" -> Marker.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "FolderId" -> FolderId.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetFolderPathRequest]
+      AuthenticationToken.foreach(__v => __obj.update("AuthenticationToken", __v.asInstanceOf[js.Any]))
+      Fields.foreach(__v => __obj.update("Fields", __v.asInstanceOf[js.Any]))
+      Limit.foreach(__v => __obj.update("Limit", __v.asInstanceOf[js.Any]))
+      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetFolderPathRequest]
     }
   }
 
@@ -2283,13 +1871,9 @@ package workdocs {
     def apply(
         Path: js.UndefOr[ResourcePath] = js.undefined
     ): GetFolderPathResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Path" -> Path.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetFolderPathResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      Path.foreach(__v => __obj.update("Path", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetFolderPathResponse]
     }
   }
 
@@ -2306,17 +1890,13 @@ package workdocs {
         AuthenticationToken: js.UndefOr[AuthenticationHeaderType] = js.undefined,
         IncludeCustomMetadata: js.UndefOr[BooleanType] = js.undefined
     ): GetFolderRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "FolderId" -> FolderId.asInstanceOf[js.Any],
-        "AuthenticationToken" -> AuthenticationToken.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "IncludeCustomMetadata" -> IncludeCustomMetadata.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "FolderId" -> FolderId.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetFolderRequest]
+      AuthenticationToken.foreach(__v => __obj.update("AuthenticationToken", __v.asInstanceOf[js.Any]))
+      IncludeCustomMetadata.foreach(__v => __obj.update("IncludeCustomMetadata", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetFolderRequest]
     }
   }
 
@@ -2331,16 +1911,10 @@ package workdocs {
         CustomMetadata: js.UndefOr[CustomMetadataMap] = js.undefined,
         Metadata: js.UndefOr[FolderMetadata] = js.undefined
     ): GetFolderResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "CustomMetadata" -> CustomMetadata.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Metadata" -> Metadata.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetFolderResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      CustomMetadata.foreach(__v => __obj.update("CustomMetadata", __v.asInstanceOf[js.Any]))
+      Metadata.foreach(__v => __obj.update("Metadata", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetFolderResponse]
     }
   }
 
@@ -2361,25 +1935,13 @@ package workdocs {
         Marker: js.UndefOr[PageMarkerType] = js.undefined,
         UserId: js.UndefOr[IdType] = js.undefined
     ): GetResourcesRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "AuthenticationToken" -> AuthenticationToken.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "CollectionType" -> CollectionType.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Limit" -> Limit.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Marker" -> Marker.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "UserId" -> UserId.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetResourcesRequest]
+      val __obj = js.Dictionary.empty[js.Any]
+      AuthenticationToken.foreach(__v => __obj.update("AuthenticationToken", __v.asInstanceOf[js.Any]))
+      CollectionType.foreach(__v => __obj.update("CollectionType", __v.asInstanceOf[js.Any]))
+      Limit.foreach(__v => __obj.update("Limit", __v.asInstanceOf[js.Any]))
+      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
+      UserId.foreach(__v => __obj.update("UserId", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetResourcesRequest]
     }
   }
 
@@ -2396,19 +1958,11 @@ package workdocs {
         Folders: js.UndefOr[FolderMetadataList] = js.undefined,
         Marker: js.UndefOr[PageMarkerType] = js.undefined
     ): GetResourcesResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Documents" -> Documents.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Folders" -> Folders.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Marker" -> Marker.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetResourcesResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      Documents.foreach(__v => __obj.update("Documents", __v.asInstanceOf[js.Any]))
+      Folders.foreach(__v => __obj.update("Folders", __v.asInstanceOf[js.Any]))
+      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetResourcesResponse]
     }
   }
 
@@ -2426,16 +1980,10 @@ package workdocs {
         Id: js.UndefOr[IdType] = js.undefined,
         Name: js.UndefOr[GroupNameType] = js.undefined
     ): GroupMetadata = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Id" -> Id.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Name" -> Name.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GroupMetadata]
+      val __obj = js.Dictionary.empty[js.Any]
+      Id.foreach(__v => __obj.update("Id", __v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GroupMetadata]
     }
   }
 
@@ -2462,32 +2010,18 @@ package workdocs {
         Id: js.UndefOr[ResourceIdType] = js.undefined,
         Name: js.UndefOr[ResourceNameType] = js.undefined
     ): InitiateDocumentVersionUploadRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ParentFolderId" -> ParentFolderId.asInstanceOf[js.Any],
-        "AuthenticationToken" -> AuthenticationToken.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ContentCreatedTimestamp" -> ContentCreatedTimestamp.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ContentModifiedTimestamp" -> ContentModifiedTimestamp.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ContentType" -> ContentType.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DocumentSizeInBytes" -> DocumentSizeInBytes.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Id" -> Id.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Name" -> Name.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "ParentFolderId" -> ParentFolderId.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[InitiateDocumentVersionUploadRequest]
+      AuthenticationToken.foreach(__v => __obj.update("AuthenticationToken", __v.asInstanceOf[js.Any]))
+      ContentCreatedTimestamp.foreach(__v => __obj.update("ContentCreatedTimestamp", __v.asInstanceOf[js.Any]))
+      ContentModifiedTimestamp.foreach(__v => __obj.update("ContentModifiedTimestamp", __v.asInstanceOf[js.Any]))
+      ContentType.foreach(__v => __obj.update("ContentType", __v.asInstanceOf[js.Any]))
+      DocumentSizeInBytes.foreach(__v => __obj.update("DocumentSizeInBytes", __v.asInstanceOf[js.Any]))
+      Id.foreach(__v => __obj.update("Id", __v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[InitiateDocumentVersionUploadRequest]
     }
   }
 
@@ -2502,16 +2036,10 @@ package workdocs {
         Metadata: js.UndefOr[DocumentMetadata] = js.undefined,
         UploadMetadata: js.UndefOr[UploadMetadata] = js.undefined
     ): InitiateDocumentVersionUploadResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Metadata" -> Metadata.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "UploadMetadata" -> UploadMetadata.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[InitiateDocumentVersionUploadResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      Metadata.foreach(__v => __obj.update("Metadata", __v.asInstanceOf[js.Any]))
+      UploadMetadata.foreach(__v => __obj.update("UploadMetadata", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[InitiateDocumentVersionUploadResponse]
     }
   }
 
@@ -2545,16 +2073,10 @@ package workdocs {
         EmailMessage: js.UndefOr[MessageType] = js.undefined,
         SendEmail: js.UndefOr[BooleanType] = js.undefined
     ): NotificationOptions = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "EmailMessage" -> EmailMessage.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SendEmail" -> SendEmail.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[NotificationOptions]
+      val __obj = js.Dictionary.empty[js.Any]
+      EmailMessage.foreach(__v => __obj.update("EmailMessage", __v.asInstanceOf[js.Any]))
+      SendEmail.foreach(__v => __obj.update("SendEmail", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[NotificationOptions]
     }
   }
 
@@ -2579,16 +2101,10 @@ package workdocs {
         Groups: js.UndefOr[GroupMetadataList] = js.undefined,
         Users: js.UndefOr[UserMetadataList] = js.undefined
     ): Participants = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Groups" -> Groups.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Users" -> Users.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Participants]
+      val __obj = js.Dictionary.empty[js.Any]
+      Groups.foreach(__v => __obj.update("Groups", __v.asInstanceOf[js.Any]))
+      Users.foreach(__v => __obj.update("Users", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Participants]
     }
   }
 
@@ -2606,16 +2122,10 @@ package workdocs {
         Role: js.UndefOr[RoleType] = js.undefined,
         Type: js.UndefOr[RolePermissionType] = js.undefined
     ): PermissionInfo = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Role" -> Role.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Type" -> Type.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PermissionInfo]
+      val __obj = js.Dictionary.empty[js.Any]
+      Role.foreach(__v => __obj.update("Role", __v.asInstanceOf[js.Any]))
+      Type.foreach(__v => __obj.update("Type", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PermissionInfo]
     }
   }
 
@@ -2635,19 +2145,11 @@ package workdocs {
         Roles: js.UndefOr[PermissionInfoList] = js.undefined,
         Type: js.UndefOr[PrincipalType] = js.undefined
     ): Principal = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Id" -> Id.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Roles" -> Roles.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Type" -> Type.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Principal]
+      val __obj = js.Dictionary.empty[js.Any]
+      Id.foreach(__v => __obj.update("Id", __v.asInstanceOf[js.Any]))
+      Roles.foreach(__v => __obj.update("Roles", __v.asInstanceOf[js.Any]))
+      Type.foreach(__v => __obj.update("Type", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Principal]
     }
   }
 
@@ -2672,14 +2174,12 @@ package workdocs {
         ResourceId: ResourceIdType,
         AuthenticationToken: js.UndefOr[AuthenticationHeaderType] = js.undefined
     ): RemoveAllResourcePermissionsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ResourceId" -> ResourceId.asInstanceOf[js.Any],
-        "AuthenticationToken" -> AuthenticationToken.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "ResourceId" -> ResourceId.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RemoveAllResourcePermissionsRequest]
+      AuthenticationToken.foreach(__v => __obj.update("AuthenticationToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[RemoveAllResourcePermissionsRequest]
     }
   }
 
@@ -2698,18 +2198,14 @@ package workdocs {
         AuthenticationToken: js.UndefOr[AuthenticationHeaderType] = js.undefined,
         PrincipalType: js.UndefOr[PrincipalType] = js.undefined
     ): RemoveResourcePermissionRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "PrincipalId" -> PrincipalId.asInstanceOf[js.Any],
-        "ResourceId"  -> ResourceId.asInstanceOf[js.Any],
-        "AuthenticationToken" -> AuthenticationToken.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "PrincipalType" -> PrincipalType.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "ResourceId"  -> ResourceId.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RemoveResourcePermissionRequest]
+      AuthenticationToken.foreach(__v => __obj.update("AuthenticationToken", __v.asInstanceOf[js.Any]))
+      PrincipalType.foreach(__v => __obj.update("PrincipalType", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[RemoveResourcePermissionRequest]
     }
   }
 
@@ -2743,31 +2239,15 @@ package workdocs {
         Type: js.UndefOr[ResourceType] = js.undefined,
         VersionId: js.UndefOr[DocumentVersionIdType] = js.undefined
     ): ResourceMetadata = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Id" -> Id.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Name" -> Name.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "OriginalName" -> OriginalName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Owner" -> Owner.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ParentId" -> ParentId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Type" -> Type.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "VersionId" -> VersionId.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ResourceMetadata]
+      val __obj = js.Dictionary.empty[js.Any]
+      Id.foreach(__v => __obj.update("Id", __v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
+      OriginalName.foreach(__v => __obj.update("OriginalName", __v.asInstanceOf[js.Any]))
+      Owner.foreach(__v => __obj.update("Owner", __v.asInstanceOf[js.Any]))
+      ParentId.foreach(__v => __obj.update("ParentId", __v.asInstanceOf[js.Any]))
+      Type.foreach(__v => __obj.update("Type", __v.asInstanceOf[js.Any]))
+      VersionId.foreach(__v => __obj.update("VersionId", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ResourceMetadata]
     }
   }
 
@@ -2783,13 +2263,9 @@ package workdocs {
     def apply(
         Components: js.UndefOr[ResourcePathComponentList] = js.undefined
     ): ResourcePath = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Components" -> Components.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ResourcePath]
+      val __obj = js.Dictionary.empty[js.Any]
+      Components.foreach(__v => __obj.update("Components", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ResourcePath]
     }
   }
 
@@ -2807,16 +2283,10 @@ package workdocs {
         Id: js.UndefOr[IdType] = js.undefined,
         Name: js.UndefOr[ResourceNameType] = js.undefined
     ): ResourcePathComponent = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Id" -> Id.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Name" -> Name.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ResourcePathComponent]
+      val __obj = js.Dictionary.empty[js.Any]
+      Id.foreach(__v => __obj.update("Id", __v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ResourcePathComponent]
     }
   }
 
@@ -2875,13 +2345,13 @@ package workdocs {
         Role: RoleType,
         Type: PrincipalType
     ): SharePrincipal = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "Id"   -> Id.asInstanceOf[js.Any],
         "Role" -> Role.asInstanceOf[js.Any],
         "Type" -> Type.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SharePrincipal]
+      __obj.asInstanceOf[SharePrincipal]
     }
   }
 
@@ -2907,28 +2377,14 @@ package workdocs {
         Status: js.UndefOr[ShareStatusType] = js.undefined,
         StatusMessage: js.UndefOr[MessageType] = js.undefined
     ): ShareResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "InviteePrincipalId" -> InviteePrincipalId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "PrincipalId" -> PrincipalId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Role" -> Role.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ShareId" -> ShareId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Status" -> Status.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "StatusMessage" -> StatusMessage.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ShareResult]
+      val __obj = js.Dictionary.empty[js.Any]
+      InviteePrincipalId.foreach(__v => __obj.update("InviteePrincipalId", __v.asInstanceOf[js.Any]))
+      PrincipalId.foreach(__v => __obj.update("PrincipalId", __v.asInstanceOf[js.Any]))
+      Role.foreach(__v => __obj.update("Role", __v.asInstanceOf[js.Any]))
+      ShareId.foreach(__v => __obj.update("ShareId", __v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.update("Status", __v.asInstanceOf[js.Any]))
+      StatusMessage.foreach(__v => __obj.update("StatusMessage", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ShareResult]
     }
   }
 
@@ -2953,16 +2409,10 @@ package workdocs {
         StorageAllocatedInBytes: js.UndefOr[PositiveSizeType] = js.undefined,
         StorageType: js.UndefOr[StorageType] = js.undefined
     ): StorageRuleType = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "StorageAllocatedInBytes" -> StorageAllocatedInBytes.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "StorageType" -> StorageType.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StorageRuleType]
+      val __obj = js.Dictionary.empty[js.Any]
+      StorageAllocatedInBytes.foreach(__v => __obj.update("StorageAllocatedInBytes", __v.asInstanceOf[js.Any]))
+      StorageType.foreach(__v => __obj.update("StorageType", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[StorageRuleType]
     }
   }
 
@@ -2989,19 +2439,11 @@ package workdocs {
         Protocol: js.UndefOr[SubscriptionProtocolType] = js.undefined,
         SubscriptionId: js.UndefOr[IdType] = js.undefined
     ): Subscription = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "EndPoint" -> EndPoint.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Protocol" -> Protocol.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SubscriptionId" -> SubscriptionId.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Subscription]
+      val __obj = js.Dictionary.empty[js.Any]
+      EndPoint.foreach(__v => __obj.update("EndPoint", __v.asInstanceOf[js.Any]))
+      Protocol.foreach(__v => __obj.update("Protocol", __v.asInstanceOf[js.Any]))
+      SubscriptionId.foreach(__v => __obj.update("SubscriptionId", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Subscription]
     }
   }
 
@@ -3034,23 +2476,15 @@ package workdocs {
         ParentFolderId: js.UndefOr[ResourceIdType] = js.undefined,
         ResourceState: js.UndefOr[ResourceStateType] = js.undefined
     ): UpdateDocumentRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "DocumentId" -> DocumentId.asInstanceOf[js.Any],
-        "AuthenticationToken" -> AuthenticationToken.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Name" -> Name.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ParentFolderId" -> ParentFolderId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ResourceState" -> ResourceState.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "DocumentId" -> DocumentId.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateDocumentRequest]
+      AuthenticationToken.foreach(__v => __obj.update("AuthenticationToken", __v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
+      ParentFolderId.foreach(__v => __obj.update("ParentFolderId", __v.asInstanceOf[js.Any]))
+      ResourceState.foreach(__v => __obj.update("ResourceState", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateDocumentRequest]
     }
   }
 
@@ -3069,18 +2503,14 @@ package workdocs {
         AuthenticationToken: js.UndefOr[AuthenticationHeaderType] = js.undefined,
         VersionStatus: js.UndefOr[DocumentVersionStatus] = js.undefined
     ): UpdateDocumentVersionRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "DocumentId" -> DocumentId.asInstanceOf[js.Any],
-        "VersionId"  -> VersionId.asInstanceOf[js.Any],
-        "AuthenticationToken" -> AuthenticationToken.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "VersionStatus" -> VersionStatus.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "VersionId"  -> VersionId.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateDocumentVersionRequest]
+      AuthenticationToken.foreach(__v => __obj.update("AuthenticationToken", __v.asInstanceOf[js.Any]))
+      VersionStatus.foreach(__v => __obj.update("VersionStatus", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateDocumentVersionRequest]
     }
   }
 
@@ -3101,23 +2531,15 @@ package workdocs {
         ParentFolderId: js.UndefOr[ResourceIdType] = js.undefined,
         ResourceState: js.UndefOr[ResourceStateType] = js.undefined
     ): UpdateFolderRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "FolderId" -> FolderId.asInstanceOf[js.Any],
-        "AuthenticationToken" -> AuthenticationToken.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Name" -> Name.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ParentFolderId" -> ParentFolderId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ResourceState" -> ResourceState.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "FolderId" -> FolderId.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateFolderRequest]
+      AuthenticationToken.foreach(__v => __obj.update("AuthenticationToken", __v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
+      ParentFolderId.foreach(__v => __obj.update("ParentFolderId", __v.asInstanceOf[js.Any]))
+      ResourceState.foreach(__v => __obj.update("ResourceState", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateFolderRequest]
     }
   }
 
@@ -3146,35 +2568,19 @@ package workdocs {
         TimeZoneId: js.UndefOr[TimeZoneIdType] = js.undefined,
         Type: js.UndefOr[UserType] = js.undefined
     ): UpdateUserRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "UserId" -> UserId.asInstanceOf[js.Any],
-        "AuthenticationToken" -> AuthenticationToken.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "GivenName" -> GivenName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "GrantPoweruserPrivileges" -> GrantPoweruserPrivileges.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Locale" -> Locale.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "StorageRule" -> StorageRule.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Surname" -> Surname.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "TimeZoneId" -> TimeZoneId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Type" -> Type.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "UserId" -> UserId.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateUserRequest]
+      AuthenticationToken.foreach(__v => __obj.update("AuthenticationToken", __v.asInstanceOf[js.Any]))
+      GivenName.foreach(__v => __obj.update("GivenName", __v.asInstanceOf[js.Any]))
+      GrantPoweruserPrivileges.foreach(__v => __obj.update("GrantPoweruserPrivileges", __v.asInstanceOf[js.Any]))
+      Locale.foreach(__v => __obj.update("Locale", __v.asInstanceOf[js.Any]))
+      StorageRule.foreach(__v => __obj.update("StorageRule", __v.asInstanceOf[js.Any]))
+      Surname.foreach(__v => __obj.update("Surname", __v.asInstanceOf[js.Any]))
+      TimeZoneId.foreach(__v => __obj.update("TimeZoneId", __v.asInstanceOf[js.Any]))
+      Type.foreach(__v => __obj.update("Type", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateUserRequest]
     }
   }
 
@@ -3187,13 +2593,9 @@ package workdocs {
     def apply(
         User: js.UndefOr[User] = js.undefined
     ): UpdateUserResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "User" -> User.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateUserResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      User.foreach(__v => __obj.update("User", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateUserResponse]
     }
   }
 
@@ -3211,16 +2613,10 @@ package workdocs {
         SignedHeaders: js.UndefOr[SignedHeaderMap] = js.undefined,
         UploadUrl: js.UndefOr[UrlType] = js.undefined
     ): UploadMetadata = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "SignedHeaders" -> SignedHeaders.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "UploadUrl" -> UploadUrl.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UploadMetadata]
+      val __obj = js.Dictionary.empty[js.Any]
+      SignedHeaders.foreach(__v => __obj.update("SignedHeaders", __v.asInstanceOf[js.Any]))
+      UploadUrl.foreach(__v => __obj.update("UploadUrl", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UploadMetadata]
     }
   }
 
@@ -3264,55 +2660,23 @@ package workdocs {
         Type: js.UndefOr[UserType] = js.undefined,
         Username: js.UndefOr[UsernameType] = js.undefined
     ): User = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "CreatedTimestamp" -> CreatedTimestamp.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "EmailAddress" -> EmailAddress.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "GivenName" -> GivenName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Id" -> Id.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Locale" -> Locale.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ModifiedTimestamp" -> ModifiedTimestamp.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "OrganizationId" -> OrganizationId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "RecycleBinFolderId" -> RecycleBinFolderId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "RootFolderId" -> RootFolderId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Status" -> Status.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Storage" -> Storage.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Surname" -> Surname.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "TimeZoneId" -> TimeZoneId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Type" -> Type.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Username" -> Username.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[User]
+      val __obj = js.Dictionary.empty[js.Any]
+      CreatedTimestamp.foreach(__v => __obj.update("CreatedTimestamp", __v.asInstanceOf[js.Any]))
+      EmailAddress.foreach(__v => __obj.update("EmailAddress", __v.asInstanceOf[js.Any]))
+      GivenName.foreach(__v => __obj.update("GivenName", __v.asInstanceOf[js.Any]))
+      Id.foreach(__v => __obj.update("Id", __v.asInstanceOf[js.Any]))
+      Locale.foreach(__v => __obj.update("Locale", __v.asInstanceOf[js.Any]))
+      ModifiedTimestamp.foreach(__v => __obj.update("ModifiedTimestamp", __v.asInstanceOf[js.Any]))
+      OrganizationId.foreach(__v => __obj.update("OrganizationId", __v.asInstanceOf[js.Any]))
+      RecycleBinFolderId.foreach(__v => __obj.update("RecycleBinFolderId", __v.asInstanceOf[js.Any]))
+      RootFolderId.foreach(__v => __obj.update("RootFolderId", __v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.update("Status", __v.asInstanceOf[js.Any]))
+      Storage.foreach(__v => __obj.update("Storage", __v.asInstanceOf[js.Any]))
+      Surname.foreach(__v => __obj.update("Surname", __v.asInstanceOf[js.Any]))
+      TimeZoneId.foreach(__v => __obj.update("TimeZoneId", __v.asInstanceOf[js.Any]))
+      Type.foreach(__v => __obj.update("Type", __v.asInstanceOf[js.Any]))
+      Username.foreach(__v => __obj.update("Username", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[User]
     }
   }
 
@@ -3343,25 +2707,13 @@ package workdocs {
         Surname: js.UndefOr[UserAttributeValueType] = js.undefined,
         Username: js.UndefOr[UsernameType] = js.undefined
     ): UserMetadata = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "EmailAddress" -> EmailAddress.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "GivenName" -> GivenName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Id" -> Id.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Surname" -> Surname.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Username" -> Username.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UserMetadata]
+      val __obj = js.Dictionary.empty[js.Any]
+      EmailAddress.foreach(__v => __obj.update("EmailAddress", __v.asInstanceOf[js.Any]))
+      GivenName.foreach(__v => __obj.update("GivenName", __v.asInstanceOf[js.Any]))
+      Id.foreach(__v => __obj.update("Id", __v.asInstanceOf[js.Any]))
+      Surname.foreach(__v => __obj.update("Surname", __v.asInstanceOf[js.Any]))
+      Username.foreach(__v => __obj.update("Username", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UserMetadata]
     }
   }
 
@@ -3397,16 +2749,10 @@ package workdocs {
         StorageRule: js.UndefOr[StorageRuleType] = js.undefined,
         StorageUtilizedInBytes: js.UndefOr[SizeType] = js.undefined
     ): UserStorageMetadata = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "StorageRule" -> StorageRule.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "StorageUtilizedInBytes" -> StorageUtilizedInBytes.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UserStorageMetadata]
+      val __obj = js.Dictionary.empty[js.Any]
+      StorageRule.foreach(__v => __obj.update("StorageRule", __v.asInstanceOf[js.Any]))
+      StorageUtilizedInBytes.foreach(__v => __obj.update("StorageUtilizedInBytes", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UserStorageMetadata]
     }
   }
 

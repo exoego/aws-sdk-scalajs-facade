@@ -78,11 +78,11 @@ package macie {
     def apply(
         memberAccountId: AWSAccountId
     ): AssociateMemberAccountRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "memberAccountId" -> memberAccountId.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AssociateMemberAccountRequest]
+      __obj.asInstanceOf[AssociateMemberAccountRequest]
     }
   }
 
@@ -97,14 +97,12 @@ package macie {
         s3Resources: S3ResourcesClassification,
         memberAccountId: js.UndefOr[AWSAccountId] = js.undefined
     ): AssociateS3ResourcesRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "s3Resources" -> s3Resources.asInstanceOf[js.Any],
-        "memberAccountId" -> memberAccountId.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "s3Resources" -> s3Resources.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AssociateS3ResourcesRequest]
+      memberAccountId.foreach(__v => __obj.update("memberAccountId", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AssociateS3ResourcesRequest]
     }
   }
 
@@ -117,13 +115,9 @@ package macie {
     def apply(
         failedS3Resources: js.UndefOr[FailedS3Resources] = js.undefined
     ): AssociateS3ResourcesResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "failedS3Resources" -> failedS3Resources.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AssociateS3ResourcesResult]
+      val __obj = js.Dictionary.empty[js.Any]
+      failedS3Resources.foreach(__v => __obj.update("failedS3Resources", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AssociateS3ResourcesResult]
     }
   }
 
@@ -141,12 +135,12 @@ package macie {
         continuous: S3ContinuousClassificationType,
         oneTime: S3OneTimeClassificationType
     ): ClassificationType = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "continuous" -> continuous.asInstanceOf[js.Any],
         "oneTime"    -> oneTime.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ClassificationType]
+      __obj.asInstanceOf[ClassificationType]
     }
   }
 
@@ -164,16 +158,10 @@ package macie {
         continuous: js.UndefOr[S3ContinuousClassificationType] = js.undefined,
         oneTime: js.UndefOr[S3OneTimeClassificationType] = js.undefined
     ): ClassificationTypeUpdate = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "continuous" -> continuous.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "oneTime" -> oneTime.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ClassificationTypeUpdate]
+      val __obj = js.Dictionary.empty[js.Any]
+      continuous.foreach(__v => __obj.update("continuous", __v.asInstanceOf[js.Any]))
+      oneTime.foreach(__v => __obj.update("oneTime", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ClassificationTypeUpdate]
     }
   }
 
@@ -186,11 +174,11 @@ package macie {
     def apply(
         memberAccountId: AWSAccountId
     ): DisassociateMemberAccountRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "memberAccountId" -> memberAccountId.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DisassociateMemberAccountRequest]
+      __obj.asInstanceOf[DisassociateMemberAccountRequest]
     }
   }
 
@@ -205,14 +193,12 @@ package macie {
         associatedS3Resources: S3Resources,
         memberAccountId: js.UndefOr[AWSAccountId] = js.undefined
     ): DisassociateS3ResourcesRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "associatedS3Resources" -> associatedS3Resources.asInstanceOf[js.Any],
-        "memberAccountId" -> memberAccountId.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "associatedS3Resources" -> associatedS3Resources.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DisassociateS3ResourcesRequest]
+      memberAccountId.foreach(__v => __obj.update("memberAccountId", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DisassociateS3ResourcesRequest]
     }
   }
 
@@ -225,13 +211,9 @@ package macie {
     def apply(
         failedS3Resources: js.UndefOr[FailedS3Resources] = js.undefined
     ): DisassociateS3ResourcesResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "failedS3Resources" -> failedS3Resources.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DisassociateS3ResourcesResult]
+      val __obj = js.Dictionary.empty[js.Any]
+      failedS3Resources.foreach(__v => __obj.update("failedS3Resources", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DisassociateS3ResourcesResult]
     }
   }
 
@@ -251,19 +233,11 @@ package macie {
         errorMessage: js.UndefOr[ExceptionMessage] = js.undefined,
         failedItem: js.UndefOr[S3Resource] = js.undefined
     ): FailedS3Resource = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "errorCode" -> errorCode.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "errorMessage" -> errorMessage.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "failedItem" -> failedItem.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[FailedS3Resource]
+      val __obj = js.Dictionary.empty[js.Any]
+      errorCode.foreach(__v => __obj.update("errorCode", __v.asInstanceOf[js.Any]))
+      errorMessage.foreach(__v => __obj.update("errorMessage", __v.asInstanceOf[js.Any]))
+      failedItem.foreach(__v => __obj.update("failedItem", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[FailedS3Resource]
     }
   }
 
@@ -307,16 +281,10 @@ package macie {
         maxResults: js.UndefOr[MaxResults] = js.undefined,
         nextToken: js.UndefOr[NextToken] = js.undefined
     ): ListMemberAccountsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "maxResults" -> maxResults.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "nextToken" -> nextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListMemberAccountsRequest]
+      val __obj = js.Dictionary.empty[js.Any]
+      maxResults.foreach(__v => __obj.update("maxResults", __v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListMemberAccountsRequest]
     }
   }
 
@@ -331,16 +299,10 @@ package macie {
         memberAccounts: js.UndefOr[MemberAccounts] = js.undefined,
         nextToken: js.UndefOr[NextToken] = js.undefined
     ): ListMemberAccountsResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "memberAccounts" -> memberAccounts.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "nextToken" -> nextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListMemberAccountsResult]
+      val __obj = js.Dictionary.empty[js.Any]
+      memberAccounts.foreach(__v => __obj.update("memberAccounts", __v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListMemberAccountsResult]
     }
   }
 
@@ -357,19 +319,11 @@ package macie {
         memberAccountId: js.UndefOr[AWSAccountId] = js.undefined,
         nextToken: js.UndefOr[NextToken] = js.undefined
     ): ListS3ResourcesRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "maxResults" -> maxResults.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "memberAccountId" -> memberAccountId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "nextToken" -> nextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListS3ResourcesRequest]
+      val __obj = js.Dictionary.empty[js.Any]
+      maxResults.foreach(__v => __obj.update("maxResults", __v.asInstanceOf[js.Any]))
+      memberAccountId.foreach(__v => __obj.update("memberAccountId", __v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListS3ResourcesRequest]
     }
   }
 
@@ -384,16 +338,10 @@ package macie {
         nextToken: js.UndefOr[NextToken] = js.undefined,
         s3Resources: js.UndefOr[S3ResourcesClassification] = js.undefined
     ): ListS3ResourcesResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "nextToken" -> nextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "s3Resources" -> s3Resources.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListS3ResourcesResult]
+      val __obj = js.Dictionary.empty[js.Any]
+      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
+      s3Resources.foreach(__v => __obj.update("s3Resources", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListS3ResourcesResult]
     }
   }
 
@@ -409,13 +357,9 @@ package macie {
     def apply(
         accountId: js.UndefOr[AWSAccountId] = js.undefined
     ): MemberAccount = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "accountId" -> accountId.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[MemberAccount]
+      val __obj = js.Dictionary.empty[js.Any]
+      accountId.foreach(__v => __obj.update("accountId", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[MemberAccount]
     }
   }
 
@@ -446,14 +390,12 @@ package macie {
         bucketName: BucketName,
         prefix: js.UndefOr[Prefix] = js.undefined
     ): S3Resource = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "bucketName" -> bucketName.asInstanceOf[js.Any],
-        "prefix" -> prefix.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "bucketName" -> bucketName.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[S3Resource]
+      prefix.foreach(__v => __obj.update("prefix", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[S3Resource]
     }
   }
 
@@ -473,15 +415,13 @@ package macie {
         classificationType: ClassificationType,
         prefix: js.UndefOr[Prefix] = js.undefined
     ): S3ResourceClassification = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "bucketName"         -> bucketName.asInstanceOf[js.Any],
-        "classificationType" -> classificationType.asInstanceOf[js.Any],
-        "prefix" -> prefix.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "classificationType" -> classificationType.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[S3ResourceClassification]
+      prefix.foreach(__v => __obj.update("prefix", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[S3ResourceClassification]
     }
   }
 
@@ -501,15 +441,13 @@ package macie {
         classificationTypeUpdate: ClassificationTypeUpdate,
         prefix: js.UndefOr[Prefix] = js.undefined
     ): S3ResourceClassificationUpdate = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "bucketName"               -> bucketName.asInstanceOf[js.Any],
-        "classificationTypeUpdate" -> classificationTypeUpdate.asInstanceOf[js.Any],
-        "prefix" -> prefix.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "classificationTypeUpdate" -> classificationTypeUpdate.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[S3ResourceClassificationUpdate]
+      prefix.foreach(__v => __obj.update("prefix", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[S3ResourceClassificationUpdate]
     }
   }
 
@@ -524,14 +462,12 @@ package macie {
         s3ResourcesUpdate: S3ResourcesClassificationUpdate,
         memberAccountId: js.UndefOr[AWSAccountId] = js.undefined
     ): UpdateS3ResourcesRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "s3ResourcesUpdate" -> s3ResourcesUpdate.asInstanceOf[js.Any],
-        "memberAccountId" -> memberAccountId.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "s3ResourcesUpdate" -> s3ResourcesUpdate.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateS3ResourcesRequest]
+      memberAccountId.foreach(__v => __obj.update("memberAccountId", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateS3ResourcesRequest]
     }
   }
 
@@ -544,13 +480,9 @@ package macie {
     def apply(
         failedS3Resources: js.UndefOr[FailedS3Resources] = js.undefined
     ): UpdateS3ResourcesResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "failedS3Resources" -> failedS3Resources.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateS3ResourcesResult]
+      val __obj = js.Dictionary.empty[js.Any]
+      failedS3Resources.foreach(__v => __obj.update("failedS3Resources", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateS3ResourcesResult]
     }
   }
 }

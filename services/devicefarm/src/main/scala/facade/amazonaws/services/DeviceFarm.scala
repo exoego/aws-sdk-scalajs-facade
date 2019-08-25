@@ -334,34 +334,18 @@ package devicefarm {
         unmeteredDevices: js.UndefOr[PurchasedDevicesMap] = js.undefined,
         unmeteredRemoteAccessDevices: js.UndefOr[PurchasedDevicesMap] = js.undefined
     ): AccountSettings = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "awsAccountNumber" -> awsAccountNumber.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "defaultJobTimeoutMinutes" -> defaultJobTimeoutMinutes.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "maxJobTimeoutMinutes" -> maxJobTimeoutMinutes.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "maxSlots" -> maxSlots.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "skipAppResign" -> skipAppResign.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "trialMinutes" -> trialMinutes.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "unmeteredDevices" -> unmeteredDevices.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "unmeteredRemoteAccessDevices" -> unmeteredRemoteAccessDevices.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AccountSettings]
+      val __obj = js.Dictionary.empty[js.Any]
+      awsAccountNumber.foreach(__v => __obj.update("awsAccountNumber", __v.asInstanceOf[js.Any]))
+      defaultJobTimeoutMinutes.foreach(__v => __obj.update("defaultJobTimeoutMinutes", __v.asInstanceOf[js.Any]))
+      maxJobTimeoutMinutes.foreach(__v => __obj.update("maxJobTimeoutMinutes", __v.asInstanceOf[js.Any]))
+      maxSlots.foreach(__v => __obj.update("maxSlots", __v.asInstanceOf[js.Any]))
+      skipAppResign.foreach(__v => __obj.update("skipAppResign", __v.asInstanceOf[js.Any]))
+      trialMinutes.foreach(__v => __obj.update("trialMinutes", __v.asInstanceOf[js.Any]))
+      unmeteredDevices.foreach(__v => __obj.update("unmeteredDevices", __v.asInstanceOf[js.Any]))
+      unmeteredRemoteAccessDevices.foreach(
+        __v => __obj.update("unmeteredRemoteAccessDevices", __v.asInstanceOf[js.Any])
+      )
+      __obj.asInstanceOf[AccountSettings]
     }
   }
 
@@ -385,25 +369,13 @@ package devicefarm {
         `type`: js.UndefOr[ArtifactType] = js.undefined,
         url: js.UndefOr[URL] = js.undefined
     ): Artifact = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "arn" -> arn.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "extension" -> extension.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "name" -> name.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "`type`" -> `type`.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "url" -> url.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Artifact]
+      val __obj = js.Dictionary.empty[js.Any]
+      arn.foreach(__v => __obj.update("arn", __v.asInstanceOf[js.Any]))
+      extension.foreach(__v => __obj.update("extension", __v.asInstanceOf[js.Any]))
+      name.foreach(__v => __obj.update("name", __v.asInstanceOf[js.Any]))
+      `type`.foreach(__v => __obj.update("type", __v.asInstanceOf[js.Any]))
+      url.foreach(__v => __obj.update("url", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Artifact]
     }
   }
 
@@ -501,19 +473,11 @@ package devicefarm {
         clock: js.UndefOr[Double] = js.undefined,
         frequency: js.UndefOr[String] = js.undefined
     ): CPU = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "architecture" -> architecture.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "clock" -> clock.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "frequency" -> frequency.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CPU]
+      val __obj = js.Dictionary.empty[js.Any]
+      architecture.foreach(__v => __obj.update("architecture", __v.asInstanceOf[js.Any]))
+      clock.foreach(__v => __obj.update("clock", __v.asInstanceOf[js.Any]))
+      frequency.foreach(__v => __obj.update("frequency", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CPU]
     }
   }
 
@@ -541,31 +505,15 @@ package devicefarm {
         total: js.UndefOr[Int] = js.undefined,
         warned: js.UndefOr[Int] = js.undefined
     ): Counters = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "errored" -> errored.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "failed" -> failed.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "passed" -> passed.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "skipped" -> skipped.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "stopped" -> stopped.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "total" -> total.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "warned" -> warned.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Counters]
+      val __obj = js.Dictionary.empty[js.Any]
+      errored.foreach(__v => __obj.update("errored", __v.asInstanceOf[js.Any]))
+      failed.foreach(__v => __obj.update("failed", __v.asInstanceOf[js.Any]))
+      passed.foreach(__v => __obj.update("passed", __v.asInstanceOf[js.Any]))
+      skipped.foreach(__v => __obj.update("skipped", __v.asInstanceOf[js.Any]))
+      stopped.foreach(__v => __obj.update("stopped", __v.asInstanceOf[js.Any]))
+      total.foreach(__v => __obj.update("total", __v.asInstanceOf[js.Any]))
+      warned.foreach(__v => __obj.update("warned", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Counters]
     }
   }
 
@@ -589,19 +537,15 @@ package devicefarm {
         description: js.UndefOr[Message] = js.undefined,
         maxDevices: js.UndefOr[Int] = js.undefined
     ): CreateDevicePoolRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "name"       -> name.asInstanceOf[js.Any],
         "projectArn" -> projectArn.asInstanceOf[js.Any],
-        "rules"      -> rules.asInstanceOf[js.Any],
-        "description" -> description.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "maxDevices" -> maxDevices.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "rules"      -> rules.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateDevicePoolRequest]
+      description.foreach(__v => __obj.update("description", __v.asInstanceOf[js.Any]))
+      maxDevices.foreach(__v => __obj.update("maxDevices", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateDevicePoolRequest]
     }
   }
 
@@ -617,13 +561,9 @@ package devicefarm {
     def apply(
         devicePool: js.UndefOr[DevicePool] = js.undefined
     ): CreateDevicePoolResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "devicePool" -> devicePool.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateDevicePoolResult]
+      val __obj = js.Dictionary.empty[js.Any]
+      devicePool.foreach(__v => __obj.update("devicePool", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateDevicePoolResult]
     }
   }
 
@@ -644,23 +584,17 @@ package devicefarm {
         packageCleanup: js.UndefOr[Boolean] = js.undefined,
         rebootAfterUse: js.UndefOr[Boolean] = js.undefined
     ): CreateInstanceProfileRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "name" -> name.asInstanceOf[js.Any],
-        "description" -> description.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "excludeAppPackagesFromCleanup" -> excludeAppPackagesFromCleanup.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "packageCleanup" -> packageCleanup.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "rebootAfterUse" -> rebootAfterUse.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "name" -> name.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateInstanceProfileRequest]
+      description.foreach(__v => __obj.update("description", __v.asInstanceOf[js.Any]))
+      excludeAppPackagesFromCleanup.foreach(
+        __v => __obj.update("excludeAppPackagesFromCleanup", __v.asInstanceOf[js.Any])
+      )
+      packageCleanup.foreach(__v => __obj.update("packageCleanup", __v.asInstanceOf[js.Any]))
+      rebootAfterUse.foreach(__v => __obj.update("rebootAfterUse", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateInstanceProfileRequest]
     }
   }
 
@@ -673,13 +607,9 @@ package devicefarm {
     def apply(
         instanceProfile: js.UndefOr[InstanceProfile] = js.undefined
     ): CreateInstanceProfileResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "instanceProfile" -> instanceProfile.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateInstanceProfileResult]
+      val __obj = js.Dictionary.empty[js.Any]
+      instanceProfile.foreach(__v => __obj.update("instanceProfile", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateInstanceProfileResult]
     }
   }
 
@@ -714,42 +644,22 @@ package devicefarm {
         uplinkJitterMs: js.UndefOr[Double] = js.undefined,
         uplinkLossPercent: js.UndefOr[PercentInteger] = js.undefined
     ): CreateNetworkProfileRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "name"       -> name.asInstanceOf[js.Any],
-        "projectArn" -> projectArn.asInstanceOf[js.Any],
-        "description" -> description.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "downlinkBandwidthBits" -> downlinkBandwidthBits.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "downlinkDelayMs" -> downlinkDelayMs.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "downlinkJitterMs" -> downlinkJitterMs.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "downlinkLossPercent" -> downlinkLossPercent.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "`type`" -> `type`.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "uplinkBandwidthBits" -> uplinkBandwidthBits.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "uplinkDelayMs" -> uplinkDelayMs.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "uplinkJitterMs" -> uplinkJitterMs.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "uplinkLossPercent" -> uplinkLossPercent.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "projectArn" -> projectArn.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateNetworkProfileRequest]
+      description.foreach(__v => __obj.update("description", __v.asInstanceOf[js.Any]))
+      downlinkBandwidthBits.foreach(__v => __obj.update("downlinkBandwidthBits", __v.asInstanceOf[js.Any]))
+      downlinkDelayMs.foreach(__v => __obj.update("downlinkDelayMs", __v.asInstanceOf[js.Any]))
+      downlinkJitterMs.foreach(__v => __obj.update("downlinkJitterMs", __v.asInstanceOf[js.Any]))
+      downlinkLossPercent.foreach(__v => __obj.update("downlinkLossPercent", __v.asInstanceOf[js.Any]))
+      `type`.foreach(__v => __obj.update("type", __v.asInstanceOf[js.Any]))
+      uplinkBandwidthBits.foreach(__v => __obj.update("uplinkBandwidthBits", __v.asInstanceOf[js.Any]))
+      uplinkDelayMs.foreach(__v => __obj.update("uplinkDelayMs", __v.asInstanceOf[js.Any]))
+      uplinkJitterMs.foreach(__v => __obj.update("uplinkJitterMs", __v.asInstanceOf[js.Any]))
+      uplinkLossPercent.foreach(__v => __obj.update("uplinkLossPercent", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateNetworkProfileRequest]
     }
   }
 
@@ -762,13 +672,9 @@ package devicefarm {
     def apply(
         networkProfile: js.UndefOr[NetworkProfile] = js.undefined
     ): CreateNetworkProfileResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "networkProfile" -> networkProfile.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateNetworkProfileResult]
+      val __obj = js.Dictionary.empty[js.Any]
+      networkProfile.foreach(__v => __obj.update("networkProfile", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateNetworkProfileResult]
     }
   }
 
@@ -786,14 +692,12 @@ package devicefarm {
         name: Name,
         defaultJobTimeoutMinutes: js.UndefOr[JobTimeoutMinutes] = js.undefined
     ): CreateProjectRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "name" -> name.asInstanceOf[js.Any],
-        "defaultJobTimeoutMinutes" -> defaultJobTimeoutMinutes.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "name" -> name.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateProjectRequest]
+      defaultJobTimeoutMinutes.foreach(__v => __obj.update("defaultJobTimeoutMinutes", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateProjectRequest]
     }
   }
 
@@ -809,13 +713,9 @@ package devicefarm {
     def apply(
         project: js.UndefOr[Project] = js.undefined
     ): CreateProjectResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "project" -> project.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateProjectResult]
+      val __obj = js.Dictionary.empty[js.Any]
+      project.foreach(__v => __obj.update("project", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateProjectResult]
     }
   }
 
@@ -833,16 +733,10 @@ package devicefarm {
         billingMethod: js.UndefOr[BillingMethod] = js.undefined,
         vpceConfigurationArns: js.UndefOr[AmazonResourceNames] = js.undefined
     ): CreateRemoteAccessSessionConfiguration = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "billingMethod" -> billingMethod.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "vpceConfigurationArns" -> vpceConfigurationArns.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateRemoteAccessSessionConfiguration]
+      val __obj = js.Dictionary.empty[js.Any]
+      billingMethod.foreach(__v => __obj.update("billingMethod", __v.asInstanceOf[js.Any]))
+      vpceConfigurationArns.foreach(__v => __obj.update("vpceConfigurationArns", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateRemoteAccessSessionConfiguration]
     }
   }
 
@@ -880,42 +774,22 @@ package devicefarm {
         skipAppResign: js.UndefOr[Boolean] = js.undefined,
         sshPublicKey: js.UndefOr[SshPublicKey] = js.undefined
     ): CreateRemoteAccessSessionRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "deviceArn"  -> deviceArn.asInstanceOf[js.Any],
-        "projectArn" -> projectArn.asInstanceOf[js.Any],
-        "clientId" -> clientId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "configuration" -> configuration.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "instanceArn" -> instanceArn.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "interactionMode" -> interactionMode.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "name" -> name.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "remoteDebugEnabled" -> remoteDebugEnabled.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "remoteRecordAppArn" -> remoteRecordAppArn.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "remoteRecordEnabled" -> remoteRecordEnabled.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "skipAppResign" -> skipAppResign.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "sshPublicKey" -> sshPublicKey.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "projectArn" -> projectArn.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateRemoteAccessSessionRequest]
+      clientId.foreach(__v => __obj.update("clientId", __v.asInstanceOf[js.Any]))
+      configuration.foreach(__v => __obj.update("configuration", __v.asInstanceOf[js.Any]))
+      instanceArn.foreach(__v => __obj.update("instanceArn", __v.asInstanceOf[js.Any]))
+      interactionMode.foreach(__v => __obj.update("interactionMode", __v.asInstanceOf[js.Any]))
+      name.foreach(__v => __obj.update("name", __v.asInstanceOf[js.Any]))
+      remoteDebugEnabled.foreach(__v => __obj.update("remoteDebugEnabled", __v.asInstanceOf[js.Any]))
+      remoteRecordAppArn.foreach(__v => __obj.update("remoteRecordAppArn", __v.asInstanceOf[js.Any]))
+      remoteRecordEnabled.foreach(__v => __obj.update("remoteRecordEnabled", __v.asInstanceOf[js.Any]))
+      skipAppResign.foreach(__v => __obj.update("skipAppResign", __v.asInstanceOf[js.Any]))
+      sshPublicKey.foreach(__v => __obj.update("sshPublicKey", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateRemoteAccessSessionRequest]
     }
   }
 
@@ -931,13 +805,9 @@ package devicefarm {
     def apply(
         remoteAccessSession: js.UndefOr[RemoteAccessSession] = js.undefined
     ): CreateRemoteAccessSessionResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "remoteAccessSession" -> remoteAccessSession.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateRemoteAccessSessionResult]
+      val __obj = js.Dictionary.empty[js.Any]
+      remoteAccessSession.foreach(__v => __obj.update("remoteAccessSession", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateRemoteAccessSessionResult]
     }
   }
 
@@ -959,16 +829,14 @@ package devicefarm {
         `type`: UploadType,
         contentType: js.UndefOr[ContentType] = js.undefined
     ): CreateUploadRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "name"       -> name.asInstanceOf[js.Any],
         "projectArn" -> projectArn.asInstanceOf[js.Any],
-        "`type`"     -> `type`.asInstanceOf[js.Any],
-        "contentType" -> contentType.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "type"       -> `type`.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateUploadRequest]
+      contentType.foreach(__v => __obj.update("contentType", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateUploadRequest]
     }
   }
 
@@ -984,13 +852,9 @@ package devicefarm {
     def apply(
         upload: js.UndefOr[Upload] = js.undefined
     ): CreateUploadResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "upload" -> upload.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateUploadResult]
+      val __obj = js.Dictionary.empty[js.Any]
+      upload.foreach(__v => __obj.update("upload", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateUploadResult]
     }
   }
 
@@ -1009,16 +873,16 @@ package devicefarm {
         vpceServiceName: VPCEServiceName,
         vpceConfigurationDescription: js.UndefOr[VPCEConfigurationDescription] = js.undefined
     ): CreateVPCEConfigurationRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "serviceDnsName"        -> serviceDnsName.asInstanceOf[js.Any],
         "vpceConfigurationName" -> vpceConfigurationName.asInstanceOf[js.Any],
-        "vpceServiceName"       -> vpceServiceName.asInstanceOf[js.Any],
-        "vpceConfigurationDescription" -> vpceConfigurationDescription.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "vpceServiceName"       -> vpceServiceName.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateVPCEConfigurationRequest]
+      vpceConfigurationDescription.foreach(
+        __v => __obj.update("vpceConfigurationDescription", __v.asInstanceOf[js.Any])
+      )
+      __obj.asInstanceOf[CreateVPCEConfigurationRequest]
     }
   }
 
@@ -1031,13 +895,9 @@ package devicefarm {
     def apply(
         vpceConfiguration: js.UndefOr[VPCEConfiguration] = js.undefined
     ): CreateVPCEConfigurationResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "vpceConfiguration" -> vpceConfiguration.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateVPCEConfigurationResult]
+      val __obj = js.Dictionary.empty[js.Any]
+      vpceConfiguration.foreach(__v => __obj.update("vpceConfiguration", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateVPCEConfigurationResult]
     }
   }
 
@@ -1065,19 +925,11 @@ package devicefarm {
         deviceHostPaths: js.UndefOr[DeviceHostPaths] = js.undefined,
         iosPaths: js.UndefOr[IosPaths] = js.undefined
     ): CustomerArtifactPaths = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "androidPaths" -> androidPaths.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "deviceHostPaths" -> deviceHostPaths.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "iosPaths" -> iosPaths.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CustomerArtifactPaths]
+      val __obj = js.Dictionary.empty[js.Any]
+      androidPaths.foreach(__v => __obj.update("androidPaths", __v.asInstanceOf[js.Any]))
+      deviceHostPaths.foreach(__v => __obj.update("deviceHostPaths", __v.asInstanceOf[js.Any]))
+      iosPaths.foreach(__v => __obj.update("iosPaths", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CustomerArtifactPaths]
     }
   }
 
@@ -1093,11 +945,11 @@ package devicefarm {
     def apply(
         arn: AmazonResourceName
     ): DeleteDevicePoolRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "arn" -> arn.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteDevicePoolRequest]
+      __obj.asInstanceOf[DeleteDevicePoolRequest]
     }
   }
 
@@ -1110,10 +962,9 @@ package devicefarm {
   object DeleteDevicePoolResult {
     def apply(
         ): DeleteDevicePoolResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary.empty[js.Any]
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteDevicePoolResult]
+      __obj.asInstanceOf[DeleteDevicePoolResult]
     }
   }
 
@@ -1126,11 +977,11 @@ package devicefarm {
     def apply(
         arn: AmazonResourceName
     ): DeleteInstanceProfileRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "arn" -> arn.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteInstanceProfileRequest]
+      __obj.asInstanceOf[DeleteInstanceProfileRequest]
     }
   }
 
@@ -1140,10 +991,9 @@ package devicefarm {
   object DeleteInstanceProfileResult {
     def apply(
         ): DeleteInstanceProfileResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary.empty[js.Any]
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteInstanceProfileResult]
+      __obj.asInstanceOf[DeleteInstanceProfileResult]
     }
   }
 
@@ -1156,11 +1006,11 @@ package devicefarm {
     def apply(
         arn: AmazonResourceName
     ): DeleteNetworkProfileRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "arn" -> arn.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteNetworkProfileRequest]
+      __obj.asInstanceOf[DeleteNetworkProfileRequest]
     }
   }
 
@@ -1170,10 +1020,9 @@ package devicefarm {
   object DeleteNetworkProfileResult {
     def apply(
         ): DeleteNetworkProfileResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary.empty[js.Any]
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteNetworkProfileResult]
+      __obj.asInstanceOf[DeleteNetworkProfileResult]
     }
   }
 
@@ -1189,11 +1038,11 @@ package devicefarm {
     def apply(
         arn: AmazonResourceName
     ): DeleteProjectRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "arn" -> arn.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteProjectRequest]
+      __obj.asInstanceOf[DeleteProjectRequest]
     }
   }
 
@@ -1206,10 +1055,9 @@ package devicefarm {
   object DeleteProjectResult {
     def apply(
         ): DeleteProjectResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary.empty[js.Any]
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteProjectResult]
+      __obj.asInstanceOf[DeleteProjectResult]
     }
   }
 
@@ -1225,11 +1073,11 @@ package devicefarm {
     def apply(
         arn: AmazonResourceName
     ): DeleteRemoteAccessSessionRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "arn" -> arn.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteRemoteAccessSessionRequest]
+      __obj.asInstanceOf[DeleteRemoteAccessSessionRequest]
     }
   }
 
@@ -1242,10 +1090,9 @@ package devicefarm {
   object DeleteRemoteAccessSessionResult {
     def apply(
         ): DeleteRemoteAccessSessionResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary.empty[js.Any]
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteRemoteAccessSessionResult]
+      __obj.asInstanceOf[DeleteRemoteAccessSessionResult]
     }
   }
 
@@ -1261,11 +1108,11 @@ package devicefarm {
     def apply(
         arn: AmazonResourceName
     ): DeleteRunRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "arn" -> arn.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteRunRequest]
+      __obj.asInstanceOf[DeleteRunRequest]
     }
   }
 
@@ -1278,10 +1125,9 @@ package devicefarm {
   object DeleteRunResult {
     def apply(
         ): DeleteRunResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary.empty[js.Any]
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteRunResult]
+      __obj.asInstanceOf[DeleteRunResult]
     }
   }
 
@@ -1297,11 +1143,11 @@ package devicefarm {
     def apply(
         arn: AmazonResourceName
     ): DeleteUploadRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "arn" -> arn.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteUploadRequest]
+      __obj.asInstanceOf[DeleteUploadRequest]
     }
   }
 
@@ -1314,10 +1160,9 @@ package devicefarm {
   object DeleteUploadResult {
     def apply(
         ): DeleteUploadResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary.empty[js.Any]
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteUploadResult]
+      __obj.asInstanceOf[DeleteUploadResult]
     }
   }
 
@@ -1330,11 +1175,11 @@ package devicefarm {
     def apply(
         arn: AmazonResourceName
     ): DeleteVPCEConfigurationRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "arn" -> arn.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteVPCEConfigurationRequest]
+      __obj.asInstanceOf[DeleteVPCEConfigurationRequest]
     }
   }
 
@@ -1344,10 +1189,9 @@ package devicefarm {
   object DeleteVPCEConfigurationResult {
     def apply(
         ): DeleteVPCEConfigurationResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary.empty[js.Any]
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteVPCEConfigurationResult]
+      __obj.asInstanceOf[DeleteVPCEConfigurationResult]
     }
   }
 
@@ -1403,73 +1247,29 @@ package devicefarm {
         remoteDebugEnabled: js.UndefOr[Boolean] = js.undefined,
         resolution: js.UndefOr[Resolution] = js.undefined
     ): Device = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "arn" -> arn.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "availability" -> availability.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "carrier" -> carrier.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "cpu" -> cpu.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "fleetName" -> fleetName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "fleetType" -> fleetType.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "formFactor" -> formFactor.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "heapSize" -> heapSize.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "image" -> image.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "instances" -> instances.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "manufacturer" -> manufacturer.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "memory" -> memory.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "model" -> model.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "modelId" -> modelId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "name" -> name.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "os" -> os.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "platform" -> platform.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "radio" -> radio.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "remoteAccessEnabled" -> remoteAccessEnabled.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "remoteDebugEnabled" -> remoteDebugEnabled.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "resolution" -> resolution.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Device]
+      val __obj = js.Dictionary.empty[js.Any]
+      arn.foreach(__v => __obj.update("arn", __v.asInstanceOf[js.Any]))
+      availability.foreach(__v => __obj.update("availability", __v.asInstanceOf[js.Any]))
+      carrier.foreach(__v => __obj.update("carrier", __v.asInstanceOf[js.Any]))
+      cpu.foreach(__v => __obj.update("cpu", __v.asInstanceOf[js.Any]))
+      fleetName.foreach(__v => __obj.update("fleetName", __v.asInstanceOf[js.Any]))
+      fleetType.foreach(__v => __obj.update("fleetType", __v.asInstanceOf[js.Any]))
+      formFactor.foreach(__v => __obj.update("formFactor", __v.asInstanceOf[js.Any]))
+      heapSize.foreach(__v => __obj.update("heapSize", __v.asInstanceOf[js.Any]))
+      image.foreach(__v => __obj.update("image", __v.asInstanceOf[js.Any]))
+      instances.foreach(__v => __obj.update("instances", __v.asInstanceOf[js.Any]))
+      manufacturer.foreach(__v => __obj.update("manufacturer", __v.asInstanceOf[js.Any]))
+      memory.foreach(__v => __obj.update("memory", __v.asInstanceOf[js.Any]))
+      model.foreach(__v => __obj.update("model", __v.asInstanceOf[js.Any]))
+      modelId.foreach(__v => __obj.update("modelId", __v.asInstanceOf[js.Any]))
+      name.foreach(__v => __obj.update("name", __v.asInstanceOf[js.Any]))
+      os.foreach(__v => __obj.update("os", __v.asInstanceOf[js.Any]))
+      platform.foreach(__v => __obj.update("platform", __v.asInstanceOf[js.Any]))
+      radio.foreach(__v => __obj.update("radio", __v.asInstanceOf[js.Any]))
+      remoteAccessEnabled.foreach(__v => __obj.update("remoteAccessEnabled", __v.asInstanceOf[js.Any]))
+      remoteDebugEnabled.foreach(__v => __obj.update("remoteDebugEnabled", __v.asInstanceOf[js.Any]))
+      resolution.foreach(__v => __obj.update("resolution", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Device]
     }
   }
 
@@ -1531,19 +1331,11 @@ package devicefarm {
         operator: js.UndefOr[RuleOperator] = js.undefined,
         values: js.UndefOr[DeviceFilterValues] = js.undefined
     ): DeviceFilter = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "attribute" -> attribute.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "operator" -> operator.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "values" -> values.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeviceFilter]
+      val __obj = js.Dictionary.empty[js.Any]
+      attribute.foreach(__v => __obj.update("attribute", __v.asInstanceOf[js.Any]))
+      operator.foreach(__v => __obj.update("operator", __v.asInstanceOf[js.Any]))
+      values.foreach(__v => __obj.update("values", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DeviceFilter]
     }
   }
 
@@ -1606,28 +1398,14 @@ package devicefarm {
         status: js.UndefOr[InstanceStatus] = js.undefined,
         udid: js.UndefOr[String] = js.undefined
     ): DeviceInstance = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "arn" -> arn.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "deviceArn" -> deviceArn.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "instanceProfile" -> instanceProfile.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "labels" -> labels.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "status" -> status.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "udid" -> udid.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeviceInstance]
+      val __obj = js.Dictionary.empty[js.Any]
+      arn.foreach(__v => __obj.update("arn", __v.asInstanceOf[js.Any]))
+      deviceArn.foreach(__v => __obj.update("deviceArn", __v.asInstanceOf[js.Any]))
+      instanceProfile.foreach(__v => __obj.update("instanceProfile", __v.asInstanceOf[js.Any]))
+      labels.foreach(__v => __obj.update("labels", __v.asInstanceOf[js.Any]))
+      status.foreach(__v => __obj.update("status", __v.asInstanceOf[js.Any]))
+      udid.foreach(__v => __obj.update("udid", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DeviceInstance]
     }
   }
 
@@ -1647,19 +1425,11 @@ package devicefarm {
         total: js.UndefOr[Double] = js.undefined,
         unmetered: js.UndefOr[Double] = js.undefined
     ): DeviceMinutes = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "metered" -> metered.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "total" -> total.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "unmetered" -> unmetered.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeviceMinutes]
+      val __obj = js.Dictionary.empty[js.Any]
+      metered.foreach(__v => __obj.update("metered", __v.asInstanceOf[js.Any]))
+      total.foreach(__v => __obj.update("total", __v.asInstanceOf[js.Any]))
+      unmetered.foreach(__v => __obj.update("unmetered", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DeviceMinutes]
     }
   }
 
@@ -1692,28 +1462,14 @@ package devicefarm {
         rules: js.UndefOr[Rules] = js.undefined,
         `type`: js.UndefOr[DevicePoolType] = js.undefined
     ): DevicePool = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "arn" -> arn.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "description" -> description.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "maxDevices" -> maxDevices.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "name" -> name.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "rules" -> rules.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "`type`" -> `type`.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DevicePool]
+      val __obj = js.Dictionary.empty[js.Any]
+      arn.foreach(__v => __obj.update("arn", __v.asInstanceOf[js.Any]))
+      description.foreach(__v => __obj.update("description", __v.asInstanceOf[js.Any]))
+      maxDevices.foreach(__v => __obj.update("maxDevices", __v.asInstanceOf[js.Any]))
+      name.foreach(__v => __obj.update("name", __v.asInstanceOf[js.Any]))
+      rules.foreach(__v => __obj.update("rules", __v.asInstanceOf[js.Any]))
+      `type`.foreach(__v => __obj.update("type", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DevicePool]
     }
   }
 
@@ -1733,19 +1489,11 @@ package devicefarm {
         device: js.UndefOr[Device] = js.undefined,
         incompatibilityMessages: js.UndefOr[IncompatibilityMessages] = js.undefined
     ): DevicePoolCompatibilityResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "compatible" -> compatible.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "device" -> device.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "incompatibilityMessages" -> incompatibilityMessages.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DevicePoolCompatibilityResult]
+      val __obj = js.Dictionary.empty[js.Any]
+      compatible.foreach(__v => __obj.update("compatible", __v.asInstanceOf[js.Any]))
+      device.foreach(__v => __obj.update("device", __v.asInstanceOf[js.Any]))
+      incompatibilityMessages.foreach(__v => __obj.update("incompatibilityMessages", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DevicePoolCompatibilityResult]
     }
   }
 
@@ -1770,12 +1518,12 @@ package devicefarm {
         filters: DeviceFilters,
         maxDevices: Int
     ): DeviceSelectionConfiguration = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "filters"    -> filters.asInstanceOf[js.Any],
         "maxDevices" -> maxDevices.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeviceSelectionConfiguration]
+      __obj.asInstanceOf[DeviceSelectionConfiguration]
     }
   }
 
@@ -1795,19 +1543,11 @@ package devicefarm {
         matchedDevicesCount: js.UndefOr[Int] = js.undefined,
         maxDevices: js.UndefOr[Int] = js.undefined
     ): DeviceSelectionResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "filters" -> filters.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "matchedDevicesCount" -> matchedDevicesCount.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "maxDevices" -> maxDevices.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeviceSelectionResult]
+      val __obj = js.Dictionary.empty[js.Any]
+      filters.foreach(__v => __obj.update("filters", __v.asInstanceOf[js.Any]))
+      matchedDevicesCount.foreach(__v => __obj.update("matchedDevicesCount", __v.asInstanceOf[js.Any]))
+      maxDevices.foreach(__v => __obj.update("maxDevices", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DeviceSelectionResult]
     }
   }
 
@@ -1831,25 +1571,13 @@ package devicefarm {
         skipAppResign: js.UndefOr[SkipAppResign] = js.undefined,
         videoCapture: js.UndefOr[VideoCapture] = js.undefined
     ): ExecutionConfiguration = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "accountsCleanup" -> accountsCleanup.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "appPackagesCleanup" -> appPackagesCleanup.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "jobTimeoutMinutes" -> jobTimeoutMinutes.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "skipAppResign" -> skipAppResign.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "videoCapture" -> videoCapture.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ExecutionConfiguration]
+      val __obj = js.Dictionary.empty[js.Any]
+      accountsCleanup.foreach(__v => __obj.update("accountsCleanup", __v.asInstanceOf[js.Any]))
+      appPackagesCleanup.foreach(__v => __obj.update("appPackagesCleanup", __v.asInstanceOf[js.Any]))
+      jobTimeoutMinutes.foreach(__v => __obj.update("jobTimeoutMinutes", __v.asInstanceOf[js.Any]))
+      skipAppResign.foreach(__v => __obj.update("skipAppResign", __v.asInstanceOf[js.Any]))
+      videoCapture.foreach(__v => __obj.update("videoCapture", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ExecutionConfiguration]
     }
   }
 
@@ -1905,10 +1633,9 @@ package devicefarm {
   object GetAccountSettingsRequest {
     def apply(
         ): GetAccountSettingsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary.empty[js.Any]
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetAccountSettingsRequest]
+      __obj.asInstanceOf[GetAccountSettingsRequest]
     }
   }
 
@@ -1924,13 +1651,9 @@ package devicefarm {
     def apply(
         accountSettings: js.UndefOr[AccountSettings] = js.undefined
     ): GetAccountSettingsResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "accountSettings" -> accountSettings.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetAccountSettingsResult]
+      val __obj = js.Dictionary.empty[js.Any]
+      accountSettings.foreach(__v => __obj.update("accountSettings", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetAccountSettingsResult]
     }
   }
 
@@ -1943,11 +1666,11 @@ package devicefarm {
     def apply(
         arn: AmazonResourceName
     ): GetDeviceInstanceRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "arn" -> arn.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetDeviceInstanceRequest]
+      __obj.asInstanceOf[GetDeviceInstanceRequest]
     }
   }
 
@@ -1960,13 +1683,9 @@ package devicefarm {
     def apply(
         deviceInstance: js.UndefOr[DeviceInstance] = js.undefined
     ): GetDeviceInstanceResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "deviceInstance" -> deviceInstance.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetDeviceInstanceResult]
+      val __obj = js.Dictionary.empty[js.Any]
+      deviceInstance.foreach(__v => __obj.update("deviceInstance", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetDeviceInstanceResult]
     }
   }
 
@@ -1990,23 +1709,15 @@ package devicefarm {
         test: js.UndefOr[ScheduleRunTest] = js.undefined,
         testType: js.UndefOr[TestType] = js.undefined
     ): GetDevicePoolCompatibilityRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "devicePoolArn" -> devicePoolArn.asInstanceOf[js.Any],
-        "appArn" -> appArn.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "configuration" -> configuration.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "test" -> test.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "testType" -> testType.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "devicePoolArn" -> devicePoolArn.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetDevicePoolCompatibilityRequest]
+      appArn.foreach(__v => __obj.update("appArn", __v.asInstanceOf[js.Any]))
+      configuration.foreach(__v => __obj.update("configuration", __v.asInstanceOf[js.Any]))
+      test.foreach(__v => __obj.update("test", __v.asInstanceOf[js.Any]))
+      testType.foreach(__v => __obj.update("testType", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetDevicePoolCompatibilityRequest]
     }
   }
 
@@ -2024,16 +1735,10 @@ package devicefarm {
         compatibleDevices: js.UndefOr[DevicePoolCompatibilityResults] = js.undefined,
         incompatibleDevices: js.UndefOr[DevicePoolCompatibilityResults] = js.undefined
     ): GetDevicePoolCompatibilityResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "compatibleDevices" -> compatibleDevices.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "incompatibleDevices" -> incompatibleDevices.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetDevicePoolCompatibilityResult]
+      val __obj = js.Dictionary.empty[js.Any]
+      compatibleDevices.foreach(__v => __obj.update("compatibleDevices", __v.asInstanceOf[js.Any]))
+      incompatibleDevices.foreach(__v => __obj.update("incompatibleDevices", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetDevicePoolCompatibilityResult]
     }
   }
 
@@ -2049,11 +1754,11 @@ package devicefarm {
     def apply(
         arn: AmazonResourceName
     ): GetDevicePoolRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "arn" -> arn.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetDevicePoolRequest]
+      __obj.asInstanceOf[GetDevicePoolRequest]
     }
   }
 
@@ -2069,13 +1774,9 @@ package devicefarm {
     def apply(
         devicePool: js.UndefOr[DevicePool] = js.undefined
     ): GetDevicePoolResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "devicePool" -> devicePool.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetDevicePoolResult]
+      val __obj = js.Dictionary.empty[js.Any]
+      devicePool.foreach(__v => __obj.update("devicePool", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetDevicePoolResult]
     }
   }
 
@@ -2091,11 +1792,11 @@ package devicefarm {
     def apply(
         arn: AmazonResourceName
     ): GetDeviceRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "arn" -> arn.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetDeviceRequest]
+      __obj.asInstanceOf[GetDeviceRequest]
     }
   }
 
@@ -2111,13 +1812,9 @@ package devicefarm {
     def apply(
         device: js.UndefOr[Device] = js.undefined
     ): GetDeviceResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "device" -> device.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetDeviceResult]
+      val __obj = js.Dictionary.empty[js.Any]
+      device.foreach(__v => __obj.update("device", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetDeviceResult]
     }
   }
 
@@ -2130,11 +1827,11 @@ package devicefarm {
     def apply(
         arn: AmazonResourceName
     ): GetInstanceProfileRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "arn" -> arn.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetInstanceProfileRequest]
+      __obj.asInstanceOf[GetInstanceProfileRequest]
     }
   }
 
@@ -2147,13 +1844,9 @@ package devicefarm {
     def apply(
         instanceProfile: js.UndefOr[InstanceProfile] = js.undefined
     ): GetInstanceProfileResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "instanceProfile" -> instanceProfile.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetInstanceProfileResult]
+      val __obj = js.Dictionary.empty[js.Any]
+      instanceProfile.foreach(__v => __obj.update("instanceProfile", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetInstanceProfileResult]
     }
   }
 
@@ -2169,11 +1862,11 @@ package devicefarm {
     def apply(
         arn: AmazonResourceName
     ): GetJobRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "arn" -> arn.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetJobRequest]
+      __obj.asInstanceOf[GetJobRequest]
     }
   }
 
@@ -2189,13 +1882,9 @@ package devicefarm {
     def apply(
         job: js.UndefOr[Job] = js.undefined
     ): GetJobResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "job" -> job.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetJobResult]
+      val __obj = js.Dictionary.empty[js.Any]
+      job.foreach(__v => __obj.update("job", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetJobResult]
     }
   }
 
@@ -2208,11 +1897,11 @@ package devicefarm {
     def apply(
         arn: AmazonResourceName
     ): GetNetworkProfileRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "arn" -> arn.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetNetworkProfileRequest]
+      __obj.asInstanceOf[GetNetworkProfileRequest]
     }
   }
 
@@ -2225,13 +1914,9 @@ package devicefarm {
     def apply(
         networkProfile: js.UndefOr[NetworkProfile] = js.undefined
     ): GetNetworkProfileResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "networkProfile" -> networkProfile.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetNetworkProfileResult]
+      val __obj = js.Dictionary.empty[js.Any]
+      networkProfile.foreach(__v => __obj.update("networkProfile", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetNetworkProfileResult]
     }
   }
 
@@ -2247,13 +1932,9 @@ package devicefarm {
     def apply(
         nextToken: js.UndefOr[PaginationToken] = js.undefined
     ): GetOfferingStatusRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "nextToken" -> nextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetOfferingStatusRequest]
+      val __obj = js.Dictionary.empty[js.Any]
+      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetOfferingStatusRequest]
     }
   }
 
@@ -2273,19 +1954,11 @@ package devicefarm {
         nextPeriod: js.UndefOr[OfferingStatusMap] = js.undefined,
         nextToken: js.UndefOr[PaginationToken] = js.undefined
     ): GetOfferingStatusResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "current" -> current.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "nextPeriod" -> nextPeriod.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "nextToken" -> nextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetOfferingStatusResult]
+      val __obj = js.Dictionary.empty[js.Any]
+      current.foreach(__v => __obj.update("current", __v.asInstanceOf[js.Any]))
+      nextPeriod.foreach(__v => __obj.update("nextPeriod", __v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetOfferingStatusResult]
     }
   }
 
@@ -2301,11 +1974,11 @@ package devicefarm {
     def apply(
         arn: AmazonResourceName
     ): GetProjectRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "arn" -> arn.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetProjectRequest]
+      __obj.asInstanceOf[GetProjectRequest]
     }
   }
 
@@ -2321,13 +1994,9 @@ package devicefarm {
     def apply(
         project: js.UndefOr[Project] = js.undefined
     ): GetProjectResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "project" -> project.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetProjectResult]
+      val __obj = js.Dictionary.empty[js.Any]
+      project.foreach(__v => __obj.update("project", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetProjectResult]
     }
   }
 
@@ -2343,11 +2012,11 @@ package devicefarm {
     def apply(
         arn: AmazonResourceName
     ): GetRemoteAccessSessionRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "arn" -> arn.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetRemoteAccessSessionRequest]
+      __obj.asInstanceOf[GetRemoteAccessSessionRequest]
     }
   }
 
@@ -2363,13 +2032,9 @@ package devicefarm {
     def apply(
         remoteAccessSession: js.UndefOr[RemoteAccessSession] = js.undefined
     ): GetRemoteAccessSessionResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "remoteAccessSession" -> remoteAccessSession.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetRemoteAccessSessionResult]
+      val __obj = js.Dictionary.empty[js.Any]
+      remoteAccessSession.foreach(__v => __obj.update("remoteAccessSession", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetRemoteAccessSessionResult]
     }
   }
 
@@ -2385,11 +2050,11 @@ package devicefarm {
     def apply(
         arn: AmazonResourceName
     ): GetRunRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "arn" -> arn.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetRunRequest]
+      __obj.asInstanceOf[GetRunRequest]
     }
   }
 
@@ -2405,13 +2070,9 @@ package devicefarm {
     def apply(
         run: js.UndefOr[Run] = js.undefined
     ): GetRunResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "run" -> run.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetRunResult]
+      val __obj = js.Dictionary.empty[js.Any]
+      run.foreach(__v => __obj.update("run", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetRunResult]
     }
   }
 
@@ -2427,11 +2088,11 @@ package devicefarm {
     def apply(
         arn: AmazonResourceName
     ): GetSuiteRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "arn" -> arn.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetSuiteRequest]
+      __obj.asInstanceOf[GetSuiteRequest]
     }
   }
 
@@ -2447,13 +2108,9 @@ package devicefarm {
     def apply(
         suite: js.UndefOr[Suite] = js.undefined
     ): GetSuiteResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "suite" -> suite.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetSuiteResult]
+      val __obj = js.Dictionary.empty[js.Any]
+      suite.foreach(__v => __obj.update("suite", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetSuiteResult]
     }
   }
 
@@ -2469,11 +2126,11 @@ package devicefarm {
     def apply(
         arn: AmazonResourceName
     ): GetTestRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "arn" -> arn.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetTestRequest]
+      __obj.asInstanceOf[GetTestRequest]
     }
   }
 
@@ -2489,13 +2146,9 @@ package devicefarm {
     def apply(
         test: js.UndefOr[Test] = js.undefined
     ): GetTestResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "test" -> test.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetTestResult]
+      val __obj = js.Dictionary.empty[js.Any]
+      test.foreach(__v => __obj.update("test", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetTestResult]
     }
   }
 
@@ -2511,11 +2164,11 @@ package devicefarm {
     def apply(
         arn: AmazonResourceName
     ): GetUploadRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "arn" -> arn.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetUploadRequest]
+      __obj.asInstanceOf[GetUploadRequest]
     }
   }
 
@@ -2531,13 +2184,9 @@ package devicefarm {
     def apply(
         upload: js.UndefOr[Upload] = js.undefined
     ): GetUploadResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "upload" -> upload.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetUploadResult]
+      val __obj = js.Dictionary.empty[js.Any]
+      upload.foreach(__v => __obj.update("upload", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetUploadResult]
     }
   }
 
@@ -2550,11 +2199,11 @@ package devicefarm {
     def apply(
         arn: AmazonResourceName
     ): GetVPCEConfigurationRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "arn" -> arn.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetVPCEConfigurationRequest]
+      __obj.asInstanceOf[GetVPCEConfigurationRequest]
     }
   }
 
@@ -2567,13 +2216,9 @@ package devicefarm {
     def apply(
         vpceConfiguration: js.UndefOr[VPCEConfiguration] = js.undefined
     ): GetVPCEConfigurationResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "vpceConfiguration" -> vpceConfiguration.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetVPCEConfigurationResult]
+      val __obj = js.Dictionary.empty[js.Any]
+      vpceConfiguration.foreach(__v => __obj.update("vpceConfiguration", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetVPCEConfigurationResult]
     }
   }
 
@@ -2591,16 +2236,10 @@ package devicefarm {
         message: js.UndefOr[Message] = js.undefined,
         `type`: js.UndefOr[DeviceAttribute] = js.undefined
     ): IncompatibilityMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "message" -> message.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "`type`" -> `type`.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[IncompatibilityMessage]
+      val __obj = js.Dictionary.empty[js.Any]
+      message.foreach(__v => __obj.update("message", __v.asInstanceOf[js.Any]))
+      `type`.foreach(__v => __obj.update("type", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[IncompatibilityMessage]
     }
   }
 
@@ -2618,12 +2257,12 @@ package devicefarm {
         appArn: AmazonResourceName,
         remoteAccessSessionArn: AmazonResourceName
     ): InstallToRemoteAccessSessionRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "appArn"                 -> appArn.asInstanceOf[js.Any],
         "remoteAccessSessionArn" -> remoteAccessSessionArn.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[InstallToRemoteAccessSessionRequest]
+      __obj.asInstanceOf[InstallToRemoteAccessSessionRequest]
     }
   }
 
@@ -2639,13 +2278,9 @@ package devicefarm {
     def apply(
         appUpload: js.UndefOr[Upload] = js.undefined
     ): InstallToRemoteAccessSessionResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "appUpload" -> appUpload.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[InstallToRemoteAccessSessionResult]
+      val __obj = js.Dictionary.empty[js.Any]
+      appUpload.foreach(__v => __obj.update("appUpload", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[InstallToRemoteAccessSessionResult]
     }
   }
 
@@ -2671,28 +2306,16 @@ package devicefarm {
         packageCleanup: js.UndefOr[Boolean] = js.undefined,
         rebootAfterUse: js.UndefOr[Boolean] = js.undefined
     ): InstanceProfile = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "arn" -> arn.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "description" -> description.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "excludeAppPackagesFromCleanup" -> excludeAppPackagesFromCleanup.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "name" -> name.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "packageCleanup" -> packageCleanup.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "rebootAfterUse" -> rebootAfterUse.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[InstanceProfile]
+      val __obj = js.Dictionary.empty[js.Any]
+      arn.foreach(__v => __obj.update("arn", __v.asInstanceOf[js.Any]))
+      description.foreach(__v => __obj.update("description", __v.asInstanceOf[js.Any]))
+      excludeAppPackagesFromCleanup.foreach(
+        __v => __obj.update("excludeAppPackagesFromCleanup", __v.asInstanceOf[js.Any])
+      )
+      name.foreach(__v => __obj.update("name", __v.asInstanceOf[js.Any]))
+      packageCleanup.foreach(__v => __obj.update("packageCleanup", __v.asInstanceOf[js.Any]))
+      rebootAfterUse.foreach(__v => __obj.update("rebootAfterUse", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[InstanceProfile]
     }
   }
 
@@ -2753,55 +2376,23 @@ package devicefarm {
         videoCapture: js.UndefOr[VideoCapture] = js.undefined,
         videoEndpoint: js.UndefOr[String] = js.undefined
     ): Job = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "arn" -> arn.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "counters" -> counters.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "created" -> created.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "device" -> device.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "deviceMinutes" -> deviceMinutes.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "instanceArn" -> instanceArn.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "message" -> message.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "name" -> name.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "result" -> result.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "started" -> started.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "status" -> status.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "stopped" -> stopped.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "`type`" -> `type`.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "videoCapture" -> videoCapture.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "videoEndpoint" -> videoEndpoint.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Job]
+      val __obj = js.Dictionary.empty[js.Any]
+      arn.foreach(__v => __obj.update("arn", __v.asInstanceOf[js.Any]))
+      counters.foreach(__v => __obj.update("counters", __v.asInstanceOf[js.Any]))
+      created.foreach(__v => __obj.update("created", __v.asInstanceOf[js.Any]))
+      device.foreach(__v => __obj.update("device", __v.asInstanceOf[js.Any]))
+      deviceMinutes.foreach(__v => __obj.update("deviceMinutes", __v.asInstanceOf[js.Any]))
+      instanceArn.foreach(__v => __obj.update("instanceArn", __v.asInstanceOf[js.Any]))
+      message.foreach(__v => __obj.update("message", __v.asInstanceOf[js.Any]))
+      name.foreach(__v => __obj.update("name", __v.asInstanceOf[js.Any]))
+      result.foreach(__v => __obj.update("result", __v.asInstanceOf[js.Any]))
+      started.foreach(__v => __obj.update("started", __v.asInstanceOf[js.Any]))
+      status.foreach(__v => __obj.update("status", __v.asInstanceOf[js.Any]))
+      stopped.foreach(__v => __obj.update("stopped", __v.asInstanceOf[js.Any]))
+      `type`.foreach(__v => __obj.update("type", __v.asInstanceOf[js.Any]))
+      videoCapture.foreach(__v => __obj.update("videoCapture", __v.asInstanceOf[js.Any]))
+      videoEndpoint.foreach(__v => __obj.update("videoEndpoint", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Job]
     }
   }
 
@@ -2821,15 +2412,13 @@ package devicefarm {
         `type`: ArtifactCategory,
         nextToken: js.UndefOr[PaginationToken] = js.undefined
     ): ListArtifactsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "arn"    -> arn.asInstanceOf[js.Any],
-        "`type`" -> `type`.asInstanceOf[js.Any],
-        "nextToken" -> nextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "arn"  -> arn.asInstanceOf[js.Any],
+        "type" -> `type`.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListArtifactsRequest]
+      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListArtifactsRequest]
     }
   }
 
@@ -2847,16 +2436,10 @@ package devicefarm {
         artifacts: js.UndefOr[Artifacts] = js.undefined,
         nextToken: js.UndefOr[PaginationToken] = js.undefined
     ): ListArtifactsResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "artifacts" -> artifacts.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "nextToken" -> nextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListArtifactsResult]
+      val __obj = js.Dictionary.empty[js.Any]
+      artifacts.foreach(__v => __obj.update("artifacts", __v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListArtifactsResult]
     }
   }
 
@@ -2871,16 +2454,10 @@ package devicefarm {
         maxResults: js.UndefOr[Int] = js.undefined,
         nextToken: js.UndefOr[PaginationToken] = js.undefined
     ): ListDeviceInstancesRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "maxResults" -> maxResults.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "nextToken" -> nextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListDeviceInstancesRequest]
+      val __obj = js.Dictionary.empty[js.Any]
+      maxResults.foreach(__v => __obj.update("maxResults", __v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListDeviceInstancesRequest]
     }
   }
 
@@ -2895,16 +2472,10 @@ package devicefarm {
         deviceInstances: js.UndefOr[DeviceInstances] = js.undefined,
         nextToken: js.UndefOr[PaginationToken] = js.undefined
     ): ListDeviceInstancesResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "deviceInstances" -> deviceInstances.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "nextToken" -> nextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListDeviceInstancesResult]
+      val __obj = js.Dictionary.empty[js.Any]
+      deviceInstances.foreach(__v => __obj.update("deviceInstances", __v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListDeviceInstancesResult]
     }
   }
 
@@ -2924,17 +2495,13 @@ package devicefarm {
         nextToken: js.UndefOr[PaginationToken] = js.undefined,
         `type`: js.UndefOr[DevicePoolType] = js.undefined
     ): ListDevicePoolsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "arn" -> arn.asInstanceOf[js.Any],
-        "nextToken" -> nextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "`type`" -> `type`.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "arn" -> arn.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListDevicePoolsRequest]
+      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
+      `type`.foreach(__v => __obj.update("type", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListDevicePoolsRequest]
     }
   }
 
@@ -2952,16 +2519,10 @@ package devicefarm {
         devicePools: js.UndefOr[DevicePools] = js.undefined,
         nextToken: js.UndefOr[PaginationToken] = js.undefined
     ): ListDevicePoolsResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "devicePools" -> devicePools.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "nextToken" -> nextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListDevicePoolsResult]
+      val __obj = js.Dictionary.empty[js.Any]
+      devicePools.foreach(__v => __obj.update("devicePools", __v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListDevicePoolsResult]
     }
   }
 
@@ -2981,19 +2542,11 @@ package devicefarm {
         filters: js.UndefOr[DeviceFilters] = js.undefined,
         nextToken: js.UndefOr[PaginationToken] = js.undefined
     ): ListDevicesRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "arn" -> arn.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "filters" -> filters.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "nextToken" -> nextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListDevicesRequest]
+      val __obj = js.Dictionary.empty[js.Any]
+      arn.foreach(__v => __obj.update("arn", __v.asInstanceOf[js.Any]))
+      filters.foreach(__v => __obj.update("filters", __v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListDevicesRequest]
     }
   }
 
@@ -3011,16 +2564,10 @@ package devicefarm {
         devices: js.UndefOr[Devices] = js.undefined,
         nextToken: js.UndefOr[PaginationToken] = js.undefined
     ): ListDevicesResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "devices" -> devices.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "nextToken" -> nextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListDevicesResult]
+      val __obj = js.Dictionary.empty[js.Any]
+      devices.foreach(__v => __obj.update("devices", __v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListDevicesResult]
     }
   }
 
@@ -3035,16 +2582,10 @@ package devicefarm {
         maxResults: js.UndefOr[Int] = js.undefined,
         nextToken: js.UndefOr[PaginationToken] = js.undefined
     ): ListInstanceProfilesRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "maxResults" -> maxResults.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "nextToken" -> nextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListInstanceProfilesRequest]
+      val __obj = js.Dictionary.empty[js.Any]
+      maxResults.foreach(__v => __obj.update("maxResults", __v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListInstanceProfilesRequest]
     }
   }
 
@@ -3059,16 +2600,10 @@ package devicefarm {
         instanceProfiles: js.UndefOr[InstanceProfiles] = js.undefined,
         nextToken: js.UndefOr[PaginationToken] = js.undefined
     ): ListInstanceProfilesResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "instanceProfiles" -> instanceProfiles.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "nextToken" -> nextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListInstanceProfilesResult]
+      val __obj = js.Dictionary.empty[js.Any]
+      instanceProfiles.foreach(__v => __obj.update("instanceProfiles", __v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListInstanceProfilesResult]
     }
   }
 
@@ -3086,14 +2621,12 @@ package devicefarm {
         arn: AmazonResourceName,
         nextToken: js.UndefOr[PaginationToken] = js.undefined
     ): ListJobsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "arn" -> arn.asInstanceOf[js.Any],
-        "nextToken" -> nextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "arn" -> arn.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListJobsRequest]
+      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListJobsRequest]
     }
   }
 
@@ -3111,16 +2644,10 @@ package devicefarm {
         jobs: js.UndefOr[Jobs] = js.undefined,
         nextToken: js.UndefOr[PaginationToken] = js.undefined
     ): ListJobsResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "jobs" -> jobs.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "nextToken" -> nextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListJobsResult]
+      val __obj = js.Dictionary.empty[js.Any]
+      jobs.foreach(__v => __obj.update("jobs", __v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListJobsResult]
     }
   }
 
@@ -3137,17 +2664,13 @@ package devicefarm {
         nextToken: js.UndefOr[PaginationToken] = js.undefined,
         `type`: js.UndefOr[NetworkProfileType] = js.undefined
     ): ListNetworkProfilesRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "arn" -> arn.asInstanceOf[js.Any],
-        "nextToken" -> nextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "`type`" -> `type`.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "arn" -> arn.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListNetworkProfilesRequest]
+      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
+      `type`.foreach(__v => __obj.update("type", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListNetworkProfilesRequest]
     }
   }
 
@@ -3162,16 +2685,10 @@ package devicefarm {
         networkProfiles: js.UndefOr[NetworkProfiles] = js.undefined,
         nextToken: js.UndefOr[PaginationToken] = js.undefined
     ): ListNetworkProfilesResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "networkProfiles" -> networkProfiles.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "nextToken" -> nextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListNetworkProfilesResult]
+      val __obj = js.Dictionary.empty[js.Any]
+      networkProfiles.foreach(__v => __obj.update("networkProfiles", __v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListNetworkProfilesResult]
     }
   }
 
@@ -3184,13 +2701,9 @@ package devicefarm {
     def apply(
         nextToken: js.UndefOr[PaginationToken] = js.undefined
     ): ListOfferingPromotionsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "nextToken" -> nextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListOfferingPromotionsRequest]
+      val __obj = js.Dictionary.empty[js.Any]
+      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListOfferingPromotionsRequest]
     }
   }
 
@@ -3205,16 +2718,10 @@ package devicefarm {
         nextToken: js.UndefOr[PaginationToken] = js.undefined,
         offeringPromotions: js.UndefOr[OfferingPromotions] = js.undefined
     ): ListOfferingPromotionsResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "nextToken" -> nextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "offeringPromotions" -> offeringPromotions.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListOfferingPromotionsResult]
+      val __obj = js.Dictionary.empty[js.Any]
+      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
+      offeringPromotions.foreach(__v => __obj.update("offeringPromotions", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListOfferingPromotionsResult]
     }
   }
 
@@ -3230,13 +2737,9 @@ package devicefarm {
     def apply(
         nextToken: js.UndefOr[PaginationToken] = js.undefined
     ): ListOfferingTransactionsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "nextToken" -> nextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListOfferingTransactionsRequest]
+      val __obj = js.Dictionary.empty[js.Any]
+      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListOfferingTransactionsRequest]
     }
   }
 
@@ -3254,16 +2757,10 @@ package devicefarm {
         nextToken: js.UndefOr[PaginationToken] = js.undefined,
         offeringTransactions: js.UndefOr[OfferingTransactions] = js.undefined
     ): ListOfferingTransactionsResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "nextToken" -> nextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "offeringTransactions" -> offeringTransactions.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListOfferingTransactionsResult]
+      val __obj = js.Dictionary.empty[js.Any]
+      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
+      offeringTransactions.foreach(__v => __obj.update("offeringTransactions", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListOfferingTransactionsResult]
     }
   }
 
@@ -3279,13 +2776,9 @@ package devicefarm {
     def apply(
         nextToken: js.UndefOr[PaginationToken] = js.undefined
     ): ListOfferingsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "nextToken" -> nextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListOfferingsRequest]
+      val __obj = js.Dictionary.empty[js.Any]
+      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListOfferingsRequest]
     }
   }
 
@@ -3303,16 +2796,10 @@ package devicefarm {
         nextToken: js.UndefOr[PaginationToken] = js.undefined,
         offerings: js.UndefOr[Offerings] = js.undefined
     ): ListOfferingsResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "nextToken" -> nextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "offerings" -> offerings.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListOfferingsResult]
+      val __obj = js.Dictionary.empty[js.Any]
+      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
+      offerings.foreach(__v => __obj.update("offerings", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListOfferingsResult]
     }
   }
 
@@ -3330,16 +2817,10 @@ package devicefarm {
         arn: js.UndefOr[AmazonResourceName] = js.undefined,
         nextToken: js.UndefOr[PaginationToken] = js.undefined
     ): ListProjectsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "arn" -> arn.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "nextToken" -> nextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListProjectsRequest]
+      val __obj = js.Dictionary.empty[js.Any]
+      arn.foreach(__v => __obj.update("arn", __v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListProjectsRequest]
     }
   }
 
@@ -3357,16 +2838,10 @@ package devicefarm {
         nextToken: js.UndefOr[PaginationToken] = js.undefined,
         projects: js.UndefOr[Projects] = js.undefined
     ): ListProjectsResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "nextToken" -> nextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "projects" -> projects.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListProjectsResult]
+      val __obj = js.Dictionary.empty[js.Any]
+      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
+      projects.foreach(__v => __obj.update("projects", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListProjectsResult]
     }
   }
 
@@ -3384,14 +2859,12 @@ package devicefarm {
         arn: AmazonResourceName,
         nextToken: js.UndefOr[PaginationToken] = js.undefined
     ): ListRemoteAccessSessionsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "arn" -> arn.asInstanceOf[js.Any],
-        "nextToken" -> nextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "arn" -> arn.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListRemoteAccessSessionsRequest]
+      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListRemoteAccessSessionsRequest]
     }
   }
 
@@ -3409,16 +2882,10 @@ package devicefarm {
         nextToken: js.UndefOr[PaginationToken] = js.undefined,
         remoteAccessSessions: js.UndefOr[RemoteAccessSessions] = js.undefined
     ): ListRemoteAccessSessionsResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "nextToken" -> nextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "remoteAccessSessions" -> remoteAccessSessions.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListRemoteAccessSessionsResult]
+      val __obj = js.Dictionary.empty[js.Any]
+      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
+      remoteAccessSessions.foreach(__v => __obj.update("remoteAccessSessions", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListRemoteAccessSessionsResult]
     }
   }
 
@@ -3436,14 +2903,12 @@ package devicefarm {
         arn: AmazonResourceName,
         nextToken: js.UndefOr[PaginationToken] = js.undefined
     ): ListRunsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "arn" -> arn.asInstanceOf[js.Any],
-        "nextToken" -> nextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "arn" -> arn.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListRunsRequest]
+      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListRunsRequest]
     }
   }
 
@@ -3461,16 +2926,10 @@ package devicefarm {
         nextToken: js.UndefOr[PaginationToken] = js.undefined,
         runs: js.UndefOr[Runs] = js.undefined
     ): ListRunsResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "nextToken" -> nextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "runs" -> runs.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListRunsResult]
+      val __obj = js.Dictionary.empty[js.Any]
+      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
+      runs.foreach(__v => __obj.update("runs", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListRunsResult]
     }
   }
 
@@ -3488,14 +2947,12 @@ package devicefarm {
         arn: AmazonResourceName,
         nextToken: js.UndefOr[PaginationToken] = js.undefined
     ): ListSamplesRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "arn" -> arn.asInstanceOf[js.Any],
-        "nextToken" -> nextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "arn" -> arn.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListSamplesRequest]
+      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListSamplesRequest]
     }
   }
 
@@ -3513,16 +2970,10 @@ package devicefarm {
         nextToken: js.UndefOr[PaginationToken] = js.undefined,
         samples: js.UndefOr[Samples] = js.undefined
     ): ListSamplesResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "nextToken" -> nextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "samples" -> samples.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListSamplesResult]
+      val __obj = js.Dictionary.empty[js.Any]
+      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
+      samples.foreach(__v => __obj.update("samples", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListSamplesResult]
     }
   }
 
@@ -3540,14 +2991,12 @@ package devicefarm {
         arn: AmazonResourceName,
         nextToken: js.UndefOr[PaginationToken] = js.undefined
     ): ListSuitesRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "arn" -> arn.asInstanceOf[js.Any],
-        "nextToken" -> nextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "arn" -> arn.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListSuitesRequest]
+      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListSuitesRequest]
     }
   }
 
@@ -3565,16 +3014,10 @@ package devicefarm {
         nextToken: js.UndefOr[PaginationToken] = js.undefined,
         suites: js.UndefOr[Suites] = js.undefined
     ): ListSuitesResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "nextToken" -> nextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "suites" -> suites.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListSuitesResult]
+      val __obj = js.Dictionary.empty[js.Any]
+      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
+      suites.foreach(__v => __obj.update("suites", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListSuitesResult]
     }
   }
 
@@ -3592,14 +3035,12 @@ package devicefarm {
         arn: AmazonResourceName,
         nextToken: js.UndefOr[PaginationToken] = js.undefined
     ): ListTestsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "arn" -> arn.asInstanceOf[js.Any],
-        "nextToken" -> nextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "arn" -> arn.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListTestsRequest]
+      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListTestsRequest]
     }
   }
 
@@ -3617,16 +3058,10 @@ package devicefarm {
         nextToken: js.UndefOr[PaginationToken] = js.undefined,
         tests: js.UndefOr[Tests] = js.undefined
     ): ListTestsResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "nextToken" -> nextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "tests" -> tests.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListTestsResult]
+      val __obj = js.Dictionary.empty[js.Any]
+      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
+      tests.foreach(__v => __obj.update("tests", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListTestsResult]
     }
   }
 
@@ -3644,14 +3079,12 @@ package devicefarm {
         arn: AmazonResourceName,
         nextToken: js.UndefOr[PaginationToken] = js.undefined
     ): ListUniqueProblemsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "arn" -> arn.asInstanceOf[js.Any],
-        "nextToken" -> nextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "arn" -> arn.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListUniqueProblemsRequest]
+      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListUniqueProblemsRequest]
     }
   }
 
@@ -3669,16 +3102,10 @@ package devicefarm {
         nextToken: js.UndefOr[PaginationToken] = js.undefined,
         uniqueProblems: js.UndefOr[UniqueProblemsByExecutionResultMap] = js.undefined
     ): ListUniqueProblemsResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "nextToken" -> nextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "uniqueProblems" -> uniqueProblems.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListUniqueProblemsResult]
+      val __obj = js.Dictionary.empty[js.Any]
+      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
+      uniqueProblems.foreach(__v => __obj.update("uniqueProblems", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListUniqueProblemsResult]
     }
   }
 
@@ -3698,17 +3125,13 @@ package devicefarm {
         nextToken: js.UndefOr[PaginationToken] = js.undefined,
         `type`: js.UndefOr[UploadType] = js.undefined
     ): ListUploadsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "arn" -> arn.asInstanceOf[js.Any],
-        "nextToken" -> nextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "`type`" -> `type`.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "arn" -> arn.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListUploadsRequest]
+      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
+      `type`.foreach(__v => __obj.update("type", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListUploadsRequest]
     }
   }
 
@@ -3726,16 +3149,10 @@ package devicefarm {
         nextToken: js.UndefOr[PaginationToken] = js.undefined,
         uploads: js.UndefOr[Uploads] = js.undefined
     ): ListUploadsResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "nextToken" -> nextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "uploads" -> uploads.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListUploadsResult]
+      val __obj = js.Dictionary.empty[js.Any]
+      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
+      uploads.foreach(__v => __obj.update("uploads", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListUploadsResult]
     }
   }
 
@@ -3750,16 +3167,10 @@ package devicefarm {
         maxResults: js.UndefOr[Int] = js.undefined,
         nextToken: js.UndefOr[PaginationToken] = js.undefined
     ): ListVPCEConfigurationsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "maxResults" -> maxResults.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "nextToken" -> nextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListVPCEConfigurationsRequest]
+      val __obj = js.Dictionary.empty[js.Any]
+      maxResults.foreach(__v => __obj.update("maxResults", __v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListVPCEConfigurationsRequest]
     }
   }
 
@@ -3774,16 +3185,10 @@ package devicefarm {
         nextToken: js.UndefOr[PaginationToken] = js.undefined,
         vpceConfigurations: js.UndefOr[VPCEConfigurations] = js.undefined
     ): ListVPCEConfigurationsResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "nextToken" -> nextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "vpceConfigurations" -> vpceConfigurations.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListVPCEConfigurationsResult]
+      val __obj = js.Dictionary.empty[js.Any]
+      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
+      vpceConfigurations.foreach(__v => __obj.update("vpceConfigurations", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListVPCEConfigurationsResult]
     }
   }
 
@@ -3802,12 +3207,12 @@ package devicefarm {
         latitude: Double,
         longitude: Double
     ): Location = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "latitude"  -> latitude.asInstanceOf[js.Any],
         "longitude" -> longitude.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Location]
+      __obj.asInstanceOf[Location]
     }
   }
 
@@ -3825,16 +3230,10 @@ package devicefarm {
         amount: js.UndefOr[Double] = js.undefined,
         currencyCode: js.UndefOr[CurrencyCode] = js.undefined
     ): MonetaryAmount = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "amount" -> amount.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "currencyCode" -> currencyCode.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[MonetaryAmount]
+      val __obj = js.Dictionary.empty[js.Any]
+      amount.foreach(__v => __obj.update("amount", __v.asInstanceOf[js.Any]))
+      currencyCode.foreach(__v => __obj.update("currencyCode", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[MonetaryAmount]
     }
   }
 
@@ -3872,46 +3271,20 @@ package devicefarm {
         uplinkJitterMs: js.UndefOr[Double] = js.undefined,
         uplinkLossPercent: js.UndefOr[PercentInteger] = js.undefined
     ): NetworkProfile = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "arn" -> arn.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "description" -> description.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "downlinkBandwidthBits" -> downlinkBandwidthBits.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "downlinkDelayMs" -> downlinkDelayMs.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "downlinkJitterMs" -> downlinkJitterMs.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "downlinkLossPercent" -> downlinkLossPercent.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "name" -> name.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "`type`" -> `type`.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "uplinkBandwidthBits" -> uplinkBandwidthBits.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "uplinkDelayMs" -> uplinkDelayMs.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "uplinkJitterMs" -> uplinkJitterMs.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "uplinkLossPercent" -> uplinkLossPercent.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[NetworkProfile]
+      val __obj = js.Dictionary.empty[js.Any]
+      arn.foreach(__v => __obj.update("arn", __v.asInstanceOf[js.Any]))
+      description.foreach(__v => __obj.update("description", __v.asInstanceOf[js.Any]))
+      downlinkBandwidthBits.foreach(__v => __obj.update("downlinkBandwidthBits", __v.asInstanceOf[js.Any]))
+      downlinkDelayMs.foreach(__v => __obj.update("downlinkDelayMs", __v.asInstanceOf[js.Any]))
+      downlinkJitterMs.foreach(__v => __obj.update("downlinkJitterMs", __v.asInstanceOf[js.Any]))
+      downlinkLossPercent.foreach(__v => __obj.update("downlinkLossPercent", __v.asInstanceOf[js.Any]))
+      name.foreach(__v => __obj.update("name", __v.asInstanceOf[js.Any]))
+      `type`.foreach(__v => __obj.update("type", __v.asInstanceOf[js.Any]))
+      uplinkBandwidthBits.foreach(__v => __obj.update("uplinkBandwidthBits", __v.asInstanceOf[js.Any]))
+      uplinkDelayMs.foreach(__v => __obj.update("uplinkDelayMs", __v.asInstanceOf[js.Any]))
+      uplinkJitterMs.foreach(__v => __obj.update("uplinkJitterMs", __v.asInstanceOf[js.Any]))
+      uplinkLossPercent.foreach(__v => __obj.update("uplinkLossPercent", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[NetworkProfile]
     }
   }
 
@@ -3942,25 +3315,13 @@ package devicefarm {
         recurringCharges: js.UndefOr[RecurringCharges] = js.undefined,
         `type`: js.UndefOr[OfferingType] = js.undefined
     ): Offering = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "description" -> description.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "id" -> id.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "platform" -> platform.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "recurringCharges" -> recurringCharges.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "`type`" -> `type`.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Offering]
+      val __obj = js.Dictionary.empty[js.Any]
+      description.foreach(__v => __obj.update("description", __v.asInstanceOf[js.Any]))
+      id.foreach(__v => __obj.update("id", __v.asInstanceOf[js.Any]))
+      platform.foreach(__v => __obj.update("platform", __v.asInstanceOf[js.Any]))
+      recurringCharges.foreach(__v => __obj.update("recurringCharges", __v.asInstanceOf[js.Any]))
+      `type`.foreach(__v => __obj.update("type", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Offering]
     }
   }
 
@@ -3978,16 +3339,10 @@ package devicefarm {
         description: js.UndefOr[Message] = js.undefined,
         id: js.UndefOr[OfferingPromotionIdentifier] = js.undefined
     ): OfferingPromotion = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "description" -> description.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "id" -> id.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[OfferingPromotion]
+      val __obj = js.Dictionary.empty[js.Any]
+      description.foreach(__v => __obj.update("description", __v.asInstanceOf[js.Any]))
+      id.foreach(__v => __obj.update("id", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[OfferingPromotion]
     }
   }
 
@@ -4009,22 +3364,12 @@ package devicefarm {
         quantity: js.UndefOr[Int] = js.undefined,
         `type`: js.UndefOr[OfferingTransactionType] = js.undefined
     ): OfferingStatus = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "effectiveOn" -> effectiveOn.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "offering" -> offering.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "quantity" -> quantity.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "`type`" -> `type`.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[OfferingStatus]
+      val __obj = js.Dictionary.empty[js.Any]
+      effectiveOn.foreach(__v => __obj.update("effectiveOn", __v.asInstanceOf[js.Any]))
+      offering.foreach(__v => __obj.update("offering", __v.asInstanceOf[js.Any]))
+      quantity.foreach(__v => __obj.update("quantity", __v.asInstanceOf[js.Any]))
+      `type`.foreach(__v => __obj.update("type", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[OfferingStatus]
     }
   }
 
@@ -4048,25 +3393,13 @@ package devicefarm {
         offeringStatus: js.UndefOr[OfferingStatus] = js.undefined,
         transactionId: js.UndefOr[TransactionIdentifier] = js.undefined
     ): OfferingTransaction = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "cost" -> cost.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "createdOn" -> createdOn.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "offeringPromotionId" -> offeringPromotionId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "offeringStatus" -> offeringStatus.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "transactionId" -> transactionId.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[OfferingTransaction]
+      val __obj = js.Dictionary.empty[js.Any]
+      cost.foreach(__v => __obj.update("cost", __v.asInstanceOf[js.Any]))
+      createdOn.foreach(__v => __obj.update("createdOn", __v.asInstanceOf[js.Any]))
+      offeringPromotionId.foreach(__v => __obj.update("offeringPromotionId", __v.asInstanceOf[js.Any]))
+      offeringStatus.foreach(__v => __obj.update("offeringStatus", __v.asInstanceOf[js.Any]))
+      transactionId.foreach(__v => __obj.update("transactionId", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[OfferingTransaction]
     }
   }
 
@@ -4108,31 +3441,15 @@ package devicefarm {
         suite: js.UndefOr[ProblemDetail] = js.undefined,
         test: js.UndefOr[ProblemDetail] = js.undefined
     ): Problem = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "device" -> device.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "job" -> job.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "message" -> message.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "result" -> result.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "run" -> run.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "suite" -> suite.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "test" -> test.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Problem]
+      val __obj = js.Dictionary.empty[js.Any]
+      device.foreach(__v => __obj.update("device", __v.asInstanceOf[js.Any]))
+      job.foreach(__v => __obj.update("job", __v.asInstanceOf[js.Any]))
+      message.foreach(__v => __obj.update("message", __v.asInstanceOf[js.Any]))
+      result.foreach(__v => __obj.update("result", __v.asInstanceOf[js.Any]))
+      run.foreach(__v => __obj.update("run", __v.asInstanceOf[js.Any]))
+      suite.foreach(__v => __obj.update("suite", __v.asInstanceOf[js.Any]))
+      test.foreach(__v => __obj.update("test", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Problem]
     }
   }
 
@@ -4150,16 +3467,10 @@ package devicefarm {
         arn: js.UndefOr[AmazonResourceName] = js.undefined,
         name: js.UndefOr[Name] = js.undefined
     ): ProblemDetail = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "arn" -> arn.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "name" -> name.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ProblemDetail]
+      val __obj = js.Dictionary.empty[js.Any]
+      arn.foreach(__v => __obj.update("arn", __v.asInstanceOf[js.Any]))
+      name.foreach(__v => __obj.update("name", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ProblemDetail]
     }
   }
 
@@ -4181,22 +3492,12 @@ package devicefarm {
         defaultJobTimeoutMinutes: js.UndefOr[JobTimeoutMinutes] = js.undefined,
         name: js.UndefOr[Name] = js.undefined
     ): Project = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "arn" -> arn.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "created" -> created.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "defaultJobTimeoutMinutes" -> defaultJobTimeoutMinutes.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "name" -> name.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Project]
+      val __obj = js.Dictionary.empty[js.Any]
+      arn.foreach(__v => __obj.update("arn", __v.asInstanceOf[js.Any]))
+      created.foreach(__v => __obj.update("created", __v.asInstanceOf[js.Any]))
+      defaultJobTimeoutMinutes.foreach(__v => __obj.update("defaultJobTimeoutMinutes", __v.asInstanceOf[js.Any]))
+      name.foreach(__v => __obj.update("name", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Project]
     }
   }
 
@@ -4216,19 +3517,11 @@ package devicefarm {
         offeringPromotionId: js.UndefOr[OfferingPromotionIdentifier] = js.undefined,
         quantity: js.UndefOr[Int] = js.undefined
     ): PurchaseOfferingRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "offeringId" -> offeringId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "offeringPromotionId" -> offeringPromotionId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "quantity" -> quantity.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PurchaseOfferingRequest]
+      val __obj = js.Dictionary.empty[js.Any]
+      offeringId.foreach(__v => __obj.update("offeringId", __v.asInstanceOf[js.Any]))
+      offeringPromotionId.foreach(__v => __obj.update("offeringPromotionId", __v.asInstanceOf[js.Any]))
+      quantity.foreach(__v => __obj.update("quantity", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PurchaseOfferingRequest]
     }
   }
 
@@ -4244,13 +3537,9 @@ package devicefarm {
     def apply(
         offeringTransaction: js.UndefOr[OfferingTransaction] = js.undefined
     ): PurchaseOfferingResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "offeringTransaction" -> offeringTransaction.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PurchaseOfferingResult]
+      val __obj = js.Dictionary.empty[js.Any]
+      offeringTransaction.foreach(__v => __obj.update("offeringTransaction", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PurchaseOfferingResult]
     }
   }
 
@@ -4272,22 +3561,12 @@ package devicefarm {
         nfc: js.UndefOr[Boolean] = js.undefined,
         wifi: js.UndefOr[Boolean] = js.undefined
     ): Radios = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "bluetooth" -> bluetooth.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "gps" -> gps.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "nfc" -> nfc.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "wifi" -> wifi.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Radios]
+      val __obj = js.Dictionary.empty[js.Any]
+      bluetooth.foreach(__v => __obj.update("bluetooth", __v.asInstanceOf[js.Any]))
+      gps.foreach(__v => __obj.update("gps", __v.asInstanceOf[js.Any]))
+      nfc.foreach(__v => __obj.update("nfc", __v.asInstanceOf[js.Any]))
+      wifi.foreach(__v => __obj.update("wifi", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Radios]
     }
   }
 
@@ -4305,16 +3584,10 @@ package devicefarm {
         cost: js.UndefOr[MonetaryAmount] = js.undefined,
         frequency: js.UndefOr[RecurringChargeFrequency] = js.undefined
     ): RecurringCharge = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "cost" -> cost.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "frequency" -> frequency.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RecurringCharge]
+      val __obj = js.Dictionary.empty[js.Any]
+      cost.foreach(__v => __obj.update("cost", __v.asInstanceOf[js.Any]))
+      frequency.foreach(__v => __obj.update("frequency", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[RecurringCharge]
     }
   }
 
@@ -4376,73 +3649,29 @@ package devicefarm {
         status: js.UndefOr[ExecutionStatus] = js.undefined,
         stopped: js.UndefOr[DateTime] = js.undefined
     ): RemoteAccessSession = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "arn" -> arn.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "billingMethod" -> billingMethod.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "clientId" -> clientId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "created" -> created.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "device" -> device.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "deviceMinutes" -> deviceMinutes.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "deviceUdid" -> deviceUdid.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "endpoint" -> endpoint.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "hostAddress" -> hostAddress.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "instanceArn" -> instanceArn.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "interactionMode" -> interactionMode.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "message" -> message.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "name" -> name.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "remoteDebugEnabled" -> remoteDebugEnabled.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "remoteRecordAppArn" -> remoteRecordAppArn.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "remoteRecordEnabled" -> remoteRecordEnabled.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "result" -> result.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "skipAppResign" -> skipAppResign.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "started" -> started.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "status" -> status.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "stopped" -> stopped.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RemoteAccessSession]
+      val __obj = js.Dictionary.empty[js.Any]
+      arn.foreach(__v => __obj.update("arn", __v.asInstanceOf[js.Any]))
+      billingMethod.foreach(__v => __obj.update("billingMethod", __v.asInstanceOf[js.Any]))
+      clientId.foreach(__v => __obj.update("clientId", __v.asInstanceOf[js.Any]))
+      created.foreach(__v => __obj.update("created", __v.asInstanceOf[js.Any]))
+      device.foreach(__v => __obj.update("device", __v.asInstanceOf[js.Any]))
+      deviceMinutes.foreach(__v => __obj.update("deviceMinutes", __v.asInstanceOf[js.Any]))
+      deviceUdid.foreach(__v => __obj.update("deviceUdid", __v.asInstanceOf[js.Any]))
+      endpoint.foreach(__v => __obj.update("endpoint", __v.asInstanceOf[js.Any]))
+      hostAddress.foreach(__v => __obj.update("hostAddress", __v.asInstanceOf[js.Any]))
+      instanceArn.foreach(__v => __obj.update("instanceArn", __v.asInstanceOf[js.Any]))
+      interactionMode.foreach(__v => __obj.update("interactionMode", __v.asInstanceOf[js.Any]))
+      message.foreach(__v => __obj.update("message", __v.asInstanceOf[js.Any]))
+      name.foreach(__v => __obj.update("name", __v.asInstanceOf[js.Any]))
+      remoteDebugEnabled.foreach(__v => __obj.update("remoteDebugEnabled", __v.asInstanceOf[js.Any]))
+      remoteRecordAppArn.foreach(__v => __obj.update("remoteRecordAppArn", __v.asInstanceOf[js.Any]))
+      remoteRecordEnabled.foreach(__v => __obj.update("remoteRecordEnabled", __v.asInstanceOf[js.Any]))
+      result.foreach(__v => __obj.update("result", __v.asInstanceOf[js.Any]))
+      skipAppResign.foreach(__v => __obj.update("skipAppResign", __v.asInstanceOf[js.Any]))
+      started.foreach(__v => __obj.update("started", __v.asInstanceOf[js.Any]))
+      status.foreach(__v => __obj.update("status", __v.asInstanceOf[js.Any]))
+      stopped.foreach(__v => __obj.update("stopped", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[RemoteAccessSession]
     }
   }
 
@@ -4460,16 +3689,10 @@ package devicefarm {
         offeringId: js.UndefOr[OfferingIdentifier] = js.undefined,
         quantity: js.UndefOr[Int] = js.undefined
     ): RenewOfferingRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "offeringId" -> offeringId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "quantity" -> quantity.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RenewOfferingRequest]
+      val __obj = js.Dictionary.empty[js.Any]
+      offeringId.foreach(__v => __obj.update("offeringId", __v.asInstanceOf[js.Any]))
+      quantity.foreach(__v => __obj.update("quantity", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[RenewOfferingRequest]
     }
   }
 
@@ -4485,13 +3708,9 @@ package devicefarm {
     def apply(
         offeringTransaction: js.UndefOr[OfferingTransaction] = js.undefined
     ): RenewOfferingResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "offeringTransaction" -> offeringTransaction.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RenewOfferingResult]
+      val __obj = js.Dictionary.empty[js.Any]
+      offeringTransaction.foreach(__v => __obj.update("offeringTransaction", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[RenewOfferingResult]
     }
   }
 
@@ -4509,16 +3728,10 @@ package devicefarm {
         height: js.UndefOr[Int] = js.undefined,
         width: js.UndefOr[Int] = js.undefined
     ): Resolution = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "height" -> height.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "width" -> width.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Resolution]
+      val __obj = js.Dictionary.empty[js.Any]
+      height.foreach(__v => __obj.update("height", __v.asInstanceOf[js.Any]))
+      width.foreach(__v => __obj.update("width", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Resolution]
     }
   }
 
@@ -4538,19 +3751,11 @@ package devicefarm {
         operator: js.UndefOr[RuleOperator] = js.undefined,
         value: js.UndefOr[String] = js.undefined
     ): Rule = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "attribute" -> attribute.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "operator" -> operator.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "value" -> value.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Rule]
+      val __obj = js.Dictionary.empty[js.Any]
+      attribute.foreach(__v => __obj.update("attribute", __v.asInstanceOf[js.Any]))
+      operator.foreach(__v => __obj.update("operator", __v.asInstanceOf[js.Any]))
+      value.foreach(__v => __obj.update("value", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Rule]
     }
   }
 
@@ -4640,103 +3845,39 @@ package devicefarm {
         `type`: js.UndefOr[TestType] = js.undefined,
         webUrl: js.UndefOr[String] = js.undefined
     ): Run = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "appUpload" -> appUpload.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "arn" -> arn.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "billingMethod" -> billingMethod.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "completedJobs" -> completedJobs.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "counters" -> counters.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "created" -> created.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "customerArtifactPaths" -> customerArtifactPaths.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "deviceMinutes" -> deviceMinutes.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "devicePoolArn" -> devicePoolArn.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "deviceSelectionResult" -> deviceSelectionResult.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "eventCount" -> eventCount.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "jobTimeoutMinutes" -> jobTimeoutMinutes.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "locale" -> locale.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "location" -> location.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "message" -> message.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "name" -> name.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "networkProfile" -> networkProfile.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "parsingResultUrl" -> parsingResultUrl.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "platform" -> platform.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "radios" -> radios.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "result" -> result.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "resultCode" -> resultCode.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "seed" -> seed.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "skipAppResign" -> skipAppResign.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "started" -> started.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "status" -> status.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "stopped" -> stopped.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "testSpecArn" -> testSpecArn.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "totalJobs" -> totalJobs.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "`type`" -> `type`.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "webUrl" -> webUrl.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Run]
+      val __obj = js.Dictionary.empty[js.Any]
+      appUpload.foreach(__v => __obj.update("appUpload", __v.asInstanceOf[js.Any]))
+      arn.foreach(__v => __obj.update("arn", __v.asInstanceOf[js.Any]))
+      billingMethod.foreach(__v => __obj.update("billingMethod", __v.asInstanceOf[js.Any]))
+      completedJobs.foreach(__v => __obj.update("completedJobs", __v.asInstanceOf[js.Any]))
+      counters.foreach(__v => __obj.update("counters", __v.asInstanceOf[js.Any]))
+      created.foreach(__v => __obj.update("created", __v.asInstanceOf[js.Any]))
+      customerArtifactPaths.foreach(__v => __obj.update("customerArtifactPaths", __v.asInstanceOf[js.Any]))
+      deviceMinutes.foreach(__v => __obj.update("deviceMinutes", __v.asInstanceOf[js.Any]))
+      devicePoolArn.foreach(__v => __obj.update("devicePoolArn", __v.asInstanceOf[js.Any]))
+      deviceSelectionResult.foreach(__v => __obj.update("deviceSelectionResult", __v.asInstanceOf[js.Any]))
+      eventCount.foreach(__v => __obj.update("eventCount", __v.asInstanceOf[js.Any]))
+      jobTimeoutMinutes.foreach(__v => __obj.update("jobTimeoutMinutes", __v.asInstanceOf[js.Any]))
+      locale.foreach(__v => __obj.update("locale", __v.asInstanceOf[js.Any]))
+      location.foreach(__v => __obj.update("location", __v.asInstanceOf[js.Any]))
+      message.foreach(__v => __obj.update("message", __v.asInstanceOf[js.Any]))
+      name.foreach(__v => __obj.update("name", __v.asInstanceOf[js.Any]))
+      networkProfile.foreach(__v => __obj.update("networkProfile", __v.asInstanceOf[js.Any]))
+      parsingResultUrl.foreach(__v => __obj.update("parsingResultUrl", __v.asInstanceOf[js.Any]))
+      platform.foreach(__v => __obj.update("platform", __v.asInstanceOf[js.Any]))
+      radios.foreach(__v => __obj.update("radios", __v.asInstanceOf[js.Any]))
+      result.foreach(__v => __obj.update("result", __v.asInstanceOf[js.Any]))
+      resultCode.foreach(__v => __obj.update("resultCode", __v.asInstanceOf[js.Any]))
+      seed.foreach(__v => __obj.update("seed", __v.asInstanceOf[js.Any]))
+      skipAppResign.foreach(__v => __obj.update("skipAppResign", __v.asInstanceOf[js.Any]))
+      started.foreach(__v => __obj.update("started", __v.asInstanceOf[js.Any]))
+      status.foreach(__v => __obj.update("status", __v.asInstanceOf[js.Any]))
+      stopped.foreach(__v => __obj.update("stopped", __v.asInstanceOf[js.Any]))
+      testSpecArn.foreach(__v => __obj.update("testSpecArn", __v.asInstanceOf[js.Any]))
+      totalJobs.foreach(__v => __obj.update("totalJobs", __v.asInstanceOf[js.Any]))
+      `type`.foreach(__v => __obj.update("type", __v.asInstanceOf[js.Any]))
+      webUrl.foreach(__v => __obj.update("webUrl", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Run]
     }
   }
 
@@ -4756,19 +3897,11 @@ package devicefarm {
         `type`: js.UndefOr[SampleType] = js.undefined,
         url: js.UndefOr[URL] = js.undefined
     ): Sample = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "arn" -> arn.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "`type`" -> `type`.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "url" -> url.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Sample]
+      val __obj = js.Dictionary.empty[js.Any]
+      arn.foreach(__v => __obj.update("arn", __v.asInstanceOf[js.Any]))
+      `type`.foreach(__v => __obj.update("type", __v.asInstanceOf[js.Any]))
+      url.foreach(__v => __obj.update("url", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Sample]
     }
   }
 
@@ -4840,37 +3973,17 @@ package devicefarm {
         radios: js.UndefOr[Radios] = js.undefined,
         vpceConfigurationArns: js.UndefOr[AmazonResourceNames] = js.undefined
     ): ScheduleRunConfiguration = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "auxiliaryApps" -> auxiliaryApps.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "billingMethod" -> billingMethod.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "customerArtifactPaths" -> customerArtifactPaths.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "extraDataPackageArn" -> extraDataPackageArn.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "locale" -> locale.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "location" -> location.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "networkProfileArn" -> networkProfileArn.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "radios" -> radios.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "vpceConfigurationArns" -> vpceConfigurationArns.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ScheduleRunConfiguration]
+      val __obj = js.Dictionary.empty[js.Any]
+      auxiliaryApps.foreach(__v => __obj.update("auxiliaryApps", __v.asInstanceOf[js.Any]))
+      billingMethod.foreach(__v => __obj.update("billingMethod", __v.asInstanceOf[js.Any]))
+      customerArtifactPaths.foreach(__v => __obj.update("customerArtifactPaths", __v.asInstanceOf[js.Any]))
+      extraDataPackageArn.foreach(__v => __obj.update("extraDataPackageArn", __v.asInstanceOf[js.Any]))
+      locale.foreach(__v => __obj.update("locale", __v.asInstanceOf[js.Any]))
+      location.foreach(__v => __obj.update("location", __v.asInstanceOf[js.Any]))
+      networkProfileArn.foreach(__v => __obj.update("networkProfileArn", __v.asInstanceOf[js.Any]))
+      radios.foreach(__v => __obj.update("radios", __v.asInstanceOf[js.Any]))
+      vpceConfigurationArns.foreach(__v => __obj.update("vpceConfigurationArns", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ScheduleRunConfiguration]
     }
   }
 
@@ -4900,30 +4013,20 @@ package devicefarm {
         executionConfiguration: js.UndefOr[ExecutionConfiguration] = js.undefined,
         name: js.UndefOr[Name] = js.undefined
     ): ScheduleRunRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "projectArn" -> projectArn.asInstanceOf[js.Any],
-        "test"       -> test.asInstanceOf[js.Any],
-        "appArn" -> appArn.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "configuration" -> configuration.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "devicePoolArn" -> devicePoolArn.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "deviceSelectionConfiguration" -> deviceSelectionConfiguration.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "executionConfiguration" -> executionConfiguration.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "name" -> name.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "test"       -> test.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ScheduleRunRequest]
+      appArn.foreach(__v => __obj.update("appArn", __v.asInstanceOf[js.Any]))
+      configuration.foreach(__v => __obj.update("configuration", __v.asInstanceOf[js.Any]))
+      devicePoolArn.foreach(__v => __obj.update("devicePoolArn", __v.asInstanceOf[js.Any]))
+      deviceSelectionConfiguration.foreach(
+        __v => __obj.update("deviceSelectionConfiguration", __v.asInstanceOf[js.Any])
+      )
+      executionConfiguration.foreach(__v => __obj.update("executionConfiguration", __v.asInstanceOf[js.Any]))
+      name.foreach(__v => __obj.update("name", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ScheduleRunRequest]
     }
   }
 
@@ -4939,13 +4042,9 @@ package devicefarm {
     def apply(
         run: js.UndefOr[Run] = js.undefined
     ): ScheduleRunResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "run" -> run.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ScheduleRunResult]
+      val __obj = js.Dictionary.empty[js.Any]
+      run.foreach(__v => __obj.update("run", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ScheduleRunResult]
     }
   }
 
@@ -4969,23 +4068,15 @@ package devicefarm {
         testPackageArn: js.UndefOr[AmazonResourceName] = js.undefined,
         testSpecArn: js.UndefOr[AmazonResourceName] = js.undefined
     ): ScheduleRunTest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "`type`" -> `type`.asInstanceOf[js.Any],
-        "filter" -> filter.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "parameters" -> parameters.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "testPackageArn" -> testPackageArn.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "testSpecArn" -> testSpecArn.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "type" -> `type`.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ScheduleRunTest]
+      filter.foreach(__v => __obj.update("filter", __v.asInstanceOf[js.Any]))
+      parameters.foreach(__v => __obj.update("parameters", __v.asInstanceOf[js.Any]))
+      testPackageArn.foreach(__v => __obj.update("testPackageArn", __v.asInstanceOf[js.Any]))
+      testSpecArn.foreach(__v => __obj.update("testSpecArn", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ScheduleRunTest]
     }
   }
 
@@ -4998,11 +4089,11 @@ package devicefarm {
     def apply(
         arn: AmazonResourceName
     ): StopJobRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "arn" -> arn.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StopJobRequest]
+      __obj.asInstanceOf[StopJobRequest]
     }
   }
 
@@ -5015,13 +4106,9 @@ package devicefarm {
     def apply(
         job: js.UndefOr[Job] = js.undefined
     ): StopJobResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "job" -> job.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StopJobResult]
+      val __obj = js.Dictionary.empty[js.Any]
+      job.foreach(__v => __obj.update("job", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[StopJobResult]
     }
   }
 
@@ -5037,11 +4124,11 @@ package devicefarm {
     def apply(
         arn: AmazonResourceName
     ): StopRemoteAccessSessionRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "arn" -> arn.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StopRemoteAccessSessionRequest]
+      __obj.asInstanceOf[StopRemoteAccessSessionRequest]
     }
   }
 
@@ -5057,13 +4144,9 @@ package devicefarm {
     def apply(
         remoteAccessSession: js.UndefOr[RemoteAccessSession] = js.undefined
     ): StopRemoteAccessSessionResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "remoteAccessSession" -> remoteAccessSession.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StopRemoteAccessSessionResult]
+      val __obj = js.Dictionary.empty[js.Any]
+      remoteAccessSession.foreach(__v => __obj.update("remoteAccessSession", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[StopRemoteAccessSessionResult]
     }
   }
 
@@ -5079,11 +4162,11 @@ package devicefarm {
     def apply(
         arn: AmazonResourceName
     ): StopRunRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "arn" -> arn.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StopRunRequest]
+      __obj.asInstanceOf[StopRunRequest]
     }
   }
 
@@ -5099,13 +4182,9 @@ package devicefarm {
     def apply(
         run: js.UndefOr[Run] = js.undefined
     ): StopRunResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "run" -> run.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StopRunResult]
+      val __obj = js.Dictionary.empty[js.Any]
+      run.foreach(__v => __obj.update("run", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[StopRunResult]
     }
   }
 
@@ -5141,43 +4220,19 @@ package devicefarm {
         stopped: js.UndefOr[DateTime] = js.undefined,
         `type`: js.UndefOr[TestType] = js.undefined
     ): Suite = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "arn" -> arn.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "counters" -> counters.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "created" -> created.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "deviceMinutes" -> deviceMinutes.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "message" -> message.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "name" -> name.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "result" -> result.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "started" -> started.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "status" -> status.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "stopped" -> stopped.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "`type`" -> `type`.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Suite]
+      val __obj = js.Dictionary.empty[js.Any]
+      arn.foreach(__v => __obj.update("arn", __v.asInstanceOf[js.Any]))
+      counters.foreach(__v => __obj.update("counters", __v.asInstanceOf[js.Any]))
+      created.foreach(__v => __obj.update("created", __v.asInstanceOf[js.Any]))
+      deviceMinutes.foreach(__v => __obj.update("deviceMinutes", __v.asInstanceOf[js.Any]))
+      message.foreach(__v => __obj.update("message", __v.asInstanceOf[js.Any]))
+      name.foreach(__v => __obj.update("name", __v.asInstanceOf[js.Any]))
+      result.foreach(__v => __obj.update("result", __v.asInstanceOf[js.Any]))
+      started.foreach(__v => __obj.update("started", __v.asInstanceOf[js.Any]))
+      status.foreach(__v => __obj.update("status", __v.asInstanceOf[js.Any]))
+      stopped.foreach(__v => __obj.update("stopped", __v.asInstanceOf[js.Any]))
+      `type`.foreach(__v => __obj.update("type", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Suite]
     }
   }
 
@@ -5213,43 +4268,19 @@ package devicefarm {
         stopped: js.UndefOr[DateTime] = js.undefined,
         `type`: js.UndefOr[TestType] = js.undefined
     ): Test = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "arn" -> arn.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "counters" -> counters.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "created" -> created.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "deviceMinutes" -> deviceMinutes.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "message" -> message.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "name" -> name.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "result" -> result.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "started" -> started.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "status" -> status.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "stopped" -> stopped.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "`type`" -> `type`.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Test]
+      val __obj = js.Dictionary.empty[js.Any]
+      arn.foreach(__v => __obj.update("arn", __v.asInstanceOf[js.Any]))
+      counters.foreach(__v => __obj.update("counters", __v.asInstanceOf[js.Any]))
+      created.foreach(__v => __obj.update("created", __v.asInstanceOf[js.Any]))
+      deviceMinutes.foreach(__v => __obj.update("deviceMinutes", __v.asInstanceOf[js.Any]))
+      message.foreach(__v => __obj.update("message", __v.asInstanceOf[js.Any]))
+      name.foreach(__v => __obj.update("name", __v.asInstanceOf[js.Any]))
+      result.foreach(__v => __obj.update("result", __v.asInstanceOf[js.Any]))
+      started.foreach(__v => __obj.update("started", __v.asInstanceOf[js.Any]))
+      status.foreach(__v => __obj.update("status", __v.asInstanceOf[js.Any]))
+      stopped.foreach(__v => __obj.update("stopped", __v.asInstanceOf[js.Any]))
+      `type`.foreach(__v => __obj.update("type", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Test]
     }
   }
 
@@ -5315,16 +4346,10 @@ package devicefarm {
         remaining: js.UndefOr[Double] = js.undefined,
         total: js.UndefOr[Double] = js.undefined
     ): TrialMinutes = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "remaining" -> remaining.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "total" -> total.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[TrialMinutes]
+      val __obj = js.Dictionary.empty[js.Any]
+      remaining.foreach(__v => __obj.update("remaining", __v.asInstanceOf[js.Any]))
+      total.foreach(__v => __obj.update("total", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[TrialMinutes]
     }
   }
 
@@ -5342,16 +4367,10 @@ package devicefarm {
         message: js.UndefOr[Message] = js.undefined,
         problems: js.UndefOr[Problems] = js.undefined
     ): UniqueProblem = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "message" -> message.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "problems" -> problems.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UniqueProblem]
+      val __obj = js.Dictionary.empty[js.Any]
+      message.foreach(__v => __obj.update("message", __v.asInstanceOf[js.Any]))
+      problems.foreach(__v => __obj.update("problems", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UniqueProblem]
     }
   }
 
@@ -5368,17 +4387,13 @@ package devicefarm {
         labels: js.UndefOr[InstanceLabels] = js.undefined,
         profileArn: js.UndefOr[AmazonResourceName] = js.undefined
     ): UpdateDeviceInstanceRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "arn" -> arn.asInstanceOf[js.Any],
-        "labels" -> labels.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "profileArn" -> profileArn.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "arn" -> arn.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateDeviceInstanceRequest]
+      labels.foreach(__v => __obj.update("labels", __v.asInstanceOf[js.Any]))
+      profileArn.foreach(__v => __obj.update("profileArn", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateDeviceInstanceRequest]
     }
   }
 
@@ -5391,13 +4406,9 @@ package devicefarm {
     def apply(
         deviceInstance: js.UndefOr[DeviceInstance] = js.undefined
     ): UpdateDeviceInstanceResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "deviceInstance" -> deviceInstance.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateDeviceInstanceResult]
+      val __obj = js.Dictionary.empty[js.Any]
+      deviceInstance.foreach(__v => __obj.update("deviceInstance", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateDeviceInstanceResult]
     }
   }
 
@@ -5423,26 +4434,16 @@ package devicefarm {
         name: js.UndefOr[Name] = js.undefined,
         rules: js.UndefOr[Rules] = js.undefined
     ): UpdateDevicePoolRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "arn" -> arn.asInstanceOf[js.Any],
-        "clearMaxDevices" -> clearMaxDevices.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "description" -> description.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "maxDevices" -> maxDevices.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "name" -> name.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "rules" -> rules.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "arn" -> arn.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateDevicePoolRequest]
+      clearMaxDevices.foreach(__v => __obj.update("clearMaxDevices", __v.asInstanceOf[js.Any]))
+      description.foreach(__v => __obj.update("description", __v.asInstanceOf[js.Any]))
+      maxDevices.foreach(__v => __obj.update("maxDevices", __v.asInstanceOf[js.Any]))
+      name.foreach(__v => __obj.update("name", __v.asInstanceOf[js.Any]))
+      rules.foreach(__v => __obj.update("rules", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateDevicePoolRequest]
     }
   }
 
@@ -5458,13 +4459,9 @@ package devicefarm {
     def apply(
         devicePool: js.UndefOr[DevicePool] = js.undefined
     ): UpdateDevicePoolResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "devicePool" -> devicePool.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateDevicePoolResult]
+      val __obj = js.Dictionary.empty[js.Any]
+      devicePool.foreach(__v => __obj.update("devicePool", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateDevicePoolResult]
     }
   }
 
@@ -5487,26 +4484,18 @@ package devicefarm {
         packageCleanup: js.UndefOr[Boolean] = js.undefined,
         rebootAfterUse: js.UndefOr[Boolean] = js.undefined
     ): UpdateInstanceProfileRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "arn" -> arn.asInstanceOf[js.Any],
-        "description" -> description.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "excludeAppPackagesFromCleanup" -> excludeAppPackagesFromCleanup.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "name" -> name.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "packageCleanup" -> packageCleanup.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "rebootAfterUse" -> rebootAfterUse.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "arn" -> arn.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateInstanceProfileRequest]
+      description.foreach(__v => __obj.update("description", __v.asInstanceOf[js.Any]))
+      excludeAppPackagesFromCleanup.foreach(
+        __v => __obj.update("excludeAppPackagesFromCleanup", __v.asInstanceOf[js.Any])
+      )
+      name.foreach(__v => __obj.update("name", __v.asInstanceOf[js.Any]))
+      packageCleanup.foreach(__v => __obj.update("packageCleanup", __v.asInstanceOf[js.Any]))
+      rebootAfterUse.foreach(__v => __obj.update("rebootAfterUse", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateInstanceProfileRequest]
     }
   }
 
@@ -5519,13 +4508,9 @@ package devicefarm {
     def apply(
         instanceProfile: js.UndefOr[InstanceProfile] = js.undefined
     ): UpdateInstanceProfileResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "instanceProfile" -> instanceProfile.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateInstanceProfileResult]
+      val __obj = js.Dictionary.empty[js.Any]
+      instanceProfile.foreach(__v => __obj.update("instanceProfile", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateInstanceProfileResult]
     }
   }
 
@@ -5560,44 +4545,22 @@ package devicefarm {
         uplinkJitterMs: js.UndefOr[Double] = js.undefined,
         uplinkLossPercent: js.UndefOr[PercentInteger] = js.undefined
     ): UpdateNetworkProfileRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "arn" -> arn.asInstanceOf[js.Any],
-        "description" -> description.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "downlinkBandwidthBits" -> downlinkBandwidthBits.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "downlinkDelayMs" -> downlinkDelayMs.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "downlinkJitterMs" -> downlinkJitterMs.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "downlinkLossPercent" -> downlinkLossPercent.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "name" -> name.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "`type`" -> `type`.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "uplinkBandwidthBits" -> uplinkBandwidthBits.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "uplinkDelayMs" -> uplinkDelayMs.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "uplinkJitterMs" -> uplinkJitterMs.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "uplinkLossPercent" -> uplinkLossPercent.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "arn" -> arn.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateNetworkProfileRequest]
+      description.foreach(__v => __obj.update("description", __v.asInstanceOf[js.Any]))
+      downlinkBandwidthBits.foreach(__v => __obj.update("downlinkBandwidthBits", __v.asInstanceOf[js.Any]))
+      downlinkDelayMs.foreach(__v => __obj.update("downlinkDelayMs", __v.asInstanceOf[js.Any]))
+      downlinkJitterMs.foreach(__v => __obj.update("downlinkJitterMs", __v.asInstanceOf[js.Any]))
+      downlinkLossPercent.foreach(__v => __obj.update("downlinkLossPercent", __v.asInstanceOf[js.Any]))
+      name.foreach(__v => __obj.update("name", __v.asInstanceOf[js.Any]))
+      `type`.foreach(__v => __obj.update("type", __v.asInstanceOf[js.Any]))
+      uplinkBandwidthBits.foreach(__v => __obj.update("uplinkBandwidthBits", __v.asInstanceOf[js.Any]))
+      uplinkDelayMs.foreach(__v => __obj.update("uplinkDelayMs", __v.asInstanceOf[js.Any]))
+      uplinkJitterMs.foreach(__v => __obj.update("uplinkJitterMs", __v.asInstanceOf[js.Any]))
+      uplinkLossPercent.foreach(__v => __obj.update("uplinkLossPercent", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateNetworkProfileRequest]
     }
   }
 
@@ -5610,13 +4573,9 @@ package devicefarm {
     def apply(
         networkProfile: js.UndefOr[NetworkProfile] = js.undefined
     ): UpdateNetworkProfileResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "networkProfile" -> networkProfile.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateNetworkProfileResult]
+      val __obj = js.Dictionary.empty[js.Any]
+      networkProfile.foreach(__v => __obj.update("networkProfile", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateNetworkProfileResult]
     }
   }
 
@@ -5636,17 +4595,13 @@ package devicefarm {
         defaultJobTimeoutMinutes: js.UndefOr[JobTimeoutMinutes] = js.undefined,
         name: js.UndefOr[Name] = js.undefined
     ): UpdateProjectRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "arn" -> arn.asInstanceOf[js.Any],
-        "defaultJobTimeoutMinutes" -> defaultJobTimeoutMinutes.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "name" -> name.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "arn" -> arn.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateProjectRequest]
+      defaultJobTimeoutMinutes.foreach(__v => __obj.update("defaultJobTimeoutMinutes", __v.asInstanceOf[js.Any]))
+      name.foreach(__v => __obj.update("name", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateProjectRequest]
     }
   }
 
@@ -5662,13 +4617,9 @@ package devicefarm {
     def apply(
         project: js.UndefOr[Project] = js.undefined
     ): UpdateProjectResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "project" -> project.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateProjectResult]
+      val __obj = js.Dictionary.empty[js.Any]
+      project.foreach(__v => __obj.update("project", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateProjectResult]
     }
   }
 
@@ -5687,20 +4638,14 @@ package devicefarm {
         editContent: js.UndefOr[Boolean] = js.undefined,
         name: js.UndefOr[Name] = js.undefined
     ): UpdateUploadRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "arn" -> arn.asInstanceOf[js.Any],
-        "contentType" -> contentType.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "editContent" -> editContent.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "name" -> name.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "arn" -> arn.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateUploadRequest]
+      contentType.foreach(__v => __obj.update("contentType", __v.asInstanceOf[js.Any]))
+      editContent.foreach(__v => __obj.update("editContent", __v.asInstanceOf[js.Any]))
+      name.foreach(__v => __obj.update("name", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateUploadRequest]
     }
   }
 
@@ -5713,13 +4658,9 @@ package devicefarm {
     def apply(
         upload: js.UndefOr[Upload] = js.undefined
     ): UpdateUploadResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "upload" -> upload.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateUploadResult]
+      val __obj = js.Dictionary.empty[js.Any]
+      upload.foreach(__v => __obj.update("upload", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateUploadResult]
     }
   }
 
@@ -5740,23 +4681,17 @@ package devicefarm {
         vpceConfigurationName: js.UndefOr[VPCEConfigurationName] = js.undefined,
         vpceServiceName: js.UndefOr[VPCEServiceName] = js.undefined
     ): UpdateVPCEConfigurationRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "arn" -> arn.asInstanceOf[js.Any],
-        "serviceDnsName" -> serviceDnsName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "vpceConfigurationDescription" -> vpceConfigurationDescription.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "vpceConfigurationName" -> vpceConfigurationName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "vpceServiceName" -> vpceServiceName.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "arn" -> arn.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateVPCEConfigurationRequest]
+      serviceDnsName.foreach(__v => __obj.update("serviceDnsName", __v.asInstanceOf[js.Any]))
+      vpceConfigurationDescription.foreach(
+        __v => __obj.update("vpceConfigurationDescription", __v.asInstanceOf[js.Any])
+      )
+      vpceConfigurationName.foreach(__v => __obj.update("vpceConfigurationName", __v.asInstanceOf[js.Any]))
+      vpceServiceName.foreach(__v => __obj.update("vpceServiceName", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateVPCEConfigurationRequest]
     }
   }
 
@@ -5769,13 +4704,9 @@ package devicefarm {
     def apply(
         vpceConfiguration: js.UndefOr[VPCEConfiguration] = js.undefined
     ): UpdateVPCEConfigurationResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "vpceConfiguration" -> vpceConfiguration.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateVPCEConfigurationResult]
+      val __obj = js.Dictionary.empty[js.Any]
+      vpceConfiguration.foreach(__v => __obj.update("vpceConfiguration", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateVPCEConfigurationResult]
     }
   }
 
@@ -5809,40 +4740,18 @@ package devicefarm {
         `type`: js.UndefOr[UploadType] = js.undefined,
         url: js.UndefOr[URL] = js.undefined
     ): Upload = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "arn" -> arn.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "category" -> category.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "contentType" -> contentType.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "created" -> created.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "message" -> message.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "metadata" -> metadata.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "name" -> name.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "status" -> status.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "`type`" -> `type`.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "url" -> url.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Upload]
+      val __obj = js.Dictionary.empty[js.Any]
+      arn.foreach(__v => __obj.update("arn", __v.asInstanceOf[js.Any]))
+      category.foreach(__v => __obj.update("category", __v.asInstanceOf[js.Any]))
+      contentType.foreach(__v => __obj.update("contentType", __v.asInstanceOf[js.Any]))
+      created.foreach(__v => __obj.update("created", __v.asInstanceOf[js.Any]))
+      message.foreach(__v => __obj.update("message", __v.asInstanceOf[js.Any]))
+      metadata.foreach(__v => __obj.update("metadata", __v.asInstanceOf[js.Any]))
+      name.foreach(__v => __obj.update("name", __v.asInstanceOf[js.Any]))
+      status.foreach(__v => __obj.update("status", __v.asInstanceOf[js.Any]))
+      `type`.foreach(__v => __obj.update("type", __v.asInstanceOf[js.Any]))
+      url.foreach(__v => __obj.update("url", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Upload]
     }
   }
 
@@ -5952,25 +4861,15 @@ package devicefarm {
         vpceConfigurationName: js.UndefOr[VPCEConfigurationName] = js.undefined,
         vpceServiceName: js.UndefOr[VPCEServiceName] = js.undefined
     ): VPCEConfiguration = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "arn" -> arn.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "serviceDnsName" -> serviceDnsName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "vpceConfigurationDescription" -> vpceConfigurationDescription.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "vpceConfigurationName" -> vpceConfigurationName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "vpceServiceName" -> vpceServiceName.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[VPCEConfiguration]
+      val __obj = js.Dictionary.empty[js.Any]
+      arn.foreach(__v => __obj.update("arn", __v.asInstanceOf[js.Any]))
+      serviceDnsName.foreach(__v => __obj.update("serviceDnsName", __v.asInstanceOf[js.Any]))
+      vpceConfigurationDescription.foreach(
+        __v => __obj.update("vpceConfigurationDescription", __v.asInstanceOf[js.Any])
+      )
+      vpceConfigurationName.foreach(__v => __obj.update("vpceConfigurationName", __v.asInstanceOf[js.Any]))
+      vpceServiceName.foreach(__v => __obj.update("vpceServiceName", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[VPCEConfiguration]
     }
   }
 }

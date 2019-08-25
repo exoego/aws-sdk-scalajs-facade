@@ -83,18 +83,14 @@ package transcribeservice {
         Phrases: js.UndefOr[Phrases] = js.undefined,
         VocabularyFileUri: js.UndefOr[Uri] = js.undefined
     ): CreateVocabularyRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "LanguageCode"   -> LanguageCode.asInstanceOf[js.Any],
-        "VocabularyName" -> VocabularyName.asInstanceOf[js.Any],
-        "Phrases" -> Phrases.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "VocabularyFileUri" -> VocabularyFileUri.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "VocabularyName" -> VocabularyName.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateVocabularyRequest]
+      Phrases.foreach(__v => __obj.update("Phrases", __v.asInstanceOf[js.Any]))
+      VocabularyFileUri.foreach(__v => __obj.update("VocabularyFileUri", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateVocabularyRequest]
     }
   }
 
@@ -115,25 +111,13 @@ package transcribeservice {
         VocabularyName: js.UndefOr[VocabularyName] = js.undefined,
         VocabularyState: js.UndefOr[VocabularyState] = js.undefined
     ): CreateVocabularyResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "FailureReason" -> FailureReason.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "LanguageCode" -> LanguageCode.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "LastModifiedTime" -> LastModifiedTime.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "VocabularyName" -> VocabularyName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "VocabularyState" -> VocabularyState.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateVocabularyResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      FailureReason.foreach(__v => __obj.update("FailureReason", __v.asInstanceOf[js.Any]))
+      LanguageCode.foreach(__v => __obj.update("LanguageCode", __v.asInstanceOf[js.Any]))
+      LastModifiedTime.foreach(__v => __obj.update("LastModifiedTime", __v.asInstanceOf[js.Any]))
+      VocabularyName.foreach(__v => __obj.update("VocabularyName", __v.asInstanceOf[js.Any]))
+      VocabularyState.foreach(__v => __obj.update("VocabularyState", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateVocabularyResponse]
     }
   }
 
@@ -146,11 +130,11 @@ package transcribeservice {
     def apply(
         TranscriptionJobName: TranscriptionJobName
     ): DeleteTranscriptionJobRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "TranscriptionJobName" -> TranscriptionJobName.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteTranscriptionJobRequest]
+      __obj.asInstanceOf[DeleteTranscriptionJobRequest]
     }
   }
 
@@ -163,11 +147,11 @@ package transcribeservice {
     def apply(
         VocabularyName: VocabularyName
     ): DeleteVocabularyRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "VocabularyName" -> VocabularyName.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteVocabularyRequest]
+      __obj.asInstanceOf[DeleteVocabularyRequest]
     }
   }
 
@@ -180,11 +164,11 @@ package transcribeservice {
     def apply(
         TranscriptionJobName: TranscriptionJobName
     ): GetTranscriptionJobRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "TranscriptionJobName" -> TranscriptionJobName.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetTranscriptionJobRequest]
+      __obj.asInstanceOf[GetTranscriptionJobRequest]
     }
   }
 
@@ -197,13 +181,9 @@ package transcribeservice {
     def apply(
         TranscriptionJob: js.UndefOr[TranscriptionJob] = js.undefined
     ): GetTranscriptionJobResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "TranscriptionJob" -> TranscriptionJob.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetTranscriptionJobResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      TranscriptionJob.foreach(__v => __obj.update("TranscriptionJob", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetTranscriptionJobResponse]
     }
   }
 
@@ -216,11 +196,11 @@ package transcribeservice {
     def apply(
         VocabularyName: VocabularyName
     ): GetVocabularyRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "VocabularyName" -> VocabularyName.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetVocabularyRequest]
+      __obj.asInstanceOf[GetVocabularyRequest]
     }
   }
 
@@ -243,28 +223,14 @@ package transcribeservice {
         VocabularyName: js.UndefOr[VocabularyName] = js.undefined,
         VocabularyState: js.UndefOr[VocabularyState] = js.undefined
     ): GetVocabularyResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "DownloadUri" -> DownloadUri.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "FailureReason" -> FailureReason.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "LanguageCode" -> LanguageCode.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "LastModifiedTime" -> LastModifiedTime.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "VocabularyName" -> VocabularyName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "VocabularyState" -> VocabularyState.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetVocabularyResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      DownloadUri.foreach(__v => __obj.update("DownloadUri", __v.asInstanceOf[js.Any]))
+      FailureReason.foreach(__v => __obj.update("FailureReason", __v.asInstanceOf[js.Any]))
+      LanguageCode.foreach(__v => __obj.update("LanguageCode", __v.asInstanceOf[js.Any]))
+      LastModifiedTime.foreach(__v => __obj.update("LastModifiedTime", __v.asInstanceOf[js.Any]))
+      VocabularyName.foreach(__v => __obj.update("VocabularyName", __v.asInstanceOf[js.Any]))
+      VocabularyState.foreach(__v => __obj.update("VocabularyState", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetVocabularyResponse]
     }
   }
 
@@ -298,22 +264,12 @@ package transcribeservice {
         NextToken: js.UndefOr[NextToken] = js.undefined,
         Status: js.UndefOr[TranscriptionJobStatus] = js.undefined
     ): ListTranscriptionJobsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "JobNameContains" -> JobNameContains.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MaxResults" -> MaxResults.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NextToken" -> NextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Status" -> Status.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListTranscriptionJobsRequest]
+      val __obj = js.Dictionary.empty[js.Any]
+      JobNameContains.foreach(__v => __obj.update("JobNameContains", __v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.update("Status", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListTranscriptionJobsRequest]
     }
   }
 
@@ -330,19 +286,11 @@ package transcribeservice {
         Status: js.UndefOr[TranscriptionJobStatus] = js.undefined,
         TranscriptionJobSummaries: js.UndefOr[TranscriptionJobSummaries] = js.undefined
     ): ListTranscriptionJobsResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "NextToken" -> NextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Status" -> Status.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "TranscriptionJobSummaries" -> TranscriptionJobSummaries.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListTranscriptionJobsResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.update("Status", __v.asInstanceOf[js.Any]))
+      TranscriptionJobSummaries.foreach(__v => __obj.update("TranscriptionJobSummaries", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListTranscriptionJobsResponse]
     }
   }
 
@@ -361,22 +309,12 @@ package transcribeservice {
         NextToken: js.UndefOr[NextToken] = js.undefined,
         StateEquals: js.UndefOr[VocabularyState] = js.undefined
     ): ListVocabulariesRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "MaxResults" -> MaxResults.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NameContains" -> NameContains.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NextToken" -> NextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "StateEquals" -> StateEquals.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListVocabulariesRequest]
+      val __obj = js.Dictionary.empty[js.Any]
+      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
+      NameContains.foreach(__v => __obj.update("NameContains", __v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      StateEquals.foreach(__v => __obj.update("StateEquals", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListVocabulariesRequest]
     }
   }
 
@@ -393,19 +331,11 @@ package transcribeservice {
         Status: js.UndefOr[TranscriptionJobStatus] = js.undefined,
         Vocabularies: js.UndefOr[Vocabularies] = js.undefined
     ): ListVocabulariesResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "NextToken" -> NextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Status" -> Status.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Vocabularies" -> Vocabularies.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListVocabulariesResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.update("Status", __v.asInstanceOf[js.Any]))
+      Vocabularies.foreach(__v => __obj.update("Vocabularies", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListVocabulariesResponse]
     }
   }
 
@@ -421,13 +351,9 @@ package transcribeservice {
     def apply(
         MediaFileUri: js.UndefOr[Uri] = js.undefined
     ): Media = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "MediaFileUri" -> MediaFileUri.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Media]
+      val __obj = js.Dictionary.empty[js.Any]
+      MediaFileUri.foreach(__v => __obj.update("MediaFileUri", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Media]
     }
   }
 
@@ -465,22 +391,12 @@ package transcribeservice {
         ShowSpeakerLabels: js.UndefOr[Boolean] = js.undefined,
         VocabularyName: js.UndefOr[VocabularyName] = js.undefined
     ): Settings = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ChannelIdentification" -> ChannelIdentification.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MaxSpeakerLabels" -> MaxSpeakerLabels.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ShowSpeakerLabels" -> ShowSpeakerLabels.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "VocabularyName" -> VocabularyName.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Settings]
+      val __obj = js.Dictionary.empty[js.Any]
+      ChannelIdentification.foreach(__v => __obj.update("ChannelIdentification", __v.asInstanceOf[js.Any]))
+      MaxSpeakerLabels.foreach(__v => __obj.update("MaxSpeakerLabels", __v.asInstanceOf[js.Any]))
+      ShowSpeakerLabels.foreach(__v => __obj.update("ShowSpeakerLabels", __v.asInstanceOf[js.Any]))
+      VocabularyName.foreach(__v => __obj.update("VocabularyName", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Settings]
     }
   }
 
@@ -505,23 +421,17 @@ package transcribeservice {
         OutputBucketName: js.UndefOr[OutputBucketName] = js.undefined,
         Settings: js.UndefOr[Settings] = js.undefined
     ): StartTranscriptionJobRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "LanguageCode"         -> LanguageCode.asInstanceOf[js.Any],
         "Media"                -> Media.asInstanceOf[js.Any],
         "MediaFormat"          -> MediaFormat.asInstanceOf[js.Any],
-        "TranscriptionJobName" -> TranscriptionJobName.asInstanceOf[js.Any],
-        "MediaSampleRateHertz" -> MediaSampleRateHertz.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "OutputBucketName" -> OutputBucketName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Settings" -> Settings.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "TranscriptionJobName" -> TranscriptionJobName.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StartTranscriptionJobRequest]
+      MediaSampleRateHertz.foreach(__v => __obj.update("MediaSampleRateHertz", __v.asInstanceOf[js.Any]))
+      OutputBucketName.foreach(__v => __obj.update("OutputBucketName", __v.asInstanceOf[js.Any]))
+      Settings.foreach(__v => __obj.update("Settings", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[StartTranscriptionJobRequest]
     }
   }
 
@@ -534,13 +444,9 @@ package transcribeservice {
     def apply(
         TranscriptionJob: js.UndefOr[TranscriptionJob] = js.undefined
     ): StartTranscriptionJobResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "TranscriptionJob" -> TranscriptionJob.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StartTranscriptionJobResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      TranscriptionJob.foreach(__v => __obj.update("TranscriptionJob", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[StartTranscriptionJobResponse]
     }
   }
 
@@ -556,13 +462,9 @@ package transcribeservice {
     def apply(
         TranscriptFileUri: js.UndefOr[Uri] = js.undefined
     ): Transcript = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "TranscriptFileUri" -> TranscriptFileUri.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Transcript]
+      val __obj = js.Dictionary.empty[js.Any]
+      TranscriptFileUri.foreach(__v => __obj.update("TranscriptFileUri", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Transcript]
     }
   }
 
@@ -598,43 +500,19 @@ package transcribeservice {
         TranscriptionJobName: js.UndefOr[TranscriptionJobName] = js.undefined,
         TranscriptionJobStatus: js.UndefOr[TranscriptionJobStatus] = js.undefined
     ): TranscriptionJob = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "CompletionTime" -> CompletionTime.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "CreationTime" -> CreationTime.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "FailureReason" -> FailureReason.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "LanguageCode" -> LanguageCode.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Media" -> Media.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MediaFormat" -> MediaFormat.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MediaSampleRateHertz" -> MediaSampleRateHertz.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Settings" -> Settings.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Transcript" -> Transcript.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "TranscriptionJobName" -> TranscriptionJobName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "TranscriptionJobStatus" -> TranscriptionJobStatus.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[TranscriptionJob]
+      val __obj = js.Dictionary.empty[js.Any]
+      CompletionTime.foreach(__v => __obj.update("CompletionTime", __v.asInstanceOf[js.Any]))
+      CreationTime.foreach(__v => __obj.update("CreationTime", __v.asInstanceOf[js.Any]))
+      FailureReason.foreach(__v => __obj.update("FailureReason", __v.asInstanceOf[js.Any]))
+      LanguageCode.foreach(__v => __obj.update("LanguageCode", __v.asInstanceOf[js.Any]))
+      Media.foreach(__v => __obj.update("Media", __v.asInstanceOf[js.Any]))
+      MediaFormat.foreach(__v => __obj.update("MediaFormat", __v.asInstanceOf[js.Any]))
+      MediaSampleRateHertz.foreach(__v => __obj.update("MediaSampleRateHertz", __v.asInstanceOf[js.Any]))
+      Settings.foreach(__v => __obj.update("Settings", __v.asInstanceOf[js.Any]))
+      Transcript.foreach(__v => __obj.update("Transcript", __v.asInstanceOf[js.Any]))
+      TranscriptionJobName.foreach(__v => __obj.update("TranscriptionJobName", __v.asInstanceOf[js.Any]))
+      TranscriptionJobStatus.foreach(__v => __obj.update("TranscriptionJobStatus", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[TranscriptionJob]
     }
   }
 
@@ -670,31 +548,15 @@ package transcribeservice {
         TranscriptionJobName: js.UndefOr[TranscriptionJobName] = js.undefined,
         TranscriptionJobStatus: js.UndefOr[TranscriptionJobStatus] = js.undefined
     ): TranscriptionJobSummary = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "CompletionTime" -> CompletionTime.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "CreationTime" -> CreationTime.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "FailureReason" -> FailureReason.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "LanguageCode" -> LanguageCode.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "OutputLocationType" -> OutputLocationType.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "TranscriptionJobName" -> TranscriptionJobName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "TranscriptionJobStatus" -> TranscriptionJobStatus.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[TranscriptionJobSummary]
+      val __obj = js.Dictionary.empty[js.Any]
+      CompletionTime.foreach(__v => __obj.update("CompletionTime", __v.asInstanceOf[js.Any]))
+      CreationTime.foreach(__v => __obj.update("CreationTime", __v.asInstanceOf[js.Any]))
+      FailureReason.foreach(__v => __obj.update("FailureReason", __v.asInstanceOf[js.Any]))
+      LanguageCode.foreach(__v => __obj.update("LanguageCode", __v.asInstanceOf[js.Any]))
+      OutputLocationType.foreach(__v => __obj.update("OutputLocationType", __v.asInstanceOf[js.Any]))
+      TranscriptionJobName.foreach(__v => __obj.update("TranscriptionJobName", __v.asInstanceOf[js.Any]))
+      TranscriptionJobStatus.foreach(__v => __obj.update("TranscriptionJobStatus", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[TranscriptionJobSummary]
     }
   }
 
@@ -713,18 +575,14 @@ package transcribeservice {
         Phrases: js.UndefOr[Phrases] = js.undefined,
         VocabularyFileUri: js.UndefOr[Uri] = js.undefined
     ): UpdateVocabularyRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "LanguageCode"   -> LanguageCode.asInstanceOf[js.Any],
-        "VocabularyName" -> VocabularyName.asInstanceOf[js.Any],
-        "Phrases" -> Phrases.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "VocabularyFileUri" -> VocabularyFileUri.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "VocabularyName" -> VocabularyName.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateVocabularyRequest]
+      Phrases.foreach(__v => __obj.update("Phrases", __v.asInstanceOf[js.Any]))
+      VocabularyFileUri.foreach(__v => __obj.update("VocabularyFileUri", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateVocabularyRequest]
     }
   }
 
@@ -743,22 +601,12 @@ package transcribeservice {
         VocabularyName: js.UndefOr[VocabularyName] = js.undefined,
         VocabularyState: js.UndefOr[VocabularyState] = js.undefined
     ): UpdateVocabularyResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "LanguageCode" -> LanguageCode.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "LastModifiedTime" -> LastModifiedTime.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "VocabularyName" -> VocabularyName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "VocabularyState" -> VocabularyState.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateVocabularyResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      LanguageCode.foreach(__v => __obj.update("LanguageCode", __v.asInstanceOf[js.Any]))
+      LastModifiedTime.foreach(__v => __obj.update("LastModifiedTime", __v.asInstanceOf[js.Any]))
+      VocabularyName.foreach(__v => __obj.update("VocabularyName", __v.asInstanceOf[js.Any]))
+      VocabularyState.foreach(__v => __obj.update("VocabularyState", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateVocabularyResponse]
     }
   }
 
@@ -780,22 +628,12 @@ package transcribeservice {
         VocabularyName: js.UndefOr[VocabularyName] = js.undefined,
         VocabularyState: js.UndefOr[VocabularyState] = js.undefined
     ): VocabularyInfo = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "LanguageCode" -> LanguageCode.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "LastModifiedTime" -> LastModifiedTime.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "VocabularyName" -> VocabularyName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "VocabularyState" -> VocabularyState.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[VocabularyInfo]
+      val __obj = js.Dictionary.empty[js.Any]
+      LanguageCode.foreach(__v => __obj.update("LanguageCode", __v.asInstanceOf[js.Any]))
+      LastModifiedTime.foreach(__v => __obj.update("LastModifiedTime", __v.asInstanceOf[js.Any]))
+      VocabularyName.foreach(__v => __obj.update("VocabularyName", __v.asInstanceOf[js.Any]))
+      VocabularyState.foreach(__v => __obj.update("VocabularyState", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[VocabularyInfo]
     }
   }
 

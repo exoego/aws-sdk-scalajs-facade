@@ -260,12 +260,12 @@ package elasticache {
         ResourceName: String,
         Tags: TagList
     ): AddTagsToResourceMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ResourceName" -> ResourceName.asInstanceOf[js.Any],
         "Tags"         -> Tags.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AddTagsToResourceMessage]
+      __obj.asInstanceOf[AddTagsToResourceMessage]
     }
   }
 
@@ -281,13 +281,9 @@ package elasticache {
     def apply(
         ScaleUpModifications: js.UndefOr[NodeTypeList] = js.undefined
     ): AllowedNodeTypeModificationsMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ScaleUpModifications" -> ScaleUpModifications.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AllowedNodeTypeModificationsMessage]
+      val __obj = js.Dictionary.empty[js.Any]
+      ScaleUpModifications.foreach(__v => __obj.update("ScaleUpModifications", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AllowedNodeTypeModificationsMessage]
     }
   }
 
@@ -307,13 +303,13 @@ package elasticache {
         EC2SecurityGroupName: String,
         EC2SecurityGroupOwnerId: String
     ): AuthorizeCacheSecurityGroupIngressMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "CacheSecurityGroupName"  -> CacheSecurityGroupName.asInstanceOf[js.Any],
         "EC2SecurityGroupName"    -> EC2SecurityGroupName.asInstanceOf[js.Any],
         "EC2SecurityGroupOwnerId" -> EC2SecurityGroupOwnerId.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AuthorizeCacheSecurityGroupIngressMessage]
+      __obj.asInstanceOf[AuthorizeCacheSecurityGroupIngressMessage]
     }
   }
 
@@ -326,13 +322,9 @@ package elasticache {
     def apply(
         CacheSecurityGroup: js.UndefOr[CacheSecurityGroup] = js.undefined
     ): AuthorizeCacheSecurityGroupIngressResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "CacheSecurityGroup" -> CacheSecurityGroup.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AuthorizeCacheSecurityGroupIngressResult]
+      val __obj = js.Dictionary.empty[js.Any]
+      CacheSecurityGroup.foreach(__v => __obj.update("CacheSecurityGroup", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AuthorizeCacheSecurityGroupIngressResult]
     }
   }
 
@@ -357,13 +349,9 @@ package elasticache {
     def apply(
         Name: js.UndefOr[String] = js.undefined
     ): AvailabilityZone = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Name" -> Name.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AvailabilityZone]
+      val __obj = js.Dictionary.empty[js.Any]
+      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AvailabilityZone]
     }
   }
 
@@ -427,85 +415,33 @@ package elasticache {
         SnapshotWindow: js.UndefOr[String] = js.undefined,
         TransitEncryptionEnabled: js.UndefOr[BooleanOptional] = js.undefined
     ): CacheCluster = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "AtRestEncryptionEnabled" -> AtRestEncryptionEnabled.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "AuthTokenEnabled" -> AuthTokenEnabled.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "AutoMinorVersionUpgrade" -> AutoMinorVersionUpgrade.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "CacheClusterCreateTime" -> CacheClusterCreateTime.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "CacheClusterId" -> CacheClusterId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "CacheClusterStatus" -> CacheClusterStatus.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "CacheNodeType" -> CacheNodeType.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "CacheNodes" -> CacheNodes.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "CacheParameterGroup" -> CacheParameterGroup.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "CacheSecurityGroups" -> CacheSecurityGroups.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "CacheSubnetGroupName" -> CacheSubnetGroupName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ClientDownloadLandingPage" -> ClientDownloadLandingPage.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ConfigurationEndpoint" -> ConfigurationEndpoint.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Engine" -> Engine.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "EngineVersion" -> EngineVersion.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NotificationConfiguration" -> NotificationConfiguration.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NumCacheNodes" -> NumCacheNodes.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "PendingModifiedValues" -> PendingModifiedValues.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "PreferredAvailabilityZone" -> PreferredAvailabilityZone.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "PreferredMaintenanceWindow" -> PreferredMaintenanceWindow.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ReplicationGroupId" -> ReplicationGroupId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SecurityGroups" -> SecurityGroups.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SnapshotRetentionLimit" -> SnapshotRetentionLimit.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SnapshotWindow" -> SnapshotWindow.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "TransitEncryptionEnabled" -> TransitEncryptionEnabled.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CacheCluster]
+      val __obj = js.Dictionary.empty[js.Any]
+      AtRestEncryptionEnabled.foreach(__v => __obj.update("AtRestEncryptionEnabled", __v.asInstanceOf[js.Any]))
+      AuthTokenEnabled.foreach(__v => __obj.update("AuthTokenEnabled", __v.asInstanceOf[js.Any]))
+      AutoMinorVersionUpgrade.foreach(__v => __obj.update("AutoMinorVersionUpgrade", __v.asInstanceOf[js.Any]))
+      CacheClusterCreateTime.foreach(__v => __obj.update("CacheClusterCreateTime", __v.asInstanceOf[js.Any]))
+      CacheClusterId.foreach(__v => __obj.update("CacheClusterId", __v.asInstanceOf[js.Any]))
+      CacheClusterStatus.foreach(__v => __obj.update("CacheClusterStatus", __v.asInstanceOf[js.Any]))
+      CacheNodeType.foreach(__v => __obj.update("CacheNodeType", __v.asInstanceOf[js.Any]))
+      CacheNodes.foreach(__v => __obj.update("CacheNodes", __v.asInstanceOf[js.Any]))
+      CacheParameterGroup.foreach(__v => __obj.update("CacheParameterGroup", __v.asInstanceOf[js.Any]))
+      CacheSecurityGroups.foreach(__v => __obj.update("CacheSecurityGroups", __v.asInstanceOf[js.Any]))
+      CacheSubnetGroupName.foreach(__v => __obj.update("CacheSubnetGroupName", __v.asInstanceOf[js.Any]))
+      ClientDownloadLandingPage.foreach(__v => __obj.update("ClientDownloadLandingPage", __v.asInstanceOf[js.Any]))
+      ConfigurationEndpoint.foreach(__v => __obj.update("ConfigurationEndpoint", __v.asInstanceOf[js.Any]))
+      Engine.foreach(__v => __obj.update("Engine", __v.asInstanceOf[js.Any]))
+      EngineVersion.foreach(__v => __obj.update("EngineVersion", __v.asInstanceOf[js.Any]))
+      NotificationConfiguration.foreach(__v => __obj.update("NotificationConfiguration", __v.asInstanceOf[js.Any]))
+      NumCacheNodes.foreach(__v => __obj.update("NumCacheNodes", __v.asInstanceOf[js.Any]))
+      PendingModifiedValues.foreach(__v => __obj.update("PendingModifiedValues", __v.asInstanceOf[js.Any]))
+      PreferredAvailabilityZone.foreach(__v => __obj.update("PreferredAvailabilityZone", __v.asInstanceOf[js.Any]))
+      PreferredMaintenanceWindow.foreach(__v => __obj.update("PreferredMaintenanceWindow", __v.asInstanceOf[js.Any]))
+      ReplicationGroupId.foreach(__v => __obj.update("ReplicationGroupId", __v.asInstanceOf[js.Any]))
+      SecurityGroups.foreach(__v => __obj.update("SecurityGroups", __v.asInstanceOf[js.Any]))
+      SnapshotRetentionLimit.foreach(__v => __obj.update("SnapshotRetentionLimit", __v.asInstanceOf[js.Any]))
+      SnapshotWindow.foreach(__v => __obj.update("SnapshotWindow", __v.asInstanceOf[js.Any]))
+      TransitEncryptionEnabled.foreach(__v => __obj.update("TransitEncryptionEnabled", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CacheCluster]
     }
   }
 
@@ -523,16 +459,10 @@ package elasticache {
         CacheClusters: js.UndefOr[CacheClusterList] = js.undefined,
         Marker: js.UndefOr[String] = js.undefined
     ): CacheClusterMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "CacheClusters" -> CacheClusters.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Marker" -> Marker.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CacheClusterMessage]
+      val __obj = js.Dictionary.empty[js.Any]
+      CacheClusters.foreach(__v => __obj.update("CacheClusters", __v.asInstanceOf[js.Any]))
+      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CacheClusterMessage]
     }
   }
 
@@ -556,25 +486,15 @@ package elasticache {
         Engine: js.UndefOr[String] = js.undefined,
         EngineVersion: js.UndefOr[String] = js.undefined
     ): CacheEngineVersion = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "CacheEngineDescription" -> CacheEngineDescription.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "CacheEngineVersionDescription" -> CacheEngineVersionDescription.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "CacheParameterGroupFamily" -> CacheParameterGroupFamily.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Engine" -> Engine.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "EngineVersion" -> EngineVersion.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CacheEngineVersion]
+      val __obj = js.Dictionary.empty[js.Any]
+      CacheEngineDescription.foreach(__v => __obj.update("CacheEngineDescription", __v.asInstanceOf[js.Any]))
+      CacheEngineVersionDescription.foreach(
+        __v => __obj.update("CacheEngineVersionDescription", __v.asInstanceOf[js.Any])
+      )
+      CacheParameterGroupFamily.foreach(__v => __obj.update("CacheParameterGroupFamily", __v.asInstanceOf[js.Any]))
+      Engine.foreach(__v => __obj.update("Engine", __v.asInstanceOf[js.Any]))
+      EngineVersion.foreach(__v => __obj.update("EngineVersion", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CacheEngineVersion]
     }
   }
 
@@ -592,16 +512,10 @@ package elasticache {
         CacheEngineVersions: js.UndefOr[CacheEngineVersionList] = js.undefined,
         Marker: js.UndefOr[String] = js.undefined
     ): CacheEngineVersionMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "CacheEngineVersions" -> CacheEngineVersions.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Marker" -> Marker.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CacheEngineVersionMessage]
+      val __obj = js.Dictionary.empty[js.Any]
+      CacheEngineVersions.foreach(__v => __obj.update("CacheEngineVersions", __v.asInstanceOf[js.Any]))
+      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CacheEngineVersionMessage]
     }
   }
 
@@ -656,31 +570,15 @@ package elasticache {
         ParameterGroupStatus: js.UndefOr[String] = js.undefined,
         SourceCacheNodeId: js.UndefOr[String] = js.undefined
     ): CacheNode = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "CacheNodeCreateTime" -> CacheNodeCreateTime.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "CacheNodeId" -> CacheNodeId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "CacheNodeStatus" -> CacheNodeStatus.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "CustomerAvailabilityZone" -> CustomerAvailabilityZone.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Endpoint" -> Endpoint.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ParameterGroupStatus" -> ParameterGroupStatus.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SourceCacheNodeId" -> SourceCacheNodeId.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CacheNode]
+      val __obj = js.Dictionary.empty[js.Any]
+      CacheNodeCreateTime.foreach(__v => __obj.update("CacheNodeCreateTime", __v.asInstanceOf[js.Any]))
+      CacheNodeId.foreach(__v => __obj.update("CacheNodeId", __v.asInstanceOf[js.Any]))
+      CacheNodeStatus.foreach(__v => __obj.update("CacheNodeStatus", __v.asInstanceOf[js.Any]))
+      CustomerAvailabilityZone.foreach(__v => __obj.update("CustomerAvailabilityZone", __v.asInstanceOf[js.Any]))
+      Endpoint.foreach(__v => __obj.update("Endpoint", __v.asInstanceOf[js.Any]))
+      ParameterGroupStatus.foreach(__v => __obj.update("ParameterGroupStatus", __v.asInstanceOf[js.Any]))
+      SourceCacheNodeId.foreach(__v => __obj.update("SourceCacheNodeId", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CacheNode]
     }
   }
 
@@ -712,37 +610,17 @@ package elasticache {
         ParameterName: js.UndefOr[String] = js.undefined,
         Source: js.UndefOr[String] = js.undefined
     ): CacheNodeTypeSpecificParameter = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "AllowedValues" -> AllowedValues.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "CacheNodeTypeSpecificValues" -> CacheNodeTypeSpecificValues.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ChangeType" -> ChangeType.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DataType" -> DataType.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Description" -> Description.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "IsModifiable" -> IsModifiable.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MinimumEngineVersion" -> MinimumEngineVersion.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ParameterName" -> ParameterName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Source" -> Source.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CacheNodeTypeSpecificParameter]
+      val __obj = js.Dictionary.empty[js.Any]
+      AllowedValues.foreach(__v => __obj.update("AllowedValues", __v.asInstanceOf[js.Any]))
+      CacheNodeTypeSpecificValues.foreach(__v => __obj.update("CacheNodeTypeSpecificValues", __v.asInstanceOf[js.Any]))
+      ChangeType.foreach(__v => __obj.update("ChangeType", __v.asInstanceOf[js.Any]))
+      DataType.foreach(__v => __obj.update("DataType", __v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
+      IsModifiable.foreach(__v => __obj.update("IsModifiable", __v.asInstanceOf[js.Any]))
+      MinimumEngineVersion.foreach(__v => __obj.update("MinimumEngineVersion", __v.asInstanceOf[js.Any]))
+      ParameterName.foreach(__v => __obj.update("ParameterName", __v.asInstanceOf[js.Any]))
+      Source.foreach(__v => __obj.update("Source", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CacheNodeTypeSpecificParameter]
     }
   }
 
@@ -760,16 +638,10 @@ package elasticache {
         CacheNodeType: js.UndefOr[String] = js.undefined,
         Value: js.UndefOr[String] = js.undefined
     ): CacheNodeTypeSpecificValue = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "CacheNodeType" -> CacheNodeType.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Value" -> Value.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CacheNodeTypeSpecificValue]
+      val __obj = js.Dictionary.empty[js.Any]
+      CacheNodeType.foreach(__v => __obj.update("CacheNodeType", __v.asInstanceOf[js.Any]))
+      Value.foreach(__v => __obj.update("Value", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CacheNodeTypeSpecificValue]
     }
   }
 
@@ -789,19 +661,11 @@ package elasticache {
         CacheParameterGroupName: js.UndefOr[String] = js.undefined,
         Description: js.UndefOr[String] = js.undefined
     ): CacheParameterGroup = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "CacheParameterGroupFamily" -> CacheParameterGroupFamily.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "CacheParameterGroupName" -> CacheParameterGroupName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Description" -> Description.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CacheParameterGroup]
+      val __obj = js.Dictionary.empty[js.Any]
+      CacheParameterGroupFamily.foreach(__v => __obj.update("CacheParameterGroupFamily", __v.asInstanceOf[js.Any]))
+      CacheParameterGroupName.foreach(__v => __obj.update("CacheParameterGroupName", __v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CacheParameterGroup]
     }
   }
 
@@ -821,19 +685,13 @@ package elasticache {
         Marker: js.UndefOr[String] = js.undefined,
         Parameters: js.UndefOr[ParametersList] = js.undefined
     ): CacheParameterGroupDetails = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "CacheNodeTypeSpecificParameters" -> CacheNodeTypeSpecificParameters.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Marker" -> Marker.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Parameters" -> Parameters.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CacheParameterGroupDetails]
+      val __obj = js.Dictionary.empty[js.Any]
+      CacheNodeTypeSpecificParameters.foreach(
+        __v => __obj.update("CacheNodeTypeSpecificParameters", __v.asInstanceOf[js.Any])
+      )
+      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
+      Parameters.foreach(__v => __obj.update("Parameters", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CacheParameterGroupDetails]
     }
   }
 
@@ -851,13 +709,9 @@ package elasticache {
     def apply(
         CacheParameterGroupName: js.UndefOr[String] = js.undefined
     ): CacheParameterGroupNameMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "CacheParameterGroupName" -> CacheParameterGroupName.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CacheParameterGroupNameMessage]
+      val __obj = js.Dictionary.empty[js.Any]
+      CacheParameterGroupName.foreach(__v => __obj.update("CacheParameterGroupName", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CacheParameterGroupNameMessage]
     }
   }
 
@@ -877,19 +731,11 @@ package elasticache {
         CacheParameterGroupName: js.UndefOr[String] = js.undefined,
         ParameterApplyStatus: js.UndefOr[String] = js.undefined
     ): CacheParameterGroupStatus = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "CacheNodeIdsToReboot" -> CacheNodeIdsToReboot.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "CacheParameterGroupName" -> CacheParameterGroupName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ParameterApplyStatus" -> ParameterApplyStatus.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CacheParameterGroupStatus]
+      val __obj = js.Dictionary.empty[js.Any]
+      CacheNodeIdsToReboot.foreach(__v => __obj.update("CacheNodeIdsToReboot", __v.asInstanceOf[js.Any]))
+      CacheParameterGroupName.foreach(__v => __obj.update("CacheParameterGroupName", __v.asInstanceOf[js.Any]))
+      ParameterApplyStatus.foreach(__v => __obj.update("ParameterApplyStatus", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CacheParameterGroupStatus]
     }
   }
 
@@ -907,16 +753,10 @@ package elasticache {
         CacheParameterGroups: js.UndefOr[CacheParameterGroupList] = js.undefined,
         Marker: js.UndefOr[String] = js.undefined
     ): CacheParameterGroupsMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "CacheParameterGroups" -> CacheParameterGroups.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Marker" -> Marker.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CacheParameterGroupsMessage]
+      val __obj = js.Dictionary.empty[js.Any]
+      CacheParameterGroups.foreach(__v => __obj.update("CacheParameterGroups", __v.asInstanceOf[js.Any]))
+      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CacheParameterGroupsMessage]
     }
   }
 
@@ -941,22 +781,12 @@ package elasticache {
         EC2SecurityGroups: js.UndefOr[EC2SecurityGroupList] = js.undefined,
         OwnerId: js.UndefOr[String] = js.undefined
     ): CacheSecurityGroup = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "CacheSecurityGroupName" -> CacheSecurityGroupName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Description" -> Description.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "EC2SecurityGroups" -> EC2SecurityGroups.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "OwnerId" -> OwnerId.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CacheSecurityGroup]
+      val __obj = js.Dictionary.empty[js.Any]
+      CacheSecurityGroupName.foreach(__v => __obj.update("CacheSecurityGroupName", __v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
+      EC2SecurityGroups.foreach(__v => __obj.update("EC2SecurityGroups", __v.asInstanceOf[js.Any]))
+      OwnerId.foreach(__v => __obj.update("OwnerId", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CacheSecurityGroup]
     }
   }
 
@@ -974,16 +804,10 @@ package elasticache {
         CacheSecurityGroupName: js.UndefOr[String] = js.undefined,
         Status: js.UndefOr[String] = js.undefined
     ): CacheSecurityGroupMembership = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "CacheSecurityGroupName" -> CacheSecurityGroupName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Status" -> Status.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CacheSecurityGroupMembership]
+      val __obj = js.Dictionary.empty[js.Any]
+      CacheSecurityGroupName.foreach(__v => __obj.update("CacheSecurityGroupName", __v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.update("Status", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CacheSecurityGroupMembership]
     }
   }
 
@@ -1001,16 +825,10 @@ package elasticache {
         CacheSecurityGroups: js.UndefOr[CacheSecurityGroups] = js.undefined,
         Marker: js.UndefOr[String] = js.undefined
     ): CacheSecurityGroupMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "CacheSecurityGroups" -> CacheSecurityGroups.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Marker" -> Marker.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CacheSecurityGroupMessage]
+      val __obj = js.Dictionary.empty[js.Any]
+      CacheSecurityGroups.foreach(__v => __obj.update("CacheSecurityGroups", __v.asInstanceOf[js.Any]))
+      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CacheSecurityGroupMessage]
     }
   }
 
@@ -1034,22 +852,12 @@ package elasticache {
         Subnets: js.UndefOr[SubnetList] = js.undefined,
         VpcId: js.UndefOr[String] = js.undefined
     ): CacheSubnetGroup = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "CacheSubnetGroupDescription" -> CacheSubnetGroupDescription.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "CacheSubnetGroupName" -> CacheSubnetGroupName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Subnets" -> Subnets.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "VpcId" -> VpcId.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CacheSubnetGroup]
+      val __obj = js.Dictionary.empty[js.Any]
+      CacheSubnetGroupDescription.foreach(__v => __obj.update("CacheSubnetGroupDescription", __v.asInstanceOf[js.Any]))
+      CacheSubnetGroupName.foreach(__v => __obj.update("CacheSubnetGroupName", __v.asInstanceOf[js.Any]))
+      Subnets.foreach(__v => __obj.update("Subnets", __v.asInstanceOf[js.Any]))
+      VpcId.foreach(__v => __obj.update("VpcId", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CacheSubnetGroup]
     }
   }
 
@@ -1067,16 +875,10 @@ package elasticache {
         CacheSubnetGroups: js.UndefOr[CacheSubnetGroups] = js.undefined,
         Marker: js.UndefOr[String] = js.undefined
     ): CacheSubnetGroupMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "CacheSubnetGroups" -> CacheSubnetGroups.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Marker" -> Marker.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CacheSubnetGroupMessage]
+      val __obj = js.Dictionary.empty[js.Any]
+      CacheSubnetGroups.foreach(__v => __obj.update("CacheSubnetGroups", __v.asInstanceOf[js.Any]))
+      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CacheSubnetGroupMessage]
     }
   }
 
@@ -1103,15 +905,13 @@ package elasticache {
         NodeGroupId: AllowedNodeGroupId,
         PreferredAvailabilityZones: js.UndefOr[PreferredAvailabilityZoneList] = js.undefined
     ): ConfigureShard = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "NewReplicaCount" -> NewReplicaCount.asInstanceOf[js.Any],
-        "NodeGroupId"     -> NodeGroupId.asInstanceOf[js.Any],
-        "PreferredAvailabilityZones" -> PreferredAvailabilityZones.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "NodeGroupId"     -> NodeGroupId.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ConfigureShard]
+      PreferredAvailabilityZones.foreach(__v => __obj.update("PreferredAvailabilityZones", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ConfigureShard]
     }
   }
 
@@ -1131,15 +931,13 @@ package elasticache {
         TargetSnapshotName: String,
         TargetBucket: js.UndefOr[String] = js.undefined
     ): CopySnapshotMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "SourceSnapshotName" -> SourceSnapshotName.asInstanceOf[js.Any],
-        "TargetSnapshotName" -> TargetSnapshotName.asInstanceOf[js.Any],
-        "TargetBucket" -> TargetBucket.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "TargetSnapshotName" -> TargetSnapshotName.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CopySnapshotMessage]
+      TargetBucket.foreach(__v => __obj.update("TargetBucket", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CopySnapshotMessage]
     }
   }
 
@@ -1152,13 +950,9 @@ package elasticache {
     def apply(
         Snapshot: js.UndefOr[Snapshot] = js.undefined
     ): CopySnapshotResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Snapshot" -> Snapshot.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CopySnapshotResult]
+      val __obj = js.Dictionary.empty[js.Any]
+      Snapshot.foreach(__v => __obj.update("Snapshot", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CopySnapshotResult]
     }
   }
 
@@ -1218,77 +1012,33 @@ package elasticache {
         SnapshotWindow: js.UndefOr[String] = js.undefined,
         Tags: js.UndefOr[TagList] = js.undefined
     ): CreateCacheClusterMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "CacheClusterId" -> CacheClusterId.asInstanceOf[js.Any],
-        "AZMode" -> AZMode.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "AuthToken" -> AuthToken.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "AutoMinorVersionUpgrade" -> AutoMinorVersionUpgrade.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "CacheNodeType" -> CacheNodeType.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "CacheParameterGroupName" -> CacheParameterGroupName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "CacheSecurityGroupNames" -> CacheSecurityGroupNames.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "CacheSubnetGroupName" -> CacheSubnetGroupName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Engine" -> Engine.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "EngineVersion" -> EngineVersion.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NotificationTopicArn" -> NotificationTopicArn.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NumCacheNodes" -> NumCacheNodes.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Port" -> Port.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "PreferredAvailabilityZone" -> PreferredAvailabilityZone.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "PreferredAvailabilityZones" -> PreferredAvailabilityZones.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "PreferredMaintenanceWindow" -> PreferredMaintenanceWindow.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ReplicationGroupId" -> ReplicationGroupId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SecurityGroupIds" -> SecurityGroupIds.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SnapshotArns" -> SnapshotArns.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SnapshotName" -> SnapshotName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SnapshotRetentionLimit" -> SnapshotRetentionLimit.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SnapshotWindow" -> SnapshotWindow.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Tags" -> Tags.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "CacheClusterId" -> CacheClusterId.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateCacheClusterMessage]
+      AZMode.foreach(__v => __obj.update("AZMode", __v.asInstanceOf[js.Any]))
+      AuthToken.foreach(__v => __obj.update("AuthToken", __v.asInstanceOf[js.Any]))
+      AutoMinorVersionUpgrade.foreach(__v => __obj.update("AutoMinorVersionUpgrade", __v.asInstanceOf[js.Any]))
+      CacheNodeType.foreach(__v => __obj.update("CacheNodeType", __v.asInstanceOf[js.Any]))
+      CacheParameterGroupName.foreach(__v => __obj.update("CacheParameterGroupName", __v.asInstanceOf[js.Any]))
+      CacheSecurityGroupNames.foreach(__v => __obj.update("CacheSecurityGroupNames", __v.asInstanceOf[js.Any]))
+      CacheSubnetGroupName.foreach(__v => __obj.update("CacheSubnetGroupName", __v.asInstanceOf[js.Any]))
+      Engine.foreach(__v => __obj.update("Engine", __v.asInstanceOf[js.Any]))
+      EngineVersion.foreach(__v => __obj.update("EngineVersion", __v.asInstanceOf[js.Any]))
+      NotificationTopicArn.foreach(__v => __obj.update("NotificationTopicArn", __v.asInstanceOf[js.Any]))
+      NumCacheNodes.foreach(__v => __obj.update("NumCacheNodes", __v.asInstanceOf[js.Any]))
+      Port.foreach(__v => __obj.update("Port", __v.asInstanceOf[js.Any]))
+      PreferredAvailabilityZone.foreach(__v => __obj.update("PreferredAvailabilityZone", __v.asInstanceOf[js.Any]))
+      PreferredAvailabilityZones.foreach(__v => __obj.update("PreferredAvailabilityZones", __v.asInstanceOf[js.Any]))
+      PreferredMaintenanceWindow.foreach(__v => __obj.update("PreferredMaintenanceWindow", __v.asInstanceOf[js.Any]))
+      ReplicationGroupId.foreach(__v => __obj.update("ReplicationGroupId", __v.asInstanceOf[js.Any]))
+      SecurityGroupIds.foreach(__v => __obj.update("SecurityGroupIds", __v.asInstanceOf[js.Any]))
+      SnapshotArns.foreach(__v => __obj.update("SnapshotArns", __v.asInstanceOf[js.Any]))
+      SnapshotName.foreach(__v => __obj.update("SnapshotName", __v.asInstanceOf[js.Any]))
+      SnapshotRetentionLimit.foreach(__v => __obj.update("SnapshotRetentionLimit", __v.asInstanceOf[js.Any]))
+      SnapshotWindow.foreach(__v => __obj.update("SnapshotWindow", __v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateCacheClusterMessage]
     }
   }
 
@@ -1301,13 +1051,9 @@ package elasticache {
     def apply(
         CacheCluster: js.UndefOr[CacheCluster] = js.undefined
     ): CreateCacheClusterResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "CacheCluster" -> CacheCluster.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateCacheClusterResult]
+      val __obj = js.Dictionary.empty[js.Any]
+      CacheCluster.foreach(__v => __obj.update("CacheCluster", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateCacheClusterResult]
     }
   }
 
@@ -1327,13 +1073,13 @@ package elasticache {
         CacheParameterGroupName: String,
         Description: String
     ): CreateCacheParameterGroupMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "CacheParameterGroupFamily" -> CacheParameterGroupFamily.asInstanceOf[js.Any],
         "CacheParameterGroupName"   -> CacheParameterGroupName.asInstanceOf[js.Any],
         "Description"               -> Description.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateCacheParameterGroupMessage]
+      __obj.asInstanceOf[CreateCacheParameterGroupMessage]
     }
   }
 
@@ -1346,13 +1092,9 @@ package elasticache {
     def apply(
         CacheParameterGroup: js.UndefOr[CacheParameterGroup] = js.undefined
     ): CreateCacheParameterGroupResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "CacheParameterGroup" -> CacheParameterGroup.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateCacheParameterGroupResult]
+      val __obj = js.Dictionary.empty[js.Any]
+      CacheParameterGroup.foreach(__v => __obj.update("CacheParameterGroup", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateCacheParameterGroupResult]
     }
   }
 
@@ -1370,12 +1112,12 @@ package elasticache {
         CacheSecurityGroupName: String,
         Description: String
     ): CreateCacheSecurityGroupMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "CacheSecurityGroupName" -> CacheSecurityGroupName.asInstanceOf[js.Any],
         "Description"            -> Description.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateCacheSecurityGroupMessage]
+      __obj.asInstanceOf[CreateCacheSecurityGroupMessage]
     }
   }
 
@@ -1388,13 +1130,9 @@ package elasticache {
     def apply(
         CacheSecurityGroup: js.UndefOr[CacheSecurityGroup] = js.undefined
     ): CreateCacheSecurityGroupResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "CacheSecurityGroup" -> CacheSecurityGroup.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateCacheSecurityGroupResult]
+      val __obj = js.Dictionary.empty[js.Any]
+      CacheSecurityGroup.foreach(__v => __obj.update("CacheSecurityGroup", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateCacheSecurityGroupResult]
     }
   }
 
@@ -1414,13 +1152,13 @@ package elasticache {
         CacheSubnetGroupName: String,
         SubnetIds: SubnetIdentifierList
     ): CreateCacheSubnetGroupMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "CacheSubnetGroupDescription" -> CacheSubnetGroupDescription.asInstanceOf[js.Any],
         "CacheSubnetGroupName"        -> CacheSubnetGroupName.asInstanceOf[js.Any],
         "SubnetIds"                   -> SubnetIds.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateCacheSubnetGroupMessage]
+      __obj.asInstanceOf[CreateCacheSubnetGroupMessage]
     }
   }
 
@@ -1433,13 +1171,9 @@ package elasticache {
     def apply(
         CacheSubnetGroup: js.UndefOr[CacheSubnetGroup] = js.undefined
     ): CreateCacheSubnetGroupResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "CacheSubnetGroup" -> CacheSubnetGroup.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateCacheSubnetGroupResult]
+      val __obj = js.Dictionary.empty[js.Any]
+      CacheSubnetGroup.foreach(__v => __obj.update("CacheSubnetGroup", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateCacheSubnetGroupResult]
     }
   }
 
@@ -1509,90 +1243,38 @@ package elasticache {
         Tags: js.UndefOr[TagList] = js.undefined,
         TransitEncryptionEnabled: js.UndefOr[BooleanOptional] = js.undefined
     ): CreateReplicationGroupMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ReplicationGroupDescription" -> ReplicationGroupDescription.asInstanceOf[js.Any],
-        "ReplicationGroupId"          -> ReplicationGroupId.asInstanceOf[js.Any],
-        "AtRestEncryptionEnabled" -> AtRestEncryptionEnabled.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "AuthToken" -> AuthToken.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "AutoMinorVersionUpgrade" -> AutoMinorVersionUpgrade.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "AutomaticFailoverEnabled" -> AutomaticFailoverEnabled.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "CacheNodeType" -> CacheNodeType.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "CacheParameterGroupName" -> CacheParameterGroupName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "CacheSecurityGroupNames" -> CacheSecurityGroupNames.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "CacheSubnetGroupName" -> CacheSubnetGroupName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Engine" -> Engine.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "EngineVersion" -> EngineVersion.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NodeGroupConfiguration" -> NodeGroupConfiguration.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NotificationTopicArn" -> NotificationTopicArn.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NumCacheClusters" -> NumCacheClusters.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NumNodeGroups" -> NumNodeGroups.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Port" -> Port.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "PreferredCacheClusterAZs" -> PreferredCacheClusterAZs.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "PreferredMaintenanceWindow" -> PreferredMaintenanceWindow.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "PrimaryClusterId" -> PrimaryClusterId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ReplicasPerNodeGroup" -> ReplicasPerNodeGroup.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SecurityGroupIds" -> SecurityGroupIds.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SnapshotArns" -> SnapshotArns.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SnapshotName" -> SnapshotName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SnapshotRetentionLimit" -> SnapshotRetentionLimit.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SnapshotWindow" -> SnapshotWindow.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Tags" -> Tags.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "TransitEncryptionEnabled" -> TransitEncryptionEnabled.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "ReplicationGroupId"          -> ReplicationGroupId.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateReplicationGroupMessage]
+      AtRestEncryptionEnabled.foreach(__v => __obj.update("AtRestEncryptionEnabled", __v.asInstanceOf[js.Any]))
+      AuthToken.foreach(__v => __obj.update("AuthToken", __v.asInstanceOf[js.Any]))
+      AutoMinorVersionUpgrade.foreach(__v => __obj.update("AutoMinorVersionUpgrade", __v.asInstanceOf[js.Any]))
+      AutomaticFailoverEnabled.foreach(__v => __obj.update("AutomaticFailoverEnabled", __v.asInstanceOf[js.Any]))
+      CacheNodeType.foreach(__v => __obj.update("CacheNodeType", __v.asInstanceOf[js.Any]))
+      CacheParameterGroupName.foreach(__v => __obj.update("CacheParameterGroupName", __v.asInstanceOf[js.Any]))
+      CacheSecurityGroupNames.foreach(__v => __obj.update("CacheSecurityGroupNames", __v.asInstanceOf[js.Any]))
+      CacheSubnetGroupName.foreach(__v => __obj.update("CacheSubnetGroupName", __v.asInstanceOf[js.Any]))
+      Engine.foreach(__v => __obj.update("Engine", __v.asInstanceOf[js.Any]))
+      EngineVersion.foreach(__v => __obj.update("EngineVersion", __v.asInstanceOf[js.Any]))
+      NodeGroupConfiguration.foreach(__v => __obj.update("NodeGroupConfiguration", __v.asInstanceOf[js.Any]))
+      NotificationTopicArn.foreach(__v => __obj.update("NotificationTopicArn", __v.asInstanceOf[js.Any]))
+      NumCacheClusters.foreach(__v => __obj.update("NumCacheClusters", __v.asInstanceOf[js.Any]))
+      NumNodeGroups.foreach(__v => __obj.update("NumNodeGroups", __v.asInstanceOf[js.Any]))
+      Port.foreach(__v => __obj.update("Port", __v.asInstanceOf[js.Any]))
+      PreferredCacheClusterAZs.foreach(__v => __obj.update("PreferredCacheClusterAZs", __v.asInstanceOf[js.Any]))
+      PreferredMaintenanceWindow.foreach(__v => __obj.update("PreferredMaintenanceWindow", __v.asInstanceOf[js.Any]))
+      PrimaryClusterId.foreach(__v => __obj.update("PrimaryClusterId", __v.asInstanceOf[js.Any]))
+      ReplicasPerNodeGroup.foreach(__v => __obj.update("ReplicasPerNodeGroup", __v.asInstanceOf[js.Any]))
+      SecurityGroupIds.foreach(__v => __obj.update("SecurityGroupIds", __v.asInstanceOf[js.Any]))
+      SnapshotArns.foreach(__v => __obj.update("SnapshotArns", __v.asInstanceOf[js.Any]))
+      SnapshotName.foreach(__v => __obj.update("SnapshotName", __v.asInstanceOf[js.Any]))
+      SnapshotRetentionLimit.foreach(__v => __obj.update("SnapshotRetentionLimit", __v.asInstanceOf[js.Any]))
+      SnapshotWindow.foreach(__v => __obj.update("SnapshotWindow", __v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
+      TransitEncryptionEnabled.foreach(__v => __obj.update("TransitEncryptionEnabled", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateReplicationGroupMessage]
     }
   }
 
@@ -1605,13 +1287,9 @@ package elasticache {
     def apply(
         ReplicationGroup: js.UndefOr[ReplicationGroup] = js.undefined
     ): CreateReplicationGroupResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ReplicationGroup" -> ReplicationGroup.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateReplicationGroupResult]
+      val __obj = js.Dictionary.empty[js.Any]
+      ReplicationGroup.foreach(__v => __obj.update("ReplicationGroup", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateReplicationGroupResult]
     }
   }
 
@@ -1631,17 +1309,13 @@ package elasticache {
         CacheClusterId: js.UndefOr[String] = js.undefined,
         ReplicationGroupId: js.UndefOr[String] = js.undefined
     ): CreateSnapshotMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "SnapshotName" -> SnapshotName.asInstanceOf[js.Any],
-        "CacheClusterId" -> CacheClusterId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ReplicationGroupId" -> ReplicationGroupId.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "SnapshotName" -> SnapshotName.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateSnapshotMessage]
+      CacheClusterId.foreach(__v => __obj.update("CacheClusterId", __v.asInstanceOf[js.Any]))
+      ReplicationGroupId.foreach(__v => __obj.update("ReplicationGroupId", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateSnapshotMessage]
     }
   }
 
@@ -1654,13 +1328,9 @@ package elasticache {
     def apply(
         Snapshot: js.UndefOr[Snapshot] = js.undefined
     ): CreateSnapshotResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Snapshot" -> Snapshot.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateSnapshotResult]
+      val __obj = js.Dictionary.empty[js.Any]
+      Snapshot.foreach(__v => __obj.update("Snapshot", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateSnapshotResult]
     }
   }
 
@@ -1681,21 +1351,15 @@ package elasticache {
         ReplicaConfiguration: js.UndefOr[ReplicaConfigurationList] = js.undefined,
         ReplicasToRemove: js.UndefOr[RemoveReplicasList] = js.undefined
     ): DecreaseReplicaCountMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ApplyImmediately"   -> ApplyImmediately.asInstanceOf[js.Any],
-        "ReplicationGroupId" -> ReplicationGroupId.asInstanceOf[js.Any],
-        "NewReplicaCount" -> NewReplicaCount.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ReplicaConfiguration" -> ReplicaConfiguration.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ReplicasToRemove" -> ReplicasToRemove.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "ReplicationGroupId" -> ReplicationGroupId.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DecreaseReplicaCountMessage]
+      NewReplicaCount.foreach(__v => __obj.update("NewReplicaCount", __v.asInstanceOf[js.Any]))
+      ReplicaConfiguration.foreach(__v => __obj.update("ReplicaConfiguration", __v.asInstanceOf[js.Any]))
+      ReplicasToRemove.foreach(__v => __obj.update("ReplicasToRemove", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DecreaseReplicaCountMessage]
     }
   }
 
@@ -1708,13 +1372,9 @@ package elasticache {
     def apply(
         ReplicationGroup: js.UndefOr[ReplicationGroup] = js.undefined
     ): DecreaseReplicaCountResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ReplicationGroup" -> ReplicationGroup.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DecreaseReplicaCountResult]
+      val __obj = js.Dictionary.empty[js.Any]
+      ReplicationGroup.foreach(__v => __obj.update("ReplicationGroup", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DecreaseReplicaCountResult]
     }
   }
 
@@ -1732,14 +1392,12 @@ package elasticache {
         CacheClusterId: String,
         FinalSnapshotIdentifier: js.UndefOr[String] = js.undefined
     ): DeleteCacheClusterMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "CacheClusterId" -> CacheClusterId.asInstanceOf[js.Any],
-        "FinalSnapshotIdentifier" -> FinalSnapshotIdentifier.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "CacheClusterId" -> CacheClusterId.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteCacheClusterMessage]
+      FinalSnapshotIdentifier.foreach(__v => __obj.update("FinalSnapshotIdentifier", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DeleteCacheClusterMessage]
     }
   }
 
@@ -1752,13 +1410,9 @@ package elasticache {
     def apply(
         CacheCluster: js.UndefOr[CacheCluster] = js.undefined
     ): DeleteCacheClusterResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "CacheCluster" -> CacheCluster.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteCacheClusterResult]
+      val __obj = js.Dictionary.empty[js.Any]
+      CacheCluster.foreach(__v => __obj.update("CacheCluster", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DeleteCacheClusterResult]
     }
   }
 
@@ -1774,11 +1428,11 @@ package elasticache {
     def apply(
         CacheParameterGroupName: String
     ): DeleteCacheParameterGroupMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "CacheParameterGroupName" -> CacheParameterGroupName.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteCacheParameterGroupMessage]
+      __obj.asInstanceOf[DeleteCacheParameterGroupMessage]
     }
   }
 
@@ -1794,11 +1448,11 @@ package elasticache {
     def apply(
         CacheSecurityGroupName: String
     ): DeleteCacheSecurityGroupMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "CacheSecurityGroupName" -> CacheSecurityGroupName.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteCacheSecurityGroupMessage]
+      __obj.asInstanceOf[DeleteCacheSecurityGroupMessage]
     }
   }
 
@@ -1814,11 +1468,11 @@ package elasticache {
     def apply(
         CacheSubnetGroupName: String
     ): DeleteCacheSubnetGroupMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "CacheSubnetGroupName" -> CacheSubnetGroupName.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteCacheSubnetGroupMessage]
+      __obj.asInstanceOf[DeleteCacheSubnetGroupMessage]
     }
   }
 
@@ -1838,17 +1492,13 @@ package elasticache {
         FinalSnapshotIdentifier: js.UndefOr[String] = js.undefined,
         RetainPrimaryCluster: js.UndefOr[BooleanOptional] = js.undefined
     ): DeleteReplicationGroupMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ReplicationGroupId" -> ReplicationGroupId.asInstanceOf[js.Any],
-        "FinalSnapshotIdentifier" -> FinalSnapshotIdentifier.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "RetainPrimaryCluster" -> RetainPrimaryCluster.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "ReplicationGroupId" -> ReplicationGroupId.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteReplicationGroupMessage]
+      FinalSnapshotIdentifier.foreach(__v => __obj.update("FinalSnapshotIdentifier", __v.asInstanceOf[js.Any]))
+      RetainPrimaryCluster.foreach(__v => __obj.update("RetainPrimaryCluster", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DeleteReplicationGroupMessage]
     }
   }
 
@@ -1861,13 +1511,9 @@ package elasticache {
     def apply(
         ReplicationGroup: js.UndefOr[ReplicationGroup] = js.undefined
     ): DeleteReplicationGroupResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ReplicationGroup" -> ReplicationGroup.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteReplicationGroupResult]
+      val __obj = js.Dictionary.empty[js.Any]
+      ReplicationGroup.foreach(__v => __obj.update("ReplicationGroup", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DeleteReplicationGroupResult]
     }
   }
 
@@ -1883,11 +1529,11 @@ package elasticache {
     def apply(
         SnapshotName: String
     ): DeleteSnapshotMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "SnapshotName" -> SnapshotName.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteSnapshotMessage]
+      __obj.asInstanceOf[DeleteSnapshotMessage]
     }
   }
 
@@ -1900,13 +1546,9 @@ package elasticache {
     def apply(
         Snapshot: js.UndefOr[Snapshot] = js.undefined
     ): DeleteSnapshotResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Snapshot" -> Snapshot.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteSnapshotResult]
+      val __obj = js.Dictionary.empty[js.Any]
+      Snapshot.foreach(__v => __obj.update("Snapshot", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DeleteSnapshotResult]
     }
   }
 
@@ -1930,25 +1572,15 @@ package elasticache {
         ShowCacheClustersNotInReplicationGroups: js.UndefOr[BooleanOptional] = js.undefined,
         ShowCacheNodeInfo: js.UndefOr[BooleanOptional] = js.undefined
     ): DescribeCacheClustersMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "CacheClusterId" -> CacheClusterId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Marker" -> Marker.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MaxRecords" -> MaxRecords.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ShowCacheClustersNotInReplicationGroups" -> ShowCacheClustersNotInReplicationGroups.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ShowCacheNodeInfo" -> ShowCacheNodeInfo.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeCacheClustersMessage]
+      val __obj = js.Dictionary.empty[js.Any]
+      CacheClusterId.foreach(__v => __obj.update("CacheClusterId", __v.asInstanceOf[js.Any]))
+      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
+      MaxRecords.foreach(__v => __obj.update("MaxRecords", __v.asInstanceOf[js.Any]))
+      ShowCacheClustersNotInReplicationGroups.foreach(
+        __v => __obj.update("ShowCacheClustersNotInReplicationGroups", __v.asInstanceOf[js.Any])
+      )
+      ShowCacheNodeInfo.foreach(__v => __obj.update("ShowCacheNodeInfo", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeCacheClustersMessage]
     }
   }
 
@@ -1974,28 +1606,14 @@ package elasticache {
         Marker: js.UndefOr[String] = js.undefined,
         MaxRecords: js.UndefOr[IntegerOptional] = js.undefined
     ): DescribeCacheEngineVersionsMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "CacheParameterGroupFamily" -> CacheParameterGroupFamily.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DefaultOnly" -> DefaultOnly.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Engine" -> Engine.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "EngineVersion" -> EngineVersion.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Marker" -> Marker.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MaxRecords" -> MaxRecords.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeCacheEngineVersionsMessage]
+      val __obj = js.Dictionary.empty[js.Any]
+      CacheParameterGroupFamily.foreach(__v => __obj.update("CacheParameterGroupFamily", __v.asInstanceOf[js.Any]))
+      DefaultOnly.foreach(__v => __obj.update("DefaultOnly", __v.asInstanceOf[js.Any]))
+      Engine.foreach(__v => __obj.update("Engine", __v.asInstanceOf[js.Any]))
+      EngineVersion.foreach(__v => __obj.update("EngineVersion", __v.asInstanceOf[js.Any]))
+      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
+      MaxRecords.foreach(__v => __obj.update("MaxRecords", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeCacheEngineVersionsMessage]
     }
   }
 
@@ -2015,19 +1633,11 @@ package elasticache {
         Marker: js.UndefOr[String] = js.undefined,
         MaxRecords: js.UndefOr[IntegerOptional] = js.undefined
     ): DescribeCacheParameterGroupsMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "CacheParameterGroupName" -> CacheParameterGroupName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Marker" -> Marker.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MaxRecords" -> MaxRecords.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeCacheParameterGroupsMessage]
+      val __obj = js.Dictionary.empty[js.Any]
+      CacheParameterGroupName.foreach(__v => __obj.update("CacheParameterGroupName", __v.asInstanceOf[js.Any]))
+      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
+      MaxRecords.foreach(__v => __obj.update("MaxRecords", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeCacheParameterGroupsMessage]
     }
   }
 
@@ -2049,20 +1659,14 @@ package elasticache {
         MaxRecords: js.UndefOr[IntegerOptional] = js.undefined,
         Source: js.UndefOr[String] = js.undefined
     ): DescribeCacheParametersMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "CacheParameterGroupName" -> CacheParameterGroupName.asInstanceOf[js.Any],
-        "Marker" -> Marker.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MaxRecords" -> MaxRecords.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Source" -> Source.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "CacheParameterGroupName" -> CacheParameterGroupName.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeCacheParametersMessage]
+      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
+      MaxRecords.foreach(__v => __obj.update("MaxRecords", __v.asInstanceOf[js.Any]))
+      Source.foreach(__v => __obj.update("Source", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeCacheParametersMessage]
     }
   }
 
@@ -2082,19 +1686,11 @@ package elasticache {
         Marker: js.UndefOr[String] = js.undefined,
         MaxRecords: js.UndefOr[IntegerOptional] = js.undefined
     ): DescribeCacheSecurityGroupsMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "CacheSecurityGroupName" -> CacheSecurityGroupName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Marker" -> Marker.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MaxRecords" -> MaxRecords.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeCacheSecurityGroupsMessage]
+      val __obj = js.Dictionary.empty[js.Any]
+      CacheSecurityGroupName.foreach(__v => __obj.update("CacheSecurityGroupName", __v.asInstanceOf[js.Any]))
+      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
+      MaxRecords.foreach(__v => __obj.update("MaxRecords", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeCacheSecurityGroupsMessage]
     }
   }
 
@@ -2114,19 +1710,11 @@ package elasticache {
         Marker: js.UndefOr[String] = js.undefined,
         MaxRecords: js.UndefOr[IntegerOptional] = js.undefined
     ): DescribeCacheSubnetGroupsMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "CacheSubnetGroupName" -> CacheSubnetGroupName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Marker" -> Marker.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MaxRecords" -> MaxRecords.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeCacheSubnetGroupsMessage]
+      val __obj = js.Dictionary.empty[js.Any]
+      CacheSubnetGroupName.foreach(__v => __obj.update("CacheSubnetGroupName", __v.asInstanceOf[js.Any]))
+      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
+      MaxRecords.foreach(__v => __obj.update("MaxRecords", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeCacheSubnetGroupsMessage]
     }
   }
 
@@ -2146,17 +1734,13 @@ package elasticache {
         Marker: js.UndefOr[String] = js.undefined,
         MaxRecords: js.UndefOr[IntegerOptional] = js.undefined
     ): DescribeEngineDefaultParametersMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "CacheParameterGroupFamily" -> CacheParameterGroupFamily.asInstanceOf[js.Any],
-        "Marker" -> Marker.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MaxRecords" -> MaxRecords.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "CacheParameterGroupFamily" -> CacheParameterGroupFamily.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeEngineDefaultParametersMessage]
+      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
+      MaxRecords.foreach(__v => __obj.update("MaxRecords", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeEngineDefaultParametersMessage]
     }
   }
 
@@ -2169,13 +1753,9 @@ package elasticache {
     def apply(
         EngineDefaults: js.UndefOr[EngineDefaults] = js.undefined
     ): DescribeEngineDefaultParametersResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "EngineDefaults" -> EngineDefaults.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeEngineDefaultParametersResult]
+      val __obj = js.Dictionary.empty[js.Any]
+      EngineDefaults.foreach(__v => __obj.update("EngineDefaults", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeEngineDefaultParametersResult]
     }
   }
 
@@ -2203,31 +1783,15 @@ package elasticache {
         SourceType: js.UndefOr[SourceType] = js.undefined,
         StartTime: js.UndefOr[TStamp] = js.undefined
     ): DescribeEventsMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Duration" -> Duration.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "EndTime" -> EndTime.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Marker" -> Marker.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MaxRecords" -> MaxRecords.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SourceIdentifier" -> SourceIdentifier.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SourceType" -> SourceType.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "StartTime" -> StartTime.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeEventsMessage]
+      val __obj = js.Dictionary.empty[js.Any]
+      Duration.foreach(__v => __obj.update("Duration", __v.asInstanceOf[js.Any]))
+      EndTime.foreach(__v => __obj.update("EndTime", __v.asInstanceOf[js.Any]))
+      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
+      MaxRecords.foreach(__v => __obj.update("MaxRecords", __v.asInstanceOf[js.Any]))
+      SourceIdentifier.foreach(__v => __obj.update("SourceIdentifier", __v.asInstanceOf[js.Any]))
+      SourceType.foreach(__v => __obj.update("SourceType", __v.asInstanceOf[js.Any]))
+      StartTime.foreach(__v => __obj.update("StartTime", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeEventsMessage]
     }
   }
 
@@ -2247,19 +1811,11 @@ package elasticache {
         MaxRecords: js.UndefOr[IntegerOptional] = js.undefined,
         ReplicationGroupId: js.UndefOr[String] = js.undefined
     ): DescribeReplicationGroupsMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Marker" -> Marker.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MaxRecords" -> MaxRecords.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ReplicationGroupId" -> ReplicationGroupId.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeReplicationGroupsMessage]
+      val __obj = js.Dictionary.empty[js.Any]
+      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
+      MaxRecords.foreach(__v => __obj.update("MaxRecords", __v.asInstanceOf[js.Any]))
+      ReplicationGroupId.foreach(__v => __obj.update("ReplicationGroupId", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeReplicationGroupsMessage]
     }
   }
 
@@ -2289,34 +1845,18 @@ package elasticache {
         ReservedCacheNodeId: js.UndefOr[String] = js.undefined,
         ReservedCacheNodesOfferingId: js.UndefOr[String] = js.undefined
     ): DescribeReservedCacheNodesMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "CacheNodeType" -> CacheNodeType.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Duration" -> Duration.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Marker" -> Marker.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MaxRecords" -> MaxRecords.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "OfferingType" -> OfferingType.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ProductDescription" -> ProductDescription.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ReservedCacheNodeId" -> ReservedCacheNodeId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ReservedCacheNodesOfferingId" -> ReservedCacheNodesOfferingId.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeReservedCacheNodesMessage]
+      val __obj = js.Dictionary.empty[js.Any]
+      CacheNodeType.foreach(__v => __obj.update("CacheNodeType", __v.asInstanceOf[js.Any]))
+      Duration.foreach(__v => __obj.update("Duration", __v.asInstanceOf[js.Any]))
+      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
+      MaxRecords.foreach(__v => __obj.update("MaxRecords", __v.asInstanceOf[js.Any]))
+      OfferingType.foreach(__v => __obj.update("OfferingType", __v.asInstanceOf[js.Any]))
+      ProductDescription.foreach(__v => __obj.update("ProductDescription", __v.asInstanceOf[js.Any]))
+      ReservedCacheNodeId.foreach(__v => __obj.update("ReservedCacheNodeId", __v.asInstanceOf[js.Any]))
+      ReservedCacheNodesOfferingId.foreach(
+        __v => __obj.update("ReservedCacheNodesOfferingId", __v.asInstanceOf[js.Any])
+      )
+      __obj.asInstanceOf[DescribeReservedCacheNodesMessage]
     }
   }
 
@@ -2344,33 +1884,17 @@ package elasticache {
         ProductDescription: js.UndefOr[String] = js.undefined,
         ReservedCacheNodesOfferingId: js.UndefOr[String] = js.undefined
     ): DescribeReservedCacheNodesOfferingsMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "CacheNodeType" -> CacheNodeType.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Duration" -> Duration.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Marker" -> Marker.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MaxRecords" -> MaxRecords.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "OfferingType" -> OfferingType.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ProductDescription" -> ProductDescription.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ReservedCacheNodesOfferingId" -> ReservedCacheNodesOfferingId.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal
-        .applyDynamicNamed("apply")(_fields: _*)
-        .asInstanceOf[DescribeReservedCacheNodesOfferingsMessage]
+      val __obj = js.Dictionary.empty[js.Any]
+      CacheNodeType.foreach(__v => __obj.update("CacheNodeType", __v.asInstanceOf[js.Any]))
+      Duration.foreach(__v => __obj.update("Duration", __v.asInstanceOf[js.Any]))
+      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
+      MaxRecords.foreach(__v => __obj.update("MaxRecords", __v.asInstanceOf[js.Any]))
+      OfferingType.foreach(__v => __obj.update("OfferingType", __v.asInstanceOf[js.Any]))
+      ProductDescription.foreach(__v => __obj.update("ProductDescription", __v.asInstanceOf[js.Any]))
+      ReservedCacheNodesOfferingId.foreach(
+        __v => __obj.update("ReservedCacheNodesOfferingId", __v.asInstanceOf[js.Any])
+      )
+      __obj.asInstanceOf[DescribeReservedCacheNodesOfferingsMessage]
     }
   }
 
@@ -2388,16 +1912,10 @@ package elasticache {
         Marker: js.UndefOr[String] = js.undefined,
         Snapshots: js.UndefOr[SnapshotList] = js.undefined
     ): DescribeSnapshotsListMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Marker" -> Marker.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Snapshots" -> Snapshots.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeSnapshotsListMessage]
+      val __obj = js.Dictionary.empty[js.Any]
+      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
+      Snapshots.foreach(__v => __obj.update("Snapshots", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeSnapshotsListMessage]
     }
   }
 
@@ -2425,31 +1943,15 @@ package elasticache {
         SnapshotName: js.UndefOr[String] = js.undefined,
         SnapshotSource: js.UndefOr[String] = js.undefined
     ): DescribeSnapshotsMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "CacheClusterId" -> CacheClusterId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Marker" -> Marker.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MaxRecords" -> MaxRecords.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ReplicationGroupId" -> ReplicationGroupId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ShowNodeGroupConfig" -> ShowNodeGroupConfig.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SnapshotName" -> SnapshotName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SnapshotSource" -> SnapshotSource.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeSnapshotsMessage]
+      val __obj = js.Dictionary.empty[js.Any]
+      CacheClusterId.foreach(__v => __obj.update("CacheClusterId", __v.asInstanceOf[js.Any]))
+      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
+      MaxRecords.foreach(__v => __obj.update("MaxRecords", __v.asInstanceOf[js.Any]))
+      ReplicationGroupId.foreach(__v => __obj.update("ReplicationGroupId", __v.asInstanceOf[js.Any]))
+      ShowNodeGroupConfig.foreach(__v => __obj.update("ShowNodeGroupConfig", __v.asInstanceOf[js.Any]))
+      SnapshotName.foreach(__v => __obj.update("SnapshotName", __v.asInstanceOf[js.Any]))
+      SnapshotSource.foreach(__v => __obj.update("SnapshotSource", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeSnapshotsMessage]
     }
   }
 
@@ -2469,19 +1971,11 @@ package elasticache {
         EC2SecurityGroupOwnerId: js.UndefOr[String] = js.undefined,
         Status: js.UndefOr[String] = js.undefined
     ): EC2SecurityGroup = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "EC2SecurityGroupName" -> EC2SecurityGroupName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "EC2SecurityGroupOwnerId" -> EC2SecurityGroupOwnerId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Status" -> Status.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[EC2SecurityGroup]
+      val __obj = js.Dictionary.empty[js.Any]
+      EC2SecurityGroupName.foreach(__v => __obj.update("EC2SecurityGroupName", __v.asInstanceOf[js.Any]))
+      EC2SecurityGroupOwnerId.foreach(__v => __obj.update("EC2SecurityGroupOwnerId", __v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.update("Status", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[EC2SecurityGroup]
     }
   }
 
@@ -2499,16 +1993,10 @@ package elasticache {
         Address: js.UndefOr[String] = js.undefined,
         Port: js.UndefOr[Int] = js.undefined
     ): Endpoint = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Address" -> Address.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Port" -> Port.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Endpoint]
+      val __obj = js.Dictionary.empty[js.Any]
+      Address.foreach(__v => __obj.update("Address", __v.asInstanceOf[js.Any]))
+      Port.foreach(__v => __obj.update("Port", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Endpoint]
     }
   }
 
@@ -2530,22 +2018,14 @@ package elasticache {
         Marker: js.UndefOr[String] = js.undefined,
         Parameters: js.UndefOr[ParametersList] = js.undefined
     ): EngineDefaults = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "CacheNodeTypeSpecificParameters" -> CacheNodeTypeSpecificParameters.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "CacheParameterGroupFamily" -> CacheParameterGroupFamily.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Marker" -> Marker.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Parameters" -> Parameters.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[EngineDefaults]
+      val __obj = js.Dictionary.empty[js.Any]
+      CacheNodeTypeSpecificParameters.foreach(
+        __v => __obj.update("CacheNodeTypeSpecificParameters", __v.asInstanceOf[js.Any])
+      )
+      CacheParameterGroupFamily.foreach(__v => __obj.update("CacheParameterGroupFamily", __v.asInstanceOf[js.Any]))
+      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
+      Parameters.foreach(__v => __obj.update("Parameters", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[EngineDefaults]
     }
   }
 
@@ -2567,22 +2047,12 @@ package elasticache {
         SourceIdentifier: js.UndefOr[String] = js.undefined,
         SourceType: js.UndefOr[SourceType] = js.undefined
     ): Event = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Date" -> Date.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Message" -> Message.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SourceIdentifier" -> SourceIdentifier.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SourceType" -> SourceType.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Event]
+      val __obj = js.Dictionary.empty[js.Any]
+      Date.foreach(__v => __obj.update("Date", __v.asInstanceOf[js.Any]))
+      Message.foreach(__v => __obj.update("Message", __v.asInstanceOf[js.Any]))
+      SourceIdentifier.foreach(__v => __obj.update("SourceIdentifier", __v.asInstanceOf[js.Any]))
+      SourceType.foreach(__v => __obj.update("SourceType", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Event]
     }
   }
 
@@ -2600,16 +2070,10 @@ package elasticache {
         Events: js.UndefOr[EventList] = js.undefined,
         Marker: js.UndefOr[String] = js.undefined
     ): EventsMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Events" -> Events.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Marker" -> Marker.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[EventsMessage]
+      val __obj = js.Dictionary.empty[js.Any]
+      Events.foreach(__v => __obj.update("Events", __v.asInstanceOf[js.Any]))
+      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[EventsMessage]
     }
   }
 
@@ -2628,18 +2092,14 @@ package elasticache {
         NewReplicaCount: js.UndefOr[IntegerOptional] = js.undefined,
         ReplicaConfiguration: js.UndefOr[ReplicaConfigurationList] = js.undefined
     ): IncreaseReplicaCountMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ApplyImmediately"   -> ApplyImmediately.asInstanceOf[js.Any],
-        "ReplicationGroupId" -> ReplicationGroupId.asInstanceOf[js.Any],
-        "NewReplicaCount" -> NewReplicaCount.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ReplicaConfiguration" -> ReplicaConfiguration.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "ReplicationGroupId" -> ReplicationGroupId.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[IncreaseReplicaCountMessage]
+      NewReplicaCount.foreach(__v => __obj.update("NewReplicaCount", __v.asInstanceOf[js.Any]))
+      ReplicaConfiguration.foreach(__v => __obj.update("ReplicaConfiguration", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[IncreaseReplicaCountMessage]
     }
   }
 
@@ -2652,13 +2112,9 @@ package elasticache {
     def apply(
         ReplicationGroup: js.UndefOr[ReplicationGroup] = js.undefined
     ): IncreaseReplicaCountResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ReplicationGroup" -> ReplicationGroup.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[IncreaseReplicaCountResult]
+      val __obj = js.Dictionary.empty[js.Any]
+      ReplicationGroup.foreach(__v => __obj.update("ReplicationGroup", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[IncreaseReplicaCountResult]
     }
   }
 
@@ -2676,16 +2132,10 @@ package elasticache {
         CacheClusterId: js.UndefOr[String] = js.undefined,
         ReplicationGroupId: js.UndefOr[String] = js.undefined
     ): ListAllowedNodeTypeModificationsMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "CacheClusterId" -> CacheClusterId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ReplicationGroupId" -> ReplicationGroupId.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListAllowedNodeTypeModificationsMessage]
+      val __obj = js.Dictionary.empty[js.Any]
+      CacheClusterId.foreach(__v => __obj.update("CacheClusterId", __v.asInstanceOf[js.Any]))
+      ReplicationGroupId.foreach(__v => __obj.update("ReplicationGroupId", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListAllowedNodeTypeModificationsMessage]
     }
   }
 
@@ -2701,11 +2151,11 @@ package elasticache {
     def apply(
         ResourceName: String
     ): ListTagsForResourceMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ResourceName" -> ResourceName.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListTagsForResourceMessage]
+      __obj.asInstanceOf[ListTagsForResourceMessage]
     }
   }
 
@@ -2753,59 +2203,27 @@ package elasticache {
         SnapshotRetentionLimit: js.UndefOr[IntegerOptional] = js.undefined,
         SnapshotWindow: js.UndefOr[String] = js.undefined
     ): ModifyCacheClusterMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "CacheClusterId" -> CacheClusterId.asInstanceOf[js.Any],
-        "AZMode" -> AZMode.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ApplyImmediately" -> ApplyImmediately.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "AutoMinorVersionUpgrade" -> AutoMinorVersionUpgrade.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "CacheNodeIdsToRemove" -> CacheNodeIdsToRemove.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "CacheNodeType" -> CacheNodeType.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "CacheParameterGroupName" -> CacheParameterGroupName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "CacheSecurityGroupNames" -> CacheSecurityGroupNames.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "EngineVersion" -> EngineVersion.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NewAvailabilityZones" -> NewAvailabilityZones.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NotificationTopicArn" -> NotificationTopicArn.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NotificationTopicStatus" -> NotificationTopicStatus.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NumCacheNodes" -> NumCacheNodes.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "PreferredMaintenanceWindow" -> PreferredMaintenanceWindow.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SecurityGroupIds" -> SecurityGroupIds.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SnapshotRetentionLimit" -> SnapshotRetentionLimit.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SnapshotWindow" -> SnapshotWindow.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "CacheClusterId" -> CacheClusterId.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ModifyCacheClusterMessage]
+      AZMode.foreach(__v => __obj.update("AZMode", __v.asInstanceOf[js.Any]))
+      ApplyImmediately.foreach(__v => __obj.update("ApplyImmediately", __v.asInstanceOf[js.Any]))
+      AutoMinorVersionUpgrade.foreach(__v => __obj.update("AutoMinorVersionUpgrade", __v.asInstanceOf[js.Any]))
+      CacheNodeIdsToRemove.foreach(__v => __obj.update("CacheNodeIdsToRemove", __v.asInstanceOf[js.Any]))
+      CacheNodeType.foreach(__v => __obj.update("CacheNodeType", __v.asInstanceOf[js.Any]))
+      CacheParameterGroupName.foreach(__v => __obj.update("CacheParameterGroupName", __v.asInstanceOf[js.Any]))
+      CacheSecurityGroupNames.foreach(__v => __obj.update("CacheSecurityGroupNames", __v.asInstanceOf[js.Any]))
+      EngineVersion.foreach(__v => __obj.update("EngineVersion", __v.asInstanceOf[js.Any]))
+      NewAvailabilityZones.foreach(__v => __obj.update("NewAvailabilityZones", __v.asInstanceOf[js.Any]))
+      NotificationTopicArn.foreach(__v => __obj.update("NotificationTopicArn", __v.asInstanceOf[js.Any]))
+      NotificationTopicStatus.foreach(__v => __obj.update("NotificationTopicStatus", __v.asInstanceOf[js.Any]))
+      NumCacheNodes.foreach(__v => __obj.update("NumCacheNodes", __v.asInstanceOf[js.Any]))
+      PreferredMaintenanceWindow.foreach(__v => __obj.update("PreferredMaintenanceWindow", __v.asInstanceOf[js.Any]))
+      SecurityGroupIds.foreach(__v => __obj.update("SecurityGroupIds", __v.asInstanceOf[js.Any]))
+      SnapshotRetentionLimit.foreach(__v => __obj.update("SnapshotRetentionLimit", __v.asInstanceOf[js.Any]))
+      SnapshotWindow.foreach(__v => __obj.update("SnapshotWindow", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ModifyCacheClusterMessage]
     }
   }
 
@@ -2818,13 +2236,9 @@ package elasticache {
     def apply(
         CacheCluster: js.UndefOr[CacheCluster] = js.undefined
     ): ModifyCacheClusterResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "CacheCluster" -> CacheCluster.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ModifyCacheClusterResult]
+      val __obj = js.Dictionary.empty[js.Any]
+      CacheCluster.foreach(__v => __obj.update("CacheCluster", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ModifyCacheClusterResult]
     }
   }
 
@@ -2842,12 +2256,12 @@ package elasticache {
         CacheParameterGroupName: String,
         ParameterNameValues: ParameterNameValueList
     ): ModifyCacheParameterGroupMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "CacheParameterGroupName" -> CacheParameterGroupName.asInstanceOf[js.Any],
         "ParameterNameValues"     -> ParameterNameValues.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ModifyCacheParameterGroupMessage]
+      __obj.asInstanceOf[ModifyCacheParameterGroupMessage]
     }
   }
 
@@ -2867,17 +2281,13 @@ package elasticache {
         CacheSubnetGroupDescription: js.UndefOr[String] = js.undefined,
         SubnetIds: js.UndefOr[SubnetIdentifierList] = js.undefined
     ): ModifyCacheSubnetGroupMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "CacheSubnetGroupName" -> CacheSubnetGroupName.asInstanceOf[js.Any],
-        "CacheSubnetGroupDescription" -> CacheSubnetGroupDescription.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SubnetIds" -> SubnetIds.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "CacheSubnetGroupName" -> CacheSubnetGroupName.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ModifyCacheSubnetGroupMessage]
+      CacheSubnetGroupDescription.foreach(__v => __obj.update("CacheSubnetGroupDescription", __v.asInstanceOf[js.Any]))
+      SubnetIds.foreach(__v => __obj.update("SubnetIds", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ModifyCacheSubnetGroupMessage]
     }
   }
 
@@ -2890,13 +2300,9 @@ package elasticache {
     def apply(
         CacheSubnetGroup: js.UndefOr[CacheSubnetGroup] = js.undefined
     ): ModifyCacheSubnetGroupResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "CacheSubnetGroup" -> CacheSubnetGroup.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ModifyCacheSubnetGroupResult]
+      val __obj = js.Dictionary.empty[js.Any]
+      CacheSubnetGroup.foreach(__v => __obj.update("CacheSubnetGroup", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ModifyCacheSubnetGroupResult]
     }
   }
 
@@ -2946,62 +2352,28 @@ package elasticache {
         SnapshotWindow: js.UndefOr[String] = js.undefined,
         SnapshottingClusterId: js.UndefOr[String] = js.undefined
     ): ModifyReplicationGroupMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ReplicationGroupId" -> ReplicationGroupId.asInstanceOf[js.Any],
-        "ApplyImmediately" -> ApplyImmediately.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "AutoMinorVersionUpgrade" -> AutoMinorVersionUpgrade.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "AutomaticFailoverEnabled" -> AutomaticFailoverEnabled.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "CacheNodeType" -> CacheNodeType.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "CacheParameterGroupName" -> CacheParameterGroupName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "CacheSecurityGroupNames" -> CacheSecurityGroupNames.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "EngineVersion" -> EngineVersion.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NodeGroupId" -> NodeGroupId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NotificationTopicArn" -> NotificationTopicArn.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NotificationTopicStatus" -> NotificationTopicStatus.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "PreferredMaintenanceWindow" -> PreferredMaintenanceWindow.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "PrimaryClusterId" -> PrimaryClusterId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ReplicationGroupDescription" -> ReplicationGroupDescription.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SecurityGroupIds" -> SecurityGroupIds.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SnapshotRetentionLimit" -> SnapshotRetentionLimit.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SnapshotWindow" -> SnapshotWindow.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SnapshottingClusterId" -> SnapshottingClusterId.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "ReplicationGroupId" -> ReplicationGroupId.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ModifyReplicationGroupMessage]
+      ApplyImmediately.foreach(__v => __obj.update("ApplyImmediately", __v.asInstanceOf[js.Any]))
+      AutoMinorVersionUpgrade.foreach(__v => __obj.update("AutoMinorVersionUpgrade", __v.asInstanceOf[js.Any]))
+      AutomaticFailoverEnabled.foreach(__v => __obj.update("AutomaticFailoverEnabled", __v.asInstanceOf[js.Any]))
+      CacheNodeType.foreach(__v => __obj.update("CacheNodeType", __v.asInstanceOf[js.Any]))
+      CacheParameterGroupName.foreach(__v => __obj.update("CacheParameterGroupName", __v.asInstanceOf[js.Any]))
+      CacheSecurityGroupNames.foreach(__v => __obj.update("CacheSecurityGroupNames", __v.asInstanceOf[js.Any]))
+      EngineVersion.foreach(__v => __obj.update("EngineVersion", __v.asInstanceOf[js.Any]))
+      NodeGroupId.foreach(__v => __obj.update("NodeGroupId", __v.asInstanceOf[js.Any]))
+      NotificationTopicArn.foreach(__v => __obj.update("NotificationTopicArn", __v.asInstanceOf[js.Any]))
+      NotificationTopicStatus.foreach(__v => __obj.update("NotificationTopicStatus", __v.asInstanceOf[js.Any]))
+      PreferredMaintenanceWindow.foreach(__v => __obj.update("PreferredMaintenanceWindow", __v.asInstanceOf[js.Any]))
+      PrimaryClusterId.foreach(__v => __obj.update("PrimaryClusterId", __v.asInstanceOf[js.Any]))
+      ReplicationGroupDescription.foreach(__v => __obj.update("ReplicationGroupDescription", __v.asInstanceOf[js.Any]))
+      SecurityGroupIds.foreach(__v => __obj.update("SecurityGroupIds", __v.asInstanceOf[js.Any]))
+      SnapshotRetentionLimit.foreach(__v => __obj.update("SnapshotRetentionLimit", __v.asInstanceOf[js.Any]))
+      SnapshotWindow.foreach(__v => __obj.update("SnapshotWindow", __v.asInstanceOf[js.Any]))
+      SnapshottingClusterId.foreach(__v => __obj.update("SnapshottingClusterId", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ModifyReplicationGroupMessage]
     }
   }
 
@@ -3014,13 +2386,9 @@ package elasticache {
     def apply(
         ReplicationGroup: js.UndefOr[ReplicationGroup] = js.undefined
     ): ModifyReplicationGroupResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ReplicationGroup" -> ReplicationGroup.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ModifyReplicationGroupResult]
+      val __obj = js.Dictionary.empty[js.Any]
+      ReplicationGroup.foreach(__v => __obj.update("ReplicationGroup", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ModifyReplicationGroupResult]
     }
   }
 
@@ -3046,24 +2414,16 @@ package elasticache {
         NodeGroupsToRetain: js.UndefOr[NodeGroupsToRetainList] = js.undefined,
         ReshardingConfiguration: js.UndefOr[ReshardingConfigurationList] = js.undefined
     ): ModifyReplicationGroupShardConfigurationMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ApplyImmediately"   -> ApplyImmediately.asInstanceOf[js.Any],
         "NodeGroupCount"     -> NodeGroupCount.asInstanceOf[js.Any],
-        "ReplicationGroupId" -> ReplicationGroupId.asInstanceOf[js.Any],
-        "NodeGroupsToRemove" -> NodeGroupsToRemove.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NodeGroupsToRetain" -> NodeGroupsToRetain.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ReshardingConfiguration" -> ReshardingConfiguration.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "ReplicationGroupId" -> ReplicationGroupId.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal
-        .applyDynamicNamed("apply")(_fields: _*)
-        .asInstanceOf[ModifyReplicationGroupShardConfigurationMessage]
+      NodeGroupsToRemove.foreach(__v => __obj.update("NodeGroupsToRemove", __v.asInstanceOf[js.Any]))
+      NodeGroupsToRetain.foreach(__v => __obj.update("NodeGroupsToRetain", __v.asInstanceOf[js.Any]))
+      ReshardingConfiguration.foreach(__v => __obj.update("ReshardingConfiguration", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ModifyReplicationGroupShardConfigurationMessage]
     }
   }
 
@@ -3076,15 +2436,9 @@ package elasticache {
     def apply(
         ReplicationGroup: js.UndefOr[ReplicationGroup] = js.undefined
     ): ModifyReplicationGroupShardConfigurationResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ReplicationGroup" -> ReplicationGroup.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal
-        .applyDynamicNamed("apply")(_fields: _*)
-        .asInstanceOf[ModifyReplicationGroupShardConfigurationResult]
+      val __obj = js.Dictionary.empty[js.Any]
+      ReplicationGroup.foreach(__v => __obj.update("ReplicationGroup", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ModifyReplicationGroupShardConfigurationResult]
     }
   }
 
@@ -3108,25 +2462,13 @@ package elasticache {
         Slots: js.UndefOr[String] = js.undefined,
         Status: js.UndefOr[String] = js.undefined
     ): NodeGroup = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "NodeGroupId" -> NodeGroupId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NodeGroupMembers" -> NodeGroupMembers.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "PrimaryEndpoint" -> PrimaryEndpoint.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Slots" -> Slots.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Status" -> Status.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[NodeGroup]
+      val __obj = js.Dictionary.empty[js.Any]
+      NodeGroupId.foreach(__v => __obj.update("NodeGroupId", __v.asInstanceOf[js.Any]))
+      NodeGroupMembers.foreach(__v => __obj.update("NodeGroupMembers", __v.asInstanceOf[js.Any]))
+      PrimaryEndpoint.foreach(__v => __obj.update("PrimaryEndpoint", __v.asInstanceOf[js.Any]))
+      Slots.foreach(__v => __obj.update("Slots", __v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.update("Status", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[NodeGroup]
     }
   }
 
@@ -3150,25 +2492,13 @@ package elasticache {
         ReplicaCount: js.UndefOr[IntegerOptional] = js.undefined,
         Slots: js.UndefOr[String] = js.undefined
     ): NodeGroupConfiguration = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "NodeGroupId" -> NodeGroupId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "PrimaryAvailabilityZone" -> PrimaryAvailabilityZone.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ReplicaAvailabilityZones" -> ReplicaAvailabilityZones.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ReplicaCount" -> ReplicaCount.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Slots" -> Slots.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[NodeGroupConfiguration]
+      val __obj = js.Dictionary.empty[js.Any]
+      NodeGroupId.foreach(__v => __obj.update("NodeGroupId", __v.asInstanceOf[js.Any]))
+      PrimaryAvailabilityZone.foreach(__v => __obj.update("PrimaryAvailabilityZone", __v.asInstanceOf[js.Any]))
+      ReplicaAvailabilityZones.foreach(__v => __obj.update("ReplicaAvailabilityZones", __v.asInstanceOf[js.Any]))
+      ReplicaCount.foreach(__v => __obj.update("ReplicaCount", __v.asInstanceOf[js.Any]))
+      Slots.foreach(__v => __obj.update("Slots", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[NodeGroupConfiguration]
     }
   }
 
@@ -3192,25 +2522,13 @@ package elasticache {
         PreferredAvailabilityZone: js.UndefOr[String] = js.undefined,
         ReadEndpoint: js.UndefOr[Endpoint] = js.undefined
     ): NodeGroupMember = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "CacheClusterId" -> CacheClusterId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "CacheNodeId" -> CacheNodeId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "CurrentRole" -> CurrentRole.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "PreferredAvailabilityZone" -> PreferredAvailabilityZone.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ReadEndpoint" -> ReadEndpoint.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[NodeGroupMember]
+      val __obj = js.Dictionary.empty[js.Any]
+      CacheClusterId.foreach(__v => __obj.update("CacheClusterId", __v.asInstanceOf[js.Any]))
+      CacheNodeId.foreach(__v => __obj.update("CacheNodeId", __v.asInstanceOf[js.Any]))
+      CurrentRole.foreach(__v => __obj.update("CurrentRole", __v.asInstanceOf[js.Any]))
+      PreferredAvailabilityZone.foreach(__v => __obj.update("PreferredAvailabilityZone", __v.asInstanceOf[js.Any]))
+      ReadEndpoint.foreach(__v => __obj.update("ReadEndpoint", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[NodeGroupMember]
     }
   }
 
@@ -3238,31 +2556,15 @@ package elasticache {
         NodeGroupId: js.UndefOr[String] = js.undefined,
         SnapshotCreateTime: js.UndefOr[TStamp] = js.undefined
     ): NodeSnapshot = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "CacheClusterId" -> CacheClusterId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "CacheNodeCreateTime" -> CacheNodeCreateTime.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "CacheNodeId" -> CacheNodeId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "CacheSize" -> CacheSize.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NodeGroupConfiguration" -> NodeGroupConfiguration.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NodeGroupId" -> NodeGroupId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SnapshotCreateTime" -> SnapshotCreateTime.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[NodeSnapshot]
+      val __obj = js.Dictionary.empty[js.Any]
+      CacheClusterId.foreach(__v => __obj.update("CacheClusterId", __v.asInstanceOf[js.Any]))
+      CacheNodeCreateTime.foreach(__v => __obj.update("CacheNodeCreateTime", __v.asInstanceOf[js.Any]))
+      CacheNodeId.foreach(__v => __obj.update("CacheNodeId", __v.asInstanceOf[js.Any]))
+      CacheSize.foreach(__v => __obj.update("CacheSize", __v.asInstanceOf[js.Any]))
+      NodeGroupConfiguration.foreach(__v => __obj.update("NodeGroupConfiguration", __v.asInstanceOf[js.Any]))
+      NodeGroupId.foreach(__v => __obj.update("NodeGroupId", __v.asInstanceOf[js.Any]))
+      SnapshotCreateTime.foreach(__v => __obj.update("SnapshotCreateTime", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[NodeSnapshot]
     }
   }
 
@@ -3280,16 +2582,10 @@ package elasticache {
         TopicArn: js.UndefOr[String] = js.undefined,
         TopicStatus: js.UndefOr[String] = js.undefined
     ): NotificationConfiguration = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "TopicArn" -> TopicArn.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "TopicStatus" -> TopicStatus.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[NotificationConfiguration]
+      val __obj = js.Dictionary.empty[js.Any]
+      TopicArn.foreach(__v => __obj.update("TopicArn", __v.asInstanceOf[js.Any]))
+      TopicStatus.foreach(__v => __obj.update("TopicStatus", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[NotificationConfiguration]
     }
   }
 
@@ -3321,37 +2617,17 @@ package elasticache {
         ParameterValue: js.UndefOr[String] = js.undefined,
         Source: js.UndefOr[String] = js.undefined
     ): Parameter = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "AllowedValues" -> AllowedValues.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ChangeType" -> ChangeType.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DataType" -> DataType.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Description" -> Description.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "IsModifiable" -> IsModifiable.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MinimumEngineVersion" -> MinimumEngineVersion.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ParameterName" -> ParameterName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ParameterValue" -> ParameterValue.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Source" -> Source.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Parameter]
+      val __obj = js.Dictionary.empty[js.Any]
+      AllowedValues.foreach(__v => __obj.update("AllowedValues", __v.asInstanceOf[js.Any]))
+      ChangeType.foreach(__v => __obj.update("ChangeType", __v.asInstanceOf[js.Any]))
+      DataType.foreach(__v => __obj.update("DataType", __v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
+      IsModifiable.foreach(__v => __obj.update("IsModifiable", __v.asInstanceOf[js.Any]))
+      MinimumEngineVersion.foreach(__v => __obj.update("MinimumEngineVersion", __v.asInstanceOf[js.Any]))
+      ParameterName.foreach(__v => __obj.update("ParameterName", __v.asInstanceOf[js.Any]))
+      ParameterValue.foreach(__v => __obj.update("ParameterValue", __v.asInstanceOf[js.Any]))
+      Source.foreach(__v => __obj.update("Source", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Parameter]
     }
   }
 
@@ -3369,16 +2645,10 @@ package elasticache {
         ParameterName: js.UndefOr[String] = js.undefined,
         ParameterValue: js.UndefOr[String] = js.undefined
     ): ParameterNameValue = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ParameterName" -> ParameterName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ParameterValue" -> ParameterValue.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ParameterNameValue]
+      val __obj = js.Dictionary.empty[js.Any]
+      ParameterName.foreach(__v => __obj.update("ParameterName", __v.asInstanceOf[js.Any]))
+      ParameterValue.foreach(__v => __obj.update("ParameterValue", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ParameterNameValue]
     }
   }
 
@@ -3407,22 +2677,12 @@ package elasticache {
         EngineVersion: js.UndefOr[String] = js.undefined,
         NumCacheNodes: js.UndefOr[IntegerOptional] = js.undefined
     ): PendingModifiedValues = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "CacheNodeIdsToRemove" -> CacheNodeIdsToRemove.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "CacheNodeType" -> CacheNodeType.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "EngineVersion" -> EngineVersion.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NumCacheNodes" -> NumCacheNodes.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PendingModifiedValues]
+      val __obj = js.Dictionary.empty[js.Any]
+      CacheNodeIdsToRemove.foreach(__v => __obj.update("CacheNodeIdsToRemove", __v.asInstanceOf[js.Any]))
+      CacheNodeType.foreach(__v => __obj.update("CacheNodeType", __v.asInstanceOf[js.Any]))
+      EngineVersion.foreach(__v => __obj.update("EngineVersion", __v.asInstanceOf[js.Any]))
+      NumCacheNodes.foreach(__v => __obj.update("NumCacheNodes", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PendingModifiedValues]
     }
   }
 
@@ -3442,17 +2702,13 @@ package elasticache {
         CacheNodeCount: js.UndefOr[IntegerOptional] = js.undefined,
         ReservedCacheNodeId: js.UndefOr[String] = js.undefined
     ): PurchaseReservedCacheNodesOfferingMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ReservedCacheNodesOfferingId" -> ReservedCacheNodesOfferingId.asInstanceOf[js.Any],
-        "CacheNodeCount" -> CacheNodeCount.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ReservedCacheNodeId" -> ReservedCacheNodeId.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "ReservedCacheNodesOfferingId" -> ReservedCacheNodesOfferingId.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PurchaseReservedCacheNodesOfferingMessage]
+      CacheNodeCount.foreach(__v => __obj.update("CacheNodeCount", __v.asInstanceOf[js.Any]))
+      ReservedCacheNodeId.foreach(__v => __obj.update("ReservedCacheNodeId", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PurchaseReservedCacheNodesOfferingMessage]
     }
   }
 
@@ -3465,13 +2721,9 @@ package elasticache {
     def apply(
         ReservedCacheNode: js.UndefOr[ReservedCacheNode] = js.undefined
     ): PurchaseReservedCacheNodesOfferingResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ReservedCacheNode" -> ReservedCacheNode.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PurchaseReservedCacheNodesOfferingResult]
+      val __obj = js.Dictionary.empty[js.Any]
+      ReservedCacheNode.foreach(__v => __obj.update("ReservedCacheNode", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PurchaseReservedCacheNodesOfferingResult]
     }
   }
 
@@ -3489,12 +2741,12 @@ package elasticache {
         CacheClusterId: String,
         CacheNodeIdsToReboot: CacheNodeIdsList
     ): RebootCacheClusterMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "CacheClusterId"       -> CacheClusterId.asInstanceOf[js.Any],
         "CacheNodeIdsToReboot" -> CacheNodeIdsToReboot.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RebootCacheClusterMessage]
+      __obj.asInstanceOf[RebootCacheClusterMessage]
     }
   }
 
@@ -3507,13 +2759,9 @@ package elasticache {
     def apply(
         CacheCluster: js.UndefOr[CacheCluster] = js.undefined
     ): RebootCacheClusterResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "CacheCluster" -> CacheCluster.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RebootCacheClusterResult]
+      val __obj = js.Dictionary.empty[js.Any]
+      CacheCluster.foreach(__v => __obj.update("CacheCluster", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[RebootCacheClusterResult]
     }
   }
 
@@ -3531,16 +2779,10 @@ package elasticache {
         RecurringChargeAmount: js.UndefOr[Double] = js.undefined,
         RecurringChargeFrequency: js.UndefOr[String] = js.undefined
     ): RecurringCharge = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "RecurringChargeAmount" -> RecurringChargeAmount.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "RecurringChargeFrequency" -> RecurringChargeFrequency.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RecurringCharge]
+      val __obj = js.Dictionary.empty[js.Any]
+      RecurringChargeAmount.foreach(__v => __obj.update("RecurringChargeAmount", __v.asInstanceOf[js.Any]))
+      RecurringChargeFrequency.foreach(__v => __obj.update("RecurringChargeFrequency", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[RecurringCharge]
     }
   }
 
@@ -3558,12 +2800,12 @@ package elasticache {
         ResourceName: String,
         TagKeys: KeyList
     ): RemoveTagsFromResourceMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ResourceName" -> ResourceName.asInstanceOf[js.Any],
         "TagKeys"      -> TagKeys.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RemoveTagsFromResourceMessage]
+      __obj.asInstanceOf[RemoveTagsFromResourceMessage]
     }
   }
 
@@ -3609,58 +2851,24 @@ package elasticache {
         Status: js.UndefOr[String] = js.undefined,
         TransitEncryptionEnabled: js.UndefOr[BooleanOptional] = js.undefined
     ): ReplicationGroup = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "AtRestEncryptionEnabled" -> AtRestEncryptionEnabled.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "AuthTokenEnabled" -> AuthTokenEnabled.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "AutomaticFailover" -> AutomaticFailover.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "CacheNodeType" -> CacheNodeType.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ClusterEnabled" -> ClusterEnabled.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ConfigurationEndpoint" -> ConfigurationEndpoint.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Description" -> Description.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MemberClusters" -> MemberClusters.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NodeGroups" -> NodeGroups.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "PendingModifiedValues" -> PendingModifiedValues.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ReplicationGroupId" -> ReplicationGroupId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SnapshotRetentionLimit" -> SnapshotRetentionLimit.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SnapshotWindow" -> SnapshotWindow.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SnapshottingClusterId" -> SnapshottingClusterId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Status" -> Status.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "TransitEncryptionEnabled" -> TransitEncryptionEnabled.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ReplicationGroup]
+      val __obj = js.Dictionary.empty[js.Any]
+      AtRestEncryptionEnabled.foreach(__v => __obj.update("AtRestEncryptionEnabled", __v.asInstanceOf[js.Any]))
+      AuthTokenEnabled.foreach(__v => __obj.update("AuthTokenEnabled", __v.asInstanceOf[js.Any]))
+      AutomaticFailover.foreach(__v => __obj.update("AutomaticFailover", __v.asInstanceOf[js.Any]))
+      CacheNodeType.foreach(__v => __obj.update("CacheNodeType", __v.asInstanceOf[js.Any]))
+      ClusterEnabled.foreach(__v => __obj.update("ClusterEnabled", __v.asInstanceOf[js.Any]))
+      ConfigurationEndpoint.foreach(__v => __obj.update("ConfigurationEndpoint", __v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
+      MemberClusters.foreach(__v => __obj.update("MemberClusters", __v.asInstanceOf[js.Any]))
+      NodeGroups.foreach(__v => __obj.update("NodeGroups", __v.asInstanceOf[js.Any]))
+      PendingModifiedValues.foreach(__v => __obj.update("PendingModifiedValues", __v.asInstanceOf[js.Any]))
+      ReplicationGroupId.foreach(__v => __obj.update("ReplicationGroupId", __v.asInstanceOf[js.Any]))
+      SnapshotRetentionLimit.foreach(__v => __obj.update("SnapshotRetentionLimit", __v.asInstanceOf[js.Any]))
+      SnapshotWindow.foreach(__v => __obj.update("SnapshotWindow", __v.asInstanceOf[js.Any]))
+      SnapshottingClusterId.foreach(__v => __obj.update("SnapshottingClusterId", __v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.update("Status", __v.asInstanceOf[js.Any]))
+      TransitEncryptionEnabled.foreach(__v => __obj.update("TransitEncryptionEnabled", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ReplicationGroup]
     }
   }
 
@@ -3678,16 +2886,10 @@ package elasticache {
         Marker: js.UndefOr[String] = js.undefined,
         ReplicationGroups: js.UndefOr[ReplicationGroupList] = js.undefined
     ): ReplicationGroupMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Marker" -> Marker.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ReplicationGroups" -> ReplicationGroups.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ReplicationGroupMessage]
+      val __obj = js.Dictionary.empty[js.Any]
+      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
+      ReplicationGroups.foreach(__v => __obj.update("ReplicationGroups", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ReplicationGroupMessage]
     }
   }
 
@@ -3707,19 +2909,11 @@ package elasticache {
         PrimaryClusterId: js.UndefOr[String] = js.undefined,
         Resharding: js.UndefOr[ReshardingStatus] = js.undefined
     ): ReplicationGroupPendingModifiedValues = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "AutomaticFailoverStatus" -> AutomaticFailoverStatus.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "PrimaryClusterId" -> PrimaryClusterId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Resharding" -> Resharding.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ReplicationGroupPendingModifiedValues]
+      val __obj = js.Dictionary.empty[js.Any]
+      AutomaticFailoverStatus.foreach(__v => __obj.update("AutomaticFailoverStatus", __v.asInstanceOf[js.Any]))
+      PrimaryClusterId.foreach(__v => __obj.update("PrimaryClusterId", __v.asInstanceOf[js.Any]))
+      Resharding.foreach(__v => __obj.update("Resharding", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ReplicationGroupPendingModifiedValues]
     }
   }
 
@@ -3759,49 +2953,23 @@ package elasticache {
         State: js.UndefOr[String] = js.undefined,
         UsagePrice: js.UndefOr[Double] = js.undefined
     ): ReservedCacheNode = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "CacheNodeCount" -> CacheNodeCount.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "CacheNodeType" -> CacheNodeType.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Duration" -> Duration.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "FixedPrice" -> FixedPrice.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "OfferingType" -> OfferingType.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ProductDescription" -> ProductDescription.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "RecurringCharges" -> RecurringCharges.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ReservationARN" -> ReservationARN.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ReservedCacheNodeId" -> ReservedCacheNodeId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ReservedCacheNodesOfferingId" -> ReservedCacheNodesOfferingId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "StartTime" -> StartTime.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "State" -> State.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "UsagePrice" -> UsagePrice.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ReservedCacheNode]
+      val __obj = js.Dictionary.empty[js.Any]
+      CacheNodeCount.foreach(__v => __obj.update("CacheNodeCount", __v.asInstanceOf[js.Any]))
+      CacheNodeType.foreach(__v => __obj.update("CacheNodeType", __v.asInstanceOf[js.Any]))
+      Duration.foreach(__v => __obj.update("Duration", __v.asInstanceOf[js.Any]))
+      FixedPrice.foreach(__v => __obj.update("FixedPrice", __v.asInstanceOf[js.Any]))
+      OfferingType.foreach(__v => __obj.update("OfferingType", __v.asInstanceOf[js.Any]))
+      ProductDescription.foreach(__v => __obj.update("ProductDescription", __v.asInstanceOf[js.Any]))
+      RecurringCharges.foreach(__v => __obj.update("RecurringCharges", __v.asInstanceOf[js.Any]))
+      ReservationARN.foreach(__v => __obj.update("ReservationARN", __v.asInstanceOf[js.Any]))
+      ReservedCacheNodeId.foreach(__v => __obj.update("ReservedCacheNodeId", __v.asInstanceOf[js.Any]))
+      ReservedCacheNodesOfferingId.foreach(
+        __v => __obj.update("ReservedCacheNodesOfferingId", __v.asInstanceOf[js.Any])
+      )
+      StartTime.foreach(__v => __obj.update("StartTime", __v.asInstanceOf[js.Any]))
+      State.foreach(__v => __obj.update("State", __v.asInstanceOf[js.Any]))
+      UsagePrice.foreach(__v => __obj.update("UsagePrice", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ReservedCacheNode]
     }
   }
 
@@ -3819,16 +2987,10 @@ package elasticache {
         Marker: js.UndefOr[String] = js.undefined,
         ReservedCacheNodes: js.UndefOr[ReservedCacheNodeList] = js.undefined
     ): ReservedCacheNodeMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Marker" -> Marker.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ReservedCacheNodes" -> ReservedCacheNodes.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ReservedCacheNodeMessage]
+      val __obj = js.Dictionary.empty[js.Any]
+      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
+      ReservedCacheNodes.foreach(__v => __obj.update("ReservedCacheNodes", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ReservedCacheNodeMessage]
     }
   }
 
@@ -3858,34 +3020,18 @@ package elasticache {
         ReservedCacheNodesOfferingId: js.UndefOr[String] = js.undefined,
         UsagePrice: js.UndefOr[Double] = js.undefined
     ): ReservedCacheNodesOffering = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "CacheNodeType" -> CacheNodeType.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Duration" -> Duration.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "FixedPrice" -> FixedPrice.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "OfferingType" -> OfferingType.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ProductDescription" -> ProductDescription.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "RecurringCharges" -> RecurringCharges.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ReservedCacheNodesOfferingId" -> ReservedCacheNodesOfferingId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "UsagePrice" -> UsagePrice.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ReservedCacheNodesOffering]
+      val __obj = js.Dictionary.empty[js.Any]
+      CacheNodeType.foreach(__v => __obj.update("CacheNodeType", __v.asInstanceOf[js.Any]))
+      Duration.foreach(__v => __obj.update("Duration", __v.asInstanceOf[js.Any]))
+      FixedPrice.foreach(__v => __obj.update("FixedPrice", __v.asInstanceOf[js.Any]))
+      OfferingType.foreach(__v => __obj.update("OfferingType", __v.asInstanceOf[js.Any]))
+      ProductDescription.foreach(__v => __obj.update("ProductDescription", __v.asInstanceOf[js.Any]))
+      RecurringCharges.foreach(__v => __obj.update("RecurringCharges", __v.asInstanceOf[js.Any]))
+      ReservedCacheNodesOfferingId.foreach(
+        __v => __obj.update("ReservedCacheNodesOfferingId", __v.asInstanceOf[js.Any])
+      )
+      UsagePrice.foreach(__v => __obj.update("UsagePrice", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ReservedCacheNodesOffering]
     }
   }
 
@@ -3903,16 +3049,10 @@ package elasticache {
         Marker: js.UndefOr[String] = js.undefined,
         ReservedCacheNodesOfferings: js.UndefOr[ReservedCacheNodesOfferingList] = js.undefined
     ): ReservedCacheNodesOfferingMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Marker" -> Marker.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ReservedCacheNodesOfferings" -> ReservedCacheNodesOfferings.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ReservedCacheNodesOfferingMessage]
+      val __obj = js.Dictionary.empty[js.Any]
+      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
+      ReservedCacheNodesOfferings.foreach(__v => __obj.update("ReservedCacheNodesOfferings", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ReservedCacheNodesOfferingMessage]
     }
   }
 
@@ -3932,17 +3072,13 @@ package elasticache {
         ParameterNameValues: js.UndefOr[ParameterNameValueList] = js.undefined,
         ResetAllParameters: js.UndefOr[Boolean] = js.undefined
     ): ResetCacheParameterGroupMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "CacheParameterGroupName" -> CacheParameterGroupName.asInstanceOf[js.Any],
-        "ParameterNameValues" -> ParameterNameValues.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ResetAllParameters" -> ResetAllParameters.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "CacheParameterGroupName" -> CacheParameterGroupName.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ResetCacheParameterGroupMessage]
+      ParameterNameValues.foreach(__v => __obj.update("ParameterNameValues", __v.asInstanceOf[js.Any]))
+      ResetAllParameters.foreach(__v => __obj.update("ResetAllParameters", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ResetCacheParameterGroupMessage]
     }
   }
 
@@ -3960,16 +3096,10 @@ package elasticache {
         NodeGroupId: js.UndefOr[AllowedNodeGroupId] = js.undefined,
         PreferredAvailabilityZones: js.UndefOr[AvailabilityZonesList] = js.undefined
     ): ReshardingConfiguration = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "NodeGroupId" -> NodeGroupId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "PreferredAvailabilityZones" -> PreferredAvailabilityZones.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ReshardingConfiguration]
+      val __obj = js.Dictionary.empty[js.Any]
+      NodeGroupId.foreach(__v => __obj.update("NodeGroupId", __v.asInstanceOf[js.Any]))
+      PreferredAvailabilityZones.foreach(__v => __obj.update("PreferredAvailabilityZones", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ReshardingConfiguration]
     }
   }
 
@@ -3985,13 +3115,9 @@ package elasticache {
     def apply(
         SlotMigration: js.UndefOr[SlotMigration] = js.undefined
     ): ReshardingStatus = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "SlotMigration" -> SlotMigration.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ReshardingStatus]
+      val __obj = js.Dictionary.empty[js.Any]
+      SlotMigration.foreach(__v => __obj.update("SlotMigration", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ReshardingStatus]
     }
   }
 
@@ -4011,13 +3137,13 @@ package elasticache {
         EC2SecurityGroupName: String,
         EC2SecurityGroupOwnerId: String
     ): RevokeCacheSecurityGroupIngressMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "CacheSecurityGroupName"  -> CacheSecurityGroupName.asInstanceOf[js.Any],
         "EC2SecurityGroupName"    -> EC2SecurityGroupName.asInstanceOf[js.Any],
         "EC2SecurityGroupOwnerId" -> EC2SecurityGroupOwnerId.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RevokeCacheSecurityGroupIngressMessage]
+      __obj.asInstanceOf[RevokeCacheSecurityGroupIngressMessage]
     }
   }
 
@@ -4030,13 +3156,9 @@ package elasticache {
     def apply(
         CacheSecurityGroup: js.UndefOr[CacheSecurityGroup] = js.undefined
     ): RevokeCacheSecurityGroupIngressResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "CacheSecurityGroup" -> CacheSecurityGroup.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RevokeCacheSecurityGroupIngressResult]
+      val __obj = js.Dictionary.empty[js.Any]
+      CacheSecurityGroup.foreach(__v => __obj.update("CacheSecurityGroup", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[RevokeCacheSecurityGroupIngressResult]
     }
   }
 
@@ -4054,16 +3176,10 @@ package elasticache {
         SecurityGroupId: js.UndefOr[String] = js.undefined,
         Status: js.UndefOr[String] = js.undefined
     ): SecurityGroupMembership = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "SecurityGroupId" -> SecurityGroupId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Status" -> Status.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SecurityGroupMembership]
+      val __obj = js.Dictionary.empty[js.Any]
+      SecurityGroupId.foreach(__v => __obj.update("SecurityGroupId", __v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.update("Status", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[SecurityGroupMembership]
     }
   }
 
@@ -4079,13 +3195,9 @@ package elasticache {
     def apply(
         ProgressPercentage: js.UndefOr[Double] = js.undefined
     ): SlotMigration = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ProgressPercentage" -> ProgressPercentage.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SlotMigration]
+      val __obj = js.Dictionary.empty[js.Any]
+      ProgressPercentage.foreach(__v => __obj.update("ProgressPercentage", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[SlotMigration]
     }
   }
 
@@ -4147,82 +3259,32 @@ package elasticache {
         TopicArn: js.UndefOr[String] = js.undefined,
         VpcId: js.UndefOr[String] = js.undefined
     ): Snapshot = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "AutoMinorVersionUpgrade" -> AutoMinorVersionUpgrade.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "AutomaticFailover" -> AutomaticFailover.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "CacheClusterCreateTime" -> CacheClusterCreateTime.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "CacheClusterId" -> CacheClusterId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "CacheNodeType" -> CacheNodeType.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "CacheParameterGroupName" -> CacheParameterGroupName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "CacheSubnetGroupName" -> CacheSubnetGroupName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Engine" -> Engine.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "EngineVersion" -> EngineVersion.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NodeSnapshots" -> NodeSnapshots.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NumCacheNodes" -> NumCacheNodes.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NumNodeGroups" -> NumNodeGroups.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Port" -> Port.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "PreferredAvailabilityZone" -> PreferredAvailabilityZone.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "PreferredMaintenanceWindow" -> PreferredMaintenanceWindow.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ReplicationGroupDescription" -> ReplicationGroupDescription.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ReplicationGroupId" -> ReplicationGroupId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SnapshotName" -> SnapshotName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SnapshotRetentionLimit" -> SnapshotRetentionLimit.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SnapshotSource" -> SnapshotSource.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SnapshotStatus" -> SnapshotStatus.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SnapshotWindow" -> SnapshotWindow.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "TopicArn" -> TopicArn.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "VpcId" -> VpcId.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Snapshot]
+      val __obj = js.Dictionary.empty[js.Any]
+      AutoMinorVersionUpgrade.foreach(__v => __obj.update("AutoMinorVersionUpgrade", __v.asInstanceOf[js.Any]))
+      AutomaticFailover.foreach(__v => __obj.update("AutomaticFailover", __v.asInstanceOf[js.Any]))
+      CacheClusterCreateTime.foreach(__v => __obj.update("CacheClusterCreateTime", __v.asInstanceOf[js.Any]))
+      CacheClusterId.foreach(__v => __obj.update("CacheClusterId", __v.asInstanceOf[js.Any]))
+      CacheNodeType.foreach(__v => __obj.update("CacheNodeType", __v.asInstanceOf[js.Any]))
+      CacheParameterGroupName.foreach(__v => __obj.update("CacheParameterGroupName", __v.asInstanceOf[js.Any]))
+      CacheSubnetGroupName.foreach(__v => __obj.update("CacheSubnetGroupName", __v.asInstanceOf[js.Any]))
+      Engine.foreach(__v => __obj.update("Engine", __v.asInstanceOf[js.Any]))
+      EngineVersion.foreach(__v => __obj.update("EngineVersion", __v.asInstanceOf[js.Any]))
+      NodeSnapshots.foreach(__v => __obj.update("NodeSnapshots", __v.asInstanceOf[js.Any]))
+      NumCacheNodes.foreach(__v => __obj.update("NumCacheNodes", __v.asInstanceOf[js.Any]))
+      NumNodeGroups.foreach(__v => __obj.update("NumNodeGroups", __v.asInstanceOf[js.Any]))
+      Port.foreach(__v => __obj.update("Port", __v.asInstanceOf[js.Any]))
+      PreferredAvailabilityZone.foreach(__v => __obj.update("PreferredAvailabilityZone", __v.asInstanceOf[js.Any]))
+      PreferredMaintenanceWindow.foreach(__v => __obj.update("PreferredMaintenanceWindow", __v.asInstanceOf[js.Any]))
+      ReplicationGroupDescription.foreach(__v => __obj.update("ReplicationGroupDescription", __v.asInstanceOf[js.Any]))
+      ReplicationGroupId.foreach(__v => __obj.update("ReplicationGroupId", __v.asInstanceOf[js.Any]))
+      SnapshotName.foreach(__v => __obj.update("SnapshotName", __v.asInstanceOf[js.Any]))
+      SnapshotRetentionLimit.foreach(__v => __obj.update("SnapshotRetentionLimit", __v.asInstanceOf[js.Any]))
+      SnapshotSource.foreach(__v => __obj.update("SnapshotSource", __v.asInstanceOf[js.Any]))
+      SnapshotStatus.foreach(__v => __obj.update("SnapshotStatus", __v.asInstanceOf[js.Any]))
+      SnapshotWindow.foreach(__v => __obj.update("SnapshotWindow", __v.asInstanceOf[js.Any]))
+      TopicArn.foreach(__v => __obj.update("TopicArn", __v.asInstanceOf[js.Any]))
+      VpcId.foreach(__v => __obj.update("VpcId", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Snapshot]
     }
   }
 
@@ -4256,16 +3318,10 @@ package elasticache {
         SubnetAvailabilityZone: js.UndefOr[AvailabilityZone] = js.undefined,
         SubnetIdentifier: js.UndefOr[String] = js.undefined
     ): Subnet = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "SubnetAvailabilityZone" -> SubnetAvailabilityZone.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SubnetIdentifier" -> SubnetIdentifier.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Subnet]
+      val __obj = js.Dictionary.empty[js.Any]
+      SubnetAvailabilityZone.foreach(__v => __obj.update("SubnetAvailabilityZone", __v.asInstanceOf[js.Any]))
+      SubnetIdentifier.foreach(__v => __obj.update("SubnetIdentifier", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Subnet]
     }
   }
 
@@ -4283,16 +3339,10 @@ package elasticache {
         Key: js.UndefOr[String] = js.undefined,
         Value: js.UndefOr[String] = js.undefined
     ): Tag = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Key" -> Key.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Value" -> Value.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Tag]
+      val __obj = js.Dictionary.empty[js.Any]
+      Key.foreach(__v => __obj.update("Key", __v.asInstanceOf[js.Any]))
+      Value.foreach(__v => __obj.update("Value", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Tag]
     }
   }
 
@@ -4308,13 +3358,9 @@ package elasticache {
     def apply(
         TagList: js.UndefOr[TagList] = js.undefined
     ): TagListMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "TagList" -> TagList.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[TagListMessage]
+      val __obj = js.Dictionary.empty[js.Any]
+      TagList.foreach(__v => __obj.update("TagList", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[TagListMessage]
     }
   }
 
@@ -4329,12 +3375,12 @@ package elasticache {
         NodeGroupId: AllowedNodeGroupId,
         ReplicationGroupId: String
     ): TestFailoverMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "NodeGroupId"        -> NodeGroupId.asInstanceOf[js.Any],
         "ReplicationGroupId" -> ReplicationGroupId.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[TestFailoverMessage]
+      __obj.asInstanceOf[TestFailoverMessage]
     }
   }
 
@@ -4347,13 +3393,9 @@ package elasticache {
     def apply(
         ReplicationGroup: js.UndefOr[ReplicationGroup] = js.undefined
     ): TestFailoverResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ReplicationGroup" -> ReplicationGroup.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[TestFailoverResult]
+      val __obj = js.Dictionary.empty[js.Any]
+      ReplicationGroup.foreach(__v => __obj.update("ReplicationGroup", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[TestFailoverResult]
     }
   }
 }

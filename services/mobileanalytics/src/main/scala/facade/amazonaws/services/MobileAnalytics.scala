@@ -61,24 +61,16 @@ package mobileanalytics {
         session: js.UndefOr[Session] = js.undefined,
         version: js.UndefOr[String10Chars] = js.undefined
     ): Event = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "eventType" -> eventType.asInstanceOf[js.Any],
-        "timestamp" -> timestamp.asInstanceOf[js.Any],
-        "attributes" -> attributes.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "metrics" -> metrics.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "session" -> session.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "version" -> version.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "timestamp" -> timestamp.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Event]
+      attributes.foreach(__v => __obj.update("attributes", __v.asInstanceOf[js.Any]))
+      metrics.foreach(__v => __obj.update("metrics", __v.asInstanceOf[js.Any]))
+      session.foreach(__v => __obj.update("session", __v.asInstanceOf[js.Any]))
+      version.foreach(__v => __obj.update("version", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Event]
     }
   }
 
@@ -98,15 +90,13 @@ package mobileanalytics {
         events: EventListDefinition,
         clientContextEncoding: js.UndefOr[String] = js.undefined
     ): PutEventsInput = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "clientContext" -> clientContext.asInstanceOf[js.Any],
-        "events"        -> events.asInstanceOf[js.Any],
-        "clientContextEncoding" -> clientContextEncoding.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "events"        -> events.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PutEventsInput]
+      clientContextEncoding.foreach(__v => __obj.update("clientContextEncoding", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PutEventsInput]
     }
   }
 
@@ -128,22 +118,12 @@ package mobileanalytics {
         startTimestamp: js.UndefOr[ISO8601Timestamp] = js.undefined,
         stopTimestamp: js.UndefOr[ISO8601Timestamp] = js.undefined
     ): Session = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "duration" -> duration.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "id" -> id.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "startTimestamp" -> startTimestamp.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "stopTimestamp" -> stopTimestamp.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Session]
+      val __obj = js.Dictionary.empty[js.Any]
+      duration.foreach(__v => __obj.update("duration", __v.asInstanceOf[js.Any]))
+      id.foreach(__v => __obj.update("id", __v.asInstanceOf[js.Any]))
+      startTimestamp.foreach(__v => __obj.update("startTimestamp", __v.asInstanceOf[js.Any]))
+      stopTimestamp.foreach(__v => __obj.update("stopTimestamp", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Session]
     }
   }
 }

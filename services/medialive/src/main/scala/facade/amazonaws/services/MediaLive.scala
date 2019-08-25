@@ -473,37 +473,17 @@ package medialive {
         Spec: js.UndefOr[AacSpec] = js.undefined,
         VbrQuality: js.UndefOr[AacVbrQuality] = js.undefined
     ): AacSettings = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Bitrate" -> Bitrate.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "CodingMode" -> CodingMode.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "InputType" -> InputType.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Profile" -> Profile.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "RateControlMode" -> RateControlMode.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "RawFormat" -> RawFormat.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SampleRate" -> SampleRate.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Spec" -> Spec.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "VbrQuality" -> VbrQuality.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AacSettings]
+      val __obj = js.Dictionary.empty[js.Any]
+      Bitrate.foreach(__v => __obj.update("Bitrate", __v.asInstanceOf[js.Any]))
+      CodingMode.foreach(__v => __obj.update("CodingMode", __v.asInstanceOf[js.Any]))
+      InputType.foreach(__v => __obj.update("InputType", __v.asInstanceOf[js.Any]))
+      Profile.foreach(__v => __obj.update("Profile", __v.asInstanceOf[js.Any]))
+      RateControlMode.foreach(__v => __obj.update("RateControlMode", __v.asInstanceOf[js.Any]))
+      RawFormat.foreach(__v => __obj.update("RawFormat", __v.asInstanceOf[js.Any]))
+      SampleRate.foreach(__v => __obj.update("SampleRate", __v.asInstanceOf[js.Any]))
+      Spec.foreach(__v => __obj.update("Spec", __v.asInstanceOf[js.Any]))
+      VbrQuality.foreach(__v => __obj.update("VbrQuality", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AacSettings]
     }
   }
 
@@ -620,31 +600,15 @@ package medialive {
         LfeFilter: js.UndefOr[Ac3LfeFilter] = js.undefined,
         MetadataControl: js.UndefOr[Ac3MetadataControl] = js.undefined
     ): Ac3Settings = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Bitrate" -> Bitrate.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "BitstreamMode" -> BitstreamMode.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "CodingMode" -> CodingMode.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Dialnorm" -> Dialnorm.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DrcProfile" -> DrcProfile.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "LfeFilter" -> LfeFilter.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MetadataControl" -> MetadataControl.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Ac3Settings]
+      val __obj = js.Dictionary.empty[js.Any]
+      Bitrate.foreach(__v => __obj.update("Bitrate", __v.asInstanceOf[js.Any]))
+      BitstreamMode.foreach(__v => __obj.update("BitstreamMode", __v.asInstanceOf[js.Any]))
+      CodingMode.foreach(__v => __obj.update("CodingMode", __v.asInstanceOf[js.Any]))
+      Dialnorm.foreach(__v => __obj.update("Dialnorm", __v.asInstanceOf[js.Any]))
+      DrcProfile.foreach(__v => __obj.update("DrcProfile", __v.asInstanceOf[js.Any]))
+      LfeFilter.foreach(__v => __obj.update("LfeFilter", __v.asInstanceOf[js.Any]))
+      MetadataControl.foreach(__v => __obj.update("MetadataControl", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Ac3Settings]
     }
   }
 
@@ -671,13 +635,9 @@ package medialive {
     def apply(
         M2tsSettings: js.UndefOr[M2tsSettings] = js.undefined
     ): ArchiveContainerSettings = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "M2tsSettings" -> M2tsSettings.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ArchiveContainerSettings]
+      val __obj = js.Dictionary.empty[js.Any]
+      M2tsSettings.foreach(__v => __obj.update("M2tsSettings", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ArchiveContainerSettings]
     }
   }
 
@@ -695,14 +655,12 @@ package medialive {
         Destination: OutputLocationRef,
         RolloverInterval: js.UndefOr[__integerMin1] = js.undefined
     ): ArchiveGroupSettings = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Destination" -> Destination.asInstanceOf[js.Any],
-        "RolloverInterval" -> RolloverInterval.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "Destination" -> Destination.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ArchiveGroupSettings]
+      RolloverInterval.foreach(__v => __obj.update("RolloverInterval", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ArchiveGroupSettings]
     }
   }
 
@@ -722,17 +680,13 @@ package medialive {
         Extension: js.UndefOr[__string] = js.undefined,
         NameModifier: js.UndefOr[__string] = js.undefined
     ): ArchiveOutputSettings = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ContainerSettings" -> ContainerSettings.asInstanceOf[js.Any],
-        "Extension" -> Extension.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NameModifier" -> NameModifier.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "ContainerSettings" -> ContainerSettings.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ArchiveOutputSettings]
+      Extension.foreach(__v => __obj.update("Extension", __v.asInstanceOf[js.Any]))
+      NameModifier.foreach(__v => __obj.update("NameModifier", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ArchiveOutputSettings]
     }
   }
 
@@ -745,10 +699,9 @@ package medialive {
   object AribDestinationSettings {
     def apply(
         ): AribDestinationSettings = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary.empty[js.Any]
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AribDestinationSettings]
+      __obj.asInstanceOf[AribDestinationSettings]
     }
   }
 
@@ -761,10 +714,9 @@ package medialive {
   object AribSourceSettings {
     def apply(
         ): AribSourceSettings = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary.empty[js.Any]
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AribSourceSettings]
+      __obj.asInstanceOf[AribSourceSettings]
     }
   }
 
@@ -782,12 +734,12 @@ package medialive {
         InputChannelLevels: __listOfInputChannelLevel,
         OutputChannel: __integerMin0Max7
     ): AudioChannelMapping = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "InputChannelLevels" -> InputChannelLevels.asInstanceOf[js.Any],
         "OutputChannel"      -> OutputChannel.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AudioChannelMapping]
+      __obj.asInstanceOf[AudioChannelMapping]
     }
   }
 
@@ -811,25 +763,13 @@ package medialive {
         Mp2Settings: js.UndefOr[Mp2Settings] = js.undefined,
         PassThroughSettings: js.UndefOr[PassThroughSettings] = js.undefined
     ): AudioCodecSettings = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "AacSettings" -> AacSettings.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Ac3Settings" -> Ac3Settings.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Eac3Settings" -> Eac3Settings.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Mp2Settings" -> Mp2Settings.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "PassThroughSettings" -> PassThroughSettings.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AudioCodecSettings]
+      val __obj = js.Dictionary.empty[js.Any]
+      AacSettings.foreach(__v => __obj.update("AacSettings", __v.asInstanceOf[js.Any]))
+      Ac3Settings.foreach(__v => __obj.update("Ac3Settings", __v.asInstanceOf[js.Any]))
+      Eac3Settings.foreach(__v => __obj.update("Eac3Settings", __v.asInstanceOf[js.Any]))
+      Mp2Settings.foreach(__v => __obj.update("Mp2Settings", __v.asInstanceOf[js.Any]))
+      PassThroughSettings.foreach(__v => __obj.update("PassThroughSettings", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AudioCodecSettings]
     }
   }
 
@@ -863,36 +803,20 @@ package medialive {
         RemixSettings: js.UndefOr[RemixSettings] = js.undefined,
         StreamName: js.UndefOr[__string] = js.undefined
     ): AudioDescription = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "AudioSelectorName" -> AudioSelectorName.asInstanceOf[js.Any],
-        "Name"              -> Name.asInstanceOf[js.Any],
-        "AudioNormalizationSettings" -> AudioNormalizationSettings.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "AudioType" -> AudioType.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "AudioTypeControl" -> AudioTypeControl.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "CodecSettings" -> CodecSettings.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "LanguageCode" -> LanguageCode.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "LanguageCodeControl" -> LanguageCodeControl.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "RemixSettings" -> RemixSettings.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "StreamName" -> StreamName.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "Name"              -> Name.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AudioDescription]
+      AudioNormalizationSettings.foreach(__v => __obj.update("AudioNormalizationSettings", __v.asInstanceOf[js.Any]))
+      AudioType.foreach(__v => __obj.update("AudioType", __v.asInstanceOf[js.Any]))
+      AudioTypeControl.foreach(__v => __obj.update("AudioTypeControl", __v.asInstanceOf[js.Any]))
+      CodecSettings.foreach(__v => __obj.update("CodecSettings", __v.asInstanceOf[js.Any]))
+      LanguageCode.foreach(__v => __obj.update("LanguageCode", __v.asInstanceOf[js.Any]))
+      LanguageCodeControl.foreach(__v => __obj.update("LanguageCodeControl", __v.asInstanceOf[js.Any]))
+      RemixSettings.foreach(__v => __obj.update("RemixSettings", __v.asInstanceOf[js.Any]))
+      StreamName.foreach(__v => __obj.update("StreamName", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AudioDescription]
     }
   }
 
@@ -930,14 +854,12 @@ package medialive {
         LanguageCode: __string,
         LanguageSelectionPolicy: js.UndefOr[AudioLanguageSelectionPolicy] = js.undefined
     ): AudioLanguageSelection = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "LanguageCode" -> LanguageCode.asInstanceOf[js.Any],
-        "LanguageSelectionPolicy" -> LanguageSelectionPolicy.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "LanguageCode" -> LanguageCode.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AudioLanguageSelection]
+      LanguageSelectionPolicy.foreach(__v => __obj.update("LanguageSelectionPolicy", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AudioLanguageSelection]
     }
   }
 
@@ -986,19 +908,11 @@ package medialive {
         AlgorithmControl: js.UndefOr[AudioNormalizationAlgorithmControl] = js.undefined,
         TargetLkfs: js.UndefOr[__doubleMinNegative59Max0] = js.undefined
     ): AudioNormalizationSettings = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Algorithm" -> Algorithm.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "AlgorithmControl" -> AlgorithmControl.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "TargetLkfs" -> TargetLkfs.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AudioNormalizationSettings]
+      val __obj = js.Dictionary.empty[js.Any]
+      Algorithm.foreach(__v => __obj.update("Algorithm", __v.asInstanceOf[js.Any]))
+      AlgorithmControl.foreach(__v => __obj.update("AlgorithmControl", __v.asInstanceOf[js.Any]))
+      TargetLkfs.foreach(__v => __obj.update("TargetLkfs", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AudioNormalizationSettings]
     }
   }
 
@@ -1018,19 +932,11 @@ package medialive {
         AudioOnlyImage: js.UndefOr[InputLocation] = js.undefined,
         AudioTrackType: js.UndefOr[AudioOnlyHlsTrackType] = js.undefined
     ): AudioOnlyHlsSettings = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "AudioGroupId" -> AudioGroupId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "AudioOnlyImage" -> AudioOnlyImage.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "AudioTrackType" -> AudioTrackType.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AudioOnlyHlsSettings]
+      val __obj = js.Dictionary.empty[js.Any]
+      AudioGroupId.foreach(__v => __obj.update("AudioGroupId", __v.asInstanceOf[js.Any]))
+      AudioOnlyImage.foreach(__v => __obj.update("AudioOnlyImage", __v.asInstanceOf[js.Any]))
+      AudioTrackType.foreach(__v => __obj.update("AudioTrackType", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AudioOnlyHlsSettings]
     }
   }
 
@@ -1063,11 +969,11 @@ package medialive {
     def apply(
         Pid: __integerMin0Max8191
     ): AudioPidSelection = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "Pid" -> Pid.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AudioPidSelection]
+      __obj.asInstanceOf[AudioPidSelection]
     }
   }
 
@@ -1085,14 +991,12 @@ package medialive {
         Name: __stringMin1,
         SelectorSettings: js.UndefOr[AudioSelectorSettings] = js.undefined
     ): AudioSelector = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Name" -> Name.asInstanceOf[js.Any],
-        "SelectorSettings" -> SelectorSettings.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "Name" -> Name.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AudioSelector]
+      SelectorSettings.foreach(__v => __obj.update("SelectorSettings", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AudioSelector]
     }
   }
 
@@ -1110,16 +1014,10 @@ package medialive {
         AudioLanguageSelection: js.UndefOr[AudioLanguageSelection] = js.undefined,
         AudioPidSelection: js.UndefOr[AudioPidSelection] = js.undefined
     ): AudioSelectorSettings = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "AudioLanguageSelection" -> AudioLanguageSelection.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "AudioPidSelection" -> AudioPidSelection.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AudioSelectorSettings]
+      val __obj = js.Dictionary.empty[js.Any]
+      AudioLanguageSelection.foreach(__v => __obj.update("AudioLanguageSelection", __v.asInstanceOf[js.Any]))
+      AudioPidSelection.foreach(__v => __obj.update("AudioPidSelection", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AudioSelectorSettings]
     }
   }
 
@@ -1159,16 +1057,10 @@ package medialive {
         AvailBlankingImage: js.UndefOr[InputLocation] = js.undefined,
         State: js.UndefOr[AvailBlankingState] = js.undefined
     ): AvailBlanking = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "AvailBlankingImage" -> AvailBlankingImage.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "State" -> State.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AvailBlanking]
+      val __obj = js.Dictionary.empty[js.Any]
+      AvailBlankingImage.foreach(__v => __obj.update("AvailBlankingImage", __v.asInstanceOf[js.Any]))
+      State.foreach(__v => __obj.update("State", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AvailBlanking]
     }
   }
 
@@ -1194,13 +1086,9 @@ package medialive {
     def apply(
         AvailSettings: js.UndefOr[AvailSettings] = js.undefined
     ): AvailConfiguration = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "AvailSettings" -> AvailSettings.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AvailConfiguration]
+      val __obj = js.Dictionary.empty[js.Any]
+      AvailSettings.foreach(__v => __obj.update("AvailSettings", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AvailConfiguration]
     }
   }
 
@@ -1218,16 +1106,10 @@ package medialive {
         Scte35SpliceInsert: js.UndefOr[Scte35SpliceInsert] = js.undefined,
         Scte35TimeSignalApos: js.UndefOr[Scte35TimeSignalApos] = js.undefined
     ): AvailSettings = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Scte35SpliceInsert" -> Scte35SpliceInsert.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Scte35TimeSignalApos" -> Scte35TimeSignalApos.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AvailSettings]
+      val __obj = js.Dictionary.empty[js.Any]
+      Scte35SpliceInsert.foreach(__v => __obj.update("Scte35SpliceInsert", __v.asInstanceOf[js.Any]))
+      Scte35TimeSignalApos.foreach(__v => __obj.update("Scte35TimeSignalApos", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AvailSettings]
     }
   }
 
@@ -1243,11 +1125,11 @@ package medialive {
     def apply(
         ScheduleActions: __listOfScheduleAction
     ): BatchScheduleActionCreateRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ScheduleActions" -> ScheduleActions.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[BatchScheduleActionCreateRequest]
+      __obj.asInstanceOf[BatchScheduleActionCreateRequest]
     }
   }
 
@@ -1263,11 +1145,11 @@ package medialive {
     def apply(
         ScheduleActions: __listOfScheduleAction
     ): BatchScheduleActionCreateResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ScheduleActions" -> ScheduleActions.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[BatchScheduleActionCreateResult]
+      __obj.asInstanceOf[BatchScheduleActionCreateResult]
     }
   }
 
@@ -1283,11 +1165,11 @@ package medialive {
     def apply(
         ActionNames: __listOf__string
     ): BatchScheduleActionDeleteRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ActionNames" -> ActionNames.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[BatchScheduleActionDeleteRequest]
+      __obj.asInstanceOf[BatchScheduleActionDeleteRequest]
     }
   }
 
@@ -1303,11 +1185,11 @@ package medialive {
     def apply(
         ScheduleActions: __listOfScheduleAction
     ): BatchScheduleActionDeleteResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ScheduleActions" -> ScheduleActions.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[BatchScheduleActionDeleteResult]
+      __obj.asInstanceOf[BatchScheduleActionDeleteResult]
     }
   }
 
@@ -1327,17 +1209,13 @@ package medialive {
         Creates: js.UndefOr[BatchScheduleActionCreateRequest] = js.undefined,
         Deletes: js.UndefOr[BatchScheduleActionDeleteRequest] = js.undefined
     ): BatchUpdateScheduleRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ChannelId" -> ChannelId.asInstanceOf[js.Any],
-        "Creates" -> Creates.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Deletes" -> Deletes.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "ChannelId" -> ChannelId.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[BatchUpdateScheduleRequest]
+      Creates.foreach(__v => __obj.update("Creates", __v.asInstanceOf[js.Any]))
+      Deletes.foreach(__v => __obj.update("Deletes", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[BatchUpdateScheduleRequest]
     }
   }
 
@@ -1355,16 +1233,10 @@ package medialive {
         Creates: js.UndefOr[BatchScheduleActionCreateResult] = js.undefined,
         Deletes: js.UndefOr[BatchScheduleActionDeleteResult] = js.undefined
     ): BatchUpdateScheduleResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Creates" -> Creates.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Deletes" -> Deletes.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[BatchUpdateScheduleResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      Creates.foreach(__v => __obj.update("Creates", __v.asInstanceOf[js.Any]))
+      Deletes.foreach(__v => __obj.update("Deletes", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[BatchUpdateScheduleResponse]
     }
   }
 
@@ -1388,25 +1260,13 @@ package medialive {
         NetworkId: js.UndefOr[__stringMin34Max34] = js.undefined,
         State: js.UndefOr[BlackoutSlateState] = js.undefined
     ): BlackoutSlate = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "BlackoutSlateImage" -> BlackoutSlateImage.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NetworkEndBlackout" -> NetworkEndBlackout.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NetworkEndBlackoutImage" -> NetworkEndBlackoutImage.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NetworkId" -> NetworkId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "State" -> State.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[BlackoutSlate]
+      val __obj = js.Dictionary.empty[js.Any]
+      BlackoutSlateImage.foreach(__v => __obj.update("BlackoutSlateImage", __v.asInstanceOf[js.Any]))
+      NetworkEndBlackout.foreach(__v => __obj.update("NetworkEndBlackout", __v.asInstanceOf[js.Any]))
+      NetworkEndBlackoutImage.foreach(__v => __obj.update("NetworkEndBlackoutImage", __v.asInstanceOf[js.Any]))
+      NetworkId.foreach(__v => __obj.update("NetworkId", __v.asInstanceOf[js.Any]))
+      State.foreach(__v => __obj.update("State", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[BlackoutSlate]
     }
   }
 
@@ -1496,61 +1356,25 @@ package medialive {
         XPosition: js.UndefOr[__integerMin0] = js.undefined,
         YPosition: js.UndefOr[__integerMin0] = js.undefined
     ): BurnInDestinationSettings = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Alignment" -> Alignment.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "BackgroundColor" -> BackgroundColor.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "BackgroundOpacity" -> BackgroundOpacity.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Font" -> Font.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "FontColor" -> FontColor.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "FontOpacity" -> FontOpacity.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "FontResolution" -> FontResolution.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "FontSize" -> FontSize.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "OutlineColor" -> OutlineColor.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "OutlineSize" -> OutlineSize.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ShadowColor" -> ShadowColor.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ShadowOpacity" -> ShadowOpacity.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ShadowXOffset" -> ShadowXOffset.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ShadowYOffset" -> ShadowYOffset.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "TeletextGridControl" -> TeletextGridControl.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "XPosition" -> XPosition.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "YPosition" -> YPosition.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[BurnInDestinationSettings]
+      val __obj = js.Dictionary.empty[js.Any]
+      Alignment.foreach(__v => __obj.update("Alignment", __v.asInstanceOf[js.Any]))
+      BackgroundColor.foreach(__v => __obj.update("BackgroundColor", __v.asInstanceOf[js.Any]))
+      BackgroundOpacity.foreach(__v => __obj.update("BackgroundOpacity", __v.asInstanceOf[js.Any]))
+      Font.foreach(__v => __obj.update("Font", __v.asInstanceOf[js.Any]))
+      FontColor.foreach(__v => __obj.update("FontColor", __v.asInstanceOf[js.Any]))
+      FontOpacity.foreach(__v => __obj.update("FontOpacity", __v.asInstanceOf[js.Any]))
+      FontResolution.foreach(__v => __obj.update("FontResolution", __v.asInstanceOf[js.Any]))
+      FontSize.foreach(__v => __obj.update("FontSize", __v.asInstanceOf[js.Any]))
+      OutlineColor.foreach(__v => __obj.update("OutlineColor", __v.asInstanceOf[js.Any]))
+      OutlineSize.foreach(__v => __obj.update("OutlineSize", __v.asInstanceOf[js.Any]))
+      ShadowColor.foreach(__v => __obj.update("ShadowColor", __v.asInstanceOf[js.Any]))
+      ShadowOpacity.foreach(__v => __obj.update("ShadowOpacity", __v.asInstanceOf[js.Any]))
+      ShadowXOffset.foreach(__v => __obj.update("ShadowXOffset", __v.asInstanceOf[js.Any]))
+      ShadowYOffset.foreach(__v => __obj.update("ShadowYOffset", __v.asInstanceOf[js.Any]))
+      TeletextGridControl.foreach(__v => __obj.update("TeletextGridControl", __v.asInstanceOf[js.Any]))
+      XPosition.foreach(__v => __obj.update("XPosition", __v.asInstanceOf[js.Any]))
+      YPosition.foreach(__v => __obj.update("YPosition", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[BurnInDestinationSettings]
     }
   }
 
@@ -1623,21 +1447,15 @@ package medialive {
         LanguageCode: js.UndefOr[__string] = js.undefined,
         LanguageDescription: js.UndefOr[__string] = js.undefined
     ): CaptionDescription = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "CaptionSelectorName" -> CaptionSelectorName.asInstanceOf[js.Any],
-        "Name"                -> Name.asInstanceOf[js.Any],
-        "DestinationSettings" -> DestinationSettings.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "LanguageCode" -> LanguageCode.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "LanguageDescription" -> LanguageDescription.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "Name"                -> Name.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CaptionDescription]
+      DestinationSettings.foreach(__v => __obj.update("DestinationSettings", __v.asInstanceOf[js.Any]))
+      LanguageCode.foreach(__v => __obj.update("LanguageCode", __v.asInstanceOf[js.Any]))
+      LanguageDescription.foreach(__v => __obj.update("LanguageDescription", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CaptionDescription]
     }
   }
 
@@ -1675,46 +1493,26 @@ package medialive {
         TtmlDestinationSettings: js.UndefOr[TtmlDestinationSettings] = js.undefined,
         WebvttDestinationSettings: js.UndefOr[WebvttDestinationSettings] = js.undefined
     ): CaptionDestinationSettings = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "AribDestinationSettings" -> AribDestinationSettings.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "BurnInDestinationSettings" -> BurnInDestinationSettings.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DvbSubDestinationSettings" -> DvbSubDestinationSettings.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "EmbeddedDestinationSettings" -> EmbeddedDestinationSettings.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "EmbeddedPlusScte20DestinationSettings" -> EmbeddedPlusScte20DestinationSettings.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "RtmpCaptionInfoDestinationSettings" -> RtmpCaptionInfoDestinationSettings.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Scte20PlusEmbeddedDestinationSettings" -> Scte20PlusEmbeddedDestinationSettings.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Scte27DestinationSettings" -> Scte27DestinationSettings.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SmpteTtDestinationSettings" -> SmpteTtDestinationSettings.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "TeletextDestinationSettings" -> TeletextDestinationSettings.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "TtmlDestinationSettings" -> TtmlDestinationSettings.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "WebvttDestinationSettings" -> WebvttDestinationSettings.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CaptionDestinationSettings]
+      val __obj = js.Dictionary.empty[js.Any]
+      AribDestinationSettings.foreach(__v => __obj.update("AribDestinationSettings", __v.asInstanceOf[js.Any]))
+      BurnInDestinationSettings.foreach(__v => __obj.update("BurnInDestinationSettings", __v.asInstanceOf[js.Any]))
+      DvbSubDestinationSettings.foreach(__v => __obj.update("DvbSubDestinationSettings", __v.asInstanceOf[js.Any]))
+      EmbeddedDestinationSettings.foreach(__v => __obj.update("EmbeddedDestinationSettings", __v.asInstanceOf[js.Any]))
+      EmbeddedPlusScte20DestinationSettings.foreach(
+        __v => __obj.update("EmbeddedPlusScte20DestinationSettings", __v.asInstanceOf[js.Any])
+      )
+      RtmpCaptionInfoDestinationSettings.foreach(
+        __v => __obj.update("RtmpCaptionInfoDestinationSettings", __v.asInstanceOf[js.Any])
+      )
+      Scte20PlusEmbeddedDestinationSettings.foreach(
+        __v => __obj.update("Scte20PlusEmbeddedDestinationSettings", __v.asInstanceOf[js.Any])
+      )
+      Scte27DestinationSettings.foreach(__v => __obj.update("Scte27DestinationSettings", __v.asInstanceOf[js.Any]))
+      SmpteTtDestinationSettings.foreach(__v => __obj.update("SmpteTtDestinationSettings", __v.asInstanceOf[js.Any]))
+      TeletextDestinationSettings.foreach(__v => __obj.update("TeletextDestinationSettings", __v.asInstanceOf[js.Any]))
+      TtmlDestinationSettings.foreach(__v => __obj.update("TtmlDestinationSettings", __v.asInstanceOf[js.Any]))
+      WebvttDestinationSettings.foreach(__v => __obj.update("WebvttDestinationSettings", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CaptionDestinationSettings]
     }
   }
 
@@ -1734,13 +1532,13 @@ package medialive {
         LanguageCode: __stringMin3Max3,
         LanguageDescription: __stringMin1
     ): CaptionLanguageMapping = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "CaptionChannel"      -> CaptionChannel.asInstanceOf[js.Any],
         "LanguageCode"        -> LanguageCode.asInstanceOf[js.Any],
         "LanguageDescription" -> LanguageDescription.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CaptionLanguageMapping]
+      __obj.asInstanceOf[CaptionLanguageMapping]
     }
   }
 
@@ -1760,17 +1558,13 @@ package medialive {
         LanguageCode: js.UndefOr[__string] = js.undefined,
         SelectorSettings: js.UndefOr[CaptionSelectorSettings] = js.undefined
     ): CaptionSelector = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Name" -> Name.asInstanceOf[js.Any],
-        "LanguageCode" -> LanguageCode.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SelectorSettings" -> SelectorSettings.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "Name" -> Name.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CaptionSelector]
+      LanguageCode.foreach(__v => __obj.update("LanguageCode", __v.asInstanceOf[js.Any]))
+      SelectorSettings.foreach(__v => __obj.update("SelectorSettings", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CaptionSelector]
     }
   }
 
@@ -1796,28 +1590,14 @@ package medialive {
         Scte27SourceSettings: js.UndefOr[Scte27SourceSettings] = js.undefined,
         TeletextSourceSettings: js.UndefOr[TeletextSourceSettings] = js.undefined
     ): CaptionSelectorSettings = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "AribSourceSettings" -> AribSourceSettings.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DvbSubSourceSettings" -> DvbSubSourceSettings.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "EmbeddedSourceSettings" -> EmbeddedSourceSettings.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Scte20SourceSettings" -> Scte20SourceSettings.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Scte27SourceSettings" -> Scte27SourceSettings.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "TeletextSourceSettings" -> TeletextSourceSettings.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CaptionSelectorSettings]
+      val __obj = js.Dictionary.empty[js.Any]
+      AribSourceSettings.foreach(__v => __obj.update("AribSourceSettings", __v.asInstanceOf[js.Any]))
+      DvbSubSourceSettings.foreach(__v => __obj.update("DvbSubSourceSettings", __v.asInstanceOf[js.Any]))
+      EmbeddedSourceSettings.foreach(__v => __obj.update("EmbeddedSourceSettings", __v.asInstanceOf[js.Any]))
+      Scte20SourceSettings.foreach(__v => __obj.update("Scte20SourceSettings", __v.asInstanceOf[js.Any]))
+      Scte27SourceSettings.foreach(__v => __obj.update("Scte27SourceSettings", __v.asInstanceOf[js.Any]))
+      TeletextSourceSettings.foreach(__v => __obj.update("TeletextSourceSettings", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CaptionSelectorSettings]
     }
   }
 
@@ -1859,52 +1639,22 @@ package medialive {
         State: js.UndefOr[ChannelState] = js.undefined,
         Tags: js.UndefOr[Tags] = js.undefined
     ): Channel = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Arn" -> Arn.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ChannelClass" -> ChannelClass.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Destinations" -> Destinations.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "EgressEndpoints" -> EgressEndpoints.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "EncoderSettings" -> EncoderSettings.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Id" -> Id.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "InputAttachments" -> InputAttachments.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "InputSpecification" -> InputSpecification.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "LogLevel" -> LogLevel.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Name" -> Name.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "PipelinesRunningCount" -> PipelinesRunningCount.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "RoleArn" -> RoleArn.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "State" -> State.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Tags" -> Tags.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Channel]
+      val __obj = js.Dictionary.empty[js.Any]
+      Arn.foreach(__v => __obj.update("Arn", __v.asInstanceOf[js.Any]))
+      ChannelClass.foreach(__v => __obj.update("ChannelClass", __v.asInstanceOf[js.Any]))
+      Destinations.foreach(__v => __obj.update("Destinations", __v.asInstanceOf[js.Any]))
+      EgressEndpoints.foreach(__v => __obj.update("EgressEndpoints", __v.asInstanceOf[js.Any]))
+      EncoderSettings.foreach(__v => __obj.update("EncoderSettings", __v.asInstanceOf[js.Any]))
+      Id.foreach(__v => __obj.update("Id", __v.asInstanceOf[js.Any]))
+      InputAttachments.foreach(__v => __obj.update("InputAttachments", __v.asInstanceOf[js.Any]))
+      InputSpecification.foreach(__v => __obj.update("InputSpecification", __v.asInstanceOf[js.Any]))
+      LogLevel.foreach(__v => __obj.update("LogLevel", __v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
+      PipelinesRunningCount.foreach(__v => __obj.update("PipelinesRunningCount", __v.asInstanceOf[js.Any]))
+      RoleArn.foreach(__v => __obj.update("RoleArn", __v.asInstanceOf[js.Any]))
+      State.foreach(__v => __obj.update("State", __v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Channel]
     }
   }
 
@@ -1930,13 +1680,9 @@ package medialive {
     def apply(
         SourceIp: js.UndefOr[__string] = js.undefined
     ): ChannelEgressEndpoint = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "SourceIp" -> SourceIp.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ChannelEgressEndpoint]
+      val __obj = js.Dictionary.empty[js.Any]
+      SourceIp.foreach(__v => __obj.update("SourceIp", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ChannelEgressEndpoint]
     }
   }
 
@@ -1993,49 +1739,21 @@ package medialive {
         State: js.UndefOr[ChannelState] = js.undefined,
         Tags: js.UndefOr[Tags] = js.undefined
     ): ChannelSummary = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Arn" -> Arn.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ChannelClass" -> ChannelClass.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Destinations" -> Destinations.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "EgressEndpoints" -> EgressEndpoints.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Id" -> Id.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "InputAttachments" -> InputAttachments.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "InputSpecification" -> InputSpecification.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "LogLevel" -> LogLevel.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Name" -> Name.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "PipelinesRunningCount" -> PipelinesRunningCount.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "RoleArn" -> RoleArn.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "State" -> State.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Tags" -> Tags.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ChannelSummary]
+      val __obj = js.Dictionary.empty[js.Any]
+      Arn.foreach(__v => __obj.update("Arn", __v.asInstanceOf[js.Any]))
+      ChannelClass.foreach(__v => __obj.update("ChannelClass", __v.asInstanceOf[js.Any]))
+      Destinations.foreach(__v => __obj.update("Destinations", __v.asInstanceOf[js.Any]))
+      EgressEndpoints.foreach(__v => __obj.update("EgressEndpoints", __v.asInstanceOf[js.Any]))
+      Id.foreach(__v => __obj.update("Id", __v.asInstanceOf[js.Any]))
+      InputAttachments.foreach(__v => __obj.update("InputAttachments", __v.asInstanceOf[js.Any]))
+      InputSpecification.foreach(__v => __obj.update("InputSpecification", __v.asInstanceOf[js.Any]))
+      LogLevel.foreach(__v => __obj.update("LogLevel", __v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
+      PipelinesRunningCount.foreach(__v => __obj.update("PipelinesRunningCount", __v.asInstanceOf[js.Any]))
+      RoleArn.foreach(__v => __obj.update("RoleArn", __v.asInstanceOf[js.Any]))
+      State.foreach(__v => __obj.update("State", __v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ChannelSummary]
     }
   }
 
@@ -2071,43 +1789,19 @@ package medialive {
         RoleArn: js.UndefOr[__string] = js.undefined,
         Tags: js.UndefOr[Tags] = js.undefined
     ): CreateChannelRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ChannelClass" -> ChannelClass.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Destinations" -> Destinations.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "EncoderSettings" -> EncoderSettings.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "InputAttachments" -> InputAttachments.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "InputSpecification" -> InputSpecification.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "LogLevel" -> LogLevel.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Name" -> Name.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "RequestId" -> RequestId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Reserved" -> Reserved.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "RoleArn" -> RoleArn.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Tags" -> Tags.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateChannelRequest]
+      val __obj = js.Dictionary.empty[js.Any]
+      ChannelClass.foreach(__v => __obj.update("ChannelClass", __v.asInstanceOf[js.Any]))
+      Destinations.foreach(__v => __obj.update("Destinations", __v.asInstanceOf[js.Any]))
+      EncoderSettings.foreach(__v => __obj.update("EncoderSettings", __v.asInstanceOf[js.Any]))
+      InputAttachments.foreach(__v => __obj.update("InputAttachments", __v.asInstanceOf[js.Any]))
+      InputSpecification.foreach(__v => __obj.update("InputSpecification", __v.asInstanceOf[js.Any]))
+      LogLevel.foreach(__v => __obj.update("LogLevel", __v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
+      RequestId.foreach(__v => __obj.update("RequestId", __v.asInstanceOf[js.Any]))
+      Reserved.foreach(__v => __obj.update("Reserved", __v.asInstanceOf[js.Any]))
+      RoleArn.foreach(__v => __obj.update("RoleArn", __v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateChannelRequest]
     }
   }
 
@@ -2123,13 +1817,9 @@ package medialive {
     def apply(
         Channel: js.UndefOr[Channel] = js.undefined
     ): CreateChannelResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Channel" -> Channel.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateChannelResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      Channel.foreach(__v => __obj.update("Channel", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateChannelResponse]
     }
   }
 
@@ -2163,40 +1853,18 @@ package medialive {
         Type: js.UndefOr[InputType] = js.undefined,
         Vpc: js.UndefOr[InputVpcRequest] = js.undefined
     ): CreateInputRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Destinations" -> Destinations.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "InputSecurityGroups" -> InputSecurityGroups.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MediaConnectFlows" -> MediaConnectFlows.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Name" -> Name.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "RequestId" -> RequestId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "RoleArn" -> RoleArn.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Sources" -> Sources.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Tags" -> Tags.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Type" -> Type.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Vpc" -> Vpc.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateInputRequest]
+      val __obj = js.Dictionary.empty[js.Any]
+      Destinations.foreach(__v => __obj.update("Destinations", __v.asInstanceOf[js.Any]))
+      InputSecurityGroups.foreach(__v => __obj.update("InputSecurityGroups", __v.asInstanceOf[js.Any]))
+      MediaConnectFlows.foreach(__v => __obj.update("MediaConnectFlows", __v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
+      RequestId.foreach(__v => __obj.update("RequestId", __v.asInstanceOf[js.Any]))
+      RoleArn.foreach(__v => __obj.update("RoleArn", __v.asInstanceOf[js.Any]))
+      Sources.foreach(__v => __obj.update("Sources", __v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
+      Type.foreach(__v => __obj.update("Type", __v.asInstanceOf[js.Any]))
+      Vpc.foreach(__v => __obj.update("Vpc", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateInputRequest]
     }
   }
 
@@ -2212,13 +1880,9 @@ package medialive {
     def apply(
         Input: js.UndefOr[Input] = js.undefined
     ): CreateInputResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Input" -> Input.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateInputResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      Input.foreach(__v => __obj.update("Input", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateInputResponse]
     }
   }
 
@@ -2236,16 +1900,10 @@ package medialive {
         Tags: js.UndefOr[Tags] = js.undefined,
         WhitelistRules: js.UndefOr[__listOfInputWhitelistRuleCidr] = js.undefined
     ): CreateInputSecurityGroupRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Tags" -> Tags.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "WhitelistRules" -> WhitelistRules.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateInputSecurityGroupRequest]
+      val __obj = js.Dictionary.empty[js.Any]
+      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
+      WhitelistRules.foreach(__v => __obj.update("WhitelistRules", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateInputSecurityGroupRequest]
     }
   }
 
@@ -2261,13 +1919,9 @@ package medialive {
     def apply(
         SecurityGroup: js.UndefOr[InputSecurityGroup] = js.undefined
     ): CreateInputSecurityGroupResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "SecurityGroup" -> SecurityGroup.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateInputSecurityGroupResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      SecurityGroup.foreach(__v => __obj.update("SecurityGroup", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateInputSecurityGroupResponse]
     }
   }
 
@@ -2285,14 +1939,12 @@ package medialive {
         ResourceArn: __string,
         Tags: js.UndefOr[Tags] = js.undefined
     ): CreateTagsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ResourceArn" -> ResourceArn.asInstanceOf[js.Any],
-        "Tags" -> Tags.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "ResourceArn" -> ResourceArn.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateTagsRequest]
+      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateTagsRequest]
     }
   }
 
@@ -2308,11 +1960,11 @@ package medialive {
     def apply(
         ChannelId: __string
     ): DeleteChannelRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ChannelId" -> ChannelId.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteChannelRequest]
+      __obj.asInstanceOf[DeleteChannelRequest]
     }
   }
 
@@ -2354,52 +2006,22 @@ package medialive {
         State: js.UndefOr[ChannelState] = js.undefined,
         Tags: js.UndefOr[Tags] = js.undefined
     ): DeleteChannelResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Arn" -> Arn.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ChannelClass" -> ChannelClass.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Destinations" -> Destinations.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "EgressEndpoints" -> EgressEndpoints.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "EncoderSettings" -> EncoderSettings.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Id" -> Id.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "InputAttachments" -> InputAttachments.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "InputSpecification" -> InputSpecification.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "LogLevel" -> LogLevel.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Name" -> Name.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "PipelinesRunningCount" -> PipelinesRunningCount.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "RoleArn" -> RoleArn.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "State" -> State.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Tags" -> Tags.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteChannelResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      Arn.foreach(__v => __obj.update("Arn", __v.asInstanceOf[js.Any]))
+      ChannelClass.foreach(__v => __obj.update("ChannelClass", __v.asInstanceOf[js.Any]))
+      Destinations.foreach(__v => __obj.update("Destinations", __v.asInstanceOf[js.Any]))
+      EgressEndpoints.foreach(__v => __obj.update("EgressEndpoints", __v.asInstanceOf[js.Any]))
+      EncoderSettings.foreach(__v => __obj.update("EncoderSettings", __v.asInstanceOf[js.Any]))
+      Id.foreach(__v => __obj.update("Id", __v.asInstanceOf[js.Any]))
+      InputAttachments.foreach(__v => __obj.update("InputAttachments", __v.asInstanceOf[js.Any]))
+      InputSpecification.foreach(__v => __obj.update("InputSpecification", __v.asInstanceOf[js.Any]))
+      LogLevel.foreach(__v => __obj.update("LogLevel", __v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
+      PipelinesRunningCount.foreach(__v => __obj.update("PipelinesRunningCount", __v.asInstanceOf[js.Any]))
+      RoleArn.foreach(__v => __obj.update("RoleArn", __v.asInstanceOf[js.Any]))
+      State.foreach(__v => __obj.update("State", __v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DeleteChannelResponse]
     }
   }
 
@@ -2415,11 +2037,11 @@ package medialive {
     def apply(
         InputId: __string
     ): DeleteInputRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "InputId" -> InputId.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteInputRequest]
+      __obj.asInstanceOf[DeleteInputRequest]
     }
   }
 
@@ -2432,10 +2054,9 @@ package medialive {
   object DeleteInputResponse {
     def apply(
         ): DeleteInputResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary.empty[js.Any]
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteInputResponse]
+      __obj.asInstanceOf[DeleteInputResponse]
     }
   }
 
@@ -2451,11 +2072,11 @@ package medialive {
     def apply(
         InputSecurityGroupId: __string
     ): DeleteInputSecurityGroupRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "InputSecurityGroupId" -> InputSecurityGroupId.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteInputSecurityGroupRequest]
+      __obj.asInstanceOf[DeleteInputSecurityGroupRequest]
     }
   }
 
@@ -2468,10 +2089,9 @@ package medialive {
   object DeleteInputSecurityGroupResponse {
     def apply(
         ): DeleteInputSecurityGroupResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary.empty[js.Any]
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteInputSecurityGroupResponse]
+      __obj.asInstanceOf[DeleteInputSecurityGroupResponse]
     }
   }
 
@@ -2487,11 +2107,11 @@ package medialive {
     def apply(
         ReservationId: __string
     ): DeleteReservationRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ReservationId" -> ReservationId.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteReservationRequest]
+      __obj.asInstanceOf[DeleteReservationRequest]
     }
   }
 
@@ -2541,64 +2161,26 @@ package medialive {
         Tags: js.UndefOr[Tags] = js.undefined,
         UsagePrice: js.UndefOr[__double] = js.undefined
     ): DeleteReservationResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Arn" -> Arn.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Count" -> Count.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "CurrencyCode" -> CurrencyCode.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Duration" -> Duration.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DurationUnits" -> DurationUnits.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "End" -> End.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "FixedPrice" -> FixedPrice.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Name" -> Name.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "OfferingDescription" -> OfferingDescription.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "OfferingId" -> OfferingId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "OfferingType" -> OfferingType.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Region" -> Region.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ReservationId" -> ReservationId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ResourceSpecification" -> ResourceSpecification.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Start" -> Start.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "State" -> State.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Tags" -> Tags.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "UsagePrice" -> UsagePrice.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteReservationResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      Arn.foreach(__v => __obj.update("Arn", __v.asInstanceOf[js.Any]))
+      Count.foreach(__v => __obj.update("Count", __v.asInstanceOf[js.Any]))
+      CurrencyCode.foreach(__v => __obj.update("CurrencyCode", __v.asInstanceOf[js.Any]))
+      Duration.foreach(__v => __obj.update("Duration", __v.asInstanceOf[js.Any]))
+      DurationUnits.foreach(__v => __obj.update("DurationUnits", __v.asInstanceOf[js.Any]))
+      End.foreach(__v => __obj.update("End", __v.asInstanceOf[js.Any]))
+      FixedPrice.foreach(__v => __obj.update("FixedPrice", __v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
+      OfferingDescription.foreach(__v => __obj.update("OfferingDescription", __v.asInstanceOf[js.Any]))
+      OfferingId.foreach(__v => __obj.update("OfferingId", __v.asInstanceOf[js.Any]))
+      OfferingType.foreach(__v => __obj.update("OfferingType", __v.asInstanceOf[js.Any]))
+      Region.foreach(__v => __obj.update("Region", __v.asInstanceOf[js.Any]))
+      ReservationId.foreach(__v => __obj.update("ReservationId", __v.asInstanceOf[js.Any]))
+      ResourceSpecification.foreach(__v => __obj.update("ResourceSpecification", __v.asInstanceOf[js.Any]))
+      Start.foreach(__v => __obj.update("Start", __v.asInstanceOf[js.Any]))
+      State.foreach(__v => __obj.update("State", __v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
+      UsagePrice.foreach(__v => __obj.update("UsagePrice", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DeleteReservationResponse]
     }
   }
 
@@ -2616,12 +2198,12 @@ package medialive {
         ResourceArn: __string,
         TagKeys: __listOf__string
     ): DeleteTagsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any],
         "TagKeys"     -> TagKeys.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteTagsRequest]
+      __obj.asInstanceOf[DeleteTagsRequest]
     }
   }
 
@@ -2637,11 +2219,11 @@ package medialive {
     def apply(
         ChannelId: __string
     ): DescribeChannelRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ChannelId" -> ChannelId.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeChannelRequest]
+      __obj.asInstanceOf[DescribeChannelRequest]
     }
   }
 
@@ -2683,52 +2265,22 @@ package medialive {
         State: js.UndefOr[ChannelState] = js.undefined,
         Tags: js.UndefOr[Tags] = js.undefined
     ): DescribeChannelResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Arn" -> Arn.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ChannelClass" -> ChannelClass.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Destinations" -> Destinations.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "EgressEndpoints" -> EgressEndpoints.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "EncoderSettings" -> EncoderSettings.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Id" -> Id.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "InputAttachments" -> InputAttachments.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "InputSpecification" -> InputSpecification.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "LogLevel" -> LogLevel.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Name" -> Name.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "PipelinesRunningCount" -> PipelinesRunningCount.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "RoleArn" -> RoleArn.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "State" -> State.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Tags" -> Tags.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeChannelResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      Arn.foreach(__v => __obj.update("Arn", __v.asInstanceOf[js.Any]))
+      ChannelClass.foreach(__v => __obj.update("ChannelClass", __v.asInstanceOf[js.Any]))
+      Destinations.foreach(__v => __obj.update("Destinations", __v.asInstanceOf[js.Any]))
+      EgressEndpoints.foreach(__v => __obj.update("EgressEndpoints", __v.asInstanceOf[js.Any]))
+      EncoderSettings.foreach(__v => __obj.update("EncoderSettings", __v.asInstanceOf[js.Any]))
+      Id.foreach(__v => __obj.update("Id", __v.asInstanceOf[js.Any]))
+      InputAttachments.foreach(__v => __obj.update("InputAttachments", __v.asInstanceOf[js.Any]))
+      InputSpecification.foreach(__v => __obj.update("InputSpecification", __v.asInstanceOf[js.Any]))
+      LogLevel.foreach(__v => __obj.update("LogLevel", __v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
+      PipelinesRunningCount.foreach(__v => __obj.update("PipelinesRunningCount", __v.asInstanceOf[js.Any]))
+      RoleArn.foreach(__v => __obj.update("RoleArn", __v.asInstanceOf[js.Any]))
+      State.foreach(__v => __obj.update("State", __v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeChannelResponse]
     }
   }
 
@@ -2744,11 +2296,11 @@ package medialive {
     def apply(
         InputId: __string
     ): DescribeInputRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "InputId" -> InputId.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeInputRequest]
+      __obj.asInstanceOf[DescribeInputRequest]
     }
   }
 
@@ -2788,49 +2340,21 @@ package medialive {
         Tags: js.UndefOr[Tags] = js.undefined,
         Type: js.UndefOr[InputType] = js.undefined
     ): DescribeInputResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Arn" -> Arn.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "AttachedChannels" -> AttachedChannels.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Destinations" -> Destinations.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Id" -> Id.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "InputClass" -> InputClass.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MediaConnectFlows" -> MediaConnectFlows.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Name" -> Name.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "RoleArn" -> RoleArn.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SecurityGroups" -> SecurityGroups.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Sources" -> Sources.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "State" -> State.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Tags" -> Tags.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Type" -> Type.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeInputResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      Arn.foreach(__v => __obj.update("Arn", __v.asInstanceOf[js.Any]))
+      AttachedChannels.foreach(__v => __obj.update("AttachedChannels", __v.asInstanceOf[js.Any]))
+      Destinations.foreach(__v => __obj.update("Destinations", __v.asInstanceOf[js.Any]))
+      Id.foreach(__v => __obj.update("Id", __v.asInstanceOf[js.Any]))
+      InputClass.foreach(__v => __obj.update("InputClass", __v.asInstanceOf[js.Any]))
+      MediaConnectFlows.foreach(__v => __obj.update("MediaConnectFlows", __v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
+      RoleArn.foreach(__v => __obj.update("RoleArn", __v.asInstanceOf[js.Any]))
+      SecurityGroups.foreach(__v => __obj.update("SecurityGroups", __v.asInstanceOf[js.Any]))
+      Sources.foreach(__v => __obj.update("Sources", __v.asInstanceOf[js.Any]))
+      State.foreach(__v => __obj.update("State", __v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
+      Type.foreach(__v => __obj.update("Type", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeInputResponse]
     }
   }
 
@@ -2846,11 +2370,11 @@ package medialive {
     def apply(
         InputSecurityGroupId: __string
     ): DescribeInputSecurityGroupRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "InputSecurityGroupId" -> InputSecurityGroupId.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeInputSecurityGroupRequest]
+      __obj.asInstanceOf[DescribeInputSecurityGroupRequest]
     }
   }
 
@@ -2876,28 +2400,14 @@ package medialive {
         Tags: js.UndefOr[Tags] = js.undefined,
         WhitelistRules: js.UndefOr[__listOfInputWhitelistRule] = js.undefined
     ): DescribeInputSecurityGroupResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Arn" -> Arn.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Id" -> Id.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Inputs" -> Inputs.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "State" -> State.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Tags" -> Tags.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "WhitelistRules" -> WhitelistRules.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeInputSecurityGroupResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      Arn.foreach(__v => __obj.update("Arn", __v.asInstanceOf[js.Any]))
+      Id.foreach(__v => __obj.update("Id", __v.asInstanceOf[js.Any]))
+      Inputs.foreach(__v => __obj.update("Inputs", __v.asInstanceOf[js.Any]))
+      State.foreach(__v => __obj.update("State", __v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
+      WhitelistRules.foreach(__v => __obj.update("WhitelistRules", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeInputSecurityGroupResponse]
     }
   }
 
@@ -2913,11 +2423,11 @@ package medialive {
     def apply(
         OfferingId: __string
     ): DescribeOfferingRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "OfferingId" -> OfferingId.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeOfferingRequest]
+      __obj.asInstanceOf[DescribeOfferingRequest]
     }
   }
 
@@ -2953,43 +2463,19 @@ package medialive {
         ResourceSpecification: js.UndefOr[ReservationResourceSpecification] = js.undefined,
         UsagePrice: js.UndefOr[__double] = js.undefined
     ): DescribeOfferingResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Arn" -> Arn.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "CurrencyCode" -> CurrencyCode.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Duration" -> Duration.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DurationUnits" -> DurationUnits.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "FixedPrice" -> FixedPrice.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "OfferingDescription" -> OfferingDescription.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "OfferingId" -> OfferingId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "OfferingType" -> OfferingType.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Region" -> Region.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ResourceSpecification" -> ResourceSpecification.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "UsagePrice" -> UsagePrice.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeOfferingResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      Arn.foreach(__v => __obj.update("Arn", __v.asInstanceOf[js.Any]))
+      CurrencyCode.foreach(__v => __obj.update("CurrencyCode", __v.asInstanceOf[js.Any]))
+      Duration.foreach(__v => __obj.update("Duration", __v.asInstanceOf[js.Any]))
+      DurationUnits.foreach(__v => __obj.update("DurationUnits", __v.asInstanceOf[js.Any]))
+      FixedPrice.foreach(__v => __obj.update("FixedPrice", __v.asInstanceOf[js.Any]))
+      OfferingDescription.foreach(__v => __obj.update("OfferingDescription", __v.asInstanceOf[js.Any]))
+      OfferingId.foreach(__v => __obj.update("OfferingId", __v.asInstanceOf[js.Any]))
+      OfferingType.foreach(__v => __obj.update("OfferingType", __v.asInstanceOf[js.Any]))
+      Region.foreach(__v => __obj.update("Region", __v.asInstanceOf[js.Any]))
+      ResourceSpecification.foreach(__v => __obj.update("ResourceSpecification", __v.asInstanceOf[js.Any]))
+      UsagePrice.foreach(__v => __obj.update("UsagePrice", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeOfferingResponse]
     }
   }
 
@@ -3005,11 +2491,11 @@ package medialive {
     def apply(
         ReservationId: __string
     ): DescribeReservationRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ReservationId" -> ReservationId.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeReservationRequest]
+      __obj.asInstanceOf[DescribeReservationRequest]
     }
   }
 
@@ -3059,64 +2545,26 @@ package medialive {
         Tags: js.UndefOr[Tags] = js.undefined,
         UsagePrice: js.UndefOr[__double] = js.undefined
     ): DescribeReservationResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Arn" -> Arn.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Count" -> Count.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "CurrencyCode" -> CurrencyCode.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Duration" -> Duration.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DurationUnits" -> DurationUnits.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "End" -> End.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "FixedPrice" -> FixedPrice.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Name" -> Name.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "OfferingDescription" -> OfferingDescription.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "OfferingId" -> OfferingId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "OfferingType" -> OfferingType.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Region" -> Region.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ReservationId" -> ReservationId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ResourceSpecification" -> ResourceSpecification.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Start" -> Start.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "State" -> State.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Tags" -> Tags.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "UsagePrice" -> UsagePrice.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeReservationResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      Arn.foreach(__v => __obj.update("Arn", __v.asInstanceOf[js.Any]))
+      Count.foreach(__v => __obj.update("Count", __v.asInstanceOf[js.Any]))
+      CurrencyCode.foreach(__v => __obj.update("CurrencyCode", __v.asInstanceOf[js.Any]))
+      Duration.foreach(__v => __obj.update("Duration", __v.asInstanceOf[js.Any]))
+      DurationUnits.foreach(__v => __obj.update("DurationUnits", __v.asInstanceOf[js.Any]))
+      End.foreach(__v => __obj.update("End", __v.asInstanceOf[js.Any]))
+      FixedPrice.foreach(__v => __obj.update("FixedPrice", __v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
+      OfferingDescription.foreach(__v => __obj.update("OfferingDescription", __v.asInstanceOf[js.Any]))
+      OfferingId.foreach(__v => __obj.update("OfferingId", __v.asInstanceOf[js.Any]))
+      OfferingType.foreach(__v => __obj.update("OfferingType", __v.asInstanceOf[js.Any]))
+      Region.foreach(__v => __obj.update("Region", __v.asInstanceOf[js.Any]))
+      ReservationId.foreach(__v => __obj.update("ReservationId", __v.asInstanceOf[js.Any]))
+      ResourceSpecification.foreach(__v => __obj.update("ResourceSpecification", __v.asInstanceOf[js.Any]))
+      Start.foreach(__v => __obj.update("Start", __v.asInstanceOf[js.Any]))
+      State.foreach(__v => __obj.update("State", __v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
+      UsagePrice.foreach(__v => __obj.update("UsagePrice", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeReservationResponse]
     }
   }
 
@@ -3136,17 +2584,13 @@ package medialive {
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
         NextToken: js.UndefOr[__string] = js.undefined
     ): DescribeScheduleRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ChannelId" -> ChannelId.asInstanceOf[js.Any],
-        "MaxResults" -> MaxResults.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NextToken" -> NextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "ChannelId" -> ChannelId.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeScheduleRequest]
+      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeScheduleRequest]
     }
   }
 
@@ -3164,16 +2608,10 @@ package medialive {
         NextToken: js.UndefOr[__string] = js.undefined,
         ScheduleActions: js.UndefOr[__listOfScheduleAction] = js.undefined
     ): DescribeScheduleResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "NextToken" -> NextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ScheduleActions" -> ScheduleActions.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeScheduleResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      ScheduleActions.foreach(__v => __obj.update("ScheduleActions", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeScheduleResponse]
     }
   }
 
@@ -3193,15 +2631,13 @@ package medialive {
         NetworkName: __stringMin1Max256,
         RepInterval: js.UndefOr[__integerMin25Max10000] = js.undefined
     ): DvbNitSettings = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "NetworkId"   -> NetworkId.asInstanceOf[js.Any],
-        "NetworkName" -> NetworkName.asInstanceOf[js.Any],
-        "RepInterval" -> RepInterval.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "NetworkName" -> NetworkName.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DvbNitSettings]
+      RepInterval.foreach(__v => __obj.update("RepInterval", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DvbNitSettings]
     }
   }
 
@@ -3235,22 +2671,12 @@ package medialive {
         ServiceName: js.UndefOr[__stringMin1Max256] = js.undefined,
         ServiceProviderName: js.UndefOr[__stringMin1Max256] = js.undefined
     ): DvbSdtSettings = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "OutputSdt" -> OutputSdt.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "RepInterval" -> RepInterval.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ServiceName" -> ServiceName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ServiceProviderName" -> ServiceProviderName.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DvbSdtSettings]
+      val __obj = js.Dictionary.empty[js.Any]
+      OutputSdt.foreach(__v => __obj.update("OutputSdt", __v.asInstanceOf[js.Any]))
+      RepInterval.foreach(__v => __obj.update("RepInterval", __v.asInstanceOf[js.Any]))
+      ServiceName.foreach(__v => __obj.update("ServiceName", __v.asInstanceOf[js.Any]))
+      ServiceProviderName.foreach(__v => __obj.update("ServiceProviderName", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DvbSdtSettings]
     }
   }
 
@@ -3348,61 +2774,25 @@ package medialive {
         XPosition: js.UndefOr[__integerMin0] = js.undefined,
         YPosition: js.UndefOr[__integerMin0] = js.undefined
     ): DvbSubDestinationSettings = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Alignment" -> Alignment.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "BackgroundColor" -> BackgroundColor.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "BackgroundOpacity" -> BackgroundOpacity.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Font" -> Font.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "FontColor" -> FontColor.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "FontOpacity" -> FontOpacity.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "FontResolution" -> FontResolution.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "FontSize" -> FontSize.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "OutlineColor" -> OutlineColor.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "OutlineSize" -> OutlineSize.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ShadowColor" -> ShadowColor.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ShadowOpacity" -> ShadowOpacity.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ShadowXOffset" -> ShadowXOffset.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ShadowYOffset" -> ShadowYOffset.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "TeletextGridControl" -> TeletextGridControl.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "XPosition" -> XPosition.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "YPosition" -> YPosition.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DvbSubDestinationSettings]
+      val __obj = js.Dictionary.empty[js.Any]
+      Alignment.foreach(__v => __obj.update("Alignment", __v.asInstanceOf[js.Any]))
+      BackgroundColor.foreach(__v => __obj.update("BackgroundColor", __v.asInstanceOf[js.Any]))
+      BackgroundOpacity.foreach(__v => __obj.update("BackgroundOpacity", __v.asInstanceOf[js.Any]))
+      Font.foreach(__v => __obj.update("Font", __v.asInstanceOf[js.Any]))
+      FontColor.foreach(__v => __obj.update("FontColor", __v.asInstanceOf[js.Any]))
+      FontOpacity.foreach(__v => __obj.update("FontOpacity", __v.asInstanceOf[js.Any]))
+      FontResolution.foreach(__v => __obj.update("FontResolution", __v.asInstanceOf[js.Any]))
+      FontSize.foreach(__v => __obj.update("FontSize", __v.asInstanceOf[js.Any]))
+      OutlineColor.foreach(__v => __obj.update("OutlineColor", __v.asInstanceOf[js.Any]))
+      OutlineSize.foreach(__v => __obj.update("OutlineSize", __v.asInstanceOf[js.Any]))
+      ShadowColor.foreach(__v => __obj.update("ShadowColor", __v.asInstanceOf[js.Any]))
+      ShadowOpacity.foreach(__v => __obj.update("ShadowOpacity", __v.asInstanceOf[js.Any]))
+      ShadowXOffset.foreach(__v => __obj.update("ShadowXOffset", __v.asInstanceOf[js.Any]))
+      ShadowYOffset.foreach(__v => __obj.update("ShadowYOffset", __v.asInstanceOf[js.Any]))
+      TeletextGridControl.foreach(__v => __obj.update("TeletextGridControl", __v.asInstanceOf[js.Any]))
+      XPosition.foreach(__v => __obj.update("XPosition", __v.asInstanceOf[js.Any]))
+      YPosition.foreach(__v => __obj.update("YPosition", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DvbSubDestinationSettings]
     }
   }
 
@@ -3439,13 +2829,9 @@ package medialive {
     def apply(
         Pid: js.UndefOr[__integerMin1] = js.undefined
     ): DvbSubSourceSettings = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Pid" -> Pid.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DvbSubSourceSettings]
+      val __obj = js.Dictionary.empty[js.Any]
+      Pid.foreach(__v => __obj.update("Pid", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DvbSubSourceSettings]
     }
   }
 
@@ -3461,13 +2847,9 @@ package medialive {
     def apply(
         RepInterval: js.UndefOr[__integerMin1000Max30000] = js.undefined
     ): DvbTdtSettings = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "RepInterval" -> RepInterval.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DvbTdtSettings]
+      val __obj = js.Dictionary.empty[js.Any]
+      RepInterval.foreach(__v => __obj.update("RepInterval", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DvbTdtSettings]
     }
   }
 
@@ -3643,70 +3025,28 @@ package medialive {
         SurroundExMode: js.UndefOr[Eac3SurroundExMode] = js.undefined,
         SurroundMode: js.UndefOr[Eac3SurroundMode] = js.undefined
     ): Eac3Settings = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "AttenuationControl" -> AttenuationControl.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Bitrate" -> Bitrate.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "BitstreamMode" -> BitstreamMode.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "CodingMode" -> CodingMode.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DcFilter" -> DcFilter.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Dialnorm" -> Dialnorm.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DrcLine" -> DrcLine.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DrcRf" -> DrcRf.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "LfeControl" -> LfeControl.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "LfeFilter" -> LfeFilter.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "LoRoCenterMixLevel" -> LoRoCenterMixLevel.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "LoRoSurroundMixLevel" -> LoRoSurroundMixLevel.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "LtRtCenterMixLevel" -> LtRtCenterMixLevel.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "LtRtSurroundMixLevel" -> LtRtSurroundMixLevel.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MetadataControl" -> MetadataControl.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "PassthroughControl" -> PassthroughControl.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "PhaseControl" -> PhaseControl.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "StereoDownmix" -> StereoDownmix.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SurroundExMode" -> SurroundExMode.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SurroundMode" -> SurroundMode.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Eac3Settings]
+      val __obj = js.Dictionary.empty[js.Any]
+      AttenuationControl.foreach(__v => __obj.update("AttenuationControl", __v.asInstanceOf[js.Any]))
+      Bitrate.foreach(__v => __obj.update("Bitrate", __v.asInstanceOf[js.Any]))
+      BitstreamMode.foreach(__v => __obj.update("BitstreamMode", __v.asInstanceOf[js.Any]))
+      CodingMode.foreach(__v => __obj.update("CodingMode", __v.asInstanceOf[js.Any]))
+      DcFilter.foreach(__v => __obj.update("DcFilter", __v.asInstanceOf[js.Any]))
+      Dialnorm.foreach(__v => __obj.update("Dialnorm", __v.asInstanceOf[js.Any]))
+      DrcLine.foreach(__v => __obj.update("DrcLine", __v.asInstanceOf[js.Any]))
+      DrcRf.foreach(__v => __obj.update("DrcRf", __v.asInstanceOf[js.Any]))
+      LfeControl.foreach(__v => __obj.update("LfeControl", __v.asInstanceOf[js.Any]))
+      LfeFilter.foreach(__v => __obj.update("LfeFilter", __v.asInstanceOf[js.Any]))
+      LoRoCenterMixLevel.foreach(__v => __obj.update("LoRoCenterMixLevel", __v.asInstanceOf[js.Any]))
+      LoRoSurroundMixLevel.foreach(__v => __obj.update("LoRoSurroundMixLevel", __v.asInstanceOf[js.Any]))
+      LtRtCenterMixLevel.foreach(__v => __obj.update("LtRtCenterMixLevel", __v.asInstanceOf[js.Any]))
+      LtRtSurroundMixLevel.foreach(__v => __obj.update("LtRtSurroundMixLevel", __v.asInstanceOf[js.Any]))
+      MetadataControl.foreach(__v => __obj.update("MetadataControl", __v.asInstanceOf[js.Any]))
+      PassthroughControl.foreach(__v => __obj.update("PassthroughControl", __v.asInstanceOf[js.Any]))
+      PhaseControl.foreach(__v => __obj.update("PhaseControl", __v.asInstanceOf[js.Any]))
+      StereoDownmix.foreach(__v => __obj.update("StereoDownmix", __v.asInstanceOf[js.Any]))
+      SurroundExMode.foreach(__v => __obj.update("SurroundExMode", __v.asInstanceOf[js.Any]))
+      SurroundMode.foreach(__v => __obj.update("SurroundMode", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Eac3Settings]
     }
   }
 
@@ -3763,10 +3103,9 @@ package medialive {
   object EmbeddedDestinationSettings {
     def apply(
         ): EmbeddedDestinationSettings = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary.empty[js.Any]
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[EmbeddedDestinationSettings]
+      __obj.asInstanceOf[EmbeddedDestinationSettings]
     }
   }
 
@@ -3779,10 +3118,9 @@ package medialive {
   object EmbeddedPlusScte20DestinationSettings {
     def apply(
         ): EmbeddedPlusScte20DestinationSettings = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary.empty[js.Any]
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[EmbeddedPlusScte20DestinationSettings]
+      __obj.asInstanceOf[EmbeddedPlusScte20DestinationSettings]
     }
   }
 
@@ -3814,22 +3152,12 @@ package medialive {
         Source608ChannelNumber: js.UndefOr[__integerMin1Max4] = js.undefined,
         Source608TrackNumber: js.UndefOr[__integerMin1Max5] = js.undefined
     ): EmbeddedSourceSettings = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Convert608To708" -> Convert608To708.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Scte20Detection" -> Scte20Detection.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Source608ChannelNumber" -> Source608ChannelNumber.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Source608TrackNumber" -> Source608TrackNumber.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[EmbeddedSourceSettings]
+      val __obj = js.Dictionary.empty[js.Any]
+      Convert608To708.foreach(__v => __obj.update("Convert608To708", __v.asInstanceOf[js.Any]))
+      Scte20Detection.foreach(__v => __obj.update("Scte20Detection", __v.asInstanceOf[js.Any]))
+      Source608ChannelNumber.foreach(__v => __obj.update("Source608ChannelNumber", __v.asInstanceOf[js.Any]))
+      Source608TrackNumber.foreach(__v => __obj.update("Source608TrackNumber", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[EmbeddedSourceSettings]
     }
   }
 
@@ -3861,29 +3189,19 @@ package medialive {
         CaptionDescriptions: js.UndefOr[__listOfCaptionDescription] = js.undefined,
         GlobalConfiguration: js.UndefOr[GlobalConfiguration] = js.undefined
     ): EncoderSettings = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "AudioDescriptions" -> AudioDescriptions.asInstanceOf[js.Any],
         "OutputGroups"      -> OutputGroups.asInstanceOf[js.Any],
         "TimecodeConfig"    -> TimecodeConfig.asInstanceOf[js.Any],
-        "VideoDescriptions" -> VideoDescriptions.asInstanceOf[js.Any],
-        "AvailBlanking" -> AvailBlanking.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "AvailConfiguration" -> AvailConfiguration.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "BlackoutSlate" -> BlackoutSlate.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "CaptionDescriptions" -> CaptionDescriptions.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "GlobalConfiguration" -> GlobalConfiguration.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "VideoDescriptions" -> VideoDescriptions.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[EncoderSettings]
+      AvailBlanking.foreach(__v => __obj.update("AvailBlanking", __v.asInstanceOf[js.Any]))
+      AvailConfiguration.foreach(__v => __obj.update("AvailConfiguration", __v.asInstanceOf[js.Any]))
+      BlackoutSlate.foreach(__v => __obj.update("BlackoutSlate", __v.asInstanceOf[js.Any]))
+      CaptionDescriptions.foreach(__v => __obj.update("CaptionDescriptions", __v.asInstanceOf[js.Any]))
+      GlobalConfiguration.foreach(__v => __obj.update("GlobalConfiguration", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[EncoderSettings]
     }
   }
 
@@ -3913,19 +3231,11 @@ package medialive {
         IncludeFec: js.UndefOr[FecOutputIncludeFec] = js.undefined,
         RowLength: js.UndefOr[__integerMin1Max20] = js.undefined
     ): FecOutputSettings = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ColumnDepth" -> ColumnDepth.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "IncludeFec" -> IncludeFec.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "RowLength" -> RowLength.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[FecOutputSettings]
+      val __obj = js.Dictionary.empty[js.Any]
+      ColumnDepth.foreach(__v => __obj.update("ColumnDepth", __v.asInstanceOf[js.Any]))
+      IncludeFec.foreach(__v => __obj.update("IncludeFec", __v.asInstanceOf[js.Any]))
+      RowLength.foreach(__v => __obj.update("RowLength", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[FecOutputSettings]
     }
   }
 
@@ -3972,11 +3282,11 @@ package medialive {
     def apply(
         Time: __string
     ): FixedModeScheduleActionStartSettings = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "Time" -> Time.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[FixedModeScheduleActionStartSettings]
+      __obj.asInstanceOf[FixedModeScheduleActionStartSettings]
     }
   }
 
@@ -3994,12 +3304,12 @@ package medialive {
         FollowPoint: FollowPoint,
         ReferenceActionName: __string
     ): FollowModeScheduleActionStartSettings = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "FollowPoint"         -> FollowPoint.asInstanceOf[js.Any],
         "ReferenceActionName" -> ReferenceActionName.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[FollowModeScheduleActionStartSettings]
+      __obj.asInstanceOf[FollowModeScheduleActionStartSettings]
     }
   }
 
@@ -4025,11 +3335,11 @@ package medialive {
     def apply(
         Destination: OutputLocationRef
     ): FrameCaptureGroupSettings = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "Destination" -> Destination.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[FrameCaptureGroupSettings]
+      __obj.asInstanceOf[FrameCaptureGroupSettings]
     }
   }
 
@@ -4045,13 +3355,9 @@ package medialive {
     def apply(
         NameModifier: js.UndefOr[__string] = js.undefined
     ): FrameCaptureOutputSettings = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "NameModifier" -> NameModifier.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[FrameCaptureOutputSettings]
+      val __obj = js.Dictionary.empty[js.Any]
+      NameModifier.foreach(__v => __obj.update("NameModifier", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[FrameCaptureOutputSettings]
     }
   }
 
@@ -4067,11 +3373,11 @@ package medialive {
     def apply(
         CaptureInterval: __integerMin1Max3600
     ): FrameCaptureSettings = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "CaptureInterval" -> CaptureInterval.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[FrameCaptureSettings]
+      __obj.asInstanceOf[FrameCaptureSettings]
     }
   }
 
@@ -4097,28 +3403,14 @@ package medialive {
         OutputTimingSource: js.UndefOr[GlobalConfigurationOutputTimingSource] = js.undefined,
         SupportLowFramerateInputs: js.UndefOr[GlobalConfigurationLowFramerateInputs] = js.undefined
     ): GlobalConfiguration = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "InitialAudioGain" -> InitialAudioGain.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "InputEndAction" -> InputEndAction.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "InputLossBehavior" -> InputLossBehavior.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "OutputLockingMode" -> OutputLockingMode.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "OutputTimingSource" -> OutputTimingSource.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SupportLowFramerateInputs" -> SupportLowFramerateInputs.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GlobalConfiguration]
+      val __obj = js.Dictionary.empty[js.Any]
+      InitialAudioGain.foreach(__v => __obj.update("InitialAudioGain", __v.asInstanceOf[js.Any]))
+      InputEndAction.foreach(__v => __obj.update("InputEndAction", __v.asInstanceOf[js.Any]))
+      InputLossBehavior.foreach(__v => __obj.update("InputLossBehavior", __v.asInstanceOf[js.Any]))
+      OutputLockingMode.foreach(__v => __obj.update("OutputLockingMode", __v.asInstanceOf[js.Any]))
+      OutputTimingSource.foreach(__v => __obj.update("OutputTimingSource", __v.asInstanceOf[js.Any]))
+      SupportLowFramerateInputs.foreach(__v => __obj.update("SupportLowFramerateInputs", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GlobalConfiguration]
     }
   }
 
@@ -4429,121 +3721,45 @@ package medialive {
         TemporalAq: js.UndefOr[H264TemporalAq] = js.undefined,
         TimecodeInsertion: js.UndefOr[H264TimecodeInsertionBehavior] = js.undefined
     ): H264Settings = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "AdaptiveQuantization" -> AdaptiveQuantization.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "AfdSignaling" -> AfdSignaling.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Bitrate" -> Bitrate.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "BufFillPct" -> BufFillPct.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "BufSize" -> BufSize.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ColorMetadata" -> ColorMetadata.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "EntropyEncoding" -> EntropyEncoding.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "FixedAfd" -> FixedAfd.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "FlickerAq" -> FlickerAq.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "FramerateControl" -> FramerateControl.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "FramerateDenominator" -> FramerateDenominator.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "FramerateNumerator" -> FramerateNumerator.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "GopBReference" -> GopBReference.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "GopClosedCadence" -> GopClosedCadence.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "GopNumBFrames" -> GopNumBFrames.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "GopSize" -> GopSize.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "GopSizeUnits" -> GopSizeUnits.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Level" -> Level.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "LookAheadRateControl" -> LookAheadRateControl.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MaxBitrate" -> MaxBitrate.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MinIInterval" -> MinIInterval.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NumRefFrames" -> NumRefFrames.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ParControl" -> ParControl.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ParDenominator" -> ParDenominator.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ParNumerator" -> ParNumerator.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Profile" -> Profile.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "QvbrQualityLevel" -> QvbrQualityLevel.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "RateControlMode" -> RateControlMode.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ScanType" -> ScanType.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SceneChangeDetect" -> SceneChangeDetect.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Slices" -> Slices.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Softness" -> Softness.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SpatialAq" -> SpatialAq.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SubgopLength" -> SubgopLength.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Syntax" -> Syntax.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "TemporalAq" -> TemporalAq.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "TimecodeInsertion" -> TimecodeInsertion.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[H264Settings]
+      val __obj = js.Dictionary.empty[js.Any]
+      AdaptiveQuantization.foreach(__v => __obj.update("AdaptiveQuantization", __v.asInstanceOf[js.Any]))
+      AfdSignaling.foreach(__v => __obj.update("AfdSignaling", __v.asInstanceOf[js.Any]))
+      Bitrate.foreach(__v => __obj.update("Bitrate", __v.asInstanceOf[js.Any]))
+      BufFillPct.foreach(__v => __obj.update("BufFillPct", __v.asInstanceOf[js.Any]))
+      BufSize.foreach(__v => __obj.update("BufSize", __v.asInstanceOf[js.Any]))
+      ColorMetadata.foreach(__v => __obj.update("ColorMetadata", __v.asInstanceOf[js.Any]))
+      EntropyEncoding.foreach(__v => __obj.update("EntropyEncoding", __v.asInstanceOf[js.Any]))
+      FixedAfd.foreach(__v => __obj.update("FixedAfd", __v.asInstanceOf[js.Any]))
+      FlickerAq.foreach(__v => __obj.update("FlickerAq", __v.asInstanceOf[js.Any]))
+      FramerateControl.foreach(__v => __obj.update("FramerateControl", __v.asInstanceOf[js.Any]))
+      FramerateDenominator.foreach(__v => __obj.update("FramerateDenominator", __v.asInstanceOf[js.Any]))
+      FramerateNumerator.foreach(__v => __obj.update("FramerateNumerator", __v.asInstanceOf[js.Any]))
+      GopBReference.foreach(__v => __obj.update("GopBReference", __v.asInstanceOf[js.Any]))
+      GopClosedCadence.foreach(__v => __obj.update("GopClosedCadence", __v.asInstanceOf[js.Any]))
+      GopNumBFrames.foreach(__v => __obj.update("GopNumBFrames", __v.asInstanceOf[js.Any]))
+      GopSize.foreach(__v => __obj.update("GopSize", __v.asInstanceOf[js.Any]))
+      GopSizeUnits.foreach(__v => __obj.update("GopSizeUnits", __v.asInstanceOf[js.Any]))
+      Level.foreach(__v => __obj.update("Level", __v.asInstanceOf[js.Any]))
+      LookAheadRateControl.foreach(__v => __obj.update("LookAheadRateControl", __v.asInstanceOf[js.Any]))
+      MaxBitrate.foreach(__v => __obj.update("MaxBitrate", __v.asInstanceOf[js.Any]))
+      MinIInterval.foreach(__v => __obj.update("MinIInterval", __v.asInstanceOf[js.Any]))
+      NumRefFrames.foreach(__v => __obj.update("NumRefFrames", __v.asInstanceOf[js.Any]))
+      ParControl.foreach(__v => __obj.update("ParControl", __v.asInstanceOf[js.Any]))
+      ParDenominator.foreach(__v => __obj.update("ParDenominator", __v.asInstanceOf[js.Any]))
+      ParNumerator.foreach(__v => __obj.update("ParNumerator", __v.asInstanceOf[js.Any]))
+      Profile.foreach(__v => __obj.update("Profile", __v.asInstanceOf[js.Any]))
+      QvbrQualityLevel.foreach(__v => __obj.update("QvbrQualityLevel", __v.asInstanceOf[js.Any]))
+      RateControlMode.foreach(__v => __obj.update("RateControlMode", __v.asInstanceOf[js.Any]))
+      ScanType.foreach(__v => __obj.update("ScanType", __v.asInstanceOf[js.Any]))
+      SceneChangeDetect.foreach(__v => __obj.update("SceneChangeDetect", __v.asInstanceOf[js.Any]))
+      Slices.foreach(__v => __obj.update("Slices", __v.asInstanceOf[js.Any]))
+      Softness.foreach(__v => __obj.update("Softness", __v.asInstanceOf[js.Any]))
+      SpatialAq.foreach(__v => __obj.update("SpatialAq", __v.asInstanceOf[js.Any]))
+      SubgopLength.foreach(__v => __obj.update("SubgopLength", __v.asInstanceOf[js.Any]))
+      Syntax.foreach(__v => __obj.update("Syntax", __v.asInstanceOf[js.Any]))
+      TemporalAq.foreach(__v => __obj.update("TemporalAq", __v.asInstanceOf[js.Any]))
+      TimecodeInsertion.foreach(__v => __obj.update("TimecodeInsertion", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[H264Settings]
     }
   }
 
@@ -4642,31 +3858,15 @@ package medialive {
         Salt: js.UndefOr[__string] = js.undefined,
         Token: js.UndefOr[__string] = js.undefined
     ): HlsAkamaiSettings = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ConnectionRetryInterval" -> ConnectionRetryInterval.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "FilecacheDuration" -> FilecacheDuration.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "HttpTransferMode" -> HttpTransferMode.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NumRetries" -> NumRetries.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "RestartDelay" -> RestartDelay.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Salt" -> Salt.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Token" -> Token.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[HlsAkamaiSettings]
+      val __obj = js.Dictionary.empty[js.Any]
+      ConnectionRetryInterval.foreach(__v => __obj.update("ConnectionRetryInterval", __v.asInstanceOf[js.Any]))
+      FilecacheDuration.foreach(__v => __obj.update("FilecacheDuration", __v.asInstanceOf[js.Any]))
+      HttpTransferMode.foreach(__v => __obj.update("HttpTransferMode", __v.asInstanceOf[js.Any]))
+      NumRetries.foreach(__v => __obj.update("NumRetries", __v.asInstanceOf[js.Any]))
+      RestartDelay.foreach(__v => __obj.update("RestartDelay", __v.asInstanceOf[js.Any]))
+      Salt.foreach(__v => __obj.update("Salt", __v.asInstanceOf[js.Any]))
+      Token.foreach(__v => __obj.update("Token", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[HlsAkamaiSettings]
     }
   }
 
@@ -4688,22 +3888,12 @@ package medialive {
         NumRetries: js.UndefOr[__integerMin0] = js.undefined,
         RestartDelay: js.UndefOr[__integerMin0Max15] = js.undefined
     ): HlsBasicPutSettings = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ConnectionRetryInterval" -> ConnectionRetryInterval.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "FilecacheDuration" -> FilecacheDuration.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NumRetries" -> NumRetries.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "RestartDelay" -> RestartDelay.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[HlsBasicPutSettings]
+      val __obj = js.Dictionary.empty[js.Any]
+      ConnectionRetryInterval.foreach(__v => __obj.update("ConnectionRetryInterval", __v.asInstanceOf[js.Any]))
+      FilecacheDuration.foreach(__v => __obj.update("FilecacheDuration", __v.asInstanceOf[js.Any]))
+      NumRetries.foreach(__v => __obj.update("NumRetries", __v.asInstanceOf[js.Any]))
+      RestartDelay.foreach(__v => __obj.update("RestartDelay", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[HlsBasicPutSettings]
     }
   }
 
@@ -4736,22 +3926,12 @@ package medialive {
         HlsMediaStoreSettings: js.UndefOr[HlsMediaStoreSettings] = js.undefined,
         HlsWebdavSettings: js.UndefOr[HlsWebdavSettings] = js.undefined
     ): HlsCdnSettings = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "HlsAkamaiSettings" -> HlsAkamaiSettings.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "HlsBasicPutSettings" -> HlsBasicPutSettings.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "HlsMediaStoreSettings" -> HlsMediaStoreSettings.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "HlsWebdavSettings" -> HlsWebdavSettings.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[HlsCdnSettings]
+      val __obj = js.Dictionary.empty[js.Any]
+      HlsAkamaiSettings.foreach(__v => __obj.update("HlsAkamaiSettings", __v.asInstanceOf[js.Any]))
+      HlsBasicPutSettings.foreach(__v => __obj.update("HlsBasicPutSettings", __v.asInstanceOf[js.Any]))
+      HlsMediaStoreSettings.foreach(__v => __obj.update("HlsMediaStoreSettings", __v.asInstanceOf[js.Any]))
+      HlsWebdavSettings.foreach(__v => __obj.update("HlsWebdavSettings", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[HlsCdnSettings]
     }
   }
 
@@ -4879,119 +4059,47 @@ package medialive {
         TimestampDeltaMilliseconds: js.UndefOr[__integerMin0] = js.undefined,
         TsFileMode: js.UndefOr[HlsTsFileMode] = js.undefined
     ): HlsGroupSettings = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Destination" -> Destination.asInstanceOf[js.Any],
-        "AdMarkers" -> AdMarkers.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "BaseUrlContent" -> BaseUrlContent.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "BaseUrlManifest" -> BaseUrlManifest.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "CaptionLanguageMappings" -> CaptionLanguageMappings.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "CaptionLanguageSetting" -> CaptionLanguageSetting.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ClientCache" -> ClientCache.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "CodecSpecification" -> CodecSpecification.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ConstantIv" -> ConstantIv.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DirectoryStructure" -> DirectoryStructure.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "EncryptionType" -> EncryptionType.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "HlsCdnSettings" -> HlsCdnSettings.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "IFrameOnlyPlaylists" -> IFrameOnlyPlaylists.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "IndexNSegments" -> IndexNSegments.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "InputLossAction" -> InputLossAction.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "IvInManifest" -> IvInManifest.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "IvSource" -> IvSource.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "KeepSegments" -> KeepSegments.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "KeyFormat" -> KeyFormat.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "KeyFormatVersions" -> KeyFormatVersions.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "KeyProviderSettings" -> KeyProviderSettings.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ManifestCompression" -> ManifestCompression.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ManifestDurationFormat" -> ManifestDurationFormat.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MinSegmentLength" -> MinSegmentLength.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Mode" -> Mode.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "OutputSelection" -> OutputSelection.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ProgramDateTime" -> ProgramDateTime.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ProgramDateTimePeriod" -> ProgramDateTimePeriod.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "RedundantManifest" -> RedundantManifest.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SegmentLength" -> SegmentLength.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SegmentationMode" -> SegmentationMode.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SegmentsPerSubdirectory" -> SegmentsPerSubdirectory.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "StreamInfResolution" -> StreamInfResolution.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "TimedMetadataId3Frame" -> TimedMetadataId3Frame.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "TimedMetadataId3Period" -> TimedMetadataId3Period.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "TimestampDeltaMilliseconds" -> TimestampDeltaMilliseconds.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "TsFileMode" -> TsFileMode.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "Destination" -> Destination.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[HlsGroupSettings]
+      AdMarkers.foreach(__v => __obj.update("AdMarkers", __v.asInstanceOf[js.Any]))
+      BaseUrlContent.foreach(__v => __obj.update("BaseUrlContent", __v.asInstanceOf[js.Any]))
+      BaseUrlManifest.foreach(__v => __obj.update("BaseUrlManifest", __v.asInstanceOf[js.Any]))
+      CaptionLanguageMappings.foreach(__v => __obj.update("CaptionLanguageMappings", __v.asInstanceOf[js.Any]))
+      CaptionLanguageSetting.foreach(__v => __obj.update("CaptionLanguageSetting", __v.asInstanceOf[js.Any]))
+      ClientCache.foreach(__v => __obj.update("ClientCache", __v.asInstanceOf[js.Any]))
+      CodecSpecification.foreach(__v => __obj.update("CodecSpecification", __v.asInstanceOf[js.Any]))
+      ConstantIv.foreach(__v => __obj.update("ConstantIv", __v.asInstanceOf[js.Any]))
+      DirectoryStructure.foreach(__v => __obj.update("DirectoryStructure", __v.asInstanceOf[js.Any]))
+      EncryptionType.foreach(__v => __obj.update("EncryptionType", __v.asInstanceOf[js.Any]))
+      HlsCdnSettings.foreach(__v => __obj.update("HlsCdnSettings", __v.asInstanceOf[js.Any]))
+      IFrameOnlyPlaylists.foreach(__v => __obj.update("IFrameOnlyPlaylists", __v.asInstanceOf[js.Any]))
+      IndexNSegments.foreach(__v => __obj.update("IndexNSegments", __v.asInstanceOf[js.Any]))
+      InputLossAction.foreach(__v => __obj.update("InputLossAction", __v.asInstanceOf[js.Any]))
+      IvInManifest.foreach(__v => __obj.update("IvInManifest", __v.asInstanceOf[js.Any]))
+      IvSource.foreach(__v => __obj.update("IvSource", __v.asInstanceOf[js.Any]))
+      KeepSegments.foreach(__v => __obj.update("KeepSegments", __v.asInstanceOf[js.Any]))
+      KeyFormat.foreach(__v => __obj.update("KeyFormat", __v.asInstanceOf[js.Any]))
+      KeyFormatVersions.foreach(__v => __obj.update("KeyFormatVersions", __v.asInstanceOf[js.Any]))
+      KeyProviderSettings.foreach(__v => __obj.update("KeyProviderSettings", __v.asInstanceOf[js.Any]))
+      ManifestCompression.foreach(__v => __obj.update("ManifestCompression", __v.asInstanceOf[js.Any]))
+      ManifestDurationFormat.foreach(__v => __obj.update("ManifestDurationFormat", __v.asInstanceOf[js.Any]))
+      MinSegmentLength.foreach(__v => __obj.update("MinSegmentLength", __v.asInstanceOf[js.Any]))
+      Mode.foreach(__v => __obj.update("Mode", __v.asInstanceOf[js.Any]))
+      OutputSelection.foreach(__v => __obj.update("OutputSelection", __v.asInstanceOf[js.Any]))
+      ProgramDateTime.foreach(__v => __obj.update("ProgramDateTime", __v.asInstanceOf[js.Any]))
+      ProgramDateTimePeriod.foreach(__v => __obj.update("ProgramDateTimePeriod", __v.asInstanceOf[js.Any]))
+      RedundantManifest.foreach(__v => __obj.update("RedundantManifest", __v.asInstanceOf[js.Any]))
+      SegmentLength.foreach(__v => __obj.update("SegmentLength", __v.asInstanceOf[js.Any]))
+      SegmentationMode.foreach(__v => __obj.update("SegmentationMode", __v.asInstanceOf[js.Any]))
+      SegmentsPerSubdirectory.foreach(__v => __obj.update("SegmentsPerSubdirectory", __v.asInstanceOf[js.Any]))
+      StreamInfResolution.foreach(__v => __obj.update("StreamInfResolution", __v.asInstanceOf[js.Any]))
+      TimedMetadataId3Frame.foreach(__v => __obj.update("TimedMetadataId3Frame", __v.asInstanceOf[js.Any]))
+      TimedMetadataId3Period.foreach(__v => __obj.update("TimedMetadataId3Period", __v.asInstanceOf[js.Any]))
+      TimestampDeltaMilliseconds.foreach(__v => __obj.update("TimestampDeltaMilliseconds", __v.asInstanceOf[js.Any]))
+      TsFileMode.foreach(__v => __obj.update("TsFileMode", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[HlsGroupSettings]
     }
   }
 
@@ -5013,22 +4121,12 @@ package medialive {
         Retries: js.UndefOr[__integerMin0] = js.undefined,
         RetryInterval: js.UndefOr[__integerMin0] = js.undefined
     ): HlsInputSettings = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Bandwidth" -> Bandwidth.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "BufferSegments" -> BufferSegments.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Retries" -> Retries.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "RetryInterval" -> RetryInterval.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[HlsInputSettings]
+      val __obj = js.Dictionary.empty[js.Any]
+      Bandwidth.foreach(__v => __obj.update("Bandwidth", __v.asInstanceOf[js.Any]))
+      BufferSegments.foreach(__v => __obj.update("BufferSegments", __v.asInstanceOf[js.Any]))
+      Retries.foreach(__v => __obj.update("Retries", __v.asInstanceOf[js.Any]))
+      RetryInterval.foreach(__v => __obj.update("RetryInterval", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[HlsInputSettings]
     }
   }
 
@@ -5092,25 +4190,13 @@ package medialive {
         NumRetries: js.UndefOr[__integerMin0] = js.undefined,
         RestartDelay: js.UndefOr[__integerMin0Max15] = js.undefined
     ): HlsMediaStoreSettings = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ConnectionRetryInterval" -> ConnectionRetryInterval.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "FilecacheDuration" -> FilecacheDuration.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MediaStoreStorageClass" -> MediaStoreStorageClass.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NumRetries" -> NumRetries.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "RestartDelay" -> RestartDelay.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[HlsMediaStoreSettings]
+      val __obj = js.Dictionary.empty[js.Any]
+      ConnectionRetryInterval.foreach(__v => __obj.update("ConnectionRetryInterval", __v.asInstanceOf[js.Any]))
+      FilecacheDuration.foreach(__v => __obj.update("FilecacheDuration", __v.asInstanceOf[js.Any]))
+      MediaStoreStorageClass.foreach(__v => __obj.update("MediaStoreStorageClass", __v.asInstanceOf[js.Any]))
+      NumRetries.foreach(__v => __obj.update("NumRetries", __v.asInstanceOf[js.Any]))
+      RestartDelay.foreach(__v => __obj.update("RestartDelay", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[HlsMediaStoreSettings]
     }
   }
 
@@ -5159,17 +4245,13 @@ package medialive {
         NameModifier: js.UndefOr[__stringMin1] = js.undefined,
         SegmentModifier: js.UndefOr[__string] = js.undefined
     ): HlsOutputSettings = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "HlsSettings" -> HlsSettings.asInstanceOf[js.Any],
-        "NameModifier" -> NameModifier.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SegmentModifier" -> SegmentModifier.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "HlsSettings" -> HlsSettings.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[HlsOutputSettings]
+      NameModifier.foreach(__v => __obj.update("NameModifier", __v.asInstanceOf[js.Any]))
+      SegmentModifier.foreach(__v => __obj.update("SegmentModifier", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[HlsOutputSettings]
     }
   }
 
@@ -5217,16 +4299,10 @@ package medialive {
         AudioOnlyHlsSettings: js.UndefOr[AudioOnlyHlsSettings] = js.undefined,
         StandardHlsSettings: js.UndefOr[StandardHlsSettings] = js.undefined
     ): HlsSettings = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "AudioOnlyHlsSettings" -> AudioOnlyHlsSettings.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "StandardHlsSettings" -> StandardHlsSettings.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[HlsSettings]
+      val __obj = js.Dictionary.empty[js.Any]
+      AudioOnlyHlsSettings.foreach(__v => __obj.update("AudioOnlyHlsSettings", __v.asInstanceOf[js.Any]))
+      StandardHlsSettings.foreach(__v => __obj.update("StandardHlsSettings", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[HlsSettings]
     }
   }
 
@@ -5263,11 +4339,11 @@ package medialive {
     def apply(
         Id3: __string
     ): HlsTimedMetadataScheduleActionSettings = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "Id3" -> Id3.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[HlsTimedMetadataScheduleActionSettings]
+      __obj.asInstanceOf[HlsTimedMetadataScheduleActionSettings]
     }
   }
 
@@ -5311,25 +4387,13 @@ package medialive {
         NumRetries: js.UndefOr[__integerMin0] = js.undefined,
         RestartDelay: js.UndefOr[__integerMin0Max15] = js.undefined
     ): HlsWebdavSettings = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ConnectionRetryInterval" -> ConnectionRetryInterval.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "FilecacheDuration" -> FilecacheDuration.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "HttpTransferMode" -> HttpTransferMode.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NumRetries" -> NumRetries.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "RestartDelay" -> RestartDelay.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[HlsWebdavSettings]
+      val __obj = js.Dictionary.empty[js.Any]
+      ConnectionRetryInterval.foreach(__v => __obj.update("ConnectionRetryInterval", __v.asInstanceOf[js.Any]))
+      FilecacheDuration.foreach(__v => __obj.update("FilecacheDuration", __v.asInstanceOf[js.Any]))
+      HttpTransferMode.foreach(__v => __obj.update("HttpTransferMode", __v.asInstanceOf[js.Any]))
+      NumRetries.foreach(__v => __obj.update("NumRetries", __v.asInstanceOf[js.Any]))
+      RestartDelay.foreach(__v => __obj.update("RestartDelay", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[HlsWebdavSettings]
     }
   }
 
@@ -5379,49 +4443,21 @@ package medialive {
         Tags: js.UndefOr[Tags] = js.undefined,
         Type: js.UndefOr[InputType] = js.undefined
     ): Input = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Arn" -> Arn.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "AttachedChannels" -> AttachedChannels.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Destinations" -> Destinations.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Id" -> Id.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "InputClass" -> InputClass.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MediaConnectFlows" -> MediaConnectFlows.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Name" -> Name.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "RoleArn" -> RoleArn.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SecurityGroups" -> SecurityGroups.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Sources" -> Sources.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "State" -> State.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Tags" -> Tags.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Type" -> Type.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Input]
+      val __obj = js.Dictionary.empty[js.Any]
+      Arn.foreach(__v => __obj.update("Arn", __v.asInstanceOf[js.Any]))
+      AttachedChannels.foreach(__v => __obj.update("AttachedChannels", __v.asInstanceOf[js.Any]))
+      Destinations.foreach(__v => __obj.update("Destinations", __v.asInstanceOf[js.Any]))
+      Id.foreach(__v => __obj.update("Id", __v.asInstanceOf[js.Any]))
+      InputClass.foreach(__v => __obj.update("InputClass", __v.asInstanceOf[js.Any]))
+      MediaConnectFlows.foreach(__v => __obj.update("MediaConnectFlows", __v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
+      RoleArn.foreach(__v => __obj.update("RoleArn", __v.asInstanceOf[js.Any]))
+      SecurityGroups.foreach(__v => __obj.update("SecurityGroups", __v.asInstanceOf[js.Any]))
+      Sources.foreach(__v => __obj.update("Sources", __v.asInstanceOf[js.Any]))
+      State.foreach(__v => __obj.update("State", __v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
+      Type.foreach(__v => __obj.update("Type", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Input]
     }
   }
 
@@ -5441,19 +4477,11 @@ package medialive {
         InputId: js.UndefOr[__string] = js.undefined,
         InputSettings: js.UndefOr[InputSettings] = js.undefined
     ): InputAttachment = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "InputAttachmentName" -> InputAttachmentName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "InputId" -> InputId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "InputSettings" -> InputSettings.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[InputAttachment]
+      val __obj = js.Dictionary.empty[js.Any]
+      InputAttachmentName.foreach(__v => __obj.update("InputAttachmentName", __v.asInstanceOf[js.Any]))
+      InputId.foreach(__v => __obj.update("InputId", __v.asInstanceOf[js.Any]))
+      InputSettings.foreach(__v => __obj.update("InputSettings", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[InputAttachment]
     }
   }
 
@@ -5471,12 +4499,12 @@ package medialive {
         Gain: __integerMinNegative60Max6,
         InputChannel: __integerMin0Max15
     ): InputChannelLevel = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "Gain"         -> Gain.asInstanceOf[js.Any],
         "InputChannel" -> InputChannel.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[InputChannelLevel]
+      __obj.asInstanceOf[InputChannelLevel]
     }
   }
 
@@ -5539,22 +4567,12 @@ package medialive {
         Url: js.UndefOr[__string] = js.undefined,
         Vpc: js.UndefOr[InputDestinationVpc] = js.undefined
     ): InputDestination = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Ip" -> Ip.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Port" -> Port.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Url" -> Url.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Vpc" -> Vpc.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[InputDestination]
+      val __obj = js.Dictionary.empty[js.Any]
+      Ip.foreach(__v => __obj.update("Ip", __v.asInstanceOf[js.Any]))
+      Port.foreach(__v => __obj.update("Port", __v.asInstanceOf[js.Any]))
+      Url.foreach(__v => __obj.update("Url", __v.asInstanceOf[js.Any]))
+      Vpc.foreach(__v => __obj.update("Vpc", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[InputDestination]
     }
   }
 
@@ -5570,13 +4588,9 @@ package medialive {
     def apply(
         StreamName: js.UndefOr[__string] = js.undefined
     ): InputDestinationRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "StreamName" -> StreamName.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[InputDestinationRequest]
+      val __obj = js.Dictionary.empty[js.Any]
+      StreamName.foreach(__v => __obj.update("StreamName", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[InputDestinationRequest]
     }
   }
 
@@ -5594,16 +4608,10 @@ package medialive {
         AvailabilityZone: js.UndefOr[__string] = js.undefined,
         NetworkInterfaceId: js.UndefOr[__string] = js.undefined
     ): InputDestinationVpc = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "AvailabilityZone" -> AvailabilityZone.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NetworkInterfaceId" -> NetworkInterfaceId.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[InputDestinationVpc]
+      val __obj = js.Dictionary.empty[js.Any]
+      AvailabilityZone.foreach(__v => __obj.update("AvailabilityZone", __v.asInstanceOf[js.Any]))
+      NetworkInterfaceId.foreach(__v => __obj.update("NetworkInterfaceId", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[InputDestinationVpc]
     }
   }
 
@@ -5634,17 +4642,13 @@ package medialive {
         PasswordParam: js.UndefOr[__string] = js.undefined,
         Username: js.UndefOr[__string] = js.undefined
     ): InputLocation = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Uri" -> Uri.asInstanceOf[js.Any],
-        "PasswordParam" -> PasswordParam.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Username" -> Username.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "Uri" -> Uri.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[InputLocation]
+      PasswordParam.foreach(__v => __obj.update("PasswordParam", __v.asInstanceOf[js.Any]))
+      Username.foreach(__v => __obj.update("Username", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[InputLocation]
     }
   }
 
@@ -5709,25 +4713,13 @@ package medialive {
         InputLossImageType: js.UndefOr[InputLossImageType] = js.undefined,
         RepeatFrameMsec: js.UndefOr[__integerMin0Max1000000] = js.undefined
     ): InputLossBehavior = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "BlackFrameMsec" -> BlackFrameMsec.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "InputLossImageColor" -> InputLossImageColor.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "InputLossImageSlate" -> InputLossImageSlate.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "InputLossImageType" -> InputLossImageType.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "RepeatFrameMsec" -> RepeatFrameMsec.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[InputLossBehavior]
+      val __obj = js.Dictionary.empty[js.Any]
+      BlackFrameMsec.foreach(__v => __obj.update("BlackFrameMsec", __v.asInstanceOf[js.Any]))
+      InputLossImageColor.foreach(__v => __obj.update("InputLossImageColor", __v.asInstanceOf[js.Any]))
+      InputLossImageSlate.foreach(__v => __obj.update("InputLossImageSlate", __v.asInstanceOf[js.Any]))
+      InputLossImageType.foreach(__v => __obj.update("InputLossImageType", __v.asInstanceOf[js.Any]))
+      RepeatFrameMsec.foreach(__v => __obj.update("RepeatFrameMsec", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[InputLossBehavior]
     }
   }
 
@@ -5785,28 +4777,14 @@ package medialive {
         Tags: js.UndefOr[Tags] = js.undefined,
         WhitelistRules: js.UndefOr[__listOfInputWhitelistRule] = js.undefined
     ): InputSecurityGroup = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Arn" -> Arn.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Id" -> Id.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Inputs" -> Inputs.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "State" -> State.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Tags" -> Tags.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "WhitelistRules" -> WhitelistRules.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[InputSecurityGroup]
+      val __obj = js.Dictionary.empty[js.Any]
+      Arn.foreach(__v => __obj.update("Arn", __v.asInstanceOf[js.Any]))
+      Id.foreach(__v => __obj.update("Id", __v.asInstanceOf[js.Any]))
+      Inputs.foreach(__v => __obj.update("Inputs", __v.asInstanceOf[js.Any]))
+      State.foreach(__v => __obj.update("State", __v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
+      WhitelistRules.foreach(__v => __obj.update("WhitelistRules", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[InputSecurityGroup]
     }
   }
 
@@ -5850,37 +4828,17 @@ package medialive {
         SourceEndBehavior: js.UndefOr[InputSourceEndBehavior] = js.undefined,
         VideoSelector: js.UndefOr[VideoSelector] = js.undefined
     ): InputSettings = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "AudioSelectors" -> AudioSelectors.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "CaptionSelectors" -> CaptionSelectors.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DeblockFilter" -> DeblockFilter.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DenoiseFilter" -> DenoiseFilter.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "FilterStrength" -> FilterStrength.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "InputFilter" -> InputFilter.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NetworkInputSettings" -> NetworkInputSettings.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SourceEndBehavior" -> SourceEndBehavior.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "VideoSelector" -> VideoSelector.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[InputSettings]
+      val __obj = js.Dictionary.empty[js.Any]
+      AudioSelectors.foreach(__v => __obj.update("AudioSelectors", __v.asInstanceOf[js.Any]))
+      CaptionSelectors.foreach(__v => __obj.update("CaptionSelectors", __v.asInstanceOf[js.Any]))
+      DeblockFilter.foreach(__v => __obj.update("DeblockFilter", __v.asInstanceOf[js.Any]))
+      DenoiseFilter.foreach(__v => __obj.update("DenoiseFilter", __v.asInstanceOf[js.Any]))
+      FilterStrength.foreach(__v => __obj.update("FilterStrength", __v.asInstanceOf[js.Any]))
+      InputFilter.foreach(__v => __obj.update("InputFilter", __v.asInstanceOf[js.Any]))
+      NetworkInputSettings.foreach(__v => __obj.update("NetworkInputSettings", __v.asInstanceOf[js.Any]))
+      SourceEndBehavior.foreach(__v => __obj.update("SourceEndBehavior", __v.asInstanceOf[js.Any]))
+      VideoSelector.foreach(__v => __obj.update("VideoSelector", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[InputSettings]
     }
   }
 
@@ -5900,19 +4858,11 @@ package medialive {
         Url: js.UndefOr[__string] = js.undefined,
         Username: js.UndefOr[__string] = js.undefined
     ): InputSource = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "PasswordParam" -> PasswordParam.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Url" -> Url.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Username" -> Username.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[InputSource]
+      val __obj = js.Dictionary.empty[js.Any]
+      PasswordParam.foreach(__v => __obj.update("PasswordParam", __v.asInstanceOf[js.Any]))
+      Url.foreach(__v => __obj.update("Url", __v.asInstanceOf[js.Any]))
+      Username.foreach(__v => __obj.update("Username", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[InputSource]
     }
   }
 
@@ -5942,19 +4892,11 @@ package medialive {
         Url: js.UndefOr[__string] = js.undefined,
         Username: js.UndefOr[__string] = js.undefined
     ): InputSourceRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "PasswordParam" -> PasswordParam.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Url" -> Url.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Username" -> Username.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[InputSourceRequest]
+      val __obj = js.Dictionary.empty[js.Any]
+      PasswordParam.foreach(__v => __obj.update("PasswordParam", __v.asInstanceOf[js.Any]))
+      Url.foreach(__v => __obj.update("Url", __v.asInstanceOf[js.Any]))
+      Username.foreach(__v => __obj.update("Username", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[InputSourceRequest]
     }
   }
 
@@ -5974,19 +4916,11 @@ package medialive {
         MaximumBitrate: js.UndefOr[InputMaximumBitrate] = js.undefined,
         Resolution: js.UndefOr[InputResolution] = js.undefined
     ): InputSpecification = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Codec" -> Codec.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MaximumBitrate" -> MaximumBitrate.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Resolution" -> Resolution.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[InputSpecification]
+      val __obj = js.Dictionary.empty[js.Any]
+      Codec.foreach(__v => __obj.update("Codec", __v.asInstanceOf[js.Any]))
+      MaximumBitrate.foreach(__v => __obj.update("MaximumBitrate", __v.asInstanceOf[js.Any]))
+      Resolution.foreach(__v => __obj.update("Resolution", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[InputSpecification]
     }
   }
 
@@ -6015,11 +4949,11 @@ package medialive {
     def apply(
         InputAttachmentNameReference: __string
     ): InputSwitchScheduleActionSettings = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "InputAttachmentNameReference" -> InputAttachmentNameReference.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[InputSwitchScheduleActionSettings]
+      __obj.asInstanceOf[InputSwitchScheduleActionSettings]
     }
   }
 
@@ -6055,14 +4989,12 @@ package medialive {
         SubnetIds: __listOf__string,
         SecurityGroupIds: js.UndefOr[__listOf__string] = js.undefined
     ): InputVpcRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "SubnetIds" -> SubnetIds.asInstanceOf[js.Any],
-        "SecurityGroupIds" -> SecurityGroupIds.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "SubnetIds" -> SubnetIds.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[InputVpcRequest]
+      SecurityGroupIds.foreach(__v => __obj.update("SecurityGroupIds", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[InputVpcRequest]
     }
   }
 
@@ -6078,13 +5010,9 @@ package medialive {
     def apply(
         Cidr: js.UndefOr[__string] = js.undefined
     ): InputWhitelistRule = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Cidr" -> Cidr.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[InputWhitelistRule]
+      val __obj = js.Dictionary.empty[js.Any]
+      Cidr.foreach(__v => __obj.update("Cidr", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[InputWhitelistRule]
     }
   }
 
@@ -6100,13 +5028,9 @@ package medialive {
     def apply(
         Cidr: js.UndefOr[__string] = js.undefined
     ): InputWhitelistRuleCidr = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Cidr" -> Cidr.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[InputWhitelistRuleCidr]
+      val __obj = js.Dictionary.empty[js.Any]
+      Cidr.foreach(__v => __obj.update("Cidr", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[InputWhitelistRuleCidr]
     }
   }
 
@@ -6122,13 +5046,9 @@ package medialive {
     def apply(
         StaticKeySettings: js.UndefOr[StaticKeySettings] = js.undefined
     ): KeyProviderSettings = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "StaticKeySettings" -> StaticKeySettings.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[KeyProviderSettings]
+      val __obj = js.Dictionary.empty[js.Any]
+      StaticKeySettings.foreach(__v => __obj.update("StaticKeySettings", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[KeyProviderSettings]
     }
   }
 
@@ -6146,16 +5066,10 @@ package medialive {
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
         NextToken: js.UndefOr[__string] = js.undefined
     ): ListChannelsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "MaxResults" -> MaxResults.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NextToken" -> NextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListChannelsRequest]
+      val __obj = js.Dictionary.empty[js.Any]
+      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListChannelsRequest]
     }
   }
 
@@ -6173,16 +5087,10 @@ package medialive {
         Channels: js.UndefOr[__listOfChannelSummary] = js.undefined,
         NextToken: js.UndefOr[__string] = js.undefined
     ): ListChannelsResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Channels" -> Channels.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NextToken" -> NextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListChannelsResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      Channels.foreach(__v => __obj.update("Channels", __v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListChannelsResponse]
     }
   }
 
@@ -6200,16 +5108,10 @@ package medialive {
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
         NextToken: js.UndefOr[__string] = js.undefined
     ): ListInputSecurityGroupsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "MaxResults" -> MaxResults.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NextToken" -> NextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListInputSecurityGroupsRequest]
+      val __obj = js.Dictionary.empty[js.Any]
+      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListInputSecurityGroupsRequest]
     }
   }
 
@@ -6227,16 +5129,10 @@ package medialive {
         InputSecurityGroups: js.UndefOr[__listOfInputSecurityGroup] = js.undefined,
         NextToken: js.UndefOr[__string] = js.undefined
     ): ListInputSecurityGroupsResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "InputSecurityGroups" -> InputSecurityGroups.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NextToken" -> NextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListInputSecurityGroupsResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      InputSecurityGroups.foreach(__v => __obj.update("InputSecurityGroups", __v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListInputSecurityGroupsResponse]
     }
   }
 
@@ -6254,16 +5150,10 @@ package medialive {
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
         NextToken: js.UndefOr[__string] = js.undefined
     ): ListInputsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "MaxResults" -> MaxResults.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NextToken" -> NextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListInputsRequest]
+      val __obj = js.Dictionary.empty[js.Any]
+      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListInputsRequest]
     }
   }
 
@@ -6281,16 +5171,10 @@ package medialive {
         Inputs: js.UndefOr[__listOfInput] = js.undefined,
         NextToken: js.UndefOr[__string] = js.undefined
     ): ListInputsResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Inputs" -> Inputs.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NextToken" -> NextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListInputsResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      Inputs.foreach(__v => __obj.update("Inputs", __v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListInputsResponse]
     }
   }
 
@@ -6326,43 +5210,19 @@ package medialive {
         SpecialFeature: js.UndefOr[__string] = js.undefined,
         VideoQuality: js.UndefOr[__string] = js.undefined
     ): ListOfferingsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ChannelClass" -> ChannelClass.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ChannelConfiguration" -> ChannelConfiguration.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Codec" -> Codec.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MaxResults" -> MaxResults.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MaximumBitrate" -> MaximumBitrate.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MaximumFramerate" -> MaximumFramerate.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NextToken" -> NextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Resolution" -> Resolution.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ResourceType" -> ResourceType.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SpecialFeature" -> SpecialFeature.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "VideoQuality" -> VideoQuality.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListOfferingsRequest]
+      val __obj = js.Dictionary.empty[js.Any]
+      ChannelClass.foreach(__v => __obj.update("ChannelClass", __v.asInstanceOf[js.Any]))
+      ChannelConfiguration.foreach(__v => __obj.update("ChannelConfiguration", __v.asInstanceOf[js.Any]))
+      Codec.foreach(__v => __obj.update("Codec", __v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
+      MaximumBitrate.foreach(__v => __obj.update("MaximumBitrate", __v.asInstanceOf[js.Any]))
+      MaximumFramerate.foreach(__v => __obj.update("MaximumFramerate", __v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      Resolution.foreach(__v => __obj.update("Resolution", __v.asInstanceOf[js.Any]))
+      ResourceType.foreach(__v => __obj.update("ResourceType", __v.asInstanceOf[js.Any]))
+      SpecialFeature.foreach(__v => __obj.update("SpecialFeature", __v.asInstanceOf[js.Any]))
+      VideoQuality.foreach(__v => __obj.update("VideoQuality", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListOfferingsRequest]
     }
   }
 
@@ -6380,16 +5240,10 @@ package medialive {
         NextToken: js.UndefOr[__string] = js.undefined,
         Offerings: js.UndefOr[__listOfOffering] = js.undefined
     ): ListOfferingsResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "NextToken" -> NextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Offerings" -> Offerings.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListOfferingsResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      Offerings.foreach(__v => __obj.update("Offerings", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListOfferingsResponse]
     }
   }
 
@@ -6423,40 +5277,18 @@ package medialive {
         SpecialFeature: js.UndefOr[__string] = js.undefined,
         VideoQuality: js.UndefOr[__string] = js.undefined
     ): ListReservationsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ChannelClass" -> ChannelClass.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Codec" -> Codec.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MaxResults" -> MaxResults.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MaximumBitrate" -> MaximumBitrate.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MaximumFramerate" -> MaximumFramerate.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NextToken" -> NextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Resolution" -> Resolution.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ResourceType" -> ResourceType.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SpecialFeature" -> SpecialFeature.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "VideoQuality" -> VideoQuality.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListReservationsRequest]
+      val __obj = js.Dictionary.empty[js.Any]
+      ChannelClass.foreach(__v => __obj.update("ChannelClass", __v.asInstanceOf[js.Any]))
+      Codec.foreach(__v => __obj.update("Codec", __v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
+      MaximumBitrate.foreach(__v => __obj.update("MaximumBitrate", __v.asInstanceOf[js.Any]))
+      MaximumFramerate.foreach(__v => __obj.update("MaximumFramerate", __v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      Resolution.foreach(__v => __obj.update("Resolution", __v.asInstanceOf[js.Any]))
+      ResourceType.foreach(__v => __obj.update("ResourceType", __v.asInstanceOf[js.Any]))
+      SpecialFeature.foreach(__v => __obj.update("SpecialFeature", __v.asInstanceOf[js.Any]))
+      VideoQuality.foreach(__v => __obj.update("VideoQuality", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListReservationsRequest]
     }
   }
 
@@ -6474,16 +5306,10 @@ package medialive {
         NextToken: js.UndefOr[__string] = js.undefined,
         Reservations: js.UndefOr[__listOfReservation] = js.undefined
     ): ListReservationsResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "NextToken" -> NextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Reservations" -> Reservations.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListReservationsResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      Reservations.foreach(__v => __obj.update("Reservations", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListReservationsResponse]
     }
   }
 
@@ -6499,11 +5325,11 @@ package medialive {
     def apply(
         ResourceArn: __string
     ): ListTagsForResourceRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListTagsForResourceRequest]
+      __obj.asInstanceOf[ListTagsForResourceRequest]
     }
   }
 
@@ -6519,13 +5345,9 @@ package medialive {
     def apply(
         Tags: js.UndefOr[Tags] = js.undefined
     ): ListTagsForResourceResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Tags" -> Tags.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListTagsForResourceResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListTagsForResourceResponse]
     }
   }
 
@@ -6818,148 +5640,54 @@ package medialive {
         TransportStreamId: js.UndefOr[__integerMin0Max65535] = js.undefined,
         VideoPid: js.UndefOr[__string] = js.undefined
     ): M2tsSettings = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "AbsentInputAudioBehavior" -> AbsentInputAudioBehavior.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Arib" -> Arib.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "AribCaptionsPid" -> AribCaptionsPid.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "AribCaptionsPidControl" -> AribCaptionsPidControl.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "AudioBufferModel" -> AudioBufferModel.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "AudioFramesPerPes" -> AudioFramesPerPes.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "AudioPids" -> AudioPids.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "AudioStreamType" -> AudioStreamType.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Bitrate" -> Bitrate.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "BufferModel" -> BufferModel.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "CcDescriptor" -> CcDescriptor.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DvbNitSettings" -> DvbNitSettings.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DvbSdtSettings" -> DvbSdtSettings.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DvbSubPids" -> DvbSubPids.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DvbTdtSettings" -> DvbTdtSettings.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DvbTeletextPid" -> DvbTeletextPid.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Ebif" -> Ebif.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "EbpAudioInterval" -> EbpAudioInterval.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "EbpLookaheadMs" -> EbpLookaheadMs.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "EbpPlacement" -> EbpPlacement.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "EcmPid" -> EcmPid.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "EsRateInPes" -> EsRateInPes.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "EtvPlatformPid" -> EtvPlatformPid.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "EtvSignalPid" -> EtvSignalPid.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "FragmentTime" -> FragmentTime.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Klv" -> Klv.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "KlvDataPids" -> KlvDataPids.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NullPacketBitrate" -> NullPacketBitrate.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "PatInterval" -> PatInterval.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "PcrControl" -> PcrControl.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "PcrPeriod" -> PcrPeriod.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "PcrPid" -> PcrPid.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "PmtInterval" -> PmtInterval.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "PmtPid" -> PmtPid.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ProgramNum" -> ProgramNum.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "RateMode" -> RateMode.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Scte27Pids" -> Scte27Pids.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Scte35Control" -> Scte35Control.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Scte35Pid" -> Scte35Pid.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SegmentationMarkers" -> SegmentationMarkers.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SegmentationStyle" -> SegmentationStyle.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SegmentationTime" -> SegmentationTime.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "TimedMetadataBehavior" -> TimedMetadataBehavior.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "TimedMetadataPid" -> TimedMetadataPid.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "TransportStreamId" -> TransportStreamId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "VideoPid" -> VideoPid.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[M2tsSettings]
+      val __obj = js.Dictionary.empty[js.Any]
+      AbsentInputAudioBehavior.foreach(__v => __obj.update("AbsentInputAudioBehavior", __v.asInstanceOf[js.Any]))
+      Arib.foreach(__v => __obj.update("Arib", __v.asInstanceOf[js.Any]))
+      AribCaptionsPid.foreach(__v => __obj.update("AribCaptionsPid", __v.asInstanceOf[js.Any]))
+      AribCaptionsPidControl.foreach(__v => __obj.update("AribCaptionsPidControl", __v.asInstanceOf[js.Any]))
+      AudioBufferModel.foreach(__v => __obj.update("AudioBufferModel", __v.asInstanceOf[js.Any]))
+      AudioFramesPerPes.foreach(__v => __obj.update("AudioFramesPerPes", __v.asInstanceOf[js.Any]))
+      AudioPids.foreach(__v => __obj.update("AudioPids", __v.asInstanceOf[js.Any]))
+      AudioStreamType.foreach(__v => __obj.update("AudioStreamType", __v.asInstanceOf[js.Any]))
+      Bitrate.foreach(__v => __obj.update("Bitrate", __v.asInstanceOf[js.Any]))
+      BufferModel.foreach(__v => __obj.update("BufferModel", __v.asInstanceOf[js.Any]))
+      CcDescriptor.foreach(__v => __obj.update("CcDescriptor", __v.asInstanceOf[js.Any]))
+      DvbNitSettings.foreach(__v => __obj.update("DvbNitSettings", __v.asInstanceOf[js.Any]))
+      DvbSdtSettings.foreach(__v => __obj.update("DvbSdtSettings", __v.asInstanceOf[js.Any]))
+      DvbSubPids.foreach(__v => __obj.update("DvbSubPids", __v.asInstanceOf[js.Any]))
+      DvbTdtSettings.foreach(__v => __obj.update("DvbTdtSettings", __v.asInstanceOf[js.Any]))
+      DvbTeletextPid.foreach(__v => __obj.update("DvbTeletextPid", __v.asInstanceOf[js.Any]))
+      Ebif.foreach(__v => __obj.update("Ebif", __v.asInstanceOf[js.Any]))
+      EbpAudioInterval.foreach(__v => __obj.update("EbpAudioInterval", __v.asInstanceOf[js.Any]))
+      EbpLookaheadMs.foreach(__v => __obj.update("EbpLookaheadMs", __v.asInstanceOf[js.Any]))
+      EbpPlacement.foreach(__v => __obj.update("EbpPlacement", __v.asInstanceOf[js.Any]))
+      EcmPid.foreach(__v => __obj.update("EcmPid", __v.asInstanceOf[js.Any]))
+      EsRateInPes.foreach(__v => __obj.update("EsRateInPes", __v.asInstanceOf[js.Any]))
+      EtvPlatformPid.foreach(__v => __obj.update("EtvPlatformPid", __v.asInstanceOf[js.Any]))
+      EtvSignalPid.foreach(__v => __obj.update("EtvSignalPid", __v.asInstanceOf[js.Any]))
+      FragmentTime.foreach(__v => __obj.update("FragmentTime", __v.asInstanceOf[js.Any]))
+      Klv.foreach(__v => __obj.update("Klv", __v.asInstanceOf[js.Any]))
+      KlvDataPids.foreach(__v => __obj.update("KlvDataPids", __v.asInstanceOf[js.Any]))
+      NullPacketBitrate.foreach(__v => __obj.update("NullPacketBitrate", __v.asInstanceOf[js.Any]))
+      PatInterval.foreach(__v => __obj.update("PatInterval", __v.asInstanceOf[js.Any]))
+      PcrControl.foreach(__v => __obj.update("PcrControl", __v.asInstanceOf[js.Any]))
+      PcrPeriod.foreach(__v => __obj.update("PcrPeriod", __v.asInstanceOf[js.Any]))
+      PcrPid.foreach(__v => __obj.update("PcrPid", __v.asInstanceOf[js.Any]))
+      PmtInterval.foreach(__v => __obj.update("PmtInterval", __v.asInstanceOf[js.Any]))
+      PmtPid.foreach(__v => __obj.update("PmtPid", __v.asInstanceOf[js.Any]))
+      ProgramNum.foreach(__v => __obj.update("ProgramNum", __v.asInstanceOf[js.Any]))
+      RateMode.foreach(__v => __obj.update("RateMode", __v.asInstanceOf[js.Any]))
+      Scte27Pids.foreach(__v => __obj.update("Scte27Pids", __v.asInstanceOf[js.Any]))
+      Scte35Control.foreach(__v => __obj.update("Scte35Control", __v.asInstanceOf[js.Any]))
+      Scte35Pid.foreach(__v => __obj.update("Scte35Pid", __v.asInstanceOf[js.Any]))
+      SegmentationMarkers.foreach(__v => __obj.update("SegmentationMarkers", __v.asInstanceOf[js.Any]))
+      SegmentationStyle.foreach(__v => __obj.update("SegmentationStyle", __v.asInstanceOf[js.Any]))
+      SegmentationTime.foreach(__v => __obj.update("SegmentationTime", __v.asInstanceOf[js.Any]))
+      TimedMetadataBehavior.foreach(__v => __obj.update("TimedMetadataBehavior", __v.asInstanceOf[js.Any]))
+      TimedMetadataPid.foreach(__v => __obj.update("TimedMetadataPid", __v.asInstanceOf[js.Any]))
+      TransportStreamId.foreach(__v => __obj.update("TransportStreamId", __v.asInstanceOf[js.Any]))
+      VideoPid.foreach(__v => __obj.update("VideoPid", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[M2tsSettings]
     }
   }
 
@@ -7035,58 +5763,24 @@ package medialive {
         TransportStreamId: js.UndefOr[__integerMin0Max65535] = js.undefined,
         VideoPid: js.UndefOr[__string] = js.undefined
     ): M3u8Settings = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "AudioFramesPerPes" -> AudioFramesPerPes.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "AudioPids" -> AudioPids.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "EcmPid" -> EcmPid.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "PatInterval" -> PatInterval.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "PcrControl" -> PcrControl.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "PcrPeriod" -> PcrPeriod.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "PcrPid" -> PcrPid.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "PmtInterval" -> PmtInterval.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "PmtPid" -> PmtPid.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ProgramNum" -> ProgramNum.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Scte35Behavior" -> Scte35Behavior.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Scte35Pid" -> Scte35Pid.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "TimedMetadataBehavior" -> TimedMetadataBehavior.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "TimedMetadataPid" -> TimedMetadataPid.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "TransportStreamId" -> TransportStreamId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "VideoPid" -> VideoPid.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[M3u8Settings]
+      val __obj = js.Dictionary.empty[js.Any]
+      AudioFramesPerPes.foreach(__v => __obj.update("AudioFramesPerPes", __v.asInstanceOf[js.Any]))
+      AudioPids.foreach(__v => __obj.update("AudioPids", __v.asInstanceOf[js.Any]))
+      EcmPid.foreach(__v => __obj.update("EcmPid", __v.asInstanceOf[js.Any]))
+      PatInterval.foreach(__v => __obj.update("PatInterval", __v.asInstanceOf[js.Any]))
+      PcrControl.foreach(__v => __obj.update("PcrControl", __v.asInstanceOf[js.Any]))
+      PcrPeriod.foreach(__v => __obj.update("PcrPeriod", __v.asInstanceOf[js.Any]))
+      PcrPid.foreach(__v => __obj.update("PcrPid", __v.asInstanceOf[js.Any]))
+      PmtInterval.foreach(__v => __obj.update("PmtInterval", __v.asInstanceOf[js.Any]))
+      PmtPid.foreach(__v => __obj.update("PmtPid", __v.asInstanceOf[js.Any]))
+      ProgramNum.foreach(__v => __obj.update("ProgramNum", __v.asInstanceOf[js.Any]))
+      Scte35Behavior.foreach(__v => __obj.update("Scte35Behavior", __v.asInstanceOf[js.Any]))
+      Scte35Pid.foreach(__v => __obj.update("Scte35Pid", __v.asInstanceOf[js.Any]))
+      TimedMetadataBehavior.foreach(__v => __obj.update("TimedMetadataBehavior", __v.asInstanceOf[js.Any]))
+      TimedMetadataPid.foreach(__v => __obj.update("TimedMetadataPid", __v.asInstanceOf[js.Any]))
+      TransportStreamId.foreach(__v => __obj.update("TransportStreamId", __v.asInstanceOf[js.Any]))
+      VideoPid.foreach(__v => __obj.update("VideoPid", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[M3u8Settings]
     }
   }
 
@@ -7112,13 +5806,9 @@ package medialive {
     def apply(
         FlowArn: js.UndefOr[__string] = js.undefined
     ): MediaConnectFlow = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "FlowArn" -> FlowArn.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[MediaConnectFlow]
+      val __obj = js.Dictionary.empty[js.Any]
+      FlowArn.foreach(__v => __obj.update("FlowArn", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[MediaConnectFlow]
     }
   }
 
@@ -7134,13 +5824,9 @@ package medialive {
     def apply(
         FlowArn: js.UndefOr[__string] = js.undefined
     ): MediaConnectFlowRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "FlowArn" -> FlowArn.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[MediaConnectFlowRequest]
+      val __obj = js.Dictionary.empty[js.Any]
+      FlowArn.foreach(__v => __obj.update("FlowArn", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[MediaConnectFlowRequest]
     }
   }
 
@@ -7156,11 +5842,11 @@ package medialive {
     def apply(
         Destination: OutputLocationRef
     ): MediaPackageGroupSettings = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "Destination" -> Destination.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[MediaPackageGroupSettings]
+      __obj.asInstanceOf[MediaPackageGroupSettings]
     }
   }
 
@@ -7176,13 +5862,9 @@ package medialive {
     def apply(
         ChannelId: js.UndefOr[__stringMin1] = js.undefined
     ): MediaPackageOutputDestinationSettings = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ChannelId" -> ChannelId.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[MediaPackageOutputDestinationSettings]
+      val __obj = js.Dictionary.empty[js.Any]
+      ChannelId.foreach(__v => __obj.update("ChannelId", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[MediaPackageOutputDestinationSettings]
     }
   }
 
@@ -7195,10 +5877,9 @@ package medialive {
   object MediaPackageOutputSettings {
     def apply(
         ): MediaPackageOutputSettings = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary.empty[js.Any]
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[MediaPackageOutputSettings]
+      __obj.asInstanceOf[MediaPackageOutputSettings]
     }
   }
 
@@ -7228,19 +5909,11 @@ package medialive {
         CodingMode: js.UndefOr[Mp2CodingMode] = js.undefined,
         SampleRate: js.UndefOr[__double] = js.undefined
     ): Mp2Settings = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Bitrate" -> Bitrate.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "CodingMode" -> CodingMode.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SampleRate" -> SampleRate.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Mp2Settings]
+      val __obj = js.Dictionary.empty[js.Any]
+      Bitrate.foreach(__v => __obj.update("Bitrate", __v.asInstanceOf[js.Any]))
+      CodingMode.foreach(__v => __obj.update("CodingMode", __v.asInstanceOf[js.Any]))
+      SampleRate.foreach(__v => __obj.update("SampleRate", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Mp2Settings]
     }
   }
 
@@ -7292,65 +5965,29 @@ package medialive {
         TimestampOffset: js.UndefOr[__string] = js.undefined,
         TimestampOffsetMode: js.UndefOr[SmoothGroupTimestampOffsetMode] = js.undefined
     ): MsSmoothGroupSettings = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Destination" -> Destination.asInstanceOf[js.Any],
-        "AcquisitionPointId" -> AcquisitionPointId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "AudioOnlyTimecodeControl" -> AudioOnlyTimecodeControl.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "CertificateMode" -> CertificateMode.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ConnectionRetryInterval" -> ConnectionRetryInterval.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "EventId" -> EventId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "EventIdMode" -> EventIdMode.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "EventStopBehavior" -> EventStopBehavior.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "FilecacheDuration" -> FilecacheDuration.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "FragmentLength" -> FragmentLength.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "InputLossAction" -> InputLossAction.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NumRetries" -> NumRetries.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "RestartDelay" -> RestartDelay.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SegmentationMode" -> SegmentationMode.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SendDelayMs" -> SendDelayMs.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SparseTrackType" -> SparseTrackType.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "StreamManifestBehavior" -> StreamManifestBehavior.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "TimestampOffset" -> TimestampOffset.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "TimestampOffsetMode" -> TimestampOffsetMode.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "Destination" -> Destination.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[MsSmoothGroupSettings]
+      AcquisitionPointId.foreach(__v => __obj.update("AcquisitionPointId", __v.asInstanceOf[js.Any]))
+      AudioOnlyTimecodeControl.foreach(__v => __obj.update("AudioOnlyTimecodeControl", __v.asInstanceOf[js.Any]))
+      CertificateMode.foreach(__v => __obj.update("CertificateMode", __v.asInstanceOf[js.Any]))
+      ConnectionRetryInterval.foreach(__v => __obj.update("ConnectionRetryInterval", __v.asInstanceOf[js.Any]))
+      EventId.foreach(__v => __obj.update("EventId", __v.asInstanceOf[js.Any]))
+      EventIdMode.foreach(__v => __obj.update("EventIdMode", __v.asInstanceOf[js.Any]))
+      EventStopBehavior.foreach(__v => __obj.update("EventStopBehavior", __v.asInstanceOf[js.Any]))
+      FilecacheDuration.foreach(__v => __obj.update("FilecacheDuration", __v.asInstanceOf[js.Any]))
+      FragmentLength.foreach(__v => __obj.update("FragmentLength", __v.asInstanceOf[js.Any]))
+      InputLossAction.foreach(__v => __obj.update("InputLossAction", __v.asInstanceOf[js.Any]))
+      NumRetries.foreach(__v => __obj.update("NumRetries", __v.asInstanceOf[js.Any]))
+      RestartDelay.foreach(__v => __obj.update("RestartDelay", __v.asInstanceOf[js.Any]))
+      SegmentationMode.foreach(__v => __obj.update("SegmentationMode", __v.asInstanceOf[js.Any]))
+      SendDelayMs.foreach(__v => __obj.update("SendDelayMs", __v.asInstanceOf[js.Any]))
+      SparseTrackType.foreach(__v => __obj.update("SparseTrackType", __v.asInstanceOf[js.Any]))
+      StreamManifestBehavior.foreach(__v => __obj.update("StreamManifestBehavior", __v.asInstanceOf[js.Any]))
+      TimestampOffset.foreach(__v => __obj.update("TimestampOffset", __v.asInstanceOf[js.Any]))
+      TimestampOffsetMode.foreach(__v => __obj.update("TimestampOffsetMode", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[MsSmoothGroupSettings]
     }
   }
 
@@ -7366,13 +6003,9 @@ package medialive {
     def apply(
         NameModifier: js.UndefOr[__string] = js.undefined
     ): MsSmoothOutputSettings = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "NameModifier" -> NameModifier.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[MsSmoothOutputSettings]
+      val __obj = js.Dictionary.empty[js.Any]
+      NameModifier.foreach(__v => __obj.update("NameModifier", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[MsSmoothOutputSettings]
     }
   }
 
@@ -7400,16 +6033,10 @@ package medialive {
         HlsInputSettings: js.UndefOr[HlsInputSettings] = js.undefined,
         ServerValidation: js.UndefOr[NetworkInputServerValidation] = js.undefined
     ): NetworkInputSettings = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "HlsInputSettings" -> HlsInputSettings.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ServerValidation" -> ServerValidation.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[NetworkInputSettings]
+      val __obj = js.Dictionary.empty[js.Any]
+      HlsInputSettings.foreach(__v => __obj.update("HlsInputSettings", __v.asInstanceOf[js.Any]))
+      ServerValidation.foreach(__v => __obj.update("ServerValidation", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[NetworkInputSettings]
     }
   }
 
@@ -7445,43 +6072,19 @@ package medialive {
         ResourceSpecification: js.UndefOr[ReservationResourceSpecification] = js.undefined,
         UsagePrice: js.UndefOr[__double] = js.undefined
     ): Offering = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Arn" -> Arn.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "CurrencyCode" -> CurrencyCode.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Duration" -> Duration.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DurationUnits" -> DurationUnits.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "FixedPrice" -> FixedPrice.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "OfferingDescription" -> OfferingDescription.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "OfferingId" -> OfferingId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "OfferingType" -> OfferingType.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Region" -> Region.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ResourceSpecification" -> ResourceSpecification.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "UsagePrice" -> UsagePrice.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Offering]
+      val __obj = js.Dictionary.empty[js.Any]
+      Arn.foreach(__v => __obj.update("Arn", __v.asInstanceOf[js.Any]))
+      CurrencyCode.foreach(__v => __obj.update("CurrencyCode", __v.asInstanceOf[js.Any]))
+      Duration.foreach(__v => __obj.update("Duration", __v.asInstanceOf[js.Any]))
+      DurationUnits.foreach(__v => __obj.update("DurationUnits", __v.asInstanceOf[js.Any]))
+      FixedPrice.foreach(__v => __obj.update("FixedPrice", __v.asInstanceOf[js.Any]))
+      OfferingDescription.foreach(__v => __obj.update("OfferingDescription", __v.asInstanceOf[js.Any]))
+      OfferingId.foreach(__v => __obj.update("OfferingId", __v.asInstanceOf[js.Any]))
+      OfferingType.foreach(__v => __obj.update("OfferingType", __v.asInstanceOf[js.Any]))
+      Region.foreach(__v => __obj.update("Region", __v.asInstanceOf[js.Any]))
+      ResourceSpecification.foreach(__v => __obj.update("ResourceSpecification", __v.asInstanceOf[js.Any]))
+      UsagePrice.foreach(__v => __obj.update("UsagePrice", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Offering]
     }
   }
 
@@ -7523,23 +6126,15 @@ package medialive {
         OutputName: js.UndefOr[__stringMin1Max255] = js.undefined,
         VideoDescriptionName: js.UndefOr[__string] = js.undefined
     ): Output = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "OutputSettings" -> OutputSettings.asInstanceOf[js.Any],
-        "AudioDescriptionNames" -> AudioDescriptionNames.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "CaptionDescriptionNames" -> CaptionDescriptionNames.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "OutputName" -> OutputName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "VideoDescriptionName" -> VideoDescriptionName.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "OutputSettings" -> OutputSettings.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Output]
+      AudioDescriptionNames.foreach(__v => __obj.update("AudioDescriptionNames", __v.asInstanceOf[js.Any]))
+      CaptionDescriptionNames.foreach(__v => __obj.update("CaptionDescriptionNames", __v.asInstanceOf[js.Any]))
+      OutputName.foreach(__v => __obj.update("OutputName", __v.asInstanceOf[js.Any]))
+      VideoDescriptionName.foreach(__v => __obj.update("VideoDescriptionName", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Output]
     }
   }
 
@@ -7559,19 +6154,11 @@ package medialive {
         MediaPackageSettings: js.UndefOr[__listOfMediaPackageOutputDestinationSettings] = js.undefined,
         Settings: js.UndefOr[__listOfOutputDestinationSettings] = js.undefined
     ): OutputDestination = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Id" -> Id.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MediaPackageSettings" -> MediaPackageSettings.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Settings" -> Settings.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[OutputDestination]
+      val __obj = js.Dictionary.empty[js.Any]
+      Id.foreach(__v => __obj.update("Id", __v.asInstanceOf[js.Any]))
+      MediaPackageSettings.foreach(__v => __obj.update("MediaPackageSettings", __v.asInstanceOf[js.Any]))
+      Settings.foreach(__v => __obj.update("Settings", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[OutputDestination]
     }
   }
 
@@ -7593,22 +6180,12 @@ package medialive {
         Url: js.UndefOr[__string] = js.undefined,
         Username: js.UndefOr[__string] = js.undefined
     ): OutputDestinationSettings = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "PasswordParam" -> PasswordParam.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "StreamName" -> StreamName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Url" -> Url.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Username" -> Username.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[OutputDestinationSettings]
+      val __obj = js.Dictionary.empty[js.Any]
+      PasswordParam.foreach(__v => __obj.update("PasswordParam", __v.asInstanceOf[js.Any]))
+      StreamName.foreach(__v => __obj.update("StreamName", __v.asInstanceOf[js.Any]))
+      Url.foreach(__v => __obj.update("Url", __v.asInstanceOf[js.Any]))
+      Username.foreach(__v => __obj.update("Username", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[OutputDestinationSettings]
     }
   }
 
@@ -7628,15 +6205,13 @@ package medialive {
         Outputs: __listOfOutput,
         Name: js.UndefOr[__stringMax32] = js.undefined
     ): OutputGroup = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "OutputGroupSettings" -> OutputGroupSettings.asInstanceOf[js.Any],
-        "Outputs"             -> Outputs.asInstanceOf[js.Any],
-        "Name" -> Name.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "Outputs"             -> Outputs.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[OutputGroup]
+      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[OutputGroup]
     }
   }
 
@@ -7664,31 +6239,15 @@ package medialive {
         RtmpGroupSettings: js.UndefOr[RtmpGroupSettings] = js.undefined,
         UdpGroupSettings: js.UndefOr[UdpGroupSettings] = js.undefined
     ): OutputGroupSettings = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ArchiveGroupSettings" -> ArchiveGroupSettings.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "FrameCaptureGroupSettings" -> FrameCaptureGroupSettings.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "HlsGroupSettings" -> HlsGroupSettings.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MediaPackageGroupSettings" -> MediaPackageGroupSettings.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MsSmoothGroupSettings" -> MsSmoothGroupSettings.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "RtmpGroupSettings" -> RtmpGroupSettings.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "UdpGroupSettings" -> UdpGroupSettings.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[OutputGroupSettings]
+      val __obj = js.Dictionary.empty[js.Any]
+      ArchiveGroupSettings.foreach(__v => __obj.update("ArchiveGroupSettings", __v.asInstanceOf[js.Any]))
+      FrameCaptureGroupSettings.foreach(__v => __obj.update("FrameCaptureGroupSettings", __v.asInstanceOf[js.Any]))
+      HlsGroupSettings.foreach(__v => __obj.update("HlsGroupSettings", __v.asInstanceOf[js.Any]))
+      MediaPackageGroupSettings.foreach(__v => __obj.update("MediaPackageGroupSettings", __v.asInstanceOf[js.Any]))
+      MsSmoothGroupSettings.foreach(__v => __obj.update("MsSmoothGroupSettings", __v.asInstanceOf[js.Any]))
+      RtmpGroupSettings.foreach(__v => __obj.update("RtmpGroupSettings", __v.asInstanceOf[js.Any]))
+      UdpGroupSettings.foreach(__v => __obj.update("UdpGroupSettings", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[OutputGroupSettings]
     }
   }
 
@@ -7704,13 +6263,9 @@ package medialive {
     def apply(
         DestinationRefId: js.UndefOr[__string] = js.undefined
     ): OutputLocationRef = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "DestinationRefId" -> DestinationRefId.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[OutputLocationRef]
+      val __obj = js.Dictionary.empty[js.Any]
+      DestinationRefId.foreach(__v => __obj.update("DestinationRefId", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[OutputLocationRef]
     }
   }
 
@@ -7738,31 +6293,15 @@ package medialive {
         RtmpOutputSettings: js.UndefOr[RtmpOutputSettings] = js.undefined,
         UdpOutputSettings: js.UndefOr[UdpOutputSettings] = js.undefined
     ): OutputSettings = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ArchiveOutputSettings" -> ArchiveOutputSettings.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "FrameCaptureOutputSettings" -> FrameCaptureOutputSettings.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "HlsOutputSettings" -> HlsOutputSettings.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MediaPackageOutputSettings" -> MediaPackageOutputSettings.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MsSmoothOutputSettings" -> MsSmoothOutputSettings.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "RtmpOutputSettings" -> RtmpOutputSettings.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "UdpOutputSettings" -> UdpOutputSettings.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[OutputSettings]
+      val __obj = js.Dictionary.empty[js.Any]
+      ArchiveOutputSettings.foreach(__v => __obj.update("ArchiveOutputSettings", __v.asInstanceOf[js.Any]))
+      FrameCaptureOutputSettings.foreach(__v => __obj.update("FrameCaptureOutputSettings", __v.asInstanceOf[js.Any]))
+      HlsOutputSettings.foreach(__v => __obj.update("HlsOutputSettings", __v.asInstanceOf[js.Any]))
+      MediaPackageOutputSettings.foreach(__v => __obj.update("MediaPackageOutputSettings", __v.asInstanceOf[js.Any]))
+      MsSmoothOutputSettings.foreach(__v => __obj.update("MsSmoothOutputSettings", __v.asInstanceOf[js.Any]))
+      RtmpOutputSettings.foreach(__v => __obj.update("RtmpOutputSettings", __v.asInstanceOf[js.Any]))
+      UdpOutputSettings.foreach(__v => __obj.update("UdpOutputSettings", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[OutputSettings]
     }
   }
 
@@ -7775,10 +6314,9 @@ package medialive {
   object PassThroughSettings {
     def apply(
         ): PassThroughSettings = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary.empty[js.Any]
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PassThroughSettings]
+      __obj.asInstanceOf[PassThroughSettings]
     }
   }
 
@@ -7794,13 +6332,9 @@ package medialive {
     def apply(
         Pipelines: js.UndefOr[__listOfPipelinePauseStateSettings] = js.undefined
     ): PauseStateScheduleActionSettings = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Pipelines" -> Pipelines.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PauseStateScheduleActionSettings]
+      val __obj = js.Dictionary.empty[js.Any]
+      Pipelines.foreach(__v => __obj.update("Pipelines", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PauseStateScheduleActionSettings]
     }
   }
 
@@ -7826,11 +6360,11 @@ package medialive {
     def apply(
         PipelineId: PipelineId
     ): PipelinePauseStateSettings = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "PipelineId" -> PipelineId.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PipelinePauseStateSettings]
+      __obj.asInstanceOf[PipelinePauseStateSettings]
     }
   }
 
@@ -7856,24 +6390,16 @@ package medialive {
         Start: js.UndefOr[__string] = js.undefined,
         Tags: js.UndefOr[Tags] = js.undefined
     ): PurchaseOfferingRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "Count"      -> Count.asInstanceOf[js.Any],
-        "OfferingId" -> OfferingId.asInstanceOf[js.Any],
-        "Name" -> Name.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "RequestId" -> RequestId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Start" -> Start.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Tags" -> Tags.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "OfferingId" -> OfferingId.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PurchaseOfferingRequest]
+      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
+      RequestId.foreach(__v => __obj.update("RequestId", __v.asInstanceOf[js.Any]))
+      Start.foreach(__v => __obj.update("Start", __v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PurchaseOfferingRequest]
     }
   }
 
@@ -7889,13 +6415,9 @@ package medialive {
     def apply(
         Reservation: js.UndefOr[Reservation] = js.undefined
     ): PurchaseOfferingResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Reservation" -> Reservation.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PurchaseOfferingResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      Reservation.foreach(__v => __obj.update("Reservation", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PurchaseOfferingResponse]
     }
   }
 
@@ -7915,17 +6437,13 @@ package medialive {
         ChannelsIn: js.UndefOr[__integerMin1Max16] = js.undefined,
         ChannelsOut: js.UndefOr[__integerMin1Max8] = js.undefined
     ): RemixSettings = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ChannelMappings" -> ChannelMappings.asInstanceOf[js.Any],
-        "ChannelsIn" -> ChannelsIn.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ChannelsOut" -> ChannelsOut.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "ChannelMappings" -> ChannelMappings.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RemixSettings]
+      ChannelsIn.foreach(__v => __obj.update("ChannelsIn", __v.asInstanceOf[js.Any]))
+      ChannelsOut.foreach(__v => __obj.update("ChannelsOut", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[RemixSettings]
     }
   }
 
@@ -7975,64 +6493,26 @@ package medialive {
         Tags: js.UndefOr[Tags] = js.undefined,
         UsagePrice: js.UndefOr[__double] = js.undefined
     ): Reservation = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Arn" -> Arn.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Count" -> Count.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "CurrencyCode" -> CurrencyCode.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Duration" -> Duration.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DurationUnits" -> DurationUnits.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "End" -> End.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "FixedPrice" -> FixedPrice.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Name" -> Name.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "OfferingDescription" -> OfferingDescription.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "OfferingId" -> OfferingId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "OfferingType" -> OfferingType.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Region" -> Region.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ReservationId" -> ReservationId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ResourceSpecification" -> ResourceSpecification.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Start" -> Start.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "State" -> State.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Tags" -> Tags.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "UsagePrice" -> UsagePrice.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Reservation]
+      val __obj = js.Dictionary.empty[js.Any]
+      Arn.foreach(__v => __obj.update("Arn", __v.asInstanceOf[js.Any]))
+      Count.foreach(__v => __obj.update("Count", __v.asInstanceOf[js.Any]))
+      CurrencyCode.foreach(__v => __obj.update("CurrencyCode", __v.asInstanceOf[js.Any]))
+      Duration.foreach(__v => __obj.update("Duration", __v.asInstanceOf[js.Any]))
+      DurationUnits.foreach(__v => __obj.update("DurationUnits", __v.asInstanceOf[js.Any]))
+      End.foreach(__v => __obj.update("End", __v.asInstanceOf[js.Any]))
+      FixedPrice.foreach(__v => __obj.update("FixedPrice", __v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
+      OfferingDescription.foreach(__v => __obj.update("OfferingDescription", __v.asInstanceOf[js.Any]))
+      OfferingId.foreach(__v => __obj.update("OfferingId", __v.asInstanceOf[js.Any]))
+      OfferingType.foreach(__v => __obj.update("OfferingType", __v.asInstanceOf[js.Any]))
+      Region.foreach(__v => __obj.update("Region", __v.asInstanceOf[js.Any]))
+      ReservationId.foreach(__v => __obj.update("ReservationId", __v.asInstanceOf[js.Any]))
+      ResourceSpecification.foreach(__v => __obj.update("ResourceSpecification", __v.asInstanceOf[js.Any]))
+      Start.foreach(__v => __obj.update("Start", __v.asInstanceOf[js.Any]))
+      State.foreach(__v => __obj.update("State", __v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
+      UsagePrice.foreach(__v => __obj.update("UsagePrice", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Reservation]
     }
   }
 
@@ -8106,34 +6586,16 @@ package medialive {
         SpecialFeature: js.UndefOr[ReservationSpecialFeature] = js.undefined,
         VideoQuality: js.UndefOr[ReservationVideoQuality] = js.undefined
     ): ReservationResourceSpecification = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ChannelClass" -> ChannelClass.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Codec" -> Codec.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MaximumBitrate" -> MaximumBitrate.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MaximumFramerate" -> MaximumFramerate.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Resolution" -> Resolution.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ResourceType" -> ResourceType.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SpecialFeature" -> SpecialFeature.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "VideoQuality" -> VideoQuality.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ReservationResourceSpecification]
+      val __obj = js.Dictionary.empty[js.Any]
+      ChannelClass.foreach(__v => __obj.update("ChannelClass", __v.asInstanceOf[js.Any]))
+      Codec.foreach(__v => __obj.update("Codec", __v.asInstanceOf[js.Any]))
+      MaximumBitrate.foreach(__v => __obj.update("MaximumBitrate", __v.asInstanceOf[js.Any]))
+      MaximumFramerate.foreach(__v => __obj.update("MaximumFramerate", __v.asInstanceOf[js.Any]))
+      Resolution.foreach(__v => __obj.update("Resolution", __v.asInstanceOf[js.Any]))
+      ResourceType.foreach(__v => __obj.update("ResourceType", __v.asInstanceOf[js.Any]))
+      SpecialFeature.foreach(__v => __obj.update("SpecialFeature", __v.asInstanceOf[js.Any]))
+      VideoQuality.foreach(__v => __obj.update("VideoQuality", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ReservationResourceSpecification]
     }
   }
 
@@ -8211,10 +6673,9 @@ package medialive {
   object RtmpCaptionInfoDestinationSettings {
     def apply(
         ): RtmpCaptionInfoDestinationSettings = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary.empty[js.Any]
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RtmpCaptionInfoDestinationSettings]
+      __obj.asInstanceOf[RtmpCaptionInfoDestinationSettings]
     }
   }
 
@@ -8240,28 +6701,14 @@ package medialive {
         InputLossAction: js.UndefOr[InputLossActionForRtmpOut] = js.undefined,
         RestartDelay: js.UndefOr[__integerMin0] = js.undefined
     ): RtmpGroupSettings = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "AuthenticationScheme" -> AuthenticationScheme.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "CacheFullBehavior" -> CacheFullBehavior.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "CacheLength" -> CacheLength.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "CaptionData" -> CaptionData.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "InputLossAction" -> InputLossAction.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "RestartDelay" -> RestartDelay.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RtmpGroupSettings]
+      val __obj = js.Dictionary.empty[js.Any]
+      AuthenticationScheme.foreach(__v => __obj.update("AuthenticationScheme", __v.asInstanceOf[js.Any]))
+      CacheFullBehavior.foreach(__v => __obj.update("CacheFullBehavior", __v.asInstanceOf[js.Any]))
+      CacheLength.foreach(__v => __obj.update("CacheLength", __v.asInstanceOf[js.Any]))
+      CaptionData.foreach(__v => __obj.update("CaptionData", __v.asInstanceOf[js.Any]))
+      InputLossAction.foreach(__v => __obj.update("InputLossAction", __v.asInstanceOf[js.Any]))
+      RestartDelay.foreach(__v => __obj.update("RestartDelay", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[RtmpGroupSettings]
     }
   }
 
@@ -8293,20 +6740,14 @@ package medialive {
         ConnectionRetryInterval: js.UndefOr[__integerMin1] = js.undefined,
         NumRetries: js.UndefOr[__integerMin0] = js.undefined
     ): RtmpOutputSettings = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Destination" -> Destination.asInstanceOf[js.Any],
-        "CertificateMode" -> CertificateMode.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ConnectionRetryInterval" -> ConnectionRetryInterval.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NumRetries" -> NumRetries.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "Destination" -> Destination.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RtmpOutputSettings]
+      CertificateMode.foreach(__v => __obj.update("CertificateMode", __v.asInstanceOf[js.Any]))
+      ConnectionRetryInterval.foreach(__v => __obj.update("ConnectionRetryInterval", __v.asInstanceOf[js.Any]))
+      NumRetries.foreach(__v => __obj.update("NumRetries", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[RtmpOutputSettings]
     }
   }
 
@@ -8326,13 +6767,13 @@ package medialive {
         ScheduleActionSettings: ScheduleActionSettings,
         ScheduleActionStartSettings: ScheduleActionStartSettings
     ): ScheduleAction = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ActionName"                  -> ActionName.asInstanceOf[js.Any],
         "ScheduleActionSettings"      -> ScheduleActionSettings.asInstanceOf[js.Any],
         "ScheduleActionStartSettings" -> ScheduleActionStartSettings.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ScheduleAction]
+      __obj.asInstanceOf[ScheduleAction]
     }
   }
 
@@ -8362,34 +6803,20 @@ package medialive {
         StaticImageActivateSettings: js.UndefOr[StaticImageActivateScheduleActionSettings] = js.undefined,
         StaticImageDeactivateSettings: js.UndefOr[StaticImageDeactivateScheduleActionSettings] = js.undefined
     ): ScheduleActionSettings = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "HlsTimedMetadataSettings" -> HlsTimedMetadataSettings.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "InputSwitchSettings" -> InputSwitchSettings.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "PauseStateSettings" -> PauseStateSettings.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Scte35ReturnToNetworkSettings" -> Scte35ReturnToNetworkSettings.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Scte35SpliceInsertSettings" -> Scte35SpliceInsertSettings.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Scte35TimeSignalSettings" -> Scte35TimeSignalSettings.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "StaticImageActivateSettings" -> StaticImageActivateSettings.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "StaticImageDeactivateSettings" -> StaticImageDeactivateSettings.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ScheduleActionSettings]
+      val __obj = js.Dictionary.empty[js.Any]
+      HlsTimedMetadataSettings.foreach(__v => __obj.update("HlsTimedMetadataSettings", __v.asInstanceOf[js.Any]))
+      InputSwitchSettings.foreach(__v => __obj.update("InputSwitchSettings", __v.asInstanceOf[js.Any]))
+      PauseStateSettings.foreach(__v => __obj.update("PauseStateSettings", __v.asInstanceOf[js.Any]))
+      Scte35ReturnToNetworkSettings.foreach(
+        __v => __obj.update("Scte35ReturnToNetworkSettings", __v.asInstanceOf[js.Any])
+      )
+      Scte35SpliceInsertSettings.foreach(__v => __obj.update("Scte35SpliceInsertSettings", __v.asInstanceOf[js.Any]))
+      Scte35TimeSignalSettings.foreach(__v => __obj.update("Scte35TimeSignalSettings", __v.asInstanceOf[js.Any]))
+      StaticImageActivateSettings.foreach(__v => __obj.update("StaticImageActivateSettings", __v.asInstanceOf[js.Any]))
+      StaticImageDeactivateSettings.foreach(
+        __v => __obj.update("StaticImageDeactivateSettings", __v.asInstanceOf[js.Any])
+      )
+      __obj.asInstanceOf[ScheduleActionSettings]
     }
   }
 
@@ -8407,16 +6834,14 @@ package medialive {
         FixedModeScheduleActionStartSettings: js.UndefOr[FixedModeScheduleActionStartSettings] = js.undefined,
         FollowModeScheduleActionStartSettings: js.UndefOr[FollowModeScheduleActionStartSettings] = js.undefined
     ): ScheduleActionStartSettings = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "FixedModeScheduleActionStartSettings" -> FixedModeScheduleActionStartSettings.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "FollowModeScheduleActionStartSettings" -> FollowModeScheduleActionStartSettings.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ScheduleActionStartSettings]
+      val __obj = js.Dictionary.empty[js.Any]
+      FixedModeScheduleActionStartSettings.foreach(
+        __v => __obj.update("FixedModeScheduleActionStartSettings", __v.asInstanceOf[js.Any])
+      )
+      FollowModeScheduleActionStartSettings.foreach(
+        __v => __obj.update("FollowModeScheduleActionStartSettings", __v.asInstanceOf[js.Any])
+      )
+      __obj.asInstanceOf[ScheduleActionStartSettings]
     }
   }
 
@@ -8439,10 +6864,9 @@ package medialive {
   object Scte20PlusEmbeddedDestinationSettings {
     def apply(
         ): Scte20PlusEmbeddedDestinationSettings = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary.empty[js.Any]
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Scte20PlusEmbeddedDestinationSettings]
+      __obj.asInstanceOf[Scte20PlusEmbeddedDestinationSettings]
     }
   }
 
@@ -8460,16 +6884,10 @@ package medialive {
         Convert608To708: js.UndefOr[Scte20Convert608To708] = js.undefined,
         Source608ChannelNumber: js.UndefOr[__integerMin1Max4] = js.undefined
     ): Scte20SourceSettings = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Convert608To708" -> Convert608To708.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Source608ChannelNumber" -> Source608ChannelNumber.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Scte20SourceSettings]
+      val __obj = js.Dictionary.empty[js.Any]
+      Convert608To708.foreach(__v => __obj.update("Convert608To708", __v.asInstanceOf[js.Any]))
+      Source608ChannelNumber.foreach(__v => __obj.update("Source608ChannelNumber", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Scte20SourceSettings]
     }
   }
 
@@ -8482,10 +6900,9 @@ package medialive {
   object Scte27DestinationSettings {
     def apply(
         ): Scte27DestinationSettings = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary.empty[js.Any]
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Scte27DestinationSettings]
+      __obj.asInstanceOf[Scte27DestinationSettings]
     }
   }
 
@@ -8501,13 +6918,9 @@ package medialive {
     def apply(
         Pid: js.UndefOr[__integerMin1] = js.undefined
     ): Scte27SourceSettings = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Pid" -> Pid.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Scte27SourceSettings]
+      val __obj = js.Dictionary.empty[js.Any]
+      Pid.foreach(__v => __obj.update("Pid", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Scte27SourceSettings]
     }
   }
 
@@ -8559,14 +6972,14 @@ package medialive {
         NoRegionalBlackoutFlag: Scte35NoRegionalBlackoutFlag,
         WebDeliveryAllowedFlag: Scte35WebDeliveryAllowedFlag
     ): Scte35DeliveryRestrictions = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ArchiveAllowedFlag"     -> ArchiveAllowedFlag.asInstanceOf[js.Any],
         "DeviceRestrictions"     -> DeviceRestrictions.asInstanceOf[js.Any],
         "NoRegionalBlackoutFlag" -> NoRegionalBlackoutFlag.asInstanceOf[js.Any],
         "WebDeliveryAllowedFlag" -> WebDeliveryAllowedFlag.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Scte35DeliveryRestrictions]
+      __obj.asInstanceOf[Scte35DeliveryRestrictions]
     }
   }
 
@@ -8582,11 +6995,11 @@ package medialive {
     def apply(
         Scte35DescriptorSettings: Scte35DescriptorSettings
     ): Scte35Descriptor = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "Scte35DescriptorSettings" -> Scte35DescriptorSettings.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Scte35Descriptor]
+      __obj.asInstanceOf[Scte35Descriptor]
     }
   }
 
@@ -8602,12 +7015,12 @@ package medialive {
     def apply(
         SegmentationDescriptorScte35DescriptorSettings: Scte35SegmentationDescriptor
     ): Scte35DescriptorSettings = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "SegmentationDescriptorScte35DescriptorSettings" -> SegmentationDescriptorScte35DescriptorSettings
           .asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Scte35DescriptorSettings]
+      __obj.asInstanceOf[Scte35DescriptorSettings]
     }
   }
 
@@ -8645,13 +7058,11 @@ package medialive {
     def apply(
         SpliceEventId: __integerMin0Max4294967295
     ): Scte35ReturnToNetworkScheduleActionSettings = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "SpliceEventId" -> SpliceEventId.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal
-        .applyDynamicNamed("apply")(_fields: _*)
-        .asInstanceOf[Scte35ReturnToNetworkScheduleActionSettings]
+      __obj.asInstanceOf[Scte35ReturnToNetworkScheduleActionSettings]
     }
   }
 
@@ -8697,39 +7108,21 @@ package medialive {
         SubSegmentNum: js.UndefOr[__integerMin0Max255] = js.undefined,
         SubSegmentsExpected: js.UndefOr[__integerMin0Max255] = js.undefined
     ): Scte35SegmentationDescriptor = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "SegmentationCancelIndicator" -> SegmentationCancelIndicator.asInstanceOf[js.Any],
-        "SegmentationEventId"         -> SegmentationEventId.asInstanceOf[js.Any],
-        "DeliveryRestrictions" -> DeliveryRestrictions.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SegmentNum" -> SegmentNum.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SegmentationDuration" -> SegmentationDuration.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SegmentationTypeId" -> SegmentationTypeId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SegmentationUpid" -> SegmentationUpid.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SegmentationUpidType" -> SegmentationUpidType.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SegmentsExpected" -> SegmentsExpected.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SubSegmentNum" -> SubSegmentNum.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SubSegmentsExpected" -> SubSegmentsExpected.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "SegmentationEventId"         -> SegmentationEventId.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Scte35SegmentationDescriptor]
+      DeliveryRestrictions.foreach(__v => __obj.update("DeliveryRestrictions", __v.asInstanceOf[js.Any]))
+      SegmentNum.foreach(__v => __obj.update("SegmentNum", __v.asInstanceOf[js.Any]))
+      SegmentationDuration.foreach(__v => __obj.update("SegmentationDuration", __v.asInstanceOf[js.Any]))
+      SegmentationTypeId.foreach(__v => __obj.update("SegmentationTypeId", __v.asInstanceOf[js.Any]))
+      SegmentationUpid.foreach(__v => __obj.update("SegmentationUpid", __v.asInstanceOf[js.Any]))
+      SegmentationUpidType.foreach(__v => __obj.update("SegmentationUpidType", __v.asInstanceOf[js.Any]))
+      SegmentsExpected.foreach(__v => __obj.update("SegmentsExpected", __v.asInstanceOf[js.Any]))
+      SubSegmentNum.foreach(__v => __obj.update("SubSegmentNum", __v.asInstanceOf[js.Any]))
+      SubSegmentsExpected.foreach(__v => __obj.update("SubSegmentsExpected", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Scte35SegmentationDescriptor]
     }
   }
 
@@ -8749,19 +7142,11 @@ package medialive {
         NoRegionalBlackoutFlag: js.UndefOr[Scte35SpliceInsertNoRegionalBlackoutBehavior] = js.undefined,
         WebDeliveryAllowedFlag: js.UndefOr[Scte35SpliceInsertWebDeliveryAllowedBehavior] = js.undefined
     ): Scte35SpliceInsert = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "AdAvailOffset" -> AdAvailOffset.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NoRegionalBlackoutFlag" -> NoRegionalBlackoutFlag.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "WebDeliveryAllowedFlag" -> WebDeliveryAllowedFlag.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Scte35SpliceInsert]
+      val __obj = js.Dictionary.empty[js.Any]
+      AdAvailOffset.foreach(__v => __obj.update("AdAvailOffset", __v.asInstanceOf[js.Any]))
+      NoRegionalBlackoutFlag.foreach(__v => __obj.update("NoRegionalBlackoutFlag", __v.asInstanceOf[js.Any]))
+      WebDeliveryAllowedFlag.foreach(__v => __obj.update("WebDeliveryAllowedFlag", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Scte35SpliceInsert]
     }
   }
 
@@ -8789,14 +7174,12 @@ package medialive {
         SpliceEventId: __integerMin0Max4294967295,
         Duration: js.UndefOr[__integerMin0Max8589934591] = js.undefined
     ): Scte35SpliceInsertScheduleActionSettings = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "SpliceEventId" -> SpliceEventId.asInstanceOf[js.Any],
-        "Duration" -> Duration.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "SpliceEventId" -> SpliceEventId.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Scte35SpliceInsertScheduleActionSettings]
+      Duration.foreach(__v => __obj.update("Duration", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Scte35SpliceInsertScheduleActionSettings]
     }
   }
 
@@ -8826,19 +7209,11 @@ package medialive {
         NoRegionalBlackoutFlag: js.UndefOr[Scte35AposNoRegionalBlackoutBehavior] = js.undefined,
         WebDeliveryAllowedFlag: js.UndefOr[Scte35AposWebDeliveryAllowedBehavior] = js.undefined
     ): Scte35TimeSignalApos = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "AdAvailOffset" -> AdAvailOffset.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NoRegionalBlackoutFlag" -> NoRegionalBlackoutFlag.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "WebDeliveryAllowedFlag" -> WebDeliveryAllowedFlag.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Scte35TimeSignalApos]
+      val __obj = js.Dictionary.empty[js.Any]
+      AdAvailOffset.foreach(__v => __obj.update("AdAvailOffset", __v.asInstanceOf[js.Any]))
+      NoRegionalBlackoutFlag.foreach(__v => __obj.update("NoRegionalBlackoutFlag", __v.asInstanceOf[js.Any]))
+      WebDeliveryAllowedFlag.foreach(__v => __obj.update("WebDeliveryAllowedFlag", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Scte35TimeSignalApos]
     }
   }
 
@@ -8854,11 +7229,11 @@ package medialive {
     def apply(
         Scte35Descriptors: __listOfScte35Descriptor
     ): Scte35TimeSignalScheduleActionSettings = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "Scte35Descriptors" -> Scte35Descriptors.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Scte35TimeSignalScheduleActionSettings]
+      __obj.asInstanceOf[Scte35TimeSignalScheduleActionSettings]
     }
   }
 
@@ -8962,10 +7337,9 @@ package medialive {
   object SmpteTtDestinationSettings {
     def apply(
         ): SmpteTtDestinationSettings = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary.empty[js.Any]
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SmpteTtDestinationSettings]
+      __obj.asInstanceOf[SmpteTtDestinationSettings]
     }
   }
 
@@ -8983,14 +7357,12 @@ package medialive {
         M3u8Settings: M3u8Settings,
         AudioRenditionSets: js.UndefOr[__string] = js.undefined
     ): StandardHlsSettings = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "M3u8Settings" -> M3u8Settings.asInstanceOf[js.Any],
-        "AudioRenditionSets" -> AudioRenditionSets.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "M3u8Settings" -> M3u8Settings.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StandardHlsSettings]
+      AudioRenditionSets.foreach(__v => __obj.update("AudioRenditionSets", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[StandardHlsSettings]
     }
   }
 
@@ -9006,11 +7378,11 @@ package medialive {
     def apply(
         ChannelId: __string
     ): StartChannelRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ChannelId" -> ChannelId.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StartChannelRequest]
+      __obj.asInstanceOf[StartChannelRequest]
     }
   }
 
@@ -9052,52 +7424,22 @@ package medialive {
         State: js.UndefOr[ChannelState] = js.undefined,
         Tags: js.UndefOr[Tags] = js.undefined
     ): StartChannelResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Arn" -> Arn.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ChannelClass" -> ChannelClass.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Destinations" -> Destinations.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "EgressEndpoints" -> EgressEndpoints.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "EncoderSettings" -> EncoderSettings.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Id" -> Id.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "InputAttachments" -> InputAttachments.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "InputSpecification" -> InputSpecification.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "LogLevel" -> LogLevel.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Name" -> Name.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "PipelinesRunningCount" -> PipelinesRunningCount.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "RoleArn" -> RoleArn.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "State" -> State.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Tags" -> Tags.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StartChannelResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      Arn.foreach(__v => __obj.update("Arn", __v.asInstanceOf[js.Any]))
+      ChannelClass.foreach(__v => __obj.update("ChannelClass", __v.asInstanceOf[js.Any]))
+      Destinations.foreach(__v => __obj.update("Destinations", __v.asInstanceOf[js.Any]))
+      EgressEndpoints.foreach(__v => __obj.update("EgressEndpoints", __v.asInstanceOf[js.Any]))
+      EncoderSettings.foreach(__v => __obj.update("EncoderSettings", __v.asInstanceOf[js.Any]))
+      Id.foreach(__v => __obj.update("Id", __v.asInstanceOf[js.Any]))
+      InputAttachments.foreach(__v => __obj.update("InputAttachments", __v.asInstanceOf[js.Any]))
+      InputSpecification.foreach(__v => __obj.update("InputSpecification", __v.asInstanceOf[js.Any]))
+      LogLevel.foreach(__v => __obj.update("LogLevel", __v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
+      PipelinesRunningCount.foreach(__v => __obj.update("PipelinesRunningCount", __v.asInstanceOf[js.Any]))
+      RoleArn.foreach(__v => __obj.update("RoleArn", __v.asInstanceOf[js.Any]))
+      State.foreach(__v => __obj.update("State", __v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[StartChannelResponse]
     }
   }
 
@@ -9131,38 +7473,20 @@ package medialive {
         Opacity: js.UndefOr[__integerMin0Max100] = js.undefined,
         Width: js.UndefOr[__integerMin1] = js.undefined
     ): StaticImageActivateScheduleActionSettings = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Image" -> Image.asInstanceOf[js.Any],
-        "Duration" -> Duration.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "FadeIn" -> FadeIn.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "FadeOut" -> FadeOut.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Height" -> Height.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ImageX" -> ImageX.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ImageY" -> ImageY.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Layer" -> Layer.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Opacity" -> Opacity.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Width" -> Width.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "Image" -> Image.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StaticImageActivateScheduleActionSettings]
+      Duration.foreach(__v => __obj.update("Duration", __v.asInstanceOf[js.Any]))
+      FadeIn.foreach(__v => __obj.update("FadeIn", __v.asInstanceOf[js.Any]))
+      FadeOut.foreach(__v => __obj.update("FadeOut", __v.asInstanceOf[js.Any]))
+      Height.foreach(__v => __obj.update("Height", __v.asInstanceOf[js.Any]))
+      ImageX.foreach(__v => __obj.update("ImageX", __v.asInstanceOf[js.Any]))
+      ImageY.foreach(__v => __obj.update("ImageY", __v.asInstanceOf[js.Any]))
+      Layer.foreach(__v => __obj.update("Layer", __v.asInstanceOf[js.Any]))
+      Opacity.foreach(__v => __obj.update("Opacity", __v.asInstanceOf[js.Any]))
+      Width.foreach(__v => __obj.update("Width", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[StaticImageActivateScheduleActionSettings]
     }
   }
 
@@ -9180,18 +7504,10 @@ package medialive {
         FadeOut: js.UndefOr[__integerMin0] = js.undefined,
         Layer: js.UndefOr[__integerMin0Max7] = js.undefined
     ): StaticImageDeactivateScheduleActionSettings = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "FadeOut" -> FadeOut.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Layer" -> Layer.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal
-        .applyDynamicNamed("apply")(_fields: _*)
-        .asInstanceOf[StaticImageDeactivateScheduleActionSettings]
+      val __obj = js.Dictionary.empty[js.Any]
+      FadeOut.foreach(__v => __obj.update("FadeOut", __v.asInstanceOf[js.Any]))
+      Layer.foreach(__v => __obj.update("Layer", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[StaticImageDeactivateScheduleActionSettings]
     }
   }
 
@@ -9209,14 +7525,12 @@ package medialive {
         StaticKeyValue: __stringMin32Max32,
         KeyProviderServer: js.UndefOr[InputLocation] = js.undefined
     ): StaticKeySettings = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "StaticKeyValue" -> StaticKeyValue.asInstanceOf[js.Any],
-        "KeyProviderServer" -> KeyProviderServer.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "StaticKeyValue" -> StaticKeyValue.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StaticKeySettings]
+      KeyProviderServer.foreach(__v => __obj.update("KeyProviderServer", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[StaticKeySettings]
     }
   }
 
@@ -9232,11 +7546,11 @@ package medialive {
     def apply(
         ChannelId: __string
     ): StopChannelRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ChannelId" -> ChannelId.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StopChannelRequest]
+      __obj.asInstanceOf[StopChannelRequest]
     }
   }
 
@@ -9278,52 +7592,22 @@ package medialive {
         State: js.UndefOr[ChannelState] = js.undefined,
         Tags: js.UndefOr[Tags] = js.undefined
     ): StopChannelResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Arn" -> Arn.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ChannelClass" -> ChannelClass.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Destinations" -> Destinations.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "EgressEndpoints" -> EgressEndpoints.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "EncoderSettings" -> EncoderSettings.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Id" -> Id.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "InputAttachments" -> InputAttachments.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "InputSpecification" -> InputSpecification.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "LogLevel" -> LogLevel.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Name" -> Name.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "PipelinesRunningCount" -> PipelinesRunningCount.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "RoleArn" -> RoleArn.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "State" -> State.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Tags" -> Tags.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StopChannelResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      Arn.foreach(__v => __obj.update("Arn", __v.asInstanceOf[js.Any]))
+      ChannelClass.foreach(__v => __obj.update("ChannelClass", __v.asInstanceOf[js.Any]))
+      Destinations.foreach(__v => __obj.update("Destinations", __v.asInstanceOf[js.Any]))
+      EgressEndpoints.foreach(__v => __obj.update("EgressEndpoints", __v.asInstanceOf[js.Any]))
+      EncoderSettings.foreach(__v => __obj.update("EncoderSettings", __v.asInstanceOf[js.Any]))
+      Id.foreach(__v => __obj.update("Id", __v.asInstanceOf[js.Any]))
+      InputAttachments.foreach(__v => __obj.update("InputAttachments", __v.asInstanceOf[js.Any]))
+      InputSpecification.foreach(__v => __obj.update("InputSpecification", __v.asInstanceOf[js.Any]))
+      LogLevel.foreach(__v => __obj.update("LogLevel", __v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
+      PipelinesRunningCount.foreach(__v => __obj.update("PipelinesRunningCount", __v.asInstanceOf[js.Any]))
+      RoleArn.foreach(__v => __obj.update("RoleArn", __v.asInstanceOf[js.Any]))
+      State.foreach(__v => __obj.update("State", __v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[StopChannelResponse]
     }
   }
 
@@ -9336,10 +7620,9 @@ package medialive {
   object TeletextDestinationSettings {
     def apply(
         ): TeletextDestinationSettings = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary.empty[js.Any]
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[TeletextDestinationSettings]
+      __obj.asInstanceOf[TeletextDestinationSettings]
     }
   }
 
@@ -9355,13 +7638,9 @@ package medialive {
     def apply(
         PageNumber: js.UndefOr[__string] = js.undefined
     ): TeletextSourceSettings = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "PageNumber" -> PageNumber.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[TeletextSourceSettings]
+      val __obj = js.Dictionary.empty[js.Any]
+      PageNumber.foreach(__v => __obj.update("PageNumber", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[TeletextSourceSettings]
     }
   }
 
@@ -9379,14 +7658,12 @@ package medialive {
         Source: TimecodeConfigSource,
         SyncThreshold: js.UndefOr[__integerMin1Max1000000] = js.undefined
     ): TimecodeConfig = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Source" -> Source.asInstanceOf[js.Any],
-        "SyncThreshold" -> SyncThreshold.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "Source" -> Source.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[TimecodeConfig]
+      SyncThreshold.foreach(__v => __obj.update("SyncThreshold", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[TimecodeConfig]
     }
   }
 
@@ -9413,13 +7690,9 @@ package medialive {
     def apply(
         StyleControl: js.UndefOr[TtmlDestinationStyleControl] = js.undefined
     ): TtmlDestinationSettings = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "StyleControl" -> StyleControl.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[TtmlDestinationSettings]
+      val __obj = js.Dictionary.empty[js.Any]
+      StyleControl.foreach(__v => __obj.update("StyleControl", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[TtmlDestinationSettings]
     }
   }
 
@@ -9445,13 +7718,9 @@ package medialive {
     def apply(
         M2tsSettings: js.UndefOr[M2tsSettings] = js.undefined
     ): UdpContainerSettings = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "M2tsSettings" -> M2tsSettings.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UdpContainerSettings]
+      val __obj = js.Dictionary.empty[js.Any]
+      M2tsSettings.foreach(__v => __obj.update("M2tsSettings", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UdpContainerSettings]
     }
   }
 
@@ -9471,19 +7740,11 @@ package medialive {
         TimedMetadataId3Frame: js.UndefOr[UdpTimedMetadataId3Frame] = js.undefined,
         TimedMetadataId3Period: js.UndefOr[__integerMin0] = js.undefined
     ): UdpGroupSettings = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "InputLossAction" -> InputLossAction.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "TimedMetadataId3Frame" -> TimedMetadataId3Frame.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "TimedMetadataId3Period" -> TimedMetadataId3Period.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UdpGroupSettings]
+      val __obj = js.Dictionary.empty[js.Any]
+      InputLossAction.foreach(__v => __obj.update("InputLossAction", __v.asInstanceOf[js.Any]))
+      TimedMetadataId3Frame.foreach(__v => __obj.update("TimedMetadataId3Frame", __v.asInstanceOf[js.Any]))
+      TimedMetadataId3Period.foreach(__v => __obj.update("TimedMetadataId3Period", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UdpGroupSettings]
     }
   }
 
@@ -9505,18 +7766,14 @@ package medialive {
         BufferMsec: js.UndefOr[__integerMin0Max10000] = js.undefined,
         FecOutputSettings: js.UndefOr[FecOutputSettings] = js.undefined
     ): UdpOutputSettings = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ContainerSettings" -> ContainerSettings.asInstanceOf[js.Any],
-        "Destination"       -> Destination.asInstanceOf[js.Any],
-        "BufferMsec" -> BufferMsec.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "FecOutputSettings" -> FecOutputSettings.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "Destination"       -> Destination.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UdpOutputSettings]
+      BufferMsec.foreach(__v => __obj.update("BufferMsec", __v.asInstanceOf[js.Any]))
+      FecOutputSettings.foreach(__v => __obj.update("FecOutputSettings", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UdpOutputSettings]
     }
   }
 
@@ -9557,32 +7814,18 @@ package medialive {
         Name: js.UndefOr[__string] = js.undefined,
         RoleArn: js.UndefOr[__string] = js.undefined
     ): UpdateChannelRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ChannelId" -> ChannelId.asInstanceOf[js.Any],
-        "Destinations" -> Destinations.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "EncoderSettings" -> EncoderSettings.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "InputAttachments" -> InputAttachments.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "InputSpecification" -> InputSpecification.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "LogLevel" -> LogLevel.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Name" -> Name.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "RoleArn" -> RoleArn.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "ChannelId" -> ChannelId.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateChannelRequest]
+      Destinations.foreach(__v => __obj.update("Destinations", __v.asInstanceOf[js.Any]))
+      EncoderSettings.foreach(__v => __obj.update("EncoderSettings", __v.asInstanceOf[js.Any]))
+      InputAttachments.foreach(__v => __obj.update("InputAttachments", __v.asInstanceOf[js.Any]))
+      InputSpecification.foreach(__v => __obj.update("InputSpecification", __v.asInstanceOf[js.Any]))
+      LogLevel.foreach(__v => __obj.update("LogLevel", __v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
+      RoleArn.foreach(__v => __obj.update("RoleArn", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateChannelRequest]
     }
   }
 
@@ -9598,13 +7841,9 @@ package medialive {
     def apply(
         Channel: js.UndefOr[Channel] = js.undefined
     ): UpdateChannelResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Channel" -> Channel.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateChannelResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      Channel.foreach(__v => __obj.update("Channel", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateChannelResponse]
     }
   }
 
@@ -9632,29 +7871,17 @@ package medialive {
         RoleArn: js.UndefOr[__string] = js.undefined,
         Sources: js.UndefOr[__listOfInputSourceRequest] = js.undefined
     ): UpdateInputRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "InputId" -> InputId.asInstanceOf[js.Any],
-        "Destinations" -> Destinations.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "InputSecurityGroups" -> InputSecurityGroups.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MediaConnectFlows" -> MediaConnectFlows.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Name" -> Name.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "RoleArn" -> RoleArn.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Sources" -> Sources.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "InputId" -> InputId.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateInputRequest]
+      Destinations.foreach(__v => __obj.update("Destinations", __v.asInstanceOf[js.Any]))
+      InputSecurityGroups.foreach(__v => __obj.update("InputSecurityGroups", __v.asInstanceOf[js.Any]))
+      MediaConnectFlows.foreach(__v => __obj.update("MediaConnectFlows", __v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
+      RoleArn.foreach(__v => __obj.update("RoleArn", __v.asInstanceOf[js.Any]))
+      Sources.foreach(__v => __obj.update("Sources", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateInputRequest]
     }
   }
 
@@ -9670,13 +7897,9 @@ package medialive {
     def apply(
         Input: js.UndefOr[Input] = js.undefined
     ): UpdateInputResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Input" -> Input.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateInputResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      Input.foreach(__v => __obj.update("Input", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateInputResponse]
     }
   }
 
@@ -9696,17 +7919,13 @@ package medialive {
         Tags: js.UndefOr[Tags] = js.undefined,
         WhitelistRules: js.UndefOr[__listOfInputWhitelistRuleCidr] = js.undefined
     ): UpdateInputSecurityGroupRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "InputSecurityGroupId" -> InputSecurityGroupId.asInstanceOf[js.Any],
-        "Tags" -> Tags.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "WhitelistRules" -> WhitelistRules.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "InputSecurityGroupId" -> InputSecurityGroupId.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateInputSecurityGroupRequest]
+      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
+      WhitelistRules.foreach(__v => __obj.update("WhitelistRules", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateInputSecurityGroupRequest]
     }
   }
 
@@ -9722,13 +7941,9 @@ package medialive {
     def apply(
         SecurityGroup: js.UndefOr[InputSecurityGroup] = js.undefined
     ): UpdateInputSecurityGroupResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "SecurityGroup" -> SecurityGroup.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateInputSecurityGroupResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      SecurityGroup.foreach(__v => __obj.update("SecurityGroup", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateInputSecurityGroupResponse]
     }
   }
 
@@ -9746,14 +7961,12 @@ package medialive {
         ReservationId: __string,
         Name: js.UndefOr[__string] = js.undefined
     ): UpdateReservationRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ReservationId" -> ReservationId.asInstanceOf[js.Any],
-        "Name" -> Name.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "ReservationId" -> ReservationId.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateReservationRequest]
+      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateReservationRequest]
     }
   }
 
@@ -9769,13 +7982,9 @@ package medialive {
     def apply(
         Reservation: js.UndefOr[Reservation] = js.undefined
     ): UpdateReservationResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Reservation" -> Reservation.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateReservationResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      Reservation.foreach(__v => __obj.update("Reservation", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateReservationResponse]
     }
   }
 
@@ -9793,16 +8002,10 @@ package medialive {
         FrameCaptureSettings: js.UndefOr[FrameCaptureSettings] = js.undefined,
         H264Settings: js.UndefOr[H264Settings] = js.undefined
     ): VideoCodecSettings = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "FrameCaptureSettings" -> FrameCaptureSettings.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "H264Settings" -> H264Settings.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[VideoCodecSettings]
+      val __obj = js.Dictionary.empty[js.Any]
+      FrameCaptureSettings.foreach(__v => __obj.update("FrameCaptureSettings", __v.asInstanceOf[js.Any]))
+      H264Settings.foreach(__v => __obj.update("H264Settings", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[VideoCodecSettings]
     }
   }
 
@@ -9830,29 +8033,17 @@ package medialive {
         Sharpness: js.UndefOr[__integerMin0Max100] = js.undefined,
         Width: js.UndefOr[__integer] = js.undefined
     ): VideoDescription = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Name" -> Name.asInstanceOf[js.Any],
-        "CodecSettings" -> CodecSettings.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Height" -> Height.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "RespondToAfd" -> RespondToAfd.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ScalingBehavior" -> ScalingBehavior.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Sharpness" -> Sharpness.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Width" -> Width.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "Name" -> Name.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[VideoDescription]
+      CodecSettings.foreach(__v => __obj.update("CodecSettings", __v.asInstanceOf[js.Any]))
+      Height.foreach(__v => __obj.update("Height", __v.asInstanceOf[js.Any]))
+      RespondToAfd.foreach(__v => __obj.update("RespondToAfd", __v.asInstanceOf[js.Any]))
+      ScalingBehavior.foreach(__v => __obj.update("ScalingBehavior", __v.asInstanceOf[js.Any]))
+      Sharpness.foreach(__v => __obj.update("Sharpness", __v.asInstanceOf[js.Any]))
+      Width.foreach(__v => __obj.update("Width", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[VideoDescription]
     }
   }
 
@@ -9893,19 +8084,11 @@ package medialive {
         ColorSpaceUsage: js.UndefOr[VideoSelectorColorSpaceUsage] = js.undefined,
         SelectorSettings: js.UndefOr[VideoSelectorSettings] = js.undefined
     ): VideoSelector = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ColorSpace" -> ColorSpace.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ColorSpaceUsage" -> ColorSpaceUsage.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SelectorSettings" -> SelectorSettings.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[VideoSelector]
+      val __obj = js.Dictionary.empty[js.Any]
+      ColorSpace.foreach(__v => __obj.update("ColorSpace", __v.asInstanceOf[js.Any]))
+      ColorSpaceUsage.foreach(__v => __obj.update("ColorSpaceUsage", __v.asInstanceOf[js.Any]))
+      SelectorSettings.foreach(__v => __obj.update("SelectorSettings", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[VideoSelector]
     }
   }
 
@@ -9942,13 +8125,9 @@ package medialive {
     def apply(
         Pid: js.UndefOr[__integerMin0Max8191] = js.undefined
     ): VideoSelectorPid = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Pid" -> Pid.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[VideoSelectorPid]
+      val __obj = js.Dictionary.empty[js.Any]
+      Pid.foreach(__v => __obj.update("Pid", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[VideoSelectorPid]
     }
   }
 
@@ -9964,13 +8143,9 @@ package medialive {
     def apply(
         ProgramId: js.UndefOr[__integerMin0Max65536] = js.undefined
     ): VideoSelectorProgramId = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ProgramId" -> ProgramId.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[VideoSelectorProgramId]
+      val __obj = js.Dictionary.empty[js.Any]
+      ProgramId.foreach(__v => __obj.update("ProgramId", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[VideoSelectorProgramId]
     }
   }
 
@@ -9988,16 +8163,10 @@ package medialive {
         VideoSelectorPid: js.UndefOr[VideoSelectorPid] = js.undefined,
         VideoSelectorProgramId: js.UndefOr[VideoSelectorProgramId] = js.undefined
     ): VideoSelectorSettings = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "VideoSelectorPid" -> VideoSelectorPid.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "VideoSelectorProgramId" -> VideoSelectorProgramId.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[VideoSelectorSettings]
+      val __obj = js.Dictionary.empty[js.Any]
+      VideoSelectorPid.foreach(__v => __obj.update("VideoSelectorPid", __v.asInstanceOf[js.Any]))
+      VideoSelectorProgramId.foreach(__v => __obj.update("VideoSelectorProgramId", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[VideoSelectorSettings]
     }
   }
 
@@ -10010,10 +8179,9 @@ package medialive {
   object WebvttDestinationSettings {
     def apply(
         ): WebvttDestinationSettings = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary.empty[js.Any]
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[WebvttDestinationSettings]
+      __obj.asInstanceOf[WebvttDestinationSettings]
     }
   }
 }

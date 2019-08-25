@@ -129,31 +129,19 @@ package budgetsservice {
         LastUpdatedTime: js.UndefOr[GenericTimestamp] = js.undefined,
         TimePeriod: js.UndefOr[TimePeriod] = js.undefined
     ): Budget = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "BudgetName" -> BudgetName.asInstanceOf[js.Any],
         "BudgetType" -> BudgetType.asInstanceOf[js.Any],
-        "TimeUnit"   -> TimeUnit.asInstanceOf[js.Any],
-        "BudgetLimit" -> BudgetLimit.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "CalculatedSpend" -> CalculatedSpend.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "CostFilters" -> CostFilters.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "CostTypes" -> CostTypes.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "LastUpdatedTime" -> LastUpdatedTime.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "TimePeriod" -> TimePeriod.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "TimeUnit"   -> TimeUnit.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Budget]
+      BudgetLimit.foreach(__v => __obj.update("BudgetLimit", __v.asInstanceOf[js.Any]))
+      CalculatedSpend.foreach(__v => __obj.update("CalculatedSpend", __v.asInstanceOf[js.Any]))
+      CostFilters.foreach(__v => __obj.update("CostFilters", __v.asInstanceOf[js.Any]))
+      CostTypes.foreach(__v => __obj.update("CostTypes", __v.asInstanceOf[js.Any]))
+      LastUpdatedTime.foreach(__v => __obj.update("LastUpdatedTime", __v.asInstanceOf[js.Any]))
+      TimePeriod.foreach(__v => __obj.update("TimePeriod", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Budget]
     }
   }
 
@@ -179,28 +167,16 @@ package budgetsservice {
         CostTypes: js.UndefOr[CostTypes] = js.undefined,
         TimeUnit: js.UndefOr[TimeUnit] = js.undefined
     ): BudgetPerformanceHistory = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "BudgetName" -> BudgetName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "BudgetType" -> BudgetType.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "BudgetedAndActualAmountsList" -> BudgetedAndActualAmountsList.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "CostFilters" -> CostFilters.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "CostTypes" -> CostTypes.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "TimeUnit" -> TimeUnit.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[BudgetPerformanceHistory]
+      val __obj = js.Dictionary.empty[js.Any]
+      BudgetName.foreach(__v => __obj.update("BudgetName", __v.asInstanceOf[js.Any]))
+      BudgetType.foreach(__v => __obj.update("BudgetType", __v.asInstanceOf[js.Any]))
+      BudgetedAndActualAmountsList.foreach(
+        __v => __obj.update("BudgetedAndActualAmountsList", __v.asInstanceOf[js.Any])
+      )
+      CostFilters.foreach(__v => __obj.update("CostFilters", __v.asInstanceOf[js.Any]))
+      CostTypes.foreach(__v => __obj.update("CostTypes", __v.asInstanceOf[js.Any]))
+      TimeUnit.foreach(__v => __obj.update("TimeUnit", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[BudgetPerformanceHistory]
     }
   }
 
@@ -233,19 +209,11 @@ package budgetsservice {
         BudgetedAmount: js.UndefOr[Spend] = js.undefined,
         TimePeriod: js.UndefOr[TimePeriod] = js.undefined
     ): BudgetedAndActualAmounts = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ActualAmount" -> ActualAmount.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "BudgetedAmount" -> BudgetedAmount.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "TimePeriod" -> TimePeriod.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[BudgetedAndActualAmounts]
+      val __obj = js.Dictionary.empty[js.Any]
+      ActualAmount.foreach(__v => __obj.update("ActualAmount", __v.asInstanceOf[js.Any]))
+      BudgetedAmount.foreach(__v => __obj.update("BudgetedAmount", __v.asInstanceOf[js.Any]))
+      TimePeriod.foreach(__v => __obj.update("TimePeriod", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[BudgetedAndActualAmounts]
     }
   }
 
@@ -264,14 +232,12 @@ package budgetsservice {
         ActualSpend: Spend,
         ForecastedSpend: js.UndefOr[Spend] = js.undefined
     ): CalculatedSpend = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ActualSpend" -> ActualSpend.asInstanceOf[js.Any],
-        "ForecastedSpend" -> ForecastedSpend.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "ActualSpend" -> ActualSpend.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CalculatedSpend]
+      ForecastedSpend.foreach(__v => __obj.update("ForecastedSpend", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CalculatedSpend]
     }
   }
 
@@ -320,43 +286,19 @@ package budgetsservice {
         UseAmortized: js.UndefOr[NullableBoolean] = js.undefined,
         UseBlended: js.UndefOr[NullableBoolean] = js.undefined
     ): CostTypes = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "IncludeCredit" -> IncludeCredit.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "IncludeDiscount" -> IncludeDiscount.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "IncludeOtherSubscription" -> IncludeOtherSubscription.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "IncludeRecurring" -> IncludeRecurring.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "IncludeRefund" -> IncludeRefund.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "IncludeSubscription" -> IncludeSubscription.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "IncludeSupport" -> IncludeSupport.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "IncludeTax" -> IncludeTax.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "IncludeUpfront" -> IncludeUpfront.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "UseAmortized" -> UseAmortized.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "UseBlended" -> UseBlended.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CostTypes]
+      val __obj = js.Dictionary.empty[js.Any]
+      IncludeCredit.foreach(__v => __obj.update("IncludeCredit", __v.asInstanceOf[js.Any]))
+      IncludeDiscount.foreach(__v => __obj.update("IncludeDiscount", __v.asInstanceOf[js.Any]))
+      IncludeOtherSubscription.foreach(__v => __obj.update("IncludeOtherSubscription", __v.asInstanceOf[js.Any]))
+      IncludeRecurring.foreach(__v => __obj.update("IncludeRecurring", __v.asInstanceOf[js.Any]))
+      IncludeRefund.foreach(__v => __obj.update("IncludeRefund", __v.asInstanceOf[js.Any]))
+      IncludeSubscription.foreach(__v => __obj.update("IncludeSubscription", __v.asInstanceOf[js.Any]))
+      IncludeSupport.foreach(__v => __obj.update("IncludeSupport", __v.asInstanceOf[js.Any]))
+      IncludeTax.foreach(__v => __obj.update("IncludeTax", __v.asInstanceOf[js.Any]))
+      IncludeUpfront.foreach(__v => __obj.update("IncludeUpfront", __v.asInstanceOf[js.Any]))
+      UseAmortized.foreach(__v => __obj.update("UseAmortized", __v.asInstanceOf[js.Any]))
+      UseBlended.foreach(__v => __obj.update("UseBlended", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CostTypes]
     }
   }
 
@@ -376,15 +318,15 @@ package budgetsservice {
         Budget: Budget,
         NotificationsWithSubscribers: js.UndefOr[NotificationWithSubscribersList] = js.undefined
     ): CreateBudgetRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "AccountId" -> AccountId.asInstanceOf[js.Any],
-        "Budget"    -> Budget.asInstanceOf[js.Any],
-        "NotificationsWithSubscribers" -> NotificationsWithSubscribers.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "Budget"    -> Budget.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateBudgetRequest]
+      NotificationsWithSubscribers.foreach(
+        __v => __obj.update("NotificationsWithSubscribers", __v.asInstanceOf[js.Any])
+      )
+      __obj.asInstanceOf[CreateBudgetRequest]
     }
   }
 
@@ -397,10 +339,9 @@ package budgetsservice {
   object CreateBudgetResponse {
     def apply(
         ): CreateBudgetResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary.empty[js.Any]
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateBudgetResponse]
+      __obj.asInstanceOf[CreateBudgetResponse]
     }
   }
 
@@ -422,14 +363,14 @@ package budgetsservice {
         Notification: Notification,
         Subscribers: Subscribers
     ): CreateNotificationRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "AccountId"    -> AccountId.asInstanceOf[js.Any],
         "BudgetName"   -> BudgetName.asInstanceOf[js.Any],
         "Notification" -> Notification.asInstanceOf[js.Any],
         "Subscribers"  -> Subscribers.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateNotificationRequest]
+      __obj.asInstanceOf[CreateNotificationRequest]
     }
   }
 
@@ -442,10 +383,9 @@ package budgetsservice {
   object CreateNotificationResponse {
     def apply(
         ): CreateNotificationResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary.empty[js.Any]
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateNotificationResponse]
+      __obj.asInstanceOf[CreateNotificationResponse]
     }
   }
 
@@ -467,14 +407,14 @@ package budgetsservice {
         Notification: Notification,
         Subscriber: Subscriber
     ): CreateSubscriberRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "AccountId"    -> AccountId.asInstanceOf[js.Any],
         "BudgetName"   -> BudgetName.asInstanceOf[js.Any],
         "Notification" -> Notification.asInstanceOf[js.Any],
         "Subscriber"   -> Subscriber.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateSubscriberRequest]
+      __obj.asInstanceOf[CreateSubscriberRequest]
     }
   }
 
@@ -487,10 +427,9 @@ package budgetsservice {
   object CreateSubscriberResponse {
     def apply(
         ): CreateSubscriberResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary.empty[js.Any]
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateSubscriberResponse]
+      __obj.asInstanceOf[CreateSubscriberResponse]
     }
   }
 
@@ -508,12 +447,12 @@ package budgetsservice {
         AccountId: AccountId,
         BudgetName: BudgetName
     ): DeleteBudgetRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "AccountId"  -> AccountId.asInstanceOf[js.Any],
         "BudgetName" -> BudgetName.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteBudgetRequest]
+      __obj.asInstanceOf[DeleteBudgetRequest]
     }
   }
 
@@ -526,10 +465,9 @@ package budgetsservice {
   object DeleteBudgetResponse {
     def apply(
         ): DeleteBudgetResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary.empty[js.Any]
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteBudgetResponse]
+      __obj.asInstanceOf[DeleteBudgetResponse]
     }
   }
 
@@ -549,13 +487,13 @@ package budgetsservice {
         BudgetName: BudgetName,
         Notification: Notification
     ): DeleteNotificationRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "AccountId"    -> AccountId.asInstanceOf[js.Any],
         "BudgetName"   -> BudgetName.asInstanceOf[js.Any],
         "Notification" -> Notification.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteNotificationRequest]
+      __obj.asInstanceOf[DeleteNotificationRequest]
     }
   }
 
@@ -568,10 +506,9 @@ package budgetsservice {
   object DeleteNotificationResponse {
     def apply(
         ): DeleteNotificationResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary.empty[js.Any]
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteNotificationResponse]
+      __obj.asInstanceOf[DeleteNotificationResponse]
     }
   }
 
@@ -593,14 +530,14 @@ package budgetsservice {
         Notification: Notification,
         Subscriber: Subscriber
     ): DeleteSubscriberRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "AccountId"    -> AccountId.asInstanceOf[js.Any],
         "BudgetName"   -> BudgetName.asInstanceOf[js.Any],
         "Notification" -> Notification.asInstanceOf[js.Any],
         "Subscriber"   -> Subscriber.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteSubscriberRequest]
+      __obj.asInstanceOf[DeleteSubscriberRequest]
     }
   }
 
@@ -613,10 +550,9 @@ package budgetsservice {
   object DeleteSubscriberResponse {
     def apply(
         ): DeleteSubscriberResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary.empty[js.Any]
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteSubscriberResponse]
+      __obj.asInstanceOf[DeleteSubscriberResponse]
     }
   }
 
@@ -637,21 +573,15 @@ package budgetsservice {
         NextToken: js.UndefOr[GenericString] = js.undefined,
         TimePeriod: js.UndefOr[TimePeriod] = js.undefined
     ): DescribeBudgetPerformanceHistoryRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "AccountId"  -> AccountId.asInstanceOf[js.Any],
-        "BudgetName" -> BudgetName.asInstanceOf[js.Any],
-        "MaxResults" -> MaxResults.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NextToken" -> NextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "TimePeriod" -> TimePeriod.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "BudgetName" -> BudgetName.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeBudgetPerformanceHistoryRequest]
+      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      TimePeriod.foreach(__v => __obj.update("TimePeriod", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeBudgetPerformanceHistoryRequest]
     }
   }
 
@@ -666,16 +596,10 @@ package budgetsservice {
         BudgetPerformanceHistory: js.UndefOr[BudgetPerformanceHistory] = js.undefined,
         NextToken: js.UndefOr[GenericString] = js.undefined
     ): DescribeBudgetPerformanceHistoryResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "BudgetPerformanceHistory" -> BudgetPerformanceHistory.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NextToken" -> NextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeBudgetPerformanceHistoryResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      BudgetPerformanceHistory.foreach(__v => __obj.update("BudgetPerformanceHistory", __v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeBudgetPerformanceHistoryResponse]
     }
   }
 
@@ -693,12 +617,12 @@ package budgetsservice {
         AccountId: AccountId,
         BudgetName: BudgetName
     ): DescribeBudgetRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "AccountId"  -> AccountId.asInstanceOf[js.Any],
         "BudgetName" -> BudgetName.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeBudgetRequest]
+      __obj.asInstanceOf[DescribeBudgetRequest]
     }
   }
 
@@ -714,13 +638,9 @@ package budgetsservice {
     def apply(
         Budget: js.UndefOr[Budget] = js.undefined
     ): DescribeBudgetResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Budget" -> Budget.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeBudgetResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      Budget.foreach(__v => __obj.update("Budget", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeBudgetResponse]
     }
   }
 
@@ -740,17 +660,13 @@ package budgetsservice {
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
         NextToken: js.UndefOr[GenericString] = js.undefined
     ): DescribeBudgetsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "AccountId" -> AccountId.asInstanceOf[js.Any],
-        "MaxResults" -> MaxResults.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NextToken" -> NextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "AccountId" -> AccountId.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeBudgetsRequest]
+      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeBudgetsRequest]
     }
   }
 
@@ -768,16 +684,10 @@ package budgetsservice {
         Budgets: js.UndefOr[Budgets] = js.undefined,
         NextToken: js.UndefOr[GenericString] = js.undefined
     ): DescribeBudgetsResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Budgets" -> Budgets.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NextToken" -> NextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeBudgetsResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      Budgets.foreach(__v => __obj.update("Budgets", __v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeBudgetsResponse]
     }
   }
 
@@ -799,18 +709,14 @@ package budgetsservice {
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
         NextToken: js.UndefOr[GenericString] = js.undefined
     ): DescribeNotificationsForBudgetRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "AccountId"  -> AccountId.asInstanceOf[js.Any],
-        "BudgetName" -> BudgetName.asInstanceOf[js.Any],
-        "MaxResults" -> MaxResults.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NextToken" -> NextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "BudgetName" -> BudgetName.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeNotificationsForBudgetRequest]
+      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeNotificationsForBudgetRequest]
     }
   }
 
@@ -828,16 +734,10 @@ package budgetsservice {
         NextToken: js.UndefOr[GenericString] = js.undefined,
         Notifications: js.UndefOr[Notifications] = js.undefined
     ): DescribeNotificationsForBudgetResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "NextToken" -> NextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Notifications" -> Notifications.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeNotificationsForBudgetResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      Notifications.foreach(__v => __obj.update("Notifications", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeNotificationsForBudgetResponse]
     }
   }
 
@@ -861,19 +761,15 @@ package budgetsservice {
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
         NextToken: js.UndefOr[GenericString] = js.undefined
     ): DescribeSubscribersForNotificationRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "AccountId"    -> AccountId.asInstanceOf[js.Any],
         "BudgetName"   -> BudgetName.asInstanceOf[js.Any],
-        "Notification" -> Notification.asInstanceOf[js.Any],
-        "MaxResults" -> MaxResults.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NextToken" -> NextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "Notification" -> Notification.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeSubscribersForNotificationRequest]
+      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeSubscribersForNotificationRequest]
     }
   }
 
@@ -891,18 +787,10 @@ package budgetsservice {
         NextToken: js.UndefOr[GenericString] = js.undefined,
         Subscribers: js.UndefOr[Subscribers] = js.undefined
     ): DescribeSubscribersForNotificationResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "NextToken" -> NextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Subscribers" -> Subscribers.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal
-        .applyDynamicNamed("apply")(_fields: _*)
-        .asInstanceOf[DescribeSubscribersForNotificationResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      Subscribers.foreach(__v => __obj.update("Subscribers", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeSubscribersForNotificationResponse]
     }
   }
 
@@ -932,19 +820,15 @@ package budgetsservice {
         NotificationState: js.UndefOr[NotificationState] = js.undefined,
         ThresholdType: js.UndefOr[ThresholdType] = js.undefined
     ): Notification = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ComparisonOperator" -> ComparisonOperator.asInstanceOf[js.Any],
         "NotificationType"   -> NotificationType.asInstanceOf[js.Any],
-        "Threshold"          -> Threshold.asInstanceOf[js.Any],
-        "NotificationState" -> NotificationState.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ThresholdType" -> ThresholdType.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "Threshold"          -> Threshold.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Notification]
+      NotificationState.foreach(__v => __obj.update("NotificationState", __v.asInstanceOf[js.Any]))
+      ThresholdType.foreach(__v => __obj.update("ThresholdType", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Notification]
     }
   }
 
@@ -979,12 +863,12 @@ package budgetsservice {
         Notification: Notification,
         Subscribers: Subscribers
     ): NotificationWithSubscribers = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "Notification" -> Notification.asInstanceOf[js.Any],
         "Subscribers"  -> Subscribers.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[NotificationWithSubscribers]
+      __obj.asInstanceOf[NotificationWithSubscribers]
     }
   }
 
@@ -1005,12 +889,12 @@ package budgetsservice {
         Amount: NumericValue,
         Unit: UnitValue
     ): Spend = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "Amount" -> Amount.asInstanceOf[js.Any],
         "Unit"   -> Unit.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Spend]
+      __obj.asInstanceOf[Spend]
     }
   }
 
@@ -1031,12 +915,12 @@ package budgetsservice {
         Address: SubscriberAddress,
         SubscriptionType: SubscriptionType
     ): Subscriber = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "Address"          -> Address.asInstanceOf[js.Any],
         "SubscriptionType" -> SubscriptionType.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Subscriber]
+      __obj.asInstanceOf[Subscriber]
     }
   }
 
@@ -1074,16 +958,10 @@ package budgetsservice {
         End: js.UndefOr[GenericTimestamp] = js.undefined,
         Start: js.UndefOr[GenericTimestamp] = js.undefined
     ): TimePeriod = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "End" -> End.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Start" -> Start.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[TimePeriod]
+      val __obj = js.Dictionary.empty[js.Any]
+      End.foreach(__v => __obj.update("End", __v.asInstanceOf[js.Any]))
+      Start.foreach(__v => __obj.update("Start", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[TimePeriod]
     }
   }
 
@@ -1113,12 +991,12 @@ package budgetsservice {
         AccountId: AccountId,
         NewBudget: Budget
     ): UpdateBudgetRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "AccountId" -> AccountId.asInstanceOf[js.Any],
         "NewBudget" -> NewBudget.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateBudgetRequest]
+      __obj.asInstanceOf[UpdateBudgetRequest]
     }
   }
 
@@ -1131,10 +1009,9 @@ package budgetsservice {
   object UpdateBudgetResponse {
     def apply(
         ): UpdateBudgetResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary.empty[js.Any]
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateBudgetResponse]
+      __obj.asInstanceOf[UpdateBudgetResponse]
     }
   }
 
@@ -1156,14 +1033,14 @@ package budgetsservice {
         NewNotification: Notification,
         OldNotification: Notification
     ): UpdateNotificationRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "AccountId"       -> AccountId.asInstanceOf[js.Any],
         "BudgetName"      -> BudgetName.asInstanceOf[js.Any],
         "NewNotification" -> NewNotification.asInstanceOf[js.Any],
         "OldNotification" -> OldNotification.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateNotificationRequest]
+      __obj.asInstanceOf[UpdateNotificationRequest]
     }
   }
 
@@ -1176,10 +1053,9 @@ package budgetsservice {
   object UpdateNotificationResponse {
     def apply(
         ): UpdateNotificationResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary.empty[js.Any]
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateNotificationResponse]
+      __obj.asInstanceOf[UpdateNotificationResponse]
     }
   }
 
@@ -1203,15 +1079,15 @@ package budgetsservice {
         Notification: Notification,
         OldSubscriber: Subscriber
     ): UpdateSubscriberRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "AccountId"     -> AccountId.asInstanceOf[js.Any],
         "BudgetName"    -> BudgetName.asInstanceOf[js.Any],
         "NewSubscriber" -> NewSubscriber.asInstanceOf[js.Any],
         "Notification"  -> Notification.asInstanceOf[js.Any],
         "OldSubscriber" -> OldSubscriber.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateSubscriberRequest]
+      __obj.asInstanceOf[UpdateSubscriberRequest]
     }
   }
 
@@ -1224,10 +1100,9 @@ package budgetsservice {
   object UpdateSubscriberResponse {
     def apply(
         ): UpdateSubscriberResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary.empty[js.Any]
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateSubscriberResponse]
+      __obj.asInstanceOf[UpdateSubscriberResponse]
     }
   }
 }

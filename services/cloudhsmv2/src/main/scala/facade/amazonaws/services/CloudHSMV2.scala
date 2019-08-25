@@ -121,35 +121,19 @@ package cloudhsmv2 {
         SourceCluster: js.UndefOr[ClusterId] = js.undefined,
         SourceRegion: js.UndefOr[Region] = js.undefined
     ): Backup = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "BackupId" -> BackupId.asInstanceOf[js.Any],
-        "BackupState" -> BackupState.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ClusterId" -> ClusterId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "CopyTimestamp" -> CopyTimestamp.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "CreateTimestamp" -> CreateTimestamp.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DeleteTimestamp" -> DeleteTimestamp.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SourceBackup" -> SourceBackup.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SourceCluster" -> SourceCluster.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SourceRegion" -> SourceRegion.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "BackupId" -> BackupId.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Backup]
+      BackupState.foreach(__v => __obj.update("BackupState", __v.asInstanceOf[js.Any]))
+      ClusterId.foreach(__v => __obj.update("ClusterId", __v.asInstanceOf[js.Any]))
+      CopyTimestamp.foreach(__v => __obj.update("CopyTimestamp", __v.asInstanceOf[js.Any]))
+      CreateTimestamp.foreach(__v => __obj.update("CreateTimestamp", __v.asInstanceOf[js.Any]))
+      DeleteTimestamp.foreach(__v => __obj.update("DeleteTimestamp", __v.asInstanceOf[js.Any]))
+      SourceBackup.foreach(__v => __obj.update("SourceBackup", __v.asInstanceOf[js.Any]))
+      SourceCluster.foreach(__v => __obj.update("SourceCluster", __v.asInstanceOf[js.Any]))
+      SourceRegion.foreach(__v => __obj.update("SourceRegion", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Backup]
     }
   }
 
@@ -188,25 +172,15 @@ package cloudhsmv2 {
         HsmCertificate: js.UndefOr[Cert] = js.undefined,
         ManufacturerHardwareCertificate: js.UndefOr[Cert] = js.undefined
     ): Certificates = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "AwsHardwareCertificate" -> AwsHardwareCertificate.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ClusterCertificate" -> ClusterCertificate.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ClusterCsr" -> ClusterCsr.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "HsmCertificate" -> HsmCertificate.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ManufacturerHardwareCertificate" -> ManufacturerHardwareCertificate.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Certificates]
+      val __obj = js.Dictionary.empty[js.Any]
+      AwsHardwareCertificate.foreach(__v => __obj.update("AwsHardwareCertificate", __v.asInstanceOf[js.Any]))
+      ClusterCertificate.foreach(__v => __obj.update("ClusterCertificate", __v.asInstanceOf[js.Any]))
+      ClusterCsr.foreach(__v => __obj.update("ClusterCsr", __v.asInstanceOf[js.Any]))
+      HsmCertificate.foreach(__v => __obj.update("HsmCertificate", __v.asInstanceOf[js.Any]))
+      ManufacturerHardwareCertificate.foreach(
+        __v => __obj.update("ManufacturerHardwareCertificate", __v.asInstanceOf[js.Any])
+      )
+      __obj.asInstanceOf[Certificates]
     }
   }
 
@@ -246,49 +220,21 @@ package cloudhsmv2 {
         SubnetMapping: js.UndefOr[ExternalSubnetMapping] = js.undefined,
         VpcId: js.UndefOr[VpcId] = js.undefined
     ): Cluster = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "BackupPolicy" -> BackupPolicy.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Certificates" -> Certificates.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ClusterId" -> ClusterId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "CreateTimestamp" -> CreateTimestamp.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "HsmType" -> HsmType.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Hsms" -> Hsms.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "PreCoPassword" -> PreCoPassword.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SecurityGroup" -> SecurityGroup.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SourceBackupId" -> SourceBackupId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "State" -> State.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "StateMessage" -> StateMessage.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SubnetMapping" -> SubnetMapping.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "VpcId" -> VpcId.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Cluster]
+      val __obj = js.Dictionary.empty[js.Any]
+      BackupPolicy.foreach(__v => __obj.update("BackupPolicy", __v.asInstanceOf[js.Any]))
+      Certificates.foreach(__v => __obj.update("Certificates", __v.asInstanceOf[js.Any]))
+      ClusterId.foreach(__v => __obj.update("ClusterId", __v.asInstanceOf[js.Any]))
+      CreateTimestamp.foreach(__v => __obj.update("CreateTimestamp", __v.asInstanceOf[js.Any]))
+      HsmType.foreach(__v => __obj.update("HsmType", __v.asInstanceOf[js.Any]))
+      Hsms.foreach(__v => __obj.update("Hsms", __v.asInstanceOf[js.Any]))
+      PreCoPassword.foreach(__v => __obj.update("PreCoPassword", __v.asInstanceOf[js.Any]))
+      SecurityGroup.foreach(__v => __obj.update("SecurityGroup", __v.asInstanceOf[js.Any]))
+      SourceBackupId.foreach(__v => __obj.update("SourceBackupId", __v.asInstanceOf[js.Any]))
+      State.foreach(__v => __obj.update("State", __v.asInstanceOf[js.Any]))
+      StateMessage.foreach(__v => __obj.update("StateMessage", __v.asInstanceOf[js.Any]))
+      SubnetMapping.foreach(__v => __obj.update("SubnetMapping", __v.asInstanceOf[js.Any]))
+      VpcId.foreach(__v => __obj.update("VpcId", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Cluster]
     }
   }
 
@@ -327,12 +273,12 @@ package cloudhsmv2 {
         BackupId: BackupId,
         DestinationRegion: Region
     ): CopyBackupToRegionRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "BackupId"          -> BackupId.asInstanceOf[js.Any],
         "DestinationRegion" -> DestinationRegion.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CopyBackupToRegionRequest]
+      __obj.asInstanceOf[CopyBackupToRegionRequest]
     }
   }
 
@@ -345,13 +291,9 @@ package cloudhsmv2 {
     def apply(
         DestinationBackup: js.UndefOr[DestinationBackup] = js.undefined
     ): CopyBackupToRegionResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "DestinationBackup" -> DestinationBackup.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CopyBackupToRegionResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      DestinationBackup.foreach(__v => __obj.update("DestinationBackup", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CopyBackupToRegionResponse]
     }
   }
 
@@ -368,15 +310,13 @@ package cloudhsmv2 {
         SubnetIds: SubnetIds,
         SourceBackupId: js.UndefOr[BackupId] = js.undefined
     ): CreateClusterRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "HsmType"   -> HsmType.asInstanceOf[js.Any],
-        "SubnetIds" -> SubnetIds.asInstanceOf[js.Any],
-        "SourceBackupId" -> SourceBackupId.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "SubnetIds" -> SubnetIds.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateClusterRequest]
+      SourceBackupId.foreach(__v => __obj.update("SourceBackupId", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateClusterRequest]
     }
   }
 
@@ -389,13 +329,9 @@ package cloudhsmv2 {
     def apply(
         Cluster: js.UndefOr[Cluster] = js.undefined
     ): CreateClusterResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Cluster" -> Cluster.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateClusterResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      Cluster.foreach(__v => __obj.update("Cluster", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateClusterResponse]
     }
   }
 
@@ -412,15 +348,13 @@ package cloudhsmv2 {
         ClusterId: ClusterId,
         IpAddress: js.UndefOr[IpAddress] = js.undefined
     ): CreateHsmRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "AvailabilityZone" -> AvailabilityZone.asInstanceOf[js.Any],
-        "ClusterId"        -> ClusterId.asInstanceOf[js.Any],
-        "IpAddress" -> IpAddress.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "ClusterId"        -> ClusterId.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateHsmRequest]
+      IpAddress.foreach(__v => __obj.update("IpAddress", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateHsmRequest]
     }
   }
 
@@ -433,13 +367,9 @@ package cloudhsmv2 {
     def apply(
         Hsm: js.UndefOr[Hsm] = js.undefined
     ): CreateHsmResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Hsm" -> Hsm.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateHsmResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      Hsm.foreach(__v => __obj.update("Hsm", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateHsmResponse]
     }
   }
 
@@ -452,11 +382,11 @@ package cloudhsmv2 {
     def apply(
         BackupId: BackupId
     ): DeleteBackupRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "BackupId" -> BackupId.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteBackupRequest]
+      __obj.asInstanceOf[DeleteBackupRequest]
     }
   }
 
@@ -469,13 +399,9 @@ package cloudhsmv2 {
     def apply(
         Backup: js.UndefOr[Backup] = js.undefined
     ): DeleteBackupResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Backup" -> Backup.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteBackupResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      Backup.foreach(__v => __obj.update("Backup", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DeleteBackupResponse]
     }
   }
 
@@ -488,11 +414,11 @@ package cloudhsmv2 {
     def apply(
         ClusterId: ClusterId
     ): DeleteClusterRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ClusterId" -> ClusterId.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteClusterRequest]
+      __obj.asInstanceOf[DeleteClusterRequest]
     }
   }
 
@@ -505,13 +431,9 @@ package cloudhsmv2 {
     def apply(
         Cluster: js.UndefOr[Cluster] = js.undefined
     ): DeleteClusterResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Cluster" -> Cluster.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteClusterResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      Cluster.foreach(__v => __obj.update("Cluster", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DeleteClusterResponse]
     }
   }
 
@@ -530,20 +452,14 @@ package cloudhsmv2 {
         EniIp: js.UndefOr[IpAddress] = js.undefined,
         HsmId: js.UndefOr[HsmId] = js.undefined
     ): DeleteHsmRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ClusterId" -> ClusterId.asInstanceOf[js.Any],
-        "EniId" -> EniId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "EniIp" -> EniIp.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "HsmId" -> HsmId.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "ClusterId" -> ClusterId.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteHsmRequest]
+      EniId.foreach(__v => __obj.update("EniId", __v.asInstanceOf[js.Any]))
+      EniIp.foreach(__v => __obj.update("EniIp", __v.asInstanceOf[js.Any]))
+      HsmId.foreach(__v => __obj.update("HsmId", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DeleteHsmRequest]
     }
   }
 
@@ -556,13 +472,9 @@ package cloudhsmv2 {
     def apply(
         HsmId: js.UndefOr[HsmId] = js.undefined
     ): DeleteHsmResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "HsmId" -> HsmId.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteHsmResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      HsmId.foreach(__v => __obj.update("HsmId", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DeleteHsmResponse]
     }
   }
 
@@ -581,22 +493,12 @@ package cloudhsmv2 {
         NextToken: js.UndefOr[NextToken] = js.undefined,
         SortAscending: js.UndefOr[Boolean] = js.undefined
     ): DescribeBackupsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Filters" -> Filters.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MaxResults" -> MaxResults.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NextToken" -> NextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SortAscending" -> SortAscending.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeBackupsRequest]
+      val __obj = js.Dictionary.empty[js.Any]
+      Filters.foreach(__v => __obj.update("Filters", __v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      SortAscending.foreach(__v => __obj.update("SortAscending", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeBackupsRequest]
     }
   }
 
@@ -611,16 +513,10 @@ package cloudhsmv2 {
         Backups: js.UndefOr[Backups] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): DescribeBackupsResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Backups" -> Backups.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NextToken" -> NextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeBackupsResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      Backups.foreach(__v => __obj.update("Backups", __v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeBackupsResponse]
     }
   }
 
@@ -637,19 +533,11 @@ package cloudhsmv2 {
         MaxResults: js.UndefOr[MaxSize] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): DescribeClustersRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Filters" -> Filters.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MaxResults" -> MaxResults.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NextToken" -> NextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeClustersRequest]
+      val __obj = js.Dictionary.empty[js.Any]
+      Filters.foreach(__v => __obj.update("Filters", __v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeClustersRequest]
     }
   }
 
@@ -664,16 +552,10 @@ package cloudhsmv2 {
         Clusters: js.UndefOr[Clusters] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): DescribeClustersResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Clusters" -> Clusters.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NextToken" -> NextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeClustersResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      Clusters.foreach(__v => __obj.update("Clusters", __v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeClustersResponse]
     }
   }
 
@@ -692,22 +574,12 @@ package cloudhsmv2 {
         SourceCluster: js.UndefOr[ClusterId] = js.undefined,
         SourceRegion: js.UndefOr[Region] = js.undefined
     ): DestinationBackup = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "CreateTimestamp" -> CreateTimestamp.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SourceBackup" -> SourceBackup.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SourceCluster" -> SourceCluster.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SourceRegion" -> SourceRegion.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DestinationBackup]
+      val __obj = js.Dictionary.empty[js.Any]
+      CreateTimestamp.foreach(__v => __obj.update("CreateTimestamp", __v.asInstanceOf[js.Any]))
+      SourceBackup.foreach(__v => __obj.update("SourceBackup", __v.asInstanceOf[js.Any]))
+      SourceCluster.foreach(__v => __obj.update("SourceCluster", __v.asInstanceOf[js.Any]))
+      SourceRegion.foreach(__v => __obj.update("SourceRegion", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DestinationBackup]
     }
   }
 
@@ -737,32 +609,18 @@ package cloudhsmv2 {
         StateMessage: js.UndefOr[String] = js.undefined,
         SubnetId: js.UndefOr[SubnetId] = js.undefined
     ): Hsm = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "HsmId" -> HsmId.asInstanceOf[js.Any],
-        "AvailabilityZone" -> AvailabilityZone.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ClusterId" -> ClusterId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "EniId" -> EniId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "EniIp" -> EniIp.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "State" -> State.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "StateMessage" -> StateMessage.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SubnetId" -> SubnetId.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "HsmId" -> HsmId.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Hsm]
+      AvailabilityZone.foreach(__v => __obj.update("AvailabilityZone", __v.asInstanceOf[js.Any]))
+      ClusterId.foreach(__v => __obj.update("ClusterId", __v.asInstanceOf[js.Any]))
+      EniId.foreach(__v => __obj.update("EniId", __v.asInstanceOf[js.Any]))
+      EniIp.foreach(__v => __obj.update("EniIp", __v.asInstanceOf[js.Any]))
+      State.foreach(__v => __obj.update("State", __v.asInstanceOf[js.Any]))
+      StateMessage.foreach(__v => __obj.update("StateMessage", __v.asInstanceOf[js.Any]))
+      SubnetId.foreach(__v => __obj.update("SubnetId", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Hsm]
     }
   }
 
@@ -789,13 +647,13 @@ package cloudhsmv2 {
         SignedCert: Cert,
         TrustAnchor: Cert
     ): InitializeClusterRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ClusterId"   -> ClusterId.asInstanceOf[js.Any],
         "SignedCert"  -> SignedCert.asInstanceOf[js.Any],
         "TrustAnchor" -> TrustAnchor.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[InitializeClusterRequest]
+      __obj.asInstanceOf[InitializeClusterRequest]
     }
   }
 
@@ -810,16 +668,10 @@ package cloudhsmv2 {
         State: js.UndefOr[ClusterState] = js.undefined,
         StateMessage: js.UndefOr[StateMessage] = js.undefined
     ): InitializeClusterResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "State" -> State.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "StateMessage" -> StateMessage.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[InitializeClusterResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      State.foreach(__v => __obj.update("State", __v.asInstanceOf[js.Any]))
+      StateMessage.foreach(__v => __obj.update("StateMessage", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[InitializeClusterResponse]
     }
   }
 
@@ -836,17 +688,13 @@ package cloudhsmv2 {
         MaxResults: js.UndefOr[MaxSize] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): ListTagsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ResourceId" -> ResourceId.asInstanceOf[js.Any],
-        "MaxResults" -> MaxResults.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NextToken" -> NextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "ResourceId" -> ResourceId.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListTagsRequest]
+      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListTagsRequest]
     }
   }
 
@@ -861,14 +709,12 @@ package cloudhsmv2 {
         TagList: TagList,
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): ListTagsResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "TagList" -> TagList.asInstanceOf[js.Any],
-        "NextToken" -> NextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "TagList" -> TagList.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListTagsResponse]
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListTagsResponse]
     }
   }
 
@@ -881,11 +727,11 @@ package cloudhsmv2 {
     def apply(
         BackupId: BackupId
     ): RestoreBackupRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "BackupId" -> BackupId.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RestoreBackupRequest]
+      __obj.asInstanceOf[RestoreBackupRequest]
     }
   }
 
@@ -898,13 +744,9 @@ package cloudhsmv2 {
     def apply(
         Backup: js.UndefOr[Backup] = js.undefined
     ): RestoreBackupResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Backup" -> Backup.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RestoreBackupResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      Backup.foreach(__v => __obj.update("Backup", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[RestoreBackupResponse]
     }
   }
 
@@ -922,12 +764,12 @@ package cloudhsmv2 {
         Key: TagKey,
         Value: TagValue
     ): Tag = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "Key"   -> Key.asInstanceOf[js.Any],
         "Value" -> Value.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Tag]
+      __obj.asInstanceOf[Tag]
     }
   }
 
@@ -942,12 +784,12 @@ package cloudhsmv2 {
         ResourceId: ClusterId,
         TagList: TagList
     ): TagResourceRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ResourceId" -> ResourceId.asInstanceOf[js.Any],
         "TagList"    -> TagList.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[TagResourceRequest]
+      __obj.asInstanceOf[TagResourceRequest]
     }
   }
 
@@ -957,10 +799,9 @@ package cloudhsmv2 {
   object TagResourceResponse {
     def apply(
         ): TagResourceResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary.empty[js.Any]
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[TagResourceResponse]
+      __obj.asInstanceOf[TagResourceResponse]
     }
   }
 
@@ -975,12 +816,12 @@ package cloudhsmv2 {
         ResourceId: ClusterId,
         TagKeyList: TagKeyList
     ): UntagResourceRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ResourceId" -> ResourceId.asInstanceOf[js.Any],
         "TagKeyList" -> TagKeyList.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UntagResourceRequest]
+      __obj.asInstanceOf[UntagResourceRequest]
     }
   }
 
@@ -990,10 +831,9 @@ package cloudhsmv2 {
   object UntagResourceResponse {
     def apply(
         ): UntagResourceResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary.empty[js.Any]
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UntagResourceResponse]
+      __obj.asInstanceOf[UntagResourceResponse]
     }
   }
 }

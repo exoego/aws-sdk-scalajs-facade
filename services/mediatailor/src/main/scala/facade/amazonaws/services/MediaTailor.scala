@@ -71,16 +71,10 @@ package mediatailor {
         AdSegmentUrlPrefix: js.UndefOr[__string] = js.undefined,
         ContentSegmentUrlPrefix: js.UndefOr[__string] = js.undefined
     ): CdnConfiguration = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "AdSegmentUrlPrefix" -> AdSegmentUrlPrefix.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ContentSegmentUrlPrefix" -> ContentSegmentUrlPrefix.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CdnConfiguration]
+      val __obj = js.Dictionary.empty[js.Any]
+      AdSegmentUrlPrefix.foreach(__v => __obj.update("AdSegmentUrlPrefix", __v.asInstanceOf[js.Any]))
+      ContentSegmentUrlPrefix.foreach(__v => __obj.update("ContentSegmentUrlPrefix", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CdnConfiguration]
     }
   }
 
@@ -98,16 +92,10 @@ package mediatailor {
         ManifestEndpointPrefix: js.UndefOr[__string] = js.undefined,
         MpdLocation: js.UndefOr[__string] = js.undefined
     ): DashConfiguration = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ManifestEndpointPrefix" -> ManifestEndpointPrefix.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MpdLocation" -> MpdLocation.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DashConfiguration]
+      val __obj = js.Dictionary.empty[js.Any]
+      ManifestEndpointPrefix.foreach(__v => __obj.update("ManifestEndpointPrefix", __v.asInstanceOf[js.Any]))
+      MpdLocation.foreach(__v => __obj.update("MpdLocation", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DashConfiguration]
     }
   }
 
@@ -123,13 +111,9 @@ package mediatailor {
     def apply(
         MpdLocation: js.UndefOr[__string] = js.undefined
     ): DashConfigurationForPut = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "MpdLocation" -> MpdLocation.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DashConfigurationForPut]
+      val __obj = js.Dictionary.empty[js.Any]
+      MpdLocation.foreach(__v => __obj.update("MpdLocation", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DashConfigurationForPut]
     }
   }
 
@@ -142,11 +126,11 @@ package mediatailor {
     def apply(
         Name: __string
     ): DeletePlaybackConfigurationRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "Name" -> Name.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeletePlaybackConfigurationRequest]
+      __obj.asInstanceOf[DeletePlaybackConfigurationRequest]
     }
   }
 
@@ -156,10 +140,9 @@ package mediatailor {
   object DeletePlaybackConfigurationResponse {
     def apply(
         ): DeletePlaybackConfigurationResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary.empty[js.Any]
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeletePlaybackConfigurationResponse]
+      __obj.asInstanceOf[DeletePlaybackConfigurationResponse]
     }
   }
 
@@ -172,11 +155,11 @@ package mediatailor {
     def apply(
         Name: __string
     ): GetPlaybackConfigurationRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "Name" -> Name.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetPlaybackConfigurationRequest]
+      __obj.asInstanceOf[GetPlaybackConfigurationRequest]
     }
   }
 
@@ -211,46 +194,22 @@ package mediatailor {
         TranscodeProfileName: js.UndefOr[__string] = js.undefined,
         VideoContentSourceUrl: js.UndefOr[__string] = js.undefined
     ): GetPlaybackConfigurationResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "AdDecisionServerUrl" -> AdDecisionServerUrl.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "CdnConfiguration" -> CdnConfiguration.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DashConfiguration" -> DashConfiguration.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "HlsConfiguration" -> HlsConfiguration.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Name" -> Name.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "PlaybackConfigurationArn" -> PlaybackConfigurationArn.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "PlaybackEndpointPrefix" -> PlaybackEndpointPrefix.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SessionInitializationEndpointPrefix" -> SessionInitializationEndpointPrefix.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SlateAdUrl" -> SlateAdUrl.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Tags" -> Tags.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "TranscodeProfileName" -> TranscodeProfileName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "VideoContentSourceUrl" -> VideoContentSourceUrl.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetPlaybackConfigurationResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      AdDecisionServerUrl.foreach(__v => __obj.update("AdDecisionServerUrl", __v.asInstanceOf[js.Any]))
+      CdnConfiguration.foreach(__v => __obj.update("CdnConfiguration", __v.asInstanceOf[js.Any]))
+      DashConfiguration.foreach(__v => __obj.update("DashConfiguration", __v.asInstanceOf[js.Any]))
+      HlsConfiguration.foreach(__v => __obj.update("HlsConfiguration", __v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
+      PlaybackConfigurationArn.foreach(__v => __obj.update("PlaybackConfigurationArn", __v.asInstanceOf[js.Any]))
+      PlaybackEndpointPrefix.foreach(__v => __obj.update("PlaybackEndpointPrefix", __v.asInstanceOf[js.Any]))
+      SessionInitializationEndpointPrefix.foreach(
+        __v => __obj.update("SessionInitializationEndpointPrefix", __v.asInstanceOf[js.Any])
+      )
+      SlateAdUrl.foreach(__v => __obj.update("SlateAdUrl", __v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
+      TranscodeProfileName.foreach(__v => __obj.update("TranscodeProfileName", __v.asInstanceOf[js.Any]))
+      VideoContentSourceUrl.foreach(__v => __obj.update("VideoContentSourceUrl", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetPlaybackConfigurationResponse]
     }
   }
 
@@ -266,13 +225,9 @@ package mediatailor {
     def apply(
         ManifestEndpointPrefix: js.UndefOr[__string] = js.undefined
     ): HlsConfiguration = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ManifestEndpointPrefix" -> ManifestEndpointPrefix.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[HlsConfiguration]
+      val __obj = js.Dictionary.empty[js.Any]
+      ManifestEndpointPrefix.foreach(__v => __obj.update("ManifestEndpointPrefix", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[HlsConfiguration]
     }
   }
 
@@ -287,16 +242,10 @@ package mediatailor {
         MaxResults: js.UndefOr[__integerMin1Max100] = js.undefined,
         NextToken: js.UndefOr[__string] = js.undefined
     ): ListPlaybackConfigurationsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "MaxResults" -> MaxResults.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NextToken" -> NextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListPlaybackConfigurationsRequest]
+      val __obj = js.Dictionary.empty[js.Any]
+      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListPlaybackConfigurationsRequest]
     }
   }
 
@@ -311,16 +260,10 @@ package mediatailor {
         Items: js.UndefOr[__listOfPlaybackConfigurations] = js.undefined,
         NextToken: js.UndefOr[__string] = js.undefined
     ): ListPlaybackConfigurationsResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Items" -> Items.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NextToken" -> NextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListPlaybackConfigurationsResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      Items.foreach(__v => __obj.update("Items", __v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListPlaybackConfigurationsResponse]
     }
   }
 
@@ -333,11 +276,11 @@ package mediatailor {
     def apply(
         ResourceArn: __string
     ): ListTagsForResourceRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListTagsForResourceRequest]
+      __obj.asInstanceOf[ListTagsForResourceRequest]
     }
   }
 
@@ -350,13 +293,9 @@ package mediatailor {
     def apply(
         Tags: js.UndefOr[__mapOf__string] = js.undefined
     ): ListTagsForResourceResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Tags" -> Tags.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListTagsForResourceResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListTagsForResourceResponse]
     }
   }
 
@@ -394,46 +333,22 @@ package mediatailor {
         TranscodeProfileName: js.UndefOr[__string] = js.undefined,
         VideoContentSourceUrl: js.UndefOr[__string] = js.undefined
     ): PlaybackConfiguration = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "AdDecisionServerUrl" -> AdDecisionServerUrl.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "CdnConfiguration" -> CdnConfiguration.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DashConfiguration" -> DashConfiguration.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "HlsConfiguration" -> HlsConfiguration.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Name" -> Name.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "PlaybackConfigurationArn" -> PlaybackConfigurationArn.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "PlaybackEndpointPrefix" -> PlaybackEndpointPrefix.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SessionInitializationEndpointPrefix" -> SessionInitializationEndpointPrefix.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SlateAdUrl" -> SlateAdUrl.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Tags" -> Tags.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "TranscodeProfileName" -> TranscodeProfileName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "VideoContentSourceUrl" -> VideoContentSourceUrl.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PlaybackConfiguration]
+      val __obj = js.Dictionary.empty[js.Any]
+      AdDecisionServerUrl.foreach(__v => __obj.update("AdDecisionServerUrl", __v.asInstanceOf[js.Any]))
+      CdnConfiguration.foreach(__v => __obj.update("CdnConfiguration", __v.asInstanceOf[js.Any]))
+      DashConfiguration.foreach(__v => __obj.update("DashConfiguration", __v.asInstanceOf[js.Any]))
+      HlsConfiguration.foreach(__v => __obj.update("HlsConfiguration", __v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
+      PlaybackConfigurationArn.foreach(__v => __obj.update("PlaybackConfigurationArn", __v.asInstanceOf[js.Any]))
+      PlaybackEndpointPrefix.foreach(__v => __obj.update("PlaybackEndpointPrefix", __v.asInstanceOf[js.Any]))
+      SessionInitializationEndpointPrefix.foreach(
+        __v => __obj.update("SessionInitializationEndpointPrefix", __v.asInstanceOf[js.Any])
+      )
+      SlateAdUrl.foreach(__v => __obj.update("SlateAdUrl", __v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
+      TranscodeProfileName.foreach(__v => __obj.update("TranscodeProfileName", __v.asInstanceOf[js.Any]))
+      VideoContentSourceUrl.foreach(__v => __obj.update("VideoContentSourceUrl", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PlaybackConfiguration]
     }
   }
 
@@ -460,34 +375,16 @@ package mediatailor {
         TranscodeProfileName: js.UndefOr[__string] = js.undefined,
         VideoContentSourceUrl: js.UndefOr[__string] = js.undefined
     ): PutPlaybackConfigurationRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "AdDecisionServerUrl" -> AdDecisionServerUrl.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "CdnConfiguration" -> CdnConfiguration.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DashConfiguration" -> DashConfiguration.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Name" -> Name.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SlateAdUrl" -> SlateAdUrl.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Tags" -> Tags.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "TranscodeProfileName" -> TranscodeProfileName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "VideoContentSourceUrl" -> VideoContentSourceUrl.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PutPlaybackConfigurationRequest]
+      val __obj = js.Dictionary.empty[js.Any]
+      AdDecisionServerUrl.foreach(__v => __obj.update("AdDecisionServerUrl", __v.asInstanceOf[js.Any]))
+      CdnConfiguration.foreach(__v => __obj.update("CdnConfiguration", __v.asInstanceOf[js.Any]))
+      DashConfiguration.foreach(__v => __obj.update("DashConfiguration", __v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
+      SlateAdUrl.foreach(__v => __obj.update("SlateAdUrl", __v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
+      TranscodeProfileName.foreach(__v => __obj.update("TranscodeProfileName", __v.asInstanceOf[js.Any]))
+      VideoContentSourceUrl.foreach(__v => __obj.update("VideoContentSourceUrl", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PutPlaybackConfigurationRequest]
     }
   }
 
@@ -522,46 +419,22 @@ package mediatailor {
         TranscodeProfileName: js.UndefOr[__string] = js.undefined,
         VideoContentSourceUrl: js.UndefOr[__string] = js.undefined
     ): PutPlaybackConfigurationResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "AdDecisionServerUrl" -> AdDecisionServerUrl.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "CdnConfiguration" -> CdnConfiguration.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DashConfiguration" -> DashConfiguration.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "HlsConfiguration" -> HlsConfiguration.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Name" -> Name.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "PlaybackConfigurationArn" -> PlaybackConfigurationArn.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "PlaybackEndpointPrefix" -> PlaybackEndpointPrefix.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SessionInitializationEndpointPrefix" -> SessionInitializationEndpointPrefix.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SlateAdUrl" -> SlateAdUrl.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Tags" -> Tags.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "TranscodeProfileName" -> TranscodeProfileName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "VideoContentSourceUrl" -> VideoContentSourceUrl.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PutPlaybackConfigurationResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      AdDecisionServerUrl.foreach(__v => __obj.update("AdDecisionServerUrl", __v.asInstanceOf[js.Any]))
+      CdnConfiguration.foreach(__v => __obj.update("CdnConfiguration", __v.asInstanceOf[js.Any]))
+      DashConfiguration.foreach(__v => __obj.update("DashConfiguration", __v.asInstanceOf[js.Any]))
+      HlsConfiguration.foreach(__v => __obj.update("HlsConfiguration", __v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
+      PlaybackConfigurationArn.foreach(__v => __obj.update("PlaybackConfigurationArn", __v.asInstanceOf[js.Any]))
+      PlaybackEndpointPrefix.foreach(__v => __obj.update("PlaybackEndpointPrefix", __v.asInstanceOf[js.Any]))
+      SessionInitializationEndpointPrefix.foreach(
+        __v => __obj.update("SessionInitializationEndpointPrefix", __v.asInstanceOf[js.Any])
+      )
+      SlateAdUrl.foreach(__v => __obj.update("SlateAdUrl", __v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
+      TranscodeProfileName.foreach(__v => __obj.update("TranscodeProfileName", __v.asInstanceOf[js.Any]))
+      VideoContentSourceUrl.foreach(__v => __obj.update("VideoContentSourceUrl", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PutPlaybackConfigurationResponse]
     }
   }
 
@@ -576,12 +449,12 @@ package mediatailor {
         ResourceArn: __string,
         Tags: __mapOf__string
     ): TagResourceRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any],
         "Tags"        -> Tags.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[TagResourceRequest]
+      __obj.asInstanceOf[TagResourceRequest]
     }
   }
 
@@ -596,12 +469,12 @@ package mediatailor {
         ResourceArn: __string,
         TagKeys: __listOf__string
     ): UntagResourceRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any],
         "TagKeys"     -> TagKeys.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UntagResourceRequest]
+      __obj.asInstanceOf[UntagResourceRequest]
     }
   }
 }

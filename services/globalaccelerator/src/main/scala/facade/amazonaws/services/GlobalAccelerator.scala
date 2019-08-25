@@ -131,34 +131,16 @@ package globalaccelerator {
         Name: js.UndefOr[GenericString] = js.undefined,
         Status: js.UndefOr[AcceleratorStatus] = js.undefined
     ): Accelerator = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "AcceleratorArn" -> AcceleratorArn.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "CreatedTime" -> CreatedTime.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Enabled" -> Enabled.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "IpAddressType" -> IpAddressType.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "IpSets" -> IpSets.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "LastModifiedTime" -> LastModifiedTime.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Name" -> Name.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Status" -> Status.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Accelerator]
+      val __obj = js.Dictionary.empty[js.Any]
+      AcceleratorArn.foreach(__v => __obj.update("AcceleratorArn", __v.asInstanceOf[js.Any]))
+      CreatedTime.foreach(__v => __obj.update("CreatedTime", __v.asInstanceOf[js.Any]))
+      Enabled.foreach(__v => __obj.update("Enabled", __v.asInstanceOf[js.Any]))
+      IpAddressType.foreach(__v => __obj.update("IpAddressType", __v.asInstanceOf[js.Any]))
+      IpSets.foreach(__v => __obj.update("IpSets", __v.asInstanceOf[js.Any]))
+      LastModifiedTime.foreach(__v => __obj.update("LastModifiedTime", __v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.update("Status", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Accelerator]
     }
   }
 
@@ -178,19 +160,11 @@ package globalaccelerator {
         FlowLogsS3Bucket: js.UndefOr[GenericString] = js.undefined,
         FlowLogsS3Prefix: js.UndefOr[GenericString] = js.undefined
     ): AcceleratorAttributes = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "FlowLogsEnabled" -> FlowLogsEnabled.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "FlowLogsS3Bucket" -> FlowLogsS3Bucket.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "FlowLogsS3Prefix" -> FlowLogsS3Prefix.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AcceleratorAttributes]
+      val __obj = js.Dictionary.empty[js.Any]
+      FlowLogsEnabled.foreach(__v => __obj.update("FlowLogsEnabled", __v.asInstanceOf[js.Any]))
+      FlowLogsS3Bucket.foreach(__v => __obj.update("FlowLogsS3Bucket", __v.asInstanceOf[js.Any]))
+      FlowLogsS3Prefix.foreach(__v => __obj.update("FlowLogsS3Prefix", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AcceleratorAttributes]
     }
   }
 
@@ -223,18 +197,14 @@ package globalaccelerator {
         Enabled: js.UndefOr[GenericBoolean] = js.undefined,
         IpAddressType: js.UndefOr[IpAddressType] = js.undefined
     ): CreateAcceleratorRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "IdempotencyToken" -> IdempotencyToken.asInstanceOf[js.Any],
-        "Name"             -> Name.asInstanceOf[js.Any],
-        "Enabled" -> Enabled.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "IpAddressType" -> IpAddressType.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "Name"             -> Name.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateAcceleratorRequest]
+      Enabled.foreach(__v => __obj.update("Enabled", __v.asInstanceOf[js.Any]))
+      IpAddressType.foreach(__v => __obj.update("IpAddressType", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateAcceleratorRequest]
     }
   }
 
@@ -247,13 +217,9 @@ package globalaccelerator {
     def apply(
         Accelerator: js.UndefOr[Accelerator] = js.undefined
     ): CreateAcceleratorResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Accelerator" -> Accelerator.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateAcceleratorResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      Accelerator.foreach(__v => __obj.update("Accelerator", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateAcceleratorResponse]
     }
   }
 
@@ -284,34 +250,20 @@ package globalaccelerator {
         ThresholdCount: js.UndefOr[ThresholdCount] = js.undefined,
         TrafficDialPercentage: js.UndefOr[TrafficDialPercentage] = js.undefined
     ): CreateEndpointGroupRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "EndpointGroupRegion" -> EndpointGroupRegion.asInstanceOf[js.Any],
         "IdempotencyToken"    -> IdempotencyToken.asInstanceOf[js.Any],
-        "ListenerArn"         -> ListenerArn.asInstanceOf[js.Any],
-        "EndpointConfigurations" -> EndpointConfigurations.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "HealthCheckIntervalSeconds" -> HealthCheckIntervalSeconds.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "HealthCheckPath" -> HealthCheckPath.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "HealthCheckPort" -> HealthCheckPort.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "HealthCheckProtocol" -> HealthCheckProtocol.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ThresholdCount" -> ThresholdCount.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "TrafficDialPercentage" -> TrafficDialPercentage.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "ListenerArn"         -> ListenerArn.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateEndpointGroupRequest]
+      EndpointConfigurations.foreach(__v => __obj.update("EndpointConfigurations", __v.asInstanceOf[js.Any]))
+      HealthCheckIntervalSeconds.foreach(__v => __obj.update("HealthCheckIntervalSeconds", __v.asInstanceOf[js.Any]))
+      HealthCheckPath.foreach(__v => __obj.update("HealthCheckPath", __v.asInstanceOf[js.Any]))
+      HealthCheckPort.foreach(__v => __obj.update("HealthCheckPort", __v.asInstanceOf[js.Any]))
+      HealthCheckProtocol.foreach(__v => __obj.update("HealthCheckProtocol", __v.asInstanceOf[js.Any]))
+      ThresholdCount.foreach(__v => __obj.update("ThresholdCount", __v.asInstanceOf[js.Any]))
+      TrafficDialPercentage.foreach(__v => __obj.update("TrafficDialPercentage", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateEndpointGroupRequest]
     }
   }
 
@@ -324,13 +276,9 @@ package globalaccelerator {
     def apply(
         EndpointGroup: js.UndefOr[EndpointGroup] = js.undefined
     ): CreateEndpointGroupResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "EndpointGroup" -> EndpointGroup.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateEndpointGroupResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      EndpointGroup.foreach(__v => __obj.update("EndpointGroup", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateEndpointGroupResponse]
     }
   }
 
@@ -351,17 +299,15 @@ package globalaccelerator {
         Protocol: Protocol,
         ClientAffinity: js.UndefOr[ClientAffinity] = js.undefined
     ): CreateListenerRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "AcceleratorArn"   -> AcceleratorArn.asInstanceOf[js.Any],
         "IdempotencyToken" -> IdempotencyToken.asInstanceOf[js.Any],
         "PortRanges"       -> PortRanges.asInstanceOf[js.Any],
-        "Protocol"         -> Protocol.asInstanceOf[js.Any],
-        "ClientAffinity" -> ClientAffinity.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "Protocol"         -> Protocol.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateListenerRequest]
+      ClientAffinity.foreach(__v => __obj.update("ClientAffinity", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateListenerRequest]
     }
   }
 
@@ -374,13 +320,9 @@ package globalaccelerator {
     def apply(
         Listener: js.UndefOr[Listener] = js.undefined
     ): CreateListenerResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Listener" -> Listener.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateListenerResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      Listener.foreach(__v => __obj.update("Listener", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateListenerResponse]
     }
   }
 
@@ -393,11 +335,11 @@ package globalaccelerator {
     def apply(
         AcceleratorArn: GenericString
     ): DeleteAcceleratorRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "AcceleratorArn" -> AcceleratorArn.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteAcceleratorRequest]
+      __obj.asInstanceOf[DeleteAcceleratorRequest]
     }
   }
 
@@ -410,11 +352,11 @@ package globalaccelerator {
     def apply(
         EndpointGroupArn: GenericString
     ): DeleteEndpointGroupRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "EndpointGroupArn" -> EndpointGroupArn.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteEndpointGroupRequest]
+      __obj.asInstanceOf[DeleteEndpointGroupRequest]
     }
   }
 
@@ -427,11 +369,11 @@ package globalaccelerator {
     def apply(
         ListenerArn: GenericString
     ): DeleteListenerRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ListenerArn" -> ListenerArn.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteListenerRequest]
+      __obj.asInstanceOf[DeleteListenerRequest]
     }
   }
 
@@ -444,13 +386,9 @@ package globalaccelerator {
     def apply(
         AcceleratorArn: js.UndefOr[GenericString] = js.undefined
     ): DescribeAcceleratorAttributesRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "AcceleratorArn" -> AcceleratorArn.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeAcceleratorAttributesRequest]
+      val __obj = js.Dictionary.empty[js.Any]
+      AcceleratorArn.foreach(__v => __obj.update("AcceleratorArn", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeAcceleratorAttributesRequest]
     }
   }
 
@@ -463,13 +401,9 @@ package globalaccelerator {
     def apply(
         AcceleratorAttributes: js.UndefOr[AcceleratorAttributes] = js.undefined
     ): DescribeAcceleratorAttributesResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "AcceleratorAttributes" -> AcceleratorAttributes.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeAcceleratorAttributesResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      AcceleratorAttributes.foreach(__v => __obj.update("AcceleratorAttributes", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeAcceleratorAttributesResponse]
     }
   }
 
@@ -482,11 +416,11 @@ package globalaccelerator {
     def apply(
         AcceleratorArn: GenericString
     ): DescribeAcceleratorRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "AcceleratorArn" -> AcceleratorArn.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeAcceleratorRequest]
+      __obj.asInstanceOf[DescribeAcceleratorRequest]
     }
   }
 
@@ -499,13 +433,9 @@ package globalaccelerator {
     def apply(
         Accelerator: js.UndefOr[Accelerator] = js.undefined
     ): DescribeAcceleratorResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Accelerator" -> Accelerator.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeAcceleratorResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      Accelerator.foreach(__v => __obj.update("Accelerator", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeAcceleratorResponse]
     }
   }
 
@@ -518,11 +448,11 @@ package globalaccelerator {
     def apply(
         EndpointGroupArn: GenericString
     ): DescribeEndpointGroupRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "EndpointGroupArn" -> EndpointGroupArn.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeEndpointGroupRequest]
+      __obj.asInstanceOf[DescribeEndpointGroupRequest]
     }
   }
 
@@ -535,13 +465,9 @@ package globalaccelerator {
     def apply(
         EndpointGroup: js.UndefOr[EndpointGroup] = js.undefined
     ): DescribeEndpointGroupResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "EndpointGroup" -> EndpointGroup.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeEndpointGroupResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      EndpointGroup.foreach(__v => __obj.update("EndpointGroup", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeEndpointGroupResponse]
     }
   }
 
@@ -554,11 +480,11 @@ package globalaccelerator {
     def apply(
         ListenerArn: GenericString
     ): DescribeListenerRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ListenerArn" -> ListenerArn.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeListenerRequest]
+      __obj.asInstanceOf[DescribeListenerRequest]
     }
   }
 
@@ -571,13 +497,9 @@ package globalaccelerator {
     def apply(
         Listener: js.UndefOr[Listener] = js.undefined
     ): DescribeListenerResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Listener" -> Listener.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeListenerResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      Listener.foreach(__v => __obj.update("Listener", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeListenerResponse]
     }
   }
 
@@ -595,16 +517,10 @@ package globalaccelerator {
         EndpointId: js.UndefOr[GenericString] = js.undefined,
         Weight: js.UndefOr[EndpointWeight] = js.undefined
     ): EndpointConfiguration = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "EndpointId" -> EndpointId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Weight" -> Weight.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[EndpointConfiguration]
+      val __obj = js.Dictionary.empty[js.Any]
+      EndpointId.foreach(__v => __obj.update("EndpointId", __v.asInstanceOf[js.Any]))
+      Weight.foreach(__v => __obj.update("Weight", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[EndpointConfiguration]
     }
   }
 
@@ -626,22 +542,12 @@ package globalaccelerator {
         HealthState: js.UndefOr[HealthState] = js.undefined,
         Weight: js.UndefOr[EndpointWeight] = js.undefined
     ): EndpointDescription = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "EndpointId" -> EndpointId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "HealthReason" -> HealthReason.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "HealthState" -> HealthState.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Weight" -> Weight.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[EndpointDescription]
+      val __obj = js.Dictionary.empty[js.Any]
+      EndpointId.foreach(__v => __obj.update("EndpointId", __v.asInstanceOf[js.Any]))
+      HealthReason.foreach(__v => __obj.update("HealthReason", __v.asInstanceOf[js.Any]))
+      HealthState.foreach(__v => __obj.update("HealthState", __v.asInstanceOf[js.Any]))
+      Weight.foreach(__v => __obj.update("Weight", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[EndpointDescription]
     }
   }
 
@@ -673,37 +579,17 @@ package globalaccelerator {
         ThresholdCount: js.UndefOr[ThresholdCount] = js.undefined,
         TrafficDialPercentage: js.UndefOr[TrafficDialPercentage] = js.undefined
     ): EndpointGroup = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "EndpointDescriptions" -> EndpointDescriptions.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "EndpointGroupArn" -> EndpointGroupArn.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "EndpointGroupRegion" -> EndpointGroupRegion.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "HealthCheckIntervalSeconds" -> HealthCheckIntervalSeconds.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "HealthCheckPath" -> HealthCheckPath.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "HealthCheckPort" -> HealthCheckPort.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "HealthCheckProtocol" -> HealthCheckProtocol.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ThresholdCount" -> ThresholdCount.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "TrafficDialPercentage" -> TrafficDialPercentage.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[EndpointGroup]
+      val __obj = js.Dictionary.empty[js.Any]
+      EndpointDescriptions.foreach(__v => __obj.update("EndpointDescriptions", __v.asInstanceOf[js.Any]))
+      EndpointGroupArn.foreach(__v => __obj.update("EndpointGroupArn", __v.asInstanceOf[js.Any]))
+      EndpointGroupRegion.foreach(__v => __obj.update("EndpointGroupRegion", __v.asInstanceOf[js.Any]))
+      HealthCheckIntervalSeconds.foreach(__v => __obj.update("HealthCheckIntervalSeconds", __v.asInstanceOf[js.Any]))
+      HealthCheckPath.foreach(__v => __obj.update("HealthCheckPath", __v.asInstanceOf[js.Any]))
+      HealthCheckPort.foreach(__v => __obj.update("HealthCheckPort", __v.asInstanceOf[js.Any]))
+      HealthCheckProtocol.foreach(__v => __obj.update("HealthCheckProtocol", __v.asInstanceOf[js.Any]))
+      ThresholdCount.foreach(__v => __obj.update("ThresholdCount", __v.asInstanceOf[js.Any]))
+      TrafficDialPercentage.foreach(__v => __obj.update("TrafficDialPercentage", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[EndpointGroup]
     }
   }
 
@@ -743,16 +629,10 @@ package globalaccelerator {
         IpAddresses: js.UndefOr[IpAddresses] = js.undefined,
         IpFamily: js.UndefOr[GenericString] = js.undefined
     ): IpSet = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "IpAddresses" -> IpAddresses.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "IpFamily" -> IpFamily.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[IpSet]
+      val __obj = js.Dictionary.empty[js.Any]
+      IpAddresses.foreach(__v => __obj.update("IpAddresses", __v.asInstanceOf[js.Any]))
+      IpFamily.foreach(__v => __obj.update("IpFamily", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[IpSet]
     }
   }
 
@@ -767,16 +647,10 @@ package globalaccelerator {
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
         NextToken: js.UndefOr[GenericString] = js.undefined
     ): ListAcceleratorsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "MaxResults" -> MaxResults.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NextToken" -> NextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListAcceleratorsRequest]
+      val __obj = js.Dictionary.empty[js.Any]
+      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListAcceleratorsRequest]
     }
   }
 
@@ -791,16 +665,10 @@ package globalaccelerator {
         Accelerators: js.UndefOr[Accelerators] = js.undefined,
         NextToken: js.UndefOr[GenericString] = js.undefined
     ): ListAcceleratorsResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Accelerators" -> Accelerators.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NextToken" -> NextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListAcceleratorsResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      Accelerators.foreach(__v => __obj.update("Accelerators", __v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListAcceleratorsResponse]
     }
   }
 
@@ -817,17 +685,13 @@ package globalaccelerator {
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
         NextToken: js.UndefOr[GenericString] = js.undefined
     ): ListEndpointGroupsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ListenerArn" -> ListenerArn.asInstanceOf[js.Any],
-        "MaxResults" -> MaxResults.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NextToken" -> NextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "ListenerArn" -> ListenerArn.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListEndpointGroupsRequest]
+      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListEndpointGroupsRequest]
     }
   }
 
@@ -842,16 +706,10 @@ package globalaccelerator {
         EndpointGroups: js.UndefOr[EndpointGroups] = js.undefined,
         NextToken: js.UndefOr[GenericString] = js.undefined
     ): ListEndpointGroupsResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "EndpointGroups" -> EndpointGroups.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NextToken" -> NextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListEndpointGroupsResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      EndpointGroups.foreach(__v => __obj.update("EndpointGroups", __v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListEndpointGroupsResponse]
     }
   }
 
@@ -868,17 +726,13 @@ package globalaccelerator {
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
         NextToken: js.UndefOr[GenericString] = js.undefined
     ): ListListenersRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "AcceleratorArn" -> AcceleratorArn.asInstanceOf[js.Any],
-        "MaxResults" -> MaxResults.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NextToken" -> NextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "AcceleratorArn" -> AcceleratorArn.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListListenersRequest]
+      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListListenersRequest]
     }
   }
 
@@ -893,16 +747,10 @@ package globalaccelerator {
         Listeners: js.UndefOr[Listeners] = js.undefined,
         NextToken: js.UndefOr[GenericString] = js.undefined
     ): ListListenersResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Listeners" -> Listeners.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NextToken" -> NextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListListenersResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      Listeners.foreach(__v => __obj.update("Listeners", __v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListListenersResponse]
     }
   }
 
@@ -924,22 +772,12 @@ package globalaccelerator {
         PortRanges: js.UndefOr[PortRanges] = js.undefined,
         Protocol: js.UndefOr[Protocol] = js.undefined
     ): Listener = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ClientAffinity" -> ClientAffinity.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ListenerArn" -> ListenerArn.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "PortRanges" -> PortRanges.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Protocol" -> Protocol.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Listener]
+      val __obj = js.Dictionary.empty[js.Any]
+      ClientAffinity.foreach(__v => __obj.update("ClientAffinity", __v.asInstanceOf[js.Any]))
+      ListenerArn.foreach(__v => __obj.update("ListenerArn", __v.asInstanceOf[js.Any]))
+      PortRanges.foreach(__v => __obj.update("PortRanges", __v.asInstanceOf[js.Any]))
+      Protocol.foreach(__v => __obj.update("Protocol", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Listener]
     }
   }
 
@@ -957,16 +795,10 @@ package globalaccelerator {
         FromPort: js.UndefOr[PortNumber] = js.undefined,
         ToPort: js.UndefOr[PortNumber] = js.undefined
     ): PortRange = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "FromPort" -> FromPort.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ToPort" -> ToPort.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PortRange]
+      val __obj = js.Dictionary.empty[js.Any]
+      FromPort.foreach(__v => __obj.update("FromPort", __v.asInstanceOf[js.Any]))
+      ToPort.foreach(__v => __obj.update("ToPort", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PortRange]
     }
   }
 
@@ -992,22 +824,12 @@ package globalaccelerator {
         FlowLogsS3Bucket: js.UndefOr[GenericString] = js.undefined,
         FlowLogsS3Prefix: js.UndefOr[GenericString] = js.undefined
     ): UpdateAcceleratorAttributesRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "AcceleratorArn" -> AcceleratorArn.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "FlowLogsEnabled" -> FlowLogsEnabled.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "FlowLogsS3Bucket" -> FlowLogsS3Bucket.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "FlowLogsS3Prefix" -> FlowLogsS3Prefix.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateAcceleratorAttributesRequest]
+      val __obj = js.Dictionary.empty[js.Any]
+      AcceleratorArn.foreach(__v => __obj.update("AcceleratorArn", __v.asInstanceOf[js.Any]))
+      FlowLogsEnabled.foreach(__v => __obj.update("FlowLogsEnabled", __v.asInstanceOf[js.Any]))
+      FlowLogsS3Bucket.foreach(__v => __obj.update("FlowLogsS3Bucket", __v.asInstanceOf[js.Any]))
+      FlowLogsS3Prefix.foreach(__v => __obj.update("FlowLogsS3Prefix", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateAcceleratorAttributesRequest]
     }
   }
 
@@ -1020,13 +842,9 @@ package globalaccelerator {
     def apply(
         AcceleratorAttributes: js.UndefOr[AcceleratorAttributes] = js.undefined
     ): UpdateAcceleratorAttributesResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "AcceleratorAttributes" -> AcceleratorAttributes.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateAcceleratorAttributesResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      AcceleratorAttributes.foreach(__v => __obj.update("AcceleratorAttributes", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateAcceleratorAttributesResponse]
     }
   }
 
@@ -1045,20 +863,14 @@ package globalaccelerator {
         IpAddressType: js.UndefOr[IpAddressType] = js.undefined,
         Name: js.UndefOr[GenericString] = js.undefined
     ): UpdateAcceleratorRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "AcceleratorArn" -> AcceleratorArn.asInstanceOf[js.Any],
-        "Enabled" -> Enabled.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "IpAddressType" -> IpAddressType.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Name" -> Name.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "AcceleratorArn" -> AcceleratorArn.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateAcceleratorRequest]
+      Enabled.foreach(__v => __obj.update("Enabled", __v.asInstanceOf[js.Any]))
+      IpAddressType.foreach(__v => __obj.update("IpAddressType", __v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateAcceleratorRequest]
     }
   }
 
@@ -1071,13 +883,9 @@ package globalaccelerator {
     def apply(
         Accelerator: js.UndefOr[Accelerator] = js.undefined
     ): UpdateAcceleratorResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Accelerator" -> Accelerator.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateAcceleratorResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      Accelerator.foreach(__v => __obj.update("Accelerator", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateAcceleratorResponse]
     }
   }
 
@@ -1104,32 +912,18 @@ package globalaccelerator {
         ThresholdCount: js.UndefOr[ThresholdCount] = js.undefined,
         TrafficDialPercentage: js.UndefOr[TrafficDialPercentage] = js.undefined
     ): UpdateEndpointGroupRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "EndpointGroupArn" -> EndpointGroupArn.asInstanceOf[js.Any],
-        "EndpointConfigurations" -> EndpointConfigurations.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "HealthCheckIntervalSeconds" -> HealthCheckIntervalSeconds.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "HealthCheckPath" -> HealthCheckPath.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "HealthCheckPort" -> HealthCheckPort.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "HealthCheckProtocol" -> HealthCheckProtocol.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ThresholdCount" -> ThresholdCount.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "TrafficDialPercentage" -> TrafficDialPercentage.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "EndpointGroupArn" -> EndpointGroupArn.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateEndpointGroupRequest]
+      EndpointConfigurations.foreach(__v => __obj.update("EndpointConfigurations", __v.asInstanceOf[js.Any]))
+      HealthCheckIntervalSeconds.foreach(__v => __obj.update("HealthCheckIntervalSeconds", __v.asInstanceOf[js.Any]))
+      HealthCheckPath.foreach(__v => __obj.update("HealthCheckPath", __v.asInstanceOf[js.Any]))
+      HealthCheckPort.foreach(__v => __obj.update("HealthCheckPort", __v.asInstanceOf[js.Any]))
+      HealthCheckProtocol.foreach(__v => __obj.update("HealthCheckProtocol", __v.asInstanceOf[js.Any]))
+      ThresholdCount.foreach(__v => __obj.update("ThresholdCount", __v.asInstanceOf[js.Any]))
+      TrafficDialPercentage.foreach(__v => __obj.update("TrafficDialPercentage", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateEndpointGroupRequest]
     }
   }
 
@@ -1142,13 +936,9 @@ package globalaccelerator {
     def apply(
         EndpointGroup: js.UndefOr[EndpointGroup] = js.undefined
     ): UpdateEndpointGroupResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "EndpointGroup" -> EndpointGroup.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateEndpointGroupResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      EndpointGroup.foreach(__v => __obj.update("EndpointGroup", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateEndpointGroupResponse]
     }
   }
 
@@ -1167,20 +957,14 @@ package globalaccelerator {
         PortRanges: js.UndefOr[PortRanges] = js.undefined,
         Protocol: js.UndefOr[Protocol] = js.undefined
     ): UpdateListenerRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ListenerArn" -> ListenerArn.asInstanceOf[js.Any],
-        "ClientAffinity" -> ClientAffinity.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "PortRanges" -> PortRanges.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Protocol" -> Protocol.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "ListenerArn" -> ListenerArn.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateListenerRequest]
+      ClientAffinity.foreach(__v => __obj.update("ClientAffinity", __v.asInstanceOf[js.Any]))
+      PortRanges.foreach(__v => __obj.update("PortRanges", __v.asInstanceOf[js.Any]))
+      Protocol.foreach(__v => __obj.update("Protocol", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateListenerRequest]
     }
   }
 
@@ -1193,13 +977,9 @@ package globalaccelerator {
     def apply(
         Listener: js.UndefOr[Listener] = js.undefined
     ): UpdateListenerResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Listener" -> Listener.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateListenerResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      Listener.foreach(__v => __obj.update("Listener", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateListenerResponse]
     }
   }
 }

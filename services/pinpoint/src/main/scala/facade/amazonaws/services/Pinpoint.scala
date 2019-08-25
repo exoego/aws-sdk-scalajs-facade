@@ -336,19 +336,11 @@ package pinpoint {
         ClientSecret: js.UndefOr[__string] = js.undefined,
         Enabled: js.UndefOr[__boolean] = js.undefined
     ): ADMChannelRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ClientId" -> ClientId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ClientSecret" -> ClientSecret.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Enabled" -> Enabled.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ADMChannelRequest]
+      val __obj = js.Dictionary.empty[js.Any]
+      ClientId.foreach(__v => __obj.update("ClientId", __v.asInstanceOf[js.Any]))
+      ClientSecret.foreach(__v => __obj.update("ClientSecret", __v.asInstanceOf[js.Any]))
+      Enabled.foreach(__v => __obj.update("Enabled", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ADMChannelRequest]
     }
   }
 
@@ -382,40 +374,18 @@ package pinpoint {
         Platform: js.UndefOr[__string] = js.undefined,
         Version: js.UndefOr[__integer] = js.undefined
     ): ADMChannelResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ApplicationId" -> ApplicationId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "CreationDate" -> CreationDate.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Enabled" -> Enabled.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "HasCredential" -> HasCredential.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Id" -> Id.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "IsArchived" -> IsArchived.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "LastModifiedBy" -> LastModifiedBy.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "LastModifiedDate" -> LastModifiedDate.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Platform" -> Platform.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Version" -> Version.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ADMChannelResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      ApplicationId.foreach(__v => __obj.update("ApplicationId", __v.asInstanceOf[js.Any]))
+      CreationDate.foreach(__v => __obj.update("CreationDate", __v.asInstanceOf[js.Any]))
+      Enabled.foreach(__v => __obj.update("Enabled", __v.asInstanceOf[js.Any]))
+      HasCredential.foreach(__v => __obj.update("HasCredential", __v.asInstanceOf[js.Any]))
+      Id.foreach(__v => __obj.update("Id", __v.asInstanceOf[js.Any]))
+      IsArchived.foreach(__v => __obj.update("IsArchived", __v.asInstanceOf[js.Any]))
+      LastModifiedBy.foreach(__v => __obj.update("LastModifiedBy", __v.asInstanceOf[js.Any]))
+      LastModifiedDate.foreach(__v => __obj.update("LastModifiedDate", __v.asInstanceOf[js.Any]))
+      Platform.foreach(__v => __obj.update("Platform", __v.asInstanceOf[js.Any]))
+      Version.foreach(__v => __obj.update("Version", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ADMChannelResponse]
     }
   }
 
@@ -461,58 +431,24 @@ package pinpoint {
         Title: js.UndefOr[__string] = js.undefined,
         Url: js.UndefOr[__string] = js.undefined
     ): ADMMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Action" -> Action.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Body" -> Body.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ConsolidationKey" -> ConsolidationKey.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Data" -> Data.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ExpiresAfter" -> ExpiresAfter.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "IconReference" -> IconReference.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ImageIconUrl" -> ImageIconUrl.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ImageUrl" -> ImageUrl.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MD5" -> MD5.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "RawContent" -> RawContent.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SilentPush" -> SilentPush.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SmallImageIconUrl" -> SmallImageIconUrl.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Sound" -> Sound.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Substitutions" -> Substitutions.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Title" -> Title.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Url" -> Url.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ADMMessage]
+      val __obj = js.Dictionary.empty[js.Any]
+      Action.foreach(__v => __obj.update("Action", __v.asInstanceOf[js.Any]))
+      Body.foreach(__v => __obj.update("Body", __v.asInstanceOf[js.Any]))
+      ConsolidationKey.foreach(__v => __obj.update("ConsolidationKey", __v.asInstanceOf[js.Any]))
+      Data.foreach(__v => __obj.update("Data", __v.asInstanceOf[js.Any]))
+      ExpiresAfter.foreach(__v => __obj.update("ExpiresAfter", __v.asInstanceOf[js.Any]))
+      IconReference.foreach(__v => __obj.update("IconReference", __v.asInstanceOf[js.Any]))
+      ImageIconUrl.foreach(__v => __obj.update("ImageIconUrl", __v.asInstanceOf[js.Any]))
+      ImageUrl.foreach(__v => __obj.update("ImageUrl", __v.asInstanceOf[js.Any]))
+      MD5.foreach(__v => __obj.update("MD5", __v.asInstanceOf[js.Any]))
+      RawContent.foreach(__v => __obj.update("RawContent", __v.asInstanceOf[js.Any]))
+      SilentPush.foreach(__v => __obj.update("SilentPush", __v.asInstanceOf[js.Any]))
+      SmallImageIconUrl.foreach(__v => __obj.update("SmallImageIconUrl", __v.asInstanceOf[js.Any]))
+      Sound.foreach(__v => __obj.update("Sound", __v.asInstanceOf[js.Any]))
+      Substitutions.foreach(__v => __obj.update("Substitutions", __v.asInstanceOf[js.Any]))
+      Title.foreach(__v => __obj.update("Title", __v.asInstanceOf[js.Any]))
+      Url.foreach(__v => __obj.update("Url", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ADMMessage]
     }
   }
 
@@ -542,34 +478,16 @@ package pinpoint {
         TokenKey: js.UndefOr[__string] = js.undefined,
         TokenKeyId: js.UndefOr[__string] = js.undefined
     ): APNSChannelRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "BundleId" -> BundleId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Certificate" -> Certificate.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DefaultAuthenticationMethod" -> DefaultAuthenticationMethod.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Enabled" -> Enabled.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "PrivateKey" -> PrivateKey.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "TeamId" -> TeamId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "TokenKey" -> TokenKey.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "TokenKeyId" -> TokenKeyId.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[APNSChannelRequest]
+      val __obj = js.Dictionary.empty[js.Any]
+      BundleId.foreach(__v => __obj.update("BundleId", __v.asInstanceOf[js.Any]))
+      Certificate.foreach(__v => __obj.update("Certificate", __v.asInstanceOf[js.Any]))
+      DefaultAuthenticationMethod.foreach(__v => __obj.update("DefaultAuthenticationMethod", __v.asInstanceOf[js.Any]))
+      Enabled.foreach(__v => __obj.update("Enabled", __v.asInstanceOf[js.Any]))
+      PrivateKey.foreach(__v => __obj.update("PrivateKey", __v.asInstanceOf[js.Any]))
+      TeamId.foreach(__v => __obj.update("TeamId", __v.asInstanceOf[js.Any]))
+      TokenKey.foreach(__v => __obj.update("TokenKey", __v.asInstanceOf[js.Any]))
+      TokenKeyId.foreach(__v => __obj.update("TokenKeyId", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[APNSChannelRequest]
     }
   }
 
@@ -607,46 +525,20 @@ package pinpoint {
         Platform: js.UndefOr[__string] = js.undefined,
         Version: js.UndefOr[__integer] = js.undefined
     ): APNSChannelResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ApplicationId" -> ApplicationId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "CreationDate" -> CreationDate.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DefaultAuthenticationMethod" -> DefaultAuthenticationMethod.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Enabled" -> Enabled.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "HasCredential" -> HasCredential.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "HasTokenKey" -> HasTokenKey.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Id" -> Id.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "IsArchived" -> IsArchived.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "LastModifiedBy" -> LastModifiedBy.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "LastModifiedDate" -> LastModifiedDate.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Platform" -> Platform.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Version" -> Version.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[APNSChannelResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      ApplicationId.foreach(__v => __obj.update("ApplicationId", __v.asInstanceOf[js.Any]))
+      CreationDate.foreach(__v => __obj.update("CreationDate", __v.asInstanceOf[js.Any]))
+      DefaultAuthenticationMethod.foreach(__v => __obj.update("DefaultAuthenticationMethod", __v.asInstanceOf[js.Any]))
+      Enabled.foreach(__v => __obj.update("Enabled", __v.asInstanceOf[js.Any]))
+      HasCredential.foreach(__v => __obj.update("HasCredential", __v.asInstanceOf[js.Any]))
+      HasTokenKey.foreach(__v => __obj.update("HasTokenKey", __v.asInstanceOf[js.Any]))
+      Id.foreach(__v => __obj.update("Id", __v.asInstanceOf[js.Any]))
+      IsArchived.foreach(__v => __obj.update("IsArchived", __v.asInstanceOf[js.Any]))
+      LastModifiedBy.foreach(__v => __obj.update("LastModifiedBy", __v.asInstanceOf[js.Any]))
+      LastModifiedDate.foreach(__v => __obj.update("LastModifiedDate", __v.asInstanceOf[js.Any]))
+      Platform.foreach(__v => __obj.update("Platform", __v.asInstanceOf[js.Any]))
+      Version.foreach(__v => __obj.update("Version", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[APNSChannelResponse]
     }
   }
 
@@ -694,61 +586,27 @@ package pinpoint {
         Title: js.UndefOr[__string] = js.undefined,
         Url: js.UndefOr[__string] = js.undefined
     ): APNSMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Action" -> Action.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Badge" -> Badge.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Body" -> Body.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Category" -> Category.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "CollapseId" -> CollapseId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Data" -> Data.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MediaUrl" -> MediaUrl.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "PreferredAuthenticationMethod" -> PreferredAuthenticationMethod.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Priority" -> Priority.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "RawContent" -> RawContent.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SilentPush" -> SilentPush.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Sound" -> Sound.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Substitutions" -> Substitutions.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ThreadId" -> ThreadId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "TimeToLive" -> TimeToLive.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Title" -> Title.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Url" -> Url.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[APNSMessage]
+      val __obj = js.Dictionary.empty[js.Any]
+      Action.foreach(__v => __obj.update("Action", __v.asInstanceOf[js.Any]))
+      Badge.foreach(__v => __obj.update("Badge", __v.asInstanceOf[js.Any]))
+      Body.foreach(__v => __obj.update("Body", __v.asInstanceOf[js.Any]))
+      Category.foreach(__v => __obj.update("Category", __v.asInstanceOf[js.Any]))
+      CollapseId.foreach(__v => __obj.update("CollapseId", __v.asInstanceOf[js.Any]))
+      Data.foreach(__v => __obj.update("Data", __v.asInstanceOf[js.Any]))
+      MediaUrl.foreach(__v => __obj.update("MediaUrl", __v.asInstanceOf[js.Any]))
+      PreferredAuthenticationMethod.foreach(
+        __v => __obj.update("PreferredAuthenticationMethod", __v.asInstanceOf[js.Any])
+      )
+      Priority.foreach(__v => __obj.update("Priority", __v.asInstanceOf[js.Any]))
+      RawContent.foreach(__v => __obj.update("RawContent", __v.asInstanceOf[js.Any]))
+      SilentPush.foreach(__v => __obj.update("SilentPush", __v.asInstanceOf[js.Any]))
+      Sound.foreach(__v => __obj.update("Sound", __v.asInstanceOf[js.Any]))
+      Substitutions.foreach(__v => __obj.update("Substitutions", __v.asInstanceOf[js.Any]))
+      ThreadId.foreach(__v => __obj.update("ThreadId", __v.asInstanceOf[js.Any]))
+      TimeToLive.foreach(__v => __obj.update("TimeToLive", __v.asInstanceOf[js.Any]))
+      Title.foreach(__v => __obj.update("Title", __v.asInstanceOf[js.Any]))
+      Url.foreach(__v => __obj.update("Url", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[APNSMessage]
     }
   }
 
@@ -778,34 +636,16 @@ package pinpoint {
         TokenKey: js.UndefOr[__string] = js.undefined,
         TokenKeyId: js.UndefOr[__string] = js.undefined
     ): APNSSandboxChannelRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "BundleId" -> BundleId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Certificate" -> Certificate.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DefaultAuthenticationMethod" -> DefaultAuthenticationMethod.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Enabled" -> Enabled.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "PrivateKey" -> PrivateKey.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "TeamId" -> TeamId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "TokenKey" -> TokenKey.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "TokenKeyId" -> TokenKeyId.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[APNSSandboxChannelRequest]
+      val __obj = js.Dictionary.empty[js.Any]
+      BundleId.foreach(__v => __obj.update("BundleId", __v.asInstanceOf[js.Any]))
+      Certificate.foreach(__v => __obj.update("Certificate", __v.asInstanceOf[js.Any]))
+      DefaultAuthenticationMethod.foreach(__v => __obj.update("DefaultAuthenticationMethod", __v.asInstanceOf[js.Any]))
+      Enabled.foreach(__v => __obj.update("Enabled", __v.asInstanceOf[js.Any]))
+      PrivateKey.foreach(__v => __obj.update("PrivateKey", __v.asInstanceOf[js.Any]))
+      TeamId.foreach(__v => __obj.update("TeamId", __v.asInstanceOf[js.Any]))
+      TokenKey.foreach(__v => __obj.update("TokenKey", __v.asInstanceOf[js.Any]))
+      TokenKeyId.foreach(__v => __obj.update("TokenKeyId", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[APNSSandboxChannelRequest]
     }
   }
 
@@ -843,46 +683,20 @@ package pinpoint {
         Platform: js.UndefOr[__string] = js.undefined,
         Version: js.UndefOr[__integer] = js.undefined
     ): APNSSandboxChannelResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ApplicationId" -> ApplicationId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "CreationDate" -> CreationDate.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DefaultAuthenticationMethod" -> DefaultAuthenticationMethod.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Enabled" -> Enabled.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "HasCredential" -> HasCredential.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "HasTokenKey" -> HasTokenKey.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Id" -> Id.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "IsArchived" -> IsArchived.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "LastModifiedBy" -> LastModifiedBy.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "LastModifiedDate" -> LastModifiedDate.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Platform" -> Platform.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Version" -> Version.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[APNSSandboxChannelResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      ApplicationId.foreach(__v => __obj.update("ApplicationId", __v.asInstanceOf[js.Any]))
+      CreationDate.foreach(__v => __obj.update("CreationDate", __v.asInstanceOf[js.Any]))
+      DefaultAuthenticationMethod.foreach(__v => __obj.update("DefaultAuthenticationMethod", __v.asInstanceOf[js.Any]))
+      Enabled.foreach(__v => __obj.update("Enabled", __v.asInstanceOf[js.Any]))
+      HasCredential.foreach(__v => __obj.update("HasCredential", __v.asInstanceOf[js.Any]))
+      HasTokenKey.foreach(__v => __obj.update("HasTokenKey", __v.asInstanceOf[js.Any]))
+      Id.foreach(__v => __obj.update("Id", __v.asInstanceOf[js.Any]))
+      IsArchived.foreach(__v => __obj.update("IsArchived", __v.asInstanceOf[js.Any]))
+      LastModifiedBy.foreach(__v => __obj.update("LastModifiedBy", __v.asInstanceOf[js.Any]))
+      LastModifiedDate.foreach(__v => __obj.update("LastModifiedDate", __v.asInstanceOf[js.Any]))
+      Platform.foreach(__v => __obj.update("Platform", __v.asInstanceOf[js.Any]))
+      Version.foreach(__v => __obj.update("Version", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[APNSSandboxChannelResponse]
     }
   }
 
@@ -912,34 +726,16 @@ package pinpoint {
         TokenKey: js.UndefOr[__string] = js.undefined,
         TokenKeyId: js.UndefOr[__string] = js.undefined
     ): APNSVoipChannelRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "BundleId" -> BundleId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Certificate" -> Certificate.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DefaultAuthenticationMethod" -> DefaultAuthenticationMethod.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Enabled" -> Enabled.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "PrivateKey" -> PrivateKey.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "TeamId" -> TeamId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "TokenKey" -> TokenKey.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "TokenKeyId" -> TokenKeyId.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[APNSVoipChannelRequest]
+      val __obj = js.Dictionary.empty[js.Any]
+      BundleId.foreach(__v => __obj.update("BundleId", __v.asInstanceOf[js.Any]))
+      Certificate.foreach(__v => __obj.update("Certificate", __v.asInstanceOf[js.Any]))
+      DefaultAuthenticationMethod.foreach(__v => __obj.update("DefaultAuthenticationMethod", __v.asInstanceOf[js.Any]))
+      Enabled.foreach(__v => __obj.update("Enabled", __v.asInstanceOf[js.Any]))
+      PrivateKey.foreach(__v => __obj.update("PrivateKey", __v.asInstanceOf[js.Any]))
+      TeamId.foreach(__v => __obj.update("TeamId", __v.asInstanceOf[js.Any]))
+      TokenKey.foreach(__v => __obj.update("TokenKey", __v.asInstanceOf[js.Any]))
+      TokenKeyId.foreach(__v => __obj.update("TokenKeyId", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[APNSVoipChannelRequest]
     }
   }
 
@@ -977,46 +773,20 @@ package pinpoint {
         Platform: js.UndefOr[__string] = js.undefined,
         Version: js.UndefOr[__integer] = js.undefined
     ): APNSVoipChannelResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ApplicationId" -> ApplicationId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "CreationDate" -> CreationDate.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DefaultAuthenticationMethod" -> DefaultAuthenticationMethod.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Enabled" -> Enabled.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "HasCredential" -> HasCredential.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "HasTokenKey" -> HasTokenKey.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Id" -> Id.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "IsArchived" -> IsArchived.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "LastModifiedBy" -> LastModifiedBy.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "LastModifiedDate" -> LastModifiedDate.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Platform" -> Platform.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Version" -> Version.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[APNSVoipChannelResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      ApplicationId.foreach(__v => __obj.update("ApplicationId", __v.asInstanceOf[js.Any]))
+      CreationDate.foreach(__v => __obj.update("CreationDate", __v.asInstanceOf[js.Any]))
+      DefaultAuthenticationMethod.foreach(__v => __obj.update("DefaultAuthenticationMethod", __v.asInstanceOf[js.Any]))
+      Enabled.foreach(__v => __obj.update("Enabled", __v.asInstanceOf[js.Any]))
+      HasCredential.foreach(__v => __obj.update("HasCredential", __v.asInstanceOf[js.Any]))
+      HasTokenKey.foreach(__v => __obj.update("HasTokenKey", __v.asInstanceOf[js.Any]))
+      Id.foreach(__v => __obj.update("Id", __v.asInstanceOf[js.Any]))
+      IsArchived.foreach(__v => __obj.update("IsArchived", __v.asInstanceOf[js.Any]))
+      LastModifiedBy.foreach(__v => __obj.update("LastModifiedBy", __v.asInstanceOf[js.Any]))
+      LastModifiedDate.foreach(__v => __obj.update("LastModifiedDate", __v.asInstanceOf[js.Any]))
+      Platform.foreach(__v => __obj.update("Platform", __v.asInstanceOf[js.Any]))
+      Version.foreach(__v => __obj.update("Version", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[APNSVoipChannelResponse]
     }
   }
 
@@ -1046,34 +816,16 @@ package pinpoint {
         TokenKey: js.UndefOr[__string] = js.undefined,
         TokenKeyId: js.UndefOr[__string] = js.undefined
     ): APNSVoipSandboxChannelRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "BundleId" -> BundleId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Certificate" -> Certificate.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DefaultAuthenticationMethod" -> DefaultAuthenticationMethod.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Enabled" -> Enabled.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "PrivateKey" -> PrivateKey.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "TeamId" -> TeamId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "TokenKey" -> TokenKey.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "TokenKeyId" -> TokenKeyId.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[APNSVoipSandboxChannelRequest]
+      val __obj = js.Dictionary.empty[js.Any]
+      BundleId.foreach(__v => __obj.update("BundleId", __v.asInstanceOf[js.Any]))
+      Certificate.foreach(__v => __obj.update("Certificate", __v.asInstanceOf[js.Any]))
+      DefaultAuthenticationMethod.foreach(__v => __obj.update("DefaultAuthenticationMethod", __v.asInstanceOf[js.Any]))
+      Enabled.foreach(__v => __obj.update("Enabled", __v.asInstanceOf[js.Any]))
+      PrivateKey.foreach(__v => __obj.update("PrivateKey", __v.asInstanceOf[js.Any]))
+      TeamId.foreach(__v => __obj.update("TeamId", __v.asInstanceOf[js.Any]))
+      TokenKey.foreach(__v => __obj.update("TokenKey", __v.asInstanceOf[js.Any]))
+      TokenKeyId.foreach(__v => __obj.update("TokenKeyId", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[APNSVoipSandboxChannelRequest]
     }
   }
 
@@ -1111,46 +863,20 @@ package pinpoint {
         Platform: js.UndefOr[__string] = js.undefined,
         Version: js.UndefOr[__integer] = js.undefined
     ): APNSVoipSandboxChannelResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ApplicationId" -> ApplicationId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "CreationDate" -> CreationDate.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DefaultAuthenticationMethod" -> DefaultAuthenticationMethod.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Enabled" -> Enabled.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "HasCredential" -> HasCredential.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "HasTokenKey" -> HasTokenKey.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Id" -> Id.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "IsArchived" -> IsArchived.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "LastModifiedBy" -> LastModifiedBy.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "LastModifiedDate" -> LastModifiedDate.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Platform" -> Platform.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Version" -> Version.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[APNSVoipSandboxChannelResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      ApplicationId.foreach(__v => __obj.update("ApplicationId", __v.asInstanceOf[js.Any]))
+      CreationDate.foreach(__v => __obj.update("CreationDate", __v.asInstanceOf[js.Any]))
+      DefaultAuthenticationMethod.foreach(__v => __obj.update("DefaultAuthenticationMethod", __v.asInstanceOf[js.Any]))
+      Enabled.foreach(__v => __obj.update("Enabled", __v.asInstanceOf[js.Any]))
+      HasCredential.foreach(__v => __obj.update("HasCredential", __v.asInstanceOf[js.Any]))
+      HasTokenKey.foreach(__v => __obj.update("HasTokenKey", __v.asInstanceOf[js.Any]))
+      Id.foreach(__v => __obj.update("Id", __v.asInstanceOf[js.Any]))
+      IsArchived.foreach(__v => __obj.update("IsArchived", __v.asInstanceOf[js.Any]))
+      LastModifiedBy.foreach(__v => __obj.update("LastModifiedBy", __v.asInstanceOf[js.Any]))
+      LastModifiedDate.foreach(__v => __obj.update("LastModifiedDate", __v.asInstanceOf[js.Any]))
+      Platform.foreach(__v => __obj.update("Platform", __v.asInstanceOf[js.Any]))
+      Version.foreach(__v => __obj.update("Version", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[APNSVoipSandboxChannelResponse]
     }
   }
 
@@ -1176,16 +902,10 @@ package pinpoint {
         Item: js.UndefOr[ListOfActivityResponse] = js.undefined,
         NextToken: js.UndefOr[__string] = js.undefined
     ): ActivitiesResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Item" -> Item.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NextToken" -> NextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ActivitiesResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      Item.foreach(__v => __obj.update("Item", __v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ActivitiesResponse]
     }
   }
 
@@ -1225,49 +945,21 @@ package pinpoint {
         TotalEndpointCount: js.UndefOr[__integer] = js.undefined,
         TreatmentId: js.UndefOr[__string] = js.undefined
     ): ActivityResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ApplicationId" -> ApplicationId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "CampaignId" -> CampaignId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "End" -> End.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Id" -> Id.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Result" -> Result.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ScheduledStart" -> ScheduledStart.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Start" -> Start.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "State" -> State.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SuccessfulEndpointCount" -> SuccessfulEndpointCount.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "TimezonesCompletedCount" -> TimezonesCompletedCount.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "TimezonesTotalCount" -> TimezonesTotalCount.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "TotalEndpointCount" -> TotalEndpointCount.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "TreatmentId" -> TreatmentId.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ActivityResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      ApplicationId.foreach(__v => __obj.update("ApplicationId", __v.asInstanceOf[js.Any]))
+      CampaignId.foreach(__v => __obj.update("CampaignId", __v.asInstanceOf[js.Any]))
+      End.foreach(__v => __obj.update("End", __v.asInstanceOf[js.Any]))
+      Id.foreach(__v => __obj.update("Id", __v.asInstanceOf[js.Any]))
+      Result.foreach(__v => __obj.update("Result", __v.asInstanceOf[js.Any]))
+      ScheduledStart.foreach(__v => __obj.update("ScheduledStart", __v.asInstanceOf[js.Any]))
+      Start.foreach(__v => __obj.update("Start", __v.asInstanceOf[js.Any]))
+      State.foreach(__v => __obj.update("State", __v.asInstanceOf[js.Any]))
+      SuccessfulEndpointCount.foreach(__v => __obj.update("SuccessfulEndpointCount", __v.asInstanceOf[js.Any]))
+      TimezonesCompletedCount.foreach(__v => __obj.update("TimezonesCompletedCount", __v.asInstanceOf[js.Any]))
+      TimezonesTotalCount.foreach(__v => __obj.update("TimezonesTotalCount", __v.asInstanceOf[js.Any]))
+      TotalEndpointCount.foreach(__v => __obj.update("TotalEndpointCount", __v.asInstanceOf[js.Any]))
+      TreatmentId.foreach(__v => __obj.update("TreatmentId", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ActivityResponse]
     }
   }
 
@@ -1293,28 +985,14 @@ package pinpoint {
         Substitutions: js.UndefOr[MapOfListOf__string] = js.undefined,
         TitleOverride: js.UndefOr[__string] = js.undefined
     ): AddressConfiguration = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "BodyOverride" -> BodyOverride.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ChannelType" -> ChannelType.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Context" -> Context.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "RawContent" -> RawContent.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Substitutions" -> Substitutions.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "TitleOverride" -> TitleOverride.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AddressConfiguration]
+      val __obj = js.Dictionary.empty[js.Any]
+      BodyOverride.foreach(__v => __obj.update("BodyOverride", __v.asInstanceOf[js.Any]))
+      ChannelType.foreach(__v => __obj.update("ChannelType", __v.asInstanceOf[js.Any]))
+      Context.foreach(__v => __obj.update("Context", __v.asInstanceOf[js.Any]))
+      RawContent.foreach(__v => __obj.update("RawContent", __v.asInstanceOf[js.Any]))
+      Substitutions.foreach(__v => __obj.update("Substitutions", __v.asInstanceOf[js.Any]))
+      TitleOverride.foreach(__v => __obj.update("TitleOverride", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AddressConfiguration]
     }
   }
 
@@ -1336,22 +1014,12 @@ package pinpoint {
         Name: js.UndefOr[__string] = js.undefined,
         tags: js.UndefOr[MapOf__string] = js.undefined
     ): ApplicationResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Arn" -> Arn.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Id" -> Id.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Name" -> Name.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "tags" -> tags.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ApplicationResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      Arn.foreach(__v => __obj.update("Arn", __v.asInstanceOf[js.Any]))
+      Id.foreach(__v => __obj.update("Id", __v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
+      tags.foreach(__v => __obj.update("tags", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ApplicationResponse]
     }
   }
 
@@ -1375,25 +1043,13 @@ package pinpoint {
         Limits: js.UndefOr[CampaignLimits] = js.undefined,
         QuietTime: js.UndefOr[QuietTime] = js.undefined
     ): ApplicationSettingsResource = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ApplicationId" -> ApplicationId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "CampaignHook" -> CampaignHook.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "LastModifiedDate" -> LastModifiedDate.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Limits" -> Limits.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "QuietTime" -> QuietTime.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ApplicationSettingsResource]
+      val __obj = js.Dictionary.empty[js.Any]
+      ApplicationId.foreach(__v => __obj.update("ApplicationId", __v.asInstanceOf[js.Any]))
+      CampaignHook.foreach(__v => __obj.update("CampaignHook", __v.asInstanceOf[js.Any]))
+      LastModifiedDate.foreach(__v => __obj.update("LastModifiedDate", __v.asInstanceOf[js.Any]))
+      Limits.foreach(__v => __obj.update("Limits", __v.asInstanceOf[js.Any]))
+      QuietTime.foreach(__v => __obj.update("QuietTime", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ApplicationSettingsResource]
     }
   }
 
@@ -1411,16 +1067,10 @@ package pinpoint {
         Item: js.UndefOr[ListOfApplicationResponse] = js.undefined,
         NextToken: js.UndefOr[__string] = js.undefined
     ): ApplicationsResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Item" -> Item.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NextToken" -> NextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ApplicationsResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      Item.foreach(__v => __obj.update("Item", __v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ApplicationsResponse]
     }
   }
 
@@ -1438,16 +1088,10 @@ package pinpoint {
         AttributeType: js.UndefOr[AttributeType] = js.undefined,
         Values: js.UndefOr[ListOf__string] = js.undefined
     ): AttributeDimension = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "AttributeType" -> AttributeType.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Values" -> Values.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AttributeDimension]
+      val __obj = js.Dictionary.empty[js.Any]
+      AttributeType.foreach(__v => __obj.update("AttributeType", __v.asInstanceOf[js.Any]))
+      Values.foreach(__v => __obj.update("Values", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AttributeDimension]
     }
   }
 
@@ -1474,19 +1118,11 @@ package pinpoint {
         AttributeType: js.UndefOr[__string] = js.undefined,
         Attributes: js.UndefOr[ListOf__string] = js.undefined
     ): AttributesResource = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ApplicationId" -> ApplicationId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "AttributeType" -> AttributeType.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Attributes" -> Attributes.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AttributesResource]
+      val __obj = js.Dictionary.empty[js.Any]
+      ApplicationId.foreach(__v => __obj.update("ApplicationId", __v.asInstanceOf[js.Any]))
+      AttributeType.foreach(__v => __obj.update("AttributeType", __v.asInstanceOf[js.Any]))
+      Attributes.foreach(__v => __obj.update("Attributes", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AttributesResource]
     }
   }
 
@@ -1506,19 +1142,11 @@ package pinpoint {
         Enabled: js.UndefOr[__boolean] = js.undefined,
         SecretKey: js.UndefOr[__string] = js.undefined
     ): BaiduChannelRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ApiKey" -> ApiKey.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Enabled" -> Enabled.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SecretKey" -> SecretKey.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[BaiduChannelRequest]
+      val __obj = js.Dictionary.empty[js.Any]
+      ApiKey.foreach(__v => __obj.update("ApiKey", __v.asInstanceOf[js.Any]))
+      Enabled.foreach(__v => __obj.update("Enabled", __v.asInstanceOf[js.Any]))
+      SecretKey.foreach(__v => __obj.update("SecretKey", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[BaiduChannelRequest]
     }
   }
 
@@ -1554,43 +1182,19 @@ package pinpoint {
         Platform: js.UndefOr[__string] = js.undefined,
         Version: js.UndefOr[__integer] = js.undefined
     ): BaiduChannelResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ApplicationId" -> ApplicationId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "CreationDate" -> CreationDate.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Credential" -> Credential.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Enabled" -> Enabled.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "HasCredential" -> HasCredential.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Id" -> Id.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "IsArchived" -> IsArchived.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "LastModifiedBy" -> LastModifiedBy.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "LastModifiedDate" -> LastModifiedDate.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Platform" -> Platform.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Version" -> Version.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[BaiduChannelResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      ApplicationId.foreach(__v => __obj.update("ApplicationId", __v.asInstanceOf[js.Any]))
+      CreationDate.foreach(__v => __obj.update("CreationDate", __v.asInstanceOf[js.Any]))
+      Credential.foreach(__v => __obj.update("Credential", __v.asInstanceOf[js.Any]))
+      Enabled.foreach(__v => __obj.update("Enabled", __v.asInstanceOf[js.Any]))
+      HasCredential.foreach(__v => __obj.update("HasCredential", __v.asInstanceOf[js.Any]))
+      Id.foreach(__v => __obj.update("Id", __v.asInstanceOf[js.Any]))
+      IsArchived.foreach(__v => __obj.update("IsArchived", __v.asInstanceOf[js.Any]))
+      LastModifiedBy.foreach(__v => __obj.update("LastModifiedBy", __v.asInstanceOf[js.Any]))
+      LastModifiedDate.foreach(__v => __obj.update("LastModifiedDate", __v.asInstanceOf[js.Any]))
+      Platform.foreach(__v => __obj.update("Platform", __v.asInstanceOf[js.Any]))
+      Version.foreach(__v => __obj.update("Version", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[BaiduChannelResponse]
     }
   }
 
@@ -1632,52 +1236,22 @@ package pinpoint {
         Title: js.UndefOr[__string] = js.undefined,
         Url: js.UndefOr[__string] = js.undefined
     ): BaiduMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Action" -> Action.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Body" -> Body.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Data" -> Data.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "IconReference" -> IconReference.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ImageIconUrl" -> ImageIconUrl.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ImageUrl" -> ImageUrl.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "RawContent" -> RawContent.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SilentPush" -> SilentPush.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SmallImageIconUrl" -> SmallImageIconUrl.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Sound" -> Sound.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Substitutions" -> Substitutions.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "TimeToLive" -> TimeToLive.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Title" -> Title.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Url" -> Url.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[BaiduMessage]
+      val __obj = js.Dictionary.empty[js.Any]
+      Action.foreach(__v => __obj.update("Action", __v.asInstanceOf[js.Any]))
+      Body.foreach(__v => __obj.update("Body", __v.asInstanceOf[js.Any]))
+      Data.foreach(__v => __obj.update("Data", __v.asInstanceOf[js.Any]))
+      IconReference.foreach(__v => __obj.update("IconReference", __v.asInstanceOf[js.Any]))
+      ImageIconUrl.foreach(__v => __obj.update("ImageIconUrl", __v.asInstanceOf[js.Any]))
+      ImageUrl.foreach(__v => __obj.update("ImageUrl", __v.asInstanceOf[js.Any]))
+      RawContent.foreach(__v => __obj.update("RawContent", __v.asInstanceOf[js.Any]))
+      SilentPush.foreach(__v => __obj.update("SilentPush", __v.asInstanceOf[js.Any]))
+      SmallImageIconUrl.foreach(__v => __obj.update("SmallImageIconUrl", __v.asInstanceOf[js.Any]))
+      Sound.foreach(__v => __obj.update("Sound", __v.asInstanceOf[js.Any]))
+      Substitutions.foreach(__v => __obj.update("Substitutions", __v.asInstanceOf[js.Any]))
+      TimeToLive.foreach(__v => __obj.update("TimeToLive", __v.asInstanceOf[js.Any]))
+      Title.foreach(__v => __obj.update("Title", __v.asInstanceOf[js.Any]))
+      Url.foreach(__v => __obj.update("Url", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[BaiduMessage]
     }
   }
 
@@ -1699,22 +1273,12 @@ package pinpoint {
         HtmlBody: js.UndefOr[__string] = js.undefined,
         Title: js.UndefOr[__string] = js.undefined
     ): CampaignEmailMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Body" -> Body.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "FromAddress" -> FromAddress.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "HtmlBody" -> HtmlBody.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Title" -> Title.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CampaignEmailMessage]
+      val __obj = js.Dictionary.empty[js.Any]
+      Body.foreach(__v => __obj.update("Body", __v.asInstanceOf[js.Any]))
+      FromAddress.foreach(__v => __obj.update("FromAddress", __v.asInstanceOf[js.Any]))
+      HtmlBody.foreach(__v => __obj.update("HtmlBody", __v.asInstanceOf[js.Any]))
+      Title.foreach(__v => __obj.update("Title", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CampaignEmailMessage]
     }
   }
 
@@ -1732,16 +1296,10 @@ package pinpoint {
         Dimensions: js.UndefOr[EventDimensions] = js.undefined,
         FilterType: js.UndefOr[FilterType] = js.undefined
     ): CampaignEventFilter = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Dimensions" -> Dimensions.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "FilterType" -> FilterType.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CampaignEventFilter]
+      val __obj = js.Dictionary.empty[js.Any]
+      Dimensions.foreach(__v => __obj.update("Dimensions", __v.asInstanceOf[js.Any]))
+      FilterType.foreach(__v => __obj.update("FilterType", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CampaignEventFilter]
     }
   }
 
@@ -1761,19 +1319,11 @@ package pinpoint {
         Mode: js.UndefOr[Mode] = js.undefined,
         WebUrl: js.UndefOr[__string] = js.undefined
     ): CampaignHook = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "LambdaFunctionName" -> LambdaFunctionName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Mode" -> Mode.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "WebUrl" -> WebUrl.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CampaignHook]
+      val __obj = js.Dictionary.empty[js.Any]
+      LambdaFunctionName.foreach(__v => __obj.update("LambdaFunctionName", __v.asInstanceOf[js.Any]))
+      Mode.foreach(__v => __obj.update("Mode", __v.asInstanceOf[js.Any]))
+      WebUrl.foreach(__v => __obj.update("WebUrl", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CampaignHook]
     }
   }
 
@@ -1795,22 +1345,12 @@ package pinpoint {
         MessagesPerSecond: js.UndefOr[__integer] = js.undefined,
         Total: js.UndefOr[__integer] = js.undefined
     ): CampaignLimits = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Daily" -> Daily.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MaximumDuration" -> MaximumDuration.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MessagesPerSecond" -> MessagesPerSecond.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Total" -> Total.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CampaignLimits]
+      val __obj = js.Dictionary.empty[js.Any]
+      Daily.foreach(__v => __obj.update("Daily", __v.asInstanceOf[js.Any]))
+      MaximumDuration.foreach(__v => __obj.update("MaximumDuration", __v.asInstanceOf[js.Any]))
+      MessagesPerSecond.foreach(__v => __obj.update("MessagesPerSecond", __v.asInstanceOf[js.Any]))
+      Total.foreach(__v => __obj.update("Total", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CampaignLimits]
     }
   }
 
@@ -1868,76 +1408,30 @@ package pinpoint {
         Version: js.UndefOr[__integer] = js.undefined,
         tags: js.UndefOr[MapOf__string] = js.undefined
     ): CampaignResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "AdditionalTreatments" -> AdditionalTreatments.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ApplicationId" -> ApplicationId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Arn" -> Arn.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "CreationDate" -> CreationDate.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DefaultState" -> DefaultState.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Description" -> Description.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "HoldoutPercent" -> HoldoutPercent.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Hook" -> Hook.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Id" -> Id.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "IsPaused" -> IsPaused.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "LastModifiedDate" -> LastModifiedDate.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Limits" -> Limits.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MessageConfiguration" -> MessageConfiguration.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Name" -> Name.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Schedule" -> Schedule.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SegmentId" -> SegmentId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SegmentVersion" -> SegmentVersion.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "State" -> State.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "TreatmentDescription" -> TreatmentDescription.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "TreatmentName" -> TreatmentName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Version" -> Version.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "tags" -> tags.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CampaignResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      AdditionalTreatments.foreach(__v => __obj.update("AdditionalTreatments", __v.asInstanceOf[js.Any]))
+      ApplicationId.foreach(__v => __obj.update("ApplicationId", __v.asInstanceOf[js.Any]))
+      Arn.foreach(__v => __obj.update("Arn", __v.asInstanceOf[js.Any]))
+      CreationDate.foreach(__v => __obj.update("CreationDate", __v.asInstanceOf[js.Any]))
+      DefaultState.foreach(__v => __obj.update("DefaultState", __v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
+      HoldoutPercent.foreach(__v => __obj.update("HoldoutPercent", __v.asInstanceOf[js.Any]))
+      Hook.foreach(__v => __obj.update("Hook", __v.asInstanceOf[js.Any]))
+      Id.foreach(__v => __obj.update("Id", __v.asInstanceOf[js.Any]))
+      IsPaused.foreach(__v => __obj.update("IsPaused", __v.asInstanceOf[js.Any]))
+      LastModifiedDate.foreach(__v => __obj.update("LastModifiedDate", __v.asInstanceOf[js.Any]))
+      Limits.foreach(__v => __obj.update("Limits", __v.asInstanceOf[js.Any]))
+      MessageConfiguration.foreach(__v => __obj.update("MessageConfiguration", __v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
+      Schedule.foreach(__v => __obj.update("Schedule", __v.asInstanceOf[js.Any]))
+      SegmentId.foreach(__v => __obj.update("SegmentId", __v.asInstanceOf[js.Any]))
+      SegmentVersion.foreach(__v => __obj.update("SegmentVersion", __v.asInstanceOf[js.Any]))
+      State.foreach(__v => __obj.update("State", __v.asInstanceOf[js.Any]))
+      TreatmentDescription.foreach(__v => __obj.update("TreatmentDescription", __v.asInstanceOf[js.Any]))
+      TreatmentName.foreach(__v => __obj.update("TreatmentName", __v.asInstanceOf[js.Any]))
+      Version.foreach(__v => __obj.update("Version", __v.asInstanceOf[js.Any]))
+      tags.foreach(__v => __obj.update("tags", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CampaignResponse]
     }
   }
 
@@ -1957,19 +1451,11 @@ package pinpoint {
         MessageType: js.UndefOr[MessageType] = js.undefined,
         SenderId: js.UndefOr[__string] = js.undefined
     ): CampaignSmsMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Body" -> Body.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MessageType" -> MessageType.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SenderId" -> SenderId.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CampaignSmsMessage]
+      val __obj = js.Dictionary.empty[js.Any]
+      Body.foreach(__v => __obj.update("Body", __v.asInstanceOf[js.Any]))
+      MessageType.foreach(__v => __obj.update("MessageType", __v.asInstanceOf[js.Any]))
+      SenderId.foreach(__v => __obj.update("SenderId", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CampaignSmsMessage]
     }
   }
 
@@ -1985,13 +1471,9 @@ package pinpoint {
     def apply(
         CampaignStatus: js.UndefOr[CampaignStatus] = js.undefined
     ): CampaignState = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "CampaignStatus" -> CampaignStatus.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CampaignState]
+      val __obj = js.Dictionary.empty[js.Any]
+      CampaignStatus.foreach(__v => __obj.update("CampaignStatus", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CampaignState]
     }
   }
 
@@ -2020,16 +1502,10 @@ package pinpoint {
         Item: js.UndefOr[ListOfCampaignResponse] = js.undefined,
         NextToken: js.UndefOr[__string] = js.undefined
     ): CampaignsResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Item" -> Item.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NextToken" -> NextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CampaignsResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      Item.foreach(__v => __obj.update("Item", __v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CampaignsResponse]
     }
   }
 
@@ -2061,37 +1537,17 @@ package pinpoint {
         LastModifiedDate: js.UndefOr[__string] = js.undefined,
         Version: js.UndefOr[__integer] = js.undefined
     ): ChannelResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ApplicationId" -> ApplicationId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "CreationDate" -> CreationDate.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Enabled" -> Enabled.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "HasCredential" -> HasCredential.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Id" -> Id.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "IsArchived" -> IsArchived.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "LastModifiedBy" -> LastModifiedBy.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "LastModifiedDate" -> LastModifiedDate.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Version" -> Version.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ChannelResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      ApplicationId.foreach(__v => __obj.update("ApplicationId", __v.asInstanceOf[js.Any]))
+      CreationDate.foreach(__v => __obj.update("CreationDate", __v.asInstanceOf[js.Any]))
+      Enabled.foreach(__v => __obj.update("Enabled", __v.asInstanceOf[js.Any]))
+      HasCredential.foreach(__v => __obj.update("HasCredential", __v.asInstanceOf[js.Any]))
+      Id.foreach(__v => __obj.update("Id", __v.asInstanceOf[js.Any]))
+      IsArchived.foreach(__v => __obj.update("IsArchived", __v.asInstanceOf[js.Any]))
+      LastModifiedBy.foreach(__v => __obj.update("LastModifiedBy", __v.asInstanceOf[js.Any]))
+      LastModifiedDate.foreach(__v => __obj.update("LastModifiedDate", __v.asInstanceOf[js.Any]))
+      Version.foreach(__v => __obj.update("Version", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ChannelResponse]
     }
   }
 
@@ -2124,13 +1580,9 @@ package pinpoint {
     def apply(
         Channels: js.UndefOr[MapOfChannelResponse] = js.undefined
     ): ChannelsResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Channels" -> Channels.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ChannelsResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      Channels.foreach(__v => __obj.update("Channels", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ChannelsResponse]
     }
   }
 
@@ -2143,11 +1595,11 @@ package pinpoint {
     def apply(
         CreateApplicationRequest: CreateApplicationRequest
     ): CreateAppRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "CreateApplicationRequest" -> CreateApplicationRequest.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateAppRequest]
+      __obj.asInstanceOf[CreateAppRequest]
     }
   }
 
@@ -2160,11 +1612,11 @@ package pinpoint {
     def apply(
         ApplicationResponse: ApplicationResponse
     ): CreateAppResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ApplicationResponse" -> ApplicationResponse.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateAppResponse]
+      __obj.asInstanceOf[CreateAppResponse]
     }
   }
 
@@ -2182,16 +1634,10 @@ package pinpoint {
         Name: js.UndefOr[__string] = js.undefined,
         tags: js.UndefOr[MapOf__string] = js.undefined
     ): CreateApplicationRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Name" -> Name.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "tags" -> tags.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateApplicationRequest]
+      val __obj = js.Dictionary.empty[js.Any]
+      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
+      tags.foreach(__v => __obj.update("tags", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateApplicationRequest]
     }
   }
 
@@ -2206,12 +1652,12 @@ package pinpoint {
         ApplicationId: __string,
         WriteCampaignRequest: WriteCampaignRequest
     ): CreateCampaignRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ApplicationId"        -> ApplicationId.asInstanceOf[js.Any],
         "WriteCampaignRequest" -> WriteCampaignRequest.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateCampaignRequest]
+      __obj.asInstanceOf[CreateCampaignRequest]
     }
   }
 
@@ -2224,11 +1670,11 @@ package pinpoint {
     def apply(
         CampaignResponse: CampaignResponse
     ): CreateCampaignResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "CampaignResponse" -> CampaignResponse.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateCampaignResponse]
+      __obj.asInstanceOf[CreateCampaignResponse]
     }
   }
 
@@ -2243,12 +1689,12 @@ package pinpoint {
         ApplicationId: __string,
         ExportJobRequest: ExportJobRequest
     ): CreateExportJobRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ApplicationId"    -> ApplicationId.asInstanceOf[js.Any],
         "ExportJobRequest" -> ExportJobRequest.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateExportJobRequest]
+      __obj.asInstanceOf[CreateExportJobRequest]
     }
   }
 
@@ -2261,11 +1707,11 @@ package pinpoint {
     def apply(
         ExportJobResponse: ExportJobResponse
     ): CreateExportJobResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ExportJobResponse" -> ExportJobResponse.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateExportJobResponse]
+      __obj.asInstanceOf[CreateExportJobResponse]
     }
   }
 
@@ -2280,12 +1726,12 @@ package pinpoint {
         ApplicationId: __string,
         ImportJobRequest: ImportJobRequest
     ): CreateImportJobRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ApplicationId"    -> ApplicationId.asInstanceOf[js.Any],
         "ImportJobRequest" -> ImportJobRequest.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateImportJobRequest]
+      __obj.asInstanceOf[CreateImportJobRequest]
     }
   }
 
@@ -2298,11 +1744,11 @@ package pinpoint {
     def apply(
         ImportJobResponse: ImportJobResponse
     ): CreateImportJobResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ImportJobResponse" -> ImportJobResponse.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateImportJobResponse]
+      __obj.asInstanceOf[CreateImportJobResponse]
     }
   }
 
@@ -2317,12 +1763,12 @@ package pinpoint {
         ApplicationId: __string,
         WriteSegmentRequest: WriteSegmentRequest
     ): CreateSegmentRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ApplicationId"       -> ApplicationId.asInstanceOf[js.Any],
         "WriteSegmentRequest" -> WriteSegmentRequest.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateSegmentRequest]
+      __obj.asInstanceOf[CreateSegmentRequest]
     }
   }
 
@@ -2335,11 +1781,11 @@ package pinpoint {
     def apply(
         SegmentResponse: SegmentResponse
     ): CreateSegmentResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "SegmentResponse" -> SegmentResponse.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateSegmentResponse]
+      __obj.asInstanceOf[CreateSegmentResponse]
     }
   }
 
@@ -2357,16 +1803,10 @@ package pinpoint {
         Body: js.UndefOr[__string] = js.undefined,
         Substitutions: js.UndefOr[MapOfListOf__string] = js.undefined
     ): DefaultMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Body" -> Body.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Substitutions" -> Substitutions.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DefaultMessage]
+      val __obj = js.Dictionary.empty[js.Any]
+      Body.foreach(__v => __obj.update("Body", __v.asInstanceOf[js.Any]))
+      Substitutions.foreach(__v => __obj.update("Substitutions", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DefaultMessage]
     }
   }
 
@@ -2394,31 +1834,15 @@ package pinpoint {
         Title: js.UndefOr[__string] = js.undefined,
         Url: js.UndefOr[__string] = js.undefined
     ): DefaultPushNotificationMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Action" -> Action.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Body" -> Body.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Data" -> Data.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SilentPush" -> SilentPush.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Substitutions" -> Substitutions.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Title" -> Title.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Url" -> Url.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DefaultPushNotificationMessage]
+      val __obj = js.Dictionary.empty[js.Any]
+      Action.foreach(__v => __obj.update("Action", __v.asInstanceOf[js.Any]))
+      Body.foreach(__v => __obj.update("Body", __v.asInstanceOf[js.Any]))
+      Data.foreach(__v => __obj.update("Data", __v.asInstanceOf[js.Any]))
+      SilentPush.foreach(__v => __obj.update("SilentPush", __v.asInstanceOf[js.Any]))
+      Substitutions.foreach(__v => __obj.update("Substitutions", __v.asInstanceOf[js.Any]))
+      Title.foreach(__v => __obj.update("Title", __v.asInstanceOf[js.Any]))
+      Url.foreach(__v => __obj.update("Url", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DefaultPushNotificationMessage]
     }
   }
 
@@ -2431,11 +1855,11 @@ package pinpoint {
     def apply(
         ApplicationId: __string
     ): DeleteAdmChannelRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ApplicationId" -> ApplicationId.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteAdmChannelRequest]
+      __obj.asInstanceOf[DeleteAdmChannelRequest]
     }
   }
 
@@ -2448,11 +1872,11 @@ package pinpoint {
     def apply(
         ADMChannelResponse: ADMChannelResponse
     ): DeleteAdmChannelResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ADMChannelResponse" -> ADMChannelResponse.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteAdmChannelResponse]
+      __obj.asInstanceOf[DeleteAdmChannelResponse]
     }
   }
 
@@ -2465,11 +1889,11 @@ package pinpoint {
     def apply(
         ApplicationId: __string
     ): DeleteApnsChannelRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ApplicationId" -> ApplicationId.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteApnsChannelRequest]
+      __obj.asInstanceOf[DeleteApnsChannelRequest]
     }
   }
 
@@ -2482,11 +1906,11 @@ package pinpoint {
     def apply(
         APNSChannelResponse: APNSChannelResponse
     ): DeleteApnsChannelResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "APNSChannelResponse" -> APNSChannelResponse.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteApnsChannelResponse]
+      __obj.asInstanceOf[DeleteApnsChannelResponse]
     }
   }
 
@@ -2499,11 +1923,11 @@ package pinpoint {
     def apply(
         ApplicationId: __string
     ): DeleteApnsSandboxChannelRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ApplicationId" -> ApplicationId.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteApnsSandboxChannelRequest]
+      __obj.asInstanceOf[DeleteApnsSandboxChannelRequest]
     }
   }
 
@@ -2516,11 +1940,11 @@ package pinpoint {
     def apply(
         APNSSandboxChannelResponse: APNSSandboxChannelResponse
     ): DeleteApnsSandboxChannelResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "APNSSandboxChannelResponse" -> APNSSandboxChannelResponse.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteApnsSandboxChannelResponse]
+      __obj.asInstanceOf[DeleteApnsSandboxChannelResponse]
     }
   }
 
@@ -2533,11 +1957,11 @@ package pinpoint {
     def apply(
         ApplicationId: __string
     ): DeleteApnsVoipChannelRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ApplicationId" -> ApplicationId.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteApnsVoipChannelRequest]
+      __obj.asInstanceOf[DeleteApnsVoipChannelRequest]
     }
   }
 
@@ -2550,11 +1974,11 @@ package pinpoint {
     def apply(
         APNSVoipChannelResponse: APNSVoipChannelResponse
     ): DeleteApnsVoipChannelResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "APNSVoipChannelResponse" -> APNSVoipChannelResponse.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteApnsVoipChannelResponse]
+      __obj.asInstanceOf[DeleteApnsVoipChannelResponse]
     }
   }
 
@@ -2567,11 +1991,11 @@ package pinpoint {
     def apply(
         ApplicationId: __string
     ): DeleteApnsVoipSandboxChannelRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ApplicationId" -> ApplicationId.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteApnsVoipSandboxChannelRequest]
+      __obj.asInstanceOf[DeleteApnsVoipSandboxChannelRequest]
     }
   }
 
@@ -2584,11 +2008,11 @@ package pinpoint {
     def apply(
         APNSVoipSandboxChannelResponse: APNSVoipSandboxChannelResponse
     ): DeleteApnsVoipSandboxChannelResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "APNSVoipSandboxChannelResponse" -> APNSVoipSandboxChannelResponse.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteApnsVoipSandboxChannelResponse]
+      __obj.asInstanceOf[DeleteApnsVoipSandboxChannelResponse]
     }
   }
 
@@ -2601,11 +2025,11 @@ package pinpoint {
     def apply(
         ApplicationId: __string
     ): DeleteAppRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ApplicationId" -> ApplicationId.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteAppRequest]
+      __obj.asInstanceOf[DeleteAppRequest]
     }
   }
 
@@ -2618,11 +2042,11 @@ package pinpoint {
     def apply(
         ApplicationResponse: ApplicationResponse
     ): DeleteAppResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ApplicationResponse" -> ApplicationResponse.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteAppResponse]
+      __obj.asInstanceOf[DeleteAppResponse]
     }
   }
 
@@ -2635,11 +2059,11 @@ package pinpoint {
     def apply(
         ApplicationId: __string
     ): DeleteBaiduChannelRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ApplicationId" -> ApplicationId.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteBaiduChannelRequest]
+      __obj.asInstanceOf[DeleteBaiduChannelRequest]
     }
   }
 
@@ -2652,11 +2076,11 @@ package pinpoint {
     def apply(
         BaiduChannelResponse: BaiduChannelResponse
     ): DeleteBaiduChannelResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "BaiduChannelResponse" -> BaiduChannelResponse.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteBaiduChannelResponse]
+      __obj.asInstanceOf[DeleteBaiduChannelResponse]
     }
   }
 
@@ -2671,12 +2095,12 @@ package pinpoint {
         ApplicationId: __string,
         CampaignId: __string
     ): DeleteCampaignRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ApplicationId" -> ApplicationId.asInstanceOf[js.Any],
         "CampaignId"    -> CampaignId.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteCampaignRequest]
+      __obj.asInstanceOf[DeleteCampaignRequest]
     }
   }
 
@@ -2689,11 +2113,11 @@ package pinpoint {
     def apply(
         CampaignResponse: CampaignResponse
     ): DeleteCampaignResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "CampaignResponse" -> CampaignResponse.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteCampaignResponse]
+      __obj.asInstanceOf[DeleteCampaignResponse]
     }
   }
 
@@ -2706,11 +2130,11 @@ package pinpoint {
     def apply(
         ApplicationId: __string
     ): DeleteEmailChannelRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ApplicationId" -> ApplicationId.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteEmailChannelRequest]
+      __obj.asInstanceOf[DeleteEmailChannelRequest]
     }
   }
 
@@ -2723,11 +2147,11 @@ package pinpoint {
     def apply(
         EmailChannelResponse: EmailChannelResponse
     ): DeleteEmailChannelResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "EmailChannelResponse" -> EmailChannelResponse.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteEmailChannelResponse]
+      __obj.asInstanceOf[DeleteEmailChannelResponse]
     }
   }
 
@@ -2742,12 +2166,12 @@ package pinpoint {
         ApplicationId: __string,
         EndpointId: __string
     ): DeleteEndpointRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ApplicationId" -> ApplicationId.asInstanceOf[js.Any],
         "EndpointId"    -> EndpointId.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteEndpointRequest]
+      __obj.asInstanceOf[DeleteEndpointRequest]
     }
   }
 
@@ -2760,11 +2184,11 @@ package pinpoint {
     def apply(
         EndpointResponse: EndpointResponse
     ): DeleteEndpointResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "EndpointResponse" -> EndpointResponse.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteEndpointResponse]
+      __obj.asInstanceOf[DeleteEndpointResponse]
     }
   }
 
@@ -2777,11 +2201,11 @@ package pinpoint {
     def apply(
         ApplicationId: __string
     ): DeleteEventStreamRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ApplicationId" -> ApplicationId.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteEventStreamRequest]
+      __obj.asInstanceOf[DeleteEventStreamRequest]
     }
   }
 
@@ -2794,11 +2218,11 @@ package pinpoint {
     def apply(
         EventStream: EventStream
     ): DeleteEventStreamResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "EventStream" -> EventStream.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteEventStreamResponse]
+      __obj.asInstanceOf[DeleteEventStreamResponse]
     }
   }
 
@@ -2811,11 +2235,11 @@ package pinpoint {
     def apply(
         ApplicationId: __string
     ): DeleteGcmChannelRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ApplicationId" -> ApplicationId.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteGcmChannelRequest]
+      __obj.asInstanceOf[DeleteGcmChannelRequest]
     }
   }
 
@@ -2828,11 +2252,11 @@ package pinpoint {
     def apply(
         GCMChannelResponse: GCMChannelResponse
     ): DeleteGcmChannelResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "GCMChannelResponse" -> GCMChannelResponse.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteGcmChannelResponse]
+      __obj.asInstanceOf[DeleteGcmChannelResponse]
     }
   }
 
@@ -2847,12 +2271,12 @@ package pinpoint {
         ApplicationId: __string,
         SegmentId: __string
     ): DeleteSegmentRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ApplicationId" -> ApplicationId.asInstanceOf[js.Any],
         "SegmentId"     -> SegmentId.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteSegmentRequest]
+      __obj.asInstanceOf[DeleteSegmentRequest]
     }
   }
 
@@ -2865,11 +2289,11 @@ package pinpoint {
     def apply(
         SegmentResponse: SegmentResponse
     ): DeleteSegmentResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "SegmentResponse" -> SegmentResponse.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteSegmentResponse]
+      __obj.asInstanceOf[DeleteSegmentResponse]
     }
   }
 
@@ -2882,11 +2306,11 @@ package pinpoint {
     def apply(
         ApplicationId: __string
     ): DeleteSmsChannelRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ApplicationId" -> ApplicationId.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteSmsChannelRequest]
+      __obj.asInstanceOf[DeleteSmsChannelRequest]
     }
   }
 
@@ -2899,11 +2323,11 @@ package pinpoint {
     def apply(
         SMSChannelResponse: SMSChannelResponse
     ): DeleteSmsChannelResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "SMSChannelResponse" -> SMSChannelResponse.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteSmsChannelResponse]
+      __obj.asInstanceOf[DeleteSmsChannelResponse]
     }
   }
 
@@ -2918,12 +2342,12 @@ package pinpoint {
         ApplicationId: __string,
         UserId: __string
     ): DeleteUserEndpointsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ApplicationId" -> ApplicationId.asInstanceOf[js.Any],
         "UserId"        -> UserId.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteUserEndpointsRequest]
+      __obj.asInstanceOf[DeleteUserEndpointsRequest]
     }
   }
 
@@ -2936,11 +2360,11 @@ package pinpoint {
     def apply(
         EndpointsResponse: EndpointsResponse
     ): DeleteUserEndpointsResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "EndpointsResponse" -> EndpointsResponse.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteUserEndpointsResponse]
+      __obj.asInstanceOf[DeleteUserEndpointsResponse]
     }
   }
 
@@ -2953,11 +2377,11 @@ package pinpoint {
     def apply(
         ApplicationId: __string
     ): DeleteVoiceChannelRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ApplicationId" -> ApplicationId.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteVoiceChannelRequest]
+      __obj.asInstanceOf[DeleteVoiceChannelRequest]
     }
   }
 
@@ -2970,11 +2394,11 @@ package pinpoint {
     def apply(
         VoiceChannelResponse: VoiceChannelResponse
     ): DeleteVoiceChannelResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "VoiceChannelResponse" -> VoiceChannelResponse.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteVoiceChannelResponse]
+      __obj.asInstanceOf[DeleteVoiceChannelResponse]
     }
   }
 
@@ -3026,37 +2450,19 @@ package pinpoint {
         SMSMessage: js.UndefOr[SMSMessage] = js.undefined,
         VoiceMessage: js.UndefOr[VoiceMessage] = js.undefined
     ): DirectMessageConfiguration = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ADMMessage" -> ADMMessage.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "APNSMessage" -> APNSMessage.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "BaiduMessage" -> BaiduMessage.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DefaultMessage" -> DefaultMessage.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DefaultPushNotificationMessage" -> DefaultPushNotificationMessage.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "EmailMessage" -> EmailMessage.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "GCMMessage" -> GCMMessage.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SMSMessage" -> SMSMessage.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "VoiceMessage" -> VoiceMessage.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DirectMessageConfiguration]
+      val __obj = js.Dictionary.empty[js.Any]
+      ADMMessage.foreach(__v => __obj.update("ADMMessage", __v.asInstanceOf[js.Any]))
+      APNSMessage.foreach(__v => __obj.update("APNSMessage", __v.asInstanceOf[js.Any]))
+      BaiduMessage.foreach(__v => __obj.update("BaiduMessage", __v.asInstanceOf[js.Any]))
+      DefaultMessage.foreach(__v => __obj.update("DefaultMessage", __v.asInstanceOf[js.Any]))
+      DefaultPushNotificationMessage.foreach(
+        __v => __obj.update("DefaultPushNotificationMessage", __v.asInstanceOf[js.Any])
+      )
+      EmailMessage.foreach(__v => __obj.update("EmailMessage", __v.asInstanceOf[js.Any]))
+      GCMMessage.foreach(__v => __obj.update("GCMMessage", __v.asInstanceOf[js.Any]))
+      SMSMessage.foreach(__v => __obj.update("SMSMessage", __v.asInstanceOf[js.Any]))
+      VoiceMessage.foreach(__v => __obj.update("VoiceMessage", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DirectMessageConfiguration]
     }
   }
 
@@ -3089,25 +2495,13 @@ package pinpoint {
         Identity: js.UndefOr[__string] = js.undefined,
         RoleArn: js.UndefOr[__string] = js.undefined
     ): EmailChannelRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ConfigurationSet" -> ConfigurationSet.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Enabled" -> Enabled.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "FromAddress" -> FromAddress.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Identity" -> Identity.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "RoleArn" -> RoleArn.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[EmailChannelRequest]
+      val __obj = js.Dictionary.empty[js.Any]
+      ConfigurationSet.foreach(__v => __obj.update("ConfigurationSet", __v.asInstanceOf[js.Any]))
+      Enabled.foreach(__v => __obj.update("Enabled", __v.asInstanceOf[js.Any]))
+      FromAddress.foreach(__v => __obj.update("FromAddress", __v.asInstanceOf[js.Any]))
+      Identity.foreach(__v => __obj.update("Identity", __v.asInstanceOf[js.Any]))
+      RoleArn.foreach(__v => __obj.update("RoleArn", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[EmailChannelRequest]
     }
   }
 
@@ -3151,55 +2545,23 @@ package pinpoint {
         RoleArn: js.UndefOr[__string] = js.undefined,
         Version: js.UndefOr[__integer] = js.undefined
     ): EmailChannelResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ApplicationId" -> ApplicationId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ConfigurationSet" -> ConfigurationSet.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "CreationDate" -> CreationDate.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Enabled" -> Enabled.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "FromAddress" -> FromAddress.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "HasCredential" -> HasCredential.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Id" -> Id.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Identity" -> Identity.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "IsArchived" -> IsArchived.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "LastModifiedBy" -> LastModifiedBy.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "LastModifiedDate" -> LastModifiedDate.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MessagesPerSecond" -> MessagesPerSecond.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Platform" -> Platform.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "RoleArn" -> RoleArn.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Version" -> Version.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[EmailChannelResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      ApplicationId.foreach(__v => __obj.update("ApplicationId", __v.asInstanceOf[js.Any]))
+      ConfigurationSet.foreach(__v => __obj.update("ConfigurationSet", __v.asInstanceOf[js.Any]))
+      CreationDate.foreach(__v => __obj.update("CreationDate", __v.asInstanceOf[js.Any]))
+      Enabled.foreach(__v => __obj.update("Enabled", __v.asInstanceOf[js.Any]))
+      FromAddress.foreach(__v => __obj.update("FromAddress", __v.asInstanceOf[js.Any]))
+      HasCredential.foreach(__v => __obj.update("HasCredential", __v.asInstanceOf[js.Any]))
+      Id.foreach(__v => __obj.update("Id", __v.asInstanceOf[js.Any]))
+      Identity.foreach(__v => __obj.update("Identity", __v.asInstanceOf[js.Any]))
+      IsArchived.foreach(__v => __obj.update("IsArchived", __v.asInstanceOf[js.Any]))
+      LastModifiedBy.foreach(__v => __obj.update("LastModifiedBy", __v.asInstanceOf[js.Any]))
+      LastModifiedDate.foreach(__v => __obj.update("LastModifiedDate", __v.asInstanceOf[js.Any]))
+      MessagesPerSecond.foreach(__v => __obj.update("MessagesPerSecond", __v.asInstanceOf[js.Any]))
+      Platform.foreach(__v => __obj.update("Platform", __v.asInstanceOf[js.Any]))
+      RoleArn.foreach(__v => __obj.update("RoleArn", __v.asInstanceOf[js.Any]))
+      Version.foreach(__v => __obj.update("Version", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[EmailChannelResponse]
     }
   }
 
@@ -3227,31 +2589,15 @@ package pinpoint {
         SimpleEmail: js.UndefOr[SimpleEmail] = js.undefined,
         Substitutions: js.UndefOr[MapOfListOf__string] = js.undefined
     ): EmailMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Body" -> Body.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "FeedbackForwardingAddress" -> FeedbackForwardingAddress.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "FromAddress" -> FromAddress.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "RawEmail" -> RawEmail.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ReplyToAddresses" -> ReplyToAddresses.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SimpleEmail" -> SimpleEmail.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Substitutions" -> Substitutions.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[EmailMessage]
+      val __obj = js.Dictionary.empty[js.Any]
+      Body.foreach(__v => __obj.update("Body", __v.asInstanceOf[js.Any]))
+      FeedbackForwardingAddress.foreach(__v => __obj.update("FeedbackForwardingAddress", __v.asInstanceOf[js.Any]))
+      FromAddress.foreach(__v => __obj.update("FromAddress", __v.asInstanceOf[js.Any]))
+      RawEmail.foreach(__v => __obj.update("RawEmail", __v.asInstanceOf[js.Any]))
+      ReplyToAddresses.foreach(__v => __obj.update("ReplyToAddresses", __v.asInstanceOf[js.Any]))
+      SimpleEmail.foreach(__v => __obj.update("SimpleEmail", __v.asInstanceOf[js.Any]))
+      Substitutions.foreach(__v => __obj.update("Substitutions", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[EmailMessage]
     }
   }
 
@@ -3289,46 +2635,20 @@ package pinpoint {
         RequestId: js.UndefOr[__string] = js.undefined,
         User: js.UndefOr[EndpointUser] = js.undefined
     ): EndpointBatchItem = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Address" -> Address.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Attributes" -> Attributes.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ChannelType" -> ChannelType.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Demographic" -> Demographic.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "EffectiveDate" -> EffectiveDate.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "EndpointStatus" -> EndpointStatus.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Id" -> Id.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Location" -> Location.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Metrics" -> Metrics.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "OptOut" -> OptOut.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "RequestId" -> RequestId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "User" -> User.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[EndpointBatchItem]
+      val __obj = js.Dictionary.empty[js.Any]
+      Address.foreach(__v => __obj.update("Address", __v.asInstanceOf[js.Any]))
+      Attributes.foreach(__v => __obj.update("Attributes", __v.asInstanceOf[js.Any]))
+      ChannelType.foreach(__v => __obj.update("ChannelType", __v.asInstanceOf[js.Any]))
+      Demographic.foreach(__v => __obj.update("Demographic", __v.asInstanceOf[js.Any]))
+      EffectiveDate.foreach(__v => __obj.update("EffectiveDate", __v.asInstanceOf[js.Any]))
+      EndpointStatus.foreach(__v => __obj.update("EndpointStatus", __v.asInstanceOf[js.Any]))
+      Id.foreach(__v => __obj.update("Id", __v.asInstanceOf[js.Any]))
+      Location.foreach(__v => __obj.update("Location", __v.asInstanceOf[js.Any]))
+      Metrics.foreach(__v => __obj.update("Metrics", __v.asInstanceOf[js.Any]))
+      OptOut.foreach(__v => __obj.update("OptOut", __v.asInstanceOf[js.Any]))
+      RequestId.foreach(__v => __obj.update("RequestId", __v.asInstanceOf[js.Any]))
+      User.foreach(__v => __obj.update("User", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[EndpointBatchItem]
     }
   }
 
@@ -3344,13 +2664,9 @@ package pinpoint {
     def apply(
         Item: js.UndefOr[ListOfEndpointBatchItem] = js.undefined
     ): EndpointBatchRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Item" -> Item.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[EndpointBatchRequest]
+      val __obj = js.Dictionary.empty[js.Any]
+      Item.foreach(__v => __obj.update("Item", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[EndpointBatchRequest]
     }
   }
 
@@ -3380,34 +2696,16 @@ package pinpoint {
         PlatformVersion: js.UndefOr[__string] = js.undefined,
         Timezone: js.UndefOr[__string] = js.undefined
     ): EndpointDemographic = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "AppVersion" -> AppVersion.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Locale" -> Locale.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Make" -> Make.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Model" -> Model.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ModelVersion" -> ModelVersion.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Platform" -> Platform.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "PlatformVersion" -> PlatformVersion.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Timezone" -> Timezone.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[EndpointDemographic]
+      val __obj = js.Dictionary.empty[js.Any]
+      AppVersion.foreach(__v => __obj.update("AppVersion", __v.asInstanceOf[js.Any]))
+      Locale.foreach(__v => __obj.update("Locale", __v.asInstanceOf[js.Any]))
+      Make.foreach(__v => __obj.update("Make", __v.asInstanceOf[js.Any]))
+      Model.foreach(__v => __obj.update("Model", __v.asInstanceOf[js.Any]))
+      ModelVersion.foreach(__v => __obj.update("ModelVersion", __v.asInstanceOf[js.Any]))
+      Platform.foreach(__v => __obj.update("Platform", __v.asInstanceOf[js.Any]))
+      PlatformVersion.foreach(__v => __obj.update("PlatformVersion", __v.asInstanceOf[js.Any]))
+      Timezone.foreach(__v => __obj.update("Timezone", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[EndpointDemographic]
     }
   }
 
@@ -3425,16 +2723,10 @@ package pinpoint {
         Message: js.UndefOr[__string] = js.undefined,
         StatusCode: js.UndefOr[__integer] = js.undefined
     ): EndpointItemResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Message" -> Message.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "StatusCode" -> StatusCode.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[EndpointItemResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      Message.foreach(__v => __obj.update("Message", __v.asInstanceOf[js.Any]))
+      StatusCode.foreach(__v => __obj.update("StatusCode", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[EndpointItemResponse]
     }
   }
 
@@ -3460,28 +2752,14 @@ package pinpoint {
         PostalCode: js.UndefOr[__string] = js.undefined,
         Region: js.UndefOr[__string] = js.undefined
     ): EndpointLocation = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "City" -> City.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Country" -> Country.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Latitude" -> Latitude.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Longitude" -> Longitude.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "PostalCode" -> PostalCode.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Region" -> Region.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[EndpointLocation]
+      val __obj = js.Dictionary.empty[js.Any]
+      City.foreach(__v => __obj.update("City", __v.asInstanceOf[js.Any]))
+      Country.foreach(__v => __obj.update("Country", __v.asInstanceOf[js.Any]))
+      Latitude.foreach(__v => __obj.update("Latitude", __v.asInstanceOf[js.Any]))
+      Longitude.foreach(__v => __obj.update("Longitude", __v.asInstanceOf[js.Any]))
+      PostalCode.foreach(__v => __obj.update("PostalCode", __v.asInstanceOf[js.Any]))
+      Region.foreach(__v => __obj.update("Region", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[EndpointLocation]
     }
   }
 
@@ -3507,28 +2785,14 @@ package pinpoint {
         StatusMessage: js.UndefOr[__string] = js.undefined,
         UpdatedToken: js.UndefOr[__string] = js.undefined
     ): EndpointMessageResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Address" -> Address.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DeliveryStatus" -> DeliveryStatus.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MessageId" -> MessageId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "StatusCode" -> StatusCode.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "StatusMessage" -> StatusMessage.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "UpdatedToken" -> UpdatedToken.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[EndpointMessageResult]
+      val __obj = js.Dictionary.empty[js.Any]
+      Address.foreach(__v => __obj.update("Address", __v.asInstanceOf[js.Any]))
+      DeliveryStatus.foreach(__v => __obj.update("DeliveryStatus", __v.asInstanceOf[js.Any]))
+      MessageId.foreach(__v => __obj.update("MessageId", __v.asInstanceOf[js.Any]))
+      StatusCode.foreach(__v => __obj.update("StatusCode", __v.asInstanceOf[js.Any]))
+      StatusMessage.foreach(__v => __obj.update("StatusMessage", __v.asInstanceOf[js.Any]))
+      UpdatedToken.foreach(__v => __obj.update("UpdatedToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[EndpointMessageResult]
     }
   }
 
@@ -3564,43 +2828,19 @@ package pinpoint {
         RequestId: js.UndefOr[__string] = js.undefined,
         User: js.UndefOr[EndpointUser] = js.undefined
     ): EndpointRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Address" -> Address.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Attributes" -> Attributes.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ChannelType" -> ChannelType.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Demographic" -> Demographic.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "EffectiveDate" -> EffectiveDate.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "EndpointStatus" -> EndpointStatus.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Location" -> Location.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Metrics" -> Metrics.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "OptOut" -> OptOut.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "RequestId" -> RequestId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "User" -> User.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[EndpointRequest]
+      val __obj = js.Dictionary.empty[js.Any]
+      Address.foreach(__v => __obj.update("Address", __v.asInstanceOf[js.Any]))
+      Attributes.foreach(__v => __obj.update("Attributes", __v.asInstanceOf[js.Any]))
+      ChannelType.foreach(__v => __obj.update("ChannelType", __v.asInstanceOf[js.Any]))
+      Demographic.foreach(__v => __obj.update("Demographic", __v.asInstanceOf[js.Any]))
+      EffectiveDate.foreach(__v => __obj.update("EffectiveDate", __v.asInstanceOf[js.Any]))
+      EndpointStatus.foreach(__v => __obj.update("EndpointStatus", __v.asInstanceOf[js.Any]))
+      Location.foreach(__v => __obj.update("Location", __v.asInstanceOf[js.Any]))
+      Metrics.foreach(__v => __obj.update("Metrics", __v.asInstanceOf[js.Any]))
+      OptOut.foreach(__v => __obj.update("OptOut", __v.asInstanceOf[js.Any]))
+      RequestId.foreach(__v => __obj.update("RequestId", __v.asInstanceOf[js.Any]))
+      User.foreach(__v => __obj.update("User", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[EndpointRequest]
     }
   }
 
@@ -3644,55 +2884,23 @@ package pinpoint {
         RequestId: js.UndefOr[__string] = js.undefined,
         User: js.UndefOr[EndpointUser] = js.undefined
     ): EndpointResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Address" -> Address.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ApplicationId" -> ApplicationId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Attributes" -> Attributes.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ChannelType" -> ChannelType.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "CohortId" -> CohortId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "CreationDate" -> CreationDate.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Demographic" -> Demographic.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "EffectiveDate" -> EffectiveDate.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "EndpointStatus" -> EndpointStatus.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Id" -> Id.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Location" -> Location.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Metrics" -> Metrics.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "OptOut" -> OptOut.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "RequestId" -> RequestId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "User" -> User.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[EndpointResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      Address.foreach(__v => __obj.update("Address", __v.asInstanceOf[js.Any]))
+      ApplicationId.foreach(__v => __obj.update("ApplicationId", __v.asInstanceOf[js.Any]))
+      Attributes.foreach(__v => __obj.update("Attributes", __v.asInstanceOf[js.Any]))
+      ChannelType.foreach(__v => __obj.update("ChannelType", __v.asInstanceOf[js.Any]))
+      CohortId.foreach(__v => __obj.update("CohortId", __v.asInstanceOf[js.Any]))
+      CreationDate.foreach(__v => __obj.update("CreationDate", __v.asInstanceOf[js.Any]))
+      Demographic.foreach(__v => __obj.update("Demographic", __v.asInstanceOf[js.Any]))
+      EffectiveDate.foreach(__v => __obj.update("EffectiveDate", __v.asInstanceOf[js.Any]))
+      EndpointStatus.foreach(__v => __obj.update("EndpointStatus", __v.asInstanceOf[js.Any]))
+      Id.foreach(__v => __obj.update("Id", __v.asInstanceOf[js.Any]))
+      Location.foreach(__v => __obj.update("Location", __v.asInstanceOf[js.Any]))
+      Metrics.foreach(__v => __obj.update("Metrics", __v.asInstanceOf[js.Any]))
+      OptOut.foreach(__v => __obj.update("OptOut", __v.asInstanceOf[js.Any]))
+      RequestId.foreach(__v => __obj.update("RequestId", __v.asInstanceOf[js.Any]))
+      User.foreach(__v => __obj.update("User", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[EndpointResponse]
     }
   }
 
@@ -3716,25 +2924,13 @@ package pinpoint {
         Substitutions: js.UndefOr[MapOfListOf__string] = js.undefined,
         TitleOverride: js.UndefOr[__string] = js.undefined
     ): EndpointSendConfiguration = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "BodyOverride" -> BodyOverride.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Context" -> Context.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "RawContent" -> RawContent.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Substitutions" -> Substitutions.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "TitleOverride" -> TitleOverride.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[EndpointSendConfiguration]
+      val __obj = js.Dictionary.empty[js.Any]
+      BodyOverride.foreach(__v => __obj.update("BodyOverride", __v.asInstanceOf[js.Any]))
+      Context.foreach(__v => __obj.update("Context", __v.asInstanceOf[js.Any]))
+      RawContent.foreach(__v => __obj.update("RawContent", __v.asInstanceOf[js.Any]))
+      Substitutions.foreach(__v => __obj.update("Substitutions", __v.asInstanceOf[js.Any]))
+      TitleOverride.foreach(__v => __obj.update("TitleOverride", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[EndpointSendConfiguration]
     }
   }
 
@@ -3752,16 +2948,10 @@ package pinpoint {
         UserAttributes: js.UndefOr[MapOfListOf__string] = js.undefined,
         UserId: js.UndefOr[__string] = js.undefined
     ): EndpointUser = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "UserAttributes" -> UserAttributes.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "UserId" -> UserId.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[EndpointUser]
+      val __obj = js.Dictionary.empty[js.Any]
+      UserAttributes.foreach(__v => __obj.update("UserAttributes", __v.asInstanceOf[js.Any]))
+      UserId.foreach(__v => __obj.update("UserId", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[EndpointUser]
     }
   }
 
@@ -3777,13 +2967,9 @@ package pinpoint {
     def apply(
         Item: js.UndefOr[ListOfEndpointResponse] = js.undefined
     ): EndpointsResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Item" -> Item.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[EndpointsResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      Item.foreach(__v => __obj.update("Item", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[EndpointsResponse]
     }
   }
 
@@ -3817,40 +3003,18 @@ package pinpoint {
         Session: js.UndefOr[Session] = js.undefined,
         Timestamp: js.UndefOr[__string] = js.undefined
     ): Event = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "AppPackageName" -> AppPackageName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "AppTitle" -> AppTitle.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "AppVersionCode" -> AppVersionCode.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Attributes" -> Attributes.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ClientSdkVersion" -> ClientSdkVersion.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "EventType" -> EventType.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Metrics" -> Metrics.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SdkName" -> SdkName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Session" -> Session.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Timestamp" -> Timestamp.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Event]
+      val __obj = js.Dictionary.empty[js.Any]
+      AppPackageName.foreach(__v => __obj.update("AppPackageName", __v.asInstanceOf[js.Any]))
+      AppTitle.foreach(__v => __obj.update("AppTitle", __v.asInstanceOf[js.Any]))
+      AppVersionCode.foreach(__v => __obj.update("AppVersionCode", __v.asInstanceOf[js.Any]))
+      Attributes.foreach(__v => __obj.update("Attributes", __v.asInstanceOf[js.Any]))
+      ClientSdkVersion.foreach(__v => __obj.update("ClientSdkVersion", __v.asInstanceOf[js.Any]))
+      EventType.foreach(__v => __obj.update("EventType", __v.asInstanceOf[js.Any]))
+      Metrics.foreach(__v => __obj.update("Metrics", __v.asInstanceOf[js.Any]))
+      SdkName.foreach(__v => __obj.update("SdkName", __v.asInstanceOf[js.Any]))
+      Session.foreach(__v => __obj.update("Session", __v.asInstanceOf[js.Any]))
+      Timestamp.foreach(__v => __obj.update("Timestamp", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Event]
     }
   }
 
@@ -3870,19 +3034,11 @@ package pinpoint {
         EventType: js.UndefOr[SetDimension] = js.undefined,
         Metrics: js.UndefOr[MapOfMetricDimension] = js.undefined
     ): EventDimensions = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Attributes" -> Attributes.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "EventType" -> EventType.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Metrics" -> Metrics.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[EventDimensions]
+      val __obj = js.Dictionary.empty[js.Any]
+      Attributes.foreach(__v => __obj.update("Attributes", __v.asInstanceOf[js.Any]))
+      EventType.foreach(__v => __obj.update("EventType", __v.asInstanceOf[js.Any]))
+      Metrics.foreach(__v => __obj.update("Metrics", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[EventDimensions]
     }
   }
 
@@ -3900,16 +3056,10 @@ package pinpoint {
         Message: js.UndefOr[__string] = js.undefined,
         StatusCode: js.UndefOr[__integer] = js.undefined
     ): EventItemResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Message" -> Message.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "StatusCode" -> StatusCode.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[EventItemResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      Message.foreach(__v => __obj.update("Message", __v.asInstanceOf[js.Any]))
+      StatusCode.foreach(__v => __obj.update("StatusCode", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[EventItemResponse]
     }
   }
 
@@ -3935,28 +3085,14 @@ package pinpoint {
         LastUpdatedBy: js.UndefOr[__string] = js.undefined,
         RoleArn: js.UndefOr[__string] = js.undefined
     ): EventStream = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ApplicationId" -> ApplicationId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DestinationStreamArn" -> DestinationStreamArn.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ExternalId" -> ExternalId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "LastModifiedDate" -> LastModifiedDate.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "LastUpdatedBy" -> LastUpdatedBy.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "RoleArn" -> RoleArn.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[EventStream]
+      val __obj = js.Dictionary.empty[js.Any]
+      ApplicationId.foreach(__v => __obj.update("ApplicationId", __v.asInstanceOf[js.Any]))
+      DestinationStreamArn.foreach(__v => __obj.update("DestinationStreamArn", __v.asInstanceOf[js.Any]))
+      ExternalId.foreach(__v => __obj.update("ExternalId", __v.asInstanceOf[js.Any]))
+      LastModifiedDate.foreach(__v => __obj.update("LastModifiedDate", __v.asInstanceOf[js.Any]))
+      LastUpdatedBy.foreach(__v => __obj.update("LastUpdatedBy", __v.asInstanceOf[js.Any]))
+      RoleArn.foreach(__v => __obj.update("RoleArn", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[EventStream]
     }
   }
 
@@ -3974,16 +3110,10 @@ package pinpoint {
         Endpoint: js.UndefOr[PublicEndpoint] = js.undefined,
         Events: js.UndefOr[MapOfEvent] = js.undefined
     ): EventsBatch = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Endpoint" -> Endpoint.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Events" -> Events.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[EventsBatch]
+      val __obj = js.Dictionary.empty[js.Any]
+      Endpoint.foreach(__v => __obj.update("Endpoint", __v.asInstanceOf[js.Any]))
+      Events.foreach(__v => __obj.update("Events", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[EventsBatch]
     }
   }
 
@@ -3999,13 +3129,9 @@ package pinpoint {
     def apply(
         BatchItem: js.UndefOr[MapOfEventsBatch] = js.undefined
     ): EventsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "BatchItem" -> BatchItem.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[EventsRequest]
+      val __obj = js.Dictionary.empty[js.Any]
+      BatchItem.foreach(__v => __obj.update("BatchItem", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[EventsRequest]
     }
   }
 
@@ -4021,13 +3147,9 @@ package pinpoint {
     def apply(
         Results: js.UndefOr[MapOfItemResponse] = js.undefined
     ): EventsResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Results" -> Results.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[EventsResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      Results.foreach(__v => __obj.update("Results", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[EventsResponse]
     }
   }
 
@@ -4049,22 +3171,12 @@ package pinpoint {
         SegmentId: js.UndefOr[__string] = js.undefined,
         SegmentVersion: js.UndefOr[__integer] = js.undefined
     ): ExportJobRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "RoleArn" -> RoleArn.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "S3UrlPrefix" -> S3UrlPrefix.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SegmentId" -> SegmentId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SegmentVersion" -> SegmentVersion.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ExportJobRequest]
+      val __obj = js.Dictionary.empty[js.Any]
+      RoleArn.foreach(__v => __obj.update("RoleArn", __v.asInstanceOf[js.Any]))
+      S3UrlPrefix.foreach(__v => __obj.update("S3UrlPrefix", __v.asInstanceOf[js.Any]))
+      SegmentId.foreach(__v => __obj.update("SegmentId", __v.asInstanceOf[js.Any]))
+      SegmentVersion.foreach(__v => __obj.update("SegmentVersion", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ExportJobRequest]
     }
   }
 
@@ -4086,22 +3198,12 @@ package pinpoint {
         SegmentId: js.UndefOr[__string] = js.undefined,
         SegmentVersion: js.UndefOr[__integer] = js.undefined
     ): ExportJobResource = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "RoleArn" -> RoleArn.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "S3UrlPrefix" -> S3UrlPrefix.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SegmentId" -> SegmentId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SegmentVersion" -> SegmentVersion.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ExportJobResource]
+      val __obj = js.Dictionary.empty[js.Any]
+      RoleArn.foreach(__v => __obj.update("RoleArn", __v.asInstanceOf[js.Any]))
+      S3UrlPrefix.foreach(__v => __obj.update("S3UrlPrefix", __v.asInstanceOf[js.Any]))
+      SegmentId.foreach(__v => __obj.update("SegmentId", __v.asInstanceOf[js.Any]))
+      SegmentVersion.foreach(__v => __obj.update("SegmentVersion", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ExportJobResource]
     }
   }
 
@@ -4141,49 +3243,21 @@ package pinpoint {
         TotalProcessed: js.UndefOr[__integer] = js.undefined,
         Type: js.UndefOr[__string] = js.undefined
     ): ExportJobResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ApplicationId" -> ApplicationId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "CompletedPieces" -> CompletedPieces.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "CompletionDate" -> CompletionDate.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "CreationDate" -> CreationDate.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Definition" -> Definition.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "FailedPieces" -> FailedPieces.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Failures" -> Failures.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Id" -> Id.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "JobStatus" -> JobStatus.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "TotalFailures" -> TotalFailures.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "TotalPieces" -> TotalPieces.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "TotalProcessed" -> TotalProcessed.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Type" -> Type.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ExportJobResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      ApplicationId.foreach(__v => __obj.update("ApplicationId", __v.asInstanceOf[js.Any]))
+      CompletedPieces.foreach(__v => __obj.update("CompletedPieces", __v.asInstanceOf[js.Any]))
+      CompletionDate.foreach(__v => __obj.update("CompletionDate", __v.asInstanceOf[js.Any]))
+      CreationDate.foreach(__v => __obj.update("CreationDate", __v.asInstanceOf[js.Any]))
+      Definition.foreach(__v => __obj.update("Definition", __v.asInstanceOf[js.Any]))
+      FailedPieces.foreach(__v => __obj.update("FailedPieces", __v.asInstanceOf[js.Any]))
+      Failures.foreach(__v => __obj.update("Failures", __v.asInstanceOf[js.Any]))
+      Id.foreach(__v => __obj.update("Id", __v.asInstanceOf[js.Any]))
+      JobStatus.foreach(__v => __obj.update("JobStatus", __v.asInstanceOf[js.Any]))
+      TotalFailures.foreach(__v => __obj.update("TotalFailures", __v.asInstanceOf[js.Any]))
+      TotalPieces.foreach(__v => __obj.update("TotalPieces", __v.asInstanceOf[js.Any]))
+      TotalProcessed.foreach(__v => __obj.update("TotalProcessed", __v.asInstanceOf[js.Any]))
+      Type.foreach(__v => __obj.update("Type", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ExportJobResponse]
     }
   }
 
@@ -4201,16 +3275,10 @@ package pinpoint {
         Item: js.UndefOr[ListOfExportJobResponse] = js.undefined,
         NextToken: js.UndefOr[__string] = js.undefined
     ): ExportJobsResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Item" -> Item.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NextToken" -> NextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ExportJobsResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      Item.foreach(__v => __obj.update("Item", __v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ExportJobsResponse]
     }
   }
 
@@ -4253,16 +3321,10 @@ package pinpoint {
         ApiKey: js.UndefOr[__string] = js.undefined,
         Enabled: js.UndefOr[__boolean] = js.undefined
     ): GCMChannelRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ApiKey" -> ApiKey.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Enabled" -> Enabled.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GCMChannelRequest]
+      val __obj = js.Dictionary.empty[js.Any]
+      ApiKey.foreach(__v => __obj.update("ApiKey", __v.asInstanceOf[js.Any]))
+      Enabled.foreach(__v => __obj.update("Enabled", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GCMChannelRequest]
     }
   }
 
@@ -4298,43 +3360,19 @@ package pinpoint {
         Platform: js.UndefOr[__string] = js.undefined,
         Version: js.UndefOr[__integer] = js.undefined
     ): GCMChannelResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ApplicationId" -> ApplicationId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "CreationDate" -> CreationDate.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Credential" -> Credential.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Enabled" -> Enabled.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "HasCredential" -> HasCredential.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Id" -> Id.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "IsArchived" -> IsArchived.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "LastModifiedBy" -> LastModifiedBy.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "LastModifiedDate" -> LastModifiedDate.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Platform" -> Platform.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Version" -> Version.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GCMChannelResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      ApplicationId.foreach(__v => __obj.update("ApplicationId", __v.asInstanceOf[js.Any]))
+      CreationDate.foreach(__v => __obj.update("CreationDate", __v.asInstanceOf[js.Any]))
+      Credential.foreach(__v => __obj.update("Credential", __v.asInstanceOf[js.Any]))
+      Enabled.foreach(__v => __obj.update("Enabled", __v.asInstanceOf[js.Any]))
+      HasCredential.foreach(__v => __obj.update("HasCredential", __v.asInstanceOf[js.Any]))
+      Id.foreach(__v => __obj.update("Id", __v.asInstanceOf[js.Any]))
+      IsArchived.foreach(__v => __obj.update("IsArchived", __v.asInstanceOf[js.Any]))
+      LastModifiedBy.foreach(__v => __obj.update("LastModifiedBy", __v.asInstanceOf[js.Any]))
+      LastModifiedDate.foreach(__v => __obj.update("LastModifiedDate", __v.asInstanceOf[js.Any]))
+      Platform.foreach(__v => __obj.update("Platform", __v.asInstanceOf[js.Any]))
+      Version.foreach(__v => __obj.update("Version", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GCMChannelResponse]
     }
   }
 
@@ -4382,61 +3420,25 @@ package pinpoint {
         Title: js.UndefOr[__string] = js.undefined,
         Url: js.UndefOr[__string] = js.undefined
     ): GCMMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Action" -> Action.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Body" -> Body.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "CollapseKey" -> CollapseKey.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Data" -> Data.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "IconReference" -> IconReference.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ImageIconUrl" -> ImageIconUrl.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ImageUrl" -> ImageUrl.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Priority" -> Priority.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "RawContent" -> RawContent.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "RestrictedPackageName" -> RestrictedPackageName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SilentPush" -> SilentPush.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SmallImageIconUrl" -> SmallImageIconUrl.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Sound" -> Sound.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Substitutions" -> Substitutions.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "TimeToLive" -> TimeToLive.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Title" -> Title.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Url" -> Url.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GCMMessage]
+      val __obj = js.Dictionary.empty[js.Any]
+      Action.foreach(__v => __obj.update("Action", __v.asInstanceOf[js.Any]))
+      Body.foreach(__v => __obj.update("Body", __v.asInstanceOf[js.Any]))
+      CollapseKey.foreach(__v => __obj.update("CollapseKey", __v.asInstanceOf[js.Any]))
+      Data.foreach(__v => __obj.update("Data", __v.asInstanceOf[js.Any]))
+      IconReference.foreach(__v => __obj.update("IconReference", __v.asInstanceOf[js.Any]))
+      ImageIconUrl.foreach(__v => __obj.update("ImageIconUrl", __v.asInstanceOf[js.Any]))
+      ImageUrl.foreach(__v => __obj.update("ImageUrl", __v.asInstanceOf[js.Any]))
+      Priority.foreach(__v => __obj.update("Priority", __v.asInstanceOf[js.Any]))
+      RawContent.foreach(__v => __obj.update("RawContent", __v.asInstanceOf[js.Any]))
+      RestrictedPackageName.foreach(__v => __obj.update("RestrictedPackageName", __v.asInstanceOf[js.Any]))
+      SilentPush.foreach(__v => __obj.update("SilentPush", __v.asInstanceOf[js.Any]))
+      SmallImageIconUrl.foreach(__v => __obj.update("SmallImageIconUrl", __v.asInstanceOf[js.Any]))
+      Sound.foreach(__v => __obj.update("Sound", __v.asInstanceOf[js.Any]))
+      Substitutions.foreach(__v => __obj.update("Substitutions", __v.asInstanceOf[js.Any]))
+      TimeToLive.foreach(__v => __obj.update("TimeToLive", __v.asInstanceOf[js.Any]))
+      Title.foreach(__v => __obj.update("Title", __v.asInstanceOf[js.Any]))
+      Url.foreach(__v => __obj.update("Url", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GCMMessage]
     }
   }
 
@@ -4454,16 +3456,10 @@ package pinpoint {
         Latitude: js.UndefOr[__double] = js.undefined,
         Longitude: js.UndefOr[__double] = js.undefined
     ): GPSCoordinates = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Latitude" -> Latitude.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Longitude" -> Longitude.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GPSCoordinates]
+      val __obj = js.Dictionary.empty[js.Any]
+      Latitude.foreach(__v => __obj.update("Latitude", __v.asInstanceOf[js.Any]))
+      Longitude.foreach(__v => __obj.update("Longitude", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GPSCoordinates]
     }
   }
 
@@ -4481,16 +3477,10 @@ package pinpoint {
         Coordinates: js.UndefOr[GPSCoordinates] = js.undefined,
         RangeInKilometers: js.UndefOr[__double] = js.undefined
     ): GPSPointDimension = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Coordinates" -> Coordinates.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "RangeInKilometers" -> RangeInKilometers.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GPSPointDimension]
+      val __obj = js.Dictionary.empty[js.Any]
+      Coordinates.foreach(__v => __obj.update("Coordinates", __v.asInstanceOf[js.Any]))
+      RangeInKilometers.foreach(__v => __obj.update("RangeInKilometers", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GPSPointDimension]
     }
   }
 
@@ -4503,11 +3493,11 @@ package pinpoint {
     def apply(
         ApplicationId: __string
     ): GetAdmChannelRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ApplicationId" -> ApplicationId.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetAdmChannelRequest]
+      __obj.asInstanceOf[GetAdmChannelRequest]
     }
   }
 
@@ -4520,11 +3510,11 @@ package pinpoint {
     def apply(
         ADMChannelResponse: ADMChannelResponse
     ): GetAdmChannelResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ADMChannelResponse" -> ADMChannelResponse.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetAdmChannelResponse]
+      __obj.asInstanceOf[GetAdmChannelResponse]
     }
   }
 
@@ -4537,11 +3527,11 @@ package pinpoint {
     def apply(
         ApplicationId: __string
     ): GetApnsChannelRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ApplicationId" -> ApplicationId.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetApnsChannelRequest]
+      __obj.asInstanceOf[GetApnsChannelRequest]
     }
   }
 
@@ -4554,11 +3544,11 @@ package pinpoint {
     def apply(
         APNSChannelResponse: APNSChannelResponse
     ): GetApnsChannelResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "APNSChannelResponse" -> APNSChannelResponse.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetApnsChannelResponse]
+      __obj.asInstanceOf[GetApnsChannelResponse]
     }
   }
 
@@ -4571,11 +3561,11 @@ package pinpoint {
     def apply(
         ApplicationId: __string
     ): GetApnsSandboxChannelRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ApplicationId" -> ApplicationId.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetApnsSandboxChannelRequest]
+      __obj.asInstanceOf[GetApnsSandboxChannelRequest]
     }
   }
 
@@ -4588,11 +3578,11 @@ package pinpoint {
     def apply(
         APNSSandboxChannelResponse: APNSSandboxChannelResponse
     ): GetApnsSandboxChannelResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "APNSSandboxChannelResponse" -> APNSSandboxChannelResponse.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetApnsSandboxChannelResponse]
+      __obj.asInstanceOf[GetApnsSandboxChannelResponse]
     }
   }
 
@@ -4605,11 +3595,11 @@ package pinpoint {
     def apply(
         ApplicationId: __string
     ): GetApnsVoipChannelRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ApplicationId" -> ApplicationId.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetApnsVoipChannelRequest]
+      __obj.asInstanceOf[GetApnsVoipChannelRequest]
     }
   }
 
@@ -4622,11 +3612,11 @@ package pinpoint {
     def apply(
         APNSVoipChannelResponse: APNSVoipChannelResponse
     ): GetApnsVoipChannelResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "APNSVoipChannelResponse" -> APNSVoipChannelResponse.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetApnsVoipChannelResponse]
+      __obj.asInstanceOf[GetApnsVoipChannelResponse]
     }
   }
 
@@ -4639,11 +3629,11 @@ package pinpoint {
     def apply(
         ApplicationId: __string
     ): GetApnsVoipSandboxChannelRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ApplicationId" -> ApplicationId.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetApnsVoipSandboxChannelRequest]
+      __obj.asInstanceOf[GetApnsVoipSandboxChannelRequest]
     }
   }
 
@@ -4656,11 +3646,11 @@ package pinpoint {
     def apply(
         APNSVoipSandboxChannelResponse: APNSVoipSandboxChannelResponse
     ): GetApnsVoipSandboxChannelResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "APNSVoipSandboxChannelResponse" -> APNSVoipSandboxChannelResponse.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetApnsVoipSandboxChannelResponse]
+      __obj.asInstanceOf[GetApnsVoipSandboxChannelResponse]
     }
   }
 
@@ -4673,11 +3663,11 @@ package pinpoint {
     def apply(
         ApplicationId: __string
     ): GetAppRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ApplicationId" -> ApplicationId.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetAppRequest]
+      __obj.asInstanceOf[GetAppRequest]
     }
   }
 
@@ -4690,11 +3680,11 @@ package pinpoint {
     def apply(
         ApplicationResponse: ApplicationResponse
     ): GetAppResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ApplicationResponse" -> ApplicationResponse.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetAppResponse]
+      __obj.asInstanceOf[GetAppResponse]
     }
   }
 
@@ -4707,11 +3697,11 @@ package pinpoint {
     def apply(
         ApplicationId: __string
     ): GetApplicationSettingsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ApplicationId" -> ApplicationId.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetApplicationSettingsRequest]
+      __obj.asInstanceOf[GetApplicationSettingsRequest]
     }
   }
 
@@ -4724,11 +3714,11 @@ package pinpoint {
     def apply(
         ApplicationSettingsResource: ApplicationSettingsResource
     ): GetApplicationSettingsResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ApplicationSettingsResource" -> ApplicationSettingsResource.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetApplicationSettingsResponse]
+      __obj.asInstanceOf[GetApplicationSettingsResponse]
     }
   }
 
@@ -4743,16 +3733,10 @@ package pinpoint {
         PageSize: js.UndefOr[__string] = js.undefined,
         Token: js.UndefOr[__string] = js.undefined
     ): GetAppsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "PageSize" -> PageSize.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Token" -> Token.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetAppsRequest]
+      val __obj = js.Dictionary.empty[js.Any]
+      PageSize.foreach(__v => __obj.update("PageSize", __v.asInstanceOf[js.Any]))
+      Token.foreach(__v => __obj.update("Token", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetAppsRequest]
     }
   }
 
@@ -4765,11 +3749,11 @@ package pinpoint {
     def apply(
         ApplicationsResponse: ApplicationsResponse
     ): GetAppsResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ApplicationsResponse" -> ApplicationsResponse.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetAppsResponse]
+      __obj.asInstanceOf[GetAppsResponse]
     }
   }
 
@@ -4782,11 +3766,11 @@ package pinpoint {
     def apply(
         ApplicationId: __string
     ): GetBaiduChannelRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ApplicationId" -> ApplicationId.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetBaiduChannelRequest]
+      __obj.asInstanceOf[GetBaiduChannelRequest]
     }
   }
 
@@ -4799,11 +3783,11 @@ package pinpoint {
     def apply(
         BaiduChannelResponse: BaiduChannelResponse
     ): GetBaiduChannelResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "BaiduChannelResponse" -> BaiduChannelResponse.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetBaiduChannelResponse]
+      __obj.asInstanceOf[GetBaiduChannelResponse]
     }
   }
 
@@ -4822,18 +3806,14 @@ package pinpoint {
         PageSize: js.UndefOr[__string] = js.undefined,
         Token: js.UndefOr[__string] = js.undefined
     ): GetCampaignActivitiesRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ApplicationId" -> ApplicationId.asInstanceOf[js.Any],
-        "CampaignId"    -> CampaignId.asInstanceOf[js.Any],
-        "PageSize" -> PageSize.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Token" -> Token.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "CampaignId"    -> CampaignId.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetCampaignActivitiesRequest]
+      PageSize.foreach(__v => __obj.update("PageSize", __v.asInstanceOf[js.Any]))
+      Token.foreach(__v => __obj.update("Token", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetCampaignActivitiesRequest]
     }
   }
 
@@ -4846,11 +3826,11 @@ package pinpoint {
     def apply(
         ActivitiesResponse: ActivitiesResponse
     ): GetCampaignActivitiesResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ActivitiesResponse" -> ActivitiesResponse.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetCampaignActivitiesResponse]
+      __obj.asInstanceOf[GetCampaignActivitiesResponse]
     }
   }
 
@@ -4865,12 +3845,12 @@ package pinpoint {
         ApplicationId: __string,
         CampaignId: __string
     ): GetCampaignRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ApplicationId" -> ApplicationId.asInstanceOf[js.Any],
         "CampaignId"    -> CampaignId.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetCampaignRequest]
+      __obj.asInstanceOf[GetCampaignRequest]
     }
   }
 
@@ -4883,11 +3863,11 @@ package pinpoint {
     def apply(
         CampaignResponse: CampaignResponse
     ): GetCampaignResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "CampaignResponse" -> CampaignResponse.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetCampaignResponse]
+      __obj.asInstanceOf[GetCampaignResponse]
     }
   }
 
@@ -4904,13 +3884,13 @@ package pinpoint {
         CampaignId: __string,
         Version: __string
     ): GetCampaignVersionRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ApplicationId" -> ApplicationId.asInstanceOf[js.Any],
         "CampaignId"    -> CampaignId.asInstanceOf[js.Any],
         "Version"       -> Version.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetCampaignVersionRequest]
+      __obj.asInstanceOf[GetCampaignVersionRequest]
     }
   }
 
@@ -4923,11 +3903,11 @@ package pinpoint {
     def apply(
         CampaignResponse: CampaignResponse
     ): GetCampaignVersionResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "CampaignResponse" -> CampaignResponse.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetCampaignVersionResponse]
+      __obj.asInstanceOf[GetCampaignVersionResponse]
     }
   }
 
@@ -4946,18 +3926,14 @@ package pinpoint {
         PageSize: js.UndefOr[__string] = js.undefined,
         Token: js.UndefOr[__string] = js.undefined
     ): GetCampaignVersionsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ApplicationId" -> ApplicationId.asInstanceOf[js.Any],
-        "CampaignId"    -> CampaignId.asInstanceOf[js.Any],
-        "PageSize" -> PageSize.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Token" -> Token.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "CampaignId"    -> CampaignId.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetCampaignVersionsRequest]
+      PageSize.foreach(__v => __obj.update("PageSize", __v.asInstanceOf[js.Any]))
+      Token.foreach(__v => __obj.update("Token", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetCampaignVersionsRequest]
     }
   }
 
@@ -4970,11 +3946,11 @@ package pinpoint {
     def apply(
         CampaignsResponse: CampaignsResponse
     ): GetCampaignVersionsResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "CampaignsResponse" -> CampaignsResponse.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetCampaignVersionsResponse]
+      __obj.asInstanceOf[GetCampaignVersionsResponse]
     }
   }
 
@@ -4991,17 +3967,13 @@ package pinpoint {
         PageSize: js.UndefOr[__string] = js.undefined,
         Token: js.UndefOr[__string] = js.undefined
     ): GetCampaignsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ApplicationId" -> ApplicationId.asInstanceOf[js.Any],
-        "PageSize" -> PageSize.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Token" -> Token.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "ApplicationId" -> ApplicationId.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetCampaignsRequest]
+      PageSize.foreach(__v => __obj.update("PageSize", __v.asInstanceOf[js.Any]))
+      Token.foreach(__v => __obj.update("Token", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetCampaignsRequest]
     }
   }
 
@@ -5014,11 +3986,11 @@ package pinpoint {
     def apply(
         CampaignsResponse: CampaignsResponse
     ): GetCampaignsResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "CampaignsResponse" -> CampaignsResponse.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetCampaignsResponse]
+      __obj.asInstanceOf[GetCampaignsResponse]
     }
   }
 
@@ -5031,11 +4003,11 @@ package pinpoint {
     def apply(
         ApplicationId: __string
     ): GetChannelsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ApplicationId" -> ApplicationId.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetChannelsRequest]
+      __obj.asInstanceOf[GetChannelsRequest]
     }
   }
 
@@ -5048,11 +4020,11 @@ package pinpoint {
     def apply(
         ChannelsResponse: ChannelsResponse
     ): GetChannelsResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ChannelsResponse" -> ChannelsResponse.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetChannelsResponse]
+      __obj.asInstanceOf[GetChannelsResponse]
     }
   }
 
@@ -5065,11 +4037,11 @@ package pinpoint {
     def apply(
         ApplicationId: __string
     ): GetEmailChannelRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ApplicationId" -> ApplicationId.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetEmailChannelRequest]
+      __obj.asInstanceOf[GetEmailChannelRequest]
     }
   }
 
@@ -5082,11 +4054,11 @@ package pinpoint {
     def apply(
         EmailChannelResponse: EmailChannelResponse
     ): GetEmailChannelResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "EmailChannelResponse" -> EmailChannelResponse.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetEmailChannelResponse]
+      __obj.asInstanceOf[GetEmailChannelResponse]
     }
   }
 
@@ -5101,12 +4073,12 @@ package pinpoint {
         ApplicationId: __string,
         EndpointId: __string
     ): GetEndpointRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ApplicationId" -> ApplicationId.asInstanceOf[js.Any],
         "EndpointId"    -> EndpointId.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetEndpointRequest]
+      __obj.asInstanceOf[GetEndpointRequest]
     }
   }
 
@@ -5119,11 +4091,11 @@ package pinpoint {
     def apply(
         EndpointResponse: EndpointResponse
     ): GetEndpointResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "EndpointResponse" -> EndpointResponse.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetEndpointResponse]
+      __obj.asInstanceOf[GetEndpointResponse]
     }
   }
 
@@ -5136,11 +4108,11 @@ package pinpoint {
     def apply(
         ApplicationId: __string
     ): GetEventStreamRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ApplicationId" -> ApplicationId.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetEventStreamRequest]
+      __obj.asInstanceOf[GetEventStreamRequest]
     }
   }
 
@@ -5153,11 +4125,11 @@ package pinpoint {
     def apply(
         EventStream: EventStream
     ): GetEventStreamResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "EventStream" -> EventStream.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetEventStreamResponse]
+      __obj.asInstanceOf[GetEventStreamResponse]
     }
   }
 
@@ -5172,12 +4144,12 @@ package pinpoint {
         ApplicationId: __string,
         JobId: __string
     ): GetExportJobRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ApplicationId" -> ApplicationId.asInstanceOf[js.Any],
         "JobId"         -> JobId.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetExportJobRequest]
+      __obj.asInstanceOf[GetExportJobRequest]
     }
   }
 
@@ -5190,11 +4162,11 @@ package pinpoint {
     def apply(
         ExportJobResponse: ExportJobResponse
     ): GetExportJobResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ExportJobResponse" -> ExportJobResponse.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetExportJobResponse]
+      __obj.asInstanceOf[GetExportJobResponse]
     }
   }
 
@@ -5211,17 +4183,13 @@ package pinpoint {
         PageSize: js.UndefOr[__string] = js.undefined,
         Token: js.UndefOr[__string] = js.undefined
     ): GetExportJobsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ApplicationId" -> ApplicationId.asInstanceOf[js.Any],
-        "PageSize" -> PageSize.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Token" -> Token.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "ApplicationId" -> ApplicationId.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetExportJobsRequest]
+      PageSize.foreach(__v => __obj.update("PageSize", __v.asInstanceOf[js.Any]))
+      Token.foreach(__v => __obj.update("Token", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetExportJobsRequest]
     }
   }
 
@@ -5234,11 +4202,11 @@ package pinpoint {
     def apply(
         ExportJobsResponse: ExportJobsResponse
     ): GetExportJobsResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ExportJobsResponse" -> ExportJobsResponse.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetExportJobsResponse]
+      __obj.asInstanceOf[GetExportJobsResponse]
     }
   }
 
@@ -5251,11 +4219,11 @@ package pinpoint {
     def apply(
         ApplicationId: __string
     ): GetGcmChannelRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ApplicationId" -> ApplicationId.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetGcmChannelRequest]
+      __obj.asInstanceOf[GetGcmChannelRequest]
     }
   }
 
@@ -5268,11 +4236,11 @@ package pinpoint {
     def apply(
         GCMChannelResponse: GCMChannelResponse
     ): GetGcmChannelResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "GCMChannelResponse" -> GCMChannelResponse.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetGcmChannelResponse]
+      __obj.asInstanceOf[GetGcmChannelResponse]
     }
   }
 
@@ -5287,12 +4255,12 @@ package pinpoint {
         ApplicationId: __string,
         JobId: __string
     ): GetImportJobRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ApplicationId" -> ApplicationId.asInstanceOf[js.Any],
         "JobId"         -> JobId.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetImportJobRequest]
+      __obj.asInstanceOf[GetImportJobRequest]
     }
   }
 
@@ -5305,11 +4273,11 @@ package pinpoint {
     def apply(
         ImportJobResponse: ImportJobResponse
     ): GetImportJobResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ImportJobResponse" -> ImportJobResponse.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetImportJobResponse]
+      __obj.asInstanceOf[GetImportJobResponse]
     }
   }
 
@@ -5326,17 +4294,13 @@ package pinpoint {
         PageSize: js.UndefOr[__string] = js.undefined,
         Token: js.UndefOr[__string] = js.undefined
     ): GetImportJobsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ApplicationId" -> ApplicationId.asInstanceOf[js.Any],
-        "PageSize" -> PageSize.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Token" -> Token.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "ApplicationId" -> ApplicationId.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetImportJobsRequest]
+      PageSize.foreach(__v => __obj.update("PageSize", __v.asInstanceOf[js.Any]))
+      Token.foreach(__v => __obj.update("Token", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetImportJobsRequest]
     }
   }
 
@@ -5349,11 +4313,11 @@ package pinpoint {
     def apply(
         ImportJobsResponse: ImportJobsResponse
     ): GetImportJobsResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ImportJobsResponse" -> ImportJobsResponse.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetImportJobsResponse]
+      __obj.asInstanceOf[GetImportJobsResponse]
     }
   }
 
@@ -5372,18 +4336,14 @@ package pinpoint {
         PageSize: js.UndefOr[__string] = js.undefined,
         Token: js.UndefOr[__string] = js.undefined
     ): GetSegmentExportJobsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ApplicationId" -> ApplicationId.asInstanceOf[js.Any],
-        "SegmentId"     -> SegmentId.asInstanceOf[js.Any],
-        "PageSize" -> PageSize.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Token" -> Token.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "SegmentId"     -> SegmentId.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetSegmentExportJobsRequest]
+      PageSize.foreach(__v => __obj.update("PageSize", __v.asInstanceOf[js.Any]))
+      Token.foreach(__v => __obj.update("Token", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetSegmentExportJobsRequest]
     }
   }
 
@@ -5396,11 +4356,11 @@ package pinpoint {
     def apply(
         ExportJobsResponse: ExportJobsResponse
     ): GetSegmentExportJobsResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ExportJobsResponse" -> ExportJobsResponse.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetSegmentExportJobsResponse]
+      __obj.asInstanceOf[GetSegmentExportJobsResponse]
     }
   }
 
@@ -5419,18 +4379,14 @@ package pinpoint {
         PageSize: js.UndefOr[__string] = js.undefined,
         Token: js.UndefOr[__string] = js.undefined
     ): GetSegmentImportJobsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ApplicationId" -> ApplicationId.asInstanceOf[js.Any],
-        "SegmentId"     -> SegmentId.asInstanceOf[js.Any],
-        "PageSize" -> PageSize.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Token" -> Token.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "SegmentId"     -> SegmentId.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetSegmentImportJobsRequest]
+      PageSize.foreach(__v => __obj.update("PageSize", __v.asInstanceOf[js.Any]))
+      Token.foreach(__v => __obj.update("Token", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetSegmentImportJobsRequest]
     }
   }
 
@@ -5443,11 +4399,11 @@ package pinpoint {
     def apply(
         ImportJobsResponse: ImportJobsResponse
     ): GetSegmentImportJobsResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ImportJobsResponse" -> ImportJobsResponse.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetSegmentImportJobsResponse]
+      __obj.asInstanceOf[GetSegmentImportJobsResponse]
     }
   }
 
@@ -5462,12 +4418,12 @@ package pinpoint {
         ApplicationId: __string,
         SegmentId: __string
     ): GetSegmentRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ApplicationId" -> ApplicationId.asInstanceOf[js.Any],
         "SegmentId"     -> SegmentId.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetSegmentRequest]
+      __obj.asInstanceOf[GetSegmentRequest]
     }
   }
 
@@ -5480,11 +4436,11 @@ package pinpoint {
     def apply(
         SegmentResponse: SegmentResponse
     ): GetSegmentResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "SegmentResponse" -> SegmentResponse.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetSegmentResponse]
+      __obj.asInstanceOf[GetSegmentResponse]
     }
   }
 
@@ -5501,13 +4457,13 @@ package pinpoint {
         SegmentId: __string,
         Version: __string
     ): GetSegmentVersionRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ApplicationId" -> ApplicationId.asInstanceOf[js.Any],
         "SegmentId"     -> SegmentId.asInstanceOf[js.Any],
         "Version"       -> Version.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetSegmentVersionRequest]
+      __obj.asInstanceOf[GetSegmentVersionRequest]
     }
   }
 
@@ -5520,11 +4476,11 @@ package pinpoint {
     def apply(
         SegmentResponse: SegmentResponse
     ): GetSegmentVersionResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "SegmentResponse" -> SegmentResponse.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetSegmentVersionResponse]
+      __obj.asInstanceOf[GetSegmentVersionResponse]
     }
   }
 
@@ -5543,18 +4499,14 @@ package pinpoint {
         PageSize: js.UndefOr[__string] = js.undefined,
         Token: js.UndefOr[__string] = js.undefined
     ): GetSegmentVersionsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ApplicationId" -> ApplicationId.asInstanceOf[js.Any],
-        "SegmentId"     -> SegmentId.asInstanceOf[js.Any],
-        "PageSize" -> PageSize.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Token" -> Token.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "SegmentId"     -> SegmentId.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetSegmentVersionsRequest]
+      PageSize.foreach(__v => __obj.update("PageSize", __v.asInstanceOf[js.Any]))
+      Token.foreach(__v => __obj.update("Token", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetSegmentVersionsRequest]
     }
   }
 
@@ -5567,11 +4519,11 @@ package pinpoint {
     def apply(
         SegmentsResponse: SegmentsResponse
     ): GetSegmentVersionsResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "SegmentsResponse" -> SegmentsResponse.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetSegmentVersionsResponse]
+      __obj.asInstanceOf[GetSegmentVersionsResponse]
     }
   }
 
@@ -5588,17 +4540,13 @@ package pinpoint {
         PageSize: js.UndefOr[__string] = js.undefined,
         Token: js.UndefOr[__string] = js.undefined
     ): GetSegmentsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ApplicationId" -> ApplicationId.asInstanceOf[js.Any],
-        "PageSize" -> PageSize.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Token" -> Token.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "ApplicationId" -> ApplicationId.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetSegmentsRequest]
+      PageSize.foreach(__v => __obj.update("PageSize", __v.asInstanceOf[js.Any]))
+      Token.foreach(__v => __obj.update("Token", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetSegmentsRequest]
     }
   }
 
@@ -5611,11 +4559,11 @@ package pinpoint {
     def apply(
         SegmentsResponse: SegmentsResponse
     ): GetSegmentsResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "SegmentsResponse" -> SegmentsResponse.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetSegmentsResponse]
+      __obj.asInstanceOf[GetSegmentsResponse]
     }
   }
 
@@ -5628,11 +4576,11 @@ package pinpoint {
     def apply(
         ApplicationId: __string
     ): GetSmsChannelRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ApplicationId" -> ApplicationId.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetSmsChannelRequest]
+      __obj.asInstanceOf[GetSmsChannelRequest]
     }
   }
 
@@ -5645,11 +4593,11 @@ package pinpoint {
     def apply(
         SMSChannelResponse: SMSChannelResponse
     ): GetSmsChannelResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "SMSChannelResponse" -> SMSChannelResponse.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetSmsChannelResponse]
+      __obj.asInstanceOf[GetSmsChannelResponse]
     }
   }
 
@@ -5664,12 +4612,12 @@ package pinpoint {
         ApplicationId: __string,
         UserId: __string
     ): GetUserEndpointsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ApplicationId" -> ApplicationId.asInstanceOf[js.Any],
         "UserId"        -> UserId.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetUserEndpointsRequest]
+      __obj.asInstanceOf[GetUserEndpointsRequest]
     }
   }
 
@@ -5682,11 +4630,11 @@ package pinpoint {
     def apply(
         EndpointsResponse: EndpointsResponse
     ): GetUserEndpointsResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "EndpointsResponse" -> EndpointsResponse.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetUserEndpointsResponse]
+      __obj.asInstanceOf[GetUserEndpointsResponse]
     }
   }
 
@@ -5699,11 +4647,11 @@ package pinpoint {
     def apply(
         ApplicationId: __string
     ): GetVoiceChannelRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ApplicationId" -> ApplicationId.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetVoiceChannelRequest]
+      __obj.asInstanceOf[GetVoiceChannelRequest]
     }
   }
 
@@ -5716,11 +4664,11 @@ package pinpoint {
     def apply(
         VoiceChannelResponse: VoiceChannelResponse
     ): GetVoiceChannelResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "VoiceChannelResponse" -> VoiceChannelResponse.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetVoiceChannelResponse]
+      __obj.asInstanceOf[GetVoiceChannelResponse]
     }
   }
 
@@ -5750,34 +4698,16 @@ package pinpoint {
         SegmentId: js.UndefOr[__string] = js.undefined,
         SegmentName: js.UndefOr[__string] = js.undefined
     ): ImportJobRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "DefineSegment" -> DefineSegment.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ExternalId" -> ExternalId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Format" -> Format.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "RegisterEndpoints" -> RegisterEndpoints.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "RoleArn" -> RoleArn.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "S3Url" -> S3Url.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SegmentId" -> SegmentId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SegmentName" -> SegmentName.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ImportJobRequest]
+      val __obj = js.Dictionary.empty[js.Any]
+      DefineSegment.foreach(__v => __obj.update("DefineSegment", __v.asInstanceOf[js.Any]))
+      ExternalId.foreach(__v => __obj.update("ExternalId", __v.asInstanceOf[js.Any]))
+      Format.foreach(__v => __obj.update("Format", __v.asInstanceOf[js.Any]))
+      RegisterEndpoints.foreach(__v => __obj.update("RegisterEndpoints", __v.asInstanceOf[js.Any]))
+      RoleArn.foreach(__v => __obj.update("RoleArn", __v.asInstanceOf[js.Any]))
+      S3Url.foreach(__v => __obj.update("S3Url", __v.asInstanceOf[js.Any]))
+      SegmentId.foreach(__v => __obj.update("SegmentId", __v.asInstanceOf[js.Any]))
+      SegmentName.foreach(__v => __obj.update("SegmentName", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ImportJobRequest]
     }
   }
 
@@ -5807,34 +4737,16 @@ package pinpoint {
         SegmentId: js.UndefOr[__string] = js.undefined,
         SegmentName: js.UndefOr[__string] = js.undefined
     ): ImportJobResource = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "DefineSegment" -> DefineSegment.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ExternalId" -> ExternalId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Format" -> Format.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "RegisterEndpoints" -> RegisterEndpoints.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "RoleArn" -> RoleArn.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "S3Url" -> S3Url.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SegmentId" -> SegmentId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SegmentName" -> SegmentName.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ImportJobResource]
+      val __obj = js.Dictionary.empty[js.Any]
+      DefineSegment.foreach(__v => __obj.update("DefineSegment", __v.asInstanceOf[js.Any]))
+      ExternalId.foreach(__v => __obj.update("ExternalId", __v.asInstanceOf[js.Any]))
+      Format.foreach(__v => __obj.update("Format", __v.asInstanceOf[js.Any]))
+      RegisterEndpoints.foreach(__v => __obj.update("RegisterEndpoints", __v.asInstanceOf[js.Any]))
+      RoleArn.foreach(__v => __obj.update("RoleArn", __v.asInstanceOf[js.Any]))
+      S3Url.foreach(__v => __obj.update("S3Url", __v.asInstanceOf[js.Any]))
+      SegmentId.foreach(__v => __obj.update("SegmentId", __v.asInstanceOf[js.Any]))
+      SegmentName.foreach(__v => __obj.update("SegmentName", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ImportJobResource]
     }
   }
 
@@ -5874,49 +4786,21 @@ package pinpoint {
         TotalProcessed: js.UndefOr[__integer] = js.undefined,
         Type: js.UndefOr[__string] = js.undefined
     ): ImportJobResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ApplicationId" -> ApplicationId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "CompletedPieces" -> CompletedPieces.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "CompletionDate" -> CompletionDate.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "CreationDate" -> CreationDate.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Definition" -> Definition.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "FailedPieces" -> FailedPieces.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Failures" -> Failures.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Id" -> Id.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "JobStatus" -> JobStatus.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "TotalFailures" -> TotalFailures.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "TotalPieces" -> TotalPieces.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "TotalProcessed" -> TotalProcessed.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Type" -> Type.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ImportJobResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      ApplicationId.foreach(__v => __obj.update("ApplicationId", __v.asInstanceOf[js.Any]))
+      CompletedPieces.foreach(__v => __obj.update("CompletedPieces", __v.asInstanceOf[js.Any]))
+      CompletionDate.foreach(__v => __obj.update("CompletionDate", __v.asInstanceOf[js.Any]))
+      CreationDate.foreach(__v => __obj.update("CreationDate", __v.asInstanceOf[js.Any]))
+      Definition.foreach(__v => __obj.update("Definition", __v.asInstanceOf[js.Any]))
+      FailedPieces.foreach(__v => __obj.update("FailedPieces", __v.asInstanceOf[js.Any]))
+      Failures.foreach(__v => __obj.update("Failures", __v.asInstanceOf[js.Any]))
+      Id.foreach(__v => __obj.update("Id", __v.asInstanceOf[js.Any]))
+      JobStatus.foreach(__v => __obj.update("JobStatus", __v.asInstanceOf[js.Any]))
+      TotalFailures.foreach(__v => __obj.update("TotalFailures", __v.asInstanceOf[js.Any]))
+      TotalPieces.foreach(__v => __obj.update("TotalPieces", __v.asInstanceOf[js.Any]))
+      TotalProcessed.foreach(__v => __obj.update("TotalProcessed", __v.asInstanceOf[js.Any]))
+      Type.foreach(__v => __obj.update("Type", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ImportJobResponse]
     }
   }
 
@@ -5934,16 +4818,10 @@ package pinpoint {
         Item: js.UndefOr[ListOfImportJobResponse] = js.undefined,
         NextToken: js.UndefOr[__string] = js.undefined
     ): ImportJobsResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Item" -> Item.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NextToken" -> NextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ImportJobsResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      Item.foreach(__v => __obj.update("Item", __v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ImportJobsResponse]
     }
   }
 
@@ -5969,16 +4847,10 @@ package pinpoint {
         EndpointItemResponse: js.UndefOr[EndpointItemResponse] = js.undefined,
         EventsItemResponse: js.UndefOr[MapOfEventItemResponse] = js.undefined
     ): ItemResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "EndpointItemResponse" -> EndpointItemResponse.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "EventsItemResponse" -> EventsItemResponse.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ItemResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      EndpointItemResponse.foreach(__v => __obj.update("EndpointItemResponse", __v.asInstanceOf[js.Any]))
+      EventsItemResponse.foreach(__v => __obj.update("EventsItemResponse", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ItemResponse]
     }
   }
 
@@ -6003,11 +4875,11 @@ package pinpoint {
     def apply(
         ResourceArn: __string
     ): ListTagsForResourceRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListTagsForResourceRequest]
+      __obj.asInstanceOf[ListTagsForResourceRequest]
     }
   }
 
@@ -6020,11 +4892,11 @@ package pinpoint {
     def apply(
         TagsModel: TagsModel
     ): ListTagsForResourceResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "TagsModel" -> TagsModel.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListTagsForResourceResponse]
+      __obj.asInstanceOf[ListTagsForResourceResponse]
     }
   }
 
@@ -6062,46 +4934,20 @@ package pinpoint {
         Title: js.UndefOr[__string] = js.undefined,
         Url: js.UndefOr[__string] = js.undefined
     ): Message = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Action" -> Action.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Body" -> Body.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ImageIconUrl" -> ImageIconUrl.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ImageSmallIconUrl" -> ImageSmallIconUrl.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ImageUrl" -> ImageUrl.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "JsonBody" -> JsonBody.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MediaUrl" -> MediaUrl.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "RawContent" -> RawContent.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SilentPush" -> SilentPush.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "TimeToLive" -> TimeToLive.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Title" -> Title.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Url" -> Url.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Message]
+      val __obj = js.Dictionary.empty[js.Any]
+      Action.foreach(__v => __obj.update("Action", __v.asInstanceOf[js.Any]))
+      Body.foreach(__v => __obj.update("Body", __v.asInstanceOf[js.Any]))
+      ImageIconUrl.foreach(__v => __obj.update("ImageIconUrl", __v.asInstanceOf[js.Any]))
+      ImageSmallIconUrl.foreach(__v => __obj.update("ImageSmallIconUrl", __v.asInstanceOf[js.Any]))
+      ImageUrl.foreach(__v => __obj.update("ImageUrl", __v.asInstanceOf[js.Any]))
+      JsonBody.foreach(__v => __obj.update("JsonBody", __v.asInstanceOf[js.Any]))
+      MediaUrl.foreach(__v => __obj.update("MediaUrl", __v.asInstanceOf[js.Any]))
+      RawContent.foreach(__v => __obj.update("RawContent", __v.asInstanceOf[js.Any]))
+      SilentPush.foreach(__v => __obj.update("SilentPush", __v.asInstanceOf[js.Any]))
+      TimeToLive.foreach(__v => __obj.update("TimeToLive", __v.asInstanceOf[js.Any]))
+      Title.foreach(__v => __obj.update("Title", __v.asInstanceOf[js.Any]))
+      Url.foreach(__v => __obj.update("Url", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Message]
     }
   }
 
@@ -6119,16 +4965,10 @@ package pinpoint {
         Message: js.UndefOr[__string] = js.undefined,
         RequestID: js.UndefOr[__string] = js.undefined
     ): MessageBody = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Message" -> Message.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "RequestID" -> RequestID.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[MessageBody]
+      val __obj = js.Dictionary.empty[js.Any]
+      Message.foreach(__v => __obj.update("Message", __v.asInstanceOf[js.Any]))
+      RequestID.foreach(__v => __obj.update("RequestID", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[MessageBody]
     }
   }
 
@@ -6156,31 +4996,15 @@ package pinpoint {
         GCMMessage: js.UndefOr[Message] = js.undefined,
         SMSMessage: js.UndefOr[CampaignSmsMessage] = js.undefined
     ): MessageConfiguration = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ADMMessage" -> ADMMessage.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "APNSMessage" -> APNSMessage.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "BaiduMessage" -> BaiduMessage.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DefaultMessage" -> DefaultMessage.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "EmailMessage" -> EmailMessage.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "GCMMessage" -> GCMMessage.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SMSMessage" -> SMSMessage.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[MessageConfiguration]
+      val __obj = js.Dictionary.empty[js.Any]
+      ADMMessage.foreach(__v => __obj.update("ADMMessage", __v.asInstanceOf[js.Any]))
+      APNSMessage.foreach(__v => __obj.update("APNSMessage", __v.asInstanceOf[js.Any]))
+      BaiduMessage.foreach(__v => __obj.update("BaiduMessage", __v.asInstanceOf[js.Any]))
+      DefaultMessage.foreach(__v => __obj.update("DefaultMessage", __v.asInstanceOf[js.Any]))
+      EmailMessage.foreach(__v => __obj.update("EmailMessage", __v.asInstanceOf[js.Any]))
+      GCMMessage.foreach(__v => __obj.update("GCMMessage", __v.asInstanceOf[js.Any]))
+      SMSMessage.foreach(__v => __obj.update("SMSMessage", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[MessageConfiguration]
     }
   }
 
@@ -6204,25 +5028,13 @@ package pinpoint {
         MessageConfiguration: js.UndefOr[DirectMessageConfiguration] = js.undefined,
         TraceId: js.UndefOr[__string] = js.undefined
     ): MessageRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Addresses" -> Addresses.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Context" -> Context.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Endpoints" -> Endpoints.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MessageConfiguration" -> MessageConfiguration.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "TraceId" -> TraceId.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[MessageRequest]
+      val __obj = js.Dictionary.empty[js.Any]
+      Addresses.foreach(__v => __obj.update("Addresses", __v.asInstanceOf[js.Any]))
+      Context.foreach(__v => __obj.update("Context", __v.asInstanceOf[js.Any]))
+      Endpoints.foreach(__v => __obj.update("Endpoints", __v.asInstanceOf[js.Any]))
+      MessageConfiguration.foreach(__v => __obj.update("MessageConfiguration", __v.asInstanceOf[js.Any]))
+      TraceId.foreach(__v => __obj.update("TraceId", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[MessageRequest]
     }
   }
 
@@ -6244,22 +5056,12 @@ package pinpoint {
         RequestId: js.UndefOr[__string] = js.undefined,
         Result: js.UndefOr[MapOfMessageResult] = js.undefined
     ): MessageResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ApplicationId" -> ApplicationId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "EndpointResult" -> EndpointResult.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "RequestId" -> RequestId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Result" -> Result.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[MessageResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      ApplicationId.foreach(__v => __obj.update("ApplicationId", __v.asInstanceOf[js.Any]))
+      EndpointResult.foreach(__v => __obj.update("EndpointResult", __v.asInstanceOf[js.Any]))
+      RequestId.foreach(__v => __obj.update("RequestId", __v.asInstanceOf[js.Any]))
+      Result.foreach(__v => __obj.update("Result", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[MessageResponse]
     }
   }
 
@@ -6283,25 +5085,13 @@ package pinpoint {
         StatusMessage: js.UndefOr[__string] = js.undefined,
         UpdatedToken: js.UndefOr[__string] = js.undefined
     ): MessageResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "DeliveryStatus" -> DeliveryStatus.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MessageId" -> MessageId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "StatusCode" -> StatusCode.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "StatusMessage" -> StatusMessage.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "UpdatedToken" -> UpdatedToken.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[MessageResult]
+      val __obj = js.Dictionary.empty[js.Any]
+      DeliveryStatus.foreach(__v => __obj.update("DeliveryStatus", __v.asInstanceOf[js.Any]))
+      MessageId.foreach(__v => __obj.update("MessageId", __v.asInstanceOf[js.Any]))
+      StatusCode.foreach(__v => __obj.update("StatusCode", __v.asInstanceOf[js.Any]))
+      StatusMessage.foreach(__v => __obj.update("StatusMessage", __v.asInstanceOf[js.Any]))
+      UpdatedToken.foreach(__v => __obj.update("UpdatedToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[MessageResult]
     }
   }
 
@@ -6326,16 +5116,10 @@ package pinpoint {
         ComparisonOperator: js.UndefOr[__string] = js.undefined,
         Value: js.UndefOr[__double] = js.undefined
     ): MetricDimension = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ComparisonOperator" -> ComparisonOperator.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Value" -> Value.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[MetricDimension]
+      val __obj = js.Dictionary.empty[js.Any]
+      ComparisonOperator.foreach(__v => __obj.update("ComparisonOperator", __v.asInstanceOf[js.Any]))
+      Value.foreach(__v => __obj.update("Value", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[MetricDimension]
     }
   }
 
@@ -6360,16 +5144,10 @@ package pinpoint {
         IsoCountryCode: js.UndefOr[__string] = js.undefined,
         PhoneNumber: js.UndefOr[__string] = js.undefined
     ): NumberValidateRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "IsoCountryCode" -> IsoCountryCode.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "PhoneNumber" -> PhoneNumber.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[NumberValidateRequest]
+      val __obj = js.Dictionary.empty[js.Any]
+      IsoCountryCode.foreach(__v => __obj.update("IsoCountryCode", __v.asInstanceOf[js.Any]))
+      PhoneNumber.foreach(__v => __obj.update("PhoneNumber", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[NumberValidateRequest]
     }
   }
 
@@ -6411,52 +5189,22 @@ package pinpoint {
         Timezone: js.UndefOr[__string] = js.undefined,
         ZipCode: js.UndefOr[__string] = js.undefined
     ): NumberValidateResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Carrier" -> Carrier.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "City" -> City.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "CleansedPhoneNumberE164" -> CleansedPhoneNumberE164.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "CleansedPhoneNumberNational" -> CleansedPhoneNumberNational.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Country" -> Country.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "CountryCodeIso2" -> CountryCodeIso2.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "CountryCodeNumeric" -> CountryCodeNumeric.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "County" -> County.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "OriginalCountryCodeIso2" -> OriginalCountryCodeIso2.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "OriginalPhoneNumber" -> OriginalPhoneNumber.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "PhoneType" -> PhoneType.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "PhoneTypeCode" -> PhoneTypeCode.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Timezone" -> Timezone.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ZipCode" -> ZipCode.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[NumberValidateResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      Carrier.foreach(__v => __obj.update("Carrier", __v.asInstanceOf[js.Any]))
+      City.foreach(__v => __obj.update("City", __v.asInstanceOf[js.Any]))
+      CleansedPhoneNumberE164.foreach(__v => __obj.update("CleansedPhoneNumberE164", __v.asInstanceOf[js.Any]))
+      CleansedPhoneNumberNational.foreach(__v => __obj.update("CleansedPhoneNumberNational", __v.asInstanceOf[js.Any]))
+      Country.foreach(__v => __obj.update("Country", __v.asInstanceOf[js.Any]))
+      CountryCodeIso2.foreach(__v => __obj.update("CountryCodeIso2", __v.asInstanceOf[js.Any]))
+      CountryCodeNumeric.foreach(__v => __obj.update("CountryCodeNumeric", __v.asInstanceOf[js.Any]))
+      County.foreach(__v => __obj.update("County", __v.asInstanceOf[js.Any]))
+      OriginalCountryCodeIso2.foreach(__v => __obj.update("OriginalCountryCodeIso2", __v.asInstanceOf[js.Any]))
+      OriginalPhoneNumber.foreach(__v => __obj.update("OriginalPhoneNumber", __v.asInstanceOf[js.Any]))
+      PhoneType.foreach(__v => __obj.update("PhoneType", __v.asInstanceOf[js.Any]))
+      PhoneTypeCode.foreach(__v => __obj.update("PhoneTypeCode", __v.asInstanceOf[js.Any]))
+      Timezone.foreach(__v => __obj.update("Timezone", __v.asInstanceOf[js.Any]))
+      ZipCode.foreach(__v => __obj.update("ZipCode", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[NumberValidateResponse]
     }
   }
 
@@ -6469,11 +5217,11 @@ package pinpoint {
     def apply(
         NumberValidateRequest: NumberValidateRequest
     ): PhoneNumberValidateRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "NumberValidateRequest" -> NumberValidateRequest.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PhoneNumberValidateRequest]
+      __obj.asInstanceOf[PhoneNumberValidateRequest]
     }
   }
 
@@ -6486,11 +5234,11 @@ package pinpoint {
     def apply(
         NumberValidateResponse: NumberValidateResponse
     ): PhoneNumberValidateResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "NumberValidateResponse" -> NumberValidateResponse.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PhoneNumberValidateResponse]
+      __obj.asInstanceOf[PhoneNumberValidateResponse]
     }
   }
 
@@ -6526,43 +5274,19 @@ package pinpoint {
         RequestId: js.UndefOr[__string] = js.undefined,
         User: js.UndefOr[EndpointUser] = js.undefined
     ): PublicEndpoint = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Address" -> Address.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Attributes" -> Attributes.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ChannelType" -> ChannelType.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Demographic" -> Demographic.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "EffectiveDate" -> EffectiveDate.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "EndpointStatus" -> EndpointStatus.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Location" -> Location.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Metrics" -> Metrics.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "OptOut" -> OptOut.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "RequestId" -> RequestId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "User" -> User.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PublicEndpoint]
+      val __obj = js.Dictionary.empty[js.Any]
+      Address.foreach(__v => __obj.update("Address", __v.asInstanceOf[js.Any]))
+      Attributes.foreach(__v => __obj.update("Attributes", __v.asInstanceOf[js.Any]))
+      ChannelType.foreach(__v => __obj.update("ChannelType", __v.asInstanceOf[js.Any]))
+      Demographic.foreach(__v => __obj.update("Demographic", __v.asInstanceOf[js.Any]))
+      EffectiveDate.foreach(__v => __obj.update("EffectiveDate", __v.asInstanceOf[js.Any]))
+      EndpointStatus.foreach(__v => __obj.update("EndpointStatus", __v.asInstanceOf[js.Any]))
+      Location.foreach(__v => __obj.update("Location", __v.asInstanceOf[js.Any]))
+      Metrics.foreach(__v => __obj.update("Metrics", __v.asInstanceOf[js.Any]))
+      OptOut.foreach(__v => __obj.update("OptOut", __v.asInstanceOf[js.Any]))
+      RequestId.foreach(__v => __obj.update("RequestId", __v.asInstanceOf[js.Any]))
+      User.foreach(__v => __obj.update("User", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PublicEndpoint]
     }
   }
 
@@ -6577,12 +5301,12 @@ package pinpoint {
         ApplicationId: __string,
         WriteEventStream: WriteEventStream
     ): PutEventStreamRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ApplicationId"    -> ApplicationId.asInstanceOf[js.Any],
         "WriteEventStream" -> WriteEventStream.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PutEventStreamRequest]
+      __obj.asInstanceOf[PutEventStreamRequest]
     }
   }
 
@@ -6595,11 +5319,11 @@ package pinpoint {
     def apply(
         EventStream: EventStream
     ): PutEventStreamResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "EventStream" -> EventStream.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PutEventStreamResponse]
+      __obj.asInstanceOf[PutEventStreamResponse]
     }
   }
 
@@ -6614,12 +5338,12 @@ package pinpoint {
         ApplicationId: __string,
         EventsRequest: EventsRequest
     ): PutEventsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ApplicationId" -> ApplicationId.asInstanceOf[js.Any],
         "EventsRequest" -> EventsRequest.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PutEventsRequest]
+      __obj.asInstanceOf[PutEventsRequest]
     }
   }
 
@@ -6632,11 +5356,11 @@ package pinpoint {
     def apply(
         EventsResponse: EventsResponse
     ): PutEventsResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "EventsResponse" -> EventsResponse.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PutEventsResponse]
+      __obj.asInstanceOf[PutEventsResponse]
     }
   }
 
@@ -6654,16 +5378,10 @@ package pinpoint {
         End: js.UndefOr[__string] = js.undefined,
         Start: js.UndefOr[__string] = js.undefined
     ): QuietTime = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "End" -> End.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Start" -> Start.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[QuietTime]
+      val __obj = js.Dictionary.empty[js.Any]
+      End.foreach(__v => __obj.update("End", __v.asInstanceOf[js.Any]))
+      Start.foreach(__v => __obj.update("Start", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[QuietTime]
     }
   }
 
@@ -6679,13 +5397,9 @@ package pinpoint {
     def apply(
         Data: js.UndefOr[__blob] = js.undefined
     ): RawEmail = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Data" -> Data.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RawEmail]
+      val __obj = js.Dictionary.empty[js.Any]
+      Data.foreach(__v => __obj.update("Data", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[RawEmail]
     }
   }
 
@@ -6703,16 +5417,10 @@ package pinpoint {
         Duration: js.UndefOr[Duration] = js.undefined,
         RecencyType: js.UndefOr[RecencyType] = js.undefined
     ): RecencyDimension = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Duration" -> Duration.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "RecencyType" -> RecencyType.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RecencyDimension]
+      val __obj = js.Dictionary.empty[js.Any]
+      Duration.foreach(__v => __obj.update("Duration", __v.asInstanceOf[js.Any]))
+      RecencyType.foreach(__v => __obj.update("RecencyType", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[RecencyDimension]
     }
   }
 
@@ -6736,13 +5444,13 @@ package pinpoint {
         AttributeType: __string,
         UpdateAttributesRequest: UpdateAttributesRequest
     ): RemoveAttributesRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ApplicationId"           -> ApplicationId.asInstanceOf[js.Any],
         "AttributeType"           -> AttributeType.asInstanceOf[js.Any],
         "UpdateAttributesRequest" -> UpdateAttributesRequest.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RemoveAttributesRequest]
+      __obj.asInstanceOf[RemoveAttributesRequest]
     }
   }
 
@@ -6755,11 +5463,11 @@ package pinpoint {
     def apply(
         AttributesResource: AttributesResource
     ): RemoveAttributesResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "AttributesResource" -> AttributesResource.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RemoveAttributesResponse]
+      __obj.asInstanceOf[RemoveAttributesResponse]
     }
   }
 
@@ -6779,19 +5487,11 @@ package pinpoint {
         SenderId: js.UndefOr[__string] = js.undefined,
         ShortCode: js.UndefOr[__string] = js.undefined
     ): SMSChannelRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Enabled" -> Enabled.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SenderId" -> SenderId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ShortCode" -> ShortCode.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SMSChannelRequest]
+      val __obj = js.Dictionary.empty[js.Any]
+      Enabled.foreach(__v => __obj.update("Enabled", __v.asInstanceOf[js.Any]))
+      SenderId.foreach(__v => __obj.update("SenderId", __v.asInstanceOf[js.Any]))
+      ShortCode.foreach(__v => __obj.update("ShortCode", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[SMSChannelRequest]
     }
   }
 
@@ -6833,52 +5533,26 @@ package pinpoint {
         TransactionalMessagesPerSecond: js.UndefOr[__integer] = js.undefined,
         Version: js.UndefOr[__integer] = js.undefined
     ): SMSChannelResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ApplicationId" -> ApplicationId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "CreationDate" -> CreationDate.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Enabled" -> Enabled.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "HasCredential" -> HasCredential.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Id" -> Id.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "IsArchived" -> IsArchived.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "LastModifiedBy" -> LastModifiedBy.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "LastModifiedDate" -> LastModifiedDate.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Platform" -> Platform.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "PromotionalMessagesPerSecond" -> PromotionalMessagesPerSecond.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SenderId" -> SenderId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ShortCode" -> ShortCode.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "TransactionalMessagesPerSecond" -> TransactionalMessagesPerSecond.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Version" -> Version.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SMSChannelResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      ApplicationId.foreach(__v => __obj.update("ApplicationId", __v.asInstanceOf[js.Any]))
+      CreationDate.foreach(__v => __obj.update("CreationDate", __v.asInstanceOf[js.Any]))
+      Enabled.foreach(__v => __obj.update("Enabled", __v.asInstanceOf[js.Any]))
+      HasCredential.foreach(__v => __obj.update("HasCredential", __v.asInstanceOf[js.Any]))
+      Id.foreach(__v => __obj.update("Id", __v.asInstanceOf[js.Any]))
+      IsArchived.foreach(__v => __obj.update("IsArchived", __v.asInstanceOf[js.Any]))
+      LastModifiedBy.foreach(__v => __obj.update("LastModifiedBy", __v.asInstanceOf[js.Any]))
+      LastModifiedDate.foreach(__v => __obj.update("LastModifiedDate", __v.asInstanceOf[js.Any]))
+      Platform.foreach(__v => __obj.update("Platform", __v.asInstanceOf[js.Any]))
+      PromotionalMessagesPerSecond.foreach(
+        __v => __obj.update("PromotionalMessagesPerSecond", __v.asInstanceOf[js.Any])
+      )
+      SenderId.foreach(__v => __obj.update("SenderId", __v.asInstanceOf[js.Any]))
+      ShortCode.foreach(__v => __obj.update("ShortCode", __v.asInstanceOf[js.Any]))
+      TransactionalMessagesPerSecond.foreach(
+        __v => __obj.update("TransactionalMessagesPerSecond", __v.asInstanceOf[js.Any])
+      )
+      Version.foreach(__v => __obj.update("Version", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[SMSChannelResponse]
     }
   }
 
@@ -6904,28 +5578,14 @@ package pinpoint {
         SenderId: js.UndefOr[__string] = js.undefined,
         Substitutions: js.UndefOr[MapOfListOf__string] = js.undefined
     ): SMSMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Body" -> Body.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Keyword" -> Keyword.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MessageType" -> MessageType.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "OriginationNumber" -> OriginationNumber.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SenderId" -> SenderId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Substitutions" -> Substitutions.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SMSMessage]
+      val __obj = js.Dictionary.empty[js.Any]
+      Body.foreach(__v => __obj.update("Body", __v.asInstanceOf[js.Any]))
+      Keyword.foreach(__v => __obj.update("Keyword", __v.asInstanceOf[js.Any]))
+      MessageType.foreach(__v => __obj.update("MessageType", __v.asInstanceOf[js.Any]))
+      OriginationNumber.foreach(__v => __obj.update("OriginationNumber", __v.asInstanceOf[js.Any]))
+      SenderId.foreach(__v => __obj.update("SenderId", __v.asInstanceOf[js.Any]))
+      Substitutions.foreach(__v => __obj.update("Substitutions", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[SMSMessage]
     }
   }
 
@@ -6953,31 +5613,15 @@ package pinpoint {
         StartTime: js.UndefOr[__string] = js.undefined,
         Timezone: js.UndefOr[__string] = js.undefined
     ): Schedule = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "EndTime" -> EndTime.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "EventFilter" -> EventFilter.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Frequency" -> Frequency.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "IsLocalTime" -> IsLocalTime.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "QuietTime" -> QuietTime.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "StartTime" -> StartTime.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Timezone" -> Timezone.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Schedule]
+      val __obj = js.Dictionary.empty[js.Any]
+      EndTime.foreach(__v => __obj.update("EndTime", __v.asInstanceOf[js.Any]))
+      EventFilter.foreach(__v => __obj.update("EventFilter", __v.asInstanceOf[js.Any]))
+      Frequency.foreach(__v => __obj.update("Frequency", __v.asInstanceOf[js.Any]))
+      IsLocalTime.foreach(__v => __obj.update("IsLocalTime", __v.asInstanceOf[js.Any]))
+      QuietTime.foreach(__v => __obj.update("QuietTime", __v.asInstanceOf[js.Any]))
+      StartTime.foreach(__v => __obj.update("StartTime", __v.asInstanceOf[js.Any]))
+      Timezone.foreach(__v => __obj.update("Timezone", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Schedule]
     }
   }
 
@@ -6993,13 +5637,9 @@ package pinpoint {
     def apply(
         Recency: js.UndefOr[RecencyDimension] = js.undefined
     ): SegmentBehaviors = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Recency" -> Recency.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SegmentBehaviors]
+      val __obj = js.Dictionary.empty[js.Any]
+      Recency.foreach(__v => __obj.update("Recency", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[SegmentBehaviors]
     }
   }
 
@@ -7025,28 +5665,14 @@ package pinpoint {
         Model: js.UndefOr[SetDimension] = js.undefined,
         Platform: js.UndefOr[SetDimension] = js.undefined
     ): SegmentDemographics = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "AppVersion" -> AppVersion.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Channel" -> Channel.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DeviceType" -> DeviceType.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Make" -> Make.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Model" -> Model.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Platform" -> Platform.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SegmentDemographics]
+      val __obj = js.Dictionary.empty[js.Any]
+      AppVersion.foreach(__v => __obj.update("AppVersion", __v.asInstanceOf[js.Any]))
+      Channel.foreach(__v => __obj.update("Channel", __v.asInstanceOf[js.Any]))
+      DeviceType.foreach(__v => __obj.update("DeviceType", __v.asInstanceOf[js.Any]))
+      Make.foreach(__v => __obj.update("Make", __v.asInstanceOf[js.Any]))
+      Model.foreach(__v => __obj.update("Model", __v.asInstanceOf[js.Any]))
+      Platform.foreach(__v => __obj.update("Platform", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[SegmentDemographics]
     }
   }
 
@@ -7072,28 +5698,14 @@ package pinpoint {
         Metrics: js.UndefOr[MapOfMetricDimension] = js.undefined,
         UserAttributes: js.UndefOr[MapOfAttributeDimension] = js.undefined
     ): SegmentDimensions = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Attributes" -> Attributes.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Behavior" -> Behavior.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Demographic" -> Demographic.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Location" -> Location.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Metrics" -> Metrics.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "UserAttributes" -> UserAttributes.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SegmentDimensions]
+      val __obj = js.Dictionary.empty[js.Any]
+      Attributes.foreach(__v => __obj.update("Attributes", __v.asInstanceOf[js.Any]))
+      Behavior.foreach(__v => __obj.update("Behavior", __v.asInstanceOf[js.Any]))
+      Demographic.foreach(__v => __obj.update("Demographic", __v.asInstanceOf[js.Any]))
+      Location.foreach(__v => __obj.update("Location", __v.asInstanceOf[js.Any]))
+      Metrics.foreach(__v => __obj.update("Metrics", __v.asInstanceOf[js.Any]))
+      UserAttributes.foreach(__v => __obj.update("UserAttributes", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[SegmentDimensions]
     }
   }
 
@@ -7115,22 +5727,12 @@ package pinpoint {
         SourceType: js.UndefOr[SourceType] = js.undefined,
         Type: js.UndefOr[Type] = js.undefined
     ): SegmentGroup = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Dimensions" -> Dimensions.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SourceSegments" -> SourceSegments.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SourceType" -> SourceType.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Type" -> Type.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SegmentGroup]
+      val __obj = js.Dictionary.empty[js.Any]
+      Dimensions.foreach(__v => __obj.update("Dimensions", __v.asInstanceOf[js.Any]))
+      SourceSegments.foreach(__v => __obj.update("SourceSegments", __v.asInstanceOf[js.Any]))
+      SourceType.foreach(__v => __obj.update("SourceType", __v.asInstanceOf[js.Any]))
+      Type.foreach(__v => __obj.update("Type", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[SegmentGroup]
     }
   }
 
@@ -7148,16 +5750,10 @@ package pinpoint {
         Groups: js.UndefOr[ListOfSegmentGroup] = js.undefined,
         Include: js.UndefOr[Include] = js.undefined
     ): SegmentGroupList = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Groups" -> Groups.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Include" -> Include.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SegmentGroupList]
+      val __obj = js.Dictionary.empty[js.Any]
+      Groups.foreach(__v => __obj.update("Groups", __v.asInstanceOf[js.Any]))
+      Include.foreach(__v => __obj.update("Include", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[SegmentGroupList]
     }
   }
 
@@ -7183,28 +5779,14 @@ package pinpoint {
         S3Url: js.UndefOr[__string] = js.undefined,
         Size: js.UndefOr[__integer] = js.undefined
     ): SegmentImportResource = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ChannelCounts" -> ChannelCounts.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ExternalId" -> ExternalId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Format" -> Format.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "RoleArn" -> RoleArn.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "S3Url" -> S3Url.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Size" -> Size.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SegmentImportResource]
+      val __obj = js.Dictionary.empty[js.Any]
+      ChannelCounts.foreach(__v => __obj.update("ChannelCounts", __v.asInstanceOf[js.Any]))
+      ExternalId.foreach(__v => __obj.update("ExternalId", __v.asInstanceOf[js.Any]))
+      Format.foreach(__v => __obj.update("Format", __v.asInstanceOf[js.Any]))
+      RoleArn.foreach(__v => __obj.update("RoleArn", __v.asInstanceOf[js.Any]))
+      S3Url.foreach(__v => __obj.update("S3Url", __v.asInstanceOf[js.Any]))
+      Size.foreach(__v => __obj.update("Size", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[SegmentImportResource]
     }
   }
 
@@ -7222,16 +5804,10 @@ package pinpoint {
         Country: js.UndefOr[SetDimension] = js.undefined,
         GPSPoint: js.UndefOr[GPSPointDimension] = js.undefined
     ): SegmentLocation = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Country" -> Country.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "GPSPoint" -> GPSPoint.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SegmentLocation]
+      val __obj = js.Dictionary.empty[js.Any]
+      Country.foreach(__v => __obj.update("Country", __v.asInstanceOf[js.Any]))
+      GPSPoint.foreach(__v => __obj.update("GPSPoint", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[SegmentLocation]
     }
   }
 
@@ -7249,16 +5825,10 @@ package pinpoint {
         Id: js.UndefOr[__string] = js.undefined,
         Version: js.UndefOr[__integer] = js.undefined
     ): SegmentReference = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Id" -> Id.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Version" -> Version.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SegmentReference]
+      val __obj = js.Dictionary.empty[js.Any]
+      Id.foreach(__v => __obj.update("Id", __v.asInstanceOf[js.Any]))
+      Version.foreach(__v => __obj.update("Version", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[SegmentReference]
     }
   }
 
@@ -7296,46 +5866,20 @@ package pinpoint {
         Version: js.UndefOr[__integer] = js.undefined,
         tags: js.UndefOr[MapOf__string] = js.undefined
     ): SegmentResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ApplicationId" -> ApplicationId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Arn" -> Arn.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "CreationDate" -> CreationDate.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Dimensions" -> Dimensions.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Id" -> Id.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ImportDefinition" -> ImportDefinition.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "LastModifiedDate" -> LastModifiedDate.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Name" -> Name.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SegmentGroups" -> SegmentGroups.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SegmentType" -> SegmentType.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Version" -> Version.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "tags" -> tags.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SegmentResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      ApplicationId.foreach(__v => __obj.update("ApplicationId", __v.asInstanceOf[js.Any]))
+      Arn.foreach(__v => __obj.update("Arn", __v.asInstanceOf[js.Any]))
+      CreationDate.foreach(__v => __obj.update("CreationDate", __v.asInstanceOf[js.Any]))
+      Dimensions.foreach(__v => __obj.update("Dimensions", __v.asInstanceOf[js.Any]))
+      Id.foreach(__v => __obj.update("Id", __v.asInstanceOf[js.Any]))
+      ImportDefinition.foreach(__v => __obj.update("ImportDefinition", __v.asInstanceOf[js.Any]))
+      LastModifiedDate.foreach(__v => __obj.update("LastModifiedDate", __v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
+      SegmentGroups.foreach(__v => __obj.update("SegmentGroups", __v.asInstanceOf[js.Any]))
+      SegmentType.foreach(__v => __obj.update("SegmentType", __v.asInstanceOf[js.Any]))
+      Version.foreach(__v => __obj.update("Version", __v.asInstanceOf[js.Any]))
+      tags.foreach(__v => __obj.update("tags", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[SegmentResponse]
     }
   }
 
@@ -7360,16 +5904,10 @@ package pinpoint {
         Item: js.UndefOr[ListOfSegmentResponse] = js.undefined,
         NextToken: js.UndefOr[__string] = js.undefined
     ): SegmentsResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Item" -> Item.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NextToken" -> NextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SegmentsResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      Item.foreach(__v => __obj.update("Item", __v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[SegmentsResponse]
     }
   }
 
@@ -7384,12 +5922,12 @@ package pinpoint {
         ApplicationId: __string,
         MessageRequest: MessageRequest
     ): SendMessagesRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ApplicationId"  -> ApplicationId.asInstanceOf[js.Any],
         "MessageRequest" -> MessageRequest.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SendMessagesRequest]
+      __obj.asInstanceOf[SendMessagesRequest]
     }
   }
 
@@ -7402,11 +5940,11 @@ package pinpoint {
     def apply(
         MessageResponse: MessageResponse
     ): SendMessagesResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "MessageResponse" -> MessageResponse.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SendMessagesResponse]
+      __obj.asInstanceOf[SendMessagesResponse]
     }
   }
 
@@ -7428,22 +5966,12 @@ package pinpoint {
         TraceId: js.UndefOr[__string] = js.undefined,
         Users: js.UndefOr[MapOfEndpointSendConfiguration] = js.undefined
     ): SendUsersMessageRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Context" -> Context.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MessageConfiguration" -> MessageConfiguration.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "TraceId" -> TraceId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Users" -> Users.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SendUsersMessageRequest]
+      val __obj = js.Dictionary.empty[js.Any]
+      Context.foreach(__v => __obj.update("Context", __v.asInstanceOf[js.Any]))
+      MessageConfiguration.foreach(__v => __obj.update("MessageConfiguration", __v.asInstanceOf[js.Any]))
+      TraceId.foreach(__v => __obj.update("TraceId", __v.asInstanceOf[js.Any]))
+      Users.foreach(__v => __obj.update("Users", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[SendUsersMessageRequest]
     }
   }
 
@@ -7463,19 +5991,11 @@ package pinpoint {
         RequestId: js.UndefOr[__string] = js.undefined,
         Result: js.UndefOr[MapOfMapOfEndpointMessageResult] = js.undefined
     ): SendUsersMessageResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ApplicationId" -> ApplicationId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "RequestId" -> RequestId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Result" -> Result.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SendUsersMessageResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      ApplicationId.foreach(__v => __obj.update("ApplicationId", __v.asInstanceOf[js.Any]))
+      RequestId.foreach(__v => __obj.update("RequestId", __v.asInstanceOf[js.Any]))
+      Result.foreach(__v => __obj.update("Result", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[SendUsersMessageResponse]
     }
   }
 
@@ -7490,12 +6010,12 @@ package pinpoint {
         ApplicationId: __string,
         SendUsersMessageRequest: SendUsersMessageRequest
     ): SendUsersMessagesRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ApplicationId"           -> ApplicationId.asInstanceOf[js.Any],
         "SendUsersMessageRequest" -> SendUsersMessageRequest.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SendUsersMessagesRequest]
+      __obj.asInstanceOf[SendUsersMessagesRequest]
     }
   }
 
@@ -7508,11 +6028,11 @@ package pinpoint {
     def apply(
         SendUsersMessageResponse: SendUsersMessageResponse
     ): SendUsersMessagesResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "SendUsersMessageResponse" -> SendUsersMessageResponse.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SendUsersMessagesResponse]
+      __obj.asInstanceOf[SendUsersMessagesResponse]
     }
   }
 
@@ -7534,22 +6054,12 @@ package pinpoint {
         StartTimestamp: js.UndefOr[__string] = js.undefined,
         StopTimestamp: js.UndefOr[__string] = js.undefined
     ): Session = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Duration" -> Duration.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Id" -> Id.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "StartTimestamp" -> StartTimestamp.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "StopTimestamp" -> StopTimestamp.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Session]
+      val __obj = js.Dictionary.empty[js.Any]
+      Duration.foreach(__v => __obj.update("Duration", __v.asInstanceOf[js.Any]))
+      Id.foreach(__v => __obj.update("Id", __v.asInstanceOf[js.Any]))
+      StartTimestamp.foreach(__v => __obj.update("StartTimestamp", __v.asInstanceOf[js.Any]))
+      StopTimestamp.foreach(__v => __obj.update("StopTimestamp", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Session]
     }
   }
 
@@ -7567,16 +6077,10 @@ package pinpoint {
         DimensionType: js.UndefOr[DimensionType] = js.undefined,
         Values: js.UndefOr[ListOf__string] = js.undefined
     ): SetDimension = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "DimensionType" -> DimensionType.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Values" -> Values.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SetDimension]
+      val __obj = js.Dictionary.empty[js.Any]
+      DimensionType.foreach(__v => __obj.update("DimensionType", __v.asInstanceOf[js.Any]))
+      Values.foreach(__v => __obj.update("Values", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[SetDimension]
     }
   }
 
@@ -7596,19 +6100,11 @@ package pinpoint {
         Subject: js.UndefOr[SimpleEmailPart] = js.undefined,
         TextPart: js.UndefOr[SimpleEmailPart] = js.undefined
     ): SimpleEmail = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "HtmlPart" -> HtmlPart.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Subject" -> Subject.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "TextPart" -> TextPart.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SimpleEmail]
+      val __obj = js.Dictionary.empty[js.Any]
+      HtmlPart.foreach(__v => __obj.update("HtmlPart", __v.asInstanceOf[js.Any]))
+      Subject.foreach(__v => __obj.update("Subject", __v.asInstanceOf[js.Any]))
+      TextPart.foreach(__v => __obj.update("TextPart", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[SimpleEmail]
     }
   }
 
@@ -7626,16 +6122,10 @@ package pinpoint {
         Charset: js.UndefOr[__string] = js.undefined,
         Data: js.UndefOr[__string] = js.undefined
     ): SimpleEmailPart = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Charset" -> Charset.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Data" -> Data.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SimpleEmailPart]
+      val __obj = js.Dictionary.empty[js.Any]
+      Charset.foreach(__v => __obj.update("Charset", __v.asInstanceOf[js.Any]))
+      Data.foreach(__v => __obj.update("Data", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[SimpleEmailPart]
     }
   }
 
@@ -7658,12 +6148,12 @@ package pinpoint {
         ResourceArn: __string,
         TagsModel: TagsModel
     ): TagResourceRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any],
         "TagsModel"   -> TagsModel.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[TagResourceRequest]
+      __obj.asInstanceOf[TagResourceRequest]
     }
   }
 
@@ -7676,11 +6166,11 @@ package pinpoint {
     def apply(
         tags: MapOf__string
     ): TagsModel = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "tags" -> tags.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[TagsModel]
+      __obj.asInstanceOf[TagsModel]
     }
   }
 
@@ -7708,31 +6198,15 @@ package pinpoint {
         TreatmentDescription: js.UndefOr[__string] = js.undefined,
         TreatmentName: js.UndefOr[__string] = js.undefined
     ): TreatmentResource = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Id" -> Id.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MessageConfiguration" -> MessageConfiguration.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Schedule" -> Schedule.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SizePercent" -> SizePercent.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "State" -> State.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "TreatmentDescription" -> TreatmentDescription.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "TreatmentName" -> TreatmentName.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[TreatmentResource]
+      val __obj = js.Dictionary.empty[js.Any]
+      Id.foreach(__v => __obj.update("Id", __v.asInstanceOf[js.Any]))
+      MessageConfiguration.foreach(__v => __obj.update("MessageConfiguration", __v.asInstanceOf[js.Any]))
+      Schedule.foreach(__v => __obj.update("Schedule", __v.asInstanceOf[js.Any]))
+      SizePercent.foreach(__v => __obj.update("SizePercent", __v.asInstanceOf[js.Any]))
+      State.foreach(__v => __obj.update("State", __v.asInstanceOf[js.Any]))
+      TreatmentDescription.foreach(__v => __obj.update("TreatmentDescription", __v.asInstanceOf[js.Any]))
+      TreatmentName.foreach(__v => __obj.update("TreatmentName", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[TreatmentResource]
     }
   }
 
@@ -7755,12 +6229,12 @@ package pinpoint {
         ResourceArn: __string,
         TagKeys: ListOf__string
     ): UntagResourceRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any],
         "TagKeys"     -> TagKeys.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UntagResourceRequest]
+      __obj.asInstanceOf[UntagResourceRequest]
     }
   }
 
@@ -7775,12 +6249,12 @@ package pinpoint {
         ADMChannelRequest: ADMChannelRequest,
         ApplicationId: __string
     ): UpdateAdmChannelRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ADMChannelRequest" -> ADMChannelRequest.asInstanceOf[js.Any],
         "ApplicationId"     -> ApplicationId.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateAdmChannelRequest]
+      __obj.asInstanceOf[UpdateAdmChannelRequest]
     }
   }
 
@@ -7793,11 +6267,11 @@ package pinpoint {
     def apply(
         ADMChannelResponse: ADMChannelResponse
     ): UpdateAdmChannelResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ADMChannelResponse" -> ADMChannelResponse.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateAdmChannelResponse]
+      __obj.asInstanceOf[UpdateAdmChannelResponse]
     }
   }
 
@@ -7812,12 +6286,12 @@ package pinpoint {
         APNSChannelRequest: APNSChannelRequest,
         ApplicationId: __string
     ): UpdateApnsChannelRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "APNSChannelRequest" -> APNSChannelRequest.asInstanceOf[js.Any],
         "ApplicationId"      -> ApplicationId.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateApnsChannelRequest]
+      __obj.asInstanceOf[UpdateApnsChannelRequest]
     }
   }
 
@@ -7830,11 +6304,11 @@ package pinpoint {
     def apply(
         APNSChannelResponse: APNSChannelResponse
     ): UpdateApnsChannelResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "APNSChannelResponse" -> APNSChannelResponse.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateApnsChannelResponse]
+      __obj.asInstanceOf[UpdateApnsChannelResponse]
     }
   }
 
@@ -7849,12 +6323,12 @@ package pinpoint {
         APNSSandboxChannelRequest: APNSSandboxChannelRequest,
         ApplicationId: __string
     ): UpdateApnsSandboxChannelRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "APNSSandboxChannelRequest" -> APNSSandboxChannelRequest.asInstanceOf[js.Any],
         "ApplicationId"             -> ApplicationId.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateApnsSandboxChannelRequest]
+      __obj.asInstanceOf[UpdateApnsSandboxChannelRequest]
     }
   }
 
@@ -7867,11 +6341,11 @@ package pinpoint {
     def apply(
         APNSSandboxChannelResponse: APNSSandboxChannelResponse
     ): UpdateApnsSandboxChannelResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "APNSSandboxChannelResponse" -> APNSSandboxChannelResponse.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateApnsSandboxChannelResponse]
+      __obj.asInstanceOf[UpdateApnsSandboxChannelResponse]
     }
   }
 
@@ -7886,12 +6360,12 @@ package pinpoint {
         APNSVoipChannelRequest: APNSVoipChannelRequest,
         ApplicationId: __string
     ): UpdateApnsVoipChannelRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "APNSVoipChannelRequest" -> APNSVoipChannelRequest.asInstanceOf[js.Any],
         "ApplicationId"          -> ApplicationId.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateApnsVoipChannelRequest]
+      __obj.asInstanceOf[UpdateApnsVoipChannelRequest]
     }
   }
 
@@ -7904,11 +6378,11 @@ package pinpoint {
     def apply(
         APNSVoipChannelResponse: APNSVoipChannelResponse
     ): UpdateApnsVoipChannelResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "APNSVoipChannelResponse" -> APNSVoipChannelResponse.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateApnsVoipChannelResponse]
+      __obj.asInstanceOf[UpdateApnsVoipChannelResponse]
     }
   }
 
@@ -7923,12 +6397,12 @@ package pinpoint {
         APNSVoipSandboxChannelRequest: APNSVoipSandboxChannelRequest,
         ApplicationId: __string
     ): UpdateApnsVoipSandboxChannelRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "APNSVoipSandboxChannelRequest" -> APNSVoipSandboxChannelRequest.asInstanceOf[js.Any],
         "ApplicationId"                 -> ApplicationId.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateApnsVoipSandboxChannelRequest]
+      __obj.asInstanceOf[UpdateApnsVoipSandboxChannelRequest]
     }
   }
 
@@ -7941,11 +6415,11 @@ package pinpoint {
     def apply(
         APNSVoipSandboxChannelResponse: APNSVoipSandboxChannelResponse
     ): UpdateApnsVoipSandboxChannelResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "APNSVoipSandboxChannelResponse" -> APNSVoipSandboxChannelResponse.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateApnsVoipSandboxChannelResponse]
+      __obj.asInstanceOf[UpdateApnsVoipSandboxChannelResponse]
     }
   }
 
@@ -7960,12 +6434,12 @@ package pinpoint {
         ApplicationId: __string,
         WriteApplicationSettingsRequest: WriteApplicationSettingsRequest
     ): UpdateApplicationSettingsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ApplicationId"                   -> ApplicationId.asInstanceOf[js.Any],
         "WriteApplicationSettingsRequest" -> WriteApplicationSettingsRequest.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateApplicationSettingsRequest]
+      __obj.asInstanceOf[UpdateApplicationSettingsRequest]
     }
   }
 
@@ -7978,11 +6452,11 @@ package pinpoint {
     def apply(
         ApplicationSettingsResource: ApplicationSettingsResource
     ): UpdateApplicationSettingsResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ApplicationSettingsResource" -> ApplicationSettingsResource.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateApplicationSettingsResponse]
+      __obj.asInstanceOf[UpdateApplicationSettingsResponse]
     }
   }
 
@@ -7998,13 +6472,9 @@ package pinpoint {
     def apply(
         Blacklist: js.UndefOr[ListOf__string] = js.undefined
     ): UpdateAttributesRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Blacklist" -> Blacklist.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateAttributesRequest]
+      val __obj = js.Dictionary.empty[js.Any]
+      Blacklist.foreach(__v => __obj.update("Blacklist", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateAttributesRequest]
     }
   }
 
@@ -8019,12 +6489,12 @@ package pinpoint {
         ApplicationId: __string,
         BaiduChannelRequest: BaiduChannelRequest
     ): UpdateBaiduChannelRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ApplicationId"       -> ApplicationId.asInstanceOf[js.Any],
         "BaiduChannelRequest" -> BaiduChannelRequest.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateBaiduChannelRequest]
+      __obj.asInstanceOf[UpdateBaiduChannelRequest]
     }
   }
 
@@ -8037,11 +6507,11 @@ package pinpoint {
     def apply(
         BaiduChannelResponse: BaiduChannelResponse
     ): UpdateBaiduChannelResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "BaiduChannelResponse" -> BaiduChannelResponse.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateBaiduChannelResponse]
+      __obj.asInstanceOf[UpdateBaiduChannelResponse]
     }
   }
 
@@ -8058,13 +6528,13 @@ package pinpoint {
         CampaignId: __string,
         WriteCampaignRequest: WriteCampaignRequest
     ): UpdateCampaignRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ApplicationId"        -> ApplicationId.asInstanceOf[js.Any],
         "CampaignId"           -> CampaignId.asInstanceOf[js.Any],
         "WriteCampaignRequest" -> WriteCampaignRequest.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateCampaignRequest]
+      __obj.asInstanceOf[UpdateCampaignRequest]
     }
   }
 
@@ -8077,11 +6547,11 @@ package pinpoint {
     def apply(
         CampaignResponse: CampaignResponse
     ): UpdateCampaignResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "CampaignResponse" -> CampaignResponse.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateCampaignResponse]
+      __obj.asInstanceOf[UpdateCampaignResponse]
     }
   }
 
@@ -8096,12 +6566,12 @@ package pinpoint {
         ApplicationId: __string,
         EmailChannelRequest: EmailChannelRequest
     ): UpdateEmailChannelRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ApplicationId"       -> ApplicationId.asInstanceOf[js.Any],
         "EmailChannelRequest" -> EmailChannelRequest.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateEmailChannelRequest]
+      __obj.asInstanceOf[UpdateEmailChannelRequest]
     }
   }
 
@@ -8114,11 +6584,11 @@ package pinpoint {
     def apply(
         EmailChannelResponse: EmailChannelResponse
     ): UpdateEmailChannelResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "EmailChannelResponse" -> EmailChannelResponse.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateEmailChannelResponse]
+      __obj.asInstanceOf[UpdateEmailChannelResponse]
     }
   }
 
@@ -8135,13 +6605,13 @@ package pinpoint {
         EndpointId: __string,
         EndpointRequest: EndpointRequest
     ): UpdateEndpointRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ApplicationId"   -> ApplicationId.asInstanceOf[js.Any],
         "EndpointId"      -> EndpointId.asInstanceOf[js.Any],
         "EndpointRequest" -> EndpointRequest.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateEndpointRequest]
+      __obj.asInstanceOf[UpdateEndpointRequest]
     }
   }
 
@@ -8154,11 +6624,11 @@ package pinpoint {
     def apply(
         MessageBody: MessageBody
     ): UpdateEndpointResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "MessageBody" -> MessageBody.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateEndpointResponse]
+      __obj.asInstanceOf[UpdateEndpointResponse]
     }
   }
 
@@ -8173,12 +6643,12 @@ package pinpoint {
         ApplicationId: __string,
         EndpointBatchRequest: EndpointBatchRequest
     ): UpdateEndpointsBatchRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ApplicationId"        -> ApplicationId.asInstanceOf[js.Any],
         "EndpointBatchRequest" -> EndpointBatchRequest.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateEndpointsBatchRequest]
+      __obj.asInstanceOf[UpdateEndpointsBatchRequest]
     }
   }
 
@@ -8191,11 +6661,11 @@ package pinpoint {
     def apply(
         MessageBody: MessageBody
     ): UpdateEndpointsBatchResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "MessageBody" -> MessageBody.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateEndpointsBatchResponse]
+      __obj.asInstanceOf[UpdateEndpointsBatchResponse]
     }
   }
 
@@ -8210,12 +6680,12 @@ package pinpoint {
         ApplicationId: __string,
         GCMChannelRequest: GCMChannelRequest
     ): UpdateGcmChannelRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ApplicationId"     -> ApplicationId.asInstanceOf[js.Any],
         "GCMChannelRequest" -> GCMChannelRequest.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateGcmChannelRequest]
+      __obj.asInstanceOf[UpdateGcmChannelRequest]
     }
   }
 
@@ -8228,11 +6698,11 @@ package pinpoint {
     def apply(
         GCMChannelResponse: GCMChannelResponse
     ): UpdateGcmChannelResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "GCMChannelResponse" -> GCMChannelResponse.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateGcmChannelResponse]
+      __obj.asInstanceOf[UpdateGcmChannelResponse]
     }
   }
 
@@ -8249,13 +6719,13 @@ package pinpoint {
         SegmentId: __string,
         WriteSegmentRequest: WriteSegmentRequest
     ): UpdateSegmentRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ApplicationId"       -> ApplicationId.asInstanceOf[js.Any],
         "SegmentId"           -> SegmentId.asInstanceOf[js.Any],
         "WriteSegmentRequest" -> WriteSegmentRequest.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateSegmentRequest]
+      __obj.asInstanceOf[UpdateSegmentRequest]
     }
   }
 
@@ -8268,11 +6738,11 @@ package pinpoint {
     def apply(
         SegmentResponse: SegmentResponse
     ): UpdateSegmentResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "SegmentResponse" -> SegmentResponse.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateSegmentResponse]
+      __obj.asInstanceOf[UpdateSegmentResponse]
     }
   }
 
@@ -8287,12 +6757,12 @@ package pinpoint {
         ApplicationId: __string,
         SMSChannelRequest: SMSChannelRequest
     ): UpdateSmsChannelRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ApplicationId"     -> ApplicationId.asInstanceOf[js.Any],
         "SMSChannelRequest" -> SMSChannelRequest.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateSmsChannelRequest]
+      __obj.asInstanceOf[UpdateSmsChannelRequest]
     }
   }
 
@@ -8305,11 +6775,11 @@ package pinpoint {
     def apply(
         SMSChannelResponse: SMSChannelResponse
     ): UpdateSmsChannelResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "SMSChannelResponse" -> SMSChannelResponse.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateSmsChannelResponse]
+      __obj.asInstanceOf[UpdateSmsChannelResponse]
     }
   }
 
@@ -8324,12 +6794,12 @@ package pinpoint {
         ApplicationId: __string,
         VoiceChannelRequest: VoiceChannelRequest
     ): UpdateVoiceChannelRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ApplicationId"       -> ApplicationId.asInstanceOf[js.Any],
         "VoiceChannelRequest" -> VoiceChannelRequest.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateVoiceChannelRequest]
+      __obj.asInstanceOf[UpdateVoiceChannelRequest]
     }
   }
 
@@ -8342,11 +6812,11 @@ package pinpoint {
     def apply(
         VoiceChannelResponse: VoiceChannelResponse
     ): UpdateVoiceChannelResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "VoiceChannelResponse" -> VoiceChannelResponse.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateVoiceChannelResponse]
+      __obj.asInstanceOf[UpdateVoiceChannelResponse]
     }
   }
 
@@ -8362,13 +6832,9 @@ package pinpoint {
     def apply(
         Enabled: js.UndefOr[__boolean] = js.undefined
     ): VoiceChannelRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Enabled" -> Enabled.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[VoiceChannelRequest]
+      val __obj = js.Dictionary.empty[js.Any]
+      Enabled.foreach(__v => __obj.update("Enabled", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[VoiceChannelRequest]
     }
   }
 
@@ -8402,40 +6868,18 @@ package pinpoint {
         Platform: js.UndefOr[__string] = js.undefined,
         Version: js.UndefOr[__integer] = js.undefined
     ): VoiceChannelResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ApplicationId" -> ApplicationId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "CreationDate" -> CreationDate.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Enabled" -> Enabled.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "HasCredential" -> HasCredential.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Id" -> Id.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "IsArchived" -> IsArchived.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "LastModifiedBy" -> LastModifiedBy.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "LastModifiedDate" -> LastModifiedDate.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Platform" -> Platform.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Version" -> Version.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[VoiceChannelResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      ApplicationId.foreach(__v => __obj.update("ApplicationId", __v.asInstanceOf[js.Any]))
+      CreationDate.foreach(__v => __obj.update("CreationDate", __v.asInstanceOf[js.Any]))
+      Enabled.foreach(__v => __obj.update("Enabled", __v.asInstanceOf[js.Any]))
+      HasCredential.foreach(__v => __obj.update("HasCredential", __v.asInstanceOf[js.Any]))
+      Id.foreach(__v => __obj.update("Id", __v.asInstanceOf[js.Any]))
+      IsArchived.foreach(__v => __obj.update("IsArchived", __v.asInstanceOf[js.Any]))
+      LastModifiedBy.foreach(__v => __obj.update("LastModifiedBy", __v.asInstanceOf[js.Any]))
+      LastModifiedDate.foreach(__v => __obj.update("LastModifiedDate", __v.asInstanceOf[js.Any]))
+      Platform.foreach(__v => __obj.update("Platform", __v.asInstanceOf[js.Any]))
+      Version.foreach(__v => __obj.update("Version", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[VoiceChannelResponse]
     }
   }
 
@@ -8459,25 +6903,13 @@ package pinpoint {
         Substitutions: js.UndefOr[MapOfListOf__string] = js.undefined,
         VoiceId: js.UndefOr[__string] = js.undefined
     ): VoiceMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Body" -> Body.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "LanguageCode" -> LanguageCode.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "OriginationNumber" -> OriginationNumber.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Substitutions" -> Substitutions.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "VoiceId" -> VoiceId.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[VoiceMessage]
+      val __obj = js.Dictionary.empty[js.Any]
+      Body.foreach(__v => __obj.update("Body", __v.asInstanceOf[js.Any]))
+      LanguageCode.foreach(__v => __obj.update("LanguageCode", __v.asInstanceOf[js.Any]))
+      OriginationNumber.foreach(__v => __obj.update("OriginationNumber", __v.asInstanceOf[js.Any]))
+      Substitutions.foreach(__v => __obj.update("Substitutions", __v.asInstanceOf[js.Any]))
+      VoiceId.foreach(__v => __obj.update("VoiceId", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[VoiceMessage]
     }
   }
 
@@ -8499,22 +6931,12 @@ package pinpoint {
         Limits: js.UndefOr[CampaignLimits] = js.undefined,
         QuietTime: js.UndefOr[QuietTime] = js.undefined
     ): WriteApplicationSettingsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "CampaignHook" -> CampaignHook.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "CloudWatchMetricsEnabled" -> CloudWatchMetricsEnabled.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Limits" -> Limits.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "QuietTime" -> QuietTime.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[WriteApplicationSettingsRequest]
+      val __obj = js.Dictionary.empty[js.Any]
+      CampaignHook.foreach(__v => __obj.update("CampaignHook", __v.asInstanceOf[js.Any]))
+      CloudWatchMetricsEnabled.foreach(__v => __obj.update("CloudWatchMetricsEnabled", __v.asInstanceOf[js.Any]))
+      Limits.foreach(__v => __obj.update("Limits", __v.asInstanceOf[js.Any]))
+      QuietTime.foreach(__v => __obj.update("QuietTime", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[WriteApplicationSettingsRequest]
     }
   }
 
@@ -8556,52 +6978,22 @@ package pinpoint {
         TreatmentName: js.UndefOr[__string] = js.undefined,
         tags: js.UndefOr[MapOf__string] = js.undefined
     ): WriteCampaignRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "AdditionalTreatments" -> AdditionalTreatments.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Description" -> Description.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "HoldoutPercent" -> HoldoutPercent.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Hook" -> Hook.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "IsPaused" -> IsPaused.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Limits" -> Limits.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MessageConfiguration" -> MessageConfiguration.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Name" -> Name.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Schedule" -> Schedule.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SegmentId" -> SegmentId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SegmentVersion" -> SegmentVersion.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "TreatmentDescription" -> TreatmentDescription.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "TreatmentName" -> TreatmentName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "tags" -> tags.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[WriteCampaignRequest]
+      val __obj = js.Dictionary.empty[js.Any]
+      AdditionalTreatments.foreach(__v => __obj.update("AdditionalTreatments", __v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
+      HoldoutPercent.foreach(__v => __obj.update("HoldoutPercent", __v.asInstanceOf[js.Any]))
+      Hook.foreach(__v => __obj.update("Hook", __v.asInstanceOf[js.Any]))
+      IsPaused.foreach(__v => __obj.update("IsPaused", __v.asInstanceOf[js.Any]))
+      Limits.foreach(__v => __obj.update("Limits", __v.asInstanceOf[js.Any]))
+      MessageConfiguration.foreach(__v => __obj.update("MessageConfiguration", __v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
+      Schedule.foreach(__v => __obj.update("Schedule", __v.asInstanceOf[js.Any]))
+      SegmentId.foreach(__v => __obj.update("SegmentId", __v.asInstanceOf[js.Any]))
+      SegmentVersion.foreach(__v => __obj.update("SegmentVersion", __v.asInstanceOf[js.Any]))
+      TreatmentDescription.foreach(__v => __obj.update("TreatmentDescription", __v.asInstanceOf[js.Any]))
+      TreatmentName.foreach(__v => __obj.update("TreatmentName", __v.asInstanceOf[js.Any]))
+      tags.foreach(__v => __obj.update("tags", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[WriteCampaignRequest]
     }
   }
 
@@ -8619,16 +7011,10 @@ package pinpoint {
         DestinationStreamArn: js.UndefOr[__string] = js.undefined,
         RoleArn: js.UndefOr[__string] = js.undefined
     ): WriteEventStream = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "DestinationStreamArn" -> DestinationStreamArn.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "RoleArn" -> RoleArn.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[WriteEventStream]
+      val __obj = js.Dictionary.empty[js.Any]
+      DestinationStreamArn.foreach(__v => __obj.update("DestinationStreamArn", __v.asInstanceOf[js.Any]))
+      RoleArn.foreach(__v => __obj.update("RoleArn", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[WriteEventStream]
     }
   }
 
@@ -8650,22 +7036,12 @@ package pinpoint {
         SegmentGroups: js.UndefOr[SegmentGroupList] = js.undefined,
         tags: js.UndefOr[MapOf__string] = js.undefined
     ): WriteSegmentRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Dimensions" -> Dimensions.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Name" -> Name.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SegmentGroups" -> SegmentGroups.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "tags" -> tags.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[WriteSegmentRequest]
+      val __obj = js.Dictionary.empty[js.Any]
+      Dimensions.foreach(__v => __obj.update("Dimensions", __v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
+      SegmentGroups.foreach(__v => __obj.update("SegmentGroups", __v.asInstanceOf[js.Any]))
+      tags.foreach(__v => __obj.update("tags", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[WriteSegmentRequest]
     }
   }
 
@@ -8689,25 +7065,13 @@ package pinpoint {
         TreatmentDescription: js.UndefOr[__string] = js.undefined,
         TreatmentName: js.UndefOr[__string] = js.undefined
     ): WriteTreatmentResource = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "MessageConfiguration" -> MessageConfiguration.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Schedule" -> Schedule.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SizePercent" -> SizePercent.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "TreatmentDescription" -> TreatmentDescription.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "TreatmentName" -> TreatmentName.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[WriteTreatmentResource]
+      val __obj = js.Dictionary.empty[js.Any]
+      MessageConfiguration.foreach(__v => __obj.update("MessageConfiguration", __v.asInstanceOf[js.Any]))
+      Schedule.foreach(__v => __obj.update("Schedule", __v.asInstanceOf[js.Any]))
+      SizePercent.foreach(__v => __obj.update("SizePercent", __v.asInstanceOf[js.Any]))
+      TreatmentDescription.foreach(__v => __obj.update("TreatmentDescription", __v.asInstanceOf[js.Any]))
+      TreatmentName.foreach(__v => __obj.update("TreatmentName", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[WriteTreatmentResource]
     }
   }
 }

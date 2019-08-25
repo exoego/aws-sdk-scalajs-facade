@@ -95,14 +95,12 @@ package cloudtrail {
         ResourceId: String,
         TagsList: js.UndefOr[TagsList] = js.undefined
     ): AddTagsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ResourceId" -> ResourceId.asInstanceOf[js.Any],
-        "TagsList" -> TagsList.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "ResourceId" -> ResourceId.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AddTagsRequest]
+      TagsList.foreach(__v => __obj.update("TagsList", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AddTagsRequest]
     }
   }
 
@@ -115,10 +113,9 @@ package cloudtrail {
   object AddTagsResponse {
     def apply(
         ): AddTagsResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary.empty[js.Any]
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AddTagsResponse]
+      __obj.asInstanceOf[AddTagsResponse]
     }
   }
 
@@ -154,39 +151,21 @@ package cloudtrail {
         S3KeyPrefix: js.UndefOr[String] = js.undefined,
         SnsTopicName: js.UndefOr[String] = js.undefined
     ): CreateTrailRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "Name"         -> Name.asInstanceOf[js.Any],
-        "S3BucketName" -> S3BucketName.asInstanceOf[js.Any],
-        "CloudWatchLogsLogGroupArn" -> CloudWatchLogsLogGroupArn.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "CloudWatchLogsRoleArn" -> CloudWatchLogsRoleArn.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "EnableLogFileValidation" -> EnableLogFileValidation.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "IncludeGlobalServiceEvents" -> IncludeGlobalServiceEvents.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "IsMultiRegionTrail" -> IsMultiRegionTrail.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "IsOrganizationTrail" -> IsOrganizationTrail.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "KmsKeyId" -> KmsKeyId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "S3KeyPrefix" -> S3KeyPrefix.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SnsTopicName" -> SnsTopicName.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "S3BucketName" -> S3BucketName.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateTrailRequest]
+      CloudWatchLogsLogGroupArn.foreach(__v => __obj.update("CloudWatchLogsLogGroupArn", __v.asInstanceOf[js.Any]))
+      CloudWatchLogsRoleArn.foreach(__v => __obj.update("CloudWatchLogsRoleArn", __v.asInstanceOf[js.Any]))
+      EnableLogFileValidation.foreach(__v => __obj.update("EnableLogFileValidation", __v.asInstanceOf[js.Any]))
+      IncludeGlobalServiceEvents.foreach(__v => __obj.update("IncludeGlobalServiceEvents", __v.asInstanceOf[js.Any]))
+      IsMultiRegionTrail.foreach(__v => __obj.update("IsMultiRegionTrail", __v.asInstanceOf[js.Any]))
+      IsOrganizationTrail.foreach(__v => __obj.update("IsOrganizationTrail", __v.asInstanceOf[js.Any]))
+      KmsKeyId.foreach(__v => __obj.update("KmsKeyId", __v.asInstanceOf[js.Any]))
+      S3KeyPrefix.foreach(__v => __obj.update("S3KeyPrefix", __v.asInstanceOf[js.Any]))
+      SnsTopicName.foreach(__v => __obj.update("SnsTopicName", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateTrailRequest]
     }
   }
 
@@ -226,49 +205,21 @@ package cloudtrail {
         SnsTopicName: js.UndefOr[String] = js.undefined,
         TrailARN: js.UndefOr[String] = js.undefined
     ): CreateTrailResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "CloudWatchLogsLogGroupArn" -> CloudWatchLogsLogGroupArn.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "CloudWatchLogsRoleArn" -> CloudWatchLogsRoleArn.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "IncludeGlobalServiceEvents" -> IncludeGlobalServiceEvents.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "IsMultiRegionTrail" -> IsMultiRegionTrail.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "IsOrganizationTrail" -> IsOrganizationTrail.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "KmsKeyId" -> KmsKeyId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "LogFileValidationEnabled" -> LogFileValidationEnabled.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Name" -> Name.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "S3BucketName" -> S3BucketName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "S3KeyPrefix" -> S3KeyPrefix.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SnsTopicARN" -> SnsTopicARN.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SnsTopicName" -> SnsTopicName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "TrailARN" -> TrailARN.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateTrailResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      CloudWatchLogsLogGroupArn.foreach(__v => __obj.update("CloudWatchLogsLogGroupArn", __v.asInstanceOf[js.Any]))
+      CloudWatchLogsRoleArn.foreach(__v => __obj.update("CloudWatchLogsRoleArn", __v.asInstanceOf[js.Any]))
+      IncludeGlobalServiceEvents.foreach(__v => __obj.update("IncludeGlobalServiceEvents", __v.asInstanceOf[js.Any]))
+      IsMultiRegionTrail.foreach(__v => __obj.update("IsMultiRegionTrail", __v.asInstanceOf[js.Any]))
+      IsOrganizationTrail.foreach(__v => __obj.update("IsOrganizationTrail", __v.asInstanceOf[js.Any]))
+      KmsKeyId.foreach(__v => __obj.update("KmsKeyId", __v.asInstanceOf[js.Any]))
+      LogFileValidationEnabled.foreach(__v => __obj.update("LogFileValidationEnabled", __v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
+      S3BucketName.foreach(__v => __obj.update("S3BucketName", __v.asInstanceOf[js.Any]))
+      S3KeyPrefix.foreach(__v => __obj.update("S3KeyPrefix", __v.asInstanceOf[js.Any]))
+      SnsTopicARN.foreach(__v => __obj.update("SnsTopicARN", __v.asInstanceOf[js.Any]))
+      SnsTopicName.foreach(__v => __obj.update("SnsTopicName", __v.asInstanceOf[js.Any]))
+      TrailARN.foreach(__v => __obj.update("TrailARN", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateTrailResponse]
     }
   }
 
@@ -298,16 +249,10 @@ package cloudtrail {
         Type: js.UndefOr[String] = js.undefined,
         Values: js.UndefOr[DataResourceValues] = js.undefined
     ): DataResource = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Type" -> Type.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Values" -> Values.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DataResource]
+      val __obj = js.Dictionary.empty[js.Any]
+      Type.foreach(__v => __obj.update("Type", __v.asInstanceOf[js.Any]))
+      Values.foreach(__v => __obj.update("Values", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DataResource]
     }
   }
 
@@ -323,11 +268,11 @@ package cloudtrail {
     def apply(
         Name: String
     ): DeleteTrailRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "Name" -> Name.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteTrailRequest]
+      __obj.asInstanceOf[DeleteTrailRequest]
     }
   }
 
@@ -340,10 +285,9 @@ package cloudtrail {
   object DeleteTrailResponse {
     def apply(
         ): DeleteTrailResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary.empty[js.Any]
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteTrailResponse]
+      __obj.asInstanceOf[DeleteTrailResponse]
     }
   }
 
@@ -361,16 +305,10 @@ package cloudtrail {
         includeShadowTrails: js.UndefOr[Boolean] = js.undefined,
         trailNameList: js.UndefOr[TrailNameList] = js.undefined
     ): DescribeTrailsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "includeShadowTrails" -> includeShadowTrails.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "trailNameList" -> trailNameList.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeTrailsRequest]
+      val __obj = js.Dictionary.empty[js.Any]
+      includeShadowTrails.foreach(__v => __obj.update("includeShadowTrails", __v.asInstanceOf[js.Any]))
+      trailNameList.foreach(__v => __obj.update("trailNameList", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeTrailsRequest]
     }
   }
 
@@ -386,13 +324,9 @@ package cloudtrail {
     def apply(
         trailList: js.UndefOr[TrailList] = js.undefined
     ): DescribeTrailsResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "trailList" -> trailList.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeTrailsResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      trailList.foreach(__v => __obj.update("trailList", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeTrailsResponse]
     }
   }
 
@@ -424,37 +358,17 @@ package cloudtrail {
         Resources: js.UndefOr[ResourceList] = js.undefined,
         Username: js.UndefOr[String] = js.undefined
     ): Event = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "AccessKeyId" -> AccessKeyId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "CloudTrailEvent" -> CloudTrailEvent.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "EventId" -> EventId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "EventName" -> EventName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "EventSource" -> EventSource.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "EventTime" -> EventTime.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ReadOnly" -> ReadOnly.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Resources" -> Resources.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Username" -> Username.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Event]
+      val __obj = js.Dictionary.empty[js.Any]
+      AccessKeyId.foreach(__v => __obj.update("AccessKeyId", __v.asInstanceOf[js.Any]))
+      CloudTrailEvent.foreach(__v => __obj.update("CloudTrailEvent", __v.asInstanceOf[js.Any]))
+      EventId.foreach(__v => __obj.update("EventId", __v.asInstanceOf[js.Any]))
+      EventName.foreach(__v => __obj.update("EventName", __v.asInstanceOf[js.Any]))
+      EventSource.foreach(__v => __obj.update("EventSource", __v.asInstanceOf[js.Any]))
+      EventTime.foreach(__v => __obj.update("EventTime", __v.asInstanceOf[js.Any]))
+      ReadOnly.foreach(__v => __obj.update("ReadOnly", __v.asInstanceOf[js.Any]))
+      Resources.foreach(__v => __obj.update("Resources", __v.asInstanceOf[js.Any]))
+      Username.foreach(__v => __obj.update("Username", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Event]
     }
   }
 
@@ -475,19 +389,11 @@ package cloudtrail {
         IncludeManagementEvents: js.UndefOr[Boolean] = js.undefined,
         ReadWriteType: js.UndefOr[ReadWriteType] = js.undefined
     ): EventSelector = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "DataResources" -> DataResources.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "IncludeManagementEvents" -> IncludeManagementEvents.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ReadWriteType" -> ReadWriteType.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[EventSelector]
+      val __obj = js.Dictionary.empty[js.Any]
+      DataResources.foreach(__v => __obj.update("DataResources", __v.asInstanceOf[js.Any]))
+      IncludeManagementEvents.foreach(__v => __obj.update("IncludeManagementEvents", __v.asInstanceOf[js.Any]))
+      ReadWriteType.foreach(__v => __obj.update("ReadWriteType", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[EventSelector]
     }
   }
 
@@ -500,11 +406,11 @@ package cloudtrail {
     def apply(
         TrailName: String
     ): GetEventSelectorsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "TrailName" -> TrailName.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetEventSelectorsRequest]
+      __obj.asInstanceOf[GetEventSelectorsRequest]
     }
   }
 
@@ -519,16 +425,10 @@ package cloudtrail {
         EventSelectors: js.UndefOr[EventSelectors] = js.undefined,
         TrailARN: js.UndefOr[String] = js.undefined
     ): GetEventSelectorsResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "EventSelectors" -> EventSelectors.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "TrailARN" -> TrailARN.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetEventSelectorsResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      EventSelectors.foreach(__v => __obj.update("EventSelectors", __v.asInstanceOf[js.Any]))
+      TrailARN.foreach(__v => __obj.update("TrailARN", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetEventSelectorsResponse]
     }
   }
 
@@ -544,11 +444,11 @@ package cloudtrail {
     def apply(
         Name: String
     ): GetTrailStatusRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "Name" -> Name.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetTrailStatusRequest]
+      __obj.asInstanceOf[GetTrailStatusRequest]
     }
   }
 
@@ -596,61 +496,35 @@ package cloudtrail {
         TimeLoggingStarted: js.UndefOr[String] = js.undefined,
         TimeLoggingStopped: js.UndefOr[String] = js.undefined
     ): GetTrailStatusResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "IsLogging" -> IsLogging.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "LatestCloudWatchLogsDeliveryError" -> LatestCloudWatchLogsDeliveryError.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "LatestCloudWatchLogsDeliveryTime" -> LatestCloudWatchLogsDeliveryTime.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "LatestDeliveryAttemptSucceeded" -> LatestDeliveryAttemptSucceeded.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "LatestDeliveryAttemptTime" -> LatestDeliveryAttemptTime.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "LatestDeliveryError" -> LatestDeliveryError.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "LatestDeliveryTime" -> LatestDeliveryTime.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "LatestDigestDeliveryError" -> LatestDigestDeliveryError.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "LatestDigestDeliveryTime" -> LatestDigestDeliveryTime.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "LatestNotificationAttemptSucceeded" -> LatestNotificationAttemptSucceeded.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "LatestNotificationAttemptTime" -> LatestNotificationAttemptTime.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "LatestNotificationError" -> LatestNotificationError.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "LatestNotificationTime" -> LatestNotificationTime.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "StartLoggingTime" -> StartLoggingTime.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "StopLoggingTime" -> StopLoggingTime.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "TimeLoggingStarted" -> TimeLoggingStarted.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "TimeLoggingStopped" -> TimeLoggingStopped.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetTrailStatusResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      IsLogging.foreach(__v => __obj.update("IsLogging", __v.asInstanceOf[js.Any]))
+      LatestCloudWatchLogsDeliveryError.foreach(
+        __v => __obj.update("LatestCloudWatchLogsDeliveryError", __v.asInstanceOf[js.Any])
+      )
+      LatestCloudWatchLogsDeliveryTime.foreach(
+        __v => __obj.update("LatestCloudWatchLogsDeliveryTime", __v.asInstanceOf[js.Any])
+      )
+      LatestDeliveryAttemptSucceeded.foreach(
+        __v => __obj.update("LatestDeliveryAttemptSucceeded", __v.asInstanceOf[js.Any])
+      )
+      LatestDeliveryAttemptTime.foreach(__v => __obj.update("LatestDeliveryAttemptTime", __v.asInstanceOf[js.Any]))
+      LatestDeliveryError.foreach(__v => __obj.update("LatestDeliveryError", __v.asInstanceOf[js.Any]))
+      LatestDeliveryTime.foreach(__v => __obj.update("LatestDeliveryTime", __v.asInstanceOf[js.Any]))
+      LatestDigestDeliveryError.foreach(__v => __obj.update("LatestDigestDeliveryError", __v.asInstanceOf[js.Any]))
+      LatestDigestDeliveryTime.foreach(__v => __obj.update("LatestDigestDeliveryTime", __v.asInstanceOf[js.Any]))
+      LatestNotificationAttemptSucceeded.foreach(
+        __v => __obj.update("LatestNotificationAttemptSucceeded", __v.asInstanceOf[js.Any])
+      )
+      LatestNotificationAttemptTime.foreach(
+        __v => __obj.update("LatestNotificationAttemptTime", __v.asInstanceOf[js.Any])
+      )
+      LatestNotificationError.foreach(__v => __obj.update("LatestNotificationError", __v.asInstanceOf[js.Any]))
+      LatestNotificationTime.foreach(__v => __obj.update("LatestNotificationTime", __v.asInstanceOf[js.Any]))
+      StartLoggingTime.foreach(__v => __obj.update("StartLoggingTime", __v.asInstanceOf[js.Any]))
+      StopLoggingTime.foreach(__v => __obj.update("StopLoggingTime", __v.asInstanceOf[js.Any]))
+      TimeLoggingStarted.foreach(__v => __obj.update("TimeLoggingStarted", __v.asInstanceOf[js.Any]))
+      TimeLoggingStopped.foreach(__v => __obj.update("TimeLoggingStopped", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetTrailStatusResponse]
     }
   }
 
@@ -670,19 +544,11 @@ package cloudtrail {
         NextToken: js.UndefOr[String] = js.undefined,
         StartTime: js.UndefOr[Date] = js.undefined
     ): ListPublicKeysRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "EndTime" -> EndTime.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NextToken" -> NextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "StartTime" -> StartTime.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListPublicKeysRequest]
+      val __obj = js.Dictionary.empty[js.Any]
+      EndTime.foreach(__v => __obj.update("EndTime", __v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      StartTime.foreach(__v => __obj.update("StartTime", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListPublicKeysRequest]
     }
   }
 
@@ -700,16 +566,10 @@ package cloudtrail {
         NextToken: js.UndefOr[String] = js.undefined,
         PublicKeyList: js.UndefOr[PublicKeyList] = js.undefined
     ): ListPublicKeysResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "NextToken" -> NextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "PublicKeyList" -> PublicKeyList.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListPublicKeysResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      PublicKeyList.foreach(__v => __obj.update("PublicKeyList", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListPublicKeysResponse]
     }
   }
 
@@ -727,14 +587,12 @@ package cloudtrail {
         ResourceIdList: ResourceIdList,
         NextToken: js.UndefOr[String] = js.undefined
     ): ListTagsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ResourceIdList" -> ResourceIdList.asInstanceOf[js.Any],
-        "NextToken" -> NextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "ResourceIdList" -> ResourceIdList.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListTagsRequest]
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListTagsRequest]
     }
   }
 
@@ -752,16 +610,10 @@ package cloudtrail {
         NextToken: js.UndefOr[String] = js.undefined,
         ResourceTagList: js.UndefOr[ResourceTagList] = js.undefined
     ): ListTagsResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "NextToken" -> NextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ResourceTagList" -> ResourceTagList.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListTagsResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      ResourceTagList.foreach(__v => __obj.update("ResourceTagList", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListTagsResponse]
     }
   }
 
@@ -779,12 +631,12 @@ package cloudtrail {
         AttributeKey: LookupAttributeKey,
         AttributeValue: String
     ): LookupAttribute = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "AttributeKey"   -> AttributeKey.asInstanceOf[js.Any],
         "AttributeValue" -> AttributeValue.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[LookupAttribute]
+      __obj.asInstanceOf[LookupAttribute]
     }
   }
 
@@ -822,25 +674,13 @@ package cloudtrail {
         NextToken: js.UndefOr[NextToken] = js.undefined,
         StartTime: js.UndefOr[Date] = js.undefined
     ): LookupEventsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "EndTime" -> EndTime.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "LookupAttributes" -> LookupAttributes.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MaxResults" -> MaxResults.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NextToken" -> NextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "StartTime" -> StartTime.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[LookupEventsRequest]
+      val __obj = js.Dictionary.empty[js.Any]
+      EndTime.foreach(__v => __obj.update("EndTime", __v.asInstanceOf[js.Any]))
+      LookupAttributes.foreach(__v => __obj.update("LookupAttributes", __v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      StartTime.foreach(__v => __obj.update("StartTime", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[LookupEventsRequest]
     }
   }
 
@@ -858,16 +698,10 @@ package cloudtrail {
         Events: js.UndefOr[EventsList] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): LookupEventsResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Events" -> Events.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NextToken" -> NextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[LookupEventsResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      Events.foreach(__v => __obj.update("Events", __v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[LookupEventsResponse]
     }
   }
 
@@ -889,22 +723,12 @@ package cloudtrail {
         ValidityStartTime: js.UndefOr[Date] = js.undefined,
         Value: js.UndefOr[ByteBuffer] = js.undefined
     ): PublicKey = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Fingerprint" -> Fingerprint.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ValidityEndTime" -> ValidityEndTime.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ValidityStartTime" -> ValidityStartTime.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Value" -> Value.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PublicKey]
+      val __obj = js.Dictionary.empty[js.Any]
+      Fingerprint.foreach(__v => __obj.update("Fingerprint", __v.asInstanceOf[js.Any]))
+      ValidityEndTime.foreach(__v => __obj.update("ValidityEndTime", __v.asInstanceOf[js.Any]))
+      ValidityStartTime.foreach(__v => __obj.update("ValidityStartTime", __v.asInstanceOf[js.Any]))
+      Value.foreach(__v => __obj.update("Value", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PublicKey]
     }
   }
 
@@ -919,12 +743,12 @@ package cloudtrail {
         EventSelectors: EventSelectors,
         TrailName: String
     ): PutEventSelectorsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "EventSelectors" -> EventSelectors.asInstanceOf[js.Any],
         "TrailName"      -> TrailName.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PutEventSelectorsRequest]
+      __obj.asInstanceOf[PutEventSelectorsRequest]
     }
   }
 
@@ -939,16 +763,10 @@ package cloudtrail {
         EventSelectors: js.UndefOr[EventSelectors] = js.undefined,
         TrailARN: js.UndefOr[String] = js.undefined
     ): PutEventSelectorsResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "EventSelectors" -> EventSelectors.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "TrailARN" -> TrailARN.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PutEventSelectorsResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      EventSelectors.foreach(__v => __obj.update("EventSelectors", __v.asInstanceOf[js.Any]))
+      TrailARN.foreach(__v => __obj.update("TrailARN", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PutEventSelectorsResponse]
     }
   }
 
@@ -974,14 +792,12 @@ package cloudtrail {
         ResourceId: String,
         TagsList: js.UndefOr[TagsList] = js.undefined
     ): RemoveTagsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ResourceId" -> ResourceId.asInstanceOf[js.Any],
-        "TagsList" -> TagsList.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "ResourceId" -> ResourceId.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RemoveTagsRequest]
+      TagsList.foreach(__v => __obj.update("TagsList", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[RemoveTagsRequest]
     }
   }
 
@@ -994,10 +810,9 @@ package cloudtrail {
   object RemoveTagsResponse {
     def apply(
         ): RemoveTagsResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary.empty[js.Any]
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RemoveTagsResponse]
+      __obj.asInstanceOf[RemoveTagsResponse]
     }
   }
 
@@ -1015,16 +830,10 @@ package cloudtrail {
         ResourceName: js.UndefOr[String] = js.undefined,
         ResourceType: js.UndefOr[String] = js.undefined
     ): Resource = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ResourceName" -> ResourceName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ResourceType" -> ResourceType.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Resource]
+      val __obj = js.Dictionary.empty[js.Any]
+      ResourceName.foreach(__v => __obj.update("ResourceName", __v.asInstanceOf[js.Any]))
+      ResourceType.foreach(__v => __obj.update("ResourceType", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Resource]
     }
   }
 
@@ -1042,16 +851,10 @@ package cloudtrail {
         ResourceId: js.UndefOr[String] = js.undefined,
         TagsList: js.UndefOr[TagsList] = js.undefined
     ): ResourceTag = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ResourceId" -> ResourceId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "TagsList" -> TagsList.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ResourceTag]
+      val __obj = js.Dictionary.empty[js.Any]
+      ResourceId.foreach(__v => __obj.update("ResourceId", __v.asInstanceOf[js.Any]))
+      TagsList.foreach(__v => __obj.update("TagsList", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ResourceTag]
     }
   }
 
@@ -1067,11 +870,11 @@ package cloudtrail {
     def apply(
         Name: String
     ): StartLoggingRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "Name" -> Name.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StartLoggingRequest]
+      __obj.asInstanceOf[StartLoggingRequest]
     }
   }
 
@@ -1084,10 +887,9 @@ package cloudtrail {
   object StartLoggingResponse {
     def apply(
         ): StartLoggingResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary.empty[js.Any]
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StartLoggingResponse]
+      __obj.asInstanceOf[StartLoggingResponse]
     }
   }
 
@@ -1103,11 +905,11 @@ package cloudtrail {
     def apply(
         Name: String
     ): StopLoggingRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "Name" -> Name.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StopLoggingRequest]
+      __obj.asInstanceOf[StopLoggingRequest]
     }
   }
 
@@ -1120,10 +922,9 @@ package cloudtrail {
   object StopLoggingResponse {
     def apply(
         ): StopLoggingResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary.empty[js.Any]
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StopLoggingResponse]
+      __obj.asInstanceOf[StopLoggingResponse]
     }
   }
 
@@ -1141,14 +942,12 @@ package cloudtrail {
         Key: String,
         Value: js.UndefOr[String] = js.undefined
     ): Tag = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Key" -> Key.asInstanceOf[js.Any],
-        "Value" -> Value.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "Key" -> Key.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Tag]
+      Value.foreach(__v => __obj.update("Value", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Tag]
     }
   }
 
@@ -1192,55 +991,23 @@ package cloudtrail {
         SnsTopicName: js.UndefOr[String] = js.undefined,
         TrailARN: js.UndefOr[String] = js.undefined
     ): Trail = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "CloudWatchLogsLogGroupArn" -> CloudWatchLogsLogGroupArn.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "CloudWatchLogsRoleArn" -> CloudWatchLogsRoleArn.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "HasCustomEventSelectors" -> HasCustomEventSelectors.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "HomeRegion" -> HomeRegion.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "IncludeGlobalServiceEvents" -> IncludeGlobalServiceEvents.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "IsMultiRegionTrail" -> IsMultiRegionTrail.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "IsOrganizationTrail" -> IsOrganizationTrail.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "KmsKeyId" -> KmsKeyId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "LogFileValidationEnabled" -> LogFileValidationEnabled.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Name" -> Name.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "S3BucketName" -> S3BucketName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "S3KeyPrefix" -> S3KeyPrefix.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SnsTopicARN" -> SnsTopicARN.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SnsTopicName" -> SnsTopicName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "TrailARN" -> TrailARN.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Trail]
+      val __obj = js.Dictionary.empty[js.Any]
+      CloudWatchLogsLogGroupArn.foreach(__v => __obj.update("CloudWatchLogsLogGroupArn", __v.asInstanceOf[js.Any]))
+      CloudWatchLogsRoleArn.foreach(__v => __obj.update("CloudWatchLogsRoleArn", __v.asInstanceOf[js.Any]))
+      HasCustomEventSelectors.foreach(__v => __obj.update("HasCustomEventSelectors", __v.asInstanceOf[js.Any]))
+      HomeRegion.foreach(__v => __obj.update("HomeRegion", __v.asInstanceOf[js.Any]))
+      IncludeGlobalServiceEvents.foreach(__v => __obj.update("IncludeGlobalServiceEvents", __v.asInstanceOf[js.Any]))
+      IsMultiRegionTrail.foreach(__v => __obj.update("IsMultiRegionTrail", __v.asInstanceOf[js.Any]))
+      IsOrganizationTrail.foreach(__v => __obj.update("IsOrganizationTrail", __v.asInstanceOf[js.Any]))
+      KmsKeyId.foreach(__v => __obj.update("KmsKeyId", __v.asInstanceOf[js.Any]))
+      LogFileValidationEnabled.foreach(__v => __obj.update("LogFileValidationEnabled", __v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
+      S3BucketName.foreach(__v => __obj.update("S3BucketName", __v.asInstanceOf[js.Any]))
+      S3KeyPrefix.foreach(__v => __obj.update("S3KeyPrefix", __v.asInstanceOf[js.Any]))
+      SnsTopicARN.foreach(__v => __obj.update("SnsTopicARN", __v.asInstanceOf[js.Any]))
+      SnsTopicName.foreach(__v => __obj.update("SnsTopicName", __v.asInstanceOf[js.Any]))
+      TrailARN.foreach(__v => __obj.update("TrailARN", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Trail]
     }
   }
 
@@ -1276,41 +1043,21 @@ package cloudtrail {
         S3KeyPrefix: js.UndefOr[String] = js.undefined,
         SnsTopicName: js.UndefOr[String] = js.undefined
     ): UpdateTrailRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Name" -> Name.asInstanceOf[js.Any],
-        "CloudWatchLogsLogGroupArn" -> CloudWatchLogsLogGroupArn.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "CloudWatchLogsRoleArn" -> CloudWatchLogsRoleArn.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "EnableLogFileValidation" -> EnableLogFileValidation.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "IncludeGlobalServiceEvents" -> IncludeGlobalServiceEvents.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "IsMultiRegionTrail" -> IsMultiRegionTrail.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "IsOrganizationTrail" -> IsOrganizationTrail.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "KmsKeyId" -> KmsKeyId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "S3BucketName" -> S3BucketName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "S3KeyPrefix" -> S3KeyPrefix.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SnsTopicName" -> SnsTopicName.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "Name" -> Name.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateTrailRequest]
+      CloudWatchLogsLogGroupArn.foreach(__v => __obj.update("CloudWatchLogsLogGroupArn", __v.asInstanceOf[js.Any]))
+      CloudWatchLogsRoleArn.foreach(__v => __obj.update("CloudWatchLogsRoleArn", __v.asInstanceOf[js.Any]))
+      EnableLogFileValidation.foreach(__v => __obj.update("EnableLogFileValidation", __v.asInstanceOf[js.Any]))
+      IncludeGlobalServiceEvents.foreach(__v => __obj.update("IncludeGlobalServiceEvents", __v.asInstanceOf[js.Any]))
+      IsMultiRegionTrail.foreach(__v => __obj.update("IsMultiRegionTrail", __v.asInstanceOf[js.Any]))
+      IsOrganizationTrail.foreach(__v => __obj.update("IsOrganizationTrail", __v.asInstanceOf[js.Any]))
+      KmsKeyId.foreach(__v => __obj.update("KmsKeyId", __v.asInstanceOf[js.Any]))
+      S3BucketName.foreach(__v => __obj.update("S3BucketName", __v.asInstanceOf[js.Any]))
+      S3KeyPrefix.foreach(__v => __obj.update("S3KeyPrefix", __v.asInstanceOf[js.Any]))
+      SnsTopicName.foreach(__v => __obj.update("SnsTopicName", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateTrailRequest]
     }
   }
 
@@ -1350,49 +1097,21 @@ package cloudtrail {
         SnsTopicName: js.UndefOr[String] = js.undefined,
         TrailARN: js.UndefOr[String] = js.undefined
     ): UpdateTrailResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "CloudWatchLogsLogGroupArn" -> CloudWatchLogsLogGroupArn.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "CloudWatchLogsRoleArn" -> CloudWatchLogsRoleArn.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "IncludeGlobalServiceEvents" -> IncludeGlobalServiceEvents.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "IsMultiRegionTrail" -> IsMultiRegionTrail.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "IsOrganizationTrail" -> IsOrganizationTrail.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "KmsKeyId" -> KmsKeyId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "LogFileValidationEnabled" -> LogFileValidationEnabled.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Name" -> Name.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "S3BucketName" -> S3BucketName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "S3KeyPrefix" -> S3KeyPrefix.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SnsTopicARN" -> SnsTopicARN.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SnsTopicName" -> SnsTopicName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "TrailARN" -> TrailARN.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateTrailResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      CloudWatchLogsLogGroupArn.foreach(__v => __obj.update("CloudWatchLogsLogGroupArn", __v.asInstanceOf[js.Any]))
+      CloudWatchLogsRoleArn.foreach(__v => __obj.update("CloudWatchLogsRoleArn", __v.asInstanceOf[js.Any]))
+      IncludeGlobalServiceEvents.foreach(__v => __obj.update("IncludeGlobalServiceEvents", __v.asInstanceOf[js.Any]))
+      IsMultiRegionTrail.foreach(__v => __obj.update("IsMultiRegionTrail", __v.asInstanceOf[js.Any]))
+      IsOrganizationTrail.foreach(__v => __obj.update("IsOrganizationTrail", __v.asInstanceOf[js.Any]))
+      KmsKeyId.foreach(__v => __obj.update("KmsKeyId", __v.asInstanceOf[js.Any]))
+      LogFileValidationEnabled.foreach(__v => __obj.update("LogFileValidationEnabled", __v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
+      S3BucketName.foreach(__v => __obj.update("S3BucketName", __v.asInstanceOf[js.Any]))
+      S3KeyPrefix.foreach(__v => __obj.update("S3KeyPrefix", __v.asInstanceOf[js.Any]))
+      SnsTopicARN.foreach(__v => __obj.update("SnsTopicARN", __v.asInstanceOf[js.Any]))
+      SnsTopicName.foreach(__v => __obj.update("SnsTopicName", __v.asInstanceOf[js.Any]))
+      TrailARN.foreach(__v => __obj.update("TrailARN", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateTrailResponse]
     }
   }
 }

@@ -123,19 +123,11 @@ package mq {
         Endpoints: js.UndefOr[__listOf__string] = js.undefined,
         IpAddress: js.UndefOr[__string] = js.undefined
     ): BrokerInstance = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ConsoleURL" -> ConsoleURL.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Endpoints" -> Endpoints.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "IpAddress" -> IpAddress.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[BrokerInstance]
+      val __obj = js.Dictionary.empty[js.Any]
+      ConsoleURL.foreach(__v => __obj.update("ConsoleURL", __v.asInstanceOf[js.Any]))
+      Endpoints.foreach(__v => __obj.update("Endpoints", __v.asInstanceOf[js.Any]))
+      IpAddress.foreach(__v => __obj.update("IpAddress", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[BrokerInstance]
     }
   }
 
@@ -176,31 +168,15 @@ package mq {
         DeploymentMode: js.UndefOr[DeploymentMode] = js.undefined,
         HostInstanceType: js.UndefOr[__string] = js.undefined
     ): BrokerSummary = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "BrokerArn" -> BrokerArn.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "BrokerId" -> BrokerId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "BrokerName" -> BrokerName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "BrokerState" -> BrokerState.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Created" -> Created.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DeploymentMode" -> DeploymentMode.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "HostInstanceType" -> HostInstanceType.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[BrokerSummary]
+      val __obj = js.Dictionary.empty[js.Any]
+      BrokerArn.foreach(__v => __obj.update("BrokerArn", __v.asInstanceOf[js.Any]))
+      BrokerId.foreach(__v => __obj.update("BrokerId", __v.asInstanceOf[js.Any]))
+      BrokerName.foreach(__v => __obj.update("BrokerName", __v.asInstanceOf[js.Any]))
+      BrokerState.foreach(__v => __obj.update("BrokerState", __v.asInstanceOf[js.Any]))
+      Created.foreach(__v => __obj.update("Created", __v.asInstanceOf[js.Any]))
+      DeploymentMode.foreach(__v => __obj.update("DeploymentMode", __v.asInstanceOf[js.Any]))
+      HostInstanceType.foreach(__v => __obj.update("HostInstanceType", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[BrokerSummary]
     }
   }
 
@@ -243,37 +219,17 @@ package mq {
         Name: js.UndefOr[__string] = js.undefined,
         Tags: js.UndefOr[__mapOf__string] = js.undefined
     ): Configuration = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Arn" -> Arn.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Created" -> Created.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Description" -> Description.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "EngineType" -> EngineType.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "EngineVersion" -> EngineVersion.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Id" -> Id.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "LatestRevision" -> LatestRevision.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Name" -> Name.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Tags" -> Tags.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Configuration]
+      val __obj = js.Dictionary.empty[js.Any]
+      Arn.foreach(__v => __obj.update("Arn", __v.asInstanceOf[js.Any]))
+      Created.foreach(__v => __obj.update("Created", __v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
+      EngineType.foreach(__v => __obj.update("EngineType", __v.asInstanceOf[js.Any]))
+      EngineVersion.foreach(__v => __obj.update("EngineVersion", __v.asInstanceOf[js.Any]))
+      Id.foreach(__v => __obj.update("Id", __v.asInstanceOf[js.Any]))
+      LatestRevision.foreach(__v => __obj.update("LatestRevision", __v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Configuration]
     }
   }
 
@@ -291,16 +247,10 @@ package mq {
         Id: js.UndefOr[__string] = js.undefined,
         Revision: js.UndefOr[__integer] = js.undefined
     ): ConfigurationId = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Id" -> Id.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Revision" -> Revision.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ConfigurationId]
+      val __obj = js.Dictionary.empty[js.Any]
+      Id.foreach(__v => __obj.update("Id", __v.asInstanceOf[js.Any]))
+      Revision.foreach(__v => __obj.update("Revision", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ConfigurationId]
     }
   }
 
@@ -320,19 +270,11 @@ package mq {
         Description: js.UndefOr[__string] = js.undefined,
         Revision: js.UndefOr[__integer] = js.undefined
     ): ConfigurationRevision = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Created" -> Created.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Description" -> Description.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Revision" -> Revision.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ConfigurationRevision]
+      val __obj = js.Dictionary.empty[js.Any]
+      Created.foreach(__v => __obj.update("Created", __v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
+      Revision.foreach(__v => __obj.update("Revision", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ConfigurationRevision]
     }
   }
 
@@ -352,19 +294,11 @@ package mq {
         History: js.UndefOr[__listOfConfigurationId] = js.undefined,
         Pending: js.UndefOr[ConfigurationId] = js.undefined
     ): Configurations = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Current" -> Current.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "History" -> History.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Pending" -> Pending.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Configurations]
+      val __obj = js.Dictionary.empty[js.Any]
+      Current.foreach(__v => __obj.update("Current", __v.asInstanceOf[js.Any]))
+      History.foreach(__v => __obj.update("History", __v.asInstanceOf[js.Any]))
+      Pending.foreach(__v => __obj.update("Pending", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Configurations]
     }
   }
 
@@ -408,55 +342,23 @@ package mq {
         Tags: js.UndefOr[__mapOf__string] = js.undefined,
         Users: js.UndefOr[__listOfUser] = js.undefined
     ): CreateBrokerRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "AutoMinorVersionUpgrade" -> AutoMinorVersionUpgrade.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "BrokerName" -> BrokerName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Configuration" -> Configuration.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "CreatorRequestId" -> CreatorRequestId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DeploymentMode" -> DeploymentMode.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "EngineType" -> EngineType.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "EngineVersion" -> EngineVersion.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "HostInstanceType" -> HostInstanceType.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Logs" -> Logs.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MaintenanceWindowStartTime" -> MaintenanceWindowStartTime.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "PubliclyAccessible" -> PubliclyAccessible.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SecurityGroups" -> SecurityGroups.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SubnetIds" -> SubnetIds.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Tags" -> Tags.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Users" -> Users.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateBrokerRequest]
+      val __obj = js.Dictionary.empty[js.Any]
+      AutoMinorVersionUpgrade.foreach(__v => __obj.update("AutoMinorVersionUpgrade", __v.asInstanceOf[js.Any]))
+      BrokerName.foreach(__v => __obj.update("BrokerName", __v.asInstanceOf[js.Any]))
+      Configuration.foreach(__v => __obj.update("Configuration", __v.asInstanceOf[js.Any]))
+      CreatorRequestId.foreach(__v => __obj.update("CreatorRequestId", __v.asInstanceOf[js.Any]))
+      DeploymentMode.foreach(__v => __obj.update("DeploymentMode", __v.asInstanceOf[js.Any]))
+      EngineType.foreach(__v => __obj.update("EngineType", __v.asInstanceOf[js.Any]))
+      EngineVersion.foreach(__v => __obj.update("EngineVersion", __v.asInstanceOf[js.Any]))
+      HostInstanceType.foreach(__v => __obj.update("HostInstanceType", __v.asInstanceOf[js.Any]))
+      Logs.foreach(__v => __obj.update("Logs", __v.asInstanceOf[js.Any]))
+      MaintenanceWindowStartTime.foreach(__v => __obj.update("MaintenanceWindowStartTime", __v.asInstanceOf[js.Any]))
+      PubliclyAccessible.foreach(__v => __obj.update("PubliclyAccessible", __v.asInstanceOf[js.Any]))
+      SecurityGroups.foreach(__v => __obj.update("SecurityGroups", __v.asInstanceOf[js.Any]))
+      SubnetIds.foreach(__v => __obj.update("SubnetIds", __v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
+      Users.foreach(__v => __obj.update("Users", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateBrokerRequest]
     }
   }
 
@@ -471,16 +373,10 @@ package mq {
         BrokerArn: js.UndefOr[__string] = js.undefined,
         BrokerId: js.UndefOr[__string] = js.undefined
     ): CreateBrokerResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "BrokerArn" -> BrokerArn.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "BrokerId" -> BrokerId.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateBrokerResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      BrokerArn.foreach(__v => __obj.update("BrokerArn", __v.asInstanceOf[js.Any]))
+      BrokerId.foreach(__v => __obj.update("BrokerId", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateBrokerResponse]
     }
   }
 
@@ -502,22 +398,12 @@ package mq {
         Name: js.UndefOr[__string] = js.undefined,
         Tags: js.UndefOr[__mapOf__string] = js.undefined
     ): CreateConfigurationRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "EngineType" -> EngineType.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "EngineVersion" -> EngineVersion.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Name" -> Name.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Tags" -> Tags.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateConfigurationRequest]
+      val __obj = js.Dictionary.empty[js.Any]
+      EngineType.foreach(__v => __obj.update("EngineType", __v.asInstanceOf[js.Any]))
+      EngineVersion.foreach(__v => __obj.update("EngineVersion", __v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateConfigurationRequest]
     }
   }
 
@@ -538,25 +424,13 @@ package mq {
         LatestRevision: js.UndefOr[ConfigurationRevision] = js.undefined,
         Name: js.UndefOr[__string] = js.undefined
     ): CreateConfigurationResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Arn" -> Arn.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Created" -> Created.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Id" -> Id.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "LatestRevision" -> LatestRevision.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Name" -> Name.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateConfigurationResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      Arn.foreach(__v => __obj.update("Arn", __v.asInstanceOf[js.Any]))
+      Created.foreach(__v => __obj.update("Created", __v.asInstanceOf[js.Any]))
+      Id.foreach(__v => __obj.update("Id", __v.asInstanceOf[js.Any]))
+      LatestRevision.foreach(__v => __obj.update("LatestRevision", __v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateConfigurationResponse]
     }
   }
 
@@ -574,14 +448,12 @@ package mq {
         ResourceArn: __string,
         Tags: js.UndefOr[__mapOf__string] = js.undefined
     ): CreateTagsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ResourceArn" -> ResourceArn.asInstanceOf[js.Any],
-        "Tags" -> Tags.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "ResourceArn" -> ResourceArn.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateTagsRequest]
+      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateTagsRequest]
     }
   }
 
@@ -605,21 +477,15 @@ package mq {
         Groups: js.UndefOr[__listOf__string] = js.undefined,
         Password: js.UndefOr[__string] = js.undefined
     ): CreateUserRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "BrokerId" -> BrokerId.asInstanceOf[js.Any],
-        "Username" -> Username.asInstanceOf[js.Any],
-        "ConsoleAccess" -> ConsoleAccess.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Groups" -> Groups.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Password" -> Password.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "Username" -> Username.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateUserRequest]
+      ConsoleAccess.foreach(__v => __obj.update("ConsoleAccess", __v.asInstanceOf[js.Any]))
+      Groups.foreach(__v => __obj.update("Groups", __v.asInstanceOf[js.Any]))
+      Password.foreach(__v => __obj.update("Password", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateUserRequest]
     }
   }
 
@@ -629,10 +495,9 @@ package mq {
   object CreateUserResponse {
     def apply(
         ): CreateUserResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary.empty[js.Any]
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateUserResponse]
+      __obj.asInstanceOf[CreateUserResponse]
     }
   }
 
@@ -657,11 +522,11 @@ package mq {
     def apply(
         BrokerId: __string
     ): DeleteBrokerRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "BrokerId" -> BrokerId.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteBrokerRequest]
+      __obj.asInstanceOf[DeleteBrokerRequest]
     }
   }
 
@@ -674,13 +539,9 @@ package mq {
     def apply(
         BrokerId: js.UndefOr[__string] = js.undefined
     ): DeleteBrokerResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "BrokerId" -> BrokerId.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteBrokerResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      BrokerId.foreach(__v => __obj.update("BrokerId", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DeleteBrokerResponse]
     }
   }
 
@@ -695,12 +556,12 @@ package mq {
         ResourceArn: __string,
         TagKeys: __listOf__string
     ): DeleteTagsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any],
         "TagKeys"     -> TagKeys.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteTagsRequest]
+      __obj.asInstanceOf[DeleteTagsRequest]
     }
   }
 
@@ -715,12 +576,12 @@ package mq {
         BrokerId: __string,
         Username: __string
     ): DeleteUserRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "BrokerId" -> BrokerId.asInstanceOf[js.Any],
         "Username" -> Username.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteUserRequest]
+      __obj.asInstanceOf[DeleteUserRequest]
     }
   }
 
@@ -730,10 +591,9 @@ package mq {
   object DeleteUserResponse {
     def apply(
         ): DeleteUserResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary.empty[js.Any]
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteUserResponse]
+      __obj.asInstanceOf[DeleteUserResponse]
     }
   }
 
@@ -756,11 +616,11 @@ package mq {
     def apply(
         BrokerId: __string
     ): DescribeBrokerRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "BrokerId" -> BrokerId.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeBrokerRequest]
+      __obj.asInstanceOf[DescribeBrokerRequest]
     }
   }
 
@@ -811,70 +671,28 @@ package mq {
         Tags: js.UndefOr[__mapOf__string] = js.undefined,
         Users: js.UndefOr[__listOfUserSummary] = js.undefined
     ): DescribeBrokerResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "AutoMinorVersionUpgrade" -> AutoMinorVersionUpgrade.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "BrokerArn" -> BrokerArn.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "BrokerId" -> BrokerId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "BrokerInstances" -> BrokerInstances.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "BrokerName" -> BrokerName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "BrokerState" -> BrokerState.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Configurations" -> Configurations.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Created" -> Created.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DeploymentMode" -> DeploymentMode.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "EngineType" -> EngineType.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "EngineVersion" -> EngineVersion.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "HostInstanceType" -> HostInstanceType.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Logs" -> Logs.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MaintenanceWindowStartTime" -> MaintenanceWindowStartTime.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "PendingEngineVersion" -> PendingEngineVersion.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "PubliclyAccessible" -> PubliclyAccessible.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SecurityGroups" -> SecurityGroups.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SubnetIds" -> SubnetIds.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Tags" -> Tags.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Users" -> Users.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeBrokerResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      AutoMinorVersionUpgrade.foreach(__v => __obj.update("AutoMinorVersionUpgrade", __v.asInstanceOf[js.Any]))
+      BrokerArn.foreach(__v => __obj.update("BrokerArn", __v.asInstanceOf[js.Any]))
+      BrokerId.foreach(__v => __obj.update("BrokerId", __v.asInstanceOf[js.Any]))
+      BrokerInstances.foreach(__v => __obj.update("BrokerInstances", __v.asInstanceOf[js.Any]))
+      BrokerName.foreach(__v => __obj.update("BrokerName", __v.asInstanceOf[js.Any]))
+      BrokerState.foreach(__v => __obj.update("BrokerState", __v.asInstanceOf[js.Any]))
+      Configurations.foreach(__v => __obj.update("Configurations", __v.asInstanceOf[js.Any]))
+      Created.foreach(__v => __obj.update("Created", __v.asInstanceOf[js.Any]))
+      DeploymentMode.foreach(__v => __obj.update("DeploymentMode", __v.asInstanceOf[js.Any]))
+      EngineType.foreach(__v => __obj.update("EngineType", __v.asInstanceOf[js.Any]))
+      EngineVersion.foreach(__v => __obj.update("EngineVersion", __v.asInstanceOf[js.Any]))
+      HostInstanceType.foreach(__v => __obj.update("HostInstanceType", __v.asInstanceOf[js.Any]))
+      Logs.foreach(__v => __obj.update("Logs", __v.asInstanceOf[js.Any]))
+      MaintenanceWindowStartTime.foreach(__v => __obj.update("MaintenanceWindowStartTime", __v.asInstanceOf[js.Any]))
+      PendingEngineVersion.foreach(__v => __obj.update("PendingEngineVersion", __v.asInstanceOf[js.Any]))
+      PubliclyAccessible.foreach(__v => __obj.update("PubliclyAccessible", __v.asInstanceOf[js.Any]))
+      SecurityGroups.foreach(__v => __obj.update("SecurityGroups", __v.asInstanceOf[js.Any]))
+      SubnetIds.foreach(__v => __obj.update("SubnetIds", __v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
+      Users.foreach(__v => __obj.update("Users", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeBrokerResponse]
     }
   }
 
@@ -887,11 +705,11 @@ package mq {
     def apply(
         ConfigurationId: __string
     ): DescribeConfigurationRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ConfigurationId" -> ConfigurationId.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeConfigurationRequest]
+      __obj.asInstanceOf[DescribeConfigurationRequest]
     }
   }
 
@@ -920,37 +738,17 @@ package mq {
         Name: js.UndefOr[__string] = js.undefined,
         Tags: js.UndefOr[__mapOf__string] = js.undefined
     ): DescribeConfigurationResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Arn" -> Arn.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Created" -> Created.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Description" -> Description.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "EngineType" -> EngineType.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "EngineVersion" -> EngineVersion.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Id" -> Id.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "LatestRevision" -> LatestRevision.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Name" -> Name.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Tags" -> Tags.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeConfigurationResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      Arn.foreach(__v => __obj.update("Arn", __v.asInstanceOf[js.Any]))
+      Created.foreach(__v => __obj.update("Created", __v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
+      EngineType.foreach(__v => __obj.update("EngineType", __v.asInstanceOf[js.Any]))
+      EngineVersion.foreach(__v => __obj.update("EngineVersion", __v.asInstanceOf[js.Any]))
+      Id.foreach(__v => __obj.update("Id", __v.asInstanceOf[js.Any]))
+      LatestRevision.foreach(__v => __obj.update("LatestRevision", __v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeConfigurationResponse]
     }
   }
 
@@ -965,12 +763,12 @@ package mq {
         ConfigurationId: __string,
         ConfigurationRevision: __string
     ): DescribeConfigurationRevisionRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ConfigurationId"       -> ConfigurationId.asInstanceOf[js.Any],
         "ConfigurationRevision" -> ConfigurationRevision.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeConfigurationRevisionRequest]
+      __obj.asInstanceOf[DescribeConfigurationRevisionRequest]
     }
   }
 
@@ -989,22 +787,12 @@ package mq {
         Data: js.UndefOr[__string] = js.undefined,
         Description: js.UndefOr[__string] = js.undefined
     ): DescribeConfigurationRevisionResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ConfigurationId" -> ConfigurationId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Created" -> Created.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Data" -> Data.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Description" -> Description.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeConfigurationRevisionResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      ConfigurationId.foreach(__v => __obj.update("ConfigurationId", __v.asInstanceOf[js.Any]))
+      Created.foreach(__v => __obj.update("Created", __v.asInstanceOf[js.Any]))
+      Data.foreach(__v => __obj.update("Data", __v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeConfigurationRevisionResponse]
     }
   }
 
@@ -1019,12 +807,12 @@ package mq {
         BrokerId: __string,
         Username: __string
     ): DescribeUserRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "BrokerId" -> BrokerId.asInstanceOf[js.Any],
         "Username" -> Username.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeUserRequest]
+      __obj.asInstanceOf[DescribeUserRequest]
     }
   }
 
@@ -1045,25 +833,13 @@ package mq {
         Pending: js.UndefOr[UserPendingChanges] = js.undefined,
         Username: js.UndefOr[__string] = js.undefined
     ): DescribeUserResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "BrokerId" -> BrokerId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ConsoleAccess" -> ConsoleAccess.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Groups" -> Groups.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Pending" -> Pending.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Username" -> Username.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeUserResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      BrokerId.foreach(__v => __obj.update("BrokerId", __v.asInstanceOf[js.Any]))
+      ConsoleAccess.foreach(__v => __obj.update("ConsoleAccess", __v.asInstanceOf[js.Any]))
+      Groups.foreach(__v => __obj.update("Groups", __v.asInstanceOf[js.Any]))
+      Pending.foreach(__v => __obj.update("Pending", __v.asInstanceOf[js.Any]))
+      Username.foreach(__v => __obj.update("Username", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeUserResponse]
     }
   }
 
@@ -1087,16 +863,10 @@ package mq {
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
         NextToken: js.UndefOr[__string] = js.undefined
     ): ListBrokersRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "MaxResults" -> MaxResults.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NextToken" -> NextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListBrokersRequest]
+      val __obj = js.Dictionary.empty[js.Any]
+      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListBrokersRequest]
     }
   }
 
@@ -1111,16 +881,10 @@ package mq {
         BrokerSummaries: js.UndefOr[__listOfBrokerSummary] = js.undefined,
         NextToken: js.UndefOr[__string] = js.undefined
     ): ListBrokersResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "BrokerSummaries" -> BrokerSummaries.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NextToken" -> NextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListBrokersResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      BrokerSummaries.foreach(__v => __obj.update("BrokerSummaries", __v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListBrokersResponse]
     }
   }
 
@@ -1137,17 +901,13 @@ package mq {
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
         NextToken: js.UndefOr[__string] = js.undefined
     ): ListConfigurationRevisionsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ConfigurationId" -> ConfigurationId.asInstanceOf[js.Any],
-        "MaxResults" -> MaxResults.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NextToken" -> NextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "ConfigurationId" -> ConfigurationId.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListConfigurationRevisionsRequest]
+      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListConfigurationRevisionsRequest]
     }
   }
 
@@ -1166,22 +926,12 @@ package mq {
         NextToken: js.UndefOr[__string] = js.undefined,
         Revisions: js.UndefOr[__listOfConfigurationRevision] = js.undefined
     ): ListConfigurationRevisionsResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ConfigurationId" -> ConfigurationId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MaxResults" -> MaxResults.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NextToken" -> NextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Revisions" -> Revisions.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListConfigurationRevisionsResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      ConfigurationId.foreach(__v => __obj.update("ConfigurationId", __v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      Revisions.foreach(__v => __obj.update("Revisions", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListConfigurationRevisionsResponse]
     }
   }
 
@@ -1196,16 +946,10 @@ package mq {
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
         NextToken: js.UndefOr[__string] = js.undefined
     ): ListConfigurationsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "MaxResults" -> MaxResults.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NextToken" -> NextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListConfigurationsRequest]
+      val __obj = js.Dictionary.empty[js.Any]
+      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListConfigurationsRequest]
     }
   }
 
@@ -1222,19 +966,11 @@ package mq {
         MaxResults: js.UndefOr[__integer] = js.undefined,
         NextToken: js.UndefOr[__string] = js.undefined
     ): ListConfigurationsResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Configurations" -> Configurations.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MaxResults" -> MaxResults.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NextToken" -> NextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListConfigurationsResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      Configurations.foreach(__v => __obj.update("Configurations", __v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListConfigurationsResponse]
     }
   }
 
@@ -1247,11 +983,11 @@ package mq {
     def apply(
         ResourceArn: __string
     ): ListTagsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListTagsRequest]
+      __obj.asInstanceOf[ListTagsRequest]
     }
   }
 
@@ -1264,13 +1000,9 @@ package mq {
     def apply(
         Tags: js.UndefOr[__mapOf__string] = js.undefined
     ): ListTagsResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Tags" -> Tags.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListTagsResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListTagsResponse]
     }
   }
 
@@ -1287,17 +1019,13 @@ package mq {
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
         NextToken: js.UndefOr[__string] = js.undefined
     ): ListUsersRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "BrokerId" -> BrokerId.asInstanceOf[js.Any],
-        "MaxResults" -> MaxResults.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NextToken" -> NextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "BrokerId" -> BrokerId.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListUsersRequest]
+      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListUsersRequest]
     }
   }
 
@@ -1316,22 +1044,12 @@ package mq {
         NextToken: js.UndefOr[__string] = js.undefined,
         Users: js.UndefOr[__listOfUserSummary] = js.undefined
     ): ListUsersResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "BrokerId" -> BrokerId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MaxResults" -> MaxResults.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NextToken" -> NextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Users" -> Users.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListUsersResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      BrokerId.foreach(__v => __obj.update("BrokerId", __v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      Users.foreach(__v => __obj.update("Users", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListUsersResponse]
     }
   }
 
@@ -1349,16 +1067,10 @@ package mq {
         Audit: js.UndefOr[__boolean] = js.undefined,
         General: js.UndefOr[__boolean] = js.undefined
     ): Logs = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Audit" -> Audit.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "General" -> General.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Logs]
+      val __obj = js.Dictionary.empty[js.Any]
+      Audit.foreach(__v => __obj.update("Audit", __v.asInstanceOf[js.Any]))
+      General.foreach(__v => __obj.update("General", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Logs]
     }
   }
 
@@ -1382,25 +1094,13 @@ package mq {
         GeneralLogGroup: js.UndefOr[__string] = js.undefined,
         Pending: js.UndefOr[PendingLogs] = js.undefined
     ): LogsSummary = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Audit" -> Audit.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "AuditLogGroup" -> AuditLogGroup.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "General" -> General.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "GeneralLogGroup" -> GeneralLogGroup.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Pending" -> Pending.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[LogsSummary]
+      val __obj = js.Dictionary.empty[js.Any]
+      Audit.foreach(__v => __obj.update("Audit", __v.asInstanceOf[js.Any]))
+      AuditLogGroup.foreach(__v => __obj.update("AuditLogGroup", __v.asInstanceOf[js.Any]))
+      General.foreach(__v => __obj.update("General", __v.asInstanceOf[js.Any]))
+      GeneralLogGroup.foreach(__v => __obj.update("GeneralLogGroup", __v.asInstanceOf[js.Any]))
+      Pending.foreach(__v => __obj.update("Pending", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[LogsSummary]
     }
   }
 
@@ -1418,16 +1118,10 @@ package mq {
         Audit: js.UndefOr[__boolean] = js.undefined,
         General: js.UndefOr[__boolean] = js.undefined
     ): PendingLogs = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Audit" -> Audit.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "General" -> General.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PendingLogs]
+      val __obj = js.Dictionary.empty[js.Any]
+      Audit.foreach(__v => __obj.update("Audit", __v.asInstanceOf[js.Any]))
+      General.foreach(__v => __obj.update("General", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PendingLogs]
     }
   }
 
@@ -1440,11 +1134,11 @@ package mq {
     def apply(
         BrokerId: __string
     ): RebootBrokerRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "BrokerId" -> BrokerId.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RebootBrokerRequest]
+      __obj.asInstanceOf[RebootBrokerRequest]
     }
   }
 
@@ -1454,10 +1148,9 @@ package mq {
   object RebootBrokerResponse {
     def apply(
         ): RebootBrokerResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary.empty[js.Any]
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RebootBrokerResponse]
+      __obj.asInstanceOf[RebootBrokerResponse]
     }
   }
 
@@ -1477,19 +1170,11 @@ package mq {
         ElementName: js.UndefOr[__string] = js.undefined,
         Reason: js.UndefOr[SanitizationWarningReason] = js.undefined
     ): SanitizationWarning = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "AttributeName" -> AttributeName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ElementName" -> ElementName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Reason" -> Reason.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SanitizationWarning]
+      val __obj = js.Dictionary.empty[js.Any]
+      AttributeName.foreach(__v => __obj.update("AttributeName", __v.asInstanceOf[js.Any]))
+      ElementName.foreach(__v => __obj.update("ElementName", __v.asInstanceOf[js.Any]))
+      Reason.foreach(__v => __obj.update("Reason", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[SanitizationWarning]
     }
   }
 
@@ -1524,23 +1209,15 @@ package mq {
         EngineVersion: js.UndefOr[__string] = js.undefined,
         Logs: js.UndefOr[Logs] = js.undefined
     ): UpdateBrokerRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "BrokerId" -> BrokerId.asInstanceOf[js.Any],
-        "AutoMinorVersionUpgrade" -> AutoMinorVersionUpgrade.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Configuration" -> Configuration.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "EngineVersion" -> EngineVersion.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Logs" -> Logs.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "BrokerId" -> BrokerId.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateBrokerRequest]
+      AutoMinorVersionUpgrade.foreach(__v => __obj.update("AutoMinorVersionUpgrade", __v.asInstanceOf[js.Any]))
+      Configuration.foreach(__v => __obj.update("Configuration", __v.asInstanceOf[js.Any]))
+      EngineVersion.foreach(__v => __obj.update("EngineVersion", __v.asInstanceOf[js.Any]))
+      Logs.foreach(__v => __obj.update("Logs", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateBrokerRequest]
     }
   }
 
@@ -1561,25 +1238,13 @@ package mq {
         EngineVersion: js.UndefOr[__string] = js.undefined,
         Logs: js.UndefOr[Logs] = js.undefined
     ): UpdateBrokerResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "AutoMinorVersionUpgrade" -> AutoMinorVersionUpgrade.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "BrokerId" -> BrokerId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Configuration" -> Configuration.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "EngineVersion" -> EngineVersion.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Logs" -> Logs.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateBrokerResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      AutoMinorVersionUpgrade.foreach(__v => __obj.update("AutoMinorVersionUpgrade", __v.asInstanceOf[js.Any]))
+      BrokerId.foreach(__v => __obj.update("BrokerId", __v.asInstanceOf[js.Any]))
+      Configuration.foreach(__v => __obj.update("Configuration", __v.asInstanceOf[js.Any]))
+      EngineVersion.foreach(__v => __obj.update("EngineVersion", __v.asInstanceOf[js.Any]))
+      Logs.foreach(__v => __obj.update("Logs", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateBrokerResponse]
     }
   }
 
@@ -1599,17 +1264,13 @@ package mq {
         Data: js.UndefOr[__string] = js.undefined,
         Description: js.UndefOr[__string] = js.undefined
     ): UpdateConfigurationRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ConfigurationId" -> ConfigurationId.asInstanceOf[js.Any],
-        "Data" -> Data.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Description" -> Description.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "ConfigurationId" -> ConfigurationId.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateConfigurationRequest]
+      Data.foreach(__v => __obj.update("Data", __v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateConfigurationRequest]
     }
   }
 
@@ -1632,28 +1293,14 @@ package mq {
         Name: js.UndefOr[__string] = js.undefined,
         Warnings: js.UndefOr[__listOfSanitizationWarning] = js.undefined
     ): UpdateConfigurationResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Arn" -> Arn.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Created" -> Created.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Id" -> Id.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "LatestRevision" -> LatestRevision.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Name" -> Name.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Warnings" -> Warnings.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateConfigurationResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      Arn.foreach(__v => __obj.update("Arn", __v.asInstanceOf[js.Any]))
+      Created.foreach(__v => __obj.update("Created", __v.asInstanceOf[js.Any]))
+      Id.foreach(__v => __obj.update("Id", __v.asInstanceOf[js.Any]))
+      LatestRevision.foreach(__v => __obj.update("LatestRevision", __v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
+      Warnings.foreach(__v => __obj.update("Warnings", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateConfigurationResponse]
     }
   }
 
@@ -1677,21 +1324,15 @@ package mq {
         Groups: js.UndefOr[__listOf__string] = js.undefined,
         Password: js.UndefOr[__string] = js.undefined
     ): UpdateUserRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "BrokerId" -> BrokerId.asInstanceOf[js.Any],
-        "Username" -> Username.asInstanceOf[js.Any],
-        "ConsoleAccess" -> ConsoleAccess.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Groups" -> Groups.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Password" -> Password.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "Username" -> Username.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateUserRequest]
+      ConsoleAccess.foreach(__v => __obj.update("ConsoleAccess", __v.asInstanceOf[js.Any]))
+      Groups.foreach(__v => __obj.update("Groups", __v.asInstanceOf[js.Any]))
+      Password.foreach(__v => __obj.update("Password", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateUserRequest]
     }
   }
 
@@ -1701,10 +1342,9 @@ package mq {
   object UpdateUserResponse {
     def apply(
         ): UpdateUserResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary.empty[js.Any]
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateUserResponse]
+      __obj.asInstanceOf[UpdateUserResponse]
     }
   }
 
@@ -1726,22 +1366,12 @@ package mq {
         Password: js.UndefOr[__string] = js.undefined,
         Username: js.UndefOr[__string] = js.undefined
     ): User = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ConsoleAccess" -> ConsoleAccess.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Groups" -> Groups.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Password" -> Password.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Username" -> Username.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[User]
+      val __obj = js.Dictionary.empty[js.Any]
+      ConsoleAccess.foreach(__v => __obj.update("ConsoleAccess", __v.asInstanceOf[js.Any]))
+      Groups.foreach(__v => __obj.update("Groups", __v.asInstanceOf[js.Any]))
+      Password.foreach(__v => __obj.update("Password", __v.asInstanceOf[js.Any]))
+      Username.foreach(__v => __obj.update("Username", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[User]
     }
   }
 
@@ -1761,19 +1391,11 @@ package mq {
         Groups: js.UndefOr[__listOf__string] = js.undefined,
         PendingChange: js.UndefOr[ChangeType] = js.undefined
     ): UserPendingChanges = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ConsoleAccess" -> ConsoleAccess.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Groups" -> Groups.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "PendingChange" -> PendingChange.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UserPendingChanges]
+      val __obj = js.Dictionary.empty[js.Any]
+      ConsoleAccess.foreach(__v => __obj.update("ConsoleAccess", __v.asInstanceOf[js.Any]))
+      Groups.foreach(__v => __obj.update("Groups", __v.asInstanceOf[js.Any]))
+      PendingChange.foreach(__v => __obj.update("PendingChange", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UserPendingChanges]
     }
   }
 
@@ -1791,16 +1413,10 @@ package mq {
         PendingChange: js.UndefOr[ChangeType] = js.undefined,
         Username: js.UndefOr[__string] = js.undefined
     ): UserSummary = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "PendingChange" -> PendingChange.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Username" -> Username.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UserSummary]
+      val __obj = js.Dictionary.empty[js.Any]
+      PendingChange.foreach(__v => __obj.update("PendingChange", __v.asInstanceOf[js.Any]))
+      Username.foreach(__v => __obj.update("Username", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UserSummary]
     }
   }
 
@@ -1820,19 +1436,11 @@ package mq {
         TimeOfDay: js.UndefOr[__string] = js.undefined,
         TimeZone: js.UndefOr[__string] = js.undefined
     ): WeeklyStartTime = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "DayOfWeek" -> DayOfWeek.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "TimeOfDay" -> TimeOfDay.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "TimeZone" -> TimeZone.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[WeeklyStartTime]
+      val __obj = js.Dictionary.empty[js.Any]
+      DayOfWeek.foreach(__v => __obj.update("DayOfWeek", __v.asInstanceOf[js.Any]))
+      TimeOfDay.foreach(__v => __obj.update("TimeOfDay", __v.asInstanceOf[js.Any]))
+      TimeZone.foreach(__v => __obj.update("TimeZone", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[WeeklyStartTime]
     }
   }
 }

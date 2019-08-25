@@ -117,11 +117,11 @@ package fms {
     def apply(
         AdminAccount: AWSAccountId
     ): AssociateAdminAccountRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "AdminAccount" -> AdminAccount.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AssociateAdminAccountRequest]
+      __obj.asInstanceOf[AssociateAdminAccountRequest]
     }
   }
 
@@ -141,19 +141,11 @@ package fms {
         ResourceType: js.UndefOr[ResourceType] = js.undefined,
         ViolationReason: js.UndefOr[ViolationReason] = js.undefined
     ): ComplianceViolator = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ResourceId" -> ResourceId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ResourceType" -> ResourceType.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ViolationReason" -> ViolationReason.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ComplianceViolator]
+      val __obj = js.Dictionary.empty[js.Any]
+      ResourceId.foreach(__v => __obj.update("ResourceId", __v.asInstanceOf[js.Any]))
+      ResourceType.foreach(__v => __obj.update("ResourceType", __v.asInstanceOf[js.Any]))
+      ViolationReason.foreach(__v => __obj.update("ViolationReason", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ComplianceViolator]
     }
   }
 
@@ -169,10 +161,9 @@ package fms {
   object DeleteNotificationChannelRequest {
     def apply(
         ): DeleteNotificationChannelRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary.empty[js.Any]
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteNotificationChannelRequest]
+      __obj.asInstanceOf[DeleteNotificationChannelRequest]
     }
   }
 
@@ -187,14 +178,12 @@ package fms {
         PolicyId: PolicyId,
         DeleteAllPolicyResources: js.UndefOr[Boolean] = js.undefined
     ): DeletePolicyRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "PolicyId" -> PolicyId.asInstanceOf[js.Any],
-        "DeleteAllPolicyResources" -> DeleteAllPolicyResources.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "PolicyId" -> PolicyId.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeletePolicyRequest]
+      DeleteAllPolicyResources.foreach(__v => __obj.update("DeleteAllPolicyResources", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DeletePolicyRequest]
     }
   }
 
@@ -212,10 +201,9 @@ package fms {
   object DisassociateAdminAccountRequest {
     def apply(
         ): DisassociateAdminAccountRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary.empty[js.Any]
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DisassociateAdminAccountRequest]
+      __obj.asInstanceOf[DisassociateAdminAccountRequest]
     }
   }
 
@@ -235,19 +223,11 @@ package fms {
         EvaluationLimitExceeded: js.UndefOr[Boolean] = js.undefined,
         ViolatorCount: js.UndefOr[ResourceCount] = js.undefined
     ): EvaluationResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ComplianceStatus" -> ComplianceStatus.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "EvaluationLimitExceeded" -> EvaluationLimitExceeded.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ViolatorCount" -> ViolatorCount.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[EvaluationResult]
+      val __obj = js.Dictionary.empty[js.Any]
+      ComplianceStatus.foreach(__v => __obj.update("ComplianceStatus", __v.asInstanceOf[js.Any]))
+      EvaluationLimitExceeded.foreach(__v => __obj.update("EvaluationLimitExceeded", __v.asInstanceOf[js.Any]))
+      ViolatorCount.foreach(__v => __obj.update("ViolatorCount", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[EvaluationResult]
     }
   }
 
@@ -257,10 +237,9 @@ package fms {
   object GetAdminAccountRequest {
     def apply(
         ): GetAdminAccountRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary.empty[js.Any]
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetAdminAccountRequest]
+      __obj.asInstanceOf[GetAdminAccountRequest]
     }
   }
 
@@ -275,16 +254,10 @@ package fms {
         AdminAccount: js.UndefOr[AWSAccountId] = js.undefined,
         RoleStatus: js.UndefOr[AccountRoleStatus] = js.undefined
     ): GetAdminAccountResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "AdminAccount" -> AdminAccount.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "RoleStatus" -> RoleStatus.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetAdminAccountResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      AdminAccount.foreach(__v => __obj.update("AdminAccount", __v.asInstanceOf[js.Any]))
+      RoleStatus.foreach(__v => __obj.update("RoleStatus", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetAdminAccountResponse]
     }
   }
 
@@ -299,12 +272,12 @@ package fms {
         MemberAccount: AWSAccountId,
         PolicyId: PolicyId
     ): GetComplianceDetailRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "MemberAccount" -> MemberAccount.asInstanceOf[js.Any],
         "PolicyId"      -> PolicyId.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetComplianceDetailRequest]
+      __obj.asInstanceOf[GetComplianceDetailRequest]
     }
   }
 
@@ -317,13 +290,9 @@ package fms {
     def apply(
         PolicyComplianceDetail: js.UndefOr[PolicyComplianceDetail] = js.undefined
     ): GetComplianceDetailResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "PolicyComplianceDetail" -> PolicyComplianceDetail.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetComplianceDetailResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      PolicyComplianceDetail.foreach(__v => __obj.update("PolicyComplianceDetail", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetComplianceDetailResponse]
     }
   }
 
@@ -333,10 +302,9 @@ package fms {
   object GetNotificationChannelRequest {
     def apply(
         ): GetNotificationChannelRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary.empty[js.Any]
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetNotificationChannelRequest]
+      __obj.asInstanceOf[GetNotificationChannelRequest]
     }
   }
 
@@ -351,16 +319,10 @@ package fms {
         SnsRoleName: js.UndefOr[ResourceArn] = js.undefined,
         SnsTopicArn: js.UndefOr[ResourceArn] = js.undefined
     ): GetNotificationChannelResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "SnsRoleName" -> SnsRoleName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SnsTopicArn" -> SnsTopicArn.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetNotificationChannelResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      SnsRoleName.foreach(__v => __obj.update("SnsRoleName", __v.asInstanceOf[js.Any]))
+      SnsTopicArn.foreach(__v => __obj.update("SnsTopicArn", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetNotificationChannelResponse]
     }
   }
 
@@ -373,11 +335,11 @@ package fms {
     def apply(
         PolicyId: PolicyId
     ): GetPolicyRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "PolicyId" -> PolicyId.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetPolicyRequest]
+      __obj.asInstanceOf[GetPolicyRequest]
     }
   }
 
@@ -392,16 +354,10 @@ package fms {
         Policy: js.UndefOr[Policy] = js.undefined,
         PolicyArn: js.UndefOr[ResourceArn] = js.undefined
     ): GetPolicyResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Policy" -> Policy.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "PolicyArn" -> PolicyArn.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetPolicyResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      Policy.foreach(__v => __obj.update("Policy", __v.asInstanceOf[js.Any]))
+      PolicyArn.foreach(__v => __obj.update("PolicyArn", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetPolicyResponse]
     }
   }
 
@@ -424,26 +380,16 @@ package fms {
         NextToken: js.UndefOr[PaginationToken] = js.undefined,
         StartTime: js.UndefOr[TimeStamp] = js.undefined
     ): GetProtectionStatusRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "PolicyId" -> PolicyId.asInstanceOf[js.Any],
-        "EndTime" -> EndTime.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MaxResults" -> MaxResults.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MemberAccountId" -> MemberAccountId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NextToken" -> NextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "StartTime" -> StartTime.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "PolicyId" -> PolicyId.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetProtectionStatusRequest]
+      EndTime.foreach(__v => __obj.update("EndTime", __v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
+      MemberAccountId.foreach(__v => __obj.update("MemberAccountId", __v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      StartTime.foreach(__v => __obj.update("StartTime", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetProtectionStatusRequest]
     }
   }
 
@@ -462,22 +408,12 @@ package fms {
         NextToken: js.UndefOr[PaginationToken] = js.undefined,
         ServiceType: js.UndefOr[SecurityServiceType] = js.undefined
     ): GetProtectionStatusResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "AdminAccountId" -> AdminAccountId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Data" -> Data.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NextToken" -> NextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ServiceType" -> ServiceType.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetProtectionStatusResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      AdminAccountId.foreach(__v => __obj.update("AdminAccountId", __v.asInstanceOf[js.Any]))
+      Data.foreach(__v => __obj.update("Data", __v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      ServiceType.foreach(__v => __obj.update("ServiceType", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetProtectionStatusResponse]
     }
   }
 
@@ -494,17 +430,13 @@ package fms {
         MaxResults: js.UndefOr[PaginationMaxResults] = js.undefined,
         NextToken: js.UndefOr[PaginationToken] = js.undefined
     ): ListComplianceStatusRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "PolicyId" -> PolicyId.asInstanceOf[js.Any],
-        "MaxResults" -> MaxResults.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NextToken" -> NextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "PolicyId" -> PolicyId.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListComplianceStatusRequest]
+      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListComplianceStatusRequest]
     }
   }
 
@@ -519,16 +451,10 @@ package fms {
         NextToken: js.UndefOr[PaginationToken] = js.undefined,
         PolicyComplianceStatusList: js.UndefOr[PolicyComplianceStatusList] = js.undefined
     ): ListComplianceStatusResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "NextToken" -> NextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "PolicyComplianceStatusList" -> PolicyComplianceStatusList.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListComplianceStatusResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      PolicyComplianceStatusList.foreach(__v => __obj.update("PolicyComplianceStatusList", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListComplianceStatusResponse]
     }
   }
 
@@ -543,16 +469,10 @@ package fms {
         MaxResults: js.UndefOr[PaginationMaxResults] = js.undefined,
         NextToken: js.UndefOr[PaginationToken] = js.undefined
     ): ListMemberAccountsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "MaxResults" -> MaxResults.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NextToken" -> NextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListMemberAccountsRequest]
+      val __obj = js.Dictionary.empty[js.Any]
+      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListMemberAccountsRequest]
     }
   }
 
@@ -567,16 +487,10 @@ package fms {
         MemberAccounts: js.UndefOr[MemberAccounts] = js.undefined,
         NextToken: js.UndefOr[PaginationToken] = js.undefined
     ): ListMemberAccountsResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "MemberAccounts" -> MemberAccounts.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NextToken" -> NextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListMemberAccountsResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      MemberAccounts.foreach(__v => __obj.update("MemberAccounts", __v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListMemberAccountsResponse]
     }
   }
 
@@ -591,16 +505,10 @@ package fms {
         MaxResults: js.UndefOr[PaginationMaxResults] = js.undefined,
         NextToken: js.UndefOr[PaginationToken] = js.undefined
     ): ListPoliciesRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "MaxResults" -> MaxResults.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NextToken" -> NextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListPoliciesRequest]
+      val __obj = js.Dictionary.empty[js.Any]
+      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListPoliciesRequest]
     }
   }
 
@@ -615,16 +523,10 @@ package fms {
         NextToken: js.UndefOr[PaginationToken] = js.undefined,
         PolicyList: js.UndefOr[PolicySummaryList] = js.undefined
     ): ListPoliciesResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "NextToken" -> NextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "PolicyList" -> PolicyList.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListPoliciesResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      PolicyList.foreach(__v => __obj.update("PolicyList", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListPoliciesResponse]
     }
   }
 
@@ -660,33 +562,21 @@ package fms {
         ResourceTags: js.UndefOr[ResourceTags] = js.undefined,
         ResourceTypeList: js.UndefOr[ResourceTypeList] = js.undefined
     ): Policy = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ExcludeResourceTags"       -> ExcludeResourceTags.asInstanceOf[js.Any],
         "PolicyName"                -> PolicyName.asInstanceOf[js.Any],
         "RemediationEnabled"        -> RemediationEnabled.asInstanceOf[js.Any],
         "ResourceType"              -> ResourceType.asInstanceOf[js.Any],
-        "SecurityServicePolicyData" -> SecurityServicePolicyData.asInstanceOf[js.Any],
-        "ExcludeMap" -> ExcludeMap.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "IncludeMap" -> IncludeMap.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "PolicyId" -> PolicyId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "PolicyUpdateToken" -> PolicyUpdateToken.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ResourceTags" -> ResourceTags.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ResourceTypeList" -> ResourceTypeList.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "SecurityServicePolicyData" -> SecurityServicePolicyData.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Policy]
+      ExcludeMap.foreach(__v => __obj.update("ExcludeMap", __v.asInstanceOf[js.Any]))
+      IncludeMap.foreach(__v => __obj.update("IncludeMap", __v.asInstanceOf[js.Any]))
+      PolicyId.foreach(__v => __obj.update("PolicyId", __v.asInstanceOf[js.Any]))
+      PolicyUpdateToken.foreach(__v => __obj.update("PolicyUpdateToken", __v.asInstanceOf[js.Any]))
+      ResourceTags.foreach(__v => __obj.update("ResourceTags", __v.asInstanceOf[js.Any]))
+      ResourceTypeList.foreach(__v => __obj.update("ResourceTypeList", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Policy]
     }
   }
 
@@ -714,31 +604,15 @@ package fms {
         PolicyOwner: js.UndefOr[AWSAccountId] = js.undefined,
         Violators: js.UndefOr[ComplianceViolators] = js.undefined
     ): PolicyComplianceDetail = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "EvaluationLimitExceeded" -> EvaluationLimitExceeded.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ExpiredAt" -> ExpiredAt.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "IssueInfoMap" -> IssueInfoMap.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MemberAccount" -> MemberAccount.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "PolicyId" -> PolicyId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "PolicyOwner" -> PolicyOwner.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Violators" -> Violators.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PolicyComplianceDetail]
+      val __obj = js.Dictionary.empty[js.Any]
+      EvaluationLimitExceeded.foreach(__v => __obj.update("EvaluationLimitExceeded", __v.asInstanceOf[js.Any]))
+      ExpiredAt.foreach(__v => __obj.update("ExpiredAt", __v.asInstanceOf[js.Any]))
+      IssueInfoMap.foreach(__v => __obj.update("IssueInfoMap", __v.asInstanceOf[js.Any]))
+      MemberAccount.foreach(__v => __obj.update("MemberAccount", __v.asInstanceOf[js.Any]))
+      PolicyId.foreach(__v => __obj.update("PolicyId", __v.asInstanceOf[js.Any]))
+      PolicyOwner.foreach(__v => __obj.update("PolicyOwner", __v.asInstanceOf[js.Any]))
+      Violators.foreach(__v => __obj.update("Violators", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PolicyComplianceDetail]
     }
   }
 
@@ -766,31 +640,15 @@ package fms {
         PolicyName: js.UndefOr[ResourceName] = js.undefined,
         PolicyOwner: js.UndefOr[AWSAccountId] = js.undefined
     ): PolicyComplianceStatus = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "EvaluationResults" -> EvaluationResults.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "IssueInfoMap" -> IssueInfoMap.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "LastUpdated" -> LastUpdated.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MemberAccount" -> MemberAccount.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "PolicyId" -> PolicyId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "PolicyName" -> PolicyName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "PolicyOwner" -> PolicyOwner.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PolicyComplianceStatus]
+      val __obj = js.Dictionary.empty[js.Any]
+      EvaluationResults.foreach(__v => __obj.update("EvaluationResults", __v.asInstanceOf[js.Any]))
+      IssueInfoMap.foreach(__v => __obj.update("IssueInfoMap", __v.asInstanceOf[js.Any]))
+      LastUpdated.foreach(__v => __obj.update("LastUpdated", __v.asInstanceOf[js.Any]))
+      MemberAccount.foreach(__v => __obj.update("MemberAccount", __v.asInstanceOf[js.Any]))
+      PolicyId.foreach(__v => __obj.update("PolicyId", __v.asInstanceOf[js.Any]))
+      PolicyName.foreach(__v => __obj.update("PolicyName", __v.asInstanceOf[js.Any]))
+      PolicyOwner.foreach(__v => __obj.update("PolicyOwner", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PolicyComplianceStatus]
     }
   }
 
@@ -823,28 +681,14 @@ package fms {
         ResourceType: js.UndefOr[ResourceType] = js.undefined,
         SecurityServiceType: js.UndefOr[SecurityServiceType] = js.undefined
     ): PolicySummary = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "PolicyArn" -> PolicyArn.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "PolicyId" -> PolicyId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "PolicyName" -> PolicyName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "RemediationEnabled" -> RemediationEnabled.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ResourceType" -> ResourceType.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SecurityServiceType" -> SecurityServiceType.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PolicySummary]
+      val __obj = js.Dictionary.empty[js.Any]
+      PolicyArn.foreach(__v => __obj.update("PolicyArn", __v.asInstanceOf[js.Any]))
+      PolicyId.foreach(__v => __obj.update("PolicyId", __v.asInstanceOf[js.Any]))
+      PolicyName.foreach(__v => __obj.update("PolicyName", __v.asInstanceOf[js.Any]))
+      RemediationEnabled.foreach(__v => __obj.update("RemediationEnabled", __v.asInstanceOf[js.Any]))
+      ResourceType.foreach(__v => __obj.update("ResourceType", __v.asInstanceOf[js.Any]))
+      SecurityServiceType.foreach(__v => __obj.update("SecurityServiceType", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PolicySummary]
     }
   }
 
@@ -859,12 +703,12 @@ package fms {
         SnsRoleName: ResourceArn,
         SnsTopicArn: ResourceArn
     ): PutNotificationChannelRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "SnsRoleName" -> SnsRoleName.asInstanceOf[js.Any],
         "SnsTopicArn" -> SnsTopicArn.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PutNotificationChannelRequest]
+      __obj.asInstanceOf[PutNotificationChannelRequest]
     }
   }
 
@@ -877,11 +721,11 @@ package fms {
     def apply(
         Policy: Policy
     ): PutPolicyRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "Policy" -> Policy.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PutPolicyRequest]
+      __obj.asInstanceOf[PutPolicyRequest]
     }
   }
 
@@ -896,16 +740,10 @@ package fms {
         Policy: js.UndefOr[Policy] = js.undefined,
         PolicyArn: js.UndefOr[ResourceArn] = js.undefined
     ): PutPolicyResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Policy" -> Policy.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "PolicyArn" -> PolicyArn.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PutPolicyResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      Policy.foreach(__v => __obj.update("Policy", __v.asInstanceOf[js.Any]))
+      PolicyArn.foreach(__v => __obj.update("PolicyArn", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PutPolicyResponse]
     }
   }
 
@@ -923,14 +761,12 @@ package fms {
         Key: TagKey,
         Value: js.UndefOr[TagValue] = js.undefined
     ): ResourceTag = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Key" -> Key.asInstanceOf[js.Any],
-        "Value" -> Value.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "Key" -> Key.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ResourceTag]
+      Value.foreach(__v => __obj.update("Value", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ResourceTag]
     }
   }
 
@@ -948,14 +784,12 @@ package fms {
         Type: SecurityServiceType,
         ManagedServiceData: js.UndefOr[ManagedServiceData] = js.undefined
     ): SecurityServicePolicyData = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Type" -> Type.asInstanceOf[js.Any],
-        "ManagedServiceData" -> ManagedServiceData.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "Type" -> Type.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SecurityServicePolicyData]
+      ManagedServiceData.foreach(__v => __obj.update("ManagedServiceData", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[SecurityServicePolicyData]
     }
   }
 

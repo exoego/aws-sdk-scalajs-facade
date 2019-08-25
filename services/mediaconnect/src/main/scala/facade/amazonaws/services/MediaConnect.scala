@@ -101,12 +101,12 @@ package mediaconnect {
         FlowArn: __string,
         Outputs: __listOfAddOutputRequest
     ): AddFlowOutputsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "FlowArn" -> FlowArn.asInstanceOf[js.Any],
         "Outputs" -> Outputs.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AddFlowOutputsRequest]
+      __obj.asInstanceOf[AddFlowOutputsRequest]
     }
   }
 
@@ -121,16 +121,10 @@ package mediaconnect {
         FlowArn: js.UndefOr[__string] = js.undefined,
         Outputs: js.UndefOr[__listOfOutput] = js.undefined
     ): AddFlowOutputsResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "FlowArn" -> FlowArn.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Outputs" -> Outputs.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AddFlowOutputsResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      FlowArn.foreach(__v => __obj.update("FlowArn", __v.asInstanceOf[js.Any]))
+      Outputs.foreach(__v => __obj.update("Outputs", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AddFlowOutputsResponse]
     }
   }
 
@@ -162,31 +156,19 @@ package mediaconnect {
         SmoothingLatency: js.UndefOr[__integer] = js.undefined,
         StreamId: js.UndefOr[__string] = js.undefined
     ): AddOutputRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "Destination" -> Destination.asInstanceOf[js.Any],
         "Port"        -> Port.asInstanceOf[js.Any],
-        "Protocol"    -> Protocol.asInstanceOf[js.Any],
-        "Description" -> Description.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Encryption" -> Encryption.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MaxLatency" -> MaxLatency.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Name" -> Name.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SmoothingLatency" -> SmoothingLatency.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "StreamId" -> StreamId.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "Protocol"    -> Protocol.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AddOutputRequest]
+      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
+      Encryption.foreach(__v => __obj.update("Encryption", __v.asInstanceOf[js.Any]))
+      MaxLatency.foreach(__v => __obj.update("MaxLatency", __v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
+      SmoothingLatency.foreach(__v => __obj.update("SmoothingLatency", __v.asInstanceOf[js.Any]))
+      StreamId.foreach(__v => __obj.update("StreamId", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AddOutputRequest]
     }
   }
 
@@ -218,21 +200,15 @@ package mediaconnect {
         Entitlements: js.UndefOr[__listOfGrantEntitlementRequest] = js.undefined,
         Outputs: js.UndefOr[__listOfAddOutputRequest] = js.undefined
     ): CreateFlowRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "Name"   -> Name.asInstanceOf[js.Any],
-        "Source" -> Source.asInstanceOf[js.Any],
-        "AvailabilityZone" -> AvailabilityZone.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Entitlements" -> Entitlements.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Outputs" -> Outputs.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "Source" -> Source.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateFlowRequest]
+      AvailabilityZone.foreach(__v => __obj.update("AvailabilityZone", __v.asInstanceOf[js.Any]))
+      Entitlements.foreach(__v => __obj.update("Entitlements", __v.asInstanceOf[js.Any]))
+      Outputs.foreach(__v => __obj.update("Outputs", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateFlowRequest]
     }
   }
 
@@ -245,13 +221,9 @@ package mediaconnect {
     def apply(
         Flow: js.UndefOr[Flow] = js.undefined
     ): CreateFlowResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Flow" -> Flow.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateFlowResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      Flow.foreach(__v => __obj.update("Flow", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateFlowResponse]
     }
   }
 
@@ -264,11 +236,11 @@ package mediaconnect {
     def apply(
         FlowArn: __string
     ): DeleteFlowRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "FlowArn" -> FlowArn.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteFlowRequest]
+      __obj.asInstanceOf[DeleteFlowRequest]
     }
   }
 
@@ -283,16 +255,10 @@ package mediaconnect {
         FlowArn: js.UndefOr[__string] = js.undefined,
         Status: js.UndefOr[Status] = js.undefined
     ): DeleteFlowResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "FlowArn" -> FlowArn.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Status" -> Status.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteFlowResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      FlowArn.foreach(__v => __obj.update("FlowArn", __v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.update("Status", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DeleteFlowResponse]
     }
   }
 
@@ -305,11 +271,11 @@ package mediaconnect {
     def apply(
         FlowArn: __string
     ): DescribeFlowRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "FlowArn" -> FlowArn.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeFlowRequest]
+      __obj.asInstanceOf[DescribeFlowRequest]
     }
   }
 
@@ -324,16 +290,10 @@ package mediaconnect {
         Flow: js.UndefOr[Flow] = js.undefined,
         Messages: js.UndefOr[Messages] = js.undefined
     ): DescribeFlowResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Flow" -> Flow.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Messages" -> Messages.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeFlowResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      Flow.foreach(__v => __obj.update("Flow", __v.asInstanceOf[js.Any]))
+      Messages.foreach(__v => __obj.update("Messages", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeFlowResponse]
     }
   }
 
@@ -355,16 +315,14 @@ package mediaconnect {
         SecretArn: __string,
         KeyType: js.UndefOr[KeyType] = js.undefined
     ): Encryption = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "Algorithm" -> Algorithm.asInstanceOf[js.Any],
         "RoleArn"   -> RoleArn.asInstanceOf[js.Any],
-        "SecretArn" -> SecretArn.asInstanceOf[js.Any],
-        "KeyType" -> KeyType.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "SecretArn" -> SecretArn.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Encryption]
+      KeyType.foreach(__v => __obj.update("KeyType", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Encryption]
     }
   }
 
@@ -388,19 +346,15 @@ package mediaconnect {
         Description: js.UndefOr[__string] = js.undefined,
         Encryption: js.UndefOr[Encryption] = js.undefined
     ): Entitlement = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "EntitlementArn" -> EntitlementArn.asInstanceOf[js.Any],
         "Name"           -> Name.asInstanceOf[js.Any],
-        "Subscribers"    -> Subscribers.asInstanceOf[js.Any],
-        "Description" -> Description.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Encryption" -> Encryption.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "Subscribers"    -> Subscribers.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Entitlement]
+      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
+      Encryption.foreach(__v => __obj.update("Encryption", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Entitlement]
     }
   }
 
@@ -432,23 +386,19 @@ package mediaconnect {
         Description: js.UndefOr[__string] = js.undefined,
         EgressIp: js.UndefOr[__string] = js.undefined
     ): Flow = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "AvailabilityZone" -> AvailabilityZone.asInstanceOf[js.Any],
         "Entitlements"     -> Entitlements.asInstanceOf[js.Any],
         "FlowArn"          -> FlowArn.asInstanceOf[js.Any],
         "Name"             -> Name.asInstanceOf[js.Any],
         "Outputs"          -> Outputs.asInstanceOf[js.Any],
         "Source"           -> Source.asInstanceOf[js.Any],
-        "Status"           -> Status.asInstanceOf[js.Any],
-        "Description" -> Description.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "EgressIp" -> EgressIp.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "Status"           -> Status.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Flow]
+      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
+      EgressIp.foreach(__v => __obj.update("EgressIp", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Flow]
     }
   }
 
@@ -470,20 +420,14 @@ package mediaconnect {
         Encryption: js.UndefOr[Encryption] = js.undefined,
         Name: js.UndefOr[__string] = js.undefined
     ): GrantEntitlementRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Subscribers" -> Subscribers.asInstanceOf[js.Any],
-        "Description" -> Description.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Encryption" -> Encryption.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Name" -> Name.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "Subscribers" -> Subscribers.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GrantEntitlementRequest]
+      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
+      Encryption.foreach(__v => __obj.update("Encryption", __v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GrantEntitlementRequest]
     }
   }
 
@@ -501,12 +445,12 @@ package mediaconnect {
         Entitlements: __listOfGrantEntitlementRequest,
         FlowArn: __string
     ): GrantFlowEntitlementsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "Entitlements" -> Entitlements.asInstanceOf[js.Any],
         "FlowArn"      -> FlowArn.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GrantFlowEntitlementsRequest]
+      __obj.asInstanceOf[GrantFlowEntitlementsRequest]
     }
   }
 
@@ -521,16 +465,10 @@ package mediaconnect {
         Entitlements: js.UndefOr[__listOfEntitlement] = js.undefined,
         FlowArn: js.UndefOr[__string] = js.undefined
     ): GrantFlowEntitlementsResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Entitlements" -> Entitlements.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "FlowArn" -> FlowArn.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GrantFlowEntitlementsResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      Entitlements.foreach(__v => __obj.update("Entitlements", __v.asInstanceOf[js.Any]))
+      FlowArn.foreach(__v => __obj.update("FlowArn", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GrantFlowEntitlementsResponse]
     }
   }
 
@@ -551,16 +489,10 @@ package mediaconnect {
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
         NextToken: js.UndefOr[__string] = js.undefined
     ): ListEntitlementsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "MaxResults" -> MaxResults.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NextToken" -> NextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListEntitlementsRequest]
+      val __obj = js.Dictionary.empty[js.Any]
+      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListEntitlementsRequest]
     }
   }
 
@@ -575,16 +507,10 @@ package mediaconnect {
         Entitlements: js.UndefOr[__listOfListedEntitlement] = js.undefined,
         NextToken: js.UndefOr[__string] = js.undefined
     ): ListEntitlementsResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Entitlements" -> Entitlements.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NextToken" -> NextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListEntitlementsResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      Entitlements.foreach(__v => __obj.update("Entitlements", __v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListEntitlementsResponse]
     }
   }
 
@@ -599,16 +525,10 @@ package mediaconnect {
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
         NextToken: js.UndefOr[__string] = js.undefined
     ): ListFlowsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "MaxResults" -> MaxResults.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NextToken" -> NextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListFlowsRequest]
+      val __obj = js.Dictionary.empty[js.Any]
+      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListFlowsRequest]
     }
   }
 
@@ -623,16 +543,10 @@ package mediaconnect {
         Flows: js.UndefOr[__listOfListedFlow] = js.undefined,
         NextToken: js.UndefOr[__string] = js.undefined
     ): ListFlowsResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Flows" -> Flows.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NextToken" -> NextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListFlowsResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      Flows.foreach(__v => __obj.update("Flows", __v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListFlowsResponse]
     }
   }
 
@@ -645,11 +559,11 @@ package mediaconnect {
     def apply(
         ResourceArn: __string
     ): ListTagsForResourceRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListTagsForResourceRequest]
+      __obj.asInstanceOf[ListTagsForResourceRequest]
     }
   }
 
@@ -662,13 +576,9 @@ package mediaconnect {
     def apply(
         Tags: js.UndefOr[__mapOf__string] = js.undefined
     ): ListTagsForResourceResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Tags" -> Tags.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListTagsForResourceResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListTagsForResourceResponse]
     }
   }
 
@@ -686,12 +596,12 @@ package mediaconnect {
         EntitlementArn: __string,
         EntitlementName: __string
     ): ListedEntitlement = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "EntitlementArn"  -> EntitlementArn.asInstanceOf[js.Any],
         "EntitlementName" -> EntitlementName.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListedEntitlement]
+      __obj.asInstanceOf[ListedEntitlement]
     }
   }
 
@@ -717,16 +627,16 @@ package mediaconnect {
         SourceType: SourceType,
         Status: Status
     ): ListedFlow = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "AvailabilityZone" -> AvailabilityZone.asInstanceOf[js.Any],
         "Description"      -> Description.asInstanceOf[js.Any],
         "FlowArn"          -> FlowArn.asInstanceOf[js.Any],
         "Name"             -> Name.asInstanceOf[js.Any],
         "SourceType"       -> SourceType.asInstanceOf[js.Any],
         "Status"           -> Status.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListedFlow]
+      __obj.asInstanceOf[ListedFlow]
     }
   }
 
@@ -742,11 +652,11 @@ package mediaconnect {
     def apply(
         Errors: __listOf__string
     ): Messages = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "Errors" -> Errors.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Messages]
+      __obj.asInstanceOf[Messages]
     }
   }
 
@@ -778,33 +688,19 @@ package mediaconnect {
         Port: js.UndefOr[__integer] = js.undefined,
         Transport: js.UndefOr[Transport] = js.undefined
     ): Output = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "Name"      -> Name.asInstanceOf[js.Any],
-        "OutputArn" -> OutputArn.asInstanceOf[js.Any],
-        "Description" -> Description.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Destination" -> Destination.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Encryption" -> Encryption.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "EntitlementArn" -> EntitlementArn.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MediaLiveInputArn" -> MediaLiveInputArn.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Port" -> Port.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Transport" -> Transport.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "OutputArn" -> OutputArn.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Output]
+      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
+      Destination.foreach(__v => __obj.update("Destination", __v.asInstanceOf[js.Any]))
+      Encryption.foreach(__v => __obj.update("Encryption", __v.asInstanceOf[js.Any]))
+      EntitlementArn.foreach(__v => __obj.update("EntitlementArn", __v.asInstanceOf[js.Any]))
+      MediaLiveInputArn.foreach(__v => __obj.update("MediaLiveInputArn", __v.asInstanceOf[js.Any]))
+      Port.foreach(__v => __obj.update("Port", __v.asInstanceOf[js.Any]))
+      Transport.foreach(__v => __obj.update("Transport", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Output]
     }
   }
 
@@ -827,12 +723,12 @@ package mediaconnect {
         FlowArn: __string,
         OutputArn: __string
     ): RemoveFlowOutputRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "FlowArn"   -> FlowArn.asInstanceOf[js.Any],
         "OutputArn" -> OutputArn.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RemoveFlowOutputRequest]
+      __obj.asInstanceOf[RemoveFlowOutputRequest]
     }
   }
 
@@ -847,16 +743,10 @@ package mediaconnect {
         FlowArn: js.UndefOr[__string] = js.undefined,
         OutputArn: js.UndefOr[__string] = js.undefined
     ): RemoveFlowOutputResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "FlowArn" -> FlowArn.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "OutputArn" -> OutputArn.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RemoveFlowOutputResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      FlowArn.foreach(__v => __obj.update("FlowArn", __v.asInstanceOf[js.Any]))
+      OutputArn.foreach(__v => __obj.update("OutputArn", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[RemoveFlowOutputResponse]
     }
   }
 
@@ -871,12 +761,12 @@ package mediaconnect {
         EntitlementArn: __string,
         FlowArn: __string
     ): RevokeFlowEntitlementRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "EntitlementArn" -> EntitlementArn.asInstanceOf[js.Any],
         "FlowArn"        -> FlowArn.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RevokeFlowEntitlementRequest]
+      __obj.asInstanceOf[RevokeFlowEntitlementRequest]
     }
   }
 
@@ -891,16 +781,10 @@ package mediaconnect {
         EntitlementArn: js.UndefOr[__string] = js.undefined,
         FlowArn: js.UndefOr[__string] = js.undefined
     ): RevokeFlowEntitlementResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "EntitlementArn" -> EntitlementArn.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "FlowArn" -> FlowArn.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RevokeFlowEntitlementResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      EntitlementArn.foreach(__v => __obj.update("EntitlementArn", __v.asInstanceOf[js.Any]))
+      FlowArn.foreach(__v => __obj.update("FlowArn", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[RevokeFlowEntitlementResponse]
     }
   }
 
@@ -934,40 +818,18 @@ package mediaconnect {
         StreamId: js.UndefOr[__string] = js.undefined,
         WhitelistCidr: js.UndefOr[__string] = js.undefined
     ): SetSourceRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Decryption" -> Decryption.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Description" -> Description.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "EntitlementArn" -> EntitlementArn.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "IngestPort" -> IngestPort.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MaxBitrate" -> MaxBitrate.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MaxLatency" -> MaxLatency.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Name" -> Name.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Protocol" -> Protocol.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "StreamId" -> StreamId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "WhitelistCidr" -> WhitelistCidr.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SetSourceRequest]
+      val __obj = js.Dictionary.empty[js.Any]
+      Decryption.foreach(__v => __obj.update("Decryption", __v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
+      EntitlementArn.foreach(__v => __obj.update("EntitlementArn", __v.asInstanceOf[js.Any]))
+      IngestPort.foreach(__v => __obj.update("IngestPort", __v.asInstanceOf[js.Any]))
+      MaxBitrate.foreach(__v => __obj.update("MaxBitrate", __v.asInstanceOf[js.Any]))
+      MaxLatency.foreach(__v => __obj.update("MaxLatency", __v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
+      Protocol.foreach(__v => __obj.update("Protocol", __v.asInstanceOf[js.Any]))
+      StreamId.foreach(__v => __obj.update("StreamId", __v.asInstanceOf[js.Any]))
+      WhitelistCidr.foreach(__v => __obj.update("WhitelistCidr", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[SetSourceRequest]
     }
   }
 
@@ -999,33 +861,19 @@ package mediaconnect {
         Transport: js.UndefOr[Transport] = js.undefined,
         WhitelistCidr: js.UndefOr[__string] = js.undefined
     ): Source = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "Name"      -> Name.asInstanceOf[js.Any],
-        "SourceArn" -> SourceArn.asInstanceOf[js.Any],
-        "Decryption" -> Decryption.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Description" -> Description.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "EntitlementArn" -> EntitlementArn.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "IngestIp" -> IngestIp.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "IngestPort" -> IngestPort.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Transport" -> Transport.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "WhitelistCidr" -> WhitelistCidr.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "SourceArn" -> SourceArn.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Source]
+      Decryption.foreach(__v => __obj.update("Decryption", __v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
+      EntitlementArn.foreach(__v => __obj.update("EntitlementArn", __v.asInstanceOf[js.Any]))
+      IngestIp.foreach(__v => __obj.update("IngestIp", __v.asInstanceOf[js.Any]))
+      IngestPort.foreach(__v => __obj.update("IngestPort", __v.asInstanceOf[js.Any]))
+      Transport.foreach(__v => __obj.update("Transport", __v.asInstanceOf[js.Any]))
+      WhitelistCidr.foreach(__v => __obj.update("WhitelistCidr", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Source]
     }
   }
 
@@ -1045,11 +893,11 @@ package mediaconnect {
     def apply(
         FlowArn: __string
     ): StartFlowRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "FlowArn" -> FlowArn.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StartFlowRequest]
+      __obj.asInstanceOf[StartFlowRequest]
     }
   }
 
@@ -1064,16 +912,10 @@ package mediaconnect {
         FlowArn: js.UndefOr[__string] = js.undefined,
         Status: js.UndefOr[Status] = js.undefined
     ): StartFlowResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "FlowArn" -> FlowArn.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Status" -> Status.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StartFlowResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      FlowArn.foreach(__v => __obj.update("FlowArn", __v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.update("Status", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[StartFlowResponse]
     }
   }
 
@@ -1098,11 +940,11 @@ package mediaconnect {
     def apply(
         FlowArn: __string
     ): StopFlowRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "FlowArn" -> FlowArn.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StopFlowRequest]
+      __obj.asInstanceOf[StopFlowRequest]
     }
   }
 
@@ -1117,16 +959,10 @@ package mediaconnect {
         FlowArn: js.UndefOr[__string] = js.undefined,
         Status: js.UndefOr[Status] = js.undefined
     ): StopFlowResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "FlowArn" -> FlowArn.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Status" -> Status.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StopFlowResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      FlowArn.foreach(__v => __obj.update("FlowArn", __v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.update("Status", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[StopFlowResponse]
     }
   }
 
@@ -1144,12 +980,12 @@ package mediaconnect {
         ResourceArn: __string,
         Tags: __mapOf__string
     ): TagResourceRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any],
         "Tags"        -> Tags.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[TagResourceRequest]
+      __obj.asInstanceOf[TagResourceRequest]
     }
   }
 
@@ -1173,23 +1009,15 @@ package mediaconnect {
         SmoothingLatency: js.UndefOr[__integer] = js.undefined,
         StreamId: js.UndefOr[__string] = js.undefined
     ): Transport = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Protocol" -> Protocol.asInstanceOf[js.Any],
-        "MaxBitrate" -> MaxBitrate.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MaxLatency" -> MaxLatency.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SmoothingLatency" -> SmoothingLatency.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "StreamId" -> StreamId.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "Protocol" -> Protocol.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Transport]
+      MaxBitrate.foreach(__v => __obj.update("MaxBitrate", __v.asInstanceOf[js.Any]))
+      MaxLatency.foreach(__v => __obj.update("MaxLatency", __v.asInstanceOf[js.Any]))
+      SmoothingLatency.foreach(__v => __obj.update("SmoothingLatency", __v.asInstanceOf[js.Any]))
+      StreamId.foreach(__v => __obj.update("StreamId", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Transport]
     }
   }
 
@@ -1204,12 +1032,12 @@ package mediaconnect {
         ResourceArn: __string,
         TagKeys: __listOf__string
     ): UntagResourceRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any],
         "TagKeys"     -> TagKeys.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UntagResourceRequest]
+      __obj.asInstanceOf[UntagResourceRequest]
     }
   }
 
@@ -1231,22 +1059,12 @@ package mediaconnect {
         RoleArn: js.UndefOr[__string] = js.undefined,
         SecretArn: js.UndefOr[__string] = js.undefined
     ): UpdateEncryption = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Algorithm" -> Algorithm.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "KeyType" -> KeyType.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "RoleArn" -> RoleArn.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SecretArn" -> SecretArn.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateEncryption]
+      val __obj = js.Dictionary.empty[js.Any]
+      Algorithm.foreach(__v => __obj.update("Algorithm", __v.asInstanceOf[js.Any]))
+      KeyType.foreach(__v => __obj.update("KeyType", __v.asInstanceOf[js.Any]))
+      RoleArn.foreach(__v => __obj.update("RoleArn", __v.asInstanceOf[js.Any]))
+      SecretArn.foreach(__v => __obj.update("SecretArn", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateEncryption]
     }
   }
 
@@ -1270,21 +1088,15 @@ package mediaconnect {
         Encryption: js.UndefOr[UpdateEncryption] = js.undefined,
         Subscribers: js.UndefOr[__listOf__string] = js.undefined
     ): UpdateFlowEntitlementRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "EntitlementArn" -> EntitlementArn.asInstanceOf[js.Any],
-        "FlowArn"        -> FlowArn.asInstanceOf[js.Any],
-        "Description" -> Description.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Encryption" -> Encryption.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Subscribers" -> Subscribers.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "FlowArn"        -> FlowArn.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateFlowEntitlementRequest]
+      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
+      Encryption.foreach(__v => __obj.update("Encryption", __v.asInstanceOf[js.Any]))
+      Subscribers.foreach(__v => __obj.update("Subscribers", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateFlowEntitlementRequest]
     }
   }
 
@@ -1299,16 +1111,10 @@ package mediaconnect {
         Entitlement: js.UndefOr[Entitlement] = js.undefined,
         FlowArn: js.UndefOr[__string] = js.undefined
     ): UpdateFlowEntitlementResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Entitlement" -> Entitlement.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "FlowArn" -> FlowArn.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateFlowEntitlementResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      Entitlement.foreach(__v => __obj.update("Entitlement", __v.asInstanceOf[js.Any]))
+      FlowArn.foreach(__v => __obj.update("FlowArn", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateFlowEntitlementResponse]
     }
   }
 
@@ -1342,36 +1148,20 @@ package mediaconnect {
         SmoothingLatency: js.UndefOr[__integer] = js.undefined,
         StreamId: js.UndefOr[__string] = js.undefined
     ): UpdateFlowOutputRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "FlowArn"   -> FlowArn.asInstanceOf[js.Any],
-        "OutputArn" -> OutputArn.asInstanceOf[js.Any],
-        "Description" -> Description.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Destination" -> Destination.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Encryption" -> Encryption.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MaxLatency" -> MaxLatency.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Port" -> Port.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Protocol" -> Protocol.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SmoothingLatency" -> SmoothingLatency.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "StreamId" -> StreamId.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "OutputArn" -> OutputArn.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateFlowOutputRequest]
+      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
+      Destination.foreach(__v => __obj.update("Destination", __v.asInstanceOf[js.Any]))
+      Encryption.foreach(__v => __obj.update("Encryption", __v.asInstanceOf[js.Any]))
+      MaxLatency.foreach(__v => __obj.update("MaxLatency", __v.asInstanceOf[js.Any]))
+      Port.foreach(__v => __obj.update("Port", __v.asInstanceOf[js.Any]))
+      Protocol.foreach(__v => __obj.update("Protocol", __v.asInstanceOf[js.Any]))
+      SmoothingLatency.foreach(__v => __obj.update("SmoothingLatency", __v.asInstanceOf[js.Any]))
+      StreamId.foreach(__v => __obj.update("StreamId", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateFlowOutputRequest]
     }
   }
 
@@ -1386,16 +1176,10 @@ package mediaconnect {
         FlowArn: js.UndefOr[__string] = js.undefined,
         Output: js.UndefOr[Output] = js.undefined
     ): UpdateFlowOutputResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "FlowArn" -> FlowArn.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Output" -> Output.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateFlowOutputResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      FlowArn.foreach(__v => __obj.update("FlowArn", __v.asInstanceOf[js.Any]))
+      Output.foreach(__v => __obj.update("Output", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateFlowOutputResponse]
     }
   }
 
@@ -1431,39 +1215,21 @@ package mediaconnect {
         StreamId: js.UndefOr[__string] = js.undefined,
         WhitelistCidr: js.UndefOr[__string] = js.undefined
     ): UpdateFlowSourceRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "FlowArn"   -> FlowArn.asInstanceOf[js.Any],
-        "SourceArn" -> SourceArn.asInstanceOf[js.Any],
-        "Decryption" -> Decryption.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Description" -> Description.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "EntitlementArn" -> EntitlementArn.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "IngestPort" -> IngestPort.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MaxBitrate" -> MaxBitrate.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MaxLatency" -> MaxLatency.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Protocol" -> Protocol.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "StreamId" -> StreamId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "WhitelistCidr" -> WhitelistCidr.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "SourceArn" -> SourceArn.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateFlowSourceRequest]
+      Decryption.foreach(__v => __obj.update("Decryption", __v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
+      EntitlementArn.foreach(__v => __obj.update("EntitlementArn", __v.asInstanceOf[js.Any]))
+      IngestPort.foreach(__v => __obj.update("IngestPort", __v.asInstanceOf[js.Any]))
+      MaxBitrate.foreach(__v => __obj.update("MaxBitrate", __v.asInstanceOf[js.Any]))
+      MaxLatency.foreach(__v => __obj.update("MaxLatency", __v.asInstanceOf[js.Any]))
+      Protocol.foreach(__v => __obj.update("Protocol", __v.asInstanceOf[js.Any]))
+      StreamId.foreach(__v => __obj.update("StreamId", __v.asInstanceOf[js.Any]))
+      WhitelistCidr.foreach(__v => __obj.update("WhitelistCidr", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateFlowSourceRequest]
     }
   }
 
@@ -1478,16 +1244,10 @@ package mediaconnect {
         FlowArn: js.UndefOr[__string] = js.undefined,
         Source: js.UndefOr[Source] = js.undefined
     ): UpdateFlowSourceResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "FlowArn" -> FlowArn.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Source" -> Source.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateFlowSourceResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      FlowArn.foreach(__v => __obj.update("FlowArn", __v.asInstanceOf[js.Any]))
+      Source.foreach(__v => __obj.update("Source", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateFlowSourceResponse]
     }
   }
 }

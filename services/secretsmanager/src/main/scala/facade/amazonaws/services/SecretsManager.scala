@@ -129,11 +129,11 @@ package secretsmanager {
     def apply(
         SecretId: SecretIdType
     ): CancelRotateSecretRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "SecretId" -> SecretId.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CancelRotateSecretRequest]
+      __obj.asInstanceOf[CancelRotateSecretRequest]
     }
   }
 
@@ -150,19 +150,11 @@ package secretsmanager {
         Name: js.UndefOr[SecretNameType] = js.undefined,
         VersionId: js.UndefOr[SecretVersionIdType] = js.undefined
     ): CancelRotateSecretResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ARN" -> ARN.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Name" -> Name.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "VersionId" -> VersionId.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CancelRotateSecretResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      ARN.foreach(__v => __obj.update("ARN", __v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
+      VersionId.foreach(__v => __obj.update("VersionId", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CancelRotateSecretResponse]
     }
   }
 
@@ -187,29 +179,17 @@ package secretsmanager {
         SecretString: js.UndefOr[SecretStringType] = js.undefined,
         Tags: js.UndefOr[TagListType] = js.undefined
     ): CreateSecretRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Name" -> Name.asInstanceOf[js.Any],
-        "ClientRequestToken" -> ClientRequestToken.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Description" -> Description.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "KmsKeyId" -> KmsKeyId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SecretBinary" -> SecretBinary.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SecretString" -> SecretString.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Tags" -> Tags.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "Name" -> Name.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateSecretRequest]
+      ClientRequestToken.foreach(__v => __obj.update("ClientRequestToken", __v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
+      KmsKeyId.foreach(__v => __obj.update("KmsKeyId", __v.asInstanceOf[js.Any]))
+      SecretBinary.foreach(__v => __obj.update("SecretBinary", __v.asInstanceOf[js.Any]))
+      SecretString.foreach(__v => __obj.update("SecretString", __v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateSecretRequest]
     }
   }
 
@@ -226,19 +206,11 @@ package secretsmanager {
         Name: js.UndefOr[SecretNameType] = js.undefined,
         VersionId: js.UndefOr[SecretVersionIdType] = js.undefined
     ): CreateSecretResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ARN" -> ARN.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Name" -> Name.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "VersionId" -> VersionId.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateSecretResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      ARN.foreach(__v => __obj.update("ARN", __v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
+      VersionId.foreach(__v => __obj.update("VersionId", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateSecretResponse]
     }
   }
 
@@ -251,11 +223,11 @@ package secretsmanager {
     def apply(
         SecretId: SecretIdType
     ): DeleteResourcePolicyRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "SecretId" -> SecretId.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteResourcePolicyRequest]
+      __obj.asInstanceOf[DeleteResourcePolicyRequest]
     }
   }
 
@@ -270,16 +242,10 @@ package secretsmanager {
         ARN: js.UndefOr[SecretARNType] = js.undefined,
         Name: js.UndefOr[NameType] = js.undefined
     ): DeleteResourcePolicyResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ARN" -> ARN.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Name" -> Name.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteResourcePolicyResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      ARN.foreach(__v => __obj.update("ARN", __v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DeleteResourcePolicyResponse]
     }
   }
 
@@ -296,17 +262,13 @@ package secretsmanager {
         ForceDeleteWithoutRecovery: js.UndefOr[BooleanType] = js.undefined,
         RecoveryWindowInDays: js.UndefOr[RecoveryWindowInDaysType] = js.undefined
     ): DeleteSecretRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "SecretId" -> SecretId.asInstanceOf[js.Any],
-        "ForceDeleteWithoutRecovery" -> ForceDeleteWithoutRecovery.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "RecoveryWindowInDays" -> RecoveryWindowInDays.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "SecretId" -> SecretId.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteSecretRequest]
+      ForceDeleteWithoutRecovery.foreach(__v => __obj.update("ForceDeleteWithoutRecovery", __v.asInstanceOf[js.Any]))
+      RecoveryWindowInDays.foreach(__v => __obj.update("RecoveryWindowInDays", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DeleteSecretRequest]
     }
   }
 
@@ -323,19 +285,11 @@ package secretsmanager {
         DeletionDate: js.UndefOr[DeletionDateType] = js.undefined,
         Name: js.UndefOr[SecretNameType] = js.undefined
     ): DeleteSecretResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ARN" -> ARN.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DeletionDate" -> DeletionDate.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Name" -> Name.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteSecretResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      ARN.foreach(__v => __obj.update("ARN", __v.asInstanceOf[js.Any]))
+      DeletionDate.foreach(__v => __obj.update("DeletionDate", __v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DeleteSecretResponse]
     }
   }
 
@@ -348,11 +302,11 @@ package secretsmanager {
     def apply(
         SecretId: SecretIdType
     ): DescribeSecretRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "SecretId" -> SecretId.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeSecretRequest]
+      __obj.asInstanceOf[DescribeSecretRequest]
     }
   }
 
@@ -389,49 +343,21 @@ package secretsmanager {
         Tags: js.UndefOr[TagListType] = js.undefined,
         VersionIdsToStages: js.UndefOr[SecretVersionsToStagesMapType] = js.undefined
     ): DescribeSecretResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ARN" -> ARN.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DeletedDate" -> DeletedDate.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Description" -> Description.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "KmsKeyId" -> KmsKeyId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "LastAccessedDate" -> LastAccessedDate.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "LastChangedDate" -> LastChangedDate.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "LastRotatedDate" -> LastRotatedDate.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Name" -> Name.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "RotationEnabled" -> RotationEnabled.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "RotationLambdaARN" -> RotationLambdaARN.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "RotationRules" -> RotationRules.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Tags" -> Tags.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "VersionIdsToStages" -> VersionIdsToStages.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeSecretResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      ARN.foreach(__v => __obj.update("ARN", __v.asInstanceOf[js.Any]))
+      DeletedDate.foreach(__v => __obj.update("DeletedDate", __v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
+      KmsKeyId.foreach(__v => __obj.update("KmsKeyId", __v.asInstanceOf[js.Any]))
+      LastAccessedDate.foreach(__v => __obj.update("LastAccessedDate", __v.asInstanceOf[js.Any]))
+      LastChangedDate.foreach(__v => __obj.update("LastChangedDate", __v.asInstanceOf[js.Any]))
+      LastRotatedDate.foreach(__v => __obj.update("LastRotatedDate", __v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
+      RotationEnabled.foreach(__v => __obj.update("RotationEnabled", __v.asInstanceOf[js.Any]))
+      RotationLambdaARN.foreach(__v => __obj.update("RotationLambdaARN", __v.asInstanceOf[js.Any]))
+      RotationRules.foreach(__v => __obj.update("RotationRules", __v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
+      VersionIdsToStages.foreach(__v => __obj.update("VersionIdsToStages", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeSecretResponse]
     }
   }
 
@@ -458,34 +384,16 @@ package secretsmanager {
         PasswordLength: js.UndefOr[PasswordLengthType] = js.undefined,
         RequireEachIncludedType: js.UndefOr[RequireEachIncludedTypeType] = js.undefined
     ): GetRandomPasswordRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ExcludeCharacters" -> ExcludeCharacters.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ExcludeLowercase" -> ExcludeLowercase.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ExcludeNumbers" -> ExcludeNumbers.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ExcludePunctuation" -> ExcludePunctuation.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ExcludeUppercase" -> ExcludeUppercase.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "IncludeSpace" -> IncludeSpace.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "PasswordLength" -> PasswordLength.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "RequireEachIncludedType" -> RequireEachIncludedType.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetRandomPasswordRequest]
+      val __obj = js.Dictionary.empty[js.Any]
+      ExcludeCharacters.foreach(__v => __obj.update("ExcludeCharacters", __v.asInstanceOf[js.Any]))
+      ExcludeLowercase.foreach(__v => __obj.update("ExcludeLowercase", __v.asInstanceOf[js.Any]))
+      ExcludeNumbers.foreach(__v => __obj.update("ExcludeNumbers", __v.asInstanceOf[js.Any]))
+      ExcludePunctuation.foreach(__v => __obj.update("ExcludePunctuation", __v.asInstanceOf[js.Any]))
+      ExcludeUppercase.foreach(__v => __obj.update("ExcludeUppercase", __v.asInstanceOf[js.Any]))
+      IncludeSpace.foreach(__v => __obj.update("IncludeSpace", __v.asInstanceOf[js.Any]))
+      PasswordLength.foreach(__v => __obj.update("PasswordLength", __v.asInstanceOf[js.Any]))
+      RequireEachIncludedType.foreach(__v => __obj.update("RequireEachIncludedType", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetRandomPasswordRequest]
     }
   }
 
@@ -498,13 +406,9 @@ package secretsmanager {
     def apply(
         RandomPassword: js.UndefOr[RandomPasswordType] = js.undefined
     ): GetRandomPasswordResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "RandomPassword" -> RandomPassword.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetRandomPasswordResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      RandomPassword.foreach(__v => __obj.update("RandomPassword", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetRandomPasswordResponse]
     }
   }
 
@@ -517,11 +421,11 @@ package secretsmanager {
     def apply(
         SecretId: SecretIdType
     ): GetResourcePolicyRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "SecretId" -> SecretId.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetResourcePolicyRequest]
+      __obj.asInstanceOf[GetResourcePolicyRequest]
     }
   }
 
@@ -538,19 +442,11 @@ package secretsmanager {
         Name: js.UndefOr[NameType] = js.undefined,
         ResourcePolicy: js.UndefOr[NonEmptyResourcePolicyType] = js.undefined
     ): GetResourcePolicyResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ARN" -> ARN.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Name" -> Name.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ResourcePolicy" -> ResourcePolicy.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetResourcePolicyResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      ARN.foreach(__v => __obj.update("ARN", __v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
+      ResourcePolicy.foreach(__v => __obj.update("ResourcePolicy", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetResourcePolicyResponse]
     }
   }
 
@@ -567,17 +463,13 @@ package secretsmanager {
         VersionId: js.UndefOr[SecretVersionIdType] = js.undefined,
         VersionStage: js.UndefOr[SecretVersionStageType] = js.undefined
     ): GetSecretValueRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "SecretId" -> SecretId.asInstanceOf[js.Any],
-        "VersionId" -> VersionId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "VersionStage" -> VersionStage.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "SecretId" -> SecretId.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetSecretValueRequest]
+      VersionId.foreach(__v => __obj.update("VersionId", __v.asInstanceOf[js.Any]))
+      VersionStage.foreach(__v => __obj.update("VersionStage", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetSecretValueRequest]
     }
   }
 
@@ -602,31 +494,15 @@ package secretsmanager {
         VersionId: js.UndefOr[SecretVersionIdType] = js.undefined,
         VersionStages: js.UndefOr[SecretVersionStagesType] = js.undefined
     ): GetSecretValueResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ARN" -> ARN.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "CreatedDate" -> CreatedDate.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Name" -> Name.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SecretBinary" -> SecretBinary.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SecretString" -> SecretString.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "VersionId" -> VersionId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "VersionStages" -> VersionStages.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetSecretValueResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      ARN.foreach(__v => __obj.update("ARN", __v.asInstanceOf[js.Any]))
+      CreatedDate.foreach(__v => __obj.update("CreatedDate", __v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
+      SecretBinary.foreach(__v => __obj.update("SecretBinary", __v.asInstanceOf[js.Any]))
+      SecretString.foreach(__v => __obj.update("SecretString", __v.asInstanceOf[js.Any]))
+      VersionId.foreach(__v => __obj.update("VersionId", __v.asInstanceOf[js.Any]))
+      VersionStages.foreach(__v => __obj.update("VersionStages", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetSecretValueResponse]
     }
   }
 
@@ -645,20 +521,14 @@ package secretsmanager {
         MaxResults: js.UndefOr[MaxResultsType] = js.undefined,
         NextToken: js.UndefOr[NextTokenType] = js.undefined
     ): ListSecretVersionIdsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "SecretId" -> SecretId.asInstanceOf[js.Any],
-        "IncludeDeprecated" -> IncludeDeprecated.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MaxResults" -> MaxResults.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NextToken" -> NextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "SecretId" -> SecretId.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListSecretVersionIdsRequest]
+      IncludeDeprecated.foreach(__v => __obj.update("IncludeDeprecated", __v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListSecretVersionIdsRequest]
     }
   }
 
@@ -677,22 +547,12 @@ package secretsmanager {
         NextToken: js.UndefOr[NextTokenType] = js.undefined,
         Versions: js.UndefOr[SecretVersionsListType] = js.undefined
     ): ListSecretVersionIdsResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ARN" -> ARN.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Name" -> Name.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NextToken" -> NextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Versions" -> Versions.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListSecretVersionIdsResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      ARN.foreach(__v => __obj.update("ARN", __v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      Versions.foreach(__v => __obj.update("Versions", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListSecretVersionIdsResponse]
     }
   }
 
@@ -707,16 +567,10 @@ package secretsmanager {
         MaxResults: js.UndefOr[MaxResultsType] = js.undefined,
         NextToken: js.UndefOr[NextTokenType] = js.undefined
     ): ListSecretsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "MaxResults" -> MaxResults.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NextToken" -> NextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListSecretsRequest]
+      val __obj = js.Dictionary.empty[js.Any]
+      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListSecretsRequest]
     }
   }
 
@@ -731,16 +585,10 @@ package secretsmanager {
         NextToken: js.UndefOr[NextTokenType] = js.undefined,
         SecretList: js.UndefOr[SecretListType] = js.undefined
     ): ListSecretsResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "NextToken" -> NextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SecretList" -> SecretList.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListSecretsResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      SecretList.foreach(__v => __obj.update("SecretList", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListSecretsResponse]
     }
   }
 
@@ -755,12 +603,12 @@ package secretsmanager {
         ResourcePolicy: NonEmptyResourcePolicyType,
         SecretId: SecretIdType
     ): PutResourcePolicyRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ResourcePolicy" -> ResourcePolicy.asInstanceOf[js.Any],
         "SecretId"       -> SecretId.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PutResourcePolicyRequest]
+      __obj.asInstanceOf[PutResourcePolicyRequest]
     }
   }
 
@@ -775,16 +623,10 @@ package secretsmanager {
         ARN: js.UndefOr[SecretARNType] = js.undefined,
         Name: js.UndefOr[NameType] = js.undefined
     ): PutResourcePolicyResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ARN" -> ARN.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Name" -> Name.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PutResourcePolicyResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      ARN.foreach(__v => __obj.update("ARN", __v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PutResourcePolicyResponse]
     }
   }
 
@@ -805,23 +647,15 @@ package secretsmanager {
         SecretString: js.UndefOr[SecretStringType] = js.undefined,
         VersionStages: js.UndefOr[SecretVersionStagesType] = js.undefined
     ): PutSecretValueRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "SecretId" -> SecretId.asInstanceOf[js.Any],
-        "ClientRequestToken" -> ClientRequestToken.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SecretBinary" -> SecretBinary.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SecretString" -> SecretString.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "VersionStages" -> VersionStages.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "SecretId" -> SecretId.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PutSecretValueRequest]
+      ClientRequestToken.foreach(__v => __obj.update("ClientRequestToken", __v.asInstanceOf[js.Any]))
+      SecretBinary.foreach(__v => __obj.update("SecretBinary", __v.asInstanceOf[js.Any]))
+      SecretString.foreach(__v => __obj.update("SecretString", __v.asInstanceOf[js.Any]))
+      VersionStages.foreach(__v => __obj.update("VersionStages", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PutSecretValueRequest]
     }
   }
 
@@ -840,22 +674,12 @@ package secretsmanager {
         VersionId: js.UndefOr[SecretVersionIdType] = js.undefined,
         VersionStages: js.UndefOr[SecretVersionStagesType] = js.undefined
     ): PutSecretValueResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ARN" -> ARN.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Name" -> Name.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "VersionId" -> VersionId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "VersionStages" -> VersionStages.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PutSecretValueResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      ARN.foreach(__v => __obj.update("ARN", __v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
+      VersionId.foreach(__v => __obj.update("VersionId", __v.asInstanceOf[js.Any]))
+      VersionStages.foreach(__v => __obj.update("VersionStages", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PutSecretValueResponse]
     }
   }
 
@@ -868,11 +692,11 @@ package secretsmanager {
     def apply(
         SecretId: SecretIdType
     ): RestoreSecretRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "SecretId" -> SecretId.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RestoreSecretRequest]
+      __obj.asInstanceOf[RestoreSecretRequest]
     }
   }
 
@@ -887,16 +711,10 @@ package secretsmanager {
         ARN: js.UndefOr[SecretARNType] = js.undefined,
         Name: js.UndefOr[SecretNameType] = js.undefined
     ): RestoreSecretResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ARN" -> ARN.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Name" -> Name.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RestoreSecretResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      ARN.foreach(__v => __obj.update("ARN", __v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[RestoreSecretResponse]
     }
   }
 
@@ -915,20 +733,14 @@ package secretsmanager {
         RotationLambdaARN: js.UndefOr[RotationLambdaARNType] = js.undefined,
         RotationRules: js.UndefOr[RotationRulesType] = js.undefined
     ): RotateSecretRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "SecretId" -> SecretId.asInstanceOf[js.Any],
-        "ClientRequestToken" -> ClientRequestToken.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "RotationLambdaARN" -> RotationLambdaARN.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "RotationRules" -> RotationRules.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "SecretId" -> SecretId.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RotateSecretRequest]
+      ClientRequestToken.foreach(__v => __obj.update("ClientRequestToken", __v.asInstanceOf[js.Any]))
+      RotationLambdaARN.foreach(__v => __obj.update("RotationLambdaARN", __v.asInstanceOf[js.Any]))
+      RotationRules.foreach(__v => __obj.update("RotationRules", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[RotateSecretRequest]
     }
   }
 
@@ -945,19 +757,11 @@ package secretsmanager {
         Name: js.UndefOr[SecretNameType] = js.undefined,
         VersionId: js.UndefOr[SecretVersionIdType] = js.undefined
     ): RotateSecretResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ARN" -> ARN.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Name" -> Name.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "VersionId" -> VersionId.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RotateSecretResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      ARN.foreach(__v => __obj.update("ARN", __v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
+      VersionId.foreach(__v => __obj.update("VersionId", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[RotateSecretResponse]
     }
   }
 
@@ -973,13 +777,9 @@ package secretsmanager {
     def apply(
         AutomaticallyAfterDays: js.UndefOr[AutomaticallyRotateAfterDaysType] = js.undefined
     ): RotationRulesType = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "AutomaticallyAfterDays" -> AutomaticallyAfterDays.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RotationRulesType]
+      val __obj = js.Dictionary.empty[js.Any]
+      AutomaticallyAfterDays.foreach(__v => __obj.update("AutomaticallyAfterDays", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[RotationRulesType]
     }
   }
 
@@ -1019,49 +819,21 @@ package secretsmanager {
         SecretVersionsToStages: js.UndefOr[SecretVersionsToStagesMapType] = js.undefined,
         Tags: js.UndefOr[TagListType] = js.undefined
     ): SecretListEntry = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ARN" -> ARN.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DeletedDate" -> DeletedDate.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Description" -> Description.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "KmsKeyId" -> KmsKeyId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "LastAccessedDate" -> LastAccessedDate.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "LastChangedDate" -> LastChangedDate.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "LastRotatedDate" -> LastRotatedDate.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Name" -> Name.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "RotationEnabled" -> RotationEnabled.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "RotationLambdaARN" -> RotationLambdaARN.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "RotationRules" -> RotationRules.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SecretVersionsToStages" -> SecretVersionsToStages.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Tags" -> Tags.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SecretListEntry]
+      val __obj = js.Dictionary.empty[js.Any]
+      ARN.foreach(__v => __obj.update("ARN", __v.asInstanceOf[js.Any]))
+      DeletedDate.foreach(__v => __obj.update("DeletedDate", __v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
+      KmsKeyId.foreach(__v => __obj.update("KmsKeyId", __v.asInstanceOf[js.Any]))
+      LastAccessedDate.foreach(__v => __obj.update("LastAccessedDate", __v.asInstanceOf[js.Any]))
+      LastChangedDate.foreach(__v => __obj.update("LastChangedDate", __v.asInstanceOf[js.Any]))
+      LastRotatedDate.foreach(__v => __obj.update("LastRotatedDate", __v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
+      RotationEnabled.foreach(__v => __obj.update("RotationEnabled", __v.asInstanceOf[js.Any]))
+      RotationLambdaARN.foreach(__v => __obj.update("RotationLambdaARN", __v.asInstanceOf[js.Any]))
+      RotationRules.foreach(__v => __obj.update("RotationRules", __v.asInstanceOf[js.Any]))
+      SecretVersionsToStages.foreach(__v => __obj.update("SecretVersionsToStages", __v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[SecretListEntry]
     }
   }
 
@@ -1083,22 +855,12 @@ package secretsmanager {
         VersionId: js.UndefOr[SecretVersionIdType] = js.undefined,
         VersionStages: js.UndefOr[SecretVersionStagesType] = js.undefined
     ): SecretVersionsListEntry = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "CreatedDate" -> CreatedDate.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "LastAccessedDate" -> LastAccessedDate.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "VersionId" -> VersionId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "VersionStages" -> VersionStages.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SecretVersionsListEntry]
+      val __obj = js.Dictionary.empty[js.Any]
+      CreatedDate.foreach(__v => __obj.update("CreatedDate", __v.asInstanceOf[js.Any]))
+      LastAccessedDate.foreach(__v => __obj.update("LastAccessedDate", __v.asInstanceOf[js.Any]))
+      VersionId.foreach(__v => __obj.update("VersionId", __v.asInstanceOf[js.Any]))
+      VersionStages.foreach(__v => __obj.update("VersionStages", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[SecretVersionsListEntry]
     }
   }
 
@@ -1116,16 +878,10 @@ package secretsmanager {
         Key: js.UndefOr[TagKeyType] = js.undefined,
         Value: js.UndefOr[TagValueType] = js.undefined
     ): Tag = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Key" -> Key.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Value" -> Value.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Tag]
+      val __obj = js.Dictionary.empty[js.Any]
+      Key.foreach(__v => __obj.update("Key", __v.asInstanceOf[js.Any]))
+      Value.foreach(__v => __obj.update("Value", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Tag]
     }
   }
 
@@ -1140,12 +896,12 @@ package secretsmanager {
         SecretId: SecretIdType,
         Tags: TagListType
     ): TagResourceRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "SecretId" -> SecretId.asInstanceOf[js.Any],
         "Tags"     -> Tags.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[TagResourceRequest]
+      __obj.asInstanceOf[TagResourceRequest]
     }
   }
 
@@ -1160,12 +916,12 @@ package secretsmanager {
         SecretId: SecretIdType,
         TagKeys: TagKeyListType
     ): UntagResourceRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "SecretId" -> SecretId.asInstanceOf[js.Any],
         "TagKeys"  -> TagKeys.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UntagResourceRequest]
+      __obj.asInstanceOf[UntagResourceRequest]
     }
   }
 
@@ -1188,26 +944,16 @@ package secretsmanager {
         SecretBinary: js.UndefOr[SecretBinaryType] = js.undefined,
         SecretString: js.UndefOr[SecretStringType] = js.undefined
     ): UpdateSecretRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "SecretId" -> SecretId.asInstanceOf[js.Any],
-        "ClientRequestToken" -> ClientRequestToken.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Description" -> Description.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "KmsKeyId" -> KmsKeyId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SecretBinary" -> SecretBinary.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SecretString" -> SecretString.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "SecretId" -> SecretId.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateSecretRequest]
+      ClientRequestToken.foreach(__v => __obj.update("ClientRequestToken", __v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
+      KmsKeyId.foreach(__v => __obj.update("KmsKeyId", __v.asInstanceOf[js.Any]))
+      SecretBinary.foreach(__v => __obj.update("SecretBinary", __v.asInstanceOf[js.Any]))
+      SecretString.foreach(__v => __obj.update("SecretString", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateSecretRequest]
     }
   }
 
@@ -1224,19 +970,11 @@ package secretsmanager {
         Name: js.UndefOr[SecretNameType] = js.undefined,
         VersionId: js.UndefOr[SecretVersionIdType] = js.undefined
     ): UpdateSecretResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ARN" -> ARN.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Name" -> Name.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "VersionId" -> VersionId.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateSecretResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      ARN.foreach(__v => __obj.update("ARN", __v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
+      VersionId.foreach(__v => __obj.update("VersionId", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateSecretResponse]
     }
   }
 
@@ -1255,18 +993,14 @@ package secretsmanager {
         MoveToVersionId: js.UndefOr[SecretVersionIdType] = js.undefined,
         RemoveFromVersionId: js.UndefOr[SecretVersionIdType] = js.undefined
     ): UpdateSecretVersionStageRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "SecretId"     -> SecretId.asInstanceOf[js.Any],
-        "VersionStage" -> VersionStage.asInstanceOf[js.Any],
-        "MoveToVersionId" -> MoveToVersionId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "RemoveFromVersionId" -> RemoveFromVersionId.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "VersionStage" -> VersionStage.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateSecretVersionStageRequest]
+      MoveToVersionId.foreach(__v => __obj.update("MoveToVersionId", __v.asInstanceOf[js.Any]))
+      RemoveFromVersionId.foreach(__v => __obj.update("RemoveFromVersionId", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateSecretVersionStageRequest]
     }
   }
 
@@ -1281,16 +1015,10 @@ package secretsmanager {
         ARN: js.UndefOr[SecretARNType] = js.undefined,
         Name: js.UndefOr[SecretNameType] = js.undefined
     ): UpdateSecretVersionStageResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ARN" -> ARN.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Name" -> Name.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateSecretVersionStageResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      ARN.foreach(__v => __obj.update("ARN", __v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateSecretVersionStageResponse]
     }
   }
 }

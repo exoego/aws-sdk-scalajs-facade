@@ -222,31 +222,15 @@ package lexmodelbuildingservice {
         lastUpdatedDate: js.UndefOr[Timestamp] = js.undefined,
         name: js.UndefOr[AliasName] = js.undefined
     ): BotAliasMetadata = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "botName" -> botName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "botVersion" -> botVersion.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "checksum" -> checksum.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "createdDate" -> createdDate.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "description" -> description.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "lastUpdatedDate" -> lastUpdatedDate.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "name" -> name.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[BotAliasMetadata]
+      val __obj = js.Dictionary.empty[js.Any]
+      botName.foreach(__v => __obj.update("botName", __v.asInstanceOf[js.Any]))
+      botVersion.foreach(__v => __obj.update("botVersion", __v.asInstanceOf[js.Any]))
+      checksum.foreach(__v => __obj.update("checksum", __v.asInstanceOf[js.Any]))
+      createdDate.foreach(__v => __obj.update("createdDate", __v.asInstanceOf[js.Any]))
+      description.foreach(__v => __obj.update("description", __v.asInstanceOf[js.Any]))
+      lastUpdatedDate.foreach(__v => __obj.update("lastUpdatedDate", __v.asInstanceOf[js.Any]))
+      name.foreach(__v => __obj.update("name", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[BotAliasMetadata]
     }
   }
 
@@ -278,37 +262,17 @@ package lexmodelbuildingservice {
         status: js.UndefOr[ChannelStatus] = js.undefined,
         `type`: js.UndefOr[ChannelType] = js.undefined
     ): BotChannelAssociation = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "botAlias" -> botAlias.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "botConfiguration" -> botConfiguration.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "botName" -> botName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "createdDate" -> createdDate.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "description" -> description.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "failureReason" -> failureReason.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "name" -> name.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "status" -> status.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "`type`" -> `type`.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[BotChannelAssociation]
+      val __obj = js.Dictionary.empty[js.Any]
+      botAlias.foreach(__v => __obj.update("botAlias", __v.asInstanceOf[js.Any]))
+      botConfiguration.foreach(__v => __obj.update("botConfiguration", __v.asInstanceOf[js.Any]))
+      botName.foreach(__v => __obj.update("botName", __v.asInstanceOf[js.Any]))
+      createdDate.foreach(__v => __obj.update("createdDate", __v.asInstanceOf[js.Any]))
+      description.foreach(__v => __obj.update("description", __v.asInstanceOf[js.Any]))
+      failureReason.foreach(__v => __obj.update("failureReason", __v.asInstanceOf[js.Any]))
+      name.foreach(__v => __obj.update("name", __v.asInstanceOf[js.Any]))
+      status.foreach(__v => __obj.update("status", __v.asInstanceOf[js.Any]))
+      `type`.foreach(__v => __obj.update("type", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[BotChannelAssociation]
     }
   }
 
@@ -334,28 +298,14 @@ package lexmodelbuildingservice {
         status: js.UndefOr[Status] = js.undefined,
         version: js.UndefOr[Version] = js.undefined
     ): BotMetadata = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "createdDate" -> createdDate.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "description" -> description.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "lastUpdatedDate" -> lastUpdatedDate.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "name" -> name.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "status" -> status.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "version" -> version.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[BotMetadata]
+      val __obj = js.Dictionary.empty[js.Any]
+      createdDate.foreach(__v => __obj.update("createdDate", __v.asInstanceOf[js.Any]))
+      description.foreach(__v => __obj.update("description", __v.asInstanceOf[js.Any]))
+      lastUpdatedDate.foreach(__v => __obj.update("lastUpdatedDate", __v.asInstanceOf[js.Any]))
+      name.foreach(__v => __obj.update("name", __v.asInstanceOf[js.Any]))
+      status.foreach(__v => __obj.update("status", __v.asInstanceOf[js.Any]))
+      version.foreach(__v => __obj.update("version", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[BotMetadata]
     }
   }
 
@@ -373,16 +323,10 @@ package lexmodelbuildingservice {
         signature: js.UndefOr[BuiltinIntentSignature] = js.undefined,
         supportedLocales: js.UndefOr[LocaleList] = js.undefined
     ): BuiltinIntentMetadata = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "signature" -> signature.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "supportedLocales" -> supportedLocales.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[BuiltinIntentMetadata]
+      val __obj = js.Dictionary.empty[js.Any]
+      signature.foreach(__v => __obj.update("signature", __v.asInstanceOf[js.Any]))
+      supportedLocales.foreach(__v => __obj.update("supportedLocales", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[BuiltinIntentMetadata]
     }
   }
 
@@ -398,13 +342,9 @@ package lexmodelbuildingservice {
     def apply(
         name: js.UndefOr[String] = js.undefined
     ): BuiltinIntentSlot = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "name" -> name.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[BuiltinIntentSlot]
+      val __obj = js.Dictionary.empty[js.Any]
+      name.foreach(__v => __obj.update("name", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[BuiltinIntentSlot]
     }
   }
 
@@ -422,16 +362,10 @@ package lexmodelbuildingservice {
         signature: js.UndefOr[BuiltinSlotTypeSignature] = js.undefined,
         supportedLocales: js.UndefOr[LocaleList] = js.undefined
     ): BuiltinSlotTypeMetadata = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "signature" -> signature.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "supportedLocales" -> supportedLocales.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[BuiltinSlotTypeMetadata]
+      val __obj = js.Dictionary.empty[js.Any]
+      signature.foreach(__v => __obj.update("signature", __v.asInstanceOf[js.Any]))
+      supportedLocales.foreach(__v => __obj.update("supportedLocales", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[BuiltinSlotTypeMetadata]
     }
   }
 
@@ -466,12 +400,12 @@ package lexmodelbuildingservice {
         messageVersion: MessageVersion,
         uri: LambdaARN
     ): CodeHook = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "messageVersion" -> messageVersion.asInstanceOf[js.Any],
         "uri"            -> uri.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CodeHook]
+      __obj.asInstanceOf[CodeHook]
     }
   }
 
@@ -494,14 +428,12 @@ package lexmodelbuildingservice {
         name: BotName,
         checksum: js.UndefOr[String] = js.undefined
     ): CreateBotVersionRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "name" -> name.asInstanceOf[js.Any],
-        "checksum" -> checksum.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "name" -> name.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateBotVersionRequest]
+      checksum.foreach(__v => __obj.update("checksum", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateBotVersionRequest]
     }
   }
 
@@ -542,55 +474,23 @@ package lexmodelbuildingservice {
         version: js.UndefOr[Version] = js.undefined,
         voiceId: js.UndefOr[String] = js.undefined
     ): CreateBotVersionResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "abortStatement" -> abortStatement.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "checksum" -> checksum.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "childDirected" -> childDirected.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "clarificationPrompt" -> clarificationPrompt.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "createdDate" -> createdDate.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "description" -> description.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "failureReason" -> failureReason.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "idleSessionTTLInSeconds" -> idleSessionTTLInSeconds.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "intents" -> intents.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "lastUpdatedDate" -> lastUpdatedDate.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "locale" -> locale.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "name" -> name.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "status" -> status.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "version" -> version.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "voiceId" -> voiceId.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateBotVersionResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      abortStatement.foreach(__v => __obj.update("abortStatement", __v.asInstanceOf[js.Any]))
+      checksum.foreach(__v => __obj.update("checksum", __v.asInstanceOf[js.Any]))
+      childDirected.foreach(__v => __obj.update("childDirected", __v.asInstanceOf[js.Any]))
+      clarificationPrompt.foreach(__v => __obj.update("clarificationPrompt", __v.asInstanceOf[js.Any]))
+      createdDate.foreach(__v => __obj.update("createdDate", __v.asInstanceOf[js.Any]))
+      description.foreach(__v => __obj.update("description", __v.asInstanceOf[js.Any]))
+      failureReason.foreach(__v => __obj.update("failureReason", __v.asInstanceOf[js.Any]))
+      idleSessionTTLInSeconds.foreach(__v => __obj.update("idleSessionTTLInSeconds", __v.asInstanceOf[js.Any]))
+      intents.foreach(__v => __obj.update("intents", __v.asInstanceOf[js.Any]))
+      lastUpdatedDate.foreach(__v => __obj.update("lastUpdatedDate", __v.asInstanceOf[js.Any]))
+      locale.foreach(__v => __obj.update("locale", __v.asInstanceOf[js.Any]))
+      name.foreach(__v => __obj.update("name", __v.asInstanceOf[js.Any]))
+      status.foreach(__v => __obj.update("status", __v.asInstanceOf[js.Any]))
+      version.foreach(__v => __obj.update("version", __v.asInstanceOf[js.Any]))
+      voiceId.foreach(__v => __obj.update("voiceId", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateBotVersionResponse]
     }
   }
 
@@ -605,14 +505,12 @@ package lexmodelbuildingservice {
         name: IntentName,
         checksum: js.UndefOr[String] = js.undefined
     ): CreateIntentVersionRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "name" -> name.asInstanceOf[js.Any],
-        "checksum" -> checksum.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "name" -> name.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateIntentVersionRequest]
+      checksum.foreach(__v => __obj.update("checksum", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateIntentVersionRequest]
     }
   }
 
@@ -653,55 +551,23 @@ package lexmodelbuildingservice {
         slots: js.UndefOr[SlotList] = js.undefined,
         version: js.UndefOr[Version] = js.undefined
     ): CreateIntentVersionResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "checksum" -> checksum.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "conclusionStatement" -> conclusionStatement.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "confirmationPrompt" -> confirmationPrompt.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "createdDate" -> createdDate.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "description" -> description.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "dialogCodeHook" -> dialogCodeHook.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "followUpPrompt" -> followUpPrompt.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "fulfillmentActivity" -> fulfillmentActivity.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "lastUpdatedDate" -> lastUpdatedDate.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "name" -> name.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "parentIntentSignature" -> parentIntentSignature.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "rejectionStatement" -> rejectionStatement.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "sampleUtterances" -> sampleUtterances.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "slots" -> slots.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "version" -> version.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateIntentVersionResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      checksum.foreach(__v => __obj.update("checksum", __v.asInstanceOf[js.Any]))
+      conclusionStatement.foreach(__v => __obj.update("conclusionStatement", __v.asInstanceOf[js.Any]))
+      confirmationPrompt.foreach(__v => __obj.update("confirmationPrompt", __v.asInstanceOf[js.Any]))
+      createdDate.foreach(__v => __obj.update("createdDate", __v.asInstanceOf[js.Any]))
+      description.foreach(__v => __obj.update("description", __v.asInstanceOf[js.Any]))
+      dialogCodeHook.foreach(__v => __obj.update("dialogCodeHook", __v.asInstanceOf[js.Any]))
+      followUpPrompt.foreach(__v => __obj.update("followUpPrompt", __v.asInstanceOf[js.Any]))
+      fulfillmentActivity.foreach(__v => __obj.update("fulfillmentActivity", __v.asInstanceOf[js.Any]))
+      lastUpdatedDate.foreach(__v => __obj.update("lastUpdatedDate", __v.asInstanceOf[js.Any]))
+      name.foreach(__v => __obj.update("name", __v.asInstanceOf[js.Any]))
+      parentIntentSignature.foreach(__v => __obj.update("parentIntentSignature", __v.asInstanceOf[js.Any]))
+      rejectionStatement.foreach(__v => __obj.update("rejectionStatement", __v.asInstanceOf[js.Any]))
+      sampleUtterances.foreach(__v => __obj.update("sampleUtterances", __v.asInstanceOf[js.Any]))
+      slots.foreach(__v => __obj.update("slots", __v.asInstanceOf[js.Any]))
+      version.foreach(__v => __obj.update("version", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateIntentVersionResponse]
     }
   }
 
@@ -716,14 +582,12 @@ package lexmodelbuildingservice {
         name: SlotTypeName,
         checksum: js.UndefOr[String] = js.undefined
     ): CreateSlotTypeVersionRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "name" -> name.asInstanceOf[js.Any],
-        "checksum" -> checksum.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "name" -> name.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateSlotTypeVersionRequest]
+      checksum.foreach(__v => __obj.update("checksum", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateSlotTypeVersionRequest]
     }
   }
 
@@ -750,34 +614,16 @@ package lexmodelbuildingservice {
         valueSelectionStrategy: js.UndefOr[SlotValueSelectionStrategy] = js.undefined,
         version: js.UndefOr[Version] = js.undefined
     ): CreateSlotTypeVersionResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "checksum" -> checksum.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "createdDate" -> createdDate.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "description" -> description.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "enumerationValues" -> enumerationValues.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "lastUpdatedDate" -> lastUpdatedDate.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "name" -> name.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "valueSelectionStrategy" -> valueSelectionStrategy.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "version" -> version.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateSlotTypeVersionResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      checksum.foreach(__v => __obj.update("checksum", __v.asInstanceOf[js.Any]))
+      createdDate.foreach(__v => __obj.update("createdDate", __v.asInstanceOf[js.Any]))
+      description.foreach(__v => __obj.update("description", __v.asInstanceOf[js.Any]))
+      enumerationValues.foreach(__v => __obj.update("enumerationValues", __v.asInstanceOf[js.Any]))
+      lastUpdatedDate.foreach(__v => __obj.update("lastUpdatedDate", __v.asInstanceOf[js.Any]))
+      name.foreach(__v => __obj.update("name", __v.asInstanceOf[js.Any]))
+      valueSelectionStrategy.foreach(__v => __obj.update("valueSelectionStrategy", __v.asInstanceOf[js.Any]))
+      version.foreach(__v => __obj.update("version", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateSlotTypeVersionResponse]
     }
   }
 
@@ -792,12 +638,12 @@ package lexmodelbuildingservice {
         botName: BotName,
         name: AliasName
     ): DeleteBotAliasRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "botName" -> botName.asInstanceOf[js.Any],
         "name"    -> name.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteBotAliasRequest]
+      __obj.asInstanceOf[DeleteBotAliasRequest]
     }
   }
 
@@ -814,13 +660,13 @@ package lexmodelbuildingservice {
         botName: BotName,
         name: BotChannelName
     ): DeleteBotChannelAssociationRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "botAlias" -> botAlias.asInstanceOf[js.Any],
         "botName"  -> botName.asInstanceOf[js.Any],
         "name"     -> name.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteBotChannelAssociationRequest]
+      __obj.asInstanceOf[DeleteBotChannelAssociationRequest]
     }
   }
 
@@ -833,11 +679,11 @@ package lexmodelbuildingservice {
     def apply(
         name: BotName
     ): DeleteBotRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "name" -> name.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteBotRequest]
+      __obj.asInstanceOf[DeleteBotRequest]
     }
   }
 
@@ -852,12 +698,12 @@ package lexmodelbuildingservice {
         name: BotName,
         version: NumericalVersion
     ): DeleteBotVersionRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "name"    -> name.asInstanceOf[js.Any],
         "version" -> version.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteBotVersionRequest]
+      __obj.asInstanceOf[DeleteBotVersionRequest]
     }
   }
 
@@ -870,11 +716,11 @@ package lexmodelbuildingservice {
     def apply(
         name: IntentName
     ): DeleteIntentRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "name" -> name.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteIntentRequest]
+      __obj.asInstanceOf[DeleteIntentRequest]
     }
   }
 
@@ -889,12 +735,12 @@ package lexmodelbuildingservice {
         name: IntentName,
         version: NumericalVersion
     ): DeleteIntentVersionRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "name"    -> name.asInstanceOf[js.Any],
         "version" -> version.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteIntentVersionRequest]
+      __obj.asInstanceOf[DeleteIntentVersionRequest]
     }
   }
 
@@ -907,11 +753,11 @@ package lexmodelbuildingservice {
     def apply(
         name: SlotTypeName
     ): DeleteSlotTypeRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "name" -> name.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteSlotTypeRequest]
+      __obj.asInstanceOf[DeleteSlotTypeRequest]
     }
   }
 
@@ -926,12 +772,12 @@ package lexmodelbuildingservice {
         name: SlotTypeName,
         version: NumericalVersion
     ): DeleteSlotTypeVersionRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "name"    -> name.asInstanceOf[js.Any],
         "version" -> version.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteSlotTypeVersionRequest]
+      __obj.asInstanceOf[DeleteSlotTypeVersionRequest]
     }
   }
 
@@ -946,12 +792,12 @@ package lexmodelbuildingservice {
         botName: BotName,
         userId: UserId
     ): DeleteUtterancesRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "botName" -> botName.asInstanceOf[js.Any],
         "userId"  -> userId.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteUtterancesRequest]
+      __obj.asInstanceOf[DeleteUtterancesRequest]
     }
   }
 
@@ -973,14 +819,12 @@ package lexmodelbuildingservice {
         value: Value,
         synonyms: js.UndefOr[SynonymList] = js.undefined
     ): EnumerationValue = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "value" -> value.asInstanceOf[js.Any],
-        "synonyms" -> synonyms.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "value" -> value.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[EnumerationValue]
+      synonyms.foreach(__v => __obj.update("synonyms", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[EnumerationValue]
     }
   }
 
@@ -1013,12 +857,12 @@ package lexmodelbuildingservice {
         prompt: Prompt,
         rejectionStatement: Statement
     ): FollowUpPrompt = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "prompt"             -> prompt.asInstanceOf[js.Any],
         "rejectionStatement" -> rejectionStatement.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[FollowUpPrompt]
+      __obj.asInstanceOf[FollowUpPrompt]
     }
   }
 
@@ -1039,14 +883,12 @@ package lexmodelbuildingservice {
         `type`: FulfillmentActivityType,
         codeHook: js.UndefOr[CodeHook] = js.undefined
     ): FulfillmentActivity = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "`type`" -> `type`.asInstanceOf[js.Any],
-        "codeHook" -> codeHook.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "type" -> `type`.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[FulfillmentActivity]
+      codeHook.foreach(__v => __obj.update("codeHook", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[FulfillmentActivity]
     }
   }
 
@@ -1068,12 +910,12 @@ package lexmodelbuildingservice {
         botName: BotName,
         name: AliasName
     ): GetBotAliasRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "botName" -> botName.asInstanceOf[js.Any],
         "name"    -> name.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetBotAliasRequest]
+      __obj.asInstanceOf[GetBotAliasRequest]
     }
   }
 
@@ -1098,31 +940,15 @@ package lexmodelbuildingservice {
         lastUpdatedDate: js.UndefOr[Timestamp] = js.undefined,
         name: js.UndefOr[AliasName] = js.undefined
     ): GetBotAliasResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "botName" -> botName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "botVersion" -> botVersion.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "checksum" -> checksum.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "createdDate" -> createdDate.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "description" -> description.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "lastUpdatedDate" -> lastUpdatedDate.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "name" -> name.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetBotAliasResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      botName.foreach(__v => __obj.update("botName", __v.asInstanceOf[js.Any]))
+      botVersion.foreach(__v => __obj.update("botVersion", __v.asInstanceOf[js.Any]))
+      checksum.foreach(__v => __obj.update("checksum", __v.asInstanceOf[js.Any]))
+      createdDate.foreach(__v => __obj.update("createdDate", __v.asInstanceOf[js.Any]))
+      description.foreach(__v => __obj.update("description", __v.asInstanceOf[js.Any]))
+      lastUpdatedDate.foreach(__v => __obj.update("lastUpdatedDate", __v.asInstanceOf[js.Any]))
+      name.foreach(__v => __obj.update("name", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetBotAliasResponse]
     }
   }
 
@@ -1141,20 +967,14 @@ package lexmodelbuildingservice {
         nameContains: js.UndefOr[AliasName] = js.undefined,
         nextToken: js.UndefOr[NextToken] = js.undefined
     ): GetBotAliasesRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "botName" -> botName.asInstanceOf[js.Any],
-        "maxResults" -> maxResults.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "nameContains" -> nameContains.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "nextToken" -> nextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "botName" -> botName.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetBotAliasesRequest]
+      maxResults.foreach(__v => __obj.update("maxResults", __v.asInstanceOf[js.Any]))
+      nameContains.foreach(__v => __obj.update("nameContains", __v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetBotAliasesRequest]
     }
   }
 
@@ -1169,16 +989,10 @@ package lexmodelbuildingservice {
         BotAliases: js.UndefOr[BotAliasMetadataList] = js.undefined,
         nextToken: js.UndefOr[NextToken] = js.undefined
     ): GetBotAliasesResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "BotAliases" -> BotAliases.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "nextToken" -> nextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetBotAliasesResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      BotAliases.foreach(__v => __obj.update("BotAliases", __v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetBotAliasesResponse]
     }
   }
 
@@ -1195,13 +1009,13 @@ package lexmodelbuildingservice {
         botName: BotName,
         name: BotChannelName
     ): GetBotChannelAssociationRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "botAlias" -> botAlias.asInstanceOf[js.Any],
         "botName"  -> botName.asInstanceOf[js.Any],
         "name"     -> name.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetBotChannelAssociationRequest]
+      __obj.asInstanceOf[GetBotChannelAssociationRequest]
     }
   }
 
@@ -1230,37 +1044,17 @@ package lexmodelbuildingservice {
         status: js.UndefOr[ChannelStatus] = js.undefined,
         `type`: js.UndefOr[ChannelType] = js.undefined
     ): GetBotChannelAssociationResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "botAlias" -> botAlias.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "botConfiguration" -> botConfiguration.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "botName" -> botName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "createdDate" -> createdDate.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "description" -> description.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "failureReason" -> failureReason.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "name" -> name.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "status" -> status.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "`type`" -> `type`.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetBotChannelAssociationResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      botAlias.foreach(__v => __obj.update("botAlias", __v.asInstanceOf[js.Any]))
+      botConfiguration.foreach(__v => __obj.update("botConfiguration", __v.asInstanceOf[js.Any]))
+      botName.foreach(__v => __obj.update("botName", __v.asInstanceOf[js.Any]))
+      createdDate.foreach(__v => __obj.update("createdDate", __v.asInstanceOf[js.Any]))
+      description.foreach(__v => __obj.update("description", __v.asInstanceOf[js.Any]))
+      failureReason.foreach(__v => __obj.update("failureReason", __v.asInstanceOf[js.Any]))
+      name.foreach(__v => __obj.update("name", __v.asInstanceOf[js.Any]))
+      status.foreach(__v => __obj.update("status", __v.asInstanceOf[js.Any]))
+      `type`.foreach(__v => __obj.update("type", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetBotChannelAssociationResponse]
     }
   }
 
@@ -1281,21 +1075,15 @@ package lexmodelbuildingservice {
         nameContains: js.UndefOr[BotChannelName] = js.undefined,
         nextToken: js.UndefOr[NextToken] = js.undefined
     ): GetBotChannelAssociationsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "botAlias" -> botAlias.asInstanceOf[js.Any],
-        "botName"  -> botName.asInstanceOf[js.Any],
-        "maxResults" -> maxResults.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "nameContains" -> nameContains.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "nextToken" -> nextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "botName"  -> botName.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetBotChannelAssociationsRequest]
+      maxResults.foreach(__v => __obj.update("maxResults", __v.asInstanceOf[js.Any]))
+      nameContains.foreach(__v => __obj.update("nameContains", __v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetBotChannelAssociationsRequest]
     }
   }
 
@@ -1310,16 +1098,10 @@ package lexmodelbuildingservice {
         botChannelAssociations: js.UndefOr[BotChannelAssociationList] = js.undefined,
         nextToken: js.UndefOr[NextToken] = js.undefined
     ): GetBotChannelAssociationsResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "botChannelAssociations" -> botChannelAssociations.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "nextToken" -> nextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetBotChannelAssociationsResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      botChannelAssociations.foreach(__v => __obj.update("botChannelAssociations", __v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetBotChannelAssociationsResponse]
     }
   }
 
@@ -1334,12 +1116,12 @@ package lexmodelbuildingservice {
         name: BotName,
         versionOrAlias: String
     ): GetBotRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "name"           -> name.asInstanceOf[js.Any],
         "versionOrAlias" -> versionOrAlias.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetBotRequest]
+      __obj.asInstanceOf[GetBotRequest]
     }
   }
 
@@ -1380,55 +1162,23 @@ package lexmodelbuildingservice {
         version: js.UndefOr[Version] = js.undefined,
         voiceId: js.UndefOr[String] = js.undefined
     ): GetBotResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "abortStatement" -> abortStatement.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "checksum" -> checksum.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "childDirected" -> childDirected.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "clarificationPrompt" -> clarificationPrompt.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "createdDate" -> createdDate.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "description" -> description.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "failureReason" -> failureReason.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "idleSessionTTLInSeconds" -> idleSessionTTLInSeconds.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "intents" -> intents.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "lastUpdatedDate" -> lastUpdatedDate.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "locale" -> locale.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "name" -> name.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "status" -> status.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "version" -> version.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "voiceId" -> voiceId.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetBotResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      abortStatement.foreach(__v => __obj.update("abortStatement", __v.asInstanceOf[js.Any]))
+      checksum.foreach(__v => __obj.update("checksum", __v.asInstanceOf[js.Any]))
+      childDirected.foreach(__v => __obj.update("childDirected", __v.asInstanceOf[js.Any]))
+      clarificationPrompt.foreach(__v => __obj.update("clarificationPrompt", __v.asInstanceOf[js.Any]))
+      createdDate.foreach(__v => __obj.update("createdDate", __v.asInstanceOf[js.Any]))
+      description.foreach(__v => __obj.update("description", __v.asInstanceOf[js.Any]))
+      failureReason.foreach(__v => __obj.update("failureReason", __v.asInstanceOf[js.Any]))
+      idleSessionTTLInSeconds.foreach(__v => __obj.update("idleSessionTTLInSeconds", __v.asInstanceOf[js.Any]))
+      intents.foreach(__v => __obj.update("intents", __v.asInstanceOf[js.Any]))
+      lastUpdatedDate.foreach(__v => __obj.update("lastUpdatedDate", __v.asInstanceOf[js.Any]))
+      locale.foreach(__v => __obj.update("locale", __v.asInstanceOf[js.Any]))
+      name.foreach(__v => __obj.update("name", __v.asInstanceOf[js.Any]))
+      status.foreach(__v => __obj.update("status", __v.asInstanceOf[js.Any]))
+      version.foreach(__v => __obj.update("version", __v.asInstanceOf[js.Any]))
+      voiceId.foreach(__v => __obj.update("voiceId", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetBotResponse]
     }
   }
 
@@ -1445,17 +1195,13 @@ package lexmodelbuildingservice {
         maxResults: js.UndefOr[MaxResults] = js.undefined,
         nextToken: js.UndefOr[NextToken] = js.undefined
     ): GetBotVersionsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "name" -> name.asInstanceOf[js.Any],
-        "maxResults" -> maxResults.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "nextToken" -> nextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "name" -> name.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetBotVersionsRequest]
+      maxResults.foreach(__v => __obj.update("maxResults", __v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetBotVersionsRequest]
     }
   }
 
@@ -1470,16 +1216,10 @@ package lexmodelbuildingservice {
         bots: js.UndefOr[BotMetadataList] = js.undefined,
         nextToken: js.UndefOr[NextToken] = js.undefined
     ): GetBotVersionsResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "bots" -> bots.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "nextToken" -> nextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetBotVersionsResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      bots.foreach(__v => __obj.update("bots", __v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetBotVersionsResponse]
     }
   }
 
@@ -1496,19 +1236,11 @@ package lexmodelbuildingservice {
         nameContains: js.UndefOr[BotName] = js.undefined,
         nextToken: js.UndefOr[NextToken] = js.undefined
     ): GetBotsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "maxResults" -> maxResults.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "nameContains" -> nameContains.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "nextToken" -> nextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetBotsRequest]
+      val __obj = js.Dictionary.empty[js.Any]
+      maxResults.foreach(__v => __obj.update("maxResults", __v.asInstanceOf[js.Any]))
+      nameContains.foreach(__v => __obj.update("nameContains", __v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetBotsRequest]
     }
   }
 
@@ -1523,16 +1255,10 @@ package lexmodelbuildingservice {
         bots: js.UndefOr[BotMetadataList] = js.undefined,
         nextToken: js.UndefOr[NextToken] = js.undefined
     ): GetBotsResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "bots" -> bots.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "nextToken" -> nextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetBotsResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      bots.foreach(__v => __obj.update("bots", __v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetBotsResponse]
     }
   }
 
@@ -1545,11 +1271,11 @@ package lexmodelbuildingservice {
     def apply(
         signature: BuiltinIntentSignature
     ): GetBuiltinIntentRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "signature" -> signature.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetBuiltinIntentRequest]
+      __obj.asInstanceOf[GetBuiltinIntentRequest]
     }
   }
 
@@ -1566,19 +1292,11 @@ package lexmodelbuildingservice {
         slots: js.UndefOr[BuiltinIntentSlotList] = js.undefined,
         supportedLocales: js.UndefOr[LocaleList] = js.undefined
     ): GetBuiltinIntentResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "signature" -> signature.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "slots" -> slots.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "supportedLocales" -> supportedLocales.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetBuiltinIntentResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      signature.foreach(__v => __obj.update("signature", __v.asInstanceOf[js.Any]))
+      slots.foreach(__v => __obj.update("slots", __v.asInstanceOf[js.Any]))
+      supportedLocales.foreach(__v => __obj.update("supportedLocales", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetBuiltinIntentResponse]
     }
   }
 
@@ -1597,22 +1315,12 @@ package lexmodelbuildingservice {
         nextToken: js.UndefOr[NextToken] = js.undefined,
         signatureContains: js.UndefOr[String] = js.undefined
     ): GetBuiltinIntentsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "locale" -> locale.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "maxResults" -> maxResults.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "nextToken" -> nextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "signatureContains" -> signatureContains.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetBuiltinIntentsRequest]
+      val __obj = js.Dictionary.empty[js.Any]
+      locale.foreach(__v => __obj.update("locale", __v.asInstanceOf[js.Any]))
+      maxResults.foreach(__v => __obj.update("maxResults", __v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
+      signatureContains.foreach(__v => __obj.update("signatureContains", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetBuiltinIntentsRequest]
     }
   }
 
@@ -1627,16 +1335,10 @@ package lexmodelbuildingservice {
         intents: js.UndefOr[BuiltinIntentMetadataList] = js.undefined,
         nextToken: js.UndefOr[NextToken] = js.undefined
     ): GetBuiltinIntentsResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "intents" -> intents.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "nextToken" -> nextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetBuiltinIntentsResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      intents.foreach(__v => __obj.update("intents", __v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetBuiltinIntentsResponse]
     }
   }
 
@@ -1655,22 +1357,12 @@ package lexmodelbuildingservice {
         nextToken: js.UndefOr[NextToken] = js.undefined,
         signatureContains: js.UndefOr[String] = js.undefined
     ): GetBuiltinSlotTypesRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "locale" -> locale.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "maxResults" -> maxResults.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "nextToken" -> nextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "signatureContains" -> signatureContains.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetBuiltinSlotTypesRequest]
+      val __obj = js.Dictionary.empty[js.Any]
+      locale.foreach(__v => __obj.update("locale", __v.asInstanceOf[js.Any]))
+      maxResults.foreach(__v => __obj.update("maxResults", __v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
+      signatureContains.foreach(__v => __obj.update("signatureContains", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetBuiltinSlotTypesRequest]
     }
   }
 
@@ -1685,16 +1377,10 @@ package lexmodelbuildingservice {
         nextToken: js.UndefOr[NextToken] = js.undefined,
         slotTypes: js.UndefOr[BuiltinSlotTypeMetadataList] = js.undefined
     ): GetBuiltinSlotTypesResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "nextToken" -> nextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "slotTypes" -> slotTypes.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetBuiltinSlotTypesResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
+      slotTypes.foreach(__v => __obj.update("slotTypes", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetBuiltinSlotTypesResponse]
     }
   }
 
@@ -1713,14 +1399,14 @@ package lexmodelbuildingservice {
         resourceType: ResourceType,
         version: NumericalVersion
     ): GetExportRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "exportType"   -> exportType.asInstanceOf[js.Any],
         "name"         -> name.asInstanceOf[js.Any],
         "resourceType" -> resourceType.asInstanceOf[js.Any],
         "version"      -> version.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetExportRequest]
+      __obj.asInstanceOf[GetExportRequest]
     }
   }
 
@@ -1745,31 +1431,15 @@ package lexmodelbuildingservice {
         url: js.UndefOr[String] = js.undefined,
         version: js.UndefOr[NumericalVersion] = js.undefined
     ): GetExportResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "exportStatus" -> exportStatus.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "exportType" -> exportType.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "failureReason" -> failureReason.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "name" -> name.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "resourceType" -> resourceType.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "url" -> url.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "version" -> version.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetExportResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      exportStatus.foreach(__v => __obj.update("exportStatus", __v.asInstanceOf[js.Any]))
+      exportType.foreach(__v => __obj.update("exportType", __v.asInstanceOf[js.Any]))
+      failureReason.foreach(__v => __obj.update("failureReason", __v.asInstanceOf[js.Any]))
+      name.foreach(__v => __obj.update("name", __v.asInstanceOf[js.Any]))
+      resourceType.foreach(__v => __obj.update("resourceType", __v.asInstanceOf[js.Any]))
+      url.foreach(__v => __obj.update("url", __v.asInstanceOf[js.Any]))
+      version.foreach(__v => __obj.update("version", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetExportResponse]
     }
   }
 
@@ -1782,11 +1452,11 @@ package lexmodelbuildingservice {
     def apply(
         importId: String
     ): GetImportRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "importId" -> importId.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetImportRequest]
+      __obj.asInstanceOf[GetImportRequest]
     }
   }
 
@@ -1811,31 +1481,15 @@ package lexmodelbuildingservice {
         name: js.UndefOr[Name] = js.undefined,
         resourceType: js.UndefOr[ResourceType] = js.undefined
     ): GetImportResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "createdDate" -> createdDate.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "failureReason" -> failureReason.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "importId" -> importId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "importStatus" -> importStatus.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "mergeStrategy" -> mergeStrategy.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "name" -> name.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "resourceType" -> resourceType.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetImportResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      createdDate.foreach(__v => __obj.update("createdDate", __v.asInstanceOf[js.Any]))
+      failureReason.foreach(__v => __obj.update("failureReason", __v.asInstanceOf[js.Any]))
+      importId.foreach(__v => __obj.update("importId", __v.asInstanceOf[js.Any]))
+      importStatus.foreach(__v => __obj.update("importStatus", __v.asInstanceOf[js.Any]))
+      mergeStrategy.foreach(__v => __obj.update("mergeStrategy", __v.asInstanceOf[js.Any]))
+      name.foreach(__v => __obj.update("name", __v.asInstanceOf[js.Any]))
+      resourceType.foreach(__v => __obj.update("resourceType", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetImportResponse]
     }
   }
 
@@ -1850,12 +1504,12 @@ package lexmodelbuildingservice {
         name: IntentName,
         version: Version
     ): GetIntentRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "name"    -> name.asInstanceOf[js.Any],
         "version" -> version.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetIntentRequest]
+      __obj.asInstanceOf[GetIntentRequest]
     }
   }
 
@@ -1896,55 +1550,23 @@ package lexmodelbuildingservice {
         slots: js.UndefOr[SlotList] = js.undefined,
         version: js.UndefOr[Version] = js.undefined
     ): GetIntentResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "checksum" -> checksum.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "conclusionStatement" -> conclusionStatement.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "confirmationPrompt" -> confirmationPrompt.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "createdDate" -> createdDate.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "description" -> description.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "dialogCodeHook" -> dialogCodeHook.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "followUpPrompt" -> followUpPrompt.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "fulfillmentActivity" -> fulfillmentActivity.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "lastUpdatedDate" -> lastUpdatedDate.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "name" -> name.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "parentIntentSignature" -> parentIntentSignature.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "rejectionStatement" -> rejectionStatement.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "sampleUtterances" -> sampleUtterances.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "slots" -> slots.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "version" -> version.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetIntentResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      checksum.foreach(__v => __obj.update("checksum", __v.asInstanceOf[js.Any]))
+      conclusionStatement.foreach(__v => __obj.update("conclusionStatement", __v.asInstanceOf[js.Any]))
+      confirmationPrompt.foreach(__v => __obj.update("confirmationPrompt", __v.asInstanceOf[js.Any]))
+      createdDate.foreach(__v => __obj.update("createdDate", __v.asInstanceOf[js.Any]))
+      description.foreach(__v => __obj.update("description", __v.asInstanceOf[js.Any]))
+      dialogCodeHook.foreach(__v => __obj.update("dialogCodeHook", __v.asInstanceOf[js.Any]))
+      followUpPrompt.foreach(__v => __obj.update("followUpPrompt", __v.asInstanceOf[js.Any]))
+      fulfillmentActivity.foreach(__v => __obj.update("fulfillmentActivity", __v.asInstanceOf[js.Any]))
+      lastUpdatedDate.foreach(__v => __obj.update("lastUpdatedDate", __v.asInstanceOf[js.Any]))
+      name.foreach(__v => __obj.update("name", __v.asInstanceOf[js.Any]))
+      parentIntentSignature.foreach(__v => __obj.update("parentIntentSignature", __v.asInstanceOf[js.Any]))
+      rejectionStatement.foreach(__v => __obj.update("rejectionStatement", __v.asInstanceOf[js.Any]))
+      sampleUtterances.foreach(__v => __obj.update("sampleUtterances", __v.asInstanceOf[js.Any]))
+      slots.foreach(__v => __obj.update("slots", __v.asInstanceOf[js.Any]))
+      version.foreach(__v => __obj.update("version", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetIntentResponse]
     }
   }
 
@@ -1961,17 +1583,13 @@ package lexmodelbuildingservice {
         maxResults: js.UndefOr[MaxResults] = js.undefined,
         nextToken: js.UndefOr[NextToken] = js.undefined
     ): GetIntentVersionsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "name" -> name.asInstanceOf[js.Any],
-        "maxResults" -> maxResults.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "nextToken" -> nextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "name" -> name.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetIntentVersionsRequest]
+      maxResults.foreach(__v => __obj.update("maxResults", __v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetIntentVersionsRequest]
     }
   }
 
@@ -1986,16 +1604,10 @@ package lexmodelbuildingservice {
         intents: js.UndefOr[IntentMetadataList] = js.undefined,
         nextToken: js.UndefOr[NextToken] = js.undefined
     ): GetIntentVersionsResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "intents" -> intents.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "nextToken" -> nextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetIntentVersionsResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      intents.foreach(__v => __obj.update("intents", __v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetIntentVersionsResponse]
     }
   }
 
@@ -2012,19 +1624,11 @@ package lexmodelbuildingservice {
         nameContains: js.UndefOr[IntentName] = js.undefined,
         nextToken: js.UndefOr[NextToken] = js.undefined
     ): GetIntentsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "maxResults" -> maxResults.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "nameContains" -> nameContains.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "nextToken" -> nextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetIntentsRequest]
+      val __obj = js.Dictionary.empty[js.Any]
+      maxResults.foreach(__v => __obj.update("maxResults", __v.asInstanceOf[js.Any]))
+      nameContains.foreach(__v => __obj.update("nameContains", __v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetIntentsRequest]
     }
   }
 
@@ -2039,16 +1643,10 @@ package lexmodelbuildingservice {
         intents: js.UndefOr[IntentMetadataList] = js.undefined,
         nextToken: js.UndefOr[NextToken] = js.undefined
     ): GetIntentsResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "intents" -> intents.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "nextToken" -> nextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetIntentsResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      intents.foreach(__v => __obj.update("intents", __v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetIntentsResponse]
     }
   }
 
@@ -2063,12 +1661,12 @@ package lexmodelbuildingservice {
         name: SlotTypeName,
         version: Version
     ): GetSlotTypeRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "name"    -> name.asInstanceOf[js.Any],
         "version" -> version.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetSlotTypeRequest]
+      __obj.asInstanceOf[GetSlotTypeRequest]
     }
   }
 
@@ -2095,34 +1693,16 @@ package lexmodelbuildingservice {
         valueSelectionStrategy: js.UndefOr[SlotValueSelectionStrategy] = js.undefined,
         version: js.UndefOr[Version] = js.undefined
     ): GetSlotTypeResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "checksum" -> checksum.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "createdDate" -> createdDate.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "description" -> description.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "enumerationValues" -> enumerationValues.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "lastUpdatedDate" -> lastUpdatedDate.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "name" -> name.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "valueSelectionStrategy" -> valueSelectionStrategy.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "version" -> version.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetSlotTypeResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      checksum.foreach(__v => __obj.update("checksum", __v.asInstanceOf[js.Any]))
+      createdDate.foreach(__v => __obj.update("createdDate", __v.asInstanceOf[js.Any]))
+      description.foreach(__v => __obj.update("description", __v.asInstanceOf[js.Any]))
+      enumerationValues.foreach(__v => __obj.update("enumerationValues", __v.asInstanceOf[js.Any]))
+      lastUpdatedDate.foreach(__v => __obj.update("lastUpdatedDate", __v.asInstanceOf[js.Any]))
+      name.foreach(__v => __obj.update("name", __v.asInstanceOf[js.Any]))
+      valueSelectionStrategy.foreach(__v => __obj.update("valueSelectionStrategy", __v.asInstanceOf[js.Any]))
+      version.foreach(__v => __obj.update("version", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetSlotTypeResponse]
     }
   }
 
@@ -2139,17 +1719,13 @@ package lexmodelbuildingservice {
         maxResults: js.UndefOr[MaxResults] = js.undefined,
         nextToken: js.UndefOr[NextToken] = js.undefined
     ): GetSlotTypeVersionsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "name" -> name.asInstanceOf[js.Any],
-        "maxResults" -> maxResults.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "nextToken" -> nextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "name" -> name.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetSlotTypeVersionsRequest]
+      maxResults.foreach(__v => __obj.update("maxResults", __v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetSlotTypeVersionsRequest]
     }
   }
 
@@ -2164,16 +1740,10 @@ package lexmodelbuildingservice {
         nextToken: js.UndefOr[NextToken] = js.undefined,
         slotTypes: js.UndefOr[SlotTypeMetadataList] = js.undefined
     ): GetSlotTypeVersionsResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "nextToken" -> nextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "slotTypes" -> slotTypes.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetSlotTypeVersionsResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
+      slotTypes.foreach(__v => __obj.update("slotTypes", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetSlotTypeVersionsResponse]
     }
   }
 
@@ -2190,19 +1760,11 @@ package lexmodelbuildingservice {
         nameContains: js.UndefOr[SlotTypeName] = js.undefined,
         nextToken: js.UndefOr[NextToken] = js.undefined
     ): GetSlotTypesRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "maxResults" -> maxResults.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "nameContains" -> nameContains.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "nextToken" -> nextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetSlotTypesRequest]
+      val __obj = js.Dictionary.empty[js.Any]
+      maxResults.foreach(__v => __obj.update("maxResults", __v.asInstanceOf[js.Any]))
+      nameContains.foreach(__v => __obj.update("nameContains", __v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetSlotTypesRequest]
     }
   }
 
@@ -2217,16 +1779,10 @@ package lexmodelbuildingservice {
         nextToken: js.UndefOr[NextToken] = js.undefined,
         slotTypes: js.UndefOr[SlotTypeMetadataList] = js.undefined
     ): GetSlotTypesResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "nextToken" -> nextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "slotTypes" -> slotTypes.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetSlotTypesResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
+      slotTypes.foreach(__v => __obj.update("slotTypes", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetSlotTypesResponse]
     }
   }
 
@@ -2243,13 +1799,13 @@ package lexmodelbuildingservice {
         botVersions: BotVersions,
         statusType: StatusType
     ): GetUtterancesViewRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "botName"     -> botName.asInstanceOf[js.Any],
         "botVersions" -> botVersions.asInstanceOf[js.Any],
         "statusType"  -> statusType.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetUtterancesViewRequest]
+      __obj.asInstanceOf[GetUtterancesViewRequest]
     }
   }
 
@@ -2264,16 +1820,10 @@ package lexmodelbuildingservice {
         botName: js.UndefOr[BotName] = js.undefined,
         utterances: js.UndefOr[ListsOfUtterances] = js.undefined
     ): GetUtterancesViewResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "botName" -> botName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "utterances" -> utterances.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetUtterancesViewResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      botName.foreach(__v => __obj.update("botName", __v.asInstanceOf[js.Any]))
+      utterances.foreach(__v => __obj.update("utterances", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetUtterancesViewResponse]
     }
   }
 
@@ -2299,12 +1849,12 @@ package lexmodelbuildingservice {
         intentName: IntentName,
         intentVersion: Version
     ): Intent = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "intentName"    -> intentName.asInstanceOf[js.Any],
         "intentVersion" -> intentVersion.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Intent]
+      __obj.asInstanceOf[Intent]
     }
   }
 
@@ -2328,25 +1878,13 @@ package lexmodelbuildingservice {
         name: js.UndefOr[IntentName] = js.undefined,
         version: js.UndefOr[Version] = js.undefined
     ): IntentMetadata = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "createdDate" -> createdDate.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "description" -> description.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "lastUpdatedDate" -> lastUpdatedDate.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "name" -> name.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "version" -> version.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[IntentMetadata]
+      val __obj = js.Dictionary.empty[js.Any]
+      createdDate.foreach(__v => __obj.update("createdDate", __v.asInstanceOf[js.Any]))
+      description.foreach(__v => __obj.update("description", __v.asInstanceOf[js.Any]))
+      lastUpdatedDate.foreach(__v => __obj.update("lastUpdatedDate", __v.asInstanceOf[js.Any]))
+      name.foreach(__v => __obj.update("name", __v.asInstanceOf[js.Any]))
+      version.foreach(__v => __obj.update("version", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[IntentMetadata]
     }
   }
 
@@ -2381,15 +1919,13 @@ package lexmodelbuildingservice {
         contentType: ContentType,
         groupNumber: js.UndefOr[GroupNumber] = js.undefined
     ): Message = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "content"     -> content.asInstanceOf[js.Any],
-        "contentType" -> contentType.asInstanceOf[js.Any],
-        "groupNumber" -> groupNumber.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "contentType" -> contentType.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Message]
+      groupNumber.foreach(__v => __obj.update("groupNumber", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Message]
     }
   }
 
@@ -2416,15 +1952,13 @@ package lexmodelbuildingservice {
         messages: MessageList,
         responseCard: js.UndefOr[ResponseCard] = js.undefined
     ): Prompt = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "maxAttempts" -> maxAttempts.asInstanceOf[js.Any],
-        "messages"    -> messages.asInstanceOf[js.Any],
-        "responseCard" -> responseCard.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "messages"    -> messages.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Prompt]
+      responseCard.foreach(__v => __obj.update("responseCard", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Prompt]
     }
   }
 
@@ -2445,19 +1979,15 @@ package lexmodelbuildingservice {
         checksum: js.UndefOr[String] = js.undefined,
         description: js.UndefOr[Description] = js.undefined
     ): PutBotAliasRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "botName"    -> botName.asInstanceOf[js.Any],
         "botVersion" -> botVersion.asInstanceOf[js.Any],
-        "name"       -> name.asInstanceOf[js.Any],
-        "checksum" -> checksum.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "description" -> description.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "name"       -> name.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PutBotAliasRequest]
+      checksum.foreach(__v => __obj.update("checksum", __v.asInstanceOf[js.Any]))
+      description.foreach(__v => __obj.update("description", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PutBotAliasRequest]
     }
   }
 
@@ -2482,31 +2012,15 @@ package lexmodelbuildingservice {
         lastUpdatedDate: js.UndefOr[Timestamp] = js.undefined,
         name: js.UndefOr[AliasName] = js.undefined
     ): PutBotAliasResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "botName" -> botName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "botVersion" -> botVersion.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "checksum" -> checksum.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "createdDate" -> createdDate.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "description" -> description.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "lastUpdatedDate" -> lastUpdatedDate.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "name" -> name.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PutBotAliasResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      botName.foreach(__v => __obj.update("botName", __v.asInstanceOf[js.Any]))
+      botVersion.foreach(__v => __obj.update("botVersion", __v.asInstanceOf[js.Any]))
+      checksum.foreach(__v => __obj.update("checksum", __v.asInstanceOf[js.Any]))
+      createdDate.foreach(__v => __obj.update("createdDate", __v.asInstanceOf[js.Any]))
+      description.foreach(__v => __obj.update("description", __v.asInstanceOf[js.Any]))
+      lastUpdatedDate.foreach(__v => __obj.update("lastUpdatedDate", __v.asInstanceOf[js.Any]))
+      name.foreach(__v => __obj.update("name", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PutBotAliasResponse]
     }
   }
 
@@ -2541,40 +2055,22 @@ package lexmodelbuildingservice {
         processBehavior: js.UndefOr[ProcessBehavior] = js.undefined,
         voiceId: js.UndefOr[String] = js.undefined
     ): PutBotRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "childDirected" -> childDirected.asInstanceOf[js.Any],
         "locale"        -> locale.asInstanceOf[js.Any],
-        "name"          -> name.asInstanceOf[js.Any],
-        "abortStatement" -> abortStatement.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "checksum" -> checksum.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "clarificationPrompt" -> clarificationPrompt.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "createVersion" -> createVersion.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "description" -> description.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "idleSessionTTLInSeconds" -> idleSessionTTLInSeconds.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "intents" -> intents.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "processBehavior" -> processBehavior.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "voiceId" -> voiceId.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "name"          -> name.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PutBotRequest]
+      abortStatement.foreach(__v => __obj.update("abortStatement", __v.asInstanceOf[js.Any]))
+      checksum.foreach(__v => __obj.update("checksum", __v.asInstanceOf[js.Any]))
+      clarificationPrompt.foreach(__v => __obj.update("clarificationPrompt", __v.asInstanceOf[js.Any]))
+      createVersion.foreach(__v => __obj.update("createVersion", __v.asInstanceOf[js.Any]))
+      description.foreach(__v => __obj.update("description", __v.asInstanceOf[js.Any]))
+      idleSessionTTLInSeconds.foreach(__v => __obj.update("idleSessionTTLInSeconds", __v.asInstanceOf[js.Any]))
+      intents.foreach(__v => __obj.update("intents", __v.asInstanceOf[js.Any]))
+      processBehavior.foreach(__v => __obj.update("processBehavior", __v.asInstanceOf[js.Any]))
+      voiceId.foreach(__v => __obj.update("voiceId", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PutBotRequest]
     }
   }
 
@@ -2617,58 +2113,24 @@ package lexmodelbuildingservice {
         version: js.UndefOr[Version] = js.undefined,
         voiceId: js.UndefOr[String] = js.undefined
     ): PutBotResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "abortStatement" -> abortStatement.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "checksum" -> checksum.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "childDirected" -> childDirected.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "clarificationPrompt" -> clarificationPrompt.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "createVersion" -> createVersion.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "createdDate" -> createdDate.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "description" -> description.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "failureReason" -> failureReason.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "idleSessionTTLInSeconds" -> idleSessionTTLInSeconds.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "intents" -> intents.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "lastUpdatedDate" -> lastUpdatedDate.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "locale" -> locale.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "name" -> name.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "status" -> status.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "version" -> version.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "voiceId" -> voiceId.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PutBotResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      abortStatement.foreach(__v => __obj.update("abortStatement", __v.asInstanceOf[js.Any]))
+      checksum.foreach(__v => __obj.update("checksum", __v.asInstanceOf[js.Any]))
+      childDirected.foreach(__v => __obj.update("childDirected", __v.asInstanceOf[js.Any]))
+      clarificationPrompt.foreach(__v => __obj.update("clarificationPrompt", __v.asInstanceOf[js.Any]))
+      createVersion.foreach(__v => __obj.update("createVersion", __v.asInstanceOf[js.Any]))
+      createdDate.foreach(__v => __obj.update("createdDate", __v.asInstanceOf[js.Any]))
+      description.foreach(__v => __obj.update("description", __v.asInstanceOf[js.Any]))
+      failureReason.foreach(__v => __obj.update("failureReason", __v.asInstanceOf[js.Any]))
+      idleSessionTTLInSeconds.foreach(__v => __obj.update("idleSessionTTLInSeconds", __v.asInstanceOf[js.Any]))
+      intents.foreach(__v => __obj.update("intents", __v.asInstanceOf[js.Any]))
+      lastUpdatedDate.foreach(__v => __obj.update("lastUpdatedDate", __v.asInstanceOf[js.Any]))
+      locale.foreach(__v => __obj.update("locale", __v.asInstanceOf[js.Any]))
+      name.foreach(__v => __obj.update("name", __v.asInstanceOf[js.Any]))
+      status.foreach(__v => __obj.update("status", __v.asInstanceOf[js.Any]))
+      version.foreach(__v => __obj.update("version", __v.asInstanceOf[js.Any]))
+      voiceId.foreach(__v => __obj.update("voiceId", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PutBotResponse]
     }
   }
 
@@ -2705,47 +2167,23 @@ package lexmodelbuildingservice {
         sampleUtterances: js.UndefOr[IntentUtteranceList] = js.undefined,
         slots: js.UndefOr[SlotList] = js.undefined
     ): PutIntentRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "name" -> name.asInstanceOf[js.Any],
-        "checksum" -> checksum.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "conclusionStatement" -> conclusionStatement.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "confirmationPrompt" -> confirmationPrompt.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "createVersion" -> createVersion.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "description" -> description.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "dialogCodeHook" -> dialogCodeHook.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "followUpPrompt" -> followUpPrompt.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "fulfillmentActivity" -> fulfillmentActivity.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "parentIntentSignature" -> parentIntentSignature.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "rejectionStatement" -> rejectionStatement.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "sampleUtterances" -> sampleUtterances.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "slots" -> slots.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "name" -> name.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PutIntentRequest]
+      checksum.foreach(__v => __obj.update("checksum", __v.asInstanceOf[js.Any]))
+      conclusionStatement.foreach(__v => __obj.update("conclusionStatement", __v.asInstanceOf[js.Any]))
+      confirmationPrompt.foreach(__v => __obj.update("confirmationPrompt", __v.asInstanceOf[js.Any]))
+      createVersion.foreach(__v => __obj.update("createVersion", __v.asInstanceOf[js.Any]))
+      description.foreach(__v => __obj.update("description", __v.asInstanceOf[js.Any]))
+      dialogCodeHook.foreach(__v => __obj.update("dialogCodeHook", __v.asInstanceOf[js.Any]))
+      followUpPrompt.foreach(__v => __obj.update("followUpPrompt", __v.asInstanceOf[js.Any]))
+      fulfillmentActivity.foreach(__v => __obj.update("fulfillmentActivity", __v.asInstanceOf[js.Any]))
+      parentIntentSignature.foreach(__v => __obj.update("parentIntentSignature", __v.asInstanceOf[js.Any]))
+      rejectionStatement.foreach(__v => __obj.update("rejectionStatement", __v.asInstanceOf[js.Any]))
+      sampleUtterances.foreach(__v => __obj.update("sampleUtterances", __v.asInstanceOf[js.Any]))
+      slots.foreach(__v => __obj.update("slots", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PutIntentRequest]
     }
   }
 
@@ -2788,58 +2226,24 @@ package lexmodelbuildingservice {
         slots: js.UndefOr[SlotList] = js.undefined,
         version: js.UndefOr[Version] = js.undefined
     ): PutIntentResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "checksum" -> checksum.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "conclusionStatement" -> conclusionStatement.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "confirmationPrompt" -> confirmationPrompt.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "createVersion" -> createVersion.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "createdDate" -> createdDate.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "description" -> description.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "dialogCodeHook" -> dialogCodeHook.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "followUpPrompt" -> followUpPrompt.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "fulfillmentActivity" -> fulfillmentActivity.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "lastUpdatedDate" -> lastUpdatedDate.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "name" -> name.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "parentIntentSignature" -> parentIntentSignature.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "rejectionStatement" -> rejectionStatement.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "sampleUtterances" -> sampleUtterances.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "slots" -> slots.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "version" -> version.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PutIntentResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      checksum.foreach(__v => __obj.update("checksum", __v.asInstanceOf[js.Any]))
+      conclusionStatement.foreach(__v => __obj.update("conclusionStatement", __v.asInstanceOf[js.Any]))
+      confirmationPrompt.foreach(__v => __obj.update("confirmationPrompt", __v.asInstanceOf[js.Any]))
+      createVersion.foreach(__v => __obj.update("createVersion", __v.asInstanceOf[js.Any]))
+      createdDate.foreach(__v => __obj.update("createdDate", __v.asInstanceOf[js.Any]))
+      description.foreach(__v => __obj.update("description", __v.asInstanceOf[js.Any]))
+      dialogCodeHook.foreach(__v => __obj.update("dialogCodeHook", __v.asInstanceOf[js.Any]))
+      followUpPrompt.foreach(__v => __obj.update("followUpPrompt", __v.asInstanceOf[js.Any]))
+      fulfillmentActivity.foreach(__v => __obj.update("fulfillmentActivity", __v.asInstanceOf[js.Any]))
+      lastUpdatedDate.foreach(__v => __obj.update("lastUpdatedDate", __v.asInstanceOf[js.Any]))
+      name.foreach(__v => __obj.update("name", __v.asInstanceOf[js.Any]))
+      parentIntentSignature.foreach(__v => __obj.update("parentIntentSignature", __v.asInstanceOf[js.Any]))
+      rejectionStatement.foreach(__v => __obj.update("rejectionStatement", __v.asInstanceOf[js.Any]))
+      sampleUtterances.foreach(__v => __obj.update("sampleUtterances", __v.asInstanceOf[js.Any]))
+      slots.foreach(__v => __obj.update("slots", __v.asInstanceOf[js.Any]))
+      version.foreach(__v => __obj.update("version", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PutIntentResponse]
     }
   }
 
@@ -2862,26 +2266,16 @@ package lexmodelbuildingservice {
         enumerationValues: js.UndefOr[EnumerationValues] = js.undefined,
         valueSelectionStrategy: js.UndefOr[SlotValueSelectionStrategy] = js.undefined
     ): PutSlotTypeRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "name" -> name.asInstanceOf[js.Any],
-        "checksum" -> checksum.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "createVersion" -> createVersion.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "description" -> description.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "enumerationValues" -> enumerationValues.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "valueSelectionStrategy" -> valueSelectionStrategy.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "name" -> name.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PutSlotTypeRequest]
+      checksum.foreach(__v => __obj.update("checksum", __v.asInstanceOf[js.Any]))
+      createVersion.foreach(__v => __obj.update("createVersion", __v.asInstanceOf[js.Any]))
+      description.foreach(__v => __obj.update("description", __v.asInstanceOf[js.Any]))
+      enumerationValues.foreach(__v => __obj.update("enumerationValues", __v.asInstanceOf[js.Any]))
+      valueSelectionStrategy.foreach(__v => __obj.update("valueSelectionStrategy", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PutSlotTypeRequest]
     }
   }
 
@@ -2910,37 +2304,17 @@ package lexmodelbuildingservice {
         valueSelectionStrategy: js.UndefOr[SlotValueSelectionStrategy] = js.undefined,
         version: js.UndefOr[Version] = js.undefined
     ): PutSlotTypeResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "checksum" -> checksum.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "createVersion" -> createVersion.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "createdDate" -> createdDate.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "description" -> description.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "enumerationValues" -> enumerationValues.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "lastUpdatedDate" -> lastUpdatedDate.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "name" -> name.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "valueSelectionStrategy" -> valueSelectionStrategy.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "version" -> version.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PutSlotTypeResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      checksum.foreach(__v => __obj.update("checksum", __v.asInstanceOf[js.Any]))
+      createVersion.foreach(__v => __obj.update("createVersion", __v.asInstanceOf[js.Any]))
+      createdDate.foreach(__v => __obj.update("createdDate", __v.asInstanceOf[js.Any]))
+      description.foreach(__v => __obj.update("description", __v.asInstanceOf[js.Any]))
+      enumerationValues.foreach(__v => __obj.update("enumerationValues", __v.asInstanceOf[js.Any]))
+      lastUpdatedDate.foreach(__v => __obj.update("lastUpdatedDate", __v.asInstanceOf[js.Any]))
+      name.foreach(__v => __obj.update("name", __v.asInstanceOf[js.Any]))
+      valueSelectionStrategy.foreach(__v => __obj.update("valueSelectionStrategy", __v.asInstanceOf[js.Any]))
+      version.foreach(__v => __obj.update("version", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PutSlotTypeResponse]
     }
   }
 
@@ -2980,33 +2354,19 @@ package lexmodelbuildingservice {
         slotTypeVersion: js.UndefOr[Version] = js.undefined,
         valueElicitationPrompt: js.UndefOr[Prompt] = js.undefined
     ): Slot = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "name"           -> name.asInstanceOf[js.Any],
-        "slotConstraint" -> slotConstraint.asInstanceOf[js.Any],
-        "description" -> description.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "priority" -> priority.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "responseCard" -> responseCard.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "sampleUtterances" -> sampleUtterances.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "slotType" -> slotType.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "slotTypeVersion" -> slotTypeVersion.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "valueElicitationPrompt" -> valueElicitationPrompt.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "slotConstraint" -> slotConstraint.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Slot]
+      description.foreach(__v => __obj.update("description", __v.asInstanceOf[js.Any]))
+      priority.foreach(__v => __obj.update("priority", __v.asInstanceOf[js.Any]))
+      responseCard.foreach(__v => __obj.update("responseCard", __v.asInstanceOf[js.Any]))
+      sampleUtterances.foreach(__v => __obj.update("sampleUtterances", __v.asInstanceOf[js.Any]))
+      slotType.foreach(__v => __obj.update("slotType", __v.asInstanceOf[js.Any]))
+      slotTypeVersion.foreach(__v => __obj.update("slotTypeVersion", __v.asInstanceOf[js.Any]))
+      valueElicitationPrompt.foreach(__v => __obj.update("valueElicitationPrompt", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Slot]
     }
   }
 
@@ -3037,25 +2397,13 @@ package lexmodelbuildingservice {
         name: js.UndefOr[SlotTypeName] = js.undefined,
         version: js.UndefOr[Version] = js.undefined
     ): SlotTypeMetadata = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "createdDate" -> createdDate.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "description" -> description.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "lastUpdatedDate" -> lastUpdatedDate.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "name" -> name.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "version" -> version.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SlotTypeMetadata]
+      val __obj = js.Dictionary.empty[js.Any]
+      createdDate.foreach(__v => __obj.update("createdDate", __v.asInstanceOf[js.Any]))
+      description.foreach(__v => __obj.update("description", __v.asInstanceOf[js.Any]))
+      lastUpdatedDate.foreach(__v => __obj.update("lastUpdatedDate", __v.asInstanceOf[js.Any]))
+      name.foreach(__v => __obj.update("name", __v.asInstanceOf[js.Any]))
+      version.foreach(__v => __obj.update("version", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[SlotTypeMetadata]
     }
   }
 
@@ -3079,13 +2427,13 @@ package lexmodelbuildingservice {
         payload: Blob,
         resourceType: ResourceType
     ): StartImportRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "mergeStrategy" -> mergeStrategy.asInstanceOf[js.Any],
         "payload"       -> payload.asInstanceOf[js.Any],
         "resourceType"  -> resourceType.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StartImportRequest]
+      __obj.asInstanceOf[StartImportRequest]
     }
   }
 
@@ -3108,28 +2456,14 @@ package lexmodelbuildingservice {
         name: js.UndefOr[Name] = js.undefined,
         resourceType: js.UndefOr[ResourceType] = js.undefined
     ): StartImportResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "createdDate" -> createdDate.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "importId" -> importId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "importStatus" -> importStatus.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "mergeStrategy" -> mergeStrategy.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "name" -> name.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "resourceType" -> resourceType.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StartImportResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      createdDate.foreach(__v => __obj.update("createdDate", __v.asInstanceOf[js.Any]))
+      importId.foreach(__v => __obj.update("importId", __v.asInstanceOf[js.Any]))
+      importStatus.foreach(__v => __obj.update("importStatus", __v.asInstanceOf[js.Any]))
+      mergeStrategy.foreach(__v => __obj.update("mergeStrategy", __v.asInstanceOf[js.Any]))
+      name.foreach(__v => __obj.update("name", __v.asInstanceOf[js.Any]))
+      resourceType.foreach(__v => __obj.update("resourceType", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[StartImportResponse]
     }
   }
 
@@ -3147,14 +2481,12 @@ package lexmodelbuildingservice {
         messages: MessageList,
         responseCard: js.UndefOr[ResponseCard] = js.undefined
     ): Statement = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "messages" -> messages.asInstanceOf[js.Any],
-        "responseCard" -> responseCard.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "messages" -> messages.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Statement]
+      responseCard.foreach(__v => __obj.update("responseCard", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Statement]
     }
   }
 
@@ -3195,25 +2527,13 @@ package lexmodelbuildingservice {
         lastUtteredDate: js.UndefOr[Timestamp] = js.undefined,
         utteranceString: js.UndefOr[UtteranceString] = js.undefined
     ): UtteranceData = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "count" -> count.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "distinctUsers" -> distinctUsers.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "firstUtteredDate" -> firstUtteredDate.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "lastUtteredDate" -> lastUtteredDate.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "utteranceString" -> utteranceString.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UtteranceData]
+      val __obj = js.Dictionary.empty[js.Any]
+      count.foreach(__v => __obj.update("count", __v.asInstanceOf[js.Any]))
+      distinctUsers.foreach(__v => __obj.update("distinctUsers", __v.asInstanceOf[js.Any]))
+      firstUtteredDate.foreach(__v => __obj.update("firstUtteredDate", __v.asInstanceOf[js.Any]))
+      lastUtteredDate.foreach(__v => __obj.update("lastUtteredDate", __v.asInstanceOf[js.Any]))
+      utteranceString.foreach(__v => __obj.update("utteranceString", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UtteranceData]
     }
   }
 
@@ -3231,16 +2551,10 @@ package lexmodelbuildingservice {
         botVersion: js.UndefOr[Version] = js.undefined,
         utterances: js.UndefOr[ListOfUtterance] = js.undefined
     ): UtteranceList = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "botVersion" -> botVersion.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "utterances" -> utterances.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UtteranceList]
+      val __obj = js.Dictionary.empty[js.Any]
+      botVersion.foreach(__v => __obj.update("botVersion", __v.asInstanceOf[js.Any]))
+      utterances.foreach(__v => __obj.update("utterances", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UtteranceList]
     }
   }
 }

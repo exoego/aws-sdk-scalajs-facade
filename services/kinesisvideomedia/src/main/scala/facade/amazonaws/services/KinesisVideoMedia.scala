@@ -46,17 +46,13 @@ package kinesisvideomedia {
         StreamARN: js.UndefOr[ResourceARN] = js.undefined,
         StreamName: js.UndefOr[StreamName] = js.undefined
     ): GetMediaInput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "StartSelector" -> StartSelector.asInstanceOf[js.Any],
-        "StreamARN" -> StreamARN.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "StreamName" -> StreamName.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "StartSelector" -> StartSelector.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetMediaInput]
+      StreamARN.foreach(__v => __obj.update("StreamARN", __v.asInstanceOf[js.Any]))
+      StreamName.foreach(__v => __obj.update("StreamName", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetMediaInput]
     }
   }
 
@@ -71,16 +67,10 @@ package kinesisvideomedia {
         ContentType: js.UndefOr[ContentType] = js.undefined,
         Payload: js.UndefOr[Payload] = js.undefined
     ): GetMediaOutput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ContentType" -> ContentType.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Payload" -> Payload.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetMediaOutput]
+      val __obj = js.Dictionary.empty[js.Any]
+      ContentType.foreach(__v => __obj.update("ContentType", __v.asInstanceOf[js.Any]))
+      Payload.foreach(__v => __obj.update("Payload", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetMediaOutput]
     }
   }
 
@@ -105,20 +95,14 @@ package kinesisvideomedia {
         ContinuationToken: js.UndefOr[ContinuationToken] = js.undefined,
         StartTimestamp: js.UndefOr[Timestamp] = js.undefined
     ): StartSelector = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "StartSelectorType" -> StartSelectorType.asInstanceOf[js.Any],
-        "AfterFragmentNumber" -> AfterFragmentNumber.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ContinuationToken" -> ContinuationToken.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "StartTimestamp" -> StartTimestamp.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "StartSelectorType" -> StartSelectorType.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StartSelector]
+      AfterFragmentNumber.foreach(__v => __obj.update("AfterFragmentNumber", __v.asInstanceOf[js.Any]))
+      ContinuationToken.foreach(__v => __obj.update("ContinuationToken", __v.asInstanceOf[js.Any]))
+      StartTimestamp.foreach(__v => __obj.update("StartTimestamp", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[StartSelector]
     }
   }
 

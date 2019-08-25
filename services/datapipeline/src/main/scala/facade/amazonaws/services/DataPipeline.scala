@@ -127,17 +127,13 @@ package datapipeline {
         parameterValues: js.UndefOr[ParameterValueList] = js.undefined,
         startTimestamp: js.UndefOr[timestamp] = js.undefined
     ): ActivatePipelineInput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "pipelineId" -> pipelineId.asInstanceOf[js.Any],
-        "parameterValues" -> parameterValues.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "startTimestamp" -> startTimestamp.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "pipelineId" -> pipelineId.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ActivatePipelineInput]
+      parameterValues.foreach(__v => __obj.update("parameterValues", __v.asInstanceOf[js.Any]))
+      startTimestamp.foreach(__v => __obj.update("startTimestamp", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ActivatePipelineInput]
     }
   }
 
@@ -150,10 +146,9 @@ package datapipeline {
   object ActivatePipelineOutput {
     def apply(
         ): ActivatePipelineOutput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary.empty[js.Any]
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ActivatePipelineOutput]
+      __obj.asInstanceOf[ActivatePipelineOutput]
     }
   }
 
@@ -171,12 +166,12 @@ package datapipeline {
         pipelineId: id,
         tags: tagList
     ): AddTagsInput = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "pipelineId" -> pipelineId.asInstanceOf[js.Any],
         "tags"       -> tags.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AddTagsInput]
+      __obj.asInstanceOf[AddTagsInput]
     }
   }
 
@@ -189,10 +184,9 @@ package datapipeline {
   object AddTagsOutput {
     def apply(
         ): AddTagsOutput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary.empty[js.Any]
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AddTagsOutput]
+      __obj.asInstanceOf[AddTagsOutput]
     }
   }
 
@@ -214,18 +208,14 @@ package datapipeline {
         description: js.UndefOr[String] = js.undefined,
         tags: js.UndefOr[tagList] = js.undefined
     ): CreatePipelineInput = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "name"     -> name.asInstanceOf[js.Any],
-        "uniqueId" -> uniqueId.asInstanceOf[js.Any],
-        "description" -> description.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "tags" -> tags.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "uniqueId" -> uniqueId.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreatePipelineInput]
+      description.foreach(__v => __obj.update("description", __v.asInstanceOf[js.Any]))
+      tags.foreach(__v => __obj.update("tags", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreatePipelineInput]
     }
   }
 
@@ -241,11 +231,11 @@ package datapipeline {
     def apply(
         pipelineId: id
     ): CreatePipelineOutput = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "pipelineId" -> pipelineId.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreatePipelineOutput]
+      __obj.asInstanceOf[CreatePipelineOutput]
     }
   }
 
@@ -263,14 +253,12 @@ package datapipeline {
         pipelineId: id,
         cancelActive: js.UndefOr[cancelActive] = js.undefined
     ): DeactivatePipelineInput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "pipelineId" -> pipelineId.asInstanceOf[js.Any],
-        "cancelActive" -> cancelActive.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "pipelineId" -> pipelineId.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeactivatePipelineInput]
+      cancelActive.foreach(__v => __obj.update("cancelActive", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DeactivatePipelineInput]
     }
   }
 
@@ -283,10 +271,9 @@ package datapipeline {
   object DeactivatePipelineOutput {
     def apply(
         ): DeactivatePipelineOutput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary.empty[js.Any]
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeactivatePipelineOutput]
+      __obj.asInstanceOf[DeactivatePipelineOutput]
     }
   }
 
@@ -302,11 +289,11 @@ package datapipeline {
     def apply(
         pipelineId: id
     ): DeletePipelineInput = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "pipelineId" -> pipelineId.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeletePipelineInput]
+      __obj.asInstanceOf[DeletePipelineInput]
     }
   }
 
@@ -328,18 +315,14 @@ package datapipeline {
         evaluateExpressions: js.UndefOr[Boolean] = js.undefined,
         marker: js.UndefOr[String] = js.undefined
     ): DescribeObjectsInput = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "objectIds"  -> objectIds.asInstanceOf[js.Any],
-        "pipelineId" -> pipelineId.asInstanceOf[js.Any],
-        "evaluateExpressions" -> evaluateExpressions.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "marker" -> marker.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "pipelineId" -> pipelineId.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeObjectsInput]
+      evaluateExpressions.foreach(__v => __obj.update("evaluateExpressions", __v.asInstanceOf[js.Any]))
+      marker.foreach(__v => __obj.update("marker", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeObjectsInput]
     }
   }
 
@@ -359,17 +342,13 @@ package datapipeline {
         hasMoreResults: js.UndefOr[Boolean] = js.undefined,
         marker: js.UndefOr[String] = js.undefined
     ): DescribeObjectsOutput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "pipelineObjects" -> pipelineObjects.asInstanceOf[js.Any],
-        "hasMoreResults" -> hasMoreResults.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "marker" -> marker.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "pipelineObjects" -> pipelineObjects.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeObjectsOutput]
+      hasMoreResults.foreach(__v => __obj.update("hasMoreResults", __v.asInstanceOf[js.Any]))
+      marker.foreach(__v => __obj.update("marker", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeObjectsOutput]
     }
   }
 
@@ -385,11 +364,11 @@ package datapipeline {
     def apply(
         pipelineIds: idList
     ): DescribePipelinesInput = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "pipelineIds" -> pipelineIds.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribePipelinesInput]
+      __obj.asInstanceOf[DescribePipelinesInput]
     }
   }
 
@@ -405,11 +384,11 @@ package datapipeline {
     def apply(
         pipelineDescriptionList: PipelineDescriptionList
     ): DescribePipelinesOutput = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "pipelineDescriptionList" -> pipelineDescriptionList.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribePipelinesOutput]
+      __obj.asInstanceOf[DescribePipelinesOutput]
     }
   }
 
@@ -429,13 +408,13 @@ package datapipeline {
         objectId: id,
         pipelineId: id
     ): EvaluateExpressionInput = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "expression" -> expression.asInstanceOf[js.Any],
         "objectId"   -> objectId.asInstanceOf[js.Any],
         "pipelineId" -> pipelineId.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[EvaluateExpressionInput]
+      __obj.asInstanceOf[EvaluateExpressionInput]
     }
   }
 
@@ -451,11 +430,11 @@ package datapipeline {
     def apply(
         evaluatedExpression: longString
     ): EvaluateExpressionOutput = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "evaluatedExpression" -> evaluatedExpression.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[EvaluateExpressionOutput]
+      __obj.asInstanceOf[EvaluateExpressionOutput]
     }
   }
 
@@ -475,17 +454,13 @@ package datapipeline {
         refValue: js.UndefOr[fieldNameString] = js.undefined,
         stringValue: js.UndefOr[fieldStringValue] = js.undefined
     ): Field = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "key" -> key.asInstanceOf[js.Any],
-        "refValue" -> refValue.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "stringValue" -> stringValue.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "key" -> key.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Field]
+      refValue.foreach(__v => __obj.update("refValue", __v.asInstanceOf[js.Any]))
+      stringValue.foreach(__v => __obj.update("stringValue", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Field]
     }
   }
 
@@ -503,14 +478,12 @@ package datapipeline {
         pipelineId: id,
         version: js.UndefOr[String] = js.undefined
     ): GetPipelineDefinitionInput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "pipelineId" -> pipelineId.asInstanceOf[js.Any],
-        "version" -> version.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "pipelineId" -> pipelineId.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetPipelineDefinitionInput]
+      version.foreach(__v => __obj.update("version", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetPipelineDefinitionInput]
     }
   }
 
@@ -530,19 +503,11 @@ package datapipeline {
         parameterValues: js.UndefOr[ParameterValueList] = js.undefined,
         pipelineObjects: js.UndefOr[PipelineObjectList] = js.undefined
     ): GetPipelineDefinitionOutput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "parameterObjects" -> parameterObjects.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "parameterValues" -> parameterValues.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "pipelineObjects" -> pipelineObjects.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetPipelineDefinitionOutput]
+      val __obj = js.Dictionary.empty[js.Any]
+      parameterObjects.foreach(__v => __obj.update("parameterObjects", __v.asInstanceOf[js.Any]))
+      parameterValues.foreach(__v => __obj.update("parameterValues", __v.asInstanceOf[js.Any]))
+      pipelineObjects.foreach(__v => __obj.update("pipelineObjects", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetPipelineDefinitionOutput]
     }
   }
 
@@ -561,16 +526,10 @@ package datapipeline {
         document: js.UndefOr[String] = js.undefined,
         signature: js.UndefOr[String] = js.undefined
     ): InstanceIdentity = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "document" -> document.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "signature" -> signature.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[InstanceIdentity]
+      val __obj = js.Dictionary.empty[js.Any]
+      document.foreach(__v => __obj.update("document", __v.asInstanceOf[js.Any]))
+      signature.foreach(__v => __obj.update("signature", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[InstanceIdentity]
     }
   }
 
@@ -602,13 +561,9 @@ package datapipeline {
     def apply(
         marker: js.UndefOr[String] = js.undefined
     ): ListPipelinesInput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "marker" -> marker.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListPipelinesInput]
+      val __obj = js.Dictionary.empty[js.Any]
+      marker.foreach(__v => __obj.update("marker", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListPipelinesInput]
     }
   }
 
@@ -628,17 +583,13 @@ package datapipeline {
         hasMoreResults: js.UndefOr[Boolean] = js.undefined,
         marker: js.UndefOr[String] = js.undefined
     ): ListPipelinesOutput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "pipelineIdList" -> pipelineIdList.asInstanceOf[js.Any],
-        "hasMoreResults" -> hasMoreResults.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "marker" -> marker.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "pipelineIdList" -> pipelineIdList.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListPipelinesOutput]
+      hasMoreResults.foreach(__v => __obj.update("hasMoreResults", __v.asInstanceOf[js.Any]))
+      marker.foreach(__v => __obj.update("marker", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListPipelinesOutput]
     }
   }
 
@@ -656,16 +607,10 @@ package datapipeline {
         `type`: js.UndefOr[OperatorType] = js.undefined,
         values: js.UndefOr[stringList] = js.undefined
     ): Operator = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "`type`" -> `type`.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "values" -> values.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Operator]
+      val __obj = js.Dictionary.empty[js.Any]
+      `type`.foreach(__v => __obj.update("type", __v.asInstanceOf[js.Any]))
+      values.foreach(__v => __obj.update("values", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Operator]
     }
   }
 
@@ -693,12 +638,12 @@ package datapipeline {
         key: attributeNameString,
         stringValue: attributeValueString
     ): ParameterAttribute = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "key"         -> key.asInstanceOf[js.Any],
         "stringValue" -> stringValue.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ParameterAttribute]
+      __obj.asInstanceOf[ParameterAttribute]
     }
   }
 
@@ -716,12 +661,12 @@ package datapipeline {
         attributes: ParameterAttributeList,
         id: fieldNameString
     ): ParameterObject = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "attributes" -> attributes.asInstanceOf[js.Any],
         "id"         -> id.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ParameterObject]
+      __obj.asInstanceOf[ParameterObject]
     }
   }
 
@@ -739,12 +684,12 @@ package datapipeline {
         id: fieldNameString,
         stringValue: fieldStringValue
     ): ParameterValue = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "id"          -> id.asInstanceOf[js.Any],
         "stringValue" -> stringValue.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ParameterValue]
+      __obj.asInstanceOf[ParameterValue]
     }
   }
 
@@ -776,19 +721,15 @@ package datapipeline {
         description: js.UndefOr[String] = js.undefined,
         tags: js.UndefOr[tagList] = js.undefined
     ): PipelineDescription = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "fields"     -> fields.asInstanceOf[js.Any],
         "name"       -> name.asInstanceOf[js.Any],
-        "pipelineId" -> pipelineId.asInstanceOf[js.Any],
-        "description" -> description.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "tags" -> tags.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "pipelineId" -> pipelineId.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PipelineDescription]
+      description.foreach(__v => __obj.update("description", __v.asInstanceOf[js.Any]))
+      tags.foreach(__v => __obj.update("tags", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PipelineDescription]
     }
   }
 
@@ -806,16 +747,10 @@ package datapipeline {
         id: js.UndefOr[id] = js.undefined,
         name: js.UndefOr[id] = js.undefined
     ): PipelineIdName = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "id" -> id.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "name" -> name.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PipelineIdName]
+      val __obj = js.Dictionary.empty[js.Any]
+      id.foreach(__v => __obj.update("id", __v.asInstanceOf[js.Any]))
+      name.foreach(__v => __obj.update("name", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PipelineIdName]
     }
   }
 
@@ -843,13 +778,13 @@ package datapipeline {
         id: id,
         name: id
     ): PipelineObject = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "fields" -> fields.asInstanceOf[js.Any],
         "id"     -> id.asInstanceOf[js.Any],
         "name"   -> name.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PipelineObject]
+      __obj.asInstanceOf[PipelineObject]
     }
   }
 
@@ -869,17 +804,13 @@ package datapipeline {
         hostname: js.UndefOr[id] = js.undefined,
         instanceIdentity: js.UndefOr[InstanceIdentity] = js.undefined
     ): PollForTaskInput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "workerGroup" -> workerGroup.asInstanceOf[js.Any],
-        "hostname" -> hostname.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "instanceIdentity" -> instanceIdentity.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "workerGroup" -> workerGroup.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PollForTaskInput]
+      hostname.foreach(__v => __obj.update("hostname", __v.asInstanceOf[js.Any]))
+      instanceIdentity.foreach(__v => __obj.update("instanceIdentity", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PollForTaskInput]
     }
   }
 
@@ -895,13 +826,9 @@ package datapipeline {
     def apply(
         taskObject: js.UndefOr[TaskObject] = js.undefined
     ): PollForTaskOutput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "taskObject" -> taskObject.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PollForTaskOutput]
+      val __obj = js.Dictionary.empty[js.Any]
+      taskObject.foreach(__v => __obj.update("taskObject", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PollForTaskOutput]
     }
   }
 
@@ -923,18 +850,14 @@ package datapipeline {
         parameterObjects: js.UndefOr[ParameterObjectList] = js.undefined,
         parameterValues: js.UndefOr[ParameterValueList] = js.undefined
     ): PutPipelineDefinitionInput = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "pipelineId"      -> pipelineId.asInstanceOf[js.Any],
-        "pipelineObjects" -> pipelineObjects.asInstanceOf[js.Any],
-        "parameterObjects" -> parameterObjects.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "parameterValues" -> parameterValues.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "pipelineObjects" -> pipelineObjects.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PutPipelineDefinitionInput]
+      parameterObjects.foreach(__v => __obj.update("parameterObjects", __v.asInstanceOf[js.Any]))
+      parameterValues.foreach(__v => __obj.update("parameterValues", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PutPipelineDefinitionInput]
     }
   }
 
@@ -954,17 +877,13 @@ package datapipeline {
         validationErrors: js.UndefOr[ValidationErrors] = js.undefined,
         validationWarnings: js.UndefOr[ValidationWarnings] = js.undefined
     ): PutPipelineDefinitionOutput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "errored" -> errored.asInstanceOf[js.Any],
-        "validationErrors" -> validationErrors.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "validationWarnings" -> validationWarnings.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "errored" -> errored.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PutPipelineDefinitionOutput]
+      validationErrors.foreach(__v => __obj.update("validationErrors", __v.asInstanceOf[js.Any]))
+      validationWarnings.foreach(__v => __obj.update("validationWarnings", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PutPipelineDefinitionOutput]
     }
   }
 
@@ -980,13 +899,9 @@ package datapipeline {
     def apply(
         selectors: js.UndefOr[SelectorList] = js.undefined
     ): Query = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "selectors" -> selectors.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Query]
+      val __obj = js.Dictionary.empty[js.Any]
+      selectors.foreach(__v => __obj.update("selectors", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Query]
     }
   }
 
@@ -1010,21 +925,15 @@ package datapipeline {
         marker: js.UndefOr[String] = js.undefined,
         query: js.UndefOr[Query] = js.undefined
     ): QueryObjectsInput = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "pipelineId" -> pipelineId.asInstanceOf[js.Any],
-        "sphere"     -> sphere.asInstanceOf[js.Any],
-        "limit" -> limit.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "marker" -> marker.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "query" -> query.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "sphere"     -> sphere.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[QueryObjectsInput]
+      limit.foreach(__v => __obj.update("limit", __v.asInstanceOf[js.Any]))
+      marker.foreach(__v => __obj.update("marker", __v.asInstanceOf[js.Any]))
+      query.foreach(__v => __obj.update("query", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[QueryObjectsInput]
     }
   }
 
@@ -1044,19 +953,11 @@ package datapipeline {
         ids: js.UndefOr[idList] = js.undefined,
         marker: js.UndefOr[String] = js.undefined
     ): QueryObjectsOutput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "hasMoreResults" -> hasMoreResults.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ids" -> ids.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "marker" -> marker.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[QueryObjectsOutput]
+      val __obj = js.Dictionary.empty[js.Any]
+      hasMoreResults.foreach(__v => __obj.update("hasMoreResults", __v.asInstanceOf[js.Any]))
+      ids.foreach(__v => __obj.update("ids", __v.asInstanceOf[js.Any]))
+      marker.foreach(__v => __obj.update("marker", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[QueryObjectsOutput]
     }
   }
 
@@ -1074,12 +975,12 @@ package datapipeline {
         pipelineId: id,
         tagKeys: stringList
     ): RemoveTagsInput = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "pipelineId" -> pipelineId.asInstanceOf[js.Any],
         "tagKeys"    -> tagKeys.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RemoveTagsInput]
+      __obj.asInstanceOf[RemoveTagsInput]
     }
   }
 
@@ -1092,10 +993,9 @@ package datapipeline {
   object RemoveTagsOutput {
     def apply(
         ): RemoveTagsOutput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary.empty[js.Any]
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RemoveTagsOutput]
+      __obj.asInstanceOf[RemoveTagsOutput]
     }
   }
 
@@ -1113,14 +1013,12 @@ package datapipeline {
         taskId: taskId,
         fields: js.UndefOr[fieldList] = js.undefined
     ): ReportTaskProgressInput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "taskId" -> taskId.asInstanceOf[js.Any],
-        "fields" -> fields.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "taskId" -> taskId.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ReportTaskProgressInput]
+      fields.foreach(__v => __obj.update("fields", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ReportTaskProgressInput]
     }
   }
 
@@ -1136,11 +1034,11 @@ package datapipeline {
     def apply(
         canceled: Boolean
     ): ReportTaskProgressOutput = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "canceled" -> canceled.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ReportTaskProgressOutput]
+      __obj.asInstanceOf[ReportTaskProgressOutput]
     }
   }
 
@@ -1160,17 +1058,13 @@ package datapipeline {
         hostname: js.UndefOr[id] = js.undefined,
         workerGroup: js.UndefOr[String] = js.undefined
     ): ReportTaskRunnerHeartbeatInput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "taskrunnerId" -> taskrunnerId.asInstanceOf[js.Any],
-        "hostname" -> hostname.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "workerGroup" -> workerGroup.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "taskrunnerId" -> taskrunnerId.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ReportTaskRunnerHeartbeatInput]
+      hostname.foreach(__v => __obj.update("hostname", __v.asInstanceOf[js.Any]))
+      workerGroup.foreach(__v => __obj.update("workerGroup", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ReportTaskRunnerHeartbeatInput]
     }
   }
 
@@ -1186,11 +1080,11 @@ package datapipeline {
     def apply(
         terminate: Boolean
     ): ReportTaskRunnerHeartbeatOutput = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "terminate" -> terminate.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ReportTaskRunnerHeartbeatOutput]
+      __obj.asInstanceOf[ReportTaskRunnerHeartbeatOutput]
     }
   }
 
@@ -1208,16 +1102,10 @@ package datapipeline {
         fieldName: js.UndefOr[String] = js.undefined,
         operator: js.UndefOr[Operator] = js.undefined
     ): Selector = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "fieldName" -> fieldName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "operator" -> operator.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Selector]
+      val __obj = js.Dictionary.empty[js.Any]
+      fieldName.foreach(__v => __obj.update("fieldName", __v.asInstanceOf[js.Any]))
+      operator.foreach(__v => __obj.update("operator", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Selector]
     }
   }
 
@@ -1237,13 +1125,13 @@ package datapipeline {
         pipelineId: id,
         status: String
     ): SetStatusInput = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "objectIds"  -> objectIds.asInstanceOf[js.Any],
         "pipelineId" -> pipelineId.asInstanceOf[js.Any],
         "status"     -> status.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SetStatusInput]
+      __obj.asInstanceOf[SetStatusInput]
     }
   }
 
@@ -1267,21 +1155,15 @@ package datapipeline {
         errorMessage: js.UndefOr[errorMessage] = js.undefined,
         errorStackTrace: js.UndefOr[String] = js.undefined
     ): SetTaskStatusInput = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "taskId"     -> taskId.asInstanceOf[js.Any],
-        "taskStatus" -> taskStatus.asInstanceOf[js.Any],
-        "errorId" -> errorId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "errorMessage" -> errorMessage.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "errorStackTrace" -> errorStackTrace.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "taskStatus" -> taskStatus.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SetTaskStatusInput]
+      errorId.foreach(__v => __obj.update("errorId", __v.asInstanceOf[js.Any]))
+      errorMessage.foreach(__v => __obj.update("errorMessage", __v.asInstanceOf[js.Any]))
+      errorStackTrace.foreach(__v => __obj.update("errorStackTrace", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[SetTaskStatusInput]
     }
   }
 
@@ -1294,10 +1176,9 @@ package datapipeline {
   object SetTaskStatusOutput {
     def apply(
         ): SetTaskStatusOutput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary.empty[js.Any]
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SetTaskStatusOutput]
+      __obj.asInstanceOf[SetTaskStatusOutput]
     }
   }
 
@@ -1315,12 +1196,12 @@ package datapipeline {
         key: tagKey,
         value: tagValue
     ): Tag = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "key"   -> key.asInstanceOf[js.Any],
         "value" -> value.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Tag]
+      __obj.asInstanceOf[Tag]
     }
   }
 
@@ -1350,22 +1231,12 @@ package datapipeline {
         pipelineId: js.UndefOr[id] = js.undefined,
         taskId: js.UndefOr[taskId] = js.undefined
     ): TaskObject = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "attemptId" -> attemptId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "objects" -> objects.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "pipelineId" -> pipelineId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "taskId" -> taskId.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[TaskObject]
+      val __obj = js.Dictionary.empty[js.Any]
+      attemptId.foreach(__v => __obj.update("attemptId", __v.asInstanceOf[js.Any]))
+      objects.foreach(__v => __obj.update("objects", __v.asInstanceOf[js.Any]))
+      pipelineId.foreach(__v => __obj.update("pipelineId", __v.asInstanceOf[js.Any]))
+      taskId.foreach(__v => __obj.update("taskId", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[TaskObject]
     }
   }
 
@@ -1395,18 +1266,14 @@ package datapipeline {
         parameterObjects: js.UndefOr[ParameterObjectList] = js.undefined,
         parameterValues: js.UndefOr[ParameterValueList] = js.undefined
     ): ValidatePipelineDefinitionInput = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "pipelineId"      -> pipelineId.asInstanceOf[js.Any],
-        "pipelineObjects" -> pipelineObjects.asInstanceOf[js.Any],
-        "parameterObjects" -> parameterObjects.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "parameterValues" -> parameterValues.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "pipelineObjects" -> pipelineObjects.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ValidatePipelineDefinitionInput]
+      parameterObjects.foreach(__v => __obj.update("parameterObjects", __v.asInstanceOf[js.Any]))
+      parameterValues.foreach(__v => __obj.update("parameterValues", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ValidatePipelineDefinitionInput]
     }
   }
 
@@ -1426,17 +1293,13 @@ package datapipeline {
         validationErrors: js.UndefOr[ValidationErrors] = js.undefined,
         validationWarnings: js.UndefOr[ValidationWarnings] = js.undefined
     ): ValidatePipelineDefinitionOutput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "errored" -> errored.asInstanceOf[js.Any],
-        "validationErrors" -> validationErrors.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "validationWarnings" -> validationWarnings.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "errored" -> errored.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ValidatePipelineDefinitionOutput]
+      validationErrors.foreach(__v => __obj.update("validationErrors", __v.asInstanceOf[js.Any]))
+      validationWarnings.foreach(__v => __obj.update("validationWarnings", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ValidatePipelineDefinitionOutput]
     }
   }
 
@@ -1454,16 +1317,10 @@ package datapipeline {
         errors: js.UndefOr[validationMessages] = js.undefined,
         id: js.UndefOr[id] = js.undefined
     ): ValidationError = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "errors" -> errors.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "id" -> id.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ValidationError]
+      val __obj = js.Dictionary.empty[js.Any]
+      errors.foreach(__v => __obj.update("errors", __v.asInstanceOf[js.Any]))
+      id.foreach(__v => __obj.update("id", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ValidationError]
     }
   }
 
@@ -1481,16 +1338,10 @@ package datapipeline {
         id: js.UndefOr[id] = js.undefined,
         warnings: js.UndefOr[validationMessages] = js.undefined
     ): ValidationWarning = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "id" -> id.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "warnings" -> warnings.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ValidationWarning]
+      val __obj = js.Dictionary.empty[js.Any]
+      id.foreach(__v => __obj.update("id", __v.asInstanceOf[js.Any]))
+      warnings.foreach(__v => __obj.update("warnings", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ValidationWarning]
     }
   }
 }

@@ -109,28 +109,14 @@ package mediastore {
         Name: js.UndefOr[ContainerName] = js.undefined,
         Status: js.UndefOr[ContainerStatus] = js.undefined
     ): Container = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ARN" -> ARN.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "AccessLoggingEnabled" -> AccessLoggingEnabled.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "CreationTime" -> CreationTime.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Endpoint" -> Endpoint.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Name" -> Name.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Status" -> Status.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Container]
+      val __obj = js.Dictionary.empty[js.Any]
+      ARN.foreach(__v => __obj.update("ARN", __v.asInstanceOf[js.Any]))
+      AccessLoggingEnabled.foreach(__v => __obj.update("AccessLoggingEnabled", __v.asInstanceOf[js.Any]))
+      CreationTime.foreach(__v => __obj.update("CreationTime", __v.asInstanceOf[js.Any]))
+      Endpoint.foreach(__v => __obj.update("Endpoint", __v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.update("Status", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Container]
     }
   }
 
@@ -162,21 +148,15 @@ package mediastore {
         ExposeHeaders: js.UndefOr[ExposeHeaders] = js.undefined,
         MaxAgeSeconds: js.UndefOr[MaxAgeSeconds] = js.undefined
     ): CorsRule = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "AllowedHeaders" -> AllowedHeaders.asInstanceOf[js.Any],
-        "AllowedOrigins" -> AllowedOrigins.asInstanceOf[js.Any],
-        "AllowedMethods" -> AllowedMethods.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ExposeHeaders" -> ExposeHeaders.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MaxAgeSeconds" -> MaxAgeSeconds.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "AllowedOrigins" -> AllowedOrigins.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CorsRule]
+      AllowedMethods.foreach(__v => __obj.update("AllowedMethods", __v.asInstanceOf[js.Any]))
+      ExposeHeaders.foreach(__v => __obj.update("ExposeHeaders", __v.asInstanceOf[js.Any]))
+      MaxAgeSeconds.foreach(__v => __obj.update("MaxAgeSeconds", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CorsRule]
     }
   }
 
@@ -189,11 +169,11 @@ package mediastore {
     def apply(
         ContainerName: ContainerName
     ): CreateContainerInput = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ContainerName" -> ContainerName.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateContainerInput]
+      __obj.asInstanceOf[CreateContainerInput]
     }
   }
 
@@ -206,11 +186,11 @@ package mediastore {
     def apply(
         Container: Container
     ): CreateContainerOutput = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "Container" -> Container.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateContainerOutput]
+      __obj.asInstanceOf[CreateContainerOutput]
     }
   }
 
@@ -223,11 +203,11 @@ package mediastore {
     def apply(
         ContainerName: ContainerName
     ): DeleteContainerInput = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ContainerName" -> ContainerName.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteContainerInput]
+      __obj.asInstanceOf[DeleteContainerInput]
     }
   }
 
@@ -237,10 +217,9 @@ package mediastore {
   object DeleteContainerOutput {
     def apply(
         ): DeleteContainerOutput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary.empty[js.Any]
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteContainerOutput]
+      __obj.asInstanceOf[DeleteContainerOutput]
     }
   }
 
@@ -253,11 +232,11 @@ package mediastore {
     def apply(
         ContainerName: ContainerName
     ): DeleteContainerPolicyInput = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ContainerName" -> ContainerName.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteContainerPolicyInput]
+      __obj.asInstanceOf[DeleteContainerPolicyInput]
     }
   }
 
@@ -267,10 +246,9 @@ package mediastore {
   object DeleteContainerPolicyOutput {
     def apply(
         ): DeleteContainerPolicyOutput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary.empty[js.Any]
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteContainerPolicyOutput]
+      __obj.asInstanceOf[DeleteContainerPolicyOutput]
     }
   }
 
@@ -283,11 +261,11 @@ package mediastore {
     def apply(
         ContainerName: ContainerName
     ): DeleteCorsPolicyInput = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ContainerName" -> ContainerName.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteCorsPolicyInput]
+      __obj.asInstanceOf[DeleteCorsPolicyInput]
     }
   }
 
@@ -297,10 +275,9 @@ package mediastore {
   object DeleteCorsPolicyOutput {
     def apply(
         ): DeleteCorsPolicyOutput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary.empty[js.Any]
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteCorsPolicyOutput]
+      __obj.asInstanceOf[DeleteCorsPolicyOutput]
     }
   }
 
@@ -313,11 +290,11 @@ package mediastore {
     def apply(
         ContainerName: ContainerName
     ): DeleteLifecyclePolicyInput = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ContainerName" -> ContainerName.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteLifecyclePolicyInput]
+      __obj.asInstanceOf[DeleteLifecyclePolicyInput]
     }
   }
 
@@ -327,10 +304,9 @@ package mediastore {
   object DeleteLifecyclePolicyOutput {
     def apply(
         ): DeleteLifecyclePolicyOutput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary.empty[js.Any]
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteLifecyclePolicyOutput]
+      __obj.asInstanceOf[DeleteLifecyclePolicyOutput]
     }
   }
 
@@ -343,13 +319,9 @@ package mediastore {
     def apply(
         ContainerName: js.UndefOr[ContainerName] = js.undefined
     ): DescribeContainerInput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ContainerName" -> ContainerName.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeContainerInput]
+      val __obj = js.Dictionary.empty[js.Any]
+      ContainerName.foreach(__v => __obj.update("ContainerName", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeContainerInput]
     }
   }
 
@@ -362,13 +334,9 @@ package mediastore {
     def apply(
         Container: js.UndefOr[Container] = js.undefined
     ): DescribeContainerOutput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Container" -> Container.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeContainerOutput]
+      val __obj = js.Dictionary.empty[js.Any]
+      Container.foreach(__v => __obj.update("Container", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeContainerOutput]
     }
   }
 
@@ -381,11 +349,11 @@ package mediastore {
     def apply(
         ContainerName: ContainerName
     ): GetContainerPolicyInput = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ContainerName" -> ContainerName.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetContainerPolicyInput]
+      __obj.asInstanceOf[GetContainerPolicyInput]
     }
   }
 
@@ -398,11 +366,11 @@ package mediastore {
     def apply(
         Policy: ContainerPolicy
     ): GetContainerPolicyOutput = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "Policy" -> Policy.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetContainerPolicyOutput]
+      __obj.asInstanceOf[GetContainerPolicyOutput]
     }
   }
 
@@ -415,11 +383,11 @@ package mediastore {
     def apply(
         ContainerName: ContainerName
     ): GetCorsPolicyInput = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ContainerName" -> ContainerName.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetCorsPolicyInput]
+      __obj.asInstanceOf[GetCorsPolicyInput]
     }
   }
 
@@ -432,11 +400,11 @@ package mediastore {
     def apply(
         CorsPolicy: CorsPolicy
     ): GetCorsPolicyOutput = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "CorsPolicy" -> CorsPolicy.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetCorsPolicyOutput]
+      __obj.asInstanceOf[GetCorsPolicyOutput]
     }
   }
 
@@ -449,11 +417,11 @@ package mediastore {
     def apply(
         ContainerName: ContainerName
     ): GetLifecyclePolicyInput = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ContainerName" -> ContainerName.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetLifecyclePolicyInput]
+      __obj.asInstanceOf[GetLifecyclePolicyInput]
     }
   }
 
@@ -466,11 +434,11 @@ package mediastore {
     def apply(
         LifecyclePolicy: LifecyclePolicy
     ): GetLifecyclePolicyOutput = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "LifecyclePolicy" -> LifecyclePolicy.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetLifecyclePolicyOutput]
+      __obj.asInstanceOf[GetLifecyclePolicyOutput]
     }
   }
 
@@ -485,16 +453,10 @@ package mediastore {
         MaxResults: js.UndefOr[ContainerListLimit] = js.undefined,
         NextToken: js.UndefOr[PaginationToken] = js.undefined
     ): ListContainersInput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "MaxResults" -> MaxResults.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NextToken" -> NextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListContainersInput]
+      val __obj = js.Dictionary.empty[js.Any]
+      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListContainersInput]
     }
   }
 
@@ -509,14 +471,12 @@ package mediastore {
         Containers: ContainerList,
         NextToken: js.UndefOr[PaginationToken] = js.undefined
     ): ListContainersOutput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Containers" -> Containers.asInstanceOf[js.Any],
-        "NextToken" -> NextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "Containers" -> Containers.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListContainersOutput]
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListContainersOutput]
     }
   }
 
@@ -540,12 +500,12 @@ package mediastore {
         ContainerName: ContainerName,
         Policy: ContainerPolicy
     ): PutContainerPolicyInput = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ContainerName" -> ContainerName.asInstanceOf[js.Any],
         "Policy"        -> Policy.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PutContainerPolicyInput]
+      __obj.asInstanceOf[PutContainerPolicyInput]
     }
   }
 
@@ -555,10 +515,9 @@ package mediastore {
   object PutContainerPolicyOutput {
     def apply(
         ): PutContainerPolicyOutput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary.empty[js.Any]
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PutContainerPolicyOutput]
+      __obj.asInstanceOf[PutContainerPolicyOutput]
     }
   }
 
@@ -573,12 +532,12 @@ package mediastore {
         ContainerName: ContainerName,
         CorsPolicy: CorsPolicy
     ): PutCorsPolicyInput = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ContainerName" -> ContainerName.asInstanceOf[js.Any],
         "CorsPolicy"    -> CorsPolicy.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PutCorsPolicyInput]
+      __obj.asInstanceOf[PutCorsPolicyInput]
     }
   }
 
@@ -588,10 +547,9 @@ package mediastore {
   object PutCorsPolicyOutput {
     def apply(
         ): PutCorsPolicyOutput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary.empty[js.Any]
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PutCorsPolicyOutput]
+      __obj.asInstanceOf[PutCorsPolicyOutput]
     }
   }
 
@@ -606,12 +564,12 @@ package mediastore {
         ContainerName: ContainerName,
         LifecyclePolicy: LifecyclePolicy
     ): PutLifecyclePolicyInput = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ContainerName"   -> ContainerName.asInstanceOf[js.Any],
         "LifecyclePolicy" -> LifecyclePolicy.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PutLifecyclePolicyInput]
+      __obj.asInstanceOf[PutLifecyclePolicyInput]
     }
   }
 
@@ -621,10 +579,9 @@ package mediastore {
   object PutLifecyclePolicyOutput {
     def apply(
         ): PutLifecyclePolicyOutput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary.empty[js.Any]
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PutLifecyclePolicyOutput]
+      __obj.asInstanceOf[PutLifecyclePolicyOutput]
     }
   }
 
@@ -637,11 +594,11 @@ package mediastore {
     def apply(
         ContainerName: ContainerName
     ): StartAccessLoggingInput = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ContainerName" -> ContainerName.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StartAccessLoggingInput]
+      __obj.asInstanceOf[StartAccessLoggingInput]
     }
   }
 
@@ -651,10 +608,9 @@ package mediastore {
   object StartAccessLoggingOutput {
     def apply(
         ): StartAccessLoggingOutput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary.empty[js.Any]
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StartAccessLoggingOutput]
+      __obj.asInstanceOf[StartAccessLoggingOutput]
     }
   }
 
@@ -667,11 +623,11 @@ package mediastore {
     def apply(
         ContainerName: ContainerName
     ): StopAccessLoggingInput = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ContainerName" -> ContainerName.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StopAccessLoggingInput]
+      __obj.asInstanceOf[StopAccessLoggingInput]
     }
   }
 
@@ -681,10 +637,9 @@ package mediastore {
   object StopAccessLoggingOutput {
     def apply(
         ): StopAccessLoggingOutput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary.empty[js.Any]
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StopAccessLoggingOutput]
+      __obj.asInstanceOf[StopAccessLoggingOutput]
     }
   }
 }

@@ -119,12 +119,12 @@ package applicationautoscaling {
         AlarmARN: ResourceId,
         AlarmName: ResourceId
     ): Alarm = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "AlarmARN"  -> AlarmARN.asInstanceOf[js.Any],
         "AlarmName" -> AlarmName.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Alarm]
+      __obj.asInstanceOf[Alarm]
     }
   }
 
@@ -152,19 +152,15 @@ package applicationautoscaling {
         Dimensions: js.UndefOr[MetricDimensions] = js.undefined,
         Unit: js.UndefOr[MetricUnit] = js.undefined
     ): CustomizedMetricSpecification = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "MetricName" -> MetricName.asInstanceOf[js.Any],
         "Namespace"  -> Namespace.asInstanceOf[js.Any],
-        "Statistic"  -> Statistic.asInstanceOf[js.Any],
-        "Dimensions" -> Dimensions.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Unit" -> Unit.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "Statistic"  -> Statistic.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CustomizedMetricSpecification]
+      Dimensions.foreach(__v => __obj.update("Dimensions", __v.asInstanceOf[js.Any]))
+      Unit.foreach(__v => __obj.update("Unit", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CustomizedMetricSpecification]
     }
   }
 
@@ -183,14 +179,14 @@ package applicationautoscaling {
         ScalableDimension: ScalableDimension,
         ServiceNamespace: ServiceNamespace
     ): DeleteScalingPolicyRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "PolicyName"        -> PolicyName.asInstanceOf[js.Any],
         "ResourceId"        -> ResourceId.asInstanceOf[js.Any],
         "ScalableDimension" -> ScalableDimension.asInstanceOf[js.Any],
         "ServiceNamespace"  -> ServiceNamespace.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteScalingPolicyRequest]
+      __obj.asInstanceOf[DeleteScalingPolicyRequest]
     }
   }
 
@@ -200,10 +196,9 @@ package applicationautoscaling {
   object DeleteScalingPolicyResponse {
     def apply(
         ): DeleteScalingPolicyResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary.empty[js.Any]
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteScalingPolicyResponse]
+      __obj.asInstanceOf[DeleteScalingPolicyResponse]
     }
   }
 
@@ -222,14 +217,14 @@ package applicationautoscaling {
         ScheduledActionName: ResourceIdMaxLen1600,
         ServiceNamespace: ServiceNamespace
     ): DeleteScheduledActionRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ResourceId"          -> ResourceId.asInstanceOf[js.Any],
         "ScalableDimension"   -> ScalableDimension.asInstanceOf[js.Any],
         "ScheduledActionName" -> ScheduledActionName.asInstanceOf[js.Any],
         "ServiceNamespace"    -> ServiceNamespace.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteScheduledActionRequest]
+      __obj.asInstanceOf[DeleteScheduledActionRequest]
     }
   }
 
@@ -239,10 +234,9 @@ package applicationautoscaling {
   object DeleteScheduledActionResponse {
     def apply(
         ): DeleteScheduledActionResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary.empty[js.Any]
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteScheduledActionResponse]
+      __obj.asInstanceOf[DeleteScheduledActionResponse]
     }
   }
 
@@ -259,13 +253,13 @@ package applicationautoscaling {
         ScalableDimension: ScalableDimension,
         ServiceNamespace: ServiceNamespace
     ): DeregisterScalableTargetRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ResourceId"        -> ResourceId.asInstanceOf[js.Any],
         "ScalableDimension" -> ScalableDimension.asInstanceOf[js.Any],
         "ServiceNamespace"  -> ServiceNamespace.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeregisterScalableTargetRequest]
+      __obj.asInstanceOf[DeregisterScalableTargetRequest]
     }
   }
 
@@ -275,10 +269,9 @@ package applicationautoscaling {
   object DeregisterScalableTargetResponse {
     def apply(
         ): DeregisterScalableTargetResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary.empty[js.Any]
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeregisterScalableTargetResponse]
+      __obj.asInstanceOf[DeregisterScalableTargetResponse]
     }
   }
 
@@ -299,23 +292,15 @@ package applicationautoscaling {
         ResourceIds: js.UndefOr[ResourceIdsMaxLen1600] = js.undefined,
         ScalableDimension: js.UndefOr[ScalableDimension] = js.undefined
     ): DescribeScalableTargetsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ServiceNamespace" -> ServiceNamespace.asInstanceOf[js.Any],
-        "MaxResults" -> MaxResults.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NextToken" -> NextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ResourceIds" -> ResourceIds.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ScalableDimension" -> ScalableDimension.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "ServiceNamespace" -> ServiceNamespace.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeScalableTargetsRequest]
+      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      ResourceIds.foreach(__v => __obj.update("ResourceIds", __v.asInstanceOf[js.Any]))
+      ScalableDimension.foreach(__v => __obj.update("ScalableDimension", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeScalableTargetsRequest]
     }
   }
 
@@ -330,16 +315,10 @@ package applicationautoscaling {
         NextToken: js.UndefOr[XmlString] = js.undefined,
         ScalableTargets: js.UndefOr[ScalableTargets] = js.undefined
     ): DescribeScalableTargetsResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "NextToken" -> NextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ScalableTargets" -> ScalableTargets.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeScalableTargetsResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      ScalableTargets.foreach(__v => __obj.update("ScalableTargets", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeScalableTargetsResponse]
     }
   }
 
@@ -360,23 +339,15 @@ package applicationautoscaling {
         ResourceId: js.UndefOr[ResourceIdMaxLen1600] = js.undefined,
         ScalableDimension: js.UndefOr[ScalableDimension] = js.undefined
     ): DescribeScalingActivitiesRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ServiceNamespace" -> ServiceNamespace.asInstanceOf[js.Any],
-        "MaxResults" -> MaxResults.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NextToken" -> NextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ResourceId" -> ResourceId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ScalableDimension" -> ScalableDimension.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "ServiceNamespace" -> ServiceNamespace.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeScalingActivitiesRequest]
+      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      ResourceId.foreach(__v => __obj.update("ResourceId", __v.asInstanceOf[js.Any]))
+      ScalableDimension.foreach(__v => __obj.update("ScalableDimension", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeScalingActivitiesRequest]
     }
   }
 
@@ -391,16 +362,10 @@ package applicationautoscaling {
         NextToken: js.UndefOr[XmlString] = js.undefined,
         ScalingActivities: js.UndefOr[ScalingActivities] = js.undefined
     ): DescribeScalingActivitiesResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "NextToken" -> NextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ScalingActivities" -> ScalingActivities.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeScalingActivitiesResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      ScalingActivities.foreach(__v => __obj.update("ScalingActivities", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeScalingActivitiesResponse]
     }
   }
 
@@ -423,26 +388,16 @@ package applicationautoscaling {
         ResourceId: js.UndefOr[ResourceIdMaxLen1600] = js.undefined,
         ScalableDimension: js.UndefOr[ScalableDimension] = js.undefined
     ): DescribeScalingPoliciesRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ServiceNamespace" -> ServiceNamespace.asInstanceOf[js.Any],
-        "MaxResults" -> MaxResults.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NextToken" -> NextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "PolicyNames" -> PolicyNames.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ResourceId" -> ResourceId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ScalableDimension" -> ScalableDimension.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "ServiceNamespace" -> ServiceNamespace.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeScalingPoliciesRequest]
+      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      PolicyNames.foreach(__v => __obj.update("PolicyNames", __v.asInstanceOf[js.Any]))
+      ResourceId.foreach(__v => __obj.update("ResourceId", __v.asInstanceOf[js.Any]))
+      ScalableDimension.foreach(__v => __obj.update("ScalableDimension", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeScalingPoliciesRequest]
     }
   }
 
@@ -457,16 +412,10 @@ package applicationautoscaling {
         NextToken: js.UndefOr[XmlString] = js.undefined,
         ScalingPolicies: js.UndefOr[ScalingPolicies] = js.undefined
     ): DescribeScalingPoliciesResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "NextToken" -> NextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ScalingPolicies" -> ScalingPolicies.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeScalingPoliciesResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      ScalingPolicies.foreach(__v => __obj.update("ScalingPolicies", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeScalingPoliciesResponse]
     }
   }
 
@@ -489,26 +438,16 @@ package applicationautoscaling {
         ScalableDimension: js.UndefOr[ScalableDimension] = js.undefined,
         ScheduledActionNames: js.UndefOr[ResourceIdsMaxLen1600] = js.undefined
     ): DescribeScheduledActionsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ServiceNamespace" -> ServiceNamespace.asInstanceOf[js.Any],
-        "MaxResults" -> MaxResults.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NextToken" -> NextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ResourceId" -> ResourceId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ScalableDimension" -> ScalableDimension.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ScheduledActionNames" -> ScheduledActionNames.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "ServiceNamespace" -> ServiceNamespace.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeScheduledActionsRequest]
+      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      ResourceId.foreach(__v => __obj.update("ResourceId", __v.asInstanceOf[js.Any]))
+      ScalableDimension.foreach(__v => __obj.update("ScalableDimension", __v.asInstanceOf[js.Any]))
+      ScheduledActionNames.foreach(__v => __obj.update("ScheduledActionNames", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeScheduledActionsRequest]
     }
   }
 
@@ -523,16 +462,10 @@ package applicationautoscaling {
         NextToken: js.UndefOr[XmlString] = js.undefined,
         ScheduledActions: js.UndefOr[ScheduledActions] = js.undefined
     ): DescribeScheduledActionsResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "NextToken" -> NextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ScheduledActions" -> ScheduledActions.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeScheduledActionsResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      ScheduledActions.foreach(__v => __obj.update("ScheduledActions", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeScheduledActionsResponse]
     }
   }
 
@@ -558,12 +491,12 @@ package applicationautoscaling {
         Name: MetricDimensionName,
         Value: MetricDimensionValue
     ): MetricDimension = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "Name"  -> Name.asInstanceOf[js.Any],
         "Value" -> Value.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[MetricDimension]
+      __obj.asInstanceOf[MetricDimension]
     }
   }
 
@@ -626,14 +559,12 @@ package applicationautoscaling {
         PredefinedMetricType: MetricType,
         ResourceLabel: js.UndefOr[ResourceLabel] = js.undefined
     ): PredefinedMetricSpecification = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "PredefinedMetricType" -> PredefinedMetricType.asInstanceOf[js.Any],
-        "ResourceLabel" -> ResourceLabel.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "PredefinedMetricType" -> PredefinedMetricType.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PredefinedMetricSpecification]
+      ResourceLabel.foreach(__v => __obj.update("ResourceLabel", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PredefinedMetricSpecification]
     }
   }
 
@@ -658,23 +589,21 @@ package applicationautoscaling {
         StepScalingPolicyConfiguration: js.UndefOr[StepScalingPolicyConfiguration] = js.undefined,
         TargetTrackingScalingPolicyConfiguration: js.UndefOr[TargetTrackingScalingPolicyConfiguration] = js.undefined
     ): PutScalingPolicyRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "PolicyName"        -> PolicyName.asInstanceOf[js.Any],
         "ResourceId"        -> ResourceId.asInstanceOf[js.Any],
         "ScalableDimension" -> ScalableDimension.asInstanceOf[js.Any],
-        "ServiceNamespace"  -> ServiceNamespace.asInstanceOf[js.Any],
-        "PolicyType" -> PolicyType.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "StepScalingPolicyConfiguration" -> StepScalingPolicyConfiguration.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "TargetTrackingScalingPolicyConfiguration" -> TargetTrackingScalingPolicyConfiguration.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "ServiceNamespace"  -> ServiceNamespace.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PutScalingPolicyRequest]
+      PolicyType.foreach(__v => __obj.update("PolicyType", __v.asInstanceOf[js.Any]))
+      StepScalingPolicyConfiguration.foreach(
+        __v => __obj.update("StepScalingPolicyConfiguration", __v.asInstanceOf[js.Any])
+      )
+      TargetTrackingScalingPolicyConfiguration.foreach(
+        __v => __obj.update("TargetTrackingScalingPolicyConfiguration", __v.asInstanceOf[js.Any])
+      )
+      __obj.asInstanceOf[PutScalingPolicyRequest]
     }
   }
 
@@ -689,14 +618,12 @@ package applicationautoscaling {
         PolicyARN: ResourceIdMaxLen1600,
         Alarms: js.UndefOr[Alarms] = js.undefined
     ): PutScalingPolicyResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "PolicyARN" -> PolicyARN.asInstanceOf[js.Any],
-        "Alarms" -> Alarms.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "PolicyARN" -> PolicyARN.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PutScalingPolicyResponse]
+      Alarms.foreach(__v => __obj.update("Alarms", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PutScalingPolicyResponse]
     }
   }
 
@@ -723,26 +650,18 @@ package applicationautoscaling {
         Schedule: js.UndefOr[ResourceIdMaxLen1600] = js.undefined,
         StartTime: js.UndefOr[TimestampType] = js.undefined
     ): PutScheduledActionRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ResourceId"          -> ResourceId.asInstanceOf[js.Any],
         "ScalableDimension"   -> ScalableDimension.asInstanceOf[js.Any],
         "ScheduledActionName" -> ScheduledActionName.asInstanceOf[js.Any],
-        "ServiceNamespace"    -> ServiceNamespace.asInstanceOf[js.Any],
-        "EndTime" -> EndTime.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ScalableTargetAction" -> ScalableTargetAction.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Schedule" -> Schedule.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "StartTime" -> StartTime.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "ServiceNamespace"    -> ServiceNamespace.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PutScheduledActionRequest]
+      EndTime.foreach(__v => __obj.update("EndTime", __v.asInstanceOf[js.Any]))
+      ScalableTargetAction.foreach(__v => __obj.update("ScalableTargetAction", __v.asInstanceOf[js.Any]))
+      Schedule.foreach(__v => __obj.update("Schedule", __v.asInstanceOf[js.Any]))
+      StartTime.foreach(__v => __obj.update("StartTime", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PutScheduledActionRequest]
     }
   }
 
@@ -752,10 +671,9 @@ package applicationautoscaling {
   object PutScheduledActionResponse {
     def apply(
         ): PutScheduledActionResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary.empty[js.Any]
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PutScheduledActionResponse]
+      __obj.asInstanceOf[PutScheduledActionResponse]
     }
   }
 
@@ -778,22 +696,16 @@ package applicationautoscaling {
         MinCapacity: js.UndefOr[ResourceCapacity] = js.undefined,
         RoleARN: js.UndefOr[ResourceIdMaxLen1600] = js.undefined
     ): RegisterScalableTargetRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ResourceId"        -> ResourceId.asInstanceOf[js.Any],
         "ScalableDimension" -> ScalableDimension.asInstanceOf[js.Any],
-        "ServiceNamespace"  -> ServiceNamespace.asInstanceOf[js.Any],
-        "MaxCapacity" -> MaxCapacity.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MinCapacity" -> MinCapacity.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "RoleARN" -> RoleARN.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "ServiceNamespace"  -> ServiceNamespace.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RegisterScalableTargetRequest]
+      MaxCapacity.foreach(__v => __obj.update("MaxCapacity", __v.asInstanceOf[js.Any]))
+      MinCapacity.foreach(__v => __obj.update("MinCapacity", __v.asInstanceOf[js.Any]))
+      RoleARN.foreach(__v => __obj.update("RoleARN", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[RegisterScalableTargetRequest]
     }
   }
 
@@ -803,10 +715,9 @@ package applicationautoscaling {
   object RegisterScalableTargetResponse {
     def apply(
         ): RegisterScalableTargetResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary.empty[js.Any]
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RegisterScalableTargetResponse]
+      __obj.asInstanceOf[RegisterScalableTargetResponse]
     }
   }
 
@@ -862,7 +773,7 @@ package applicationautoscaling {
         ScalableDimension: ScalableDimension,
         ServiceNamespace: ServiceNamespace
     ): ScalableTarget = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "CreationTime"      -> CreationTime.asInstanceOf[js.Any],
         "MaxCapacity"       -> MaxCapacity.asInstanceOf[js.Any],
         "MinCapacity"       -> MinCapacity.asInstanceOf[js.Any],
@@ -870,9 +781,9 @@ package applicationautoscaling {
         "RoleARN"           -> RoleARN.asInstanceOf[js.Any],
         "ScalableDimension" -> ScalableDimension.asInstanceOf[js.Any],
         "ServiceNamespace"  -> ServiceNamespace.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ScalableTarget]
+      __obj.asInstanceOf[ScalableTarget]
     }
   }
 
@@ -890,16 +801,10 @@ package applicationautoscaling {
         MaxCapacity: js.UndefOr[ResourceCapacity] = js.undefined,
         MinCapacity: js.UndefOr[ResourceCapacity] = js.undefined
     ): ScalableTargetAction = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "MaxCapacity" -> MaxCapacity.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MinCapacity" -> MinCapacity.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ScalableTargetAction]
+      val __obj = js.Dictionary.empty[js.Any]
+      MaxCapacity.foreach(__v => __obj.update("MaxCapacity", __v.asInstanceOf[js.Any]))
+      MinCapacity.foreach(__v => __obj.update("MinCapacity", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ScalableTargetAction]
     }
   }
 
@@ -935,7 +840,7 @@ package applicationautoscaling {
         EndTime: js.UndefOr[TimestampType] = js.undefined,
         StatusMessage: js.UndefOr[XmlString] = js.undefined
     ): ScalingActivity = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ActivityId"        -> ActivityId.asInstanceOf[js.Any],
         "Cause"             -> Cause.asInstanceOf[js.Any],
         "Description"       -> Description.asInstanceOf[js.Any],
@@ -943,19 +848,13 @@ package applicationautoscaling {
         "ScalableDimension" -> ScalableDimension.asInstanceOf[js.Any],
         "ServiceNamespace"  -> ServiceNamespace.asInstanceOf[js.Any],
         "StartTime"         -> StartTime.asInstanceOf[js.Any],
-        "StatusCode"        -> StatusCode.asInstanceOf[js.Any],
-        "Details" -> Details.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "EndTime" -> EndTime.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "StatusMessage" -> StatusMessage.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "StatusCode"        -> StatusCode.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ScalingActivity]
+      Details.foreach(__v => __obj.update("Details", __v.asInstanceOf[js.Any]))
+      EndTime.foreach(__v => __obj.update("EndTime", __v.asInstanceOf[js.Any]))
+      StatusMessage.foreach(__v => __obj.update("StatusMessage", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ScalingActivity]
     }
   }
 
@@ -1000,26 +899,24 @@ package applicationautoscaling {
         StepScalingPolicyConfiguration: js.UndefOr[StepScalingPolicyConfiguration] = js.undefined,
         TargetTrackingScalingPolicyConfiguration: js.UndefOr[TargetTrackingScalingPolicyConfiguration] = js.undefined
     ): ScalingPolicy = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "CreationTime"      -> CreationTime.asInstanceOf[js.Any],
         "PolicyARN"         -> PolicyARN.asInstanceOf[js.Any],
         "PolicyName"        -> PolicyName.asInstanceOf[js.Any],
         "PolicyType"        -> PolicyType.asInstanceOf[js.Any],
         "ResourceId"        -> ResourceId.asInstanceOf[js.Any],
         "ScalableDimension" -> ScalableDimension.asInstanceOf[js.Any],
-        "ServiceNamespace"  -> ServiceNamespace.asInstanceOf[js.Any],
-        "Alarms" -> Alarms.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "StepScalingPolicyConfiguration" -> StepScalingPolicyConfiguration.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "TargetTrackingScalingPolicyConfiguration" -> TargetTrackingScalingPolicyConfiguration.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "ServiceNamespace"  -> ServiceNamespace.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ScalingPolicy]
+      Alarms.foreach(__v => __obj.update("Alarms", __v.asInstanceOf[js.Any]))
+      StepScalingPolicyConfiguration.foreach(
+        __v => __obj.update("StepScalingPolicyConfiguration", __v.asInstanceOf[js.Any])
+      )
+      TargetTrackingScalingPolicyConfiguration.foreach(
+        __v => __obj.update("TargetTrackingScalingPolicyConfiguration", __v.asInstanceOf[js.Any])
+      )
+      __obj.asInstanceOf[ScalingPolicy]
     }
   }
 
@@ -1053,28 +950,20 @@ package applicationautoscaling {
         ScalableTargetAction: js.UndefOr[ScalableTargetAction] = js.undefined,
         StartTime: js.UndefOr[TimestampType] = js.undefined
     ): ScheduledAction = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "CreationTime"        -> CreationTime.asInstanceOf[js.Any],
         "ResourceId"          -> ResourceId.asInstanceOf[js.Any],
         "Schedule"            -> Schedule.asInstanceOf[js.Any],
         "ScheduledActionARN"  -> ScheduledActionARN.asInstanceOf[js.Any],
         "ScheduledActionName" -> ScheduledActionName.asInstanceOf[js.Any],
-        "ServiceNamespace"    -> ServiceNamespace.asInstanceOf[js.Any],
-        "EndTime" -> EndTime.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ScalableDimension" -> ScalableDimension.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ScalableTargetAction" -> ScalableTargetAction.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "StartTime" -> StartTime.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "ServiceNamespace"    -> ServiceNamespace.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ScheduledAction]
+      EndTime.foreach(__v => __obj.update("EndTime", __v.asInstanceOf[js.Any]))
+      ScalableDimension.foreach(__v => __obj.update("ScalableDimension", __v.asInstanceOf[js.Any]))
+      ScalableTargetAction.foreach(__v => __obj.update("ScalableTargetAction", __v.asInstanceOf[js.Any]))
+      StartTime.foreach(__v => __obj.update("StartTime", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ScheduledAction]
     }
   }
 
@@ -1115,17 +1004,13 @@ package applicationautoscaling {
         MetricIntervalLowerBound: js.UndefOr[MetricScale] = js.undefined,
         MetricIntervalUpperBound: js.UndefOr[MetricScale] = js.undefined
     ): StepAdjustment = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ScalingAdjustment" -> ScalingAdjustment.asInstanceOf[js.Any],
-        "MetricIntervalLowerBound" -> MetricIntervalLowerBound.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MetricIntervalUpperBound" -> MetricIntervalUpperBound.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "ScalingAdjustment" -> ScalingAdjustment.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StepAdjustment]
+      MetricIntervalLowerBound.foreach(__v => __obj.update("MetricIntervalLowerBound", __v.asInstanceOf[js.Any]))
+      MetricIntervalUpperBound.foreach(__v => __obj.update("MetricIntervalUpperBound", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[StepAdjustment]
     }
   }
 
@@ -1149,25 +1034,13 @@ package applicationautoscaling {
         MinAdjustmentMagnitude: js.UndefOr[MinAdjustmentMagnitude] = js.undefined,
         StepAdjustments: js.UndefOr[StepAdjustments] = js.undefined
     ): StepScalingPolicyConfiguration = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "AdjustmentType" -> AdjustmentType.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Cooldown" -> Cooldown.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MetricAggregationType" -> MetricAggregationType.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MinAdjustmentMagnitude" -> MinAdjustmentMagnitude.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "StepAdjustments" -> StepAdjustments.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StepScalingPolicyConfiguration]
+      val __obj = js.Dictionary.empty[js.Any]
+      AdjustmentType.foreach(__v => __obj.update("AdjustmentType", __v.asInstanceOf[js.Any]))
+      Cooldown.foreach(__v => __obj.update("Cooldown", __v.asInstanceOf[js.Any]))
+      MetricAggregationType.foreach(__v => __obj.update("MetricAggregationType", __v.asInstanceOf[js.Any]))
+      MinAdjustmentMagnitude.foreach(__v => __obj.update("MinAdjustmentMagnitude", __v.asInstanceOf[js.Any]))
+      StepAdjustments.foreach(__v => __obj.update("StepAdjustments", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[StepScalingPolicyConfiguration]
     }
   }
 
@@ -1193,26 +1066,20 @@ package applicationautoscaling {
         ScaleInCooldown: js.UndefOr[Cooldown] = js.undefined,
         ScaleOutCooldown: js.UndefOr[Cooldown] = js.undefined
     ): TargetTrackingScalingPolicyConfiguration = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "TargetValue" -> TargetValue.asInstanceOf[js.Any],
-        "CustomizedMetricSpecification" -> CustomizedMetricSpecification.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DisableScaleIn" -> DisableScaleIn.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "PredefinedMetricSpecification" -> PredefinedMetricSpecification.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ScaleInCooldown" -> ScaleInCooldown.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ScaleOutCooldown" -> ScaleOutCooldown.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "TargetValue" -> TargetValue.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[TargetTrackingScalingPolicyConfiguration]
+      CustomizedMetricSpecification.foreach(
+        __v => __obj.update("CustomizedMetricSpecification", __v.asInstanceOf[js.Any])
+      )
+      DisableScaleIn.foreach(__v => __obj.update("DisableScaleIn", __v.asInstanceOf[js.Any]))
+      PredefinedMetricSpecification.foreach(
+        __v => __obj.update("PredefinedMetricSpecification", __v.asInstanceOf[js.Any])
+      )
+      ScaleInCooldown.foreach(__v => __obj.update("ScaleInCooldown", __v.asInstanceOf[js.Any]))
+      ScaleOutCooldown.foreach(__v => __obj.update("ScaleOutCooldown", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[TargetTrackingScalingPolicyConfiguration]
     }
   }
 }

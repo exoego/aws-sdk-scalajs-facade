@@ -75,14 +75,14 @@ package dlm {
         PolicyDetails: PolicyDetails,
         State: SettablePolicyStateValues
     ): CreateLifecyclePolicyRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "Description"      -> Description.asInstanceOf[js.Any],
         "ExecutionRoleArn" -> ExecutionRoleArn.asInstanceOf[js.Any],
         "PolicyDetails"    -> PolicyDetails.asInstanceOf[js.Any],
         "State"            -> State.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateLifecyclePolicyRequest]
+      __obj.asInstanceOf[CreateLifecyclePolicyRequest]
     }
   }
 
@@ -95,13 +95,9 @@ package dlm {
     def apply(
         PolicyId: js.UndefOr[PolicyId] = js.undefined
     ): CreateLifecyclePolicyResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "PolicyId" -> PolicyId.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateLifecyclePolicyResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      PolicyId.foreach(__v => __obj.update("PolicyId", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateLifecyclePolicyResponse]
     }
   }
 
@@ -121,15 +117,13 @@ package dlm {
         IntervalUnit: IntervalUnitValues,
         Times: js.UndefOr[TimesList] = js.undefined
     ): CreateRule = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "Interval"     -> Interval.asInstanceOf[js.Any],
-        "IntervalUnit" -> IntervalUnit.asInstanceOf[js.Any],
-        "Times" -> Times.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "IntervalUnit" -> IntervalUnit.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateRule]
+      Times.foreach(__v => __obj.update("Times", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateRule]
     }
   }
 
@@ -142,11 +136,11 @@ package dlm {
     def apply(
         PolicyId: PolicyId
     ): DeleteLifecyclePolicyRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "PolicyId" -> PolicyId.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteLifecyclePolicyRequest]
+      __obj.asInstanceOf[DeleteLifecyclePolicyRequest]
     }
   }
 
@@ -156,10 +150,9 @@ package dlm {
   object DeleteLifecyclePolicyResponse {
     def apply(
         ): DeleteLifecyclePolicyResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary.empty[js.Any]
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteLifecyclePolicyResponse]
+      __obj.asInstanceOf[DeleteLifecyclePolicyResponse]
     }
   }
 
@@ -180,25 +173,13 @@ package dlm {
         TagsToAdd: js.UndefOr[TagsToAddFilterList] = js.undefined,
         TargetTags: js.UndefOr[TargetTagsFilterList] = js.undefined
     ): GetLifecyclePoliciesRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "PolicyIds" -> PolicyIds.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ResourceTypes" -> ResourceTypes.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "State" -> State.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "TagsToAdd" -> TagsToAdd.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "TargetTags" -> TargetTags.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetLifecyclePoliciesRequest]
+      val __obj = js.Dictionary.empty[js.Any]
+      PolicyIds.foreach(__v => __obj.update("PolicyIds", __v.asInstanceOf[js.Any]))
+      ResourceTypes.foreach(__v => __obj.update("ResourceTypes", __v.asInstanceOf[js.Any]))
+      State.foreach(__v => __obj.update("State", __v.asInstanceOf[js.Any]))
+      TagsToAdd.foreach(__v => __obj.update("TagsToAdd", __v.asInstanceOf[js.Any]))
+      TargetTags.foreach(__v => __obj.update("TargetTags", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetLifecyclePoliciesRequest]
     }
   }
 
@@ -211,13 +192,9 @@ package dlm {
     def apply(
         Policies: js.UndefOr[LifecyclePolicySummaryList] = js.undefined
     ): GetLifecyclePoliciesResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Policies" -> Policies.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetLifecyclePoliciesResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      Policies.foreach(__v => __obj.update("Policies", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetLifecyclePoliciesResponse]
     }
   }
 
@@ -230,11 +207,11 @@ package dlm {
     def apply(
         PolicyId: PolicyId
     ): GetLifecyclePolicyRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "PolicyId" -> PolicyId.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetLifecyclePolicyRequest]
+      __obj.asInstanceOf[GetLifecyclePolicyRequest]
     }
   }
 
@@ -247,13 +224,9 @@ package dlm {
     def apply(
         Policy: js.UndefOr[LifecyclePolicy] = js.undefined
     ): GetLifecyclePolicyResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Policy" -> Policy.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetLifecyclePolicyResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      Policy.foreach(__v => __obj.update("Policy", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetLifecyclePolicyResponse]
     }
   }
 
@@ -295,31 +268,15 @@ package dlm {
         PolicyId: js.UndefOr[PolicyId] = js.undefined,
         State: js.UndefOr[GettablePolicyStateValues] = js.undefined
     ): LifecyclePolicy = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "DateCreated" -> DateCreated.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DateModified" -> DateModified.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Description" -> Description.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ExecutionRoleArn" -> ExecutionRoleArn.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "PolicyDetails" -> PolicyDetails.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "PolicyId" -> PolicyId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "State" -> State.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[LifecyclePolicy]
+      val __obj = js.Dictionary.empty[js.Any]
+      DateCreated.foreach(__v => __obj.update("DateCreated", __v.asInstanceOf[js.Any]))
+      DateModified.foreach(__v => __obj.update("DateModified", __v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
+      ExecutionRoleArn.foreach(__v => __obj.update("ExecutionRoleArn", __v.asInstanceOf[js.Any]))
+      PolicyDetails.foreach(__v => __obj.update("PolicyDetails", __v.asInstanceOf[js.Any]))
+      PolicyId.foreach(__v => __obj.update("PolicyId", __v.asInstanceOf[js.Any]))
+      State.foreach(__v => __obj.update("State", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[LifecyclePolicy]
     }
   }
 
@@ -339,19 +296,11 @@ package dlm {
         PolicyId: js.UndefOr[PolicyId] = js.undefined,
         State: js.UndefOr[GettablePolicyStateValues] = js.undefined
     ): LifecyclePolicySummary = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Description" -> Description.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "PolicyId" -> PolicyId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "State" -> State.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[LifecyclePolicySummary]
+      val __obj = js.Dictionary.empty[js.Any]
+      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
+      PolicyId.foreach(__v => __obj.update("PolicyId", __v.asInstanceOf[js.Any]))
+      State.foreach(__v => __obj.update("State", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[LifecyclePolicySummary]
     }
   }
 
@@ -371,19 +320,11 @@ package dlm {
         Schedules: js.UndefOr[ScheduleList] = js.undefined,
         TargetTags: js.UndefOr[TargetTagList] = js.undefined
     ): PolicyDetails = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ResourceTypes" -> ResourceTypes.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Schedules" -> Schedules.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "TargetTags" -> TargetTags.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PolicyDetails]
+      val __obj = js.Dictionary.empty[js.Any]
+      ResourceTypes.foreach(__v => __obj.update("ResourceTypes", __v.asInstanceOf[js.Any]))
+      Schedules.foreach(__v => __obj.update("Schedules", __v.asInstanceOf[js.Any]))
+      TargetTags.foreach(__v => __obj.update("TargetTags", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PolicyDetails]
     }
   }
 
@@ -405,11 +346,11 @@ package dlm {
     def apply(
         Count: Count
     ): RetainRule = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "Count" -> Count.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RetainRule]
+      __obj.asInstanceOf[RetainRule]
     }
   }
 
@@ -433,25 +374,13 @@ package dlm {
         RetainRule: js.UndefOr[RetainRule] = js.undefined,
         TagsToAdd: js.UndefOr[TagsToAddList] = js.undefined
     ): Schedule = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "CopyTags" -> CopyTags.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "CreateRule" -> CreateRule.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Name" -> Name.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "RetainRule" -> RetainRule.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "TagsToAdd" -> TagsToAdd.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Schedule]
+      val __obj = js.Dictionary.empty[js.Any]
+      CopyTags.foreach(__v => __obj.update("CopyTags", __v.asInstanceOf[js.Any]))
+      CreateRule.foreach(__v => __obj.update("CreateRule", __v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
+      RetainRule.foreach(__v => __obj.update("RetainRule", __v.asInstanceOf[js.Any]))
+      TagsToAdd.foreach(__v => __obj.update("TagsToAdd", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Schedule]
     }
   }
 
@@ -476,12 +405,12 @@ package dlm {
         Key: String,
         Value: String
     ): Tag = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "Key"   -> Key.asInstanceOf[js.Any],
         "Value" -> Value.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Tag]
+      __obj.asInstanceOf[Tag]
     }
   }
 
@@ -502,23 +431,15 @@ package dlm {
         PolicyDetails: js.UndefOr[PolicyDetails] = js.undefined,
         State: js.UndefOr[SettablePolicyStateValues] = js.undefined
     ): UpdateLifecyclePolicyRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "PolicyId" -> PolicyId.asInstanceOf[js.Any],
-        "Description" -> Description.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ExecutionRoleArn" -> ExecutionRoleArn.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "PolicyDetails" -> PolicyDetails.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "State" -> State.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "PolicyId" -> PolicyId.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateLifecyclePolicyRequest]
+      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
+      ExecutionRoleArn.foreach(__v => __obj.update("ExecutionRoleArn", __v.asInstanceOf[js.Any]))
+      PolicyDetails.foreach(__v => __obj.update("PolicyDetails", __v.asInstanceOf[js.Any]))
+      State.foreach(__v => __obj.update("State", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateLifecyclePolicyRequest]
     }
   }
 
@@ -528,10 +449,9 @@ package dlm {
   object UpdateLifecyclePolicyResponse {
     def apply(
         ): UpdateLifecyclePolicyResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary.empty[js.Any]
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateLifecyclePolicyResponse]
+      __obj.asInstanceOf[UpdateLifecyclePolicyResponse]
     }
   }
 }

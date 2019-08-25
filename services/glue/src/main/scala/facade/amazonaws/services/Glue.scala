@@ -531,25 +531,13 @@ package glue {
         SecurityConfiguration: js.UndefOr[NameString] = js.undefined,
         Timeout: js.UndefOr[Timeout] = js.undefined
     ): Action = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Arguments" -> Arguments.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "JobName" -> JobName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NotificationProperty" -> NotificationProperty.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SecurityConfiguration" -> SecurityConfiguration.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Timeout" -> Timeout.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Action]
+      val __obj = js.Dictionary.empty[js.Any]
+      Arguments.foreach(__v => __obj.update("Arguments", __v.asInstanceOf[js.Any]))
+      JobName.foreach(__v => __obj.update("JobName", __v.asInstanceOf[js.Any]))
+      NotificationProperty.foreach(__v => __obj.update("NotificationProperty", __v.asInstanceOf[js.Any]))
+      SecurityConfiguration.foreach(__v => __obj.update("SecurityConfiguration", __v.asInstanceOf[js.Any]))
+      Timeout.foreach(__v => __obj.update("Timeout", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Action]
     }
   }
 
@@ -568,16 +556,14 @@ package glue {
         TableName: NameString,
         CatalogId: js.UndefOr[CatalogIdString] = js.undefined
     ): BatchCreatePartitionRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "DatabaseName"       -> DatabaseName.asInstanceOf[js.Any],
         "PartitionInputList" -> PartitionInputList.asInstanceOf[js.Any],
-        "TableName"          -> TableName.asInstanceOf[js.Any],
-        "CatalogId" -> CatalogId.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "TableName"          -> TableName.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[BatchCreatePartitionRequest]
+      CatalogId.foreach(__v => __obj.update("CatalogId", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[BatchCreatePartitionRequest]
     }
   }
 
@@ -590,13 +576,9 @@ package glue {
     def apply(
         Errors: js.UndefOr[PartitionErrors] = js.undefined
     ): BatchCreatePartitionResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Errors" -> Errors.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[BatchCreatePartitionResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      Errors.foreach(__v => __obj.update("Errors", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[BatchCreatePartitionResponse]
     }
   }
 
@@ -611,14 +593,12 @@ package glue {
         ConnectionNameList: DeleteConnectionNameList,
         CatalogId: js.UndefOr[CatalogIdString] = js.undefined
     ): BatchDeleteConnectionRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ConnectionNameList" -> ConnectionNameList.asInstanceOf[js.Any],
-        "CatalogId" -> CatalogId.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "ConnectionNameList" -> ConnectionNameList.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[BatchDeleteConnectionRequest]
+      CatalogId.foreach(__v => __obj.update("CatalogId", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[BatchDeleteConnectionRequest]
     }
   }
 
@@ -633,16 +613,10 @@ package glue {
         Errors: js.UndefOr[ErrorByName] = js.undefined,
         Succeeded: js.UndefOr[NameStringList] = js.undefined
     ): BatchDeleteConnectionResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Errors" -> Errors.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Succeeded" -> Succeeded.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[BatchDeleteConnectionResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      Errors.foreach(__v => __obj.update("Errors", __v.asInstanceOf[js.Any]))
+      Succeeded.foreach(__v => __obj.update("Succeeded", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[BatchDeleteConnectionResponse]
     }
   }
 
@@ -661,16 +635,14 @@ package glue {
         TableName: NameString,
         CatalogId: js.UndefOr[CatalogIdString] = js.undefined
     ): BatchDeletePartitionRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "DatabaseName"       -> DatabaseName.asInstanceOf[js.Any],
         "PartitionsToDelete" -> PartitionsToDelete.asInstanceOf[js.Any],
-        "TableName"          -> TableName.asInstanceOf[js.Any],
-        "CatalogId" -> CatalogId.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "TableName"          -> TableName.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[BatchDeletePartitionRequest]
+      CatalogId.foreach(__v => __obj.update("CatalogId", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[BatchDeletePartitionRequest]
     }
   }
 
@@ -683,13 +655,9 @@ package glue {
     def apply(
         Errors: js.UndefOr[PartitionErrors] = js.undefined
     ): BatchDeletePartitionResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Errors" -> Errors.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[BatchDeletePartitionResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      Errors.foreach(__v => __obj.update("Errors", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[BatchDeletePartitionResponse]
     }
   }
 
@@ -706,15 +674,13 @@ package glue {
         TablesToDelete: BatchDeleteTableNameList,
         CatalogId: js.UndefOr[CatalogIdString] = js.undefined
     ): BatchDeleteTableRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "DatabaseName"   -> DatabaseName.asInstanceOf[js.Any],
-        "TablesToDelete" -> TablesToDelete.asInstanceOf[js.Any],
-        "CatalogId" -> CatalogId.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "TablesToDelete" -> TablesToDelete.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[BatchDeleteTableRequest]
+      CatalogId.foreach(__v => __obj.update("CatalogId", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[BatchDeleteTableRequest]
     }
   }
 
@@ -727,13 +693,9 @@ package glue {
     def apply(
         Errors: js.UndefOr[TableErrors] = js.undefined
     ): BatchDeleteTableResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Errors" -> Errors.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[BatchDeleteTableResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      Errors.foreach(__v => __obj.update("Errors", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[BatchDeleteTableResponse]
     }
   }
 
@@ -752,16 +714,14 @@ package glue {
         VersionIds: BatchDeleteTableVersionList,
         CatalogId: js.UndefOr[CatalogIdString] = js.undefined
     ): BatchDeleteTableVersionRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "DatabaseName" -> DatabaseName.asInstanceOf[js.Any],
         "TableName"    -> TableName.asInstanceOf[js.Any],
-        "VersionIds"   -> VersionIds.asInstanceOf[js.Any],
-        "CatalogId" -> CatalogId.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "VersionIds"   -> VersionIds.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[BatchDeleteTableVersionRequest]
+      CatalogId.foreach(__v => __obj.update("CatalogId", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[BatchDeleteTableVersionRequest]
     }
   }
 
@@ -774,13 +734,9 @@ package glue {
     def apply(
         Errors: js.UndefOr[TableVersionErrors] = js.undefined
     ): BatchDeleteTableVersionResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Errors" -> Errors.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[BatchDeleteTableVersionResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      Errors.foreach(__v => __obj.update("Errors", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[BatchDeleteTableVersionResponse]
     }
   }
 
@@ -793,11 +749,11 @@ package glue {
     def apply(
         CrawlerNames: CrawlerNameList
     ): BatchGetCrawlersRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "CrawlerNames" -> CrawlerNames.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[BatchGetCrawlersRequest]
+      __obj.asInstanceOf[BatchGetCrawlersRequest]
     }
   }
 
@@ -812,16 +768,10 @@ package glue {
         Crawlers: js.UndefOr[CrawlerList] = js.undefined,
         CrawlersNotFound: js.UndefOr[CrawlerNameList] = js.undefined
     ): BatchGetCrawlersResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Crawlers" -> Crawlers.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "CrawlersNotFound" -> CrawlersNotFound.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[BatchGetCrawlersResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      Crawlers.foreach(__v => __obj.update("Crawlers", __v.asInstanceOf[js.Any]))
+      CrawlersNotFound.foreach(__v => __obj.update("CrawlersNotFound", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[BatchGetCrawlersResponse]
     }
   }
 
@@ -834,11 +784,11 @@ package glue {
     def apply(
         DevEndpointNames: DevEndpointNames
     ): BatchGetDevEndpointsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "DevEndpointNames" -> DevEndpointNames.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[BatchGetDevEndpointsRequest]
+      __obj.asInstanceOf[BatchGetDevEndpointsRequest]
     }
   }
 
@@ -853,16 +803,10 @@ package glue {
         DevEndpoints: js.UndefOr[DevEndpointList] = js.undefined,
         DevEndpointsNotFound: js.UndefOr[DevEndpointNames] = js.undefined
     ): BatchGetDevEndpointsResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "DevEndpoints" -> DevEndpoints.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DevEndpointsNotFound" -> DevEndpointsNotFound.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[BatchGetDevEndpointsResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      DevEndpoints.foreach(__v => __obj.update("DevEndpoints", __v.asInstanceOf[js.Any]))
+      DevEndpointsNotFound.foreach(__v => __obj.update("DevEndpointsNotFound", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[BatchGetDevEndpointsResponse]
     }
   }
 
@@ -875,11 +819,11 @@ package glue {
     def apply(
         JobNames: JobNameList
     ): BatchGetJobsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "JobNames" -> JobNames.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[BatchGetJobsRequest]
+      __obj.asInstanceOf[BatchGetJobsRequest]
     }
   }
 
@@ -894,16 +838,10 @@ package glue {
         Jobs: js.UndefOr[JobList] = js.undefined,
         JobsNotFound: js.UndefOr[JobNameList] = js.undefined
     ): BatchGetJobsResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Jobs" -> Jobs.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "JobsNotFound" -> JobsNotFound.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[BatchGetJobsResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      Jobs.foreach(__v => __obj.update("Jobs", __v.asInstanceOf[js.Any]))
+      JobsNotFound.foreach(__v => __obj.update("JobsNotFound", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[BatchGetJobsResponse]
     }
   }
 
@@ -922,16 +860,14 @@ package glue {
         TableName: NameString,
         CatalogId: js.UndefOr[CatalogIdString] = js.undefined
     ): BatchGetPartitionRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "DatabaseName"    -> DatabaseName.asInstanceOf[js.Any],
         "PartitionsToGet" -> PartitionsToGet.asInstanceOf[js.Any],
-        "TableName"       -> TableName.asInstanceOf[js.Any],
-        "CatalogId" -> CatalogId.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "TableName"       -> TableName.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[BatchGetPartitionRequest]
+      CatalogId.foreach(__v => __obj.update("CatalogId", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[BatchGetPartitionRequest]
     }
   }
 
@@ -946,16 +882,10 @@ package glue {
         Partitions: js.UndefOr[PartitionList] = js.undefined,
         UnprocessedKeys: js.UndefOr[BatchGetPartitionValueList] = js.undefined
     ): BatchGetPartitionResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Partitions" -> Partitions.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "UnprocessedKeys" -> UnprocessedKeys.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[BatchGetPartitionResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      Partitions.foreach(__v => __obj.update("Partitions", __v.asInstanceOf[js.Any]))
+      UnprocessedKeys.foreach(__v => __obj.update("UnprocessedKeys", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[BatchGetPartitionResponse]
     }
   }
 
@@ -968,11 +898,11 @@ package glue {
     def apply(
         TriggerNames: TriggerNameList
     ): BatchGetTriggersRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "TriggerNames" -> TriggerNames.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[BatchGetTriggersRequest]
+      __obj.asInstanceOf[BatchGetTriggersRequest]
     }
   }
 
@@ -987,16 +917,10 @@ package glue {
         Triggers: js.UndefOr[TriggerList] = js.undefined,
         TriggersNotFound: js.UndefOr[TriggerNameList] = js.undefined
     ): BatchGetTriggersResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Triggers" -> Triggers.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "TriggersNotFound" -> TriggersNotFound.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[BatchGetTriggersResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      Triggers.foreach(__v => __obj.update("Triggers", __v.asInstanceOf[js.Any]))
+      TriggersNotFound.foreach(__v => __obj.update("TriggersNotFound", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[BatchGetTriggersResponse]
     }
   }
 
@@ -1016,19 +940,11 @@ package glue {
         JobName: js.UndefOr[NameString] = js.undefined,
         JobRunId: js.UndefOr[IdString] = js.undefined
     ): BatchStopJobRunError = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ErrorDetail" -> ErrorDetail.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "JobName" -> JobName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "JobRunId" -> JobRunId.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[BatchStopJobRunError]
+      val __obj = js.Dictionary.empty[js.Any]
+      ErrorDetail.foreach(__v => __obj.update("ErrorDetail", __v.asInstanceOf[js.Any]))
+      JobName.foreach(__v => __obj.update("JobName", __v.asInstanceOf[js.Any]))
+      JobRunId.foreach(__v => __obj.update("JobRunId", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[BatchStopJobRunError]
     }
   }
 
@@ -1043,12 +959,12 @@ package glue {
         JobName: NameString,
         JobRunIds: BatchStopJobRunJobRunIdList
     ): BatchStopJobRunRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "JobName"   -> JobName.asInstanceOf[js.Any],
         "JobRunIds" -> JobRunIds.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[BatchStopJobRunRequest]
+      __obj.asInstanceOf[BatchStopJobRunRequest]
     }
   }
 
@@ -1063,16 +979,10 @@ package glue {
         Errors: js.UndefOr[BatchStopJobRunErrorList] = js.undefined,
         SuccessfulSubmissions: js.UndefOr[BatchStopJobRunSuccessfulSubmissionList] = js.undefined
     ): BatchStopJobRunResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Errors" -> Errors.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SuccessfulSubmissions" -> SuccessfulSubmissions.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[BatchStopJobRunResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      Errors.foreach(__v => __obj.update("Errors", __v.asInstanceOf[js.Any]))
+      SuccessfulSubmissions.foreach(__v => __obj.update("SuccessfulSubmissions", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[BatchStopJobRunResponse]
     }
   }
 
@@ -1090,16 +1000,10 @@ package glue {
         JobName: js.UndefOr[NameString] = js.undefined,
         JobRunId: js.UndefOr[IdString] = js.undefined
     ): BatchStopJobRunSuccessfulSubmission = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "JobName" -> JobName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "JobRunId" -> JobRunId.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[BatchStopJobRunSuccessfulSubmission]
+      val __obj = js.Dictionary.empty[js.Any]
+      JobName.foreach(__v => __obj.update("JobName", __v.asInstanceOf[js.Any]))
+      JobRunId.foreach(__v => __obj.update("JobRunId", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[BatchStopJobRunSuccessfulSubmission]
     }
   }
 
@@ -1124,12 +1028,12 @@ package glue {
         DatabaseName: NameString,
         TableName: NameString
     ): CatalogEntry = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "DatabaseName" -> DatabaseName.asInstanceOf[js.Any],
         "TableName"    -> TableName.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CatalogEntry]
+      __obj.asInstanceOf[CatalogEntry]
     }
   }
 
@@ -1149,19 +1053,11 @@ package glue {
         ImportTime: js.UndefOr[Timestamp] = js.undefined,
         ImportedBy: js.UndefOr[NameString] = js.undefined
     ): CatalogImportStatus = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ImportCompleted" -> ImportCompleted.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ImportTime" -> ImportTime.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ImportedBy" -> ImportedBy.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CatalogImportStatus]
+      val __obj = js.Dictionary.empty[js.Any]
+      ImportCompleted.foreach(__v => __obj.update("ImportCompleted", __v.asInstanceOf[js.Any]))
+      ImportTime.foreach(__v => __obj.update("ImportTime", __v.asInstanceOf[js.Any]))
+      ImportedBy.foreach(__v => __obj.update("ImportedBy", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CatalogImportStatus]
     }
   }
 
@@ -1184,22 +1080,12 @@ package glue {
         JsonClassifier: js.UndefOr[JsonClassifier] = js.undefined,
         XMLClassifier: js.UndefOr[XMLClassifier] = js.undefined
     ): Classifier = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "CsvClassifier" -> CsvClassifier.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "GrokClassifier" -> GrokClassifier.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "JsonClassifier" -> JsonClassifier.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "XMLClassifier" -> XMLClassifier.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Classifier]
+      val __obj = js.Dictionary.empty[js.Any]
+      CsvClassifier.foreach(__v => __obj.update("CsvClassifier", __v.asInstanceOf[js.Any]))
+      GrokClassifier.foreach(__v => __obj.update("GrokClassifier", __v.asInstanceOf[js.Any]))
+      JsonClassifier.foreach(__v => __obj.update("JsonClassifier", __v.asInstanceOf[js.Any]))
+      XMLClassifier.foreach(__v => __obj.update("XMLClassifier", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Classifier]
     }
   }
 
@@ -1217,16 +1103,10 @@ package glue {
         CloudWatchEncryptionMode: js.UndefOr[CloudWatchEncryptionMode] = js.undefined,
         KmsKeyArn: js.UndefOr[KmsKeyArn] = js.undefined
     ): CloudWatchEncryption = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "CloudWatchEncryptionMode" -> CloudWatchEncryptionMode.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "KmsKeyArn" -> KmsKeyArn.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CloudWatchEncryption]
+      val __obj = js.Dictionary.empty[js.Any]
+      CloudWatchEncryptionMode.foreach(__v => __obj.update("CloudWatchEncryptionMode", __v.asInstanceOf[js.Any]))
+      KmsKeyArn.foreach(__v => __obj.update("KmsKeyArn", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CloudWatchEncryption]
     }
   }
 
@@ -1253,15 +1133,13 @@ package glue {
         Target: CodeGenIdentifier,
         TargetParameter: js.UndefOr[CodeGenArgName] = js.undefined
     ): CodeGenEdge = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "Source" -> Source.asInstanceOf[js.Any],
-        "Target" -> Target.asInstanceOf[js.Any],
-        "TargetParameter" -> TargetParameter.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "Target" -> Target.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CodeGenEdge]
+      TargetParameter.foreach(__v => __obj.update("TargetParameter", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CodeGenEdge]
     }
   }
 
@@ -1283,16 +1161,14 @@ package glue {
         NodeType: CodeGenNodeType,
         LineNumber: js.UndefOr[Int] = js.undefined
     ): CodeGenNode = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "Args"     -> Args.asInstanceOf[js.Any],
         "Id"       -> Id.asInstanceOf[js.Any],
-        "NodeType" -> NodeType.asInstanceOf[js.Any],
-        "LineNumber" -> LineNumber.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "NodeType" -> NodeType.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CodeGenNode]
+      LineNumber.foreach(__v => __obj.update("LineNumber", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CodeGenNode]
     }
   }
 
@@ -1312,15 +1188,13 @@ package glue {
         Value: CodeGenArgValue,
         Param: js.UndefOr[Boolean] = js.undefined
     ): CodeGenNodeArg = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "Name"  -> Name.asInstanceOf[js.Any],
-        "Value" -> Value.asInstanceOf[js.Any],
-        "Param" -> Param.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "Value" -> Value.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CodeGenNodeArg]
+      Param.foreach(__v => __obj.update("Param", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CodeGenNodeArg]
     }
   }
 
@@ -1340,17 +1214,13 @@ package glue {
         Comment: js.UndefOr[CommentString] = js.undefined,
         Type: js.UndefOr[ColumnTypeString] = js.undefined
     ): Column = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Name" -> Name.asInstanceOf[js.Any],
-        "Comment" -> Comment.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Type" -> Type.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "Name" -> Name.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Column]
+      Comment.foreach(__v => __obj.update("Comment", __v.asInstanceOf[js.Any]))
+      Type.foreach(__v => __obj.update("Type", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Column]
     }
   }
 
@@ -1370,19 +1240,11 @@ package glue {
         LogicalOperator: js.UndefOr[LogicalOperator] = js.undefined,
         State: js.UndefOr[JobRunState] = js.undefined
     ): Condition = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "JobName" -> JobName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "LogicalOperator" -> LogicalOperator.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "State" -> State.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Condition]
+      val __obj = js.Dictionary.empty[js.Any]
+      JobName.foreach(__v => __obj.update("JobName", __v.asInstanceOf[js.Any]))
+      LogicalOperator.foreach(__v => __obj.update("LogicalOperator", __v.asInstanceOf[js.Any]))
+      State.foreach(__v => __obj.update("State", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Condition]
     }
   }
 
@@ -1414,37 +1276,19 @@ package glue {
         Name: js.UndefOr[NameString] = js.undefined,
         PhysicalConnectionRequirements: js.UndefOr[PhysicalConnectionRequirements] = js.undefined
     ): Connection = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ConnectionProperties" -> ConnectionProperties.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ConnectionType" -> ConnectionType.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "CreationTime" -> CreationTime.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Description" -> Description.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "LastUpdatedBy" -> LastUpdatedBy.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "LastUpdatedTime" -> LastUpdatedTime.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MatchCriteria" -> MatchCriteria.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Name" -> Name.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "PhysicalConnectionRequirements" -> PhysicalConnectionRequirements.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Connection]
+      val __obj = js.Dictionary.empty[js.Any]
+      ConnectionProperties.foreach(__v => __obj.update("ConnectionProperties", __v.asInstanceOf[js.Any]))
+      ConnectionType.foreach(__v => __obj.update("ConnectionType", __v.asInstanceOf[js.Any]))
+      CreationTime.foreach(__v => __obj.update("CreationTime", __v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
+      LastUpdatedBy.foreach(__v => __obj.update("LastUpdatedBy", __v.asInstanceOf[js.Any]))
+      LastUpdatedTime.foreach(__v => __obj.update("LastUpdatedTime", __v.asInstanceOf[js.Any]))
+      MatchCriteria.foreach(__v => __obj.update("MatchCriteria", __v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
+      PhysicalConnectionRequirements.foreach(
+        __v => __obj.update("PhysicalConnectionRequirements", __v.asInstanceOf[js.Any])
+      )
+      __obj.asInstanceOf[Connection]
     }
   }
 
@@ -1470,22 +1314,18 @@ package glue {
         MatchCriteria: js.UndefOr[MatchCriteria] = js.undefined,
         PhysicalConnectionRequirements: js.UndefOr[PhysicalConnectionRequirements] = js.undefined
     ): ConnectionInput = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ConnectionProperties" -> ConnectionProperties.asInstanceOf[js.Any],
         "ConnectionType"       -> ConnectionType.asInstanceOf[js.Any],
-        "Name"                 -> Name.asInstanceOf[js.Any],
-        "Description" -> Description.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MatchCriteria" -> MatchCriteria.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "PhysicalConnectionRequirements" -> PhysicalConnectionRequirements.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "Name"                 -> Name.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ConnectionInput]
+      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
+      MatchCriteria.foreach(__v => __obj.update("MatchCriteria", __v.asInstanceOf[js.Any]))
+      PhysicalConnectionRequirements.foreach(
+        __v => __obj.update("PhysicalConnectionRequirements", __v.asInstanceOf[js.Any])
+      )
+      __obj.asInstanceOf[ConnectionInput]
     }
   }
 
@@ -1505,14 +1345,12 @@ package glue {
         ReturnConnectionPasswordEncrypted: Boolean,
         AwsKmsKeyId: js.UndefOr[NameString] = js.undefined
     ): ConnectionPasswordEncryption = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ReturnConnectionPasswordEncrypted" -> ReturnConnectionPasswordEncrypted.asInstanceOf[js.Any],
-        "AwsKmsKeyId" -> AwsKmsKeyId.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "ReturnConnectionPasswordEncrypted" -> ReturnConnectionPasswordEncrypted.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ConnectionPasswordEncryption]
+      AwsKmsKeyId.foreach(__v => __obj.update("AwsKmsKeyId", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ConnectionPasswordEncryption]
     }
   }
 
@@ -1567,13 +1405,9 @@ package glue {
     def apply(
         Connections: js.UndefOr[StringList] = js.undefined
     ): ConnectionsList = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Connections" -> Connections.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ConnectionsList]
+      val __obj = js.Dictionary.empty[js.Any]
+      Connections.foreach(__v => __obj.update("Connections", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ConnectionsList]
     }
   }
 
@@ -1621,61 +1455,27 @@ package glue {
         Targets: js.UndefOr[CrawlerTargets] = js.undefined,
         Version: js.UndefOr[VersionId] = js.undefined
     ): Crawler = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Classifiers" -> Classifiers.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Configuration" -> Configuration.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "CrawlElapsedTime" -> CrawlElapsedTime.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "CrawlerSecurityConfiguration" -> CrawlerSecurityConfiguration.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "CreationTime" -> CreationTime.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DatabaseName" -> DatabaseName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Description" -> Description.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "LastCrawl" -> LastCrawl.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "LastUpdated" -> LastUpdated.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Name" -> Name.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Role" -> Role.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Schedule" -> Schedule.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SchemaChangePolicy" -> SchemaChangePolicy.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "State" -> State.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "TablePrefix" -> TablePrefix.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Targets" -> Targets.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Version" -> Version.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Crawler]
+      val __obj = js.Dictionary.empty[js.Any]
+      Classifiers.foreach(__v => __obj.update("Classifiers", __v.asInstanceOf[js.Any]))
+      Configuration.foreach(__v => __obj.update("Configuration", __v.asInstanceOf[js.Any]))
+      CrawlElapsedTime.foreach(__v => __obj.update("CrawlElapsedTime", __v.asInstanceOf[js.Any]))
+      CrawlerSecurityConfiguration.foreach(
+        __v => __obj.update("CrawlerSecurityConfiguration", __v.asInstanceOf[js.Any])
+      )
+      CreationTime.foreach(__v => __obj.update("CreationTime", __v.asInstanceOf[js.Any]))
+      DatabaseName.foreach(__v => __obj.update("DatabaseName", __v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
+      LastCrawl.foreach(__v => __obj.update("LastCrawl", __v.asInstanceOf[js.Any]))
+      LastUpdated.foreach(__v => __obj.update("LastUpdated", __v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
+      Role.foreach(__v => __obj.update("Role", __v.asInstanceOf[js.Any]))
+      Schedule.foreach(__v => __obj.update("Schedule", __v.asInstanceOf[js.Any]))
+      SchemaChangePolicy.foreach(__v => __obj.update("SchemaChangePolicy", __v.asInstanceOf[js.Any]))
+      State.foreach(__v => __obj.update("State", __v.asInstanceOf[js.Any]))
+      TablePrefix.foreach(__v => __obj.update("TablePrefix", __v.asInstanceOf[js.Any]))
+      Targets.foreach(__v => __obj.update("Targets", __v.asInstanceOf[js.Any]))
+      Version.foreach(__v => __obj.update("Version", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Crawler]
     }
   }
 
@@ -1705,34 +1505,16 @@ package glue {
         TablesUpdated: js.UndefOr[NonNegativeInteger] = js.undefined,
         TimeLeftSeconds: js.UndefOr[NonNegativeDouble] = js.undefined
     ): CrawlerMetrics = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "CrawlerName" -> CrawlerName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "LastRuntimeSeconds" -> LastRuntimeSeconds.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MedianRuntimeSeconds" -> MedianRuntimeSeconds.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "StillEstimating" -> StillEstimating.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "TablesCreated" -> TablesCreated.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "TablesDeleted" -> TablesDeleted.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "TablesUpdated" -> TablesUpdated.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "TimeLeftSeconds" -> TimeLeftSeconds.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CrawlerMetrics]
+      val __obj = js.Dictionary.empty[js.Any]
+      CrawlerName.foreach(__v => __obj.update("CrawlerName", __v.asInstanceOf[js.Any]))
+      LastRuntimeSeconds.foreach(__v => __obj.update("LastRuntimeSeconds", __v.asInstanceOf[js.Any]))
+      MedianRuntimeSeconds.foreach(__v => __obj.update("MedianRuntimeSeconds", __v.asInstanceOf[js.Any]))
+      StillEstimating.foreach(__v => __obj.update("StillEstimating", __v.asInstanceOf[js.Any]))
+      TablesCreated.foreach(__v => __obj.update("TablesCreated", __v.asInstanceOf[js.Any]))
+      TablesDeleted.foreach(__v => __obj.update("TablesDeleted", __v.asInstanceOf[js.Any]))
+      TablesUpdated.foreach(__v => __obj.update("TablesUpdated", __v.asInstanceOf[js.Any]))
+      TimeLeftSeconds.foreach(__v => __obj.update("TimeLeftSeconds", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CrawlerMetrics]
     }
   }
 
@@ -1760,19 +1542,11 @@ package glue {
         JdbcTargets: js.UndefOr[JdbcTargetList] = js.undefined,
         S3Targets: js.UndefOr[S3TargetList] = js.undefined
     ): CrawlerTargets = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "DynamoDBTargets" -> DynamoDBTargets.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "JdbcTargets" -> JdbcTargets.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "S3Targets" -> S3Targets.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CrawlerTargets]
+      val __obj = js.Dictionary.empty[js.Any]
+      DynamoDBTargets.foreach(__v => __obj.update("DynamoDBTargets", __v.asInstanceOf[js.Any]))
+      JdbcTargets.foreach(__v => __obj.update("JdbcTargets", __v.asInstanceOf[js.Any]))
+      S3Targets.foreach(__v => __obj.update("S3Targets", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CrawlerTargets]
     }
   }
 
@@ -1791,22 +1565,12 @@ package glue {
         JsonClassifier: js.UndefOr[CreateJsonClassifierRequest] = js.undefined,
         XMLClassifier: js.UndefOr[CreateXMLClassifierRequest] = js.undefined
     ): CreateClassifierRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "CsvClassifier" -> CsvClassifier.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "GrokClassifier" -> GrokClassifier.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "JsonClassifier" -> JsonClassifier.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "XMLClassifier" -> XMLClassifier.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateClassifierRequest]
+      val __obj = js.Dictionary.empty[js.Any]
+      CsvClassifier.foreach(__v => __obj.update("CsvClassifier", __v.asInstanceOf[js.Any]))
+      GrokClassifier.foreach(__v => __obj.update("GrokClassifier", __v.asInstanceOf[js.Any]))
+      JsonClassifier.foreach(__v => __obj.update("JsonClassifier", __v.asInstanceOf[js.Any]))
+      XMLClassifier.foreach(__v => __obj.update("XMLClassifier", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateClassifierRequest]
     }
   }
 
@@ -1816,10 +1580,9 @@ package glue {
   object CreateClassifierResponse {
     def apply(
         ): CreateClassifierResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary.empty[js.Any]
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateClassifierResponse]
+      __obj.asInstanceOf[CreateClassifierResponse]
     }
   }
 
@@ -1834,14 +1597,12 @@ package glue {
         ConnectionInput: ConnectionInput,
         CatalogId: js.UndefOr[CatalogIdString] = js.undefined
     ): CreateConnectionRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ConnectionInput" -> ConnectionInput.asInstanceOf[js.Any],
-        "CatalogId" -> CatalogId.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "ConnectionInput" -> ConnectionInput.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateConnectionRequest]
+      CatalogId.foreach(__v => __obj.update("CatalogId", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateConnectionRequest]
     }
   }
 
@@ -1851,10 +1612,9 @@ package glue {
   object CreateConnectionResponse {
     def apply(
         ): CreateConnectionResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary.empty[js.Any]
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateConnectionResponse]
+      __obj.asInstanceOf[CreateConnectionResponse]
     }
   }
 
@@ -1889,38 +1649,24 @@ package glue {
         TablePrefix: js.UndefOr[TablePrefix] = js.undefined,
         Tags: js.UndefOr[TagsMap] = js.undefined
     ): CreateCrawlerRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "DatabaseName" -> DatabaseName.asInstanceOf[js.Any],
         "Name"         -> Name.asInstanceOf[js.Any],
         "Role"         -> Role.asInstanceOf[js.Any],
-        "Targets"      -> Targets.asInstanceOf[js.Any],
-        "Classifiers" -> Classifiers.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Configuration" -> Configuration.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "CrawlerSecurityConfiguration" -> CrawlerSecurityConfiguration.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Description" -> Description.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Schedule" -> Schedule.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SchemaChangePolicy" -> SchemaChangePolicy.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "TablePrefix" -> TablePrefix.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Tags" -> Tags.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "Targets"      -> Targets.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateCrawlerRequest]
+      Classifiers.foreach(__v => __obj.update("Classifiers", __v.asInstanceOf[js.Any]))
+      Configuration.foreach(__v => __obj.update("Configuration", __v.asInstanceOf[js.Any]))
+      CrawlerSecurityConfiguration.foreach(
+        __v => __obj.update("CrawlerSecurityConfiguration", __v.asInstanceOf[js.Any])
+      )
+      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
+      Schedule.foreach(__v => __obj.update("Schedule", __v.asInstanceOf[js.Any]))
+      SchemaChangePolicy.foreach(__v => __obj.update("SchemaChangePolicy", __v.asInstanceOf[js.Any]))
+      TablePrefix.foreach(__v => __obj.update("TablePrefix", __v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateCrawlerRequest]
     }
   }
 
@@ -1930,10 +1676,9 @@ package glue {
   object CreateCrawlerResponse {
     def apply(
         ): CreateCrawlerResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary.empty[js.Any]
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateCrawlerResponse]
+      __obj.asInstanceOf[CreateCrawlerResponse]
     }
   }
 
@@ -1961,29 +1706,17 @@ package glue {
         Header: js.UndefOr[CsvHeader] = js.undefined,
         QuoteSymbol: js.UndefOr[CsvQuoteSymbol] = js.undefined
     ): CreateCsvClassifierRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Name" -> Name.asInstanceOf[js.Any],
-        "AllowSingleColumn" -> AllowSingleColumn.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ContainsHeader" -> ContainsHeader.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Delimiter" -> Delimiter.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DisableValueTrimming" -> DisableValueTrimming.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Header" -> Header.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "QuoteSymbol" -> QuoteSymbol.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "Name" -> Name.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateCsvClassifierRequest]
+      AllowSingleColumn.foreach(__v => __obj.update("AllowSingleColumn", __v.asInstanceOf[js.Any]))
+      ContainsHeader.foreach(__v => __obj.update("ContainsHeader", __v.asInstanceOf[js.Any]))
+      Delimiter.foreach(__v => __obj.update("Delimiter", __v.asInstanceOf[js.Any]))
+      DisableValueTrimming.foreach(__v => __obj.update("DisableValueTrimming", __v.asInstanceOf[js.Any]))
+      Header.foreach(__v => __obj.update("Header", __v.asInstanceOf[js.Any]))
+      QuoteSymbol.foreach(__v => __obj.update("QuoteSymbol", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateCsvClassifierRequest]
     }
   }
 
@@ -1998,14 +1731,12 @@ package glue {
         DatabaseInput: DatabaseInput,
         CatalogId: js.UndefOr[CatalogIdString] = js.undefined
     ): CreateDatabaseRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "DatabaseInput" -> DatabaseInput.asInstanceOf[js.Any],
-        "CatalogId" -> CatalogId.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "DatabaseInput" -> DatabaseInput.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateDatabaseRequest]
+      CatalogId.foreach(__v => __obj.update("CatalogId", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateDatabaseRequest]
     }
   }
 
@@ -2015,10 +1746,9 @@ package glue {
   object CreateDatabaseResponse {
     def apply(
         ): CreateDatabaseResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary.empty[js.Any]
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateDatabaseResponse]
+      __obj.asInstanceOf[CreateDatabaseResponse]
     }
   }
 
@@ -2053,42 +1783,22 @@ package glue {
         SubnetId: js.UndefOr[GenericString] = js.undefined,
         Tags: js.UndefOr[TagsMap] = js.undefined
     ): CreateDevEndpointRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "EndpointName" -> EndpointName.asInstanceOf[js.Any],
-        "RoleArn"      -> RoleArn.asInstanceOf[js.Any],
-        "Arguments" -> Arguments.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ExtraJarsS3Path" -> ExtraJarsS3Path.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ExtraPythonLibsS3Path" -> ExtraPythonLibsS3Path.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NumberOfNodes" -> NumberOfNodes.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "PublicKey" -> PublicKey.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "PublicKeys" -> PublicKeys.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SecurityConfiguration" -> SecurityConfiguration.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SecurityGroupIds" -> SecurityGroupIds.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SubnetId" -> SubnetId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Tags" -> Tags.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "RoleArn"      -> RoleArn.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateDevEndpointRequest]
+      Arguments.foreach(__v => __obj.update("Arguments", __v.asInstanceOf[js.Any]))
+      ExtraJarsS3Path.foreach(__v => __obj.update("ExtraJarsS3Path", __v.asInstanceOf[js.Any]))
+      ExtraPythonLibsS3Path.foreach(__v => __obj.update("ExtraPythonLibsS3Path", __v.asInstanceOf[js.Any]))
+      NumberOfNodes.foreach(__v => __obj.update("NumberOfNodes", __v.asInstanceOf[js.Any]))
+      PublicKey.foreach(__v => __obj.update("PublicKey", __v.asInstanceOf[js.Any]))
+      PublicKeys.foreach(__v => __obj.update("PublicKeys", __v.asInstanceOf[js.Any]))
+      SecurityConfiguration.foreach(__v => __obj.update("SecurityConfiguration", __v.asInstanceOf[js.Any]))
+      SecurityGroupIds.foreach(__v => __obj.update("SecurityGroupIds", __v.asInstanceOf[js.Any]))
+      SubnetId.foreach(__v => __obj.update("SubnetId", __v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateDevEndpointRequest]
     }
   }
 
@@ -2131,58 +1841,26 @@ package glue {
         YarnEndpointAddress: js.UndefOr[GenericString] = js.undefined,
         ZeppelinRemoteSparkInterpreterPort: js.UndefOr[IntegerValue] = js.undefined
     ): CreateDevEndpointResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Arguments" -> Arguments.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "AvailabilityZone" -> AvailabilityZone.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "CreatedTimestamp" -> CreatedTimestamp.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "EndpointName" -> EndpointName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ExtraJarsS3Path" -> ExtraJarsS3Path.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ExtraPythonLibsS3Path" -> ExtraPythonLibsS3Path.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "FailureReason" -> FailureReason.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NumberOfNodes" -> NumberOfNodes.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "RoleArn" -> RoleArn.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SecurityConfiguration" -> SecurityConfiguration.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SecurityGroupIds" -> SecurityGroupIds.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Status" -> Status.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SubnetId" -> SubnetId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "VpcId" -> VpcId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "YarnEndpointAddress" -> YarnEndpointAddress.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ZeppelinRemoteSparkInterpreterPort" -> ZeppelinRemoteSparkInterpreterPort.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateDevEndpointResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      Arguments.foreach(__v => __obj.update("Arguments", __v.asInstanceOf[js.Any]))
+      AvailabilityZone.foreach(__v => __obj.update("AvailabilityZone", __v.asInstanceOf[js.Any]))
+      CreatedTimestamp.foreach(__v => __obj.update("CreatedTimestamp", __v.asInstanceOf[js.Any]))
+      EndpointName.foreach(__v => __obj.update("EndpointName", __v.asInstanceOf[js.Any]))
+      ExtraJarsS3Path.foreach(__v => __obj.update("ExtraJarsS3Path", __v.asInstanceOf[js.Any]))
+      ExtraPythonLibsS3Path.foreach(__v => __obj.update("ExtraPythonLibsS3Path", __v.asInstanceOf[js.Any]))
+      FailureReason.foreach(__v => __obj.update("FailureReason", __v.asInstanceOf[js.Any]))
+      NumberOfNodes.foreach(__v => __obj.update("NumberOfNodes", __v.asInstanceOf[js.Any]))
+      RoleArn.foreach(__v => __obj.update("RoleArn", __v.asInstanceOf[js.Any]))
+      SecurityConfiguration.foreach(__v => __obj.update("SecurityConfiguration", __v.asInstanceOf[js.Any]))
+      SecurityGroupIds.foreach(__v => __obj.update("SecurityGroupIds", __v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.update("Status", __v.asInstanceOf[js.Any]))
+      SubnetId.foreach(__v => __obj.update("SubnetId", __v.asInstanceOf[js.Any]))
+      VpcId.foreach(__v => __obj.update("VpcId", __v.asInstanceOf[js.Any]))
+      YarnEndpointAddress.foreach(__v => __obj.update("YarnEndpointAddress", __v.asInstanceOf[js.Any]))
+      ZeppelinRemoteSparkInterpreterPort.foreach(
+        __v => __obj.update("ZeppelinRemoteSparkInterpreterPort", __v.asInstanceOf[js.Any])
+      )
+      __obj.asInstanceOf[CreateDevEndpointResponse]
     }
   }
 
@@ -2204,16 +1882,14 @@ package glue {
         Name: NameString,
         CustomPatterns: js.UndefOr[CustomPatterns] = js.undefined
     ): CreateGrokClassifierRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "Classification" -> Classification.asInstanceOf[js.Any],
         "GrokPattern"    -> GrokPattern.asInstanceOf[js.Any],
-        "Name"           -> Name.asInstanceOf[js.Any],
-        "CustomPatterns" -> CustomPatterns.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "Name"           -> Name.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateGrokClassifierRequest]
+      CustomPatterns.foreach(__v => __obj.update("CustomPatterns", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateGrokClassifierRequest]
     }
   }
 
@@ -2258,55 +1934,27 @@ package glue {
         Timeout: js.UndefOr[Timeout] = js.undefined,
         WorkerType: js.UndefOr[WorkerType] = js.undefined
     ): CreateJobRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "Command" -> Command.asInstanceOf[js.Any],
         "Name"    -> Name.asInstanceOf[js.Any],
-        "Role"    -> Role.asInstanceOf[js.Any],
-        "AllocatedCapacity" -> AllocatedCapacity.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Connections" -> Connections.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DefaultArguments" -> DefaultArguments.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Description" -> Description.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ExecutionProperty" -> ExecutionProperty.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "LogUri" -> LogUri.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MaxCapacity" -> MaxCapacity.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MaxRetries" -> MaxRetries.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NotificationProperty" -> NotificationProperty.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NumberOfWorkers" -> NumberOfWorkers.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SecurityConfiguration" -> SecurityConfiguration.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Tags" -> Tags.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Timeout" -> Timeout.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "WorkerType" -> WorkerType.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "Role"    -> Role.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateJobRequest]
+      AllocatedCapacity.foreach(__v => __obj.update("AllocatedCapacity", __v.asInstanceOf[js.Any]))
+      Connections.foreach(__v => __obj.update("Connections", __v.asInstanceOf[js.Any]))
+      DefaultArguments.foreach(__v => __obj.update("DefaultArguments", __v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
+      ExecutionProperty.foreach(__v => __obj.update("ExecutionProperty", __v.asInstanceOf[js.Any]))
+      LogUri.foreach(__v => __obj.update("LogUri", __v.asInstanceOf[js.Any]))
+      MaxCapacity.foreach(__v => __obj.update("MaxCapacity", __v.asInstanceOf[js.Any]))
+      MaxRetries.foreach(__v => __obj.update("MaxRetries", __v.asInstanceOf[js.Any]))
+      NotificationProperty.foreach(__v => __obj.update("NotificationProperty", __v.asInstanceOf[js.Any]))
+      NumberOfWorkers.foreach(__v => __obj.update("NumberOfWorkers", __v.asInstanceOf[js.Any]))
+      SecurityConfiguration.foreach(__v => __obj.update("SecurityConfiguration", __v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
+      Timeout.foreach(__v => __obj.update("Timeout", __v.asInstanceOf[js.Any]))
+      WorkerType.foreach(__v => __obj.update("WorkerType", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateJobRequest]
     }
   }
 
@@ -2319,13 +1967,9 @@ package glue {
     def apply(
         Name: js.UndefOr[NameString] = js.undefined
     ): CreateJobResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Name" -> Name.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateJobResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateJobResponse]
     }
   }
 
@@ -2343,12 +1987,12 @@ package glue {
         JsonPath: JsonPath,
         Name: NameString
     ): CreateJsonClassifierRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "JsonPath" -> JsonPath.asInstanceOf[js.Any],
         "Name"     -> Name.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateJsonClassifierRequest]
+      __obj.asInstanceOf[CreateJsonClassifierRequest]
     }
   }
 
@@ -2367,16 +2011,14 @@ package glue {
         TableName: NameString,
         CatalogId: js.UndefOr[CatalogIdString] = js.undefined
     ): CreatePartitionRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "DatabaseName"   -> DatabaseName.asInstanceOf[js.Any],
         "PartitionInput" -> PartitionInput.asInstanceOf[js.Any],
-        "TableName"      -> TableName.asInstanceOf[js.Any],
-        "CatalogId" -> CatalogId.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "TableName"      -> TableName.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreatePartitionRequest]
+      CatalogId.foreach(__v => __obj.update("CatalogId", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreatePartitionRequest]
     }
   }
 
@@ -2386,10 +2028,9 @@ package glue {
   object CreatePartitionResponse {
     def apply(
         ): CreatePartitionResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary.empty[js.Any]
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreatePartitionResponse]
+      __obj.asInstanceOf[CreatePartitionResponse]
     }
   }
 
@@ -2406,19 +2047,11 @@ package glue {
         DagNodes: js.UndefOr[DagNodes] = js.undefined,
         Language: js.UndefOr[Language] = js.undefined
     ): CreateScriptRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "DagEdges" -> DagEdges.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DagNodes" -> DagNodes.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Language" -> Language.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateScriptRequest]
+      val __obj = js.Dictionary.empty[js.Any]
+      DagEdges.foreach(__v => __obj.update("DagEdges", __v.asInstanceOf[js.Any]))
+      DagNodes.foreach(__v => __obj.update("DagNodes", __v.asInstanceOf[js.Any]))
+      Language.foreach(__v => __obj.update("Language", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateScriptRequest]
     }
   }
 
@@ -2433,16 +2066,10 @@ package glue {
         PythonScript: js.UndefOr[PythonScript] = js.undefined,
         ScalaCode: js.UndefOr[ScalaCode] = js.undefined
     ): CreateScriptResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "PythonScript" -> PythonScript.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ScalaCode" -> ScalaCode.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateScriptResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      PythonScript.foreach(__v => __obj.update("PythonScript", __v.asInstanceOf[js.Any]))
+      ScalaCode.foreach(__v => __obj.update("ScalaCode", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateScriptResponse]
     }
   }
 
@@ -2457,12 +2084,12 @@ package glue {
         EncryptionConfiguration: EncryptionConfiguration,
         Name: NameString
     ): CreateSecurityConfigurationRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "EncryptionConfiguration" -> EncryptionConfiguration.asInstanceOf[js.Any],
         "Name"                    -> Name.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateSecurityConfigurationRequest]
+      __obj.asInstanceOf[CreateSecurityConfigurationRequest]
     }
   }
 
@@ -2477,16 +2104,10 @@ package glue {
         CreatedTimestamp: js.UndefOr[TimestampValue] = js.undefined,
         Name: js.UndefOr[NameString] = js.undefined
     ): CreateSecurityConfigurationResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "CreatedTimestamp" -> CreatedTimestamp.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Name" -> Name.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateSecurityConfigurationResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      CreatedTimestamp.foreach(__v => __obj.update("CreatedTimestamp", __v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateSecurityConfigurationResponse]
     }
   }
 
@@ -2503,15 +2124,13 @@ package glue {
         TableInput: TableInput,
         CatalogId: js.UndefOr[CatalogIdString] = js.undefined
     ): CreateTableRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "DatabaseName" -> DatabaseName.asInstanceOf[js.Any],
-        "TableInput"   -> TableInput.asInstanceOf[js.Any],
-        "CatalogId" -> CatalogId.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "TableInput"   -> TableInput.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateTableRequest]
+      CatalogId.foreach(__v => __obj.update("CatalogId", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateTableRequest]
     }
   }
 
@@ -2521,10 +2140,9 @@ package glue {
   object CreateTableResponse {
     def apply(
         ): CreateTableResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary.empty[js.Any]
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateTableResponse]
+      __obj.asInstanceOf[CreateTableResponse]
     }
   }
 
@@ -2551,28 +2169,18 @@ package glue {
         StartOnCreation: js.UndefOr[BooleanValue] = js.undefined,
         Tags: js.UndefOr[TagsMap] = js.undefined
     ): CreateTriggerRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "Actions" -> Actions.asInstanceOf[js.Any],
         "Name"    -> Name.asInstanceOf[js.Any],
-        "Type"    -> Type.asInstanceOf[js.Any],
-        "Description" -> Description.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Predicate" -> Predicate.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Schedule" -> Schedule.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "StartOnCreation" -> StartOnCreation.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Tags" -> Tags.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "Type"    -> Type.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateTriggerRequest]
+      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
+      Predicate.foreach(__v => __obj.update("Predicate", __v.asInstanceOf[js.Any]))
+      Schedule.foreach(__v => __obj.update("Schedule", __v.asInstanceOf[js.Any]))
+      StartOnCreation.foreach(__v => __obj.update("StartOnCreation", __v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateTriggerRequest]
     }
   }
 
@@ -2585,13 +2193,9 @@ package glue {
     def apply(
         Name: js.UndefOr[NameString] = js.undefined
     ): CreateTriggerResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Name" -> Name.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateTriggerResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateTriggerResponse]
     }
   }
 
@@ -2608,15 +2212,13 @@ package glue {
         FunctionInput: UserDefinedFunctionInput,
         CatalogId: js.UndefOr[CatalogIdString] = js.undefined
     ): CreateUserDefinedFunctionRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "DatabaseName"  -> DatabaseName.asInstanceOf[js.Any],
-        "FunctionInput" -> FunctionInput.asInstanceOf[js.Any],
-        "CatalogId" -> CatalogId.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "FunctionInput" -> FunctionInput.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateUserDefinedFunctionRequest]
+      CatalogId.foreach(__v => __obj.update("CatalogId", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateUserDefinedFunctionRequest]
     }
   }
 
@@ -2626,10 +2228,9 @@ package glue {
   object CreateUserDefinedFunctionResponse {
     def apply(
         ): CreateUserDefinedFunctionResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary.empty[js.Any]
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateUserDefinedFunctionResponse]
+      __obj.asInstanceOf[CreateUserDefinedFunctionResponse]
     }
   }
 
@@ -2649,15 +2250,13 @@ package glue {
         Name: NameString,
         RowTag: js.UndefOr[RowTag] = js.undefined
     ): CreateXMLClassifierRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "Classification" -> Classification.asInstanceOf[js.Any],
-        "Name"           -> Name.asInstanceOf[js.Any],
-        "RowTag" -> RowTag.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "Name"           -> Name.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateXMLClassifierRequest]
+      RowTag.foreach(__v => __obj.update("RowTag", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateXMLClassifierRequest]
     }
   }
 
@@ -2691,38 +2290,20 @@ package glue {
         QuoteSymbol: js.UndefOr[CsvQuoteSymbol] = js.undefined,
         Version: js.UndefOr[VersionId] = js.undefined
     ): CsvClassifier = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Name" -> Name.asInstanceOf[js.Any],
-        "AllowSingleColumn" -> AllowSingleColumn.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ContainsHeader" -> ContainsHeader.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "CreationTime" -> CreationTime.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Delimiter" -> Delimiter.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DisableValueTrimming" -> DisableValueTrimming.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Header" -> Header.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "LastUpdated" -> LastUpdated.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "QuoteSymbol" -> QuoteSymbol.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Version" -> Version.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "Name" -> Name.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CsvClassifier]
+      AllowSingleColumn.foreach(__v => __obj.update("AllowSingleColumn", __v.asInstanceOf[js.Any]))
+      ContainsHeader.foreach(__v => __obj.update("ContainsHeader", __v.asInstanceOf[js.Any]))
+      CreationTime.foreach(__v => __obj.update("CreationTime", __v.asInstanceOf[js.Any]))
+      Delimiter.foreach(__v => __obj.update("Delimiter", __v.asInstanceOf[js.Any]))
+      DisableValueTrimming.foreach(__v => __obj.update("DisableValueTrimming", __v.asInstanceOf[js.Any]))
+      Header.foreach(__v => __obj.update("Header", __v.asInstanceOf[js.Any]))
+      LastUpdated.foreach(__v => __obj.update("LastUpdated", __v.asInstanceOf[js.Any]))
+      QuoteSymbol.foreach(__v => __obj.update("QuoteSymbol", __v.asInstanceOf[js.Any]))
+      Version.foreach(__v => __obj.update("Version", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CsvClassifier]
     }
   }
 
@@ -2748,16 +2329,12 @@ package glue {
         ConnectionPasswordEncryption: js.UndefOr[ConnectionPasswordEncryption] = js.undefined,
         EncryptionAtRest: js.UndefOr[EncryptionAtRest] = js.undefined
     ): DataCatalogEncryptionSettings = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ConnectionPasswordEncryption" -> ConnectionPasswordEncryption.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "EncryptionAtRest" -> EncryptionAtRest.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DataCatalogEncryptionSettings]
+      val __obj = js.Dictionary.empty[js.Any]
+      ConnectionPasswordEncryption.foreach(
+        __v => __obj.update("ConnectionPasswordEncryption", __v.asInstanceOf[js.Any])
+      )
+      EncryptionAtRest.foreach(__v => __obj.update("EncryptionAtRest", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DataCatalogEncryptionSettings]
     }
   }
 
@@ -2781,23 +2358,15 @@ package glue {
         LocationUri: js.UndefOr[URI] = js.undefined,
         Parameters: js.UndefOr[ParametersMap] = js.undefined
     ): Database = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Name" -> Name.asInstanceOf[js.Any],
-        "CreateTime" -> CreateTime.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Description" -> Description.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "LocationUri" -> LocationUri.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Parameters" -> Parameters.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "Name" -> Name.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Database]
+      CreateTime.foreach(__v => __obj.update("CreateTime", __v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
+      LocationUri.foreach(__v => __obj.update("LocationUri", __v.asInstanceOf[js.Any]))
+      Parameters.foreach(__v => __obj.update("Parameters", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Database]
     }
   }
 
@@ -2819,20 +2388,14 @@ package glue {
         LocationUri: js.UndefOr[URI] = js.undefined,
         Parameters: js.UndefOr[ParametersMap] = js.undefined
     ): DatabaseInput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Name" -> Name.asInstanceOf[js.Any],
-        "Description" -> Description.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "LocationUri" -> LocationUri.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Parameters" -> Parameters.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "Name" -> Name.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DatabaseInput]
+      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
+      LocationUri.foreach(__v => __obj.update("LocationUri", __v.asInstanceOf[js.Any]))
+      Parameters.foreach(__v => __obj.update("Parameters", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DatabaseInput]
     }
   }
 
@@ -2853,11 +2416,11 @@ package glue {
     def apply(
         Name: NameString
     ): DeleteClassifierRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "Name" -> Name.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteClassifierRequest]
+      __obj.asInstanceOf[DeleteClassifierRequest]
     }
   }
 
@@ -2867,10 +2430,9 @@ package glue {
   object DeleteClassifierResponse {
     def apply(
         ): DeleteClassifierResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary.empty[js.Any]
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteClassifierResponse]
+      __obj.asInstanceOf[DeleteClassifierResponse]
     }
   }
 
@@ -2885,14 +2447,12 @@ package glue {
         ConnectionName: NameString,
         CatalogId: js.UndefOr[CatalogIdString] = js.undefined
     ): DeleteConnectionRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ConnectionName" -> ConnectionName.asInstanceOf[js.Any],
-        "CatalogId" -> CatalogId.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "ConnectionName" -> ConnectionName.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteConnectionRequest]
+      CatalogId.foreach(__v => __obj.update("CatalogId", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DeleteConnectionRequest]
     }
   }
 
@@ -2902,10 +2462,9 @@ package glue {
   object DeleteConnectionResponse {
     def apply(
         ): DeleteConnectionResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary.empty[js.Any]
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteConnectionResponse]
+      __obj.asInstanceOf[DeleteConnectionResponse]
     }
   }
 
@@ -2918,11 +2477,11 @@ package glue {
     def apply(
         Name: NameString
     ): DeleteCrawlerRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "Name" -> Name.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteCrawlerRequest]
+      __obj.asInstanceOf[DeleteCrawlerRequest]
     }
   }
 
@@ -2932,10 +2491,9 @@ package glue {
   object DeleteCrawlerResponse {
     def apply(
         ): DeleteCrawlerResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary.empty[js.Any]
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteCrawlerResponse]
+      __obj.asInstanceOf[DeleteCrawlerResponse]
     }
   }
 
@@ -2950,14 +2508,12 @@ package glue {
         Name: NameString,
         CatalogId: js.UndefOr[CatalogIdString] = js.undefined
     ): DeleteDatabaseRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Name" -> Name.asInstanceOf[js.Any],
-        "CatalogId" -> CatalogId.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "Name" -> Name.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteDatabaseRequest]
+      CatalogId.foreach(__v => __obj.update("CatalogId", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DeleteDatabaseRequest]
     }
   }
 
@@ -2967,10 +2523,9 @@ package glue {
   object DeleteDatabaseResponse {
     def apply(
         ): DeleteDatabaseResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary.empty[js.Any]
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteDatabaseResponse]
+      __obj.asInstanceOf[DeleteDatabaseResponse]
     }
   }
 
@@ -2983,11 +2538,11 @@ package glue {
     def apply(
         EndpointName: GenericString
     ): DeleteDevEndpointRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "EndpointName" -> EndpointName.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteDevEndpointRequest]
+      __obj.asInstanceOf[DeleteDevEndpointRequest]
     }
   }
 
@@ -2997,10 +2552,9 @@ package glue {
   object DeleteDevEndpointResponse {
     def apply(
         ): DeleteDevEndpointResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary.empty[js.Any]
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteDevEndpointResponse]
+      __obj.asInstanceOf[DeleteDevEndpointResponse]
     }
   }
 
@@ -3013,11 +2567,11 @@ package glue {
     def apply(
         JobName: NameString
     ): DeleteJobRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "JobName" -> JobName.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteJobRequest]
+      __obj.asInstanceOf[DeleteJobRequest]
     }
   }
 
@@ -3030,13 +2584,9 @@ package glue {
     def apply(
         JobName: js.UndefOr[NameString] = js.undefined
     ): DeleteJobResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "JobName" -> JobName.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteJobResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      JobName.foreach(__v => __obj.update("JobName", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DeleteJobResponse]
     }
   }
 
@@ -3055,16 +2605,14 @@ package glue {
         TableName: NameString,
         CatalogId: js.UndefOr[CatalogIdString] = js.undefined
     ): DeletePartitionRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "DatabaseName"    -> DatabaseName.asInstanceOf[js.Any],
         "PartitionValues" -> PartitionValues.asInstanceOf[js.Any],
-        "TableName"       -> TableName.asInstanceOf[js.Any],
-        "CatalogId" -> CatalogId.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "TableName"       -> TableName.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeletePartitionRequest]
+      CatalogId.foreach(__v => __obj.update("CatalogId", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DeletePartitionRequest]
     }
   }
 
@@ -3074,10 +2622,9 @@ package glue {
   object DeletePartitionResponse {
     def apply(
         ): DeletePartitionResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary.empty[js.Any]
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeletePartitionResponse]
+      __obj.asInstanceOf[DeletePartitionResponse]
     }
   }
 
@@ -3090,13 +2637,9 @@ package glue {
     def apply(
         PolicyHashCondition: js.UndefOr[HashString] = js.undefined
     ): DeleteResourcePolicyRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "PolicyHashCondition" -> PolicyHashCondition.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteResourcePolicyRequest]
+      val __obj = js.Dictionary.empty[js.Any]
+      PolicyHashCondition.foreach(__v => __obj.update("PolicyHashCondition", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DeleteResourcePolicyRequest]
     }
   }
 
@@ -3106,10 +2649,9 @@ package glue {
   object DeleteResourcePolicyResponse {
     def apply(
         ): DeleteResourcePolicyResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary.empty[js.Any]
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteResourcePolicyResponse]
+      __obj.asInstanceOf[DeleteResourcePolicyResponse]
     }
   }
 
@@ -3122,11 +2664,11 @@ package glue {
     def apply(
         Name: NameString
     ): DeleteSecurityConfigurationRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "Name" -> Name.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteSecurityConfigurationRequest]
+      __obj.asInstanceOf[DeleteSecurityConfigurationRequest]
     }
   }
 
@@ -3136,10 +2678,9 @@ package glue {
   object DeleteSecurityConfigurationResponse {
     def apply(
         ): DeleteSecurityConfigurationResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary.empty[js.Any]
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteSecurityConfigurationResponse]
+      __obj.asInstanceOf[DeleteSecurityConfigurationResponse]
     }
   }
 
@@ -3156,15 +2697,13 @@ package glue {
         Name: NameString,
         CatalogId: js.UndefOr[CatalogIdString] = js.undefined
     ): DeleteTableRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "DatabaseName" -> DatabaseName.asInstanceOf[js.Any],
-        "Name"         -> Name.asInstanceOf[js.Any],
-        "CatalogId" -> CatalogId.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "Name"         -> Name.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteTableRequest]
+      CatalogId.foreach(__v => __obj.update("CatalogId", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DeleteTableRequest]
     }
   }
 
@@ -3174,10 +2713,9 @@ package glue {
   object DeleteTableResponse {
     def apply(
         ): DeleteTableResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary.empty[js.Any]
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteTableResponse]
+      __obj.asInstanceOf[DeleteTableResponse]
     }
   }
 
@@ -3196,16 +2734,14 @@ package glue {
         VersionId: VersionString,
         CatalogId: js.UndefOr[CatalogIdString] = js.undefined
     ): DeleteTableVersionRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "DatabaseName" -> DatabaseName.asInstanceOf[js.Any],
         "TableName"    -> TableName.asInstanceOf[js.Any],
-        "VersionId"    -> VersionId.asInstanceOf[js.Any],
-        "CatalogId" -> CatalogId.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "VersionId"    -> VersionId.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteTableVersionRequest]
+      CatalogId.foreach(__v => __obj.update("CatalogId", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DeleteTableVersionRequest]
     }
   }
 
@@ -3215,10 +2751,9 @@ package glue {
   object DeleteTableVersionResponse {
     def apply(
         ): DeleteTableVersionResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary.empty[js.Any]
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteTableVersionResponse]
+      __obj.asInstanceOf[DeleteTableVersionResponse]
     }
   }
 
@@ -3231,11 +2766,11 @@ package glue {
     def apply(
         Name: NameString
     ): DeleteTriggerRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "Name" -> Name.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteTriggerRequest]
+      __obj.asInstanceOf[DeleteTriggerRequest]
     }
   }
 
@@ -3248,13 +2783,9 @@ package glue {
     def apply(
         Name: js.UndefOr[NameString] = js.undefined
     ): DeleteTriggerResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Name" -> Name.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteTriggerResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DeleteTriggerResponse]
     }
   }
 
@@ -3271,15 +2802,13 @@ package glue {
         FunctionName: NameString,
         CatalogId: js.UndefOr[CatalogIdString] = js.undefined
     ): DeleteUserDefinedFunctionRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "DatabaseName" -> DatabaseName.asInstanceOf[js.Any],
-        "FunctionName" -> FunctionName.asInstanceOf[js.Any],
-        "CatalogId" -> CatalogId.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "FunctionName" -> FunctionName.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteUserDefinedFunctionRequest]
+      CatalogId.foreach(__v => __obj.update("CatalogId", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DeleteUserDefinedFunctionRequest]
     }
   }
 
@@ -3289,10 +2818,9 @@ package glue {
   object DeleteUserDefinedFunctionResponse {
     def apply(
         ): DeleteUserDefinedFunctionResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary.empty[js.Any]
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteUserDefinedFunctionResponse]
+      __obj.asInstanceOf[DeleteUserDefinedFunctionResponse]
     }
   }
 
@@ -3350,76 +2878,32 @@ package glue {
         YarnEndpointAddress: js.UndefOr[GenericString] = js.undefined,
         ZeppelinRemoteSparkInterpreterPort: js.UndefOr[IntegerValue] = js.undefined
     ): DevEndpoint = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Arguments" -> Arguments.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "AvailabilityZone" -> AvailabilityZone.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "CreatedTimestamp" -> CreatedTimestamp.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "EndpointName" -> EndpointName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ExtraJarsS3Path" -> ExtraJarsS3Path.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ExtraPythonLibsS3Path" -> ExtraPythonLibsS3Path.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "FailureReason" -> FailureReason.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "LastModifiedTimestamp" -> LastModifiedTimestamp.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "LastUpdateStatus" -> LastUpdateStatus.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NumberOfNodes" -> NumberOfNodes.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "PrivateAddress" -> PrivateAddress.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "PublicAddress" -> PublicAddress.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "PublicKey" -> PublicKey.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "PublicKeys" -> PublicKeys.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "RoleArn" -> RoleArn.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SecurityConfiguration" -> SecurityConfiguration.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SecurityGroupIds" -> SecurityGroupIds.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Status" -> Status.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SubnetId" -> SubnetId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "VpcId" -> VpcId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "YarnEndpointAddress" -> YarnEndpointAddress.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ZeppelinRemoteSparkInterpreterPort" -> ZeppelinRemoteSparkInterpreterPort.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DevEndpoint]
+      val __obj = js.Dictionary.empty[js.Any]
+      Arguments.foreach(__v => __obj.update("Arguments", __v.asInstanceOf[js.Any]))
+      AvailabilityZone.foreach(__v => __obj.update("AvailabilityZone", __v.asInstanceOf[js.Any]))
+      CreatedTimestamp.foreach(__v => __obj.update("CreatedTimestamp", __v.asInstanceOf[js.Any]))
+      EndpointName.foreach(__v => __obj.update("EndpointName", __v.asInstanceOf[js.Any]))
+      ExtraJarsS3Path.foreach(__v => __obj.update("ExtraJarsS3Path", __v.asInstanceOf[js.Any]))
+      ExtraPythonLibsS3Path.foreach(__v => __obj.update("ExtraPythonLibsS3Path", __v.asInstanceOf[js.Any]))
+      FailureReason.foreach(__v => __obj.update("FailureReason", __v.asInstanceOf[js.Any]))
+      LastModifiedTimestamp.foreach(__v => __obj.update("LastModifiedTimestamp", __v.asInstanceOf[js.Any]))
+      LastUpdateStatus.foreach(__v => __obj.update("LastUpdateStatus", __v.asInstanceOf[js.Any]))
+      NumberOfNodes.foreach(__v => __obj.update("NumberOfNodes", __v.asInstanceOf[js.Any]))
+      PrivateAddress.foreach(__v => __obj.update("PrivateAddress", __v.asInstanceOf[js.Any]))
+      PublicAddress.foreach(__v => __obj.update("PublicAddress", __v.asInstanceOf[js.Any]))
+      PublicKey.foreach(__v => __obj.update("PublicKey", __v.asInstanceOf[js.Any]))
+      PublicKeys.foreach(__v => __obj.update("PublicKeys", __v.asInstanceOf[js.Any]))
+      RoleArn.foreach(__v => __obj.update("RoleArn", __v.asInstanceOf[js.Any]))
+      SecurityConfiguration.foreach(__v => __obj.update("SecurityConfiguration", __v.asInstanceOf[js.Any]))
+      SecurityGroupIds.foreach(__v => __obj.update("SecurityGroupIds", __v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.update("Status", __v.asInstanceOf[js.Any]))
+      SubnetId.foreach(__v => __obj.update("SubnetId", __v.asInstanceOf[js.Any]))
+      VpcId.foreach(__v => __obj.update("VpcId", __v.asInstanceOf[js.Any]))
+      YarnEndpointAddress.foreach(__v => __obj.update("YarnEndpointAddress", __v.asInstanceOf[js.Any]))
+      ZeppelinRemoteSparkInterpreterPort.foreach(
+        __v => __obj.update("ZeppelinRemoteSparkInterpreterPort", __v.asInstanceOf[js.Any])
+      )
+      __obj.asInstanceOf[DevEndpoint]
     }
   }
 
@@ -3437,16 +2921,10 @@ package glue {
         ExtraJarsS3Path: js.UndefOr[GenericString] = js.undefined,
         ExtraPythonLibsS3Path: js.UndefOr[GenericString] = js.undefined
     ): DevEndpointCustomLibraries = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ExtraJarsS3Path" -> ExtraJarsS3Path.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ExtraPythonLibsS3Path" -> ExtraPythonLibsS3Path.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DevEndpointCustomLibraries]
+      val __obj = js.Dictionary.empty[js.Any]
+      ExtraJarsS3Path.foreach(__v => __obj.update("ExtraJarsS3Path", __v.asInstanceOf[js.Any]))
+      ExtraPythonLibsS3Path.foreach(__v => __obj.update("ExtraPythonLibsS3Path", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DevEndpointCustomLibraries]
     }
   }
 
@@ -3462,13 +2940,9 @@ package glue {
     def apply(
         Path: js.UndefOr[Path] = js.undefined
     ): DynamoDBTarget = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Path" -> Path.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DynamoDBTarget]
+      val __obj = js.Dictionary.empty[js.Any]
+      Path.foreach(__v => __obj.update("Path", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DynamoDBTarget]
     }
   }
 
@@ -3486,14 +2960,12 @@ package glue {
         CatalogEncryptionMode: CatalogEncryptionMode,
         SseAwsKmsKeyId: js.UndefOr[NameString] = js.undefined
     ): EncryptionAtRest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "CatalogEncryptionMode" -> CatalogEncryptionMode.asInstanceOf[js.Any],
-        "SseAwsKmsKeyId" -> SseAwsKmsKeyId.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "CatalogEncryptionMode" -> CatalogEncryptionMode.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[EncryptionAtRest]
+      SseAwsKmsKeyId.foreach(__v => __obj.update("SseAwsKmsKeyId", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[EncryptionAtRest]
     }
   }
 
@@ -3513,19 +2985,11 @@ package glue {
         JobBookmarksEncryption: js.UndefOr[JobBookmarksEncryption] = js.undefined,
         S3Encryption: js.UndefOr[S3EncryptionList] = js.undefined
     ): EncryptionConfiguration = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "CloudWatchEncryption" -> CloudWatchEncryption.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "JobBookmarksEncryption" -> JobBookmarksEncryption.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "S3Encryption" -> S3Encryption.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[EncryptionConfiguration]
+      val __obj = js.Dictionary.empty[js.Any]
+      CloudWatchEncryption.foreach(__v => __obj.update("CloudWatchEncryption", __v.asInstanceOf[js.Any]))
+      JobBookmarksEncryption.foreach(__v => __obj.update("JobBookmarksEncryption", __v.asInstanceOf[js.Any]))
+      S3Encryption.foreach(__v => __obj.update("S3Encryption", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[EncryptionConfiguration]
     }
   }
 
@@ -3543,16 +3007,10 @@ package glue {
         ErrorCode: js.UndefOr[NameString] = js.undefined,
         ErrorMessage: js.UndefOr[DescriptionString] = js.undefined
     ): ErrorDetail = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ErrorCode" -> ErrorCode.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ErrorMessage" -> ErrorMessage.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ErrorDetail]
+      val __obj = js.Dictionary.empty[js.Any]
+      ErrorCode.foreach(__v => __obj.update("ErrorCode", __v.asInstanceOf[js.Any]))
+      ErrorMessage.foreach(__v => __obj.update("ErrorMessage", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ErrorDetail]
     }
   }
 
@@ -3568,13 +3026,9 @@ package glue {
     def apply(
         MaxConcurrentRuns: js.UndefOr[MaxConcurrentRuns] = js.undefined
     ): ExecutionProperty = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "MaxConcurrentRuns" -> MaxConcurrentRuns.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ExecutionProperty]
+      val __obj = js.Dictionary.empty[js.Any]
+      MaxConcurrentRuns.foreach(__v => __obj.update("MaxConcurrentRuns", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ExecutionProperty]
     }
   }
 
@@ -3595,13 +3049,9 @@ package glue {
     def apply(
         CatalogId: js.UndefOr[CatalogIdString] = js.undefined
     ): GetCatalogImportStatusRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "CatalogId" -> CatalogId.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetCatalogImportStatusRequest]
+      val __obj = js.Dictionary.empty[js.Any]
+      CatalogId.foreach(__v => __obj.update("CatalogId", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetCatalogImportStatusRequest]
     }
   }
 
@@ -3614,13 +3064,9 @@ package glue {
     def apply(
         ImportStatus: js.UndefOr[CatalogImportStatus] = js.undefined
     ): GetCatalogImportStatusResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ImportStatus" -> ImportStatus.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetCatalogImportStatusResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      ImportStatus.foreach(__v => __obj.update("ImportStatus", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetCatalogImportStatusResponse]
     }
   }
 
@@ -3633,11 +3079,11 @@ package glue {
     def apply(
         Name: NameString
     ): GetClassifierRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "Name" -> Name.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetClassifierRequest]
+      __obj.asInstanceOf[GetClassifierRequest]
     }
   }
 
@@ -3650,13 +3096,9 @@ package glue {
     def apply(
         Classifier: js.UndefOr[Classifier] = js.undefined
     ): GetClassifierResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Classifier" -> Classifier.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetClassifierResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      Classifier.foreach(__v => __obj.update("Classifier", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetClassifierResponse]
     }
   }
 
@@ -3671,16 +3113,10 @@ package glue {
         MaxResults: js.UndefOr[PageSize] = js.undefined,
         NextToken: js.UndefOr[Token] = js.undefined
     ): GetClassifiersRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "MaxResults" -> MaxResults.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NextToken" -> NextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetClassifiersRequest]
+      val __obj = js.Dictionary.empty[js.Any]
+      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetClassifiersRequest]
     }
   }
 
@@ -3695,16 +3131,10 @@ package glue {
         Classifiers: js.UndefOr[ClassifierList] = js.undefined,
         NextToken: js.UndefOr[Token] = js.undefined
     ): GetClassifiersResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Classifiers" -> Classifiers.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NextToken" -> NextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetClassifiersResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      Classifiers.foreach(__v => __obj.update("Classifiers", __v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetClassifiersResponse]
     }
   }
 
@@ -3721,17 +3151,13 @@ package glue {
         CatalogId: js.UndefOr[CatalogIdString] = js.undefined,
         HidePassword: js.UndefOr[Boolean] = js.undefined
     ): GetConnectionRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Name" -> Name.asInstanceOf[js.Any],
-        "CatalogId" -> CatalogId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "HidePassword" -> HidePassword.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "Name" -> Name.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetConnectionRequest]
+      CatalogId.foreach(__v => __obj.update("CatalogId", __v.asInstanceOf[js.Any]))
+      HidePassword.foreach(__v => __obj.update("HidePassword", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetConnectionRequest]
     }
   }
 
@@ -3744,13 +3170,9 @@ package glue {
     def apply(
         Connection: js.UndefOr[Connection] = js.undefined
     ): GetConnectionResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Connection" -> Connection.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetConnectionResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      Connection.foreach(__v => __obj.update("Connection", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetConnectionResponse]
     }
   }
 
@@ -3768,16 +3190,10 @@ package glue {
         ConnectionType: js.UndefOr[ConnectionType] = js.undefined,
         MatchCriteria: js.UndefOr[MatchCriteria] = js.undefined
     ): GetConnectionsFilter = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ConnectionType" -> ConnectionType.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MatchCriteria" -> MatchCriteria.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetConnectionsFilter]
+      val __obj = js.Dictionary.empty[js.Any]
+      ConnectionType.foreach(__v => __obj.update("ConnectionType", __v.asInstanceOf[js.Any]))
+      MatchCriteria.foreach(__v => __obj.update("MatchCriteria", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetConnectionsFilter]
     }
   }
 
@@ -3798,25 +3214,13 @@ package glue {
         MaxResults: js.UndefOr[PageSize] = js.undefined,
         NextToken: js.UndefOr[Token] = js.undefined
     ): GetConnectionsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "CatalogId" -> CatalogId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Filter" -> Filter.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "HidePassword" -> HidePassword.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MaxResults" -> MaxResults.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NextToken" -> NextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetConnectionsRequest]
+      val __obj = js.Dictionary.empty[js.Any]
+      CatalogId.foreach(__v => __obj.update("CatalogId", __v.asInstanceOf[js.Any]))
+      Filter.foreach(__v => __obj.update("Filter", __v.asInstanceOf[js.Any]))
+      HidePassword.foreach(__v => __obj.update("HidePassword", __v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetConnectionsRequest]
     }
   }
 
@@ -3831,16 +3235,10 @@ package glue {
         ConnectionList: js.UndefOr[ConnectionList] = js.undefined,
         NextToken: js.UndefOr[Token] = js.undefined
     ): GetConnectionsResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ConnectionList" -> ConnectionList.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NextToken" -> NextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetConnectionsResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      ConnectionList.foreach(__v => __obj.update("ConnectionList", __v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetConnectionsResponse]
     }
   }
 
@@ -3857,19 +3255,11 @@ package glue {
         MaxResults: js.UndefOr[PageSize] = js.undefined,
         NextToken: js.UndefOr[Token] = js.undefined
     ): GetCrawlerMetricsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "CrawlerNameList" -> CrawlerNameList.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MaxResults" -> MaxResults.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NextToken" -> NextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetCrawlerMetricsRequest]
+      val __obj = js.Dictionary.empty[js.Any]
+      CrawlerNameList.foreach(__v => __obj.update("CrawlerNameList", __v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetCrawlerMetricsRequest]
     }
   }
 
@@ -3884,16 +3274,10 @@ package glue {
         CrawlerMetricsList: js.UndefOr[CrawlerMetricsList] = js.undefined,
         NextToken: js.UndefOr[Token] = js.undefined
     ): GetCrawlerMetricsResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "CrawlerMetricsList" -> CrawlerMetricsList.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NextToken" -> NextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetCrawlerMetricsResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      CrawlerMetricsList.foreach(__v => __obj.update("CrawlerMetricsList", __v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetCrawlerMetricsResponse]
     }
   }
 
@@ -3906,11 +3290,11 @@ package glue {
     def apply(
         Name: NameString
     ): GetCrawlerRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "Name" -> Name.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetCrawlerRequest]
+      __obj.asInstanceOf[GetCrawlerRequest]
     }
   }
 
@@ -3923,13 +3307,9 @@ package glue {
     def apply(
         Crawler: js.UndefOr[Crawler] = js.undefined
     ): GetCrawlerResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Crawler" -> Crawler.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetCrawlerResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      Crawler.foreach(__v => __obj.update("Crawler", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetCrawlerResponse]
     }
   }
 
@@ -3944,16 +3324,10 @@ package glue {
         MaxResults: js.UndefOr[PageSize] = js.undefined,
         NextToken: js.UndefOr[Token] = js.undefined
     ): GetCrawlersRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "MaxResults" -> MaxResults.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NextToken" -> NextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetCrawlersRequest]
+      val __obj = js.Dictionary.empty[js.Any]
+      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetCrawlersRequest]
     }
   }
 
@@ -3968,16 +3342,10 @@ package glue {
         Crawlers: js.UndefOr[CrawlerList] = js.undefined,
         NextToken: js.UndefOr[Token] = js.undefined
     ): GetCrawlersResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Crawlers" -> Crawlers.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NextToken" -> NextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetCrawlersResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      Crawlers.foreach(__v => __obj.update("Crawlers", __v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetCrawlersResponse]
     }
   }
 
@@ -3990,13 +3358,9 @@ package glue {
     def apply(
         CatalogId: js.UndefOr[CatalogIdString] = js.undefined
     ): GetDataCatalogEncryptionSettingsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "CatalogId" -> CatalogId.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetDataCatalogEncryptionSettingsRequest]
+      val __obj = js.Dictionary.empty[js.Any]
+      CatalogId.foreach(__v => __obj.update("CatalogId", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetDataCatalogEncryptionSettingsRequest]
     }
   }
 
@@ -4009,13 +3373,11 @@ package glue {
     def apply(
         DataCatalogEncryptionSettings: js.UndefOr[DataCatalogEncryptionSettings] = js.undefined
     ): GetDataCatalogEncryptionSettingsResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "DataCatalogEncryptionSettings" -> DataCatalogEncryptionSettings.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetDataCatalogEncryptionSettingsResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      DataCatalogEncryptionSettings.foreach(
+        __v => __obj.update("DataCatalogEncryptionSettings", __v.asInstanceOf[js.Any])
+      )
+      __obj.asInstanceOf[GetDataCatalogEncryptionSettingsResponse]
     }
   }
 
@@ -4030,14 +3392,12 @@ package glue {
         Name: NameString,
         CatalogId: js.UndefOr[CatalogIdString] = js.undefined
     ): GetDatabaseRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Name" -> Name.asInstanceOf[js.Any],
-        "CatalogId" -> CatalogId.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "Name" -> Name.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetDatabaseRequest]
+      CatalogId.foreach(__v => __obj.update("CatalogId", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetDatabaseRequest]
     }
   }
 
@@ -4050,13 +3410,9 @@ package glue {
     def apply(
         Database: js.UndefOr[Database] = js.undefined
     ): GetDatabaseResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Database" -> Database.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetDatabaseResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      Database.foreach(__v => __obj.update("Database", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetDatabaseResponse]
     }
   }
 
@@ -4073,19 +3429,11 @@ package glue {
         MaxResults: js.UndefOr[PageSize] = js.undefined,
         NextToken: js.UndefOr[Token] = js.undefined
     ): GetDatabasesRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "CatalogId" -> CatalogId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MaxResults" -> MaxResults.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NextToken" -> NextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetDatabasesRequest]
+      val __obj = js.Dictionary.empty[js.Any]
+      CatalogId.foreach(__v => __obj.update("CatalogId", __v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetDatabasesRequest]
     }
   }
 
@@ -4100,14 +3448,12 @@ package glue {
         DatabaseList: DatabaseList,
         NextToken: js.UndefOr[Token] = js.undefined
     ): GetDatabasesResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "DatabaseList" -> DatabaseList.asInstanceOf[js.Any],
-        "NextToken" -> NextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "DatabaseList" -> DatabaseList.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetDatabasesResponse]
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetDatabasesResponse]
     }
   }
 
@@ -4120,13 +3466,9 @@ package glue {
     def apply(
         PythonScript: js.UndefOr[PythonScript] = js.undefined
     ): GetDataflowGraphRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "PythonScript" -> PythonScript.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetDataflowGraphRequest]
+      val __obj = js.Dictionary.empty[js.Any]
+      PythonScript.foreach(__v => __obj.update("PythonScript", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetDataflowGraphRequest]
     }
   }
 
@@ -4141,16 +3483,10 @@ package glue {
         DagEdges: js.UndefOr[DagEdges] = js.undefined,
         DagNodes: js.UndefOr[DagNodes] = js.undefined
     ): GetDataflowGraphResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "DagEdges" -> DagEdges.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DagNodes" -> DagNodes.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetDataflowGraphResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      DagEdges.foreach(__v => __obj.update("DagEdges", __v.asInstanceOf[js.Any]))
+      DagNodes.foreach(__v => __obj.update("DagNodes", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetDataflowGraphResponse]
     }
   }
 
@@ -4163,11 +3499,11 @@ package glue {
     def apply(
         EndpointName: GenericString
     ): GetDevEndpointRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "EndpointName" -> EndpointName.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetDevEndpointRequest]
+      __obj.asInstanceOf[GetDevEndpointRequest]
     }
   }
 
@@ -4180,13 +3516,9 @@ package glue {
     def apply(
         DevEndpoint: js.UndefOr[DevEndpoint] = js.undefined
     ): GetDevEndpointResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "DevEndpoint" -> DevEndpoint.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetDevEndpointResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      DevEndpoint.foreach(__v => __obj.update("DevEndpoint", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetDevEndpointResponse]
     }
   }
 
@@ -4201,16 +3533,10 @@ package glue {
         MaxResults: js.UndefOr[PageSize] = js.undefined,
         NextToken: js.UndefOr[GenericString] = js.undefined
     ): GetDevEndpointsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "MaxResults" -> MaxResults.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NextToken" -> NextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetDevEndpointsRequest]
+      val __obj = js.Dictionary.empty[js.Any]
+      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetDevEndpointsRequest]
     }
   }
 
@@ -4225,16 +3551,10 @@ package glue {
         DevEndpoints: js.UndefOr[DevEndpointList] = js.undefined,
         NextToken: js.UndefOr[GenericString] = js.undefined
     ): GetDevEndpointsResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "DevEndpoints" -> DevEndpoints.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NextToken" -> NextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetDevEndpointsResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      DevEndpoints.foreach(__v => __obj.update("DevEndpoints", __v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetDevEndpointsResponse]
     }
   }
 
@@ -4247,11 +3567,11 @@ package glue {
     def apply(
         JobName: NameString
     ): GetJobRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "JobName" -> JobName.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetJobRequest]
+      __obj.asInstanceOf[GetJobRequest]
     }
   }
 
@@ -4264,13 +3584,9 @@ package glue {
     def apply(
         Job: js.UndefOr[Job] = js.undefined
     ): GetJobResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Job" -> Job.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetJobResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      Job.foreach(__v => __obj.update("Job", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetJobResponse]
     }
   }
 
@@ -4287,15 +3603,13 @@ package glue {
         RunId: IdString,
         PredecessorsIncluded: js.UndefOr[BooleanValue] = js.undefined
     ): GetJobRunRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "JobName" -> JobName.asInstanceOf[js.Any],
-        "RunId"   -> RunId.asInstanceOf[js.Any],
-        "PredecessorsIncluded" -> PredecessorsIncluded.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "RunId"   -> RunId.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetJobRunRequest]
+      PredecessorsIncluded.foreach(__v => __obj.update("PredecessorsIncluded", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetJobRunRequest]
     }
   }
 
@@ -4308,13 +3622,9 @@ package glue {
     def apply(
         JobRun: js.UndefOr[JobRun] = js.undefined
     ): GetJobRunResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "JobRun" -> JobRun.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetJobRunResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      JobRun.foreach(__v => __obj.update("JobRun", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetJobRunResponse]
     }
   }
 
@@ -4331,17 +3641,13 @@ package glue {
         MaxResults: js.UndefOr[PageSize] = js.undefined,
         NextToken: js.UndefOr[GenericString] = js.undefined
     ): GetJobRunsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "JobName" -> JobName.asInstanceOf[js.Any],
-        "MaxResults" -> MaxResults.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NextToken" -> NextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "JobName" -> JobName.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetJobRunsRequest]
+      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetJobRunsRequest]
     }
   }
 
@@ -4356,16 +3662,10 @@ package glue {
         JobRuns: js.UndefOr[JobRunList] = js.undefined,
         NextToken: js.UndefOr[GenericString] = js.undefined
     ): GetJobRunsResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "JobRuns" -> JobRuns.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NextToken" -> NextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetJobRunsResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      JobRuns.foreach(__v => __obj.update("JobRuns", __v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetJobRunsResponse]
     }
   }
 
@@ -4380,16 +3680,10 @@ package glue {
         MaxResults: js.UndefOr[PageSize] = js.undefined,
         NextToken: js.UndefOr[GenericString] = js.undefined
     ): GetJobsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "MaxResults" -> MaxResults.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NextToken" -> NextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetJobsRequest]
+      val __obj = js.Dictionary.empty[js.Any]
+      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetJobsRequest]
     }
   }
 
@@ -4404,16 +3698,10 @@ package glue {
         Jobs: js.UndefOr[JobList] = js.undefined,
         NextToken: js.UndefOr[GenericString] = js.undefined
     ): GetJobsResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Jobs" -> Jobs.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NextToken" -> NextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetJobsResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      Jobs.foreach(__v => __obj.update("Jobs", __v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetJobsResponse]
     }
   }
 
@@ -4430,17 +3718,13 @@ package glue {
         Location: js.UndefOr[Location] = js.undefined,
         Sinks: js.UndefOr[CatalogEntries] = js.undefined
     ): GetMappingRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Source" -> Source.asInstanceOf[js.Any],
-        "Location" -> Location.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Sinks" -> Sinks.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "Source" -> Source.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetMappingRequest]
+      Location.foreach(__v => __obj.update("Location", __v.asInstanceOf[js.Any]))
+      Sinks.foreach(__v => __obj.update("Sinks", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetMappingRequest]
     }
   }
 
@@ -4453,11 +3737,11 @@ package glue {
     def apply(
         Mapping: MappingList
     ): GetMappingResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "Mapping" -> Mapping.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetMappingResponse]
+      __obj.asInstanceOf[GetMappingResponse]
     }
   }
 
@@ -4476,16 +3760,14 @@ package glue {
         TableName: NameString,
         CatalogId: js.UndefOr[CatalogIdString] = js.undefined
     ): GetPartitionRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "DatabaseName"    -> DatabaseName.asInstanceOf[js.Any],
         "PartitionValues" -> PartitionValues.asInstanceOf[js.Any],
-        "TableName"       -> TableName.asInstanceOf[js.Any],
-        "CatalogId" -> CatalogId.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "TableName"       -> TableName.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetPartitionRequest]
+      CatalogId.foreach(__v => __obj.update("CatalogId", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetPartitionRequest]
     }
   }
 
@@ -4498,13 +3780,9 @@ package glue {
     def apply(
         Partition: js.UndefOr[Partition] = js.undefined
     ): GetPartitionResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Partition" -> Partition.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetPartitionResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      Partition.foreach(__v => __obj.update("Partition", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetPartitionResponse]
     }
   }
 
@@ -4529,27 +3807,17 @@ package glue {
         NextToken: js.UndefOr[Token] = js.undefined,
         Segment: js.UndefOr[Segment] = js.undefined
     ): GetPartitionsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "DatabaseName" -> DatabaseName.asInstanceOf[js.Any],
-        "TableName"    -> TableName.asInstanceOf[js.Any],
-        "CatalogId" -> CatalogId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Expression" -> Expression.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MaxResults" -> MaxResults.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NextToken" -> NextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Segment" -> Segment.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "TableName"    -> TableName.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetPartitionsRequest]
+      CatalogId.foreach(__v => __obj.update("CatalogId", __v.asInstanceOf[js.Any]))
+      Expression.foreach(__v => __obj.update("Expression", __v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      Segment.foreach(__v => __obj.update("Segment", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetPartitionsRequest]
     }
   }
 
@@ -4564,16 +3832,10 @@ package glue {
         NextToken: js.UndefOr[Token] = js.undefined,
         Partitions: js.UndefOr[PartitionList] = js.undefined
     ): GetPartitionsResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "NextToken" -> NextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Partitions" -> Partitions.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetPartitionsResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      Partitions.foreach(__v => __obj.update("Partitions", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetPartitionsResponse]
     }
   }
 
@@ -4594,21 +3856,15 @@ package glue {
         Location: js.UndefOr[Location] = js.undefined,
         Sinks: js.UndefOr[CatalogEntries] = js.undefined
     ): GetPlanRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "Mapping" -> Mapping.asInstanceOf[js.Any],
-        "Source"  -> Source.asInstanceOf[js.Any],
-        "Language" -> Language.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Location" -> Location.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Sinks" -> Sinks.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "Source"  -> Source.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetPlanRequest]
+      Language.foreach(__v => __obj.update("Language", __v.asInstanceOf[js.Any]))
+      Location.foreach(__v => __obj.update("Location", __v.asInstanceOf[js.Any]))
+      Sinks.foreach(__v => __obj.update("Sinks", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetPlanRequest]
     }
   }
 
@@ -4623,16 +3879,10 @@ package glue {
         PythonScript: js.UndefOr[PythonScript] = js.undefined,
         ScalaCode: js.UndefOr[ScalaCode] = js.undefined
     ): GetPlanResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "PythonScript" -> PythonScript.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ScalaCode" -> ScalaCode.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetPlanResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      PythonScript.foreach(__v => __obj.update("PythonScript", __v.asInstanceOf[js.Any]))
+      ScalaCode.foreach(__v => __obj.update("ScalaCode", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetPlanResponse]
     }
   }
 
@@ -4642,10 +3892,9 @@ package glue {
   object GetResourcePolicyRequest {
     def apply(
         ): GetResourcePolicyRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary.empty[js.Any]
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetResourcePolicyRequest]
+      __obj.asInstanceOf[GetResourcePolicyRequest]
     }
   }
 
@@ -4664,22 +3913,12 @@ package glue {
         PolicyInJson: js.UndefOr[PolicyJsonString] = js.undefined,
         UpdateTime: js.UndefOr[Timestamp] = js.undefined
     ): GetResourcePolicyResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "CreateTime" -> CreateTime.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "PolicyHash" -> PolicyHash.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "PolicyInJson" -> PolicyInJson.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "UpdateTime" -> UpdateTime.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetResourcePolicyResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      CreateTime.foreach(__v => __obj.update("CreateTime", __v.asInstanceOf[js.Any]))
+      PolicyHash.foreach(__v => __obj.update("PolicyHash", __v.asInstanceOf[js.Any]))
+      PolicyInJson.foreach(__v => __obj.update("PolicyInJson", __v.asInstanceOf[js.Any]))
+      UpdateTime.foreach(__v => __obj.update("UpdateTime", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetResourcePolicyResponse]
     }
   }
 
@@ -4692,11 +3931,11 @@ package glue {
     def apply(
         Name: NameString
     ): GetSecurityConfigurationRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "Name" -> Name.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetSecurityConfigurationRequest]
+      __obj.asInstanceOf[GetSecurityConfigurationRequest]
     }
   }
 
@@ -4709,13 +3948,9 @@ package glue {
     def apply(
         SecurityConfiguration: js.UndefOr[SecurityConfiguration] = js.undefined
     ): GetSecurityConfigurationResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "SecurityConfiguration" -> SecurityConfiguration.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetSecurityConfigurationResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      SecurityConfiguration.foreach(__v => __obj.update("SecurityConfiguration", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetSecurityConfigurationResponse]
     }
   }
 
@@ -4730,16 +3965,10 @@ package glue {
         MaxResults: js.UndefOr[PageSize] = js.undefined,
         NextToken: js.UndefOr[GenericString] = js.undefined
     ): GetSecurityConfigurationsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "MaxResults" -> MaxResults.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NextToken" -> NextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetSecurityConfigurationsRequest]
+      val __obj = js.Dictionary.empty[js.Any]
+      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetSecurityConfigurationsRequest]
     }
   }
 
@@ -4754,16 +3983,10 @@ package glue {
         NextToken: js.UndefOr[GenericString] = js.undefined,
         SecurityConfigurations: js.UndefOr[SecurityConfigurationList] = js.undefined
     ): GetSecurityConfigurationsResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "NextToken" -> NextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SecurityConfigurations" -> SecurityConfigurations.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetSecurityConfigurationsResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      SecurityConfigurations.foreach(__v => __obj.update("SecurityConfigurations", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetSecurityConfigurationsResponse]
     }
   }
 
@@ -4780,15 +4003,13 @@ package glue {
         Name: NameString,
         CatalogId: js.UndefOr[CatalogIdString] = js.undefined
     ): GetTableRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "DatabaseName" -> DatabaseName.asInstanceOf[js.Any],
-        "Name"         -> Name.asInstanceOf[js.Any],
-        "CatalogId" -> CatalogId.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "Name"         -> Name.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetTableRequest]
+      CatalogId.foreach(__v => __obj.update("CatalogId", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetTableRequest]
     }
   }
 
@@ -4801,13 +4022,9 @@ package glue {
     def apply(
         Table: js.UndefOr[Table] = js.undefined
     ): GetTableResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Table" -> Table.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetTableResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      Table.foreach(__v => __obj.update("Table", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetTableResponse]
     }
   }
 
@@ -4826,18 +4043,14 @@ package glue {
         CatalogId: js.UndefOr[CatalogIdString] = js.undefined,
         VersionId: js.UndefOr[VersionString] = js.undefined
     ): GetTableVersionRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "DatabaseName" -> DatabaseName.asInstanceOf[js.Any],
-        "TableName"    -> TableName.asInstanceOf[js.Any],
-        "CatalogId" -> CatalogId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "VersionId" -> VersionId.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "TableName"    -> TableName.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetTableVersionRequest]
+      CatalogId.foreach(__v => __obj.update("CatalogId", __v.asInstanceOf[js.Any]))
+      VersionId.foreach(__v => __obj.update("VersionId", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetTableVersionRequest]
     }
   }
 
@@ -4850,13 +4063,9 @@ package glue {
     def apply(
         TableVersion: js.UndefOr[TableVersion] = js.undefined
     ): GetTableVersionResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "TableVersion" -> TableVersion.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetTableVersionResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      TableVersion.foreach(__v => __obj.update("TableVersion", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetTableVersionResponse]
     }
   }
 
@@ -4877,21 +4086,15 @@ package glue {
         MaxResults: js.UndefOr[PageSize] = js.undefined,
         NextToken: js.UndefOr[Token] = js.undefined
     ): GetTableVersionsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "DatabaseName" -> DatabaseName.asInstanceOf[js.Any],
-        "TableName"    -> TableName.asInstanceOf[js.Any],
-        "CatalogId" -> CatalogId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MaxResults" -> MaxResults.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NextToken" -> NextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "TableName"    -> TableName.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetTableVersionsRequest]
+      CatalogId.foreach(__v => __obj.update("CatalogId", __v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetTableVersionsRequest]
     }
   }
 
@@ -4906,16 +4109,10 @@ package glue {
         NextToken: js.UndefOr[Token] = js.undefined,
         TableVersions: js.UndefOr[GetTableVersionsList] = js.undefined
     ): GetTableVersionsResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "NextToken" -> NextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "TableVersions" -> TableVersions.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetTableVersionsResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      TableVersions.foreach(__v => __obj.update("TableVersions", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetTableVersionsResponse]
     }
   }
 
@@ -4936,23 +4133,15 @@ package glue {
         MaxResults: js.UndefOr[PageSize] = js.undefined,
         NextToken: js.UndefOr[Token] = js.undefined
     ): GetTablesRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "DatabaseName" -> DatabaseName.asInstanceOf[js.Any],
-        "CatalogId" -> CatalogId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Expression" -> Expression.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MaxResults" -> MaxResults.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NextToken" -> NextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "DatabaseName" -> DatabaseName.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetTablesRequest]
+      CatalogId.foreach(__v => __obj.update("CatalogId", __v.asInstanceOf[js.Any]))
+      Expression.foreach(__v => __obj.update("Expression", __v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetTablesRequest]
     }
   }
 
@@ -4967,16 +4156,10 @@ package glue {
         NextToken: js.UndefOr[Token] = js.undefined,
         TableList: js.UndefOr[TableList] = js.undefined
     ): GetTablesResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "NextToken" -> NextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "TableList" -> TableList.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetTablesResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      TableList.foreach(__v => __obj.update("TableList", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetTablesResponse]
     }
   }
 
@@ -4989,11 +4172,11 @@ package glue {
     def apply(
         ResourceArn: GlueResourceArn
     ): GetTagsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetTagsRequest]
+      __obj.asInstanceOf[GetTagsRequest]
     }
   }
 
@@ -5006,13 +4189,9 @@ package glue {
     def apply(
         Tags: js.UndefOr[TagsMap] = js.undefined
     ): GetTagsResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Tags" -> Tags.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetTagsResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetTagsResponse]
     }
   }
 
@@ -5025,11 +4204,11 @@ package glue {
     def apply(
         Name: NameString
     ): GetTriggerRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "Name" -> Name.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetTriggerRequest]
+      __obj.asInstanceOf[GetTriggerRequest]
     }
   }
 
@@ -5042,13 +4221,9 @@ package glue {
     def apply(
         Trigger: js.UndefOr[Trigger] = js.undefined
     ): GetTriggerResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Trigger" -> Trigger.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetTriggerResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      Trigger.foreach(__v => __obj.update("Trigger", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetTriggerResponse]
     }
   }
 
@@ -5065,19 +4240,11 @@ package glue {
         MaxResults: js.UndefOr[PageSize] = js.undefined,
         NextToken: js.UndefOr[GenericString] = js.undefined
     ): GetTriggersRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "DependentJobName" -> DependentJobName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MaxResults" -> MaxResults.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NextToken" -> NextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetTriggersRequest]
+      val __obj = js.Dictionary.empty[js.Any]
+      DependentJobName.foreach(__v => __obj.update("DependentJobName", __v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetTriggersRequest]
     }
   }
 
@@ -5092,16 +4259,10 @@ package glue {
         NextToken: js.UndefOr[GenericString] = js.undefined,
         Triggers: js.UndefOr[TriggerList] = js.undefined
     ): GetTriggersResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "NextToken" -> NextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Triggers" -> Triggers.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetTriggersResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      Triggers.foreach(__v => __obj.update("Triggers", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetTriggersResponse]
     }
   }
 
@@ -5118,15 +4279,13 @@ package glue {
         FunctionName: NameString,
         CatalogId: js.UndefOr[CatalogIdString] = js.undefined
     ): GetUserDefinedFunctionRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "DatabaseName" -> DatabaseName.asInstanceOf[js.Any],
-        "FunctionName" -> FunctionName.asInstanceOf[js.Any],
-        "CatalogId" -> CatalogId.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "FunctionName" -> FunctionName.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetUserDefinedFunctionRequest]
+      CatalogId.foreach(__v => __obj.update("CatalogId", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetUserDefinedFunctionRequest]
     }
   }
 
@@ -5139,13 +4298,9 @@ package glue {
     def apply(
         UserDefinedFunction: js.UndefOr[UserDefinedFunction] = js.undefined
     ): GetUserDefinedFunctionResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "UserDefinedFunction" -> UserDefinedFunction.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetUserDefinedFunctionResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      UserDefinedFunction.foreach(__v => __obj.update("UserDefinedFunction", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetUserDefinedFunctionResponse]
     }
   }
 
@@ -5166,21 +4321,15 @@ package glue {
         MaxResults: js.UndefOr[PageSize] = js.undefined,
         NextToken: js.UndefOr[Token] = js.undefined
     ): GetUserDefinedFunctionsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "DatabaseName" -> DatabaseName.asInstanceOf[js.Any],
-        "Pattern"      -> Pattern.asInstanceOf[js.Any],
-        "CatalogId" -> CatalogId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MaxResults" -> MaxResults.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NextToken" -> NextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "Pattern"      -> Pattern.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetUserDefinedFunctionsRequest]
+      CatalogId.foreach(__v => __obj.update("CatalogId", __v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetUserDefinedFunctionsRequest]
     }
   }
 
@@ -5195,16 +4344,10 @@ package glue {
         NextToken: js.UndefOr[Token] = js.undefined,
         UserDefinedFunctions: js.UndefOr[UserDefinedFunctionList] = js.undefined
     ): GetUserDefinedFunctionsResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "NextToken" -> NextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "UserDefinedFunctions" -> UserDefinedFunctions.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetUserDefinedFunctionsResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      UserDefinedFunctions.foreach(__v => __obj.update("UserDefinedFunctions", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetUserDefinedFunctionsResponse]
     }
   }
 
@@ -5232,25 +4375,17 @@ package glue {
         LastUpdated: js.UndefOr[Timestamp] = js.undefined,
         Version: js.UndefOr[VersionId] = js.undefined
     ): GrokClassifier = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "Classification" -> Classification.asInstanceOf[js.Any],
         "GrokPattern"    -> GrokPattern.asInstanceOf[js.Any],
-        "Name"           -> Name.asInstanceOf[js.Any],
-        "CreationTime" -> CreationTime.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "CustomPatterns" -> CustomPatterns.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "LastUpdated" -> LastUpdated.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Version" -> Version.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "Name"           -> Name.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GrokClassifier]
+      CreationTime.foreach(__v => __obj.update("CreationTime", __v.asInstanceOf[js.Any]))
+      CustomPatterns.foreach(__v => __obj.update("CustomPatterns", __v.asInstanceOf[js.Any]))
+      LastUpdated.foreach(__v => __obj.update("LastUpdated", __v.asInstanceOf[js.Any]))
+      Version.foreach(__v => __obj.update("Version", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GrokClassifier]
     }
   }
 
@@ -5263,13 +4398,9 @@ package glue {
     def apply(
         CatalogId: js.UndefOr[CatalogIdString] = js.undefined
     ): ImportCatalogToGlueRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "CatalogId" -> CatalogId.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ImportCatalogToGlueRequest]
+      val __obj = js.Dictionary.empty[js.Any]
+      CatalogId.foreach(__v => __obj.update("CatalogId", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ImportCatalogToGlueRequest]
     }
   }
 
@@ -5279,10 +4410,9 @@ package glue {
   object ImportCatalogToGlueResponse {
     def apply(
         ): ImportCatalogToGlueResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary.empty[js.Any]
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ImportCatalogToGlueResponse]
+      __obj.asInstanceOf[ImportCatalogToGlueResponse]
     }
   }
 
@@ -5302,19 +4432,11 @@ package glue {
         Exclusions: js.UndefOr[PathList] = js.undefined,
         Path: js.UndefOr[Path] = js.undefined
     ): JdbcTarget = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ConnectionName" -> ConnectionName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Exclusions" -> Exclusions.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Path" -> Path.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[JdbcTarget]
+      val __obj = js.Dictionary.empty[js.Any]
+      ConnectionName.foreach(__v => __obj.update("ConnectionName", __v.asInstanceOf[js.Any]))
+      Exclusions.foreach(__v => __obj.update("Exclusions", __v.asInstanceOf[js.Any]))
+      Path.foreach(__v => __obj.update("Path", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[JdbcTarget]
     }
   }
 
@@ -5364,64 +4486,26 @@ package glue {
         Timeout: js.UndefOr[Timeout] = js.undefined,
         WorkerType: js.UndefOr[WorkerType] = js.undefined
     ): Job = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "AllocatedCapacity" -> AllocatedCapacity.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Command" -> Command.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Connections" -> Connections.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "CreatedOn" -> CreatedOn.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DefaultArguments" -> DefaultArguments.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Description" -> Description.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ExecutionProperty" -> ExecutionProperty.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "LastModifiedOn" -> LastModifiedOn.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "LogUri" -> LogUri.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MaxCapacity" -> MaxCapacity.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MaxRetries" -> MaxRetries.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Name" -> Name.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NotificationProperty" -> NotificationProperty.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NumberOfWorkers" -> NumberOfWorkers.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Role" -> Role.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SecurityConfiguration" -> SecurityConfiguration.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Timeout" -> Timeout.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "WorkerType" -> WorkerType.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Job]
+      val __obj = js.Dictionary.empty[js.Any]
+      AllocatedCapacity.foreach(__v => __obj.update("AllocatedCapacity", __v.asInstanceOf[js.Any]))
+      Command.foreach(__v => __obj.update("Command", __v.asInstanceOf[js.Any]))
+      Connections.foreach(__v => __obj.update("Connections", __v.asInstanceOf[js.Any]))
+      CreatedOn.foreach(__v => __obj.update("CreatedOn", __v.asInstanceOf[js.Any]))
+      DefaultArguments.foreach(__v => __obj.update("DefaultArguments", __v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
+      ExecutionProperty.foreach(__v => __obj.update("ExecutionProperty", __v.asInstanceOf[js.Any]))
+      LastModifiedOn.foreach(__v => __obj.update("LastModifiedOn", __v.asInstanceOf[js.Any]))
+      LogUri.foreach(__v => __obj.update("LogUri", __v.asInstanceOf[js.Any]))
+      MaxCapacity.foreach(__v => __obj.update("MaxCapacity", __v.asInstanceOf[js.Any]))
+      MaxRetries.foreach(__v => __obj.update("MaxRetries", __v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
+      NotificationProperty.foreach(__v => __obj.update("NotificationProperty", __v.asInstanceOf[js.Any]))
+      NumberOfWorkers.foreach(__v => __obj.update("NumberOfWorkers", __v.asInstanceOf[js.Any]))
+      Role.foreach(__v => __obj.update("Role", __v.asInstanceOf[js.Any]))
+      SecurityConfiguration.foreach(__v => __obj.update("SecurityConfiguration", __v.asInstanceOf[js.Any]))
+      Timeout.foreach(__v => __obj.update("Timeout", __v.asInstanceOf[js.Any]))
+      WorkerType.foreach(__v => __obj.update("WorkerType", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Job]
     }
   }
 
@@ -5445,25 +4529,13 @@ package glue {
         Run: js.UndefOr[IntegerValue] = js.undefined,
         Version: js.UndefOr[IntegerValue] = js.undefined
     ): JobBookmarkEntry = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Attempt" -> Attempt.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "JobBookmark" -> JobBookmark.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "JobName" -> JobName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Run" -> Run.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Version" -> Version.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[JobBookmarkEntry]
+      val __obj = js.Dictionary.empty[js.Any]
+      Attempt.foreach(__v => __obj.update("Attempt", __v.asInstanceOf[js.Any]))
+      JobBookmark.foreach(__v => __obj.update("JobBookmark", __v.asInstanceOf[js.Any]))
+      JobName.foreach(__v => __obj.update("JobName", __v.asInstanceOf[js.Any]))
+      Run.foreach(__v => __obj.update("Run", __v.asInstanceOf[js.Any]))
+      Version.foreach(__v => __obj.update("Version", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[JobBookmarkEntry]
     }
   }
 
@@ -5481,16 +4553,10 @@ package glue {
         JobBookmarksEncryptionMode: js.UndefOr[JobBookmarksEncryptionMode] = js.undefined,
         KmsKeyArn: js.UndefOr[KmsKeyArn] = js.undefined
     ): JobBookmarksEncryption = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "JobBookmarksEncryptionMode" -> JobBookmarksEncryptionMode.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "KmsKeyArn" -> KmsKeyArn.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[JobBookmarksEncryption]
+      val __obj = js.Dictionary.empty[js.Any]
+      JobBookmarksEncryptionMode.foreach(__v => __obj.update("JobBookmarksEncryptionMode", __v.asInstanceOf[js.Any]))
+      KmsKeyArn.foreach(__v => __obj.update("KmsKeyArn", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[JobBookmarksEncryption]
     }
   }
 
@@ -5515,16 +4581,10 @@ package glue {
         Name: js.UndefOr[GenericString] = js.undefined,
         ScriptLocation: js.UndefOr[ScriptLocationString] = js.undefined
     ): JobCommand = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Name" -> Name.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ScriptLocation" -> ScriptLocation.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[JobCommand]
+      val __obj = js.Dictionary.empty[js.Any]
+      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
+      ScriptLocation.foreach(__v => __obj.update("ScriptLocation", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[JobCommand]
     }
   }
 
@@ -5580,73 +4640,29 @@ package glue {
         TriggerName: js.UndefOr[NameString] = js.undefined,
         WorkerType: js.UndefOr[WorkerType] = js.undefined
     ): JobRun = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "AllocatedCapacity" -> AllocatedCapacity.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Arguments" -> Arguments.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Attempt" -> Attempt.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "CompletedOn" -> CompletedOn.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ErrorMessage" -> ErrorMessage.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ExecutionTime" -> ExecutionTime.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Id" -> Id.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "JobName" -> JobName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "JobRunState" -> JobRunState.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "LastModifiedOn" -> LastModifiedOn.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "LogGroupName" -> LogGroupName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MaxCapacity" -> MaxCapacity.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NotificationProperty" -> NotificationProperty.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NumberOfWorkers" -> NumberOfWorkers.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "PredecessorRuns" -> PredecessorRuns.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "PreviousRunId" -> PreviousRunId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SecurityConfiguration" -> SecurityConfiguration.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "StartedOn" -> StartedOn.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Timeout" -> Timeout.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "TriggerName" -> TriggerName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "WorkerType" -> WorkerType.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[JobRun]
+      val __obj = js.Dictionary.empty[js.Any]
+      AllocatedCapacity.foreach(__v => __obj.update("AllocatedCapacity", __v.asInstanceOf[js.Any]))
+      Arguments.foreach(__v => __obj.update("Arguments", __v.asInstanceOf[js.Any]))
+      Attempt.foreach(__v => __obj.update("Attempt", __v.asInstanceOf[js.Any]))
+      CompletedOn.foreach(__v => __obj.update("CompletedOn", __v.asInstanceOf[js.Any]))
+      ErrorMessage.foreach(__v => __obj.update("ErrorMessage", __v.asInstanceOf[js.Any]))
+      ExecutionTime.foreach(__v => __obj.update("ExecutionTime", __v.asInstanceOf[js.Any]))
+      Id.foreach(__v => __obj.update("Id", __v.asInstanceOf[js.Any]))
+      JobName.foreach(__v => __obj.update("JobName", __v.asInstanceOf[js.Any]))
+      JobRunState.foreach(__v => __obj.update("JobRunState", __v.asInstanceOf[js.Any]))
+      LastModifiedOn.foreach(__v => __obj.update("LastModifiedOn", __v.asInstanceOf[js.Any]))
+      LogGroupName.foreach(__v => __obj.update("LogGroupName", __v.asInstanceOf[js.Any]))
+      MaxCapacity.foreach(__v => __obj.update("MaxCapacity", __v.asInstanceOf[js.Any]))
+      NotificationProperty.foreach(__v => __obj.update("NotificationProperty", __v.asInstanceOf[js.Any]))
+      NumberOfWorkers.foreach(__v => __obj.update("NumberOfWorkers", __v.asInstanceOf[js.Any]))
+      PredecessorRuns.foreach(__v => __obj.update("PredecessorRuns", __v.asInstanceOf[js.Any]))
+      PreviousRunId.foreach(__v => __obj.update("PreviousRunId", __v.asInstanceOf[js.Any]))
+      SecurityConfiguration.foreach(__v => __obj.update("SecurityConfiguration", __v.asInstanceOf[js.Any]))
+      StartedOn.foreach(__v => __obj.update("StartedOn", __v.asInstanceOf[js.Any]))
+      Timeout.foreach(__v => __obj.update("Timeout", __v.asInstanceOf[js.Any]))
+      TriggerName.foreach(__v => __obj.update("TriggerName", __v.asInstanceOf[js.Any]))
+      WorkerType.foreach(__v => __obj.update("WorkerType", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[JobRun]
     }
   }
 
@@ -5702,55 +4718,23 @@ package glue {
         Timeout: js.UndefOr[Timeout] = js.undefined,
         WorkerType: js.UndefOr[WorkerType] = js.undefined
     ): JobUpdate = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "AllocatedCapacity" -> AllocatedCapacity.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Command" -> Command.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Connections" -> Connections.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DefaultArguments" -> DefaultArguments.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Description" -> Description.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ExecutionProperty" -> ExecutionProperty.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "LogUri" -> LogUri.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MaxCapacity" -> MaxCapacity.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MaxRetries" -> MaxRetries.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NotificationProperty" -> NotificationProperty.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NumberOfWorkers" -> NumberOfWorkers.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Role" -> Role.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SecurityConfiguration" -> SecurityConfiguration.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Timeout" -> Timeout.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "WorkerType" -> WorkerType.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[JobUpdate]
+      val __obj = js.Dictionary.empty[js.Any]
+      AllocatedCapacity.foreach(__v => __obj.update("AllocatedCapacity", __v.asInstanceOf[js.Any]))
+      Command.foreach(__v => __obj.update("Command", __v.asInstanceOf[js.Any]))
+      Connections.foreach(__v => __obj.update("Connections", __v.asInstanceOf[js.Any]))
+      DefaultArguments.foreach(__v => __obj.update("DefaultArguments", __v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
+      ExecutionProperty.foreach(__v => __obj.update("ExecutionProperty", __v.asInstanceOf[js.Any]))
+      LogUri.foreach(__v => __obj.update("LogUri", __v.asInstanceOf[js.Any]))
+      MaxCapacity.foreach(__v => __obj.update("MaxCapacity", __v.asInstanceOf[js.Any]))
+      MaxRetries.foreach(__v => __obj.update("MaxRetries", __v.asInstanceOf[js.Any]))
+      NotificationProperty.foreach(__v => __obj.update("NotificationProperty", __v.asInstanceOf[js.Any]))
+      NumberOfWorkers.foreach(__v => __obj.update("NumberOfWorkers", __v.asInstanceOf[js.Any]))
+      Role.foreach(__v => __obj.update("Role", __v.asInstanceOf[js.Any]))
+      SecurityConfiguration.foreach(__v => __obj.update("SecurityConfiguration", __v.asInstanceOf[js.Any]))
+      Timeout.foreach(__v => __obj.update("Timeout", __v.asInstanceOf[js.Any]))
+      WorkerType.foreach(__v => __obj.update("WorkerType", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[JobUpdate]
     }
   }
 
@@ -5774,21 +4758,15 @@ package glue {
         LastUpdated: js.UndefOr[Timestamp] = js.undefined,
         Version: js.UndefOr[VersionId] = js.undefined
     ): JsonClassifier = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "JsonPath" -> JsonPath.asInstanceOf[js.Any],
-        "Name"     -> Name.asInstanceOf[js.Any],
-        "CreationTime" -> CreationTime.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "LastUpdated" -> LastUpdated.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Version" -> Version.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "Name"     -> Name.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[JsonClassifier]
+      CreationTime.foreach(__v => __obj.update("CreationTime", __v.asInstanceOf[js.Any]))
+      LastUpdated.foreach(__v => __obj.update("LastUpdated", __v.asInstanceOf[js.Any]))
+      Version.foreach(__v => __obj.update("Version", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[JsonClassifier]
     }
   }
 
@@ -5821,28 +4799,14 @@ package glue {
         StartTime: js.UndefOr[Timestamp] = js.undefined,
         Status: js.UndefOr[LastCrawlStatus] = js.undefined
     ): LastCrawlInfo = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ErrorMessage" -> ErrorMessage.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "LogGroup" -> LogGroup.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "LogStream" -> LogStream.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MessagePrefix" -> MessagePrefix.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "StartTime" -> StartTime.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Status" -> Status.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[LastCrawlInfo]
+      val __obj = js.Dictionary.empty[js.Any]
+      ErrorMessage.foreach(__v => __obj.update("ErrorMessage", __v.asInstanceOf[js.Any]))
+      LogGroup.foreach(__v => __obj.update("LogGroup", __v.asInstanceOf[js.Any]))
+      LogStream.foreach(__v => __obj.update("LogStream", __v.asInstanceOf[js.Any]))
+      MessagePrefix.foreach(__v => __obj.update("MessagePrefix", __v.asInstanceOf[js.Any]))
+      StartTime.foreach(__v => __obj.update("StartTime", __v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.update("Status", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[LastCrawlInfo]
     }
   }
 
@@ -5867,19 +4831,11 @@ package glue {
         NextToken: js.UndefOr[Token] = js.undefined,
         Tags: js.UndefOr[TagsMap] = js.undefined
     ): ListCrawlersRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "MaxResults" -> MaxResults.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NextToken" -> NextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Tags" -> Tags.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListCrawlersRequest]
+      val __obj = js.Dictionary.empty[js.Any]
+      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListCrawlersRequest]
     }
   }
 
@@ -5894,16 +4850,10 @@ package glue {
         CrawlerNames: js.UndefOr[CrawlerNameList] = js.undefined,
         NextToken: js.UndefOr[Token] = js.undefined
     ): ListCrawlersResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "CrawlerNames" -> CrawlerNames.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NextToken" -> NextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListCrawlersResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      CrawlerNames.foreach(__v => __obj.update("CrawlerNames", __v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListCrawlersResponse]
     }
   }
 
@@ -5920,19 +4870,11 @@ package glue {
         NextToken: js.UndefOr[GenericString] = js.undefined,
         Tags: js.UndefOr[TagsMap] = js.undefined
     ): ListDevEndpointsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "MaxResults" -> MaxResults.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NextToken" -> NextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Tags" -> Tags.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListDevEndpointsRequest]
+      val __obj = js.Dictionary.empty[js.Any]
+      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListDevEndpointsRequest]
     }
   }
 
@@ -5947,16 +4889,10 @@ package glue {
         DevEndpointNames: js.UndefOr[DevEndpointNameList] = js.undefined,
         NextToken: js.UndefOr[GenericString] = js.undefined
     ): ListDevEndpointsResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "DevEndpointNames" -> DevEndpointNames.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NextToken" -> NextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListDevEndpointsResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      DevEndpointNames.foreach(__v => __obj.update("DevEndpointNames", __v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListDevEndpointsResponse]
     }
   }
 
@@ -5973,19 +4909,11 @@ package glue {
         NextToken: js.UndefOr[GenericString] = js.undefined,
         Tags: js.UndefOr[TagsMap] = js.undefined
     ): ListJobsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "MaxResults" -> MaxResults.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NextToken" -> NextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Tags" -> Tags.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListJobsRequest]
+      val __obj = js.Dictionary.empty[js.Any]
+      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListJobsRequest]
     }
   }
 
@@ -6000,16 +4928,10 @@ package glue {
         JobNames: js.UndefOr[JobNameList] = js.undefined,
         NextToken: js.UndefOr[GenericString] = js.undefined
     ): ListJobsResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "JobNames" -> JobNames.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NextToken" -> NextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListJobsResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      JobNames.foreach(__v => __obj.update("JobNames", __v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListJobsResponse]
     }
   }
 
@@ -6028,22 +4950,12 @@ package glue {
         NextToken: js.UndefOr[GenericString] = js.undefined,
         Tags: js.UndefOr[TagsMap] = js.undefined
     ): ListTriggersRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "DependentJobName" -> DependentJobName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MaxResults" -> MaxResults.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NextToken" -> NextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Tags" -> Tags.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListTriggersRequest]
+      val __obj = js.Dictionary.empty[js.Any]
+      DependentJobName.foreach(__v => __obj.update("DependentJobName", __v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListTriggersRequest]
     }
   }
 
@@ -6058,16 +4970,10 @@ package glue {
         NextToken: js.UndefOr[GenericString] = js.undefined,
         TriggerNames: js.UndefOr[TriggerNameList] = js.undefined
     ): ListTriggersResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "NextToken" -> NextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "TriggerNames" -> TriggerNames.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListTriggersResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      TriggerNames.foreach(__v => __obj.update("TriggerNames", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListTriggersResponse]
     }
   }
 
@@ -6087,19 +4993,11 @@ package glue {
         Jdbc: js.UndefOr[CodeGenNodeArgs] = js.undefined,
         S3: js.UndefOr[CodeGenNodeArgs] = js.undefined
     ): Location = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "DynamoDB" -> DynamoDB.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Jdbc" -> Jdbc.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "S3" -> S3.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Location]
+      val __obj = js.Dictionary.empty[js.Any]
+      DynamoDB.foreach(__v => __obj.update("DynamoDB", __v.asInstanceOf[js.Any]))
+      Jdbc.foreach(__v => __obj.update("Jdbc", __v.asInstanceOf[js.Any]))
+      S3.foreach(__v => __obj.update("S3", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Location]
     }
   }
 
@@ -6138,28 +5036,14 @@ package glue {
         TargetTable: js.UndefOr[TableName] = js.undefined,
         TargetType: js.UndefOr[FieldType] = js.undefined
     ): MappingEntry = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "SourcePath" -> SourcePath.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SourceTable" -> SourceTable.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SourceType" -> SourceType.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "TargetPath" -> TargetPath.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "TargetTable" -> TargetTable.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "TargetType" -> TargetType.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[MappingEntry]
+      val __obj = js.Dictionary.empty[js.Any]
+      SourcePath.foreach(__v => __obj.update("SourcePath", __v.asInstanceOf[js.Any]))
+      SourceTable.foreach(__v => __obj.update("SourceTable", __v.asInstanceOf[js.Any]))
+      SourceType.foreach(__v => __obj.update("SourceType", __v.asInstanceOf[js.Any]))
+      TargetPath.foreach(__v => __obj.update("TargetPath", __v.asInstanceOf[js.Any]))
+      TargetTable.foreach(__v => __obj.update("TargetTable", __v.asInstanceOf[js.Any]))
+      TargetType.foreach(__v => __obj.update("TargetType", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[MappingEntry]
     }
   }
 
@@ -6175,13 +5059,9 @@ package glue {
     def apply(
         NotifyDelayAfter: js.UndefOr[NotifyDelayAfter] = js.undefined
     ): NotificationProperty = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "NotifyDelayAfter" -> NotifyDelayAfter.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[NotificationProperty]
+      val __obj = js.Dictionary.empty[js.Any]
+      NotifyDelayAfter.foreach(__v => __obj.update("NotifyDelayAfter", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[NotificationProperty]
     }
   }
 
@@ -6199,12 +5079,12 @@ package glue {
         Column: NameString,
         SortOrder: IntegerFlag
     ): Order = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "Column"    -> Column.asInstanceOf[js.Any],
         "SortOrder" -> SortOrder.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Order]
+      __obj.asInstanceOf[Order]
     }
   }
 
@@ -6234,34 +5114,16 @@ package glue {
         TableName: js.UndefOr[NameString] = js.undefined,
         Values: js.UndefOr[ValueStringList] = js.undefined
     ): Partition = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "CreationTime" -> CreationTime.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DatabaseName" -> DatabaseName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "LastAccessTime" -> LastAccessTime.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "LastAnalyzedTime" -> LastAnalyzedTime.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Parameters" -> Parameters.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "StorageDescriptor" -> StorageDescriptor.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "TableName" -> TableName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Values" -> Values.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Partition]
+      val __obj = js.Dictionary.empty[js.Any]
+      CreationTime.foreach(__v => __obj.update("CreationTime", __v.asInstanceOf[js.Any]))
+      DatabaseName.foreach(__v => __obj.update("DatabaseName", __v.asInstanceOf[js.Any]))
+      LastAccessTime.foreach(__v => __obj.update("LastAccessTime", __v.asInstanceOf[js.Any]))
+      LastAnalyzedTime.foreach(__v => __obj.update("LastAnalyzedTime", __v.asInstanceOf[js.Any]))
+      Parameters.foreach(__v => __obj.update("Parameters", __v.asInstanceOf[js.Any]))
+      StorageDescriptor.foreach(__v => __obj.update("StorageDescriptor", __v.asInstanceOf[js.Any]))
+      TableName.foreach(__v => __obj.update("TableName", __v.asInstanceOf[js.Any]))
+      Values.foreach(__v => __obj.update("Values", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Partition]
     }
   }
 
@@ -6279,16 +5141,10 @@ package glue {
         ErrorDetail: js.UndefOr[ErrorDetail] = js.undefined,
         PartitionValues: js.UndefOr[ValueStringList] = js.undefined
     ): PartitionError = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ErrorDetail" -> ErrorDetail.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "PartitionValues" -> PartitionValues.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PartitionError]
+      val __obj = js.Dictionary.empty[js.Any]
+      ErrorDetail.foreach(__v => __obj.update("ErrorDetail", __v.asInstanceOf[js.Any]))
+      PartitionValues.foreach(__v => __obj.update("PartitionValues", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PartitionError]
     }
   }
 
@@ -6312,25 +5168,13 @@ package glue {
         StorageDescriptor: js.UndefOr[StorageDescriptor] = js.undefined,
         Values: js.UndefOr[ValueStringList] = js.undefined
     ): PartitionInput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "LastAccessTime" -> LastAccessTime.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "LastAnalyzedTime" -> LastAnalyzedTime.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Parameters" -> Parameters.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "StorageDescriptor" -> StorageDescriptor.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Values" -> Values.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PartitionInput]
+      val __obj = js.Dictionary.empty[js.Any]
+      LastAccessTime.foreach(__v => __obj.update("LastAccessTime", __v.asInstanceOf[js.Any]))
+      LastAnalyzedTime.foreach(__v => __obj.update("LastAnalyzedTime", __v.asInstanceOf[js.Any]))
+      Parameters.foreach(__v => __obj.update("Parameters", __v.asInstanceOf[js.Any]))
+      StorageDescriptor.foreach(__v => __obj.update("StorageDescriptor", __v.asInstanceOf[js.Any]))
+      Values.foreach(__v => __obj.update("Values", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PartitionInput]
     }
   }
 
@@ -6346,11 +5190,11 @@ package glue {
     def apply(
         Values: ValueStringList
     ): PartitionValueList = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "Values" -> Values.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PartitionValueList]
+      __obj.asInstanceOf[PartitionValueList]
     }
   }
 
@@ -6370,19 +5214,11 @@ package glue {
         SecurityGroupIdList: js.UndefOr[SecurityGroupIdList] = js.undefined,
         SubnetId: js.UndefOr[NameString] = js.undefined
     ): PhysicalConnectionRequirements = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "AvailabilityZone" -> AvailabilityZone.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SecurityGroupIdList" -> SecurityGroupIdList.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SubnetId" -> SubnetId.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PhysicalConnectionRequirements]
+      val __obj = js.Dictionary.empty[js.Any]
+      AvailabilityZone.foreach(__v => __obj.update("AvailabilityZone", __v.asInstanceOf[js.Any]))
+      SecurityGroupIdList.foreach(__v => __obj.update("SecurityGroupIdList", __v.asInstanceOf[js.Any]))
+      SubnetId.foreach(__v => __obj.update("SubnetId", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PhysicalConnectionRequirements]
     }
   }
 
@@ -6400,16 +5236,10 @@ package glue {
         JobName: js.UndefOr[NameString] = js.undefined,
         RunId: js.UndefOr[IdString] = js.undefined
     ): Predecessor = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "JobName" -> JobName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "RunId" -> RunId.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Predecessor]
+      val __obj = js.Dictionary.empty[js.Any]
+      JobName.foreach(__v => __obj.update("JobName", __v.asInstanceOf[js.Any]))
+      RunId.foreach(__v => __obj.update("RunId", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Predecessor]
     }
   }
 
@@ -6427,16 +5257,10 @@ package glue {
         Conditions: js.UndefOr[ConditionList] = js.undefined,
         Logical: js.UndefOr[Logical] = js.undefined
     ): Predicate = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Conditions" -> Conditions.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Logical" -> Logical.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Predicate]
+      val __obj = js.Dictionary.empty[js.Any]
+      Conditions.foreach(__v => __obj.update("Conditions", __v.asInstanceOf[js.Any]))
+      Logical.foreach(__v => __obj.update("Logical", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Predicate]
     }
   }
 
@@ -6459,14 +5283,12 @@ package glue {
         DataCatalogEncryptionSettings: DataCatalogEncryptionSettings,
         CatalogId: js.UndefOr[CatalogIdString] = js.undefined
     ): PutDataCatalogEncryptionSettingsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "DataCatalogEncryptionSettings" -> DataCatalogEncryptionSettings.asInstanceOf[js.Any],
-        "CatalogId" -> CatalogId.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "DataCatalogEncryptionSettings" -> DataCatalogEncryptionSettings.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PutDataCatalogEncryptionSettingsRequest]
+      CatalogId.foreach(__v => __obj.update("CatalogId", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PutDataCatalogEncryptionSettingsRequest]
     }
   }
 
@@ -6476,10 +5298,9 @@ package glue {
   object PutDataCatalogEncryptionSettingsResponse {
     def apply(
         ): PutDataCatalogEncryptionSettingsResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary.empty[js.Any]
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PutDataCatalogEncryptionSettingsResponse]
+      __obj.asInstanceOf[PutDataCatalogEncryptionSettingsResponse]
     }
   }
 
@@ -6496,17 +5317,13 @@ package glue {
         PolicyExistsCondition: js.UndefOr[ExistCondition] = js.undefined,
         PolicyHashCondition: js.UndefOr[HashString] = js.undefined
     ): PutResourcePolicyRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "PolicyInJson" -> PolicyInJson.asInstanceOf[js.Any],
-        "PolicyExistsCondition" -> PolicyExistsCondition.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "PolicyHashCondition" -> PolicyHashCondition.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "PolicyInJson" -> PolicyInJson.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PutResourcePolicyRequest]
+      PolicyExistsCondition.foreach(__v => __obj.update("PolicyExistsCondition", __v.asInstanceOf[js.Any]))
+      PolicyHashCondition.foreach(__v => __obj.update("PolicyHashCondition", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PutResourcePolicyRequest]
     }
   }
 
@@ -6519,13 +5336,9 @@ package glue {
     def apply(
         PolicyHash: js.UndefOr[HashString] = js.undefined
     ): PutResourcePolicyResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "PolicyHash" -> PolicyHash.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PutResourcePolicyResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      PolicyHash.foreach(__v => __obj.update("PolicyHash", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PutResourcePolicyResponse]
     }
   }
 
@@ -6538,11 +5351,11 @@ package glue {
     def apply(
         JobName: JobName
     ): ResetJobBookmarkRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "JobName" -> JobName.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ResetJobBookmarkRequest]
+      __obj.asInstanceOf[ResetJobBookmarkRequest]
     }
   }
 
@@ -6555,13 +5368,9 @@ package glue {
     def apply(
         JobBookmarkEntry: js.UndefOr[JobBookmarkEntry] = js.undefined
     ): ResetJobBookmarkResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "JobBookmarkEntry" -> JobBookmarkEntry.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ResetJobBookmarkResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      JobBookmarkEntry.foreach(__v => __obj.update("JobBookmarkEntry", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ResetJobBookmarkResponse]
     }
   }
 
@@ -6587,16 +5396,10 @@ package glue {
         ResourceType: js.UndefOr[ResourceType] = js.undefined,
         Uri: js.UndefOr[URI] = js.undefined
     ): ResourceUri = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ResourceType" -> ResourceType.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Uri" -> Uri.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ResourceUri]
+      val __obj = js.Dictionary.empty[js.Any]
+      ResourceType.foreach(__v => __obj.update("ResourceType", __v.asInstanceOf[js.Any]))
+      Uri.foreach(__v => __obj.update("Uri", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ResourceUri]
     }
   }
 
@@ -6614,16 +5417,10 @@ package glue {
         KmsKeyArn: js.UndefOr[KmsKeyArn] = js.undefined,
         S3EncryptionMode: js.UndefOr[S3EncryptionMode] = js.undefined
     ): S3Encryption = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "KmsKeyArn" -> KmsKeyArn.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "S3EncryptionMode" -> S3EncryptionMode.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[S3Encryption]
+      val __obj = js.Dictionary.empty[js.Any]
+      KmsKeyArn.foreach(__v => __obj.update("KmsKeyArn", __v.asInstanceOf[js.Any]))
+      S3EncryptionMode.foreach(__v => __obj.update("S3EncryptionMode", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[S3Encryption]
     }
   }
 
@@ -6649,16 +5446,10 @@ package glue {
         Exclusions: js.UndefOr[PathList] = js.undefined,
         Path: js.UndefOr[Path] = js.undefined
     ): S3Target = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Exclusions" -> Exclusions.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Path" -> Path.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[S3Target]
+      val __obj = js.Dictionary.empty[js.Any]
+      Exclusions.foreach(__v => __obj.update("Exclusions", __v.asInstanceOf[js.Any]))
+      Path.foreach(__v => __obj.update("Path", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[S3Target]
     }
   }
 
@@ -6676,16 +5467,10 @@ package glue {
         ScheduleExpression: js.UndefOr[CronExpression] = js.undefined,
         State: js.UndefOr[ScheduleState] = js.undefined
     ): Schedule = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ScheduleExpression" -> ScheduleExpression.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "State" -> State.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Schedule]
+      val __obj = js.Dictionary.empty[js.Any]
+      ScheduleExpression.foreach(__v => __obj.update("ScheduleExpression", __v.asInstanceOf[js.Any]))
+      State.foreach(__v => __obj.update("State", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Schedule]
     }
   }
 
@@ -6711,16 +5496,10 @@ package glue {
         DeleteBehavior: js.UndefOr[DeleteBehavior] = js.undefined,
         UpdateBehavior: js.UndefOr[UpdateBehavior] = js.undefined
     ): SchemaChangePolicy = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "DeleteBehavior" -> DeleteBehavior.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "UpdateBehavior" -> UpdateBehavior.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SchemaChangePolicy]
+      val __obj = js.Dictionary.empty[js.Any]
+      DeleteBehavior.foreach(__v => __obj.update("DeleteBehavior", __v.asInstanceOf[js.Any]))
+      UpdateBehavior.foreach(__v => __obj.update("UpdateBehavior", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[SchemaChangePolicy]
     }
   }
 
@@ -6740,19 +5519,11 @@ package glue {
         EncryptionConfiguration: js.UndefOr[EncryptionConfiguration] = js.undefined,
         Name: js.UndefOr[NameString] = js.undefined
     ): SecurityConfiguration = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "CreatedTimeStamp" -> CreatedTimeStamp.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "EncryptionConfiguration" -> EncryptionConfiguration.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Name" -> Name.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SecurityConfiguration]
+      val __obj = js.Dictionary.empty[js.Any]
+      CreatedTimeStamp.foreach(__v => __obj.update("CreatedTimeStamp", __v.asInstanceOf[js.Any]))
+      EncryptionConfiguration.foreach(__v => __obj.update("EncryptionConfiguration", __v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[SecurityConfiguration]
     }
   }
 
@@ -6770,12 +5541,12 @@ package glue {
         SegmentNumber: NonNegativeInteger,
         TotalSegments: TotalSegmentsInteger
     ): Segment = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "SegmentNumber" -> SegmentNumber.asInstanceOf[js.Any],
         "TotalSegments" -> TotalSegments.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Segment]
+      __obj.asInstanceOf[Segment]
     }
   }
 
@@ -6795,19 +5566,11 @@ package glue {
         Parameters: js.UndefOr[ParametersMap] = js.undefined,
         SerializationLibrary: js.UndefOr[NameString] = js.undefined
     ): SerDeInfo = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Name" -> Name.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Parameters" -> Parameters.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SerializationLibrary" -> SerializationLibrary.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SerDeInfo]
+      val __obj = js.Dictionary.empty[js.Any]
+      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
+      Parameters.foreach(__v => __obj.update("Parameters", __v.asInstanceOf[js.Any]))
+      SerializationLibrary.foreach(__v => __obj.update("SerializationLibrary", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[SerDeInfo]
     }
   }
 
@@ -6827,19 +5590,13 @@ package glue {
         SkewedColumnValueLocationMaps: js.UndefOr[LocationMap] = js.undefined,
         SkewedColumnValues: js.UndefOr[ColumnValueStringList] = js.undefined
     ): SkewedInfo = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "SkewedColumnNames" -> SkewedColumnNames.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SkewedColumnValueLocationMaps" -> SkewedColumnValueLocationMaps.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SkewedColumnValues" -> SkewedColumnValues.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SkewedInfo]
+      val __obj = js.Dictionary.empty[js.Any]
+      SkewedColumnNames.foreach(__v => __obj.update("SkewedColumnNames", __v.asInstanceOf[js.Any]))
+      SkewedColumnValueLocationMaps.foreach(
+        __v => __obj.update("SkewedColumnValueLocationMaps", __v.asInstanceOf[js.Any])
+      )
+      SkewedColumnValues.foreach(__v => __obj.update("SkewedColumnValues", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[SkewedInfo]
     }
   }
 
@@ -6852,11 +5609,11 @@ package glue {
     def apply(
         Name: NameString
     ): StartCrawlerRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "Name" -> Name.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StartCrawlerRequest]
+      __obj.asInstanceOf[StartCrawlerRequest]
     }
   }
 
@@ -6866,10 +5623,9 @@ package glue {
   object StartCrawlerResponse {
     def apply(
         ): StartCrawlerResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary.empty[js.Any]
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StartCrawlerResponse]
+      __obj.asInstanceOf[StartCrawlerResponse]
     }
   }
 
@@ -6882,11 +5638,11 @@ package glue {
     def apply(
         CrawlerName: NameString
     ): StartCrawlerScheduleRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "CrawlerName" -> CrawlerName.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StartCrawlerScheduleRequest]
+      __obj.asInstanceOf[StartCrawlerScheduleRequest]
     }
   }
 
@@ -6896,10 +5652,9 @@ package glue {
   object StartCrawlerScheduleResponse {
     def apply(
         ): StartCrawlerScheduleResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary.empty[js.Any]
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StartCrawlerScheduleResponse]
+      __obj.asInstanceOf[StartCrawlerScheduleResponse]
     }
   }
 
@@ -6930,38 +5685,20 @@ package glue {
         Timeout: js.UndefOr[Timeout] = js.undefined,
         WorkerType: js.UndefOr[WorkerType] = js.undefined
     ): StartJobRunRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "JobName" -> JobName.asInstanceOf[js.Any],
-        "AllocatedCapacity" -> AllocatedCapacity.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Arguments" -> Arguments.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "JobRunId" -> JobRunId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MaxCapacity" -> MaxCapacity.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NotificationProperty" -> NotificationProperty.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NumberOfWorkers" -> NumberOfWorkers.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SecurityConfiguration" -> SecurityConfiguration.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Timeout" -> Timeout.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "WorkerType" -> WorkerType.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "JobName" -> JobName.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StartJobRunRequest]
+      AllocatedCapacity.foreach(__v => __obj.update("AllocatedCapacity", __v.asInstanceOf[js.Any]))
+      Arguments.foreach(__v => __obj.update("Arguments", __v.asInstanceOf[js.Any]))
+      JobRunId.foreach(__v => __obj.update("JobRunId", __v.asInstanceOf[js.Any]))
+      MaxCapacity.foreach(__v => __obj.update("MaxCapacity", __v.asInstanceOf[js.Any]))
+      NotificationProperty.foreach(__v => __obj.update("NotificationProperty", __v.asInstanceOf[js.Any]))
+      NumberOfWorkers.foreach(__v => __obj.update("NumberOfWorkers", __v.asInstanceOf[js.Any]))
+      SecurityConfiguration.foreach(__v => __obj.update("SecurityConfiguration", __v.asInstanceOf[js.Any]))
+      Timeout.foreach(__v => __obj.update("Timeout", __v.asInstanceOf[js.Any]))
+      WorkerType.foreach(__v => __obj.update("WorkerType", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[StartJobRunRequest]
     }
   }
 
@@ -6974,13 +5711,9 @@ package glue {
     def apply(
         JobRunId: js.UndefOr[IdString] = js.undefined
     ): StartJobRunResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "JobRunId" -> JobRunId.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StartJobRunResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      JobRunId.foreach(__v => __obj.update("JobRunId", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[StartJobRunResponse]
     }
   }
 
@@ -6993,11 +5726,11 @@ package glue {
     def apply(
         Name: NameString
     ): StartTriggerRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "Name" -> Name.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StartTriggerRequest]
+      __obj.asInstanceOf[StartTriggerRequest]
     }
   }
 
@@ -7010,13 +5743,9 @@ package glue {
     def apply(
         Name: js.UndefOr[NameString] = js.undefined
     ): StartTriggerResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Name" -> Name.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StartTriggerResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[StartTriggerResponse]
     }
   }
 
@@ -7029,11 +5758,11 @@ package glue {
     def apply(
         Name: NameString
     ): StopCrawlerRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "Name" -> Name.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StopCrawlerRequest]
+      __obj.asInstanceOf[StopCrawlerRequest]
     }
   }
 
@@ -7043,10 +5772,9 @@ package glue {
   object StopCrawlerResponse {
     def apply(
         ): StopCrawlerResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary.empty[js.Any]
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StopCrawlerResponse]
+      __obj.asInstanceOf[StopCrawlerResponse]
     }
   }
 
@@ -7059,11 +5787,11 @@ package glue {
     def apply(
         CrawlerName: NameString
     ): StopCrawlerScheduleRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "CrawlerName" -> CrawlerName.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StopCrawlerScheduleRequest]
+      __obj.asInstanceOf[StopCrawlerScheduleRequest]
     }
   }
 
@@ -7073,10 +5801,9 @@ package glue {
   object StopCrawlerScheduleResponse {
     def apply(
         ): StopCrawlerScheduleResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary.empty[js.Any]
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StopCrawlerScheduleResponse]
+      __obj.asInstanceOf[StopCrawlerScheduleResponse]
     }
   }
 
@@ -7089,11 +5816,11 @@ package glue {
     def apply(
         Name: NameString
     ): StopTriggerRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "Name" -> Name.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StopTriggerRequest]
+      __obj.asInstanceOf[StopTriggerRequest]
     }
   }
 
@@ -7106,13 +5833,9 @@ package glue {
     def apply(
         Name: js.UndefOr[NameString] = js.undefined
     ): StopTriggerResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Name" -> Name.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StopTriggerResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[StopTriggerResponse]
     }
   }
 
@@ -7150,46 +5873,20 @@ package glue {
         SortColumns: js.UndefOr[OrderList] = js.undefined,
         StoredAsSubDirectories: js.UndefOr[Boolean] = js.undefined
     ): StorageDescriptor = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "BucketColumns" -> BucketColumns.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Columns" -> Columns.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Compressed" -> Compressed.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "InputFormat" -> InputFormat.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Location" -> Location.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NumberOfBuckets" -> NumberOfBuckets.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "OutputFormat" -> OutputFormat.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Parameters" -> Parameters.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SerdeInfo" -> SerdeInfo.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SkewedInfo" -> SkewedInfo.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SortColumns" -> SortColumns.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "StoredAsSubDirectories" -> StoredAsSubDirectories.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StorageDescriptor]
+      val __obj = js.Dictionary.empty[js.Any]
+      BucketColumns.foreach(__v => __obj.update("BucketColumns", __v.asInstanceOf[js.Any]))
+      Columns.foreach(__v => __obj.update("Columns", __v.asInstanceOf[js.Any]))
+      Compressed.foreach(__v => __obj.update("Compressed", __v.asInstanceOf[js.Any]))
+      InputFormat.foreach(__v => __obj.update("InputFormat", __v.asInstanceOf[js.Any]))
+      Location.foreach(__v => __obj.update("Location", __v.asInstanceOf[js.Any]))
+      NumberOfBuckets.foreach(__v => __obj.update("NumberOfBuckets", __v.asInstanceOf[js.Any]))
+      OutputFormat.foreach(__v => __obj.update("OutputFormat", __v.asInstanceOf[js.Any]))
+      Parameters.foreach(__v => __obj.update("Parameters", __v.asInstanceOf[js.Any]))
+      SerdeInfo.foreach(__v => __obj.update("SerdeInfo", __v.asInstanceOf[js.Any]))
+      SkewedInfo.foreach(__v => __obj.update("SkewedInfo", __v.asInstanceOf[js.Any]))
+      SortColumns.foreach(__v => __obj.update("SortColumns", __v.asInstanceOf[js.Any]))
+      StoredAsSubDirectories.foreach(__v => __obj.update("StoredAsSubDirectories", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[StorageDescriptor]
     }
   }
 
@@ -7235,56 +5932,26 @@ package glue {
         ViewExpandedText: js.UndefOr[ViewTextString] = js.undefined,
         ViewOriginalText: js.UndefOr[ViewTextString] = js.undefined
     ): Table = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Name" -> Name.asInstanceOf[js.Any],
-        "CreateTime" -> CreateTime.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "CreatedBy" -> CreatedBy.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DatabaseName" -> DatabaseName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Description" -> Description.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "LastAccessTime" -> LastAccessTime.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "LastAnalyzedTime" -> LastAnalyzedTime.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Owner" -> Owner.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Parameters" -> Parameters.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "PartitionKeys" -> PartitionKeys.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Retention" -> Retention.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "StorageDescriptor" -> StorageDescriptor.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "TableType" -> TableType.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "UpdateTime" -> UpdateTime.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ViewExpandedText" -> ViewExpandedText.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ViewOriginalText" -> ViewOriginalText.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "Name" -> Name.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Table]
+      CreateTime.foreach(__v => __obj.update("CreateTime", __v.asInstanceOf[js.Any]))
+      CreatedBy.foreach(__v => __obj.update("CreatedBy", __v.asInstanceOf[js.Any]))
+      DatabaseName.foreach(__v => __obj.update("DatabaseName", __v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
+      LastAccessTime.foreach(__v => __obj.update("LastAccessTime", __v.asInstanceOf[js.Any]))
+      LastAnalyzedTime.foreach(__v => __obj.update("LastAnalyzedTime", __v.asInstanceOf[js.Any]))
+      Owner.foreach(__v => __obj.update("Owner", __v.asInstanceOf[js.Any]))
+      Parameters.foreach(__v => __obj.update("Parameters", __v.asInstanceOf[js.Any]))
+      PartitionKeys.foreach(__v => __obj.update("PartitionKeys", __v.asInstanceOf[js.Any]))
+      Retention.foreach(__v => __obj.update("Retention", __v.asInstanceOf[js.Any]))
+      StorageDescriptor.foreach(__v => __obj.update("StorageDescriptor", __v.asInstanceOf[js.Any]))
+      TableType.foreach(__v => __obj.update("TableType", __v.asInstanceOf[js.Any]))
+      UpdateTime.foreach(__v => __obj.update("UpdateTime", __v.asInstanceOf[js.Any]))
+      ViewExpandedText.foreach(__v => __obj.update("ViewExpandedText", __v.asInstanceOf[js.Any]))
+      ViewOriginalText.foreach(__v => __obj.update("ViewOriginalText", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Table]
     }
   }
 
@@ -7302,16 +5969,10 @@ package glue {
         ErrorDetail: js.UndefOr[ErrorDetail] = js.undefined,
         TableName: js.UndefOr[NameString] = js.undefined
     ): TableError = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ErrorDetail" -> ErrorDetail.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "TableName" -> TableName.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[TableError]
+      val __obj = js.Dictionary.empty[js.Any]
+      ErrorDetail.foreach(__v => __obj.update("ErrorDetail", __v.asInstanceOf[js.Any]))
+      TableName.foreach(__v => __obj.update("TableName", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[TableError]
     }
   }
 
@@ -7349,44 +6010,22 @@ package glue {
         ViewExpandedText: js.UndefOr[ViewTextString] = js.undefined,
         ViewOriginalText: js.UndefOr[ViewTextString] = js.undefined
     ): TableInput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Name" -> Name.asInstanceOf[js.Any],
-        "Description" -> Description.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "LastAccessTime" -> LastAccessTime.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "LastAnalyzedTime" -> LastAnalyzedTime.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Owner" -> Owner.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Parameters" -> Parameters.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "PartitionKeys" -> PartitionKeys.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Retention" -> Retention.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "StorageDescriptor" -> StorageDescriptor.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "TableType" -> TableType.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ViewExpandedText" -> ViewExpandedText.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ViewOriginalText" -> ViewOriginalText.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "Name" -> Name.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[TableInput]
+      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
+      LastAccessTime.foreach(__v => __obj.update("LastAccessTime", __v.asInstanceOf[js.Any]))
+      LastAnalyzedTime.foreach(__v => __obj.update("LastAnalyzedTime", __v.asInstanceOf[js.Any]))
+      Owner.foreach(__v => __obj.update("Owner", __v.asInstanceOf[js.Any]))
+      Parameters.foreach(__v => __obj.update("Parameters", __v.asInstanceOf[js.Any]))
+      PartitionKeys.foreach(__v => __obj.update("PartitionKeys", __v.asInstanceOf[js.Any]))
+      Retention.foreach(__v => __obj.update("Retention", __v.asInstanceOf[js.Any]))
+      StorageDescriptor.foreach(__v => __obj.update("StorageDescriptor", __v.asInstanceOf[js.Any]))
+      TableType.foreach(__v => __obj.update("TableType", __v.asInstanceOf[js.Any]))
+      ViewExpandedText.foreach(__v => __obj.update("ViewExpandedText", __v.asInstanceOf[js.Any]))
+      ViewOriginalText.foreach(__v => __obj.update("ViewOriginalText", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[TableInput]
     }
   }
 
@@ -7404,16 +6043,10 @@ package glue {
         Table: js.UndefOr[Table] = js.undefined,
         VersionId: js.UndefOr[VersionString] = js.undefined
     ): TableVersion = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Table" -> Table.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "VersionId" -> VersionId.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[TableVersion]
+      val __obj = js.Dictionary.empty[js.Any]
+      Table.foreach(__v => __obj.update("Table", __v.asInstanceOf[js.Any]))
+      VersionId.foreach(__v => __obj.update("VersionId", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[TableVersion]
     }
   }
 
@@ -7433,19 +6066,11 @@ package glue {
         TableName: js.UndefOr[NameString] = js.undefined,
         VersionId: js.UndefOr[VersionString] = js.undefined
     ): TableVersionError = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ErrorDetail" -> ErrorDetail.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "TableName" -> TableName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "VersionId" -> VersionId.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[TableVersionError]
+      val __obj = js.Dictionary.empty[js.Any]
+      ErrorDetail.foreach(__v => __obj.update("ErrorDetail", __v.asInstanceOf[js.Any]))
+      TableName.foreach(__v => __obj.update("TableName", __v.asInstanceOf[js.Any]))
+      VersionId.foreach(__v => __obj.update("VersionId", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[TableVersionError]
     }
   }
 
@@ -7460,12 +6085,12 @@ package glue {
         ResourceArn: GlueResourceArn,
         TagsToAdd: TagsMap
     ): TagResourceRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any],
         "TagsToAdd"   -> TagsToAdd.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[TagResourceRequest]
+      __obj.asInstanceOf[TagResourceRequest]
     }
   }
 
@@ -7475,10 +6100,9 @@ package glue {
   object TagResourceResponse {
     def apply(
         ): TagResourceResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary.empty[js.Any]
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[TagResourceResponse]
+      __obj.asInstanceOf[TagResourceResponse]
     }
   }
 
@@ -7508,34 +6132,16 @@ package glue {
         State: js.UndefOr[TriggerState] = js.undefined,
         Type: js.UndefOr[TriggerType] = js.undefined
     ): Trigger = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Actions" -> Actions.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Description" -> Description.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Id" -> Id.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Name" -> Name.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Predicate" -> Predicate.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Schedule" -> Schedule.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "State" -> State.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Type" -> Type.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Trigger]
+      val __obj = js.Dictionary.empty[js.Any]
+      Actions.foreach(__v => __obj.update("Actions", __v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
+      Id.foreach(__v => __obj.update("Id", __v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
+      Predicate.foreach(__v => __obj.update("Predicate", __v.asInstanceOf[js.Any]))
+      Schedule.foreach(__v => __obj.update("Schedule", __v.asInstanceOf[js.Any]))
+      State.foreach(__v => __obj.update("State", __v.asInstanceOf[js.Any]))
+      Type.foreach(__v => __obj.update("Type", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Trigger]
     }
   }
 
@@ -7580,25 +6186,13 @@ package glue {
         Predicate: js.UndefOr[Predicate] = js.undefined,
         Schedule: js.UndefOr[GenericString] = js.undefined
     ): TriggerUpdate = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Actions" -> Actions.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Description" -> Description.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Name" -> Name.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Predicate" -> Predicate.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Schedule" -> Schedule.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[TriggerUpdate]
+      val __obj = js.Dictionary.empty[js.Any]
+      Actions.foreach(__v => __obj.update("Actions", __v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
+      Predicate.foreach(__v => __obj.update("Predicate", __v.asInstanceOf[js.Any]))
+      Schedule.foreach(__v => __obj.update("Schedule", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[TriggerUpdate]
     }
   }
 
@@ -7613,12 +6207,12 @@ package glue {
         ResourceArn: GlueResourceArn,
         TagsToRemove: TagKeysList
     ): UntagResourceRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ResourceArn"  -> ResourceArn.asInstanceOf[js.Any],
         "TagsToRemove" -> TagsToRemove.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UntagResourceRequest]
+      __obj.asInstanceOf[UntagResourceRequest]
     }
   }
 
@@ -7628,10 +6222,9 @@ package glue {
   object UntagResourceResponse {
     def apply(
         ): UntagResourceResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary.empty[js.Any]
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UntagResourceResponse]
+      __obj.asInstanceOf[UntagResourceResponse]
     }
   }
 
@@ -7657,22 +6250,12 @@ package glue {
         JsonClassifier: js.UndefOr[UpdateJsonClassifierRequest] = js.undefined,
         XMLClassifier: js.UndefOr[UpdateXMLClassifierRequest] = js.undefined
     ): UpdateClassifierRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "CsvClassifier" -> CsvClassifier.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "GrokClassifier" -> GrokClassifier.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "JsonClassifier" -> JsonClassifier.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "XMLClassifier" -> XMLClassifier.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateClassifierRequest]
+      val __obj = js.Dictionary.empty[js.Any]
+      CsvClassifier.foreach(__v => __obj.update("CsvClassifier", __v.asInstanceOf[js.Any]))
+      GrokClassifier.foreach(__v => __obj.update("GrokClassifier", __v.asInstanceOf[js.Any]))
+      JsonClassifier.foreach(__v => __obj.update("JsonClassifier", __v.asInstanceOf[js.Any]))
+      XMLClassifier.foreach(__v => __obj.update("XMLClassifier", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateClassifierRequest]
     }
   }
 
@@ -7682,10 +6265,9 @@ package glue {
   object UpdateClassifierResponse {
     def apply(
         ): UpdateClassifierResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary.empty[js.Any]
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateClassifierResponse]
+      __obj.asInstanceOf[UpdateClassifierResponse]
     }
   }
 
@@ -7702,15 +6284,13 @@ package glue {
         Name: NameString,
         CatalogId: js.UndefOr[CatalogIdString] = js.undefined
     ): UpdateConnectionRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ConnectionInput" -> ConnectionInput.asInstanceOf[js.Any],
-        "Name"            -> Name.asInstanceOf[js.Any],
-        "CatalogId" -> CatalogId.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "Name"            -> Name.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateConnectionRequest]
+      CatalogId.foreach(__v => __obj.update("CatalogId", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateConnectionRequest]
     }
   }
 
@@ -7720,10 +6300,9 @@ package glue {
   object UpdateConnectionResponse {
     def apply(
         ): UpdateConnectionResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary.empty[js.Any]
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateConnectionResponse]
+      __obj.asInstanceOf[UpdateConnectionResponse]
     }
   }
 
@@ -7756,41 +6335,23 @@ package glue {
         TablePrefix: js.UndefOr[TablePrefix] = js.undefined,
         Targets: js.UndefOr[CrawlerTargets] = js.undefined
     ): UpdateCrawlerRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Name" -> Name.asInstanceOf[js.Any],
-        "Classifiers" -> Classifiers.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Configuration" -> Configuration.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "CrawlerSecurityConfiguration" -> CrawlerSecurityConfiguration.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DatabaseName" -> DatabaseName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Description" -> Description.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Role" -> Role.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Schedule" -> Schedule.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SchemaChangePolicy" -> SchemaChangePolicy.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "TablePrefix" -> TablePrefix.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Targets" -> Targets.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "Name" -> Name.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateCrawlerRequest]
+      Classifiers.foreach(__v => __obj.update("Classifiers", __v.asInstanceOf[js.Any]))
+      Configuration.foreach(__v => __obj.update("Configuration", __v.asInstanceOf[js.Any]))
+      CrawlerSecurityConfiguration.foreach(
+        __v => __obj.update("CrawlerSecurityConfiguration", __v.asInstanceOf[js.Any])
+      )
+      DatabaseName.foreach(__v => __obj.update("DatabaseName", __v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
+      Role.foreach(__v => __obj.update("Role", __v.asInstanceOf[js.Any]))
+      Schedule.foreach(__v => __obj.update("Schedule", __v.asInstanceOf[js.Any]))
+      SchemaChangePolicy.foreach(__v => __obj.update("SchemaChangePolicy", __v.asInstanceOf[js.Any]))
+      TablePrefix.foreach(__v => __obj.update("TablePrefix", __v.asInstanceOf[js.Any]))
+      Targets.foreach(__v => __obj.update("Targets", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateCrawlerRequest]
     }
   }
 
@@ -7800,10 +6361,9 @@ package glue {
   object UpdateCrawlerResponse {
     def apply(
         ): UpdateCrawlerResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary.empty[js.Any]
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateCrawlerResponse]
+      __obj.asInstanceOf[UpdateCrawlerResponse]
     }
   }
 
@@ -7818,14 +6378,12 @@ package glue {
         CrawlerName: NameString,
         Schedule: js.UndefOr[CronExpression] = js.undefined
     ): UpdateCrawlerScheduleRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "CrawlerName" -> CrawlerName.asInstanceOf[js.Any],
-        "Schedule" -> Schedule.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "CrawlerName" -> CrawlerName.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateCrawlerScheduleRequest]
+      Schedule.foreach(__v => __obj.update("Schedule", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateCrawlerScheduleRequest]
     }
   }
 
@@ -7835,10 +6393,9 @@ package glue {
   object UpdateCrawlerScheduleResponse {
     def apply(
         ): UpdateCrawlerScheduleResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary.empty[js.Any]
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateCrawlerScheduleResponse]
+      __obj.asInstanceOf[UpdateCrawlerScheduleResponse]
     }
   }
 
@@ -7866,29 +6423,17 @@ package glue {
         Header: js.UndefOr[CsvHeader] = js.undefined,
         QuoteSymbol: js.UndefOr[CsvQuoteSymbol] = js.undefined
     ): UpdateCsvClassifierRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Name" -> Name.asInstanceOf[js.Any],
-        "AllowSingleColumn" -> AllowSingleColumn.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ContainsHeader" -> ContainsHeader.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Delimiter" -> Delimiter.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DisableValueTrimming" -> DisableValueTrimming.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Header" -> Header.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "QuoteSymbol" -> QuoteSymbol.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "Name" -> Name.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateCsvClassifierRequest]
+      AllowSingleColumn.foreach(__v => __obj.update("AllowSingleColumn", __v.asInstanceOf[js.Any]))
+      ContainsHeader.foreach(__v => __obj.update("ContainsHeader", __v.asInstanceOf[js.Any]))
+      Delimiter.foreach(__v => __obj.update("Delimiter", __v.asInstanceOf[js.Any]))
+      DisableValueTrimming.foreach(__v => __obj.update("DisableValueTrimming", __v.asInstanceOf[js.Any]))
+      Header.foreach(__v => __obj.update("Header", __v.asInstanceOf[js.Any]))
+      QuoteSymbol.foreach(__v => __obj.update("QuoteSymbol", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateCsvClassifierRequest]
     }
   }
 
@@ -7905,15 +6450,13 @@ package glue {
         Name: NameString,
         CatalogId: js.UndefOr[CatalogIdString] = js.undefined
     ): UpdateDatabaseRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "DatabaseInput" -> DatabaseInput.asInstanceOf[js.Any],
-        "Name"          -> Name.asInstanceOf[js.Any],
-        "CatalogId" -> CatalogId.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "Name"          -> Name.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateDatabaseRequest]
+      CatalogId.foreach(__v => __obj.update("CatalogId", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateDatabaseRequest]
     }
   }
 
@@ -7923,10 +6466,9 @@ package glue {
   object UpdateDatabaseResponse {
     def apply(
         ): UpdateDatabaseResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary.empty[js.Any]
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateDatabaseResponse]
+      __obj.asInstanceOf[UpdateDatabaseResponse]
     }
   }
 
@@ -7953,32 +6495,18 @@ package glue {
         PublicKey: js.UndefOr[GenericString] = js.undefined,
         UpdateEtlLibraries: js.UndefOr[BooleanValue] = js.undefined
     ): UpdateDevEndpointRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "EndpointName" -> EndpointName.asInstanceOf[js.Any],
-        "AddArguments" -> AddArguments.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "AddPublicKeys" -> AddPublicKeys.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "CustomLibraries" -> CustomLibraries.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DeleteArguments" -> DeleteArguments.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DeletePublicKeys" -> DeletePublicKeys.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "PublicKey" -> PublicKey.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "UpdateEtlLibraries" -> UpdateEtlLibraries.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "EndpointName" -> EndpointName.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateDevEndpointRequest]
+      AddArguments.foreach(__v => __obj.update("AddArguments", __v.asInstanceOf[js.Any]))
+      AddPublicKeys.foreach(__v => __obj.update("AddPublicKeys", __v.asInstanceOf[js.Any]))
+      CustomLibraries.foreach(__v => __obj.update("CustomLibraries", __v.asInstanceOf[js.Any]))
+      DeleteArguments.foreach(__v => __obj.update("DeleteArguments", __v.asInstanceOf[js.Any]))
+      DeletePublicKeys.foreach(__v => __obj.update("DeletePublicKeys", __v.asInstanceOf[js.Any]))
+      PublicKey.foreach(__v => __obj.update("PublicKey", __v.asInstanceOf[js.Any]))
+      UpdateEtlLibraries.foreach(__v => __obj.update("UpdateEtlLibraries", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateDevEndpointRequest]
     }
   }
 
@@ -7988,10 +6516,9 @@ package glue {
   object UpdateDevEndpointResponse {
     def apply(
         ): UpdateDevEndpointResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary.empty[js.Any]
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateDevEndpointResponse]
+      __obj.asInstanceOf[UpdateDevEndpointResponse]
     }
   }
 
@@ -8013,20 +6540,14 @@ package glue {
         CustomPatterns: js.UndefOr[CustomPatterns] = js.undefined,
         GrokPattern: js.UndefOr[GrokPattern] = js.undefined
     ): UpdateGrokClassifierRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Name" -> Name.asInstanceOf[js.Any],
-        "Classification" -> Classification.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "CustomPatterns" -> CustomPatterns.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "GrokPattern" -> GrokPattern.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "Name" -> Name.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateGrokClassifierRequest]
+      Classification.foreach(__v => __obj.update("Classification", __v.asInstanceOf[js.Any]))
+      CustomPatterns.foreach(__v => __obj.update("CustomPatterns", __v.asInstanceOf[js.Any]))
+      GrokPattern.foreach(__v => __obj.update("GrokPattern", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateGrokClassifierRequest]
     }
   }
 
@@ -8041,12 +6562,12 @@ package glue {
         JobName: NameString,
         JobUpdate: JobUpdate
     ): UpdateJobRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "JobName"   -> JobName.asInstanceOf[js.Any],
         "JobUpdate" -> JobUpdate.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateJobRequest]
+      __obj.asInstanceOf[UpdateJobRequest]
     }
   }
 
@@ -8059,13 +6580,9 @@ package glue {
     def apply(
         JobName: js.UndefOr[NameString] = js.undefined
     ): UpdateJobResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "JobName" -> JobName.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateJobResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      JobName.foreach(__v => __obj.update("JobName", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateJobResponse]
     }
   }
 
@@ -8083,14 +6600,12 @@ package glue {
         Name: NameString,
         JsonPath: js.UndefOr[JsonPath] = js.undefined
     ): UpdateJsonClassifierRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Name" -> Name.asInstanceOf[js.Any],
-        "JsonPath" -> JsonPath.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "Name" -> Name.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateJsonClassifierRequest]
+      JsonPath.foreach(__v => __obj.update("JsonPath", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateJsonClassifierRequest]
     }
   }
 
@@ -8111,17 +6626,15 @@ package glue {
         TableName: NameString,
         CatalogId: js.UndefOr[CatalogIdString] = js.undefined
     ): UpdatePartitionRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "DatabaseName"       -> DatabaseName.asInstanceOf[js.Any],
         "PartitionInput"     -> PartitionInput.asInstanceOf[js.Any],
         "PartitionValueList" -> PartitionValueList.asInstanceOf[js.Any],
-        "TableName"          -> TableName.asInstanceOf[js.Any],
-        "CatalogId" -> CatalogId.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "TableName"          -> TableName.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdatePartitionRequest]
+      CatalogId.foreach(__v => __obj.update("CatalogId", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdatePartitionRequest]
     }
   }
 
@@ -8131,10 +6644,9 @@ package glue {
   object UpdatePartitionResponse {
     def apply(
         ): UpdatePartitionResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary.empty[js.Any]
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdatePartitionResponse]
+      __obj.asInstanceOf[UpdatePartitionResponse]
     }
   }
 
@@ -8153,18 +6665,14 @@ package glue {
         CatalogId: js.UndefOr[CatalogIdString] = js.undefined,
         SkipArchive: js.UndefOr[BooleanNullable] = js.undefined
     ): UpdateTableRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "DatabaseName" -> DatabaseName.asInstanceOf[js.Any],
-        "TableInput"   -> TableInput.asInstanceOf[js.Any],
-        "CatalogId" -> CatalogId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SkipArchive" -> SkipArchive.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "TableInput"   -> TableInput.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateTableRequest]
+      CatalogId.foreach(__v => __obj.update("CatalogId", __v.asInstanceOf[js.Any]))
+      SkipArchive.foreach(__v => __obj.update("SkipArchive", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateTableRequest]
     }
   }
 
@@ -8174,10 +6682,9 @@ package glue {
   object UpdateTableResponse {
     def apply(
         ): UpdateTableResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary.empty[js.Any]
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateTableResponse]
+      __obj.asInstanceOf[UpdateTableResponse]
     }
   }
 
@@ -8192,12 +6699,12 @@ package glue {
         Name: NameString,
         TriggerUpdate: TriggerUpdate
     ): UpdateTriggerRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "Name"          -> Name.asInstanceOf[js.Any],
         "TriggerUpdate" -> TriggerUpdate.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateTriggerRequest]
+      __obj.asInstanceOf[UpdateTriggerRequest]
     }
   }
 
@@ -8210,13 +6717,9 @@ package glue {
     def apply(
         Trigger: js.UndefOr[Trigger] = js.undefined
     ): UpdateTriggerResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Trigger" -> Trigger.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateTriggerResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      Trigger.foreach(__v => __obj.update("Trigger", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateTriggerResponse]
     }
   }
 
@@ -8235,16 +6738,14 @@ package glue {
         FunctionName: NameString,
         CatalogId: js.UndefOr[CatalogIdString] = js.undefined
     ): UpdateUserDefinedFunctionRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "DatabaseName"  -> DatabaseName.asInstanceOf[js.Any],
         "FunctionInput" -> FunctionInput.asInstanceOf[js.Any],
-        "FunctionName"  -> FunctionName.asInstanceOf[js.Any],
-        "CatalogId" -> CatalogId.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "FunctionName"  -> FunctionName.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateUserDefinedFunctionRequest]
+      CatalogId.foreach(__v => __obj.update("CatalogId", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateUserDefinedFunctionRequest]
     }
   }
 
@@ -8254,10 +6755,9 @@ package glue {
   object UpdateUserDefinedFunctionResponse {
     def apply(
         ): UpdateUserDefinedFunctionResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary.empty[js.Any]
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateUserDefinedFunctionResponse]
+      __obj.asInstanceOf[UpdateUserDefinedFunctionResponse]
     }
   }
 
@@ -8277,17 +6777,13 @@ package glue {
         Classification: js.UndefOr[Classification] = js.undefined,
         RowTag: js.UndefOr[RowTag] = js.undefined
     ): UpdateXMLClassifierRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Name" -> Name.asInstanceOf[js.Any],
-        "Classification" -> Classification.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "RowTag" -> RowTag.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "Name" -> Name.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateXMLClassifierRequest]
+      Classification.foreach(__v => __obj.update("Classification", __v.asInstanceOf[js.Any]))
+      RowTag.foreach(__v => __obj.update("RowTag", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateXMLClassifierRequest]
     }
   }
 
@@ -8313,28 +6809,14 @@ package glue {
         OwnerType: js.UndefOr[PrincipalType] = js.undefined,
         ResourceUris: js.UndefOr[ResourceUriList] = js.undefined
     ): UserDefinedFunction = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ClassName" -> ClassName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "CreateTime" -> CreateTime.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "FunctionName" -> FunctionName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "OwnerName" -> OwnerName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "OwnerType" -> OwnerType.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ResourceUris" -> ResourceUris.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UserDefinedFunction]
+      val __obj = js.Dictionary.empty[js.Any]
+      ClassName.foreach(__v => __obj.update("ClassName", __v.asInstanceOf[js.Any]))
+      CreateTime.foreach(__v => __obj.update("CreateTime", __v.asInstanceOf[js.Any]))
+      FunctionName.foreach(__v => __obj.update("FunctionName", __v.asInstanceOf[js.Any]))
+      OwnerName.foreach(__v => __obj.update("OwnerName", __v.asInstanceOf[js.Any]))
+      OwnerType.foreach(__v => __obj.update("OwnerType", __v.asInstanceOf[js.Any]))
+      ResourceUris.foreach(__v => __obj.update("ResourceUris", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UserDefinedFunction]
     }
   }
 
@@ -8358,25 +6840,13 @@ package glue {
         OwnerType: js.UndefOr[PrincipalType] = js.undefined,
         ResourceUris: js.UndefOr[ResourceUriList] = js.undefined
     ): UserDefinedFunctionInput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ClassName" -> ClassName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "FunctionName" -> FunctionName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "OwnerName" -> OwnerName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "OwnerType" -> OwnerType.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ResourceUris" -> ResourceUris.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UserDefinedFunctionInput]
+      val __obj = js.Dictionary.empty[js.Any]
+      ClassName.foreach(__v => __obj.update("ClassName", __v.asInstanceOf[js.Any]))
+      FunctionName.foreach(__v => __obj.update("FunctionName", __v.asInstanceOf[js.Any]))
+      OwnerName.foreach(__v => __obj.update("OwnerName", __v.asInstanceOf[js.Any]))
+      OwnerType.foreach(__v => __obj.update("OwnerType", __v.asInstanceOf[js.Any]))
+      ResourceUris.foreach(__v => __obj.update("ResourceUris", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UserDefinedFunctionInput]
     }
   }
 
@@ -8410,24 +6880,16 @@ package glue {
         RowTag: js.UndefOr[RowTag] = js.undefined,
         Version: js.UndefOr[VersionId] = js.undefined
     ): XMLClassifier = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "Classification" -> Classification.asInstanceOf[js.Any],
-        "Name"           -> Name.asInstanceOf[js.Any],
-        "CreationTime" -> CreationTime.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "LastUpdated" -> LastUpdated.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "RowTag" -> RowTag.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Version" -> Version.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "Name"           -> Name.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[XMLClassifier]
+      CreationTime.foreach(__v => __obj.update("CreationTime", __v.asInstanceOf[js.Any]))
+      LastUpdated.foreach(__v => __obj.update("LastUpdated", __v.asInstanceOf[js.Any]))
+      RowTag.foreach(__v => __obj.update("RowTag", __v.asInstanceOf[js.Any]))
+      Version.foreach(__v => __obj.update("Version", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[XMLClassifier]
     }
   }
 }

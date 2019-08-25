@@ -160,16 +160,10 @@ package firehose {
         IntervalInSeconds: js.UndefOr[IntervalInSeconds] = js.undefined,
         SizeInMBs: js.UndefOr[SizeInMBs] = js.undefined
     ): BufferingHints = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "IntervalInSeconds" -> IntervalInSeconds.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SizeInMBs" -> SizeInMBs.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[BufferingHints]
+      val __obj = js.Dictionary.empty[js.Any]
+      IntervalInSeconds.foreach(__v => __obj.update("IntervalInSeconds", __v.asInstanceOf[js.Any]))
+      SizeInMBs.foreach(__v => __obj.update("SizeInMBs", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[BufferingHints]
     }
   }
 
@@ -189,19 +183,11 @@ package firehose {
         LogGroupName: js.UndefOr[LogGroupName] = js.undefined,
         LogStreamName: js.UndefOr[LogStreamName] = js.undefined
     ): CloudWatchLoggingOptions = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Enabled" -> Enabled.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "LogGroupName" -> LogGroupName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "LogStreamName" -> LogStreamName.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CloudWatchLoggingOptions]
+      val __obj = js.Dictionary.empty[js.Any]
+      Enabled.foreach(__v => __obj.update("Enabled", __v.asInstanceOf[js.Any]))
+      LogGroupName.foreach(__v => __obj.update("LogGroupName", __v.asInstanceOf[js.Any]))
+      LogStreamName.foreach(__v => __obj.update("LogStreamName", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CloudWatchLoggingOptions]
     }
   }
 
@@ -230,17 +216,13 @@ package firehose {
         CopyOptions: js.UndefOr[CopyOptions] = js.undefined,
         DataTableColumns: js.UndefOr[DataTableColumns] = js.undefined
     ): CopyCommand = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "DataTableName" -> DataTableName.asInstanceOf[js.Any],
-        "CopyOptions" -> CopyOptions.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DataTableColumns" -> DataTableColumns.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "DataTableName" -> DataTableName.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CopyCommand]
+      CopyOptions.foreach(__v => __obj.update("CopyOptions", __v.asInstanceOf[js.Any]))
+      DataTableColumns.foreach(__v => __obj.update("DataTableColumns", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CopyCommand]
     }
   }
 
@@ -269,35 +251,29 @@ package firehose {
         SplunkDestinationConfiguration: js.UndefOr[SplunkDestinationConfiguration] = js.undefined,
         Tags: js.UndefOr[TagDeliveryStreamInputTagList] = js.undefined
     ): CreateDeliveryStreamInput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "DeliveryStreamName" -> DeliveryStreamName.asInstanceOf[js.Any],
-        "DeliveryStreamType" -> DeliveryStreamType.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ElasticsearchDestinationConfiguration" -> ElasticsearchDestinationConfiguration.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ExtendedS3DestinationConfiguration" -> ExtendedS3DestinationConfiguration.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "KinesisStreamSourceConfiguration" -> KinesisStreamSourceConfiguration.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "RedshiftDestinationConfiguration" -> RedshiftDestinationConfiguration.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "S3DestinationConfiguration" -> S3DestinationConfiguration.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SplunkDestinationConfiguration" -> SplunkDestinationConfiguration.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Tags" -> Tags.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "DeliveryStreamName" -> DeliveryStreamName.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateDeliveryStreamInput]
+      DeliveryStreamType.foreach(__v => __obj.update("DeliveryStreamType", __v.asInstanceOf[js.Any]))
+      ElasticsearchDestinationConfiguration.foreach(
+        __v => __obj.update("ElasticsearchDestinationConfiguration", __v.asInstanceOf[js.Any])
+      )
+      ExtendedS3DestinationConfiguration.foreach(
+        __v => __obj.update("ExtendedS3DestinationConfiguration", __v.asInstanceOf[js.Any])
+      )
+      KinesisStreamSourceConfiguration.foreach(
+        __v => __obj.update("KinesisStreamSourceConfiguration", __v.asInstanceOf[js.Any])
+      )
+      RedshiftDestinationConfiguration.foreach(
+        __v => __obj.update("RedshiftDestinationConfiguration", __v.asInstanceOf[js.Any])
+      )
+      S3DestinationConfiguration.foreach(__v => __obj.update("S3DestinationConfiguration", __v.asInstanceOf[js.Any]))
+      SplunkDestinationConfiguration.foreach(
+        __v => __obj.update("SplunkDestinationConfiguration", __v.asInstanceOf[js.Any])
+      )
+      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateDeliveryStreamInput]
     }
   }
 
@@ -310,13 +286,9 @@ package firehose {
     def apply(
         DeliveryStreamARN: js.UndefOr[DeliveryStreamARN] = js.undefined
     ): CreateDeliveryStreamOutput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "DeliveryStreamARN" -> DeliveryStreamARN.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateDeliveryStreamOutput]
+      val __obj = js.Dictionary.empty[js.Any]
+      DeliveryStreamARN.foreach(__v => __obj.update("DeliveryStreamARN", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateDeliveryStreamOutput]
     }
   }
 
@@ -338,22 +310,12 @@ package firehose {
         OutputFormatConfiguration: js.UndefOr[OutputFormatConfiguration] = js.undefined,
         SchemaConfiguration: js.UndefOr[SchemaConfiguration] = js.undefined
     ): DataFormatConversionConfiguration = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Enabled" -> Enabled.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "InputFormatConfiguration" -> InputFormatConfiguration.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "OutputFormatConfiguration" -> OutputFormatConfiguration.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SchemaConfiguration" -> SchemaConfiguration.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DataFormatConversionConfiguration]
+      val __obj = js.Dictionary.empty[js.Any]
+      Enabled.foreach(__v => __obj.update("Enabled", __v.asInstanceOf[js.Any]))
+      InputFormatConfiguration.foreach(__v => __obj.update("InputFormatConfiguration", __v.asInstanceOf[js.Any]))
+      OutputFormatConfiguration.foreach(__v => __obj.update("OutputFormatConfiguration", __v.asInstanceOf[js.Any]))
+      SchemaConfiguration.foreach(__v => __obj.update("SchemaConfiguration", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DataFormatConversionConfiguration]
     }
   }
 
@@ -366,11 +328,11 @@ package firehose {
     def apply(
         DeliveryStreamName: DeliveryStreamName
     ): DeleteDeliveryStreamInput = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "DeliveryStreamName" -> DeliveryStreamName.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteDeliveryStreamInput]
+      __obj.asInstanceOf[DeleteDeliveryStreamInput]
     }
   }
 
@@ -380,10 +342,9 @@ package firehose {
   object DeleteDeliveryStreamOutput {
     def apply(
         ): DeleteDeliveryStreamOutput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary.empty[js.Any]
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteDeliveryStreamOutput]
+      __obj.asInstanceOf[DeleteDeliveryStreamOutput]
     }
   }
 
@@ -419,29 +380,23 @@ package firehose {
         LastUpdateTimestamp: js.UndefOr[Timestamp] = js.undefined,
         Source: js.UndefOr[SourceDescription] = js.undefined
     ): DeliveryStreamDescription = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "DeliveryStreamARN"    -> DeliveryStreamARN.asInstanceOf[js.Any],
         "DeliveryStreamName"   -> DeliveryStreamName.asInstanceOf[js.Any],
         "DeliveryStreamStatus" -> DeliveryStreamStatus.asInstanceOf[js.Any],
         "DeliveryStreamType"   -> DeliveryStreamType.asInstanceOf[js.Any],
         "Destinations"         -> Destinations.asInstanceOf[js.Any],
         "HasMoreDestinations"  -> HasMoreDestinations.asInstanceOf[js.Any],
-        "VersionId"            -> VersionId.asInstanceOf[js.Any],
-        "CreateTimestamp" -> CreateTimestamp.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DeliveryStreamEncryptionConfiguration" -> DeliveryStreamEncryptionConfiguration.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "LastUpdateTimestamp" -> LastUpdateTimestamp.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Source" -> Source.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "VersionId"            -> VersionId.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeliveryStreamDescription]
+      CreateTimestamp.foreach(__v => __obj.update("CreateTimestamp", __v.asInstanceOf[js.Any]))
+      DeliveryStreamEncryptionConfiguration.foreach(
+        __v => __obj.update("DeliveryStreamEncryptionConfiguration", __v.asInstanceOf[js.Any])
+      )
+      LastUpdateTimestamp.foreach(__v => __obj.update("LastUpdateTimestamp", __v.asInstanceOf[js.Any]))
+      Source.foreach(__v => __obj.update("Source", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DeliveryStreamDescription]
     }
   }
 
@@ -457,13 +412,9 @@ package firehose {
     def apply(
         Status: js.UndefOr[DeliveryStreamEncryptionStatus] = js.undefined
     ): DeliveryStreamEncryptionConfiguration = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Status" -> Status.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeliveryStreamEncryptionConfiguration]
+      val __obj = js.Dictionary.empty[js.Any]
+      Status.foreach(__v => __obj.update("Status", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DeliveryStreamEncryptionConfiguration]
     }
   }
 
@@ -504,17 +455,13 @@ package firehose {
         ExclusiveStartDestinationId: js.UndefOr[DestinationId] = js.undefined,
         Limit: js.UndefOr[DescribeDeliveryStreamInputLimit] = js.undefined
     ): DescribeDeliveryStreamInput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "DeliveryStreamName" -> DeliveryStreamName.asInstanceOf[js.Any],
-        "ExclusiveStartDestinationId" -> ExclusiveStartDestinationId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Limit" -> Limit.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "DeliveryStreamName" -> DeliveryStreamName.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeDeliveryStreamInput]
+      ExclusiveStartDestinationId.foreach(__v => __obj.update("ExclusiveStartDestinationId", __v.asInstanceOf[js.Any]))
+      Limit.foreach(__v => __obj.update("Limit", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeDeliveryStreamInput]
     }
   }
 
@@ -527,11 +474,11 @@ package firehose {
     def apply(
         DeliveryStreamDescription: DeliveryStreamDescription
     ): DescribeDeliveryStreamOutput = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "DeliveryStreamDescription" -> DeliveryStreamDescription.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeDeliveryStreamOutput]
+      __obj.asInstanceOf[DescribeDeliveryStreamOutput]
     }
   }
 
@@ -549,16 +496,10 @@ package firehose {
         HiveJsonSerDe: js.UndefOr[HiveJsonSerDe] = js.undefined,
         OpenXJsonSerDe: js.UndefOr[OpenXJsonSerDe] = js.undefined
     ): Deserializer = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "HiveJsonSerDe" -> HiveJsonSerDe.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "OpenXJsonSerDe" -> OpenXJsonSerDe.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Deserializer]
+      val __obj = js.Dictionary.empty[js.Any]
+      HiveJsonSerDe.foreach(__v => __obj.update("HiveJsonSerDe", __v.asInstanceOf[js.Any]))
+      OpenXJsonSerDe.foreach(__v => __obj.update("OpenXJsonSerDe", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Deserializer]
     }
   }
 
@@ -584,26 +525,24 @@ package firehose {
         S3DestinationDescription: js.UndefOr[S3DestinationDescription] = js.undefined,
         SplunkDestinationDescription: js.UndefOr[SplunkDestinationDescription] = js.undefined
     ): DestinationDescription = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "DestinationId" -> DestinationId.asInstanceOf[js.Any],
-        "ElasticsearchDestinationDescription" -> ElasticsearchDestinationDescription.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ExtendedS3DestinationDescription" -> ExtendedS3DestinationDescription.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "RedshiftDestinationDescription" -> RedshiftDestinationDescription.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "S3DestinationDescription" -> S3DestinationDescription.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SplunkDestinationDescription" -> SplunkDestinationDescription.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "DestinationId" -> DestinationId.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DestinationDescription]
+      ElasticsearchDestinationDescription.foreach(
+        __v => __obj.update("ElasticsearchDestinationDescription", __v.asInstanceOf[js.Any])
+      )
+      ExtendedS3DestinationDescription.foreach(
+        __v => __obj.update("ExtendedS3DestinationDescription", __v.asInstanceOf[js.Any])
+      )
+      RedshiftDestinationDescription.foreach(
+        __v => __obj.update("RedshiftDestinationDescription", __v.asInstanceOf[js.Any])
+      )
+      S3DestinationDescription.foreach(__v => __obj.update("S3DestinationDescription", __v.asInstanceOf[js.Any]))
+      SplunkDestinationDescription.foreach(
+        __v => __obj.update("SplunkDestinationDescription", __v.asInstanceOf[js.Any])
+      )
+      __obj.asInstanceOf[DestinationDescription]
     }
   }
 
@@ -621,16 +560,10 @@ package firehose {
         IntervalInSeconds: js.UndefOr[ElasticsearchBufferingIntervalInSeconds] = js.undefined,
         SizeInMBs: js.UndefOr[ElasticsearchBufferingSizeInMBs] = js.undefined
     ): ElasticsearchBufferingHints = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "IntervalInSeconds" -> IntervalInSeconds.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SizeInMBs" -> SizeInMBs.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ElasticsearchBufferingHints]
+      val __obj = js.Dictionary.empty[js.Any]
+      IntervalInSeconds.foreach(__v => __obj.update("IntervalInSeconds", __v.asInstanceOf[js.Any]))
+      SizeInMBs.foreach(__v => __obj.update("SizeInMBs", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ElasticsearchBufferingHints]
     }
   }
 
@@ -666,33 +599,21 @@ package firehose {
         RetryOptions: js.UndefOr[ElasticsearchRetryOptions] = js.undefined,
         S3BackupMode: js.UndefOr[ElasticsearchS3BackupMode] = js.undefined
     ): ElasticsearchDestinationConfiguration = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "DomainARN"       -> DomainARN.asInstanceOf[js.Any],
         "IndexName"       -> IndexName.asInstanceOf[js.Any],
         "RoleARN"         -> RoleARN.asInstanceOf[js.Any],
         "S3Configuration" -> S3Configuration.asInstanceOf[js.Any],
-        "TypeName"        -> TypeName.asInstanceOf[js.Any],
-        "BufferingHints" -> BufferingHints.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "CloudWatchLoggingOptions" -> CloudWatchLoggingOptions.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "IndexRotationPeriod" -> IndexRotationPeriod.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ProcessingConfiguration" -> ProcessingConfiguration.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "RetryOptions" -> RetryOptions.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "S3BackupMode" -> S3BackupMode.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "TypeName"        -> TypeName.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ElasticsearchDestinationConfiguration]
+      BufferingHints.foreach(__v => __obj.update("BufferingHints", __v.asInstanceOf[js.Any]))
+      CloudWatchLoggingOptions.foreach(__v => __obj.update("CloudWatchLoggingOptions", __v.asInstanceOf[js.Any]))
+      IndexRotationPeriod.foreach(__v => __obj.update("IndexRotationPeriod", __v.asInstanceOf[js.Any]))
+      ProcessingConfiguration.foreach(__v => __obj.update("ProcessingConfiguration", __v.asInstanceOf[js.Any]))
+      RetryOptions.foreach(__v => __obj.update("RetryOptions", __v.asInstanceOf[js.Any]))
+      S3BackupMode.foreach(__v => __obj.update("S3BackupMode", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ElasticsearchDestinationConfiguration]
     }
   }
 
@@ -728,43 +649,19 @@ package firehose {
         S3DestinationDescription: js.UndefOr[S3DestinationDescription] = js.undefined,
         TypeName: js.UndefOr[ElasticsearchTypeName] = js.undefined
     ): ElasticsearchDestinationDescription = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "BufferingHints" -> BufferingHints.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "CloudWatchLoggingOptions" -> CloudWatchLoggingOptions.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DomainARN" -> DomainARN.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "IndexName" -> IndexName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "IndexRotationPeriod" -> IndexRotationPeriod.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ProcessingConfiguration" -> ProcessingConfiguration.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "RetryOptions" -> RetryOptions.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "RoleARN" -> RoleARN.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "S3BackupMode" -> S3BackupMode.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "S3DestinationDescription" -> S3DestinationDescription.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "TypeName" -> TypeName.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ElasticsearchDestinationDescription]
+      val __obj = js.Dictionary.empty[js.Any]
+      BufferingHints.foreach(__v => __obj.update("BufferingHints", __v.asInstanceOf[js.Any]))
+      CloudWatchLoggingOptions.foreach(__v => __obj.update("CloudWatchLoggingOptions", __v.asInstanceOf[js.Any]))
+      DomainARN.foreach(__v => __obj.update("DomainARN", __v.asInstanceOf[js.Any]))
+      IndexName.foreach(__v => __obj.update("IndexName", __v.asInstanceOf[js.Any]))
+      IndexRotationPeriod.foreach(__v => __obj.update("IndexRotationPeriod", __v.asInstanceOf[js.Any]))
+      ProcessingConfiguration.foreach(__v => __obj.update("ProcessingConfiguration", __v.asInstanceOf[js.Any]))
+      RetryOptions.foreach(__v => __obj.update("RetryOptions", __v.asInstanceOf[js.Any]))
+      RoleARN.foreach(__v => __obj.update("RoleARN", __v.asInstanceOf[js.Any]))
+      S3BackupMode.foreach(__v => __obj.update("S3BackupMode", __v.asInstanceOf[js.Any]))
+      S3DestinationDescription.foreach(__v => __obj.update("S3DestinationDescription", __v.asInstanceOf[js.Any]))
+      TypeName.foreach(__v => __obj.update("TypeName", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ElasticsearchDestinationDescription]
     }
   }
 
@@ -798,40 +695,18 @@ package firehose {
         S3Update: js.UndefOr[S3DestinationUpdate] = js.undefined,
         TypeName: js.UndefOr[ElasticsearchTypeName] = js.undefined
     ): ElasticsearchDestinationUpdate = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "BufferingHints" -> BufferingHints.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "CloudWatchLoggingOptions" -> CloudWatchLoggingOptions.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DomainARN" -> DomainARN.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "IndexName" -> IndexName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "IndexRotationPeriod" -> IndexRotationPeriod.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ProcessingConfiguration" -> ProcessingConfiguration.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "RetryOptions" -> RetryOptions.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "RoleARN" -> RoleARN.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "S3Update" -> S3Update.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "TypeName" -> TypeName.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ElasticsearchDestinationUpdate]
+      val __obj = js.Dictionary.empty[js.Any]
+      BufferingHints.foreach(__v => __obj.update("BufferingHints", __v.asInstanceOf[js.Any]))
+      CloudWatchLoggingOptions.foreach(__v => __obj.update("CloudWatchLoggingOptions", __v.asInstanceOf[js.Any]))
+      DomainARN.foreach(__v => __obj.update("DomainARN", __v.asInstanceOf[js.Any]))
+      IndexName.foreach(__v => __obj.update("IndexName", __v.asInstanceOf[js.Any]))
+      IndexRotationPeriod.foreach(__v => __obj.update("IndexRotationPeriod", __v.asInstanceOf[js.Any]))
+      ProcessingConfiguration.foreach(__v => __obj.update("ProcessingConfiguration", __v.asInstanceOf[js.Any]))
+      RetryOptions.foreach(__v => __obj.update("RetryOptions", __v.asInstanceOf[js.Any]))
+      RoleARN.foreach(__v => __obj.update("RoleARN", __v.asInstanceOf[js.Any]))
+      S3Update.foreach(__v => __obj.update("S3Update", __v.asInstanceOf[js.Any]))
+      TypeName.foreach(__v => __obj.update("TypeName", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ElasticsearchDestinationUpdate]
     }
   }
 
@@ -857,13 +732,9 @@ package firehose {
     def apply(
         DurationInSeconds: js.UndefOr[ElasticsearchRetryDurationInSeconds] = js.undefined
     ): ElasticsearchRetryOptions = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "DurationInSeconds" -> DurationInSeconds.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ElasticsearchRetryOptions]
+      val __obj = js.Dictionary.empty[js.Any]
+      DurationInSeconds.foreach(__v => __obj.update("DurationInSeconds", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ElasticsearchRetryOptions]
     }
   }
 
@@ -888,16 +759,10 @@ package firehose {
         KMSEncryptionConfig: js.UndefOr[KMSEncryptionConfig] = js.undefined,
         NoEncryptionConfig: js.UndefOr[NoEncryptionConfig] = js.undefined
     ): EncryptionConfiguration = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "KMSEncryptionConfig" -> KMSEncryptionConfig.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NoEncryptionConfig" -> NoEncryptionConfig.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[EncryptionConfiguration]
+      val __obj = js.Dictionary.empty[js.Any]
+      KMSEncryptionConfig.foreach(__v => __obj.update("KMSEncryptionConfig", __v.asInstanceOf[js.Any]))
+      NoEncryptionConfig.foreach(__v => __obj.update("NoEncryptionConfig", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[EncryptionConfiguration]
     }
   }
 
@@ -935,42 +800,24 @@ package firehose {
         S3BackupConfiguration: js.UndefOr[S3DestinationConfiguration] = js.undefined,
         S3BackupMode: js.UndefOr[S3BackupMode] = js.undefined
     ): ExtendedS3DestinationConfiguration = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "BucketARN" -> BucketARN.asInstanceOf[js.Any],
-        "RoleARN"   -> RoleARN.asInstanceOf[js.Any],
-        "BufferingHints" -> BufferingHints.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "CloudWatchLoggingOptions" -> CloudWatchLoggingOptions.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "CompressionFormat" -> CompressionFormat.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DataFormatConversionConfiguration" -> DataFormatConversionConfiguration.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "EncryptionConfiguration" -> EncryptionConfiguration.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ErrorOutputPrefix" -> ErrorOutputPrefix.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Prefix" -> Prefix.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ProcessingConfiguration" -> ProcessingConfiguration.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "S3BackupConfiguration" -> S3BackupConfiguration.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "S3BackupMode" -> S3BackupMode.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "RoleARN"   -> RoleARN.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ExtendedS3DestinationConfiguration]
+      BufferingHints.foreach(__v => __obj.update("BufferingHints", __v.asInstanceOf[js.Any]))
+      CloudWatchLoggingOptions.foreach(__v => __obj.update("CloudWatchLoggingOptions", __v.asInstanceOf[js.Any]))
+      CompressionFormat.foreach(__v => __obj.update("CompressionFormat", __v.asInstanceOf[js.Any]))
+      DataFormatConversionConfiguration.foreach(
+        __v => __obj.update("DataFormatConversionConfiguration", __v.asInstanceOf[js.Any])
+      )
+      EncryptionConfiguration.foreach(__v => __obj.update("EncryptionConfiguration", __v.asInstanceOf[js.Any]))
+      ErrorOutputPrefix.foreach(__v => __obj.update("ErrorOutputPrefix", __v.asInstanceOf[js.Any]))
+      Prefix.foreach(__v => __obj.update("Prefix", __v.asInstanceOf[js.Any]))
+      ProcessingConfiguration.foreach(__v => __obj.update("ProcessingConfiguration", __v.asInstanceOf[js.Any]))
+      S3BackupConfiguration.foreach(__v => __obj.update("S3BackupConfiguration", __v.asInstanceOf[js.Any]))
+      S3BackupMode.foreach(__v => __obj.update("S3BackupMode", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ExtendedS3DestinationConfiguration]
     }
   }
 
@@ -1008,36 +855,24 @@ package firehose {
         S3BackupDescription: js.UndefOr[S3DestinationDescription] = js.undefined,
         S3BackupMode: js.UndefOr[S3BackupMode] = js.undefined
     ): ExtendedS3DestinationDescription = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "BucketARN"               -> BucketARN.asInstanceOf[js.Any],
         "BufferingHints"          -> BufferingHints.asInstanceOf[js.Any],
         "CompressionFormat"       -> CompressionFormat.asInstanceOf[js.Any],
         "EncryptionConfiguration" -> EncryptionConfiguration.asInstanceOf[js.Any],
-        "RoleARN"                 -> RoleARN.asInstanceOf[js.Any],
-        "CloudWatchLoggingOptions" -> CloudWatchLoggingOptions.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DataFormatConversionConfiguration" -> DataFormatConversionConfiguration.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ErrorOutputPrefix" -> ErrorOutputPrefix.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Prefix" -> Prefix.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ProcessingConfiguration" -> ProcessingConfiguration.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "S3BackupDescription" -> S3BackupDescription.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "S3BackupMode" -> S3BackupMode.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "RoleARN"                 -> RoleARN.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ExtendedS3DestinationDescription]
+      CloudWatchLoggingOptions.foreach(__v => __obj.update("CloudWatchLoggingOptions", __v.asInstanceOf[js.Any]))
+      DataFormatConversionConfiguration.foreach(
+        __v => __obj.update("DataFormatConversionConfiguration", __v.asInstanceOf[js.Any])
+      )
+      ErrorOutputPrefix.foreach(__v => __obj.update("ErrorOutputPrefix", __v.asInstanceOf[js.Any]))
+      Prefix.foreach(__v => __obj.update("Prefix", __v.asInstanceOf[js.Any]))
+      ProcessingConfiguration.foreach(__v => __obj.update("ProcessingConfiguration", __v.asInstanceOf[js.Any]))
+      S3BackupDescription.foreach(__v => __obj.update("S3BackupDescription", __v.asInstanceOf[js.Any]))
+      S3BackupMode.foreach(__v => __obj.update("S3BackupMode", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ExtendedS3DestinationDescription]
     }
   }
 
@@ -1075,46 +910,22 @@ package firehose {
         S3BackupMode: js.UndefOr[S3BackupMode] = js.undefined,
         S3BackupUpdate: js.UndefOr[S3DestinationUpdate] = js.undefined
     ): ExtendedS3DestinationUpdate = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "BucketARN" -> BucketARN.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "BufferingHints" -> BufferingHints.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "CloudWatchLoggingOptions" -> CloudWatchLoggingOptions.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "CompressionFormat" -> CompressionFormat.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DataFormatConversionConfiguration" -> DataFormatConversionConfiguration.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "EncryptionConfiguration" -> EncryptionConfiguration.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ErrorOutputPrefix" -> ErrorOutputPrefix.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Prefix" -> Prefix.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ProcessingConfiguration" -> ProcessingConfiguration.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "RoleARN" -> RoleARN.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "S3BackupMode" -> S3BackupMode.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "S3BackupUpdate" -> S3BackupUpdate.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ExtendedS3DestinationUpdate]
+      val __obj = js.Dictionary.empty[js.Any]
+      BucketARN.foreach(__v => __obj.update("BucketARN", __v.asInstanceOf[js.Any]))
+      BufferingHints.foreach(__v => __obj.update("BufferingHints", __v.asInstanceOf[js.Any]))
+      CloudWatchLoggingOptions.foreach(__v => __obj.update("CloudWatchLoggingOptions", __v.asInstanceOf[js.Any]))
+      CompressionFormat.foreach(__v => __obj.update("CompressionFormat", __v.asInstanceOf[js.Any]))
+      DataFormatConversionConfiguration.foreach(
+        __v => __obj.update("DataFormatConversionConfiguration", __v.asInstanceOf[js.Any])
+      )
+      EncryptionConfiguration.foreach(__v => __obj.update("EncryptionConfiguration", __v.asInstanceOf[js.Any]))
+      ErrorOutputPrefix.foreach(__v => __obj.update("ErrorOutputPrefix", __v.asInstanceOf[js.Any]))
+      Prefix.foreach(__v => __obj.update("Prefix", __v.asInstanceOf[js.Any]))
+      ProcessingConfiguration.foreach(__v => __obj.update("ProcessingConfiguration", __v.asInstanceOf[js.Any]))
+      RoleARN.foreach(__v => __obj.update("RoleARN", __v.asInstanceOf[js.Any]))
+      S3BackupMode.foreach(__v => __obj.update("S3BackupMode", __v.asInstanceOf[js.Any]))
+      S3BackupUpdate.foreach(__v => __obj.update("S3BackupUpdate", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ExtendedS3DestinationUpdate]
     }
   }
 
@@ -1137,13 +948,9 @@ package firehose {
     def apply(
         TimestampFormats: js.UndefOr[ListOfNonEmptyStrings] = js.undefined
     ): HiveJsonSerDe = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "TimestampFormats" -> TimestampFormats.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[HiveJsonSerDe]
+      val __obj = js.Dictionary.empty[js.Any]
+      TimestampFormats.foreach(__v => __obj.update("TimestampFormats", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[HiveJsonSerDe]
     }
   }
 
@@ -1159,13 +966,9 @@ package firehose {
     def apply(
         Deserializer: js.UndefOr[Deserializer] = js.undefined
     ): InputFormatConfiguration = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Deserializer" -> Deserializer.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[InputFormatConfiguration]
+      val __obj = js.Dictionary.empty[js.Any]
+      Deserializer.foreach(__v => __obj.update("Deserializer", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[InputFormatConfiguration]
     }
   }
 
@@ -1181,11 +984,11 @@ package firehose {
     def apply(
         AWSKMSKeyARN: AWSKMSKeyARN
     ): KMSEncryptionConfig = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "AWSKMSKeyARN" -> AWSKMSKeyARN.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[KMSEncryptionConfig]
+      __obj.asInstanceOf[KMSEncryptionConfig]
     }
   }
 
@@ -1203,12 +1006,12 @@ package firehose {
         KinesisStreamARN: KinesisStreamARN,
         RoleARN: RoleARN
     ): KinesisStreamSourceConfiguration = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "KinesisStreamARN" -> KinesisStreamARN.asInstanceOf[js.Any],
         "RoleARN"          -> RoleARN.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[KinesisStreamSourceConfiguration]
+      __obj.asInstanceOf[KinesisStreamSourceConfiguration]
     }
   }
 
@@ -1228,19 +1031,11 @@ package firehose {
         KinesisStreamARN: js.UndefOr[KinesisStreamARN] = js.undefined,
         RoleARN: js.UndefOr[RoleARN] = js.undefined
     ): KinesisStreamSourceDescription = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "DeliveryStartTimestamp" -> DeliveryStartTimestamp.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "KinesisStreamARN" -> KinesisStreamARN.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "RoleARN" -> RoleARN.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[KinesisStreamSourceDescription]
+      val __obj = js.Dictionary.empty[js.Any]
+      DeliveryStartTimestamp.foreach(__v => __obj.update("DeliveryStartTimestamp", __v.asInstanceOf[js.Any]))
+      KinesisStreamARN.foreach(__v => __obj.update("KinesisStreamARN", __v.asInstanceOf[js.Any]))
+      RoleARN.foreach(__v => __obj.update("RoleARN", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[KinesisStreamSourceDescription]
     }
   }
 
@@ -1257,19 +1052,13 @@ package firehose {
         ExclusiveStartDeliveryStreamName: js.UndefOr[DeliveryStreamName] = js.undefined,
         Limit: js.UndefOr[ListDeliveryStreamsInputLimit] = js.undefined
     ): ListDeliveryStreamsInput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "DeliveryStreamType" -> DeliveryStreamType.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ExclusiveStartDeliveryStreamName" -> ExclusiveStartDeliveryStreamName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Limit" -> Limit.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListDeliveryStreamsInput]
+      val __obj = js.Dictionary.empty[js.Any]
+      DeliveryStreamType.foreach(__v => __obj.update("DeliveryStreamType", __v.asInstanceOf[js.Any]))
+      ExclusiveStartDeliveryStreamName.foreach(
+        __v => __obj.update("ExclusiveStartDeliveryStreamName", __v.asInstanceOf[js.Any])
+      )
+      Limit.foreach(__v => __obj.update("Limit", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListDeliveryStreamsInput]
     }
   }
 
@@ -1284,12 +1073,12 @@ package firehose {
         DeliveryStreamNames: DeliveryStreamNameList,
         HasMoreDeliveryStreams: BooleanObject
     ): ListDeliveryStreamsOutput = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "DeliveryStreamNames"    -> DeliveryStreamNames.asInstanceOf[js.Any],
         "HasMoreDeliveryStreams" -> HasMoreDeliveryStreams.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListDeliveryStreamsOutput]
+      __obj.asInstanceOf[ListDeliveryStreamsOutput]
     }
   }
 
@@ -1306,17 +1095,13 @@ package firehose {
         ExclusiveStartTagKey: js.UndefOr[TagKey] = js.undefined,
         Limit: js.UndefOr[ListTagsForDeliveryStreamInputLimit] = js.undefined
     ): ListTagsForDeliveryStreamInput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "DeliveryStreamName" -> DeliveryStreamName.asInstanceOf[js.Any],
-        "ExclusiveStartTagKey" -> ExclusiveStartTagKey.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Limit" -> Limit.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "DeliveryStreamName" -> DeliveryStreamName.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListTagsForDeliveryStreamInput]
+      ExclusiveStartTagKey.foreach(__v => __obj.update("ExclusiveStartTagKey", __v.asInstanceOf[js.Any]))
+      Limit.foreach(__v => __obj.update("Limit", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListTagsForDeliveryStreamInput]
     }
   }
 
@@ -1331,12 +1116,12 @@ package firehose {
         HasMoreTags: BooleanObject,
         Tags: ListTagsForDeliveryStreamOutputTagList
     ): ListTagsForDeliveryStreamOutput = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "HasMoreTags" -> HasMoreTags.asInstanceOf[js.Any],
         "Tags"        -> Tags.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListTagsForDeliveryStreamOutput]
+      __obj.asInstanceOf[ListTagsForDeliveryStreamOutput]
     }
   }
 
@@ -1362,19 +1147,13 @@ package firehose {
         ColumnToJsonKeyMappings: js.UndefOr[ColumnToJsonKeyMappings] = js.undefined,
         ConvertDotsInJsonKeysToUnderscores: js.UndefOr[BooleanObject] = js.undefined
     ): OpenXJsonSerDe = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "CaseInsensitive" -> CaseInsensitive.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ColumnToJsonKeyMappings" -> ColumnToJsonKeyMappings.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ConvertDotsInJsonKeysToUnderscores" -> ConvertDotsInJsonKeysToUnderscores.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[OpenXJsonSerDe]
+      val __obj = js.Dictionary.empty[js.Any]
+      CaseInsensitive.foreach(__v => __obj.update("CaseInsensitive", __v.asInstanceOf[js.Any]))
+      ColumnToJsonKeyMappings.foreach(__v => __obj.update("ColumnToJsonKeyMappings", __v.asInstanceOf[js.Any]))
+      ConvertDotsInJsonKeysToUnderscores.foreach(
+        __v => __obj.update("ConvertDotsInJsonKeysToUnderscores", __v.asInstanceOf[js.Any])
+      )
+      __obj.asInstanceOf[OpenXJsonSerDe]
     }
   }
 
@@ -1423,40 +1202,20 @@ package firehose {
         RowIndexStride: js.UndefOr[OrcRowIndexStride] = js.undefined,
         StripeSizeBytes: js.UndefOr[OrcStripeSizeBytes] = js.undefined
     ): OrcSerDe = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "BlockSizeBytes" -> BlockSizeBytes.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "BloomFilterColumns" -> BloomFilterColumns.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "BloomFilterFalsePositiveProbability" -> BloomFilterFalsePositiveProbability.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Compression" -> Compression.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DictionaryKeyThreshold" -> DictionaryKeyThreshold.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "EnablePadding" -> EnablePadding.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "FormatVersion" -> FormatVersion.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "PaddingTolerance" -> PaddingTolerance.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "RowIndexStride" -> RowIndexStride.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "StripeSizeBytes" -> StripeSizeBytes.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[OrcSerDe]
+      val __obj = js.Dictionary.empty[js.Any]
+      BlockSizeBytes.foreach(__v => __obj.update("BlockSizeBytes", __v.asInstanceOf[js.Any]))
+      BloomFilterColumns.foreach(__v => __obj.update("BloomFilterColumns", __v.asInstanceOf[js.Any]))
+      BloomFilterFalsePositiveProbability.foreach(
+        __v => __obj.update("BloomFilterFalsePositiveProbability", __v.asInstanceOf[js.Any])
+      )
+      Compression.foreach(__v => __obj.update("Compression", __v.asInstanceOf[js.Any]))
+      DictionaryKeyThreshold.foreach(__v => __obj.update("DictionaryKeyThreshold", __v.asInstanceOf[js.Any]))
+      EnablePadding.foreach(__v => __obj.update("EnablePadding", __v.asInstanceOf[js.Any]))
+      FormatVersion.foreach(__v => __obj.update("FormatVersion", __v.asInstanceOf[js.Any]))
+      PaddingTolerance.foreach(__v => __obj.update("PaddingTolerance", __v.asInstanceOf[js.Any]))
+      RowIndexStride.foreach(__v => __obj.update("RowIndexStride", __v.asInstanceOf[js.Any]))
+      StripeSizeBytes.foreach(__v => __obj.update("StripeSizeBytes", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[OrcSerDe]
     }
   }
 
@@ -1472,13 +1231,9 @@ package firehose {
     def apply(
         Serializer: js.UndefOr[Serializer] = js.undefined
     ): OutputFormatConfiguration = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Serializer" -> Serializer.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[OutputFormatConfiguration]
+      val __obj = js.Dictionary.empty[js.Any]
+      Serializer.foreach(__v => __obj.update("Serializer", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[OutputFormatConfiguration]
     }
   }
 
@@ -1512,28 +1267,14 @@ package firehose {
         PageSizeBytes: js.UndefOr[ParquetPageSizeBytes] = js.undefined,
         WriterVersion: js.UndefOr[ParquetWriterVersion] = js.undefined
     ): ParquetSerDe = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "BlockSizeBytes" -> BlockSizeBytes.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Compression" -> Compression.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "EnableDictionaryCompression" -> EnableDictionaryCompression.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MaxPaddingBytes" -> MaxPaddingBytes.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "PageSizeBytes" -> PageSizeBytes.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "WriterVersion" -> WriterVersion.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ParquetSerDe]
+      val __obj = js.Dictionary.empty[js.Any]
+      BlockSizeBytes.foreach(__v => __obj.update("BlockSizeBytes", __v.asInstanceOf[js.Any]))
+      Compression.foreach(__v => __obj.update("Compression", __v.asInstanceOf[js.Any]))
+      EnableDictionaryCompression.foreach(__v => __obj.update("EnableDictionaryCompression", __v.asInstanceOf[js.Any]))
+      MaxPaddingBytes.foreach(__v => __obj.update("MaxPaddingBytes", __v.asInstanceOf[js.Any]))
+      PageSizeBytes.foreach(__v => __obj.update("PageSizeBytes", __v.asInstanceOf[js.Any]))
+      WriterVersion.foreach(__v => __obj.update("WriterVersion", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ParquetSerDe]
     }
   }
 
@@ -1558,16 +1299,10 @@ package firehose {
         Enabled: js.UndefOr[BooleanObject] = js.undefined,
         Processors: js.UndefOr[ProcessorList] = js.undefined
     ): ProcessingConfiguration = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Enabled" -> Enabled.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Processors" -> Processors.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ProcessingConfiguration]
+      val __obj = js.Dictionary.empty[js.Any]
+      Enabled.foreach(__v => __obj.update("Enabled", __v.asInstanceOf[js.Any]))
+      Processors.foreach(__v => __obj.update("Processors", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ProcessingConfiguration]
     }
   }
 
@@ -1585,14 +1320,12 @@ package firehose {
         Type: ProcessorType,
         Parameters: js.UndefOr[ProcessorParameterList] = js.undefined
     ): Processor = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Type" -> Type.asInstanceOf[js.Any],
-        "Parameters" -> Parameters.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "Type" -> Type.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Processor]
+      Parameters.foreach(__v => __obj.update("Parameters", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Processor]
     }
   }
 
@@ -1610,12 +1343,12 @@ package firehose {
         ParameterName: ProcessorParameterName,
         ParameterValue: ProcessorParameterValue
     ): ProcessorParameter = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ParameterName"  -> ParameterName.asInstanceOf[js.Any],
         "ParameterValue" -> ParameterValue.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ProcessorParameter]
+      __obj.asInstanceOf[ProcessorParameter]
     }
   }
 
@@ -1646,12 +1379,12 @@ package firehose {
         DeliveryStreamName: DeliveryStreamName,
         Records: PutRecordBatchRequestEntryList
     ): PutRecordBatchInput = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "DeliveryStreamName" -> DeliveryStreamName.asInstanceOf[js.Any],
         "Records"            -> Records.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PutRecordBatchInput]
+      __obj.asInstanceOf[PutRecordBatchInput]
     }
   }
 
@@ -1668,15 +1401,13 @@ package firehose {
         RequestResponses: PutRecordBatchResponseEntryList,
         Encrypted: js.UndefOr[BooleanObject] = js.undefined
     ): PutRecordBatchOutput = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "FailedPutCount"   -> FailedPutCount.asInstanceOf[js.Any],
-        "RequestResponses" -> RequestResponses.asInstanceOf[js.Any],
-        "Encrypted" -> Encrypted.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "RequestResponses" -> RequestResponses.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PutRecordBatchOutput]
+      Encrypted.foreach(__v => __obj.update("Encrypted", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PutRecordBatchOutput]
     }
   }
 
@@ -1696,19 +1427,11 @@ package firehose {
         ErrorMessage: js.UndefOr[ErrorMessage] = js.undefined,
         RecordId: js.UndefOr[PutResponseRecordId] = js.undefined
     ): PutRecordBatchResponseEntry = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ErrorCode" -> ErrorCode.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ErrorMessage" -> ErrorMessage.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "RecordId" -> RecordId.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PutRecordBatchResponseEntry]
+      val __obj = js.Dictionary.empty[js.Any]
+      ErrorCode.foreach(__v => __obj.update("ErrorCode", __v.asInstanceOf[js.Any]))
+      ErrorMessage.foreach(__v => __obj.update("ErrorMessage", __v.asInstanceOf[js.Any]))
+      RecordId.foreach(__v => __obj.update("RecordId", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PutRecordBatchResponseEntry]
     }
   }
 
@@ -1723,12 +1446,12 @@ package firehose {
         DeliveryStreamName: DeliveryStreamName,
         Record: Record
     ): PutRecordInput = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "DeliveryStreamName" -> DeliveryStreamName.asInstanceOf[js.Any],
         "Record"             -> Record.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PutRecordInput]
+      __obj.asInstanceOf[PutRecordInput]
     }
   }
 
@@ -1743,14 +1466,12 @@ package firehose {
         RecordId: PutResponseRecordId,
         Encrypted: js.UndefOr[BooleanObject] = js.undefined
     ): PutRecordOutput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "RecordId" -> RecordId.asInstanceOf[js.Any],
-        "Encrypted" -> Encrypted.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "RecordId" -> RecordId.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PutRecordOutput]
+      Encrypted.foreach(__v => __obj.update("Encrypted", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PutRecordOutput]
     }
   }
 
@@ -1766,11 +1487,11 @@ package firehose {
     def apply(
         Data: Data
     ): Record = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "Data" -> Data.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Record]
+      __obj.asInstanceOf[Record]
     }
   }
 
@@ -1806,31 +1527,21 @@ package firehose {
         S3BackupConfiguration: js.UndefOr[S3DestinationConfiguration] = js.undefined,
         S3BackupMode: js.UndefOr[RedshiftS3BackupMode] = js.undefined
     ): RedshiftDestinationConfiguration = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ClusterJDBCURL"  -> ClusterJDBCURL.asInstanceOf[js.Any],
         "CopyCommand"     -> CopyCommand.asInstanceOf[js.Any],
         "Password"        -> Password.asInstanceOf[js.Any],
         "RoleARN"         -> RoleARN.asInstanceOf[js.Any],
         "S3Configuration" -> S3Configuration.asInstanceOf[js.Any],
-        "Username"        -> Username.asInstanceOf[js.Any],
-        "CloudWatchLoggingOptions" -> CloudWatchLoggingOptions.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ProcessingConfiguration" -> ProcessingConfiguration.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "RetryOptions" -> RetryOptions.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "S3BackupConfiguration" -> S3BackupConfiguration.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "S3BackupMode" -> S3BackupMode.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "Username"        -> Username.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RedshiftDestinationConfiguration]
+      CloudWatchLoggingOptions.foreach(__v => __obj.update("CloudWatchLoggingOptions", __v.asInstanceOf[js.Any]))
+      ProcessingConfiguration.foreach(__v => __obj.update("ProcessingConfiguration", __v.asInstanceOf[js.Any]))
+      RetryOptions.foreach(__v => __obj.update("RetryOptions", __v.asInstanceOf[js.Any]))
+      S3BackupConfiguration.foreach(__v => __obj.update("S3BackupConfiguration", __v.asInstanceOf[js.Any]))
+      S3BackupMode.foreach(__v => __obj.update("S3BackupMode", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[RedshiftDestinationConfiguration]
     }
   }
 
@@ -1864,30 +1575,20 @@ package firehose {
         S3BackupDescription: js.UndefOr[S3DestinationDescription] = js.undefined,
         S3BackupMode: js.UndefOr[RedshiftS3BackupMode] = js.undefined
     ): RedshiftDestinationDescription = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ClusterJDBCURL"           -> ClusterJDBCURL.asInstanceOf[js.Any],
         "CopyCommand"              -> CopyCommand.asInstanceOf[js.Any],
         "RoleARN"                  -> RoleARN.asInstanceOf[js.Any],
         "S3DestinationDescription" -> S3DestinationDescription.asInstanceOf[js.Any],
-        "Username"                 -> Username.asInstanceOf[js.Any],
-        "CloudWatchLoggingOptions" -> CloudWatchLoggingOptions.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ProcessingConfiguration" -> ProcessingConfiguration.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "RetryOptions" -> RetryOptions.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "S3BackupDescription" -> S3BackupDescription.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "S3BackupMode" -> S3BackupMode.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "Username"                 -> Username.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RedshiftDestinationDescription]
+      CloudWatchLoggingOptions.foreach(__v => __obj.update("CloudWatchLoggingOptions", __v.asInstanceOf[js.Any]))
+      ProcessingConfiguration.foreach(__v => __obj.update("ProcessingConfiguration", __v.asInstanceOf[js.Any]))
+      RetryOptions.foreach(__v => __obj.update("RetryOptions", __v.asInstanceOf[js.Any]))
+      S3BackupDescription.foreach(__v => __obj.update("S3BackupDescription", __v.asInstanceOf[js.Any]))
+      S3BackupMode.foreach(__v => __obj.update("S3BackupMode", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[RedshiftDestinationDescription]
     }
   }
 
@@ -1923,43 +1624,19 @@ package firehose {
         S3Update: js.UndefOr[S3DestinationUpdate] = js.undefined,
         Username: js.UndefOr[Username] = js.undefined
     ): RedshiftDestinationUpdate = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "CloudWatchLoggingOptions" -> CloudWatchLoggingOptions.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ClusterJDBCURL" -> ClusterJDBCURL.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "CopyCommand" -> CopyCommand.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Password" -> Password.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ProcessingConfiguration" -> ProcessingConfiguration.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "RetryOptions" -> RetryOptions.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "RoleARN" -> RoleARN.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "S3BackupMode" -> S3BackupMode.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "S3BackupUpdate" -> S3BackupUpdate.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "S3Update" -> S3Update.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Username" -> Username.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RedshiftDestinationUpdate]
+      val __obj = js.Dictionary.empty[js.Any]
+      CloudWatchLoggingOptions.foreach(__v => __obj.update("CloudWatchLoggingOptions", __v.asInstanceOf[js.Any]))
+      ClusterJDBCURL.foreach(__v => __obj.update("ClusterJDBCURL", __v.asInstanceOf[js.Any]))
+      CopyCommand.foreach(__v => __obj.update("CopyCommand", __v.asInstanceOf[js.Any]))
+      Password.foreach(__v => __obj.update("Password", __v.asInstanceOf[js.Any]))
+      ProcessingConfiguration.foreach(__v => __obj.update("ProcessingConfiguration", __v.asInstanceOf[js.Any]))
+      RetryOptions.foreach(__v => __obj.update("RetryOptions", __v.asInstanceOf[js.Any]))
+      RoleARN.foreach(__v => __obj.update("RoleARN", __v.asInstanceOf[js.Any]))
+      S3BackupMode.foreach(__v => __obj.update("S3BackupMode", __v.asInstanceOf[js.Any]))
+      S3BackupUpdate.foreach(__v => __obj.update("S3BackupUpdate", __v.asInstanceOf[js.Any]))
+      S3Update.foreach(__v => __obj.update("S3Update", __v.asInstanceOf[js.Any]))
+      Username.foreach(__v => __obj.update("Username", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[RedshiftDestinationUpdate]
     }
   }
 
@@ -1975,13 +1652,9 @@ package firehose {
     def apply(
         DurationInSeconds: js.UndefOr[RedshiftRetryDurationInSeconds] = js.undefined
     ): RedshiftRetryOptions = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "DurationInSeconds" -> DurationInSeconds.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RedshiftRetryOptions]
+      val __obj = js.Dictionary.empty[js.Any]
+      DurationInSeconds.foreach(__v => __obj.update("DurationInSeconds", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[RedshiftRetryOptions]
     }
   }
 
@@ -2025,30 +1698,18 @@ package firehose {
         ErrorOutputPrefix: js.UndefOr[ErrorOutputPrefix] = js.undefined,
         Prefix: js.UndefOr[Prefix] = js.undefined
     ): S3DestinationConfiguration = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "BucketARN" -> BucketARN.asInstanceOf[js.Any],
-        "RoleARN"   -> RoleARN.asInstanceOf[js.Any],
-        "BufferingHints" -> BufferingHints.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "CloudWatchLoggingOptions" -> CloudWatchLoggingOptions.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "CompressionFormat" -> CompressionFormat.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "EncryptionConfiguration" -> EncryptionConfiguration.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ErrorOutputPrefix" -> ErrorOutputPrefix.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Prefix" -> Prefix.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "RoleARN"   -> RoleARN.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[S3DestinationConfiguration]
+      BufferingHints.foreach(__v => __obj.update("BufferingHints", __v.asInstanceOf[js.Any]))
+      CloudWatchLoggingOptions.foreach(__v => __obj.update("CloudWatchLoggingOptions", __v.asInstanceOf[js.Any]))
+      CompressionFormat.foreach(__v => __obj.update("CompressionFormat", __v.asInstanceOf[js.Any]))
+      EncryptionConfiguration.foreach(__v => __obj.update("EncryptionConfiguration", __v.asInstanceOf[js.Any]))
+      ErrorOutputPrefix.foreach(__v => __obj.update("ErrorOutputPrefix", __v.asInstanceOf[js.Any]))
+      Prefix.foreach(__v => __obj.update("Prefix", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[S3DestinationConfiguration]
     }
   }
 
@@ -2078,24 +1739,18 @@ package firehose {
         ErrorOutputPrefix: js.UndefOr[ErrorOutputPrefix] = js.undefined,
         Prefix: js.UndefOr[Prefix] = js.undefined
     ): S3DestinationDescription = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "BucketARN"               -> BucketARN.asInstanceOf[js.Any],
         "BufferingHints"          -> BufferingHints.asInstanceOf[js.Any],
         "CompressionFormat"       -> CompressionFormat.asInstanceOf[js.Any],
         "EncryptionConfiguration" -> EncryptionConfiguration.asInstanceOf[js.Any],
-        "RoleARN"                 -> RoleARN.asInstanceOf[js.Any],
-        "CloudWatchLoggingOptions" -> CloudWatchLoggingOptions.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ErrorOutputPrefix" -> ErrorOutputPrefix.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Prefix" -> Prefix.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "RoleARN"                 -> RoleARN.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[S3DestinationDescription]
+      CloudWatchLoggingOptions.foreach(__v => __obj.update("CloudWatchLoggingOptions", __v.asInstanceOf[js.Any]))
+      ErrorOutputPrefix.foreach(__v => __obj.update("ErrorOutputPrefix", __v.asInstanceOf[js.Any]))
+      Prefix.foreach(__v => __obj.update("Prefix", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[S3DestinationDescription]
     }
   }
 
@@ -2125,34 +1780,16 @@ package firehose {
         Prefix: js.UndefOr[Prefix] = js.undefined,
         RoleARN: js.UndefOr[RoleARN] = js.undefined
     ): S3DestinationUpdate = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "BucketARN" -> BucketARN.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "BufferingHints" -> BufferingHints.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "CloudWatchLoggingOptions" -> CloudWatchLoggingOptions.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "CompressionFormat" -> CompressionFormat.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "EncryptionConfiguration" -> EncryptionConfiguration.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ErrorOutputPrefix" -> ErrorOutputPrefix.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Prefix" -> Prefix.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "RoleARN" -> RoleARN.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[S3DestinationUpdate]
+      val __obj = js.Dictionary.empty[js.Any]
+      BucketARN.foreach(__v => __obj.update("BucketARN", __v.asInstanceOf[js.Any]))
+      BufferingHints.foreach(__v => __obj.update("BufferingHints", __v.asInstanceOf[js.Any]))
+      CloudWatchLoggingOptions.foreach(__v => __obj.update("CloudWatchLoggingOptions", __v.asInstanceOf[js.Any]))
+      CompressionFormat.foreach(__v => __obj.update("CompressionFormat", __v.asInstanceOf[js.Any]))
+      EncryptionConfiguration.foreach(__v => __obj.update("EncryptionConfiguration", __v.asInstanceOf[js.Any]))
+      ErrorOutputPrefix.foreach(__v => __obj.update("ErrorOutputPrefix", __v.asInstanceOf[js.Any]))
+      Prefix.foreach(__v => __obj.update("Prefix", __v.asInstanceOf[js.Any]))
+      RoleARN.foreach(__v => __obj.update("RoleARN", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[S3DestinationUpdate]
     }
   }
 
@@ -2178,28 +1815,14 @@ package firehose {
         TableName: js.UndefOr[NonEmptyStringWithoutWhitespace] = js.undefined,
         VersionId: js.UndefOr[NonEmptyStringWithoutWhitespace] = js.undefined
     ): SchemaConfiguration = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "CatalogId" -> CatalogId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DatabaseName" -> DatabaseName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Region" -> Region.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "RoleARN" -> RoleARN.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "TableName" -> TableName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "VersionId" -> VersionId.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SchemaConfiguration]
+      val __obj = js.Dictionary.empty[js.Any]
+      CatalogId.foreach(__v => __obj.update("CatalogId", __v.asInstanceOf[js.Any]))
+      DatabaseName.foreach(__v => __obj.update("DatabaseName", __v.asInstanceOf[js.Any]))
+      Region.foreach(__v => __obj.update("Region", __v.asInstanceOf[js.Any]))
+      RoleARN.foreach(__v => __obj.update("RoleARN", __v.asInstanceOf[js.Any]))
+      TableName.foreach(__v => __obj.update("TableName", __v.asInstanceOf[js.Any]))
+      VersionId.foreach(__v => __obj.update("VersionId", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[SchemaConfiguration]
     }
   }
 
@@ -2217,16 +1840,10 @@ package firehose {
         OrcSerDe: js.UndefOr[OrcSerDe] = js.undefined,
         ParquetSerDe: js.UndefOr[ParquetSerDe] = js.undefined
     ): Serializer = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "OrcSerDe" -> OrcSerDe.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ParquetSerDe" -> ParquetSerDe.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Serializer]
+      val __obj = js.Dictionary.empty[js.Any]
+      OrcSerDe.foreach(__v => __obj.update("OrcSerDe", __v.asInstanceOf[js.Any]))
+      ParquetSerDe.foreach(__v => __obj.update("ParquetSerDe", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Serializer]
     }
   }
 
@@ -2242,13 +1859,11 @@ package firehose {
     def apply(
         KinesisStreamSourceDescription: js.UndefOr[KinesisStreamSourceDescription] = js.undefined
     ): SourceDescription = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "KinesisStreamSourceDescription" -> KinesisStreamSourceDescription.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SourceDescription]
+      val __obj = js.Dictionary.empty[js.Any]
+      KinesisStreamSourceDescription.foreach(
+        __v => __obj.update("KinesisStreamSourceDescription", __v.asInstanceOf[js.Any])
+      )
+      __obj.asInstanceOf[SourceDescription]
     }
   }
 
@@ -2280,29 +1895,21 @@ package firehose {
         RetryOptions: js.UndefOr[SplunkRetryOptions] = js.undefined,
         S3BackupMode: js.UndefOr[SplunkS3BackupMode] = js.undefined
     ): SplunkDestinationConfiguration = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "HECEndpoint"     -> HECEndpoint.asInstanceOf[js.Any],
         "HECEndpointType" -> HECEndpointType.asInstanceOf[js.Any],
         "HECToken"        -> HECToken.asInstanceOf[js.Any],
-        "S3Configuration" -> S3Configuration.asInstanceOf[js.Any],
-        "CloudWatchLoggingOptions" -> CloudWatchLoggingOptions.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "HECAcknowledgmentTimeoutInSeconds" -> HECAcknowledgmentTimeoutInSeconds.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ProcessingConfiguration" -> ProcessingConfiguration.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "RetryOptions" -> RetryOptions.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "S3BackupMode" -> S3BackupMode.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "S3Configuration" -> S3Configuration.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SplunkDestinationConfiguration]
+      CloudWatchLoggingOptions.foreach(__v => __obj.update("CloudWatchLoggingOptions", __v.asInstanceOf[js.Any]))
+      HECAcknowledgmentTimeoutInSeconds.foreach(
+        __v => __obj.update("HECAcknowledgmentTimeoutInSeconds", __v.asInstanceOf[js.Any])
+      )
+      ProcessingConfiguration.foreach(__v => __obj.update("ProcessingConfiguration", __v.asInstanceOf[js.Any]))
+      RetryOptions.foreach(__v => __obj.update("RetryOptions", __v.asInstanceOf[js.Any]))
+      S3BackupMode.foreach(__v => __obj.update("S3BackupMode", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[SplunkDestinationConfiguration]
     }
   }
 
@@ -2334,37 +1941,19 @@ package firehose {
         S3BackupMode: js.UndefOr[SplunkS3BackupMode] = js.undefined,
         S3DestinationDescription: js.UndefOr[S3DestinationDescription] = js.undefined
     ): SplunkDestinationDescription = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "CloudWatchLoggingOptions" -> CloudWatchLoggingOptions.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "HECAcknowledgmentTimeoutInSeconds" -> HECAcknowledgmentTimeoutInSeconds.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "HECEndpoint" -> HECEndpoint.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "HECEndpointType" -> HECEndpointType.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "HECToken" -> HECToken.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ProcessingConfiguration" -> ProcessingConfiguration.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "RetryOptions" -> RetryOptions.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "S3BackupMode" -> S3BackupMode.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "S3DestinationDescription" -> S3DestinationDescription.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SplunkDestinationDescription]
+      val __obj = js.Dictionary.empty[js.Any]
+      CloudWatchLoggingOptions.foreach(__v => __obj.update("CloudWatchLoggingOptions", __v.asInstanceOf[js.Any]))
+      HECAcknowledgmentTimeoutInSeconds.foreach(
+        __v => __obj.update("HECAcknowledgmentTimeoutInSeconds", __v.asInstanceOf[js.Any])
+      )
+      HECEndpoint.foreach(__v => __obj.update("HECEndpoint", __v.asInstanceOf[js.Any]))
+      HECEndpointType.foreach(__v => __obj.update("HECEndpointType", __v.asInstanceOf[js.Any]))
+      HECToken.foreach(__v => __obj.update("HECToken", __v.asInstanceOf[js.Any]))
+      ProcessingConfiguration.foreach(__v => __obj.update("ProcessingConfiguration", __v.asInstanceOf[js.Any]))
+      RetryOptions.foreach(__v => __obj.update("RetryOptions", __v.asInstanceOf[js.Any]))
+      S3BackupMode.foreach(__v => __obj.update("S3BackupMode", __v.asInstanceOf[js.Any]))
+      S3DestinationDescription.foreach(__v => __obj.update("S3DestinationDescription", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[SplunkDestinationDescription]
     }
   }
 
@@ -2396,37 +1985,19 @@ package firehose {
         S3BackupMode: js.UndefOr[SplunkS3BackupMode] = js.undefined,
         S3Update: js.UndefOr[S3DestinationUpdate] = js.undefined
     ): SplunkDestinationUpdate = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "CloudWatchLoggingOptions" -> CloudWatchLoggingOptions.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "HECAcknowledgmentTimeoutInSeconds" -> HECAcknowledgmentTimeoutInSeconds.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "HECEndpoint" -> HECEndpoint.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "HECEndpointType" -> HECEndpointType.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "HECToken" -> HECToken.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ProcessingConfiguration" -> ProcessingConfiguration.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "RetryOptions" -> RetryOptions.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "S3BackupMode" -> S3BackupMode.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "S3Update" -> S3Update.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SplunkDestinationUpdate]
+      val __obj = js.Dictionary.empty[js.Any]
+      CloudWatchLoggingOptions.foreach(__v => __obj.update("CloudWatchLoggingOptions", __v.asInstanceOf[js.Any]))
+      HECAcknowledgmentTimeoutInSeconds.foreach(
+        __v => __obj.update("HECAcknowledgmentTimeoutInSeconds", __v.asInstanceOf[js.Any])
+      )
+      HECEndpoint.foreach(__v => __obj.update("HECEndpoint", __v.asInstanceOf[js.Any]))
+      HECEndpointType.foreach(__v => __obj.update("HECEndpointType", __v.asInstanceOf[js.Any]))
+      HECToken.foreach(__v => __obj.update("HECToken", __v.asInstanceOf[js.Any]))
+      ProcessingConfiguration.foreach(__v => __obj.update("ProcessingConfiguration", __v.asInstanceOf[js.Any]))
+      RetryOptions.foreach(__v => __obj.update("RetryOptions", __v.asInstanceOf[js.Any]))
+      S3BackupMode.foreach(__v => __obj.update("S3BackupMode", __v.asInstanceOf[js.Any]))
+      S3Update.foreach(__v => __obj.update("S3Update", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[SplunkDestinationUpdate]
     }
   }
 
@@ -2442,13 +2013,9 @@ package firehose {
     def apply(
         DurationInSeconds: js.UndefOr[SplunkRetryDurationInSeconds] = js.undefined
     ): SplunkRetryOptions = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "DurationInSeconds" -> DurationInSeconds.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SplunkRetryOptions]
+      val __obj = js.Dictionary.empty[js.Any]
+      DurationInSeconds.foreach(__v => __obj.update("DurationInSeconds", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[SplunkRetryOptions]
     }
   }
 
@@ -2468,11 +2035,11 @@ package firehose {
     def apply(
         DeliveryStreamName: DeliveryStreamName
     ): StartDeliveryStreamEncryptionInput = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "DeliveryStreamName" -> DeliveryStreamName.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StartDeliveryStreamEncryptionInput]
+      __obj.asInstanceOf[StartDeliveryStreamEncryptionInput]
     }
   }
 
@@ -2482,10 +2049,9 @@ package firehose {
   object StartDeliveryStreamEncryptionOutput {
     def apply(
         ): StartDeliveryStreamEncryptionOutput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary.empty[js.Any]
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StartDeliveryStreamEncryptionOutput]
+      __obj.asInstanceOf[StartDeliveryStreamEncryptionOutput]
     }
   }
 
@@ -2498,11 +2064,11 @@ package firehose {
     def apply(
         DeliveryStreamName: DeliveryStreamName
     ): StopDeliveryStreamEncryptionInput = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "DeliveryStreamName" -> DeliveryStreamName.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StopDeliveryStreamEncryptionInput]
+      __obj.asInstanceOf[StopDeliveryStreamEncryptionInput]
     }
   }
 
@@ -2512,10 +2078,9 @@ package firehose {
   object StopDeliveryStreamEncryptionOutput {
     def apply(
         ): StopDeliveryStreamEncryptionOutput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary.empty[js.Any]
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StopDeliveryStreamEncryptionOutput]
+      __obj.asInstanceOf[StopDeliveryStreamEncryptionOutput]
     }
   }
 
@@ -2533,14 +2098,12 @@ package firehose {
         Key: TagKey,
         Value: js.UndefOr[TagValue] = js.undefined
     ): Tag = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Key" -> Key.asInstanceOf[js.Any],
-        "Value" -> Value.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "Key" -> Key.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Tag]
+      Value.foreach(__v => __obj.update("Value", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Tag]
     }
   }
 
@@ -2555,12 +2118,12 @@ package firehose {
         DeliveryStreamName: DeliveryStreamName,
         Tags: TagDeliveryStreamInputTagList
     ): TagDeliveryStreamInput = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "DeliveryStreamName" -> DeliveryStreamName.asInstanceOf[js.Any],
         "Tags"               -> Tags.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[TagDeliveryStreamInput]
+      __obj.asInstanceOf[TagDeliveryStreamInput]
     }
   }
 
@@ -2570,10 +2133,9 @@ package firehose {
   object TagDeliveryStreamOutput {
     def apply(
         ): TagDeliveryStreamOutput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary.empty[js.Any]
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[TagDeliveryStreamOutput]
+      __obj.asInstanceOf[TagDeliveryStreamOutput]
     }
   }
 
@@ -2588,12 +2150,12 @@ package firehose {
         DeliveryStreamName: DeliveryStreamName,
         TagKeys: TagKeyList
     ): UntagDeliveryStreamInput = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "DeliveryStreamName" -> DeliveryStreamName.asInstanceOf[js.Any],
         "TagKeys"            -> TagKeys.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UntagDeliveryStreamInput]
+      __obj.asInstanceOf[UntagDeliveryStreamInput]
     }
   }
 
@@ -2603,10 +2165,9 @@ package firehose {
   object UntagDeliveryStreamOutput {
     def apply(
         ): UntagDeliveryStreamOutput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary.empty[js.Any]
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UntagDeliveryStreamOutput]
+      __obj.asInstanceOf[UntagDeliveryStreamOutput]
     }
   }
 
@@ -2633,28 +2194,20 @@ package firehose {
         S3DestinationUpdate: js.UndefOr[S3DestinationUpdate] = js.undefined,
         SplunkDestinationUpdate: js.UndefOr[SplunkDestinationUpdate] = js.undefined
     ): UpdateDestinationInput = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "CurrentDeliveryStreamVersionId" -> CurrentDeliveryStreamVersionId.asInstanceOf[js.Any],
         "DeliveryStreamName"             -> DeliveryStreamName.asInstanceOf[js.Any],
-        "DestinationId"                  -> DestinationId.asInstanceOf[js.Any],
-        "ElasticsearchDestinationUpdate" -> ElasticsearchDestinationUpdate.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ExtendedS3DestinationUpdate" -> ExtendedS3DestinationUpdate.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "RedshiftDestinationUpdate" -> RedshiftDestinationUpdate.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "S3DestinationUpdate" -> S3DestinationUpdate.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SplunkDestinationUpdate" -> SplunkDestinationUpdate.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "DestinationId"                  -> DestinationId.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateDestinationInput]
+      ElasticsearchDestinationUpdate.foreach(
+        __v => __obj.update("ElasticsearchDestinationUpdate", __v.asInstanceOf[js.Any])
+      )
+      ExtendedS3DestinationUpdate.foreach(__v => __obj.update("ExtendedS3DestinationUpdate", __v.asInstanceOf[js.Any]))
+      RedshiftDestinationUpdate.foreach(__v => __obj.update("RedshiftDestinationUpdate", __v.asInstanceOf[js.Any]))
+      S3DestinationUpdate.foreach(__v => __obj.update("S3DestinationUpdate", __v.asInstanceOf[js.Any]))
+      SplunkDestinationUpdate.foreach(__v => __obj.update("SplunkDestinationUpdate", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateDestinationInput]
     }
   }
 
@@ -2664,10 +2217,9 @@ package firehose {
   object UpdateDestinationOutput {
     def apply(
         ): UpdateDestinationOutput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary.empty[js.Any]
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateDestinationOutput]
+      __obj.asInstanceOf[UpdateDestinationOutput]
     }
   }
 }

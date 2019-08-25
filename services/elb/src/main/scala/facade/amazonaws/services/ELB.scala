@@ -255,20 +255,14 @@ package elb {
         S3BucketName: js.UndefOr[S3BucketName] = js.undefined,
         S3BucketPrefix: js.UndefOr[AccessLogPrefix] = js.undefined
     ): AccessLog = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Enabled" -> Enabled.asInstanceOf[js.Any],
-        "EmitInterval" -> EmitInterval.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "S3BucketName" -> S3BucketName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "S3BucketPrefix" -> S3BucketPrefix.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "Enabled" -> Enabled.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AccessLog]
+      EmitInterval.foreach(__v => __obj.update("EmitInterval", __v.asInstanceOf[js.Any]))
+      S3BucketName.foreach(__v => __obj.update("S3BucketName", __v.asInstanceOf[js.Any]))
+      S3BucketPrefix.foreach(__v => __obj.update("S3BucketPrefix", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AccessLog]
     }
   }
 
@@ -286,12 +280,12 @@ package elb {
         AvailabilityZones: AvailabilityZones,
         LoadBalancerName: AccessPointName
     ): AddAvailabilityZonesInput = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "AvailabilityZones" -> AvailabilityZones.asInstanceOf[js.Any],
         "LoadBalancerName"  -> LoadBalancerName.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AddAvailabilityZonesInput]
+      __obj.asInstanceOf[AddAvailabilityZonesInput]
     }
   }
 
@@ -307,13 +301,9 @@ package elb {
     def apply(
         AvailabilityZones: js.UndefOr[AvailabilityZones] = js.undefined
     ): AddAvailabilityZonesOutput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "AvailabilityZones" -> AvailabilityZones.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AddAvailabilityZonesOutput]
+      val __obj = js.Dictionary.empty[js.Any]
+      AvailabilityZones.foreach(__v => __obj.update("AvailabilityZones", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AddAvailabilityZonesOutput]
     }
   }
 
@@ -331,12 +321,12 @@ package elb {
         LoadBalancerNames: LoadBalancerNames,
         Tags: TagList
     ): AddTagsInput = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "LoadBalancerNames" -> LoadBalancerNames.asInstanceOf[js.Any],
         "Tags"              -> Tags.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AddTagsInput]
+      __obj.asInstanceOf[AddTagsInput]
     }
   }
 
@@ -349,10 +339,9 @@ package elb {
   object AddTagsOutput {
     def apply(
         ): AddTagsOutput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary.empty[js.Any]
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AddTagsOutput]
+      __obj.asInstanceOf[AddTagsOutput]
     }
   }
 
@@ -370,16 +359,10 @@ package elb {
         Key: js.UndefOr[AdditionalAttributeKey] = js.undefined,
         Value: js.UndefOr[AdditionalAttributeValue] = js.undefined
     ): AdditionalAttribute = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Key" -> Key.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Value" -> Value.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AdditionalAttribute]
+      val __obj = js.Dictionary.empty[js.Any]
+      Key.foreach(__v => __obj.update("Key", __v.asInstanceOf[js.Any]))
+      Value.foreach(__v => __obj.update("Value", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AdditionalAttribute]
     }
   }
 
@@ -397,16 +380,10 @@ package elb {
         CookieName: js.UndefOr[CookieName] = js.undefined,
         PolicyName: js.UndefOr[PolicyName] = js.undefined
     ): AppCookieStickinessPolicy = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "CookieName" -> CookieName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "PolicyName" -> PolicyName.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AppCookieStickinessPolicy]
+      val __obj = js.Dictionary.empty[js.Any]
+      CookieName.foreach(__v => __obj.update("CookieName", __v.asInstanceOf[js.Any]))
+      PolicyName.foreach(__v => __obj.update("PolicyName", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AppCookieStickinessPolicy]
     }
   }
 
@@ -424,12 +401,12 @@ package elb {
         LoadBalancerName: AccessPointName,
         SecurityGroups: SecurityGroups
     ): ApplySecurityGroupsToLoadBalancerInput = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "LoadBalancerName" -> LoadBalancerName.asInstanceOf[js.Any],
         "SecurityGroups"   -> SecurityGroups.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ApplySecurityGroupsToLoadBalancerInput]
+      __obj.asInstanceOf[ApplySecurityGroupsToLoadBalancerInput]
     }
   }
 
@@ -445,13 +422,9 @@ package elb {
     def apply(
         SecurityGroups: js.UndefOr[SecurityGroups] = js.undefined
     ): ApplySecurityGroupsToLoadBalancerOutput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "SecurityGroups" -> SecurityGroups.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ApplySecurityGroupsToLoadBalancerOutput]
+      val __obj = js.Dictionary.empty[js.Any]
+      SecurityGroups.foreach(__v => __obj.update("SecurityGroups", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ApplySecurityGroupsToLoadBalancerOutput]
     }
   }
 
@@ -469,12 +442,12 @@ package elb {
         LoadBalancerName: AccessPointName,
         Subnets: Subnets
     ): AttachLoadBalancerToSubnetsInput = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "LoadBalancerName" -> LoadBalancerName.asInstanceOf[js.Any],
         "Subnets"          -> Subnets.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AttachLoadBalancerToSubnetsInput]
+      __obj.asInstanceOf[AttachLoadBalancerToSubnetsInput]
     }
   }
 
@@ -490,13 +463,9 @@ package elb {
     def apply(
         Subnets: js.UndefOr[Subnets] = js.undefined
     ): AttachLoadBalancerToSubnetsOutput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Subnets" -> Subnets.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AttachLoadBalancerToSubnetsOutput]
+      val __obj = js.Dictionary.empty[js.Any]
+      Subnets.foreach(__v => __obj.update("Subnets", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AttachLoadBalancerToSubnetsOutput]
     }
   }
 
@@ -514,16 +483,10 @@ package elb {
         InstancePort: js.UndefOr[InstancePort] = js.undefined,
         PolicyNames: js.UndefOr[PolicyNames] = js.undefined
     ): BackendServerDescription = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "InstancePort" -> InstancePort.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "PolicyNames" -> PolicyNames.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[BackendServerDescription]
+      val __obj = js.Dictionary.empty[js.Any]
+      InstancePort.foreach(__v => __obj.update("InstancePort", __v.asInstanceOf[js.Any]))
+      PolicyNames.foreach(__v => __obj.update("PolicyNames", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[BackendServerDescription]
     }
   }
 
@@ -541,12 +504,12 @@ package elb {
         HealthCheck: HealthCheck,
         LoadBalancerName: AccessPointName
     ): ConfigureHealthCheckInput = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "HealthCheck"      -> HealthCheck.asInstanceOf[js.Any],
         "LoadBalancerName" -> LoadBalancerName.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ConfigureHealthCheckInput]
+      __obj.asInstanceOf[ConfigureHealthCheckInput]
     }
   }
 
@@ -562,13 +525,9 @@ package elb {
     def apply(
         HealthCheck: js.UndefOr[HealthCheck] = js.undefined
     ): ConfigureHealthCheckOutput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "HealthCheck" -> HealthCheck.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ConfigureHealthCheckOutput]
+      val __obj = js.Dictionary.empty[js.Any]
+      HealthCheck.foreach(__v => __obj.update("HealthCheck", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ConfigureHealthCheckOutput]
     }
   }
 
@@ -586,14 +545,12 @@ package elb {
         Enabled: ConnectionDrainingEnabled,
         Timeout: js.UndefOr[ConnectionDrainingTimeout] = js.undefined
     ): ConnectionDraining = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Enabled" -> Enabled.asInstanceOf[js.Any],
-        "Timeout" -> Timeout.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "Enabled" -> Enabled.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ConnectionDraining]
+      Timeout.foreach(__v => __obj.update("Timeout", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ConnectionDraining]
     }
   }
 
@@ -609,11 +566,11 @@ package elb {
     def apply(
         IdleTimeout: IdleTimeout
     ): ConnectionSettings = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "IdleTimeout" -> IdleTimeout.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ConnectionSettings]
+      __obj.asInstanceOf[ConnectionSettings]
     }
   }
 
@@ -641,27 +598,17 @@ package elb {
         Subnets: js.UndefOr[Subnets] = js.undefined,
         Tags: js.UndefOr[TagList] = js.undefined
     ): CreateAccessPointInput = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "Listeners"        -> Listeners.asInstanceOf[js.Any],
-        "LoadBalancerName" -> LoadBalancerName.asInstanceOf[js.Any],
-        "AvailabilityZones" -> AvailabilityZones.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Scheme" -> Scheme.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SecurityGroups" -> SecurityGroups.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Subnets" -> Subnets.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Tags" -> Tags.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "LoadBalancerName" -> LoadBalancerName.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateAccessPointInput]
+      AvailabilityZones.foreach(__v => __obj.update("AvailabilityZones", __v.asInstanceOf[js.Any]))
+      Scheme.foreach(__v => __obj.update("Scheme", __v.asInstanceOf[js.Any]))
+      SecurityGroups.foreach(__v => __obj.update("SecurityGroups", __v.asInstanceOf[js.Any]))
+      Subnets.foreach(__v => __obj.update("Subnets", __v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateAccessPointInput]
     }
   }
 
@@ -677,13 +624,9 @@ package elb {
     def apply(
         DNSName: js.UndefOr[DNSName] = js.undefined
     ): CreateAccessPointOutput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "DNSName" -> DNSName.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateAccessPointOutput]
+      val __obj = js.Dictionary.empty[js.Any]
+      DNSName.foreach(__v => __obj.update("DNSName", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateAccessPointOutput]
     }
   }
 
@@ -703,13 +646,13 @@ package elb {
         LoadBalancerName: AccessPointName,
         PolicyName: PolicyName
     ): CreateAppCookieStickinessPolicyInput = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "CookieName"       -> CookieName.asInstanceOf[js.Any],
         "LoadBalancerName" -> LoadBalancerName.asInstanceOf[js.Any],
         "PolicyName"       -> PolicyName.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateAppCookieStickinessPolicyInput]
+      __obj.asInstanceOf[CreateAppCookieStickinessPolicyInput]
     }
   }
 
@@ -722,10 +665,9 @@ package elb {
   object CreateAppCookieStickinessPolicyOutput {
     def apply(
         ): CreateAppCookieStickinessPolicyOutput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary.empty[js.Any]
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateAppCookieStickinessPolicyOutput]
+      __obj.asInstanceOf[CreateAppCookieStickinessPolicyOutput]
     }
   }
 
@@ -745,15 +687,13 @@ package elb {
         PolicyName: PolicyName,
         CookieExpirationPeriod: js.UndefOr[CookieExpirationPeriod] = js.undefined
     ): CreateLBCookieStickinessPolicyInput = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "LoadBalancerName" -> LoadBalancerName.asInstanceOf[js.Any],
-        "PolicyName"       -> PolicyName.asInstanceOf[js.Any],
-        "CookieExpirationPeriod" -> CookieExpirationPeriod.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "PolicyName"       -> PolicyName.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateLBCookieStickinessPolicyInput]
+      CookieExpirationPeriod.foreach(__v => __obj.update("CookieExpirationPeriod", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateLBCookieStickinessPolicyInput]
     }
   }
 
@@ -766,10 +706,9 @@ package elb {
   object CreateLBCookieStickinessPolicyOutput {
     def apply(
         ): CreateLBCookieStickinessPolicyOutput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary.empty[js.Any]
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateLBCookieStickinessPolicyOutput]
+      __obj.asInstanceOf[CreateLBCookieStickinessPolicyOutput]
     }
   }
 
@@ -787,12 +726,12 @@ package elb {
         Listeners: Listeners,
         LoadBalancerName: AccessPointName
     ): CreateLoadBalancerListenerInput = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "Listeners"        -> Listeners.asInstanceOf[js.Any],
         "LoadBalancerName" -> LoadBalancerName.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateLoadBalancerListenerInput]
+      __obj.asInstanceOf[CreateLoadBalancerListenerInput]
     }
   }
 
@@ -805,10 +744,9 @@ package elb {
   object CreateLoadBalancerListenerOutput {
     def apply(
         ): CreateLoadBalancerListenerOutput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary.empty[js.Any]
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateLoadBalancerListenerOutput]
+      __obj.asInstanceOf[CreateLoadBalancerListenerOutput]
     }
   }
 
@@ -830,16 +768,14 @@ package elb {
         PolicyTypeName: PolicyTypeName,
         PolicyAttributes: js.UndefOr[PolicyAttributes] = js.undefined
     ): CreateLoadBalancerPolicyInput = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "LoadBalancerName" -> LoadBalancerName.asInstanceOf[js.Any],
         "PolicyName"       -> PolicyName.asInstanceOf[js.Any],
-        "PolicyTypeName"   -> PolicyTypeName.asInstanceOf[js.Any],
-        "PolicyAttributes" -> PolicyAttributes.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "PolicyTypeName"   -> PolicyTypeName.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateLoadBalancerPolicyInput]
+      PolicyAttributes.foreach(__v => __obj.update("PolicyAttributes", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateLoadBalancerPolicyInput]
     }
   }
 
@@ -852,10 +788,9 @@ package elb {
   object CreateLoadBalancerPolicyOutput {
     def apply(
         ): CreateLoadBalancerPolicyOutput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary.empty[js.Any]
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateLoadBalancerPolicyOutput]
+      __obj.asInstanceOf[CreateLoadBalancerPolicyOutput]
     }
   }
 
@@ -871,11 +806,11 @@ package elb {
     def apply(
         Enabled: CrossZoneLoadBalancingEnabled
     ): CrossZoneLoadBalancing = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "Enabled" -> Enabled.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CrossZoneLoadBalancing]
+      __obj.asInstanceOf[CrossZoneLoadBalancing]
     }
   }
 
@@ -891,11 +826,11 @@ package elb {
     def apply(
         LoadBalancerName: AccessPointName
     ): DeleteAccessPointInput = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "LoadBalancerName" -> LoadBalancerName.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteAccessPointInput]
+      __obj.asInstanceOf[DeleteAccessPointInput]
     }
   }
 
@@ -908,10 +843,9 @@ package elb {
   object DeleteAccessPointOutput {
     def apply(
         ): DeleteAccessPointOutput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary.empty[js.Any]
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteAccessPointOutput]
+      __obj.asInstanceOf[DeleteAccessPointOutput]
     }
   }
 
@@ -929,12 +863,12 @@ package elb {
         LoadBalancerName: AccessPointName,
         LoadBalancerPorts: Ports
     ): DeleteLoadBalancerListenerInput = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "LoadBalancerName"  -> LoadBalancerName.asInstanceOf[js.Any],
         "LoadBalancerPorts" -> LoadBalancerPorts.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteLoadBalancerListenerInput]
+      __obj.asInstanceOf[DeleteLoadBalancerListenerInput]
     }
   }
 
@@ -947,10 +881,9 @@ package elb {
   object DeleteLoadBalancerListenerOutput {
     def apply(
         ): DeleteLoadBalancerListenerOutput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary.empty[js.Any]
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteLoadBalancerListenerOutput]
+      __obj.asInstanceOf[DeleteLoadBalancerListenerOutput]
     }
   }
 
@@ -968,12 +901,12 @@ package elb {
         LoadBalancerName: AccessPointName,
         PolicyName: PolicyName
     ): DeleteLoadBalancerPolicyInput = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "LoadBalancerName" -> LoadBalancerName.asInstanceOf[js.Any],
         "PolicyName"       -> PolicyName.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteLoadBalancerPolicyInput]
+      __obj.asInstanceOf[DeleteLoadBalancerPolicyInput]
     }
   }
 
@@ -986,10 +919,9 @@ package elb {
   object DeleteLoadBalancerPolicyOutput {
     def apply(
         ): DeleteLoadBalancerPolicyOutput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary.empty[js.Any]
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteLoadBalancerPolicyOutput]
+      __obj.asInstanceOf[DeleteLoadBalancerPolicyOutput]
     }
   }
 
@@ -1007,12 +939,12 @@ package elb {
         Instances: Instances,
         LoadBalancerName: AccessPointName
     ): DeregisterEndPointsInput = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "Instances"        -> Instances.asInstanceOf[js.Any],
         "LoadBalancerName" -> LoadBalancerName.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeregisterEndPointsInput]
+      __obj.asInstanceOf[DeregisterEndPointsInput]
     }
   }
 
@@ -1028,13 +960,9 @@ package elb {
     def apply(
         Instances: js.UndefOr[Instances] = js.undefined
     ): DeregisterEndPointsOutput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Instances" -> Instances.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeregisterEndPointsOutput]
+      val __obj = js.Dictionary.empty[js.Any]
+      Instances.foreach(__v => __obj.update("Instances", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DeregisterEndPointsOutput]
     }
   }
 
@@ -1054,19 +982,11 @@ package elb {
         Marker: js.UndefOr[Marker] = js.undefined,
         PageSize: js.UndefOr[PageSize] = js.undefined
     ): DescribeAccessPointsInput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "LoadBalancerNames" -> LoadBalancerNames.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Marker" -> Marker.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "PageSize" -> PageSize.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeAccessPointsInput]
+      val __obj = js.Dictionary.empty[js.Any]
+      LoadBalancerNames.foreach(__v => __obj.update("LoadBalancerNames", __v.asInstanceOf[js.Any]))
+      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
+      PageSize.foreach(__v => __obj.update("PageSize", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeAccessPointsInput]
     }
   }
 
@@ -1084,16 +1004,10 @@ package elb {
         LoadBalancerDescriptions: js.UndefOr[LoadBalancerDescriptions] = js.undefined,
         NextMarker: js.UndefOr[Marker] = js.undefined
     ): DescribeAccessPointsOutput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "LoadBalancerDescriptions" -> LoadBalancerDescriptions.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NextMarker" -> NextMarker.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeAccessPointsOutput]
+      val __obj = js.Dictionary.empty[js.Any]
+      LoadBalancerDescriptions.foreach(__v => __obj.update("LoadBalancerDescriptions", __v.asInstanceOf[js.Any]))
+      NextMarker.foreach(__v => __obj.update("NextMarker", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeAccessPointsOutput]
     }
   }
 
@@ -1108,16 +1022,10 @@ package elb {
         Marker: js.UndefOr[Marker] = js.undefined,
         PageSize: js.UndefOr[PageSize] = js.undefined
     ): DescribeAccountLimitsInput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Marker" -> Marker.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "PageSize" -> PageSize.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeAccountLimitsInput]
+      val __obj = js.Dictionary.empty[js.Any]
+      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
+      PageSize.foreach(__v => __obj.update("PageSize", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeAccountLimitsInput]
     }
   }
 
@@ -1132,16 +1040,10 @@ package elb {
         Limits: js.UndefOr[Limits] = js.undefined,
         NextMarker: js.UndefOr[Marker] = js.undefined
     ): DescribeAccountLimitsOutput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Limits" -> Limits.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NextMarker" -> NextMarker.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeAccountLimitsOutput]
+      val __obj = js.Dictionary.empty[js.Any]
+      Limits.foreach(__v => __obj.update("Limits", __v.asInstanceOf[js.Any]))
+      NextMarker.foreach(__v => __obj.update("NextMarker", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeAccountLimitsOutput]
     }
   }
 
@@ -1159,14 +1061,12 @@ package elb {
         LoadBalancerName: AccessPointName,
         Instances: js.UndefOr[Instances] = js.undefined
     ): DescribeEndPointStateInput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "LoadBalancerName" -> LoadBalancerName.asInstanceOf[js.Any],
-        "Instances" -> Instances.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "LoadBalancerName" -> LoadBalancerName.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeEndPointStateInput]
+      Instances.foreach(__v => __obj.update("Instances", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeEndPointStateInput]
     }
   }
 
@@ -1182,13 +1082,9 @@ package elb {
     def apply(
         InstanceStates: js.UndefOr[InstanceStates] = js.undefined
     ): DescribeEndPointStateOutput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "InstanceStates" -> InstanceStates.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeEndPointStateOutput]
+      val __obj = js.Dictionary.empty[js.Any]
+      InstanceStates.foreach(__v => __obj.update("InstanceStates", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeEndPointStateOutput]
     }
   }
 
@@ -1204,11 +1100,11 @@ package elb {
     def apply(
         LoadBalancerName: AccessPointName
     ): DescribeLoadBalancerAttributesInput = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "LoadBalancerName" -> LoadBalancerName.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeLoadBalancerAttributesInput]
+      __obj.asInstanceOf[DescribeLoadBalancerAttributesInput]
     }
   }
 
@@ -1224,13 +1120,9 @@ package elb {
     def apply(
         LoadBalancerAttributes: js.UndefOr[LoadBalancerAttributes] = js.undefined
     ): DescribeLoadBalancerAttributesOutput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "LoadBalancerAttributes" -> LoadBalancerAttributes.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeLoadBalancerAttributesOutput]
+      val __obj = js.Dictionary.empty[js.Any]
+      LoadBalancerAttributes.foreach(__v => __obj.update("LoadBalancerAttributes", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeLoadBalancerAttributesOutput]
     }
   }
 
@@ -1248,16 +1140,10 @@ package elb {
         LoadBalancerName: js.UndefOr[AccessPointName] = js.undefined,
         PolicyNames: js.UndefOr[PolicyNames] = js.undefined
     ): DescribeLoadBalancerPoliciesInput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "LoadBalancerName" -> LoadBalancerName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "PolicyNames" -> PolicyNames.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeLoadBalancerPoliciesInput]
+      val __obj = js.Dictionary.empty[js.Any]
+      LoadBalancerName.foreach(__v => __obj.update("LoadBalancerName", __v.asInstanceOf[js.Any]))
+      PolicyNames.foreach(__v => __obj.update("PolicyNames", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeLoadBalancerPoliciesInput]
     }
   }
 
@@ -1273,13 +1159,9 @@ package elb {
     def apply(
         PolicyDescriptions: js.UndefOr[PolicyDescriptions] = js.undefined
     ): DescribeLoadBalancerPoliciesOutput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "PolicyDescriptions" -> PolicyDescriptions.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeLoadBalancerPoliciesOutput]
+      val __obj = js.Dictionary.empty[js.Any]
+      PolicyDescriptions.foreach(__v => __obj.update("PolicyDescriptions", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeLoadBalancerPoliciesOutput]
     }
   }
 
@@ -1295,13 +1177,9 @@ package elb {
     def apply(
         PolicyTypeNames: js.UndefOr[PolicyTypeNames] = js.undefined
     ): DescribeLoadBalancerPolicyTypesInput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "PolicyTypeNames" -> PolicyTypeNames.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeLoadBalancerPolicyTypesInput]
+      val __obj = js.Dictionary.empty[js.Any]
+      PolicyTypeNames.foreach(__v => __obj.update("PolicyTypeNames", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeLoadBalancerPolicyTypesInput]
     }
   }
 
@@ -1317,13 +1195,9 @@ package elb {
     def apply(
         PolicyTypeDescriptions: js.UndefOr[PolicyTypeDescriptions] = js.undefined
     ): DescribeLoadBalancerPolicyTypesOutput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "PolicyTypeDescriptions" -> PolicyTypeDescriptions.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeLoadBalancerPolicyTypesOutput]
+      val __obj = js.Dictionary.empty[js.Any]
+      PolicyTypeDescriptions.foreach(__v => __obj.update("PolicyTypeDescriptions", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeLoadBalancerPolicyTypesOutput]
     }
   }
 
@@ -1339,11 +1213,11 @@ package elb {
     def apply(
         LoadBalancerNames: LoadBalancerNamesMax20
     ): DescribeTagsInput = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "LoadBalancerNames" -> LoadBalancerNames.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeTagsInput]
+      __obj.asInstanceOf[DescribeTagsInput]
     }
   }
 
@@ -1359,13 +1233,9 @@ package elb {
     def apply(
         TagDescriptions: js.UndefOr[TagDescriptions] = js.undefined
     ): DescribeTagsOutput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "TagDescriptions" -> TagDescriptions.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeTagsOutput]
+      val __obj = js.Dictionary.empty[js.Any]
+      TagDescriptions.foreach(__v => __obj.update("TagDescriptions", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeTagsOutput]
     }
   }
 
@@ -1383,12 +1253,12 @@ package elb {
         LoadBalancerName: AccessPointName,
         Subnets: Subnets
     ): DetachLoadBalancerFromSubnetsInput = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "LoadBalancerName" -> LoadBalancerName.asInstanceOf[js.Any],
         "Subnets"          -> Subnets.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DetachLoadBalancerFromSubnetsInput]
+      __obj.asInstanceOf[DetachLoadBalancerFromSubnetsInput]
     }
   }
 
@@ -1404,13 +1274,9 @@ package elb {
     def apply(
         Subnets: js.UndefOr[Subnets] = js.undefined
     ): DetachLoadBalancerFromSubnetsOutput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Subnets" -> Subnets.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DetachLoadBalancerFromSubnetsOutput]
+      val __obj = js.Dictionary.empty[js.Any]
+      Subnets.foreach(__v => __obj.update("Subnets", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DetachLoadBalancerFromSubnetsOutput]
     }
   }
 
@@ -1434,15 +1300,15 @@ package elb {
         Timeout: HealthCheckTimeout,
         UnhealthyThreshold: UnhealthyThreshold
     ): HealthCheck = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "HealthyThreshold"   -> HealthyThreshold.asInstanceOf[js.Any],
         "Interval"           -> Interval.asInstanceOf[js.Any],
         "Target"             -> Target.asInstanceOf[js.Any],
         "Timeout"            -> Timeout.asInstanceOf[js.Any],
         "UnhealthyThreshold" -> UnhealthyThreshold.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[HealthCheck]
+      __obj.asInstanceOf[HealthCheck]
     }
   }
 
@@ -1458,13 +1324,9 @@ package elb {
     def apply(
         InstanceId: js.UndefOr[InstanceId] = js.undefined
     ): Instance = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "InstanceId" -> InstanceId.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Instance]
+      val __obj = js.Dictionary.empty[js.Any]
+      InstanceId.foreach(__v => __obj.update("InstanceId", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Instance]
     }
   }
 
@@ -1486,22 +1348,12 @@ package elb {
         ReasonCode: js.UndefOr[ReasonCode] = js.undefined,
         State: js.UndefOr[State] = js.undefined
     ): InstanceState = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Description" -> Description.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "InstanceId" -> InstanceId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ReasonCode" -> ReasonCode.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "State" -> State.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[InstanceState]
+      val __obj = js.Dictionary.empty[js.Any]
+      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
+      InstanceId.foreach(__v => __obj.update("InstanceId", __v.asInstanceOf[js.Any]))
+      ReasonCode.foreach(__v => __obj.update("ReasonCode", __v.asInstanceOf[js.Any]))
+      State.foreach(__v => __obj.update("State", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[InstanceState]
     }
   }
 
@@ -1519,16 +1371,10 @@ package elb {
         CookieExpirationPeriod: js.UndefOr[CookieExpirationPeriod] = js.undefined,
         PolicyName: js.UndefOr[PolicyName] = js.undefined
     ): LBCookieStickinessPolicy = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "CookieExpirationPeriod" -> CookieExpirationPeriod.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "PolicyName" -> PolicyName.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[LBCookieStickinessPolicy]
+      val __obj = js.Dictionary.empty[js.Any]
+      CookieExpirationPeriod.foreach(__v => __obj.update("CookieExpirationPeriod", __v.asInstanceOf[js.Any]))
+      PolicyName.foreach(__v => __obj.update("PolicyName", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[LBCookieStickinessPolicy]
     }
   }
 
@@ -1546,16 +1392,10 @@ package elb {
         Max: js.UndefOr[Max] = js.undefined,
         Name: js.UndefOr[Name] = js.undefined
     ): Limit = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Max" -> Max.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Name" -> Name.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Limit]
+      val __obj = js.Dictionary.empty[js.Any]
+      Max.foreach(__v => __obj.update("Max", __v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Limit]
     }
   }
 
@@ -1580,19 +1420,15 @@ package elb {
         InstanceProtocol: js.UndefOr[Protocol] = js.undefined,
         SSLCertificateId: js.UndefOr[SSLCertificateId] = js.undefined
     ): Listener = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "InstancePort"     -> InstancePort.asInstanceOf[js.Any],
         "LoadBalancerPort" -> LoadBalancerPort.asInstanceOf[js.Any],
-        "Protocol"         -> Protocol.asInstanceOf[js.Any],
-        "InstanceProtocol" -> InstanceProtocol.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SSLCertificateId" -> SSLCertificateId.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "Protocol"         -> Protocol.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Listener]
+      InstanceProtocol.foreach(__v => __obj.update("InstanceProtocol", __v.asInstanceOf[js.Any]))
+      SSLCertificateId.foreach(__v => __obj.update("SSLCertificateId", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Listener]
     }
   }
 
@@ -1610,16 +1446,10 @@ package elb {
         Listener: js.UndefOr[Listener] = js.undefined,
         PolicyNames: js.UndefOr[PolicyNames] = js.undefined
     ): ListenerDescription = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Listener" -> Listener.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "PolicyNames" -> PolicyNames.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListenerDescription]
+      val __obj = js.Dictionary.empty[js.Any]
+      Listener.foreach(__v => __obj.update("Listener", __v.asInstanceOf[js.Any]))
+      PolicyNames.foreach(__v => __obj.update("PolicyNames", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListenerDescription]
     }
   }
 
@@ -1643,25 +1473,13 @@ package elb {
         ConnectionSettings: js.UndefOr[ConnectionSettings] = js.undefined,
         CrossZoneLoadBalancing: js.UndefOr[CrossZoneLoadBalancing] = js.undefined
     ): LoadBalancerAttributes = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "AccessLog" -> AccessLog.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "AdditionalAttributes" -> AdditionalAttributes.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ConnectionDraining" -> ConnectionDraining.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ConnectionSettings" -> ConnectionSettings.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "CrossZoneLoadBalancing" -> CrossZoneLoadBalancing.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[LoadBalancerAttributes]
+      val __obj = js.Dictionary.empty[js.Any]
+      AccessLog.foreach(__v => __obj.update("AccessLog", __v.asInstanceOf[js.Any]))
+      AdditionalAttributes.foreach(__v => __obj.update("AdditionalAttributes", __v.asInstanceOf[js.Any]))
+      ConnectionDraining.foreach(__v => __obj.update("ConnectionDraining", __v.asInstanceOf[js.Any]))
+      ConnectionSettings.foreach(__v => __obj.update("ConnectionSettings", __v.asInstanceOf[js.Any]))
+      CrossZoneLoadBalancing.foreach(__v => __obj.update("CrossZoneLoadBalancing", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[LoadBalancerAttributes]
     }
   }
 
@@ -1707,58 +1525,24 @@ package elb {
         Subnets: js.UndefOr[Subnets] = js.undefined,
         VPCId: js.UndefOr[VPCId] = js.undefined
     ): LoadBalancerDescription = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "AvailabilityZones" -> AvailabilityZones.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "BackendServerDescriptions" -> BackendServerDescriptions.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "CanonicalHostedZoneName" -> CanonicalHostedZoneName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "CanonicalHostedZoneNameID" -> CanonicalHostedZoneNameID.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "CreatedTime" -> CreatedTime.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DNSName" -> DNSName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "HealthCheck" -> HealthCheck.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Instances" -> Instances.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ListenerDescriptions" -> ListenerDescriptions.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "LoadBalancerName" -> LoadBalancerName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Policies" -> Policies.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Scheme" -> Scheme.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SecurityGroups" -> SecurityGroups.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SourceSecurityGroup" -> SourceSecurityGroup.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Subnets" -> Subnets.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "VPCId" -> VPCId.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[LoadBalancerDescription]
+      val __obj = js.Dictionary.empty[js.Any]
+      AvailabilityZones.foreach(__v => __obj.update("AvailabilityZones", __v.asInstanceOf[js.Any]))
+      BackendServerDescriptions.foreach(__v => __obj.update("BackendServerDescriptions", __v.asInstanceOf[js.Any]))
+      CanonicalHostedZoneName.foreach(__v => __obj.update("CanonicalHostedZoneName", __v.asInstanceOf[js.Any]))
+      CanonicalHostedZoneNameID.foreach(__v => __obj.update("CanonicalHostedZoneNameID", __v.asInstanceOf[js.Any]))
+      CreatedTime.foreach(__v => __obj.update("CreatedTime", __v.asInstanceOf[js.Any]))
+      DNSName.foreach(__v => __obj.update("DNSName", __v.asInstanceOf[js.Any]))
+      HealthCheck.foreach(__v => __obj.update("HealthCheck", __v.asInstanceOf[js.Any]))
+      Instances.foreach(__v => __obj.update("Instances", __v.asInstanceOf[js.Any]))
+      ListenerDescriptions.foreach(__v => __obj.update("ListenerDescriptions", __v.asInstanceOf[js.Any]))
+      LoadBalancerName.foreach(__v => __obj.update("LoadBalancerName", __v.asInstanceOf[js.Any]))
+      Policies.foreach(__v => __obj.update("Policies", __v.asInstanceOf[js.Any]))
+      Scheme.foreach(__v => __obj.update("Scheme", __v.asInstanceOf[js.Any]))
+      SecurityGroups.foreach(__v => __obj.update("SecurityGroups", __v.asInstanceOf[js.Any]))
+      SourceSecurityGroup.foreach(__v => __obj.update("SourceSecurityGroup", __v.asInstanceOf[js.Any]))
+      Subnets.foreach(__v => __obj.update("Subnets", __v.asInstanceOf[js.Any]))
+      VPCId.foreach(__v => __obj.update("VPCId", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[LoadBalancerDescription]
     }
   }
 
@@ -1776,12 +1560,12 @@ package elb {
         LoadBalancerAttributes: LoadBalancerAttributes,
         LoadBalancerName: AccessPointName
     ): ModifyLoadBalancerAttributesInput = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "LoadBalancerAttributes" -> LoadBalancerAttributes.asInstanceOf[js.Any],
         "LoadBalancerName"       -> LoadBalancerName.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ModifyLoadBalancerAttributesInput]
+      __obj.asInstanceOf[ModifyLoadBalancerAttributesInput]
     }
   }
 
@@ -1799,16 +1583,10 @@ package elb {
         LoadBalancerAttributes: js.UndefOr[LoadBalancerAttributes] = js.undefined,
         LoadBalancerName: js.UndefOr[AccessPointName] = js.undefined
     ): ModifyLoadBalancerAttributesOutput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "LoadBalancerAttributes" -> LoadBalancerAttributes.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "LoadBalancerName" -> LoadBalancerName.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ModifyLoadBalancerAttributesOutput]
+      val __obj = js.Dictionary.empty[js.Any]
+      LoadBalancerAttributes.foreach(__v => __obj.update("LoadBalancerAttributes", __v.asInstanceOf[js.Any]))
+      LoadBalancerName.foreach(__v => __obj.update("LoadBalancerName", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ModifyLoadBalancerAttributesOutput]
     }
   }
 
@@ -1828,19 +1606,11 @@ package elb {
         LBCookieStickinessPolicies: js.UndefOr[LBCookieStickinessPolicies] = js.undefined,
         OtherPolicies: js.UndefOr[PolicyNames] = js.undefined
     ): Policies = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "AppCookieStickinessPolicies" -> AppCookieStickinessPolicies.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "LBCookieStickinessPolicies" -> LBCookieStickinessPolicies.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "OtherPolicies" -> OtherPolicies.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Policies]
+      val __obj = js.Dictionary.empty[js.Any]
+      AppCookieStickinessPolicies.foreach(__v => __obj.update("AppCookieStickinessPolicies", __v.asInstanceOf[js.Any]))
+      LBCookieStickinessPolicies.foreach(__v => __obj.update("LBCookieStickinessPolicies", __v.asInstanceOf[js.Any]))
+      OtherPolicies.foreach(__v => __obj.update("OtherPolicies", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Policies]
     }
   }
 
@@ -1858,16 +1628,10 @@ package elb {
         AttributeName: js.UndefOr[AttributeName] = js.undefined,
         AttributeValue: js.UndefOr[AttributeValue] = js.undefined
     ): PolicyAttribute = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "AttributeName" -> AttributeName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "AttributeValue" -> AttributeValue.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PolicyAttribute]
+      val __obj = js.Dictionary.empty[js.Any]
+      AttributeName.foreach(__v => __obj.update("AttributeName", __v.asInstanceOf[js.Any]))
+      AttributeValue.foreach(__v => __obj.update("AttributeValue", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PolicyAttribute]
     }
   }
 
@@ -1885,16 +1649,10 @@ package elb {
         AttributeName: js.UndefOr[AttributeName] = js.undefined,
         AttributeValue: js.UndefOr[AttributeValue] = js.undefined
     ): PolicyAttributeDescription = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "AttributeName" -> AttributeName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "AttributeValue" -> AttributeValue.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PolicyAttributeDescription]
+      val __obj = js.Dictionary.empty[js.Any]
+      AttributeName.foreach(__v => __obj.update("AttributeName", __v.asInstanceOf[js.Any]))
+      AttributeValue.foreach(__v => __obj.update("AttributeValue", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PolicyAttributeDescription]
     }
   }
 
@@ -1918,25 +1676,13 @@ package elb {
         DefaultValue: js.UndefOr[DefaultValue] = js.undefined,
         Description: js.UndefOr[Description] = js.undefined
     ): PolicyAttributeTypeDescription = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "AttributeName" -> AttributeName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "AttributeType" -> AttributeType.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Cardinality" -> Cardinality.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DefaultValue" -> DefaultValue.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Description" -> Description.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PolicyAttributeTypeDescription]
+      val __obj = js.Dictionary.empty[js.Any]
+      AttributeName.foreach(__v => __obj.update("AttributeName", __v.asInstanceOf[js.Any]))
+      AttributeType.foreach(__v => __obj.update("AttributeType", __v.asInstanceOf[js.Any]))
+      Cardinality.foreach(__v => __obj.update("Cardinality", __v.asInstanceOf[js.Any]))
+      DefaultValue.foreach(__v => __obj.update("DefaultValue", __v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PolicyAttributeTypeDescription]
     }
   }
 
@@ -1956,19 +1702,11 @@ package elb {
         PolicyName: js.UndefOr[PolicyName] = js.undefined,
         PolicyTypeName: js.UndefOr[PolicyTypeName] = js.undefined
     ): PolicyDescription = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "PolicyAttributeDescriptions" -> PolicyAttributeDescriptions.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "PolicyName" -> PolicyName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "PolicyTypeName" -> PolicyTypeName.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PolicyDescription]
+      val __obj = js.Dictionary.empty[js.Any]
+      PolicyAttributeDescriptions.foreach(__v => __obj.update("PolicyAttributeDescriptions", __v.asInstanceOf[js.Any]))
+      PolicyName.foreach(__v => __obj.update("PolicyName", __v.asInstanceOf[js.Any]))
+      PolicyTypeName.foreach(__v => __obj.update("PolicyTypeName", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PolicyDescription]
     }
   }
 
@@ -1988,19 +1726,13 @@ package elb {
         PolicyAttributeTypeDescriptions: js.UndefOr[PolicyAttributeTypeDescriptions] = js.undefined,
         PolicyTypeName: js.UndefOr[PolicyTypeName] = js.undefined
     ): PolicyTypeDescription = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Description" -> Description.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "PolicyAttributeTypeDescriptions" -> PolicyAttributeTypeDescriptions.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "PolicyTypeName" -> PolicyTypeName.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PolicyTypeDescription]
+      val __obj = js.Dictionary.empty[js.Any]
+      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
+      PolicyAttributeTypeDescriptions.foreach(
+        __v => __obj.update("PolicyAttributeTypeDescriptions", __v.asInstanceOf[js.Any])
+      )
+      PolicyTypeName.foreach(__v => __obj.update("PolicyTypeName", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PolicyTypeDescription]
     }
   }
 
@@ -2018,12 +1750,12 @@ package elb {
         Instances: Instances,
         LoadBalancerName: AccessPointName
     ): RegisterEndPointsInput = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "Instances"        -> Instances.asInstanceOf[js.Any],
         "LoadBalancerName" -> LoadBalancerName.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RegisterEndPointsInput]
+      __obj.asInstanceOf[RegisterEndPointsInput]
     }
   }
 
@@ -2039,13 +1771,9 @@ package elb {
     def apply(
         Instances: js.UndefOr[Instances] = js.undefined
     ): RegisterEndPointsOutput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Instances" -> Instances.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RegisterEndPointsOutput]
+      val __obj = js.Dictionary.empty[js.Any]
+      Instances.foreach(__v => __obj.update("Instances", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[RegisterEndPointsOutput]
     }
   }
 
@@ -2063,12 +1791,12 @@ package elb {
         AvailabilityZones: AvailabilityZones,
         LoadBalancerName: AccessPointName
     ): RemoveAvailabilityZonesInput = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "AvailabilityZones" -> AvailabilityZones.asInstanceOf[js.Any],
         "LoadBalancerName"  -> LoadBalancerName.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RemoveAvailabilityZonesInput]
+      __obj.asInstanceOf[RemoveAvailabilityZonesInput]
     }
   }
 
@@ -2084,13 +1812,9 @@ package elb {
     def apply(
         AvailabilityZones: js.UndefOr[AvailabilityZones] = js.undefined
     ): RemoveAvailabilityZonesOutput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "AvailabilityZones" -> AvailabilityZones.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RemoveAvailabilityZonesOutput]
+      val __obj = js.Dictionary.empty[js.Any]
+      AvailabilityZones.foreach(__v => __obj.update("AvailabilityZones", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[RemoveAvailabilityZonesOutput]
     }
   }
 
@@ -2108,12 +1832,12 @@ package elb {
         LoadBalancerNames: LoadBalancerNames,
         Tags: TagKeyList
     ): RemoveTagsInput = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "LoadBalancerNames" -> LoadBalancerNames.asInstanceOf[js.Any],
         "Tags"              -> Tags.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RemoveTagsInput]
+      __obj.asInstanceOf[RemoveTagsInput]
     }
   }
 
@@ -2126,10 +1850,9 @@ package elb {
   object RemoveTagsOutput {
     def apply(
         ): RemoveTagsOutput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary.empty[js.Any]
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RemoveTagsOutput]
+      __obj.asInstanceOf[RemoveTagsOutput]
     }
   }
 
@@ -2149,15 +1872,13 @@ package elb {
         LoadBalancerPort: AccessPointPort,
         SSLCertificateId: SSLCertificateId
     ): SetLoadBalancerListenerSSLCertificateInput = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "LoadBalancerName" -> LoadBalancerName.asInstanceOf[js.Any],
         "LoadBalancerPort" -> LoadBalancerPort.asInstanceOf[js.Any],
         "SSLCertificateId" -> SSLCertificateId.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal
-        .applyDynamicNamed("apply")(_fields: _*)
-        .asInstanceOf[SetLoadBalancerListenerSSLCertificateInput]
+      __obj.asInstanceOf[SetLoadBalancerListenerSSLCertificateInput]
     }
   }
 
@@ -2170,12 +1891,9 @@ package elb {
   object SetLoadBalancerListenerSSLCertificateOutput {
     def apply(
         ): SetLoadBalancerListenerSSLCertificateOutput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary.empty[js.Any]
 
-      js.Dynamic.literal
-        .applyDynamicNamed("apply")(_fields: _*)
-        .asInstanceOf[SetLoadBalancerListenerSSLCertificateOutput]
+      __obj.asInstanceOf[SetLoadBalancerListenerSSLCertificateOutput]
     }
   }
 
@@ -2195,15 +1913,13 @@ package elb {
         LoadBalancerName: AccessPointName,
         PolicyNames: PolicyNames
     ): SetLoadBalancerPoliciesForBackendServerInput = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "InstancePort"     -> InstancePort.asInstanceOf[js.Any],
         "LoadBalancerName" -> LoadBalancerName.asInstanceOf[js.Any],
         "PolicyNames"      -> PolicyNames.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal
-        .applyDynamicNamed("apply")(_fields: _*)
-        .asInstanceOf[SetLoadBalancerPoliciesForBackendServerInput]
+      __obj.asInstanceOf[SetLoadBalancerPoliciesForBackendServerInput]
     }
   }
 
@@ -2216,12 +1932,9 @@ package elb {
   object SetLoadBalancerPoliciesForBackendServerOutput {
     def apply(
         ): SetLoadBalancerPoliciesForBackendServerOutput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary.empty[js.Any]
 
-      js.Dynamic.literal
-        .applyDynamicNamed("apply")(_fields: _*)
-        .asInstanceOf[SetLoadBalancerPoliciesForBackendServerOutput]
+      __obj.asInstanceOf[SetLoadBalancerPoliciesForBackendServerOutput]
     }
   }
 
@@ -2241,13 +1954,13 @@ package elb {
         LoadBalancerPort: AccessPointPort,
         PolicyNames: PolicyNames
     ): SetLoadBalancerPoliciesOfListenerInput = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "LoadBalancerName" -> LoadBalancerName.asInstanceOf[js.Any],
         "LoadBalancerPort" -> LoadBalancerPort.asInstanceOf[js.Any],
         "PolicyNames"      -> PolicyNames.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SetLoadBalancerPoliciesOfListenerInput]
+      __obj.asInstanceOf[SetLoadBalancerPoliciesOfListenerInput]
     }
   }
 
@@ -2260,10 +1973,9 @@ package elb {
   object SetLoadBalancerPoliciesOfListenerOutput {
     def apply(
         ): SetLoadBalancerPoliciesOfListenerOutput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary.empty[js.Any]
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SetLoadBalancerPoliciesOfListenerOutput]
+      __obj.asInstanceOf[SetLoadBalancerPoliciesOfListenerOutput]
     }
   }
 
@@ -2281,16 +1993,10 @@ package elb {
         GroupName: js.UndefOr[SecurityGroupName] = js.undefined,
         OwnerAlias: js.UndefOr[SecurityGroupOwnerAlias] = js.undefined
     ): SourceSecurityGroup = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "GroupName" -> GroupName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "OwnerAlias" -> OwnerAlias.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SourceSecurityGroup]
+      val __obj = js.Dictionary.empty[js.Any]
+      GroupName.foreach(__v => __obj.update("GroupName", __v.asInstanceOf[js.Any]))
+      OwnerAlias.foreach(__v => __obj.update("OwnerAlias", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[SourceSecurityGroup]
     }
   }
 
@@ -2308,14 +2014,12 @@ package elb {
         Key: TagKey,
         Value: js.UndefOr[TagValue] = js.undefined
     ): Tag = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Key" -> Key.asInstanceOf[js.Any],
-        "Value" -> Value.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "Key" -> Key.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Tag]
+      Value.foreach(__v => __obj.update("Value", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Tag]
     }
   }
 
@@ -2333,16 +2037,10 @@ package elb {
         LoadBalancerName: js.UndefOr[AccessPointName] = js.undefined,
         Tags: js.UndefOr[TagList] = js.undefined
     ): TagDescription = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "LoadBalancerName" -> LoadBalancerName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Tags" -> Tags.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[TagDescription]
+      val __obj = js.Dictionary.empty[js.Any]
+      LoadBalancerName.foreach(__v => __obj.update("LoadBalancerName", __v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[TagDescription]
     }
   }
 
@@ -2358,13 +2056,9 @@ package elb {
     def apply(
         Key: js.UndefOr[TagKey] = js.undefined
     ): TagKeyOnly = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Key" -> Key.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[TagKeyOnly]
+      val __obj = js.Dictionary.empty[js.Any]
+      Key.foreach(__v => __obj.update("Key", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[TagKeyOnly]
     }
   }
 }

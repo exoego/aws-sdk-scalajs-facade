@@ -220,12 +220,12 @@ package es {
         Options: PolicyDocument,
         Status: OptionStatus
     ): AccessPoliciesStatus = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "Options" -> Options.asInstanceOf[js.Any],
         "Status"  -> Status.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AccessPoliciesStatus]
+      __obj.asInstanceOf[AccessPoliciesStatus]
     }
   }
 
@@ -243,12 +243,12 @@ package es {
         ARN: ARN,
         TagList: TagList
     ): AddTagsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ARN"     -> ARN.asInstanceOf[js.Any],
         "TagList" -> TagList.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AddTagsRequest]
+      __obj.asInstanceOf[AddTagsRequest]
     }
   }
 
@@ -266,16 +266,10 @@ package es {
         LimitName: js.UndefOr[LimitName] = js.undefined,
         LimitValues: js.UndefOr[LimitValueList] = js.undefined
     ): AdditionalLimit = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "LimitName" -> LimitName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "LimitValues" -> LimitValues.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AdditionalLimit]
+      val __obj = js.Dictionary.empty[js.Any]
+      LimitName.foreach(__v => __obj.update("LimitName", __v.asInstanceOf[js.Any]))
+      LimitValues.foreach(__v => __obj.update("LimitValues", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AdditionalLimit]
     }
   }
 
@@ -296,12 +290,12 @@ package es {
         Options: AdvancedOptions,
         Status: OptionStatus
     ): AdvancedOptionsStatus = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "Options" -> Options.asInstanceOf[js.Any],
         "Status"  -> Status.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AdvancedOptionsStatus]
+      __obj.asInstanceOf[AdvancedOptionsStatus]
     }
   }
 
@@ -317,13 +311,11 @@ package es {
     def apply(
         DomainName: DomainName
     ): CancelElasticsearchServiceSoftwareUpdateRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "DomainName" -> DomainName.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal
-        .applyDynamicNamed("apply")(_fields: _*)
-        .asInstanceOf[CancelElasticsearchServiceSoftwareUpdateRequest]
+      __obj.asInstanceOf[CancelElasticsearchServiceSoftwareUpdateRequest]
     }
   }
 
@@ -339,15 +331,9 @@ package es {
     def apply(
         ServiceSoftwareOptions: js.UndefOr[ServiceSoftwareOptions] = js.undefined
     ): CancelElasticsearchServiceSoftwareUpdateResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ServiceSoftwareOptions" -> ServiceSoftwareOptions.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal
-        .applyDynamicNamed("apply")(_fields: _*)
-        .asInstanceOf[CancelElasticsearchServiceSoftwareUpdateResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      ServiceSoftwareOptions.foreach(__v => __obj.update("ServiceSoftwareOptions", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CancelElasticsearchServiceSoftwareUpdateResponse]
     }
   }
 
@@ -369,22 +355,12 @@ package es {
         RoleArn: js.UndefOr[RoleArn] = js.undefined,
         UserPoolId: js.UndefOr[UserPoolId] = js.undefined
     ): CognitoOptions = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Enabled" -> Enabled.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "IdentityPoolId" -> IdentityPoolId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "RoleArn" -> RoleArn.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "UserPoolId" -> UserPoolId.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CognitoOptions]
+      val __obj = js.Dictionary.empty[js.Any]
+      Enabled.foreach(__v => __obj.update("Enabled", __v.asInstanceOf[js.Any]))
+      IdentityPoolId.foreach(__v => __obj.update("IdentityPoolId", __v.asInstanceOf[js.Any]))
+      RoleArn.foreach(__v => __obj.update("RoleArn", __v.asInstanceOf[js.Any]))
+      UserPoolId.foreach(__v => __obj.update("UserPoolId", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CognitoOptions]
     }
   }
 
@@ -402,12 +378,12 @@ package es {
         Options: CognitoOptions,
         Status: OptionStatus
     ): CognitoOptionsStatus = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "Options" -> Options.asInstanceOf[js.Any],
         "Status"  -> Status.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CognitoOptionsStatus]
+      __obj.asInstanceOf[CognitoOptionsStatus]
     }
   }
 
@@ -425,16 +401,10 @@ package es {
         SourceVersion: js.UndefOr[ElasticsearchVersionString] = js.undefined,
         TargetVersions: js.UndefOr[ElasticsearchVersionList] = js.undefined
     ): CompatibleVersionsMap = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "SourceVersion" -> SourceVersion.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "TargetVersions" -> TargetVersions.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CompatibleVersionsMap]
+      val __obj = js.Dictionary.empty[js.Any]
+      SourceVersion.foreach(__v => __obj.update("SourceVersion", __v.asInstanceOf[js.Any]))
+      TargetVersions.foreach(__v => __obj.update("TargetVersions", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CompatibleVersionsMap]
     }
   }
 
@@ -469,44 +439,22 @@ package es {
         SnapshotOptions: js.UndefOr[SnapshotOptions] = js.undefined,
         VPCOptions: js.UndefOr[VPCOptions] = js.undefined
     ): CreateElasticsearchDomainRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "DomainName" -> DomainName.asInstanceOf[js.Any],
-        "AccessPolicies" -> AccessPolicies.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "AdvancedOptions" -> AdvancedOptions.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "CognitoOptions" -> CognitoOptions.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "EBSOptions" -> EBSOptions.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ElasticsearchClusterConfig" -> ElasticsearchClusterConfig.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ElasticsearchVersion" -> ElasticsearchVersion.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "EncryptionAtRestOptions" -> EncryptionAtRestOptions.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "LogPublishingOptions" -> LogPublishingOptions.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NodeToNodeEncryptionOptions" -> NodeToNodeEncryptionOptions.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SnapshotOptions" -> SnapshotOptions.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "VPCOptions" -> VPCOptions.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "DomainName" -> DomainName.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateElasticsearchDomainRequest]
+      AccessPolicies.foreach(__v => __obj.update("AccessPolicies", __v.asInstanceOf[js.Any]))
+      AdvancedOptions.foreach(__v => __obj.update("AdvancedOptions", __v.asInstanceOf[js.Any]))
+      CognitoOptions.foreach(__v => __obj.update("CognitoOptions", __v.asInstanceOf[js.Any]))
+      EBSOptions.foreach(__v => __obj.update("EBSOptions", __v.asInstanceOf[js.Any]))
+      ElasticsearchClusterConfig.foreach(__v => __obj.update("ElasticsearchClusterConfig", __v.asInstanceOf[js.Any]))
+      ElasticsearchVersion.foreach(__v => __obj.update("ElasticsearchVersion", __v.asInstanceOf[js.Any]))
+      EncryptionAtRestOptions.foreach(__v => __obj.update("EncryptionAtRestOptions", __v.asInstanceOf[js.Any]))
+      LogPublishingOptions.foreach(__v => __obj.update("LogPublishingOptions", __v.asInstanceOf[js.Any]))
+      NodeToNodeEncryptionOptions.foreach(__v => __obj.update("NodeToNodeEncryptionOptions", __v.asInstanceOf[js.Any]))
+      SnapshotOptions.foreach(__v => __obj.update("SnapshotOptions", __v.asInstanceOf[js.Any]))
+      VPCOptions.foreach(__v => __obj.update("VPCOptions", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateElasticsearchDomainRequest]
     }
   }
 
@@ -522,13 +470,9 @@ package es {
     def apply(
         DomainStatus: js.UndefOr[ElasticsearchDomainStatus] = js.undefined
     ): CreateElasticsearchDomainResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "DomainStatus" -> DomainStatus.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateElasticsearchDomainResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      DomainStatus.foreach(__v => __obj.update("DomainStatus", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateElasticsearchDomainResponse]
     }
   }
 
@@ -544,11 +488,11 @@ package es {
     def apply(
         DomainName: DomainName
     ): DeleteElasticsearchDomainRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "DomainName" -> DomainName.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteElasticsearchDomainRequest]
+      __obj.asInstanceOf[DeleteElasticsearchDomainRequest]
     }
   }
 
@@ -564,13 +508,9 @@ package es {
     def apply(
         DomainStatus: js.UndefOr[ElasticsearchDomainStatus] = js.undefined
     ): DeleteElasticsearchDomainResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "DomainStatus" -> DomainStatus.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteElasticsearchDomainResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      DomainStatus.foreach(__v => __obj.update("DomainStatus", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DeleteElasticsearchDomainResponse]
     }
   }
 
@@ -596,11 +536,11 @@ package es {
     def apply(
         DomainName: DomainName
     ): DescribeElasticsearchDomainConfigRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "DomainName" -> DomainName.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeElasticsearchDomainConfigRequest]
+      __obj.asInstanceOf[DescribeElasticsearchDomainConfigRequest]
     }
   }
 
@@ -616,11 +556,11 @@ package es {
     def apply(
         DomainConfig: ElasticsearchDomainConfig
     ): DescribeElasticsearchDomainConfigResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "DomainConfig" -> DomainConfig.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeElasticsearchDomainConfigResponse]
+      __obj.asInstanceOf[DescribeElasticsearchDomainConfigResponse]
     }
   }
 
@@ -636,11 +576,11 @@ package es {
     def apply(
         DomainName: DomainName
     ): DescribeElasticsearchDomainRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "DomainName" -> DomainName.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeElasticsearchDomainRequest]
+      __obj.asInstanceOf[DescribeElasticsearchDomainRequest]
     }
   }
 
@@ -656,11 +596,11 @@ package es {
     def apply(
         DomainStatus: ElasticsearchDomainStatus
     ): DescribeElasticsearchDomainResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "DomainStatus" -> DomainStatus.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeElasticsearchDomainResponse]
+      __obj.asInstanceOf[DescribeElasticsearchDomainResponse]
     }
   }
 
@@ -676,11 +616,11 @@ package es {
     def apply(
         DomainNames: DomainNameList
     ): DescribeElasticsearchDomainsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "DomainNames" -> DomainNames.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeElasticsearchDomainsRequest]
+      __obj.asInstanceOf[DescribeElasticsearchDomainsRequest]
     }
   }
 
@@ -696,11 +636,11 @@ package es {
     def apply(
         DomainStatusList: ElasticsearchDomainStatusList
     ): DescribeElasticsearchDomainsResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "DomainStatusList" -> DomainStatusList.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeElasticsearchDomainsResponse]
+      __obj.asInstanceOf[DescribeElasticsearchDomainsResponse]
     }
   }
 
@@ -720,17 +660,13 @@ package es {
         InstanceType: ESPartitionInstanceType,
         DomainName: js.UndefOr[DomainName] = js.undefined
     ): DescribeElasticsearchInstanceTypeLimitsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ElasticsearchVersion" -> ElasticsearchVersion.asInstanceOf[js.Any],
-        "InstanceType"         -> InstanceType.asInstanceOf[js.Any],
-        "DomainName" -> DomainName.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "InstanceType"         -> InstanceType.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal
-        .applyDynamicNamed("apply")(_fields: _*)
-        .asInstanceOf[DescribeElasticsearchInstanceTypeLimitsRequest]
+      DomainName.foreach(__v => __obj.update("DomainName", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeElasticsearchInstanceTypeLimitsRequest]
     }
   }
 
@@ -746,15 +682,9 @@ package es {
     def apply(
         LimitsByRole: js.UndefOr[LimitsByRole] = js.undefined
     ): DescribeElasticsearchInstanceTypeLimitsResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "LimitsByRole" -> LimitsByRole.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal
-        .applyDynamicNamed("apply")(_fields: _*)
-        .asInstanceOf[DescribeElasticsearchInstanceTypeLimitsResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      LimitsByRole.foreach(__v => __obj.update("LimitsByRole", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeElasticsearchInstanceTypeLimitsResponse]
     }
   }
 
@@ -774,21 +704,13 @@ package es {
         NextToken: js.UndefOr[NextToken] = js.undefined,
         ReservedElasticsearchInstanceOfferingId: js.UndefOr[GUID] = js.undefined
     ): DescribeReservedElasticsearchInstanceOfferingsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "MaxResults" -> MaxResults.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NextToken" -> NextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ReservedElasticsearchInstanceOfferingId" -> ReservedElasticsearchInstanceOfferingId.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal
-        .applyDynamicNamed("apply")(_fields: _*)
-        .asInstanceOf[DescribeReservedElasticsearchInstanceOfferingsRequest]
+      val __obj = js.Dictionary.empty[js.Any]
+      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      ReservedElasticsearchInstanceOfferingId.foreach(
+        __v => __obj.update("ReservedElasticsearchInstanceOfferingId", __v.asInstanceOf[js.Any])
+      )
+      __obj.asInstanceOf[DescribeReservedElasticsearchInstanceOfferingsRequest]
     }
   }
 
@@ -806,18 +728,12 @@ package es {
         NextToken: js.UndefOr[NextToken] = js.undefined,
         ReservedElasticsearchInstanceOfferings: js.UndefOr[ReservedElasticsearchInstanceOfferingList] = js.undefined
     ): DescribeReservedElasticsearchInstanceOfferingsResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "NextToken" -> NextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ReservedElasticsearchInstanceOfferings" -> ReservedElasticsearchInstanceOfferings.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal
-        .applyDynamicNamed("apply")(_fields: _*)
-        .asInstanceOf[DescribeReservedElasticsearchInstanceOfferingsResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      ReservedElasticsearchInstanceOfferings.foreach(
+        __v => __obj.update("ReservedElasticsearchInstanceOfferings", __v.asInstanceOf[js.Any])
+      )
+      __obj.asInstanceOf[DescribeReservedElasticsearchInstanceOfferingsResponse]
     }
   }
 
@@ -837,21 +753,13 @@ package es {
         NextToken: js.UndefOr[NextToken] = js.undefined,
         ReservedElasticsearchInstanceId: js.UndefOr[GUID] = js.undefined
     ): DescribeReservedElasticsearchInstancesRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "MaxResults" -> MaxResults.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NextToken" -> NextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ReservedElasticsearchInstanceId" -> ReservedElasticsearchInstanceId.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal
-        .applyDynamicNamed("apply")(_fields: _*)
-        .asInstanceOf[DescribeReservedElasticsearchInstancesRequest]
+      val __obj = js.Dictionary.empty[js.Any]
+      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      ReservedElasticsearchInstanceId.foreach(
+        __v => __obj.update("ReservedElasticsearchInstanceId", __v.asInstanceOf[js.Any])
+      )
+      __obj.asInstanceOf[DescribeReservedElasticsearchInstancesRequest]
     }
   }
 
@@ -869,18 +777,12 @@ package es {
         NextToken: js.UndefOr[String] = js.undefined,
         ReservedElasticsearchInstances: js.UndefOr[ReservedElasticsearchInstanceList] = js.undefined
     ): DescribeReservedElasticsearchInstancesResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "NextToken" -> NextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ReservedElasticsearchInstances" -> ReservedElasticsearchInstances.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal
-        .applyDynamicNamed("apply")(_fields: _*)
-        .asInstanceOf[DescribeReservedElasticsearchInstancesResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      ReservedElasticsearchInstances.foreach(
+        __v => __obj.update("ReservedElasticsearchInstances", __v.asInstanceOf[js.Any])
+      )
+      __obj.asInstanceOf[DescribeReservedElasticsearchInstancesResponse]
     }
   }
 
@@ -893,13 +795,9 @@ package es {
     def apply(
         DomainName: js.UndefOr[DomainName] = js.undefined
     ): DomainInfo = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "DomainName" -> DomainName.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DomainInfo]
+      val __obj = js.Dictionary.empty[js.Any]
+      DomainName.foreach(__v => __obj.update("DomainName", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DomainInfo]
     }
   }
 
@@ -921,22 +819,12 @@ package es {
         VolumeSize: js.UndefOr[IntegerClass] = js.undefined,
         VolumeType: js.UndefOr[VolumeType] = js.undefined
     ): EBSOptions = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "EBSEnabled" -> EBSEnabled.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Iops" -> Iops.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "VolumeSize" -> VolumeSize.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "VolumeType" -> VolumeType.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[EBSOptions]
+      val __obj = js.Dictionary.empty[js.Any]
+      EBSEnabled.foreach(__v => __obj.update("EBSEnabled", __v.asInstanceOf[js.Any]))
+      Iops.foreach(__v => __obj.update("Iops", __v.asInstanceOf[js.Any]))
+      VolumeSize.foreach(__v => __obj.update("VolumeSize", __v.asInstanceOf[js.Any]))
+      VolumeType.foreach(__v => __obj.update("VolumeType", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[EBSOptions]
     }
   }
 
@@ -954,12 +842,12 @@ package es {
         Options: EBSOptions,
         Status: OptionStatus
     ): EBSOptionsStatus = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "Options" -> Options.asInstanceOf[js.Any],
         "Status"  -> Status.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[EBSOptionsStatus]
+      __obj.asInstanceOf[EBSOptionsStatus]
     }
   }
 
@@ -1073,31 +961,15 @@ package es {
         ZoneAwarenessConfig: js.UndefOr[ZoneAwarenessConfig] = js.undefined,
         ZoneAwarenessEnabled: js.UndefOr[Boolean] = js.undefined
     ): ElasticsearchClusterConfig = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "DedicatedMasterCount" -> DedicatedMasterCount.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DedicatedMasterEnabled" -> DedicatedMasterEnabled.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DedicatedMasterType" -> DedicatedMasterType.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "InstanceCount" -> InstanceCount.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "InstanceType" -> InstanceType.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ZoneAwarenessConfig" -> ZoneAwarenessConfig.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ZoneAwarenessEnabled" -> ZoneAwarenessEnabled.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ElasticsearchClusterConfig]
+      val __obj = js.Dictionary.empty[js.Any]
+      DedicatedMasterCount.foreach(__v => __obj.update("DedicatedMasterCount", __v.asInstanceOf[js.Any]))
+      DedicatedMasterEnabled.foreach(__v => __obj.update("DedicatedMasterEnabled", __v.asInstanceOf[js.Any]))
+      DedicatedMasterType.foreach(__v => __obj.update("DedicatedMasterType", __v.asInstanceOf[js.Any]))
+      InstanceCount.foreach(__v => __obj.update("InstanceCount", __v.asInstanceOf[js.Any]))
+      InstanceType.foreach(__v => __obj.update("InstanceType", __v.asInstanceOf[js.Any]))
+      ZoneAwarenessConfig.foreach(__v => __obj.update("ZoneAwarenessConfig", __v.asInstanceOf[js.Any]))
+      ZoneAwarenessEnabled.foreach(__v => __obj.update("ZoneAwarenessEnabled", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ElasticsearchClusterConfig]
     }
   }
 
@@ -1115,12 +987,12 @@ package es {
         Options: ElasticsearchClusterConfig,
         Status: OptionStatus
     ): ElasticsearchClusterConfigStatus = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "Options" -> Options.asInstanceOf[js.Any],
         "Status"  -> Status.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ElasticsearchClusterConfigStatus]
+      __obj.asInstanceOf[ElasticsearchClusterConfigStatus]
     }
   }
 
@@ -1156,43 +1028,19 @@ package es {
         SnapshotOptions: js.UndefOr[SnapshotOptionsStatus] = js.undefined,
         VPCOptions: js.UndefOr[VPCDerivedInfoStatus] = js.undefined
     ): ElasticsearchDomainConfig = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "AccessPolicies" -> AccessPolicies.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "AdvancedOptions" -> AdvancedOptions.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "CognitoOptions" -> CognitoOptions.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "EBSOptions" -> EBSOptions.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ElasticsearchClusterConfig" -> ElasticsearchClusterConfig.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ElasticsearchVersion" -> ElasticsearchVersion.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "EncryptionAtRestOptions" -> EncryptionAtRestOptions.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "LogPublishingOptions" -> LogPublishingOptions.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NodeToNodeEncryptionOptions" -> NodeToNodeEncryptionOptions.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SnapshotOptions" -> SnapshotOptions.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "VPCOptions" -> VPCOptions.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ElasticsearchDomainConfig]
+      val __obj = js.Dictionary.empty[js.Any]
+      AccessPolicies.foreach(__v => __obj.update("AccessPolicies", __v.asInstanceOf[js.Any]))
+      AdvancedOptions.foreach(__v => __obj.update("AdvancedOptions", __v.asInstanceOf[js.Any]))
+      CognitoOptions.foreach(__v => __obj.update("CognitoOptions", __v.asInstanceOf[js.Any]))
+      EBSOptions.foreach(__v => __obj.update("EBSOptions", __v.asInstanceOf[js.Any]))
+      ElasticsearchClusterConfig.foreach(__v => __obj.update("ElasticsearchClusterConfig", __v.asInstanceOf[js.Any]))
+      ElasticsearchVersion.foreach(__v => __obj.update("ElasticsearchVersion", __v.asInstanceOf[js.Any]))
+      EncryptionAtRestOptions.foreach(__v => __obj.update("EncryptionAtRestOptions", __v.asInstanceOf[js.Any]))
+      LogPublishingOptions.foreach(__v => __obj.update("LogPublishingOptions", __v.asInstanceOf[js.Any]))
+      NodeToNodeEncryptionOptions.foreach(__v => __obj.update("NodeToNodeEncryptionOptions", __v.asInstanceOf[js.Any]))
+      SnapshotOptions.foreach(__v => __obj.update("SnapshotOptions", __v.asInstanceOf[js.Any]))
+      VPCOptions.foreach(__v => __obj.update("VPCOptions", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ElasticsearchDomainConfig]
     }
   }
 
@@ -1248,65 +1096,31 @@ package es {
         UpgradeProcessing: js.UndefOr[Boolean] = js.undefined,
         VPCOptions: js.UndefOr[VPCDerivedInfo] = js.undefined
     ): ElasticsearchDomainStatus = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ARN"                        -> ARN.asInstanceOf[js.Any],
         "DomainId"                   -> DomainId.asInstanceOf[js.Any],
         "DomainName"                 -> DomainName.asInstanceOf[js.Any],
-        "ElasticsearchClusterConfig" -> ElasticsearchClusterConfig.asInstanceOf[js.Any],
-        "AccessPolicies" -> AccessPolicies.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "AdvancedOptions" -> AdvancedOptions.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "CognitoOptions" -> CognitoOptions.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Created" -> Created.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Deleted" -> Deleted.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "EBSOptions" -> EBSOptions.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ElasticsearchVersion" -> ElasticsearchVersion.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "EncryptionAtRestOptions" -> EncryptionAtRestOptions.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Endpoint" -> Endpoint.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Endpoints" -> Endpoints.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "LogPublishingOptions" -> LogPublishingOptions.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NodeToNodeEncryptionOptions" -> NodeToNodeEncryptionOptions.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Processing" -> Processing.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ServiceSoftwareOptions" -> ServiceSoftwareOptions.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SnapshotOptions" -> SnapshotOptions.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "UpgradeProcessing" -> UpgradeProcessing.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "VPCOptions" -> VPCOptions.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "ElasticsearchClusterConfig" -> ElasticsearchClusterConfig.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ElasticsearchDomainStatus]
+      AccessPolicies.foreach(__v => __obj.update("AccessPolicies", __v.asInstanceOf[js.Any]))
+      AdvancedOptions.foreach(__v => __obj.update("AdvancedOptions", __v.asInstanceOf[js.Any]))
+      CognitoOptions.foreach(__v => __obj.update("CognitoOptions", __v.asInstanceOf[js.Any]))
+      Created.foreach(__v => __obj.update("Created", __v.asInstanceOf[js.Any]))
+      Deleted.foreach(__v => __obj.update("Deleted", __v.asInstanceOf[js.Any]))
+      EBSOptions.foreach(__v => __obj.update("EBSOptions", __v.asInstanceOf[js.Any]))
+      ElasticsearchVersion.foreach(__v => __obj.update("ElasticsearchVersion", __v.asInstanceOf[js.Any]))
+      EncryptionAtRestOptions.foreach(__v => __obj.update("EncryptionAtRestOptions", __v.asInstanceOf[js.Any]))
+      Endpoint.foreach(__v => __obj.update("Endpoint", __v.asInstanceOf[js.Any]))
+      Endpoints.foreach(__v => __obj.update("Endpoints", __v.asInstanceOf[js.Any]))
+      LogPublishingOptions.foreach(__v => __obj.update("LogPublishingOptions", __v.asInstanceOf[js.Any]))
+      NodeToNodeEncryptionOptions.foreach(__v => __obj.update("NodeToNodeEncryptionOptions", __v.asInstanceOf[js.Any]))
+      Processing.foreach(__v => __obj.update("Processing", __v.asInstanceOf[js.Any]))
+      ServiceSoftwareOptions.foreach(__v => __obj.update("ServiceSoftwareOptions", __v.asInstanceOf[js.Any]))
+      SnapshotOptions.foreach(__v => __obj.update("SnapshotOptions", __v.asInstanceOf[js.Any]))
+      UpgradeProcessing.foreach(__v => __obj.update("UpgradeProcessing", __v.asInstanceOf[js.Any]))
+      VPCOptions.foreach(__v => __obj.update("VPCOptions", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ElasticsearchDomainStatus]
     }
   }
 
@@ -1324,12 +1138,12 @@ package es {
         Options: ElasticsearchVersionString,
         Status: OptionStatus
     ): ElasticsearchVersionStatus = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "Options" -> Options.asInstanceOf[js.Any],
         "Status"  -> Status.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ElasticsearchVersionStatus]
+      __obj.asInstanceOf[ElasticsearchVersionStatus]
     }
   }
 
@@ -1347,16 +1161,10 @@ package es {
         Enabled: js.UndefOr[Boolean] = js.undefined,
         KmsKeyId: js.UndefOr[KmsKeyId] = js.undefined
     ): EncryptionAtRestOptions = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Enabled" -> Enabled.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "KmsKeyId" -> KmsKeyId.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[EncryptionAtRestOptions]
+      val __obj = js.Dictionary.empty[js.Any]
+      Enabled.foreach(__v => __obj.update("Enabled", __v.asInstanceOf[js.Any]))
+      KmsKeyId.foreach(__v => __obj.update("KmsKeyId", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[EncryptionAtRestOptions]
     }
   }
 
@@ -1374,12 +1182,12 @@ package es {
         Options: EncryptionAtRestOptions,
         Status: OptionStatus
     ): EncryptionAtRestOptionsStatus = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "Options" -> Options.asInstanceOf[js.Any],
         "Status"  -> Status.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[EncryptionAtRestOptionsStatus]
+      __obj.asInstanceOf[EncryptionAtRestOptionsStatus]
     }
   }
 
@@ -1395,13 +1203,9 @@ package es {
     def apply(
         DomainName: js.UndefOr[DomainName] = js.undefined
     ): GetCompatibleElasticsearchVersionsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "DomainName" -> DomainName.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetCompatibleElasticsearchVersionsRequest]
+      val __obj = js.Dictionary.empty[js.Any]
+      DomainName.foreach(__v => __obj.update("DomainName", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetCompatibleElasticsearchVersionsRequest]
     }
   }
 
@@ -1417,15 +1221,11 @@ package es {
     def apply(
         CompatibleElasticsearchVersions: js.UndefOr[CompatibleElasticsearchVersionsList] = js.undefined
     ): GetCompatibleElasticsearchVersionsResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "CompatibleElasticsearchVersions" -> CompatibleElasticsearchVersions.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal
-        .applyDynamicNamed("apply")(_fields: _*)
-        .asInstanceOf[GetCompatibleElasticsearchVersionsResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      CompatibleElasticsearchVersions.foreach(
+        __v => __obj.update("CompatibleElasticsearchVersions", __v.asInstanceOf[js.Any])
+      )
+      __obj.asInstanceOf[GetCompatibleElasticsearchVersionsResponse]
     }
   }
 
@@ -1445,17 +1245,13 @@ package es {
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): GetUpgradeHistoryRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "DomainName" -> DomainName.asInstanceOf[js.Any],
-        "MaxResults" -> MaxResults.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NextToken" -> NextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "DomainName" -> DomainName.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetUpgradeHistoryRequest]
+      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetUpgradeHistoryRequest]
     }
   }
 
@@ -1473,16 +1269,10 @@ package es {
         NextToken: js.UndefOr[String] = js.undefined,
         UpgradeHistories: js.UndefOr[UpgradeHistoryList] = js.undefined
     ): GetUpgradeHistoryResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "NextToken" -> NextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "UpgradeHistories" -> UpgradeHistories.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetUpgradeHistoryResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      UpgradeHistories.foreach(__v => __obj.update("UpgradeHistories", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetUpgradeHistoryResponse]
     }
   }
 
@@ -1498,11 +1288,11 @@ package es {
     def apply(
         DomainName: DomainName
     ): GetUpgradeStatusRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "DomainName" -> DomainName.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetUpgradeStatusRequest]
+      __obj.asInstanceOf[GetUpgradeStatusRequest]
     }
   }
 
@@ -1522,19 +1312,11 @@ package es {
         UpgradeName: js.UndefOr[UpgradeName] = js.undefined,
         UpgradeStep: js.UndefOr[UpgradeStep] = js.undefined
     ): GetUpgradeStatusResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "StepStatus" -> StepStatus.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "UpgradeName" -> UpgradeName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "UpgradeStep" -> UpgradeStep.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetUpgradeStatusResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      StepStatus.foreach(__v => __obj.update("StepStatus", __v.asInstanceOf[js.Any]))
+      UpgradeName.foreach(__v => __obj.update("UpgradeName", __v.asInstanceOf[js.Any]))
+      UpgradeStep.foreach(__v => __obj.update("UpgradeStep", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetUpgradeStatusResponse]
     }
   }
 
@@ -1552,16 +1334,10 @@ package es {
         MaximumInstanceCount: js.UndefOr[MaximumInstanceCount] = js.undefined,
         MinimumInstanceCount: js.UndefOr[MinimumInstanceCount] = js.undefined
     ): InstanceCountLimits = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "MaximumInstanceCount" -> MaximumInstanceCount.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MinimumInstanceCount" -> MinimumInstanceCount.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[InstanceCountLimits]
+      val __obj = js.Dictionary.empty[js.Any]
+      MaximumInstanceCount.foreach(__v => __obj.update("MaximumInstanceCount", __v.asInstanceOf[js.Any]))
+      MinimumInstanceCount.foreach(__v => __obj.update("MinimumInstanceCount", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[InstanceCountLimits]
     }
   }
 
@@ -1577,13 +1353,9 @@ package es {
     def apply(
         InstanceCountLimits: js.UndefOr[InstanceCountLimits] = js.undefined
     ): InstanceLimits = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "InstanceCountLimits" -> InstanceCountLimits.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[InstanceLimits]
+      val __obj = js.Dictionary.empty[js.Any]
+      InstanceCountLimits.foreach(__v => __obj.update("InstanceCountLimits", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[InstanceLimits]
     }
   }
 
@@ -1603,19 +1375,11 @@ package es {
         InstanceLimits: js.UndefOr[InstanceLimits] = js.undefined,
         StorageTypes: js.UndefOr[StorageTypeList] = js.undefined
     ): Limits = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "AdditionalLimits" -> AdditionalLimits.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "InstanceLimits" -> InstanceLimits.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "StorageTypes" -> StorageTypes.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Limits]
+      val __obj = js.Dictionary.empty[js.Any]
+      AdditionalLimits.foreach(__v => __obj.update("AdditionalLimits", __v.asInstanceOf[js.Any]))
+      InstanceLimits.foreach(__v => __obj.update("InstanceLimits", __v.asInstanceOf[js.Any]))
+      StorageTypes.foreach(__v => __obj.update("StorageTypes", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Limits]
     }
   }
 
@@ -1631,13 +1395,9 @@ package es {
     def apply(
         DomainNames: js.UndefOr[DomainInfoList] = js.undefined
     ): ListDomainNamesResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "DomainNames" -> DomainNames.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListDomainNamesResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      DomainNames.foreach(__v => __obj.update("DomainNames", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListDomainNamesResponse]
     }
   }
 
@@ -1659,20 +1419,14 @@ package es {
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): ListElasticsearchInstanceTypesRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ElasticsearchVersion" -> ElasticsearchVersion.asInstanceOf[js.Any],
-        "DomainName" -> DomainName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MaxResults" -> MaxResults.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NextToken" -> NextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "ElasticsearchVersion" -> ElasticsearchVersion.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListElasticsearchInstanceTypesRequest]
+      DomainName.foreach(__v => __obj.update("DomainName", __v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListElasticsearchInstanceTypesRequest]
     }
   }
 
@@ -1690,16 +1444,10 @@ package es {
         ElasticsearchInstanceTypes: js.UndefOr[ElasticsearchInstanceTypeList] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): ListElasticsearchInstanceTypesResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ElasticsearchInstanceTypes" -> ElasticsearchInstanceTypes.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NextToken" -> NextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListElasticsearchInstanceTypesResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      ElasticsearchInstanceTypes.foreach(__v => __obj.update("ElasticsearchInstanceTypes", __v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListElasticsearchInstanceTypesResponse]
     }
   }
 
@@ -1719,16 +1467,10 @@ package es {
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): ListElasticsearchVersionsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "MaxResults" -> MaxResults.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NextToken" -> NextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListElasticsearchVersionsRequest]
+      val __obj = js.Dictionary.empty[js.Any]
+      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListElasticsearchVersionsRequest]
     }
   }
 
@@ -1746,16 +1488,10 @@ package es {
         ElasticsearchVersions: js.UndefOr[ElasticsearchVersionList] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): ListElasticsearchVersionsResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ElasticsearchVersions" -> ElasticsearchVersions.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NextToken" -> NextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListElasticsearchVersionsResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      ElasticsearchVersions.foreach(__v => __obj.update("ElasticsearchVersions", __v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListElasticsearchVersionsResponse]
     }
   }
 
@@ -1771,11 +1507,11 @@ package es {
     def apply(
         ARN: ARN
     ): ListTagsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ARN" -> ARN.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListTagsRequest]
+      __obj.asInstanceOf[ListTagsRequest]
     }
   }
 
@@ -1791,13 +1527,9 @@ package es {
     def apply(
         TagList: js.UndefOr[TagList] = js.undefined
     ): ListTagsResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "TagList" -> TagList.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListTagsResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      TagList.foreach(__v => __obj.update("TagList", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListTagsResponse]
     }
   }
 
@@ -1817,16 +1549,10 @@ package es {
         CloudWatchLogsLogGroupArn: js.UndefOr[CloudWatchLogsLogGroupArn] = js.undefined,
         Enabled: js.UndefOr[Boolean] = js.undefined
     ): LogPublishingOption = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "CloudWatchLogsLogGroupArn" -> CloudWatchLogsLogGroupArn.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Enabled" -> Enabled.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[LogPublishingOption]
+      val __obj = js.Dictionary.empty[js.Any]
+      CloudWatchLogsLogGroupArn.foreach(__v => __obj.update("CloudWatchLogsLogGroupArn", __v.asInstanceOf[js.Any]))
+      Enabled.foreach(__v => __obj.update("Enabled", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[LogPublishingOption]
     }
   }
 
@@ -1844,16 +1570,10 @@ package es {
         Options: js.UndefOr[LogPublishingOptions] = js.undefined,
         Status: js.UndefOr[OptionStatus] = js.undefined
     ): LogPublishingOptionsStatus = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Options" -> Options.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Status" -> Status.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[LogPublishingOptionsStatus]
+      val __obj = js.Dictionary.empty[js.Any]
+      Options.foreach(__v => __obj.update("Options", __v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.update("Status", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[LogPublishingOptionsStatus]
     }
   }
 
@@ -1883,13 +1603,9 @@ package es {
     def apply(
         Enabled: js.UndefOr[Boolean] = js.undefined
     ): NodeToNodeEncryptionOptions = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Enabled" -> Enabled.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[NodeToNodeEncryptionOptions]
+      val __obj = js.Dictionary.empty[js.Any]
+      Enabled.foreach(__v => __obj.update("Enabled", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[NodeToNodeEncryptionOptions]
     }
   }
 
@@ -1907,12 +1623,12 @@ package es {
         Options: NodeToNodeEncryptionOptions,
         Status: OptionStatus
     ): NodeToNodeEncryptionOptionsStatus = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "Options" -> Options.asInstanceOf[js.Any],
         "Status"  -> Status.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[NodeToNodeEncryptionOptionsStatus]
+      __obj.asInstanceOf[NodeToNodeEncryptionOptionsStatus]
     }
   }
 
@@ -1949,19 +1665,15 @@ package es {
         PendingDeletion: js.UndefOr[Boolean] = js.undefined,
         UpdateVersion: js.UndefOr[UIntValue] = js.undefined
     ): OptionStatus = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "CreationDate" -> CreationDate.asInstanceOf[js.Any],
         "State"        -> State.asInstanceOf[js.Any],
-        "UpdateDate"   -> UpdateDate.asInstanceOf[js.Any],
-        "PendingDeletion" -> PendingDeletion.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "UpdateVersion" -> UpdateVersion.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "UpdateDate"   -> UpdateDate.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[OptionStatus]
+      PendingDeletion.foreach(__v => __obj.update("PendingDeletion", __v.asInstanceOf[js.Any]))
+      UpdateVersion.foreach(__v => __obj.update("UpdateVersion", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[OptionStatus]
     }
   }
 
@@ -1981,17 +1693,13 @@ package es {
         ReservedElasticsearchInstanceOfferingId: GUID,
         InstanceCount: js.UndefOr[InstanceCount] = js.undefined
     ): PurchaseReservedElasticsearchInstanceOfferingRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ReservationName"                         -> ReservationName.asInstanceOf[js.Any],
-        "ReservedElasticsearchInstanceOfferingId" -> ReservedElasticsearchInstanceOfferingId.asInstanceOf[js.Any],
-        "InstanceCount" -> InstanceCount.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "ReservedElasticsearchInstanceOfferingId" -> ReservedElasticsearchInstanceOfferingId.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal
-        .applyDynamicNamed("apply")(_fields: _*)
-        .asInstanceOf[PurchaseReservedElasticsearchInstanceOfferingRequest]
+      InstanceCount.foreach(__v => __obj.update("InstanceCount", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PurchaseReservedElasticsearchInstanceOfferingRequest]
     }
   }
 
@@ -2009,18 +1717,12 @@ package es {
         ReservationName: js.UndefOr[ReservationToken] = js.undefined,
         ReservedElasticsearchInstanceId: js.UndefOr[GUID] = js.undefined
     ): PurchaseReservedElasticsearchInstanceOfferingResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ReservationName" -> ReservationName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ReservedElasticsearchInstanceId" -> ReservedElasticsearchInstanceId.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal
-        .applyDynamicNamed("apply")(_fields: _*)
-        .asInstanceOf[PurchaseReservedElasticsearchInstanceOfferingResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      ReservationName.foreach(__v => __obj.update("ReservationName", __v.asInstanceOf[js.Any]))
+      ReservedElasticsearchInstanceId.foreach(
+        __v => __obj.update("ReservedElasticsearchInstanceId", __v.asInstanceOf[js.Any])
+      )
+      __obj.asInstanceOf[PurchaseReservedElasticsearchInstanceOfferingResponse]
     }
   }
 
@@ -2038,16 +1740,10 @@ package es {
         RecurringChargeAmount: js.UndefOr[Double] = js.undefined,
         RecurringChargeFrequency: js.UndefOr[String] = js.undefined
     ): RecurringCharge = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "RecurringChargeAmount" -> RecurringChargeAmount.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "RecurringChargeFrequency" -> RecurringChargeFrequency.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RecurringCharge]
+      val __obj = js.Dictionary.empty[js.Any]
+      RecurringChargeAmount.foreach(__v => __obj.update("RecurringChargeAmount", __v.asInstanceOf[js.Any]))
+      RecurringChargeFrequency.foreach(__v => __obj.update("RecurringChargeFrequency", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[RecurringCharge]
     }
   }
 
@@ -2065,12 +1761,12 @@ package es {
         ARN: ARN,
         TagKeys: StringList
     ): RemoveTagsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ARN"     -> ARN.asInstanceOf[js.Any],
         "TagKeys" -> TagKeys.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RemoveTagsRequest]
+      __obj.asInstanceOf[RemoveTagsRequest]
     }
   }
 
@@ -2110,49 +1806,25 @@ package es {
         State: js.UndefOr[String] = js.undefined,
         UsagePrice: js.UndefOr[Double] = js.undefined
     ): ReservedElasticsearchInstance = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "CurrencyCode" -> CurrencyCode.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Duration" -> Duration.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ElasticsearchInstanceCount" -> ElasticsearchInstanceCount.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ElasticsearchInstanceType" -> ElasticsearchInstanceType.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "FixedPrice" -> FixedPrice.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "PaymentOption" -> PaymentOption.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "RecurringCharges" -> RecurringCharges.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ReservationName" -> ReservationName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ReservedElasticsearchInstanceId" -> ReservedElasticsearchInstanceId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ReservedElasticsearchInstanceOfferingId" -> ReservedElasticsearchInstanceOfferingId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "StartTime" -> StartTime.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "State" -> State.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "UsagePrice" -> UsagePrice.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ReservedElasticsearchInstance]
+      val __obj = js.Dictionary.empty[js.Any]
+      CurrencyCode.foreach(__v => __obj.update("CurrencyCode", __v.asInstanceOf[js.Any]))
+      Duration.foreach(__v => __obj.update("Duration", __v.asInstanceOf[js.Any]))
+      ElasticsearchInstanceCount.foreach(__v => __obj.update("ElasticsearchInstanceCount", __v.asInstanceOf[js.Any]))
+      ElasticsearchInstanceType.foreach(__v => __obj.update("ElasticsearchInstanceType", __v.asInstanceOf[js.Any]))
+      FixedPrice.foreach(__v => __obj.update("FixedPrice", __v.asInstanceOf[js.Any]))
+      PaymentOption.foreach(__v => __obj.update("PaymentOption", __v.asInstanceOf[js.Any]))
+      RecurringCharges.foreach(__v => __obj.update("RecurringCharges", __v.asInstanceOf[js.Any]))
+      ReservationName.foreach(__v => __obj.update("ReservationName", __v.asInstanceOf[js.Any]))
+      ReservedElasticsearchInstanceId.foreach(
+        __v => __obj.update("ReservedElasticsearchInstanceId", __v.asInstanceOf[js.Any])
+      )
+      ReservedElasticsearchInstanceOfferingId.foreach(
+        __v => __obj.update("ReservedElasticsearchInstanceOfferingId", __v.asInstanceOf[js.Any])
+      )
+      StartTime.foreach(__v => __obj.update("StartTime", __v.asInstanceOf[js.Any]))
+      State.foreach(__v => __obj.update("State", __v.asInstanceOf[js.Any]))
+      UsagePrice.foreach(__v => __obj.update("UsagePrice", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ReservedElasticsearchInstance]
     }
   }
 
@@ -2182,34 +1854,18 @@ package es {
         ReservedElasticsearchInstanceOfferingId: js.UndefOr[GUID] = js.undefined,
         UsagePrice: js.UndefOr[Double] = js.undefined
     ): ReservedElasticsearchInstanceOffering = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "CurrencyCode" -> CurrencyCode.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Duration" -> Duration.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ElasticsearchInstanceType" -> ElasticsearchInstanceType.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "FixedPrice" -> FixedPrice.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "PaymentOption" -> PaymentOption.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "RecurringCharges" -> RecurringCharges.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ReservedElasticsearchInstanceOfferingId" -> ReservedElasticsearchInstanceOfferingId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "UsagePrice" -> UsagePrice.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ReservedElasticsearchInstanceOffering]
+      val __obj = js.Dictionary.empty[js.Any]
+      CurrencyCode.foreach(__v => __obj.update("CurrencyCode", __v.asInstanceOf[js.Any]))
+      Duration.foreach(__v => __obj.update("Duration", __v.asInstanceOf[js.Any]))
+      ElasticsearchInstanceType.foreach(__v => __obj.update("ElasticsearchInstanceType", __v.asInstanceOf[js.Any]))
+      FixedPrice.foreach(__v => __obj.update("FixedPrice", __v.asInstanceOf[js.Any]))
+      PaymentOption.foreach(__v => __obj.update("PaymentOption", __v.asInstanceOf[js.Any]))
+      RecurringCharges.foreach(__v => __obj.update("RecurringCharges", __v.asInstanceOf[js.Any]))
+      ReservedElasticsearchInstanceOfferingId.foreach(
+        __v => __obj.update("ReservedElasticsearchInstanceOfferingId", __v.asInstanceOf[js.Any])
+      )
+      UsagePrice.foreach(__v => __obj.update("UsagePrice", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ReservedElasticsearchInstanceOffering]
     }
   }
 
@@ -2245,31 +1901,15 @@ package es {
         UpdateAvailable: js.UndefOr[Boolean] = js.undefined,
         UpdateStatus: js.UndefOr[DeploymentStatus] = js.undefined
     ): ServiceSoftwareOptions = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "AutomatedUpdateDate" -> AutomatedUpdateDate.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Cancellable" -> Cancellable.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "CurrentVersion" -> CurrentVersion.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Description" -> Description.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NewVersion" -> NewVersion.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "UpdateAvailable" -> UpdateAvailable.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "UpdateStatus" -> UpdateStatus.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ServiceSoftwareOptions]
+      val __obj = js.Dictionary.empty[js.Any]
+      AutomatedUpdateDate.foreach(__v => __obj.update("AutomatedUpdateDate", __v.asInstanceOf[js.Any]))
+      Cancellable.foreach(__v => __obj.update("Cancellable", __v.asInstanceOf[js.Any]))
+      CurrentVersion.foreach(__v => __obj.update("CurrentVersion", __v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
+      NewVersion.foreach(__v => __obj.update("NewVersion", __v.asInstanceOf[js.Any]))
+      UpdateAvailable.foreach(__v => __obj.update("UpdateAvailable", __v.asInstanceOf[js.Any]))
+      UpdateStatus.foreach(__v => __obj.update("UpdateStatus", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ServiceSoftwareOptions]
     }
   }
 
@@ -2285,13 +1925,9 @@ package es {
     def apply(
         AutomatedSnapshotStartHour: js.UndefOr[IntegerClass] = js.undefined
     ): SnapshotOptions = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "AutomatedSnapshotStartHour" -> AutomatedSnapshotStartHour.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SnapshotOptions]
+      val __obj = js.Dictionary.empty[js.Any]
+      AutomatedSnapshotStartHour.foreach(__v => __obj.update("AutomatedSnapshotStartHour", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[SnapshotOptions]
     }
   }
 
@@ -2309,12 +1945,12 @@ package es {
         Options: SnapshotOptions,
         Status: OptionStatus
     ): SnapshotOptionsStatus = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "Options" -> Options.asInstanceOf[js.Any],
         "Status"  -> Status.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SnapshotOptionsStatus]
+      __obj.asInstanceOf[SnapshotOptionsStatus]
     }
   }
 
@@ -2330,13 +1966,11 @@ package es {
     def apply(
         DomainName: DomainName
     ): StartElasticsearchServiceSoftwareUpdateRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "DomainName" -> DomainName.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal
-        .applyDynamicNamed("apply")(_fields: _*)
-        .asInstanceOf[StartElasticsearchServiceSoftwareUpdateRequest]
+      __obj.asInstanceOf[StartElasticsearchServiceSoftwareUpdateRequest]
     }
   }
 
@@ -2352,15 +1986,9 @@ package es {
     def apply(
         ServiceSoftwareOptions: js.UndefOr[ServiceSoftwareOptions] = js.undefined
     ): StartElasticsearchServiceSoftwareUpdateResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ServiceSoftwareOptions" -> ServiceSoftwareOptions.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal
-        .applyDynamicNamed("apply")(_fields: _*)
-        .asInstanceOf[StartElasticsearchServiceSoftwareUpdateResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      ServiceSoftwareOptions.foreach(__v => __obj.update("ServiceSoftwareOptions", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[StartElasticsearchServiceSoftwareUpdateResponse]
     }
   }
 
@@ -2380,19 +2008,11 @@ package es {
         StorageTypeLimits: js.UndefOr[StorageTypeLimitList] = js.undefined,
         StorageTypeName: js.UndefOr[StorageTypeName] = js.undefined
     ): StorageType = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "StorageSubTypeName" -> StorageSubTypeName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "StorageTypeLimits" -> StorageTypeLimits.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "StorageTypeName" -> StorageTypeName.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StorageType]
+      val __obj = js.Dictionary.empty[js.Any]
+      StorageSubTypeName.foreach(__v => __obj.update("StorageSubTypeName", __v.asInstanceOf[js.Any]))
+      StorageTypeLimits.foreach(__v => __obj.update("StorageTypeLimits", __v.asInstanceOf[js.Any]))
+      StorageTypeName.foreach(__v => __obj.update("StorageTypeName", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[StorageType]
     }
   }
 
@@ -2410,16 +2030,10 @@ package es {
         LimitName: js.UndefOr[LimitName] = js.undefined,
         LimitValues: js.UndefOr[LimitValueList] = js.undefined
     ): StorageTypeLimit = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "LimitName" -> LimitName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "LimitValues" -> LimitValues.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StorageTypeLimit]
+      val __obj = js.Dictionary.empty[js.Any]
+      LimitName.foreach(__v => __obj.update("LimitName", __v.asInstanceOf[js.Any]))
+      LimitValues.foreach(__v => __obj.update("LimitValues", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[StorageTypeLimit]
     }
   }
 
@@ -2437,12 +2051,12 @@ package es {
         Key: TagKey,
         Value: TagValue
     ): Tag = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "Key"   -> Key.asInstanceOf[js.Any],
         "Value" -> Value.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Tag]
+      __obj.asInstanceOf[Tag]
     }
   }
 
@@ -2474,35 +2088,19 @@ package es {
         SnapshotOptions: js.UndefOr[SnapshotOptions] = js.undefined,
         VPCOptions: js.UndefOr[VPCOptions] = js.undefined
     ): UpdateElasticsearchDomainConfigRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "DomainName" -> DomainName.asInstanceOf[js.Any],
-        "AccessPolicies" -> AccessPolicies.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "AdvancedOptions" -> AdvancedOptions.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "CognitoOptions" -> CognitoOptions.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "EBSOptions" -> EBSOptions.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ElasticsearchClusterConfig" -> ElasticsearchClusterConfig.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "LogPublishingOptions" -> LogPublishingOptions.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SnapshotOptions" -> SnapshotOptions.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "VPCOptions" -> VPCOptions.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "DomainName" -> DomainName.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateElasticsearchDomainConfigRequest]
+      AccessPolicies.foreach(__v => __obj.update("AccessPolicies", __v.asInstanceOf[js.Any]))
+      AdvancedOptions.foreach(__v => __obj.update("AdvancedOptions", __v.asInstanceOf[js.Any]))
+      CognitoOptions.foreach(__v => __obj.update("CognitoOptions", __v.asInstanceOf[js.Any]))
+      EBSOptions.foreach(__v => __obj.update("EBSOptions", __v.asInstanceOf[js.Any]))
+      ElasticsearchClusterConfig.foreach(__v => __obj.update("ElasticsearchClusterConfig", __v.asInstanceOf[js.Any]))
+      LogPublishingOptions.foreach(__v => __obj.update("LogPublishingOptions", __v.asInstanceOf[js.Any]))
+      SnapshotOptions.foreach(__v => __obj.update("SnapshotOptions", __v.asInstanceOf[js.Any]))
+      VPCOptions.foreach(__v => __obj.update("VPCOptions", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateElasticsearchDomainConfigRequest]
     }
   }
 
@@ -2518,11 +2116,11 @@ package es {
     def apply(
         DomainConfig: ElasticsearchDomainConfig
     ): UpdateElasticsearchDomainConfigResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "DomainConfig" -> DomainConfig.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateElasticsearchDomainConfigResponse]
+      __obj.asInstanceOf[UpdateElasticsearchDomainConfigResponse]
     }
   }
 
@@ -2542,15 +2140,13 @@ package es {
         TargetVersion: ElasticsearchVersionString,
         PerformCheckOnly: js.UndefOr[Boolean] = js.undefined
     ): UpgradeElasticsearchDomainRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "DomainName"    -> DomainName.asInstanceOf[js.Any],
-        "TargetVersion" -> TargetVersion.asInstanceOf[js.Any],
-        "PerformCheckOnly" -> PerformCheckOnly.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "TargetVersion" -> TargetVersion.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpgradeElasticsearchDomainRequest]
+      PerformCheckOnly.foreach(__v => __obj.update("PerformCheckOnly", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpgradeElasticsearchDomainRequest]
     }
   }
 
@@ -2570,19 +2166,11 @@ package es {
         PerformCheckOnly: js.UndefOr[Boolean] = js.undefined,
         TargetVersion: js.UndefOr[ElasticsearchVersionString] = js.undefined
     ): UpgradeElasticsearchDomainResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "DomainName" -> DomainName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "PerformCheckOnly" -> PerformCheckOnly.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "TargetVersion" -> TargetVersion.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpgradeElasticsearchDomainResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      DomainName.foreach(__v => __obj.update("DomainName", __v.asInstanceOf[js.Any]))
+      PerformCheckOnly.foreach(__v => __obj.update("PerformCheckOnly", __v.asInstanceOf[js.Any]))
+      TargetVersion.foreach(__v => __obj.update("TargetVersion", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpgradeElasticsearchDomainResponse]
     }
   }
 
@@ -2604,22 +2192,12 @@ package es {
         UpgradeName: js.UndefOr[UpgradeName] = js.undefined,
         UpgradeStatus: js.UndefOr[UpgradeStatus] = js.undefined
     ): UpgradeHistory = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "StartTimestamp" -> StartTimestamp.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "StepsList" -> StepsList.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "UpgradeName" -> UpgradeName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "UpgradeStatus" -> UpgradeStatus.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpgradeHistory]
+      val __obj = js.Dictionary.empty[js.Any]
+      StartTimestamp.foreach(__v => __obj.update("StartTimestamp", __v.asInstanceOf[js.Any]))
+      StepsList.foreach(__v => __obj.update("StepsList", __v.asInstanceOf[js.Any]))
+      UpgradeName.foreach(__v => __obj.update("UpgradeName", __v.asInstanceOf[js.Any]))
+      UpgradeStatus.foreach(__v => __obj.update("UpgradeStatus", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpgradeHistory]
     }
   }
 
@@ -2658,22 +2236,12 @@ package es {
         UpgradeStep: js.UndefOr[UpgradeStep] = js.undefined,
         UpgradeStepStatus: js.UndefOr[UpgradeStatus] = js.undefined
     ): UpgradeStepItem = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Issues" -> Issues.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ProgressPercent" -> ProgressPercent.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "UpgradeStep" -> UpgradeStep.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "UpgradeStepStatus" -> UpgradeStepStatus.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpgradeStepItem]
+      val __obj = js.Dictionary.empty[js.Any]
+      Issues.foreach(__v => __obj.update("Issues", __v.asInstanceOf[js.Any]))
+      ProgressPercent.foreach(__v => __obj.update("ProgressPercent", __v.asInstanceOf[js.Any]))
+      UpgradeStep.foreach(__v => __obj.update("UpgradeStep", __v.asInstanceOf[js.Any]))
+      UpgradeStepStatus.foreach(__v => __obj.update("UpgradeStepStatus", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpgradeStepItem]
     }
   }
 
@@ -2695,22 +2263,12 @@ package es {
         SubnetIds: js.UndefOr[StringList] = js.undefined,
         VPCId: js.UndefOr[String] = js.undefined
     ): VPCDerivedInfo = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "AvailabilityZones" -> AvailabilityZones.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SecurityGroupIds" -> SecurityGroupIds.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SubnetIds" -> SubnetIds.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "VPCId" -> VPCId.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[VPCDerivedInfo]
+      val __obj = js.Dictionary.empty[js.Any]
+      AvailabilityZones.foreach(__v => __obj.update("AvailabilityZones", __v.asInstanceOf[js.Any]))
+      SecurityGroupIds.foreach(__v => __obj.update("SecurityGroupIds", __v.asInstanceOf[js.Any]))
+      SubnetIds.foreach(__v => __obj.update("SubnetIds", __v.asInstanceOf[js.Any]))
+      VPCId.foreach(__v => __obj.update("VPCId", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[VPCDerivedInfo]
     }
   }
 
@@ -2728,12 +2286,12 @@ package es {
         Options: VPCDerivedInfo,
         Status: OptionStatus
     ): VPCDerivedInfoStatus = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "Options" -> Options.asInstanceOf[js.Any],
         "Status"  -> Status.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[VPCDerivedInfoStatus]
+      __obj.asInstanceOf[VPCDerivedInfoStatus]
     }
   }
 
@@ -2751,16 +2309,10 @@ package es {
         SecurityGroupIds: js.UndefOr[StringList] = js.undefined,
         SubnetIds: js.UndefOr[StringList] = js.undefined
     ): VPCOptions = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "SecurityGroupIds" -> SecurityGroupIds.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SubnetIds" -> SubnetIds.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[VPCOptions]
+      val __obj = js.Dictionary.empty[js.Any]
+      SecurityGroupIds.foreach(__v => __obj.update("SecurityGroupIds", __v.asInstanceOf[js.Any]))
+      SubnetIds.foreach(__v => __obj.update("SubnetIds", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[VPCOptions]
     }
   }
 
@@ -2787,13 +2339,9 @@ package es {
     def apply(
         AvailabilityZoneCount: js.UndefOr[IntegerClass] = js.undefined
     ): ZoneAwarenessConfig = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "AvailabilityZoneCount" -> AvailabilityZoneCount.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ZoneAwarenessConfig]
+      val __obj = js.Dictionary.empty[js.Any]
+      AvailabilityZoneCount.foreach(__v => __obj.update("AvailabilityZoneCount", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ZoneAwarenessConfig]
     }
   }
 }

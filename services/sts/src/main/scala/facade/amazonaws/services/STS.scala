@@ -107,27 +107,17 @@ package sts {
         SerialNumber: js.UndefOr[serialNumberType] = js.undefined,
         TokenCode: js.UndefOr[tokenCodeType] = js.undefined
     ): AssumeRoleRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "RoleArn"         -> RoleArn.asInstanceOf[js.Any],
-        "RoleSessionName" -> RoleSessionName.asInstanceOf[js.Any],
-        "DurationSeconds" -> DurationSeconds.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ExternalId" -> ExternalId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Policy" -> Policy.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SerialNumber" -> SerialNumber.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "TokenCode" -> TokenCode.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "RoleSessionName" -> RoleSessionName.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AssumeRoleRequest]
+      DurationSeconds.foreach(__v => __obj.update("DurationSeconds", __v.asInstanceOf[js.Any]))
+      ExternalId.foreach(__v => __obj.update("ExternalId", __v.asInstanceOf[js.Any]))
+      Policy.foreach(__v => __obj.update("Policy", __v.asInstanceOf[js.Any]))
+      SerialNumber.foreach(__v => __obj.update("SerialNumber", __v.asInstanceOf[js.Any]))
+      TokenCode.foreach(__v => __obj.update("TokenCode", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AssumeRoleRequest]
     }
   }
 
@@ -147,19 +137,11 @@ package sts {
         Credentials: js.UndefOr[Credentials] = js.undefined,
         PackedPolicySize: js.UndefOr[nonNegativeIntegerType] = js.undefined
     ): AssumeRoleResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "AssumedRoleUser" -> AssumedRoleUser.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Credentials" -> Credentials.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "PackedPolicySize" -> PackedPolicySize.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AssumeRoleResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      AssumedRoleUser.foreach(__v => __obj.update("AssumedRoleUser", __v.asInstanceOf[js.Any]))
+      Credentials.foreach(__v => __obj.update("Credentials", __v.asInstanceOf[js.Any]))
+      PackedPolicySize.foreach(__v => __obj.update("PackedPolicySize", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AssumeRoleResponse]
     }
   }
 
@@ -180,19 +162,15 @@ package sts {
         DurationSeconds: js.UndefOr[roleDurationSecondsType] = js.undefined,
         Policy: js.UndefOr[sessionPolicyDocumentType] = js.undefined
     ): AssumeRoleWithSAMLRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "PrincipalArn"  -> PrincipalArn.asInstanceOf[js.Any],
         "RoleArn"       -> RoleArn.asInstanceOf[js.Any],
-        "SAMLAssertion" -> SAMLAssertion.asInstanceOf[js.Any],
-        "DurationSeconds" -> DurationSeconds.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Policy" -> Policy.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "SAMLAssertion" -> SAMLAssertion.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AssumeRoleWithSAMLRequest]
+      DurationSeconds.foreach(__v => __obj.update("DurationSeconds", __v.asInstanceOf[js.Any]))
+      Policy.foreach(__v => __obj.update("Policy", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AssumeRoleWithSAMLRequest]
     }
   }
 
@@ -222,34 +200,16 @@ package sts {
         Subject: js.UndefOr[Subject] = js.undefined,
         SubjectType: js.UndefOr[SubjectType] = js.undefined
     ): AssumeRoleWithSAMLResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "AssumedRoleUser" -> AssumedRoleUser.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Audience" -> Audience.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Credentials" -> Credentials.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Issuer" -> Issuer.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NameQualifier" -> NameQualifier.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "PackedPolicySize" -> PackedPolicySize.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Subject" -> Subject.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SubjectType" -> SubjectType.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AssumeRoleWithSAMLResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      AssumedRoleUser.foreach(__v => __obj.update("AssumedRoleUser", __v.asInstanceOf[js.Any]))
+      Audience.foreach(__v => __obj.update("Audience", __v.asInstanceOf[js.Any]))
+      Credentials.foreach(__v => __obj.update("Credentials", __v.asInstanceOf[js.Any]))
+      Issuer.foreach(__v => __obj.update("Issuer", __v.asInstanceOf[js.Any]))
+      NameQualifier.foreach(__v => __obj.update("NameQualifier", __v.asInstanceOf[js.Any]))
+      PackedPolicySize.foreach(__v => __obj.update("PackedPolicySize", __v.asInstanceOf[js.Any]))
+      Subject.foreach(__v => __obj.update("Subject", __v.asInstanceOf[js.Any]))
+      SubjectType.foreach(__v => __obj.update("SubjectType", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AssumeRoleWithSAMLResponse]
     }
   }
 
@@ -272,22 +232,16 @@ package sts {
         Policy: js.UndefOr[sessionPolicyDocumentType] = js.undefined,
         ProviderId: js.UndefOr[urlType] = js.undefined
     ): AssumeRoleWithWebIdentityRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "RoleArn"          -> RoleArn.asInstanceOf[js.Any],
         "RoleSessionName"  -> RoleSessionName.asInstanceOf[js.Any],
-        "WebIdentityToken" -> WebIdentityToken.asInstanceOf[js.Any],
-        "DurationSeconds" -> DurationSeconds.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Policy" -> Policy.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ProviderId" -> ProviderId.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "WebIdentityToken" -> WebIdentityToken.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AssumeRoleWithWebIdentityRequest]
+      DurationSeconds.foreach(__v => __obj.update("DurationSeconds", __v.asInstanceOf[js.Any]))
+      Policy.foreach(__v => __obj.update("Policy", __v.asInstanceOf[js.Any]))
+      ProviderId.foreach(__v => __obj.update("ProviderId", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AssumeRoleWithWebIdentityRequest]
     }
   }
 
@@ -313,28 +267,14 @@ package sts {
         Provider: js.UndefOr[Issuer] = js.undefined,
         SubjectFromWebIdentityToken: js.UndefOr[webIdentitySubjectType] = js.undefined
     ): AssumeRoleWithWebIdentityResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "AssumedRoleUser" -> AssumedRoleUser.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Audience" -> Audience.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Credentials" -> Credentials.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "PackedPolicySize" -> PackedPolicySize.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Provider" -> Provider.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SubjectFromWebIdentityToken" -> SubjectFromWebIdentityToken.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AssumeRoleWithWebIdentityResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      AssumedRoleUser.foreach(__v => __obj.update("AssumedRoleUser", __v.asInstanceOf[js.Any]))
+      Audience.foreach(__v => __obj.update("Audience", __v.asInstanceOf[js.Any]))
+      Credentials.foreach(__v => __obj.update("Credentials", __v.asInstanceOf[js.Any]))
+      PackedPolicySize.foreach(__v => __obj.update("PackedPolicySize", __v.asInstanceOf[js.Any]))
+      Provider.foreach(__v => __obj.update("Provider", __v.asInstanceOf[js.Any]))
+      SubjectFromWebIdentityToken.foreach(__v => __obj.update("SubjectFromWebIdentityToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AssumeRoleWithWebIdentityResponse]
     }
   }
 
@@ -352,12 +292,12 @@ package sts {
         Arn: arnType,
         AssumedRoleId: assumedRoleIdType
     ): AssumedRoleUser = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "Arn"           -> Arn.asInstanceOf[js.Any],
         "AssumedRoleId" -> AssumedRoleId.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AssumedRoleUser]
+      __obj.asInstanceOf[AssumedRoleUser]
     }
   }
 
@@ -379,14 +319,14 @@ package sts {
         SecretAccessKey: accessKeySecretType,
         SessionToken: tokenType
     ): Credentials = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "AccessKeyId"     -> AccessKeyId.asInstanceOf[js.Any],
         "Expiration"      -> Expiration.asInstanceOf[js.Any],
         "SecretAccessKey" -> SecretAccessKey.asInstanceOf[js.Any],
         "SessionToken"    -> SessionToken.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Credentials]
+      __obj.asInstanceOf[Credentials]
     }
   }
 
@@ -399,11 +339,11 @@ package sts {
     def apply(
         EncodedMessage: encodedMessageType
     ): DecodeAuthorizationMessageRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "EncodedMessage" -> EncodedMessage.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DecodeAuthorizationMessageRequest]
+      __obj.asInstanceOf[DecodeAuthorizationMessageRequest]
     }
   }
 
@@ -419,13 +359,9 @@ package sts {
     def apply(
         DecodedMessage: js.UndefOr[decodedMessageType] = js.undefined
     ): DecodeAuthorizationMessageResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "DecodedMessage" -> DecodedMessage.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DecodeAuthorizationMessageResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      DecodedMessage.foreach(__v => __obj.update("DecodedMessage", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DecodeAuthorizationMessageResponse]
     }
   }
 
@@ -451,12 +387,12 @@ package sts {
         Arn: arnType,
         FederatedUserId: federatedIdType
     ): FederatedUser = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "Arn"             -> Arn.asInstanceOf[js.Any],
         "FederatedUserId" -> FederatedUserId.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[FederatedUser]
+      __obj.asInstanceOf[FederatedUser]
     }
   }
 
@@ -466,10 +402,9 @@ package sts {
   object GetCallerIdentityRequest {
     def apply(
         ): GetCallerIdentityRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary.empty[js.Any]
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetCallerIdentityRequest]
+      __obj.asInstanceOf[GetCallerIdentityRequest]
     }
   }
 
@@ -489,19 +424,11 @@ package sts {
         Arn: js.UndefOr[arnType] = js.undefined,
         UserId: js.UndefOr[userIdType] = js.undefined
     ): GetCallerIdentityResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Account" -> Account.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Arn" -> Arn.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "UserId" -> UserId.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetCallerIdentityResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      Account.foreach(__v => __obj.update("Account", __v.asInstanceOf[js.Any]))
+      Arn.foreach(__v => __obj.update("Arn", __v.asInstanceOf[js.Any]))
+      UserId.foreach(__v => __obj.update("UserId", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetCallerIdentityResponse]
     }
   }
 
@@ -518,17 +445,13 @@ package sts {
         DurationSeconds: js.UndefOr[durationSecondsType] = js.undefined,
         Policy: js.UndefOr[sessionPolicyDocumentType] = js.undefined
     ): GetFederationTokenRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Name" -> Name.asInstanceOf[js.Any],
-        "DurationSeconds" -> DurationSeconds.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Policy" -> Policy.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "Name" -> Name.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetFederationTokenRequest]
+      DurationSeconds.foreach(__v => __obj.update("DurationSeconds", __v.asInstanceOf[js.Any]))
+      Policy.foreach(__v => __obj.update("Policy", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetFederationTokenRequest]
     }
   }
 
@@ -548,19 +471,11 @@ package sts {
         FederatedUser: js.UndefOr[FederatedUser] = js.undefined,
         PackedPolicySize: js.UndefOr[nonNegativeIntegerType] = js.undefined
     ): GetFederationTokenResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Credentials" -> Credentials.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "FederatedUser" -> FederatedUser.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "PackedPolicySize" -> PackedPolicySize.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetFederationTokenResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      Credentials.foreach(__v => __obj.update("Credentials", __v.asInstanceOf[js.Any]))
+      FederatedUser.foreach(__v => __obj.update("FederatedUser", __v.asInstanceOf[js.Any]))
+      PackedPolicySize.foreach(__v => __obj.update("PackedPolicySize", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetFederationTokenResponse]
     }
   }
 
@@ -577,19 +492,11 @@ package sts {
         SerialNumber: js.UndefOr[serialNumberType] = js.undefined,
         TokenCode: js.UndefOr[tokenCodeType] = js.undefined
     ): GetSessionTokenRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "DurationSeconds" -> DurationSeconds.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SerialNumber" -> SerialNumber.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "TokenCode" -> TokenCode.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetSessionTokenRequest]
+      val __obj = js.Dictionary.empty[js.Any]
+      DurationSeconds.foreach(__v => __obj.update("DurationSeconds", __v.asInstanceOf[js.Any]))
+      SerialNumber.foreach(__v => __obj.update("SerialNumber", __v.asInstanceOf[js.Any]))
+      TokenCode.foreach(__v => __obj.update("TokenCode", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetSessionTokenRequest]
     }
   }
 
@@ -605,13 +512,9 @@ package sts {
     def apply(
         Credentials: js.UndefOr[Credentials] = js.undefined
     ): GetSessionTokenResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Credentials" -> Credentials.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetSessionTokenResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      Credentials.foreach(__v => __obj.update("Credentials", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetSessionTokenResponse]
     }
   }
 

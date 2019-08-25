@@ -120,28 +120,14 @@ package transfer {
         LoggingRole: js.UndefOr[Role] = js.undefined,
         Tags: js.UndefOr[Tags] = js.undefined
     ): CreateServerRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "EndpointDetails" -> EndpointDetails.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "EndpointType" -> EndpointType.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "IdentityProviderDetails" -> IdentityProviderDetails.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "IdentityProviderType" -> IdentityProviderType.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "LoggingRole" -> LoggingRole.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Tags" -> Tags.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateServerRequest]
+      val __obj = js.Dictionary.empty[js.Any]
+      EndpointDetails.foreach(__v => __obj.update("EndpointDetails", __v.asInstanceOf[js.Any]))
+      EndpointType.foreach(__v => __obj.update("EndpointType", __v.asInstanceOf[js.Any]))
+      IdentityProviderDetails.foreach(__v => __obj.update("IdentityProviderDetails", __v.asInstanceOf[js.Any]))
+      IdentityProviderType.foreach(__v => __obj.update("IdentityProviderType", __v.asInstanceOf[js.Any]))
+      LoggingRole.foreach(__v => __obj.update("LoggingRole", __v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateServerRequest]
     }
   }
 
@@ -154,11 +140,11 @@ package transfer {
     def apply(
         ServerId: ServerId
     ): CreateServerResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ServerId" -> ServerId.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateServerResponse]
+      __obj.asInstanceOf[CreateServerResponse]
     }
   }
 
@@ -183,25 +169,17 @@ package transfer {
         SshPublicKeyBody: js.UndefOr[SshPublicKeyBody] = js.undefined,
         Tags: js.UndefOr[Tags] = js.undefined
     ): CreateUserRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "Role"     -> Role.asInstanceOf[js.Any],
         "ServerId" -> ServerId.asInstanceOf[js.Any],
-        "UserName" -> UserName.asInstanceOf[js.Any],
-        "HomeDirectory" -> HomeDirectory.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Policy" -> Policy.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SshPublicKeyBody" -> SshPublicKeyBody.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Tags" -> Tags.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "UserName" -> UserName.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateUserRequest]
+      HomeDirectory.foreach(__v => __obj.update("HomeDirectory", __v.asInstanceOf[js.Any]))
+      Policy.foreach(__v => __obj.update("Policy", __v.asInstanceOf[js.Any]))
+      SshPublicKeyBody.foreach(__v => __obj.update("SshPublicKeyBody", __v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateUserRequest]
     }
   }
 
@@ -216,12 +194,12 @@ package transfer {
         ServerId: ServerId,
         UserName: UserName
     ): CreateUserResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ServerId" -> ServerId.asInstanceOf[js.Any],
         "UserName" -> UserName.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateUserResponse]
+      __obj.asInstanceOf[CreateUserResponse]
     }
   }
 
@@ -234,11 +212,11 @@ package transfer {
     def apply(
         ServerId: ServerId
     ): DeleteServerRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ServerId" -> ServerId.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteServerRequest]
+      __obj.asInstanceOf[DeleteServerRequest]
     }
   }
 
@@ -255,13 +233,13 @@ package transfer {
         SshPublicKeyId: SshPublicKeyId,
         UserName: UserName
     ): DeleteSshPublicKeyRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ServerId"       -> ServerId.asInstanceOf[js.Any],
         "SshPublicKeyId" -> SshPublicKeyId.asInstanceOf[js.Any],
         "UserName"       -> UserName.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteSshPublicKeyRequest]
+      __obj.asInstanceOf[DeleteSshPublicKeyRequest]
     }
   }
 
@@ -276,12 +254,12 @@ package transfer {
         ServerId: ServerId,
         UserName: UserName
     ): DeleteUserRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ServerId" -> ServerId.asInstanceOf[js.Any],
         "UserName" -> UserName.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteUserRequest]
+      __obj.asInstanceOf[DeleteUserRequest]
     }
   }
 
@@ -294,11 +272,11 @@ package transfer {
     def apply(
         ServerId: ServerId
     ): DescribeServerRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ServerId" -> ServerId.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeServerRequest]
+      __obj.asInstanceOf[DescribeServerRequest]
     }
   }
 
@@ -311,11 +289,11 @@ package transfer {
     def apply(
         Server: DescribedServer
     ): DescribeServerResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "Server" -> Server.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeServerResponse]
+      __obj.asInstanceOf[DescribeServerResponse]
     }
   }
 
@@ -330,12 +308,12 @@ package transfer {
         ServerId: ServerId,
         UserName: UserName
     ): DescribeUserRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ServerId" -> ServerId.asInstanceOf[js.Any],
         "UserName" -> UserName.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeUserRequest]
+      __obj.asInstanceOf[DescribeUserRequest]
     }
   }
 
@@ -350,12 +328,12 @@ package transfer {
         ServerId: ServerId,
         User: DescribedUser
     ): DescribeUserResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ServerId" -> ServerId.asInstanceOf[js.Any],
         "User"     -> User.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeUserResponse]
+      __obj.asInstanceOf[DescribeUserResponse]
     }
   }
 
@@ -389,38 +367,20 @@ package transfer {
         Tags: js.UndefOr[Tags] = js.undefined,
         UserCount: js.UndefOr[UserCount] = js.undefined
     ): DescribedServer = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Arn" -> Arn.asInstanceOf[js.Any],
-        "EndpointDetails" -> EndpointDetails.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "EndpointType" -> EndpointType.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "IdentityProviderDetails" -> IdentityProviderDetails.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "IdentityProviderType" -> IdentityProviderType.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "LoggingRole" -> LoggingRole.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ServerId" -> ServerId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "State" -> State.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Tags" -> Tags.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "UserCount" -> UserCount.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "Arn" -> Arn.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribedServer]
+      EndpointDetails.foreach(__v => __obj.update("EndpointDetails", __v.asInstanceOf[js.Any]))
+      EndpointType.foreach(__v => __obj.update("EndpointType", __v.asInstanceOf[js.Any]))
+      IdentityProviderDetails.foreach(__v => __obj.update("IdentityProviderDetails", __v.asInstanceOf[js.Any]))
+      IdentityProviderType.foreach(__v => __obj.update("IdentityProviderType", __v.asInstanceOf[js.Any]))
+      LoggingRole.foreach(__v => __obj.update("LoggingRole", __v.asInstanceOf[js.Any]))
+      ServerId.foreach(__v => __obj.update("ServerId", __v.asInstanceOf[js.Any]))
+      State.foreach(__v => __obj.update("State", __v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
+      UserCount.foreach(__v => __obj.update("UserCount", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribedServer]
     }
   }
 
@@ -448,29 +408,17 @@ package transfer {
         Tags: js.UndefOr[Tags] = js.undefined,
         UserName: js.UndefOr[UserName] = js.undefined
     ): DescribedUser = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Arn" -> Arn.asInstanceOf[js.Any],
-        "HomeDirectory" -> HomeDirectory.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Policy" -> Policy.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Role" -> Role.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SshPublicKeys" -> SshPublicKeys.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Tags" -> Tags.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "UserName" -> UserName.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "Arn" -> Arn.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribedUser]
+      HomeDirectory.foreach(__v => __obj.update("HomeDirectory", __v.asInstanceOf[js.Any]))
+      Policy.foreach(__v => __obj.update("Policy", __v.asInstanceOf[js.Any]))
+      Role.foreach(__v => __obj.update("Role", __v.asInstanceOf[js.Any]))
+      SshPublicKeys.foreach(__v => __obj.update("SshPublicKeys", __v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
+      UserName.foreach(__v => __obj.update("UserName", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribedUser]
     }
   }
 
@@ -483,13 +431,9 @@ package transfer {
     def apply(
         VpcEndpointId: js.UndefOr[VpcEndpointId] = js.undefined
     ): EndpointDetails = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "VpcEndpointId" -> VpcEndpointId.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[EndpointDetails]
+      val __obj = js.Dictionary.empty[js.Any]
+      VpcEndpointId.foreach(__v => __obj.update("VpcEndpointId", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[EndpointDetails]
     }
   }
 
@@ -514,16 +458,10 @@ package transfer {
         InvocationRole: js.UndefOr[Role] = js.undefined,
         Url: js.UndefOr[Url] = js.undefined
     ): IdentityProviderDetails = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "InvocationRole" -> InvocationRole.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Url" -> Url.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[IdentityProviderDetails]
+      val __obj = js.Dictionary.empty[js.Any]
+      InvocationRole.foreach(__v => __obj.update("InvocationRole", __v.asInstanceOf[js.Any]))
+      Url.foreach(__v => __obj.update("Url", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[IdentityProviderDetails]
     }
   }
 
@@ -550,13 +488,13 @@ package transfer {
         SshPublicKeyBody: SshPublicKeyBody,
         UserName: UserName
     ): ImportSshPublicKeyRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ServerId"         -> ServerId.asInstanceOf[js.Any],
         "SshPublicKeyBody" -> SshPublicKeyBody.asInstanceOf[js.Any],
         "UserName"         -> UserName.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ImportSshPublicKeyRequest]
+      __obj.asInstanceOf[ImportSshPublicKeyRequest]
     }
   }
 
@@ -576,13 +514,13 @@ package transfer {
         SshPublicKeyId: SshPublicKeyId,
         UserName: UserName
     ): ImportSshPublicKeyResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ServerId"       -> ServerId.asInstanceOf[js.Any],
         "SshPublicKeyId" -> SshPublicKeyId.asInstanceOf[js.Any],
         "UserName"       -> UserName.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ImportSshPublicKeyResponse]
+      __obj.asInstanceOf[ImportSshPublicKeyResponse]
     }
   }
 
@@ -597,16 +535,10 @@ package transfer {
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): ListServersRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "MaxResults" -> MaxResults.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NextToken" -> NextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListServersRequest]
+      val __obj = js.Dictionary.empty[js.Any]
+      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListServersRequest]
     }
   }
 
@@ -621,14 +553,12 @@ package transfer {
         Servers: ListedServers,
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): ListServersResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Servers" -> Servers.asInstanceOf[js.Any],
-        "NextToken" -> NextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "Servers" -> Servers.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListServersResponse]
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListServersResponse]
     }
   }
 
@@ -645,17 +575,13 @@ package transfer {
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): ListTagsForResourceRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Arn" -> Arn.asInstanceOf[js.Any],
-        "MaxResults" -> MaxResults.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NextToken" -> NextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "Arn" -> Arn.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListTagsForResourceRequest]
+      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListTagsForResourceRequest]
     }
   }
 
@@ -672,19 +598,11 @@ package transfer {
         NextToken: js.UndefOr[NextToken] = js.undefined,
         Tags: js.UndefOr[Tags] = js.undefined
     ): ListTagsForResourceResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Arn" -> Arn.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NextToken" -> NextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Tags" -> Tags.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListTagsForResourceResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      Arn.foreach(__v => __obj.update("Arn", __v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListTagsForResourceResponse]
     }
   }
 
@@ -701,17 +619,13 @@ package transfer {
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): ListUsersRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ServerId" -> ServerId.asInstanceOf[js.Any],
-        "MaxResults" -> MaxResults.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NextToken" -> NextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "ServerId" -> ServerId.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListUsersRequest]
+      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListUsersRequest]
     }
   }
 
@@ -728,15 +642,13 @@ package transfer {
         Users: ListedUsers,
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): ListUsersResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ServerId" -> ServerId.asInstanceOf[js.Any],
-        "Users"    -> Users.asInstanceOf[js.Any],
-        "NextToken" -> NextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "Users"    -> Users.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListUsersResponse]
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListUsersResponse]
     }
   }
 
@@ -764,29 +676,17 @@ package transfer {
         State: js.UndefOr[State] = js.undefined,
         UserCount: js.UndefOr[UserCount] = js.undefined
     ): ListedServer = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Arn" -> Arn.asInstanceOf[js.Any],
-        "EndpointType" -> EndpointType.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "IdentityProviderType" -> IdentityProviderType.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "LoggingRole" -> LoggingRole.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ServerId" -> ServerId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "State" -> State.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "UserCount" -> UserCount.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "Arn" -> Arn.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListedServer]
+      EndpointType.foreach(__v => __obj.update("EndpointType", __v.asInstanceOf[js.Any]))
+      IdentityProviderType.foreach(__v => __obj.update("IdentityProviderType", __v.asInstanceOf[js.Any]))
+      LoggingRole.foreach(__v => __obj.update("LoggingRole", __v.asInstanceOf[js.Any]))
+      ServerId.foreach(__v => __obj.update("ServerId", __v.asInstanceOf[js.Any]))
+      State.foreach(__v => __obj.update("State", __v.asInstanceOf[js.Any]))
+      UserCount.foreach(__v => __obj.update("UserCount", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListedServer]
     }
   }
 
@@ -810,23 +710,15 @@ package transfer {
         SshPublicKeyCount: js.UndefOr[SshPublicKeyCount] = js.undefined,
         UserName: js.UndefOr[UserName] = js.undefined
     ): ListedUser = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Arn" -> Arn.asInstanceOf[js.Any],
-        "HomeDirectory" -> HomeDirectory.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Role" -> Role.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SshPublicKeyCount" -> SshPublicKeyCount.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "UserName" -> UserName.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "Arn" -> Arn.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListedUser]
+      HomeDirectory.foreach(__v => __obj.update("HomeDirectory", __v.asInstanceOf[js.Any]))
+      Role.foreach(__v => __obj.update("Role", __v.asInstanceOf[js.Any]))
+      SshPublicKeyCount.foreach(__v => __obj.update("SshPublicKeyCount", __v.asInstanceOf[js.Any]))
+      UserName.foreach(__v => __obj.update("UserName", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListedUser]
     }
   }
 
@@ -846,13 +738,13 @@ package transfer {
         SshPublicKeyBody: SshPublicKeyBody,
         SshPublicKeyId: SshPublicKeyId
     ): SshPublicKey = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "DateImported"     -> DateImported.asInstanceOf[js.Any],
         "SshPublicKeyBody" -> SshPublicKeyBody.asInstanceOf[js.Any],
         "SshPublicKeyId"   -> SshPublicKeyId.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SshPublicKey]
+      __obj.asInstanceOf[SshPublicKey]
     }
   }
 
@@ -865,11 +757,11 @@ package transfer {
     def apply(
         ServerId: ServerId
     ): StartServerRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ServerId" -> ServerId.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StartServerRequest]
+      __obj.asInstanceOf[StartServerRequest]
     }
   }
 
@@ -897,11 +789,11 @@ package transfer {
     def apply(
         ServerId: ServerId
     ): StopServerRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ServerId" -> ServerId.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StopServerRequest]
+      __obj.asInstanceOf[StopServerRequest]
     }
   }
 
@@ -919,12 +811,12 @@ package transfer {
         Key: TagKey,
         Value: TagValue
     ): Tag = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "Key"   -> Key.asInstanceOf[js.Any],
         "Value" -> Value.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Tag]
+      __obj.asInstanceOf[Tag]
     }
   }
 
@@ -939,12 +831,12 @@ package transfer {
         Arn: Arn,
         Tags: Tags
     ): TagResourceRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "Arn"  -> Arn.asInstanceOf[js.Any],
         "Tags" -> Tags.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[TagResourceRequest]
+      __obj.asInstanceOf[TagResourceRequest]
     }
   }
 
@@ -961,15 +853,13 @@ package transfer {
         UserName: UserName,
         UserPassword: js.UndefOr[UserPassword] = js.undefined
     ): TestIdentityProviderRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ServerId" -> ServerId.asInstanceOf[js.Any],
-        "UserName" -> UserName.asInstanceOf[js.Any],
-        "UserPassword" -> UserPassword.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "UserName" -> UserName.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[TestIdentityProviderRequest]
+      UserPassword.foreach(__v => __obj.update("UserPassword", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[TestIdentityProviderRequest]
     }
   }
 
@@ -986,15 +876,13 @@ package transfer {
         Url: Url,
         Message: js.UndefOr[Message] = js.undefined
     ): TestIdentityProviderResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "StatusCode" -> StatusCode.asInstanceOf[js.Any],
-        "Url"        -> Url.asInstanceOf[js.Any],
-        "Message" -> Message.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "Url"        -> Url.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[TestIdentityProviderResponse]
+      Message.foreach(__v => __obj.update("Message", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[TestIdentityProviderResponse]
     }
   }
 
@@ -1009,12 +897,12 @@ package transfer {
         Arn: Arn,
         TagKeys: TagKeys
     ): UntagResourceRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "Arn"     -> Arn.asInstanceOf[js.Any],
         "TagKeys" -> TagKeys.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UntagResourceRequest]
+      __obj.asInstanceOf[UntagResourceRequest]
     }
   }
 
@@ -1035,23 +923,15 @@ package transfer {
         IdentityProviderDetails: js.UndefOr[IdentityProviderDetails] = js.undefined,
         LoggingRole: js.UndefOr[NullableRole] = js.undefined
     ): UpdateServerRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ServerId" -> ServerId.asInstanceOf[js.Any],
-        "EndpointDetails" -> EndpointDetails.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "EndpointType" -> EndpointType.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "IdentityProviderDetails" -> IdentityProviderDetails.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "LoggingRole" -> LoggingRole.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "ServerId" -> ServerId.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateServerRequest]
+      EndpointDetails.foreach(__v => __obj.update("EndpointDetails", __v.asInstanceOf[js.Any]))
+      EndpointType.foreach(__v => __obj.update("EndpointType", __v.asInstanceOf[js.Any]))
+      IdentityProviderDetails.foreach(__v => __obj.update("IdentityProviderDetails", __v.asInstanceOf[js.Any]))
+      LoggingRole.foreach(__v => __obj.update("LoggingRole", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateServerRequest]
     }
   }
 
@@ -1064,11 +944,11 @@ package transfer {
     def apply(
         ServerId: ServerId
     ): UpdateServerResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ServerId" -> ServerId.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateServerResponse]
+      __obj.asInstanceOf[UpdateServerResponse]
     }
   }
 
@@ -1089,21 +969,15 @@ package transfer {
         Policy: js.UndefOr[Policy] = js.undefined,
         Role: js.UndefOr[Role] = js.undefined
     ): UpdateUserRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ServerId" -> ServerId.asInstanceOf[js.Any],
-        "UserName" -> UserName.asInstanceOf[js.Any],
-        "HomeDirectory" -> HomeDirectory.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Policy" -> Policy.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Role" -> Role.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "UserName" -> UserName.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateUserRequest]
+      HomeDirectory.foreach(__v => __obj.update("HomeDirectory", __v.asInstanceOf[js.Any]))
+      Policy.foreach(__v => __obj.update("Policy", __v.asInstanceOf[js.Any]))
+      Role.foreach(__v => __obj.update("Role", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateUserRequest]
     }
   }
 
@@ -1121,12 +995,12 @@ package transfer {
         ServerId: ServerId,
         UserName: UserName
     ): UpdateUserResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ServerId" -> ServerId.asInstanceOf[js.Any],
         "UserName" -> UserName.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateUserResponse]
+      __obj.asInstanceOf[UpdateUserResponse]
     }
   }
 }

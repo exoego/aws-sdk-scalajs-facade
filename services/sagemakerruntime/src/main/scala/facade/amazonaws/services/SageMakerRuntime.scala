@@ -47,21 +47,15 @@ package sagemakerruntime {
         ContentType: js.UndefOr[Header] = js.undefined,
         CustomAttributes: js.UndefOr[CustomAttributesHeader] = js.undefined
     ): InvokeEndpointInput = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "Body"         -> Body.asInstanceOf[js.Any],
-        "EndpointName" -> EndpointName.asInstanceOf[js.Any],
-        "Accept" -> Accept.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ContentType" -> ContentType.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "CustomAttributes" -> CustomAttributes.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "EndpointName" -> EndpointName.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[InvokeEndpointInput]
+      Accept.foreach(__v => __obj.update("Accept", __v.asInstanceOf[js.Any]))
+      ContentType.foreach(__v => __obj.update("ContentType", __v.asInstanceOf[js.Any]))
+      CustomAttributes.foreach(__v => __obj.update("CustomAttributes", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[InvokeEndpointInput]
     }
   }
 
@@ -80,20 +74,14 @@ package sagemakerruntime {
         CustomAttributes: js.UndefOr[CustomAttributesHeader] = js.undefined,
         InvokedProductionVariant: js.UndefOr[Header] = js.undefined
     ): InvokeEndpointOutput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Body" -> Body.asInstanceOf[js.Any],
-        "ContentType" -> ContentType.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "CustomAttributes" -> CustomAttributes.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "InvokedProductionVariant" -> InvokedProductionVariant.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "Body" -> Body.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[InvokeEndpointOutput]
+      ContentType.foreach(__v => __obj.update("ContentType", __v.asInstanceOf[js.Any]))
+      CustomAttributes.foreach(__v => __obj.update("CustomAttributes", __v.asInstanceOf[js.Any]))
+      InvokedProductionVariant.foreach(__v => __obj.update("InvokedProductionVariant", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[InvokeEndpointOutput]
     }
   }
 }

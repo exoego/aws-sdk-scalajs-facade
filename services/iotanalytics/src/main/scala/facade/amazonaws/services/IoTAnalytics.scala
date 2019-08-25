@@ -230,15 +230,13 @@ package iotanalytics {
         name: ActivityName,
         next: js.UndefOr[ActivityName] = js.undefined
     ): AddAttributesActivity = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "attributes" -> attributes.asInstanceOf[js.Any],
-        "name"       -> name.asInstanceOf[js.Any],
-        "next" -> next.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "name"       -> name.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AddAttributesActivity]
+      next.foreach(__v => __obj.update("next", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AddAttributesActivity]
     }
   }
 
@@ -258,19 +256,11 @@ package iotanalytics {
         errorMessage: js.UndefOr[ErrorMessage] = js.undefined,
         messageId: js.UndefOr[MessageId] = js.undefined
     ): BatchPutMessageErrorEntry = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "errorCode" -> errorCode.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "errorMessage" -> errorMessage.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "messageId" -> messageId.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[BatchPutMessageErrorEntry]
+      val __obj = js.Dictionary.empty[js.Any]
+      errorCode.foreach(__v => __obj.update("errorCode", __v.asInstanceOf[js.Any]))
+      errorMessage.foreach(__v => __obj.update("errorMessage", __v.asInstanceOf[js.Any]))
+      messageId.foreach(__v => __obj.update("messageId", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[BatchPutMessageErrorEntry]
     }
   }
 
@@ -285,12 +275,12 @@ package iotanalytics {
         channelName: ChannelName,
         messages: Messages
     ): BatchPutMessageRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "channelName" -> channelName.asInstanceOf[js.Any],
         "messages"    -> messages.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[BatchPutMessageRequest]
+      __obj.asInstanceOf[BatchPutMessageRequest]
     }
   }
 
@@ -303,13 +293,9 @@ package iotanalytics {
     def apply(
         batchPutMessageErrorEntries: js.UndefOr[BatchPutMessageErrorEntries] = js.undefined
     ): BatchPutMessageResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "batchPutMessageErrorEntries" -> batchPutMessageErrorEntries.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[BatchPutMessageResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      batchPutMessageErrorEntries.foreach(__v => __obj.update("batchPutMessageErrorEntries", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[BatchPutMessageResponse]
     }
   }
 
@@ -324,12 +310,12 @@ package iotanalytics {
         pipelineName: PipelineName,
         reprocessingId: ReprocessingId
     ): CancelPipelineReprocessingRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "pipelineName"   -> pipelineName.asInstanceOf[js.Any],
         "reprocessingId" -> reprocessingId.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CancelPipelineReprocessingRequest]
+      __obj.asInstanceOf[CancelPipelineReprocessingRequest]
     }
   }
 
@@ -339,10 +325,9 @@ package iotanalytics {
   object CancelPipelineReprocessingResponse {
     def apply(
         ): CancelPipelineReprocessingResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary.empty[js.Any]
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CancelPipelineReprocessingResponse]
+      __obj.asInstanceOf[CancelPipelineReprocessingResponse]
     }
   }
 
@@ -368,28 +353,14 @@ package iotanalytics {
         retentionPeriod: js.UndefOr[RetentionPeriod] = js.undefined,
         status: js.UndefOr[ChannelStatus] = js.undefined
     ): Channel = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "arn" -> arn.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "creationTime" -> creationTime.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "lastUpdateTime" -> lastUpdateTime.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "name" -> name.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "retentionPeriod" -> retentionPeriod.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "status" -> status.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Channel]
+      val __obj = js.Dictionary.empty[js.Any]
+      arn.foreach(__v => __obj.update("arn", __v.asInstanceOf[js.Any]))
+      creationTime.foreach(__v => __obj.update("creationTime", __v.asInstanceOf[js.Any]))
+      lastUpdateTime.foreach(__v => __obj.update("lastUpdateTime", __v.asInstanceOf[js.Any]))
+      name.foreach(__v => __obj.update("name", __v.asInstanceOf[js.Any]))
+      retentionPeriod.foreach(__v => __obj.update("retentionPeriod", __v.asInstanceOf[js.Any]))
+      status.foreach(__v => __obj.update("status", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Channel]
     }
   }
 
@@ -409,15 +380,13 @@ package iotanalytics {
         name: ActivityName,
         next: js.UndefOr[ActivityName] = js.undefined
     ): ChannelActivity = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "channelName" -> channelName.asInstanceOf[js.Any],
-        "name"        -> name.asInstanceOf[js.Any],
-        "next" -> next.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "name"        -> name.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ChannelActivity]
+      next.foreach(__v => __obj.update("next", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ChannelActivity]
     }
   }
 
@@ -433,13 +402,9 @@ package iotanalytics {
     def apply(
         size: js.UndefOr[EstimatedResourceSize] = js.undefined
     ): ChannelStatistics = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "size" -> size.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ChannelStatistics]
+      val __obj = js.Dictionary.empty[js.Any]
+      size.foreach(__v => __obj.update("size", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ChannelStatistics]
     }
   }
 
@@ -469,22 +434,12 @@ package iotanalytics {
         lastUpdateTime: js.UndefOr[Timestamp] = js.undefined,
         status: js.UndefOr[ChannelStatus] = js.undefined
     ): ChannelSummary = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "channelName" -> channelName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "creationTime" -> creationTime.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "lastUpdateTime" -> lastUpdateTime.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "status" -> status.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ChannelSummary]
+      val __obj = js.Dictionary.empty[js.Any]
+      channelName.foreach(__v => __obj.update("channelName", __v.asInstanceOf[js.Any]))
+      creationTime.foreach(__v => __obj.update("creationTime", __v.asInstanceOf[js.Any]))
+      lastUpdateTime.foreach(__v => __obj.update("lastUpdateTime", __v.asInstanceOf[js.Any]))
+      status.foreach(__v => __obj.update("status", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ChannelSummary]
     }
   }
 
@@ -513,16 +468,14 @@ package iotanalytics {
         resourceConfiguration: ResourceConfiguration,
         variables: js.UndefOr[Variables] = js.undefined
     ): ContainerDatasetAction = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "executionRoleArn"      -> executionRoleArn.asInstanceOf[js.Any],
         "image"                 -> image.asInstanceOf[js.Any],
-        "resourceConfiguration" -> resourceConfiguration.asInstanceOf[js.Any],
-        "variables" -> variables.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "resourceConfiguration" -> resourceConfiguration.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ContainerDatasetAction]
+      variables.foreach(__v => __obj.update("variables", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ContainerDatasetAction]
     }
   }
 
@@ -539,17 +492,13 @@ package iotanalytics {
         retentionPeriod: js.UndefOr[RetentionPeriod] = js.undefined,
         tags: js.UndefOr[TagList] = js.undefined
     ): CreateChannelRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "channelName" -> channelName.asInstanceOf[js.Any],
-        "retentionPeriod" -> retentionPeriod.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "tags" -> tags.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "channelName" -> channelName.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateChannelRequest]
+      retentionPeriod.foreach(__v => __obj.update("retentionPeriod", __v.asInstanceOf[js.Any]))
+      tags.foreach(__v => __obj.update("tags", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateChannelRequest]
     }
   }
 
@@ -566,19 +515,11 @@ package iotanalytics {
         channelName: js.UndefOr[ChannelName] = js.undefined,
         retentionPeriod: js.UndefOr[RetentionPeriod] = js.undefined
     ): CreateChannelResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "channelArn" -> channelArn.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "channelName" -> channelName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "retentionPeriod" -> retentionPeriod.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateChannelResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      channelArn.foreach(__v => __obj.update("channelArn", __v.asInstanceOf[js.Any]))
+      channelName.foreach(__v => __obj.update("channelName", __v.asInstanceOf[js.Any]))
+      retentionPeriod.foreach(__v => __obj.update("retentionPeriod", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateChannelResponse]
     }
   }
 
@@ -591,11 +532,11 @@ package iotanalytics {
     def apply(
         datasetName: DatasetName
     ): CreateDatasetContentRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "datasetName" -> datasetName.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateDatasetContentRequest]
+      __obj.asInstanceOf[CreateDatasetContentRequest]
     }
   }
 
@@ -608,13 +549,9 @@ package iotanalytics {
     def apply(
         versionId: js.UndefOr[DatasetContentVersion] = js.undefined
     ): CreateDatasetContentResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "versionId" -> versionId.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateDatasetContentResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      versionId.foreach(__v => __obj.update("versionId", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateDatasetContentResponse]
     }
   }
 
@@ -639,27 +576,17 @@ package iotanalytics {
         triggers: js.UndefOr[DatasetTriggers] = js.undefined,
         versioningConfiguration: js.UndefOr[VersioningConfiguration] = js.undefined
     ): CreateDatasetRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "actions"     -> actions.asInstanceOf[js.Any],
-        "datasetName" -> datasetName.asInstanceOf[js.Any],
-        "contentDeliveryRules" -> contentDeliveryRules.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "retentionPeriod" -> retentionPeriod.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "tags" -> tags.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "triggers" -> triggers.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "versioningConfiguration" -> versioningConfiguration.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "datasetName" -> datasetName.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateDatasetRequest]
+      contentDeliveryRules.foreach(__v => __obj.update("contentDeliveryRules", __v.asInstanceOf[js.Any]))
+      retentionPeriod.foreach(__v => __obj.update("retentionPeriod", __v.asInstanceOf[js.Any]))
+      tags.foreach(__v => __obj.update("tags", __v.asInstanceOf[js.Any]))
+      triggers.foreach(__v => __obj.update("triggers", __v.asInstanceOf[js.Any]))
+      versioningConfiguration.foreach(__v => __obj.update("versioningConfiguration", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateDatasetRequest]
     }
   }
 
@@ -676,19 +603,11 @@ package iotanalytics {
         datasetName: js.UndefOr[DatasetName] = js.undefined,
         retentionPeriod: js.UndefOr[RetentionPeriod] = js.undefined
     ): CreateDatasetResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "datasetArn" -> datasetArn.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "datasetName" -> datasetName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "retentionPeriod" -> retentionPeriod.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateDatasetResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      datasetArn.foreach(__v => __obj.update("datasetArn", __v.asInstanceOf[js.Any]))
+      datasetName.foreach(__v => __obj.update("datasetName", __v.asInstanceOf[js.Any]))
+      retentionPeriod.foreach(__v => __obj.update("retentionPeriod", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateDatasetResponse]
     }
   }
 
@@ -705,17 +624,13 @@ package iotanalytics {
         retentionPeriod: js.UndefOr[RetentionPeriod] = js.undefined,
         tags: js.UndefOr[TagList] = js.undefined
     ): CreateDatastoreRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "datastoreName" -> datastoreName.asInstanceOf[js.Any],
-        "retentionPeriod" -> retentionPeriod.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "tags" -> tags.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "datastoreName" -> datastoreName.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateDatastoreRequest]
+      retentionPeriod.foreach(__v => __obj.update("retentionPeriod", __v.asInstanceOf[js.Any]))
+      tags.foreach(__v => __obj.update("tags", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateDatastoreRequest]
     }
   }
 
@@ -732,19 +647,11 @@ package iotanalytics {
         datastoreName: js.UndefOr[DatastoreName] = js.undefined,
         retentionPeriod: js.UndefOr[RetentionPeriod] = js.undefined
     ): CreateDatastoreResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "datastoreArn" -> datastoreArn.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "datastoreName" -> datastoreName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "retentionPeriod" -> retentionPeriod.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateDatastoreResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      datastoreArn.foreach(__v => __obj.update("datastoreArn", __v.asInstanceOf[js.Any]))
+      datastoreName.foreach(__v => __obj.update("datastoreName", __v.asInstanceOf[js.Any]))
+      retentionPeriod.foreach(__v => __obj.update("retentionPeriod", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateDatastoreResponse]
     }
   }
 
@@ -761,15 +668,13 @@ package iotanalytics {
         pipelineName: PipelineName,
         tags: js.UndefOr[TagList] = js.undefined
     ): CreatePipelineRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "pipelineActivities" -> pipelineActivities.asInstanceOf[js.Any],
-        "pipelineName"       -> pipelineName.asInstanceOf[js.Any],
-        "tags" -> tags.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "pipelineName"       -> pipelineName.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreatePipelineRequest]
+      tags.foreach(__v => __obj.update("tags", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreatePipelineRequest]
     }
   }
 
@@ -784,16 +689,10 @@ package iotanalytics {
         pipelineArn: js.UndefOr[PipelineArn] = js.undefined,
         pipelineName: js.UndefOr[PipelineName] = js.undefined
     ): CreatePipelineResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "pipelineArn" -> pipelineArn.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "pipelineName" -> pipelineName.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreatePipelineResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      pipelineArn.foreach(__v => __obj.update("pipelineArn", __v.asInstanceOf[js.Any]))
+      pipelineName.foreach(__v => __obj.update("pipelineName", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreatePipelineResponse]
     }
   }
 
@@ -827,40 +726,18 @@ package iotanalytics {
         triggers: js.UndefOr[DatasetTriggers] = js.undefined,
         versioningConfiguration: js.UndefOr[VersioningConfiguration] = js.undefined
     ): Dataset = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "actions" -> actions.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "arn" -> arn.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "contentDeliveryRules" -> contentDeliveryRules.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "creationTime" -> creationTime.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "lastUpdateTime" -> lastUpdateTime.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "name" -> name.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "retentionPeriod" -> retentionPeriod.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "status" -> status.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "triggers" -> triggers.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "versioningConfiguration" -> versioningConfiguration.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Dataset]
+      val __obj = js.Dictionary.empty[js.Any]
+      actions.foreach(__v => __obj.update("actions", __v.asInstanceOf[js.Any]))
+      arn.foreach(__v => __obj.update("arn", __v.asInstanceOf[js.Any]))
+      contentDeliveryRules.foreach(__v => __obj.update("contentDeliveryRules", __v.asInstanceOf[js.Any]))
+      creationTime.foreach(__v => __obj.update("creationTime", __v.asInstanceOf[js.Any]))
+      lastUpdateTime.foreach(__v => __obj.update("lastUpdateTime", __v.asInstanceOf[js.Any]))
+      name.foreach(__v => __obj.update("name", __v.asInstanceOf[js.Any]))
+      retentionPeriod.foreach(__v => __obj.update("retentionPeriod", __v.asInstanceOf[js.Any]))
+      status.foreach(__v => __obj.update("status", __v.asInstanceOf[js.Any]))
+      triggers.foreach(__v => __obj.update("triggers", __v.asInstanceOf[js.Any]))
+      versioningConfiguration.foreach(__v => __obj.update("versioningConfiguration", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Dataset]
     }
   }
 
@@ -880,19 +757,11 @@ package iotanalytics {
         containerAction: js.UndefOr[ContainerDatasetAction] = js.undefined,
         queryAction: js.UndefOr[SqlQueryDatasetAction] = js.undefined
     ): DatasetAction = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "actionName" -> actionName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "containerAction" -> containerAction.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "queryAction" -> queryAction.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DatasetAction]
+      val __obj = js.Dictionary.empty[js.Any]
+      actionName.foreach(__v => __obj.update("actionName", __v.asInstanceOf[js.Any]))
+      containerAction.foreach(__v => __obj.update("containerAction", __v.asInstanceOf[js.Any]))
+      queryAction.foreach(__v => __obj.update("queryAction", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DatasetAction]
     }
   }
 
@@ -910,16 +779,10 @@ package iotanalytics {
         actionName: js.UndefOr[DatasetActionName] = js.undefined,
         actionType: js.UndefOr[DatasetActionType] = js.undefined
     ): DatasetActionSummary = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "actionName" -> actionName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "actionType" -> actionType.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DatasetActionSummary]
+      val __obj = js.Dictionary.empty[js.Any]
+      actionName.foreach(__v => __obj.update("actionName", __v.asInstanceOf[js.Any]))
+      actionType.foreach(__v => __obj.update("actionType", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DatasetActionSummary]
     }
   }
 
@@ -942,13 +805,11 @@ package iotanalytics {
     def apply(
         iotEventsDestinationConfiguration: js.UndefOr[IotEventsDestinationConfiguration] = js.undefined
     ): DatasetContentDeliveryDestination = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "iotEventsDestinationConfiguration" -> iotEventsDestinationConfiguration.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DatasetContentDeliveryDestination]
+      val __obj = js.Dictionary.empty[js.Any]
+      iotEventsDestinationConfiguration.foreach(
+        __v => __obj.update("iotEventsDestinationConfiguration", __v.asInstanceOf[js.Any])
+      )
+      __obj.asInstanceOf[DatasetContentDeliveryDestination]
     }
   }
 
@@ -966,14 +827,12 @@ package iotanalytics {
         destination: DatasetContentDeliveryDestination,
         entryName: js.UndefOr[EntryName] = js.undefined
     ): DatasetContentDeliveryRule = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "destination" -> destination.asInstanceOf[js.Any],
-        "entryName" -> entryName.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "destination" -> destination.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DatasetContentDeliveryRule]
+      entryName.foreach(__v => __obj.update("entryName", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DatasetContentDeliveryRule]
     }
   }
 
@@ -999,16 +858,10 @@ package iotanalytics {
         reason: js.UndefOr[Reason] = js.undefined,
         state: js.UndefOr[DatasetContentState] = js.undefined
     ): DatasetContentStatus = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "reason" -> reason.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "state" -> state.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DatasetContentStatus]
+      val __obj = js.Dictionary.empty[js.Any]
+      reason.foreach(__v => __obj.update("reason", __v.asInstanceOf[js.Any]))
+      state.foreach(__v => __obj.update("state", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DatasetContentStatus]
     }
   }
 
@@ -1030,22 +883,12 @@ package iotanalytics {
         status: js.UndefOr[DatasetContentStatus] = js.undefined,
         version: js.UndefOr[DatasetContentVersion] = js.undefined
     ): DatasetContentSummary = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "creationTime" -> creationTime.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "scheduleTime" -> scheduleTime.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "status" -> status.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "version" -> version.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DatasetContentSummary]
+      val __obj = js.Dictionary.empty[js.Any]
+      creationTime.foreach(__v => __obj.update("creationTime", __v.asInstanceOf[js.Any]))
+      scheduleTime.foreach(__v => __obj.update("scheduleTime", __v.asInstanceOf[js.Any]))
+      status.foreach(__v => __obj.update("status", __v.asInstanceOf[js.Any]))
+      version.foreach(__v => __obj.update("version", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DatasetContentSummary]
     }
   }
 
@@ -1061,11 +904,11 @@ package iotanalytics {
     def apply(
         datasetName: DatasetName
     ): DatasetContentVersionValue = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "datasetName" -> datasetName.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DatasetContentVersionValue]
+      __obj.asInstanceOf[DatasetContentVersionValue]
     }
   }
 
@@ -1083,16 +926,10 @@ package iotanalytics {
         dataURI: js.UndefOr[PresignedURI] = js.undefined,
         entryName: js.UndefOr[EntryName] = js.undefined
     ): DatasetEntry = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "dataURI" -> dataURI.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "entryName" -> entryName.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DatasetEntry]
+      val __obj = js.Dictionary.empty[js.Any]
+      dataURI.foreach(__v => __obj.update("dataURI", __v.asInstanceOf[js.Any]))
+      entryName.foreach(__v => __obj.update("entryName", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DatasetEntry]
     }
   }
 
@@ -1126,28 +963,14 @@ package iotanalytics {
         status: js.UndefOr[DatasetStatus] = js.undefined,
         triggers: js.UndefOr[DatasetTriggers] = js.undefined
     ): DatasetSummary = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "actions" -> actions.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "creationTime" -> creationTime.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "datasetName" -> datasetName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "lastUpdateTime" -> lastUpdateTime.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "status" -> status.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "triggers" -> triggers.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DatasetSummary]
+      val __obj = js.Dictionary.empty[js.Any]
+      actions.foreach(__v => __obj.update("actions", __v.asInstanceOf[js.Any]))
+      creationTime.foreach(__v => __obj.update("creationTime", __v.asInstanceOf[js.Any]))
+      datasetName.foreach(__v => __obj.update("datasetName", __v.asInstanceOf[js.Any]))
+      lastUpdateTime.foreach(__v => __obj.update("lastUpdateTime", __v.asInstanceOf[js.Any]))
+      status.foreach(__v => __obj.update("status", __v.asInstanceOf[js.Any]))
+      triggers.foreach(__v => __obj.update("triggers", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DatasetSummary]
     }
   }
 
@@ -1165,16 +988,10 @@ package iotanalytics {
         dataset: js.UndefOr[TriggeringDataset] = js.undefined,
         schedule: js.UndefOr[Schedule] = js.undefined
     ): DatasetTrigger = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "dataset" -> dataset.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "schedule" -> schedule.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DatasetTrigger]
+      val __obj = js.Dictionary.empty[js.Any]
+      dataset.foreach(__v => __obj.update("dataset", __v.asInstanceOf[js.Any]))
+      schedule.foreach(__v => __obj.update("schedule", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DatasetTrigger]
     }
   }
 
@@ -1200,28 +1017,14 @@ package iotanalytics {
         retentionPeriod: js.UndefOr[RetentionPeriod] = js.undefined,
         status: js.UndefOr[DatastoreStatus] = js.undefined
     ): Datastore = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "arn" -> arn.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "creationTime" -> creationTime.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "lastUpdateTime" -> lastUpdateTime.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "name" -> name.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "retentionPeriod" -> retentionPeriod.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "status" -> status.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Datastore]
+      val __obj = js.Dictionary.empty[js.Any]
+      arn.foreach(__v => __obj.update("arn", __v.asInstanceOf[js.Any]))
+      creationTime.foreach(__v => __obj.update("creationTime", __v.asInstanceOf[js.Any]))
+      lastUpdateTime.foreach(__v => __obj.update("lastUpdateTime", __v.asInstanceOf[js.Any]))
+      name.foreach(__v => __obj.update("name", __v.asInstanceOf[js.Any]))
+      retentionPeriod.foreach(__v => __obj.update("retentionPeriod", __v.asInstanceOf[js.Any]))
+      status.foreach(__v => __obj.update("status", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Datastore]
     }
   }
 
@@ -1239,12 +1042,12 @@ package iotanalytics {
         datastoreName: DatastoreName,
         name: ActivityName
     ): DatastoreActivity = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "datastoreName" -> datastoreName.asInstanceOf[js.Any],
         "name"          -> name.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DatastoreActivity]
+      __obj.asInstanceOf[DatastoreActivity]
     }
   }
 
@@ -1260,13 +1063,9 @@ package iotanalytics {
     def apply(
         size: js.UndefOr[EstimatedResourceSize] = js.undefined
     ): DatastoreStatistics = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "size" -> size.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DatastoreStatistics]
+      val __obj = js.Dictionary.empty[js.Any]
+      size.foreach(__v => __obj.update("size", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DatastoreStatistics]
     }
   }
 
@@ -1296,22 +1095,12 @@ package iotanalytics {
         lastUpdateTime: js.UndefOr[Timestamp] = js.undefined,
         status: js.UndefOr[DatastoreStatus] = js.undefined
     ): DatastoreSummary = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "creationTime" -> creationTime.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "datastoreName" -> datastoreName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "lastUpdateTime" -> lastUpdateTime.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "status" -> status.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DatastoreSummary]
+      val __obj = js.Dictionary.empty[js.Any]
+      creationTime.foreach(__v => __obj.update("creationTime", __v.asInstanceOf[js.Any]))
+      datastoreName.foreach(__v => __obj.update("datastoreName", __v.asInstanceOf[js.Any]))
+      lastUpdateTime.foreach(__v => __obj.update("lastUpdateTime", __v.asInstanceOf[js.Any]))
+      status.foreach(__v => __obj.update("status", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DatastoreSummary]
     }
   }
 
@@ -1324,11 +1113,11 @@ package iotanalytics {
     def apply(
         channelName: ChannelName
     ): DeleteChannelRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "channelName" -> channelName.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteChannelRequest]
+      __obj.asInstanceOf[DeleteChannelRequest]
     }
   }
 
@@ -1343,14 +1132,12 @@ package iotanalytics {
         datasetName: DatasetName,
         versionId: js.UndefOr[DatasetContentVersion] = js.undefined
     ): DeleteDatasetContentRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "datasetName" -> datasetName.asInstanceOf[js.Any],
-        "versionId" -> versionId.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "datasetName" -> datasetName.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteDatasetContentRequest]
+      versionId.foreach(__v => __obj.update("versionId", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DeleteDatasetContentRequest]
     }
   }
 
@@ -1363,11 +1150,11 @@ package iotanalytics {
     def apply(
         datasetName: DatasetName
     ): DeleteDatasetRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "datasetName" -> datasetName.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteDatasetRequest]
+      __obj.asInstanceOf[DeleteDatasetRequest]
     }
   }
 
@@ -1380,11 +1167,11 @@ package iotanalytics {
     def apply(
         datastoreName: DatastoreName
     ): DeleteDatastoreRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "datastoreName" -> datastoreName.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteDatastoreRequest]
+      __obj.asInstanceOf[DeleteDatastoreRequest]
     }
   }
 
@@ -1397,11 +1184,11 @@ package iotanalytics {
     def apply(
         pipelineName: PipelineName
     ): DeletePipelineRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "pipelineName" -> pipelineName.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeletePipelineRequest]
+      __obj.asInstanceOf[DeletePipelineRequest]
     }
   }
 
@@ -1419,12 +1206,12 @@ package iotanalytics {
         offsetSeconds: OffsetSeconds,
         timeExpression: TimeExpression
     ): DeltaTime = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "offsetSeconds"  -> offsetSeconds.asInstanceOf[js.Any],
         "timeExpression" -> timeExpression.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeltaTime]
+      __obj.asInstanceOf[DeltaTime]
     }
   }
 
@@ -1439,14 +1226,12 @@ package iotanalytics {
         channelName: ChannelName,
         includeStatistics: js.UndefOr[IncludeStatisticsFlag] = js.undefined
     ): DescribeChannelRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "channelName" -> channelName.asInstanceOf[js.Any],
-        "includeStatistics" -> includeStatistics.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "channelName" -> channelName.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeChannelRequest]
+      includeStatistics.foreach(__v => __obj.update("includeStatistics", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeChannelRequest]
     }
   }
 
@@ -1461,16 +1246,10 @@ package iotanalytics {
         channel: js.UndefOr[Channel] = js.undefined,
         statistics: js.UndefOr[ChannelStatistics] = js.undefined
     ): DescribeChannelResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "channel" -> channel.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "statistics" -> statistics.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeChannelResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      channel.foreach(__v => __obj.update("channel", __v.asInstanceOf[js.Any]))
+      statistics.foreach(__v => __obj.update("statistics", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeChannelResponse]
     }
   }
 
@@ -1483,11 +1262,11 @@ package iotanalytics {
     def apply(
         datasetName: DatasetName
     ): DescribeDatasetRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "datasetName" -> datasetName.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeDatasetRequest]
+      __obj.asInstanceOf[DescribeDatasetRequest]
     }
   }
 
@@ -1500,13 +1279,9 @@ package iotanalytics {
     def apply(
         dataset: js.UndefOr[Dataset] = js.undefined
     ): DescribeDatasetResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "dataset" -> dataset.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeDatasetResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      dataset.foreach(__v => __obj.update("dataset", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeDatasetResponse]
     }
   }
 
@@ -1521,14 +1296,12 @@ package iotanalytics {
         datastoreName: DatastoreName,
         includeStatistics: js.UndefOr[IncludeStatisticsFlag] = js.undefined
     ): DescribeDatastoreRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "datastoreName" -> datastoreName.asInstanceOf[js.Any],
-        "includeStatistics" -> includeStatistics.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "datastoreName" -> datastoreName.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeDatastoreRequest]
+      includeStatistics.foreach(__v => __obj.update("includeStatistics", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeDatastoreRequest]
     }
   }
 
@@ -1543,16 +1316,10 @@ package iotanalytics {
         datastore: js.UndefOr[Datastore] = js.undefined,
         statistics: js.UndefOr[DatastoreStatistics] = js.undefined
     ): DescribeDatastoreResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "datastore" -> datastore.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "statistics" -> statistics.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeDatastoreResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      datastore.foreach(__v => __obj.update("datastore", __v.asInstanceOf[js.Any]))
+      statistics.foreach(__v => __obj.update("statistics", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeDatastoreResponse]
     }
   }
 
@@ -1562,10 +1329,9 @@ package iotanalytics {
   object DescribeLoggingOptionsRequest {
     def apply(
         ): DescribeLoggingOptionsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary.empty[js.Any]
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeLoggingOptionsRequest]
+      __obj.asInstanceOf[DescribeLoggingOptionsRequest]
     }
   }
 
@@ -1578,13 +1344,9 @@ package iotanalytics {
     def apply(
         loggingOptions: js.UndefOr[LoggingOptions] = js.undefined
     ): DescribeLoggingOptionsResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "loggingOptions" -> loggingOptions.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeLoggingOptionsResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      loggingOptions.foreach(__v => __obj.update("loggingOptions", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeLoggingOptionsResponse]
     }
   }
 
@@ -1597,11 +1359,11 @@ package iotanalytics {
     def apply(
         pipelineName: PipelineName
     ): DescribePipelineRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "pipelineName" -> pipelineName.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribePipelineRequest]
+      __obj.asInstanceOf[DescribePipelineRequest]
     }
   }
 
@@ -1614,13 +1376,9 @@ package iotanalytics {
     def apply(
         pipeline: js.UndefOr[Pipeline] = js.undefined
     ): DescribePipelineResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "pipeline" -> pipeline.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribePipelineResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      pipeline.foreach(__v => __obj.update("pipeline", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribePipelineResponse]
     }
   }
 
@@ -1644,17 +1402,15 @@ package iotanalytics {
         thingName: AttributeName,
         next: js.UndefOr[ActivityName] = js.undefined
     ): DeviceRegistryEnrichActivity = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "attribute" -> attribute.asInstanceOf[js.Any],
         "name"      -> name.asInstanceOf[js.Any],
         "roleArn"   -> roleArn.asInstanceOf[js.Any],
-        "thingName" -> thingName.asInstanceOf[js.Any],
-        "next" -> next.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "thingName" -> thingName.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeviceRegistryEnrichActivity]
+      next.foreach(__v => __obj.update("next", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DeviceRegistryEnrichActivity]
     }
   }
 
@@ -1678,17 +1434,15 @@ package iotanalytics {
         thingName: AttributeName,
         next: js.UndefOr[ActivityName] = js.undefined
     ): DeviceShadowEnrichActivity = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "attribute" -> attribute.asInstanceOf[js.Any],
         "name"      -> name.asInstanceOf[js.Any],
         "roleArn"   -> roleArn.asInstanceOf[js.Any],
-        "thingName" -> thingName.asInstanceOf[js.Any],
-        "next" -> next.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "thingName" -> thingName.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeviceShadowEnrichActivity]
+      next.foreach(__v => __obj.update("next", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DeviceShadowEnrichActivity]
     }
   }
 
@@ -1706,16 +1460,10 @@ package iotanalytics {
         estimatedOn: js.UndefOr[Timestamp] = js.undefined,
         estimatedSizeInBytes: js.UndefOr[SizeInBytes] = js.undefined
     ): EstimatedResourceSize = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "estimatedOn" -> estimatedOn.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "estimatedSizeInBytes" -> estimatedSizeInBytes.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[EstimatedResourceSize]
+      val __obj = js.Dictionary.empty[js.Any]
+      estimatedOn.foreach(__v => __obj.update("estimatedOn", __v.asInstanceOf[js.Any]))
+      estimatedSizeInBytes.foreach(__v => __obj.update("estimatedSizeInBytes", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[EstimatedResourceSize]
     }
   }
 
@@ -1735,15 +1483,13 @@ package iotanalytics {
         name: ActivityName,
         next: js.UndefOr[ActivityName] = js.undefined
     ): FilterActivity = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "filter" -> filter.asInstanceOf[js.Any],
-        "name"   -> name.asInstanceOf[js.Any],
-        "next" -> next.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "name"   -> name.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[FilterActivity]
+      next.foreach(__v => __obj.update("next", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[FilterActivity]
     }
   }
 
@@ -1758,14 +1504,12 @@ package iotanalytics {
         datasetName: DatasetName,
         versionId: js.UndefOr[DatasetContentVersion] = js.undefined
     ): GetDatasetContentRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "datasetName" -> datasetName.asInstanceOf[js.Any],
-        "versionId" -> versionId.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "datasetName" -> datasetName.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetDatasetContentRequest]
+      versionId.foreach(__v => __obj.update("versionId", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetDatasetContentRequest]
     }
   }
 
@@ -1782,19 +1526,11 @@ package iotanalytics {
         status: js.UndefOr[DatasetContentStatus] = js.undefined,
         timestamp: js.UndefOr[Timestamp] = js.undefined
     ): GetDatasetContentResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "entries" -> entries.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "status" -> status.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "timestamp" -> timestamp.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetDatasetContentResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      entries.foreach(__v => __obj.update("entries", __v.asInstanceOf[js.Any]))
+      status.foreach(__v => __obj.update("status", __v.asInstanceOf[js.Any]))
+      timestamp.foreach(__v => __obj.update("timestamp", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetDatasetContentResponse]
     }
   }
 
@@ -1812,12 +1548,12 @@ package iotanalytics {
         inputName: IotEventsInputName,
         roleArn: RoleArn
     ): IotEventsDestinationConfiguration = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "inputName" -> inputName.asInstanceOf[js.Any],
         "roleArn"   -> roleArn.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[IotEventsDestinationConfiguration]
+      __obj.asInstanceOf[IotEventsDestinationConfiguration]
     }
   }
 
@@ -1839,16 +1575,14 @@ package iotanalytics {
         name: ActivityName,
         next: js.UndefOr[ActivityName] = js.undefined
     ): LambdaActivity = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "batchSize"  -> batchSize.asInstanceOf[js.Any],
         "lambdaName" -> lambdaName.asInstanceOf[js.Any],
-        "name"       -> name.asInstanceOf[js.Any],
-        "next" -> next.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "name"       -> name.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[LambdaActivity]
+      next.foreach(__v => __obj.update("next", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[LambdaActivity]
     }
   }
 
@@ -1863,16 +1597,10 @@ package iotanalytics {
         maxResults: js.UndefOr[MaxResults] = js.undefined,
         nextToken: js.UndefOr[NextToken] = js.undefined
     ): ListChannelsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "maxResults" -> maxResults.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "nextToken" -> nextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListChannelsRequest]
+      val __obj = js.Dictionary.empty[js.Any]
+      maxResults.foreach(__v => __obj.update("maxResults", __v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListChannelsRequest]
     }
   }
 
@@ -1887,16 +1615,10 @@ package iotanalytics {
         channelSummaries: js.UndefOr[ChannelSummaries] = js.undefined,
         nextToken: js.UndefOr[NextToken] = js.undefined
     ): ListChannelsResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "channelSummaries" -> channelSummaries.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "nextToken" -> nextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListChannelsResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      channelSummaries.foreach(__v => __obj.update("channelSummaries", __v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListChannelsResponse]
     }
   }
 
@@ -1917,23 +1639,15 @@ package iotanalytics {
         scheduledBefore: js.UndefOr[Timestamp] = js.undefined,
         scheduledOnOrAfter: js.UndefOr[Timestamp] = js.undefined
     ): ListDatasetContentsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "datasetName" -> datasetName.asInstanceOf[js.Any],
-        "maxResults" -> maxResults.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "nextToken" -> nextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "scheduledBefore" -> scheduledBefore.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "scheduledOnOrAfter" -> scheduledOnOrAfter.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "datasetName" -> datasetName.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListDatasetContentsRequest]
+      maxResults.foreach(__v => __obj.update("maxResults", __v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
+      scheduledBefore.foreach(__v => __obj.update("scheduledBefore", __v.asInstanceOf[js.Any]))
+      scheduledOnOrAfter.foreach(__v => __obj.update("scheduledOnOrAfter", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListDatasetContentsRequest]
     }
   }
 
@@ -1948,16 +1662,10 @@ package iotanalytics {
         datasetContentSummaries: js.UndefOr[DatasetContentSummaries] = js.undefined,
         nextToken: js.UndefOr[NextToken] = js.undefined
     ): ListDatasetContentsResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "datasetContentSummaries" -> datasetContentSummaries.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "nextToken" -> nextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListDatasetContentsResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      datasetContentSummaries.foreach(__v => __obj.update("datasetContentSummaries", __v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListDatasetContentsResponse]
     }
   }
 
@@ -1972,16 +1680,10 @@ package iotanalytics {
         maxResults: js.UndefOr[MaxResults] = js.undefined,
         nextToken: js.UndefOr[NextToken] = js.undefined
     ): ListDatasetsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "maxResults" -> maxResults.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "nextToken" -> nextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListDatasetsRequest]
+      val __obj = js.Dictionary.empty[js.Any]
+      maxResults.foreach(__v => __obj.update("maxResults", __v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListDatasetsRequest]
     }
   }
 
@@ -1996,16 +1698,10 @@ package iotanalytics {
         datasetSummaries: js.UndefOr[DatasetSummaries] = js.undefined,
         nextToken: js.UndefOr[NextToken] = js.undefined
     ): ListDatasetsResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "datasetSummaries" -> datasetSummaries.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "nextToken" -> nextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListDatasetsResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      datasetSummaries.foreach(__v => __obj.update("datasetSummaries", __v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListDatasetsResponse]
     }
   }
 
@@ -2020,16 +1716,10 @@ package iotanalytics {
         maxResults: js.UndefOr[MaxResults] = js.undefined,
         nextToken: js.UndefOr[NextToken] = js.undefined
     ): ListDatastoresRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "maxResults" -> maxResults.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "nextToken" -> nextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListDatastoresRequest]
+      val __obj = js.Dictionary.empty[js.Any]
+      maxResults.foreach(__v => __obj.update("maxResults", __v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListDatastoresRequest]
     }
   }
 
@@ -2044,16 +1734,10 @@ package iotanalytics {
         datastoreSummaries: js.UndefOr[DatastoreSummaries] = js.undefined,
         nextToken: js.UndefOr[NextToken] = js.undefined
     ): ListDatastoresResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "datastoreSummaries" -> datastoreSummaries.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "nextToken" -> nextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListDatastoresResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      datastoreSummaries.foreach(__v => __obj.update("datastoreSummaries", __v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListDatastoresResponse]
     }
   }
 
@@ -2068,16 +1752,10 @@ package iotanalytics {
         maxResults: js.UndefOr[MaxResults] = js.undefined,
         nextToken: js.UndefOr[NextToken] = js.undefined
     ): ListPipelinesRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "maxResults" -> maxResults.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "nextToken" -> nextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListPipelinesRequest]
+      val __obj = js.Dictionary.empty[js.Any]
+      maxResults.foreach(__v => __obj.update("maxResults", __v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListPipelinesRequest]
     }
   }
 
@@ -2092,16 +1770,10 @@ package iotanalytics {
         nextToken: js.UndefOr[NextToken] = js.undefined,
         pipelineSummaries: js.UndefOr[PipelineSummaries] = js.undefined
     ): ListPipelinesResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "nextToken" -> nextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "pipelineSummaries" -> pipelineSummaries.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListPipelinesResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
+      pipelineSummaries.foreach(__v => __obj.update("pipelineSummaries", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListPipelinesResponse]
     }
   }
 
@@ -2114,11 +1786,11 @@ package iotanalytics {
     def apply(
         resourceArn: ResourceArn
     ): ListTagsForResourceRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "resourceArn" -> resourceArn.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListTagsForResourceRequest]
+      __obj.asInstanceOf[ListTagsForResourceRequest]
     }
   }
 
@@ -2131,13 +1803,9 @@ package iotanalytics {
     def apply(
         tags: js.UndefOr[TagList] = js.undefined
     ): ListTagsForResourceResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "tags" -> tags.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListTagsForResourceResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      tags.foreach(__v => __obj.update("tags", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListTagsForResourceResponse]
     }
   }
 
@@ -2163,13 +1831,13 @@ package iotanalytics {
         level: LoggingLevel,
         roleArn: RoleArn
     ): LoggingOptions = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "enabled" -> enabled.asInstanceOf[js.Any],
         "level"   -> level.asInstanceOf[js.Any],
         "roleArn" -> roleArn.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[LoggingOptions]
+      __obj.asInstanceOf[LoggingOptions]
     }
   }
 
@@ -2191,16 +1859,14 @@ package iotanalytics {
         name: ActivityName,
         next: js.UndefOr[ActivityName] = js.undefined
     ): MathActivity = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "attribute" -> attribute.asInstanceOf[js.Any],
         "math"      -> math.asInstanceOf[js.Any],
-        "name"      -> name.asInstanceOf[js.Any],
-        "next" -> next.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "name"      -> name.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[MathActivity]
+      next.foreach(__v => __obj.update("next", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[MathActivity]
     }
   }
 
@@ -2218,12 +1884,12 @@ package iotanalytics {
         messageId: MessageId,
         payload: MessagePayload
     ): Message = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "messageId" -> messageId.asInstanceOf[js.Any],
         "payload"   -> payload.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Message]
+      __obj.asInstanceOf[Message]
     }
   }
 
@@ -2239,11 +1905,11 @@ package iotanalytics {
     def apply(
         fileName: OutputFileName
     ): OutputFileUriValue = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "fileName" -> fileName.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[OutputFileUriValue]
+      __obj.asInstanceOf[OutputFileUriValue]
     }
   }
 
@@ -2269,28 +1935,14 @@ package iotanalytics {
         name: js.UndefOr[PipelineName] = js.undefined,
         reprocessingSummaries: js.UndefOr[ReprocessingSummaries] = js.undefined
     ): Pipeline = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "activities" -> activities.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "arn" -> arn.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "creationTime" -> creationTime.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "lastUpdateTime" -> lastUpdateTime.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "name" -> name.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "reprocessingSummaries" -> reprocessingSummaries.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Pipeline]
+      val __obj = js.Dictionary.empty[js.Any]
+      activities.foreach(__v => __obj.update("activities", __v.asInstanceOf[js.Any]))
+      arn.foreach(__v => __obj.update("arn", __v.asInstanceOf[js.Any]))
+      creationTime.foreach(__v => __obj.update("creationTime", __v.asInstanceOf[js.Any]))
+      lastUpdateTime.foreach(__v => __obj.update("lastUpdateTime", __v.asInstanceOf[js.Any]))
+      name.foreach(__v => __obj.update("name", __v.asInstanceOf[js.Any]))
+      reprocessingSummaries.foreach(__v => __obj.update("reprocessingSummaries", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Pipeline]
     }
   }
 
@@ -2324,40 +1976,18 @@ package iotanalytics {
         removeAttributes: js.UndefOr[RemoveAttributesActivity] = js.undefined,
         selectAttributes: js.UndefOr[SelectAttributesActivity] = js.undefined
     ): PipelineActivity = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "addAttributes" -> addAttributes.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "channel" -> channel.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "datastore" -> datastore.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "deviceRegistryEnrich" -> deviceRegistryEnrich.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "deviceShadowEnrich" -> deviceShadowEnrich.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "filter" -> filter.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "lambda" -> lambda.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "math" -> math.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "removeAttributes" -> removeAttributes.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "selectAttributes" -> selectAttributes.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PipelineActivity]
+      val __obj = js.Dictionary.empty[js.Any]
+      addAttributes.foreach(__v => __obj.update("addAttributes", __v.asInstanceOf[js.Any]))
+      channel.foreach(__v => __obj.update("channel", __v.asInstanceOf[js.Any]))
+      datastore.foreach(__v => __obj.update("datastore", __v.asInstanceOf[js.Any]))
+      deviceRegistryEnrich.foreach(__v => __obj.update("deviceRegistryEnrich", __v.asInstanceOf[js.Any]))
+      deviceShadowEnrich.foreach(__v => __obj.update("deviceShadowEnrich", __v.asInstanceOf[js.Any]))
+      filter.foreach(__v => __obj.update("filter", __v.asInstanceOf[js.Any]))
+      lambda.foreach(__v => __obj.update("lambda", __v.asInstanceOf[js.Any]))
+      math.foreach(__v => __obj.update("math", __v.asInstanceOf[js.Any]))
+      removeAttributes.foreach(__v => __obj.update("removeAttributes", __v.asInstanceOf[js.Any]))
+      selectAttributes.foreach(__v => __obj.update("selectAttributes", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PipelineActivity]
     }
   }
 
@@ -2379,22 +2009,12 @@ package iotanalytics {
         pipelineName: js.UndefOr[PipelineName] = js.undefined,
         reprocessingSummaries: js.UndefOr[ReprocessingSummaries] = js.undefined
     ): PipelineSummary = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "creationTime" -> creationTime.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "lastUpdateTime" -> lastUpdateTime.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "pipelineName" -> pipelineName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "reprocessingSummaries" -> reprocessingSummaries.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PipelineSummary]
+      val __obj = js.Dictionary.empty[js.Any]
+      creationTime.foreach(__v => __obj.update("creationTime", __v.asInstanceOf[js.Any]))
+      lastUpdateTime.foreach(__v => __obj.update("lastUpdateTime", __v.asInstanceOf[js.Any]))
+      pipelineName.foreach(__v => __obj.update("pipelineName", __v.asInstanceOf[js.Any]))
+      reprocessingSummaries.foreach(__v => __obj.update("reprocessingSummaries", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PipelineSummary]
     }
   }
 
@@ -2407,11 +2027,11 @@ package iotanalytics {
     def apply(
         loggingOptions: LoggingOptions
     ): PutLoggingOptionsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "loggingOptions" -> loggingOptions.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PutLoggingOptionsRequest]
+      __obj.asInstanceOf[PutLoggingOptionsRequest]
     }
   }
 
@@ -2427,13 +2047,9 @@ package iotanalytics {
     def apply(
         deltaTime: js.UndefOr[DeltaTime] = js.undefined
     ): QueryFilter = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "deltaTime" -> deltaTime.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[QueryFilter]
+      val __obj = js.Dictionary.empty[js.Any]
+      deltaTime.foreach(__v => __obj.update("deltaTime", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[QueryFilter]
     }
   }
 
@@ -2453,15 +2069,13 @@ package iotanalytics {
         name: ActivityName,
         next: js.UndefOr[ActivityName] = js.undefined
     ): RemoveAttributesActivity = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "attributes" -> attributes.asInstanceOf[js.Any],
-        "name"       -> name.asInstanceOf[js.Any],
-        "next" -> next.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "name"       -> name.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RemoveAttributesActivity]
+      next.foreach(__v => __obj.update("next", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[RemoveAttributesActivity]
     }
   }
 
@@ -2490,19 +2104,11 @@ package iotanalytics {
         id: js.UndefOr[ReprocessingId] = js.undefined,
         status: js.UndefOr[ReprocessingStatus] = js.undefined
     ): ReprocessingSummary = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "creationTime" -> creationTime.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "id" -> id.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "status" -> status.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ReprocessingSummary]
+      val __obj = js.Dictionary.empty[js.Any]
+      creationTime.foreach(__v => __obj.update("creationTime", __v.asInstanceOf[js.Any]))
+      id.foreach(__v => __obj.update("id", __v.asInstanceOf[js.Any]))
+      status.foreach(__v => __obj.update("status", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ReprocessingSummary]
     }
   }
 
@@ -2520,12 +2126,12 @@ package iotanalytics {
         computeType: ComputeType,
         volumeSizeInGB: VolumeSizeInGB
     ): ResourceConfiguration = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "computeType"    -> computeType.asInstanceOf[js.Any],
         "volumeSizeInGB" -> volumeSizeInGB.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ResourceConfiguration]
+      __obj.asInstanceOf[ResourceConfiguration]
     }
   }
 
@@ -2543,16 +2149,10 @@ package iotanalytics {
         numberOfDays: js.UndefOr[RetentionPeriodInDays] = js.undefined,
         unlimited: js.UndefOr[UnlimitedRetentionPeriod] = js.undefined
     ): RetentionPeriod = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "numberOfDays" -> numberOfDays.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "unlimited" -> unlimited.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RetentionPeriod]
+      val __obj = js.Dictionary.empty[js.Any]
+      numberOfDays.foreach(__v => __obj.update("numberOfDays", __v.asInstanceOf[js.Any]))
+      unlimited.foreach(__v => __obj.update("unlimited", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[RetentionPeriod]
     }
   }
 
@@ -2567,12 +2167,12 @@ package iotanalytics {
         payloads: MessagePayloads,
         pipelineActivity: PipelineActivity
     ): RunPipelineActivityRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "payloads"         -> payloads.asInstanceOf[js.Any],
         "pipelineActivity" -> pipelineActivity.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RunPipelineActivityRequest]
+      __obj.asInstanceOf[RunPipelineActivityRequest]
     }
   }
 
@@ -2587,16 +2187,10 @@ package iotanalytics {
         logResult: js.UndefOr[LogResult] = js.undefined,
         payloads: js.UndefOr[MessagePayloads] = js.undefined
     ): RunPipelineActivityResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "logResult" -> logResult.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "payloads" -> payloads.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RunPipelineActivityResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      logResult.foreach(__v => __obj.update("logResult", __v.asInstanceOf[js.Any]))
+      payloads.foreach(__v => __obj.update("payloads", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[RunPipelineActivityResponse]
     }
   }
 
@@ -2615,20 +2209,14 @@ package iotanalytics {
         maxMessages: js.UndefOr[MaxMessages] = js.undefined,
         startTime: js.UndefOr[StartTime] = js.undefined
     ): SampleChannelDataRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "channelName" -> channelName.asInstanceOf[js.Any],
-        "endTime" -> endTime.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "maxMessages" -> maxMessages.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "startTime" -> startTime.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "channelName" -> channelName.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SampleChannelDataRequest]
+      endTime.foreach(__v => __obj.update("endTime", __v.asInstanceOf[js.Any]))
+      maxMessages.foreach(__v => __obj.update("maxMessages", __v.asInstanceOf[js.Any]))
+      startTime.foreach(__v => __obj.update("startTime", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[SampleChannelDataRequest]
     }
   }
 
@@ -2641,13 +2229,9 @@ package iotanalytics {
     def apply(
         payloads: js.UndefOr[MessagePayloads] = js.undefined
     ): SampleChannelDataResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "payloads" -> payloads.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SampleChannelDataResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      payloads.foreach(__v => __obj.update("payloads", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[SampleChannelDataResponse]
     }
   }
 
@@ -2663,13 +2247,9 @@ package iotanalytics {
     def apply(
         expression: js.UndefOr[ScheduleExpression] = js.undefined
     ): Schedule = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "expression" -> expression.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Schedule]
+      val __obj = js.Dictionary.empty[js.Any]
+      expression.foreach(__v => __obj.update("expression", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Schedule]
     }
   }
 
@@ -2689,15 +2269,13 @@ package iotanalytics {
         name: ActivityName,
         next: js.UndefOr[ActivityName] = js.undefined
     ): SelectAttributesActivity = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "attributes" -> attributes.asInstanceOf[js.Any],
-        "name"       -> name.asInstanceOf[js.Any],
-        "next" -> next.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "name"       -> name.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SelectAttributesActivity]
+      next.foreach(__v => __obj.update("next", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[SelectAttributesActivity]
     }
   }
 
@@ -2715,14 +2293,12 @@ package iotanalytics {
         sqlQuery: SqlQuery,
         filters: js.UndefOr[QueryFilters] = js.undefined
     ): SqlQueryDatasetAction = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "sqlQuery" -> sqlQuery.asInstanceOf[js.Any],
-        "filters" -> filters.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "sqlQuery" -> sqlQuery.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SqlQueryDatasetAction]
+      filters.foreach(__v => __obj.update("filters", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[SqlQueryDatasetAction]
     }
   }
 
@@ -2739,17 +2315,13 @@ package iotanalytics {
         endTime: js.UndefOr[EndTime] = js.undefined,
         startTime: js.UndefOr[StartTime] = js.undefined
     ): StartPipelineReprocessingRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "pipelineName" -> pipelineName.asInstanceOf[js.Any],
-        "endTime" -> endTime.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "startTime" -> startTime.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "pipelineName" -> pipelineName.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StartPipelineReprocessingRequest]
+      endTime.foreach(__v => __obj.update("endTime", __v.asInstanceOf[js.Any]))
+      startTime.foreach(__v => __obj.update("startTime", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[StartPipelineReprocessingRequest]
     }
   }
 
@@ -2762,13 +2334,9 @@ package iotanalytics {
     def apply(
         reprocessingId: js.UndefOr[ReprocessingId] = js.undefined
     ): StartPipelineReprocessingResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "reprocessingId" -> reprocessingId.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StartPipelineReprocessingResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      reprocessingId.foreach(__v => __obj.update("reprocessingId", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[StartPipelineReprocessingResponse]
     }
   }
 
@@ -2786,12 +2354,12 @@ package iotanalytics {
         key: TagKey,
         value: TagValue
     ): Tag = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "key"   -> key.asInstanceOf[js.Any],
         "value" -> value.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Tag]
+      __obj.asInstanceOf[Tag]
     }
   }
 
@@ -2806,12 +2374,12 @@ package iotanalytics {
         resourceArn: ResourceArn,
         tags: TagList
     ): TagResourceRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "resourceArn" -> resourceArn.asInstanceOf[js.Any],
         "tags"        -> tags.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[TagResourceRequest]
+      __obj.asInstanceOf[TagResourceRequest]
     }
   }
 
@@ -2821,10 +2389,9 @@ package iotanalytics {
   object TagResourceResponse {
     def apply(
         ): TagResourceResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary.empty[js.Any]
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[TagResourceResponse]
+      __obj.asInstanceOf[TagResourceResponse]
     }
   }
 
@@ -2840,11 +2407,11 @@ package iotanalytics {
     def apply(
         name: DatasetName
     ): TriggeringDataset = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "name" -> name.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[TriggeringDataset]
+      __obj.asInstanceOf[TriggeringDataset]
     }
   }
 
@@ -2859,12 +2426,12 @@ package iotanalytics {
         resourceArn: ResourceArn,
         tagKeys: TagKeyList
     ): UntagResourceRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "resourceArn" -> resourceArn.asInstanceOf[js.Any],
         "tagKeys"     -> tagKeys.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UntagResourceRequest]
+      __obj.asInstanceOf[UntagResourceRequest]
     }
   }
 
@@ -2874,10 +2441,9 @@ package iotanalytics {
   object UntagResourceResponse {
     def apply(
         ): UntagResourceResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary.empty[js.Any]
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UntagResourceResponse]
+      __obj.asInstanceOf[UntagResourceResponse]
     }
   }
 
@@ -2892,14 +2458,12 @@ package iotanalytics {
         channelName: ChannelName,
         retentionPeriod: js.UndefOr[RetentionPeriod] = js.undefined
     ): UpdateChannelRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "channelName" -> channelName.asInstanceOf[js.Any],
-        "retentionPeriod" -> retentionPeriod.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "channelName" -> channelName.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateChannelRequest]
+      retentionPeriod.foreach(__v => __obj.update("retentionPeriod", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateChannelRequest]
     }
   }
 
@@ -2922,24 +2486,16 @@ package iotanalytics {
         triggers: js.UndefOr[DatasetTriggers] = js.undefined,
         versioningConfiguration: js.UndefOr[VersioningConfiguration] = js.undefined
     ): UpdateDatasetRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "actions"     -> actions.asInstanceOf[js.Any],
-        "datasetName" -> datasetName.asInstanceOf[js.Any],
-        "contentDeliveryRules" -> contentDeliveryRules.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "retentionPeriod" -> retentionPeriod.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "triggers" -> triggers.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "versioningConfiguration" -> versioningConfiguration.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "datasetName" -> datasetName.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateDatasetRequest]
+      contentDeliveryRules.foreach(__v => __obj.update("contentDeliveryRules", __v.asInstanceOf[js.Any]))
+      retentionPeriod.foreach(__v => __obj.update("retentionPeriod", __v.asInstanceOf[js.Any]))
+      triggers.foreach(__v => __obj.update("triggers", __v.asInstanceOf[js.Any]))
+      versioningConfiguration.foreach(__v => __obj.update("versioningConfiguration", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateDatasetRequest]
     }
   }
 
@@ -2954,14 +2510,12 @@ package iotanalytics {
         datastoreName: DatastoreName,
         retentionPeriod: js.UndefOr[RetentionPeriod] = js.undefined
     ): UpdateDatastoreRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "datastoreName" -> datastoreName.asInstanceOf[js.Any],
-        "retentionPeriod" -> retentionPeriod.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "datastoreName" -> datastoreName.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateDatastoreRequest]
+      retentionPeriod.foreach(__v => __obj.update("retentionPeriod", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateDatastoreRequest]
     }
   }
 
@@ -2976,12 +2530,12 @@ package iotanalytics {
         pipelineActivities: PipelineActivities,
         pipelineName: PipelineName
     ): UpdatePipelineRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "pipelineActivities" -> pipelineActivities.asInstanceOf[js.Any],
         "pipelineName"       -> pipelineName.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdatePipelineRequest]
+      __obj.asInstanceOf[UpdatePipelineRequest]
     }
   }
 
@@ -3005,23 +2559,15 @@ package iotanalytics {
         outputFileUriValue: js.UndefOr[OutputFileUriValue] = js.undefined,
         stringValue: js.UndefOr[StringValue] = js.undefined
     ): Variable = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "name" -> name.asInstanceOf[js.Any],
-        "datasetContentVersionValue" -> datasetContentVersionValue.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "doubleValue" -> doubleValue.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "outputFileUriValue" -> outputFileUriValue.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "stringValue" -> stringValue.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "name" -> name.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Variable]
+      datasetContentVersionValue.foreach(__v => __obj.update("datasetContentVersionValue", __v.asInstanceOf[js.Any]))
+      doubleValue.foreach(__v => __obj.update("doubleValue", __v.asInstanceOf[js.Any]))
+      outputFileUriValue.foreach(__v => __obj.update("outputFileUriValue", __v.asInstanceOf[js.Any]))
+      stringValue.foreach(__v => __obj.update("stringValue", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Variable]
     }
   }
 
@@ -3036,16 +2582,10 @@ package iotanalytics {
         maxVersions: js.UndefOr[MaxVersions] = js.undefined,
         unlimited: js.UndefOr[UnlimitedVersioning] = js.undefined
     ): VersioningConfiguration = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "maxVersions" -> maxVersions.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "unlimited" -> unlimited.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[VersioningConfiguration]
+      val __obj = js.Dictionary.empty[js.Any]
+      maxVersions.foreach(__v => __obj.update("maxVersions", __v.asInstanceOf[js.Any]))
+      unlimited.foreach(__v => __obj.update("unlimited", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[VersioningConfiguration]
     }
   }
 }

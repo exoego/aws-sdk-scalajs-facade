@@ -380,24 +380,16 @@ package waf {
         OverrideAction: js.UndefOr[WafOverrideAction] = js.undefined,
         Type: js.UndefOr[WafRuleType] = js.undefined
     ): ActivatedRule = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "Priority" -> Priority.asInstanceOf[js.Any],
-        "RuleId"   -> RuleId.asInstanceOf[js.Any],
-        "Action" -> Action.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ExcludedRules" -> ExcludedRules.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "OverrideAction" -> OverrideAction.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Type" -> Type.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "RuleId"   -> RuleId.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ActivatedRule]
+      Action.foreach(__v => __obj.update("Action", __v.asInstanceOf[js.Any]))
+      ExcludedRules.foreach(__v => __obj.update("ExcludedRules", __v.asInstanceOf[js.Any]))
+      OverrideAction.foreach(__v => __obj.update("OverrideAction", __v.asInstanceOf[js.Any]))
+      Type.foreach(__v => __obj.update("Type", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ActivatedRule]
     }
   }
 
@@ -418,15 +410,13 @@ package waf {
         ByteMatchTuples: ByteMatchTuples,
         Name: js.UndefOr[ResourceName] = js.undefined
     ): ByteMatchSet = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ByteMatchSetId"  -> ByteMatchSetId.asInstanceOf[js.Any],
-        "ByteMatchTuples" -> ByteMatchTuples.asInstanceOf[js.Any],
-        "Name" -> Name.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "ByteMatchTuples" -> ByteMatchTuples.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ByteMatchSet]
+      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ByteMatchSet]
     }
   }
 
@@ -444,12 +434,12 @@ package waf {
         ByteMatchSetId: ResourceId,
         Name: ResourceName
     ): ByteMatchSetSummary = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ByteMatchSetId" -> ByteMatchSetId.asInstanceOf[js.Any],
         "Name"           -> Name.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ByteMatchSetSummary]
+      __obj.asInstanceOf[ByteMatchSetSummary]
     }
   }
 
@@ -467,12 +457,12 @@ package waf {
         Action: ChangeAction,
         ByteMatchTuple: ByteMatchTuple
     ): ByteMatchSetUpdate = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "Action"         -> Action.asInstanceOf[js.Any],
         "ByteMatchTuple" -> ByteMatchTuple.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ByteMatchSetUpdate]
+      __obj.asInstanceOf[ByteMatchSetUpdate]
     }
   }
 
@@ -494,14 +484,14 @@ package waf {
         TargetString: ByteMatchTargetString,
         TextTransformation: TextTransformation
     ): ByteMatchTuple = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "FieldToMatch"         -> FieldToMatch.asInstanceOf[js.Any],
         "PositionalConstraint" -> PositionalConstraint.asInstanceOf[js.Any],
         "TargetString"         -> TargetString.asInstanceOf[js.Any],
         "TextTransformation"   -> TextTransformation.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ByteMatchTuple]
+      __obj.asInstanceOf[ByteMatchTuple]
     }
   }
 
@@ -542,12 +532,12 @@ package waf {
         ChangeToken: ChangeToken,
         Name: ResourceName
     ): CreateByteMatchSetRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ChangeToken" -> ChangeToken.asInstanceOf[js.Any],
         "Name"        -> Name.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateByteMatchSetRequest]
+      __obj.asInstanceOf[CreateByteMatchSetRequest]
     }
   }
 
@@ -562,16 +552,10 @@ package waf {
         ByteMatchSet: js.UndefOr[ByteMatchSet] = js.undefined,
         ChangeToken: js.UndefOr[ChangeToken] = js.undefined
     ): CreateByteMatchSetResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ByteMatchSet" -> ByteMatchSet.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ChangeToken" -> ChangeToken.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateByteMatchSetResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      ByteMatchSet.foreach(__v => __obj.update("ByteMatchSet", __v.asInstanceOf[js.Any]))
+      ChangeToken.foreach(__v => __obj.update("ChangeToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateByteMatchSetResponse]
     }
   }
 
@@ -586,12 +570,12 @@ package waf {
         ChangeToken: ChangeToken,
         Name: ResourceName
     ): CreateGeoMatchSetRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ChangeToken" -> ChangeToken.asInstanceOf[js.Any],
         "Name"        -> Name.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateGeoMatchSetRequest]
+      __obj.asInstanceOf[CreateGeoMatchSetRequest]
     }
   }
 
@@ -606,16 +590,10 @@ package waf {
         ChangeToken: js.UndefOr[ChangeToken] = js.undefined,
         GeoMatchSet: js.UndefOr[GeoMatchSet] = js.undefined
     ): CreateGeoMatchSetResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ChangeToken" -> ChangeToken.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "GeoMatchSet" -> GeoMatchSet.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateGeoMatchSetResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      ChangeToken.foreach(__v => __obj.update("ChangeToken", __v.asInstanceOf[js.Any]))
+      GeoMatchSet.foreach(__v => __obj.update("GeoMatchSet", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateGeoMatchSetResponse]
     }
   }
 
@@ -630,12 +608,12 @@ package waf {
         ChangeToken: ChangeToken,
         Name: ResourceName
     ): CreateIPSetRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ChangeToken" -> ChangeToken.asInstanceOf[js.Any],
         "Name"        -> Name.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateIPSetRequest]
+      __obj.asInstanceOf[CreateIPSetRequest]
     }
   }
 
@@ -650,16 +628,10 @@ package waf {
         ChangeToken: js.UndefOr[ChangeToken] = js.undefined,
         IPSet: js.UndefOr[IPSet] = js.undefined
     ): CreateIPSetResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ChangeToken" -> ChangeToken.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "IPSet" -> IPSet.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateIPSetResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      ChangeToken.foreach(__v => __obj.update("ChangeToken", __v.asInstanceOf[js.Any]))
+      IPSet.foreach(__v => __obj.update("IPSet", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateIPSetResponse]
     }
   }
 
@@ -680,15 +652,15 @@ package waf {
         RateKey: RateKey,
         RateLimit: RateLimit
     ): CreateRateBasedRuleRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ChangeToken" -> ChangeToken.asInstanceOf[js.Any],
         "MetricName"  -> MetricName.asInstanceOf[js.Any],
         "Name"        -> Name.asInstanceOf[js.Any],
         "RateKey"     -> RateKey.asInstanceOf[js.Any],
         "RateLimit"   -> RateLimit.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateRateBasedRuleRequest]
+      __obj.asInstanceOf[CreateRateBasedRuleRequest]
     }
   }
 
@@ -703,16 +675,10 @@ package waf {
         ChangeToken: js.UndefOr[ChangeToken] = js.undefined,
         Rule: js.UndefOr[RateBasedRule] = js.undefined
     ): CreateRateBasedRuleResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ChangeToken" -> ChangeToken.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Rule" -> Rule.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateRateBasedRuleResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      ChangeToken.foreach(__v => __obj.update("ChangeToken", __v.asInstanceOf[js.Any]))
+      Rule.foreach(__v => __obj.update("Rule", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateRateBasedRuleResponse]
     }
   }
 
@@ -727,12 +693,12 @@ package waf {
         ChangeToken: ChangeToken,
         Name: ResourceName
     ): CreateRegexMatchSetRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ChangeToken" -> ChangeToken.asInstanceOf[js.Any],
         "Name"        -> Name.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateRegexMatchSetRequest]
+      __obj.asInstanceOf[CreateRegexMatchSetRequest]
     }
   }
 
@@ -747,16 +713,10 @@ package waf {
         ChangeToken: js.UndefOr[ChangeToken] = js.undefined,
         RegexMatchSet: js.UndefOr[RegexMatchSet] = js.undefined
     ): CreateRegexMatchSetResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ChangeToken" -> ChangeToken.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "RegexMatchSet" -> RegexMatchSet.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateRegexMatchSetResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      ChangeToken.foreach(__v => __obj.update("ChangeToken", __v.asInstanceOf[js.Any]))
+      RegexMatchSet.foreach(__v => __obj.update("RegexMatchSet", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateRegexMatchSetResponse]
     }
   }
 
@@ -771,12 +731,12 @@ package waf {
         ChangeToken: ChangeToken,
         Name: ResourceName
     ): CreateRegexPatternSetRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ChangeToken" -> ChangeToken.asInstanceOf[js.Any],
         "Name"        -> Name.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateRegexPatternSetRequest]
+      __obj.asInstanceOf[CreateRegexPatternSetRequest]
     }
   }
 
@@ -791,16 +751,10 @@ package waf {
         ChangeToken: js.UndefOr[ChangeToken] = js.undefined,
         RegexPatternSet: js.UndefOr[RegexPatternSet] = js.undefined
     ): CreateRegexPatternSetResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ChangeToken" -> ChangeToken.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "RegexPatternSet" -> RegexPatternSet.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateRegexPatternSetResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      ChangeToken.foreach(__v => __obj.update("ChangeToken", __v.asInstanceOf[js.Any]))
+      RegexPatternSet.foreach(__v => __obj.update("RegexPatternSet", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateRegexPatternSetResponse]
     }
   }
 
@@ -817,13 +771,13 @@ package waf {
         MetricName: MetricName,
         Name: ResourceName
     ): CreateRuleGroupRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ChangeToken" -> ChangeToken.asInstanceOf[js.Any],
         "MetricName"  -> MetricName.asInstanceOf[js.Any],
         "Name"        -> Name.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateRuleGroupRequest]
+      __obj.asInstanceOf[CreateRuleGroupRequest]
     }
   }
 
@@ -838,16 +792,10 @@ package waf {
         ChangeToken: js.UndefOr[ChangeToken] = js.undefined,
         RuleGroup: js.UndefOr[RuleGroup] = js.undefined
     ): CreateRuleGroupResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ChangeToken" -> ChangeToken.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "RuleGroup" -> RuleGroup.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateRuleGroupResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      ChangeToken.foreach(__v => __obj.update("ChangeToken", __v.asInstanceOf[js.Any]))
+      RuleGroup.foreach(__v => __obj.update("RuleGroup", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateRuleGroupResponse]
     }
   }
 
@@ -864,13 +812,13 @@ package waf {
         MetricName: MetricName,
         Name: ResourceName
     ): CreateRuleRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ChangeToken" -> ChangeToken.asInstanceOf[js.Any],
         "MetricName"  -> MetricName.asInstanceOf[js.Any],
         "Name"        -> Name.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateRuleRequest]
+      __obj.asInstanceOf[CreateRuleRequest]
     }
   }
 
@@ -885,16 +833,10 @@ package waf {
         ChangeToken: js.UndefOr[ChangeToken] = js.undefined,
         Rule: js.UndefOr[Rule] = js.undefined
     ): CreateRuleResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ChangeToken" -> ChangeToken.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Rule" -> Rule.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateRuleResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      ChangeToken.foreach(__v => __obj.update("ChangeToken", __v.asInstanceOf[js.Any]))
+      Rule.foreach(__v => __obj.update("Rule", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateRuleResponse]
     }
   }
 
@@ -909,12 +851,12 @@ package waf {
         ChangeToken: ChangeToken,
         Name: ResourceName
     ): CreateSizeConstraintSetRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ChangeToken" -> ChangeToken.asInstanceOf[js.Any],
         "Name"        -> Name.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateSizeConstraintSetRequest]
+      __obj.asInstanceOf[CreateSizeConstraintSetRequest]
     }
   }
 
@@ -929,16 +871,10 @@ package waf {
         ChangeToken: js.UndefOr[ChangeToken] = js.undefined,
         SizeConstraintSet: js.UndefOr[SizeConstraintSet] = js.undefined
     ): CreateSizeConstraintSetResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ChangeToken" -> ChangeToken.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SizeConstraintSet" -> SizeConstraintSet.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateSizeConstraintSetResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      ChangeToken.foreach(__v => __obj.update("ChangeToken", __v.asInstanceOf[js.Any]))
+      SizeConstraintSet.foreach(__v => __obj.update("SizeConstraintSet", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateSizeConstraintSetResponse]
     }
   }
 
@@ -956,12 +892,12 @@ package waf {
         ChangeToken: ChangeToken,
         Name: ResourceName
     ): CreateSqlInjectionMatchSetRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ChangeToken" -> ChangeToken.asInstanceOf[js.Any],
         "Name"        -> Name.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateSqlInjectionMatchSetRequest]
+      __obj.asInstanceOf[CreateSqlInjectionMatchSetRequest]
     }
   }
 
@@ -979,16 +915,10 @@ package waf {
         ChangeToken: js.UndefOr[ChangeToken] = js.undefined,
         SqlInjectionMatchSet: js.UndefOr[SqlInjectionMatchSet] = js.undefined
     ): CreateSqlInjectionMatchSetResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ChangeToken" -> ChangeToken.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SqlInjectionMatchSet" -> SqlInjectionMatchSet.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateSqlInjectionMatchSetResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      ChangeToken.foreach(__v => __obj.update("ChangeToken", __v.asInstanceOf[js.Any]))
+      SqlInjectionMatchSet.foreach(__v => __obj.update("SqlInjectionMatchSet", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateSqlInjectionMatchSetResponse]
     }
   }
 
@@ -1007,14 +937,14 @@ package waf {
         MetricName: MetricName,
         Name: ResourceName
     ): CreateWebACLRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ChangeToken"   -> ChangeToken.asInstanceOf[js.Any],
         "DefaultAction" -> DefaultAction.asInstanceOf[js.Any],
         "MetricName"    -> MetricName.asInstanceOf[js.Any],
         "Name"          -> Name.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateWebACLRequest]
+      __obj.asInstanceOf[CreateWebACLRequest]
     }
   }
 
@@ -1029,16 +959,10 @@ package waf {
         ChangeToken: js.UndefOr[ChangeToken] = js.undefined,
         WebACL: js.UndefOr[WebACL] = js.undefined
     ): CreateWebACLResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ChangeToken" -> ChangeToken.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "WebACL" -> WebACL.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateWebACLResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      ChangeToken.foreach(__v => __obj.update("ChangeToken", __v.asInstanceOf[js.Any]))
+      WebACL.foreach(__v => __obj.update("WebACL", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateWebACLResponse]
     }
   }
 
@@ -1056,12 +980,12 @@ package waf {
         ChangeToken: ChangeToken,
         Name: ResourceName
     ): CreateXssMatchSetRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ChangeToken" -> ChangeToken.asInstanceOf[js.Any],
         "Name"        -> Name.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateXssMatchSetRequest]
+      __obj.asInstanceOf[CreateXssMatchSetRequest]
     }
   }
 
@@ -1079,16 +1003,10 @@ package waf {
         ChangeToken: js.UndefOr[ChangeToken] = js.undefined,
         XssMatchSet: js.UndefOr[XssMatchSet] = js.undefined
     ): CreateXssMatchSetResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ChangeToken" -> ChangeToken.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "XssMatchSet" -> XssMatchSet.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateXssMatchSetResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      ChangeToken.foreach(__v => __obj.update("ChangeToken", __v.asInstanceOf[js.Any]))
+      XssMatchSet.foreach(__v => __obj.update("XssMatchSet", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateXssMatchSetResponse]
     }
   }
 
@@ -1103,12 +1021,12 @@ package waf {
         ByteMatchSetId: ResourceId,
         ChangeToken: ChangeToken
     ): DeleteByteMatchSetRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ByteMatchSetId" -> ByteMatchSetId.asInstanceOf[js.Any],
         "ChangeToken"    -> ChangeToken.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteByteMatchSetRequest]
+      __obj.asInstanceOf[DeleteByteMatchSetRequest]
     }
   }
 
@@ -1121,13 +1039,9 @@ package waf {
     def apply(
         ChangeToken: js.UndefOr[ChangeToken] = js.undefined
     ): DeleteByteMatchSetResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ChangeToken" -> ChangeToken.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteByteMatchSetResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      ChangeToken.foreach(__v => __obj.update("ChangeToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DeleteByteMatchSetResponse]
     }
   }
 
@@ -1142,12 +1056,12 @@ package waf {
         ChangeToken: ChangeToken,
         GeoMatchSetId: ResourceId
     ): DeleteGeoMatchSetRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ChangeToken"   -> ChangeToken.asInstanceOf[js.Any],
         "GeoMatchSetId" -> GeoMatchSetId.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteGeoMatchSetRequest]
+      __obj.asInstanceOf[DeleteGeoMatchSetRequest]
     }
   }
 
@@ -1160,13 +1074,9 @@ package waf {
     def apply(
         ChangeToken: js.UndefOr[ChangeToken] = js.undefined
     ): DeleteGeoMatchSetResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ChangeToken" -> ChangeToken.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteGeoMatchSetResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      ChangeToken.foreach(__v => __obj.update("ChangeToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DeleteGeoMatchSetResponse]
     }
   }
 
@@ -1181,12 +1091,12 @@ package waf {
         ChangeToken: ChangeToken,
         IPSetId: ResourceId
     ): DeleteIPSetRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ChangeToken" -> ChangeToken.asInstanceOf[js.Any],
         "IPSetId"     -> IPSetId.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteIPSetRequest]
+      __obj.asInstanceOf[DeleteIPSetRequest]
     }
   }
 
@@ -1199,13 +1109,9 @@ package waf {
     def apply(
         ChangeToken: js.UndefOr[ChangeToken] = js.undefined
     ): DeleteIPSetResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ChangeToken" -> ChangeToken.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteIPSetResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      ChangeToken.foreach(__v => __obj.update("ChangeToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DeleteIPSetResponse]
     }
   }
 
@@ -1218,11 +1124,11 @@ package waf {
     def apply(
         ResourceArn: ResourceArn
     ): DeleteLoggingConfigurationRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteLoggingConfigurationRequest]
+      __obj.asInstanceOf[DeleteLoggingConfigurationRequest]
     }
   }
 
@@ -1232,10 +1138,9 @@ package waf {
   object DeleteLoggingConfigurationResponse {
     def apply(
         ): DeleteLoggingConfigurationResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary.empty[js.Any]
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteLoggingConfigurationResponse]
+      __obj.asInstanceOf[DeleteLoggingConfigurationResponse]
     }
   }
 
@@ -1248,11 +1153,11 @@ package waf {
     def apply(
         ResourceArn: ResourceArn
     ): DeletePermissionPolicyRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeletePermissionPolicyRequest]
+      __obj.asInstanceOf[DeletePermissionPolicyRequest]
     }
   }
 
@@ -1262,10 +1167,9 @@ package waf {
   object DeletePermissionPolicyResponse {
     def apply(
         ): DeletePermissionPolicyResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary.empty[js.Any]
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeletePermissionPolicyResponse]
+      __obj.asInstanceOf[DeletePermissionPolicyResponse]
     }
   }
 
@@ -1280,12 +1184,12 @@ package waf {
         ChangeToken: ChangeToken,
         RuleId: ResourceId
     ): DeleteRateBasedRuleRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ChangeToken" -> ChangeToken.asInstanceOf[js.Any],
         "RuleId"      -> RuleId.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteRateBasedRuleRequest]
+      __obj.asInstanceOf[DeleteRateBasedRuleRequest]
     }
   }
 
@@ -1298,13 +1202,9 @@ package waf {
     def apply(
         ChangeToken: js.UndefOr[ChangeToken] = js.undefined
     ): DeleteRateBasedRuleResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ChangeToken" -> ChangeToken.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteRateBasedRuleResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      ChangeToken.foreach(__v => __obj.update("ChangeToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DeleteRateBasedRuleResponse]
     }
   }
 
@@ -1319,12 +1219,12 @@ package waf {
         ChangeToken: ChangeToken,
         RegexMatchSetId: ResourceId
     ): DeleteRegexMatchSetRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ChangeToken"     -> ChangeToken.asInstanceOf[js.Any],
         "RegexMatchSetId" -> RegexMatchSetId.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteRegexMatchSetRequest]
+      __obj.asInstanceOf[DeleteRegexMatchSetRequest]
     }
   }
 
@@ -1337,13 +1237,9 @@ package waf {
     def apply(
         ChangeToken: js.UndefOr[ChangeToken] = js.undefined
     ): DeleteRegexMatchSetResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ChangeToken" -> ChangeToken.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteRegexMatchSetResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      ChangeToken.foreach(__v => __obj.update("ChangeToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DeleteRegexMatchSetResponse]
     }
   }
 
@@ -1358,12 +1254,12 @@ package waf {
         ChangeToken: ChangeToken,
         RegexPatternSetId: ResourceId
     ): DeleteRegexPatternSetRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ChangeToken"       -> ChangeToken.asInstanceOf[js.Any],
         "RegexPatternSetId" -> RegexPatternSetId.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteRegexPatternSetRequest]
+      __obj.asInstanceOf[DeleteRegexPatternSetRequest]
     }
   }
 
@@ -1376,13 +1272,9 @@ package waf {
     def apply(
         ChangeToken: js.UndefOr[ChangeToken] = js.undefined
     ): DeleteRegexPatternSetResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ChangeToken" -> ChangeToken.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteRegexPatternSetResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      ChangeToken.foreach(__v => __obj.update("ChangeToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DeleteRegexPatternSetResponse]
     }
   }
 
@@ -1397,12 +1289,12 @@ package waf {
         ChangeToken: ChangeToken,
         RuleGroupId: ResourceId
     ): DeleteRuleGroupRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ChangeToken" -> ChangeToken.asInstanceOf[js.Any],
         "RuleGroupId" -> RuleGroupId.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteRuleGroupRequest]
+      __obj.asInstanceOf[DeleteRuleGroupRequest]
     }
   }
 
@@ -1415,13 +1307,9 @@ package waf {
     def apply(
         ChangeToken: js.UndefOr[ChangeToken] = js.undefined
     ): DeleteRuleGroupResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ChangeToken" -> ChangeToken.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteRuleGroupResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      ChangeToken.foreach(__v => __obj.update("ChangeToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DeleteRuleGroupResponse]
     }
   }
 
@@ -1436,12 +1324,12 @@ package waf {
         ChangeToken: ChangeToken,
         RuleId: ResourceId
     ): DeleteRuleRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ChangeToken" -> ChangeToken.asInstanceOf[js.Any],
         "RuleId"      -> RuleId.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteRuleRequest]
+      __obj.asInstanceOf[DeleteRuleRequest]
     }
   }
 
@@ -1454,13 +1342,9 @@ package waf {
     def apply(
         ChangeToken: js.UndefOr[ChangeToken] = js.undefined
     ): DeleteRuleResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ChangeToken" -> ChangeToken.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteRuleResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      ChangeToken.foreach(__v => __obj.update("ChangeToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DeleteRuleResponse]
     }
   }
 
@@ -1475,12 +1359,12 @@ package waf {
         ChangeToken: ChangeToken,
         SizeConstraintSetId: ResourceId
     ): DeleteSizeConstraintSetRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ChangeToken"         -> ChangeToken.asInstanceOf[js.Any],
         "SizeConstraintSetId" -> SizeConstraintSetId.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteSizeConstraintSetRequest]
+      __obj.asInstanceOf[DeleteSizeConstraintSetRequest]
     }
   }
 
@@ -1493,13 +1377,9 @@ package waf {
     def apply(
         ChangeToken: js.UndefOr[ChangeToken] = js.undefined
     ): DeleteSizeConstraintSetResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ChangeToken" -> ChangeToken.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteSizeConstraintSetResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      ChangeToken.foreach(__v => __obj.update("ChangeToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DeleteSizeConstraintSetResponse]
     }
   }
 
@@ -1517,12 +1397,12 @@ package waf {
         ChangeToken: ChangeToken,
         SqlInjectionMatchSetId: ResourceId
     ): DeleteSqlInjectionMatchSetRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ChangeToken"            -> ChangeToken.asInstanceOf[js.Any],
         "SqlInjectionMatchSetId" -> SqlInjectionMatchSetId.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteSqlInjectionMatchSetRequest]
+      __obj.asInstanceOf[DeleteSqlInjectionMatchSetRequest]
     }
   }
 
@@ -1538,13 +1418,9 @@ package waf {
     def apply(
         ChangeToken: js.UndefOr[ChangeToken] = js.undefined
     ): DeleteSqlInjectionMatchSetResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ChangeToken" -> ChangeToken.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteSqlInjectionMatchSetResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      ChangeToken.foreach(__v => __obj.update("ChangeToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DeleteSqlInjectionMatchSetResponse]
     }
   }
 
@@ -1559,12 +1435,12 @@ package waf {
         ChangeToken: ChangeToken,
         WebACLId: ResourceId
     ): DeleteWebACLRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ChangeToken" -> ChangeToken.asInstanceOf[js.Any],
         "WebACLId"    -> WebACLId.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteWebACLRequest]
+      __obj.asInstanceOf[DeleteWebACLRequest]
     }
   }
 
@@ -1577,13 +1453,9 @@ package waf {
     def apply(
         ChangeToken: js.UndefOr[ChangeToken] = js.undefined
     ): DeleteWebACLResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ChangeToken" -> ChangeToken.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteWebACLResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      ChangeToken.foreach(__v => __obj.update("ChangeToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DeleteWebACLResponse]
     }
   }
 
@@ -1601,12 +1473,12 @@ package waf {
         ChangeToken: ChangeToken,
         XssMatchSetId: ResourceId
     ): DeleteXssMatchSetRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ChangeToken"   -> ChangeToken.asInstanceOf[js.Any],
         "XssMatchSetId" -> XssMatchSetId.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteXssMatchSetRequest]
+      __obj.asInstanceOf[DeleteXssMatchSetRequest]
     }
   }
 
@@ -1622,13 +1494,9 @@ package waf {
     def apply(
         ChangeToken: js.UndefOr[ChangeToken] = js.undefined
     ): DeleteXssMatchSetResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ChangeToken" -> ChangeToken.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteXssMatchSetResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      ChangeToken.foreach(__v => __obj.update("ChangeToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DeleteXssMatchSetResponse]
     }
   }
 
@@ -1644,11 +1512,11 @@ package waf {
     def apply(
         RuleId: ResourceId
     ): ExcludedRule = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "RuleId" -> RuleId.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ExcludedRule]
+      __obj.asInstanceOf[ExcludedRule]
     }
   }
 
@@ -1666,14 +1534,12 @@ package waf {
         Type: MatchFieldType,
         Data: js.UndefOr[MatchFieldData] = js.undefined
     ): FieldToMatch = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Type" -> Type.asInstanceOf[js.Any],
-        "Data" -> Data.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "Type" -> Type.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[FieldToMatch]
+      Data.foreach(__v => __obj.update("Data", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[FieldToMatch]
     }
   }
 
@@ -1691,12 +1557,12 @@ package waf {
         Type: GeoMatchConstraintType,
         Value: GeoMatchConstraintValue
     ): GeoMatchConstraint = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "Type"  -> Type.asInstanceOf[js.Any],
         "Value" -> Value.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GeoMatchConstraint]
+      __obj.asInstanceOf[GeoMatchConstraint]
     }
   }
 
@@ -2226,15 +2092,13 @@ package waf {
         GeoMatchSetId: ResourceId,
         Name: js.UndefOr[ResourceName] = js.undefined
     ): GeoMatchSet = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "GeoMatchConstraints" -> GeoMatchConstraints.asInstanceOf[js.Any],
-        "GeoMatchSetId"       -> GeoMatchSetId.asInstanceOf[js.Any],
-        "Name" -> Name.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "GeoMatchSetId"       -> GeoMatchSetId.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GeoMatchSet]
+      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GeoMatchSet]
     }
   }
 
@@ -2252,12 +2116,12 @@ package waf {
         GeoMatchSetId: ResourceId,
         Name: ResourceName
     ): GeoMatchSetSummary = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "GeoMatchSetId" -> GeoMatchSetId.asInstanceOf[js.Any],
         "Name"          -> Name.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GeoMatchSetSummary]
+      __obj.asInstanceOf[GeoMatchSetSummary]
     }
   }
 
@@ -2275,12 +2139,12 @@ package waf {
         Action: ChangeAction,
         GeoMatchConstraint: GeoMatchConstraint
     ): GeoMatchSetUpdate = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "Action"             -> Action.asInstanceOf[js.Any],
         "GeoMatchConstraint" -> GeoMatchConstraint.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GeoMatchSetUpdate]
+      __obj.asInstanceOf[GeoMatchSetUpdate]
     }
   }
 
@@ -2293,11 +2157,11 @@ package waf {
     def apply(
         ByteMatchSetId: ResourceId
     ): GetByteMatchSetRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ByteMatchSetId" -> ByteMatchSetId.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetByteMatchSetRequest]
+      __obj.asInstanceOf[GetByteMatchSetRequest]
     }
   }
 
@@ -2310,13 +2174,9 @@ package waf {
     def apply(
         ByteMatchSet: js.UndefOr[ByteMatchSet] = js.undefined
     ): GetByteMatchSetResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ByteMatchSet" -> ByteMatchSet.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetByteMatchSetResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      ByteMatchSet.foreach(__v => __obj.update("ByteMatchSet", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetByteMatchSetResponse]
     }
   }
 
@@ -2326,10 +2186,9 @@ package waf {
   object GetChangeTokenRequest {
     def apply(
         ): GetChangeTokenRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary.empty[js.Any]
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetChangeTokenRequest]
+      __obj.asInstanceOf[GetChangeTokenRequest]
     }
   }
 
@@ -2342,13 +2201,9 @@ package waf {
     def apply(
         ChangeToken: js.UndefOr[ChangeToken] = js.undefined
     ): GetChangeTokenResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ChangeToken" -> ChangeToken.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetChangeTokenResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      ChangeToken.foreach(__v => __obj.update("ChangeToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetChangeTokenResponse]
     }
   }
 
@@ -2361,11 +2216,11 @@ package waf {
     def apply(
         ChangeToken: ChangeToken
     ): GetChangeTokenStatusRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ChangeToken" -> ChangeToken.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetChangeTokenStatusRequest]
+      __obj.asInstanceOf[GetChangeTokenStatusRequest]
     }
   }
 
@@ -2378,13 +2233,9 @@ package waf {
     def apply(
         ChangeTokenStatus: js.UndefOr[ChangeTokenStatus] = js.undefined
     ): GetChangeTokenStatusResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ChangeTokenStatus" -> ChangeTokenStatus.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetChangeTokenStatusResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      ChangeTokenStatus.foreach(__v => __obj.update("ChangeTokenStatus", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetChangeTokenStatusResponse]
     }
   }
 
@@ -2397,11 +2248,11 @@ package waf {
     def apply(
         GeoMatchSetId: ResourceId
     ): GetGeoMatchSetRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "GeoMatchSetId" -> GeoMatchSetId.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetGeoMatchSetRequest]
+      __obj.asInstanceOf[GetGeoMatchSetRequest]
     }
   }
 
@@ -2414,13 +2265,9 @@ package waf {
     def apply(
         GeoMatchSet: js.UndefOr[GeoMatchSet] = js.undefined
     ): GetGeoMatchSetResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "GeoMatchSet" -> GeoMatchSet.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetGeoMatchSetResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      GeoMatchSet.foreach(__v => __obj.update("GeoMatchSet", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetGeoMatchSetResponse]
     }
   }
 
@@ -2433,11 +2280,11 @@ package waf {
     def apply(
         IPSetId: ResourceId
     ): GetIPSetRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "IPSetId" -> IPSetId.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetIPSetRequest]
+      __obj.asInstanceOf[GetIPSetRequest]
     }
   }
 
@@ -2450,13 +2297,9 @@ package waf {
     def apply(
         IPSet: js.UndefOr[IPSet] = js.undefined
     ): GetIPSetResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "IPSet" -> IPSet.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetIPSetResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      IPSet.foreach(__v => __obj.update("IPSet", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetIPSetResponse]
     }
   }
 
@@ -2469,11 +2312,11 @@ package waf {
     def apply(
         ResourceArn: ResourceArn
     ): GetLoggingConfigurationRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetLoggingConfigurationRequest]
+      __obj.asInstanceOf[GetLoggingConfigurationRequest]
     }
   }
 
@@ -2486,13 +2329,9 @@ package waf {
     def apply(
         LoggingConfiguration: js.UndefOr[LoggingConfiguration] = js.undefined
     ): GetLoggingConfigurationResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "LoggingConfiguration" -> LoggingConfiguration.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetLoggingConfigurationResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      LoggingConfiguration.foreach(__v => __obj.update("LoggingConfiguration", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetLoggingConfigurationResponse]
     }
   }
 
@@ -2505,11 +2344,11 @@ package waf {
     def apply(
         ResourceArn: ResourceArn
     ): GetPermissionPolicyRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetPermissionPolicyRequest]
+      __obj.asInstanceOf[GetPermissionPolicyRequest]
     }
   }
 
@@ -2522,13 +2361,9 @@ package waf {
     def apply(
         Policy: js.UndefOr[PolicyString] = js.undefined
     ): GetPermissionPolicyResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Policy" -> Policy.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetPermissionPolicyResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      Policy.foreach(__v => __obj.update("Policy", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetPermissionPolicyResponse]
     }
   }
 
@@ -2543,14 +2378,12 @@ package waf {
         RuleId: ResourceId,
         NextMarker: js.UndefOr[NextMarker] = js.undefined
     ): GetRateBasedRuleManagedKeysRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "RuleId" -> RuleId.asInstanceOf[js.Any],
-        "NextMarker" -> NextMarker.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "RuleId" -> RuleId.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetRateBasedRuleManagedKeysRequest]
+      NextMarker.foreach(__v => __obj.update("NextMarker", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetRateBasedRuleManagedKeysRequest]
     }
   }
 
@@ -2565,16 +2398,10 @@ package waf {
         ManagedKeys: js.UndefOr[ManagedKeys] = js.undefined,
         NextMarker: js.UndefOr[NextMarker] = js.undefined
     ): GetRateBasedRuleManagedKeysResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ManagedKeys" -> ManagedKeys.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NextMarker" -> NextMarker.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetRateBasedRuleManagedKeysResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      ManagedKeys.foreach(__v => __obj.update("ManagedKeys", __v.asInstanceOf[js.Any]))
+      NextMarker.foreach(__v => __obj.update("NextMarker", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetRateBasedRuleManagedKeysResponse]
     }
   }
 
@@ -2587,11 +2414,11 @@ package waf {
     def apply(
         RuleId: ResourceId
     ): GetRateBasedRuleRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "RuleId" -> RuleId.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetRateBasedRuleRequest]
+      __obj.asInstanceOf[GetRateBasedRuleRequest]
     }
   }
 
@@ -2604,13 +2431,9 @@ package waf {
     def apply(
         Rule: js.UndefOr[RateBasedRule] = js.undefined
     ): GetRateBasedRuleResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Rule" -> Rule.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetRateBasedRuleResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      Rule.foreach(__v => __obj.update("Rule", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetRateBasedRuleResponse]
     }
   }
 
@@ -2623,11 +2446,11 @@ package waf {
     def apply(
         RegexMatchSetId: ResourceId
     ): GetRegexMatchSetRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "RegexMatchSetId" -> RegexMatchSetId.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetRegexMatchSetRequest]
+      __obj.asInstanceOf[GetRegexMatchSetRequest]
     }
   }
 
@@ -2640,13 +2463,9 @@ package waf {
     def apply(
         RegexMatchSet: js.UndefOr[RegexMatchSet] = js.undefined
     ): GetRegexMatchSetResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "RegexMatchSet" -> RegexMatchSet.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetRegexMatchSetResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      RegexMatchSet.foreach(__v => __obj.update("RegexMatchSet", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetRegexMatchSetResponse]
     }
   }
 
@@ -2659,11 +2478,11 @@ package waf {
     def apply(
         RegexPatternSetId: ResourceId
     ): GetRegexPatternSetRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "RegexPatternSetId" -> RegexPatternSetId.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetRegexPatternSetRequest]
+      __obj.asInstanceOf[GetRegexPatternSetRequest]
     }
   }
 
@@ -2676,13 +2495,9 @@ package waf {
     def apply(
         RegexPatternSet: js.UndefOr[RegexPatternSet] = js.undefined
     ): GetRegexPatternSetResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "RegexPatternSet" -> RegexPatternSet.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetRegexPatternSetResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      RegexPatternSet.foreach(__v => __obj.update("RegexPatternSet", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetRegexPatternSetResponse]
     }
   }
 
@@ -2695,11 +2510,11 @@ package waf {
     def apply(
         RuleGroupId: ResourceId
     ): GetRuleGroupRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "RuleGroupId" -> RuleGroupId.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetRuleGroupRequest]
+      __obj.asInstanceOf[GetRuleGroupRequest]
     }
   }
 
@@ -2712,13 +2527,9 @@ package waf {
     def apply(
         RuleGroup: js.UndefOr[RuleGroup] = js.undefined
     ): GetRuleGroupResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "RuleGroup" -> RuleGroup.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetRuleGroupResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      RuleGroup.foreach(__v => __obj.update("RuleGroup", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetRuleGroupResponse]
     }
   }
 
@@ -2731,11 +2542,11 @@ package waf {
     def apply(
         RuleId: ResourceId
     ): GetRuleRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "RuleId" -> RuleId.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetRuleRequest]
+      __obj.asInstanceOf[GetRuleRequest]
     }
   }
 
@@ -2748,13 +2559,9 @@ package waf {
     def apply(
         Rule: js.UndefOr[Rule] = js.undefined
     ): GetRuleResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Rule" -> Rule.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetRuleResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      Rule.foreach(__v => __obj.update("Rule", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetRuleResponse]
     }
   }
 
@@ -2773,14 +2580,14 @@ package waf {
         TimeWindow: TimeWindow,
         WebAclId: ResourceId
     ): GetSampledRequestsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "MaxItems"   -> MaxItems.asInstanceOf[js.Any],
         "RuleId"     -> RuleId.asInstanceOf[js.Any],
         "TimeWindow" -> TimeWindow.asInstanceOf[js.Any],
         "WebAclId"   -> WebAclId.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetSampledRequestsRequest]
+      __obj.asInstanceOf[GetSampledRequestsRequest]
     }
   }
 
@@ -2797,19 +2604,11 @@ package waf {
         SampledRequests: js.UndefOr[SampledHTTPRequests] = js.undefined,
         TimeWindow: js.UndefOr[TimeWindow] = js.undefined
     ): GetSampledRequestsResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "PopulationSize" -> PopulationSize.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SampledRequests" -> SampledRequests.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "TimeWindow" -> TimeWindow.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetSampledRequestsResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      PopulationSize.foreach(__v => __obj.update("PopulationSize", __v.asInstanceOf[js.Any]))
+      SampledRequests.foreach(__v => __obj.update("SampledRequests", __v.asInstanceOf[js.Any]))
+      TimeWindow.foreach(__v => __obj.update("TimeWindow", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetSampledRequestsResponse]
     }
   }
 
@@ -2822,11 +2621,11 @@ package waf {
     def apply(
         SizeConstraintSetId: ResourceId
     ): GetSizeConstraintSetRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "SizeConstraintSetId" -> SizeConstraintSetId.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetSizeConstraintSetRequest]
+      __obj.asInstanceOf[GetSizeConstraintSetRequest]
     }
   }
 
@@ -2839,13 +2638,9 @@ package waf {
     def apply(
         SizeConstraintSet: js.UndefOr[SizeConstraintSet] = js.undefined
     ): GetSizeConstraintSetResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "SizeConstraintSet" -> SizeConstraintSet.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetSizeConstraintSetResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      SizeConstraintSet.foreach(__v => __obj.update("SizeConstraintSet", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetSizeConstraintSetResponse]
     }
   }
 
@@ -2861,11 +2656,11 @@ package waf {
     def apply(
         SqlInjectionMatchSetId: ResourceId
     ): GetSqlInjectionMatchSetRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "SqlInjectionMatchSetId" -> SqlInjectionMatchSetId.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetSqlInjectionMatchSetRequest]
+      __obj.asInstanceOf[GetSqlInjectionMatchSetRequest]
     }
   }
 
@@ -2881,13 +2676,9 @@ package waf {
     def apply(
         SqlInjectionMatchSet: js.UndefOr[SqlInjectionMatchSet] = js.undefined
     ): GetSqlInjectionMatchSetResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "SqlInjectionMatchSet" -> SqlInjectionMatchSet.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetSqlInjectionMatchSetResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      SqlInjectionMatchSet.foreach(__v => __obj.update("SqlInjectionMatchSet", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetSqlInjectionMatchSetResponse]
     }
   }
 
@@ -2900,11 +2691,11 @@ package waf {
     def apply(
         WebACLId: ResourceId
     ): GetWebACLRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "WebACLId" -> WebACLId.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetWebACLRequest]
+      __obj.asInstanceOf[GetWebACLRequest]
     }
   }
 
@@ -2917,13 +2708,9 @@ package waf {
     def apply(
         WebACL: js.UndefOr[WebACL] = js.undefined
     ): GetWebACLResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "WebACL" -> WebACL.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetWebACLResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      WebACL.foreach(__v => __obj.update("WebACL", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetWebACLResponse]
     }
   }
 
@@ -2939,11 +2726,11 @@ package waf {
     def apply(
         XssMatchSetId: ResourceId
     ): GetXssMatchSetRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "XssMatchSetId" -> XssMatchSetId.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetXssMatchSetRequest]
+      __obj.asInstanceOf[GetXssMatchSetRequest]
     }
   }
 
@@ -2959,13 +2746,9 @@ package waf {
     def apply(
         XssMatchSet: js.UndefOr[XssMatchSet] = js.undefined
     ): GetXssMatchSetResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "XssMatchSet" -> XssMatchSet.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetXssMatchSetResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      XssMatchSet.foreach(__v => __obj.update("XssMatchSet", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetXssMatchSetResponse]
     }
   }
 
@@ -2983,16 +2766,10 @@ package waf {
         Name: js.UndefOr[HeaderName] = js.undefined,
         Value: js.UndefOr[HeaderValue] = js.undefined
     ): HTTPHeader = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Name" -> Name.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Value" -> Value.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[HTTPHeader]
+      val __obj = js.Dictionary.empty[js.Any]
+      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
+      Value.foreach(__v => __obj.update("Value", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[HTTPHeader]
     }
   }
 
@@ -3018,28 +2795,14 @@ package waf {
         Method: js.UndefOr[HTTPMethod] = js.undefined,
         URI: js.UndefOr[URIString] = js.undefined
     ): HTTPRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ClientIP" -> ClientIP.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Country" -> Country.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "HTTPVersion" -> HTTPVersion.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Headers" -> Headers.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Method" -> Method.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "URI" -> URI.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[HTTPRequest]
+      val __obj = js.Dictionary.empty[js.Any]
+      ClientIP.foreach(__v => __obj.update("ClientIP", __v.asInstanceOf[js.Any]))
+      Country.foreach(__v => __obj.update("Country", __v.asInstanceOf[js.Any]))
+      HTTPVersion.foreach(__v => __obj.update("HTTPVersion", __v.asInstanceOf[js.Any]))
+      Headers.foreach(__v => __obj.update("Headers", __v.asInstanceOf[js.Any]))
+      Method.foreach(__v => __obj.update("Method", __v.asInstanceOf[js.Any]))
+      URI.foreach(__v => __obj.update("URI", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[HTTPRequest]
     }
   }
 
@@ -3060,15 +2823,13 @@ package waf {
         IPSetId: ResourceId,
         Name: js.UndefOr[ResourceName] = js.undefined
     ): IPSet = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "IPSetDescriptors" -> IPSetDescriptors.asInstanceOf[js.Any],
-        "IPSetId"          -> IPSetId.asInstanceOf[js.Any],
-        "Name" -> Name.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "IPSetId"          -> IPSetId.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[IPSet]
+      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[IPSet]
     }
   }
 
@@ -3086,12 +2847,12 @@ package waf {
         Type: IPSetDescriptorType,
         Value: IPSetDescriptorValue
     ): IPSetDescriptor = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "Type"  -> Type.asInstanceOf[js.Any],
         "Value" -> Value.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[IPSetDescriptor]
+      __obj.asInstanceOf[IPSetDescriptor]
     }
   }
 
@@ -3116,12 +2877,12 @@ package waf {
         IPSetId: ResourceId,
         Name: ResourceName
     ): IPSetSummary = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "IPSetId" -> IPSetId.asInstanceOf[js.Any],
         "Name"    -> Name.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[IPSetSummary]
+      __obj.asInstanceOf[IPSetSummary]
     }
   }
 
@@ -3139,12 +2900,12 @@ package waf {
         Action: ChangeAction,
         IPSetDescriptor: IPSetDescriptor
     ): IPSetUpdate = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "Action"          -> Action.asInstanceOf[js.Any],
         "IPSetDescriptor" -> IPSetDescriptor.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[IPSetUpdate]
+      __obj.asInstanceOf[IPSetUpdate]
     }
   }
 
@@ -3161,19 +2922,11 @@ package waf {
         NextMarker: js.UndefOr[NextMarker] = js.undefined,
         RuleGroupId: js.UndefOr[ResourceId] = js.undefined
     ): ListActivatedRulesInRuleGroupRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Limit" -> Limit.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NextMarker" -> NextMarker.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "RuleGroupId" -> RuleGroupId.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListActivatedRulesInRuleGroupRequest]
+      val __obj = js.Dictionary.empty[js.Any]
+      Limit.foreach(__v => __obj.update("Limit", __v.asInstanceOf[js.Any]))
+      NextMarker.foreach(__v => __obj.update("NextMarker", __v.asInstanceOf[js.Any]))
+      RuleGroupId.foreach(__v => __obj.update("RuleGroupId", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListActivatedRulesInRuleGroupRequest]
     }
   }
 
@@ -3188,16 +2941,10 @@ package waf {
         ActivatedRules: js.UndefOr[ActivatedRules] = js.undefined,
         NextMarker: js.UndefOr[NextMarker] = js.undefined
     ): ListActivatedRulesInRuleGroupResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ActivatedRules" -> ActivatedRules.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NextMarker" -> NextMarker.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListActivatedRulesInRuleGroupResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      ActivatedRules.foreach(__v => __obj.update("ActivatedRules", __v.asInstanceOf[js.Any]))
+      NextMarker.foreach(__v => __obj.update("NextMarker", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListActivatedRulesInRuleGroupResponse]
     }
   }
 
@@ -3212,16 +2959,10 @@ package waf {
         Limit: js.UndefOr[PaginationLimit] = js.undefined,
         NextMarker: js.UndefOr[NextMarker] = js.undefined
     ): ListByteMatchSetsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Limit" -> Limit.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NextMarker" -> NextMarker.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListByteMatchSetsRequest]
+      val __obj = js.Dictionary.empty[js.Any]
+      Limit.foreach(__v => __obj.update("Limit", __v.asInstanceOf[js.Any]))
+      NextMarker.foreach(__v => __obj.update("NextMarker", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListByteMatchSetsRequest]
     }
   }
 
@@ -3236,16 +2977,10 @@ package waf {
         ByteMatchSets: js.UndefOr[ByteMatchSetSummaries] = js.undefined,
         NextMarker: js.UndefOr[NextMarker] = js.undefined
     ): ListByteMatchSetsResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ByteMatchSets" -> ByteMatchSets.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NextMarker" -> NextMarker.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListByteMatchSetsResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      ByteMatchSets.foreach(__v => __obj.update("ByteMatchSets", __v.asInstanceOf[js.Any]))
+      NextMarker.foreach(__v => __obj.update("NextMarker", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListByteMatchSetsResponse]
     }
   }
 
@@ -3260,16 +2995,10 @@ package waf {
         Limit: js.UndefOr[PaginationLimit] = js.undefined,
         NextMarker: js.UndefOr[NextMarker] = js.undefined
     ): ListGeoMatchSetsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Limit" -> Limit.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NextMarker" -> NextMarker.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListGeoMatchSetsRequest]
+      val __obj = js.Dictionary.empty[js.Any]
+      Limit.foreach(__v => __obj.update("Limit", __v.asInstanceOf[js.Any]))
+      NextMarker.foreach(__v => __obj.update("NextMarker", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListGeoMatchSetsRequest]
     }
   }
 
@@ -3284,16 +3013,10 @@ package waf {
         GeoMatchSets: js.UndefOr[GeoMatchSetSummaries] = js.undefined,
         NextMarker: js.UndefOr[NextMarker] = js.undefined
     ): ListGeoMatchSetsResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "GeoMatchSets" -> GeoMatchSets.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NextMarker" -> NextMarker.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListGeoMatchSetsResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      GeoMatchSets.foreach(__v => __obj.update("GeoMatchSets", __v.asInstanceOf[js.Any]))
+      NextMarker.foreach(__v => __obj.update("NextMarker", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListGeoMatchSetsResponse]
     }
   }
 
@@ -3308,16 +3031,10 @@ package waf {
         Limit: js.UndefOr[PaginationLimit] = js.undefined,
         NextMarker: js.UndefOr[NextMarker] = js.undefined
     ): ListIPSetsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Limit" -> Limit.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NextMarker" -> NextMarker.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListIPSetsRequest]
+      val __obj = js.Dictionary.empty[js.Any]
+      Limit.foreach(__v => __obj.update("Limit", __v.asInstanceOf[js.Any]))
+      NextMarker.foreach(__v => __obj.update("NextMarker", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListIPSetsRequest]
     }
   }
 
@@ -3332,16 +3049,10 @@ package waf {
         IPSets: js.UndefOr[IPSetSummaries] = js.undefined,
         NextMarker: js.UndefOr[NextMarker] = js.undefined
     ): ListIPSetsResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "IPSets" -> IPSets.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NextMarker" -> NextMarker.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListIPSetsResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      IPSets.foreach(__v => __obj.update("IPSets", __v.asInstanceOf[js.Any]))
+      NextMarker.foreach(__v => __obj.update("NextMarker", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListIPSetsResponse]
     }
   }
 
@@ -3356,16 +3067,10 @@ package waf {
         Limit: js.UndefOr[PaginationLimit] = js.undefined,
         NextMarker: js.UndefOr[NextMarker] = js.undefined
     ): ListLoggingConfigurationsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Limit" -> Limit.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NextMarker" -> NextMarker.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListLoggingConfigurationsRequest]
+      val __obj = js.Dictionary.empty[js.Any]
+      Limit.foreach(__v => __obj.update("Limit", __v.asInstanceOf[js.Any]))
+      NextMarker.foreach(__v => __obj.update("NextMarker", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListLoggingConfigurationsRequest]
     }
   }
 
@@ -3380,16 +3085,10 @@ package waf {
         LoggingConfigurations: js.UndefOr[LoggingConfigurations] = js.undefined,
         NextMarker: js.UndefOr[NextMarker] = js.undefined
     ): ListLoggingConfigurationsResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "LoggingConfigurations" -> LoggingConfigurations.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NextMarker" -> NextMarker.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListLoggingConfigurationsResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      LoggingConfigurations.foreach(__v => __obj.update("LoggingConfigurations", __v.asInstanceOf[js.Any]))
+      NextMarker.foreach(__v => __obj.update("NextMarker", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListLoggingConfigurationsResponse]
     }
   }
 
@@ -3404,16 +3103,10 @@ package waf {
         Limit: js.UndefOr[PaginationLimit] = js.undefined,
         NextMarker: js.UndefOr[NextMarker] = js.undefined
     ): ListRateBasedRulesRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Limit" -> Limit.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NextMarker" -> NextMarker.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListRateBasedRulesRequest]
+      val __obj = js.Dictionary.empty[js.Any]
+      Limit.foreach(__v => __obj.update("Limit", __v.asInstanceOf[js.Any]))
+      NextMarker.foreach(__v => __obj.update("NextMarker", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListRateBasedRulesRequest]
     }
   }
 
@@ -3428,16 +3121,10 @@ package waf {
         NextMarker: js.UndefOr[NextMarker] = js.undefined,
         Rules: js.UndefOr[RuleSummaries] = js.undefined
     ): ListRateBasedRulesResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "NextMarker" -> NextMarker.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Rules" -> Rules.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListRateBasedRulesResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      NextMarker.foreach(__v => __obj.update("NextMarker", __v.asInstanceOf[js.Any]))
+      Rules.foreach(__v => __obj.update("Rules", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListRateBasedRulesResponse]
     }
   }
 
@@ -3452,16 +3139,10 @@ package waf {
         Limit: js.UndefOr[PaginationLimit] = js.undefined,
         NextMarker: js.UndefOr[NextMarker] = js.undefined
     ): ListRegexMatchSetsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Limit" -> Limit.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NextMarker" -> NextMarker.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListRegexMatchSetsRequest]
+      val __obj = js.Dictionary.empty[js.Any]
+      Limit.foreach(__v => __obj.update("Limit", __v.asInstanceOf[js.Any]))
+      NextMarker.foreach(__v => __obj.update("NextMarker", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListRegexMatchSetsRequest]
     }
   }
 
@@ -3476,16 +3157,10 @@ package waf {
         NextMarker: js.UndefOr[NextMarker] = js.undefined,
         RegexMatchSets: js.UndefOr[RegexMatchSetSummaries] = js.undefined
     ): ListRegexMatchSetsResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "NextMarker" -> NextMarker.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "RegexMatchSets" -> RegexMatchSets.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListRegexMatchSetsResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      NextMarker.foreach(__v => __obj.update("NextMarker", __v.asInstanceOf[js.Any]))
+      RegexMatchSets.foreach(__v => __obj.update("RegexMatchSets", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListRegexMatchSetsResponse]
     }
   }
 
@@ -3500,16 +3175,10 @@ package waf {
         Limit: js.UndefOr[PaginationLimit] = js.undefined,
         NextMarker: js.UndefOr[NextMarker] = js.undefined
     ): ListRegexPatternSetsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Limit" -> Limit.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NextMarker" -> NextMarker.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListRegexPatternSetsRequest]
+      val __obj = js.Dictionary.empty[js.Any]
+      Limit.foreach(__v => __obj.update("Limit", __v.asInstanceOf[js.Any]))
+      NextMarker.foreach(__v => __obj.update("NextMarker", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListRegexPatternSetsRequest]
     }
   }
 
@@ -3524,16 +3193,10 @@ package waf {
         NextMarker: js.UndefOr[NextMarker] = js.undefined,
         RegexPatternSets: js.UndefOr[RegexPatternSetSummaries] = js.undefined
     ): ListRegexPatternSetsResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "NextMarker" -> NextMarker.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "RegexPatternSets" -> RegexPatternSets.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListRegexPatternSetsResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      NextMarker.foreach(__v => __obj.update("NextMarker", __v.asInstanceOf[js.Any]))
+      RegexPatternSets.foreach(__v => __obj.update("RegexPatternSets", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListRegexPatternSetsResponse]
     }
   }
 
@@ -3548,16 +3211,10 @@ package waf {
         Limit: js.UndefOr[PaginationLimit] = js.undefined,
         NextMarker: js.UndefOr[NextMarker] = js.undefined
     ): ListRuleGroupsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Limit" -> Limit.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NextMarker" -> NextMarker.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListRuleGroupsRequest]
+      val __obj = js.Dictionary.empty[js.Any]
+      Limit.foreach(__v => __obj.update("Limit", __v.asInstanceOf[js.Any]))
+      NextMarker.foreach(__v => __obj.update("NextMarker", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListRuleGroupsRequest]
     }
   }
 
@@ -3572,16 +3229,10 @@ package waf {
         NextMarker: js.UndefOr[NextMarker] = js.undefined,
         RuleGroups: js.UndefOr[RuleGroupSummaries] = js.undefined
     ): ListRuleGroupsResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "NextMarker" -> NextMarker.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "RuleGroups" -> RuleGroups.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListRuleGroupsResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      NextMarker.foreach(__v => __obj.update("NextMarker", __v.asInstanceOf[js.Any]))
+      RuleGroups.foreach(__v => __obj.update("RuleGroups", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListRuleGroupsResponse]
     }
   }
 
@@ -3596,16 +3247,10 @@ package waf {
         Limit: js.UndefOr[PaginationLimit] = js.undefined,
         NextMarker: js.UndefOr[NextMarker] = js.undefined
     ): ListRulesRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Limit" -> Limit.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NextMarker" -> NextMarker.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListRulesRequest]
+      val __obj = js.Dictionary.empty[js.Any]
+      Limit.foreach(__v => __obj.update("Limit", __v.asInstanceOf[js.Any]))
+      NextMarker.foreach(__v => __obj.update("NextMarker", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListRulesRequest]
     }
   }
 
@@ -3620,16 +3265,10 @@ package waf {
         NextMarker: js.UndefOr[NextMarker] = js.undefined,
         Rules: js.UndefOr[RuleSummaries] = js.undefined
     ): ListRulesResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "NextMarker" -> NextMarker.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Rules" -> Rules.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListRulesResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      NextMarker.foreach(__v => __obj.update("NextMarker", __v.asInstanceOf[js.Any]))
+      Rules.foreach(__v => __obj.update("Rules", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListRulesResponse]
     }
   }
 
@@ -3644,16 +3283,10 @@ package waf {
         Limit: js.UndefOr[PaginationLimit] = js.undefined,
         NextMarker: js.UndefOr[NextMarker] = js.undefined
     ): ListSizeConstraintSetsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Limit" -> Limit.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NextMarker" -> NextMarker.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListSizeConstraintSetsRequest]
+      val __obj = js.Dictionary.empty[js.Any]
+      Limit.foreach(__v => __obj.update("Limit", __v.asInstanceOf[js.Any]))
+      NextMarker.foreach(__v => __obj.update("NextMarker", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListSizeConstraintSetsRequest]
     }
   }
 
@@ -3668,16 +3301,10 @@ package waf {
         NextMarker: js.UndefOr[NextMarker] = js.undefined,
         SizeConstraintSets: js.UndefOr[SizeConstraintSetSummaries] = js.undefined
     ): ListSizeConstraintSetsResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "NextMarker" -> NextMarker.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SizeConstraintSets" -> SizeConstraintSets.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListSizeConstraintSetsResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      NextMarker.foreach(__v => __obj.update("NextMarker", __v.asInstanceOf[js.Any]))
+      SizeConstraintSets.foreach(__v => __obj.update("SizeConstraintSets", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListSizeConstraintSetsResponse]
     }
   }
 
@@ -3695,16 +3322,10 @@ package waf {
         Limit: js.UndefOr[PaginationLimit] = js.undefined,
         NextMarker: js.UndefOr[NextMarker] = js.undefined
     ): ListSqlInjectionMatchSetsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Limit" -> Limit.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NextMarker" -> NextMarker.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListSqlInjectionMatchSetsRequest]
+      val __obj = js.Dictionary.empty[js.Any]
+      Limit.foreach(__v => __obj.update("Limit", __v.asInstanceOf[js.Any]))
+      NextMarker.foreach(__v => __obj.update("NextMarker", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListSqlInjectionMatchSetsRequest]
     }
   }
 
@@ -3722,16 +3343,10 @@ package waf {
         NextMarker: js.UndefOr[NextMarker] = js.undefined,
         SqlInjectionMatchSets: js.UndefOr[SqlInjectionMatchSetSummaries] = js.undefined
     ): ListSqlInjectionMatchSetsResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "NextMarker" -> NextMarker.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SqlInjectionMatchSets" -> SqlInjectionMatchSets.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListSqlInjectionMatchSetsResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      NextMarker.foreach(__v => __obj.update("NextMarker", __v.asInstanceOf[js.Any]))
+      SqlInjectionMatchSets.foreach(__v => __obj.update("SqlInjectionMatchSets", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListSqlInjectionMatchSetsResponse]
     }
   }
 
@@ -3746,16 +3361,10 @@ package waf {
         Limit: js.UndefOr[PaginationLimit] = js.undefined,
         NextMarker: js.UndefOr[NextMarker] = js.undefined
     ): ListSubscribedRuleGroupsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Limit" -> Limit.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NextMarker" -> NextMarker.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListSubscribedRuleGroupsRequest]
+      val __obj = js.Dictionary.empty[js.Any]
+      Limit.foreach(__v => __obj.update("Limit", __v.asInstanceOf[js.Any]))
+      NextMarker.foreach(__v => __obj.update("NextMarker", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListSubscribedRuleGroupsRequest]
     }
   }
 
@@ -3770,16 +3379,10 @@ package waf {
         NextMarker: js.UndefOr[NextMarker] = js.undefined,
         RuleGroups: js.UndefOr[SubscribedRuleGroupSummaries] = js.undefined
     ): ListSubscribedRuleGroupsResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "NextMarker" -> NextMarker.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "RuleGroups" -> RuleGroups.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListSubscribedRuleGroupsResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      NextMarker.foreach(__v => __obj.update("NextMarker", __v.asInstanceOf[js.Any]))
+      RuleGroups.foreach(__v => __obj.update("RuleGroups", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListSubscribedRuleGroupsResponse]
     }
   }
 
@@ -3794,16 +3397,10 @@ package waf {
         Limit: js.UndefOr[PaginationLimit] = js.undefined,
         NextMarker: js.UndefOr[NextMarker] = js.undefined
     ): ListWebACLsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Limit" -> Limit.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NextMarker" -> NextMarker.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListWebACLsRequest]
+      val __obj = js.Dictionary.empty[js.Any]
+      Limit.foreach(__v => __obj.update("Limit", __v.asInstanceOf[js.Any]))
+      NextMarker.foreach(__v => __obj.update("NextMarker", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListWebACLsRequest]
     }
   }
 
@@ -3818,16 +3415,10 @@ package waf {
         NextMarker: js.UndefOr[NextMarker] = js.undefined,
         WebACLs: js.UndefOr[WebACLSummaries] = js.undefined
     ): ListWebACLsResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "NextMarker" -> NextMarker.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "WebACLs" -> WebACLs.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListWebACLsResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      NextMarker.foreach(__v => __obj.update("NextMarker", __v.asInstanceOf[js.Any]))
+      WebACLs.foreach(__v => __obj.update("WebACLs", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListWebACLsResponse]
     }
   }
 
@@ -3845,16 +3436,10 @@ package waf {
         Limit: js.UndefOr[PaginationLimit] = js.undefined,
         NextMarker: js.UndefOr[NextMarker] = js.undefined
     ): ListXssMatchSetsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Limit" -> Limit.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NextMarker" -> NextMarker.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListXssMatchSetsRequest]
+      val __obj = js.Dictionary.empty[js.Any]
+      Limit.foreach(__v => __obj.update("Limit", __v.asInstanceOf[js.Any]))
+      NextMarker.foreach(__v => __obj.update("NextMarker", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListXssMatchSetsRequest]
     }
   }
 
@@ -3872,16 +3457,10 @@ package waf {
         NextMarker: js.UndefOr[NextMarker] = js.undefined,
         XssMatchSets: js.UndefOr[XssMatchSetSummaries] = js.undefined
     ): ListXssMatchSetsResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "NextMarker" -> NextMarker.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "XssMatchSets" -> XssMatchSets.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListXssMatchSetsResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      NextMarker.foreach(__v => __obj.update("NextMarker", __v.asInstanceOf[js.Any]))
+      XssMatchSets.foreach(__v => __obj.update("XssMatchSets", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListXssMatchSetsResponse]
     }
   }
 
@@ -3901,15 +3480,13 @@ package waf {
         ResourceArn: ResourceArn,
         RedactedFields: js.UndefOr[RedactedFields] = js.undefined
     ): LoggingConfiguration = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "LogDestinationConfigs" -> LogDestinationConfigs.asInstanceOf[js.Any],
-        "ResourceArn"           -> ResourceArn.asInstanceOf[js.Any],
-        "RedactedFields" -> RedactedFields.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "ResourceArn"           -> ResourceArn.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[LoggingConfiguration]
+      RedactedFields.foreach(__v => __obj.update("RedactedFields", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[LoggingConfiguration]
     }
   }
 
@@ -3951,13 +3528,13 @@ package waf {
         Negated: Negated,
         Type: PredicateType
     ): Predicate = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "DataId"  -> DataId.asInstanceOf[js.Any],
         "Negated" -> Negated.asInstanceOf[js.Any],
         "Type"    -> Type.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Predicate]
+      __obj.asInstanceOf[Predicate]
     }
   }
 
@@ -3982,11 +3559,11 @@ package waf {
     def apply(
         LoggingConfiguration: LoggingConfiguration
     ): PutLoggingConfigurationRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "LoggingConfiguration" -> LoggingConfiguration.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PutLoggingConfigurationRequest]
+      __obj.asInstanceOf[PutLoggingConfigurationRequest]
     }
   }
 
@@ -3999,13 +3576,9 @@ package waf {
     def apply(
         LoggingConfiguration: js.UndefOr[LoggingConfiguration] = js.undefined
     ): PutLoggingConfigurationResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "LoggingConfiguration" -> LoggingConfiguration.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PutLoggingConfigurationResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      LoggingConfiguration.foreach(__v => __obj.update("LoggingConfiguration", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PutLoggingConfigurationResponse]
     }
   }
 
@@ -4020,12 +3593,12 @@ package waf {
         Policy: PolicyString,
         ResourceArn: ResourceArn
     ): PutPermissionPolicyRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "Policy"      -> Policy.asInstanceOf[js.Any],
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PutPermissionPolicyRequest]
+      __obj.asInstanceOf[PutPermissionPolicyRequest]
     }
   }
 
@@ -4035,10 +3608,9 @@ package waf {
   object PutPermissionPolicyResponse {
     def apply(
         ): PutPermissionPolicyResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary.empty[js.Any]
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PutPermissionPolicyResponse]
+      __obj.asInstanceOf[PutPermissionPolicyResponse]
     }
   }
 
@@ -4068,20 +3640,16 @@ package waf {
         MetricName: js.UndefOr[MetricName] = js.undefined,
         Name: js.UndefOr[ResourceName] = js.undefined
     ): RateBasedRule = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "MatchPredicates" -> MatchPredicates.asInstanceOf[js.Any],
         "RateKey"         -> RateKey.asInstanceOf[js.Any],
         "RateLimit"       -> RateLimit.asInstanceOf[js.Any],
-        "RuleId"          -> RuleId.asInstanceOf[js.Any],
-        "MetricName" -> MetricName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Name" -> Name.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "RuleId"          -> RuleId.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RateBasedRule]
+      MetricName.foreach(__v => __obj.update("MetricName", __v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[RateBasedRule]
     }
   }
 
@@ -4108,19 +3676,11 @@ package waf {
         RegexMatchSetId: js.UndefOr[ResourceId] = js.undefined,
         RegexMatchTuples: js.UndefOr[RegexMatchTuples] = js.undefined
     ): RegexMatchSet = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Name" -> Name.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "RegexMatchSetId" -> RegexMatchSetId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "RegexMatchTuples" -> RegexMatchTuples.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RegexMatchSet]
+      val __obj = js.Dictionary.empty[js.Any]
+      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
+      RegexMatchSetId.foreach(__v => __obj.update("RegexMatchSetId", __v.asInstanceOf[js.Any]))
+      RegexMatchTuples.foreach(__v => __obj.update("RegexMatchTuples", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[RegexMatchSet]
     }
   }
 
@@ -4138,12 +3698,12 @@ package waf {
         Name: ResourceName,
         RegexMatchSetId: ResourceId
     ): RegexMatchSetSummary = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "Name"            -> Name.asInstanceOf[js.Any],
         "RegexMatchSetId" -> RegexMatchSetId.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RegexMatchSetSummary]
+      __obj.asInstanceOf[RegexMatchSetSummary]
     }
   }
 
@@ -4161,12 +3721,12 @@ package waf {
         Action: ChangeAction,
         RegexMatchTuple: RegexMatchTuple
     ): RegexMatchSetUpdate = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "Action"          -> Action.asInstanceOf[js.Any],
         "RegexMatchTuple" -> RegexMatchTuple.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RegexMatchSetUpdate]
+      __obj.asInstanceOf[RegexMatchSetUpdate]
     }
   }
 
@@ -4189,13 +3749,13 @@ package waf {
         RegexPatternSetId: ResourceId,
         TextTransformation: TextTransformation
     ): RegexMatchTuple = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "FieldToMatch"       -> FieldToMatch.asInstanceOf[js.Any],
         "RegexPatternSetId"  -> RegexPatternSetId.asInstanceOf[js.Any],
         "TextTransformation" -> TextTransformation.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RegexMatchTuple]
+      __obj.asInstanceOf[RegexMatchTuple]
     }
   }
 
@@ -4215,15 +3775,13 @@ package waf {
         RegexPatternStrings: RegexPatternStrings,
         Name: js.UndefOr[ResourceName] = js.undefined
     ): RegexPatternSet = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "RegexPatternSetId"   -> RegexPatternSetId.asInstanceOf[js.Any],
-        "RegexPatternStrings" -> RegexPatternStrings.asInstanceOf[js.Any],
-        "Name" -> Name.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "RegexPatternStrings" -> RegexPatternStrings.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RegexPatternSet]
+      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[RegexPatternSet]
     }
   }
 
@@ -4241,12 +3799,12 @@ package waf {
         Name: ResourceName,
         RegexPatternSetId: ResourceId
     ): RegexPatternSetSummary = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "Name"              -> Name.asInstanceOf[js.Any],
         "RegexPatternSetId" -> RegexPatternSetId.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RegexPatternSetSummary]
+      __obj.asInstanceOf[RegexPatternSetSummary]
     }
   }
 
@@ -4264,12 +3822,12 @@ package waf {
         Action: ChangeAction,
         RegexPatternString: RegexPatternString
     ): RegexPatternSetUpdate = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "Action"             -> Action.asInstanceOf[js.Any],
         "RegexPatternString" -> RegexPatternString.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RegexPatternSetUpdate]
+      __obj.asInstanceOf[RegexPatternSetUpdate]
     }
   }
 
@@ -4294,18 +3852,14 @@ package waf {
         MetricName: js.UndefOr[MetricName] = js.undefined,
         Name: js.UndefOr[ResourceName] = js.undefined
     ): Rule = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "Predicates" -> Predicates.asInstanceOf[js.Any],
-        "RuleId"     -> RuleId.asInstanceOf[js.Any],
-        "MetricName" -> MetricName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Name" -> Name.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "RuleId"     -> RuleId.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Rule]
+      MetricName.foreach(__v => __obj.update("MetricName", __v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Rule]
     }
   }
 
@@ -4329,17 +3883,13 @@ package waf {
         MetricName: js.UndefOr[MetricName] = js.undefined,
         Name: js.UndefOr[ResourceName] = js.undefined
     ): RuleGroup = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "RuleGroupId" -> RuleGroupId.asInstanceOf[js.Any],
-        "MetricName" -> MetricName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Name" -> Name.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "RuleGroupId" -> RuleGroupId.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RuleGroup]
+      MetricName.foreach(__v => __obj.update("MetricName", __v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[RuleGroup]
     }
   }
 
@@ -4357,12 +3907,12 @@ package waf {
         Name: ResourceName,
         RuleGroupId: ResourceId
     ): RuleGroupSummary = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "Name"        -> Name.asInstanceOf[js.Any],
         "RuleGroupId" -> RuleGroupId.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RuleGroupSummary]
+      __obj.asInstanceOf[RuleGroupSummary]
     }
   }
 
@@ -4380,12 +3930,12 @@ package waf {
         Action: ChangeAction,
         ActivatedRule: ActivatedRule
     ): RuleGroupUpdate = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "Action"        -> Action.asInstanceOf[js.Any],
         "ActivatedRule" -> ActivatedRule.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RuleGroupUpdate]
+      __obj.asInstanceOf[RuleGroupUpdate]
     }
   }
 
@@ -4403,12 +3953,12 @@ package waf {
         Name: ResourceName,
         RuleId: ResourceId
     ): RuleSummary = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "Name"   -> Name.asInstanceOf[js.Any],
         "RuleId" -> RuleId.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RuleSummary]
+      __obj.asInstanceOf[RuleSummary]
     }
   }
 
@@ -4426,12 +3976,12 @@ package waf {
         Action: ChangeAction,
         Predicate: Predicate
     ): RuleUpdate = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "Action"    -> Action.asInstanceOf[js.Any],
         "Predicate" -> Predicate.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RuleUpdate]
+      __obj.asInstanceOf[RuleUpdate]
     }
   }
 
@@ -4455,21 +4005,15 @@ package waf {
         RuleWithinRuleGroup: js.UndefOr[ResourceId] = js.undefined,
         Timestamp: js.UndefOr[Timestamp] = js.undefined
     ): SampledHTTPRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "Request" -> Request.asInstanceOf[js.Any],
-        "Weight"  -> Weight.asInstanceOf[js.Any],
-        "Action" -> Action.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "RuleWithinRuleGroup" -> RuleWithinRuleGroup.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Timestamp" -> Timestamp.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "Weight"  -> Weight.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SampledHTTPRequest]
+      Action.foreach(__v => __obj.update("Action", __v.asInstanceOf[js.Any]))
+      RuleWithinRuleGroup.foreach(__v => __obj.update("RuleWithinRuleGroup", __v.asInstanceOf[js.Any]))
+      Timestamp.foreach(__v => __obj.update("Timestamp", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[SampledHTTPRequest]
     }
   }
 
@@ -4491,14 +4035,14 @@ package waf {
         Size: Size,
         TextTransformation: TextTransformation
     ): SizeConstraint = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ComparisonOperator" -> ComparisonOperator.asInstanceOf[js.Any],
         "FieldToMatch"       -> FieldToMatch.asInstanceOf[js.Any],
         "Size"               -> Size.asInstanceOf[js.Any],
         "TextTransformation" -> TextTransformation.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SizeConstraint]
+      __obj.asInstanceOf[SizeConstraint]
     }
   }
 
@@ -4518,15 +4062,13 @@ package waf {
         SizeConstraints: SizeConstraints,
         Name: js.UndefOr[ResourceName] = js.undefined
     ): SizeConstraintSet = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "SizeConstraintSetId" -> SizeConstraintSetId.asInstanceOf[js.Any],
-        "SizeConstraints"     -> SizeConstraints.asInstanceOf[js.Any],
-        "Name" -> Name.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "SizeConstraints"     -> SizeConstraints.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SizeConstraintSet]
+      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[SizeConstraintSet]
     }
   }
 
@@ -4544,12 +4086,12 @@ package waf {
         Name: ResourceName,
         SizeConstraintSetId: ResourceId
     ): SizeConstraintSetSummary = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "Name"                -> Name.asInstanceOf[js.Any],
         "SizeConstraintSetId" -> SizeConstraintSetId.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SizeConstraintSetSummary]
+      __obj.asInstanceOf[SizeConstraintSetSummary]
     }
   }
 
@@ -4567,12 +4109,12 @@ package waf {
         Action: ChangeAction,
         SizeConstraint: SizeConstraint
     ): SizeConstraintSetUpdate = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "Action"         -> Action.asInstanceOf[js.Any],
         "SizeConstraint" -> SizeConstraint.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SizeConstraintSetUpdate]
+      __obj.asInstanceOf[SizeConstraintSetUpdate]
     }
   }
 
@@ -4592,15 +4134,13 @@ package waf {
         SqlInjectionMatchTuples: SqlInjectionMatchTuples,
         Name: js.UndefOr[ResourceName] = js.undefined
     ): SqlInjectionMatchSet = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "SqlInjectionMatchSetId"  -> SqlInjectionMatchSetId.asInstanceOf[js.Any],
-        "SqlInjectionMatchTuples" -> SqlInjectionMatchTuples.asInstanceOf[js.Any],
-        "Name" -> Name.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "SqlInjectionMatchTuples" -> SqlInjectionMatchTuples.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SqlInjectionMatchSet]
+      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[SqlInjectionMatchSet]
     }
   }
 
@@ -4618,12 +4158,12 @@ package waf {
         Name: ResourceName,
         SqlInjectionMatchSetId: ResourceId
     ): SqlInjectionMatchSetSummary = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "Name"                   -> Name.asInstanceOf[js.Any],
         "SqlInjectionMatchSetId" -> SqlInjectionMatchSetId.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SqlInjectionMatchSetSummary]
+      __obj.asInstanceOf[SqlInjectionMatchSetSummary]
     }
   }
 
@@ -4641,12 +4181,12 @@ package waf {
         Action: ChangeAction,
         SqlInjectionMatchTuple: SqlInjectionMatchTuple
     ): SqlInjectionMatchSetUpdate = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "Action"                 -> Action.asInstanceOf[js.Any],
         "SqlInjectionMatchTuple" -> SqlInjectionMatchTuple.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SqlInjectionMatchSetUpdate]
+      __obj.asInstanceOf[SqlInjectionMatchSetUpdate]
     }
   }
 
@@ -4664,12 +4204,12 @@ package waf {
         FieldToMatch: FieldToMatch,
         TextTransformation: TextTransformation
     ): SqlInjectionMatchTuple = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "FieldToMatch"       -> FieldToMatch.asInstanceOf[js.Any],
         "TextTransformation" -> TextTransformation.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SqlInjectionMatchTuple]
+      __obj.asInstanceOf[SqlInjectionMatchTuple]
     }
   }
 
@@ -4689,13 +4229,13 @@ package waf {
         Name: ResourceName,
         RuleGroupId: ResourceId
     ): SubscribedRuleGroupSummary = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "MetricName"  -> MetricName.asInstanceOf[js.Any],
         "Name"        -> Name.asInstanceOf[js.Any],
         "RuleGroupId" -> RuleGroupId.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SubscribedRuleGroupSummary]
+      __obj.asInstanceOf[SubscribedRuleGroupSummary]
     }
   }
 
@@ -4725,12 +4265,12 @@ package waf {
         EndTime: Timestamp,
         StartTime: Timestamp
     ): TimeWindow = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "EndTime"   -> EndTime.asInstanceOf[js.Any],
         "StartTime" -> StartTime.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[TimeWindow]
+      __obj.asInstanceOf[TimeWindow]
     }
   }
 
@@ -4747,13 +4287,13 @@ package waf {
         ChangeToken: ChangeToken,
         Updates: ByteMatchSetUpdates
     ): UpdateByteMatchSetRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ByteMatchSetId" -> ByteMatchSetId.asInstanceOf[js.Any],
         "ChangeToken"    -> ChangeToken.asInstanceOf[js.Any],
         "Updates"        -> Updates.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateByteMatchSetRequest]
+      __obj.asInstanceOf[UpdateByteMatchSetRequest]
     }
   }
 
@@ -4766,13 +4306,9 @@ package waf {
     def apply(
         ChangeToken: js.UndefOr[ChangeToken] = js.undefined
     ): UpdateByteMatchSetResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ChangeToken" -> ChangeToken.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateByteMatchSetResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      ChangeToken.foreach(__v => __obj.update("ChangeToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateByteMatchSetResponse]
     }
   }
 
@@ -4789,13 +4325,13 @@ package waf {
         GeoMatchSetId: ResourceId,
         Updates: GeoMatchSetUpdates
     ): UpdateGeoMatchSetRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ChangeToken"   -> ChangeToken.asInstanceOf[js.Any],
         "GeoMatchSetId" -> GeoMatchSetId.asInstanceOf[js.Any],
         "Updates"       -> Updates.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateGeoMatchSetRequest]
+      __obj.asInstanceOf[UpdateGeoMatchSetRequest]
     }
   }
 
@@ -4808,13 +4344,9 @@ package waf {
     def apply(
         ChangeToken: js.UndefOr[ChangeToken] = js.undefined
     ): UpdateGeoMatchSetResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ChangeToken" -> ChangeToken.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateGeoMatchSetResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      ChangeToken.foreach(__v => __obj.update("ChangeToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateGeoMatchSetResponse]
     }
   }
 
@@ -4831,13 +4363,13 @@ package waf {
         IPSetId: ResourceId,
         Updates: IPSetUpdates
     ): UpdateIPSetRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ChangeToken" -> ChangeToken.asInstanceOf[js.Any],
         "IPSetId"     -> IPSetId.asInstanceOf[js.Any],
         "Updates"     -> Updates.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateIPSetRequest]
+      __obj.asInstanceOf[UpdateIPSetRequest]
     }
   }
 
@@ -4850,13 +4382,9 @@ package waf {
     def apply(
         ChangeToken: js.UndefOr[ChangeToken] = js.undefined
     ): UpdateIPSetResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ChangeToken" -> ChangeToken.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateIPSetResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      ChangeToken.foreach(__v => __obj.update("ChangeToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateIPSetResponse]
     }
   }
 
@@ -4875,14 +4403,14 @@ package waf {
         RuleId: ResourceId,
         Updates: RuleUpdates
     ): UpdateRateBasedRuleRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ChangeToken" -> ChangeToken.asInstanceOf[js.Any],
         "RateLimit"   -> RateLimit.asInstanceOf[js.Any],
         "RuleId"      -> RuleId.asInstanceOf[js.Any],
         "Updates"     -> Updates.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateRateBasedRuleRequest]
+      __obj.asInstanceOf[UpdateRateBasedRuleRequest]
     }
   }
 
@@ -4895,13 +4423,9 @@ package waf {
     def apply(
         ChangeToken: js.UndefOr[ChangeToken] = js.undefined
     ): UpdateRateBasedRuleResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ChangeToken" -> ChangeToken.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateRateBasedRuleResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      ChangeToken.foreach(__v => __obj.update("ChangeToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateRateBasedRuleResponse]
     }
   }
 
@@ -4918,13 +4442,13 @@ package waf {
         RegexMatchSetId: ResourceId,
         Updates: RegexMatchSetUpdates
     ): UpdateRegexMatchSetRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ChangeToken"     -> ChangeToken.asInstanceOf[js.Any],
         "RegexMatchSetId" -> RegexMatchSetId.asInstanceOf[js.Any],
         "Updates"         -> Updates.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateRegexMatchSetRequest]
+      __obj.asInstanceOf[UpdateRegexMatchSetRequest]
     }
   }
 
@@ -4937,13 +4461,9 @@ package waf {
     def apply(
         ChangeToken: js.UndefOr[ChangeToken] = js.undefined
     ): UpdateRegexMatchSetResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ChangeToken" -> ChangeToken.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateRegexMatchSetResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      ChangeToken.foreach(__v => __obj.update("ChangeToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateRegexMatchSetResponse]
     }
   }
 
@@ -4960,13 +4480,13 @@ package waf {
         RegexPatternSetId: ResourceId,
         Updates: RegexPatternSetUpdates
     ): UpdateRegexPatternSetRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ChangeToken"       -> ChangeToken.asInstanceOf[js.Any],
         "RegexPatternSetId" -> RegexPatternSetId.asInstanceOf[js.Any],
         "Updates"           -> Updates.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateRegexPatternSetRequest]
+      __obj.asInstanceOf[UpdateRegexPatternSetRequest]
     }
   }
 
@@ -4979,13 +4499,9 @@ package waf {
     def apply(
         ChangeToken: js.UndefOr[ChangeToken] = js.undefined
     ): UpdateRegexPatternSetResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ChangeToken" -> ChangeToken.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateRegexPatternSetResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      ChangeToken.foreach(__v => __obj.update("ChangeToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateRegexPatternSetResponse]
     }
   }
 
@@ -5002,13 +4518,13 @@ package waf {
         RuleGroupId: ResourceId,
         Updates: RuleGroupUpdates
     ): UpdateRuleGroupRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ChangeToken" -> ChangeToken.asInstanceOf[js.Any],
         "RuleGroupId" -> RuleGroupId.asInstanceOf[js.Any],
         "Updates"     -> Updates.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateRuleGroupRequest]
+      __obj.asInstanceOf[UpdateRuleGroupRequest]
     }
   }
 
@@ -5021,13 +4537,9 @@ package waf {
     def apply(
         ChangeToken: js.UndefOr[ChangeToken] = js.undefined
     ): UpdateRuleGroupResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ChangeToken" -> ChangeToken.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateRuleGroupResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      ChangeToken.foreach(__v => __obj.update("ChangeToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateRuleGroupResponse]
     }
   }
 
@@ -5044,13 +4556,13 @@ package waf {
         RuleId: ResourceId,
         Updates: RuleUpdates
     ): UpdateRuleRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ChangeToken" -> ChangeToken.asInstanceOf[js.Any],
         "RuleId"      -> RuleId.asInstanceOf[js.Any],
         "Updates"     -> Updates.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateRuleRequest]
+      __obj.asInstanceOf[UpdateRuleRequest]
     }
   }
 
@@ -5063,13 +4575,9 @@ package waf {
     def apply(
         ChangeToken: js.UndefOr[ChangeToken] = js.undefined
     ): UpdateRuleResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ChangeToken" -> ChangeToken.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateRuleResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      ChangeToken.foreach(__v => __obj.update("ChangeToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateRuleResponse]
     }
   }
 
@@ -5086,13 +4594,13 @@ package waf {
         SizeConstraintSetId: ResourceId,
         Updates: SizeConstraintSetUpdates
     ): UpdateSizeConstraintSetRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ChangeToken"         -> ChangeToken.asInstanceOf[js.Any],
         "SizeConstraintSetId" -> SizeConstraintSetId.asInstanceOf[js.Any],
         "Updates"             -> Updates.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateSizeConstraintSetRequest]
+      __obj.asInstanceOf[UpdateSizeConstraintSetRequest]
     }
   }
 
@@ -5105,13 +4613,9 @@ package waf {
     def apply(
         ChangeToken: js.UndefOr[ChangeToken] = js.undefined
     ): UpdateSizeConstraintSetResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ChangeToken" -> ChangeToken.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateSizeConstraintSetResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      ChangeToken.foreach(__v => __obj.update("ChangeToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateSizeConstraintSetResponse]
     }
   }
 
@@ -5131,13 +4635,13 @@ package waf {
         SqlInjectionMatchSetId: ResourceId,
         Updates: SqlInjectionMatchSetUpdates
     ): UpdateSqlInjectionMatchSetRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ChangeToken"            -> ChangeToken.asInstanceOf[js.Any],
         "SqlInjectionMatchSetId" -> SqlInjectionMatchSetId.asInstanceOf[js.Any],
         "Updates"                -> Updates.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateSqlInjectionMatchSetRequest]
+      __obj.asInstanceOf[UpdateSqlInjectionMatchSetRequest]
     }
   }
 
@@ -5153,13 +4657,9 @@ package waf {
     def apply(
         ChangeToken: js.UndefOr[ChangeToken] = js.undefined
     ): UpdateSqlInjectionMatchSetResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ChangeToken" -> ChangeToken.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateSqlInjectionMatchSetResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      ChangeToken.foreach(__v => __obj.update("ChangeToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateSqlInjectionMatchSetResponse]
     }
   }
 
@@ -5178,18 +4678,14 @@ package waf {
         DefaultAction: js.UndefOr[WafAction] = js.undefined,
         Updates: js.UndefOr[WebACLUpdates] = js.undefined
     ): UpdateWebACLRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ChangeToken" -> ChangeToken.asInstanceOf[js.Any],
-        "WebACLId"    -> WebACLId.asInstanceOf[js.Any],
-        "DefaultAction" -> DefaultAction.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Updates" -> Updates.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "WebACLId"    -> WebACLId.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateWebACLRequest]
+      DefaultAction.foreach(__v => __obj.update("DefaultAction", __v.asInstanceOf[js.Any]))
+      Updates.foreach(__v => __obj.update("Updates", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateWebACLRequest]
     }
   }
 
@@ -5202,13 +4698,9 @@ package waf {
     def apply(
         ChangeToken: js.UndefOr[ChangeToken] = js.undefined
     ): UpdateWebACLResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ChangeToken" -> ChangeToken.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateWebACLResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      ChangeToken.foreach(__v => __obj.update("ChangeToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateWebACLResponse]
     }
   }
 
@@ -5228,13 +4720,13 @@ package waf {
         Updates: XssMatchSetUpdates,
         XssMatchSetId: ResourceId
     ): UpdateXssMatchSetRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ChangeToken"   -> ChangeToken.asInstanceOf[js.Any],
         "Updates"       -> Updates.asInstanceOf[js.Any],
         "XssMatchSetId" -> XssMatchSetId.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateXssMatchSetRequest]
+      __obj.asInstanceOf[UpdateXssMatchSetRequest]
     }
   }
 
@@ -5250,13 +4742,9 @@ package waf {
     def apply(
         ChangeToken: js.UndefOr[ChangeToken] = js.undefined
     ): UpdateXssMatchSetResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ChangeToken" -> ChangeToken.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateXssMatchSetResponse]
+      val __obj = js.Dictionary.empty[js.Any]
+      ChangeToken.foreach(__v => __obj.update("ChangeToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateXssMatchSetResponse]
     }
   }
 
@@ -5272,11 +4760,11 @@ package waf {
     def apply(
         Type: WafActionType
     ): WafAction = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "Type" -> Type.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[WafAction]
+      __obj.asInstanceOf[WafAction]
     }
   }
 
@@ -5300,11 +4788,11 @@ package waf {
     def apply(
         Type: WafOverrideActionType
     ): WafOverrideAction = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "Type" -> Type.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[WafOverrideAction]
+      __obj.asInstanceOf[WafOverrideAction]
     }
   }
 
@@ -5345,22 +4833,16 @@ package waf {
         Name: js.UndefOr[ResourceName] = js.undefined,
         WebACLArn: js.UndefOr[ResourceArn] = js.undefined
     ): WebACL = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "DefaultAction" -> DefaultAction.asInstanceOf[js.Any],
         "Rules"         -> Rules.asInstanceOf[js.Any],
-        "WebACLId"      -> WebACLId.asInstanceOf[js.Any],
-        "MetricName" -> MetricName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Name" -> Name.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "WebACLArn" -> WebACLArn.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "WebACLId"      -> WebACLId.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[WebACL]
+      MetricName.foreach(__v => __obj.update("MetricName", __v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
+      WebACLArn.foreach(__v => __obj.update("WebACLArn", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[WebACL]
     }
   }
 
@@ -5378,12 +4860,12 @@ package waf {
         Name: ResourceName,
         WebACLId: ResourceId
     ): WebACLSummary = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "Name"     -> Name.asInstanceOf[js.Any],
         "WebACLId" -> WebACLId.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[WebACLSummary]
+      __obj.asInstanceOf[WebACLSummary]
     }
   }
 
@@ -5401,12 +4883,12 @@ package waf {
         Action: ChangeAction,
         ActivatedRule: ActivatedRule
     ): WebACLUpdate = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "Action"        -> Action.asInstanceOf[js.Any],
         "ActivatedRule" -> ActivatedRule.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[WebACLUpdate]
+      __obj.asInstanceOf[WebACLUpdate]
     }
   }
 
@@ -5426,15 +4908,13 @@ package waf {
         XssMatchTuples: XssMatchTuples,
         Name: js.UndefOr[ResourceName] = js.undefined
     ): XssMatchSet = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "XssMatchSetId"  -> XssMatchSetId.asInstanceOf[js.Any],
-        "XssMatchTuples" -> XssMatchTuples.asInstanceOf[js.Any],
-        "Name" -> Name.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "XssMatchTuples" -> XssMatchTuples.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[XssMatchSet]
+      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[XssMatchSet]
     }
   }
 
@@ -5452,12 +4932,12 @@ package waf {
         Name: ResourceName,
         XssMatchSetId: ResourceId
     ): XssMatchSetSummary = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "Name"          -> Name.asInstanceOf[js.Any],
         "XssMatchSetId" -> XssMatchSetId.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[XssMatchSetSummary]
+      __obj.asInstanceOf[XssMatchSetSummary]
     }
   }
 
@@ -5475,12 +4955,12 @@ package waf {
         Action: ChangeAction,
         XssMatchTuple: XssMatchTuple
     ): XssMatchSetUpdate = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "Action"        -> Action.asInstanceOf[js.Any],
         "XssMatchTuple" -> XssMatchTuple.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[XssMatchSetUpdate]
+      __obj.asInstanceOf[XssMatchSetUpdate]
     }
   }
 
@@ -5498,12 +4978,12 @@ package waf {
         FieldToMatch: FieldToMatch,
         TextTransformation: TextTransformation
     ): XssMatchTuple = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "FieldToMatch"       -> FieldToMatch.asInstanceOf[js.Any],
         "TextTransformation" -> TextTransformation.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[XssMatchTuple]
+      __obj.asInstanceOf[XssMatchTuple]
     }
   }
 }

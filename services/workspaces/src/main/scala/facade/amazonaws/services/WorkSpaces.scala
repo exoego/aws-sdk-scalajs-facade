@@ -253,28 +253,16 @@ package workspaces {
         ModificationState: js.UndefOr[DedicatedTenancyModificationStateEnum] = js.undefined,
         StartTime: js.UndefOr[Timestamp] = js.undefined
     ): AccountModification = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "DedicatedTenancyManagementCidrRange" -> DedicatedTenancyManagementCidrRange.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DedicatedTenancySupport" -> DedicatedTenancySupport.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ErrorCode" -> ErrorCode.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ErrorMessage" -> ErrorMessage.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ModificationState" -> ModificationState.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "StartTime" -> StartTime.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AccountModification]
+      val __obj = js.Dictionary.empty[js.Any]
+      DedicatedTenancyManagementCidrRange.foreach(
+        __v => __obj.update("DedicatedTenancyManagementCidrRange", __v.asInstanceOf[js.Any])
+      )
+      DedicatedTenancySupport.foreach(__v => __obj.update("DedicatedTenancySupport", __v.asInstanceOf[js.Any]))
+      ErrorCode.foreach(__v => __obj.update("ErrorCode", __v.asInstanceOf[js.Any]))
+      ErrorMessage.foreach(__v => __obj.update("ErrorMessage", __v.asInstanceOf[js.Any]))
+      ModificationState.foreach(__v => __obj.update("ModificationState", __v.asInstanceOf[js.Any]))
+      StartTime.foreach(__v => __obj.update("StartTime", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AccountModification]
     }
   }
 
@@ -289,12 +277,12 @@ package workspaces {
         DirectoryId: DirectoryId,
         GroupIds: IpGroupIdList
     ): AssociateIpGroupsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "DirectoryId" -> DirectoryId.asInstanceOf[js.Any],
         "GroupIds"    -> GroupIds.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AssociateIpGroupsRequest]
+      __obj.asInstanceOf[AssociateIpGroupsRequest]
     }
   }
 
@@ -304,10 +292,9 @@ package workspaces {
   object AssociateIpGroupsResult {
     def apply(
         ): AssociateIpGroupsResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary.empty[js.Any]
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AssociateIpGroupsResult]
+      __obj.asInstanceOf[AssociateIpGroupsResult]
     }
   }
 
@@ -322,12 +309,12 @@ package workspaces {
         GroupId: IpGroupId,
         UserRules: IpRuleList
     ): AuthorizeIpRulesRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "GroupId"   -> GroupId.asInstanceOf[js.Any],
         "UserRules" -> UserRules.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AuthorizeIpRulesRequest]
+      __obj.asInstanceOf[AuthorizeIpRulesRequest]
     }
   }
 
@@ -337,10 +324,9 @@ package workspaces {
   object AuthorizeIpRulesResult {
     def apply(
         ): AuthorizeIpRulesResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary.empty[js.Any]
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AuthorizeIpRulesResult]
+      __obj.asInstanceOf[AuthorizeIpRulesResult]
     }
   }
 
@@ -356,13 +342,9 @@ package workspaces {
     def apply(
         ReconnectEnabled: js.UndefOr[ReconnectEnum] = js.undefined
     ): ClientProperties = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ReconnectEnabled" -> ReconnectEnabled.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ClientProperties]
+      val __obj = js.Dictionary.empty[js.Any]
+      ReconnectEnabled.foreach(__v => __obj.update("ReconnectEnabled", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ClientProperties]
     }
   }
 
@@ -380,16 +362,10 @@ package workspaces {
         ClientProperties: js.UndefOr[ClientProperties] = js.undefined,
         ResourceId: js.UndefOr[NonEmptyString] = js.undefined
     ): ClientPropertiesResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ClientProperties" -> ClientProperties.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ResourceId" -> ResourceId.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ClientPropertiesResult]
+      val __obj = js.Dictionary.empty[js.Any]
+      ClientProperties.foreach(__v => __obj.update("ClientProperties", __v.asInstanceOf[js.Any]))
+      ResourceId.foreach(__v => __obj.update("ResourceId", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ClientPropertiesResult]
     }
   }
 
@@ -417,13 +393,9 @@ package workspaces {
     def apply(
         Name: js.UndefOr[Compute] = js.undefined
     ): ComputeType = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Name" -> Name.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ComputeType]
+      val __obj = js.Dictionary.empty[js.Any]
+      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ComputeType]
     }
   }
 
@@ -450,20 +422,14 @@ package workspaces {
         Tags: js.UndefOr[TagList] = js.undefined,
         UserRules: js.UndefOr[IpRuleList] = js.undefined
     ): CreateIpGroupRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "GroupName" -> GroupName.asInstanceOf[js.Any],
-        "GroupDesc" -> GroupDesc.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Tags" -> Tags.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "UserRules" -> UserRules.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "GroupName" -> GroupName.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateIpGroupRequest]
+      GroupDesc.foreach(__v => __obj.update("GroupDesc", __v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
+      UserRules.foreach(__v => __obj.update("UserRules", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateIpGroupRequest]
     }
   }
 
@@ -476,13 +442,9 @@ package workspaces {
     def apply(
         GroupId: js.UndefOr[IpGroupId] = js.undefined
     ): CreateIpGroupResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "GroupId" -> GroupId.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateIpGroupResult]
+      val __obj = js.Dictionary.empty[js.Any]
+      GroupId.foreach(__v => __obj.update("GroupId", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateIpGroupResult]
     }
   }
 
@@ -497,12 +459,12 @@ package workspaces {
         ResourceId: NonEmptyString,
         Tags: TagList
     ): CreateTagsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ResourceId" -> ResourceId.asInstanceOf[js.Any],
         "Tags"       -> Tags.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateTagsRequest]
+      __obj.asInstanceOf[CreateTagsRequest]
     }
   }
 
@@ -512,10 +474,9 @@ package workspaces {
   object CreateTagsResult {
     def apply(
         ): CreateTagsResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary.empty[js.Any]
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateTagsResult]
+      __obj.asInstanceOf[CreateTagsResult]
     }
   }
 
@@ -528,11 +489,11 @@ package workspaces {
     def apply(
         Workspaces: WorkspaceRequestList
     ): CreateWorkspacesRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "Workspaces" -> Workspaces.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateWorkspacesRequest]
+      __obj.asInstanceOf[CreateWorkspacesRequest]
     }
   }
 
@@ -547,16 +508,10 @@ package workspaces {
         FailedRequests: js.UndefOr[FailedCreateWorkspaceRequests] = js.undefined,
         PendingRequests: js.UndefOr[WorkspaceList] = js.undefined
     ): CreateWorkspacesResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "FailedRequests" -> FailedRequests.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "PendingRequests" -> PendingRequests.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateWorkspacesResult]
+      val __obj = js.Dictionary.empty[js.Any]
+      FailedRequests.foreach(__v => __obj.update("FailedRequests", __v.asInstanceOf[js.Any]))
+      PendingRequests.foreach(__v => __obj.update("PendingRequests", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateWorkspacesResult]
     }
   }
 
@@ -601,25 +556,15 @@ package workspaces {
         EnableWorkDocs: js.UndefOr[BooleanObject] = js.undefined,
         UserEnabledAsLocalAdministrator: js.UndefOr[BooleanObject] = js.undefined
     ): DefaultWorkspaceCreationProperties = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "CustomSecurityGroupId" -> CustomSecurityGroupId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DefaultOu" -> DefaultOu.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "EnableInternetAccess" -> EnableInternetAccess.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "EnableWorkDocs" -> EnableWorkDocs.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "UserEnabledAsLocalAdministrator" -> UserEnabledAsLocalAdministrator.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DefaultWorkspaceCreationProperties]
+      val __obj = js.Dictionary.empty[js.Any]
+      CustomSecurityGroupId.foreach(__v => __obj.update("CustomSecurityGroupId", __v.asInstanceOf[js.Any]))
+      DefaultOu.foreach(__v => __obj.update("DefaultOu", __v.asInstanceOf[js.Any]))
+      EnableInternetAccess.foreach(__v => __obj.update("EnableInternetAccess", __v.asInstanceOf[js.Any]))
+      EnableWorkDocs.foreach(__v => __obj.update("EnableWorkDocs", __v.asInstanceOf[js.Any]))
+      UserEnabledAsLocalAdministrator.foreach(
+        __v => __obj.update("UserEnabledAsLocalAdministrator", __v.asInstanceOf[js.Any])
+      )
+      __obj.asInstanceOf[DefaultWorkspaceCreationProperties]
     }
   }
 
@@ -632,11 +577,11 @@ package workspaces {
     def apply(
         GroupId: IpGroupId
     ): DeleteIpGroupRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "GroupId" -> GroupId.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteIpGroupRequest]
+      __obj.asInstanceOf[DeleteIpGroupRequest]
     }
   }
 
@@ -646,10 +591,9 @@ package workspaces {
   object DeleteIpGroupResult {
     def apply(
         ): DeleteIpGroupResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary.empty[js.Any]
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteIpGroupResult]
+      __obj.asInstanceOf[DeleteIpGroupResult]
     }
   }
 
@@ -664,12 +608,12 @@ package workspaces {
         ResourceId: NonEmptyString,
         TagKeys: TagKeyList
     ): DeleteTagsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ResourceId" -> ResourceId.asInstanceOf[js.Any],
         "TagKeys"    -> TagKeys.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteTagsRequest]
+      __obj.asInstanceOf[DeleteTagsRequest]
     }
   }
 
@@ -679,10 +623,9 @@ package workspaces {
   object DeleteTagsResult {
     def apply(
         ): DeleteTagsResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary.empty[js.Any]
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteTagsResult]
+      __obj.asInstanceOf[DeleteTagsResult]
     }
   }
 
@@ -695,11 +638,11 @@ package workspaces {
     def apply(
         ImageId: WorkspaceImageId
     ): DeleteWorkspaceImageRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ImageId" -> ImageId.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteWorkspaceImageRequest]
+      __obj.asInstanceOf[DeleteWorkspaceImageRequest]
     }
   }
 
@@ -709,10 +652,9 @@ package workspaces {
   object DeleteWorkspaceImageResult {
     def apply(
         ): DeleteWorkspaceImageResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary.empty[js.Any]
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteWorkspaceImageResult]
+      __obj.asInstanceOf[DeleteWorkspaceImageResult]
     }
   }
 
@@ -725,13 +667,9 @@ package workspaces {
     def apply(
         NextToken: js.UndefOr[PaginationToken] = js.undefined
     ): DescribeAccountModificationsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "NextToken" -> NextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeAccountModificationsRequest]
+      val __obj = js.Dictionary.empty[js.Any]
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeAccountModificationsRequest]
     }
   }
 
@@ -746,16 +684,10 @@ package workspaces {
         AccountModifications: js.UndefOr[AccountModificationList] = js.undefined,
         NextToken: js.UndefOr[PaginationToken] = js.undefined
     ): DescribeAccountModificationsResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "AccountModifications" -> AccountModifications.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NextToken" -> NextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeAccountModificationsResult]
+      val __obj = js.Dictionary.empty[js.Any]
+      AccountModifications.foreach(__v => __obj.update("AccountModifications", __v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeAccountModificationsResult]
     }
   }
 
@@ -765,10 +697,9 @@ package workspaces {
   object DescribeAccountRequest {
     def apply(
         ): DescribeAccountRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary.empty[js.Any]
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeAccountRequest]
+      __obj.asInstanceOf[DescribeAccountRequest]
     }
   }
 
@@ -783,16 +714,12 @@ package workspaces {
         DedicatedTenancyManagementCidrRange: js.UndefOr[DedicatedTenancyManagementCidrRange] = js.undefined,
         DedicatedTenancySupport: js.UndefOr[DedicatedTenancySupportResultEnum] = js.undefined
     ): DescribeAccountResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "DedicatedTenancyManagementCidrRange" -> DedicatedTenancyManagementCidrRange.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DedicatedTenancySupport" -> DedicatedTenancySupport.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeAccountResult]
+      val __obj = js.Dictionary.empty[js.Any]
+      DedicatedTenancyManagementCidrRange.foreach(
+        __v => __obj.update("DedicatedTenancyManagementCidrRange", __v.asInstanceOf[js.Any])
+      )
+      DedicatedTenancySupport.foreach(__v => __obj.update("DedicatedTenancySupport", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeAccountResult]
     }
   }
 
@@ -805,11 +732,11 @@ package workspaces {
     def apply(
         ResourceIds: ResourceIdList
     ): DescribeClientPropertiesRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ResourceIds" -> ResourceIds.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeClientPropertiesRequest]
+      __obj.asInstanceOf[DescribeClientPropertiesRequest]
     }
   }
 
@@ -822,13 +749,9 @@ package workspaces {
     def apply(
         ClientPropertiesList: js.UndefOr[ClientPropertiesList] = js.undefined
     ): DescribeClientPropertiesResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ClientPropertiesList" -> ClientPropertiesList.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeClientPropertiesResult]
+      val __obj = js.Dictionary.empty[js.Any]
+      ClientPropertiesList.foreach(__v => __obj.update("ClientPropertiesList", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeClientPropertiesResult]
     }
   }
 
@@ -845,19 +768,11 @@ package workspaces {
         MaxResults: js.UndefOr[Limit] = js.undefined,
         NextToken: js.UndefOr[PaginationToken] = js.undefined
     ): DescribeIpGroupsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "GroupIds" -> GroupIds.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MaxResults" -> MaxResults.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NextToken" -> NextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeIpGroupsRequest]
+      val __obj = js.Dictionary.empty[js.Any]
+      GroupIds.foreach(__v => __obj.update("GroupIds", __v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeIpGroupsRequest]
     }
   }
 
@@ -872,16 +787,10 @@ package workspaces {
         NextToken: js.UndefOr[PaginationToken] = js.undefined,
         Result: js.UndefOr[WorkspacesIpGroupsList] = js.undefined
     ): DescribeIpGroupsResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "NextToken" -> NextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Result" -> Result.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeIpGroupsResult]
+      val __obj = js.Dictionary.empty[js.Any]
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      Result.foreach(__v => __obj.update("Result", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeIpGroupsResult]
     }
   }
 
@@ -894,11 +803,11 @@ package workspaces {
     def apply(
         ResourceId: NonEmptyString
     ): DescribeTagsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ResourceId" -> ResourceId.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeTagsRequest]
+      __obj.asInstanceOf[DescribeTagsRequest]
     }
   }
 
@@ -911,13 +820,9 @@ package workspaces {
     def apply(
         TagList: js.UndefOr[TagList] = js.undefined
     ): DescribeTagsResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "TagList" -> TagList.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeTagsResult]
+      val __obj = js.Dictionary.empty[js.Any]
+      TagList.foreach(__v => __obj.update("TagList", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeTagsResult]
     }
   }
 
@@ -934,19 +839,11 @@ package workspaces {
         NextToken: js.UndefOr[PaginationToken] = js.undefined,
         Owner: js.UndefOr[BundleOwner] = js.undefined
     ): DescribeWorkspaceBundlesRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "BundleIds" -> BundleIds.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NextToken" -> NextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Owner" -> Owner.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeWorkspaceBundlesRequest]
+      val __obj = js.Dictionary.empty[js.Any]
+      BundleIds.foreach(__v => __obj.update("BundleIds", __v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      Owner.foreach(__v => __obj.update("Owner", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeWorkspaceBundlesRequest]
     }
   }
 
@@ -961,16 +858,10 @@ package workspaces {
         Bundles: js.UndefOr[BundleList] = js.undefined,
         NextToken: js.UndefOr[PaginationToken] = js.undefined
     ): DescribeWorkspaceBundlesResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Bundles" -> Bundles.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NextToken" -> NextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeWorkspaceBundlesResult]
+      val __obj = js.Dictionary.empty[js.Any]
+      Bundles.foreach(__v => __obj.update("Bundles", __v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeWorkspaceBundlesResult]
     }
   }
 
@@ -985,16 +876,10 @@ package workspaces {
         DirectoryIds: js.UndefOr[DirectoryIdList] = js.undefined,
         NextToken: js.UndefOr[PaginationToken] = js.undefined
     ): DescribeWorkspaceDirectoriesRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "DirectoryIds" -> DirectoryIds.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NextToken" -> NextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeWorkspaceDirectoriesRequest]
+      val __obj = js.Dictionary.empty[js.Any]
+      DirectoryIds.foreach(__v => __obj.update("DirectoryIds", __v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeWorkspaceDirectoriesRequest]
     }
   }
 
@@ -1009,16 +894,10 @@ package workspaces {
         Directories: js.UndefOr[DirectoryList] = js.undefined,
         NextToken: js.UndefOr[PaginationToken] = js.undefined
     ): DescribeWorkspaceDirectoriesResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Directories" -> Directories.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NextToken" -> NextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeWorkspaceDirectoriesResult]
+      val __obj = js.Dictionary.empty[js.Any]
+      Directories.foreach(__v => __obj.update("Directories", __v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeWorkspaceDirectoriesResult]
     }
   }
 
@@ -1035,19 +914,11 @@ package workspaces {
         MaxResults: js.UndefOr[Limit] = js.undefined,
         NextToken: js.UndefOr[PaginationToken] = js.undefined
     ): DescribeWorkspaceImagesRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ImageIds" -> ImageIds.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "MaxResults" -> MaxResults.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NextToken" -> NextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeWorkspaceImagesRequest]
+      val __obj = js.Dictionary.empty[js.Any]
+      ImageIds.foreach(__v => __obj.update("ImageIds", __v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeWorkspaceImagesRequest]
     }
   }
 
@@ -1062,16 +933,10 @@ package workspaces {
         Images: js.UndefOr[WorkspaceImageList] = js.undefined,
         NextToken: js.UndefOr[PaginationToken] = js.undefined
     ): DescribeWorkspaceImagesResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Images" -> Images.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NextToken" -> NextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeWorkspaceImagesResult]
+      val __obj = js.Dictionary.empty[js.Any]
+      Images.foreach(__v => __obj.update("Images", __v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeWorkspaceImagesResult]
     }
   }
 
@@ -1086,16 +951,10 @@ package workspaces {
         NextToken: js.UndefOr[PaginationToken] = js.undefined,
         WorkspaceIds: js.UndefOr[WorkspaceIdList] = js.undefined
     ): DescribeWorkspacesConnectionStatusRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "NextToken" -> NextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "WorkspaceIds" -> WorkspaceIds.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeWorkspacesConnectionStatusRequest]
+      val __obj = js.Dictionary.empty[js.Any]
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      WorkspaceIds.foreach(__v => __obj.update("WorkspaceIds", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeWorkspacesConnectionStatusRequest]
     }
   }
 
@@ -1110,16 +969,10 @@ package workspaces {
         NextToken: js.UndefOr[PaginationToken] = js.undefined,
         WorkspacesConnectionStatus: js.UndefOr[WorkspaceConnectionStatusList] = js.undefined
     ): DescribeWorkspacesConnectionStatusResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "NextToken" -> NextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "WorkspacesConnectionStatus" -> WorkspacesConnectionStatus.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeWorkspacesConnectionStatusResult]
+      val __obj = js.Dictionary.empty[js.Any]
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      WorkspacesConnectionStatus.foreach(__v => __obj.update("WorkspacesConnectionStatus", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeWorkspacesConnectionStatusResult]
     }
   }
 
@@ -1142,28 +995,14 @@ package workspaces {
         UserName: js.UndefOr[UserName] = js.undefined,
         WorkspaceIds: js.UndefOr[WorkspaceIdList] = js.undefined
     ): DescribeWorkspacesRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "BundleId" -> BundleId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DirectoryId" -> DirectoryId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Limit" -> Limit.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NextToken" -> NextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "UserName" -> UserName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "WorkspaceIds" -> WorkspaceIds.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeWorkspacesRequest]
+      val __obj = js.Dictionary.empty[js.Any]
+      BundleId.foreach(__v => __obj.update("BundleId", __v.asInstanceOf[js.Any]))
+      DirectoryId.foreach(__v => __obj.update("DirectoryId", __v.asInstanceOf[js.Any]))
+      Limit.foreach(__v => __obj.update("Limit", __v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      UserName.foreach(__v => __obj.update("UserName", __v.asInstanceOf[js.Any]))
+      WorkspaceIds.foreach(__v => __obj.update("WorkspaceIds", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeWorkspacesRequest]
     }
   }
 
@@ -1178,16 +1017,10 @@ package workspaces {
         NextToken: js.UndefOr[PaginationToken] = js.undefined,
         Workspaces: js.UndefOr[WorkspaceList] = js.undefined
     ): DescribeWorkspacesResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "NextToken" -> NextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Workspaces" -> Workspaces.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeWorkspacesResult]
+      val __obj = js.Dictionary.empty[js.Any]
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      Workspaces.foreach(__v => __obj.update("Workspaces", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeWorkspacesResult]
     }
   }
 
@@ -1202,12 +1035,12 @@ package workspaces {
         DirectoryId: DirectoryId,
         GroupIds: IpGroupIdList
     ): DisassociateIpGroupsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "DirectoryId" -> DirectoryId.asInstanceOf[js.Any],
         "GroupIds"    -> GroupIds.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DisassociateIpGroupsRequest]
+      __obj.asInstanceOf[DisassociateIpGroupsRequest]
     }
   }
 
@@ -1217,10 +1050,9 @@ package workspaces {
   object DisassociateIpGroupsResult {
     def apply(
         ): DisassociateIpGroupsResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary.empty[js.Any]
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DisassociateIpGroupsResult]
+      __obj.asInstanceOf[DisassociateIpGroupsResult]
     }
   }
 
@@ -1240,19 +1072,11 @@ package workspaces {
         ErrorMessage: js.UndefOr[Description] = js.undefined,
         WorkspaceRequest: js.UndefOr[WorkspaceRequest] = js.undefined
     ): FailedCreateWorkspaceRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ErrorCode" -> ErrorCode.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ErrorMessage" -> ErrorMessage.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "WorkspaceRequest" -> WorkspaceRequest.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[FailedCreateWorkspaceRequest]
+      val __obj = js.Dictionary.empty[js.Any]
+      ErrorCode.foreach(__v => __obj.update("ErrorCode", __v.asInstanceOf[js.Any]))
+      ErrorMessage.foreach(__v => __obj.update("ErrorMessage", __v.asInstanceOf[js.Any]))
+      WorkspaceRequest.foreach(__v => __obj.update("WorkspaceRequest", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[FailedCreateWorkspaceRequest]
     }
   }
 
@@ -1272,19 +1096,11 @@ package workspaces {
         ErrorMessage: js.UndefOr[Description] = js.undefined,
         WorkspaceId: js.UndefOr[WorkspaceId] = js.undefined
     ): FailedWorkspaceChangeRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ErrorCode" -> ErrorCode.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ErrorMessage" -> ErrorMessage.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "WorkspaceId" -> WorkspaceId.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[FailedWorkspaceChangeRequest]
+      val __obj = js.Dictionary.empty[js.Any]
+      ErrorCode.foreach(__v => __obj.update("ErrorCode", __v.asInstanceOf[js.Any]))
+      ErrorMessage.foreach(__v => __obj.update("ErrorMessage", __v.asInstanceOf[js.Any]))
+      WorkspaceId.foreach(__v => __obj.update("WorkspaceId", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[FailedWorkspaceChangeRequest]
     }
   }
 
@@ -1305,17 +1121,15 @@ package workspaces {
         IngestionProcess: WorkspaceImageIngestionProcess,
         Tags: js.UndefOr[TagList] = js.undefined
     ): ImportWorkspaceImageRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "Ec2ImageId"       -> Ec2ImageId.asInstanceOf[js.Any],
         "ImageDescription" -> ImageDescription.asInstanceOf[js.Any],
         "ImageName"        -> ImageName.asInstanceOf[js.Any],
-        "IngestionProcess" -> IngestionProcess.asInstanceOf[js.Any],
-        "Tags" -> Tags.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "IngestionProcess" -> IngestionProcess.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ImportWorkspaceImageRequest]
+      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ImportWorkspaceImageRequest]
     }
   }
 
@@ -1328,13 +1142,9 @@ package workspaces {
     def apply(
         ImageId: js.UndefOr[WorkspaceImageId] = js.undefined
     ): ImportWorkspaceImageResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ImageId" -> ImageId.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ImportWorkspaceImageResult]
+      val __obj = js.Dictionary.empty[js.Any]
+      ImageId.foreach(__v => __obj.update("ImageId", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ImportWorkspaceImageResult]
     }
   }
 
@@ -1352,16 +1162,10 @@ package workspaces {
         ipRule: js.UndefOr[IpRule] = js.undefined,
         ruleDesc: js.UndefOr[IpRuleDesc] = js.undefined
     ): IpRuleItem = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ipRule" -> ipRule.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ruleDesc" -> ruleDesc.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[IpRuleItem]
+      val __obj = js.Dictionary.empty[js.Any]
+      ipRule.foreach(__v => __obj.update("ipRule", __v.asInstanceOf[js.Any]))
+      ruleDesc.foreach(__v => __obj.update("ruleDesc", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[IpRuleItem]
     }
   }
 
@@ -1378,17 +1182,13 @@ package workspaces {
         MaxResults: js.UndefOr[ManagementCidrRangeMaxResults] = js.undefined,
         NextToken: js.UndefOr[PaginationToken] = js.undefined
     ): ListAvailableManagementCidrRangesRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ManagementCidrRangeConstraint" -> ManagementCidrRangeConstraint.asInstanceOf[js.Any],
-        "MaxResults" -> MaxResults.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NextToken" -> NextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "ManagementCidrRangeConstraint" -> ManagementCidrRangeConstraint.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListAvailableManagementCidrRangesRequest]
+      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListAvailableManagementCidrRangesRequest]
     }
   }
 
@@ -1403,16 +1203,10 @@ package workspaces {
         ManagementCidrRanges: js.UndefOr[DedicatedTenancyCidrRangeList] = js.undefined,
         NextToken: js.UndefOr[PaginationToken] = js.undefined
     ): ListAvailableManagementCidrRangesResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ManagementCidrRanges" -> ManagementCidrRanges.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NextToken" -> NextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListAvailableManagementCidrRangesResult]
+      val __obj = js.Dictionary.empty[js.Any]
+      ManagementCidrRanges.foreach(__v => __obj.update("ManagementCidrRanges", __v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListAvailableManagementCidrRangesResult]
     }
   }
 
@@ -1438,16 +1232,10 @@ package workspaces {
         Resource: js.UndefOr[ModificationResourceEnum] = js.undefined,
         State: js.UndefOr[ModificationStateEnum] = js.undefined
     ): ModificationState = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Resource" -> Resource.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "State" -> State.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ModificationState]
+      val __obj = js.Dictionary.empty[js.Any]
+      Resource.foreach(__v => __obj.update("Resource", __v.asInstanceOf[js.Any]))
+      State.foreach(__v => __obj.update("State", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ModificationState]
     }
   }
 
@@ -1469,16 +1257,12 @@ package workspaces {
         DedicatedTenancyManagementCidrRange: js.UndefOr[DedicatedTenancyManagementCidrRange] = js.undefined,
         DedicatedTenancySupport: js.UndefOr[DedicatedTenancySupportEnum] = js.undefined
     ): ModifyAccountRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "DedicatedTenancyManagementCidrRange" -> DedicatedTenancyManagementCidrRange.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DedicatedTenancySupport" -> DedicatedTenancySupport.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ModifyAccountRequest]
+      val __obj = js.Dictionary.empty[js.Any]
+      DedicatedTenancyManagementCidrRange.foreach(
+        __v => __obj.update("DedicatedTenancyManagementCidrRange", __v.asInstanceOf[js.Any])
+      )
+      DedicatedTenancySupport.foreach(__v => __obj.update("DedicatedTenancySupport", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ModifyAccountRequest]
     }
   }
 
@@ -1488,10 +1272,9 @@ package workspaces {
   object ModifyAccountResult {
     def apply(
         ): ModifyAccountResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary.empty[js.Any]
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ModifyAccountResult]
+      __obj.asInstanceOf[ModifyAccountResult]
     }
   }
 
@@ -1506,12 +1289,12 @@ package workspaces {
         ClientProperties: ClientProperties,
         ResourceId: NonEmptyString
     ): ModifyClientPropertiesRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "ClientProperties" -> ClientProperties.asInstanceOf[js.Any],
         "ResourceId"       -> ResourceId.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ModifyClientPropertiesRequest]
+      __obj.asInstanceOf[ModifyClientPropertiesRequest]
     }
   }
 
@@ -1521,10 +1304,9 @@ package workspaces {
   object ModifyClientPropertiesResult {
     def apply(
         ): ModifyClientPropertiesResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary.empty[js.Any]
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ModifyClientPropertiesResult]
+      __obj.asInstanceOf[ModifyClientPropertiesResult]
     }
   }
 
@@ -1539,12 +1321,12 @@ package workspaces {
         WorkspaceId: WorkspaceId,
         WorkspaceProperties: WorkspaceProperties
     ): ModifyWorkspacePropertiesRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "WorkspaceId"         -> WorkspaceId.asInstanceOf[js.Any],
         "WorkspaceProperties" -> WorkspaceProperties.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ModifyWorkspacePropertiesRequest]
+      __obj.asInstanceOf[ModifyWorkspacePropertiesRequest]
     }
   }
 
@@ -1554,10 +1336,9 @@ package workspaces {
   object ModifyWorkspacePropertiesResult {
     def apply(
         ): ModifyWorkspacePropertiesResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary.empty[js.Any]
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ModifyWorkspacePropertiesResult]
+      __obj.asInstanceOf[ModifyWorkspacePropertiesResult]
     }
   }
 
@@ -1572,12 +1353,12 @@ package workspaces {
         WorkspaceId: WorkspaceId,
         WorkspaceState: TargetWorkspaceState
     ): ModifyWorkspaceStateRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "WorkspaceId"    -> WorkspaceId.asInstanceOf[js.Any],
         "WorkspaceState" -> WorkspaceState.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ModifyWorkspaceStateRequest]
+      __obj.asInstanceOf[ModifyWorkspaceStateRequest]
     }
   }
 
@@ -1587,10 +1368,9 @@ package workspaces {
   object ModifyWorkspaceStateResult {
     def apply(
         ): ModifyWorkspaceStateResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary.empty[js.Any]
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ModifyWorkspaceStateResult]
+      __obj.asInstanceOf[ModifyWorkspaceStateResult]
     }
   }
 
@@ -1606,13 +1386,9 @@ package workspaces {
     def apply(
         Type: js.UndefOr[OperatingSystemType] = js.undefined
     ): OperatingSystem = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Type" -> Type.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[OperatingSystem]
+      val __obj = js.Dictionary.empty[js.Any]
+      Type.foreach(__v => __obj.update("Type", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[OperatingSystem]
     }
   }
 
@@ -1635,11 +1411,11 @@ package workspaces {
     def apply(
         WorkspaceId: WorkspaceId
     ): RebootRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "WorkspaceId" -> WorkspaceId.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RebootRequest]
+      __obj.asInstanceOf[RebootRequest]
     }
   }
 
@@ -1652,11 +1428,11 @@ package workspaces {
     def apply(
         RebootWorkspaceRequests: RebootWorkspaceRequests
     ): RebootWorkspacesRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "RebootWorkspaceRequests" -> RebootWorkspaceRequests.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RebootWorkspacesRequest]
+      __obj.asInstanceOf[RebootWorkspacesRequest]
     }
   }
 
@@ -1669,13 +1445,9 @@ package workspaces {
     def apply(
         FailedRequests: js.UndefOr[FailedRebootWorkspaceRequests] = js.undefined
     ): RebootWorkspacesResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "FailedRequests" -> FailedRequests.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RebootWorkspacesResult]
+      val __obj = js.Dictionary.empty[js.Any]
+      FailedRequests.foreach(__v => __obj.update("FailedRequests", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[RebootWorkspacesResult]
     }
   }
 
@@ -1691,11 +1463,11 @@ package workspaces {
     def apply(
         WorkspaceId: WorkspaceId
     ): RebuildRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "WorkspaceId" -> WorkspaceId.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RebuildRequest]
+      __obj.asInstanceOf[RebuildRequest]
     }
   }
 
@@ -1708,11 +1480,11 @@ package workspaces {
     def apply(
         RebuildWorkspaceRequests: RebuildWorkspaceRequests
     ): RebuildWorkspacesRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "RebuildWorkspaceRequests" -> RebuildWorkspaceRequests.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RebuildWorkspacesRequest]
+      __obj.asInstanceOf[RebuildWorkspacesRequest]
     }
   }
 
@@ -1725,13 +1497,9 @@ package workspaces {
     def apply(
         FailedRequests: js.UndefOr[FailedRebuildWorkspaceRequests] = js.undefined
     ): RebuildWorkspacesResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "FailedRequests" -> FailedRequests.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RebuildWorkspacesResult]
+      val __obj = js.Dictionary.empty[js.Any]
+      FailedRequests.foreach(__v => __obj.update("FailedRequests", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[RebuildWorkspacesResult]
     }
   }
 
@@ -1753,12 +1521,12 @@ package workspaces {
         GroupId: IpGroupId,
         UserRules: IpRevokedRuleList
     ): RevokeIpRulesRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "GroupId"   -> GroupId.asInstanceOf[js.Any],
         "UserRules" -> UserRules.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RevokeIpRulesRequest]
+      __obj.asInstanceOf[RevokeIpRulesRequest]
     }
   }
 
@@ -1768,10 +1536,9 @@ package workspaces {
   object RevokeIpRulesResult {
     def apply(
         ): RevokeIpRulesResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary.empty[js.Any]
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RevokeIpRulesResult]
+      __obj.asInstanceOf[RevokeIpRulesResult]
     }
   }
 
@@ -1787,13 +1554,9 @@ package workspaces {
     def apply(
         Capacity: js.UndefOr[NonEmptyString] = js.undefined
     ): RootStorage = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Capacity" -> Capacity.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RootStorage]
+      val __obj = js.Dictionary.empty[js.Any]
+      Capacity.foreach(__v => __obj.update("Capacity", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[RootStorage]
     }
   }
 
@@ -1816,13 +1579,9 @@ package workspaces {
     def apply(
         WorkspaceId: js.UndefOr[WorkspaceId] = js.undefined
     ): StartRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "WorkspaceId" -> WorkspaceId.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StartRequest]
+      val __obj = js.Dictionary.empty[js.Any]
+      WorkspaceId.foreach(__v => __obj.update("WorkspaceId", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[StartRequest]
     }
   }
 
@@ -1835,11 +1594,11 @@ package workspaces {
     def apply(
         StartWorkspaceRequests: StartWorkspaceRequests
     ): StartWorkspacesRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "StartWorkspaceRequests" -> StartWorkspaceRequests.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StartWorkspacesRequest]
+      __obj.asInstanceOf[StartWorkspacesRequest]
     }
   }
 
@@ -1852,13 +1611,9 @@ package workspaces {
     def apply(
         FailedRequests: js.UndefOr[FailedStartWorkspaceRequests] = js.undefined
     ): StartWorkspacesResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "FailedRequests" -> FailedRequests.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StartWorkspacesResult]
+      val __obj = js.Dictionary.empty[js.Any]
+      FailedRequests.foreach(__v => __obj.update("FailedRequests", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[StartWorkspacesResult]
     }
   }
 
@@ -1874,13 +1629,9 @@ package workspaces {
     def apply(
         WorkspaceId: js.UndefOr[WorkspaceId] = js.undefined
     ): StopRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "WorkspaceId" -> WorkspaceId.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StopRequest]
+      val __obj = js.Dictionary.empty[js.Any]
+      WorkspaceId.foreach(__v => __obj.update("WorkspaceId", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[StopRequest]
     }
   }
 
@@ -1893,11 +1644,11 @@ package workspaces {
     def apply(
         StopWorkspaceRequests: StopWorkspaceRequests
     ): StopWorkspacesRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "StopWorkspaceRequests" -> StopWorkspaceRequests.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StopWorkspacesRequest]
+      __obj.asInstanceOf[StopWorkspacesRequest]
     }
   }
 
@@ -1910,13 +1661,9 @@ package workspaces {
     def apply(
         FailedRequests: js.UndefOr[FailedStopWorkspaceRequests] = js.undefined
     ): StopWorkspacesResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "FailedRequests" -> FailedRequests.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StopWorkspacesResult]
+      val __obj = js.Dictionary.empty[js.Any]
+      FailedRequests.foreach(__v => __obj.update("FailedRequests", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[StopWorkspacesResult]
     }
   }
 
@@ -1934,14 +1681,12 @@ package workspaces {
         Key: TagKey,
         Value: js.UndefOr[TagValue] = js.undefined
     ): Tag = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Key" -> Key.asInstanceOf[js.Any],
-        "Value" -> Value.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary[js.Any](
+        "Key" -> Key.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Tag]
+      Value.foreach(__v => __obj.update("Value", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Tag]
     }
   }
 
@@ -1964,11 +1709,11 @@ package workspaces {
     def apply(
         WorkspaceId: WorkspaceId
     ): TerminateRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "WorkspaceId" -> WorkspaceId.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[TerminateRequest]
+      __obj.asInstanceOf[TerminateRequest]
     }
   }
 
@@ -1981,11 +1726,11 @@ package workspaces {
     def apply(
         TerminateWorkspaceRequests: TerminateWorkspaceRequests
     ): TerminateWorkspacesRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "TerminateWorkspaceRequests" -> TerminateWorkspaceRequests.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[TerminateWorkspacesRequest]
+      __obj.asInstanceOf[TerminateWorkspacesRequest]
     }
   }
 
@@ -1998,13 +1743,9 @@ package workspaces {
     def apply(
         FailedRequests: js.UndefOr[FailedTerminateWorkspaceRequests] = js.undefined
     ): TerminateWorkspacesResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "FailedRequests" -> FailedRequests.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[TerminateWorkspacesResult]
+      val __obj = js.Dictionary.empty[js.Any]
+      FailedRequests.foreach(__v => __obj.update("FailedRequests", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[TerminateWorkspacesResult]
     }
   }
 
@@ -2019,12 +1760,12 @@ package workspaces {
         GroupId: IpGroupId,
         UserRules: IpRuleList
     ): UpdateRulesOfIpGroupRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "GroupId"   -> GroupId.asInstanceOf[js.Any],
         "UserRules" -> UserRules.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateRulesOfIpGroupRequest]
+      __obj.asInstanceOf[UpdateRulesOfIpGroupRequest]
     }
   }
 
@@ -2034,10 +1775,9 @@ package workspaces {
   object UpdateRulesOfIpGroupResult {
     def apply(
         ): UpdateRulesOfIpGroupResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        ).filter(_._2 != (js.undefined: js.Any))
+      val __obj = js.Dictionary.empty[js.Any]
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateRulesOfIpGroupResult]
+      __obj.asInstanceOf[UpdateRulesOfIpGroupResult]
     }
   }
 
@@ -2053,13 +1793,9 @@ package workspaces {
     def apply(
         Capacity: js.UndefOr[NonEmptyString] = js.undefined
     ): UserStorage = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Capacity" -> Capacity.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UserStorage]
+      val __obj = js.Dictionary.empty[js.Any]
+      Capacity.foreach(__v => __obj.update("Capacity", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UserStorage]
     }
   }
 
@@ -2103,55 +1839,23 @@ package workspaces {
         WorkspaceId: js.UndefOr[WorkspaceId] = js.undefined,
         WorkspaceProperties: js.UndefOr[WorkspaceProperties] = js.undefined
     ): Workspace = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "BundleId" -> BundleId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ComputerName" -> ComputerName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DirectoryId" -> DirectoryId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ErrorCode" -> ErrorCode.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ErrorMessage" -> ErrorMessage.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "IpAddress" -> IpAddress.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ModificationStates" -> ModificationStates.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "RootVolumeEncryptionEnabled" -> RootVolumeEncryptionEnabled.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "State" -> State.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SubnetId" -> SubnetId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "UserName" -> UserName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "UserVolumeEncryptionEnabled" -> UserVolumeEncryptionEnabled.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "VolumeEncryptionKey" -> VolumeEncryptionKey.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "WorkspaceId" -> WorkspaceId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "WorkspaceProperties" -> WorkspaceProperties.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Workspace]
+      val __obj = js.Dictionary.empty[js.Any]
+      BundleId.foreach(__v => __obj.update("BundleId", __v.asInstanceOf[js.Any]))
+      ComputerName.foreach(__v => __obj.update("ComputerName", __v.asInstanceOf[js.Any]))
+      DirectoryId.foreach(__v => __obj.update("DirectoryId", __v.asInstanceOf[js.Any]))
+      ErrorCode.foreach(__v => __obj.update("ErrorCode", __v.asInstanceOf[js.Any]))
+      ErrorMessage.foreach(__v => __obj.update("ErrorMessage", __v.asInstanceOf[js.Any]))
+      IpAddress.foreach(__v => __obj.update("IpAddress", __v.asInstanceOf[js.Any]))
+      ModificationStates.foreach(__v => __obj.update("ModificationStates", __v.asInstanceOf[js.Any]))
+      RootVolumeEncryptionEnabled.foreach(__v => __obj.update("RootVolumeEncryptionEnabled", __v.asInstanceOf[js.Any]))
+      State.foreach(__v => __obj.update("State", __v.asInstanceOf[js.Any]))
+      SubnetId.foreach(__v => __obj.update("SubnetId", __v.asInstanceOf[js.Any]))
+      UserName.foreach(__v => __obj.update("UserName", __v.asInstanceOf[js.Any]))
+      UserVolumeEncryptionEnabled.foreach(__v => __obj.update("UserVolumeEncryptionEnabled", __v.asInstanceOf[js.Any]))
+      VolumeEncryptionKey.foreach(__v => __obj.update("VolumeEncryptionKey", __v.asInstanceOf[js.Any]))
+      WorkspaceId.foreach(__v => __obj.update("WorkspaceId", __v.asInstanceOf[js.Any]))
+      WorkspaceProperties.foreach(__v => __obj.update("WorkspaceProperties", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Workspace]
     }
   }
 
@@ -2179,31 +1883,15 @@ package workspaces {
         RootStorage: js.UndefOr[RootStorage] = js.undefined,
         UserStorage: js.UndefOr[UserStorage] = js.undefined
     ): WorkspaceBundle = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "BundleId" -> BundleId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ComputeType" -> ComputeType.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Description" -> Description.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Name" -> Name.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Owner" -> Owner.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "RootStorage" -> RootStorage.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "UserStorage" -> UserStorage.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[WorkspaceBundle]
+      val __obj = js.Dictionary.empty[js.Any]
+      BundleId.foreach(__v => __obj.update("BundleId", __v.asInstanceOf[js.Any]))
+      ComputeType.foreach(__v => __obj.update("ComputeType", __v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
+      Owner.foreach(__v => __obj.update("Owner", __v.asInstanceOf[js.Any]))
+      RootStorage.foreach(__v => __obj.update("RootStorage", __v.asInstanceOf[js.Any]))
+      UserStorage.foreach(__v => __obj.update("UserStorage", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[WorkspaceBundle]
     }
   }
 
@@ -2225,22 +1913,16 @@ package workspaces {
         LastKnownUserConnectionTimestamp: js.UndefOr[Timestamp] = js.undefined,
         WorkspaceId: js.UndefOr[WorkspaceId] = js.undefined
     ): WorkspaceConnectionStatus = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ConnectionState" -> ConnectionState.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ConnectionStateCheckTimestamp" -> ConnectionStateCheckTimestamp.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "LastKnownUserConnectionTimestamp" -> LastKnownUserConnectionTimestamp.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "WorkspaceId" -> WorkspaceId.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[WorkspaceConnectionStatus]
+      val __obj = js.Dictionary.empty[js.Any]
+      ConnectionState.foreach(__v => __obj.update("ConnectionState", __v.asInstanceOf[js.Any]))
+      ConnectionStateCheckTimestamp.foreach(
+        __v => __obj.update("ConnectionStateCheckTimestamp", __v.asInstanceOf[js.Any])
+      )
+      LastKnownUserConnectionTimestamp.foreach(
+        __v => __obj.update("LastKnownUserConnectionTimestamp", __v.asInstanceOf[js.Any])
+      )
+      WorkspaceId.foreach(__v => __obj.update("WorkspaceId", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[WorkspaceConnectionStatus]
     }
   }
 
@@ -2280,49 +1962,21 @@ package workspaces {
         WorkspaceSecurityGroupId: js.UndefOr[SecurityGroupId] = js.undefined,
         ipGroupIds: js.UndefOr[IpGroupIdList] = js.undefined
     ): WorkspaceDirectory = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Alias" -> Alias.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "CustomerUserName" -> CustomerUserName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DirectoryId" -> DirectoryId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DirectoryName" -> DirectoryName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DirectoryType" -> DirectoryType.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DnsIpAddresses" -> DnsIpAddresses.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "IamRoleId" -> IamRoleId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "RegistrationCode" -> RegistrationCode.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "State" -> State.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "SubnetIds" -> SubnetIds.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "WorkspaceCreationProperties" -> WorkspaceCreationProperties.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "WorkspaceSecurityGroupId" -> WorkspaceSecurityGroupId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ipGroupIds" -> ipGroupIds.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[WorkspaceDirectory]
+      val __obj = js.Dictionary.empty[js.Any]
+      Alias.foreach(__v => __obj.update("Alias", __v.asInstanceOf[js.Any]))
+      CustomerUserName.foreach(__v => __obj.update("CustomerUserName", __v.asInstanceOf[js.Any]))
+      DirectoryId.foreach(__v => __obj.update("DirectoryId", __v.asInstanceOf[js.Any]))
+      DirectoryName.foreach(__v => __obj.update("DirectoryName", __v.asInstanceOf[js.Any]))
+      DirectoryType.foreach(__v => __obj.update("DirectoryType", __v.asInstanceOf[js.Any]))
+      DnsIpAddresses.foreach(__v => __obj.update("DnsIpAddresses", __v.asInstanceOf[js.Any]))
+      IamRoleId.foreach(__v => __obj.update("IamRoleId", __v.asInstanceOf[js.Any]))
+      RegistrationCode.foreach(__v => __obj.update("RegistrationCode", __v.asInstanceOf[js.Any]))
+      State.foreach(__v => __obj.update("State", __v.asInstanceOf[js.Any]))
+      SubnetIds.foreach(__v => __obj.update("SubnetIds", __v.asInstanceOf[js.Any]))
+      WorkspaceCreationProperties.foreach(__v => __obj.update("WorkspaceCreationProperties", __v.asInstanceOf[js.Any]))
+      WorkspaceSecurityGroupId.foreach(__v => __obj.update("WorkspaceSecurityGroupId", __v.asInstanceOf[js.Any]))
+      ipGroupIds.foreach(__v => __obj.update("ipGroupIds", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[WorkspaceDirectory]
     }
   }
 
@@ -2369,34 +2023,16 @@ package workspaces {
         RequiredTenancy: js.UndefOr[WorkspaceImageRequiredTenancy] = js.undefined,
         State: js.UndefOr[WorkspaceImageState] = js.undefined
     ): WorkspaceImage = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Description" -> Description.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ErrorCode" -> ErrorCode.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ErrorMessage" -> ErrorMessage.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ImageId" -> ImageId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Name" -> Name.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "OperatingSystem" -> OperatingSystem.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "RequiredTenancy" -> RequiredTenancy.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "State" -> State.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[WorkspaceImage]
+      val __obj = js.Dictionary.empty[js.Any]
+      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
+      ErrorCode.foreach(__v => __obj.update("ErrorCode", __v.asInstanceOf[js.Any]))
+      ErrorMessage.foreach(__v => __obj.update("ErrorMessage", __v.asInstanceOf[js.Any]))
+      ImageId.foreach(__v => __obj.update("ImageId", __v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
+      OperatingSystem.foreach(__v => __obj.update("OperatingSystem", __v.asInstanceOf[js.Any]))
+      RequiredTenancy.foreach(__v => __obj.update("RequiredTenancy", __v.asInstanceOf[js.Any]))
+      State.foreach(__v => __obj.update("State", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[WorkspaceImage]
     }
   }
 
@@ -2443,25 +2079,15 @@ package workspaces {
         RunningModeAutoStopTimeoutInMinutes: js.UndefOr[RunningModeAutoStopTimeoutInMinutes] = js.undefined,
         UserVolumeSizeGib: js.UndefOr[UserVolumeSizeGib] = js.undefined
     ): WorkspaceProperties = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ComputeTypeName" -> ComputeTypeName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "RootVolumeSizeGib" -> RootVolumeSizeGib.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "RunningMode" -> RunningMode.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "RunningModeAutoStopTimeoutInMinutes" -> RunningModeAutoStopTimeoutInMinutes.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "UserVolumeSizeGib" -> UserVolumeSizeGib.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[WorkspaceProperties]
+      val __obj = js.Dictionary.empty[js.Any]
+      ComputeTypeName.foreach(__v => __obj.update("ComputeTypeName", __v.asInstanceOf[js.Any]))
+      RootVolumeSizeGib.foreach(__v => __obj.update("RootVolumeSizeGib", __v.asInstanceOf[js.Any]))
+      RunningMode.foreach(__v => __obj.update("RunningMode", __v.asInstanceOf[js.Any]))
+      RunningModeAutoStopTimeoutInMinutes.foreach(
+        __v => __obj.update("RunningModeAutoStopTimeoutInMinutes", __v.asInstanceOf[js.Any])
+      )
+      UserVolumeSizeGib.foreach(__v => __obj.update("UserVolumeSizeGib", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[WorkspaceProperties]
     }
   }
 
@@ -2491,28 +2117,18 @@ package workspaces {
         VolumeEncryptionKey: js.UndefOr[VolumeEncryptionKey] = js.undefined,
         WorkspaceProperties: js.UndefOr[WorkspaceProperties] = js.undefined
     ): WorkspaceRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
+      val __obj = js.Dictionary[js.Any](
         "BundleId"    -> BundleId.asInstanceOf[js.Any],
         "DirectoryId" -> DirectoryId.asInstanceOf[js.Any],
-        "UserName"    -> UserName.asInstanceOf[js.Any],
-        "RootVolumeEncryptionEnabled" -> RootVolumeEncryptionEnabled.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Tags" -> Tags.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "UserVolumeEncryptionEnabled" -> UserVolumeEncryptionEnabled.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "VolumeEncryptionKey" -> VolumeEncryptionKey.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "WorkspaceProperties" -> WorkspaceProperties.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
+        "UserName"    -> UserName.asInstanceOf[js.Any]
+      )
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[WorkspaceRequest]
+      RootVolumeEncryptionEnabled.foreach(__v => __obj.update("RootVolumeEncryptionEnabled", __v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
+      UserVolumeEncryptionEnabled.foreach(__v => __obj.update("UserVolumeEncryptionEnabled", __v.asInstanceOf[js.Any]))
+      VolumeEncryptionKey.foreach(__v => __obj.update("VolumeEncryptionKey", __v.asInstanceOf[js.Any]))
+      WorkspaceProperties.foreach(__v => __obj.update("WorkspaceProperties", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[WorkspaceRequest]
     }
   }
 
@@ -2572,22 +2188,12 @@ package workspaces {
         groupName: js.UndefOr[IpGroupName] = js.undefined,
         userRules: js.UndefOr[IpRuleList] = js.undefined
     ): WorkspacesIpGroup = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "groupDesc" -> groupDesc.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "groupId" -> groupId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "groupName" -> groupName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "userRules" -> userRules.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[WorkspacesIpGroup]
+      val __obj = js.Dictionary.empty[js.Any]
+      groupDesc.foreach(__v => __obj.update("groupDesc", __v.asInstanceOf[js.Any]))
+      groupId.foreach(__v => __obj.update("groupId", __v.asInstanceOf[js.Any]))
+      groupName.foreach(__v => __obj.update("groupName", __v.asInstanceOf[js.Any]))
+      userRules.foreach(__v => __obj.update("userRules", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[WorkspacesIpGroup]
     }
   }
 }
