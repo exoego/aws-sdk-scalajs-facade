@@ -26,6 +26,7 @@ package object budgetsservice {
   type Notifications                   = js.Array[Notification]
   type NullableBoolean                 = Boolean
   type NumericValue                    = String
+  type PlannedBudgetLimits             = js.Dictionary[Spend]
   type SubscriberAddress               = String
   type Subscribers                     = js.Array[Subscriber]
   type SubscriptionType                = String
@@ -114,6 +115,7 @@ package budgetsservice {
     var CostFilters: js.UndefOr[CostFilters]
     var CostTypes: js.UndefOr[CostTypes]
     var LastUpdatedTime: js.UndefOr[GenericTimestamp]
+    var PlannedBudgetLimits: js.UndefOr[PlannedBudgetLimits]
     var TimePeriod: js.UndefOr[TimePeriod]
   }
 
@@ -127,6 +129,7 @@ package budgetsservice {
         CostFilters: js.UndefOr[CostFilters] = js.undefined,
         CostTypes: js.UndefOr[CostTypes] = js.undefined,
         LastUpdatedTime: js.UndefOr[GenericTimestamp] = js.undefined,
+        PlannedBudgetLimits: js.UndefOr[PlannedBudgetLimits] = js.undefined,
         TimePeriod: js.UndefOr[TimePeriod] = js.undefined
     ): Budget = {
       val __obj = js.Dictionary[js.Any](
@@ -140,6 +143,7 @@ package budgetsservice {
       CostFilters.foreach(__v => __obj.update("CostFilters", __v.asInstanceOf[js.Any]))
       CostTypes.foreach(__v => __obj.update("CostTypes", __v.asInstanceOf[js.Any]))
       LastUpdatedTime.foreach(__v => __obj.update("LastUpdatedTime", __v.asInstanceOf[js.Any]))
+      PlannedBudgetLimits.foreach(__v => __obj.update("PlannedBudgetLimits", __v.asInstanceOf[js.Any]))
       TimePeriod.foreach(__v => __obj.update("TimePeriod", __v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Budget]
     }

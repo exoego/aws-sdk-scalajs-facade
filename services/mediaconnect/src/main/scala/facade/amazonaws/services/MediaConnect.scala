@@ -133,39 +133,45 @@ package mediaconnect {
     */
   @js.native
   trait AddOutputRequest extends js.Object {
-    var Destination: __string
-    var Port: __integer
     var Protocol: Protocol
+    var CidrAllowList: js.UndefOr[__listOf__string]
     var Description: js.UndefOr[__string]
+    var Destination: js.UndefOr[__string]
     var Encryption: js.UndefOr[Encryption]
     var MaxLatency: js.UndefOr[__integer]
     var Name: js.UndefOr[__string]
+    var Port: js.UndefOr[__integer]
+    var RemoteId: js.UndefOr[__string]
     var SmoothingLatency: js.UndefOr[__integer]
     var StreamId: js.UndefOr[__string]
   }
 
   object AddOutputRequest {
     def apply(
-        Destination: __string,
-        Port: __integer,
         Protocol: Protocol,
+        CidrAllowList: js.UndefOr[__listOf__string] = js.undefined,
         Description: js.UndefOr[__string] = js.undefined,
+        Destination: js.UndefOr[__string] = js.undefined,
         Encryption: js.UndefOr[Encryption] = js.undefined,
         MaxLatency: js.UndefOr[__integer] = js.undefined,
         Name: js.UndefOr[__string] = js.undefined,
+        Port: js.UndefOr[__integer] = js.undefined,
+        RemoteId: js.UndefOr[__string] = js.undefined,
         SmoothingLatency: js.UndefOr[__integer] = js.undefined,
         StreamId: js.UndefOr[__string] = js.undefined
     ): AddOutputRequest = {
       val __obj = js.Dictionary[js.Any](
-        "Destination" -> Destination.asInstanceOf[js.Any],
-        "Port"        -> Port.asInstanceOf[js.Any],
-        "Protocol"    -> Protocol.asInstanceOf[js.Any]
+        "Protocol" -> Protocol.asInstanceOf[js.Any]
       )
 
+      CidrAllowList.foreach(__v => __obj.update("CidrAllowList", __v.asInstanceOf[js.Any]))
       Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
+      Destination.foreach(__v => __obj.update("Destination", __v.asInstanceOf[js.Any]))
       Encryption.foreach(__v => __obj.update("Encryption", __v.asInstanceOf[js.Any]))
       MaxLatency.foreach(__v => __obj.update("MaxLatency", __v.asInstanceOf[js.Any]))
       Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
+      Port.foreach(__v => __obj.update("Port", __v.asInstanceOf[js.Any]))
+      RemoteId.foreach(__v => __obj.update("RemoteId", __v.asInstanceOf[js.Any]))
       SmoothingLatency.foreach(__v => __obj.update("SmoothingLatency", __v.asInstanceOf[js.Any]))
       StreamId.foreach(__v => __obj.update("StreamId", __v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AddOutputRequest]
@@ -304,24 +310,41 @@ package mediaconnect {
   trait Encryption extends js.Object {
     var Algorithm: Algorithm
     var RoleArn: __string
-    var SecretArn: __string
+    var ConstantInitializationVector: js.UndefOr[__string]
+    var DeviceId: js.UndefOr[__string]
     var KeyType: js.UndefOr[KeyType]
+    var Region: js.UndefOr[__string]
+    var ResourceId: js.UndefOr[__string]
+    var SecretArn: js.UndefOr[__string]
+    var Url: js.UndefOr[__string]
   }
 
   object Encryption {
     def apply(
         Algorithm: Algorithm,
         RoleArn: __string,
-        SecretArn: __string,
-        KeyType: js.UndefOr[KeyType] = js.undefined
+        ConstantInitializationVector: js.UndefOr[__string] = js.undefined,
+        DeviceId: js.UndefOr[__string] = js.undefined,
+        KeyType: js.UndefOr[KeyType] = js.undefined,
+        Region: js.UndefOr[__string] = js.undefined,
+        ResourceId: js.UndefOr[__string] = js.undefined,
+        SecretArn: js.UndefOr[__string] = js.undefined,
+        Url: js.UndefOr[__string] = js.undefined
     ): Encryption = {
       val __obj = js.Dictionary[js.Any](
         "Algorithm" -> Algorithm.asInstanceOf[js.Any],
-        "RoleArn"   -> RoleArn.asInstanceOf[js.Any],
-        "SecretArn" -> SecretArn.asInstanceOf[js.Any]
+        "RoleArn"   -> RoleArn.asInstanceOf[js.Any]
       )
 
+      ConstantInitializationVector.foreach(
+        __v => __obj.update("ConstantInitializationVector", __v.asInstanceOf[js.Any])
+      )
+      DeviceId.foreach(__v => __obj.update("DeviceId", __v.asInstanceOf[js.Any]))
       KeyType.foreach(__v => __obj.update("KeyType", __v.asInstanceOf[js.Any]))
+      Region.foreach(__v => __obj.update("Region", __v.asInstanceOf[js.Any]))
+      ResourceId.foreach(__v => __obj.update("ResourceId", __v.asInstanceOf[js.Any]))
+      SecretArn.foreach(__v => __obj.update("SecretArn", __v.asInstanceOf[js.Any]))
+      Url.foreach(__v => __obj.update("Url", __v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Encryption]
     }
   }
@@ -473,9 +496,10 @@ package mediaconnect {
   }
 
   object KeyTypeEnum {
+    val speke        = "speke"
     val `static-key` = "static-key"
 
-    val values = IndexedSeq(`static-key`)
+    val values = IndexedSeq(speke, `static-key`)
   }
 
   @js.native
@@ -708,8 +732,9 @@ package mediaconnect {
     val `zixi-push` = "zixi-push"
     val `rtp-fec`   = "rtp-fec"
     val rtp         = "rtp"
+    val `zixi-pull` = "zixi-pull"
 
-    val values = IndexedSeq(`zixi-push`, `rtp-fec`, rtp)
+    val values = IndexedSeq(`zixi-push`, `rtp-fec`, rtp, `zixi-pull`)
   }
 
   @js.native
@@ -967,7 +992,7 @@ package mediaconnect {
   }
 
   /**
-    * The tags to add to the resource. Tag keys can have a maximum character length of 128 characters, and tag values can have a maximum length of 256 characters.
+    * The tags to add to the resource. A tag is an array of key-value pairs. Tag keys can have a maximum character length of 128 characters, and tag values can have a maximum length of 256 characters.
     */
   @js.native
   trait TagResourceRequest extends js.Object {
@@ -995,8 +1020,10 @@ package mediaconnect {
   @js.native
   trait Transport extends js.Object {
     var Protocol: Protocol
+    var CidrAllowList: js.UndefOr[__listOf__string]
     var MaxBitrate: js.UndefOr[__integer]
     var MaxLatency: js.UndefOr[__integer]
+    var RemoteId: js.UndefOr[__string]
     var SmoothingLatency: js.UndefOr[__integer]
     var StreamId: js.UndefOr[__string]
   }
@@ -1004,8 +1031,10 @@ package mediaconnect {
   object Transport {
     def apply(
         Protocol: Protocol,
+        CidrAllowList: js.UndefOr[__listOf__string] = js.undefined,
         MaxBitrate: js.UndefOr[__integer] = js.undefined,
         MaxLatency: js.UndefOr[__integer] = js.undefined,
+        RemoteId: js.UndefOr[__string] = js.undefined,
         SmoothingLatency: js.UndefOr[__integer] = js.undefined,
         StreamId: js.UndefOr[__string] = js.undefined
     ): Transport = {
@@ -1013,8 +1042,10 @@ package mediaconnect {
         "Protocol" -> Protocol.asInstanceOf[js.Any]
       )
 
+      CidrAllowList.foreach(__v => __obj.update("CidrAllowList", __v.asInstanceOf[js.Any]))
       MaxBitrate.foreach(__v => __obj.update("MaxBitrate", __v.asInstanceOf[js.Any]))
       MaxLatency.foreach(__v => __obj.update("MaxLatency", __v.asInstanceOf[js.Any]))
+      RemoteId.foreach(__v => __obj.update("RemoteId", __v.asInstanceOf[js.Any]))
       SmoothingLatency.foreach(__v => __obj.update("SmoothingLatency", __v.asInstanceOf[js.Any]))
       StreamId.foreach(__v => __obj.update("StreamId", __v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Transport]
@@ -1047,23 +1078,40 @@ package mediaconnect {
   @js.native
   trait UpdateEncryption extends js.Object {
     var Algorithm: js.UndefOr[Algorithm]
+    var ConstantInitializationVector: js.UndefOr[__string]
+    var DeviceId: js.UndefOr[__string]
     var KeyType: js.UndefOr[KeyType]
+    var Region: js.UndefOr[__string]
+    var ResourceId: js.UndefOr[__string]
     var RoleArn: js.UndefOr[__string]
     var SecretArn: js.UndefOr[__string]
+    var Url: js.UndefOr[__string]
   }
 
   object UpdateEncryption {
     def apply(
         Algorithm: js.UndefOr[Algorithm] = js.undefined,
+        ConstantInitializationVector: js.UndefOr[__string] = js.undefined,
+        DeviceId: js.UndefOr[__string] = js.undefined,
         KeyType: js.UndefOr[KeyType] = js.undefined,
+        Region: js.UndefOr[__string] = js.undefined,
+        ResourceId: js.UndefOr[__string] = js.undefined,
         RoleArn: js.UndefOr[__string] = js.undefined,
-        SecretArn: js.UndefOr[__string] = js.undefined
+        SecretArn: js.UndefOr[__string] = js.undefined,
+        Url: js.UndefOr[__string] = js.undefined
     ): UpdateEncryption = {
       val __obj = js.Dictionary.empty[js.Any]
       Algorithm.foreach(__v => __obj.update("Algorithm", __v.asInstanceOf[js.Any]))
+      ConstantInitializationVector.foreach(
+        __v => __obj.update("ConstantInitializationVector", __v.asInstanceOf[js.Any])
+      )
+      DeviceId.foreach(__v => __obj.update("DeviceId", __v.asInstanceOf[js.Any]))
       KeyType.foreach(__v => __obj.update("KeyType", __v.asInstanceOf[js.Any]))
+      Region.foreach(__v => __obj.update("Region", __v.asInstanceOf[js.Any]))
+      ResourceId.foreach(__v => __obj.update("ResourceId", __v.asInstanceOf[js.Any]))
       RoleArn.foreach(__v => __obj.update("RoleArn", __v.asInstanceOf[js.Any]))
       SecretArn.foreach(__v => __obj.update("SecretArn", __v.asInstanceOf[js.Any]))
+      Url.foreach(__v => __obj.update("Url", __v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateEncryption]
     }
   }
@@ -1125,12 +1173,14 @@ package mediaconnect {
   trait UpdateFlowOutputRequest extends js.Object {
     var FlowArn: __string
     var OutputArn: __string
+    var CidrAllowList: js.UndefOr[__listOf__string]
     var Description: js.UndefOr[__string]
     var Destination: js.UndefOr[__string]
     var Encryption: js.UndefOr[UpdateEncryption]
     var MaxLatency: js.UndefOr[__integer]
     var Port: js.UndefOr[__integer]
     var Protocol: js.UndefOr[Protocol]
+    var RemoteId: js.UndefOr[__string]
     var SmoothingLatency: js.UndefOr[__integer]
     var StreamId: js.UndefOr[__string]
   }
@@ -1139,12 +1189,14 @@ package mediaconnect {
     def apply(
         FlowArn: __string,
         OutputArn: __string,
+        CidrAllowList: js.UndefOr[__listOf__string] = js.undefined,
         Description: js.UndefOr[__string] = js.undefined,
         Destination: js.UndefOr[__string] = js.undefined,
         Encryption: js.UndefOr[UpdateEncryption] = js.undefined,
         MaxLatency: js.UndefOr[__integer] = js.undefined,
         Port: js.UndefOr[__integer] = js.undefined,
         Protocol: js.UndefOr[Protocol] = js.undefined,
+        RemoteId: js.UndefOr[__string] = js.undefined,
         SmoothingLatency: js.UndefOr[__integer] = js.undefined,
         StreamId: js.UndefOr[__string] = js.undefined
     ): UpdateFlowOutputRequest = {
@@ -1153,12 +1205,14 @@ package mediaconnect {
         "OutputArn" -> OutputArn.asInstanceOf[js.Any]
       )
 
+      CidrAllowList.foreach(__v => __obj.update("CidrAllowList", __v.asInstanceOf[js.Any]))
       Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
       Destination.foreach(__v => __obj.update("Destination", __v.asInstanceOf[js.Any]))
       Encryption.foreach(__v => __obj.update("Encryption", __v.asInstanceOf[js.Any]))
       MaxLatency.foreach(__v => __obj.update("MaxLatency", __v.asInstanceOf[js.Any]))
       Port.foreach(__v => __obj.update("Port", __v.asInstanceOf[js.Any]))
       Protocol.foreach(__v => __obj.update("Protocol", __v.asInstanceOf[js.Any]))
+      RemoteId.foreach(__v => __obj.update("RemoteId", __v.asInstanceOf[js.Any]))
       SmoothingLatency.foreach(__v => __obj.update("SmoothingLatency", __v.asInstanceOf[js.Any]))
       StreamId.foreach(__v => __obj.update("StreamId", __v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateFlowOutputRequest]

@@ -19,6 +19,8 @@ package object servicecatalog {
   type AllowedValues                           = js.Array[AllowedValue]
   type ApproximateCount                        = Int
   type AttributeValue                          = String
+  type BudgetName                              = String
+  type Budgets                                 = js.Array[BudgetDetail]
   type CausingEntity                           = String
   type ChangeAction                            = String
   type CloudWatchDashboardName                 = String
@@ -35,10 +37,17 @@ package object servicecatalog {
   type CreationTime                            = js.Date
   type DefaultValue                            = String
   type Description                             = String
+  type DisableTemplateValidation               = Boolean
   type Error                                   = String
   type ErrorCode                               = String
   type ErrorDescription                        = String
   type EvaluationType                          = String
+  type ExecutionParameterKey                   = String
+  type ExecutionParameterMap                   = js.Dictionary[ExecutionParameterValueList]
+  type ExecutionParameterType                  = String
+  type ExecutionParameterValue                 = String
+  type ExecutionParameterValueList             = js.Array[ExecutionParameterValue]
+  type ExecutionParameters                     = js.Array[ExecutionParameter]
   type FailedServiceActionAssociations         = js.Array[FailedServiceActionAssociation]
   type HasDefaultPath                          = Boolean
   type Id                                      = String
@@ -71,7 +80,6 @@ package object servicecatalog {
   type PortfolioDetails                        = js.Array[PortfolioDetail]
   type PortfolioDisplayName                    = String
   type PortfolioName                           = String
-  type PortfolioShareToken                     = String
   type PortfolioShareType                      = String
   type PrincipalARN                            = String
   type PrincipalType                           = String
@@ -93,7 +101,9 @@ package object servicecatalog {
   type ProductViewShortDescription             = String
   type ProductViewSortBy                       = String
   type ProductViewSummaries                    = js.Array[ProductViewSummary]
+  type PropertyKey                             = String
   type PropertyName                            = String
+  type PropertyValue                           = String
   type ProviderName                            = String
   type ProvisionedProductAttributes            = js.Array[ProvisionedProductAttribute]
   type ProvisionedProductDetails               = js.Array[ProvisionedProductDetail]
@@ -105,6 +115,7 @@ package object servicecatalog {
   type ProvisionedProductPlanStatus            = String
   type ProvisionedProductPlanType              = String
   type ProvisionedProductPlans                 = js.Array[ProvisionedProductPlanSummary]
+  type ProvisionedProductProperties            = js.Dictionary[PropertyValue]
   type ProvisionedProductStatus                = String
   type ProvisionedProductStatusMessage         = String
   type ProvisionedProductType                  = String
@@ -115,6 +126,7 @@ package object servicecatalog {
   type ProvisioningArtifactCreatedTime         = js.Date
   type ProvisioningArtifactDescription         = String
   type ProvisioningArtifactDetails             = js.Array[ProvisioningArtifactDetail]
+  type ProvisioningArtifactGuidance            = String
   type ProvisioningArtifactInfo                = js.Dictionary[ProvisioningArtifactInfoValue]
   type ProvisioningArtifactInfoKey             = String
   type ProvisioningArtifactInfoValue           = String
@@ -170,6 +182,8 @@ package object servicecatalog {
   type SortOrder                               = String
   type SourceProvisioningArtifactProperties    = js.Array[SourceProvisioningArtifactPropertiesMap]
   type SourceProvisioningArtifactPropertiesMap = js.Dictionary[ProvisioningArtifactPropertyValue]
+  type StackInstanceStatus                     = String
+  type StackInstances                          = js.Array[StackInstance]
   type StackSetAccounts                        = js.Array[AccountId]
   type StackSetFailureToleranceCount           = Int
   type StackSetFailureTolerancePercentage      = Int
@@ -208,6 +222,9 @@ package object servicecatalog {
 
     def acceptPortfolioShareFuture(params: AcceptPortfolioShareInput): Future[AcceptPortfolioShareOutput] =
       service.acceptPortfolioShare(params).promise.toFuture
+    def associateBudgetWithResourceFuture(
+        params: AssociateBudgetWithResourceInput
+    ): Future[AssociateBudgetWithResourceOutput] = service.associateBudgetWithResource(params).promise.toFuture
     def associatePrincipalWithPortfolioFuture(
         params: AssociatePrincipalWithPortfolioInput
     ): Future[AssociatePrincipalWithPortfolioOutput] = service.associatePrincipalWithPortfolio(params).promise.toFuture
@@ -297,6 +314,10 @@ package object servicecatalog {
     ): Future[DescribeProvisioningParametersOutput] = service.describeProvisioningParameters(params).promise.toFuture
     def describeRecordFuture(params: DescribeRecordInput): Future[DescribeRecordOutput] =
       service.describeRecord(params).promise.toFuture
+    def describeServiceActionExecutionParametersFuture(
+        params: DescribeServiceActionExecutionParametersInput
+    ): Future[DescribeServiceActionExecutionParametersOutput] =
+      service.describeServiceActionExecutionParameters(params).promise.toFuture
     def describeServiceActionFuture(params: DescribeServiceActionInput): Future[DescribeServiceActionOutput] =
       service.describeServiceAction(params).promise.toFuture
     def describeTagOptionFuture(params: DescribeTagOptionInput): Future[DescribeTagOptionOutput] =
@@ -304,6 +325,9 @@ package object servicecatalog {
     def disableAWSOrganizationsAccessFuture(
         params: DisableAWSOrganizationsAccessInput
     ): Future[DisableAWSOrganizationsAccessOutput] = service.disableAWSOrganizationsAccess(params).promise.toFuture
+    def disassociateBudgetFromResourceFuture(
+        params: DisassociateBudgetFromResourceInput
+    ): Future[DisassociateBudgetFromResourceOutput] = service.disassociateBudgetFromResource(params).promise.toFuture
     def disassociatePrincipalFromPortfolioFuture(
         params: DisassociatePrincipalFromPortfolioInput
     ): Future[DisassociatePrincipalFromPortfolioOutput] =
@@ -336,6 +360,8 @@ package object servicecatalog {
     def listAcceptedPortfolioSharesFuture(
         params: ListAcceptedPortfolioSharesInput
     ): Future[ListAcceptedPortfolioSharesOutput] = service.listAcceptedPortfolioShares(params).promise.toFuture
+    def listBudgetsForResourceFuture(params: ListBudgetsForResourceInput): Future[ListBudgetsForResourceOutput] =
+      service.listBudgetsForResource(params).promise.toFuture
     def listConstraintsForPortfolioFuture(
         params: ListConstraintsForPortfolioInput
     ): Future[ListConstraintsForPortfolioOutput] = service.listConstraintsForPortfolio(params).promise.toFuture
@@ -374,6 +400,10 @@ package object servicecatalog {
       service.listServiceActionsForProvisioningArtifact(params).promise.toFuture
     def listServiceActionsFuture(params: ListServiceActionsInput): Future[ListServiceActionsOutput] =
       service.listServiceActions(params).promise.toFuture
+    def listStackInstancesForProvisionedProductFuture(
+        params: ListStackInstancesForProvisionedProductInput
+    ): Future[ListStackInstancesForProvisionedProductOutput] =
+      service.listStackInstancesForProvisionedProduct(params).promise.toFuture
     def listTagOptionsFuture(params: ListTagOptionsInput): Future[ListTagOptionsOutput] =
       service.listTagOptions(params).promise.toFuture
     def provisionProductFuture(params: ProvisionProductInput): Future[ProvisionProductOutput] =
@@ -400,6 +430,10 @@ package object servicecatalog {
       service.updateProduct(params).promise.toFuture
     def updateProvisionedProductFuture(params: UpdateProvisionedProductInput): Future[UpdateProvisionedProductOutput] =
       service.updateProvisionedProduct(params).promise.toFuture
+    def updateProvisionedProductPropertiesFuture(
+        params: UpdateProvisionedProductPropertiesInput
+    ): Future[UpdateProvisionedProductPropertiesOutput] =
+      service.updateProvisionedProductProperties(params).promise.toFuture
     def updateProvisioningArtifactFuture(
         params: UpdateProvisioningArtifactInput
     ): Future[UpdateProvisioningArtifactOutput] = service.updateProvisioningArtifact(params).promise.toFuture
@@ -417,6 +451,9 @@ package servicecatalog {
     def this(config: AWSConfig) = this()
 
     def acceptPortfolioShare(params: AcceptPortfolioShareInput): Request[AcceptPortfolioShareOutput] = js.native
+    def associateBudgetWithResource(
+        params: AssociateBudgetWithResourceInput
+    ): Request[AssociateBudgetWithResourceOutput] = js.native
     def associatePrincipalWithPortfolio(
         params: AssociatePrincipalWithPortfolioInput
     ): Request[AssociatePrincipalWithPortfolioOutput] = js.native
@@ -481,10 +518,16 @@ package servicecatalog {
     ): Request[DescribeProvisioningParametersOutput]                                                    = js.native
     def describeRecord(params: DescribeRecordInput): Request[DescribeRecordOutput]                      = js.native
     def describeServiceAction(params: DescribeServiceActionInput): Request[DescribeServiceActionOutput] = js.native
-    def describeTagOption(params: DescribeTagOptionInput): Request[DescribeTagOptionOutput]             = js.native
+    def describeServiceActionExecutionParameters(
+        params: DescribeServiceActionExecutionParametersInput
+    ): Request[DescribeServiceActionExecutionParametersOutput]                              = js.native
+    def describeTagOption(params: DescribeTagOptionInput): Request[DescribeTagOptionOutput] = js.native
     def disableAWSOrganizationsAccess(
         params: DisableAWSOrganizationsAccessInput
     ): Request[DisableAWSOrganizationsAccessOutput] = js.native
+    def disassociateBudgetFromResource(
+        params: DisassociateBudgetFromResourceInput
+    ): Request[DisassociateBudgetFromResourceOutput] = js.native
     def disassociatePrincipalFromPortfolio(
         params: DisassociatePrincipalFromPortfolioInput
     ): Request[DisassociatePrincipalFromPortfolioOutput] = js.native
@@ -511,7 +554,8 @@ package servicecatalog {
     ): Request[GetAWSOrganizationsAccessStatusOutput] = js.native
     def listAcceptedPortfolioShares(
         params: ListAcceptedPortfolioSharesInput
-    ): Request[ListAcceptedPortfolioSharesOutput] = js.native
+    ): Request[ListAcceptedPortfolioSharesOutput]                                                          = js.native
+    def listBudgetsForResource(params: ListBudgetsForResourceInput): Request[ListBudgetsForResourceOutput] = js.native
     def listConstraintsForPortfolio(
         params: ListConstraintsForPortfolioInput
     ): Request[ListConstraintsForPortfolioOutput]                                     = js.native
@@ -539,7 +583,10 @@ package servicecatalog {
     def listServiceActions(params: ListServiceActionsInput): Request[ListServiceActionsOutput] = js.native
     def listServiceActionsForProvisioningArtifact(
         params: ListServiceActionsForProvisioningArtifactInput
-    ): Request[ListServiceActionsForProvisioningArtifactOutput]                                      = js.native
+    ): Request[ListServiceActionsForProvisioningArtifactOutput] = js.native
+    def listStackInstancesForProvisionedProduct(
+        params: ListStackInstancesForProvisionedProductInput
+    ): Request[ListStackInstancesForProvisionedProductOutput]                                        = js.native
     def listTagOptions(params: ListTagOptionsInput): Request[ListTagOptionsOutput]                   = js.native
     def provisionProduct(params: ProvisionProductInput): Request[ProvisionProductOutput]             = js.native
     def rejectPortfolioShare(params: RejectPortfolioShareInput): Request[RejectPortfolioShareOutput] = js.native
@@ -557,6 +604,9 @@ package servicecatalog {
     def updateProduct(params: UpdateProductInput): Request[UpdateProductOutput]          = js.native
     def updateProvisionedProduct(params: UpdateProvisionedProductInput): Request[UpdateProvisionedProductOutput] =
       js.native
+    def updateProvisionedProductProperties(
+        params: UpdateProvisionedProductPropertiesInput
+    ): Request[UpdateProvisionedProductPropertiesOutput] = js.native
     def updateProvisioningArtifact(params: UpdateProvisioningArtifactInput): Request[UpdateProvisioningArtifactOutput] =
       js.native
     def updateServiceAction(params: UpdateServiceActionInput): Request[UpdateServiceActionOutput] = js.native
@@ -633,6 +683,38 @@ package servicecatalog {
     val DISABLED     = "DISABLED"
 
     val values = IndexedSeq(ENABLED, UNDER_CHANGE, DISABLED)
+  }
+
+  @js.native
+  trait AssociateBudgetWithResourceInput extends js.Object {
+    var BudgetName: BudgetName
+    var ResourceId: Id
+  }
+
+  object AssociateBudgetWithResourceInput {
+    def apply(
+        BudgetName: BudgetName,
+        ResourceId: Id
+    ): AssociateBudgetWithResourceInput = {
+      val __obj = js.Dictionary[js.Any](
+        "BudgetName" -> BudgetName.asInstanceOf[js.Any],
+        "ResourceId" -> ResourceId.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[AssociateBudgetWithResourceInput]
+    }
+  }
+
+  @js.native
+  trait AssociateBudgetWithResourceOutput extends js.Object {}
+
+  object AssociateBudgetWithResourceOutput {
+    def apply(
+        ): AssociateBudgetWithResourceOutput = {
+      val __obj = js.Dictionary.empty[js.Any]
+
+      __obj.asInstanceOf[AssociateBudgetWithResourceOutput]
+    }
   }
 
   @js.native
@@ -852,6 +934,24 @@ package servicecatalog {
         __v => __obj.update("FailedServiceActionAssociations", __v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[BatchDisassociateServiceActionFromProvisioningArtifactOutput]
+    }
+  }
+
+  /**
+    * Information about a budget.
+    */
+  @js.native
+  trait BudgetDetail extends js.Object {
+    var BudgetName: js.UndefOr[BudgetName]
+  }
+
+  object BudgetDetail {
+    def apply(
+        BudgetName: js.UndefOr[BudgetName] = js.undefined
+    ): BudgetDetail = {
+      val __obj = js.Dictionary.empty[js.Any]
+      BudgetName.foreach(__v => __obj.update("BudgetName", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[BudgetDetail]
     }
   }
 
@@ -1129,12 +1229,12 @@ package servicecatalog {
 
   @js.native
   trait CreatePortfolioShareOutput extends js.Object {
-    var PortfolioShareToken: js.UndefOr[PortfolioShareToken]
+    var PortfolioShareToken: js.UndefOr[Id]
   }
 
   object CreatePortfolioShareOutput {
     def apply(
-        PortfolioShareToken: js.UndefOr[PortfolioShareToken] = js.undefined
+        PortfolioShareToken: js.UndefOr[Id] = js.undefined
     ): CreatePortfolioShareOutput = {
       val __obj = js.Dictionary.empty[js.Any]
       PortfolioShareToken.foreach(__v => __obj.update("PortfolioShareToken", __v.asInstanceOf[js.Any]))
@@ -1508,12 +1608,12 @@ package servicecatalog {
 
   @js.native
   trait DeletePortfolioShareOutput extends js.Object {
-    var PortfolioShareToken: js.UndefOr[PortfolioShareToken]
+    var PortfolioShareToken: js.UndefOr[Id]
   }
 
   object DeletePortfolioShareOutput {
     def apply(
-        PortfolioShareToken: js.UndefOr[PortfolioShareToken] = js.undefined
+        PortfolioShareToken: js.UndefOr[Id] = js.undefined
     ): DeletePortfolioShareOutput = {
       val __obj = js.Dictionary.empty[js.Any]
       PortfolioShareToken.foreach(__v => __obj.update("PortfolioShareToken", __v.asInstanceOf[js.Any]))
@@ -1788,6 +1888,7 @@ package servicecatalog {
 
   @js.native
   trait DescribePortfolioOutput extends js.Object {
+    var Budgets: js.UndefOr[Budgets]
     var PortfolioDetail: js.UndefOr[PortfolioDetail]
     var TagOptions: js.UndefOr[TagOptionDetails]
     var Tags: js.UndefOr[Tags]
@@ -1795,11 +1896,13 @@ package servicecatalog {
 
   object DescribePortfolioOutput {
     def apply(
+        Budgets: js.UndefOr[Budgets] = js.undefined,
         PortfolioDetail: js.UndefOr[PortfolioDetail] = js.undefined,
         TagOptions: js.UndefOr[TagOptionDetails] = js.undefined,
         Tags: js.UndefOr[Tags] = js.undefined
     ): DescribePortfolioOutput = {
       val __obj = js.Dictionary.empty[js.Any]
+      Budgets.foreach(__v => __obj.update("Budgets", __v.asInstanceOf[js.Any]))
       PortfolioDetail.foreach(__v => __obj.update("PortfolioDetail", __v.asInstanceOf[js.Any]))
       TagOptions.foreach(__v => __obj.update("TagOptions", __v.asInstanceOf[js.Any]))
       Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
@@ -1809,12 +1912,12 @@ package servicecatalog {
 
   @js.native
   trait DescribePortfolioShareStatusInput extends js.Object {
-    var PortfolioShareToken: PortfolioShareToken
+    var PortfolioShareToken: Id
   }
 
   object DescribePortfolioShareStatusInput {
     def apply(
-        PortfolioShareToken: PortfolioShareToken
+        PortfolioShareToken: Id
     ): DescribePortfolioShareStatusInput = {
       val __obj = js.Dictionary[js.Any](
         "PortfolioShareToken" -> PortfolioShareToken.asInstanceOf[js.Any]
@@ -1828,7 +1931,7 @@ package servicecatalog {
   trait DescribePortfolioShareStatusOutput extends js.Object {
     var OrganizationNodeValue: js.UndefOr[OrganizationNodeValue]
     var PortfolioId: js.UndefOr[Id]
-    var PortfolioShareToken: js.UndefOr[PortfolioShareToken]
+    var PortfolioShareToken: js.UndefOr[Id]
     var ShareDetails: js.UndefOr[ShareDetails]
     var Status: js.UndefOr[ShareStatus]
   }
@@ -1837,7 +1940,7 @@ package servicecatalog {
     def apply(
         OrganizationNodeValue: js.UndefOr[OrganizationNodeValue] = js.undefined,
         PortfolioId: js.UndefOr[Id] = js.undefined,
-        PortfolioShareToken: js.UndefOr[PortfolioShareToken] = js.undefined,
+        PortfolioShareToken: js.UndefOr[Id] = js.undefined,
         ShareDetails: js.UndefOr[ShareDetails] = js.undefined,
         Status: js.UndefOr[ShareStatus] = js.undefined
     ): DescribePortfolioShareStatusOutput = {
@@ -1873,6 +1976,7 @@ package servicecatalog {
 
   @js.native
   trait DescribeProductAsAdminOutput extends js.Object {
+    var Budgets: js.UndefOr[Budgets]
     var ProductViewDetail: js.UndefOr[ProductViewDetail]
     var ProvisioningArtifactSummaries: js.UndefOr[ProvisioningArtifactSummaries]
     var TagOptions: js.UndefOr[TagOptionDetails]
@@ -1881,12 +1985,14 @@ package servicecatalog {
 
   object DescribeProductAsAdminOutput {
     def apply(
+        Budgets: js.UndefOr[Budgets] = js.undefined,
         ProductViewDetail: js.UndefOr[ProductViewDetail] = js.undefined,
         ProvisioningArtifactSummaries: js.UndefOr[ProvisioningArtifactSummaries] = js.undefined,
         TagOptions: js.UndefOr[TagOptionDetails] = js.undefined,
         Tags: js.UndefOr[Tags] = js.undefined
     ): DescribeProductAsAdminOutput = {
       val __obj = js.Dictionary.empty[js.Any]
+      Budgets.foreach(__v => __obj.update("Budgets", __v.asInstanceOf[js.Any]))
       ProductViewDetail.foreach(__v => __obj.update("ProductViewDetail", __v.asInstanceOf[js.Any]))
       ProvisioningArtifactSummaries.foreach(
         __v => __obj.update("ProvisioningArtifactSummaries", __v.asInstanceOf[js.Any])
@@ -1919,16 +2025,19 @@ package servicecatalog {
 
   @js.native
   trait DescribeProductOutput extends js.Object {
+    var Budgets: js.UndefOr[Budgets]
     var ProductViewSummary: js.UndefOr[ProductViewSummary]
     var ProvisioningArtifacts: js.UndefOr[ProvisioningArtifacts]
   }
 
   object DescribeProductOutput {
     def apply(
+        Budgets: js.UndefOr[Budgets] = js.undefined,
         ProductViewSummary: js.UndefOr[ProductViewSummary] = js.undefined,
         ProvisioningArtifacts: js.UndefOr[ProvisioningArtifacts] = js.undefined
     ): DescribeProductOutput = {
       val __obj = js.Dictionary.empty[js.Any]
+      Budgets.foreach(__v => __obj.update("Budgets", __v.asInstanceOf[js.Any]))
       ProductViewSummary.foreach(__v => __obj.update("ProductViewSummary", __v.asInstanceOf[js.Any]))
       ProvisioningArtifacts.foreach(__v => __obj.update("ProvisioningArtifacts", __v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeProductOutput]
@@ -2212,6 +2321,44 @@ package servicecatalog {
   }
 
   @js.native
+  trait DescribeServiceActionExecutionParametersInput extends js.Object {
+    var ProvisionedProductId: Id
+    var ServiceActionId: Id
+    var AcceptLanguage: js.UndefOr[AcceptLanguage]
+  }
+
+  object DescribeServiceActionExecutionParametersInput {
+    def apply(
+        ProvisionedProductId: Id,
+        ServiceActionId: Id,
+        AcceptLanguage: js.UndefOr[AcceptLanguage] = js.undefined
+    ): DescribeServiceActionExecutionParametersInput = {
+      val __obj = js.Dictionary[js.Any](
+        "ProvisionedProductId" -> ProvisionedProductId.asInstanceOf[js.Any],
+        "ServiceActionId"      -> ServiceActionId.asInstanceOf[js.Any]
+      )
+
+      AcceptLanguage.foreach(__v => __obj.update("AcceptLanguage", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeServiceActionExecutionParametersInput]
+    }
+  }
+
+  @js.native
+  trait DescribeServiceActionExecutionParametersOutput extends js.Object {
+    var ServiceActionParameters: js.UndefOr[ExecutionParameters]
+  }
+
+  object DescribeServiceActionExecutionParametersOutput {
+    def apply(
+        ServiceActionParameters: js.UndefOr[ExecutionParameters] = js.undefined
+    ): DescribeServiceActionExecutionParametersOutput = {
+      val __obj = js.Dictionary.empty[js.Any]
+      ServiceActionParameters.foreach(__v => __obj.update("ServiceActionParameters", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeServiceActionExecutionParametersOutput]
+    }
+  }
+
+  @js.native
   trait DescribeServiceActionInput extends js.Object {
     var Id: Id
     var AcceptLanguage: js.UndefOr[AcceptLanguage]
@@ -2299,6 +2446,38 @@ package servicecatalog {
       val __obj = js.Dictionary.empty[js.Any]
 
       __obj.asInstanceOf[DisableAWSOrganizationsAccessOutput]
+    }
+  }
+
+  @js.native
+  trait DisassociateBudgetFromResourceInput extends js.Object {
+    var BudgetName: BudgetName
+    var ResourceId: Id
+  }
+
+  object DisassociateBudgetFromResourceInput {
+    def apply(
+        BudgetName: BudgetName,
+        ResourceId: Id
+    ): DisassociateBudgetFromResourceInput = {
+      val __obj = js.Dictionary[js.Any](
+        "BudgetName" -> BudgetName.asInstanceOf[js.Any],
+        "ResourceId" -> ResourceId.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[DisassociateBudgetFromResourceInput]
+    }
+  }
+
+  @js.native
+  trait DisassociateBudgetFromResourceOutput extends js.Object {}
+
+  object DisassociateBudgetFromResourceOutput {
+    def apply(
+        ): DisassociateBudgetFromResourceOutput = {
+      val __obj = js.Dictionary.empty[js.Any]
+
+      __obj.asInstanceOf[DisassociateBudgetFromResourceOutput]
     }
   }
 
@@ -2517,6 +2696,7 @@ package servicecatalog {
     var ProvisionedProductId: Id
     var ServiceActionId: Id
     var AcceptLanguage: js.UndefOr[AcceptLanguage]
+    var Parameters: js.UndefOr[ExecutionParameterMap]
   }
 
   object ExecuteProvisionedProductServiceActionInput {
@@ -2524,7 +2704,8 @@ package servicecatalog {
         ExecuteToken: IdempotencyToken,
         ProvisionedProductId: Id,
         ServiceActionId: Id,
-        AcceptLanguage: js.UndefOr[AcceptLanguage] = js.undefined
+        AcceptLanguage: js.UndefOr[AcceptLanguage] = js.undefined,
+        Parameters: js.UndefOr[ExecutionParameterMap] = js.undefined
     ): ExecuteProvisionedProductServiceActionInput = {
       val __obj = js.Dictionary[js.Any](
         "ExecuteToken"         -> ExecuteToken.asInstanceOf[js.Any],
@@ -2533,6 +2714,7 @@ package servicecatalog {
       )
 
       AcceptLanguage.foreach(__v => __obj.update("AcceptLanguage", __v.asInstanceOf[js.Any]))
+      Parameters.foreach(__v => __obj.update("Parameters", __v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ExecuteProvisionedProductServiceActionInput]
     }
   }
@@ -2549,6 +2731,27 @@ package servicecatalog {
       val __obj = js.Dictionary.empty[js.Any]
       RecordDetail.foreach(__v => __obj.update("RecordDetail", __v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ExecuteProvisionedProductServiceActionOutput]
+    }
+  }
+
+  @js.native
+  trait ExecutionParameter extends js.Object {
+    var DefaultValues: js.UndefOr[ExecutionParameterValueList]
+    var Name: js.UndefOr[ExecutionParameterKey]
+    var Type: js.UndefOr[ExecutionParameterType]
+  }
+
+  object ExecutionParameter {
+    def apply(
+        DefaultValues: js.UndefOr[ExecutionParameterValueList] = js.undefined,
+        Name: js.UndefOr[ExecutionParameterKey] = js.undefined,
+        Type: js.UndefOr[ExecutionParameterType] = js.undefined
+    ): ExecutionParameter = {
+      val __obj = js.Dictionary.empty[js.Any]
+      DefaultValues.foreach(__v => __obj.update("DefaultValues", __v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
+      Type.foreach(__v => __obj.update("Type", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ExecutionParameter]
     }
   }
 
@@ -2675,6 +2878,50 @@ package servicecatalog {
       NextPageToken.foreach(__v => __obj.update("NextPageToken", __v.asInstanceOf[js.Any]))
       PortfolioDetails.foreach(__v => __obj.update("PortfolioDetails", __v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListAcceptedPortfolioSharesOutput]
+    }
+  }
+
+  @js.native
+  trait ListBudgetsForResourceInput extends js.Object {
+    var ResourceId: Id
+    var AcceptLanguage: js.UndefOr[AcceptLanguage]
+    var PageSize: js.UndefOr[PageSize]
+    var PageToken: js.UndefOr[PageToken]
+  }
+
+  object ListBudgetsForResourceInput {
+    def apply(
+        ResourceId: Id,
+        AcceptLanguage: js.UndefOr[AcceptLanguage] = js.undefined,
+        PageSize: js.UndefOr[PageSize] = js.undefined,
+        PageToken: js.UndefOr[PageToken] = js.undefined
+    ): ListBudgetsForResourceInput = {
+      val __obj = js.Dictionary[js.Any](
+        "ResourceId" -> ResourceId.asInstanceOf[js.Any]
+      )
+
+      AcceptLanguage.foreach(__v => __obj.update("AcceptLanguage", __v.asInstanceOf[js.Any]))
+      PageSize.foreach(__v => __obj.update("PageSize", __v.asInstanceOf[js.Any]))
+      PageToken.foreach(__v => __obj.update("PageToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListBudgetsForResourceInput]
+    }
+  }
+
+  @js.native
+  trait ListBudgetsForResourceOutput extends js.Object {
+    var Budgets: js.UndefOr[Budgets]
+    var NextPageToken: js.UndefOr[PageToken]
+  }
+
+  object ListBudgetsForResourceOutput {
+    def apply(
+        Budgets: js.UndefOr[Budgets] = js.undefined,
+        NextPageToken: js.UndefOr[PageToken] = js.undefined
+    ): ListBudgetsForResourceOutput = {
+      val __obj = js.Dictionary.empty[js.Any]
+      Budgets.foreach(__v => __obj.update("Budgets", __v.asInstanceOf[js.Any]))
+      NextPageToken.foreach(__v => __obj.update("NextPageToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListBudgetsForResourceOutput]
     }
   }
 
@@ -3304,6 +3551,50 @@ package servicecatalog {
     }
   }
 
+  @js.native
+  trait ListStackInstancesForProvisionedProductInput extends js.Object {
+    var ProvisionedProductId: Id
+    var AcceptLanguage: js.UndefOr[AcceptLanguage]
+    var PageSize: js.UndefOr[PageSize]
+    var PageToken: js.UndefOr[PageToken]
+  }
+
+  object ListStackInstancesForProvisionedProductInput {
+    def apply(
+        ProvisionedProductId: Id,
+        AcceptLanguage: js.UndefOr[AcceptLanguage] = js.undefined,
+        PageSize: js.UndefOr[PageSize] = js.undefined,
+        PageToken: js.UndefOr[PageToken] = js.undefined
+    ): ListStackInstancesForProvisionedProductInput = {
+      val __obj = js.Dictionary[js.Any](
+        "ProvisionedProductId" -> ProvisionedProductId.asInstanceOf[js.Any]
+      )
+
+      AcceptLanguage.foreach(__v => __obj.update("AcceptLanguage", __v.asInstanceOf[js.Any]))
+      PageSize.foreach(__v => __obj.update("PageSize", __v.asInstanceOf[js.Any]))
+      PageToken.foreach(__v => __obj.update("PageToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListStackInstancesForProvisionedProductInput]
+    }
+  }
+
+  @js.native
+  trait ListStackInstancesForProvisionedProductOutput extends js.Object {
+    var NextPageToken: js.UndefOr[PageToken]
+    var StackInstances: js.UndefOr[StackInstances]
+  }
+
+  object ListStackInstancesForProvisionedProductOutput {
+    def apply(
+        NextPageToken: js.UndefOr[PageToken] = js.undefined,
+        StackInstances: js.UndefOr[StackInstances] = js.undefined
+    ): ListStackInstancesForProvisionedProductOutput = {
+      val __obj = js.Dictionary.empty[js.Any]
+      NextPageToken.foreach(__v => __obj.update("NextPageToken", __v.asInstanceOf[js.Any]))
+      StackInstances.foreach(__v => __obj.update("StackInstances", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListStackInstancesForProvisionedProductOutput]
+    }
+  }
+
   /**
     * Filters to use when listing TagOptions.
     */
@@ -3606,6 +3897,12 @@ package servicecatalog {
       Type.foreach(__v => __obj.update("Type", __v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ProductViewSummary]
     }
+  }
+
+  object PropertyKeyEnum {
+    val OWNER = "OWNER"
+
+    val values = IndexedSeq(OWNER)
   }
 
   @js.native
@@ -3915,6 +4212,7 @@ package servicecatalog {
   trait ProvisioningArtifact extends js.Object {
     var CreatedTime: js.UndefOr[ProvisioningArtifactCreatedTime]
     var Description: js.UndefOr[ProvisioningArtifactDescription]
+    var Guidance: js.UndefOr[ProvisioningArtifactGuidance]
     var Id: js.UndefOr[Id]
     var Name: js.UndefOr[ProvisioningArtifactName]
   }
@@ -3923,12 +4221,14 @@ package servicecatalog {
     def apply(
         CreatedTime: js.UndefOr[ProvisioningArtifactCreatedTime] = js.undefined,
         Description: js.UndefOr[ProvisioningArtifactDescription] = js.undefined,
+        Guidance: js.UndefOr[ProvisioningArtifactGuidance] = js.undefined,
         Id: js.UndefOr[Id] = js.undefined,
         Name: js.UndefOr[ProvisioningArtifactName] = js.undefined
     ): ProvisioningArtifact = {
       val __obj = js.Dictionary.empty[js.Any]
       CreatedTime.foreach(__v => __obj.update("CreatedTime", __v.asInstanceOf[js.Any]))
       Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
+      Guidance.foreach(__v => __obj.update("Guidance", __v.asInstanceOf[js.Any]))
       Id.foreach(__v => __obj.update("Id", __v.asInstanceOf[js.Any]))
       Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ProvisioningArtifact]
@@ -3943,6 +4243,7 @@ package servicecatalog {
     var Active: js.UndefOr[ProvisioningArtifactActive]
     var CreatedTime: js.UndefOr[CreationTime]
     var Description: js.UndefOr[ProvisioningArtifactName]
+    var Guidance: js.UndefOr[ProvisioningArtifactGuidance]
     var Id: js.UndefOr[Id]
     var Name: js.UndefOr[ProvisioningArtifactName]
     var Type: js.UndefOr[ProvisioningArtifactType]
@@ -3953,6 +4254,7 @@ package servicecatalog {
         Active: js.UndefOr[ProvisioningArtifactActive] = js.undefined,
         CreatedTime: js.UndefOr[CreationTime] = js.undefined,
         Description: js.UndefOr[ProvisioningArtifactName] = js.undefined,
+        Guidance: js.UndefOr[ProvisioningArtifactGuidance] = js.undefined,
         Id: js.UndefOr[Id] = js.undefined,
         Name: js.UndefOr[ProvisioningArtifactName] = js.undefined,
         Type: js.UndefOr[ProvisioningArtifactType] = js.undefined
@@ -3961,11 +4263,19 @@ package servicecatalog {
       Active.foreach(__v => __obj.update("Active", __v.asInstanceOf[js.Any]))
       CreatedTime.foreach(__v => __obj.update("CreatedTime", __v.asInstanceOf[js.Any]))
       Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
+      Guidance.foreach(__v => __obj.update("Guidance", __v.asInstanceOf[js.Any]))
       Id.foreach(__v => __obj.update("Id", __v.asInstanceOf[js.Any]))
       Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
       Type.foreach(__v => __obj.update("Type", __v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ProvisioningArtifactDetail]
     }
+  }
+
+  object ProvisioningArtifactGuidanceEnum {
+    val DEFAULT    = "DEFAULT"
+    val DEPRECATED = "DEPRECATED"
+
+    val values = IndexedSeq(DEFAULT, DEPRECATED)
   }
 
   /**
@@ -4030,6 +4340,7 @@ package servicecatalog {
   trait ProvisioningArtifactProperties extends js.Object {
     var Info: ProvisioningArtifactInfo
     var Description: js.UndefOr[ProvisioningArtifactDescription]
+    var DisableTemplateValidation: js.UndefOr[DisableTemplateValidation]
     var Name: js.UndefOr[ProvisioningArtifactName]
     var Type: js.UndefOr[ProvisioningArtifactType]
   }
@@ -4038,6 +4349,7 @@ package servicecatalog {
     def apply(
         Info: ProvisioningArtifactInfo,
         Description: js.UndefOr[ProvisioningArtifactDescription] = js.undefined,
+        DisableTemplateValidation: js.UndefOr[DisableTemplateValidation] = js.undefined,
         Name: js.UndefOr[ProvisioningArtifactName] = js.undefined,
         Type: js.UndefOr[ProvisioningArtifactType] = js.undefined
     ): ProvisioningArtifactProperties = {
@@ -4046,6 +4358,7 @@ package servicecatalog {
       )
 
       Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
+      DisableTemplateValidation.foreach(__v => __obj.update("DisableTemplateValidation", __v.asInstanceOf[js.Any]))
       Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
       Type.foreach(__v => __obj.update("Type", __v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ProvisioningArtifactProperties]
@@ -4847,6 +5160,38 @@ package servicecatalog {
     val values = IndexedSeq(ASCENDING, DESCENDING)
   }
 
+  /**
+    * An AWS CloudFormation stack, in a specific account and region, that's part of a stack set operation. A stack instance is a reference to an attempted or actual stack in a given account within a given region. A stack instance can exist without a stack—for example, if the stack couldn't be created for some reason. A stack instance is associated with only one stack set. Each stack instance contains the ID of its associated stack set, as well as the ID of the actual stack and the stack status.
+    */
+  @js.native
+  trait StackInstance extends js.Object {
+    var Account: js.UndefOr[AccountId]
+    var Region: js.UndefOr[Region]
+    var StackInstanceStatus: js.UndefOr[StackInstanceStatus]
+  }
+
+  object StackInstance {
+    def apply(
+        Account: js.UndefOr[AccountId] = js.undefined,
+        Region: js.UndefOr[Region] = js.undefined,
+        StackInstanceStatus: js.UndefOr[StackInstanceStatus] = js.undefined
+    ): StackInstance = {
+      val __obj = js.Dictionary.empty[js.Any]
+      Account.foreach(__v => __obj.update("Account", __v.asInstanceOf[js.Any]))
+      Region.foreach(__v => __obj.update("Region", __v.asInstanceOf[js.Any]))
+      StackInstanceStatus.foreach(__v => __obj.update("StackInstanceStatus", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[StackInstance]
+    }
+  }
+
+  object StackInstanceStatusEnum {
+    val CURRENT    = "CURRENT"
+    val OUTDATED   = "OUTDATED"
+    val INOPERABLE = "INOPERABLE"
+
+    val values = IndexedSeq(CURRENT, OUTDATED, INOPERABLE)
+  }
+
   object StackSetOperationTypeEnum {
     val CREATE = "CREATE"
     val UPDATE = "UPDATE"
@@ -4983,13 +5328,15 @@ package servicecatalog {
     var Id: Id
     var AcceptLanguage: js.UndefOr[AcceptLanguage]
     var Description: js.UndefOr[ConstraintDescription]
+    var Parameters: js.UndefOr[ConstraintParameters]
   }
 
   object UpdateConstraintInput {
     def apply(
         Id: Id,
         AcceptLanguage: js.UndefOr[AcceptLanguage] = js.undefined,
-        Description: js.UndefOr[ConstraintDescription] = js.undefined
+        Description: js.UndefOr[ConstraintDescription] = js.undefined,
+        Parameters: js.UndefOr[ConstraintParameters] = js.undefined
     ): UpdateConstraintInput = {
       val __obj = js.Dictionary[js.Any](
         "Id" -> Id.asInstanceOf[js.Any]
@@ -4997,6 +5344,7 @@ package servicecatalog {
 
       AcceptLanguage.foreach(__v => __obj.update("AcceptLanguage", __v.asInstanceOf[js.Any]))
       Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
+      Parameters.foreach(__v => __obj.update("Parameters", __v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateConstraintInput]
     }
   }
@@ -5200,12 +5548,65 @@ package servicecatalog {
   }
 
   @js.native
+  trait UpdateProvisionedProductPropertiesInput extends js.Object {
+    var IdempotencyToken: IdempotencyToken
+    var ProvisionedProductId: Id
+    var ProvisionedProductProperties: ProvisionedProductProperties
+    var AcceptLanguage: js.UndefOr[AcceptLanguage]
+  }
+
+  object UpdateProvisionedProductPropertiesInput {
+    def apply(
+        IdempotencyToken: IdempotencyToken,
+        ProvisionedProductId: Id,
+        ProvisionedProductProperties: ProvisionedProductProperties,
+        AcceptLanguage: js.UndefOr[AcceptLanguage] = js.undefined
+    ): UpdateProvisionedProductPropertiesInput = {
+      val __obj = js.Dictionary[js.Any](
+        "IdempotencyToken"             -> IdempotencyToken.asInstanceOf[js.Any],
+        "ProvisionedProductId"         -> ProvisionedProductId.asInstanceOf[js.Any],
+        "ProvisionedProductProperties" -> ProvisionedProductProperties.asInstanceOf[js.Any]
+      )
+
+      AcceptLanguage.foreach(__v => __obj.update("AcceptLanguage", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateProvisionedProductPropertiesInput]
+    }
+  }
+
+  @js.native
+  trait UpdateProvisionedProductPropertiesOutput extends js.Object {
+    var ProvisionedProductId: js.UndefOr[Id]
+    var ProvisionedProductProperties: js.UndefOr[ProvisionedProductProperties]
+    var RecordId: js.UndefOr[Id]
+    var Status: js.UndefOr[RecordStatus]
+  }
+
+  object UpdateProvisionedProductPropertiesOutput {
+    def apply(
+        ProvisionedProductId: js.UndefOr[Id] = js.undefined,
+        ProvisionedProductProperties: js.UndefOr[ProvisionedProductProperties] = js.undefined,
+        RecordId: js.UndefOr[Id] = js.undefined,
+        Status: js.UndefOr[RecordStatus] = js.undefined
+    ): UpdateProvisionedProductPropertiesOutput = {
+      val __obj = js.Dictionary.empty[js.Any]
+      ProvisionedProductId.foreach(__v => __obj.update("ProvisionedProductId", __v.asInstanceOf[js.Any]))
+      ProvisionedProductProperties.foreach(
+        __v => __obj.update("ProvisionedProductProperties", __v.asInstanceOf[js.Any])
+      )
+      RecordId.foreach(__v => __obj.update("RecordId", __v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.update("Status", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateProvisionedProductPropertiesOutput]
+    }
+  }
+
+  @js.native
   trait UpdateProvisioningArtifactInput extends js.Object {
     var ProductId: Id
     var ProvisioningArtifactId: Id
     var AcceptLanguage: js.UndefOr[AcceptLanguage]
     var Active: js.UndefOr[ProvisioningArtifactActive]
     var Description: js.UndefOr[ProvisioningArtifactDescription]
+    var Guidance: js.UndefOr[ProvisioningArtifactGuidance]
     var Name: js.UndefOr[ProvisioningArtifactName]
   }
 
@@ -5216,6 +5617,7 @@ package servicecatalog {
         AcceptLanguage: js.UndefOr[AcceptLanguage] = js.undefined,
         Active: js.UndefOr[ProvisioningArtifactActive] = js.undefined,
         Description: js.UndefOr[ProvisioningArtifactDescription] = js.undefined,
+        Guidance: js.UndefOr[ProvisioningArtifactGuidance] = js.undefined,
         Name: js.UndefOr[ProvisioningArtifactName] = js.undefined
     ): UpdateProvisioningArtifactInput = {
       val __obj = js.Dictionary[js.Any](
@@ -5226,6 +5628,7 @@ package servicecatalog {
       AcceptLanguage.foreach(__v => __obj.update("AcceptLanguage", __v.asInstanceOf[js.Any]))
       Active.foreach(__v => __obj.update("Active", __v.asInstanceOf[js.Any]))
       Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
+      Guidance.foreach(__v => __obj.update("Guidance", __v.asInstanceOf[js.Any]))
       Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateProvisioningArtifactInput]
     }

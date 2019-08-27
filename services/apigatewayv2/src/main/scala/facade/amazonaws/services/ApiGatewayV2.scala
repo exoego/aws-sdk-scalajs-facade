@@ -16,6 +16,7 @@ package object apigatewayv2 {
   type ContentHandlingStrategy            = String
   type DeploymentStatus                   = String
   type DomainNameConfigurations           = js.Array[DomainNameConfiguration]
+  type DomainNameStatus                   = String
   type EndpointType                       = String
   type Id                                 = String
   type IdentitySourceList                 = js.Array[__string]
@@ -31,6 +32,7 @@ package object apigatewayv2 {
   type RouteModels                        = js.Dictionary[StringWithLengthBetween1And128]
   type RouteParameters                    = js.Dictionary[ParameterConstraints]
   type RouteSettingsMap                   = js.Dictionary[RouteSettings]
+  type SecurityPolicy                     = String
   type SelectionExpression                = String
   type SelectionKey                       = String
   type StageVariablesMap                  = js.Dictionary[StringWithLengthBetween0And2048]
@@ -39,9 +41,11 @@ package object apigatewayv2 {
   type StringWithLengthBetween0And32K     = String
   type StringWithLengthBetween1And1024    = String
   type StringWithLengthBetween1And128     = String
+  type StringWithLengthBetween1And1600    = String
   type StringWithLengthBetween1And256     = String
   type StringWithLengthBetween1And512     = String
   type StringWithLengthBetween1And64      = String
+  type Tags                               = js.Dictionary[StringWithLengthBetween1And1600]
   type TemplateMap                        = js.Dictionary[StringWithLengthBetween0And32K]
   type UriWithLengthBetween1And2048       = String
   type __boolean                          = Boolean
@@ -59,6 +63,7 @@ package object apigatewayv2 {
   type __listOfRouteResponse              = js.Array[RouteResponse]
   type __listOfStage                      = js.Array[Stage]
   type __listOf__string                   = js.Array[__string]
+  type __mapOf__string                    = js.Dictionary[__string]
   type __string                           = String
   type __timestampIso8601                 = js.Date
 
@@ -146,6 +151,11 @@ package object apigatewayv2 {
     def getStageFuture(params: GetStageRequest): Future[GetStageResponse] = service.getStage(params).promise.toFuture
     def getStagesFuture(params: GetStagesRequest): Future[GetStagesResponse] =
       service.getStages(params).promise.toFuture
+    def getTagsFuture(params: GetTagsRequest): Future[GetTagsResponse] = service.getTags(params).promise.toFuture
+    def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] =
+      service.tagResource(params).promise.toFuture
+    def untagResourceFuture(params: UntagResourceRequest): Future[js.Object] =
+      service.untagResource(params).promise.toFuture
     def updateApiFuture(params: UpdateApiRequest): Future[UpdateApiResponse] =
       service.updateApi(params).promise.toFuture
     def updateApiMappingFuture(params: UpdateApiMappingRequest): Future[UpdateApiMappingResponse] =
@@ -227,6 +237,9 @@ package apigatewayv2 {
     def getRoutes(params: GetRoutesRequest): Request[GetRoutesResponse]                         = js.native
     def getStage(params: GetStageRequest): Request[GetStageResponse]                            = js.native
     def getStages(params: GetStagesRequest): Request[GetStagesResponse]                         = js.native
+    def getTags(params: GetTagsRequest): Request[GetTagsResponse]                               = js.native
+    def tagResource(params: TagResourceRequest): Request[TagResourceResponse]                   = js.native
+    def untagResource(params: UntagResourceRequest): Request[js.Object]                         = js.native
     def updateApi(params: UpdateApiRequest): Request[UpdateApiResponse]                         = js.native
     def updateApiMapping(params: UpdateApiMappingRequest): Request[UpdateApiMappingResponse]    = js.native
     def updateAuthorizer(params: UpdateAuthorizerRequest): Request[UpdateAuthorizerResponse]    = js.native
@@ -277,6 +290,7 @@ package apigatewayv2 {
     var CreatedDate: js.UndefOr[__timestampIso8601]
     var Description: js.UndefOr[StringWithLengthBetween0And1024]
     var DisableSchemaValidation: js.UndefOr[__boolean]
+    var Tags: js.UndefOr[Tags]
     var Version: js.UndefOr[StringWithLengthBetween1And64]
     var Warnings: js.UndefOr[__listOf__string]
   }
@@ -292,6 +306,7 @@ package apigatewayv2 {
         CreatedDate: js.UndefOr[__timestampIso8601] = js.undefined,
         Description: js.UndefOr[StringWithLengthBetween0And1024] = js.undefined,
         DisableSchemaValidation: js.UndefOr[__boolean] = js.undefined,
+        Tags: js.UndefOr[Tags] = js.undefined,
         Version: js.UndefOr[StringWithLengthBetween1And64] = js.undefined,
         Warnings: js.UndefOr[__listOf__string] = js.undefined
     ): Api = {
@@ -307,6 +322,7 @@ package apigatewayv2 {
       CreatedDate.foreach(__v => __obj.update("CreatedDate", __v.asInstanceOf[js.Any]))
       Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
       DisableSchemaValidation.foreach(__v => __obj.update("DisableSchemaValidation", __v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
       Version.foreach(__v => __obj.update("Version", __v.asInstanceOf[js.Any]))
       Warnings.foreach(__v => __obj.update("Warnings", __v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Api]
@@ -491,6 +507,7 @@ package apigatewayv2 {
     var ApiKeySelectionExpression: js.UndefOr[SelectionExpression]
     var Description: js.UndefOr[StringWithLengthBetween0And1024]
     var DisableSchemaValidation: js.UndefOr[__boolean]
+    var Tags: js.UndefOr[Tags]
     var Version: js.UndefOr[StringWithLengthBetween1And64]
   }
 
@@ -502,6 +519,7 @@ package apigatewayv2 {
         ApiKeySelectionExpression: js.UndefOr[SelectionExpression] = js.undefined,
         Description: js.UndefOr[StringWithLengthBetween0And1024] = js.undefined,
         DisableSchemaValidation: js.UndefOr[__boolean] = js.undefined,
+        Tags: js.UndefOr[Tags] = js.undefined,
         Version: js.UndefOr[StringWithLengthBetween1And64] = js.undefined
     ): CreateApiRequest = {
       val __obj = js.Dictionary[js.Any](
@@ -513,6 +531,7 @@ package apigatewayv2 {
       ApiKeySelectionExpression.foreach(__v => __obj.update("ApiKeySelectionExpression", __v.asInstanceOf[js.Any]))
       Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
       DisableSchemaValidation.foreach(__v => __obj.update("DisableSchemaValidation", __v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
       Version.foreach(__v => __obj.update("Version", __v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateApiRequest]
     }
@@ -529,6 +548,7 @@ package apigatewayv2 {
     var Name: js.UndefOr[StringWithLengthBetween1And128]
     var ProtocolType: js.UndefOr[ProtocolType]
     var RouteSelectionExpression: js.UndefOr[SelectionExpression]
+    var Tags: js.UndefOr[Tags]
     var Version: js.UndefOr[StringWithLengthBetween1And64]
     var Warnings: js.UndefOr[__listOf__string]
   }
@@ -544,6 +564,7 @@ package apigatewayv2 {
         Name: js.UndefOr[StringWithLengthBetween1And128] = js.undefined,
         ProtocolType: js.UndefOr[ProtocolType] = js.undefined,
         RouteSelectionExpression: js.UndefOr[SelectionExpression] = js.undefined,
+        Tags: js.UndefOr[Tags] = js.undefined,
         Version: js.UndefOr[StringWithLengthBetween1And64] = js.undefined,
         Warnings: js.UndefOr[__listOf__string] = js.undefined
     ): CreateApiResponse = {
@@ -557,6 +578,7 @@ package apigatewayv2 {
       Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
       ProtocolType.foreach(__v => __obj.update("ProtocolType", __v.asInstanceOf[js.Any]))
       RouteSelectionExpression.foreach(__v => __obj.update("RouteSelectionExpression", __v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
       Version.foreach(__v => __obj.update("Version", __v.asInstanceOf[js.Any]))
       Warnings.foreach(__v => __obj.update("Warnings", __v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateApiResponse]
@@ -705,18 +727,21 @@ package apigatewayv2 {
   trait CreateDomainNameRequest extends js.Object {
     var DomainName: StringWithLengthBetween1And512
     var DomainNameConfigurations: js.UndefOr[DomainNameConfigurations]
+    var Tags: js.UndefOr[Tags]
   }
 
   object CreateDomainNameRequest {
     def apply(
         DomainName: StringWithLengthBetween1And512,
-        DomainNameConfigurations: js.UndefOr[DomainNameConfigurations] = js.undefined
+        DomainNameConfigurations: js.UndefOr[DomainNameConfigurations] = js.undefined,
+        Tags: js.UndefOr[Tags] = js.undefined
     ): CreateDomainNameRequest = {
       val __obj = js.Dictionary[js.Any](
         "DomainName" -> DomainName.asInstanceOf[js.Any]
       )
 
       DomainNameConfigurations.foreach(__v => __obj.update("DomainNameConfigurations", __v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateDomainNameRequest]
     }
   }
@@ -726,13 +751,15 @@ package apigatewayv2 {
     var ApiMappingSelectionExpression: js.UndefOr[SelectionExpression]
     var DomainName: js.UndefOr[StringWithLengthBetween1And512]
     var DomainNameConfigurations: js.UndefOr[DomainNameConfigurations]
+    var Tags: js.UndefOr[Tags]
   }
 
   object CreateDomainNameResponse {
     def apply(
         ApiMappingSelectionExpression: js.UndefOr[SelectionExpression] = js.undefined,
         DomainName: js.UndefOr[StringWithLengthBetween1And512] = js.undefined,
-        DomainNameConfigurations: js.UndefOr[DomainNameConfigurations] = js.undefined
+        DomainNameConfigurations: js.UndefOr[DomainNameConfigurations] = js.undefined,
+        Tags: js.UndefOr[Tags] = js.undefined
     ): CreateDomainNameResponse = {
       val __obj = js.Dictionary.empty[js.Any]
       ApiMappingSelectionExpression.foreach(
@@ -740,6 +767,7 @@ package apigatewayv2 {
       )
       DomainName.foreach(__v => __obj.update("DomainName", __v.asInstanceOf[js.Any]))
       DomainNameConfigurations.foreach(__v => __obj.update("DomainNameConfigurations", __v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateDomainNameResponse]
     }
   }
@@ -1152,6 +1180,7 @@ package apigatewayv2 {
     var Description: js.UndefOr[StringWithLengthBetween0And1024]
     var RouteSettings: js.UndefOr[RouteSettingsMap]
     var StageVariables: js.UndefOr[StageVariablesMap]
+    var Tags: js.UndefOr[Tags]
   }
 
   object CreateStageRequest {
@@ -1164,7 +1193,8 @@ package apigatewayv2 {
         DeploymentId: js.UndefOr[Id] = js.undefined,
         Description: js.UndefOr[StringWithLengthBetween0And1024] = js.undefined,
         RouteSettings: js.UndefOr[RouteSettingsMap] = js.undefined,
-        StageVariables: js.UndefOr[StageVariablesMap] = js.undefined
+        StageVariables: js.UndefOr[StageVariablesMap] = js.undefined,
+        Tags: js.UndefOr[Tags] = js.undefined
     ): CreateStageRequest = {
       val __obj = js.Dictionary[js.Any](
         "ApiId"     -> ApiId.asInstanceOf[js.Any],
@@ -1178,6 +1208,7 @@ package apigatewayv2 {
       Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
       RouteSettings.foreach(__v => __obj.update("RouteSettings", __v.asInstanceOf[js.Any]))
       StageVariables.foreach(__v => __obj.update("StageVariables", __v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateStageRequest]
     }
   }
@@ -1194,6 +1225,7 @@ package apigatewayv2 {
     var RouteSettings: js.UndefOr[RouteSettingsMap]
     var StageName: js.UndefOr[StringWithLengthBetween1And128]
     var StageVariables: js.UndefOr[StageVariablesMap]
+    var Tags: js.UndefOr[Tags]
   }
 
   object CreateStageResponse {
@@ -1207,7 +1239,8 @@ package apigatewayv2 {
         LastUpdatedDate: js.UndefOr[__timestampIso8601] = js.undefined,
         RouteSettings: js.UndefOr[RouteSettingsMap] = js.undefined,
         StageName: js.UndefOr[StringWithLengthBetween1And128] = js.undefined,
-        StageVariables: js.UndefOr[StageVariablesMap] = js.undefined
+        StageVariables: js.UndefOr[StageVariablesMap] = js.undefined,
+        Tags: js.UndefOr[Tags] = js.undefined
     ): CreateStageResponse = {
       val __obj = js.Dictionary.empty[js.Any]
       AccessLogSettings.foreach(__v => __obj.update("AccessLogSettings", __v.asInstanceOf[js.Any]))
@@ -1220,6 +1253,7 @@ package apigatewayv2 {
       RouteSettings.foreach(__v => __obj.update("RouteSettings", __v.asInstanceOf[js.Any]))
       StageName.foreach(__v => __obj.update("StageName", __v.asInstanceOf[js.Any]))
       StageVariables.foreach(__v => __obj.update("StageVariables", __v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateStageResponse]
     }
   }
@@ -1495,13 +1529,15 @@ package apigatewayv2 {
     var DomainName: StringWithLengthBetween1And512
     var ApiMappingSelectionExpression: js.UndefOr[SelectionExpression]
     var DomainNameConfigurations: js.UndefOr[DomainNameConfigurations]
+    var Tags: js.UndefOr[Tags]
   }
 
   object DomainName {
     def apply(
         DomainName: StringWithLengthBetween1And512,
         ApiMappingSelectionExpression: js.UndefOr[SelectionExpression] = js.undefined,
-        DomainNameConfigurations: js.UndefOr[DomainNameConfigurations] = js.undefined
+        DomainNameConfigurations: js.UndefOr[DomainNameConfigurations] = js.undefined,
+        Tags: js.UndefOr[Tags] = js.undefined
     ): DomainName = {
       val __obj = js.Dictionary[js.Any](
         "DomainName" -> DomainName.asInstanceOf[js.Any]
@@ -1511,6 +1547,7 @@ package apigatewayv2 {
         __v => __obj.update("ApiMappingSelectionExpression", __v.asInstanceOf[js.Any])
       )
       DomainNameConfigurations.foreach(__v => __obj.update("DomainNameConfigurations", __v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DomainName]
     }
   }
@@ -1524,8 +1561,11 @@ package apigatewayv2 {
     var CertificateArn: js.UndefOr[Arn]
     var CertificateName: js.UndefOr[StringWithLengthBetween1And128]
     var CertificateUploadDate: js.UndefOr[__timestampIso8601]
+    var DomainNameStatus: js.UndefOr[DomainNameStatus]
+    var DomainNameStatusMessage: js.UndefOr[__string]
     var EndpointType: js.UndefOr[EndpointType]
     var HostedZoneId: js.UndefOr[__string]
+    var SecurityPolicy: js.UndefOr[SecurityPolicy]
   }
 
   object DomainNameConfiguration {
@@ -1534,18 +1574,34 @@ package apigatewayv2 {
         CertificateArn: js.UndefOr[Arn] = js.undefined,
         CertificateName: js.UndefOr[StringWithLengthBetween1And128] = js.undefined,
         CertificateUploadDate: js.UndefOr[__timestampIso8601] = js.undefined,
+        DomainNameStatus: js.UndefOr[DomainNameStatus] = js.undefined,
+        DomainNameStatusMessage: js.UndefOr[__string] = js.undefined,
         EndpointType: js.UndefOr[EndpointType] = js.undefined,
-        HostedZoneId: js.UndefOr[__string] = js.undefined
+        HostedZoneId: js.UndefOr[__string] = js.undefined,
+        SecurityPolicy: js.UndefOr[SecurityPolicy] = js.undefined
     ): DomainNameConfiguration = {
       val __obj = js.Dictionary.empty[js.Any]
       ApiGatewayDomainName.foreach(__v => __obj.update("ApiGatewayDomainName", __v.asInstanceOf[js.Any]))
       CertificateArn.foreach(__v => __obj.update("CertificateArn", __v.asInstanceOf[js.Any]))
       CertificateName.foreach(__v => __obj.update("CertificateName", __v.asInstanceOf[js.Any]))
       CertificateUploadDate.foreach(__v => __obj.update("CertificateUploadDate", __v.asInstanceOf[js.Any]))
+      DomainNameStatus.foreach(__v => __obj.update("DomainNameStatus", __v.asInstanceOf[js.Any]))
+      DomainNameStatusMessage.foreach(__v => __obj.update("DomainNameStatusMessage", __v.asInstanceOf[js.Any]))
       EndpointType.foreach(__v => __obj.update("EndpointType", __v.asInstanceOf[js.Any]))
       HostedZoneId.foreach(__v => __obj.update("HostedZoneId", __v.asInstanceOf[js.Any]))
+      SecurityPolicy.foreach(__v => __obj.update("SecurityPolicy", __v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DomainNameConfiguration]
     }
+  }
+
+  /**
+    * The status of the domain name migration. The valid values are AVAILABLE and UPDATING. If the status is UPDATING, the domain cannot be modified further until the existing operation is complete. If it is AVAILABLE, the domain can be updated.
+    */
+  object DomainNameStatusEnum {
+    val AVAILABLE = "AVAILABLE"
+    val UPDATING  = "UPDATING"
+
+    val values = IndexedSeq(AVAILABLE, UPDATING)
   }
 
   /**
@@ -1671,6 +1727,7 @@ package apigatewayv2 {
     var Name: js.UndefOr[StringWithLengthBetween1And128]
     var ProtocolType: js.UndefOr[ProtocolType]
     var RouteSelectionExpression: js.UndefOr[SelectionExpression]
+    var Tags: js.UndefOr[Tags]
     var Version: js.UndefOr[StringWithLengthBetween1And64]
     var Warnings: js.UndefOr[__listOf__string]
   }
@@ -1686,6 +1743,7 @@ package apigatewayv2 {
         Name: js.UndefOr[StringWithLengthBetween1And128] = js.undefined,
         ProtocolType: js.UndefOr[ProtocolType] = js.undefined,
         RouteSelectionExpression: js.UndefOr[SelectionExpression] = js.undefined,
+        Tags: js.UndefOr[Tags] = js.undefined,
         Version: js.UndefOr[StringWithLengthBetween1And64] = js.undefined,
         Warnings: js.UndefOr[__listOf__string] = js.undefined
     ): GetApiResponse = {
@@ -1699,6 +1757,7 @@ package apigatewayv2 {
       Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
       ProtocolType.foreach(__v => __obj.update("ProtocolType", __v.asInstanceOf[js.Any]))
       RouteSelectionExpression.foreach(__v => __obj.update("RouteSelectionExpression", __v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
       Version.foreach(__v => __obj.update("Version", __v.asInstanceOf[js.Any]))
       Warnings.foreach(__v => __obj.update("Warnings", __v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetApiResponse]
@@ -1955,13 +2014,15 @@ package apigatewayv2 {
     var ApiMappingSelectionExpression: js.UndefOr[SelectionExpression]
     var DomainName: js.UndefOr[StringWithLengthBetween1And512]
     var DomainNameConfigurations: js.UndefOr[DomainNameConfigurations]
+    var Tags: js.UndefOr[Tags]
   }
 
   object GetDomainNameResponse {
     def apply(
         ApiMappingSelectionExpression: js.UndefOr[SelectionExpression] = js.undefined,
         DomainName: js.UndefOr[StringWithLengthBetween1And512] = js.undefined,
-        DomainNameConfigurations: js.UndefOr[DomainNameConfigurations] = js.undefined
+        DomainNameConfigurations: js.UndefOr[DomainNameConfigurations] = js.undefined,
+        Tags: js.UndefOr[Tags] = js.undefined
     ): GetDomainNameResponse = {
       val __obj = js.Dictionary.empty[js.Any]
       ApiMappingSelectionExpression.foreach(
@@ -1969,6 +2030,7 @@ package apigatewayv2 {
       )
       DomainName.foreach(__v => __obj.update("DomainName", __v.asInstanceOf[js.Any]))
       DomainNameConfigurations.foreach(__v => __obj.update("DomainNameConfigurations", __v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetDomainNameResponse]
     }
   }
@@ -2586,6 +2648,7 @@ package apigatewayv2 {
     var RouteSettings: js.UndefOr[RouteSettingsMap]
     var StageName: js.UndefOr[StringWithLengthBetween1And128]
     var StageVariables: js.UndefOr[StageVariablesMap]
+    var Tags: js.UndefOr[Tags]
   }
 
   object GetStageResponse {
@@ -2599,7 +2662,8 @@ package apigatewayv2 {
         LastUpdatedDate: js.UndefOr[__timestampIso8601] = js.undefined,
         RouteSettings: js.UndefOr[RouteSettingsMap] = js.undefined,
         StageName: js.UndefOr[StringWithLengthBetween1And128] = js.undefined,
-        StageVariables: js.UndefOr[StageVariablesMap] = js.undefined
+        StageVariables: js.UndefOr[StageVariablesMap] = js.undefined,
+        Tags: js.UndefOr[Tags] = js.undefined
     ): GetStageResponse = {
       val __obj = js.Dictionary.empty[js.Any]
       AccessLogSettings.foreach(__v => __obj.update("AccessLogSettings", __v.asInstanceOf[js.Any]))
@@ -2612,6 +2676,7 @@ package apigatewayv2 {
       RouteSettings.foreach(__v => __obj.update("RouteSettings", __v.asInstanceOf[js.Any]))
       StageName.foreach(__v => __obj.update("StageName", __v.asInstanceOf[js.Any]))
       StageVariables.foreach(__v => __obj.update("StageVariables", __v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetStageResponse]
     }
   }
@@ -2654,6 +2719,38 @@ package apigatewayv2 {
       Items.foreach(__v => __obj.update("Items", __v.asInstanceOf[js.Any]))
       NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetStagesResponse]
+    }
+  }
+
+  @js.native
+  trait GetTagsRequest extends js.Object {
+    var ResourceArn: __string
+  }
+
+  object GetTagsRequest {
+    def apply(
+        ResourceArn: __string
+    ): GetTagsRequest = {
+      val __obj = js.Dictionary[js.Any](
+        "ResourceArn" -> ResourceArn.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[GetTagsRequest]
+    }
+  }
+
+  @js.native
+  trait GetTagsResponse extends js.Object {
+    var Tags: js.UndefOr[__mapOf__string]
+  }
+
+  object GetTagsResponse {
+    def apply(
+        Tags: js.UndefOr[__mapOf__string] = js.undefined
+    ): GetTagsResponse = {
+      val __obj = js.Dictionary.empty[js.Any]
+      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetTagsResponse]
     }
   }
 
@@ -2968,6 +3065,16 @@ package apigatewayv2 {
   }
 
   /**
+    * The Transport Layer Security (TLS) version of the security policy for this domain name. The valid values are TLS_1_0 and TLS_1_2.
+    */
+  object SecurityPolicyEnum {
+    val TLS_1_0 = "TLS_1_0"
+    val TLS_1_2 = "TLS_1_2"
+
+    val values = IndexedSeq(TLS_1_0, TLS_1_2)
+  }
+
+  /**
     * Represents an API stage.
     */
   @js.native
@@ -2982,6 +3089,7 @@ package apigatewayv2 {
     var LastUpdatedDate: js.UndefOr[__timestampIso8601]
     var RouteSettings: js.UndefOr[RouteSettingsMap]
     var StageVariables: js.UndefOr[StageVariablesMap]
+    var Tags: js.UndefOr[Tags]
   }
 
   object Stage {
@@ -2995,7 +3103,8 @@ package apigatewayv2 {
         Description: js.UndefOr[StringWithLengthBetween0And1024] = js.undefined,
         LastUpdatedDate: js.UndefOr[__timestampIso8601] = js.undefined,
         RouteSettings: js.UndefOr[RouteSettingsMap] = js.undefined,
-        StageVariables: js.UndefOr[StageVariablesMap] = js.undefined
+        StageVariables: js.UndefOr[StageVariablesMap] = js.undefined,
+        Tags: js.UndefOr[Tags] = js.undefined
     ): Stage = {
       val __obj = js.Dictionary[js.Any](
         "StageName" -> StageName.asInstanceOf[js.Any]
@@ -3010,7 +3119,60 @@ package apigatewayv2 {
       LastUpdatedDate.foreach(__v => __obj.update("LastUpdatedDate", __v.asInstanceOf[js.Any]))
       RouteSettings.foreach(__v => __obj.update("RouteSettings", __v.asInstanceOf[js.Any]))
       StageVariables.foreach(__v => __obj.update("StageVariables", __v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Stage]
+    }
+  }
+
+  @js.native
+  trait TagResourceRequest extends js.Object {
+    var ResourceArn: __string
+    var Tags: js.UndefOr[Tags]
+  }
+
+  object TagResourceRequest {
+    def apply(
+        ResourceArn: __string,
+        Tags: js.UndefOr[Tags] = js.undefined
+    ): TagResourceRequest = {
+      val __obj = js.Dictionary[js.Any](
+        "ResourceArn" -> ResourceArn.asInstanceOf[js.Any]
+      )
+
+      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[TagResourceRequest]
+    }
+  }
+
+  @js.native
+  trait TagResourceResponse extends js.Object {}
+
+  object TagResourceResponse {
+    def apply(
+        ): TagResourceResponse = {
+      val __obj = js.Dictionary.empty[js.Any]
+
+      __obj.asInstanceOf[TagResourceResponse]
+    }
+  }
+
+  @js.native
+  trait UntagResourceRequest extends js.Object {
+    var ResourceArn: __string
+    var TagKeys: __listOf__string
+  }
+
+  object UntagResourceRequest {
+    def apply(
+        ResourceArn: __string,
+        TagKeys: __listOf__string
+    ): UntagResourceRequest = {
+      val __obj = js.Dictionary[js.Any](
+        "ResourceArn" -> ResourceArn.asInstanceOf[js.Any],
+        "TagKeys"     -> TagKeys.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[UntagResourceRequest]
     }
   }
 
@@ -3113,6 +3275,7 @@ package apigatewayv2 {
     var Name: js.UndefOr[StringWithLengthBetween1And128]
     var ProtocolType: js.UndefOr[ProtocolType]
     var RouteSelectionExpression: js.UndefOr[SelectionExpression]
+    var Tags: js.UndefOr[Tags]
     var Version: js.UndefOr[StringWithLengthBetween1And64]
     var Warnings: js.UndefOr[__listOf__string]
   }
@@ -3128,6 +3291,7 @@ package apigatewayv2 {
         Name: js.UndefOr[StringWithLengthBetween1And128] = js.undefined,
         ProtocolType: js.UndefOr[ProtocolType] = js.undefined,
         RouteSelectionExpression: js.UndefOr[SelectionExpression] = js.undefined,
+        Tags: js.UndefOr[Tags] = js.undefined,
         Version: js.UndefOr[StringWithLengthBetween1And64] = js.undefined,
         Warnings: js.UndefOr[__listOf__string] = js.undefined
     ): UpdateApiResponse = {
@@ -3141,6 +3305,7 @@ package apigatewayv2 {
       Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
       ProtocolType.foreach(__v => __obj.update("ProtocolType", __v.asInstanceOf[js.Any]))
       RouteSelectionExpression.foreach(__v => __obj.update("RouteSelectionExpression", __v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
       Version.foreach(__v => __obj.update("Version", __v.asInstanceOf[js.Any]))
       Warnings.foreach(__v => __obj.update("Warnings", __v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateApiResponse]
@@ -3313,13 +3478,15 @@ package apigatewayv2 {
     var ApiMappingSelectionExpression: js.UndefOr[SelectionExpression]
     var DomainName: js.UndefOr[StringWithLengthBetween1And512]
     var DomainNameConfigurations: js.UndefOr[DomainNameConfigurations]
+    var Tags: js.UndefOr[Tags]
   }
 
   object UpdateDomainNameResponse {
     def apply(
         ApiMappingSelectionExpression: js.UndefOr[SelectionExpression] = js.undefined,
         DomainName: js.UndefOr[StringWithLengthBetween1And512] = js.undefined,
-        DomainNameConfigurations: js.UndefOr[DomainNameConfigurations] = js.undefined
+        DomainNameConfigurations: js.UndefOr[DomainNameConfigurations] = js.undefined,
+        Tags: js.UndefOr[Tags] = js.undefined
     ): UpdateDomainNameResponse = {
       val __obj = js.Dictionary.empty[js.Any]
       ApiMappingSelectionExpression.foreach(
@@ -3327,6 +3494,7 @@ package apigatewayv2 {
       )
       DomainName.foreach(__v => __obj.update("DomainName", __v.asInstanceOf[js.Any]))
       DomainNameConfigurations.foreach(__v => __obj.update("DomainNameConfigurations", __v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateDomainNameResponse]
     }
   }
@@ -3796,6 +3964,7 @@ package apigatewayv2 {
     var RouteSettings: js.UndefOr[RouteSettingsMap]
     var StageName: js.UndefOr[StringWithLengthBetween1And128]
     var StageVariables: js.UndefOr[StageVariablesMap]
+    var Tags: js.UndefOr[Tags]
   }
 
   object UpdateStageResponse {
@@ -3809,7 +3978,8 @@ package apigatewayv2 {
         LastUpdatedDate: js.UndefOr[__timestampIso8601] = js.undefined,
         RouteSettings: js.UndefOr[RouteSettingsMap] = js.undefined,
         StageName: js.UndefOr[StringWithLengthBetween1And128] = js.undefined,
-        StageVariables: js.UndefOr[StageVariablesMap] = js.undefined
+        StageVariables: js.UndefOr[StageVariablesMap] = js.undefined,
+        Tags: js.UndefOr[Tags] = js.undefined
     ): UpdateStageResponse = {
       val __obj = js.Dictionary.empty[js.Any]
       AccessLogSettings.foreach(__v => __obj.update("AccessLogSettings", __v.asInstanceOf[js.Any]))
@@ -3822,6 +3992,7 @@ package apigatewayv2 {
       RouteSettings.foreach(__v => __obj.update("RouteSettings", __v.asInstanceOf[js.Any]))
       StageName.foreach(__v => __obj.update("StageName", __v.asInstanceOf[js.Any]))
       StageVariables.foreach(__v => __obj.update("StageVariables", __v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateStageResponse]
     }
   }

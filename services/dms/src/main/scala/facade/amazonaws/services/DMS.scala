@@ -39,6 +39,7 @@ package object dms {
   type PendingMaintenanceActionDetails         = js.Array[PendingMaintenanceAction]
   type PendingMaintenanceActions               = js.Array[ResourcePendingMaintenanceActions]
   type RefreshSchemasStatusTypeValue           = String
+  type ReleaseStatusValues                     = String
   type ReloadOptionValue                       = String
   type ReplicationEndpointTypeValue            = String
   type ReplicationInstanceList                 = js.Array[ReplicationInstance]
@@ -306,7 +307,7 @@ package dms {
   }
 
   /**
-    * <p/>
+    * Associates a set of tags with an AWS DMS resource.
     */
   @js.native
   trait AddTagsToResourceMessage extends js.Object {
@@ -1107,14 +1108,17 @@ package dms {
   @js.native
   trait DescribeAccountAttributesResponse extends js.Object {
     var AccountQuotas: js.UndefOr[AccountQuotaList]
+    var UniqueAccountIdentifier: js.UndefOr[String]
   }
 
   object DescribeAccountAttributesResponse {
     def apply(
-        AccountQuotas: js.UndefOr[AccountQuotaList] = js.undefined
+        AccountQuotas: js.UndefOr[AccountQuotaList] = js.undefined,
+        UniqueAccountIdentifier: js.UndefOr[String] = js.undefined
     ): DescribeAccountAttributesResponse = {
       val __obj = js.Dictionary.empty[js.Any]
       AccountQuotas.foreach(__v => __obj.update("AccountQuotas", __v.asInstanceOf[js.Any]))
+      UniqueAccountIdentifier.foreach(__v => __obj.update("UniqueAccountIdentifier", __v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeAccountAttributesResponse]
     }
   }
@@ -2711,6 +2715,7 @@ package dms {
     var IncludedAllocatedStorage: js.UndefOr[Int]
     var MaxAllocatedStorage: js.UndefOr[Int]
     var MinAllocatedStorage: js.UndefOr[Int]
+    var ReleaseStatus: js.UndefOr[ReleaseStatusValues]
     var ReplicationInstanceClass: js.UndefOr[String]
     var StorageType: js.UndefOr[String]
   }
@@ -2723,6 +2728,7 @@ package dms {
         IncludedAllocatedStorage: js.UndefOr[Int] = js.undefined,
         MaxAllocatedStorage: js.UndefOr[Int] = js.undefined,
         MinAllocatedStorage: js.UndefOr[Int] = js.undefined,
+        ReleaseStatus: js.UndefOr[ReleaseStatusValues] = js.undefined,
         ReplicationInstanceClass: js.UndefOr[String] = js.undefined,
         StorageType: js.UndefOr[String] = js.undefined
     ): OrderableReplicationInstance = {
@@ -2733,6 +2739,7 @@ package dms {
       IncludedAllocatedStorage.foreach(__v => __obj.update("IncludedAllocatedStorage", __v.asInstanceOf[js.Any]))
       MaxAllocatedStorage.foreach(__v => __obj.update("MaxAllocatedStorage", __v.asInstanceOf[js.Any]))
       MinAllocatedStorage.foreach(__v => __obj.update("MinAllocatedStorage", __v.asInstanceOf[js.Any]))
+      ReleaseStatus.foreach(__v => __obj.update("ReleaseStatus", __v.asInstanceOf[js.Any]))
       ReplicationInstanceClass.foreach(__v => __obj.update("ReplicationInstanceClass", __v.asInstanceOf[js.Any]))
       StorageType.foreach(__v => __obj.update("StorageType", __v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[OrderableReplicationInstance]
@@ -2985,6 +2992,12 @@ package dms {
     val values = IndexedSeq(successful, failed, refreshing)
   }
 
+  object ReleaseStatusValuesEnum {
+    val beta = "beta"
+
+    val values = IndexedSeq(beta)
+  }
+
   object ReloadOptionValueEnum {
     val `data-reload`   = "data-reload"
     val `validate-only` = "validate-only"
@@ -3031,7 +3044,7 @@ package dms {
   }
 
   /**
-    * <p/>
+    * Removes one or more tags from an AWS DMS resource.
     */
   @js.native
   trait RemoveTagsFromResourceMessage extends js.Object {
@@ -3434,10 +3447,12 @@ package dms {
     var EncodingType: js.UndefOr[EncodingTypeValue]
     var EncryptionMode: js.UndefOr[EncryptionModeValue]
     var ExternalTableDefinition: js.UndefOr[String]
+    var IncludeOpForFullLoad: js.UndefOr[BooleanOptional]
     var ParquetVersion: js.UndefOr[ParquetVersionValue]
     var RowGroupLength: js.UndefOr[IntegerOptional]
     var ServerSideEncryptionKmsKeyId: js.UndefOr[String]
     var ServiceAccessRoleArn: js.UndefOr[String]
+    var TimestampColumnName: js.UndefOr[String]
   }
 
   object S3Settings {
@@ -3455,10 +3470,12 @@ package dms {
         EncodingType: js.UndefOr[EncodingTypeValue] = js.undefined,
         EncryptionMode: js.UndefOr[EncryptionModeValue] = js.undefined,
         ExternalTableDefinition: js.UndefOr[String] = js.undefined,
+        IncludeOpForFullLoad: js.UndefOr[BooleanOptional] = js.undefined,
         ParquetVersion: js.UndefOr[ParquetVersionValue] = js.undefined,
         RowGroupLength: js.UndefOr[IntegerOptional] = js.undefined,
         ServerSideEncryptionKmsKeyId: js.UndefOr[String] = js.undefined,
-        ServiceAccessRoleArn: js.UndefOr[String] = js.undefined
+        ServiceAccessRoleArn: js.UndefOr[String] = js.undefined,
+        TimestampColumnName: js.UndefOr[String] = js.undefined
     ): S3Settings = {
       val __obj = js.Dictionary.empty[js.Any]
       BucketFolder.foreach(__v => __obj.update("BucketFolder", __v.asInstanceOf[js.Any]))
@@ -3474,12 +3491,14 @@ package dms {
       EncodingType.foreach(__v => __obj.update("EncodingType", __v.asInstanceOf[js.Any]))
       EncryptionMode.foreach(__v => __obj.update("EncryptionMode", __v.asInstanceOf[js.Any]))
       ExternalTableDefinition.foreach(__v => __obj.update("ExternalTableDefinition", __v.asInstanceOf[js.Any]))
+      IncludeOpForFullLoad.foreach(__v => __obj.update("IncludeOpForFullLoad", __v.asInstanceOf[js.Any]))
       ParquetVersion.foreach(__v => __obj.update("ParquetVersion", __v.asInstanceOf[js.Any]))
       RowGroupLength.foreach(__v => __obj.update("RowGroupLength", __v.asInstanceOf[js.Any]))
       ServerSideEncryptionKmsKeyId.foreach(
         __v => __obj.update("ServerSideEncryptionKmsKeyId", __v.asInstanceOf[js.Any])
       )
       ServiceAccessRoleArn.foreach(__v => __obj.update("ServiceAccessRoleArn", __v.asInstanceOf[js.Any]))
+      TimestampColumnName.foreach(__v => __obj.update("TimestampColumnName", __v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[S3Settings]
     }
   }

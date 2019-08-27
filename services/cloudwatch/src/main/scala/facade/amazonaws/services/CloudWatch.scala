@@ -8,57 +8,61 @@ import io.scalajs.nodejs
 import facade.amazonaws._
 
 package object cloudwatch {
-  type ActionPrefix                     = String
-  type ActionsEnabled                   = Boolean
-  type AlarmArn                         = String
-  type AlarmDescription                 = String
-  type AlarmHistoryItems                = js.Array[AlarmHistoryItem]
-  type AlarmName                        = String
-  type AlarmNamePrefix                  = String
-  type AlarmNames                       = js.Array[AlarmName]
-  type AmazonResourceName               = String
-  type ComparisonOperator               = String
-  type Counts                           = js.Array[DatapointValue]
-  type DashboardArn                     = String
-  type DashboardBody                    = String
-  type DashboardEntries                 = js.Array[DashboardEntry]
-  type DashboardName                    = String
-  type DashboardNamePrefix              = String
-  type DashboardNames                   = js.Array[DashboardName]
-  type DashboardValidationMessages      = js.Array[DashboardValidationMessage]
-  type DataPath                         = String
-  type DatapointValue                   = Double
-  type DatapointValueMap                = js.Dictionary[DatapointValue]
-  type DatapointValues                  = js.Array[DatapointValue]
-  type Datapoints                       = js.Array[Datapoint]
-  type DatapointsToAlarm                = Int
-  type DimensionFilters                 = js.Array[DimensionFilter]
-  type DimensionName                    = String
-  type DimensionValue                   = String
-  type Dimensions                       = js.Array[Dimension]
-  type EvaluateLowSampleCountPercentile = String
-  type EvaluationPeriods                = Int
-  type ExtendedStatistic                = String
-  type ExtendedStatistics               = js.Array[ExtendedStatistic]
-  type GetMetricDataMaxDatapoints       = Int
-  type HistoryData                      = String
-  type HistoryItemType                  = String
-  type HistorySummary                   = String
-  type LastModified                     = js.Date
-  type MaxRecords                       = Int
-  type Message                          = String
-  type MessageDataCode                  = String
-  type MessageDataValue                 = String
-  type MetricAlarms                     = js.Array[MetricAlarm]
-  type MetricData                       = js.Array[MetricDatum]
-  type MetricDataQueries                = js.Array[MetricDataQuery]
-  type MetricDataResultMessages         = js.Array[MessageData]
-  type MetricDataResults                = js.Array[MetricDataResult]
-  type MetricExpression                 = String
-  type MetricId                         = String
-  type MetricLabel                      = String
-  type MetricName                       = String
-  type MetricWidget                     = String
+  type ActionPrefix                      = String
+  type ActionsEnabled                    = Boolean
+  type AlarmArn                          = String
+  type AlarmDescription                  = String
+  type AlarmHistoryItems                 = js.Array[AlarmHistoryItem]
+  type AlarmName                         = String
+  type AlarmNamePrefix                   = String
+  type AlarmNames                        = js.Array[AlarmName]
+  type AmazonResourceName                = String
+  type AnomalyDetectorExcludedTimeRanges = js.Array[Range]
+  type AnomalyDetectorMetricTimezone     = String
+  type AnomalyDetectors                  = js.Array[AnomalyDetector]
+  type ComparisonOperator                = String
+  type Counts                            = js.Array[DatapointValue]
+  type DashboardArn                      = String
+  type DashboardBody                     = String
+  type DashboardEntries                  = js.Array[DashboardEntry]
+  type DashboardName                     = String
+  type DashboardNamePrefix               = String
+  type DashboardNames                    = js.Array[DashboardName]
+  type DashboardValidationMessages       = js.Array[DashboardValidationMessage]
+  type DataPath                          = String
+  type DatapointValue                    = Double
+  type DatapointValueMap                 = js.Dictionary[DatapointValue]
+  type DatapointValues                   = js.Array[DatapointValue]
+  type Datapoints                        = js.Array[Datapoint]
+  type DatapointsToAlarm                 = Int
+  type DimensionFilters                  = js.Array[DimensionFilter]
+  type DimensionName                     = String
+  type DimensionValue                    = String
+  type Dimensions                        = js.Array[Dimension]
+  type EvaluateLowSampleCountPercentile  = String
+  type EvaluationPeriods                 = Int
+  type ExtendedStatistic                 = String
+  type ExtendedStatistics                = js.Array[ExtendedStatistic]
+  type GetMetricDataMaxDatapoints        = Int
+  type HistoryData                       = String
+  type HistoryItemType                   = String
+  type HistorySummary                    = String
+  type LastModified                      = js.Date
+  type MaxRecords                        = Int
+  type MaxReturnedResultsCount           = Int
+  type Message                           = String
+  type MessageDataCode                   = String
+  type MessageDataValue                  = String
+  type MetricAlarms                      = js.Array[MetricAlarm]
+  type MetricData                        = js.Array[MetricDatum]
+  type MetricDataQueries                 = js.Array[MetricDataQuery]
+  type MetricDataResultMessages          = js.Array[MessageData]
+  type MetricDataResults                 = js.Array[MetricDataResult]
+  type MetricExpression                  = String
+  type MetricId                          = String
+  type MetricLabel                       = String
+  type MetricName                        = String
+  type MetricWidget                      = String
   type MetricWidgetImage =
     nodejs.buffer.Buffer | nodejs.stream.Readable | js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
   type Metrics           = js.Array[Metric]
@@ -93,6 +97,8 @@ package object cloudwatch {
   implicit final class CloudWatchOps(val service: CloudWatch) extends AnyVal {
 
     def deleteAlarmsFuture(params: DeleteAlarmsInput): Future[js.Object] = service.deleteAlarms(params).promise.toFuture
+    def deleteAnomalyDetectorFuture(params: DeleteAnomalyDetectorInput): Future[DeleteAnomalyDetectorOutput] =
+      service.deleteAnomalyDetector(params).promise.toFuture
     def deleteDashboardsFuture(params: DeleteDashboardsInput): Future[DeleteDashboardsOutput] =
       service.deleteDashboards(params).promise.toFuture
     def describeAlarmHistoryFuture(params: DescribeAlarmHistoryInput): Future[DescribeAlarmHistoryOutput] =
@@ -101,6 +107,8 @@ package object cloudwatch {
       service.describeAlarmsForMetric(params).promise.toFuture
     def describeAlarmsFuture(params: DescribeAlarmsInput): Future[DescribeAlarmsOutput] =
       service.describeAlarms(params).promise.toFuture
+    def describeAnomalyDetectorsFuture(params: DescribeAnomalyDetectorsInput): Future[DescribeAnomalyDetectorsOutput] =
+      service.describeAnomalyDetectors(params).promise.toFuture
     def disableAlarmActionsFuture(params: DisableAlarmActionsInput): Future[js.Object] =
       service.disableAlarmActions(params).promise.toFuture
     def enableAlarmActionsFuture(params: EnableAlarmActionsInput): Future[js.Object] =
@@ -119,6 +127,8 @@ package object cloudwatch {
       service.listMetrics(params).promise.toFuture
     def listTagsForResourceFuture(params: ListTagsForResourceInput): Future[ListTagsForResourceOutput] =
       service.listTagsForResource(params).promise.toFuture
+    def putAnomalyDetectorFuture(params: PutAnomalyDetectorInput): Future[PutAnomalyDetectorOutput] =
+      service.putAnomalyDetector(params).promise.toFuture
     def putDashboardFuture(params: PutDashboardInput): Future[PutDashboardOutput] =
       service.putDashboard(params).promise.toFuture
     def putMetricAlarmFuture(params: PutMetricAlarmInput): Future[js.Object] =
@@ -140,11 +150,14 @@ package cloudwatch {
   class CloudWatch() extends js.Object {
     def this(config: AWSConfig) = this()
 
-    def deleteAlarms(params: DeleteAlarmsInput): Request[js.Object]                                  = js.native
-    def deleteDashboards(params: DeleteDashboardsInput): Request[DeleteDashboardsOutput]             = js.native
-    def describeAlarmHistory(params: DescribeAlarmHistoryInput): Request[DescribeAlarmHistoryOutput] = js.native
-    def describeAlarms(params: DescribeAlarmsInput): Request[DescribeAlarmsOutput]                   = js.native
+    def deleteAlarms(params: DeleteAlarmsInput): Request[js.Object]                                     = js.native
+    def deleteAnomalyDetector(params: DeleteAnomalyDetectorInput): Request[DeleteAnomalyDetectorOutput] = js.native
+    def deleteDashboards(params: DeleteDashboardsInput): Request[DeleteDashboardsOutput]                = js.native
+    def describeAlarmHistory(params: DescribeAlarmHistoryInput): Request[DescribeAlarmHistoryOutput]    = js.native
+    def describeAlarms(params: DescribeAlarmsInput): Request[DescribeAlarmsOutput]                      = js.native
     def describeAlarmsForMetric(params: DescribeAlarmsForMetricInput): Request[DescribeAlarmsForMetricOutput] =
+      js.native
+    def describeAnomalyDetectors(params: DescribeAnomalyDetectorsInput): Request[DescribeAnomalyDetectorsOutput] =
       js.native
     def disableAlarmActions(params: DisableAlarmActionsInput): Request[js.Object]                    = js.native
     def enableAlarmActions(params: EnableAlarmActionsInput): Request[js.Object]                      = js.native
@@ -155,6 +168,7 @@ package cloudwatch {
     def listDashboards(params: ListDashboardsInput): Request[ListDashboardsOutput]                   = js.native
     def listMetrics(params: ListMetricsInput): Request[ListMetricsOutput]                            = js.native
     def listTagsForResource(params: ListTagsForResourceInput): Request[ListTagsForResourceOutput]    = js.native
+    def putAnomalyDetector(params: PutAnomalyDetectorInput): Request[PutAnomalyDetectorOutput]       = js.native
     def putDashboard(params: PutDashboardInput): Request[PutDashboardOutput]                         = js.native
     def putMetricAlarm(params: PutMetricAlarmInput): Request[js.Object]                              = js.native
     def putMetricData(params: PutMetricDataInput): Request[js.Object]                                = js.native
@@ -193,14 +207,75 @@ package cloudwatch {
     }
   }
 
-  object ComparisonOperatorEnum {
-    val GreaterThanOrEqualToThreshold = "GreaterThanOrEqualToThreshold"
-    val GreaterThanThreshold          = "GreaterThanThreshold"
-    val LessThanThreshold             = "LessThanThreshold"
-    val LessThanOrEqualToThreshold    = "LessThanOrEqualToThreshold"
+  /**
+    * An anomaly detection model associated with a particular CloudWatch metric athresnd statistic. You can use the model to display a band of expected normal values when the metric is graphed.
+    */
+  @js.native
+  trait AnomalyDetector extends js.Object {
+    var Configuration: js.UndefOr[AnomalyDetectorConfiguration]
+    var Dimensions: js.UndefOr[Dimensions]
+    var MetricName: js.UndefOr[MetricName]
+    var Namespace: js.UndefOr[Namespace]
+    var Stat: js.UndefOr[Stat]
+  }
 
-    val values =
-      IndexedSeq(GreaterThanOrEqualToThreshold, GreaterThanThreshold, LessThanThreshold, LessThanOrEqualToThreshold)
+  object AnomalyDetector {
+    def apply(
+        Configuration: js.UndefOr[AnomalyDetectorConfiguration] = js.undefined,
+        Dimensions: js.UndefOr[Dimensions] = js.undefined,
+        MetricName: js.UndefOr[MetricName] = js.undefined,
+        Namespace: js.UndefOr[Namespace] = js.undefined,
+        Stat: js.UndefOr[Stat] = js.undefined
+    ): AnomalyDetector = {
+      val __obj = js.Dictionary.empty[js.Any]
+      Configuration.foreach(__v => __obj.update("Configuration", __v.asInstanceOf[js.Any]))
+      Dimensions.foreach(__v => __obj.update("Dimensions", __v.asInstanceOf[js.Any]))
+      MetricName.foreach(__v => __obj.update("MetricName", __v.asInstanceOf[js.Any]))
+      Namespace.foreach(__v => __obj.update("Namespace", __v.asInstanceOf[js.Any]))
+      Stat.foreach(__v => __obj.update("Stat", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AnomalyDetector]
+    }
+  }
+
+  /**
+    * The configuration specifies details about how the anomaly detection model is to be trained, including time ranges to exclude from use for training the model and the time zone to use for the metric.
+    */
+  @js.native
+  trait AnomalyDetectorConfiguration extends js.Object {
+    var ExcludedTimeRanges: js.UndefOr[AnomalyDetectorExcludedTimeRanges]
+    var MetricTimezone: js.UndefOr[AnomalyDetectorMetricTimezone]
+  }
+
+  object AnomalyDetectorConfiguration {
+    def apply(
+        ExcludedTimeRanges: js.UndefOr[AnomalyDetectorExcludedTimeRanges] = js.undefined,
+        MetricTimezone: js.UndefOr[AnomalyDetectorMetricTimezone] = js.undefined
+    ): AnomalyDetectorConfiguration = {
+      val __obj = js.Dictionary.empty[js.Any]
+      ExcludedTimeRanges.foreach(__v => __obj.update("ExcludedTimeRanges", __v.asInstanceOf[js.Any]))
+      MetricTimezone.foreach(__v => __obj.update("MetricTimezone", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AnomalyDetectorConfiguration]
+    }
+  }
+
+  object ComparisonOperatorEnum {
+    val GreaterThanOrEqualToThreshold            = "GreaterThanOrEqualToThreshold"
+    val GreaterThanThreshold                     = "GreaterThanThreshold"
+    val LessThanThreshold                        = "LessThanThreshold"
+    val LessThanOrEqualToThreshold               = "LessThanOrEqualToThreshold"
+    val LessThanLowerOrGreaterThanUpperThreshold = "LessThanLowerOrGreaterThanUpperThreshold"
+    val LessThanLowerThreshold                   = "LessThanLowerThreshold"
+    val GreaterThanUpperThreshold                = "GreaterThanUpperThreshold"
+
+    val values = IndexedSeq(
+      GreaterThanOrEqualToThreshold,
+      GreaterThanThreshold,
+      LessThanThreshold,
+      LessThanOrEqualToThreshold,
+      LessThanLowerOrGreaterThanUpperThreshold,
+      LessThanLowerThreshold,
+      GreaterThanUpperThreshold
+    )
   }
 
   /**
@@ -304,6 +379,44 @@ package cloudwatch {
       )
 
       __obj.asInstanceOf[DeleteAlarmsInput]
+    }
+  }
+
+  @js.native
+  trait DeleteAnomalyDetectorInput extends js.Object {
+    var MetricName: MetricName
+    var Namespace: Namespace
+    var Stat: Stat
+    var Dimensions: js.UndefOr[Dimensions]
+  }
+
+  object DeleteAnomalyDetectorInput {
+    def apply(
+        MetricName: MetricName,
+        Namespace: Namespace,
+        Stat: Stat,
+        Dimensions: js.UndefOr[Dimensions] = js.undefined
+    ): DeleteAnomalyDetectorInput = {
+      val __obj = js.Dictionary[js.Any](
+        "MetricName" -> MetricName.asInstanceOf[js.Any],
+        "Namespace"  -> Namespace.asInstanceOf[js.Any],
+        "Stat"       -> Stat.asInstanceOf[js.Any]
+      )
+
+      Dimensions.foreach(__v => __obj.update("Dimensions", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DeleteAnomalyDetectorInput]
+    }
+  }
+
+  @js.native
+  trait DeleteAnomalyDetectorOutput extends js.Object {}
+
+  object DeleteAnomalyDetectorOutput {
+    def apply(
+        ): DeleteAnomalyDetectorOutput = {
+      val __obj = js.Dictionary.empty[js.Any]
+
+      __obj.asInstanceOf[DeleteAnomalyDetectorOutput]
     }
   }
 
@@ -479,6 +592,51 @@ package cloudwatch {
       MetricAlarms.foreach(__v => __obj.update("MetricAlarms", __v.asInstanceOf[js.Any]))
       NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeAlarmsOutput]
+    }
+  }
+
+  @js.native
+  trait DescribeAnomalyDetectorsInput extends js.Object {
+    var Dimensions: js.UndefOr[Dimensions]
+    var MaxResults: js.UndefOr[MaxReturnedResultsCount]
+    var MetricName: js.UndefOr[MetricName]
+    var Namespace: js.UndefOr[Namespace]
+    var NextToken: js.UndefOr[NextToken]
+  }
+
+  object DescribeAnomalyDetectorsInput {
+    def apply(
+        Dimensions: js.UndefOr[Dimensions] = js.undefined,
+        MaxResults: js.UndefOr[MaxReturnedResultsCount] = js.undefined,
+        MetricName: js.UndefOr[MetricName] = js.undefined,
+        Namespace: js.UndefOr[Namespace] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): DescribeAnomalyDetectorsInput = {
+      val __obj = js.Dictionary.empty[js.Any]
+      Dimensions.foreach(__v => __obj.update("Dimensions", __v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
+      MetricName.foreach(__v => __obj.update("MetricName", __v.asInstanceOf[js.Any]))
+      Namespace.foreach(__v => __obj.update("Namespace", __v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeAnomalyDetectorsInput]
+    }
+  }
+
+  @js.native
+  trait DescribeAnomalyDetectorsOutput extends js.Object {
+    var AnomalyDetectors: js.UndefOr[AnomalyDetectors]
+    var NextToken: js.UndefOr[NextToken]
+  }
+
+  object DescribeAnomalyDetectorsOutput {
+    def apply(
+        AnomalyDetectors: js.UndefOr[AnomalyDetectors] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): DescribeAnomalyDetectorsOutput = {
+      val __obj = js.Dictionary.empty[js.Any]
+      AnomalyDetectors.foreach(__v => __obj.update("AnomalyDetectors", __v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeAnomalyDetectorsOutput]
     }
   }
 
@@ -939,6 +1097,7 @@ package cloudwatch {
     var StateValue: js.UndefOr[StateValue]
     var Statistic: js.UndefOr[Statistic]
     var Threshold: js.UndefOr[Threshold]
+    var ThresholdMetricId: js.UndefOr[MetricId]
     var TreatMissingData: js.UndefOr[TreatMissingData]
     var Unit: js.UndefOr[StandardUnit]
   }
@@ -969,6 +1128,7 @@ package cloudwatch {
         StateValue: js.UndefOr[StateValue] = js.undefined,
         Statistic: js.UndefOr[Statistic] = js.undefined,
         Threshold: js.UndefOr[Threshold] = js.undefined,
+        ThresholdMetricId: js.UndefOr[MetricId] = js.undefined,
         TreatMissingData: js.UndefOr[TreatMissingData] = js.undefined,
         Unit: js.UndefOr[StandardUnit] = js.undefined
     ): MetricAlarm = {
@@ -1001,6 +1161,7 @@ package cloudwatch {
       StateValue.foreach(__v => __obj.update("StateValue", __v.asInstanceOf[js.Any]))
       Statistic.foreach(__v => __obj.update("Statistic", __v.asInstanceOf[js.Any]))
       Threshold.foreach(__v => __obj.update("Threshold", __v.asInstanceOf[js.Any]))
+      ThresholdMetricId.foreach(__v => __obj.update("ThresholdMetricId", __v.asInstanceOf[js.Any]))
       TreatMissingData.foreach(__v => __obj.update("TreatMissingData", __v.asInstanceOf[js.Any]))
       Unit.foreach(__v => __obj.update("Unit", __v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[MetricAlarm]
@@ -1150,6 +1311,47 @@ package cloudwatch {
   }
 
   @js.native
+  trait PutAnomalyDetectorInput extends js.Object {
+    var MetricName: MetricName
+    var Namespace: Namespace
+    var Stat: Stat
+    var Configuration: js.UndefOr[AnomalyDetectorConfiguration]
+    var Dimensions: js.UndefOr[Dimensions]
+  }
+
+  object PutAnomalyDetectorInput {
+    def apply(
+        MetricName: MetricName,
+        Namespace: Namespace,
+        Stat: Stat,
+        Configuration: js.UndefOr[AnomalyDetectorConfiguration] = js.undefined,
+        Dimensions: js.UndefOr[Dimensions] = js.undefined
+    ): PutAnomalyDetectorInput = {
+      val __obj = js.Dictionary[js.Any](
+        "MetricName" -> MetricName.asInstanceOf[js.Any],
+        "Namespace"  -> Namespace.asInstanceOf[js.Any],
+        "Stat"       -> Stat.asInstanceOf[js.Any]
+      )
+
+      Configuration.foreach(__v => __obj.update("Configuration", __v.asInstanceOf[js.Any]))
+      Dimensions.foreach(__v => __obj.update("Dimensions", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PutAnomalyDetectorInput]
+    }
+  }
+
+  @js.native
+  trait PutAnomalyDetectorOutput extends js.Object {}
+
+  object PutAnomalyDetectorOutput {
+    def apply(
+        ): PutAnomalyDetectorOutput = {
+      val __obj = js.Dictionary.empty[js.Any]
+
+      __obj.asInstanceOf[PutAnomalyDetectorOutput]
+    }
+  }
+
+  @js.native
   trait PutDashboardInput extends js.Object {
     var DashboardBody: DashboardBody
     var DashboardName: DashboardName
@@ -1189,7 +1391,6 @@ package cloudwatch {
     var AlarmName: AlarmName
     var ComparisonOperator: ComparisonOperator
     var EvaluationPeriods: EvaluationPeriods
-    var Threshold: Threshold
     var ActionsEnabled: js.UndefOr[ActionsEnabled]
     var AlarmActions: js.UndefOr[ResourceList]
     var AlarmDescription: js.UndefOr[AlarmDescription]
@@ -1205,6 +1406,8 @@ package cloudwatch {
     var Period: js.UndefOr[Period]
     var Statistic: js.UndefOr[Statistic]
     var Tags: js.UndefOr[TagList]
+    var Threshold: js.UndefOr[Threshold]
+    var ThresholdMetricId: js.UndefOr[MetricId]
     var TreatMissingData: js.UndefOr[TreatMissingData]
     var Unit: js.UndefOr[StandardUnit]
   }
@@ -1214,7 +1417,6 @@ package cloudwatch {
         AlarmName: AlarmName,
         ComparisonOperator: ComparisonOperator,
         EvaluationPeriods: EvaluationPeriods,
-        Threshold: Threshold,
         ActionsEnabled: js.UndefOr[ActionsEnabled] = js.undefined,
         AlarmActions: js.UndefOr[ResourceList] = js.undefined,
         AlarmDescription: js.UndefOr[AlarmDescription] = js.undefined,
@@ -1230,14 +1432,15 @@ package cloudwatch {
         Period: js.UndefOr[Period] = js.undefined,
         Statistic: js.UndefOr[Statistic] = js.undefined,
         Tags: js.UndefOr[TagList] = js.undefined,
+        Threshold: js.UndefOr[Threshold] = js.undefined,
+        ThresholdMetricId: js.UndefOr[MetricId] = js.undefined,
         TreatMissingData: js.UndefOr[TreatMissingData] = js.undefined,
         Unit: js.UndefOr[StandardUnit] = js.undefined
     ): PutMetricAlarmInput = {
       val __obj = js.Dictionary[js.Any](
         "AlarmName"          -> AlarmName.asInstanceOf[js.Any],
         "ComparisonOperator" -> ComparisonOperator.asInstanceOf[js.Any],
-        "EvaluationPeriods"  -> EvaluationPeriods.asInstanceOf[js.Any],
-        "Threshold"          -> Threshold.asInstanceOf[js.Any]
+        "EvaluationPeriods"  -> EvaluationPeriods.asInstanceOf[js.Any]
       )
 
       ActionsEnabled.foreach(__v => __obj.update("ActionsEnabled", __v.asInstanceOf[js.Any]))
@@ -1257,6 +1460,8 @@ package cloudwatch {
       Period.foreach(__v => __obj.update("Period", __v.asInstanceOf[js.Any]))
       Statistic.foreach(__v => __obj.update("Statistic", __v.asInstanceOf[js.Any]))
       Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
+      Threshold.foreach(__v => __obj.update("Threshold", __v.asInstanceOf[js.Any]))
+      ThresholdMetricId.foreach(__v => __obj.update("ThresholdMetricId", __v.asInstanceOf[js.Any]))
       TreatMissingData.foreach(__v => __obj.update("TreatMissingData", __v.asInstanceOf[js.Any]))
       Unit.foreach(__v => __obj.update("Unit", __v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PutMetricAlarmInput]
@@ -1280,6 +1485,29 @@ package cloudwatch {
       )
 
       __obj.asInstanceOf[PutMetricDataInput]
+    }
+  }
+
+  /**
+    * Specifies one range of days or times to exclude from use for training an anomaly detection model.
+    */
+  @js.native
+  trait Range extends js.Object {
+    var EndTime: Timestamp
+    var StartTime: Timestamp
+  }
+
+  object Range {
+    def apply(
+        EndTime: Timestamp,
+        StartTime: Timestamp
+    ): Range = {
+      val __obj = js.Dictionary[js.Any](
+        "EndTime"   -> EndTime.asInstanceOf[js.Any],
+        "StartTime" -> StartTime.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[Range]
     }
   }
 

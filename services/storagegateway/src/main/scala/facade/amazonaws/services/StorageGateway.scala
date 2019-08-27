@@ -18,6 +18,7 @@ package object storagegateway {
   type ChapSecret                 = String
   type ClientToken                = String
   type CreatedDate                = js.Date
+  type DayOfMonth                 = Int
   type DayOfWeek                  = Int
   type Description                = String
   type DeviceType                 = String
@@ -31,6 +32,8 @@ package object storagegateway {
   type DomainUserName             = String
   type DomainUserPassword         = String
   type DoubleObject               = Double
+  type Ec2InstanceId              = String
+  type Ec2InstanceRegion          = String
   type FileShareARN               = String
   type FileShareARNList           = js.Array[FileShareARN]
   type FileShareClientList        = js.Array[IPV4AddressCIDR]
@@ -83,6 +86,7 @@ package object storagegateway {
   type Role                       = String
   type SMBFileShareInfoList       = js.Array[SMBFileShareInfo]
   type SMBGuestPassword           = String
+  type SMBSecurityStrategy        = String
   type SnapshotDescription        = String
   type SnapshotId                 = String
   type Squash                     = String
@@ -137,6 +141,8 @@ package object storagegateway {
       service.addUploadBuffer(params).promise.toFuture
     def addWorkingStorageFuture(params: AddWorkingStorageInput): Future[AddWorkingStorageOutput] =
       service.addWorkingStorage(params).promise.toFuture
+    def assignTapePoolFuture(params: AssignTapePoolInput): Future[AssignTapePoolOutput] =
+      service.assignTapePool(params).promise.toFuture
     def attachVolumeFuture(params: AttachVolumeInput): Future[AttachVolumeOutput] =
       service.attachVolume(params).promise.toFuture
     def cancelArchivalFuture(params: CancelArchivalInput): Future[CancelArchivalOutput] =
@@ -274,6 +280,9 @@ package object storagegateway {
       service.updateNFSFileShare(params).promise.toFuture
     def updateSMBFileShareFuture(params: UpdateSMBFileShareInput): Future[UpdateSMBFileShareOutput] =
       service.updateSMBFileShare(params).promise.toFuture
+    def updateSMBSecurityStrategyFuture(
+        params: UpdateSMBSecurityStrategyInput
+    ): Future[UpdateSMBSecurityStrategyOutput] = service.updateSMBSecurityStrategy(params).promise.toFuture
     def updateSnapshotScheduleFuture(params: UpdateSnapshotScheduleInput): Future[UpdateSnapshotScheduleOutput] =
       service.updateSnapshotSchedule(params).promise.toFuture
     def updateVTLDeviceTypeFuture(params: UpdateVTLDeviceTypeInput): Future[UpdateVTLDeviceTypeOutput] =
@@ -292,6 +301,7 @@ package storagegateway {
     def addTagsToResource(params: AddTagsToResourceInput): Request[AddTagsToResourceOutput] = js.native
     def addUploadBuffer(params: AddUploadBufferInput): Request[AddUploadBufferOutput]       = js.native
     def addWorkingStorage(params: AddWorkingStorageInput): Request[AddWorkingStorageOutput] = js.native
+    def assignTapePool(params: AssignTapePoolInput): Request[AssignTapePoolOutput]          = js.native
     def attachVolume(params: AttachVolumeInput): Request[AttachVolumeOutput]                = js.native
     def cancelArchival(params: CancelArchivalInput): Request[CancelArchivalOutput]          = js.native
     def cancelRetrieval(params: CancelRetrievalInput): Request[CancelRetrievalOutput]       = js.native
@@ -375,8 +385,10 @@ package storagegateway {
       js.native
     def updateMaintenanceStartTime(params: UpdateMaintenanceStartTimeInput): Request[UpdateMaintenanceStartTimeOutput] =
       js.native
-    def updateNFSFileShare(params: UpdateNFSFileShareInput): Request[UpdateNFSFileShareOutput]             = js.native
-    def updateSMBFileShare(params: UpdateSMBFileShareInput): Request[UpdateSMBFileShareOutput]             = js.native
+    def updateNFSFileShare(params: UpdateNFSFileShareInput): Request[UpdateNFSFileShareOutput] = js.native
+    def updateSMBFileShare(params: UpdateSMBFileShareInput): Request[UpdateSMBFileShareOutput] = js.native
+    def updateSMBSecurityStrategy(params: UpdateSMBSecurityStrategyInput): Request[UpdateSMBSecurityStrategyOutput] =
+      js.native
     def updateSnapshotSchedule(params: UpdateSnapshotScheduleInput): Request[UpdateSnapshotScheduleOutput] = js.native
     def updateVTLDeviceType(params: UpdateVTLDeviceTypeInput): Request[UpdateVTLDeviceTypeOutput]          = js.native
   }
@@ -597,6 +609,41 @@ package storagegateway {
   }
 
   @js.native
+  trait AssignTapePoolInput extends js.Object {
+    var PoolId: PoolId
+    var TapeARN: TapeARN
+  }
+
+  object AssignTapePoolInput {
+    def apply(
+        PoolId: PoolId,
+        TapeARN: TapeARN
+    ): AssignTapePoolInput = {
+      val __obj = js.Dictionary[js.Any](
+        "PoolId"  -> PoolId.asInstanceOf[js.Any],
+        "TapeARN" -> TapeARN.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[AssignTapePoolInput]
+    }
+  }
+
+  @js.native
+  trait AssignTapePoolOutput extends js.Object {
+    var TapeARN: js.UndefOr[TapeARN]
+  }
+
+  object AssignTapePoolOutput {
+    def apply(
+        TapeARN: js.UndefOr[TapeARN] = js.undefined
+    ): AssignTapePoolOutput = {
+      val __obj = js.Dictionary.empty[js.Any]
+      TapeARN.foreach(__v => __obj.update("TapeARN", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AssignTapePoolOutput]
+    }
+  }
+
+  @js.native
   trait AttachVolumeInput extends js.Object {
     var GatewayARN: GatewayARN
     var NetworkInterfaceId: NetworkInterfaceId
@@ -807,6 +854,7 @@ package storagegateway {
     var KMSKey: js.UndefOr[KMSKey]
     var SnapshotId: js.UndefOr[SnapshotId]
     var SourceVolumeARN: js.UndefOr[VolumeARN]
+    var Tags: js.UndefOr[Tags]
   }
 
   object CreateCachediSCSIVolumeInput {
@@ -819,7 +867,8 @@ package storagegateway {
         KMSEncrypted: js.UndefOr[Boolean] = js.undefined,
         KMSKey: js.UndefOr[KMSKey] = js.undefined,
         SnapshotId: js.UndefOr[SnapshotId] = js.undefined,
-        SourceVolumeARN: js.UndefOr[VolumeARN] = js.undefined
+        SourceVolumeARN: js.UndefOr[VolumeARN] = js.undefined,
+        Tags: js.UndefOr[Tags] = js.undefined
     ): CreateCachediSCSIVolumeInput = {
       val __obj = js.Dictionary[js.Any](
         "ClientToken"        -> ClientToken.asInstanceOf[js.Any],
@@ -833,6 +882,7 @@ package storagegateway {
       KMSKey.foreach(__v => __obj.update("KMSKey", __v.asInstanceOf[js.Any]))
       SnapshotId.foreach(__v => __obj.update("SnapshotId", __v.asInstanceOf[js.Any]))
       SourceVolumeARN.foreach(__v => __obj.update("SourceVolumeARN", __v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateCachediSCSIVolumeInput]
     }
   }
@@ -935,6 +985,7 @@ package storagegateway {
     var GatewayARN: GatewayARN
     var LocationARN: LocationARN
     var Role: Role
+    var AdminUserList: js.UndefOr[FileShareUserList]
     var Authentication: js.UndefOr[Authentication]
     var DefaultStorageClass: js.UndefOr[StorageClass]
     var GuessMIMETypeEnabled: js.UndefOr[Boolean]
@@ -944,6 +995,7 @@ package storagegateway {
     var ObjectACL: js.UndefOr[ObjectACL]
     var ReadOnly: js.UndefOr[Boolean]
     var RequesterPays: js.UndefOr[Boolean]
+    var SMBACLEnabled: js.UndefOr[Boolean]
     var Tags: js.UndefOr[Tags]
     var ValidUserList: js.UndefOr[FileShareUserList]
   }
@@ -954,6 +1006,7 @@ package storagegateway {
         GatewayARN: GatewayARN,
         LocationARN: LocationARN,
         Role: Role,
+        AdminUserList: js.UndefOr[FileShareUserList] = js.undefined,
         Authentication: js.UndefOr[Authentication] = js.undefined,
         DefaultStorageClass: js.UndefOr[StorageClass] = js.undefined,
         GuessMIMETypeEnabled: js.UndefOr[Boolean] = js.undefined,
@@ -963,6 +1016,7 @@ package storagegateway {
         ObjectACL: js.UndefOr[ObjectACL] = js.undefined,
         ReadOnly: js.UndefOr[Boolean] = js.undefined,
         RequesterPays: js.UndefOr[Boolean] = js.undefined,
+        SMBACLEnabled: js.UndefOr[Boolean] = js.undefined,
         Tags: js.UndefOr[Tags] = js.undefined,
         ValidUserList: js.UndefOr[FileShareUserList] = js.undefined
     ): CreateSMBFileShareInput = {
@@ -973,6 +1027,7 @@ package storagegateway {
         "Role"        -> Role.asInstanceOf[js.Any]
       )
 
+      AdminUserList.foreach(__v => __obj.update("AdminUserList", __v.asInstanceOf[js.Any]))
       Authentication.foreach(__v => __obj.update("Authentication", __v.asInstanceOf[js.Any]))
       DefaultStorageClass.foreach(__v => __obj.update("DefaultStorageClass", __v.asInstanceOf[js.Any]))
       GuessMIMETypeEnabled.foreach(__v => __obj.update("GuessMIMETypeEnabled", __v.asInstanceOf[js.Any]))
@@ -982,6 +1037,7 @@ package storagegateway {
       ObjectACL.foreach(__v => __obj.update("ObjectACL", __v.asInstanceOf[js.Any]))
       ReadOnly.foreach(__v => __obj.update("ReadOnly", __v.asInstanceOf[js.Any]))
       RequesterPays.foreach(__v => __obj.update("RequesterPays", __v.asInstanceOf[js.Any]))
+      SMBACLEnabled.foreach(__v => __obj.update("SMBACLEnabled", __v.asInstanceOf[js.Any]))
       Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
       ValidUserList.foreach(__v => __obj.update("ValidUserList", __v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateSMBFileShareInput]
@@ -1007,18 +1063,21 @@ package storagegateway {
   trait CreateSnapshotFromVolumeRecoveryPointInput extends js.Object {
     var SnapshotDescription: SnapshotDescription
     var VolumeARN: VolumeARN
+    var Tags: js.UndefOr[Tags]
   }
 
   object CreateSnapshotFromVolumeRecoveryPointInput {
     def apply(
         SnapshotDescription: SnapshotDescription,
-        VolumeARN: VolumeARN
+        VolumeARN: VolumeARN,
+        Tags: js.UndefOr[Tags] = js.undefined
     ): CreateSnapshotFromVolumeRecoveryPointInput = {
       val __obj = js.Dictionary[js.Any](
         "SnapshotDescription" -> SnapshotDescription.asInstanceOf[js.Any],
         "VolumeARN"           -> VolumeARN.asInstanceOf[js.Any]
       )
 
+      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateSnapshotFromVolumeRecoveryPointInput]
     }
   }
@@ -1053,18 +1112,21 @@ package storagegateway {
   trait CreateSnapshotInput extends js.Object {
     var SnapshotDescription: SnapshotDescription
     var VolumeARN: VolumeARN
+    var Tags: js.UndefOr[Tags]
   }
 
   object CreateSnapshotInput {
     def apply(
         SnapshotDescription: SnapshotDescription,
-        VolumeARN: VolumeARN
+        VolumeARN: VolumeARN,
+        Tags: js.UndefOr[Tags] = js.undefined
     ): CreateSnapshotInput = {
       val __obj = js.Dictionary[js.Any](
         "SnapshotDescription" -> SnapshotDescription.asInstanceOf[js.Any],
         "VolumeARN"           -> VolumeARN.asInstanceOf[js.Any]
       )
 
+      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateSnapshotInput]
     }
   }
@@ -1108,6 +1170,7 @@ package storagegateway {
     var KMSEncrypted: js.UndefOr[Boolean]
     var KMSKey: js.UndefOr[KMSKey]
     var SnapshotId: js.UndefOr[SnapshotId]
+    var Tags: js.UndefOr[Tags]
   }
 
   object CreateStorediSCSIVolumeInput {
@@ -1119,7 +1182,8 @@ package storagegateway {
         TargetName: TargetName,
         KMSEncrypted: js.UndefOr[Boolean] = js.undefined,
         KMSKey: js.UndefOr[KMSKey] = js.undefined,
-        SnapshotId: js.UndefOr[SnapshotId] = js.undefined
+        SnapshotId: js.UndefOr[SnapshotId] = js.undefined,
+        Tags: js.UndefOr[Tags] = js.undefined
     ): CreateStorediSCSIVolumeInput = {
       val __obj = js.Dictionary[js.Any](
         "DiskId"               -> DiskId.asInstanceOf[js.Any],
@@ -1132,6 +1196,7 @@ package storagegateway {
       KMSEncrypted.foreach(__v => __obj.update("KMSEncrypted", __v.asInstanceOf[js.Any]))
       KMSKey.foreach(__v => __obj.update("KMSKey", __v.asInstanceOf[js.Any]))
       SnapshotId.foreach(__v => __obj.update("SnapshotId", __v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateStorediSCSIVolumeInput]
     }
   }
@@ -1168,6 +1233,7 @@ package storagegateway {
     var KMSEncrypted: js.UndefOr[Boolean]
     var KMSKey: js.UndefOr[KMSKey]
     var PoolId: js.UndefOr[PoolId]
+    var Tags: js.UndefOr[Tags]
   }
 
   object CreateTapeWithBarcodeInput {
@@ -1177,7 +1243,8 @@ package storagegateway {
         TapeSizeInBytes: TapeSize,
         KMSEncrypted: js.UndefOr[Boolean] = js.undefined,
         KMSKey: js.UndefOr[KMSKey] = js.undefined,
-        PoolId: js.UndefOr[PoolId] = js.undefined
+        PoolId: js.UndefOr[PoolId] = js.undefined,
+        Tags: js.UndefOr[Tags] = js.undefined
     ): CreateTapeWithBarcodeInput = {
       val __obj = js.Dictionary[js.Any](
         "GatewayARN"      -> GatewayARN.asInstanceOf[js.Any],
@@ -1188,6 +1255,7 @@ package storagegateway {
       KMSEncrypted.foreach(__v => __obj.update("KMSEncrypted", __v.asInstanceOf[js.Any]))
       KMSKey.foreach(__v => __obj.update("KMSKey", __v.asInstanceOf[js.Any]))
       PoolId.foreach(__v => __obj.update("PoolId", __v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateTapeWithBarcodeInput]
     }
   }
@@ -1220,6 +1288,7 @@ package storagegateway {
     var KMSEncrypted: js.UndefOr[Boolean]
     var KMSKey: js.UndefOr[KMSKey]
     var PoolId: js.UndefOr[PoolId]
+    var Tags: js.UndefOr[Tags]
   }
 
   object CreateTapesInput {
@@ -1231,7 +1300,8 @@ package storagegateway {
         TapeSizeInBytes: TapeSize,
         KMSEncrypted: js.UndefOr[Boolean] = js.undefined,
         KMSKey: js.UndefOr[KMSKey] = js.undefined,
-        PoolId: js.UndefOr[PoolId] = js.undefined
+        PoolId: js.UndefOr[PoolId] = js.undefined,
+        Tags: js.UndefOr[Tags] = js.undefined
     ): CreateTapesInput = {
       val __obj = js.Dictionary[js.Any](
         "ClientToken"       -> ClientToken.asInstanceOf[js.Any],
@@ -1244,6 +1314,7 @@ package storagegateway {
       KMSEncrypted.foreach(__v => __obj.update("KMSEncrypted", __v.asInstanceOf[js.Any]))
       KMSKey.foreach(__v => __obj.update("KMSKey", __v.asInstanceOf[js.Any]))
       PoolId.foreach(__v => __obj.update("PoolId", __v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateTapesInput]
     }
   }
@@ -1760,6 +1831,8 @@ package storagegateway {
     */
   @js.native
   trait DescribeGatewayInformationOutput extends js.Object {
+    var Ec2InstanceId: js.UndefOr[Ec2InstanceId]
+    var Ec2InstanceRegion: js.UndefOr[Ec2InstanceRegion]
     var GatewayARN: js.UndefOr[GatewayARN]
     var GatewayId: js.UndefOr[GatewayId]
     var GatewayName: js.UndefOr[String]
@@ -1770,10 +1843,13 @@ package storagegateway {
     var LastSoftwareUpdate: js.UndefOr[LastSoftwareUpdate]
     var NextUpdateAvailabilityDate: js.UndefOr[NextUpdateAvailabilityDate]
     var Tags: js.UndefOr[Tags]
+    var VPCEndpoint: js.UndefOr[String]
   }
 
   object DescribeGatewayInformationOutput {
     def apply(
+        Ec2InstanceId: js.UndefOr[Ec2InstanceId] = js.undefined,
+        Ec2InstanceRegion: js.UndefOr[Ec2InstanceRegion] = js.undefined,
         GatewayARN: js.UndefOr[GatewayARN] = js.undefined,
         GatewayId: js.UndefOr[GatewayId] = js.undefined,
         GatewayName: js.UndefOr[String] = js.undefined,
@@ -1783,9 +1859,12 @@ package storagegateway {
         GatewayType: js.UndefOr[GatewayType] = js.undefined,
         LastSoftwareUpdate: js.UndefOr[LastSoftwareUpdate] = js.undefined,
         NextUpdateAvailabilityDate: js.UndefOr[NextUpdateAvailabilityDate] = js.undefined,
-        Tags: js.UndefOr[Tags] = js.undefined
+        Tags: js.UndefOr[Tags] = js.undefined,
+        VPCEndpoint: js.UndefOr[String] = js.undefined
     ): DescribeGatewayInformationOutput = {
       val __obj = js.Dictionary.empty[js.Any]
+      Ec2InstanceId.foreach(__v => __obj.update("Ec2InstanceId", __v.asInstanceOf[js.Any]))
+      Ec2InstanceRegion.foreach(__v => __obj.update("Ec2InstanceRegion", __v.asInstanceOf[js.Any]))
       GatewayARN.foreach(__v => __obj.update("GatewayARN", __v.asInstanceOf[js.Any]))
       GatewayId.foreach(__v => __obj.update("GatewayId", __v.asInstanceOf[js.Any]))
       GatewayName.foreach(__v => __obj.update("GatewayName", __v.asInstanceOf[js.Any]))
@@ -1796,6 +1875,7 @@ package storagegateway {
       LastSoftwareUpdate.foreach(__v => __obj.update("LastSoftwareUpdate", __v.asInstanceOf[js.Any]))
       NextUpdateAvailabilityDate.foreach(__v => __obj.update("NextUpdateAvailabilityDate", __v.asInstanceOf[js.Any]))
       Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
+      VPCEndpoint.foreach(__v => __obj.update("VPCEndpoint", __v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeGatewayInformationOutput]
     }
   }
@@ -1822,13 +1902,15 @@ package storagegateway {
 
   /**
     * A JSON object containing the following fields:
-    * * DayOfWeek
+    * * DayOfMonth
+    *  * DayOfWeek
     *  * HourOfDay
     *  * MinuteOfHour
     *  * Timezone
     */
   @js.native
   trait DescribeMaintenanceStartTimeOutput extends js.Object {
+    var DayOfMonth: js.UndefOr[DayOfMonth]
     var DayOfWeek: js.UndefOr[DayOfWeek]
     var GatewayARN: js.UndefOr[GatewayARN]
     var HourOfDay: js.UndefOr[HourOfDay]
@@ -1838,6 +1920,7 @@ package storagegateway {
 
   object DescribeMaintenanceStartTimeOutput {
     def apply(
+        DayOfMonth: js.UndefOr[DayOfMonth] = js.undefined,
         DayOfWeek: js.UndefOr[DayOfWeek] = js.undefined,
         GatewayARN: js.UndefOr[GatewayARN] = js.undefined,
         HourOfDay: js.UndefOr[HourOfDay] = js.undefined,
@@ -1845,6 +1928,7 @@ package storagegateway {
         Timezone: js.UndefOr[GatewayTimezone] = js.undefined
     ): DescribeMaintenanceStartTimeOutput = {
       val __obj = js.Dictionary.empty[js.Any]
+      DayOfMonth.foreach(__v => __obj.update("DayOfMonth", __v.asInstanceOf[js.Any]))
       DayOfWeek.foreach(__v => __obj.update("DayOfWeek", __v.asInstanceOf[js.Any]))
       GatewayARN.foreach(__v => __obj.update("GatewayARN", __v.asInstanceOf[js.Any]))
       HourOfDay.foreach(__v => __obj.update("HourOfDay", __v.asInstanceOf[js.Any]))
@@ -1940,18 +2024,21 @@ package storagegateway {
     var DomainName: js.UndefOr[DomainName]
     var GatewayARN: js.UndefOr[GatewayARN]
     var SMBGuestPasswordSet: js.UndefOr[Boolean]
+    var SMBSecurityStrategy: js.UndefOr[SMBSecurityStrategy]
   }
 
   object DescribeSMBSettingsOutput {
     def apply(
         DomainName: js.UndefOr[DomainName] = js.undefined,
         GatewayARN: js.UndefOr[GatewayARN] = js.undefined,
-        SMBGuestPasswordSet: js.UndefOr[Boolean] = js.undefined
+        SMBGuestPasswordSet: js.UndefOr[Boolean] = js.undefined,
+        SMBSecurityStrategy: js.UndefOr[SMBSecurityStrategy] = js.undefined
     ): DescribeSMBSettingsOutput = {
       val __obj = js.Dictionary.empty[js.Any]
       DomainName.foreach(__v => __obj.update("DomainName", __v.asInstanceOf[js.Any]))
       GatewayARN.foreach(__v => __obj.update("GatewayARN", __v.asInstanceOf[js.Any]))
       SMBGuestPasswordSet.foreach(__v => __obj.update("SMBGuestPasswordSet", __v.asInstanceOf[js.Any]))
+      SMBSecurityStrategy.foreach(__v => __obj.update("SMBSecurityStrategy", __v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeSMBSettingsOutput]
     }
   }
@@ -1981,6 +2068,7 @@ package storagegateway {
     var Description: js.UndefOr[Description]
     var RecurrenceInHours: js.UndefOr[RecurrenceInHours]
     var StartAt: js.UndefOr[HourOfDay]
+    var Tags: js.UndefOr[Tags]
     var Timezone: js.UndefOr[GatewayTimezone]
     var VolumeARN: js.UndefOr[VolumeARN]
   }
@@ -1990,6 +2078,7 @@ package storagegateway {
         Description: js.UndefOr[Description] = js.undefined,
         RecurrenceInHours: js.UndefOr[RecurrenceInHours] = js.undefined,
         StartAt: js.UndefOr[HourOfDay] = js.undefined,
+        Tags: js.UndefOr[Tags] = js.undefined,
         Timezone: js.UndefOr[GatewayTimezone] = js.undefined,
         VolumeARN: js.UndefOr[VolumeARN] = js.undefined
     ): DescribeSnapshotScheduleOutput = {
@@ -1997,6 +2086,7 @@ package storagegateway {
       Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
       RecurrenceInHours.foreach(__v => __obj.update("RecurrenceInHours", __v.asInstanceOf[js.Any]))
       StartAt.foreach(__v => __obj.update("StartAt", __v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
       Timezone.foreach(__v => __obj.update("Timezone", __v.asInstanceOf[js.Any]))
       VolumeARN.foreach(__v => __obj.update("VolumeARN", __v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeSnapshotScheduleOutput]
@@ -2488,6 +2578,8 @@ package storagegateway {
     */
   @js.native
   trait GatewayInfo extends js.Object {
+    var Ec2InstanceId: js.UndefOr[Ec2InstanceId]
+    var Ec2InstanceRegion: js.UndefOr[Ec2InstanceRegion]
     var GatewayARN: js.UndefOr[GatewayARN]
     var GatewayId: js.UndefOr[GatewayId]
     var GatewayName: js.UndefOr[String]
@@ -2497,6 +2589,8 @@ package storagegateway {
 
   object GatewayInfo {
     def apply(
+        Ec2InstanceId: js.UndefOr[Ec2InstanceId] = js.undefined,
+        Ec2InstanceRegion: js.UndefOr[Ec2InstanceRegion] = js.undefined,
         GatewayARN: js.UndefOr[GatewayARN] = js.undefined,
         GatewayId: js.UndefOr[GatewayId] = js.undefined,
         GatewayName: js.UndefOr[String] = js.undefined,
@@ -2504,6 +2598,8 @@ package storagegateway {
         GatewayType: js.UndefOr[GatewayType] = js.undefined
     ): GatewayInfo = {
       val __obj = js.Dictionary.empty[js.Any]
+      Ec2InstanceId.foreach(__v => __obj.update("Ec2InstanceId", __v.asInstanceOf[js.Any]))
+      Ec2InstanceRegion.foreach(__v => __obj.update("Ec2InstanceRegion", __v.asInstanceOf[js.Any]))
       GatewayARN.foreach(__v => __obj.update("GatewayARN", __v.asInstanceOf[js.Any]))
       GatewayId.foreach(__v => __obj.update("GatewayId", __v.asInstanceOf[js.Any]))
       GatewayName.foreach(__v => __obj.update("GatewayName", __v.asInstanceOf[js.Any]))
@@ -3261,6 +3357,7 @@ package storagegateway {
     */
   @js.native
   trait SMBFileShareInfo extends js.Object {
+    var AdminUserList: js.UndefOr[FileShareUserList]
     var Authentication: js.UndefOr[Authentication]
     var DefaultStorageClass: js.UndefOr[StorageClass]
     var FileShareARN: js.UndefOr[FileShareARN]
@@ -3277,12 +3374,14 @@ package storagegateway {
     var ReadOnly: js.UndefOr[Boolean]
     var RequesterPays: js.UndefOr[Boolean]
     var Role: js.UndefOr[Role]
+    var SMBACLEnabled: js.UndefOr[Boolean]
     var Tags: js.UndefOr[Tags]
     var ValidUserList: js.UndefOr[FileShareUserList]
   }
 
   object SMBFileShareInfo {
     def apply(
+        AdminUserList: js.UndefOr[FileShareUserList] = js.undefined,
         Authentication: js.UndefOr[Authentication] = js.undefined,
         DefaultStorageClass: js.UndefOr[StorageClass] = js.undefined,
         FileShareARN: js.UndefOr[FileShareARN] = js.undefined,
@@ -3299,10 +3398,12 @@ package storagegateway {
         ReadOnly: js.UndefOr[Boolean] = js.undefined,
         RequesterPays: js.UndefOr[Boolean] = js.undefined,
         Role: js.UndefOr[Role] = js.undefined,
+        SMBACLEnabled: js.UndefOr[Boolean] = js.undefined,
         Tags: js.UndefOr[Tags] = js.undefined,
         ValidUserList: js.UndefOr[FileShareUserList] = js.undefined
     ): SMBFileShareInfo = {
       val __obj = js.Dictionary.empty[js.Any]
+      AdminUserList.foreach(__v => __obj.update("AdminUserList", __v.asInstanceOf[js.Any]))
       Authentication.foreach(__v => __obj.update("Authentication", __v.asInstanceOf[js.Any]))
       DefaultStorageClass.foreach(__v => __obj.update("DefaultStorageClass", __v.asInstanceOf[js.Any]))
       FileShareARN.foreach(__v => __obj.update("FileShareARN", __v.asInstanceOf[js.Any]))
@@ -3319,10 +3420,19 @@ package storagegateway {
       ReadOnly.foreach(__v => __obj.update("ReadOnly", __v.asInstanceOf[js.Any]))
       RequesterPays.foreach(__v => __obj.update("RequesterPays", __v.asInstanceOf[js.Any]))
       Role.foreach(__v => __obj.update("Role", __v.asInstanceOf[js.Any]))
+      SMBACLEnabled.foreach(__v => __obj.update("SMBACLEnabled", __v.asInstanceOf[js.Any]))
       Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
       ValidUserList.foreach(__v => __obj.update("ValidUserList", __v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SMBFileShareInfo]
     }
+  }
+
+  object SMBSecurityStrategyEnum {
+    val ClientSpecified     = "ClientSpecified"
+    val MandatorySigning    = "MandatorySigning"
+    val MandatoryEncryption = "MandatoryEncryption"
+
+    val values = IndexedSeq(ClientSpecified, MandatorySigning, MandatoryEncryption)
   }
 
   @js.native
@@ -3892,32 +4002,36 @@ package storagegateway {
 
   /**
     * A JSON object containing the following fields:
-    * * DayOfWeek
+    * * DayOfMonth
+    *  * DayOfWeek
     *  * HourOfDay
     *  * MinuteOfHour
     */
   @js.native
   trait UpdateMaintenanceStartTimeInput extends js.Object {
-    var DayOfWeek: DayOfWeek
     var GatewayARN: GatewayARN
     var HourOfDay: HourOfDay
     var MinuteOfHour: MinuteOfHour
+    var DayOfMonth: js.UndefOr[DayOfMonth]
+    var DayOfWeek: js.UndefOr[DayOfWeek]
   }
 
   object UpdateMaintenanceStartTimeInput {
     def apply(
-        DayOfWeek: DayOfWeek,
         GatewayARN: GatewayARN,
         HourOfDay: HourOfDay,
-        MinuteOfHour: MinuteOfHour
+        MinuteOfHour: MinuteOfHour,
+        DayOfMonth: js.UndefOr[DayOfMonth] = js.undefined,
+        DayOfWeek: js.UndefOr[DayOfWeek] = js.undefined
     ): UpdateMaintenanceStartTimeInput = {
       val __obj = js.Dictionary[js.Any](
-        "DayOfWeek"    -> DayOfWeek.asInstanceOf[js.Any],
         "GatewayARN"   -> GatewayARN.asInstanceOf[js.Any],
         "HourOfDay"    -> HourOfDay.asInstanceOf[js.Any],
         "MinuteOfHour" -> MinuteOfHour.asInstanceOf[js.Any]
       )
 
+      DayOfMonth.foreach(__v => __obj.update("DayOfMonth", __v.asInstanceOf[js.Any]))
+      DayOfWeek.foreach(__v => __obj.update("DayOfWeek", __v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateMaintenanceStartTimeInput]
     }
   }
@@ -4005,6 +4119,7 @@ package storagegateway {
   @js.native
   trait UpdateSMBFileShareInput extends js.Object {
     var FileShareARN: FileShareARN
+    var AdminUserList: js.UndefOr[FileShareUserList]
     var DefaultStorageClass: js.UndefOr[StorageClass]
     var GuessMIMETypeEnabled: js.UndefOr[Boolean]
     var InvalidUserList: js.UndefOr[FileShareUserList]
@@ -4013,12 +4128,14 @@ package storagegateway {
     var ObjectACL: js.UndefOr[ObjectACL]
     var ReadOnly: js.UndefOr[Boolean]
     var RequesterPays: js.UndefOr[Boolean]
+    var SMBACLEnabled: js.UndefOr[Boolean]
     var ValidUserList: js.UndefOr[FileShareUserList]
   }
 
   object UpdateSMBFileShareInput {
     def apply(
         FileShareARN: FileShareARN,
+        AdminUserList: js.UndefOr[FileShareUserList] = js.undefined,
         DefaultStorageClass: js.UndefOr[StorageClass] = js.undefined,
         GuessMIMETypeEnabled: js.UndefOr[Boolean] = js.undefined,
         InvalidUserList: js.UndefOr[FileShareUserList] = js.undefined,
@@ -4027,12 +4144,14 @@ package storagegateway {
         ObjectACL: js.UndefOr[ObjectACL] = js.undefined,
         ReadOnly: js.UndefOr[Boolean] = js.undefined,
         RequesterPays: js.UndefOr[Boolean] = js.undefined,
+        SMBACLEnabled: js.UndefOr[Boolean] = js.undefined,
         ValidUserList: js.UndefOr[FileShareUserList] = js.undefined
     ): UpdateSMBFileShareInput = {
       val __obj = js.Dictionary[js.Any](
         "FileShareARN" -> FileShareARN.asInstanceOf[js.Any]
       )
 
+      AdminUserList.foreach(__v => __obj.update("AdminUserList", __v.asInstanceOf[js.Any]))
       DefaultStorageClass.foreach(__v => __obj.update("DefaultStorageClass", __v.asInstanceOf[js.Any]))
       GuessMIMETypeEnabled.foreach(__v => __obj.update("GuessMIMETypeEnabled", __v.asInstanceOf[js.Any]))
       InvalidUserList.foreach(__v => __obj.update("InvalidUserList", __v.asInstanceOf[js.Any]))
@@ -4041,6 +4160,7 @@ package storagegateway {
       ObjectACL.foreach(__v => __obj.update("ObjectACL", __v.asInstanceOf[js.Any]))
       ReadOnly.foreach(__v => __obj.update("ReadOnly", __v.asInstanceOf[js.Any]))
       RequesterPays.foreach(__v => __obj.update("RequesterPays", __v.asInstanceOf[js.Any]))
+      SMBACLEnabled.foreach(__v => __obj.update("SMBACLEnabled", __v.asInstanceOf[js.Any]))
       ValidUserList.foreach(__v => __obj.update("ValidUserList", __v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateSMBFileShareInput]
     }
@@ -4061,6 +4181,41 @@ package storagegateway {
     }
   }
 
+  @js.native
+  trait UpdateSMBSecurityStrategyInput extends js.Object {
+    var GatewayARN: GatewayARN
+    var SMBSecurityStrategy: SMBSecurityStrategy
+  }
+
+  object UpdateSMBSecurityStrategyInput {
+    def apply(
+        GatewayARN: GatewayARN,
+        SMBSecurityStrategy: SMBSecurityStrategy
+    ): UpdateSMBSecurityStrategyInput = {
+      val __obj = js.Dictionary[js.Any](
+        "GatewayARN"          -> GatewayARN.asInstanceOf[js.Any],
+        "SMBSecurityStrategy" -> SMBSecurityStrategy.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[UpdateSMBSecurityStrategyInput]
+    }
+  }
+
+  @js.native
+  trait UpdateSMBSecurityStrategyOutput extends js.Object {
+    var GatewayARN: js.UndefOr[GatewayARN]
+  }
+
+  object UpdateSMBSecurityStrategyOutput {
+    def apply(
+        GatewayARN: js.UndefOr[GatewayARN] = js.undefined
+    ): UpdateSMBSecurityStrategyOutput = {
+      val __obj = js.Dictionary.empty[js.Any]
+      GatewayARN.foreach(__v => __obj.update("GatewayARN", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateSMBSecurityStrategyOutput]
+    }
+  }
+
   /**
     * A JSON object containing one or more of the following fields:
     * * Description
@@ -4074,6 +4229,7 @@ package storagegateway {
     var StartAt: HourOfDay
     var VolumeARN: VolumeARN
     var Description: js.UndefOr[Description]
+    var Tags: js.UndefOr[Tags]
   }
 
   object UpdateSnapshotScheduleInput {
@@ -4081,7 +4237,8 @@ package storagegateway {
         RecurrenceInHours: RecurrenceInHours,
         StartAt: HourOfDay,
         VolumeARN: VolumeARN,
-        Description: js.UndefOr[Description] = js.undefined
+        Description: js.UndefOr[Description] = js.undefined,
+        Tags: js.UndefOr[Tags] = js.undefined
     ): UpdateSnapshotScheduleInput = {
       val __obj = js.Dictionary[js.Any](
         "RecurrenceInHours" -> RecurrenceInHours.asInstanceOf[js.Any],
@@ -4090,6 +4247,7 @@ package storagegateway {
       )
 
       Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateSnapshotScheduleInput]
     }
   }

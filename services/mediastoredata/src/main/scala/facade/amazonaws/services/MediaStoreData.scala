@@ -21,12 +21,13 @@ package object mediastoredata {
   type PathNaming          = String
   type PayloadBlob =
     nodejs.buffer.Buffer | nodejs.stream.Readable | js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
-  type RangePattern    = String
-  type SHA256Hash      = String
-  type StorageClass    = String
-  type StringPrimitive = String
-  type TimeStamp       = js.Date
-  type statusCode      = Int
+  type RangePattern       = String
+  type SHA256Hash         = String
+  type StorageClass       = String
+  type StringPrimitive    = String
+  type TimeStamp          = js.Date
+  type UploadAvailability = String
+  type statusCode         = Int
 
   implicit final class MediaStoreDataOps(val service: MediaStoreData) extends AnyVal {
 
@@ -273,6 +274,7 @@ package mediastoredata {
     var CacheControl: js.UndefOr[StringPrimitive]
     var ContentType: js.UndefOr[ContentType]
     var StorageClass: js.UndefOr[StorageClass]
+    var UploadAvailability: js.UndefOr[UploadAvailability]
   }
 
   object PutObjectRequest {
@@ -281,7 +283,8 @@ package mediastoredata {
         Path: PathNaming,
         CacheControl: js.UndefOr[StringPrimitive] = js.undefined,
         ContentType: js.UndefOr[ContentType] = js.undefined,
-        StorageClass: js.UndefOr[StorageClass] = js.undefined
+        StorageClass: js.UndefOr[StorageClass] = js.undefined,
+        UploadAvailability: js.UndefOr[UploadAvailability] = js.undefined
     ): PutObjectRequest = {
       val __obj = js.Dictionary[js.Any](
         "Body" -> Body.asInstanceOf[js.Any],
@@ -291,6 +294,7 @@ package mediastoredata {
       CacheControl.foreach(__v => __obj.update("CacheControl", __v.asInstanceOf[js.Any]))
       ContentType.foreach(__v => __obj.update("ContentType", __v.asInstanceOf[js.Any]))
       StorageClass.foreach(__v => __obj.update("StorageClass", __v.asInstanceOf[js.Any]))
+      UploadAvailability.foreach(__v => __obj.update("UploadAvailability", __v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PutObjectRequest]
     }
   }
@@ -320,5 +324,12 @@ package mediastoredata {
     val TEMPORAL = "TEMPORAL"
 
     val values = IndexedSeq(TEMPORAL)
+  }
+
+  object UploadAvailabilityEnum {
+    val STANDARD  = "STANDARD"
+    val STREAMING = "STREAMING"
+
+    val values = IndexedSeq(STANDARD, STREAMING)
   }
 }

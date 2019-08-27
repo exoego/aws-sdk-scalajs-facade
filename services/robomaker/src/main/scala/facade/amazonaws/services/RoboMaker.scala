@@ -11,13 +11,18 @@ package object robomaker {
   type Architecture                       = String
   type Arn                                = String
   type Arns                               = js.Array[Arn]
+  type BoxedBoolean                       = Boolean
   type ClientRequestToken                 = String
   type Command                            = String
   type CreatedAt                          = js.Date
+  type DataSourceConfigs                  = js.Array[DataSourceConfig]
+  type DataSourceNames                    = js.Array[Name]
+  type DataSources                        = js.Array[DataSource]
   type DeploymentApplicationConfigs       = js.Array[DeploymentApplicationConfig]
   type DeploymentJobErrorCode             = String
   type DeploymentJobs                     = js.Array[DeploymentJob]
   type DeploymentStatus                   = String
+  type DeploymentTimeout                  = Double
   type DeploymentVersion                  = String
   type EnvironmentVariableKey             = String
   type EnvironmentVariableMap             = js.Dictionary[EnvironmentVariableValue]
@@ -31,9 +36,11 @@ package object robomaker {
   type IamRole                            = String
   type Id                                 = String
   type JobDuration                        = Double
+  type LastStartedAt                      = js.Date
   type LastUpdatedAt                      = js.Date
   type MaxResults                         = Int
   type Name                               = String
+  type NonEmptyString                     = String
   type PaginationToken                    = String
   type Path                               = String
   type PercentDone                        = Float
@@ -53,7 +60,9 @@ package object robomaker {
   type S3Bucket                           = String
   type S3Etag                             = String
   type S3Key                              = String
-  type SecurityGroups                     = js.Array[GenericString]
+  type S3KeyOutputs                       = js.Array[S3KeyOutput]
+  type S3Keys                             = js.Array[S3Key]
+  type SecurityGroups                     = js.Array[NonEmptyString]
   type SimulationApplicationConfigs       = js.Array[SimulationApplicationConfig]
   type SimulationApplicationNames         = js.Array[Name]
   type SimulationApplicationSummaries     = js.Array[SimulationApplicationSummary]
@@ -66,7 +75,7 @@ package object robomaker {
   type SimulationTimeMillis               = Double
   type SourceConfigs                      = js.Array[SourceConfig]
   type Sources                            = js.Array[Source]
-  type Subnets                            = js.Array[GenericString]
+  type Subnets                            = js.Array[NonEmptyString]
   type TagKey                             = String
   type TagKeyList                         = js.Array[TagKey]
   type TagMap                             = js.Dictionary[TagValue]
@@ -79,6 +88,8 @@ package object robomaker {
     def batchDescribeSimulationJobFuture(
         params: BatchDescribeSimulationJobRequest
     ): Future[BatchDescribeSimulationJobResponse] = service.batchDescribeSimulationJob(params).promise.toFuture
+    def cancelDeploymentJobFuture(params: CancelDeploymentJobRequest): Future[CancelDeploymentJobResponse] =
+      service.cancelDeploymentJob(params).promise.toFuture
     def cancelSimulationJobFuture(params: CancelSimulationJobRequest): Future[CancelSimulationJobResponse] =
       service.cancelSimulationJob(params).promise.toFuture
     def createDeploymentJobFuture(params: CreateDeploymentJobRequest): Future[CreateDeploymentJobResponse] =
@@ -168,6 +179,7 @@ package robomaker {
     def batchDescribeSimulationJob(
         params: BatchDescribeSimulationJobRequest
     ): Request[BatchDescribeSimulationJobResponse]                                                    = js.native
+    def cancelDeploymentJob(params: CancelDeploymentJobRequest): Request[CancelDeploymentJobResponse] = js.native
     def cancelSimulationJob(params: CancelSimulationJobRequest): Request[CancelSimulationJobResponse] = js.native
     def createDeploymentJob(params: CreateDeploymentJobRequest): Request[CreateDeploymentJobResponse] = js.native
     def createFleet(params: CreateFleetRequest): Request[CreateFleetResponse]                         = js.native
@@ -262,6 +274,35 @@ package robomaker {
       jobs.foreach(__v => __obj.update("jobs", __v.asInstanceOf[js.Any]))
       unprocessedJobs.foreach(__v => __obj.update("unprocessedJobs", __v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[BatchDescribeSimulationJobResponse]
+    }
+  }
+
+  @js.native
+  trait CancelDeploymentJobRequest extends js.Object {
+    var job: Arn
+  }
+
+  object CancelDeploymentJobRequest {
+    def apply(
+        job: Arn
+    ): CancelDeploymentJobRequest = {
+      val __obj = js.Dictionary[js.Any](
+        "job" -> job.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[CancelDeploymentJobRequest]
+    }
+  }
+
+  @js.native
+  trait CancelDeploymentJobResponse extends js.Object {}
+
+  object CancelDeploymentJobResponse {
+    def apply(
+        ): CancelDeploymentJobResponse = {
+      val __obj = js.Dictionary.empty[js.Any]
+
+      __obj.asInstanceOf[CancelDeploymentJobResponse]
     }
   }
 
@@ -582,30 +623,30 @@ package robomaker {
   @js.native
   trait CreateSimulationApplicationRequest extends js.Object {
     var name: Name
-    var renderingEngine: RenderingEngine
     var robotSoftwareSuite: RobotSoftwareSuite
     var simulationSoftwareSuite: SimulationSoftwareSuite
     var sources: SourceConfigs
+    var renderingEngine: js.UndefOr[RenderingEngine]
     var tags: js.UndefOr[TagMap]
   }
 
   object CreateSimulationApplicationRequest {
     def apply(
         name: Name,
-        renderingEngine: RenderingEngine,
         robotSoftwareSuite: RobotSoftwareSuite,
         simulationSoftwareSuite: SimulationSoftwareSuite,
         sources: SourceConfigs,
+        renderingEngine: js.UndefOr[RenderingEngine] = js.undefined,
         tags: js.UndefOr[TagMap] = js.undefined
     ): CreateSimulationApplicationRequest = {
       val __obj = js.Dictionary[js.Any](
         "name"                    -> name.asInstanceOf[js.Any],
-        "renderingEngine"         -> renderingEngine.asInstanceOf[js.Any],
         "robotSoftwareSuite"      -> robotSoftwareSuite.asInstanceOf[js.Any],
         "simulationSoftwareSuite" -> simulationSoftwareSuite.asInstanceOf[js.Any],
         "sources"                 -> sources.asInstanceOf[js.Any]
       )
 
+      renderingEngine.foreach(__v => __obj.update("renderingEngine", __v.asInstanceOf[js.Any]))
       tags.foreach(__v => __obj.update("tags", __v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateSimulationApplicationRequest]
     }
@@ -717,7 +758,9 @@ package robomaker {
     var iamRole: IamRole
     var maxJobDurationInSeconds: JobDuration
     var clientRequestToken: js.UndefOr[ClientRequestToken]
+    var dataSources: js.UndefOr[DataSourceConfigs]
     var failureBehavior: js.UndefOr[FailureBehavior]
+    var loggingConfig: js.UndefOr[LoggingConfig]
     var outputLocation: js.UndefOr[OutputLocation]
     var robotApplications: js.UndefOr[RobotApplicationConfigs]
     var simulationApplications: js.UndefOr[SimulationApplicationConfigs]
@@ -730,7 +773,9 @@ package robomaker {
         iamRole: IamRole,
         maxJobDurationInSeconds: JobDuration,
         clientRequestToken: js.UndefOr[ClientRequestToken] = js.undefined,
+        dataSources: js.UndefOr[DataSourceConfigs] = js.undefined,
         failureBehavior: js.UndefOr[FailureBehavior] = js.undefined,
+        loggingConfig: js.UndefOr[LoggingConfig] = js.undefined,
         outputLocation: js.UndefOr[OutputLocation] = js.undefined,
         robotApplications: js.UndefOr[RobotApplicationConfigs] = js.undefined,
         simulationApplications: js.UndefOr[SimulationApplicationConfigs] = js.undefined,
@@ -743,7 +788,9 @@ package robomaker {
       )
 
       clientRequestToken.foreach(__v => __obj.update("clientRequestToken", __v.asInstanceOf[js.Any]))
+      dataSources.foreach(__v => __obj.update("dataSources", __v.asInstanceOf[js.Any]))
       failureBehavior.foreach(__v => __obj.update("failureBehavior", __v.asInstanceOf[js.Any]))
+      loggingConfig.foreach(__v => __obj.update("loggingConfig", __v.asInstanceOf[js.Any]))
       outputLocation.foreach(__v => __obj.update("outputLocation", __v.asInstanceOf[js.Any]))
       robotApplications.foreach(__v => __obj.update("robotApplications", __v.asInstanceOf[js.Any]))
       simulationApplications.foreach(__v => __obj.update("simulationApplications", __v.asInstanceOf[js.Any]))
@@ -757,10 +804,13 @@ package robomaker {
   trait CreateSimulationJobResponse extends js.Object {
     var arn: js.UndefOr[Arn]
     var clientRequestToken: js.UndefOr[ClientRequestToken]
+    var dataSources: js.UndefOr[DataSources]
     var failureBehavior: js.UndefOr[FailureBehavior]
     var failureCode: js.UndefOr[SimulationJobErrorCode]
     var iamRole: js.UndefOr[IamRole]
+    var lastStartedAt: js.UndefOr[LastStartedAt]
     var lastUpdatedAt: js.UndefOr[LastUpdatedAt]
+    var loggingConfig: js.UndefOr[LoggingConfig]
     var maxJobDurationInSeconds: js.UndefOr[JobDuration]
     var outputLocation: js.UndefOr[OutputLocation]
     var robotApplications: js.UndefOr[RobotApplicationConfigs]
@@ -775,10 +825,13 @@ package robomaker {
     def apply(
         arn: js.UndefOr[Arn] = js.undefined,
         clientRequestToken: js.UndefOr[ClientRequestToken] = js.undefined,
+        dataSources: js.UndefOr[DataSources] = js.undefined,
         failureBehavior: js.UndefOr[FailureBehavior] = js.undefined,
         failureCode: js.UndefOr[SimulationJobErrorCode] = js.undefined,
         iamRole: js.UndefOr[IamRole] = js.undefined,
+        lastStartedAt: js.UndefOr[LastStartedAt] = js.undefined,
         lastUpdatedAt: js.UndefOr[LastUpdatedAt] = js.undefined,
+        loggingConfig: js.UndefOr[LoggingConfig] = js.undefined,
         maxJobDurationInSeconds: js.UndefOr[JobDuration] = js.undefined,
         outputLocation: js.UndefOr[OutputLocation] = js.undefined,
         robotApplications: js.UndefOr[RobotApplicationConfigs] = js.undefined,
@@ -791,10 +844,13 @@ package robomaker {
       val __obj = js.Dictionary.empty[js.Any]
       arn.foreach(__v => __obj.update("arn", __v.asInstanceOf[js.Any]))
       clientRequestToken.foreach(__v => __obj.update("clientRequestToken", __v.asInstanceOf[js.Any]))
+      dataSources.foreach(__v => __obj.update("dataSources", __v.asInstanceOf[js.Any]))
       failureBehavior.foreach(__v => __obj.update("failureBehavior", __v.asInstanceOf[js.Any]))
       failureCode.foreach(__v => __obj.update("failureCode", __v.asInstanceOf[js.Any]))
       iamRole.foreach(__v => __obj.update("iamRole", __v.asInstanceOf[js.Any]))
+      lastStartedAt.foreach(__v => __obj.update("lastStartedAt", __v.asInstanceOf[js.Any]))
       lastUpdatedAt.foreach(__v => __obj.update("lastUpdatedAt", __v.asInstanceOf[js.Any]))
+      loggingConfig.foreach(__v => __obj.update("loggingConfig", __v.asInstanceOf[js.Any]))
       maxJobDurationInSeconds.foreach(__v => __obj.update("maxJobDurationInSeconds", __v.asInstanceOf[js.Any]))
       outputLocation.foreach(__v => __obj.update("outputLocation", __v.asInstanceOf[js.Any]))
       robotApplications.foreach(__v => __obj.update("robotApplications", __v.asInstanceOf[js.Any]))
@@ -804,6 +860,56 @@ package robomaker {
       tags.foreach(__v => __obj.update("tags", __v.asInstanceOf[js.Any]))
       vpcConfig.foreach(__v => __obj.update("vpcConfig", __v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateSimulationJobResponse]
+    }
+  }
+
+  /**
+    * Information about a data source.
+    */
+  @js.native
+  trait DataSource extends js.Object {
+    var name: js.UndefOr[Name]
+    var s3Bucket: js.UndefOr[S3Bucket]
+    var s3Keys: js.UndefOr[S3KeyOutputs]
+  }
+
+  object DataSource {
+    def apply(
+        name: js.UndefOr[Name] = js.undefined,
+        s3Bucket: js.UndefOr[S3Bucket] = js.undefined,
+        s3Keys: js.UndefOr[S3KeyOutputs] = js.undefined
+    ): DataSource = {
+      val __obj = js.Dictionary.empty[js.Any]
+      name.foreach(__v => __obj.update("name", __v.asInstanceOf[js.Any]))
+      s3Bucket.foreach(__v => __obj.update("s3Bucket", __v.asInstanceOf[js.Any]))
+      s3Keys.foreach(__v => __obj.update("s3Keys", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DataSource]
+    }
+  }
+
+  /**
+    * Information about a data source.
+    */
+  @js.native
+  trait DataSourceConfig extends js.Object {
+    var name: Name
+    var s3Bucket: S3Bucket
+    var s3Keys: S3Keys
+  }
+
+  object DataSourceConfig {
+    def apply(
+        name: Name,
+        s3Bucket: S3Bucket,
+        s3Keys: S3Keys
+    ): DataSourceConfig = {
+      val __obj = js.Dictionary[js.Any](
+        "name"     -> name.asInstanceOf[js.Any],
+        "s3Bucket" -> s3Bucket.asInstanceOf[js.Any],
+        "s3Keys"   -> s3Keys.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[DataSourceConfig]
     }
   }
 
@@ -962,18 +1068,23 @@ package robomaker {
   trait DeploymentConfig extends js.Object {
     var concurrentDeploymentPercentage: js.UndefOr[Percentage]
     var failureThresholdPercentage: js.UndefOr[Percentage]
+    var robotDeploymentTimeoutInSeconds: js.UndefOr[DeploymentTimeout]
   }
 
   object DeploymentConfig {
     def apply(
         concurrentDeploymentPercentage: js.UndefOr[Percentage] = js.undefined,
-        failureThresholdPercentage: js.UndefOr[Percentage] = js.undefined
+        failureThresholdPercentage: js.UndefOr[Percentage] = js.undefined,
+        robotDeploymentTimeoutInSeconds: js.UndefOr[DeploymentTimeout] = js.undefined
     ): DeploymentConfig = {
       val __obj = js.Dictionary.empty[js.Any]
       concurrentDeploymentPercentage.foreach(
         __v => __obj.update("concurrentDeploymentPercentage", __v.asInstanceOf[js.Any])
       )
       failureThresholdPercentage.foreach(__v => __obj.update("failureThresholdPercentage", __v.asInstanceOf[js.Any]))
+      robotDeploymentTimeoutInSeconds.foreach(
+        __v => __obj.update("robotDeploymentTimeoutInSeconds", __v.asInstanceOf[js.Any])
+      )
       __obj.asInstanceOf[DeploymentConfig]
     }
   }
@@ -1024,6 +1135,7 @@ package robomaker {
     val EnvironmentSetupError               = "EnvironmentSetupError"
     val EtagMismatch                        = "EtagMismatch"
     val FailureThresholdBreached            = "FailureThresholdBreached"
+    val RobotDeploymentAborted              = "RobotDeploymentAborted"
     val RobotDeploymentNoResponse           = "RobotDeploymentNoResponse"
     val RobotAgentConnectionTimeout         = "RobotAgentConnectionTimeout"
     val GreengrassDeploymentFailed          = "GreengrassDeploymentFailed"
@@ -1042,6 +1154,7 @@ package robomaker {
       EnvironmentSetupError,
       EtagMismatch,
       FailureThresholdBreached,
+      RobotDeploymentAborted,
       RobotDeploymentNoResponse,
       RobotAgentConnectionTimeout,
       GreengrassDeploymentFailed,
@@ -1095,8 +1208,9 @@ package robomaker {
     val InProgress = "InProgress"
     val Failed     = "Failed"
     val Succeeded  = "Succeeded"
+    val Canceled   = "Canceled"
 
-    val values = IndexedSeq(Pending, Preparing, InProgress, Failed, Succeeded)
+    val values = IndexedSeq(Pending, Preparing, InProgress, Failed, Succeeded, Canceled)
   }
 
   @js.native
@@ -1449,11 +1563,14 @@ package robomaker {
   trait DescribeSimulationJobResponse extends js.Object {
     var arn: js.UndefOr[Arn]
     var clientRequestToken: js.UndefOr[ClientRequestToken]
+    var dataSources: js.UndefOr[DataSources]
     var failureBehavior: js.UndefOr[FailureBehavior]
     var failureCode: js.UndefOr[SimulationJobErrorCode]
     var failureReason: js.UndefOr[GenericString]
     var iamRole: js.UndefOr[IamRole]
+    var lastStartedAt: js.UndefOr[LastStartedAt]
     var lastUpdatedAt: js.UndefOr[LastUpdatedAt]
+    var loggingConfig: js.UndefOr[LoggingConfig]
     var maxJobDurationInSeconds: js.UndefOr[JobDuration]
     var name: js.UndefOr[Name]
     var outputLocation: js.UndefOr[OutputLocation]
@@ -1469,11 +1586,14 @@ package robomaker {
     def apply(
         arn: js.UndefOr[Arn] = js.undefined,
         clientRequestToken: js.UndefOr[ClientRequestToken] = js.undefined,
+        dataSources: js.UndefOr[DataSources] = js.undefined,
         failureBehavior: js.UndefOr[FailureBehavior] = js.undefined,
         failureCode: js.UndefOr[SimulationJobErrorCode] = js.undefined,
         failureReason: js.UndefOr[GenericString] = js.undefined,
         iamRole: js.UndefOr[IamRole] = js.undefined,
+        lastStartedAt: js.UndefOr[LastStartedAt] = js.undefined,
         lastUpdatedAt: js.UndefOr[LastUpdatedAt] = js.undefined,
+        loggingConfig: js.UndefOr[LoggingConfig] = js.undefined,
         maxJobDurationInSeconds: js.UndefOr[JobDuration] = js.undefined,
         name: js.UndefOr[Name] = js.undefined,
         outputLocation: js.UndefOr[OutputLocation] = js.undefined,
@@ -1487,11 +1607,14 @@ package robomaker {
       val __obj = js.Dictionary.empty[js.Any]
       arn.foreach(__v => __obj.update("arn", __v.asInstanceOf[js.Any]))
       clientRequestToken.foreach(__v => __obj.update("clientRequestToken", __v.asInstanceOf[js.Any]))
+      dataSources.foreach(__v => __obj.update("dataSources", __v.asInstanceOf[js.Any]))
       failureBehavior.foreach(__v => __obj.update("failureBehavior", __v.asInstanceOf[js.Any]))
       failureCode.foreach(__v => __obj.update("failureCode", __v.asInstanceOf[js.Any]))
       failureReason.foreach(__v => __obj.update("failureReason", __v.asInstanceOf[js.Any]))
       iamRole.foreach(__v => __obj.update("iamRole", __v.asInstanceOf[js.Any]))
+      lastStartedAt.foreach(__v => __obj.update("lastStartedAt", __v.asInstanceOf[js.Any]))
       lastUpdatedAt.foreach(__v => __obj.update("lastUpdatedAt", __v.asInstanceOf[js.Any]))
+      loggingConfig.foreach(__v => __obj.update("loggingConfig", __v.asInstanceOf[js.Any]))
       maxJobDurationInSeconds.foreach(__v => __obj.update("maxJobDurationInSeconds", __v.asInstanceOf[js.Any]))
       name.foreach(__v => __obj.update("name", __v.asInstanceOf[js.Any]))
       outputLocation.foreach(__v => __obj.update("outputLocation", __v.asInstanceOf[js.Any]))
@@ -1869,6 +1992,26 @@ package robomaker {
   }
 
   /**
+    * The logging configuration.
+    */
+  @js.native
+  trait LoggingConfig extends js.Object {
+    var recordAllRosTopics: BoxedBoolean
+  }
+
+  object LoggingConfig {
+    def apply(
+        recordAllRosTopics: BoxedBoolean
+    ): LoggingConfig = {
+      val __obj = js.Dictionary[js.Any](
+        "recordAllRosTopics" -> recordAllRosTopics.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[LoggingConfig]
+    }
+  }
+
+  /**
     * The output location.
     */
   @js.native
@@ -2088,6 +2231,7 @@ package robomaker {
     var arn: js.UndefOr[Arn]
     var lastUpdatedAt: js.UndefOr[LastUpdatedAt]
     var name: js.UndefOr[Name]
+    var robotSoftwareSuite: js.UndefOr[RobotSoftwareSuite]
     var version: js.UndefOr[Version]
   }
 
@@ -2096,12 +2240,14 @@ package robomaker {
         arn: js.UndefOr[Arn] = js.undefined,
         lastUpdatedAt: js.UndefOr[LastUpdatedAt] = js.undefined,
         name: js.UndefOr[Name] = js.undefined,
+        robotSoftwareSuite: js.UndefOr[RobotSoftwareSuite] = js.undefined,
         version: js.UndefOr[Version] = js.undefined
     ): RobotApplicationSummary = {
       val __obj = js.Dictionary.empty[js.Any]
       arn.foreach(__v => __obj.update("arn", __v.asInstanceOf[js.Any]))
       lastUpdatedAt.foreach(__v => __obj.update("lastUpdatedAt", __v.asInstanceOf[js.Any]))
       name.foreach(__v => __obj.update("name", __v.asInstanceOf[js.Any]))
+      robotSoftwareSuite.foreach(__v => __obj.update("robotSoftwareSuite", __v.asInstanceOf[js.Any]))
       version.foreach(__v => __obj.update("version", __v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[RobotApplicationSummary]
     }
@@ -2184,8 +2330,9 @@ package robomaker {
 
   object RobotSoftwareSuiteVersionTypeEnum {
     val Kinetic = "Kinetic"
+    val Melodic = "Melodic"
 
-    val values = IndexedSeq(Kinetic)
+    val values = IndexedSeq(Kinetic, Melodic)
   }
 
   object RobotStatusEnum {
@@ -2198,6 +2345,27 @@ package robomaker {
     val NoResponse           = "NoResponse"
 
     val values = IndexedSeq(Available, Registered, PendingNewDeployment, Deploying, Failed, InSync, NoResponse)
+  }
+
+  /**
+    * Information about S3 keys.
+    */
+  @js.native
+  trait S3KeyOutput extends js.Object {
+    var etag: js.UndefOr[S3Etag]
+    var s3Key: js.UndefOr[S3Key]
+  }
+
+  object S3KeyOutput {
+    def apply(
+        etag: js.UndefOr[S3Etag] = js.undefined,
+        s3Key: js.UndefOr[S3Key] = js.undefined
+    ): S3KeyOutput = {
+      val __obj = js.Dictionary.empty[js.Any]
+      etag.foreach(__v => __obj.update("etag", __v.asInstanceOf[js.Any]))
+      s3Key.foreach(__v => __obj.update("s3Key", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[S3KeyOutput]
+    }
   }
 
   /**
@@ -2234,6 +2402,8 @@ package robomaker {
     var arn: js.UndefOr[Arn]
     var lastUpdatedAt: js.UndefOr[LastUpdatedAt]
     var name: js.UndefOr[Name]
+    var robotSoftwareSuite: js.UndefOr[RobotSoftwareSuite]
+    var simulationSoftwareSuite: js.UndefOr[SimulationSoftwareSuite]
     var version: js.UndefOr[Version]
   }
 
@@ -2242,12 +2412,16 @@ package robomaker {
         arn: js.UndefOr[Arn] = js.undefined,
         lastUpdatedAt: js.UndefOr[LastUpdatedAt] = js.undefined,
         name: js.UndefOr[Name] = js.undefined,
+        robotSoftwareSuite: js.UndefOr[RobotSoftwareSuite] = js.undefined,
+        simulationSoftwareSuite: js.UndefOr[SimulationSoftwareSuite] = js.undefined,
         version: js.UndefOr[Version] = js.undefined
     ): SimulationApplicationSummary = {
       val __obj = js.Dictionary.empty[js.Any]
       arn.foreach(__v => __obj.update("arn", __v.asInstanceOf[js.Any]))
       lastUpdatedAt.foreach(__v => __obj.update("lastUpdatedAt", __v.asInstanceOf[js.Any]))
       name.foreach(__v => __obj.update("name", __v.asInstanceOf[js.Any]))
+      robotSoftwareSuite.foreach(__v => __obj.update("robotSoftwareSuite", __v.asInstanceOf[js.Any]))
+      simulationSoftwareSuite.foreach(__v => __obj.update("simulationSoftwareSuite", __v.asInstanceOf[js.Any]))
       version.foreach(__v => __obj.update("version", __v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SimulationApplicationSummary]
     }
@@ -2260,11 +2434,14 @@ package robomaker {
   trait SimulationJob extends js.Object {
     var arn: js.UndefOr[Arn]
     var clientRequestToken: js.UndefOr[ClientRequestToken]
+    var dataSources: js.UndefOr[DataSources]
     var failureBehavior: js.UndefOr[FailureBehavior]
     var failureCode: js.UndefOr[SimulationJobErrorCode]
     var failureReason: js.UndefOr[GenericString]
     var iamRole: js.UndefOr[IamRole]
+    var lastStartedAt: js.UndefOr[LastStartedAt]
     var lastUpdatedAt: js.UndefOr[LastUpdatedAt]
+    var loggingConfig: js.UndefOr[LoggingConfig]
     var maxJobDurationInSeconds: js.UndefOr[JobDuration]
     var name: js.UndefOr[Name]
     var outputLocation: js.UndefOr[OutputLocation]
@@ -2280,11 +2457,14 @@ package robomaker {
     def apply(
         arn: js.UndefOr[Arn] = js.undefined,
         clientRequestToken: js.UndefOr[ClientRequestToken] = js.undefined,
+        dataSources: js.UndefOr[DataSources] = js.undefined,
         failureBehavior: js.UndefOr[FailureBehavior] = js.undefined,
         failureCode: js.UndefOr[SimulationJobErrorCode] = js.undefined,
         failureReason: js.UndefOr[GenericString] = js.undefined,
         iamRole: js.UndefOr[IamRole] = js.undefined,
+        lastStartedAt: js.UndefOr[LastStartedAt] = js.undefined,
         lastUpdatedAt: js.UndefOr[LastUpdatedAt] = js.undefined,
+        loggingConfig: js.UndefOr[LoggingConfig] = js.undefined,
         maxJobDurationInSeconds: js.UndefOr[JobDuration] = js.undefined,
         name: js.UndefOr[Name] = js.undefined,
         outputLocation: js.UndefOr[OutputLocation] = js.undefined,
@@ -2298,11 +2478,14 @@ package robomaker {
       val __obj = js.Dictionary.empty[js.Any]
       arn.foreach(__v => __obj.update("arn", __v.asInstanceOf[js.Any]))
       clientRequestToken.foreach(__v => __obj.update("clientRequestToken", __v.asInstanceOf[js.Any]))
+      dataSources.foreach(__v => __obj.update("dataSources", __v.asInstanceOf[js.Any]))
       failureBehavior.foreach(__v => __obj.update("failureBehavior", __v.asInstanceOf[js.Any]))
       failureCode.foreach(__v => __obj.update("failureCode", __v.asInstanceOf[js.Any]))
       failureReason.foreach(__v => __obj.update("failureReason", __v.asInstanceOf[js.Any]))
       iamRole.foreach(__v => __obj.update("iamRole", __v.asInstanceOf[js.Any]))
+      lastStartedAt.foreach(__v => __obj.update("lastStartedAt", __v.asInstanceOf[js.Any]))
       lastUpdatedAt.foreach(__v => __obj.update("lastUpdatedAt", __v.asInstanceOf[js.Any]))
+      loggingConfig.foreach(__v => __obj.update("loggingConfig", __v.asInstanceOf[js.Any]))
       maxJobDurationInSeconds.foreach(__v => __obj.update("maxJobDurationInSeconds", __v.asInstanceOf[js.Any]))
       name.foreach(__v => __obj.update("name", __v.asInstanceOf[js.Any]))
       outputLocation.foreach(__v => __obj.update("outputLocation", __v.asInstanceOf[js.Any]))
@@ -2322,6 +2505,7 @@ package robomaker {
     val SimulationApplicationCrash                 = "SimulationApplicationCrash"
     val BadPermissionsRobotApplication             = "BadPermissionsRobotApplication"
     val BadPermissionsSimulationApplication        = "BadPermissionsSimulationApplication"
+    val BadPermissionsS3Object                     = "BadPermissionsS3Object"
     val BadPermissionsS3Output                     = "BadPermissionsS3Output"
     val BadPermissionsCloudwatchLogs               = "BadPermissionsCloudwatchLogs"
     val SubnetIpLimitExceeded                      = "SubnetIpLimitExceeded"
@@ -2329,8 +2513,13 @@ package robomaker {
     val BadPermissionsUserCredentials              = "BadPermissionsUserCredentials"
     val InvalidBundleRobotApplication              = "InvalidBundleRobotApplication"
     val InvalidBundleSimulationApplication         = "InvalidBundleSimulationApplication"
+    val InvalidS3Resource                          = "InvalidS3Resource"
+    val MismatchedEtag                             = "MismatchedEtag"
     val RobotApplicationVersionMismatchedEtag      = "RobotApplicationVersionMismatchedEtag"
     val SimulationApplicationVersionMismatchedEtag = "SimulationApplicationVersionMismatchedEtag"
+    val ResourceNotFound                           = "ResourceNotFound"
+    val InvalidInput                               = "InvalidInput"
+    val WrongRegionS3Bucket                        = "WrongRegionS3Bucket"
     val WrongRegionS3Output                        = "WrongRegionS3Output"
     val WrongRegionRobotApplication                = "WrongRegionRobotApplication"
     val WrongRegionSimulationApplication           = "WrongRegionSimulationApplication"
@@ -2341,6 +2530,7 @@ package robomaker {
       SimulationApplicationCrash,
       BadPermissionsRobotApplication,
       BadPermissionsSimulationApplication,
+      BadPermissionsS3Object,
       BadPermissionsS3Output,
       BadPermissionsCloudwatchLogs,
       SubnetIpLimitExceeded,
@@ -2348,8 +2538,13 @@ package robomaker {
       BadPermissionsUserCredentials,
       InvalidBundleRobotApplication,
       InvalidBundleSimulationApplication,
+      InvalidS3Resource,
+      MismatchedEtag,
       RobotApplicationVersionMismatchedEtag,
       SimulationApplicationVersionMismatchedEtag,
+      ResourceNotFound,
+      InvalidInput,
+      WrongRegionS3Bucket,
       WrongRegionS3Output,
       WrongRegionRobotApplication,
       WrongRegionSimulationApplication
@@ -2388,6 +2583,7 @@ package robomaker {
   @js.native
   trait SimulationJobSummary extends js.Object {
     var arn: js.UndefOr[Arn]
+    var dataSourceNames: js.UndefOr[DataSourceNames]
     var lastUpdatedAt: js.UndefOr[LastUpdatedAt]
     var name: js.UndefOr[Name]
     var robotApplicationNames: js.UndefOr[RobotApplicationNames]
@@ -2398,6 +2594,7 @@ package robomaker {
   object SimulationJobSummary {
     def apply(
         arn: js.UndefOr[Arn] = js.undefined,
+        dataSourceNames: js.UndefOr[DataSourceNames] = js.undefined,
         lastUpdatedAt: js.UndefOr[LastUpdatedAt] = js.undefined,
         name: js.UndefOr[Name] = js.undefined,
         robotApplicationNames: js.UndefOr[RobotApplicationNames] = js.undefined,
@@ -2406,6 +2603,7 @@ package robomaker {
     ): SimulationJobSummary = {
       val __obj = js.Dictionary.empty[js.Any]
       arn.foreach(__v => __obj.update("arn", __v.asInstanceOf[js.Any]))
+      dataSourceNames.foreach(__v => __obj.update("dataSourceNames", __v.asInstanceOf[js.Any]))
       lastUpdatedAt.foreach(__v => __obj.update("lastUpdatedAt", __v.asInstanceOf[js.Any]))
       name.foreach(__v => __obj.update("name", __v.asInstanceOf[js.Any]))
       robotApplicationNames.foreach(__v => __obj.update("robotApplicationNames", __v.asInstanceOf[js.Any]))
@@ -2437,9 +2635,10 @@ package robomaker {
   }
 
   object SimulationSoftwareSuiteTypeEnum {
-    val Gazebo = "Gazebo"
+    val Gazebo     = "Gazebo"
+    val RosbagPlay = "RosbagPlay"
 
-    val values = IndexedSeq(Gazebo)
+    val values = IndexedSeq(Gazebo, RosbagPlay)
   }
 
   /**
@@ -2677,31 +2876,31 @@ package robomaker {
   @js.native
   trait UpdateSimulationApplicationRequest extends js.Object {
     var application: Arn
-    var renderingEngine: RenderingEngine
     var robotSoftwareSuite: RobotSoftwareSuite
     var simulationSoftwareSuite: SimulationSoftwareSuite
     var sources: SourceConfigs
     var currentRevisionId: js.UndefOr[RevisionId]
+    var renderingEngine: js.UndefOr[RenderingEngine]
   }
 
   object UpdateSimulationApplicationRequest {
     def apply(
         application: Arn,
-        renderingEngine: RenderingEngine,
         robotSoftwareSuite: RobotSoftwareSuite,
         simulationSoftwareSuite: SimulationSoftwareSuite,
         sources: SourceConfigs,
-        currentRevisionId: js.UndefOr[RevisionId] = js.undefined
+        currentRevisionId: js.UndefOr[RevisionId] = js.undefined,
+        renderingEngine: js.UndefOr[RenderingEngine] = js.undefined
     ): UpdateSimulationApplicationRequest = {
       val __obj = js.Dictionary[js.Any](
         "application"             -> application.asInstanceOf[js.Any],
-        "renderingEngine"         -> renderingEngine.asInstanceOf[js.Any],
         "robotSoftwareSuite"      -> robotSoftwareSuite.asInstanceOf[js.Any],
         "simulationSoftwareSuite" -> simulationSoftwareSuite.asInstanceOf[js.Any],
         "sources"                 -> sources.asInstanceOf[js.Any]
       )
 
       currentRevisionId.foreach(__v => __obj.update("currentRevisionId", __v.asInstanceOf[js.Any]))
+      renderingEngine.foreach(__v => __obj.update("renderingEngine", __v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateSimulationApplicationRequest]
     }
   }

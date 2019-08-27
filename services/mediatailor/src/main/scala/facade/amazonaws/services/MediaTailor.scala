@@ -8,6 +8,7 @@ import io.scalajs.nodejs
 import facade.amazonaws._
 
 package object mediatailor {
+  type OriginManifestType             = String
   type __integerMin1Max100            = Int
   type __listOfPlaybackConfigurations = js.Array[PlaybackConfiguration]
   type __listOf__string               = js.Array[__string]
@@ -85,16 +86,19 @@ package mediatailor {
   trait DashConfiguration extends js.Object {
     var ManifestEndpointPrefix: js.UndefOr[__string]
     var MpdLocation: js.UndefOr[__string]
+    var OriginManifestType: js.UndefOr[OriginManifestType]
   }
 
   object DashConfiguration {
     def apply(
         ManifestEndpointPrefix: js.UndefOr[__string] = js.undefined,
-        MpdLocation: js.UndefOr[__string] = js.undefined
+        MpdLocation: js.UndefOr[__string] = js.undefined,
+        OriginManifestType: js.UndefOr[OriginManifestType] = js.undefined
     ): DashConfiguration = {
       val __obj = js.Dictionary.empty[js.Any]
       ManifestEndpointPrefix.foreach(__v => __obj.update("ManifestEndpointPrefix", __v.asInstanceOf[js.Any]))
       MpdLocation.foreach(__v => __obj.update("MpdLocation", __v.asInstanceOf[js.Any]))
+      OriginManifestType.foreach(__v => __obj.update("OriginManifestType", __v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DashConfiguration]
     }
   }
@@ -105,14 +109,17 @@ package mediatailor {
   @js.native
   trait DashConfigurationForPut extends js.Object {
     var MpdLocation: js.UndefOr[__string]
+    var OriginManifestType: js.UndefOr[OriginManifestType]
   }
 
   object DashConfigurationForPut {
     def apply(
-        MpdLocation: js.UndefOr[__string] = js.undefined
+        MpdLocation: js.UndefOr[__string] = js.undefined,
+        OriginManifestType: js.UndefOr[OriginManifestType] = js.undefined
     ): DashConfigurationForPut = {
       val __obj = js.Dictionary.empty[js.Any]
       MpdLocation.foreach(__v => __obj.update("MpdLocation", __v.asInstanceOf[js.Any]))
+      OriginManifestType.foreach(__v => __obj.update("OriginManifestType", __v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DashConfigurationForPut]
     }
   }
@@ -297,6 +304,13 @@ package mediatailor {
       Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListTagsForResourceResponse]
     }
+  }
+
+  object OriginManifestTypeEnum {
+    val SINGLE_PERIOD = "SINGLE_PERIOD"
+    val MULTI_PERIOD  = "MULTI_PERIOD"
+
+    val values = IndexedSeq(SINGLE_PERIOD, MULTI_PERIOD)
   }
 
   /**

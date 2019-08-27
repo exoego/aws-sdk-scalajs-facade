@@ -290,11 +290,18 @@ package kms {
     val INVALID_CREDENTIALS        = "INVALID_CREDENTIALS"
     val CLUSTER_NOT_FOUND          = "CLUSTER_NOT_FOUND"
     val NETWORK_ERRORS             = "NETWORK_ERRORS"
+    val INTERNAL_ERROR             = "INTERNAL_ERROR"
     val INSUFFICIENT_CLOUDHSM_HSMS = "INSUFFICIENT_CLOUDHSM_HSMS"
     val USER_LOCKED_OUT            = "USER_LOCKED_OUT"
 
-    val values =
-      IndexedSeq(INVALID_CREDENTIALS, CLUSTER_NOT_FOUND, NETWORK_ERRORS, INSUFFICIENT_CLOUDHSM_HSMS, USER_LOCKED_OUT)
+    val values = IndexedSeq(
+      INVALID_CREDENTIALS,
+      CLUSTER_NOT_FOUND,
+      NETWORK_ERRORS,
+      INTERNAL_ERROR,
+      INSUFFICIENT_CLOUDHSM_HSMS,
+      USER_LOCKED_OUT
+    )
   }
 
   object ConnectionStateTypeEnum {
@@ -1091,8 +1098,18 @@ package kms {
   }
 
   /**
-    * A structure that you can use to allow certain operations in the grant only when the desired encryption context is present. For more information about encryption context, see [[http://docs.aws.amazon.com/kms/latest/developerguide/encryption-context.html|Encryption Context]] in the <i>AWS Key Management Service Developer Guide</i>.
-    *  Grant constraints apply only to operations that accept encryption context as input. For example, the <code> <a>DescribeKey</a> </code> operation does not accept encryption context as input. A grant that allows the <code>DescribeKey</code> operation does so regardless of the grant constraints. In constrast, the <code> <a>Encrypt</a> </code> operation accepts encryption context as input. A grant that allows the <code>Encrypt</code> operation does so only when the encryption context of the <code>Encrypt</code> operation satisfies the grant constraints.
+    * Use this structure to allow cryptographic operations in the grant only when the operation request includes the specified [[https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context|encryption context]].
+    *  AWS KMS applies the grant constraints only when the grant allows a cryptographic operation that accepts an encryption context as input, such as the following.
+    * * <a>Encrypt</a>
+    *  * <a>Decrypt</a>
+    *  * <a>GenerateDataKey</a>
+    *  * <a>GenerateDataKeyWithoutPlaintext</a>
+    *  * <a>ReEncrypt</a>
+    * AWS KMS does not apply the grant constraints to other operations, such as <a>DescribeKey</a> or <a>ScheduleKeyDeletion</a>.
+    *  <important> In a cryptographic operation, the encryption context in the decryption operation must be an exact, case-sensitive match for the keys and values in the encryption context of the encryption operation. Only the order of the pairs can vary.
+    *  However, in a grant constraint, the key in each key-value pair is not case sensitive, but the value is case sensitive.
+    *  To avoid confusion, do not use multiple encryption context pairs that differ only by case. To require a fully case-sensitive encryption context, use the <code>kms:EncryptionContext:</code> and <code>kms:EncryptionContextKeys</code> conditions in an IAM or key policy. For details, see [[https://docs.aws.amazon.com/kms/latest/developerguide/policy-conditions.html#conditions-kms-encryption-context|kms:EncryptionContext:]] in the <i> <i>AWS Key Management Service Developer Guide</i> </i>.
+    *  </important>
     */
   @js.native
   trait GrantConstraints extends js.Object {
@@ -1731,7 +1748,7 @@ package kms {
 
   /**
     * A key-value pair. A tag consists of a tag key and a tag value. Tag keys and tag values are both required, but tag values can be empty (null) strings.
-    *  For information about the rules that apply to tag keys and tag values, see [[http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/allocation-tag-restrictions.html|User-Defined Tag Restrictions]] in the <i>AWS Billing and Cost Management User Guide</i>.
+    *  For information about the rules that apply to tag keys and tag values, see [[https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/allocation-tag-restrictions.html|User-Defined Tag Restrictions]] in the <i>AWS Billing and Cost Management User Guide</i>.
     */
   @js.native
   trait Tag extends js.Object {

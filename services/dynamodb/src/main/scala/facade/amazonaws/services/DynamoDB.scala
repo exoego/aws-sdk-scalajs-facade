@@ -308,7 +308,7 @@ package dynamodb {
   /**
     * Represents the data for an attribute.
     *  Each attribute value is described as a name-value pair. The name is the data type, and the value is the data itself.
-    *  For more information, see [[http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.NamingRulesDataTypes.html#HowItWorks.DataTypes|Data Types]] in the <i>Amazon DynamoDB Developer Guide</i>.
+    *  For more information, see [[https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.NamingRulesDataTypes.html#HowItWorks.DataTypes|Data Types]] in the <i>Amazon DynamoDB Developer Guide</i>.
     */
   @js.native
   trait AttributeValue extends js.Object {
@@ -956,7 +956,7 @@ package dynamodb {
   }
 
   /**
-    * The capacity units consumed by an operation. The data returned includes the total provisioned throughput consumed, along with statistics for the table and any indexes involved in the operation. <code>ConsumedCapacity</code> is only returned if the request asked for it. For more information, see [[http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ProvisionedThroughputIntro.html|Provisioned Throughput]] in the <i>Amazon DynamoDB Developer Guide</i>.
+    * The capacity units consumed by an operation. The data returned includes the total provisioned throughput consumed, along with statistics for the table and any indexes involved in the operation. <code>ConsumedCapacity</code> is only returned if the request asked for it. For more information, see [[https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ProvisionedThroughputIntro.html|Provisioned Throughput]] in the <i>Amazon DynamoDB Developer Guide</i>.
     */
   @js.native
   trait ConsumedCapacity extends js.Object {
@@ -1156,6 +1156,7 @@ package dynamodb {
     var ProvisionedThroughput: js.UndefOr[ProvisionedThroughput]
     var SSESpecification: js.UndefOr[SSESpecification]
     var StreamSpecification: js.UndefOr[StreamSpecification]
+    var Tags: js.UndefOr[TagList]
   }
 
   object CreateTableInput {
@@ -1168,7 +1169,8 @@ package dynamodb {
         LocalSecondaryIndexes: js.UndefOr[LocalSecondaryIndexList] = js.undefined,
         ProvisionedThroughput: js.UndefOr[ProvisionedThroughput] = js.undefined,
         SSESpecification: js.UndefOr[SSESpecification] = js.undefined,
-        StreamSpecification: js.UndefOr[StreamSpecification] = js.undefined
+        StreamSpecification: js.UndefOr[StreamSpecification] = js.undefined,
+        Tags: js.UndefOr[TagList] = js.undefined
     ): CreateTableInput = {
       val __obj = js.Dictionary[js.Any](
         "AttributeDefinitions" -> AttributeDefinitions.asInstanceOf[js.Any],
@@ -1182,6 +1184,7 @@ package dynamodb {
       ProvisionedThroughput.foreach(__v => __obj.update("ProvisionedThroughput", __v.asInstanceOf[js.Any]))
       SSESpecification.foreach(__v => __obj.update("SSESpecification", __v.asInstanceOf[js.Any]))
       StreamSpecification.foreach(__v => __obj.update("StreamSpecification", __v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateTableInput]
     }
   }
@@ -2523,7 +2526,7 @@ package dynamodb {
 
   /**
     * Represents the provisioned throughput settings for a specified table or index. The settings can be modified using the <code>UpdateTable</code> operation.
-    *  For current minimum and maximum provisioned throughput values, see [[http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html|Limits]] in the <i>Amazon DynamoDB Developer Guide</i>.
+    *  For current minimum and maximum provisioned throughput values, see [[https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html|Limits]] in the <i>Amazon DynamoDB Developer Guide</i>.
     */
   @js.native
   trait ProvisionedThroughput extends js.Object {
@@ -3536,8 +3539,8 @@ package dynamodb {
 
   /**
     * Describes a tag. A tag is a key-value pair. You can add up to 50 tags to a single DynamoDB table.
-    *  AWS-assigned tag names and values are automatically assigned the aws: prefix, which the user cannot assign. AWS-assigned tag names do not count towards the tag limit of 50. User-assigned tag names have the prefix user: in the Cost Allocation Report. You cannot backdate the application of a tag.
-    *  For an overview on tagging DynamoDB resources, see [[http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Tagging.html|Tagging for DynamoDB]] in the <i>Amazon DynamoDB Developer Guide</i>.
+    *  AWS-assigned tag names and values are automatically assigned the <code>aws:</code> prefix, which the user cannot assign. AWS-assigned tag names do not count towards the tag limit of 50. User-assigned tag names have the prefix <code>user:</code> in the Cost Allocation Report. You cannot backdate the application of a tag.
+    *  For an overview on tagging DynamoDB resources, see [[https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Tagging.html|Tagging for DynamoDB]] in the <i>Amazon DynamoDB Developer Guide</i>.
     */
   @js.native
   trait Tag extends js.Object {
@@ -3601,7 +3604,7 @@ package dynamodb {
   }
 
   /**
-    * Represents the settings used to enable or disable Time to Live for the specified table.
+    * Represents the settings used to enable or disable Time to Live (TTL) for the specified table.
     */
   @js.native
   trait TimeToLiveSpecification extends js.Object {

@@ -535,7 +535,7 @@ package opsworks {
   }
 
   /**
-    * Describes a block device mapping. This data type maps directly to the Amazon EC2 [[http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_BlockDeviceMapping.html|BlockDeviceMapping]] data type.
+    * Describes a block device mapping. This data type maps directly to the Amazon EC2 [[https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_BlockDeviceMapping.html|BlockDeviceMapping]] data type.
     */
   @js.native
   trait BlockDeviceMapping extends js.Object {
@@ -905,7 +905,7 @@ package opsworks {
   }
 
   /**
-    * Describes the Amazon CloudWatch logs configuration for a layer. For detailed information about members of this data type, see the [[http://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/AgentReference.html|CloudWatch Logs Agent Reference]].
+    * Describes the Amazon CloudWatch logs configuration for a layer. For detailed information about members of this data type, see the [[https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/AgentReference.html|CloudWatch Logs Agent Reference]].
     */
   @js.native
   trait CloudWatchLogsLogStream extends js.Object {
@@ -2563,7 +2563,7 @@ package opsworks {
   }
 
   /**
-    * Describes an Amazon EBS volume. This data type maps directly to the Amazon EC2 [[http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_EbsBlockDevice.html|EbsBlockDevice]] data type.
+    * Describes an Amazon EBS volume. This data type maps directly to the Amazon EC2 [[https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_EbsBlockDevice.html|EbsBlockDevice]] data type.
     */
   @js.native
   trait EbsBlockDevice extends js.Object {
@@ -2932,7 +2932,7 @@ package opsworks {
   }
 
   /**
-    * Contains a description of an Amazon EC2 instance from the Amazon EC2 metadata service. For more information, see [[http://docs.aws.amazon.com/sdkfornet/latest/apidocs/Index.html|Instance Metadata and User Data]].
+    * Contains a description of an Amazon EC2 instance from the Amazon EC2 metadata service. For more information, see [[https://docs.aws.amazon.com/sdkfornet/latest/apidocs/Index.html|Instance Metadata and User Data]].
     */
   @js.native
   trait InstanceIdentity extends js.Object {
@@ -3734,14 +3734,6 @@ package opsworks {
     }
   }
 
-  /**
-    * Indicates that a resource was not found.
-    */
-  @js.native
-  trait ResourceNotFoundExceptionException extends js.Object {
-    val message: String
-  }
-
   object RootDeviceTypeEnum {
     val ebs              = "ebs"
     val `instance-store` = "instance-store"
@@ -3908,7 +3900,7 @@ package opsworks {
   }
 
   /**
-    * Contains the information required to retrieve an app or cookbook from a repository. For more information, see [[http://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html|Creating Apps]] or [[http://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook.html|Custom Recipes and Cookbooks]].
+    * Contains the information required to retrieve an app or cookbook from a repository. For more information, see [[https://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html|Creating Apps]] or [[https://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook.html|Custom Recipes and Cookbooks]].
     */
   @js.native
   trait Source extends js.Object {
@@ -4674,14 +4666,6 @@ package opsworks {
       SshUsername.foreach(__v => __obj.update("SshUsername", __v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UserProfile]
     }
-  }
-
-  /**
-    * Indicates that a request was not valid.
-    */
-  @js.native
-  trait ValidationExceptionException extends js.Object {
-    val message: String
   }
 
   object VirtualizationTypeEnum {

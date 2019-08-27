@@ -888,7 +888,7 @@ package athena {
   }
 
   /**
-    * The location in Amazon S3 where query results are stored and the encryption option, if any, used for query results. These are known as "client-side settings". If workgroup settings override client-side settings, then the query uses the location for the query results and the encryption configuration that are specified for the workgroup.
+    * The location in Amazon S3 where query results are stored and the encryption option, if any, used for query results. These are known as "client-side settings". If workgroup settings override client-side settings, then the query uses the workgroup settings.
     */
   @js.native
   trait ResultConfiguration extends js.Object {
@@ -1279,13 +1279,14 @@ package athena {
   }
 
   /**
-    * The configuration of the workgroup, which includes the location in Amazon S3 where query results are stored, the encryption option, if any, used for query results, whether the Amazon CloudWatch Metrics are enabled for the workgroup and whether workgroup settings override query settings, and the data usage limit for the amount of data scanned per query, if it is specified. The workgroup settings override is specified in EnforceWorkGroupConfiguration (true/false) in the WorkGroupConfiguration. See EnforceWorkGroupConfiguration.
+    * The configuration of the workgroup, which includes the location in Amazon S3 where query results are stored, the encryption option, if any, used for query results, whether the Amazon CloudWatch Metrics are enabled for the workgroup and whether workgroup settings override query settings, and the data usage limits for the amount of data scanned per query or per workgroup. The workgroup settings override is specified in EnforceWorkGroupConfiguration (true/false) in the WorkGroupConfiguration. See EnforceWorkGroupConfiguration.
     */
   @js.native
   trait WorkGroupConfiguration extends js.Object {
     var BytesScannedCutoffPerQuery: js.UndefOr[BytesScannedCutoffValue]
     var EnforceWorkGroupConfiguration: js.UndefOr[BoxedBoolean]
     var PublishCloudWatchMetricsEnabled: js.UndefOr[BoxedBoolean]
+    var RequesterPaysEnabled: js.UndefOr[BoxedBoolean]
     var ResultConfiguration: js.UndefOr[ResultConfiguration]
   }
 
@@ -1294,6 +1295,7 @@ package athena {
         BytesScannedCutoffPerQuery: js.UndefOr[BytesScannedCutoffValue] = js.undefined,
         EnforceWorkGroupConfiguration: js.UndefOr[BoxedBoolean] = js.undefined,
         PublishCloudWatchMetricsEnabled: js.UndefOr[BoxedBoolean] = js.undefined,
+        RequesterPaysEnabled: js.UndefOr[BoxedBoolean] = js.undefined,
         ResultConfiguration: js.UndefOr[ResultConfiguration] = js.undefined
     ): WorkGroupConfiguration = {
       val __obj = js.Dictionary.empty[js.Any]
@@ -1304,6 +1306,7 @@ package athena {
       PublishCloudWatchMetricsEnabled.foreach(
         __v => __obj.update("PublishCloudWatchMetricsEnabled", __v.asInstanceOf[js.Any])
       )
+      RequesterPaysEnabled.foreach(__v => __obj.update("RequesterPaysEnabled", __v.asInstanceOf[js.Any]))
       ResultConfiguration.foreach(__v => __obj.update("ResultConfiguration", __v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[WorkGroupConfiguration]
     }
@@ -1318,6 +1321,7 @@ package athena {
     var EnforceWorkGroupConfiguration: js.UndefOr[BoxedBoolean]
     var PublishCloudWatchMetricsEnabled: js.UndefOr[BoxedBoolean]
     var RemoveBytesScannedCutoffPerQuery: js.UndefOr[BoxedBoolean]
+    var RequesterPaysEnabled: js.UndefOr[BoxedBoolean]
     var ResultConfigurationUpdates: js.UndefOr[ResultConfigurationUpdates]
   }
 
@@ -1327,6 +1331,7 @@ package athena {
         EnforceWorkGroupConfiguration: js.UndefOr[BoxedBoolean] = js.undefined,
         PublishCloudWatchMetricsEnabled: js.UndefOr[BoxedBoolean] = js.undefined,
         RemoveBytesScannedCutoffPerQuery: js.UndefOr[BoxedBoolean] = js.undefined,
+        RequesterPaysEnabled: js.UndefOr[BoxedBoolean] = js.undefined,
         ResultConfigurationUpdates: js.UndefOr[ResultConfigurationUpdates] = js.undefined
     ): WorkGroupConfigurationUpdates = {
       val __obj = js.Dictionary.empty[js.Any]
@@ -1340,6 +1345,7 @@ package athena {
       RemoveBytesScannedCutoffPerQuery.foreach(
         __v => __obj.update("RemoveBytesScannedCutoffPerQuery", __v.asInstanceOf[js.Any])
       )
+      RequesterPaysEnabled.foreach(__v => __obj.update("RequesterPaysEnabled", __v.asInstanceOf[js.Any]))
       ResultConfigurationUpdates.foreach(__v => __obj.update("ResultConfigurationUpdates", __v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[WorkGroupConfigurationUpdates]
     }

@@ -59,6 +59,7 @@ package object mediaconvert {
   type Commitment                                  = String
   type ContainerType                               = String
   type DashIsoHbbtvCompliance                      = String
+  type DashIsoPlaybackDeviceCompatibility          = String
   type DashIsoSegmentControl                       = String
   type DashIsoWriteSegmentTimelineInRepresentation = String
   type DecryptionMode                              = String
@@ -73,6 +74,14 @@ package object mediaconvert {
   type DvbSubtitleOutlineColor                     = String
   type DvbSubtitleShadowColor                      = String
   type DvbSubtitleTeletextSpacing                  = String
+  type Eac3AtmosBitstreamMode                      = String
+  type Eac3AtmosCodingMode                         = String
+  type Eac3AtmosDialogueIntelligence               = String
+  type Eac3AtmosDynamicRangeCompressionLine        = String
+  type Eac3AtmosDynamicRangeCompressionRf          = String
+  type Eac3AtmosMeteringMode                       = String
+  type Eac3AtmosStereoDownmix                      = String
+  type Eac3AtmosSurroundExMode                     = String
   type Eac3AttenuationControl                      = String
   type Eac3BitstreamMode                           = String
   type Eac3CodingMode                              = String
@@ -139,6 +148,7 @@ package object mediaconvert {
   type H265UnregisteredSeiTimecode                 = String
   type H265WriteMp4PackagingType                   = String
   type HlsAdMarkers                                = String
+  type HlsAudioOnlyContainer                       = String
   type HlsAudioTrackType                           = String
   type HlsCaptionLanguageSetting                   = String
   type HlsClientCache                              = String
@@ -233,6 +243,7 @@ package object mediaconvert {
   type ScalingBehavior                             = String
   type SccDestinationFramerate                     = String
   type StatusUpdateInterval                        = String
+  type TeletextPageType                            = String
   type TimecodeBurninPosition                      = String
   type TimecodeSource                              = String
   type TimedMetadata                               = String
@@ -246,7 +257,9 @@ package object mediaconvert {
   type __doubleMinNegative59Max0                   = Double
   type __doubleMinNegative60Max3                   = Double
   type __doubleMinNegative60MaxNegative1           = Double
+  type __doubleMinNegative6Max3                    = Double
   type __integer                                   = Int
+  type __integerMin0Max0                           = Int
   type __integerMin0Max10                          = Int
   type __integerMin0Max100                         = Int
   type __integerMin0Max1000                        = Int
@@ -262,13 +275,13 @@ package object mediaconvert {
   type __integerMin0Max30                          = Int
   type __integerMin0Max30000                       = Int
   type __integerMin0Max3600                        = Int
+  type __integerMin0Max4                           = Int
   type __integerMin0Max47185920                    = Int
   type __integerMin0Max500                         = Int
   type __integerMin0Max50000                       = Int
   type __integerMin0Max65535                       = Int
   type __integerMin0Max7                           = Int
   type __integerMin0Max8                           = Int
-  type __integerMin0Max9                           = Int
   type __integerMin0Max96                          = Int
   type __integerMin0Max99                          = Int
   type __integerMin1000Max1152000000               = Int
@@ -303,6 +316,7 @@ package object mediaconvert {
   type __integerMin32Max2160                       = Int
   type __integerMin32Max4096                       = Int
   type __integerMin32Max8182                       = Int
+  type __integerMin384000Max768000                 = Int
   type __integerMin48000Max48000                   = Int
   type __integerMin6000Max1024000                  = Int
   type __integerMin64000Max640000                  = Int
@@ -311,8 +325,10 @@ package object mediaconvert {
   type __integerMin96Max600                        = Int
   type __integerMinNegative1000Max1000             = Int
   type __integerMinNegative180Max180               = Int
+  type __integerMinNegative1Max3                   = Int
   type __integerMinNegative2147483648Max2147483647 = Int
   type __integerMinNegative2Max3                   = Int
+  type __integerMinNegative50Max50                 = Int
   type __integerMinNegative5Max5                   = Int
   type __integerMinNegative60Max6                  = Int
   type __integerMinNegative70Max0                  = Int
@@ -336,11 +352,14 @@ package object mediaconvert {
   type __listOfOutputGroupDetail                   = js.Array[OutputGroupDetail]
   type __listOfPreset                              = js.Array[Preset]
   type __listOfQueue                               = js.Array[Queue]
+  type __listOfTeletextPageType                    = js.Array[TeletextPageType]
   type __listOf__integerMin1Max2147483647          = js.Array[__integerMin1Max2147483647]
   type __listOf__integerMin32Max8182               = js.Array[__integerMin32Max8182]
   type __listOf__integerMinNegative60Max6          = js.Array[__integerMinNegative60Max6]
   type __listOf__string                            = js.Array[__string]
   type __listOf__stringMin1                        = js.Array[__stringMin1]
+  type __listOf__stringMin36Max36Pattern09aFAF809aFAF409aFAF409aFAF409aFAF12 =
+    js.Array[__stringMin36Max36Pattern09aFAF809aFAF409aFAF409aFAF409aFAF12]
   type __listOf__stringPattern09aFAF809aFAF409aFAF409aFAF409aFAF12 =
     js.Array[__stringPattern09aFAF809aFAF409aFAF409aFAF409aFAF12]
   type __listOf__stringPatternS3ASSETMAPXml                              = js.Array[__stringPatternS3ASSETMAPXml]
@@ -360,6 +379,7 @@ package object mediaconvert {
   type __stringMin1Max256                                                = String
   type __stringMin24Max512PatternAZaZ0902                                = String
   type __stringMin32Max32Pattern09aFAF32                                 = String
+  type __stringMin36Max36Pattern09aFAF809aFAF409aFAF409aFAF409aFAF12     = String
   type __stringMin3Max3Pattern1809aFAF09aEAE                             = String
   type __stringMin3Max3PatternAZaZ3                                      = String
   type __stringMin9Max19PatternAZ26EastWestCentralNorthSouthEastWest1912 = String
@@ -371,19 +391,20 @@ package object mediaconvert {
   type __stringPatternAZaZ0902                                           = String
   type __stringPatternAZaZ0932                                           = String
   type __stringPatternArnAwsUsGovAcm                                     = String
-  type __stringPatternArnAwsUsGovKmsAZ26EastWestCentralNorthSouthEastWest1912D12KeyAFAF098AFAF094AFAF094AFAF094AFAF0912 =
+  type __stringPatternArnAwsUsGovCnKmsAZ26EastWestCentralNorthSouthEastWest1912D12KeyAFAF098AFAF094AFAF094AFAF094AFAF0912 =
     String
-  type __stringPatternDD                      = String
+  type __stringPatternDD = String
+  type __stringPatternHttpHttpsS3MM2VVMMPPEEGGMMPP3AAVVIIMMPP4FFLLVVMMPPTTMMPPGGMM4VVTTRRPPFF4VVMM2TTSSTTSS264HH264MMKKVVMMOOVVMMTTSSMM2TTWWMMVVAASSFFVVOOBB3GGPP3GGPPPPMMXXFFDDIIVVXXXXVVIIDDRRAAWWDDVVGGXXFFMM1VV3GG2VVMMFFMM3UU8WWEEBBMMLLCCHHGGXXFFMMPPEEGG2MMXXFFMMPPEEGG2MMXXFFHHDDWWAAVVYY4MMXXMMLL =
+    String
   type __stringPatternHttps                   = String
   type __stringPatternIdentityAZaZ26AZaZ09163 = String
   type __stringPatternS3                      = String
   type __stringPatternS3ASSETMAPXml           = String
-  type __stringPatternS3MM2VVMMPPEEGGAAVVIIMMPP4FFLLVVMMPPTTMMPPGGMM4VVTTRRPPFF4VVMM2TTSSTTSS264HH264MMKKVVMMOOVVMMTTSSMM2TTWWMMVVAASSFFVVOOBB3GGPP3GGPPPPMMXXFFDDIIVVXXXXVVIIDDRRAAWWDDVVGGXXFFMM1VV3GG2VVMMFFMM3UU8LLCCHHGGXXFFMMPPEEGG2MMXXFFMMPPEEGG2MMXXFFHHDDWWAAVVYY4MMAAAACCAAIIFFFFMMPP2AACC3EECC3DDTTSSEE =
-    String
-  type __stringPatternS3MM2VVMMPPEEGGAAVVIIMMPP4FFLLVVMMPPTTMMPPGGMM4VVTTRRPPFF4VVMM2TTSSTTSS264HH264MMKKVVMMOOVVMMTTSSMM2TTWWMMVVAASSFFVVOOBB3GGPP3GGPPPPMMXXFFDDIIVVXXXXVVIIDDRRAAWWDDVVGGXXFFMM1VV3GG2VVMMFFMM3UU8LLCCHHGGXXFFMMPPEEGG2MMXXFFMMPPEEGG2MMXXFFHHDDWWAAVVYY4MMXXMMLL =
+  type __stringPatternS3MM2VVMMPPEEGGMMPP3AAVVIIMMPP4FFLLVVMMPPTTMMPPGGMM4VVTTRRPPFF4VVMM2TTSSTTSS264HH264MMKKVVMMOOVVMMTTSSMM2TTWWMMVVAASSFFVVOOBB3GGPP3GGPPPPMMXXFFDDIIVVXXXXVVIIDDRRAAWWDDVVGGXXFFMM1VV3GG2VVMMFFMM3UU8LLCCHHGGXXFFMMPPEEGG2MMXXFFMMPPEEGG2MMXXFFHHDDWWAAVVYY4MMAAAACCAAIIFFFFMMPP2AACC3EECC3DDTTSSEE =
     String
   type __stringPatternSNManifestConfirmConditionNotificationNS = String
   type __stringPatternSNSignalProcessingNotificationNS         = String
+  type __stringPatternW                                        = String
   type __stringPatternWS                                       = String
   type __timestampUnix                                         = js.Date
 
@@ -594,7 +615,7 @@ package mediaconvert {
   }
 
   /**
-    * Specifies the "Bitstream Mode" (bsmod) for the emitted AC-3 stream. See ATSC A/52-2012 for background on these values.
+    * Specify the bitstream mode for the AC-3 stream that the encoder emits. For more information about the AC3 bitstream mode, see ATSC A/52-2012 (Annex E).
     */
   object Ac3BitstreamModeEnum {
     val COMPLETE_MAIN     = "COMPLETE_MAIN"
@@ -702,7 +723,7 @@ package mediaconvert {
   }
 
   /**
-    * Acceleration configuration for the job.
+    * Enable Acceleration (AccelerationMode) on any job that you want processed with accelerated transcoding.
     */
   object AccelerationModeEnum {
     val DISABLED = "DISABLED"
@@ -712,7 +733,7 @@ package mediaconvert {
   }
 
   /**
-    * Accelerated transcoding is currently in private preview. Contact AWS for more information.
+    * Accelerated transcoding can significantly speed up jobs with long, visually complex content. Outputs that use this feature incur pro-tier pricing. For information about feature limitations, see the AWS Elemental MediaConvert User Guide.
     */
   @js.native
   trait AccelerationSettings extends js.Object {
@@ -835,13 +856,14 @@ package mediaconvert {
     val AIFF        = "AIFF"
     val AC3         = "AC3"
     val EAC3        = "EAC3"
+    val EAC3_ATMOS  = "EAC3_ATMOS"
     val PASSTHROUGH = "PASSTHROUGH"
 
-    val values = IndexedSeq(AAC, MP2, WAV, AIFF, AC3, EAC3, PASSTHROUGH)
+    val values = IndexedSeq(AAC, MP2, WAV, AIFF, AC3, EAC3, EAC3_ATMOS, PASSTHROUGH)
   }
 
   /**
-    * Audio codec settings (CodecSettings) under (AudioDescriptions) contains the group of settings related to audio encoding. The settings in this group vary depending on the value you choose for Audio codec (Codec). For each codec enum you choose, define the corresponding settings object. The following lists the codec enum, settings object pairs. * AAC, AacSettings * MP2, Mp2Settings * WAV, WavSettings * AIFF, AiffSettings * AC3, Ac3Settings * EAC3, Eac3Settings
+    * Audio codec settings (CodecSettings) under (AudioDescriptions) contains the group of settings related to audio encoding. The settings in this group vary depending on the value that you choose for Audio codec (Codec). For each codec enum that you choose, define the corresponding settings object. The following lists the codec enum, settings object pairs. * AAC, AacSettings * MP2, Mp2Settings * WAV, WavSettings * AIFF, AiffSettings * AC3, Ac3Settings * EAC3, Eac3Settings * EAC3_ATMOS, Eac3AtmosSettings
     */
   @js.native
   trait AudioCodecSettings extends js.Object {
@@ -849,6 +871,7 @@ package mediaconvert {
     var Ac3Settings: js.UndefOr[Ac3Settings]
     var AiffSettings: js.UndefOr[AiffSettings]
     var Codec: js.UndefOr[AudioCodec]
+    var Eac3AtmosSettings: js.UndefOr[Eac3AtmosSettings]
     var Eac3Settings: js.UndefOr[Eac3Settings]
     var Mp2Settings: js.UndefOr[Mp2Settings]
     var WavSettings: js.UndefOr[WavSettings]
@@ -860,6 +883,7 @@ package mediaconvert {
         Ac3Settings: js.UndefOr[Ac3Settings] = js.undefined,
         AiffSettings: js.UndefOr[AiffSettings] = js.undefined,
         Codec: js.UndefOr[AudioCodec] = js.undefined,
+        Eac3AtmosSettings: js.UndefOr[Eac3AtmosSettings] = js.undefined,
         Eac3Settings: js.UndefOr[Eac3Settings] = js.undefined,
         Mp2Settings: js.UndefOr[Mp2Settings] = js.undefined,
         WavSettings: js.UndefOr[WavSettings] = js.undefined
@@ -869,6 +893,7 @@ package mediaconvert {
       Ac3Settings.foreach(__v => __obj.update("Ac3Settings", __v.asInstanceOf[js.Any]))
       AiffSettings.foreach(__v => __obj.update("AiffSettings", __v.asInstanceOf[js.Any]))
       Codec.foreach(__v => __obj.update("Codec", __v.asInstanceOf[js.Any]))
+      Eac3AtmosSettings.foreach(__v => __obj.update("Eac3AtmosSettings", __v.asInstanceOf[js.Any]))
       Eac3Settings.foreach(__v => __obj.update("Eac3Settings", __v.asInstanceOf[js.Any]))
       Mp2Settings.foreach(__v => __obj.update("Mp2Settings", __v.asInstanceOf[js.Any]))
       WavSettings.foreach(__v => __obj.update("WavSettings", __v.asInstanceOf[js.Any]))
@@ -942,13 +967,15 @@ package mediaconvert {
   }
 
   /**
-    * Audio normalization algorithm to use. 1770-1 conforms to the CALM Act specification, 1770-2 conforms to the EBU R-128 specification.
+    * Choose one of the following audio normalization algorithms: ITU-R BS.1770-1: Ungated loudness. A measurement of ungated average loudness for an entire piece of content, suitable for measurement of short-form content under ATSC recommendation A/85. Supports up to 5.1 audio channels. ITU-R BS.1770-2: Gated loudness. A measurement of gated average loudness compliant with the requirements of EBU-R128. Supports up to 5.1 audio channels. ITU-R BS.1770-3: Modified peak. The same loudness measurement algorithm as 1770-2, with an updated true peak measurement. ITU-R BS.1770-4: Higher channel count. Allows for more audio channels than the other algorithms, including configurations such as 7.1.
     */
   object AudioNormalizationAlgorithmEnum {
     val ITU_BS_1770_1 = "ITU_BS_1770_1"
     val ITU_BS_1770_2 = "ITU_BS_1770_2"
+    val ITU_BS_1770_3 = "ITU_BS_1770_3"
+    val ITU_BS_1770_4 = "ITU_BS_1770_4"
 
-    val values = IndexedSeq(ITU_BS_1770_1, ITU_BS_1770_2)
+    val values = IndexedSeq(ITU_BS_1770_1, ITU_BS_1770_2, ITU_BS_1770_3, ITU_BS_1770_4)
   }
 
   /**
@@ -982,7 +1009,7 @@ package mediaconvert {
   }
 
   /**
-    * Advanced audio normalization settings.
+    * Advanced audio normalization settings. Ignore these settings unless you need to comply with a loudness standard.
     */
   @js.native
   trait AudioNormalizationSettings extends js.Object {
@@ -1022,7 +1049,7 @@ package mediaconvert {
     var CustomLanguageCode: js.UndefOr[__stringMin3Max3PatternAZaZ3]
     var DefaultSelection: js.UndefOr[AudioDefaultSelection]
     var ExternalAudioFileInput: js.UndefOr[
-      __stringPatternS3MM2VVMMPPEEGGAAVVIIMMPP4FFLLVVMMPPTTMMPPGGMM4VVTTRRPPFF4VVMM2TTSSTTSS264HH264MMKKVVMMOOVVMMTTSSMM2TTWWMMVVAASSFFVVOOBB3GGPP3GGPPPPMMXXFFDDIIVVXXXXVVIIDDRRAAWWDDVVGGXXFFMM1VV3GG2VVMMFFMM3UU8LLCCHHGGXXFFMMPPEEGG2MMXXFFMMPPEEGG2MMXXFFHHDDWWAAVVYY4MMAAAACCAAIIFFFFMMPP2AACC3EECC3DDTTSSEE
+      __stringPatternS3MM2VVMMPPEEGGMMPP3AAVVIIMMPP4FFLLVVMMPPTTMMPPGGMM4VVTTRRPPFF4VVMM2TTSSTTSS264HH264MMKKVVMMOOVVMMTTSSMM2TTWWMMVVAASSFFVVOOBB3GGPP3GGPPPPMMXXFFDDIIVVXXXXVVIIDDRRAAWWDDVVGGXXFFMM1VV3GG2VVMMFFMM3UU8LLCCHHGGXXFFMMPPEEGG2MMXXFFMMPPEEGG2MMXXFFHHDDWWAAVVYY4MMAAAACCAAIIFFFFMMPP2AACC3EECC3DDTTSSEE
     ]
     var LanguageCode: js.UndefOr[LanguageCode]
     var Offset: js.UndefOr[__integerMinNegative2147483648Max2147483647]
@@ -1038,7 +1065,7 @@ package mediaconvert {
         CustomLanguageCode: js.UndefOr[__stringMin3Max3PatternAZaZ3] = js.undefined,
         DefaultSelection: js.UndefOr[AudioDefaultSelection] = js.undefined,
         ExternalAudioFileInput: js.UndefOr[
-          __stringPatternS3MM2VVMMPPEEGGAAVVIIMMPP4FFLLVVMMPPTTMMPPGGMM4VVTTRRPPFF4VVMM2TTSSTTSS264HH264MMKKVVMMOOVVMMTTSSMM2TTWWMMVVAASSFFVVOOBB3GGPP3GGPPPPMMXXFFDDIIVVXXXXVVIIDDRRAAWWDDVVGGXXFFMM1VV3GG2VVMMFFMM3UU8LLCCHHGGXXFFMMPPEEGG2MMXXFFMMPPEEGG2MMXXFFHHDDWWAAVVYY4MMAAAACCAAIIFFFFMMPP2AACC3EECC3DDTTSSEE
+          __stringPatternS3MM2VVMMPPEEGGMMPP3AAVVIIMMPP4FFLLVVMMPPTTMMPPGGMM4VVTTRRPPFF4VVMM2TTSSTTSS264HH264MMKKVVMMOOVVMMTTSSMM2TTWWMMVVAASSFFVVOOBB3GGPP3GGPPPPMMXXFFDDIIVVXXXXVVIIDDRRAAWWDDVVGGXXFFMM1VV3GG2VVMMFFMM3UU8LLCCHHGGXXFFMMPPEEGG2MMXXFFMMPPEEGG2MMXXFFHHDDWWAAVVYY4MMAAAACCAAIIFFFFMMPP2AACC3EECC3DDTTSSEE
         ] = js.undefined,
         LanguageCode: js.UndefOr[LanguageCode] = js.undefined,
         Offset: js.UndefOr[__integerMinNegative2147483648Max2147483647] = js.undefined,
@@ -1548,6 +1575,7 @@ package mediaconvert {
     var ConstantInitializationVector: js.UndefOr[__stringMin32Max32Pattern09aFAF32]
     var EncryptionMethod: js.UndefOr[CmafEncryptionType]
     var InitializationVectorInManifest: js.UndefOr[CmafInitializationVectorInManifest]
+    var SpekeKeyProvider: js.UndefOr[SpekeKeyProviderCmaf]
     var StaticKeyProvider: js.UndefOr[StaticKeyProvider]
     var Type: js.UndefOr[CmafKeyProviderType]
   }
@@ -1557,6 +1585,7 @@ package mediaconvert {
         ConstantInitializationVector: js.UndefOr[__stringMin32Max32Pattern09aFAF32] = js.undefined,
         EncryptionMethod: js.UndefOr[CmafEncryptionType] = js.undefined,
         InitializationVectorInManifest: js.UndefOr[CmafInitializationVectorInManifest] = js.undefined,
+        SpekeKeyProvider: js.UndefOr[SpekeKeyProviderCmaf] = js.undefined,
         StaticKeyProvider: js.UndefOr[StaticKeyProvider] = js.undefined,
         Type: js.UndefOr[CmafKeyProviderType] = js.undefined
     ): CmafEncryptionSettings = {
@@ -1568,6 +1597,7 @@ package mediaconvert {
       InitializationVectorInManifest.foreach(
         __v => __obj.update("InitializationVectorInManifest", __v.asInstanceOf[js.Any])
       )
+      SpekeKeyProvider.foreach(__v => __obj.update("SpekeKeyProvider", __v.asInstanceOf[js.Any]))
       StaticKeyProvider.foreach(__v => __obj.update("StaticKeyProvider", __v.asInstanceOf[js.Any]))
       Type.foreach(__v => __obj.update("Type", __v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CmafEncryptionSettings]
@@ -1575,7 +1605,7 @@ package mediaconvert {
   }
 
   /**
-    * Encrypts the segments with the given encryption scheme. Leave blank to disable. Selecting 'Disabled' in the web interface also disables encryption.
+    * For DRM with CMAF, the encryption type is always sample AES.
     */
   object CmafEncryptionTypeEnum {
     val SAMPLE_AES = "SAMPLE_AES"
@@ -1647,7 +1677,7 @@ package mediaconvert {
   }
 
   /**
-    * The Initialization Vector is a 128-bit number used in conjunction with the key for encrypting blocks. If set to INCLUDE, Initialization Vector is listed in the manifest. Otherwise Initialization Vector is not in the manifest.
+    * When you use DRM with CMAF outputs, choose whether the service writes the 128-bit encryption initialization vector in the HLS and DASH manifests.
     */
   object CmafInitializationVectorInManifestEnum {
     val INCLUDE = "INCLUDE"
@@ -1657,12 +1687,13 @@ package mediaconvert {
   }
 
   /**
-    * Indicates which type of key provider is used for encryption.
+    * Specify whether your DRM encryption key is static or from a key provider that follows the SPEKE standard. For more information about SPEKE, see https://docs.aws.amazon.com/speke/latest/documentation/what-is-speke.html.
     */
   object CmafKeyProviderTypeEnum {
+    val SPEKE      = "SPEKE"
     val STATIC_KEY = "STATIC_KEY"
 
-    val values = IndexedSeq(STATIC_KEY)
+    val values = IndexedSeq(SPEKE, STATIC_KEY)
   }
 
   /**
@@ -1759,7 +1790,7 @@ package mediaconvert {
   }
 
   /**
-    * Enable Insert color metadata (ColorMetadata) to include color metadata in this output. This setting is enabled by default.
+    * Choose Insert (INSERT) for this setting to include color metadata in this output. Choose Ignore (IGNORE) to exclude color metadata from this output. If you don't specify a value, the service sets this to Insert by default.
     */
   object ColorMetadataEnum {
     val IGNORE = "IGNORE"
@@ -1769,7 +1800,7 @@ package mediaconvert {
   }
 
   /**
-    * If your input video has accurate color space metadata, or if you don't know about color space, leave this set to the default value FOLLOW. The service will automatically detect your input color space. If your input video has metadata indicating the wrong color space, or if your input video is missing color space metadata that should be there, specify the accurate color space here. If you choose HDR10, you can also correct inaccurate color space coefficients, using the HDR master display information controls. You must also set Color space usage (ColorSpaceUsage) to FORCE for the service to use these values.
+    * If your input video has accurate color space metadata, or if you don't know about color space, leave this set to the default value Follow (FOLLOW). The service will automatically detect your input color space. If your input video has metadata indicating the wrong color space, specify the accurate color space here. If your input video is HDR 10 and the SMPTE ST 2086 Mastering Display Color Volume static metadata isn't present in your video stream, or if that metadata is present but not accurate, choose Force HDR 10 (FORCE_HDR10) here and specify correct values in the input HDR 10 metadata (Hdr10Metadata) settings. For more information about MediaConvert HDR jobs, see https://docs.aws.amazon.com/console/mediaconvert/hdr.
     */
   object ColorSpaceEnum {
     val FOLLOW   = "FOLLOW"
@@ -1782,7 +1813,7 @@ package mediaconvert {
   }
 
   /**
-    * Determines if colorspace conversion will be performed. If set to _None_, no conversion will be performed. If _Force 601_ or _Force 709_ are selected, conversion will be performed for inputs with differing colorspaces. An input's colorspace can be specified explicitly in the "Video Selector":#inputs-video_selector if necessary.
+    * Specify the color space you want for this output. The service supports conversion between HDR formats, between SDR formats, and from SDR to HDR. The service doesn't support conversion from HDR to SDR. SDR to HDR conversion doesn't upgrade the dynamic range. The converted video has an HDR format, but visually appears the same as an unconverted output.
     */
   object ColorSpaceConversionEnum {
     val NONE           = "NONE"
@@ -1795,7 +1826,7 @@ package mediaconvert {
   }
 
   /**
-    * There are two sources for color metadata, the input file and the job configuration (in the Color space and HDR master display informaiton settings). The Color space usage setting controls which takes precedence. FORCE: The system will use color metadata supplied by user, if any. If the user does not supply color metadata, the system will use data from the source. FALLBACK: The system will use color metadata from the source. If source has no color metadata, the system will use user-supplied color metadata values if available.
+    * There are two sources for color metadata, the input file and the job input settings Color space (ColorSpace) and HDR master display information settings(Hdr10Metadata). The Color space usage setting determines which takes precedence. Choose Force (FORCE) to use color metadata from the input job settings. If you don't specify values for those settings, the service defaults to using metadata from your input. FALLBACK - Choose Fallback (FALLBACK) to use color metadata from the source when it is present. If there's no color metadata in your input file, the service defaults to using values you specify in the input settings.
     */
   object ColorSpaceUsageEnum {
     val FORCE    = "FORCE"
@@ -1872,6 +1903,7 @@ package mediaconvert {
     var BillingTagsSource: js.UndefOr[BillingTagsSource]
     var ClientRequestToken: js.UndefOr[__string]
     var JobTemplate: js.UndefOr[__string]
+    var Priority: js.UndefOr[__integerMinNegative50Max50]
     var Queue: js.UndefOr[__string]
     var StatusUpdateInterval: js.UndefOr[StatusUpdateInterval]
     var UserMetadata: js.UndefOr[__mapOf__string]
@@ -1885,6 +1917,7 @@ package mediaconvert {
         BillingTagsSource: js.UndefOr[BillingTagsSource] = js.undefined,
         ClientRequestToken: js.UndefOr[__string] = js.undefined,
         JobTemplate: js.UndefOr[__string] = js.undefined,
+        Priority: js.UndefOr[__integerMinNegative50Max50] = js.undefined,
         Queue: js.UndefOr[__string] = js.undefined,
         StatusUpdateInterval: js.UndefOr[StatusUpdateInterval] = js.undefined,
         UserMetadata: js.UndefOr[__mapOf__string] = js.undefined
@@ -1898,6 +1931,7 @@ package mediaconvert {
       BillingTagsSource.foreach(__v => __obj.update("BillingTagsSource", __v.asInstanceOf[js.Any]))
       ClientRequestToken.foreach(__v => __obj.update("ClientRequestToken", __v.asInstanceOf[js.Any]))
       JobTemplate.foreach(__v => __obj.update("JobTemplate", __v.asInstanceOf[js.Any]))
+      Priority.foreach(__v => __obj.update("Priority", __v.asInstanceOf[js.Any]))
       Queue.foreach(__v => __obj.update("Queue", __v.asInstanceOf[js.Any]))
       StatusUpdateInterval.foreach(__v => __obj.update("StatusUpdateInterval", __v.asInstanceOf[js.Any]))
       UserMetadata.foreach(__v => __obj.update("UserMetadata", __v.asInstanceOf[js.Any]))
@@ -1927,6 +1961,7 @@ package mediaconvert {
     var AccelerationSettings: js.UndefOr[AccelerationSettings]
     var Category: js.UndefOr[__string]
     var Description: js.UndefOr[__string]
+    var Priority: js.UndefOr[__integerMinNegative50Max50]
     var Queue: js.UndefOr[__string]
     var StatusUpdateInterval: js.UndefOr[StatusUpdateInterval]
     var Tags: js.UndefOr[__mapOf__string]
@@ -1939,6 +1974,7 @@ package mediaconvert {
         AccelerationSettings: js.UndefOr[AccelerationSettings] = js.undefined,
         Category: js.UndefOr[__string] = js.undefined,
         Description: js.UndefOr[__string] = js.undefined,
+        Priority: js.UndefOr[__integerMinNegative50Max50] = js.undefined,
         Queue: js.UndefOr[__string] = js.undefined,
         StatusUpdateInterval: js.UndefOr[StatusUpdateInterval] = js.undefined,
         Tags: js.UndefOr[__mapOf__string] = js.undefined
@@ -1951,6 +1987,7 @@ package mediaconvert {
       AccelerationSettings.foreach(__v => __obj.update("AccelerationSettings", __v.asInstanceOf[js.Any]))
       Category.foreach(__v => __obj.update("Category", __v.asInstanceOf[js.Any]))
       Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
+      Priority.foreach(__v => __obj.update("Priority", __v.asInstanceOf[js.Any]))
       Queue.foreach(__v => __obj.update("Queue", __v.asInstanceOf[js.Any]))
       StatusUpdateInterval.foreach(__v => __obj.update("StatusUpdateInterval", __v.asInstanceOf[js.Any]))
       Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
@@ -2023,6 +2060,7 @@ package mediaconvert {
     var Description: js.UndefOr[__string]
     var PricingPlan: js.UndefOr[PricingPlan]
     var ReservationPlanSettings: js.UndefOr[ReservationPlanSettings]
+    var Status: js.UndefOr[QueueStatus]
     var Tags: js.UndefOr[__mapOf__string]
   }
 
@@ -2032,6 +2070,7 @@ package mediaconvert {
         Description: js.UndefOr[__string] = js.undefined,
         PricingPlan: js.UndefOr[PricingPlan] = js.undefined,
         ReservationPlanSettings: js.UndefOr[ReservationPlanSettings] = js.undefined,
+        Status: js.UndefOr[QueueStatus] = js.undefined,
         Tags: js.UndefOr[__mapOf__string] = js.undefined
     ): CreateQueueRequest = {
       val __obj = js.Dictionary[js.Any](
@@ -2041,6 +2080,7 @@ package mediaconvert {
       Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
       PricingPlan.foreach(__v => __obj.update("PricingPlan", __v.asInstanceOf[js.Any]))
       ReservationPlanSettings.foreach(__v => __obj.update("ReservationPlanSettings", __v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.update("Status", __v.asInstanceOf[js.Any]))
       Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateQueueRequest]
     }
@@ -2066,14 +2106,17 @@ package mediaconvert {
     */
   @js.native
   trait DashIsoEncryptionSettings extends js.Object {
+    var PlaybackDeviceCompatibility: js.UndefOr[DashIsoPlaybackDeviceCompatibility]
     var SpekeKeyProvider: js.UndefOr[SpekeKeyProvider]
   }
 
   object DashIsoEncryptionSettings {
     def apply(
+        PlaybackDeviceCompatibility: js.UndefOr[DashIsoPlaybackDeviceCompatibility] = js.undefined,
         SpekeKeyProvider: js.UndefOr[SpekeKeyProvider] = js.undefined
     ): DashIsoEncryptionSettings = {
       val __obj = js.Dictionary.empty[js.Any]
+      PlaybackDeviceCompatibility.foreach(__v => __obj.update("PlaybackDeviceCompatibility", __v.asInstanceOf[js.Any]))
       SpekeKeyProvider.foreach(__v => __obj.update("SpekeKeyProvider", __v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DashIsoEncryptionSettings]
     }
@@ -2134,6 +2177,16 @@ package mediaconvert {
     val NONE      = "NONE"
 
     val values = IndexedSeq(HBBTV_1_5, NONE)
+  }
+
+  /**
+    * This setting can improve the compatibility of your output with video players on obsolete devices. It applies only to DASH H.264 outputs with DRM encryption. Choose Unencrypted SEI (UNENCRYPTED_SEI) only to correct problems with playback on older devices. Otherwise, keep the default setting CENC v1 (CENC_V1). If you choose Unencrypted SEI, for that output, the service will exclude the access unit delimiter and will leave the SEI NAL units unencrypted.
+    */
+  object DashIsoPlaybackDeviceCompatibilityEnum {
+    val CENC_V1         = "CENC_V1"
+    val UNENCRYPTED_SEI = "UNENCRYPTED_SEI"
+
+    val values = IndexedSeq(CENC_V1, UNENCRYPTED_SEI)
   }
 
   /**
@@ -2646,6 +2699,158 @@ package mediaconvert {
   }
 
   /**
+    * Specify the bitstream mode for the E-AC-3 stream that the encoder emits. For more information about the EAC3 bitstream mode, see ATSC A/52-2012 (Annex E).
+    */
+  object Eac3AtmosBitstreamModeEnum {
+    val COMPLETE_MAIN = "COMPLETE_MAIN"
+
+    val values = IndexedSeq(COMPLETE_MAIN)
+  }
+
+  /**
+    * The coding mode for Dolby Digital Plus JOC (Atmos) is always 9.1.6 (CODING_MODE_9_1_6).
+    */
+  object Eac3AtmosCodingModeEnum {
+    val CODING_MODE_9_1_6 = "CODING_MODE_9_1_6"
+
+    val values = IndexedSeq(CODING_MODE_9_1_6)
+  }
+
+  /**
+    * Enable Dolby Dialogue Intelligence to adjust loudness based on dialogue analysis.
+    */
+  object Eac3AtmosDialogueIntelligenceEnum {
+    val ENABLED  = "ENABLED"
+    val DISABLED = "DISABLED"
+
+    val values = IndexedSeq(ENABLED, DISABLED)
+  }
+
+  /**
+    * Specify the absolute peak level for a signal with dynamic range compression.
+    */
+  object Eac3AtmosDynamicRangeCompressionLineEnum {
+    val NONE           = "NONE"
+    val FILM_STANDARD  = "FILM_STANDARD"
+    val FILM_LIGHT     = "FILM_LIGHT"
+    val MUSIC_STANDARD = "MUSIC_STANDARD"
+    val MUSIC_LIGHT    = "MUSIC_LIGHT"
+    val SPEECH         = "SPEECH"
+
+    val values = IndexedSeq(NONE, FILM_STANDARD, FILM_LIGHT, MUSIC_STANDARD, MUSIC_LIGHT, SPEECH)
+  }
+
+  /**
+    * Specify how the service limits the audio dynamic range when compressing the audio.
+    */
+  object Eac3AtmosDynamicRangeCompressionRfEnum {
+    val NONE           = "NONE"
+    val FILM_STANDARD  = "FILM_STANDARD"
+    val FILM_LIGHT     = "FILM_LIGHT"
+    val MUSIC_STANDARD = "MUSIC_STANDARD"
+    val MUSIC_LIGHT    = "MUSIC_LIGHT"
+    val SPEECH         = "SPEECH"
+
+    val values = IndexedSeq(NONE, FILM_STANDARD, FILM_LIGHT, MUSIC_STANDARD, MUSIC_LIGHT, SPEECH)
+  }
+
+  /**
+    * Choose how the service meters the loudness of your audio.
+    */
+  object Eac3AtmosMeteringModeEnum {
+    val LEQ_A         = "LEQ_A"
+    val ITU_BS_1770_1 = "ITU_BS_1770_1"
+    val ITU_BS_1770_2 = "ITU_BS_1770_2"
+    val ITU_BS_1770_3 = "ITU_BS_1770_3"
+    val ITU_BS_1770_4 = "ITU_BS_1770_4"
+
+    val values = IndexedSeq(LEQ_A, ITU_BS_1770_1, ITU_BS_1770_2, ITU_BS_1770_3, ITU_BS_1770_4)
+  }
+
+  /**
+    * Required when you set (Codec) under (AudioDescriptions)>(CodecSettings) to the value EAC3_ATMOS.
+    */
+  @js.native
+  trait Eac3AtmosSettings extends js.Object {
+    var Bitrate: js.UndefOr[__integerMin384000Max768000]
+    var BitstreamMode: js.UndefOr[Eac3AtmosBitstreamMode]
+    var CodingMode: js.UndefOr[Eac3AtmosCodingMode]
+    var DialogueIntelligence: js.UndefOr[Eac3AtmosDialogueIntelligence]
+    var DynamicRangeCompressionLine: js.UndefOr[Eac3AtmosDynamicRangeCompressionLine]
+    var DynamicRangeCompressionRf: js.UndefOr[Eac3AtmosDynamicRangeCompressionRf]
+    var LoRoCenterMixLevel: js.UndefOr[__doubleMinNegative6Max3]
+    var LoRoSurroundMixLevel: js.UndefOr[__doubleMinNegative60MaxNegative1]
+    var LtRtCenterMixLevel: js.UndefOr[__doubleMinNegative6Max3]
+    var LtRtSurroundMixLevel: js.UndefOr[__doubleMinNegative60MaxNegative1]
+    var MeteringMode: js.UndefOr[Eac3AtmosMeteringMode]
+    var SampleRate: js.UndefOr[__integerMin48000Max48000]
+    var SpeechThreshold: js.UndefOr[__integerMin1Max100]
+    var StereoDownmix: js.UndefOr[Eac3AtmosStereoDownmix]
+    var SurroundExMode: js.UndefOr[Eac3AtmosSurroundExMode]
+  }
+
+  object Eac3AtmosSettings {
+    def apply(
+        Bitrate: js.UndefOr[__integerMin384000Max768000] = js.undefined,
+        BitstreamMode: js.UndefOr[Eac3AtmosBitstreamMode] = js.undefined,
+        CodingMode: js.UndefOr[Eac3AtmosCodingMode] = js.undefined,
+        DialogueIntelligence: js.UndefOr[Eac3AtmosDialogueIntelligence] = js.undefined,
+        DynamicRangeCompressionLine: js.UndefOr[Eac3AtmosDynamicRangeCompressionLine] = js.undefined,
+        DynamicRangeCompressionRf: js.UndefOr[Eac3AtmosDynamicRangeCompressionRf] = js.undefined,
+        LoRoCenterMixLevel: js.UndefOr[__doubleMinNegative6Max3] = js.undefined,
+        LoRoSurroundMixLevel: js.UndefOr[__doubleMinNegative60MaxNegative1] = js.undefined,
+        LtRtCenterMixLevel: js.UndefOr[__doubleMinNegative6Max3] = js.undefined,
+        LtRtSurroundMixLevel: js.UndefOr[__doubleMinNegative60MaxNegative1] = js.undefined,
+        MeteringMode: js.UndefOr[Eac3AtmosMeteringMode] = js.undefined,
+        SampleRate: js.UndefOr[__integerMin48000Max48000] = js.undefined,
+        SpeechThreshold: js.UndefOr[__integerMin1Max100] = js.undefined,
+        StereoDownmix: js.UndefOr[Eac3AtmosStereoDownmix] = js.undefined,
+        SurroundExMode: js.UndefOr[Eac3AtmosSurroundExMode] = js.undefined
+    ): Eac3AtmosSettings = {
+      val __obj = js.Dictionary.empty[js.Any]
+      Bitrate.foreach(__v => __obj.update("Bitrate", __v.asInstanceOf[js.Any]))
+      BitstreamMode.foreach(__v => __obj.update("BitstreamMode", __v.asInstanceOf[js.Any]))
+      CodingMode.foreach(__v => __obj.update("CodingMode", __v.asInstanceOf[js.Any]))
+      DialogueIntelligence.foreach(__v => __obj.update("DialogueIntelligence", __v.asInstanceOf[js.Any]))
+      DynamicRangeCompressionLine.foreach(__v => __obj.update("DynamicRangeCompressionLine", __v.asInstanceOf[js.Any]))
+      DynamicRangeCompressionRf.foreach(__v => __obj.update("DynamicRangeCompressionRf", __v.asInstanceOf[js.Any]))
+      LoRoCenterMixLevel.foreach(__v => __obj.update("LoRoCenterMixLevel", __v.asInstanceOf[js.Any]))
+      LoRoSurroundMixLevel.foreach(__v => __obj.update("LoRoSurroundMixLevel", __v.asInstanceOf[js.Any]))
+      LtRtCenterMixLevel.foreach(__v => __obj.update("LtRtCenterMixLevel", __v.asInstanceOf[js.Any]))
+      LtRtSurroundMixLevel.foreach(__v => __obj.update("LtRtSurroundMixLevel", __v.asInstanceOf[js.Any]))
+      MeteringMode.foreach(__v => __obj.update("MeteringMode", __v.asInstanceOf[js.Any]))
+      SampleRate.foreach(__v => __obj.update("SampleRate", __v.asInstanceOf[js.Any]))
+      SpeechThreshold.foreach(__v => __obj.update("SpeechThreshold", __v.asInstanceOf[js.Any]))
+      StereoDownmix.foreach(__v => __obj.update("StereoDownmix", __v.asInstanceOf[js.Any]))
+      SurroundExMode.foreach(__v => __obj.update("SurroundExMode", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Eac3AtmosSettings]
+    }
+  }
+
+  /**
+    * Choose how the service does stereo downmixing.
+    */
+  object Eac3AtmosStereoDownmixEnum {
+    val NOT_INDICATED = "NOT_INDICATED"
+    val STEREO        = "STEREO"
+    val SURROUND      = "SURROUND"
+    val DPL2          = "DPL2"
+
+    val values = IndexedSeq(NOT_INDICATED, STEREO, SURROUND, DPL2)
+  }
+
+  /**
+    * Specify whether your input audio has an additional center rear surround channel matrix encoded into your left and right surround channels.
+    */
+  object Eac3AtmosSurroundExModeEnum {
+    val NOT_INDICATED = "NOT_INDICATED"
+    val ENABLED       = "ENABLED"
+    val DISABLED      = "DISABLED"
+
+    val values = IndexedSeq(NOT_INDICATED, ENABLED, DISABLED)
+  }
+
+  /**
     * If set to ATTENUATE_3_DB, applies a 3 dB attenuation to the surround channels. Only used for 3/2 coding mode.
     */
   object Eac3AttenuationControlEnum {
@@ -2656,7 +2861,7 @@ package mediaconvert {
   }
 
   /**
-    * Specifies the "Bitstream Mode" (bsmod) for the emitted E-AC-3 stream. See ATSC A/52-2012 (Annex E) for background on these values.
+    * Specify the bitstream mode for the E-AC-3 stream that the encoder emits. For more information about the EAC3 bitstream mode, see ATSC A/52-2012 (Annex E).
     */
   object Eac3BitstreamModeEnum {
     val COMPLETE_MAIN     = "COMPLETE_MAIN"
@@ -2690,7 +2895,7 @@ package mediaconvert {
   }
 
   /**
-    * Enables Dynamic Range Compression that restricts the absolute peak level for a signal.
+    * Specify the absolute peak level for a signal with dynamic range compression.
     */
   object Eac3DynamicRangeCompressionLineEnum {
     val NONE           = "NONE"
@@ -2704,7 +2909,7 @@ package mediaconvert {
   }
 
   /**
-    * Enables Heavy Dynamic Range Compression, ensures that the instantaneous signal peaks do not exceed specified levels.
+    * Specify how the service limits the audio dynamic range when compressing the audio.
     */
   object Eac3DynamicRangeCompressionRfEnum {
     val NONE           = "NONE"
@@ -2846,7 +3051,7 @@ package mediaconvert {
   }
 
   /**
-    * Stereo downmix preference. Only used for 3/2 coding mode.
+    * Choose how the service does stereo downmixing. This setting only applies if you keep the default value of 3/2 - L, R, C, Ls, Rs (CODING_MODE_3_2) for the setting Coding mode (Eac3CodingMode). If you choose a different value for Coding mode, the service ignores Stereo downmix (Eac3StereoDownmix).
     */
   object Eac3StereoDownmixEnum {
     val NOT_INDICATED = "NOT_INDICATED"
@@ -2895,14 +3100,17 @@ package mediaconvert {
   @js.native
   trait EmbeddedDestinationSettings extends js.Object {
     var Destination608ChannelNumber: js.UndefOr[__integerMin1Max4]
+    var Destination708ServiceNumber: js.UndefOr[__integerMin1Max6]
   }
 
   object EmbeddedDestinationSettings {
     def apply(
-        Destination608ChannelNumber: js.UndefOr[__integerMin1Max4] = js.undefined
+        Destination608ChannelNumber: js.UndefOr[__integerMin1Max4] = js.undefined,
+        Destination708ServiceNumber: js.UndefOr[__integerMin1Max6] = js.undefined
     ): EmbeddedDestinationSettings = {
       val __obj = js.Dictionary.empty[js.Any]
       Destination608ChannelNumber.foreach(__v => __obj.update("Destination608ChannelNumber", __v.asInstanceOf[js.Any]))
+      Destination708ServiceNumber.foreach(__v => __obj.update("Destination708ServiceNumber", __v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[EmbeddedDestinationSettings]
     }
   }
@@ -3492,13 +3700,14 @@ package mediaconvert {
   }
 
   /**
-    * Scene change detection (inserts I-frames on scene changes).
+    * Enable this setting to insert I-frames at scene changes that the service automatically detects. This improves video quality and is enabled by default. If this output uses QVBR, choose Transition detection (TRANSITION_DETECTION) for further video quality improvement. For more information about QVBR, see https://docs.aws.amazon.com/console/mediaconvert/cbr-vbr-qvbr.
     */
   object H264SceneChangeDetectEnum {
-    val DISABLED = "DISABLED"
-    val ENABLED  = "ENABLED"
+    val DISABLED             = "DISABLED"
+    val ENABLED              = "ENABLED"
+    val TRANSITION_DETECTION = "TRANSITION_DETECTION"
 
-    val values = IndexedSeq(DISABLED, ENABLED)
+    val values = IndexedSeq(DISABLED, ENABLED, TRANSITION_DETECTION)
   }
 
   /**
@@ -3849,9 +4058,7 @@ package mediaconvert {
   }
 
   /**
-    * Use Interlace mode (InterlaceMode) to choose the scan line type for the output. * Top Field First (TOP_FIELD) and Bottom Field First (BOTTOM_FIELD) produce interlaced output with the entire output having the same field polarity (top or bottom first). * Follow, Default Top (FOLLOW_TOP_FIELD) and Follow, Default Bottom (FOLLOW_BOTTOM_FIELD) use the same field polarity as the source. Therefore, behavior depends on the input scan type.
-    *   - If the source is interlaced, the output will be interlaced with the same polarity as the source (it will follow the source). The output could therefore be a mix of "top field first" and "bottom field first".
-    *   - If the source is progressive, the output will be interlaced with "top field first" or "bottom field first" polarity, depending on which of the Follow options you chose.
+    * Choose the scan line type for the output. Choose Progressive (PROGRESSIVE) to create a progressive output, regardless of the scan type of your input. Choose Top Field First (TOP_FIELD) or Bottom Field First (BOTTOM_FIELD) to create an output that's interlaced with the same field polarity throughout. Choose Follow, Default Top (FOLLOW_TOP_FIELD) or Follow, Default Bottom (FOLLOW_BOTTOM_FIELD) to create an interlaced output with the same field polarity as the source. If the source is interlaced, the output will be interlaced with the same polarity as the source (it will follow the source). The output could therefore be a mix of "top field first" and "bottom field first". If the source is progressive, your output will be interlaced with "top field first" or "bottom field first" polarity, depending on which of the Follow options you chose. If you don't choose a value, the service will default to Progressive (PROGRESSIVE).
     */
   object H265InterlaceModeEnum {
     val PROGRESSIVE         = "PROGRESSIVE"
@@ -3928,13 +4135,14 @@ package mediaconvert {
   }
 
   /**
-    * Scene change detection (inserts I-frames on scene changes).
+    * Enable this setting to insert I-frames at scene changes that the service automatically detects. This improves video quality and is enabled by default. If this output uses QVBR, choose Transition detection (TRANSITION_DETECTION) for further video quality improvement. For more information about QVBR, see https://docs.aws.amazon.com/console/mediaconvert/cbr-vbr-qvbr.
     */
   object H265SceneChangeDetectEnum {
-    val DISABLED = "DISABLED"
-    val ENABLED  = "ENABLED"
+    val DISABLED             = "DISABLED"
+    val ENABLED              = "ENABLED"
+    val TRANSITION_DETECTION = "TRANSITION_DETECTION"
 
-    val values = IndexedSeq(DISABLED, ENABLED)
+    val values = IndexedSeq(DISABLED, ENABLED, TRANSITION_DETECTION)
   }
 
   /**
@@ -4163,7 +4371,7 @@ package mediaconvert {
   }
 
   /**
-    * Use the "HDR master display information" (Hdr10Metadata) settings to correct HDR metadata or to provide missing metadata. These values vary depending on the input video and must be provided by a color grader. Range is 0 to 50,000; each increment represents 0.00002 in CIE1931 color coordinate. Note that these settings are not color correction. Note that if you are creating HDR outputs inside of an HLS CMAF package, to comply with the Apple specification, you must use the following settings. Set "MP4 packaging type" (writeMp4PackagingType) to HVC1 (HVC1). Set "Profile" (H265Settings > codecProfile) to Main10/High (MAIN10_HIGH). Set "Level" (H265Settings > codecLevel) to 5 (LEVEL_5).
+    * Use these settings to specify static color calibration metadata, as defined by SMPTE ST 2086. These values don't affect the pixel values that are encoded in the video stream. They are intended to help the downstream video player display content in a way that reflects the intentions of the the content creator.
     */
   @js.native
   trait Hdr10Metadata extends js.Object {
@@ -4218,6 +4426,16 @@ package mediaconvert {
     val ELEMENTAL_SCTE35 = "ELEMENTAL_SCTE35"
 
     val values = IndexedSeq(ELEMENTAL, ELEMENTAL_SCTE35)
+  }
+
+  /**
+    * Use this setting only in audio-only outputs. Choose MPEG-2 Transport Stream (M2TS) to create a file in an MPEG2-TS container. Keep the default value Automatic (AUTOMATIC) to create a raw audio-only file with no container. Regardless of the value that you specify here, if this output has video, the service will place outputs into an MPEG2-TS container.
+    */
+  object HlsAudioOnlyContainerEnum {
+    val AUTOMATIC = "AUTOMATIC"
+    val M2TS      = "M2TS"
+
+    val values = IndexedSeq(AUTOMATIC, M2TS)
   }
 
   /**
@@ -4463,7 +4681,7 @@ package mediaconvert {
   }
 
   /**
-    * Indicates which type of key provider is used for encryption.
+    * Specify whether your DRM encryption key is static or from a key provider that follows the SPEKE standard. For more information about SPEKE, see https://docs.aws.amazon.com/speke/latest/documentation/what-is-speke.html.
     */
   object HlsKeyProviderTypeEnum {
     val SPEKE      = "SPEKE"
@@ -4538,6 +4756,7 @@ package mediaconvert {
   @js.native
   trait HlsSettings extends js.Object {
     var AudioGroupId: js.UndefOr[__string]
+    var AudioOnlyContainer: js.UndefOr[HlsAudioOnlyContainer]
     var AudioRenditionSets: js.UndefOr[__string]
     var AudioTrackType: js.UndefOr[HlsAudioTrackType]
     var IFrameOnlyManifest: js.UndefOr[HlsIFrameOnlyManifest]
@@ -4547,6 +4766,7 @@ package mediaconvert {
   object HlsSettings {
     def apply(
         AudioGroupId: js.UndefOr[__string] = js.undefined,
+        AudioOnlyContainer: js.UndefOr[HlsAudioOnlyContainer] = js.undefined,
         AudioRenditionSets: js.UndefOr[__string] = js.undefined,
         AudioTrackType: js.UndefOr[HlsAudioTrackType] = js.undefined,
         IFrameOnlyManifest: js.UndefOr[HlsIFrameOnlyManifest] = js.undefined,
@@ -4554,6 +4774,7 @@ package mediaconvert {
     ): HlsSettings = {
       val __obj = js.Dictionary.empty[js.Any]
       AudioGroupId.foreach(__v => __obj.update("AudioGroupId", __v.asInstanceOf[js.Any]))
+      AudioOnlyContainer.foreach(__v => __obj.update("AudioOnlyContainer", __v.asInstanceOf[js.Any]))
       AudioRenditionSets.foreach(__v => __obj.update("AudioRenditionSets", __v.asInstanceOf[js.Any]))
       AudioTrackType.foreach(__v => __obj.update("AudioTrackType", __v.asInstanceOf[js.Any]))
       IFrameOnlyManifest.foreach(__v => __obj.update("IFrameOnlyManifest", __v.asInstanceOf[js.Any]))
@@ -4630,16 +4851,18 @@ package mediaconvert {
     var AudioSelectorGroups: js.UndefOr[__mapOfAudioSelectorGroup]
     var AudioSelectors: js.UndefOr[__mapOfAudioSelector]
     var CaptionSelectors: js.UndefOr[__mapOfCaptionSelector]
+    var Crop: js.UndefOr[Rectangle]
     var DeblockFilter: js.UndefOr[InputDeblockFilter]
     var DecryptionSettings: js.UndefOr[InputDecryptionSettings]
     var DenoiseFilter: js.UndefOr[InputDenoiseFilter]
     var FileInput: js.UndefOr[
-      __stringPatternS3MM2VVMMPPEEGGAAVVIIMMPP4FFLLVVMMPPTTMMPPGGMM4VVTTRRPPFF4VVMM2TTSSTTSS264HH264MMKKVVMMOOVVMMTTSSMM2TTWWMMVVAASSFFVVOOBB3GGPP3GGPPPPMMXXFFDDIIVVXXXXVVIIDDRRAAWWDDVVGGXXFFMM1VV3GG2VVMMFFMM3UU8LLCCHHGGXXFFMMPPEEGG2MMXXFFMMPPEEGG2MMXXFFHHDDWWAAVVYY4MMXXMMLL
+      __stringPatternHttpHttpsS3MM2VVMMPPEEGGMMPP3AAVVIIMMPP4FFLLVVMMPPTTMMPPGGMM4VVTTRRPPFF4VVMM2TTSSTTSS264HH264MMKKVVMMOOVVMMTTSSMM2TTWWMMVVAASSFFVVOOBB3GGPP3GGPPPPMMXXFFDDIIVVXXXXVVIIDDRRAAWWDDVVGGXXFFMM1VV3GG2VVMMFFMM3UU8WWEEBBMMLLCCHHGGXXFFMMPPEEGG2MMXXFFMMPPEEGG2MMXXFFHHDDWWAAVVYY4MMXXMMLL
     ]
     var FilterEnable: js.UndefOr[InputFilterEnable]
     var FilterStrength: js.UndefOr[__integerMinNegative5Max5]
     var ImageInserter: js.UndefOr[ImageInserter]
     var InputClippings: js.UndefOr[__listOfInputClipping]
+    var Position: js.UndefOr[Rectangle]
     var ProgramNumber: js.UndefOr[__integerMin1Max2147483647]
     var PsiControl: js.UndefOr[InputPsiControl]
     var SupplementalImps: js.UndefOr[__listOf__stringPatternS3ASSETMAPXml]
@@ -4652,16 +4875,18 @@ package mediaconvert {
         AudioSelectorGroups: js.UndefOr[__mapOfAudioSelectorGroup] = js.undefined,
         AudioSelectors: js.UndefOr[__mapOfAudioSelector] = js.undefined,
         CaptionSelectors: js.UndefOr[__mapOfCaptionSelector] = js.undefined,
+        Crop: js.UndefOr[Rectangle] = js.undefined,
         DeblockFilter: js.UndefOr[InputDeblockFilter] = js.undefined,
         DecryptionSettings: js.UndefOr[InputDecryptionSettings] = js.undefined,
         DenoiseFilter: js.UndefOr[InputDenoiseFilter] = js.undefined,
         FileInput: js.UndefOr[
-          __stringPatternS3MM2VVMMPPEEGGAAVVIIMMPP4FFLLVVMMPPTTMMPPGGMM4VVTTRRPPFF4VVMM2TTSSTTSS264HH264MMKKVVMMOOVVMMTTSSMM2TTWWMMVVAASSFFVVOOBB3GGPP3GGPPPPMMXXFFDDIIVVXXXXVVIIDDRRAAWWDDVVGGXXFFMM1VV3GG2VVMMFFMM3UU8LLCCHHGGXXFFMMPPEEGG2MMXXFFMMPPEEGG2MMXXFFHHDDWWAAVVYY4MMXXMMLL
+          __stringPatternHttpHttpsS3MM2VVMMPPEEGGMMPP3AAVVIIMMPP4FFLLVVMMPPTTMMPPGGMM4VVTTRRPPFF4VVMM2TTSSTTSS264HH264MMKKVVMMOOVVMMTTSSMM2TTWWMMVVAASSFFVVOOBB3GGPP3GGPPPPMMXXFFDDIIVVXXXXVVIIDDRRAAWWDDVVGGXXFFMM1VV3GG2VVMMFFMM3UU8WWEEBBMMLLCCHHGGXXFFMMPPEEGG2MMXXFFMMPPEEGG2MMXXFFHHDDWWAAVVYY4MMXXMMLL
         ] = js.undefined,
         FilterEnable: js.UndefOr[InputFilterEnable] = js.undefined,
         FilterStrength: js.UndefOr[__integerMinNegative5Max5] = js.undefined,
         ImageInserter: js.UndefOr[ImageInserter] = js.undefined,
         InputClippings: js.UndefOr[__listOfInputClipping] = js.undefined,
+        Position: js.UndefOr[Rectangle] = js.undefined,
         ProgramNumber: js.UndefOr[__integerMin1Max2147483647] = js.undefined,
         PsiControl: js.UndefOr[InputPsiControl] = js.undefined,
         SupplementalImps: js.UndefOr[__listOf__stringPatternS3ASSETMAPXml] = js.undefined,
@@ -4672,6 +4897,7 @@ package mediaconvert {
       AudioSelectorGroups.foreach(__v => __obj.update("AudioSelectorGroups", __v.asInstanceOf[js.Any]))
       AudioSelectors.foreach(__v => __obj.update("AudioSelectors", __v.asInstanceOf[js.Any]))
       CaptionSelectors.foreach(__v => __obj.update("CaptionSelectors", __v.asInstanceOf[js.Any]))
+      Crop.foreach(__v => __obj.update("Crop", __v.asInstanceOf[js.Any]))
       DeblockFilter.foreach(__v => __obj.update("DeblockFilter", __v.asInstanceOf[js.Any]))
       DecryptionSettings.foreach(__v => __obj.update("DecryptionSettings", __v.asInstanceOf[js.Any]))
       DenoiseFilter.foreach(__v => __obj.update("DenoiseFilter", __v.asInstanceOf[js.Any]))
@@ -4680,6 +4906,7 @@ package mediaconvert {
       FilterStrength.foreach(__v => __obj.update("FilterStrength", __v.asInstanceOf[js.Any]))
       ImageInserter.foreach(__v => __obj.update("ImageInserter", __v.asInstanceOf[js.Any]))
       InputClippings.foreach(__v => __obj.update("InputClippings", __v.asInstanceOf[js.Any]))
+      Position.foreach(__v => __obj.update("Position", __v.asInstanceOf[js.Any]))
       ProgramNumber.foreach(__v => __obj.update("ProgramNumber", __v.asInstanceOf[js.Any]))
       PsiControl.foreach(__v => __obj.update("PsiControl", __v.asInstanceOf[js.Any]))
       SupplementalImps.foreach(__v => __obj.update("SupplementalImps", __v.asInstanceOf[js.Any]))
@@ -4799,12 +5026,14 @@ package mediaconvert {
     var AudioSelectorGroups: js.UndefOr[__mapOfAudioSelectorGroup]
     var AudioSelectors: js.UndefOr[__mapOfAudioSelector]
     var CaptionSelectors: js.UndefOr[__mapOfCaptionSelector]
+    var Crop: js.UndefOr[Rectangle]
     var DeblockFilter: js.UndefOr[InputDeblockFilter]
     var DenoiseFilter: js.UndefOr[InputDenoiseFilter]
     var FilterEnable: js.UndefOr[InputFilterEnable]
     var FilterStrength: js.UndefOr[__integerMinNegative5Max5]
     var ImageInserter: js.UndefOr[ImageInserter]
     var InputClippings: js.UndefOr[__listOfInputClipping]
+    var Position: js.UndefOr[Rectangle]
     var ProgramNumber: js.UndefOr[__integerMin1Max2147483647]
     var PsiControl: js.UndefOr[InputPsiControl]
     var TimecodeSource: js.UndefOr[InputTimecodeSource]
@@ -4816,12 +5045,14 @@ package mediaconvert {
         AudioSelectorGroups: js.UndefOr[__mapOfAudioSelectorGroup] = js.undefined,
         AudioSelectors: js.UndefOr[__mapOfAudioSelector] = js.undefined,
         CaptionSelectors: js.UndefOr[__mapOfCaptionSelector] = js.undefined,
+        Crop: js.UndefOr[Rectangle] = js.undefined,
         DeblockFilter: js.UndefOr[InputDeblockFilter] = js.undefined,
         DenoiseFilter: js.UndefOr[InputDenoiseFilter] = js.undefined,
         FilterEnable: js.UndefOr[InputFilterEnable] = js.undefined,
         FilterStrength: js.UndefOr[__integerMinNegative5Max5] = js.undefined,
         ImageInserter: js.UndefOr[ImageInserter] = js.undefined,
         InputClippings: js.UndefOr[__listOfInputClipping] = js.undefined,
+        Position: js.UndefOr[Rectangle] = js.undefined,
         ProgramNumber: js.UndefOr[__integerMin1Max2147483647] = js.undefined,
         PsiControl: js.UndefOr[InputPsiControl] = js.undefined,
         TimecodeSource: js.UndefOr[InputTimecodeSource] = js.undefined,
@@ -4831,12 +5062,14 @@ package mediaconvert {
       AudioSelectorGroups.foreach(__v => __obj.update("AudioSelectorGroups", __v.asInstanceOf[js.Any]))
       AudioSelectors.foreach(__v => __obj.update("AudioSelectors", __v.asInstanceOf[js.Any]))
       CaptionSelectors.foreach(__v => __obj.update("CaptionSelectors", __v.asInstanceOf[js.Any]))
+      Crop.foreach(__v => __obj.update("Crop", __v.asInstanceOf[js.Any]))
       DeblockFilter.foreach(__v => __obj.update("DeblockFilter", __v.asInstanceOf[js.Any]))
       DenoiseFilter.foreach(__v => __obj.update("DenoiseFilter", __v.asInstanceOf[js.Any]))
       FilterEnable.foreach(__v => __obj.update("FilterEnable", __v.asInstanceOf[js.Any]))
       FilterStrength.foreach(__v => __obj.update("FilterStrength", __v.asInstanceOf[js.Any]))
       ImageInserter.foreach(__v => __obj.update("ImageInserter", __v.asInstanceOf[js.Any]))
       InputClippings.foreach(__v => __obj.update("InputClippings", __v.asInstanceOf[js.Any]))
+      Position.foreach(__v => __obj.update("Position", __v.asInstanceOf[js.Any]))
       ProgramNumber.foreach(__v => __obj.update("ProgramNumber", __v.asInstanceOf[js.Any]))
       PsiControl.foreach(__v => __obj.update("PsiControl", __v.asInstanceOf[js.Any]))
       TimecodeSource.foreach(__v => __obj.update("TimecodeSource", __v.asInstanceOf[js.Any]))
@@ -4922,6 +5155,7 @@ package mediaconvert {
     var JobPercentComplete: js.UndefOr[__integer]
     var JobTemplate: js.UndefOr[__string]
     var OutputGroupDetails: js.UndefOr[__listOfOutputGroupDetail]
+    var Priority: js.UndefOr[__integerMinNegative50Max50]
     var Queue: js.UndefOr[__string]
     var RetryCount: js.UndefOr[__integer]
     var Status: js.UndefOr[JobStatus]
@@ -4945,6 +5179,7 @@ package mediaconvert {
         JobPercentComplete: js.UndefOr[__integer] = js.undefined,
         JobTemplate: js.UndefOr[__string] = js.undefined,
         OutputGroupDetails: js.UndefOr[__listOfOutputGroupDetail] = js.undefined,
+        Priority: js.UndefOr[__integerMinNegative50Max50] = js.undefined,
         Queue: js.UndefOr[__string] = js.undefined,
         RetryCount: js.UndefOr[__integer] = js.undefined,
         Status: js.UndefOr[JobStatus] = js.undefined,
@@ -4968,6 +5203,7 @@ package mediaconvert {
       JobPercentComplete.foreach(__v => __obj.update("JobPercentComplete", __v.asInstanceOf[js.Any]))
       JobTemplate.foreach(__v => __obj.update("JobTemplate", __v.asInstanceOf[js.Any]))
       OutputGroupDetails.foreach(__v => __obj.update("OutputGroupDetails", __v.asInstanceOf[js.Any]))
+      Priority.foreach(__v => __obj.update("Priority", __v.asInstanceOf[js.Any]))
       Queue.foreach(__v => __obj.update("Queue", __v.asInstanceOf[js.Any]))
       RetryCount.foreach(__v => __obj.update("RetryCount", __v.asInstanceOf[js.Any]))
       Status.foreach(__v => __obj.update("Status", __v.asInstanceOf[js.Any]))
@@ -5057,6 +5293,7 @@ package mediaconvert {
     var CreatedAt: js.UndefOr[__timestampUnix]
     var Description: js.UndefOr[__string]
     var LastUpdated: js.UndefOr[__timestampUnix]
+    var Priority: js.UndefOr[__integerMinNegative50Max50]
     var Queue: js.UndefOr[__string]
     var StatusUpdateInterval: js.UndefOr[StatusUpdateInterval]
     var Type: js.UndefOr[Type]
@@ -5072,6 +5309,7 @@ package mediaconvert {
         CreatedAt: js.UndefOr[__timestampUnix] = js.undefined,
         Description: js.UndefOr[__string] = js.undefined,
         LastUpdated: js.UndefOr[__timestampUnix] = js.undefined,
+        Priority: js.UndefOr[__integerMinNegative50Max50] = js.undefined,
         Queue: js.UndefOr[__string] = js.undefined,
         StatusUpdateInterval: js.UndefOr[StatusUpdateInterval] = js.undefined,
         Type: js.UndefOr[Type] = js.undefined
@@ -5087,6 +5325,7 @@ package mediaconvert {
       CreatedAt.foreach(__v => __obj.update("CreatedAt", __v.asInstanceOf[js.Any]))
       Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
       LastUpdated.foreach(__v => __obj.update("LastUpdated", __v.asInstanceOf[js.Any]))
+      Priority.foreach(__v => __obj.update("Priority", __v.asInstanceOf[js.Any]))
       Queue.foreach(__v => __obj.update("Queue", __v.asInstanceOf[js.Any]))
       StatusUpdateInterval.foreach(__v => __obj.update("StatusUpdateInterval", __v.asInstanceOf[js.Any]))
       Type.foreach(__v => __obj.update("Type", __v.asInstanceOf[js.Any]))
@@ -5856,7 +6095,7 @@ package mediaconvert {
   }
 
   /**
-    * Enables SCTE-35 passthrough (scte35Source) to pass any SCTE-35 signals from input to output.
+    * For SCTE-35 markers from your input-- Choose Passthrough (PASSTHROUGH) if you want SCTE-35 markers that appear in your input to also appear in this output. Choose None (NONE) if you don't want SCTE-35 markers in this output. For SCTE-35 markers from an ESAM XML document-- Choose None (NONE). Also provide the ESAM XML as a string in the setting Signal processing notification XML (sccXml). Also enable ESAM SCTE-35 (include the property scte35Esam).
     */
   object M2tsScte35SourceEnum {
     val PASSTHROUGH = "PASSTHROUGH"
@@ -6033,7 +6272,7 @@ package mediaconvert {
   }
 
   /**
-    * Enables SCTE-35 passthrough (scte35Source) to pass any SCTE-35 signals from input to output.
+    * For SCTE-35 markers from your input-- Choose Passthrough (PASSTHROUGH) if you want SCTE-35 markers that appear in your input to also appear in this output. Choose None (NONE) if you don't want SCTE-35 markers in this output. For SCTE-35 markers from an ESAM XML document-- Choose None (NONE) if you don't want manifest conditioning. Choose Passthrough (PASSTHROUGH) and choose Ad markers (adMarkers) if you do want manifest conditioning. In both cases, also provide the ESAM XML as a string in the setting Signal processing notification XML (sccXml).
     */
   object M3u8Scte35SourceEnum {
     val PASSTHROUGH = "PASSTHROUGH"
@@ -6335,7 +6574,7 @@ package mediaconvert {
   }
 
   /**
-    * Settings for MP4 Container
+    * Settings for MP4 container. You can create audio-only AAC outputs with this container.
     */
   @js.native
   trait Mp4Settings extends js.Object {
@@ -6496,7 +6735,7 @@ package mediaconvert {
   }
 
   /**
-    * Scene change detection (inserts I-frames on scene changes).
+    * Enable this setting to insert I-frames at scene changes that the service automatically detects. This improves video quality and is enabled by default.
     */
   object Mpeg2SceneChangeDetectEnum {
     val DISABLED = "DISABLED"
@@ -6744,17 +6983,17 @@ package mediaconvert {
   }
 
   /**
-    * Settings for Nielsen Configuration
+    * Settings for your Nielsen configuration. If you don't do Nielsen measurement and analytics, ignore these settings. When you enable Nielsen configuration (nielsenConfiguration), MediaConvert enables PCM to ID3 tagging for all outputs in the job. To enable Nielsen configuration programmatically, include an instance of nielsenConfiguration in your JSON job specification. Even if you don't include any children of nielsenConfiguration, you still enable the setting.
     */
   @js.native
   trait NielsenConfiguration extends js.Object {
-    var BreakoutCode: js.UndefOr[__integerMin0Max9]
+    var BreakoutCode: js.UndefOr[__integerMin0Max0]
     var DistributorId: js.UndefOr[__string]
   }
 
   object NielsenConfiguration {
     def apply(
-        BreakoutCode: js.UndefOr[__integerMin0Max9] = js.undefined,
+        BreakoutCode: js.UndefOr[__integerMin0Max0] = js.undefined,
         DistributorId: js.UndefOr[__string] = js.undefined
     ): NielsenConfiguration = {
       val __obj = js.Dictionary.empty[js.Any]
@@ -6772,24 +7011,27 @@ package mediaconvert {
     var Filter: js.UndefOr[NoiseReducerFilter]
     var FilterSettings: js.UndefOr[NoiseReducerFilterSettings]
     var SpatialFilterSettings: js.UndefOr[NoiseReducerSpatialFilterSettings]
+    var TemporalFilterSettings: js.UndefOr[NoiseReducerTemporalFilterSettings]
   }
 
   object NoiseReducer {
     def apply(
         Filter: js.UndefOr[NoiseReducerFilter] = js.undefined,
         FilterSettings: js.UndefOr[NoiseReducerFilterSettings] = js.undefined,
-        SpatialFilterSettings: js.UndefOr[NoiseReducerSpatialFilterSettings] = js.undefined
+        SpatialFilterSettings: js.UndefOr[NoiseReducerSpatialFilterSettings] = js.undefined,
+        TemporalFilterSettings: js.UndefOr[NoiseReducerTemporalFilterSettings] = js.undefined
     ): NoiseReducer = {
       val __obj = js.Dictionary.empty[js.Any]
       Filter.foreach(__v => __obj.update("Filter", __v.asInstanceOf[js.Any]))
       FilterSettings.foreach(__v => __obj.update("FilterSettings", __v.asInstanceOf[js.Any]))
       SpatialFilterSettings.foreach(__v => __obj.update("SpatialFilterSettings", __v.asInstanceOf[js.Any]))
+      TemporalFilterSettings.foreach(__v => __obj.update("TemporalFilterSettings", __v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[NoiseReducer]
     }
   }
 
   /**
-    * Use Noise reducer filter (NoiseReducerFilter) to select one of the following spatial image filtering functions. To use this setting, you must also enable Noise reducer (NoiseReducer). * Bilateral is an edge preserving noise reduction filter. * Mean (softest), Gaussian, Lanczos, and Sharpen (sharpest) are convolution filters. * Conserve is a min/max noise reduction filter. * Spatial is a frequency-domain filter based on JND principles.
+    * Use Noise reducer filter (NoiseReducerFilter) to select one of the following spatial image filtering functions. To use this setting, you must also enable Noise reducer (NoiseReducer). * Bilateral preserves edges while reducing noise. * Mean (softest), Gaussian, Lanczos, and Sharpen (sharpest) do convolution filtering. * Conserve does min/max noise reduction. * Spatial does frequency-domain filtering based on JND principles. * Temporal optimizes video quality for complex motion.
     */
   object NoiseReducerFilterEnum {
     val BILATERAL = "BILATERAL"
@@ -6799,8 +7041,9 @@ package mediaconvert {
     val SHARPEN   = "SHARPEN"
     val CONSERVE  = "CONSERVE"
     val SPATIAL   = "SPATIAL"
+    val TEMPORAL  = "TEMPORAL"
 
-    val values = IndexedSeq(BILATERAL, MEAN, GAUSSIAN, LANCZOS, SHARPEN, CONSERVE, SPATIAL)
+    val values = IndexedSeq(BILATERAL, MEAN, GAUSSIAN, LANCZOS, SHARPEN, CONSERVE, SPATIAL, TEMPORAL)
   }
 
   /**
@@ -6842,6 +7085,30 @@ package mediaconvert {
       Speed.foreach(__v => __obj.update("Speed", __v.asInstanceOf[js.Any]))
       Strength.foreach(__v => __obj.update("Strength", __v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[NoiseReducerSpatialFilterSettings]
+    }
+  }
+
+  /**
+    * Noise reducer filter settings for temporal filter.
+    */
+  @js.native
+  trait NoiseReducerTemporalFilterSettings extends js.Object {
+    var AggressiveMode: js.UndefOr[__integerMin0Max4]
+    var Speed: js.UndefOr[__integerMinNegative1Max3]
+    var Strength: js.UndefOr[__integerMin0Max16]
+  }
+
+  object NoiseReducerTemporalFilterSettings {
+    def apply(
+        AggressiveMode: js.UndefOr[__integerMin0Max4] = js.undefined,
+        Speed: js.UndefOr[__integerMinNegative1Max3] = js.undefined,
+        Strength: js.UndefOr[__integerMin0Max16] = js.undefined
+    ): NoiseReducerTemporalFilterSettings = {
+      val __obj = js.Dictionary.empty[js.Any]
+      AggressiveMode.foreach(__v => __obj.update("AggressiveMode", __v.asInstanceOf[js.Any]))
+      Speed.foreach(__v => __obj.update("Speed", __v.asInstanceOf[js.Any]))
+      Strength.foreach(__v => __obj.update("Strength", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[NoiseReducerTemporalFilterSettings]
     }
   }
 
@@ -7533,7 +7800,7 @@ package mediaconvert {
   trait S3EncryptionSettings extends js.Object {
     var EncryptionType: js.UndefOr[S3ServerSideEncryptionType]
     var KmsKeyArn: js.UndefOr[
-      __stringPatternArnAwsUsGovKmsAZ26EastWestCentralNorthSouthEastWest1912D12KeyAFAF098AFAF094AFAF094AFAF094AFAF0912
+      __stringPatternArnAwsUsGovCnKmsAZ26EastWestCentralNorthSouthEastWest1912D12KeyAFAF098AFAF094AFAF094AFAF094AFAF0912
     ]
   }
 
@@ -7541,7 +7808,7 @@ package mediaconvert {
     def apply(
         EncryptionType: js.UndefOr[S3ServerSideEncryptionType] = js.undefined,
         KmsKeyArn: js.UndefOr[
-          __stringPatternArnAwsUsGovKmsAZ26EastWestCentralNorthSouthEastWest1912D12KeyAFAF098AFAF094AFAF094AFAF094AFAF0912
+          __stringPatternArnAwsUsGovCnKmsAZ26EastWestCentralNorthSouthEastWest1912D12KeyAFAF098AFAF094AFAF094AFAF094AFAF0912
         ] = js.undefined
     ): S3EncryptionSettings = {
       val __obj = js.Dictionary.empty[js.Any]
@@ -7562,7 +7829,7 @@ package mediaconvert {
   }
 
   /**
-    * Applies only if your input aspect ratio is different from your output aspect ratio. Choose "Stretch to output" to have the service stretch your video image to fit. Keep the setting "Default" to allow the service to letterbox your video instead. This setting overrides any positioning value you specify elsewhere in the job.
+    * Specify how the service handles outputs that have a different aspect ratio from the input aspect ratio. Choose Stretch to output (STRETCH_TO_OUTPUT) to have the service stretch your video image to fit. Keep the setting Default (DEFAULT) to have the service letterbox your video instead. This setting overrides any value that you specify for the setting Selection placement (position) in this output.
     */
   object ScalingBehaviorEnum {
     val DEFAULT           = "DEFAULT"
@@ -7602,7 +7869,7 @@ package mediaconvert {
   }
 
   /**
-    * Settings for use with a SPEKE key provider
+    * Use these settings when doing DRM encryption with a SPEKE-compliant key provider, if your output group type is HLS, MS Smooth, or DASH. If your output group type is CMAF, use the SpekeKeyProviderCmaf settings instead.
     */
   @js.native
   trait SpekeKeyProvider extends js.Object {
@@ -7625,6 +7892,38 @@ package mediaconvert {
       SystemIds.foreach(__v => __obj.update("SystemIds", __v.asInstanceOf[js.Any]))
       Url.foreach(__v => __obj.update("Url", __v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SpekeKeyProvider]
+    }
+  }
+
+  /**
+    * Use these settings when doing DRM encryption with a SPEKE-compliant key provider, if your output group type is CMAF. If your output group type is HLS, MS Smooth, or DASH, use the SpekeKeyProvider settings instead.
+    */
+  @js.native
+  trait SpekeKeyProviderCmaf extends js.Object {
+    var CertificateArn: js.UndefOr[__stringPatternArnAwsUsGovAcm]
+    var DashSignaledSystemIds: js.UndefOr[__listOf__stringMin36Max36Pattern09aFAF809aFAF409aFAF409aFAF409aFAF12]
+    var HlsSignaledSystemIds: js.UndefOr[__listOf__stringMin36Max36Pattern09aFAF809aFAF409aFAF409aFAF409aFAF12]
+    var ResourceId: js.UndefOr[__stringPatternW]
+    var Url: js.UndefOr[__stringPatternHttps]
+  }
+
+  object SpekeKeyProviderCmaf {
+    def apply(
+        CertificateArn: js.UndefOr[__stringPatternArnAwsUsGovAcm] = js.undefined,
+        DashSignaledSystemIds: js.UndefOr[__listOf__stringMin36Max36Pattern09aFAF809aFAF409aFAF409aFAF409aFAF12] =
+          js.undefined,
+        HlsSignaledSystemIds: js.UndefOr[__listOf__stringMin36Max36Pattern09aFAF809aFAF409aFAF409aFAF409aFAF12] =
+          js.undefined,
+        ResourceId: js.UndefOr[__stringPatternW] = js.undefined,
+        Url: js.UndefOr[__stringPatternHttps] = js.undefined
+    ): SpekeKeyProviderCmaf = {
+      val __obj = js.Dictionary.empty[js.Any]
+      CertificateArn.foreach(__v => __obj.update("CertificateArn", __v.asInstanceOf[js.Any]))
+      DashSignaledSystemIds.foreach(__v => __obj.update("DashSignaledSystemIds", __v.asInstanceOf[js.Any]))
+      HlsSignaledSystemIds.foreach(__v => __obj.update("HlsSignaledSystemIds", __v.asInstanceOf[js.Any]))
+      ResourceId.foreach(__v => __obj.update("ResourceId", __v.asInstanceOf[js.Any]))
+      Url.foreach(__v => __obj.update("Url", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[SpekeKeyProviderCmaf]
     }
   }
 
@@ -7732,16 +8031,38 @@ package mediaconvert {
   @js.native
   trait TeletextDestinationSettings extends js.Object {
     var PageNumber: js.UndefOr[__stringMin3Max3Pattern1809aFAF09aEAE]
+    var PageTypes: js.UndefOr[__listOfTeletextPageType]
   }
 
   object TeletextDestinationSettings {
     def apply(
-        PageNumber: js.UndefOr[__stringMin3Max3Pattern1809aFAF09aEAE] = js.undefined
+        PageNumber: js.UndefOr[__stringMin3Max3Pattern1809aFAF09aEAE] = js.undefined,
+        PageTypes: js.UndefOr[__listOfTeletextPageType] = js.undefined
     ): TeletextDestinationSettings = {
       val __obj = js.Dictionary.empty[js.Any]
       PageNumber.foreach(__v => __obj.update("PageNumber", __v.asInstanceOf[js.Any]))
+      PageTypes.foreach(__v => __obj.update("PageTypes", __v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[TeletextDestinationSettings]
     }
+  }
+
+  /**
+    * A page type as defined in the standard ETSI EN 300 468, Table 94
+    */
+  object TeletextPageTypeEnum {
+    val PAGE_TYPE_INITIAL                   = "PAGE_TYPE_INITIAL"
+    val PAGE_TYPE_SUBTITLE                  = "PAGE_TYPE_SUBTITLE"
+    val PAGE_TYPE_ADDL_INFO                 = "PAGE_TYPE_ADDL_INFO"
+    val PAGE_TYPE_PROGRAM_SCHEDULE          = "PAGE_TYPE_PROGRAM_SCHEDULE"
+    val PAGE_TYPE_HEARING_IMPAIRED_SUBTITLE = "PAGE_TYPE_HEARING_IMPAIRED_SUBTITLE"
+
+    val values = IndexedSeq(
+      PAGE_TYPE_INITIAL,
+      PAGE_TYPE_SUBTITLE,
+      PAGE_TYPE_ADDL_INFO,
+      PAGE_TYPE_PROGRAM_SCHEDULE,
+      PAGE_TYPE_HEARING_IMPAIRED_SUBTITLE
+    )
   }
 
   /**
@@ -7994,6 +8315,7 @@ package mediaconvert {
     var AccelerationSettings: js.UndefOr[AccelerationSettings]
     var Category: js.UndefOr[__string]
     var Description: js.UndefOr[__string]
+    var Priority: js.UndefOr[__integerMinNegative50Max50]
     var Queue: js.UndefOr[__string]
     var Settings: js.UndefOr[JobTemplateSettings]
     var StatusUpdateInterval: js.UndefOr[StatusUpdateInterval]
@@ -8005,6 +8327,7 @@ package mediaconvert {
         AccelerationSettings: js.UndefOr[AccelerationSettings] = js.undefined,
         Category: js.UndefOr[__string] = js.undefined,
         Description: js.UndefOr[__string] = js.undefined,
+        Priority: js.UndefOr[__integerMinNegative50Max50] = js.undefined,
         Queue: js.UndefOr[__string] = js.undefined,
         Settings: js.UndefOr[JobTemplateSettings] = js.undefined,
         StatusUpdateInterval: js.UndefOr[StatusUpdateInterval] = js.undefined
@@ -8016,6 +8339,7 @@ package mediaconvert {
       AccelerationSettings.foreach(__v => __obj.update("AccelerationSettings", __v.asInstanceOf[js.Any]))
       Category.foreach(__v => __obj.update("Category", __v.asInstanceOf[js.Any]))
       Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
+      Priority.foreach(__v => __obj.update("Priority", __v.asInstanceOf[js.Any]))
       Queue.foreach(__v => __obj.update("Queue", __v.asInstanceOf[js.Any]))
       Settings.foreach(__v => __obj.update("Settings", __v.asInstanceOf[js.Any]))
       StatusUpdateInterval.foreach(__v => __obj.update("StatusUpdateInterval", __v.asInstanceOf[js.Any]))
@@ -8134,7 +8458,7 @@ package mediaconvert {
   }
 
   /**
-    * Video codec settings, (CodecSettings) under (VideoDescription), contains the group of settings related to video encoding. The settings in this group vary depending on the value you choose for Video codec (Codec). For each codec enum you choose, define the corresponding settings object. The following lists the codec enum, settings object pairs. * H_264, H264Settings * H_265, H265Settings * MPEG2, Mpeg2Settings * PRORES, ProresSettings * FRAME_CAPTURE, FrameCaptureSettings
+    * Video codec settings, (CodecSettings) under (VideoDescription), contains the group of settings related to video encoding. The settings in this group vary depending on the value that you choose for Video codec (Codec). For each codec enum that you choose, define the corresponding settings object. The following lists the codec enum, settings object pairs. * H_264, H264Settings * H_265, H265Settings * MPEG2, Mpeg2Settings * PRORES, ProresSettings * FRAME_CAPTURE, FrameCaptureSettings
     */
   @js.native
   trait VideoCodecSettings extends js.Object {

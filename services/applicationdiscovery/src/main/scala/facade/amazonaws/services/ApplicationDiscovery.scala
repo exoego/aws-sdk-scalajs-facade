@@ -340,8 +340,9 @@ package applicationdiscovery {
   object BatchDeleteImportDataErrorCodeEnum {
     val NOT_FOUND             = "NOT_FOUND"
     val INTERNAL_SERVER_ERROR = "INTERNAL_SERVER_ERROR"
+    val OVER_LIMIT            = "OVER_LIMIT"
 
-    val values = IndexedSeq(NOT_FOUND, INTERNAL_SERVER_ERROR)
+    val values = IndexedSeq(NOT_FOUND, INTERNAL_SERVER_ERROR, OVER_LIMIT)
   }
 
   @js.native
@@ -1149,6 +1150,7 @@ package applicationdiscovery {
   object ImportStatusEnum {
     val IMPORT_IN_PROGRESS                  = "IMPORT_IN_PROGRESS"
     val IMPORT_COMPLETE                     = "IMPORT_COMPLETE"
+    val IMPORT_COMPLETE_WITH_ERRORS         = "IMPORT_COMPLETE_WITH_ERRORS"
     val IMPORT_FAILED                       = "IMPORT_FAILED"
     val IMPORT_FAILED_SERVER_LIMIT_EXCEEDED = "IMPORT_FAILED_SERVER_LIMIT_EXCEEDED"
     val IMPORT_FAILED_RECORD_LIMIT_EXCEEDED = "IMPORT_FAILED_RECORD_LIMIT_EXCEEDED"
@@ -1156,17 +1158,20 @@ package applicationdiscovery {
     val DELETE_COMPLETE                     = "DELETE_COMPLETE"
     val DELETE_FAILED                       = "DELETE_FAILED"
     val DELETE_FAILED_LIMIT_EXCEEDED        = "DELETE_FAILED_LIMIT_EXCEEDED"
+    val INTERNAL_ERROR                      = "INTERNAL_ERROR"
 
     val values = IndexedSeq(
       IMPORT_IN_PROGRESS,
       IMPORT_COMPLETE,
+      IMPORT_COMPLETE_WITH_ERRORS,
       IMPORT_FAILED,
       IMPORT_FAILED_SERVER_LIMIT_EXCEEDED,
       IMPORT_FAILED_RECORD_LIMIT_EXCEEDED,
       DELETE_IN_PROGRESS,
       DELETE_COMPLETE,
       DELETE_FAILED,
-      DELETE_FAILED_LIMIT_EXCEEDED
+      DELETE_FAILED_LIMIT_EXCEEDED,
+      INTERNAL_ERROR
     )
   }
 

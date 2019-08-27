@@ -33,6 +33,8 @@ package object cur {
     def describeReportDefinitionsFuture(
         params: DescribeReportDefinitionsRequest
     ): Future[DescribeReportDefinitionsResponse] = service.describeReportDefinitions(params).promise.toFuture
+    def modifyReportDefinitionFuture(params: ModifyReportDefinitionRequest): Future[ModifyReportDefinitionResponse] =
+      service.modifyReportDefinition(params).promise.toFuture
     def putReportDefinitionFuture(params: PutReportDefinitionRequest): Future[PutReportDefinitionResponse] =
       service.putReportDefinition(params).promise.toFuture
   }
@@ -48,7 +50,9 @@ package cur {
       js.native
     def describeReportDefinitions(
         params: DescribeReportDefinitionsRequest
-    ): Request[DescribeReportDefinitionsResponse]                                                     = js.native
+    ): Request[DescribeReportDefinitionsResponse] = js.native
+    def modifyReportDefinition(params: ModifyReportDefinitionRequest): Request[ModifyReportDefinitionResponse] =
+      js.native
     def putReportDefinition(params: PutReportDefinitionRequest): Request[PutReportDefinitionResponse] = js.native
   }
 
@@ -66,6 +70,7 @@ package cur {
     val `ap-northeast-1` = "ap-northeast-1"
     val `eu-north-1`     = "eu-north-1"
     val `ap-northeast-3` = "ap-northeast-3"
+    val `ap-east-1`      = "ap-east-1"
 
     val values = IndexedSeq(
       `us-east-1`,
@@ -77,7 +82,8 @@ package cur {
       `ap-southeast-2`,
       `ap-northeast-1`,
       `eu-north-1`,
-      `ap-northeast-3`
+      `ap-northeast-3`,
+      `ap-east-1`
     )
   }
 
@@ -178,6 +184,38 @@ package cur {
       NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
       ReportDefinitions.foreach(__v => __obj.update("ReportDefinitions", __v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeReportDefinitionsResponse]
+    }
+  }
+
+  @js.native
+  trait ModifyReportDefinitionRequest extends js.Object {
+    var ReportDefinition: ReportDefinition
+    var ReportName: ReportName
+  }
+
+  object ModifyReportDefinitionRequest {
+    def apply(
+        ReportDefinition: ReportDefinition,
+        ReportName: ReportName
+    ): ModifyReportDefinitionRequest = {
+      val __obj = js.Dictionary[js.Any](
+        "ReportDefinition" -> ReportDefinition.asInstanceOf[js.Any],
+        "ReportName"       -> ReportName.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[ModifyReportDefinitionRequest]
+    }
+  }
+
+  @js.native
+  trait ModifyReportDefinitionResponse extends js.Object {}
+
+  object ModifyReportDefinitionResponse {
+    def apply(
+        ): ModifyReportDefinitionResponse = {
+      val __obj = js.Dictionary.empty[js.Any]
+
+      __obj.asInstanceOf[ModifyReportDefinitionResponse]
     }
   }
 

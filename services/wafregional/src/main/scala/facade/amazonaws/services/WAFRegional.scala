@@ -83,6 +83,10 @@ package object wafregional {
   type SqlInjectionMatchSetUpdates   = js.Array[SqlInjectionMatchSetUpdate]
   type SqlInjectionMatchTuples       = js.Array[SqlInjectionMatchTuple]
   type SubscribedRuleGroupSummaries  = js.Array[SubscribedRuleGroupSummary]
+  type TagKey                        = String
+  type TagKeyList                    = js.Array[TagKey]
+  type TagList                       = js.Array[Tag]
+  type TagValue                      = String
   type TextTransformation            = String
   type Timestamp                     = js.Date
   type URIString                     = String
@@ -225,6 +229,8 @@ package object wafregional {
     def listSubscribedRuleGroupsFuture(
         params: ListSubscribedRuleGroupsRequest
     ): Future[ListSubscribedRuleGroupsResponse] = service.listSubscribedRuleGroups(params).promise.toFuture
+    def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] =
+      service.listTagsForResource(params).promise.toFuture
     def listWebACLsFuture(params: ListWebACLsRequest): Future[ListWebACLsResponse] =
       service.listWebACLs(params).promise.toFuture
     def listXssMatchSetsFuture(params: ListXssMatchSetsRequest): Future[ListXssMatchSetsResponse] =
@@ -233,6 +239,10 @@ package object wafregional {
       service.putLoggingConfiguration(params).promise.toFuture
     def putPermissionPolicyFuture(params: PutPermissionPolicyRequest): Future[PutPermissionPolicyResponse] =
       service.putPermissionPolicy(params).promise.toFuture
+    def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] =
+      service.tagResource(params).promise.toFuture
+    def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] =
+      service.untagResource(params).promise.toFuture
     def updateByteMatchSetFuture(params: UpdateByteMatchSetRequest): Future[UpdateByteMatchSetResponse] =
       service.updateByteMatchSet(params).promise.toFuture
     def updateGeoMatchSetFuture(params: UpdateGeoMatchSetRequest): Future[UpdateGeoMatchSetResponse] =
@@ -350,11 +360,14 @@ package wafregional {
     ): Request[ListSqlInjectionMatchSetsResponse] = js.native
     def listSubscribedRuleGroups(params: ListSubscribedRuleGroupsRequest): Request[ListSubscribedRuleGroupsResponse] =
       js.native
-    def listWebACLs(params: ListWebACLsRequest): Request[ListWebACLsResponse]                = js.native
-    def listXssMatchSets(params: ListXssMatchSetsRequest): Request[ListXssMatchSetsResponse] = js.native
+    def listTagsForResource(params: ListTagsForResourceRequest): Request[ListTagsForResourceResponse] = js.native
+    def listWebACLs(params: ListWebACLsRequest): Request[ListWebACLsResponse]                         = js.native
+    def listXssMatchSets(params: ListXssMatchSetsRequest): Request[ListXssMatchSetsResponse]          = js.native
     def putLoggingConfiguration(params: PutLoggingConfigurationRequest): Request[PutLoggingConfigurationResponse] =
       js.native
     def putPermissionPolicy(params: PutPermissionPolicyRequest): Request[PutPermissionPolicyResponse]       = js.native
+    def tagResource(params: TagResourceRequest): Request[TagResourceResponse]                               = js.native
+    def untagResource(params: UntagResourceRequest): Request[UntagResourceResponse]                         = js.native
     def updateByteMatchSet(params: UpdateByteMatchSetRequest): Request[UpdateByteMatchSetResponse]          = js.native
     def updateGeoMatchSet(params: UpdateGeoMatchSetRequest): Request[UpdateGeoMatchSetResponse]             = js.native
     def updateIPSet(params: UpdateIPSetRequest): Request[UpdateIPSetResponse]                               = js.native
@@ -689,6 +702,7 @@ package wafregional {
     var Name: ResourceName
     var RateKey: RateKey
     var RateLimit: RateLimit
+    var Tags: js.UndefOr[TagList]
   }
 
   object CreateRateBasedRuleRequest {
@@ -697,7 +711,8 @@ package wafregional {
         MetricName: MetricName,
         Name: ResourceName,
         RateKey: RateKey,
-        RateLimit: RateLimit
+        RateLimit: RateLimit,
+        Tags: js.UndefOr[TagList] = js.undefined
     ): CreateRateBasedRuleRequest = {
       val __obj = js.Dictionary[js.Any](
         "ChangeToken" -> ChangeToken.asInstanceOf[js.Any],
@@ -707,6 +722,7 @@ package wafregional {
         "RateLimit"   -> RateLimit.asInstanceOf[js.Any]
       )
 
+      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateRateBasedRuleRequest]
     }
   }
@@ -810,13 +826,15 @@ package wafregional {
     var ChangeToken: ChangeToken
     var MetricName: MetricName
     var Name: ResourceName
+    var Tags: js.UndefOr[TagList]
   }
 
   object CreateRuleGroupRequest {
     def apply(
         ChangeToken: ChangeToken,
         MetricName: MetricName,
-        Name: ResourceName
+        Name: ResourceName,
+        Tags: js.UndefOr[TagList] = js.undefined
     ): CreateRuleGroupRequest = {
       val __obj = js.Dictionary[js.Any](
         "ChangeToken" -> ChangeToken.asInstanceOf[js.Any],
@@ -824,6 +842,7 @@ package wafregional {
         "Name"        -> Name.asInstanceOf[js.Any]
       )
 
+      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateRuleGroupRequest]
     }
   }
@@ -851,13 +870,15 @@ package wafregional {
     var ChangeToken: ChangeToken
     var MetricName: MetricName
     var Name: ResourceName
+    var Tags: js.UndefOr[TagList]
   }
 
   object CreateRuleRequest {
     def apply(
         ChangeToken: ChangeToken,
         MetricName: MetricName,
-        Name: ResourceName
+        Name: ResourceName,
+        Tags: js.UndefOr[TagList] = js.undefined
     ): CreateRuleRequest = {
       val __obj = js.Dictionary[js.Any](
         "ChangeToken" -> ChangeToken.asInstanceOf[js.Any],
@@ -865,6 +886,7 @@ package wafregional {
         "Name"        -> Name.asInstanceOf[js.Any]
       )
 
+      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateRuleRequest]
     }
   }
@@ -975,6 +997,7 @@ package wafregional {
     var DefaultAction: WafAction
     var MetricName: MetricName
     var Name: ResourceName
+    var Tags: js.UndefOr[TagList]
   }
 
   object CreateWebACLRequest {
@@ -982,7 +1005,8 @@ package wafregional {
         ChangeToken: ChangeToken,
         DefaultAction: WafAction,
         MetricName: MetricName,
-        Name: ResourceName
+        Name: ResourceName,
+        Tags: js.UndefOr[TagList] = js.undefined
     ): CreateWebACLRequest = {
       val __obj = js.Dictionary[js.Any](
         "ChangeToken"   -> ChangeToken.asInstanceOf[js.Any],
@@ -991,6 +1015,7 @@ package wafregional {
         "Name"          -> Name.asInstanceOf[js.Any]
       )
 
+      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateWebACLRequest]
     }
   }
@@ -3530,6 +3555,47 @@ package wafregional {
   }
 
   @js.native
+  trait ListTagsForResourceRequest extends js.Object {
+    var ResourceARN: ResourceArn
+    var Limit: js.UndefOr[PaginationLimit]
+    var NextMarker: js.UndefOr[NextMarker]
+  }
+
+  object ListTagsForResourceRequest {
+    def apply(
+        ResourceARN: ResourceArn,
+        Limit: js.UndefOr[PaginationLimit] = js.undefined,
+        NextMarker: js.UndefOr[NextMarker] = js.undefined
+    ): ListTagsForResourceRequest = {
+      val __obj = js.Dictionary[js.Any](
+        "ResourceARN" -> ResourceARN.asInstanceOf[js.Any]
+      )
+
+      Limit.foreach(__v => __obj.update("Limit", __v.asInstanceOf[js.Any]))
+      NextMarker.foreach(__v => __obj.update("NextMarker", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListTagsForResourceRequest]
+    }
+  }
+
+  @js.native
+  trait ListTagsForResourceResponse extends js.Object {
+    var NextMarker: js.UndefOr[NextMarker]
+    var TagInfoForResource: js.UndefOr[TagInfoForResource]
+  }
+
+  object ListTagsForResourceResponse {
+    def apply(
+        NextMarker: js.UndefOr[NextMarker] = js.undefined,
+        TagInfoForResource: js.UndefOr[TagInfoForResource] = js.undefined
+    ): ListTagsForResourceResponse = {
+      val __obj = js.Dictionary.empty[js.Any]
+      NextMarker.foreach(__v => __obj.update("NextMarker", __v.asInstanceOf[js.Any]))
+      TagInfoForResource.foreach(__v => __obj.update("TagInfoForResource", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListTagsForResourceResponse]
+    }
+  }
+
+  @js.native
   trait ListWebACLsRequest extends js.Object {
     var Limit: js.UndefOr[PaginationLimit]
     var NextMarker: js.UndefOr[NextMarker]
@@ -4389,6 +4455,74 @@ package wafregional {
     }
   }
 
+  @js.native
+  trait Tag extends js.Object {
+    var Key: js.UndefOr[TagKey]
+    var Value: js.UndefOr[TagValue]
+  }
+
+  object Tag {
+    def apply(
+        Key: js.UndefOr[TagKey] = js.undefined,
+        Value: js.UndefOr[TagValue] = js.undefined
+    ): Tag = {
+      val __obj = js.Dictionary.empty[js.Any]
+      Key.foreach(__v => __obj.update("Key", __v.asInstanceOf[js.Any]))
+      Value.foreach(__v => __obj.update("Value", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Tag]
+    }
+  }
+
+  @js.native
+  trait TagInfoForResource extends js.Object {
+    var ResourceARN: js.UndefOr[ResourceArn]
+    var TagList: js.UndefOr[TagList]
+  }
+
+  object TagInfoForResource {
+    def apply(
+        ResourceARN: js.UndefOr[ResourceArn] = js.undefined,
+        TagList: js.UndefOr[TagList] = js.undefined
+    ): TagInfoForResource = {
+      val __obj = js.Dictionary.empty[js.Any]
+      ResourceARN.foreach(__v => __obj.update("ResourceARN", __v.asInstanceOf[js.Any]))
+      TagList.foreach(__v => __obj.update("TagList", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[TagInfoForResource]
+    }
+  }
+
+  @js.native
+  trait TagResourceRequest extends js.Object {
+    var ResourceARN: ResourceArn
+    var Tags: TagList
+  }
+
+  object TagResourceRequest {
+    def apply(
+        ResourceARN: ResourceArn,
+        Tags: TagList
+    ): TagResourceRequest = {
+      val __obj = js.Dictionary[js.Any](
+        "ResourceARN" -> ResourceARN.asInstanceOf[js.Any],
+        "Tags"        -> Tags.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[TagResourceRequest]
+    }
+  }
+
+  @js.native
+  trait TagResourceResponse extends js.Object {}
+
+  object TagResourceResponse {
+    def apply(
+        ): TagResourceResponse = {
+      val __obj = js.Dictionary.empty[js.Any]
+
+      __obj.asInstanceOf[TagResourceResponse]
+    }
+  }
+
   object TextTransformationEnum {
     val NONE                 = "NONE"
     val COMPRESS_WHITE_SPACE = "COMPRESS_WHITE_SPACE"
@@ -4421,6 +4555,38 @@ package wafregional {
       )
 
       __obj.asInstanceOf[TimeWindow]
+    }
+  }
+
+  @js.native
+  trait UntagResourceRequest extends js.Object {
+    var ResourceARN: ResourceArn
+    var TagKeys: TagKeyList
+  }
+
+  object UntagResourceRequest {
+    def apply(
+        ResourceARN: ResourceArn,
+        TagKeys: TagKeyList
+    ): UntagResourceRequest = {
+      val __obj = js.Dictionary[js.Any](
+        "ResourceARN" -> ResourceARN.asInstanceOf[js.Any],
+        "TagKeys"     -> TagKeys.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[UntagResourceRequest]
+    }
+  }
+
+  @js.native
+  trait UntagResourceResponse extends js.Object {}
+
+  object UntagResourceResponse {
+    def apply(
+        ): UntagResourceResponse = {
+      val __obj = js.Dictionary.empty[js.Any]
+
+      __obj.asInstanceOf[UntagResourceResponse]
     }
   }
 

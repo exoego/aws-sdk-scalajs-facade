@@ -8,50 +8,74 @@ import io.scalajs.nodejs
 import facade.amazonaws._
 
 package object codecommit {
-  type AccountId                     = String
-  type AdditionalData                = String
-  type Arn                           = String
-  type BranchName                    = String
-  type BranchNameList                = js.Array[BranchName]
-  type ChangeTypeEnum                = String
-  type ClientRequestToken            = String
-  type CloneUrlHttp                  = String
-  type CloneUrlSsh                   = String
-  type CommentId                     = String
-  type Comments                      = js.Array[Comment]
-  type CommentsForComparedCommitData = js.Array[CommentsForComparedCommit]
-  type CommentsForPullRequestData    = js.Array[CommentsForPullRequest]
-  type CommitId                      = String
-  type CommitName                    = String
-  type Content                       = String
-  type CreationDate                  = js.Date
-  type Date                          = String
-  type DeleteFileEntries             = js.Array[DeleteFileEntry]
-  type Description                   = String
-  type DifferenceList                = js.Array[Difference]
-  type Email                         = String
-  type EventDate                     = js.Date
+  type AccountId                          = String
+  type AdditionalData                     = String
+  type Arn                                = String
+  type BatchDescribeMergeConflictsErrors  = js.Array[BatchDescribeMergeConflictsError]
+  type BatchGetCommitsErrorsList          = js.Array[BatchGetCommitsError]
+  type BranchName                         = String
+  type BranchNameList                     = js.Array[BranchName]
+  type CapitalBoolean                     = Boolean
+  type ChangeTypeEnum                     = String
+  type ClientRequestToken                 = String
+  type CloneUrlHttp                       = String
+  type CloneUrlSsh                        = String
+  type CommentId                          = String
+  type Comments                           = js.Array[Comment]
+  type CommentsForComparedCommitData      = js.Array[CommentsForComparedCommit]
+  type CommentsForPullRequestData         = js.Array[CommentsForPullRequest]
+  type CommitId                           = String
+  type CommitIdsInputList                 = js.Array[ObjectId]
+  type CommitName                         = String
+  type CommitObjectsList                  = js.Array[Commit]
+  type ConflictDetailLevelTypeEnum        = String
+  type ConflictMetadataList               = js.Array[ConflictMetadata]
+  type ConflictResolutionStrategyTypeEnum = String
+  type Conflicts                          = js.Array[Conflict]
+  type Content                            = String
+  type CreationDate                       = js.Date
+  type Date                               = String
+  type DeleteFileEntries                  = js.Array[DeleteFileEntry]
+  type Description                        = String
+  type DifferenceList                     = js.Array[Difference]
+  type Email                              = String
+  type ErrorCode                          = String
+  type ErrorMessage                       = String
+  type EventDate                          = js.Date
+  type ExceptionName                      = String
   type FileContent =
     nodejs.buffer.Buffer | nodejs.stream.Readable | js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
   type FileList                                 = js.Array[File]
   type FileModeTypeEnum                         = String
+  type FilePaths                                = js.Array[Path]
+  type FileSize                                 = Double
   type FilesMetadata                            = js.Array[FileMetadata]
   type FolderList                               = js.Array[Folder]
+  type HunkContent                              = String
   type IsCommentDeleted                         = Boolean
+  type IsContentConflict                        = Boolean
+  type IsFileModeConflict                       = Boolean
+  type IsHunkConflict                           = Boolean
   type IsMergeable                              = Boolean
   type IsMerged                                 = Boolean
   type IsMove                                   = Boolean
+  type IsObjectTypeConflict                     = Boolean
   type KeepEmptyFolders                         = Boolean
   type LastModifiedDate                         = js.Date
   type Limit                                    = Int
+  type LineNumber                               = Int
   type MaxResults                               = Int
+  type MergeHunks                               = js.Array[MergeHunk]
   type MergeOptionTypeEnum                      = String
+  type MergeOptions                             = js.Array[MergeOptionTypeEnum]
   type Message                                  = String
   type Mode                                     = String
   type Name                                     = String
   type NextToken                                = String
+  type NumberOfConflicts                        = Int
   type ObjectId                                 = String
   type ObjectSize                               = Double
+  type ObjectTypeEnum                           = String
   type OrderEnum                                = String
   type ParentList                               = js.Array[ObjectId]
   type Path                                     = String
@@ -65,6 +89,8 @@ package object codecommit {
   type PutFileEntries                           = js.Array[PutFileEntry]
   type ReferenceName                            = String
   type RelativeFileVersionEnum                  = String
+  type ReplaceContentEntries                    = js.Array[ReplaceContentEntry]
+  type ReplacementTypeEnum                      = String
   type RepositoryDescription                    = String
   type RepositoryId                             = String
   type RepositoryMetadataList                   = js.Array[RepositoryMetadata]
@@ -81,16 +107,26 @@ package object codecommit {
   type RepositoryTriggerNameList                = js.Array[RepositoryTriggerName]
   type RepositoryTriggersConfigurationId        = String
   type RepositoryTriggersList                   = js.Array[RepositoryTrigger]
+  type ResourceArn                              = String
   type SetFileModeEntries                       = js.Array[SetFileModeEntry]
   type SortByEnum                               = String
   type SubModuleList                            = js.Array[SubModule]
   type SymbolicLinkList                         = js.Array[SymbolicLink]
+  type TagKey                                   = String
+  type TagKeysList                              = js.Array[TagKey]
+  type TagValue                                 = String
+  type TagsMap                                  = js.Dictionary[TagValue]
   type TargetList                               = js.Array[Target]
   type Title                                    = String
   type blob                                     = nodejs.buffer.Buffer | nodejs.stream.Readable | js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
 
   implicit final class CodeCommitOps(val service: CodeCommit) extends AnyVal {
 
+    def batchDescribeMergeConflictsFuture(
+        params: BatchDescribeMergeConflictsInput
+    ): Future[BatchDescribeMergeConflictsOutput] = service.batchDescribeMergeConflicts(params).promise.toFuture
+    def batchGetCommitsFuture(params: BatchGetCommitsInput): Future[BatchGetCommitsOutput] =
+      service.batchGetCommits(params).promise.toFuture
     def batchGetRepositoriesFuture(params: BatchGetRepositoriesInput): Future[BatchGetRepositoriesOutput] =
       service.batchGetRepositories(params).promise.toFuture
     def createBranchFuture(params: CreateBranchInput): Future[js.Object] = service.createBranch(params).promise.toFuture
@@ -100,6 +136,9 @@ package object codecommit {
       service.createPullRequest(params).promise.toFuture
     def createRepositoryFuture(params: CreateRepositoryInput): Future[CreateRepositoryOutput] =
       service.createRepository(params).promise.toFuture
+    def createUnreferencedMergeCommitFuture(
+        params: CreateUnreferencedMergeCommitInput
+    ): Future[CreateUnreferencedMergeCommitOutput] = service.createUnreferencedMergeCommit(params).promise.toFuture
     def deleteBranchFuture(params: DeleteBranchInput): Future[DeleteBranchOutput] =
       service.deleteBranch(params).promise.toFuture
     def deleteCommentContentFuture(params: DeleteCommentContentInput): Future[DeleteCommentContentOutput] =
@@ -108,6 +147,8 @@ package object codecommit {
       service.deleteFile(params).promise.toFuture
     def deleteRepositoryFuture(params: DeleteRepositoryInput): Future[DeleteRepositoryOutput] =
       service.deleteRepository(params).promise.toFuture
+    def describeMergeConflictsFuture(params: DescribeMergeConflictsInput): Future[DescribeMergeConflictsOutput] =
+      service.describeMergeConflicts(params).promise.toFuture
     def describePullRequestEventsFuture(
         params: DescribePullRequestEventsInput
     ): Future[DescribePullRequestEventsOutput]                           = service.describePullRequestEvents(params).promise.toFuture
@@ -126,8 +167,12 @@ package object codecommit {
       service.getDifferences(params).promise.toFuture
     def getFileFuture(params: GetFileInput): Future[GetFileOutput]       = service.getFile(params).promise.toFuture
     def getFolderFuture(params: GetFolderInput): Future[GetFolderOutput] = service.getFolder(params).promise.toFuture
+    def getMergeCommitFuture(params: GetMergeCommitInput): Future[GetMergeCommitOutput] =
+      service.getMergeCommit(params).promise.toFuture
     def getMergeConflictsFuture(params: GetMergeConflictsInput): Future[GetMergeConflictsOutput] =
       service.getMergeConflicts(params).promise.toFuture
+    def getMergeOptionsFuture(params: GetMergeOptionsInput): Future[GetMergeOptionsOutput] =
+      service.getMergeOptions(params).promise.toFuture
     def getPullRequestFuture(params: GetPullRequestInput): Future[GetPullRequestOutput] =
       service.getPullRequest(params).promise.toFuture
     def getRepositoryFuture(params: GetRepositoryInput): Future[GetRepositoryOutput] =
@@ -140,9 +185,23 @@ package object codecommit {
       service.listPullRequests(params).promise.toFuture
     def listRepositoriesFuture(params: ListRepositoriesInput): Future[ListRepositoriesOutput] =
       service.listRepositories(params).promise.toFuture
+    def listTagsForResourceFuture(params: ListTagsForResourceInput): Future[ListTagsForResourceOutput] =
+      service.listTagsForResource(params).promise.toFuture
+    def mergeBranchesByFastForwardFuture(
+        params: MergeBranchesByFastForwardInput
+    ): Future[MergeBranchesByFastForwardOutput] = service.mergeBranchesByFastForward(params).promise.toFuture
+    def mergeBranchesBySquashFuture(params: MergeBranchesBySquashInput): Future[MergeBranchesBySquashOutput] =
+      service.mergeBranchesBySquash(params).promise.toFuture
+    def mergeBranchesByThreeWayFuture(params: MergeBranchesByThreeWayInput): Future[MergeBranchesByThreeWayOutput] =
+      service.mergeBranchesByThreeWay(params).promise.toFuture
     def mergePullRequestByFastForwardFuture(
         params: MergePullRequestByFastForwardInput
     ): Future[MergePullRequestByFastForwardOutput] = service.mergePullRequestByFastForward(params).promise.toFuture
+    def mergePullRequestBySquashFuture(params: MergePullRequestBySquashInput): Future[MergePullRequestBySquashOutput] =
+      service.mergePullRequestBySquash(params).promise.toFuture
+    def mergePullRequestByThreeWayFuture(
+        params: MergePullRequestByThreeWayInput
+    ): Future[MergePullRequestByThreeWayOutput] = service.mergePullRequestByThreeWay(params).promise.toFuture
     def postCommentForComparedCommitFuture(
         params: PostCommentForComparedCommitInput
     ): Future[PostCommentForComparedCommitOutput] = service.postCommentForComparedCommit(params).promise.toFuture
@@ -154,8 +213,11 @@ package object codecommit {
     def putFileFuture(params: PutFileInput): Future[PutFileOutput] = service.putFile(params).promise.toFuture
     def putRepositoryTriggersFuture(params: PutRepositoryTriggersInput): Future[PutRepositoryTriggersOutput] =
       service.putRepositoryTriggers(params).promise.toFuture
+    def tagResourceFuture(params: TagResourceInput): Future[js.Object] = service.tagResource(params).promise.toFuture
     def testRepositoryTriggersFuture(params: TestRepositoryTriggersInput): Future[TestRepositoryTriggersOutput] =
       service.testRepositoryTriggers(params).promise.toFuture
+    def untagResourceFuture(params: UntagResourceInput): Future[js.Object] =
+      service.untagResource(params).promise.toFuture
     def updateCommentFuture(params: UpdateCommentInput): Future[UpdateCommentOutput] =
       service.updateComment(params).promise.toFuture
     def updateDefaultBranchFuture(params: UpdateDefaultBranchInput): Future[js.Object] =
@@ -180,15 +242,23 @@ package codecommit {
   class CodeCommit() extends js.Object {
     def this(config: AWSConfig) = this()
 
+    def batchDescribeMergeConflicts(
+        params: BatchDescribeMergeConflictsInput
+    ): Request[BatchDescribeMergeConflictsOutput]                                                    = js.native
+    def batchGetCommits(params: BatchGetCommitsInput): Request[BatchGetCommitsOutput]                = js.native
     def batchGetRepositories(params: BatchGetRepositoriesInput): Request[BatchGetRepositoriesOutput] = js.native
     def createBranch(params: CreateBranchInput): Request[js.Object]                                  = js.native
     def createCommit(params: CreateCommitInput): Request[CreateCommitOutput]                         = js.native
     def createPullRequest(params: CreatePullRequestInput): Request[CreatePullRequestOutput]          = js.native
     def createRepository(params: CreateRepositoryInput): Request[CreateRepositoryOutput]             = js.native
-    def deleteBranch(params: DeleteBranchInput): Request[DeleteBranchOutput]                         = js.native
-    def deleteCommentContent(params: DeleteCommentContentInput): Request[DeleteCommentContentOutput] = js.native
-    def deleteFile(params: DeleteFileInput): Request[DeleteFileOutput]                               = js.native
-    def deleteRepository(params: DeleteRepositoryInput): Request[DeleteRepositoryOutput]             = js.native
+    def createUnreferencedMergeCommit(
+        params: CreateUnreferencedMergeCommitInput
+    ): Request[CreateUnreferencedMergeCommitOutput]                                                        = js.native
+    def deleteBranch(params: DeleteBranchInput): Request[DeleteBranchOutput]                               = js.native
+    def deleteCommentContent(params: DeleteCommentContentInput): Request[DeleteCommentContentOutput]       = js.native
+    def deleteFile(params: DeleteFileInput): Request[DeleteFileOutput]                                     = js.native
+    def deleteRepository(params: DeleteRepositoryInput): Request[DeleteRepositoryOutput]                   = js.native
+    def describeMergeConflicts(params: DescribeMergeConflictsInput): Request[DescribeMergeConflictsOutput] = js.native
     def describePullRequestEvents(params: DescribePullRequestEventsInput): Request[DescribePullRequestEventsOutput] =
       js.native
     def getBlob(params: GetBlobInput): Request[GetBlobOutput]          = js.native
@@ -203,16 +273,28 @@ package codecommit {
     def getDifferences(params: GetDifferencesInput): Request[GetDifferencesOutput]                      = js.native
     def getFile(params: GetFileInput): Request[GetFileOutput]                                           = js.native
     def getFolder(params: GetFolderInput): Request[GetFolderOutput]                                     = js.native
+    def getMergeCommit(params: GetMergeCommitInput): Request[GetMergeCommitOutput]                      = js.native
     def getMergeConflicts(params: GetMergeConflictsInput): Request[GetMergeConflictsOutput]             = js.native
+    def getMergeOptions(params: GetMergeOptionsInput): Request[GetMergeOptionsOutput]                   = js.native
     def getPullRequest(params: GetPullRequestInput): Request[GetPullRequestOutput]                      = js.native
     def getRepository(params: GetRepositoryInput): Request[GetRepositoryOutput]                         = js.native
     def getRepositoryTriggers(params: GetRepositoryTriggersInput): Request[GetRepositoryTriggersOutput] = js.native
     def listBranches(params: ListBranchesInput): Request[ListBranchesOutput]                            = js.native
     def listPullRequests(params: ListPullRequestsInput): Request[ListPullRequestsOutput]                = js.native
     def listRepositories(params: ListRepositoriesInput): Request[ListRepositoriesOutput]                = js.native
+    def listTagsForResource(params: ListTagsForResourceInput): Request[ListTagsForResourceOutput]       = js.native
+    def mergeBranchesByFastForward(params: MergeBranchesByFastForwardInput): Request[MergeBranchesByFastForwardOutput] =
+      js.native
+    def mergeBranchesBySquash(params: MergeBranchesBySquashInput): Request[MergeBranchesBySquashOutput] = js.native
+    def mergeBranchesByThreeWay(params: MergeBranchesByThreeWayInput): Request[MergeBranchesByThreeWayOutput] =
+      js.native
     def mergePullRequestByFastForward(
         params: MergePullRequestByFastForwardInput
     ): Request[MergePullRequestByFastForwardOutput] = js.native
+    def mergePullRequestBySquash(params: MergePullRequestBySquashInput): Request[MergePullRequestBySquashOutput] =
+      js.native
+    def mergePullRequestByThreeWay(params: MergePullRequestByThreeWayInput): Request[MergePullRequestByThreeWayOutput] =
+      js.native
     def postCommentForComparedCommit(
         params: PostCommentForComparedCommitInput
     ): Request[PostCommentForComparedCommitOutput] = js.native
@@ -221,7 +303,9 @@ package codecommit {
     def postCommentReply(params: PostCommentReplyInput): Request[PostCommentReplyOutput]                   = js.native
     def putFile(params: PutFileInput): Request[PutFileOutput]                                              = js.native
     def putRepositoryTriggers(params: PutRepositoryTriggersInput): Request[PutRepositoryTriggersOutput]    = js.native
+    def tagResource(params: TagResourceInput): Request[js.Object]                                          = js.native
     def testRepositoryTriggers(params: TestRepositoryTriggersInput): Request[TestRepositoryTriggersOutput] = js.native
+    def untagResource(params: UntagResourceInput): Request[js.Object]                                      = js.native
     def updateComment(params: UpdateCommentInput): Request[UpdateCommentOutput]                            = js.native
     def updateDefaultBranch(params: UpdateDefaultBranchInput): Request[js.Object]                          = js.native
     def updatePullRequestDescription(
@@ -232,6 +316,170 @@ package codecommit {
     def updatePullRequestTitle(params: UpdatePullRequestTitleInput): Request[UpdatePullRequestTitleOutput] = js.native
     def updateRepositoryDescription(params: UpdateRepositoryDescriptionInput): Request[js.Object]          = js.native
     def updateRepositoryName(params: UpdateRepositoryNameInput): Request[js.Object]                        = js.native
+  }
+
+  /**
+    * Information about errors in a BatchDescribeMergeConflicts operation.
+    */
+  @js.native
+  trait BatchDescribeMergeConflictsError extends js.Object {
+    var exceptionName: ExceptionName
+    var filePath: Path
+    var message: Message
+  }
+
+  object BatchDescribeMergeConflictsError {
+    def apply(
+        exceptionName: ExceptionName,
+        filePath: Path,
+        message: Message
+    ): BatchDescribeMergeConflictsError = {
+      val __obj = js.Dictionary[js.Any](
+        "exceptionName" -> exceptionName.asInstanceOf[js.Any],
+        "filePath"      -> filePath.asInstanceOf[js.Any],
+        "message"       -> message.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[BatchDescribeMergeConflictsError]
+    }
+  }
+
+  @js.native
+  trait BatchDescribeMergeConflictsInput extends js.Object {
+    var destinationCommitSpecifier: CommitName
+    var mergeOption: MergeOptionTypeEnum
+    var repositoryName: RepositoryName
+    var sourceCommitSpecifier: CommitName
+    var conflictDetailLevel: js.UndefOr[ConflictDetailLevelTypeEnum]
+    var conflictResolutionStrategy: js.UndefOr[ConflictResolutionStrategyTypeEnum]
+    var filePaths: js.UndefOr[FilePaths]
+    var maxConflictFiles: js.UndefOr[MaxResults]
+    var maxMergeHunks: js.UndefOr[MaxResults]
+    var nextToken: js.UndefOr[NextToken]
+  }
+
+  object BatchDescribeMergeConflictsInput {
+    def apply(
+        destinationCommitSpecifier: CommitName,
+        mergeOption: MergeOptionTypeEnum,
+        repositoryName: RepositoryName,
+        sourceCommitSpecifier: CommitName,
+        conflictDetailLevel: js.UndefOr[ConflictDetailLevelTypeEnum] = js.undefined,
+        conflictResolutionStrategy: js.UndefOr[ConflictResolutionStrategyTypeEnum] = js.undefined,
+        filePaths: js.UndefOr[FilePaths] = js.undefined,
+        maxConflictFiles: js.UndefOr[MaxResults] = js.undefined,
+        maxMergeHunks: js.UndefOr[MaxResults] = js.undefined,
+        nextToken: js.UndefOr[NextToken] = js.undefined
+    ): BatchDescribeMergeConflictsInput = {
+      val __obj = js.Dictionary[js.Any](
+        "destinationCommitSpecifier" -> destinationCommitSpecifier.asInstanceOf[js.Any],
+        "mergeOption"                -> mergeOption.asInstanceOf[js.Any],
+        "repositoryName"             -> repositoryName.asInstanceOf[js.Any],
+        "sourceCommitSpecifier"      -> sourceCommitSpecifier.asInstanceOf[js.Any]
+      )
+
+      conflictDetailLevel.foreach(__v => __obj.update("conflictDetailLevel", __v.asInstanceOf[js.Any]))
+      conflictResolutionStrategy.foreach(__v => __obj.update("conflictResolutionStrategy", __v.asInstanceOf[js.Any]))
+      filePaths.foreach(__v => __obj.update("filePaths", __v.asInstanceOf[js.Any]))
+      maxConflictFiles.foreach(__v => __obj.update("maxConflictFiles", __v.asInstanceOf[js.Any]))
+      maxMergeHunks.foreach(__v => __obj.update("maxMergeHunks", __v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[BatchDescribeMergeConflictsInput]
+    }
+  }
+
+  @js.native
+  trait BatchDescribeMergeConflictsOutput extends js.Object {
+    var conflicts: Conflicts
+    var destinationCommitId: ObjectId
+    var sourceCommitId: ObjectId
+    var baseCommitId: js.UndefOr[ObjectId]
+    var errors: js.UndefOr[BatchDescribeMergeConflictsErrors]
+    var nextToken: js.UndefOr[NextToken]
+  }
+
+  object BatchDescribeMergeConflictsOutput {
+    def apply(
+        conflicts: Conflicts,
+        destinationCommitId: ObjectId,
+        sourceCommitId: ObjectId,
+        baseCommitId: js.UndefOr[ObjectId] = js.undefined,
+        errors: js.UndefOr[BatchDescribeMergeConflictsErrors] = js.undefined,
+        nextToken: js.UndefOr[NextToken] = js.undefined
+    ): BatchDescribeMergeConflictsOutput = {
+      val __obj = js.Dictionary[js.Any](
+        "conflicts"           -> conflicts.asInstanceOf[js.Any],
+        "destinationCommitId" -> destinationCommitId.asInstanceOf[js.Any],
+        "sourceCommitId"      -> sourceCommitId.asInstanceOf[js.Any]
+      )
+
+      baseCommitId.foreach(__v => __obj.update("baseCommitId", __v.asInstanceOf[js.Any]))
+      errors.foreach(__v => __obj.update("errors", __v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[BatchDescribeMergeConflictsOutput]
+    }
+  }
+
+  /**
+    * Returns information about errors in a BatchGetCommits operation.
+    */
+  @js.native
+  trait BatchGetCommitsError extends js.Object {
+    var commitId: js.UndefOr[ObjectId]
+    var errorCode: js.UndefOr[ErrorCode]
+    var errorMessage: js.UndefOr[ErrorMessage]
+  }
+
+  object BatchGetCommitsError {
+    def apply(
+        commitId: js.UndefOr[ObjectId] = js.undefined,
+        errorCode: js.UndefOr[ErrorCode] = js.undefined,
+        errorMessage: js.UndefOr[ErrorMessage] = js.undefined
+    ): BatchGetCommitsError = {
+      val __obj = js.Dictionary.empty[js.Any]
+      commitId.foreach(__v => __obj.update("commitId", __v.asInstanceOf[js.Any]))
+      errorCode.foreach(__v => __obj.update("errorCode", __v.asInstanceOf[js.Any]))
+      errorMessage.foreach(__v => __obj.update("errorMessage", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[BatchGetCommitsError]
+    }
+  }
+
+  @js.native
+  trait BatchGetCommitsInput extends js.Object {
+    var commitIds: CommitIdsInputList
+    var repositoryName: RepositoryName
+  }
+
+  object BatchGetCommitsInput {
+    def apply(
+        commitIds: CommitIdsInputList,
+        repositoryName: RepositoryName
+    ): BatchGetCommitsInput = {
+      val __obj = js.Dictionary[js.Any](
+        "commitIds"      -> commitIds.asInstanceOf[js.Any],
+        "repositoryName" -> repositoryName.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[BatchGetCommitsInput]
+    }
+  }
+
+  @js.native
+  trait BatchGetCommitsOutput extends js.Object {
+    var commits: js.UndefOr[CommitObjectsList]
+    var errors: js.UndefOr[BatchGetCommitsErrorsList]
+  }
+
+  object BatchGetCommitsOutput {
+    def apply(
+        commits: js.UndefOr[CommitObjectsList] = js.undefined,
+        errors: js.UndefOr[BatchGetCommitsErrorsList] = js.undefined
+    ): BatchGetCommitsOutput = {
+      val __obj = js.Dictionary.empty[js.Any]
+      commits.foreach(__v => __obj.update("commits", __v.asInstanceOf[js.Any]))
+      errors.foreach(__v => __obj.update("errors", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[BatchGetCommitsOutput]
+    }
   }
 
   /**
@@ -479,6 +727,112 @@ package codecommit {
   }
 
   /**
+    * Information about conflicts in a merge operation.
+    */
+  @js.native
+  trait Conflict extends js.Object {
+    var conflictMetadata: js.UndefOr[ConflictMetadata]
+    var mergeHunks: js.UndefOr[MergeHunks]
+  }
+
+  object Conflict {
+    def apply(
+        conflictMetadata: js.UndefOr[ConflictMetadata] = js.undefined,
+        mergeHunks: js.UndefOr[MergeHunks] = js.undefined
+    ): Conflict = {
+      val __obj = js.Dictionary.empty[js.Any]
+      conflictMetadata.foreach(__v => __obj.update("conflictMetadata", __v.asInstanceOf[js.Any]))
+      mergeHunks.foreach(__v => __obj.update("mergeHunks", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Conflict]
+    }
+  }
+
+  object ConflictDetailLevelTypeEnumEnum {
+    val FILE_LEVEL = "FILE_LEVEL"
+    val LINE_LEVEL = "LINE_LEVEL"
+
+    val values = IndexedSeq(FILE_LEVEL, LINE_LEVEL)
+  }
+
+  /**
+    * Information about the metadata for a conflict in a merge operation.
+    */
+  @js.native
+  trait ConflictMetadata extends js.Object {
+    var contentConflict: js.UndefOr[IsContentConflict]
+    var fileModeConflict: js.UndefOr[IsFileModeConflict]
+    var fileModes: js.UndefOr[FileModes]
+    var filePath: js.UndefOr[Path]
+    var fileSizes: js.UndefOr[FileSizes]
+    var isBinaryFile: js.UndefOr[IsBinaryFile]
+    var mergeOperations: js.UndefOr[MergeOperations]
+    var numberOfConflicts: js.UndefOr[NumberOfConflicts]
+    var objectTypeConflict: js.UndefOr[IsObjectTypeConflict]
+    var objectTypes: js.UndefOr[ObjectTypes]
+  }
+
+  object ConflictMetadata {
+    def apply(
+        contentConflict: js.UndefOr[IsContentConflict] = js.undefined,
+        fileModeConflict: js.UndefOr[IsFileModeConflict] = js.undefined,
+        fileModes: js.UndefOr[FileModes] = js.undefined,
+        filePath: js.UndefOr[Path] = js.undefined,
+        fileSizes: js.UndefOr[FileSizes] = js.undefined,
+        isBinaryFile: js.UndefOr[IsBinaryFile] = js.undefined,
+        mergeOperations: js.UndefOr[MergeOperations] = js.undefined,
+        numberOfConflicts: js.UndefOr[NumberOfConflicts] = js.undefined,
+        objectTypeConflict: js.UndefOr[IsObjectTypeConflict] = js.undefined,
+        objectTypes: js.UndefOr[ObjectTypes] = js.undefined
+    ): ConflictMetadata = {
+      val __obj = js.Dictionary.empty[js.Any]
+      contentConflict.foreach(__v => __obj.update("contentConflict", __v.asInstanceOf[js.Any]))
+      fileModeConflict.foreach(__v => __obj.update("fileModeConflict", __v.asInstanceOf[js.Any]))
+      fileModes.foreach(__v => __obj.update("fileModes", __v.asInstanceOf[js.Any]))
+      filePath.foreach(__v => __obj.update("filePath", __v.asInstanceOf[js.Any]))
+      fileSizes.foreach(__v => __obj.update("fileSizes", __v.asInstanceOf[js.Any]))
+      isBinaryFile.foreach(__v => __obj.update("isBinaryFile", __v.asInstanceOf[js.Any]))
+      mergeOperations.foreach(__v => __obj.update("mergeOperations", __v.asInstanceOf[js.Any]))
+      numberOfConflicts.foreach(__v => __obj.update("numberOfConflicts", __v.asInstanceOf[js.Any]))
+      objectTypeConflict.foreach(__v => __obj.update("objectTypeConflict", __v.asInstanceOf[js.Any]))
+      objectTypes.foreach(__v => __obj.update("objectTypes", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ConflictMetadata]
+    }
+  }
+
+  /**
+    * A list of inputs to use when resolving conflicts during a merge if AUTOMERGE is chosen as the conflict resolution strategy.
+    */
+  @js.native
+  trait ConflictResolution extends js.Object {
+    var deleteFiles: js.UndefOr[DeleteFileEntries]
+    var replaceContents: js.UndefOr[ReplaceContentEntries]
+    var setFileModes: js.UndefOr[SetFileModeEntries]
+  }
+
+  object ConflictResolution {
+    def apply(
+        deleteFiles: js.UndefOr[DeleteFileEntries] = js.undefined,
+        replaceContents: js.UndefOr[ReplaceContentEntries] = js.undefined,
+        setFileModes: js.UndefOr[SetFileModeEntries] = js.undefined
+    ): ConflictResolution = {
+      val __obj = js.Dictionary.empty[js.Any]
+      deleteFiles.foreach(__v => __obj.update("deleteFiles", __v.asInstanceOf[js.Any]))
+      replaceContents.foreach(__v => __obj.update("replaceContents", __v.asInstanceOf[js.Any]))
+      setFileModes.foreach(__v => __obj.update("setFileModes", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ConflictResolution]
+    }
+  }
+
+  object ConflictResolutionStrategyTypeEnumEnum {
+    val NONE               = "NONE"
+    val ACCEPT_SOURCE      = "ACCEPT_SOURCE"
+    val ACCEPT_DESTINATION = "ACCEPT_DESTINATION"
+    val AUTOMERGE          = "AUTOMERGE"
+
+    val values = IndexedSeq(NONE, ACCEPT_SOURCE, ACCEPT_DESTINATION, AUTOMERGE)
+  }
+
+  /**
     * Represents the input of a create branch operation.
     */
   @js.native
@@ -625,18 +979,21 @@ package codecommit {
   trait CreateRepositoryInput extends js.Object {
     var repositoryName: RepositoryName
     var repositoryDescription: js.UndefOr[RepositoryDescription]
+    var tags: js.UndefOr[TagsMap]
   }
 
   object CreateRepositoryInput {
     def apply(
         repositoryName: RepositoryName,
-        repositoryDescription: js.UndefOr[RepositoryDescription] = js.undefined
+        repositoryDescription: js.UndefOr[RepositoryDescription] = js.undefined,
+        tags: js.UndefOr[TagsMap] = js.undefined
     ): CreateRepositoryInput = {
       val __obj = js.Dictionary[js.Any](
         "repositoryName" -> repositoryName.asInstanceOf[js.Any]
       )
 
       repositoryDescription.foreach(__v => __obj.update("repositoryDescription", __v.asInstanceOf[js.Any]))
+      tags.foreach(__v => __obj.update("tags", __v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateRepositoryInput]
     }
   }
@@ -656,6 +1013,71 @@ package codecommit {
       val __obj = js.Dictionary.empty[js.Any]
       repositoryMetadata.foreach(__v => __obj.update("repositoryMetadata", __v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateRepositoryOutput]
+    }
+  }
+
+  @js.native
+  trait CreateUnreferencedMergeCommitInput extends js.Object {
+    var destinationCommitSpecifier: CommitName
+    var mergeOption: MergeOptionTypeEnum
+    var repositoryName: RepositoryName
+    var sourceCommitSpecifier: CommitName
+    var authorName: js.UndefOr[Name]
+    var commitMessage: js.UndefOr[Message]
+    var conflictDetailLevel: js.UndefOr[ConflictDetailLevelTypeEnum]
+    var conflictResolution: js.UndefOr[ConflictResolution]
+    var conflictResolutionStrategy: js.UndefOr[ConflictResolutionStrategyTypeEnum]
+    var email: js.UndefOr[Email]
+    var keepEmptyFolders: js.UndefOr[KeepEmptyFolders]
+  }
+
+  object CreateUnreferencedMergeCommitInput {
+    def apply(
+        destinationCommitSpecifier: CommitName,
+        mergeOption: MergeOptionTypeEnum,
+        repositoryName: RepositoryName,
+        sourceCommitSpecifier: CommitName,
+        authorName: js.UndefOr[Name] = js.undefined,
+        commitMessage: js.UndefOr[Message] = js.undefined,
+        conflictDetailLevel: js.UndefOr[ConflictDetailLevelTypeEnum] = js.undefined,
+        conflictResolution: js.UndefOr[ConflictResolution] = js.undefined,
+        conflictResolutionStrategy: js.UndefOr[ConflictResolutionStrategyTypeEnum] = js.undefined,
+        email: js.UndefOr[Email] = js.undefined,
+        keepEmptyFolders: js.UndefOr[KeepEmptyFolders] = js.undefined
+    ): CreateUnreferencedMergeCommitInput = {
+      val __obj = js.Dictionary[js.Any](
+        "destinationCommitSpecifier" -> destinationCommitSpecifier.asInstanceOf[js.Any],
+        "mergeOption"                -> mergeOption.asInstanceOf[js.Any],
+        "repositoryName"             -> repositoryName.asInstanceOf[js.Any],
+        "sourceCommitSpecifier"      -> sourceCommitSpecifier.asInstanceOf[js.Any]
+      )
+
+      authorName.foreach(__v => __obj.update("authorName", __v.asInstanceOf[js.Any]))
+      commitMessage.foreach(__v => __obj.update("commitMessage", __v.asInstanceOf[js.Any]))
+      conflictDetailLevel.foreach(__v => __obj.update("conflictDetailLevel", __v.asInstanceOf[js.Any]))
+      conflictResolution.foreach(__v => __obj.update("conflictResolution", __v.asInstanceOf[js.Any]))
+      conflictResolutionStrategy.foreach(__v => __obj.update("conflictResolutionStrategy", __v.asInstanceOf[js.Any]))
+      email.foreach(__v => __obj.update("email", __v.asInstanceOf[js.Any]))
+      keepEmptyFolders.foreach(__v => __obj.update("keepEmptyFolders", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateUnreferencedMergeCommitInput]
+    }
+  }
+
+  @js.native
+  trait CreateUnreferencedMergeCommitOutput extends js.Object {
+    var commitId: js.UndefOr[ObjectId]
+    var treeId: js.UndefOr[ObjectId]
+  }
+
+  object CreateUnreferencedMergeCommitOutput {
+    def apply(
+        commitId: js.UndefOr[ObjectId] = js.undefined,
+        treeId: js.UndefOr[ObjectId] = js.undefined
+    ): CreateUnreferencedMergeCommitOutput = {
+      val __obj = js.Dictionary.empty[js.Any]
+      commitId.foreach(__v => __obj.update("commitId", __v.asInstanceOf[js.Any]))
+      treeId.foreach(__v => __obj.update("treeId", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateUnreferencedMergeCommitOutput]
     }
   }
 
@@ -855,6 +1277,79 @@ package codecommit {
   }
 
   @js.native
+  trait DescribeMergeConflictsInput extends js.Object {
+    var destinationCommitSpecifier: CommitName
+    var filePath: Path
+    var mergeOption: MergeOptionTypeEnum
+    var repositoryName: RepositoryName
+    var sourceCommitSpecifier: CommitName
+    var conflictDetailLevel: js.UndefOr[ConflictDetailLevelTypeEnum]
+    var conflictResolutionStrategy: js.UndefOr[ConflictResolutionStrategyTypeEnum]
+    var maxMergeHunks: js.UndefOr[MaxResults]
+    var nextToken: js.UndefOr[NextToken]
+  }
+
+  object DescribeMergeConflictsInput {
+    def apply(
+        destinationCommitSpecifier: CommitName,
+        filePath: Path,
+        mergeOption: MergeOptionTypeEnum,
+        repositoryName: RepositoryName,
+        sourceCommitSpecifier: CommitName,
+        conflictDetailLevel: js.UndefOr[ConflictDetailLevelTypeEnum] = js.undefined,
+        conflictResolutionStrategy: js.UndefOr[ConflictResolutionStrategyTypeEnum] = js.undefined,
+        maxMergeHunks: js.UndefOr[MaxResults] = js.undefined,
+        nextToken: js.UndefOr[NextToken] = js.undefined
+    ): DescribeMergeConflictsInput = {
+      val __obj = js.Dictionary[js.Any](
+        "destinationCommitSpecifier" -> destinationCommitSpecifier.asInstanceOf[js.Any],
+        "filePath"                   -> filePath.asInstanceOf[js.Any],
+        "mergeOption"                -> mergeOption.asInstanceOf[js.Any],
+        "repositoryName"             -> repositoryName.asInstanceOf[js.Any],
+        "sourceCommitSpecifier"      -> sourceCommitSpecifier.asInstanceOf[js.Any]
+      )
+
+      conflictDetailLevel.foreach(__v => __obj.update("conflictDetailLevel", __v.asInstanceOf[js.Any]))
+      conflictResolutionStrategy.foreach(__v => __obj.update("conflictResolutionStrategy", __v.asInstanceOf[js.Any]))
+      maxMergeHunks.foreach(__v => __obj.update("maxMergeHunks", __v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeMergeConflictsInput]
+    }
+  }
+
+  @js.native
+  trait DescribeMergeConflictsOutput extends js.Object {
+    var conflictMetadata: ConflictMetadata
+    var destinationCommitId: ObjectId
+    var mergeHunks: MergeHunks
+    var sourceCommitId: ObjectId
+    var baseCommitId: js.UndefOr[ObjectId]
+    var nextToken: js.UndefOr[NextToken]
+  }
+
+  object DescribeMergeConflictsOutput {
+    def apply(
+        conflictMetadata: ConflictMetadata,
+        destinationCommitId: ObjectId,
+        mergeHunks: MergeHunks,
+        sourceCommitId: ObjectId,
+        baseCommitId: js.UndefOr[ObjectId] = js.undefined,
+        nextToken: js.UndefOr[NextToken] = js.undefined
+    ): DescribeMergeConflictsOutput = {
+      val __obj = js.Dictionary[js.Any](
+        "conflictMetadata"    -> conflictMetadata.asInstanceOf[js.Any],
+        "destinationCommitId" -> destinationCommitId.asInstanceOf[js.Any],
+        "mergeHunks"          -> mergeHunks.asInstanceOf[js.Any],
+        "sourceCommitId"      -> sourceCommitId.asInstanceOf[js.Any]
+      )
+
+      baseCommitId.foreach(__v => __obj.update("baseCommitId", __v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeMergeConflictsOutput]
+    }
+  }
+
+  @js.native
   trait DescribePullRequestEventsInput extends js.Object {
     var pullRequestId: PullRequestId
     var actorArn: js.UndefOr[Arn]
@@ -984,6 +1479,54 @@ package codecommit {
     val SYMLINK    = "SYMLINK"
 
     val values = IndexedSeq(EXECUTABLE, NORMAL, SYMLINK)
+  }
+
+  /**
+    * Information about file modes in a merge or pull request.
+    */
+  @js.native
+  trait FileModes extends js.Object {
+    var base: js.UndefOr[FileModeTypeEnum]
+    var destination: js.UndefOr[FileModeTypeEnum]
+    var source: js.UndefOr[FileModeTypeEnum]
+  }
+
+  object FileModes {
+    def apply(
+        base: js.UndefOr[FileModeTypeEnum] = js.undefined,
+        destination: js.UndefOr[FileModeTypeEnum] = js.undefined,
+        source: js.UndefOr[FileModeTypeEnum] = js.undefined
+    ): FileModes = {
+      val __obj = js.Dictionary.empty[js.Any]
+      base.foreach(__v => __obj.update("base", __v.asInstanceOf[js.Any]))
+      destination.foreach(__v => __obj.update("destination", __v.asInstanceOf[js.Any]))
+      source.foreach(__v => __obj.update("source", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[FileModes]
+    }
+  }
+
+  /**
+    * Information about the size of files in a merge or pull request.
+    */
+  @js.native
+  trait FileSizes extends js.Object {
+    var base: js.UndefOr[FileSize]
+    var destination: js.UndefOr[FileSize]
+    var source: js.UndefOr[FileSize]
+  }
+
+  object FileSizes {
+    def apply(
+        base: js.UndefOr[FileSize] = js.undefined,
+        destination: js.UndefOr[FileSize] = js.undefined,
+        source: js.UndefOr[FileSize] = js.undefined
+    ): FileSizes = {
+      val __obj = js.Dictionary.empty[js.Any]
+      base.foreach(__v => __obj.update("base", __v.asInstanceOf[js.Any]))
+      destination.foreach(__v => __obj.update("destination", __v.asInstanceOf[js.Any]))
+      source.foreach(__v => __obj.update("source", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[FileSizes]
+    }
   }
 
   /**
@@ -1433,11 +1976,68 @@ package codecommit {
   }
 
   @js.native
+  trait GetMergeCommitInput extends js.Object {
+    var destinationCommitSpecifier: CommitName
+    var repositoryName: RepositoryName
+    var sourceCommitSpecifier: CommitName
+    var conflictDetailLevel: js.UndefOr[ConflictDetailLevelTypeEnum]
+    var conflictResolutionStrategy: js.UndefOr[ConflictResolutionStrategyTypeEnum]
+  }
+
+  object GetMergeCommitInput {
+    def apply(
+        destinationCommitSpecifier: CommitName,
+        repositoryName: RepositoryName,
+        sourceCommitSpecifier: CommitName,
+        conflictDetailLevel: js.UndefOr[ConflictDetailLevelTypeEnum] = js.undefined,
+        conflictResolutionStrategy: js.UndefOr[ConflictResolutionStrategyTypeEnum] = js.undefined
+    ): GetMergeCommitInput = {
+      val __obj = js.Dictionary[js.Any](
+        "destinationCommitSpecifier" -> destinationCommitSpecifier.asInstanceOf[js.Any],
+        "repositoryName"             -> repositoryName.asInstanceOf[js.Any],
+        "sourceCommitSpecifier"      -> sourceCommitSpecifier.asInstanceOf[js.Any]
+      )
+
+      conflictDetailLevel.foreach(__v => __obj.update("conflictDetailLevel", __v.asInstanceOf[js.Any]))
+      conflictResolutionStrategy.foreach(__v => __obj.update("conflictResolutionStrategy", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetMergeCommitInput]
+    }
+  }
+
+  @js.native
+  trait GetMergeCommitOutput extends js.Object {
+    var baseCommitId: js.UndefOr[ObjectId]
+    var destinationCommitId: js.UndefOr[ObjectId]
+    var mergedCommitId: js.UndefOr[ObjectId]
+    var sourceCommitId: js.UndefOr[ObjectId]
+  }
+
+  object GetMergeCommitOutput {
+    def apply(
+        baseCommitId: js.UndefOr[ObjectId] = js.undefined,
+        destinationCommitId: js.UndefOr[ObjectId] = js.undefined,
+        mergedCommitId: js.UndefOr[ObjectId] = js.undefined,
+        sourceCommitId: js.UndefOr[ObjectId] = js.undefined
+    ): GetMergeCommitOutput = {
+      val __obj = js.Dictionary.empty[js.Any]
+      baseCommitId.foreach(__v => __obj.update("baseCommitId", __v.asInstanceOf[js.Any]))
+      destinationCommitId.foreach(__v => __obj.update("destinationCommitId", __v.asInstanceOf[js.Any]))
+      mergedCommitId.foreach(__v => __obj.update("mergedCommitId", __v.asInstanceOf[js.Any]))
+      sourceCommitId.foreach(__v => __obj.update("sourceCommitId", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetMergeCommitOutput]
+    }
+  }
+
+  @js.native
   trait GetMergeConflictsInput extends js.Object {
     var destinationCommitSpecifier: CommitName
     var mergeOption: MergeOptionTypeEnum
     var repositoryName: RepositoryName
     var sourceCommitSpecifier: CommitName
+    var conflictDetailLevel: js.UndefOr[ConflictDetailLevelTypeEnum]
+    var conflictResolutionStrategy: js.UndefOr[ConflictResolutionStrategyTypeEnum]
+    var maxConflictFiles: js.UndefOr[MaxResults]
+    var nextToken: js.UndefOr[NextToken]
   }
 
   object GetMergeConflictsInput {
@@ -1445,7 +2045,11 @@ package codecommit {
         destinationCommitSpecifier: CommitName,
         mergeOption: MergeOptionTypeEnum,
         repositoryName: RepositoryName,
-        sourceCommitSpecifier: CommitName
+        sourceCommitSpecifier: CommitName,
+        conflictDetailLevel: js.UndefOr[ConflictDetailLevelTypeEnum] = js.undefined,
+        conflictResolutionStrategy: js.UndefOr[ConflictResolutionStrategyTypeEnum] = js.undefined,
+        maxConflictFiles: js.UndefOr[MaxResults] = js.undefined,
+        nextToken: js.UndefOr[NextToken] = js.undefined
     ): GetMergeConflictsInput = {
       val __obj = js.Dictionary[js.Any](
         "destinationCommitSpecifier" -> destinationCommitSpecifier.asInstanceOf[js.Any],
@@ -1454,30 +2058,98 @@ package codecommit {
         "sourceCommitSpecifier"      -> sourceCommitSpecifier.asInstanceOf[js.Any]
       )
 
+      conflictDetailLevel.foreach(__v => __obj.update("conflictDetailLevel", __v.asInstanceOf[js.Any]))
+      conflictResolutionStrategy.foreach(__v => __obj.update("conflictResolutionStrategy", __v.asInstanceOf[js.Any]))
+      maxConflictFiles.foreach(__v => __obj.update("maxConflictFiles", __v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetMergeConflictsInput]
     }
   }
 
   @js.native
   trait GetMergeConflictsOutput extends js.Object {
-    var destinationCommitId: CommitId
+    var conflictMetadataList: ConflictMetadataList
+    var destinationCommitId: ObjectId
     var mergeable: IsMergeable
-    var sourceCommitId: CommitId
+    var sourceCommitId: ObjectId
+    var baseCommitId: js.UndefOr[ObjectId]
+    var nextToken: js.UndefOr[NextToken]
   }
 
   object GetMergeConflictsOutput {
     def apply(
-        destinationCommitId: CommitId,
+        conflictMetadataList: ConflictMetadataList,
+        destinationCommitId: ObjectId,
         mergeable: IsMergeable,
-        sourceCommitId: CommitId
+        sourceCommitId: ObjectId,
+        baseCommitId: js.UndefOr[ObjectId] = js.undefined,
+        nextToken: js.UndefOr[NextToken] = js.undefined
     ): GetMergeConflictsOutput = {
       val __obj = js.Dictionary[js.Any](
+        "conflictMetadataList" -> conflictMetadataList.asInstanceOf[js.Any],
+        "destinationCommitId"  -> destinationCommitId.asInstanceOf[js.Any],
+        "mergeable"            -> mergeable.asInstanceOf[js.Any],
+        "sourceCommitId"       -> sourceCommitId.asInstanceOf[js.Any]
+      )
+
+      baseCommitId.foreach(__v => __obj.update("baseCommitId", __v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetMergeConflictsOutput]
+    }
+  }
+
+  @js.native
+  trait GetMergeOptionsInput extends js.Object {
+    var destinationCommitSpecifier: CommitName
+    var repositoryName: RepositoryName
+    var sourceCommitSpecifier: CommitName
+    var conflictDetailLevel: js.UndefOr[ConflictDetailLevelTypeEnum]
+    var conflictResolutionStrategy: js.UndefOr[ConflictResolutionStrategyTypeEnum]
+  }
+
+  object GetMergeOptionsInput {
+    def apply(
+        destinationCommitSpecifier: CommitName,
+        repositoryName: RepositoryName,
+        sourceCommitSpecifier: CommitName,
+        conflictDetailLevel: js.UndefOr[ConflictDetailLevelTypeEnum] = js.undefined,
+        conflictResolutionStrategy: js.UndefOr[ConflictResolutionStrategyTypeEnum] = js.undefined
+    ): GetMergeOptionsInput = {
+      val __obj = js.Dictionary[js.Any](
+        "destinationCommitSpecifier" -> destinationCommitSpecifier.asInstanceOf[js.Any],
+        "repositoryName"             -> repositoryName.asInstanceOf[js.Any],
+        "sourceCommitSpecifier"      -> sourceCommitSpecifier.asInstanceOf[js.Any]
+      )
+
+      conflictDetailLevel.foreach(__v => __obj.update("conflictDetailLevel", __v.asInstanceOf[js.Any]))
+      conflictResolutionStrategy.foreach(__v => __obj.update("conflictResolutionStrategy", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetMergeOptionsInput]
+    }
+  }
+
+  @js.native
+  trait GetMergeOptionsOutput extends js.Object {
+    var baseCommitId: ObjectId
+    var destinationCommitId: ObjectId
+    var mergeOptions: MergeOptions
+    var sourceCommitId: ObjectId
+  }
+
+  object GetMergeOptionsOutput {
+    def apply(
+        baseCommitId: ObjectId,
+        destinationCommitId: ObjectId,
+        mergeOptions: MergeOptions,
+        sourceCommitId: ObjectId
+    ): GetMergeOptionsOutput = {
+      val __obj = js.Dictionary[js.Any](
+        "baseCommitId"        -> baseCommitId.asInstanceOf[js.Any],
         "destinationCommitId" -> destinationCommitId.asInstanceOf[js.Any],
-        "mergeable"           -> mergeable.asInstanceOf[js.Any],
+        "mergeOptions"        -> mergeOptions.asInstanceOf[js.Any],
         "sourceCommitId"      -> sourceCommitId.asInstanceOf[js.Any]
       )
 
-      __obj.asInstanceOf[GetMergeConflictsOutput]
+      __obj.asInstanceOf[GetMergeOptionsOutput]
     }
   }
 
@@ -1591,6 +2263,30 @@ package codecommit {
       configurationId.foreach(__v => __obj.update("configurationId", __v.asInstanceOf[js.Any]))
       triggers.foreach(__v => __obj.update("triggers", __v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetRepositoryTriggersOutput]
+    }
+  }
+
+  /**
+    * Information about whether a file is binary or textual in a merge or pull request operation.
+    */
+  @js.native
+  trait IsBinaryFile extends js.Object {
+    var base: js.UndefOr[CapitalBoolean]
+    var destination: js.UndefOr[CapitalBoolean]
+    var source: js.UndefOr[CapitalBoolean]
+  }
+
+  object IsBinaryFile {
+    def apply(
+        base: js.UndefOr[CapitalBoolean] = js.undefined,
+        destination: js.UndefOr[CapitalBoolean] = js.undefined,
+        source: js.UndefOr[CapitalBoolean] = js.undefined
+    ): IsBinaryFile = {
+      val __obj = js.Dictionary.empty[js.Any]
+      base.foreach(__v => __obj.update("base", __v.asInstanceOf[js.Any]))
+      destination.foreach(__v => __obj.update("destination", __v.asInstanceOf[js.Any]))
+      source.foreach(__v => __obj.update("source", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[IsBinaryFile]
     }
   }
 
@@ -1732,6 +2428,44 @@ package codecommit {
     }
   }
 
+  @js.native
+  trait ListTagsForResourceInput extends js.Object {
+    var resourceArn: ResourceArn
+    var nextToken: js.UndefOr[NextToken]
+  }
+
+  object ListTagsForResourceInput {
+    def apply(
+        resourceArn: ResourceArn,
+        nextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListTagsForResourceInput = {
+      val __obj = js.Dictionary[js.Any](
+        "resourceArn" -> resourceArn.asInstanceOf[js.Any]
+      )
+
+      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListTagsForResourceInput]
+    }
+  }
+
+  @js.native
+  trait ListTagsForResourceOutput extends js.Object {
+    var nextToken: js.UndefOr[NextToken]
+    var tags: js.UndefOr[TagsMap]
+  }
+
+  object ListTagsForResourceOutput {
+    def apply(
+        nextToken: js.UndefOr[NextToken] = js.undefined,
+        tags: js.UndefOr[TagsMap] = js.undefined
+    ): ListTagsForResourceOutput = {
+      val __obj = js.Dictionary.empty[js.Any]
+      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
+      tags.foreach(__v => __obj.update("tags", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListTagsForResourceOutput]
+    }
+  }
+
   /**
     * Returns information about the location of a change or comment in the comparison between two commits or a pull request.
     */
@@ -1756,45 +2490,299 @@ package codecommit {
     }
   }
 
+  @js.native
+  trait MergeBranchesByFastForwardInput extends js.Object {
+    var destinationCommitSpecifier: CommitName
+    var repositoryName: RepositoryName
+    var sourceCommitSpecifier: CommitName
+    var targetBranch: js.UndefOr[BranchName]
+  }
+
+  object MergeBranchesByFastForwardInput {
+    def apply(
+        destinationCommitSpecifier: CommitName,
+        repositoryName: RepositoryName,
+        sourceCommitSpecifier: CommitName,
+        targetBranch: js.UndefOr[BranchName] = js.undefined
+    ): MergeBranchesByFastForwardInput = {
+      val __obj = js.Dictionary[js.Any](
+        "destinationCommitSpecifier" -> destinationCommitSpecifier.asInstanceOf[js.Any],
+        "repositoryName"             -> repositoryName.asInstanceOf[js.Any],
+        "sourceCommitSpecifier"      -> sourceCommitSpecifier.asInstanceOf[js.Any]
+      )
+
+      targetBranch.foreach(__v => __obj.update("targetBranch", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[MergeBranchesByFastForwardInput]
+    }
+  }
+
+  @js.native
+  trait MergeBranchesByFastForwardOutput extends js.Object {
+    var commitId: js.UndefOr[ObjectId]
+    var treeId: js.UndefOr[ObjectId]
+  }
+
+  object MergeBranchesByFastForwardOutput {
+    def apply(
+        commitId: js.UndefOr[ObjectId] = js.undefined,
+        treeId: js.UndefOr[ObjectId] = js.undefined
+    ): MergeBranchesByFastForwardOutput = {
+      val __obj = js.Dictionary.empty[js.Any]
+      commitId.foreach(__v => __obj.update("commitId", __v.asInstanceOf[js.Any]))
+      treeId.foreach(__v => __obj.update("treeId", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[MergeBranchesByFastForwardOutput]
+    }
+  }
+
+  @js.native
+  trait MergeBranchesBySquashInput extends js.Object {
+    var destinationCommitSpecifier: CommitName
+    var repositoryName: RepositoryName
+    var sourceCommitSpecifier: CommitName
+    var authorName: js.UndefOr[Name]
+    var commitMessage: js.UndefOr[Message]
+    var conflictDetailLevel: js.UndefOr[ConflictDetailLevelTypeEnum]
+    var conflictResolution: js.UndefOr[ConflictResolution]
+    var conflictResolutionStrategy: js.UndefOr[ConflictResolutionStrategyTypeEnum]
+    var email: js.UndefOr[Email]
+    var keepEmptyFolders: js.UndefOr[KeepEmptyFolders]
+    var targetBranch: js.UndefOr[BranchName]
+  }
+
+  object MergeBranchesBySquashInput {
+    def apply(
+        destinationCommitSpecifier: CommitName,
+        repositoryName: RepositoryName,
+        sourceCommitSpecifier: CommitName,
+        authorName: js.UndefOr[Name] = js.undefined,
+        commitMessage: js.UndefOr[Message] = js.undefined,
+        conflictDetailLevel: js.UndefOr[ConflictDetailLevelTypeEnum] = js.undefined,
+        conflictResolution: js.UndefOr[ConflictResolution] = js.undefined,
+        conflictResolutionStrategy: js.UndefOr[ConflictResolutionStrategyTypeEnum] = js.undefined,
+        email: js.UndefOr[Email] = js.undefined,
+        keepEmptyFolders: js.UndefOr[KeepEmptyFolders] = js.undefined,
+        targetBranch: js.UndefOr[BranchName] = js.undefined
+    ): MergeBranchesBySquashInput = {
+      val __obj = js.Dictionary[js.Any](
+        "destinationCommitSpecifier" -> destinationCommitSpecifier.asInstanceOf[js.Any],
+        "repositoryName"             -> repositoryName.asInstanceOf[js.Any],
+        "sourceCommitSpecifier"      -> sourceCommitSpecifier.asInstanceOf[js.Any]
+      )
+
+      authorName.foreach(__v => __obj.update("authorName", __v.asInstanceOf[js.Any]))
+      commitMessage.foreach(__v => __obj.update("commitMessage", __v.asInstanceOf[js.Any]))
+      conflictDetailLevel.foreach(__v => __obj.update("conflictDetailLevel", __v.asInstanceOf[js.Any]))
+      conflictResolution.foreach(__v => __obj.update("conflictResolution", __v.asInstanceOf[js.Any]))
+      conflictResolutionStrategy.foreach(__v => __obj.update("conflictResolutionStrategy", __v.asInstanceOf[js.Any]))
+      email.foreach(__v => __obj.update("email", __v.asInstanceOf[js.Any]))
+      keepEmptyFolders.foreach(__v => __obj.update("keepEmptyFolders", __v.asInstanceOf[js.Any]))
+      targetBranch.foreach(__v => __obj.update("targetBranch", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[MergeBranchesBySquashInput]
+    }
+  }
+
+  @js.native
+  trait MergeBranchesBySquashOutput extends js.Object {
+    var commitId: js.UndefOr[ObjectId]
+    var treeId: js.UndefOr[ObjectId]
+  }
+
+  object MergeBranchesBySquashOutput {
+    def apply(
+        commitId: js.UndefOr[ObjectId] = js.undefined,
+        treeId: js.UndefOr[ObjectId] = js.undefined
+    ): MergeBranchesBySquashOutput = {
+      val __obj = js.Dictionary.empty[js.Any]
+      commitId.foreach(__v => __obj.update("commitId", __v.asInstanceOf[js.Any]))
+      treeId.foreach(__v => __obj.update("treeId", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[MergeBranchesBySquashOutput]
+    }
+  }
+
+  @js.native
+  trait MergeBranchesByThreeWayInput extends js.Object {
+    var destinationCommitSpecifier: CommitName
+    var repositoryName: RepositoryName
+    var sourceCommitSpecifier: CommitName
+    var authorName: js.UndefOr[Name]
+    var commitMessage: js.UndefOr[Message]
+    var conflictDetailLevel: js.UndefOr[ConflictDetailLevelTypeEnum]
+    var conflictResolution: js.UndefOr[ConflictResolution]
+    var conflictResolutionStrategy: js.UndefOr[ConflictResolutionStrategyTypeEnum]
+    var email: js.UndefOr[Email]
+    var keepEmptyFolders: js.UndefOr[KeepEmptyFolders]
+    var targetBranch: js.UndefOr[BranchName]
+  }
+
+  object MergeBranchesByThreeWayInput {
+    def apply(
+        destinationCommitSpecifier: CommitName,
+        repositoryName: RepositoryName,
+        sourceCommitSpecifier: CommitName,
+        authorName: js.UndefOr[Name] = js.undefined,
+        commitMessage: js.UndefOr[Message] = js.undefined,
+        conflictDetailLevel: js.UndefOr[ConflictDetailLevelTypeEnum] = js.undefined,
+        conflictResolution: js.UndefOr[ConflictResolution] = js.undefined,
+        conflictResolutionStrategy: js.UndefOr[ConflictResolutionStrategyTypeEnum] = js.undefined,
+        email: js.UndefOr[Email] = js.undefined,
+        keepEmptyFolders: js.UndefOr[KeepEmptyFolders] = js.undefined,
+        targetBranch: js.UndefOr[BranchName] = js.undefined
+    ): MergeBranchesByThreeWayInput = {
+      val __obj = js.Dictionary[js.Any](
+        "destinationCommitSpecifier" -> destinationCommitSpecifier.asInstanceOf[js.Any],
+        "repositoryName"             -> repositoryName.asInstanceOf[js.Any],
+        "sourceCommitSpecifier"      -> sourceCommitSpecifier.asInstanceOf[js.Any]
+      )
+
+      authorName.foreach(__v => __obj.update("authorName", __v.asInstanceOf[js.Any]))
+      commitMessage.foreach(__v => __obj.update("commitMessage", __v.asInstanceOf[js.Any]))
+      conflictDetailLevel.foreach(__v => __obj.update("conflictDetailLevel", __v.asInstanceOf[js.Any]))
+      conflictResolution.foreach(__v => __obj.update("conflictResolution", __v.asInstanceOf[js.Any]))
+      conflictResolutionStrategy.foreach(__v => __obj.update("conflictResolutionStrategy", __v.asInstanceOf[js.Any]))
+      email.foreach(__v => __obj.update("email", __v.asInstanceOf[js.Any]))
+      keepEmptyFolders.foreach(__v => __obj.update("keepEmptyFolders", __v.asInstanceOf[js.Any]))
+      targetBranch.foreach(__v => __obj.update("targetBranch", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[MergeBranchesByThreeWayInput]
+    }
+  }
+
+  @js.native
+  trait MergeBranchesByThreeWayOutput extends js.Object {
+    var commitId: js.UndefOr[ObjectId]
+    var treeId: js.UndefOr[ObjectId]
+  }
+
+  object MergeBranchesByThreeWayOutput {
+    def apply(
+        commitId: js.UndefOr[ObjectId] = js.undefined,
+        treeId: js.UndefOr[ObjectId] = js.undefined
+    ): MergeBranchesByThreeWayOutput = {
+      val __obj = js.Dictionary.empty[js.Any]
+      commitId.foreach(__v => __obj.update("commitId", __v.asInstanceOf[js.Any]))
+      treeId.foreach(__v => __obj.update("treeId", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[MergeBranchesByThreeWayOutput]
+    }
+  }
+
+  /**
+    * Information about merge hunks in a merge or pull request operation.
+    */
+  @js.native
+  trait MergeHunk extends js.Object {
+    var base: js.UndefOr[MergeHunkDetail]
+    var destination: js.UndefOr[MergeHunkDetail]
+    var isConflict: js.UndefOr[IsHunkConflict]
+    var source: js.UndefOr[MergeHunkDetail]
+  }
+
+  object MergeHunk {
+    def apply(
+        base: js.UndefOr[MergeHunkDetail] = js.undefined,
+        destination: js.UndefOr[MergeHunkDetail] = js.undefined,
+        isConflict: js.UndefOr[IsHunkConflict] = js.undefined,
+        source: js.UndefOr[MergeHunkDetail] = js.undefined
+    ): MergeHunk = {
+      val __obj = js.Dictionary.empty[js.Any]
+      base.foreach(__v => __obj.update("base", __v.asInstanceOf[js.Any]))
+      destination.foreach(__v => __obj.update("destination", __v.asInstanceOf[js.Any]))
+      isConflict.foreach(__v => __obj.update("isConflict", __v.asInstanceOf[js.Any]))
+      source.foreach(__v => __obj.update("source", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[MergeHunk]
+    }
+  }
+
+  /**
+    * Information about the details of a merge hunk that contains a conflict in a merge or pull request operation.
+    */
+  @js.native
+  trait MergeHunkDetail extends js.Object {
+    var endLine: js.UndefOr[LineNumber]
+    var hunkContent: js.UndefOr[HunkContent]
+    var startLine: js.UndefOr[LineNumber]
+  }
+
+  object MergeHunkDetail {
+    def apply(
+        endLine: js.UndefOr[LineNumber] = js.undefined,
+        hunkContent: js.UndefOr[HunkContent] = js.undefined,
+        startLine: js.UndefOr[LineNumber] = js.undefined
+    ): MergeHunkDetail = {
+      val __obj = js.Dictionary.empty[js.Any]
+      endLine.foreach(__v => __obj.update("endLine", __v.asInstanceOf[js.Any]))
+      hunkContent.foreach(__v => __obj.update("hunkContent", __v.asInstanceOf[js.Any]))
+      startLine.foreach(__v => __obj.update("startLine", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[MergeHunkDetail]
+    }
+  }
+
   /**
     * Returns information about a merge or potential merge between a source reference and a destination reference in a pull request.
     */
   @js.native
   trait MergeMetadata extends js.Object {
     var isMerged: js.UndefOr[IsMerged]
+    var mergeCommitId: js.UndefOr[CommitId]
+    var mergeOption: js.UndefOr[MergeOptionTypeEnum]
     var mergedBy: js.UndefOr[Arn]
   }
 
   object MergeMetadata {
     def apply(
         isMerged: js.UndefOr[IsMerged] = js.undefined,
+        mergeCommitId: js.UndefOr[CommitId] = js.undefined,
+        mergeOption: js.UndefOr[MergeOptionTypeEnum] = js.undefined,
         mergedBy: js.UndefOr[Arn] = js.undefined
     ): MergeMetadata = {
       val __obj = js.Dictionary.empty[js.Any]
       isMerged.foreach(__v => __obj.update("isMerged", __v.asInstanceOf[js.Any]))
+      mergeCommitId.foreach(__v => __obj.update("mergeCommitId", __v.asInstanceOf[js.Any]))
+      mergeOption.foreach(__v => __obj.update("mergeOption", __v.asInstanceOf[js.Any]))
       mergedBy.foreach(__v => __obj.update("mergedBy", __v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[MergeMetadata]
     }
   }
 
+  /**
+    * Information about the file operation conflicts in a merge operation.
+    */
+  @js.native
+  trait MergeOperations extends js.Object {
+    var destination: js.UndefOr[ChangeTypeEnum]
+    var source: js.UndefOr[ChangeTypeEnum]
+  }
+
+  object MergeOperations {
+    def apply(
+        destination: js.UndefOr[ChangeTypeEnum] = js.undefined,
+        source: js.UndefOr[ChangeTypeEnum] = js.undefined
+    ): MergeOperations = {
+      val __obj = js.Dictionary.empty[js.Any]
+      destination.foreach(__v => __obj.update("destination", __v.asInstanceOf[js.Any]))
+      source.foreach(__v => __obj.update("source", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[MergeOperations]
+    }
+  }
+
   object MergeOptionTypeEnumEnum {
     val FAST_FORWARD_MERGE = "FAST_FORWARD_MERGE"
+    val SQUASH_MERGE       = "SQUASH_MERGE"
+    val THREE_WAY_MERGE    = "THREE_WAY_MERGE"
 
-    val values = IndexedSeq(FAST_FORWARD_MERGE)
+    val values = IndexedSeq(FAST_FORWARD_MERGE, SQUASH_MERGE, THREE_WAY_MERGE)
   }
 
   @js.native
   trait MergePullRequestByFastForwardInput extends js.Object {
     var pullRequestId: PullRequestId
     var repositoryName: RepositoryName
-    var sourceCommitId: js.UndefOr[CommitId]
+    var sourceCommitId: js.UndefOr[ObjectId]
   }
 
   object MergePullRequestByFastForwardInput {
     def apply(
         pullRequestId: PullRequestId,
         repositoryName: RepositoryName,
-        sourceCommitId: js.UndefOr[CommitId] = js.undefined
+        sourceCommitId: js.UndefOr[ObjectId] = js.undefined
     ): MergePullRequestByFastForwardInput = {
       val __obj = js.Dictionary[js.Any](
         "pullRequestId"  -> pullRequestId.asInstanceOf[js.Any],
@@ -1818,6 +2806,157 @@ package codecommit {
       val __obj = js.Dictionary.empty[js.Any]
       pullRequest.foreach(__v => __obj.update("pullRequest", __v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[MergePullRequestByFastForwardOutput]
+    }
+  }
+
+  @js.native
+  trait MergePullRequestBySquashInput extends js.Object {
+    var pullRequestId: PullRequestId
+    var repositoryName: RepositoryName
+    var authorName: js.UndefOr[Name]
+    var commitMessage: js.UndefOr[Message]
+    var conflictDetailLevel: js.UndefOr[ConflictDetailLevelTypeEnum]
+    var conflictResolution: js.UndefOr[ConflictResolution]
+    var conflictResolutionStrategy: js.UndefOr[ConflictResolutionStrategyTypeEnum]
+    var email: js.UndefOr[Email]
+    var keepEmptyFolders: js.UndefOr[KeepEmptyFolders]
+    var sourceCommitId: js.UndefOr[ObjectId]
+  }
+
+  object MergePullRequestBySquashInput {
+    def apply(
+        pullRequestId: PullRequestId,
+        repositoryName: RepositoryName,
+        authorName: js.UndefOr[Name] = js.undefined,
+        commitMessage: js.UndefOr[Message] = js.undefined,
+        conflictDetailLevel: js.UndefOr[ConflictDetailLevelTypeEnum] = js.undefined,
+        conflictResolution: js.UndefOr[ConflictResolution] = js.undefined,
+        conflictResolutionStrategy: js.UndefOr[ConflictResolutionStrategyTypeEnum] = js.undefined,
+        email: js.UndefOr[Email] = js.undefined,
+        keepEmptyFolders: js.UndefOr[KeepEmptyFolders] = js.undefined,
+        sourceCommitId: js.UndefOr[ObjectId] = js.undefined
+    ): MergePullRequestBySquashInput = {
+      val __obj = js.Dictionary[js.Any](
+        "pullRequestId"  -> pullRequestId.asInstanceOf[js.Any],
+        "repositoryName" -> repositoryName.asInstanceOf[js.Any]
+      )
+
+      authorName.foreach(__v => __obj.update("authorName", __v.asInstanceOf[js.Any]))
+      commitMessage.foreach(__v => __obj.update("commitMessage", __v.asInstanceOf[js.Any]))
+      conflictDetailLevel.foreach(__v => __obj.update("conflictDetailLevel", __v.asInstanceOf[js.Any]))
+      conflictResolution.foreach(__v => __obj.update("conflictResolution", __v.asInstanceOf[js.Any]))
+      conflictResolutionStrategy.foreach(__v => __obj.update("conflictResolutionStrategy", __v.asInstanceOf[js.Any]))
+      email.foreach(__v => __obj.update("email", __v.asInstanceOf[js.Any]))
+      keepEmptyFolders.foreach(__v => __obj.update("keepEmptyFolders", __v.asInstanceOf[js.Any]))
+      sourceCommitId.foreach(__v => __obj.update("sourceCommitId", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[MergePullRequestBySquashInput]
+    }
+  }
+
+  @js.native
+  trait MergePullRequestBySquashOutput extends js.Object {
+    var pullRequest: js.UndefOr[PullRequest]
+  }
+
+  object MergePullRequestBySquashOutput {
+    def apply(
+        pullRequest: js.UndefOr[PullRequest] = js.undefined
+    ): MergePullRequestBySquashOutput = {
+      val __obj = js.Dictionary.empty[js.Any]
+      pullRequest.foreach(__v => __obj.update("pullRequest", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[MergePullRequestBySquashOutput]
+    }
+  }
+
+  @js.native
+  trait MergePullRequestByThreeWayInput extends js.Object {
+    var pullRequestId: PullRequestId
+    var repositoryName: RepositoryName
+    var authorName: js.UndefOr[Name]
+    var commitMessage: js.UndefOr[Message]
+    var conflictDetailLevel: js.UndefOr[ConflictDetailLevelTypeEnum]
+    var conflictResolution: js.UndefOr[ConflictResolution]
+    var conflictResolutionStrategy: js.UndefOr[ConflictResolutionStrategyTypeEnum]
+    var email: js.UndefOr[Email]
+    var keepEmptyFolders: js.UndefOr[KeepEmptyFolders]
+    var sourceCommitId: js.UndefOr[ObjectId]
+  }
+
+  object MergePullRequestByThreeWayInput {
+    def apply(
+        pullRequestId: PullRequestId,
+        repositoryName: RepositoryName,
+        authorName: js.UndefOr[Name] = js.undefined,
+        commitMessage: js.UndefOr[Message] = js.undefined,
+        conflictDetailLevel: js.UndefOr[ConflictDetailLevelTypeEnum] = js.undefined,
+        conflictResolution: js.UndefOr[ConflictResolution] = js.undefined,
+        conflictResolutionStrategy: js.UndefOr[ConflictResolutionStrategyTypeEnum] = js.undefined,
+        email: js.UndefOr[Email] = js.undefined,
+        keepEmptyFolders: js.UndefOr[KeepEmptyFolders] = js.undefined,
+        sourceCommitId: js.UndefOr[ObjectId] = js.undefined
+    ): MergePullRequestByThreeWayInput = {
+      val __obj = js.Dictionary[js.Any](
+        "pullRequestId"  -> pullRequestId.asInstanceOf[js.Any],
+        "repositoryName" -> repositoryName.asInstanceOf[js.Any]
+      )
+
+      authorName.foreach(__v => __obj.update("authorName", __v.asInstanceOf[js.Any]))
+      commitMessage.foreach(__v => __obj.update("commitMessage", __v.asInstanceOf[js.Any]))
+      conflictDetailLevel.foreach(__v => __obj.update("conflictDetailLevel", __v.asInstanceOf[js.Any]))
+      conflictResolution.foreach(__v => __obj.update("conflictResolution", __v.asInstanceOf[js.Any]))
+      conflictResolutionStrategy.foreach(__v => __obj.update("conflictResolutionStrategy", __v.asInstanceOf[js.Any]))
+      email.foreach(__v => __obj.update("email", __v.asInstanceOf[js.Any]))
+      keepEmptyFolders.foreach(__v => __obj.update("keepEmptyFolders", __v.asInstanceOf[js.Any]))
+      sourceCommitId.foreach(__v => __obj.update("sourceCommitId", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[MergePullRequestByThreeWayInput]
+    }
+  }
+
+  @js.native
+  trait MergePullRequestByThreeWayOutput extends js.Object {
+    var pullRequest: js.UndefOr[PullRequest]
+  }
+
+  object MergePullRequestByThreeWayOutput {
+    def apply(
+        pullRequest: js.UndefOr[PullRequest] = js.undefined
+    ): MergePullRequestByThreeWayOutput = {
+      val __obj = js.Dictionary.empty[js.Any]
+      pullRequest.foreach(__v => __obj.update("pullRequest", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[MergePullRequestByThreeWayOutput]
+    }
+  }
+
+  object ObjectTypeEnumEnum {
+    val FILE          = "FILE"
+    val DIRECTORY     = "DIRECTORY"
+    val GIT_LINK      = "GIT_LINK"
+    val SYMBOLIC_LINK = "SYMBOLIC_LINK"
+
+    val values = IndexedSeq(FILE, DIRECTORY, GIT_LINK, SYMBOLIC_LINK)
+  }
+
+  /**
+    * Information about the type of an object in a merge operation.
+    */
+  @js.native
+  trait ObjectTypes extends js.Object {
+    var base: js.UndefOr[ObjectTypeEnum]
+    var destination: js.UndefOr[ObjectTypeEnum]
+    var source: js.UndefOr[ObjectTypeEnum]
+  }
+
+  object ObjectTypes {
+    def apply(
+        base: js.UndefOr[ObjectTypeEnum] = js.undefined,
+        destination: js.UndefOr[ObjectTypeEnum] = js.undefined,
+        source: js.UndefOr[ObjectTypeEnum] = js.undefined
+    ): ObjectTypes = {
+      val __obj = js.Dictionary.empty[js.Any]
+      base.foreach(__v => __obj.update("base", __v.asInstanceOf[js.Any]))
+      destination.foreach(__v => __obj.update("destination", __v.asInstanceOf[js.Any]))
+      source.foreach(__v => __obj.update("source", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ObjectTypes]
     }
   }
 
@@ -2388,6 +3527,44 @@ package codecommit {
   }
 
   /**
+    * Information about a replacement content entry in the conflict of a merge or pull request operation.
+    */
+  @js.native
+  trait ReplaceContentEntry extends js.Object {
+    var filePath: Path
+    var replacementType: ReplacementTypeEnum
+    var content: js.UndefOr[FileContent]
+    var fileMode: js.UndefOr[FileModeTypeEnum]
+  }
+
+  object ReplaceContentEntry {
+    def apply(
+        filePath: Path,
+        replacementType: ReplacementTypeEnum,
+        content: js.UndefOr[FileContent] = js.undefined,
+        fileMode: js.UndefOr[FileModeTypeEnum] = js.undefined
+    ): ReplaceContentEntry = {
+      val __obj = js.Dictionary[js.Any](
+        "filePath"        -> filePath.asInstanceOf[js.Any],
+        "replacementType" -> replacementType.asInstanceOf[js.Any]
+      )
+
+      content.foreach(__v => __obj.update("content", __v.asInstanceOf[js.Any]))
+      fileMode.foreach(__v => __obj.update("fileMode", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ReplaceContentEntry]
+    }
+  }
+
+  object ReplacementTypeEnumEnum {
+    val KEEP_BASE        = "KEEP_BASE"
+    val KEEP_SOURCE      = "KEEP_SOURCE"
+    val KEEP_DESTINATION = "KEEP_DESTINATION"
+    val USE_NEW_CONTENT  = "USE_NEW_CONTENT"
+
+    val values = IndexedSeq(KEEP_BASE, KEEP_SOURCE, KEEP_DESTINATION, USE_NEW_CONTENT)
+  }
+
+  /**
     * Information about a repository.
     */
   @js.native
@@ -2619,6 +3796,26 @@ package codecommit {
     }
   }
 
+  @js.native
+  trait TagResourceInput extends js.Object {
+    var resourceArn: ResourceArn
+    var tags: TagsMap
+  }
+
+  object TagResourceInput {
+    def apply(
+        resourceArn: ResourceArn,
+        tags: TagsMap
+    ): TagResourceInput = {
+      val __obj = js.Dictionary[js.Any](
+        "resourceArn" -> resourceArn.asInstanceOf[js.Any],
+        "tags"        -> tags.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[TagResourceInput]
+    }
+  }
+
   /**
     * Returns information about a target for a pull request.
     */
@@ -2686,6 +3883,26 @@ package codecommit {
       failedExecutions.foreach(__v => __obj.update("failedExecutions", __v.asInstanceOf[js.Any]))
       successfulExecutions.foreach(__v => __obj.update("successfulExecutions", __v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[TestRepositoryTriggersOutput]
+    }
+  }
+
+  @js.native
+  trait UntagResourceInput extends js.Object {
+    var resourceArn: ResourceArn
+    var tagKeys: TagKeysList
+  }
+
+  object UntagResourceInput {
+    def apply(
+        resourceArn: ResourceArn,
+        tagKeys: TagKeysList
+    ): UntagResourceInput = {
+      val __obj = js.Dictionary[js.Any](
+        "resourceArn" -> resourceArn.asInstanceOf[js.Any],
+        "tagKeys"     -> tagKeys.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[UntagResourceInput]
     }
   }
 

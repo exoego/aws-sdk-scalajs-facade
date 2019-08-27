@@ -750,6 +750,7 @@ package redshift {
     var AllowVersionUpgrade: js.UndefOr[Boolean]
     var AutomatedSnapshotRetentionPeriod: js.UndefOr[Int]
     var AvailabilityZone: js.UndefOr[String]
+    var ClusterAvailabilityStatus: js.UndefOr[String]
     var ClusterCreateTime: js.UndefOr[TStamp]
     var ClusterIdentifier: js.UndefOr[String]
     var ClusterNodes: js.UndefOr[ClusterNodesList]
@@ -769,6 +770,8 @@ package redshift {
     var Encrypted: js.UndefOr[Boolean]
     var Endpoint: js.UndefOr[Endpoint]
     var EnhancedVpcRouting: js.UndefOr[Boolean]
+    var ExpectedNextSnapshotScheduleTime: js.UndefOr[TStamp]
+    var ExpectedNextSnapshotScheduleTimeStatus: js.UndefOr[String]
     var HsmStatus: js.UndefOr[HsmStatus]
     var IamRoles: js.UndefOr[ClusterIamRoleList]
     var KmsKeyId: js.UndefOr[String]
@@ -796,6 +799,7 @@ package redshift {
         AllowVersionUpgrade: js.UndefOr[Boolean] = js.undefined,
         AutomatedSnapshotRetentionPeriod: js.UndefOr[Int] = js.undefined,
         AvailabilityZone: js.UndefOr[String] = js.undefined,
+        ClusterAvailabilityStatus: js.UndefOr[String] = js.undefined,
         ClusterCreateTime: js.UndefOr[TStamp] = js.undefined,
         ClusterIdentifier: js.UndefOr[String] = js.undefined,
         ClusterNodes: js.UndefOr[ClusterNodesList] = js.undefined,
@@ -815,6 +819,8 @@ package redshift {
         Encrypted: js.UndefOr[Boolean] = js.undefined,
         Endpoint: js.UndefOr[Endpoint] = js.undefined,
         EnhancedVpcRouting: js.UndefOr[Boolean] = js.undefined,
+        ExpectedNextSnapshotScheduleTime: js.UndefOr[TStamp] = js.undefined,
+        ExpectedNextSnapshotScheduleTimeStatus: js.UndefOr[String] = js.undefined,
         HsmStatus: js.UndefOr[HsmStatus] = js.undefined,
         IamRoles: js.UndefOr[ClusterIamRoleList] = js.undefined,
         KmsKeyId: js.UndefOr[String] = js.undefined,
@@ -842,6 +848,7 @@ package redshift {
         __v => __obj.update("AutomatedSnapshotRetentionPeriod", __v.asInstanceOf[js.Any])
       )
       AvailabilityZone.foreach(__v => __obj.update("AvailabilityZone", __v.asInstanceOf[js.Any]))
+      ClusterAvailabilityStatus.foreach(__v => __obj.update("ClusterAvailabilityStatus", __v.asInstanceOf[js.Any]))
       ClusterCreateTime.foreach(__v => __obj.update("ClusterCreateTime", __v.asInstanceOf[js.Any]))
       ClusterIdentifier.foreach(__v => __obj.update("ClusterIdentifier", __v.asInstanceOf[js.Any]))
       ClusterNodes.foreach(__v => __obj.update("ClusterNodes", __v.asInstanceOf[js.Any]))
@@ -863,6 +870,12 @@ package redshift {
       Encrypted.foreach(__v => __obj.update("Encrypted", __v.asInstanceOf[js.Any]))
       Endpoint.foreach(__v => __obj.update("Endpoint", __v.asInstanceOf[js.Any]))
       EnhancedVpcRouting.foreach(__v => __obj.update("EnhancedVpcRouting", __v.asInstanceOf[js.Any]))
+      ExpectedNextSnapshotScheduleTime.foreach(
+        __v => __obj.update("ExpectedNextSnapshotScheduleTime", __v.asInstanceOf[js.Any])
+      )
+      ExpectedNextSnapshotScheduleTimeStatus.foreach(
+        __v => __obj.update("ExpectedNextSnapshotScheduleTimeStatus", __v.asInstanceOf[js.Any])
+      )
       HsmStatus.foreach(__v => __obj.update("HsmStatus", __v.asInstanceOf[js.Any]))
       IamRoles.foreach(__v => __obj.update("IamRoles", __v.asInstanceOf[js.Any]))
       KmsKeyId.foreach(__v => __obj.update("KmsKeyId", __v.asInstanceOf[js.Any]))
@@ -889,6 +902,9 @@ package redshift {
     }
   }
 
+  /**
+    * <p/>
+    */
   @js.native
   trait ClusterAssociatedToSchedule extends js.Object {
     var ClusterIdentifier: js.UndefOr[String]
@@ -4697,6 +4713,7 @@ package redshift {
   @js.native
   trait ResizeProgressMessage extends js.Object {
     var AvgResizeRateInMegaBytesPerSecond: js.UndefOr[DoubleOptional]
+    var DataTransferProgressPercent: js.UndefOr[DoubleOptional]
     var ElapsedTimeInSeconds: js.UndefOr[LongOptional]
     var EstimatedTimeToCompletionInSeconds: js.UndefOr[LongOptional]
     var ImportTablesCompleted: js.UndefOr[ImportTablesCompleted]
@@ -4716,6 +4733,7 @@ package redshift {
   object ResizeProgressMessage {
     def apply(
         AvgResizeRateInMegaBytesPerSecond: js.UndefOr[DoubleOptional] = js.undefined,
+        DataTransferProgressPercent: js.UndefOr[DoubleOptional] = js.undefined,
         ElapsedTimeInSeconds: js.UndefOr[LongOptional] = js.undefined,
         EstimatedTimeToCompletionInSeconds: js.UndefOr[LongOptional] = js.undefined,
         ImportTablesCompleted: js.UndefOr[ImportTablesCompleted] = js.undefined,
@@ -4735,6 +4753,7 @@ package redshift {
       AvgResizeRateInMegaBytesPerSecond.foreach(
         __v => __obj.update("AvgResizeRateInMegaBytesPerSecond", __v.asInstanceOf[js.Any])
       )
+      DataTransferProgressPercent.foreach(__v => __obj.update("DataTransferProgressPercent", __v.asInstanceOf[js.Any]))
       ElapsedTimeInSeconds.foreach(__v => __obj.update("ElapsedTimeInSeconds", __v.asInstanceOf[js.Any]))
       EstimatedTimeToCompletionInSeconds.foreach(
         __v => __obj.update("EstimatedTimeToCompletionInSeconds", __v.asInstanceOf[js.Any])
@@ -5245,7 +5264,7 @@ package redshift {
 
   /**
     * The snapshot copy grant that grants Amazon Redshift permission to encrypt copied snapshots with the specified customer master key (CMK) from AWS KMS in the destination region.
-    *  For more information about managing snapshot copy grants, go to [[http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-db-encryption.html|Amazon Redshift Database Encryption]] in the <i>Amazon Redshift Cluster Management Guide</i>.
+    *  For more information about managing snapshot copy grants, go to [[https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-db-encryption.html|Amazon Redshift Database Encryption]] in the <i>Amazon Redshift Cluster Management Guide</i>.
     */
   @js.native
   trait SnapshotCopyGrant extends js.Object {

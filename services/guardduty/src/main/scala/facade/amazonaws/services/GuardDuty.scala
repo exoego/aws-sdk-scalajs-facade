@@ -8,75 +8,61 @@ import io.scalajs.nodejs
 import facade.amazonaws._
 
 package object guardduty {
-  type AccountDetails                         = js.Array[AccountDetail]
-  type AccountId                              = String
-  type AccountIds                             = js.Array[__string]
-  type Activate                               = Boolean
-  type Comments                               = String
-  type CountBySeverityFindingStatistic        = Int
-  type CreatedAt                              = String
-  type DetectorId                             = String
-  type DetectorIds                            = js.Array[DetectorId]
-  type DetectorStatus                         = String
-  type Domain                                 = String
-  type Email                                  = String
-  type Enable                                 = Boolean
-  type Eq                                     = js.Array[__string]
-  type Feedback                               = String
-  type FilterAction                           = String
-  type FilterDescription                      = String
-  type FilterName                             = String
-  type FilterNames                            = js.Array[FilterName]
-  type FilterRank                             = Int
-  type FindingId                              = String
-  type FindingIds                             = js.Array[FindingId]
-  type FindingPublishingFrequency             = String
-  type FindingStatisticType                   = String
-  type FindingStatisticTypes                  = js.Array[FindingStatisticType]
-  type FindingType                            = String
-  type FindingTypes                           = js.Array[FindingType]
-  type Findings                               = js.Array[Finding]
-  type InvitationId                           = String
-  type Invitations                            = js.Array[Invitation]
-  type InvitedAt                              = String
-  type IpSetFormat                            = String
-  type IpSetId                                = String
-  type IpSetIds                               = js.Array[IpSetId]
-  type IpSetStatus                            = String
-  type Ipv6Address                            = String
-  type Ipv6Addresses                          = js.Array[Ipv6Address]
-  type Location                               = String
-  type MasterId                               = String
-  type MaxResults                             = Int
-  type Members                                = js.Array[Member]
-  type Message                                = String
-  type Name                                   = String
-  type Neq                                    = js.Array[__string]
-  type NetworkInterfaceId                     = String
-  type NetworkInterfaces                      = js.Array[NetworkInterface]
-  type NextToken                              = String
-  type OrderBy                                = String
-  type PrivateDnsName                         = String
-  type PrivateIpAddress                       = String
-  type PrivateIpAddresses                     = js.Array[PrivateIpAddressDetails]
-  type ProductCodes                           = js.Array[ProductCode]
-  type SecurityGroups                         = js.Array[SecurityGroup]
-  type ServiceRole                            = String
-  type Tags                                   = js.Array[Tag]
-  type ThreatIntelSetFormat                   = String
-  type ThreatIntelSetId                       = String
-  type ThreatIntelSetIds                      = js.Array[ThreatIntelSetId]
-  type ThreatIntelSetStatus                   = String
-  type UnprocessedAccounts                    = js.Array[UnprocessedAccount]
-  type UpdatedAt                              = String
-  type __boolean                              = Boolean
-  type __double                               = Double
-  type __integer                              = Int
-  type __listOfPortProbeDetail                = js.Array[PortProbeDetail]
-  type __mapOfCondition                       = js.Dictionary[Condition]
-  type __mapOfCountBySeverityFindingStatistic = js.Dictionary[CountBySeverityFindingStatistic]
-  type __string                               = String
-  type __stringMin0Max64                      = String
+  type AccountDetails             = js.Array[AccountDetail]
+  type AccountId                  = String
+  type AccountIds                 = js.Array[AccountId]
+  type ClientToken                = String
+  type CountBySeverity            = js.Dictionary[Int]
+  type Criterion                  = js.Dictionary[Condition]
+  type DetectorId                 = String
+  type DetectorIds                = js.Array[DetectorId]
+  type DetectorStatus             = String
+  type Email                      = String
+  type Eq                         = js.Array[String]
+  type Equals                     = js.Array[String]
+  type Feedback                   = String
+  type FilterAction               = String
+  type FilterDescription          = String
+  type FilterName                 = String
+  type FilterNames                = js.Array[FilterName]
+  type FilterRank                 = Int
+  type FindingId                  = String
+  type FindingIds                 = js.Array[FindingId]
+  type FindingPublishingFrequency = String
+  type FindingStatisticType       = String
+  type FindingStatisticTypes      = js.Array[FindingStatisticType]
+  type FindingType                = String
+  type FindingTypes               = js.Array[FindingType]
+  type Findings                   = js.Array[Finding]
+  type GuardDutyArn               = String
+  type Invitations                = js.Array[Invitation]
+  type IpSetFormat                = String
+  type IpSetIds                   = js.Array[String]
+  type IpSetStatus                = String
+  type Ipv6Addresses              = js.Array[String]
+  type Location                   = String
+  type MaxResults                 = Int
+  type Members                    = js.Array[Member]
+  type Name                       = String
+  type Neq                        = js.Array[String]
+  type NetworkInterfaces          = js.Array[NetworkInterface]
+  type NotEquals                  = js.Array[String]
+  type OrderBy                    = String
+  type PortProbeDetails           = js.Array[PortProbeDetail]
+  type PrivateIpAddresses         = js.Array[PrivateIpAddressDetails]
+  type ProductCodes               = js.Array[ProductCode]
+  type SecurityGroups             = js.Array[SecurityGroup]
+  type TagKey                     = String
+  type TagKeyList                 = js.Array[TagKey]
+  type TagMap                     = js.Dictionary[TagValue]
+  type TagValue                   = String
+  type Tags                       = js.Array[Tag]
+  type ThreatIntelSetFormat       = String
+  type ThreatIntelSetIds          = js.Array[String]
+  type ThreatIntelSetStatus       = String
+  type ThreatIntelligenceDetails  = js.Array[ThreatIntelligenceDetail]
+  type ThreatNames                = js.Array[String]
+  type UnprocessedAccounts        = js.Array[UnprocessedAccount]
 
   implicit final class GuardDutyOps(val service: GuardDuty) extends AnyVal {
 
@@ -146,14 +132,20 @@ package object guardduty {
       service.listInvitations(params).promise.toFuture
     def listMembersFuture(params: ListMembersRequest): Future[ListMembersResponse] =
       service.listMembers(params).promise.toFuture
+    def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] =
+      service.listTagsForResource(params).promise.toFuture
     def listThreatIntelSetsFuture(params: ListThreatIntelSetsRequest): Future[ListThreatIntelSetsResponse] =
       service.listThreatIntelSets(params).promise.toFuture
     def startMonitoringMembersFuture(params: StartMonitoringMembersRequest): Future[StartMonitoringMembersResponse] =
       service.startMonitoringMembers(params).promise.toFuture
     def stopMonitoringMembersFuture(params: StopMonitoringMembersRequest): Future[StopMonitoringMembersResponse] =
       service.stopMonitoringMembers(params).promise.toFuture
+    def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] =
+      service.tagResource(params).promise.toFuture
     def unarchiveFindingsFuture(params: UnarchiveFindingsRequest): Future[UnarchiveFindingsResponse] =
       service.unarchiveFindings(params).promise.toFuture
+    def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] =
+      service.untagResource(params).promise.toFuture
     def updateDetectorFuture(params: UpdateDetectorRequest): Future[UpdateDetectorResponse] =
       service.updateDetector(params).promise.toFuture
     def updateFilterFuture(params: UpdateFilterRequest): Future[UpdateFilterResponse] =
@@ -208,11 +200,14 @@ package guardduty {
     def listIPSets(params: ListIPSetsRequest): Request[ListIPSetsResponse]                                  = js.native
     def listInvitations(params: ListInvitationsRequest): Request[ListInvitationsResponse]                   = js.native
     def listMembers(params: ListMembersRequest): Request[ListMembersResponse]                               = js.native
+    def listTagsForResource(params: ListTagsForResourceRequest): Request[ListTagsForResourceResponse]       = js.native
     def listThreatIntelSets(params: ListThreatIntelSetsRequest): Request[ListThreatIntelSetsResponse]       = js.native
     def startMonitoringMembers(params: StartMonitoringMembersRequest): Request[StartMonitoringMembersResponse] =
       js.native
     def stopMonitoringMembers(params: StopMonitoringMembersRequest): Request[StopMonitoringMembersResponse] = js.native
+    def tagResource(params: TagResourceRequest): Request[TagResourceResponse]                               = js.native
     def unarchiveFindings(params: UnarchiveFindingsRequest): Request[UnarchiveFindingsResponse]             = js.native
+    def untagResource(params: UntagResourceRequest): Request[UntagResourceResponse]                         = js.native
     def updateDetector(params: UpdateDetectorRequest): Request[UpdateDetectorResponse]                      = js.native
     def updateFilter(params: UpdateFilterRequest): Request[UpdateFilterResponse]                            = js.native
     def updateFindingsFeedback(params: UpdateFindingsFeedbackRequest): Request[UpdateFindingsFeedbackResponse] =
@@ -221,21 +216,18 @@ package guardduty {
     def updateThreatIntelSet(params: UpdateThreatIntelSetRequest): Request[UpdateThreatIntelSetResponse] = js.native
   }
 
-  /**
-    * AcceptInvitation request body.
-    */
   @js.native
   trait AcceptInvitationRequest extends js.Object {
-    var DetectorId: __string
-    var InvitationId: InvitationId
-    var MasterId: MasterId
+    var DetectorId: DetectorId
+    var InvitationId: String
+    var MasterId: String
   }
 
   object AcceptInvitationRequest {
     def apply(
-        DetectorId: __string,
-        InvitationId: InvitationId,
-        MasterId: MasterId
+        DetectorId: DetectorId,
+        InvitationId: String,
+        MasterId: String
     ): AcceptInvitationRequest = {
       val __obj = js.Dictionary[js.Any](
         "DetectorId"   -> DetectorId.asInstanceOf[js.Any],
@@ -260,22 +252,22 @@ package guardduty {
   }
 
   /**
-    * The IAM access key details (IAM user information) of a user that engaged in the activity that prompted GuardDuty to generate a finding.
+    * Contains information about the access keys.
     */
   @js.native
   trait AccessKeyDetails extends js.Object {
-    var AccessKeyId: js.UndefOr[__string]
-    var PrincipalId: js.UndefOr[__string]
-    var UserName: js.UndefOr[__string]
-    var UserType: js.UndefOr[__string]
+    var AccessKeyId: js.UndefOr[String]
+    var PrincipalId: js.UndefOr[String]
+    var UserName: js.UndefOr[String]
+    var UserType: js.UndefOr[String]
   }
 
   object AccessKeyDetails {
     def apply(
-        AccessKeyId: js.UndefOr[__string] = js.undefined,
-        PrincipalId: js.UndefOr[__string] = js.undefined,
-        UserName: js.UndefOr[__string] = js.undefined,
-        UserType: js.UndefOr[__string] = js.undefined
+        AccessKeyId: js.UndefOr[String] = js.undefined,
+        PrincipalId: js.UndefOr[String] = js.undefined,
+        UserName: js.UndefOr[String] = js.undefined,
+        UserType: js.UndefOr[String] = js.undefined
     ): AccessKeyDetails = {
       val __obj = js.Dictionary.empty[js.Any]
       AccessKeyId.foreach(__v => __obj.update("AccessKeyId", __v.asInstanceOf[js.Any]))
@@ -287,7 +279,7 @@ package guardduty {
   }
 
   /**
-    * An object containing the member's accountId and email address.
+    * Contains information about the account.
     */
   @js.native
   trait AccountDetail extends js.Object {
@@ -310,11 +302,11 @@ package guardduty {
   }
 
   /**
-    * Information about the activity described in a finding.
+    * Contains information about action.
     */
   @js.native
   trait Action extends js.Object {
-    var ActionType: js.UndefOr[__string]
+    var ActionType: js.UndefOr[String]
     var AwsApiCallAction: js.UndefOr[AwsApiCallAction]
     var DnsRequestAction: js.UndefOr[DnsRequestAction]
     var NetworkConnectionAction: js.UndefOr[NetworkConnectionAction]
@@ -323,7 +315,7 @@ package guardduty {
 
   object Action {
     def apply(
-        ActionType: js.UndefOr[__string] = js.undefined,
+        ActionType: js.UndefOr[String] = js.undefined,
         AwsApiCallAction: js.UndefOr[AwsApiCallAction] = js.undefined,
         DnsRequestAction: js.UndefOr[DnsRequestAction] = js.undefined,
         NetworkConnectionAction: js.UndefOr[NetworkConnectionAction] = js.undefined,
@@ -339,18 +331,15 @@ package guardduty {
     }
   }
 
-  /**
-    * ArchiveFindings request body.
-    */
   @js.native
   trait ArchiveFindingsRequest extends js.Object {
-    var DetectorId: __string
+    var DetectorId: DetectorId
     var FindingIds: FindingIds
   }
 
   object ArchiveFindingsRequest {
     def apply(
-        DetectorId: __string,
+        DetectorId: DetectorId,
         FindingIds: FindingIds
     ): ArchiveFindingsRequest = {
       val __obj = js.Dictionary[js.Any](
@@ -375,24 +364,24 @@ package guardduty {
   }
 
   /**
-    * Information about the AWS_API_CALL action described in this finding.
+    * Contains information about the API operation.
     */
   @js.native
   trait AwsApiCallAction extends js.Object {
-    var Api: js.UndefOr[__string]
-    var CallerType: js.UndefOr[__string]
+    var Api: js.UndefOr[String]
+    var CallerType: js.UndefOr[String]
     var DomainDetails: js.UndefOr[DomainDetails]
     var RemoteIpDetails: js.UndefOr[RemoteIpDetails]
-    var ServiceName: js.UndefOr[__string]
+    var ServiceName: js.UndefOr[String]
   }
 
   object AwsApiCallAction {
     def apply(
-        Api: js.UndefOr[__string] = js.undefined,
-        CallerType: js.UndefOr[__string] = js.undefined,
+        Api: js.UndefOr[String] = js.undefined,
+        CallerType: js.UndefOr[String] = js.undefined,
         DomainDetails: js.UndefOr[DomainDetails] = js.undefined,
         RemoteIpDetails: js.UndefOr[RemoteIpDetails] = js.undefined,
-        ServiceName: js.UndefOr[__string] = js.undefined
+        ServiceName: js.UndefOr[String] = js.undefined
     ): AwsApiCallAction = {
       val __obj = js.Dictionary.empty[js.Any]
       Api.foreach(__v => __obj.update("Api", __v.asInstanceOf[js.Any]))
@@ -405,16 +394,16 @@ package guardduty {
   }
 
   /**
-    * City information of the remote IP address.
+    * Contains information about the city associated with the IP address.
     */
   @js.native
   trait City extends js.Object {
-    var CityName: js.UndefOr[__string]
+    var CityName: js.UndefOr[String]
   }
 
   object City {
     def apply(
-        CityName: js.UndefOr[__string] = js.undefined
+        CityName: js.UndefOr[String] = js.undefined
     ): City = {
       val __obj = js.Dictionary.empty[js.Any]
       CityName.foreach(__v => __obj.update("CityName", __v.asInstanceOf[js.Any]))
@@ -423,51 +412,69 @@ package guardduty {
   }
 
   /**
-    * Finding attribute (for example, accountId) for which conditions and values must be specified when querying findings.
+    * Contains information about the condition.
     */
   @js.native
   trait Condition extends js.Object {
     var Eq: js.UndefOr[Eq]
-    var Gt: js.UndefOr[__integer]
-    var Gte: js.UndefOr[__integer]
-    var Lt: js.UndefOr[__integer]
-    var Lte: js.UndefOr[__integer]
+    var Equals: js.UndefOr[Equals]
+    var GreaterThan: js.UndefOr[Double]
+    var GreaterThanOrEqual: js.UndefOr[Double]
+    var Gt: js.UndefOr[Int]
+    var Gte: js.UndefOr[Int]
+    var LessThan: js.UndefOr[Double]
+    var LessThanOrEqual: js.UndefOr[Double]
+    var Lt: js.UndefOr[Int]
+    var Lte: js.UndefOr[Int]
     var Neq: js.UndefOr[Neq]
+    var NotEquals: js.UndefOr[NotEquals]
   }
 
   object Condition {
     def apply(
         Eq: js.UndefOr[Eq] = js.undefined,
-        Gt: js.UndefOr[__integer] = js.undefined,
-        Gte: js.UndefOr[__integer] = js.undefined,
-        Lt: js.UndefOr[__integer] = js.undefined,
-        Lte: js.UndefOr[__integer] = js.undefined,
-        Neq: js.UndefOr[Neq] = js.undefined
+        Equals: js.UndefOr[Equals] = js.undefined,
+        GreaterThan: js.UndefOr[Double] = js.undefined,
+        GreaterThanOrEqual: js.UndefOr[Double] = js.undefined,
+        Gt: js.UndefOr[Int] = js.undefined,
+        Gte: js.UndefOr[Int] = js.undefined,
+        LessThan: js.UndefOr[Double] = js.undefined,
+        LessThanOrEqual: js.UndefOr[Double] = js.undefined,
+        Lt: js.UndefOr[Int] = js.undefined,
+        Lte: js.UndefOr[Int] = js.undefined,
+        Neq: js.UndefOr[Neq] = js.undefined,
+        NotEquals: js.UndefOr[NotEquals] = js.undefined
     ): Condition = {
       val __obj = js.Dictionary.empty[js.Any]
       Eq.foreach(__v => __obj.update("Eq", __v.asInstanceOf[js.Any]))
+      Equals.foreach(__v => __obj.update("Equals", __v.asInstanceOf[js.Any]))
+      GreaterThan.foreach(__v => __obj.update("GreaterThan", __v.asInstanceOf[js.Any]))
+      GreaterThanOrEqual.foreach(__v => __obj.update("GreaterThanOrEqual", __v.asInstanceOf[js.Any]))
       Gt.foreach(__v => __obj.update("Gt", __v.asInstanceOf[js.Any]))
       Gte.foreach(__v => __obj.update("Gte", __v.asInstanceOf[js.Any]))
+      LessThan.foreach(__v => __obj.update("LessThan", __v.asInstanceOf[js.Any]))
+      LessThanOrEqual.foreach(__v => __obj.update("LessThanOrEqual", __v.asInstanceOf[js.Any]))
       Lt.foreach(__v => __obj.update("Lt", __v.asInstanceOf[js.Any]))
       Lte.foreach(__v => __obj.update("Lte", __v.asInstanceOf[js.Any]))
       Neq.foreach(__v => __obj.update("Neq", __v.asInstanceOf[js.Any]))
+      NotEquals.foreach(__v => __obj.update("NotEquals", __v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Condition]
     }
   }
 
   /**
-    * Country information of the remote IP address.
+    * Contains information about the country.
     */
   @js.native
   trait Country extends js.Object {
-    var CountryCode: js.UndefOr[__string]
-    var CountryName: js.UndefOr[__string]
+    var CountryCode: js.UndefOr[String]
+    var CountryName: js.UndefOr[String]
   }
 
   object Country {
     def apply(
-        CountryCode: js.UndefOr[__string] = js.undefined,
-        CountryName: js.UndefOr[__string] = js.undefined
+        CountryCode: js.UndefOr[String] = js.undefined,
+        CountryName: js.UndefOr[String] = js.undefined
     ): Country = {
       val __obj = js.Dictionary.empty[js.Any]
       CountryCode.foreach(__v => __obj.update("CountryCode", __v.asInstanceOf[js.Any]))
@@ -476,21 +483,20 @@ package guardduty {
     }
   }
 
-  /**
-    * CreateDetector request body.
-    */
   @js.native
   trait CreateDetectorRequest extends js.Object {
-    var Enable: Enable
-    var ClientToken: js.UndefOr[__stringMin0Max64]
+    var Enable: Boolean
+    var ClientToken: js.UndefOr[ClientToken]
     var FindingPublishingFrequency: js.UndefOr[FindingPublishingFrequency]
+    var Tags: js.UndefOr[TagMap]
   }
 
   object CreateDetectorRequest {
     def apply(
-        Enable: Enable,
-        ClientToken: js.UndefOr[__stringMin0Max64] = js.undefined,
-        FindingPublishingFrequency: js.UndefOr[FindingPublishingFrequency] = js.undefined
+        Enable: Boolean,
+        ClientToken: js.UndefOr[ClientToken] = js.undefined,
+        FindingPublishingFrequency: js.UndefOr[FindingPublishingFrequency] = js.undefined,
+        Tags: js.UndefOr[TagMap] = js.undefined
     ): CreateDetectorRequest = {
       val __obj = js.Dictionary[js.Any](
         "Enable" -> Enable.asInstanceOf[js.Any]
@@ -498,6 +504,7 @@ package guardduty {
 
       ClientToken.foreach(__v => __obj.update("ClientToken", __v.asInstanceOf[js.Any]))
       FindingPublishingFrequency.foreach(__v => __obj.update("FindingPublishingFrequency", __v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateDetectorRequest]
     }
   }
@@ -517,29 +524,28 @@ package guardduty {
     }
   }
 
-  /**
-    * CreateFilterRequest request body.
-    */
   @js.native
   trait CreateFilterRequest extends js.Object {
-    var DetectorId: __string
+    var DetectorId: DetectorId
     var FindingCriteria: FindingCriteria
     var Name: FilterName
     var Action: js.UndefOr[FilterAction]
-    var ClientToken: js.UndefOr[__stringMin0Max64]
+    var ClientToken: js.UndefOr[ClientToken]
     var Description: js.UndefOr[FilterDescription]
     var Rank: js.UndefOr[FilterRank]
+    var Tags: js.UndefOr[TagMap]
   }
 
   object CreateFilterRequest {
     def apply(
-        DetectorId: __string,
+        DetectorId: DetectorId,
         FindingCriteria: FindingCriteria,
         Name: FilterName,
         Action: js.UndefOr[FilterAction] = js.undefined,
-        ClientToken: js.UndefOr[__stringMin0Max64] = js.undefined,
+        ClientToken: js.UndefOr[ClientToken] = js.undefined,
         Description: js.UndefOr[FilterDescription] = js.undefined,
-        Rank: js.UndefOr[FilterRank] = js.undefined
+        Rank: js.UndefOr[FilterRank] = js.undefined,
+        Tags: js.UndefOr[TagMap] = js.undefined
     ): CreateFilterRequest = {
       val __obj = js.Dictionary[js.Any](
         "DetectorId"      -> DetectorId.asInstanceOf[js.Any],
@@ -551,46 +557,48 @@ package guardduty {
       ClientToken.foreach(__v => __obj.update("ClientToken", __v.asInstanceOf[js.Any]))
       Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
       Rank.foreach(__v => __obj.update("Rank", __v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateFilterRequest]
     }
   }
 
   @js.native
   trait CreateFilterResponse extends js.Object {
-    var Name: js.UndefOr[FilterName]
+    var Name: FilterName
   }
 
   object CreateFilterResponse {
     def apply(
-        Name: js.UndefOr[FilterName] = js.undefined
+        Name: FilterName
     ): CreateFilterResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dictionary[js.Any](
+        "Name" -> Name.asInstanceOf[js.Any]
+      )
+
       __obj.asInstanceOf[CreateFilterResponse]
     }
   }
 
-  /**
-    * CreateIPSet request body.
-    */
   @js.native
   trait CreateIPSetRequest extends js.Object {
-    var Activate: Activate
-    var DetectorId: __string
+    var Activate: Boolean
+    var DetectorId: DetectorId
     var Format: IpSetFormat
     var Location: Location
     var Name: Name
-    var ClientToken: js.UndefOr[__stringMin0Max64]
+    var ClientToken: js.UndefOr[ClientToken]
+    var Tags: js.UndefOr[TagMap]
   }
 
   object CreateIPSetRequest {
     def apply(
-        Activate: Activate,
-        DetectorId: __string,
+        Activate: Boolean,
+        DetectorId: DetectorId,
         Format: IpSetFormat,
         Location: Location,
         Name: Name,
-        ClientToken: js.UndefOr[__stringMin0Max64] = js.undefined
+        ClientToken: js.UndefOr[ClientToken] = js.undefined,
+        Tags: js.UndefOr[TagMap] = js.undefined
     ): CreateIPSetRequest = {
       val __obj = js.Dictionary[js.Any](
         "Activate"   -> Activate.asInstanceOf[js.Any],
@@ -601,38 +609,38 @@ package guardduty {
       )
 
       ClientToken.foreach(__v => __obj.update("ClientToken", __v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateIPSetRequest]
     }
   }
 
   @js.native
   trait CreateIPSetResponse extends js.Object {
-    var IpSetId: js.UndefOr[IpSetId]
+    var IpSetId: String
   }
 
   object CreateIPSetResponse {
     def apply(
-        IpSetId: js.UndefOr[IpSetId] = js.undefined
+        IpSetId: String
     ): CreateIPSetResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      IpSetId.foreach(__v => __obj.update("IpSetId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dictionary[js.Any](
+        "IpSetId" -> IpSetId.asInstanceOf[js.Any]
+      )
+
       __obj.asInstanceOf[CreateIPSetResponse]
     }
   }
 
-  /**
-    * CreateMembers request body.
-    */
   @js.native
   trait CreateMembersRequest extends js.Object {
     var AccountDetails: AccountDetails
-    var DetectorId: __string
+    var DetectorId: DetectorId
   }
 
   object CreateMembersRequest {
     def apply(
         AccountDetails: AccountDetails,
-        DetectorId: __string
+        DetectorId: DetectorId
     ): CreateMembersRequest = {
       val __obj = js.Dictionary[js.Any](
         "AccountDetails" -> AccountDetails.asInstanceOf[js.Any],
@@ -645,31 +653,30 @@ package guardduty {
 
   @js.native
   trait CreateMembersResponse extends js.Object {
-    var UnprocessedAccounts: js.UndefOr[UnprocessedAccounts]
+    var UnprocessedAccounts: UnprocessedAccounts
   }
 
   object CreateMembersResponse {
     def apply(
-        UnprocessedAccounts: js.UndefOr[UnprocessedAccounts] = js.undefined
+        UnprocessedAccounts: UnprocessedAccounts
     ): CreateMembersResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      UnprocessedAccounts.foreach(__v => __obj.update("UnprocessedAccounts", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dictionary[js.Any](
+        "UnprocessedAccounts" -> UnprocessedAccounts.asInstanceOf[js.Any]
+      )
+
       __obj.asInstanceOf[CreateMembersResponse]
     }
   }
 
-  /**
-    * CreateSampleFindings request body.
-    */
   @js.native
   trait CreateSampleFindingsRequest extends js.Object {
-    var DetectorId: __string
+    var DetectorId: DetectorId
     var FindingTypes: js.UndefOr[FindingTypes]
   }
 
   object CreateSampleFindingsRequest {
     def apply(
-        DetectorId: __string,
+        DetectorId: DetectorId,
         FindingTypes: js.UndefOr[FindingTypes] = js.undefined
     ): CreateSampleFindingsRequest = {
       val __obj = js.Dictionary[js.Any](
@@ -693,27 +700,26 @@ package guardduty {
     }
   }
 
-  /**
-    * CreateThreatIntelSet request body.
-    */
   @js.native
   trait CreateThreatIntelSetRequest extends js.Object {
-    var Activate: Activate
-    var DetectorId: __string
+    var Activate: Boolean
+    var DetectorId: DetectorId
     var Format: ThreatIntelSetFormat
     var Location: Location
     var Name: Name
-    var ClientToken: js.UndefOr[__stringMin0Max64]
+    var ClientToken: js.UndefOr[ClientToken]
+    var Tags: js.UndefOr[TagMap]
   }
 
   object CreateThreatIntelSetRequest {
     def apply(
-        Activate: Activate,
-        DetectorId: __string,
+        Activate: Boolean,
+        DetectorId: DetectorId,
         Format: ThreatIntelSetFormat,
         Location: Location,
         Name: Name,
-        ClientToken: js.UndefOr[__stringMin0Max64] = js.undefined
+        ClientToken: js.UndefOr[ClientToken] = js.undefined,
+        Tags: js.UndefOr[TagMap] = js.undefined
     ): CreateThreatIntelSetRequest = {
       val __obj = js.Dictionary[js.Any](
         "Activate"   -> Activate.asInstanceOf[js.Any],
@@ -724,28 +730,28 @@ package guardduty {
       )
 
       ClientToken.foreach(__v => __obj.update("ClientToken", __v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateThreatIntelSetRequest]
     }
   }
 
   @js.native
   trait CreateThreatIntelSetResponse extends js.Object {
-    var ThreatIntelSetId: js.UndefOr[ThreatIntelSetId]
+    var ThreatIntelSetId: String
   }
 
   object CreateThreatIntelSetResponse {
     def apply(
-        ThreatIntelSetId: js.UndefOr[ThreatIntelSetId] = js.undefined
+        ThreatIntelSetId: String
     ): CreateThreatIntelSetResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ThreatIntelSetId.foreach(__v => __obj.update("ThreatIntelSetId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dictionary[js.Any](
+        "ThreatIntelSetId" -> ThreatIntelSetId.asInstanceOf[js.Any]
+      )
+
       __obj.asInstanceOf[CreateThreatIntelSetResponse]
     }
   }
 
-  /**
-    * DeclineInvitations request body.
-    */
   @js.native
   trait DeclineInvitationsRequest extends js.Object {
     var AccountIds: AccountIds
@@ -765,27 +771,29 @@ package guardduty {
 
   @js.native
   trait DeclineInvitationsResponse extends js.Object {
-    var UnprocessedAccounts: js.UndefOr[UnprocessedAccounts]
+    var UnprocessedAccounts: UnprocessedAccounts
   }
 
   object DeclineInvitationsResponse {
     def apply(
-        UnprocessedAccounts: js.UndefOr[UnprocessedAccounts] = js.undefined
+        UnprocessedAccounts: UnprocessedAccounts
     ): DeclineInvitationsResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      UnprocessedAccounts.foreach(__v => __obj.update("UnprocessedAccounts", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dictionary[js.Any](
+        "UnprocessedAccounts" -> UnprocessedAccounts.asInstanceOf[js.Any]
+      )
+
       __obj.asInstanceOf[DeclineInvitationsResponse]
     }
   }
 
   @js.native
   trait DeleteDetectorRequest extends js.Object {
-    var DetectorId: __string
+    var DetectorId: DetectorId
   }
 
   object DeleteDetectorRequest {
     def apply(
-        DetectorId: __string
+        DetectorId: DetectorId
     ): DeleteDetectorRequest = {
       val __obj = js.Dictionary[js.Any](
         "DetectorId" -> DetectorId.asInstanceOf[js.Any]
@@ -809,14 +817,14 @@ package guardduty {
 
   @js.native
   trait DeleteFilterRequest extends js.Object {
-    var DetectorId: __string
-    var FilterName: __string
+    var DetectorId: DetectorId
+    var FilterName: String
   }
 
   object DeleteFilterRequest {
     def apply(
-        DetectorId: __string,
-        FilterName: __string
+        DetectorId: DetectorId,
+        FilterName: String
     ): DeleteFilterRequest = {
       val __obj = js.Dictionary[js.Any](
         "DetectorId" -> DetectorId.asInstanceOf[js.Any],
@@ -841,14 +849,14 @@ package guardduty {
 
   @js.native
   trait DeleteIPSetRequest extends js.Object {
-    var DetectorId: __string
-    var IpSetId: __string
+    var DetectorId: DetectorId
+    var IpSetId: String
   }
 
   object DeleteIPSetRequest {
     def apply(
-        DetectorId: __string,
-        IpSetId: __string
+        DetectorId: DetectorId,
+        IpSetId: String
     ): DeleteIPSetRequest = {
       val __obj = js.Dictionary[js.Any](
         "DetectorId" -> DetectorId.asInstanceOf[js.Any],
@@ -871,9 +879,6 @@ package guardduty {
     }
   }
 
-  /**
-    * DeleteInvitations request body.
-    */
   @js.native
   trait DeleteInvitationsRequest extends js.Object {
     var AccountIds: AccountIds
@@ -893,32 +898,31 @@ package guardduty {
 
   @js.native
   trait DeleteInvitationsResponse extends js.Object {
-    var UnprocessedAccounts: js.UndefOr[UnprocessedAccounts]
+    var UnprocessedAccounts: UnprocessedAccounts
   }
 
   object DeleteInvitationsResponse {
     def apply(
-        UnprocessedAccounts: js.UndefOr[UnprocessedAccounts] = js.undefined
+        UnprocessedAccounts: UnprocessedAccounts
     ): DeleteInvitationsResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      UnprocessedAccounts.foreach(__v => __obj.update("UnprocessedAccounts", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dictionary[js.Any](
+        "UnprocessedAccounts" -> UnprocessedAccounts.asInstanceOf[js.Any]
+      )
+
       __obj.asInstanceOf[DeleteInvitationsResponse]
     }
   }
 
-  /**
-    * DeleteMembers request body.
-    */
   @js.native
   trait DeleteMembersRequest extends js.Object {
     var AccountIds: AccountIds
-    var DetectorId: __string
+    var DetectorId: DetectorId
   }
 
   object DeleteMembersRequest {
     def apply(
         AccountIds: AccountIds,
-        DetectorId: __string
+        DetectorId: DetectorId
     ): DeleteMembersRequest = {
       val __obj = js.Dictionary[js.Any](
         "AccountIds" -> AccountIds.asInstanceOf[js.Any],
@@ -931,29 +935,31 @@ package guardduty {
 
   @js.native
   trait DeleteMembersResponse extends js.Object {
-    var UnprocessedAccounts: js.UndefOr[UnprocessedAccounts]
+    var UnprocessedAccounts: UnprocessedAccounts
   }
 
   object DeleteMembersResponse {
     def apply(
-        UnprocessedAccounts: js.UndefOr[UnprocessedAccounts] = js.undefined
+        UnprocessedAccounts: UnprocessedAccounts
     ): DeleteMembersResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      UnprocessedAccounts.foreach(__v => __obj.update("UnprocessedAccounts", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dictionary[js.Any](
+        "UnprocessedAccounts" -> UnprocessedAccounts.asInstanceOf[js.Any]
+      )
+
       __obj.asInstanceOf[DeleteMembersResponse]
     }
   }
 
   @js.native
   trait DeleteThreatIntelSetRequest extends js.Object {
-    var DetectorId: __string
-    var ThreatIntelSetId: __string
+    var DetectorId: DetectorId
+    var ThreatIntelSetId: String
   }
 
   object DeleteThreatIntelSetRequest {
     def apply(
-        DetectorId: __string,
-        ThreatIntelSetId: __string
+        DetectorId: DetectorId,
+        ThreatIntelSetId: String
     ): DeleteThreatIntelSetRequest = {
       val __obj = js.Dictionary[js.Any](
         "DetectorId"       -> DetectorId.asInstanceOf[js.Any],
@@ -976,9 +982,6 @@ package guardduty {
     }
   }
 
-  /**
-    * The status of detector.
-    */
   object DetectorStatusEnum {
     val ENABLED  = "ENABLED"
     val DISABLED = "DISABLED"
@@ -988,12 +991,12 @@ package guardduty {
 
   @js.native
   trait DisassociateFromMasterAccountRequest extends js.Object {
-    var DetectorId: __string
+    var DetectorId: DetectorId
   }
 
   object DisassociateFromMasterAccountRequest {
     def apply(
-        DetectorId: __string
+        DetectorId: DetectorId
     ): DisassociateFromMasterAccountRequest = {
       val __obj = js.Dictionary[js.Any](
         "DetectorId" -> DetectorId.asInstanceOf[js.Any]
@@ -1015,19 +1018,16 @@ package guardduty {
     }
   }
 
-  /**
-    * DisassociateMembers request body.
-    */
   @js.native
   trait DisassociateMembersRequest extends js.Object {
     var AccountIds: AccountIds
-    var DetectorId: __string
+    var DetectorId: DetectorId
   }
 
   object DisassociateMembersRequest {
     def apply(
         AccountIds: AccountIds,
-        DetectorId: __string
+        DetectorId: DetectorId
     ): DisassociateMembersRequest = {
       val __obj = js.Dictionary[js.Any](
         "AccountIds" -> AccountIds.asInstanceOf[js.Any],
@@ -1040,30 +1040,32 @@ package guardduty {
 
   @js.native
   trait DisassociateMembersResponse extends js.Object {
-    var UnprocessedAccounts: js.UndefOr[UnprocessedAccounts]
+    var UnprocessedAccounts: UnprocessedAccounts
   }
 
   object DisassociateMembersResponse {
     def apply(
-        UnprocessedAccounts: js.UndefOr[UnprocessedAccounts] = js.undefined
+        UnprocessedAccounts: UnprocessedAccounts
     ): DisassociateMembersResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      UnprocessedAccounts.foreach(__v => __obj.update("UnprocessedAccounts", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dictionary[js.Any](
+        "UnprocessedAccounts" -> UnprocessedAccounts.asInstanceOf[js.Any]
+      )
+
       __obj.asInstanceOf[DisassociateMembersResponse]
     }
   }
 
   /**
-    * Information about the DNS_REQUEST action described in this finding.
+    * Contains information about the DNS request.
     */
   @js.native
   trait DnsRequestAction extends js.Object {
-    var Domain: js.UndefOr[Domain]
+    var Domain: js.UndefOr[String]
   }
 
   object DnsRequestAction {
     def apply(
-        Domain: js.UndefOr[Domain] = js.undefined
+        Domain: js.UndefOr[String] = js.undefined
     ): DnsRequestAction = {
       val __obj = js.Dictionary.empty[js.Any]
       Domain.foreach(__v => __obj.update("Domain", __v.asInstanceOf[js.Any]))
@@ -1072,23 +1074,41 @@ package guardduty {
   }
 
   /**
-    * Domain information for the AWS API call.
+    * Contains information about the domain.
     */
   @js.native
-  trait DomainDetails extends js.Object {}
+  trait DomainDetails extends js.Object {
+    var Domain: js.UndefOr[String]
+  }
 
   object DomainDetails {
     def apply(
-        ): DomainDetails = {
+        Domain: js.UndefOr[String] = js.undefined
+    ): DomainDetails = {
       val __obj = js.Dictionary.empty[js.Any]
-
+      Domain.foreach(__v => __obj.update("Domain", __v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DomainDetails]
     }
   }
 
   /**
-    * Finding Feedback Value
+    * Contains information about the reason that the finding was generated.
     */
+  @js.native
+  trait Evidence extends js.Object {
+    var ThreatIntelligenceDetails: js.UndefOr[ThreatIntelligenceDetails]
+  }
+
+  object Evidence {
+    def apply(
+        ThreatIntelligenceDetails: js.UndefOr[ThreatIntelligenceDetails] = js.undefined
+    ): Evidence = {
+      val __obj = js.Dictionary.empty[js.Any]
+      ThreatIntelligenceDetails.foreach(__v => __obj.update("ThreatIntelligenceDetails", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Evidence]
+    }
+  }
+
   object FeedbackEnum {
     val USEFUL     = "USEFUL"
     val NOT_USEFUL = "NOT_USEFUL"
@@ -1096,9 +1116,6 @@ package guardduty {
     val values = IndexedSeq(USEFUL, NOT_USEFUL)
   }
 
-  /**
-    * The action associated with a filter.
-    */
   object FilterActionEnum {
     val NOOP    = "NOOP"
     val ARCHIVE = "ARCHIVE"
@@ -1107,44 +1124,44 @@ package guardduty {
   }
 
   /**
-    * Representation of a abnormal or suspicious activity.
+    * Contains information about the finding.
     */
   @js.native
   trait Finding extends js.Object {
-    var AccountId: __string
-    var Arn: __string
-    var CreatedAt: CreatedAt
-    var Id: __string
-    var Region: __string
+    var AccountId: String
+    var Arn: String
+    var CreatedAt: String
+    var Id: String
+    var Region: String
     var Resource: Resource
-    var SchemaVersion: __string
-    var Severity: __double
-    var Type: __string
-    var UpdatedAt: UpdatedAt
-    var Confidence: js.UndefOr[__double]
-    var Description: js.UndefOr[__string]
-    var Partition: js.UndefOr[__string]
+    var SchemaVersion: String
+    var Severity: Double
+    var Type: FindingType
+    var UpdatedAt: String
+    var Confidence: js.UndefOr[Double]
+    var Description: js.UndefOr[String]
+    var Partition: js.UndefOr[String]
     var Service: js.UndefOr[Service]
-    var Title: js.UndefOr[__string]
+    var Title: js.UndefOr[String]
   }
 
   object Finding {
     def apply(
-        AccountId: __string,
-        Arn: __string,
-        CreatedAt: CreatedAt,
-        Id: __string,
-        Region: __string,
+        AccountId: String,
+        Arn: String,
+        CreatedAt: String,
+        Id: String,
+        Region: String,
         Resource: Resource,
-        SchemaVersion: __string,
-        Severity: __double,
-        Type: __string,
-        UpdatedAt: UpdatedAt,
-        Confidence: js.UndefOr[__double] = js.undefined,
-        Description: js.UndefOr[__string] = js.undefined,
-        Partition: js.UndefOr[__string] = js.undefined,
+        SchemaVersion: String,
+        Severity: Double,
+        Type: FindingType,
+        UpdatedAt: String,
+        Confidence: js.UndefOr[Double] = js.undefined,
+        Description: js.UndefOr[String] = js.undefined,
+        Partition: js.UndefOr[String] = js.undefined,
         Service: js.UndefOr[Service] = js.undefined,
-        Title: js.UndefOr[__string] = js.undefined
+        Title: js.UndefOr[String] = js.undefined
     ): Finding = {
       val __obj = js.Dictionary[js.Any](
         "AccountId"     -> AccountId.asInstanceOf[js.Any],
@@ -1169,16 +1186,16 @@ package guardduty {
   }
 
   /**
-    * Represents the criteria used for querying findings.
+    * Contains finding criteria information.
     */
   @js.native
   trait FindingCriteria extends js.Object {
-    var Criterion: js.UndefOr[__mapOfCondition]
+    var Criterion: js.UndefOr[Criterion]
   }
 
   object FindingCriteria {
     def apply(
-        Criterion: js.UndefOr[__mapOfCondition] = js.undefined
+        Criterion: js.UndefOr[Criterion] = js.undefined
     ): FindingCriteria = {
       val __obj = js.Dictionary.empty[js.Any]
       Criterion.foreach(__v => __obj.update("Criterion", __v.asInstanceOf[js.Any]))
@@ -1186,9 +1203,6 @@ package guardduty {
     }
   }
 
-  /**
-    * A enum value that specifies how frequently customer got Finding updates published.
-    */
   object FindingPublishingFrequencyEnum {
     val FIFTEEN_MINUTES = "FIFTEEN_MINUTES"
     val ONE_HOUR        = "ONE_HOUR"
@@ -1197,9 +1211,6 @@ package guardduty {
     val values = IndexedSeq(FIFTEEN_MINUTES, ONE_HOUR, SIX_HOURS)
   }
 
-  /**
-    * The types of finding statistics.
-    */
   object FindingStatisticTypeEnum {
     val COUNT_BY_SEVERITY = "COUNT_BY_SEVERITY"
 
@@ -1207,16 +1218,16 @@ package guardduty {
   }
 
   /**
-    * Finding statistics object.
+    * Contains information about finding statistics.
     */
   @js.native
   trait FindingStatistics extends js.Object {
-    var CountBySeverity: js.UndefOr[__mapOfCountBySeverityFindingStatistic]
+    var CountBySeverity: js.UndefOr[CountBySeverity]
   }
 
   object FindingStatistics {
     def apply(
-        CountBySeverity: js.UndefOr[__mapOfCountBySeverityFindingStatistic] = js.undefined
+        CountBySeverity: js.UndefOr[CountBySeverity] = js.undefined
     ): FindingStatistics = {
       val __obj = js.Dictionary.empty[js.Any]
       CountBySeverity.foreach(__v => __obj.update("CountBySeverity", __v.asInstanceOf[js.Any]))
@@ -1225,18 +1236,18 @@ package guardduty {
   }
 
   /**
-    * Location information of the remote IP address.
+    * Contains information about the
     */
   @js.native
   trait GeoLocation extends js.Object {
-    var Lat: js.UndefOr[__double]
-    var Lon: js.UndefOr[__double]
+    var Lat: js.UndefOr[Double]
+    var Lon: js.UndefOr[Double]
   }
 
   object GeoLocation {
     def apply(
-        Lat: js.UndefOr[__double] = js.undefined,
-        Lon: js.UndefOr[__double] = js.undefined
+        Lat: js.UndefOr[Double] = js.undefined,
+        Lon: js.UndefOr[Double] = js.undefined
     ): GeoLocation = {
       val __obj = js.Dictionary.empty[js.Any]
       Lat.foreach(__v => __obj.update("Lat", __v.asInstanceOf[js.Any]))
@@ -1247,12 +1258,12 @@ package guardduty {
 
   @js.native
   trait GetDetectorRequest extends js.Object {
-    var DetectorId: __string
+    var DetectorId: DetectorId
   }
 
   object GetDetectorRequest {
     def apply(
-        DetectorId: __string
+        DetectorId: DetectorId
     ): GetDetectorRequest = {
       val __obj = js.Dictionary[js.Any](
         "DetectorId" -> DetectorId.asInstanceOf[js.Any]
@@ -1264,26 +1275,31 @@ package guardduty {
 
   @js.native
   trait GetDetectorResponse extends js.Object {
-    var CreatedAt: js.UndefOr[CreatedAt]
+    var ServiceRole: String
+    var Status: DetectorStatus
+    var CreatedAt: js.UndefOr[String]
     var FindingPublishingFrequency: js.UndefOr[FindingPublishingFrequency]
-    var ServiceRole: js.UndefOr[ServiceRole]
-    var Status: js.UndefOr[DetectorStatus]
-    var UpdatedAt: js.UndefOr[UpdatedAt]
+    var Tags: js.UndefOr[TagMap]
+    var UpdatedAt: js.UndefOr[String]
   }
 
   object GetDetectorResponse {
     def apply(
-        CreatedAt: js.UndefOr[CreatedAt] = js.undefined,
+        ServiceRole: String,
+        Status: DetectorStatus,
+        CreatedAt: js.UndefOr[String] = js.undefined,
         FindingPublishingFrequency: js.UndefOr[FindingPublishingFrequency] = js.undefined,
-        ServiceRole: js.UndefOr[ServiceRole] = js.undefined,
-        Status: js.UndefOr[DetectorStatus] = js.undefined,
-        UpdatedAt: js.UndefOr[UpdatedAt] = js.undefined
+        Tags: js.UndefOr[TagMap] = js.undefined,
+        UpdatedAt: js.UndefOr[String] = js.undefined
     ): GetDetectorResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dictionary[js.Any](
+        "ServiceRole" -> ServiceRole.asInstanceOf[js.Any],
+        "Status"      -> Status.asInstanceOf[js.Any]
+      )
+
       CreatedAt.foreach(__v => __obj.update("CreatedAt", __v.asInstanceOf[js.Any]))
       FindingPublishingFrequency.foreach(__v => __obj.update("FindingPublishingFrequency", __v.asInstanceOf[js.Any]))
-      ServiceRole.foreach(__v => __obj.update("ServiceRole", __v.asInstanceOf[js.Any]))
-      Status.foreach(__v => __obj.update("Status", __v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
       UpdatedAt.foreach(__v => __obj.update("UpdatedAt", __v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetDetectorResponse]
     }
@@ -1291,14 +1307,14 @@ package guardduty {
 
   @js.native
   trait GetFilterRequest extends js.Object {
-    var DetectorId: __string
-    var FilterName: __string
+    var DetectorId: DetectorId
+    var FilterName: String
   }
 
   object GetFilterRequest {
     def apply(
-        DetectorId: __string,
-        FilterName: __string
+        DetectorId: DetectorId,
+        FilterName: String
     ): GetFilterRequest = {
       val __obj = js.Dictionary[js.Any](
         "DetectorId" -> DetectorId.asInstanceOf[js.Any],
@@ -1311,44 +1327,46 @@ package guardduty {
 
   @js.native
   trait GetFilterResponse extends js.Object {
-    var Action: js.UndefOr[FilterAction]
+    var Action: FilterAction
+    var FindingCriteria: FindingCriteria
+    var Name: FilterName
     var Description: js.UndefOr[FilterDescription]
-    var FindingCriteria: js.UndefOr[FindingCriteria]
-    var Name: js.UndefOr[FilterName]
     var Rank: js.UndefOr[FilterRank]
+    var Tags: js.UndefOr[TagMap]
   }
 
   object GetFilterResponse {
     def apply(
-        Action: js.UndefOr[FilterAction] = js.undefined,
+        Action: FilterAction,
+        FindingCriteria: FindingCriteria,
+        Name: FilterName,
         Description: js.UndefOr[FilterDescription] = js.undefined,
-        FindingCriteria: js.UndefOr[FindingCriteria] = js.undefined,
-        Name: js.UndefOr[FilterName] = js.undefined,
-        Rank: js.UndefOr[FilterRank] = js.undefined
+        Rank: js.UndefOr[FilterRank] = js.undefined,
+        Tags: js.UndefOr[TagMap] = js.undefined
     ): GetFilterResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Action.foreach(__v => __obj.update("Action", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dictionary[js.Any](
+        "Action"          -> Action.asInstanceOf[js.Any],
+        "FindingCriteria" -> FindingCriteria.asInstanceOf[js.Any],
+        "Name"            -> Name.asInstanceOf[js.Any]
+      )
+
       Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
-      FindingCriteria.foreach(__v => __obj.update("FindingCriteria", __v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
       Rank.foreach(__v => __obj.update("Rank", __v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetFilterResponse]
     }
   }
 
-  /**
-    * GetFindings request body.
-    */
   @js.native
   trait GetFindingsRequest extends js.Object {
-    var DetectorId: __string
+    var DetectorId: DetectorId
     var FindingIds: FindingIds
     var SortCriteria: js.UndefOr[SortCriteria]
   }
 
   object GetFindingsRequest {
     def apply(
-        DetectorId: __string,
+        DetectorId: DetectorId,
         FindingIds: FindingIds,
         SortCriteria: js.UndefOr[SortCriteria] = js.undefined
     ): GetFindingsRequest = {
@@ -1364,32 +1382,31 @@ package guardduty {
 
   @js.native
   trait GetFindingsResponse extends js.Object {
-    var Findings: js.UndefOr[Findings]
+    var Findings: Findings
   }
 
   object GetFindingsResponse {
     def apply(
-        Findings: js.UndefOr[Findings] = js.undefined
+        Findings: Findings
     ): GetFindingsResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Findings.foreach(__v => __obj.update("Findings", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dictionary[js.Any](
+        "Findings" -> Findings.asInstanceOf[js.Any]
+      )
+
       __obj.asInstanceOf[GetFindingsResponse]
     }
   }
 
-  /**
-    * GetFindingsStatistics request body.
-    */
   @js.native
   trait GetFindingsStatisticsRequest extends js.Object {
-    var DetectorId: __string
+    var DetectorId: DetectorId
     var FindingStatisticTypes: FindingStatisticTypes
     var FindingCriteria: js.UndefOr[FindingCriteria]
   }
 
   object GetFindingsStatisticsRequest {
     def apply(
-        DetectorId: __string,
+        DetectorId: DetectorId,
         FindingStatisticTypes: FindingStatisticTypes,
         FindingCriteria: js.UndefOr[FindingCriteria] = js.undefined
     ): GetFindingsStatisticsRequest = {
@@ -1405,29 +1422,31 @@ package guardduty {
 
   @js.native
   trait GetFindingsStatisticsResponse extends js.Object {
-    var FindingStatistics: js.UndefOr[FindingStatistics]
+    var FindingStatistics: FindingStatistics
   }
 
   object GetFindingsStatisticsResponse {
     def apply(
-        FindingStatistics: js.UndefOr[FindingStatistics] = js.undefined
+        FindingStatistics: FindingStatistics
     ): GetFindingsStatisticsResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      FindingStatistics.foreach(__v => __obj.update("FindingStatistics", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dictionary[js.Any](
+        "FindingStatistics" -> FindingStatistics.asInstanceOf[js.Any]
+      )
+
       __obj.asInstanceOf[GetFindingsStatisticsResponse]
     }
   }
 
   @js.native
   trait GetIPSetRequest extends js.Object {
-    var DetectorId: __string
-    var IpSetId: __string
+    var DetectorId: DetectorId
+    var IpSetId: String
   }
 
   object GetIPSetRequest {
     def apply(
-        DetectorId: __string,
-        IpSetId: __string
+        DetectorId: DetectorId,
+        IpSetId: String
     ): GetIPSetRequest = {
       val __obj = js.Dictionary[js.Any](
         "DetectorId" -> DetectorId.asInstanceOf[js.Any],
@@ -1440,24 +1459,29 @@ package guardduty {
 
   @js.native
   trait GetIPSetResponse extends js.Object {
-    var Format: js.UndefOr[IpSetFormat]
-    var Location: js.UndefOr[Location]
-    var Name: js.UndefOr[Name]
-    var Status: js.UndefOr[IpSetStatus]
+    var Format: IpSetFormat
+    var Location: Location
+    var Name: Name
+    var Status: IpSetStatus
+    var Tags: js.UndefOr[TagMap]
   }
 
   object GetIPSetResponse {
     def apply(
-        Format: js.UndefOr[IpSetFormat] = js.undefined,
-        Location: js.UndefOr[Location] = js.undefined,
-        Name: js.UndefOr[Name] = js.undefined,
-        Status: js.UndefOr[IpSetStatus] = js.undefined
+        Format: IpSetFormat,
+        Location: Location,
+        Name: Name,
+        Status: IpSetStatus,
+        Tags: js.UndefOr[TagMap] = js.undefined
     ): GetIPSetResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Format.foreach(__v => __obj.update("Format", __v.asInstanceOf[js.Any]))
-      Location.foreach(__v => __obj.update("Location", __v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
-      Status.foreach(__v => __obj.update("Status", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dictionary[js.Any](
+        "Format"   -> Format.asInstanceOf[js.Any],
+        "Location" -> Location.asInstanceOf[js.Any],
+        "Name"     -> Name.asInstanceOf[js.Any],
+        "Status"   -> Status.asInstanceOf[js.Any]
+      )
+
+      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetIPSetResponse]
     }
   }
@@ -1476,12 +1500,12 @@ package guardduty {
 
   @js.native
   trait GetInvitationsCountResponse extends js.Object {
-    var InvitationsCount: js.UndefOr[__integer]
+    var InvitationsCount: js.UndefOr[Int]
   }
 
   object GetInvitationsCountResponse {
     def apply(
-        InvitationsCount: js.UndefOr[__integer] = js.undefined
+        InvitationsCount: js.UndefOr[Int] = js.undefined
     ): GetInvitationsCountResponse = {
       val __obj = js.Dictionary.empty[js.Any]
       InvitationsCount.foreach(__v => __obj.update("InvitationsCount", __v.asInstanceOf[js.Any]))
@@ -1491,12 +1515,12 @@ package guardduty {
 
   @js.native
   trait GetMasterAccountRequest extends js.Object {
-    var DetectorId: __string
+    var DetectorId: DetectorId
   }
 
   object GetMasterAccountRequest {
     def apply(
-        DetectorId: __string
+        DetectorId: DetectorId
     ): GetMasterAccountRequest = {
       val __obj = js.Dictionary[js.Any](
         "DetectorId" -> DetectorId.asInstanceOf[js.Any]
@@ -1508,32 +1532,31 @@ package guardduty {
 
   @js.native
   trait GetMasterAccountResponse extends js.Object {
-    var Master: js.UndefOr[Master]
+    var Master: Master
   }
 
   object GetMasterAccountResponse {
     def apply(
-        Master: js.UndefOr[Master] = js.undefined
+        Master: Master
     ): GetMasterAccountResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Master.foreach(__v => __obj.update("Master", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dictionary[js.Any](
+        "Master" -> Master.asInstanceOf[js.Any]
+      )
+
       __obj.asInstanceOf[GetMasterAccountResponse]
     }
   }
 
-  /**
-    * GetMembers request body.
-    */
   @js.native
   trait GetMembersRequest extends js.Object {
     var AccountIds: AccountIds
-    var DetectorId: __string
+    var DetectorId: DetectorId
   }
 
   object GetMembersRequest {
     def apply(
         AccountIds: AccountIds,
-        DetectorId: __string
+        DetectorId: DetectorId
     ): GetMembersRequest = {
       val __obj = js.Dictionary[js.Any](
         "AccountIds" -> AccountIds.asInstanceOf[js.Any],
@@ -1546,32 +1569,34 @@ package guardduty {
 
   @js.native
   trait GetMembersResponse extends js.Object {
-    var Members: js.UndefOr[Members]
-    var UnprocessedAccounts: js.UndefOr[UnprocessedAccounts]
+    var Members: Members
+    var UnprocessedAccounts: UnprocessedAccounts
   }
 
   object GetMembersResponse {
     def apply(
-        Members: js.UndefOr[Members] = js.undefined,
-        UnprocessedAccounts: js.UndefOr[UnprocessedAccounts] = js.undefined
+        Members: Members,
+        UnprocessedAccounts: UnprocessedAccounts
     ): GetMembersResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Members.foreach(__v => __obj.update("Members", __v.asInstanceOf[js.Any]))
-      UnprocessedAccounts.foreach(__v => __obj.update("UnprocessedAccounts", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dictionary[js.Any](
+        "Members"             -> Members.asInstanceOf[js.Any],
+        "UnprocessedAccounts" -> UnprocessedAccounts.asInstanceOf[js.Any]
+      )
+
       __obj.asInstanceOf[GetMembersResponse]
     }
   }
 
   @js.native
   trait GetThreatIntelSetRequest extends js.Object {
-    var DetectorId: __string
-    var ThreatIntelSetId: __string
+    var DetectorId: DetectorId
+    var ThreatIntelSetId: String
   }
 
   object GetThreatIntelSetRequest {
     def apply(
-        DetectorId: __string,
-        ThreatIntelSetId: __string
+        DetectorId: DetectorId,
+        ThreatIntelSetId: String
     ): GetThreatIntelSetRequest = {
       val __obj = js.Dictionary[js.Any](
         "DetectorId"       -> DetectorId.asInstanceOf[js.Any],
@@ -1584,41 +1609,46 @@ package guardduty {
 
   @js.native
   trait GetThreatIntelSetResponse extends js.Object {
-    var Format: js.UndefOr[ThreatIntelSetFormat]
-    var Location: js.UndefOr[Location]
-    var Name: js.UndefOr[Name]
-    var Status: js.UndefOr[ThreatIntelSetStatus]
+    var Format: ThreatIntelSetFormat
+    var Location: Location
+    var Name: Name
+    var Status: ThreatIntelSetStatus
+    var Tags: js.UndefOr[TagMap]
   }
 
   object GetThreatIntelSetResponse {
     def apply(
-        Format: js.UndefOr[ThreatIntelSetFormat] = js.undefined,
-        Location: js.UndefOr[Location] = js.undefined,
-        Name: js.UndefOr[Name] = js.undefined,
-        Status: js.UndefOr[ThreatIntelSetStatus] = js.undefined
+        Format: ThreatIntelSetFormat,
+        Location: Location,
+        Name: Name,
+        Status: ThreatIntelSetStatus,
+        Tags: js.UndefOr[TagMap] = js.undefined
     ): GetThreatIntelSetResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Format.foreach(__v => __obj.update("Format", __v.asInstanceOf[js.Any]))
-      Location.foreach(__v => __obj.update("Location", __v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
-      Status.foreach(__v => __obj.update("Status", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dictionary[js.Any](
+        "Format"   -> Format.asInstanceOf[js.Any],
+        "Location" -> Location.asInstanceOf[js.Any],
+        "Name"     -> Name.asInstanceOf[js.Any],
+        "Status"   -> Status.asInstanceOf[js.Any]
+      )
+
+      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetThreatIntelSetResponse]
     }
   }
 
   /**
-    * The profile information of the EC2 instance.
+    * Contains information about the instance profile.
     */
   @js.native
   trait IamInstanceProfile extends js.Object {
-    var Arn: js.UndefOr[__string]
-    var Id: js.UndefOr[__string]
+    var Arn: js.UndefOr[String]
+    var Id: js.UndefOr[String]
   }
 
   object IamInstanceProfile {
     def apply(
-        Arn: js.UndefOr[__string] = js.undefined,
-        Id: js.UndefOr[__string] = js.undefined
+        Arn: js.UndefOr[String] = js.undefined,
+        Id: js.UndefOr[String] = js.undefined
     ): IamInstanceProfile = {
       val __obj = js.Dictionary.empty[js.Any]
       Arn.foreach(__v => __obj.update("Arn", __v.asInstanceOf[js.Any]))
@@ -1628,36 +1658,36 @@ package guardduty {
   }
 
   /**
-    * The information about the EC2 instance associated with the activity that prompted GuardDuty to generate a finding.
+    * Contains information about the details of an instance.
     */
   @js.native
   trait InstanceDetails extends js.Object {
-    var AvailabilityZone: js.UndefOr[__string]
+    var AvailabilityZone: js.UndefOr[String]
     var IamInstanceProfile: js.UndefOr[IamInstanceProfile]
-    var ImageDescription: js.UndefOr[__string]
-    var ImageId: js.UndefOr[__string]
-    var InstanceId: js.UndefOr[__string]
-    var InstanceState: js.UndefOr[__string]
-    var InstanceType: js.UndefOr[__string]
-    var LaunchTime: js.UndefOr[__string]
+    var ImageDescription: js.UndefOr[String]
+    var ImageId: js.UndefOr[String]
+    var InstanceId: js.UndefOr[String]
+    var InstanceState: js.UndefOr[String]
+    var InstanceType: js.UndefOr[String]
+    var LaunchTime: js.UndefOr[String]
     var NetworkInterfaces: js.UndefOr[NetworkInterfaces]
-    var Platform: js.UndefOr[__string]
+    var Platform: js.UndefOr[String]
     var ProductCodes: js.UndefOr[ProductCodes]
     var Tags: js.UndefOr[Tags]
   }
 
   object InstanceDetails {
     def apply(
-        AvailabilityZone: js.UndefOr[__string] = js.undefined,
+        AvailabilityZone: js.UndefOr[String] = js.undefined,
         IamInstanceProfile: js.UndefOr[IamInstanceProfile] = js.undefined,
-        ImageDescription: js.UndefOr[__string] = js.undefined,
-        ImageId: js.UndefOr[__string] = js.undefined,
-        InstanceId: js.UndefOr[__string] = js.undefined,
-        InstanceState: js.UndefOr[__string] = js.undefined,
-        InstanceType: js.UndefOr[__string] = js.undefined,
-        LaunchTime: js.UndefOr[__string] = js.undefined,
+        ImageDescription: js.UndefOr[String] = js.undefined,
+        ImageId: js.UndefOr[String] = js.undefined,
+        InstanceId: js.UndefOr[String] = js.undefined,
+        InstanceState: js.UndefOr[String] = js.undefined,
+        InstanceType: js.UndefOr[String] = js.undefined,
+        LaunchTime: js.UndefOr[String] = js.undefined,
         NetworkInterfaces: js.UndefOr[NetworkInterfaces] = js.undefined,
-        Platform: js.UndefOr[__string] = js.undefined,
+        Platform: js.UndefOr[String] = js.undefined,
         ProductCodes: js.UndefOr[ProductCodes] = js.undefined,
         Tags: js.UndefOr[Tags] = js.undefined
     ): InstanceDetails = {
@@ -1679,22 +1709,22 @@ package guardduty {
   }
 
   /**
-    * Invitation from an AWS account to become the current account's master.
+    * Contains information about the invitation.
     */
   @js.native
   trait Invitation extends js.Object {
-    var AccountId: js.UndefOr[__string]
-    var InvitationId: js.UndefOr[InvitationId]
-    var InvitedAt: js.UndefOr[InvitedAt]
-    var RelationshipStatus: js.UndefOr[__string]
+    var AccountId: js.UndefOr[AccountId]
+    var InvitationId: js.UndefOr[String]
+    var InvitedAt: js.UndefOr[String]
+    var RelationshipStatus: js.UndefOr[String]
   }
 
   object Invitation {
     def apply(
-        AccountId: js.UndefOr[__string] = js.undefined,
-        InvitationId: js.UndefOr[InvitationId] = js.undefined,
-        InvitedAt: js.UndefOr[InvitedAt] = js.undefined,
-        RelationshipStatus: js.UndefOr[__string] = js.undefined
+        AccountId: js.UndefOr[AccountId] = js.undefined,
+        InvitationId: js.UndefOr[String] = js.undefined,
+        InvitedAt: js.UndefOr[String] = js.undefined,
+        RelationshipStatus: js.UndefOr[String] = js.undefined
     ): Invitation = {
       val __obj = js.Dictionary.empty[js.Any]
       AccountId.foreach(__v => __obj.update("AccountId", __v.asInstanceOf[js.Any]))
@@ -1705,23 +1735,20 @@ package guardduty {
     }
   }
 
-  /**
-    * InviteMembers request body.
-    */
   @js.native
   trait InviteMembersRequest extends js.Object {
     var AccountIds: AccountIds
-    var DetectorId: __string
-    var DisableEmailNotification: js.UndefOr[__boolean]
-    var Message: js.UndefOr[Message]
+    var DetectorId: DetectorId
+    var DisableEmailNotification: js.UndefOr[Boolean]
+    var Message: js.UndefOr[String]
   }
 
   object InviteMembersRequest {
     def apply(
         AccountIds: AccountIds,
-        DetectorId: __string,
-        DisableEmailNotification: js.UndefOr[__boolean] = js.undefined,
-        Message: js.UndefOr[Message] = js.undefined
+        DetectorId: DetectorId,
+        DisableEmailNotification: js.UndefOr[Boolean] = js.undefined,
+        Message: js.UndefOr[String] = js.undefined
     ): InviteMembersRequest = {
       val __obj = js.Dictionary[js.Any](
         "AccountIds" -> AccountIds.asInstanceOf[js.Any],
@@ -1736,22 +1763,21 @@ package guardduty {
 
   @js.native
   trait InviteMembersResponse extends js.Object {
-    var UnprocessedAccounts: js.UndefOr[UnprocessedAccounts]
+    var UnprocessedAccounts: UnprocessedAccounts
   }
 
   object InviteMembersResponse {
     def apply(
-        UnprocessedAccounts: js.UndefOr[UnprocessedAccounts] = js.undefined
+        UnprocessedAccounts: UnprocessedAccounts
     ): InviteMembersResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      UnprocessedAccounts.foreach(__v => __obj.update("UnprocessedAccounts", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dictionary[js.Any](
+        "UnprocessedAccounts" -> UnprocessedAccounts.asInstanceOf[js.Any]
+      )
+
       __obj.asInstanceOf[InviteMembersResponse]
     }
   }
 
-  /**
-    * The format of the ipSet.
-    */
   object IpSetFormatEnum {
     val TXT         = "TXT"
     val STIX        = "STIX"
@@ -1763,9 +1789,6 @@ package guardduty {
     val values = IndexedSeq(TXT, STIX, OTX_CSV, ALIEN_VAULT, PROOF_POINT, FIRE_EYE)
   }
 
-  /**
-    * The status of ipSet file uploaded.
-    */
   object IpSetStatusEnum {
     val INACTIVE       = "INACTIVE"
     val ACTIVATING     = "ACTIVATING"
@@ -1781,13 +1804,13 @@ package guardduty {
   @js.native
   trait ListDetectorsRequest extends js.Object {
     var MaxResults: js.UndefOr[MaxResults]
-    var NextToken: js.UndefOr[__string]
+    var NextToken: js.UndefOr[String]
   }
 
   object ListDetectorsRequest {
     def apply(
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
-        NextToken: js.UndefOr[__string] = js.undefined
+        NextToken: js.UndefOr[String] = js.undefined
     ): ListDetectorsRequest = {
       val __obj = js.Dictionary.empty[js.Any]
       MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
@@ -1798,17 +1821,19 @@ package guardduty {
 
   @js.native
   trait ListDetectorsResponse extends js.Object {
-    var DetectorIds: js.UndefOr[DetectorIds]
-    var NextToken: js.UndefOr[NextToken]
+    var DetectorIds: DetectorIds
+    var NextToken: js.UndefOr[String]
   }
 
   object ListDetectorsResponse {
     def apply(
-        DetectorIds: js.UndefOr[DetectorIds] = js.undefined,
-        NextToken: js.UndefOr[NextToken] = js.undefined
+        DetectorIds: DetectorIds,
+        NextToken: js.UndefOr[String] = js.undefined
     ): ListDetectorsResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      DetectorIds.foreach(__v => __obj.update("DetectorIds", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dictionary[js.Any](
+        "DetectorIds" -> DetectorIds.asInstanceOf[js.Any]
+      )
+
       NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListDetectorsResponse]
     }
@@ -1816,16 +1841,16 @@ package guardduty {
 
   @js.native
   trait ListFiltersRequest extends js.Object {
-    var DetectorId: __string
+    var DetectorId: DetectorId
     var MaxResults: js.UndefOr[MaxResults]
-    var NextToken: js.UndefOr[__string]
+    var NextToken: js.UndefOr[String]
   }
 
   object ListFiltersRequest {
     def apply(
-        DetectorId: __string,
+        DetectorId: DetectorId,
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
-        NextToken: js.UndefOr[__string] = js.undefined
+        NextToken: js.UndefOr[String] = js.undefined
     ): ListFiltersRequest = {
       val __obj = js.Dictionary[js.Any](
         "DetectorId" -> DetectorId.asInstanceOf[js.Any]
@@ -1839,40 +1864,39 @@ package guardduty {
 
   @js.native
   trait ListFiltersResponse extends js.Object {
-    var FilterNames: js.UndefOr[FilterNames]
-    var NextToken: js.UndefOr[NextToken]
+    var FilterNames: FilterNames
+    var NextToken: js.UndefOr[String]
   }
 
   object ListFiltersResponse {
     def apply(
-        FilterNames: js.UndefOr[FilterNames] = js.undefined,
-        NextToken: js.UndefOr[NextToken] = js.undefined
+        FilterNames: FilterNames,
+        NextToken: js.UndefOr[String] = js.undefined
     ): ListFiltersResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      FilterNames.foreach(__v => __obj.update("FilterNames", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dictionary[js.Any](
+        "FilterNames" -> FilterNames.asInstanceOf[js.Any]
+      )
+
       NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListFiltersResponse]
     }
   }
 
-  /**
-    * ListFindings request body.
-    */
   @js.native
   trait ListFindingsRequest extends js.Object {
-    var DetectorId: __string
+    var DetectorId: DetectorId
     var FindingCriteria: js.UndefOr[FindingCriteria]
     var MaxResults: js.UndefOr[MaxResults]
-    var NextToken: js.UndefOr[NextToken]
+    var NextToken: js.UndefOr[String]
     var SortCriteria: js.UndefOr[SortCriteria]
   }
 
   object ListFindingsRequest {
     def apply(
-        DetectorId: __string,
+        DetectorId: DetectorId,
         FindingCriteria: js.UndefOr[FindingCriteria] = js.undefined,
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
-        NextToken: js.UndefOr[NextToken] = js.undefined,
+        NextToken: js.UndefOr[String] = js.undefined,
         SortCriteria: js.UndefOr[SortCriteria] = js.undefined
     ): ListFindingsRequest = {
       val __obj = js.Dictionary[js.Any](
@@ -1889,17 +1913,19 @@ package guardduty {
 
   @js.native
   trait ListFindingsResponse extends js.Object {
-    var FindingIds: js.UndefOr[FindingIds]
-    var NextToken: js.UndefOr[NextToken]
+    var FindingIds: FindingIds
+    var NextToken: js.UndefOr[String]
   }
 
   object ListFindingsResponse {
     def apply(
-        FindingIds: js.UndefOr[FindingIds] = js.undefined,
-        NextToken: js.UndefOr[NextToken] = js.undefined
+        FindingIds: FindingIds,
+        NextToken: js.UndefOr[String] = js.undefined
     ): ListFindingsResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      FindingIds.foreach(__v => __obj.update("FindingIds", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dictionary[js.Any](
+        "FindingIds" -> FindingIds.asInstanceOf[js.Any]
+      )
+
       NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListFindingsResponse]
     }
@@ -1907,16 +1933,16 @@ package guardduty {
 
   @js.native
   trait ListIPSetsRequest extends js.Object {
-    var DetectorId: __string
+    var DetectorId: DetectorId
     var MaxResults: js.UndefOr[MaxResults]
-    var NextToken: js.UndefOr[__string]
+    var NextToken: js.UndefOr[String]
   }
 
   object ListIPSetsRequest {
     def apply(
-        DetectorId: __string,
+        DetectorId: DetectorId,
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
-        NextToken: js.UndefOr[__string] = js.undefined
+        NextToken: js.UndefOr[String] = js.undefined
     ): ListIPSetsRequest = {
       val __obj = js.Dictionary[js.Any](
         "DetectorId" -> DetectorId.asInstanceOf[js.Any]
@@ -1930,17 +1956,19 @@ package guardduty {
 
   @js.native
   trait ListIPSetsResponse extends js.Object {
-    var IpSetIds: js.UndefOr[IpSetIds]
-    var NextToken: js.UndefOr[NextToken]
+    var IpSetIds: IpSetIds
+    var NextToken: js.UndefOr[String]
   }
 
   object ListIPSetsResponse {
     def apply(
-        IpSetIds: js.UndefOr[IpSetIds] = js.undefined,
-        NextToken: js.UndefOr[NextToken] = js.undefined
+        IpSetIds: IpSetIds,
+        NextToken: js.UndefOr[String] = js.undefined
     ): ListIPSetsResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      IpSetIds.foreach(__v => __obj.update("IpSetIds", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dictionary[js.Any](
+        "IpSetIds" -> IpSetIds.asInstanceOf[js.Any]
+      )
+
       NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListIPSetsResponse]
     }
@@ -1949,13 +1977,13 @@ package guardduty {
   @js.native
   trait ListInvitationsRequest extends js.Object {
     var MaxResults: js.UndefOr[MaxResults]
-    var NextToken: js.UndefOr[__string]
+    var NextToken: js.UndefOr[String]
   }
 
   object ListInvitationsRequest {
     def apply(
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
-        NextToken: js.UndefOr[__string] = js.undefined
+        NextToken: js.UndefOr[String] = js.undefined
     ): ListInvitationsRequest = {
       val __obj = js.Dictionary.empty[js.Any]
       MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
@@ -1967,13 +1995,13 @@ package guardduty {
   @js.native
   trait ListInvitationsResponse extends js.Object {
     var Invitations: js.UndefOr[Invitations]
-    var NextToken: js.UndefOr[NextToken]
+    var NextToken: js.UndefOr[String]
   }
 
   object ListInvitationsResponse {
     def apply(
         Invitations: js.UndefOr[Invitations] = js.undefined,
-        NextToken: js.UndefOr[NextToken] = js.undefined
+        NextToken: js.UndefOr[String] = js.undefined
     ): ListInvitationsResponse = {
       val __obj = js.Dictionary.empty[js.Any]
       Invitations.foreach(__v => __obj.update("Invitations", __v.asInstanceOf[js.Any]))
@@ -1984,18 +2012,18 @@ package guardduty {
 
   @js.native
   trait ListMembersRequest extends js.Object {
-    var DetectorId: __string
+    var DetectorId: DetectorId
     var MaxResults: js.UndefOr[MaxResults]
-    var NextToken: js.UndefOr[__string]
-    var OnlyAssociated: js.UndefOr[__string]
+    var NextToken: js.UndefOr[String]
+    var OnlyAssociated: js.UndefOr[String]
   }
 
   object ListMembersRequest {
     def apply(
-        DetectorId: __string,
+        DetectorId: DetectorId,
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
-        NextToken: js.UndefOr[__string] = js.undefined,
-        OnlyAssociated: js.UndefOr[__string] = js.undefined
+        NextToken: js.UndefOr[String] = js.undefined,
+        OnlyAssociated: js.UndefOr[String] = js.undefined
     ): ListMembersRequest = {
       val __obj = js.Dictionary[js.Any](
         "DetectorId" -> DetectorId.asInstanceOf[js.Any]
@@ -2011,13 +2039,13 @@ package guardduty {
   @js.native
   trait ListMembersResponse extends js.Object {
     var Members: js.UndefOr[Members]
-    var NextToken: js.UndefOr[NextToken]
+    var NextToken: js.UndefOr[String]
   }
 
   object ListMembersResponse {
     def apply(
         Members: js.UndefOr[Members] = js.undefined,
-        NextToken: js.UndefOr[NextToken] = js.undefined
+        NextToken: js.UndefOr[String] = js.undefined
     ): ListMembersResponse = {
       val __obj = js.Dictionary.empty[js.Any]
       Members.foreach(__v => __obj.update("Members", __v.asInstanceOf[js.Any]))
@@ -2027,17 +2055,49 @@ package guardduty {
   }
 
   @js.native
+  trait ListTagsForResourceRequest extends js.Object {
+    var ResourceArn: GuardDutyArn
+  }
+
+  object ListTagsForResourceRequest {
+    def apply(
+        ResourceArn: GuardDutyArn
+    ): ListTagsForResourceRequest = {
+      val __obj = js.Dictionary[js.Any](
+        "ResourceArn" -> ResourceArn.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[ListTagsForResourceRequest]
+    }
+  }
+
+  @js.native
+  trait ListTagsForResourceResponse extends js.Object {
+    var Tags: js.UndefOr[TagMap]
+  }
+
+  object ListTagsForResourceResponse {
+    def apply(
+        Tags: js.UndefOr[TagMap] = js.undefined
+    ): ListTagsForResourceResponse = {
+      val __obj = js.Dictionary.empty[js.Any]
+      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListTagsForResourceResponse]
+    }
+  }
+
+  @js.native
   trait ListThreatIntelSetsRequest extends js.Object {
-    var DetectorId: __string
+    var DetectorId: DetectorId
     var MaxResults: js.UndefOr[MaxResults]
-    var NextToken: js.UndefOr[__string]
+    var NextToken: js.UndefOr[String]
   }
 
   object ListThreatIntelSetsRequest {
     def apply(
-        DetectorId: __string,
+        DetectorId: DetectorId,
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
-        NextToken: js.UndefOr[__string] = js.undefined
+        NextToken: js.UndefOr[String] = js.undefined
     ): ListThreatIntelSetsRequest = {
       val __obj = js.Dictionary[js.Any](
         "DetectorId" -> DetectorId.asInstanceOf[js.Any]
@@ -2051,35 +2111,37 @@ package guardduty {
 
   @js.native
   trait ListThreatIntelSetsResponse extends js.Object {
-    var NextToken: js.UndefOr[NextToken]
-    var ThreatIntelSetIds: js.UndefOr[ThreatIntelSetIds]
+    var ThreatIntelSetIds: ThreatIntelSetIds
+    var NextToken: js.UndefOr[String]
   }
 
   object ListThreatIntelSetsResponse {
     def apply(
-        NextToken: js.UndefOr[NextToken] = js.undefined,
-        ThreatIntelSetIds: js.UndefOr[ThreatIntelSetIds] = js.undefined
+        ThreatIntelSetIds: ThreatIntelSetIds,
+        NextToken: js.UndefOr[String] = js.undefined
     ): ListThreatIntelSetsResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dictionary[js.Any](
+        "ThreatIntelSetIds" -> ThreatIntelSetIds.asInstanceOf[js.Any]
+      )
+
       NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
-      ThreatIntelSetIds.foreach(__v => __obj.update("ThreatIntelSetIds", __v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListThreatIntelSetsResponse]
     }
   }
 
   /**
-    * Local port information of the connection.
+    * Contains information about the port for the local connection.
     */
   @js.native
   trait LocalPortDetails extends js.Object {
-    var Port: js.UndefOr[__integer]
-    var PortName: js.UndefOr[__string]
+    var Port: js.UndefOr[Int]
+    var PortName: js.UndefOr[String]
   }
 
   object LocalPortDetails {
     def apply(
-        Port: js.UndefOr[__integer] = js.undefined,
-        PortName: js.UndefOr[__string] = js.undefined
+        Port: js.UndefOr[Int] = js.undefined,
+        PortName: js.UndefOr[String] = js.undefined
     ): LocalPortDetails = {
       val __obj = js.Dictionary.empty[js.Any]
       Port.foreach(__v => __obj.update("Port", __v.asInstanceOf[js.Any]))
@@ -2089,22 +2151,22 @@ package guardduty {
   }
 
   /**
-    * Contains details about the master account.
+    * Contains information about the Master account and invitation.
     */
   @js.native
   trait Master extends js.Object {
-    var AccountId: js.UndefOr[__string]
-    var InvitationId: js.UndefOr[InvitationId]
-    var InvitedAt: js.UndefOr[InvitedAt]
-    var RelationshipStatus: js.UndefOr[__string]
+    var AccountId: js.UndefOr[AccountId]
+    var InvitationId: js.UndefOr[String]
+    var InvitedAt: js.UndefOr[String]
+    var RelationshipStatus: js.UndefOr[String]
   }
 
   object Master {
     def apply(
-        AccountId: js.UndefOr[__string] = js.undefined,
-        InvitationId: js.UndefOr[InvitationId] = js.undefined,
-        InvitedAt: js.UndefOr[InvitedAt] = js.undefined,
-        RelationshipStatus: js.UndefOr[__string] = js.undefined
+        AccountId: js.UndefOr[AccountId] = js.undefined,
+        InvitationId: js.UndefOr[String] = js.undefined,
+        InvitedAt: js.UndefOr[String] = js.undefined,
+        RelationshipStatus: js.UndefOr[String] = js.undefined
     ): Master = {
       val __obj = js.Dictionary.empty[js.Any]
       AccountId.foreach(__v => __obj.update("AccountId", __v.asInstanceOf[js.Any]))
@@ -2116,28 +2178,28 @@ package guardduty {
   }
 
   /**
-    * Contains details about the member account.
+    * Continas information about the member account
     */
   @js.native
   trait Member extends js.Object {
     var AccountId: AccountId
     var Email: Email
-    var MasterId: MasterId
-    var RelationshipStatus: __string
-    var UpdatedAt: UpdatedAt
+    var MasterId: String
+    var RelationshipStatus: String
+    var UpdatedAt: String
     var DetectorId: js.UndefOr[DetectorId]
-    var InvitedAt: js.UndefOr[InvitedAt]
+    var InvitedAt: js.UndefOr[String]
   }
 
   object Member {
     def apply(
         AccountId: AccountId,
         Email: Email,
-        MasterId: MasterId,
-        RelationshipStatus: __string,
-        UpdatedAt: UpdatedAt,
+        MasterId: String,
+        RelationshipStatus: String,
+        UpdatedAt: String,
         DetectorId: js.UndefOr[DetectorId] = js.undefined,
-        InvitedAt: js.UndefOr[InvitedAt] = js.undefined
+        InvitedAt: js.UndefOr[String] = js.undefined
     ): Member = {
       val __obj = js.Dictionary[js.Any](
         "AccountId"          -> AccountId.asInstanceOf[js.Any],
@@ -2154,24 +2216,24 @@ package guardduty {
   }
 
   /**
-    * Information about the NETWORK_CONNECTION action described in this finding.
+    * Contains information about the network connection.
     */
   @js.native
   trait NetworkConnectionAction extends js.Object {
-    var Blocked: js.UndefOr[__boolean]
-    var ConnectionDirection: js.UndefOr[__string]
+    var Blocked: js.UndefOr[Boolean]
+    var ConnectionDirection: js.UndefOr[String]
     var LocalPortDetails: js.UndefOr[LocalPortDetails]
-    var Protocol: js.UndefOr[__string]
+    var Protocol: js.UndefOr[String]
     var RemoteIpDetails: js.UndefOr[RemoteIpDetails]
     var RemotePortDetails: js.UndefOr[RemotePortDetails]
   }
 
   object NetworkConnectionAction {
     def apply(
-        Blocked: js.UndefOr[__boolean] = js.undefined,
-        ConnectionDirection: js.UndefOr[__string] = js.undefined,
+        Blocked: js.UndefOr[Boolean] = js.undefined,
+        ConnectionDirection: js.UndefOr[String] = js.undefined,
         LocalPortDetails: js.UndefOr[LocalPortDetails] = js.undefined,
-        Protocol: js.UndefOr[__string] = js.undefined,
+        Protocol: js.UndefOr[String] = js.undefined,
         RemoteIpDetails: js.UndefOr[RemoteIpDetails] = js.undefined,
         RemotePortDetails: js.UndefOr[RemotePortDetails] = js.undefined
     ): NetworkConnectionAction = {
@@ -2187,34 +2249,34 @@ package guardduty {
   }
 
   /**
-    * The network interface information of the EC2 instance.
+    * Contains information about the network interface.
     */
   @js.native
   trait NetworkInterface extends js.Object {
     var Ipv6Addresses: js.UndefOr[Ipv6Addresses]
-    var NetworkInterfaceId: js.UndefOr[NetworkInterfaceId]
-    var PrivateDnsName: js.UndefOr[PrivateDnsName]
-    var PrivateIpAddress: js.UndefOr[PrivateIpAddress]
+    var NetworkInterfaceId: js.UndefOr[String]
+    var PrivateDnsName: js.UndefOr[String]
+    var PrivateIpAddress: js.UndefOr[String]
     var PrivateIpAddresses: js.UndefOr[PrivateIpAddresses]
-    var PublicDnsName: js.UndefOr[__string]
-    var PublicIp: js.UndefOr[__string]
+    var PublicDnsName: js.UndefOr[String]
+    var PublicIp: js.UndefOr[String]
     var SecurityGroups: js.UndefOr[SecurityGroups]
-    var SubnetId: js.UndefOr[__string]
-    var VpcId: js.UndefOr[__string]
+    var SubnetId: js.UndefOr[String]
+    var VpcId: js.UndefOr[String]
   }
 
   object NetworkInterface {
     def apply(
         Ipv6Addresses: js.UndefOr[Ipv6Addresses] = js.undefined,
-        NetworkInterfaceId: js.UndefOr[NetworkInterfaceId] = js.undefined,
-        PrivateDnsName: js.UndefOr[PrivateDnsName] = js.undefined,
-        PrivateIpAddress: js.UndefOr[PrivateIpAddress] = js.undefined,
+        NetworkInterfaceId: js.UndefOr[String] = js.undefined,
+        PrivateDnsName: js.UndefOr[String] = js.undefined,
+        PrivateIpAddress: js.UndefOr[String] = js.undefined,
         PrivateIpAddresses: js.UndefOr[PrivateIpAddresses] = js.undefined,
-        PublicDnsName: js.UndefOr[__string] = js.undefined,
-        PublicIp: js.UndefOr[__string] = js.undefined,
+        PublicDnsName: js.UndefOr[String] = js.undefined,
+        PublicIp: js.UndefOr[String] = js.undefined,
         SecurityGroups: js.UndefOr[SecurityGroups] = js.undefined,
-        SubnetId: js.UndefOr[__string] = js.undefined,
-        VpcId: js.UndefOr[__string] = js.undefined
+        SubnetId: js.UndefOr[String] = js.undefined,
+        VpcId: js.UndefOr[String] = js.undefined
     ): NetworkInterface = {
       val __obj = js.Dictionary.empty[js.Any]
       Ipv6Addresses.foreach(__v => __obj.update("Ipv6Addresses", __v.asInstanceOf[js.Any]))
@@ -2239,22 +2301,22 @@ package guardduty {
   }
 
   /**
-    * ISP Organization information of the remote IP address.
+    * Continas information about the organization.
     */
   @js.native
   trait Organization extends js.Object {
-    var Asn: js.UndefOr[__string]
-    var AsnOrg: js.UndefOr[__string]
-    var Isp: js.UndefOr[__string]
-    var Org: js.UndefOr[__string]
+    var Asn: js.UndefOr[String]
+    var AsnOrg: js.UndefOr[String]
+    var Isp: js.UndefOr[String]
+    var Org: js.UndefOr[String]
   }
 
   object Organization {
     def apply(
-        Asn: js.UndefOr[__string] = js.undefined,
-        AsnOrg: js.UndefOr[__string] = js.undefined,
-        Isp: js.UndefOr[__string] = js.undefined,
-        Org: js.UndefOr[__string] = js.undefined
+        Asn: js.UndefOr[String] = js.undefined,
+        AsnOrg: js.UndefOr[String] = js.undefined,
+        Isp: js.UndefOr[String] = js.undefined,
+        Org: js.UndefOr[String] = js.undefined
     ): Organization = {
       val __obj = js.Dictionary.empty[js.Any]
       Asn.foreach(__v => __obj.update("Asn", __v.asInstanceOf[js.Any]))
@@ -2266,18 +2328,18 @@ package guardduty {
   }
 
   /**
-    * Information about the PORT_PROBE action described in this finding.
+    * Contains information about the port probe.
     */
   @js.native
   trait PortProbeAction extends js.Object {
-    var Blocked: js.UndefOr[__boolean]
-    var PortProbeDetails: js.UndefOr[__listOfPortProbeDetail]
+    var Blocked: js.UndefOr[Boolean]
+    var PortProbeDetails: js.UndefOr[PortProbeDetails]
   }
 
   object PortProbeAction {
     def apply(
-        Blocked: js.UndefOr[__boolean] = js.undefined,
-        PortProbeDetails: js.UndefOr[__listOfPortProbeDetail] = js.undefined
+        Blocked: js.UndefOr[Boolean] = js.undefined,
+        PortProbeDetails: js.UndefOr[PortProbeDetails] = js.undefined
     ): PortProbeAction = {
       val __obj = js.Dictionary.empty[js.Any]
       Blocked.foreach(__v => __obj.update("Blocked", __v.asInstanceOf[js.Any]))
@@ -2287,7 +2349,7 @@ package guardduty {
   }
 
   /**
-    * Details about the port probe finding.
+    * Contains information about the port probe details.
     */
   @js.native
   trait PortProbeDetail extends js.Object {
@@ -2308,18 +2370,18 @@ package guardduty {
   }
 
   /**
-    * Other private IP address information of the EC2 instance.
+    * Contains information about the private IP address.
     */
   @js.native
   trait PrivateIpAddressDetails extends js.Object {
-    var PrivateDnsName: js.UndefOr[PrivateDnsName]
-    var PrivateIpAddress: js.UndefOr[PrivateIpAddress]
+    var PrivateDnsName: js.UndefOr[String]
+    var PrivateIpAddress: js.UndefOr[String]
   }
 
   object PrivateIpAddressDetails {
     def apply(
-        PrivateDnsName: js.UndefOr[PrivateDnsName] = js.undefined,
-        PrivateIpAddress: js.UndefOr[PrivateIpAddress] = js.undefined
+        PrivateDnsName: js.UndefOr[String] = js.undefined,
+        PrivateIpAddress: js.UndefOr[String] = js.undefined
     ): PrivateIpAddressDetails = {
       val __obj = js.Dictionary.empty[js.Any]
       PrivateDnsName.foreach(__v => __obj.update("PrivateDnsName", __v.asInstanceOf[js.Any]))
@@ -2329,18 +2391,18 @@ package guardduty {
   }
 
   /**
-    * The product code of the EC2 instance.
+    * Contains information about the product code.
     */
   @js.native
   trait ProductCode extends js.Object {
-    var Code: js.UndefOr[__string]
-    var ProductType: js.UndefOr[__string]
+    var Code: js.UndefOr[String]
+    var ProductType: js.UndefOr[String]
   }
 
   object ProductCode {
     def apply(
-        Code: js.UndefOr[__string] = js.undefined,
-        ProductType: js.UndefOr[__string] = js.undefined
+        Code: js.UndefOr[String] = js.undefined,
+        ProductType: js.UndefOr[String] = js.undefined
     ): ProductCode = {
       val __obj = js.Dictionary.empty[js.Any]
       Code.foreach(__v => __obj.update("Code", __v.asInstanceOf[js.Any]))
@@ -2350,14 +2412,14 @@ package guardduty {
   }
 
   /**
-    * Remote IP information of the connection.
+    * Continas information about the remote IP address.
     */
   @js.native
   trait RemoteIpDetails extends js.Object {
     var City: js.UndefOr[City]
     var Country: js.UndefOr[Country]
     var GeoLocation: js.UndefOr[GeoLocation]
-    var IpAddressV4: js.UndefOr[__string]
+    var IpAddressV4: js.UndefOr[String]
     var Organization: js.UndefOr[Organization]
   }
 
@@ -2366,7 +2428,7 @@ package guardduty {
         City: js.UndefOr[City] = js.undefined,
         Country: js.UndefOr[Country] = js.undefined,
         GeoLocation: js.UndefOr[GeoLocation] = js.undefined,
-        IpAddressV4: js.UndefOr[__string] = js.undefined,
+        IpAddressV4: js.UndefOr[String] = js.undefined,
         Organization: js.UndefOr[Organization] = js.undefined
     ): RemoteIpDetails = {
       val __obj = js.Dictionary.empty[js.Any]
@@ -2380,18 +2442,18 @@ package guardduty {
   }
 
   /**
-    * Remote port information of the connection.
+    * Contains information about the remote port.
     */
   @js.native
   trait RemotePortDetails extends js.Object {
-    var Port: js.UndefOr[__integer]
-    var PortName: js.UndefOr[__string]
+    var Port: js.UndefOr[Int]
+    var PortName: js.UndefOr[String]
   }
 
   object RemotePortDetails {
     def apply(
-        Port: js.UndefOr[__integer] = js.undefined,
-        PortName: js.UndefOr[__string] = js.undefined
+        Port: js.UndefOr[Int] = js.undefined,
+        PortName: js.UndefOr[String] = js.undefined
     ): RemotePortDetails = {
       val __obj = js.Dictionary.empty[js.Any]
       Port.foreach(__v => __obj.update("Port", __v.asInstanceOf[js.Any]))
@@ -2401,20 +2463,20 @@ package guardduty {
   }
 
   /**
-    * The AWS resource associated with the activity that prompted GuardDuty to generate a finding.
+    * Contains information about the resource.
     */
   @js.native
   trait Resource extends js.Object {
     var AccessKeyDetails: js.UndefOr[AccessKeyDetails]
     var InstanceDetails: js.UndefOr[InstanceDetails]
-    var ResourceType: js.UndefOr[__string]
+    var ResourceType: js.UndefOr[String]
   }
 
   object Resource {
     def apply(
         AccessKeyDetails: js.UndefOr[AccessKeyDetails] = js.undefined,
         InstanceDetails: js.UndefOr[InstanceDetails] = js.undefined,
-        ResourceType: js.UndefOr[__string] = js.undefined
+        ResourceType: js.UndefOr[String] = js.undefined
     ): Resource = {
       val __obj = js.Dictionary.empty[js.Any]
       AccessKeyDetails.foreach(__v => __obj.update("AccessKeyDetails", __v.asInstanceOf[js.Any]))
@@ -2425,18 +2487,18 @@ package guardduty {
   }
 
   /**
-    * Security groups associated with the EC2 instance.
+    * Contains information about the security group.
     */
   @js.native
   trait SecurityGroup extends js.Object {
-    var GroupId: js.UndefOr[__string]
-    var GroupName: js.UndefOr[__string]
+    var GroupId: js.UndefOr[String]
+    var GroupName: js.UndefOr[String]
   }
 
   object SecurityGroup {
     def apply(
-        GroupId: js.UndefOr[__string] = js.undefined,
-        GroupName: js.UndefOr[__string] = js.undefined
+        GroupId: js.UndefOr[String] = js.undefined,
+        GroupName: js.UndefOr[String] = js.undefined
     ): SecurityGroup = {
       val __obj = js.Dictionary.empty[js.Any]
       GroupId.foreach(__v => __obj.update("GroupId", __v.asInstanceOf[js.Any]))
@@ -2446,32 +2508,34 @@ package guardduty {
   }
 
   /**
-    * Additional information assigned to the generated finding by GuardDuty.
+    * Contains information about the service.
     */
   @js.native
   trait Service extends js.Object {
     var Action: js.UndefOr[Action]
-    var Archived: js.UndefOr[__boolean]
-    var Count: js.UndefOr[__integer]
+    var Archived: js.UndefOr[Boolean]
+    var Count: js.UndefOr[Int]
     var DetectorId: js.UndefOr[DetectorId]
-    var EventFirstSeen: js.UndefOr[__string]
-    var EventLastSeen: js.UndefOr[__string]
-    var ResourceRole: js.UndefOr[__string]
-    var ServiceName: js.UndefOr[__string]
-    var UserFeedback: js.UndefOr[__string]
+    var EventFirstSeen: js.UndefOr[String]
+    var EventLastSeen: js.UndefOr[String]
+    var Evidence: js.UndefOr[Evidence]
+    var ResourceRole: js.UndefOr[String]
+    var ServiceName: js.UndefOr[String]
+    var UserFeedback: js.UndefOr[String]
   }
 
   object Service {
     def apply(
         Action: js.UndefOr[Action] = js.undefined,
-        Archived: js.UndefOr[__boolean] = js.undefined,
-        Count: js.UndefOr[__integer] = js.undefined,
+        Archived: js.UndefOr[Boolean] = js.undefined,
+        Count: js.UndefOr[Int] = js.undefined,
         DetectorId: js.UndefOr[DetectorId] = js.undefined,
-        EventFirstSeen: js.UndefOr[__string] = js.undefined,
-        EventLastSeen: js.UndefOr[__string] = js.undefined,
-        ResourceRole: js.UndefOr[__string] = js.undefined,
-        ServiceName: js.UndefOr[__string] = js.undefined,
-        UserFeedback: js.UndefOr[__string] = js.undefined
+        EventFirstSeen: js.UndefOr[String] = js.undefined,
+        EventLastSeen: js.UndefOr[String] = js.undefined,
+        Evidence: js.UndefOr[Evidence] = js.undefined,
+        ResourceRole: js.UndefOr[String] = js.undefined,
+        ServiceName: js.UndefOr[String] = js.undefined,
+        UserFeedback: js.UndefOr[String] = js.undefined
     ): Service = {
       val __obj = js.Dictionary.empty[js.Any]
       Action.foreach(__v => __obj.update("Action", __v.asInstanceOf[js.Any]))
@@ -2480,6 +2544,7 @@ package guardduty {
       DetectorId.foreach(__v => __obj.update("DetectorId", __v.asInstanceOf[js.Any]))
       EventFirstSeen.foreach(__v => __obj.update("EventFirstSeen", __v.asInstanceOf[js.Any]))
       EventLastSeen.foreach(__v => __obj.update("EventLastSeen", __v.asInstanceOf[js.Any]))
+      Evidence.foreach(__v => __obj.update("Evidence", __v.asInstanceOf[js.Any]))
       ResourceRole.foreach(__v => __obj.update("ResourceRole", __v.asInstanceOf[js.Any]))
       ServiceName.foreach(__v => __obj.update("ServiceName", __v.asInstanceOf[js.Any]))
       UserFeedback.foreach(__v => __obj.update("UserFeedback", __v.asInstanceOf[js.Any]))
@@ -2488,17 +2553,17 @@ package guardduty {
   }
 
   /**
-    * Represents the criteria used for sorting findings.
+    * Contains information about the criteria for sorting.
     */
   @js.native
   trait SortCriteria extends js.Object {
-    var AttributeName: js.UndefOr[__string]
+    var AttributeName: js.UndefOr[String]
     var OrderBy: js.UndefOr[OrderBy]
   }
 
   object SortCriteria {
     def apply(
-        AttributeName: js.UndefOr[__string] = js.undefined,
+        AttributeName: js.UndefOr[String] = js.undefined,
         OrderBy: js.UndefOr[OrderBy] = js.undefined
     ): SortCriteria = {
       val __obj = js.Dictionary.empty[js.Any]
@@ -2508,19 +2573,16 @@ package guardduty {
     }
   }
 
-  /**
-    * StartMonitoringMembers request body.
-    */
   @js.native
   trait StartMonitoringMembersRequest extends js.Object {
     var AccountIds: AccountIds
-    var DetectorId: __string
+    var DetectorId: DetectorId
   }
 
   object StartMonitoringMembersRequest {
     def apply(
         AccountIds: AccountIds,
-        DetectorId: __string
+        DetectorId: DetectorId
     ): StartMonitoringMembersRequest = {
       val __obj = js.Dictionary[js.Any](
         "AccountIds" -> AccountIds.asInstanceOf[js.Any],
@@ -2533,32 +2595,31 @@ package guardduty {
 
   @js.native
   trait StartMonitoringMembersResponse extends js.Object {
-    var UnprocessedAccounts: js.UndefOr[UnprocessedAccounts]
+    var UnprocessedAccounts: UnprocessedAccounts
   }
 
   object StartMonitoringMembersResponse {
     def apply(
-        UnprocessedAccounts: js.UndefOr[UnprocessedAccounts] = js.undefined
+        UnprocessedAccounts: UnprocessedAccounts
     ): StartMonitoringMembersResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      UnprocessedAccounts.foreach(__v => __obj.update("UnprocessedAccounts", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dictionary[js.Any](
+        "UnprocessedAccounts" -> UnprocessedAccounts.asInstanceOf[js.Any]
+      )
+
       __obj.asInstanceOf[StartMonitoringMembersResponse]
     }
   }
 
-  /**
-    * StopMonitoringMembers request body.
-    */
   @js.native
   trait StopMonitoringMembersRequest extends js.Object {
     var AccountIds: AccountIds
-    var DetectorId: __string
+    var DetectorId: DetectorId
   }
 
   object StopMonitoringMembersRequest {
     def apply(
         AccountIds: AccountIds,
-        DetectorId: __string
+        DetectorId: DetectorId
     ): StopMonitoringMembersRequest = {
       val __obj = js.Dictionary[js.Any](
         "AccountIds" -> AccountIds.asInstanceOf[js.Any],
@@ -2571,32 +2632,34 @@ package guardduty {
 
   @js.native
   trait StopMonitoringMembersResponse extends js.Object {
-    var UnprocessedAccounts: js.UndefOr[UnprocessedAccounts]
+    var UnprocessedAccounts: UnprocessedAccounts
   }
 
   object StopMonitoringMembersResponse {
     def apply(
-        UnprocessedAccounts: js.UndefOr[UnprocessedAccounts] = js.undefined
+        UnprocessedAccounts: UnprocessedAccounts
     ): StopMonitoringMembersResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      UnprocessedAccounts.foreach(__v => __obj.update("UnprocessedAccounts", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dictionary[js.Any](
+        "UnprocessedAccounts" -> UnprocessedAccounts.asInstanceOf[js.Any]
+      )
+
       __obj.asInstanceOf[StopMonitoringMembersResponse]
     }
   }
 
   /**
-    * A tag of the EC2 instance.
+    * Contains information about the tag associated with the resource.
     */
   @js.native
   trait Tag extends js.Object {
-    var Key: js.UndefOr[__string]
-    var Value: js.UndefOr[__string]
+    var Key: js.UndefOr[String]
+    var Value: js.UndefOr[String]
   }
 
   object Tag {
     def apply(
-        Key: js.UndefOr[__string] = js.undefined,
-        Value: js.UndefOr[__string] = js.undefined
+        Key: js.UndefOr[String] = js.undefined,
+        Value: js.UndefOr[String] = js.undefined
     ): Tag = {
       val __obj = js.Dictionary.empty[js.Any]
       Key.foreach(__v => __obj.update("Key", __v.asInstanceOf[js.Any]))
@@ -2605,9 +2668,38 @@ package guardduty {
     }
   }
 
-  /**
-    * The format of the threatIntelSet.
-    */
+  @js.native
+  trait TagResourceRequest extends js.Object {
+    var ResourceArn: GuardDutyArn
+    var Tags: TagMap
+  }
+
+  object TagResourceRequest {
+    def apply(
+        ResourceArn: GuardDutyArn,
+        Tags: TagMap
+    ): TagResourceRequest = {
+      val __obj = js.Dictionary[js.Any](
+        "ResourceArn" -> ResourceArn.asInstanceOf[js.Any],
+        "Tags"        -> Tags.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[TagResourceRequest]
+    }
+  }
+
+  @js.native
+  trait TagResourceResponse extends js.Object {}
+
+  object TagResourceResponse {
+    def apply(
+        ): TagResourceResponse = {
+      val __obj = js.Dictionary.empty[js.Any]
+
+      __obj.asInstanceOf[TagResourceResponse]
+    }
+  }
+
   object ThreatIntelSetFormatEnum {
     val TXT         = "TXT"
     val STIX        = "STIX"
@@ -2619,9 +2711,6 @@ package guardduty {
     val values = IndexedSeq(TXT, STIX, OTX_CSV, ALIEN_VAULT, PROOF_POINT, FIRE_EYE)
   }
 
-  /**
-    * The status of threatIntelSet file uploaded.
-    */
   object ThreatIntelSetStatusEnum {
     val INACTIVE       = "INACTIVE"
     val ACTIVATING     = "ACTIVATING"
@@ -2635,17 +2724,35 @@ package guardduty {
   }
 
   /**
-    * UnarchiveFindings request body.
+    * An instance of a threat intelligence detail that constitutes evidence for the finding.
     */
   @js.native
+  trait ThreatIntelligenceDetail extends js.Object {
+    var ThreatListName: js.UndefOr[String]
+    var ThreatNames: js.UndefOr[ThreatNames]
+  }
+
+  object ThreatIntelligenceDetail {
+    def apply(
+        ThreatListName: js.UndefOr[String] = js.undefined,
+        ThreatNames: js.UndefOr[ThreatNames] = js.undefined
+    ): ThreatIntelligenceDetail = {
+      val __obj = js.Dictionary.empty[js.Any]
+      ThreatListName.foreach(__v => __obj.update("ThreatListName", __v.asInstanceOf[js.Any]))
+      ThreatNames.foreach(__v => __obj.update("ThreatNames", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ThreatIntelligenceDetail]
+    }
+  }
+
+  @js.native
   trait UnarchiveFindingsRequest extends js.Object {
-    var DetectorId: __string
+    var DetectorId: DetectorId
     var FindingIds: FindingIds
   }
 
   object UnarchiveFindingsRequest {
     def apply(
-        DetectorId: __string,
+        DetectorId: DetectorId,
         FindingIds: FindingIds
     ): UnarchiveFindingsRequest = {
       val __obj = js.Dictionary[js.Any](
@@ -2670,18 +2777,18 @@ package guardduty {
   }
 
   /**
-    * An object containing the unprocessed account and a result string explaining why it was unprocessed.
+    * Contains information about the accounts that were not processed.
     */
   @js.native
   trait UnprocessedAccount extends js.Object {
-    var AccountId: __string
-    var Result: __string
+    var AccountId: AccountId
+    var Result: String
   }
 
   object UnprocessedAccount {
     def apply(
-        AccountId: __string,
-        Result: __string
+        AccountId: AccountId,
+        Result: String
     ): UnprocessedAccount = {
       val __obj = js.Dictionary[js.Any](
         "AccountId" -> AccountId.asInstanceOf[js.Any],
@@ -2692,20 +2799,49 @@ package guardduty {
     }
   }
 
-  /**
-    * UpdateDetector request body.
-    */
+  @js.native
+  trait UntagResourceRequest extends js.Object {
+    var ResourceArn: GuardDutyArn
+    var TagKeys: TagKeyList
+  }
+
+  object UntagResourceRequest {
+    def apply(
+        ResourceArn: GuardDutyArn,
+        TagKeys: TagKeyList
+    ): UntagResourceRequest = {
+      val __obj = js.Dictionary[js.Any](
+        "ResourceArn" -> ResourceArn.asInstanceOf[js.Any],
+        "TagKeys"     -> TagKeys.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[UntagResourceRequest]
+    }
+  }
+
+  @js.native
+  trait UntagResourceResponse extends js.Object {}
+
+  object UntagResourceResponse {
+    def apply(
+        ): UntagResourceResponse = {
+      val __obj = js.Dictionary.empty[js.Any]
+
+      __obj.asInstanceOf[UntagResourceResponse]
+    }
+  }
+
   @js.native
   trait UpdateDetectorRequest extends js.Object {
-    var DetectorId: __string
-    var Enable: js.UndefOr[Enable]
+    var DetectorId: DetectorId
+    var Enable: js.UndefOr[Boolean]
     var FindingPublishingFrequency: js.UndefOr[FindingPublishingFrequency]
   }
 
   object UpdateDetectorRequest {
     def apply(
-        DetectorId: __string,
-        Enable: js.UndefOr[Enable] = js.undefined,
+        DetectorId: DetectorId,
+        Enable: js.UndefOr[Boolean] = js.undefined,
         FindingPublishingFrequency: js.UndefOr[FindingPublishingFrequency] = js.undefined
     ): UpdateDetectorRequest = {
       val __obj = js.Dictionary[js.Any](
@@ -2730,13 +2866,10 @@ package guardduty {
     }
   }
 
-  /**
-    * UpdateFilterRequest request body.
-    */
   @js.native
   trait UpdateFilterRequest extends js.Object {
-    var DetectorId: __string
-    var FilterName: __string
+    var DetectorId: DetectorId
+    var FilterName: String
     var Action: js.UndefOr[FilterAction]
     var Description: js.UndefOr[FilterDescription]
     var FindingCriteria: js.UndefOr[FindingCriteria]
@@ -2745,8 +2878,8 @@ package guardduty {
 
   object UpdateFilterRequest {
     def apply(
-        DetectorId: __string,
-        FilterName: __string,
+        DetectorId: DetectorId,
+        FilterName: String,
         Action: js.UndefOr[FilterAction] = js.undefined,
         Description: js.UndefOr[FilterDescription] = js.undefined,
         FindingCriteria: js.UndefOr[FindingCriteria] = js.undefined,
@@ -2767,36 +2900,35 @@ package guardduty {
 
   @js.native
   trait UpdateFilterResponse extends js.Object {
-    var Name: js.UndefOr[FilterName]
+    var Name: FilterName
   }
 
   object UpdateFilterResponse {
     def apply(
-        Name: js.UndefOr[FilterName] = js.undefined
+        Name: FilterName
     ): UpdateFilterResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dictionary[js.Any](
+        "Name" -> Name.asInstanceOf[js.Any]
+      )
+
       __obj.asInstanceOf[UpdateFilterResponse]
     }
   }
 
-  /**
-    * UpdateFindingsFeedback request body.
-    */
   @js.native
   trait UpdateFindingsFeedbackRequest extends js.Object {
-    var DetectorId: __string
+    var DetectorId: DetectorId
     var Feedback: Feedback
     var FindingIds: FindingIds
-    var Comments: js.UndefOr[Comments]
+    var Comments: js.UndefOr[String]
   }
 
   object UpdateFindingsFeedbackRequest {
     def apply(
-        DetectorId: __string,
+        DetectorId: DetectorId,
         Feedback: Feedback,
         FindingIds: FindingIds,
-        Comments: js.UndefOr[Comments] = js.undefined
+        Comments: js.UndefOr[String] = js.undefined
     ): UpdateFindingsFeedbackRequest = {
       val __obj = js.Dictionary[js.Any](
         "DetectorId" -> DetectorId.asInstanceOf[js.Any],
@@ -2821,23 +2953,20 @@ package guardduty {
     }
   }
 
-  /**
-    * UpdateIPSet request body.
-    */
   @js.native
   trait UpdateIPSetRequest extends js.Object {
-    var DetectorId: __string
-    var IpSetId: __string
-    var Activate: js.UndefOr[Activate]
+    var DetectorId: DetectorId
+    var IpSetId: String
+    var Activate: js.UndefOr[Boolean]
     var Location: js.UndefOr[Location]
     var Name: js.UndefOr[Name]
   }
 
   object UpdateIPSetRequest {
     def apply(
-        DetectorId: __string,
-        IpSetId: __string,
-        Activate: js.UndefOr[Activate] = js.undefined,
+        DetectorId: DetectorId,
+        IpSetId: String,
+        Activate: js.UndefOr[Boolean] = js.undefined,
         Location: js.UndefOr[Location] = js.undefined,
         Name: js.UndefOr[Name] = js.undefined
     ): UpdateIPSetRequest = {
@@ -2865,23 +2994,20 @@ package guardduty {
     }
   }
 
-  /**
-    * UpdateThreatIntelSet request body.
-    */
   @js.native
   trait UpdateThreatIntelSetRequest extends js.Object {
-    var DetectorId: __string
-    var ThreatIntelSetId: __string
-    var Activate: js.UndefOr[Activate]
+    var DetectorId: DetectorId
+    var ThreatIntelSetId: String
+    var Activate: js.UndefOr[Boolean]
     var Location: js.UndefOr[Location]
     var Name: js.UndefOr[Name]
   }
 
   object UpdateThreatIntelSetRequest {
     def apply(
-        DetectorId: __string,
-        ThreatIntelSetId: __string,
-        Activate: js.UndefOr[Activate] = js.undefined,
+        DetectorId: DetectorId,
+        ThreatIntelSetId: String,
+        Activate: js.UndefOr[Boolean] = js.undefined,
         Location: js.UndefOr[Location] = js.undefined,
         Name: js.UndefOr[Name] = js.undefined
     ): UpdateThreatIntelSetRequest = {

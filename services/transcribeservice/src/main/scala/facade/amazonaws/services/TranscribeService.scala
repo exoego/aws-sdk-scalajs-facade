@@ -245,8 +245,31 @@ package transcribeservice {
     val `fr-FR` = "fr-FR"
     val `it-IT` = "it-IT"
     val `ko-KR` = "ko-KR"
+    val `es-ES` = "es-ES"
+    val `en-IN` = "en-IN"
+    val `hi-IN` = "hi-IN"
+    val `ar-SA` = "ar-SA"
+    val `ru-RU` = "ru-RU"
+    val `zh-CN` = "zh-CN"
 
-    val values = IndexedSeq(`en-US`, `es-US`, `en-AU`, `fr-CA`, `en-GB`, `de-DE`, `pt-BR`, `fr-FR`, `it-IT`, `ko-KR`)
+    val values = IndexedSeq(
+      `en-US`,
+      `es-US`,
+      `en-AU`,
+      `fr-CA`,
+      `en-GB`,
+      `de-DE`,
+      `pt-BR`,
+      `fr-FR`,
+      `it-IT`,
+      `ko-KR`,
+      `es-ES`,
+      `en-IN`,
+      `hi-IN`,
+      `ar-SA`,
+      `ru-RU`,
+      `zh-CN`
+    )
   }
 
   @js.native

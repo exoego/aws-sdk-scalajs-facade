@@ -46,9 +46,13 @@ package object comprehend {
   type NumberOfTopicsInteger                      = Int
   type PartOfSpeechTagType                        = String
   type S3Uri                                      = String
+  type SecurityGroupId                            = String
+  type SecurityGroupIds                           = js.Array[SecurityGroupId]
   type SentimentDetectionJobPropertiesList        = js.Array[SentimentDetectionJobProperties]
   type SentimentType                              = String
   type StringList                                 = js.Array[String]
+  type SubnetId                                   = String
+  type Subnets                                    = js.Array[SubnetId]
   type SyntaxLanguageCode                         = String
   type TagKey                                     = String
   type TagKeyList                                 = js.Array[TagKey]
@@ -686,6 +690,7 @@ package comprehend {
     var OutputDataConfig: js.UndefOr[DocumentClassifierOutputDataConfig]
     var Tags: js.UndefOr[TagList]
     var VolumeKmsKeyId: js.UndefOr[KmsKeyId]
+    var VpcConfig: js.UndefOr[VpcConfig]
   }
 
   object CreateDocumentClassifierRequest {
@@ -697,7 +702,8 @@ package comprehend {
         ClientRequestToken: js.UndefOr[ClientRequestTokenString] = js.undefined,
         OutputDataConfig: js.UndefOr[DocumentClassifierOutputDataConfig] = js.undefined,
         Tags: js.UndefOr[TagList] = js.undefined,
-        VolumeKmsKeyId: js.UndefOr[KmsKeyId] = js.undefined
+        VolumeKmsKeyId: js.UndefOr[KmsKeyId] = js.undefined,
+        VpcConfig: js.UndefOr[VpcConfig] = js.undefined
     ): CreateDocumentClassifierRequest = {
       val __obj = js.Dictionary[js.Any](
         "DataAccessRoleArn"      -> DataAccessRoleArn.asInstanceOf[js.Any],
@@ -710,6 +716,7 @@ package comprehend {
       OutputDataConfig.foreach(__v => __obj.update("OutputDataConfig", __v.asInstanceOf[js.Any]))
       Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
       VolumeKmsKeyId.foreach(__v => __obj.update("VolumeKmsKeyId", __v.asInstanceOf[js.Any]))
+      VpcConfig.foreach(__v => __obj.update("VpcConfig", __v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateDocumentClassifierRequest]
     }
   }
@@ -738,6 +745,7 @@ package comprehend {
     var ClientRequestToken: js.UndefOr[ClientRequestTokenString]
     var Tags: js.UndefOr[TagList]
     var VolumeKmsKeyId: js.UndefOr[KmsKeyId]
+    var VpcConfig: js.UndefOr[VpcConfig]
   }
 
   object CreateEntityRecognizerRequest {
@@ -748,7 +756,8 @@ package comprehend {
         RecognizerName: ComprehendArnName,
         ClientRequestToken: js.UndefOr[ClientRequestTokenString] = js.undefined,
         Tags: js.UndefOr[TagList] = js.undefined,
-        VolumeKmsKeyId: js.UndefOr[KmsKeyId] = js.undefined
+        VolumeKmsKeyId: js.UndefOr[KmsKeyId] = js.undefined,
+        VpcConfig: js.UndefOr[VpcConfig] = js.undefined
     ): CreateEntityRecognizerRequest = {
       val __obj = js.Dictionary[js.Any](
         "DataAccessRoleArn" -> DataAccessRoleArn.asInstanceOf[js.Any],
@@ -760,6 +769,7 @@ package comprehend {
       ClientRequestToken.foreach(__v => __obj.update("ClientRequestToken", __v.asInstanceOf[js.Any]))
       Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
       VolumeKmsKeyId.foreach(__v => __obj.update("VolumeKmsKeyId", __v.asInstanceOf[js.Any]))
+      VpcConfig.foreach(__v => __obj.update("VpcConfig", __v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateEntityRecognizerRequest]
     }
   }
@@ -1325,6 +1335,7 @@ package comprehend {
     var OutputDataConfig: js.UndefOr[OutputDataConfig]
     var SubmitTime: js.UndefOr[Timestamp]
     var VolumeKmsKeyId: js.UndefOr[KmsKeyId]
+    var VpcConfig: js.UndefOr[VpcConfig]
   }
 
   object DocumentClassificationJobProperties {
@@ -1339,7 +1350,8 @@ package comprehend {
         Message: js.UndefOr[AnyLengthString] = js.undefined,
         OutputDataConfig: js.UndefOr[OutputDataConfig] = js.undefined,
         SubmitTime: js.UndefOr[Timestamp] = js.undefined,
-        VolumeKmsKeyId: js.UndefOr[KmsKeyId] = js.undefined
+        VolumeKmsKeyId: js.UndefOr[KmsKeyId] = js.undefined,
+        VpcConfig: js.UndefOr[VpcConfig] = js.undefined
     ): DocumentClassificationJobProperties = {
       val __obj = js.Dictionary.empty[js.Any]
       DataAccessRoleArn.foreach(__v => __obj.update("DataAccessRoleArn", __v.asInstanceOf[js.Any]))
@@ -1353,6 +1365,7 @@ package comprehend {
       OutputDataConfig.foreach(__v => __obj.update("OutputDataConfig", __v.asInstanceOf[js.Any]))
       SubmitTime.foreach(__v => __obj.update("SubmitTime", __v.asInstanceOf[js.Any]))
       VolumeKmsKeyId.foreach(__v => __obj.update("VolumeKmsKeyId", __v.asInstanceOf[js.Any]))
+      VpcConfig.foreach(__v => __obj.update("VpcConfig", __v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DocumentClassificationJobProperties]
     }
   }
@@ -1441,6 +1454,7 @@ package comprehend {
     var TrainingEndTime: js.UndefOr[Timestamp]
     var TrainingStartTime: js.UndefOr[Timestamp]
     var VolumeKmsKeyId: js.UndefOr[KmsKeyId]
+    var VpcConfig: js.UndefOr[VpcConfig]
   }
 
   object DocumentClassifierProperties {
@@ -1457,7 +1471,8 @@ package comprehend {
         SubmitTime: js.UndefOr[Timestamp] = js.undefined,
         TrainingEndTime: js.UndefOr[Timestamp] = js.undefined,
         TrainingStartTime: js.UndefOr[Timestamp] = js.undefined,
-        VolumeKmsKeyId: js.UndefOr[KmsKeyId] = js.undefined
+        VolumeKmsKeyId: js.UndefOr[KmsKeyId] = js.undefined,
+        VpcConfig: js.UndefOr[VpcConfig] = js.undefined
     ): DocumentClassifierProperties = {
       val __obj = js.Dictionary.empty[js.Any]
       ClassifierMetadata.foreach(__v => __obj.update("ClassifierMetadata", __v.asInstanceOf[js.Any]))
@@ -1473,6 +1488,7 @@ package comprehend {
       TrainingEndTime.foreach(__v => __obj.update("TrainingEndTime", __v.asInstanceOf[js.Any]))
       TrainingStartTime.foreach(__v => __obj.update("TrainingStartTime", __v.asInstanceOf[js.Any]))
       VolumeKmsKeyId.foreach(__v => __obj.update("VolumeKmsKeyId", __v.asInstanceOf[js.Any]))
+      VpcConfig.foreach(__v => __obj.update("VpcConfig", __v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DocumentClassifierProperties]
     }
   }
@@ -1540,6 +1556,7 @@ package comprehend {
     var OutputDataConfig: js.UndefOr[OutputDataConfig]
     var SubmitTime: js.UndefOr[Timestamp]
     var VolumeKmsKeyId: js.UndefOr[KmsKeyId]
+    var VpcConfig: js.UndefOr[VpcConfig]
   }
 
   object DominantLanguageDetectionJobProperties {
@@ -1553,7 +1570,8 @@ package comprehend {
         Message: js.UndefOr[AnyLengthString] = js.undefined,
         OutputDataConfig: js.UndefOr[OutputDataConfig] = js.undefined,
         SubmitTime: js.UndefOr[Timestamp] = js.undefined,
-        VolumeKmsKeyId: js.UndefOr[KmsKeyId] = js.undefined
+        VolumeKmsKeyId: js.UndefOr[KmsKeyId] = js.undefined,
+        VpcConfig: js.UndefOr[VpcConfig] = js.undefined
     ): DominantLanguageDetectionJobProperties = {
       val __obj = js.Dictionary.empty[js.Any]
       DataAccessRoleArn.foreach(__v => __obj.update("DataAccessRoleArn", __v.asInstanceOf[js.Any]))
@@ -1566,6 +1584,7 @@ package comprehend {
       OutputDataConfig.foreach(__v => __obj.update("OutputDataConfig", __v.asInstanceOf[js.Any]))
       SubmitTime.foreach(__v => __obj.update("SubmitTime", __v.asInstanceOf[js.Any]))
       VolumeKmsKeyId.foreach(__v => __obj.update("VolumeKmsKeyId", __v.asInstanceOf[js.Any]))
+      VpcConfig.foreach(__v => __obj.update("VpcConfig", __v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DominantLanguageDetectionJobProperties]
     }
   }
@@ -1614,6 +1633,7 @@ package comprehend {
     var OutputDataConfig: js.UndefOr[OutputDataConfig]
     var SubmitTime: js.UndefOr[Timestamp]
     var VolumeKmsKeyId: js.UndefOr[KmsKeyId]
+    var VpcConfig: js.UndefOr[VpcConfig]
   }
 
   object EntitiesDetectionJobProperties {
@@ -1629,7 +1649,8 @@ package comprehend {
         Message: js.UndefOr[AnyLengthString] = js.undefined,
         OutputDataConfig: js.UndefOr[OutputDataConfig] = js.undefined,
         SubmitTime: js.UndefOr[Timestamp] = js.undefined,
-        VolumeKmsKeyId: js.UndefOr[KmsKeyId] = js.undefined
+        VolumeKmsKeyId: js.UndefOr[KmsKeyId] = js.undefined,
+        VpcConfig: js.UndefOr[VpcConfig] = js.undefined
     ): EntitiesDetectionJobProperties = {
       val __obj = js.Dictionary.empty[js.Any]
       DataAccessRoleArn.foreach(__v => __obj.update("DataAccessRoleArn", __v.asInstanceOf[js.Any]))
@@ -1644,6 +1665,7 @@ package comprehend {
       OutputDataConfig.foreach(__v => __obj.update("OutputDataConfig", __v.asInstanceOf[js.Any]))
       SubmitTime.foreach(__v => __obj.update("SubmitTime", __v.asInstanceOf[js.Any]))
       VolumeKmsKeyId.foreach(__v => __obj.update("VolumeKmsKeyId", __v.asInstanceOf[js.Any]))
+      VpcConfig.foreach(__v => __obj.update("VpcConfig", __v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[EntitiesDetectionJobProperties]
     }
   }
@@ -1848,14 +1870,20 @@ package comprehend {
     */
   @js.native
   trait EntityRecognizerMetadataEntityTypesListItem extends js.Object {
+    var EvaluationMetrics: js.UndefOr[EntityTypesEvaluationMetrics]
+    var NumberOfTrainMentions: js.UndefOr[Int]
     var Type: js.UndefOr[AnyLengthString]
   }
 
   object EntityRecognizerMetadataEntityTypesListItem {
     def apply(
+        EvaluationMetrics: js.UndefOr[EntityTypesEvaluationMetrics] = js.undefined,
+        NumberOfTrainMentions: js.UndefOr[Int] = js.undefined,
         Type: js.UndefOr[AnyLengthString] = js.undefined
     ): EntityRecognizerMetadataEntityTypesListItem = {
       val __obj = js.Dictionary.empty[js.Any]
+      EvaluationMetrics.foreach(__v => __obj.update("EvaluationMetrics", __v.asInstanceOf[js.Any]))
+      NumberOfTrainMentions.foreach(__v => __obj.update("NumberOfTrainMentions", __v.asInstanceOf[js.Any]))
       Type.foreach(__v => __obj.update("Type", __v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[EntityRecognizerMetadataEntityTypesListItem]
     }
@@ -1878,6 +1906,7 @@ package comprehend {
     var TrainingEndTime: js.UndefOr[Timestamp]
     var TrainingStartTime: js.UndefOr[Timestamp]
     var VolumeKmsKeyId: js.UndefOr[KmsKeyId]
+    var VpcConfig: js.UndefOr[VpcConfig]
   }
 
   object EntityRecognizerProperties {
@@ -1893,7 +1922,8 @@ package comprehend {
         SubmitTime: js.UndefOr[Timestamp] = js.undefined,
         TrainingEndTime: js.UndefOr[Timestamp] = js.undefined,
         TrainingStartTime: js.UndefOr[Timestamp] = js.undefined,
-        VolumeKmsKeyId: js.UndefOr[KmsKeyId] = js.undefined
+        VolumeKmsKeyId: js.UndefOr[KmsKeyId] = js.undefined,
+        VpcConfig: js.UndefOr[VpcConfig] = js.undefined
     ): EntityRecognizerProperties = {
       val __obj = js.Dictionary.empty[js.Any]
       DataAccessRoleArn.foreach(__v => __obj.update("DataAccessRoleArn", __v.asInstanceOf[js.Any]))
@@ -1908,6 +1938,7 @@ package comprehend {
       TrainingEndTime.foreach(__v => __obj.update("TrainingEndTime", __v.asInstanceOf[js.Any]))
       TrainingStartTime.foreach(__v => __obj.update("TrainingStartTime", __v.asInstanceOf[js.Any]))
       VolumeKmsKeyId.foreach(__v => __obj.update("VolumeKmsKeyId", __v.asInstanceOf[js.Any]))
+      VpcConfig.foreach(__v => __obj.update("VpcConfig", __v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[EntityRecognizerProperties]
     }
   }
@@ -1924,6 +1955,30 @@ package comprehend {
     val OTHER           = "OTHER"
 
     val values = IndexedSeq(PERSON, LOCATION, ORGANIZATION, COMMERCIAL_ITEM, EVENT, DATE, QUANTITY, TITLE, OTHER)
+  }
+
+  /**
+    * Detailed information about the accuracy of an entity recognizer for a specific entity type.
+    */
+  @js.native
+  trait EntityTypesEvaluationMetrics extends js.Object {
+    var F1Score: js.UndefOr[Double]
+    var Precision: js.UndefOr[Double]
+    var Recall: js.UndefOr[Double]
+  }
+
+  object EntityTypesEvaluationMetrics {
+    def apply(
+        F1Score: js.UndefOr[Double] = js.undefined,
+        Precision: js.UndefOr[Double] = js.undefined,
+        Recall: js.UndefOr[Double] = js.undefined
+    ): EntityTypesEvaluationMetrics = {
+      val __obj = js.Dictionary.empty[js.Any]
+      F1Score.foreach(__v => __obj.update("F1Score", __v.asInstanceOf[js.Any]))
+      Precision.foreach(__v => __obj.update("Precision", __v.asInstanceOf[js.Any]))
+      Recall.foreach(__v => __obj.update("Recall", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[EntityTypesEvaluationMetrics]
+    }
   }
 
   /**
@@ -2057,6 +2112,7 @@ package comprehend {
     var OutputDataConfig: js.UndefOr[OutputDataConfig]
     var SubmitTime: js.UndefOr[Timestamp]
     var VolumeKmsKeyId: js.UndefOr[KmsKeyId]
+    var VpcConfig: js.UndefOr[VpcConfig]
   }
 
   object KeyPhrasesDetectionJobProperties {
@@ -2071,7 +2127,8 @@ package comprehend {
         Message: js.UndefOr[AnyLengthString] = js.undefined,
         OutputDataConfig: js.UndefOr[OutputDataConfig] = js.undefined,
         SubmitTime: js.UndefOr[Timestamp] = js.undefined,
-        VolumeKmsKeyId: js.UndefOr[KmsKeyId] = js.undefined
+        VolumeKmsKeyId: js.UndefOr[KmsKeyId] = js.undefined,
+        VpcConfig: js.UndefOr[VpcConfig] = js.undefined
     ): KeyPhrasesDetectionJobProperties = {
       val __obj = js.Dictionary.empty[js.Any]
       DataAccessRoleArn.foreach(__v => __obj.update("DataAccessRoleArn", __v.asInstanceOf[js.Any]))
@@ -2085,6 +2142,7 @@ package comprehend {
       OutputDataConfig.foreach(__v => __obj.update("OutputDataConfig", __v.asInstanceOf[js.Any]))
       SubmitTime.foreach(__v => __obj.update("SubmitTime", __v.asInstanceOf[js.Any]))
       VolumeKmsKeyId.foreach(__v => __obj.update("VolumeKmsKeyId", __v.asInstanceOf[js.Any]))
+      VpcConfig.foreach(__v => __obj.update("VpcConfig", __v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[KeyPhrasesDetectionJobProperties]
     }
   }
@@ -2588,6 +2646,7 @@ package comprehend {
     var OutputDataConfig: js.UndefOr[OutputDataConfig]
     var SubmitTime: js.UndefOr[Timestamp]
     var VolumeKmsKeyId: js.UndefOr[KmsKeyId]
+    var VpcConfig: js.UndefOr[VpcConfig]
   }
 
   object SentimentDetectionJobProperties {
@@ -2602,7 +2661,8 @@ package comprehend {
         Message: js.UndefOr[AnyLengthString] = js.undefined,
         OutputDataConfig: js.UndefOr[OutputDataConfig] = js.undefined,
         SubmitTime: js.UndefOr[Timestamp] = js.undefined,
-        VolumeKmsKeyId: js.UndefOr[KmsKeyId] = js.undefined
+        VolumeKmsKeyId: js.UndefOr[KmsKeyId] = js.undefined,
+        VpcConfig: js.UndefOr[VpcConfig] = js.undefined
     ): SentimentDetectionJobProperties = {
       val __obj = js.Dictionary.empty[js.Any]
       DataAccessRoleArn.foreach(__v => __obj.update("DataAccessRoleArn", __v.asInstanceOf[js.Any]))
@@ -2616,6 +2676,7 @@ package comprehend {
       OutputDataConfig.foreach(__v => __obj.update("OutputDataConfig", __v.asInstanceOf[js.Any]))
       SubmitTime.foreach(__v => __obj.update("SubmitTime", __v.asInstanceOf[js.Any]))
       VolumeKmsKeyId.foreach(__v => __obj.update("VolumeKmsKeyId", __v.asInstanceOf[js.Any]))
+      VpcConfig.foreach(__v => __obj.update("VpcConfig", __v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SentimentDetectionJobProperties]
     }
   }
@@ -2665,6 +2726,7 @@ package comprehend {
     var ClientRequestToken: js.UndefOr[ClientRequestTokenString]
     var JobName: js.UndefOr[JobName]
     var VolumeKmsKeyId: js.UndefOr[KmsKeyId]
+    var VpcConfig: js.UndefOr[VpcConfig]
   }
 
   object StartDocumentClassificationJobRequest {
@@ -2675,7 +2737,8 @@ package comprehend {
         OutputDataConfig: OutputDataConfig,
         ClientRequestToken: js.UndefOr[ClientRequestTokenString] = js.undefined,
         JobName: js.UndefOr[JobName] = js.undefined,
-        VolumeKmsKeyId: js.UndefOr[KmsKeyId] = js.undefined
+        VolumeKmsKeyId: js.UndefOr[KmsKeyId] = js.undefined,
+        VpcConfig: js.UndefOr[VpcConfig] = js.undefined
     ): StartDocumentClassificationJobRequest = {
       val __obj = js.Dictionary[js.Any](
         "DataAccessRoleArn"     -> DataAccessRoleArn.asInstanceOf[js.Any],
@@ -2687,6 +2750,7 @@ package comprehend {
       ClientRequestToken.foreach(__v => __obj.update("ClientRequestToken", __v.asInstanceOf[js.Any]))
       JobName.foreach(__v => __obj.update("JobName", __v.asInstanceOf[js.Any]))
       VolumeKmsKeyId.foreach(__v => __obj.update("VolumeKmsKeyId", __v.asInstanceOf[js.Any]))
+      VpcConfig.foreach(__v => __obj.update("VpcConfig", __v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[StartDocumentClassificationJobRequest]
     }
   }
@@ -2717,6 +2781,7 @@ package comprehend {
     var ClientRequestToken: js.UndefOr[ClientRequestTokenString]
     var JobName: js.UndefOr[JobName]
     var VolumeKmsKeyId: js.UndefOr[KmsKeyId]
+    var VpcConfig: js.UndefOr[VpcConfig]
   }
 
   object StartDominantLanguageDetectionJobRequest {
@@ -2726,7 +2791,8 @@ package comprehend {
         OutputDataConfig: OutputDataConfig,
         ClientRequestToken: js.UndefOr[ClientRequestTokenString] = js.undefined,
         JobName: js.UndefOr[JobName] = js.undefined,
-        VolumeKmsKeyId: js.UndefOr[KmsKeyId] = js.undefined
+        VolumeKmsKeyId: js.UndefOr[KmsKeyId] = js.undefined,
+        VpcConfig: js.UndefOr[VpcConfig] = js.undefined
     ): StartDominantLanguageDetectionJobRequest = {
       val __obj = js.Dictionary[js.Any](
         "DataAccessRoleArn" -> DataAccessRoleArn.asInstanceOf[js.Any],
@@ -2737,6 +2803,7 @@ package comprehend {
       ClientRequestToken.foreach(__v => __obj.update("ClientRequestToken", __v.asInstanceOf[js.Any]))
       JobName.foreach(__v => __obj.update("JobName", __v.asInstanceOf[js.Any]))
       VolumeKmsKeyId.foreach(__v => __obj.update("VolumeKmsKeyId", __v.asInstanceOf[js.Any]))
+      VpcConfig.foreach(__v => __obj.update("VpcConfig", __v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[StartDominantLanguageDetectionJobRequest]
     }
   }
@@ -2769,6 +2836,7 @@ package comprehend {
     var EntityRecognizerArn: js.UndefOr[EntityRecognizerArn]
     var JobName: js.UndefOr[JobName]
     var VolumeKmsKeyId: js.UndefOr[KmsKeyId]
+    var VpcConfig: js.UndefOr[VpcConfig]
   }
 
   object StartEntitiesDetectionJobRequest {
@@ -2780,7 +2848,8 @@ package comprehend {
         ClientRequestToken: js.UndefOr[ClientRequestTokenString] = js.undefined,
         EntityRecognizerArn: js.UndefOr[EntityRecognizerArn] = js.undefined,
         JobName: js.UndefOr[JobName] = js.undefined,
-        VolumeKmsKeyId: js.UndefOr[KmsKeyId] = js.undefined
+        VolumeKmsKeyId: js.UndefOr[KmsKeyId] = js.undefined,
+        VpcConfig: js.UndefOr[VpcConfig] = js.undefined
     ): StartEntitiesDetectionJobRequest = {
       val __obj = js.Dictionary[js.Any](
         "DataAccessRoleArn" -> DataAccessRoleArn.asInstanceOf[js.Any],
@@ -2793,6 +2862,7 @@ package comprehend {
       EntityRecognizerArn.foreach(__v => __obj.update("EntityRecognizerArn", __v.asInstanceOf[js.Any]))
       JobName.foreach(__v => __obj.update("JobName", __v.asInstanceOf[js.Any]))
       VolumeKmsKeyId.foreach(__v => __obj.update("VolumeKmsKeyId", __v.asInstanceOf[js.Any]))
+      VpcConfig.foreach(__v => __obj.update("VpcConfig", __v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[StartEntitiesDetectionJobRequest]
     }
   }
@@ -2824,6 +2894,7 @@ package comprehend {
     var ClientRequestToken: js.UndefOr[ClientRequestTokenString]
     var JobName: js.UndefOr[JobName]
     var VolumeKmsKeyId: js.UndefOr[KmsKeyId]
+    var VpcConfig: js.UndefOr[VpcConfig]
   }
 
   object StartKeyPhrasesDetectionJobRequest {
@@ -2834,7 +2905,8 @@ package comprehend {
         OutputDataConfig: OutputDataConfig,
         ClientRequestToken: js.UndefOr[ClientRequestTokenString] = js.undefined,
         JobName: js.UndefOr[JobName] = js.undefined,
-        VolumeKmsKeyId: js.UndefOr[KmsKeyId] = js.undefined
+        VolumeKmsKeyId: js.UndefOr[KmsKeyId] = js.undefined,
+        VpcConfig: js.UndefOr[VpcConfig] = js.undefined
     ): StartKeyPhrasesDetectionJobRequest = {
       val __obj = js.Dictionary[js.Any](
         "DataAccessRoleArn" -> DataAccessRoleArn.asInstanceOf[js.Any],
@@ -2846,6 +2918,7 @@ package comprehend {
       ClientRequestToken.foreach(__v => __obj.update("ClientRequestToken", __v.asInstanceOf[js.Any]))
       JobName.foreach(__v => __obj.update("JobName", __v.asInstanceOf[js.Any]))
       VolumeKmsKeyId.foreach(__v => __obj.update("VolumeKmsKeyId", __v.asInstanceOf[js.Any]))
+      VpcConfig.foreach(__v => __obj.update("VpcConfig", __v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[StartKeyPhrasesDetectionJobRequest]
     }
   }
@@ -2877,6 +2950,7 @@ package comprehend {
     var ClientRequestToken: js.UndefOr[ClientRequestTokenString]
     var JobName: js.UndefOr[JobName]
     var VolumeKmsKeyId: js.UndefOr[KmsKeyId]
+    var VpcConfig: js.UndefOr[VpcConfig]
   }
 
   object StartSentimentDetectionJobRequest {
@@ -2887,7 +2961,8 @@ package comprehend {
         OutputDataConfig: OutputDataConfig,
         ClientRequestToken: js.UndefOr[ClientRequestTokenString] = js.undefined,
         JobName: js.UndefOr[JobName] = js.undefined,
-        VolumeKmsKeyId: js.UndefOr[KmsKeyId] = js.undefined
+        VolumeKmsKeyId: js.UndefOr[KmsKeyId] = js.undefined,
+        VpcConfig: js.UndefOr[VpcConfig] = js.undefined
     ): StartSentimentDetectionJobRequest = {
       val __obj = js.Dictionary[js.Any](
         "DataAccessRoleArn" -> DataAccessRoleArn.asInstanceOf[js.Any],
@@ -2899,6 +2974,7 @@ package comprehend {
       ClientRequestToken.foreach(__v => __obj.update("ClientRequestToken", __v.asInstanceOf[js.Any]))
       JobName.foreach(__v => __obj.update("JobName", __v.asInstanceOf[js.Any]))
       VolumeKmsKeyId.foreach(__v => __obj.update("VolumeKmsKeyId", __v.asInstanceOf[js.Any]))
+      VpcConfig.foreach(__v => __obj.update("VpcConfig", __v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[StartSentimentDetectionJobRequest]
     }
   }
@@ -2930,6 +3006,7 @@ package comprehend {
     var JobName: js.UndefOr[JobName]
     var NumberOfTopics: js.UndefOr[NumberOfTopicsInteger]
     var VolumeKmsKeyId: js.UndefOr[KmsKeyId]
+    var VpcConfig: js.UndefOr[VpcConfig]
   }
 
   object StartTopicsDetectionJobRequest {
@@ -2940,7 +3017,8 @@ package comprehend {
         ClientRequestToken: js.UndefOr[ClientRequestTokenString] = js.undefined,
         JobName: js.UndefOr[JobName] = js.undefined,
         NumberOfTopics: js.UndefOr[NumberOfTopicsInteger] = js.undefined,
-        VolumeKmsKeyId: js.UndefOr[KmsKeyId] = js.undefined
+        VolumeKmsKeyId: js.UndefOr[KmsKeyId] = js.undefined,
+        VpcConfig: js.UndefOr[VpcConfig] = js.undefined
     ): StartTopicsDetectionJobRequest = {
       val __obj = js.Dictionary[js.Any](
         "DataAccessRoleArn" -> DataAccessRoleArn.asInstanceOf[js.Any],
@@ -2952,6 +3030,7 @@ package comprehend {
       JobName.foreach(__v => __obj.update("JobName", __v.asInstanceOf[js.Any]))
       NumberOfTopics.foreach(__v => __obj.update("NumberOfTopics", __v.asInstanceOf[js.Any]))
       VolumeKmsKeyId.foreach(__v => __obj.update("VolumeKmsKeyId", __v.asInstanceOf[js.Any]))
+      VpcConfig.foreach(__v => __obj.update("VpcConfig", __v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[StartTopicsDetectionJobRequest]
     }
   }
@@ -3311,6 +3390,7 @@ package comprehend {
     var OutputDataConfig: js.UndefOr[OutputDataConfig]
     var SubmitTime: js.UndefOr[Timestamp]
     var VolumeKmsKeyId: js.UndefOr[KmsKeyId]
+    var VpcConfig: js.UndefOr[VpcConfig]
   }
 
   object TopicsDetectionJobProperties {
@@ -3325,7 +3405,8 @@ package comprehend {
         NumberOfTopics: js.UndefOr[Int] = js.undefined,
         OutputDataConfig: js.UndefOr[OutputDataConfig] = js.undefined,
         SubmitTime: js.UndefOr[Timestamp] = js.undefined,
-        VolumeKmsKeyId: js.UndefOr[KmsKeyId] = js.undefined
+        VolumeKmsKeyId: js.UndefOr[KmsKeyId] = js.undefined,
+        VpcConfig: js.UndefOr[VpcConfig] = js.undefined
     ): TopicsDetectionJobProperties = {
       val __obj = js.Dictionary.empty[js.Any]
       DataAccessRoleArn.foreach(__v => __obj.update("DataAccessRoleArn", __v.asInstanceOf[js.Any]))
@@ -3339,6 +3420,7 @@ package comprehend {
       OutputDataConfig.foreach(__v => __obj.update("OutputDataConfig", __v.asInstanceOf[js.Any]))
       SubmitTime.foreach(__v => __obj.update("SubmitTime", __v.asInstanceOf[js.Any]))
       VolumeKmsKeyId.foreach(__v => __obj.update("VolumeKmsKeyId", __v.asInstanceOf[js.Any]))
+      VpcConfig.foreach(__v => __obj.update("VpcConfig", __v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[TopicsDetectionJobProperties]
     }
   }
@@ -3372,6 +3454,29 @@ package comprehend {
       val __obj = js.Dictionary.empty[js.Any]
 
       __obj.asInstanceOf[UntagResourceResponse]
+    }
+  }
+
+  /**
+    * Configuration parameters for an optional private Virtual Private Cloud (VPC) containing the resources you are using for the job. For For more information, see [[https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html|Amazon VPC]].
+    */
+  @js.native
+  trait VpcConfig extends js.Object {
+    var SecurityGroupIds: SecurityGroupIds
+    var Subnets: Subnets
+  }
+
+  object VpcConfig {
+    def apply(
+        SecurityGroupIds: SecurityGroupIds,
+        Subnets: Subnets
+    ): VpcConfig = {
+      val __obj = js.Dictionary[js.Any](
+        "SecurityGroupIds" -> SecurityGroupIds.asInstanceOf[js.Any],
+        "Subnets"          -> Subnets.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[VpcConfig]
     }
   }
 }

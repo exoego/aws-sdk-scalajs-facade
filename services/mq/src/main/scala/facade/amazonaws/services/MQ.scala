@@ -18,11 +18,15 @@ package object mq {
   type __boolean                     = Boolean
   type __integer                     = Int
   type __integerMin5Max100           = Int
+  type __listOfAvailabilityZone      = js.Array[AvailabilityZone]
+  type __listOfBrokerEngineType      = js.Array[BrokerEngineType]
   type __listOfBrokerInstance        = js.Array[BrokerInstance]
+  type __listOfBrokerInstanceOption  = js.Array[BrokerInstanceOption]
   type __listOfBrokerSummary         = js.Array[BrokerSummary]
   type __listOfConfiguration         = js.Array[Configuration]
   type __listOfConfigurationId       = js.Array[ConfigurationId]
   type __listOfConfigurationRevision = js.Array[ConfigurationRevision]
+  type __listOfEngineVersion         = js.Array[EngineVersion]
   type __listOfSanitizationWarning   = js.Array[SanitizationWarning]
   type __listOfUser                  = js.Array[User]
   type __listOfUserSummary           = js.Array[UserSummary]
@@ -45,8 +49,14 @@ package object mq {
     def deleteTagsFuture(params: DeleteTagsRequest): Future[js.Object] = service.deleteTags(params).promise.toFuture
     def deleteUserFuture(params: DeleteUserRequest): Future[DeleteUserResponse] =
       service.deleteUser(params).promise.toFuture
+    def describeBrokerEngineTypesFuture(
+        params: DescribeBrokerEngineTypesRequest
+    ): Future[DescribeBrokerEngineTypesResponse] = service.describeBrokerEngineTypes(params).promise.toFuture
     def describeBrokerFuture(params: DescribeBrokerRequest): Future[DescribeBrokerResponse] =
       service.describeBroker(params).promise.toFuture
+    def describeBrokerInstanceOptionsFuture(
+        params: DescribeBrokerInstanceOptionsRequest
+    ): Future[DescribeBrokerInstanceOptionsResponse] = service.describeBrokerInstanceOptions(params).promise.toFuture
     def describeConfigurationFuture(params: DescribeConfigurationRequest): Future[DescribeConfigurationResponse] =
       service.describeConfiguration(params).promise.toFuture
     def describeConfigurationRevisionFuture(
@@ -81,14 +91,20 @@ package mq {
   class MQ() extends js.Object {
     def this(config: AWSConfig) = this()
 
-    def createBroker(params: CreateBrokerRequest): Request[CreateBrokerResponse]                            = js.native
-    def createConfiguration(params: CreateConfigurationRequest): Request[CreateConfigurationResponse]       = js.native
-    def createTags(params: CreateTagsRequest): Request[js.Object]                                           = js.native
-    def createUser(params: CreateUserRequest): Request[CreateUserResponse]                                  = js.native
-    def deleteBroker(params: DeleteBrokerRequest): Request[DeleteBrokerResponse]                            = js.native
-    def deleteTags(params: DeleteTagsRequest): Request[js.Object]                                           = js.native
-    def deleteUser(params: DeleteUserRequest): Request[DeleteUserResponse]                                  = js.native
-    def describeBroker(params: DescribeBrokerRequest): Request[DescribeBrokerResponse]                      = js.native
+    def createBroker(params: CreateBrokerRequest): Request[CreateBrokerResponse]                      = js.native
+    def createConfiguration(params: CreateConfigurationRequest): Request[CreateConfigurationResponse] = js.native
+    def createTags(params: CreateTagsRequest): Request[js.Object]                                     = js.native
+    def createUser(params: CreateUserRequest): Request[CreateUserResponse]                            = js.native
+    def deleteBroker(params: DeleteBrokerRequest): Request[DeleteBrokerResponse]                      = js.native
+    def deleteTags(params: DeleteTagsRequest): Request[js.Object]                                     = js.native
+    def deleteUser(params: DeleteUserRequest): Request[DeleteUserResponse]                            = js.native
+    def describeBroker(params: DescribeBrokerRequest): Request[DescribeBrokerResponse]                = js.native
+    def describeBrokerEngineTypes(
+        params: DescribeBrokerEngineTypesRequest
+    ): Request[DescribeBrokerEngineTypesResponse] = js.native
+    def describeBrokerInstanceOptions(
+        params: DescribeBrokerInstanceOptionsRequest
+    ): Request[DescribeBrokerInstanceOptionsResponse]                                                       = js.native
     def describeConfiguration(params: DescribeConfigurationRequest): Request[DescribeConfigurationResponse] = js.native
     def describeConfigurationRevision(
         params: DescribeConfigurationRevisionRequest
@@ -105,6 +121,45 @@ package mq {
     def updateBroker(params: UpdateBrokerRequest): Request[UpdateBrokerResponse]                      = js.native
     def updateConfiguration(params: UpdateConfigurationRequest): Request[UpdateConfigurationResponse] = js.native
     def updateUser(params: UpdateUserRequest): Request[UpdateUserResponse]                            = js.native
+  }
+
+  /**
+    * Name of the availability zone.
+    */
+  @js.native
+  trait AvailabilityZone extends js.Object {
+    var Name: js.UndefOr[__string]
+  }
+
+  object AvailabilityZone {
+    def apply(
+        Name: js.UndefOr[__string] = js.undefined
+    ): AvailabilityZone = {
+      val __obj = js.Dictionary.empty[js.Any]
+      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AvailabilityZone]
+    }
+  }
+
+  /**
+    * Types of broker engines.
+    */
+  @js.native
+  trait BrokerEngineType extends js.Object {
+    var EngineType: js.UndefOr[EngineType]
+    var EngineVersions: js.UndefOr[__listOfEngineVersion]
+  }
+
+  object BrokerEngineType {
+    def apply(
+        EngineType: js.UndefOr[EngineType] = js.undefined,
+        EngineVersions: js.UndefOr[__listOfEngineVersion] = js.undefined
+    ): BrokerEngineType = {
+      val __obj = js.Dictionary.empty[js.Any]
+      EngineType.foreach(__v => __obj.update("EngineType", __v.asInstanceOf[js.Any]))
+      EngineVersions.foreach(__v => __obj.update("EngineVersions", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[BrokerEngineType]
+    }
   }
 
   /**
@@ -128,6 +183,33 @@ package mq {
       Endpoints.foreach(__v => __obj.update("Endpoints", __v.asInstanceOf[js.Any]))
       IpAddress.foreach(__v => __obj.update("IpAddress", __v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[BrokerInstance]
+    }
+  }
+
+  /**
+    * Option for host instance type.
+    */
+  @js.native
+  trait BrokerInstanceOption extends js.Object {
+    var AvailabilityZones: js.UndefOr[__listOfAvailabilityZone]
+    var EngineType: js.UndefOr[EngineType]
+    var HostInstanceType: js.UndefOr[__string]
+    var SupportedEngineVersions: js.UndefOr[__listOf__string]
+  }
+
+  object BrokerInstanceOption {
+    def apply(
+        AvailabilityZones: js.UndefOr[__listOfAvailabilityZone] = js.undefined,
+        EngineType: js.UndefOr[EngineType] = js.undefined,
+        HostInstanceType: js.UndefOr[__string] = js.undefined,
+        SupportedEngineVersions: js.UndefOr[__listOf__string] = js.undefined
+    ): BrokerInstanceOption = {
+      val __obj = js.Dictionary.empty[js.Any]
+      AvailabilityZones.foreach(__v => __obj.update("AvailabilityZones", __v.asInstanceOf[js.Any]))
+      EngineType.foreach(__v => __obj.update("EngineType", __v.asInstanceOf[js.Any]))
+      HostInstanceType.foreach(__v => __obj.update("HostInstanceType", __v.asInstanceOf[js.Any]))
+      SupportedEngineVersions.foreach(__v => __obj.update("SupportedEngineVersions", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[BrokerInstanceOption]
     }
   }
 
@@ -312,6 +394,7 @@ package mq {
     var Configuration: js.UndefOr[ConfigurationId]
     var CreatorRequestId: js.UndefOr[__string]
     var DeploymentMode: js.UndefOr[DeploymentMode]
+    var EncryptionOptions: js.UndefOr[EncryptionOptions]
     var EngineType: js.UndefOr[EngineType]
     var EngineVersion: js.UndefOr[__string]
     var HostInstanceType: js.UndefOr[__string]
@@ -331,6 +414,7 @@ package mq {
         Configuration: js.UndefOr[ConfigurationId] = js.undefined,
         CreatorRequestId: js.UndefOr[__string] = js.undefined,
         DeploymentMode: js.UndefOr[DeploymentMode] = js.undefined,
+        EncryptionOptions: js.UndefOr[EncryptionOptions] = js.undefined,
         EngineType: js.UndefOr[EngineType] = js.undefined,
         EngineVersion: js.UndefOr[__string] = js.undefined,
         HostInstanceType: js.UndefOr[__string] = js.undefined,
@@ -348,6 +432,7 @@ package mq {
       Configuration.foreach(__v => __obj.update("Configuration", __v.asInstanceOf[js.Any]))
       CreatorRequestId.foreach(__v => __obj.update("CreatorRequestId", __v.asInstanceOf[js.Any]))
       DeploymentMode.foreach(__v => __obj.update("DeploymentMode", __v.asInstanceOf[js.Any]))
+      EncryptionOptions.foreach(__v => __obj.update("EncryptionOptions", __v.asInstanceOf[js.Any]))
       EngineType.foreach(__v => __obj.update("EngineType", __v.asInstanceOf[js.Any]))
       EngineVersion.foreach(__v => __obj.update("EngineVersion", __v.asInstanceOf[js.Any]))
       HostInstanceType.foreach(__v => __obj.update("HostInstanceType", __v.asInstanceOf[js.Any]))
@@ -608,6 +693,93 @@ package mq {
   }
 
   @js.native
+  trait DescribeBrokerEngineTypesRequest extends js.Object {
+    var EngineType: js.UndefOr[__string]
+    var MaxResults: js.UndefOr[MaxResults]
+    var NextToken: js.UndefOr[__string]
+  }
+
+  object DescribeBrokerEngineTypesRequest {
+    def apply(
+        EngineType: js.UndefOr[__string] = js.undefined,
+        MaxResults: js.UndefOr[MaxResults] = js.undefined,
+        NextToken: js.UndefOr[__string] = js.undefined
+    ): DescribeBrokerEngineTypesRequest = {
+      val __obj = js.Dictionary.empty[js.Any]
+      EngineType.foreach(__v => __obj.update("EngineType", __v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeBrokerEngineTypesRequest]
+    }
+  }
+
+  @js.native
+  trait DescribeBrokerEngineTypesResponse extends js.Object {
+    var BrokerEngineTypes: js.UndefOr[__listOfBrokerEngineType]
+    var MaxResults: js.UndefOr[__integerMin5Max100]
+    var NextToken: js.UndefOr[__string]
+  }
+
+  object DescribeBrokerEngineTypesResponse {
+    def apply(
+        BrokerEngineTypes: js.UndefOr[__listOfBrokerEngineType] = js.undefined,
+        MaxResults: js.UndefOr[__integerMin5Max100] = js.undefined,
+        NextToken: js.UndefOr[__string] = js.undefined
+    ): DescribeBrokerEngineTypesResponse = {
+      val __obj = js.Dictionary.empty[js.Any]
+      BrokerEngineTypes.foreach(__v => __obj.update("BrokerEngineTypes", __v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeBrokerEngineTypesResponse]
+    }
+  }
+
+  @js.native
+  trait DescribeBrokerInstanceOptionsRequest extends js.Object {
+    var EngineType: js.UndefOr[__string]
+    var HostInstanceType: js.UndefOr[__string]
+    var MaxResults: js.UndefOr[MaxResults]
+    var NextToken: js.UndefOr[__string]
+  }
+
+  object DescribeBrokerInstanceOptionsRequest {
+    def apply(
+        EngineType: js.UndefOr[__string] = js.undefined,
+        HostInstanceType: js.UndefOr[__string] = js.undefined,
+        MaxResults: js.UndefOr[MaxResults] = js.undefined,
+        NextToken: js.UndefOr[__string] = js.undefined
+    ): DescribeBrokerInstanceOptionsRequest = {
+      val __obj = js.Dictionary.empty[js.Any]
+      EngineType.foreach(__v => __obj.update("EngineType", __v.asInstanceOf[js.Any]))
+      HostInstanceType.foreach(__v => __obj.update("HostInstanceType", __v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeBrokerInstanceOptionsRequest]
+    }
+  }
+
+  @js.native
+  trait DescribeBrokerInstanceOptionsResponse extends js.Object {
+    var BrokerInstanceOptions: js.UndefOr[__listOfBrokerInstanceOption]
+    var MaxResults: js.UndefOr[__integerMin5Max100]
+    var NextToken: js.UndefOr[__string]
+  }
+
+  object DescribeBrokerInstanceOptionsResponse {
+    def apply(
+        BrokerInstanceOptions: js.UndefOr[__listOfBrokerInstanceOption] = js.undefined,
+        MaxResults: js.UndefOr[__integerMin5Max100] = js.undefined,
+        NextToken: js.UndefOr[__string] = js.undefined
+    ): DescribeBrokerInstanceOptionsResponse = {
+      val __obj = js.Dictionary.empty[js.Any]
+      BrokerInstanceOptions.foreach(__v => __obj.update("BrokerInstanceOptions", __v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeBrokerInstanceOptionsResponse]
+    }
+  }
+
+  @js.native
   trait DescribeBrokerRequest extends js.Object {
     var BrokerId: __string
   }
@@ -635,6 +807,7 @@ package mq {
     var Configurations: js.UndefOr[Configurations]
     var Created: js.UndefOr[__timestampIso8601]
     var DeploymentMode: js.UndefOr[DeploymentMode]
+    var EncryptionOptions: js.UndefOr[EncryptionOptions]
     var EngineType: js.UndefOr[EngineType]
     var EngineVersion: js.UndefOr[__string]
     var HostInstanceType: js.UndefOr[__string]
@@ -659,6 +832,7 @@ package mq {
         Configurations: js.UndefOr[Configurations] = js.undefined,
         Created: js.UndefOr[__timestampIso8601] = js.undefined,
         DeploymentMode: js.UndefOr[DeploymentMode] = js.undefined,
+        EncryptionOptions: js.UndefOr[EncryptionOptions] = js.undefined,
         EngineType: js.UndefOr[EngineType] = js.undefined,
         EngineVersion: js.UndefOr[__string] = js.undefined,
         HostInstanceType: js.UndefOr[__string] = js.undefined,
@@ -681,6 +855,7 @@ package mq {
       Configurations.foreach(__v => __obj.update("Configurations", __v.asInstanceOf[js.Any]))
       Created.foreach(__v => __obj.update("Created", __v.asInstanceOf[js.Any]))
       DeploymentMode.foreach(__v => __obj.update("DeploymentMode", __v.asInstanceOf[js.Any]))
+      EncryptionOptions.foreach(__v => __obj.update("EncryptionOptions", __v.asInstanceOf[js.Any]))
       EngineType.foreach(__v => __obj.update("EngineType", __v.asInstanceOf[js.Any]))
       EngineVersion.foreach(__v => __obj.update("EngineVersion", __v.asInstanceOf[js.Any]))
       HostInstanceType.foreach(__v => __obj.update("HostInstanceType", __v.asInstanceOf[js.Any]))
@@ -844,12 +1019,53 @@ package mq {
   }
 
   /**
+    * Encryption options for the broker.
+    */
+  @js.native
+  trait EncryptionOptions extends js.Object {
+    var UseAwsOwnedKey: __boolean
+    var KmsKeyId: js.UndefOr[__string]
+  }
+
+  object EncryptionOptions {
+    def apply(
+        UseAwsOwnedKey: __boolean,
+        KmsKeyId: js.UndefOr[__string] = js.undefined
+    ): EncryptionOptions = {
+      val __obj = js.Dictionary[js.Any](
+        "UseAwsOwnedKey" -> UseAwsOwnedKey.asInstanceOf[js.Any]
+      )
+
+      KmsKeyId.foreach(__v => __obj.update("KmsKeyId", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[EncryptionOptions]
+    }
+  }
+
+  /**
     * The type of broker engine. Note: Currently, Amazon MQ supports only ActiveMQ.
     */
   object EngineTypeEnum {
     val ACTIVEMQ = "ACTIVEMQ"
 
     val values = IndexedSeq(ACTIVEMQ)
+  }
+
+  /**
+    * Id of the engine version.
+    */
+  @js.native
+  trait EngineVersion extends js.Object {
+    var Name: js.UndefOr[__string]
+  }
+
+  object EngineVersion {
+    def apply(
+        Name: js.UndefOr[__string] = js.undefined
+    ): EngineVersion = {
+      val __obj = js.Dictionary.empty[js.Any]
+      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[EngineVersion]
+    }
   }
 
   @js.native

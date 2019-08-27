@@ -117,6 +117,8 @@ package object lambda {
       service.getFunctionConfiguration(params).promise.toFuture
     def getFunctionFuture(params: GetFunctionRequest): Future[GetFunctionResponse] =
       service.getFunction(params).promise.toFuture
+    def getLayerVersionByArnFuture(params: GetLayerVersionByArnRequest): Future[GetLayerVersionResponse] =
+      service.getLayerVersionByArn(params).promise.toFuture
     def getLayerVersionFuture(params: GetLayerVersionRequest): Future[GetLayerVersionResponse] =
       service.getLayerVersion(params).promise.toFuture
     def getLayerVersionPolicyFuture(params: GetLayerVersionPolicyRequest): Future[GetLayerVersionPolicyResponse] =
@@ -189,6 +191,7 @@ package lambda {
     def getFunction(params: GetFunctionRequest): Request[GetFunctionResponse]                               = js.native
     def getFunctionConfiguration(params: GetFunctionConfigurationRequest): Request[FunctionConfiguration]   = js.native
     def getLayerVersion(params: GetLayerVersionRequest): Request[GetLayerVersionResponse]                   = js.native
+    def getLayerVersionByArn(params: GetLayerVersionByArnRequest): Request[GetLayerVersionResponse]         = js.native
     def getLayerVersionPolicy(params: GetLayerVersionPolicyRequest): Request[GetLayerVersionPolicyResponse] = js.native
     def getPolicy(params: GetPolicyRequest): Request[GetPolicyResponse]                                     = js.native
     def invoke(params: InvocationRequest): Request[InvocationResponse]                                      = js.native
@@ -1052,6 +1055,23 @@ package lambda {
   }
 
   @js.native
+  trait GetLayerVersionByArnRequest extends js.Object {
+    var Arn: LayerVersionArn
+  }
+
+  object GetLayerVersionByArnRequest {
+    def apply(
+        Arn: LayerVersionArn
+    ): GetLayerVersionByArnRequest = {
+      val __obj = js.Dictionary[js.Any](
+        "Arn" -> Arn.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[GetLayerVersionByArnRequest]
+    }
+  }
+
+  @js.native
   trait GetLayerVersionPolicyRequest extends js.Object {
     var LayerName: LayerName
     var VersionNumber: LayerVersionNumber
@@ -1881,6 +1901,7 @@ package lambda {
     val `nodejs4.3`      = "nodejs4.3"
     val `nodejs6.10`     = "nodejs6.10"
     val `nodejs8.10`     = "nodejs8.10"
+    val `nodejs10.x`     = "nodejs10.x"
     val java8            = "java8"
     val `python2.7`      = "python2.7"
     val `python3.6`      = "python3.6"
@@ -1898,6 +1919,7 @@ package lambda {
       `nodejs4.3`,
       `nodejs6.10`,
       `nodejs8.10`,
+      `nodejs10.x`,
       java8,
       `python2.7`,
       `python3.6`,

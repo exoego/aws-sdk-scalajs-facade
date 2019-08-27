@@ -22,6 +22,7 @@ package object xray {
   type EncryptionKeyId                 = String
   type EncryptionStatus                = String
   type EncryptionType                  = String
+  type EntitySelectorExpression        = String
   type ErrorRootCauseEntityPath        = js.Array[ErrorRootCauseEntity]
   type ErrorRootCauseServices          = js.Array[ErrorRootCauseService]
   type ErrorRootCauses                 = js.Array[ErrorRootCause]
@@ -55,6 +56,7 @@ package object xray {
   type SamplingRuleRecordList          = js.Array[SamplingRuleRecord]
   type SamplingStatisticSummaryList    = js.Array[SamplingStatisticSummary]
   type SamplingStatisticsDocumentList  = js.Array[SamplingStatisticsDocument]
+  type SamplingStrategyName            = String
   type SamplingTargetDocumentList      = js.Array[SamplingTargetDocument]
   type SegmentDocument                 = String
   type SegmentId                       = String
@@ -65,6 +67,8 @@ package object xray {
   type ServiceNames                    = js.Array[String]
   type ServiceType                     = String
   type TelemetryRecordList             = js.Array[TelemetryRecord]
+  type TimeRangeType                   = String
+  type TimeSeriesServiceStatisticsList = js.Array[TimeSeriesServiceStatistics]
   type Timestamp                       = js.Date
   type TraceAvailabilityZones          = js.Array[AvailabilityZoneDetail]
   type TraceId                         = String
@@ -108,6 +112,9 @@ package object xray {
       service.getSamplingTargets(params).promise.toFuture
     def getServiceGraphFuture(params: GetServiceGraphRequest): Future[GetServiceGraphResult] =
       service.getServiceGraph(params).promise.toFuture
+    def getTimeSeriesServiceStatisticsFuture(
+        params: GetTimeSeriesServiceStatisticsRequest
+    ): Future[GetTimeSeriesServiceStatisticsResult] = service.getTimeSeriesServiceStatistics(params).promise.toFuture
     def getTraceGraphFuture(params: GetTraceGraphRequest): Future[GetTraceGraphResult] =
       service.getTraceGraph(params).promise.toFuture
     def getTraceSummariesFuture(params: GetTraceSummariesRequest): Future[GetTraceSummariesResult] =
@@ -142,9 +149,12 @@ package xray {
     def getSamplingRules(params: GetSamplingRulesRequest): Request[GetSamplingRulesResult]          = js.native
     def getSamplingStatisticSummaries(
         params: GetSamplingStatisticSummariesRequest
-    ): Request[GetSamplingStatisticSummariesResult]                                                 = js.native
-    def getSamplingTargets(params: GetSamplingTargetsRequest): Request[GetSamplingTargetsResult]    = js.native
-    def getServiceGraph(params: GetServiceGraphRequest): Request[GetServiceGraphResult]             = js.native
+    ): Request[GetSamplingStatisticSummariesResult]                                              = js.native
+    def getSamplingTargets(params: GetSamplingTargetsRequest): Request[GetSamplingTargetsResult] = js.native
+    def getServiceGraph(params: GetServiceGraphRequest): Request[GetServiceGraphResult]          = js.native
+    def getTimeSeriesServiceStatistics(
+        params: GetTimeSeriesServiceStatisticsRequest
+    ): Request[GetTimeSeriesServiceStatisticsResult]                                                = js.native
     def getTraceGraph(params: GetTraceGraphRequest): Request[GetTraceGraphResult]                   = js.native
     def getTraceSummaries(params: GetTraceSummariesRequest): Request[GetTraceSummariesResult]       = js.native
     def putEncryptionConfig(params: PutEncryptionConfigRequest): Request[PutEncryptionConfigResult] = js.native
@@ -974,6 +984,62 @@ package xray {
   }
 
   @js.native
+  trait GetTimeSeriesServiceStatisticsRequest extends js.Object {
+    var EndTime: Timestamp
+    var StartTime: Timestamp
+    var EntitySelectorExpression: js.UndefOr[EntitySelectorExpression]
+    var GroupARN: js.UndefOr[GroupARN]
+    var GroupName: js.UndefOr[GroupName]
+    var NextToken: js.UndefOr[String]
+    var Period: js.UndefOr[NullableInteger]
+  }
+
+  object GetTimeSeriesServiceStatisticsRequest {
+    def apply(
+        EndTime: Timestamp,
+        StartTime: Timestamp,
+        EntitySelectorExpression: js.UndefOr[EntitySelectorExpression] = js.undefined,
+        GroupARN: js.UndefOr[GroupARN] = js.undefined,
+        GroupName: js.UndefOr[GroupName] = js.undefined,
+        NextToken: js.UndefOr[String] = js.undefined,
+        Period: js.UndefOr[NullableInteger] = js.undefined
+    ): GetTimeSeriesServiceStatisticsRequest = {
+      val __obj = js.Dictionary[js.Any](
+        "EndTime"   -> EndTime.asInstanceOf[js.Any],
+        "StartTime" -> StartTime.asInstanceOf[js.Any]
+      )
+
+      EntitySelectorExpression.foreach(__v => __obj.update("EntitySelectorExpression", __v.asInstanceOf[js.Any]))
+      GroupARN.foreach(__v => __obj.update("GroupARN", __v.asInstanceOf[js.Any]))
+      GroupName.foreach(__v => __obj.update("GroupName", __v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      Period.foreach(__v => __obj.update("Period", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetTimeSeriesServiceStatisticsRequest]
+    }
+  }
+
+  @js.native
+  trait GetTimeSeriesServiceStatisticsResult extends js.Object {
+    var ContainsOldGroupVersions: js.UndefOr[Boolean]
+    var NextToken: js.UndefOr[String]
+    var TimeSeriesServiceStatistics: js.UndefOr[TimeSeriesServiceStatisticsList]
+  }
+
+  object GetTimeSeriesServiceStatisticsResult {
+    def apply(
+        ContainsOldGroupVersions: js.UndefOr[Boolean] = js.undefined,
+        NextToken: js.UndefOr[String] = js.undefined,
+        TimeSeriesServiceStatistics: js.UndefOr[TimeSeriesServiceStatisticsList] = js.undefined
+    ): GetTimeSeriesServiceStatisticsResult = {
+      val __obj = js.Dictionary.empty[js.Any]
+      ContainsOldGroupVersions.foreach(__v => __obj.update("ContainsOldGroupVersions", __v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      TimeSeriesServiceStatistics.foreach(__v => __obj.update("TimeSeriesServiceStatistics", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetTimeSeriesServiceStatisticsResult]
+    }
+  }
+
+  @js.native
   trait GetTraceGraphRequest extends js.Object {
     var TraceIds: TraceIdList
     var NextToken: js.UndefOr[String]
@@ -1018,6 +1084,8 @@ package xray {
     var FilterExpression: js.UndefOr[FilterExpression]
     var NextToken: js.UndefOr[String]
     var Sampling: js.UndefOr[NullableBoolean]
+    var SamplingStrategy: js.UndefOr[SamplingStrategy]
+    var TimeRangeType: js.UndefOr[TimeRangeType]
   }
 
   object GetTraceSummariesRequest {
@@ -1026,7 +1094,9 @@ package xray {
         StartTime: Timestamp,
         FilterExpression: js.UndefOr[FilterExpression] = js.undefined,
         NextToken: js.UndefOr[String] = js.undefined,
-        Sampling: js.UndefOr[NullableBoolean] = js.undefined
+        Sampling: js.UndefOr[NullableBoolean] = js.undefined,
+        SamplingStrategy: js.UndefOr[SamplingStrategy] = js.undefined,
+        TimeRangeType: js.UndefOr[TimeRangeType] = js.undefined
     ): GetTraceSummariesRequest = {
       val __obj = js.Dictionary[js.Any](
         "EndTime"   -> EndTime.asInstanceOf[js.Any],
@@ -1036,6 +1106,8 @@ package xray {
       FilterExpression.foreach(__v => __obj.update("FilterExpression", __v.asInstanceOf[js.Any]))
       NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
       Sampling.foreach(__v => __obj.update("Sampling", __v.asInstanceOf[js.Any]))
+      SamplingStrategy.foreach(__v => __obj.update("SamplingStrategy", __v.asInstanceOf[js.Any]))
+      TimeRangeType.foreach(__v => __obj.update("TimeRangeType", __v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetTraceSummariesRequest]
     }
   }
@@ -1597,6 +1669,34 @@ package xray {
   }
 
   /**
+    * The name and value of a sampling rule to apply to a trace summary.
+    */
+  @js.native
+  trait SamplingStrategy extends js.Object {
+    var Name: js.UndefOr[SamplingStrategyName]
+    var Value: js.UndefOr[NullableDouble]
+  }
+
+  object SamplingStrategy {
+    def apply(
+        Name: js.UndefOr[SamplingStrategyName] = js.undefined,
+        Value: js.UndefOr[NullableDouble] = js.undefined
+    ): SamplingStrategy = {
+      val __obj = js.Dictionary.empty[js.Any]
+      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
+      Value.foreach(__v => __obj.update("Value", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[SamplingStrategy]
+    }
+  }
+
+  object SamplingStrategyNameEnum {
+    val PartialScan = "PartialScan"
+    val FixedRate   = "FixedRate"
+
+    val values = IndexedSeq(PartialScan, FixedRate)
+  }
+
+  /**
     * Temporary changes to a sampling rule configuration. To meet the global sampling target for a rule, X-Ray calculates a new reservoir for each service based on the recent sampling results of all services that called <a>GetSamplingTargets</a>.
     */
   @js.native
@@ -1794,6 +1894,40 @@ package xray {
     }
   }
 
+  object TimeRangeTypeEnum {
+    val TraceId = "TraceId"
+    val Event   = "Event"
+
+    val values = IndexedSeq(TraceId, Event)
+  }
+
+  /**
+    * A list of TimeSeriesStatistic structures.
+    */
+  @js.native
+  trait TimeSeriesServiceStatistics extends js.Object {
+    var EdgeSummaryStatistics: js.UndefOr[EdgeStatistics]
+    var ResponseTimeHistogram: js.UndefOr[Histogram]
+    var ServiceSummaryStatistics: js.UndefOr[ServiceStatistics]
+    var Timestamp: js.UndefOr[Timestamp]
+  }
+
+  object TimeSeriesServiceStatistics {
+    def apply(
+        EdgeSummaryStatistics: js.UndefOr[EdgeStatistics] = js.undefined,
+        ResponseTimeHistogram: js.UndefOr[Histogram] = js.undefined,
+        ServiceSummaryStatistics: js.UndefOr[ServiceStatistics] = js.undefined,
+        Timestamp: js.UndefOr[Timestamp] = js.undefined
+    ): TimeSeriesServiceStatistics = {
+      val __obj = js.Dictionary.empty[js.Any]
+      EdgeSummaryStatistics.foreach(__v => __obj.update("EdgeSummaryStatistics", __v.asInstanceOf[js.Any]))
+      ResponseTimeHistogram.foreach(__v => __obj.update("ResponseTimeHistogram", __v.asInstanceOf[js.Any]))
+      ServiceSummaryStatistics.foreach(__v => __obj.update("ServiceSummaryStatistics", __v.asInstanceOf[js.Any]))
+      Timestamp.foreach(__v => __obj.update("Timestamp", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[TimeSeriesServiceStatistics]
+    }
+  }
+
   /**
     * A collection of segment documents with matching trace IDs.
     */
@@ -1836,6 +1970,7 @@ package xray {
     var Id: js.UndefOr[TraceId]
     var InstanceIds: js.UndefOr[TraceInstanceIds]
     var IsPartial: js.UndefOr[NullableBoolean]
+    var MatchedEventTime: js.UndefOr[Timestamp]
     var ResourceARNs: js.UndefOr[TraceResourceARNs]
     var ResponseTime: js.UndefOr[NullableDouble]
     var ResponseTimeRootCauses: js.UndefOr[ResponseTimeRootCauses]
@@ -1859,6 +1994,7 @@ package xray {
         Id: js.UndefOr[TraceId] = js.undefined,
         InstanceIds: js.UndefOr[TraceInstanceIds] = js.undefined,
         IsPartial: js.UndefOr[NullableBoolean] = js.undefined,
+        MatchedEventTime: js.UndefOr[Timestamp] = js.undefined,
         ResourceARNs: js.UndefOr[TraceResourceARNs] = js.undefined,
         ResponseTime: js.UndefOr[NullableDouble] = js.undefined,
         ResponseTimeRootCauses: js.UndefOr[ResponseTimeRootCauses] = js.undefined,
@@ -1880,6 +2016,7 @@ package xray {
       Id.foreach(__v => __obj.update("Id", __v.asInstanceOf[js.Any]))
       InstanceIds.foreach(__v => __obj.update("InstanceIds", __v.asInstanceOf[js.Any]))
       IsPartial.foreach(__v => __obj.update("IsPartial", __v.asInstanceOf[js.Any]))
+      MatchedEventTime.foreach(__v => __obj.update("MatchedEventTime", __v.asInstanceOf[js.Any]))
       ResourceARNs.foreach(__v => __obj.update("ResourceARNs", __v.asInstanceOf[js.Any]))
       ResponseTime.foreach(__v => __obj.update("ResponseTime", __v.asInstanceOf[js.Any]))
       ResponseTimeRootCauses.foreach(__v => __obj.update("ResponseTimeRootCauses", __v.asInstanceOf[js.Any]))

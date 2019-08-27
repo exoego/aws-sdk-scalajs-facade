@@ -18,6 +18,8 @@ package object ecs {
   type BoxedInteger                          = Int
   type ClusterField                          = String
   type ClusterFieldList                      = js.Array[ClusterField]
+  type ClusterSettingName                    = String
+  type ClusterSettings                       = js.Array[ClusterSetting]
   type Clusters                              = js.Array[Cluster]
   type Compatibility                         = String
   type CompatibilityList                     = js.Array[Compatibility]
@@ -183,6 +185,9 @@ package object ecs {
     def startTaskFuture(params: StartTaskRequest): Future[StartTaskResponse] =
       service.startTask(params).promise.toFuture
     def stopTaskFuture(params: StopTaskRequest): Future[StopTaskResponse] = service.stopTask(params).promise.toFuture
+    def submitAttachmentStateChangesFuture(
+        params: SubmitAttachmentStateChangesRequest
+    ): Future[SubmitAttachmentStateChangesResponse] = service.submitAttachmentStateChanges(params).promise.toFuture
     def submitContainerStateChangeFuture(
         params: SubmitContainerStateChangeRequest
     ): Future[SubmitContainerStateChangeResponse] = service.submitContainerStateChange(params).promise.toFuture
@@ -260,6 +265,9 @@ package ecs {
     def runTask(params: RunTaskRequest): Request[RunTaskResponse]       = js.native
     def startTask(params: StartTaskRequest): Request[StartTaskResponse] = js.native
     def stopTask(params: StopTaskRequest): Request[StopTaskResponse]    = js.native
+    def submitAttachmentStateChanges(
+        params: SubmitAttachmentStateChangesRequest
+    ): Request[SubmitAttachmentStateChangesResponse] = js.native
     def submitContainerStateChange(
         params: SubmitContainerStateChangeRequest
     ): Request[SubmitContainerStateChangeResponse]                                                          = js.native
@@ -411,6 +419,7 @@ package ecs {
     var pendingTasksCount: js.UndefOr[Int]
     var registeredContainerInstancesCount: js.UndefOr[Int]
     var runningTasksCount: js.UndefOr[Int]
+    var settings: js.UndefOr[ClusterSettings]
     var statistics: js.UndefOr[Statistics]
     var status: js.UndefOr[String]
     var tags: js.UndefOr[Tags]
@@ -424,6 +433,7 @@ package ecs {
         pendingTasksCount: js.UndefOr[Int] = js.undefined,
         registeredContainerInstancesCount: js.UndefOr[Int] = js.undefined,
         runningTasksCount: js.UndefOr[Int] = js.undefined,
+        settings: js.UndefOr[ClusterSettings] = js.undefined,
         statistics: js.UndefOr[Statistics] = js.undefined,
         status: js.UndefOr[String] = js.undefined,
         tags: js.UndefOr[Tags] = js.undefined
@@ -437,6 +447,7 @@ package ecs {
         __v => __obj.update("registeredContainerInstancesCount", __v.asInstanceOf[js.Any])
       )
       runningTasksCount.foreach(__v => __obj.update("runningTasksCount", __v.asInstanceOf[js.Any]))
+      settings.foreach(__v => __obj.update("settings", __v.asInstanceOf[js.Any]))
       statistics.foreach(__v => __obj.update("statistics", __v.asInstanceOf[js.Any]))
       status.foreach(__v => __obj.update("status", __v.asInstanceOf[js.Any]))
       tags.foreach(__v => __obj.update("tags", __v.asInstanceOf[js.Any]))
@@ -449,6 +460,33 @@ package ecs {
     val TAGS       = "TAGS"
 
     val values = IndexedSeq(STATISTICS, TAGS)
+  }
+
+  /**
+    * The settings to use when creating a cluster. This parameter is used to enable CloudWatch Container Insights for a cluster.
+    */
+  @js.native
+  trait ClusterSetting extends js.Object {
+    var name: js.UndefOr[ClusterSettingName]
+    var value: js.UndefOr[String]
+  }
+
+  object ClusterSetting {
+    def apply(
+        name: js.UndefOr[ClusterSettingName] = js.undefined,
+        value: js.UndefOr[String] = js.undefined
+    ): ClusterSetting = {
+      val __obj = js.Dictionary.empty[js.Any]
+      name.foreach(__v => __obj.update("name", __v.asInstanceOf[js.Any]))
+      value.foreach(__v => __obj.update("value", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ClusterSetting]
+    }
+  }
+
+  object ClusterSettingNameEnum {
+    val containerInsights = "containerInsights"
+
+    val values = IndexedSeq(containerInsights)
   }
 
   object CompatibilityEnum {
@@ -656,7 +694,7 @@ package ecs {
 
   /**
     * The dependencies defined for container startup and shutdown. A container can contain multiple dependencies. When a dependency is defined for container startup, for container shutdown it is reversed.
-    *  Your Amazon ECS container instances require at least version 1.26.0 of the container agent to enable container dependencies. However, we recommend using the latest container agent version. For information about checking your agent version and updating to the latest version, see [[http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-update.html|Updating the Amazon ECS Container Agent]] in the <i>Amazon Elastic Container Service Developer Guide</i>. If you are using an Amazon ECS-optimized Linux AMI, your instance needs at least version 1.26.0-1 of the <code>ecs-init</code> package. If your container instances are launched from version <code>20190301</code> or later, then they contain the required versions of the container agent and <code>ecs-init</code>. For more information, see [[http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html|Amazon ECS-optimized Linux AMI]] in the <i>Amazon Elastic Container Service Developer Guide</i>.
+    *  Your Amazon ECS container instances require at least version 1.26.0 of the container agent to enable container dependencies. However, we recommend using the latest container agent version. For information about checking your agent version and updating to the latest version, see [[https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-update.html|Updating the Amazon ECS Container Agent]] in the <i>Amazon Elastic Container Service Developer Guide</i>. If you are using an Amazon ECS-optimized Linux AMI, your instance needs at least version 1.26.0-1 of the <code>ecs-init</code> package. If your container instances are launched from version <code>20190301</code> or later, then they contain the required versions of the container agent and <code>ecs-init</code>. For more information, see [[https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html|Amazon ECS-optimized Linux AMI]] in the <i>Amazon Elastic Container Service Developer Guide</i>.
     *
     * '''Note:'''If you are using tasks that use the Fargate launch type, container dependency parameters are not supported.
     */
@@ -697,6 +735,7 @@ package ecs {
     var remainingResources: js.UndefOr[Resources]
     var runningTasksCount: js.UndefOr[Int]
     var status: js.UndefOr[String]
+    var statusReason: js.UndefOr[String]
     var tags: js.UndefOr[Tags]
     var version: js.UndefOr[Double]
     var versionInfo: js.UndefOr[VersionInfo]
@@ -716,6 +755,7 @@ package ecs {
         remainingResources: js.UndefOr[Resources] = js.undefined,
         runningTasksCount: js.UndefOr[Int] = js.undefined,
         status: js.UndefOr[String] = js.undefined,
+        statusReason: js.UndefOr[String] = js.undefined,
         tags: js.UndefOr[Tags] = js.undefined,
         version: js.UndefOr[Double] = js.undefined,
         versionInfo: js.UndefOr[VersionInfo] = js.undefined
@@ -733,6 +773,7 @@ package ecs {
       remainingResources.foreach(__v => __obj.update("remainingResources", __v.asInstanceOf[js.Any]))
       runningTasksCount.foreach(__v => __obj.update("runningTasksCount", __v.asInstanceOf[js.Any]))
       status.foreach(__v => __obj.update("status", __v.asInstanceOf[js.Any]))
+      statusReason.foreach(__v => __obj.update("statusReason", __v.asInstanceOf[js.Any]))
       tags.foreach(__v => __obj.update("tags", __v.asInstanceOf[js.Any]))
       version.foreach(__v => __obj.update("version", __v.asInstanceOf[js.Any]))
       versionInfo.foreach(__v => __obj.update("versionInfo", __v.asInstanceOf[js.Any]))
@@ -747,14 +788,17 @@ package ecs {
   }
 
   object ContainerInstanceStatusEnum {
-    val ACTIVE   = "ACTIVE"
-    val DRAINING = "DRAINING"
+    val ACTIVE              = "ACTIVE"
+    val DRAINING            = "DRAINING"
+    val REGISTERING         = "REGISTERING"
+    val DEREGISTERING       = "DEREGISTERING"
+    val REGISTRATION_FAILED = "REGISTRATION_FAILED"
 
-    val values = IndexedSeq(ACTIVE, DRAINING)
+    val values = IndexedSeq(ACTIVE, DRAINING, REGISTERING, DEREGISTERING, REGISTRATION_FAILED)
   }
 
   /**
-    * The overrides that should be sent to a container.
+    * The overrides that should be sent to a container. An empty container override can be passed in. An example of an empty container override would be <code>{"containerOverrides": [ ] }</code>. If a non-empty container override is specified, the <code>name</code> parameter must be included.
     */
   @js.native
   trait ContainerOverride extends js.Object {
@@ -822,16 +866,19 @@ package ecs {
   @js.native
   trait CreateClusterRequest extends js.Object {
     var clusterName: js.UndefOr[String]
+    var settings: js.UndefOr[ClusterSettings]
     var tags: js.UndefOr[Tags]
   }
 
   object CreateClusterRequest {
     def apply(
         clusterName: js.UndefOr[String] = js.undefined,
+        settings: js.UndefOr[ClusterSettings] = js.undefined,
         tags: js.UndefOr[Tags] = js.undefined
     ): CreateClusterRequest = {
       val __obj = js.Dictionary.empty[js.Any]
       clusterName.foreach(__v => __obj.update("clusterName", __v.asInstanceOf[js.Any]))
+      settings.foreach(__v => __obj.update("settings", __v.asInstanceOf[js.Any]))
       tags.foreach(__v => __obj.update("tags", __v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateClusterRequest]
     }
@@ -1256,7 +1303,7 @@ package ecs {
   }
 
   /**
-    * The deployment controller to use for the service. For more information, see [[http://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-types.html|Amazon ECS Deployment Types]] in the <i>Amazon Elastic Container Service Developer Guide</i>.
+    * The deployment controller to use for the service. For more information, see [[https://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-types.html|Amazon ECS Deployment Types]] in the <i>Amazon Elastic Container Service Developer Guide</i>.
     */
   @js.native
   trait DeploymentController extends js.Object {
@@ -1870,7 +1917,9 @@ package ecs {
     var capabilities: js.UndefOr[KernelCapabilities]
     var devices: js.UndefOr[DevicesList]
     var initProcessEnabled: js.UndefOr[BoxedBoolean]
+    var maxSwap: js.UndefOr[BoxedInteger]
     var sharedMemorySize: js.UndefOr[BoxedInteger]
+    var swappiness: js.UndefOr[BoxedInteger]
     var tmpfs: js.UndefOr[TmpfsList]
   }
 
@@ -1879,14 +1928,18 @@ package ecs {
         capabilities: js.UndefOr[KernelCapabilities] = js.undefined,
         devices: js.UndefOr[DevicesList] = js.undefined,
         initProcessEnabled: js.UndefOr[BoxedBoolean] = js.undefined,
+        maxSwap: js.UndefOr[BoxedInteger] = js.undefined,
         sharedMemorySize: js.UndefOr[BoxedInteger] = js.undefined,
+        swappiness: js.UndefOr[BoxedInteger] = js.undefined,
         tmpfs: js.UndefOr[TmpfsList] = js.undefined
     ): LinuxParameters = {
       val __obj = js.Dictionary.empty[js.Any]
       capabilities.foreach(__v => __obj.update("capabilities", __v.asInstanceOf[js.Any]))
       devices.foreach(__v => __obj.update("devices", __v.asInstanceOf[js.Any]))
       initProcessEnabled.foreach(__v => __obj.update("initProcessEnabled", __v.asInstanceOf[js.Any]))
+      maxSwap.foreach(__v => __obj.update("maxSwap", __v.asInstanceOf[js.Any]))
       sharedMemorySize.foreach(__v => __obj.update("sharedMemorySize", __v.asInstanceOf[js.Any]))
+      swappiness.foreach(__v => __obj.update("swappiness", __v.asInstanceOf[js.Any]))
       tmpfs.foreach(__v => __obj.update("tmpfs", __v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[LinuxParameters]
     }
@@ -2293,7 +2346,7 @@ package ecs {
   }
 
   /**
-    * Details on a load balancer that is used with a service.
+    * Details on a load balancer to be used with a service or task set.
     *  If the service is using the <code>ECS</code> deployment controller, you are limited to one load balancer or target group.
     *  If the service is using the <code>CODE_DEPLOY</code> deployment controller, the service is required to use either an Application Load Balancer or Network Load Balancer. When you are creating an AWS CodeDeploy deployment group, you specify two target groups (referred to as a <code>targetGroupPair</code>). Each target group binds to a separate task set in the deployment. The load balancer can also have up to two listeners, a required listener for production traffic and an optional listener that allows you to test new revisions of the service before routing production traffic to it.
     *  Services with tasks that use the <code>awsvpc</code> network mode (for example, those with the Fargate launch type) only support Application Load Balancers and Network Load Balancers. Classic Load Balancers are not supported. Also, when you create any target groups for these services, you must choose <code>ip</code> as the target type, not <code>instance</code>. Tasks that use the <code>awsvpc</code> network mode are associated with an elastic network interface, not an Amazon EC2 instance.
@@ -2329,18 +2382,21 @@ package ecs {
   trait LogConfiguration extends js.Object {
     var logDriver: LogDriver
     var options: js.UndefOr[LogConfigurationOptionsMap]
+    var secretOptions: js.UndefOr[SecretList]
   }
 
   object LogConfiguration {
     def apply(
         logDriver: LogDriver,
-        options: js.UndefOr[LogConfigurationOptionsMap] = js.undefined
+        options: js.UndefOr[LogConfigurationOptionsMap] = js.undefined,
+        secretOptions: js.UndefOr[SecretList] = js.undefined
     ): LogConfiguration = {
       val __obj = js.Dictionary[js.Any](
         "logDriver" -> logDriver.asInstanceOf[js.Any]
       )
 
       options.foreach(__v => __obj.update("options", __v.asInstanceOf[js.Any]))
+      secretOptions.foreach(__v => __obj.update("secretOptions", __v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[LogConfiguration]
     }
   }
@@ -2587,7 +2643,8 @@ package ecs {
 
   /**
     * The configuration details for the App Mesh proxy.
-    *  Your Amazon ECS container instances require at least version 1.26.0 of the container agent and at least version 1.26.0-1 of the <code>ecs-init</code> package to enable a proxy configuration. If your container instances are launched from the Amazon ECS-optimized AMI version <code>20190301</code> or later, then they contain the required versions of the container agent and <code>ecs-init</code>. For more information, see [[http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html|Amazon ECS-optimized Linux AMI]] in the <i>Amazon Elastic Container Service Developer Guide</i>.
+    *  For tasks using the EC2 launch type, the container instances require at least version 1.26.0 of the container agent and at least version 1.26.0-1 of the <code>ecs-init</code> package to enable a proxy configuration. If your container instances are launched from the Amazon ECS-optimized AMI version <code>20190301</code> or later, then they contain the required versions of the container agent and <code>ecs-init</code>. For more information, see [[https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html|Amazon ECS-optimized Linux AMI]] in the <i>Amazon Elastic Container Service Developer Guide</i>.
+    *  For tasks using the Fargate launch type, the task or service requires platform version 1.3.0 or later.
     */
   @js.native
   trait ProxyConfiguration extends js.Object {
@@ -2910,7 +2967,7 @@ package ecs {
   }
 
   /**
-    * The type and amount of a resource to assign to a container. The only supported resource is a GPU. For more information, see [[http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-gpu.html|Working with GPUs on Amazon ECS]] in the <i>Amazon Elastic Container Service Developer Guide</i>
+    * The type and amount of a resource to assign to a container. The only supported resource is a GPU. For more information, see [[https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-gpu.html|Working with GPUs on Amazon ECS]] in the <i>Amazon Elastic Container Service Developer Guide</i>
     */
   @js.native
   trait ResourceRequirement extends js.Object {
@@ -3054,7 +3111,10 @@ package ecs {
   }
 
   /**
-    * An object representing the secret to expose to your container. For more information, see [[http://docs.aws.amazon.com/AmazonECS/latest/developerguide/specifying-sensitive-data.html|Specifying Sensitive Data]] in the <i>Amazon Elastic Container Service Developer Guide</i>.
+    * An object representing the secret to expose to your container. Secrets can be exposed to a container in the following ways:
+    * * To inject sensitive data into your containers as environment variables, use the <code>secrets</code> container definition parameter.
+    *  * To reference sensitive information in the log configuration of a container, use the <code>secretOptions</code> container definition parameter.
+    * For more information, see [[https://docs.aws.amazon.com/AmazonECS/latest/developerguide/specifying-sensitive-data.html|Specifying Sensitive Data]] in the <i>Amazon Elastic Container Service Developer Guide</i>.
     */
   @js.native
   trait Secret extends js.Object {
@@ -3262,8 +3322,16 @@ package ecs {
     val serviceLongArnFormat           = "serviceLongArnFormat"
     val taskLongArnFormat              = "taskLongArnFormat"
     val containerInstanceLongArnFormat = "containerInstanceLongArnFormat"
+    val awsvpcTrunking                 = "awsvpcTrunking"
+    val containerInsights              = "containerInsights"
 
-    val values = IndexedSeq(serviceLongArnFormat, taskLongArnFormat, containerInstanceLongArnFormat)
+    val values = IndexedSeq(
+      serviceLongArnFormat,
+      taskLongArnFormat,
+      containerInstanceLongArnFormat,
+      awsvpcTrunking,
+      containerInsights
+    )
   }
 
   object SortOrderEnum {
@@ -3377,6 +3445,41 @@ package ecs {
       val __obj = js.Dictionary.empty[js.Any]
       task.foreach(__v => __obj.update("task", __v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[StopTaskResponse]
+    }
+  }
+
+  @js.native
+  trait SubmitAttachmentStateChangesRequest extends js.Object {
+    var attachments: AttachmentStateChanges
+    var cluster: js.UndefOr[String]
+  }
+
+  object SubmitAttachmentStateChangesRequest {
+    def apply(
+        attachments: AttachmentStateChanges,
+        cluster: js.UndefOr[String] = js.undefined
+    ): SubmitAttachmentStateChangesRequest = {
+      val __obj = js.Dictionary[js.Any](
+        "attachments" -> attachments.asInstanceOf[js.Any]
+      )
+
+      cluster.foreach(__v => __obj.update("cluster", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[SubmitAttachmentStateChangesRequest]
+    }
+  }
+
+  @js.native
+  trait SubmitAttachmentStateChangesResponse extends js.Object {
+    var acknowledgment: js.UndefOr[String]
+  }
+
+  object SubmitAttachmentStateChangesResponse {
+    def apply(
+        acknowledgment: js.UndefOr[String] = js.undefined
+    ): SubmitAttachmentStateChangesResponse = {
+      val __obj = js.Dictionary.empty[js.Any]
+      acknowledgment.foreach(__v => __obj.update("acknowledgment", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[SubmitAttachmentStateChangesResponse]
     }
   }
 
@@ -3507,7 +3610,15 @@ package ecs {
   }
 
   /**
-    * The metadata that you apply to a resource to help you categorize and organize them. Each tag consists of a key and an optional value, both of which you define. Tag keys can have a maximum character length of 128 characters, and tag values can have a maximum length of 256 characters.
+    * The metadata that you apply to a resource to help you categorize and organize them. Each tag consists of a key and an optional value, both of which you define.
+    *  The following basic restrictions apply to tags:
+    * * Maximum number of tags per resource - 50
+    *  * For each resource, each tag key must be unique, and each tag key can have only one value.
+    *  * Maximum key length - 128 Unicode characters in UTF-8
+    *  * Maximum value length - 256 Unicode characters in UTF-8
+    *  * If your tagging schema is used across multiple services and resources, remember that other services may have restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following characters: + - = . _ : / @.
+    *  * Tag keys and values are case-sensitive.
+    *  * Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for either keys or values as it is reserved for AWS use. You cannot edit or delete tag keys or values with this prefix. Tags with this prefix do not count against your tags per resource limit.
     */
   @js.native
   trait Tag extends js.Object {
@@ -3668,7 +3779,7 @@ package ecs {
   }
 
   /**
-    * Details of a task definition.
+    * The details of a task definition which describes the container and volume definitions of an Amazon Elastic Container Service task. You can specify which Docker images to use, the required resources, and other configurations related to launching the task definition through an Amazon ECS service or task.
     */
   @js.native
   trait TaskDefinition extends js.Object {
@@ -4267,7 +4378,7 @@ package ecs {
   }
 
   /**
-    * A data volume used in a task definition. For tasks that use a Docker volume, specify a <code>DockerVolumeConfiguration</code>. For tasks that use a bind mount host volume, specify a <code>host</code> and optional <code>sourcePath</code>. For more information, see [[http://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_data_volumes.html|Using Data Volumes in Tasks]].
+    * A data volume used in a task definition. For tasks that use a Docker volume, specify a <code>DockerVolumeConfiguration</code>. For tasks that use a bind mount host volume, specify a <code>host</code> and optional <code>sourcePath</code>. For more information, see [[https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_data_volumes.html|Using Data Volumes in Tasks]].
     */
   @js.native
   trait Volume extends js.Object {

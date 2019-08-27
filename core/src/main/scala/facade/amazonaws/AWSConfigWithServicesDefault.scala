@@ -135,8 +135,8 @@ class AWSConfigWithServicesDefault extends AWSConfig {
   var route53: js.UndefOr[ParamsWithEndpoint]                         = js.undefined
   var route53domains: js.UndefOr[ParamsWithEndpoint]                  = js.undefined
   var route53resolver: js.UndefOr[ParamsWithEndpoint]                 = js.undefined
-  var s3: js.UndefOr[S3ParamsWithEndpoint]                            = js.undefined
-  var s3control: js.UndefOr[S3ParamsWithEndpoint]                     = js.undefined
+  var s3: js.UndefOr[ParamsWithEndpoint]                              = js.undefined
+  var s3control: js.UndefOr[ParamsWithEndpoint]                       = js.undefined
   var sagemaker: js.UndefOr[ParamsWithEndpoint]                       = js.undefined
   var sagemakerruntime: js.UndefOr[ParamsWithEndpoint]                = js.undefined
   var secretsmanager: js.UndefOr[ParamsWithEndpoint]                  = js.undefined

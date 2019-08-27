@@ -68,6 +68,11 @@ package object organizations {
   type RootName                   = String
   type Roots                      = js.Array[Root]
   type ServicePrincipal           = String
+  type TagKey                     = String
+  type TagKeys                    = js.Array[TagKey]
+  type TagValue                   = String
+  type TaggableResourceId         = String
+  type Tags                       = js.Array[Tag]
   type TargetName                 = String
   type TargetType                 = String
   type Timestamp                  = js.Date
@@ -82,6 +87,8 @@ package object organizations {
       service.cancelHandshake(params).promise.toFuture
     def createAccountFuture(params: CreateAccountRequest): Future[CreateAccountResponse] =
       service.createAccount(params).promise.toFuture
+    def createGovCloudAccountFuture(params: CreateGovCloudAccountRequest): Future[CreateGovCloudAccountResponse] =
+      service.createGovCloudAccount(params).promise.toFuture
     def createOrganizationFuture(params: CreateOrganizationRequest): Future[CreateOrganizationResponse] =
       service.createOrganization(params).promise.toFuture
     def createOrganizationalUnitFuture(
@@ -156,11 +163,16 @@ package object organizations {
       service.listPolicies(params).promise.toFuture
     def listRootsFuture(params: ListRootsRequest): Future[ListRootsResponse] =
       service.listRoots(params).promise.toFuture
+    def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] =
+      service.listTagsForResource(params).promise.toFuture
     def listTargetsForPolicyFuture(params: ListTargetsForPolicyRequest): Future[ListTargetsForPolicyResponse] =
       service.listTargetsForPolicy(params).promise.toFuture
     def moveAccountFuture(params: MoveAccountRequest): Future[js.Object] = service.moveAccount(params).promise.toFuture
     def removeAccountFromOrganizationFuture(params: RemoveAccountFromOrganizationRequest): Future[js.Object] =
       service.removeAccountFromOrganization(params).promise.toFuture
+    def tagResourceFuture(params: TagResourceRequest): Future[js.Object] = service.tagResource(params).promise.toFuture
+    def untagResourceFuture(params: UntagResourceRequest): Future[js.Object] =
+      service.untagResource(params).promise.toFuture
     def updateOrganizationalUnitFuture(
         params: UpdateOrganizationalUnitRequest
     ): Future[UpdateOrganizationalUnitResponse] = service.updateOrganizationalUnit(params).promise.toFuture
@@ -175,11 +187,12 @@ package organizations {
   class Organizations() extends js.Object {
     def this(config: AWSConfig) = this()
 
-    def acceptHandshake(params: AcceptHandshakeRequest): Request[AcceptHandshakeResponse]          = js.native
-    def attachPolicy(params: AttachPolicyRequest): Request[js.Object]                              = js.native
-    def cancelHandshake(params: CancelHandshakeRequest): Request[CancelHandshakeResponse]          = js.native
-    def createAccount(params: CreateAccountRequest): Request[CreateAccountResponse]                = js.native
-    def createOrganization(params: CreateOrganizationRequest): Request[CreateOrganizationResponse] = js.native
+    def acceptHandshake(params: AcceptHandshakeRequest): Request[AcceptHandshakeResponse]                   = js.native
+    def attachPolicy(params: AttachPolicyRequest): Request[js.Object]                                       = js.native
+    def cancelHandshake(params: CancelHandshakeRequest): Request[CancelHandshakeResponse]                   = js.native
+    def createAccount(params: CreateAccountRequest): Request[CreateAccountResponse]                         = js.native
+    def createGovCloudAccount(params: CreateGovCloudAccountRequest): Request[CreateGovCloudAccountResponse] = js.native
+    def createOrganization(params: CreateOrganizationRequest): Request[CreateOrganizationResponse]          = js.native
     def createOrganizationalUnit(params: CreateOrganizationalUnitRequest): Request[CreateOrganizationalUnitResponse] =
       js.native
     def createPolicy(params: CreatePolicyRequest): Request[CreatePolicyResponse]              = js.native
@@ -227,9 +240,12 @@ package organizations {
     def listPolicies(params: ListPoliciesRequest): Request[ListPoliciesResponse]                            = js.native
     def listPoliciesForTarget(params: ListPoliciesForTargetRequest): Request[ListPoliciesForTargetResponse] = js.native
     def listRoots(params: ListRootsRequest): Request[ListRootsResponse]                                     = js.native
+    def listTagsForResource(params: ListTagsForResourceRequest): Request[ListTagsForResourceResponse]       = js.native
     def listTargetsForPolicy(params: ListTargetsForPolicyRequest): Request[ListTargetsForPolicyResponse]    = js.native
     def moveAccount(params: MoveAccountRequest): Request[js.Object]                                         = js.native
     def removeAccountFromOrganization(params: RemoveAccountFromOrganizationRequest): Request[js.Object]     = js.native
+    def tagResource(params: TagResourceRequest): Request[js.Object]                                         = js.native
+    def untagResource(params: UntagResourceRequest): Request[js.Object]                                     = js.native
     def updateOrganizationalUnit(params: UpdateOrganizationalUnitRequest): Request[UpdateOrganizationalUnitResponse] =
       js.native
     def updatePolicy(params: UpdatePolicyRequest): Request[UpdatePolicyResponse] = js.native
@@ -474,7 +490,7 @@ package organizations {
   }
 
   /**
-    * Contains the status about a <a>CreateAccount</a> request to create an AWS account in an organization.
+    * Contains the status about a <a>CreateAccount</a> or <a>CreateGovCloudAccount</a> request to create an AWS account or an AWS GovCloud (US) account in an organization.
     */
   @js.native
   trait CreateAccountStatus extends js.Object {
@@ -482,6 +498,7 @@ package organizations {
     var AccountName: js.UndefOr[AccountName]
     var CompletedTimestamp: js.UndefOr[Timestamp]
     var FailureReason: js.UndefOr[CreateAccountFailureReason]
+    var GovCloudAccountId: js.UndefOr[AccountId]
     var Id: js.UndefOr[CreateAccountRequestId]
     var RequestedTimestamp: js.UndefOr[Timestamp]
     var State: js.UndefOr[CreateAccountState]
@@ -493,6 +510,7 @@ package organizations {
         AccountName: js.UndefOr[AccountName] = js.undefined,
         CompletedTimestamp: js.UndefOr[Timestamp] = js.undefined,
         FailureReason: js.UndefOr[CreateAccountFailureReason] = js.undefined,
+        GovCloudAccountId: js.UndefOr[AccountId] = js.undefined,
         Id: js.UndefOr[CreateAccountRequestId] = js.undefined,
         RequestedTimestamp: js.UndefOr[Timestamp] = js.undefined,
         State: js.UndefOr[CreateAccountState] = js.undefined
@@ -502,10 +520,52 @@ package organizations {
       AccountName.foreach(__v => __obj.update("AccountName", __v.asInstanceOf[js.Any]))
       CompletedTimestamp.foreach(__v => __obj.update("CompletedTimestamp", __v.asInstanceOf[js.Any]))
       FailureReason.foreach(__v => __obj.update("FailureReason", __v.asInstanceOf[js.Any]))
+      GovCloudAccountId.foreach(__v => __obj.update("GovCloudAccountId", __v.asInstanceOf[js.Any]))
       Id.foreach(__v => __obj.update("Id", __v.asInstanceOf[js.Any]))
       RequestedTimestamp.foreach(__v => __obj.update("RequestedTimestamp", __v.asInstanceOf[js.Any]))
       State.foreach(__v => __obj.update("State", __v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateAccountStatus]
+    }
+  }
+
+  @js.native
+  trait CreateGovCloudAccountRequest extends js.Object {
+    var AccountName: AccountName
+    var Email: Email
+    var IamUserAccessToBilling: js.UndefOr[IAMUserAccessToBilling]
+    var RoleName: js.UndefOr[RoleName]
+  }
+
+  object CreateGovCloudAccountRequest {
+    def apply(
+        AccountName: AccountName,
+        Email: Email,
+        IamUserAccessToBilling: js.UndefOr[IAMUserAccessToBilling] = js.undefined,
+        RoleName: js.UndefOr[RoleName] = js.undefined
+    ): CreateGovCloudAccountRequest = {
+      val __obj = js.Dictionary[js.Any](
+        "AccountName" -> AccountName.asInstanceOf[js.Any],
+        "Email"       -> Email.asInstanceOf[js.Any]
+      )
+
+      IamUserAccessToBilling.foreach(__v => __obj.update("IamUserAccessToBilling", __v.asInstanceOf[js.Any]))
+      RoleName.foreach(__v => __obj.update("RoleName", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateGovCloudAccountRequest]
+    }
+  }
+
+  @js.native
+  trait CreateGovCloudAccountResponse extends js.Object {
+    var CreateAccountStatus: js.UndefOr[CreateAccountStatus]
+  }
+
+  object CreateGovCloudAccountResponse {
+    def apply(
+        CreateAccountStatus: js.UndefOr[CreateAccountStatus] = js.undefined
+    ): CreateGovCloudAccountResponse = {
+      val __obj = js.Dictionary.empty[js.Any]
+      CreateAccountStatus.foreach(__v => __obj.update("CreateAccountStatus", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateGovCloudAccountResponse]
     }
   }
 
@@ -1697,6 +1757,44 @@ package organizations {
   }
 
   @js.native
+  trait ListTagsForResourceRequest extends js.Object {
+    var ResourceId: TaggableResourceId
+    var NextToken: js.UndefOr[NextToken]
+  }
+
+  object ListTagsForResourceRequest {
+    def apply(
+        ResourceId: TaggableResourceId,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListTagsForResourceRequest = {
+      val __obj = js.Dictionary[js.Any](
+        "ResourceId" -> ResourceId.asInstanceOf[js.Any]
+      )
+
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListTagsForResourceRequest]
+    }
+  }
+
+  @js.native
+  trait ListTagsForResourceResponse extends js.Object {
+    var NextToken: js.UndefOr[NextToken]
+    var Tags: js.UndefOr[Tags]
+  }
+
+  object ListTagsForResourceResponse {
+    def apply(
+        NextToken: js.UndefOr[NextToken] = js.undefined,
+        Tags: js.UndefOr[Tags] = js.undefined
+    ): ListTagsForResourceResponse = {
+      val __obj = js.Dictionary.empty[js.Any]
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListTagsForResourceResponse]
+    }
+  }
+
+  @js.native
   trait ListTargetsForPolicyRequest extends js.Object {
     var PolicyId: PolicyId
     var MaxResults: js.UndefOr[MaxResults]
@@ -2015,12 +2113,75 @@ package organizations {
     }
   }
 
+  /**
+    * A custom key-value pair associated with a resource such as an account within your organization.
+    */
+  @js.native
+  trait Tag extends js.Object {
+    var Key: TagKey
+    var Value: TagValue
+  }
+
+  object Tag {
+    def apply(
+        Key: TagKey,
+        Value: TagValue
+    ): Tag = {
+      val __obj = js.Dictionary[js.Any](
+        "Key"   -> Key.asInstanceOf[js.Any],
+        "Value" -> Value.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[Tag]
+    }
+  }
+
+  @js.native
+  trait TagResourceRequest extends js.Object {
+    var ResourceId: TaggableResourceId
+    var Tags: Tags
+  }
+
+  object TagResourceRequest {
+    def apply(
+        ResourceId: TaggableResourceId,
+        Tags: Tags
+    ): TagResourceRequest = {
+      val __obj = js.Dictionary[js.Any](
+        "ResourceId" -> ResourceId.asInstanceOf[js.Any],
+        "Tags"       -> Tags.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[TagResourceRequest]
+    }
+  }
+
   object TargetTypeEnum {
     val ACCOUNT             = "ACCOUNT"
     val ORGANIZATIONAL_UNIT = "ORGANIZATIONAL_UNIT"
     val ROOT                = "ROOT"
 
     val values = IndexedSeq(ACCOUNT, ORGANIZATIONAL_UNIT, ROOT)
+  }
+
+  @js.native
+  trait UntagResourceRequest extends js.Object {
+    var ResourceId: TaggableResourceId
+    var TagKeys: TagKeys
+  }
+
+  object UntagResourceRequest {
+    def apply(
+        ResourceId: TaggableResourceId,
+        TagKeys: TagKeys
+    ): UntagResourceRequest = {
+      val __obj = js.Dictionary[js.Any](
+        "ResourceId" -> ResourceId.asInstanceOf[js.Any],
+        "TagKeys"    -> TagKeys.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[UntagResourceRequest]
+    }
   }
 
   @js.native

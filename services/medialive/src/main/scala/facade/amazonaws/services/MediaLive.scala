@@ -125,8 +125,11 @@ package object medialive {
   type InputResolution                               = String
   type InputSecurityGroupState                       = String
   type InputSourceEndBehavior                        = String
+  type InputSourceType                               = String
   type InputState                                    = String
+  type InputTimecodeSource                           = String
   type InputType                                     = String
+  type LastFrameClippingBehavior                     = String
   type LogLevel                                      = String
   type M2tsAbsentInputAudioBehavior                  = String
   type M2tsArib                                      = String
@@ -203,20 +206,17 @@ package object medialive {
   type __integerMin0Max1000                          = Int
   type __integerMin0Max10000                         = Int
   type __integerMin0Max1000000                       = Int
-  type __integerMin0Max1099511627775                 = Double
   type __integerMin0Max128                           = Int
   type __integerMin0Max15                            = Int
   type __integerMin0Max255                           = Int
   type __integerMin0Max30                            = Int
   type __integerMin0Max3600                          = Int
-  type __integerMin0Max4294967295                    = Double
   type __integerMin0Max500                           = Int
   type __integerMin0Max600                           = Int
   type __integerMin0Max65535                         = Int
   type __integerMin0Max65536                         = Int
   type __integerMin0Max7                             = Int
   type __integerMin0Max8191                          = Int
-  type __integerMin0Max8589934591                    = Double
   type __integerMin1                                 = Int
   type __integerMin1000                              = Int
   type __integerMin1000Max30000                      = Int
@@ -267,12 +267,16 @@ package object medialive {
   type __listOfOutputDestination                     = js.Array[OutputDestination]
   type __listOfOutputDestinationSettings             = js.Array[OutputDestinationSettings]
   type __listOfOutputGroup                           = js.Array[OutputGroup]
+  type __listOfPipelineDetail                        = js.Array[PipelineDetail]
   type __listOfPipelinePauseStateSettings            = js.Array[PipelinePauseStateSettings]
   type __listOfReservation                           = js.Array[Reservation]
   type __listOfScheduleAction                        = js.Array[ScheduleAction]
   type __listOfScte35Descriptor                      = js.Array[Scte35Descriptor]
   type __listOfVideoDescription                      = js.Array[VideoDescription]
   type __listOf__string                              = js.Array[__string]
+  type __longMin0Max1099511627775                    = Double
+  type __longMin0Max4294967295                       = Double
+  type __longMin0Max8589934591                       = Double
   type __string                                      = String
   type __stringMax32                                 = String
   type __stringMin1                                  = String
@@ -304,6 +308,8 @@ package object medialive {
     ): Future[DeleteInputSecurityGroupResponse] = service.deleteInputSecurityGroup(params).promise.toFuture
     def deleteReservationFuture(params: DeleteReservationRequest): Future[DeleteReservationResponse] =
       service.deleteReservation(params).promise.toFuture
+    def deleteScheduleFuture(params: DeleteScheduleRequest): Future[DeleteScheduleResponse] =
+      service.deleteSchedule(params).promise.toFuture
     def deleteTagsFuture(params: DeleteTagsRequest): Future[js.Object] = service.deleteTags(params).promise.toFuture
     def describeChannelFuture(params: DescribeChannelRequest): Future[DescribeChannelResponse] =
       service.describeChannel(params).promise.toFuture
@@ -336,6 +342,8 @@ package object medialive {
       service.startChannel(params).promise.toFuture
     def stopChannelFuture(params: StopChannelRequest): Future[StopChannelResponse] =
       service.stopChannel(params).promise.toFuture
+    def updateChannelClassFuture(params: UpdateChannelClassRequest): Future[UpdateChannelClassResponse] =
+      service.updateChannelClass(params).promise.toFuture
     def updateChannelFuture(params: UpdateChannelRequest): Future[UpdateChannelResponse] =
       service.updateChannel(params).promise.toFuture
     def updateInputFuture(params: UpdateInputRequest): Future[UpdateInputResponse] =
@@ -365,6 +373,7 @@ package medialive {
     def deleteInputSecurityGroup(params: DeleteInputSecurityGroupRequest): Request[DeleteInputSecurityGroupResponse] =
       js.native
     def deleteReservation(params: DeleteReservationRequest): Request[DeleteReservationResponse] = js.native
+    def deleteSchedule(params: DeleteScheduleRequest): Request[DeleteScheduleResponse]          = js.native
     def deleteTags(params: DeleteTagsRequest): Request[js.Object]                               = js.native
     def describeChannel(params: DescribeChannelRequest): Request[DescribeChannelResponse]       = js.native
     def describeInput(params: DescribeInputRequest): Request[DescribeInputResponse]             = js.native
@@ -385,6 +394,7 @@ package medialive {
     def startChannel(params: StartChannelRequest): Request[StartChannelResponse]                      = js.native
     def stopChannel(params: StopChannelRequest): Request[StopChannelResponse]                         = js.native
     def updateChannel(params: UpdateChannelRequest): Request[UpdateChannelResponse]                   = js.native
+    def updateChannelClass(params: UpdateChannelClassRequest): Request[UpdateChannelClassResponse]    = js.native
     def updateInput(params: UpdateInputRequest): Request[UpdateInputResponse]                         = js.native
     def updateInputSecurityGroup(params: UpdateInputSecurityGroupRequest): Request[UpdateInputSecurityGroupResponse] =
       js.native
@@ -1616,6 +1626,7 @@ package medialive {
     var InputSpecification: js.UndefOr[InputSpecification]
     var LogLevel: js.UndefOr[LogLevel]
     var Name: js.UndefOr[__string]
+    var PipelineDetails: js.UndefOr[__listOfPipelineDetail]
     var PipelinesRunningCount: js.UndefOr[__integer]
     var RoleArn: js.UndefOr[__string]
     var State: js.UndefOr[ChannelState]
@@ -1634,6 +1645,7 @@ package medialive {
         InputSpecification: js.UndefOr[InputSpecification] = js.undefined,
         LogLevel: js.UndefOr[LogLevel] = js.undefined,
         Name: js.UndefOr[__string] = js.undefined,
+        PipelineDetails: js.UndefOr[__listOfPipelineDetail] = js.undefined,
         PipelinesRunningCount: js.UndefOr[__integer] = js.undefined,
         RoleArn: js.UndefOr[__string] = js.undefined,
         State: js.UndefOr[ChannelState] = js.undefined,
@@ -1650,6 +1662,7 @@ package medialive {
       InputSpecification.foreach(__v => __obj.update("InputSpecification", __v.asInstanceOf[js.Any]))
       LogLevel.foreach(__v => __obj.update("LogLevel", __v.asInstanceOf[js.Any]))
       Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
+      PipelineDetails.foreach(__v => __obj.update("PipelineDetails", __v.asInstanceOf[js.Any]))
       PipelinesRunningCount.foreach(__v => __obj.update("PipelinesRunningCount", __v.asInstanceOf[js.Any]))
       RoleArn.foreach(__v => __obj.update("RoleArn", __v.asInstanceOf[js.Any]))
       State.foreach(__v => __obj.update("State", __v.asInstanceOf[js.Any]))
@@ -1699,8 +1712,22 @@ package medialive {
     val STOPPING      = "STOPPING"
     val DELETING      = "DELETING"
     val DELETED       = "DELETED"
+    val UPDATING      = "UPDATING"
+    val UPDATE_FAILED = "UPDATE_FAILED"
 
-    val values = IndexedSeq(CREATING, CREATE_FAILED, IDLE, STARTING, RUNNING, RECOVERING, STOPPING, DELETING, DELETED)
+    val values = IndexedSeq(
+      CREATING,
+      CREATE_FAILED,
+      IDLE,
+      STARTING,
+      RUNNING,
+      RECOVERING,
+      STOPPING,
+      DELETING,
+      DELETED,
+      UPDATING,
+      UPDATE_FAILED
+    )
   }
 
   /**
@@ -1983,6 +2010,7 @@ package medialive {
     var InputSpecification: js.UndefOr[InputSpecification]
     var LogLevel: js.UndefOr[LogLevel]
     var Name: js.UndefOr[__string]
+    var PipelineDetails: js.UndefOr[__listOfPipelineDetail]
     var PipelinesRunningCount: js.UndefOr[__integer]
     var RoleArn: js.UndefOr[__string]
     var State: js.UndefOr[ChannelState]
@@ -2001,6 +2029,7 @@ package medialive {
         InputSpecification: js.UndefOr[InputSpecification] = js.undefined,
         LogLevel: js.UndefOr[LogLevel] = js.undefined,
         Name: js.UndefOr[__string] = js.undefined,
+        PipelineDetails: js.UndefOr[__listOfPipelineDetail] = js.undefined,
         PipelinesRunningCount: js.UndefOr[__integer] = js.undefined,
         RoleArn: js.UndefOr[__string] = js.undefined,
         State: js.UndefOr[ChannelState] = js.undefined,
@@ -2017,6 +2046,7 @@ package medialive {
       InputSpecification.foreach(__v => __obj.update("InputSpecification", __v.asInstanceOf[js.Any]))
       LogLevel.foreach(__v => __obj.update("LogLevel", __v.asInstanceOf[js.Any]))
       Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
+      PipelineDetails.foreach(__v => __obj.update("PipelineDetails", __v.asInstanceOf[js.Any]))
       PipelinesRunningCount.foreach(__v => __obj.update("PipelinesRunningCount", __v.asInstanceOf[js.Any]))
       RoleArn.foreach(__v => __obj.update("RoleArn", __v.asInstanceOf[js.Any]))
       State.foreach(__v => __obj.update("State", __v.asInstanceOf[js.Any]))
@@ -2185,6 +2215,41 @@ package medialive {
   }
 
   /**
+    * Placeholder documentation for DeleteScheduleRequest
+    */
+  @js.native
+  trait DeleteScheduleRequest extends js.Object {
+    var ChannelId: __string
+  }
+
+  object DeleteScheduleRequest {
+    def apply(
+        ChannelId: __string
+    ): DeleteScheduleRequest = {
+      val __obj = js.Dictionary[js.Any](
+        "ChannelId" -> ChannelId.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[DeleteScheduleRequest]
+    }
+  }
+
+  /**
+    * Placeholder documentation for DeleteScheduleResponse
+    */
+  @js.native
+  trait DeleteScheduleResponse extends js.Object {}
+
+  object DeleteScheduleResponse {
+    def apply(
+        ): DeleteScheduleResponse = {
+      val __obj = js.Dictionary.empty[js.Any]
+
+      __obj.asInstanceOf[DeleteScheduleResponse]
+    }
+  }
+
+  /**
     * Placeholder documentation for DeleteTagsRequest
     */
   @js.native
@@ -2242,6 +2307,7 @@ package medialive {
     var InputSpecification: js.UndefOr[InputSpecification]
     var LogLevel: js.UndefOr[LogLevel]
     var Name: js.UndefOr[__string]
+    var PipelineDetails: js.UndefOr[__listOfPipelineDetail]
     var PipelinesRunningCount: js.UndefOr[__integer]
     var RoleArn: js.UndefOr[__string]
     var State: js.UndefOr[ChannelState]
@@ -2260,6 +2326,7 @@ package medialive {
         InputSpecification: js.UndefOr[InputSpecification] = js.undefined,
         LogLevel: js.UndefOr[LogLevel] = js.undefined,
         Name: js.UndefOr[__string] = js.undefined,
+        PipelineDetails: js.UndefOr[__listOfPipelineDetail] = js.undefined,
         PipelinesRunningCount: js.UndefOr[__integer] = js.undefined,
         RoleArn: js.UndefOr[__string] = js.undefined,
         State: js.UndefOr[ChannelState] = js.undefined,
@@ -2276,6 +2343,7 @@ package medialive {
       InputSpecification.foreach(__v => __obj.update("InputSpecification", __v.asInstanceOf[js.Any]))
       LogLevel.foreach(__v => __obj.update("LogLevel", __v.asInstanceOf[js.Any]))
       Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
+      PipelineDetails.foreach(__v => __obj.update("PipelineDetails", __v.asInstanceOf[js.Any]))
       PipelinesRunningCount.foreach(__v => __obj.update("PipelinesRunningCount", __v.asInstanceOf[js.Any]))
       RoleArn.foreach(__v => __obj.update("RoleArn", __v.asInstanceOf[js.Any]))
       State.foreach(__v => __obj.update("State", __v.asInstanceOf[js.Any]))
@@ -2314,6 +2382,7 @@ package medialive {
     var Destinations: js.UndefOr[__listOfInputDestination]
     var Id: js.UndefOr[__string]
     var InputClass: js.UndefOr[InputClass]
+    var InputSourceType: js.UndefOr[InputSourceType]
     var MediaConnectFlows: js.UndefOr[__listOfMediaConnectFlow]
     var Name: js.UndefOr[__string]
     var RoleArn: js.UndefOr[__string]
@@ -2331,6 +2400,7 @@ package medialive {
         Destinations: js.UndefOr[__listOfInputDestination] = js.undefined,
         Id: js.UndefOr[__string] = js.undefined,
         InputClass: js.UndefOr[InputClass] = js.undefined,
+        InputSourceType: js.UndefOr[InputSourceType] = js.undefined,
         MediaConnectFlows: js.UndefOr[__listOfMediaConnectFlow] = js.undefined,
         Name: js.UndefOr[__string] = js.undefined,
         RoleArn: js.UndefOr[__string] = js.undefined,
@@ -2346,6 +2416,7 @@ package medialive {
       Destinations.foreach(__v => __obj.update("Destinations", __v.asInstanceOf[js.Any]))
       Id.foreach(__v => __obj.update("Id", __v.asInstanceOf[js.Any]))
       InputClass.foreach(__v => __obj.update("InputClass", __v.asInstanceOf[js.Any]))
+      InputSourceType.foreach(__v => __obj.update("InputSourceType", __v.asInstanceOf[js.Any]))
       MediaConnectFlows.foreach(__v => __obj.update("MediaConnectFlows", __v.asInstanceOf[js.Any]))
       Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
       RoleArn.foreach(__v => __obj.update("RoleArn", __v.asInstanceOf[js.Any]))
@@ -4408,6 +4479,21 @@ package medialive {
   }
 
   /**
+    * Settings to configure an action so that it occurs immediately. This is only supported for input switch actions currently.
+    */
+  @js.native
+  trait ImmediateModeScheduleActionStartSettings extends js.Object {}
+
+  object ImmediateModeScheduleActionStartSettings {
+    def apply(
+        ): ImmediateModeScheduleActionStartSettings = {
+      val __obj = js.Dictionary.empty[js.Any]
+
+      __obj.asInstanceOf[ImmediateModeScheduleActionStartSettings]
+    }
+  }
+
+  /**
     * Placeholder documentation for Input
     */
   @js.native
@@ -4417,6 +4503,7 @@ package medialive {
     var Destinations: js.UndefOr[__listOfInputDestination]
     var Id: js.UndefOr[__string]
     var InputClass: js.UndefOr[InputClass]
+    var InputSourceType: js.UndefOr[InputSourceType]
     var MediaConnectFlows: js.UndefOr[__listOfMediaConnectFlow]
     var Name: js.UndefOr[__string]
     var RoleArn: js.UndefOr[__string]
@@ -4434,6 +4521,7 @@ package medialive {
         Destinations: js.UndefOr[__listOfInputDestination] = js.undefined,
         Id: js.UndefOr[__string] = js.undefined,
         InputClass: js.UndefOr[InputClass] = js.undefined,
+        InputSourceType: js.UndefOr[InputSourceType] = js.undefined,
         MediaConnectFlows: js.UndefOr[__listOfMediaConnectFlow] = js.undefined,
         Name: js.UndefOr[__string] = js.undefined,
         RoleArn: js.UndefOr[__string] = js.undefined,
@@ -4449,6 +4537,7 @@ package medialive {
       Destinations.foreach(__v => __obj.update("Destinations", __v.asInstanceOf[js.Any]))
       Id.foreach(__v => __obj.update("Id", __v.asInstanceOf[js.Any]))
       InputClass.foreach(__v => __obj.update("InputClass", __v.asInstanceOf[js.Any]))
+      InputSourceType.foreach(__v => __obj.update("InputSourceType", __v.asInstanceOf[js.Any]))
       MediaConnectFlows.foreach(__v => __obj.update("MediaConnectFlows", __v.asInstanceOf[js.Any]))
       Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
       RoleArn.foreach(__v => __obj.update("RoleArn", __v.asInstanceOf[js.Any]))
@@ -4516,6 +4605,32 @@ package medialive {
     val SINGLE_PIPELINE = "SINGLE_PIPELINE"
 
     val values = IndexedSeq(STANDARD, SINGLE_PIPELINE)
+  }
+
+  /**
+    * Settings to let you create a clip of the file input, in order to set up the input to ingest only a portion of the file.
+    */
+  @js.native
+  trait InputClippingSettings extends js.Object {
+    var InputTimecodeSource: InputTimecodeSource
+    var StartTimecode: js.UndefOr[StartTimecode]
+    var StopTimecode: js.UndefOr[StopTimecode]
+  }
+
+  object InputClippingSettings {
+    def apply(
+        InputTimecodeSource: InputTimecodeSource,
+        StartTimecode: js.UndefOr[StartTimecode] = js.undefined,
+        StopTimecode: js.UndefOr[StopTimecode] = js.undefined
+    ): InputClippingSettings = {
+      val __obj = js.Dictionary[js.Any](
+        "InputTimecodeSource" -> InputTimecodeSource.asInstanceOf[js.Any]
+      )
+
+      StartTimecode.foreach(__v => __obj.update("StartTimecode", __v.asInstanceOf[js.Any]))
+      StopTimecode.foreach(__v => __obj.update("StopTimecode", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[InputClippingSettings]
+    }
   }
 
   /**
@@ -4901,6 +5016,18 @@ package medialive {
   }
 
   /**
+    * There are two types of input sources, static and dynamic. If an input source is dynamic you can
+    * change the source url of the input dynamically using an input switch action. However, the only input type
+    * to support a dynamic url at this time is MP4_FILE. By default all input sources are static.
+    */
+  object InputSourceTypeEnum {
+    val STATIC  = "STATIC"
+    val DYNAMIC = "DYNAMIC"
+
+    val values = IndexedSeq(STATIC, DYNAMIC)
+  }
+
+  /**
     * Placeholder documentation for InputSpecification
     */
   @js.native
@@ -4938,23 +5065,39 @@ package medialive {
   }
 
   /**
-    * Settings for the action to switch an input.
+    * Settings for the "switch input" action: to switch from ingesting one input to ingesting another input.
     */
   @js.native
   trait InputSwitchScheduleActionSettings extends js.Object {
     var InputAttachmentNameReference: __string
+    var InputClippingSettings: js.UndefOr[InputClippingSettings]
+    var UrlPath: js.UndefOr[__listOf__string]
   }
 
   object InputSwitchScheduleActionSettings {
     def apply(
-        InputAttachmentNameReference: __string
+        InputAttachmentNameReference: __string,
+        InputClippingSettings: js.UndefOr[InputClippingSettings] = js.undefined,
+        UrlPath: js.UndefOr[__listOf__string] = js.undefined
     ): InputSwitchScheduleActionSettings = {
       val __obj = js.Dictionary[js.Any](
         "InputAttachmentNameReference" -> InputAttachmentNameReference.asInstanceOf[js.Any]
       )
 
+      InputClippingSettings.foreach(__v => __obj.update("InputClippingSettings", __v.asInstanceOf[js.Any]))
+      UrlPath.foreach(__v => __obj.update("UrlPath", __v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[InputSwitchScheduleActionSettings]
     }
+  }
+
+  /**
+    * Documentation update needed
+    */
+  object InputTimecodeSourceEnum {
+    val ZEROBASED = "ZEROBASED"
+    val EMBEDDED  = "EMBEDDED"
+
+    val values = IndexedSeq(ZEROBASED, EMBEDDED)
   }
 
   /**
@@ -5050,6 +5193,16 @@ package medialive {
       StaticKeySettings.foreach(__v => __obj.update("StaticKeySettings", __v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[KeyProviderSettings]
     }
+  }
+
+  /**
+    * If you specify a StopTimecode in an input (in order to clip the file), you can specify if you want the clip to exclude (the default) or include the frame specified by the timecode.
+    */
+  object LastFrameClippingBehaviorEnum {
+    val EXCLUDE_LAST_FRAME = "EXCLUDE_LAST_FRAME"
+    val INCLUDE_LAST_FRAME = "INCLUDE_LAST_FRAME"
+
+    val values = IndexedSeq(EXCLUDE_LAST_FRAME, INCLUDE_LAST_FRAME)
   }
 
   /**
@@ -5851,7 +6004,7 @@ package medialive {
   }
 
   /**
-    * Media Package Output Destination Settings
+    * MediaPackage Output Destination Settings
     */
   @js.native
   trait MediaPackageOutputDestinationSettings extends js.Object {
@@ -6339,6 +6492,30 @@ package medialive {
   }
 
   /**
+    * Runtime details of a pipeline when a channel is running.
+    */
+  @js.native
+  trait PipelineDetail extends js.Object {
+    var ActiveInputAttachmentName: js.UndefOr[__string]
+    var ActiveInputSwitchActionName: js.UndefOr[__string]
+    var PipelineId: js.UndefOr[__string]
+  }
+
+  object PipelineDetail {
+    def apply(
+        ActiveInputAttachmentName: js.UndefOr[__string] = js.undefined,
+        ActiveInputSwitchActionName: js.UndefOr[__string] = js.undefined,
+        PipelineId: js.UndefOr[__string] = js.undefined
+    ): PipelineDetail = {
+      val __obj = js.Dictionary.empty[js.Any]
+      ActiveInputAttachmentName.foreach(__v => __obj.update("ActiveInputAttachmentName", __v.asInstanceOf[js.Any]))
+      ActiveInputSwitchActionName.foreach(__v => __obj.update("ActiveInputSwitchActionName", __v.asInstanceOf[js.Any]))
+      PipelineId.foreach(__v => __obj.update("PipelineId", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PipelineDetail]
+    }
+  }
+
+  /**
     * Pipeline ID
     */
   object PipelineIdEnum {
@@ -6821,18 +6998,20 @@ package medialive {
   }
 
   /**
-    * Settings to specify the start time for an action.
+    * Settings to specify when an action should occur. Only one of the options must be selected.
     */
   @js.native
   trait ScheduleActionStartSettings extends js.Object {
     var FixedModeScheduleActionStartSettings: js.UndefOr[FixedModeScheduleActionStartSettings]
     var FollowModeScheduleActionStartSettings: js.UndefOr[FollowModeScheduleActionStartSettings]
+    var ImmediateModeScheduleActionStartSettings: js.UndefOr[ImmediateModeScheduleActionStartSettings]
   }
 
   object ScheduleActionStartSettings {
     def apply(
         FixedModeScheduleActionStartSettings: js.UndefOr[FixedModeScheduleActionStartSettings] = js.undefined,
-        FollowModeScheduleActionStartSettings: js.UndefOr[FollowModeScheduleActionStartSettings] = js.undefined
+        FollowModeScheduleActionStartSettings: js.UndefOr[FollowModeScheduleActionStartSettings] = js.undefined,
+        ImmediateModeScheduleActionStartSettings: js.UndefOr[ImmediateModeScheduleActionStartSettings] = js.undefined
     ): ScheduleActionStartSettings = {
       val __obj = js.Dictionary.empty[js.Any]
       FixedModeScheduleActionStartSettings.foreach(
@@ -6840,6 +7019,9 @@ package medialive {
       )
       FollowModeScheduleActionStartSettings.foreach(
         __v => __obj.update("FollowModeScheduleActionStartSettings", __v.asInstanceOf[js.Any])
+      )
+      ImmediateModeScheduleActionStartSettings.foreach(
+        __v => __obj.update("ImmediateModeScheduleActionStartSettings", __v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[ScheduleActionStartSettings]
     }
@@ -7051,12 +7233,12 @@ package medialive {
     */
   @js.native
   trait Scte35ReturnToNetworkScheduleActionSettings extends js.Object {
-    var SpliceEventId: __integerMin0Max4294967295
+    var SpliceEventId: __longMin0Max4294967295
   }
 
   object Scte35ReturnToNetworkScheduleActionSettings {
     def apply(
-        SpliceEventId: __integerMin0Max4294967295
+        SpliceEventId: __longMin0Max4294967295
     ): Scte35ReturnToNetworkScheduleActionSettings = {
       val __obj = js.Dictionary[js.Any](
         "SpliceEventId" -> SpliceEventId.asInstanceOf[js.Any]
@@ -7082,10 +7264,10 @@ package medialive {
   @js.native
   trait Scte35SegmentationDescriptor extends js.Object {
     var SegmentationCancelIndicator: Scte35SegmentationCancelIndicator
-    var SegmentationEventId: __integerMin0Max4294967295
+    var SegmentationEventId: __longMin0Max4294967295
     var DeliveryRestrictions: js.UndefOr[Scte35DeliveryRestrictions]
     var SegmentNum: js.UndefOr[__integerMin0Max255]
-    var SegmentationDuration: js.UndefOr[__integerMin0Max1099511627775]
+    var SegmentationDuration: js.UndefOr[__longMin0Max1099511627775]
     var SegmentationTypeId: js.UndefOr[__integerMin0Max255]
     var SegmentationUpid: js.UndefOr[__string]
     var SegmentationUpidType: js.UndefOr[__integerMin0Max255]
@@ -7097,10 +7279,10 @@ package medialive {
   object Scte35SegmentationDescriptor {
     def apply(
         SegmentationCancelIndicator: Scte35SegmentationCancelIndicator,
-        SegmentationEventId: __integerMin0Max4294967295,
+        SegmentationEventId: __longMin0Max4294967295,
         DeliveryRestrictions: js.UndefOr[Scte35DeliveryRestrictions] = js.undefined,
         SegmentNum: js.UndefOr[__integerMin0Max255] = js.undefined,
-        SegmentationDuration: js.UndefOr[__integerMin0Max1099511627775] = js.undefined,
+        SegmentationDuration: js.UndefOr[__longMin0Max1099511627775] = js.undefined,
         SegmentationTypeId: js.UndefOr[__integerMin0Max255] = js.undefined,
         SegmentationUpid: js.UndefOr[__string] = js.undefined,
         SegmentationUpidType: js.UndefOr[__integerMin0Max255] = js.undefined,
@@ -7165,14 +7347,14 @@ package medialive {
     */
   @js.native
   trait Scte35SpliceInsertScheduleActionSettings extends js.Object {
-    var SpliceEventId: __integerMin0Max4294967295
-    var Duration: js.UndefOr[__integerMin0Max8589934591]
+    var SpliceEventId: __longMin0Max4294967295
+    var Duration: js.UndefOr[__longMin0Max8589934591]
   }
 
   object Scte35SpliceInsertScheduleActionSettings {
     def apply(
-        SpliceEventId: __integerMin0Max4294967295,
-        Duration: js.UndefOr[__integerMin0Max8589934591] = js.undefined
+        SpliceEventId: __longMin0Max4294967295,
+        Duration: js.UndefOr[__longMin0Max8589934591] = js.undefined
     ): Scte35SpliceInsertScheduleActionSettings = {
       val __obj = js.Dictionary[js.Any](
         "SpliceEventId" -> SpliceEventId.asInstanceOf[js.Any]
@@ -7401,6 +7583,7 @@ package medialive {
     var InputSpecification: js.UndefOr[InputSpecification]
     var LogLevel: js.UndefOr[LogLevel]
     var Name: js.UndefOr[__string]
+    var PipelineDetails: js.UndefOr[__listOfPipelineDetail]
     var PipelinesRunningCount: js.UndefOr[__integer]
     var RoleArn: js.UndefOr[__string]
     var State: js.UndefOr[ChannelState]
@@ -7419,6 +7602,7 @@ package medialive {
         InputSpecification: js.UndefOr[InputSpecification] = js.undefined,
         LogLevel: js.UndefOr[LogLevel] = js.undefined,
         Name: js.UndefOr[__string] = js.undefined,
+        PipelineDetails: js.UndefOr[__listOfPipelineDetail] = js.undefined,
         PipelinesRunningCount: js.UndefOr[__integer] = js.undefined,
         RoleArn: js.UndefOr[__string] = js.undefined,
         State: js.UndefOr[ChannelState] = js.undefined,
@@ -7435,11 +7619,30 @@ package medialive {
       InputSpecification.foreach(__v => __obj.update("InputSpecification", __v.asInstanceOf[js.Any]))
       LogLevel.foreach(__v => __obj.update("LogLevel", __v.asInstanceOf[js.Any]))
       Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
+      PipelineDetails.foreach(__v => __obj.update("PipelineDetails", __v.asInstanceOf[js.Any]))
       PipelinesRunningCount.foreach(__v => __obj.update("PipelinesRunningCount", __v.asInstanceOf[js.Any]))
       RoleArn.foreach(__v => __obj.update("RoleArn", __v.asInstanceOf[js.Any]))
       State.foreach(__v => __obj.update("State", __v.asInstanceOf[js.Any]))
       Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[StartChannelResponse]
+    }
+  }
+
+  /**
+    * Settings to identify the start of the clip.
+    */
+  @js.native
+  trait StartTimecode extends js.Object {
+    var Timecode: js.UndefOr[__string]
+  }
+
+  object StartTimecode {
+    def apply(
+        Timecode: js.UndefOr[__string] = js.undefined
+    ): StartTimecode = {
+      val __obj = js.Dictionary.empty[js.Any]
+      Timecode.foreach(__v => __obj.update("Timecode", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[StartTimecode]
     }
   }
 
@@ -7569,6 +7772,7 @@ package medialive {
     var InputSpecification: js.UndefOr[InputSpecification]
     var LogLevel: js.UndefOr[LogLevel]
     var Name: js.UndefOr[__string]
+    var PipelineDetails: js.UndefOr[__listOfPipelineDetail]
     var PipelinesRunningCount: js.UndefOr[__integer]
     var RoleArn: js.UndefOr[__string]
     var State: js.UndefOr[ChannelState]
@@ -7587,6 +7791,7 @@ package medialive {
         InputSpecification: js.UndefOr[InputSpecification] = js.undefined,
         LogLevel: js.UndefOr[LogLevel] = js.undefined,
         Name: js.UndefOr[__string] = js.undefined,
+        PipelineDetails: js.UndefOr[__listOfPipelineDetail] = js.undefined,
         PipelinesRunningCount: js.UndefOr[__integer] = js.undefined,
         RoleArn: js.UndefOr[__string] = js.undefined,
         State: js.UndefOr[ChannelState] = js.undefined,
@@ -7603,11 +7808,33 @@ package medialive {
       InputSpecification.foreach(__v => __obj.update("InputSpecification", __v.asInstanceOf[js.Any]))
       LogLevel.foreach(__v => __obj.update("LogLevel", __v.asInstanceOf[js.Any]))
       Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
+      PipelineDetails.foreach(__v => __obj.update("PipelineDetails", __v.asInstanceOf[js.Any]))
       PipelinesRunningCount.foreach(__v => __obj.update("PipelinesRunningCount", __v.asInstanceOf[js.Any]))
       RoleArn.foreach(__v => __obj.update("RoleArn", __v.asInstanceOf[js.Any]))
       State.foreach(__v => __obj.update("State", __v.asInstanceOf[js.Any]))
       Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[StopChannelResponse]
+    }
+  }
+
+  /**
+    * Settings to identify the end of the clip.
+    */
+  @js.native
+  trait StopTimecode extends js.Object {
+    var LastFrameClippingBehavior: js.UndefOr[LastFrameClippingBehavior]
+    var Timecode: js.UndefOr[__string]
+  }
+
+  object StopTimecode {
+    def apply(
+        LastFrameClippingBehavior: js.UndefOr[LastFrameClippingBehavior] = js.undefined,
+        Timecode: js.UndefOr[__string] = js.undefined
+    ): StopTimecode = {
+      val __obj = js.Dictionary.empty[js.Any]
+      LastFrameClippingBehavior.foreach(__v => __obj.update("LastFrameClippingBehavior", __v.asInstanceOf[js.Any]))
+      Timecode.foreach(__v => __obj.update("Timecode", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[StopTimecode]
     }
   }
 
@@ -7786,6 +8013,50 @@ package medialive {
     val TDRL = "TDRL"
 
     val values = IndexedSeq(NONE, PRIV, TDRL)
+  }
+
+  /**
+    * Channel class that the channel should be updated to.
+    */
+  @js.native
+  trait UpdateChannelClassRequest extends js.Object {
+    var ChannelClass: ChannelClass
+    var ChannelId: __string
+    var Destinations: js.UndefOr[__listOfOutputDestination]
+  }
+
+  object UpdateChannelClassRequest {
+    def apply(
+        ChannelClass: ChannelClass,
+        ChannelId: __string,
+        Destinations: js.UndefOr[__listOfOutputDestination] = js.undefined
+    ): UpdateChannelClassRequest = {
+      val __obj = js.Dictionary[js.Any](
+        "ChannelClass" -> ChannelClass.asInstanceOf[js.Any],
+        "ChannelId"    -> ChannelId.asInstanceOf[js.Any]
+      )
+
+      Destinations.foreach(__v => __obj.update("Destinations", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateChannelClassRequest]
+    }
+  }
+
+  /**
+    * Placeholder documentation for UpdateChannelClassResponse
+    */
+  @js.native
+  trait UpdateChannelClassResponse extends js.Object {
+    var Channel: js.UndefOr[Channel]
+  }
+
+  object UpdateChannelClassResponse {
+    def apply(
+        Channel: js.UndefOr[Channel] = js.undefined
+    ): UpdateChannelClassResponse = {
+      val __obj = js.Dictionary.empty[js.Any]
+      Channel.foreach(__v => __obj.update("Channel", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateChannelClassResponse]
+    }
   }
 
   /**

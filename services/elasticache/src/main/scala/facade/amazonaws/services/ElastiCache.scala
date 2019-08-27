@@ -33,23 +33,35 @@ package object elasticache {
   type NodeGroupConfigurationList          = js.Array[NodeGroupConfiguration]
   type NodeGroupList                       = js.Array[NodeGroup]
   type NodeGroupMemberList                 = js.Array[NodeGroupMember]
+  type NodeGroupMemberUpdateStatusList     = js.Array[NodeGroupMemberUpdateStatus]
+  type NodeGroupUpdateStatusList           = js.Array[NodeGroupUpdateStatus]
   type NodeGroupsToRemoveList              = js.Array[AllowedNodeGroupId]
   type NodeGroupsToRetainList              = js.Array[AllowedNodeGroupId]
   type NodeSnapshotList                    = js.Array[NodeSnapshot]
   type NodeTypeList                        = js.Array[String]
+  type NodeUpdateInitiatedBy               = String
+  type NodeUpdateStatus                    = String
   type ParameterNameValueList              = js.Array[ParameterNameValue]
   type ParametersList                      = js.Array[Parameter]
   type PendingAutomaticFailoverStatus      = String
   type PreferredAvailabilityZoneList       = js.Array[String]
+  type ProcessedUpdateActionList           = js.Array[ProcessedUpdateAction]
   type RecurringChargeList                 = js.Array[RecurringCharge]
   type RemoveReplicasList                  = js.Array[String]
   type ReplicaConfigurationList            = js.Array[ConfigureShard]
+  type ReplicationGroupIdList              = js.Array[String]
   type ReplicationGroupList                = js.Array[ReplicationGroup]
   type ReservedCacheNodeList               = js.Array[ReservedCacheNode]
   type ReservedCacheNodesOfferingList      = js.Array[ReservedCacheNodesOffering]
   type ReshardingConfigurationList         = js.Array[ReshardingConfiguration]
   type SecurityGroupIdsList                = js.Array[String]
   type SecurityGroupMembershipList         = js.Array[SecurityGroupMembership]
+  type ServiceUpdateList                   = js.Array[ServiceUpdate]
+  type ServiceUpdateSeverity               = String
+  type ServiceUpdateStatus                 = String
+  type ServiceUpdateStatusList             = js.Array[ServiceUpdateStatus]
+  type ServiceUpdateType                   = String
+  type SlaMet                              = String
   type SnapshotArnsList                    = js.Array[String]
   type SnapshotList                        = js.Array[Snapshot]
   type SourceType                          = String
@@ -57,6 +69,10 @@ package object elasticache {
   type SubnetList                          = js.Array[Subnet]
   type TStamp                              = js.Date
   type TagList                             = js.Array[Tag]
+  type UnprocessedUpdateActionList         = js.Array[UnprocessedUpdateAction]
+  type UpdateActionList                    = js.Array[UpdateAction]
+  type UpdateActionStatus                  = String
+  type UpdateActionStatusList              = js.Array[UpdateActionStatus]
 
   implicit final class ElastiCacheOps(val service: ElastiCache) extends AnyVal {
 
@@ -66,6 +82,10 @@ package object elasticache {
         params: AuthorizeCacheSecurityGroupIngressMessage
     ): Future[AuthorizeCacheSecurityGroupIngressResult] =
       service.authorizeCacheSecurityGroupIngress(params).promise.toFuture
+    def batchApplyUpdateActionFuture(params: BatchApplyUpdateActionMessage): Future[UpdateActionResultsMessage] =
+      service.batchApplyUpdateAction(params).promise.toFuture
+    def batchStopUpdateActionFuture(params: BatchStopUpdateActionMessage): Future[UpdateActionResultsMessage] =
+      service.batchStopUpdateAction(params).promise.toFuture
     def copySnapshotFuture(params: CopySnapshotMessage): Future[CopySnapshotResult] =
       service.copySnapshot(params).promise.toFuture
     def createCacheClusterFuture(params: CreateCacheClusterMessage): Future[CreateCacheClusterResult] =
@@ -123,8 +143,12 @@ package object elasticache {
     def describeReservedCacheNodesOfferingsFuture(
         params: DescribeReservedCacheNodesOfferingsMessage
     ): Future[ReservedCacheNodesOfferingMessage] = service.describeReservedCacheNodesOfferings(params).promise.toFuture
+    def describeServiceUpdatesFuture(params: DescribeServiceUpdatesMessage): Future[ServiceUpdatesMessage] =
+      service.describeServiceUpdates(params).promise.toFuture
     def describeSnapshotsFuture(params: DescribeSnapshotsMessage): Future[DescribeSnapshotsListMessage] =
       service.describeSnapshots(params).promise.toFuture
+    def describeUpdateActionsFuture(params: DescribeUpdateActionsMessage): Future[UpdateActionsMessage] =
+      service.describeUpdateActions(params).promise.toFuture
     def increaseReplicaCountFuture(params: IncreaseReplicaCountMessage): Future[IncreaseReplicaCountResult] =
       service.increaseReplicaCount(params).promise.toFuture
     def listAllowedNodeTypeModificationsFuture(
@@ -173,9 +197,11 @@ package elasticache {
     def addTagsToResource(params: AddTagsToResourceMessage): Request[TagListMessage] = js.native
     def authorizeCacheSecurityGroupIngress(
         params: AuthorizeCacheSecurityGroupIngressMessage
-    ): Request[AuthorizeCacheSecurityGroupIngressResult]                                         = js.native
-    def copySnapshot(params: CopySnapshotMessage): Request[CopySnapshotResult]                   = js.native
-    def createCacheCluster(params: CreateCacheClusterMessage): Request[CreateCacheClusterResult] = js.native
+    ): Request[AuthorizeCacheSecurityGroupIngressResult]                                                   = js.native
+    def batchApplyUpdateAction(params: BatchApplyUpdateActionMessage): Request[UpdateActionResultsMessage] = js.native
+    def batchStopUpdateAction(params: BatchStopUpdateActionMessage): Request[UpdateActionResultsMessage]   = js.native
+    def copySnapshot(params: CopySnapshotMessage): Request[CopySnapshotResult]                             = js.native
+    def createCacheCluster(params: CreateCacheClusterMessage): Request[CreateCacheClusterResult]           = js.native
     def createCacheParameterGroup(params: CreateCacheParameterGroupMessage): Request[CreateCacheParameterGroupResult] =
       js.native
     def createCacheSecurityGroup(params: CreateCacheSecurityGroupMessage): Request[CreateCacheSecurityGroupResult] =
@@ -212,7 +238,9 @@ package elasticache {
     def describeReservedCacheNodesOfferings(
         params: DescribeReservedCacheNodesOfferingsMessage
     ): Request[ReservedCacheNodesOfferingMessage]                                                      = js.native
+    def describeServiceUpdates(params: DescribeServiceUpdatesMessage): Request[ServiceUpdatesMessage]  = js.native
     def describeSnapshots(params: DescribeSnapshotsMessage): Request[DescribeSnapshotsListMessage]     = js.native
+    def describeUpdateActions(params: DescribeUpdateActionsMessage): Request[UpdateActionsMessage]     = js.native
     def increaseReplicaCount(params: IncreaseReplicaCountMessage): Request[IncreaseReplicaCountResult] = js.native
     def listAllowedNodeTypeModifications(
         params: ListAllowedNodeTypeModificationsMessage
@@ -274,14 +302,17 @@ package elasticache {
     */
   @js.native
   trait AllowedNodeTypeModificationsMessage extends js.Object {
+    var ScaleDownModifications: js.UndefOr[NodeTypeList]
     var ScaleUpModifications: js.UndefOr[NodeTypeList]
   }
 
   object AllowedNodeTypeModificationsMessage {
     def apply(
+        ScaleDownModifications: js.UndefOr[NodeTypeList] = js.undefined,
         ScaleUpModifications: js.UndefOr[NodeTypeList] = js.undefined
     ): AllowedNodeTypeModificationsMessage = {
       val __obj = js.Dictionary.empty[js.Any]
+      ScaleDownModifications.foreach(__v => __obj.update("ScaleDownModifications", __v.asInstanceOf[js.Any]))
       ScaleUpModifications.foreach(__v => __obj.update("ScaleUpModifications", __v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AllowedNodeTypeModificationsMessage]
     }
@@ -352,6 +383,46 @@ package elasticache {
       val __obj = js.Dictionary.empty[js.Any]
       Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AvailabilityZone]
+    }
+  }
+
+  @js.native
+  trait BatchApplyUpdateActionMessage extends js.Object {
+    var ReplicationGroupIds: ReplicationGroupIdList
+    var ServiceUpdateName: String
+  }
+
+  object BatchApplyUpdateActionMessage {
+    def apply(
+        ReplicationGroupIds: ReplicationGroupIdList,
+        ServiceUpdateName: String
+    ): BatchApplyUpdateActionMessage = {
+      val __obj = js.Dictionary[js.Any](
+        "ReplicationGroupIds" -> ReplicationGroupIds.asInstanceOf[js.Any],
+        "ServiceUpdateName"   -> ServiceUpdateName.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[BatchApplyUpdateActionMessage]
+    }
+  }
+
+  @js.native
+  trait BatchStopUpdateActionMessage extends js.Object {
+    var ReplicationGroupIds: ReplicationGroupIdList
+    var ServiceUpdateName: String
+  }
+
+  object BatchStopUpdateActionMessage {
+    def apply(
+        ReplicationGroupIds: ReplicationGroupIdList,
+        ServiceUpdateName: String
+    ): BatchStopUpdateActionMessage = {
+      val __obj = js.Dictionary[js.Any](
+        "ReplicationGroupIds" -> ReplicationGroupIds.asInstanceOf[js.Any],
+        "ServiceUpdateName"   -> ServiceUpdateName.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[BatchStopUpdateActionMessage]
     }
   }
 
@@ -524,30 +595,28 @@ package elasticache {
     *  The following node types are supported by ElastiCache. Generally speaking, the current generation types provide more memory and computational power at lower cost when compared to their equivalent previous generation counterparts.
     * * General purpose:
     * <li> Current generation:
-    *  ```T2 node types:``` <code>cache.t2.micro</code>, <code>cache.t2.small</code>, <code>cache.t2.medium</code>
-    *  ```M3 node types:``` <code>cache.m3.medium</code>, <code>cache.m3.large</code>, <code>cache.m3.xlarge</code>, <code>cache.m3.2xlarge</code>
+    *  ```M5 node types:``` <code>cache.m5.large</code>, <code>cache.m5.xlarge</code>, <code>cache.m5.2xlarge</code>, <code>cache.m5.4xlarge</code>, <code>cache.m5.12xlarge</code>, <code>cache.m5.24xlarge</code>
     *  ```M4 node types:``` <code>cache.m4.large</code>, <code>cache.m4.xlarge</code>, <code>cache.m4.2xlarge</code>, <code>cache.m4.4xlarge</code>, <code>cache.m4.10xlarge</code>
+    *  ```T2 node types:``` <code>cache.t2.micro</code>, <code>cache.t2.small</code>, <code>cache.t2.medium</code>
     *  * Previous generation: (not recommended)
     *  ```T1 node types:``` <code>cache.t1.micro</code>
     *  ```M1 node types:``` <code>cache.m1.small</code>, <code>cache.m1.medium</code>, <code>cache.m1.large</code>, <code>cache.m1.xlarge</code>
+    *  ```M3 node types:``` <code>cache.m3.medium</code>, <code>cache.m3.large</code>, <code>cache.m3.xlarge</code>, <code>cache.m3.2xlarge</code>
     * </li> * Compute optimized:
     * <li> Previous generation: (not recommended)
     *  ```C1 node types:``` <code>cache.c1.xlarge</code>
     * </li> * Memory optimized:
     * <li> Current generation:
-    *  ```R3 node types:``` <code>cache.r3.large</code>, <code>cache.r3.xlarge</code>, <code>cache.r3.2xlarge</code>, <code>cache.r3.4xlarge</code>, <code>cache.r3.8xlarge</code>
-    *  ```R4 node types;``` <code>cache.r4.large</code>, <code>cache.r4.xlarge</code>, <code>cache.r4.2xlarge</code>, <code>cache.r4.4xlarge</code>, <code>cache.r4.8xlarge</code>, <code>cache.r4.16xlarge</code>
+    *  ```R5 node types:``` <code>cache.r5.large</code>, <code>cache.r5.xlarge</code>, <code>cache.r5.2xlarge</code>, <code>cache.r5.4xlarge</code>, <code>cache.r5.12xlarge</code>, <code>cache.r5.24xlarge</code>
+    *  ```R4 node types:``` <code>cache.r4.large</code>, <code>cache.r4.xlarge</code>, <code>cache.r4.2xlarge</code>, <code>cache.r4.4xlarge</code>, <code>cache.r4.8xlarge</code>, <code>cache.r4.16xlarge</code>
     *  * Previous generation: (not recommended)
     *  ```M2 node types:``` <code>cache.m2.xlarge</code>, <code>cache.m2.2xlarge</code>, <code>cache.m2.4xlarge</code>
-    * </li>```Notes:```
-    * * All T2 instances are created in an Amazon Virtual Private Cloud (Amazon VPC).
-    *  * Redis (cluster mode disabled): Redis backup/restore is not supported on T1 and T2 instances.
-    *  * Redis (cluster mode enabled): Backup/restore is not supported on T1 instances.
-    *  * Redis Append-only files (AOF) functionality is not supported for T1 or T2 instances.
-    * For a complete listing of node types and specifications, see:
-    * * [[http://aws.amazon.com/elasticache/details|Amazon ElastiCache Product Features and Details]]
-    *  * [[http://docs.aws.amazon.com/AmazonElastiCache/latest/mem-ug/ParameterGroups.Memcached.html#ParameterGroups.Memcached.NodeSpecific|Cache Node Type-Specific Parameters for Memcached]]
-    *  * [[http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/ParameterGroups.Redis.html#ParameterGroups.Redis.NodeSpecific|Cache Node Type-Specific Parameters for Redis]]
+    *  ```R3 node types:``` <code>cache.r3.large</code>, <code>cache.r3.xlarge</code>, <code>cache.r3.2xlarge</code>, <code>cache.r3.4xlarge</code>, <code>cache.r3.8xlarge</code>
+    * </li>```Additional node type info```
+    * * All current generation instance types are created in Amazon VPC by default.
+    *  * Redis append-only files (AOF) are not supported for T1 or T2 instances.
+    *  * Redis Multi-AZ with automatic failover is not supported on T1 instances.
+    *  * Redis configuration variables <code>appendonly</code> and <code>appendfsync</code> are not supported on Redis version 2.8.22 and later.
     */
   @js.native
   trait CacheNode extends js.Object {
@@ -1898,6 +1967,30 @@ package elasticache {
     }
   }
 
+  @js.native
+  trait DescribeServiceUpdatesMessage extends js.Object {
+    var Marker: js.UndefOr[String]
+    var MaxRecords: js.UndefOr[IntegerOptional]
+    var ServiceUpdateName: js.UndefOr[String]
+    var ServiceUpdateStatus: js.UndefOr[ServiceUpdateStatusList]
+  }
+
+  object DescribeServiceUpdatesMessage {
+    def apply(
+        Marker: js.UndefOr[String] = js.undefined,
+        MaxRecords: js.UndefOr[IntegerOptional] = js.undefined,
+        ServiceUpdateName: js.UndefOr[String] = js.undefined,
+        ServiceUpdateStatus: js.UndefOr[ServiceUpdateStatusList] = js.undefined
+    ): DescribeServiceUpdatesMessage = {
+      val __obj = js.Dictionary.empty[js.Any]
+      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
+      MaxRecords.foreach(__v => __obj.update("MaxRecords", __v.asInstanceOf[js.Any]))
+      ServiceUpdateName.foreach(__v => __obj.update("ServiceUpdateName", __v.asInstanceOf[js.Any]))
+      ServiceUpdateStatus.foreach(__v => __obj.update("ServiceUpdateStatus", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeServiceUpdatesMessage]
+    }
+  }
+
   /**
     * Represents the output of a <code>DescribeSnapshots</code> operation.
     */
@@ -1952,6 +2045,42 @@ package elasticache {
       SnapshotName.foreach(__v => __obj.update("SnapshotName", __v.asInstanceOf[js.Any]))
       SnapshotSource.foreach(__v => __obj.update("SnapshotSource", __v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeSnapshotsMessage]
+    }
+  }
+
+  @js.native
+  trait DescribeUpdateActionsMessage extends js.Object {
+    var Marker: js.UndefOr[String]
+    var MaxRecords: js.UndefOr[IntegerOptional]
+    var ReplicationGroupIds: js.UndefOr[ReplicationGroupIdList]
+    var ServiceUpdateName: js.UndefOr[String]
+    var ServiceUpdateStatus: js.UndefOr[ServiceUpdateStatusList]
+    var ServiceUpdateTimeRange: js.UndefOr[TimeRangeFilter]
+    var ShowNodeLevelUpdateStatus: js.UndefOr[BooleanOptional]
+    var UpdateActionStatus: js.UndefOr[UpdateActionStatusList]
+  }
+
+  object DescribeUpdateActionsMessage {
+    def apply(
+        Marker: js.UndefOr[String] = js.undefined,
+        MaxRecords: js.UndefOr[IntegerOptional] = js.undefined,
+        ReplicationGroupIds: js.UndefOr[ReplicationGroupIdList] = js.undefined,
+        ServiceUpdateName: js.UndefOr[String] = js.undefined,
+        ServiceUpdateStatus: js.UndefOr[ServiceUpdateStatusList] = js.undefined,
+        ServiceUpdateTimeRange: js.UndefOr[TimeRangeFilter] = js.undefined,
+        ShowNodeLevelUpdateStatus: js.UndefOr[BooleanOptional] = js.undefined,
+        UpdateActionStatus: js.UndefOr[UpdateActionStatusList] = js.undefined
+    ): DescribeUpdateActionsMessage = {
+      val __obj = js.Dictionary.empty[js.Any]
+      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
+      MaxRecords.foreach(__v => __obj.update("MaxRecords", __v.asInstanceOf[js.Any]))
+      ReplicationGroupIds.foreach(__v => __obj.update("ReplicationGroupIds", __v.asInstanceOf[js.Any]))
+      ServiceUpdateName.foreach(__v => __obj.update("ServiceUpdateName", __v.asInstanceOf[js.Any]))
+      ServiceUpdateStatus.foreach(__v => __obj.update("ServiceUpdateStatus", __v.asInstanceOf[js.Any]))
+      ServiceUpdateTimeRange.foreach(__v => __obj.update("ServiceUpdateTimeRange", __v.asInstanceOf[js.Any]))
+      ShowNodeLevelUpdateStatus.foreach(__v => __obj.update("ShowNodeLevelUpdateStatus", __v.asInstanceOf[js.Any]))
+      UpdateActionStatus.foreach(__v => __obj.update("UpdateActionStatus", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeUpdateActionsMessage]
     }
   }
 
@@ -2450,6 +2579,7 @@ package elasticache {
     var NodeGroupId: js.UndefOr[String]
     var NodeGroupMembers: js.UndefOr[NodeGroupMemberList]
     var PrimaryEndpoint: js.UndefOr[Endpoint]
+    var ReaderEndpoint: js.UndefOr[Endpoint]
     var Slots: js.UndefOr[String]
     var Status: js.UndefOr[String]
   }
@@ -2459,6 +2589,7 @@ package elasticache {
         NodeGroupId: js.UndefOr[String] = js.undefined,
         NodeGroupMembers: js.UndefOr[NodeGroupMemberList] = js.undefined,
         PrimaryEndpoint: js.UndefOr[Endpoint] = js.undefined,
+        ReaderEndpoint: js.UndefOr[Endpoint] = js.undefined,
         Slots: js.UndefOr[String] = js.undefined,
         Status: js.UndefOr[String] = js.undefined
     ): NodeGroup = {
@@ -2466,6 +2597,7 @@ package elasticache {
       NodeGroupId.foreach(__v => __obj.update("NodeGroupId", __v.asInstanceOf[js.Any]))
       NodeGroupMembers.foreach(__v => __obj.update("NodeGroupMembers", __v.asInstanceOf[js.Any]))
       PrimaryEndpoint.foreach(__v => __obj.update("PrimaryEndpoint", __v.asInstanceOf[js.Any]))
+      ReaderEndpoint.foreach(__v => __obj.update("ReaderEndpoint", __v.asInstanceOf[js.Any]))
       Slots.foreach(__v => __obj.update("Slots", __v.asInstanceOf[js.Any]))
       Status.foreach(__v => __obj.update("Status", __v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[NodeGroup]
@@ -2533,6 +2665,71 @@ package elasticache {
   }
 
   /**
+    * The status of the service update on the node group member
+    */
+  @js.native
+  trait NodeGroupMemberUpdateStatus extends js.Object {
+    var CacheClusterId: js.UndefOr[String]
+    var CacheNodeId: js.UndefOr[String]
+    var NodeDeletionDate: js.UndefOr[TStamp]
+    var NodeUpdateEndDate: js.UndefOr[TStamp]
+    var NodeUpdateInitiatedBy: js.UndefOr[NodeUpdateInitiatedBy]
+    var NodeUpdateInitiatedDate: js.UndefOr[TStamp]
+    var NodeUpdateStartDate: js.UndefOr[TStamp]
+    var NodeUpdateStatus: js.UndefOr[NodeUpdateStatus]
+    var NodeUpdateStatusModifiedDate: js.UndefOr[TStamp]
+  }
+
+  object NodeGroupMemberUpdateStatus {
+    def apply(
+        CacheClusterId: js.UndefOr[String] = js.undefined,
+        CacheNodeId: js.UndefOr[String] = js.undefined,
+        NodeDeletionDate: js.UndefOr[TStamp] = js.undefined,
+        NodeUpdateEndDate: js.UndefOr[TStamp] = js.undefined,
+        NodeUpdateInitiatedBy: js.UndefOr[NodeUpdateInitiatedBy] = js.undefined,
+        NodeUpdateInitiatedDate: js.UndefOr[TStamp] = js.undefined,
+        NodeUpdateStartDate: js.UndefOr[TStamp] = js.undefined,
+        NodeUpdateStatus: js.UndefOr[NodeUpdateStatus] = js.undefined,
+        NodeUpdateStatusModifiedDate: js.UndefOr[TStamp] = js.undefined
+    ): NodeGroupMemberUpdateStatus = {
+      val __obj = js.Dictionary.empty[js.Any]
+      CacheClusterId.foreach(__v => __obj.update("CacheClusterId", __v.asInstanceOf[js.Any]))
+      CacheNodeId.foreach(__v => __obj.update("CacheNodeId", __v.asInstanceOf[js.Any]))
+      NodeDeletionDate.foreach(__v => __obj.update("NodeDeletionDate", __v.asInstanceOf[js.Any]))
+      NodeUpdateEndDate.foreach(__v => __obj.update("NodeUpdateEndDate", __v.asInstanceOf[js.Any]))
+      NodeUpdateInitiatedBy.foreach(__v => __obj.update("NodeUpdateInitiatedBy", __v.asInstanceOf[js.Any]))
+      NodeUpdateInitiatedDate.foreach(__v => __obj.update("NodeUpdateInitiatedDate", __v.asInstanceOf[js.Any]))
+      NodeUpdateStartDate.foreach(__v => __obj.update("NodeUpdateStartDate", __v.asInstanceOf[js.Any]))
+      NodeUpdateStatus.foreach(__v => __obj.update("NodeUpdateStatus", __v.asInstanceOf[js.Any]))
+      NodeUpdateStatusModifiedDate.foreach(
+        __v => __obj.update("NodeUpdateStatusModifiedDate", __v.asInstanceOf[js.Any])
+      )
+      __obj.asInstanceOf[NodeGroupMemberUpdateStatus]
+    }
+  }
+
+  /**
+    * The status of the service update on the node group
+    */
+  @js.native
+  trait NodeGroupUpdateStatus extends js.Object {
+    var NodeGroupId: js.UndefOr[String]
+    var NodeGroupMemberUpdateStatus: js.UndefOr[NodeGroupMemberUpdateStatusList]
+  }
+
+  object NodeGroupUpdateStatus {
+    def apply(
+        NodeGroupId: js.UndefOr[String] = js.undefined,
+        NodeGroupMemberUpdateStatus: js.UndefOr[NodeGroupMemberUpdateStatusList] = js.undefined
+    ): NodeGroupUpdateStatus = {
+      val __obj = js.Dictionary.empty[js.Any]
+      NodeGroupId.foreach(__v => __obj.update("NodeGroupId", __v.asInstanceOf[js.Any]))
+      NodeGroupMemberUpdateStatus.foreach(__v => __obj.update("NodeGroupMemberUpdateStatus", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[NodeGroupUpdateStatus]
+    }
+  }
+
+  /**
     * Represents an individual cache node in a snapshot of a cluster.
     */
   @js.native
@@ -2566,6 +2763,24 @@ package elasticache {
       SnapshotCreateTime.foreach(__v => __obj.update("SnapshotCreateTime", __v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[NodeSnapshot]
     }
+  }
+
+  object NodeUpdateInitiatedByEnum {
+    val system   = "system"
+    val customer = "customer"
+
+    val values = IndexedSeq(system, customer)
+  }
+
+  object NodeUpdateStatusEnum {
+    val `not-applied`      = "not-applied"
+    val `waiting-to-start` = "waiting-to-start"
+    val `in-progress`      = "in-progress"
+    val stopping           = "stopping"
+    val stopped            = "stopped"
+    val complete           = "complete"
+
+    val values = IndexedSeq(`not-applied`, `waiting-to-start`, `in-progress`, stopping, stopped, complete)
   }
 
   /**
@@ -2683,6 +2898,30 @@ package elasticache {
       EngineVersion.foreach(__v => __obj.update("EngineVersion", __v.asInstanceOf[js.Any]))
       NumCacheNodes.foreach(__v => __obj.update("NumCacheNodes", __v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PendingModifiedValues]
+    }
+  }
+
+  /**
+    * Update action that has been processed for the corresponding apply/stop request
+    */
+  @js.native
+  trait ProcessedUpdateAction extends js.Object {
+    var ReplicationGroupId: js.UndefOr[String]
+    var ServiceUpdateName: js.UndefOr[String]
+    var UpdateActionStatus: js.UndefOr[UpdateActionStatus]
+  }
+
+  object ProcessedUpdateAction {
+    def apply(
+        ReplicationGroupId: js.UndefOr[String] = js.undefined,
+        ServiceUpdateName: js.UndefOr[String] = js.undefined,
+        UpdateActionStatus: js.UndefOr[UpdateActionStatus] = js.undefined
+    ): ProcessedUpdateAction = {
+      val __obj = js.Dictionary.empty[js.Any]
+      ReplicationGroupId.foreach(__v => __obj.update("ReplicationGroupId", __v.asInstanceOf[js.Any]))
+      ServiceUpdateName.foreach(__v => __obj.update("ServiceUpdateName", __v.asInstanceOf[js.Any]))
+      UpdateActionStatus.foreach(__v => __obj.update("UpdateActionStatus", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ProcessedUpdateAction]
     }
   }
 
@@ -3184,6 +3423,110 @@ package elasticache {
   }
 
   /**
+    * An update that you can apply to your Redis clusters.
+    */
+  @js.native
+  trait ServiceUpdate extends js.Object {
+    var AutoUpdateAfterRecommendedApplyByDate: js.UndefOr[BooleanOptional]
+    var Engine: js.UndefOr[String]
+    var EngineVersion: js.UndefOr[String]
+    var EstimatedUpdateTime: js.UndefOr[String]
+    var ServiceUpdateDescription: js.UndefOr[String]
+    var ServiceUpdateEndDate: js.UndefOr[TStamp]
+    var ServiceUpdateName: js.UndefOr[String]
+    var ServiceUpdateRecommendedApplyByDate: js.UndefOr[TStamp]
+    var ServiceUpdateReleaseDate: js.UndefOr[TStamp]
+    var ServiceUpdateSeverity: js.UndefOr[ServiceUpdateSeverity]
+    var ServiceUpdateStatus: js.UndefOr[ServiceUpdateStatus]
+    var ServiceUpdateType: js.UndefOr[ServiceUpdateType]
+  }
+
+  object ServiceUpdate {
+    def apply(
+        AutoUpdateAfterRecommendedApplyByDate: js.UndefOr[BooleanOptional] = js.undefined,
+        Engine: js.UndefOr[String] = js.undefined,
+        EngineVersion: js.UndefOr[String] = js.undefined,
+        EstimatedUpdateTime: js.UndefOr[String] = js.undefined,
+        ServiceUpdateDescription: js.UndefOr[String] = js.undefined,
+        ServiceUpdateEndDate: js.UndefOr[TStamp] = js.undefined,
+        ServiceUpdateName: js.UndefOr[String] = js.undefined,
+        ServiceUpdateRecommendedApplyByDate: js.UndefOr[TStamp] = js.undefined,
+        ServiceUpdateReleaseDate: js.UndefOr[TStamp] = js.undefined,
+        ServiceUpdateSeverity: js.UndefOr[ServiceUpdateSeverity] = js.undefined,
+        ServiceUpdateStatus: js.UndefOr[ServiceUpdateStatus] = js.undefined,
+        ServiceUpdateType: js.UndefOr[ServiceUpdateType] = js.undefined
+    ): ServiceUpdate = {
+      val __obj = js.Dictionary.empty[js.Any]
+      AutoUpdateAfterRecommendedApplyByDate.foreach(
+        __v => __obj.update("AutoUpdateAfterRecommendedApplyByDate", __v.asInstanceOf[js.Any])
+      )
+      Engine.foreach(__v => __obj.update("Engine", __v.asInstanceOf[js.Any]))
+      EngineVersion.foreach(__v => __obj.update("EngineVersion", __v.asInstanceOf[js.Any]))
+      EstimatedUpdateTime.foreach(__v => __obj.update("EstimatedUpdateTime", __v.asInstanceOf[js.Any]))
+      ServiceUpdateDescription.foreach(__v => __obj.update("ServiceUpdateDescription", __v.asInstanceOf[js.Any]))
+      ServiceUpdateEndDate.foreach(__v => __obj.update("ServiceUpdateEndDate", __v.asInstanceOf[js.Any]))
+      ServiceUpdateName.foreach(__v => __obj.update("ServiceUpdateName", __v.asInstanceOf[js.Any]))
+      ServiceUpdateRecommendedApplyByDate.foreach(
+        __v => __obj.update("ServiceUpdateRecommendedApplyByDate", __v.asInstanceOf[js.Any])
+      )
+      ServiceUpdateReleaseDate.foreach(__v => __obj.update("ServiceUpdateReleaseDate", __v.asInstanceOf[js.Any]))
+      ServiceUpdateSeverity.foreach(__v => __obj.update("ServiceUpdateSeverity", __v.asInstanceOf[js.Any]))
+      ServiceUpdateStatus.foreach(__v => __obj.update("ServiceUpdateStatus", __v.asInstanceOf[js.Any]))
+      ServiceUpdateType.foreach(__v => __obj.update("ServiceUpdateType", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ServiceUpdate]
+    }
+  }
+
+  object ServiceUpdateSeverityEnum {
+    val critical  = "critical"
+    val important = "important"
+    val medium    = "medium"
+    val low       = "low"
+
+    val values = IndexedSeq(critical, important, medium, low)
+  }
+
+  object ServiceUpdateStatusEnum {
+    val available = "available"
+    val cancelled = "cancelled"
+    val expired   = "expired"
+
+    val values = IndexedSeq(available, cancelled, expired)
+  }
+
+  object ServiceUpdateTypeEnum {
+    val `security-update` = "security-update"
+
+    val values = IndexedSeq(`security-update`)
+  }
+
+  @js.native
+  trait ServiceUpdatesMessage extends js.Object {
+    var Marker: js.UndefOr[String]
+    var ServiceUpdates: js.UndefOr[ServiceUpdateList]
+  }
+
+  object ServiceUpdatesMessage {
+    def apply(
+        Marker: js.UndefOr[String] = js.undefined,
+        ServiceUpdates: js.UndefOr[ServiceUpdateList] = js.undefined
+    ): ServiceUpdatesMessage = {
+      val __obj = js.Dictionary.empty[js.Any]
+      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
+      ServiceUpdates.foreach(__v => __obj.update("ServiceUpdates", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ServiceUpdatesMessage]
+    }
+  }
+
+  object SlaMetEnum {
+    val yes   = "yes"
+    val no    = "no"
+    val `n/a` = "n/a"
+
+    val values = IndexedSeq(yes, no, `n/a`)
+  }
+
+  /**
     * Represents the progress of an online resharding operation.
     */
   @js.native
@@ -3396,6 +3739,162 @@ package elasticache {
       val __obj = js.Dictionary.empty[js.Any]
       ReplicationGroup.foreach(__v => __obj.update("ReplicationGroup", __v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[TestFailoverResult]
+    }
+  }
+
+  /**
+    * Filters update actions from the service updates that are in available status during the time range.
+    */
+  @js.native
+  trait TimeRangeFilter extends js.Object {
+    var EndTime: js.UndefOr[TStamp]
+    var StartTime: js.UndefOr[TStamp]
+  }
+
+  object TimeRangeFilter {
+    def apply(
+        EndTime: js.UndefOr[TStamp] = js.undefined,
+        StartTime: js.UndefOr[TStamp] = js.undefined
+    ): TimeRangeFilter = {
+      val __obj = js.Dictionary.empty[js.Any]
+      EndTime.foreach(__v => __obj.update("EndTime", __v.asInstanceOf[js.Any]))
+      StartTime.foreach(__v => __obj.update("StartTime", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[TimeRangeFilter]
+    }
+  }
+
+  /**
+    * Update action that has failed to be processed for the corresponding apply/stop request
+    */
+  @js.native
+  trait UnprocessedUpdateAction extends js.Object {
+    var ErrorMessage: js.UndefOr[String]
+    var ErrorType: js.UndefOr[String]
+    var ReplicationGroupId: js.UndefOr[String]
+    var ServiceUpdateName: js.UndefOr[String]
+  }
+
+  object UnprocessedUpdateAction {
+    def apply(
+        ErrorMessage: js.UndefOr[String] = js.undefined,
+        ErrorType: js.UndefOr[String] = js.undefined,
+        ReplicationGroupId: js.UndefOr[String] = js.undefined,
+        ServiceUpdateName: js.UndefOr[String] = js.undefined
+    ): UnprocessedUpdateAction = {
+      val __obj = js.Dictionary.empty[js.Any]
+      ErrorMessage.foreach(__v => __obj.update("ErrorMessage", __v.asInstanceOf[js.Any]))
+      ErrorType.foreach(__v => __obj.update("ErrorType", __v.asInstanceOf[js.Any]))
+      ReplicationGroupId.foreach(__v => __obj.update("ReplicationGroupId", __v.asInstanceOf[js.Any]))
+      ServiceUpdateName.foreach(__v => __obj.update("ServiceUpdateName", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UnprocessedUpdateAction]
+    }
+  }
+
+  /**
+    * The status of the service update for a specific replication group
+    */
+  @js.native
+  trait UpdateAction extends js.Object {
+    var EstimatedUpdateTime: js.UndefOr[String]
+    var NodeGroupUpdateStatus: js.UndefOr[NodeGroupUpdateStatusList]
+    var NodesUpdated: js.UndefOr[String]
+    var ReplicationGroupId: js.UndefOr[String]
+    var ServiceUpdateName: js.UndefOr[String]
+    var ServiceUpdateRecommendedApplyByDate: js.UndefOr[TStamp]
+    var ServiceUpdateReleaseDate: js.UndefOr[TStamp]
+    var ServiceUpdateSeverity: js.UndefOr[ServiceUpdateSeverity]
+    var ServiceUpdateStatus: js.UndefOr[ServiceUpdateStatus]
+    var ServiceUpdateType: js.UndefOr[ServiceUpdateType]
+    var SlaMet: js.UndefOr[SlaMet]
+    var UpdateActionAvailableDate: js.UndefOr[TStamp]
+    var UpdateActionStatus: js.UndefOr[UpdateActionStatus]
+    var UpdateActionStatusModifiedDate: js.UndefOr[TStamp]
+  }
+
+  object UpdateAction {
+    def apply(
+        EstimatedUpdateTime: js.UndefOr[String] = js.undefined,
+        NodeGroupUpdateStatus: js.UndefOr[NodeGroupUpdateStatusList] = js.undefined,
+        NodesUpdated: js.UndefOr[String] = js.undefined,
+        ReplicationGroupId: js.UndefOr[String] = js.undefined,
+        ServiceUpdateName: js.UndefOr[String] = js.undefined,
+        ServiceUpdateRecommendedApplyByDate: js.UndefOr[TStamp] = js.undefined,
+        ServiceUpdateReleaseDate: js.UndefOr[TStamp] = js.undefined,
+        ServiceUpdateSeverity: js.UndefOr[ServiceUpdateSeverity] = js.undefined,
+        ServiceUpdateStatus: js.UndefOr[ServiceUpdateStatus] = js.undefined,
+        ServiceUpdateType: js.UndefOr[ServiceUpdateType] = js.undefined,
+        SlaMet: js.UndefOr[SlaMet] = js.undefined,
+        UpdateActionAvailableDate: js.UndefOr[TStamp] = js.undefined,
+        UpdateActionStatus: js.UndefOr[UpdateActionStatus] = js.undefined,
+        UpdateActionStatusModifiedDate: js.UndefOr[TStamp] = js.undefined
+    ): UpdateAction = {
+      val __obj = js.Dictionary.empty[js.Any]
+      EstimatedUpdateTime.foreach(__v => __obj.update("EstimatedUpdateTime", __v.asInstanceOf[js.Any]))
+      NodeGroupUpdateStatus.foreach(__v => __obj.update("NodeGroupUpdateStatus", __v.asInstanceOf[js.Any]))
+      NodesUpdated.foreach(__v => __obj.update("NodesUpdated", __v.asInstanceOf[js.Any]))
+      ReplicationGroupId.foreach(__v => __obj.update("ReplicationGroupId", __v.asInstanceOf[js.Any]))
+      ServiceUpdateName.foreach(__v => __obj.update("ServiceUpdateName", __v.asInstanceOf[js.Any]))
+      ServiceUpdateRecommendedApplyByDate.foreach(
+        __v => __obj.update("ServiceUpdateRecommendedApplyByDate", __v.asInstanceOf[js.Any])
+      )
+      ServiceUpdateReleaseDate.foreach(__v => __obj.update("ServiceUpdateReleaseDate", __v.asInstanceOf[js.Any]))
+      ServiceUpdateSeverity.foreach(__v => __obj.update("ServiceUpdateSeverity", __v.asInstanceOf[js.Any]))
+      ServiceUpdateStatus.foreach(__v => __obj.update("ServiceUpdateStatus", __v.asInstanceOf[js.Any]))
+      ServiceUpdateType.foreach(__v => __obj.update("ServiceUpdateType", __v.asInstanceOf[js.Any]))
+      SlaMet.foreach(__v => __obj.update("SlaMet", __v.asInstanceOf[js.Any]))
+      UpdateActionAvailableDate.foreach(__v => __obj.update("UpdateActionAvailableDate", __v.asInstanceOf[js.Any]))
+      UpdateActionStatus.foreach(__v => __obj.update("UpdateActionStatus", __v.asInstanceOf[js.Any]))
+      UpdateActionStatusModifiedDate.foreach(
+        __v => __obj.update("UpdateActionStatusModifiedDate", __v.asInstanceOf[js.Any])
+      )
+      __obj.asInstanceOf[UpdateAction]
+    }
+  }
+
+  @js.native
+  trait UpdateActionResultsMessage extends js.Object {
+    var ProcessedUpdateActions: js.UndefOr[ProcessedUpdateActionList]
+    var UnprocessedUpdateActions: js.UndefOr[UnprocessedUpdateActionList]
+  }
+
+  object UpdateActionResultsMessage {
+    def apply(
+        ProcessedUpdateActions: js.UndefOr[ProcessedUpdateActionList] = js.undefined,
+        UnprocessedUpdateActions: js.UndefOr[UnprocessedUpdateActionList] = js.undefined
+    ): UpdateActionResultsMessage = {
+      val __obj = js.Dictionary.empty[js.Any]
+      ProcessedUpdateActions.foreach(__v => __obj.update("ProcessedUpdateActions", __v.asInstanceOf[js.Any]))
+      UnprocessedUpdateActions.foreach(__v => __obj.update("UnprocessedUpdateActions", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateActionResultsMessage]
+    }
+  }
+
+  object UpdateActionStatusEnum {
+    val `not-applied`      = "not-applied"
+    val `waiting-to-start` = "waiting-to-start"
+    val `in-progress`      = "in-progress"
+    val stopping           = "stopping"
+    val stopped            = "stopped"
+    val complete           = "complete"
+
+    val values = IndexedSeq(`not-applied`, `waiting-to-start`, `in-progress`, stopping, stopped, complete)
+  }
+
+  @js.native
+  trait UpdateActionsMessage extends js.Object {
+    var Marker: js.UndefOr[String]
+    var UpdateActions: js.UndefOr[UpdateActionList]
+  }
+
+  object UpdateActionsMessage {
+    def apply(
+        Marker: js.UndefOr[String] = js.undefined,
+        UpdateActions: js.UndefOr[UpdateActionList] = js.undefined
+    ): UpdateActionsMessage = {
+      val __obj = js.Dictionary.empty[js.Any]
+      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
+      UpdateActions.foreach(__v => __obj.update("UpdateActions", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateActionsMessage]
     }
   }
 }

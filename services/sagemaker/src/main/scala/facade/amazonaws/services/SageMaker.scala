@@ -23,6 +23,7 @@ package object sagemaker {
   type AttributeName                                = String
   type AttributeNames                               = js.Array[AttributeName]
   type BatchStrategy                                = String
+  type BillableTimeInSeconds                        = Int
   type BooleanOperator                              = String
   type Branch                                       = String
   type CategoricalParameterRanges                   = js.Array[CategoricalParameterRange]
@@ -59,6 +60,7 @@ package object sagemaker {
   type DetailedAlgorithmStatus                      = String
   type DetailedModelPackageStatus                   = String
   type DirectInternetAccess                         = String
+  type DirectoryPath                                = String
   type DisassociateAdditionalCodeRepositories       = Boolean
   type DisassociateDefaultCodeRepository            = Boolean
   type DisassociateNotebookInstanceAcceleratorTypes = Boolean
@@ -81,6 +83,9 @@ package object sagemaker {
   type EnvironmentMap                               = js.Dictionary[EnvironmentValue]
   type EnvironmentValue                             = String
   type FailureReason                                = String
+  type FileSystemAccessMode                         = String
+  type FileSystemId                                 = String
+  type FileSystemType                               = String
   type FilterList                                   = js.Array[Filter]
   type FilterValue                                  = String
   type FinalMetricDataList                          = js.Array[MetricData]
@@ -107,6 +112,8 @@ package object sagemaker {
   type IntegerParameterRanges                       = js.Array[IntegerParameterRange]
   type JobReferenceCode                             = String
   type JobReferenceCodeContains                     = String
+  type JoinSource                                   = String
+  type JsonPath                                     = String
   type KmsKeyId                                     = String
   type LabelAttributeName                           = String
   type LabelCounter                                 = Int
@@ -131,6 +138,7 @@ package object sagemaker {
   type MaxPercentageOfInputDatasetLabeled           = Int
   type MaxResults                                   = Int
   type MaxRuntimeInSeconds                          = Int
+  type MaxWaitTimeInSeconds                         = Int
   type MemberDefinitions                            = js.Array[MemberDefinition]
   type MetricDefinitionList                         = js.Array[MetricDefinition]
   type MetricName                                   = String
@@ -171,6 +179,7 @@ package object sagemaker {
   type NotebookInstanceSummaryList                  = js.Array[NotebookInstanceSummary]
   type NotebookInstanceUrl                          = String
   type NotebookInstanceVolumeSizeInGB               = Int
+  type NotificationTopicArn                         = String
   type NumberOfHumanWorkersPerDataObject            = Int
   type ObjectiveStatus                              = String
   type ObjectiveStatusCounter                       = Int
@@ -251,6 +260,7 @@ package object sagemaker {
   type TrainingJobStatus                            = String
   type TrainingJobStatusCounter                     = Int
   type TrainingJobSummaries                         = js.Array[TrainingJobSummary]
+  type TrainingTimeInSeconds                        = Int
   type TransformEnvironmentKey                      = String
   type TransformEnvironmentMap                      = js.Dictionary[TransformEnvironmentValue]
   type TransformEnvironmentValue                    = String
@@ -921,6 +931,29 @@ package sagemaker {
     }
   }
 
+  /**
+    * Contains information about the output location for managed spot training checkpoint data.
+    */
+  @js.native
+  trait CheckpointConfig extends js.Object {
+    var S3Uri: S3Uri
+    var LocalPath: js.UndefOr[DirectoryPath]
+  }
+
+  object CheckpointConfig {
+    def apply(
+        S3Uri: S3Uri,
+        LocalPath: js.UndefOr[DirectoryPath] = js.undefined
+    ): CheckpointConfig = {
+      val __obj = js.Dictionary[js.Any](
+        "S3Uri" -> S3Uri.asInstanceOf[js.Any]
+      )
+
+      LocalPath.foreach(__v => __obj.update("LocalPath", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CheckpointConfig]
+    }
+  }
+
   object CodeRepositorySortByEnum {
     val Name             = "Name"
     val CreationTime     = "CreationTime"
@@ -1361,8 +1394,8 @@ package sagemaker {
   trait CreateHyperParameterTuningJobRequest extends js.Object {
     var HyperParameterTuningJobConfig: HyperParameterTuningJobConfig
     var HyperParameterTuningJobName: HyperParameterTuningJobName
-    var TrainingJobDefinition: HyperParameterTrainingJobDefinition
     var Tags: js.UndefOr[TagList]
+    var TrainingJobDefinition: js.UndefOr[HyperParameterTrainingJobDefinition]
     var WarmStartConfig: js.UndefOr[HyperParameterTuningJobWarmStartConfig]
   }
 
@@ -1370,17 +1403,17 @@ package sagemaker {
     def apply(
         HyperParameterTuningJobConfig: HyperParameterTuningJobConfig,
         HyperParameterTuningJobName: HyperParameterTuningJobName,
-        TrainingJobDefinition: HyperParameterTrainingJobDefinition,
         Tags: js.UndefOr[TagList] = js.undefined,
+        TrainingJobDefinition: js.UndefOr[HyperParameterTrainingJobDefinition] = js.undefined,
         WarmStartConfig: js.UndefOr[HyperParameterTuningJobWarmStartConfig] = js.undefined
     ): CreateHyperParameterTuningJobRequest = {
       val __obj = js.Dictionary[js.Any](
         "HyperParameterTuningJobConfig" -> HyperParameterTuningJobConfig.asInstanceOf[js.Any],
-        "HyperParameterTuningJobName"   -> HyperParameterTuningJobName.asInstanceOf[js.Any],
-        "TrainingJobDefinition"         -> TrainingJobDefinition.asInstanceOf[js.Any]
+        "HyperParameterTuningJobName"   -> HyperParameterTuningJobName.asInstanceOf[js.Any]
       )
 
       Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
+      TrainingJobDefinition.foreach(__v => __obj.update("TrainingJobDefinition", __v.asInstanceOf[js.Any]))
       WarmStartConfig.foreach(__v => __obj.update("WarmStartConfig", __v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateHyperParameterTuningJobRequest]
     }
@@ -1723,7 +1756,9 @@ package sagemaker {
     var RoleArn: RoleArn
     var StoppingCondition: StoppingCondition
     var TrainingJobName: TrainingJobName
+    var CheckpointConfig: js.UndefOr[CheckpointConfig]
     var EnableInterContainerTrafficEncryption: js.UndefOr[Boolean]
+    var EnableManagedSpotTraining: js.UndefOr[Boolean]
     var EnableNetworkIsolation: js.UndefOr[Boolean]
     var HyperParameters: js.UndefOr[HyperParameters]
     var InputDataConfig: js.UndefOr[InputDataConfig]
@@ -1739,7 +1774,9 @@ package sagemaker {
         RoleArn: RoleArn,
         StoppingCondition: StoppingCondition,
         TrainingJobName: TrainingJobName,
+        CheckpointConfig: js.UndefOr[CheckpointConfig] = js.undefined,
         EnableInterContainerTrafficEncryption: js.UndefOr[Boolean] = js.undefined,
+        EnableManagedSpotTraining: js.UndefOr[Boolean] = js.undefined,
         EnableNetworkIsolation: js.UndefOr[Boolean] = js.undefined,
         HyperParameters: js.UndefOr[HyperParameters] = js.undefined,
         InputDataConfig: js.UndefOr[InputDataConfig] = js.undefined,
@@ -1755,9 +1792,11 @@ package sagemaker {
         "TrainingJobName"        -> TrainingJobName.asInstanceOf[js.Any]
       )
 
+      CheckpointConfig.foreach(__v => __obj.update("CheckpointConfig", __v.asInstanceOf[js.Any]))
       EnableInterContainerTrafficEncryption.foreach(
         __v => __obj.update("EnableInterContainerTrafficEncryption", __v.asInstanceOf[js.Any])
       )
+      EnableManagedSpotTraining.foreach(__v => __obj.update("EnableManagedSpotTraining", __v.asInstanceOf[js.Any]))
       EnableNetworkIsolation.foreach(__v => __obj.update("EnableNetworkIsolation", __v.asInstanceOf[js.Any]))
       HyperParameters.foreach(__v => __obj.update("HyperParameters", __v.asInstanceOf[js.Any]))
       InputDataConfig.foreach(__v => __obj.update("InputDataConfig", __v.asInstanceOf[js.Any]))
@@ -1792,6 +1831,7 @@ package sagemaker {
     var TransformOutput: TransformOutput
     var TransformResources: TransformResources
     var BatchStrategy: js.UndefOr[BatchStrategy]
+    var DataProcessing: js.UndefOr[DataProcessing]
     var Environment: js.UndefOr[TransformEnvironmentMap]
     var MaxConcurrentTransforms: js.UndefOr[MaxConcurrentTransforms]
     var MaxPayloadInMB: js.UndefOr[MaxPayloadInMB]
@@ -1806,6 +1846,7 @@ package sagemaker {
         TransformOutput: TransformOutput,
         TransformResources: TransformResources,
         BatchStrategy: js.UndefOr[BatchStrategy] = js.undefined,
+        DataProcessing: js.UndefOr[DataProcessing] = js.undefined,
         Environment: js.UndefOr[TransformEnvironmentMap] = js.undefined,
         MaxConcurrentTransforms: js.UndefOr[MaxConcurrentTransforms] = js.undefined,
         MaxPayloadInMB: js.UndefOr[MaxPayloadInMB] = js.undefined,
@@ -1820,6 +1861,7 @@ package sagemaker {
       )
 
       BatchStrategy.foreach(__v => __obj.update("BatchStrategy", __v.asInstanceOf[js.Any]))
+      DataProcessing.foreach(__v => __obj.update("DataProcessing", __v.asInstanceOf[js.Any]))
       Environment.foreach(__v => __obj.update("Environment", __v.asInstanceOf[js.Any]))
       MaxConcurrentTransforms.foreach(__v => __obj.update("MaxConcurrentTransforms", __v.asInstanceOf[js.Any]))
       MaxPayloadInMB.foreach(__v => __obj.update("MaxPayloadInMB", __v.asInstanceOf[js.Any]))
@@ -1850,6 +1892,7 @@ package sagemaker {
     var Description: String200
     var MemberDefinitions: MemberDefinitions
     var WorkteamName: WorkteamName
+    var NotificationConfiguration: js.UndefOr[NotificationConfiguration]
     var Tags: js.UndefOr[TagList]
   }
 
@@ -1858,6 +1901,7 @@ package sagemaker {
         Description: String200,
         MemberDefinitions: MemberDefinitions,
         WorkteamName: WorkteamName,
+        NotificationConfiguration: js.UndefOr[NotificationConfiguration] = js.undefined,
         Tags: js.UndefOr[TagList] = js.undefined
     ): CreateWorkteamRequest = {
       val __obj = js.Dictionary[js.Any](
@@ -1866,6 +1910,7 @@ package sagemaker {
         "WorkteamName"      -> WorkteamName.asInstanceOf[js.Any]
       )
 
+      NotificationConfiguration.foreach(__v => __obj.update("NotificationConfiguration", __v.asInstanceOf[js.Any]))
       Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateWorkteamRequest]
     }
@@ -1887,21 +1932,46 @@ package sagemaker {
   }
 
   /**
+    * The data structure used to specify the data to be used for inference in a batch transform job and to associate the data that is relevant to the prediction results in the output. The input filter provided allows you to exclude input data that is not needed for inference in a batch transform job. The output filter provided allows you to include input data relevant to interpreting the predictions in the output from the job. For more information, see [[https://docs.aws.amazon.com/sagemaker/latest/dg/batch-transform-data-processing.html|Associate Prediction Results with their Corresponding Input Records]].
+    */
+  @js.native
+  trait DataProcessing extends js.Object {
+    var InputFilter: js.UndefOr[JsonPath]
+    var JoinSource: js.UndefOr[JoinSource]
+    var OutputFilter: js.UndefOr[JsonPath]
+  }
+
+  object DataProcessing {
+    def apply(
+        InputFilter: js.UndefOr[JsonPath] = js.undefined,
+        JoinSource: js.UndefOr[JoinSource] = js.undefined,
+        OutputFilter: js.UndefOr[JsonPath] = js.undefined
+    ): DataProcessing = {
+      val __obj = js.Dictionary.empty[js.Any]
+      InputFilter.foreach(__v => __obj.update("InputFilter", __v.asInstanceOf[js.Any]))
+      JoinSource.foreach(__v => __obj.update("JoinSource", __v.asInstanceOf[js.Any]))
+      OutputFilter.foreach(__v => __obj.update("OutputFilter", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DataProcessing]
+    }
+  }
+
+  /**
     * Describes the location of the channel data.
     */
   @js.native
   trait DataSource extends js.Object {
-    var S3DataSource: S3DataSource
+    var FileSystemDataSource: js.UndefOr[FileSystemDataSource]
+    var S3DataSource: js.UndefOr[S3DataSource]
   }
 
   object DataSource {
     def apply(
-        S3DataSource: S3DataSource
+        FileSystemDataSource: js.UndefOr[FileSystemDataSource] = js.undefined,
+        S3DataSource: js.UndefOr[S3DataSource] = js.undefined
     ): DataSource = {
-      val __obj = js.Dictionary[js.Any](
-        "S3DataSource" -> S3DataSource.asInstanceOf[js.Any]
-      )
-
+      val __obj = js.Dictionary.empty[js.Any]
+      FileSystemDataSource.foreach(__v => __obj.update("FileSystemDataSource", __v.asInstanceOf[js.Any]))
+      S3DataSource.foreach(__v => __obj.update("S3DataSource", __v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DataSource]
     }
   }
@@ -2110,7 +2180,7 @@ package sagemaker {
 
   /**
     * Gets the Amazon EC2 Container Registry path of the docker image of the model that is hosted in this <a>ProductionVariant</a>.
-    *  If you used the <code>registry/repository[:tag]</code> form to specify the image path of the primary container when you created the model hosted in this <code>ProductionVariant</code>, the path resolves to a path of the form <code>registry/repository[@digest]</code>. A digest is a hash value that identifies a specific version of an image. For information about Amazon ECR paths, see [[http://docs.aws.amazon.com//AmazonECR/latest/userguide/docker-pull-ecr-image.html|Pulling an Image]] in the <i>Amazon ECR User Guide</i>.
+    *  If you used the <code>registry/repository[:tag]</code> form to specify the image path of the primary container when you created the model hosted in this <code>ProductionVariant</code>, the path resolves to a path of the form <code>registry/repository[@digest]</code>. A digest is a hash value that identifies a specific version of an image. For information about Amazon ECR paths, see [[https://docs.aws.amazon.com/AmazonECR/latest/userguide/docker-pull-ecr-image.html|Pulling an Image]] in the <i>Amazon ECR User Guide</i>.
     */
   @js.native
   trait DeployedImage extends js.Object {
@@ -2439,13 +2509,13 @@ package sagemaker {
     var HyperParameterTuningJobName: HyperParameterTuningJobName
     var HyperParameterTuningJobStatus: HyperParameterTuningJobStatus
     var ObjectiveStatusCounters: ObjectiveStatusCounters
-    var TrainingJobDefinition: HyperParameterTrainingJobDefinition
     var TrainingJobStatusCounters: TrainingJobStatusCounters
     var BestTrainingJob: js.UndefOr[HyperParameterTrainingJobSummary]
     var FailureReason: js.UndefOr[FailureReason]
     var HyperParameterTuningEndTime: js.UndefOr[Timestamp]
     var LastModifiedTime: js.UndefOr[Timestamp]
     var OverallBestTrainingJob: js.UndefOr[HyperParameterTrainingJobSummary]
+    var TrainingJobDefinition: js.UndefOr[HyperParameterTrainingJobDefinition]
     var WarmStartConfig: js.UndefOr[HyperParameterTuningJobWarmStartConfig]
   }
 
@@ -2457,13 +2527,13 @@ package sagemaker {
         HyperParameterTuningJobName: HyperParameterTuningJobName,
         HyperParameterTuningJobStatus: HyperParameterTuningJobStatus,
         ObjectiveStatusCounters: ObjectiveStatusCounters,
-        TrainingJobDefinition: HyperParameterTrainingJobDefinition,
         TrainingJobStatusCounters: TrainingJobStatusCounters,
         BestTrainingJob: js.UndefOr[HyperParameterTrainingJobSummary] = js.undefined,
         FailureReason: js.UndefOr[FailureReason] = js.undefined,
         HyperParameterTuningEndTime: js.UndefOr[Timestamp] = js.undefined,
         LastModifiedTime: js.UndefOr[Timestamp] = js.undefined,
         OverallBestTrainingJob: js.UndefOr[HyperParameterTrainingJobSummary] = js.undefined,
+        TrainingJobDefinition: js.UndefOr[HyperParameterTrainingJobDefinition] = js.undefined,
         WarmStartConfig: js.UndefOr[HyperParameterTuningJobWarmStartConfig] = js.undefined
     ): DescribeHyperParameterTuningJobResponse = {
       val __obj = js.Dictionary[js.Any](
@@ -2473,7 +2543,6 @@ package sagemaker {
         "HyperParameterTuningJobName"   -> HyperParameterTuningJobName.asInstanceOf[js.Any],
         "HyperParameterTuningJobStatus" -> HyperParameterTuningJobStatus.asInstanceOf[js.Any],
         "ObjectiveStatusCounters"       -> ObjectiveStatusCounters.asInstanceOf[js.Any],
-        "TrainingJobDefinition"         -> TrainingJobDefinition.asInstanceOf[js.Any],
         "TrainingJobStatusCounters"     -> TrainingJobStatusCounters.asInstanceOf[js.Any]
       )
 
@@ -2482,6 +2551,7 @@ package sagemaker {
       HyperParameterTuningEndTime.foreach(__v => __obj.update("HyperParameterTuningEndTime", __v.asInstanceOf[js.Any]))
       LastModifiedTime.foreach(__v => __obj.update("LastModifiedTime", __v.asInstanceOf[js.Any]))
       OverallBestTrainingJob.foreach(__v => __obj.update("OverallBestTrainingJob", __v.asInstanceOf[js.Any]))
+      TrainingJobDefinition.foreach(__v => __obj.update("TrainingJobDefinition", __v.asInstanceOf[js.Any]))
       WarmStartConfig.foreach(__v => __obj.update("WarmStartConfig", __v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeHyperParameterTuningJobResponse]
     }
@@ -2894,7 +2964,10 @@ package sagemaker {
     var TrainingJobArn: TrainingJobArn
     var TrainingJobName: TrainingJobName
     var TrainingJobStatus: TrainingJobStatus
+    var BillableTimeInSeconds: js.UndefOr[BillableTimeInSeconds]
+    var CheckpointConfig: js.UndefOr[CheckpointConfig]
     var EnableInterContainerTrafficEncryption: js.UndefOr[Boolean]
+    var EnableManagedSpotTraining: js.UndefOr[Boolean]
     var EnableNetworkIsolation: js.UndefOr[Boolean]
     var FailureReason: js.UndefOr[FailureReason]
     var FinalMetricDataList: js.UndefOr[FinalMetricDataList]
@@ -2907,6 +2980,7 @@ package sagemaker {
     var SecondaryStatusTransitions: js.UndefOr[SecondaryStatusTransitions]
     var TrainingEndTime: js.UndefOr[Timestamp]
     var TrainingStartTime: js.UndefOr[Timestamp]
+    var TrainingTimeInSeconds: js.UndefOr[TrainingTimeInSeconds]
     var TuningJobArn: js.UndefOr[HyperParameterTuningJobArn]
     var VpcConfig: js.UndefOr[VpcConfig]
   }
@@ -2922,7 +2996,10 @@ package sagemaker {
         TrainingJobArn: TrainingJobArn,
         TrainingJobName: TrainingJobName,
         TrainingJobStatus: TrainingJobStatus,
+        BillableTimeInSeconds: js.UndefOr[BillableTimeInSeconds] = js.undefined,
+        CheckpointConfig: js.UndefOr[CheckpointConfig] = js.undefined,
         EnableInterContainerTrafficEncryption: js.UndefOr[Boolean] = js.undefined,
+        EnableManagedSpotTraining: js.UndefOr[Boolean] = js.undefined,
         EnableNetworkIsolation: js.UndefOr[Boolean] = js.undefined,
         FailureReason: js.UndefOr[FailureReason] = js.undefined,
         FinalMetricDataList: js.UndefOr[FinalMetricDataList] = js.undefined,
@@ -2935,6 +3012,7 @@ package sagemaker {
         SecondaryStatusTransitions: js.UndefOr[SecondaryStatusTransitions] = js.undefined,
         TrainingEndTime: js.UndefOr[Timestamp] = js.undefined,
         TrainingStartTime: js.UndefOr[Timestamp] = js.undefined,
+        TrainingTimeInSeconds: js.UndefOr[TrainingTimeInSeconds] = js.undefined,
         TuningJobArn: js.UndefOr[HyperParameterTuningJobArn] = js.undefined,
         VpcConfig: js.UndefOr[VpcConfig] = js.undefined
     ): DescribeTrainingJobResponse = {
@@ -2950,9 +3028,12 @@ package sagemaker {
         "TrainingJobStatus"      -> TrainingJobStatus.asInstanceOf[js.Any]
       )
 
+      BillableTimeInSeconds.foreach(__v => __obj.update("BillableTimeInSeconds", __v.asInstanceOf[js.Any]))
+      CheckpointConfig.foreach(__v => __obj.update("CheckpointConfig", __v.asInstanceOf[js.Any]))
       EnableInterContainerTrafficEncryption.foreach(
         __v => __obj.update("EnableInterContainerTrafficEncryption", __v.asInstanceOf[js.Any])
       )
+      EnableManagedSpotTraining.foreach(__v => __obj.update("EnableManagedSpotTraining", __v.asInstanceOf[js.Any]))
       EnableNetworkIsolation.foreach(__v => __obj.update("EnableNetworkIsolation", __v.asInstanceOf[js.Any]))
       FailureReason.foreach(__v => __obj.update("FailureReason", __v.asInstanceOf[js.Any]))
       FinalMetricDataList.foreach(__v => __obj.update("FinalMetricDataList", __v.asInstanceOf[js.Any]))
@@ -2965,6 +3046,7 @@ package sagemaker {
       SecondaryStatusTransitions.foreach(__v => __obj.update("SecondaryStatusTransitions", __v.asInstanceOf[js.Any]))
       TrainingEndTime.foreach(__v => __obj.update("TrainingEndTime", __v.asInstanceOf[js.Any]))
       TrainingStartTime.foreach(__v => __obj.update("TrainingStartTime", __v.asInstanceOf[js.Any]))
+      TrainingTimeInSeconds.foreach(__v => __obj.update("TrainingTimeInSeconds", __v.asInstanceOf[js.Any]))
       TuningJobArn.foreach(__v => __obj.update("TuningJobArn", __v.asInstanceOf[js.Any]))
       VpcConfig.foreach(__v => __obj.update("VpcConfig", __v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeTrainingJobResponse]
@@ -2998,6 +3080,7 @@ package sagemaker {
     var TransformJobStatus: TransformJobStatus
     var TransformResources: TransformResources
     var BatchStrategy: js.UndefOr[BatchStrategy]
+    var DataProcessing: js.UndefOr[DataProcessing]
     var Environment: js.UndefOr[TransformEnvironmentMap]
     var FailureReason: js.UndefOr[FailureReason]
     var LabelingJobArn: js.UndefOr[LabelingJobArn]
@@ -3018,6 +3101,7 @@ package sagemaker {
         TransformJobStatus: TransformJobStatus,
         TransformResources: TransformResources,
         BatchStrategy: js.UndefOr[BatchStrategy] = js.undefined,
+        DataProcessing: js.UndefOr[DataProcessing] = js.undefined,
         Environment: js.UndefOr[TransformEnvironmentMap] = js.undefined,
         FailureReason: js.UndefOr[FailureReason] = js.undefined,
         LabelingJobArn: js.UndefOr[LabelingJobArn] = js.undefined,
@@ -3038,6 +3122,7 @@ package sagemaker {
       )
 
       BatchStrategy.foreach(__v => __obj.update("BatchStrategy", __v.asInstanceOf[js.Any]))
+      DataProcessing.foreach(__v => __obj.update("DataProcessing", __v.asInstanceOf[js.Any]))
       Environment.foreach(__v => __obj.update("Environment", __v.asInstanceOf[js.Any]))
       FailureReason.foreach(__v => __obj.update("FailureReason", __v.asInstanceOf[js.Any]))
       LabelingJobArn.foreach(__v => __obj.update("LabelingJobArn", __v.asInstanceOf[js.Any]))
@@ -3219,6 +3304,49 @@ package sagemaker {
 
       __obj.asInstanceOf[EndpointSummary]
     }
+  }
+
+  object FileSystemAccessModeEnum {
+    val rw = "rw"
+    val ro = "ro"
+
+    val values = IndexedSeq(rw, ro)
+  }
+
+  /**
+    * Specifies a file system data source for a channel.
+    */
+  @js.native
+  trait FileSystemDataSource extends js.Object {
+    var DirectoryPath: DirectoryPath
+    var FileSystemAccessMode: FileSystemAccessMode
+    var FileSystemId: FileSystemId
+    var FileSystemType: FileSystemType
+  }
+
+  object FileSystemDataSource {
+    def apply(
+        DirectoryPath: DirectoryPath,
+        FileSystemAccessMode: FileSystemAccessMode,
+        FileSystemId: FileSystemId,
+        FileSystemType: FileSystemType
+    ): FileSystemDataSource = {
+      val __obj = js.Dictionary[js.Any](
+        "DirectoryPath"        -> DirectoryPath.asInstanceOf[js.Any],
+        "FileSystemAccessMode" -> FileSystemAccessMode.asInstanceOf[js.Any],
+        "FileSystemId"         -> FileSystemId.asInstanceOf[js.Any],
+        "FileSystemType"       -> FileSystemType.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[FileSystemDataSource]
+    }
+  }
+
+  object FileSystemTypeEnum {
+    val EFS       = "EFS"
+    val FSxLustre = "FSxLustre"
+
+    val values = IndexedSeq(EFS, FSxLustre)
   }
 
   /**
@@ -3520,7 +3648,9 @@ package sagemaker {
     var ResourceConfig: ResourceConfig
     var RoleArn: RoleArn
     var StoppingCondition: StoppingCondition
+    var CheckpointConfig: js.UndefOr[CheckpointConfig]
     var EnableInterContainerTrafficEncryption: js.UndefOr[Boolean]
+    var EnableManagedSpotTraining: js.UndefOr[Boolean]
     var EnableNetworkIsolation: js.UndefOr[Boolean]
     var InputDataConfig: js.UndefOr[InputDataConfig]
     var StaticHyperParameters: js.UndefOr[HyperParameters]
@@ -3534,7 +3664,9 @@ package sagemaker {
         ResourceConfig: ResourceConfig,
         RoleArn: RoleArn,
         StoppingCondition: StoppingCondition,
+        CheckpointConfig: js.UndefOr[CheckpointConfig] = js.undefined,
         EnableInterContainerTrafficEncryption: js.UndefOr[Boolean] = js.undefined,
+        EnableManagedSpotTraining: js.UndefOr[Boolean] = js.undefined,
         EnableNetworkIsolation: js.UndefOr[Boolean] = js.undefined,
         InputDataConfig: js.UndefOr[InputDataConfig] = js.undefined,
         StaticHyperParameters: js.UndefOr[HyperParameters] = js.undefined,
@@ -3548,9 +3680,11 @@ package sagemaker {
         "StoppingCondition"      -> StoppingCondition.asInstanceOf[js.Any]
       )
 
+      CheckpointConfig.foreach(__v => __obj.update("CheckpointConfig", __v.asInstanceOf[js.Any]))
       EnableInterContainerTrafficEncryption.foreach(
         __v => __obj.update("EnableInterContainerTrafficEncryption", __v.asInstanceOf[js.Any])
       )
+      EnableManagedSpotTraining.foreach(__v => __obj.update("EnableManagedSpotTraining", __v.asInstanceOf[js.Any]))
       EnableNetworkIsolation.foreach(__v => __obj.update("EnableNetworkIsolation", __v.asInstanceOf[js.Any]))
       InputDataConfig.foreach(__v => __obj.update("InputDataConfig", __v.asInstanceOf[js.Any]))
       StaticHyperParameters.foreach(__v => __obj.update("StaticHyperParameters", __v.asInstanceOf[js.Any]))
@@ -3617,28 +3751,30 @@ package sagemaker {
     */
   @js.native
   trait HyperParameterTuningJobConfig extends js.Object {
-    var HyperParameterTuningJobObjective: HyperParameterTuningJobObjective
-    var ParameterRanges: ParameterRanges
     var ResourceLimits: ResourceLimits
     var Strategy: HyperParameterTuningJobStrategyType
+    var HyperParameterTuningJobObjective: js.UndefOr[HyperParameterTuningJobObjective]
+    var ParameterRanges: js.UndefOr[ParameterRanges]
     var TrainingJobEarlyStoppingType: js.UndefOr[TrainingJobEarlyStoppingType]
   }
 
   object HyperParameterTuningJobConfig {
     def apply(
-        HyperParameterTuningJobObjective: HyperParameterTuningJobObjective,
-        ParameterRanges: ParameterRanges,
         ResourceLimits: ResourceLimits,
         Strategy: HyperParameterTuningJobStrategyType,
+        HyperParameterTuningJobObjective: js.UndefOr[HyperParameterTuningJobObjective] = js.undefined,
+        ParameterRanges: js.UndefOr[ParameterRanges] = js.undefined,
         TrainingJobEarlyStoppingType: js.UndefOr[TrainingJobEarlyStoppingType] = js.undefined
     ): HyperParameterTuningJobConfig = {
       val __obj = js.Dictionary[js.Any](
-        "HyperParameterTuningJobObjective" -> HyperParameterTuningJobObjective.asInstanceOf[js.Any],
-        "ParameterRanges"                  -> ParameterRanges.asInstanceOf[js.Any],
-        "ResourceLimits"                   -> ResourceLimits.asInstanceOf[js.Any],
-        "Strategy"                         -> Strategy.asInstanceOf[js.Any]
+        "ResourceLimits" -> ResourceLimits.asInstanceOf[js.Any],
+        "Strategy"       -> Strategy.asInstanceOf[js.Any]
       )
 
+      HyperParameterTuningJobObjective.foreach(
+        __v => __obj.update("HyperParameterTuningJobObjective", __v.asInstanceOf[js.Any])
+      )
+      ParameterRanges.foreach(__v => __obj.update("ParameterRanges", __v.asInstanceOf[js.Any]))
       TrainingJobEarlyStoppingType.foreach(
         __v => __obj.update("TrainingJobEarlyStoppingType", __v.asInstanceOf[js.Any])
       )
@@ -3976,6 +4112,13 @@ package sagemaker {
     }
   }
 
+  object JoinSourceEnum {
+    val Input = "Input"
+    val None  = "None"
+
+    val values = IndexedSeq(Input, None)
+  }
+
   /**
     * Provides a breakdown of the number of objects labeled.
     */
@@ -4106,6 +4249,7 @@ package sagemaker {
     var WorkRequesterAccountId: AccountId
     var LabelCounters: js.UndefOr[LabelCountersForWorkteam]
     var LabelingJobName: js.UndefOr[LabelingJobName]
+    var NumberOfHumanWorkersPerDataObject: js.UndefOr[NumberOfHumanWorkersPerDataObject]
   }
 
   object LabelingJobForWorkteamSummary {
@@ -4114,7 +4258,8 @@ package sagemaker {
         JobReferenceCode: JobReferenceCode,
         WorkRequesterAccountId: AccountId,
         LabelCounters: js.UndefOr[LabelCountersForWorkteam] = js.undefined,
-        LabelingJobName: js.UndefOr[LabelingJobName] = js.undefined
+        LabelingJobName: js.UndefOr[LabelingJobName] = js.undefined,
+        NumberOfHumanWorkersPerDataObject: js.UndefOr[NumberOfHumanWorkersPerDataObject] = js.undefined
     ): LabelingJobForWorkteamSummary = {
       val __obj = js.Dictionary[js.Any](
         "CreationTime"           -> CreationTime.asInstanceOf[js.Any],
@@ -4124,6 +4269,9 @@ package sagemaker {
 
       LabelCounters.foreach(__v => __obj.update("LabelCounters", __v.asInstanceOf[js.Any]))
       LabelingJobName.foreach(__v => __obj.update("LabelingJobName", __v.asInstanceOf[js.Any]))
+      NumberOfHumanWorkersPerDataObject.foreach(
+        __v => __obj.update("NumberOfHumanWorkersPerDataObject", __v.asInstanceOf[js.Any])
+      )
       __obj.asInstanceOf[LabelingJobForWorkteamSummary]
     }
   }
@@ -5401,7 +5549,7 @@ package sagemaker {
   }
 
   /**
-    * Specifies a metric that the training algorithm writes to <code>stderr</code> or <code>stdout</code>. Amazon SageMakerhyperparameter tuning captures all defined metrics. You specify one metric that a hyperparameter tuning job uses as its objective metric to choose the best training job.
+    * Specifies a metric that the training algorithm writes to <code>stderr</code> or <code>stdout</code> . Amazon SageMakerhyperparameter tuning captures all defined metrics. You specify one metric that a hyperparameter tuning job uses as its objective metric to choose the best training job.
     */
   @js.native
   trait MetricDefinition extends js.Object {
@@ -5831,6 +5979,24 @@ package sagemaker {
     }
   }
 
+  /**
+    * Configures SNS notifications of available or expiring work items for work teams.
+    */
+  @js.native
+  trait NotificationConfiguration extends js.Object {
+    var NotificationTopicArn: js.UndefOr[NotificationTopicArn]
+  }
+
+  object NotificationConfiguration {
+    def apply(
+        NotificationTopicArn: js.UndefOr[NotificationTopicArn] = js.undefined
+    ): NotificationConfiguration = {
+      val __obj = js.Dictionary.empty[js.Any]
+      NotificationTopicArn.foreach(__v => __obj.update("NotificationTopicArn", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[NotificationConfiguration]
+    }
+  }
+
   object ObjectiveStatusEnum {
     val Succeeded = "Succeeded"
     val Pending   = "Pending"
@@ -6199,7 +6365,7 @@ package sagemaker {
 
   /**
     * Defines the amount of money paid to an Amazon Mechanical Turk worker for each task performed.
-    *  Use one of the following prices for bounding box tasks. Prices are in US dollars.
+    *  Use one of the following prices for bounding box tasks. Prices are in US dollars and should be based on the complexity of the task; the longer it takes in your initial testing, the more you should offer.
     * * 0.036
     *  * 0.048
     *  * 0.060
@@ -6574,6 +6740,8 @@ package sagemaker {
     val MaxRuntimeExceeded       = "MaxRuntimeExceeded"
     val Completed                = "Completed"
     val Failed                   = "Failed"
+    val Interrupted              = "Interrupted"
+    val MaxWaitTimeExceeded      = "MaxWaitTimeExceeded"
 
     val values = IndexedSeq(
       Starting,
@@ -6587,7 +6755,9 @@ package sagemaker {
       Stopped,
       MaxRuntimeExceeded,
       Completed,
-      Failed
+      Failed,
+      Interrupted,
+      MaxWaitTimeExceeded
     )
   }
 
@@ -6829,21 +6999,26 @@ package sagemaker {
   }
 
   /**
-    * Specifies how long model training can run. When model training reaches the limit, Amazon SageMaker ends the training job. Use this API to cap model training cost.
-    *  To stop a job, Amazon SageMaker sends the algorithm the <code>SIGTERM</code> signal, which delays job termination for120 seconds. Algorithms might use this 120-second window to save the model artifacts, so the results of training is not lost.
-    *  Training algorithms provided by Amazon SageMaker automatically saves the intermediate results of a model training job (it is best effort case, as model might not be ready to save as some stages, for example training just started). This intermediate data is a valid model artifact. You can use it to create a model (<code>CreateModel</code>).
+    * Specifies a limit to how long a model training or compilation job can run. It also specifies how long you are willing to wait for a managed spot training job to complete. When the job reaches the time limit, Amazon SageMaker ends the training or compilation job. Use this API to cap model training costs.
+    *  To stop a job, Amazon SageMaker sends the algorithm the <code>SIGTERM</code> signal, which delays job termination for 120 seconds. Algorithms can use this 120-second window to save the model artifacts, so the results of training are not lost.
+    *  The training algorithms provided by Amazon SageMaker automatically save the intermediate results of a model training job when possible. This attempt to save artifacts is only a best effort case as model might not be in a state from which it can be saved. For example, if training has just started, the model might not be ready to save. When saved, this intermediate data is a valid model artifact. You can use it to create a model with <code>CreateModel</code>.
+    *
+    * '''Note:'''The Neural Topic Model (NTM) currently does not support saving intermediate model artifacts. When training NTMs, make sure that the maximum runtime is sufficient for the training job to complete.
     */
   @js.native
   trait StoppingCondition extends js.Object {
     var MaxRuntimeInSeconds: js.UndefOr[MaxRuntimeInSeconds]
+    var MaxWaitTimeInSeconds: js.UndefOr[MaxWaitTimeInSeconds]
   }
 
   object StoppingCondition {
     def apply(
-        MaxRuntimeInSeconds: js.UndefOr[MaxRuntimeInSeconds] = js.undefined
+        MaxRuntimeInSeconds: js.UndefOr[MaxRuntimeInSeconds] = js.undefined,
+        MaxWaitTimeInSeconds: js.UndefOr[MaxWaitTimeInSeconds] = js.undefined
     ): StoppingCondition = {
       val __obj = js.Dictionary.empty[js.Any]
       MaxRuntimeInSeconds.foreach(__v => __obj.update("MaxRuntimeInSeconds", __v.asInstanceOf[js.Any]))
+      MaxWaitTimeInSeconds.foreach(__v => __obj.update("MaxWaitTimeInSeconds", __v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[StoppingCondition]
     }
   }
@@ -6922,21 +7097,45 @@ package sagemaker {
   }
 
   object TargetDeviceEnum {
-    val ml_m4      = "ml_m4"
-    val ml_m5      = "ml_m5"
-    val ml_c4      = "ml_c4"
-    val ml_c5      = "ml_c5"
-    val ml_p2      = "ml_p2"
-    val ml_p3      = "ml_p3"
-    val jetson_tx1 = "jetson_tx1"
-    val jetson_tx2 = "jetson_tx2"
-    val rasp3b     = "rasp3b"
-    val deeplens   = "deeplens"
-    val rk3399     = "rk3399"
-    val rk3288     = "rk3288"
+    val lambda      = "lambda"
+    val ml_m4       = "ml_m4"
+    val ml_m5       = "ml_m5"
+    val ml_c4       = "ml_c4"
+    val ml_c5       = "ml_c5"
+    val ml_p2       = "ml_p2"
+    val ml_p3       = "ml_p3"
+    val jetson_tx1  = "jetson_tx1"
+    val jetson_tx2  = "jetson_tx2"
+    val jetson_nano = "jetson_nano"
+    val rasp3b      = "rasp3b"
+    val deeplens    = "deeplens"
+    val rk3399      = "rk3399"
+    val rk3288      = "rk3288"
+    val aisage      = "aisage"
+    val sbe_c       = "sbe_c"
+    val qcs605      = "qcs605"
+    val qcs603      = "qcs603"
 
-    val values =
-      IndexedSeq(ml_m4, ml_m5, ml_c4, ml_c5, ml_p2, ml_p3, jetson_tx1, jetson_tx2, rasp3b, deeplens, rk3399, rk3288)
+    val values = IndexedSeq(
+      lambda,
+      ml_m4,
+      ml_m5,
+      ml_c4,
+      ml_c5,
+      ml_p2,
+      ml_p3,
+      jetson_tx1,
+      jetson_tx2,
+      jetson_nano,
+      rasp3b,
+      deeplens,
+      rk3399,
+      rk3288,
+      aisage,
+      sbe_c,
+      qcs605,
+      qcs603
+    )
   }
 
   object TrainingInputModeEnum {
@@ -6947,32 +7146,33 @@ package sagemaker {
   }
 
   object TrainingInstanceTypeEnum {
-    val `ml.m4.xlarge`   = "ml.m4.xlarge"
-    val `ml.m4.2xlarge`  = "ml.m4.2xlarge"
-    val `ml.m4.4xlarge`  = "ml.m4.4xlarge"
-    val `ml.m4.10xlarge` = "ml.m4.10xlarge"
-    val `ml.m4.16xlarge` = "ml.m4.16xlarge"
-    val `ml.m5.large`    = "ml.m5.large"
-    val `ml.m5.xlarge`   = "ml.m5.xlarge"
-    val `ml.m5.2xlarge`  = "ml.m5.2xlarge"
-    val `ml.m5.4xlarge`  = "ml.m5.4xlarge"
-    val `ml.m5.12xlarge` = "ml.m5.12xlarge"
-    val `ml.m5.24xlarge` = "ml.m5.24xlarge"
-    val `ml.c4.xlarge`   = "ml.c4.xlarge"
-    val `ml.c4.2xlarge`  = "ml.c4.2xlarge"
-    val `ml.c4.4xlarge`  = "ml.c4.4xlarge"
-    val `ml.c4.8xlarge`  = "ml.c4.8xlarge"
-    val `ml.p2.xlarge`   = "ml.p2.xlarge"
-    val `ml.p2.8xlarge`  = "ml.p2.8xlarge"
-    val `ml.p2.16xlarge` = "ml.p2.16xlarge"
-    val `ml.p3.2xlarge`  = "ml.p3.2xlarge"
-    val `ml.p3.8xlarge`  = "ml.p3.8xlarge"
-    val `ml.p3.16xlarge` = "ml.p3.16xlarge"
-    val `ml.c5.xlarge`   = "ml.c5.xlarge"
-    val `ml.c5.2xlarge`  = "ml.c5.2xlarge"
-    val `ml.c5.4xlarge`  = "ml.c5.4xlarge"
-    val `ml.c5.9xlarge`  = "ml.c5.9xlarge"
-    val `ml.c5.18xlarge` = "ml.c5.18xlarge"
+    val `ml.m4.xlarge`     = "ml.m4.xlarge"
+    val `ml.m4.2xlarge`    = "ml.m4.2xlarge"
+    val `ml.m4.4xlarge`    = "ml.m4.4xlarge"
+    val `ml.m4.10xlarge`   = "ml.m4.10xlarge"
+    val `ml.m4.16xlarge`   = "ml.m4.16xlarge"
+    val `ml.m5.large`      = "ml.m5.large"
+    val `ml.m5.xlarge`     = "ml.m5.xlarge"
+    val `ml.m5.2xlarge`    = "ml.m5.2xlarge"
+    val `ml.m5.4xlarge`    = "ml.m5.4xlarge"
+    val `ml.m5.12xlarge`   = "ml.m5.12xlarge"
+    val `ml.m5.24xlarge`   = "ml.m5.24xlarge"
+    val `ml.c4.xlarge`     = "ml.c4.xlarge"
+    val `ml.c4.2xlarge`    = "ml.c4.2xlarge"
+    val `ml.c4.4xlarge`    = "ml.c4.4xlarge"
+    val `ml.c4.8xlarge`    = "ml.c4.8xlarge"
+    val `ml.p2.xlarge`     = "ml.p2.xlarge"
+    val `ml.p2.8xlarge`    = "ml.p2.8xlarge"
+    val `ml.p2.16xlarge`   = "ml.p2.16xlarge"
+    val `ml.p3.2xlarge`    = "ml.p3.2xlarge"
+    val `ml.p3.8xlarge`    = "ml.p3.8xlarge"
+    val `ml.p3.16xlarge`   = "ml.p3.16xlarge"
+    val `ml.c5.xlarge`     = "ml.c5.xlarge"
+    val `ml.c5.2xlarge`    = "ml.c5.2xlarge"
+    val `ml.c5.4xlarge`    = "ml.c5.4xlarge"
+    val `ml.c5.9xlarge`    = "ml.c5.9xlarge"
+    val `ml.c5.18xlarge`   = "ml.c5.18xlarge"
+    val `ml.p3dn.24xlarge` = "ml.p3dn.24xlarge"
 
     val values = IndexedSeq(
       `ml.m4.xlarge`,
@@ -7000,7 +7200,8 @@ package sagemaker {
       `ml.c5.2xlarge`,
       `ml.c5.4xlarge`,
       `ml.c5.9xlarge`,
-      `ml.c5.18xlarge`
+      `ml.c5.18xlarge`,
+      `ml.p3dn.24xlarge`
     )
   }
 
@@ -7822,13 +8023,15 @@ package sagemaker {
     var WorkteamName: WorkteamName
     var Description: js.UndefOr[String200]
     var MemberDefinitions: js.UndefOr[MemberDefinitions]
+    var NotificationConfiguration: js.UndefOr[NotificationConfiguration]
   }
 
   object UpdateWorkteamRequest {
     def apply(
         WorkteamName: WorkteamName,
         Description: js.UndefOr[String200] = js.undefined,
-        MemberDefinitions: js.UndefOr[MemberDefinitions] = js.undefined
+        MemberDefinitions: js.UndefOr[MemberDefinitions] = js.undefined,
+        NotificationConfiguration: js.UndefOr[NotificationConfiguration] = js.undefined
     ): UpdateWorkteamRequest = {
       val __obj = js.Dictionary[js.Any](
         "WorkteamName" -> WorkteamName.asInstanceOf[js.Any]
@@ -7836,6 +8039,7 @@ package sagemaker {
 
       Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
       MemberDefinitions.foreach(__v => __obj.update("MemberDefinitions", __v.asInstanceOf[js.Any]))
+      NotificationConfiguration.foreach(__v => __obj.update("NotificationConfiguration", __v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateWorkteamRequest]
     }
   }
@@ -7891,6 +8095,7 @@ package sagemaker {
     var WorkteamName: WorkteamName
     var CreateDate: js.UndefOr[Timestamp]
     var LastUpdatedDate: js.UndefOr[Timestamp]
+    var NotificationConfiguration: js.UndefOr[NotificationConfiguration]
     var ProductListingIds: js.UndefOr[ProductListings]
     var SubDomain: js.UndefOr[String]
   }
@@ -7903,6 +8108,7 @@ package sagemaker {
         WorkteamName: WorkteamName,
         CreateDate: js.UndefOr[Timestamp] = js.undefined,
         LastUpdatedDate: js.UndefOr[Timestamp] = js.undefined,
+        NotificationConfiguration: js.UndefOr[NotificationConfiguration] = js.undefined,
         ProductListingIds: js.UndefOr[ProductListings] = js.undefined,
         SubDomain: js.UndefOr[String] = js.undefined
     ): Workteam = {
@@ -7915,6 +8121,7 @@ package sagemaker {
 
       CreateDate.foreach(__v => __obj.update("CreateDate", __v.asInstanceOf[js.Any]))
       LastUpdatedDate.foreach(__v => __obj.update("LastUpdatedDate", __v.asInstanceOf[js.Any]))
+      NotificationConfiguration.foreach(__v => __obj.update("NotificationConfiguration", __v.asInstanceOf[js.Any]))
       ProductListingIds.foreach(__v => __obj.update("ProductListingIds", __v.asInstanceOf[js.Any]))
       SubDomain.foreach(__v => __obj.update("SubDomain", __v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Workteam]

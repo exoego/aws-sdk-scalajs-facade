@@ -16,11 +16,14 @@ package object lexruntime {
   type BotName                     = String
   type ButtonTextStringWithLength  = String
   type ButtonValueStringWithLength = String
+  type ConfirmationStatus          = String
   type ContentType                 = String
+  type DialogActionType            = String
   type DialogState                 = String
-  type ErrorMessage                = String
+  type FulfillmentState            = String
   type HttpContentType             = String
   type IntentName                  = String
+  type IntentSummaryList           = js.Array[IntentSummary]
   type MessageFormatType           = String
   type StringMap                   = js.Dictionary[String]
   type StringUrlWithLength         = String
@@ -32,9 +35,15 @@ package object lexruntime {
 
   implicit final class LexRuntimeOps(val service: LexRuntime) extends AnyVal {
 
+    def deleteSessionFuture(params: DeleteSessionRequest): Future[DeleteSessionResponse] =
+      service.deleteSession(params).promise.toFuture
+    def getSessionFuture(params: GetSessionRequest): Future[GetSessionResponse] =
+      service.getSession(params).promise.toFuture
     def postContentFuture(params: PostContentRequest): Future[PostContentResponse] =
       service.postContent(params).promise.toFuture
     def postTextFuture(params: PostTextRequest): Future[PostTextResponse] = service.postText(params).promise.toFuture
+    def putSessionFuture(params: PutSessionRequest): Future[PutSessionResponse] =
+      service.putSession(params).promise.toFuture
   }
 }
 
@@ -44,24 +53,11 @@ package lexruntime {
   class LexRuntime() extends js.Object {
     def this(config: AWSConfig) = this()
 
-    def postContent(params: PostContentRequest): Request[PostContentResponse] = js.native
-    def postText(params: PostTextRequest): Request[PostTextResponse]          = js.native
-  }
-
-  /**
-    * Either the Amazon Lex bot is still building, or one of the dependent services (Amazon Polly, AWS Lambda) failed with an internal service error.
-    */
-  @js.native
-  trait BadGatewayExceptionException extends js.Object {
-    val Message: ErrorMessage
-  }
-
-  /**
-    * Request validation failed, there is no usable message in the context, or the bot build failed, is still in progress, or contains unbuilt changes.
-    */
-  @js.native
-  trait BadRequestExceptionException extends js.Object {
-    val message: String
+    def deleteSession(params: DeleteSessionRequest): Request[DeleteSessionResponse] = js.native
+    def getSession(params: GetSessionRequest): Request[GetSessionResponse]          = js.native
+    def postContent(params: PostContentRequest): Request[PostContentResponse]       = js.native
+    def postText(params: PostTextRequest): Request[PostTextResponse]                = js.native
+    def putSession(params: PutSessionRequest): Request[PutSessionResponse]          = js.native
   }
 
   /**
@@ -87,12 +83,12 @@ package lexruntime {
     }
   }
 
-  /**
-    * Two clients are using the same AWS account, Amazon Lex bot, and user ID.
-    */
-  @js.native
-  trait ConflictExceptionException extends js.Object {
-    val message: String
+  object ConfirmationStatusEnum {
+    val None      = "None"
+    val Confirmed = "Confirmed"
+    val Denied    = "Denied"
+
+    val values = IndexedSeq(None, Confirmed, Denied)
   }
 
   object ContentTypeEnum {
@@ -101,15 +97,99 @@ package lexruntime {
     val values = IndexedSeq(`application/vnd.amazonaws.card.generic`)
   }
 
+  @js.native
+  trait DeleteSessionRequest extends js.Object {
+    var botAlias: BotAlias
+    var botName: BotName
+    var userId: UserId
+  }
+
+  object DeleteSessionRequest {
+    def apply(
+        botAlias: BotAlias,
+        botName: BotName,
+        userId: UserId
+    ): DeleteSessionRequest = {
+      val __obj = js.Dictionary[js.Any](
+        "botAlias" -> botAlias.asInstanceOf[js.Any],
+        "botName"  -> botName.asInstanceOf[js.Any],
+        "userId"   -> userId.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[DeleteSessionRequest]
+    }
+  }
+
+  @js.native
+  trait DeleteSessionResponse extends js.Object {
+    var botAlias: js.UndefOr[BotAlias]
+    var botName: js.UndefOr[BotName]
+    var sessionId: js.UndefOr[String]
+    var userId: js.UndefOr[UserId]
+  }
+
+  object DeleteSessionResponse {
+    def apply(
+        botAlias: js.UndefOr[BotAlias] = js.undefined,
+        botName: js.UndefOr[BotName] = js.undefined,
+        sessionId: js.UndefOr[String] = js.undefined,
+        userId: js.UndefOr[UserId] = js.undefined
+    ): DeleteSessionResponse = {
+      val __obj = js.Dictionary.empty[js.Any]
+      botAlias.foreach(__v => __obj.update("botAlias", __v.asInstanceOf[js.Any]))
+      botName.foreach(__v => __obj.update("botName", __v.asInstanceOf[js.Any]))
+      sessionId.foreach(__v => __obj.update("sessionId", __v.asInstanceOf[js.Any]))
+      userId.foreach(__v => __obj.update("userId", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DeleteSessionResponse]
+    }
+  }
+
   /**
-    * One of the dependencies, such as AWS Lambda or Amazon Polly, threw an exception. For example,
-    * * If Amazon Lex does not have sufficient permissions to call a Lambda function.
-    *  * If a Lambda function takes longer than 30 seconds to execute.
-    *  * If a fulfillment Lambda function returns a <code>Delegate</code> dialog action without removing any slot values.
+    * Describes the next action that the bot should take in its interaction with the user and provides information about the context in which the action takes place. Use the <code>DialogAction</code> data type to set the interaction to a specific state, or to return the interaction to a previous state.
     */
   @js.native
-  trait DependencyFailedExceptionException extends js.Object {
-    val Message: ErrorMessage
+  trait DialogAction extends js.Object {
+    var `type`: DialogActionType
+    var fulfillmentState: js.UndefOr[FulfillmentState]
+    var intentName: js.UndefOr[IntentName]
+    var message: js.UndefOr[Text]
+    var messageFormat: js.UndefOr[MessageFormatType]
+    var slotToElicit: js.UndefOr[String]
+    var slots: js.UndefOr[StringMap]
+  }
+
+  object DialogAction {
+    def apply(
+        `type`: DialogActionType,
+        fulfillmentState: js.UndefOr[FulfillmentState] = js.undefined,
+        intentName: js.UndefOr[IntentName] = js.undefined,
+        message: js.UndefOr[Text] = js.undefined,
+        messageFormat: js.UndefOr[MessageFormatType] = js.undefined,
+        slotToElicit: js.UndefOr[String] = js.undefined,
+        slots: js.UndefOr[StringMap] = js.undefined
+    ): DialogAction = {
+      val __obj = js.Dictionary[js.Any](
+        "type" -> `type`.asInstanceOf[js.Any]
+      )
+
+      fulfillmentState.foreach(__v => __obj.update("fulfillmentState", __v.asInstanceOf[js.Any]))
+      intentName.foreach(__v => __obj.update("intentName", __v.asInstanceOf[js.Any]))
+      message.foreach(__v => __obj.update("message", __v.asInstanceOf[js.Any]))
+      messageFormat.foreach(__v => __obj.update("messageFormat", __v.asInstanceOf[js.Any]))
+      slotToElicit.foreach(__v => __obj.update("slotToElicit", __v.asInstanceOf[js.Any]))
+      slots.foreach(__v => __obj.update("slots", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DialogAction]
+    }
+  }
+
+  object DialogActionTypeEnum {
+    val ElicitIntent  = "ElicitIntent"
+    val ConfirmIntent = "ConfirmIntent"
+    val ElicitSlot    = "ElicitSlot"
+    val Close         = "Close"
+    val Delegate      = "Delegate"
+
+    val values = IndexedSeq(ElicitIntent, ConfirmIntent, ElicitSlot, Close, Delegate)
   }
 
   object DialogStateEnum {
@@ -121,6 +201,14 @@ package lexruntime {
     val Failed              = "Failed"
 
     val values = IndexedSeq(ElicitIntent, ConfirmIntent, ElicitSlot, Fulfilled, ReadyForFulfillment, Failed)
+  }
+
+  object FulfillmentStateEnum {
+    val Fulfilled           = "Fulfilled"
+    val Failed              = "Failed"
+    val ReadyForFulfillment = "ReadyForFulfillment"
+
+    val values = IndexedSeq(Fulfilled, Failed, ReadyForFulfillment)
   }
 
   /**
@@ -153,29 +241,86 @@ package lexruntime {
     }
   }
 
-  /**
-    * Internal service error. Retry the call.
-    */
   @js.native
-  trait InternalFailureExceptionException extends js.Object {
-    val message: String
+  trait GetSessionRequest extends js.Object {
+    var botAlias: BotAlias
+    var botName: BotName
+    var userId: UserId
+  }
+
+  object GetSessionRequest {
+    def apply(
+        botAlias: BotAlias,
+        botName: BotName,
+        userId: UserId
+    ): GetSessionRequest = {
+      val __obj = js.Dictionary[js.Any](
+        "botAlias" -> botAlias.asInstanceOf[js.Any],
+        "botName"  -> botName.asInstanceOf[js.Any],
+        "userId"   -> userId.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[GetSessionRequest]
+    }
+  }
+
+  @js.native
+  trait GetSessionResponse extends js.Object {
+    var dialogAction: js.UndefOr[DialogAction]
+    var recentIntentSummaryView: js.UndefOr[IntentSummaryList]
+    var sessionAttributes: js.UndefOr[StringMap]
+    var sessionId: js.UndefOr[String]
+  }
+
+  object GetSessionResponse {
+    def apply(
+        dialogAction: js.UndefOr[DialogAction] = js.undefined,
+        recentIntentSummaryView: js.UndefOr[IntentSummaryList] = js.undefined,
+        sessionAttributes: js.UndefOr[StringMap] = js.undefined,
+        sessionId: js.UndefOr[String] = js.undefined
+    ): GetSessionResponse = {
+      val __obj = js.Dictionary.empty[js.Any]
+      dialogAction.foreach(__v => __obj.update("dialogAction", __v.asInstanceOf[js.Any]))
+      recentIntentSummaryView.foreach(__v => __obj.update("recentIntentSummaryView", __v.asInstanceOf[js.Any]))
+      sessionAttributes.foreach(__v => __obj.update("sessionAttributes", __v.asInstanceOf[js.Any]))
+      sessionId.foreach(__v => __obj.update("sessionId", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetSessionResponse]
+    }
   }
 
   /**
-    * Exceeded a limit.
+    * Provides information about the state of an intent. You can use this information to get the current state of an intent so that you can process the intent, or so that you can return the intent to its previous state.
     */
   @js.native
-  trait LimitExceededExceptionException extends js.Object {
-    val retryAfterSeconds: String
-    val message: String
+  trait IntentSummary extends js.Object {
+    var dialogActionType: DialogActionType
+    var confirmationStatus: js.UndefOr[ConfirmationStatus]
+    var fulfillmentState: js.UndefOr[FulfillmentState]
+    var intentName: js.UndefOr[IntentName]
+    var slotToElicit: js.UndefOr[String]
+    var slots: js.UndefOr[StringMap]
   }
 
-  /**
-    * This exception is not used.
-    */
-  @js.native
-  trait LoopDetectedExceptionException extends js.Object {
-    val Message: ErrorMessage
+  object IntentSummary {
+    def apply(
+        dialogActionType: DialogActionType,
+        confirmationStatus: js.UndefOr[ConfirmationStatus] = js.undefined,
+        fulfillmentState: js.UndefOr[FulfillmentState] = js.undefined,
+        intentName: js.UndefOr[IntentName] = js.undefined,
+        slotToElicit: js.UndefOr[String] = js.undefined,
+        slots: js.UndefOr[StringMap] = js.undefined
+    ): IntentSummary = {
+      val __obj = js.Dictionary[js.Any](
+        "dialogActionType" -> dialogActionType.asInstanceOf[js.Any]
+      )
+
+      confirmationStatus.foreach(__v => __obj.update("confirmationStatus", __v.asInstanceOf[js.Any]))
+      fulfillmentState.foreach(__v => __obj.update("fulfillmentState", __v.asInstanceOf[js.Any]))
+      intentName.foreach(__v => __obj.update("intentName", __v.asInstanceOf[js.Any]))
+      slotToElicit.foreach(__v => __obj.update("slotToElicit", __v.asInstanceOf[js.Any]))
+      slots.foreach(__v => __obj.update("slots", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[IntentSummary]
+    }
   }
 
   object MessageFormatTypeEnum {
@@ -185,22 +330,6 @@ package lexruntime {
     val Composite     = "Composite"
 
     val values = IndexedSeq(PlainText, CustomPayload, SSML, Composite)
-  }
-
-  /**
-    * The accept header in the request does not have a valid value.
-    */
-  @js.native
-  trait NotAcceptableExceptionException extends js.Object {
-    val message: String
-  }
-
-  /**
-    * The resource (such as the Amazon Lex bot or an alias) that is referred to is not found.
-    */
-  @js.native
-  trait NotFoundExceptionException extends js.Object {
-    val message: String
   }
 
   @js.native
@@ -351,12 +480,78 @@ package lexruntime {
     }
   }
 
-  /**
-    * The input speech is too long.
-    */
   @js.native
-  trait RequestTimeoutExceptionException extends js.Object {
-    val message: String
+  trait PutSessionRequest extends js.Object {
+    var botAlias: BotAlias
+    var botName: BotName
+    var userId: UserId
+    var accept: js.UndefOr[Accept]
+    var dialogAction: js.UndefOr[DialogAction]
+    var sessionAttributes: js.UndefOr[StringMap]
+  }
+
+  object PutSessionRequest {
+    def apply(
+        botAlias: BotAlias,
+        botName: BotName,
+        userId: UserId,
+        accept: js.UndefOr[Accept] = js.undefined,
+        dialogAction: js.UndefOr[DialogAction] = js.undefined,
+        sessionAttributes: js.UndefOr[StringMap] = js.undefined
+    ): PutSessionRequest = {
+      val __obj = js.Dictionary[js.Any](
+        "botAlias" -> botAlias.asInstanceOf[js.Any],
+        "botName"  -> botName.asInstanceOf[js.Any],
+        "userId"   -> userId.asInstanceOf[js.Any]
+      )
+
+      accept.foreach(__v => __obj.update("accept", __v.asInstanceOf[js.Any]))
+      dialogAction.foreach(__v => __obj.update("dialogAction", __v.asInstanceOf[js.Any]))
+      sessionAttributes.foreach(__v => __obj.update("sessionAttributes", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PutSessionRequest]
+    }
+  }
+
+  @js.native
+  trait PutSessionResponse extends js.Object {
+    var audioStream: js.UndefOr[BlobStream]
+    var contentType: js.UndefOr[HttpContentType]
+    var dialogState: js.UndefOr[DialogState]
+    var intentName: js.UndefOr[IntentName]
+    var message: js.UndefOr[Text]
+    var messageFormat: js.UndefOr[MessageFormatType]
+    var sessionAttributes: js.UndefOr[String]
+    var sessionId: js.UndefOr[String]
+    var slotToElicit: js.UndefOr[String]
+    var slots: js.UndefOr[String]
+  }
+
+  object PutSessionResponse {
+    def apply(
+        audioStream: js.UndefOr[BlobStream] = js.undefined,
+        contentType: js.UndefOr[HttpContentType] = js.undefined,
+        dialogState: js.UndefOr[DialogState] = js.undefined,
+        intentName: js.UndefOr[IntentName] = js.undefined,
+        message: js.UndefOr[Text] = js.undefined,
+        messageFormat: js.UndefOr[MessageFormatType] = js.undefined,
+        sessionAttributes: js.UndefOr[String] = js.undefined,
+        sessionId: js.UndefOr[String] = js.undefined,
+        slotToElicit: js.UndefOr[String] = js.undefined,
+        slots: js.UndefOr[String] = js.undefined
+    ): PutSessionResponse = {
+      val __obj = js.Dictionary.empty[js.Any]
+      audioStream.foreach(__v => __obj.update("audioStream", __v.asInstanceOf[js.Any]))
+      contentType.foreach(__v => __obj.update("contentType", __v.asInstanceOf[js.Any]))
+      dialogState.foreach(__v => __obj.update("dialogState", __v.asInstanceOf[js.Any]))
+      intentName.foreach(__v => __obj.update("intentName", __v.asInstanceOf[js.Any]))
+      message.foreach(__v => __obj.update("message", __v.asInstanceOf[js.Any]))
+      messageFormat.foreach(__v => __obj.update("messageFormat", __v.asInstanceOf[js.Any]))
+      sessionAttributes.foreach(__v => __obj.update("sessionAttributes", __v.asInstanceOf[js.Any]))
+      sessionId.foreach(__v => __obj.update("sessionId", __v.asInstanceOf[js.Any]))
+      slotToElicit.foreach(__v => __obj.update("slotToElicit", __v.asInstanceOf[js.Any]))
+      slots.foreach(__v => __obj.update("slots", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PutSessionResponse]
+    }
   }
 
   /**
@@ -381,13 +576,5 @@ package lexruntime {
       version.foreach(__v => __obj.update("version", __v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ResponseCard]
     }
-  }
-
-  /**
-    * The Content-Type header (<code>PostContent</code> API) has an invalid value.
-    */
-  @js.native
-  trait UnsupportedMediaTypeExceptionException extends js.Object {
-    val message: String
   }
 }

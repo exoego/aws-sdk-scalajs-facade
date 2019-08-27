@@ -31,6 +31,7 @@ package object ecr {
   type ImageSizeInBytes                    = Double
   type ImageTag                            = String
   type ImageTagList                        = js.Array[ImageTag]
+  type ImageTagMutability                  = String
   type LayerAvailability                   = String
   type LayerDigest                         = String
   type LayerDigestList                     = js.Array[LayerDigest]
@@ -107,6 +108,8 @@ package object ecr {
     def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] =
       service.listTagsForResource(params).promise.toFuture
     def putImageFuture(params: PutImageRequest): Future[PutImageResponse] = service.putImage(params).promise.toFuture
+    def putImageTagMutabilityFuture(params: PutImageTagMutabilityRequest): Future[PutImageTagMutabilityResponse] =
+      service.putImageTagMutability(params).promise.toFuture
     def putLifecyclePolicyFuture(params: PutLifecyclePolicyRequest): Future[PutLifecyclePolicyResponse] =
       service.putLifecyclePolicy(params).promise.toFuture
     def setRepositoryPolicyFuture(params: SetRepositoryPolicyRequest): Future[SetRepositoryPolicyResponse] =
@@ -148,14 +151,15 @@ package ecr {
     def getLifecyclePolicy(params: GetLifecyclePolicyRequest): Request[GetLifecyclePolicyResponse] = js.native
     def getLifecyclePolicyPreview(
         params: GetLifecyclePolicyPreviewRequest
-    ): Request[GetLifecyclePolicyPreviewResponse]                                                     = js.native
-    def getRepositoryPolicy(params: GetRepositoryPolicyRequest): Request[GetRepositoryPolicyResponse] = js.native
-    def initiateLayerUpload(params: InitiateLayerUploadRequest): Request[InitiateLayerUploadResponse] = js.native
-    def listImages(params: ListImagesRequest): Request[ListImagesResponse]                            = js.native
-    def listTagsForResource(params: ListTagsForResourceRequest): Request[ListTagsForResourceResponse] = js.native
-    def putImage(params: PutImageRequest): Request[PutImageResponse]                                  = js.native
-    def putLifecyclePolicy(params: PutLifecyclePolicyRequest): Request[PutLifecyclePolicyResponse]    = js.native
-    def setRepositoryPolicy(params: SetRepositoryPolicyRequest): Request[SetRepositoryPolicyResponse] = js.native
+    ): Request[GetLifecyclePolicyPreviewResponse]                                                           = js.native
+    def getRepositoryPolicy(params: GetRepositoryPolicyRequest): Request[GetRepositoryPolicyResponse]       = js.native
+    def initiateLayerUpload(params: InitiateLayerUploadRequest): Request[InitiateLayerUploadResponse]       = js.native
+    def listImages(params: ListImagesRequest): Request[ListImagesResponse]                                  = js.native
+    def listTagsForResource(params: ListTagsForResourceRequest): Request[ListTagsForResourceResponse]       = js.native
+    def putImage(params: PutImageRequest): Request[PutImageResponse]                                        = js.native
+    def putImageTagMutability(params: PutImageTagMutabilityRequest): Request[PutImageTagMutabilityResponse] = js.native
+    def putLifecyclePolicy(params: PutLifecyclePolicyRequest): Request[PutLifecyclePolicyResponse]          = js.native
+    def setRepositoryPolicy(params: SetRepositoryPolicyRequest): Request[SetRepositoryPolicyResponse]       = js.native
     def startLifecyclePolicyPreview(
         params: StartLifecyclePolicyPreviewRequest
     ): Request[StartLifecyclePolicyPreviewResponse]                                       = js.native
@@ -370,18 +374,21 @@ package ecr {
   @js.native
   trait CreateRepositoryRequest extends js.Object {
     var repositoryName: RepositoryName
+    var imageTagMutability: js.UndefOr[ImageTagMutability]
     var tags: js.UndefOr[TagList]
   }
 
   object CreateRepositoryRequest {
     def apply(
         repositoryName: RepositoryName,
+        imageTagMutability: js.UndefOr[ImageTagMutability] = js.undefined,
         tags: js.UndefOr[TagList] = js.undefined
     ): CreateRepositoryRequest = {
       val __obj = js.Dictionary[js.Any](
         "repositoryName" -> repositoryName.asInstanceOf[js.Any]
       )
 
+      imageTagMutability.foreach(__v => __obj.update("imageTagMutability", __v.asInstanceOf[js.Any]))
       tags.foreach(__v => __obj.update("tags", __v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateRepositoryRequest]
     }
@@ -978,6 +985,13 @@ package ecr {
     }
   }
 
+  object ImageTagMutabilityEnum {
+    val MUTABLE   = "MUTABLE"
+    val IMMUTABLE = "IMMUTABLE"
+
+    val values = IndexedSeq(MUTABLE, IMMUTABLE)
+  }
+
   @js.native
   trait InitiateLayerUploadRequest extends js.Object {
     var repositoryName: RepositoryName
@@ -1313,6 +1327,50 @@ package ecr {
   }
 
   @js.native
+  trait PutImageTagMutabilityRequest extends js.Object {
+    var imageTagMutability: ImageTagMutability
+    var repositoryName: RepositoryName
+    var registryId: js.UndefOr[RegistryId]
+  }
+
+  object PutImageTagMutabilityRequest {
+    def apply(
+        imageTagMutability: ImageTagMutability,
+        repositoryName: RepositoryName,
+        registryId: js.UndefOr[RegistryId] = js.undefined
+    ): PutImageTagMutabilityRequest = {
+      val __obj = js.Dictionary[js.Any](
+        "imageTagMutability" -> imageTagMutability.asInstanceOf[js.Any],
+        "repositoryName"     -> repositoryName.asInstanceOf[js.Any]
+      )
+
+      registryId.foreach(__v => __obj.update("registryId", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PutImageTagMutabilityRequest]
+    }
+  }
+
+  @js.native
+  trait PutImageTagMutabilityResponse extends js.Object {
+    var imageTagMutability: js.UndefOr[ImageTagMutability]
+    var registryId: js.UndefOr[RegistryId]
+    var repositoryName: js.UndefOr[RepositoryName]
+  }
+
+  object PutImageTagMutabilityResponse {
+    def apply(
+        imageTagMutability: js.UndefOr[ImageTagMutability] = js.undefined,
+        registryId: js.UndefOr[RegistryId] = js.undefined,
+        repositoryName: js.UndefOr[RepositoryName] = js.undefined
+    ): PutImageTagMutabilityResponse = {
+      val __obj = js.Dictionary.empty[js.Any]
+      imageTagMutability.foreach(__v => __obj.update("imageTagMutability", __v.asInstanceOf[js.Any]))
+      registryId.foreach(__v => __obj.update("registryId", __v.asInstanceOf[js.Any]))
+      repositoryName.foreach(__v => __obj.update("repositoryName", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PutImageTagMutabilityResponse]
+    }
+  }
+
+  @js.native
   trait PutLifecyclePolicyRequest extends js.Object {
     var lifecyclePolicyText: LifecyclePolicyText
     var repositoryName: RepositoryName
@@ -1362,6 +1420,7 @@ package ecr {
   @js.native
   trait Repository extends js.Object {
     var createdAt: js.UndefOr[CreationTimestamp]
+    var imageTagMutability: js.UndefOr[ImageTagMutability]
     var registryId: js.UndefOr[RegistryId]
     var repositoryArn: js.UndefOr[Arn]
     var repositoryName: js.UndefOr[RepositoryName]
@@ -1371,6 +1430,7 @@ package ecr {
   object Repository {
     def apply(
         createdAt: js.UndefOr[CreationTimestamp] = js.undefined,
+        imageTagMutability: js.UndefOr[ImageTagMutability] = js.undefined,
         registryId: js.UndefOr[RegistryId] = js.undefined,
         repositoryArn: js.UndefOr[Arn] = js.undefined,
         repositoryName: js.UndefOr[RepositoryName] = js.undefined,
@@ -1378,6 +1438,7 @@ package ecr {
     ): Repository = {
       val __obj = js.Dictionary.empty[js.Any]
       createdAt.foreach(__v => __obj.update("createdAt", __v.asInstanceOf[js.Any]))
+      imageTagMutability.foreach(__v => __obj.update("imageTagMutability", __v.asInstanceOf[js.Any]))
       registryId.foreach(__v => __obj.update("registryId", __v.asInstanceOf[js.Any]))
       repositoryArn.foreach(__v => __obj.update("repositoryArn", __v.asInstanceOf[js.Any]))
       repositoryName.foreach(__v => __obj.update("repositoryName", __v.asInstanceOf[js.Any]))

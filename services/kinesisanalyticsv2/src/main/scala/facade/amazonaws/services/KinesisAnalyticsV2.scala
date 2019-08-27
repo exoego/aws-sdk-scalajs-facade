@@ -35,6 +35,7 @@ package object kinesisanalyticsv2 {
   type InputUpdates                        = js.Array[InputUpdate]
   type Inputs                              = js.Array[Input]
   type JobPlanDescription                  = String
+  type KinesisAnalyticsARN                 = String
   type ListApplicationsInputLimit          = Int
   type ListSnapshotsInputLimit             = Int
   type LogLevel                            = String
@@ -78,6 +79,10 @@ package object kinesisanalyticsv2 {
   type SnapshotStatus                      = String
   type SnapshotSummaries                   = js.Array[SnapshotDetails]
   type SqlRunConfigurations                = js.Array[SqlRunConfiguration]
+  type TagKey                              = String
+  type TagKeys                             = js.Array[TagKey]
+  type TagValue                            = String
+  type Tags                                = js.Array[Tag]
   type TextContent                         = String
   type Timestamp                           = js.Date
   type ZipFileContent =
@@ -137,10 +142,16 @@ package object kinesisanalyticsv2 {
     ): Future[ListApplicationSnapshotsResponse] = service.listApplicationSnapshots(params).promise.toFuture
     def listApplicationsFuture(params: ListApplicationsRequest): Future[ListApplicationsResponse] =
       service.listApplications(params).promise.toFuture
+    def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] =
+      service.listTagsForResource(params).promise.toFuture
     def startApplicationFuture(params: StartApplicationRequest): Future[StartApplicationResponse] =
       service.startApplication(params).promise.toFuture
     def stopApplicationFuture(params: StopApplicationRequest): Future[StopApplicationResponse] =
       service.stopApplication(params).promise.toFuture
+    def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] =
+      service.tagResource(params).promise.toFuture
+    def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] =
+      service.untagResource(params).promise.toFuture
     def updateApplicationFuture(params: UpdateApplicationRequest): Future[UpdateApplicationResponse] =
       service.updateApplication(params).promise.toFuture
   }
@@ -189,10 +200,13 @@ package kinesisanalyticsv2 {
     def discoverInputSchema(params: DiscoverInputSchemaRequest): Request[DiscoverInputSchemaResponse] = js.native
     def listApplicationSnapshots(params: ListApplicationSnapshotsRequest): Request[ListApplicationSnapshotsResponse] =
       js.native
-    def listApplications(params: ListApplicationsRequest): Request[ListApplicationsResponse]    = js.native
-    def startApplication(params: StartApplicationRequest): Request[StartApplicationResponse]    = js.native
-    def stopApplication(params: StopApplicationRequest): Request[StopApplicationResponse]       = js.native
-    def updateApplication(params: UpdateApplicationRequest): Request[UpdateApplicationResponse] = js.native
+    def listApplications(params: ListApplicationsRequest): Request[ListApplicationsResponse]          = js.native
+    def listTagsForResource(params: ListTagsForResourceRequest): Request[ListTagsForResourceResponse] = js.native
+    def startApplication(params: StartApplicationRequest): Request[StartApplicationResponse]          = js.native
+    def stopApplication(params: StopApplicationRequest): Request[StopApplicationResponse]             = js.native
+    def tagResource(params: TagResourceRequest): Request[TagResourceResponse]                         = js.native
+    def untagResource(params: UntagResourceRequest): Request[UntagResourceResponse]                   = js.native
+    def updateApplication(params: UpdateApplicationRequest): Request[UpdateApplicationResponse]       = js.native
   }
 
   @js.native
@@ -1078,6 +1092,7 @@ package kinesisanalyticsv2 {
     var ApplicationConfiguration: js.UndefOr[ApplicationConfiguration]
     var ApplicationDescription: js.UndefOr[ApplicationDescription]
     var CloudWatchLoggingOptions: js.UndefOr[CloudWatchLoggingOptions]
+    var Tags: js.UndefOr[Tags]
   }
 
   object CreateApplicationRequest {
@@ -1087,7 +1102,8 @@ package kinesisanalyticsv2 {
         ServiceExecutionRole: RoleARN,
         ApplicationConfiguration: js.UndefOr[ApplicationConfiguration] = js.undefined,
         ApplicationDescription: js.UndefOr[ApplicationDescription] = js.undefined,
-        CloudWatchLoggingOptions: js.UndefOr[CloudWatchLoggingOptions] = js.undefined
+        CloudWatchLoggingOptions: js.UndefOr[CloudWatchLoggingOptions] = js.undefined,
+        Tags: js.UndefOr[Tags] = js.undefined
     ): CreateApplicationRequest = {
       val __obj = js.Dictionary[js.Any](
         "ApplicationName"      -> ApplicationName.asInstanceOf[js.Any],
@@ -1098,6 +1114,7 @@ package kinesisanalyticsv2 {
       ApplicationConfiguration.foreach(__v => __obj.update("ApplicationConfiguration", __v.asInstanceOf[js.Any]))
       ApplicationDescription.foreach(__v => __obj.update("ApplicationDescription", __v.asInstanceOf[js.Any]))
       CloudWatchLoggingOptions.foreach(__v => __obj.update("CloudWatchLoggingOptions", __v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateApplicationRequest]
     }
   }
@@ -2435,6 +2452,38 @@ package kinesisanalyticsv2 {
     }
   }
 
+  @js.native
+  trait ListTagsForResourceRequest extends js.Object {
+    var ResourceARN: KinesisAnalyticsARN
+  }
+
+  object ListTagsForResourceRequest {
+    def apply(
+        ResourceARN: KinesisAnalyticsARN
+    ): ListTagsForResourceRequest = {
+      val __obj = js.Dictionary[js.Any](
+        "ResourceARN" -> ResourceARN.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[ListTagsForResourceRequest]
+    }
+  }
+
+  @js.native
+  trait ListTagsForResourceResponse extends js.Object {
+    var Tags: js.UndefOr[Tags]
+  }
+
+  object ListTagsForResourceResponse {
+    def apply(
+        Tags: js.UndefOr[Tags] = js.undefined
+    ): ListTagsForResourceResponse = {
+      val __obj = js.Dictionary.empty[js.Any]
+      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListTagsForResourceResponse]
+    }
+  }
+
   object LogLevelEnum {
     val INFO  = "INFO"
     val WARN  = "WARN"
@@ -2475,7 +2524,7 @@ package kinesisanalyticsv2 {
   }
 
   /**
-    * Describes configuration parameters for Amazon CloudWatch logging for a Java-based Kinesis Data Analytics application. For more information about CloudWatch logging, see [[https://docs.aws.amazon.com/kinesisanalytics/latest/Java/monitoring-overview.html|Monitoring]].
+    * Describes configuration parameters for Amazon CloudWatch logging for a Java-based Kinesis Data Analytics application. For more information about CloudWatch logging, see [[https://docs.aws.amazon.com/kinesisanalytics/latest/java/monitoring-overview.html|Monitoring]].
     */
   @js.native
   trait MonitoringConfiguration extends js.Object {
@@ -3360,6 +3409,93 @@ package kinesisanalyticsv2 {
       val __obj = js.Dictionary.empty[js.Any]
 
       __obj.asInstanceOf[StopApplicationResponse]
+    }
+  }
+
+  /**
+    * A key-value pair (the value is optional) that you can define and assign to AWS resources. If you specify a tag that already exists, the tag value is replaced with the value that you specify in the request. Note that the maximum number of application tags includes system tags. The maximum number of user-defined application tags is 50. For more information, see [[https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html|Using Cost Allocation Tags]] in the <i>AWS Billing and Cost Management Guide</i>.
+    */
+  @js.native
+  trait Tag extends js.Object {
+    var Key: TagKey
+    var Value: js.UndefOr[TagValue]
+  }
+
+  object Tag {
+    def apply(
+        Key: TagKey,
+        Value: js.UndefOr[TagValue] = js.undefined
+    ): Tag = {
+      val __obj = js.Dictionary[js.Any](
+        "Key" -> Key.asInstanceOf[js.Any]
+      )
+
+      Value.foreach(__v => __obj.update("Value", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Tag]
+    }
+  }
+
+  @js.native
+  trait TagResourceRequest extends js.Object {
+    var ResourceARN: KinesisAnalyticsARN
+    var Tags: Tags
+  }
+
+  object TagResourceRequest {
+    def apply(
+        ResourceARN: KinesisAnalyticsARN,
+        Tags: Tags
+    ): TagResourceRequest = {
+      val __obj = js.Dictionary[js.Any](
+        "ResourceARN" -> ResourceARN.asInstanceOf[js.Any],
+        "Tags"        -> Tags.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[TagResourceRequest]
+    }
+  }
+
+  @js.native
+  trait TagResourceResponse extends js.Object {}
+
+  object TagResourceResponse {
+    def apply(
+        ): TagResourceResponse = {
+      val __obj = js.Dictionary.empty[js.Any]
+
+      __obj.asInstanceOf[TagResourceResponse]
+    }
+  }
+
+  @js.native
+  trait UntagResourceRequest extends js.Object {
+    var ResourceARN: KinesisAnalyticsARN
+    var TagKeys: TagKeys
+  }
+
+  object UntagResourceRequest {
+    def apply(
+        ResourceARN: KinesisAnalyticsARN,
+        TagKeys: TagKeys
+    ): UntagResourceRequest = {
+      val __obj = js.Dictionary[js.Any](
+        "ResourceARN" -> ResourceARN.asInstanceOf[js.Any],
+        "TagKeys"     -> TagKeys.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[UntagResourceRequest]
+    }
+  }
+
+  @js.native
+  trait UntagResourceResponse extends js.Object {}
+
+  object UntagResourceResponse {
+    def apply(
+        ): UntagResourceResponse = {
+      val __obj = js.Dictionary.empty[js.Any]
+
+      __obj.asInstanceOf[UntagResourceResponse]
     }
   }
 

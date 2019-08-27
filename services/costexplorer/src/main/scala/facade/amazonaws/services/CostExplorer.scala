@@ -62,9 +62,13 @@ package object costexplorer {
   type ReservedHours                            = String
   type ReservedNormalizedUnits                  = String
   type ResultsByTime                            = js.Array[ResultByTime]
+  type RightsizingRecommendationList            = js.Array[RightsizingRecommendation]
+  type RightsizingType                          = String
   type SearchString                             = String
   type TagKey                                   = String
   type TagList                                  = js.Array[Entity]
+  type TagValuesList                            = js.Array[TagValues]
+  type TargetInstancesList                      = js.Array[TargetInstance]
   type TermInYears                              = String
   type TotalActualHours                         = String
   type TotalActualUnits                         = String
@@ -97,8 +101,13 @@ package object costexplorer {
       service.getReservationPurchaseRecommendation(params).promise.toFuture
     def getReservationUtilizationFuture(
         params: GetReservationUtilizationRequest
-    ): Future[GetReservationUtilizationResponse]                       = service.getReservationUtilization(params).promise.toFuture
+    ): Future[GetReservationUtilizationResponse] = service.getReservationUtilization(params).promise.toFuture
+    def getRightsizingRecommendationFuture(
+        params: GetRightsizingRecommendationRequest
+    ): Future[GetRightsizingRecommendationResponse]                    = service.getRightsizingRecommendation(params).promise.toFuture
     def getTagsFuture(params: GetTagsRequest): Future[GetTagsResponse] = service.getTags(params).promise.toFuture
+    def getUsageForecastFuture(params: GetUsageForecastRequest): Future[GetUsageForecastResponse] =
+      service.getUsageForecast(params).promise.toFuture
   }
 }
 
@@ -118,8 +127,12 @@ package costexplorer {
     ): Request[GetReservationPurchaseRecommendationResponse] = js.native
     def getReservationUtilization(
         params: GetReservationUtilizationRequest
-    ): Request[GetReservationUtilizationResponse]                 = js.native
-    def getTags(params: GetTagsRequest): Request[GetTagsResponse] = js.native
+    ): Request[GetReservationUtilizationResponse] = js.native
+    def getRightsizingRecommendation(
+        params: GetRightsizingRecommendationRequest
+    ): Request[GetRightsizingRecommendationResponse]                                         = js.native
+    def getTags(params: GetTagsRequest): Request[GetTagsResponse]                            = js.native
+    def getUsageForecast(params: GetUsageForecastRequest): Request[GetUsageForecastResponse] = js.native
   }
 
   object AccountScopeEnum {
@@ -260,6 +273,54 @@ package costexplorer {
   }
 
   /**
+    * Context about the current instance.
+    */
+  @js.native
+  trait CurrentInstance extends js.Object {
+    var CurrencyCode: js.UndefOr[GenericString]
+    var MonthlyCost: js.UndefOr[GenericString]
+    var OnDemandHoursInLookbackPeriod: js.UndefOr[GenericString]
+    var ReservationCoveredHoursInLookbackPeriod: js.UndefOr[GenericString]
+    var ResourceDetails: js.UndefOr[ResourceDetails]
+    var ResourceId: js.UndefOr[GenericString]
+    var ResourceUtilization: js.UndefOr[ResourceUtilization]
+    var Tags: js.UndefOr[TagValuesList]
+    var TotalRunningHoursInLookbackPeriod: js.UndefOr[GenericString]
+  }
+
+  object CurrentInstance {
+    def apply(
+        CurrencyCode: js.UndefOr[GenericString] = js.undefined,
+        MonthlyCost: js.UndefOr[GenericString] = js.undefined,
+        OnDemandHoursInLookbackPeriod: js.UndefOr[GenericString] = js.undefined,
+        ReservationCoveredHoursInLookbackPeriod: js.UndefOr[GenericString] = js.undefined,
+        ResourceDetails: js.UndefOr[ResourceDetails] = js.undefined,
+        ResourceId: js.UndefOr[GenericString] = js.undefined,
+        ResourceUtilization: js.UndefOr[ResourceUtilization] = js.undefined,
+        Tags: js.UndefOr[TagValuesList] = js.undefined,
+        TotalRunningHoursInLookbackPeriod: js.UndefOr[GenericString] = js.undefined
+    ): CurrentInstance = {
+      val __obj = js.Dictionary.empty[js.Any]
+      CurrencyCode.foreach(__v => __obj.update("CurrencyCode", __v.asInstanceOf[js.Any]))
+      MonthlyCost.foreach(__v => __obj.update("MonthlyCost", __v.asInstanceOf[js.Any]))
+      OnDemandHoursInLookbackPeriod.foreach(
+        __v => __obj.update("OnDemandHoursInLookbackPeriod", __v.asInstanceOf[js.Any])
+      )
+      ReservationCoveredHoursInLookbackPeriod.foreach(
+        __v => __obj.update("ReservationCoveredHoursInLookbackPeriod", __v.asInstanceOf[js.Any])
+      )
+      ResourceDetails.foreach(__v => __obj.update("ResourceDetails", __v.asInstanceOf[js.Any]))
+      ResourceId.foreach(__v => __obj.update("ResourceId", __v.asInstanceOf[js.Any]))
+      ResourceUtilization.foreach(__v => __obj.update("ResourceUtilization", __v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
+      TotalRunningHoursInLookbackPeriod.foreach(
+        __v => __obj.update("TotalRunningHoursInLookbackPeriod", __v.asInstanceOf[js.Any])
+      )
+      __obj.asInstanceOf[CurrentInstance]
+    }
+  }
+
+  /**
     * The time period that you want the usage and costs for.
     */
   @js.native
@@ -305,6 +366,7 @@ package costexplorer {
     val INSTANCE_TYPE_FAMILY = "INSTANCE_TYPE_FAMILY"
     val BILLING_ENTITY       = "BILLING_ENTITY"
     val RESERVATION_ID       = "RESERVATION_ID"
+    val RIGHTSIZING_TYPE     = "RIGHTSIZING_TYPE"
 
     val values = IndexedSeq(
       AZ,
@@ -328,7 +390,8 @@ package costexplorer {
       CACHE_ENGINE,
       INSTANCE_TYPE_FAMILY,
       BILLING_ENTITY,
-      RESERVATION_ID
+      RESERVATION_ID,
+      RIGHTSIZING_TYPE
     )
   }
 
@@ -410,6 +473,76 @@ package costexplorer {
       SizeFlexEligible.foreach(__v => __obj.update("SizeFlexEligible", __v.asInstanceOf[js.Any]))
       Tenancy.foreach(__v => __obj.update("Tenancy", __v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[EC2InstanceDetails]
+    }
+  }
+
+  /**
+    * Details on the Amazon EC2 Resource.
+    */
+  @js.native
+  trait EC2ResourceDetails extends js.Object {
+    var HourlyOnDemandRate: js.UndefOr[GenericString]
+    var InstanceType: js.UndefOr[GenericString]
+    var Memory: js.UndefOr[GenericString]
+    var NetworkPerformance: js.UndefOr[GenericString]
+    var Platform: js.UndefOr[GenericString]
+    var Region: js.UndefOr[GenericString]
+    var Sku: js.UndefOr[GenericString]
+    var Storage: js.UndefOr[GenericString]
+    var Vcpu: js.UndefOr[GenericString]
+  }
+
+  object EC2ResourceDetails {
+    def apply(
+        HourlyOnDemandRate: js.UndefOr[GenericString] = js.undefined,
+        InstanceType: js.UndefOr[GenericString] = js.undefined,
+        Memory: js.UndefOr[GenericString] = js.undefined,
+        NetworkPerformance: js.UndefOr[GenericString] = js.undefined,
+        Platform: js.UndefOr[GenericString] = js.undefined,
+        Region: js.UndefOr[GenericString] = js.undefined,
+        Sku: js.UndefOr[GenericString] = js.undefined,
+        Storage: js.UndefOr[GenericString] = js.undefined,
+        Vcpu: js.UndefOr[GenericString] = js.undefined
+    ): EC2ResourceDetails = {
+      val __obj = js.Dictionary.empty[js.Any]
+      HourlyOnDemandRate.foreach(__v => __obj.update("HourlyOnDemandRate", __v.asInstanceOf[js.Any]))
+      InstanceType.foreach(__v => __obj.update("InstanceType", __v.asInstanceOf[js.Any]))
+      Memory.foreach(__v => __obj.update("Memory", __v.asInstanceOf[js.Any]))
+      NetworkPerformance.foreach(__v => __obj.update("NetworkPerformance", __v.asInstanceOf[js.Any]))
+      Platform.foreach(__v => __obj.update("Platform", __v.asInstanceOf[js.Any]))
+      Region.foreach(__v => __obj.update("Region", __v.asInstanceOf[js.Any]))
+      Sku.foreach(__v => __obj.update("Sku", __v.asInstanceOf[js.Any]))
+      Storage.foreach(__v => __obj.update("Storage", __v.asInstanceOf[js.Any]))
+      Vcpu.foreach(__v => __obj.update("Vcpu", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[EC2ResourceDetails]
+    }
+  }
+
+  /**
+    * Utilization metrics of the instance.
+    */
+  @js.native
+  trait EC2ResourceUtilization extends js.Object {
+    var MaxCpuUtilizationPercentage: js.UndefOr[GenericString]
+    var MaxMemoryUtilizationPercentage: js.UndefOr[GenericString]
+    var MaxStorageUtilizationPercentage: js.UndefOr[GenericString]
+  }
+
+  object EC2ResourceUtilization {
+    def apply(
+        MaxCpuUtilizationPercentage: js.UndefOr[GenericString] = js.undefined,
+        MaxMemoryUtilizationPercentage: js.UndefOr[GenericString] = js.undefined,
+        MaxStorageUtilizationPercentage: js.UndefOr[GenericString] = js.undefined
+    ): EC2ResourceUtilization = {
+      val __obj = js.Dictionary.empty[js.Any]
+      MaxCpuUtilizationPercentage.foreach(__v => __obj.update("MaxCpuUtilizationPercentage", __v.asInstanceOf[js.Any]))
+      MaxMemoryUtilizationPercentage.foreach(
+        __v => __obj.update("MaxMemoryUtilizationPercentage", __v.asInstanceOf[js.Any])
+      )
+      MaxStorageUtilizationPercentage.foreach(
+        __v => __obj.update("MaxStorageUtilizationPercentage", __v.asInstanceOf[js.Any])
+      )
+      __obj.asInstanceOf[EC2ResourceUtilization]
     }
   }
 
@@ -496,15 +629,15 @@ package costexplorer {
 
   /**
     * Use <code>Expression</code> to filter by cost or by usage. There are two patterns:
-    * * Simple dimension values - You can set the dimension name and values for the filters that you plan to use. For example, you can filter for <code>INSTANCE_TYPE==m4.xlarge OR INSTANCE_TYPE==c4.large</code>. The <code>Expression</code> for that looks like this:
-    *  <code>{ "Dimensions": { "Key": "INSTANCE_TYPE", "Values": [ "m4.xlarge", “c4.large” ] } }</code>
+    * * Simple dimension values - You can set the dimension name and values for the filters that you plan to use. For example, you can filter for <code>REGION==us-east-1 OR REGION==us-west-1</code>. The <code>Expression</code> for that looks like this:
+    *  <code>{ "Dimensions": { "Key": "REGION", "Values": [ "us-east-1", “us-west-1” ] } }</code>
     *  The list of dimension values are OR'd together to retrieve cost or usage data. You can create <code>Expression</code> and <code>DimensionValues</code> objects using either <code>with*</code> methods or <code>set*</code> methods in multiple lines.
-    *  <li> Compound dimension values with logical operations - You can use multiple <code>Expression</code> types and the logical operators <code>AND/OR/NOT</code> to create a list of one or more <code>Expression</code> objects. This allows you to filter on more advanced options. For example, you can filter on <code>((INSTANCE_TYPE == m4.large OR INSTANCE_TYPE == m3.large) OR (TAG.Type == Type1)) AND (USAGE_TYPE != DataTransfer)</code>. The <code>Expression</code> for that looks like this:
-    *  <code>{ "And": [ {"Or": [ {"Dimensions": { "Key": "INSTANCE_TYPE", "Values": [ "m4.x.large", "c4.large" ] }}, {"Tags": { "Key": "TagName", "Values": ["Value1"] } } ]}, {"Not": {"Dimensions": { "Key": "USAGE_TYPE", "Values": ["DataTransfer"] }}} ] } </code>
+    *  <li> Compound dimension values with logical operations - You can use multiple <code>Expression</code> types and the logical operators <code>AND/OR/NOT</code> to create a list of one or more <code>Expression</code> objects. This allows you to filter on more advanced options. For example, you can filter on <code>((REGION == us-east-1 OR REGION == us-west-1) OR (TAG.Type == Type1)) AND (USAGE_TYPE != DataTransfer)</code>. The <code>Expression</code> for that looks like this:
+    *  <code>{ "And": [ {"Or": [ {"Dimensions": { "Key": "REGION", "Values": [ "us-east-1", "us-west-1" ] }}, {"Tags": { "Key": "TagName", "Values": ["Value1"] } } ]}, {"Not": {"Dimensions": { "Key": "USAGE_TYPE", "Values": ["DataTransfer"] }}} ] } </code>
     *
     * '''Note:'''Because each <code>Expression</code> can have only one operator, the service returns an error if more than one is specified. The following example shows an <code>Expression</code> object that creates an error.
     * <code> { "And": [ ... ], "DimensionValues": { "Dimension": "USAGE_TYPE", "Values": [ "DataTransfer" ] } } </code>
-    *  </li>
+    *  </li>'''Note:'''For <code>GetRightsizingRecommendation</code> action, a combination of OR and NOT is not supported. OR is not supported between different dimensions, or dimensions and tags. NOT operators aren't supported. Dimentions are also limited to <code>LINKED_ACCOUNT</code>, <code>REGION</code>, or <code>RIGHTSIZING_TYPE</code>.
     */
   @js.native
   trait Expression extends js.Object {
@@ -892,6 +1025,56 @@ package costexplorer {
   }
 
   @js.native
+  trait GetRightsizingRecommendationRequest extends js.Object {
+    var Service: GenericString
+    var Filter: js.UndefOr[Expression]
+    var NextPageToken: js.UndefOr[NextPageToken]
+    var PageSize: js.UndefOr[NonNegativeInteger]
+  }
+
+  object GetRightsizingRecommendationRequest {
+    def apply(
+        Service: GenericString,
+        Filter: js.UndefOr[Expression] = js.undefined,
+        NextPageToken: js.UndefOr[NextPageToken] = js.undefined,
+        PageSize: js.UndefOr[NonNegativeInteger] = js.undefined
+    ): GetRightsizingRecommendationRequest = {
+      val __obj = js.Dictionary[js.Any](
+        "Service" -> Service.asInstanceOf[js.Any]
+      )
+
+      Filter.foreach(__v => __obj.update("Filter", __v.asInstanceOf[js.Any]))
+      NextPageToken.foreach(__v => __obj.update("NextPageToken", __v.asInstanceOf[js.Any]))
+      PageSize.foreach(__v => __obj.update("PageSize", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetRightsizingRecommendationRequest]
+    }
+  }
+
+  @js.native
+  trait GetRightsizingRecommendationResponse extends js.Object {
+    var Metadata: js.UndefOr[RightsizingRecommendationMetadata]
+    var NextPageToken: js.UndefOr[NextPageToken]
+    var RightsizingRecommendations: js.UndefOr[RightsizingRecommendationList]
+    var Summary: js.UndefOr[RightsizingRecommendationSummary]
+  }
+
+  object GetRightsizingRecommendationResponse {
+    def apply(
+        Metadata: js.UndefOr[RightsizingRecommendationMetadata] = js.undefined,
+        NextPageToken: js.UndefOr[NextPageToken] = js.undefined,
+        RightsizingRecommendations: js.UndefOr[RightsizingRecommendationList] = js.undefined,
+        Summary: js.UndefOr[RightsizingRecommendationSummary] = js.undefined
+    ): GetRightsizingRecommendationResponse = {
+      val __obj = js.Dictionary.empty[js.Any]
+      Metadata.foreach(__v => __obj.update("Metadata", __v.asInstanceOf[js.Any]))
+      NextPageToken.foreach(__v => __obj.update("NextPageToken", __v.asInstanceOf[js.Any]))
+      RightsizingRecommendations.foreach(__v => __obj.update("RightsizingRecommendations", __v.asInstanceOf[js.Any]))
+      Summary.foreach(__v => __obj.update("Summary", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetRightsizingRecommendationResponse]
+    }
+  }
+
+  @js.native
   trait GetTagsRequest extends js.Object {
     var TimePeriod: DateInterval
     var NextPageToken: js.UndefOr[NextPageToken]
@@ -940,6 +1123,53 @@ package costexplorer {
 
       NextPageToken.foreach(__v => __obj.update("NextPageToken", __v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetTagsResponse]
+    }
+  }
+
+  @js.native
+  trait GetUsageForecastRequest extends js.Object {
+    var Granularity: Granularity
+    var Metric: Metric
+    var TimePeriod: DateInterval
+    var Filter: js.UndefOr[Expression]
+    var PredictionIntervalLevel: js.UndefOr[PredictionIntervalLevel]
+  }
+
+  object GetUsageForecastRequest {
+    def apply(
+        Granularity: Granularity,
+        Metric: Metric,
+        TimePeriod: DateInterval,
+        Filter: js.UndefOr[Expression] = js.undefined,
+        PredictionIntervalLevel: js.UndefOr[PredictionIntervalLevel] = js.undefined
+    ): GetUsageForecastRequest = {
+      val __obj = js.Dictionary[js.Any](
+        "Granularity" -> Granularity.asInstanceOf[js.Any],
+        "Metric"      -> Metric.asInstanceOf[js.Any],
+        "TimePeriod"  -> TimePeriod.asInstanceOf[js.Any]
+      )
+
+      Filter.foreach(__v => __obj.update("Filter", __v.asInstanceOf[js.Any]))
+      PredictionIntervalLevel.foreach(__v => __obj.update("PredictionIntervalLevel", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetUsageForecastRequest]
+    }
+  }
+
+  @js.native
+  trait GetUsageForecastResponse extends js.Object {
+    var ForecastResultsByTime: js.UndefOr[ForecastResultsByTime]
+    var Total: js.UndefOr[MetricValue]
+  }
+
+  object GetUsageForecastResponse {
+    def apply(
+        ForecastResultsByTime: js.UndefOr[ForecastResultsByTime] = js.undefined,
+        Total: js.UndefOr[MetricValue] = js.undefined
+    ): GetUsageForecastResponse = {
+      val __obj = js.Dictionary.empty[js.Any]
+      ForecastResultsByTime.foreach(__v => __obj.update("ForecastResultsByTime", __v.asInstanceOf[js.Any]))
+      Total.foreach(__v => __obj.update("Total", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetUsageForecastResponse]
     }
   }
 
@@ -1076,6 +1306,24 @@ package costexplorer {
       Amount.foreach(__v => __obj.update("Amount", __v.asInstanceOf[js.Any]))
       Unit.foreach(__v => __obj.update("Unit", __v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[MetricValue]
+    }
+  }
+
+  /**
+    * Details on the modification recommendation.
+    */
+  @js.native
+  trait ModifyRecommendationDetail extends js.Object {
+    var TargetInstances: js.UndefOr[TargetInstancesList]
+  }
+
+  object ModifyRecommendationDetail {
+    def apply(
+        TargetInstances: js.UndefOr[TargetInstancesList] = js.undefined
+    ): ModifyRecommendationDetail = {
+      val __obj = js.Dictionary.empty[js.Any]
+      TargetInstances.foreach(__v => __obj.update("TargetInstances", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ModifyRecommendationDetail]
     }
   }
 
@@ -1461,6 +1709,42 @@ package costexplorer {
   }
 
   /**
+    * Details on the resource.
+    */
+  @js.native
+  trait ResourceDetails extends js.Object {
+    var EC2ResourceDetails: js.UndefOr[EC2ResourceDetails]
+  }
+
+  object ResourceDetails {
+    def apply(
+        EC2ResourceDetails: js.UndefOr[EC2ResourceDetails] = js.undefined
+    ): ResourceDetails = {
+      val __obj = js.Dictionary.empty[js.Any]
+      EC2ResourceDetails.foreach(__v => __obj.update("EC2ResourceDetails", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ResourceDetails]
+    }
+  }
+
+  /**
+    * Resource utilization of current resource.
+    */
+  @js.native
+  trait ResourceUtilization extends js.Object {
+    var EC2ResourceUtilization: js.UndefOr[EC2ResourceUtilization]
+  }
+
+  object ResourceUtilization {
+    def apply(
+        EC2ResourceUtilization: js.UndefOr[EC2ResourceUtilization] = js.undefined
+    ): ResourceUtilization = {
+      val __obj = js.Dictionary.empty[js.Any]
+      EC2ResourceUtilization.foreach(__v => __obj.update("EC2ResourceUtilization", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ResourceUtilization]
+    }
+  }
+
+  /**
     * The result that is associated with a time period.
     */
   @js.native
@@ -1485,6 +1769,98 @@ package costexplorer {
       Total.foreach(__v => __obj.update("Total", __v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ResultByTime]
     }
+  }
+
+  /**
+    * Recommendations to rightsize resources.
+    */
+  @js.native
+  trait RightsizingRecommendation extends js.Object {
+    var AccountId: js.UndefOr[GenericString]
+    var CurrentInstance: js.UndefOr[CurrentInstance]
+    var ModifyRecommendationDetail: js.UndefOr[ModifyRecommendationDetail]
+    var RightsizingType: js.UndefOr[RightsizingType]
+    var TerminateRecommendationDetail: js.UndefOr[TerminateRecommendationDetail]
+  }
+
+  object RightsizingRecommendation {
+    def apply(
+        AccountId: js.UndefOr[GenericString] = js.undefined,
+        CurrentInstance: js.UndefOr[CurrentInstance] = js.undefined,
+        ModifyRecommendationDetail: js.UndefOr[ModifyRecommendationDetail] = js.undefined,
+        RightsizingType: js.UndefOr[RightsizingType] = js.undefined,
+        TerminateRecommendationDetail: js.UndefOr[TerminateRecommendationDetail] = js.undefined
+    ): RightsizingRecommendation = {
+      val __obj = js.Dictionary.empty[js.Any]
+      AccountId.foreach(__v => __obj.update("AccountId", __v.asInstanceOf[js.Any]))
+      CurrentInstance.foreach(__v => __obj.update("CurrentInstance", __v.asInstanceOf[js.Any]))
+      ModifyRecommendationDetail.foreach(__v => __obj.update("ModifyRecommendationDetail", __v.asInstanceOf[js.Any]))
+      RightsizingType.foreach(__v => __obj.update("RightsizingType", __v.asInstanceOf[js.Any]))
+      TerminateRecommendationDetail.foreach(
+        __v => __obj.update("TerminateRecommendationDetail", __v.asInstanceOf[js.Any])
+      )
+      __obj.asInstanceOf[RightsizingRecommendation]
+    }
+  }
+
+  /**
+    * Metadata for this recommendation set.
+    */
+  @js.native
+  trait RightsizingRecommendationMetadata extends js.Object {
+    var GenerationTimestamp: js.UndefOr[GenericString]
+    var LookbackPeriodInDays: js.UndefOr[LookbackPeriodInDays]
+    var RecommendationId: js.UndefOr[GenericString]
+  }
+
+  object RightsizingRecommendationMetadata {
+    def apply(
+        GenerationTimestamp: js.UndefOr[GenericString] = js.undefined,
+        LookbackPeriodInDays: js.UndefOr[LookbackPeriodInDays] = js.undefined,
+        RecommendationId: js.UndefOr[GenericString] = js.undefined
+    ): RightsizingRecommendationMetadata = {
+      val __obj = js.Dictionary.empty[js.Any]
+      GenerationTimestamp.foreach(__v => __obj.update("GenerationTimestamp", __v.asInstanceOf[js.Any]))
+      LookbackPeriodInDays.foreach(__v => __obj.update("LookbackPeriodInDays", __v.asInstanceOf[js.Any]))
+      RecommendationId.foreach(__v => __obj.update("RecommendationId", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[RightsizingRecommendationMetadata]
+    }
+  }
+
+  /**
+    * Summary of rightsizing recommendations
+    */
+  @js.native
+  trait RightsizingRecommendationSummary extends js.Object {
+    var EstimatedTotalMonthlySavingsAmount: js.UndefOr[GenericString]
+    var SavingsCurrencyCode: js.UndefOr[GenericString]
+    var SavingsPercentage: js.UndefOr[GenericString]
+    var TotalRecommendationCount: js.UndefOr[GenericString]
+  }
+
+  object RightsizingRecommendationSummary {
+    def apply(
+        EstimatedTotalMonthlySavingsAmount: js.UndefOr[GenericString] = js.undefined,
+        SavingsCurrencyCode: js.UndefOr[GenericString] = js.undefined,
+        SavingsPercentage: js.UndefOr[GenericString] = js.undefined,
+        TotalRecommendationCount: js.UndefOr[GenericString] = js.undefined
+    ): RightsizingRecommendationSummary = {
+      val __obj = js.Dictionary.empty[js.Any]
+      EstimatedTotalMonthlySavingsAmount.foreach(
+        __v => __obj.update("EstimatedTotalMonthlySavingsAmount", __v.asInstanceOf[js.Any])
+      )
+      SavingsCurrencyCode.foreach(__v => __obj.update("SavingsCurrencyCode", __v.asInstanceOf[js.Any]))
+      SavingsPercentage.foreach(__v => __obj.update("SavingsPercentage", __v.asInstanceOf[js.Any]))
+      TotalRecommendationCount.foreach(__v => __obj.update("TotalRecommendationCount", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[RightsizingRecommendationSummary]
+    }
+  }
+
+  object RightsizingTypeEnum {
+    val TERMINATE = "TERMINATE"
+    val MODIFY    = "MODIFY"
+
+    val values = IndexedSeq(TERMINATE, MODIFY)
   }
 
   /**
@@ -1526,11 +1902,65 @@ package costexplorer {
     }
   }
 
+  /**
+    * Details on recommended instance.
+    */
+  @js.native
+  trait TargetInstance extends js.Object {
+    var CurrencyCode: js.UndefOr[GenericString]
+    var DefaultTargetInstance: js.UndefOr[GenericBoolean]
+    var EstimatedMonthlyCost: js.UndefOr[GenericString]
+    var EstimatedMonthlySavings: js.UndefOr[GenericString]
+    var ExpectedResourceUtilization: js.UndefOr[ResourceUtilization]
+    var ResourceDetails: js.UndefOr[ResourceDetails]
+  }
+
+  object TargetInstance {
+    def apply(
+        CurrencyCode: js.UndefOr[GenericString] = js.undefined,
+        DefaultTargetInstance: js.UndefOr[GenericBoolean] = js.undefined,
+        EstimatedMonthlyCost: js.UndefOr[GenericString] = js.undefined,
+        EstimatedMonthlySavings: js.UndefOr[GenericString] = js.undefined,
+        ExpectedResourceUtilization: js.UndefOr[ResourceUtilization] = js.undefined,
+        ResourceDetails: js.UndefOr[ResourceDetails] = js.undefined
+    ): TargetInstance = {
+      val __obj = js.Dictionary.empty[js.Any]
+      CurrencyCode.foreach(__v => __obj.update("CurrencyCode", __v.asInstanceOf[js.Any]))
+      DefaultTargetInstance.foreach(__v => __obj.update("DefaultTargetInstance", __v.asInstanceOf[js.Any]))
+      EstimatedMonthlyCost.foreach(__v => __obj.update("EstimatedMonthlyCost", __v.asInstanceOf[js.Any]))
+      EstimatedMonthlySavings.foreach(__v => __obj.update("EstimatedMonthlySavings", __v.asInstanceOf[js.Any]))
+      ExpectedResourceUtilization.foreach(__v => __obj.update("ExpectedResourceUtilization", __v.asInstanceOf[js.Any]))
+      ResourceDetails.foreach(__v => __obj.update("ResourceDetails", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[TargetInstance]
+    }
+  }
+
   object TermInYearsEnum {
     val ONE_YEAR    = "ONE_YEAR"
     val THREE_YEARS = "THREE_YEARS"
 
     val values = IndexedSeq(ONE_YEAR, THREE_YEARS)
+  }
+
+  /**
+    * Details on termination recommendation.
+    */
+  @js.native
+  trait TerminateRecommendationDetail extends js.Object {
+    var CurrencyCode: js.UndefOr[GenericString]
+    var EstimatedMonthlySavings: js.UndefOr[GenericString]
+  }
+
+  object TerminateRecommendationDetail {
+    def apply(
+        CurrencyCode: js.UndefOr[GenericString] = js.undefined,
+        EstimatedMonthlySavings: js.UndefOr[GenericString] = js.undefined
+    ): TerminateRecommendationDetail = {
+      val __obj = js.Dictionary.empty[js.Any]
+      CurrencyCode.foreach(__v => __obj.update("CurrencyCode", __v.asInstanceOf[js.Any]))
+      EstimatedMonthlySavings.foreach(__v => __obj.update("EstimatedMonthlySavings", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[TerminateRecommendationDetail]
+    }
   }
 
   /**

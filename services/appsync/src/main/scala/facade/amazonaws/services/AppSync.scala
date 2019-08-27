@@ -8,29 +8,36 @@ import io.scalajs.nodejs
 import facade.amazonaws._
 
 package object appsync {
-  type ApiKeys                      = js.Array[ApiKey]
-  type AuthenticationType           = String
-  type AuthorizationType            = String
-  type Blob                         = nodejs.buffer.Buffer | nodejs.stream.Readable | js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
-  type DataSourceType               = String
-  type DataSources                  = js.Array[DataSource]
-  type DefaultAction                = String
-  type FieldLogLevel                = String
-  type Functions                    = js.Array[FunctionConfiguration]
-  type FunctionsIds                 = js.Array[String]
-  type GraphqlApis                  = js.Array[GraphqlApi]
-  type MapOfStringToString          = js.Dictionary[String]
-  type MappingTemplate              = String
-  type MaxResults                   = Int
-  type OutputType                   = String
-  type PaginationToken              = String
-  type RelationalDatabaseSourceType = String
-  type ResolverKind                 = String
-  type Resolvers                    = js.Array[Resolver]
-  type ResourceName                 = String
-  type SchemaStatus                 = String
-  type TypeDefinitionFormat         = String
-  type TypeList                     = js.Array[Type]
+  type AdditionalAuthenticationProviders = js.Array[AdditionalAuthenticationProvider]
+  type ApiKeys                           = js.Array[ApiKey]
+  type AuthenticationType                = String
+  type AuthorizationType                 = String
+  type Blob                              = nodejs.buffer.Buffer | nodejs.stream.Readable | js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
+  type BooleanValue                      = Boolean
+  type DataSourceType                    = String
+  type DataSources                       = js.Array[DataSource]
+  type DefaultAction                     = String
+  type FieldLogLevel                     = String
+  type Functions                         = js.Array[FunctionConfiguration]
+  type FunctionsIds                      = js.Array[String]
+  type GraphqlApis                       = js.Array[GraphqlApi]
+  type MapOfStringToString               = js.Dictionary[String]
+  type MappingTemplate                   = String
+  type MaxResults                        = Int
+  type OutputType                        = String
+  type PaginationToken                   = String
+  type RelationalDatabaseSourceType      = String
+  type ResolverKind                      = String
+  type Resolvers                         = js.Array[Resolver]
+  type ResourceArn                       = String
+  type ResourceName                      = String
+  type SchemaStatus                      = String
+  type TagKey                            = String
+  type TagKeyList                        = js.Array[TagKey]
+  type TagMap                            = js.Dictionary[TagValue]
+  type TagValue                          = String
+  type TypeDefinitionFormat              = String
+  type TypeList                          = js.Array[Type]
 
   implicit final class AppSyncOps(val service: AppSync) extends AnyVal {
 
@@ -83,10 +90,16 @@ package object appsync {
       service.listResolversByFunction(params).promise.toFuture
     def listResolversFuture(params: ListResolversRequest): Future[ListResolversResponse] =
       service.listResolvers(params).promise.toFuture
+    def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] =
+      service.listTagsForResource(params).promise.toFuture
     def listTypesFuture(params: ListTypesRequest): Future[ListTypesResponse] =
       service.listTypes(params).promise.toFuture
     def startSchemaCreationFuture(params: StartSchemaCreationRequest): Future[StartSchemaCreationResponse] =
       service.startSchemaCreation(params).promise.toFuture
+    def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] =
+      service.tagResource(params).promise.toFuture
+    def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] =
+      service.untagResource(params).promise.toFuture
     def updateApiKeyFuture(params: UpdateApiKeyRequest): Future[UpdateApiKeyResponse] =
       service.updateApiKey(params).promise.toFuture
     def updateDataSourceFuture(params: UpdateDataSourceRequest): Future[UpdateDataSourceResponse] =
@@ -136,14 +149,41 @@ package appsync {
     def listResolvers(params: ListResolversRequest): Request[ListResolversResponse]       = js.native
     def listResolversByFunction(params: ListResolversByFunctionRequest): Request[ListResolversByFunctionResponse] =
       js.native
+    def listTagsForResource(params: ListTagsForResourceRequest): Request[ListTagsForResourceResponse] = js.native
     def listTypes(params: ListTypesRequest): Request[ListTypesResponse]                               = js.native
     def startSchemaCreation(params: StartSchemaCreationRequest): Request[StartSchemaCreationResponse] = js.native
+    def tagResource(params: TagResourceRequest): Request[TagResourceResponse]                         = js.native
+    def untagResource(params: UntagResourceRequest): Request[UntagResourceResponse]                   = js.native
     def updateApiKey(params: UpdateApiKeyRequest): Request[UpdateApiKeyResponse]                      = js.native
     def updateDataSource(params: UpdateDataSourceRequest): Request[UpdateDataSourceResponse]          = js.native
     def updateFunction(params: UpdateFunctionRequest): Request[UpdateFunctionResponse]                = js.native
     def updateGraphqlApi(params: UpdateGraphqlApiRequest): Request[UpdateGraphqlApiResponse]          = js.native
     def updateResolver(params: UpdateResolverRequest): Request[UpdateResolverResponse]                = js.native
     def updateType(params: UpdateTypeRequest): Request[UpdateTypeResponse]                            = js.native
+  }
+
+  /**
+    * Describes an additional authentication provider.
+    */
+  @js.native
+  trait AdditionalAuthenticationProvider extends js.Object {
+    var authenticationType: js.UndefOr[AuthenticationType]
+    var openIDConnectConfig: js.UndefOr[OpenIDConnectConfig]
+    var userPoolConfig: js.UndefOr[CognitoUserPoolConfig]
+  }
+
+  object AdditionalAuthenticationProvider {
+    def apply(
+        authenticationType: js.UndefOr[AuthenticationType] = js.undefined,
+        openIDConnectConfig: js.UndefOr[OpenIDConnectConfig] = js.undefined,
+        userPoolConfig: js.UndefOr[CognitoUserPoolConfig] = js.undefined
+    ): AdditionalAuthenticationProvider = {
+      val __obj = js.Dictionary.empty[js.Any]
+      authenticationType.foreach(__v => __obj.update("authenticationType", __v.asInstanceOf[js.Any]))
+      openIDConnectConfig.foreach(__v => __obj.update("openIDConnectConfig", __v.asInstanceOf[js.Any]))
+      userPoolConfig.foreach(__v => __obj.update("userPoolConfig", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AdditionalAuthenticationProvider]
+    }
   }
 
   /**
@@ -239,6 +279,32 @@ package appsync {
       signingRegion.foreach(__v => __obj.update("signingRegion", __v.asInstanceOf[js.Any]))
       signingServiceName.foreach(__v => __obj.update("signingServiceName", __v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AwsIamConfig]
+    }
+  }
+
+  /**
+    * Describes an Amazon Cognito user pool configuration.
+    */
+  @js.native
+  trait CognitoUserPoolConfig extends js.Object {
+    var awsRegion: String
+    var userPoolId: String
+    var appIdClientRegex: js.UndefOr[String]
+  }
+
+  object CognitoUserPoolConfig {
+    def apply(
+        awsRegion: String,
+        userPoolId: String,
+        appIdClientRegex: js.UndefOr[String] = js.undefined
+    ): CognitoUserPoolConfig = {
+      val __obj = js.Dictionary[js.Any](
+        "awsRegion"  -> awsRegion.asInstanceOf[js.Any],
+        "userPoolId" -> userPoolId.asInstanceOf[js.Any]
+      )
+
+      appIdClientRegex.foreach(__v => __obj.update("appIdClientRegex", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CognitoUserPoolConfig]
     }
   }
 
@@ -393,8 +459,10 @@ package appsync {
   trait CreateGraphqlApiRequest extends js.Object {
     var authenticationType: AuthenticationType
     var name: String
+    var additionalAuthenticationProviders: js.UndefOr[AdditionalAuthenticationProviders]
     var logConfig: js.UndefOr[LogConfig]
     var openIDConnectConfig: js.UndefOr[OpenIDConnectConfig]
+    var tags: js.UndefOr[TagMap]
     var userPoolConfig: js.UndefOr[UserPoolConfig]
   }
 
@@ -402,8 +470,10 @@ package appsync {
     def apply(
         authenticationType: AuthenticationType,
         name: String,
+        additionalAuthenticationProviders: js.UndefOr[AdditionalAuthenticationProviders] = js.undefined,
         logConfig: js.UndefOr[LogConfig] = js.undefined,
         openIDConnectConfig: js.UndefOr[OpenIDConnectConfig] = js.undefined,
+        tags: js.UndefOr[TagMap] = js.undefined,
         userPoolConfig: js.UndefOr[UserPoolConfig] = js.undefined
     ): CreateGraphqlApiRequest = {
       val __obj = js.Dictionary[js.Any](
@@ -411,8 +481,12 @@ package appsync {
         "name"               -> name.asInstanceOf[js.Any]
       )
 
+      additionalAuthenticationProviders.foreach(
+        __v => __obj.update("additionalAuthenticationProviders", __v.asInstanceOf[js.Any])
+      )
       logConfig.foreach(__v => __obj.update("logConfig", __v.asInstanceOf[js.Any]))
       openIDConnectConfig.foreach(__v => __obj.update("openIDConnectConfig", __v.asInstanceOf[js.Any]))
+      tags.foreach(__v => __obj.update("tags", __v.asInstanceOf[js.Any]))
       userPoolConfig.foreach(__v => __obj.update("userPoolConfig", __v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateGraphqlApiRequest]
     }
@@ -981,18 +1055,21 @@ package appsync {
   trait GetIntrospectionSchemaRequest extends js.Object {
     var apiId: String
     var format: OutputType
+    var includeDirectives: js.UndefOr[BooleanValue]
   }
 
   object GetIntrospectionSchemaRequest {
     def apply(
         apiId: String,
-        format: OutputType
+        format: OutputType,
+        includeDirectives: js.UndefOr[BooleanValue] = js.undefined
     ): GetIntrospectionSchemaRequest = {
       val __obj = js.Dictionary[js.Any](
         "apiId"  -> apiId.asInstanceOf[js.Any],
         "format" -> format.asInstanceOf[js.Any]
       )
 
+      includeDirectives.foreach(__v => __obj.update("includeDirectives", __v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetIntrospectionSchemaRequest]
     }
   }
@@ -1128,34 +1205,42 @@ package appsync {
     */
   @js.native
   trait GraphqlApi extends js.Object {
+    var additionalAuthenticationProviders: js.UndefOr[AdditionalAuthenticationProviders]
     var apiId: js.UndefOr[String]
     var arn: js.UndefOr[String]
     var authenticationType: js.UndefOr[AuthenticationType]
     var logConfig: js.UndefOr[LogConfig]
     var name: js.UndefOr[ResourceName]
     var openIDConnectConfig: js.UndefOr[OpenIDConnectConfig]
+    var tags: js.UndefOr[TagMap]
     var uris: js.UndefOr[MapOfStringToString]
     var userPoolConfig: js.UndefOr[UserPoolConfig]
   }
 
   object GraphqlApi {
     def apply(
+        additionalAuthenticationProviders: js.UndefOr[AdditionalAuthenticationProviders] = js.undefined,
         apiId: js.UndefOr[String] = js.undefined,
         arn: js.UndefOr[String] = js.undefined,
         authenticationType: js.UndefOr[AuthenticationType] = js.undefined,
         logConfig: js.UndefOr[LogConfig] = js.undefined,
         name: js.UndefOr[ResourceName] = js.undefined,
         openIDConnectConfig: js.UndefOr[OpenIDConnectConfig] = js.undefined,
+        tags: js.UndefOr[TagMap] = js.undefined,
         uris: js.UndefOr[MapOfStringToString] = js.undefined,
         userPoolConfig: js.UndefOr[UserPoolConfig] = js.undefined
     ): GraphqlApi = {
       val __obj = js.Dictionary.empty[js.Any]
+      additionalAuthenticationProviders.foreach(
+        __v => __obj.update("additionalAuthenticationProviders", __v.asInstanceOf[js.Any])
+      )
       apiId.foreach(__v => __obj.update("apiId", __v.asInstanceOf[js.Any]))
       arn.foreach(__v => __obj.update("arn", __v.asInstanceOf[js.Any]))
       authenticationType.foreach(__v => __obj.update("authenticationType", __v.asInstanceOf[js.Any]))
       logConfig.foreach(__v => __obj.update("logConfig", __v.asInstanceOf[js.Any]))
       name.foreach(__v => __obj.update("name", __v.asInstanceOf[js.Any]))
       openIDConnectConfig.foreach(__v => __obj.update("openIDConnectConfig", __v.asInstanceOf[js.Any]))
+      tags.foreach(__v => __obj.update("tags", __v.asInstanceOf[js.Any]))
       uris.foreach(__v => __obj.update("uris", __v.asInstanceOf[js.Any]))
       userPoolConfig.foreach(__v => __obj.update("userPoolConfig", __v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GraphqlApi]
@@ -1451,6 +1536,38 @@ package appsync {
   }
 
   @js.native
+  trait ListTagsForResourceRequest extends js.Object {
+    var resourceArn: ResourceArn
+  }
+
+  object ListTagsForResourceRequest {
+    def apply(
+        resourceArn: ResourceArn
+    ): ListTagsForResourceRequest = {
+      val __obj = js.Dictionary[js.Any](
+        "resourceArn" -> resourceArn.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[ListTagsForResourceRequest]
+    }
+  }
+
+  @js.native
+  trait ListTagsForResourceResponse extends js.Object {
+    var tags: js.UndefOr[TagMap]
+  }
+
+  object ListTagsForResourceResponse {
+    def apply(
+        tags: js.UndefOr[TagMap] = js.undefined
+    ): ListTagsForResourceResponse = {
+      val __obj = js.Dictionary.empty[js.Any]
+      tags.foreach(__v => __obj.update("tags", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListTagsForResourceResponse]
+    }
+  }
+
+  @js.native
   trait ListTypesRequest extends js.Object {
     var apiId: String
     var format: TypeDefinitionFormat
@@ -1501,18 +1618,21 @@ package appsync {
   trait LogConfig extends js.Object {
     var cloudWatchLogsRoleArn: String
     var fieldLogLevel: FieldLogLevel
+    var excludeVerboseContent: js.UndefOr[Boolean]
   }
 
   object LogConfig {
     def apply(
         cloudWatchLogsRoleArn: String,
-        fieldLogLevel: FieldLogLevel
+        fieldLogLevel: FieldLogLevel,
+        excludeVerboseContent: js.UndefOr[Boolean] = js.undefined
     ): LogConfig = {
       val __obj = js.Dictionary[js.Any](
         "cloudWatchLogsRoleArn" -> cloudWatchLogsRoleArn.asInstanceOf[js.Any],
         "fieldLogLevel"         -> fieldLogLevel.asInstanceOf[js.Any]
       )
 
+      excludeVerboseContent.foreach(__v => __obj.update("excludeVerboseContent", __v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[LogConfig]
     }
   }
@@ -1677,11 +1797,14 @@ package appsync {
   }
 
   object SchemaStatusEnum {
-    val PROCESSING = "PROCESSING"
-    val ACTIVE     = "ACTIVE"
-    val DELETING   = "DELETING"
+    val PROCESSING     = "PROCESSING"
+    val ACTIVE         = "ACTIVE"
+    val DELETING       = "DELETING"
+    val FAILED         = "FAILED"
+    val SUCCESS        = "SUCCESS"
+    val NOT_APPLICABLE = "NOT_APPLICABLE"
 
-    val values = IndexedSeq(PROCESSING, ACTIVE, DELETING)
+    val values = IndexedSeq(PROCESSING, ACTIVE, DELETING, FAILED, SUCCESS, NOT_APPLICABLE)
   }
 
   @js.native
@@ -1716,6 +1839,38 @@ package appsync {
       val __obj = js.Dictionary.empty[js.Any]
       status.foreach(__v => __obj.update("status", __v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[StartSchemaCreationResponse]
+    }
+  }
+
+  @js.native
+  trait TagResourceRequest extends js.Object {
+    var resourceArn: ResourceArn
+    var tags: TagMap
+  }
+
+  object TagResourceRequest {
+    def apply(
+        resourceArn: ResourceArn,
+        tags: TagMap
+    ): TagResourceRequest = {
+      val __obj = js.Dictionary[js.Any](
+        "resourceArn" -> resourceArn.asInstanceOf[js.Any],
+        "tags"        -> tags.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[TagResourceRequest]
+    }
+  }
+
+  @js.native
+  trait TagResourceResponse extends js.Object {}
+
+  object TagResourceResponse {
+    def apply(
+        ): TagResourceResponse = {
+      val __obj = js.Dictionary.empty[js.Any]
+
+      __obj.asInstanceOf[TagResourceResponse]
     }
   }
 
@@ -1754,6 +1909,38 @@ package appsync {
     val JSON = "JSON"
 
     val values = IndexedSeq(SDL, JSON)
+  }
+
+  @js.native
+  trait UntagResourceRequest extends js.Object {
+    var resourceArn: ResourceArn
+    var tagKeys: TagKeyList
+  }
+
+  object UntagResourceRequest {
+    def apply(
+        resourceArn: ResourceArn,
+        tagKeys: TagKeyList
+    ): UntagResourceRequest = {
+      val __obj = js.Dictionary[js.Any](
+        "resourceArn" -> resourceArn.asInstanceOf[js.Any],
+        "tagKeys"     -> tagKeys.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[UntagResourceRequest]
+    }
+  }
+
+  @js.native
+  trait UntagResourceResponse extends js.Object {}
+
+  object UntagResourceResponse {
+    def apply(
+        ): UntagResourceResponse = {
+      val __obj = js.Dictionary.empty[js.Any]
+
+      __obj.asInstanceOf[UntagResourceResponse]
+    }
   }
 
   @js.native
@@ -1913,6 +2100,7 @@ package appsync {
   trait UpdateGraphqlApiRequest extends js.Object {
     var apiId: String
     var name: String
+    var additionalAuthenticationProviders: js.UndefOr[AdditionalAuthenticationProviders]
     var authenticationType: js.UndefOr[AuthenticationType]
     var logConfig: js.UndefOr[LogConfig]
     var openIDConnectConfig: js.UndefOr[OpenIDConnectConfig]
@@ -1923,6 +2111,7 @@ package appsync {
     def apply(
         apiId: String,
         name: String,
+        additionalAuthenticationProviders: js.UndefOr[AdditionalAuthenticationProviders] = js.undefined,
         authenticationType: js.UndefOr[AuthenticationType] = js.undefined,
         logConfig: js.UndefOr[LogConfig] = js.undefined,
         openIDConnectConfig: js.UndefOr[OpenIDConnectConfig] = js.undefined,
@@ -1933,6 +2122,9 @@ package appsync {
         "name"  -> name.asInstanceOf[js.Any]
       )
 
+      additionalAuthenticationProviders.foreach(
+        __v => __obj.update("additionalAuthenticationProviders", __v.asInstanceOf[js.Any])
+      )
       authenticationType.foreach(__v => __obj.update("authenticationType", __v.asInstanceOf[js.Any]))
       logConfig.foreach(__v => __obj.update("logConfig", __v.asInstanceOf[js.Any]))
       openIDConnectConfig.foreach(__v => __obj.update("openIDConnectConfig", __v.asInstanceOf[js.Any]))

@@ -710,7 +710,8 @@ package health {
     val issue               = "issue"
     val accountNotification = "accountNotification"
     val scheduledChange     = "scheduledChange"
+    val investigation       = "investigation"
 
-    val values = IndexedSeq(issue, accountNotification, scheduledChange)
+    val values = IndexedSeq(issue, accountNotification, scheduledChange, investigation)
   }
 }

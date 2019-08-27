@@ -298,6 +298,43 @@ package object ssm {
   type NotificationEventList                   = js.Array[NotificationEvent]
   type NotificationType                        = String
   type OperatingSystem                         = String
+  type OpsAggregatorList                       = js.Array[OpsAggregator]
+  type OpsAggregatorType                       = String
+  type OpsAggregatorValue                      = String
+  type OpsAggregatorValueKey                   = String
+  type OpsAggregatorValueMap                   = js.Dictionary[OpsAggregatorValue]
+  type OpsDataAttributeName                    = String
+  type OpsDataTypeName                         = String
+  type OpsEntityId                             = String
+  type OpsEntityItemEntry                      = js.Dictionary[AttributeValue]
+  type OpsEntityItemEntryList                  = js.Array[OpsEntityItemEntry]
+  type OpsEntityItemKey                        = String
+  type OpsEntityItemMap                        = js.Dictionary[OpsEntityItem]
+  type OpsEntityList                           = js.Array[OpsEntity]
+  type OpsFilterKey                            = String
+  type OpsFilterList                           = js.Array[OpsFilter]
+  type OpsFilterOperatorType                   = String
+  type OpsFilterValue                          = String
+  type OpsFilterValueList                      = js.Array[OpsFilterValue]
+  type OpsItemDataKey                          = String
+  type OpsItemDataType                         = String
+  type OpsItemDataValueString                  = String
+  type OpsItemDescription                      = String
+  type OpsItemFilterKey                        = String
+  type OpsItemFilterOperator                   = String
+  type OpsItemFilterValue                      = String
+  type OpsItemFilterValues                     = js.Array[OpsItemFilterValue]
+  type OpsItemFilters                          = js.Array[OpsItemFilter]
+  type OpsItemId                               = String
+  type OpsItemMaxResults                       = Int
+  type OpsItemNotifications                    = js.Array[OpsItemNotification]
+  type OpsItemOperationalData                  = js.Dictionary[OpsItemDataValue]
+  type OpsItemOpsDataKeysList                  = js.Array[String]
+  type OpsItemPriority                         = Int
+  type OpsItemSource                           = String
+  type OpsItemStatus                           = String
+  type OpsItemSummaries                        = js.Array[OpsItemSummary]
+  type OpsItemTitle                            = String
   type OutputSourceId                          = String
   type OutputSourceType                        = String
   type OwnerInformation                        = String
@@ -314,11 +351,14 @@ package object ssm {
   type ParameterMetadataList                   = js.Array[ParameterMetadata]
   type ParameterName                           = String
   type ParameterNameList                       = js.Array[PSParameterName]
+  type ParameterPolicies                       = String
+  type ParameterPolicyList                     = js.Array[ParameterInlinePolicy]
   type ParameterStringFilterKey                = String
   type ParameterStringFilterList               = js.Array[ParameterStringFilter]
   type ParameterStringFilterValue              = String
   type ParameterStringFilterValueList          = js.Array[ParameterStringFilterValue]
   type ParameterStringQueryOption              = String
+  type ParameterTier                           = String
   type ParameterType                           = String
   type ParameterValue                          = String
   type ParameterValueList                      = js.Array[ParameterValue]
@@ -365,7 +405,11 @@ package object ssm {
   type PatchOrchestratorFilterValues           = js.Array[PatchOrchestratorFilterValue]
   type PatchProduct                            = String
   type PatchProductFamily                      = String
+  type PatchPropertiesList                     = js.Array[PatchPropertyEntry]
+  type PatchProperty                           = String
+  type PatchPropertyEntry                      = js.Dictionary[AttributeValue]
   type PatchRuleList                           = js.Array[PatchRule]
+  type PatchSet                                = String
   type PatchSeverity                           = String
   type PatchSourceConfiguration                = String
   type PatchSourceList                         = js.Array[PatchSource]
@@ -373,6 +417,7 @@ package object ssm {
   type PatchSourceProduct                      = String
   type PatchSourceProductList                  = js.Array[PatchSourceProduct]
   type PatchTitle                              = String
+  type PatchUnreportedNotApplicableCount       = Int
   type PatchVendor                             = String
   type PingStatus                              = String
   type PlatformType                            = String
@@ -383,6 +428,7 @@ package object ssm {
   type Regions                                 = js.Array[Region]
   type RegistrationLimit                       = Int
   type RegistrationsCount                      = Int
+  type RelatedOpsItems                         = js.Array[RelatedOpsItem]
   type RemainingCount                          = Int
   type ResourceComplianceSummaryItemList       = js.Array[ResourceComplianceSummaryItem]
   type ResourceCount                           = Int
@@ -487,6 +533,8 @@ package object ssm {
       service.createDocument(params).promise.toFuture
     def createMaintenanceWindowFuture(params: CreateMaintenanceWindowRequest): Future[CreateMaintenanceWindowResult] =
       service.createMaintenanceWindow(params).promise.toFuture
+    def createOpsItemFuture(params: CreateOpsItemRequest): Future[CreateOpsItemResponse] =
+      service.createOpsItem(params).promise.toFuture
     def createPatchBaselineFuture(params: CreatePatchBaselineRequest): Future[CreatePatchBaselineResult] =
       service.createPatchBaseline(params).promise.toFuture
     def createResourceDataSyncFuture(params: CreateResourceDataSyncRequest): Future[CreateResourceDataSyncResult] =
@@ -607,6 +655,8 @@ package object ssm {
     def describeMaintenanceWindowsFuture(
         params: DescribeMaintenanceWindowsRequest
     ): Future[DescribeMaintenanceWindowsResult] = service.describeMaintenanceWindows(params).promise.toFuture
+    def describeOpsItemsFuture(params: DescribeOpsItemsRequest): Future[DescribeOpsItemsResponse] =
+      service.describeOpsItems(params).promise.toFuture
     def describeParametersFuture(params: DescribeParametersRequest): Future[DescribeParametersResult] =
       service.describeParameters(params).promise.toFuture
     def describePatchBaselinesFuture(params: DescribePatchBaselinesRequest): Future[DescribePatchBaselinesResult] =
@@ -615,6 +665,8 @@ package object ssm {
       service.describePatchGroupState(params).promise.toFuture
     def describePatchGroupsFuture(params: DescribePatchGroupsRequest): Future[DescribePatchGroupsResult] =
       service.describePatchGroups(params).promise.toFuture
+    def describePatchPropertiesFuture(params: DescribePatchPropertiesRequest): Future[DescribePatchPropertiesResult] =
+      service.describePatchProperties(params).promise.toFuture
     def describeSessionsFuture(params: DescribeSessionsRequest): Future[DescribeSessionsResponse] =
       service.describeSessions(params).promise.toFuture
     def getAutomationExecutionFuture(params: GetAutomationExecutionRequest): Future[GetAutomationExecutionResult] =
@@ -651,6 +703,10 @@ package object ssm {
     def getMaintenanceWindowTaskFuture(
         params: GetMaintenanceWindowTaskRequest
     ): Future[GetMaintenanceWindowTaskResult] = service.getMaintenanceWindowTask(params).promise.toFuture
+    def getOpsItemFuture(params: GetOpsItemRequest): Future[GetOpsItemResponse] =
+      service.getOpsItem(params).promise.toFuture
+    def getOpsSummaryFuture(params: GetOpsSummaryRequest): Future[GetOpsSummaryResult] =
+      service.getOpsSummary(params).promise.toFuture
     def getParameterFuture(params: GetParameterRequest): Future[GetParameterResult] =
       service.getParameter(params).promise.toFuture
     def getParameterHistoryFuture(params: GetParameterHistoryRequest): Future[GetParameterHistoryResult] =
@@ -758,6 +814,8 @@ package object ssm {
     def updateManagedInstanceRoleFuture(
         params: UpdateManagedInstanceRoleRequest
     ): Future[UpdateManagedInstanceRoleResult] = service.updateManagedInstanceRole(params).promise.toFuture
+    def updateOpsItemFuture(params: UpdateOpsItemRequest): Future[UpdateOpsItemResponse] =
+      service.updateOpsItem(params).promise.toFuture
     def updatePatchBaselineFuture(params: UpdatePatchBaselineRequest): Future[UpdatePatchBaselineResult] =
       service.updatePatchBaseline(params).promise.toFuture
     def updateServiceSettingFuture(params: UpdateServiceSettingRequest): Future[UpdateServiceSettingResult] =
@@ -782,6 +840,7 @@ package ssm {
     def createDocument(params: CreateDocumentRequest): Request[CreateDocumentResult]                         = js.native
     def createMaintenanceWindow(params: CreateMaintenanceWindowRequest): Request[CreateMaintenanceWindowResult] =
       js.native
+    def createOpsItem(params: CreateOpsItemRequest): Request[CreateOpsItemResponse]                          = js.native
     def createPatchBaseline(params: CreatePatchBaselineRequest): Request[CreatePatchBaselineResult]          = js.native
     def createResourceDataSync(params: CreateResourceDataSyncRequest): Request[CreateResourceDataSyncResult] = js.native
     def deleteActivation(params: DeleteActivationRequest): Request[DeleteActivationResult]                   = js.native
@@ -872,11 +931,14 @@ package ssm {
     def describeMaintenanceWindowsForTarget(
         params: DescribeMaintenanceWindowsForTargetRequest
     ): Request[DescribeMaintenanceWindowsForTargetResult]                                                    = js.native
+    def describeOpsItems(params: DescribeOpsItemsRequest): Request[DescribeOpsItemsResponse]                 = js.native
     def describeParameters(params: DescribeParametersRequest): Request[DescribeParametersResult]             = js.native
     def describePatchBaselines(params: DescribePatchBaselinesRequest): Request[DescribePatchBaselinesResult] = js.native
     def describePatchGroupState(params: DescribePatchGroupStateRequest): Request[DescribePatchGroupStateResult] =
       js.native
-    def describePatchGroups(params: DescribePatchGroupsRequest): Request[DescribePatchGroupsResult]          = js.native
+    def describePatchGroups(params: DescribePatchGroupsRequest): Request[DescribePatchGroupsResult] = js.native
+    def describePatchProperties(params: DescribePatchPropertiesRequest): Request[DescribePatchPropertiesResult] =
+      js.native
     def describeSessions(params: DescribeSessionsRequest): Request[DescribeSessionsResponse]                 = js.native
     def getAutomationExecution(params: GetAutomationExecutionRequest): Request[GetAutomationExecutionResult] = js.native
     def getCommandInvocation(params: GetCommandInvocationRequest): Request[GetCommandInvocationResult]       = js.native
@@ -901,6 +963,8 @@ package ssm {
     ): Request[GetMaintenanceWindowExecutionTaskInvocationResult] = js.native
     def getMaintenanceWindowTask(params: GetMaintenanceWindowTaskRequest): Request[GetMaintenanceWindowTaskResult] =
       js.native
+    def getOpsItem(params: GetOpsItemRequest): Request[GetOpsItemResponse]                          = js.native
+    def getOpsSummary(params: GetOpsSummaryRequest): Request[GetOpsSummaryResult]                   = js.native
     def getParameter(params: GetParameterRequest): Request[GetParameterResult]                      = js.native
     def getParameterHistory(params: GetParameterHistoryRequest): Request[GetParameterHistoryResult] = js.native
     def getParameters(params: GetParametersRequest): Request[GetParametersResult]                   = js.native
@@ -973,6 +1037,7 @@ package ssm {
     ): Request[UpdateMaintenanceWindowTaskResult] = js.native
     def updateManagedInstanceRole(params: UpdateManagedInstanceRoleRequest): Request[UpdateManagedInstanceRoleResult] =
       js.native
+    def updateOpsItem(params: UpdateOpsItemRequest): Request[UpdateOpsItemResponse]                    = js.native
     def updatePatchBaseline(params: UpdatePatchBaselineRequest): Request[UpdatePatchBaselineResult]    = js.native
     def updateServiceSetting(params: UpdateServiceSettingRequest): Request[UpdateServiceSettingResult] = js.native
   }
@@ -2705,6 +2770,59 @@ package ssm {
   }
 
   @js.native
+  trait CreateOpsItemRequest extends js.Object {
+    var Description: OpsItemDescription
+    var Source: OpsItemSource
+    var Title: OpsItemTitle
+    var Notifications: js.UndefOr[OpsItemNotifications]
+    var OperationalData: js.UndefOr[OpsItemOperationalData]
+    var Priority: js.UndefOr[OpsItemPriority]
+    var RelatedOpsItems: js.UndefOr[RelatedOpsItems]
+    var Tags: js.UndefOr[TagList]
+  }
+
+  object CreateOpsItemRequest {
+    def apply(
+        Description: OpsItemDescription,
+        Source: OpsItemSource,
+        Title: OpsItemTitle,
+        Notifications: js.UndefOr[OpsItemNotifications] = js.undefined,
+        OperationalData: js.UndefOr[OpsItemOperationalData] = js.undefined,
+        Priority: js.UndefOr[OpsItemPriority] = js.undefined,
+        RelatedOpsItems: js.UndefOr[RelatedOpsItems] = js.undefined,
+        Tags: js.UndefOr[TagList] = js.undefined
+    ): CreateOpsItemRequest = {
+      val __obj = js.Dictionary[js.Any](
+        "Description" -> Description.asInstanceOf[js.Any],
+        "Source"      -> Source.asInstanceOf[js.Any],
+        "Title"       -> Title.asInstanceOf[js.Any]
+      )
+
+      Notifications.foreach(__v => __obj.update("Notifications", __v.asInstanceOf[js.Any]))
+      OperationalData.foreach(__v => __obj.update("OperationalData", __v.asInstanceOf[js.Any]))
+      Priority.foreach(__v => __obj.update("Priority", __v.asInstanceOf[js.Any]))
+      RelatedOpsItems.foreach(__v => __obj.update("RelatedOpsItems", __v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateOpsItemRequest]
+    }
+  }
+
+  @js.native
+  trait CreateOpsItemResponse extends js.Object {
+    var OpsItemId: js.UndefOr[String]
+  }
+
+  object CreateOpsItemResponse {
+    def apply(
+        OpsItemId: js.UndefOr[String] = js.undefined
+    ): CreateOpsItemResponse = {
+      val __obj = js.Dictionary.empty[js.Any]
+      OpsItemId.foreach(__v => __obj.update("OpsItemId", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateOpsItemResponse]
+    }
+  }
+
+  @js.native
   trait CreatePatchBaselineRequest extends js.Object {
     var Name: BaselineName
     var ApprovalRules: js.UndefOr[PatchRuleGroup]
@@ -2873,16 +2991,22 @@ package ssm {
   @js.native
   trait DeleteDocumentRequest extends js.Object {
     var Name: DocumentName
+    var DocumentVersion: js.UndefOr[DocumentVersion]
+    var VersionName: js.UndefOr[DocumentVersionName]
   }
 
   object DeleteDocumentRequest {
     def apply(
-        Name: DocumentName
+        Name: DocumentName,
+        DocumentVersion: js.UndefOr[DocumentVersion] = js.undefined,
+        VersionName: js.UndefOr[DocumentVersionName] = js.undefined
     ): DeleteDocumentRequest = {
       val __obj = js.Dictionary[js.Any](
         "Name" -> Name.asInstanceOf[js.Any]
       )
 
+      DocumentVersion.foreach(__v => __obj.update("DocumentVersion", __v.asInstanceOf[js.Any]))
+      VersionName.foreach(__v => __obj.update("VersionName", __v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeleteDocumentRequest]
     }
   }
@@ -4344,6 +4468,45 @@ package ssm {
   }
 
   @js.native
+  trait DescribeOpsItemsRequest extends js.Object {
+    var MaxResults: js.UndefOr[OpsItemMaxResults]
+    var NextToken: js.UndefOr[String]
+    var OpsItemFilters: js.UndefOr[OpsItemFilters]
+  }
+
+  object DescribeOpsItemsRequest {
+    def apply(
+        MaxResults: js.UndefOr[OpsItemMaxResults] = js.undefined,
+        NextToken: js.UndefOr[String] = js.undefined,
+        OpsItemFilters: js.UndefOr[OpsItemFilters] = js.undefined
+    ): DescribeOpsItemsRequest = {
+      val __obj = js.Dictionary.empty[js.Any]
+      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      OpsItemFilters.foreach(__v => __obj.update("OpsItemFilters", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeOpsItemsRequest]
+    }
+  }
+
+  @js.native
+  trait DescribeOpsItemsResponse extends js.Object {
+    var NextToken: js.UndefOr[String]
+    var OpsItemSummaries: js.UndefOr[OpsItemSummaries]
+  }
+
+  object DescribeOpsItemsResponse {
+    def apply(
+        NextToken: js.UndefOr[String] = js.undefined,
+        OpsItemSummaries: js.UndefOr[OpsItemSummaries] = js.undefined
+    ): DescribeOpsItemsResponse = {
+      val __obj = js.Dictionary.empty[js.Any]
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      OpsItemSummaries.foreach(__v => __obj.update("OpsItemSummaries", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeOpsItemsResponse]
+    }
+  }
+
+  @js.native
   trait DescribeParametersRequest extends js.Object {
     var Filters: js.UndefOr[ParametersFilterList]
     var MaxResults: js.UndefOr[MaxResults]
@@ -4450,6 +4613,7 @@ package ssm {
     var InstancesWithInstalledRejectedPatches: js.UndefOr[InstancesCount]
     var InstancesWithMissingPatches: js.UndefOr[Int]
     var InstancesWithNotApplicablePatches: js.UndefOr[Int]
+    var InstancesWithUnreportedNotApplicablePatches: js.UndefOr[Int]
   }
 
   object DescribePatchGroupStateResult {
@@ -4460,7 +4624,8 @@ package ssm {
         InstancesWithInstalledPatches: js.UndefOr[Int] = js.undefined,
         InstancesWithInstalledRejectedPatches: js.UndefOr[InstancesCount] = js.undefined,
         InstancesWithMissingPatches: js.UndefOr[Int] = js.undefined,
-        InstancesWithNotApplicablePatches: js.UndefOr[Int] = js.undefined
+        InstancesWithNotApplicablePatches: js.UndefOr[Int] = js.undefined,
+        InstancesWithUnreportedNotApplicablePatches: js.UndefOr[Int] = js.undefined
     ): DescribePatchGroupStateResult = {
       val __obj = js.Dictionary.empty[js.Any]
       Instances.foreach(__v => __obj.update("Instances", __v.asInstanceOf[js.Any]))
@@ -4477,6 +4642,9 @@ package ssm {
       InstancesWithMissingPatches.foreach(__v => __obj.update("InstancesWithMissingPatches", __v.asInstanceOf[js.Any]))
       InstancesWithNotApplicablePatches.foreach(
         __v => __obj.update("InstancesWithNotApplicablePatches", __v.asInstanceOf[js.Any])
+      )
+      InstancesWithUnreportedNotApplicablePatches.foreach(
+        __v => __obj.update("InstancesWithUnreportedNotApplicablePatches", __v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[DescribePatchGroupStateResult]
     }
@@ -4518,6 +4686,53 @@ package ssm {
       Mappings.foreach(__v => __obj.update("Mappings", __v.asInstanceOf[js.Any]))
       NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribePatchGroupsResult]
+    }
+  }
+
+  @js.native
+  trait DescribePatchPropertiesRequest extends js.Object {
+    var OperatingSystem: OperatingSystem
+    var Property: PatchProperty
+    var MaxResults: js.UndefOr[MaxResults]
+    var NextToken: js.UndefOr[NextToken]
+    var PatchSet: js.UndefOr[PatchSet]
+  }
+
+  object DescribePatchPropertiesRequest {
+    def apply(
+        OperatingSystem: OperatingSystem,
+        Property: PatchProperty,
+        MaxResults: js.UndefOr[MaxResults] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined,
+        PatchSet: js.UndefOr[PatchSet] = js.undefined
+    ): DescribePatchPropertiesRequest = {
+      val __obj = js.Dictionary[js.Any](
+        "OperatingSystem" -> OperatingSystem.asInstanceOf[js.Any],
+        "Property"        -> Property.asInstanceOf[js.Any]
+      )
+
+      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      PatchSet.foreach(__v => __obj.update("PatchSet", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribePatchPropertiesRequest]
+    }
+  }
+
+  @js.native
+  trait DescribePatchPropertiesResult extends js.Object {
+    var NextToken: js.UndefOr[NextToken]
+    var Properties: js.UndefOr[PatchPropertiesList]
+  }
+
+  object DescribePatchPropertiesResult {
+    def apply(
+        NextToken: js.UndefOr[NextToken] = js.undefined,
+        Properties: js.UndefOr[PatchPropertiesList] = js.undefined
+    ): DescribePatchPropertiesResult = {
+      val __obj = js.Dictionary.empty[js.Any]
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      Properties.foreach(__v => __obj.update("Properties", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribePatchPropertiesResult]
     }
   }
 
@@ -5694,6 +5909,82 @@ package ssm {
   }
 
   @js.native
+  trait GetOpsItemRequest extends js.Object {
+    var OpsItemId: OpsItemId
+  }
+
+  object GetOpsItemRequest {
+    def apply(
+        OpsItemId: OpsItemId
+    ): GetOpsItemRequest = {
+      val __obj = js.Dictionary[js.Any](
+        "OpsItemId" -> OpsItemId.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[GetOpsItemRequest]
+    }
+  }
+
+  @js.native
+  trait GetOpsItemResponse extends js.Object {
+    var OpsItem: js.UndefOr[OpsItem]
+  }
+
+  object GetOpsItemResponse {
+    def apply(
+        OpsItem: js.UndefOr[OpsItem] = js.undefined
+    ): GetOpsItemResponse = {
+      val __obj = js.Dictionary.empty[js.Any]
+      OpsItem.foreach(__v => __obj.update("OpsItem", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetOpsItemResponse]
+    }
+  }
+
+  @js.native
+  trait GetOpsSummaryRequest extends js.Object {
+    var Aggregators: OpsAggregatorList
+    var Filters: js.UndefOr[OpsFilterList]
+    var MaxResults: js.UndefOr[MaxResults]
+    var NextToken: js.UndefOr[NextToken]
+  }
+
+  object GetOpsSummaryRequest {
+    def apply(
+        Aggregators: OpsAggregatorList,
+        Filters: js.UndefOr[OpsFilterList] = js.undefined,
+        MaxResults: js.UndefOr[MaxResults] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): GetOpsSummaryRequest = {
+      val __obj = js.Dictionary[js.Any](
+        "Aggregators" -> Aggregators.asInstanceOf[js.Any]
+      )
+
+      Filters.foreach(__v => __obj.update("Filters", __v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetOpsSummaryRequest]
+    }
+  }
+
+  @js.native
+  trait GetOpsSummaryResult extends js.Object {
+    var Entities: js.UndefOr[OpsEntityList]
+    var NextToken: js.UndefOr[NextToken]
+  }
+
+  object GetOpsSummaryResult {
+    def apply(
+        Entities: js.UndefOr[OpsEntityList] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): GetOpsSummaryResult = {
+      val __obj = js.Dictionary.empty[js.Any]
+      Entities.foreach(__v => __obj.update("Entities", __v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetOpsSummaryResult]
+    }
+  }
+
+  @js.native
   trait GetParameterHistoryRequest extends js.Object {
     var Name: PSParameterName
     var MaxResults: js.UndefOr[MaxResults]
@@ -6319,6 +6610,7 @@ package ssm {
     var NotApplicableCount: js.UndefOr[PatchNotApplicableCount]
     var OwnerInformation: js.UndefOr[OwnerInformation]
     var SnapshotId: js.UndefOr[SnapshotId]
+    var UnreportedNotApplicableCount: js.UndefOr[PatchUnreportedNotApplicableCount]
   }
 
   object InstancePatchState {
@@ -6337,7 +6629,8 @@ package ssm {
         MissingCount: js.UndefOr[PatchMissingCount] = js.undefined,
         NotApplicableCount: js.UndefOr[PatchNotApplicableCount] = js.undefined,
         OwnerInformation: js.UndefOr[OwnerInformation] = js.undefined,
-        SnapshotId: js.UndefOr[SnapshotId] = js.undefined
+        SnapshotId: js.UndefOr[SnapshotId] = js.undefined,
+        UnreportedNotApplicableCount: js.UndefOr[PatchUnreportedNotApplicableCount] = js.undefined
     ): InstancePatchState = {
       val __obj = js.Dictionary[js.Any](
         "BaselineId"         -> BaselineId.asInstanceOf[js.Any],
@@ -6357,6 +6650,9 @@ package ssm {
       NotApplicableCount.foreach(__v => __obj.update("NotApplicableCount", __v.asInstanceOf[js.Any]))
       OwnerInformation.foreach(__v => __obj.update("OwnerInformation", __v.asInstanceOf[js.Any]))
       SnapshotId.foreach(__v => __obj.update("SnapshotId", __v.asInstanceOf[js.Any]))
+      UnreportedNotApplicableCount.foreach(
+        __v => __obj.update("UnreportedNotApplicableCount", __v.asInstanceOf[js.Any])
+      )
       __obj.asInstanceOf[InstancePatchState]
     }
   }
@@ -7285,7 +7581,7 @@ package ssm {
   /**
     * Information about an Amazon S3 bucket to write instance-level logs to.
     *
-    * '''Note:'''<code>LoggingInfo</code> has been deprecated. To specify an S3 bucket to contain logs, instead use the <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in the <code>TaskInvocationParameters</code> structure. For information about how Systems Manager handles these options for the supported Maintenance Window task types, see <a>MaintenanceWindowTaskInvocationParameters</a>.
+    * '''Note:'''<code>LoggingInfo</code> has been deprecated. To specify an S3 bucket to contain logs, instead use the <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in the <code>TaskInvocationParameters</code> structure. For information about how Systems Manager handles these options for the supported maintenance window task types, see <a>MaintenanceWindowTaskInvocationParameters</a>.
     */
   @js.native
   trait LoggingInfo extends js.Object {
@@ -7332,7 +7628,7 @@ package ssm {
   }
 
   /**
-    * Describes the information about an execution of a Maintenance Window.
+    * Describes the information about an execution of a maintenance window.
     */
   @js.native
   trait MaintenanceWindowExecution extends js.Object {
@@ -7379,7 +7675,7 @@ package ssm {
   }
 
   /**
-    * Information about a task execution performed as part of a Maintenance Window execution.
+    * Information about a task execution performed as part of a maintenance window execution.
     */
   @js.native
   trait MaintenanceWindowExecutionTaskIdentity extends js.Object {
@@ -7418,7 +7714,7 @@ package ssm {
   }
 
   /**
-    * Describes the information about a task invocation for a particular target as part of a task execution performed as part of a Maintenance Window execution.
+    * Describes the information about a task invocation for a particular target as part of a task execution performed as part of a maintenance window execution.
     */
   @js.native
   trait MaintenanceWindowExecutionTaskInvocationIdentity extends js.Object {
@@ -7490,7 +7786,7 @@ package ssm {
   }
 
   /**
-    * Information about the Maintenance Window.
+    * Information about the maintenance window.
     */
   @js.native
   trait MaintenanceWindowIdentity extends js.Object {
@@ -7538,7 +7834,7 @@ package ssm {
   }
 
   /**
-    * The Maintenance Window to which the specified target belongs.
+    * The maintenance window to which the specified target belongs.
     */
   @js.native
   trait MaintenanceWindowIdentityForTarget extends js.Object {
@@ -7562,8 +7858,8 @@ package ssm {
     * The parameters for a LAMBDA task type.
     *  For information about specifying and updating task parameters, see <a>RegisterTaskWithMaintenanceWindow</a> and <a>UpdateMaintenanceWindowTask</a>.
     *
-    * '''Note:'''<code>LoggingInfo</code> has been deprecated. To specify an S3 bucket to contain logs, instead use the <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in the <code>TaskInvocationParameters</code> structure. For information about how Systems Manager handles these options for the supported Maintenance Window task types, see <a>MaintenanceWindowTaskInvocationParameters</a>.
-    *  <code>TaskParameters</code> has been deprecated. To specify parameters to pass to a task when it runs, instead use the <code>Parameters</code> option in the <code>TaskInvocationParameters</code> structure. For information about how Systems Manager handles these options for the supported Maintenance Window task types, see <a>MaintenanceWindowTaskInvocationParameters</a>.
+    * '''Note:'''<code>LoggingInfo</code> has been deprecated. To specify an S3 bucket to contain logs, instead use the <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in the <code>TaskInvocationParameters</code> structure. For information about how Systems Manager handles these options for the supported maintenance window task types, see <a>MaintenanceWindowTaskInvocationParameters</a>.
+    *  <code>TaskParameters</code> has been deprecated. To specify parameters to pass to a task when it runs, instead use the <code>Parameters</code> option in the <code>TaskInvocationParameters</code> structure. For information about how Systems Manager handles these options for the supported maintenance window task types, see <a>MaintenanceWindowTaskInvocationParameters</a>.
     *  For Lambda tasks, Systems Manager ignores any values specified for TaskParameters and LoggingInfo.
     */
   @js.native
@@ -7588,17 +7884,18 @@ package ssm {
   }
 
   object MaintenanceWindowResourceTypeEnum {
-    val INSTANCE = "INSTANCE"
+    val INSTANCE       = "INSTANCE"
+    val RESOURCE_GROUP = "RESOURCE_GROUP"
 
-    val values = IndexedSeq(INSTANCE)
+    val values = IndexedSeq(INSTANCE, RESOURCE_GROUP)
   }
 
   /**
     * The parameters for a RUN_COMMAND task type.
     *  For information about specifying and updating task parameters, see <a>RegisterTaskWithMaintenanceWindow</a> and <a>UpdateMaintenanceWindowTask</a>.
     *
-    * '''Note:'''<code>LoggingInfo</code> has been deprecated. To specify an S3 bucket to contain logs, instead use the <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in the <code>TaskInvocationParameters</code> structure. For information about how Systems Manager handles these options for the supported Maintenance Window task types, see <a>MaintenanceWindowTaskInvocationParameters</a>.
-    *  <code>TaskParameters</code> has been deprecated. To specify parameters to pass to a task when it runs, instead use the <code>Parameters</code> option in the <code>TaskInvocationParameters</code> structure. For information about how Systems Manager handles these options for the supported Maintenance Window task types, see <a>MaintenanceWindowTaskInvocationParameters</a>.
+    * '''Note:'''<code>LoggingInfo</code> has been deprecated. To specify an S3 bucket to contain logs, instead use the <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in the <code>TaskInvocationParameters</code> structure. For information about how Systems Manager handles these options for the supported maintenance window task types, see <a>MaintenanceWindowTaskInvocationParameters</a>.
+    *  <code>TaskParameters</code> has been deprecated. To specify parameters to pass to a task when it runs, instead use the <code>Parameters</code> option in the <code>TaskInvocationParameters</code> structure. For information about how Systems Manager handles these options for the supported maintenance window task types, see <a>MaintenanceWindowTaskInvocationParameters</a>.
     *  For Run Command tasks, Systems Manager uses specified values for <code>TaskParameters</code> and <code>LoggingInfo</code> only if no values are specified for <code>TaskInvocationParameters</code>.
     */
   @js.native
@@ -7641,11 +7938,11 @@ package ssm {
   }
 
   /**
-    * The parameters for a STEP_FUNCTION task.
+    * The parameters for a STEP_FUNCTIONS task.
     *  For information about specifying and updating task parameters, see <a>RegisterTaskWithMaintenanceWindow</a> and <a>UpdateMaintenanceWindowTask</a>.
     *
-    * '''Note:'''<code>LoggingInfo</code> has been deprecated. To specify an S3 bucket to contain logs, instead use the <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in the <code>TaskInvocationParameters</code> structure. For information about how Systems Manager handles these options for the supported Maintenance Window task types, see <a>MaintenanceWindowTaskInvocationParameters</a>.
-    *  <code>TaskParameters</code> has been deprecated. To specify parameters to pass to a task when it runs, instead use the <code>Parameters</code> option in the <code>TaskInvocationParameters</code> structure. For information about how Systems Manager handles these options for the supported Maintenance Window task types, see <a>MaintenanceWindowTaskInvocationParameters</a>.
+    * '''Note:'''<code>LoggingInfo</code> has been deprecated. To specify an S3 bucket to contain logs, instead use the <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in the <code>TaskInvocationParameters</code> structure. For information about how Systems Manager handles these options for the supported maintenance window task types, see <a>MaintenanceWindowTaskInvocationParameters</a>.
+    *  <code>TaskParameters</code> has been deprecated. To specify parameters to pass to a task when it runs, instead use the <code>Parameters</code> option in the <code>TaskInvocationParameters</code> structure. For information about how Systems Manager handles these options for the supported maintenance window task types, see <a>MaintenanceWindowTaskInvocationParameters</a>.
     *  For Step Functions tasks, Systems Manager ignores any values specified for <code>TaskParameters</code> and <code>LoggingInfo</code>.
     */
   @js.native
@@ -7667,7 +7964,7 @@ package ssm {
   }
 
   /**
-    * The target registered with the Maintenance Window.
+    * The target registered with the maintenance window.
     */
   @js.native
   trait MaintenanceWindowTarget extends js.Object {
@@ -7703,7 +8000,7 @@ package ssm {
   }
 
   /**
-    * Information about a task defined for a Maintenance Window.
+    * Information about a task defined for a maintenance window.
     */
   @js.native
   trait MaintenanceWindowTask extends js.Object {
@@ -7924,6 +8221,338 @@ package ssm {
   }
 
   /**
+    * One or more aggregators for viewing counts of OpsItems using different dimensions such as <code>Source</code>, <code>CreatedTime</code>, or <code>Source and CreatedTime</code>, to name a few.
+    */
+  @js.native
+  trait OpsAggregator extends js.Object {
+    var AggregatorType: js.UndefOr[OpsAggregatorType]
+    var Aggregators: js.UndefOr[OpsAggregatorList]
+    var AttributeName: js.UndefOr[OpsDataAttributeName]
+    var Filters: js.UndefOr[OpsFilterList]
+    var TypeName: js.UndefOr[OpsDataTypeName]
+    var Values: js.UndefOr[OpsAggregatorValueMap]
+  }
+
+  object OpsAggregator {
+    def apply(
+        AggregatorType: js.UndefOr[OpsAggregatorType] = js.undefined,
+        Aggregators: js.UndefOr[OpsAggregatorList] = js.undefined,
+        AttributeName: js.UndefOr[OpsDataAttributeName] = js.undefined,
+        Filters: js.UndefOr[OpsFilterList] = js.undefined,
+        TypeName: js.UndefOr[OpsDataTypeName] = js.undefined,
+        Values: js.UndefOr[OpsAggregatorValueMap] = js.undefined
+    ): OpsAggregator = {
+      val __obj = js.Dictionary.empty[js.Any]
+      AggregatorType.foreach(__v => __obj.update("AggregatorType", __v.asInstanceOf[js.Any]))
+      Aggregators.foreach(__v => __obj.update("Aggregators", __v.asInstanceOf[js.Any]))
+      AttributeName.foreach(__v => __obj.update("AttributeName", __v.asInstanceOf[js.Any]))
+      Filters.foreach(__v => __obj.update("Filters", __v.asInstanceOf[js.Any]))
+      TypeName.foreach(__v => __obj.update("TypeName", __v.asInstanceOf[js.Any]))
+      Values.foreach(__v => __obj.update("Values", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[OpsAggregator]
+    }
+  }
+
+  /**
+    * The result of the query.
+    */
+  @js.native
+  trait OpsEntity extends js.Object {
+    var Data: js.UndefOr[OpsEntityItemMap]
+    var Id: js.UndefOr[OpsEntityId]
+  }
+
+  object OpsEntity {
+    def apply(
+        Data: js.UndefOr[OpsEntityItemMap] = js.undefined,
+        Id: js.UndefOr[OpsEntityId] = js.undefined
+    ): OpsEntity = {
+      val __obj = js.Dictionary.empty[js.Any]
+      Data.foreach(__v => __obj.update("Data", __v.asInstanceOf[js.Any]))
+      Id.foreach(__v => __obj.update("Id", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[OpsEntity]
+    }
+  }
+
+  /**
+    * The OpsItem summaries result item.
+    */
+  @js.native
+  trait OpsEntityItem extends js.Object {
+    var Content: js.UndefOr[OpsEntityItemEntryList]
+  }
+
+  object OpsEntityItem {
+    def apply(
+        Content: js.UndefOr[OpsEntityItemEntryList] = js.undefined
+    ): OpsEntityItem = {
+      val __obj = js.Dictionary.empty[js.Any]
+      Content.foreach(__v => __obj.update("Content", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[OpsEntityItem]
+    }
+  }
+
+  /**
+    * A filter for viewing OpsItem summaries.
+    */
+  @js.native
+  trait OpsFilter extends js.Object {
+    var Key: OpsFilterKey
+    var Values: OpsFilterValueList
+    var Type: js.UndefOr[OpsFilterOperatorType]
+  }
+
+  object OpsFilter {
+    def apply(
+        Key: OpsFilterKey,
+        Values: OpsFilterValueList,
+        Type: js.UndefOr[OpsFilterOperatorType] = js.undefined
+    ): OpsFilter = {
+      val __obj = js.Dictionary[js.Any](
+        "Key"    -> Key.asInstanceOf[js.Any],
+        "Values" -> Values.asInstanceOf[js.Any]
+      )
+
+      Type.foreach(__v => __obj.update("Type", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[OpsFilter]
+    }
+  }
+
+  object OpsFilterOperatorTypeEnum {
+    val Equal       = "Equal"
+    val NotEqual    = "NotEqual"
+    val BeginWith   = "BeginWith"
+    val LessThan    = "LessThan"
+    val GreaterThan = "GreaterThan"
+    val Exists      = "Exists"
+
+    val values = IndexedSeq(Equal, NotEqual, BeginWith, LessThan, GreaterThan, Exists)
+  }
+
+  /**
+    * Operations engineers and IT professionals use OpsCenter to view, investigate, and remediate operational issues impacting the performance and health of their AWS resources. For more information, see [[http://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter.html|AWS Systems Manager OpsCenter]] in the <i>AWS Systems Manager User Guide</i>.
+    */
+  @js.native
+  trait OpsItem extends js.Object {
+    var CreatedBy: js.UndefOr[String]
+    var CreatedTime: js.UndefOr[DateTime]
+    var Description: js.UndefOr[OpsItemDescription]
+    var LastModifiedBy: js.UndefOr[String]
+    var LastModifiedTime: js.UndefOr[DateTime]
+    var Notifications: js.UndefOr[OpsItemNotifications]
+    var OperationalData: js.UndefOr[OpsItemOperationalData]
+    var OpsItemId: js.UndefOr[OpsItemId]
+    var Priority: js.UndefOr[OpsItemPriority]
+    var RelatedOpsItems: js.UndefOr[RelatedOpsItems]
+    var Source: js.UndefOr[OpsItemSource]
+    var Status: js.UndefOr[OpsItemStatus]
+    var Title: js.UndefOr[OpsItemTitle]
+    var Version: js.UndefOr[String]
+  }
+
+  object OpsItem {
+    def apply(
+        CreatedBy: js.UndefOr[String] = js.undefined,
+        CreatedTime: js.UndefOr[DateTime] = js.undefined,
+        Description: js.UndefOr[OpsItemDescription] = js.undefined,
+        LastModifiedBy: js.UndefOr[String] = js.undefined,
+        LastModifiedTime: js.UndefOr[DateTime] = js.undefined,
+        Notifications: js.UndefOr[OpsItemNotifications] = js.undefined,
+        OperationalData: js.UndefOr[OpsItemOperationalData] = js.undefined,
+        OpsItemId: js.UndefOr[OpsItemId] = js.undefined,
+        Priority: js.UndefOr[OpsItemPriority] = js.undefined,
+        RelatedOpsItems: js.UndefOr[RelatedOpsItems] = js.undefined,
+        Source: js.UndefOr[OpsItemSource] = js.undefined,
+        Status: js.UndefOr[OpsItemStatus] = js.undefined,
+        Title: js.UndefOr[OpsItemTitle] = js.undefined,
+        Version: js.UndefOr[String] = js.undefined
+    ): OpsItem = {
+      val __obj = js.Dictionary.empty[js.Any]
+      CreatedBy.foreach(__v => __obj.update("CreatedBy", __v.asInstanceOf[js.Any]))
+      CreatedTime.foreach(__v => __obj.update("CreatedTime", __v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
+      LastModifiedBy.foreach(__v => __obj.update("LastModifiedBy", __v.asInstanceOf[js.Any]))
+      LastModifiedTime.foreach(__v => __obj.update("LastModifiedTime", __v.asInstanceOf[js.Any]))
+      Notifications.foreach(__v => __obj.update("Notifications", __v.asInstanceOf[js.Any]))
+      OperationalData.foreach(__v => __obj.update("OperationalData", __v.asInstanceOf[js.Any]))
+      OpsItemId.foreach(__v => __obj.update("OpsItemId", __v.asInstanceOf[js.Any]))
+      Priority.foreach(__v => __obj.update("Priority", __v.asInstanceOf[js.Any]))
+      RelatedOpsItems.foreach(__v => __obj.update("RelatedOpsItems", __v.asInstanceOf[js.Any]))
+      Source.foreach(__v => __obj.update("Source", __v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.update("Status", __v.asInstanceOf[js.Any]))
+      Title.foreach(__v => __obj.update("Title", __v.asInstanceOf[js.Any]))
+      Version.foreach(__v => __obj.update("Version", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[OpsItem]
+    }
+  }
+
+  object OpsItemDataTypeEnum {
+    val SearchableString = "SearchableString"
+    val String           = "String"
+
+    val values = IndexedSeq(SearchableString, String)
+  }
+
+  /**
+    * An object that defines the value of the key and its type in the OperationalData map.
+    */
+  @js.native
+  trait OpsItemDataValue extends js.Object {
+    var Type: js.UndefOr[OpsItemDataType]
+    var Value: js.UndefOr[OpsItemDataValueString]
+  }
+
+  object OpsItemDataValue {
+    def apply(
+        Type: js.UndefOr[OpsItemDataType] = js.undefined,
+        Value: js.UndefOr[OpsItemDataValueString] = js.undefined
+    ): OpsItemDataValue = {
+      val __obj = js.Dictionary.empty[js.Any]
+      Type.foreach(__v => __obj.update("Type", __v.asInstanceOf[js.Any]))
+      Value.foreach(__v => __obj.update("Value", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[OpsItemDataValue]
+    }
+  }
+
+  /**
+    * Describes an OpsItem filter.
+    */
+  @js.native
+  trait OpsItemFilter extends js.Object {
+    var Key: OpsItemFilterKey
+    var Operator: OpsItemFilterOperator
+    var Values: OpsItemFilterValues
+  }
+
+  object OpsItemFilter {
+    def apply(
+        Key: OpsItemFilterKey,
+        Operator: OpsItemFilterOperator,
+        Values: OpsItemFilterValues
+    ): OpsItemFilter = {
+      val __obj = js.Dictionary[js.Any](
+        "Key"      -> Key.asInstanceOf[js.Any],
+        "Operator" -> Operator.asInstanceOf[js.Any],
+        "Values"   -> Values.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[OpsItemFilter]
+    }
+  }
+
+  object OpsItemFilterKeyEnum {
+    val Status               = "Status"
+    val CreatedBy            = "CreatedBy"
+    val Source               = "Source"
+    val Priority             = "Priority"
+    val Title                = "Title"
+    val OpsItemId            = "OpsItemId"
+    val CreatedTime          = "CreatedTime"
+    val LastModifiedTime     = "LastModifiedTime"
+    val OperationalData      = "OperationalData"
+    val OperationalDataKey   = "OperationalDataKey"
+    val OperationalDataValue = "OperationalDataValue"
+    val ResourceId           = "ResourceId"
+    val AutomationId         = "AutomationId"
+
+    val values = IndexedSeq(
+      Status,
+      CreatedBy,
+      Source,
+      Priority,
+      Title,
+      OpsItemId,
+      CreatedTime,
+      LastModifiedTime,
+      OperationalData,
+      OperationalDataKey,
+      OperationalDataValue,
+      ResourceId,
+      AutomationId
+    )
+  }
+
+  object OpsItemFilterOperatorEnum {
+    val Equal       = "Equal"
+    val Contains    = "Contains"
+    val GreaterThan = "GreaterThan"
+    val LessThan    = "LessThan"
+
+    val values = IndexedSeq(Equal, Contains, GreaterThan, LessThan)
+  }
+
+  /**
+    * A notification about the OpsItem.
+    */
+  @js.native
+  trait OpsItemNotification extends js.Object {
+    var Arn: js.UndefOr[String]
+  }
+
+  object OpsItemNotification {
+    def apply(
+        Arn: js.UndefOr[String] = js.undefined
+    ): OpsItemNotification = {
+      val __obj = js.Dictionary.empty[js.Any]
+      Arn.foreach(__v => __obj.update("Arn", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[OpsItemNotification]
+    }
+  }
+
+  object OpsItemStatusEnum {
+    val Open       = "Open"
+    val InProgress = "InProgress"
+    val Resolved   = "Resolved"
+
+    val values = IndexedSeq(Open, InProgress, Resolved)
+  }
+
+  /**
+    * A count of OpsItems.
+    */
+  @js.native
+  trait OpsItemSummary extends js.Object {
+    var CreatedBy: js.UndefOr[String]
+    var CreatedTime: js.UndefOr[DateTime]
+    var LastModifiedBy: js.UndefOr[String]
+    var LastModifiedTime: js.UndefOr[DateTime]
+    var OperationalData: js.UndefOr[OpsItemOperationalData]
+    var OpsItemId: js.UndefOr[OpsItemId]
+    var Priority: js.UndefOr[OpsItemPriority]
+    var Source: js.UndefOr[OpsItemSource]
+    var Status: js.UndefOr[OpsItemStatus]
+    var Title: js.UndefOr[OpsItemTitle]
+  }
+
+  object OpsItemSummary {
+    def apply(
+        CreatedBy: js.UndefOr[String] = js.undefined,
+        CreatedTime: js.UndefOr[DateTime] = js.undefined,
+        LastModifiedBy: js.UndefOr[String] = js.undefined,
+        LastModifiedTime: js.UndefOr[DateTime] = js.undefined,
+        OperationalData: js.UndefOr[OpsItemOperationalData] = js.undefined,
+        OpsItemId: js.UndefOr[OpsItemId] = js.undefined,
+        Priority: js.UndefOr[OpsItemPriority] = js.undefined,
+        Source: js.UndefOr[OpsItemSource] = js.undefined,
+        Status: js.UndefOr[OpsItemStatus] = js.undefined,
+        Title: js.UndefOr[OpsItemTitle] = js.undefined
+    ): OpsItemSummary = {
+      val __obj = js.Dictionary.empty[js.Any]
+      CreatedBy.foreach(__v => __obj.update("CreatedBy", __v.asInstanceOf[js.Any]))
+      CreatedTime.foreach(__v => __obj.update("CreatedTime", __v.asInstanceOf[js.Any]))
+      LastModifiedBy.foreach(__v => __obj.update("LastModifiedBy", __v.asInstanceOf[js.Any]))
+      LastModifiedTime.foreach(__v => __obj.update("LastModifiedTime", __v.asInstanceOf[js.Any]))
+      OperationalData.foreach(__v => __obj.update("OperationalData", __v.asInstanceOf[js.Any]))
+      OpsItemId.foreach(__v => __obj.update("OpsItemId", __v.asInstanceOf[js.Any]))
+      Priority.foreach(__v => __obj.update("Priority", __v.asInstanceOf[js.Any]))
+      Source.foreach(__v => __obj.update("Source", __v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.update("Status", __v.asInstanceOf[js.Any]))
+      Title.foreach(__v => __obj.update("Title", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[OpsItemSummary]
+    }
+  }
+
+  /**
     * Information about the source where the association execution details are stored.
     */
   @js.native
@@ -7995,6 +8624,8 @@ package ssm {
     var LastModifiedDate: js.UndefOr[DateTime]
     var LastModifiedUser: js.UndefOr[String]
     var Name: js.UndefOr[PSParameterName]
+    var Policies: js.UndefOr[ParameterPolicyList]
+    var Tier: js.UndefOr[ParameterTier]
     var Type: js.UndefOr[ParameterType]
     var Value: js.UndefOr[PSParameterValue]
     var Version: js.UndefOr[PSParameterVersion]
@@ -8009,6 +8640,8 @@ package ssm {
         LastModifiedDate: js.UndefOr[DateTime] = js.undefined,
         LastModifiedUser: js.UndefOr[String] = js.undefined,
         Name: js.UndefOr[PSParameterName] = js.undefined,
+        Policies: js.UndefOr[ParameterPolicyList] = js.undefined,
+        Tier: js.UndefOr[ParameterTier] = js.undefined,
         Type: js.UndefOr[ParameterType] = js.undefined,
         Value: js.UndefOr[PSParameterValue] = js.undefined,
         Version: js.UndefOr[PSParameterVersion] = js.undefined
@@ -8021,6 +8654,8 @@ package ssm {
       LastModifiedDate.foreach(__v => __obj.update("LastModifiedDate", __v.asInstanceOf[js.Any]))
       LastModifiedUser.foreach(__v => __obj.update("LastModifiedUser", __v.asInstanceOf[js.Any]))
       Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
+      Policies.foreach(__v => __obj.update("Policies", __v.asInstanceOf[js.Any]))
+      Tier.foreach(__v => __obj.update("Tier", __v.asInstanceOf[js.Any]))
       Type.foreach(__v => __obj.update("Type", __v.asInstanceOf[js.Any]))
       Value.foreach(__v => __obj.update("Value", __v.asInstanceOf[js.Any]))
       Version.foreach(__v => __obj.update("Version", __v.asInstanceOf[js.Any]))
@@ -8029,7 +8664,31 @@ package ssm {
   }
 
   /**
-    * Metada includes information like the ARN of the last user and the date/time the parameter was last used.
+    * One or more policies assigned to a parameter.
+    */
+  @js.native
+  trait ParameterInlinePolicy extends js.Object {
+    var PolicyStatus: js.UndefOr[String]
+    var PolicyText: js.UndefOr[String]
+    var PolicyType: js.UndefOr[String]
+  }
+
+  object ParameterInlinePolicy {
+    def apply(
+        PolicyStatus: js.UndefOr[String] = js.undefined,
+        PolicyText: js.UndefOr[String] = js.undefined,
+        PolicyType: js.UndefOr[String] = js.undefined
+    ): ParameterInlinePolicy = {
+      val __obj = js.Dictionary.empty[js.Any]
+      PolicyStatus.foreach(__v => __obj.update("PolicyStatus", __v.asInstanceOf[js.Any]))
+      PolicyText.foreach(__v => __obj.update("PolicyText", __v.asInstanceOf[js.Any]))
+      PolicyType.foreach(__v => __obj.update("PolicyType", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ParameterInlinePolicy]
+    }
+  }
+
+  /**
+    * Metadata includes information like the ARN of the last user and the date/time the parameter was last used.
     */
   @js.native
   trait ParameterMetadata extends js.Object {
@@ -8039,6 +8698,8 @@ package ssm {
     var LastModifiedDate: js.UndefOr[DateTime]
     var LastModifiedUser: js.UndefOr[String]
     var Name: js.UndefOr[PSParameterName]
+    var Policies: js.UndefOr[ParameterPolicyList]
+    var Tier: js.UndefOr[ParameterTier]
     var Type: js.UndefOr[ParameterType]
     var Version: js.UndefOr[PSParameterVersion]
   }
@@ -8051,6 +8712,8 @@ package ssm {
         LastModifiedDate: js.UndefOr[DateTime] = js.undefined,
         LastModifiedUser: js.UndefOr[String] = js.undefined,
         Name: js.UndefOr[PSParameterName] = js.undefined,
+        Policies: js.UndefOr[ParameterPolicyList] = js.undefined,
+        Tier: js.UndefOr[ParameterTier] = js.undefined,
         Type: js.UndefOr[ParameterType] = js.undefined,
         Version: js.UndefOr[PSParameterVersion] = js.undefined
     ): ParameterMetadata = {
@@ -8061,6 +8724,8 @@ package ssm {
       LastModifiedDate.foreach(__v => __obj.update("LastModifiedDate", __v.asInstanceOf[js.Any]))
       LastModifiedUser.foreach(__v => __obj.update("LastModifiedUser", __v.asInstanceOf[js.Any]))
       Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
+      Policies.foreach(__v => __obj.update("Policies", __v.asInstanceOf[js.Any]))
+      Tier.foreach(__v => __obj.update("Tier", __v.asInstanceOf[js.Any]))
       Type.foreach(__v => __obj.update("Type", __v.asInstanceOf[js.Any]))
       Version.foreach(__v => __obj.update("Version", __v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ParameterMetadata]
@@ -8070,7 +8735,7 @@ package ssm {
   /**
     * One or more filters. Use a filter to return a more specific list of results.
     *
-    * '''Note:'''The <code>Name</code> field can't be used with the <a>GetParametersByPath</a> API action.
+    * '''Note:'''The <code>Name</code> and <code>Tier</code> filter keys can't be used with the <a>GetParametersByPath</a> API action. Also, the <code>Label</code> filter key can't be used with the <a>DescribeParameters</a> API action.
     */
   @js.native
   trait ParameterStringFilter extends js.Object {
@@ -8093,6 +8758,14 @@ package ssm {
       Values.foreach(__v => __obj.update("Values", __v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ParameterStringFilter]
     }
+  }
+
+  object ParameterTierEnum {
+    val Standard              = "Standard"
+    val Advanced              = "Advanced"
+    val `Intelligent-Tiering` = "Intelligent-Tiering"
+
+    val values = IndexedSeq(Standard, Advanced, `Intelligent-Tiering`)
   }
 
   object ParameterTypeEnum {
@@ -8292,207 +8965,9 @@ package ssm {
   }
 
   /**
-    * Defines a patch filter.
-    *  A patch filter consists of key/value pairs, but not all keys are valid for all operating system types. For example, the key <code>PRODUCT</code> is valid for all supported operating system types. The key <code>MSRC_SEVERITY</code>, however, is valid only for Windows operating systems, and the key <code>SECTION</code> is valid only for Ubuntu operating systems.
-    *  Refer to the following sections for information about which keys may be used with each major operating system, and which values are valid for each key.
-    *  ```Windows Operating Systems```
-    *  The supported keys for Windows operating systems are <code>PRODUCT</code>, <code>CLASSIFICATION</code>, and <code>MSRC_SEVERITY</code>. See the following lists for valid values for each of these keys.
-    *  <i>Supported key:</i> <code>PRODUCT</code>
-    *  <i>Supported values:</i>
-    * * <code>Windows7</code>
-    *  * <code>Windows8</code>
-    *  * <code>Windows8.1</code>
-    *  * <code>Windows8Embedded</code>
-    *  * <code>Windows10</code>
-    *  * <code>Windows10LTSB</code>
-    *  * <code>WindowsServer2008</code>
-    *  * <code>WindowsServer2008R2</code>
-    *  * <code>WindowsServer2012</code>
-    *  * <code>WindowsServer2012R2</code>
-    *  * <code>WindowsServer2016</code>
-    *  * <code>WindowsServer2019</code>
-    *  * <code>*</code>
-    *  <i>Use a wildcard character (*) to target all supported operating system versions.</i>
-    * <i>Supported key:</i> <code>CLASSIFICATION</code>
-    *  <i>Supported values:</i>
-    * * <code>CriticalUpdates</code>
-    *  * <code>DefinitionUpdates</code>
-    *  * <code>Drivers</code>
-    *  * <code>FeaturePacks</code>
-    *  * <code>SecurityUpdates</code>
-    *  * <code>ServicePacks</code>
-    *  * <code>Tools</code>
-    *  * <code>UpdateRollups</code>
-    *  * <code>Updates</code>
-    *  * <code>Upgrades</code>
-    * <i>Supported key:</i> <code>MSRC_SEVERITY</code>
-    *  <i>Supported values:</i>
-    * * <code>Critical</code>
-    *  * <code>Important</code>
-    *  * <code>Moderate</code>
-    *  * <code>Low</code>
-    *  * <code>Unspecified</code>
-    * ```Ubuntu Operating Systems```
-    *  The supported keys for Ubuntu operating systems are <code>PRODUCT</code>, <code>PRIORITY</code>, and <code>SECTION</code>. See the following lists for valid values for each of these keys.
-    *  <i>Supported key:</i> <code>PRODUCT</code>
-    *  <i>Supported values:</i>
-    * * <code>Ubuntu14.04</code>
-    *  * <code>Ubuntu16.04</code>
-    *  * <code>*</code>
-    *  <i>Use a wildcard character (*) to target all supported operating system versions.</i>
-    * <i>Supported key:</i> <code>PRIORITY</code>
-    *  <i>Supported values:</i>
-    * * <code>Required</code>
-    *  * <code>Important</code>
-    *  * <code>Standard</code>
-    *  * <code>Optional</code>
-    *  * <code>Extra</code>
-    * <i>Supported key:</i> <code>SECTION</code>
-    *  Only the length of the key value is validated. Minimum length is 1. Maximum length is 64.
-    *  ```Amazon Linux Operating Systems```
-    *  The supported keys for Amazon Linux operating systems are <code>PRODUCT</code>, <code>CLASSIFICATION</code>, and <code>SEVERITY</code>. See the following lists for valid values for each of these keys.
-    *  <i>Supported key:</i> <code>PRODUCT</code>
-    *  <i>Supported values:</i>
-    * * <code>AmazonLinux2012.03</code>
-    *  * <code>AmazonLinux2012.09</code>
-    *  * <code>AmazonLinux2013.03</code>
-    *  * <code>AmazonLinux2013.09</code>
-    *  * <code>AmazonLinux2014.03</code>
-    *  * <code>AmazonLinux2014.09</code>
-    *  * <code>AmazonLinux2015.03</code>
-    *  * <code>AmazonLinux2015.09</code>
-    *  * <code>AmazonLinux2016.03</code>
-    *  * <code>AmazonLinux2016.09</code>
-    *  * <code>AmazonLinux2017.03</code>
-    *  * <code>AmazonLinux2017.09</code>
-    *  * <code>*</code>
-    *  <i>Use a wildcard character (*) to target all supported operating system versions.</i>
-    * <i>Supported key:</i> <code>CLASSIFICATION</code>
-    *  <i>Supported values:</i>
-    * * <code>Security</code>
-    *  * <code>Bugfix</code>
-    *  * <code>Enhancement</code>
-    *  * <code>Recommended</code>
-    *  * <code>Newpackage</code>
-    * <i>Supported key:</i> <code>SEVERITY</code>
-    *  <i>Supported values:</i>
-    * * <code>Critical</code>
-    *  * <code>Important</code>
-    *  * <code>Medium</code>
-    *  * <code>Low</code>
-    * ```Amazon Linux 2 Operating Systems```
-    *  The supported keys for Amazon Linux 2 operating systems are <code>PRODUCT</code>, <code>CLASSIFICATION</code>, and <code>SEVERITY</code>. See the following lists for valid values for each of these keys.
-    *  <i>Supported key:</i> <code>PRODUCT</code>
-    *  <i>Supported values:</i>
-    * * <code>AmazonLinux2</code>
-    *  * <code>AmazonLinux2.0</code>
-    *  * <code>*</code>
-    *  <i>Use a wildcard character (*) to target all supported operating system versions.</i>
-    * <i>Supported key:</i> <code>CLASSIFICATION</code>
-    *  <i>Supported values:</i>
-    * * <code>Security</code>
-    *  * <code>Bugfix</code>
-    *  * <code>Enhancement</code>
-    *  * <code>Recommended</code>
-    *  * <code>Newpackage</code>
-    * <i>Supported key:</i> <code>SEVERITY</code>
-    *  <i>Supported values:</i>
-    * * <code>Critical</code>
-    *  * <code>Important</code>
-    *  * <code>Medium</code>
-    *  * <code>Low</code>
-    * ```RedHat Enterprise Linux (RHEL) Operating Systems```
-    *  The supported keys for RedHat Enterprise Linux operating systems are <code>PRODUCT</code>, <code>CLASSIFICATION</code>, and <code>SEVERITY</code>. See the following lists for valid values for each of these keys.
-    *  <i>Supported key:</i> <code>PRODUCT</code>
-    *  <i>Supported values:</i>
-    * * <code>RedhatEnterpriseLinux6.5</code>
-    *  * <code>RedhatEnterpriseLinux6.6</code>
-    *  * <code>RedhatEnterpriseLinux6.7</code>
-    *  * <code>RedhatEnterpriseLinux6.8</code>
-    *  * <code>RedhatEnterpriseLinux6.9</code>
-    *  * <code>RedhatEnterpriseLinux7.0</code>
-    *  * <code>RedhatEnterpriseLinux7.1</code>
-    *  * <code>RedhatEnterpriseLinux7.2</code>
-    *  * <code>RedhatEnterpriseLinux7.3</code>
-    *  * <code>RedhatEnterpriseLinux7.4</code>
-    *  * <code>RedhatEnterpriseLinux7.5</code>
-    *  * <code>RedhatEnterpriseLinux7.6</code>
-    *  * <code>*</code>
-    *  <i>Use a wildcard character (*) to target all supported operating system versions.</i>
-    * <i>Supported key:</i> <code>CLASSIFICATION</code>
-    *  <i>Supported values:</i>
-    * * <code>Security</code>
-    *  * <code>Bugfix</code>
-    *  * <code>Enhancement</code>
-    *  * <code>Recommended</code>
-    *  * <code>Newpackage</code>
-    * <i>Supported key:</i> <code>SEVERITY</code>
-    *  <i>Supported values:</i>
-    * * <code>Critical</code>
-    *  * <code>Important</code>
-    *  * <code>Medium</code>
-    *  * <code>Low</code>
-    * ```SUSE Linux Enterprise Server (SLES) Operating Systems```
-    *  The supported keys for SLES operating systems are <code>PRODUCT</code>, <code>CLASSIFICATION</code>, and <code>SEVERITY</code>. See the following lists for valid values for each of these keys.
-    *  <i>Supported key:</i> <code>PRODUCT</code>
-    *  <i>Supported values:</i>
-    * * <code>Suse12.0</code>
-    *  * <code>Suse12.1</code>
-    *  * <code>Suse12.2</code>
-    *  * <code>Suse12.3</code>
-    *  * <code>Suse12.4</code>
-    *  * <code>Suse12.5</code>
-    *  * <code>Suse12.6</code>
-    *  * <code>Suse12.7</code>
-    *  * <code>Suse12.8</code>
-    *  * <code>Suse12.9</code>
-    *  * <code>*</code>
-    *  <i>Use a wildcard character (*) to target all supported operating system versions.</i>
-    * <i>Supported key:</i> <code>CLASSIFICATION</code>
-    *  <i>Supported values:</i>
-    * * <code>Security</code>
-    *  * <code>Recommended</code>
-    *  * <code>Optional</code>
-    *  * <code>Feature</code>
-    *  * <code>Document</code>
-    *  * <code>Yast</code>
-    * <i>Supported key:</i> <code>SEVERITY</code>
-    *  <i>Supported values:</i>
-    * * <code>Critical</code>
-    *  * <code>Important</code>
-    *  * <code>Moderate</code>
-    *  * <code>Low</code>
-    * ```CentOS Operating Systems```
-    *  The supported keys for CentOS operating systems are <code>PRODUCT</code>, <code>CLASSIFICATION</code>, and <code>SEVERITY</code>. See the following lists for valid values for each of these keys.
-    *  <i>Supported key:</i> <code>PRODUCT</code>
-    *  <i>Supported values:</i>
-    * * <code>CentOS6.5</code>
-    *  * <code>CentOS6.6</code>
-    *  * <code>CentOS6.7</code>
-    *  * <code>CentOS6.8</code>
-    *  * <code>CentOS6.9</code>
-    *  * <code>CentOS7.0</code>
-    *  * <code>CentOS7.1</code>
-    *  * <code>CentOS7.2</code>
-    *  * <code>CentOS7.3</code>
-    *  * <code>CentOS7.4</code>
-    *  * <code>CentOS7.5</code>
-    *  * <code>CentOS7.6</code>
-    *  * <code>*</code>
-    *  <i>Use a wildcard character (*) to target all supported operating system versions.</i>
-    * <i>Supported key:</i> <code>CLASSIFICATION</code>
-    *  <i>Supported values:</i>
-    * * <code>Security</code>
-    *  * <code>Bugfix</code>
-    *  * <code>Enhancement</code>
-    *  * <code>Recommended</code>
-    *  * <code>Newpackage</code>
-    * <i>Supported key:</i> <code>SEVERITY</code>
-    *  <i>Supported values:</i>
-    * * <code>Critical</code>
-    *  * <code>Important</code>
-    *  * <code>Medium</code>
-    *  * <code>Low</code>
+    * Defines which patches should be included in a patch baseline.
+    *  A patch filter consists of a key and a set of values. The filter key is a patch property. For example, the available filter keys for WINDOWS are PATCH_SET, PRODUCT, PRODUCT_FAMILY, CLASSIFICATION, and MSRC_SEVERITY. The filter values define a matching criterion for the patch property indicated by the key. For example, if the filter key is PRODUCT and the filter values are ["Office 2013", "Office 2016"], then the filter accepts all patches where product name is either "Office 2013" or "Office 2016". The filter values can be exact values for the patch property given as a key, or a wildcard (*), which matches all values.
+    *  You can view lists of valid values for the patch properties by running the <code>DescribePatchProperties</code> command. For information about which patch properties can be used with each major operating system, see <a>DescribePatchProperties</a>.
     */
   @js.native
   trait PatchFilter extends js.Object {
@@ -8535,7 +9010,9 @@ package ssm {
   }
 
   object PatchFilterKeyEnum {
+    val PATCH_SET      = "PATCH_SET"
     val PRODUCT        = "PRODUCT"
+    val PRODUCT_FAMILY = "PRODUCT_FAMILY"
     val CLASSIFICATION = "CLASSIFICATION"
     val MSRC_SEVERITY  = "MSRC_SEVERITY"
     val PATCH_ID       = "PATCH_ID"
@@ -8543,7 +9020,17 @@ package ssm {
     val PRIORITY       = "PRIORITY"
     val SEVERITY       = "SEVERITY"
 
-    val values = IndexedSeq(PRODUCT, CLASSIFICATION, MSRC_SEVERITY, PATCH_ID, SECTION, PRIORITY, SEVERITY)
+    val values = IndexedSeq(
+      PATCH_SET,
+      PRODUCT,
+      PRODUCT_FAMILY,
+      CLASSIFICATION,
+      MSRC_SEVERITY,
+      PATCH_ID,
+      SECTION,
+      PRIORITY,
+      SEVERITY
+    )
   }
 
   /**
@@ -8595,6 +9082,17 @@ package ssm {
     }
   }
 
+  object PatchPropertyEnum {
+    val PRODUCT        = "PRODUCT"
+    val PRODUCT_FAMILY = "PRODUCT_FAMILY"
+    val CLASSIFICATION = "CLASSIFICATION"
+    val MSRC_SEVERITY  = "MSRC_SEVERITY"
+    val PRIORITY       = "PRIORITY"
+    val SEVERITY       = "SEVERITY"
+
+    val values = IndexedSeq(PRODUCT, PRODUCT_FAMILY, CLASSIFICATION, MSRC_SEVERITY, PRIORITY, SEVERITY)
+  }
+
   /**
     * Defines an approval rule for a patch baseline.
     */
@@ -8642,6 +9140,13 @@ package ssm {
 
       __obj.asInstanceOf[PatchRuleGroup]
     }
+  }
+
+  object PatchSetEnum {
+    val OS          = "OS"
+    val APPLICATION = "APPLICATION"
+
+    val values = IndexedSeq(OS, APPLICATION)
   }
 
   /**
@@ -8827,7 +9332,9 @@ package ssm {
     var Description: js.UndefOr[ParameterDescription]
     var KeyId: js.UndefOr[ParameterKeyId]
     var Overwrite: js.UndefOr[Boolean]
+    var Policies: js.UndefOr[ParameterPolicies]
     var Tags: js.UndefOr[TagList]
+    var Tier: js.UndefOr[ParameterTier]
   }
 
   object PutParameterRequest {
@@ -8839,7 +9346,9 @@ package ssm {
         Description: js.UndefOr[ParameterDescription] = js.undefined,
         KeyId: js.UndefOr[ParameterKeyId] = js.undefined,
         Overwrite: js.UndefOr[Boolean] = js.undefined,
-        Tags: js.UndefOr[TagList] = js.undefined
+        Policies: js.UndefOr[ParameterPolicies] = js.undefined,
+        Tags: js.UndefOr[TagList] = js.undefined,
+        Tier: js.UndefOr[ParameterTier] = js.undefined
     ): PutParameterRequest = {
       val __obj = js.Dictionary[js.Any](
         "Name"  -> Name.asInstanceOf[js.Any],
@@ -8851,7 +9360,9 @@ package ssm {
       Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
       KeyId.foreach(__v => __obj.update("KeyId", __v.asInstanceOf[js.Any]))
       Overwrite.foreach(__v => __obj.update("Overwrite", __v.asInstanceOf[js.Any]))
+      Policies.foreach(__v => __obj.update("Policies", __v.asInstanceOf[js.Any]))
       Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
+      Tier.foreach(__v => __obj.update("Tier", __v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PutParameterRequest]
     }
   }
@@ -9059,6 +9570,26 @@ package ssm {
       val __obj = js.Dictionary.empty[js.Any]
       WindowTaskId.foreach(__v => __obj.update("WindowTaskId", __v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[RegisterTaskWithMaintenanceWindowResult]
+    }
+  }
+
+  /**
+    * An OpsItems that shares something in common with the current OpsItem. For example, related OpsItems can include OpsItems with similar error messages, impacted resources, or statuses for the impacted resource.
+    */
+  @js.native
+  trait RelatedOpsItem extends js.Object {
+    var OpsItemId: String
+  }
+
+  object RelatedOpsItem {
+    def apply(
+        OpsItemId: String
+    ): RelatedOpsItem = {
+      val __obj = js.Dictionary[js.Any](
+        "OpsItemId" -> OpsItemId.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[RelatedOpsItem]
     }
   }
 
@@ -9283,8 +9814,9 @@ package ssm {
     val MaintenanceWindow = "MaintenanceWindow"
     val Parameter         = "Parameter"
     val PatchBaseline     = "PatchBaseline"
+    val OpsItem           = "OpsItem"
 
-    val values = IndexedSeq(Document, ManagedInstance, MaintenanceWindow, Parameter, PatchBaseline)
+    val values = IndexedSeq(Document, ManagedInstance, MaintenanceWindow, Parameter, PatchBaseline, OpsItem)
   }
 
   /**
@@ -9388,7 +9920,7 @@ package ssm {
   }
 
   /**
-    * Information about a scheduled execution for a Maintenance Window.
+    * Information about a scheduled execution for a maintenance window.
     */
   @js.native
   trait ScheduledWindowExecution extends js.Object {
@@ -10008,7 +10540,7 @@ package ssm {
   }
 
   /**
-    * Metadata that you assign to your AWS resources. Tags enable you to categorize your resources in different ways, for example, by purpose, owner, or environment. In Systems Manager, you can apply tags to documents, managed instances, Maintenance Windows, Parameter Store parameters, and patch baselines.
+    * Metadata that you assign to your AWS resources. Tags enable you to categorize your resources in different ways, for example, by purpose, owner, or environment. In Systems Manager, you can apply tags to documents, managed instances, maintenance windows, Parameter Store parameters, and patch baselines.
     */
   @js.native
   trait Tag extends js.Object {
@@ -10031,8 +10563,20 @@ package ssm {
   }
 
   /**
-    * An array of search criteria that targets instances using a Key,Value combination that you specify. <code>Targets</code> is required if you don't provide one or more instance IDs in the call.
-    *  <p/>
+    * An array of search criteria that targets instances using a Key,Value combination that you specify.
+    *  Supported formats include the following.
+    * * <code>Key=InstanceIds,Values=<i>instance-id-1</i>,<i>instance-id-2</i>,<i>instance-id-3</i> </code>
+    *  * <code>Key=tag:<i>my-tag-key</i>,Values=<i>my-tag-value-1</i>,<i>my-tag-value-2</i> </code>
+    *  * <code>Key=tag-key,Values=<i>my-tag-key-1</i>,<i>my-tag-key-2</i> </code>
+    *  * (Maintenance window targets only) <code>Key=resource-groups:Name,Values=<i>resource-group-name</i> </code>
+    *  * (Maintenance window targets only) <code>Key=resource-groups:ResourceTypeFilters,Values=<i>resource-type-1</i>,<i>resource-type-2</i> </code>
+    * For example:
+    * * <code>Key=InstanceIds,Values=i-02573cafcfEXAMPLE,i-0471e04240EXAMPLE,i-07782c72faEXAMPLE</code>
+    *  * <code>Key=tag:CostCenter,Values=CostCenter1,CostCenter2,CostCenter3</code>
+    *  * <code>Key=tag-key,Values=Name,Instance-Type,CostCenter</code>
+    *  * (Maintenance window targets only) <code>Key=resource-groups:Name,Values=ProductionResourceGroup</code>
+    *  * (Maintenance window targets only) <code>Key=resource-groups:ResourceTypeFilters,Values=<i>AWS::EC2::INSTANCE</i>,<i>AWS::EC2::VPC</i> </code>
+    * For information about how to send commands that target instances using <code>Key,Value</code> parameters, see [[https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html#send-commands-targeting|Using Targets and Rate Controls to Send Commands to a Fleet]] in the <i>AWS Systems Manager User Guide</i>.
     */
   @js.native
   trait Target extends js.Object {
@@ -10605,6 +11149,59 @@ package ssm {
       val __obj = js.Dictionary.empty[js.Any]
 
       __obj.asInstanceOf[UpdateManagedInstanceRoleResult]
+    }
+  }
+
+  @js.native
+  trait UpdateOpsItemRequest extends js.Object {
+    var OpsItemId: OpsItemId
+    var Description: js.UndefOr[OpsItemDescription]
+    var Notifications: js.UndefOr[OpsItemNotifications]
+    var OperationalData: js.UndefOr[OpsItemOperationalData]
+    var OperationalDataToDelete: js.UndefOr[OpsItemOpsDataKeysList]
+    var Priority: js.UndefOr[OpsItemPriority]
+    var RelatedOpsItems: js.UndefOr[RelatedOpsItems]
+    var Status: js.UndefOr[OpsItemStatus]
+    var Title: js.UndefOr[OpsItemTitle]
+  }
+
+  object UpdateOpsItemRequest {
+    def apply(
+        OpsItemId: OpsItemId,
+        Description: js.UndefOr[OpsItemDescription] = js.undefined,
+        Notifications: js.UndefOr[OpsItemNotifications] = js.undefined,
+        OperationalData: js.UndefOr[OpsItemOperationalData] = js.undefined,
+        OperationalDataToDelete: js.UndefOr[OpsItemOpsDataKeysList] = js.undefined,
+        Priority: js.UndefOr[OpsItemPriority] = js.undefined,
+        RelatedOpsItems: js.UndefOr[RelatedOpsItems] = js.undefined,
+        Status: js.UndefOr[OpsItemStatus] = js.undefined,
+        Title: js.UndefOr[OpsItemTitle] = js.undefined
+    ): UpdateOpsItemRequest = {
+      val __obj = js.Dictionary[js.Any](
+        "OpsItemId" -> OpsItemId.asInstanceOf[js.Any]
+      )
+
+      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
+      Notifications.foreach(__v => __obj.update("Notifications", __v.asInstanceOf[js.Any]))
+      OperationalData.foreach(__v => __obj.update("OperationalData", __v.asInstanceOf[js.Any]))
+      OperationalDataToDelete.foreach(__v => __obj.update("OperationalDataToDelete", __v.asInstanceOf[js.Any]))
+      Priority.foreach(__v => __obj.update("Priority", __v.asInstanceOf[js.Any]))
+      RelatedOpsItems.foreach(__v => __obj.update("RelatedOpsItems", __v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.update("Status", __v.asInstanceOf[js.Any]))
+      Title.foreach(__v => __obj.update("Title", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateOpsItemRequest]
+    }
+  }
+
+  @js.native
+  trait UpdateOpsItemResponse extends js.Object {}
+
+  object UpdateOpsItemResponse {
+    def apply(
+        ): UpdateOpsItemResponse = {
+      val __obj = js.Dictionary.empty[js.Any]
+
+      __obj.asInstanceOf[UpdateOpsItemResponse]
     }
   }
 

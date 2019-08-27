@@ -337,9 +337,6 @@ package neptune {
     }
   }
 
-  /**
-    * <p/>
-    */
   @js.native
   trait AddSourceIdentifierToSubscriptionMessage extends js.Object {
     var SourceIdentifier: String
@@ -375,9 +372,6 @@ package neptune {
     }
   }
 
-  /**
-    * <p/>
-    */
   @js.native
   trait AddTagsToResourceMessage extends js.Object {
     var ResourceName: String
@@ -405,9 +399,6 @@ package neptune {
     val values = IndexedSeq(immediate, `pending-reboot`)
   }
 
-  /**
-    * <p/>
-    */
   @js.native
   trait ApplyPendingMaintenanceActionMessage extends js.Object {
     var ApplyAction: String
@@ -449,16 +440,7 @@ package neptune {
   }
 
   /**
-    * Specified CIDRIP or EC2 security group is not authorized for the specified DB security group.
-    *  Neptune may not also be authorized via IAM to perform necessary actions on your behalf.
-    */
-  @js.native
-  trait AuthorizationNotFoundFaultException extends js.Object {}
-
-  /**
-    * Contains Availability Zone information.
-    *  This data type is used as an element in the following data type:
-    * * <a>OrderableDBInstanceOption</a>
+    * Specifies an Availability Zone.
     */
   @js.native
   trait AvailabilityZone extends js.Object {
@@ -476,13 +458,7 @@ package neptune {
   }
 
   /**
-    * <i>CertificateIdentifier</i> does not refer to an existing certificate.
-    */
-  @js.native
-  trait CertificateNotFoundFaultException extends js.Object {}
-
-  /**
-    * This data type is used as a response element in the action <a>DescribeDBEngineVersions</a>.
+    * Specifies a character set.
     */
   @js.native
   trait CharacterSet extends js.Object {
@@ -504,6 +480,7 @@ package neptune {
 
   /**
     * The configuration setting for the log types to be enabled for export to CloudWatch Logs for a specific DB instance or DB cluster.
+    *  The <code>EnableLogTypes</code> and <code>DisableLogTypes</code> arrays determine which logs will be exported (or not exported) to CloudWatch Logs.
     */
   @js.native
   trait CloudwatchLogsExportConfiguration extends js.Object {
@@ -564,9 +541,6 @@ package neptune {
     }
   }
 
-  /**
-    * <p/>
-    */
   @js.native
   trait CopyDBClusterSnapshotMessage extends js.Object {
     var SourceDBClusterSnapshotIdentifier: String
@@ -614,9 +588,6 @@ package neptune {
     }
   }
 
-  /**
-    * <p/>
-    */
   @js.native
   trait CopyDBParameterGroupMessage extends js.Object {
     var SourceDBParameterGroupIdentifier: String
@@ -658,9 +629,6 @@ package neptune {
     }
   }
 
-  /**
-    * <p/>
-    */
   @js.native
   trait CreateDBClusterMessage extends js.Object {
     var DBClusterIdentifier: String
@@ -671,6 +639,7 @@ package neptune {
     var DBClusterParameterGroupName: js.UndefOr[String]
     var DBSubnetGroupName: js.UndefOr[String]
     var DatabaseName: js.UndefOr[String]
+    var EnableCloudwatchLogsExports: js.UndefOr[LogTypeList]
     var EnableIAMDatabaseAuthentication: js.UndefOr[BooleanOptional]
     var EngineVersion: js.UndefOr[String]
     var KmsKeyId: js.UndefOr[String]
@@ -697,6 +666,7 @@ package neptune {
         DBClusterParameterGroupName: js.UndefOr[String] = js.undefined,
         DBSubnetGroupName: js.UndefOr[String] = js.undefined,
         DatabaseName: js.UndefOr[String] = js.undefined,
+        EnableCloudwatchLogsExports: js.UndefOr[LogTypeList] = js.undefined,
         EnableIAMDatabaseAuthentication: js.UndefOr[BooleanOptional] = js.undefined,
         EngineVersion: js.UndefOr[String] = js.undefined,
         KmsKeyId: js.UndefOr[String] = js.undefined,
@@ -723,6 +693,7 @@ package neptune {
       DBClusterParameterGroupName.foreach(__v => __obj.update("DBClusterParameterGroupName", __v.asInstanceOf[js.Any]))
       DBSubnetGroupName.foreach(__v => __obj.update("DBSubnetGroupName", __v.asInstanceOf[js.Any]))
       DatabaseName.foreach(__v => __obj.update("DatabaseName", __v.asInstanceOf[js.Any]))
+      EnableCloudwatchLogsExports.foreach(__v => __obj.update("EnableCloudwatchLogsExports", __v.asInstanceOf[js.Any]))
       EnableIAMDatabaseAuthentication.foreach(
         __v => __obj.update("EnableIAMDatabaseAuthentication", __v.asInstanceOf[js.Any])
       )
@@ -743,9 +714,6 @@ package neptune {
     }
   }
 
-  /**
-    * <p/>
-    */
   @js.native
   trait CreateDBClusterParameterGroupMessage extends js.Object {
     var DBClusterParameterGroupName: String
@@ -802,9 +770,6 @@ package neptune {
     }
   }
 
-  /**
-    * <p/>
-    */
   @js.native
   trait CreateDBClusterSnapshotMessage extends js.Object {
     var DBClusterIdentifier: String
@@ -843,9 +808,6 @@ package neptune {
     }
   }
 
-  /**
-    * <p/>
-    */
   @js.native
   trait CreateDBInstanceMessage extends js.Object {
     var DBInstanceClass: String
@@ -1003,9 +965,6 @@ package neptune {
     }
   }
 
-  /**
-    * <p/>
-    */
   @js.native
   trait CreateDBParameterGroupMessage extends js.Object {
     var DBParameterGroupFamily: String
@@ -1047,9 +1006,6 @@ package neptune {
     }
   }
 
-  /**
-    * <p/>
-    */
   @js.native
   trait CreateDBSubnetGroupMessage extends js.Object {
     var DBSubnetGroupDescription: String
@@ -1091,9 +1047,6 @@ package neptune {
     }
   }
 
-  /**
-    * <p/>
-    */
   @js.native
   trait CreateEventSubscriptionMessage extends js.Object {
     var SnsTopicArn: String
@@ -1166,6 +1119,7 @@ package neptune {
     var DatabaseName: js.UndefOr[String]
     var DbClusterResourceId: js.UndefOr[String]
     var EarliestRestorableTime: js.UndefOr[TStamp]
+    var EnabledCloudwatchLogsExports: js.UndefOr[LogTypeList]
     var Endpoint: js.UndefOr[String]
     var Engine: js.UndefOr[String]
     var EngineVersion: js.UndefOr[String]
@@ -1205,6 +1159,7 @@ package neptune {
         DatabaseName: js.UndefOr[String] = js.undefined,
         DbClusterResourceId: js.UndefOr[String] = js.undefined,
         EarliestRestorableTime: js.UndefOr[TStamp] = js.undefined,
+        EnabledCloudwatchLogsExports: js.UndefOr[LogTypeList] = js.undefined,
         Endpoint: js.UndefOr[String] = js.undefined,
         Engine: js.UndefOr[String] = js.undefined,
         EngineVersion: js.UndefOr[String] = js.undefined,
@@ -1244,6 +1199,9 @@ package neptune {
       DatabaseName.foreach(__v => __obj.update("DatabaseName", __v.asInstanceOf[js.Any]))
       DbClusterResourceId.foreach(__v => __obj.update("DbClusterResourceId", __v.asInstanceOf[js.Any]))
       EarliestRestorableTime.foreach(__v => __obj.update("EarliestRestorableTime", __v.asInstanceOf[js.Any]))
+      EnabledCloudwatchLogsExports.foreach(
+        __v => __obj.update("EnabledCloudwatchLogsExports", __v.asInstanceOf[js.Any])
+      )
       Endpoint.foreach(__v => __obj.update("Endpoint", __v.asInstanceOf[js.Any]))
       Engine.foreach(__v => __obj.update("Engine", __v.asInstanceOf[js.Any]))
       EngineVersion.foreach(__v => __obj.update("EngineVersion", __v.asInstanceOf[js.Any]))
@@ -1268,12 +1226,6 @@ package neptune {
       __obj.asInstanceOf[DBCluster]
     }
   }
-
-  /**
-    * User already has a DB cluster with the given identifier.
-    */
-  @js.native
-  trait DBClusterAlreadyExistsFaultException extends js.Object {}
 
   /**
     * Contains information about an instance that is part of a DB cluster.
@@ -1304,9 +1256,6 @@ package neptune {
     }
   }
 
-  /**
-    * Contains the result of a successful invocation of the <a>DescribeDBClusters</a> action.
-    */
   @js.native
   trait DBClusterMessage extends js.Object {
     var DBClusters: js.UndefOr[DBClusterList]
@@ -1324,12 +1273,6 @@ package neptune {
       __obj.asInstanceOf[DBClusterMessage]
     }
   }
-
-  /**
-    * <i>DBClusterIdentifier</i> does not refer to an existing DB cluster.
-    */
-  @js.native
-  trait DBClusterNotFoundFaultException extends js.Object {}
 
   /**
     * Contains status information for a DB cluster option group.
@@ -1380,9 +1323,6 @@ package neptune {
     }
   }
 
-  /**
-    * Provides details about a DB cluster parameter group including the parameters in the DB cluster parameter group.
-    */
   @js.native
   trait DBClusterParameterGroupDetails extends js.Object {
     var Marker: js.UndefOr[String]
@@ -1401,9 +1341,6 @@ package neptune {
     }
   }
 
-  /**
-    * <p/>
-    */
   @js.native
   trait DBClusterParameterGroupNameMessage extends js.Object {
     var DBClusterParameterGroupName: js.UndefOr[String]
@@ -1419,15 +1356,6 @@ package neptune {
     }
   }
 
-  /**
-    * <i>DBClusterParameterGroupName</i> does not refer to an existing DB Cluster parameter group.
-    */
-  @js.native
-  trait DBClusterParameterGroupNotFoundFaultException extends js.Object {}
-
-  /**
-    * <p/>
-    */
   @js.native
   trait DBClusterParameterGroupsMessage extends js.Object {
     var DBClusterParameterGroups: js.UndefOr[DBClusterParameterGroupList]
@@ -1445,12 +1373,6 @@ package neptune {
       __obj.asInstanceOf[DBClusterParameterGroupsMessage]
     }
   }
-
-  /**
-    * User attempted to create a new DB cluster and the user has already reached the maximum allowed DB cluster quota.
-    */
-  @js.native
-  trait DBClusterQuotaExceededFaultException extends js.Object {}
 
   /**
     * Describes an AWS Identity and Access Management (IAM) role that is associated with a DB cluster.
@@ -1472,24 +1394,6 @@ package neptune {
       __obj.asInstanceOf[DBClusterRole]
     }
   }
-
-  /**
-    * The specified IAM role Amazon Resource Name (ARN) is already associated with the specified DB cluster.
-    */
-  @js.native
-  trait DBClusterRoleAlreadyExistsFaultException extends js.Object {}
-
-  /**
-    * The specified IAM role Amazon Resource Name (ARN) is not associated with the specified DB cluster.
-    */
-  @js.native
-  trait DBClusterRoleNotFoundFaultException extends js.Object {}
-
-  /**
-    * You have exceeded the maximum number of IAM roles that can be associated with the specified DB cluster.
-    */
-  @js.native
-  trait DBClusterRoleQuotaExceededFaultException extends js.Object {}
 
   /**
     * Contains the details for an Amazon Neptune DB cluster snapshot
@@ -1570,12 +1474,6 @@ package neptune {
   }
 
   /**
-    * User already has a DB cluster snapshot with the given identifier.
-    */
-  @js.native
-  trait DBClusterSnapshotAlreadyExistsFaultException extends js.Object {}
-
-  /**
     * Contains the name and values of a manual DB cluster snapshot attribute.
     *  Manual DB cluster snapshot attributes are used to authorize other AWS accounts to restore a manual DB cluster snapshot. For more information, see the <a>ModifyDBClusterSnapshotAttribute</a> API action.
     */
@@ -1619,9 +1517,6 @@ package neptune {
     }
   }
 
-  /**
-    * Provides a list of DB cluster snapshots for the user as the result of a call to the <a>DescribeDBClusterSnapshots</a> action.
-    */
   @js.native
   trait DBClusterSnapshotMessage extends js.Object {
     var DBClusterSnapshots: js.UndefOr[DBClusterSnapshotList]
@@ -1639,12 +1534,6 @@ package neptune {
       __obj.asInstanceOf[DBClusterSnapshotMessage]
     }
   }
-
-  /**
-    * <i>DBClusterSnapshotIdentifier</i> does not refer to an existing DB cluster snapshot.
-    */
-  @js.native
-  trait DBClusterSnapshotNotFoundFaultException extends js.Object {}
 
   /**
     * This data type is used as a response element in the action <a>DescribeDBEngineVersions</a>.
@@ -1699,9 +1588,6 @@ package neptune {
     }
   }
 
-  /**
-    * Contains the result of a successful invocation of the <a>DescribeDBEngineVersions</a> action.
-    */
   @js.native
   trait DBEngineVersionMessage extends js.Object {
     var DBEngineVersions: js.UndefOr[DBEngineVersionList]
@@ -1904,15 +1790,6 @@ package neptune {
     }
   }
 
-  /**
-    * User already has a DB instance with the given identifier.
-    */
-  @js.native
-  trait DBInstanceAlreadyExistsFaultException extends js.Object {}
-
-  /**
-    * Contains the result of a successful invocation of the <a>DescribeDBInstances</a> action.
-    */
   @js.native
   trait DBInstanceMessage extends js.Object {
     var DBInstances: js.UndefOr[DBInstanceList]
@@ -1930,12 +1807,6 @@ package neptune {
       __obj.asInstanceOf[DBInstanceMessage]
     }
   }
-
-  /**
-    * <i>DBInstanceIdentifier</i> does not refer to an existing DB instance.
-    */
-  @js.native
-  trait DBInstanceNotFoundFaultException extends js.Object {}
 
   /**
     * Provides a list of status information for a DB instance.
@@ -1992,15 +1863,6 @@ package neptune {
     }
   }
 
-  /**
-    * A DB parameter group with the same name exists.
-    */
-  @js.native
-  trait DBParameterGroupAlreadyExistsFaultException extends js.Object {}
-
-  /**
-    * Contains the result of a successful invocation of the <a>DescribeDBParameters</a> action.
-    */
   @js.native
   trait DBParameterGroupDetails extends js.Object {
     var Marker: js.UndefOr[String]
@@ -2019,9 +1881,6 @@ package neptune {
     }
   }
 
-  /**
-    * Contains the result of a successful invocation of the <a>ModifyDBParameterGroup</a> or <a>ResetDBParameterGroup</a> action.
-    */
   @js.native
   trait DBParameterGroupNameMessage extends js.Object {
     var DBParameterGroupName: js.UndefOr[String]
@@ -2036,18 +1895,6 @@ package neptune {
       __obj.asInstanceOf[DBParameterGroupNameMessage]
     }
   }
-
-  /**
-    * <i>DBParameterGroupName</i> does not refer to an existing DB parameter group.
-    */
-  @js.native
-  trait DBParameterGroupNotFoundFaultException extends js.Object {}
-
-  /**
-    * Request would result in user exceeding the allowed number of DB parameter groups.
-    */
-  @js.native
-  trait DBParameterGroupQuotaExceededFaultException extends js.Object {}
 
   /**
     * The status of the DB parameter group.
@@ -2075,9 +1922,6 @@ package neptune {
     }
   }
 
-  /**
-    * Contains the result of a successful invocation of the <a>DescribeDBParameterGroups</a> action.
-    */
   @js.native
   trait DBParameterGroupsMessage extends js.Object {
     var DBParameterGroups: js.UndefOr[DBParameterGroupList]
@@ -2097,9 +1941,7 @@ package neptune {
   }
 
   /**
-    * This data type is used as a response element in the following actions:
-    * * <a>ModifyDBInstance</a>
-    *  * <a>RebootDBInstance</a>
+    * Specifies membership in a designated DB security group.
     */
   @js.native
   trait DBSecurityGroupMembership extends js.Object {
@@ -2118,24 +1960,6 @@ package neptune {
       __obj.asInstanceOf[DBSecurityGroupMembership]
     }
   }
-
-  /**
-    * <i>DBSecurityGroupName</i> does not refer to an existing DB security group.
-    */
-  @js.native
-  trait DBSecurityGroupNotFoundFaultException extends js.Object {}
-
-  /**
-    * <i>DBSnapshotIdentifier</i> is already used by an existing snapshot.
-    */
-  @js.native
-  trait DBSnapshotAlreadyExistsFaultException extends js.Object {}
-
-  /**
-    * <i>DBSnapshotIdentifier</i> does not refer to an existing DB snapshot.
-    */
-  @js.native
-  trait DBSnapshotNotFoundFaultException extends js.Object {}
 
   /**
     * Contains the details of an Amazon Neptune DB subnet group.
@@ -2171,21 +1995,6 @@ package neptune {
     }
   }
 
-  /**
-    * <i>DBSubnetGroupName</i> is already used by an existing DB subnet group.
-    */
-  @js.native
-  trait DBSubnetGroupAlreadyExistsFaultException extends js.Object {}
-
-  /**
-    * Subnets in the DB subnet group should cover at least two Availability Zones unless there is only one Availability Zone.
-    */
-  @js.native
-  trait DBSubnetGroupDoesNotCoverEnoughAZsException extends js.Object {}
-
-  /**
-    * Contains the result of a successful invocation of the <a>DescribeDBSubnetGroups</a> action.
-    */
   @js.native
   trait DBSubnetGroupMessage extends js.Object {
     var DBSubnetGroups: js.UndefOr[DBSubnetGroups]
@@ -2204,33 +2013,6 @@ package neptune {
     }
   }
 
-  /**
-    * <i>DBSubnetGroupName</i> does not refer to an existing DB subnet group.
-    */
-  @js.native
-  trait DBSubnetGroupNotFoundFaultException extends js.Object {}
-
-  /**
-    * Request would result in user exceeding the allowed number of DB subnet groups.
-    */
-  @js.native
-  trait DBSubnetGroupQuotaExceededFaultException extends js.Object {}
-
-  /**
-    * Request would result in user exceeding the allowed number of subnets in a DB subnet groups.
-    */
-  @js.native
-  trait DBSubnetQuotaExceededFaultException extends js.Object {}
-
-  /**
-    * The DB upgrade failed because a resource the DB depends on could not be modified.
-    */
-  @js.native
-  trait DBUpgradeDependencyFailureFaultException extends js.Object {}
-
-  /**
-    * <p/>
-    */
   @js.native
   trait DeleteDBClusterMessage extends js.Object {
     var DBClusterIdentifier: String
@@ -2254,9 +2036,6 @@ package neptune {
     }
   }
 
-  /**
-    * <p/>
-    */
   @js.native
   trait DeleteDBClusterParameterGroupMessage extends js.Object {
     var DBClusterParameterGroupName: String
@@ -2289,9 +2068,6 @@ package neptune {
     }
   }
 
-  /**
-    * <p/>
-    */
   @js.native
   trait DeleteDBClusterSnapshotMessage extends js.Object {
     var DBClusterSnapshotIdentifier: String
@@ -2324,9 +2100,6 @@ package neptune {
     }
   }
 
-  /**
-    * <p/>
-    */
   @js.native
   trait DeleteDBInstanceMessage extends js.Object {
     var DBInstanceIdentifier: String
@@ -2365,9 +2138,6 @@ package neptune {
     }
   }
 
-  /**
-    * <p/>
-    */
   @js.native
   trait DeleteDBParameterGroupMessage extends js.Object {
     var DBParameterGroupName: String
@@ -2385,9 +2155,6 @@ package neptune {
     }
   }
 
-  /**
-    * <p/>
-    */
   @js.native
   trait DeleteDBSubnetGroupMessage extends js.Object {
     var DBSubnetGroupName: String
@@ -2405,9 +2172,6 @@ package neptune {
     }
   }
 
-  /**
-    * <p/>
-    */
   @js.native
   trait DeleteEventSubscriptionMessage extends js.Object {
     var SubscriptionName: String
@@ -2440,9 +2204,6 @@ package neptune {
     }
   }
 
-  /**
-    * <p/>
-    */
   @js.native
   trait DescribeDBClusterParameterGroupsMessage extends js.Object {
     var DBClusterParameterGroupName: js.UndefOr[String]
@@ -2467,9 +2228,6 @@ package neptune {
     }
   }
 
-  /**
-    * <p/>
-    */
   @js.native
   trait DescribeDBClusterParametersMessage extends js.Object {
     var DBClusterParameterGroupName: String
@@ -2499,9 +2257,6 @@ package neptune {
     }
   }
 
-  /**
-    * <p/>
-    */
   @js.native
   trait DescribeDBClusterSnapshotAttributesMessage extends js.Object {
     var DBClusterSnapshotIdentifier: String
@@ -2536,9 +2291,6 @@ package neptune {
     }
   }
 
-  /**
-    * <p/>
-    */
   @js.native
   trait DescribeDBClusterSnapshotsMessage extends js.Object {
     var DBClusterIdentifier: js.UndefOr[String]
@@ -2575,9 +2327,6 @@ package neptune {
     }
   }
 
-  /**
-    * <p/>
-    */
   @js.native
   trait DescribeDBClustersMessage extends js.Object {
     var DBClusterIdentifier: js.UndefOr[String]
@@ -2641,9 +2390,6 @@ package neptune {
     }
   }
 
-  /**
-    * <p/>
-    */
   @js.native
   trait DescribeDBInstancesMessage extends js.Object {
     var DBInstanceIdentifier: js.UndefOr[String]
@@ -2668,9 +2414,6 @@ package neptune {
     }
   }
 
-  /**
-    * <p/>
-    */
   @js.native
   trait DescribeDBParameterGroupsMessage extends js.Object {
     var DBParameterGroupName: js.UndefOr[String]
@@ -2724,9 +2467,6 @@ package neptune {
     }
   }
 
-  /**
-    * <p/>
-    */
   @js.native
   trait DescribeDBSubnetGroupsMessage extends js.Object {
     var DBSubnetGroupName: js.UndefOr[String]
@@ -2751,9 +2491,6 @@ package neptune {
     }
   }
 
-  /**
-    * <p/>
-    */
   @js.native
   trait DescribeEngineDefaultClusterParametersMessage extends js.Object {
     var DBParameterGroupFamily: String
@@ -2795,9 +2532,6 @@ package neptune {
     }
   }
 
-  /**
-    * <p/>
-    */
   @js.native
   trait DescribeEngineDefaultParametersMessage extends js.Object {
     var DBParameterGroupFamily: String
@@ -2839,9 +2573,6 @@ package neptune {
     }
   }
 
-  /**
-    * <p/>
-    */
   @js.native
   trait DescribeEventCategoriesMessage extends js.Object {
     var Filters: js.UndefOr[FilterList]
@@ -2860,9 +2591,6 @@ package neptune {
     }
   }
 
-  /**
-    * <p/>
-    */
   @js.native
   trait DescribeEventSubscriptionsMessage extends js.Object {
     var Filters: js.UndefOr[FilterList]
@@ -2887,9 +2615,6 @@ package neptune {
     }
   }
 
-  /**
-    * <p/>
-    */
   @js.native
   trait DescribeEventsMessage extends js.Object {
     var Duration: js.UndefOr[IntegerOptional]
@@ -2929,9 +2654,6 @@ package neptune {
     }
   }
 
-  /**
-    * <p/>
-    */
   @js.native
   trait DescribeOrderableDBInstanceOptionsMessage extends js.Object {
     var Engine: String
@@ -2970,9 +2692,6 @@ package neptune {
     }
   }
 
-  /**
-    * <p/>
-    */
   @js.native
   trait DescribePendingMaintenanceActionsMessage extends js.Object {
     var Filters: js.UndefOr[FilterList]
@@ -2997,9 +2716,6 @@ package neptune {
     }
   }
 
-  /**
-    * <p/>
-    */
   @js.native
   trait DescribeValidDBInstanceModificationsMessage extends js.Object {
     var DBInstanceIdentifier: String
@@ -3035,7 +2751,7 @@ package neptune {
   }
 
   /**
-    * An Active Directory Domain membership record associated with the DB instance.
+    * An Active Directory Domain membership record associated with a DB instance.
     */
   @js.native
   trait DomainMembership extends js.Object {
@@ -3062,12 +2778,6 @@ package neptune {
   }
 
   /**
-    * <i>Domain</i> does not refer to an existing Active Directory Domain.
-    */
-  @js.native
-  trait DomainNotFoundFaultException extends js.Object {}
-
-  /**
     * A range of double values.
     */
   @js.native
@@ -3089,10 +2799,7 @@ package neptune {
   }
 
   /**
-    * This data type is used as a response element in the following actions:
-    * * <a>CreateDBInstance</a>
-    *  * <a>DescribeDBInstances</a>
-    *  * <a>DeleteDBInstance</a>
+    * Specifies a connection endpoint.
     */
   @js.native
   trait Endpoint extends js.Object {
@@ -3193,9 +2900,6 @@ package neptune {
     }
   }
 
-  /**
-    * Data returned from the ```DescribeEventCategories``` action.
-    */
   @js.native
   trait EventCategoriesMessage extends js.Object {
     var EventCategoriesMapList: js.UndefOr[EventCategoriesMapList]
@@ -3257,12 +2961,6 @@ package neptune {
   }
 
   @js.native
-  trait EventSubscriptionQuotaExceededFaultException extends js.Object {}
-
-  /**
-    * Data returned by the ```DescribeEventSubscriptions``` action.
-    */
-  @js.native
   trait EventSubscriptionsMessage extends js.Object {
     var EventSubscriptionsList: js.UndefOr[EventSubscriptionsList]
     var Marker: js.UndefOr[String]
@@ -3280,9 +2978,6 @@ package neptune {
     }
   }
 
-  /**
-    * Contains the result of a successful invocation of the <a>DescribeEvents</a> action.
-    */
   @js.native
   trait EventsMessage extends js.Object {
     var Events: js.UndefOr[EventList]
@@ -3301,9 +2996,6 @@ package neptune {
     }
   }
 
-  /**
-    * <p/>
-    */
   @js.native
   trait FailoverDBClusterMessage extends js.Object {
     var DBClusterIdentifier: js.UndefOr[String]
@@ -3360,108 +3052,6 @@ package neptune {
     }
   }
 
-  /**
-    * Request would result in user exceeding the allowed number of DB instances.
-    */
-  @js.native
-  trait InstanceQuotaExceededFaultException extends js.Object {}
-
-  /**
-    * The DB cluster does not have enough capacity for the current operation.
-    */
-  @js.native
-  trait InsufficientDBClusterCapacityFaultException extends js.Object {}
-
-  /**
-    * Specified DB instance class is not available in the specified Availability Zone.
-    */
-  @js.native
-  trait InsufficientDBInstanceCapacityFaultException extends js.Object {}
-
-  /**
-    * There is insufficient storage available for the current action. You may be able to resolve this error by updating your subnet group to use different Availability Zones that have more storage available.
-    */
-  @js.native
-  trait InsufficientStorageClusterCapacityFaultException extends js.Object {}
-
-  /**
-    * The supplied value is not a valid DB cluster snapshot state.
-    */
-  @js.native
-  trait InvalidDBClusterSnapshotStateFaultException extends js.Object {}
-
-  /**
-    * The DB cluster is not in a valid state.
-    */
-  @js.native
-  trait InvalidDBClusterStateFaultException extends js.Object {}
-
-  /**
-    * The specified DB instance is not in the <i>available</i> state.
-    */
-  @js.native
-  trait InvalidDBInstanceStateFaultException extends js.Object {}
-
-  /**
-    * The DB parameter group is in use or is in an invalid state. If you are attempting to delete the parameter group, you cannot delete it when the parameter group is in this state.
-    */
-  @js.native
-  trait InvalidDBParameterGroupStateFaultException extends js.Object {}
-
-  /**
-    * The state of the DB security group does not allow deletion.
-    */
-  @js.native
-  trait InvalidDBSecurityGroupStateFaultException extends js.Object {}
-
-  /**
-    * The state of the DB snapshot does not allow deletion.
-    */
-  @js.native
-  trait InvalidDBSnapshotStateFaultException extends js.Object {}
-
-  /**
-    * The DB subnet group cannot be deleted because it is in use.
-    */
-  @js.native
-  trait InvalidDBSubnetGroupStateFaultException extends js.Object {}
-
-  /**
-    * The DB subnet is not in the <i>available</i> state.
-    */
-  @js.native
-  trait InvalidDBSubnetStateFaultException extends js.Object {}
-
-  @js.native
-  trait InvalidEventSubscriptionStateFaultException extends js.Object {}
-
-  /**
-    * Cannot restore from vpc backup to non-vpc DB instance.
-    */
-  @js.native
-  trait InvalidRestoreFaultException extends js.Object {}
-
-  /**
-    * The requested subnet is invalid, or multiple subnets were requested that are not all in a common VPC.
-    */
-  @js.native
-  trait InvalidSubnetException extends js.Object {}
-
-  /**
-    * DB subnet group does not cover all Availability Zones after it is created because users' change.
-    */
-  @js.native
-  trait InvalidVPCNetworkStateFaultException extends js.Object {}
-
-  /**
-    * Error accessing KMS key.
-    */
-  @js.native
-  trait KMSKeyNotAccessibleFaultException extends js.Object {}
-
-  /**
-    * <p/>
-    */
   @js.native
   trait ListTagsForResourceMessage extends js.Object {
     var ResourceName: String
@@ -3482,14 +3072,12 @@ package neptune {
     }
   }
 
-  /**
-    * <p/>
-    */
   @js.native
   trait ModifyDBClusterMessage extends js.Object {
     var DBClusterIdentifier: String
     var ApplyImmediately: js.UndefOr[Boolean]
     var BackupRetentionPeriod: js.UndefOr[IntegerOptional]
+    var CloudwatchLogsExportConfiguration: js.UndefOr[CloudwatchLogsExportConfiguration]
     var DBClusterParameterGroupName: js.UndefOr[String]
     var EnableIAMDatabaseAuthentication: js.UndefOr[BooleanOptional]
     var EngineVersion: js.UndefOr[String]
@@ -3507,6 +3095,7 @@ package neptune {
         DBClusterIdentifier: String,
         ApplyImmediately: js.UndefOr[Boolean] = js.undefined,
         BackupRetentionPeriod: js.UndefOr[IntegerOptional] = js.undefined,
+        CloudwatchLogsExportConfiguration: js.UndefOr[CloudwatchLogsExportConfiguration] = js.undefined,
         DBClusterParameterGroupName: js.UndefOr[String] = js.undefined,
         EnableIAMDatabaseAuthentication: js.UndefOr[BooleanOptional] = js.undefined,
         EngineVersion: js.UndefOr[String] = js.undefined,
@@ -3524,6 +3113,9 @@ package neptune {
 
       ApplyImmediately.foreach(__v => __obj.update("ApplyImmediately", __v.asInstanceOf[js.Any]))
       BackupRetentionPeriod.foreach(__v => __obj.update("BackupRetentionPeriod", __v.asInstanceOf[js.Any]))
+      CloudwatchLogsExportConfiguration.foreach(
+        __v => __obj.update("CloudwatchLogsExportConfiguration", __v.asInstanceOf[js.Any])
+      )
       DBClusterParameterGroupName.foreach(__v => __obj.update("DBClusterParameterGroupName", __v.asInstanceOf[js.Any]))
       EnableIAMDatabaseAuthentication.foreach(
         __v => __obj.update("EnableIAMDatabaseAuthentication", __v.asInstanceOf[js.Any])
@@ -3540,9 +3132,6 @@ package neptune {
     }
   }
 
-  /**
-    * <p/>
-    */
   @js.native
   trait ModifyDBClusterParameterGroupMessage extends js.Object {
     var DBClusterParameterGroupName: String
@@ -3578,9 +3167,6 @@ package neptune {
     }
   }
 
-  /**
-    * <p/>
-    */
   @js.native
   trait ModifyDBClusterSnapshotAttributeMessage extends js.Object {
     var AttributeName: String
@@ -3624,9 +3210,6 @@ package neptune {
     }
   }
 
-  /**
-    * <p/>
-    */
   @js.native
   trait ModifyDBInstanceMessage extends js.Object {
     var DBInstanceIdentifier: String
@@ -3768,9 +3351,6 @@ package neptune {
     }
   }
 
-  /**
-    * <p/>
-    */
   @js.native
   trait ModifyDBParameterGroupMessage extends js.Object {
     var DBParameterGroupName: String
@@ -3791,9 +3371,6 @@ package neptune {
     }
   }
 
-  /**
-    * <p/>
-    */
   @js.native
   trait ModifyDBSubnetGroupMessage extends js.Object {
     var DBSubnetGroupName: String
@@ -3832,9 +3409,6 @@ package neptune {
     }
   }
 
-  /**
-    * <p/>
-    */
   @js.native
   trait ModifyEventSubscriptionMessage extends js.Object {
     var SubscriptionName: String
@@ -3899,9 +3473,6 @@ package neptune {
       __obj.asInstanceOf[OptionGroupMembership]
     }
   }
-
-  @js.native
-  trait OptionGroupNotFoundFaultException extends js.Object {}
 
   /**
     * Contains a list of available options for a DB instance.
@@ -3981,9 +3552,6 @@ package neptune {
     }
   }
 
-  /**
-    * Contains the result of a successful invocation of the <a>DescribeOrderableDBInstanceOptions</a> action.
-    */
   @js.native
   trait OrderableDBInstanceOptionsMessage extends js.Object {
     var Marker: js.UndefOr[String]
@@ -4003,8 +3571,7 @@ package neptune {
   }
 
   /**
-    * This data type is used as a request parameter in the <a>ModifyDBParameterGroup</a> and <a>ResetDBParameterGroup</a> actions.
-    *  This data type is used as a response element in the <a>DescribeEngineDefaultParameters</a> and <a>DescribeDBParameters</a> actions.
+    * Specifies a parameter.
     */
   @js.native
   trait Parameter extends js.Object {
@@ -4102,9 +3669,6 @@ package neptune {
     }
   }
 
-  /**
-    * Data returned from the ```DescribePendingMaintenanceActions``` action.
-    */
   @js.native
   trait PendingMaintenanceActionsMessage extends js.Object {
     var Marker: js.UndefOr[String]
@@ -4182,9 +3746,6 @@ package neptune {
     }
   }
 
-  /**
-    * <p/>
-    */
   @js.native
   trait PromoteReadReplicaDBClusterMessage extends js.Object {
     var DBClusterIdentifier: String
@@ -4218,12 +3779,6 @@ package neptune {
   }
 
   /**
-    * Provisioned IOPS not available in the specified Availability Zone.
-    */
-  @js.native
-  trait ProvisionedIopsNotAvailableInAZFaultException extends js.Object {}
-
-  /**
     * A range of integer values.
     */
   @js.native
@@ -4247,9 +3802,6 @@ package neptune {
     }
   }
 
-  /**
-    * <p/>
-    */
   @js.native
   trait RebootDBInstanceMessage extends js.Object {
     var DBInstanceIdentifier: String
@@ -4305,9 +3857,6 @@ package neptune {
     }
   }
 
-  /**
-    * <p/>
-    */
   @js.native
   trait RemoveSourceIdentifierFromSubscriptionMessage extends js.Object {
     var SourceIdentifier: String
@@ -4343,9 +3892,6 @@ package neptune {
     }
   }
 
-  /**
-    * <p/>
-    */
   @js.native
   trait RemoveTagsFromResourceMessage extends js.Object {
     var ResourceName: String
@@ -4366,9 +3912,6 @@ package neptune {
     }
   }
 
-  /**
-    * <p/>
-    */
   @js.native
   trait ResetDBClusterParameterGroupMessage extends js.Object {
     var DBClusterParameterGroupName: String
@@ -4392,9 +3935,6 @@ package neptune {
     }
   }
 
-  /**
-    * <p/>
-    */
   @js.native
   trait ResetDBParameterGroupMessage extends js.Object {
     var DBParameterGroupName: String
@@ -4419,12 +3959,6 @@ package neptune {
   }
 
   /**
-    * The specified resource ID was not found.
-    */
-  @js.native
-  trait ResourceNotFoundFaultException extends js.Object {}
-
-  /**
     * Describes the pending maintenance actions for a resource.
     */
   @js.native
@@ -4447,17 +3981,16 @@ package neptune {
     }
   }
 
-  /**
-    * <p/>
-    */
   @js.native
   trait RestoreDBClusterFromSnapshotMessage extends js.Object {
     var DBClusterIdentifier: String
     var Engine: String
     var SnapshotIdentifier: String
     var AvailabilityZones: js.UndefOr[AvailabilityZones]
+    var DBClusterParameterGroupName: js.UndefOr[String]
     var DBSubnetGroupName: js.UndefOr[String]
     var DatabaseName: js.UndefOr[String]
+    var EnableCloudwatchLogsExports: js.UndefOr[LogTypeList]
     var EnableIAMDatabaseAuthentication: js.UndefOr[BooleanOptional]
     var EngineVersion: js.UndefOr[String]
     var KmsKeyId: js.UndefOr[String]
@@ -4473,8 +4006,10 @@ package neptune {
         Engine: String,
         SnapshotIdentifier: String,
         AvailabilityZones: js.UndefOr[AvailabilityZones] = js.undefined,
+        DBClusterParameterGroupName: js.UndefOr[String] = js.undefined,
         DBSubnetGroupName: js.UndefOr[String] = js.undefined,
         DatabaseName: js.UndefOr[String] = js.undefined,
+        EnableCloudwatchLogsExports: js.UndefOr[LogTypeList] = js.undefined,
         EnableIAMDatabaseAuthentication: js.UndefOr[BooleanOptional] = js.undefined,
         EngineVersion: js.UndefOr[String] = js.undefined,
         KmsKeyId: js.UndefOr[String] = js.undefined,
@@ -4490,8 +4025,10 @@ package neptune {
       )
 
       AvailabilityZones.foreach(__v => __obj.update("AvailabilityZones", __v.asInstanceOf[js.Any]))
+      DBClusterParameterGroupName.foreach(__v => __obj.update("DBClusterParameterGroupName", __v.asInstanceOf[js.Any]))
       DBSubnetGroupName.foreach(__v => __obj.update("DBSubnetGroupName", __v.asInstanceOf[js.Any]))
       DatabaseName.foreach(__v => __obj.update("DatabaseName", __v.asInstanceOf[js.Any]))
+      EnableCloudwatchLogsExports.foreach(__v => __obj.update("EnableCloudwatchLogsExports", __v.asInstanceOf[js.Any]))
       EnableIAMDatabaseAuthentication.foreach(
         __v => __obj.update("EnableIAMDatabaseAuthentication", __v.asInstanceOf[js.Any])
       )
@@ -4520,14 +4057,13 @@ package neptune {
     }
   }
 
-  /**
-    * <p/>
-    */
   @js.native
   trait RestoreDBClusterToPointInTimeMessage extends js.Object {
     var DBClusterIdentifier: String
     var SourceDBClusterIdentifier: String
+    var DBClusterParameterGroupName: js.UndefOr[String]
     var DBSubnetGroupName: js.UndefOr[String]
+    var EnableCloudwatchLogsExports: js.UndefOr[LogTypeList]
     var EnableIAMDatabaseAuthentication: js.UndefOr[BooleanOptional]
     var KmsKeyId: js.UndefOr[String]
     var OptionGroupName: js.UndefOr[String]
@@ -4543,7 +4079,9 @@ package neptune {
     def apply(
         DBClusterIdentifier: String,
         SourceDBClusterIdentifier: String,
+        DBClusterParameterGroupName: js.UndefOr[String] = js.undefined,
         DBSubnetGroupName: js.UndefOr[String] = js.undefined,
+        EnableCloudwatchLogsExports: js.UndefOr[LogTypeList] = js.undefined,
         EnableIAMDatabaseAuthentication: js.UndefOr[BooleanOptional] = js.undefined,
         KmsKeyId: js.UndefOr[String] = js.undefined,
         OptionGroupName: js.UndefOr[String] = js.undefined,
@@ -4559,7 +4097,9 @@ package neptune {
         "SourceDBClusterIdentifier" -> SourceDBClusterIdentifier.asInstanceOf[js.Any]
       )
 
+      DBClusterParameterGroupName.foreach(__v => __obj.update("DBClusterParameterGroupName", __v.asInstanceOf[js.Any]))
       DBSubnetGroupName.foreach(__v => __obj.update("DBSubnetGroupName", __v.asInstanceOf[js.Any]))
+      EnableCloudwatchLogsExports.foreach(__v => __obj.update("EnableCloudwatchLogsExports", __v.asInstanceOf[js.Any]))
       EnableIAMDatabaseAuthentication.foreach(
         __v => __obj.update("EnableIAMDatabaseAuthentication", __v.asInstanceOf[js.Any])
       )
@@ -4590,30 +4130,6 @@ package neptune {
     }
   }
 
-  @js.native
-  trait SNSInvalidTopicFaultException extends js.Object {}
-
-  @js.native
-  trait SNSNoAuthorizationFaultException extends js.Object {}
-
-  @js.native
-  trait SNSTopicArnNotFoundFaultException extends js.Object {}
-
-  /**
-    * You have exceeded the maximum number of accounts that you can share a manual DB snapshot with.
-    */
-  @js.native
-  trait SharedSnapshotQuotaExceededFaultException extends js.Object {}
-
-  /**
-    * Request would result in user exceeding the allowed number of DB snapshots.
-    */
-  @js.native
-  trait SnapshotQuotaExceededFaultException extends js.Object {}
-
-  @js.native
-  trait SourceNotFoundFaultException extends js.Object {}
-
   object SourceTypeEnum {
     val `db-instance`         = "db-instance"
     val `db-parameter-group`  = "db-parameter-group"
@@ -4633,19 +4149,8 @@ package neptune {
   }
 
   /**
-    * Request would result in user exceeding the allowed amount of storage available across all DB instances.
-    */
-  @js.native
-  trait StorageQuotaExceededFaultException extends js.Object {}
-
-  /**
-    * <i>StorageType</i> specified cannot be associated with the DB Instance.
-    */
-  @js.native
-  trait StorageTypeNotSupportedFaultException extends js.Object {}
-
-  /**
-    * This data type is used as a response element in the <a>DescribeDBSubnetGroups</a> action.
+    * Specifies a subnet.
+    *  This data type is used as a response element in the <a>DescribeDBSubnetGroups</a> action.
     */
   @js.native
   trait Subnet extends js.Object {
@@ -4669,21 +4174,6 @@ package neptune {
   }
 
   /**
-    * The DB subnet is already in use in the Availability Zone.
-    */
-  @js.native
-  trait SubnetAlreadyInUseException extends js.Object {}
-
-  @js.native
-  trait SubscriptionAlreadyExistFaultException extends js.Object {}
-
-  @js.native
-  trait SubscriptionCategoryNotFoundFaultException extends js.Object {}
-
-  @js.native
-  trait SubscriptionNotFoundFaultException extends js.Object {}
-
-  /**
     * Metadata assigned to an Amazon Neptune resource consisting of a key-value pair.
     */
   @js.native
@@ -4704,9 +4194,6 @@ package neptune {
     }
   }
 
-  /**
-    * <p/>
-    */
   @js.native
   trait TagListMessage extends js.Object {
     var TagList: js.UndefOr[TagList]
@@ -4723,7 +4210,7 @@ package neptune {
   }
 
   /**
-    * A time zone associated with a <a>DBInstance</a>. This data type is an element in the response to the <a>DescribeDBInstances</a>, and the <a>DescribeDBEngineVersions</a> actions.
+    * A time zone associated with a <a>DBInstance</a>.
     */
   @js.native
   trait Timezone extends js.Object {
@@ -4789,7 +4276,8 @@ package neptune {
   }
 
   /**
-    * Information about valid modifications that you can make to your DB instance. Contains the result of a successful call to the <a>DescribeValidDBInstanceModifications</a> action.
+    * Information about valid modifications that you can make to your DB instance.
+    *  Contains the result of a successful call to the <a>DescribeValidDBInstanceModifications</a> action.
     */
   @js.native
   trait ValidStorageOptions extends js.Object {

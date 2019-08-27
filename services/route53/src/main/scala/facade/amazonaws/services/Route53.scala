@@ -450,10 +450,9 @@ package route53 {
   }
 
   /**
-    * <i>Alias resource record sets only:</i> Information about the CloudFront distribution, Elastic Beanstalk environment, ELB load balancer, Amazon S3 bucket, or Amazon Route 53 resource record set that you're redirecting queries to. An Elastic Beanstalk environment must have a regionalized subdomain.
+    * <i>Alias resource record sets only:</i> Information about the AWS resource, such as a CloudFront distribution or an Amazon S3 bucket, that you want to route traffic to.
     *  When creating resource record sets for a private hosted zone, note the following:
-    * * Resource record sets can't be created for CloudFront distributions in a private hosted zone.
-    *  * Creating geolocation alias resource record sets or latency alias resource record sets in a private hosted zone is unsupported.
+    * * Creating geolocation alias resource record sets or latency alias resource record sets in a private hosted zone is unsupported.
     *  * For information about creating failover resource record sets in a private hosted zone, see [[http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-private-hosted-zones.html|Configuring Failover in a Private Hosted Zone]].
     */
   @js.native
@@ -753,6 +752,8 @@ package route53 {
     val `eu-west-1`      = "eu-west-1"
     val `eu-west-2`      = "eu-west-2"
     val `eu-west-3`      = "eu-west-3"
+    val `ap-east-1`      = "ap-east-1"
+    val `me-south-1`     = "me-south-1"
     val `ap-south-1`     = "ap-south-1"
     val `ap-southeast-1` = "ap-southeast-1"
     val `ap-southeast-2` = "ap-southeast-2"
@@ -761,6 +762,8 @@ package route53 {
     val `ap-northeast-3` = "ap-northeast-3"
     val `eu-north-1`     = "eu-north-1"
     val `sa-east-1`      = "sa-east-1"
+    val `cn-northwest-1` = "cn-northwest-1"
+    val `cn-north-1`     = "cn-north-1"
 
     val values = IndexedSeq(
       `us-east-1`,
@@ -772,6 +775,8 @@ package route53 {
       `eu-west-1`,
       `eu-west-2`,
       `eu-west-3`,
+      `ap-east-1`,
+      `me-south-1`,
       `ap-south-1`,
       `ap-southeast-1`,
       `ap-southeast-2`,
@@ -779,7 +784,9 @@ package route53 {
       `ap-northeast-2`,
       `ap-northeast-3`,
       `eu-north-1`,
-      `sa-east-1`
+      `sa-east-1`,
+      `cn-northwest-1`,
+      `cn-north-1`
     )
   }
 
@@ -1667,6 +1674,9 @@ package route53 {
     }
   }
 
+  /**
+    * Empty request.
+    */
   @js.native
   trait GetCheckerIpRangesRequest extends js.Object {}
 
@@ -1679,6 +1689,9 @@ package route53 {
     }
   }
 
+  /**
+    * A complex type that contains the <code>CheckerIpRanges</code> element.
+    */
   @js.native
   trait GetCheckerIpRangesResponse extends js.Object {
     var CheckerIpRanges: CheckerIpRanges
@@ -3547,6 +3560,8 @@ package route53 {
     val `sa-east-1`      = "sa-east-1"
     val `cn-north-1`     = "cn-north-1"
     val `cn-northwest-1` = "cn-northwest-1"
+    val `ap-east-1`      = "ap-east-1"
+    val `me-south-1`     = "me-south-1"
     val `ap-south-1`     = "ap-south-1"
 
     val values = IndexedSeq(
@@ -3568,6 +3583,8 @@ package route53 {
       `sa-east-1`,
       `cn-north-1`,
       `cn-northwest-1`,
+      `ap-east-1`,
+      `me-south-1`,
       `ap-south-1`
     )
   }
@@ -3935,6 +3952,9 @@ package route53 {
     }
   }
 
+  /**
+    * A complex type that contains the response to the <code>UpdateHealthCheck</code> request.
+    */
   @js.native
   trait UpdateHealthCheckResponse extends js.Object {
     var HealthCheck: HealthCheck
@@ -4120,6 +4140,8 @@ package route53 {
     val `eu-west-2`      = "eu-west-2"
     val `eu-west-3`      = "eu-west-3"
     val `eu-central-1`   = "eu-central-1"
+    val `ap-east-1`      = "ap-east-1"
+    val `me-south-1`     = "me-south-1"
     val `ap-southeast-1` = "ap-southeast-1"
     val `ap-southeast-2` = "ap-southeast-2"
     val `ap-south-1`     = "ap-south-1"
@@ -4140,6 +4162,8 @@ package route53 {
       `eu-west-2`,
       `eu-west-3`,
       `eu-central-1`,
+      `ap-east-1`,
+      `me-south-1`,
       `ap-southeast-1`,
       `ap-southeast-2`,
       `ap-south-1`,

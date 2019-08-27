@@ -30,6 +30,7 @@ package object kinesisanalytics {
   type InputStartingPosition               = String
   type InputUpdates                        = js.Array[InputUpdate]
   type Inputs                              = js.Array[Input]
+  type KinesisAnalyticsARN                 = String
   type ListApplicationsInputLimit          = Int
   type LogStreamARN                        = String
   type OutputDescriptions                  = js.Array[OutputDescription]
@@ -55,6 +56,10 @@ package object kinesisanalytics {
   type ReferenceDataSourceUpdates          = js.Array[ReferenceDataSourceUpdate]
   type ResourceARN                         = String
   type RoleARN                             = String
+  type TagKey                              = String
+  type TagKeys                             = js.Array[TagKey]
+  type TagValue                            = String
+  type Tags                                = js.Array[Tag]
   type Timestamp                           = js.Date
 
   implicit final class KinesisAnalyticsOps(val service: KinesisAnalytics) extends AnyVal {
@@ -99,10 +104,16 @@ package object kinesisanalytics {
       service.discoverInputSchema(params).promise.toFuture
     def listApplicationsFuture(params: ListApplicationsRequest): Future[ListApplicationsResponse] =
       service.listApplications(params).promise.toFuture
+    def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] =
+      service.listTagsForResource(params).promise.toFuture
     def startApplicationFuture(params: StartApplicationRequest): Future[StartApplicationResponse] =
       service.startApplication(params).promise.toFuture
     def stopApplicationFuture(params: StopApplicationRequest): Future[StopApplicationResponse] =
       service.stopApplication(params).promise.toFuture
+    def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] =
+      service.tagResource(params).promise.toFuture
+    def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] =
+      service.untagResource(params).promise.toFuture
     def updateApplicationFuture(params: UpdateApplicationRequest): Future[UpdateApplicationResponse] =
       service.updateApplication(params).promise.toFuture
   }
@@ -141,8 +152,11 @@ package kinesisanalytics {
     def describeApplication(params: DescribeApplicationRequest): Request[DescribeApplicationResponse] = js.native
     def discoverInputSchema(params: DiscoverInputSchemaRequest): Request[DiscoverInputSchemaResponse] = js.native
     def listApplications(params: ListApplicationsRequest): Request[ListApplicationsResponse]          = js.native
+    def listTagsForResource(params: ListTagsForResourceRequest): Request[ListTagsForResourceResponse] = js.native
     def startApplication(params: StartApplicationRequest): Request[StartApplicationResponse]          = js.native
     def stopApplication(params: StopApplicationRequest): Request[StopApplicationResponse]             = js.native
+    def tagResource(params: TagResourceRequest): Request[TagResourceResponse]                         = js.native
+    def untagResource(params: UntagResourceRequest): Request[UntagResourceResponse]                   = js.native
     def updateApplication(params: UpdateApplicationRequest): Request[UpdateApplicationResponse]       = js.native
   }
 
@@ -343,6 +357,7 @@ package kinesisanalytics {
   }
 
   /**
+    * '''Note:'''This documentation is for version 1 of the Amazon Kinesis Data Analytics API, which only supports SQL applications. Version 2 of the API supports SQL and Java applications. For more information about version 2, see [[/kinesisanalytics/latest/apiv2/Welcome.html|Amazon Kinesis Data Analytics API V2 Documentation]].
     * Provides a description of the application, including the application Amazon Resource Name (ARN), status, latest version, and input and output configuration.
     */
   @js.native
@@ -411,6 +426,7 @@ package kinesisanalytics {
   }
 
   /**
+    * '''Note:'''This documentation is for version 1 of the Amazon Kinesis Data Analytics API, which only supports SQL applications. Version 2 of the API supports SQL and Java applications. For more information about version 2, see [[/kinesisanalytics/latest/apiv2/Welcome.html|Amazon Kinesis Data Analytics API V2 Documentation]].
     * Provides application summary information, including the application Amazon Resource Name (ARN), name, and status.
     */
   @js.native
@@ -579,6 +595,7 @@ package kinesisanalytics {
     var CloudWatchLoggingOptions: js.UndefOr[CloudWatchLoggingOptions]
     var Inputs: js.UndefOr[Inputs]
     var Outputs: js.UndefOr[Outputs]
+    var Tags: js.UndefOr[Tags]
   }
 
   object CreateApplicationRequest {
@@ -588,7 +605,8 @@ package kinesisanalytics {
         ApplicationDescription: js.UndefOr[ApplicationDescription] = js.undefined,
         CloudWatchLoggingOptions: js.UndefOr[CloudWatchLoggingOptions] = js.undefined,
         Inputs: js.UndefOr[Inputs] = js.undefined,
-        Outputs: js.UndefOr[Outputs] = js.undefined
+        Outputs: js.UndefOr[Outputs] = js.undefined,
+        Tags: js.UndefOr[Tags] = js.undefined
     ): CreateApplicationRequest = {
       val __obj = js.Dictionary[js.Any](
         "ApplicationName" -> ApplicationName.asInstanceOf[js.Any]
@@ -599,6 +617,7 @@ package kinesisanalytics {
       CloudWatchLoggingOptions.foreach(__v => __obj.update("CloudWatchLoggingOptions", __v.asInstanceOf[js.Any]))
       Inputs.foreach(__v => __obj.update("Inputs", __v.asInstanceOf[js.Any]))
       Outputs.foreach(__v => __obj.update("Outputs", __v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateApplicationRequest]
     }
   }
@@ -848,7 +867,7 @@ package kinesisanalytics {
   }
 
   /**
-    * Describes the data format when records are written to the destination. For more information, see [[http://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-output.html|Configuring Application Output]].
+    * Describes the data format when records are written to the destination. For more information, see [[https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-output.html|Configuring Application Output]].
     */
   @js.native
   trait DestinationSchema extends js.Object {
@@ -926,7 +945,7 @@ package kinesisanalytics {
   }
 
   /**
-    * When you configure the application input, you specify the streaming source, the in-application stream name that is created, and the mapping between the two. For more information, see [[http://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-input.html|Configuring Application Input]].
+    * When you configure the application input, you specify the streaming source, the in-application stream name that is created, and the mapping between the two. For more information, see [[https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-input.html|Configuring Application Input]].
     */
   @js.native
   trait Input extends js.Object {
@@ -986,7 +1005,7 @@ package kinesisanalytics {
   }
 
   /**
-    * Describes the application input configuration. For more information, see [[http://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-input.html|Configuring Application Input]].
+    * Describes the application input configuration. For more information, see [[https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-input.html|Configuring Application Input]].
     */
   @js.native
   trait InputDescription extends js.Object {
@@ -1036,7 +1055,7 @@ package kinesisanalytics {
   }
 
   /**
-    * An object that contains the Amazon Resource Name (ARN) of the [[https://aws.amazon.com/documentation/lambda/|AWS Lambda]] function that is used to preprocess records in the stream, and the ARN of the IAM role that is used to access the AWS Lambda function.
+    * An object that contains the Amazon Resource Name (ARN) of the [[https://docs.aws.amazon.com/lambda/|AWS Lambda]] function that is used to preprocess records in the stream, and the ARN of the IAM role that is used to access the AWS Lambda function.
     */
   @js.native
   trait InputLambdaProcessor extends js.Object {
@@ -1059,7 +1078,7 @@ package kinesisanalytics {
   }
 
   /**
-    * An object that contains the Amazon Resource Name (ARN) of the [[https://aws.amazon.com/documentation/lambda/|AWS Lambda]] function that is used to preprocess records in the stream, and the ARN of the IAM role that is used to access the AWS Lambda expression.
+    * An object that contains the Amazon Resource Name (ARN) of the [[https://docs.aws.amazon.com/lambda/|AWS Lambda]] function that is used to preprocess records in the stream, and the ARN of the IAM role that is used to access the AWS Lambda expression.
     */
   @js.native
   trait InputLambdaProcessorDescription extends js.Object {
@@ -1080,7 +1099,7 @@ package kinesisanalytics {
   }
 
   /**
-    * Represents an update to the <a>InputLambdaProcessor</a> that is used to preprocess the records in the stream.
+    * Represents an update to the [[https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_InputLambdaProcessor.html|InputLambdaProcessor]] that is used to preprocess the records in the stream.
     */
   @js.native
   trait InputLambdaProcessorUpdate extends js.Object {
@@ -1101,7 +1120,7 @@ package kinesisanalytics {
   }
 
   /**
-    * Describes the number of in-application streams to create for a given streaming source. For information about parallelism, see [[http://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-input.html|Configuring Application Input]].
+    * Describes the number of in-application streams to create for a given streaming source. For information about parallelism, see [[https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-input.html|Configuring Application Input]].
     */
   @js.native
   trait InputParallelism extends js.Object {
@@ -1137,7 +1156,7 @@ package kinesisanalytics {
   }
 
   /**
-    * Provides a description of a processor that is used to preprocess the records in the stream before being processed by your application code. Currently, the only input processor available is [[https://aws.amazon.com/documentation/lambda/|AWS Lambda]].
+    * Provides a description of a processor that is used to preprocess the records in the stream before being processed by your application code. Currently, the only input processor available is [[https://docs.aws.amazon.com/lambda/|AWS Lambda]].
     */
   @js.native
   trait InputProcessingConfiguration extends js.Object {
@@ -1157,7 +1176,7 @@ package kinesisanalytics {
   }
 
   /**
-    * Provides configuration information about an input processor. Currently, the only input processor available is [[https://aws.amazon.com/documentation/lambda/|AWS Lambda]].
+    * Provides configuration information about an input processor. Currently, the only input processor available is [[https://docs.aws.amazon.com/lambda/|AWS Lambda]].
     */
   @js.native
   trait InputProcessingConfigurationDescription extends js.Object {
@@ -1177,7 +1196,7 @@ package kinesisanalytics {
   }
 
   /**
-    * Describes updates to an <a>InputProcessingConfiguration</a>.
+    * Describes updates to an [[https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_InputProcessingConfiguration.html|InputProcessingConfiguration]].
     */
   @js.native
   trait InputProcessingConfigurationUpdate extends js.Object {
@@ -1416,7 +1435,7 @@ package kinesisanalytics {
   }
 
   /**
-    * When updating an output configuration using the <a>UpdateApplication</a> operation, provides information about an Amazon Kinesis Firehose delivery stream configured as the destination.
+    * When updating an output configuration using the [[https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_UpdateApplication.html|UpdateApplication]] operation, provides information about an Amazon Kinesis Firehose delivery stream configured as the destination.
     */
   @js.native
   trait KinesisFirehoseOutputUpdate extends js.Object {
@@ -1546,7 +1565,7 @@ package kinesisanalytics {
   }
 
   /**
-    * When updating an output configuration using the <a>UpdateApplication</a> operation, provides information about an Amazon Kinesis stream configured as the destination.
+    * When updating an output configuration using the [[https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_UpdateApplication.html|UpdateApplication]] operation, provides information about an Amazon Kinesis stream configured as the destination.
     */
   @js.native
   trait KinesisStreamsOutputUpdate extends js.Object {
@@ -1611,7 +1630,7 @@ package kinesisanalytics {
   }
 
   /**
-    * When updating an output configuration using the <a>UpdateApplication</a> operation, provides information about an AWS Lambda function configured as the destination.
+    * When updating an output configuration using the [[https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_UpdateApplication.html|UpdateApplication]] operation, provides information about an AWS Lambda function configured as the destination.
     */
   @js.native
   trait LambdaOutputUpdate extends js.Object {
@@ -1677,6 +1696,38 @@ package kinesisanalytics {
     }
   }
 
+  @js.native
+  trait ListTagsForResourceRequest extends js.Object {
+    var ResourceARN: KinesisAnalyticsARN
+  }
+
+  object ListTagsForResourceRequest {
+    def apply(
+        ResourceARN: KinesisAnalyticsARN
+    ): ListTagsForResourceRequest = {
+      val __obj = js.Dictionary[js.Any](
+        "ResourceARN" -> ResourceARN.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[ListTagsForResourceRequest]
+    }
+  }
+
+  @js.native
+  trait ListTagsForResourceResponse extends js.Object {
+    var Tags: js.UndefOr[Tags]
+  }
+
+  object ListTagsForResourceResponse {
+    def apply(
+        Tags: js.UndefOr[Tags] = js.undefined
+    ): ListTagsForResourceResponse = {
+      val __obj = js.Dictionary.empty[js.Any]
+      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListTagsForResourceResponse]
+    }
+  }
+
   /**
     * When configuring application input at the time of creating or updating an application, provides additional mapping information specific to the record format (such as JSON, CSV, or record fields delimited by some delimiter) on the streaming source.
     */
@@ -1700,7 +1751,7 @@ package kinesisanalytics {
 
   /**
     * Describes application output configuration in which you identify an in-application stream and a destination where you want the in-application stream data to be written. The destination can be an Amazon Kinesis stream or an Amazon Kinesis Firehose delivery stream.
-    *  <p/> For limits on how many destinations an application can write and other limitations, see [[http://docs.aws.amazon.com/kinesisanalytics/latest/dev/limits.html|Limits]].
+    *  <p/> For limits on how many destinations an application can write and other limitations, see [[https://docs.aws.amazon.com/kinesisanalytics/latest/dev/limits.html|Limits]].
     */
   @js.native
   trait Output extends js.Object {
@@ -1972,7 +2023,7 @@ package kinesisanalytics {
 
   /**
     * Identifies the S3 bucket and object that contains the reference data. Also identifies the IAM role Amazon Kinesis Analytics can assume to read this object on your behalf.
-    *  An Amazon Kinesis Analytics application loads reference data only once. If the data changes, you call the <a>UpdateApplication</a> operation to trigger reloading of data into your application.
+    *  An Amazon Kinesis Analytics application loads reference data only once. If the data changes, you call the [[https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_UpdateApplication.html|UpdateApplication]] operation to trigger reloading of data into your application.
     */
   @js.native
   trait S3ReferenceDataSource extends js.Object {
@@ -2143,6 +2194,93 @@ package kinesisanalytics {
       val __obj = js.Dictionary.empty[js.Any]
 
       __obj.asInstanceOf[StopApplicationResponse]
+    }
+  }
+
+  /**
+    * A key-value pair (the value is optional) that you can define and assign to AWS resources. If you specify a tag that already exists, the tag value is replaced with the value that you specify in the request. Note that the maximum number of application tags includes system tags. The maximum number of user-defined application tags is 50. For more information, see [[https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html|Using Cost Allocation Tags]] in the <i>AWS Billing and Cost Management Guide</i>.
+    */
+  @js.native
+  trait Tag extends js.Object {
+    var Key: TagKey
+    var Value: js.UndefOr[TagValue]
+  }
+
+  object Tag {
+    def apply(
+        Key: TagKey,
+        Value: js.UndefOr[TagValue] = js.undefined
+    ): Tag = {
+      val __obj = js.Dictionary[js.Any](
+        "Key" -> Key.asInstanceOf[js.Any]
+      )
+
+      Value.foreach(__v => __obj.update("Value", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Tag]
+    }
+  }
+
+  @js.native
+  trait TagResourceRequest extends js.Object {
+    var ResourceARN: KinesisAnalyticsARN
+    var Tags: Tags
+  }
+
+  object TagResourceRequest {
+    def apply(
+        ResourceARN: KinesisAnalyticsARN,
+        Tags: Tags
+    ): TagResourceRequest = {
+      val __obj = js.Dictionary[js.Any](
+        "ResourceARN" -> ResourceARN.asInstanceOf[js.Any],
+        "Tags"        -> Tags.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[TagResourceRequest]
+    }
+  }
+
+  @js.native
+  trait TagResourceResponse extends js.Object {}
+
+  object TagResourceResponse {
+    def apply(
+        ): TagResourceResponse = {
+      val __obj = js.Dictionary.empty[js.Any]
+
+      __obj.asInstanceOf[TagResourceResponse]
+    }
+  }
+
+  @js.native
+  trait UntagResourceRequest extends js.Object {
+    var ResourceARN: KinesisAnalyticsARN
+    var TagKeys: TagKeys
+  }
+
+  object UntagResourceRequest {
+    def apply(
+        ResourceARN: KinesisAnalyticsARN,
+        TagKeys: TagKeys
+    ): UntagResourceRequest = {
+      val __obj = js.Dictionary[js.Any](
+        "ResourceARN" -> ResourceARN.asInstanceOf[js.Any],
+        "TagKeys"     -> TagKeys.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[UntagResourceRequest]
+    }
+  }
+
+  @js.native
+  trait UntagResourceResponse extends js.Object {}
+
+  object UntagResourceResponse {
+    def apply(
+        ): UntagResourceResponse = {
+      val __obj = js.Dictionary.empty[js.Any]
+
+      __obj.asInstanceOf[UntagResourceResponse]
     }
   }
 

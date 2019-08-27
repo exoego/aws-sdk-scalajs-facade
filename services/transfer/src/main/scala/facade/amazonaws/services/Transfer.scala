@@ -12,6 +12,8 @@ package object transfer {
   type DateImported         = js.Date
   type EndpointType         = String
   type HomeDirectory        = String
+  type HostKey              = String
+  type HostKeyFingerprint   = String
   type IdentityProviderType = String
   type ListedServers        = js.Array[ListedServer]
   type ListedUsers          = js.Array[ListedUser]
@@ -20,6 +22,7 @@ package object transfer {
   type NextToken            = String
   type NullableRole         = String
   type Policy               = String
+  type Response             = String
   type Role                 = String
   type ServerId             = String
   type SshPublicKeyBody     = String
@@ -105,6 +108,7 @@ package transfer {
   trait CreateServerRequest extends js.Object {
     var EndpointDetails: js.UndefOr[EndpointDetails]
     var EndpointType: js.UndefOr[EndpointType]
+    var HostKey: js.UndefOr[HostKey]
     var IdentityProviderDetails: js.UndefOr[IdentityProviderDetails]
     var IdentityProviderType: js.UndefOr[IdentityProviderType]
     var LoggingRole: js.UndefOr[Role]
@@ -115,6 +119,7 @@ package transfer {
     def apply(
         EndpointDetails: js.UndefOr[EndpointDetails] = js.undefined,
         EndpointType: js.UndefOr[EndpointType] = js.undefined,
+        HostKey: js.UndefOr[HostKey] = js.undefined,
         IdentityProviderDetails: js.UndefOr[IdentityProviderDetails] = js.undefined,
         IdentityProviderType: js.UndefOr[IdentityProviderType] = js.undefined,
         LoggingRole: js.UndefOr[Role] = js.undefined,
@@ -123,6 +128,7 @@ package transfer {
       val __obj = js.Dictionary.empty[js.Any]
       EndpointDetails.foreach(__v => __obj.update("EndpointDetails", __v.asInstanceOf[js.Any]))
       EndpointType.foreach(__v => __obj.update("EndpointType", __v.asInstanceOf[js.Any]))
+      HostKey.foreach(__v => __obj.update("HostKey", __v.asInstanceOf[js.Any]))
       IdentityProviderDetails.foreach(__v => __obj.update("IdentityProviderDetails", __v.asInstanceOf[js.Any]))
       IdentityProviderType.foreach(__v => __obj.update("IdentityProviderType", __v.asInstanceOf[js.Any]))
       LoggingRole.foreach(__v => __obj.update("LoggingRole", __v.asInstanceOf[js.Any]))
@@ -338,13 +344,14 @@ package transfer {
   }
 
   /**
-    * Describe the properties of the server that was specified. Information returned includes: the server Amazon Resource Name (ARN), the authentication configuration and type, the logging role, server Id and state, and assigned tags or metadata.
+    * Describes the properties of the server that was specified. Information returned includes the following: the server Amazon Resource Name (ARN), the authentication configuration and type, the logging role, the server ID and state, and assigned tags or metadata.
     */
   @js.native
   trait DescribedServer extends js.Object {
     var Arn: Arn
     var EndpointDetails: js.UndefOr[EndpointDetails]
     var EndpointType: js.UndefOr[EndpointType]
+    var HostKeyFingerprint: js.UndefOr[HostKeyFingerprint]
     var IdentityProviderDetails: js.UndefOr[IdentityProviderDetails]
     var IdentityProviderType: js.UndefOr[IdentityProviderType]
     var LoggingRole: js.UndefOr[Role]
@@ -359,6 +366,7 @@ package transfer {
         Arn: Arn,
         EndpointDetails: js.UndefOr[EndpointDetails] = js.undefined,
         EndpointType: js.UndefOr[EndpointType] = js.undefined,
+        HostKeyFingerprint: js.UndefOr[HostKeyFingerprint] = js.undefined,
         IdentityProviderDetails: js.UndefOr[IdentityProviderDetails] = js.undefined,
         IdentityProviderType: js.UndefOr[IdentityProviderType] = js.undefined,
         LoggingRole: js.UndefOr[Role] = js.undefined,
@@ -373,6 +381,7 @@ package transfer {
 
       EndpointDetails.foreach(__v => __obj.update("EndpointDetails", __v.asInstanceOf[js.Any]))
       EndpointType.foreach(__v => __obj.update("EndpointType", __v.asInstanceOf[js.Any]))
+      HostKeyFingerprint.foreach(__v => __obj.update("HostKeyFingerprint", __v.asInstanceOf[js.Any]))
       IdentityProviderDetails.foreach(__v => __obj.update("IdentityProviderDetails", __v.asInstanceOf[js.Any]))
       IdentityProviderType.foreach(__v => __obj.update("IdentityProviderType", __v.asInstanceOf[js.Any]))
       LoggingRole.foreach(__v => __obj.update("LoggingRole", __v.asInstanceOf[js.Any]))
@@ -385,7 +394,7 @@ package transfer {
   }
 
   /**
-    * Returns properties of the user that you wish to describe.
+    * Returns properties of the user that you want to describe.
     */
   @js.native
   trait DescribedUser extends js.Object {
@@ -422,6 +431,9 @@ package transfer {
     }
   }
 
+  /**
+    * The configuration settings for the virtual private cloud (VPC) endpoint for your SFTP server.
+    */
   @js.native
   trait EndpointDetails extends js.Object {
     var VpcEndpointId: js.UndefOr[VpcEndpointId]
@@ -445,7 +457,7 @@ package transfer {
   }
 
   /**
-    * Returns information related to the type of user authentication that is in use for a server's users. A server can only have one method of authentication.
+    * Returns information related to the type of user authentication that is in use for a server's users. A server can have only one method of authentication.
     */
   @js.native
   trait IdentityProviderDetails extends js.Object {
@@ -466,7 +478,7 @@ package transfer {
   }
 
   /**
-    * Returns information related to the type of user authentication that is in use for a server's users. For <code>SERVICE_MANAGED</code> authentication, the Secure Shell (SSH) public keys are stored with a user on an SFTP server instance. For <code>API_GATEWAY</code> authentication, your custom authentication method is implemented by using an API call. A server can only have one method of authentication.
+    * Returns information related to the type of user authentication that is in use for a server's users. For <code>SERVICE_MANAGED</code> authentication, the Secure Shell (SSH) public keys are stored with a user on an SFTP server instance. For <code>API_GATEWAY</code> authentication, your custom authentication method is implemented by using an API call. A server can have only one method of authentication.
     */
   object IdentityProviderTypeEnum {
     val SERVICE_MANAGED = "SERVICE_MANAGED"
@@ -499,7 +511,7 @@ package transfer {
   }
 
   /**
-    * This response identifies the user, server they belong to, and the identifier of the SSH public key associated with that user. A user can have more than one key on each server that they are associate with.
+    * This response identifies the user, the server they belong to, and the identifier of the SSH public key associated with that user. A user can have more than one key on each server that they are associated with.
     */
   @js.native
   trait ImportSshPublicKeyResponse extends js.Object {
@@ -868,13 +880,15 @@ package transfer {
     var StatusCode: StatusCode
     var Url: Url
     var Message: js.UndefOr[Message]
+    var Response: js.UndefOr[Response]
   }
 
   object TestIdentityProviderResponse {
     def apply(
         StatusCode: StatusCode,
         Url: Url,
-        Message: js.UndefOr[Message] = js.undefined
+        Message: js.UndefOr[Message] = js.undefined,
+        Response: js.UndefOr[Response] = js.undefined
     ): TestIdentityProviderResponse = {
       val __obj = js.Dictionary[js.Any](
         "StatusCode" -> StatusCode.asInstanceOf[js.Any],
@@ -882,6 +896,7 @@ package transfer {
       )
 
       Message.foreach(__v => __obj.update("Message", __v.asInstanceOf[js.Any]))
+      Response.foreach(__v => __obj.update("Response", __v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[TestIdentityProviderResponse]
     }
   }
@@ -911,6 +926,7 @@ package transfer {
     var ServerId: ServerId
     var EndpointDetails: js.UndefOr[EndpointDetails]
     var EndpointType: js.UndefOr[EndpointType]
+    var HostKey: js.UndefOr[HostKey]
     var IdentityProviderDetails: js.UndefOr[IdentityProviderDetails]
     var LoggingRole: js.UndefOr[NullableRole]
   }
@@ -920,6 +936,7 @@ package transfer {
         ServerId: ServerId,
         EndpointDetails: js.UndefOr[EndpointDetails] = js.undefined,
         EndpointType: js.UndefOr[EndpointType] = js.undefined,
+        HostKey: js.UndefOr[HostKey] = js.undefined,
         IdentityProviderDetails: js.UndefOr[IdentityProviderDetails] = js.undefined,
         LoggingRole: js.UndefOr[NullableRole] = js.undefined
     ): UpdateServerRequest = {
@@ -929,6 +946,7 @@ package transfer {
 
       EndpointDetails.foreach(__v => __obj.update("EndpointDetails", __v.asInstanceOf[js.Any]))
       EndpointType.foreach(__v => __obj.update("EndpointType", __v.asInstanceOf[js.Any]))
+      HostKey.foreach(__v => __obj.update("HostKey", __v.asInstanceOf[js.Any]))
       IdentityProviderDetails.foreach(__v => __obj.update("IdentityProviderDetails", __v.asInstanceOf[js.Any]))
       LoggingRole.foreach(__v => __obj.update("LoggingRole", __v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateServerRequest]

@@ -13,6 +13,8 @@ package object polly {
     nodejs.buffer.Buffer | nodejs.stream.Readable | js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
   type ContentType                    = String
   type DateTime                       = js.Date
+  type Engine                         = String
+  type EngineList                     = js.Array[Engine]
   type Gender                         = String
   type IncludeAdditionalLanguageCodes = Boolean
   type LanguageCode                   = String
@@ -120,6 +122,7 @@ package polly {
 
   @js.native
   trait DescribeVoicesInput extends js.Object {
+    var Engine: js.UndefOr[Engine]
     var IncludeAdditionalLanguageCodes: js.UndefOr[IncludeAdditionalLanguageCodes]
     var LanguageCode: js.UndefOr[LanguageCode]
     var NextToken: js.UndefOr[NextToken]
@@ -127,11 +130,13 @@ package polly {
 
   object DescribeVoicesInput {
     def apply(
+        Engine: js.UndefOr[Engine] = js.undefined,
         IncludeAdditionalLanguageCodes: js.UndefOr[IncludeAdditionalLanguageCodes] = js.undefined,
         LanguageCode: js.UndefOr[LanguageCode] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): DescribeVoicesInput = {
       val __obj = js.Dictionary.empty[js.Any]
+      Engine.foreach(__v => __obj.update("Engine", __v.asInstanceOf[js.Any]))
       IncludeAdditionalLanguageCodes.foreach(
         __v => __obj.update("IncludeAdditionalLanguageCodes", __v.asInstanceOf[js.Any])
       )
@@ -157,6 +162,13 @@ package polly {
       Voices.foreach(__v => __obj.update("Voices", __v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeVoicesOutput]
     }
+  }
+
+  object EngineEnum {
+    val standard = "standard"
+    val neural   = "neural"
+
+    val values = IndexedSeq(standard, neural)
   }
 
   object GenderEnum {
@@ -234,6 +246,7 @@ package polly {
   }
 
   object LanguageCodeEnum {
+    val arb         = "arb"
     val `cmn-CN`    = "cmn-CN"
     val `cy-GB`     = "cy-GB"
     val `da-DK`     = "da-DK"
@@ -264,6 +277,7 @@ package polly {
     val `tr-TR`     = "tr-TR"
 
     val values = IndexedSeq(
+      arb,
       `cmn-CN`,
       `cy-GB`,
       `da-DK`,
@@ -317,7 +331,7 @@ package polly {
   }
 
   /**
-    * Contains metadata describing the lexicon such as the number of lexemes, language code, and so on. For more information, see [[http://docs.aws.amazon.com/polly/latest/dg/managing-lexicons.html|Managing Lexicons]].
+    * Contains metadata describing the lexicon such as the number of lexemes, language code, and so on. For more information, see [[https://docs.aws.amazon.com/polly/latest/dg/managing-lexicons.html|Managing Lexicons]].
     */
   @js.native
   trait LexiconAttributes extends js.Object {
@@ -498,6 +512,7 @@ package polly {
     var OutputS3BucketName: OutputS3BucketName
     var Text: Text
     var VoiceId: VoiceId
+    var Engine: js.UndefOr[Engine]
     var LanguageCode: js.UndefOr[LanguageCode]
     var LexiconNames: js.UndefOr[LexiconNameList]
     var OutputS3KeyPrefix: js.UndefOr[OutputS3KeyPrefix]
@@ -513,6 +528,7 @@ package polly {
         OutputS3BucketName: OutputS3BucketName,
         Text: Text,
         VoiceId: VoiceId,
+        Engine: js.UndefOr[Engine] = js.undefined,
         LanguageCode: js.UndefOr[LanguageCode] = js.undefined,
         LexiconNames: js.UndefOr[LexiconNameList] = js.undefined,
         OutputS3KeyPrefix: js.UndefOr[OutputS3KeyPrefix] = js.undefined,
@@ -528,6 +544,7 @@ package polly {
         "VoiceId"            -> VoiceId.asInstanceOf[js.Any]
       )
 
+      Engine.foreach(__v => __obj.update("Engine", __v.asInstanceOf[js.Any]))
       LanguageCode.foreach(__v => __obj.update("LanguageCode", __v.asInstanceOf[js.Any]))
       LexiconNames.foreach(__v => __obj.update("LexiconNames", __v.asInstanceOf[js.Any]))
       OutputS3KeyPrefix.foreach(__v => __obj.update("OutputS3KeyPrefix", __v.asInstanceOf[js.Any]))
@@ -560,6 +577,7 @@ package polly {
   @js.native
   trait SynthesisTask extends js.Object {
     var CreationTime: js.UndefOr[DateTime]
+    var Engine: js.UndefOr[Engine]
     var LanguageCode: js.UndefOr[LanguageCode]
     var LexiconNames: js.UndefOr[LexiconNameList]
     var OutputFormat: js.UndefOr[OutputFormat]
@@ -578,6 +596,7 @@ package polly {
   object SynthesisTask {
     def apply(
         CreationTime: js.UndefOr[DateTime] = js.undefined,
+        Engine: js.UndefOr[Engine] = js.undefined,
         LanguageCode: js.UndefOr[LanguageCode] = js.undefined,
         LexiconNames: js.UndefOr[LexiconNameList] = js.undefined,
         OutputFormat: js.UndefOr[OutputFormat] = js.undefined,
@@ -594,6 +613,7 @@ package polly {
     ): SynthesisTask = {
       val __obj = js.Dictionary.empty[js.Any]
       CreationTime.foreach(__v => __obj.update("CreationTime", __v.asInstanceOf[js.Any]))
+      Engine.foreach(__v => __obj.update("Engine", __v.asInstanceOf[js.Any]))
       LanguageCode.foreach(__v => __obj.update("LanguageCode", __v.asInstanceOf[js.Any]))
       LexiconNames.foreach(__v => __obj.update("LexiconNames", __v.asInstanceOf[js.Any]))
       OutputFormat.foreach(__v => __obj.update("OutputFormat", __v.asInstanceOf[js.Any]))
@@ -616,6 +636,7 @@ package polly {
     var OutputFormat: OutputFormat
     var Text: Text
     var VoiceId: VoiceId
+    var Engine: js.UndefOr[Engine]
     var LanguageCode: js.UndefOr[LanguageCode]
     var LexiconNames: js.UndefOr[LexiconNameList]
     var SampleRate: js.UndefOr[SampleRate]
@@ -628,6 +649,7 @@ package polly {
         OutputFormat: OutputFormat,
         Text: Text,
         VoiceId: VoiceId,
+        Engine: js.UndefOr[Engine] = js.undefined,
         LanguageCode: js.UndefOr[LanguageCode] = js.undefined,
         LexiconNames: js.UndefOr[LexiconNameList] = js.undefined,
         SampleRate: js.UndefOr[SampleRate] = js.undefined,
@@ -640,6 +662,7 @@ package polly {
         "VoiceId"      -> VoiceId.asInstanceOf[js.Any]
       )
 
+      Engine.foreach(__v => __obj.update("Engine", __v.asInstanceOf[js.Any]))
       LanguageCode.foreach(__v => __obj.update("LanguageCode", __v.asInstanceOf[js.Any]))
       LexiconNames.foreach(__v => __obj.update("LexiconNames", __v.asInstanceOf[js.Any]))
       SampleRate.foreach(__v => __obj.update("SampleRate", __v.asInstanceOf[js.Any]))
@@ -697,6 +720,7 @@ package polly {
     var LanguageCode: js.UndefOr[LanguageCode]
     var LanguageName: js.UndefOr[LanguageName]
     var Name: js.UndefOr[VoiceName]
+    var SupportedEngines: js.UndefOr[EngineList]
   }
 
   object Voice {
@@ -706,7 +730,8 @@ package polly {
         Id: js.UndefOr[VoiceId] = js.undefined,
         LanguageCode: js.UndefOr[LanguageCode] = js.undefined,
         LanguageName: js.UndefOr[LanguageName] = js.undefined,
-        Name: js.UndefOr[VoiceName] = js.undefined
+        Name: js.UndefOr[VoiceName] = js.undefined,
+        SupportedEngines: js.UndefOr[EngineList] = js.undefined
     ): Voice = {
       val __obj = js.Dictionary.empty[js.Any]
       AdditionalLanguageCodes.foreach(__v => __obj.update("AdditionalLanguageCodes", __v.asInstanceOf[js.Any]))
@@ -715,127 +740,130 @@ package polly {
       LanguageCode.foreach(__v => __obj.update("LanguageCode", __v.asInstanceOf[js.Any]))
       LanguageName.foreach(__v => __obj.update("LanguageName", __v.asInstanceOf[js.Any]))
       Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
+      SupportedEngines.foreach(__v => __obj.update("SupportedEngines", __v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Voice]
     }
   }
 
   object VoiceIdEnum {
-    val Geraint   = "Geraint"
-    val Gwyneth   = "Gwyneth"
-    val Mads      = "Mads"
-    val Naja      = "Naja"
-    val Hans      = "Hans"
-    val Marlene   = "Marlene"
-    val Nicole    = "Nicole"
-    val Russell   = "Russell"
+    val Aditi     = "Aditi"
     val Amy       = "Amy"
+    val Astrid    = "Astrid"
+    val Bianca    = "Bianca"
     val Brian     = "Brian"
+    val Carla     = "Carla"
+    val Carmen    = "Carmen"
+    val Celine    = "Celine"
+    val Chantal   = "Chantal"
+    val Conchita  = "Conchita"
+    val Cristiano = "Cristiano"
+    val Dora      = "Dora"
     val Emma      = "Emma"
-    val Raveena   = "Raveena"
+    val Enrique   = "Enrique"
+    val Ewa       = "Ewa"
+    val Filiz     = "Filiz"
+    val Geraint   = "Geraint"
+    val Giorgio   = "Giorgio"
+    val Gwyneth   = "Gwyneth"
+    val Hans      = "Hans"
+    val Ines      = "Ines"
     val Ivy       = "Ivy"
+    val Jacek     = "Jacek"
+    val Jan       = "Jan"
     val Joanna    = "Joanna"
     val Joey      = "Joey"
     val Justin    = "Justin"
+    val Karl      = "Karl"
     val Kendra    = "Kendra"
     val Kimberly  = "Kimberly"
-    val Matthew   = "Matthew"
-    val Salli     = "Salli"
-    val Conchita  = "Conchita"
-    val Enrique   = "Enrique"
-    val Miguel    = "Miguel"
-    val Penelope  = "Penelope"
-    val Chantal   = "Chantal"
-    val Celine    = "Celine"
     val Lea       = "Lea"
-    val Mathieu   = "Mathieu"
-    val Dora      = "Dora"
-    val Karl      = "Karl"
-    val Carla     = "Carla"
-    val Giorgio   = "Giorgio"
-    val Mizuki    = "Mizuki"
     val Liv       = "Liv"
     val Lotte     = "Lotte"
-    val Ruben     = "Ruben"
-    val Ewa       = "Ewa"
-    val Jacek     = "Jacek"
-    val Jan       = "Jan"
-    val Maja      = "Maja"
-    val Ricardo   = "Ricardo"
-    val Vitoria   = "Vitoria"
-    val Cristiano = "Cristiano"
-    val Ines      = "Ines"
-    val Carmen    = "Carmen"
-    val Maxim     = "Maxim"
-    val Tatyana   = "Tatyana"
-    val Astrid    = "Astrid"
-    val Filiz     = "Filiz"
-    val Vicki     = "Vicki"
-    val Takumi    = "Takumi"
-    val Seoyeon   = "Seoyeon"
-    val Aditi     = "Aditi"
-    val Zhiyu     = "Zhiyu"
-    val Bianca    = "Bianca"
     val Lucia     = "Lucia"
+    val Mads      = "Mads"
+    val Maja      = "Maja"
+    val Marlene   = "Marlene"
+    val Mathieu   = "Mathieu"
+    val Matthew   = "Matthew"
+    val Maxim     = "Maxim"
     val Mia       = "Mia"
+    val Miguel    = "Miguel"
+    val Mizuki    = "Mizuki"
+    val Naja      = "Naja"
+    val Nicole    = "Nicole"
+    val Penelope  = "Penelope"
+    val Raveena   = "Raveena"
+    val Ricardo   = "Ricardo"
+    val Ruben     = "Ruben"
+    val Russell   = "Russell"
+    val Salli     = "Salli"
+    val Seoyeon   = "Seoyeon"
+    val Takumi    = "Takumi"
+    val Tatyana   = "Tatyana"
+    val Vicki     = "Vicki"
+    val Vitoria   = "Vitoria"
+    val Zeina     = "Zeina"
+    val Zhiyu     = "Zhiyu"
 
     val values = IndexedSeq(
-      Geraint,
-      Gwyneth,
-      Mads,
-      Naja,
-      Hans,
-      Marlene,
-      Nicole,
-      Russell,
+      Aditi,
       Amy,
+      Astrid,
+      Bianca,
       Brian,
+      Carla,
+      Carmen,
+      Celine,
+      Chantal,
+      Conchita,
+      Cristiano,
+      Dora,
       Emma,
-      Raveena,
+      Enrique,
+      Ewa,
+      Filiz,
+      Geraint,
+      Giorgio,
+      Gwyneth,
+      Hans,
+      Ines,
       Ivy,
+      Jacek,
+      Jan,
       Joanna,
       Joey,
       Justin,
+      Karl,
       Kendra,
       Kimberly,
-      Matthew,
-      Salli,
-      Conchita,
-      Enrique,
-      Miguel,
-      Penelope,
-      Chantal,
-      Celine,
       Lea,
-      Mathieu,
-      Dora,
-      Karl,
-      Carla,
-      Giorgio,
-      Mizuki,
       Liv,
       Lotte,
-      Ruben,
-      Ewa,
-      Jacek,
-      Jan,
-      Maja,
-      Ricardo,
-      Vitoria,
-      Cristiano,
-      Ines,
-      Carmen,
-      Maxim,
-      Tatyana,
-      Astrid,
-      Filiz,
-      Vicki,
-      Takumi,
-      Seoyeon,
-      Aditi,
-      Zhiyu,
-      Bianca,
       Lucia,
-      Mia
+      Mads,
+      Maja,
+      Marlene,
+      Mathieu,
+      Matthew,
+      Maxim,
+      Mia,
+      Miguel,
+      Mizuki,
+      Naja,
+      Nicole,
+      Penelope,
+      Raveena,
+      Ricardo,
+      Ruben,
+      Russell,
+      Salli,
+      Seoyeon,
+      Takumi,
+      Tatyana,
+      Vicki,
+      Vitoria,
+      Zeina,
+      Zhiyu
     )
   }
 }

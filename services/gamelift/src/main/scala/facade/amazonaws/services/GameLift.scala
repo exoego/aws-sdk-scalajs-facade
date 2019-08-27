@@ -12,6 +12,7 @@ package object gamelift {
   type AliasId                             = String
   type AliasList                           = js.Array[Alias]
   type ArnStringModel                      = String
+  type BackfillMode                        = String
   type BooleanModel                        = Boolean
   type BuildId                             = String
   type BuildList                           = js.Array[Build]
@@ -100,6 +101,8 @@ package object gamelift {
   type ScalingAdjustmentType               = String
   type ScalingPolicyList                   = js.Array[ScalingPolicy]
   type ScalingStatusType                   = String
+  type ScriptId                            = String
+  type ScriptList                          = js.Array[Script]
   type ServerProcessList                   = js.Array[ServerProcess]
   type SnsArnStringModel                   = String
   type StringDoubleMap                     = js.Dictionary[DoubleObject]
@@ -109,6 +112,8 @@ package object gamelift {
   type VpcPeeringAuthorizationList         = js.Array[VpcPeeringAuthorization]
   type VpcPeeringConnectionList            = js.Array[VpcPeeringConnection]
   type WholeNumber                         = Int
+  type ZipBlob =
+    nodejs.buffer.Buffer | nodejs.stream.Readable | js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
 
   implicit final class GameLiftOps(val service: GameLift) extends AnyVal {
 
@@ -133,6 +138,8 @@ package object gamelift {
       service.createPlayerSession(params).promise.toFuture
     def createPlayerSessionsFuture(params: CreatePlayerSessionsInput): Future[CreatePlayerSessionsOutput] =
       service.createPlayerSessions(params).promise.toFuture
+    def createScriptFuture(params: CreateScriptInput): Future[CreateScriptOutput] =
+      service.createScript(params).promise.toFuture
     def createVpcPeeringAuthorizationFuture(
         params: CreateVpcPeeringAuthorizationInput
     ): Future[CreateVpcPeeringAuthorizationOutput] = service.createVpcPeeringAuthorization(params).promise.toFuture
@@ -151,6 +158,7 @@ package object gamelift {
       service.deleteMatchmakingRuleSet(params).promise.toFuture
     def deleteScalingPolicyFuture(params: DeleteScalingPolicyInput): Future[js.Object] =
       service.deleteScalingPolicy(params).promise.toFuture
+    def deleteScriptFuture(params: DeleteScriptInput): Future[js.Object] = service.deleteScript(params).promise.toFuture
     def deleteVpcPeeringAuthorizationFuture(
         params: DeleteVpcPeeringAuthorizationInput
     ): Future[DeleteVpcPeeringAuthorizationOutput] = service.deleteVpcPeeringAuthorization(params).promise.toFuture
@@ -204,6 +212,8 @@ package object gamelift {
     ): Future[DescribeRuntimeConfigurationOutput] = service.describeRuntimeConfiguration(params).promise.toFuture
     def describeScalingPoliciesFuture(params: DescribeScalingPoliciesInput): Future[DescribeScalingPoliciesOutput] =
       service.describeScalingPolicies(params).promise.toFuture
+    def describeScriptFuture(params: DescribeScriptInput): Future[DescribeScriptOutput] =
+      service.describeScript(params).promise.toFuture
     def describeVpcPeeringAuthorizationsFuture(
         params: DescribeVpcPeeringAuthorizationsInput
     ): Future[DescribeVpcPeeringAuthorizationsOutput] =
@@ -221,6 +231,8 @@ package object gamelift {
       service.listBuilds(params).promise.toFuture
     def listFleetsFuture(params: ListFleetsInput): Future[ListFleetsOutput] =
       service.listFleets(params).promise.toFuture
+    def listScriptsFuture(params: ListScriptsInput): Future[ListScriptsOutput] =
+      service.listScripts(params).promise.toFuture
     def putScalingPolicyFuture(params: PutScalingPolicyInput): Future[PutScalingPolicyOutput] =
       service.putScalingPolicy(params).promise.toFuture
     def requestUploadCredentialsFuture(params: RequestUploadCredentialsInput): Future[RequestUploadCredentialsOutput] =
@@ -264,6 +276,8 @@ package object gamelift {
     def updateRuntimeConfigurationFuture(
         params: UpdateRuntimeConfigurationInput
     ): Future[UpdateRuntimeConfigurationOutput] = service.updateRuntimeConfiguration(params).promise.toFuture
+    def updateScriptFuture(params: UpdateScriptInput): Future[UpdateScriptOutput] =
+      service.updateScript(params).promise.toFuture
     def validateMatchmakingRuleSetFuture(
         params: ValidateMatchmakingRuleSetInput
     ): Future[ValidateMatchmakingRuleSetOutput] = service.validateMatchmakingRuleSet(params).promise.toFuture
@@ -289,6 +303,7 @@ package gamelift {
       js.native
     def createPlayerSession(params: CreatePlayerSessionInput): Request[CreatePlayerSessionOutput]    = js.native
     def createPlayerSessions(params: CreatePlayerSessionsInput): Request[CreatePlayerSessionsOutput] = js.native
+    def createScript(params: CreateScriptInput): Request[CreateScriptOutput]                         = js.native
     def createVpcPeeringAuthorization(
         params: CreateVpcPeeringAuthorizationInput
     ): Request[CreateVpcPeeringAuthorizationOutput] = js.native
@@ -304,6 +319,7 @@ package gamelift {
     def deleteMatchmakingRuleSet(params: DeleteMatchmakingRuleSetInput): Request[DeleteMatchmakingRuleSetOutput] =
       js.native
     def deleteScalingPolicy(params: DeleteScalingPolicyInput): Request[js.Object] = js.native
+    def deleteScript(params: DeleteScriptInput): Request[js.Object]               = js.native
     def deleteVpcPeeringAuthorization(
         params: DeleteVpcPeeringAuthorizationInput
     ): Request[DeleteVpcPeeringAuthorizationOutput] = js.native
@@ -343,6 +359,7 @@ package gamelift {
     ): Request[DescribeRuntimeConfigurationOutput] = js.native
     def describeScalingPolicies(params: DescribeScalingPoliciesInput): Request[DescribeScalingPoliciesOutput] =
       js.native
+    def describeScript(params: DescribeScriptInput): Request[DescribeScriptOutput] = js.native
     def describeVpcPeeringAuthorizations(
         params: DescribeVpcPeeringAuthorizationsInput
     ): Request[DescribeVpcPeeringAuthorizationsOutput] = js.native
@@ -354,6 +371,7 @@ package gamelift {
     def listAliases(params: ListAliasesInput): Request[ListAliasesOutput]                            = js.native
     def listBuilds(params: ListBuildsInput): Request[ListBuildsOutput]                               = js.native
     def listFleets(params: ListFleetsInput): Request[ListFleetsOutput]                               = js.native
+    def listScripts(params: ListScriptsInput): Request[ListScriptsOutput]                            = js.native
     def putScalingPolicy(params: PutScalingPolicyInput): Request[PutScalingPolicyOutput]             = js.native
     def requestUploadCredentials(params: RequestUploadCredentialsInput): Request[RequestUploadCredentialsOutput] =
       js.native
@@ -381,6 +399,7 @@ package gamelift {
     ): Request[UpdateMatchmakingConfigurationOutput] = js.native
     def updateRuntimeConfiguration(params: UpdateRuntimeConfigurationInput): Request[UpdateRuntimeConfigurationOutput] =
       js.native
+    def updateScript(params: UpdateScriptInput): Request[UpdateScriptOutput] = js.native
     def validateMatchmakingRuleSet(params: ValidateMatchmakingRuleSetInput): Request[ValidateMatchmakingRuleSetOutput] =
       js.native
   }
@@ -473,7 +492,7 @@ package gamelift {
   }
 
   /**
-    * Values for use in <a>Player</a> attribute key:value pairs. This object lets you specify an attribute value using any of the valid data types: string, number, string array or data map. Each <code>AttributeValue</code> object can use only one of the available properties.
+    * Values for use in <a>Player</a> attribute key:value pairs. This object lets you specify an attribute value using any of the valid data types: string, number, string array, or data map. Each <code>AttributeValue</code> object can use only one of the available properties.
     */
   @js.native
   trait AttributeValue extends js.Object {
@@ -523,8 +542,16 @@ package gamelift {
     }
   }
 
+  object BackfillModeEnum {
+    val AUTOMATIC = "AUTOMATIC"
+    val MANUAL    = "MANUAL"
+
+    val values = IndexedSeq(AUTOMATIC, MANUAL)
+  }
+
   /**
-    * Properties describing a game build.
+    * Properties describing a custom game build.
+    *  ```Related operations```
     * * <a>CreateBuild</a>
     *  * <a>ListBuilds</a>
     *  * <a>DescribeBuild</a>
@@ -682,9 +709,9 @@ package gamelift {
     */
   @js.native
   trait CreateFleetInput extends js.Object {
-    var BuildId: BuildId
     var EC2InstanceType: EC2InstanceType
     var Name: NonZeroAndMaxString
+    var BuildId: js.UndefOr[BuildId]
     var Description: js.UndefOr[NonZeroAndMaxString]
     var EC2InboundPermissions: js.UndefOr[IpPermissionsList]
     var FleetType: js.UndefOr[FleetType]
@@ -696,15 +723,16 @@ package gamelift {
     var PeerVpcId: js.UndefOr[NonZeroAndMaxString]
     var ResourceCreationLimitPolicy: js.UndefOr[ResourceCreationLimitPolicy]
     var RuntimeConfiguration: js.UndefOr[RuntimeConfiguration]
+    var ScriptId: js.UndefOr[ScriptId]
     var ServerLaunchParameters: js.UndefOr[NonZeroAndMaxString]
     var ServerLaunchPath: js.UndefOr[NonZeroAndMaxString]
   }
 
   object CreateFleetInput {
     def apply(
-        BuildId: BuildId,
         EC2InstanceType: EC2InstanceType,
         Name: NonZeroAndMaxString,
+        BuildId: js.UndefOr[BuildId] = js.undefined,
         Description: js.UndefOr[NonZeroAndMaxString] = js.undefined,
         EC2InboundPermissions: js.UndefOr[IpPermissionsList] = js.undefined,
         FleetType: js.UndefOr[FleetType] = js.undefined,
@@ -716,15 +744,16 @@ package gamelift {
         PeerVpcId: js.UndefOr[NonZeroAndMaxString] = js.undefined,
         ResourceCreationLimitPolicy: js.UndefOr[ResourceCreationLimitPolicy] = js.undefined,
         RuntimeConfiguration: js.UndefOr[RuntimeConfiguration] = js.undefined,
+        ScriptId: js.UndefOr[ScriptId] = js.undefined,
         ServerLaunchParameters: js.UndefOr[NonZeroAndMaxString] = js.undefined,
         ServerLaunchPath: js.UndefOr[NonZeroAndMaxString] = js.undefined
     ): CreateFleetInput = {
       val __obj = js.Dictionary[js.Any](
-        "BuildId"         -> BuildId.asInstanceOf[js.Any],
         "EC2InstanceType" -> EC2InstanceType.asInstanceOf[js.Any],
         "Name"            -> Name.asInstanceOf[js.Any]
       )
 
+      BuildId.foreach(__v => __obj.update("BuildId", __v.asInstanceOf[js.Any]))
       Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
       EC2InboundPermissions.foreach(__v => __obj.update("EC2InboundPermissions", __v.asInstanceOf[js.Any]))
       FleetType.foreach(__v => __obj.update("FleetType", __v.asInstanceOf[js.Any]))
@@ -738,6 +767,7 @@ package gamelift {
       PeerVpcId.foreach(__v => __obj.update("PeerVpcId", __v.asInstanceOf[js.Any]))
       ResourceCreationLimitPolicy.foreach(__v => __obj.update("ResourceCreationLimitPolicy", __v.asInstanceOf[js.Any]))
       RuntimeConfiguration.foreach(__v => __obj.update("RuntimeConfiguration", __v.asInstanceOf[js.Any]))
+      ScriptId.foreach(__v => __obj.update("ScriptId", __v.asInstanceOf[js.Any]))
       ServerLaunchParameters.foreach(__v => __obj.update("ServerLaunchParameters", __v.asInstanceOf[js.Any]))
       ServerLaunchPath.foreach(__v => __obj.update("ServerLaunchPath", __v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateFleetInput]
@@ -883,6 +913,7 @@ package gamelift {
     var RuleSetName: MatchmakingIdStringModel
     var AcceptanceTimeoutSeconds: js.UndefOr[MatchmakingAcceptanceTimeoutInteger]
     var AdditionalPlayerCount: js.UndefOr[WholeNumber]
+    var BackfillMode: js.UndefOr[BackfillMode]
     var CustomEventData: js.UndefOr[CustomEventData]
     var Description: js.UndefOr[NonZeroAndMaxString]
     var GameProperties: js.UndefOr[GamePropertyList]
@@ -899,6 +930,7 @@ package gamelift {
         RuleSetName: MatchmakingIdStringModel,
         AcceptanceTimeoutSeconds: js.UndefOr[MatchmakingAcceptanceTimeoutInteger] = js.undefined,
         AdditionalPlayerCount: js.UndefOr[WholeNumber] = js.undefined,
+        BackfillMode: js.UndefOr[BackfillMode] = js.undefined,
         CustomEventData: js.UndefOr[CustomEventData] = js.undefined,
         Description: js.UndefOr[NonZeroAndMaxString] = js.undefined,
         GameProperties: js.UndefOr[GamePropertyList] = js.undefined,
@@ -915,6 +947,7 @@ package gamelift {
 
       AcceptanceTimeoutSeconds.foreach(__v => __obj.update("AcceptanceTimeoutSeconds", __v.asInstanceOf[js.Any]))
       AdditionalPlayerCount.foreach(__v => __obj.update("AdditionalPlayerCount", __v.asInstanceOf[js.Any]))
+      BackfillMode.foreach(__v => __obj.update("BackfillMode", __v.asInstanceOf[js.Any]))
       CustomEventData.foreach(__v => __obj.update("CustomEventData", __v.asInstanceOf[js.Any]))
       Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
       GameProperties.foreach(__v => __obj.update("GameProperties", __v.asInstanceOf[js.Any]))
@@ -1070,6 +1103,45 @@ package gamelift {
       val __obj = js.Dictionary.empty[js.Any]
       PlayerSessions.foreach(__v => __obj.update("PlayerSessions", __v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreatePlayerSessionsOutput]
+    }
+  }
+
+  @js.native
+  trait CreateScriptInput extends js.Object {
+    var Name: js.UndefOr[NonZeroAndMaxString]
+    var StorageLocation: js.UndefOr[S3Location]
+    var Version: js.UndefOr[NonZeroAndMaxString]
+    var ZipFile: js.UndefOr[ZipBlob]
+  }
+
+  object CreateScriptInput {
+    def apply(
+        Name: js.UndefOr[NonZeroAndMaxString] = js.undefined,
+        StorageLocation: js.UndefOr[S3Location] = js.undefined,
+        Version: js.UndefOr[NonZeroAndMaxString] = js.undefined,
+        ZipFile: js.UndefOr[ZipBlob] = js.undefined
+    ): CreateScriptInput = {
+      val __obj = js.Dictionary.empty[js.Any]
+      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
+      StorageLocation.foreach(__v => __obj.update("StorageLocation", __v.asInstanceOf[js.Any]))
+      Version.foreach(__v => __obj.update("Version", __v.asInstanceOf[js.Any]))
+      ZipFile.foreach(__v => __obj.update("ZipFile", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateScriptInput]
+    }
+  }
+
+  @js.native
+  trait CreateScriptOutput extends js.Object {
+    var Script: js.UndefOr[Script]
+  }
+
+  object CreateScriptOutput {
+    def apply(
+        Script: js.UndefOr[Script] = js.undefined
+    ): CreateScriptOutput = {
+      val __obj = js.Dictionary.empty[js.Any]
+      Script.foreach(__v => __obj.update("Script", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateScriptOutput]
     }
   }
 
@@ -1331,6 +1403,23 @@ package gamelift {
       )
 
       __obj.asInstanceOf[DeleteScalingPolicyInput]
+    }
+  }
+
+  @js.native
+  trait DeleteScriptInput extends js.Object {
+    var ScriptId: ScriptId
+  }
+
+  object DeleteScriptInput {
+    def apply(
+        ScriptId: ScriptId
+    ): DeleteScriptInput = {
+      val __obj = js.Dictionary[js.Any](
+        "ScriptId" -> ScriptId.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[DeleteScriptInput]
     }
   }
 
@@ -2259,6 +2348,38 @@ package gamelift {
   }
 
   @js.native
+  trait DescribeScriptInput extends js.Object {
+    var ScriptId: ScriptId
+  }
+
+  object DescribeScriptInput {
+    def apply(
+        ScriptId: ScriptId
+    ): DescribeScriptInput = {
+      val __obj = js.Dictionary[js.Any](
+        "ScriptId" -> ScriptId.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[DescribeScriptInput]
+    }
+  }
+
+  @js.native
+  trait DescribeScriptOutput extends js.Object {
+    var Script: js.UndefOr[Script]
+  }
+
+  object DescribeScriptOutput {
+    def apply(
+        Script: js.UndefOr[Script] = js.undefined
+    ): DescribeScriptOutput = {
+      val __obj = js.Dictionary.empty[js.Any]
+      Script.foreach(__v => __obj.update("Script", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeScriptOutput]
+    }
+  }
+
+  @js.native
   trait DescribeVpcPeeringAuthorizationsInput extends js.Object {}
 
   object DescribeVpcPeeringAuthorizationsInput {
@@ -2646,6 +2767,7 @@ package gamelift {
     var NewGameSessionProtectionPolicy: js.UndefOr[ProtectionPolicy]
     var OperatingSystem: js.UndefOr[OperatingSystem]
     var ResourceCreationLimitPolicy: js.UndefOr[ResourceCreationLimitPolicy]
+    var ScriptId: js.UndefOr[ScriptId]
     var ServerLaunchParameters: js.UndefOr[NonZeroAndMaxString]
     var ServerLaunchPath: js.UndefOr[NonZeroAndMaxString]
     var Status: js.UndefOr[FleetStatus]
@@ -2669,6 +2791,7 @@ package gamelift {
         NewGameSessionProtectionPolicy: js.UndefOr[ProtectionPolicy] = js.undefined,
         OperatingSystem: js.UndefOr[OperatingSystem] = js.undefined,
         ResourceCreationLimitPolicy: js.UndefOr[ResourceCreationLimitPolicy] = js.undefined,
+        ScriptId: js.UndefOr[ScriptId] = js.undefined,
         ServerLaunchParameters: js.UndefOr[NonZeroAndMaxString] = js.undefined,
         ServerLaunchPath: js.UndefOr[NonZeroAndMaxString] = js.undefined,
         Status: js.UndefOr[FleetStatus] = js.undefined,
@@ -2692,6 +2815,7 @@ package gamelift {
       )
       OperatingSystem.foreach(__v => __obj.update("OperatingSystem", __v.asInstanceOf[js.Any]))
       ResourceCreationLimitPolicy.foreach(__v => __obj.update("ResourceCreationLimitPolicy", __v.asInstanceOf[js.Any]))
+      ScriptId.foreach(__v => __obj.update("ScriptId", __v.asInstanceOf[js.Any]))
       ServerLaunchParameters.foreach(__v => __obj.update("ServerLaunchParameters", __v.asInstanceOf[js.Any]))
       ServerLaunchPath.foreach(__v => __obj.update("ServerLaunchPath", __v.asInstanceOf[js.Any]))
       Status.foreach(__v => __obj.update("Status", __v.asInstanceOf[js.Any]))
@@ -3292,7 +3416,7 @@ package gamelift {
   }
 
   /**
-    * A range of IP addresses and port settings that allow inbound traffic to connect to server processes on Amazon GameLift. Each game session hosted on a fleet is assigned a unique combination of IP address and port number, which must fall into the fleet's allowed ranges. This combination is included in the <a>GameSession</a> object.
+    * A range of IP addresses and port settings that allow inbound traffic to connect to server processes on an Amazon GameLift. New game sessions that are started on the fleet are assigned an IP address/port number combination, which must fall into the fleet's allowed ranges. For fleets created with a custom game server, the ranges reflect the server's game session assignments. For Realtime Servers fleets, Amazon GameLift automatically opens two port ranges, one for TCP messaging and one for UDP for use by the Realtime servers.
     */
   @js.native
   trait IpPermission extends js.Object {
@@ -3428,18 +3552,21 @@ package gamelift {
     var BuildId: js.UndefOr[BuildId]
     var Limit: js.UndefOr[PositiveInteger]
     var NextToken: js.UndefOr[NonZeroAndMaxString]
+    var ScriptId: js.UndefOr[ScriptId]
   }
 
   object ListFleetsInput {
     def apply(
         BuildId: js.UndefOr[BuildId] = js.undefined,
         Limit: js.UndefOr[PositiveInteger] = js.undefined,
-        NextToken: js.UndefOr[NonZeroAndMaxString] = js.undefined
+        NextToken: js.UndefOr[NonZeroAndMaxString] = js.undefined,
+        ScriptId: js.UndefOr[ScriptId] = js.undefined
     ): ListFleetsInput = {
       val __obj = js.Dictionary.empty[js.Any]
       BuildId.foreach(__v => __obj.update("BuildId", __v.asInstanceOf[js.Any]))
       Limit.foreach(__v => __obj.update("Limit", __v.asInstanceOf[js.Any]))
       NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      ScriptId.foreach(__v => __obj.update("ScriptId", __v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListFleetsInput]
     }
   }
@@ -3462,6 +3589,42 @@ package gamelift {
       FleetIds.foreach(__v => __obj.update("FleetIds", __v.asInstanceOf[js.Any]))
       NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListFleetsOutput]
+    }
+  }
+
+  @js.native
+  trait ListScriptsInput extends js.Object {
+    var Limit: js.UndefOr[PositiveInteger]
+    var NextToken: js.UndefOr[NonEmptyString]
+  }
+
+  object ListScriptsInput {
+    def apply(
+        Limit: js.UndefOr[PositiveInteger] = js.undefined,
+        NextToken: js.UndefOr[NonEmptyString] = js.undefined
+    ): ListScriptsInput = {
+      val __obj = js.Dictionary.empty[js.Any]
+      Limit.foreach(__v => __obj.update("Limit", __v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListScriptsInput]
+    }
+  }
+
+  @js.native
+  trait ListScriptsOutput extends js.Object {
+    var NextToken: js.UndefOr[NonEmptyString]
+    var Scripts: js.UndefOr[ScriptList]
+  }
+
+  object ListScriptsOutput {
+    def apply(
+        NextToken: js.UndefOr[NonEmptyString] = js.undefined,
+        Scripts: js.UndefOr[ScriptList] = js.undefined
+    ): ListScriptsOutput = {
+      val __obj = js.Dictionary.empty[js.Any]
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      Scripts.foreach(__v => __obj.update("Scripts", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListScriptsOutput]
     }
   }
 
@@ -3495,6 +3658,7 @@ package gamelift {
     var AcceptanceRequired: js.UndefOr[BooleanModel]
     var AcceptanceTimeoutSeconds: js.UndefOr[MatchmakingAcceptanceTimeoutInteger]
     var AdditionalPlayerCount: js.UndefOr[WholeNumber]
+    var BackfillMode: js.UndefOr[BackfillMode]
     var CreationTime: js.UndefOr[Timestamp]
     var CustomEventData: js.UndefOr[CustomEventData]
     var Description: js.UndefOr[NonZeroAndMaxString]
@@ -3512,6 +3676,7 @@ package gamelift {
         AcceptanceRequired: js.UndefOr[BooleanModel] = js.undefined,
         AcceptanceTimeoutSeconds: js.UndefOr[MatchmakingAcceptanceTimeoutInteger] = js.undefined,
         AdditionalPlayerCount: js.UndefOr[WholeNumber] = js.undefined,
+        BackfillMode: js.UndefOr[BackfillMode] = js.undefined,
         CreationTime: js.UndefOr[Timestamp] = js.undefined,
         CustomEventData: js.UndefOr[CustomEventData] = js.undefined,
         Description: js.UndefOr[NonZeroAndMaxString] = js.undefined,
@@ -3527,6 +3692,7 @@ package gamelift {
       AcceptanceRequired.foreach(__v => __obj.update("AcceptanceRequired", __v.asInstanceOf[js.Any]))
       AcceptanceTimeoutSeconds.foreach(__v => __obj.update("AcceptanceTimeoutSeconds", __v.asInstanceOf[js.Any]))
       AdditionalPlayerCount.foreach(__v => __obj.update("AdditionalPlayerCount", __v.asInstanceOf[js.Any]))
+      BackfillMode.foreach(__v => __obj.update("BackfillMode", __v.asInstanceOf[js.Any]))
       CreationTime.foreach(__v => __obj.update("CreationTime", __v.asInstanceOf[js.Any]))
       CustomEventData.foreach(__v => __obj.update("CustomEventData", __v.asInstanceOf[js.Any]))
       Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
@@ -3555,7 +3721,7 @@ package gamelift {
   }
 
   /**
-    * Set of rule statements, used with FlexMatch, that determine how to build a certain kind of player match. Each rule set describes a type of group to be created and defines the parameters for acceptable player matches. Rule sets are used in <a>MatchmakingConfiguration</a> objects.
+    * Set of rule statements, used with FlexMatch, that determine how to build your player matches. Each rule set describes a type of group to be created and defines the parameters for acceptable player matches. Rule sets are used in <a>MatchmakingConfiguration</a> objects.
     *  A rule set may define the following elements for a match. For detailed information and examples showing how to construct a rule set, see [[https://docs.aws.amazon.com/gamelift/latest/developerguide/match-rulesets.html|Build a FlexMatch Rule Set]].
     * * Teams -- Required. A rule set must define one or multiple teams for the match and set minimum and maximum team sizes. For example, a rule set might describe a 4x4 match that requires all eight slots to be filled.
     *  * Player attributes -- Optional. These attributes specify a set of player characteristics to evaluate when looking for a match. Matchmaking requests that use a rule set with player attributes must provide the corresponding attribute values. For example, an attribute might specify a player's skill or level.
@@ -4024,26 +4190,12 @@ package gamelift {
 
   /**
     * Routing configuration for a fleet alias.
-    * * <a>CreateFleet</a>
-    *  * <a>ListFleets</a>
-    *  * <a>DeleteFleet</a>
-    *  * Describe fleets:
-    * <li> <a>DescribeFleetAttributes</a>
-    *  * <a>DescribeFleetCapacity</a>
-    *  * <a>DescribeFleetPortSettings</a>
-    *  * <a>DescribeFleetUtilization</a>
-    *  * <a>DescribeRuntimeConfiguration</a>
-    *  * <a>DescribeEC2InstanceLimits</a>
-    *  * <a>DescribeFleetEvents</a>
-    * </li> * Update fleets:
-    * <li> <a>UpdateFleetAttributes</a>
-    *  * <a>UpdateFleetCapacity</a>
-    *  * <a>UpdateFleetPortSettings</a>
-    *  * <a>UpdateRuntimeConfiguration</a>
-    * </li> * Manage fleet actions:
-    * <li> <a>StartFleetActions</a>
-    *  * <a>StopFleetActions</a>
-    * </li>
+    * * <a>CreateAlias</a>
+    *  * <a>ListAliases</a>
+    *  * <a>DescribeAlias</a>
+    *  * <a>UpdateAlias</a>
+    *  * <a>DeleteAlias</a>
+    *  * <a>ResolveAlias</a>
     */
   @js.native
   trait RoutingStrategy extends js.Object {
@@ -4074,9 +4226,9 @@ package gamelift {
   }
 
   /**
-    * A collection of server process configurations that describe what processes to run on each instance in a fleet. All fleets must have a run-time configuration. Each instance in the fleet launches the server processes specified in the run-time configuration and launches new ones as existing processes end. Each instance regularly checks for an updated run-time configuration and follows the new instructions.
-    *  The run-time configuration enables the instances in a fleet to run multiple processes simultaneously. Potential scenarios are as follows: (1) Run multiple processes of a single game server executable to maximize usage of your hosting resources. (2) Run one or more processes of different build executables, such as your game server executable and a related program, or two or more different versions of a game server. (3) Run multiple processes of a single game server but with different launch parameters, for example to run one process on each instance in debug mode.
-    *  A Amazon GameLift instance is limited to 50 processes running simultaneously. A run-time configuration must specify fewer than this limit. To calculate the total number of processes specified in a run-time configuration, add the values of the <code>ConcurrentExecutions</code> parameter for each <code> <a>ServerProcess</a> </code> object in the run-time configuration.
+    * A collection of server process configurations that describe what processes to run on each instance in a fleet. Server processes run either a custom game build executable or a Realtime Servers script. Each instance in the fleet starts the specified server processes and continues to start new processes as existing processes end. An instance regularly checks for an updated run-time configuration.
+    *  The run-time configuration enables the instances in a fleet to run multiple processes simultaneously. Learn more about [[https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-multiprocess.html| Running Multiple Processes on a Fleet ]].
+    *  A Amazon GameLift instance is limited to 50 processes running simultaneously. To calculate the total number of processes in a run-time configuration, add the values of the <code>ConcurrentExecutions</code> parameter for each <a>ServerProcess</a> object.
     * * <a>CreateFleet</a>
     *  * <a>ListFleets</a>
     *  * <a>DeleteFleet</a>
@@ -4124,12 +4276,13 @@ package gamelift {
   }
 
   /**
-    * Location in Amazon Simple Storage Service (Amazon S3) where build files can be stored for access by Amazon GameLift. This location is specified in a <a>CreateBuild</a> request. For more details, see the [[https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-build-cli-uploading.html#gamelift-build-cli-uploading-create-build|Create a Build with Files in Amazon S3]].
+    * Location in Amazon Simple Storage Service (Amazon S3) where build or script files are stored for access by Amazon GameLift. This location is specified in <a>CreateBuild</a>, <a>CreateScript</a>, and <a>UpdateScript</a> requests.
     */
   @js.native
   trait S3Location extends js.Object {
     var Bucket: js.UndefOr[NonEmptyString]
     var Key: js.UndefOr[NonEmptyString]
+    var ObjectVersion: js.UndefOr[NonEmptyString]
     var RoleArn: js.UndefOr[NonEmptyString]
   }
 
@@ -4137,11 +4290,13 @@ package gamelift {
     def apply(
         Bucket: js.UndefOr[NonEmptyString] = js.undefined,
         Key: js.UndefOr[NonEmptyString] = js.undefined,
+        ObjectVersion: js.UndefOr[NonEmptyString] = js.undefined,
         RoleArn: js.UndefOr[NonEmptyString] = js.undefined
     ): S3Location = {
       val __obj = js.Dictionary.empty[js.Any]
       Bucket.foreach(__v => __obj.update("Bucket", __v.asInstanceOf[js.Any]))
       Key.foreach(__v => __obj.update("Key", __v.asInstanceOf[js.Any]))
+      ObjectVersion.foreach(__v => __obj.update("ObjectVersion", __v.asInstanceOf[js.Any]))
       RoleArn.foreach(__v => __obj.update("RoleArn", __v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[S3Location]
     }
@@ -4227,6 +4382,45 @@ package gamelift {
   }
 
   /**
+    * Properties describing a Realtime script.
+    *  ```Related operations```
+    * * <a>CreateScript</a>
+    *  * <a>ListScripts</a>
+    *  * <a>DescribeScript</a>
+    *  * <a>UpdateScript</a>
+    *  * <a>DeleteScript</a>
+    */
+  @js.native
+  trait Script extends js.Object {
+    var CreationTime: js.UndefOr[Timestamp]
+    var Name: js.UndefOr[NonZeroAndMaxString]
+    var ScriptId: js.UndefOr[ScriptId]
+    var SizeOnDisk: js.UndefOr[PositiveLong]
+    var StorageLocation: js.UndefOr[S3Location]
+    var Version: js.UndefOr[NonZeroAndMaxString]
+  }
+
+  object Script {
+    def apply(
+        CreationTime: js.UndefOr[Timestamp] = js.undefined,
+        Name: js.UndefOr[NonZeroAndMaxString] = js.undefined,
+        ScriptId: js.UndefOr[ScriptId] = js.undefined,
+        SizeOnDisk: js.UndefOr[PositiveLong] = js.undefined,
+        StorageLocation: js.UndefOr[S3Location] = js.undefined,
+        Version: js.UndefOr[NonZeroAndMaxString] = js.undefined
+    ): Script = {
+      val __obj = js.Dictionary.empty[js.Any]
+      CreationTime.foreach(__v => __obj.update("CreationTime", __v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
+      ScriptId.foreach(__v => __obj.update("ScriptId", __v.asInstanceOf[js.Any]))
+      SizeOnDisk.foreach(__v => __obj.update("SizeOnDisk", __v.asInstanceOf[js.Any]))
+      StorageLocation.foreach(__v => __obj.update("StorageLocation", __v.asInstanceOf[js.Any]))
+      Version.foreach(__v => __obj.update("Version", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Script]
+    }
+  }
+
+  /**
     * Represents the input for a request action.
     */
   @js.native
@@ -4281,7 +4475,7 @@ package gamelift {
   }
 
   /**
-    * A set of instructions for launching server processes on each instance in a fleet. Each instruction set identifies the location of the server executable, optional launch parameters, and the number of server processes with this configuration to maintain concurrently on the instance. Server process configurations make up a fleet's <code> <a>RuntimeConfiguration</a> </code>.
+    * A set of instructions for launching server processes on each instance in a fleet. Server processes run either a custom game build executable or a Realtime Servers script. Each instruction set identifies the location of the custom game build executable or Realtime launch script, optional launch parameters, and the number of server processes with this configuration to maintain concurrently on the instance. Server process configurations make up a fleet's <code> <a>RuntimeConfiguration</a> </code>.
     */
   @js.native
   trait ServerProcess extends js.Object {
@@ -4968,6 +5162,7 @@ package gamelift {
     var AcceptanceRequired: js.UndefOr[BooleanModel]
     var AcceptanceTimeoutSeconds: js.UndefOr[MatchmakingAcceptanceTimeoutInteger]
     var AdditionalPlayerCount: js.UndefOr[WholeNumber]
+    var BackfillMode: js.UndefOr[BackfillMode]
     var CustomEventData: js.UndefOr[CustomEventData]
     var Description: js.UndefOr[NonZeroAndMaxString]
     var GameProperties: js.UndefOr[GamePropertyList]
@@ -4984,6 +5179,7 @@ package gamelift {
         AcceptanceRequired: js.UndefOr[BooleanModel] = js.undefined,
         AcceptanceTimeoutSeconds: js.UndefOr[MatchmakingAcceptanceTimeoutInteger] = js.undefined,
         AdditionalPlayerCount: js.UndefOr[WholeNumber] = js.undefined,
+        BackfillMode: js.UndefOr[BackfillMode] = js.undefined,
         CustomEventData: js.UndefOr[CustomEventData] = js.undefined,
         Description: js.UndefOr[NonZeroAndMaxString] = js.undefined,
         GameProperties: js.UndefOr[GamePropertyList] = js.undefined,
@@ -5000,6 +5196,7 @@ package gamelift {
       AcceptanceRequired.foreach(__v => __obj.update("AcceptanceRequired", __v.asInstanceOf[js.Any]))
       AcceptanceTimeoutSeconds.foreach(__v => __obj.update("AcceptanceTimeoutSeconds", __v.asInstanceOf[js.Any]))
       AdditionalPlayerCount.foreach(__v => __obj.update("AdditionalPlayerCount", __v.asInstanceOf[js.Any]))
+      BackfillMode.foreach(__v => __obj.update("BackfillMode", __v.asInstanceOf[js.Any]))
       CustomEventData.foreach(__v => __obj.update("CustomEventData", __v.asInstanceOf[js.Any]))
       Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
       GameProperties.foreach(__v => __obj.update("GameProperties", __v.asInstanceOf[js.Any]))
@@ -5068,6 +5265,50 @@ package gamelift {
       val __obj = js.Dictionary.empty[js.Any]
       RuntimeConfiguration.foreach(__v => __obj.update("RuntimeConfiguration", __v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateRuntimeConfigurationOutput]
+    }
+  }
+
+  @js.native
+  trait UpdateScriptInput extends js.Object {
+    var ScriptId: ScriptId
+    var Name: js.UndefOr[NonZeroAndMaxString]
+    var StorageLocation: js.UndefOr[S3Location]
+    var Version: js.UndefOr[NonZeroAndMaxString]
+    var ZipFile: js.UndefOr[ZipBlob]
+  }
+
+  object UpdateScriptInput {
+    def apply(
+        ScriptId: ScriptId,
+        Name: js.UndefOr[NonZeroAndMaxString] = js.undefined,
+        StorageLocation: js.UndefOr[S3Location] = js.undefined,
+        Version: js.UndefOr[NonZeroAndMaxString] = js.undefined,
+        ZipFile: js.UndefOr[ZipBlob] = js.undefined
+    ): UpdateScriptInput = {
+      val __obj = js.Dictionary[js.Any](
+        "ScriptId" -> ScriptId.asInstanceOf[js.Any]
+      )
+
+      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
+      StorageLocation.foreach(__v => __obj.update("StorageLocation", __v.asInstanceOf[js.Any]))
+      Version.foreach(__v => __obj.update("Version", __v.asInstanceOf[js.Any]))
+      ZipFile.foreach(__v => __obj.update("ZipFile", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateScriptInput]
+    }
+  }
+
+  @js.native
+  trait UpdateScriptOutput extends js.Object {
+    var Script: js.UndefOr[Script]
+  }
+
+  object UpdateScriptOutput {
+    def apply(
+        Script: js.UndefOr[Script] = js.undefined
+    ): UpdateScriptOutput = {
+      val __obj = js.Dictionary.empty[js.Any]
+      Script.foreach(__v => __obj.update("Script", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateScriptOutput]
     }
   }
 
