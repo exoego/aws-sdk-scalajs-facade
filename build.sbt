@@ -86,7 +86,7 @@ lazy val awsDirectoryService                = defineAwsProject("DirectoryService
 lazy val awsDLM                             = defineAwsProject("DLM")
 lazy val awsDMS                             = defineAwsProject("DMS")
 lazy val awsDocDb                           = defineAwsProject("DocDB")
-lazy val awsDynamoDB                        = defineAwsProject("DynamoDB")
+lazy val awsDynamoDB                        = defineAwsProject("DynamoDB").settings(libraryDependencies += Dependencies.shared.compat.value)
 lazy val awsDynamoDBStreams                 = defineAwsProject("DynamoDBStreams")
 lazy val awsEC2                             = defineAwsProject("EC2")
 lazy val awsEC2InstanceConnect              = defineAwsProject("EC2InstanceConnect")
