@@ -261,6 +261,7 @@ lazy val subProjects: Seq[Project] = Seq(
   awsAppSync,
   awsAthena,
   awsAutoScaling,
+  awsAutoScalingPlans,
   awsBackup,
   awsBatch,
   awsBudgetsService,
