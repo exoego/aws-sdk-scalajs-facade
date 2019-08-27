@@ -153,7 +153,7 @@ package glacier {
 
   /**
     * Provides options to abort a multipart upload identified by the upload ID.
-    *  For information about the underlying REST API, see [[http://docs.aws.amazon.com/amazonglacier/latest/dev/api-multipart-abort-upload.html|Abort Multipart Upload]]. For conceptual information, see [[http://docs.aws.amazon.com/amazonglacier/latest/dev/working-with-archives.html|Working with Archives in Amazon Glacier]].
+    *  For information about the underlying REST API, see [[https://docs.aws.amazon.com/amazonglacier/latest/dev/api-multipart-abort-upload.html|Abort Multipart Upload]]. For conceptual information, see [[https://docs.aws.amazon.com/amazonglacier/latest/dev/working-with-archives.html|Working with Archives in Amazon S3 Glacier]].
     */
   @js.native
   trait AbortMultipartUploadInput extends js.Object {
@@ -236,8 +236,8 @@ package glacier {
   }
 
   /**
-    * Contains the Amazon Glacier response to your request.
-    *  For information about the underlying REST API, see [[http://docs.aws.amazon.com/amazonglacier/latest/dev/api-archive-post.html|Upload Archive]]. For conceptual information, see [[http://docs.aws.amazon.com/amazonglacier/latest/dev/working-with-archives.html|Working with Archives in Amazon Glacier]].
+    * Contains the Amazon S3 Glacier response to your request.
+    *  For information about the underlying REST API, see [[https://docs.aws.amazon.com/amazonglacier/latest/dev/api-archive-post.html|Upload Archive]]. For conceptual information, see [[https://docs.aws.amazon.com/amazonglacier/latest/dev/working-with-archives.html|Working with Archives in Amazon S3 Glacier]].
     */
   @js.native
   trait ArchiveCreationOutput extends js.Object {
@@ -344,7 +344,7 @@ package glacier {
   }
 
   /**
-    * Provides options to complete a multipart upload operation. This informs Amazon Glacier that all the archive parts have been uploaded and Amazon Glacier can now assemble the archive from the uploaded parts. After assembling and saving the archive to the vault, Amazon Glacier returns the URI path of the newly created archive resource.
+    * Provides options to complete a multipart upload operation. This informs Amazon Glacier that all the archive parts have been uploaded and Amazon S3 Glacier (Glacier) can now assemble the archive from the uploaded parts. After assembling and saving the archive to the vault, Glacier returns the URI path of the newly created archive resource.
     */
   @js.native
   trait CompleteMultipartUploadInput extends js.Object {
@@ -425,7 +425,7 @@ package glacier {
   }
 
   /**
-    * Contains the Amazon Glacier response to your request.
+    * Contains the Amazon S3 Glacier response to your request.
     */
   @js.native
   trait CreateVaultOutput extends js.Object {
@@ -482,7 +482,7 @@ package glacier {
   }
 
   /**
-    * Provides options for deleting an archive from an Amazon Glacier vault.
+    * Provides options for deleting an archive from an Amazon S3 Glacier vault.
     */
   @js.native
   trait DeleteArchiveInput extends js.Object {
@@ -531,7 +531,7 @@ package glacier {
   }
 
   /**
-    * Provides options for deleting a vault from Amazon Glacier.
+    * Provides options for deleting a vault from Amazon S3 Glacier.
     */
   @js.native
   trait DeleteVaultInput extends js.Object {
@@ -626,7 +626,7 @@ package glacier {
   }
 
   /**
-    * Contains the Amazon Glacier response to your request.
+    * Contains the Amazon S3 Glacier response to your request.
     */
   @js.native
   trait DescribeVaultOutput extends js.Object {
@@ -724,7 +724,7 @@ package glacier {
   }
 
   /**
-    * Contains the Amazon Glacier response to the <code>GetDataRetrievalPolicy</code> request.
+    * Contains the Amazon S3 Glacier response to the <code>GetDataRetrievalPolicy</code> request.
     */
   @js.native
   trait GetDataRetrievalPolicyOutput extends js.Object {
@@ -742,7 +742,7 @@ package glacier {
   }
 
   /**
-    * Provides options for downloading output of an Amazon Glacier job.
+    * Provides options for downloading output of an Amazon S3 Glacier job.
     */
   @js.native
   trait GetJobOutputInput extends js.Object {
@@ -771,7 +771,7 @@ package glacier {
   }
 
   /**
-    * Contains the Amazon Glacier response to your request.
+    * Contains the Amazon S3 Glacier response to your request.
     */
   @js.native
   trait GetJobOutputOutput extends js.Object {
@@ -871,7 +871,7 @@ package glacier {
   }
 
   /**
-    * Contains the Amazon Glacier response to your request.
+    * Contains the Amazon S3 Glacier response to your request.
     */
   @js.native
   trait GetVaultLockOutput extends js.Object {
@@ -921,7 +921,7 @@ package glacier {
   }
 
   /**
-    * Contains the Amazon Glacier response to your request.
+    * Contains the Amazon S3 Glacier response to your request.
     */
   @js.native
   trait GetVaultNotificationsOutput extends js.Object {
@@ -939,7 +939,7 @@ package glacier {
   }
 
   /**
-    * Contains the description of an Amazon Glacier job.
+    * Contains the description of an Amazon S3 Glacier job.
     */
   @js.native
   trait GlacierJobDescription extends js.Object {
@@ -1072,7 +1072,7 @@ package glacier {
   }
 
   /**
-    * Provides options for initiating an Amazon Glacier job.
+    * Provides options for initiating an Amazon S3 Glacier job.
     */
   @js.native
   trait InitiateJobInput extends js.Object {
@@ -1098,7 +1098,7 @@ package glacier {
   }
 
   /**
-    * Contains the Amazon Glacier response to your request.
+    * Contains the Amazon S3 Glacier response to your request.
     */
   @js.native
   trait InitiateJobOutput extends js.Object {
@@ -1122,7 +1122,7 @@ package glacier {
   }
 
   /**
-    * Provides options for initiating a multipart upload to an Amazon Glacier vault.
+    * Provides options for initiating a multipart upload to an Amazon S3 Glacier vault.
     */
   @js.native
   trait InitiateMultipartUploadInput extends js.Object {
@@ -1151,7 +1151,7 @@ package glacier {
   }
 
   /**
-    * The Amazon Glacier response to your request.
+    * The Amazon S3 Glacier response to your request.
     */
   @js.native
   trait InitiateMultipartUploadOutput extends js.Object {
@@ -1198,7 +1198,7 @@ package glacier {
   }
 
   /**
-    * Contains the Amazon Glacier response to your request.
+    * Contains the Amazon S3 Glacier response to your request.
     */
   @js.native
   trait InitiateVaultLockOutput extends js.Object {
@@ -1231,26 +1231,6 @@ package glacier {
       csv.foreach(__v => __obj.update("csv", __v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[InputSerialization]
     }
-  }
-
-  /**
-    * Returned if there is insufficient capacity to process this expedited request. This error only applies to expedited retrievals and not to standard or bulk retrievals.
-    */
-  @js.native
-  trait InsufficientCapacityExceptionException extends js.Object {
-    val `type`: String
-    val code: String
-    val message: String
-  }
-
-  /**
-    * Returned if a parameter of the request is incorrectly specified.
-    */
-  @js.native
-  trait InvalidParameterValueExceptionException extends js.Object {
-    val `type`: String
-    val code: String
-    val message: String
   }
 
   /**
@@ -1358,17 +1338,7 @@ package glacier {
   }
 
   /**
-    * Returned if the request results in a vault or account limit being exceeded.
-    */
-  @js.native
-  trait LimitExceededExceptionException extends js.Object {
-    val `type`: String
-    val code: String
-    val message: String
-  }
-
-  /**
-    * Provides options for retrieving a job list for an Amazon Glacier vault.
+    * Provides options for retrieving a job list for an Amazon S3 Glacier vault.
     */
   @js.native
   trait ListJobsInput extends js.Object {
@@ -1403,7 +1373,7 @@ package glacier {
   }
 
   /**
-    * Contains the Amazon Glacier response to your request.
+    * Contains the Amazon S3 Glacier response to your request.
     */
   @js.native
   trait ListJobsOutput extends js.Object {
@@ -1453,7 +1423,7 @@ package glacier {
   }
 
   /**
-    * Contains the Amazon Glacier response to your request.
+    * Contains the Amazon S3 Glacier response to your request.
     */
   @js.native
   trait ListMultipartUploadsOutput extends js.Object {
@@ -1506,7 +1476,7 @@ package glacier {
   }
 
   /**
-    * Contains the Amazon Glacier response to your request.
+    * Contains the Amazon S3 Glacier response to your request.
     */
   @js.native
   trait ListPartsOutput extends js.Object {
@@ -1597,7 +1567,7 @@ package glacier {
   }
 
   /**
-    * Contains the Amazon Glacier response to your request.
+    * Contains the Amazon S3 Glacier response to your request.
     */
   @js.native
   trait ListTagsForVaultOutput extends js.Object {
@@ -1641,7 +1611,7 @@ package glacier {
   }
 
   /**
-    * Contains the Amazon Glacier response to your request.
+    * Contains the Amazon S3 Glacier response to your request.
     */
   @js.native
   trait ListVaultsOutput extends js.Object {
@@ -1659,16 +1629,6 @@ package glacier {
       VaultList.foreach(__v => __obj.update("VaultList", __v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListVaultsOutput]
     }
-  }
-
-  /**
-    * Returned if a required header or parameter is missing from the request.
-    */
-  @js.native
-  trait MissingParameterValueExceptionException extends js.Object {
-    val `type`: String
-    val code: String
-    val message: String
   }
 
   /**
@@ -1736,16 +1696,6 @@ package glacier {
     val READ_ACP     = "READ_ACP"
 
     val values = IndexedSeq(FULL_CONTROL, WRITE, WRITE_ACP, READ, READ_ACP)
-  }
-
-  /**
-    * Returned if a retrieval job would exceed the current data policy's retrieval rate limit. For more information about data retrieval policies,
-    */
-  @js.native
-  trait PolicyEnforcedExceptionException extends js.Object {
-    val `type`: String
-    val code: String
-    val message: String
   }
 
   /**
@@ -1838,26 +1788,6 @@ package glacier {
   }
 
   /**
-    * Returned if, when uploading an archive, Amazon Glacier times out while receiving the upload.
-    */
-  @js.native
-  trait RequestTimeoutExceptionException extends js.Object {
-    val `type`: String
-    val code: String
-    val message: String
-  }
-
-  /**
-    * Returned if the specified resource (such as a vault, upload ID, or job ID) doesn't exist.
-    */
-  @js.native
-  trait ResourceNotFoundExceptionException extends js.Object {
-    val `type`: String
-    val code: String
-    val message: String
-  }
-
-  /**
     * Contains information about the location in Amazon S3 where the select job results are stored.
     */
   @js.native
@@ -1921,16 +1851,6 @@ package glacier {
       OutputSerialization.foreach(__v => __obj.update("OutputSerialization", __v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SelectParameters]
     }
-  }
-
-  /**
-    * Returned if the service cannot complete the request.
-    */
-  @js.native
-  trait ServiceUnavailableExceptionException extends js.Object {
-    val `type`: String
-    val code: String
-    val message: String
   }
 
   /**
@@ -2130,7 +2050,7 @@ package glacier {
   }
 
   /**
-    * Contains the Amazon Glacier response to your request.
+    * Contains the Amazon S3 Glacier response to your request.
     */
   @js.native
   trait UploadMultipartPartOutput extends js.Object {

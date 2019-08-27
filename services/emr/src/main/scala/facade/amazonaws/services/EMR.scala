@@ -11,6 +11,7 @@ package object emr {
   type ActionOnFailure                        = String
   type AdjustmentType                         = String
   type ApplicationList                        = js.Array[Application]
+  type ArnType                                = String
   type AutoScalingPolicyState                 = String
   type AutoScalingPolicyStateChangeReasonCode = String
   type BooleanObject                          = Boolean
@@ -67,6 +68,8 @@ package object emr {
   type MetricDimensionList                    = js.Array[MetricDimension]
   type NewSupportedProductsList               = js.Array[SupportedProductConfig]
   type NonNegativeDouble                      = Double
+  type Port                                   = Int
+  type PortRanges                             = js.Array[PortRange]
   type RepoUpgradeOnBoot                      = String
   type ResourceId                             = String
   type ScaleDownBehavior                      = String
@@ -119,6 +122,10 @@ package object emr {
     ): Future[DescribeSecurityConfigurationOutput] = service.describeSecurityConfiguration(params).promise.toFuture
     def describeStepFuture(params: DescribeStepInput): Future[DescribeStepOutput] =
       service.describeStep(params).promise.toFuture
+    def getBlockPublicAccessConfigurationFuture(
+        params: GetBlockPublicAccessConfigurationInput
+    ): Future[GetBlockPublicAccessConfigurationOutput] =
+      service.getBlockPublicAccessConfiguration(params).promise.toFuture
     def listBootstrapActionsFuture(params: ListBootstrapActionsInput): Future[ListBootstrapActionsOutput] =
       service.listBootstrapActions(params).promise.toFuture
     def listClustersFuture(params: ListClustersInput): Future[ListClustersOutput] =
@@ -139,6 +146,10 @@ package object emr {
       service.modifyInstanceGroups(params).promise.toFuture
     def putAutoScalingPolicyFuture(params: PutAutoScalingPolicyInput): Future[PutAutoScalingPolicyOutput] =
       service.putAutoScalingPolicy(params).promise.toFuture
+    def putBlockPublicAccessConfigurationFuture(
+        params: PutBlockPublicAccessConfigurationInput
+    ): Future[PutBlockPublicAccessConfigurationOutput] =
+      service.putBlockPublicAccessConfiguration(params).promise.toFuture
     def removeAutoScalingPolicyFuture(params: RemoveAutoScalingPolicyInput): Future[RemoveAutoScalingPolicyOutput] =
       service.removeAutoScalingPolicy(params).promise.toFuture
     def removeTagsFuture(params: RemoveTagsInput): Future[RemoveTagsOutput] =
@@ -174,8 +185,11 @@ package emr {
     def describeCluster(params: DescribeClusterInput): Request[DescribeClusterOutput] = js.native
     def describeSecurityConfiguration(
         params: DescribeSecurityConfigurationInput
-    ): Request[DescribeSecurityConfigurationOutput]                                                  = js.native
-    def describeStep(params: DescribeStepInput): Request[DescribeStepOutput]                         = js.native
+    ): Request[DescribeSecurityConfigurationOutput]                          = js.native
+    def describeStep(params: DescribeStepInput): Request[DescribeStepOutput] = js.native
+    def getBlockPublicAccessConfiguration(
+        params: GetBlockPublicAccessConfigurationInput
+    ): Request[GetBlockPublicAccessConfigurationOutput]                                              = js.native
     def listBootstrapActions(params: ListBootstrapActionsInput): Request[ListBootstrapActionsOutput] = js.native
     def listClusters(params: ListClustersInput): Request[ListClustersOutput]                         = js.native
     def listInstanceFleets(params: ListInstanceFleetsInput): Request[ListInstanceFleetsOutput]       = js.native
@@ -187,6 +201,9 @@ package emr {
     def modifyInstanceFleet(params: ModifyInstanceFleetInput): Request[js.Object]                    = js.native
     def modifyInstanceGroups(params: ModifyInstanceGroupsInput): Request[js.Object]                  = js.native
     def putAutoScalingPolicy(params: PutAutoScalingPolicyInput): Request[PutAutoScalingPolicyOutput] = js.native
+    def putBlockPublicAccessConfiguration(
+        params: PutBlockPublicAccessConfigurationInput
+    ): Request[PutBlockPublicAccessConfigurationOutput] = js.native
     def removeAutoScalingPolicy(params: RemoveAutoScalingPolicyInput): Request[RemoveAutoScalingPolicyOutput] =
       js.native
     def removeTags(params: RemoveTagsInput): Request[RemoveTagsOutput]                      = js.native
@@ -510,6 +527,54 @@ package emr {
       State.foreach(__v => __obj.update("State", __v.asInstanceOf[js.Any]))
       StateChangeReason.foreach(__v => __obj.update("StateChangeReason", __v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AutoScalingPolicyStatus]
+    }
+  }
+
+  /**
+    * A configuration for Amazon EMR block public access. When <code>BlockPublicSecurityGroupRules</code> is set to <code>true</code>, Amazon EMR prevents cluster creation if one of the cluster's security groups has a rule that allows inbound traffic from 0.0.0.0/0 or ::/0 on a port, unless the port is specified as an exception using <code>PermittedPublicSecurityGroupRuleRanges</code>.
+    */
+  @js.native
+  trait BlockPublicAccessConfiguration extends js.Object {
+    var BlockPublicSecurityGroupRules: Boolean
+    var PermittedPublicSecurityGroupRuleRanges: js.UndefOr[PortRanges]
+  }
+
+  object BlockPublicAccessConfiguration {
+    def apply(
+        BlockPublicSecurityGroupRules: Boolean,
+        PermittedPublicSecurityGroupRuleRanges: js.UndefOr[PortRanges] = js.undefined
+    ): BlockPublicAccessConfiguration = {
+      val __obj = js.Dictionary[js.Any](
+        "BlockPublicSecurityGroupRules" -> BlockPublicSecurityGroupRules.asInstanceOf[js.Any]
+      )
+
+      PermittedPublicSecurityGroupRuleRanges.foreach(
+        __v => __obj.update("PermittedPublicSecurityGroupRuleRanges", __v.asInstanceOf[js.Any])
+      )
+      __obj.asInstanceOf[BlockPublicAccessConfiguration]
+    }
+  }
+
+  /**
+    * Properties that describe the AWS principal that created the <code>BlockPublicAccessConfiguration</code> using the <code>PutBlockPublicAccessConfiguration</code> action as well as the date and time that the configuration was created. Each time a configuration for block public access is updated, Amazon EMR updates this metadata.
+    */
+  @js.native
+  trait BlockPublicAccessConfigurationMetadata extends js.Object {
+    var CreatedByArn: ArnType
+    var CreationDateTime: Date
+  }
+
+  object BlockPublicAccessConfigurationMetadata {
+    def apply(
+        CreatedByArn: ArnType,
+        CreationDateTime: Date
+    ): BlockPublicAccessConfigurationMetadata = {
+      val __obj = js.Dictionary[js.Any](
+        "CreatedByArn"     -> CreatedByArn.asInstanceOf[js.Any],
+        "CreationDateTime" -> CreationDateTime.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[BlockPublicAccessConfigurationMetadata]
     }
   }
 
@@ -1342,6 +1407,38 @@ package emr {
       Message.foreach(__v => __obj.update("Message", __v.asInstanceOf[js.Any]))
       Reason.foreach(__v => __obj.update("Reason", __v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[FailureDetails]
+    }
+  }
+
+  @js.native
+  trait GetBlockPublicAccessConfigurationInput extends js.Object {}
+
+  object GetBlockPublicAccessConfigurationInput {
+    def apply(
+        ): GetBlockPublicAccessConfigurationInput = {
+      val __obj = js.Dictionary.empty[js.Any]
+
+      __obj.asInstanceOf[GetBlockPublicAccessConfigurationInput]
+    }
+  }
+
+  @js.native
+  trait GetBlockPublicAccessConfigurationOutput extends js.Object {
+    var BlockPublicAccessConfiguration: BlockPublicAccessConfiguration
+    var BlockPublicAccessConfigurationMetadata: BlockPublicAccessConfigurationMetadata
+  }
+
+  object GetBlockPublicAccessConfigurationOutput {
+    def apply(
+        BlockPublicAccessConfiguration: BlockPublicAccessConfiguration,
+        BlockPublicAccessConfigurationMetadata: BlockPublicAccessConfigurationMetadata
+    ): GetBlockPublicAccessConfigurationOutput = {
+      val __obj = js.Dictionary[js.Any](
+        "BlockPublicAccessConfiguration"         -> BlockPublicAccessConfiguration.asInstanceOf[js.Any],
+        "BlockPublicAccessConfigurationMetadata" -> BlockPublicAccessConfigurationMetadata.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[GetBlockPublicAccessConfigurationOutput]
     }
   }
 
@@ -2917,6 +3014,29 @@ package emr {
     }
   }
 
+  /**
+    * A list of port ranges that are permitted to allow inbound traffic from all public IP addresses. To specify a single port, use the same value for <code>MinRange</code> and <code>MaxRange</code>.
+    */
+  @js.native
+  trait PortRange extends js.Object {
+    var MinRange: Port
+    var MaxRange: js.UndefOr[Port]
+  }
+
+  object PortRange {
+    def apply(
+        MinRange: Port,
+        MaxRange: js.UndefOr[Port] = js.undefined
+    ): PortRange = {
+      val __obj = js.Dictionary[js.Any](
+        "MinRange" -> MinRange.asInstanceOf[js.Any]
+      )
+
+      MaxRange.foreach(__v => __obj.update("MaxRange", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PortRange]
+    }
+  }
+
   @js.native
   trait PutAutoScalingPolicyInput extends js.Object {
     var AutoScalingPolicy: AutoScalingPolicy
@@ -2958,6 +3078,35 @@ package emr {
       ClusterId.foreach(__v => __obj.update("ClusterId", __v.asInstanceOf[js.Any]))
       InstanceGroupId.foreach(__v => __obj.update("InstanceGroupId", __v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PutAutoScalingPolicyOutput]
+    }
+  }
+
+  @js.native
+  trait PutBlockPublicAccessConfigurationInput extends js.Object {
+    var BlockPublicAccessConfiguration: BlockPublicAccessConfiguration
+  }
+
+  object PutBlockPublicAccessConfigurationInput {
+    def apply(
+        BlockPublicAccessConfiguration: BlockPublicAccessConfiguration
+    ): PutBlockPublicAccessConfigurationInput = {
+      val __obj = js.Dictionary[js.Any](
+        "BlockPublicAccessConfiguration" -> BlockPublicAccessConfiguration.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[PutBlockPublicAccessConfigurationInput]
+    }
+  }
+
+  @js.native
+  trait PutBlockPublicAccessConfigurationOutput extends js.Object {}
+
+  object PutBlockPublicAccessConfigurationOutput {
+    def apply(
+        ): PutBlockPublicAccessConfigurationOutput = {
+      val __obj = js.Dictionary.empty[js.Any]
+
+      __obj.asInstanceOf[PutBlockPublicAccessConfigurationOutput]
     }
   }
 
@@ -3312,7 +3461,8 @@ package emr {
   }
 
   /**
-    * The input to the SetVisibleToAllUsers action.
+    * <i>This member will be deprecated.</i>
+    *  The input to the SetVisibleToAllUsers action.
     */
   @js.native
   trait SetVisibleToAllUsersInput extends js.Object {

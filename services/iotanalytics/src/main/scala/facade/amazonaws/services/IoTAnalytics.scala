@@ -14,6 +14,8 @@ package object iotanalytics {
   type AttributeNameMapping        = js.Dictionary[AttributeName]
   type AttributeNames              = js.Array[AttributeName]
   type BatchPutMessageErrorEntries = js.Array[BatchPutMessageErrorEntry]
+  type BucketKeyExpression         = String
+  type BucketName                  = String
   type ChannelArn                  = String
   type ChannelName                 = String
   type ChannelStatus               = String
@@ -43,6 +45,8 @@ package object iotanalytics {
   type ErrorCode                   = String
   type ErrorMessage                = String
   type FilterExpression            = String
+  type GlueDatabaseName            = String
+  type GlueTableName               = String
   type Image                       = String
   type IncludeStatisticsFlag       = Boolean
   type IotEventsInputName          = String
@@ -75,6 +79,7 @@ package object iotanalytics {
   type ResourceArn              = String
   type RetentionPeriodInDays    = Int
   type RoleArn                  = String
+  type S3KeyPrefix              = String
   type ScheduleExpression       = String
   type SizeInBytes              = Double
   type SqlQuery                 = String
@@ -342,6 +347,7 @@ package iotanalytics {
     var name: js.UndefOr[ChannelName]
     var retentionPeriod: js.UndefOr[RetentionPeriod]
     var status: js.UndefOr[ChannelStatus]
+    var storage: js.UndefOr[ChannelStorage]
   }
 
   object Channel {
@@ -351,7 +357,8 @@ package iotanalytics {
         lastUpdateTime: js.UndefOr[Timestamp] = js.undefined,
         name: js.UndefOr[ChannelName] = js.undefined,
         retentionPeriod: js.UndefOr[RetentionPeriod] = js.undefined,
-        status: js.UndefOr[ChannelStatus] = js.undefined
+        status: js.UndefOr[ChannelStatus] = js.undefined,
+        storage: js.UndefOr[ChannelStorage] = js.undefined
     ): Channel = {
       val __obj = js.Dictionary.empty[js.Any]
       arn.foreach(__v => __obj.update("arn", __v.asInstanceOf[js.Any]))
@@ -360,6 +367,7 @@ package iotanalytics {
       name.foreach(__v => __obj.update("name", __v.asInstanceOf[js.Any]))
       retentionPeriod.foreach(__v => __obj.update("retentionPeriod", __v.asInstanceOf[js.Any]))
       status.foreach(__v => __obj.update("status", __v.asInstanceOf[js.Any]))
+      storage.foreach(__v => __obj.update("storage", __v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Channel]
     }
   }
@@ -417,11 +425,54 @@ package iotanalytics {
   }
 
   /**
+    * Where channel data is stored.
+    */
+  @js.native
+  trait ChannelStorage extends js.Object {
+    var customerManagedS3: js.UndefOr[CustomerManagedChannelS3Storage]
+    var serviceManagedS3: js.UndefOr[ServiceManagedChannelS3Storage]
+  }
+
+  object ChannelStorage {
+    def apply(
+        customerManagedS3: js.UndefOr[CustomerManagedChannelS3Storage] = js.undefined,
+        serviceManagedS3: js.UndefOr[ServiceManagedChannelS3Storage] = js.undefined
+    ): ChannelStorage = {
+      val __obj = js.Dictionary.empty[js.Any]
+      customerManagedS3.foreach(__v => __obj.update("customerManagedS3", __v.asInstanceOf[js.Any]))
+      serviceManagedS3.foreach(__v => __obj.update("serviceManagedS3", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ChannelStorage]
+    }
+  }
+
+  /**
+    * Where channel data is stored.
+    */
+  @js.native
+  trait ChannelStorageSummary extends js.Object {
+    var customerManagedS3: js.UndefOr[CustomerManagedChannelS3StorageSummary]
+    var serviceManagedS3: js.UndefOr[ServiceManagedChannelS3StorageSummary]
+  }
+
+  object ChannelStorageSummary {
+    def apply(
+        customerManagedS3: js.UndefOr[CustomerManagedChannelS3StorageSummary] = js.undefined,
+        serviceManagedS3: js.UndefOr[ServiceManagedChannelS3StorageSummary] = js.undefined
+    ): ChannelStorageSummary = {
+      val __obj = js.Dictionary.empty[js.Any]
+      customerManagedS3.foreach(__v => __obj.update("customerManagedS3", __v.asInstanceOf[js.Any]))
+      serviceManagedS3.foreach(__v => __obj.update("serviceManagedS3", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ChannelStorageSummary]
+    }
+  }
+
+  /**
     * A summary of information about a channel.
     */
   @js.native
   trait ChannelSummary extends js.Object {
     var channelName: js.UndefOr[ChannelName]
+    var channelStorage: js.UndefOr[ChannelStorageSummary]
     var creationTime: js.UndefOr[Timestamp]
     var lastUpdateTime: js.UndefOr[Timestamp]
     var status: js.UndefOr[ChannelStatus]
@@ -430,12 +481,14 @@ package iotanalytics {
   object ChannelSummary {
     def apply(
         channelName: js.UndefOr[ChannelName] = js.undefined,
+        channelStorage: js.UndefOr[ChannelStorageSummary] = js.undefined,
         creationTime: js.UndefOr[Timestamp] = js.undefined,
         lastUpdateTime: js.UndefOr[Timestamp] = js.undefined,
         status: js.UndefOr[ChannelStatus] = js.undefined
     ): ChannelSummary = {
       val __obj = js.Dictionary.empty[js.Any]
       channelName.foreach(__v => __obj.update("channelName", __v.asInstanceOf[js.Any]))
+      channelStorage.foreach(__v => __obj.update("channelStorage", __v.asInstanceOf[js.Any]))
       creationTime.foreach(__v => __obj.update("creationTime", __v.asInstanceOf[js.Any]))
       lastUpdateTime.foreach(__v => __obj.update("lastUpdateTime", __v.asInstanceOf[js.Any]))
       status.foreach(__v => __obj.update("status", __v.asInstanceOf[js.Any]))
@@ -482,6 +535,7 @@ package iotanalytics {
   @js.native
   trait CreateChannelRequest extends js.Object {
     var channelName: ChannelName
+    var channelStorage: js.UndefOr[ChannelStorage]
     var retentionPeriod: js.UndefOr[RetentionPeriod]
     var tags: js.UndefOr[TagList]
   }
@@ -489,6 +543,7 @@ package iotanalytics {
   object CreateChannelRequest {
     def apply(
         channelName: ChannelName,
+        channelStorage: js.UndefOr[ChannelStorage] = js.undefined,
         retentionPeriod: js.UndefOr[RetentionPeriod] = js.undefined,
         tags: js.UndefOr[TagList] = js.undefined
     ): CreateChannelRequest = {
@@ -496,6 +551,7 @@ package iotanalytics {
         "channelName" -> channelName.asInstanceOf[js.Any]
       )
 
+      channelStorage.foreach(__v => __obj.update("channelStorage", __v.asInstanceOf[js.Any]))
       retentionPeriod.foreach(__v => __obj.update("retentionPeriod", __v.asInstanceOf[js.Any]))
       tags.foreach(__v => __obj.update("tags", __v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateChannelRequest]
@@ -614,6 +670,7 @@ package iotanalytics {
   @js.native
   trait CreateDatastoreRequest extends js.Object {
     var datastoreName: DatastoreName
+    var datastoreStorage: js.UndefOr[DatastoreStorage]
     var retentionPeriod: js.UndefOr[RetentionPeriod]
     var tags: js.UndefOr[TagList]
   }
@@ -621,6 +678,7 @@ package iotanalytics {
   object CreateDatastoreRequest {
     def apply(
         datastoreName: DatastoreName,
+        datastoreStorage: js.UndefOr[DatastoreStorage] = js.undefined,
         retentionPeriod: js.UndefOr[RetentionPeriod] = js.undefined,
         tags: js.UndefOr[TagList] = js.undefined
     ): CreateDatastoreRequest = {
@@ -628,6 +686,7 @@ package iotanalytics {
         "datastoreName" -> datastoreName.asInstanceOf[js.Any]
       )
 
+      datastoreStorage.foreach(__v => __obj.update("datastoreStorage", __v.asInstanceOf[js.Any]))
       retentionPeriod.foreach(__v => __obj.update("retentionPeriod", __v.asInstanceOf[js.Any]))
       tags.foreach(__v => __obj.update("tags", __v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateDatastoreRequest]
@@ -693,6 +752,106 @@ package iotanalytics {
       pipelineArn.foreach(__v => __obj.update("pipelineArn", __v.asInstanceOf[js.Any]))
       pipelineName.foreach(__v => __obj.update("pipelineName", __v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreatePipelineResponse]
+    }
+  }
+
+  /**
+    * Use this to store channel data in an S3 bucket that you manage.
+    */
+  @js.native
+  trait CustomerManagedChannelS3Storage extends js.Object {
+    var bucket: BucketName
+    var roleArn: RoleArn
+    var keyPrefix: js.UndefOr[S3KeyPrefix]
+  }
+
+  object CustomerManagedChannelS3Storage {
+    def apply(
+        bucket: BucketName,
+        roleArn: RoleArn,
+        keyPrefix: js.UndefOr[S3KeyPrefix] = js.undefined
+    ): CustomerManagedChannelS3Storage = {
+      val __obj = js.Dictionary[js.Any](
+        "bucket"  -> bucket.asInstanceOf[js.Any],
+        "roleArn" -> roleArn.asInstanceOf[js.Any]
+      )
+
+      keyPrefix.foreach(__v => __obj.update("keyPrefix", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CustomerManagedChannelS3Storage]
+    }
+  }
+
+  /**
+    * Used to store channel data in an S3 bucket that you manage.
+    */
+  @js.native
+  trait CustomerManagedChannelS3StorageSummary extends js.Object {
+    var bucket: js.UndefOr[BucketName]
+    var keyPrefix: js.UndefOr[S3KeyPrefix]
+    var roleArn: js.UndefOr[RoleArn]
+  }
+
+  object CustomerManagedChannelS3StorageSummary {
+    def apply(
+        bucket: js.UndefOr[BucketName] = js.undefined,
+        keyPrefix: js.UndefOr[S3KeyPrefix] = js.undefined,
+        roleArn: js.UndefOr[RoleArn] = js.undefined
+    ): CustomerManagedChannelS3StorageSummary = {
+      val __obj = js.Dictionary.empty[js.Any]
+      bucket.foreach(__v => __obj.update("bucket", __v.asInstanceOf[js.Any]))
+      keyPrefix.foreach(__v => __obj.update("keyPrefix", __v.asInstanceOf[js.Any]))
+      roleArn.foreach(__v => __obj.update("roleArn", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CustomerManagedChannelS3StorageSummary]
+    }
+  }
+
+  /**
+    * Use this to store data store data in an S3 bucket that you manage.
+    */
+  @js.native
+  trait CustomerManagedDatastoreS3Storage extends js.Object {
+    var bucket: BucketName
+    var roleArn: RoleArn
+    var keyPrefix: js.UndefOr[S3KeyPrefix]
+  }
+
+  object CustomerManagedDatastoreS3Storage {
+    def apply(
+        bucket: BucketName,
+        roleArn: RoleArn,
+        keyPrefix: js.UndefOr[S3KeyPrefix] = js.undefined
+    ): CustomerManagedDatastoreS3Storage = {
+      val __obj = js.Dictionary[js.Any](
+        "bucket"  -> bucket.asInstanceOf[js.Any],
+        "roleArn" -> roleArn.asInstanceOf[js.Any]
+      )
+
+      keyPrefix.foreach(__v => __obj.update("keyPrefix", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CustomerManagedDatastoreS3Storage]
+    }
+  }
+
+  /**
+    * Used to store data store data in an S3 bucket that you manage.
+    */
+  @js.native
+  trait CustomerManagedDatastoreS3StorageSummary extends js.Object {
+    var bucket: js.UndefOr[BucketName]
+    var keyPrefix: js.UndefOr[S3KeyPrefix]
+    var roleArn: js.UndefOr[RoleArn]
+  }
+
+  object CustomerManagedDatastoreS3StorageSummary {
+    def apply(
+        bucket: js.UndefOr[BucketName] = js.undefined,
+        keyPrefix: js.UndefOr[S3KeyPrefix] = js.undefined,
+        roleArn: js.UndefOr[RoleArn] = js.undefined
+    ): CustomerManagedDatastoreS3StorageSummary = {
+      val __obj = js.Dictionary.empty[js.Any]
+      bucket.foreach(__v => __obj.update("bucket", __v.asInstanceOf[js.Any]))
+      keyPrefix.foreach(__v => __obj.update("keyPrefix", __v.asInstanceOf[js.Any]))
+      roleArn.foreach(__v => __obj.update("roleArn", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CustomerManagedDatastoreS3StorageSummary]
     }
   }
 
@@ -766,7 +925,7 @@ package iotanalytics {
   }
 
   /**
-    * <p/>
+    * Information about the action which automatically creates the data set's contents.
     */
   @js.native
   trait DatasetActionSummary extends js.Object {
@@ -799,16 +958,19 @@ package iotanalytics {
   @js.native
   trait DatasetContentDeliveryDestination extends js.Object {
     var iotEventsDestinationConfiguration: js.UndefOr[IotEventsDestinationConfiguration]
+    var s3DestinationConfiguration: js.UndefOr[S3DestinationConfiguration]
   }
 
   object DatasetContentDeliveryDestination {
     def apply(
-        iotEventsDestinationConfiguration: js.UndefOr[IotEventsDestinationConfiguration] = js.undefined
+        iotEventsDestinationConfiguration: js.UndefOr[IotEventsDestinationConfiguration] = js.undefined,
+        s3DestinationConfiguration: js.UndefOr[S3DestinationConfiguration] = js.undefined
     ): DatasetContentDeliveryDestination = {
       val __obj = js.Dictionary.empty[js.Any]
       iotEventsDestinationConfiguration.foreach(
         __v => __obj.update("iotEventsDestinationConfiguration", __v.asInstanceOf[js.Any])
       )
+      s3DestinationConfiguration.foreach(__v => __obj.update("s3DestinationConfiguration", __v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DatasetContentDeliveryDestination]
     }
   }
@@ -1006,6 +1168,7 @@ package iotanalytics {
     var name: js.UndefOr[DatastoreName]
     var retentionPeriod: js.UndefOr[RetentionPeriod]
     var status: js.UndefOr[DatastoreStatus]
+    var storage: js.UndefOr[DatastoreStorage]
   }
 
   object Datastore {
@@ -1015,7 +1178,8 @@ package iotanalytics {
         lastUpdateTime: js.UndefOr[Timestamp] = js.undefined,
         name: js.UndefOr[DatastoreName] = js.undefined,
         retentionPeriod: js.UndefOr[RetentionPeriod] = js.undefined,
-        status: js.UndefOr[DatastoreStatus] = js.undefined
+        status: js.UndefOr[DatastoreStatus] = js.undefined,
+        storage: js.UndefOr[DatastoreStorage] = js.undefined
     ): Datastore = {
       val __obj = js.Dictionary.empty[js.Any]
       arn.foreach(__v => __obj.update("arn", __v.asInstanceOf[js.Any]))
@@ -1024,6 +1188,7 @@ package iotanalytics {
       name.foreach(__v => __obj.update("name", __v.asInstanceOf[js.Any]))
       retentionPeriod.foreach(__v => __obj.update("retentionPeriod", __v.asInstanceOf[js.Any]))
       status.foreach(__v => __obj.update("status", __v.asInstanceOf[js.Any]))
+      storage.foreach(__v => __obj.update("storage", __v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Datastore]
     }
   }
@@ -1078,12 +1243,55 @@ package iotanalytics {
   }
 
   /**
+    * Where data store data is stored.
+    */
+  @js.native
+  trait DatastoreStorage extends js.Object {
+    var customerManagedS3: js.UndefOr[CustomerManagedDatastoreS3Storage]
+    var serviceManagedS3: js.UndefOr[ServiceManagedDatastoreS3Storage]
+  }
+
+  object DatastoreStorage {
+    def apply(
+        customerManagedS3: js.UndefOr[CustomerManagedDatastoreS3Storage] = js.undefined,
+        serviceManagedS3: js.UndefOr[ServiceManagedDatastoreS3Storage] = js.undefined
+    ): DatastoreStorage = {
+      val __obj = js.Dictionary.empty[js.Any]
+      customerManagedS3.foreach(__v => __obj.update("customerManagedS3", __v.asInstanceOf[js.Any]))
+      serviceManagedS3.foreach(__v => __obj.update("serviceManagedS3", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DatastoreStorage]
+    }
+  }
+
+  /**
+    * Where data store data is stored.
+    */
+  @js.native
+  trait DatastoreStorageSummary extends js.Object {
+    var customerManagedS3: js.UndefOr[CustomerManagedDatastoreS3StorageSummary]
+    var serviceManagedS3: js.UndefOr[ServiceManagedDatastoreS3StorageSummary]
+  }
+
+  object DatastoreStorageSummary {
+    def apply(
+        customerManagedS3: js.UndefOr[CustomerManagedDatastoreS3StorageSummary] = js.undefined,
+        serviceManagedS3: js.UndefOr[ServiceManagedDatastoreS3StorageSummary] = js.undefined
+    ): DatastoreStorageSummary = {
+      val __obj = js.Dictionary.empty[js.Any]
+      customerManagedS3.foreach(__v => __obj.update("customerManagedS3", __v.asInstanceOf[js.Any]))
+      serviceManagedS3.foreach(__v => __obj.update("serviceManagedS3", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DatastoreStorageSummary]
+    }
+  }
+
+  /**
     * A summary of information about a data store.
     */
   @js.native
   trait DatastoreSummary extends js.Object {
     var creationTime: js.UndefOr[Timestamp]
     var datastoreName: js.UndefOr[DatastoreName]
+    var datastoreStorage: js.UndefOr[DatastoreStorageSummary]
     var lastUpdateTime: js.UndefOr[Timestamp]
     var status: js.UndefOr[DatastoreStatus]
   }
@@ -1092,12 +1300,14 @@ package iotanalytics {
     def apply(
         creationTime: js.UndefOr[Timestamp] = js.undefined,
         datastoreName: js.UndefOr[DatastoreName] = js.undefined,
+        datastoreStorage: js.UndefOr[DatastoreStorageSummary] = js.undefined,
         lastUpdateTime: js.UndefOr[Timestamp] = js.undefined,
         status: js.UndefOr[DatastoreStatus] = js.undefined
     ): DatastoreSummary = {
       val __obj = js.Dictionary.empty[js.Any]
       creationTime.foreach(__v => __obj.update("creationTime", __v.asInstanceOf[js.Any]))
       datastoreName.foreach(__v => __obj.update("datastoreName", __v.asInstanceOf[js.Any]))
+      datastoreStorage.foreach(__v => __obj.update("datastoreStorage", __v.asInstanceOf[js.Any]))
       lastUpdateTime.foreach(__v => __obj.update("lastUpdateTime", __v.asInstanceOf[js.Any]))
       status.foreach(__v => __obj.update("status", __v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DatastoreSummary]
@@ -1531,6 +1741,29 @@ package iotanalytics {
       status.foreach(__v => __obj.update("status", __v.asInstanceOf[js.Any]))
       timestamp.foreach(__v => __obj.update("timestamp", __v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetDatasetContentResponse]
+    }
+  }
+
+  /**
+    * Configuration information for coordination with the AWS Glue ETL (extract, transform and load) service.
+    */
+  @js.native
+  trait GlueConfiguration extends js.Object {
+    var databaseName: GlueDatabaseName
+    var tableName: GlueTableName
+  }
+
+  object GlueConfiguration {
+    def apply(
+        databaseName: GlueDatabaseName,
+        tableName: GlueTableName
+    ): GlueConfiguration = {
+      val __obj = js.Dictionary[js.Any](
+        "databaseName" -> databaseName.asInstanceOf[js.Any],
+        "tableName"    -> tableName.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[GlueConfiguration]
     }
   }
 
@@ -2194,6 +2427,35 @@ package iotanalytics {
     }
   }
 
+  /**
+    * Configuration information for delivery of data set contents to Amazon S3.
+    */
+  @js.native
+  trait S3DestinationConfiguration extends js.Object {
+    var bucket: BucketName
+    var key: BucketKeyExpression
+    var roleArn: RoleArn
+    var glueConfiguration: js.UndefOr[GlueConfiguration]
+  }
+
+  object S3DestinationConfiguration {
+    def apply(
+        bucket: BucketName,
+        key: BucketKeyExpression,
+        roleArn: RoleArn,
+        glueConfiguration: js.UndefOr[GlueConfiguration] = js.undefined
+    ): S3DestinationConfiguration = {
+      val __obj = js.Dictionary[js.Any](
+        "bucket"  -> bucket.asInstanceOf[js.Any],
+        "key"     -> key.asInstanceOf[js.Any],
+        "roleArn" -> roleArn.asInstanceOf[js.Any]
+      )
+
+      glueConfiguration.foreach(__v => __obj.update("glueConfiguration", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[S3DestinationConfiguration]
+    }
+  }
+
   @js.native
   trait SampleChannelDataRequest extends js.Object {
     var channelName: ChannelName
@@ -2276,6 +2538,66 @@ package iotanalytics {
 
       next.foreach(__v => __obj.update("next", __v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SelectAttributesActivity]
+    }
+  }
+
+  /**
+    * Use this to store channel data in an S3 bucket managed by the AWS IoT Analytics service.
+    */
+  @js.native
+  trait ServiceManagedChannelS3Storage extends js.Object {}
+
+  object ServiceManagedChannelS3Storage {
+    def apply(
+        ): ServiceManagedChannelS3Storage = {
+      val __obj = js.Dictionary.empty[js.Any]
+
+      __obj.asInstanceOf[ServiceManagedChannelS3Storage]
+    }
+  }
+
+  /**
+    * Used to store channel data in an S3 bucket managed by the AWS IoT Analytics service.
+    */
+  @js.native
+  trait ServiceManagedChannelS3StorageSummary extends js.Object {}
+
+  object ServiceManagedChannelS3StorageSummary {
+    def apply(
+        ): ServiceManagedChannelS3StorageSummary = {
+      val __obj = js.Dictionary.empty[js.Any]
+
+      __obj.asInstanceOf[ServiceManagedChannelS3StorageSummary]
+    }
+  }
+
+  /**
+    * Use this to store data store data in an S3 bucket managed by the AWS IoT Analytics service.
+    */
+  @js.native
+  trait ServiceManagedDatastoreS3Storage extends js.Object {}
+
+  object ServiceManagedDatastoreS3Storage {
+    def apply(
+        ): ServiceManagedDatastoreS3Storage = {
+      val __obj = js.Dictionary.empty[js.Any]
+
+      __obj.asInstanceOf[ServiceManagedDatastoreS3Storage]
+    }
+  }
+
+  /**
+    * Used to store data store data in an S3 bucket managed by the AWS IoT Analytics service.
+    */
+  @js.native
+  trait ServiceManagedDatastoreS3StorageSummary extends js.Object {}
+
+  object ServiceManagedDatastoreS3StorageSummary {
+    def apply(
+        ): ServiceManagedDatastoreS3StorageSummary = {
+      val __obj = js.Dictionary.empty[js.Any]
+
+      __obj.asInstanceOf[ServiceManagedDatastoreS3StorageSummary]
     }
   }
 
@@ -2450,18 +2772,21 @@ package iotanalytics {
   @js.native
   trait UpdateChannelRequest extends js.Object {
     var channelName: ChannelName
+    var channelStorage: js.UndefOr[ChannelStorage]
     var retentionPeriod: js.UndefOr[RetentionPeriod]
   }
 
   object UpdateChannelRequest {
     def apply(
         channelName: ChannelName,
+        channelStorage: js.UndefOr[ChannelStorage] = js.undefined,
         retentionPeriod: js.UndefOr[RetentionPeriod] = js.undefined
     ): UpdateChannelRequest = {
       val __obj = js.Dictionary[js.Any](
         "channelName" -> channelName.asInstanceOf[js.Any]
       )
 
+      channelStorage.foreach(__v => __obj.update("channelStorage", __v.asInstanceOf[js.Any]))
       retentionPeriod.foreach(__v => __obj.update("retentionPeriod", __v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateChannelRequest]
     }
@@ -2502,18 +2827,21 @@ package iotanalytics {
   @js.native
   trait UpdateDatastoreRequest extends js.Object {
     var datastoreName: DatastoreName
+    var datastoreStorage: js.UndefOr[DatastoreStorage]
     var retentionPeriod: js.UndefOr[RetentionPeriod]
   }
 
   object UpdateDatastoreRequest {
     def apply(
         datastoreName: DatastoreName,
+        datastoreStorage: js.UndefOr[DatastoreStorage] = js.undefined,
         retentionPeriod: js.UndefOr[RetentionPeriod] = js.undefined
     ): UpdateDatastoreRequest = {
       val __obj = js.Dictionary[js.Any](
         "datastoreName" -> datastoreName.asInstanceOf[js.Any]
       )
 
+      datastoreStorage.foreach(__v => __obj.update("datastoreStorage", __v.asInstanceOf[js.Any]))
       retentionPeriod.foreach(__v => __obj.update("retentionPeriod", __v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateDatastoreRequest]
     }
@@ -2571,6 +2899,9 @@ package iotanalytics {
     }
   }
 
+  /**
+    * Information about the versioning of data set contents.
+    */
   @js.native
   trait VersioningConfiguration extends js.Object {
     var maxVersions: js.UndefOr[MaxVersions]

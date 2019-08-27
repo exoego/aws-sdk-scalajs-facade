@@ -251,14 +251,25 @@ package shield {
   }
 
   object AttackPropertyIdentifierEnum {
-    val DESTINATION_URL   = "DESTINATION_URL"
-    val REFERRER          = "REFERRER"
-    val SOURCE_ASN        = "SOURCE_ASN"
-    val SOURCE_COUNTRY    = "SOURCE_COUNTRY"
-    val SOURCE_IP_ADDRESS = "SOURCE_IP_ADDRESS"
-    val SOURCE_USER_AGENT = "SOURCE_USER_AGENT"
+    val DESTINATION_URL              = "DESTINATION_URL"
+    val REFERRER                     = "REFERRER"
+    val SOURCE_ASN                   = "SOURCE_ASN"
+    val SOURCE_COUNTRY               = "SOURCE_COUNTRY"
+    val SOURCE_IP_ADDRESS            = "SOURCE_IP_ADDRESS"
+    val SOURCE_USER_AGENT            = "SOURCE_USER_AGENT"
+    val WORDPRESS_PINGBACK_REFLECTOR = "WORDPRESS_PINGBACK_REFLECTOR"
+    val WORDPRESS_PINGBACK_SOURCE    = "WORDPRESS_PINGBACK_SOURCE"
 
-    val values = IndexedSeq(DESTINATION_URL, REFERRER, SOURCE_ASN, SOURCE_COUNTRY, SOURCE_IP_ADDRESS, SOURCE_USER_AGENT)
+    val values = IndexedSeq(
+      DESTINATION_URL,
+      REFERRER,
+      SOURCE_ASN,
+      SOURCE_COUNTRY,
+      SOURCE_IP_ADDRESS,
+      SOURCE_USER_AGENT,
+      WORDPRESS_PINGBACK_REFLECTOR,
+      WORDPRESS_PINGBACK_SOURCE
+    )
   }
 
   /**

@@ -11,9 +11,11 @@ package object securityhub {
   type AccountDetailsList            = js.Array[AccountDetails]
   type AccountId                     = String
   type AccountIdList                 = js.Array[NonEmptyString]
+  type ActionTargetList              = js.Array[ActionTarget]
   type ArnList                       = js.Array[NonEmptyString]
   type AwsIamAccessKeyStatus         = String
   type AwsSecurityFindingList        = js.Array[AwsSecurityFinding]
+  type CategoryList                  = js.Array[NonEmptyString]
   type ComplianceStatus              = String
   type DateFilterList                = js.Array[DateFilter]
   type DateRangeUnit                 = String
@@ -37,8 +39,10 @@ package object securityhub {
   type NumberFilterList              = js.Array[NumberFilter]
   type Partition                     = String
   type ProductSubscriptionArnList    = js.Array[NonEmptyString]
+  type ProductsList                  = js.Array[Product]
   type RecordState                   = String
   type RelatedFindingList            = js.Array[RelatedFinding]
+  type ResourceArn                   = String
   type ResourceList                  = js.Array[Resource]
   type ResultList                    = js.Array[Result]
   type SortCriteria                  = js.Array[SortCriterion]
@@ -51,6 +55,10 @@ package object securityhub {
   type StringFilterComparison        = String
   type StringFilterList              = js.Array[StringFilter]
   type StringList                    = js.Array[NonEmptyString]
+  type TagKey                        = String
+  type TagKeyList                    = js.Array[TagKey]
+  type TagMap                        = js.Dictionary[TagValue]
+  type TagValue                      = String
   type ThreatIntelIndicatorCategory  = String
   type ThreatIntelIndicatorList      = js.Array[ThreatIntelIndicator]
   type ThreatIntelIndicatorType      = String
@@ -69,18 +77,28 @@ package object securityhub {
       service.batchEnableStandards(params).promise.toFuture
     def batchImportFindingsFuture(params: BatchImportFindingsRequest): Future[BatchImportFindingsResponse] =
       service.batchImportFindings(params).promise.toFuture
+    def createActionTargetFuture(params: CreateActionTargetRequest): Future[CreateActionTargetResponse] =
+      service.createActionTarget(params).promise.toFuture
     def createInsightFuture(params: CreateInsightRequest): Future[CreateInsightResponse] =
       service.createInsight(params).promise.toFuture
     def createMembersFuture(params: CreateMembersRequest): Future[CreateMembersResponse] =
       service.createMembers(params).promise.toFuture
     def declineInvitationsFuture(params: DeclineInvitationsRequest): Future[DeclineInvitationsResponse] =
       service.declineInvitations(params).promise.toFuture
+    def deleteActionTargetFuture(params: DeleteActionTargetRequest): Future[DeleteActionTargetResponse] =
+      service.deleteActionTarget(params).promise.toFuture
     def deleteInsightFuture(params: DeleteInsightRequest): Future[DeleteInsightResponse] =
       service.deleteInsight(params).promise.toFuture
     def deleteInvitationsFuture(params: DeleteInvitationsRequest): Future[DeleteInvitationsResponse] =
       service.deleteInvitations(params).promise.toFuture
     def deleteMembersFuture(params: DeleteMembersRequest): Future[DeleteMembersResponse] =
       service.deleteMembers(params).promise.toFuture
+    def describeActionTargetsFuture(params: DescribeActionTargetsRequest): Future[DescribeActionTargetsResponse] =
+      service.describeActionTargets(params).promise.toFuture
+    def describeHubFuture(params: DescribeHubRequest): Future[DescribeHubResponse] =
+      service.describeHub(params).promise.toFuture
+    def describeProductsFuture(params: DescribeProductsRequest): Future[DescribeProductsResponse] =
+      service.describeProducts(params).promise.toFuture
     def disableImportFindingsForProductFuture(
         params: DisableImportFindingsForProductRequest
     ): Future[DisableImportFindingsForProductResponse] =
@@ -120,6 +138,14 @@ package object securityhub {
       service.listInvitations(params).promise.toFuture
     def listMembersFuture(params: ListMembersRequest): Future[ListMembersResponse] =
       service.listMembers(params).promise.toFuture
+    def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] =
+      service.listTagsForResource(params).promise.toFuture
+    def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] =
+      service.tagResource(params).promise.toFuture
+    def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] =
+      service.untagResource(params).promise.toFuture
+    def updateActionTargetFuture(params: UpdateActionTargetRequest): Future[UpdateActionTargetResponse] =
+      service.updateActionTarget(params).promise.toFuture
     def updateFindingsFuture(params: UpdateFindingsRequest): Future[UpdateFindingsResponse] =
       service.updateFindings(params).promise.toFuture
     def updateInsightFuture(params: UpdateInsightRequest): Future[UpdateInsightResponse] =
@@ -137,12 +163,17 @@ package securityhub {
     def batchDisableStandards(params: BatchDisableStandardsRequest): Request[BatchDisableStandardsResponse] = js.native
     def batchEnableStandards(params: BatchEnableStandardsRequest): Request[BatchEnableStandardsResponse]    = js.native
     def batchImportFindings(params: BatchImportFindingsRequest): Request[BatchImportFindingsResponse]       = js.native
+    def createActionTarget(params: CreateActionTargetRequest): Request[CreateActionTargetResponse]          = js.native
     def createInsight(params: CreateInsightRequest): Request[CreateInsightResponse]                         = js.native
     def createMembers(params: CreateMembersRequest): Request[CreateMembersResponse]                         = js.native
     def declineInvitations(params: DeclineInvitationsRequest): Request[DeclineInvitationsResponse]          = js.native
+    def deleteActionTarget(params: DeleteActionTargetRequest): Request[DeleteActionTargetResponse]          = js.native
     def deleteInsight(params: DeleteInsightRequest): Request[DeleteInsightResponse]                         = js.native
     def deleteInvitations(params: DeleteInvitationsRequest): Request[DeleteInvitationsResponse]             = js.native
     def deleteMembers(params: DeleteMembersRequest): Request[DeleteMembersResponse]                         = js.native
+    def describeActionTargets(params: DescribeActionTargetsRequest): Request[DescribeActionTargetsResponse] = js.native
+    def describeHub(params: DescribeHubRequest): Request[DescribeHubResponse]                               = js.native
+    def describeProducts(params: DescribeProductsRequest): Request[DescribeProductsResponse]                = js.native
     def disableImportFindingsForProduct(
         params: DisableImportFindingsForProductRequest
     ): Request[DisableImportFindingsForProductResponse]                                            = js.native
@@ -165,27 +196,33 @@ package securityhub {
     def inviteMembers(params: InviteMembersRequest): Request[InviteMembersResponse]                   = js.native
     def listEnabledProductsForImport(
         params: ListEnabledProductsForImportRequest
-    ): Request[ListEnabledProductsForImportResponse]                                      = js.native
-    def listInvitations(params: ListInvitationsRequest): Request[ListInvitationsResponse] = js.native
-    def listMembers(params: ListMembersRequest): Request[ListMembersResponse]             = js.native
-    def updateFindings(params: UpdateFindingsRequest): Request[UpdateFindingsResponse]    = js.native
-    def updateInsight(params: UpdateInsightRequest): Request[UpdateInsightResponse]       = js.native
+    ): Request[ListEnabledProductsForImportResponse]                                                  = js.native
+    def listInvitations(params: ListInvitationsRequest): Request[ListInvitationsResponse]             = js.native
+    def listMembers(params: ListMembersRequest): Request[ListMembersResponse]                         = js.native
+    def listTagsForResource(params: ListTagsForResourceRequest): Request[ListTagsForResourceResponse] = js.native
+    def tagResource(params: TagResourceRequest): Request[TagResourceResponse]                         = js.native
+    def untagResource(params: UntagResourceRequest): Request[UntagResourceResponse]                   = js.native
+    def updateActionTarget(params: UpdateActionTargetRequest): Request[UpdateActionTargetResponse]    = js.native
+    def updateFindings(params: UpdateFindingsRequest): Request[UpdateFindingsResponse]                = js.native
+    def updateInsight(params: UpdateInsightRequest): Request[UpdateInsightResponse]                   = js.native
   }
 
   @js.native
   trait AcceptInvitationRequest extends js.Object {
-    var InvitationId: js.UndefOr[NonEmptyString]
-    var MasterId: js.UndefOr[NonEmptyString]
+    var InvitationId: NonEmptyString
+    var MasterId: NonEmptyString
   }
 
   object AcceptInvitationRequest {
     def apply(
-        InvitationId: js.UndefOr[NonEmptyString] = js.undefined,
-        MasterId: js.UndefOr[NonEmptyString] = js.undefined
+        InvitationId: NonEmptyString,
+        MasterId: NonEmptyString
     ): AcceptInvitationRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      InvitationId.foreach(__v => __obj.update("InvitationId", __v.asInstanceOf[js.Any]))
-      MasterId.foreach(__v => __obj.update("MasterId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dictionary[js.Any](
+        "InvitationId" -> InvitationId.asInstanceOf[js.Any],
+        "MasterId"     -> MasterId.asInstanceOf[js.Any]
+      )
+
       __obj.asInstanceOf[AcceptInvitationRequest]
     }
   }
@@ -224,7 +261,33 @@ package securityhub {
   }
 
   /**
-    * The details of an AWS EC2 instance.
+    * An <code>ActionTarget</code> object.
+    */
+  @js.native
+  trait ActionTarget extends js.Object {
+    var ActionTargetArn: NonEmptyString
+    var Description: NonEmptyString
+    var Name: NonEmptyString
+  }
+
+  object ActionTarget {
+    def apply(
+        ActionTargetArn: NonEmptyString,
+        Description: NonEmptyString,
+        Name: NonEmptyString
+    ): ActionTarget = {
+      val __obj = js.Dictionary[js.Any](
+        "ActionTargetArn" -> ActionTargetArn.asInstanceOf[js.Any],
+        "Description"     -> Description.asInstanceOf[js.Any],
+        "Name"            -> Name.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[ActionTarget]
+    }
+  }
+
+  /**
+    * The details of an Amazon EC2 instance.
     */
   @js.native
   trait AwsEc2InstanceDetails extends js.Object {
@@ -266,7 +329,7 @@ package securityhub {
   }
 
   /**
-    * AWS IAM access key details related to a finding.
+    * IAM access key details related to a finding.
     */
   @js.native
   trait AwsIamAccessKeyDetails extends js.Object {
@@ -297,7 +360,7 @@ package securityhub {
   }
 
   /**
-    * The details of an AWS S3 Bucket.
+    * The details of an Amazon S3 bucket.
     */
   @js.native
   trait AwsS3BucketDetails extends js.Object {
@@ -318,26 +381,27 @@ package securityhub {
   }
 
   /**
-    * Provides consistent format for the contents of the Security Hub-aggregated findings. AwsSecurityFinding format enables you to share findings between AWS security services and third-party solutions, and compliance checks.
+    * Provides consistent format for the contents of the Security Hub-aggregated findings. <code>AwsSecurityFinding</code> format enables you to share findings between AWS security services and third-party solutions, and compliance checks.
     *
-    * '''Note:'''A finding is a potential security issue generated either by AWS services (GuardDuty, Inspector, Macie) or by the integrated third-party solutions and compliance checks.
+    * '''Note:'''A finding is a potential security issue generated either by AWS services (Amazon GuardDuty, Amazon Inspector, and Amazon Macie) or by the integrated third-party solutions and compliance checks.
     */
   @js.native
   trait AwsSecurityFinding extends js.Object {
     var AwsAccountId: NonEmptyString
     var CreatedAt: NonEmptyString
+    var Description: NonEmptyString
     var GeneratorId: NonEmptyString
     var Id: NonEmptyString
     var ProductArn: NonEmptyString
     var Resources: ResourceList
     var SchemaVersion: NonEmptyString
     var Severity: Severity
+    var Title: NonEmptyString
     var Types: TypeList
     var UpdatedAt: NonEmptyString
     var Compliance: js.UndefOr[Compliance]
     var Confidence: js.UndefOr[Int]
     var Criticality: js.UndefOr[Int]
-    var Description: js.UndefOr[NonEmptyString]
     var FirstObservedAt: js.UndefOr[NonEmptyString]
     var LastObservedAt: js.UndefOr[NonEmptyString]
     var Malware: js.UndefOr[MalwareList]
@@ -350,7 +414,6 @@ package securityhub {
     var Remediation: js.UndefOr[Remediation]
     var SourceUrl: js.UndefOr[NonEmptyString]
     var ThreatIntelIndicators: js.UndefOr[ThreatIntelIndicatorList]
-    var Title: js.UndefOr[NonEmptyString]
     var UserDefinedFields: js.UndefOr[FieldMap]
     var VerificationState: js.UndefOr[VerificationState]
     var WorkflowState: js.UndefOr[WorkflowState]
@@ -360,18 +423,19 @@ package securityhub {
     def apply(
         AwsAccountId: NonEmptyString,
         CreatedAt: NonEmptyString,
+        Description: NonEmptyString,
         GeneratorId: NonEmptyString,
         Id: NonEmptyString,
         ProductArn: NonEmptyString,
         Resources: ResourceList,
         SchemaVersion: NonEmptyString,
         Severity: Severity,
+        Title: NonEmptyString,
         Types: TypeList,
         UpdatedAt: NonEmptyString,
         Compliance: js.UndefOr[Compliance] = js.undefined,
         Confidence: js.UndefOr[Int] = js.undefined,
         Criticality: js.UndefOr[Int] = js.undefined,
-        Description: js.UndefOr[NonEmptyString] = js.undefined,
         FirstObservedAt: js.UndefOr[NonEmptyString] = js.undefined,
         LastObservedAt: js.UndefOr[NonEmptyString] = js.undefined,
         Malware: js.UndefOr[MalwareList] = js.undefined,
@@ -384,7 +448,6 @@ package securityhub {
         Remediation: js.UndefOr[Remediation] = js.undefined,
         SourceUrl: js.UndefOr[NonEmptyString] = js.undefined,
         ThreatIntelIndicators: js.UndefOr[ThreatIntelIndicatorList] = js.undefined,
-        Title: js.UndefOr[NonEmptyString] = js.undefined,
         UserDefinedFields: js.UndefOr[FieldMap] = js.undefined,
         VerificationState: js.UndefOr[VerificationState] = js.undefined,
         WorkflowState: js.UndefOr[WorkflowState] = js.undefined
@@ -392,12 +455,14 @@ package securityhub {
       val __obj = js.Dictionary[js.Any](
         "AwsAccountId"  -> AwsAccountId.asInstanceOf[js.Any],
         "CreatedAt"     -> CreatedAt.asInstanceOf[js.Any],
+        "Description"   -> Description.asInstanceOf[js.Any],
         "GeneratorId"   -> GeneratorId.asInstanceOf[js.Any],
         "Id"            -> Id.asInstanceOf[js.Any],
         "ProductArn"    -> ProductArn.asInstanceOf[js.Any],
         "Resources"     -> Resources.asInstanceOf[js.Any],
         "SchemaVersion" -> SchemaVersion.asInstanceOf[js.Any],
         "Severity"      -> Severity.asInstanceOf[js.Any],
+        "Title"         -> Title.asInstanceOf[js.Any],
         "Types"         -> Types.asInstanceOf[js.Any],
         "UpdatedAt"     -> UpdatedAt.asInstanceOf[js.Any]
       )
@@ -405,7 +470,6 @@ package securityhub {
       Compliance.foreach(__v => __obj.update("Compliance", __v.asInstanceOf[js.Any]))
       Confidence.foreach(__v => __obj.update("Confidence", __v.asInstanceOf[js.Any]))
       Criticality.foreach(__v => __obj.update("Criticality", __v.asInstanceOf[js.Any]))
-      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
       FirstObservedAt.foreach(__v => __obj.update("FirstObservedAt", __v.asInstanceOf[js.Any]))
       LastObservedAt.foreach(__v => __obj.update("LastObservedAt", __v.asInstanceOf[js.Any]))
       Malware.foreach(__v => __obj.update("Malware", __v.asInstanceOf[js.Any]))
@@ -418,7 +482,6 @@ package securityhub {
       Remediation.foreach(__v => __obj.update("Remediation", __v.asInstanceOf[js.Any]))
       SourceUrl.foreach(__v => __obj.update("SourceUrl", __v.asInstanceOf[js.Any]))
       ThreatIntelIndicators.foreach(__v => __obj.update("ThreatIntelIndicators", __v.asInstanceOf[js.Any]))
-      Title.foreach(__v => __obj.update("Title", __v.asInstanceOf[js.Any]))
       UserDefinedFields.foreach(__v => __obj.update("UserDefinedFields", __v.asInstanceOf[js.Any]))
       VerificationState.foreach(__v => __obj.update("VerificationState", __v.asInstanceOf[js.Any]))
       WorkflowState.foreach(__v => __obj.update("WorkflowState", __v.asInstanceOf[js.Any]))
@@ -823,7 +886,7 @@ package securityhub {
   }
 
   /**
-    * Exclusive to findings that are generated as the result of a check run against a specific rule in a supported standard (for example, AWS CIS Foundations). Contains compliance-related finding details.
+    * Exclusive to findings that are generated as the result of a check run against a specific rule in a supported standard (for example, CIS AWS Foundations). Contains compliance-related finding details.
     */
   @js.native
   trait Compliance extends js.Object {
@@ -873,6 +936,46 @@ package securityhub {
       LaunchedAt.foreach(__v => __obj.update("LaunchedAt", __v.asInstanceOf[js.Any]))
       Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ContainerDetails]
+    }
+  }
+
+  @js.native
+  trait CreateActionTargetRequest extends js.Object {
+    var Description: NonEmptyString
+    var Id: NonEmptyString
+    var Name: NonEmptyString
+  }
+
+  object CreateActionTargetRequest {
+    def apply(
+        Description: NonEmptyString,
+        Id: NonEmptyString,
+        Name: NonEmptyString
+    ): CreateActionTargetRequest = {
+      val __obj = js.Dictionary[js.Any](
+        "Description" -> Description.asInstanceOf[js.Any],
+        "Id"          -> Id.asInstanceOf[js.Any],
+        "Name"        -> Name.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[CreateActionTargetRequest]
+    }
+  }
+
+  @js.native
+  trait CreateActionTargetResponse extends js.Object {
+    var ActionTargetArn: NonEmptyString
+  }
+
+  object CreateActionTargetResponse {
+    def apply(
+        ActionTargetArn: NonEmptyString
+    ): CreateActionTargetResponse = {
+      val __obj = js.Dictionary[js.Any](
+        "ActionTargetArn" -> ActionTargetArn.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[CreateActionTargetResponse]
     }
   }
 
@@ -999,15 +1102,17 @@ package securityhub {
 
   @js.native
   trait DeclineInvitationsRequest extends js.Object {
-    var AccountIds: js.UndefOr[AccountIdList]
+    var AccountIds: AccountIdList
   }
 
   object DeclineInvitationsRequest {
     def apply(
-        AccountIds: js.UndefOr[AccountIdList] = js.undefined
+        AccountIds: AccountIdList
     ): DeclineInvitationsRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      AccountIds.foreach(__v => __obj.update("AccountIds", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dictionary[js.Any](
+        "AccountIds" -> AccountIds.asInstanceOf[js.Any]
+      )
+
       __obj.asInstanceOf[DeclineInvitationsRequest]
     }
   }
@@ -1024,6 +1129,40 @@ package securityhub {
       val __obj = js.Dictionary.empty[js.Any]
       UnprocessedAccounts.foreach(__v => __obj.update("UnprocessedAccounts", __v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeclineInvitationsResponse]
+    }
+  }
+
+  @js.native
+  trait DeleteActionTargetRequest extends js.Object {
+    var ActionTargetArn: NonEmptyString
+  }
+
+  object DeleteActionTargetRequest {
+    def apply(
+        ActionTargetArn: NonEmptyString
+    ): DeleteActionTargetRequest = {
+      val __obj = js.Dictionary[js.Any](
+        "ActionTargetArn" -> ActionTargetArn.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[DeleteActionTargetRequest]
+    }
+  }
+
+  @js.native
+  trait DeleteActionTargetResponse extends js.Object {
+    var ActionTargetArn: NonEmptyString
+  }
+
+  object DeleteActionTargetResponse {
+    def apply(
+        ActionTargetArn: NonEmptyString
+    ): DeleteActionTargetResponse = {
+      val __obj = js.Dictionary[js.Any](
+        "ActionTargetArn" -> ActionTargetArn.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[DeleteActionTargetResponse]
     }
   }
 
@@ -1063,15 +1202,17 @@ package securityhub {
 
   @js.native
   trait DeleteInvitationsRequest extends js.Object {
-    var AccountIds: js.UndefOr[AccountIdList]
+    var AccountIds: AccountIdList
   }
 
   object DeleteInvitationsRequest {
     def apply(
-        AccountIds: js.UndefOr[AccountIdList] = js.undefined
+        AccountIds: AccountIdList
     ): DeleteInvitationsRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      AccountIds.foreach(__v => __obj.update("AccountIds", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dictionary[js.Any](
+        "AccountIds" -> AccountIds.asInstanceOf[js.Any]
+      )
+
       __obj.asInstanceOf[DeleteInvitationsRequest]
     }
   }
@@ -1118,6 +1259,118 @@ package securityhub {
       val __obj = js.Dictionary.empty[js.Any]
       UnprocessedAccounts.foreach(__v => __obj.update("UnprocessedAccounts", __v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeleteMembersResponse]
+    }
+  }
+
+  @js.native
+  trait DescribeActionTargetsRequest extends js.Object {
+    var ActionTargetArns: js.UndefOr[ArnList]
+    var MaxResults: js.UndefOr[MaxResults]
+    var NextToken: js.UndefOr[NextToken]
+  }
+
+  object DescribeActionTargetsRequest {
+    def apply(
+        ActionTargetArns: js.UndefOr[ArnList] = js.undefined,
+        MaxResults: js.UndefOr[MaxResults] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): DescribeActionTargetsRequest = {
+      val __obj = js.Dictionary.empty[js.Any]
+      ActionTargetArns.foreach(__v => __obj.update("ActionTargetArns", __v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeActionTargetsRequest]
+    }
+  }
+
+  @js.native
+  trait DescribeActionTargetsResponse extends js.Object {
+    var ActionTargets: ActionTargetList
+    var NextToken: js.UndefOr[NextToken]
+  }
+
+  object DescribeActionTargetsResponse {
+    def apply(
+        ActionTargets: ActionTargetList,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): DescribeActionTargetsResponse = {
+      val __obj = js.Dictionary[js.Any](
+        "ActionTargets" -> ActionTargets.asInstanceOf[js.Any]
+      )
+
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeActionTargetsResponse]
+    }
+  }
+
+  @js.native
+  trait DescribeHubRequest extends js.Object {
+    var HubArn: js.UndefOr[NonEmptyString]
+  }
+
+  object DescribeHubRequest {
+    def apply(
+        HubArn: js.UndefOr[NonEmptyString] = js.undefined
+    ): DescribeHubRequest = {
+      val __obj = js.Dictionary.empty[js.Any]
+      HubArn.foreach(__v => __obj.update("HubArn", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeHubRequest]
+    }
+  }
+
+  @js.native
+  trait DescribeHubResponse extends js.Object {
+    var HubArn: js.UndefOr[NonEmptyString]
+    var SubscribedAt: js.UndefOr[NonEmptyString]
+  }
+
+  object DescribeHubResponse {
+    def apply(
+        HubArn: js.UndefOr[NonEmptyString] = js.undefined,
+        SubscribedAt: js.UndefOr[NonEmptyString] = js.undefined
+    ): DescribeHubResponse = {
+      val __obj = js.Dictionary.empty[js.Any]
+      HubArn.foreach(__v => __obj.update("HubArn", __v.asInstanceOf[js.Any]))
+      SubscribedAt.foreach(__v => __obj.update("SubscribedAt", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeHubResponse]
+    }
+  }
+
+  @js.native
+  trait DescribeProductsRequest extends js.Object {
+    var MaxResults: js.UndefOr[MaxResults]
+    var NextToken: js.UndefOr[NextToken]
+  }
+
+  object DescribeProductsRequest {
+    def apply(
+        MaxResults: js.UndefOr[MaxResults] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): DescribeProductsRequest = {
+      val __obj = js.Dictionary.empty[js.Any]
+      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeProductsRequest]
+    }
+  }
+
+  @js.native
+  trait DescribeProductsResponse extends js.Object {
+    var Products: ProductsList
+    var NextToken: js.UndefOr[NextToken]
+  }
+
+  object DescribeProductsResponse {
+    def apply(
+        Products: ProductsList,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): DescribeProductsResponse = {
+      val __obj = js.Dictionary[js.Any](
+        "Products" -> Products.asInstanceOf[js.Any]
+      )
+
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeProductsResponse]
     }
   }
 
@@ -1258,13 +1511,16 @@ package securityhub {
   }
 
   @js.native
-  trait EnableSecurityHubRequest extends js.Object {}
+  trait EnableSecurityHubRequest extends js.Object {
+    var Tags: js.UndefOr[TagMap]
+  }
 
   object EnableSecurityHubRequest {
     def apply(
-        ): EnableSecurityHubRequest = {
+        Tags: js.UndefOr[TagMap] = js.undefined
+    ): EnableSecurityHubRequest = {
       val __obj = js.Dictionary.empty[js.Any]
-
+      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[EnableSecurityHubRequest]
     }
   }
@@ -1529,7 +1785,7 @@ package securityhub {
   }
 
   /**
-    * Includes details of the list of the findings that cannot be imported.
+    * Includes details of the list of the findings that can't be imported.
     */
   @js.native
   trait ImportFindingsError extends js.Object {
@@ -1584,7 +1840,7 @@ package securityhub {
   }
 
   /**
-    * The insight result values returned by the GetInsightResults operation.
+    * The insight result values returned by the <code>GetInsightResults</code> operation.
     */
   @js.native
   trait InsightResultValue extends js.Object {
@@ -1607,7 +1863,7 @@ package securityhub {
   }
 
   /**
-    * The insight results returned by the GetInsightResults operation.
+    * The insight results returned by the <code>GetInsightResults</code> operation.
     */
   @js.native
   trait InsightResults extends js.Object {
@@ -1633,7 +1889,7 @@ package securityhub {
   }
 
   /**
-    * The details of an invitation sent to an AWS account by the Security Hub master account.
+    * Details about an invitation.
     */
   @js.native
   trait Invitation extends js.Object {
@@ -1690,7 +1946,7 @@ package securityhub {
   }
 
   /**
-    * The IP filter for querying findings.&gt;
+    * The IP filter for querying findings.
     */
   @js.native
   trait IpFilter extends js.Object {
@@ -1836,6 +2092,38 @@ package securityhub {
     }
   }
 
+  @js.native
+  trait ListTagsForResourceRequest extends js.Object {
+    var ResourceArn: ResourceArn
+  }
+
+  object ListTagsForResourceRequest {
+    def apply(
+        ResourceArn: ResourceArn
+    ): ListTagsForResourceRequest = {
+      val __obj = js.Dictionary[js.Any](
+        "ResourceArn" -> ResourceArn.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[ListTagsForResourceRequest]
+    }
+  }
+
+  @js.native
+  trait ListTagsForResourceResponse extends js.Object {
+    var Tags: js.UndefOr[TagMap]
+  }
+
+  object ListTagsForResourceResponse {
+    def apply(
+        Tags: js.UndefOr[TagMap] = js.undefined
+    ): ListTagsForResourceResponse = {
+      val __obj = js.Dictionary.empty[js.Any]
+      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListTagsForResourceResponse]
+    }
+  }
+
   /**
     * A list of malware related to a finding.
     */
@@ -1934,13 +2222,13 @@ package securityhub {
   }
 
   object MapFilterComparisonEnum {
-    val CONTAINS = "CONTAINS"
+    val EQUALS = "EQUALS"
 
-    val values = IndexedSeq(CONTAINS)
+    val values = IndexedSeq(EQUALS)
   }
 
   /**
-    * The details for a Security Hub member account.
+    * The details about a member account.
     */
   @js.native
   trait Member extends js.Object {
@@ -2142,7 +2430,50 @@ package securityhub {
   }
 
   /**
-    * Provides a recommendation on how to remediate the issue identified within a finding.
+    * Contains details about a product.
+    */
+  @js.native
+  trait Product extends js.Object {
+    var ProductArn: NonEmptyString
+    var ActivationUrl: js.UndefOr[NonEmptyString]
+    var Categories: js.UndefOr[CategoryList]
+    var CompanyName: js.UndefOr[NonEmptyString]
+    var Description: js.UndefOr[NonEmptyString]
+    var MarketplaceUrl: js.UndefOr[NonEmptyString]
+    var ProductName: js.UndefOr[NonEmptyString]
+    var ProductSubscriptionResourcePolicy: js.UndefOr[NonEmptyString]
+  }
+
+  object Product {
+    def apply(
+        ProductArn: NonEmptyString,
+        ActivationUrl: js.UndefOr[NonEmptyString] = js.undefined,
+        Categories: js.UndefOr[CategoryList] = js.undefined,
+        CompanyName: js.UndefOr[NonEmptyString] = js.undefined,
+        Description: js.UndefOr[NonEmptyString] = js.undefined,
+        MarketplaceUrl: js.UndefOr[NonEmptyString] = js.undefined,
+        ProductName: js.UndefOr[NonEmptyString] = js.undefined,
+        ProductSubscriptionResourcePolicy: js.UndefOr[NonEmptyString] = js.undefined
+    ): Product = {
+      val __obj = js.Dictionary[js.Any](
+        "ProductArn" -> ProductArn.asInstanceOf[js.Any]
+      )
+
+      ActivationUrl.foreach(__v => __obj.update("ActivationUrl", __v.asInstanceOf[js.Any]))
+      Categories.foreach(__v => __obj.update("Categories", __v.asInstanceOf[js.Any]))
+      CompanyName.foreach(__v => __obj.update("CompanyName", __v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
+      MarketplaceUrl.foreach(__v => __obj.update("MarketplaceUrl", __v.asInstanceOf[js.Any]))
+      ProductName.foreach(__v => __obj.update("ProductName", __v.asInstanceOf[js.Any]))
+      ProductSubscriptionResourcePolicy.foreach(
+        __v => __obj.update("ProductSubscriptionResourcePolicy", __v.asInstanceOf[js.Any])
+      )
+      __obj.asInstanceOf[Product]
+    }
+  }
+
+  /**
+    * A recommendation on how to remediate the issue identified in a finding.
     */
   @js.native
   trait Recommendation extends js.Object {
@@ -2170,7 +2501,7 @@ package securityhub {
   }
 
   /**
-    * Related finding's details.
+    * Details about a related finding.
     */
   @js.native
   trait RelatedFinding extends js.Object {
@@ -2193,7 +2524,7 @@ package securityhub {
   }
 
   /**
-    * The remediation options for a finding.
+    * Details about the remediation steps for a finding.
     */
   @js.native
   trait Remediation extends js.Object {
@@ -2211,7 +2542,7 @@ package securityhub {
   }
 
   /**
-    * A resource data type that describes a resource to which the finding refers.
+    * A resource related to a finding.
     */
   @js.native
   trait Resource extends js.Object {
@@ -2246,7 +2577,7 @@ package securityhub {
   }
 
   /**
-    * Provides additional details about the resource.
+    * Additional details about a resource related to a finding.
     */
   @js.native
   trait ResourceDetails extends js.Object {
@@ -2276,7 +2607,7 @@ package securityhub {
   }
 
   /**
-    * The account details that could not be processed.
+    * Details about the account that wasn't processed.
     */
   @js.native
   trait Result extends js.Object {
@@ -2297,7 +2628,7 @@ package securityhub {
   }
 
   /**
-    * A finding's severity.
+    * The severity of the finding.
     */
   @js.native
   trait Severity extends js.Object {
@@ -2320,7 +2651,7 @@ package securityhub {
   }
 
   /**
-    * A collection of attributes used for sorting findings.
+    * A collection of finding attributes used to sort findings.
     */
   @js.native
   trait SortCriterion extends js.Object {
@@ -2348,12 +2679,13 @@ package securityhub {
   }
 
   object StandardsStatusEnum {
-    val PENDING  = "PENDING"
-    val READY    = "READY"
-    val FAILED   = "FAILED"
-    val DELETING = "DELETING"
+    val PENDING    = "PENDING"
+    val READY      = "READY"
+    val FAILED     = "FAILED"
+    val DELETING   = "DELETING"
+    val INCOMPLETE = "INCOMPLETE"
 
-    val values = IndexedSeq(PENDING, READY, FAILED, DELETING)
+    val values = IndexedSeq(PENDING, READY, FAILED, DELETING, INCOMPLETE)
   }
 
   /**
@@ -2430,15 +2762,46 @@ package securityhub {
   }
 
   object StringFilterComparisonEnum {
-    val EQUALS   = "EQUALS"
-    val CONTAINS = "CONTAINS"
-    val PREFIX   = "PREFIX"
+    val EQUALS = "EQUALS"
+    val PREFIX = "PREFIX"
 
-    val values = IndexedSeq(EQUALS, CONTAINS, PREFIX)
+    val values = IndexedSeq(EQUALS, PREFIX)
+  }
+
+  @js.native
+  trait TagResourceRequest extends js.Object {
+    var ResourceArn: ResourceArn
+    var Tags: TagMap
+  }
+
+  object TagResourceRequest {
+    def apply(
+        ResourceArn: ResourceArn,
+        Tags: TagMap
+    ): TagResourceRequest = {
+      val __obj = js.Dictionary[js.Any](
+        "ResourceArn" -> ResourceArn.asInstanceOf[js.Any],
+        "Tags"        -> Tags.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[TagResourceRequest]
+    }
+  }
+
+  @js.native
+  trait TagResourceResponse extends js.Object {}
+
+  object TagResourceResponse {
+    def apply(
+        ): TagResourceResponse = {
+      val __obj = js.Dictionary.empty[js.Any]
+
+      __obj.asInstanceOf[TagResourceResponse]
+    }
   }
 
   /**
-    * Threat intel details related to a finding.
+    * Details about the threat intel related to a finding.
     */
   @js.native
   trait ThreatIntelIndicator extends js.Object {
@@ -2507,6 +2870,73 @@ package securityhub {
       PROCESS,
       URL
     )
+  }
+
+  @js.native
+  trait UntagResourceRequest extends js.Object {
+    var ResourceArn: ResourceArn
+    var TagKeys: TagKeyList
+  }
+
+  object UntagResourceRequest {
+    def apply(
+        ResourceArn: ResourceArn,
+        TagKeys: TagKeyList
+    ): UntagResourceRequest = {
+      val __obj = js.Dictionary[js.Any](
+        "ResourceArn" -> ResourceArn.asInstanceOf[js.Any],
+        "TagKeys"     -> TagKeys.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[UntagResourceRequest]
+    }
+  }
+
+  @js.native
+  trait UntagResourceResponse extends js.Object {}
+
+  object UntagResourceResponse {
+    def apply(
+        ): UntagResourceResponse = {
+      val __obj = js.Dictionary.empty[js.Any]
+
+      __obj.asInstanceOf[UntagResourceResponse]
+    }
+  }
+
+  @js.native
+  trait UpdateActionTargetRequest extends js.Object {
+    var ActionTargetArn: NonEmptyString
+    var Description: js.UndefOr[NonEmptyString]
+    var Name: js.UndefOr[NonEmptyString]
+  }
+
+  object UpdateActionTargetRequest {
+    def apply(
+        ActionTargetArn: NonEmptyString,
+        Description: js.UndefOr[NonEmptyString] = js.undefined,
+        Name: js.UndefOr[NonEmptyString] = js.undefined
+    ): UpdateActionTargetRequest = {
+      val __obj = js.Dictionary[js.Any](
+        "ActionTargetArn" -> ActionTargetArn.asInstanceOf[js.Any]
+      )
+
+      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateActionTargetRequest]
+    }
+  }
+
+  @js.native
+  trait UpdateActionTargetResponse extends js.Object {}
+
+  object UpdateActionTargetResponse {
+    def apply(
+        ): UpdateActionTargetResponse = {
+      val __obj = js.Dictionary.empty[js.Any]
+
+      __obj.asInstanceOf[UpdateActionTargetResponse]
+    }
   }
 
   @js.native

@@ -8,11 +8,13 @@ import io.scalajs.nodejs
 import facade.amazonaws._
 
 package object cloudfront {
+  type AliasICPRecordals                         = js.Array[AliasICPRecordal]
   type AliasList                                 = js.Array[String]
   type AwsAccountNumberList                      = js.Array[String]
   type CacheBehaviorList                         = js.Array[CacheBehavior]
   type CertificateSource                         = String
   type CloudFrontOriginAccessIdentitySummaryList = js.Array[CloudFrontOriginAccessIdentitySummary]
+  type CommentType                               = String
   type ContentTypeProfileList                    = js.Array[ContentTypeProfile]
   type CookieNameList                            = js.Array[String]
   type CustomErrorResponseList                   = js.Array[CustomErrorResponse]
@@ -26,6 +28,7 @@ package object cloudfront {
   type GeoRestrictionType                        = String
   type HeaderList                                = js.Array[String]
   type HttpVersion                               = String
+  type ICPRecordalStatus                         = String
   type InvalidationSummaryList                   = js.Array[InvalidationSummary]
   type ItemSelection                             = String
   type KeyPairIdList                             = js.Array[String]
@@ -291,7 +294,7 @@ package cloudfront {
   /**
     * A complex type that lists the AWS accounts, if any, that you included in the <code>TrustedSigners</code> complex type for this distribution. These are the accounts that you want to allow to create signed URLs for private content.
     *  The <code>Signer</code> complex type lists the AWS account number of the trusted signer or <code>self</code> if the signer is the AWS account that created the distribution. The <code>Signer</code> element also includes the IDs of any active CloudFront key pairs that are associated with the trusted signer's AWS account. If no <code>KeyPairId</code> element appears for a <code>Signer</code>, that signer can't create signed URLs.
-    *  For more information, see [[http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html|Serving Private Content through CloudFront]] in the <i>Amazon CloudFront Developer Guide</i>.
+    *  For more information, see [[https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html|Serving Private Content through CloudFront]] in the <i>Amazon CloudFront Developer Guide</i>.
     */
   @js.native
   trait ActiveTrustedSigners extends js.Object {
@@ -313,6 +316,28 @@ package cloudfront {
 
       Items.foreach(__v => __obj.update("Items", __v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ActiveTrustedSigners]
+    }
+  }
+
+  /**
+    * AWS services in China customers must file for an Internet Content Provider (ICP) recordal if they want to serve content publicly on an alternate domain name, also known as a CNAME, that they've added to CloudFront. AliasICPRecordal provides the ICP recordal status for CNAMEs associated with distributions. The status is returned in the CloudFront response; you can't configure it yourself.
+    *  For more information about ICP recordals, see [[https://docs.amazonaws.cn/en_us/aws/latest/userguide/accounts-and-credentials.html| Signup, Accounts, and Credentials]] in <i>Getting Started with AWS services in China</i>.
+    */
+  @js.native
+  trait AliasICPRecordal extends js.Object {
+    var CNAME: js.UndefOr[String]
+    var ICPRecordalStatus: js.UndefOr[ICPRecordalStatus]
+  }
+
+  object AliasICPRecordal {
+    def apply(
+        CNAME: js.UndefOr[String] = js.undefined,
+        ICPRecordalStatus: js.UndefOr[ICPRecordalStatus] = js.undefined
+    ): AliasICPRecordal = {
+      val __obj = js.Dictionary.empty[js.Any]
+      CNAME.foreach(__v => __obj.update("CNAME", __v.asInstanceOf[js.Any]))
+      ICPRecordalStatus.foreach(__v => __obj.update("ICPRecordalStatus", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AliasICPRecordal]
     }
   }
 
@@ -372,11 +397,11 @@ package cloudfront {
   /**
     * A complex type that describes how CloudFront processes requests.
     *  You must create at least as many cache behaviors (including the default cache behavior) as you have origins if you want CloudFront to distribute objects from all of the origins. Each cache behavior specifies the one origin from which you want CloudFront to get objects. If you have two origins and only the default cache behavior, the default cache behavior will cause CloudFront to get objects from one of the origins, but the other origin is never used.
-    *  For the current limit on the number of cache behaviors that you can add to a distribution, see [[http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html#limits_cloudfront|Amazon CloudFront Limits]] in the <i>AWS General Reference</i>.
+    *  For the current limit on the number of cache behaviors that you can add to a distribution, see [[https://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html#limits_cloudfront|Amazon CloudFront Limits]] in the <i>AWS General Reference</i>.
     *  If you don't want to specify any cache behaviors, include only an empty <code>CacheBehaviors</code> element. Don't include an empty <code>CacheBehavior</code> element, or CloudFront returns a <code>MalformedXML</code> error.
     *  To delete all cache behaviors in an existing distribution, update the distribution configuration and include only an empty <code>CacheBehaviors</code> element.
     *  To add, change, or remove one or more cache behaviors, update the distribution configuration and specify all of the cache behaviors that you want to include in the updated distribution.
-    *  For more information about cache behaviors, see [[http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValuesCacheBehavior|Cache Behaviors]] in the <i>Amazon CloudFront Developer Guide</i>.
+    *  For more information about cache behaviors, see [[https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValuesCacheBehavior|Cache Behaviors]] in the <i>Amazon CloudFront Developer Guide</i>.
     */
   @js.native
   trait CacheBehavior extends js.Object {
@@ -673,7 +698,7 @@ package cloudfront {
   }
 
   /**
-    * A complex type that specifies whether you want CloudFront to forward cookies to the origin and, if so, which ones. For more information about forwarding cookies to the origin, see [[http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Cookies.html|How CloudFront Forwards, Caches, and Logs Cookies]] in the <i>Amazon CloudFront Developer Guide</i>.
+    * A complex type that specifies whether you want CloudFront to forward cookies to the origin and, if so, which ones. For more information about forwarding cookies to the origin, see [[https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/header-caching.html| Caching Content Based on Request Headers]] in the <i>Amazon CloudFront Developer Guide</i>.
     */
   @js.native
   trait CookieNames extends js.Object {
@@ -696,7 +721,7 @@ package cloudfront {
   }
 
   /**
-    * A complex type that specifies whether you want CloudFront to forward cookies to the origin and, if so, which ones. For more information about forwarding cookies to the origin, see [[http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Cookies.html|How CloudFront Forwards, Caches, and Logs Cookies]] in the <i>Amazon CloudFront Developer Guide</i>.
+    * A complex type that specifies whether you want CloudFront to forward cookies to the origin and, if so, which ones. For more information about forwarding cookies to the origin, see [[https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Cookies.html|Caching Content Based on Cookies]] in the <i>Amazon CloudFront Developer Guide</i>.
     */
   @js.native
   trait CookiePreference extends js.Object {
@@ -719,7 +744,7 @@ package cloudfront {
   }
 
   /**
-    * The request to create a new origin access identity.
+    * The request to create a new origin access identity (OAI). An origin access identity is a special CloudFront user that you can associate with Amazon S3 origins, so that you can secure all or just some of your Amazon S3 content. For more information, see [[https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/private-content-restricting-access-to-s3.html| Restricting Access to Amazon S3 Content by Using an Origin Access Identity]] in the <i>Amazon CloudFront Developer Guide</i>.
     */
   @js.native
   trait CreateCloudFrontOriginAccessIdentityRequest extends js.Object {
@@ -1102,7 +1127,7 @@ package cloudfront {
     * A complex type that controls:
     * * Whether CloudFront replaces HTTP status codes in the 4xx and 5xx range with custom error messages before returning the response to the viewer.
     *  * How long CloudFront caches HTTP status codes in the 4xx and 5xx range.
-    * For more information about custom error pages, see [[http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/custom-error-pages.html|Customizing Error Responses]] in the <i>Amazon CloudFront Developer Guide</i>.
+    * For more information about custom error pages, see [[https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/custom-error-pages.html|Customizing Error Responses]] in the <i>Amazon CloudFront Developer Guide</i>.
     */
   @js.native
   trait CustomErrorResponse extends js.Object {
@@ -1134,7 +1159,7 @@ package cloudfront {
     * A complex type that controls:
     * * Whether CloudFront replaces HTTP status codes in the 4xx and 5xx range with custom error messages before returning the response to the viewer.
     *  * How long CloudFront caches HTTP status codes in the 4xx and 5xx range.
-    * For more information about custom error pages, see [[http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/custom-error-pages.html|Customizing Error Responses]] in the <i>Amazon CloudFront Developer Guide</i>.
+    * For more information about custom error pages, see [[https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/custom-error-pages.html|Customizing Error Responses]] in the <i>Amazon CloudFront Developer Guide</i>.
     */
   @js.native
   trait CustomErrorResponses extends js.Object {
@@ -1180,7 +1205,7 @@ package cloudfront {
   }
 
   /**
-    * A customer origin or an Amazon S3 bucket configured as a website endpoint.
+    * A custom origin or an Amazon S3 bucket configured as a website endpoint.
     */
   @js.native
   trait CustomOriginConfig extends js.Object {
@@ -1301,7 +1326,7 @@ package cloudfront {
     *  * Submit a <code>GET Distribution</code> request to confirm that your changes have propagated. When propagation is complete, the value of <code>Status</code> is <code>Deployed</code>.
     *  * Submit a <code>DELETE Distribution</code> request. Set the value of the HTTP <code>If-Match</code> header to the value of the <code>ETag</code> header that CloudFront returned when you submitted the <code>GET Distribution Config</code> request in Step 6.
     *  * Review the response to your <code>DELETE Distribution</code> request to confirm that the distribution was successfully deleted.
-    *  </ol> For information about deleting a distribution using the CloudFront console, see [[http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/HowToDeleteDistribution.html|Deleting a Distribution]] in the <i>Amazon CloudFront Developer Guide</i>.
+    *  </ol> For information about deleting a distribution using the CloudFront console, see [[https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/HowToDeleteDistribution.html|Deleting a Distribution]] in the <i>Amazon CloudFront Developer Guide</i>.
     */
   @js.native
   trait DeleteDistributionRequest extends js.Object {
@@ -1407,7 +1432,7 @@ package cloudfront {
   }
 
   /**
-    * The distribution's information.
+    * A distribution tells CloudFront where you want content to be delivered from, and the details about how to track and manage content delivery.
     */
   @js.native
   trait Distribution extends js.Object {
@@ -1419,6 +1444,7 @@ package cloudfront {
     var InProgressInvalidationBatches: Int
     var LastModifiedTime: timestamp
     var Status: String
+    var AliasICPRecordals: js.UndefOr[AliasICPRecordals]
   }
 
   object Distribution {
@@ -1430,7 +1456,8 @@ package cloudfront {
         Id: String,
         InProgressInvalidationBatches: Int,
         LastModifiedTime: timestamp,
-        Status: String
+        Status: String,
+        AliasICPRecordals: js.UndefOr[AliasICPRecordals] = js.undefined
     ): Distribution = {
       val __obj = js.Dictionary[js.Any](
         "ARN"                           -> ARN.asInstanceOf[js.Any],
@@ -1443,6 +1470,7 @@ package cloudfront {
         "Status"                        -> Status.asInstanceOf[js.Any]
       )
 
+      AliasICPRecordals.foreach(__v => __obj.update("AliasICPRecordals", __v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Distribution]
     }
   }
@@ -1453,7 +1481,7 @@ package cloudfront {
   @js.native
   trait DistributionConfig extends js.Object {
     var CallerReference: String
-    var Comment: String
+    var Comment: CommentType
     var DefaultCacheBehavior: DefaultCacheBehavior
     var Enabled: Boolean
     var Origins: Origins
@@ -1474,7 +1502,7 @@ package cloudfront {
   object DistributionConfig {
     def apply(
         CallerReference: String,
-        Comment: String,
+        Comment: CommentType,
         DefaultCacheBehavior: DefaultCacheBehavior,
         Enabled: Boolean,
         Origins: Origins,
@@ -1596,6 +1624,7 @@ package cloudfront {
     var Status: String
     var ViewerCertificate: ViewerCertificate
     var WebACLId: String
+    var AliasICPRecordals: js.UndefOr[AliasICPRecordals]
     var OriginGroups: js.UndefOr[OriginGroups]
   }
 
@@ -1619,6 +1648,7 @@ package cloudfront {
         Status: String,
         ViewerCertificate: ViewerCertificate,
         WebACLId: String,
+        AliasICPRecordals: js.UndefOr[AliasICPRecordals] = js.undefined,
         OriginGroups: js.UndefOr[OriginGroups] = js.undefined
     ): DistributionSummary = {
       val __obj = js.Dictionary[js.Any](
@@ -1642,6 +1672,7 @@ package cloudfront {
         "WebACLId"             -> WebACLId.asInstanceOf[js.Any]
       )
 
+      AliasICPRecordals.foreach(__v => __obj.update("AliasICPRecordals", __v.asInstanceOf[js.Any]))
       OriginGroups.foreach(__v => __obj.update("OriginGroups", __v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DistributionSummary]
     }
@@ -2030,7 +2061,7 @@ package cloudfront {
   }
 
   /**
-    * The origin access identity's configuration information. For more information, see <a>CloudFrontOriginAccessIdentityConfigComplexType</a>.
+    * The origin access identity's configuration information. For more information, see [[https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_CloudFrontOriginAccessIdentityConfig.html|CloudFrontOriginAccessIdentityConfig]].
     */
   @js.native
   trait GetCloudFrontOriginAccessIdentityConfigRequest extends js.Object {
@@ -2534,7 +2565,7 @@ package cloudfront {
 
   /**
     * A complex type that specifies the request headers, if any, that you want CloudFront to base caching on for this cache behavior.
-    *  For the headers that you specify, CloudFront caches separate versions of a specified object based on the header values in viewer requests. For example, suppose viewer requests for <code>logo.jpg</code> contain a custom <code>product</code> header that has a value of either <code>acme</code> or <code>apex</code>, and you configure CloudFront to cache your content based on values in the <code>product</code> header. CloudFront forwards the <code>product</code> header to the origin and caches the response from the origin once for each header value. For more information about caching based on header values, see [[http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/header-caching.html|How CloudFront Forwards and Caches Headers]] in the <i>Amazon CloudFront Developer Guide</i>.
+    *  For the headers that you specify, CloudFront caches separate versions of a specified object based on the header values in viewer requests. For example, suppose viewer requests for <code>logo.jpg</code> contain a custom <code>product</code> header that has a value of either <code>acme</code> or <code>apex</code>, and you configure CloudFront to cache your content based on values in the <code>product</code> header. CloudFront forwards the <code>product</code> header to the origin and caches the response from the origin once for each header value. For more information about caching based on header values, see [[https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/header-caching.html|How CloudFront Forwards and Caches Headers]] in the <i>Amazon CloudFront Developer Guide</i>.
     */
   @js.native
   trait Headers extends js.Object {
@@ -2561,6 +2592,14 @@ package cloudfront {
     val http2     = "http2"
 
     val values = IndexedSeq(`http1.1`, http2)
+  }
+
+  object ICPRecordalStatusEnum {
+    val APPROVED  = "APPROVED"
+    val SUSPENDED = "SUSPENDED"
+    val PENDING   = "PENDING"
+
+    val values = IndexedSeq(APPROVED, SUSPENDED, PENDING)
   }
 
   /**
@@ -2616,7 +2655,7 @@ package cloudfront {
   }
 
   /**
-    * The <code>InvalidationList</code> complex type describes the list of invalidation objects. For more information about invalidation, see [[http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Invalidation.html|Invalidating Objects (Web Distributions Only)]] in the <i>Amazon CloudFront Developer Guide</i>.
+    * The <code>InvalidationList</code> complex type describes the list of invalidation objects. For more information about invalidation, see [[https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Invalidation.html|Invalidating Objects (Web Distributions Only)]] in the <i>Amazon CloudFront Developer Guide</i>.
     */
   @js.native
   trait InvalidationList extends js.Object {
@@ -2686,7 +2725,7 @@ package cloudfront {
 
   /**
     * A complex type that lists the active CloudFront key pairs, if any, that are associated with <code>AwsAccountNumber</code>.
-    *  For more information, see <a>ActiveTrustedSigners</a>.
+    *  For more information, see [[https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ActiveTrustedSigners.html|ActiveTrustedSigners]].
     */
   @js.native
   trait KeyPairIds extends js.Object {
@@ -3160,7 +3199,7 @@ package cloudfront {
 
   /**
     * A complex type that describes the Amazon S3 bucket, HTTP server (for example, a web server), Amazon MediaStore, or other server from which CloudFront gets your files. This can also be an origin group, if you've created an origin group. You must specify at least one origin or origin group.
-    *  For the current limit on the number of origins or origin groups that you can specify for a distribution, see [[http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html#limits_cloudfront|Amazon CloudFront Limits]] in the <i>AWS General Reference</i>.
+    *  For the current limit on the number of origins or origin groups that you can specify for a distribution, see [[https://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html#limits_cloudfront|Amazon CloudFront Limits]] in the <i>AWS General Reference</i>.
     */
   @js.native
   trait Origin extends js.Object {
@@ -3384,7 +3423,7 @@ package cloudfront {
   }
 
   /**
-    * A complex type that contains information about the objects that you want to invalidate. For more information, see [[http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Invalidation.html#invalidation-specifying-objects|Specifying the Objects to Invalidate]] in the <i>Amazon CloudFront Developer Guide</i>.
+    * A complex type that contains information about the objects that you want to invalidate. For more information, see [[https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Invalidation.html#invalidation-specifying-objects|Specifying the Objects to Invalidate]] in the <i>Amazon CloudFront Developer Guide</i>.
     */
   @js.native
   trait Paths extends js.Object {
@@ -3599,6 +3638,9 @@ package cloudfront {
     }
   }
 
+  /**
+    * A complex type that contains information about the query string parameters that you want CloudFront to use for caching for a cache behavior.
+    */
   @js.native
   trait QueryStringCacheKeys extends js.Object {
     var Quantity: Int
@@ -3743,7 +3785,7 @@ package cloudfront {
   }
 
   /**
-    * A streaming distribution.
+    * A streaming distribution tells CloudFront where you want RTMP content to be delivered from, and the details about how to track and manage content delivery.
     */
   @js.native
   trait StreamingDistribution extends js.Object {
@@ -3880,7 +3922,7 @@ package cloudfront {
   }
 
   /**
-    * A summary of the information for an Amazon CloudFront streaming distribution.
+    * A summary of the information for a CloudFront streaming distribution.
     */
   @js.native
   trait StreamingDistributionSummary extends js.Object {
@@ -4039,10 +4081,10 @@ package cloudfront {
 
   /**
     * A complex type that specifies the AWS accounts, if any, that you want to allow to create signed URLs for private content.
-    *  If you want to require signed URLs in requests for objects in the target origin that match the <code>PathPattern</code> for this cache behavior, specify <code>true</code> for <code>Enabled</code>, and specify the applicable values for <code>Quantity</code> and <code>Items</code>. For more information, see [[http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html|Serving Private Content through CloudFront]] in the <i>Amazon Amazon CloudFront Developer Guide</i>.
+    *  If you want to require signed URLs in requests for objects in the target origin that match the <code>PathPattern</code> for this cache behavior, specify <code>true</code> for <code>Enabled</code>, and specify the applicable values for <code>Quantity</code> and <code>Items</code>. For more information, see [[https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html|Serving Private Content through CloudFront]] in the <i> Amazon CloudFront Developer Guide</i>.
     *  If you don't want to require signed URLs in requests for objects that match <code>PathPattern</code>, specify <code>false</code> for <code>Enabled</code> and <code>0</code> for <code>Quantity</code>. Omit <code>Items</code>.
     *  To add, change, or remove one or more trusted signers, change <code>Enabled</code> to <code>true</code> (if it's currently <code>false</code>), change <code>Quantity</code> as applicable, and specify all of the trusted signers that you want to include in the updated distribution.
-    *  For more information about updating the distribution configuration, see <a>DistributionConfig</a> .
+    *  For more information about updating the distribution configuration, see [[https://docs.aws.amazon.com/cloudfront/latest/APIReference/DistributionConfig.html|DistributionConfig]] in the <i>Amazon CloudFront API Reference</i>.
     */
   @js.native
   trait TrustedSigners extends js.Object {
@@ -4361,31 +4403,11 @@ package cloudfront {
     * * Whether you want viewers to use HTTP or HTTPS to request your objects.
     *  * If you want viewers to use HTTPS, whether you're using an alternate domain name such as <code>example.com</code> or the CloudFront domain name for your distribution, such as <code>d111111abcdef8.cloudfront.net</code>.
     *  * If you're using an alternate domain name, whether AWS Certificate Manager (ACM) provided the certificate, or you purchased a certificate from a third-party certificate authority and imported it into ACM or uploaded it to the IAM certificate store.
-    * You must specify only one of the following values:
-    * * ACMCertificateArn
-    *  * IAMCertificateId
-    *  * CloudFrontDefaultCertificate
-    * Don't specify <code>false</code> for <code>CloudFrontDefaultCertificate</code>.
-    *  ```If you want viewers to use HTTP instead of HTTPS to request your objects```: Specify the following value:
-    *  <code>&lt;CloudFrontDefaultCertificate&gt;true&lt;CloudFrontDefaultCertificate&gt;</code>
-    *  In addition, specify <code>allow-all</code> for <code>ViewerProtocolPolicy</code> for all of your cache behaviors.
-    *  ```If you want viewers to use HTTPS to request your objects```: Choose the type of certificate that you want to use based on whether you're using an alternate domain name for your objects or the CloudFront domain name:
-    * * ```If you're using an alternate domain name, such as example.com```: Specify one of the following values, depending on whether ACM provided your certificate or you purchased your certificate from third-party certificate authority:
-    * <li> <code>&lt;ACMCertificateArn&gt;<i>ARN for ACM SSL/TLS certificate</i>&lt;ACMCertificateArn&gt;</code> where <code> <i>ARN for ACM SSL/TLS certificate</i> </code> is the ARN for the ACM SSL/TLS certificate that you want to use for this distribution.
-    *  * <code>&lt;IAMCertificateId&gt;<i>IAM certificate ID</i>&lt;IAMCertificateId&gt;</code> where <code> <i>IAM certificate ID</i> </code> is the ID that IAM returned when you added the certificate to the IAM certificate store.
-    * If you specify <code>ACMCertificateArn</code> or <code>IAMCertificateId</code>, you must also specify a value for <code>SSLSupportMethod</code>.
-    *  If you choose to use an ACM certificate or a certificate in the IAM certificate store, we recommend that you use only an alternate domain name in your object URLs (<code>https://example.com/logo.jpg</code>). If you use the domain name that is associated with your CloudFront distribution (such as <code>https://d111111abcdef8.cloudfront.net/logo.jpg</code>) and the viewer supports <code>SNI</code>, then CloudFront behaves normally. However, if the browser does not support SNI, the user's experience depends on the value that you choose for <code>SSLSupportMethod</code>:
-    * * <code>vip</code>: The viewer displays a warning because there is a mismatch between the CloudFront domain name and the domain name in your SSL/TLS certificate.
-    *  * <code>sni-only</code>: CloudFront drops the connection with the browser without returning the object.
-    * </li> * <b>If you're using the CloudFront domain name for your distribution, such as <code>d111111abcdef8.cloudfront.net</code> </b>: Specify the following value:
-    *  <code>&lt;CloudFrontDefaultCertificate&gt;true&lt;CloudFrontDefaultCertificate&gt; </code>
-    * If you want viewers to use HTTPS, you must also specify one of the following values in your cache behaviors:
-    * * <code> &lt;ViewerProtocolPolicy&gt;https-only&lt;ViewerProtocolPolicy&gt;</code>
-    *  * <code>&lt;ViewerProtocolPolicy&gt;redirect-to-https&lt;ViewerProtocolPolicy&gt;</code>
-    * You can also optionally require that CloudFront use HTTPS to communicate with your origin by specifying one of the following values for the applicable origins:
-    * * <code>&lt;OriginProtocolPolicy&gt;https-only&lt;OriginProtocolPolicy&gt; </code>
-    *  * <code>&lt;OriginProtocolPolicy&gt;match-viewer&lt;OriginProtocolPolicy&gt; </code>
-    * For more information, see [[http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/SecureConnections.html#CNAMEsAndHTTPS|Using Alternate Domain Names and HTTPS]] in the <i>Amazon CloudFront Developer Guide</i>.
+    * Specify only one of the following values:
+    * * [[https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ViewerCertificate.html#cloudfront-Type-ViewerCertificate-ACMCertificateArn|ACMCertificateArn]]
+    *  * [[https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ViewerCertificate.html#cloudfront-Type-ViewerCertificate-IAMCertificateId|IAMCertificateId]]
+    *  * [[https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ViewerCertificate.html#cloudfront-Type-ViewerCertificate-CloudFrontDefaultCertificate|CloudFrontDefaultCertificate]]
+    * For more information, see [[https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/SecureConnections.html#CNAMEsAndHTTPS| Using Alternate Domain Names and HTTPS]] in the <i>Amazon CloudFront Developer Guide</i>.
     */
   @js.native
   trait ViewerCertificate extends js.Object {

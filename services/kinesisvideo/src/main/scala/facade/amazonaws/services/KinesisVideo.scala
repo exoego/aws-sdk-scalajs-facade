@@ -73,14 +73,21 @@ package kinesisvideo {
   }
 
   object APINameEnum {
-    val PUT_MEDIA                     = "PUT_MEDIA"
-    val GET_MEDIA                     = "GET_MEDIA"
-    val LIST_FRAGMENTS                = "LIST_FRAGMENTS"
-    val GET_MEDIA_FOR_FRAGMENT_LIST   = "GET_MEDIA_FOR_FRAGMENT_LIST"
-    val GET_HLS_STREAMING_SESSION_URL = "GET_HLS_STREAMING_SESSION_URL"
+    val PUT_MEDIA                      = "PUT_MEDIA"
+    val GET_MEDIA                      = "GET_MEDIA"
+    val LIST_FRAGMENTS                 = "LIST_FRAGMENTS"
+    val GET_MEDIA_FOR_FRAGMENT_LIST    = "GET_MEDIA_FOR_FRAGMENT_LIST"
+    val GET_HLS_STREAMING_SESSION_URL  = "GET_HLS_STREAMING_SESSION_URL"
+    val GET_DASH_STREAMING_SESSION_URL = "GET_DASH_STREAMING_SESSION_URL"
 
-    val values =
-      IndexedSeq(PUT_MEDIA, GET_MEDIA, LIST_FRAGMENTS, GET_MEDIA_FOR_FRAGMENT_LIST, GET_HLS_STREAMING_SESSION_URL)
+    val values = IndexedSeq(
+      PUT_MEDIA,
+      GET_MEDIA,
+      LIST_FRAGMENTS,
+      GET_MEDIA_FOR_FRAGMENT_LIST,
+      GET_HLS_STREAMING_SESSION_URL,
+      GET_DASH_STREAMING_SESSION_URL
+    )
   }
 
   object ComparisonOperatorEnum {

@@ -17,9 +17,12 @@ package object alexaforbusiness {
   type ApplianceFriendlyName        = String
   type ApplianceManufacturerName    = String
   type Arn                          = String
+  type AudioList                    = js.Array[Audio]
+  type AudioLocation                = String
   type AuthorizationResult          = js.Dictionary[Value]
   type BulletPoint                  = String
   type BulletPoints                 = js.Array[BulletPoint]
+  type BusinessReportDeliveryTime   = js.Date
   type BusinessReportDownloadUrl    = String
   type BusinessReportFailureCode    = String
   type BusinessReportFormat         = String
@@ -31,6 +34,7 @@ package object alexaforbusiness {
   type CategoryId                   = Double
   type CategoryList                 = js.Array[Category]
   type CategoryName                 = String
+  type CertificateTime              = js.Date
   type ClientId                     = String
   type ClientRequestToken           = String
   type CommsProtocol                = String
@@ -41,13 +45,16 @@ package object alexaforbusiness {
   type ContactDataList              = js.Array[ContactData]
   type ContactName                  = String
   type CountryCode                  = String
+  type CurrentWiFiPassword          = String
   type CustomerS3BucketName         = String
   type Date                         = String
   type DeveloperName                = String
   type DeviceDataList               = js.Array[DeviceData]
   type DeviceEventList              = js.Array[DeviceEvent]
+  type DeviceEventTime              = js.Date
   type DeviceEventType              = String
   type DeviceEventValue             = String
+  type DeviceLocale                 = String
   type DeviceName                   = String
   type DeviceSerialNumber           = String
   type DeviceSerialNumberForAVS     = String
@@ -55,8 +62,8 @@ package object alexaforbusiness {
   type DeviceStatusDetailCode       = String
   type DeviceStatusDetails          = js.Array[DeviceStatusDetail]
   type DeviceType                   = String
+  type DeviceUsageType              = String
   type DistanceUnit                 = String
-  type E164PhoneNumber              = String
   type Email                        = String
   type EnablementType               = String
   type EnablementTypeFilter         = String
@@ -70,26 +77,44 @@ package object alexaforbusiness {
   type FilterList                   = js.Array[Filter]
   type FilterValue                  = String
   type FilterValueList              = js.Array[FilterValue]
+  type GatewayDescription           = String
+  type GatewayGroupDescription      = String
+  type GatewayGroupName             = String
+  type GatewayGroupSummaries        = js.Array[GatewayGroupSummary]
+  type GatewayName                  = String
+  type GatewaySummaries             = js.Array[GatewaySummary]
+  type GatewayVersion               = String
   type GenericKeyword               = String
   type GenericKeywords              = js.Array[GenericKeyword]
   type IconUrl                      = String
   type InvocationPhrase             = String
   type Key                          = String
+  type Locale                       = String
   type MacAddress                   = String
   type MaxResults                   = Int
   type MaxVolumeLimit               = Int
+  type NetworkEapMethod             = String
+  type NetworkProfileDataList       = js.Array[NetworkProfileData]
+  type NetworkProfileDescription    = String
+  type NetworkProfileName           = String
+  type NetworkSecurityType          = String
+  type NetworkSsid                  = String
   type NewInThisVersionBulletPoints = js.Array[BulletPoint]
   type NextToken                    = String
+  type NextWiFiPassword             = String
   type OneClickIdDelay              = String
   type OneClickPinDelay             = String
   type OrganizationName             = String
   type OutboundPhoneNumber          = String
+  type PhoneNumberList              = js.Array[PhoneNumber]
+  type PhoneNumberType              = String
   type PrivacyPolicy                = String
   type ProductDescription           = String
   type ProductId                    = String
   type ProfileDataList              = js.Array[ProfileData]
   type ProfileName                  = String
   type ProviderCalendarId           = String
+  type RawPhoneNumber               = String
   type ReleaseDate                  = String
   type RequirePin                   = String
   type ReviewKey                    = String
@@ -105,6 +130,9 @@ package object alexaforbusiness {
   type SampleUtterances             = js.Array[Utterance]
   type ShortDescription             = String
   type ShortSkillIdList             = js.Array[SkillId]
+  type SipAddressList               = js.Array[SipAddress]
+  type SipType                      = String
+  type SipUri                       = String
   type SkillGroupDataList           = js.Array[SkillGroupData]
   type SkillGroupDescription        = String
   type SkillGroupName               = String
@@ -122,14 +150,20 @@ package object alexaforbusiness {
   type SortKey                      = String
   type SortList                     = js.Array[Sort]
   type SortValue                    = String
+  type SsmlList                     = js.Array[Ssml]
+  type SsmlValue                    = String
   type TagKey                       = String
   type TagKeyList                   = js.Array[TagKey]
   type TagList                      = js.Array[Tag]
   type TagValue                     = String
   type TemperatureUnit              = String
-  type Timestamp                    = js.Date
+  type TextList                     = js.Array[Text]
+  type TextValue                    = String
+  type TimeToLiveInSeconds          = Int
   type Timezone                     = String
   type TotalCount                   = Int
+  type TrustAnchor                  = String
+  type TrustAnchorList              = js.Array[TrustAnchor]
   type Url                          = String
   type UserCode                     = String
   type UserDataList                 = js.Array[UserData]
@@ -149,6 +183,10 @@ package object alexaforbusiness {
         params: AssociateContactWithAddressBookRequest
     ): Future[AssociateContactWithAddressBookResponse] =
       service.associateContactWithAddressBook(params).promise.toFuture
+    def associateDeviceWithNetworkProfileFuture(
+        params: AssociateDeviceWithNetworkProfileRequest
+    ): Future[AssociateDeviceWithNetworkProfileResponse] =
+      service.associateDeviceWithNetworkProfile(params).promise.toFuture
     def associateDeviceWithRoomFuture(params: AssociateDeviceWithRoomRequest): Future[AssociateDeviceWithRoomResponse] =
       service.associateDeviceWithRoom(params).promise.toFuture
     def associateSkillGroupWithRoomFuture(
@@ -169,6 +207,10 @@ package object alexaforbusiness {
     ): Future[CreateConferenceProviderResponse] = service.createConferenceProvider(params).promise.toFuture
     def createContactFuture(params: CreateContactRequest): Future[CreateContactResponse] =
       service.createContact(params).promise.toFuture
+    def createGatewayGroupFuture(params: CreateGatewayGroupRequest): Future[CreateGatewayGroupResponse] =
+      service.createGatewayGroup(params).promise.toFuture
+    def createNetworkProfileFuture(params: CreateNetworkProfileRequest): Future[CreateNetworkProfileResponse] =
+      service.createNetworkProfile(params).promise.toFuture
     def createProfileFuture(params: CreateProfileRequest): Future[CreateProfileResponse] =
       service.createProfile(params).promise.toFuture
     def createRoomFuture(params: CreateRoomRequest): Future[CreateRoomResponse] =
@@ -189,6 +231,12 @@ package object alexaforbusiness {
       service.deleteContact(params).promise.toFuture
     def deleteDeviceFuture(params: DeleteDeviceRequest): Future[DeleteDeviceResponse] =
       service.deleteDevice(params).promise.toFuture
+    def deleteDeviceUsageDataFuture(params: DeleteDeviceUsageDataRequest): Future[DeleteDeviceUsageDataResponse] =
+      service.deleteDeviceUsageData(params).promise.toFuture
+    def deleteGatewayGroupFuture(params: DeleteGatewayGroupRequest): Future[DeleteGatewayGroupResponse] =
+      service.deleteGatewayGroup(params).promise.toFuture
+    def deleteNetworkProfileFuture(params: DeleteNetworkProfileRequest): Future[DeleteNetworkProfileResponse] =
+      service.deleteNetworkProfile(params).promise.toFuture
     def deleteProfileFuture(params: DeleteProfileRequest): Future[DeleteProfileResponse] =
       service.deleteProfile(params).promise.toFuture
     def deleteRoomFuture(params: DeleteRoomRequest): Future[DeleteRoomResponse] =
@@ -233,9 +281,15 @@ package object alexaforbusiness {
       service.getContact(params).promise.toFuture
     def getDeviceFuture(params: GetDeviceRequest): Future[GetDeviceResponse] =
       service.getDevice(params).promise.toFuture
+    def getGatewayFuture(params: GetGatewayRequest): Future[GetGatewayResponse] =
+      service.getGateway(params).promise.toFuture
+    def getGatewayGroupFuture(params: GetGatewayGroupRequest): Future[GetGatewayGroupResponse] =
+      service.getGatewayGroup(params).promise.toFuture
     def getInvitationConfigurationFuture(
         params: GetInvitationConfigurationRequest
     ): Future[GetInvitationConfigurationResponse] = service.getInvitationConfiguration(params).promise.toFuture
+    def getNetworkProfileFuture(params: GetNetworkProfileRequest): Future[GetNetworkProfileResponse] =
+      service.getNetworkProfile(params).promise.toFuture
     def getProfileFuture(params: GetProfileRequest): Future[GetProfileResponse] =
       service.getProfile(params).promise.toFuture
     def getRoomFuture(params: GetRoomRequest): Future[GetRoomResponse] = service.getRoom(params).promise.toFuture
@@ -250,6 +304,10 @@ package object alexaforbusiness {
       service.listConferenceProviders(params).promise.toFuture
     def listDeviceEventsFuture(params: ListDeviceEventsRequest): Future[ListDeviceEventsResponse] =
       service.listDeviceEvents(params).promise.toFuture
+    def listGatewayGroupsFuture(params: ListGatewayGroupsRequest): Future[ListGatewayGroupsResponse] =
+      service.listGatewayGroups(params).promise.toFuture
+    def listGatewaysFuture(params: ListGatewaysRequest): Future[ListGatewaysResponse] =
+      service.listGateways(params).promise.toFuture
     def listSkillsFuture(params: ListSkillsRequest): Future[ListSkillsResponse] =
       service.listSkills(params).promise.toFuture
     def listSkillsStoreCategoriesFuture(
@@ -285,6 +343,8 @@ package object alexaforbusiness {
       service.searchContacts(params).promise.toFuture
     def searchDevicesFuture(params: SearchDevicesRequest): Future[SearchDevicesResponse] =
       service.searchDevices(params).promise.toFuture
+    def searchNetworkProfilesFuture(params: SearchNetworkProfilesRequest): Future[SearchNetworkProfilesResponse] =
+      service.searchNetworkProfiles(params).promise.toFuture
     def searchProfilesFuture(params: SearchProfilesRequest): Future[SearchProfilesResponse] =
       service.searchProfiles(params).promise.toFuture
     def searchRoomsFuture(params: SearchRoomsRequest): Future[SearchRoomsResponse] =
@@ -293,6 +353,8 @@ package object alexaforbusiness {
       service.searchSkillGroups(params).promise.toFuture
     def searchUsersFuture(params: SearchUsersRequest): Future[SearchUsersResponse] =
       service.searchUsers(params).promise.toFuture
+    def sendAnnouncementFuture(params: SendAnnouncementRequest): Future[SendAnnouncementResponse] =
+      service.sendAnnouncement(params).promise.toFuture
     def sendInvitationFuture(params: SendInvitationRequest): Future[SendInvitationResponse] =
       service.sendInvitation(params).promise.toFuture
     def startDeviceSyncFuture(params: StartDeviceSyncRequest): Future[StartDeviceSyncResponse] =
@@ -317,6 +379,12 @@ package object alexaforbusiness {
       service.updateContact(params).promise.toFuture
     def updateDeviceFuture(params: UpdateDeviceRequest): Future[UpdateDeviceResponse] =
       service.updateDevice(params).promise.toFuture
+    def updateGatewayFuture(params: UpdateGatewayRequest): Future[UpdateGatewayResponse] =
+      service.updateGateway(params).promise.toFuture
+    def updateGatewayGroupFuture(params: UpdateGatewayGroupRequest): Future[UpdateGatewayGroupResponse] =
+      service.updateGatewayGroup(params).promise.toFuture
+    def updateNetworkProfileFuture(params: UpdateNetworkProfileRequest): Future[UpdateNetworkProfileResponse] =
+      service.updateNetworkProfile(params).promise.toFuture
     def updateProfileFuture(params: UpdateProfileRequest): Future[UpdateProfileResponse] =
       service.updateProfile(params).promise.toFuture
     def updateRoomFuture(params: UpdateRoomRequest): Future[UpdateRoomResponse] =
@@ -336,6 +404,9 @@ package alexaforbusiness {
     def associateContactWithAddressBook(
         params: AssociateContactWithAddressBookRequest
     ): Request[AssociateContactWithAddressBookResponse] = js.native
+    def associateDeviceWithNetworkProfile(
+        params: AssociateDeviceWithNetworkProfileRequest
+    ): Request[AssociateDeviceWithNetworkProfileResponse] = js.native
     def associateDeviceWithRoom(params: AssociateDeviceWithRoomRequest): Request[AssociateDeviceWithRoomResponse] =
       js.native
     def associateSkillGroupWithRoom(
@@ -352,21 +423,26 @@ package alexaforbusiness {
     ): Request[CreateBusinessReportScheduleResponse] = js.native
     def createConferenceProvider(params: CreateConferenceProviderRequest): Request[CreateConferenceProviderResponse] =
       js.native
-    def createContact(params: CreateContactRequest): Request[CreateContactResponse]             = js.native
-    def createProfile(params: CreateProfileRequest): Request[CreateProfileResponse]             = js.native
-    def createRoom(params: CreateRoomRequest): Request[CreateRoomResponse]                      = js.native
-    def createSkillGroup(params: CreateSkillGroupRequest): Request[CreateSkillGroupResponse]    = js.native
-    def createUser(params: CreateUserRequest): Request[CreateUserResponse]                      = js.native
-    def deleteAddressBook(params: DeleteAddressBookRequest): Request[DeleteAddressBookResponse] = js.native
+    def createContact(params: CreateContactRequest): Request[CreateContactResponse]                      = js.native
+    def createGatewayGroup(params: CreateGatewayGroupRequest): Request[CreateGatewayGroupResponse]       = js.native
+    def createNetworkProfile(params: CreateNetworkProfileRequest): Request[CreateNetworkProfileResponse] = js.native
+    def createProfile(params: CreateProfileRequest): Request[CreateProfileResponse]                      = js.native
+    def createRoom(params: CreateRoomRequest): Request[CreateRoomResponse]                               = js.native
+    def createSkillGroup(params: CreateSkillGroupRequest): Request[CreateSkillGroupResponse]             = js.native
+    def createUser(params: CreateUserRequest): Request[CreateUserResponse]                               = js.native
+    def deleteAddressBook(params: DeleteAddressBookRequest): Request[DeleteAddressBookResponse]          = js.native
     def deleteBusinessReportSchedule(
         params: DeleteBusinessReportScheduleRequest
     ): Request[DeleteBusinessReportScheduleResponse] = js.native
     def deleteConferenceProvider(params: DeleteConferenceProviderRequest): Request[DeleteConferenceProviderResponse] =
       js.native
-    def deleteContact(params: DeleteContactRequest): Request[DeleteContactResponse] = js.native
-    def deleteDevice(params: DeleteDeviceRequest): Request[DeleteDeviceResponse]    = js.native
-    def deleteProfile(params: DeleteProfileRequest): Request[DeleteProfileResponse] = js.native
-    def deleteRoom(params: DeleteRoomRequest): Request[DeleteRoomResponse]          = js.native
+    def deleteContact(params: DeleteContactRequest): Request[DeleteContactResponse]                         = js.native
+    def deleteDevice(params: DeleteDeviceRequest): Request[DeleteDeviceResponse]                            = js.native
+    def deleteDeviceUsageData(params: DeleteDeviceUsageDataRequest): Request[DeleteDeviceUsageDataResponse] = js.native
+    def deleteGatewayGroup(params: DeleteGatewayGroupRequest): Request[DeleteGatewayGroupResponse]          = js.native
+    def deleteNetworkProfile(params: DeleteNetworkProfileRequest): Request[DeleteNetworkProfileResponse]    = js.native
+    def deleteProfile(params: DeleteProfileRequest): Request[DeleteProfileResponse]                         = js.native
+    def deleteRoom(params: DeleteRoomRequest): Request[DeleteRoomResponse]                                  = js.native
     def deleteRoomSkillParameter(params: DeleteRoomSkillParameterRequest): Request[DeleteRoomSkillParameterResponse] =
       js.native
     def deleteSkillAuthorization(params: DeleteSkillAuthorizationRequest): Request[DeleteSkillAuthorizationResponse] =
@@ -397,9 +473,12 @@ package alexaforbusiness {
     def getConferenceProvider(params: GetConferenceProviderRequest): Request[GetConferenceProviderResponse] = js.native
     def getContact(params: GetContactRequest): Request[GetContactResponse]                                  = js.native
     def getDevice(params: GetDeviceRequest): Request[GetDeviceResponse]                                     = js.native
+    def getGateway(params: GetGatewayRequest): Request[GetGatewayResponse]                                  = js.native
+    def getGatewayGroup(params: GetGatewayGroupRequest): Request[GetGatewayGroupResponse]                   = js.native
     def getInvitationConfiguration(
         params: GetInvitationConfigurationRequest
     ): Request[GetInvitationConfigurationResponse]                                                          = js.native
+    def getNetworkProfile(params: GetNetworkProfileRequest): Request[GetNetworkProfileResponse]             = js.native
     def getProfile(params: GetProfileRequest): Request[GetProfileResponse]                                  = js.native
     def getRoom(params: GetRoomRequest): Request[GetRoomResponse]                                           = js.native
     def getRoomSkillParameter(params: GetRoomSkillParameterRequest): Request[GetRoomSkillParameterResponse] = js.native
@@ -409,8 +488,10 @@ package alexaforbusiness {
     ): Request[ListBusinessReportSchedulesResponse] = js.native
     def listConferenceProviders(params: ListConferenceProvidersRequest): Request[ListConferenceProvidersResponse] =
       js.native
-    def listDeviceEvents(params: ListDeviceEventsRequest): Request[ListDeviceEventsResponse] = js.native
-    def listSkills(params: ListSkillsRequest): Request[ListSkillsResponse]                   = js.native
+    def listDeviceEvents(params: ListDeviceEventsRequest): Request[ListDeviceEventsResponse]    = js.native
+    def listGatewayGroups(params: ListGatewayGroupsRequest): Request[ListGatewayGroupsResponse] = js.native
+    def listGateways(params: ListGatewaysRequest): Request[ListGatewaysResponse]                = js.native
+    def listSkills(params: ListSkillsRequest): Request[ListSkillsResponse]                      = js.native
     def listSkillsStoreCategories(
         params: ListSkillsStoreCategoriesRequest
     ): Request[ListSkillsStoreCategoriesResponse] = js.native
@@ -434,10 +515,12 @@ package alexaforbusiness {
     def searchAddressBooks(params: SearchAddressBooksRequest): Request[SearchAddressBooksResponse]          = js.native
     def searchContacts(params: SearchContactsRequest): Request[SearchContactsResponse]                      = js.native
     def searchDevices(params: SearchDevicesRequest): Request[SearchDevicesResponse]                         = js.native
+    def searchNetworkProfiles(params: SearchNetworkProfilesRequest): Request[SearchNetworkProfilesResponse] = js.native
     def searchProfiles(params: SearchProfilesRequest): Request[SearchProfilesResponse]                      = js.native
     def searchRooms(params: SearchRoomsRequest): Request[SearchRoomsResponse]                               = js.native
     def searchSkillGroups(params: SearchSkillGroupsRequest): Request[SearchSkillGroupsResponse]             = js.native
     def searchUsers(params: SearchUsersRequest): Request[SearchUsersResponse]                               = js.native
+    def sendAnnouncement(params: SendAnnouncementRequest): Request[SendAnnouncementResponse]                = js.native
     def sendInvitation(params: SendInvitationRequest): Request[SendInvitationResponse]                      = js.native
     def startDeviceSync(params: StartDeviceSyncRequest): Request[StartDeviceSyncResponse]                   = js.native
     def startSmartHomeApplianceDiscovery(
@@ -451,11 +534,14 @@ package alexaforbusiness {
     ): Request[UpdateBusinessReportScheduleResponse] = js.native
     def updateConferenceProvider(params: UpdateConferenceProviderRequest): Request[UpdateConferenceProviderResponse] =
       js.native
-    def updateContact(params: UpdateContactRequest): Request[UpdateContactResponse]          = js.native
-    def updateDevice(params: UpdateDeviceRequest): Request[UpdateDeviceResponse]             = js.native
-    def updateProfile(params: UpdateProfileRequest): Request[UpdateProfileResponse]          = js.native
-    def updateRoom(params: UpdateRoomRequest): Request[UpdateRoomResponse]                   = js.native
-    def updateSkillGroup(params: UpdateSkillGroupRequest): Request[UpdateSkillGroupResponse] = js.native
+    def updateContact(params: UpdateContactRequest): Request[UpdateContactResponse]                      = js.native
+    def updateDevice(params: UpdateDeviceRequest): Request[UpdateDeviceResponse]                         = js.native
+    def updateGateway(params: UpdateGatewayRequest): Request[UpdateGatewayResponse]                      = js.native
+    def updateGatewayGroup(params: UpdateGatewayGroupRequest): Request[UpdateGatewayGroupResponse]       = js.native
+    def updateNetworkProfile(params: UpdateNetworkProfileRequest): Request[UpdateNetworkProfileResponse] = js.native
+    def updateProfile(params: UpdateProfileRequest): Request[UpdateProfileResponse]                      = js.native
+    def updateRoom(params: UpdateRoomRequest): Request[UpdateRoomResponse]                               = js.native
+    def updateSkillGroup(params: UpdateSkillGroupRequest): Request[UpdateSkillGroupResponse]             = js.native
   }
 
   /**
@@ -564,6 +650,38 @@ package alexaforbusiness {
       val __obj = js.Dictionary.empty[js.Any]
 
       __obj.asInstanceOf[AssociateContactWithAddressBookResponse]
+    }
+  }
+
+  @js.native
+  trait AssociateDeviceWithNetworkProfileRequest extends js.Object {
+    var DeviceArn: Arn
+    var NetworkProfileArn: Arn
+  }
+
+  object AssociateDeviceWithNetworkProfileRequest {
+    def apply(
+        DeviceArn: Arn,
+        NetworkProfileArn: Arn
+    ): AssociateDeviceWithNetworkProfileRequest = {
+      val __obj = js.Dictionary[js.Any](
+        "DeviceArn"         -> DeviceArn.asInstanceOf[js.Any],
+        "NetworkProfileArn" -> NetworkProfileArn.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[AssociateDeviceWithNetworkProfileRequest]
+    }
+  }
+
+  @js.native
+  trait AssociateDeviceWithNetworkProfileResponse extends js.Object {}
+
+  object AssociateDeviceWithNetworkProfileResponse {
+    def apply(
+        ): AssociateDeviceWithNetworkProfileResponse = {
+      val __obj = js.Dictionary.empty[js.Any]
+
+      __obj.asInstanceOf[AssociateDeviceWithNetworkProfileResponse]
     }
   }
 
@@ -689,11 +807,36 @@ package alexaforbusiness {
   }
 
   /**
+    * The audio message. There is a 1 MB limit on the audio file input and the only supported format is MP3. To convert your MP3 audio files to an Alexa-friendly,
+    *  required codec version (MPEG version 2) and bit rate (48 kbps), you might use converter software. One option for this is a command-line tool, FFmpeg. For more information, see [[https://www.ffmpeg.org/|FFmpeg]]. The following command converts the provided &lt;input-file&gt; to an MP3 file that is played in the announcement:
+    *  <code>ffmpeg -i &lt;input-file&gt; -ac 2 -codec:a libmp3lame -b:a 48k -ar 16000 &lt;output-file.mp3&gt;</code>
+    */
+  @js.native
+  trait Audio extends js.Object {
+    var Locale: Locale
+    var Location: AudioLocation
+  }
+
+  object Audio {
+    def apply(
+        Locale: Locale,
+        Location: AudioLocation
+    ): Audio = {
+      val __obj = js.Dictionary[js.Any](
+        "Locale"   -> Locale.asInstanceOf[js.Any],
+        "Location" -> Location.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[Audio]
+    }
+  }
+
+  /**
     * Usage report with specified parameters.
     */
   @js.native
   trait BusinessReport extends js.Object {
-    var DeliveryTime: js.UndefOr[Timestamp]
+    var DeliveryTime: js.UndefOr[BusinessReportDeliveryTime]
     var DownloadUrl: js.UndefOr[BusinessReportDownloadUrl]
     var FailureCode: js.UndefOr[BusinessReportFailureCode]
     var S3Location: js.UndefOr[BusinessReportS3Location]
@@ -702,7 +845,7 @@ package alexaforbusiness {
 
   object BusinessReport {
     def apply(
-        DeliveryTime: js.UndefOr[Timestamp] = js.undefined,
+        DeliveryTime: js.UndefOr[BusinessReportDeliveryTime] = js.undefined,
         DownloadUrl: js.UndefOr[BusinessReportDownloadUrl] = js.undefined,
         FailureCode: js.UndefOr[BusinessReportFailureCode] = js.undefined,
         S3Location: js.UndefOr[BusinessReportS3Location] = js.undefined,
@@ -958,7 +1101,9 @@ package alexaforbusiness {
     var DisplayName: js.UndefOr[ContactName]
     var FirstName: js.UndefOr[ContactName]
     var LastName: js.UndefOr[ContactName]
-    var PhoneNumber: js.UndefOr[E164PhoneNumber]
+    var PhoneNumber: js.UndefOr[RawPhoneNumber]
+    var PhoneNumbers: js.UndefOr[PhoneNumberList]
+    var SipAddresses: js.UndefOr[SipAddressList]
   }
 
   object Contact {
@@ -967,7 +1112,9 @@ package alexaforbusiness {
         DisplayName: js.UndefOr[ContactName] = js.undefined,
         FirstName: js.UndefOr[ContactName] = js.undefined,
         LastName: js.UndefOr[ContactName] = js.undefined,
-        PhoneNumber: js.UndefOr[E164PhoneNumber] = js.undefined
+        PhoneNumber: js.UndefOr[RawPhoneNumber] = js.undefined,
+        PhoneNumbers: js.UndefOr[PhoneNumberList] = js.undefined,
+        SipAddresses: js.UndefOr[SipAddressList] = js.undefined
     ): Contact = {
       val __obj = js.Dictionary.empty[js.Any]
       ContactArn.foreach(__v => __obj.update("ContactArn", __v.asInstanceOf[js.Any]))
@@ -975,6 +1122,8 @@ package alexaforbusiness {
       FirstName.foreach(__v => __obj.update("FirstName", __v.asInstanceOf[js.Any]))
       LastName.foreach(__v => __obj.update("LastName", __v.asInstanceOf[js.Any]))
       PhoneNumber.foreach(__v => __obj.update("PhoneNumber", __v.asInstanceOf[js.Any]))
+      PhoneNumbers.foreach(__v => __obj.update("PhoneNumbers", __v.asInstanceOf[js.Any]))
+      SipAddresses.foreach(__v => __obj.update("SipAddresses", __v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Contact]
     }
   }
@@ -988,7 +1137,9 @@ package alexaforbusiness {
     var DisplayName: js.UndefOr[ContactName]
     var FirstName: js.UndefOr[ContactName]
     var LastName: js.UndefOr[ContactName]
-    var PhoneNumber: js.UndefOr[E164PhoneNumber]
+    var PhoneNumber: js.UndefOr[RawPhoneNumber]
+    var PhoneNumbers: js.UndefOr[PhoneNumberList]
+    var SipAddresses: js.UndefOr[SipAddressList]
   }
 
   object ContactData {
@@ -997,7 +1148,9 @@ package alexaforbusiness {
         DisplayName: js.UndefOr[ContactName] = js.undefined,
         FirstName: js.UndefOr[ContactName] = js.undefined,
         LastName: js.UndefOr[ContactName] = js.undefined,
-        PhoneNumber: js.UndefOr[E164PhoneNumber] = js.undefined
+        PhoneNumber: js.UndefOr[RawPhoneNumber] = js.undefined,
+        PhoneNumbers: js.UndefOr[PhoneNumberList] = js.undefined,
+        SipAddresses: js.UndefOr[SipAddressList] = js.undefined
     ): ContactData = {
       val __obj = js.Dictionary.empty[js.Any]
       ContactArn.foreach(__v => __obj.update("ContactArn", __v.asInstanceOf[js.Any]))
@@ -1005,7 +1158,33 @@ package alexaforbusiness {
       FirstName.foreach(__v => __obj.update("FirstName", __v.asInstanceOf[js.Any]))
       LastName.foreach(__v => __obj.update("LastName", __v.asInstanceOf[js.Any]))
       PhoneNumber.foreach(__v => __obj.update("PhoneNumber", __v.asInstanceOf[js.Any]))
+      PhoneNumbers.foreach(__v => __obj.update("PhoneNumbers", __v.asInstanceOf[js.Any]))
+      SipAddresses.foreach(__v => __obj.update("SipAddresses", __v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ContactData]
+    }
+  }
+
+  /**
+    * The content definition. This can contain only one text, SSML, or audio list object.
+    */
+  @js.native
+  trait Content extends js.Object {
+    var AudioList: js.UndefOr[AudioList]
+    var SsmlList: js.UndefOr[SsmlList]
+    var TextList: js.UndefOr[TextList]
+  }
+
+  object Content {
+    def apply(
+        AudioList: js.UndefOr[AudioList] = js.undefined,
+        SsmlList: js.UndefOr[SsmlList] = js.undefined,
+        TextList: js.UndefOr[TextList] = js.undefined
+    ): Content = {
+      val __obj = js.Dictionary.empty[js.Any]
+      AudioList.foreach(__v => __obj.update("AudioList", __v.asInstanceOf[js.Any]))
+      SsmlList.foreach(__v => __obj.update("SsmlList", __v.asInstanceOf[js.Any]))
+      TextList.foreach(__v => __obj.update("TextList", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Content]
     }
   }
 
@@ -1150,7 +1329,9 @@ package alexaforbusiness {
     var ClientRequestToken: js.UndefOr[ClientRequestToken]
     var DisplayName: js.UndefOr[ContactName]
     var LastName: js.UndefOr[ContactName]
-    var PhoneNumber: js.UndefOr[E164PhoneNumber]
+    var PhoneNumber: js.UndefOr[RawPhoneNumber]
+    var PhoneNumbers: js.UndefOr[PhoneNumberList]
+    var SipAddresses: js.UndefOr[SipAddressList]
   }
 
   object CreateContactRequest {
@@ -1159,7 +1340,9 @@ package alexaforbusiness {
         ClientRequestToken: js.UndefOr[ClientRequestToken] = js.undefined,
         DisplayName: js.UndefOr[ContactName] = js.undefined,
         LastName: js.UndefOr[ContactName] = js.undefined,
-        PhoneNumber: js.UndefOr[E164PhoneNumber] = js.undefined
+        PhoneNumber: js.UndefOr[RawPhoneNumber] = js.undefined,
+        PhoneNumbers: js.UndefOr[PhoneNumberList] = js.undefined,
+        SipAddresses: js.UndefOr[SipAddressList] = js.undefined
     ): CreateContactRequest = {
       val __obj = js.Dictionary[js.Any](
         "FirstName" -> FirstName.asInstanceOf[js.Any]
@@ -1169,6 +1352,8 @@ package alexaforbusiness {
       DisplayName.foreach(__v => __obj.update("DisplayName", __v.asInstanceOf[js.Any]))
       LastName.foreach(__v => __obj.update("LastName", __v.asInstanceOf[js.Any]))
       PhoneNumber.foreach(__v => __obj.update("PhoneNumber", __v.asInstanceOf[js.Any]))
+      PhoneNumbers.foreach(__v => __obj.update("PhoneNumbers", __v.asInstanceOf[js.Any]))
+      SipAddresses.foreach(__v => __obj.update("SipAddresses", __v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateContactRequest]
     }
   }
@@ -1189,6 +1374,103 @@ package alexaforbusiness {
   }
 
   @js.native
+  trait CreateGatewayGroupRequest extends js.Object {
+    var ClientRequestToken: ClientRequestToken
+    var Name: GatewayGroupName
+    var Description: js.UndefOr[GatewayGroupDescription]
+  }
+
+  object CreateGatewayGroupRequest {
+    def apply(
+        ClientRequestToken: ClientRequestToken,
+        Name: GatewayGroupName,
+        Description: js.UndefOr[GatewayGroupDescription] = js.undefined
+    ): CreateGatewayGroupRequest = {
+      val __obj = js.Dictionary[js.Any](
+        "ClientRequestToken" -> ClientRequestToken.asInstanceOf[js.Any],
+        "Name"               -> Name.asInstanceOf[js.Any]
+      )
+
+      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateGatewayGroupRequest]
+    }
+  }
+
+  @js.native
+  trait CreateGatewayGroupResponse extends js.Object {
+    var GatewayGroupArn: js.UndefOr[Arn]
+  }
+
+  object CreateGatewayGroupResponse {
+    def apply(
+        GatewayGroupArn: js.UndefOr[Arn] = js.undefined
+    ): CreateGatewayGroupResponse = {
+      val __obj = js.Dictionary.empty[js.Any]
+      GatewayGroupArn.foreach(__v => __obj.update("GatewayGroupArn", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateGatewayGroupResponse]
+    }
+  }
+
+  @js.native
+  trait CreateNetworkProfileRequest extends js.Object {
+    var ClientRequestToken: ClientRequestToken
+    var NetworkProfileName: NetworkProfileName
+    var SecurityType: NetworkSecurityType
+    var Ssid: NetworkSsid
+    var CertificateAuthorityArn: js.UndefOr[Arn]
+    var CurrentPassword: js.UndefOr[CurrentWiFiPassword]
+    var Description: js.UndefOr[NetworkProfileDescription]
+    var EapMethod: js.UndefOr[NetworkEapMethod]
+    var NextPassword: js.UndefOr[NextWiFiPassword]
+    var TrustAnchors: js.UndefOr[TrustAnchorList]
+  }
+
+  object CreateNetworkProfileRequest {
+    def apply(
+        ClientRequestToken: ClientRequestToken,
+        NetworkProfileName: NetworkProfileName,
+        SecurityType: NetworkSecurityType,
+        Ssid: NetworkSsid,
+        CertificateAuthorityArn: js.UndefOr[Arn] = js.undefined,
+        CurrentPassword: js.UndefOr[CurrentWiFiPassword] = js.undefined,
+        Description: js.UndefOr[NetworkProfileDescription] = js.undefined,
+        EapMethod: js.UndefOr[NetworkEapMethod] = js.undefined,
+        NextPassword: js.UndefOr[NextWiFiPassword] = js.undefined,
+        TrustAnchors: js.UndefOr[TrustAnchorList] = js.undefined
+    ): CreateNetworkProfileRequest = {
+      val __obj = js.Dictionary[js.Any](
+        "ClientRequestToken" -> ClientRequestToken.asInstanceOf[js.Any],
+        "NetworkProfileName" -> NetworkProfileName.asInstanceOf[js.Any],
+        "SecurityType"       -> SecurityType.asInstanceOf[js.Any],
+        "Ssid"               -> Ssid.asInstanceOf[js.Any]
+      )
+
+      CertificateAuthorityArn.foreach(__v => __obj.update("CertificateAuthorityArn", __v.asInstanceOf[js.Any]))
+      CurrentPassword.foreach(__v => __obj.update("CurrentPassword", __v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
+      EapMethod.foreach(__v => __obj.update("EapMethod", __v.asInstanceOf[js.Any]))
+      NextPassword.foreach(__v => __obj.update("NextPassword", __v.asInstanceOf[js.Any]))
+      TrustAnchors.foreach(__v => __obj.update("TrustAnchors", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateNetworkProfileRequest]
+    }
+  }
+
+  @js.native
+  trait CreateNetworkProfileResponse extends js.Object {
+    var NetworkProfileArn: js.UndefOr[Arn]
+  }
+
+  object CreateNetworkProfileResponse {
+    def apply(
+        NetworkProfileArn: js.UndefOr[Arn] = js.undefined
+    ): CreateNetworkProfileResponse = {
+      val __obj = js.Dictionary.empty[js.Any]
+      NetworkProfileArn.foreach(__v => __obj.update("NetworkProfileArn", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateNetworkProfileResponse]
+    }
+  }
+
+  @js.native
   trait CreateProfileRequest extends js.Object {
     var Address: Address
     var DistanceUnit: DistanceUnit
@@ -1197,6 +1479,7 @@ package alexaforbusiness {
     var Timezone: Timezone
     var WakeWord: WakeWord
     var ClientRequestToken: js.UndefOr[ClientRequestToken]
+    var Locale: js.UndefOr[DeviceLocale]
     var MaxVolumeLimit: js.UndefOr[MaxVolumeLimit]
     var PSTNEnabled: js.UndefOr[Boolean]
     var SetupModeDisabled: js.UndefOr[Boolean]
@@ -1211,6 +1494,7 @@ package alexaforbusiness {
         Timezone: Timezone,
         WakeWord: WakeWord,
         ClientRequestToken: js.UndefOr[ClientRequestToken] = js.undefined,
+        Locale: js.UndefOr[DeviceLocale] = js.undefined,
         MaxVolumeLimit: js.UndefOr[MaxVolumeLimit] = js.undefined,
         PSTNEnabled: js.UndefOr[Boolean] = js.undefined,
         SetupModeDisabled: js.UndefOr[Boolean] = js.undefined
@@ -1225,6 +1509,7 @@ package alexaforbusiness {
       )
 
       ClientRequestToken.foreach(__v => __obj.update("ClientRequestToken", __v.asInstanceOf[js.Any]))
+      Locale.foreach(__v => __obj.update("Locale", __v.asInstanceOf[js.Any]))
       MaxVolumeLimit.foreach(__v => __obj.update("MaxVolumeLimit", __v.asInstanceOf[js.Any]))
       PSTNEnabled.foreach(__v => __obj.update("PSTNEnabled", __v.asInstanceOf[js.Any]))
       SetupModeDisabled.foreach(__v => __obj.update("SetupModeDisabled", __v.asInstanceOf[js.Any]))
@@ -1525,6 +1810,96 @@ package alexaforbusiness {
   }
 
   @js.native
+  trait DeleteDeviceUsageDataRequest extends js.Object {
+    var DeviceArn: Arn
+    var DeviceUsageType: DeviceUsageType
+  }
+
+  object DeleteDeviceUsageDataRequest {
+    def apply(
+        DeviceArn: Arn,
+        DeviceUsageType: DeviceUsageType
+    ): DeleteDeviceUsageDataRequest = {
+      val __obj = js.Dictionary[js.Any](
+        "DeviceArn"       -> DeviceArn.asInstanceOf[js.Any],
+        "DeviceUsageType" -> DeviceUsageType.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[DeleteDeviceUsageDataRequest]
+    }
+  }
+
+  @js.native
+  trait DeleteDeviceUsageDataResponse extends js.Object {}
+
+  object DeleteDeviceUsageDataResponse {
+    def apply(
+        ): DeleteDeviceUsageDataResponse = {
+      val __obj = js.Dictionary.empty[js.Any]
+
+      __obj.asInstanceOf[DeleteDeviceUsageDataResponse]
+    }
+  }
+
+  @js.native
+  trait DeleteGatewayGroupRequest extends js.Object {
+    var GatewayGroupArn: Arn
+  }
+
+  object DeleteGatewayGroupRequest {
+    def apply(
+        GatewayGroupArn: Arn
+    ): DeleteGatewayGroupRequest = {
+      val __obj = js.Dictionary[js.Any](
+        "GatewayGroupArn" -> GatewayGroupArn.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[DeleteGatewayGroupRequest]
+    }
+  }
+
+  @js.native
+  trait DeleteGatewayGroupResponse extends js.Object {}
+
+  object DeleteGatewayGroupResponse {
+    def apply(
+        ): DeleteGatewayGroupResponse = {
+      val __obj = js.Dictionary.empty[js.Any]
+
+      __obj.asInstanceOf[DeleteGatewayGroupResponse]
+    }
+  }
+
+  @js.native
+  trait DeleteNetworkProfileRequest extends js.Object {
+    var NetworkProfileArn: Arn
+  }
+
+  object DeleteNetworkProfileRequest {
+    def apply(
+        NetworkProfileArn: Arn
+    ): DeleteNetworkProfileRequest = {
+      val __obj = js.Dictionary[js.Any](
+        "NetworkProfileArn" -> NetworkProfileArn.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[DeleteNetworkProfileRequest]
+    }
+  }
+
+  @js.native
+  trait DeleteNetworkProfileResponse extends js.Object {}
+
+  object DeleteNetworkProfileResponse {
+    def apply(
+        ): DeleteNetworkProfileResponse = {
+      val __obj = js.Dictionary.empty[js.Any]
+
+      __obj.asInstanceOf[DeleteNetworkProfileResponse]
+    }
+  }
+
+  @js.native
   trait DeleteProfileRequest extends js.Object {
     var ProfileArn: js.UndefOr[Arn]
   }
@@ -1743,6 +2118,7 @@ package alexaforbusiness {
     var DeviceStatusInfo: js.UndefOr[DeviceStatusInfo]
     var DeviceType: js.UndefOr[DeviceType]
     var MacAddress: js.UndefOr[MacAddress]
+    var NetworkProfileInfo: js.UndefOr[DeviceNetworkProfileInfo]
     var RoomArn: js.UndefOr[Arn]
     var SoftwareVersion: js.UndefOr[SoftwareVersion]
   }
@@ -1756,6 +2132,7 @@ package alexaforbusiness {
         DeviceStatusInfo: js.UndefOr[DeviceStatusInfo] = js.undefined,
         DeviceType: js.UndefOr[DeviceType] = js.undefined,
         MacAddress: js.UndefOr[MacAddress] = js.undefined,
+        NetworkProfileInfo: js.UndefOr[DeviceNetworkProfileInfo] = js.undefined,
         RoomArn: js.UndefOr[Arn] = js.undefined,
         SoftwareVersion: js.UndefOr[SoftwareVersion] = js.undefined
     ): Device = {
@@ -1767,6 +2144,7 @@ package alexaforbusiness {
       DeviceStatusInfo.foreach(__v => __obj.update("DeviceStatusInfo", __v.asInstanceOf[js.Any]))
       DeviceType.foreach(__v => __obj.update("DeviceType", __v.asInstanceOf[js.Any]))
       MacAddress.foreach(__v => __obj.update("MacAddress", __v.asInstanceOf[js.Any]))
+      NetworkProfileInfo.foreach(__v => __obj.update("NetworkProfileInfo", __v.asInstanceOf[js.Any]))
       RoomArn.foreach(__v => __obj.update("RoomArn", __v.asInstanceOf[js.Any]))
       SoftwareVersion.foreach(__v => __obj.update("SoftwareVersion", __v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Device]
@@ -1785,6 +2163,8 @@ package alexaforbusiness {
     var DeviceStatusInfo: js.UndefOr[DeviceStatusInfo]
     var DeviceType: js.UndefOr[DeviceType]
     var MacAddress: js.UndefOr[MacAddress]
+    var NetworkProfileArn: js.UndefOr[Arn]
+    var NetworkProfileName: js.UndefOr[NetworkProfileName]
     var RoomArn: js.UndefOr[Arn]
     var RoomName: js.UndefOr[RoomName]
     var SoftwareVersion: js.UndefOr[SoftwareVersion]
@@ -1799,6 +2179,8 @@ package alexaforbusiness {
         DeviceStatusInfo: js.UndefOr[DeviceStatusInfo] = js.undefined,
         DeviceType: js.UndefOr[DeviceType] = js.undefined,
         MacAddress: js.UndefOr[MacAddress] = js.undefined,
+        NetworkProfileArn: js.UndefOr[Arn] = js.undefined,
+        NetworkProfileName: js.UndefOr[NetworkProfileName] = js.undefined,
         RoomArn: js.UndefOr[Arn] = js.undefined,
         RoomName: js.UndefOr[RoomName] = js.undefined,
         SoftwareVersion: js.UndefOr[SoftwareVersion] = js.undefined
@@ -1811,6 +2193,8 @@ package alexaforbusiness {
       DeviceStatusInfo.foreach(__v => __obj.update("DeviceStatusInfo", __v.asInstanceOf[js.Any]))
       DeviceType.foreach(__v => __obj.update("DeviceType", __v.asInstanceOf[js.Any]))
       MacAddress.foreach(__v => __obj.update("MacAddress", __v.asInstanceOf[js.Any]))
+      NetworkProfileArn.foreach(__v => __obj.update("NetworkProfileArn", __v.asInstanceOf[js.Any]))
+      NetworkProfileName.foreach(__v => __obj.update("NetworkProfileName", __v.asInstanceOf[js.Any]))
       RoomArn.foreach(__v => __obj.update("RoomArn", __v.asInstanceOf[js.Any]))
       RoomName.foreach(__v => __obj.update("RoomName", __v.asInstanceOf[js.Any]))
       SoftwareVersion.foreach(__v => __obj.update("SoftwareVersion", __v.asInstanceOf[js.Any]))
@@ -1823,14 +2207,14 @@ package alexaforbusiness {
     */
   @js.native
   trait DeviceEvent extends js.Object {
-    var Timestamp: js.UndefOr[Timestamp]
+    var Timestamp: js.UndefOr[DeviceEventTime]
     var Type: js.UndefOr[DeviceEventType]
     var Value: js.UndefOr[DeviceEventValue]
   }
 
   object DeviceEvent {
     def apply(
-        Timestamp: js.UndefOr[Timestamp] = js.undefined,
+        Timestamp: js.UndefOr[DeviceEventTime] = js.undefined,
         Type: js.UndefOr[DeviceEventType] = js.undefined,
         Value: js.UndefOr[DeviceEventValue] = js.undefined
     ): DeviceEvent = {
@@ -1849,13 +2233,38 @@ package alexaforbusiness {
     val values = IndexedSeq(CONNECTION_STATUS, DEVICE_STATUS)
   }
 
+  /**
+    * Detailed information about a device's network profile.
+    */
+  @js.native
+  trait DeviceNetworkProfileInfo extends js.Object {
+    var CertificateArn: js.UndefOr[Arn]
+    var CertificateExpirationTime: js.UndefOr[CertificateTime]
+    var NetworkProfileArn: js.UndefOr[Arn]
+  }
+
+  object DeviceNetworkProfileInfo {
+    def apply(
+        CertificateArn: js.UndefOr[Arn] = js.undefined,
+        CertificateExpirationTime: js.UndefOr[CertificateTime] = js.undefined,
+        NetworkProfileArn: js.UndefOr[Arn] = js.undefined
+    ): DeviceNetworkProfileInfo = {
+      val __obj = js.Dictionary.empty[js.Any]
+      CertificateArn.foreach(__v => __obj.update("CertificateArn", __v.asInstanceOf[js.Any]))
+      CertificateExpirationTime.foreach(__v => __obj.update("CertificateExpirationTime", __v.asInstanceOf[js.Any]))
+      NetworkProfileArn.foreach(__v => __obj.update("NetworkProfileArn", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DeviceNetworkProfileInfo]
+    }
+  }
+
   object DeviceStatusEnum {
     val READY        = "READY"
     val PENDING      = "PENDING"
     val WAS_OFFLINE  = "WAS_OFFLINE"
     val DEREGISTERED = "DEREGISTERED"
+    val FAILED       = "FAILED"
 
-    val values = IndexedSeq(READY, PENDING, WAS_OFFLINE, DEREGISTERED)
+    val values = IndexedSeq(READY, PENDING, WAS_OFFLINE, DEREGISTERED, FAILED)
   }
 
   /**
@@ -1864,23 +2273,55 @@ package alexaforbusiness {
   @js.native
   trait DeviceStatusDetail extends js.Object {
     var Code: js.UndefOr[DeviceStatusDetailCode]
+    var Feature: js.UndefOr[Feature]
   }
 
   object DeviceStatusDetail {
     def apply(
-        Code: js.UndefOr[DeviceStatusDetailCode] = js.undefined
+        Code: js.UndefOr[DeviceStatusDetailCode] = js.undefined,
+        Feature: js.UndefOr[Feature] = js.undefined
     ): DeviceStatusDetail = {
       val __obj = js.Dictionary.empty[js.Any]
       Code.foreach(__v => __obj.update("Code", __v.asInstanceOf[js.Any]))
+      Feature.foreach(__v => __obj.update("Feature", __v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeviceStatusDetail]
     }
   }
 
   object DeviceStatusDetailCodeEnum {
-    val DEVICE_SOFTWARE_UPDATE_NEEDED = "DEVICE_SOFTWARE_UPDATE_NEEDED"
-    val DEVICE_WAS_OFFLINE            = "DEVICE_WAS_OFFLINE"
+    val DEVICE_SOFTWARE_UPDATE_NEEDED      = "DEVICE_SOFTWARE_UPDATE_NEEDED"
+    val DEVICE_WAS_OFFLINE                 = "DEVICE_WAS_OFFLINE"
+    val CREDENTIALS_ACCESS_FAILURE         = "CREDENTIALS_ACCESS_FAILURE"
+    val TLS_VERSION_MISMATCH               = "TLS_VERSION_MISMATCH"
+    val ASSOCIATION_REJECTION              = "ASSOCIATION_REJECTION"
+    val AUTHENTICATION_FAILURE             = "AUTHENTICATION_FAILURE"
+    val DHCP_FAILURE                       = "DHCP_FAILURE"
+    val INTERNET_UNAVAILABLE               = "INTERNET_UNAVAILABLE"
+    val DNS_FAILURE                        = "DNS_FAILURE"
+    val UNKNOWN_FAILURE                    = "UNKNOWN_FAILURE"
+    val CERTIFICATE_ISSUING_LIMIT_EXCEEDED = "CERTIFICATE_ISSUING_LIMIT_EXCEEDED"
+    val INVALID_CERTIFICATE_AUTHORITY      = "INVALID_CERTIFICATE_AUTHORITY"
+    val NETWORK_PROFILE_NOT_FOUND          = "NETWORK_PROFILE_NOT_FOUND"
+    val INVALID_PASSWORD_STATE             = "INVALID_PASSWORD_STATE"
+    val PASSWORD_NOT_FOUND                 = "PASSWORD_NOT_FOUND"
 
-    val values = IndexedSeq(DEVICE_SOFTWARE_UPDATE_NEEDED, DEVICE_WAS_OFFLINE)
+    val values = IndexedSeq(
+      DEVICE_SOFTWARE_UPDATE_NEEDED,
+      DEVICE_WAS_OFFLINE,
+      CREDENTIALS_ACCESS_FAILURE,
+      TLS_VERSION_MISMATCH,
+      ASSOCIATION_REJECTION,
+      AUTHENTICATION_FAILURE,
+      DHCP_FAILURE,
+      INTERNET_UNAVAILABLE,
+      DNS_FAILURE,
+      UNKNOWN_FAILURE,
+      CERTIFICATE_ISSUING_LIMIT_EXCEEDED,
+      INVALID_CERTIFICATE_AUTHORITY,
+      NETWORK_PROFILE_NOT_FOUND,
+      INVALID_PASSWORD_STATE,
+      PASSWORD_NOT_FOUND
+    )
   }
 
   /**
@@ -1902,6 +2343,12 @@ package alexaforbusiness {
       DeviceStatusDetails.foreach(__v => __obj.update("DeviceStatusDetails", __v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeviceStatusInfo]
     }
+  }
+
+  object DeviceUsageTypeEnum {
+    val VOICE = "VOICE"
+
+    val values = IndexedSeq(VOICE)
   }
 
   @js.native
@@ -2086,14 +2533,16 @@ package alexaforbusiness {
   }
 
   object FeatureEnum {
-    val BLUETOOTH     = "BLUETOOTH"
-    val VOLUME        = "VOLUME"
-    val NOTIFICATIONS = "NOTIFICATIONS"
-    val LISTS         = "LISTS"
-    val SKILLS        = "SKILLS"
-    val ALL           = "ALL"
+    val BLUETOOTH       = "BLUETOOTH"
+    val VOLUME          = "VOLUME"
+    val NOTIFICATIONS   = "NOTIFICATIONS"
+    val LISTS           = "LISTS"
+    val SKILLS          = "SKILLS"
+    val NETWORK_PROFILE = "NETWORK_PROFILE"
+    val SETTINGS        = "SETTINGS"
+    val ALL             = "ALL"
 
-    val values = IndexedSeq(BLUETOOTH, VOLUME, NOTIFICATIONS, LISTS, SKILLS, ALL)
+    val values = IndexedSeq(BLUETOOTH, VOLUME, NOTIFICATIONS, LISTS, SKILLS, NETWORK_PROFILE, SETTINGS, ALL)
   }
 
   /**
@@ -2145,6 +2594,114 @@ package alexaforbusiness {
       val __obj = js.Dictionary.empty[js.Any]
 
       __obj.asInstanceOf[ForgetSmartHomeAppliancesResponse]
+    }
+  }
+
+  /**
+    * The details of the gateway.
+    */
+  @js.native
+  trait Gateway extends js.Object {
+    var Arn: js.UndefOr[Arn]
+    var Description: js.UndefOr[GatewayDescription]
+    var GatewayGroupArn: js.UndefOr[Arn]
+    var Name: js.UndefOr[GatewayName]
+    var SoftwareVersion: js.UndefOr[GatewayVersion]
+  }
+
+  object Gateway {
+    def apply(
+        Arn: js.UndefOr[Arn] = js.undefined,
+        Description: js.UndefOr[GatewayDescription] = js.undefined,
+        GatewayGroupArn: js.UndefOr[Arn] = js.undefined,
+        Name: js.UndefOr[GatewayName] = js.undefined,
+        SoftwareVersion: js.UndefOr[GatewayVersion] = js.undefined
+    ): Gateway = {
+      val __obj = js.Dictionary.empty[js.Any]
+      Arn.foreach(__v => __obj.update("Arn", __v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
+      GatewayGroupArn.foreach(__v => __obj.update("GatewayGroupArn", __v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
+      SoftwareVersion.foreach(__v => __obj.update("SoftwareVersion", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Gateway]
+    }
+  }
+
+  /**
+    * The details of the gateway group.
+    */
+  @js.native
+  trait GatewayGroup extends js.Object {
+    var Arn: js.UndefOr[Arn]
+    var Description: js.UndefOr[GatewayGroupDescription]
+    var Name: js.UndefOr[GatewayGroupName]
+  }
+
+  object GatewayGroup {
+    def apply(
+        Arn: js.UndefOr[Arn] = js.undefined,
+        Description: js.UndefOr[GatewayGroupDescription] = js.undefined,
+        Name: js.UndefOr[GatewayGroupName] = js.undefined
+    ): GatewayGroup = {
+      val __obj = js.Dictionary.empty[js.Any]
+      Arn.foreach(__v => __obj.update("Arn", __v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GatewayGroup]
+    }
+  }
+
+  /**
+    * The summary of a gateway group.
+    */
+  @js.native
+  trait GatewayGroupSummary extends js.Object {
+    var Arn: js.UndefOr[Arn]
+    var Description: js.UndefOr[GatewayGroupDescription]
+    var Name: js.UndefOr[GatewayGroupName]
+  }
+
+  object GatewayGroupSummary {
+    def apply(
+        Arn: js.UndefOr[Arn] = js.undefined,
+        Description: js.UndefOr[GatewayGroupDescription] = js.undefined,
+        Name: js.UndefOr[GatewayGroupName] = js.undefined
+    ): GatewayGroupSummary = {
+      val __obj = js.Dictionary.empty[js.Any]
+      Arn.foreach(__v => __obj.update("Arn", __v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GatewayGroupSummary]
+    }
+  }
+
+  /**
+    * The summary of a gateway.
+    */
+  @js.native
+  trait GatewaySummary extends js.Object {
+    var Arn: js.UndefOr[Arn]
+    var Description: js.UndefOr[GatewayDescription]
+    var GatewayGroupArn: js.UndefOr[Arn]
+    var Name: js.UndefOr[GatewayName]
+    var SoftwareVersion: js.UndefOr[GatewayVersion]
+  }
+
+  object GatewaySummary {
+    def apply(
+        Arn: js.UndefOr[Arn] = js.undefined,
+        Description: js.UndefOr[GatewayDescription] = js.undefined,
+        GatewayGroupArn: js.UndefOr[Arn] = js.undefined,
+        Name: js.UndefOr[GatewayName] = js.undefined,
+        SoftwareVersion: js.UndefOr[GatewayVersion] = js.undefined
+    ): GatewaySummary = {
+      val __obj = js.Dictionary.empty[js.Any]
+      Arn.foreach(__v => __obj.update("Arn", __v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
+      GatewayGroupArn.foreach(__v => __obj.update("GatewayGroupArn", __v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
+      SoftwareVersion.foreach(__v => __obj.update("SoftwareVersion", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GatewaySummary]
     }
   }
 
@@ -2302,6 +2859,70 @@ package alexaforbusiness {
   }
 
   @js.native
+  trait GetGatewayGroupRequest extends js.Object {
+    var GatewayGroupArn: Arn
+  }
+
+  object GetGatewayGroupRequest {
+    def apply(
+        GatewayGroupArn: Arn
+    ): GetGatewayGroupRequest = {
+      val __obj = js.Dictionary[js.Any](
+        "GatewayGroupArn" -> GatewayGroupArn.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[GetGatewayGroupRequest]
+    }
+  }
+
+  @js.native
+  trait GetGatewayGroupResponse extends js.Object {
+    var GatewayGroup: js.UndefOr[GatewayGroup]
+  }
+
+  object GetGatewayGroupResponse {
+    def apply(
+        GatewayGroup: js.UndefOr[GatewayGroup] = js.undefined
+    ): GetGatewayGroupResponse = {
+      val __obj = js.Dictionary.empty[js.Any]
+      GatewayGroup.foreach(__v => __obj.update("GatewayGroup", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetGatewayGroupResponse]
+    }
+  }
+
+  @js.native
+  trait GetGatewayRequest extends js.Object {
+    var GatewayArn: Arn
+  }
+
+  object GetGatewayRequest {
+    def apply(
+        GatewayArn: Arn
+    ): GetGatewayRequest = {
+      val __obj = js.Dictionary[js.Any](
+        "GatewayArn" -> GatewayArn.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[GetGatewayRequest]
+    }
+  }
+
+  @js.native
+  trait GetGatewayResponse extends js.Object {
+    var Gateway: js.UndefOr[Gateway]
+  }
+
+  object GetGatewayResponse {
+    def apply(
+        Gateway: js.UndefOr[Gateway] = js.undefined
+    ): GetGatewayResponse = {
+      val __obj = js.Dictionary.empty[js.Any]
+      Gateway.foreach(__v => __obj.update("Gateway", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetGatewayResponse]
+    }
+  }
+
+  @js.native
   trait GetInvitationConfigurationRequest extends js.Object {}
 
   object GetInvitationConfigurationRequest {
@@ -2331,6 +2952,38 @@ package alexaforbusiness {
       OrganizationName.foreach(__v => __obj.update("OrganizationName", __v.asInstanceOf[js.Any]))
       PrivateSkillIds.foreach(__v => __obj.update("PrivateSkillIds", __v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetInvitationConfigurationResponse]
+    }
+  }
+
+  @js.native
+  trait GetNetworkProfileRequest extends js.Object {
+    var NetworkProfileArn: Arn
+  }
+
+  object GetNetworkProfileRequest {
+    def apply(
+        NetworkProfileArn: Arn
+    ): GetNetworkProfileRequest = {
+      val __obj = js.Dictionary[js.Any](
+        "NetworkProfileArn" -> NetworkProfileArn.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[GetNetworkProfileRequest]
+    }
+  }
+
+  @js.native
+  trait GetNetworkProfileResponse extends js.Object {
+    var NetworkProfile: js.UndefOr[NetworkProfile]
+  }
+
+  object GetNetworkProfileResponse {
+    def apply(
+        NetworkProfile: js.UndefOr[NetworkProfile] = js.undefined
+    ): GetNetworkProfileResponse = {
+      val __obj = js.Dictionary.empty[js.Any]
+      NetworkProfile.foreach(__v => __obj.update("NetworkProfile", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetNetworkProfileResponse]
     }
   }
 
@@ -2602,6 +3255,81 @@ package alexaforbusiness {
   }
 
   @js.native
+  trait ListGatewayGroupsRequest extends js.Object {
+    var MaxResults: js.UndefOr[MaxResults]
+    var NextToken: js.UndefOr[NextToken]
+  }
+
+  object ListGatewayGroupsRequest {
+    def apply(
+        MaxResults: js.UndefOr[MaxResults] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListGatewayGroupsRequest = {
+      val __obj = js.Dictionary.empty[js.Any]
+      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListGatewayGroupsRequest]
+    }
+  }
+
+  @js.native
+  trait ListGatewayGroupsResponse extends js.Object {
+    var GatewayGroups: js.UndefOr[GatewayGroupSummaries]
+    var NextToken: js.UndefOr[NextToken]
+  }
+
+  object ListGatewayGroupsResponse {
+    def apply(
+        GatewayGroups: js.UndefOr[GatewayGroupSummaries] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListGatewayGroupsResponse = {
+      val __obj = js.Dictionary.empty[js.Any]
+      GatewayGroups.foreach(__v => __obj.update("GatewayGroups", __v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListGatewayGroupsResponse]
+    }
+  }
+
+  @js.native
+  trait ListGatewaysRequest extends js.Object {
+    var GatewayGroupArn: js.UndefOr[Arn]
+    var MaxResults: js.UndefOr[MaxResults]
+    var NextToken: js.UndefOr[NextToken]
+  }
+
+  object ListGatewaysRequest {
+    def apply(
+        GatewayGroupArn: js.UndefOr[Arn] = js.undefined,
+        MaxResults: js.UndefOr[MaxResults] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListGatewaysRequest = {
+      val __obj = js.Dictionary.empty[js.Any]
+      GatewayGroupArn.foreach(__v => __obj.update("GatewayGroupArn", __v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListGatewaysRequest]
+    }
+  }
+
+  @js.native
+  trait ListGatewaysResponse extends js.Object {
+    var Gateways: js.UndefOr[GatewaySummaries]
+    var NextToken: js.UndefOr[NextToken]
+  }
+
+  object ListGatewaysResponse {
+    def apply(
+        Gateways: js.UndefOr[GatewaySummaries] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListGatewaysResponse = {
+      val __obj = js.Dictionary.empty[js.Any]
+      Gateways.foreach(__v => __obj.update("Gateways", __v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListGatewaysResponse]
+    }
+  }
+
+  @js.native
   trait ListSkillsRequest extends js.Object {
     var EnablementType: js.UndefOr[EnablementTypeFilter]
     var MaxResults: js.UndefOr[SkillListMaxResults]
@@ -2805,6 +3533,12 @@ package alexaforbusiness {
     }
   }
 
+  object LocaleEnum {
+    val `en-US` = "en-US"
+
+    val values = IndexedSeq(`en-US`)
+  }
+
   /**
     * The values that indicate whether a pin is always required (YES), never required (NO), or OPTIONAL.
     * * If YES, Alexa will always ask for a meeting pin.
@@ -2826,6 +3560,103 @@ package alexaforbusiness {
 
       __obj.asInstanceOf[MeetingSetting]
     }
+  }
+
+  object NetworkEapMethodEnum {
+    val EAP_TLS = "EAP_TLS"
+
+    val values = IndexedSeq(EAP_TLS)
+  }
+
+  /**
+    * The network profile associated with a device.
+    */
+  @js.native
+  trait NetworkProfile extends js.Object {
+    var CertificateAuthorityArn: js.UndefOr[Arn]
+    var CurrentPassword: js.UndefOr[CurrentWiFiPassword]
+    var Description: js.UndefOr[NetworkProfileDescription]
+    var EapMethod: js.UndefOr[NetworkEapMethod]
+    var NetworkProfileArn: js.UndefOr[Arn]
+    var NetworkProfileName: js.UndefOr[NetworkProfileName]
+    var NextPassword: js.UndefOr[NextWiFiPassword]
+    var SecurityType: js.UndefOr[NetworkSecurityType]
+    var Ssid: js.UndefOr[NetworkSsid]
+    var TrustAnchors: js.UndefOr[TrustAnchorList]
+  }
+
+  object NetworkProfile {
+    def apply(
+        CertificateAuthorityArn: js.UndefOr[Arn] = js.undefined,
+        CurrentPassword: js.UndefOr[CurrentWiFiPassword] = js.undefined,
+        Description: js.UndefOr[NetworkProfileDescription] = js.undefined,
+        EapMethod: js.UndefOr[NetworkEapMethod] = js.undefined,
+        NetworkProfileArn: js.UndefOr[Arn] = js.undefined,
+        NetworkProfileName: js.UndefOr[NetworkProfileName] = js.undefined,
+        NextPassword: js.UndefOr[NextWiFiPassword] = js.undefined,
+        SecurityType: js.UndefOr[NetworkSecurityType] = js.undefined,
+        Ssid: js.UndefOr[NetworkSsid] = js.undefined,
+        TrustAnchors: js.UndefOr[TrustAnchorList] = js.undefined
+    ): NetworkProfile = {
+      val __obj = js.Dictionary.empty[js.Any]
+      CertificateAuthorityArn.foreach(__v => __obj.update("CertificateAuthorityArn", __v.asInstanceOf[js.Any]))
+      CurrentPassword.foreach(__v => __obj.update("CurrentPassword", __v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
+      EapMethod.foreach(__v => __obj.update("EapMethod", __v.asInstanceOf[js.Any]))
+      NetworkProfileArn.foreach(__v => __obj.update("NetworkProfileArn", __v.asInstanceOf[js.Any]))
+      NetworkProfileName.foreach(__v => __obj.update("NetworkProfileName", __v.asInstanceOf[js.Any]))
+      NextPassword.foreach(__v => __obj.update("NextPassword", __v.asInstanceOf[js.Any]))
+      SecurityType.foreach(__v => __obj.update("SecurityType", __v.asInstanceOf[js.Any]))
+      Ssid.foreach(__v => __obj.update("Ssid", __v.asInstanceOf[js.Any]))
+      TrustAnchors.foreach(__v => __obj.update("TrustAnchors", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[NetworkProfile]
+    }
+  }
+
+  /**
+    * The data associated with a network profile.
+    */
+  @js.native
+  trait NetworkProfileData extends js.Object {
+    var CertificateAuthorityArn: js.UndefOr[Arn]
+    var Description: js.UndefOr[NetworkProfileDescription]
+    var EapMethod: js.UndefOr[NetworkEapMethod]
+    var NetworkProfileArn: js.UndefOr[Arn]
+    var NetworkProfileName: js.UndefOr[NetworkProfileName]
+    var SecurityType: js.UndefOr[NetworkSecurityType]
+    var Ssid: js.UndefOr[NetworkSsid]
+  }
+
+  object NetworkProfileData {
+    def apply(
+        CertificateAuthorityArn: js.UndefOr[Arn] = js.undefined,
+        Description: js.UndefOr[NetworkProfileDescription] = js.undefined,
+        EapMethod: js.UndefOr[NetworkEapMethod] = js.undefined,
+        NetworkProfileArn: js.UndefOr[Arn] = js.undefined,
+        NetworkProfileName: js.UndefOr[NetworkProfileName] = js.undefined,
+        SecurityType: js.UndefOr[NetworkSecurityType] = js.undefined,
+        Ssid: js.UndefOr[NetworkSsid] = js.undefined
+    ): NetworkProfileData = {
+      val __obj = js.Dictionary.empty[js.Any]
+      CertificateAuthorityArn.foreach(__v => __obj.update("CertificateAuthorityArn", __v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
+      EapMethod.foreach(__v => __obj.update("EapMethod", __v.asInstanceOf[js.Any]))
+      NetworkProfileArn.foreach(__v => __obj.update("NetworkProfileArn", __v.asInstanceOf[js.Any]))
+      NetworkProfileName.foreach(__v => __obj.update("NetworkProfileName", __v.asInstanceOf[js.Any]))
+      SecurityType.foreach(__v => __obj.update("SecurityType", __v.asInstanceOf[js.Any]))
+      Ssid.foreach(__v => __obj.update("Ssid", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[NetworkProfileData]
+    }
+  }
+
+  object NetworkSecurityTypeEnum {
+    val OPEN            = "OPEN"
+    val WEP             = "WEP"
+    val WPA_PSK         = "WPA_PSK"
+    val WPA2_PSK        = "WPA2_PSK"
+    val WPA2_ENTERPRISE = "WPA2_ENTERPRISE"
+
+    val values = IndexedSeq(OPEN, WEP, WPA_PSK, WPA2_PSK, WPA2_ENTERPRISE)
   }
 
   /**
@@ -2858,6 +3689,37 @@ package alexaforbusiness {
   }
 
   /**
+    * The phone number for the contact containing the raw number and phone number type.
+    */
+  @js.native
+  trait PhoneNumber extends js.Object {
+    var Number: RawPhoneNumber
+    var Type: PhoneNumberType
+  }
+
+  object PhoneNumber {
+    def apply(
+        Number: RawPhoneNumber,
+        Type: PhoneNumberType
+    ): PhoneNumber = {
+      val __obj = js.Dictionary[js.Any](
+        "Number" -> Number.asInstanceOf[js.Any],
+        "Type"   -> Type.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[PhoneNumber]
+    }
+  }
+
+  object PhoneNumberTypeEnum {
+    val MOBILE = "MOBILE"
+    val WORK   = "WORK"
+    val HOME   = "HOME"
+
+    val values = IndexedSeq(MOBILE, WORK, HOME)
+  }
+
+  /**
     * A room profile with attributes.
     */
   @js.native
@@ -2866,6 +3728,7 @@ package alexaforbusiness {
     var AddressBookArn: js.UndefOr[Arn]
     var DistanceUnit: js.UndefOr[DistanceUnit]
     var IsDefault: js.UndefOr[Boolean]
+    var Locale: js.UndefOr[DeviceLocale]
     var MaxVolumeLimit: js.UndefOr[MaxVolumeLimit]
     var PSTNEnabled: js.UndefOr[Boolean]
     var ProfileArn: js.UndefOr[Arn]
@@ -2882,6 +3745,7 @@ package alexaforbusiness {
         AddressBookArn: js.UndefOr[Arn] = js.undefined,
         DistanceUnit: js.UndefOr[DistanceUnit] = js.undefined,
         IsDefault: js.UndefOr[Boolean] = js.undefined,
+        Locale: js.UndefOr[DeviceLocale] = js.undefined,
         MaxVolumeLimit: js.UndefOr[MaxVolumeLimit] = js.undefined,
         PSTNEnabled: js.UndefOr[Boolean] = js.undefined,
         ProfileArn: js.UndefOr[Arn] = js.undefined,
@@ -2896,6 +3760,7 @@ package alexaforbusiness {
       AddressBookArn.foreach(__v => __obj.update("AddressBookArn", __v.asInstanceOf[js.Any]))
       DistanceUnit.foreach(__v => __obj.update("DistanceUnit", __v.asInstanceOf[js.Any]))
       IsDefault.foreach(__v => __obj.update("IsDefault", __v.asInstanceOf[js.Any]))
+      Locale.foreach(__v => __obj.update("Locale", __v.asInstanceOf[js.Any]))
       MaxVolumeLimit.foreach(__v => __obj.update("MaxVolumeLimit", __v.asInstanceOf[js.Any]))
       PSTNEnabled.foreach(__v => __obj.update("PSTNEnabled", __v.asInstanceOf[js.Any]))
       ProfileArn.foreach(__v => __obj.update("ProfileArn", __v.asInstanceOf[js.Any]))
@@ -2916,6 +3781,7 @@ package alexaforbusiness {
     var Address: js.UndefOr[Address]
     var DistanceUnit: js.UndefOr[DistanceUnit]
     var IsDefault: js.UndefOr[Boolean]
+    var Locale: js.UndefOr[DeviceLocale]
     var ProfileArn: js.UndefOr[Arn]
     var ProfileName: js.UndefOr[ProfileName]
     var TemperatureUnit: js.UndefOr[TemperatureUnit]
@@ -2928,6 +3794,7 @@ package alexaforbusiness {
         Address: js.UndefOr[Address] = js.undefined,
         DistanceUnit: js.UndefOr[DistanceUnit] = js.undefined,
         IsDefault: js.UndefOr[Boolean] = js.undefined,
+        Locale: js.UndefOr[DeviceLocale] = js.undefined,
         ProfileArn: js.UndefOr[Arn] = js.undefined,
         ProfileName: js.UndefOr[ProfileName] = js.undefined,
         TemperatureUnit: js.UndefOr[TemperatureUnit] = js.undefined,
@@ -2938,6 +3805,7 @@ package alexaforbusiness {
       Address.foreach(__v => __obj.update("Address", __v.asInstanceOf[js.Any]))
       DistanceUnit.foreach(__v => __obj.update("DistanceUnit", __v.asInstanceOf[js.Any]))
       IsDefault.foreach(__v => __obj.update("IsDefault", __v.asInstanceOf[js.Any]))
+      Locale.foreach(__v => __obj.update("Locale", __v.asInstanceOf[js.Any]))
       ProfileArn.foreach(__v => __obj.update("ProfileArn", __v.asInstanceOf[js.Any]))
       ProfileName.foreach(__v => __obj.update("ProfileName", __v.asInstanceOf[js.Any]))
       TemperatureUnit.foreach(__v => __obj.update("TemperatureUnit", __v.asInstanceOf[js.Any]))
@@ -3455,6 +4323,51 @@ package alexaforbusiness {
   }
 
   @js.native
+  trait SearchNetworkProfilesRequest extends js.Object {
+    var Filters: js.UndefOr[FilterList]
+    var MaxResults: js.UndefOr[MaxResults]
+    var NextToken: js.UndefOr[NextToken]
+    var SortCriteria: js.UndefOr[SortList]
+  }
+
+  object SearchNetworkProfilesRequest {
+    def apply(
+        Filters: js.UndefOr[FilterList] = js.undefined,
+        MaxResults: js.UndefOr[MaxResults] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined,
+        SortCriteria: js.UndefOr[SortList] = js.undefined
+    ): SearchNetworkProfilesRequest = {
+      val __obj = js.Dictionary.empty[js.Any]
+      Filters.foreach(__v => __obj.update("Filters", __v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      SortCriteria.foreach(__v => __obj.update("SortCriteria", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[SearchNetworkProfilesRequest]
+    }
+  }
+
+  @js.native
+  trait SearchNetworkProfilesResponse extends js.Object {
+    var NetworkProfiles: js.UndefOr[NetworkProfileDataList]
+    var NextToken: js.UndefOr[NextToken]
+    var TotalCount: js.UndefOr[TotalCount]
+  }
+
+  object SearchNetworkProfilesResponse {
+    def apply(
+        NetworkProfiles: js.UndefOr[NetworkProfileDataList] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined,
+        TotalCount: js.UndefOr[TotalCount] = js.undefined
+    ): SearchNetworkProfilesResponse = {
+      val __obj = js.Dictionary.empty[js.Any]
+      NetworkProfiles.foreach(__v => __obj.update("NetworkProfiles", __v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      TotalCount.foreach(__v => __obj.update("TotalCount", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[SearchNetworkProfilesResponse]
+    }
+  }
+
+  @js.native
   trait SearchProfilesRequest extends js.Object {
     var Filters: js.UndefOr[FilterList]
     var MaxResults: js.UndefOr[MaxResults]
@@ -3635,6 +4548,47 @@ package alexaforbusiness {
   }
 
   @js.native
+  trait SendAnnouncementRequest extends js.Object {
+    var ClientRequestToken: ClientRequestToken
+    var Content: Content
+    var RoomFilters: FilterList
+    var TimeToLiveInSeconds: js.UndefOr[TimeToLiveInSeconds]
+  }
+
+  object SendAnnouncementRequest {
+    def apply(
+        ClientRequestToken: ClientRequestToken,
+        Content: Content,
+        RoomFilters: FilterList,
+        TimeToLiveInSeconds: js.UndefOr[TimeToLiveInSeconds] = js.undefined
+    ): SendAnnouncementRequest = {
+      val __obj = js.Dictionary[js.Any](
+        "ClientRequestToken" -> ClientRequestToken.asInstanceOf[js.Any],
+        "Content"            -> Content.asInstanceOf[js.Any],
+        "RoomFilters"        -> RoomFilters.asInstanceOf[js.Any]
+      )
+
+      TimeToLiveInSeconds.foreach(__v => __obj.update("TimeToLiveInSeconds", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[SendAnnouncementRequest]
+    }
+  }
+
+  @js.native
+  trait SendAnnouncementResponse extends js.Object {
+    var AnnouncementArn: js.UndefOr[Arn]
+  }
+
+  object SendAnnouncementResponse {
+    def apply(
+        AnnouncementArn: js.UndefOr[Arn] = js.undefined
+    ): SendAnnouncementResponse = {
+      val __obj = js.Dictionary.empty[js.Any]
+      AnnouncementArn.foreach(__v => __obj.update("AnnouncementArn", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[SendAnnouncementResponse]
+    }
+  }
+
+  @js.native
   trait SendInvitationRequest extends js.Object {
     var UserArn: js.UndefOr[Arn]
   }
@@ -3659,6 +4613,35 @@ package alexaforbusiness {
 
       __obj.asInstanceOf[SendInvitationResponse]
     }
+  }
+
+  /**
+    * The SIP address for the contact containing the URI and SIP address type.
+    */
+  @js.native
+  trait SipAddress extends js.Object {
+    var Type: SipType
+    var Uri: SipUri
+  }
+
+  object SipAddress {
+    def apply(
+        Type: SipType,
+        Uri: SipUri
+    ): SipAddress = {
+      val __obj = js.Dictionary[js.Any](
+        "Type" -> Type.asInstanceOf[js.Any],
+        "Uri"  -> Uri.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[SipAddress]
+    }
+  }
+
+  object SipTypeEnum {
+    val WORK = "WORK"
+
+    val values = IndexedSeq(WORK)
   }
 
   /**
@@ -3891,6 +4874,29 @@ package alexaforbusiness {
     val values = IndexedSeq(ASC, DESC)
   }
 
+  /**
+    * The SSML message. For more information, see [[https://developer.amazon.com/docs/custom-skills/speech-synthesis-markup-language-ssml-reference.html|SSML Reference]].
+    */
+  @js.native
+  trait Ssml extends js.Object {
+    var Locale: Locale
+    var Value: SsmlValue
+  }
+
+  object Ssml {
+    def apply(
+        Locale: Locale,
+        Value: SsmlValue
+    ): Ssml = {
+      val __obj = js.Dictionary[js.Any](
+        "Locale" -> Locale.asInstanceOf[js.Any],
+        "Value"  -> Value.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[Ssml]
+    }
+  }
+
   @js.native
   trait StartDeviceSyncRequest extends js.Object {
     var Features: Features
@@ -4015,6 +5021,29 @@ package alexaforbusiness {
     val CELSIUS    = "CELSIUS"
 
     val values = IndexedSeq(FAHRENHEIT, CELSIUS)
+  }
+
+  /**
+    * The text message.
+    */
+  @js.native
+  trait Text extends js.Object {
+    var Locale: Locale
+    var Value: TextValue
+  }
+
+  object Text {
+    def apply(
+        Locale: Locale,
+        Value: TextValue
+    ): Text = {
+      val __obj = js.Dictionary[js.Any](
+        "Locale" -> Locale.asInstanceOf[js.Any],
+        "Value"  -> Value.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[Text]
+    }
   }
 
   @js.native
@@ -4175,7 +5204,9 @@ package alexaforbusiness {
     var DisplayName: js.UndefOr[ContactName]
     var FirstName: js.UndefOr[ContactName]
     var LastName: js.UndefOr[ContactName]
-    var PhoneNumber: js.UndefOr[E164PhoneNumber]
+    var PhoneNumber: js.UndefOr[RawPhoneNumber]
+    var PhoneNumbers: js.UndefOr[PhoneNumberList]
+    var SipAddresses: js.UndefOr[SipAddressList]
   }
 
   object UpdateContactRequest {
@@ -4184,7 +5215,9 @@ package alexaforbusiness {
         DisplayName: js.UndefOr[ContactName] = js.undefined,
         FirstName: js.UndefOr[ContactName] = js.undefined,
         LastName: js.UndefOr[ContactName] = js.undefined,
-        PhoneNumber: js.UndefOr[E164PhoneNumber] = js.undefined
+        PhoneNumber: js.UndefOr[RawPhoneNumber] = js.undefined,
+        PhoneNumbers: js.UndefOr[PhoneNumberList] = js.undefined,
+        SipAddresses: js.UndefOr[SipAddressList] = js.undefined
     ): UpdateContactRequest = {
       val __obj = js.Dictionary[js.Any](
         "ContactArn" -> ContactArn.asInstanceOf[js.Any]
@@ -4194,6 +5227,8 @@ package alexaforbusiness {
       FirstName.foreach(__v => __obj.update("FirstName", __v.asInstanceOf[js.Any]))
       LastName.foreach(__v => __obj.update("LastName", __v.asInstanceOf[js.Any]))
       PhoneNumber.foreach(__v => __obj.update("PhoneNumber", __v.asInstanceOf[js.Any]))
+      PhoneNumbers.foreach(__v => __obj.update("PhoneNumbers", __v.asInstanceOf[js.Any]))
+      SipAddresses.foreach(__v => __obj.update("SipAddresses", __v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateContactRequest]
     }
   }
@@ -4241,10 +5276,131 @@ package alexaforbusiness {
   }
 
   @js.native
+  trait UpdateGatewayGroupRequest extends js.Object {
+    var GatewayGroupArn: Arn
+    var Description: js.UndefOr[GatewayGroupDescription]
+    var Name: js.UndefOr[GatewayGroupName]
+  }
+
+  object UpdateGatewayGroupRequest {
+    def apply(
+        GatewayGroupArn: Arn,
+        Description: js.UndefOr[GatewayGroupDescription] = js.undefined,
+        Name: js.UndefOr[GatewayGroupName] = js.undefined
+    ): UpdateGatewayGroupRequest = {
+      val __obj = js.Dictionary[js.Any](
+        "GatewayGroupArn" -> GatewayGroupArn.asInstanceOf[js.Any]
+      )
+
+      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateGatewayGroupRequest]
+    }
+  }
+
+  @js.native
+  trait UpdateGatewayGroupResponse extends js.Object {}
+
+  object UpdateGatewayGroupResponse {
+    def apply(
+        ): UpdateGatewayGroupResponse = {
+      val __obj = js.Dictionary.empty[js.Any]
+
+      __obj.asInstanceOf[UpdateGatewayGroupResponse]
+    }
+  }
+
+  @js.native
+  trait UpdateGatewayRequest extends js.Object {
+    var GatewayArn: Arn
+    var Description: js.UndefOr[GatewayDescription]
+    var Name: js.UndefOr[GatewayName]
+    var SoftwareVersion: js.UndefOr[GatewayVersion]
+  }
+
+  object UpdateGatewayRequest {
+    def apply(
+        GatewayArn: Arn,
+        Description: js.UndefOr[GatewayDescription] = js.undefined,
+        Name: js.UndefOr[GatewayName] = js.undefined,
+        SoftwareVersion: js.UndefOr[GatewayVersion] = js.undefined
+    ): UpdateGatewayRequest = {
+      val __obj = js.Dictionary[js.Any](
+        "GatewayArn" -> GatewayArn.asInstanceOf[js.Any]
+      )
+
+      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
+      SoftwareVersion.foreach(__v => __obj.update("SoftwareVersion", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateGatewayRequest]
+    }
+  }
+
+  @js.native
+  trait UpdateGatewayResponse extends js.Object {}
+
+  object UpdateGatewayResponse {
+    def apply(
+        ): UpdateGatewayResponse = {
+      val __obj = js.Dictionary.empty[js.Any]
+
+      __obj.asInstanceOf[UpdateGatewayResponse]
+    }
+  }
+
+  @js.native
+  trait UpdateNetworkProfileRequest extends js.Object {
+    var NetworkProfileArn: Arn
+    var CertificateAuthorityArn: js.UndefOr[Arn]
+    var CurrentPassword: js.UndefOr[CurrentWiFiPassword]
+    var Description: js.UndefOr[NetworkProfileDescription]
+    var NetworkProfileName: js.UndefOr[NetworkProfileName]
+    var NextPassword: js.UndefOr[NextWiFiPassword]
+    var TrustAnchors: js.UndefOr[TrustAnchorList]
+  }
+
+  object UpdateNetworkProfileRequest {
+    def apply(
+        NetworkProfileArn: Arn,
+        CertificateAuthorityArn: js.UndefOr[Arn] = js.undefined,
+        CurrentPassword: js.UndefOr[CurrentWiFiPassword] = js.undefined,
+        Description: js.UndefOr[NetworkProfileDescription] = js.undefined,
+        NetworkProfileName: js.UndefOr[NetworkProfileName] = js.undefined,
+        NextPassword: js.UndefOr[NextWiFiPassword] = js.undefined,
+        TrustAnchors: js.UndefOr[TrustAnchorList] = js.undefined
+    ): UpdateNetworkProfileRequest = {
+      val __obj = js.Dictionary[js.Any](
+        "NetworkProfileArn" -> NetworkProfileArn.asInstanceOf[js.Any]
+      )
+
+      CertificateAuthorityArn.foreach(__v => __obj.update("CertificateAuthorityArn", __v.asInstanceOf[js.Any]))
+      CurrentPassword.foreach(__v => __obj.update("CurrentPassword", __v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
+      NetworkProfileName.foreach(__v => __obj.update("NetworkProfileName", __v.asInstanceOf[js.Any]))
+      NextPassword.foreach(__v => __obj.update("NextPassword", __v.asInstanceOf[js.Any]))
+      TrustAnchors.foreach(__v => __obj.update("TrustAnchors", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateNetworkProfileRequest]
+    }
+  }
+
+  @js.native
+  trait UpdateNetworkProfileResponse extends js.Object {}
+
+  object UpdateNetworkProfileResponse {
+    def apply(
+        ): UpdateNetworkProfileResponse = {
+      val __obj = js.Dictionary.empty[js.Any]
+
+      __obj.asInstanceOf[UpdateNetworkProfileResponse]
+    }
+  }
+
+  @js.native
   trait UpdateProfileRequest extends js.Object {
     var Address: js.UndefOr[Address]
     var DistanceUnit: js.UndefOr[DistanceUnit]
     var IsDefault: js.UndefOr[Boolean]
+    var Locale: js.UndefOr[DeviceLocale]
     var MaxVolumeLimit: js.UndefOr[MaxVolumeLimit]
     var PSTNEnabled: js.UndefOr[Boolean]
     var ProfileArn: js.UndefOr[Arn]
@@ -4260,6 +5416,7 @@ package alexaforbusiness {
         Address: js.UndefOr[Address] = js.undefined,
         DistanceUnit: js.UndefOr[DistanceUnit] = js.undefined,
         IsDefault: js.UndefOr[Boolean] = js.undefined,
+        Locale: js.UndefOr[DeviceLocale] = js.undefined,
         MaxVolumeLimit: js.UndefOr[MaxVolumeLimit] = js.undefined,
         PSTNEnabled: js.UndefOr[Boolean] = js.undefined,
         ProfileArn: js.UndefOr[Arn] = js.undefined,
@@ -4273,6 +5430,7 @@ package alexaforbusiness {
       Address.foreach(__v => __obj.update("Address", __v.asInstanceOf[js.Any]))
       DistanceUnit.foreach(__v => __obj.update("DistanceUnit", __v.asInstanceOf[js.Any]))
       IsDefault.foreach(__v => __obj.update("IsDefault", __v.asInstanceOf[js.Any]))
+      Locale.foreach(__v => __obj.update("Locale", __v.asInstanceOf[js.Any]))
       MaxVolumeLimit.foreach(__v => __obj.update("MaxVolumeLimit", __v.asInstanceOf[js.Any]))
       PSTNEnabled.foreach(__v => __obj.update("PSTNEnabled", __v.asInstanceOf[js.Any]))
       ProfileArn.foreach(__v => __obj.update("ProfileArn", __v.asInstanceOf[js.Any]))

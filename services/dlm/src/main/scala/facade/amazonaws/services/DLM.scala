@@ -10,6 +10,7 @@ import facade.amazonaws._
 package object dlm {
   type CopyTags                   = Boolean
   type Count                      = Int
+  type ExcludeBootVolume          = Boolean
   type ExecutionRoleArn           = String
   type GettablePolicyStateValues  = String
   type Interval                   = Int
@@ -18,6 +19,7 @@ package object dlm {
   type PolicyDescription          = String
   type PolicyId                   = String
   type PolicyIdList               = js.Array[PolicyId]
+  type PolicyTypeValues           = String
   type ResourceTypeValues         = String
   type ResourceTypeValuesList     = js.Array[ResourceTypeValues]
   type ScheduleList               = js.Array[Schedule]
@@ -31,6 +33,7 @@ package object dlm {
   type Time                       = String
   type TimesList                  = js.Array[Time]
   type Timestamp                  = js.Date
+  type VariableTagsList           = js.Array[Tag]
 
   implicit final class DLMOps(val service: DLM) extends AnyVal {
 
@@ -305,10 +308,30 @@ package dlm {
   }
 
   /**
+    * Optional parameters that can be added to the policy. The set of valid parameters depends on the combination of <code>policyType</code> and <code>resourceType</code> values.
+    */
+  @js.native
+  trait Parameters extends js.Object {
+    var ExcludeBootVolume: js.UndefOr[ExcludeBootVolume]
+  }
+
+  object Parameters {
+    def apply(
+        ExcludeBootVolume: js.UndefOr[ExcludeBootVolume] = js.undefined
+    ): Parameters = {
+      val __obj = js.Dictionary.empty[js.Any]
+      ExcludeBootVolume.foreach(__v => __obj.update("ExcludeBootVolume", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Parameters]
+    }
+  }
+
+  /**
     * Specifies the configuration of a lifecycle policy.
     */
   @js.native
   trait PolicyDetails extends js.Object {
+    var Parameters: js.UndefOr[Parameters]
+    var PolicyType: js.UndefOr[PolicyTypeValues]
     var ResourceTypes: js.UndefOr[ResourceTypeValuesList]
     var Schedules: js.UndefOr[ScheduleList]
     var TargetTags: js.UndefOr[TargetTagList]
@@ -316,11 +339,15 @@ package dlm {
 
   object PolicyDetails {
     def apply(
+        Parameters: js.UndefOr[Parameters] = js.undefined,
+        PolicyType: js.UndefOr[PolicyTypeValues] = js.undefined,
         ResourceTypes: js.UndefOr[ResourceTypeValuesList] = js.undefined,
         Schedules: js.UndefOr[ScheduleList] = js.undefined,
         TargetTags: js.UndefOr[TargetTagList] = js.undefined
     ): PolicyDetails = {
       val __obj = js.Dictionary.empty[js.Any]
+      Parameters.foreach(__v => __obj.update("Parameters", __v.asInstanceOf[js.Any]))
+      PolicyType.foreach(__v => __obj.update("PolicyType", __v.asInstanceOf[js.Any]))
       ResourceTypes.foreach(__v => __obj.update("ResourceTypes", __v.asInstanceOf[js.Any]))
       Schedules.foreach(__v => __obj.update("Schedules", __v.asInstanceOf[js.Any]))
       TargetTags.foreach(__v => __obj.update("TargetTags", __v.asInstanceOf[js.Any]))
@@ -328,10 +355,17 @@ package dlm {
     }
   }
 
-  object ResourceTypeValuesEnum {
-    val VOLUME = "VOLUME"
+  object PolicyTypeValuesEnum {
+    val EBS_SNAPSHOT_MANAGEMENT = "EBS_SNAPSHOT_MANAGEMENT"
 
-    val values = IndexedSeq(VOLUME)
+    val values = IndexedSeq(EBS_SNAPSHOT_MANAGEMENT)
+  }
+
+  object ResourceTypeValuesEnum {
+    val VOLUME   = "VOLUME"
+    val INSTANCE = "INSTANCE"
+
+    val values = IndexedSeq(VOLUME, INSTANCE)
   }
 
   /**
@@ -364,6 +398,7 @@ package dlm {
     var Name: js.UndefOr[ScheduleName]
     var RetainRule: js.UndefOr[RetainRule]
     var TagsToAdd: js.UndefOr[TagsToAddList]
+    var VariableTags: js.UndefOr[VariableTagsList]
   }
 
   object Schedule {
@@ -372,7 +407,8 @@ package dlm {
         CreateRule: js.UndefOr[CreateRule] = js.undefined,
         Name: js.UndefOr[ScheduleName] = js.undefined,
         RetainRule: js.UndefOr[RetainRule] = js.undefined,
-        TagsToAdd: js.UndefOr[TagsToAddList] = js.undefined
+        TagsToAdd: js.UndefOr[TagsToAddList] = js.undefined,
+        VariableTags: js.UndefOr[VariableTagsList] = js.undefined
     ): Schedule = {
       val __obj = js.Dictionary.empty[js.Any]
       CopyTags.foreach(__v => __obj.update("CopyTags", __v.asInstanceOf[js.Any]))
@@ -380,6 +416,7 @@ package dlm {
       Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
       RetainRule.foreach(__v => __obj.update("RetainRule", __v.asInstanceOf[js.Any]))
       TagsToAdd.foreach(__v => __obj.update("TagsToAdd", __v.asInstanceOf[js.Any]))
+      VariableTags.foreach(__v => __obj.update("VariableTags", __v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Schedule]
     }
   }

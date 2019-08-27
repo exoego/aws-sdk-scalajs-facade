@@ -1369,6 +1369,9 @@ package elbv2 {
     }
   }
 
+  /**
+    * Information about a host header condition.
+    */
   @js.native
   trait HostHeaderConditionConfig extends js.Object {
     var Values: js.UndefOr[ListOfString]
@@ -1384,6 +1387,10 @@ package elbv2 {
     }
   }
 
+  /**
+    * Information about an HTTP header condition.
+    *  There is a set of standard HTTP header fields. You can also define custom HTTP header fields.
+    */
   @js.native
   trait HttpHeaderConditionConfig extends js.Object {
     var HttpHeaderName: js.UndefOr[HttpHeaderConditionName]
@@ -1402,6 +1409,10 @@ package elbv2 {
     }
   }
 
+  /**
+    * Information about an HTTP method condition.
+    *  HTTP defines a set of request methods, also referred to as HTTP verbs. For more information, see the [[https://www.iana.org/assignments/http-methods/http-methods.xhtml|HTTP Method Registry]]. You can also define custom HTTP methods.
+    */
   @js.native
   trait HttpRequestMethodConditionConfig extends js.Object {
     var Values: js.UndefOr[ListOfString]
@@ -1852,6 +1863,9 @@ package elbv2 {
     }
   }
 
+  /**
+    * Information about a path pattern condition.
+    */
   @js.native
   trait PathPatternConditionConfig extends js.Object {
     var Values: js.UndefOr[ListOfString]
@@ -1868,14 +1882,20 @@ package elbv2 {
   }
 
   object ProtocolEnumEnum {
-    val HTTP  = "HTTP"
-    val HTTPS = "HTTPS"
-    val TCP   = "TCP"
-    val TLS   = "TLS"
+    val HTTP    = "HTTP"
+    val HTTPS   = "HTTPS"
+    val TCP     = "TCP"
+    val TLS     = "TLS"
+    val UDP     = "UDP"
+    val TCP_UDP = "TCP_UDP"
 
-    val values = IndexedSeq(HTTP, HTTPS, TCP, TLS)
+    val values = IndexedSeq(HTTP, HTTPS, TCP, TLS, UDP, TCP_UDP)
   }
 
+  /**
+    * Information about a query string condition.
+    *  The query string component of a URI starts after the first '?' character and is terminated by either a '#' character or the end of the URI. A typical query string contains key/value pairs separated by '&amp;' characters. The allowed characters are specified by RFC 3986. Any character can be percentage encoded.
+    */
   @js.native
   trait QueryStringConditionConfig extends js.Object {
     var Values: js.UndefOr[QueryStringKeyValuePairList]
@@ -1891,6 +1911,9 @@ package elbv2 {
     }
   }
 
+  /**
+    * Information about a key/value pair.
+    */
   @js.native
   trait QueryStringKeyValuePair extends js.Object {
     var Key: js.UndefOr[StringValue]
@@ -2285,6 +2308,10 @@ package elbv2 {
     }
   }
 
+  /**
+    * Information about a source IP condition.
+    *  You can use this condition to route based on the IP address of the source that connects to the load balancer. If a client is behind a proxy, this is the IP address of the proxy not the IP address of the client.
+    */
   @js.native
   trait SourceIpConditionConfig extends js.Object {
     var Values: js.UndefOr[ListOfString]

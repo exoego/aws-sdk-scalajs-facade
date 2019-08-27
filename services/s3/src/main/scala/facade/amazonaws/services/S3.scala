@@ -216,6 +216,7 @@ package object s3 {
   type SSECustomerKey =
     nodejs.buffer.Buffer | nodejs.stream.Readable | js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
   type SSECustomerKeyMD5                 = String
+  type SSEKMSEncryptionContext           = String
   type SSEKMSKeyId                       = String
   type ServerSideEncryption              = String
   type ServerSideEncryptionRules         = js.Array[ServerSideEncryptionRule]
@@ -564,7 +565,7 @@ package s3 {
   }
 
   /**
-    * Specifies the days since the initiation of an Incomplete Multipart Upload that Lifecycle will wait before permanently removing all parts of the upload.
+    * Specifies the days since the initiation of an incomplete multipart upload that Amazon S3 will wait before permanently removing all parts of the upload. For more information, see [[https://docs.aws.amazon.com/AmazonS3/latest/dev/mpuoverview.html#mpu-abort-incomplete-mpu-lifecycle-config| Aborting Incomplete Multipart Uploads Using a Bucket Lifecycle Policy]] in the <i>Amazon Simple Storage Service Developer Guide</i>.
     */
   @js.native
   trait AbortIncompleteMultipartUpload extends js.Object {
@@ -623,7 +624,7 @@ package s3 {
   }
 
   /**
-    * <p/>
+    * Configures the transfer acceleration state for an Amazon S3 bucket. For more information, see [[https://docs.aws.amazon.com/AmazonS3/latest/dev/transfer-acceleration.html|Amazon S3 Transfer Acceleration]] in the <i>Amazon Simple Storage Service Developer Guide</i>.
     */
   @js.native
   trait AccelerateConfiguration extends js.Object {
@@ -641,7 +642,7 @@ package s3 {
   }
 
   /**
-    * <p/>
+    * Contains the elements that set the ACL permissions for an object per grantee.
     */
   @js.native
   trait AccessControlPolicy extends js.Object {
@@ -682,7 +683,7 @@ package s3 {
   }
 
   /**
-    * <p/>
+    * A conjunction (logical AND) of predicates, which is used in evaluating a metrics filter. The operator must have at least two predicates in any combination, and an object must match all of the predicates for the filter to apply.
     */
   @js.native
   trait AnalyticsAndOperator extends js.Object {
@@ -703,7 +704,8 @@ package s3 {
   }
 
   /**
-    * <p/>
+    * Specifies the configuration and any analyses for the analytics filter of an Amazon S3 bucket.
+    *  For more information, see [[https://docs.aws.amazon.com/AmazonS3/latest/API/RESTBucketGETAnalyticsConfig.html|GET Bucket analytics]] in the <i>Amazon Simple Storage Service API Reference</i>.
     */
   @js.native
   trait AnalyticsConfiguration extends js.Object {
@@ -729,7 +731,7 @@ package s3 {
   }
 
   /**
-    * <p/>
+    * Where to publish the analytics results.
     */
   @js.native
   trait AnalyticsExportDestination extends js.Object {
@@ -845,7 +847,7 @@ package s3 {
   }
 
   /**
-    * <p/>
+    * Specifies the lifecycle configuration for objects in an Amazon S3 bucket. For more information, see [[https://docs.aws.amazon.com/AmazonS3/latest/dev/object-lifecycle-mgmt.html|Object Lifecycle Management]] in the <i>Amazon Simple Storage Service Developer Guide</i>.
     */
   @js.native
   trait BucketLifecycleConfiguration extends js.Object {
@@ -926,7 +928,7 @@ package s3 {
   }
 
   /**
-    * <p/>
+    * Describes the cross-origin access configuration for objects in an Amazon S3 bucket. For more information, see [[https://docs.aws.amazon.com/AmazonS3/latest/dev/cors.html|Enabling Cross-Origin Resource Sharing]] in the <i>Amazon Simple Storage Service Developer Guide</i>.
     */
   @js.native
   trait CORSConfiguration extends js.Object {
@@ -946,7 +948,7 @@ package s3 {
   }
 
   /**
-    * <p/>
+    * Specifies a cross-origin access rule for an Amazon S3 bucket.
     */
   @js.native
   trait CORSRule extends js.Object {
@@ -1207,7 +1209,7 @@ package s3 {
   }
 
   /**
-    * <p/>
+    * Specifies a condition that must be met for a redirect to apply.
     */
   @js.native
   trait Condition extends js.Object {
@@ -1250,6 +1252,7 @@ package s3 {
     var RequestCharged: js.UndefOr[RequestCharged]
     var SSECustomerAlgorithm: js.UndefOr[SSECustomerAlgorithm]
     var SSECustomerKeyMD5: js.UndefOr[SSECustomerKeyMD5]
+    var SSEKMSEncryptionContext: js.UndefOr[SSEKMSEncryptionContext]
     var SSEKMSKeyId: js.UndefOr[SSEKMSKeyId]
     var ServerSideEncryption: js.UndefOr[ServerSideEncryption]
     var VersionId: js.UndefOr[ObjectVersionId]
@@ -1263,6 +1266,7 @@ package s3 {
         RequestCharged: js.UndefOr[RequestCharged] = js.undefined,
         SSECustomerAlgorithm: js.UndefOr[SSECustomerAlgorithm] = js.undefined,
         SSECustomerKeyMD5: js.UndefOr[SSECustomerKeyMD5] = js.undefined,
+        SSEKMSEncryptionContext: js.UndefOr[SSEKMSEncryptionContext] = js.undefined,
         SSEKMSKeyId: js.UndefOr[SSEKMSKeyId] = js.undefined,
         ServerSideEncryption: js.UndefOr[ServerSideEncryption] = js.undefined,
         VersionId: js.UndefOr[ObjectVersionId] = js.undefined
@@ -1274,6 +1278,7 @@ package s3 {
       RequestCharged.foreach(__v => __obj.update("RequestCharged", __v.asInstanceOf[js.Any]))
       SSECustomerAlgorithm.foreach(__v => __obj.update("SSECustomerAlgorithm", __v.asInstanceOf[js.Any]))
       SSECustomerKeyMD5.foreach(__v => __obj.update("SSECustomerKeyMD5", __v.asInstanceOf[js.Any]))
+      SSEKMSEncryptionContext.foreach(__v => __obj.update("SSEKMSEncryptionContext", __v.asInstanceOf[js.Any]))
       SSEKMSKeyId.foreach(__v => __obj.update("SSEKMSKeyId", __v.asInstanceOf[js.Any]))
       ServerSideEncryption.foreach(__v => __obj.update("ServerSideEncryption", __v.asInstanceOf[js.Any]))
       VersionId.foreach(__v => __obj.update("VersionId", __v.asInstanceOf[js.Any]))
@@ -1313,6 +1318,7 @@ package s3 {
     var SSECustomerAlgorithm: js.UndefOr[SSECustomerAlgorithm]
     var SSECustomerKey: js.UndefOr[SSECustomerKey]
     var SSECustomerKeyMD5: js.UndefOr[SSECustomerKeyMD5]
+    var SSEKMSEncryptionContext: js.UndefOr[SSEKMSEncryptionContext]
     var SSEKMSKeyId: js.UndefOr[SSEKMSKeyId]
     var ServerSideEncryption: js.UndefOr[ServerSideEncryption]
     var StorageClass: js.UndefOr[StorageClass]
@@ -1353,6 +1359,7 @@ package s3 {
         SSECustomerAlgorithm: js.UndefOr[SSECustomerAlgorithm] = js.undefined,
         SSECustomerKey: js.UndefOr[SSECustomerKey] = js.undefined,
         SSECustomerKeyMD5: js.UndefOr[SSECustomerKeyMD5] = js.undefined,
+        SSEKMSEncryptionContext: js.UndefOr[SSEKMSEncryptionContext] = js.undefined,
         SSEKMSKeyId: js.UndefOr[SSEKMSKeyId] = js.undefined,
         ServerSideEncryption: js.UndefOr[ServerSideEncryption] = js.undefined,
         StorageClass: js.UndefOr[StorageClass] = js.undefined,
@@ -1395,6 +1402,7 @@ package s3 {
       SSECustomerAlgorithm.foreach(__v => __obj.update("SSECustomerAlgorithm", __v.asInstanceOf[js.Any]))
       SSECustomerKey.foreach(__v => __obj.update("SSECustomerKey", __v.asInstanceOf[js.Any]))
       SSECustomerKeyMD5.foreach(__v => __obj.update("SSECustomerKeyMD5", __v.asInstanceOf[js.Any]))
+      SSEKMSEncryptionContext.foreach(__v => __obj.update("SSEKMSEncryptionContext", __v.asInstanceOf[js.Any]))
       SSEKMSKeyId.foreach(__v => __obj.update("SSEKMSKeyId", __v.asInstanceOf[js.Any]))
       ServerSideEncryption.foreach(__v => __obj.update("ServerSideEncryption", __v.asInstanceOf[js.Any]))
       StorageClass.foreach(__v => __obj.update("StorageClass", __v.asInstanceOf[js.Any]))
@@ -1530,6 +1538,7 @@ package s3 {
     var RequestCharged: js.UndefOr[RequestCharged]
     var SSECustomerAlgorithm: js.UndefOr[SSECustomerAlgorithm]
     var SSECustomerKeyMD5: js.UndefOr[SSECustomerKeyMD5]
+    var SSEKMSEncryptionContext: js.UndefOr[SSEKMSEncryptionContext]
     var SSEKMSKeyId: js.UndefOr[SSEKMSKeyId]
     var ServerSideEncryption: js.UndefOr[ServerSideEncryption]
     var UploadId: js.UndefOr[MultipartUploadId]
@@ -1544,6 +1553,7 @@ package s3 {
         RequestCharged: js.UndefOr[RequestCharged] = js.undefined,
         SSECustomerAlgorithm: js.UndefOr[SSECustomerAlgorithm] = js.undefined,
         SSECustomerKeyMD5: js.UndefOr[SSECustomerKeyMD5] = js.undefined,
+        SSEKMSEncryptionContext: js.UndefOr[SSEKMSEncryptionContext] = js.undefined,
         SSEKMSKeyId: js.UndefOr[SSEKMSKeyId] = js.undefined,
         ServerSideEncryption: js.UndefOr[ServerSideEncryption] = js.undefined,
         UploadId: js.UndefOr[MultipartUploadId] = js.undefined
@@ -1556,6 +1566,7 @@ package s3 {
       RequestCharged.foreach(__v => __obj.update("RequestCharged", __v.asInstanceOf[js.Any]))
       SSECustomerAlgorithm.foreach(__v => __obj.update("SSECustomerAlgorithm", __v.asInstanceOf[js.Any]))
       SSECustomerKeyMD5.foreach(__v => __obj.update("SSECustomerKeyMD5", __v.asInstanceOf[js.Any]))
+      SSEKMSEncryptionContext.foreach(__v => __obj.update("SSEKMSEncryptionContext", __v.asInstanceOf[js.Any]))
       SSEKMSKeyId.foreach(__v => __obj.update("SSEKMSKeyId", __v.asInstanceOf[js.Any]))
       ServerSideEncryption.foreach(__v => __obj.update("ServerSideEncryption", __v.asInstanceOf[js.Any]))
       UploadId.foreach(__v => __obj.update("UploadId", __v.asInstanceOf[js.Any]))
@@ -1586,6 +1597,7 @@ package s3 {
     var SSECustomerAlgorithm: js.UndefOr[SSECustomerAlgorithm]
     var SSECustomerKey: js.UndefOr[SSECustomerKey]
     var SSECustomerKeyMD5: js.UndefOr[SSECustomerKeyMD5]
+    var SSEKMSEncryptionContext: js.UndefOr[SSEKMSEncryptionContext]
     var SSEKMSKeyId: js.UndefOr[SSEKMSKeyId]
     var ServerSideEncryption: js.UndefOr[ServerSideEncryption]
     var StorageClass: js.UndefOr[StorageClass]
@@ -1616,6 +1628,7 @@ package s3 {
         SSECustomerAlgorithm: js.UndefOr[SSECustomerAlgorithm] = js.undefined,
         SSECustomerKey: js.UndefOr[SSECustomerKey] = js.undefined,
         SSECustomerKeyMD5: js.UndefOr[SSECustomerKeyMD5] = js.undefined,
+        SSEKMSEncryptionContext: js.UndefOr[SSEKMSEncryptionContext] = js.undefined,
         SSEKMSKeyId: js.UndefOr[SSEKMSKeyId] = js.undefined,
         ServerSideEncryption: js.UndefOr[ServerSideEncryption] = js.undefined,
         StorageClass: js.UndefOr[StorageClass] = js.undefined,
@@ -1646,6 +1659,7 @@ package s3 {
       SSECustomerAlgorithm.foreach(__v => __obj.update("SSECustomerAlgorithm", __v.asInstanceOf[js.Any]))
       SSECustomerKey.foreach(__v => __obj.update("SSECustomerKey", __v.asInstanceOf[js.Any]))
       SSECustomerKeyMD5.foreach(__v => __obj.update("SSECustomerKeyMD5", __v.asInstanceOf[js.Any]))
+      SSEKMSEncryptionContext.foreach(__v => __obj.update("SSEKMSEncryptionContext", __v.asInstanceOf[js.Any]))
       SSEKMSKeyId.foreach(__v => __obj.update("SSEKMSKeyId", __v.asInstanceOf[js.Any]))
       ServerSideEncryption.foreach(__v => __obj.update("ServerSideEncryption", __v.asInstanceOf[js.Any]))
       StorageClass.foreach(__v => __obj.update("StorageClass", __v.asInstanceOf[js.Any]))
@@ -1656,7 +1670,7 @@ package s3 {
   }
 
   /**
-    * The container element for specifying the default Object Lock retention settings for new objects placed in the specified bucket.
+    * The container element for specifying the default object lock retention settings for new objects placed in the specified bucket.
     */
   @js.native
   trait DefaultRetention extends js.Object {
@@ -2139,7 +2153,7 @@ package s3 {
   }
 
   /**
-    * A container for information about the replication destination.
+    * Specifies information about where to publish analysis or configuration results for an Amazon S3 bucket.
     */
   @js.native
   trait Destination extends js.Object {
@@ -2206,7 +2220,7 @@ package s3 {
   }
 
   /**
-    * A container for information about the encryption-based configuration for replicas.
+    * Specifies encryption-related information for an Amazon S3 bucket that is a destination for replicated objects.
     */
   @js.native
   trait EncryptionConfiguration extends js.Object {
@@ -2338,7 +2352,7 @@ package s3 {
   }
 
   /**
-    * A container for a key value pair that defines the criteria for the filter rule.
+    * Specifies the Amazon S3 object key name to filter on and whether to filter on the suffix or prefix of the key name.
     */
   @js.native
   trait FilterRule extends js.Object {
@@ -3749,7 +3763,7 @@ package s3 {
   }
 
   /**
-    * <p/>
+    * Specifies the inventory configuration for an Amazon S3 bucket. For more information, see [[https://docs.aws.amazon.com/AmazonS3/latest/API/RESTBucketGETInventoryConfig.html|GET Bucket inventory]] in the <i>Amazon Simple Storage Service API Reference</i>.
     */
   @js.native
   trait InventoryConfiguration extends js.Object {
@@ -4728,7 +4742,7 @@ package s3 {
   }
 
   /**
-    * Container for logging information. Presence of this element indicates that logging is enabled. Parameters TargetBucket and TargetPrefix are required in this case.
+    * Describes where logs are stored and the prefix that Amazon S3 assigns to all log object keys for a bucket. For more information, see [[https://docs.aws.amazon.com/AmazonS3/latest/API/RESTBucketPUTlogging.html|PUT Bucket logging]] in the <i>Amazon Simple Storage Service API Reference</i>.
     */
   @js.native
   trait LoggingEnabled extends js.Object {
@@ -4817,7 +4831,7 @@ package s3 {
   }
 
   /**
-    * <p/>
+    * Specifies a metrics configuration for the CloudWatch request metrics (specified by the metrics configuration ID) from an Amazon S3 bucket. If you're updating an existing metrics configuration, note that this is a full replacement of the existing metrics configuration. If you don't include the elements you want to keep, they are erased. For more information, see [[https://docs.aws.amazon.com/AmazonS3/latest/API/RESTBucketPUTMetricConfiguration.html| PUT Bucket metrics]] in the <i>Amazon Simple Storage Service API Reference</i>.
     */
   @js.native
   trait MetricsConfiguration extends js.Object {
@@ -4915,7 +4929,7 @@ package s3 {
   }
 
   /**
-    * Container for the transition rule that describes when noncurrent objects transition to the STANDARD_IA, ONEZONE_IA, INTELLIGENT_TIERING, GLACIER or DEEP_ARCHIVE storage class. If your bucket is versioning-enabled (or versioning is suspended), you can set this action to request that Amazon S3 transition noncurrent object versions to the STANDARD_IA, ONEZONE_IA, INTELLIGENT_TIERING, GLACIER or DEEP_ARCHIVE storage class at a specific period in the object's lifetime.
+    * Container for the transition rule that describes when noncurrent objects transition to the <code>STANDARD_IA</code>, <code>ONEZONE_IA</code>, <code>INTELLIGENT_TIERING</code>, <code>GLACIER</code>, or <code>DEEP_ARCHIVE</code> storage class. If your bucket is versioning-enabled (or versioning is suspended), you can set this action to request that Amazon S3 transition noncurrent object versions to the <code>STANDARD_IA</code>, <code>ONEZONE_IA</code>, <code>INTELLIGENT_TIERING</code>, <code>GLACIER</code>, or <code>DEEP_ARCHIVE</code> storage class at a specific period in the object's lifetime.
     */
   @js.native
   trait NoncurrentVersionTransition extends js.Object {
@@ -4983,7 +4997,7 @@ package s3 {
   }
 
   /**
-    * A container for object key name filtering rules. For information about key name filtering, see [[https://docs.aws.amazon.com/AmazonS3/latest/dev/NotificationHowTo.html|Configuring Event Notifications]] in the <i>Amazon Simple Storage Service Developer Guide</i>.
+    * Specifies object key name filtering rules. For information about key name filtering, see [[https://docs.aws.amazon.com/AmazonS3/latest/dev/NotificationHowTo.html|Configuring Event Notifications]] in the <i>Amazon Simple Storage Service Developer Guide</i>.
     */
   @js.native
   trait NotificationConfigurationFilter extends js.Object {
@@ -5077,7 +5091,7 @@ package s3 {
   }
 
   /**
-    * The container element for Object Lock configuration parameters.
+    * The container element for object lock configuration parameters.
     */
   @js.native
   trait ObjectLockConfiguration extends js.Object {
@@ -5164,7 +5178,7 @@ package s3 {
   }
 
   /**
-    * The container element for an Object Lock rule.
+    * The container element for an object lock rule.
     */
   @js.native
   trait ObjectLockRule extends js.Object {
@@ -5432,7 +5446,7 @@ package s3 {
   }
 
   /**
-    * <p/>
+    * Specifies the Block Public Access configuration for an Amazon S3 bucket.
     */
   @js.native
   trait PublicAccessBlockConfiguration extends js.Object {
@@ -5776,13 +5790,15 @@ package s3 {
     var Bucket: BucketName
     var ReplicationConfiguration: ReplicationConfiguration
     var ContentMD5: js.UndefOr[ContentMD5]
+    var Token: js.UndefOr[ObjectLockToken]
   }
 
   object PutBucketReplicationRequest {
     def apply(
         Bucket: BucketName,
         ReplicationConfiguration: ReplicationConfiguration,
-        ContentMD5: js.UndefOr[ContentMD5] = js.undefined
+        ContentMD5: js.UndefOr[ContentMD5] = js.undefined,
+        Token: js.UndefOr[ObjectLockToken] = js.undefined
     ): PutBucketReplicationRequest = {
       val __obj = js.Dictionary[js.Any](
         "Bucket"                   -> Bucket.asInstanceOf[js.Any],
@@ -5790,6 +5806,7 @@ package s3 {
       )
 
       ContentMD5.foreach(__v => __obj.update("ContentMD5", __v.asInstanceOf[js.Any]))
+      Token.foreach(__v => __obj.update("Token", __v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PutBucketReplicationRequest]
     }
   }
@@ -6052,6 +6069,7 @@ package s3 {
     var RequestCharged: js.UndefOr[RequestCharged]
     var SSECustomerAlgorithm: js.UndefOr[SSECustomerAlgorithm]
     var SSECustomerKeyMD5: js.UndefOr[SSECustomerKeyMD5]
+    var SSEKMSEncryptionContext: js.UndefOr[SSEKMSEncryptionContext]
     var SSEKMSKeyId: js.UndefOr[SSEKMSKeyId]
     var ServerSideEncryption: js.UndefOr[ServerSideEncryption]
     var VersionId: js.UndefOr[ObjectVersionId]
@@ -6064,6 +6082,7 @@ package s3 {
         RequestCharged: js.UndefOr[RequestCharged] = js.undefined,
         SSECustomerAlgorithm: js.UndefOr[SSECustomerAlgorithm] = js.undefined,
         SSECustomerKeyMD5: js.UndefOr[SSECustomerKeyMD5] = js.undefined,
+        SSEKMSEncryptionContext: js.UndefOr[SSEKMSEncryptionContext] = js.undefined,
         SSEKMSKeyId: js.UndefOr[SSEKMSKeyId] = js.undefined,
         ServerSideEncryption: js.UndefOr[ServerSideEncryption] = js.undefined,
         VersionId: js.UndefOr[ObjectVersionId] = js.undefined
@@ -6074,6 +6093,7 @@ package s3 {
       RequestCharged.foreach(__v => __obj.update("RequestCharged", __v.asInstanceOf[js.Any]))
       SSECustomerAlgorithm.foreach(__v => __obj.update("SSECustomerAlgorithm", __v.asInstanceOf[js.Any]))
       SSECustomerKeyMD5.foreach(__v => __obj.update("SSECustomerKeyMD5", __v.asInstanceOf[js.Any]))
+      SSEKMSEncryptionContext.foreach(__v => __obj.update("SSEKMSEncryptionContext", __v.asInstanceOf[js.Any]))
       SSEKMSKeyId.foreach(__v => __obj.update("SSEKMSKeyId", __v.asInstanceOf[js.Any]))
       ServerSideEncryption.foreach(__v => __obj.update("ServerSideEncryption", __v.asInstanceOf[js.Any]))
       VersionId.foreach(__v => __obj.update("VersionId", __v.asInstanceOf[js.Any]))
@@ -6107,6 +6127,7 @@ package s3 {
     var SSECustomerAlgorithm: js.UndefOr[SSECustomerAlgorithm]
     var SSECustomerKey: js.UndefOr[SSECustomerKey]
     var SSECustomerKeyMD5: js.UndefOr[SSECustomerKeyMD5]
+    var SSEKMSEncryptionContext: js.UndefOr[SSEKMSEncryptionContext]
     var SSEKMSKeyId: js.UndefOr[SSEKMSKeyId]
     var ServerSideEncryption: js.UndefOr[ServerSideEncryption]
     var StorageClass: js.UndefOr[StorageClass]
@@ -6140,6 +6161,7 @@ package s3 {
         SSECustomerAlgorithm: js.UndefOr[SSECustomerAlgorithm] = js.undefined,
         SSECustomerKey: js.UndefOr[SSECustomerKey] = js.undefined,
         SSECustomerKeyMD5: js.UndefOr[SSECustomerKeyMD5] = js.undefined,
+        SSEKMSEncryptionContext: js.UndefOr[SSEKMSEncryptionContext] = js.undefined,
         SSEKMSKeyId: js.UndefOr[SSEKMSKeyId] = js.undefined,
         ServerSideEncryption: js.UndefOr[ServerSideEncryption] = js.undefined,
         StorageClass: js.UndefOr[StorageClass] = js.undefined,
@@ -6173,6 +6195,7 @@ package s3 {
       SSECustomerAlgorithm.foreach(__v => __obj.update("SSECustomerAlgorithm", __v.asInstanceOf[js.Any]))
       SSECustomerKey.foreach(__v => __obj.update("SSECustomerKey", __v.asInstanceOf[js.Any]))
       SSECustomerKeyMD5.foreach(__v => __obj.update("SSECustomerKeyMD5", __v.asInstanceOf[js.Any]))
+      SSEKMSEncryptionContext.foreach(__v => __obj.update("SSEKMSEncryptionContext", __v.asInstanceOf[js.Any]))
       SSEKMSKeyId.foreach(__v => __obj.update("SSEKMSKeyId", __v.asInstanceOf[js.Any]))
       ServerSideEncryption.foreach(__v => __obj.update("ServerSideEncryption", __v.asInstanceOf[js.Any]))
       StorageClass.foreach(__v => __obj.update("StorageClass", __v.asInstanceOf[js.Any]))
@@ -6300,7 +6323,7 @@ package s3 {
   }
 
   /**
-    * A container for specifying the configuration for publication of messages to an Amazon Simple Queue Service (Amazon SQS) queue.when Amazon S3 detects specified events.
+    * Specifies the configuration for publishing messages to an Amazon Simple Queue Service (Amazon SQS) queue when Amazon S3 detects specified events.
     */
   @js.native
   trait QueueConfiguration extends js.Object {
@@ -6381,7 +6404,7 @@ package s3 {
   }
 
   /**
-    * <p/>
+    * Specifies how requests are redirected. In the event of an error, you can specify a different error code to return.
     */
   @js.native
   trait Redirect extends js.Object {
@@ -6411,7 +6434,7 @@ package s3 {
   }
 
   /**
-    * <p/>
+    * Specifies the redirect behavior of all requests to a website endpoint of an Amazon S3 bucket.
     */
   @js.native
   trait RedirectAllRequestsTo extends js.Object {
@@ -6457,7 +6480,7 @@ package s3 {
   }
 
   /**
-    * A container for information about a specific replication rule.
+    * Specifies which Amazon S3 objects to replicate and where to store the replicas.
     */
   @js.native
   trait ReplicationRule extends js.Object {
@@ -6704,7 +6727,7 @@ package s3 {
   }
 
   /**
-    * <p/>
+    * Specifies the redirect behavior and when a redirect is applied.
     */
   @js.native
   trait RoutingRule extends js.Object {
@@ -6727,7 +6750,7 @@ package s3 {
   }
 
   /**
-    * <p/>
+    * Specifies lifecycle rules for an Amazon S3 bucket. For more information, see [[https://docs.aws.amazon.com/AmazonS3/latest/API/RESTBucketPUTlifecycle.html|PUT Bucket lifecycle]] in the <i>Amazon Simple Storage Service API Reference</i>.
     */
   @js.native
   trait Rule extends js.Object {
@@ -6992,7 +7015,7 @@ package s3 {
   }
 
   /**
-    * Describes the default server-side encryption to apply to new objects in the bucket. If Put Object request does not specify any server-side encryption, this default encryption will be applied.
+    * Describes the default server-side encryption to apply to new objects in the bucket. If a PUT Object request doesn't specify any server-side encryption, this default encryption will be applied. For more information, see [[https://docs.aws.amazon.com/AmazonS3/latest/API/RESTBucketPUTencryption.html|PUT Bucket encryption]] in the <i>Amazon Simple Storage Service API Reference</i>.
     */
   @js.native
   trait ServerSideEncryptionByDefault extends js.Object {
@@ -7015,7 +7038,7 @@ package s3 {
   }
 
   /**
-    * Container for server-side encryption configuration rules. Currently S3 supports one rule only.
+    * Specifies the default server-side-encryption configuration.
     */
   @js.native
   trait ServerSideEncryptionConfiguration extends js.Object {
@@ -7035,7 +7058,7 @@ package s3 {
   }
 
   /**
-    * Container for information about a particular server-side encryption configuration rule.
+    * Specifies the default server-side encryption configuration.
     */
   @js.native
   trait ServerSideEncryptionRule extends js.Object {
@@ -7055,7 +7078,7 @@ package s3 {
   }
 
   /**
-    * A container for filters that define which source objects should be replicated.
+    * A container that describes additional filters for identifying the source objects that you want to replicate. You can choose to enable or disable the replication of these objects. Currently, Amazon S3 supports only the filter that you can specify for objects created with server-side encryption using an AWS KMS-Managed Key (SSE-KMS).
     */
   @js.native
   trait SourceSelectionCriteria extends js.Object {
@@ -7155,7 +7178,7 @@ package s3 {
   }
 
   /**
-    * <p/>
+    * Specifies data related to access patterns to be collected and made available to analyze the tradeoffs between different storage classes for an Amazon S3 bucket.
     */
   @js.native
   trait StorageClassAnalysis extends js.Object {
@@ -7281,7 +7304,7 @@ package s3 {
   }
 
   /**
-    * A container for specifying the configuration for publication of messages to an Amazon Simple Notification Service (Amazon SNS) topic.when Amazon S3 detects specified events.
+    * A container for specifying the configuration for publication of messages to an Amazon Simple Notification Service (Amazon SNS) topic when Amazon S3 detects specified events.
     */
   @js.native
   trait TopicConfiguration extends js.Object {
@@ -7337,7 +7360,7 @@ package s3 {
   }
 
   /**
-    * <p/>
+    * Specifies when an object transitions to a specified storage class.
     */
   @js.native
   trait Transition extends js.Object {
@@ -7556,7 +7579,7 @@ package s3 {
   }
 
   /**
-    * <p/>
+    * Describes the versioning state of an Amazon S3 bucket. For more information, see [[https://docs.aws.amazon.com/AmazonS3/latest/API/RESTBucketPUTVersioningStatus.html|PUT Bucket versioning]] in the <i>Amazon Simple Storage Service API Reference</i>.
     */
   @js.native
   trait VersioningConfiguration extends js.Object {
@@ -7577,7 +7600,7 @@ package s3 {
   }
 
   /**
-    * <p/>
+    * Specifies website configuration parameters for an Amazon S3 bucket.
     */
   @js.native
   trait WebsiteConfiguration extends js.Object {

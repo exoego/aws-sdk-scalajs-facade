@@ -8,43 +8,36 @@ import io.scalajs.nodejs
 import facade.amazonaws._
 
 package object sts {
-  type Audience                       = String
-  type Issuer                         = String
-  type NameQualifier                  = String
-  type SAMLAssertionType              = String
-  type Subject                        = String
-  type SubjectType                    = String
-  type accessKeyIdType                = String
-  type accessKeySecretType            = String
-  type accountType                    = String
-  type arnType                        = String
-  type assumedRoleIdType              = String
-  type clientTokenType                = String
-  type dateType                       = js.Date
-  type decodedMessageType             = String
-  type durationSecondsType            = Int
-  type encodedMessageType             = String
-  type expiredIdentityTokenMessage    = String
-  type externalIdType                 = String
-  type federatedIdType                = String
-  type idpCommunicationErrorMessage   = String
-  type idpRejectedClaimMessage        = String
-  type invalidAuthorizationMessage    = String
-  type invalidIdentityTokenMessage    = String
-  type malformedPolicyDocumentMessage = String
-  type nonNegativeIntegerType         = Int
-  type packedPolicyTooLargeMessage    = String
-  type regionDisabledMessage          = String
-  type roleDurationSecondsType        = Int
-  type roleSessionNameType            = String
-  type serialNumberType               = String
-  type sessionPolicyDocumentType      = String
-  type tokenCodeType                  = String
-  type tokenType                      = String
-  type urlType                        = String
-  type userIdType                     = String
-  type userNameType                   = String
-  type webIdentitySubjectType         = String
+  type Audience                  = String
+  type Issuer                    = String
+  type NameQualifier             = String
+  type SAMLAssertionType         = String
+  type Subject                   = String
+  type SubjectType               = String
+  type accessKeyIdType           = String
+  type accessKeySecretType       = String
+  type accountType               = String
+  type arnType                   = String
+  type assumedRoleIdType         = String
+  type clientTokenType           = String
+  type dateType                  = js.Date
+  type decodedMessageType        = String
+  type durationSecondsType       = Int
+  type encodedMessageType        = String
+  type externalIdType            = String
+  type federatedIdType           = String
+  type nonNegativeIntegerType    = Int
+  type policyDescriptorListType  = js.Array[PolicyDescriptorType]
+  type roleDurationSecondsType   = Int
+  type roleSessionNameType       = String
+  type serialNumberType          = String
+  type sessionPolicyDocumentType = String
+  type tokenCodeType             = String
+  type tokenType                 = String
+  type urlType                   = String
+  type userIdType                = String
+  type userNameType              = String
+  type webIdentitySubjectType    = String
 
   implicit final class STSOps(val service: STS) extends AnyVal {
 
@@ -58,6 +51,8 @@ package object sts {
     def decodeAuthorizationMessageFuture(
         params: DecodeAuthorizationMessageRequest
     ): Future[DecodeAuthorizationMessageResponse] = service.decodeAuthorizationMessage(params).promise.toFuture
+    def getAccessKeyInfoFuture(params: GetAccessKeyInfoRequest): Future[GetAccessKeyInfoResponse] =
+      service.getAccessKeyInfo(params).promise.toFuture
     def getCallerIdentityFuture(params: GetCallerIdentityRequest): Future[GetCallerIdentityResponse] =
       service.getCallerIdentity(params).promise.toFuture
     def getFederationTokenFuture(params: GetFederationTokenRequest): Future[GetFederationTokenResponse] =
@@ -81,6 +76,7 @@ package sts {
     def decodeAuthorizationMessage(
         params: DecodeAuthorizationMessageRequest
     ): Request[DecodeAuthorizationMessageResponse]                                                 = js.native
+    def getAccessKeyInfo(params: GetAccessKeyInfoRequest): Request[GetAccessKeyInfoResponse]       = js.native
     def getCallerIdentity(params: GetCallerIdentityRequest): Request[GetCallerIdentityResponse]    = js.native
     def getFederationToken(params: GetFederationTokenRequest): Request[GetFederationTokenResponse] = js.native
     def getSessionToken(params: GetSessionTokenRequest): Request[GetSessionTokenResponse]          = js.native
@@ -93,6 +89,7 @@ package sts {
     var DurationSeconds: js.UndefOr[roleDurationSecondsType]
     var ExternalId: js.UndefOr[externalIdType]
     var Policy: js.UndefOr[sessionPolicyDocumentType]
+    var PolicyArns: js.UndefOr[policyDescriptorListType]
     var SerialNumber: js.UndefOr[serialNumberType]
     var TokenCode: js.UndefOr[tokenCodeType]
   }
@@ -104,6 +101,7 @@ package sts {
         DurationSeconds: js.UndefOr[roleDurationSecondsType] = js.undefined,
         ExternalId: js.UndefOr[externalIdType] = js.undefined,
         Policy: js.UndefOr[sessionPolicyDocumentType] = js.undefined,
+        PolicyArns: js.UndefOr[policyDescriptorListType] = js.undefined,
         SerialNumber: js.UndefOr[serialNumberType] = js.undefined,
         TokenCode: js.UndefOr[tokenCodeType] = js.undefined
     ): AssumeRoleRequest = {
@@ -115,6 +113,7 @@ package sts {
       DurationSeconds.foreach(__v => __obj.update("DurationSeconds", __v.asInstanceOf[js.Any]))
       ExternalId.foreach(__v => __obj.update("ExternalId", __v.asInstanceOf[js.Any]))
       Policy.foreach(__v => __obj.update("Policy", __v.asInstanceOf[js.Any]))
+      PolicyArns.foreach(__v => __obj.update("PolicyArns", __v.asInstanceOf[js.Any]))
       SerialNumber.foreach(__v => __obj.update("SerialNumber", __v.asInstanceOf[js.Any]))
       TokenCode.foreach(__v => __obj.update("TokenCode", __v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AssumeRoleRequest]
@@ -152,6 +151,7 @@ package sts {
     var SAMLAssertion: SAMLAssertionType
     var DurationSeconds: js.UndefOr[roleDurationSecondsType]
     var Policy: js.UndefOr[sessionPolicyDocumentType]
+    var PolicyArns: js.UndefOr[policyDescriptorListType]
   }
 
   object AssumeRoleWithSAMLRequest {
@@ -160,7 +160,8 @@ package sts {
         RoleArn: arnType,
         SAMLAssertion: SAMLAssertionType,
         DurationSeconds: js.UndefOr[roleDurationSecondsType] = js.undefined,
-        Policy: js.UndefOr[sessionPolicyDocumentType] = js.undefined
+        Policy: js.UndefOr[sessionPolicyDocumentType] = js.undefined,
+        PolicyArns: js.UndefOr[policyDescriptorListType] = js.undefined
     ): AssumeRoleWithSAMLRequest = {
       val __obj = js.Dictionary[js.Any](
         "PrincipalArn"  -> PrincipalArn.asInstanceOf[js.Any],
@@ -170,6 +171,7 @@ package sts {
 
       DurationSeconds.foreach(__v => __obj.update("DurationSeconds", __v.asInstanceOf[js.Any]))
       Policy.foreach(__v => __obj.update("Policy", __v.asInstanceOf[js.Any]))
+      PolicyArns.foreach(__v => __obj.update("PolicyArns", __v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AssumeRoleWithSAMLRequest]
     }
   }
@@ -220,6 +222,7 @@ package sts {
     var WebIdentityToken: clientTokenType
     var DurationSeconds: js.UndefOr[roleDurationSecondsType]
     var Policy: js.UndefOr[sessionPolicyDocumentType]
+    var PolicyArns: js.UndefOr[policyDescriptorListType]
     var ProviderId: js.UndefOr[urlType]
   }
 
@@ -230,6 +233,7 @@ package sts {
         WebIdentityToken: clientTokenType,
         DurationSeconds: js.UndefOr[roleDurationSecondsType] = js.undefined,
         Policy: js.UndefOr[sessionPolicyDocumentType] = js.undefined,
+        PolicyArns: js.UndefOr[policyDescriptorListType] = js.undefined,
         ProviderId: js.UndefOr[urlType] = js.undefined
     ): AssumeRoleWithWebIdentityRequest = {
       val __obj = js.Dictionary[js.Any](
@@ -240,6 +244,7 @@ package sts {
 
       DurationSeconds.foreach(__v => __obj.update("DurationSeconds", __v.asInstanceOf[js.Any]))
       Policy.foreach(__v => __obj.update("Policy", __v.asInstanceOf[js.Any]))
+      PolicyArns.foreach(__v => __obj.update("PolicyArns", __v.asInstanceOf[js.Any]))
       ProviderId.foreach(__v => __obj.update("ProviderId", __v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AssumeRoleWithWebIdentityRequest]
     }
@@ -366,14 +371,6 @@ package sts {
   }
 
   /**
-    * The web identity token that was passed is expired or is not valid. Get a new identity token from the identity provider and then retry the request.
-    */
-  @js.native
-  trait ExpiredTokenExceptionException extends js.Object {
-    val message: expiredIdentityTokenMessage
-  }
-
-  /**
     * Identifiers for the federated user that is associated with the credentials.
     */
   @js.native
@@ -393,6 +390,38 @@ package sts {
       )
 
       __obj.asInstanceOf[FederatedUser]
+    }
+  }
+
+  @js.native
+  trait GetAccessKeyInfoRequest extends js.Object {
+    var AccessKeyId: accessKeyIdType
+  }
+
+  object GetAccessKeyInfoRequest {
+    def apply(
+        AccessKeyId: accessKeyIdType
+    ): GetAccessKeyInfoRequest = {
+      val __obj = js.Dictionary[js.Any](
+        "AccessKeyId" -> AccessKeyId.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[GetAccessKeyInfoRequest]
+    }
+  }
+
+  @js.native
+  trait GetAccessKeyInfoResponse extends js.Object {
+    var Account: js.UndefOr[accountType]
+  }
+
+  object GetAccessKeyInfoResponse {
+    def apply(
+        Account: js.UndefOr[accountType] = js.undefined
+    ): GetAccessKeyInfoResponse = {
+      val __obj = js.Dictionary.empty[js.Any]
+      Account.foreach(__v => __obj.update("Account", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetAccessKeyInfoResponse]
     }
   }
 
@@ -437,13 +466,15 @@ package sts {
     var Name: userNameType
     var DurationSeconds: js.UndefOr[durationSecondsType]
     var Policy: js.UndefOr[sessionPolicyDocumentType]
+    var PolicyArns: js.UndefOr[policyDescriptorListType]
   }
 
   object GetFederationTokenRequest {
     def apply(
         Name: userNameType,
         DurationSeconds: js.UndefOr[durationSecondsType] = js.undefined,
-        Policy: js.UndefOr[sessionPolicyDocumentType] = js.undefined
+        Policy: js.UndefOr[sessionPolicyDocumentType] = js.undefined,
+        PolicyArns: js.UndefOr[policyDescriptorListType] = js.undefined
     ): GetFederationTokenRequest = {
       val __obj = js.Dictionary[js.Any](
         "Name" -> Name.asInstanceOf[js.Any]
@@ -451,6 +482,7 @@ package sts {
 
       DurationSeconds.foreach(__v => __obj.update("DurationSeconds", __v.asInstanceOf[js.Any]))
       Policy.foreach(__v => __obj.update("Policy", __v.asInstanceOf[js.Any]))
+      PolicyArns.foreach(__v => __obj.update("PolicyArns", __v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetFederationTokenRequest]
     }
   }
@@ -519,59 +551,20 @@ package sts {
   }
 
   /**
-    * The request could not be fulfilled because the non-AWS identity provider (IDP) that was asked to verify the incoming identity token could not be reached. This is often a transient error caused by network conditions. Retry the request a limited number of times so that you don't exceed the request rate. If the error persists, the non-AWS identity provider might be down or not responding.
+    * A reference to the IAM managed policy that is passed as a session policy for a role session or a federated user session.
     */
   @js.native
-  trait IDPCommunicationErrorExceptionException extends js.Object {
-    val message: idpCommunicationErrorMessage
+  trait PolicyDescriptorType extends js.Object {
+    var arn: js.UndefOr[arnType]
   }
 
-  /**
-    * The identity provider (IdP) reported that authentication failed. This might be because the claim is invalid.
-    *  If this error is returned for the <code>AssumeRoleWithWebIdentity</code> operation, it can also mean that the claim has expired or has been explicitly revoked.
-    */
-  @js.native
-  trait IDPRejectedClaimExceptionException extends js.Object {
-    val message: idpRejectedClaimMessage
-  }
-
-  /**
-    * The error returned if the message passed to <code>DecodeAuthorizationMessage</code> was invalid. This can happen if the token contains invalid characters, such as linebreaks.
-    */
-  @js.native
-  trait InvalidAuthorizationMessageExceptionException extends js.Object {
-    val message: invalidAuthorizationMessage
-  }
-
-  /**
-    * The web identity token that was passed could not be validated by AWS. Get a new identity token from the identity provider and then retry the request.
-    */
-  @js.native
-  trait InvalidIdentityTokenExceptionException extends js.Object {
-    val message: invalidIdentityTokenMessage
-  }
-
-  /**
-    * The request was rejected because the policy document was malformed. The error message describes the specific error.
-    */
-  @js.native
-  trait MalformedPolicyDocumentExceptionException extends js.Object {
-    val message: malformedPolicyDocumentMessage
-  }
-
-  /**
-    * The request was rejected because the policy document was too large. The error message describes how big the policy document is, in packed form, as a percentage of what the API allows.
-    */
-  @js.native
-  trait PackedPolicyTooLargeExceptionException extends js.Object {
-    val message: packedPolicyTooLargeMessage
-  }
-
-  /**
-    * STS is not activated in the requested region for the account that is being asked to generate credentials. The account administrator must use the IAM console to activate STS in that region. For more information, see [[http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html|Activating and Deactivating AWS STS in an AWS Region]] in the <i>IAM User Guide</i>.
-    */
-  @js.native
-  trait RegionDisabledExceptionException extends js.Object {
-    val message: regionDisabledMessage
+  object PolicyDescriptorType {
+    def apply(
+        arn: js.UndefOr[arnType] = js.undefined
+    ): PolicyDescriptorType = {
+      val __obj = js.Dictionary.empty[js.Any]
+      arn.foreach(__v => __obj.update("arn", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PolicyDescriptorType]
+    }
   }
 }

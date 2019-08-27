@@ -27,6 +27,8 @@ package object pinpoint {
   type ListOfEndpointResponse          = js.Array[EndpointResponse]
   type ListOfExportJobResponse         = js.Array[ExportJobResponse]
   type ListOfImportJobResponse         = js.Array[ImportJobResponse]
+  type ListOfResultRow                 = js.Array[ResultRow]
+  type ListOfResultRowValue            = js.Array[ResultRowValue]
   type ListOfSegmentDimensions         = js.Array[SegmentDimensions]
   type ListOfSegmentGroup              = js.Array[SegmentGroup]
   type ListOfSegmentReference          = js.Array[SegmentReference]
@@ -61,6 +63,7 @@ package object pinpoint {
   type __double                        = Double
   type __integer                       = Int
   type __string                        = String
+  type __timestampIso8601              = js.Date
 
   implicit final class PinpointOps(val service: Pinpoint) extends AnyVal {
 
@@ -120,6 +123,9 @@ package object pinpoint {
         params: GetApnsVoipSandboxChannelRequest
     ): Future[GetApnsVoipSandboxChannelResponse]                    = service.getApnsVoipSandboxChannel(params).promise.toFuture
     def getAppFuture(params: GetAppRequest): Future[GetAppResponse] = service.getApp(params).promise.toFuture
+    def getApplicationDateRangeKpiFuture(
+        params: GetApplicationDateRangeKpiRequest
+    ): Future[GetApplicationDateRangeKpiResponse] = service.getApplicationDateRangeKpi(params).promise.toFuture
     def getApplicationSettingsFuture(params: GetApplicationSettingsRequest): Future[GetApplicationSettingsResponse] =
       service.getApplicationSettings(params).promise.toFuture
     def getAppsFuture(params: GetAppsRequest): Future[GetAppsResponse] = service.getApps(params).promise.toFuture
@@ -127,6 +133,8 @@ package object pinpoint {
       service.getBaiduChannel(params).promise.toFuture
     def getCampaignActivitiesFuture(params: GetCampaignActivitiesRequest): Future[GetCampaignActivitiesResponse] =
       service.getCampaignActivities(params).promise.toFuture
+    def getCampaignDateRangeKpiFuture(params: GetCampaignDateRangeKpiRequest): Future[GetCampaignDateRangeKpiResponse] =
+      service.getCampaignDateRangeKpi(params).promise.toFuture
     def getCampaignFuture(params: GetCampaignRequest): Future[GetCampaignResponse] =
       service.getCampaign(params).promise.toFuture
     def getCampaignVersionFuture(params: GetCampaignVersionRequest): Future[GetCampaignVersionResponse] =
@@ -262,44 +270,49 @@ package pinpoint {
         params: GetApnsVoipSandboxChannelRequest
     ): Request[GetApnsVoipSandboxChannelResponse]              = js.native
     def getApp(params: GetAppRequest): Request[GetAppResponse] = js.native
+    def getApplicationDateRangeKpi(
+        params: GetApplicationDateRangeKpiRequest
+    ): Request[GetApplicationDateRangeKpiResponse] = js.native
     def getApplicationSettings(params: GetApplicationSettingsRequest): Request[GetApplicationSettingsResponse] =
       js.native
     def getApps(params: GetAppsRequest): Request[GetAppsResponse]                                           = js.native
     def getBaiduChannel(params: GetBaiduChannelRequest): Request[GetBaiduChannelResponse]                   = js.native
     def getCampaign(params: GetCampaignRequest): Request[GetCampaignResponse]                               = js.native
     def getCampaignActivities(params: GetCampaignActivitiesRequest): Request[GetCampaignActivitiesResponse] = js.native
-    def getCampaignVersion(params: GetCampaignVersionRequest): Request[GetCampaignVersionResponse]          = js.native
-    def getCampaignVersions(params: GetCampaignVersionsRequest): Request[GetCampaignVersionsResponse]       = js.native
-    def getCampaigns(params: GetCampaignsRequest): Request[GetCampaignsResponse]                            = js.native
-    def getChannels(params: GetChannelsRequest): Request[GetChannelsResponse]                               = js.native
-    def getEmailChannel(params: GetEmailChannelRequest): Request[GetEmailChannelResponse]                   = js.native
-    def getEndpoint(params: GetEndpointRequest): Request[GetEndpointResponse]                               = js.native
-    def getEventStream(params: GetEventStreamRequest): Request[GetEventStreamResponse]                      = js.native
-    def getExportJob(params: GetExportJobRequest): Request[GetExportJobResponse]                            = js.native
-    def getExportJobs(params: GetExportJobsRequest): Request[GetExportJobsResponse]                         = js.native
-    def getGcmChannel(params: GetGcmChannelRequest): Request[GetGcmChannelResponse]                         = js.native
-    def getImportJob(params: GetImportJobRequest): Request[GetImportJobResponse]                            = js.native
-    def getImportJobs(params: GetImportJobsRequest): Request[GetImportJobsResponse]                         = js.native
-    def getSegment(params: GetSegmentRequest): Request[GetSegmentResponse]                                  = js.native
-    def getSegmentExportJobs(params: GetSegmentExportJobsRequest): Request[GetSegmentExportJobsResponse]    = js.native
-    def getSegmentImportJobs(params: GetSegmentImportJobsRequest): Request[GetSegmentImportJobsResponse]    = js.native
-    def getSegmentVersion(params: GetSegmentVersionRequest): Request[GetSegmentVersionResponse]             = js.native
-    def getSegmentVersions(params: GetSegmentVersionsRequest): Request[GetSegmentVersionsResponse]          = js.native
-    def getSegments(params: GetSegmentsRequest): Request[GetSegmentsResponse]                               = js.native
-    def getSmsChannel(params: GetSmsChannelRequest): Request[GetSmsChannelResponse]                         = js.native
-    def getUserEndpoints(params: GetUserEndpointsRequest): Request[GetUserEndpointsResponse]                = js.native
-    def getVoiceChannel(params: GetVoiceChannelRequest): Request[GetVoiceChannelResponse]                   = js.native
-    def listTagsForResource(params: ListTagsForResourceRequest): Request[ListTagsForResourceResponse]       = js.native
-    def phoneNumberValidate(params: PhoneNumberValidateRequest): Request[PhoneNumberValidateResponse]       = js.native
-    def putEventStream(params: PutEventStreamRequest): Request[PutEventStreamResponse]                      = js.native
-    def putEvents(params: PutEventsRequest): Request[PutEventsResponse]                                     = js.native
-    def removeAttributes(params: RemoveAttributesRequest): Request[RemoveAttributesResponse]                = js.native
-    def sendMessages(params: SendMessagesRequest): Request[SendMessagesResponse]                            = js.native
-    def sendUsersMessages(params: SendUsersMessagesRequest): Request[SendUsersMessagesResponse]             = js.native
-    def tagResource(params: TagResourceRequest): Request[js.Object]                                         = js.native
-    def untagResource(params: UntagResourceRequest): Request[js.Object]                                     = js.native
-    def updateAdmChannel(params: UpdateAdmChannelRequest): Request[UpdateAdmChannelResponse]                = js.native
-    def updateApnsChannel(params: UpdateApnsChannelRequest): Request[UpdateApnsChannelResponse]             = js.native
+    def getCampaignDateRangeKpi(params: GetCampaignDateRangeKpiRequest): Request[GetCampaignDateRangeKpiResponse] =
+      js.native
+    def getCampaignVersion(params: GetCampaignVersionRequest): Request[GetCampaignVersionResponse]       = js.native
+    def getCampaignVersions(params: GetCampaignVersionsRequest): Request[GetCampaignVersionsResponse]    = js.native
+    def getCampaigns(params: GetCampaignsRequest): Request[GetCampaignsResponse]                         = js.native
+    def getChannels(params: GetChannelsRequest): Request[GetChannelsResponse]                            = js.native
+    def getEmailChannel(params: GetEmailChannelRequest): Request[GetEmailChannelResponse]                = js.native
+    def getEndpoint(params: GetEndpointRequest): Request[GetEndpointResponse]                            = js.native
+    def getEventStream(params: GetEventStreamRequest): Request[GetEventStreamResponse]                   = js.native
+    def getExportJob(params: GetExportJobRequest): Request[GetExportJobResponse]                         = js.native
+    def getExportJobs(params: GetExportJobsRequest): Request[GetExportJobsResponse]                      = js.native
+    def getGcmChannel(params: GetGcmChannelRequest): Request[GetGcmChannelResponse]                      = js.native
+    def getImportJob(params: GetImportJobRequest): Request[GetImportJobResponse]                         = js.native
+    def getImportJobs(params: GetImportJobsRequest): Request[GetImportJobsResponse]                      = js.native
+    def getSegment(params: GetSegmentRequest): Request[GetSegmentResponse]                               = js.native
+    def getSegmentExportJobs(params: GetSegmentExportJobsRequest): Request[GetSegmentExportJobsResponse] = js.native
+    def getSegmentImportJobs(params: GetSegmentImportJobsRequest): Request[GetSegmentImportJobsResponse] = js.native
+    def getSegmentVersion(params: GetSegmentVersionRequest): Request[GetSegmentVersionResponse]          = js.native
+    def getSegmentVersions(params: GetSegmentVersionsRequest): Request[GetSegmentVersionsResponse]       = js.native
+    def getSegments(params: GetSegmentsRequest): Request[GetSegmentsResponse]                            = js.native
+    def getSmsChannel(params: GetSmsChannelRequest): Request[GetSmsChannelResponse]                      = js.native
+    def getUserEndpoints(params: GetUserEndpointsRequest): Request[GetUserEndpointsResponse]             = js.native
+    def getVoiceChannel(params: GetVoiceChannelRequest): Request[GetVoiceChannelResponse]                = js.native
+    def listTagsForResource(params: ListTagsForResourceRequest): Request[ListTagsForResourceResponse]    = js.native
+    def phoneNumberValidate(params: PhoneNumberValidateRequest): Request[PhoneNumberValidateResponse]    = js.native
+    def putEventStream(params: PutEventStreamRequest): Request[PutEventStreamResponse]                   = js.native
+    def putEvents(params: PutEventsRequest): Request[PutEventsResponse]                                  = js.native
+    def removeAttributes(params: RemoveAttributesRequest): Request[RemoveAttributesResponse]             = js.native
+    def sendMessages(params: SendMessagesRequest): Request[SendMessagesResponse]                         = js.native
+    def sendUsersMessages(params: SendUsersMessagesRequest): Request[SendUsersMessagesResponse]          = js.native
+    def tagResource(params: TagResourceRequest): Request[js.Object]                                      = js.native
+    def untagResource(params: UntagResourceRequest): Request[js.Object]                                  = js.native
+    def updateAdmChannel(params: UpdateAdmChannelRequest): Request[UpdateAdmChannelResponse]             = js.native
+    def updateApnsChannel(params: UpdateApnsChannelRequest): Request[UpdateApnsChannelResponse]          = js.native
     def updateApnsSandboxChannel(params: UpdateApnsSandboxChannelRequest): Request[UpdateApnsSandboxChannelResponse] =
       js.native
     def updateApnsVoipChannel(params: UpdateApnsVoipChannelRequest): Request[UpdateApnsVoipChannelResponse] = js.native
@@ -321,34 +334,37 @@ package pinpoint {
   }
 
   /**
-    * Amazon Device Messaging channel definition.
+    * Specifies the status and settings of the ADM (Amazon Device Messaging) channel for an application.
     */
   @js.native
   trait ADMChannelRequest extends js.Object {
-    var ClientId: js.UndefOr[__string]
-    var ClientSecret: js.UndefOr[__string]
+    var ClientId: __string
+    var ClientSecret: __string
     var Enabled: js.UndefOr[__boolean]
   }
 
   object ADMChannelRequest {
     def apply(
-        ClientId: js.UndefOr[__string] = js.undefined,
-        ClientSecret: js.UndefOr[__string] = js.undefined,
+        ClientId: __string,
+        ClientSecret: __string,
         Enabled: js.UndefOr[__boolean] = js.undefined
     ): ADMChannelRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ClientId.foreach(__v => __obj.update("ClientId", __v.asInstanceOf[js.Any]))
-      ClientSecret.foreach(__v => __obj.update("ClientSecret", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dictionary[js.Any](
+        "ClientId"     -> ClientId.asInstanceOf[js.Any],
+        "ClientSecret" -> ClientSecret.asInstanceOf[js.Any]
+      )
+
       Enabled.foreach(__v => __obj.update("Enabled", __v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ADMChannelRequest]
     }
   }
 
   /**
-    * Amazon Device Messaging channel definition.
+    * Provides information about the status and settings of the ADM (Amazon Device Messaging) channel for an application.
     */
   @js.native
   trait ADMChannelResponse extends js.Object {
+    var Platform: __string
     var ApplicationId: js.UndefOr[__string]
     var CreationDate: js.UndefOr[__string]
     var Enabled: js.UndefOr[__boolean]
@@ -357,12 +373,12 @@ package pinpoint {
     var IsArchived: js.UndefOr[__boolean]
     var LastModifiedBy: js.UndefOr[__string]
     var LastModifiedDate: js.UndefOr[__string]
-    var Platform: js.UndefOr[__string]
     var Version: js.UndefOr[__integer]
   }
 
   object ADMChannelResponse {
     def apply(
+        Platform: __string,
         ApplicationId: js.UndefOr[__string] = js.undefined,
         CreationDate: js.UndefOr[__string] = js.undefined,
         Enabled: js.UndefOr[__boolean] = js.undefined,
@@ -371,10 +387,12 @@ package pinpoint {
         IsArchived: js.UndefOr[__boolean] = js.undefined,
         LastModifiedBy: js.UndefOr[__string] = js.undefined,
         LastModifiedDate: js.UndefOr[__string] = js.undefined,
-        Platform: js.UndefOr[__string] = js.undefined,
         Version: js.UndefOr[__integer] = js.undefined
     ): ADMChannelResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dictionary[js.Any](
+        "Platform" -> Platform.asInstanceOf[js.Any]
+      )
+
       ApplicationId.foreach(__v => __obj.update("ApplicationId", __v.asInstanceOf[js.Any]))
       CreationDate.foreach(__v => __obj.update("CreationDate", __v.asInstanceOf[js.Any]))
       Enabled.foreach(__v => __obj.update("Enabled", __v.asInstanceOf[js.Any]))
@@ -383,14 +401,13 @@ package pinpoint {
       IsArchived.foreach(__v => __obj.update("IsArchived", __v.asInstanceOf[js.Any]))
       LastModifiedBy.foreach(__v => __obj.update("LastModifiedBy", __v.asInstanceOf[js.Any]))
       LastModifiedDate.foreach(__v => __obj.update("LastModifiedDate", __v.asInstanceOf[js.Any]))
-      Platform.foreach(__v => __obj.update("Platform", __v.asInstanceOf[js.Any]))
       Version.foreach(__v => __obj.update("Version", __v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ADMChannelResponse]
     }
   }
 
   /**
-    * ADM Message.
+    * Specifies the settings for a one-time message that's sent directly to an endpoint through the ADM (Amazon Device Messaging) channel.
     */
   @js.native
   trait ADMMessage extends js.Object {
@@ -453,7 +470,7 @@ package pinpoint {
   }
 
   /**
-    * Apple Push Notification Service channel definition.
+    * Specifies the status and settings of the APNs (Apple Push Notification service) channel for an application.
     */
   @js.native
   trait APNSChannelRequest extends js.Object {
@@ -492,10 +509,11 @@ package pinpoint {
   }
 
   /**
-    * Apple Distribution Push Notification Service channel definition.
+    * Provides information about the status and settings of the APNs (Apple Push Notification service) channel for an application.
     */
   @js.native
   trait APNSChannelResponse extends js.Object {
+    var Platform: __string
     var ApplicationId: js.UndefOr[__string]
     var CreationDate: js.UndefOr[__string]
     var DefaultAuthenticationMethod: js.UndefOr[__string]
@@ -506,12 +524,12 @@ package pinpoint {
     var IsArchived: js.UndefOr[__boolean]
     var LastModifiedBy: js.UndefOr[__string]
     var LastModifiedDate: js.UndefOr[__string]
-    var Platform: js.UndefOr[__string]
     var Version: js.UndefOr[__integer]
   }
 
   object APNSChannelResponse {
     def apply(
+        Platform: __string,
         ApplicationId: js.UndefOr[__string] = js.undefined,
         CreationDate: js.UndefOr[__string] = js.undefined,
         DefaultAuthenticationMethod: js.UndefOr[__string] = js.undefined,
@@ -522,10 +540,12 @@ package pinpoint {
         IsArchived: js.UndefOr[__boolean] = js.undefined,
         LastModifiedBy: js.UndefOr[__string] = js.undefined,
         LastModifiedDate: js.UndefOr[__string] = js.undefined,
-        Platform: js.UndefOr[__string] = js.undefined,
         Version: js.UndefOr[__integer] = js.undefined
     ): APNSChannelResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dictionary[js.Any](
+        "Platform" -> Platform.asInstanceOf[js.Any]
+      )
+
       ApplicationId.foreach(__v => __obj.update("ApplicationId", __v.asInstanceOf[js.Any]))
       CreationDate.foreach(__v => __obj.update("CreationDate", __v.asInstanceOf[js.Any]))
       DefaultAuthenticationMethod.foreach(__v => __obj.update("DefaultAuthenticationMethod", __v.asInstanceOf[js.Any]))
@@ -536,14 +556,13 @@ package pinpoint {
       IsArchived.foreach(__v => __obj.update("IsArchived", __v.asInstanceOf[js.Any]))
       LastModifiedBy.foreach(__v => __obj.update("LastModifiedBy", __v.asInstanceOf[js.Any]))
       LastModifiedDate.foreach(__v => __obj.update("LastModifiedDate", __v.asInstanceOf[js.Any]))
-      Platform.foreach(__v => __obj.update("Platform", __v.asInstanceOf[js.Any]))
       Version.foreach(__v => __obj.update("Version", __v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[APNSChannelResponse]
     }
   }
 
   /**
-    * APNS Message.
+    * Specifies the settings for a one-time message that's sent directly to an endpoint through the APNs (Apple Push Notification service) channel.
     */
   @js.native
   trait APNSMessage extends js.Object {
@@ -611,7 +630,7 @@ package pinpoint {
   }
 
   /**
-    * Apple Development Push Notification Service channel definition.
+    * Specifies the status and settings of the APNs (Apple Push Notification service) sandbox channel for an application.
     */
   @js.native
   trait APNSSandboxChannelRequest extends js.Object {
@@ -650,10 +669,11 @@ package pinpoint {
   }
 
   /**
-    * Apple Development Push Notification Service channel definition.
+    * Provides information about the status and settings of the APNs (Apple Push Notification service) sandbox channel for an application.
     */
   @js.native
   trait APNSSandboxChannelResponse extends js.Object {
+    var Platform: __string
     var ApplicationId: js.UndefOr[__string]
     var CreationDate: js.UndefOr[__string]
     var DefaultAuthenticationMethod: js.UndefOr[__string]
@@ -664,12 +684,12 @@ package pinpoint {
     var IsArchived: js.UndefOr[__boolean]
     var LastModifiedBy: js.UndefOr[__string]
     var LastModifiedDate: js.UndefOr[__string]
-    var Platform: js.UndefOr[__string]
     var Version: js.UndefOr[__integer]
   }
 
   object APNSSandboxChannelResponse {
     def apply(
+        Platform: __string,
         ApplicationId: js.UndefOr[__string] = js.undefined,
         CreationDate: js.UndefOr[__string] = js.undefined,
         DefaultAuthenticationMethod: js.UndefOr[__string] = js.undefined,
@@ -680,10 +700,12 @@ package pinpoint {
         IsArchived: js.UndefOr[__boolean] = js.undefined,
         LastModifiedBy: js.UndefOr[__string] = js.undefined,
         LastModifiedDate: js.UndefOr[__string] = js.undefined,
-        Platform: js.UndefOr[__string] = js.undefined,
         Version: js.UndefOr[__integer] = js.undefined
     ): APNSSandboxChannelResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dictionary[js.Any](
+        "Platform" -> Platform.asInstanceOf[js.Any]
+      )
+
       ApplicationId.foreach(__v => __obj.update("ApplicationId", __v.asInstanceOf[js.Any]))
       CreationDate.foreach(__v => __obj.update("CreationDate", __v.asInstanceOf[js.Any]))
       DefaultAuthenticationMethod.foreach(__v => __obj.update("DefaultAuthenticationMethod", __v.asInstanceOf[js.Any]))
@@ -694,14 +716,13 @@ package pinpoint {
       IsArchived.foreach(__v => __obj.update("IsArchived", __v.asInstanceOf[js.Any]))
       LastModifiedBy.foreach(__v => __obj.update("LastModifiedBy", __v.asInstanceOf[js.Any]))
       LastModifiedDate.foreach(__v => __obj.update("LastModifiedDate", __v.asInstanceOf[js.Any]))
-      Platform.foreach(__v => __obj.update("Platform", __v.asInstanceOf[js.Any]))
       Version.foreach(__v => __obj.update("Version", __v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[APNSSandboxChannelResponse]
     }
   }
 
   /**
-    * Apple VoIP Push Notification Service channel definition.
+    * Specifies the status and settings of the APNs (Apple Push Notification service) VoIP channel for an application.
     */
   @js.native
   trait APNSVoipChannelRequest extends js.Object {
@@ -740,10 +761,11 @@ package pinpoint {
   }
 
   /**
-    * Apple VoIP Push Notification Service channel definition.
+    * Provides information about the status and settings of the APNs (Apple Push Notification service) VoIP channel for an application.
     */
   @js.native
   trait APNSVoipChannelResponse extends js.Object {
+    var Platform: __string
     var ApplicationId: js.UndefOr[__string]
     var CreationDate: js.UndefOr[__string]
     var DefaultAuthenticationMethod: js.UndefOr[__string]
@@ -754,12 +776,12 @@ package pinpoint {
     var IsArchived: js.UndefOr[__boolean]
     var LastModifiedBy: js.UndefOr[__string]
     var LastModifiedDate: js.UndefOr[__string]
-    var Platform: js.UndefOr[__string]
     var Version: js.UndefOr[__integer]
   }
 
   object APNSVoipChannelResponse {
     def apply(
+        Platform: __string,
         ApplicationId: js.UndefOr[__string] = js.undefined,
         CreationDate: js.UndefOr[__string] = js.undefined,
         DefaultAuthenticationMethod: js.UndefOr[__string] = js.undefined,
@@ -770,10 +792,12 @@ package pinpoint {
         IsArchived: js.UndefOr[__boolean] = js.undefined,
         LastModifiedBy: js.UndefOr[__string] = js.undefined,
         LastModifiedDate: js.UndefOr[__string] = js.undefined,
-        Platform: js.UndefOr[__string] = js.undefined,
         Version: js.UndefOr[__integer] = js.undefined
     ): APNSVoipChannelResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dictionary[js.Any](
+        "Platform" -> Platform.asInstanceOf[js.Any]
+      )
+
       ApplicationId.foreach(__v => __obj.update("ApplicationId", __v.asInstanceOf[js.Any]))
       CreationDate.foreach(__v => __obj.update("CreationDate", __v.asInstanceOf[js.Any]))
       DefaultAuthenticationMethod.foreach(__v => __obj.update("DefaultAuthenticationMethod", __v.asInstanceOf[js.Any]))
@@ -784,14 +808,13 @@ package pinpoint {
       IsArchived.foreach(__v => __obj.update("IsArchived", __v.asInstanceOf[js.Any]))
       LastModifiedBy.foreach(__v => __obj.update("LastModifiedBy", __v.asInstanceOf[js.Any]))
       LastModifiedDate.foreach(__v => __obj.update("LastModifiedDate", __v.asInstanceOf[js.Any]))
-      Platform.foreach(__v => __obj.update("Platform", __v.asInstanceOf[js.Any]))
       Version.foreach(__v => __obj.update("Version", __v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[APNSVoipChannelResponse]
     }
   }
 
   /**
-    * Apple VoIP Developer Push Notification Service channel definition.
+    * Specifies the status and settings of the APNs (Apple Push Notification service) VoIP sandbox channel for an application.
     */
   @js.native
   trait APNSVoipSandboxChannelRequest extends js.Object {
@@ -830,10 +853,11 @@ package pinpoint {
   }
 
   /**
-    * Apple VoIP Developer Push Notification Service channel definition.
+    * Provides information about the status and settings of the APNs (Apple Push Notification service) VoIP sandbox channel for an application.
     */
   @js.native
   trait APNSVoipSandboxChannelResponse extends js.Object {
+    var Platform: __string
     var ApplicationId: js.UndefOr[__string]
     var CreationDate: js.UndefOr[__string]
     var DefaultAuthenticationMethod: js.UndefOr[__string]
@@ -844,12 +868,12 @@ package pinpoint {
     var IsArchived: js.UndefOr[__boolean]
     var LastModifiedBy: js.UndefOr[__string]
     var LastModifiedDate: js.UndefOr[__string]
-    var Platform: js.UndefOr[__string]
     var Version: js.UndefOr[__integer]
   }
 
   object APNSVoipSandboxChannelResponse {
     def apply(
+        Platform: __string,
         ApplicationId: js.UndefOr[__string] = js.undefined,
         CreationDate: js.UndefOr[__string] = js.undefined,
         DefaultAuthenticationMethod: js.UndefOr[__string] = js.undefined,
@@ -860,10 +884,12 @@ package pinpoint {
         IsArchived: js.UndefOr[__boolean] = js.undefined,
         LastModifiedBy: js.UndefOr[__string] = js.undefined,
         LastModifiedDate: js.UndefOr[__string] = js.undefined,
-        Platform: js.UndefOr[__string] = js.undefined,
         Version: js.UndefOr[__integer] = js.undefined
     ): APNSVoipSandboxChannelResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dictionary[js.Any](
+        "Platform" -> Platform.asInstanceOf[js.Any]
+      )
+
       ApplicationId.foreach(__v => __obj.update("ApplicationId", __v.asInstanceOf[js.Any]))
       CreationDate.foreach(__v => __obj.update("CreationDate", __v.asInstanceOf[js.Any]))
       DefaultAuthenticationMethod.foreach(__v => __obj.update("DefaultAuthenticationMethod", __v.asInstanceOf[js.Any]))
@@ -874,7 +900,6 @@ package pinpoint {
       IsArchived.foreach(__v => __obj.update("IsArchived", __v.asInstanceOf[js.Any]))
       LastModifiedBy.foreach(__v => __obj.update("LastModifiedBy", __v.asInstanceOf[js.Any]))
       LastModifiedDate.foreach(__v => __obj.update("LastModifiedDate", __v.asInstanceOf[js.Any]))
-      Platform.foreach(__v => __obj.update("Platform", __v.asInstanceOf[js.Any]))
       Version.foreach(__v => __obj.update("Version", __v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[APNSVoipSandboxChannelResponse]
     }
@@ -889,35 +914,37 @@ package pinpoint {
   }
 
   /**
-    * Activities for campaign.
+    * Provides information about the activities that were performed by a campaign.
     */
   @js.native
   trait ActivitiesResponse extends js.Object {
-    var Item: js.UndefOr[ListOfActivityResponse]
+    var Item: ListOfActivityResponse
     var NextToken: js.UndefOr[__string]
   }
 
   object ActivitiesResponse {
     def apply(
-        Item: js.UndefOr[ListOfActivityResponse] = js.undefined,
+        Item: ListOfActivityResponse,
         NextToken: js.UndefOr[__string] = js.undefined
     ): ActivitiesResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Item.foreach(__v => __obj.update("Item", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dictionary[js.Any](
+        "Item" -> Item.asInstanceOf[js.Any]
+      )
+
       NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ActivitiesResponse]
     }
   }
 
   /**
-    * Activity definition
+    * Provides information about an activity that was performed by a campaign.
     */
   @js.native
   trait ActivityResponse extends js.Object {
-    var ApplicationId: js.UndefOr[__string]
-    var CampaignId: js.UndefOr[__string]
+    var ApplicationId: __string
+    var CampaignId: __string
+    var Id: __string
     var End: js.UndefOr[__string]
-    var Id: js.UndefOr[__string]
     var Result: js.UndefOr[__string]
     var ScheduledStart: js.UndefOr[__string]
     var Start: js.UndefOr[__string]
@@ -931,10 +958,10 @@ package pinpoint {
 
   object ActivityResponse {
     def apply(
-        ApplicationId: js.UndefOr[__string] = js.undefined,
-        CampaignId: js.UndefOr[__string] = js.undefined,
+        ApplicationId: __string,
+        CampaignId: __string,
+        Id: __string,
         End: js.UndefOr[__string] = js.undefined,
-        Id: js.UndefOr[__string] = js.undefined,
         Result: js.UndefOr[__string] = js.undefined,
         ScheduledStart: js.UndefOr[__string] = js.undefined,
         Start: js.UndefOr[__string] = js.undefined,
@@ -945,11 +972,13 @@ package pinpoint {
         TotalEndpointCount: js.UndefOr[__integer] = js.undefined,
         TreatmentId: js.UndefOr[__string] = js.undefined
     ): ActivityResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ApplicationId.foreach(__v => __obj.update("ApplicationId", __v.asInstanceOf[js.Any]))
-      CampaignId.foreach(__v => __obj.update("CampaignId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dictionary[js.Any](
+        "ApplicationId" -> ApplicationId.asInstanceOf[js.Any],
+        "CampaignId"    -> CampaignId.asInstanceOf[js.Any],
+        "Id"            -> Id.asInstanceOf[js.Any]
+      )
+
       End.foreach(__v => __obj.update("End", __v.asInstanceOf[js.Any]))
-      Id.foreach(__v => __obj.update("Id", __v.asInstanceOf[js.Any]))
       Result.foreach(__v => __obj.update("Result", __v.asInstanceOf[js.Any]))
       ScheduledStart.foreach(__v => __obj.update("ScheduledStart", __v.asInstanceOf[js.Any]))
       Start.foreach(__v => __obj.update("Start", __v.asInstanceOf[js.Any]))
@@ -964,7 +993,7 @@ package pinpoint {
   }
 
   /**
-    * Address configuration.
+    * Specifies address-based configuration settings for a message that's sent directly to an endpoint.
     */
   @js.native
   trait AddressConfiguration extends js.Object {
@@ -997,38 +1026,75 @@ package pinpoint {
   }
 
   /**
-    * Application Response.
+    * Provides the results of a query that retrieved the data for a standard metric that applies to an application, and provides information about that query.
+    */
+  @js.native
+  trait ApplicationDateRangeKpiResponse extends js.Object {
+    var ApplicationId: __string
+    var EndTime: __timestampIso8601
+    var KpiName: __string
+    var KpiResult: BaseKpiResult
+    var StartTime: __timestampIso8601
+    var NextToken: js.UndefOr[__string]
+  }
+
+  object ApplicationDateRangeKpiResponse {
+    def apply(
+        ApplicationId: __string,
+        EndTime: __timestampIso8601,
+        KpiName: __string,
+        KpiResult: BaseKpiResult,
+        StartTime: __timestampIso8601,
+        NextToken: js.UndefOr[__string] = js.undefined
+    ): ApplicationDateRangeKpiResponse = {
+      val __obj = js.Dictionary[js.Any](
+        "ApplicationId" -> ApplicationId.asInstanceOf[js.Any],
+        "EndTime"       -> EndTime.asInstanceOf[js.Any],
+        "KpiName"       -> KpiName.asInstanceOf[js.Any],
+        "KpiResult"     -> KpiResult.asInstanceOf[js.Any],
+        "StartTime"     -> StartTime.asInstanceOf[js.Any]
+      )
+
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ApplicationDateRangeKpiResponse]
+    }
+  }
+
+  /**
+    * Provides information about an application.
     */
   @js.native
   trait ApplicationResponse extends js.Object {
-    var Arn: js.UndefOr[__string]
-    var Id: js.UndefOr[__string]
-    var Name: js.UndefOr[__string]
+    var Arn: __string
+    var Id: __string
+    var Name: __string
     var tags: js.UndefOr[MapOf__string]
   }
 
   object ApplicationResponse {
     def apply(
-        Arn: js.UndefOr[__string] = js.undefined,
-        Id: js.UndefOr[__string] = js.undefined,
-        Name: js.UndefOr[__string] = js.undefined,
+        Arn: __string,
+        Id: __string,
+        Name: __string,
         tags: js.UndefOr[MapOf__string] = js.undefined
     ): ApplicationResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Arn.foreach(__v => __obj.update("Arn", __v.asInstanceOf[js.Any]))
-      Id.foreach(__v => __obj.update("Id", __v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dictionary[js.Any](
+        "Arn"  -> Arn.asInstanceOf[js.Any],
+        "Id"   -> Id.asInstanceOf[js.Any],
+        "Name" -> Name.asInstanceOf[js.Any]
+      )
+
       tags.foreach(__v => __obj.update("tags", __v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ApplicationResponse]
     }
   }
 
   /**
-    * Application settings.
+    * Provides information about an application, including the default settings for an application.
     */
   @js.native
   trait ApplicationSettingsResource extends js.Object {
-    var ApplicationId: js.UndefOr[__string]
+    var ApplicationId: __string
     var CampaignHook: js.UndefOr[CampaignHook]
     var LastModifiedDate: js.UndefOr[__string]
     var Limits: js.UndefOr[CampaignLimits]
@@ -1037,14 +1103,16 @@ package pinpoint {
 
   object ApplicationSettingsResource {
     def apply(
-        ApplicationId: js.UndefOr[__string] = js.undefined,
+        ApplicationId: __string,
         CampaignHook: js.UndefOr[CampaignHook] = js.undefined,
         LastModifiedDate: js.UndefOr[__string] = js.undefined,
         Limits: js.UndefOr[CampaignLimits] = js.undefined,
         QuietTime: js.UndefOr[QuietTime] = js.undefined
     ): ApplicationSettingsResource = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ApplicationId.foreach(__v => __obj.update("ApplicationId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dictionary[js.Any](
+        "ApplicationId" -> ApplicationId.asInstanceOf[js.Any]
+      )
+
       CampaignHook.foreach(__v => __obj.update("CampaignHook", __v.asInstanceOf[js.Any]))
       LastModifiedDate.foreach(__v => __obj.update("LastModifiedDate", __v.asInstanceOf[js.Any]))
       Limits.foreach(__v => __obj.update("Limits", __v.asInstanceOf[js.Any]))
@@ -1054,7 +1122,7 @@ package pinpoint {
   }
 
   /**
-    * Get Applications Result.
+    * Provides information about all of your applications.
     */
   @js.native
   trait ApplicationsResponse extends js.Object {
@@ -1075,22 +1143,24 @@ package pinpoint {
   }
 
   /**
-    * Custom attibute dimension
+    * Specifies attribute-based criteria for including or excluding endpoints from a segment.
     */
   @js.native
   trait AttributeDimension extends js.Object {
+    var Values: ListOf__string
     var AttributeType: js.UndefOr[AttributeType]
-    var Values: js.UndefOr[ListOf__string]
   }
 
   object AttributeDimension {
     def apply(
-        AttributeType: js.UndefOr[AttributeType] = js.undefined,
-        Values: js.UndefOr[ListOf__string] = js.undefined
+        Values: ListOf__string,
+        AttributeType: js.UndefOr[AttributeType] = js.undefined
     ): AttributeDimension = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dictionary[js.Any](
+        "Values" -> Values.asInstanceOf[js.Any]
+      )
+
       AttributeType.foreach(__v => __obj.update("AttributeType", __v.asInstanceOf[js.Any]))
-      Values.foreach(__v => __obj.update("Values", __v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AttributeDimension]
     }
   }
@@ -1103,103 +1173,109 @@ package pinpoint {
   }
 
   /**
-    * Attributes.
+    * Provides information about the type and the names of attributes that were removed from all the endpoints that are associated with an application.
     */
   @js.native
   trait AttributesResource extends js.Object {
-    var ApplicationId: js.UndefOr[__string]
-    var AttributeType: js.UndefOr[__string]
+    var ApplicationId: __string
+    var AttributeType: __string
     var Attributes: js.UndefOr[ListOf__string]
   }
 
   object AttributesResource {
     def apply(
-        ApplicationId: js.UndefOr[__string] = js.undefined,
-        AttributeType: js.UndefOr[__string] = js.undefined,
+        ApplicationId: __string,
+        AttributeType: __string,
         Attributes: js.UndefOr[ListOf__string] = js.undefined
     ): AttributesResource = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ApplicationId.foreach(__v => __obj.update("ApplicationId", __v.asInstanceOf[js.Any]))
-      AttributeType.foreach(__v => __obj.update("AttributeType", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dictionary[js.Any](
+        "ApplicationId" -> ApplicationId.asInstanceOf[js.Any],
+        "AttributeType" -> AttributeType.asInstanceOf[js.Any]
+      )
+
       Attributes.foreach(__v => __obj.update("Attributes", __v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AttributesResource]
     }
   }
 
   /**
-    * Baidu Cloud Push credentials
+    * Specifies the status and settings of the Baidu (Baidu Cloud Push) channel for an application.
     */
   @js.native
   trait BaiduChannelRequest extends js.Object {
-    var ApiKey: js.UndefOr[__string]
+    var ApiKey: __string
+    var SecretKey: __string
     var Enabled: js.UndefOr[__boolean]
-    var SecretKey: js.UndefOr[__string]
   }
 
   object BaiduChannelRequest {
     def apply(
-        ApiKey: js.UndefOr[__string] = js.undefined,
-        Enabled: js.UndefOr[__boolean] = js.undefined,
-        SecretKey: js.UndefOr[__string] = js.undefined
+        ApiKey: __string,
+        SecretKey: __string,
+        Enabled: js.UndefOr[__boolean] = js.undefined
     ): BaiduChannelRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ApiKey.foreach(__v => __obj.update("ApiKey", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dictionary[js.Any](
+        "ApiKey"    -> ApiKey.asInstanceOf[js.Any],
+        "SecretKey" -> SecretKey.asInstanceOf[js.Any]
+      )
+
       Enabled.foreach(__v => __obj.update("Enabled", __v.asInstanceOf[js.Any]))
-      SecretKey.foreach(__v => __obj.update("SecretKey", __v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[BaiduChannelRequest]
     }
   }
 
   /**
-    * Baidu Cloud Messaging channel definition
+    * Provides information about the status and settings of the Baidu (Baidu Cloud Push) channel for an application.
     */
   @js.native
   trait BaiduChannelResponse extends js.Object {
+    var Credential: __string
+    var Platform: __string
     var ApplicationId: js.UndefOr[__string]
     var CreationDate: js.UndefOr[__string]
-    var Credential: js.UndefOr[__string]
     var Enabled: js.UndefOr[__boolean]
     var HasCredential: js.UndefOr[__boolean]
     var Id: js.UndefOr[__string]
     var IsArchived: js.UndefOr[__boolean]
     var LastModifiedBy: js.UndefOr[__string]
     var LastModifiedDate: js.UndefOr[__string]
-    var Platform: js.UndefOr[__string]
     var Version: js.UndefOr[__integer]
   }
 
   object BaiduChannelResponse {
     def apply(
+        Credential: __string,
+        Platform: __string,
         ApplicationId: js.UndefOr[__string] = js.undefined,
         CreationDate: js.UndefOr[__string] = js.undefined,
-        Credential: js.UndefOr[__string] = js.undefined,
         Enabled: js.UndefOr[__boolean] = js.undefined,
         HasCredential: js.UndefOr[__boolean] = js.undefined,
         Id: js.UndefOr[__string] = js.undefined,
         IsArchived: js.UndefOr[__boolean] = js.undefined,
         LastModifiedBy: js.UndefOr[__string] = js.undefined,
         LastModifiedDate: js.UndefOr[__string] = js.undefined,
-        Platform: js.UndefOr[__string] = js.undefined,
         Version: js.UndefOr[__integer] = js.undefined
     ): BaiduChannelResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dictionary[js.Any](
+        "Credential" -> Credential.asInstanceOf[js.Any],
+        "Platform"   -> Platform.asInstanceOf[js.Any]
+      )
+
       ApplicationId.foreach(__v => __obj.update("ApplicationId", __v.asInstanceOf[js.Any]))
       CreationDate.foreach(__v => __obj.update("CreationDate", __v.asInstanceOf[js.Any]))
-      Credential.foreach(__v => __obj.update("Credential", __v.asInstanceOf[js.Any]))
       Enabled.foreach(__v => __obj.update("Enabled", __v.asInstanceOf[js.Any]))
       HasCredential.foreach(__v => __obj.update("HasCredential", __v.asInstanceOf[js.Any]))
       Id.foreach(__v => __obj.update("Id", __v.asInstanceOf[js.Any]))
       IsArchived.foreach(__v => __obj.update("IsArchived", __v.asInstanceOf[js.Any]))
       LastModifiedBy.foreach(__v => __obj.update("LastModifiedBy", __v.asInstanceOf[js.Any]))
       LastModifiedDate.foreach(__v => __obj.update("LastModifiedDate", __v.asInstanceOf[js.Any]))
-      Platform.foreach(__v => __obj.update("Platform", __v.asInstanceOf[js.Any]))
       Version.foreach(__v => __obj.update("Version", __v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[BaiduChannelResponse]
     }
   }
 
   /**
-    * Baidu Message.
+    * Specifies the settings for a one-time message that's sent directly to an endpoint through the Baidu (Baidu Cloud Push) channel.
     */
   @js.native
   trait BaiduMessage extends js.Object {
@@ -1256,55 +1332,117 @@ package pinpoint {
   }
 
   /**
-    * The email message configuration.
+    * Provides the results of a query that retrieved the data for a standard metric that applies to an application or campaign.
+    */
+  @js.native
+  trait BaseKpiResult extends js.Object {
+    var Rows: ListOfResultRow
+  }
+
+  object BaseKpiResult {
+    def apply(
+        Rows: ListOfResultRow
+    ): BaseKpiResult = {
+      val __obj = js.Dictionary[js.Any](
+        "Rows" -> Rows.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[BaseKpiResult]
+    }
+  }
+
+  /**
+    * Provides the results of a query that retrieved the data for a standard metric that applies to a campaign, and provides information about that query.
+    */
+  @js.native
+  trait CampaignDateRangeKpiResponse extends js.Object {
+    var ApplicationId: __string
+    var CampaignId: __string
+    var EndTime: __timestampIso8601
+    var KpiName: __string
+    var KpiResult: BaseKpiResult
+    var StartTime: __timestampIso8601
+    var NextToken: js.UndefOr[__string]
+  }
+
+  object CampaignDateRangeKpiResponse {
+    def apply(
+        ApplicationId: __string,
+        CampaignId: __string,
+        EndTime: __timestampIso8601,
+        KpiName: __string,
+        KpiResult: BaseKpiResult,
+        StartTime: __timestampIso8601,
+        NextToken: js.UndefOr[__string] = js.undefined
+    ): CampaignDateRangeKpiResponse = {
+      val __obj = js.Dictionary[js.Any](
+        "ApplicationId" -> ApplicationId.asInstanceOf[js.Any],
+        "CampaignId"    -> CampaignId.asInstanceOf[js.Any],
+        "EndTime"       -> EndTime.asInstanceOf[js.Any],
+        "KpiName"       -> KpiName.asInstanceOf[js.Any],
+        "KpiResult"     -> KpiResult.asInstanceOf[js.Any],
+        "StartTime"     -> StartTime.asInstanceOf[js.Any]
+      )
+
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CampaignDateRangeKpiResponse]
+    }
+  }
+
+  /**
+    * Specifies the content and "From" address for an email message that's sent to recipients of a campaign.
     */
   @js.native
   trait CampaignEmailMessage extends js.Object {
+    var Title: __string
     var Body: js.UndefOr[__string]
     var FromAddress: js.UndefOr[__string]
     var HtmlBody: js.UndefOr[__string]
-    var Title: js.UndefOr[__string]
   }
 
   object CampaignEmailMessage {
     def apply(
+        Title: __string,
         Body: js.UndefOr[__string] = js.undefined,
         FromAddress: js.UndefOr[__string] = js.undefined,
-        HtmlBody: js.UndefOr[__string] = js.undefined,
-        Title: js.UndefOr[__string] = js.undefined
+        HtmlBody: js.UndefOr[__string] = js.undefined
     ): CampaignEmailMessage = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dictionary[js.Any](
+        "Title" -> Title.asInstanceOf[js.Any]
+      )
+
       Body.foreach(__v => __obj.update("Body", __v.asInstanceOf[js.Any]))
       FromAddress.foreach(__v => __obj.update("FromAddress", __v.asInstanceOf[js.Any]))
       HtmlBody.foreach(__v => __obj.update("HtmlBody", __v.asInstanceOf[js.Any]))
-      Title.foreach(__v => __obj.update("Title", __v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CampaignEmailMessage]
     }
   }
 
   /**
-    * An object that defines the events that cause the campaign to be sent.
+    * Specifies the settings for events that cause a campaign to be sent.
     */
   @js.native
   trait CampaignEventFilter extends js.Object {
-    var Dimensions: js.UndefOr[EventDimensions]
-    var FilterType: js.UndefOr[FilterType]
+    var Dimensions: EventDimensions
+    var FilterType: FilterType
   }
 
   object CampaignEventFilter {
     def apply(
-        Dimensions: js.UndefOr[EventDimensions] = js.undefined,
-        FilterType: js.UndefOr[FilterType] = js.undefined
+        Dimensions: EventDimensions,
+        FilterType: FilterType
     ): CampaignEventFilter = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Dimensions.foreach(__v => __obj.update("Dimensions", __v.asInstanceOf[js.Any]))
-      FilterType.foreach(__v => __obj.update("FilterType", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dictionary[js.Any](
+        "Dimensions" -> Dimensions.asInstanceOf[js.Any],
+        "FilterType" -> FilterType.asInstanceOf[js.Any]
+      )
+
       __obj.asInstanceOf[CampaignEventFilter]
     }
   }
 
   /**
-    * Campaign hook information.
+    * Specifies the AWS Lambda function to use as a code hook for a campaign.
     */
   @js.native
   trait CampaignHook extends js.Object {
@@ -1328,7 +1466,7 @@ package pinpoint {
   }
 
   /**
-    * Campaign Limits are used to limit the number of messages that can be sent to a single endpoint.
+    * Specifies limits on the messages that a campaign can send.
     */
   @js.native
   trait CampaignLimits extends js.Object {
@@ -1355,27 +1493,27 @@ package pinpoint {
   }
 
   /**
-    * Campaign definition
+    * Provides information about the status, configuration, and other settings for a campaign.
     */
   @js.native
   trait CampaignResponse extends js.Object {
+    var ApplicationId: __string
+    var Arn: __string
+    var CreationDate: __string
+    var Id: __string
+    var LastModifiedDate: __string
+    var SegmentId: __string
+    var SegmentVersion: __integer
     var AdditionalTreatments: js.UndefOr[ListOfTreatmentResource]
-    var ApplicationId: js.UndefOr[__string]
-    var Arn: js.UndefOr[__string]
-    var CreationDate: js.UndefOr[__string]
     var DefaultState: js.UndefOr[CampaignState]
     var Description: js.UndefOr[__string]
     var HoldoutPercent: js.UndefOr[__integer]
     var Hook: js.UndefOr[CampaignHook]
-    var Id: js.UndefOr[__string]
     var IsPaused: js.UndefOr[__boolean]
-    var LastModifiedDate: js.UndefOr[__string]
     var Limits: js.UndefOr[CampaignLimits]
     var MessageConfiguration: js.UndefOr[MessageConfiguration]
     var Name: js.UndefOr[__string]
     var Schedule: js.UndefOr[Schedule]
-    var SegmentId: js.UndefOr[__string]
-    var SegmentVersion: js.UndefOr[__integer]
     var State: js.UndefOr[CampaignState]
     var TreatmentDescription: js.UndefOr[__string]
     var TreatmentName: js.UndefOr[__string]
@@ -1385,47 +1523,49 @@ package pinpoint {
 
   object CampaignResponse {
     def apply(
+        ApplicationId: __string,
+        Arn: __string,
+        CreationDate: __string,
+        Id: __string,
+        LastModifiedDate: __string,
+        SegmentId: __string,
+        SegmentVersion: __integer,
         AdditionalTreatments: js.UndefOr[ListOfTreatmentResource] = js.undefined,
-        ApplicationId: js.UndefOr[__string] = js.undefined,
-        Arn: js.UndefOr[__string] = js.undefined,
-        CreationDate: js.UndefOr[__string] = js.undefined,
         DefaultState: js.UndefOr[CampaignState] = js.undefined,
         Description: js.UndefOr[__string] = js.undefined,
         HoldoutPercent: js.UndefOr[__integer] = js.undefined,
         Hook: js.UndefOr[CampaignHook] = js.undefined,
-        Id: js.UndefOr[__string] = js.undefined,
         IsPaused: js.UndefOr[__boolean] = js.undefined,
-        LastModifiedDate: js.UndefOr[__string] = js.undefined,
         Limits: js.UndefOr[CampaignLimits] = js.undefined,
         MessageConfiguration: js.UndefOr[MessageConfiguration] = js.undefined,
         Name: js.UndefOr[__string] = js.undefined,
         Schedule: js.UndefOr[Schedule] = js.undefined,
-        SegmentId: js.UndefOr[__string] = js.undefined,
-        SegmentVersion: js.UndefOr[__integer] = js.undefined,
         State: js.UndefOr[CampaignState] = js.undefined,
         TreatmentDescription: js.UndefOr[__string] = js.undefined,
         TreatmentName: js.UndefOr[__string] = js.undefined,
         Version: js.UndefOr[__integer] = js.undefined,
         tags: js.UndefOr[MapOf__string] = js.undefined
     ): CampaignResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dictionary[js.Any](
+        "ApplicationId"    -> ApplicationId.asInstanceOf[js.Any],
+        "Arn"              -> Arn.asInstanceOf[js.Any],
+        "CreationDate"     -> CreationDate.asInstanceOf[js.Any],
+        "Id"               -> Id.asInstanceOf[js.Any],
+        "LastModifiedDate" -> LastModifiedDate.asInstanceOf[js.Any],
+        "SegmentId"        -> SegmentId.asInstanceOf[js.Any],
+        "SegmentVersion"   -> SegmentVersion.asInstanceOf[js.Any]
+      )
+
       AdditionalTreatments.foreach(__v => __obj.update("AdditionalTreatments", __v.asInstanceOf[js.Any]))
-      ApplicationId.foreach(__v => __obj.update("ApplicationId", __v.asInstanceOf[js.Any]))
-      Arn.foreach(__v => __obj.update("Arn", __v.asInstanceOf[js.Any]))
-      CreationDate.foreach(__v => __obj.update("CreationDate", __v.asInstanceOf[js.Any]))
       DefaultState.foreach(__v => __obj.update("DefaultState", __v.asInstanceOf[js.Any]))
       Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
       HoldoutPercent.foreach(__v => __obj.update("HoldoutPercent", __v.asInstanceOf[js.Any]))
       Hook.foreach(__v => __obj.update("Hook", __v.asInstanceOf[js.Any]))
-      Id.foreach(__v => __obj.update("Id", __v.asInstanceOf[js.Any]))
       IsPaused.foreach(__v => __obj.update("IsPaused", __v.asInstanceOf[js.Any]))
-      LastModifiedDate.foreach(__v => __obj.update("LastModifiedDate", __v.asInstanceOf[js.Any]))
       Limits.foreach(__v => __obj.update("Limits", __v.asInstanceOf[js.Any]))
       MessageConfiguration.foreach(__v => __obj.update("MessageConfiguration", __v.asInstanceOf[js.Any]))
       Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
       Schedule.foreach(__v => __obj.update("Schedule", __v.asInstanceOf[js.Any]))
-      SegmentId.foreach(__v => __obj.update("SegmentId", __v.asInstanceOf[js.Any]))
-      SegmentVersion.foreach(__v => __obj.update("SegmentVersion", __v.asInstanceOf[js.Any]))
       State.foreach(__v => __obj.update("State", __v.asInstanceOf[js.Any]))
       TreatmentDescription.foreach(__v => __obj.update("TreatmentDescription", __v.asInstanceOf[js.Any]))
       TreatmentName.foreach(__v => __obj.update("TreatmentName", __v.asInstanceOf[js.Any]))
@@ -1436,7 +1576,7 @@ package pinpoint {
   }
 
   /**
-    * SMS message configuration.
+    * Specifies the content and settings for an SMS message that's sent to recipients of a campaign.
     */
   @js.native
   trait CampaignSmsMessage extends js.Object {
@@ -1460,7 +1600,7 @@ package pinpoint {
   }
 
   /**
-    * State of the Campaign
+    * Provides information about the status of a campaign.
     */
   @js.native
   trait CampaignState extends js.Object {
@@ -1489,28 +1629,30 @@ package pinpoint {
   }
 
   /**
-    * List of available campaigns.
+    * Provides information about the configuration and other settings for all the campaigns that are associated with an application.
     */
   @js.native
   trait CampaignsResponse extends js.Object {
-    var Item: js.UndefOr[ListOfCampaignResponse]
+    var Item: ListOfCampaignResponse
     var NextToken: js.UndefOr[__string]
   }
 
   object CampaignsResponse {
     def apply(
-        Item: js.UndefOr[ListOfCampaignResponse] = js.undefined,
+        Item: ListOfCampaignResponse,
         NextToken: js.UndefOr[__string] = js.undefined
     ): CampaignsResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Item.foreach(__v => __obj.update("Item", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dictionary[js.Any](
+        "Item" -> Item.asInstanceOf[js.Any]
+      )
+
       NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CampaignsResponse]
     }
   }
 
   /**
-    * Base definition for channel response.
+    * Provides information about the general settings and status of a channel for an application.
     */
   @js.native
   trait ChannelResponse extends js.Object {
@@ -1569,19 +1711,21 @@ package pinpoint {
   }
 
   /**
-    * Get channels definition
+    * Provides information about the general settings and status of all channels for an application, including channels that aren't enabled for the application.
     */
   @js.native
   trait ChannelsResponse extends js.Object {
-    var Channels: js.UndefOr[MapOfChannelResponse]
+    var Channels: MapOfChannelResponse
   }
 
   object ChannelsResponse {
     def apply(
-        Channels: js.UndefOr[MapOfChannelResponse] = js.undefined
+        Channels: MapOfChannelResponse
     ): ChannelsResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Channels.foreach(__v => __obj.update("Channels", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dictionary[js.Any](
+        "Channels" -> Channels.asInstanceOf[js.Any]
+      )
+
       __obj.asInstanceOf[ChannelsResponse]
     }
   }
@@ -1621,21 +1765,23 @@ package pinpoint {
   }
 
   /**
-    * Application Request.
+    * Specifies the display name of an application and the tags to associate with the application.
     */
   @js.native
   trait CreateApplicationRequest extends js.Object {
-    var Name: js.UndefOr[__string]
+    var Name: __string
     var tags: js.UndefOr[MapOf__string]
   }
 
   object CreateApplicationRequest {
     def apply(
-        Name: js.UndefOr[__string] = js.undefined,
+        Name: __string,
         tags: js.UndefOr[MapOf__string] = js.undefined
     ): CreateApplicationRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dictionary[js.Any](
+        "Name" -> Name.asInstanceOf[js.Any]
+      )
+
       tags.foreach(__v => __obj.update("tags", __v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateApplicationRequest]
     }
@@ -1790,7 +1936,7 @@ package pinpoint {
   }
 
   /**
-    * The default message to use across all channels.
+    * Specifies the default message to use for all channels.
     */
   @js.native
   trait DefaultMessage extends js.Object {
@@ -1811,7 +1957,7 @@ package pinpoint {
   }
 
   /**
-    * Default Push Notification Message.
+    * Specifies the default settings and content for a push notification that's sent directly to an endpoint.
     */
   @js.native
   trait DefaultPushNotificationMessage extends js.Object {
@@ -2423,7 +2569,7 @@ package pinpoint {
   }
 
   /**
-    * Message definitions for the default message and any messages that are tailored for specific channels.
+    * Specifies the settings and content for the default message and any default messages that you tailored for specific channels.
     */
   @js.native
   trait DirectMessageConfiguration extends js.Object {
@@ -2476,40 +2622,43 @@ package pinpoint {
   }
 
   /**
-    * Email Channel Request
+    * Specifies the status and settings of the email channel for an application.
     */
   @js.native
   trait EmailChannelRequest extends js.Object {
+    var FromAddress: __string
+    var Identity: __string
     var ConfigurationSet: js.UndefOr[__string]
     var Enabled: js.UndefOr[__boolean]
-    var FromAddress: js.UndefOr[__string]
-    var Identity: js.UndefOr[__string]
     var RoleArn: js.UndefOr[__string]
   }
 
   object EmailChannelRequest {
     def apply(
+        FromAddress: __string,
+        Identity: __string,
         ConfigurationSet: js.UndefOr[__string] = js.undefined,
         Enabled: js.UndefOr[__boolean] = js.undefined,
-        FromAddress: js.UndefOr[__string] = js.undefined,
-        Identity: js.UndefOr[__string] = js.undefined,
         RoleArn: js.UndefOr[__string] = js.undefined
     ): EmailChannelRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dictionary[js.Any](
+        "FromAddress" -> FromAddress.asInstanceOf[js.Any],
+        "Identity"    -> Identity.asInstanceOf[js.Any]
+      )
+
       ConfigurationSet.foreach(__v => __obj.update("ConfigurationSet", __v.asInstanceOf[js.Any]))
       Enabled.foreach(__v => __obj.update("Enabled", __v.asInstanceOf[js.Any]))
-      FromAddress.foreach(__v => __obj.update("FromAddress", __v.asInstanceOf[js.Any]))
-      Identity.foreach(__v => __obj.update("Identity", __v.asInstanceOf[js.Any]))
       RoleArn.foreach(__v => __obj.update("RoleArn", __v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[EmailChannelRequest]
     }
   }
 
   /**
-    * Email Channel Response.
+    * Provides information about the status and settings of the email channel for an application.
     */
   @js.native
   trait EmailChannelResponse extends js.Object {
+    var Platform: __string
     var ApplicationId: js.UndefOr[__string]
     var ConfigurationSet: js.UndefOr[__string]
     var CreationDate: js.UndefOr[__string]
@@ -2522,13 +2671,13 @@ package pinpoint {
     var LastModifiedBy: js.UndefOr[__string]
     var LastModifiedDate: js.UndefOr[__string]
     var MessagesPerSecond: js.UndefOr[__integer]
-    var Platform: js.UndefOr[__string]
     var RoleArn: js.UndefOr[__string]
     var Version: js.UndefOr[__integer]
   }
 
   object EmailChannelResponse {
     def apply(
+        Platform: __string,
         ApplicationId: js.UndefOr[__string] = js.undefined,
         ConfigurationSet: js.UndefOr[__string] = js.undefined,
         CreationDate: js.UndefOr[__string] = js.undefined,
@@ -2541,11 +2690,13 @@ package pinpoint {
         LastModifiedBy: js.UndefOr[__string] = js.undefined,
         LastModifiedDate: js.UndefOr[__string] = js.undefined,
         MessagesPerSecond: js.UndefOr[__integer] = js.undefined,
-        Platform: js.UndefOr[__string] = js.undefined,
         RoleArn: js.UndefOr[__string] = js.undefined,
         Version: js.UndefOr[__integer] = js.undefined
     ): EmailChannelResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dictionary[js.Any](
+        "Platform" -> Platform.asInstanceOf[js.Any]
+      )
+
       ApplicationId.foreach(__v => __obj.update("ApplicationId", __v.asInstanceOf[js.Any]))
       ConfigurationSet.foreach(__v => __obj.update("ConfigurationSet", __v.asInstanceOf[js.Any]))
       CreationDate.foreach(__v => __obj.update("CreationDate", __v.asInstanceOf[js.Any]))
@@ -2558,7 +2709,6 @@ package pinpoint {
       LastModifiedBy.foreach(__v => __obj.update("LastModifiedBy", __v.asInstanceOf[js.Any]))
       LastModifiedDate.foreach(__v => __obj.update("LastModifiedDate", __v.asInstanceOf[js.Any]))
       MessagesPerSecond.foreach(__v => __obj.update("MessagesPerSecond", __v.asInstanceOf[js.Any]))
-      Platform.foreach(__v => __obj.update("Platform", __v.asInstanceOf[js.Any]))
       RoleArn.foreach(__v => __obj.update("RoleArn", __v.asInstanceOf[js.Any]))
       Version.foreach(__v => __obj.update("Version", __v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[EmailChannelResponse]
@@ -2566,7 +2716,7 @@ package pinpoint {
   }
 
   /**
-    * Email Message.
+    * Specifies the default settings and content for a one-time email message that's sent directly to an endpoint.
     */
   @js.native
   trait EmailMessage extends js.Object {
@@ -2602,7 +2752,7 @@ package pinpoint {
   }
 
   /**
-    * Endpoint update request
+    * Specifies an endpoint to create or update and the settings and attributes to set or change for the endpoint.
     */
   @js.native
   trait EndpointBatchItem extends js.Object {
@@ -2653,25 +2803,27 @@ package pinpoint {
   }
 
   /**
-    * Endpoint batch update request.
+    * Specifies a batch of endpoints to create or update and the settings and attributes to set or change for each endpoint.
     */
   @js.native
   trait EndpointBatchRequest extends js.Object {
-    var Item: js.UndefOr[ListOfEndpointBatchItem]
+    var Item: ListOfEndpointBatchItem
   }
 
   object EndpointBatchRequest {
     def apply(
-        Item: js.UndefOr[ListOfEndpointBatchItem] = js.undefined
+        Item: ListOfEndpointBatchItem
     ): EndpointBatchRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Item.foreach(__v => __obj.update("Item", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dictionary[js.Any](
+        "Item" -> Item.asInstanceOf[js.Any]
+      )
+
       __obj.asInstanceOf[EndpointBatchRequest]
     }
   }
 
   /**
-    * Demographic information about the endpoint.
+    * Specifies demographic information about an endpoint, such as the applicable time zone and platform.
     */
   @js.native
   trait EndpointDemographic extends js.Object {
@@ -2710,7 +2862,7 @@ package pinpoint {
   }
 
   /**
-    * A complex object that holds the status code and message as a result of processing an endpoint.
+    * Provides the status code and message that result from processing data for an endpoint.
     */
   @js.native
   trait EndpointItemResponse extends js.Object {
@@ -2731,7 +2883,7 @@ package pinpoint {
   }
 
   /**
-    * Location data for the endpoint.
+    * Specifies geographic information about an endpoint.
     */
   @js.native
   trait EndpointLocation extends js.Object {
@@ -2764,32 +2916,34 @@ package pinpoint {
   }
 
   /**
-    * The result from sending a message to an endpoint.
+    * Provides information about the delivery status and results of sending a message directly to an endpoint.
     */
   @js.native
   trait EndpointMessageResult extends js.Object {
+    var DeliveryStatus: DeliveryStatus
+    var StatusCode: __integer
     var Address: js.UndefOr[__string]
-    var DeliveryStatus: js.UndefOr[DeliveryStatus]
     var MessageId: js.UndefOr[__string]
-    var StatusCode: js.UndefOr[__integer]
     var StatusMessage: js.UndefOr[__string]
     var UpdatedToken: js.UndefOr[__string]
   }
 
   object EndpointMessageResult {
     def apply(
+        DeliveryStatus: DeliveryStatus,
+        StatusCode: __integer,
         Address: js.UndefOr[__string] = js.undefined,
-        DeliveryStatus: js.UndefOr[DeliveryStatus] = js.undefined,
         MessageId: js.UndefOr[__string] = js.undefined,
-        StatusCode: js.UndefOr[__integer] = js.undefined,
         StatusMessage: js.UndefOr[__string] = js.undefined,
         UpdatedToken: js.UndefOr[__string] = js.undefined
     ): EndpointMessageResult = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dictionary[js.Any](
+        "DeliveryStatus" -> DeliveryStatus.asInstanceOf[js.Any],
+        "StatusCode"     -> StatusCode.asInstanceOf[js.Any]
+      )
+
       Address.foreach(__v => __obj.update("Address", __v.asInstanceOf[js.Any]))
-      DeliveryStatus.foreach(__v => __obj.update("DeliveryStatus", __v.asInstanceOf[js.Any]))
       MessageId.foreach(__v => __obj.update("MessageId", __v.asInstanceOf[js.Any]))
-      StatusCode.foreach(__v => __obj.update("StatusCode", __v.asInstanceOf[js.Any]))
       StatusMessage.foreach(__v => __obj.update("StatusMessage", __v.asInstanceOf[js.Any]))
       UpdatedToken.foreach(__v => __obj.update("UpdatedToken", __v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[EndpointMessageResult]
@@ -2797,7 +2951,7 @@ package pinpoint {
   }
 
   /**
-    * An endpoint update request.
+    * Specifies the channel type and other settings for an endpoint.
     */
   @js.native
   trait EndpointRequest extends js.Object {
@@ -2845,7 +2999,7 @@ package pinpoint {
   }
 
   /**
-    * Endpoint response
+    * Provides information about the channel type and other settings for an endpoint.
     */
   @js.native
   trait EndpointResponse extends js.Object {
@@ -2905,7 +3059,7 @@ package pinpoint {
   }
 
   /**
-    * Endpoint send configuration.
+    * Specifies the content, including message variables and attributes, to use in a message that's sent directly to an endpoint.
     */
   @js.native
   trait EndpointSendConfiguration extends js.Object {
@@ -2935,7 +3089,7 @@ package pinpoint {
   }
 
   /**
-    * Endpoint user specific custom userAttributes
+    * Specifies data for one or more attributes that describe the user who's associated with an endpoint.
     */
   @js.native
   trait EndpointUser extends js.Object {
@@ -2956,70 +3110,74 @@ package pinpoint {
   }
 
   /**
-    * List of endpoints
+    * Provides information about all the endpoints that are associated with a user ID.
     */
   @js.native
   trait EndpointsResponse extends js.Object {
-    var Item: js.UndefOr[ListOfEndpointResponse]
+    var Item: ListOfEndpointResponse
   }
 
   object EndpointsResponse {
     def apply(
-        Item: js.UndefOr[ListOfEndpointResponse] = js.undefined
+        Item: ListOfEndpointResponse
     ): EndpointsResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Item.foreach(__v => __obj.update("Item", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dictionary[js.Any](
+        "Item" -> Item.asInstanceOf[js.Any]
+      )
+
       __obj.asInstanceOf[EndpointsResponse]
     }
   }
 
   /**
-    * Model for creating or updating events.
+    * Specifies information about an event that reports data to Amazon Pinpoint.
     */
   @js.native
   trait Event extends js.Object {
+    var EventType: __string
+    var Timestamp: __string
     var AppPackageName: js.UndefOr[__string]
     var AppTitle: js.UndefOr[__string]
     var AppVersionCode: js.UndefOr[__string]
     var Attributes: js.UndefOr[MapOf__string]
     var ClientSdkVersion: js.UndefOr[__string]
-    var EventType: js.UndefOr[__string]
     var Metrics: js.UndefOr[MapOf__double]
     var SdkName: js.UndefOr[__string]
     var Session: js.UndefOr[Session]
-    var Timestamp: js.UndefOr[__string]
   }
 
   object Event {
     def apply(
+        EventType: __string,
+        Timestamp: __string,
         AppPackageName: js.UndefOr[__string] = js.undefined,
         AppTitle: js.UndefOr[__string] = js.undefined,
         AppVersionCode: js.UndefOr[__string] = js.undefined,
         Attributes: js.UndefOr[MapOf__string] = js.undefined,
         ClientSdkVersion: js.UndefOr[__string] = js.undefined,
-        EventType: js.UndefOr[__string] = js.undefined,
         Metrics: js.UndefOr[MapOf__double] = js.undefined,
         SdkName: js.UndefOr[__string] = js.undefined,
-        Session: js.UndefOr[Session] = js.undefined,
-        Timestamp: js.UndefOr[__string] = js.undefined
+        Session: js.UndefOr[Session] = js.undefined
     ): Event = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dictionary[js.Any](
+        "EventType" -> EventType.asInstanceOf[js.Any],
+        "Timestamp" -> Timestamp.asInstanceOf[js.Any]
+      )
+
       AppPackageName.foreach(__v => __obj.update("AppPackageName", __v.asInstanceOf[js.Any]))
       AppTitle.foreach(__v => __obj.update("AppTitle", __v.asInstanceOf[js.Any]))
       AppVersionCode.foreach(__v => __obj.update("AppVersionCode", __v.asInstanceOf[js.Any]))
       Attributes.foreach(__v => __obj.update("Attributes", __v.asInstanceOf[js.Any]))
       ClientSdkVersion.foreach(__v => __obj.update("ClientSdkVersion", __v.asInstanceOf[js.Any]))
-      EventType.foreach(__v => __obj.update("EventType", __v.asInstanceOf[js.Any]))
       Metrics.foreach(__v => __obj.update("Metrics", __v.asInstanceOf[js.Any]))
       SdkName.foreach(__v => __obj.update("SdkName", __v.asInstanceOf[js.Any]))
       Session.foreach(__v => __obj.update("Session", __v.asInstanceOf[js.Any]))
-      Timestamp.foreach(__v => __obj.update("Timestamp", __v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Event]
     }
   }
 
   /**
-    * Event dimensions.
+    * Specifies the dimensions for an event filter that determines when a campaign is sent.
     */
   @js.native
   trait EventDimensions extends js.Object {
@@ -3043,7 +3201,7 @@ package pinpoint {
   }
 
   /**
-    * A complex object that holds the status code and message as a result of processing an event.
+    * Provides the status code and message that result from processing an event.
     */
   @js.native
   trait EventItemResponse extends js.Object {
@@ -3064,79 +3222,85 @@ package pinpoint {
   }
 
   /**
-    * Model for an event publishing subscription export.
+    * Specifies settings for publishing event data to an Amazon Kinesis data stream or an Amazon Kinesis Data Firehose delivery stream.
     */
   @js.native
   trait EventStream extends js.Object {
-    var ApplicationId: js.UndefOr[__string]
-    var DestinationStreamArn: js.UndefOr[__string]
+    var ApplicationId: __string
+    var DestinationStreamArn: __string
+    var RoleArn: __string
     var ExternalId: js.UndefOr[__string]
     var LastModifiedDate: js.UndefOr[__string]
     var LastUpdatedBy: js.UndefOr[__string]
-    var RoleArn: js.UndefOr[__string]
   }
 
   object EventStream {
     def apply(
-        ApplicationId: js.UndefOr[__string] = js.undefined,
-        DestinationStreamArn: js.UndefOr[__string] = js.undefined,
+        ApplicationId: __string,
+        DestinationStreamArn: __string,
+        RoleArn: __string,
         ExternalId: js.UndefOr[__string] = js.undefined,
         LastModifiedDate: js.UndefOr[__string] = js.undefined,
-        LastUpdatedBy: js.UndefOr[__string] = js.undefined,
-        RoleArn: js.UndefOr[__string] = js.undefined
+        LastUpdatedBy: js.UndefOr[__string] = js.undefined
     ): EventStream = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ApplicationId.foreach(__v => __obj.update("ApplicationId", __v.asInstanceOf[js.Any]))
-      DestinationStreamArn.foreach(__v => __obj.update("DestinationStreamArn", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dictionary[js.Any](
+        "ApplicationId"        -> ApplicationId.asInstanceOf[js.Any],
+        "DestinationStreamArn" -> DestinationStreamArn.asInstanceOf[js.Any],
+        "RoleArn"              -> RoleArn.asInstanceOf[js.Any]
+      )
+
       ExternalId.foreach(__v => __obj.update("ExternalId", __v.asInstanceOf[js.Any]))
       LastModifiedDate.foreach(__v => __obj.update("LastModifiedDate", __v.asInstanceOf[js.Any]))
       LastUpdatedBy.foreach(__v => __obj.update("LastUpdatedBy", __v.asInstanceOf[js.Any]))
-      RoleArn.foreach(__v => __obj.update("RoleArn", __v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[EventStream]
     }
   }
 
   /**
-    * A batch of PublicEndpoints and Events to process.
+    * Specifies a batch of endpoints and events to process.
     */
   @js.native
   trait EventsBatch extends js.Object {
-    var Endpoint: js.UndefOr[PublicEndpoint]
-    var Events: js.UndefOr[MapOfEvent]
+    var Endpoint: PublicEndpoint
+    var Events: MapOfEvent
   }
 
   object EventsBatch {
     def apply(
-        Endpoint: js.UndefOr[PublicEndpoint] = js.undefined,
-        Events: js.UndefOr[MapOfEvent] = js.undefined
+        Endpoint: PublicEndpoint,
+        Events: MapOfEvent
     ): EventsBatch = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Endpoint.foreach(__v => __obj.update("Endpoint", __v.asInstanceOf[js.Any]))
-      Events.foreach(__v => __obj.update("Events", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dictionary[js.Any](
+        "Endpoint" -> Endpoint.asInstanceOf[js.Any],
+        "Events"   -> Events.asInstanceOf[js.Any]
+      )
+
       __obj.asInstanceOf[EventsBatch]
     }
   }
 
   /**
-    * A set of events to process.
+    * Specifies a batch of events to process.
     */
   @js.native
   trait EventsRequest extends js.Object {
-    var BatchItem: js.UndefOr[MapOfEventsBatch]
+    var BatchItem: MapOfEventsBatch
   }
 
   object EventsRequest {
     def apply(
-        BatchItem: js.UndefOr[MapOfEventsBatch] = js.undefined
+        BatchItem: MapOfEventsBatch
     ): EventsRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      BatchItem.foreach(__v => __obj.update("BatchItem", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dictionary[js.Any](
+        "BatchItem" -> BatchItem.asInstanceOf[js.Any]
+      )
+
       __obj.asInstanceOf[EventsRequest]
     }
   }
 
   /**
-    * Custom messages associated with events.
+    * Provides information about endpoints and the events that they're associated with.
     */
   @js.native
   trait EventsResponse extends js.Object {
@@ -3154,26 +3318,28 @@ package pinpoint {
   }
 
   /**
-    * Export job request.
+    * Specifies the settings for a job that exports endpoint definitions to an Amazon Simple Storage Service (Amazon S3) bucket.
     */
   @js.native
   trait ExportJobRequest extends js.Object {
-    var RoleArn: js.UndefOr[__string]
-    var S3UrlPrefix: js.UndefOr[__string]
+    var RoleArn: __string
+    var S3UrlPrefix: __string
     var SegmentId: js.UndefOr[__string]
     var SegmentVersion: js.UndefOr[__integer]
   }
 
   object ExportJobRequest {
     def apply(
-        RoleArn: js.UndefOr[__string] = js.undefined,
-        S3UrlPrefix: js.UndefOr[__string] = js.undefined,
+        RoleArn: __string,
+        S3UrlPrefix: __string,
         SegmentId: js.UndefOr[__string] = js.undefined,
         SegmentVersion: js.UndefOr[__integer] = js.undefined
     ): ExportJobRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      RoleArn.foreach(__v => __obj.update("RoleArn", __v.asInstanceOf[js.Any]))
-      S3UrlPrefix.foreach(__v => __obj.update("S3UrlPrefix", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dictionary[js.Any](
+        "RoleArn"     -> RoleArn.asInstanceOf[js.Any],
+        "S3UrlPrefix" -> S3UrlPrefix.asInstanceOf[js.Any]
+      )
+
       SegmentId.foreach(__v => __obj.update("SegmentId", __v.asInstanceOf[js.Any]))
       SegmentVersion.foreach(__v => __obj.update("SegmentVersion", __v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ExportJobRequest]
@@ -3181,26 +3347,28 @@ package pinpoint {
   }
 
   /**
-    * Export job resource.
+    * Provides information about the resource settings for a job that exports endpoint definitions to a file. The file can be added directly to an Amazon Simple Storage Service (Amazon S3) bucket by using the Amazon Pinpoint API or downloaded directly to a computer by using the Amazon Pinpoint console.
     */
   @js.native
   trait ExportJobResource extends js.Object {
-    var RoleArn: js.UndefOr[__string]
-    var S3UrlPrefix: js.UndefOr[__string]
+    var RoleArn: __string
+    var S3UrlPrefix: __string
     var SegmentId: js.UndefOr[__string]
     var SegmentVersion: js.UndefOr[__integer]
   }
 
   object ExportJobResource {
     def apply(
-        RoleArn: js.UndefOr[__string] = js.undefined,
-        S3UrlPrefix: js.UndefOr[__string] = js.undefined,
+        RoleArn: __string,
+        S3UrlPrefix: __string,
         SegmentId: js.UndefOr[__string] = js.undefined,
         SegmentVersion: js.UndefOr[__integer] = js.undefined
     ): ExportJobResource = {
-      val __obj = js.Dictionary.empty[js.Any]
-      RoleArn.foreach(__v => __obj.update("RoleArn", __v.asInstanceOf[js.Any]))
-      S3UrlPrefix.foreach(__v => __obj.update("S3UrlPrefix", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dictionary[js.Any](
+        "RoleArn"     -> RoleArn.asInstanceOf[js.Any],
+        "S3UrlPrefix" -> S3UrlPrefix.asInstanceOf[js.Any]
+      )
+
       SegmentId.foreach(__v => __obj.update("SegmentId", __v.asInstanceOf[js.Any]))
       SegmentVersion.foreach(__v => __obj.update("SegmentVersion", __v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ExportJobResource]
@@ -3208,75 +3376,79 @@ package pinpoint {
   }
 
   /**
-    * Export job response.
+    * Provides information about the status and settings of a job that exports endpoint definitions to a file. The file can be added directly to an Amazon Simple Storage Service (Amazon S3) bucket by using the Amazon Pinpoint API or downloaded directly to a computer by using the Amazon Pinpoint console.
     */
   @js.native
   trait ExportJobResponse extends js.Object {
-    var ApplicationId: js.UndefOr[__string]
+    var ApplicationId: __string
+    var CreationDate: __string
+    var Definition: ExportJobResource
+    var Id: __string
+    var JobStatus: JobStatus
+    var Type: __string
     var CompletedPieces: js.UndefOr[__integer]
     var CompletionDate: js.UndefOr[__string]
-    var CreationDate: js.UndefOr[__string]
-    var Definition: js.UndefOr[ExportJobResource]
     var FailedPieces: js.UndefOr[__integer]
     var Failures: js.UndefOr[ListOf__string]
-    var Id: js.UndefOr[__string]
-    var JobStatus: js.UndefOr[JobStatus]
     var TotalFailures: js.UndefOr[__integer]
     var TotalPieces: js.UndefOr[__integer]
     var TotalProcessed: js.UndefOr[__integer]
-    var Type: js.UndefOr[__string]
   }
 
   object ExportJobResponse {
     def apply(
-        ApplicationId: js.UndefOr[__string] = js.undefined,
+        ApplicationId: __string,
+        CreationDate: __string,
+        Definition: ExportJobResource,
+        Id: __string,
+        JobStatus: JobStatus,
+        Type: __string,
         CompletedPieces: js.UndefOr[__integer] = js.undefined,
         CompletionDate: js.UndefOr[__string] = js.undefined,
-        CreationDate: js.UndefOr[__string] = js.undefined,
-        Definition: js.UndefOr[ExportJobResource] = js.undefined,
         FailedPieces: js.UndefOr[__integer] = js.undefined,
         Failures: js.UndefOr[ListOf__string] = js.undefined,
-        Id: js.UndefOr[__string] = js.undefined,
-        JobStatus: js.UndefOr[JobStatus] = js.undefined,
         TotalFailures: js.UndefOr[__integer] = js.undefined,
         TotalPieces: js.UndefOr[__integer] = js.undefined,
-        TotalProcessed: js.UndefOr[__integer] = js.undefined,
-        Type: js.UndefOr[__string] = js.undefined
+        TotalProcessed: js.UndefOr[__integer] = js.undefined
     ): ExportJobResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ApplicationId.foreach(__v => __obj.update("ApplicationId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dictionary[js.Any](
+        "ApplicationId" -> ApplicationId.asInstanceOf[js.Any],
+        "CreationDate"  -> CreationDate.asInstanceOf[js.Any],
+        "Definition"    -> Definition.asInstanceOf[js.Any],
+        "Id"            -> Id.asInstanceOf[js.Any],
+        "JobStatus"     -> JobStatus.asInstanceOf[js.Any],
+        "Type"          -> Type.asInstanceOf[js.Any]
+      )
+
       CompletedPieces.foreach(__v => __obj.update("CompletedPieces", __v.asInstanceOf[js.Any]))
       CompletionDate.foreach(__v => __obj.update("CompletionDate", __v.asInstanceOf[js.Any]))
-      CreationDate.foreach(__v => __obj.update("CreationDate", __v.asInstanceOf[js.Any]))
-      Definition.foreach(__v => __obj.update("Definition", __v.asInstanceOf[js.Any]))
       FailedPieces.foreach(__v => __obj.update("FailedPieces", __v.asInstanceOf[js.Any]))
       Failures.foreach(__v => __obj.update("Failures", __v.asInstanceOf[js.Any]))
-      Id.foreach(__v => __obj.update("Id", __v.asInstanceOf[js.Any]))
-      JobStatus.foreach(__v => __obj.update("JobStatus", __v.asInstanceOf[js.Any]))
       TotalFailures.foreach(__v => __obj.update("TotalFailures", __v.asInstanceOf[js.Any]))
       TotalPieces.foreach(__v => __obj.update("TotalPieces", __v.asInstanceOf[js.Any]))
       TotalProcessed.foreach(__v => __obj.update("TotalProcessed", __v.asInstanceOf[js.Any]))
-      Type.foreach(__v => __obj.update("Type", __v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ExportJobResponse]
     }
   }
 
   /**
-    * Export job list.
+    * Provides information about all the export jobs that are associated with an application or segment. An export job is a job that exports endpoint definitions to a file.
     */
   @js.native
   trait ExportJobsResponse extends js.Object {
-    var Item: js.UndefOr[ListOfExportJobResponse]
+    var Item: ListOfExportJobResponse
     var NextToken: js.UndefOr[__string]
   }
 
   object ExportJobsResponse {
     def apply(
-        Item: js.UndefOr[ListOfExportJobResponse] = js.undefined,
+        Item: ListOfExportJobResponse,
         NextToken: js.UndefOr[__string] = js.undefined
     ): ExportJobsResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Item.foreach(__v => __obj.update("Item", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dictionary[js.Any](
+        "Item" -> Item.asInstanceOf[js.Any]
+      )
+
       NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ExportJobsResponse]
     }
@@ -3308,76 +3480,80 @@ package pinpoint {
   }
 
   /**
-    * Google Cloud Messaging credentials
+    * Specifies the status and settings of the GCM channel for an application. This channel enables Amazon Pinpoint to send push notifications through the Firebase Cloud Messaging (FCM), formerly Google Cloud Messaging (GCM), service.
     */
   @js.native
   trait GCMChannelRequest extends js.Object {
-    var ApiKey: js.UndefOr[__string]
+    var ApiKey: __string
     var Enabled: js.UndefOr[__boolean]
   }
 
   object GCMChannelRequest {
     def apply(
-        ApiKey: js.UndefOr[__string] = js.undefined,
+        ApiKey: __string,
         Enabled: js.UndefOr[__boolean] = js.undefined
     ): GCMChannelRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ApiKey.foreach(__v => __obj.update("ApiKey", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dictionary[js.Any](
+        "ApiKey" -> ApiKey.asInstanceOf[js.Any]
+      )
+
       Enabled.foreach(__v => __obj.update("Enabled", __v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GCMChannelRequest]
     }
   }
 
   /**
-    * Google Cloud Messaging channel definition
+    * Provides information about the status and settings of the GCM channel for an application. The GCM channel enables Amazon Pinpoint to send push notifications through the Firebase Cloud Messaging (FCM), formerly Google Cloud Messaging (GCM), service.
     */
   @js.native
   trait GCMChannelResponse extends js.Object {
+    var Credential: __string
+    var Platform: __string
     var ApplicationId: js.UndefOr[__string]
     var CreationDate: js.UndefOr[__string]
-    var Credential: js.UndefOr[__string]
     var Enabled: js.UndefOr[__boolean]
     var HasCredential: js.UndefOr[__boolean]
     var Id: js.UndefOr[__string]
     var IsArchived: js.UndefOr[__boolean]
     var LastModifiedBy: js.UndefOr[__string]
     var LastModifiedDate: js.UndefOr[__string]
-    var Platform: js.UndefOr[__string]
     var Version: js.UndefOr[__integer]
   }
 
   object GCMChannelResponse {
     def apply(
+        Credential: __string,
+        Platform: __string,
         ApplicationId: js.UndefOr[__string] = js.undefined,
         CreationDate: js.UndefOr[__string] = js.undefined,
-        Credential: js.UndefOr[__string] = js.undefined,
         Enabled: js.UndefOr[__boolean] = js.undefined,
         HasCredential: js.UndefOr[__boolean] = js.undefined,
         Id: js.UndefOr[__string] = js.undefined,
         IsArchived: js.UndefOr[__boolean] = js.undefined,
         LastModifiedBy: js.UndefOr[__string] = js.undefined,
         LastModifiedDate: js.UndefOr[__string] = js.undefined,
-        Platform: js.UndefOr[__string] = js.undefined,
         Version: js.UndefOr[__integer] = js.undefined
     ): GCMChannelResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dictionary[js.Any](
+        "Credential" -> Credential.asInstanceOf[js.Any],
+        "Platform"   -> Platform.asInstanceOf[js.Any]
+      )
+
       ApplicationId.foreach(__v => __obj.update("ApplicationId", __v.asInstanceOf[js.Any]))
       CreationDate.foreach(__v => __obj.update("CreationDate", __v.asInstanceOf[js.Any]))
-      Credential.foreach(__v => __obj.update("Credential", __v.asInstanceOf[js.Any]))
       Enabled.foreach(__v => __obj.update("Enabled", __v.asInstanceOf[js.Any]))
       HasCredential.foreach(__v => __obj.update("HasCredential", __v.asInstanceOf[js.Any]))
       Id.foreach(__v => __obj.update("Id", __v.asInstanceOf[js.Any]))
       IsArchived.foreach(__v => __obj.update("IsArchived", __v.asInstanceOf[js.Any]))
       LastModifiedBy.foreach(__v => __obj.update("LastModifiedBy", __v.asInstanceOf[js.Any]))
       LastModifiedDate.foreach(__v => __obj.update("LastModifiedDate", __v.asInstanceOf[js.Any]))
-      Platform.foreach(__v => __obj.update("Platform", __v.asInstanceOf[js.Any]))
       Version.foreach(__v => __obj.update("Version", __v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GCMChannelResponse]
     }
   }
 
   /**
-    * GCM Message.
+    * Specifies the settings for a one-time message that's sent directly to an endpoint through the GCM channel. The GCM channel enables Amazon Pinpoint to send messages to the Firebase Cloud Messaging (FCM), formerly Google Cloud Messaging (GCM), service.
     */
   @js.native
   trait GCMMessage extends js.Object {
@@ -3443,42 +3619,46 @@ package pinpoint {
   }
 
   /**
-    * GPS coordinates
+    * Specifies the GPS coordinates of a location.
     */
   @js.native
   trait GPSCoordinates extends js.Object {
-    var Latitude: js.UndefOr[__double]
-    var Longitude: js.UndefOr[__double]
+    var Latitude: __double
+    var Longitude: __double
   }
 
   object GPSCoordinates {
     def apply(
-        Latitude: js.UndefOr[__double] = js.undefined,
-        Longitude: js.UndefOr[__double] = js.undefined
+        Latitude: __double,
+        Longitude: __double
     ): GPSCoordinates = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Latitude.foreach(__v => __obj.update("Latitude", __v.asInstanceOf[js.Any]))
-      Longitude.foreach(__v => __obj.update("Longitude", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dictionary[js.Any](
+        "Latitude"  -> Latitude.asInstanceOf[js.Any],
+        "Longitude" -> Longitude.asInstanceOf[js.Any]
+      )
+
       __obj.asInstanceOf[GPSCoordinates]
     }
   }
 
   /**
-    * GPS point location dimension
+    * Specifies GPS-based criteria for including or excluding endpoints from a segment.
     */
   @js.native
   trait GPSPointDimension extends js.Object {
-    var Coordinates: js.UndefOr[GPSCoordinates]
+    var Coordinates: GPSCoordinates
     var RangeInKilometers: js.UndefOr[__double]
   }
 
   object GPSPointDimension {
     def apply(
-        Coordinates: js.UndefOr[GPSCoordinates] = js.undefined,
+        Coordinates: GPSCoordinates,
         RangeInKilometers: js.UndefOr[__double] = js.undefined
     ): GPSPointDimension = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Coordinates.foreach(__v => __obj.update("Coordinates", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dictionary[js.Any](
+        "Coordinates" -> Coordinates.asInstanceOf[js.Any]
+      )
+
       RangeInKilometers.foreach(__v => __obj.update("RangeInKilometers", __v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GPSPointDimension]
     }
@@ -3689,6 +3869,55 @@ package pinpoint {
   }
 
   @js.native
+  trait GetApplicationDateRangeKpiRequest extends js.Object {
+    var ApplicationId: __string
+    var KpiName: __string
+    var EndTime: js.UndefOr[__timestampIso8601]
+    var NextToken: js.UndefOr[__string]
+    var PageSize: js.UndefOr[__string]
+    var StartTime: js.UndefOr[__timestampIso8601]
+  }
+
+  object GetApplicationDateRangeKpiRequest {
+    def apply(
+        ApplicationId: __string,
+        KpiName: __string,
+        EndTime: js.UndefOr[__timestampIso8601] = js.undefined,
+        NextToken: js.UndefOr[__string] = js.undefined,
+        PageSize: js.UndefOr[__string] = js.undefined,
+        StartTime: js.UndefOr[__timestampIso8601] = js.undefined
+    ): GetApplicationDateRangeKpiRequest = {
+      val __obj = js.Dictionary[js.Any](
+        "ApplicationId" -> ApplicationId.asInstanceOf[js.Any],
+        "KpiName"       -> KpiName.asInstanceOf[js.Any]
+      )
+
+      EndTime.foreach(__v => __obj.update("EndTime", __v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      PageSize.foreach(__v => __obj.update("PageSize", __v.asInstanceOf[js.Any]))
+      StartTime.foreach(__v => __obj.update("StartTime", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetApplicationDateRangeKpiRequest]
+    }
+  }
+
+  @js.native
+  trait GetApplicationDateRangeKpiResponse extends js.Object {
+    var ApplicationDateRangeKpiResponse: ApplicationDateRangeKpiResponse
+  }
+
+  object GetApplicationDateRangeKpiResponse {
+    def apply(
+        ApplicationDateRangeKpiResponse: ApplicationDateRangeKpiResponse
+    ): GetApplicationDateRangeKpiResponse = {
+      val __obj = js.Dictionary[js.Any](
+        "ApplicationDateRangeKpiResponse" -> ApplicationDateRangeKpiResponse.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[GetApplicationDateRangeKpiResponse]
+    }
+  }
+
+  @js.native
   trait GetApplicationSettingsRequest extends js.Object {
     var ApplicationId: __string
   }
@@ -3831,6 +4060,58 @@ package pinpoint {
       )
 
       __obj.asInstanceOf[GetCampaignActivitiesResponse]
+    }
+  }
+
+  @js.native
+  trait GetCampaignDateRangeKpiRequest extends js.Object {
+    var ApplicationId: __string
+    var CampaignId: __string
+    var KpiName: __string
+    var EndTime: js.UndefOr[__timestampIso8601]
+    var NextToken: js.UndefOr[__string]
+    var PageSize: js.UndefOr[__string]
+    var StartTime: js.UndefOr[__timestampIso8601]
+  }
+
+  object GetCampaignDateRangeKpiRequest {
+    def apply(
+        ApplicationId: __string,
+        CampaignId: __string,
+        KpiName: __string,
+        EndTime: js.UndefOr[__timestampIso8601] = js.undefined,
+        NextToken: js.UndefOr[__string] = js.undefined,
+        PageSize: js.UndefOr[__string] = js.undefined,
+        StartTime: js.UndefOr[__timestampIso8601] = js.undefined
+    ): GetCampaignDateRangeKpiRequest = {
+      val __obj = js.Dictionary[js.Any](
+        "ApplicationId" -> ApplicationId.asInstanceOf[js.Any],
+        "CampaignId"    -> CampaignId.asInstanceOf[js.Any],
+        "KpiName"       -> KpiName.asInstanceOf[js.Any]
+      )
+
+      EndTime.foreach(__v => __obj.update("EndTime", __v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      PageSize.foreach(__v => __obj.update("PageSize", __v.asInstanceOf[js.Any]))
+      StartTime.foreach(__v => __obj.update("StartTime", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetCampaignDateRangeKpiRequest]
+    }
+  }
+
+  @js.native
+  trait GetCampaignDateRangeKpiResponse extends js.Object {
+    var CampaignDateRangeKpiResponse: CampaignDateRangeKpiResponse
+  }
+
+  object GetCampaignDateRangeKpiResponse {
+    def apply(
+        CampaignDateRangeKpiResponse: CampaignDateRangeKpiResponse
+    ): GetCampaignDateRangeKpiResponse = {
+      val __obj = js.Dictionary[js.Any](
+        "CampaignDateRangeKpiResponse" -> CampaignDateRangeKpiResponse.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[GetCampaignDateRangeKpiResponse]
     }
   }
 
@@ -4673,38 +4954,40 @@ package pinpoint {
   }
 
   /**
-    * Import job request.
+    * Specifies the settings for a job that imports endpoint definitions from an Amazon Simple Storage Service (Amazon S3) bucket.
     */
   @js.native
   trait ImportJobRequest extends js.Object {
+    var Format: Format
+    var RoleArn: __string
+    var S3Url: __string
     var DefineSegment: js.UndefOr[__boolean]
     var ExternalId: js.UndefOr[__string]
-    var Format: js.UndefOr[Format]
     var RegisterEndpoints: js.UndefOr[__boolean]
-    var RoleArn: js.UndefOr[__string]
-    var S3Url: js.UndefOr[__string]
     var SegmentId: js.UndefOr[__string]
     var SegmentName: js.UndefOr[__string]
   }
 
   object ImportJobRequest {
     def apply(
+        Format: Format,
+        RoleArn: __string,
+        S3Url: __string,
         DefineSegment: js.UndefOr[__boolean] = js.undefined,
         ExternalId: js.UndefOr[__string] = js.undefined,
-        Format: js.UndefOr[Format] = js.undefined,
         RegisterEndpoints: js.UndefOr[__boolean] = js.undefined,
-        RoleArn: js.UndefOr[__string] = js.undefined,
-        S3Url: js.UndefOr[__string] = js.undefined,
         SegmentId: js.UndefOr[__string] = js.undefined,
         SegmentName: js.UndefOr[__string] = js.undefined
     ): ImportJobRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dictionary[js.Any](
+        "Format"  -> Format.asInstanceOf[js.Any],
+        "RoleArn" -> RoleArn.asInstanceOf[js.Any],
+        "S3Url"   -> S3Url.asInstanceOf[js.Any]
+      )
+
       DefineSegment.foreach(__v => __obj.update("DefineSegment", __v.asInstanceOf[js.Any]))
       ExternalId.foreach(__v => __obj.update("ExternalId", __v.asInstanceOf[js.Any]))
-      Format.foreach(__v => __obj.update("Format", __v.asInstanceOf[js.Any]))
       RegisterEndpoints.foreach(__v => __obj.update("RegisterEndpoints", __v.asInstanceOf[js.Any]))
-      RoleArn.foreach(__v => __obj.update("RoleArn", __v.asInstanceOf[js.Any]))
-      S3Url.foreach(__v => __obj.update("S3Url", __v.asInstanceOf[js.Any]))
       SegmentId.foreach(__v => __obj.update("SegmentId", __v.asInstanceOf[js.Any]))
       SegmentName.foreach(__v => __obj.update("SegmentName", __v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ImportJobRequest]
@@ -4712,38 +4995,40 @@ package pinpoint {
   }
 
   /**
-    * Import job resource
+    * Provides information about the resource settings for a job that imports endpoint definitions from one or more files. The files can be stored in an Amazon Simple Storage Service (Amazon S3) bucket or uploaded directly from a computer by using the Amazon Pinpoint console.
     */
   @js.native
   trait ImportJobResource extends js.Object {
+    var Format: Format
+    var RoleArn: __string
+    var S3Url: __string
     var DefineSegment: js.UndefOr[__boolean]
     var ExternalId: js.UndefOr[__string]
-    var Format: js.UndefOr[Format]
     var RegisterEndpoints: js.UndefOr[__boolean]
-    var RoleArn: js.UndefOr[__string]
-    var S3Url: js.UndefOr[__string]
     var SegmentId: js.UndefOr[__string]
     var SegmentName: js.UndefOr[__string]
   }
 
   object ImportJobResource {
     def apply(
+        Format: Format,
+        RoleArn: __string,
+        S3Url: __string,
         DefineSegment: js.UndefOr[__boolean] = js.undefined,
         ExternalId: js.UndefOr[__string] = js.undefined,
-        Format: js.UndefOr[Format] = js.undefined,
         RegisterEndpoints: js.UndefOr[__boolean] = js.undefined,
-        RoleArn: js.UndefOr[__string] = js.undefined,
-        S3Url: js.UndefOr[__string] = js.undefined,
         SegmentId: js.UndefOr[__string] = js.undefined,
         SegmentName: js.UndefOr[__string] = js.undefined
     ): ImportJobResource = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dictionary[js.Any](
+        "Format"  -> Format.asInstanceOf[js.Any],
+        "RoleArn" -> RoleArn.asInstanceOf[js.Any],
+        "S3Url"   -> S3Url.asInstanceOf[js.Any]
+      )
+
       DefineSegment.foreach(__v => __obj.update("DefineSegment", __v.asInstanceOf[js.Any]))
       ExternalId.foreach(__v => __obj.update("ExternalId", __v.asInstanceOf[js.Any]))
-      Format.foreach(__v => __obj.update("Format", __v.asInstanceOf[js.Any]))
       RegisterEndpoints.foreach(__v => __obj.update("RegisterEndpoints", __v.asInstanceOf[js.Any]))
-      RoleArn.foreach(__v => __obj.update("RoleArn", __v.asInstanceOf[js.Any]))
-      S3Url.foreach(__v => __obj.update("S3Url", __v.asInstanceOf[js.Any]))
       SegmentId.foreach(__v => __obj.update("SegmentId", __v.asInstanceOf[js.Any]))
       SegmentName.foreach(__v => __obj.update("SegmentName", __v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ImportJobResource]
@@ -4751,75 +5036,79 @@ package pinpoint {
   }
 
   /**
-    * Import job response.
+    * Provides information about the status and settings of a job that imports endpoint definitions from one or more files. The files can be stored in an Amazon Simple Storage Service (Amazon S3) bucket or uploaded directly from a computer by using the Amazon Pinpoint console.
     */
   @js.native
   trait ImportJobResponse extends js.Object {
-    var ApplicationId: js.UndefOr[__string]
+    var ApplicationId: __string
+    var CreationDate: __string
+    var Definition: ImportJobResource
+    var Id: __string
+    var JobStatus: JobStatus
+    var Type: __string
     var CompletedPieces: js.UndefOr[__integer]
     var CompletionDate: js.UndefOr[__string]
-    var CreationDate: js.UndefOr[__string]
-    var Definition: js.UndefOr[ImportJobResource]
     var FailedPieces: js.UndefOr[__integer]
     var Failures: js.UndefOr[ListOf__string]
-    var Id: js.UndefOr[__string]
-    var JobStatus: js.UndefOr[JobStatus]
     var TotalFailures: js.UndefOr[__integer]
     var TotalPieces: js.UndefOr[__integer]
     var TotalProcessed: js.UndefOr[__integer]
-    var Type: js.UndefOr[__string]
   }
 
   object ImportJobResponse {
     def apply(
-        ApplicationId: js.UndefOr[__string] = js.undefined,
+        ApplicationId: __string,
+        CreationDate: __string,
+        Definition: ImportJobResource,
+        Id: __string,
+        JobStatus: JobStatus,
+        Type: __string,
         CompletedPieces: js.UndefOr[__integer] = js.undefined,
         CompletionDate: js.UndefOr[__string] = js.undefined,
-        CreationDate: js.UndefOr[__string] = js.undefined,
-        Definition: js.UndefOr[ImportJobResource] = js.undefined,
         FailedPieces: js.UndefOr[__integer] = js.undefined,
         Failures: js.UndefOr[ListOf__string] = js.undefined,
-        Id: js.UndefOr[__string] = js.undefined,
-        JobStatus: js.UndefOr[JobStatus] = js.undefined,
         TotalFailures: js.UndefOr[__integer] = js.undefined,
         TotalPieces: js.UndefOr[__integer] = js.undefined,
-        TotalProcessed: js.UndefOr[__integer] = js.undefined,
-        Type: js.UndefOr[__string] = js.undefined
+        TotalProcessed: js.UndefOr[__integer] = js.undefined
     ): ImportJobResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ApplicationId.foreach(__v => __obj.update("ApplicationId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dictionary[js.Any](
+        "ApplicationId" -> ApplicationId.asInstanceOf[js.Any],
+        "CreationDate"  -> CreationDate.asInstanceOf[js.Any],
+        "Definition"    -> Definition.asInstanceOf[js.Any],
+        "Id"            -> Id.asInstanceOf[js.Any],
+        "JobStatus"     -> JobStatus.asInstanceOf[js.Any],
+        "Type"          -> Type.asInstanceOf[js.Any]
+      )
+
       CompletedPieces.foreach(__v => __obj.update("CompletedPieces", __v.asInstanceOf[js.Any]))
       CompletionDate.foreach(__v => __obj.update("CompletionDate", __v.asInstanceOf[js.Any]))
-      CreationDate.foreach(__v => __obj.update("CreationDate", __v.asInstanceOf[js.Any]))
-      Definition.foreach(__v => __obj.update("Definition", __v.asInstanceOf[js.Any]))
       FailedPieces.foreach(__v => __obj.update("FailedPieces", __v.asInstanceOf[js.Any]))
       Failures.foreach(__v => __obj.update("Failures", __v.asInstanceOf[js.Any]))
-      Id.foreach(__v => __obj.update("Id", __v.asInstanceOf[js.Any]))
-      JobStatus.foreach(__v => __obj.update("JobStatus", __v.asInstanceOf[js.Any]))
       TotalFailures.foreach(__v => __obj.update("TotalFailures", __v.asInstanceOf[js.Any]))
       TotalPieces.foreach(__v => __obj.update("TotalPieces", __v.asInstanceOf[js.Any]))
       TotalProcessed.foreach(__v => __obj.update("TotalProcessed", __v.asInstanceOf[js.Any]))
-      Type.foreach(__v => __obj.update("Type", __v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ImportJobResponse]
     }
   }
 
   /**
-    * Import job list.
+    * Provides information about the status and settings of all the import jobs that are associated with an application or segment. An import job is a job that imports endpoint definitions from one or more files.
     */
   @js.native
   trait ImportJobsResponse extends js.Object {
-    var Item: js.UndefOr[ListOfImportJobResponse]
+    var Item: ListOfImportJobResponse
     var NextToken: js.UndefOr[__string]
   }
 
   object ImportJobsResponse {
     def apply(
-        Item: js.UndefOr[ListOfImportJobResponse] = js.undefined,
+        Item: ListOfImportJobResponse,
         NextToken: js.UndefOr[__string] = js.undefined
     ): ImportJobsResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Item.foreach(__v => __obj.update("Item", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dictionary[js.Any](
+        "Item" -> Item.asInstanceOf[js.Any]
+      )
+
       NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ImportJobsResponse]
     }
@@ -4834,7 +5123,7 @@ package pinpoint {
   }
 
   /**
-    * The response that's provided after registering the endpoint.
+    * Provides information about the results of a request to create or update an endpoint that's associated with an event.
     */
   @js.native
   trait ItemResponse extends js.Object {
@@ -4901,7 +5190,7 @@ package pinpoint {
   }
 
   /**
-    * Message to send
+    * Specifies the content and settings for a push notification that's sent to recipients of a campaign.
     */
   @js.native
   trait Message extends js.Object {
@@ -4952,7 +5241,7 @@ package pinpoint {
   }
 
   /**
-    * Simple message object.
+    * Provides information about an API request or response.
     */
   @js.native
   trait MessageBody extends js.Object {
@@ -4973,7 +5262,7 @@ package pinpoint {
   }
 
   /**
-    * Message configuration for a campaign.
+    * Specifies the message configuration settings for a campaign.
     */
   @js.native
   trait MessageConfiguration extends js.Object {
@@ -5009,41 +5298,43 @@ package pinpoint {
   }
 
   /**
-    * Send message request.
+    * Specifies the objects that define configuration and other settings for a message.
     */
   @js.native
   trait MessageRequest extends js.Object {
+    var MessageConfiguration: DirectMessageConfiguration
     var Addresses: js.UndefOr[MapOfAddressConfiguration]
     var Context: js.UndefOr[MapOf__string]
     var Endpoints: js.UndefOr[MapOfEndpointSendConfiguration]
-    var MessageConfiguration: js.UndefOr[DirectMessageConfiguration]
     var TraceId: js.UndefOr[__string]
   }
 
   object MessageRequest {
     def apply(
+        MessageConfiguration: DirectMessageConfiguration,
         Addresses: js.UndefOr[MapOfAddressConfiguration] = js.undefined,
         Context: js.UndefOr[MapOf__string] = js.undefined,
         Endpoints: js.UndefOr[MapOfEndpointSendConfiguration] = js.undefined,
-        MessageConfiguration: js.UndefOr[DirectMessageConfiguration] = js.undefined,
         TraceId: js.UndefOr[__string] = js.undefined
     ): MessageRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dictionary[js.Any](
+        "MessageConfiguration" -> MessageConfiguration.asInstanceOf[js.Any]
+      )
+
       Addresses.foreach(__v => __obj.update("Addresses", __v.asInstanceOf[js.Any]))
       Context.foreach(__v => __obj.update("Context", __v.asInstanceOf[js.Any]))
       Endpoints.foreach(__v => __obj.update("Endpoints", __v.asInstanceOf[js.Any]))
-      MessageConfiguration.foreach(__v => __obj.update("MessageConfiguration", __v.asInstanceOf[js.Any]))
       TraceId.foreach(__v => __obj.update("TraceId", __v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[MessageRequest]
     }
   }
 
   /**
-    * Send message response.
+    * Provides information about the results of a request to send a message to an endpoint address.
     */
   @js.native
   trait MessageResponse extends js.Object {
-    var ApplicationId: js.UndefOr[__string]
+    var ApplicationId: __string
     var EndpointResult: js.UndefOr[MapOfEndpointMessageResult]
     var RequestId: js.UndefOr[__string]
     var Result: js.UndefOr[MapOfMessageResult]
@@ -5051,13 +5342,15 @@ package pinpoint {
 
   object MessageResponse {
     def apply(
-        ApplicationId: js.UndefOr[__string] = js.undefined,
+        ApplicationId: __string,
         EndpointResult: js.UndefOr[MapOfEndpointMessageResult] = js.undefined,
         RequestId: js.UndefOr[__string] = js.undefined,
         Result: js.UndefOr[MapOfMessageResult] = js.undefined
     ): MessageResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ApplicationId.foreach(__v => __obj.update("ApplicationId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dictionary[js.Any](
+        "ApplicationId" -> ApplicationId.asInstanceOf[js.Any]
+      )
+
       EndpointResult.foreach(__v => __obj.update("EndpointResult", __v.asInstanceOf[js.Any]))
       RequestId.foreach(__v => __obj.update("RequestId", __v.asInstanceOf[js.Any]))
       Result.foreach(__v => __obj.update("Result", __v.asInstanceOf[js.Any]))
@@ -5066,29 +5359,31 @@ package pinpoint {
   }
 
   /**
-    * The result from sending a message to an address.
+    * Provides information about the results of sending a message directly to an endpoint address.
     */
   @js.native
   trait MessageResult extends js.Object {
-    var DeliveryStatus: js.UndefOr[DeliveryStatus]
+    var DeliveryStatus: DeliveryStatus
+    var StatusCode: __integer
     var MessageId: js.UndefOr[__string]
-    var StatusCode: js.UndefOr[__integer]
     var StatusMessage: js.UndefOr[__string]
     var UpdatedToken: js.UndefOr[__string]
   }
 
   object MessageResult {
     def apply(
-        DeliveryStatus: js.UndefOr[DeliveryStatus] = js.undefined,
+        DeliveryStatus: DeliveryStatus,
+        StatusCode: __integer,
         MessageId: js.UndefOr[__string] = js.undefined,
-        StatusCode: js.UndefOr[__integer] = js.undefined,
         StatusMessage: js.UndefOr[__string] = js.undefined,
         UpdatedToken: js.UndefOr[__string] = js.undefined
     ): MessageResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      DeliveryStatus.foreach(__v => __obj.update("DeliveryStatus", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dictionary[js.Any](
+        "DeliveryStatus" -> DeliveryStatus.asInstanceOf[js.Any],
+        "StatusCode"     -> StatusCode.asInstanceOf[js.Any]
+      )
+
       MessageId.foreach(__v => __obj.update("MessageId", __v.asInstanceOf[js.Any]))
-      StatusCode.foreach(__v => __obj.update("StatusCode", __v.asInstanceOf[js.Any]))
       StatusMessage.foreach(__v => __obj.update("StatusMessage", __v.asInstanceOf[js.Any]))
       UpdatedToken.foreach(__v => __obj.update("UpdatedToken", __v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[MessageResult]
@@ -5103,22 +5398,24 @@ package pinpoint {
   }
 
   /**
-    * Custom metric dimension
+    * Specifies metric-based criteria for including or excluding endpoints from a segment. These criteria derive from custom metrics that you define for endpoints.
     */
   @js.native
   trait MetricDimension extends js.Object {
-    var ComparisonOperator: js.UndefOr[__string]
-    var Value: js.UndefOr[__double]
+    var ComparisonOperator: __string
+    var Value: __double
   }
 
   object MetricDimension {
     def apply(
-        ComparisonOperator: js.UndefOr[__string] = js.undefined,
-        Value: js.UndefOr[__double] = js.undefined
+        ComparisonOperator: __string,
+        Value: __double
     ): MetricDimension = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ComparisonOperator.foreach(__v => __obj.update("ComparisonOperator", __v.asInstanceOf[js.Any]))
-      Value.foreach(__v => __obj.update("Value", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dictionary[js.Any](
+        "ComparisonOperator" -> ComparisonOperator.asInstanceOf[js.Any],
+        "Value"              -> Value.asInstanceOf[js.Any]
+      )
+
       __obj.asInstanceOf[MetricDimension]
     }
   }
@@ -5131,7 +5428,7 @@ package pinpoint {
   }
 
   /**
-    * Phone Number Validate request.
+    * Specifies a phone number to validate and retrieve information about.
     */
   @js.native
   trait NumberValidateRequest extends js.Object {
@@ -5152,7 +5449,7 @@ package pinpoint {
   }
 
   /**
-    * Phone Number Validate response.
+    * Provides information about a phone number.
     */
   @js.native
   trait NumberValidateResponse extends js.Object {
@@ -5243,7 +5540,7 @@ package pinpoint {
   }
 
   /**
-    * Public endpoint attributes.
+    * Specifies the properties and attributes of an endpoint that's associated with an event.
     */
   @js.native
   trait PublicEndpoint extends js.Object {
@@ -5365,7 +5662,7 @@ package pinpoint {
   }
 
   /**
-    * Quiet Time
+    * Specifies the start and end times that define a time range when messages aren't sent to endpoints.
     */
   @js.native
   trait QuietTime extends js.Object {
@@ -5386,7 +5683,7 @@ package pinpoint {
   }
 
   /**
-    * An email represented as a raw MIME message.
+    * Specifies the contents of an email message, represented as a raw MIME message.
     */
   @js.native
   trait RawEmail extends js.Object {
@@ -5404,22 +5701,24 @@ package pinpoint {
   }
 
   /**
-    * Define how a segment based on recency of use.
+    * Specifies criteria for including or excluding endpoints from a segment based on how recently an endpoint was active.
     */
   @js.native
   trait RecencyDimension extends js.Object {
-    var Duration: js.UndefOr[Duration]
-    var RecencyType: js.UndefOr[RecencyType]
+    var Duration: Duration
+    var RecencyType: RecencyType
   }
 
   object RecencyDimension {
     def apply(
-        Duration: js.UndefOr[Duration] = js.undefined,
-        RecencyType: js.UndefOr[RecencyType] = js.undefined
+        Duration: Duration,
+        RecencyType: RecencyType
     ): RecencyDimension = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Duration.foreach(__v => __obj.update("Duration", __v.asInstanceOf[js.Any]))
-      RecencyType.foreach(__v => __obj.update("RecencyType", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dictionary[js.Any](
+        "Duration"    -> Duration.asInstanceOf[js.Any],
+        "RecencyType" -> RecencyType.asInstanceOf[js.Any]
+      )
+
       __obj.asInstanceOf[RecencyDimension]
     }
   }
@@ -5472,7 +5771,56 @@ package pinpoint {
   }
 
   /**
-    * SMS Channel Request
+    * Provides the results of a query that retrieved the data for a standard metric that applies to an application or campaign.
+    */
+  @js.native
+  trait ResultRow extends js.Object {
+    var GroupedBys: ListOfResultRowValue
+    var Values: ListOfResultRowValue
+  }
+
+  object ResultRow {
+    def apply(
+        GroupedBys: ListOfResultRowValue,
+        Values: ListOfResultRowValue
+    ): ResultRow = {
+      val __obj = js.Dictionary[js.Any](
+        "GroupedBys" -> GroupedBys.asInstanceOf[js.Any],
+        "Values"     -> Values.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[ResultRow]
+    }
+  }
+
+  /**
+    *  Provides a single value and metadata about that value as part of an array of query results for a standard metric that applies to an application or campaign.
+    */
+  @js.native
+  trait ResultRowValue extends js.Object {
+    var Key: __string
+    var Type: __string
+    var Value: __string
+  }
+
+  object ResultRowValue {
+    def apply(
+        Key: __string,
+        Type: __string,
+        Value: __string
+    ): ResultRowValue = {
+      val __obj = js.Dictionary[js.Any](
+        "Key"   -> Key.asInstanceOf[js.Any],
+        "Type"  -> Type.asInstanceOf[js.Any],
+        "Value" -> Value.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[ResultRowValue]
+    }
+  }
+
+  /**
+    * Specifies the status and settings of the SMS channel for an application.
     */
   @js.native
   trait SMSChannelRequest extends js.Object {
@@ -5496,10 +5844,11 @@ package pinpoint {
   }
 
   /**
-    * SMS Channel Response.
+    * Provides information about the status and settings of the SMS channel for an application.
     */
   @js.native
   trait SMSChannelResponse extends js.Object {
+    var Platform: __string
     var ApplicationId: js.UndefOr[__string]
     var CreationDate: js.UndefOr[__string]
     var Enabled: js.UndefOr[__boolean]
@@ -5508,7 +5857,6 @@ package pinpoint {
     var IsArchived: js.UndefOr[__boolean]
     var LastModifiedBy: js.UndefOr[__string]
     var LastModifiedDate: js.UndefOr[__string]
-    var Platform: js.UndefOr[__string]
     var PromotionalMessagesPerSecond: js.UndefOr[__integer]
     var SenderId: js.UndefOr[__string]
     var ShortCode: js.UndefOr[__string]
@@ -5518,6 +5866,7 @@ package pinpoint {
 
   object SMSChannelResponse {
     def apply(
+        Platform: __string,
         ApplicationId: js.UndefOr[__string] = js.undefined,
         CreationDate: js.UndefOr[__string] = js.undefined,
         Enabled: js.UndefOr[__boolean] = js.undefined,
@@ -5526,14 +5875,16 @@ package pinpoint {
         IsArchived: js.UndefOr[__boolean] = js.undefined,
         LastModifiedBy: js.UndefOr[__string] = js.undefined,
         LastModifiedDate: js.UndefOr[__string] = js.undefined,
-        Platform: js.UndefOr[__string] = js.undefined,
         PromotionalMessagesPerSecond: js.UndefOr[__integer] = js.undefined,
         SenderId: js.UndefOr[__string] = js.undefined,
         ShortCode: js.UndefOr[__string] = js.undefined,
         TransactionalMessagesPerSecond: js.UndefOr[__integer] = js.undefined,
         Version: js.UndefOr[__integer] = js.undefined
     ): SMSChannelResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dictionary[js.Any](
+        "Platform" -> Platform.asInstanceOf[js.Any]
+      )
+
       ApplicationId.foreach(__v => __obj.update("ApplicationId", __v.asInstanceOf[js.Any]))
       CreationDate.foreach(__v => __obj.update("CreationDate", __v.asInstanceOf[js.Any]))
       Enabled.foreach(__v => __obj.update("Enabled", __v.asInstanceOf[js.Any]))
@@ -5542,7 +5893,6 @@ package pinpoint {
       IsArchived.foreach(__v => __obj.update("IsArchived", __v.asInstanceOf[js.Any]))
       LastModifiedBy.foreach(__v => __obj.update("LastModifiedBy", __v.asInstanceOf[js.Any]))
       LastModifiedDate.foreach(__v => __obj.update("LastModifiedDate", __v.asInstanceOf[js.Any]))
-      Platform.foreach(__v => __obj.update("Platform", __v.asInstanceOf[js.Any]))
       PromotionalMessagesPerSecond.foreach(
         __v => __obj.update("PromotionalMessagesPerSecond", __v.asInstanceOf[js.Any])
       )
@@ -5557,7 +5907,7 @@ package pinpoint {
   }
 
   /**
-    * SMS Message.
+    * Specifies the default settings for a one-time SMS message that's sent directly to an endpoint.
     */
   @js.native
   trait SMSMessage extends js.Object {
@@ -5590,43 +5940,45 @@ package pinpoint {
   }
 
   /**
-    * Shcedule that defines when a campaign is run.
+    * Specifies the schedule settings for a campaign.
     */
   @js.native
   trait Schedule extends js.Object {
+    var StartTime: __string
     var EndTime: js.UndefOr[__string]
     var EventFilter: js.UndefOr[CampaignEventFilter]
     var Frequency: js.UndefOr[Frequency]
     var IsLocalTime: js.UndefOr[__boolean]
     var QuietTime: js.UndefOr[QuietTime]
-    var StartTime: js.UndefOr[__string]
     var Timezone: js.UndefOr[__string]
   }
 
   object Schedule {
     def apply(
+        StartTime: __string,
         EndTime: js.UndefOr[__string] = js.undefined,
         EventFilter: js.UndefOr[CampaignEventFilter] = js.undefined,
         Frequency: js.UndefOr[Frequency] = js.undefined,
         IsLocalTime: js.UndefOr[__boolean] = js.undefined,
         QuietTime: js.UndefOr[QuietTime] = js.undefined,
-        StartTime: js.UndefOr[__string] = js.undefined,
         Timezone: js.UndefOr[__string] = js.undefined
     ): Schedule = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dictionary[js.Any](
+        "StartTime" -> StartTime.asInstanceOf[js.Any]
+      )
+
       EndTime.foreach(__v => __obj.update("EndTime", __v.asInstanceOf[js.Any]))
       EventFilter.foreach(__v => __obj.update("EventFilter", __v.asInstanceOf[js.Any]))
       Frequency.foreach(__v => __obj.update("Frequency", __v.asInstanceOf[js.Any]))
       IsLocalTime.foreach(__v => __obj.update("IsLocalTime", __v.asInstanceOf[js.Any]))
       QuietTime.foreach(__v => __obj.update("QuietTime", __v.asInstanceOf[js.Any]))
-      StartTime.foreach(__v => __obj.update("StartTime", __v.asInstanceOf[js.Any]))
       Timezone.foreach(__v => __obj.update("Timezone", __v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Schedule]
     }
   }
 
   /**
-    * Segment behavior dimensions
+    * Specifies dimension settings for including or excluding endpoints from a segment based on how recently an endpoint was active.
     */
   @js.native
   trait SegmentBehaviors extends js.Object {
@@ -5644,7 +5996,7 @@ package pinpoint {
   }
 
   /**
-    * Segment demographic dimensions
+    * Specifies demographic-based dimension settings for including or excluding endpoints from a segment. These settings derive from characteristics of endpoint devices, such as platform, make, and model.
     */
   @js.native
   trait SegmentDemographics extends js.Object {
@@ -5677,7 +6029,7 @@ package pinpoint {
   }
 
   /**
-    * Segment dimensions
+    * Specifies the dimension settings for a segment.
     */
   @js.native
   trait SegmentDimensions extends js.Object {
@@ -5710,7 +6062,7 @@ package pinpoint {
   }
 
   /**
-    * Segment group definition.
+    * Specifies the base segments and dimensions for a segment, and the relationships between these base segments and dimensions.
     */
   @js.native
   trait SegmentGroup extends js.Object {
@@ -5737,7 +6089,7 @@ package pinpoint {
   }
 
   /**
-    * Segment group definition.
+    * Specifies the settings that define the relationships between segment groups for a segment.
     */
   @js.native
   trait SegmentGroupList extends js.Object {
@@ -5758,40 +6110,42 @@ package pinpoint {
   }
 
   /**
-    * Segment import definition.
+    * Provides information about the import job that created a segment. An import job is a job that creates a user segment by importing endpoint definitions.
     */
   @js.native
   trait SegmentImportResource extends js.Object {
+    var ExternalId: __string
+    var Format: Format
+    var RoleArn: __string
+    var S3Url: __string
+    var Size: __integer
     var ChannelCounts: js.UndefOr[MapOf__integer]
-    var ExternalId: js.UndefOr[__string]
-    var Format: js.UndefOr[Format]
-    var RoleArn: js.UndefOr[__string]
-    var S3Url: js.UndefOr[__string]
-    var Size: js.UndefOr[__integer]
   }
 
   object SegmentImportResource {
     def apply(
-        ChannelCounts: js.UndefOr[MapOf__integer] = js.undefined,
-        ExternalId: js.UndefOr[__string] = js.undefined,
-        Format: js.UndefOr[Format] = js.undefined,
-        RoleArn: js.UndefOr[__string] = js.undefined,
-        S3Url: js.UndefOr[__string] = js.undefined,
-        Size: js.UndefOr[__integer] = js.undefined
+        ExternalId: __string,
+        Format: Format,
+        RoleArn: __string,
+        S3Url: __string,
+        Size: __integer,
+        ChannelCounts: js.UndefOr[MapOf__integer] = js.undefined
     ): SegmentImportResource = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dictionary[js.Any](
+        "ExternalId" -> ExternalId.asInstanceOf[js.Any],
+        "Format"     -> Format.asInstanceOf[js.Any],
+        "RoleArn"    -> RoleArn.asInstanceOf[js.Any],
+        "S3Url"      -> S3Url.asInstanceOf[js.Any],
+        "Size"       -> Size.asInstanceOf[js.Any]
+      )
+
       ChannelCounts.foreach(__v => __obj.update("ChannelCounts", __v.asInstanceOf[js.Any]))
-      ExternalId.foreach(__v => __obj.update("ExternalId", __v.asInstanceOf[js.Any]))
-      Format.foreach(__v => __obj.update("Format", __v.asInstanceOf[js.Any]))
-      RoleArn.foreach(__v => __obj.update("RoleArn", __v.asInstanceOf[js.Any]))
-      S3Url.foreach(__v => __obj.update("S3Url", __v.asInstanceOf[js.Any]))
-      Size.foreach(__v => __obj.update("Size", __v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SegmentImportResource]
     }
   }
 
   /**
-    * Segment location dimensions
+    * Specifies geographical dimension settings for a segment.
     */
   @js.native
   trait SegmentLocation extends js.Object {
@@ -5812,71 +6166,75 @@ package pinpoint {
   }
 
   /**
-    * Segment reference.
+    * Specifies the segment identifier and version of a segment.
     */
   @js.native
   trait SegmentReference extends js.Object {
-    var Id: js.UndefOr[__string]
+    var Id: __string
     var Version: js.UndefOr[__integer]
   }
 
   object SegmentReference {
     def apply(
-        Id: js.UndefOr[__string] = js.undefined,
+        Id: __string,
         Version: js.UndefOr[__integer] = js.undefined
     ): SegmentReference = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Id.foreach(__v => __obj.update("Id", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dictionary[js.Any](
+        "Id" -> Id.asInstanceOf[js.Any]
+      )
+
       Version.foreach(__v => __obj.update("Version", __v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SegmentReference]
     }
   }
 
   /**
-    * Segment definition.
+    * Provides information about the configuration, dimension, and other settings for a segment.
     */
   @js.native
   trait SegmentResponse extends js.Object {
-    var ApplicationId: js.UndefOr[__string]
-    var Arn: js.UndefOr[__string]
-    var CreationDate: js.UndefOr[__string]
+    var ApplicationId: __string
+    var Arn: __string
+    var CreationDate: __string
+    var Id: __string
+    var SegmentType: SegmentType
     var Dimensions: js.UndefOr[SegmentDimensions]
-    var Id: js.UndefOr[__string]
     var ImportDefinition: js.UndefOr[SegmentImportResource]
     var LastModifiedDate: js.UndefOr[__string]
     var Name: js.UndefOr[__string]
     var SegmentGroups: js.UndefOr[SegmentGroupList]
-    var SegmentType: js.UndefOr[SegmentType]
     var Version: js.UndefOr[__integer]
     var tags: js.UndefOr[MapOf__string]
   }
 
   object SegmentResponse {
     def apply(
-        ApplicationId: js.UndefOr[__string] = js.undefined,
-        Arn: js.UndefOr[__string] = js.undefined,
-        CreationDate: js.UndefOr[__string] = js.undefined,
+        ApplicationId: __string,
+        Arn: __string,
+        CreationDate: __string,
+        Id: __string,
+        SegmentType: SegmentType,
         Dimensions: js.UndefOr[SegmentDimensions] = js.undefined,
-        Id: js.UndefOr[__string] = js.undefined,
         ImportDefinition: js.UndefOr[SegmentImportResource] = js.undefined,
         LastModifiedDate: js.UndefOr[__string] = js.undefined,
         Name: js.UndefOr[__string] = js.undefined,
         SegmentGroups: js.UndefOr[SegmentGroupList] = js.undefined,
-        SegmentType: js.UndefOr[SegmentType] = js.undefined,
         Version: js.UndefOr[__integer] = js.undefined,
         tags: js.UndefOr[MapOf__string] = js.undefined
     ): SegmentResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ApplicationId.foreach(__v => __obj.update("ApplicationId", __v.asInstanceOf[js.Any]))
-      Arn.foreach(__v => __obj.update("Arn", __v.asInstanceOf[js.Any]))
-      CreationDate.foreach(__v => __obj.update("CreationDate", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dictionary[js.Any](
+        "ApplicationId" -> ApplicationId.asInstanceOf[js.Any],
+        "Arn"           -> Arn.asInstanceOf[js.Any],
+        "CreationDate"  -> CreationDate.asInstanceOf[js.Any],
+        "Id"            -> Id.asInstanceOf[js.Any],
+        "SegmentType"   -> SegmentType.asInstanceOf[js.Any]
+      )
+
       Dimensions.foreach(__v => __obj.update("Dimensions", __v.asInstanceOf[js.Any]))
-      Id.foreach(__v => __obj.update("Id", __v.asInstanceOf[js.Any]))
       ImportDefinition.foreach(__v => __obj.update("ImportDefinition", __v.asInstanceOf[js.Any]))
       LastModifiedDate.foreach(__v => __obj.update("LastModifiedDate", __v.asInstanceOf[js.Any]))
       Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
       SegmentGroups.foreach(__v => __obj.update("SegmentGroups", __v.asInstanceOf[js.Any]))
-      SegmentType.foreach(__v => __obj.update("SegmentType", __v.asInstanceOf[js.Any]))
       Version.foreach(__v => __obj.update("Version", __v.asInstanceOf[js.Any]))
       tags.foreach(__v => __obj.update("tags", __v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SegmentResponse]
@@ -5891,21 +6249,23 @@ package pinpoint {
   }
 
   /**
-    * Segments in your account.
+    * Provides information about all the segments that are associated with an application.
     */
   @js.native
   trait SegmentsResponse extends js.Object {
-    var Item: js.UndefOr[ListOfSegmentResponse]
+    var Item: ListOfSegmentResponse
     var NextToken: js.UndefOr[__string]
   }
 
   object SegmentsResponse {
     def apply(
-        Item: js.UndefOr[ListOfSegmentResponse] = js.undefined,
+        Item: ListOfSegmentResponse,
         NextToken: js.UndefOr[__string] = js.undefined
     ): SegmentsResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Item.foreach(__v => __obj.update("Item", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dictionary[js.Any](
+        "Item" -> Item.asInstanceOf[js.Any]
+      )
+
       NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SegmentsResponse]
     }
@@ -5949,50 +6309,54 @@ package pinpoint {
   }
 
   /**
-    * Send message request.
+    * Specifies the configuration and other settings for a message to send to all the endpoints that are associated with a list of users.
     */
   @js.native
   trait SendUsersMessageRequest extends js.Object {
+    var MessageConfiguration: DirectMessageConfiguration
+    var Users: MapOfEndpointSendConfiguration
     var Context: js.UndefOr[MapOf__string]
-    var MessageConfiguration: js.UndefOr[DirectMessageConfiguration]
     var TraceId: js.UndefOr[__string]
-    var Users: js.UndefOr[MapOfEndpointSendConfiguration]
   }
 
   object SendUsersMessageRequest {
     def apply(
+        MessageConfiguration: DirectMessageConfiguration,
+        Users: MapOfEndpointSendConfiguration,
         Context: js.UndefOr[MapOf__string] = js.undefined,
-        MessageConfiguration: js.UndefOr[DirectMessageConfiguration] = js.undefined,
-        TraceId: js.UndefOr[__string] = js.undefined,
-        Users: js.UndefOr[MapOfEndpointSendConfiguration] = js.undefined
+        TraceId: js.UndefOr[__string] = js.undefined
     ): SendUsersMessageRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dictionary[js.Any](
+        "MessageConfiguration" -> MessageConfiguration.asInstanceOf[js.Any],
+        "Users"                -> Users.asInstanceOf[js.Any]
+      )
+
       Context.foreach(__v => __obj.update("Context", __v.asInstanceOf[js.Any]))
-      MessageConfiguration.foreach(__v => __obj.update("MessageConfiguration", __v.asInstanceOf[js.Any]))
       TraceId.foreach(__v => __obj.update("TraceId", __v.asInstanceOf[js.Any]))
-      Users.foreach(__v => __obj.update("Users", __v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SendUsersMessageRequest]
     }
   }
 
   /**
-    * User send message response.
+    * Provides information about which users and endpoints a message was sent to.
     */
   @js.native
   trait SendUsersMessageResponse extends js.Object {
-    var ApplicationId: js.UndefOr[__string]
+    var ApplicationId: __string
     var RequestId: js.UndefOr[__string]
     var Result: js.UndefOr[MapOfMapOfEndpointMessageResult]
   }
 
   object SendUsersMessageResponse {
     def apply(
-        ApplicationId: js.UndefOr[__string] = js.undefined,
+        ApplicationId: __string,
         RequestId: js.UndefOr[__string] = js.undefined,
         Result: js.UndefOr[MapOfMapOfEndpointMessageResult] = js.undefined
     ): SendUsersMessageResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ApplicationId.foreach(__v => __obj.update("ApplicationId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dictionary[js.Any](
+        "ApplicationId" -> ApplicationId.asInstanceOf[js.Any]
+      )
+
       RequestId.foreach(__v => __obj.update("RequestId", __v.asInstanceOf[js.Any]))
       Result.foreach(__v => __obj.update("Result", __v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SendUsersMessageResponse]
@@ -6037,55 +6401,59 @@ package pinpoint {
   }
 
   /**
-    * Information about a session.
+    * Provides information about a session.
     */
   @js.native
   trait Session extends js.Object {
+    var Id: __string
+    var StartTimestamp: __string
     var Duration: js.UndefOr[__integer]
-    var Id: js.UndefOr[__string]
-    var StartTimestamp: js.UndefOr[__string]
     var StopTimestamp: js.UndefOr[__string]
   }
 
   object Session {
     def apply(
+        Id: __string,
+        StartTimestamp: __string,
         Duration: js.UndefOr[__integer] = js.undefined,
-        Id: js.UndefOr[__string] = js.undefined,
-        StartTimestamp: js.UndefOr[__string] = js.undefined,
         StopTimestamp: js.UndefOr[__string] = js.undefined
     ): Session = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dictionary[js.Any](
+        "Id"             -> Id.asInstanceOf[js.Any],
+        "StartTimestamp" -> StartTimestamp.asInstanceOf[js.Any]
+      )
+
       Duration.foreach(__v => __obj.update("Duration", __v.asInstanceOf[js.Any]))
-      Id.foreach(__v => __obj.update("Id", __v.asInstanceOf[js.Any]))
-      StartTimestamp.foreach(__v => __obj.update("StartTimestamp", __v.asInstanceOf[js.Any]))
       StopTimestamp.foreach(__v => __obj.update("StopTimestamp", __v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Session]
     }
   }
 
   /**
-    * Dimension specification of a segment.
+    * Specifies the dimension type and values for a segment dimension.
     */
   @js.native
   trait SetDimension extends js.Object {
+    var Values: ListOf__string
     var DimensionType: js.UndefOr[DimensionType]
-    var Values: js.UndefOr[ListOf__string]
   }
 
   object SetDimension {
     def apply(
-        DimensionType: js.UndefOr[DimensionType] = js.undefined,
-        Values: js.UndefOr[ListOf__string] = js.undefined
+        Values: ListOf__string,
+        DimensionType: js.UndefOr[DimensionType] = js.undefined
     ): SetDimension = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dictionary[js.Any](
+        "Values" -> Values.asInstanceOf[js.Any]
+      )
+
       DimensionType.foreach(__v => __obj.update("DimensionType", __v.asInstanceOf[js.Any]))
-      Values.foreach(__v => __obj.update("Values", __v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SetDimension]
     }
   }
 
   /**
-    * An email composed of a subject, a text part and a html part.
+    * Specifies the content of an email message, composed of a subject, a text part, and an HTML part.
     */
   @js.native
   trait SimpleEmail extends js.Object {
@@ -6109,7 +6477,7 @@ package pinpoint {
   }
 
   /**
-    * Textual email data, plus an optional character set specification.
+    * Specifies the subject or body of an email message, represented as textual email data and the applicable character set.
     */
   @js.native
   trait SimpleEmailPart extends js.Object {
@@ -6157,6 +6525,9 @@ package pinpoint {
     }
   }
 
+  /**
+    * Specifies the tags (keys and values) for an application, campaign, or segment.
+    */
   @js.native
   trait TagsModel extends js.Object {
     var tags: MapOf__string
@@ -6175,14 +6546,14 @@ package pinpoint {
   }
 
   /**
-    * Treatment resource
+    * Specifies the settings for a campaign treatment. A treatment is a variation of a campaign that's used for A/B testing of a campaign.
     */
   @js.native
   trait TreatmentResource extends js.Object {
-    var Id: js.UndefOr[__string]
+    var Id: __string
+    var SizePercent: __integer
     var MessageConfiguration: js.UndefOr[MessageConfiguration]
     var Schedule: js.UndefOr[Schedule]
-    var SizePercent: js.UndefOr[__integer]
     var State: js.UndefOr[CampaignState]
     var TreatmentDescription: js.UndefOr[__string]
     var TreatmentName: js.UndefOr[__string]
@@ -6190,19 +6561,21 @@ package pinpoint {
 
   object TreatmentResource {
     def apply(
-        Id: js.UndefOr[__string] = js.undefined,
+        Id: __string,
+        SizePercent: __integer,
         MessageConfiguration: js.UndefOr[MessageConfiguration] = js.undefined,
         Schedule: js.UndefOr[Schedule] = js.undefined,
-        SizePercent: js.UndefOr[__integer] = js.undefined,
         State: js.UndefOr[CampaignState] = js.undefined,
         TreatmentDescription: js.UndefOr[__string] = js.undefined,
         TreatmentName: js.UndefOr[__string] = js.undefined
     ): TreatmentResource = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Id.foreach(__v => __obj.update("Id", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dictionary[js.Any](
+        "Id"          -> Id.asInstanceOf[js.Any],
+        "SizePercent" -> SizePercent.asInstanceOf[js.Any]
+      )
+
       MessageConfiguration.foreach(__v => __obj.update("MessageConfiguration", __v.asInstanceOf[js.Any]))
       Schedule.foreach(__v => __obj.update("Schedule", __v.asInstanceOf[js.Any]))
-      SizePercent.foreach(__v => __obj.update("SizePercent", __v.asInstanceOf[js.Any]))
       State.foreach(__v => __obj.update("State", __v.asInstanceOf[js.Any]))
       TreatmentDescription.foreach(__v => __obj.update("TreatmentDescription", __v.asInstanceOf[js.Any]))
       TreatmentName.foreach(__v => __obj.update("TreatmentName", __v.asInstanceOf[js.Any]))
@@ -6461,7 +6834,7 @@ package pinpoint {
   }
 
   /**
-    * Update attributes request
+    * Specifies one or more attributes to remove from all the endpoints that are associated with an application.
     */
   @js.native
   trait UpdateAttributesRequest extends js.Object {
@@ -6821,7 +7194,7 @@ package pinpoint {
   }
 
   /**
-    * Voice Channel Request
+    * Specifies the status and settings of the voice channel for an application.
     */
   @js.native
   trait VoiceChannelRequest extends js.Object {
@@ -6839,10 +7212,11 @@ package pinpoint {
   }
 
   /**
-    * Voice Channel Response.
+    * Provides information about the status and settings of the voice channel for an application.
     */
   @js.native
   trait VoiceChannelResponse extends js.Object {
+    var Platform: __string
     var ApplicationId: js.UndefOr[__string]
     var CreationDate: js.UndefOr[__string]
     var Enabled: js.UndefOr[__boolean]
@@ -6851,12 +7225,12 @@ package pinpoint {
     var IsArchived: js.UndefOr[__boolean]
     var LastModifiedBy: js.UndefOr[__string]
     var LastModifiedDate: js.UndefOr[__string]
-    var Platform: js.UndefOr[__string]
     var Version: js.UndefOr[__integer]
   }
 
   object VoiceChannelResponse {
     def apply(
+        Platform: __string,
         ApplicationId: js.UndefOr[__string] = js.undefined,
         CreationDate: js.UndefOr[__string] = js.undefined,
         Enabled: js.UndefOr[__boolean] = js.undefined,
@@ -6865,10 +7239,12 @@ package pinpoint {
         IsArchived: js.UndefOr[__boolean] = js.undefined,
         LastModifiedBy: js.UndefOr[__string] = js.undefined,
         LastModifiedDate: js.UndefOr[__string] = js.undefined,
-        Platform: js.UndefOr[__string] = js.undefined,
         Version: js.UndefOr[__integer] = js.undefined
     ): VoiceChannelResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dictionary[js.Any](
+        "Platform" -> Platform.asInstanceOf[js.Any]
+      )
+
       ApplicationId.foreach(__v => __obj.update("ApplicationId", __v.asInstanceOf[js.Any]))
       CreationDate.foreach(__v => __obj.update("CreationDate", __v.asInstanceOf[js.Any]))
       Enabled.foreach(__v => __obj.update("Enabled", __v.asInstanceOf[js.Any]))
@@ -6877,14 +7253,13 @@ package pinpoint {
       IsArchived.foreach(__v => __obj.update("IsArchived", __v.asInstanceOf[js.Any]))
       LastModifiedBy.foreach(__v => __obj.update("LastModifiedBy", __v.asInstanceOf[js.Any]))
       LastModifiedDate.foreach(__v => __obj.update("LastModifiedDate", __v.asInstanceOf[js.Any]))
-      Platform.foreach(__v => __obj.update("Platform", __v.asInstanceOf[js.Any]))
       Version.foreach(__v => __obj.update("Version", __v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[VoiceChannelResponse]
     }
   }
 
   /**
-    * Voice Message.
+    * Specifies the settings for a one-time voice message that's sent directly to an endpoint through the voice channel.
     */
   @js.native
   trait VoiceMessage extends js.Object {
@@ -6914,7 +7289,7 @@ package pinpoint {
   }
 
   /**
-    * Creating application setting request
+    * Specifies the default settings for an application.
     */
   @js.native
   trait WriteApplicationSettingsRequest extends js.Object {
@@ -6941,7 +7316,7 @@ package pinpoint {
   }
 
   /**
-    * Used to create a campaign.
+    * Specifies the configuration and other settings for a campaign.
     */
   @js.native
   trait WriteCampaignRequest extends js.Object {
@@ -6998,28 +7373,30 @@ package pinpoint {
   }
 
   /**
-    * Request to save an EventStream.
+    * Specifies the Amazon Resource Name (ARN) of an event stream to publish events to and the AWS Identity and Access Management (IAM) role to use when publishing those events.
     */
   @js.native
   trait WriteEventStream extends js.Object {
-    var DestinationStreamArn: js.UndefOr[__string]
-    var RoleArn: js.UndefOr[__string]
+    var DestinationStreamArn: __string
+    var RoleArn: __string
   }
 
   object WriteEventStream {
     def apply(
-        DestinationStreamArn: js.UndefOr[__string] = js.undefined,
-        RoleArn: js.UndefOr[__string] = js.undefined
+        DestinationStreamArn: __string,
+        RoleArn: __string
     ): WriteEventStream = {
-      val __obj = js.Dictionary.empty[js.Any]
-      DestinationStreamArn.foreach(__v => __obj.update("DestinationStreamArn", __v.asInstanceOf[js.Any]))
-      RoleArn.foreach(__v => __obj.update("RoleArn", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dictionary[js.Any](
+        "DestinationStreamArn" -> DestinationStreamArn.asInstanceOf[js.Any],
+        "RoleArn"              -> RoleArn.asInstanceOf[js.Any]
+      )
+
       __obj.asInstanceOf[WriteEventStream]
     }
   }
 
   /**
-    * Segment definition.
+    * Specifies the configuration, dimension, and other settings for a segment. A WriteSegmentRequest object can include a Dimensions object or a SegmentGroups object, but not both.
     */
   @js.native
   trait WriteSegmentRequest extends js.Object {
@@ -7046,29 +7423,31 @@ package pinpoint {
   }
 
   /**
-    * Used to create a campaign treatment.
+    * Specifies the settings for a campaign treatment. A treatment is a variation of a campaign that's used for A/B testing of a campaign.
     */
   @js.native
   trait WriteTreatmentResource extends js.Object {
+    var SizePercent: __integer
     var MessageConfiguration: js.UndefOr[MessageConfiguration]
     var Schedule: js.UndefOr[Schedule]
-    var SizePercent: js.UndefOr[__integer]
     var TreatmentDescription: js.UndefOr[__string]
     var TreatmentName: js.UndefOr[__string]
   }
 
   object WriteTreatmentResource {
     def apply(
+        SizePercent: __integer,
         MessageConfiguration: js.UndefOr[MessageConfiguration] = js.undefined,
         Schedule: js.UndefOr[Schedule] = js.undefined,
-        SizePercent: js.UndefOr[__integer] = js.undefined,
         TreatmentDescription: js.UndefOr[__string] = js.undefined,
         TreatmentName: js.UndefOr[__string] = js.undefined
     ): WriteTreatmentResource = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dictionary[js.Any](
+        "SizePercent" -> SizePercent.asInstanceOf[js.Any]
+      )
+
       MessageConfiguration.foreach(__v => __obj.update("MessageConfiguration", __v.asInstanceOf[js.Any]))
       Schedule.foreach(__v => __obj.update("Schedule", __v.asInstanceOf[js.Any]))
-      SizePercent.foreach(__v => __obj.update("SizePercent", __v.asInstanceOf[js.Any]))
       TreatmentDescription.foreach(__v => __obj.update("TreatmentDescription", __v.asInstanceOf[js.Any]))
       TreatmentName.foreach(__v => __obj.update("TreatmentName", __v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[WriteTreatmentResource]

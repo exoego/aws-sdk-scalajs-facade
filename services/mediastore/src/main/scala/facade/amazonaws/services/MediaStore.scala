@@ -27,6 +27,10 @@ package object mediastore {
   type MethodName                    = String
   type Origin                        = String
   type PaginationToken               = String
+  type TagKey                        = String
+  type TagKeyList                    = js.Array[TagKey]
+  type TagList                       = js.Array[Tag]
+  type TagValue                      = String
   type TimeStamp                     = js.Date
 
   implicit final class MediaStoreOps(val service: MediaStore) extends AnyVal {
@@ -51,6 +55,8 @@ package object mediastore {
       service.getLifecyclePolicy(params).promise.toFuture
     def listContainersFuture(params: ListContainersInput): Future[ListContainersOutput] =
       service.listContainers(params).promise.toFuture
+    def listTagsForResourceFuture(params: ListTagsForResourceInput): Future[ListTagsForResourceOutput] =
+      service.listTagsForResource(params).promise.toFuture
     def putContainerPolicyFuture(params: PutContainerPolicyInput): Future[PutContainerPolicyOutput] =
       service.putContainerPolicy(params).promise.toFuture
     def putCorsPolicyFuture(params: PutCorsPolicyInput): Future[PutCorsPolicyOutput] =
@@ -61,6 +67,10 @@ package object mediastore {
       service.startAccessLogging(params).promise.toFuture
     def stopAccessLoggingFuture(params: StopAccessLoggingInput): Future[StopAccessLoggingOutput] =
       service.stopAccessLogging(params).promise.toFuture
+    def tagResourceFuture(params: TagResourceInput): Future[TagResourceOutput] =
+      service.tagResource(params).promise.toFuture
+    def untagResourceFuture(params: UntagResourceInput): Future[UntagResourceOutput] =
+      service.untagResource(params).promise.toFuture
   }
 }
 
@@ -80,11 +90,14 @@ package mediastore {
     def getCorsPolicy(params: GetCorsPolicyInput): Request[GetCorsPolicyOutput]                         = js.native
     def getLifecyclePolicy(params: GetLifecyclePolicyInput): Request[GetLifecyclePolicyOutput]          = js.native
     def listContainers(params: ListContainersInput): Request[ListContainersOutput]                      = js.native
+    def listTagsForResource(params: ListTagsForResourceInput): Request[ListTagsForResourceOutput]       = js.native
     def putContainerPolicy(params: PutContainerPolicyInput): Request[PutContainerPolicyOutput]          = js.native
     def putCorsPolicy(params: PutCorsPolicyInput): Request[PutCorsPolicyOutput]                         = js.native
     def putLifecyclePolicy(params: PutLifecyclePolicyInput): Request[PutLifecyclePolicyOutput]          = js.native
     def startAccessLogging(params: StartAccessLoggingInput): Request[StartAccessLoggingOutput]          = js.native
     def stopAccessLogging(params: StopAccessLoggingInput): Request[StopAccessLoggingOutput]             = js.native
+    def tagResource(params: TagResourceInput): Request[TagResourceOutput]                               = js.native
+    def untagResource(params: UntagResourceInput): Request[UntagResourceOutput]                         = js.native
   }
 
   /**
@@ -163,16 +176,19 @@ package mediastore {
   @js.native
   trait CreateContainerInput extends js.Object {
     var ContainerName: ContainerName
+    var Tags: js.UndefOr[TagList]
   }
 
   object CreateContainerInput {
     def apply(
-        ContainerName: ContainerName
+        ContainerName: ContainerName,
+        Tags: js.UndefOr[TagList] = js.undefined
     ): CreateContainerInput = {
       val __obj = js.Dictionary[js.Any](
         "ContainerName" -> ContainerName.asInstanceOf[js.Any]
       )
 
+      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateContainerInput]
     }
   }
@@ -480,6 +496,38 @@ package mediastore {
     }
   }
 
+  @js.native
+  trait ListTagsForResourceInput extends js.Object {
+    var Resource: ContainerARN
+  }
+
+  object ListTagsForResourceInput {
+    def apply(
+        Resource: ContainerARN
+    ): ListTagsForResourceInput = {
+      val __obj = js.Dictionary[js.Any](
+        "Resource" -> Resource.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[ListTagsForResourceInput]
+    }
+  }
+
+  @js.native
+  trait ListTagsForResourceOutput extends js.Object {
+    var Tags: js.UndefOr[TagList]
+  }
+
+  object ListTagsForResourceOutput {
+    def apply(
+        Tags: js.UndefOr[TagList] = js.undefined
+    ): ListTagsForResourceOutput = {
+      val __obj = js.Dictionary.empty[js.Any]
+      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListTagsForResourceOutput]
+    }
+  }
+
   object MethodNameEnum {
     val PUT    = "PUT"
     val GET    = "GET"
@@ -640,6 +688,91 @@ package mediastore {
       val __obj = js.Dictionary.empty[js.Any]
 
       __obj.asInstanceOf[StopAccessLoggingOutput]
+    }
+  }
+
+  /**
+    * A collection of tags associated with a container. Each tag consists of a key:value pair, which can be anything you define. Typically, the tag key represents a category (such as "environment") and the tag value represents a specific value within that category (such as "test," "development," or "production"). You can add up to 50 tags to each container. For more information about tagging, including naming and usage conventions, see [[https://aws.amazon.com/documentation/mediastore/tagging|Tagging Resources in MediaStore]].
+    */
+  @js.native
+  trait Tag extends js.Object {
+    var Key: js.UndefOr[TagKey]
+    var Value: js.UndefOr[TagValue]
+  }
+
+  object Tag {
+    def apply(
+        Key: js.UndefOr[TagKey] = js.undefined,
+        Value: js.UndefOr[TagValue] = js.undefined
+    ): Tag = {
+      val __obj = js.Dictionary.empty[js.Any]
+      Key.foreach(__v => __obj.update("Key", __v.asInstanceOf[js.Any]))
+      Value.foreach(__v => __obj.update("Value", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Tag]
+    }
+  }
+
+  @js.native
+  trait TagResourceInput extends js.Object {
+    var Resource: ContainerARN
+    var Tags: TagList
+  }
+
+  object TagResourceInput {
+    def apply(
+        Resource: ContainerARN,
+        Tags: TagList
+    ): TagResourceInput = {
+      val __obj = js.Dictionary[js.Any](
+        "Resource" -> Resource.asInstanceOf[js.Any],
+        "Tags"     -> Tags.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[TagResourceInput]
+    }
+  }
+
+  @js.native
+  trait TagResourceOutput extends js.Object {}
+
+  object TagResourceOutput {
+    def apply(
+        ): TagResourceOutput = {
+      val __obj = js.Dictionary.empty[js.Any]
+
+      __obj.asInstanceOf[TagResourceOutput]
+    }
+  }
+
+  @js.native
+  trait UntagResourceInput extends js.Object {
+    var Resource: ContainerARN
+    var TagKeys: TagKeyList
+  }
+
+  object UntagResourceInput {
+    def apply(
+        Resource: ContainerARN,
+        TagKeys: TagKeyList
+    ): UntagResourceInput = {
+      val __obj = js.Dictionary[js.Any](
+        "Resource" -> Resource.asInstanceOf[js.Any],
+        "TagKeys"  -> TagKeys.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[UntagResourceInput]
+    }
+  }
+
+  @js.native
+  trait UntagResourceOutput extends js.Object {}
+
+  object UntagResourceOutput {
+    def apply(
+        ): UntagResourceOutput = {
+      val __obj = js.Dictionary.empty[js.Any]
+
+      __obj.asInstanceOf[UntagResourceOutput]
     }
   }
 }

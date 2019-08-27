@@ -18,6 +18,7 @@ package object apigateway {
   type ContentHandlingStrategy                = String
   type DocumentationPartLocationStatusCode    = String
   type DocumentationPartType                  = String
+  type DomainNameStatus                       = String
   type EndpointType                           = String
   type GatewayResponseType                    = String
   type IntegrationType                        = String
@@ -66,6 +67,7 @@ package object apigateway {
   type ProviderARN                            = String
   type PutMode                                = String
   type QuotaPeriodType                        = String
+  type SecurityPolicy                         = String
   type StatusCode                             = String
   type Timestamp                              = js.Date
   type UnauthorizedCacheControlHeaderStrategy = String
@@ -493,6 +495,7 @@ package apigateway {
     var lastUpdatedDate: js.UndefOr[Timestamp]
     var name: js.UndefOr[String]
     var stageKeys: js.UndefOr[ListOfString]
+    var tags: js.UndefOr[MapOfStringToString]
     var value: js.UndefOr[String]
   }
 
@@ -506,6 +509,7 @@ package apigateway {
         lastUpdatedDate: js.UndefOr[Timestamp] = js.undefined,
         name: js.UndefOr[String] = js.undefined,
         stageKeys: js.UndefOr[ListOfString] = js.undefined,
+        tags: js.UndefOr[MapOfStringToString] = js.undefined,
         value: js.UndefOr[String] = js.undefined
     ): ApiKey = {
       val __obj = js.Dictionary.empty[js.Any]
@@ -517,6 +521,7 @@ package apigateway {
       lastUpdatedDate.foreach(__v => __obj.update("lastUpdatedDate", __v.asInstanceOf[js.Any]))
       name.foreach(__v => __obj.update("name", __v.asInstanceOf[js.Any]))
       stageKeys.foreach(__v => __obj.update("stageKeys", __v.asInstanceOf[js.Any]))
+      tags.foreach(__v => __obj.update("tags", __v.asInstanceOf[js.Any]))
       value.foreach(__v => __obj.update("value", __v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ApiKey]
     }
@@ -609,7 +614,7 @@ package apigateway {
   /**
     * Represents an authorization layer for methods. If enabled on a method, API Gateway will activate the authorizer when a client calls the method.
     *
-    * @see [[https://docs.aws.amazon.com/apigateway/latest/developerguide/use-custom-authorizer.html|Enable custom authorization]]
+    * @see [[https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-use-lambda-authorizer.html|Use Lambda Function as Authorizer]] [[https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-integrate-with-cognito.html|Use Cognito User Pool as Authorizer]]
     */
   @js.native
   trait Authorizer extends js.Object {
@@ -671,7 +676,7 @@ package apigateway {
   /**
     * Represents a collection of <a>Authorizer</a> resources.
     *
-    * @see [[https://docs.aws.amazon.com/apigateway/latest/developerguide/use-custom-authorizer.html|Enable custom authorization]]
+    * @see [[https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-use-lambda-authorizer.html|Use Lambda Function as Authorizer]] [[https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-integrate-with-cognito.html|Use Cognito User Pool as Authorizer]]
     */
   @js.native
   trait Authorizers extends js.Object {
@@ -808,6 +813,7 @@ package apigateway {
     var description: js.UndefOr[String]
     var expirationDate: js.UndefOr[Timestamp]
     var pemEncodedCertificate: js.UndefOr[String]
+    var tags: js.UndefOr[MapOfStringToString]
   }
 
   object ClientCertificate {
@@ -816,7 +822,8 @@ package apigateway {
         createdDate: js.UndefOr[Timestamp] = js.undefined,
         description: js.UndefOr[String] = js.undefined,
         expirationDate: js.UndefOr[Timestamp] = js.undefined,
-        pemEncodedCertificate: js.UndefOr[String] = js.undefined
+        pemEncodedCertificate: js.UndefOr[String] = js.undefined,
+        tags: js.UndefOr[MapOfStringToString] = js.undefined
     ): ClientCertificate = {
       val __obj = js.Dictionary.empty[js.Any]
       clientCertificateId.foreach(__v => __obj.update("clientCertificateId", __v.asInstanceOf[js.Any]))
@@ -824,6 +831,7 @@ package apigateway {
       description.foreach(__v => __obj.update("description", __v.asInstanceOf[js.Any]))
       expirationDate.foreach(__v => __obj.update("expirationDate", __v.asInstanceOf[js.Any]))
       pemEncodedCertificate.foreach(__v => __obj.update("pemEncodedCertificate", __v.asInstanceOf[js.Any]))
+      tags.foreach(__v => __obj.update("tags", __v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ClientCertificate]
     }
   }
@@ -876,6 +884,7 @@ package apigateway {
     var generateDistinctId: js.UndefOr[Boolean]
     var name: js.UndefOr[String]
     var stageKeys: js.UndefOr[ListOfStageKeys]
+    var tags: js.UndefOr[MapOfStringToString]
     var value: js.UndefOr[String]
   }
 
@@ -887,6 +896,7 @@ package apigateway {
         generateDistinctId: js.UndefOr[Boolean] = js.undefined,
         name: js.UndefOr[String] = js.undefined,
         stageKeys: js.UndefOr[ListOfStageKeys] = js.undefined,
+        tags: js.UndefOr[MapOfStringToString] = js.undefined,
         value: js.UndefOr[String] = js.undefined
     ): CreateApiKeyRequest = {
       val __obj = js.Dictionary.empty[js.Any]
@@ -896,6 +906,7 @@ package apigateway {
       generateDistinctId.foreach(__v => __obj.update("generateDistinctId", __v.asInstanceOf[js.Any]))
       name.foreach(__v => __obj.update("name", __v.asInstanceOf[js.Any]))
       stageKeys.foreach(__v => __obj.update("stageKeys", __v.asInstanceOf[js.Any]))
+      tags.foreach(__v => __obj.update("tags", __v.asInstanceOf[js.Any]))
       value.foreach(__v => __obj.update("value", __v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateApiKeyRequest]
     }
@@ -1094,6 +1105,8 @@ package apigateway {
     var endpointConfiguration: js.UndefOr[EndpointConfiguration]
     var regionalCertificateArn: js.UndefOr[String]
     var regionalCertificateName: js.UndefOr[String]
+    var securityPolicy: js.UndefOr[SecurityPolicy]
+    var tags: js.UndefOr[MapOfStringToString]
   }
 
   object CreateDomainNameRequest {
@@ -1106,7 +1119,9 @@ package apigateway {
         certificatePrivateKey: js.UndefOr[String] = js.undefined,
         endpointConfiguration: js.UndefOr[EndpointConfiguration] = js.undefined,
         regionalCertificateArn: js.UndefOr[String] = js.undefined,
-        regionalCertificateName: js.UndefOr[String] = js.undefined
+        regionalCertificateName: js.UndefOr[String] = js.undefined,
+        securityPolicy: js.UndefOr[SecurityPolicy] = js.undefined,
+        tags: js.UndefOr[MapOfStringToString] = js.undefined
     ): CreateDomainNameRequest = {
       val __obj = js.Dictionary[js.Any](
         "domainName" -> domainName.asInstanceOf[js.Any]
@@ -1120,6 +1135,8 @@ package apigateway {
       endpointConfiguration.foreach(__v => __obj.update("endpointConfiguration", __v.asInstanceOf[js.Any]))
       regionalCertificateArn.foreach(__v => __obj.update("regionalCertificateArn", __v.asInstanceOf[js.Any]))
       regionalCertificateName.foreach(__v => __obj.update("regionalCertificateName", __v.asInstanceOf[js.Any]))
+      securityPolicy.foreach(__v => __obj.update("securityPolicy", __v.asInstanceOf[js.Any]))
+      tags.foreach(__v => __obj.update("tags", __v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateDomainNameRequest]
     }
   }
@@ -1224,6 +1241,7 @@ package apigateway {
     var endpointConfiguration: js.UndefOr[EndpointConfiguration]
     var minimumCompressionSize: js.UndefOr[NullableInteger]
     var policy: js.UndefOr[String]
+    var tags: js.UndefOr[MapOfStringToString]
     var version: js.UndefOr[String]
   }
 
@@ -1237,6 +1255,7 @@ package apigateway {
         endpointConfiguration: js.UndefOr[EndpointConfiguration] = js.undefined,
         minimumCompressionSize: js.UndefOr[NullableInteger] = js.undefined,
         policy: js.UndefOr[String] = js.undefined,
+        tags: js.UndefOr[MapOfStringToString] = js.undefined,
         version: js.UndefOr[String] = js.undefined
     ): CreateRestApiRequest = {
       val __obj = js.Dictionary[js.Any](
@@ -1250,6 +1269,7 @@ package apigateway {
       endpointConfiguration.foreach(__v => __obj.update("endpointConfiguration", __v.asInstanceOf[js.Any]))
       minimumCompressionSize.foreach(__v => __obj.update("minimumCompressionSize", __v.asInstanceOf[js.Any]))
       policy.foreach(__v => __obj.update("policy", __v.asInstanceOf[js.Any]))
+      tags.foreach(__v => __obj.update("tags", __v.asInstanceOf[js.Any]))
       version.foreach(__v => __obj.update("version", __v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateRestApiRequest]
     }
@@ -1340,6 +1360,7 @@ package apigateway {
     var apiStages: js.UndefOr[ListOfApiStage]
     var description: js.UndefOr[String]
     var quota: js.UndefOr[QuotaSettings]
+    var tags: js.UndefOr[MapOfStringToString]
     var throttle: js.UndefOr[ThrottleSettings]
   }
 
@@ -1349,6 +1370,7 @@ package apigateway {
         apiStages: js.UndefOr[ListOfApiStage] = js.undefined,
         description: js.UndefOr[String] = js.undefined,
         quota: js.UndefOr[QuotaSettings] = js.undefined,
+        tags: js.UndefOr[MapOfStringToString] = js.undefined,
         throttle: js.UndefOr[ThrottleSettings] = js.undefined
     ): CreateUsagePlanRequest = {
       val __obj = js.Dictionary[js.Any](
@@ -1358,6 +1380,7 @@ package apigateway {
       apiStages.foreach(__v => __obj.update("apiStages", __v.asInstanceOf[js.Any]))
       description.foreach(__v => __obj.update("description", __v.asInstanceOf[js.Any]))
       quota.foreach(__v => __obj.update("quota", __v.asInstanceOf[js.Any]))
+      tags.foreach(__v => __obj.update("tags", __v.asInstanceOf[js.Any]))
       throttle.foreach(__v => __obj.update("throttle", __v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateUsagePlanRequest]
     }
@@ -1371,13 +1394,15 @@ package apigateway {
     var name: String
     var targetArns: ListOfString
     var description: js.UndefOr[String]
+    var tags: js.UndefOr[MapOfStringToString]
   }
 
   object CreateVpcLinkRequest {
     def apply(
         name: String,
         targetArns: ListOfString,
-        description: js.UndefOr[String] = js.undefined
+        description: js.UndefOr[String] = js.undefined,
+        tags: js.UndefOr[MapOfStringToString] = js.undefined
     ): CreateVpcLinkRequest = {
       val __obj = js.Dictionary[js.Any](
         "name"       -> name.asInstanceOf[js.Any],
@@ -1385,6 +1410,7 @@ package apigateway {
       )
 
       description.foreach(__v => __obj.update("description", __v.asInstanceOf[js.Any]))
+      tags.foreach(__v => __obj.update("tags", __v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateVpcLinkRequest]
     }
   }
@@ -2149,11 +2175,15 @@ package apigateway {
     var distributionDomainName: js.UndefOr[String]
     var distributionHostedZoneId: js.UndefOr[String]
     var domainName: js.UndefOr[String]
+    var domainNameStatus: js.UndefOr[DomainNameStatus]
+    var domainNameStatusMessage: js.UndefOr[String]
     var endpointConfiguration: js.UndefOr[EndpointConfiguration]
     var regionalCertificateArn: js.UndefOr[String]
     var regionalCertificateName: js.UndefOr[String]
     var regionalDomainName: js.UndefOr[String]
     var regionalHostedZoneId: js.UndefOr[String]
+    var securityPolicy: js.UndefOr[SecurityPolicy]
+    var tags: js.UndefOr[MapOfStringToString]
   }
 
   object DomainName {
@@ -2164,11 +2194,15 @@ package apigateway {
         distributionDomainName: js.UndefOr[String] = js.undefined,
         distributionHostedZoneId: js.UndefOr[String] = js.undefined,
         domainName: js.UndefOr[String] = js.undefined,
+        domainNameStatus: js.UndefOr[DomainNameStatus] = js.undefined,
+        domainNameStatusMessage: js.UndefOr[String] = js.undefined,
         endpointConfiguration: js.UndefOr[EndpointConfiguration] = js.undefined,
         regionalCertificateArn: js.UndefOr[String] = js.undefined,
         regionalCertificateName: js.UndefOr[String] = js.undefined,
         regionalDomainName: js.UndefOr[String] = js.undefined,
-        regionalHostedZoneId: js.UndefOr[String] = js.undefined
+        regionalHostedZoneId: js.UndefOr[String] = js.undefined,
+        securityPolicy: js.UndefOr[SecurityPolicy] = js.undefined,
+        tags: js.UndefOr[MapOfStringToString] = js.undefined
     ): DomainName = {
       val __obj = js.Dictionary.empty[js.Any]
       certificateArn.foreach(__v => __obj.update("certificateArn", __v.asInstanceOf[js.Any]))
@@ -2177,13 +2211,25 @@ package apigateway {
       distributionDomainName.foreach(__v => __obj.update("distributionDomainName", __v.asInstanceOf[js.Any]))
       distributionHostedZoneId.foreach(__v => __obj.update("distributionHostedZoneId", __v.asInstanceOf[js.Any]))
       domainName.foreach(__v => __obj.update("domainName", __v.asInstanceOf[js.Any]))
+      domainNameStatus.foreach(__v => __obj.update("domainNameStatus", __v.asInstanceOf[js.Any]))
+      domainNameStatusMessage.foreach(__v => __obj.update("domainNameStatusMessage", __v.asInstanceOf[js.Any]))
       endpointConfiguration.foreach(__v => __obj.update("endpointConfiguration", __v.asInstanceOf[js.Any]))
       regionalCertificateArn.foreach(__v => __obj.update("regionalCertificateArn", __v.asInstanceOf[js.Any]))
       regionalCertificateName.foreach(__v => __obj.update("regionalCertificateName", __v.asInstanceOf[js.Any]))
       regionalDomainName.foreach(__v => __obj.update("regionalDomainName", __v.asInstanceOf[js.Any]))
       regionalHostedZoneId.foreach(__v => __obj.update("regionalHostedZoneId", __v.asInstanceOf[js.Any]))
+      securityPolicy.foreach(__v => __obj.update("securityPolicy", __v.asInstanceOf[js.Any]))
+      tags.foreach(__v => __obj.update("tags", __v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DomainName]
     }
+  }
+
+  object DomainNameStatusEnum {
+    val AVAILABLE = "AVAILABLE"
+    val UPDATING  = "UPDATING"
+    val PENDING   = "PENDING"
+
+    val values = IndexedSeq(AVAILABLE, UPDATING, PENDING)
   }
 
   /**
@@ -2435,14 +2481,17 @@ package apigateway {
   @js.native
   trait GenerateClientCertificateRequest extends js.Object {
     var description: js.UndefOr[String]
+    var tags: js.UndefOr[MapOfStringToString]
   }
 
   object GenerateClientCertificateRequest {
     def apply(
-        description: js.UndefOr[String] = js.undefined
+        description: js.UndefOr[String] = js.undefined,
+        tags: js.UndefOr[MapOfStringToString] = js.undefined
     ): GenerateClientCertificateRequest = {
       val __obj = js.Dictionary.empty[js.Any]
       description.foreach(__v => __obj.update("description", __v.asInstanceOf[js.Any]))
+      tags.foreach(__v => __obj.update("tags", __v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GenerateClientCertificateRequest]
     }
   }
@@ -4451,6 +4500,7 @@ package apigateway {
     var minimumCompressionSize: js.UndefOr[NullableInteger]
     var name: js.UndefOr[String]
     var policy: js.UndefOr[String]
+    var tags: js.UndefOr[MapOfStringToString]
     var version: js.UndefOr[String]
     var warnings: js.UndefOr[ListOfString]
   }
@@ -4466,6 +4516,7 @@ package apigateway {
         minimumCompressionSize: js.UndefOr[NullableInteger] = js.undefined,
         name: js.UndefOr[String] = js.undefined,
         policy: js.UndefOr[String] = js.undefined,
+        tags: js.UndefOr[MapOfStringToString] = js.undefined,
         version: js.UndefOr[String] = js.undefined,
         warnings: js.UndefOr[ListOfString] = js.undefined
     ): RestApi = {
@@ -4479,6 +4530,7 @@ package apigateway {
       minimumCompressionSize.foreach(__v => __obj.update("minimumCompressionSize", __v.asInstanceOf[js.Any]))
       name.foreach(__v => __obj.update("name", __v.asInstanceOf[js.Any]))
       policy.foreach(__v => __obj.update("policy", __v.asInstanceOf[js.Any]))
+      tags.foreach(__v => __obj.update("tags", __v.asInstanceOf[js.Any]))
       version.foreach(__v => __obj.update("version", __v.asInstanceOf[js.Any]))
       warnings.foreach(__v => __obj.update("warnings", __v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[RestApi]
@@ -4608,6 +4660,13 @@ package apigateway {
       position.foreach(__v => __obj.update("position", __v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SdkTypes]
     }
+  }
+
+  object SecurityPolicyEnum {
+    val TLS_1_0 = "TLS_1_0"
+    val TLS_1_2 = "TLS_1_2"
+
+    val values = IndexedSeq(TLS_1_0, TLS_1_2)
   }
 
   /**
@@ -5598,6 +5657,7 @@ package apigateway {
     var name: js.UndefOr[String]
     var productCode: js.UndefOr[String]
     var quota: js.UndefOr[QuotaSettings]
+    var tags: js.UndefOr[MapOfStringToString]
     var throttle: js.UndefOr[ThrottleSettings]
   }
 
@@ -5609,6 +5669,7 @@ package apigateway {
         name: js.UndefOr[String] = js.undefined,
         productCode: js.UndefOr[String] = js.undefined,
         quota: js.UndefOr[QuotaSettings] = js.undefined,
+        tags: js.UndefOr[MapOfStringToString] = js.undefined,
         throttle: js.UndefOr[ThrottleSettings] = js.undefined
     ): UsagePlan = {
       val __obj = js.Dictionary.empty[js.Any]
@@ -5618,6 +5679,7 @@ package apigateway {
       name.foreach(__v => __obj.update("name", __v.asInstanceOf[js.Any]))
       productCode.foreach(__v => __obj.update("productCode", __v.asInstanceOf[js.Any]))
       quota.foreach(__v => __obj.update("quota", __v.asInstanceOf[js.Any]))
+      tags.foreach(__v => __obj.update("tags", __v.asInstanceOf[js.Any]))
       throttle.foreach(__v => __obj.update("throttle", __v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UsagePlan]
     }
@@ -5711,6 +5773,7 @@ package apigateway {
     var name: js.UndefOr[String]
     var status: js.UndefOr[VpcLinkStatus]
     var statusMessage: js.UndefOr[String]
+    var tags: js.UndefOr[MapOfStringToString]
     var targetArns: js.UndefOr[ListOfString]
   }
 
@@ -5721,6 +5784,7 @@ package apigateway {
         name: js.UndefOr[String] = js.undefined,
         status: js.UndefOr[VpcLinkStatus] = js.undefined,
         statusMessage: js.UndefOr[String] = js.undefined,
+        tags: js.UndefOr[MapOfStringToString] = js.undefined,
         targetArns: js.UndefOr[ListOfString] = js.undefined
     ): VpcLink = {
       val __obj = js.Dictionary.empty[js.Any]
@@ -5729,6 +5793,7 @@ package apigateway {
       name.foreach(__v => __obj.update("name", __v.asInstanceOf[js.Any]))
       status.foreach(__v => __obj.update("status", __v.asInstanceOf[js.Any]))
       statusMessage.foreach(__v => __obj.update("statusMessage", __v.asInstanceOf[js.Any]))
+      tags.foreach(__v => __obj.update("tags", __v.asInstanceOf[js.Any]))
       targetArns.foreach(__v => __obj.update("targetArns", __v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[VpcLink]
     }

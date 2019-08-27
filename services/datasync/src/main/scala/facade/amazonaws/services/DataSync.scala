@@ -8,48 +8,65 @@ import io.scalajs.nodejs
 import facade.amazonaws._
 
 package object datasync {
-  type ActivationKey           = String
-  type AgentArn                = String
-  type AgentArnList            = js.Array[AgentArn]
-  type AgentList               = js.Array[AgentListEntry]
-  type AgentStatus             = String
-  type Atime                   = String
-  type BytesPerSecond          = Double
-  type Duration                = Double
-  type Ec2SecurityGroupArn     = String
-  type Ec2SecurityGroupArnList = js.Array[Ec2SecurityGroupArn]
-  type Ec2SubnetArn            = String
-  type EfsFilesystemArn        = String
-  type Gid                     = String
-  type IamRoleArn              = String
-  type LocationArn             = String
-  type LocationList            = js.Array[LocationListEntry]
-  type LocationUri             = String
-  type LogGroupArn             = String
-  type MaxResults              = Int
-  type Mtime                   = String
-  type NextToken               = String
-  type PhaseStatus             = String
-  type PosixPermissions        = String
-  type PreserveDeletedFiles    = String
-  type PreserveDevices         = String
-  type S3BucketArn             = String
-  type ServerHostname          = String
-  type Subdirectory            = String
-  type TagKey                  = String
-  type TagKeyList              = js.Array[TagKey]
-  type TagList                 = js.Array[TagListEntry]
-  type TagValue                = String
-  type TaggableResourceArn     = String
-  type TaskArn                 = String
-  type TaskExecutionArn        = String
-  type TaskExecutionList       = js.Array[TaskExecutionListEntry]
-  type TaskExecutionStatus     = String
-  type TaskList                = js.Array[TaskListEntry]
-  type TaskStatus              = String
-  type Time                    = js.Date
-  type Uid                     = String
-  type VerifyMode              = String
+  type ActivationKey                   = String
+  type AgentArn                        = String
+  type AgentArnList                    = js.Array[AgentArn]
+  type AgentList                       = js.Array[AgentListEntry]
+  type AgentStatus                     = String
+  type Atime                           = String
+  type BytesPerSecond                  = Double
+  type DestinationNetworkInterfaceArns = js.Array[NetworkInterfaceArn]
+  type Duration                        = Double
+  type Ec2SecurityGroupArn             = String
+  type Ec2SecurityGroupArnList         = js.Array[Ec2SecurityGroupArn]
+  type Ec2SubnetArn                    = String
+  type EfsFilesystemArn                = String
+  type Endpoint                        = String
+  type EndpointType                    = String
+  type FilterList                      = js.Array[FilterRule]
+  type FilterType                      = String
+  type FilterValue                     = String
+  type Gid                             = String
+  type IamRoleArn                      = String
+  type LocationArn                     = String
+  type LocationList                    = js.Array[LocationListEntry]
+  type LocationUri                     = String
+  type LogGroupArn                     = String
+  type MaxResults                      = Int
+  type Mtime                           = String
+  type NetworkInterfaceArn             = String
+  type NextToken                       = String
+  type NfsVersion                      = String
+  type NonEmptySubdirectory            = String
+  type PLSecurityGroupArnList          = js.Array[Ec2SecurityGroupArn]
+  type PLSubnetArnList                 = js.Array[Ec2SubnetArn]
+  type PhaseStatus                     = String
+  type PosixPermissions                = String
+  type PreserveDeletedFiles            = String
+  type PreserveDevices                 = String
+  type S3BucketArn                     = String
+  type ServerHostname                  = String
+  type SmbDomain                       = String
+  type SmbPassword                     = String
+  type SmbUser                         = String
+  type SmbVersion                      = String
+  type SourceNetworkInterfaceArns      = js.Array[NetworkInterfaceArn]
+  type Subdirectory                    = String
+  type TagKey                          = String
+  type TagKeyList                      = js.Array[TagKey]
+  type TagList                         = js.Array[TagListEntry]
+  type TagValue                        = String
+  type TaggableResourceArn             = String
+  type TaskArn                         = String
+  type TaskExecutionArn                = String
+  type TaskExecutionList               = js.Array[TaskExecutionListEntry]
+  type TaskExecutionStatus             = String
+  type TaskList                        = js.Array[TaskListEntry]
+  type TaskStatus                      = String
+  type Time                            = js.Date
+  type Uid                             = String
+  type VerifyMode                      = String
+  type VpcEndpointId                   = String
 
   implicit final class DataSyncOps(val service: DataSync) extends AnyVal {
 
@@ -63,6 +80,8 @@ package object datasync {
       service.createLocationNfs(params).promise.toFuture
     def createLocationS3Future(params: CreateLocationS3Request): Future[CreateLocationS3Response] =
       service.createLocationS3(params).promise.toFuture
+    def createLocationSmbFuture(params: CreateLocationSmbRequest): Future[CreateLocationSmbResponse] =
+      service.createLocationSmb(params).promise.toFuture
     def createTaskFuture(params: CreateTaskRequest): Future[CreateTaskResponse] =
       service.createTask(params).promise.toFuture
     def deleteAgentFuture(params: DeleteAgentRequest): Future[DeleteAgentResponse] =
@@ -79,6 +98,8 @@ package object datasync {
       service.describeLocationNfs(params).promise.toFuture
     def describeLocationS3Future(params: DescribeLocationS3Request): Future[DescribeLocationS3Response] =
       service.describeLocationS3(params).promise.toFuture
+    def describeLocationSmbFuture(params: DescribeLocationSmbRequest): Future[DescribeLocationSmbResponse] =
+      service.describeLocationSmb(params).promise.toFuture
     def describeTaskExecutionFuture(params: DescribeTaskExecutionRequest): Future[DescribeTaskExecutionResponse] =
       service.describeTaskExecution(params).promise.toFuture
     def describeTaskFuture(params: DescribeTaskRequest): Future[DescribeTaskResponse] =
@@ -117,6 +138,7 @@ package datasync {
     def createLocationEfs(params: CreateLocationEfsRequest): Request[CreateLocationEfsResponse]             = js.native
     def createLocationNfs(params: CreateLocationNfsRequest): Request[CreateLocationNfsResponse]             = js.native
     def createLocationS3(params: CreateLocationS3Request): Request[CreateLocationS3Response]                = js.native
+    def createLocationSmb(params: CreateLocationSmbRequest): Request[CreateLocationSmbResponse]             = js.native
     def createTask(params: CreateTaskRequest): Request[CreateTaskResponse]                                  = js.native
     def deleteAgent(params: DeleteAgentRequest): Request[DeleteAgentResponse]                               = js.native
     def deleteLocation(params: DeleteLocationRequest): Request[DeleteLocationResponse]                      = js.native
@@ -125,6 +147,7 @@ package datasync {
     def describeLocationEfs(params: DescribeLocationEfsRequest): Request[DescribeLocationEfsResponse]       = js.native
     def describeLocationNfs(params: DescribeLocationNfsRequest): Request[DescribeLocationNfsResponse]       = js.native
     def describeLocationS3(params: DescribeLocationS3Request): Request[DescribeLocationS3Response]          = js.native
+    def describeLocationSmb(params: DescribeLocationSmbRequest): Request[DescribeLocationSmbResponse]       = js.native
     def describeTask(params: DescribeTaskRequest): Request[DescribeTaskResponse]                            = js.native
     def describeTaskExecution(params: DescribeTaskExecutionRequest): Request[DescribeTaskExecutionResponse] = js.native
     def listAgents(params: ListAgentsRequest): Request[ListAgentsResponse]                                  = js.native
@@ -210,21 +233,30 @@ package datasync {
   trait CreateAgentRequest extends js.Object {
     var ActivationKey: ActivationKey
     var AgentName: js.UndefOr[TagValue]
+    var SecurityGroupArns: js.UndefOr[PLSecurityGroupArnList]
+    var SubnetArns: js.UndefOr[PLSubnetArnList]
     var Tags: js.UndefOr[TagList]
+    var VpcEndpointId: js.UndefOr[VpcEndpointId]
   }
 
   object CreateAgentRequest {
     def apply(
         ActivationKey: ActivationKey,
         AgentName: js.UndefOr[TagValue] = js.undefined,
-        Tags: js.UndefOr[TagList] = js.undefined
+        SecurityGroupArns: js.UndefOr[PLSecurityGroupArnList] = js.undefined,
+        SubnetArns: js.UndefOr[PLSubnetArnList] = js.undefined,
+        Tags: js.UndefOr[TagList] = js.undefined,
+        VpcEndpointId: js.UndefOr[VpcEndpointId] = js.undefined
     ): CreateAgentRequest = {
       val __obj = js.Dictionary[js.Any](
         "ActivationKey" -> ActivationKey.asInstanceOf[js.Any]
       )
 
       AgentName.foreach(__v => __obj.update("AgentName", __v.asInstanceOf[js.Any]))
+      SecurityGroupArns.foreach(__v => __obj.update("SecurityGroupArns", __v.asInstanceOf[js.Any]))
+      SubnetArns.foreach(__v => __obj.update("SubnetArns", __v.asInstanceOf[js.Any]))
       Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
+      VpcEndpointId.foreach(__v => __obj.update("VpcEndpointId", __v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateAgentRequest]
     }
   }
@@ -248,7 +280,7 @@ package datasync {
   trait CreateLocationEfsRequest extends js.Object {
     var Ec2Config: Ec2Config
     var EfsFilesystemArn: EfsFilesystemArn
-    var Subdirectory: Subdirectory
+    var Subdirectory: js.UndefOr[Subdirectory]
     var Tags: js.UndefOr[TagList]
   }
 
@@ -256,15 +288,15 @@ package datasync {
     def apply(
         Ec2Config: Ec2Config,
         EfsFilesystemArn: EfsFilesystemArn,
-        Subdirectory: Subdirectory,
+        Subdirectory: js.UndefOr[Subdirectory] = js.undefined,
         Tags: js.UndefOr[TagList] = js.undefined
     ): CreateLocationEfsRequest = {
       val __obj = js.Dictionary[js.Any](
         "Ec2Config"        -> Ec2Config.asInstanceOf[js.Any],
-        "EfsFilesystemArn" -> EfsFilesystemArn.asInstanceOf[js.Any],
-        "Subdirectory"     -> Subdirectory.asInstanceOf[js.Any]
+        "EfsFilesystemArn" -> EfsFilesystemArn.asInstanceOf[js.Any]
       )
 
+      Subdirectory.foreach(__v => __obj.update("Subdirectory", __v.asInstanceOf[js.Any]))
       Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateLocationEfsRequest]
     }
@@ -292,7 +324,8 @@ package datasync {
   trait CreateLocationNfsRequest extends js.Object {
     var OnPremConfig: OnPremConfig
     var ServerHostname: ServerHostname
-    var Subdirectory: Subdirectory
+    var Subdirectory: NonEmptySubdirectory
+    var MountOptions: js.UndefOr[NfsMountOptions]
     var Tags: js.UndefOr[TagList]
   }
 
@@ -300,7 +333,8 @@ package datasync {
     def apply(
         OnPremConfig: OnPremConfig,
         ServerHostname: ServerHostname,
-        Subdirectory: Subdirectory,
+        Subdirectory: NonEmptySubdirectory,
+        MountOptions: js.UndefOr[NfsMountOptions] = js.undefined,
         Tags: js.UndefOr[TagList] = js.undefined
     ): CreateLocationNfsRequest = {
       val __obj = js.Dictionary[js.Any](
@@ -309,6 +343,7 @@ package datasync {
         "Subdirectory"   -> Subdirectory.asInstanceOf[js.Any]
       )
 
+      MountOptions.foreach(__v => __obj.update("MountOptions", __v.asInstanceOf[js.Any]))
       Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateLocationNfsRequest]
     }
@@ -333,7 +368,7 @@ package datasync {
   trait CreateLocationS3Request extends js.Object {
     var S3BucketArn: S3BucketArn
     var S3Config: S3Config
-    var Subdirectory: Subdirectory
+    var Subdirectory: js.UndefOr[Subdirectory]
     var Tags: js.UndefOr[TagList]
   }
 
@@ -341,15 +376,15 @@ package datasync {
     def apply(
         S3BucketArn: S3BucketArn,
         S3Config: S3Config,
-        Subdirectory: Subdirectory,
+        Subdirectory: js.UndefOr[Subdirectory] = js.undefined,
         Tags: js.UndefOr[TagList] = js.undefined
     ): CreateLocationS3Request = {
       val __obj = js.Dictionary[js.Any](
-        "S3BucketArn"  -> S3BucketArn.asInstanceOf[js.Any],
-        "S3Config"     -> S3Config.asInstanceOf[js.Any],
-        "Subdirectory" -> Subdirectory.asInstanceOf[js.Any]
+        "S3BucketArn" -> S3BucketArn.asInstanceOf[js.Any],
+        "S3Config"    -> S3Config.asInstanceOf[js.Any]
       )
 
+      Subdirectory.foreach(__v => __obj.update("Subdirectory", __v.asInstanceOf[js.Any]))
       Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateLocationS3Request]
     }
@@ -371,10 +406,64 @@ package datasync {
   }
 
   @js.native
+  trait CreateLocationSmbRequest extends js.Object {
+    var AgentArns: AgentArnList
+    var Password: SmbPassword
+    var ServerHostname: ServerHostname
+    var Subdirectory: NonEmptySubdirectory
+    var User: SmbUser
+    var Domain: js.UndefOr[SmbDomain]
+    var MountOptions: js.UndefOr[SmbMountOptions]
+    var Tags: js.UndefOr[TagList]
+  }
+
+  object CreateLocationSmbRequest {
+    def apply(
+        AgentArns: AgentArnList,
+        Password: SmbPassword,
+        ServerHostname: ServerHostname,
+        Subdirectory: NonEmptySubdirectory,
+        User: SmbUser,
+        Domain: js.UndefOr[SmbDomain] = js.undefined,
+        MountOptions: js.UndefOr[SmbMountOptions] = js.undefined,
+        Tags: js.UndefOr[TagList] = js.undefined
+    ): CreateLocationSmbRequest = {
+      val __obj = js.Dictionary[js.Any](
+        "AgentArns"      -> AgentArns.asInstanceOf[js.Any],
+        "Password"       -> Password.asInstanceOf[js.Any],
+        "ServerHostname" -> ServerHostname.asInstanceOf[js.Any],
+        "Subdirectory"   -> Subdirectory.asInstanceOf[js.Any],
+        "User"           -> User.asInstanceOf[js.Any]
+      )
+
+      Domain.foreach(__v => __obj.update("Domain", __v.asInstanceOf[js.Any]))
+      MountOptions.foreach(__v => __obj.update("MountOptions", __v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateLocationSmbRequest]
+    }
+  }
+
+  @js.native
+  trait CreateLocationSmbResponse extends js.Object {
+    var LocationArn: js.UndefOr[LocationArn]
+  }
+
+  object CreateLocationSmbResponse {
+    def apply(
+        LocationArn: js.UndefOr[LocationArn] = js.undefined
+    ): CreateLocationSmbResponse = {
+      val __obj = js.Dictionary.empty[js.Any]
+      LocationArn.foreach(__v => __obj.update("LocationArn", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateLocationSmbResponse]
+    }
+  }
+
+  @js.native
   trait CreateTaskRequest extends js.Object {
     var DestinationLocationArn: LocationArn
     var SourceLocationArn: LocationArn
     var CloudWatchLogGroupArn: js.UndefOr[LogGroupArn]
+    var Excludes: js.UndefOr[FilterList]
     var Name: js.UndefOr[TagValue]
     var Options: js.UndefOr[Options]
     var Tags: js.UndefOr[TagList]
@@ -385,6 +474,7 @@ package datasync {
         DestinationLocationArn: LocationArn,
         SourceLocationArn: LocationArn,
         CloudWatchLogGroupArn: js.UndefOr[LogGroupArn] = js.undefined,
+        Excludes: js.UndefOr[FilterList] = js.undefined,
         Name: js.UndefOr[TagValue] = js.undefined,
         Options: js.UndefOr[Options] = js.undefined,
         Tags: js.UndefOr[TagList] = js.undefined
@@ -395,6 +485,7 @@ package datasync {
       )
 
       CloudWatchLogGroupArn.foreach(__v => __obj.update("CloudWatchLogGroupArn", __v.asInstanceOf[js.Any]))
+      Excludes.foreach(__v => __obj.update("Excludes", __v.asInstanceOf[js.Any]))
       Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
       Options.foreach(__v => __obj.update("Options", __v.asInstanceOf[js.Any]))
       Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
@@ -534,8 +625,10 @@ package datasync {
   trait DescribeAgentResponse extends js.Object {
     var AgentArn: js.UndefOr[AgentArn]
     var CreationTime: js.UndefOr[Time]
+    var EndpointType: js.UndefOr[EndpointType]
     var LastConnectionTime: js.UndefOr[Time]
     var Name: js.UndefOr[TagValue]
+    var PrivateLinkConfig: js.UndefOr[PrivateLinkConfig]
     var Status: js.UndefOr[AgentStatus]
   }
 
@@ -543,15 +636,19 @@ package datasync {
     def apply(
         AgentArn: js.UndefOr[AgentArn] = js.undefined,
         CreationTime: js.UndefOr[Time] = js.undefined,
+        EndpointType: js.UndefOr[EndpointType] = js.undefined,
         LastConnectionTime: js.UndefOr[Time] = js.undefined,
         Name: js.UndefOr[TagValue] = js.undefined,
+        PrivateLinkConfig: js.UndefOr[PrivateLinkConfig] = js.undefined,
         Status: js.UndefOr[AgentStatus] = js.undefined
     ): DescribeAgentResponse = {
       val __obj = js.Dictionary.empty[js.Any]
       AgentArn.foreach(__v => __obj.update("AgentArn", __v.asInstanceOf[js.Any]))
       CreationTime.foreach(__v => __obj.update("CreationTime", __v.asInstanceOf[js.Any]))
+      EndpointType.foreach(__v => __obj.update("EndpointType", __v.asInstanceOf[js.Any]))
       LastConnectionTime.foreach(__v => __obj.update("LastConnectionTime", __v.asInstanceOf[js.Any]))
       Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
+      PrivateLinkConfig.foreach(__v => __obj.update("PrivateLinkConfig", __v.asInstanceOf[js.Any]))
       Status.foreach(__v => __obj.update("Status", __v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeAgentResponse]
     }
@@ -620,6 +717,7 @@ package datasync {
     var CreationTime: js.UndefOr[Time]
     var LocationArn: js.UndefOr[LocationArn]
     var LocationUri: js.UndefOr[LocationUri]
+    var MountOptions: js.UndefOr[NfsMountOptions]
     var OnPremConfig: js.UndefOr[OnPremConfig]
   }
 
@@ -628,12 +726,14 @@ package datasync {
         CreationTime: js.UndefOr[Time] = js.undefined,
         LocationArn: js.UndefOr[LocationArn] = js.undefined,
         LocationUri: js.UndefOr[LocationUri] = js.undefined,
+        MountOptions: js.UndefOr[NfsMountOptions] = js.undefined,
         OnPremConfig: js.UndefOr[OnPremConfig] = js.undefined
     ): DescribeLocationNfsResponse = {
       val __obj = js.Dictionary.empty[js.Any]
       CreationTime.foreach(__v => __obj.update("CreationTime", __v.asInstanceOf[js.Any]))
       LocationArn.foreach(__v => __obj.update("LocationArn", __v.asInstanceOf[js.Any]))
       LocationUri.foreach(__v => __obj.update("LocationUri", __v.asInstanceOf[js.Any]))
+      MountOptions.foreach(__v => __obj.update("MountOptions", __v.asInstanceOf[js.Any]))
       OnPremConfig.foreach(__v => __obj.update("OnPremConfig", __v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeLocationNfsResponse]
     }
@@ -681,6 +781,56 @@ package datasync {
   }
 
   @js.native
+  trait DescribeLocationSmbRequest extends js.Object {
+    var LocationArn: LocationArn
+  }
+
+  object DescribeLocationSmbRequest {
+    def apply(
+        LocationArn: LocationArn
+    ): DescribeLocationSmbRequest = {
+      val __obj = js.Dictionary[js.Any](
+        "LocationArn" -> LocationArn.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[DescribeLocationSmbRequest]
+    }
+  }
+
+  @js.native
+  trait DescribeLocationSmbResponse extends js.Object {
+    var AgentArns: js.UndefOr[AgentArnList]
+    var CreationTime: js.UndefOr[Time]
+    var Domain: js.UndefOr[SmbDomain]
+    var LocationArn: js.UndefOr[LocationArn]
+    var LocationUri: js.UndefOr[LocationUri]
+    var MountOptions: js.UndefOr[SmbMountOptions]
+    var User: js.UndefOr[SmbUser]
+  }
+
+  object DescribeLocationSmbResponse {
+    def apply(
+        AgentArns: js.UndefOr[AgentArnList] = js.undefined,
+        CreationTime: js.UndefOr[Time] = js.undefined,
+        Domain: js.UndefOr[SmbDomain] = js.undefined,
+        LocationArn: js.UndefOr[LocationArn] = js.undefined,
+        LocationUri: js.UndefOr[LocationUri] = js.undefined,
+        MountOptions: js.UndefOr[SmbMountOptions] = js.undefined,
+        User: js.UndefOr[SmbUser] = js.undefined
+    ): DescribeLocationSmbResponse = {
+      val __obj = js.Dictionary.empty[js.Any]
+      AgentArns.foreach(__v => __obj.update("AgentArns", __v.asInstanceOf[js.Any]))
+      CreationTime.foreach(__v => __obj.update("CreationTime", __v.asInstanceOf[js.Any]))
+      Domain.foreach(__v => __obj.update("Domain", __v.asInstanceOf[js.Any]))
+      LocationArn.foreach(__v => __obj.update("LocationArn", __v.asInstanceOf[js.Any]))
+      LocationUri.foreach(__v => __obj.update("LocationUri", __v.asInstanceOf[js.Any]))
+      MountOptions.foreach(__v => __obj.update("MountOptions", __v.asInstanceOf[js.Any]))
+      User.foreach(__v => __obj.update("User", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeLocationSmbResponse]
+    }
+  }
+
+  @js.native
   trait DescribeTaskExecutionRequest extends js.Object {
     var TaskExecutionArn: TaskExecutionArn
   }
@@ -703,7 +853,9 @@ package datasync {
     var BytesWritten: js.UndefOr[Double]
     var EstimatedBytesToTransfer: js.UndefOr[Double]
     var EstimatedFilesToTransfer: js.UndefOr[Double]
+    var Excludes: js.UndefOr[FilterList]
     var FilesTransferred: js.UndefOr[Double]
+    var Includes: js.UndefOr[FilterList]
     var Options: js.UndefOr[Options]
     var Result: js.UndefOr[TaskExecutionResultDetail]
     var StartTime: js.UndefOr[Time]
@@ -717,7 +869,9 @@ package datasync {
         BytesWritten: js.UndefOr[Double] = js.undefined,
         EstimatedBytesToTransfer: js.UndefOr[Double] = js.undefined,
         EstimatedFilesToTransfer: js.UndefOr[Double] = js.undefined,
+        Excludes: js.UndefOr[FilterList] = js.undefined,
         FilesTransferred: js.UndefOr[Double] = js.undefined,
+        Includes: js.UndefOr[FilterList] = js.undefined,
         Options: js.UndefOr[Options] = js.undefined,
         Result: js.UndefOr[TaskExecutionResultDetail] = js.undefined,
         StartTime: js.UndefOr[Time] = js.undefined,
@@ -729,7 +883,9 @@ package datasync {
       BytesWritten.foreach(__v => __obj.update("BytesWritten", __v.asInstanceOf[js.Any]))
       EstimatedBytesToTransfer.foreach(__v => __obj.update("EstimatedBytesToTransfer", __v.asInstanceOf[js.Any]))
       EstimatedFilesToTransfer.foreach(__v => __obj.update("EstimatedFilesToTransfer", __v.asInstanceOf[js.Any]))
+      Excludes.foreach(__v => __obj.update("Excludes", __v.asInstanceOf[js.Any]))
       FilesTransferred.foreach(__v => __obj.update("FilesTransferred", __v.asInstanceOf[js.Any]))
+      Includes.foreach(__v => __obj.update("Includes", __v.asInstanceOf[js.Any]))
       Options.foreach(__v => __obj.update("Options", __v.asInstanceOf[js.Any]))
       Result.foreach(__v => __obj.update("Result", __v.asInstanceOf[js.Any]))
       StartTime.foreach(__v => __obj.update("StartTime", __v.asInstanceOf[js.Any]))
@@ -762,11 +918,14 @@ package datasync {
     var CreationTime: js.UndefOr[Time]
     var CurrentTaskExecutionArn: js.UndefOr[TaskExecutionArn]
     var DestinationLocationArn: js.UndefOr[LocationArn]
+    var DestinationNetworkInterfaceArns: js.UndefOr[DestinationNetworkInterfaceArns]
     var ErrorCode: js.UndefOr[String]
     var ErrorDetail: js.UndefOr[String]
+    var Excludes: js.UndefOr[FilterList]
     var Name: js.UndefOr[TagValue]
     var Options: js.UndefOr[Options]
     var SourceLocationArn: js.UndefOr[LocationArn]
+    var SourceNetworkInterfaceArns: js.UndefOr[SourceNetworkInterfaceArns]
     var Status: js.UndefOr[TaskStatus]
     var TaskArn: js.UndefOr[TaskArn]
   }
@@ -777,11 +936,14 @@ package datasync {
         CreationTime: js.UndefOr[Time] = js.undefined,
         CurrentTaskExecutionArn: js.UndefOr[TaskExecutionArn] = js.undefined,
         DestinationLocationArn: js.UndefOr[LocationArn] = js.undefined,
+        DestinationNetworkInterfaceArns: js.UndefOr[DestinationNetworkInterfaceArns] = js.undefined,
         ErrorCode: js.UndefOr[String] = js.undefined,
         ErrorDetail: js.UndefOr[String] = js.undefined,
+        Excludes: js.UndefOr[FilterList] = js.undefined,
         Name: js.UndefOr[TagValue] = js.undefined,
         Options: js.UndefOr[Options] = js.undefined,
         SourceLocationArn: js.UndefOr[LocationArn] = js.undefined,
+        SourceNetworkInterfaceArns: js.UndefOr[SourceNetworkInterfaceArns] = js.undefined,
         Status: js.UndefOr[TaskStatus] = js.undefined,
         TaskArn: js.UndefOr[TaskArn] = js.undefined
     ): DescribeTaskResponse = {
@@ -790,11 +952,16 @@ package datasync {
       CreationTime.foreach(__v => __obj.update("CreationTime", __v.asInstanceOf[js.Any]))
       CurrentTaskExecutionArn.foreach(__v => __obj.update("CurrentTaskExecutionArn", __v.asInstanceOf[js.Any]))
       DestinationLocationArn.foreach(__v => __obj.update("DestinationLocationArn", __v.asInstanceOf[js.Any]))
+      DestinationNetworkInterfaceArns.foreach(
+        __v => __obj.update("DestinationNetworkInterfaceArns", __v.asInstanceOf[js.Any])
+      )
       ErrorCode.foreach(__v => __obj.update("ErrorCode", __v.asInstanceOf[js.Any]))
       ErrorDetail.foreach(__v => __obj.update("ErrorDetail", __v.asInstanceOf[js.Any]))
+      Excludes.foreach(__v => __obj.update("Excludes", __v.asInstanceOf[js.Any]))
       Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
       Options.foreach(__v => __obj.update("Options", __v.asInstanceOf[js.Any]))
       SourceLocationArn.foreach(__v => __obj.update("SourceLocationArn", __v.asInstanceOf[js.Any]))
+      SourceNetworkInterfaceArns.foreach(__v => __obj.update("SourceNetworkInterfaceArns", __v.asInstanceOf[js.Any]))
       Status.foreach(__v => __obj.update("Status", __v.asInstanceOf[js.Any]))
       TaskArn.foreach(__v => __obj.update("TaskArn", __v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeTaskResponse]
@@ -802,10 +969,7 @@ package datasync {
   }
 
   /**
-    * The subnet and the security group that the target Amazon EFS file system uses. The subnet must have at least one mount target for that file system. The security group that you provide needs to be able to communicate with the security group on the mount target in the subnet specified.
-    *  The exact relationship between security group M (of the mount target) and security group S (which you provide for DataSync to use at this stage) is as follows:
-    * * Security group M (which you associate with the mount target) must allow inbound access for the Transmission Control Protocol (TCP) on the NFS port (2049) from security group S. You can enable inbound connections either by IP address (CIDR range) or security group.
-    *  * Security group S (provided to DataSync to access EFS) should have a rule that enables outbound connections to the NFS port on one of the file system’s mount targets. You can enable outbound connections either by IP address (CIDR range) or security group. For information about security groups and mount targets, see [[https://docs.aws.amazon.com/efs/latest/ug/security-considerations.html#network-access|Security Groups for Amazon EC2 Instances and Mount Targets]] in the <i>Amazon EFS User Guide.</i>
+    * The subnet and the security group that DataSync uses to access target EFS file system. The subnet must have at least one mount target for that file system. The security group that you provide needs to be able to communicate with the security group on the mount target in the subnet specified.
     */
   @js.native
   trait Ec2Config extends js.Object {
@@ -825,6 +989,40 @@ package datasync {
 
       __obj.asInstanceOf[Ec2Config]
     }
+  }
+
+  object EndpointTypeEnum {
+    val PUBLIC       = "PUBLIC"
+    val PRIVATE_LINK = "PRIVATE_LINK"
+
+    val values = IndexedSeq(PUBLIC, PRIVATE_LINK)
+  }
+
+  /**
+    * Specifies which files, folders and objects to include or exclude when transferring files from source to destination.
+    */
+  @js.native
+  trait FilterRule extends js.Object {
+    var FilterType: js.UndefOr[FilterType]
+    var Value: js.UndefOr[FilterValue]
+  }
+
+  object FilterRule {
+    def apply(
+        FilterType: js.UndefOr[FilterType] = js.undefined,
+        Value: js.UndefOr[FilterValue] = js.undefined
+    ): FilterRule = {
+      val __obj = js.Dictionary.empty[js.Any]
+      FilterType.foreach(__v => __obj.update("FilterType", __v.asInstanceOf[js.Any]))
+      Value.foreach(__v => __obj.update("Value", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[FilterRule]
+    }
+  }
+
+  object FilterTypeEnum {
+    val SIMPLE_PATTERN = "SIMPLE_PATTERN"
+
+    val values = IndexedSeq(SIMPLE_PATTERN)
   }
 
   object GidEnum {
@@ -1056,6 +1254,33 @@ package datasync {
   }
 
   /**
+    * Represents the mount options that are available for DataSync to access an NFS location.
+    */
+  @js.native
+  trait NfsMountOptions extends js.Object {
+    var Version: js.UndefOr[NfsVersion]
+  }
+
+  object NfsMountOptions {
+    def apply(
+        Version: js.UndefOr[NfsVersion] = js.undefined
+    ): NfsMountOptions = {
+      val __obj = js.Dictionary.empty[js.Any]
+      Version.foreach(__v => __obj.update("Version", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[NfsMountOptions]
+    }
+  }
+
+  object NfsVersionEnum {
+    val AUTOMATIC = "AUTOMATIC"
+    val NFS3      = "NFS3"
+    val NFS4_0    = "NFS4_0"
+    val NFS4_1    = "NFS4_1"
+
+    val values = IndexedSeq(AUTOMATIC, NFS3, NFS4_0, NFS4_1)
+  }
+
+  /**
     * A list of Amazon Resource Names (ARNs) of agents to use for a Network File System (NFS) location.
     */
   @js.native
@@ -1149,7 +1374,35 @@ package datasync {
   }
 
   /**
-    * The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that is used to access an Amazon S3 bucket. For detailed information about using such a role, see [[https://alpha-aws-docs.aws.amazon.com/sync-service/latest/userguide/create-locations-cli.html#create-location-s3-cli|Components and Terminology]] in the <i>AWS DataSync User Guide</i>.
+    * The VPC endpoint, subnet and security group that an agent uses to access IP addresses in a VPC (Virtual Private Cloud).
+    */
+  @js.native
+  trait PrivateLinkConfig extends js.Object {
+    var PrivateLinkEndpoint: js.UndefOr[Endpoint]
+    var SecurityGroupArns: js.UndefOr[PLSecurityGroupArnList]
+    var SubnetArns: js.UndefOr[PLSubnetArnList]
+    var VpcEndpointId: js.UndefOr[VpcEndpointId]
+  }
+
+  object PrivateLinkConfig {
+    def apply(
+        PrivateLinkEndpoint: js.UndefOr[Endpoint] = js.undefined,
+        SecurityGroupArns: js.UndefOr[PLSecurityGroupArnList] = js.undefined,
+        SubnetArns: js.UndefOr[PLSubnetArnList] = js.undefined,
+        VpcEndpointId: js.UndefOr[VpcEndpointId] = js.undefined
+    ): PrivateLinkConfig = {
+      val __obj = js.Dictionary.empty[js.Any]
+      PrivateLinkEndpoint.foreach(__v => __obj.update("PrivateLinkEndpoint", __v.asInstanceOf[js.Any]))
+      SecurityGroupArns.foreach(__v => __obj.update("SecurityGroupArns", __v.asInstanceOf[js.Any]))
+      SubnetArns.foreach(__v => __obj.update("SubnetArns", __v.asInstanceOf[js.Any]))
+      VpcEndpointId.foreach(__v => __obj.update("VpcEndpointId", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PrivateLinkConfig]
+    }
+  }
+
+  /**
+    * The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that is used to access an Amazon S3 bucket.
+    *  For detailed information about using such a role, see Creating a Location for Amazon S3 in the <i>AWS DataSync User Guide</i>.
     */
   @js.native
   trait S3Config extends js.Object {
@@ -1168,21 +1421,50 @@ package datasync {
     }
   }
 
+  /**
+    * Represents the mount options that are available for DataSync to access an SMB location.
+    */
+  @js.native
+  trait SmbMountOptions extends js.Object {
+    var Version: js.UndefOr[SmbVersion]
+  }
+
+  object SmbMountOptions {
+    def apply(
+        Version: js.UndefOr[SmbVersion] = js.undefined
+    ): SmbMountOptions = {
+      val __obj = js.Dictionary.empty[js.Any]
+      Version.foreach(__v => __obj.update("Version", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[SmbMountOptions]
+    }
+  }
+
+  object SmbVersionEnum {
+    val AUTOMATIC = "AUTOMATIC"
+    val SMB2      = "SMB2"
+    val SMB3      = "SMB3"
+
+    val values = IndexedSeq(AUTOMATIC, SMB2, SMB3)
+  }
+
   @js.native
   trait StartTaskExecutionRequest extends js.Object {
     var TaskArn: TaskArn
+    var Includes: js.UndefOr[FilterList]
     var OverrideOptions: js.UndefOr[Options]
   }
 
   object StartTaskExecutionRequest {
     def apply(
         TaskArn: TaskArn,
+        Includes: js.UndefOr[FilterList] = js.undefined,
         OverrideOptions: js.UndefOr[Options] = js.undefined
     ): StartTaskExecutionRequest = {
       val __obj = js.Dictionary[js.Any](
         "TaskArn" -> TaskArn.asInstanceOf[js.Any]
       )
 
+      Includes.foreach(__v => __obj.update("Includes", __v.asInstanceOf[js.Any]))
       OverrideOptions.foreach(__v => __obj.update("OverrideOptions", __v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[StartTaskExecutionRequest]
     }
@@ -1208,17 +1490,19 @@ package datasync {
     */
   @js.native
   trait TagListEntry extends js.Object {
-    var Key: js.UndefOr[TagKey]
+    var Key: TagKey
     var Value: js.UndefOr[TagValue]
   }
 
   object TagListEntry {
     def apply(
-        Key: js.UndefOr[TagKey] = js.undefined,
+        Key: TagKey,
         Value: js.UndefOr[TagValue] = js.undefined
     ): TagListEntry = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Key.foreach(__v => __obj.update("Key", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dictionary[js.Any](
+        "Key" -> Key.asInstanceOf[js.Any]
+      )
+
       Value.foreach(__v => __obj.update("Value", __v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[TagListEntry]
     }
@@ -1439,6 +1723,8 @@ package datasync {
   @js.native
   trait UpdateTaskRequest extends js.Object {
     var TaskArn: TaskArn
+    var CloudWatchLogGroupArn: js.UndefOr[LogGroupArn]
+    var Excludes: js.UndefOr[FilterList]
     var Name: js.UndefOr[TagValue]
     var Options: js.UndefOr[Options]
   }
@@ -1446,6 +1732,8 @@ package datasync {
   object UpdateTaskRequest {
     def apply(
         TaskArn: TaskArn,
+        CloudWatchLogGroupArn: js.UndefOr[LogGroupArn] = js.undefined,
+        Excludes: js.UndefOr[FilterList] = js.undefined,
         Name: js.UndefOr[TagValue] = js.undefined,
         Options: js.UndefOr[Options] = js.undefined
     ): UpdateTaskRequest = {
@@ -1453,6 +1741,8 @@ package datasync {
         "TaskArn" -> TaskArn.asInstanceOf[js.Any]
       )
 
+      CloudWatchLogGroupArn.foreach(__v => __obj.update("CloudWatchLogGroupArn", __v.asInstanceOf[js.Any]))
+      Excludes.foreach(__v => __obj.update("Excludes", __v.asInstanceOf[js.Any]))
       Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
       Options.foreach(__v => __obj.update("Options", __v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateTaskRequest]

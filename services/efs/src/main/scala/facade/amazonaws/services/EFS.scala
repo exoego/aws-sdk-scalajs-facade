@@ -710,9 +710,12 @@ package efs {
   }
 
   object TransitionToIARulesEnum {
+    val AFTER_14_DAYS = "AFTER_14_DAYS"
     val AFTER_30_DAYS = "AFTER_30_DAYS"
+    val AFTER_60_DAYS = "AFTER_60_DAYS"
+    val AFTER_90_DAYS = "AFTER_90_DAYS"
 
-    val values = IndexedSeq(AFTER_30_DAYS)
+    val values = IndexedSeq(AFTER_14_DAYS, AFTER_30_DAYS, AFTER_60_DAYS, AFTER_90_DAYS)
   }
 
   @js.native

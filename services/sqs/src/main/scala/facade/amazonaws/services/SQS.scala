@@ -294,18 +294,21 @@ package sqs {
   trait CreateQueueRequest extends js.Object {
     var QueueName: String
     var Attributes: js.UndefOr[QueueAttributeMap]
+    var tags: js.UndefOr[TagMap]
   }
 
   object CreateQueueRequest {
     def apply(
         QueueName: String,
-        Attributes: js.UndefOr[QueueAttributeMap] = js.undefined
+        Attributes: js.UndefOr[QueueAttributeMap] = js.undefined,
+        tags: js.UndefOr[TagMap] = js.undefined
     ): CreateQueueRequest = {
       val __obj = js.Dictionary[js.Any](
         "QueueName" -> QueueName.asInstanceOf[js.Any]
       )
 
       Attributes.foreach(__v => __obj.update("Attributes", __v.asInstanceOf[js.Any]))
+      tags.foreach(__v => __obj.update("tags", __v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateQueueRequest]
     }
   }
@@ -525,7 +528,7 @@ package sqs {
   }
 
   /**
-    * For more information, see [[http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-api-responses.html|Interpreting Responses]] in the <i>Amazon Simple Queue Service Developer Guide</i>.
+    * For more information, see [[https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-api-responses.html|Interpreting Responses]] in the <i>Amazon Simple Queue Service Developer Guide</i>.
     */
   @js.native
   trait GetQueueUrlResult extends js.Object {

@@ -8,61 +8,71 @@ import io.scalajs.nodejs
 import facade.amazonaws._
 
 package object pinpointemail {
-  type AmazonResourceName                = String
-  type BehaviorOnMxFailure               = String
-  type BlacklistEntries                  = js.Array[BlacklistEntry]
-  type BlacklistItemName                 = String
-  type BlacklistItemNames                = js.Array[BlacklistItemName]
-  type BlacklistReport                   = js.Dictionary[BlacklistEntries]
-  type BlacklistingDescription           = String
-  type Charset                           = String
-  type CloudWatchDimensionConfigurations = js.Array[CloudWatchDimensionConfiguration]
-  type ConfigurationSetName              = String
-  type ConfigurationSetNameList          = js.Array[ConfigurationSetName]
-  type CustomRedirectDomain              = String
-  type DailyVolumes                      = js.Array[DailyVolume]
-  type DedicatedIpList                   = js.Array[DedicatedIp]
-  type DefaultDimensionValue             = String
-  type DeliverabilityTestReports         = js.Array[DeliverabilityTestReport]
-  type DeliverabilityTestStatus          = String
-  type DeliverabilityTestSubject         = String
-  type DimensionName                     = String
-  type DimensionValueSource              = String
-  type DkimStatus                        = String
-  type DnsToken                          = String
-  type DnsTokenList                      = js.Array[DnsToken]
-  type DomainIspPlacements               = js.Array[DomainIspPlacement]
-  type EmailAddress                      = String
-  type EmailAddressList                  = js.Array[EmailAddress]
-  type Enabled                           = Boolean
-  type EventDestinationName              = String
-  type EventDestinations                 = js.Array[EventDestination]
-  type EventType                         = String
-  type EventTypes                        = js.Array[EventType]
-  type GeneralEnforcementStatus          = String
-  type Identity                          = String
-  type IdentityInfoList                  = js.Array[IdentityInfo]
-  type IdentityType                      = String
-  type Ip                                = String
-  type IspName                           = String
-  type IspPlacements                     = js.Array[IspPlacement]
-  type LastFreshStart                    = js.Date
-  type ListOfDedicatedIpPools            = js.Array[PoolName]
-  type MailFromDomainName                = String
-  type MailFromDomainStatus              = String
-  type Max24HourSend                     = Double
-  type MaxItems                          = Int
-  type MaxSendRate                       = Double
-  type MessageContent                    = String
-  type MessageData                       = String
-  type MessageTagList                    = js.Array[MessageTag]
-  type MessageTagName                    = String
-  type MessageTagValue                   = String
-  type NextToken                         = String
-  type OutboundMessageId                 = String
-  type Percentage                        = Double
-  type Percentage100Wrapper              = Int
-  type PoolName                          = String
+  type AmazonResourceName                   = String
+  type BehaviorOnMxFailure                  = String
+  type BlacklistEntries                     = js.Array[BlacklistEntry]
+  type BlacklistItemName                    = String
+  type BlacklistItemNames                   = js.Array[BlacklistItemName]
+  type BlacklistReport                      = js.Dictionary[BlacklistEntries]
+  type BlacklistingDescription              = String
+  type CampaignId                           = String
+  type Charset                              = String
+  type CloudWatchDimensionConfigurations    = js.Array[CloudWatchDimensionConfiguration]
+  type ConfigurationSetName                 = String
+  type ConfigurationSetNameList             = js.Array[ConfigurationSetName]
+  type CustomRedirectDomain                 = String
+  type DailyVolumes                         = js.Array[DailyVolume]
+  type DedicatedIpList                      = js.Array[DedicatedIp]
+  type DefaultDimensionValue                = String
+  type DeliverabilityDashboardAccountStatus = String
+  type DeliverabilityTestReports            = js.Array[DeliverabilityTestReport]
+  type DeliverabilityTestStatus             = String
+  type DeliverabilityTestSubject            = String
+  type DimensionName                        = String
+  type DimensionValueSource                 = String
+  type DkimStatus                           = String
+  type DnsToken                             = String
+  type DnsTokenList                         = js.Array[DnsToken]
+  type Domain                               = String
+  type DomainDeliverabilityCampaignList     = js.Array[DomainDeliverabilityCampaign]
+  type DomainDeliverabilityTrackingOptions  = js.Array[DomainDeliverabilityTrackingOption]
+  type DomainIspPlacements                  = js.Array[DomainIspPlacement]
+  type EmailAddress                         = String
+  type EmailAddressList                     = js.Array[EmailAddress]
+  type Enabled                              = Boolean
+  type Esp                                  = String
+  type Esps                                 = js.Array[Esp]
+  type EventDestinationName                 = String
+  type EventDestinations                    = js.Array[EventDestination]
+  type EventType                            = String
+  type EventTypes                           = js.Array[EventType]
+  type GeneralEnforcementStatus             = String
+  type Identity                             = String
+  type IdentityInfoList                     = js.Array[IdentityInfo]
+  type IdentityType                         = String
+  type ImageUrl                             = String
+  type Ip                                   = String
+  type IpList                               = js.Array[Ip]
+  type IspName                              = String
+  type IspNameList                          = js.Array[IspName]
+  type IspPlacements                        = js.Array[IspPlacement]
+  type LastFreshStart                       = js.Date
+  type ListOfDedicatedIpPools               = js.Array[PoolName]
+  type MailFromDomainName                   = String
+  type MailFromDomainStatus                 = String
+  type Max24HourSend                        = Double
+  type MaxItems                             = Int
+  type MaxSendRate                          = Double
+  type MessageContent                       = String
+  type MessageData                          = String
+  type MessageTagList                       = js.Array[MessageTag]
+  type MessageTagName                       = String
+  type MessageTagValue                      = String
+  type NextToken                            = String
+  type OutboundMessageId                    = String
+  type Percentage                           = Double
+  type Percentage100Wrapper                 = Int
+  type PoolName                             = String
   type RawMessageData =
     nodejs.buffer.Buffer | nodejs.stream.Readable | js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
   type RblName         = String
@@ -70,11 +80,13 @@ package object pinpointemail {
   type ReportName      = String
   type SendingPoolName = String
   type SentLast24Hours = Double
+  type Subject         = String
   type TagKey          = String
   type TagKeyList      = js.Array[TagKey]
   type TagList         = js.Array[Tag]
   type TagValue        = String
   type Timestamp       = js.Date
+  type TlsPolicy       = String
   type Volume          = Double
   type WarmupStatus    = String
 
@@ -124,6 +136,10 @@ package object pinpointemail {
     def getDeliverabilityTestReportFuture(
         params: GetDeliverabilityTestReportRequest
     ): Future[GetDeliverabilityTestReportResponse] = service.getDeliverabilityTestReport(params).promise.toFuture
+    def getDomainDeliverabilityCampaignFuture(
+        params: GetDomainDeliverabilityCampaignRequest
+    ): Future[GetDomainDeliverabilityCampaignResponse] =
+      service.getDomainDeliverabilityCampaign(params).promise.toFuture
     def getDomainStatisticsReportFuture(
         params: GetDomainStatisticsReportRequest
     ): Future[GetDomainStatisticsReportResponse] = service.getDomainStatisticsReport(params).promise.toFuture
@@ -136,6 +152,10 @@ package object pinpointemail {
     def listDeliverabilityTestReportsFuture(
         params: ListDeliverabilityTestReportsRequest
     ): Future[ListDeliverabilityTestReportsResponse] = service.listDeliverabilityTestReports(params).promise.toFuture
+    def listDomainDeliverabilityCampaignsFuture(
+        params: ListDomainDeliverabilityCampaignsRequest
+    ): Future[ListDomainDeliverabilityCampaignsResponse] =
+      service.listDomainDeliverabilityCampaigns(params).promise.toFuture
     def listEmailIdentitiesFuture(params: ListEmailIdentitiesRequest): Future[ListEmailIdentitiesResponse] =
       service.listEmailIdentities(params).promise.toFuture
     def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] =
@@ -233,6 +253,9 @@ package pinpointemail {
     def getDeliverabilityTestReport(
         params: GetDeliverabilityTestReportRequest
     ): Request[GetDeliverabilityTestReportResponse] = js.native
+    def getDomainDeliverabilityCampaign(
+        params: GetDomainDeliverabilityCampaignRequest
+    ): Request[GetDomainDeliverabilityCampaignResponse] = js.native
     def getDomainStatisticsReport(
         params: GetDomainStatisticsReportRequest
     ): Request[GetDomainStatisticsReportResponse]                                                           = js.native
@@ -241,7 +264,10 @@ package pinpointemail {
     def listDedicatedIpPools(params: ListDedicatedIpPoolsRequest): Request[ListDedicatedIpPoolsResponse]    = js.native
     def listDeliverabilityTestReports(
         params: ListDeliverabilityTestReportsRequest
-    ): Request[ListDeliverabilityTestReportsResponse]                                                 = js.native
+    ): Request[ListDeliverabilityTestReportsResponse] = js.native
+    def listDomainDeliverabilityCampaigns(
+        params: ListDomainDeliverabilityCampaignsRequest
+    ): Request[ListDomainDeliverabilityCampaignsResponse]                                             = js.native
     def listEmailIdentities(params: ListEmailIdentitiesRequest): Request[ListEmailIdentitiesResponse] = js.native
     def listTagsForResource(params: ListTagsForResourceRequest): Request[ListTagsForResourceResponse] = js.native
     def putAccountDedicatedIpWarmupAttributes(
@@ -457,7 +483,7 @@ package pinpointemail {
     */
   @js.native
   trait CreateConfigurationSetRequest extends js.Object {
-    var ConfigurationSetName: js.UndefOr[ConfigurationSetName]
+    var ConfigurationSetName: ConfigurationSetName
     var DeliveryOptions: js.UndefOr[DeliveryOptions]
     var ReputationOptions: js.UndefOr[ReputationOptions]
     var SendingOptions: js.UndefOr[SendingOptions]
@@ -467,15 +493,17 @@ package pinpointemail {
 
   object CreateConfigurationSetRequest {
     def apply(
-        ConfigurationSetName: js.UndefOr[ConfigurationSetName] = js.undefined,
+        ConfigurationSetName: ConfigurationSetName,
         DeliveryOptions: js.UndefOr[DeliveryOptions] = js.undefined,
         ReputationOptions: js.UndefOr[ReputationOptions] = js.undefined,
         SendingOptions: js.UndefOr[SendingOptions] = js.undefined,
         Tags: js.UndefOr[TagList] = js.undefined,
         TrackingOptions: js.UndefOr[TrackingOptions] = js.undefined
     ): CreateConfigurationSetRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ConfigurationSetName.foreach(__v => __obj.update("ConfigurationSetName", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dictionary[js.Any](
+        "ConfigurationSetName" -> ConfigurationSetName.asInstanceOf[js.Any]
+      )
+
       DeliveryOptions.foreach(__v => __obj.update("DeliveryOptions", __v.asInstanceOf[js.Any]))
       ReputationOptions.foreach(__v => __obj.update("ReputationOptions", __v.asInstanceOf[js.Any]))
       SendingOptions.foreach(__v => __obj.update("SendingOptions", __v.asInstanceOf[js.Any]))
@@ -836,6 +864,17 @@ package pinpointemail {
   }
 
   /**
+    * The current status of your Deliverability dashboard subscription. If this value is <code>PENDING_EXPIRATION</code>, your subscription is scheduled to expire at the end of the current calendar month.
+    */
+  object DeliverabilityDashboardAccountStatusEnum {
+    val ACTIVE             = "ACTIVE"
+    val PENDING_EXPIRATION = "PENDING_EXPIRATION"
+    val DISABLED           = "DISABLED"
+
+    val values = IndexedSeq(ACTIVE, PENDING_EXPIRATION, DISABLED)
+  }
+
+  /**
     * An object that contains metadata related to a predictive inbox placement test.
     */
   @js.native
@@ -884,14 +923,17 @@ package pinpointemail {
   @js.native
   trait DeliveryOptions extends js.Object {
     var SendingPoolName: js.UndefOr[PoolName]
+    var TlsPolicy: js.UndefOr[TlsPolicy]
   }
 
   object DeliveryOptions {
     def apply(
-        SendingPoolName: js.UndefOr[PoolName] = js.undefined
+        SendingPoolName: js.UndefOr[PoolName] = js.undefined,
+        TlsPolicy: js.UndefOr[TlsPolicy] = js.undefined
     ): DeliveryOptions = {
       val __obj = js.Dictionary.empty[js.Any]
       SendingPoolName.foreach(__v => __obj.update("SendingPoolName", __v.asInstanceOf[js.Any]))
+      TlsPolicy.foreach(__v => __obj.update("TlsPolicy", __v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeliveryOptions]
     }
   }
@@ -971,6 +1013,89 @@ package pinpointemail {
     val NOT_STARTED       = "NOT_STARTED"
 
     val values = IndexedSeq(PENDING, SUCCESS, FAILED, TEMPORARY_FAILURE, NOT_STARTED)
+  }
+
+  /**
+    * An object that contains the deliverability data for a specific campaign. This data is available for a campaign only if the campaign sent email by using a domain that the Deliverability dashboard is enabled for (<code>PutDeliverabilityDashboardOption</code> operation).
+    */
+  @js.native
+  trait DomainDeliverabilityCampaign extends js.Object {
+    var CampaignId: js.UndefOr[CampaignId]
+    var DeleteRate: js.UndefOr[Percentage]
+    var Esps: js.UndefOr[Esps]
+    var FirstSeenDateTime: js.UndefOr[Timestamp]
+    var FromAddress: js.UndefOr[Identity]
+    var ImageUrl: js.UndefOr[ImageUrl]
+    var InboxCount: js.UndefOr[Volume]
+    var LastSeenDateTime: js.UndefOr[Timestamp]
+    var ProjectedVolume: js.UndefOr[Volume]
+    var ReadDeleteRate: js.UndefOr[Percentage]
+    var ReadRate: js.UndefOr[Percentage]
+    var SendingIps: js.UndefOr[IpList]
+    var SpamCount: js.UndefOr[Volume]
+    var Subject: js.UndefOr[Subject]
+  }
+
+  object DomainDeliverabilityCampaign {
+    def apply(
+        CampaignId: js.UndefOr[CampaignId] = js.undefined,
+        DeleteRate: js.UndefOr[Percentage] = js.undefined,
+        Esps: js.UndefOr[Esps] = js.undefined,
+        FirstSeenDateTime: js.UndefOr[Timestamp] = js.undefined,
+        FromAddress: js.UndefOr[Identity] = js.undefined,
+        ImageUrl: js.UndefOr[ImageUrl] = js.undefined,
+        InboxCount: js.UndefOr[Volume] = js.undefined,
+        LastSeenDateTime: js.UndefOr[Timestamp] = js.undefined,
+        ProjectedVolume: js.UndefOr[Volume] = js.undefined,
+        ReadDeleteRate: js.UndefOr[Percentage] = js.undefined,
+        ReadRate: js.UndefOr[Percentage] = js.undefined,
+        SendingIps: js.UndefOr[IpList] = js.undefined,
+        SpamCount: js.UndefOr[Volume] = js.undefined,
+        Subject: js.UndefOr[Subject] = js.undefined
+    ): DomainDeliverabilityCampaign = {
+      val __obj = js.Dictionary.empty[js.Any]
+      CampaignId.foreach(__v => __obj.update("CampaignId", __v.asInstanceOf[js.Any]))
+      DeleteRate.foreach(__v => __obj.update("DeleteRate", __v.asInstanceOf[js.Any]))
+      Esps.foreach(__v => __obj.update("Esps", __v.asInstanceOf[js.Any]))
+      FirstSeenDateTime.foreach(__v => __obj.update("FirstSeenDateTime", __v.asInstanceOf[js.Any]))
+      FromAddress.foreach(__v => __obj.update("FromAddress", __v.asInstanceOf[js.Any]))
+      ImageUrl.foreach(__v => __obj.update("ImageUrl", __v.asInstanceOf[js.Any]))
+      InboxCount.foreach(__v => __obj.update("InboxCount", __v.asInstanceOf[js.Any]))
+      LastSeenDateTime.foreach(__v => __obj.update("LastSeenDateTime", __v.asInstanceOf[js.Any]))
+      ProjectedVolume.foreach(__v => __obj.update("ProjectedVolume", __v.asInstanceOf[js.Any]))
+      ReadDeleteRate.foreach(__v => __obj.update("ReadDeleteRate", __v.asInstanceOf[js.Any]))
+      ReadRate.foreach(__v => __obj.update("ReadRate", __v.asInstanceOf[js.Any]))
+      SendingIps.foreach(__v => __obj.update("SendingIps", __v.asInstanceOf[js.Any]))
+      SpamCount.foreach(__v => __obj.update("SpamCount", __v.asInstanceOf[js.Any]))
+      Subject.foreach(__v => __obj.update("Subject", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DomainDeliverabilityCampaign]
+    }
+  }
+
+  /**
+    * An object that contains information about the Deliverability dashboard subscription for a verified domain that you use to send email and currently has an active Deliverability dashboard subscription. If a Deliverability dashboard subscription is active for a domain, you gain access to reputation, inbox placement, and other metrics for the domain.
+    */
+  @js.native
+  trait DomainDeliverabilityTrackingOption extends js.Object {
+    var Domain: js.UndefOr[Domain]
+    var InboxPlacementTrackingOption: js.UndefOr[InboxPlacementTrackingOption]
+    var SubscriptionStartDate: js.UndefOr[Timestamp]
+  }
+
+  object DomainDeliverabilityTrackingOption {
+    def apply(
+        Domain: js.UndefOr[Domain] = js.undefined,
+        InboxPlacementTrackingOption: js.UndefOr[InboxPlacementTrackingOption] = js.undefined,
+        SubscriptionStartDate: js.UndefOr[Timestamp] = js.undefined
+    ): DomainDeliverabilityTrackingOption = {
+      val __obj = js.Dictionary.empty[js.Any]
+      Domain.foreach(__v => __obj.update("Domain", __v.asInstanceOf[js.Any]))
+      InboxPlacementTrackingOption.foreach(
+        __v => __obj.update("InboxPlacementTrackingOption", __v.asInstanceOf[js.Any])
+      )
+      SubscriptionStartDate.foreach(__v => __obj.update("SubscriptionStartDate", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DomainDeliverabilityTrackingOption]
+    }
   }
 
   /**
@@ -1265,6 +1390,7 @@ package pinpointemail {
     var DeliveryOptions: js.UndefOr[DeliveryOptions]
     var ReputationOptions: js.UndefOr[ReputationOptions]
     var SendingOptions: js.UndefOr[SendingOptions]
+    var Tags: js.UndefOr[TagList]
     var TrackingOptions: js.UndefOr[TrackingOptions]
   }
 
@@ -1274,6 +1400,7 @@ package pinpointemail {
         DeliveryOptions: js.UndefOr[DeliveryOptions] = js.undefined,
         ReputationOptions: js.UndefOr[ReputationOptions] = js.undefined,
         SendingOptions: js.UndefOr[SendingOptions] = js.undefined,
+        Tags: js.UndefOr[TagList] = js.undefined,
         TrackingOptions: js.UndefOr[TrackingOptions] = js.undefined
     ): GetConfigurationSetResponse = {
       val __obj = js.Dictionary.empty[js.Any]
@@ -1281,6 +1408,7 @@ package pinpointemail {
       DeliveryOptions.foreach(__v => __obj.update("DeliveryOptions", __v.asInstanceOf[js.Any]))
       ReputationOptions.foreach(__v => __obj.update("ReputationOptions", __v.asInstanceOf[js.Any]))
       SendingOptions.foreach(__v => __obj.update("SendingOptions", __v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
       TrackingOptions.foreach(__v => __obj.update("TrackingOptions", __v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetConfigurationSetResponse]
     }
@@ -1370,8 +1498,8 @@ package pinpointemail {
   }
 
   /**
-    * A request to retrieve the status of the Deliverability dashboard for your account. When the Deliverability dashboard is enabled, you gain access to reputation metrics for the domains that you use to send email using Amazon Pinpoint. You also gain the ability to perform predictive inbox placement tests.
-    *  When you use the Deliverability dashboard, you pay a monthly charge of USD1,250.00, in addition to any other fees that you accrue by using Amazon Pinpoint. If you enable the Deliverability dashboard after the first day of a calendar month, AWS prorates the monthly charge based on how many days have elapsed in the current calendar month.
+    * Retrieve information about the status of the Deliverability dashboard for your Amazon Pinpoint account. When the Deliverability dashboard is enabled, you gain access to reputation, deliverability, and other metrics for the domains that you use to send email using Amazon Pinpoint. You also gain the ability to perform predictive inbox placement tests.
+    *  When you use the Deliverability dashboard, you pay a monthly subscription charge, in addition to any other fees that you accrue by using Amazon Pinpoint. For more information about the features and cost of a Deliverability dashboard subscription, see [[http://aws.amazon.com/pinpoint/pricing/|Amazon Pinpoint Pricing]].
     */
   @js.native
   trait GetDeliverabilityDashboardOptionsRequest extends js.Object {}
@@ -1391,16 +1519,30 @@ package pinpointemail {
   @js.native
   trait GetDeliverabilityDashboardOptionsResponse extends js.Object {
     var DashboardEnabled: Enabled
+    var AccountStatus: js.UndefOr[DeliverabilityDashboardAccountStatus]
+    var ActiveSubscribedDomains: js.UndefOr[DomainDeliverabilityTrackingOptions]
+    var PendingExpirationSubscribedDomains: js.UndefOr[DomainDeliverabilityTrackingOptions]
+    var SubscriptionExpiryDate: js.UndefOr[Timestamp]
   }
 
   object GetDeliverabilityDashboardOptionsResponse {
     def apply(
-        DashboardEnabled: Enabled
+        DashboardEnabled: Enabled,
+        AccountStatus: js.UndefOr[DeliverabilityDashboardAccountStatus] = js.undefined,
+        ActiveSubscribedDomains: js.UndefOr[DomainDeliverabilityTrackingOptions] = js.undefined,
+        PendingExpirationSubscribedDomains: js.UndefOr[DomainDeliverabilityTrackingOptions] = js.undefined,
+        SubscriptionExpiryDate: js.UndefOr[Timestamp] = js.undefined
     ): GetDeliverabilityDashboardOptionsResponse = {
       val __obj = js.Dictionary[js.Any](
         "DashboardEnabled" -> DashboardEnabled.asInstanceOf[js.Any]
       )
 
+      AccountStatus.foreach(__v => __obj.update("AccountStatus", __v.asInstanceOf[js.Any]))
+      ActiveSubscribedDomains.foreach(__v => __obj.update("ActiveSubscribedDomains", __v.asInstanceOf[js.Any]))
+      PendingExpirationSubscribedDomains.foreach(
+        __v => __obj.update("PendingExpirationSubscribedDomains", __v.asInstanceOf[js.Any])
+      )
+      SubscriptionExpiryDate.foreach(__v => __obj.update("SubscriptionExpiryDate", __v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetDeliverabilityDashboardOptionsResponse]
     }
   }
@@ -1434,6 +1576,7 @@ package pinpointemail {
     var IspPlacements: IspPlacements
     var OverallPlacement: PlacementStatistics
     var Message: js.UndefOr[MessageContent]
+    var Tags: js.UndefOr[TagList]
   }
 
   object GetDeliverabilityTestReportResponse {
@@ -1441,7 +1584,8 @@ package pinpointemail {
         DeliverabilityTestReport: DeliverabilityTestReport,
         IspPlacements: IspPlacements,
         OverallPlacement: PlacementStatistics,
-        Message: js.UndefOr[MessageContent] = js.undefined
+        Message: js.UndefOr[MessageContent] = js.undefined,
+        Tags: js.UndefOr[TagList] = js.undefined
     ): GetDeliverabilityTestReportResponse = {
       val __obj = js.Dictionary[js.Any](
         "DeliverabilityTestReport" -> DeliverabilityTestReport.asInstanceOf[js.Any],
@@ -1450,7 +1594,48 @@ package pinpointemail {
       )
 
       Message.foreach(__v => __obj.update("Message", __v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetDeliverabilityTestReportResponse]
+    }
+  }
+
+  /**
+    * Retrieve all the deliverability data for a specific campaign. This data is available for a campaign only if the campaign sent email by using a domain that the Deliverability dashboard is enabled for (<code>PutDeliverabilityDashboardOption</code> operation).
+    */
+  @js.native
+  trait GetDomainDeliverabilityCampaignRequest extends js.Object {
+    var CampaignId: CampaignId
+  }
+
+  object GetDomainDeliverabilityCampaignRequest {
+    def apply(
+        CampaignId: CampaignId
+    ): GetDomainDeliverabilityCampaignRequest = {
+      val __obj = js.Dictionary[js.Any](
+        "CampaignId" -> CampaignId.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[GetDomainDeliverabilityCampaignRequest]
+    }
+  }
+
+  /**
+    * An object that contains all the deliverability data for a specific campaign. This data is available for a campaign only if the campaign sent email by using a domain that the Deliverability dashboard is enabled for (<code>PutDeliverabilityDashboardOption</code> operation).
+    */
+  @js.native
+  trait GetDomainDeliverabilityCampaignResponse extends js.Object {
+    var DomainDeliverabilityCampaign: DomainDeliverabilityCampaign
+  }
+
+  object GetDomainDeliverabilityCampaignResponse {
+    def apply(
+        DomainDeliverabilityCampaign: DomainDeliverabilityCampaign
+    ): GetDomainDeliverabilityCampaignResponse = {
+      val __obj = js.Dictionary[js.Any](
+        "DomainDeliverabilityCampaign" -> DomainDeliverabilityCampaign.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[GetDomainDeliverabilityCampaignResponse]
     }
   }
 
@@ -1532,6 +1717,7 @@ package pinpointemail {
     var FeedbackForwardingStatus: js.UndefOr[Enabled]
     var IdentityType: js.UndefOr[IdentityType]
     var MailFromAttributes: js.UndefOr[MailFromAttributes]
+    var Tags: js.UndefOr[TagList]
     var VerifiedForSendingStatus: js.UndefOr[Enabled]
   }
 
@@ -1541,6 +1727,7 @@ package pinpointemail {
         FeedbackForwardingStatus: js.UndefOr[Enabled] = js.undefined,
         IdentityType: js.UndefOr[IdentityType] = js.undefined,
         MailFromAttributes: js.UndefOr[MailFromAttributes] = js.undefined,
+        Tags: js.UndefOr[TagList] = js.undefined,
         VerifiedForSendingStatus: js.UndefOr[Enabled] = js.undefined
     ): GetEmailIdentityResponse = {
       val __obj = js.Dictionary.empty[js.Any]
@@ -1548,6 +1735,7 @@ package pinpointemail {
       FeedbackForwardingStatus.foreach(__v => __obj.update("FeedbackForwardingStatus", __v.asInstanceOf[js.Any]))
       IdentityType.foreach(__v => __obj.update("IdentityType", __v.asInstanceOf[js.Any]))
       MailFromAttributes.foreach(__v => __obj.update("MailFromAttributes", __v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
       VerifiedForSendingStatus.foreach(__v => __obj.update("VerifiedForSendingStatus", __v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetEmailIdentityResponse]
     }
@@ -1588,6 +1776,27 @@ package pinpointemail {
     val MANAGED_DOMAIN = "MANAGED_DOMAIN"
 
     val values = IndexedSeq(EMAIL_ADDRESS, DOMAIN, MANAGED_DOMAIN)
+  }
+
+  /**
+    * An object that contains information about the inbox placement data settings for a verified domain that’s associated with your AWS account. This data is available only if you enabled the Deliverability dashboard for the domain (<code>PutDeliverabilityDashboardOption</code> operation).
+    */
+  @js.native
+  trait InboxPlacementTrackingOption extends js.Object {
+    var Global: js.UndefOr[Enabled]
+    var TrackedIsps: js.UndefOr[IspNameList]
+  }
+
+  object InboxPlacementTrackingOption {
+    def apply(
+        Global: js.UndefOr[Enabled] = js.undefined,
+        TrackedIsps: js.UndefOr[IspNameList] = js.undefined
+    ): InboxPlacementTrackingOption = {
+      val __obj = js.Dictionary.empty[js.Any]
+      Global.foreach(__v => __obj.update("Global", __v.asInstanceOf[js.Any]))
+      TrackedIsps.foreach(__v => __obj.update("TrackedIsps", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[InboxPlacementTrackingOption]
+    }
   }
 
   /**
@@ -1759,6 +1968,61 @@ package pinpointemail {
 
       NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListDeliverabilityTestReportsResponse]
+    }
+  }
+
+  /**
+    * Retrieve deliverability data for all the campaigns that used a specific domain to send email during a specified time range. This data is available for a domain only if you enabled the Deliverability dashboard (<code>PutDeliverabilityDashboardOption</code> operation) for the domain.
+    */
+  @js.native
+  trait ListDomainDeliverabilityCampaignsRequest extends js.Object {
+    var EndDate: Timestamp
+    var StartDate: Timestamp
+    var SubscribedDomain: Domain
+    var NextToken: js.UndefOr[NextToken]
+    var PageSize: js.UndefOr[MaxItems]
+  }
+
+  object ListDomainDeliverabilityCampaignsRequest {
+    def apply(
+        EndDate: Timestamp,
+        StartDate: Timestamp,
+        SubscribedDomain: Domain,
+        NextToken: js.UndefOr[NextToken] = js.undefined,
+        PageSize: js.UndefOr[MaxItems] = js.undefined
+    ): ListDomainDeliverabilityCampaignsRequest = {
+      val __obj = js.Dictionary[js.Any](
+        "EndDate"          -> EndDate.asInstanceOf[js.Any],
+        "StartDate"        -> StartDate.asInstanceOf[js.Any],
+        "SubscribedDomain" -> SubscribedDomain.asInstanceOf[js.Any]
+      )
+
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      PageSize.foreach(__v => __obj.update("PageSize", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListDomainDeliverabilityCampaignsRequest]
+    }
+  }
+
+  /**
+    * An array of objects that provide deliverability data for all the campaigns that used a specific domain to send email during a specified time range. This data is available for a domain only if you enabled the Deliverability dashboard (<code>PutDeliverabilityDashboardOption</code> operation) for the domain.
+    */
+  @js.native
+  trait ListDomainDeliverabilityCampaignsResponse extends js.Object {
+    var DomainDeliverabilityCampaigns: DomainDeliverabilityCampaignList
+    var NextToken: js.UndefOr[NextToken]
+  }
+
+  object ListDomainDeliverabilityCampaignsResponse {
+    def apply(
+        DomainDeliverabilityCampaigns: DomainDeliverabilityCampaignList,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListDomainDeliverabilityCampaignsResponse = {
+      val __obj = js.Dictionary[js.Any](
+        "DomainDeliverabilityCampaigns" -> DomainDeliverabilityCampaigns.asInstanceOf[js.Any]
+      )
+
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListDomainDeliverabilityCampaignsResponse]
     }
   }
 
@@ -2071,18 +2335,21 @@ package pinpointemail {
   trait PutConfigurationSetDeliveryOptionsRequest extends js.Object {
     var ConfigurationSetName: ConfigurationSetName
     var SendingPoolName: js.UndefOr[SendingPoolName]
+    var TlsPolicy: js.UndefOr[TlsPolicy]
   }
 
   object PutConfigurationSetDeliveryOptionsRequest {
     def apply(
         ConfigurationSetName: ConfigurationSetName,
-        SendingPoolName: js.UndefOr[SendingPoolName] = js.undefined
+        SendingPoolName: js.UndefOr[SendingPoolName] = js.undefined,
+        TlsPolicy: js.UndefOr[TlsPolicy] = js.undefined
     ): PutConfigurationSetDeliveryOptionsRequest = {
       val __obj = js.Dictionary[js.Any](
         "ConfigurationSetName" -> ConfigurationSetName.asInstanceOf[js.Any]
       )
 
       SendingPoolName.foreach(__v => __obj.update("SendingPoolName", __v.asInstanceOf[js.Any]))
+      TlsPolicy.foreach(__v => __obj.update("TlsPolicy", __v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PutConfigurationSetDeliveryOptionsRequest]
     }
   }
@@ -2293,22 +2560,25 @@ package pinpointemail {
   }
 
   /**
-    * A request to enable or disable the Deliverability dashboard. When you enable the Deliverability dashboard, you gain access to reputation metrics for the domains that you use to send email using Amazon Pinpoint. You also gain the ability to perform predictive inbox placement tests.
-    *  When you use the Deliverability dashboard, you pay a monthly charge of USD1,250.00, in addition to any other fees that you accrue by using Amazon Pinpoint. If you enable the Deliverability dashboard after the first day of a calendar month, we prorate the monthly charge based on how many days have elapsed in the current calendar month.
+    * Enable or disable the Deliverability dashboard for your Amazon Pinpoint account. When you enable the Deliverability dashboard, you gain access to reputation, deliverability, and other metrics for the domains that you use to send email using Amazon Pinpoint. You also gain the ability to perform predictive inbox placement tests.
+    *  When you use the Deliverability dashboard, you pay a monthly subscription charge, in addition to any other fees that you accrue by using Amazon Pinpoint. For more information about the features and cost of a Deliverability dashboard subscription, see [[http://aws.amazon.com/pinpoint/pricing/|Amazon Pinpoint Pricing]].
     */
   @js.native
   trait PutDeliverabilityDashboardOptionRequest extends js.Object {
     var DashboardEnabled: Enabled
+    var SubscribedDomains: js.UndefOr[DomainDeliverabilityTrackingOptions]
   }
 
   object PutDeliverabilityDashboardOptionRequest {
     def apply(
-        DashboardEnabled: Enabled
+        DashboardEnabled: Enabled,
+        SubscribedDomains: js.UndefOr[DomainDeliverabilityTrackingOptions] = js.undefined
     ): PutDeliverabilityDashboardOptionRequest = {
       val __obj = js.Dictionary[js.Any](
         "DashboardEnabled" -> DashboardEnabled.asInstanceOf[js.Any]
       )
 
+      SubscribedDomains.foreach(__v => __obj.update("SubscribedDomains", __v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PutDeliverabilityDashboardOptionRequest]
     }
   }
@@ -2608,8 +2878,7 @@ package pinpointemail {
 
   /**
     * An object that defines the tags that are associated with a resource. A <i>tag</i> is a label that you optionally define and associate with a resource in Amazon Pinpoint. Tags can help you categorize and manage resources in different ways, such as by purpose, owner, environment, or other criteria. A resource can have as many as 50 tags.
-    *  Each tag consists of a required <i>tag key</i> and an associated <i>tag value</i>, both of which you define. A tag key is a general label that acts as a category for a more specific tag value. A tag value acts as a descriptor within a tag key. For example, if you have two versions of an Amazon Pinpoint project, one for internal testing and another for external use, you might assign a <code>Stack</code> tag key to both projects. The value of the <code>Stack</code> tag key might be <code>Test</code> for one project and <code>Production</code> for the other project.
-    *  A tag key can contain as many as 128 characters. A tag value can contain as many as 256 characters. The characters can be Unicode letters, digits, white space, or one of the following symbols: _ . : / = + -. The following additional restrictions apply to tags:
+    *  Each tag consists of a required <i>tag key</i> and an associated <i>tag value</i>, both of which you define. A tag key is a general label that acts as a category for a more specific tag value. A tag value acts as a descriptor within a tag key. A tag key can contain as many as 128 characters. A tag value can contain as many as 256 characters. The characters can be Unicode letters, digits, white space, or one of the following symbols: _ . : / = + -. The following additional restrictions apply to tags:
     * * Tag keys and values are case sensitive.
     *  * For each associated resource, each tag key must be unique and it can have only one value.
     *  * The <code>aws:</code> prefix is reserved for use by AWS; you can’t use it in any tag keys or values that you define. In addition, you can't edit or remove tag keys or values that use this prefix. Tags that use this prefix don’t count against the limit of 50 tags per resource.
@@ -2665,6 +2934,16 @@ package pinpointemail {
 
       __obj.asInstanceOf[TagResourceResponse]
     }
+  }
+
+  /**
+    * Specifies whether Amazon Pinpoint should require that incoming email is delivered over a connection encrypted with Transport Layer Security (TLS). If this parameter is set to <code>Require</code>, Amazon Pinpoint rejects emails that weren't received over TLS. If the parameter is set to <code>Optional</code>, then Amazon Pinpoint accepts emails that weren't received over TLS. The default value is <code>Optional</code>.
+    */
+  object TlsPolicyEnum {
+    val REQUIRE  = "REQUIRE"
+    val OPTIONAL = "OPTIONAL"
+
+    val values = IndexedSeq(REQUIRE, OPTIONAL)
   }
 
   /**

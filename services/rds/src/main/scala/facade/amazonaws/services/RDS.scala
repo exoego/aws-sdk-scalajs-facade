@@ -9,6 +9,8 @@ import facade.amazonaws._
 
 package object rds {
   type AccountQuotaList                        = js.Array[AccountQuota]
+  type ActivityStreamMode                      = String
+  type ActivityStreamStatus                    = String
   type ApplyMethod                             = String
   type AttributeValueList                      = js.Array[String]
   type AvailabilityZoneList                    = js.Array[AvailabilityZone]
@@ -353,10 +355,14 @@ package object rds {
     def revokeDBSecurityGroupIngressFuture(
         params: RevokeDBSecurityGroupIngressMessage
     ): Future[RevokeDBSecurityGroupIngressResult] = service.revokeDBSecurityGroupIngress(params).promise.toFuture
+    def startActivityStreamFuture(params: StartActivityStreamRequest): Future[StartActivityStreamResponse] =
+      service.startActivityStream(params).promise.toFuture
     def startDBClusterFuture(params: StartDBClusterMessage): Future[StartDBClusterResult] =
       service.startDBCluster(params).promise.toFuture
     def startDBInstanceFuture(params: StartDBInstanceMessage): Future[StartDBInstanceResult] =
       service.startDBInstance(params).promise.toFuture
+    def stopActivityStreamFuture(params: StopActivityStreamRequest): Future[StopActivityStreamResponse] =
+      service.stopActivityStream(params).promise.toFuture
     def stopDBClusterFuture(params: StopDBClusterMessage): Future[StopDBClusterResult] =
       service.stopDBCluster(params).promise.toFuture
     def stopDBInstanceFuture(params: StopDBInstanceMessage): Future[StopDBInstanceResult] =
@@ -550,11 +556,13 @@ package rds {
     ): Request[RestoreDBInstanceToPointInTimeResult] = js.native
     def revokeDBSecurityGroupIngress(
         params: RevokeDBSecurityGroupIngressMessage
-    ): Request[RevokeDBSecurityGroupIngressResult]                                      = js.native
-    def startDBCluster(params: StartDBClusterMessage): Request[StartDBClusterResult]    = js.native
-    def startDBInstance(params: StartDBInstanceMessage): Request[StartDBInstanceResult] = js.native
-    def stopDBCluster(params: StopDBClusterMessage): Request[StopDBClusterResult]       = js.native
-    def stopDBInstance(params: StopDBInstanceMessage): Request[StopDBInstanceResult]    = js.native
+    ): Request[RevokeDBSecurityGroupIngressResult]                                                    = js.native
+    def startActivityStream(params: StartActivityStreamRequest): Request[StartActivityStreamResponse] = js.native
+    def startDBCluster(params: StartDBClusterMessage): Request[StartDBClusterResult]                  = js.native
+    def startDBInstance(params: StartDBInstanceMessage): Request[StartDBInstanceResult]               = js.native
+    def stopActivityStream(params: StopActivityStreamRequest): Request[StopActivityStreamResponse]    = js.native
+    def stopDBCluster(params: StopDBClusterMessage): Request[StopDBClusterResult]                     = js.native
+    def stopDBInstance(params: StopDBInstanceMessage): Request[StopDBInstanceResult]                  = js.native
   }
 
   /**
@@ -576,7 +584,26 @@ package rds {
   }
 
   /**
-    * Describes a quota for an AWS account, for example, the number of DB instances allowed.
+    * Describes a quota for an AWS account.
+    *  The following are account quotas:
+    * * <code>AllocatedStorage</code> - The total allocated storage per account, in GiB. The used value is the total allocated storage in the account, in GiB.
+    *  * <code>AuthorizationsPerDBSecurityGroup</code> - The number of ingress rules per DB security group. The used value is the highest number of ingress rules in a DB security group in the account. Other DB security groups in the account might have a lower number of ingress rules.
+    *  * <code>CustomEndpointsPerDBCluster</code> - The number of custom endpoints per DB cluster. The used value is the highest number of custom endpoints in a DB clusters in the account. Other DB clusters in the account might have a lower number of custom endpoints.
+    *  * <code>DBClusterParameterGroups</code> - The number of DB cluster parameter groups per account, excluding default parameter groups. The used value is the count of nondefault DB cluster parameter groups in the account.
+    *  * <code>DBClusterRoles</code> - The number of associated AWS Identity and Access Management (IAM) roles per DB cluster. The used value is the highest number of associated IAM roles for a DB cluster in the account. Other DB clusters in the account might have a lower number of associated IAM roles.
+    *  * <code>DBClusters</code> - The number of DB clusters per account. The used value is the count of DB clusters in the account.
+    *  * <code>DBInstanceRoles</code> - The number of associated IAM roles per DB instance. The used value is the highest number of associated IAM roles for a DB instance in the account. Other DB instances in the account might have a lower number of associated IAM roles.
+    *  * <code>DBInstances</code> - The number of DB instances per account. The used value is the count of the DB instances in the account.
+    *  * <code>DBParameterGroups</code> - The number of DB parameter groups per account, excluding default parameter groups. The used value is the count of nondefault DB parameter groups in the account.
+    *  * <code>DBSecurityGroups</code> - The number of DB security groups (not VPC security groups) per account, excluding the default security group. The used value is the count of nondefault DB security groups in the account.
+    *  * <code>DBSubnetGroups</code> - The number of DB subnet groups per account. The used value is the count of the DB subnet groups in the account.
+    *  * <code>EventSubscriptions</code> - The number of event subscriptions per account. The used value is the count of the event subscriptions in the account.
+    *  * <code>ManualSnapshots</code> - The number of manual DB snapshots per account. The used value is the count of the manual DB snapshots in the account.
+    *  * <code>OptionGroups</code> - The number of DB option groups per account, excluding default option groups. The used value is the count of nondefault DB option groups in the account.
+    *  * <code>ReadReplicasPerMaster</code> - The number of Read Replicas per DB instance. The used value is the highest number of Read Replicas for a DB instance in the account. Other DB instances in the account might have a lower number of Read Replicas.
+    *  * <code>ReservedDBInstances</code> - The number of reserved DB instances per account. The used value is the count of the active reserved DB instances in the account.
+    *  * <code>SubnetsPerDBSubnetGroup</code> - The number of subnets per DB subnet group. The used value is highest number of subnets for a DB subnet group in the account. Other DB subnet groups in the account might have a lower number of subnets.
+    * For more information, see [[https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Limits.html|Limits]] in the <i>Amazon RDS User Guide</i> and [[https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_Limits.html|Limits]] in the <i>Amazon Aurora User Guide</i>.
     */
   @js.native
   trait AccountQuota extends js.Object {
@@ -599,22 +626,41 @@ package rds {
     }
   }
 
+  object ActivityStreamModeEnum {
+    val sync  = "sync"
+    val async = "async"
+
+    val values = IndexedSeq(sync, async)
+  }
+
+  object ActivityStreamStatusEnum {
+    val stopped  = "stopped"
+    val starting = "starting"
+    val started  = "started"
+    val stopping = "stopping"
+
+    val values = IndexedSeq(stopped, starting, started, stopping)
+  }
+
   @js.native
   trait AddRoleToDBClusterMessage extends js.Object {
     var DBClusterIdentifier: String
     var RoleArn: String
+    var FeatureName: js.UndefOr[String]
   }
 
   object AddRoleToDBClusterMessage {
     def apply(
         DBClusterIdentifier: String,
-        RoleArn: String
+        RoleArn: String,
+        FeatureName: js.UndefOr[String] = js.undefined
     ): AddRoleToDBClusterMessage = {
       val __obj = js.Dictionary[js.Any](
         "DBClusterIdentifier" -> DBClusterIdentifier.asInstanceOf[js.Any],
         "RoleArn"             -> RoleArn.asInstanceOf[js.Any]
       )
 
+      FeatureName.foreach(__v => __obj.update("FeatureName", __v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AddRoleToDBClusterMessage]
     }
   }
@@ -802,8 +848,7 @@ package rds {
 
   /**
     * Contains Availability Zone information.
-    *  This data type is used as an element in the following data type:
-    * * <a>OrderableDBInstanceOption</a>
+    *  This data type is used as an element in the <code>OrderableDBInstanceOption</code> data type.
     */
   @js.native
   trait AvailabilityZone extends js.Object {
@@ -931,7 +976,7 @@ package rds {
   }
 
   /**
-    * This data type is used as a response element in the action <a>DescribeDBEngineVersions</a>.
+    * This data type is used as a response element in the action <code>DescribeDBEngineVersions</code>.
     */
   @js.native
   trait CharacterSet extends js.Object {
@@ -1257,6 +1302,7 @@ package rds {
     var DatabaseName: js.UndefOr[String]
     var DeletionProtection: js.UndefOr[BooleanOptional]
     var EnableCloudwatchLogsExports: js.UndefOr[LogTypeList]
+    var EnableHttpEndpoint: js.UndefOr[BooleanOptional]
     var EnableIAMDatabaseAuthentication: js.UndefOr[BooleanOptional]
     var EngineMode: js.UndefOr[String]
     var EngineVersion: js.UndefOr[String]
@@ -1291,6 +1337,7 @@ package rds {
         DatabaseName: js.UndefOr[String] = js.undefined,
         DeletionProtection: js.UndefOr[BooleanOptional] = js.undefined,
         EnableCloudwatchLogsExports: js.UndefOr[LogTypeList] = js.undefined,
+        EnableHttpEndpoint: js.UndefOr[BooleanOptional] = js.undefined,
         EnableIAMDatabaseAuthentication: js.UndefOr[BooleanOptional] = js.undefined,
         EngineMode: js.UndefOr[String] = js.undefined,
         EngineVersion: js.UndefOr[String] = js.undefined,
@@ -1325,6 +1372,7 @@ package rds {
       DatabaseName.foreach(__v => __obj.update("DatabaseName", __v.asInstanceOf[js.Any]))
       DeletionProtection.foreach(__v => __obj.update("DeletionProtection", __v.asInstanceOf[js.Any]))
       EnableCloudwatchLogsExports.foreach(__v => __obj.update("EnableCloudwatchLogsExports", __v.asInstanceOf[js.Any]))
+      EnableHttpEndpoint.foreach(__v => __obj.update("EnableHttpEndpoint", __v.asInstanceOf[js.Any]))
       EnableIAMDatabaseAuthentication.foreach(
         __v => __obj.update("EnableIAMDatabaseAuthentication", __v.asInstanceOf[js.Any])
       )
@@ -1480,6 +1528,7 @@ package rds {
     var LicenseModel: js.UndefOr[String]
     var MasterUserPassword: js.UndefOr[String]
     var MasterUsername: js.UndefOr[String]
+    var MaxAllocatedStorage: js.UndefOr[IntegerOptional]
     var MonitoringInterval: js.UndefOr[IntegerOptional]
     var MonitoringRoleArn: js.UndefOr[String]
     var MultiAZ: js.UndefOr[BooleanOptional]
@@ -1529,6 +1578,7 @@ package rds {
         LicenseModel: js.UndefOr[String] = js.undefined,
         MasterUserPassword: js.UndefOr[String] = js.undefined,
         MasterUsername: js.UndefOr[String] = js.undefined,
+        MaxAllocatedStorage: js.UndefOr[IntegerOptional] = js.undefined,
         MonitoringInterval: js.UndefOr[IntegerOptional] = js.undefined,
         MonitoringRoleArn: js.UndefOr[String] = js.undefined,
         MultiAZ: js.UndefOr[BooleanOptional] = js.undefined,
@@ -1580,6 +1630,7 @@ package rds {
       LicenseModel.foreach(__v => __obj.update("LicenseModel", __v.asInstanceOf[js.Any]))
       MasterUserPassword.foreach(__v => __obj.update("MasterUserPassword", __v.asInstanceOf[js.Any]))
       MasterUsername.foreach(__v => __obj.update("MasterUsername", __v.asInstanceOf[js.Any]))
+      MaxAllocatedStorage.foreach(__v => __obj.update("MaxAllocatedStorage", __v.asInstanceOf[js.Any]))
       MonitoringInterval.foreach(__v => __obj.update("MonitoringInterval", __v.asInstanceOf[js.Any]))
       MonitoringRoleArn.foreach(__v => __obj.update("MonitoringRoleArn", __v.asInstanceOf[js.Any]))
       MultiAZ.foreach(__v => __obj.update("MultiAZ", __v.asInstanceOf[js.Any]))
@@ -2057,10 +2108,14 @@ package rds {
 
   /**
     * Contains the details of an Amazon Aurora DB cluster.
-    *  This data type is used as a response element in the <a>DescribeDBClusters</a>, <a>StopDBCluster</a>, and <a>StartDBCluster</a> actions.
+    *  This data type is used as a response element in the <code>DescribeDBClusters</code>, <code>StopDBCluster</code>, and <code>StartDBCluster</code> actions.
     */
   @js.native
   trait DBCluster extends js.Object {
+    var ActivityStreamKinesisStreamName: js.UndefOr[String]
+    var ActivityStreamKmsKeyId: js.UndefOr[String]
+    var ActivityStreamMode: js.UndefOr[ActivityStreamMode]
+    var ActivityStreamStatus: js.UndefOr[ActivityStreamStatus]
     var AllocatedStorage: js.UndefOr[IntegerOptional]
     var AssociatedRoles: js.UndefOr[DBClusterRoles]
     var AvailabilityZones: js.UndefOr[AvailabilityZones]
@@ -2071,7 +2126,8 @@ package rds {
     var CharacterSetName: js.UndefOr[String]
     var CloneGroupId: js.UndefOr[String]
     var ClusterCreateTime: js.UndefOr[TStamp]
-    var CopyTagsToSnapshot: js.UndefOr[Boolean]
+    var CopyTagsToSnapshot: js.UndefOr[BooleanOptional]
+    var CrossAccountClone: js.UndefOr[BooleanOptional]
     var CustomEndpoints: js.UndefOr[StringList]
     var DBClusterArn: js.UndefOr[String]
     var DBClusterIdentifier: js.UndefOr[String]
@@ -2081,7 +2137,7 @@ package rds {
     var DBSubnetGroup: js.UndefOr[String]
     var DatabaseName: js.UndefOr[String]
     var DbClusterResourceId: js.UndefOr[String]
-    var DeletionProtection: js.UndefOr[Boolean]
+    var DeletionProtection: js.UndefOr[BooleanOptional]
     var EarliestBacktrackTime: js.UndefOr[TStamp]
     var EarliestRestorableTime: js.UndefOr[TStamp]
     var EnabledCloudwatchLogsExports: js.UndefOr[LogTypeList]
@@ -2090,12 +2146,12 @@ package rds {
     var EngineMode: js.UndefOr[String]
     var EngineVersion: js.UndefOr[String]
     var HostedZoneId: js.UndefOr[String]
-    var HttpEndpointEnabled: js.UndefOr[Boolean]
-    var IAMDatabaseAuthenticationEnabled: js.UndefOr[Boolean]
+    var HttpEndpointEnabled: js.UndefOr[BooleanOptional]
+    var IAMDatabaseAuthenticationEnabled: js.UndefOr[BooleanOptional]
     var KmsKeyId: js.UndefOr[String]
     var LatestRestorableTime: js.UndefOr[TStamp]
     var MasterUsername: js.UndefOr[String]
-    var MultiAZ: js.UndefOr[Boolean]
+    var MultiAZ: js.UndefOr[BooleanOptional]
     var PercentProgress: js.UndefOr[String]
     var Port: js.UndefOr[IntegerOptional]
     var PreferredBackupWindow: js.UndefOr[String]
@@ -2111,6 +2167,10 @@ package rds {
 
   object DBCluster {
     def apply(
+        ActivityStreamKinesisStreamName: js.UndefOr[String] = js.undefined,
+        ActivityStreamKmsKeyId: js.UndefOr[String] = js.undefined,
+        ActivityStreamMode: js.UndefOr[ActivityStreamMode] = js.undefined,
+        ActivityStreamStatus: js.UndefOr[ActivityStreamStatus] = js.undefined,
         AllocatedStorage: js.UndefOr[IntegerOptional] = js.undefined,
         AssociatedRoles: js.UndefOr[DBClusterRoles] = js.undefined,
         AvailabilityZones: js.UndefOr[AvailabilityZones] = js.undefined,
@@ -2121,7 +2181,8 @@ package rds {
         CharacterSetName: js.UndefOr[String] = js.undefined,
         CloneGroupId: js.UndefOr[String] = js.undefined,
         ClusterCreateTime: js.UndefOr[TStamp] = js.undefined,
-        CopyTagsToSnapshot: js.UndefOr[Boolean] = js.undefined,
+        CopyTagsToSnapshot: js.UndefOr[BooleanOptional] = js.undefined,
+        CrossAccountClone: js.UndefOr[BooleanOptional] = js.undefined,
         CustomEndpoints: js.UndefOr[StringList] = js.undefined,
         DBClusterArn: js.UndefOr[String] = js.undefined,
         DBClusterIdentifier: js.UndefOr[String] = js.undefined,
@@ -2131,7 +2192,7 @@ package rds {
         DBSubnetGroup: js.UndefOr[String] = js.undefined,
         DatabaseName: js.UndefOr[String] = js.undefined,
         DbClusterResourceId: js.UndefOr[String] = js.undefined,
-        DeletionProtection: js.UndefOr[Boolean] = js.undefined,
+        DeletionProtection: js.UndefOr[BooleanOptional] = js.undefined,
         EarliestBacktrackTime: js.UndefOr[TStamp] = js.undefined,
         EarliestRestorableTime: js.UndefOr[TStamp] = js.undefined,
         EnabledCloudwatchLogsExports: js.UndefOr[LogTypeList] = js.undefined,
@@ -2140,12 +2201,12 @@ package rds {
         EngineMode: js.UndefOr[String] = js.undefined,
         EngineVersion: js.UndefOr[String] = js.undefined,
         HostedZoneId: js.UndefOr[String] = js.undefined,
-        HttpEndpointEnabled: js.UndefOr[Boolean] = js.undefined,
-        IAMDatabaseAuthenticationEnabled: js.UndefOr[Boolean] = js.undefined,
+        HttpEndpointEnabled: js.UndefOr[BooleanOptional] = js.undefined,
+        IAMDatabaseAuthenticationEnabled: js.UndefOr[BooleanOptional] = js.undefined,
         KmsKeyId: js.UndefOr[String] = js.undefined,
         LatestRestorableTime: js.UndefOr[TStamp] = js.undefined,
         MasterUsername: js.UndefOr[String] = js.undefined,
-        MultiAZ: js.UndefOr[Boolean] = js.undefined,
+        MultiAZ: js.UndefOr[BooleanOptional] = js.undefined,
         PercentProgress: js.UndefOr[String] = js.undefined,
         Port: js.UndefOr[IntegerOptional] = js.undefined,
         PreferredBackupWindow: js.UndefOr[String] = js.undefined,
@@ -2159,6 +2220,12 @@ package rds {
         VpcSecurityGroups: js.UndefOr[VpcSecurityGroupMembershipList] = js.undefined
     ): DBCluster = {
       val __obj = js.Dictionary.empty[js.Any]
+      ActivityStreamKinesisStreamName.foreach(
+        __v => __obj.update("ActivityStreamKinesisStreamName", __v.asInstanceOf[js.Any])
+      )
+      ActivityStreamKmsKeyId.foreach(__v => __obj.update("ActivityStreamKmsKeyId", __v.asInstanceOf[js.Any]))
+      ActivityStreamMode.foreach(__v => __obj.update("ActivityStreamMode", __v.asInstanceOf[js.Any]))
+      ActivityStreamStatus.foreach(__v => __obj.update("ActivityStreamStatus", __v.asInstanceOf[js.Any]))
       AllocatedStorage.foreach(__v => __obj.update("AllocatedStorage", __v.asInstanceOf[js.Any]))
       AssociatedRoles.foreach(__v => __obj.update("AssociatedRoles", __v.asInstanceOf[js.Any]))
       AvailabilityZones.foreach(__v => __obj.update("AvailabilityZones", __v.asInstanceOf[js.Any]))
@@ -2172,6 +2239,7 @@ package rds {
       CloneGroupId.foreach(__v => __obj.update("CloneGroupId", __v.asInstanceOf[js.Any]))
       ClusterCreateTime.foreach(__v => __obj.update("ClusterCreateTime", __v.asInstanceOf[js.Any]))
       CopyTagsToSnapshot.foreach(__v => __obj.update("CopyTagsToSnapshot", __v.asInstanceOf[js.Any]))
+      CrossAccountClone.foreach(__v => __obj.update("CrossAccountClone", __v.asInstanceOf[js.Any]))
       CustomEndpoints.foreach(__v => __obj.update("CustomEndpoints", __v.asInstanceOf[js.Any]))
       DBClusterArn.foreach(__v => __obj.update("DBClusterArn", __v.asInstanceOf[js.Any]))
       DBClusterIdentifier.foreach(__v => __obj.update("DBClusterIdentifier", __v.asInstanceOf[js.Any]))
@@ -2218,7 +2286,7 @@ package rds {
   }
 
   /**
-    * This data type is used as a response element in the <a>DescribeDBClusterBacktracks</a> action.
+    * This data type is used as a response element in the <code>DescribeDBClusterBacktracks</code> action.
     */
   @js.native
   trait DBClusterBacktrack extends js.Object {
@@ -2253,7 +2321,7 @@ package rds {
   }
 
   /**
-    * Contains the result of a successful invocation of the <a>DescribeDBClusterBacktracks</a> action.
+    * Contains the result of a successful invocation of the <code>DescribeDBClusterBacktracks</code> action.
     */
   @js.native
   trait DBClusterBacktrackMessage extends js.Object {
@@ -2302,11 +2370,11 @@ package rds {
 
   /**
     * This data type represents the information you need to connect to an Amazon Aurora DB cluster. This data type is used as a response element in the following actions:
-    * * <a>CreateDBClusterEndpoint</a>
-    *  * <a>DescribeDBClusterEndpoints</a>
-    *  * <a>ModifyDBClusterEndpoint</a>
-    *  * <a>DeleteDBClusterEndpoint</a>
-    * For the data structure that represents Amazon RDS DB instance endpoints, see <a>Endpoint</a>.
+    * * <code>CreateDBClusterEndpoint</code>
+    *  * <code>DescribeDBClusterEndpoints</code>
+    *  * <code>ModifyDBClusterEndpoint</code>
+    *  * <code>DeleteDBClusterEndpoint</code>
+    * For the data structure that represents Amazon RDS DB instance endpoints, see <code>Endpoint</code>.
     */
   @js.native
   trait DBClusterEndpoint extends js.Object {
@@ -2400,7 +2468,7 @@ package rds {
   }
 
   /**
-    * Contains the result of a successful invocation of the <a>DescribeDBClusters</a> action.
+    * Contains the result of a successful invocation of the <code>DescribeDBClusters</code> action.
     */
   @js.native
   trait DBClusterMessage extends js.Object {
@@ -2443,7 +2511,7 @@ package rds {
 
   /**
     * Contains the details of an Amazon RDS DB cluster parameter group.
-    *  This data type is used as a response element in the <a>DescribeDBClusterParameterGroups</a> action.
+    *  This data type is used as a response element in the <code>DescribeDBClusterParameterGroups</code> action.
     */
   @js.native
   trait DBClusterParameterGroup extends js.Object {
@@ -2555,7 +2623,7 @@ package rds {
 
   /**
     * Contains the details for an Amazon RDS DB cluster snapshot
-    *  This data type is used as a response element in the <a>DescribeDBClusterSnapshots</a> action.
+    *  This data type is used as a response element in the <code>DescribeDBClusterSnapshots</code> action.
     */
   @js.native
   trait DBClusterSnapshot extends js.Object {
@@ -2633,7 +2701,7 @@ package rds {
 
   /**
     * Contains the name and values of a manual DB cluster snapshot attribute.
-    *  Manual DB cluster snapshot attributes are used to authorize other AWS accounts to restore a manual DB cluster snapshot. For more information, see the <a>ModifyDBClusterSnapshotAttribute</a> API action.
+    *  Manual DB cluster snapshot attributes are used to authorize other AWS accounts to restore a manual DB cluster snapshot. For more information, see the <code>ModifyDBClusterSnapshotAttribute</code> API action.
     */
   @js.native
   trait DBClusterSnapshotAttribute extends js.Object {
@@ -2654,8 +2722,8 @@ package rds {
   }
 
   /**
-    * Contains the results of a successful call to the <a>DescribeDBClusterSnapshotAttributes</a> API action.
-    *  Manual DB cluster snapshot attributes are used to authorize other AWS accounts to copy or restore a manual DB cluster snapshot. For more information, see the <a>ModifyDBClusterSnapshotAttribute</a> API action.
+    * Contains the results of a successful call to the <code>DescribeDBClusterSnapshotAttributes</code> API action.
+    *  Manual DB cluster snapshot attributes are used to authorize other AWS accounts to copy or restore a manual DB cluster snapshot. For more information, see the <code>ModifyDBClusterSnapshotAttribute</code> API action.
     */
   @js.native
   trait DBClusterSnapshotAttributesResult extends js.Object {
@@ -2676,7 +2744,7 @@ package rds {
   }
 
   /**
-    * Provides a list of DB cluster snapshots for the user as the result of a call to the <a>DescribeDBClusterSnapshots</a> action.
+    * Provides a list of DB cluster snapshots for the user as the result of a call to the <code>DescribeDBClusterSnapshots</code> action.
     */
   @js.native
   trait DBClusterSnapshotMessage extends js.Object {
@@ -2697,7 +2765,7 @@ package rds {
   }
 
   /**
-    * This data type is used as a response element in the action <a>DescribeDBEngineVersions</a>.
+    * This data type is used as a response element in the action <code>DescribeDBEngineVersions</code>.
     */
   @js.native
   trait DBEngineVersion extends js.Object {
@@ -2708,6 +2776,7 @@ package rds {
     var Engine: js.UndefOr[String]
     var EngineVersion: js.UndefOr[String]
     var ExportableLogTypes: js.UndefOr[LogTypeList]
+    var Status: js.UndefOr[String]
     var SupportedCharacterSets: js.UndefOr[SupportedCharacterSetsList]
     var SupportedEngineModes: js.UndefOr[EngineModeList]
     var SupportedFeatureNames: js.UndefOr[FeatureNameList]
@@ -2726,6 +2795,7 @@ package rds {
         Engine: js.UndefOr[String] = js.undefined,
         EngineVersion: js.UndefOr[String] = js.undefined,
         ExportableLogTypes: js.UndefOr[LogTypeList] = js.undefined,
+        Status: js.UndefOr[String] = js.undefined,
         SupportedCharacterSets: js.UndefOr[SupportedCharacterSetsList] = js.undefined,
         SupportedEngineModes: js.UndefOr[EngineModeList] = js.undefined,
         SupportedFeatureNames: js.UndefOr[FeatureNameList] = js.undefined,
@@ -2742,6 +2812,7 @@ package rds {
       Engine.foreach(__v => __obj.update("Engine", __v.asInstanceOf[js.Any]))
       EngineVersion.foreach(__v => __obj.update("EngineVersion", __v.asInstanceOf[js.Any]))
       ExportableLogTypes.foreach(__v => __obj.update("ExportableLogTypes", __v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.update("Status", __v.asInstanceOf[js.Any]))
       SupportedCharacterSets.foreach(__v => __obj.update("SupportedCharacterSets", __v.asInstanceOf[js.Any]))
       SupportedEngineModes.foreach(__v => __obj.update("SupportedEngineModes", __v.asInstanceOf[js.Any]))
       SupportedFeatureNames.foreach(__v => __obj.update("SupportedFeatureNames", __v.asInstanceOf[js.Any]))
@@ -2756,7 +2827,7 @@ package rds {
   }
 
   /**
-    * Contains the result of a successful invocation of the <a>DescribeDBEngineVersions</a> action.
+    * Contains the result of a successful invocation of the <code>DescribeDBEngineVersions</code> action.
     */
   @js.native
   trait DBEngineVersionMessage extends js.Object {
@@ -2778,7 +2849,7 @@ package rds {
 
   /**
     * Contains the details of an Amazon RDS DB instance.
-    *  This data type is used as a response element in the <a>DescribeDBInstances</a> action.
+    *  This data type is used as a response element in the <code>DescribeDBInstances</code> action.
     */
   @js.native
   trait DBInstance extends js.Object {
@@ -2816,6 +2887,7 @@ package rds {
     var LicenseModel: js.UndefOr[String]
     var ListenerEndpoint: js.UndefOr[Endpoint]
     var MasterUsername: js.UndefOr[String]
+    var MaxAllocatedStorage: js.UndefOr[IntegerOptional]
     var MonitoringInterval: js.UndefOr[IntegerOptional]
     var MonitoringRoleArn: js.UndefOr[String]
     var MultiAZ: js.UndefOr[Boolean]
@@ -2877,6 +2949,7 @@ package rds {
         LicenseModel: js.UndefOr[String] = js.undefined,
         ListenerEndpoint: js.UndefOr[Endpoint] = js.undefined,
         MasterUsername: js.UndefOr[String] = js.undefined,
+        MaxAllocatedStorage: js.UndefOr[IntegerOptional] = js.undefined,
         MonitoringInterval: js.UndefOr[IntegerOptional] = js.undefined,
         MonitoringRoleArn: js.UndefOr[String] = js.undefined,
         MultiAZ: js.UndefOr[Boolean] = js.undefined,
@@ -2942,6 +3015,7 @@ package rds {
       LicenseModel.foreach(__v => __obj.update("LicenseModel", __v.asInstanceOf[js.Any]))
       ListenerEndpoint.foreach(__v => __obj.update("ListenerEndpoint", __v.asInstanceOf[js.Any]))
       MasterUsername.foreach(__v => __obj.update("MasterUsername", __v.asInstanceOf[js.Any]))
+      MaxAllocatedStorage.foreach(__v => __obj.update("MaxAllocatedStorage", __v.asInstanceOf[js.Any]))
       MonitoringInterval.foreach(__v => __obj.update("MonitoringInterval", __v.asInstanceOf[js.Any]))
       MonitoringRoleArn.foreach(__v => __obj.update("MonitoringRoleArn", __v.asInstanceOf[js.Any]))
       MultiAZ.foreach(__v => __obj.update("MultiAZ", __v.asInstanceOf[js.Any]))
@@ -3064,7 +3138,7 @@ package rds {
   }
 
   /**
-    * Contains the result of a successful invocation of the <a>DescribeDBInstanceAutomatedBackups</a> action.
+    * Contains the result of a successful invocation of the <code>DescribeDBInstanceAutomatedBackups</code> action.
     */
   @js.native
   trait DBInstanceAutomatedBackupMessage extends js.Object {
@@ -3085,7 +3159,7 @@ package rds {
   }
 
   /**
-    * Contains the result of a successful invocation of the <a>DescribeDBInstances</a> action.
+    * Contains the result of a successful invocation of the <code>DescribeDBInstances</code> action.
     */
   @js.native
   trait DBInstanceMessage extends js.Object {
@@ -3158,7 +3232,7 @@ package rds {
 
   /**
     * Contains the details of an Amazon RDS DB parameter group.
-    *  This data type is used as a response element in the <a>DescribeDBParameterGroups</a> action.
+    *  This data type is used as a response element in the <code>DescribeDBParameterGroups</code> action.
     */
   @js.native
   trait DBParameterGroup extends js.Object {
@@ -3185,7 +3259,7 @@ package rds {
   }
 
   /**
-    * Contains the result of a successful invocation of the <a>DescribeDBParameters</a> action.
+    * Contains the result of a successful invocation of the <code>DescribeDBParameters</code> action.
     */
   @js.native
   trait DBParameterGroupDetails extends js.Object {
@@ -3206,7 +3280,7 @@ package rds {
   }
 
   /**
-    * Contains the result of a successful invocation of the <a>ModifyDBParameterGroup</a> or <a>ResetDBParameterGroup</a> action.
+    * Contains the result of a successful invocation of the <code>ModifyDBParameterGroup</code> or <code>ResetDBParameterGroup</code> action.
     */
   @js.native
   trait DBParameterGroupNameMessage extends js.Object {
@@ -3226,12 +3300,12 @@ package rds {
   /**
     * The status of the DB parameter group.
     *  This data type is used as a response element in the following actions:
-    * * <a>CreateDBInstance</a>
-    *  * <a>CreateDBInstanceReadReplica</a>
-    *  * <a>DeleteDBInstance</a>
-    *  * <a>ModifyDBInstance</a>
-    *  * <a>RebootDBInstance</a>
-    *  * <a>RestoreDBInstanceFromDBSnapshot</a>
+    * * <code>CreateDBInstance</code>
+    *  * <code>CreateDBInstanceReadReplica</code>
+    *  * <code>DeleteDBInstance</code>
+    *  * <code>ModifyDBInstance</code>
+    *  * <code>RebootDBInstance</code>
+    *  * <code>RestoreDBInstanceFromDBSnapshot</code>
     */
   @js.native
   trait DBParameterGroupStatus extends js.Object {
@@ -3252,7 +3326,7 @@ package rds {
   }
 
   /**
-    * Contains the result of a successful invocation of the <a>DescribeDBParameterGroups</a> action.
+    * Contains the result of a successful invocation of the <code>DescribeDBParameterGroups</code> action.
     */
   @js.native
   trait DBParameterGroupsMessage extends js.Object {
@@ -3274,7 +3348,7 @@ package rds {
 
   /**
     * Contains the details for an Amazon RDS DB security group.
-    *  This data type is used as a response element in the <a>DescribeDBSecurityGroups</a> action.
+    *  This data type is used as a response element in the <code>DescribeDBSecurityGroups</code> action.
     */
   @js.native
   trait DBSecurityGroup extends js.Object {
@@ -3311,10 +3385,10 @@ package rds {
 
   /**
     * This data type is used as a response element in the following actions:
-    * * <a>ModifyDBInstance</a>
-    *  * <a>RebootDBInstance</a>
-    *  * <a>RestoreDBInstanceFromDBSnapshot</a>
-    *  * <a>RestoreDBInstanceToPointInTime</a>
+    * * <code>ModifyDBInstance</code>
+    *  * <code>RebootDBInstance</code>
+    *  * <code>RestoreDBInstanceFromDBSnapshot</code>
+    *  * <code>RestoreDBInstanceToPointInTime</code>
     */
   @js.native
   trait DBSecurityGroupMembership extends js.Object {
@@ -3335,7 +3409,7 @@ package rds {
   }
 
   /**
-    * Contains the result of a successful invocation of the <a>DescribeDBSecurityGroups</a> action.
+    * Contains the result of a successful invocation of the <code>DescribeDBSecurityGroups</code> action.
     */
   @js.native
   trait DBSecurityGroupMessage extends js.Object {
@@ -3357,7 +3431,7 @@ package rds {
 
   /**
     * Contains the details of an Amazon RDS DB snapshot.
-    *  This data type is used as a response element in the <a>DescribeDBSnapshots</a> action.
+    *  This data type is used as a response element in the <code>DescribeDBSnapshots</code> action.
     */
   @js.native
   trait DBSnapshot extends js.Object {
@@ -3459,7 +3533,7 @@ package rds {
 
   /**
     * Contains the name and values of a manual DB snapshot attribute
-    *  Manual DB snapshot attributes are used to authorize other AWS accounts to restore a manual DB snapshot. For more information, see the <a>ModifyDBSnapshotAttribute</a> API.
+    *  Manual DB snapshot attributes are used to authorize other AWS accounts to restore a manual DB snapshot. For more information, see the <code>ModifyDBSnapshotAttribute</code> API.
     */
   @js.native
   trait DBSnapshotAttribute extends js.Object {
@@ -3480,8 +3554,8 @@ package rds {
   }
 
   /**
-    * Contains the results of a successful call to the <a>DescribeDBSnapshotAttributes</a> API action.
-    *  Manual DB snapshot attributes are used to authorize other AWS accounts to copy or restore a manual DB snapshot. For more information, see the <a>ModifyDBSnapshotAttribute</a> API action.
+    * Contains the results of a successful call to the <code>DescribeDBSnapshotAttributes</code> API action.
+    *  Manual DB snapshot attributes are used to authorize other AWS accounts to copy or restore a manual DB snapshot. For more information, see the <code>ModifyDBSnapshotAttribute</code> API action.
     */
   @js.native
   trait DBSnapshotAttributesResult extends js.Object {
@@ -3502,7 +3576,7 @@ package rds {
   }
 
   /**
-    * Contains the result of a successful invocation of the <a>DescribeDBSnapshots</a> action.
+    * Contains the result of a successful invocation of the <code>DescribeDBSnapshots</code> action.
     */
   @js.native
   trait DBSnapshotMessage extends js.Object {
@@ -3524,7 +3598,7 @@ package rds {
 
   /**
     * Contains the details of an Amazon RDS DB subnet group.
-    *  This data type is used as a response element in the <a>DescribeDBSubnetGroups</a> action.
+    *  This data type is used as a response element in the <code>DescribeDBSubnetGroups</code> action.
     */
   @js.native
   trait DBSubnetGroup extends js.Object {
@@ -3557,7 +3631,7 @@ package rds {
   }
 
   /**
-    * Contains the result of a successful invocation of the <a>DescribeDBSubnetGroups</a> action.
+    * Contains the result of a successful invocation of the <code>DescribeDBSubnetGroups</code> action.
     */
   @js.native
   trait DBSubnetGroupMessage extends js.Object {
@@ -4194,6 +4268,7 @@ package rds {
   trait DescribeDBClustersMessage extends js.Object {
     var DBClusterIdentifier: js.UndefOr[String]
     var Filters: js.UndefOr[FilterList]
+    var IncludeShared: js.UndefOr[Boolean]
     var Marker: js.UndefOr[String]
     var MaxRecords: js.UndefOr[IntegerOptional]
   }
@@ -4202,12 +4277,14 @@ package rds {
     def apply(
         DBClusterIdentifier: js.UndefOr[String] = js.undefined,
         Filters: js.UndefOr[FilterList] = js.undefined,
+        IncludeShared: js.UndefOr[Boolean] = js.undefined,
         Marker: js.UndefOr[String] = js.undefined,
         MaxRecords: js.UndefOr[IntegerOptional] = js.undefined
     ): DescribeDBClustersMessage = {
       val __obj = js.Dictionary.empty[js.Any]
       DBClusterIdentifier.foreach(__v => __obj.update("DBClusterIdentifier", __v.asInstanceOf[js.Any]))
       Filters.foreach(__v => __obj.update("Filters", __v.asInstanceOf[js.Any]))
+      IncludeShared.foreach(__v => __obj.update("IncludeShared", __v.asInstanceOf[js.Any]))
       Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
       MaxRecords.foreach(__v => __obj.update("MaxRecords", __v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeDBClustersMessage]
@@ -4221,6 +4298,7 @@ package rds {
     var Engine: js.UndefOr[String]
     var EngineVersion: js.UndefOr[String]
     var Filters: js.UndefOr[FilterList]
+    var IncludeAll: js.UndefOr[BooleanOptional]
     var ListSupportedCharacterSets: js.UndefOr[BooleanOptional]
     var ListSupportedTimezones: js.UndefOr[BooleanOptional]
     var Marker: js.UndefOr[String]
@@ -4234,6 +4312,7 @@ package rds {
         Engine: js.UndefOr[String] = js.undefined,
         EngineVersion: js.UndefOr[String] = js.undefined,
         Filters: js.UndefOr[FilterList] = js.undefined,
+        IncludeAll: js.UndefOr[BooleanOptional] = js.undefined,
         ListSupportedCharacterSets: js.UndefOr[BooleanOptional] = js.undefined,
         ListSupportedTimezones: js.UndefOr[BooleanOptional] = js.undefined,
         Marker: js.UndefOr[String] = js.undefined,
@@ -4245,6 +4324,7 @@ package rds {
       Engine.foreach(__v => __obj.update("Engine", __v.asInstanceOf[js.Any]))
       EngineVersion.foreach(__v => __obj.update("EngineVersion", __v.asInstanceOf[js.Any]))
       Filters.foreach(__v => __obj.update("Filters", __v.asInstanceOf[js.Any]))
+      IncludeAll.foreach(__v => __obj.update("IncludeAll", __v.asInstanceOf[js.Any]))
       ListSupportedCharacterSets.foreach(__v => __obj.update("ListSupportedCharacterSets", __v.asInstanceOf[js.Any]))
       ListSupportedTimezones.foreach(__v => __obj.update("ListSupportedTimezones", __v.asInstanceOf[js.Any]))
       Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
@@ -4311,7 +4391,7 @@ package rds {
   }
 
   /**
-    * This data type is used as a response element to <a>DescribeDBLogFiles</a>.
+    * This data type is used as a response element to <code>DescribeDBLogFiles</code>.
     */
   @js.native
   trait DescribeDBLogFilesDetails extends js.Object {
@@ -4373,7 +4453,7 @@ package rds {
   }
 
   /**
-    * The response from a call to <a>DescribeDBLogFiles</a>.
+    * The response from a call to <code>DescribeDBLogFiles</code>.
     */
   @js.native
   trait DescribeDBLogFilesResponse extends js.Object {
@@ -5119,7 +5199,7 @@ package rds {
   }
 
   /**
-    * This data type is used as a response element to <a>DownloadDBLogFilePortion</a>.
+    * This data type is used as a response element to <code>DownloadDBLogFilePortion</code>.
     */
   @js.native
   trait DownloadDBLogFilePortionDetails extends js.Object {
@@ -5173,9 +5253,9 @@ package rds {
 
   /**
     * This data type is used as a response element in the following actions:
-    * * <a>AuthorizeDBSecurityGroupIngress</a>
-    *  * <a>DescribeDBSecurityGroups</a>
-    *  * <a>RevokeDBSecurityGroupIngress</a>
+    * * <code>AuthorizeDBSecurityGroupIngress</code>
+    *  * <code>DescribeDBSecurityGroups</code>
+    *  * <code>RevokeDBSecurityGroupIngress</code>
     */
   @js.native
   trait EC2SecurityGroup extends js.Object {
@@ -5203,10 +5283,10 @@ package rds {
 
   /**
     * This data type represents the information you need to connect to an Amazon RDS DB instance. This data type is used as a response element in the following actions:
-    * * <a>CreateDBInstance</a>
-    *  * <a>DescribeDBInstances</a>
-    *  * <a>DeleteDBInstance</a>
-    * For the data structure that represents Amazon Aurora DB cluster endpoints, see <a>DBClusterEndpoint</a>.
+    * * <code>CreateDBInstance</code>
+    *  * <code>DescribeDBInstances</code>
+    *  * <code>DeleteDBInstance</code>
+    * For the data structure that represents Amazon Aurora DB cluster endpoints, see <code>DBClusterEndpoint</code>.
     */
   @js.native
   trait Endpoint extends js.Object {
@@ -5230,7 +5310,7 @@ package rds {
   }
 
   /**
-    * Contains the result of a successful invocation of the <a>DescribeEngineDefaultParameters</a> action.
+    * Contains the result of a successful invocation of the <code>DescribeEngineDefaultParameters</code> action.
     */
   @js.native
   trait EngineDefaults extends js.Object {
@@ -5254,7 +5334,7 @@ package rds {
   }
 
   /**
-    * This data type is used as a response element in the <a>DescribeEvents</a> action.
+    * This data type is used as a response element in the <code>DescribeEvents</code> action.
     */
   @js.native
   trait Event extends js.Object {
@@ -5287,7 +5367,7 @@ package rds {
   }
 
   /**
-    * Contains the results of a successful invocation of the <a>DescribeEventCategories</a> action.
+    * Contains the results of a successful invocation of the <code>DescribeEventCategories</code> action.
     */
   @js.native
   trait EventCategoriesMap extends js.Object {
@@ -5326,7 +5406,7 @@ package rds {
   }
 
   /**
-    * Contains the results of a successful invocation of the <a>DescribeEventSubscriptions</a> action.
+    * Contains the results of a successful invocation of the <code>DescribeEventSubscriptions</code> action.
     */
   @js.native
   trait EventSubscription extends js.Object {
@@ -5392,7 +5472,7 @@ package rds {
   }
 
   /**
-    * Contains the result of a successful invocation of the <a>DescribeEvents</a> action.
+    * Contains the result of a successful invocation of the <code>DescribeEvents</code> action.
     */
   @js.native
   trait EventsMessage extends js.Object {
@@ -5455,11 +5535,11 @@ package rds {
     *
     * '''Note:'''Currently, wildcards are not supported in filters.
     * The following actions can be filtered:
-    * * <a>DescribeDBClusterBacktracks</a>
-    *  * <a>DescribeDBClusterEndpoints</a>
-    *  * <a>DescribeDBClusters</a>
-    *  * <a>DescribeDBInstances</a>
-    *  * <a>DescribePendingMaintenanceActions</a>
+    * * <code>DescribeDBClusterBacktracks</code>
+    *  * <code>DescribeDBClusterEndpoints</code>
+    *  * <code>DescribeDBClusters</code>
+    *  * <code>DescribeDBInstances</code>
+    *  * <code>DescribePendingMaintenanceActions</code>
     */
   @js.native
   trait Filter extends js.Object {
@@ -5569,7 +5649,7 @@ package rds {
   }
 
   /**
-    * This data type is used as a response element in the <a>DescribeDBSecurityGroups</a> action.
+    * This data type is used as a response element in the <code>DescribeDBSecurityGroups</code> action.
     */
   @js.native
   trait IPRange extends js.Object {
@@ -5691,12 +5771,14 @@ package rds {
   @js.native
   trait ModifyDBClusterMessage extends js.Object {
     var DBClusterIdentifier: String
+    var AllowMajorVersionUpgrade: js.UndefOr[Boolean]
     var ApplyImmediately: js.UndefOr[Boolean]
     var BacktrackWindow: js.UndefOr[LongOptional]
     var BackupRetentionPeriod: js.UndefOr[IntegerOptional]
     var CloudwatchLogsExportConfiguration: js.UndefOr[CloudwatchLogsExportConfiguration]
     var CopyTagsToSnapshot: js.UndefOr[BooleanOptional]
     var DBClusterParameterGroupName: js.UndefOr[String]
+    var DBInstanceParameterGroupName: js.UndefOr[String]
     var DeletionProtection: js.UndefOr[BooleanOptional]
     var EnableHttpEndpoint: js.UndefOr[BooleanOptional]
     var EnableIAMDatabaseAuthentication: js.UndefOr[BooleanOptional]
@@ -5714,12 +5796,14 @@ package rds {
   object ModifyDBClusterMessage {
     def apply(
         DBClusterIdentifier: String,
+        AllowMajorVersionUpgrade: js.UndefOr[Boolean] = js.undefined,
         ApplyImmediately: js.UndefOr[Boolean] = js.undefined,
         BacktrackWindow: js.UndefOr[LongOptional] = js.undefined,
         BackupRetentionPeriod: js.UndefOr[IntegerOptional] = js.undefined,
         CloudwatchLogsExportConfiguration: js.UndefOr[CloudwatchLogsExportConfiguration] = js.undefined,
         CopyTagsToSnapshot: js.UndefOr[BooleanOptional] = js.undefined,
         DBClusterParameterGroupName: js.UndefOr[String] = js.undefined,
+        DBInstanceParameterGroupName: js.UndefOr[String] = js.undefined,
         DeletionProtection: js.UndefOr[BooleanOptional] = js.undefined,
         EnableHttpEndpoint: js.UndefOr[BooleanOptional] = js.undefined,
         EnableIAMDatabaseAuthentication: js.UndefOr[BooleanOptional] = js.undefined,
@@ -5737,6 +5821,7 @@ package rds {
         "DBClusterIdentifier" -> DBClusterIdentifier.asInstanceOf[js.Any]
       )
 
+      AllowMajorVersionUpgrade.foreach(__v => __obj.update("AllowMajorVersionUpgrade", __v.asInstanceOf[js.Any]))
       ApplyImmediately.foreach(__v => __obj.update("ApplyImmediately", __v.asInstanceOf[js.Any]))
       BacktrackWindow.foreach(__v => __obj.update("BacktrackWindow", __v.asInstanceOf[js.Any]))
       BackupRetentionPeriod.foreach(__v => __obj.update("BackupRetentionPeriod", __v.asInstanceOf[js.Any]))
@@ -5745,6 +5830,9 @@ package rds {
       )
       CopyTagsToSnapshot.foreach(__v => __obj.update("CopyTagsToSnapshot", __v.asInstanceOf[js.Any]))
       DBClusterParameterGroupName.foreach(__v => __obj.update("DBClusterParameterGroupName", __v.asInstanceOf[js.Any]))
+      DBInstanceParameterGroupName.foreach(
+        __v => __obj.update("DBInstanceParameterGroupName", __v.asInstanceOf[js.Any])
+      )
       DeletionProtection.foreach(__v => __obj.update("DeletionProtection", __v.asInstanceOf[js.Any]))
       EnableHttpEndpoint.foreach(__v => __obj.update("EnableHttpEndpoint", __v.asInstanceOf[js.Any]))
       EnableIAMDatabaseAuthentication.foreach(
@@ -5875,6 +5963,7 @@ package rds {
     var Iops: js.UndefOr[IntegerOptional]
     var LicenseModel: js.UndefOr[String]
     var MasterUserPassword: js.UndefOr[String]
+    var MaxAllocatedStorage: js.UndefOr[IntegerOptional]
     var MonitoringInterval: js.UndefOr[IntegerOptional]
     var MonitoringRoleArn: js.UndefOr[String]
     var MultiAZ: js.UndefOr[BooleanOptional]
@@ -5919,6 +6008,7 @@ package rds {
         Iops: js.UndefOr[IntegerOptional] = js.undefined,
         LicenseModel: js.UndefOr[String] = js.undefined,
         MasterUserPassword: js.UndefOr[String] = js.undefined,
+        MaxAllocatedStorage: js.UndefOr[IntegerOptional] = js.undefined,
         MonitoringInterval: js.UndefOr[IntegerOptional] = js.undefined,
         MonitoringRoleArn: js.UndefOr[String] = js.undefined,
         MultiAZ: js.UndefOr[BooleanOptional] = js.undefined,
@@ -5967,6 +6057,7 @@ package rds {
       Iops.foreach(__v => __obj.update("Iops", __v.asInstanceOf[js.Any]))
       LicenseModel.foreach(__v => __obj.update("LicenseModel", __v.asInstanceOf[js.Any]))
       MasterUserPassword.foreach(__v => __obj.update("MasterUserPassword", __v.asInstanceOf[js.Any]))
+      MaxAllocatedStorage.foreach(__v => __obj.update("MaxAllocatedStorage", __v.asInstanceOf[js.Any]))
       MonitoringInterval.foreach(__v => __obj.update("MonitoringInterval", __v.asInstanceOf[js.Any]))
       MonitoringRoleArn.foreach(__v => __obj.update("MonitoringRoleArn", __v.asInstanceOf[js.Any]))
       MultiAZ.foreach(__v => __obj.update("MultiAZ", __v.asInstanceOf[js.Any]))
@@ -6612,7 +6703,7 @@ package rds {
   }
 
   /**
-    * The version for an option. Option group option versions are returned by the <a>DescribeOptionGroupOptions</a> action.
+    * The version for an option. Option group option versions are returned by the <code>DescribeOptionGroupOptions</code> action.
     */
   @js.native
   trait OptionVersion extends js.Object {
@@ -6634,7 +6725,7 @@ package rds {
 
   /**
     * Contains a list of available options for a DB instance.
-    *  This data type is used as a response element in the <a>DescribeOrderableDBInstanceOptions</a> action.
+    *  This data type is used as a response element in the <code>DescribeOrderableDBInstanceOptions</code> action.
     */
   @js.native
   trait OrderableDBInstanceOption extends js.Object {
@@ -6658,6 +6749,7 @@ package rds {
     var SupportsIAMDatabaseAuthentication: js.UndefOr[Boolean]
     var SupportsIops: js.UndefOr[Boolean]
     var SupportsPerformanceInsights: js.UndefOr[Boolean]
+    var SupportsStorageAutoscaling: js.UndefOr[BooleanOptional]
     var SupportsStorageEncryption: js.UndefOr[Boolean]
     var Vpc: js.UndefOr[Boolean]
   }
@@ -6684,6 +6776,7 @@ package rds {
         SupportsIAMDatabaseAuthentication: js.UndefOr[Boolean] = js.undefined,
         SupportsIops: js.UndefOr[Boolean] = js.undefined,
         SupportsPerformanceInsights: js.UndefOr[Boolean] = js.undefined,
+        SupportsStorageAutoscaling: js.UndefOr[BooleanOptional] = js.undefined,
         SupportsStorageEncryption: js.UndefOr[Boolean] = js.undefined,
         Vpc: js.UndefOr[Boolean] = js.undefined
     ): OrderableDBInstanceOption = {
@@ -6710,6 +6803,7 @@ package rds {
       )
       SupportsIops.foreach(__v => __obj.update("SupportsIops", __v.asInstanceOf[js.Any]))
       SupportsPerformanceInsights.foreach(__v => __obj.update("SupportsPerformanceInsights", __v.asInstanceOf[js.Any]))
+      SupportsStorageAutoscaling.foreach(__v => __obj.update("SupportsStorageAutoscaling", __v.asInstanceOf[js.Any]))
       SupportsStorageEncryption.foreach(__v => __obj.update("SupportsStorageEncryption", __v.asInstanceOf[js.Any]))
       Vpc.foreach(__v => __obj.update("Vpc", __v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[OrderableDBInstanceOption]
@@ -6717,7 +6811,7 @@ package rds {
   }
 
   /**
-    * Contains the result of a successful invocation of the <a>DescribeOrderableDBInstanceOptions</a> action.
+    * Contains the result of a successful invocation of the <code>DescribeOrderableDBInstanceOptions</code> action.
     */
   @js.native
   trait OrderableDBInstanceOptionsMessage extends js.Object {
@@ -6738,8 +6832,8 @@ package rds {
   }
 
   /**
-    * This data type is used as a request parameter in the <a>ModifyDBParameterGroup</a> and <a>ResetDBParameterGroup</a> actions.
-    *  This data type is used as a response element in the <a>DescribeEngineDefaultParameters</a> and <a>DescribeDBParameters</a> actions.
+    * This data type is used as a request parameter in the <code>ModifyDBParameterGroup</code> and <code>ResetDBParameterGroup</code> actions.
+    *  This data type is used as a response element in the <code>DescribeEngineDefaultParameters</code> and <code>DescribeDBParameters</code> actions.
     */
   @js.native
   trait Parameter extends js.Object {
@@ -6862,7 +6956,7 @@ package rds {
   }
 
   /**
-    * This data type is used as a response element in the <a>ModifyDBInstance</a> action.
+    * This data type is used as a response element in the <code>ModifyDBInstance</code> action.
     */
   @js.native
   trait PendingModifiedValues extends js.Object {
@@ -6927,16 +7021,16 @@ package rds {
     * Contains the processor features of a DB instance class.
     *  To specify the number of CPU cores, use the <code>coreCount</code> feature name for the <code>Name</code> parameter. To specify the number of threads per core, use the <code>threadsPerCore</code> feature name for the <code>Name</code> parameter.
     *  You can set the processor features of the DB instance class for a DB instance when you call one of the following actions:
-    * * <a>CreateDBInstance</a>
-    *  * <a>ModifyDBInstance</a>
-    *  * <a>RestoreDBInstanceFromDBSnapshot</a>
-    *  * <a>RestoreDBInstanceFromS3</a>
-    *  * <a>RestoreDBInstanceToPointInTime</a>
-    * You can view the valid processor values for a particular instance class by calling the <a>DescribeOrderableDBInstanceOptions</a> action and specifying the instance class for the <code>DBInstanceClass</code> parameter.
+    * * <code>CreateDBInstance</code>
+    *  * <code>ModifyDBInstance</code>
+    *  * <code>RestoreDBInstanceFromDBSnapshot</code>
+    *  * <code>RestoreDBInstanceFromS3</code>
+    *  * <code>RestoreDBInstanceToPointInTime</code>
+    * You can view the valid processor values for a particular instance class by calling the <code>DescribeOrderableDBInstanceOptions</code> action and specifying the instance class for the <code>DBInstanceClass</code> parameter.
     *  In addition, you can use the following actions for DB instance class processor information:
-    * * <a>DescribeDBInstances</a>
-    *  * <a>DescribeDBSnapshots</a>
-    *  * <a>DescribeValidDBInstanceModifications</a>
+    * * <code>DescribeDBInstances</code>
+    *  * <code>DescribeDBSnapshots</code>
+    *  * <code>DescribeValidDBInstanceModifications</code>
     * For more information, see [[https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html#USER_ConfigureProcessor|Configuring the Processor of the DB Instance Class]] in the <i>Amazon RDS User Guide. </i>
     */
   @js.native
@@ -7140,7 +7234,7 @@ package rds {
   }
 
   /**
-    * This data type is used as a response element in the <a>DescribeReservedDBInstances</a> and <a>DescribeReservedDBInstancesOfferings</a> actions.
+    * This data type is used as a response element in the <code>DescribeReservedDBInstances</code> and <code>DescribeReservedDBInstancesOfferings</code> actions.
     */
   @js.native
   trait RecurringCharge extends js.Object {
@@ -7197,18 +7291,21 @@ package rds {
   trait RemoveRoleFromDBClusterMessage extends js.Object {
     var DBClusterIdentifier: String
     var RoleArn: String
+    var FeatureName: js.UndefOr[String]
   }
 
   object RemoveRoleFromDBClusterMessage {
     def apply(
         DBClusterIdentifier: String,
-        RoleArn: String
+        RoleArn: String,
+        FeatureName: js.UndefOr[String] = js.undefined
     ): RemoveRoleFromDBClusterMessage = {
       val __obj = js.Dictionary[js.Any](
         "DBClusterIdentifier" -> DBClusterIdentifier.asInstanceOf[js.Any],
         "RoleArn"             -> RoleArn.asInstanceOf[js.Any]
       )
 
+      FeatureName.foreach(__v => __obj.update("FeatureName", __v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[RemoveRoleFromDBClusterMessage]
     }
   }
@@ -7298,7 +7395,7 @@ package rds {
   }
 
   /**
-    * This data type is used as a response element in the <a>DescribeReservedDBInstances</a> and <a>PurchaseReservedDBInstancesOffering</a> actions.
+    * This data type is used as a response element in the <code>DescribeReservedDBInstances</code> and <code>PurchaseReservedDBInstancesOffering</code> actions.
     */
   @js.native
   trait ReservedDBInstance extends js.Object {
@@ -7360,7 +7457,7 @@ package rds {
   }
 
   /**
-    * Contains the result of a successful invocation of the <a>DescribeReservedDBInstances</a> action.
+    * Contains the result of a successful invocation of the <code>DescribeReservedDBInstances</code> action.
     */
   @js.native
   trait ReservedDBInstanceMessage extends js.Object {
@@ -7381,7 +7478,7 @@ package rds {
   }
 
   /**
-    * This data type is used as a response element in the <a>DescribeReservedDBInstancesOfferings</a> action.
+    * This data type is used as a response element in the <code>DescribeReservedDBInstancesOfferings</code> action.
     */
   @js.native
   trait ReservedDBInstancesOffering extends js.Object {
@@ -7428,7 +7525,7 @@ package rds {
   }
 
   /**
-    * Contains the result of a successful invocation of the <a>DescribeReservedDBInstancesOfferings</a> action.
+    * Contains the result of a successful invocation of the <code>DescribeReservedDBInstancesOfferings</code> action.
     */
   @js.native
   trait ReservedDBInstancesOfferingMessage extends js.Object {
@@ -8307,6 +8404,7 @@ package rds {
     var MaxCapacity: js.UndefOr[IntegerOptional]
     var MinCapacity: js.UndefOr[IntegerOptional]
     var SecondsUntilAutoPause: js.UndefOr[IntegerOptional]
+    var TimeoutAction: js.UndefOr[String]
   }
 
   object ScalingConfiguration {
@@ -8314,13 +8412,15 @@ package rds {
         AutoPause: js.UndefOr[BooleanOptional] = js.undefined,
         MaxCapacity: js.UndefOr[IntegerOptional] = js.undefined,
         MinCapacity: js.UndefOr[IntegerOptional] = js.undefined,
-        SecondsUntilAutoPause: js.UndefOr[IntegerOptional] = js.undefined
+        SecondsUntilAutoPause: js.UndefOr[IntegerOptional] = js.undefined,
+        TimeoutAction: js.UndefOr[String] = js.undefined
     ): ScalingConfiguration = {
       val __obj = js.Dictionary.empty[js.Any]
       AutoPause.foreach(__v => __obj.update("AutoPause", __v.asInstanceOf[js.Any]))
       MaxCapacity.foreach(__v => __obj.update("MaxCapacity", __v.asInstanceOf[js.Any]))
       MinCapacity.foreach(__v => __obj.update("MinCapacity", __v.asInstanceOf[js.Any]))
       SecondsUntilAutoPause.foreach(__v => __obj.update("SecondsUntilAutoPause", __v.asInstanceOf[js.Any]))
+      TimeoutAction.foreach(__v => __obj.update("TimeoutAction", __v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ScalingConfiguration]
     }
   }
@@ -8335,6 +8435,7 @@ package rds {
     var MaxCapacity: js.UndefOr[IntegerOptional]
     var MinCapacity: js.UndefOr[IntegerOptional]
     var SecondsUntilAutoPause: js.UndefOr[IntegerOptional]
+    var TimeoutAction: js.UndefOr[String]
   }
 
   object ScalingConfigurationInfo {
@@ -8342,19 +8443,21 @@ package rds {
         AutoPause: js.UndefOr[BooleanOptional] = js.undefined,
         MaxCapacity: js.UndefOr[IntegerOptional] = js.undefined,
         MinCapacity: js.UndefOr[IntegerOptional] = js.undefined,
-        SecondsUntilAutoPause: js.UndefOr[IntegerOptional] = js.undefined
+        SecondsUntilAutoPause: js.UndefOr[IntegerOptional] = js.undefined,
+        TimeoutAction: js.UndefOr[String] = js.undefined
     ): ScalingConfigurationInfo = {
       val __obj = js.Dictionary.empty[js.Any]
       AutoPause.foreach(__v => __obj.update("AutoPause", __v.asInstanceOf[js.Any]))
       MaxCapacity.foreach(__v => __obj.update("MaxCapacity", __v.asInstanceOf[js.Any]))
       MinCapacity.foreach(__v => __obj.update("MinCapacity", __v.asInstanceOf[js.Any]))
       SecondsUntilAutoPause.foreach(__v => __obj.update("SecondsUntilAutoPause", __v.asInstanceOf[js.Any]))
+      TimeoutAction.foreach(__v => __obj.update("TimeoutAction", __v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ScalingConfigurationInfo]
     }
   }
 
   /**
-    * Contains an AWS Region name as the result of a successful call to the <a>DescribeSourceRegions</a> action.
+    * Contains an AWS Region name as the result of a successful call to the <code>DescribeSourceRegions</code> action.
     */
   @js.native
   trait SourceRegion extends js.Object {
@@ -8378,7 +8481,7 @@ package rds {
   }
 
   /**
-    * Contains the result of a successful invocation of the <a>DescribeSourceRegions</a> action.
+    * Contains the result of a successful invocation of the <code>DescribeSourceRegions</code> action.
     */
   @js.native
   trait SourceRegionMessage extends js.Object {
@@ -8414,6 +8517,59 @@ package rds {
       `db-cluster`,
       `db-cluster-snapshot`
     )
+  }
+
+  @js.native
+  trait StartActivityStreamRequest extends js.Object {
+    var KmsKeyId: String
+    var Mode: ActivityStreamMode
+    var ResourceArn: String
+    var ApplyImmediately: js.UndefOr[BooleanOptional]
+  }
+
+  object StartActivityStreamRequest {
+    def apply(
+        KmsKeyId: String,
+        Mode: ActivityStreamMode,
+        ResourceArn: String,
+        ApplyImmediately: js.UndefOr[BooleanOptional] = js.undefined
+    ): StartActivityStreamRequest = {
+      val __obj = js.Dictionary[js.Any](
+        "KmsKeyId"    -> KmsKeyId.asInstanceOf[js.Any],
+        "Mode"        -> Mode.asInstanceOf[js.Any],
+        "ResourceArn" -> ResourceArn.asInstanceOf[js.Any]
+      )
+
+      ApplyImmediately.foreach(__v => __obj.update("ApplyImmediately", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[StartActivityStreamRequest]
+    }
+  }
+
+  @js.native
+  trait StartActivityStreamResponse extends js.Object {
+    var ApplyImmediately: js.UndefOr[Boolean]
+    var KinesisStreamName: js.UndefOr[String]
+    var KmsKeyId: js.UndefOr[String]
+    var Mode: js.UndefOr[ActivityStreamMode]
+    var Status: js.UndefOr[ActivityStreamStatus]
+  }
+
+  object StartActivityStreamResponse {
+    def apply(
+        ApplyImmediately: js.UndefOr[Boolean] = js.undefined,
+        KinesisStreamName: js.UndefOr[String] = js.undefined,
+        KmsKeyId: js.UndefOr[String] = js.undefined,
+        Mode: js.UndefOr[ActivityStreamMode] = js.undefined,
+        Status: js.UndefOr[ActivityStreamStatus] = js.undefined
+    ): StartActivityStreamResponse = {
+      val __obj = js.Dictionary.empty[js.Any]
+      ApplyImmediately.foreach(__v => __obj.update("ApplyImmediately", __v.asInstanceOf[js.Any]))
+      KinesisStreamName.foreach(__v => __obj.update("KinesisStreamName", __v.asInstanceOf[js.Any]))
+      KmsKeyId.foreach(__v => __obj.update("KmsKeyId", __v.asInstanceOf[js.Any]))
+      Mode.foreach(__v => __obj.update("Mode", __v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.update("Status", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[StartActivityStreamResponse]
+    }
   }
 
   @js.native
@@ -8477,6 +8633,47 @@ package rds {
       val __obj = js.Dictionary.empty[js.Any]
       DBInstance.foreach(__v => __obj.update("DBInstance", __v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[StartDBInstanceResult]
+    }
+  }
+
+  @js.native
+  trait StopActivityStreamRequest extends js.Object {
+    var ResourceArn: String
+    var ApplyImmediately: js.UndefOr[BooleanOptional]
+  }
+
+  object StopActivityStreamRequest {
+    def apply(
+        ResourceArn: String,
+        ApplyImmediately: js.UndefOr[BooleanOptional] = js.undefined
+    ): StopActivityStreamRequest = {
+      val __obj = js.Dictionary[js.Any](
+        "ResourceArn" -> ResourceArn.asInstanceOf[js.Any]
+      )
+
+      ApplyImmediately.foreach(__v => __obj.update("ApplyImmediately", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[StopActivityStreamRequest]
+    }
+  }
+
+  @js.native
+  trait StopActivityStreamResponse extends js.Object {
+    var KinesisStreamName: js.UndefOr[String]
+    var KmsKeyId: js.UndefOr[String]
+    var Status: js.UndefOr[ActivityStreamStatus]
+  }
+
+  object StopActivityStreamResponse {
+    def apply(
+        KinesisStreamName: js.UndefOr[String] = js.undefined,
+        KmsKeyId: js.UndefOr[String] = js.undefined,
+        Status: js.UndefOr[ActivityStreamStatus] = js.undefined
+    ): StopActivityStreamResponse = {
+      val __obj = js.Dictionary.empty[js.Any]
+      KinesisStreamName.foreach(__v => __obj.update("KinesisStreamName", __v.asInstanceOf[js.Any]))
+      KmsKeyId.foreach(__v => __obj.update("KmsKeyId", __v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.update("Status", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[StopActivityStreamResponse]
     }
   }
 
@@ -8548,7 +8745,7 @@ package rds {
   }
 
   /**
-    * This data type is used as a response element in the <a>DescribeDBSubnetGroups</a> action.
+    * This data type is used as a response element in the <code>DescribeDBSubnetGroups</code> action.
     */
   @js.native
   trait Subnet extends js.Object {
@@ -8611,7 +8808,7 @@ package rds {
   }
 
   /**
-    * A time zone associated with a <a>DBInstance</a> or a <a>DBSnapshot</a>. This data type is an element in the response to the <a>DescribeDBInstances</a>, the <a>DescribeDBSnapshots</a>, and the <a>DescribeDBEngineVersions</a> actions.
+    * A time zone associated with a <code>DBInstance</code> or a <code>DBSnapshot</code>. This data type is an element in the response to the <code>DescribeDBInstances</code>, the <code>DescribeDBSnapshots</code>, and the <code>DescribeDBEngineVersions</code> actions.
     */
   @js.native
   trait Timezone extends js.Object {
@@ -8659,7 +8856,7 @@ package rds {
   }
 
   /**
-    * Information about valid modifications that you can make to your DB instance. Contains the result of a successful call to the <a>DescribeValidDBInstanceModifications</a> action. You can use this information when you call <a>ModifyDBInstance</a>.
+    * Information about valid modifications that you can make to your DB instance. Contains the result of a successful call to the <code>DescribeValidDBInstanceModifications</code> action. You can use this information when you call <code>ModifyDBInstance</code>.
     */
   @js.native
   trait ValidDBInstanceModificationsMessage extends js.Object {
@@ -8680,7 +8877,7 @@ package rds {
   }
 
   /**
-    * Information about valid modifications that you can make to your DB instance. Contains the result of a successful call to the <a>DescribeValidDBInstanceModifications</a> action.
+    * Information about valid modifications that you can make to your DB instance. Contains the result of a successful call to the <code>DescribeValidDBInstanceModifications</code> action.
     */
   @js.native
   trait ValidStorageOptions extends js.Object {
@@ -8688,6 +8885,7 @@ package rds {
     var ProvisionedIops: js.UndefOr[RangeList]
     var StorageSize: js.UndefOr[RangeList]
     var StorageType: js.UndefOr[String]
+    var SupportsStorageAutoscaling: js.UndefOr[Boolean]
   }
 
   object ValidStorageOptions {
@@ -8695,13 +8893,15 @@ package rds {
         IopsToStorageRatio: js.UndefOr[DoubleRangeList] = js.undefined,
         ProvisionedIops: js.UndefOr[RangeList] = js.undefined,
         StorageSize: js.UndefOr[RangeList] = js.undefined,
-        StorageType: js.UndefOr[String] = js.undefined
+        StorageType: js.UndefOr[String] = js.undefined,
+        SupportsStorageAutoscaling: js.UndefOr[Boolean] = js.undefined
     ): ValidStorageOptions = {
       val __obj = js.Dictionary.empty[js.Any]
       IopsToStorageRatio.foreach(__v => __obj.update("IopsToStorageRatio", __v.asInstanceOf[js.Any]))
       ProvisionedIops.foreach(__v => __obj.update("ProvisionedIops", __v.asInstanceOf[js.Any]))
       StorageSize.foreach(__v => __obj.update("StorageSize", __v.asInstanceOf[js.Any]))
       StorageType.foreach(__v => __obj.update("StorageType", __v.asInstanceOf[js.Any]))
+      SupportsStorageAutoscaling.foreach(__v => __obj.update("SupportsStorageAutoscaling", __v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ValidStorageOptions]
     }
   }

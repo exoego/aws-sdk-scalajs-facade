@@ -64,6 +64,7 @@ package object cognitoidentityprovider {
   type EmailAddressType                             = String
   type EmailNotificationBodyType                    = String
   type EmailNotificationSubjectType                 = String
+  type EmailSendingAccountType                      = String
   type EmailVerificationMessageByLinkType           = String
   type EmailVerificationMessageType                 = String
   type EmailVerificationSubjectByLinkType           = String
@@ -138,6 +139,7 @@ package object cognitoidentityprovider {
   type SupportedIdentityProvidersListType = js.Array[ProviderNameType]
   type TagKeysType                        = String
   type TagValueType                       = String
+  type TemporaryPasswordValidityDaysType  = Int
   type TokenModelType                     = String
   type UserFilterType                     = String
   type UserImportJobIdType                = String
@@ -210,6 +212,8 @@ package object cognitoidentityprovider {
     def adminSetUserMFAPreferenceFuture(
         params: AdminSetUserMFAPreferenceRequest
     ): Future[AdminSetUserMFAPreferenceResponse] = service.adminSetUserMFAPreference(params).promise.toFuture
+    def adminSetUserPasswordFuture(params: AdminSetUserPasswordRequest): Future[AdminSetUserPasswordResponse] =
+      service.adminSetUserPassword(params).promise.toFuture
     def adminSetUserSettingsFuture(params: AdminSetUserSettingsRequest): Future[AdminSetUserSettingsResponse] =
       service.adminSetUserSettings(params).promise.toFuture
     def adminUpdateAuthEventFeedbackFuture(
@@ -411,6 +415,7 @@ package cognitoidentityprovider {
     def adminSetUserMFAPreference(
         params: AdminSetUserMFAPreferenceRequest
     ): Request[AdminSetUserMFAPreferenceResponse]                                                        = js.native
+    def adminSetUserPassword(params: AdminSetUserPasswordRequest): Request[AdminSetUserPasswordResponse] = js.native
     def adminSetUserSettings(params: AdminSetUserSettingsRequest): Request[AdminSetUserSettingsResponse] = js.native
     def adminUpdateAuthEventFeedback(
         params: AdminUpdateAuthEventFeedbackRequest
@@ -1484,6 +1489,44 @@ package cognitoidentityprovider {
       val __obj = js.Dictionary.empty[js.Any]
 
       __obj.asInstanceOf[AdminSetUserMFAPreferenceResponse]
+    }
+  }
+
+  @js.native
+  trait AdminSetUserPasswordRequest extends js.Object {
+    var Password: PasswordType
+    var UserPoolId: UserPoolIdType
+    var Username: UsernameType
+    var Permanent: js.UndefOr[BooleanType]
+  }
+
+  object AdminSetUserPasswordRequest {
+    def apply(
+        Password: PasswordType,
+        UserPoolId: UserPoolIdType,
+        Username: UsernameType,
+        Permanent: js.UndefOr[BooleanType] = js.undefined
+    ): AdminSetUserPasswordRequest = {
+      val __obj = js.Dictionary[js.Any](
+        "Password"   -> Password.asInstanceOf[js.Any],
+        "UserPoolId" -> UserPoolId.asInstanceOf[js.Any],
+        "Username"   -> Username.asInstanceOf[js.Any]
+      )
+
+      Permanent.foreach(__v => __obj.update("Permanent", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AdminSetUserPasswordRequest]
+    }
+  }
+
+  @js.native
+  trait AdminSetUserPasswordResponse extends js.Object {}
+
+  object AdminSetUserPasswordResponse {
+    def apply(
+        ): AdminSetUserPasswordResponse = {
+      val __obj = js.Dictionary.empty[js.Any]
+
+      __obj.asInstanceOf[AdminSetUserPasswordResponse]
     }
   }
 
@@ -3285,20 +3328,30 @@ package cognitoidentityprovider {
     */
   @js.native
   trait EmailConfigurationType extends js.Object {
+    var EmailSendingAccount: js.UndefOr[EmailSendingAccountType]
     var ReplyToEmailAddress: js.UndefOr[EmailAddressType]
     var SourceArn: js.UndefOr[ArnType]
   }
 
   object EmailConfigurationType {
     def apply(
+        EmailSendingAccount: js.UndefOr[EmailSendingAccountType] = js.undefined,
         ReplyToEmailAddress: js.UndefOr[EmailAddressType] = js.undefined,
         SourceArn: js.UndefOr[ArnType] = js.undefined
     ): EmailConfigurationType = {
       val __obj = js.Dictionary.empty[js.Any]
+      EmailSendingAccount.foreach(__v => __obj.update("EmailSendingAccount", __v.asInstanceOf[js.Any]))
       ReplyToEmailAddress.foreach(__v => __obj.update("ReplyToEmailAddress", __v.asInstanceOf[js.Any]))
       SourceArn.foreach(__v => __obj.update("SourceArn", __v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[EmailConfigurationType]
     }
+  }
+
+  object EmailSendingAccountTypeEnum {
+    val COGNITO_DEFAULT = "COGNITO_DEFAULT"
+    val DEVELOPER       = "DEVELOPER"
+
+    val values = IndexedSeq(COGNITO_DEFAULT, DEVELOPER)
   }
 
   /**
@@ -4715,6 +4768,7 @@ package cognitoidentityprovider {
     var RequireNumbers: js.UndefOr[BooleanType]
     var RequireSymbols: js.UndefOr[BooleanType]
     var RequireUppercase: js.UndefOr[BooleanType]
+    var TemporaryPasswordValidityDays: js.UndefOr[TemporaryPasswordValidityDaysType]
   }
 
   object PasswordPolicyType {
@@ -4723,7 +4777,8 @@ package cognitoidentityprovider {
         RequireLowercase: js.UndefOr[BooleanType] = js.undefined,
         RequireNumbers: js.UndefOr[BooleanType] = js.undefined,
         RequireSymbols: js.UndefOr[BooleanType] = js.undefined,
-        RequireUppercase: js.UndefOr[BooleanType] = js.undefined
+        RequireUppercase: js.UndefOr[BooleanType] = js.undefined,
+        TemporaryPasswordValidityDays: js.UndefOr[TemporaryPasswordValidityDaysType] = js.undefined
     ): PasswordPolicyType = {
       val __obj = js.Dictionary.empty[js.Any]
       MinimumLength.foreach(__v => __obj.update("MinimumLength", __v.asInstanceOf[js.Any]))
@@ -4731,6 +4786,9 @@ package cognitoidentityprovider {
       RequireNumbers.foreach(__v => __obj.update("RequireNumbers", __v.asInstanceOf[js.Any]))
       RequireSymbols.foreach(__v => __obj.update("RequireSymbols", __v.asInstanceOf[js.Any]))
       RequireUppercase.foreach(__v => __obj.update("RequireUppercase", __v.asInstanceOf[js.Any]))
+      TemporaryPasswordValidityDays.foreach(
+        __v => __obj.update("TemporaryPasswordValidityDays", __v.asInstanceOf[js.Any])
+      )
       __obj.asInstanceOf[PasswordPolicyType]
     }
   }

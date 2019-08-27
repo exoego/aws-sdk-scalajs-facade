@@ -8,6 +8,7 @@ import io.scalajs.nodejs
 import facade.amazonaws._
 
 package object iam {
+  type AccessDetails      = js.Array[AccessDetail]
   type ActionNameListType = js.Array[ActionNameType]
   type ActionNameType     = String
   type ArnListType        = js.Array[arnType]
@@ -83,6 +84,7 @@ package object iam {
   type entityListType                                  = js.Array[EntityType]
   type entityNameType                                  = String
   type existingUserNameType                            = String
+  type globalEndpointTokenVersion                      = String
   type groupDetailListType                             = js.Array[GroupDetail]
   type groupListType                                   = js.Array[Group]
   type groupNameListType                               = js.Array[groupNameType]
@@ -99,6 +101,8 @@ package object iam {
   type maxPasswordAgeType                              = Int
   type mfaDeviceListType                               = js.Array[MFADevice]
   type minimumPasswordLengthType                       = Int
+  type organizationsEntityPathType                     = String
+  type organizationsPolicyIdType                       = String
   type passwordReusePreventionType                     = Int
   type passwordType                                    = String
   type pathPrefixType                                  = String
@@ -120,6 +124,7 @@ package object iam {
   type publicKeyFingerprintType                        = String
   type publicKeyIdType                                 = String
   type publicKeyMaterialType                           = String
+  type responseMarkerType                              = String
   type roleDescriptionType                             = String
   type roleDetailListType                              = js.Array[RoleDetail]
   type roleListType                                    = js.Array[Role]
@@ -135,6 +140,7 @@ package object iam {
   type servicePassword                                 = String
   type serviceSpecificCredentialId                     = String
   type serviceUserName                                 = String
+  type sortKeyType                                     = String
   type statusType                                      = String
   type stringType                                      = String
   type summaryKeyType                                  = String
@@ -253,6 +259,10 @@ package object iam {
       service.enableMFADevice(params).promise.toFuture
     def generateCredentialReportFuture(): Future[GenerateCredentialReportResponse] =
       service.generateCredentialReport().promise.toFuture
+    def generateOrganizationsAccessReportFuture(
+        params: GenerateOrganizationsAccessReportRequest
+    ): Future[GenerateOrganizationsAccessReportResponse] =
+      service.generateOrganizationsAccessReport(params).promise.toFuture
     def generateServiceLastAccessedDetailsFuture(
         params: GenerateServiceLastAccessedDetailsRequest
     ): Future[GenerateServiceLastAccessedDetailsResponse] =
@@ -283,6 +293,9 @@ package object iam {
     def getOpenIDConnectProviderFuture(
         params: GetOpenIDConnectProviderRequest
     ): Future[GetOpenIDConnectProviderResponse] = service.getOpenIDConnectProvider(params).promise.toFuture
+    def getOrganizationsAccessReportFuture(
+        params: GetOrganizationsAccessReportRequest
+    ): Future[GetOrganizationsAccessReportResponse] = service.getOrganizationsAccessReport(params).promise.toFuture
     def getPolicyFuture(params: GetPolicyRequest): Future[GetPolicyResponse] =
       service.getPolicy(params).promise.toFuture
     def getPolicyVersionFuture(params: GetPolicyVersionRequest): Future[GetPolicyVersionResponse] =
@@ -398,6 +411,8 @@ package object iam {
       service.resyncMFADevice(params).promise.toFuture
     def setDefaultPolicyVersionFuture(params: SetDefaultPolicyVersionRequest): Future[js.Object] =
       service.setDefaultPolicyVersion(params).promise.toFuture
+    def setSecurityTokenServicePreferencesFuture(params: SetSecurityTokenServicePreferencesRequest): Future[js.Object] =
+      service.setSecurityTokenServicePreferences(params).promise.toFuture
     def simulateCustomPolicyFuture(params: SimulateCustomPolicyRequest): Future[SimulatePolicyResponse] =
       service.simulateCustomPolicy(params).promise.toFuture
     def simulatePrincipalPolicyFuture(params: SimulatePrincipalPolicyRequest): Future[SimulatePolicyResponse] =
@@ -507,6 +522,9 @@ package iam {
     def detachUserPolicy(params: DetachUserPolicyRequest): Request[js.Object]                               = js.native
     def enableMFADevice(params: EnableMFADeviceRequest): Request[js.Object]                                 = js.native
     def generateCredentialReport(): Request[GenerateCredentialReportResponse]                               = js.native
+    def generateOrganizationsAccessReport(
+        params: GenerateOrganizationsAccessReportRequest
+    ): Request[GenerateOrganizationsAccessReportResponse] = js.native
     def generateServiceLastAccessedDetails(
         params: GenerateServiceLastAccessedDetailsRequest
     ): Request[GenerateServiceLastAccessedDetailsResponse]                                               = js.native
@@ -529,6 +547,9 @@ package iam {
     def getLoginProfile(params: GetLoginProfileRequest): Request[GetLoginProfileResponse]          = js.native
     def getOpenIDConnectProvider(params: GetOpenIDConnectProviderRequest): Request[GetOpenIDConnectProviderResponse] =
       js.native
+    def getOrganizationsAccessReport(
+        params: GetOrganizationsAccessReportRequest
+    ): Request[GetOrganizationsAccessReportResponse]                                                     = js.native
     def getPolicy(params: GetPolicyRequest): Request[GetPolicyResponse]                                  = js.native
     def getPolicyVersion(params: GetPolicyVersionRequest): Request[GetPolicyVersionResponse]             = js.native
     def getRole(params: GetRoleRequest): Request[GetRoleResponse]                                        = js.native
@@ -601,9 +622,11 @@ package iam {
     def removeUserFromGroup(params: RemoveUserFromGroupRequest): Request[js.Object]                     = js.native
     def resetServiceSpecificCredential(
         params: ResetServiceSpecificCredentialRequest
-    ): Request[ResetServiceSpecificCredentialResponse]                                                   = js.native
-    def resyncMFADevice(params: ResyncMFADeviceRequest): Request[js.Object]                              = js.native
-    def setDefaultPolicyVersion(params: SetDefaultPolicyVersionRequest): Request[js.Object]              = js.native
+    ): Request[ResetServiceSpecificCredentialResponse]                                      = js.native
+    def resyncMFADevice(params: ResyncMFADeviceRequest): Request[js.Object]                 = js.native
+    def setDefaultPolicyVersion(params: SetDefaultPolicyVersionRequest): Request[js.Object] = js.native
+    def setSecurityTokenServicePreferences(params: SetSecurityTokenServicePreferencesRequest): Request[js.Object] =
+      js.native
     def simulateCustomPolicy(params: SimulateCustomPolicyRequest): Request[SimulatePolicyResponse]       = js.native
     def simulatePrincipalPolicy(params: SimulatePrincipalPolicyRequest): Request[SimulatePolicyResponse] = js.native
     def tagRole(params: TagRoleRequest): Request[js.Object]                                              = js.native
@@ -631,6 +654,42 @@ package iam {
       js.native
     def uploadSigningCertificate(params: UploadSigningCertificateRequest): Request[UploadSigningCertificateResponse] =
       js.native
+  }
+
+  /**
+    * An object that contains details about when a principal in the reported AWS Organizations entity last attempted to access an AWS service. A principal can be an IAM user, an IAM role, or the AWS account root user within the reported Organizations entity.
+    *  This data type is a response element in the <a>GetOrganizationsAccessReport</a> operation.
+    */
+  @js.native
+  trait AccessDetail extends js.Object {
+    var ServiceName: serviceNameType
+    var ServiceNamespace: serviceNamespaceType
+    var EntityPath: js.UndefOr[organizationsEntityPathType]
+    var LastAuthenticatedTime: js.UndefOr[dateType]
+    var Region: js.UndefOr[stringType]
+    var TotalAuthenticatedEntities: js.UndefOr[integerType]
+  }
+
+  object AccessDetail {
+    def apply(
+        ServiceName: serviceNameType,
+        ServiceNamespace: serviceNamespaceType,
+        EntityPath: js.UndefOr[organizationsEntityPathType] = js.undefined,
+        LastAuthenticatedTime: js.UndefOr[dateType] = js.undefined,
+        Region: js.UndefOr[stringType] = js.undefined,
+        TotalAuthenticatedEntities: js.UndefOr[integerType] = js.undefined
+    ): AccessDetail = {
+      val __obj = js.Dictionary[js.Any](
+        "ServiceName"      -> ServiceName.asInstanceOf[js.Any],
+        "ServiceNamespace" -> ServiceNamespace.asInstanceOf[js.Any]
+      )
+
+      EntityPath.foreach(__v => __obj.update("EntityPath", __v.asInstanceOf[js.Any]))
+      LastAuthenticatedTime.foreach(__v => __obj.update("LastAuthenticatedTime", __v.asInstanceOf[js.Any]))
+      Region.foreach(__v => __obj.update("Region", __v.asInstanceOf[js.Any]))
+      TotalAuthenticatedEntities.foreach(__v => __obj.update("TotalAuthenticatedEntities", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AccessDetail]
+    }
   }
 
   /**
@@ -2136,7 +2195,7 @@ package iam {
 
   /**
     * Contains information about the reason that the operation failed.
-    *  This data type is used as a response element in the <a>GetServiceLastAccessedDetails</a> operation and the <a>GetServiceLastAccessedDetailsWithEntities</a> operation.
+    *  This data type is used as a response element in the <a>GetOrganizationsAccessReport</a>, <a>GetServiceLastAccessedDetails</a>, and <a>GetServiceLastAccessedDetailsWithEntities</a> operations.
     */
   @js.native
   trait ErrorDetails extends js.Object {
@@ -2218,6 +2277,41 @@ package iam {
       Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
       State.foreach(__v => __obj.update("State", __v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GenerateCredentialReportResponse]
+    }
+  }
+
+  @js.native
+  trait GenerateOrganizationsAccessReportRequest extends js.Object {
+    var EntityPath: organizationsEntityPathType
+    var OrganizationsPolicyId: js.UndefOr[organizationsPolicyIdType]
+  }
+
+  object GenerateOrganizationsAccessReportRequest {
+    def apply(
+        EntityPath: organizationsEntityPathType,
+        OrganizationsPolicyId: js.UndefOr[organizationsPolicyIdType] = js.undefined
+    ): GenerateOrganizationsAccessReportRequest = {
+      val __obj = js.Dictionary[js.Any](
+        "EntityPath" -> EntityPath.asInstanceOf[js.Any]
+      )
+
+      OrganizationsPolicyId.foreach(__v => __obj.update("OrganizationsPolicyId", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GenerateOrganizationsAccessReportRequest]
+    }
+  }
+
+  @js.native
+  trait GenerateOrganizationsAccessReportResponse extends js.Object {
+    var JobId: js.UndefOr[jobIDType]
+  }
+
+  object GenerateOrganizationsAccessReportResponse {
+    def apply(
+        JobId: js.UndefOr[jobIDType] = js.undefined
+    ): GenerateOrganizationsAccessReportResponse = {
+      val __obj = js.Dictionary.empty[js.Any]
+      JobId.foreach(__v => __obj.update("JobId", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GenerateOrganizationsAccessReportResponse]
     }
   }
 
@@ -2319,7 +2413,7 @@ package iam {
   trait GetAccountAuthorizationDetailsResponse extends js.Object {
     var GroupDetailList: js.UndefOr[groupDetailListType]
     var IsTruncated: js.UndefOr[booleanType]
-    var Marker: js.UndefOr[markerType]
+    var Marker: js.UndefOr[responseMarkerType]
     var Policies: js.UndefOr[ManagedPolicyDetailListType]
     var RoleDetailList: js.UndefOr[roleDetailListType]
     var UserDetailList: js.UndefOr[userDetailListType]
@@ -2329,7 +2423,7 @@ package iam {
     def apply(
         GroupDetailList: js.UndefOr[groupDetailListType] = js.undefined,
         IsTruncated: js.UndefOr[booleanType] = js.undefined,
-        Marker: js.UndefOr[markerType] = js.undefined,
+        Marker: js.UndefOr[responseMarkerType] = js.undefined,
         Policies: js.UndefOr[ManagedPolicyDetailListType] = js.undefined,
         RoleDetailList: js.UndefOr[roleDetailListType] = js.undefined,
         UserDetailList: js.UndefOr[userDetailListType] = js.undefined
@@ -2539,7 +2633,7 @@ package iam {
     var Group: Group
     var Users: userListType
     var IsTruncated: js.UndefOr[booleanType]
-    var Marker: js.UndefOr[markerType]
+    var Marker: js.UndefOr[responseMarkerType]
   }
 
   object GetGroupResponse {
@@ -2547,7 +2641,7 @@ package iam {
         Group: Group,
         Users: userListType,
         IsTruncated: js.UndefOr[booleanType] = js.undefined,
-        Marker: js.UndefOr[markerType] = js.undefined
+        Marker: js.UndefOr[responseMarkerType] = js.undefined
     ): GetGroupResponse = {
       val __obj = js.Dictionary[js.Any](
         "Group" -> Group.asInstanceOf[js.Any],
@@ -2675,6 +2769,73 @@ package iam {
       ThumbprintList.foreach(__v => __obj.update("ThumbprintList", __v.asInstanceOf[js.Any]))
       Url.foreach(__v => __obj.update("Url", __v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetOpenIDConnectProviderResponse]
+    }
+  }
+
+  @js.native
+  trait GetOrganizationsAccessReportRequest extends js.Object {
+    var JobId: jobIDType
+    var Marker: js.UndefOr[markerType]
+    var MaxItems: js.UndefOr[maxItemsType]
+    var SortKey: js.UndefOr[sortKeyType]
+  }
+
+  object GetOrganizationsAccessReportRequest {
+    def apply(
+        JobId: jobIDType,
+        Marker: js.UndefOr[markerType] = js.undefined,
+        MaxItems: js.UndefOr[maxItemsType] = js.undefined,
+        SortKey: js.UndefOr[sortKeyType] = js.undefined
+    ): GetOrganizationsAccessReportRequest = {
+      val __obj = js.Dictionary[js.Any](
+        "JobId" -> JobId.asInstanceOf[js.Any]
+      )
+
+      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
+      MaxItems.foreach(__v => __obj.update("MaxItems", __v.asInstanceOf[js.Any]))
+      SortKey.foreach(__v => __obj.update("SortKey", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetOrganizationsAccessReportRequest]
+    }
+  }
+
+  @js.native
+  trait GetOrganizationsAccessReportResponse extends js.Object {
+    var JobCreationDate: dateType
+    var JobStatus: jobStatusType
+    var AccessDetails: js.UndefOr[AccessDetails]
+    var ErrorDetails: js.UndefOr[ErrorDetails]
+    var IsTruncated: js.UndefOr[booleanType]
+    var JobCompletionDate: js.UndefOr[dateType]
+    var Marker: js.UndefOr[markerType]
+    var NumberOfServicesAccessible: js.UndefOr[integerType]
+    var NumberOfServicesNotAccessed: js.UndefOr[integerType]
+  }
+
+  object GetOrganizationsAccessReportResponse {
+    def apply(
+        JobCreationDate: dateType,
+        JobStatus: jobStatusType,
+        AccessDetails: js.UndefOr[AccessDetails] = js.undefined,
+        ErrorDetails: js.UndefOr[ErrorDetails] = js.undefined,
+        IsTruncated: js.UndefOr[booleanType] = js.undefined,
+        JobCompletionDate: js.UndefOr[dateType] = js.undefined,
+        Marker: js.UndefOr[markerType] = js.undefined,
+        NumberOfServicesAccessible: js.UndefOr[integerType] = js.undefined,
+        NumberOfServicesNotAccessed: js.UndefOr[integerType] = js.undefined
+    ): GetOrganizationsAccessReportResponse = {
+      val __obj = js.Dictionary[js.Any](
+        "JobCreationDate" -> JobCreationDate.asInstanceOf[js.Any],
+        "JobStatus"       -> JobStatus.asInstanceOf[js.Any]
+      )
+
+      AccessDetails.foreach(__v => __obj.update("AccessDetails", __v.asInstanceOf[js.Any]))
+      ErrorDetails.foreach(__v => __obj.update("ErrorDetails", __v.asInstanceOf[js.Any]))
+      IsTruncated.foreach(__v => __obj.update("IsTruncated", __v.asInstanceOf[js.Any]))
+      JobCompletionDate.foreach(__v => __obj.update("JobCompletionDate", __v.asInstanceOf[js.Any]))
+      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
+      NumberOfServicesAccessible.foreach(__v => __obj.update("NumberOfServicesAccessible", __v.asInstanceOf[js.Any]))
+      NumberOfServicesNotAccessed.foreach(__v => __obj.update("NumberOfServicesNotAccessed", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetOrganizationsAccessReportResponse]
     }
   }
 
@@ -2984,7 +3145,7 @@ package iam {
     var ServicesLastAccessed: ServicesLastAccessed
     var Error: js.UndefOr[ErrorDetails]
     var IsTruncated: js.UndefOr[booleanType]
-    var Marker: js.UndefOr[markerType]
+    var Marker: js.UndefOr[responseMarkerType]
   }
 
   object GetServiceLastAccessedDetailsResponse {
@@ -2995,7 +3156,7 @@ package iam {
         ServicesLastAccessed: ServicesLastAccessed,
         Error: js.UndefOr[ErrorDetails] = js.undefined,
         IsTruncated: js.UndefOr[booleanType] = js.undefined,
-        Marker: js.UndefOr[markerType] = js.undefined
+        Marker: js.UndefOr[responseMarkerType] = js.undefined
     ): GetServiceLastAccessedDetailsResponse = {
       val __obj = js.Dictionary[js.Any](
         "JobCompletionDate"    -> JobCompletionDate.asInstanceOf[js.Any],
@@ -3045,7 +3206,7 @@ package iam {
     var JobStatus: jobStatusType
     var Error: js.UndefOr[ErrorDetails]
     var IsTruncated: js.UndefOr[booleanType]
-    var Marker: js.UndefOr[markerType]
+    var Marker: js.UndefOr[responseMarkerType]
   }
 
   object GetServiceLastAccessedDetailsWithEntitiesResponse {
@@ -3056,7 +3217,7 @@ package iam {
         JobStatus: jobStatusType,
         Error: js.UndefOr[ErrorDetails] = js.undefined,
         IsTruncated: js.UndefOr[booleanType] = js.undefined,
-        Marker: js.UndefOr[markerType] = js.undefined
+        Marker: js.UndefOr[responseMarkerType] = js.undefined
     ): GetServiceLastAccessedDetailsWithEntitiesResponse = {
       val __obj = js.Dictionary[js.Any](
         "EntityDetailsList" -> EntityDetailsList.asInstanceOf[js.Any],
@@ -3331,14 +3492,14 @@ package iam {
   trait ListAccessKeysResponse extends js.Object {
     var AccessKeyMetadata: accessKeyMetadataListType
     var IsTruncated: js.UndefOr[booleanType]
-    var Marker: js.UndefOr[markerType]
+    var Marker: js.UndefOr[responseMarkerType]
   }
 
   object ListAccessKeysResponse {
     def apply(
         AccessKeyMetadata: accessKeyMetadataListType,
         IsTruncated: js.UndefOr[booleanType] = js.undefined,
-        Marker: js.UndefOr[markerType] = js.undefined
+        Marker: js.UndefOr[responseMarkerType] = js.undefined
     ): ListAccessKeysResponse = {
       val __obj = js.Dictionary[js.Any](
         "AccessKeyMetadata" -> AccessKeyMetadata.asInstanceOf[js.Any]
@@ -3375,14 +3536,14 @@ package iam {
   trait ListAccountAliasesResponse extends js.Object {
     var AccountAliases: accountAliasListType
     var IsTruncated: js.UndefOr[booleanType]
-    var Marker: js.UndefOr[markerType]
+    var Marker: js.UndefOr[responseMarkerType]
   }
 
   object ListAccountAliasesResponse {
     def apply(
         AccountAliases: accountAliasListType,
         IsTruncated: js.UndefOr[booleanType] = js.undefined,
-        Marker: js.UndefOr[markerType] = js.undefined
+        Marker: js.UndefOr[responseMarkerType] = js.undefined
     ): ListAccountAliasesResponse = {
       val __obj = js.Dictionary[js.Any](
         "AccountAliases" -> AccountAliases.asInstanceOf[js.Any]
@@ -3427,14 +3588,14 @@ package iam {
   trait ListAttachedGroupPoliciesResponse extends js.Object {
     var AttachedPolicies: js.UndefOr[attachedPoliciesListType]
     var IsTruncated: js.UndefOr[booleanType]
-    var Marker: js.UndefOr[markerType]
+    var Marker: js.UndefOr[responseMarkerType]
   }
 
   object ListAttachedGroupPoliciesResponse {
     def apply(
         AttachedPolicies: js.UndefOr[attachedPoliciesListType] = js.undefined,
         IsTruncated: js.UndefOr[booleanType] = js.undefined,
-        Marker: js.UndefOr[markerType] = js.undefined
+        Marker: js.UndefOr[responseMarkerType] = js.undefined
     ): ListAttachedGroupPoliciesResponse = {
       val __obj = js.Dictionary.empty[js.Any]
       AttachedPolicies.foreach(__v => __obj.update("AttachedPolicies", __v.asInstanceOf[js.Any]))
@@ -3477,14 +3638,14 @@ package iam {
   trait ListAttachedRolePoliciesResponse extends js.Object {
     var AttachedPolicies: js.UndefOr[attachedPoliciesListType]
     var IsTruncated: js.UndefOr[booleanType]
-    var Marker: js.UndefOr[markerType]
+    var Marker: js.UndefOr[responseMarkerType]
   }
 
   object ListAttachedRolePoliciesResponse {
     def apply(
         AttachedPolicies: js.UndefOr[attachedPoliciesListType] = js.undefined,
         IsTruncated: js.UndefOr[booleanType] = js.undefined,
-        Marker: js.UndefOr[markerType] = js.undefined
+        Marker: js.UndefOr[responseMarkerType] = js.undefined
     ): ListAttachedRolePoliciesResponse = {
       val __obj = js.Dictionary.empty[js.Any]
       AttachedPolicies.foreach(__v => __obj.update("AttachedPolicies", __v.asInstanceOf[js.Any]))
@@ -3527,14 +3688,14 @@ package iam {
   trait ListAttachedUserPoliciesResponse extends js.Object {
     var AttachedPolicies: js.UndefOr[attachedPoliciesListType]
     var IsTruncated: js.UndefOr[booleanType]
-    var Marker: js.UndefOr[markerType]
+    var Marker: js.UndefOr[responseMarkerType]
   }
 
   object ListAttachedUserPoliciesResponse {
     def apply(
         AttachedPolicies: js.UndefOr[attachedPoliciesListType] = js.undefined,
         IsTruncated: js.UndefOr[booleanType] = js.undefined,
-        Marker: js.UndefOr[markerType] = js.undefined
+        Marker: js.UndefOr[responseMarkerType] = js.undefined
     ): ListAttachedUserPoliciesResponse = {
       val __obj = js.Dictionary.empty[js.Any]
       AttachedPolicies.foreach(__v => __obj.update("AttachedPolicies", __v.asInstanceOf[js.Any]))
@@ -3582,7 +3743,7 @@ package iam {
   @js.native
   trait ListEntitiesForPolicyResponse extends js.Object {
     var IsTruncated: js.UndefOr[booleanType]
-    var Marker: js.UndefOr[markerType]
+    var Marker: js.UndefOr[responseMarkerType]
     var PolicyGroups: js.UndefOr[PolicyGroupListType]
     var PolicyRoles: js.UndefOr[PolicyRoleListType]
     var PolicyUsers: js.UndefOr[PolicyUserListType]
@@ -3591,7 +3752,7 @@ package iam {
   object ListEntitiesForPolicyResponse {
     def apply(
         IsTruncated: js.UndefOr[booleanType] = js.undefined,
-        Marker: js.UndefOr[markerType] = js.undefined,
+        Marker: js.UndefOr[responseMarkerType] = js.undefined,
         PolicyGroups: js.UndefOr[PolicyGroupListType] = js.undefined,
         PolicyRoles: js.UndefOr[PolicyRoleListType] = js.undefined,
         PolicyUsers: js.UndefOr[PolicyUserListType] = js.undefined
@@ -3636,14 +3797,14 @@ package iam {
   trait ListGroupPoliciesResponse extends js.Object {
     var PolicyNames: policyNameListType
     var IsTruncated: js.UndefOr[booleanType]
-    var Marker: js.UndefOr[markerType]
+    var Marker: js.UndefOr[responseMarkerType]
   }
 
   object ListGroupPoliciesResponse {
     def apply(
         PolicyNames: policyNameListType,
         IsTruncated: js.UndefOr[booleanType] = js.undefined,
-        Marker: js.UndefOr[markerType] = js.undefined
+        Marker: js.UndefOr[responseMarkerType] = js.undefined
     ): ListGroupPoliciesResponse = {
       val __obj = js.Dictionary[js.Any](
         "PolicyNames" -> PolicyNames.asInstanceOf[js.Any]
@@ -3685,14 +3846,14 @@ package iam {
   trait ListGroupsForUserResponse extends js.Object {
     var Groups: groupListType
     var IsTruncated: js.UndefOr[booleanType]
-    var Marker: js.UndefOr[markerType]
+    var Marker: js.UndefOr[responseMarkerType]
   }
 
   object ListGroupsForUserResponse {
     def apply(
         Groups: groupListType,
         IsTruncated: js.UndefOr[booleanType] = js.undefined,
-        Marker: js.UndefOr[markerType] = js.undefined
+        Marker: js.UndefOr[responseMarkerType] = js.undefined
     ): ListGroupsForUserResponse = {
       val __obj = js.Dictionary[js.Any](
         "Groups" -> Groups.asInstanceOf[js.Any]
@@ -3732,14 +3893,14 @@ package iam {
   trait ListGroupsResponse extends js.Object {
     var Groups: groupListType
     var IsTruncated: js.UndefOr[booleanType]
-    var Marker: js.UndefOr[markerType]
+    var Marker: js.UndefOr[responseMarkerType]
   }
 
   object ListGroupsResponse {
     def apply(
         Groups: groupListType,
         IsTruncated: js.UndefOr[booleanType] = js.undefined,
-        Marker: js.UndefOr[markerType] = js.undefined
+        Marker: js.UndefOr[responseMarkerType] = js.undefined
     ): ListGroupsResponse = {
       val __obj = js.Dictionary[js.Any](
         "Groups" -> Groups.asInstanceOf[js.Any]
@@ -3781,14 +3942,14 @@ package iam {
   trait ListInstanceProfilesForRoleResponse extends js.Object {
     var InstanceProfiles: instanceProfileListType
     var IsTruncated: js.UndefOr[booleanType]
-    var Marker: js.UndefOr[markerType]
+    var Marker: js.UndefOr[responseMarkerType]
   }
 
   object ListInstanceProfilesForRoleResponse {
     def apply(
         InstanceProfiles: instanceProfileListType,
         IsTruncated: js.UndefOr[booleanType] = js.undefined,
-        Marker: js.UndefOr[markerType] = js.undefined
+        Marker: js.UndefOr[responseMarkerType] = js.undefined
     ): ListInstanceProfilesForRoleResponse = {
       val __obj = js.Dictionary[js.Any](
         "InstanceProfiles" -> InstanceProfiles.asInstanceOf[js.Any]
@@ -3828,14 +3989,14 @@ package iam {
   trait ListInstanceProfilesResponse extends js.Object {
     var InstanceProfiles: instanceProfileListType
     var IsTruncated: js.UndefOr[booleanType]
-    var Marker: js.UndefOr[markerType]
+    var Marker: js.UndefOr[responseMarkerType]
   }
 
   object ListInstanceProfilesResponse {
     def apply(
         InstanceProfiles: instanceProfileListType,
         IsTruncated: js.UndefOr[booleanType] = js.undefined,
-        Marker: js.UndefOr[markerType] = js.undefined
+        Marker: js.UndefOr[responseMarkerType] = js.undefined
     ): ListInstanceProfilesResponse = {
       val __obj = js.Dictionary[js.Any](
         "InstanceProfiles" -> InstanceProfiles.asInstanceOf[js.Any]
@@ -3875,14 +4036,14 @@ package iam {
   trait ListMFADevicesResponse extends js.Object {
     var MFADevices: mfaDeviceListType
     var IsTruncated: js.UndefOr[booleanType]
-    var Marker: js.UndefOr[markerType]
+    var Marker: js.UndefOr[responseMarkerType]
   }
 
   object ListMFADevicesResponse {
     def apply(
         MFADevices: mfaDeviceListType,
         IsTruncated: js.UndefOr[booleanType] = js.undefined,
-        Marker: js.UndefOr[markerType] = js.undefined
+        Marker: js.UndefOr[responseMarkerType] = js.undefined
     ): ListMFADevicesResponse = {
       val __obj = js.Dictionary[js.Any](
         "MFADevices" -> MFADevices.asInstanceOf[js.Any]
@@ -3973,14 +4134,14 @@ package iam {
   trait ListPoliciesGrantingServiceAccessResponse extends js.Object {
     var PoliciesGrantingServiceAccess: listPolicyGrantingServiceAccessResponseListType
     var IsTruncated: js.UndefOr[booleanType]
-    var Marker: js.UndefOr[markerType]
+    var Marker: js.UndefOr[responseMarkerType]
   }
 
   object ListPoliciesGrantingServiceAccessResponse {
     def apply(
         PoliciesGrantingServiceAccess: listPolicyGrantingServiceAccessResponseListType,
         IsTruncated: js.UndefOr[booleanType] = js.undefined,
-        Marker: js.UndefOr[markerType] = js.undefined
+        Marker: js.UndefOr[responseMarkerType] = js.undefined
     ): ListPoliciesGrantingServiceAccessResponse = {
       val __obj = js.Dictionary[js.Any](
         "PoliciesGrantingServiceAccess" -> PoliciesGrantingServiceAccess.asInstanceOf[js.Any]
@@ -4028,14 +4189,14 @@ package iam {
   @js.native
   trait ListPoliciesResponse extends js.Object {
     var IsTruncated: js.UndefOr[booleanType]
-    var Marker: js.UndefOr[markerType]
+    var Marker: js.UndefOr[responseMarkerType]
     var Policies: js.UndefOr[policyListType]
   }
 
   object ListPoliciesResponse {
     def apply(
         IsTruncated: js.UndefOr[booleanType] = js.undefined,
-        Marker: js.UndefOr[markerType] = js.undefined,
+        Marker: js.UndefOr[responseMarkerType] = js.undefined,
         Policies: js.UndefOr[policyListType] = js.undefined
     ): ListPoliciesResponse = {
       val __obj = js.Dictionary.empty[js.Any]
@@ -4075,14 +4236,14 @@ package iam {
   @js.native
   trait ListPolicyVersionsResponse extends js.Object {
     var IsTruncated: js.UndefOr[booleanType]
-    var Marker: js.UndefOr[markerType]
+    var Marker: js.UndefOr[responseMarkerType]
     var Versions: js.UndefOr[policyDocumentVersionListType]
   }
 
   object ListPolicyVersionsResponse {
     def apply(
         IsTruncated: js.UndefOr[booleanType] = js.undefined,
-        Marker: js.UndefOr[markerType] = js.undefined,
+        Marker: js.UndefOr[responseMarkerType] = js.undefined,
         Versions: js.UndefOr[policyDocumentVersionListType] = js.undefined
     ): ListPolicyVersionsResponse = {
       val __obj = js.Dictionary.empty[js.Any]
@@ -4123,14 +4284,14 @@ package iam {
   trait ListRolePoliciesResponse extends js.Object {
     var PolicyNames: policyNameListType
     var IsTruncated: js.UndefOr[booleanType]
-    var Marker: js.UndefOr[markerType]
+    var Marker: js.UndefOr[responseMarkerType]
   }
 
   object ListRolePoliciesResponse {
     def apply(
         PolicyNames: policyNameListType,
         IsTruncated: js.UndefOr[booleanType] = js.undefined,
-        Marker: js.UndefOr[markerType] = js.undefined
+        Marker: js.UndefOr[responseMarkerType] = js.undefined
     ): ListRolePoliciesResponse = {
       val __obj = js.Dictionary[js.Any](
         "PolicyNames" -> PolicyNames.asInstanceOf[js.Any]
@@ -4169,14 +4330,14 @@ package iam {
   trait ListRoleTagsResponse extends js.Object {
     var Tags: tagListType
     var IsTruncated: js.UndefOr[booleanType]
-    var Marker: js.UndefOr[markerType]
+    var Marker: js.UndefOr[responseMarkerType]
   }
 
   object ListRoleTagsResponse {
     def apply(
         Tags: tagListType,
         IsTruncated: js.UndefOr[booleanType] = js.undefined,
-        Marker: js.UndefOr[markerType] = js.undefined
+        Marker: js.UndefOr[responseMarkerType] = js.undefined
     ): ListRoleTagsResponse = {
       val __obj = js.Dictionary[js.Any](
         "Tags" -> Tags.asInstanceOf[js.Any]
@@ -4216,14 +4377,14 @@ package iam {
   trait ListRolesResponse extends js.Object {
     var Roles: roleListType
     var IsTruncated: js.UndefOr[booleanType]
-    var Marker: js.UndefOr[markerType]
+    var Marker: js.UndefOr[responseMarkerType]
   }
 
   object ListRolesResponse {
     def apply(
         Roles: roleListType,
         IsTruncated: js.UndefOr[booleanType] = js.undefined,
-        Marker: js.UndefOr[markerType] = js.undefined
+        Marker: js.UndefOr[responseMarkerType] = js.undefined
     ): ListRolesResponse = {
       val __obj = js.Dictionary[js.Any](
         "Roles" -> Roles.asInstanceOf[js.Any]
@@ -4292,14 +4453,14 @@ package iam {
   @js.native
   trait ListSSHPublicKeysResponse extends js.Object {
     var IsTruncated: js.UndefOr[booleanType]
-    var Marker: js.UndefOr[markerType]
+    var Marker: js.UndefOr[responseMarkerType]
     var SSHPublicKeys: js.UndefOr[SSHPublicKeyListType]
   }
 
   object ListSSHPublicKeysResponse {
     def apply(
         IsTruncated: js.UndefOr[booleanType] = js.undefined,
-        Marker: js.UndefOr[markerType] = js.undefined,
+        Marker: js.UndefOr[responseMarkerType] = js.undefined,
         SSHPublicKeys: js.UndefOr[SSHPublicKeyListType] = js.undefined
     ): ListSSHPublicKeysResponse = {
       val __obj = js.Dictionary.empty[js.Any]
@@ -4338,14 +4499,14 @@ package iam {
   trait ListServerCertificatesResponse extends js.Object {
     var ServerCertificateMetadataList: serverCertificateMetadataListType
     var IsTruncated: js.UndefOr[booleanType]
-    var Marker: js.UndefOr[markerType]
+    var Marker: js.UndefOr[responseMarkerType]
   }
 
   object ListServerCertificatesResponse {
     def apply(
         ServerCertificateMetadataList: serverCertificateMetadataListType,
         IsTruncated: js.UndefOr[booleanType] = js.undefined,
-        Marker: js.UndefOr[markerType] = js.undefined
+        Marker: js.UndefOr[responseMarkerType] = js.undefined
     ): ListServerCertificatesResponse = {
       val __obj = js.Dictionary[js.Any](
         "ServerCertificateMetadataList" -> ServerCertificateMetadataList.asInstanceOf[js.Any]
@@ -4418,14 +4579,14 @@ package iam {
   trait ListSigningCertificatesResponse extends js.Object {
     var Certificates: certificateListType
     var IsTruncated: js.UndefOr[booleanType]
-    var Marker: js.UndefOr[markerType]
+    var Marker: js.UndefOr[responseMarkerType]
   }
 
   object ListSigningCertificatesResponse {
     def apply(
         Certificates: certificateListType,
         IsTruncated: js.UndefOr[booleanType] = js.undefined,
-        Marker: js.UndefOr[markerType] = js.undefined
+        Marker: js.UndefOr[responseMarkerType] = js.undefined
     ): ListSigningCertificatesResponse = {
       val __obj = js.Dictionary[js.Any](
         "Certificates" -> Certificates.asInstanceOf[js.Any]
@@ -4467,14 +4628,14 @@ package iam {
   trait ListUserPoliciesResponse extends js.Object {
     var PolicyNames: policyNameListType
     var IsTruncated: js.UndefOr[booleanType]
-    var Marker: js.UndefOr[markerType]
+    var Marker: js.UndefOr[responseMarkerType]
   }
 
   object ListUserPoliciesResponse {
     def apply(
         PolicyNames: policyNameListType,
         IsTruncated: js.UndefOr[booleanType] = js.undefined,
-        Marker: js.UndefOr[markerType] = js.undefined
+        Marker: js.UndefOr[responseMarkerType] = js.undefined
     ): ListUserPoliciesResponse = {
       val __obj = js.Dictionary[js.Any](
         "PolicyNames" -> PolicyNames.asInstanceOf[js.Any]
@@ -4513,14 +4674,14 @@ package iam {
   trait ListUserTagsResponse extends js.Object {
     var Tags: tagListType
     var IsTruncated: js.UndefOr[booleanType]
-    var Marker: js.UndefOr[markerType]
+    var Marker: js.UndefOr[responseMarkerType]
   }
 
   object ListUserTagsResponse {
     def apply(
         Tags: tagListType,
         IsTruncated: js.UndefOr[booleanType] = js.undefined,
-        Marker: js.UndefOr[markerType] = js.undefined
+        Marker: js.UndefOr[responseMarkerType] = js.undefined
     ): ListUserTagsResponse = {
       val __obj = js.Dictionary[js.Any](
         "Tags" -> Tags.asInstanceOf[js.Any]
@@ -4560,14 +4721,14 @@ package iam {
   trait ListUsersResponse extends js.Object {
     var Users: userListType
     var IsTruncated: js.UndefOr[booleanType]
-    var Marker: js.UndefOr[markerType]
+    var Marker: js.UndefOr[responseMarkerType]
   }
 
   object ListUsersResponse {
     def apply(
         Users: userListType,
         IsTruncated: js.UndefOr[booleanType] = js.undefined,
-        Marker: js.UndefOr[markerType] = js.undefined
+        Marker: js.UndefOr[responseMarkerType] = js.undefined
     ): ListUsersResponse = {
       val __obj = js.Dictionary[js.Any](
         "Users" -> Users.asInstanceOf[js.Any]
@@ -4607,14 +4768,14 @@ package iam {
   trait ListVirtualMFADevicesResponse extends js.Object {
     var VirtualMFADevices: virtualMFADeviceListType
     var IsTruncated: js.UndefOr[booleanType]
-    var Marker: js.UndefOr[markerType]
+    var Marker: js.UndefOr[responseMarkerType]
   }
 
   object ListVirtualMFADevicesResponse {
     def apply(
         VirtualMFADevices: virtualMFADeviceListType,
         IsTruncated: js.UndefOr[booleanType] = js.undefined,
-        Marker: js.UndefOr[markerType] = js.undefined
+        Marker: js.UndefOr[responseMarkerType] = js.undefined
     ): ListVirtualMFADevicesResponse = {
       val __obj = js.Dictionary[js.Any](
         "VirtualMFADevices" -> VirtualMFADevices.asInstanceOf[js.Any]
@@ -4754,7 +4915,7 @@ package iam {
   }
 
   /**
-    * Contains information about AWS Organizations's effect on a policy simulation.
+    * Contains information about the effect that Organizations has on a policy simulation.
     */
   @js.native
   trait OrganizationsDecisionDetail extends js.Object {
@@ -5755,6 +5916,23 @@ package iam {
     }
   }
 
+  @js.native
+  trait SetSecurityTokenServicePreferencesRequest extends js.Object {
+    var GlobalEndpointTokenVersion: globalEndpointTokenVersion
+  }
+
+  object SetSecurityTokenServicePreferencesRequest {
+    def apply(
+        GlobalEndpointTokenVersion: globalEndpointTokenVersion
+    ): SetSecurityTokenServicePreferencesRequest = {
+      val __obj = js.Dictionary[js.Any](
+        "GlobalEndpointTokenVersion" -> GlobalEndpointTokenVersion.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[SetSecurityTokenServicePreferencesRequest]
+    }
+  }
+
   /**
     * Contains information about an X.509 signing certificate.
     *  This data type is used as a response element in the <a>UploadSigningCertificate</a> and <a>ListSigningCertificates</a> operations.
@@ -5839,14 +6017,14 @@ package iam {
   trait SimulatePolicyResponse extends js.Object {
     var EvaluationResults: js.UndefOr[EvaluationResultsListType]
     var IsTruncated: js.UndefOr[booleanType]
-    var Marker: js.UndefOr[markerType]
+    var Marker: js.UndefOr[responseMarkerType]
   }
 
   object SimulatePolicyResponse {
     def apply(
         EvaluationResults: js.UndefOr[EvaluationResultsListType] = js.undefined,
         IsTruncated: js.UndefOr[booleanType] = js.undefined,
-        Marker: js.UndefOr[markerType] = js.undefined
+        Marker: js.UndefOr[responseMarkerType] = js.undefined
     ): SimulatePolicyResponse = {
       val __obj = js.Dictionary.empty[js.Any]
       EvaluationResults.foreach(__v => __obj.update("EvaluationResults", __v.asInstanceOf[js.Any]))
@@ -6668,6 +6846,13 @@ package iam {
     val values = IndexedSeq(SSH, PEM)
   }
 
+  object globalEndpointTokenVersionEnum {
+    val v1Token = "v1Token"
+    val v2Token = "v2Token"
+
+    val values = IndexedSeq(v1Token, v2Token)
+  }
+
   object jobStatusTypeEnum {
     val IN_PROGRESS = "IN_PROGRESS"
     val COMPLETED   = "COMPLETED"
@@ -6697,6 +6882,20 @@ package iam {
     val MANAGED = "MANAGED"
 
     val values = IndexedSeq(INLINE, MANAGED)
+  }
+
+  object sortKeyTypeEnum {
+    val SERVICE_NAMESPACE_ASCENDING        = "SERVICE_NAMESPACE_ASCENDING"
+    val SERVICE_NAMESPACE_DESCENDING       = "SERVICE_NAMESPACE_DESCENDING"
+    val LAST_AUTHENTICATED_TIME_ASCENDING  = "LAST_AUTHENTICATED_TIME_ASCENDING"
+    val LAST_AUTHENTICATED_TIME_DESCENDING = "LAST_AUTHENTICATED_TIME_DESCENDING"
+
+    val values = IndexedSeq(
+      SERVICE_NAMESPACE_ASCENDING,
+      SERVICE_NAMESPACE_DESCENDING,
+      LAST_AUTHENTICATED_TIME_ASCENDING,
+      LAST_AUTHENTICATED_TIME_DESCENDING
+    )
   }
 
   object statusTypeEnum {
@@ -6732,6 +6931,7 @@ package iam {
     val PolicyVersionsInUse               = "PolicyVersionsInUse"
     val PolicyVersionsInUseQuota          = "PolicyVersionsInUseQuota"
     val VersionsPerPolicyQuota            = "VersionsPerPolicyQuota"
+    val GlobalEndpointTokenVersion        = "GlobalEndpointTokenVersion"
 
     val values = IndexedSeq(
       Users,
@@ -6758,7 +6958,8 @@ package iam {
       PolicySizeQuota,
       PolicyVersionsInUse,
       PolicyVersionsInUseQuota,
-      VersionsPerPolicyQuota
+      VersionsPerPolicyQuota,
+      GlobalEndpointTokenVersion
     )
   }
 }

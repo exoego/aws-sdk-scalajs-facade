@@ -61,6 +61,7 @@ package object workspaces {
   type RebootWorkspaceRequests               = js.Array[RebootRequest]
   type RebuildWorkspaceRequests              = js.Array[RebuildRequest]
   type ReconnectEnum                         = String
+  type Region                                = String
   type RegistrationCode                      = String
   type ResourceIdList                        = js.Array[NonEmptyString]
   type RootVolumeSizeGib                     = Int
@@ -107,6 +108,8 @@ package object workspaces {
       service.associateIpGroups(params).promise.toFuture
     def authorizeIpRulesFuture(params: AuthorizeIpRulesRequest): Future[AuthorizeIpRulesResult] =
       service.authorizeIpRules(params).promise.toFuture
+    def copyWorkspaceImageFuture(params: CopyWorkspaceImageRequest): Future[CopyWorkspaceImageResult] =
+      service.copyWorkspaceImage(params).promise.toFuture
     def createIpGroupFuture(params: CreateIpGroupRequest): Future[CreateIpGroupResult] =
       service.createIpGroup(params).promise.toFuture
     def createTagsFuture(params: CreateTagsRequest): Future[CreateTagsResult] =
@@ -187,6 +190,7 @@ package workspaces {
 
     def associateIpGroups(params: AssociateIpGroupsRequest): Request[AssociateIpGroupsResult]          = js.native
     def authorizeIpRules(params: AuthorizeIpRulesRequest): Request[AuthorizeIpRulesResult]             = js.native
+    def copyWorkspaceImage(params: CopyWorkspaceImageRequest): Request[CopyWorkspaceImageResult]       = js.native
     def createIpGroup(params: CreateIpGroupRequest): Request[CreateIpGroupResult]                      = js.native
     def createTags(params: CreateTagsRequest): Request[CreateTagsResult]                               = js.native
     def createWorkspaces(params: CreateWorkspacesRequest): Request[CreateWorkspacesResult]             = js.native
@@ -405,6 +409,50 @@ package workspaces {
     val UNKNOWN      = "UNKNOWN"
 
     val values = IndexedSeq(CONNECTED, DISCONNECTED, UNKNOWN)
+  }
+
+  @js.native
+  trait CopyWorkspaceImageRequest extends js.Object {
+    var Name: WorkspaceImageName
+    var SourceImageId: WorkspaceImageId
+    var SourceRegion: Region
+    var Description: js.UndefOr[WorkspaceImageDescription]
+    var Tags: js.UndefOr[TagList]
+  }
+
+  object CopyWorkspaceImageRequest {
+    def apply(
+        Name: WorkspaceImageName,
+        SourceImageId: WorkspaceImageId,
+        SourceRegion: Region,
+        Description: js.UndefOr[WorkspaceImageDescription] = js.undefined,
+        Tags: js.UndefOr[TagList] = js.undefined
+    ): CopyWorkspaceImageRequest = {
+      val __obj = js.Dictionary[js.Any](
+        "Name"          -> Name.asInstanceOf[js.Any],
+        "SourceImageId" -> SourceImageId.asInstanceOf[js.Any],
+        "SourceRegion"  -> SourceRegion.asInstanceOf[js.Any]
+      )
+
+      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CopyWorkspaceImageRequest]
+    }
+  }
+
+  @js.native
+  trait CopyWorkspaceImageResult extends js.Object {
+    var ImageId: js.UndefOr[WorkspaceImageId]
+  }
+
+  object CopyWorkspaceImageResult {
+    def apply(
+        ImageId: js.UndefOr[WorkspaceImageId] = js.undefined
+    ): CopyWorkspaceImageResult = {
+      val __obj = js.Dictionary.empty[js.Any]
+      ImageId.foreach(__v => __obj.update("ImageId", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CopyWorkspaceImageResult]
+    }
   }
 
   @js.native

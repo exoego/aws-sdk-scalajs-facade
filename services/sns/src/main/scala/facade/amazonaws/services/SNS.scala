@@ -9,6 +9,7 @@ import facade.amazonaws._
 
 package object sns {
   type ActionsList                = js.Array[action]
+  type AmazonResourceName         = String
   type Binary                     = nodejs.buffer.Buffer | nodejs.stream.Readable | js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
   type DelegatesList              = js.Array[delegate]
   type ListOfEndpoints            = js.Array[Endpoint]
@@ -20,6 +21,10 @@ package object sns {
   type PhoneNumberList            = js.Array[PhoneNumber]
   type SubscriptionAttributesMap  = js.Dictionary[attributeValue]
   type SubscriptionsList          = js.Array[Subscription]
+  type TagKey                     = String
+  type TagKeyList                 = js.Array[TagKey]
+  type TagList                    = js.Array[Tag]
+  type TagValue                   = String
   type TopicAttributesMap         = js.Dictionary[attributeValue]
   type TopicsList                 = js.Array[Topic]
   type account                    = String
@@ -90,6 +95,8 @@ package object sns {
     ): Future[ListSubscriptionsByTopicResponse] = service.listSubscriptionsByTopic(params).promise.toFuture
     def listSubscriptionsFuture(params: ListSubscriptionsInput): Future[ListSubscriptionsResponse] =
       service.listSubscriptions(params).promise.toFuture
+    def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] =
+      service.listTagsForResource(params).promise.toFuture
     def listTopicsFuture(params: ListTopicsInput): Future[ListTopicsResponse] =
       service.listTopics(params).promise.toFuture
     def optInPhoneNumberFuture(params: OptInPhoneNumberInput): Future[OptInPhoneNumberResponse] =
@@ -108,7 +115,11 @@ package object sns {
     def setTopicAttributesFuture(params: SetTopicAttributesInput): Future[js.Object] =
       service.setTopicAttributes(params).promise.toFuture
     def subscribeFuture(params: SubscribeInput): Future[SubscribeResponse] = service.subscribe(params).promise.toFuture
-    def unsubscribeFuture(params: UnsubscribeInput): Future[js.Object]     = service.unsubscribe(params).promise.toFuture
+    def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] =
+      service.tagResource(params).promise.toFuture
+    def unsubscribeFuture(params: UnsubscribeInput): Future[js.Object] = service.unsubscribe(params).promise.toFuture
+    def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] =
+      service.untagResource(params).promise.toFuture
   }
 }
 
@@ -148,6 +159,7 @@ package sns {
     def listSubscriptions(params: ListSubscriptionsInput): Request[ListSubscriptionsResponse] = js.native
     def listSubscriptionsByTopic(params: ListSubscriptionsByTopicInput): Request[ListSubscriptionsByTopicResponse] =
       js.native
+    def listTagsForResource(params: ListTagsForResourceRequest): Request[ListTagsForResourceResponse]       = js.native
     def listTopics(params: ListTopicsInput): Request[ListTopicsResponse]                                    = js.native
     def optInPhoneNumber(params: OptInPhoneNumberInput): Request[OptInPhoneNumberResponse]                  = js.native
     def publish(params: PublishInput): Request[PublishResponse]                                             = js.native
@@ -158,7 +170,9 @@ package sns {
     def setSubscriptionAttributes(params: SetSubscriptionAttributesInput): Request[js.Object]               = js.native
     def setTopicAttributes(params: SetTopicAttributesInput): Request[js.Object]                             = js.native
     def subscribe(params: SubscribeInput): Request[SubscribeResponse]                                       = js.native
+    def tagResource(params: TagResourceRequest): Request[TagResourceResponse]                               = js.native
     def unsubscribe(params: UnsubscribeInput): Request[js.Object]                                           = js.native
+    def untagResource(params: UntagResourceRequest): Request[UntagResourceResponse]                         = js.native
   }
 
   @js.native
@@ -367,18 +381,21 @@ package sns {
   trait CreateTopicInput extends js.Object {
     var Name: topicName
     var Attributes: js.UndefOr[TopicAttributesMap]
+    var Tags: js.UndefOr[TagList]
   }
 
   object CreateTopicInput {
     def apply(
         Name: topicName,
-        Attributes: js.UndefOr[TopicAttributesMap] = js.undefined
+        Attributes: js.UndefOr[TopicAttributesMap] = js.undefined,
+        Tags: js.UndefOr[TagList] = js.undefined
     ): CreateTopicInput = {
       val __obj = js.Dictionary[js.Any](
         "Name" -> Name.asInstanceOf[js.Any]
       )
 
       Attributes.foreach(__v => __obj.update("Attributes", __v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateTopicInput]
     }
   }
@@ -873,6 +890,38 @@ package sns {
   }
 
   @js.native
+  trait ListTagsForResourceRequest extends js.Object {
+    var ResourceArn: AmazonResourceName
+  }
+
+  object ListTagsForResourceRequest {
+    def apply(
+        ResourceArn: AmazonResourceName
+    ): ListTagsForResourceRequest = {
+      val __obj = js.Dictionary[js.Any](
+        "ResourceArn" -> ResourceArn.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[ListTagsForResourceRequest]
+    }
+  }
+
+  @js.native
+  trait ListTagsForResourceResponse extends js.Object {
+    var Tags: js.UndefOr[TagList]
+  }
+
+  object ListTagsForResourceResponse {
+    def apply(
+        Tags: js.UndefOr[TagList] = js.undefined
+    ): ListTagsForResourceResponse = {
+      val __obj = js.Dictionary.empty[js.Any]
+      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListTagsForResourceResponse]
+    }
+  }
+
+  @js.native
   trait ListTopicsInput extends js.Object {
     var NextToken: js.UndefOr[nextToken]
   }
@@ -909,8 +958,8 @@ package sns {
   }
 
   /**
-    * The user-specified message attribute value. For string data types, the value attribute has the same restrictions on the content as the message body. For more information, see [[http://docs.aws.amazon.com/sns/latest/api/API_Publish.html|Publish]].
-    *  Name, type, and value must not be empty or null. In addition, the message body should not be empty or null. All parts of the message attribute, including name, type, and value, are included in the message size restriction, which is currently 256 KB (262,144 bytes). For more information, see [[http://docs.aws.amazon.com/sns/latest/dg/SNSMessageAttributes.html|Using Amazon SNS Message Attributes]].
+    * The user-specified message attribute value. For string data types, the value attribute has the same restrictions on the content as the message body. For more information, see [[https://docs.aws.amazon.com/sns/latest/api/API_Publish.html|Publish]].
+    *  Name, type, and value must not be empty or null. In addition, the message body should not be empty or null. All parts of the message attribute, including name, type, and value, are included in the message size restriction, which is currently 256 KB (262,144 bytes). For more information, see [[https://docs.aws.amazon.com/sns/latest/dg/SNSMessageAttributes.html|Using Amazon SNS Message Attributes]].
     */
   @js.native
   trait MessageAttributeValue extends js.Object {
@@ -1284,6 +1333,61 @@ package sns {
   }
 
   /**
+    * The list of tags to be added to the specified topic.
+    */
+  @js.native
+  trait Tag extends js.Object {
+    var Key: TagKey
+    var Value: TagValue
+  }
+
+  object Tag {
+    def apply(
+        Key: TagKey,
+        Value: TagValue
+    ): Tag = {
+      val __obj = js.Dictionary[js.Any](
+        "Key"   -> Key.asInstanceOf[js.Any],
+        "Value" -> Value.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[Tag]
+    }
+  }
+
+  @js.native
+  trait TagResourceRequest extends js.Object {
+    var ResourceArn: AmazonResourceName
+    var Tags: TagList
+  }
+
+  object TagResourceRequest {
+    def apply(
+        ResourceArn: AmazonResourceName,
+        Tags: TagList
+    ): TagResourceRequest = {
+      val __obj = js.Dictionary[js.Any](
+        "ResourceArn" -> ResourceArn.asInstanceOf[js.Any],
+        "Tags"        -> Tags.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[TagResourceRequest]
+    }
+  }
+
+  @js.native
+  trait TagResourceResponse extends js.Object {}
+
+  object TagResourceResponse {
+    def apply(
+        ): TagResourceResponse = {
+      val __obj = js.Dictionary.empty[js.Any]
+
+      __obj.asInstanceOf[TagResourceResponse]
+    }
+  }
+
+  /**
     * A wrapper type for the topic's Amazon Resource Name (ARN). To retrieve a topic's attributes, use <code>GetTopicAttributes</code>.
     */
   @js.native
@@ -1318,6 +1422,38 @@ package sns {
       )
 
       __obj.asInstanceOf[UnsubscribeInput]
+    }
+  }
+
+  @js.native
+  trait UntagResourceRequest extends js.Object {
+    var ResourceArn: AmazonResourceName
+    var TagKeys: TagKeyList
+  }
+
+  object UntagResourceRequest {
+    def apply(
+        ResourceArn: AmazonResourceName,
+        TagKeys: TagKeyList
+    ): UntagResourceRequest = {
+      val __obj = js.Dictionary[js.Any](
+        "ResourceArn" -> ResourceArn.asInstanceOf[js.Any],
+        "TagKeys"     -> TagKeys.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[UntagResourceRequest]
+    }
+  }
+
+  @js.native
+  trait UntagResourceResponse extends js.Object {}
+
+  object UntagResourceResponse {
+    def apply(
+        ): UntagResourceResponse = {
+      val __obj = js.Dictionary.empty[js.Any]
+
+      __obj.asInstanceOf[UntagResourceResponse]
     }
   }
 }

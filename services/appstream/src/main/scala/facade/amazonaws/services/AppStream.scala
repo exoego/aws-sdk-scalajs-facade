@@ -8,6 +8,8 @@ import io.scalajs.nodejs
 import facade.amazonaws._
 
 package object appstream {
+  type AccessEndpointList                       = js.Array[AccessEndpoint]
+  type AccessEndpointType                       = String
   type AccountName                              = String
   type AccountPassword                          = String
   type Action                                   = String
@@ -41,6 +43,7 @@ package object appstream {
   type ImageList                                = js.Array[Image]
   type ImageState                               = String
   type ImageStateChangeReasonCode               = String
+  type LastReportGenerationExecutionErrors      = js.Array[LastReportGenerationExecutionError]
   type MaxResults                               = Int
   type MessageAction                            = String
   type Metadata                                 = js.Dictionary[String]
@@ -74,6 +77,9 @@ package object appstream {
   type TagValue                                 = String
   type Tags                                     = js.Dictionary[TagValue]
   type Timestamp                                = js.Date
+  type UsageReportExecutionErrorCode            = String
+  type UsageReportSchedule                      = String
+  type UsageReportSubscriptionList              = js.Array[UsageReportSubscription]
   type UserAttributeValue                       = String
   type UserId                                   = String
   type UserList                                 = js.Array[User]
@@ -108,6 +114,9 @@ package object appstream {
       service.createStack(params).promise.toFuture
     def createStreamingURLFuture(params: CreateStreamingURLRequest): Future[CreateStreamingURLResult] =
       service.createStreamingURL(params).promise.toFuture
+    def createUsageReportSubscriptionFuture(
+        params: CreateUsageReportSubscriptionRequest
+    ): Future[CreateUsageReportSubscriptionResult] = service.createUsageReportSubscription(params).promise.toFuture
     def createUserFuture(params: CreateUserRequest): Future[CreateUserResult] =
       service.createUser(params).promise.toFuture
     def deleteDirectoryConfigFuture(params: DeleteDirectoryConfigRequest): Future[DeleteDirectoryConfigResult] =
@@ -122,6 +131,9 @@ package object appstream {
       service.deleteImagePermissions(params).promise.toFuture
     def deleteStackFuture(params: DeleteStackRequest): Future[DeleteStackResult] =
       service.deleteStack(params).promise.toFuture
+    def deleteUsageReportSubscriptionFuture(
+        params: DeleteUsageReportSubscriptionRequest
+    ): Future[DeleteUsageReportSubscriptionResult] = service.deleteUsageReportSubscription(params).promise.toFuture
     def deleteUserFuture(params: DeleteUserRequest): Future[DeleteUserResult] =
       service.deleteUser(params).promise.toFuture
     def describeDirectoryConfigsFuture(
@@ -140,6 +152,10 @@ package object appstream {
       service.describeSessions(params).promise.toFuture
     def describeStacksFuture(params: DescribeStacksRequest): Future[DescribeStacksResult] =
       service.describeStacks(params).promise.toFuture
+    def describeUsageReportSubscriptionsFuture(
+        params: DescribeUsageReportSubscriptionsRequest
+    ): Future[DescribeUsageReportSubscriptionsResult] =
+      service.describeUsageReportSubscriptions(params).promise.toFuture
     def describeUserStackAssociationsFuture(
         params: DescribeUserStackAssociationsRequest
     ): Future[DescribeUserStackAssociationsResult] = service.describeUserStackAssociations(params).promise.toFuture
@@ -199,9 +215,12 @@ package appstream {
     def createImageBuilder(params: CreateImageBuilderRequest): Request[CreateImageBuilderResult]          = js.native
     def createImageBuilderStreamingURL(
         params: CreateImageBuilderStreamingURLRequest
-    ): Request[CreateImageBuilderStreamingURLResult]                                                         = js.native
-    def createStack(params: CreateStackRequest): Request[CreateStackResult]                                  = js.native
-    def createStreamingURL(params: CreateStreamingURLRequest): Request[CreateStreamingURLResult]             = js.native
+    ): Request[CreateImageBuilderStreamingURLResult]                                             = js.native
+    def createStack(params: CreateStackRequest): Request[CreateStackResult]                      = js.native
+    def createStreamingURL(params: CreateStreamingURLRequest): Request[CreateStreamingURLResult] = js.native
+    def createUsageReportSubscription(
+        params: CreateUsageReportSubscriptionRequest
+    ): Request[CreateUsageReportSubscriptionResult]                                                          = js.native
     def createUser(params: CreateUserRequest): Request[CreateUserResult]                                     = js.native
     def deleteDirectoryConfig(params: DeleteDirectoryConfigRequest): Request[DeleteDirectoryConfigResult]    = js.native
     def deleteFleet(params: DeleteFleetRequest): Request[DeleteFleetResult]                                  = js.native
@@ -209,7 +228,10 @@ package appstream {
     def deleteImageBuilder(params: DeleteImageBuilderRequest): Request[DeleteImageBuilderResult]             = js.native
     def deleteImagePermissions(params: DeleteImagePermissionsRequest): Request[DeleteImagePermissionsResult] = js.native
     def deleteStack(params: DeleteStackRequest): Request[DeleteStackResult]                                  = js.native
-    def deleteUser(params: DeleteUserRequest): Request[DeleteUserResult]                                     = js.native
+    def deleteUsageReportSubscription(
+        params: DeleteUsageReportSubscriptionRequest
+    ): Request[DeleteUsageReportSubscriptionResult]                      = js.native
+    def deleteUser(params: DeleteUserRequest): Request[DeleteUserResult] = js.native
     def describeDirectoryConfigs(params: DescribeDirectoryConfigsRequest): Request[DescribeDirectoryConfigsResult] =
       js.native
     def describeFleets(params: DescribeFleetsRequest): Request[DescribeFleetsResult]                      = js.native
@@ -219,6 +241,9 @@ package appstream {
     def describeImages(params: DescribeImagesRequest): Request[DescribeImagesResult]       = js.native
     def describeSessions(params: DescribeSessionsRequest): Request[DescribeSessionsResult] = js.native
     def describeStacks(params: DescribeStacksRequest): Request[DescribeStacksResult]       = js.native
+    def describeUsageReportSubscriptions(
+        params: DescribeUsageReportSubscriptionsRequest
+    ): Request[DescribeUsageReportSubscriptionsResult] = js.native
     def describeUserStackAssociations(
         params: DescribeUserStackAssociationsRequest
     ): Request[DescribeUserStackAssociationsResult]                                                          = js.native
@@ -240,6 +265,35 @@ package appstream {
     def updateFleet(params: UpdateFleetRequest): Request[UpdateFleetResult]                                  = js.native
     def updateImagePermissions(params: UpdateImagePermissionsRequest): Request[UpdateImagePermissionsResult] = js.native
     def updateStack(params: UpdateStackRequest): Request[UpdateStackResult]                                  = js.native
+  }
+
+  /**
+    * Describes a virtual private cloud (VPC) interface endpoint that lets you create a private connection between the VPC that you specify and AppStream 2.0. When you specify a VPC interface endpoint for a stack, users of the stack can connect to AppStream 2.0 only through that endpoint. When you specify a VPC interface endpoint for an image builder, administrators can connect to the image builder only through that endpoint.
+    */
+  @js.native
+  trait AccessEndpoint extends js.Object {
+    var EndpointType: AccessEndpointType
+    var VpceId: js.UndefOr[String]
+  }
+
+  object AccessEndpoint {
+    def apply(
+        EndpointType: AccessEndpointType,
+        VpceId: js.UndefOr[String] = js.undefined
+    ): AccessEndpoint = {
+      val __obj = js.Dictionary[js.Any](
+        "EndpointType" -> EndpointType.asInstanceOf[js.Any]
+      )
+
+      VpceId.foreach(__v => __obj.update("VpceId", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AccessEndpoint]
+    }
+  }
+
+  object AccessEndpointTypeEnum {
+    val STREAMING = "STREAMING"
+
+    val values = IndexedSeq(STREAMING)
   }
 
   object ActionEnum {
@@ -584,6 +638,7 @@ package appstream {
     var DomainJoinInfo: js.UndefOr[DomainJoinInfo]
     var EnableDefaultInternetAccess: js.UndefOr[BooleanObject]
     var FleetType: js.UndefOr[FleetType]
+    var IdleDisconnectTimeoutInSeconds: js.UndefOr[Int]
     var ImageArn: js.UndefOr[Arn]
     var ImageName: js.UndefOr[String]
     var MaxUserDurationInSeconds: js.UndefOr[Int]
@@ -602,6 +657,7 @@ package appstream {
         DomainJoinInfo: js.UndefOr[DomainJoinInfo] = js.undefined,
         EnableDefaultInternetAccess: js.UndefOr[BooleanObject] = js.undefined,
         FleetType: js.UndefOr[FleetType] = js.undefined,
+        IdleDisconnectTimeoutInSeconds: js.UndefOr[Int] = js.undefined,
         ImageArn: js.UndefOr[Arn] = js.undefined,
         ImageName: js.UndefOr[String] = js.undefined,
         MaxUserDurationInSeconds: js.UndefOr[Int] = js.undefined,
@@ -620,6 +676,9 @@ package appstream {
       DomainJoinInfo.foreach(__v => __obj.update("DomainJoinInfo", __v.asInstanceOf[js.Any]))
       EnableDefaultInternetAccess.foreach(__v => __obj.update("EnableDefaultInternetAccess", __v.asInstanceOf[js.Any]))
       FleetType.foreach(__v => __obj.update("FleetType", __v.asInstanceOf[js.Any]))
+      IdleDisconnectTimeoutInSeconds.foreach(
+        __v => __obj.update("IdleDisconnectTimeoutInSeconds", __v.asInstanceOf[js.Any])
+      )
       ImageArn.foreach(__v => __obj.update("ImageArn", __v.asInstanceOf[js.Any]))
       ImageName.foreach(__v => __obj.update("ImageName", __v.asInstanceOf[js.Any]))
       MaxUserDurationInSeconds.foreach(__v => __obj.update("MaxUserDurationInSeconds", __v.asInstanceOf[js.Any]))
@@ -648,6 +707,7 @@ package appstream {
   trait CreateImageBuilderRequest extends js.Object {
     var InstanceType: String
     var Name: Name
+    var AccessEndpoints: js.UndefOr[AccessEndpointList]
     var AppstreamAgentVersion: js.UndefOr[AppstreamAgentVersion]
     var Description: js.UndefOr[Description]
     var DisplayName: js.UndefOr[DisplayName]
@@ -663,6 +723,7 @@ package appstream {
     def apply(
         InstanceType: String,
         Name: Name,
+        AccessEndpoints: js.UndefOr[AccessEndpointList] = js.undefined,
         AppstreamAgentVersion: js.UndefOr[AppstreamAgentVersion] = js.undefined,
         Description: js.UndefOr[Description] = js.undefined,
         DisplayName: js.UndefOr[DisplayName] = js.undefined,
@@ -678,6 +739,7 @@ package appstream {
         "Name"         -> Name.asInstanceOf[js.Any]
       )
 
+      AccessEndpoints.foreach(__v => __obj.update("AccessEndpoints", __v.asInstanceOf[js.Any]))
       AppstreamAgentVersion.foreach(__v => __obj.update("AppstreamAgentVersion", __v.asInstanceOf[js.Any]))
       Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
       DisplayName.foreach(__v => __obj.update("DisplayName", __v.asInstanceOf[js.Any]))
@@ -747,6 +809,7 @@ package appstream {
   @js.native
   trait CreateStackRequest extends js.Object {
     var Name: Name
+    var AccessEndpoints: js.UndefOr[AccessEndpointList]
     var ApplicationSettings: js.UndefOr[ApplicationSettings]
     var Description: js.UndefOr[Description]
     var DisplayName: js.UndefOr[DisplayName]
@@ -760,6 +823,7 @@ package appstream {
   object CreateStackRequest {
     def apply(
         Name: Name,
+        AccessEndpoints: js.UndefOr[AccessEndpointList] = js.undefined,
         ApplicationSettings: js.UndefOr[ApplicationSettings] = js.undefined,
         Description: js.UndefOr[Description] = js.undefined,
         DisplayName: js.UndefOr[DisplayName] = js.undefined,
@@ -773,6 +837,7 @@ package appstream {
         "Name" -> Name.asInstanceOf[js.Any]
       )
 
+      AccessEndpoints.foreach(__v => __obj.update("AccessEndpoints", __v.asInstanceOf[js.Any]))
       ApplicationSettings.foreach(__v => __obj.update("ApplicationSettings", __v.asInstanceOf[js.Any]))
       Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
       DisplayName.foreach(__v => __obj.update("DisplayName", __v.asInstanceOf[js.Any]))
@@ -847,6 +912,36 @@ package appstream {
       Expires.foreach(__v => __obj.update("Expires", __v.asInstanceOf[js.Any]))
       StreamingURL.foreach(__v => __obj.update("StreamingURL", __v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateStreamingURLResult]
+    }
+  }
+
+  @js.native
+  trait CreateUsageReportSubscriptionRequest extends js.Object {}
+
+  object CreateUsageReportSubscriptionRequest {
+    def apply(
+        ): CreateUsageReportSubscriptionRequest = {
+      val __obj = js.Dictionary.empty[js.Any]
+
+      __obj.asInstanceOf[CreateUsageReportSubscriptionRequest]
+    }
+  }
+
+  @js.native
+  trait CreateUsageReportSubscriptionResult extends js.Object {
+    var S3BucketName: js.UndefOr[String]
+    var Schedule: js.UndefOr[UsageReportSchedule]
+  }
+
+  object CreateUsageReportSubscriptionResult {
+    def apply(
+        S3BucketName: js.UndefOr[String] = js.undefined,
+        Schedule: js.UndefOr[UsageReportSchedule] = js.undefined
+    ): CreateUsageReportSubscriptionResult = {
+      val __obj = js.Dictionary.empty[js.Any]
+      S3BucketName.foreach(__v => __obj.update("S3BucketName", __v.asInstanceOf[js.Any]))
+      Schedule.foreach(__v => __obj.update("Schedule", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateUsageReportSubscriptionResult]
     }
   }
 
@@ -1071,6 +1166,30 @@ package appstream {
       val __obj = js.Dictionary.empty[js.Any]
 
       __obj.asInstanceOf[DeleteStackResult]
+    }
+  }
+
+  @js.native
+  trait DeleteUsageReportSubscriptionRequest extends js.Object {}
+
+  object DeleteUsageReportSubscriptionRequest {
+    def apply(
+        ): DeleteUsageReportSubscriptionRequest = {
+      val __obj = js.Dictionary.empty[js.Any]
+
+      __obj.asInstanceOf[DeleteUsageReportSubscriptionRequest]
+    }
+  }
+
+  @js.native
+  trait DeleteUsageReportSubscriptionResult extends js.Object {}
+
+  object DeleteUsageReportSubscriptionResult {
+    def apply(
+        ): DeleteUsageReportSubscriptionResult = {
+      val __obj = js.Dictionary.empty[js.Any]
+
+      __obj.asInstanceOf[DeleteUsageReportSubscriptionResult]
     }
   }
 
@@ -1399,6 +1518,42 @@ package appstream {
   }
 
   @js.native
+  trait DescribeUsageReportSubscriptionsRequest extends js.Object {
+    var MaxResults: js.UndefOr[Int]
+    var NextToken: js.UndefOr[String]
+  }
+
+  object DescribeUsageReportSubscriptionsRequest {
+    def apply(
+        MaxResults: js.UndefOr[Int] = js.undefined,
+        NextToken: js.UndefOr[String] = js.undefined
+    ): DescribeUsageReportSubscriptionsRequest = {
+      val __obj = js.Dictionary.empty[js.Any]
+      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeUsageReportSubscriptionsRequest]
+    }
+  }
+
+  @js.native
+  trait DescribeUsageReportSubscriptionsResult extends js.Object {
+    var NextToken: js.UndefOr[String]
+    var UsageReportSubscriptions: js.UndefOr[UsageReportSubscriptionList]
+  }
+
+  object DescribeUsageReportSubscriptionsResult {
+    def apply(
+        NextToken: js.UndefOr[String] = js.undefined,
+        UsageReportSubscriptions: js.UndefOr[UsageReportSubscriptionList] = js.undefined
+    ): DescribeUsageReportSubscriptionsResult = {
+      val __obj = js.Dictionary.empty[js.Any]
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      UsageReportSubscriptions.foreach(__v => __obj.update("UsageReportSubscriptions", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeUsageReportSubscriptionsResult]
+    }
+  }
+
+  @js.native
   trait DescribeUserStackAssociationsRequest extends js.Object {
     var AuthenticationType: js.UndefOr[AuthenticationType]
     var MaxResults: js.UndefOr[MaxResults]
@@ -1485,7 +1640,7 @@ package appstream {
   }
 
   /**
-    * Describes the configuration information for the directory used to join a streaming instance to a Microsoft Active Directory domain.
+    * Describes the configuration information required to join fleets and image builders to Microsoft Active Directory domains.
     */
   @js.native
   trait DirectoryConfig extends js.Object {
@@ -1664,7 +1819,7 @@ package appstream {
   }
 
   /**
-    * Describes the parameters for a fleet.
+    * Describes a fleet.
     */
   @js.native
   trait Fleet extends js.Object {
@@ -1681,6 +1836,7 @@ package appstream {
     var EnableDefaultInternetAccess: js.UndefOr[BooleanObject]
     var FleetErrors: js.UndefOr[FleetErrors]
     var FleetType: js.UndefOr[FleetType]
+    var IdleDisconnectTimeoutInSeconds: js.UndefOr[Int]
     var ImageArn: js.UndefOr[Arn]
     var ImageName: js.UndefOr[String]
     var MaxUserDurationInSeconds: js.UndefOr[Int]
@@ -1702,6 +1858,7 @@ package appstream {
         EnableDefaultInternetAccess: js.UndefOr[BooleanObject] = js.undefined,
         FleetErrors: js.UndefOr[FleetErrors] = js.undefined,
         FleetType: js.UndefOr[FleetType] = js.undefined,
+        IdleDisconnectTimeoutInSeconds: js.UndefOr[Int] = js.undefined,
         ImageArn: js.UndefOr[Arn] = js.undefined,
         ImageName: js.UndefOr[String] = js.undefined,
         MaxUserDurationInSeconds: js.UndefOr[Int] = js.undefined,
@@ -1723,6 +1880,9 @@ package appstream {
       EnableDefaultInternetAccess.foreach(__v => __obj.update("EnableDefaultInternetAccess", __v.asInstanceOf[js.Any]))
       FleetErrors.foreach(__v => __obj.update("FleetErrors", __v.asInstanceOf[js.Any]))
       FleetType.foreach(__v => __obj.update("FleetType", __v.asInstanceOf[js.Any]))
+      IdleDisconnectTimeoutInSeconds.foreach(
+        __v => __obj.update("IdleDisconnectTimeoutInSeconds", __v.asInstanceOf[js.Any])
+      )
       ImageArn.foreach(__v => __obj.update("ImageArn", __v.asInstanceOf[js.Any]))
       ImageName.foreach(__v => __obj.update("ImageName", __v.asInstanceOf[js.Any]))
       MaxUserDurationInSeconds.foreach(__v => __obj.update("MaxUserDurationInSeconds", __v.asInstanceOf[js.Any]))
@@ -1770,6 +1930,7 @@ package appstream {
     val NETWORK_INTERFACE_LIMIT_EXCEEDED                = "NETWORK_INTERFACE_LIMIT_EXCEEDED"
     val INTERNAL_SERVICE_ERROR                          = "INTERNAL_SERVICE_ERROR"
     val IAM_SERVICE_ROLE_IS_MISSING                     = "IAM_SERVICE_ROLE_IS_MISSING"
+    val STS_DISABLED_IN_REGION                          = "STS_DISABLED_IN_REGION"
     val SUBNET_HAS_INSUFFICIENT_IP_ADDRESSES            = "SUBNET_HAS_INSUFFICIENT_IP_ADDRESSES"
     val IAM_SERVICE_ROLE_MISSING_DESCRIBE_SUBNET_ACTION = "IAM_SERVICE_ROLE_MISSING_DESCRIBE_SUBNET_ACTION"
     val SUBNET_NOT_FOUND                                = "SUBNET_NOT_FOUND"
@@ -1799,6 +1960,7 @@ package appstream {
       NETWORK_INTERFACE_LIMIT_EXCEEDED,
       INTERNAL_SERVICE_ERROR,
       IAM_SERVICE_ROLE_IS_MISSING,
+      STS_DISABLED_IN_REGION,
       SUBNET_HAS_INSUFFICIENT_IP_ADDRESSES,
       IAM_SERVICE_ROLE_MISSING_DESCRIBE_SUBNET_ACTION,
       SUBNET_NOT_FOUND,
@@ -1851,6 +2013,7 @@ package appstream {
     var CreatedTime: js.UndefOr[Timestamp]
     var Description: js.UndefOr[String]
     var DisplayName: js.UndefOr[String]
+    var ImageBuilderName: js.UndefOr[String]
     var ImageBuilderSupported: js.UndefOr[Boolean]
     var ImagePermissions: js.UndefOr[ImagePermissions]
     var Platform: js.UndefOr[PlatformType]
@@ -1870,6 +2033,7 @@ package appstream {
         CreatedTime: js.UndefOr[Timestamp] = js.undefined,
         Description: js.UndefOr[String] = js.undefined,
         DisplayName: js.UndefOr[String] = js.undefined,
+        ImageBuilderName: js.UndefOr[String] = js.undefined,
         ImageBuilderSupported: js.UndefOr[Boolean] = js.undefined,
         ImagePermissions: js.UndefOr[ImagePermissions] = js.undefined,
         Platform: js.UndefOr[PlatformType] = js.undefined,
@@ -1889,6 +2053,7 @@ package appstream {
       CreatedTime.foreach(__v => __obj.update("CreatedTime", __v.asInstanceOf[js.Any]))
       Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
       DisplayName.foreach(__v => __obj.update("DisplayName", __v.asInstanceOf[js.Any]))
+      ImageBuilderName.foreach(__v => __obj.update("ImageBuilderName", __v.asInstanceOf[js.Any]))
       ImageBuilderSupported.foreach(__v => __obj.update("ImageBuilderSupported", __v.asInstanceOf[js.Any]))
       ImagePermissions.foreach(__v => __obj.update("ImagePermissions", __v.asInstanceOf[js.Any]))
       Platform.foreach(__v => __obj.update("Platform", __v.asInstanceOf[js.Any]))
@@ -1906,6 +2071,7 @@ package appstream {
   @js.native
   trait ImageBuilder extends js.Object {
     var Name: String
+    var AccessEndpoints: js.UndefOr[AccessEndpointList]
     var AppstreamAgentVersion: js.UndefOr[AppstreamAgentVersion]
     var Arn: js.UndefOr[Arn]
     var CreatedTime: js.UndefOr[Timestamp]
@@ -1916,6 +2082,7 @@ package appstream {
     var ImageArn: js.UndefOr[Arn]
     var ImageBuilderErrors: js.UndefOr[ResourceErrors]
     var InstanceType: js.UndefOr[String]
+    var NetworkAccessConfiguration: js.UndefOr[NetworkAccessConfiguration]
     var Platform: js.UndefOr[PlatformType]
     var State: js.UndefOr[ImageBuilderState]
     var StateChangeReason: js.UndefOr[ImageBuilderStateChangeReason]
@@ -1925,6 +2092,7 @@ package appstream {
   object ImageBuilder {
     def apply(
         Name: String,
+        AccessEndpoints: js.UndefOr[AccessEndpointList] = js.undefined,
         AppstreamAgentVersion: js.UndefOr[AppstreamAgentVersion] = js.undefined,
         Arn: js.UndefOr[Arn] = js.undefined,
         CreatedTime: js.UndefOr[Timestamp] = js.undefined,
@@ -1935,6 +2103,7 @@ package appstream {
         ImageArn: js.UndefOr[Arn] = js.undefined,
         ImageBuilderErrors: js.UndefOr[ResourceErrors] = js.undefined,
         InstanceType: js.UndefOr[String] = js.undefined,
+        NetworkAccessConfiguration: js.UndefOr[NetworkAccessConfiguration] = js.undefined,
         Platform: js.UndefOr[PlatformType] = js.undefined,
         State: js.UndefOr[ImageBuilderState] = js.undefined,
         StateChangeReason: js.UndefOr[ImageBuilderStateChangeReason] = js.undefined,
@@ -1944,6 +2113,7 @@ package appstream {
         "Name" -> Name.asInstanceOf[js.Any]
       )
 
+      AccessEndpoints.foreach(__v => __obj.update("AccessEndpoints", __v.asInstanceOf[js.Any]))
       AppstreamAgentVersion.foreach(__v => __obj.update("AppstreamAgentVersion", __v.asInstanceOf[js.Any]))
       Arn.foreach(__v => __obj.update("Arn", __v.asInstanceOf[js.Any]))
       CreatedTime.foreach(__v => __obj.update("CreatedTime", __v.asInstanceOf[js.Any]))
@@ -1954,6 +2124,7 @@ package appstream {
       ImageArn.foreach(__v => __obj.update("ImageArn", __v.asInstanceOf[js.Any]))
       ImageBuilderErrors.foreach(__v => __obj.update("ImageBuilderErrors", __v.asInstanceOf[js.Any]))
       InstanceType.foreach(__v => __obj.update("InstanceType", __v.asInstanceOf[js.Any]))
+      NetworkAccessConfiguration.foreach(__v => __obj.update("NetworkAccessConfiguration", __v.asInstanceOf[js.Any]))
       Platform.foreach(__v => __obj.update("Platform", __v.asInstanceOf[js.Any]))
       State.foreach(__v => __obj.update("State", __v.asInstanceOf[js.Any]))
       StateChangeReason.foreach(__v => __obj.update("StateChangeReason", __v.asInstanceOf[js.Any]))
@@ -2063,6 +2234,27 @@ package appstream {
     val IMAGE_COPY_FAILURE          = "IMAGE_COPY_FAILURE"
 
     val values = IndexedSeq(INTERNAL_ERROR, IMAGE_BUILDER_NOT_AVAILABLE, IMAGE_COPY_FAILURE)
+  }
+
+  /**
+    * Describes the error that is returned when a usage report can't be generated.
+    */
+  @js.native
+  trait LastReportGenerationExecutionError extends js.Object {
+    var ErrorCode: js.UndefOr[UsageReportExecutionErrorCode]
+    var ErrorMessage: js.UndefOr[String]
+  }
+
+  object LastReportGenerationExecutionError {
+    def apply(
+        ErrorCode: js.UndefOr[UsageReportExecutionErrorCode] = js.undefined,
+        ErrorMessage: js.UndefOr[String] = js.undefined
+    ): LastReportGenerationExecutionError = {
+      val __obj = js.Dictionary.empty[js.Any]
+      ErrorCode.foreach(__v => __obj.update("ErrorCode", __v.asInstanceOf[js.Any]))
+      ErrorMessage.foreach(__v => __obj.update("ErrorMessage", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[LastReportGenerationExecutionError]
+    }
   }
 
   @js.native
@@ -2181,7 +2373,7 @@ package appstream {
   }
 
   /**
-    * Describes the network details of the fleet instance for the streaming session.
+    * Describes the network details of the fleet or image builder instance.
     */
   @js.native
   trait NetworkAccessConfiguration extends js.Object {
@@ -2209,9 +2401,11 @@ package appstream {
   }
 
   object PlatformTypeEnum {
-    val WINDOWS = "WINDOWS"
+    val WINDOWS             = "WINDOWS"
+    val WINDOWS_SERVER_2016 = "WINDOWS_SERVER_2016"
+    val WINDOWS_SERVER_2019 = "WINDOWS_SERVER_2019"
 
-    val values = IndexedSeq(WINDOWS)
+    val values = IndexedSeq(WINDOWS, WINDOWS_SERVER_2016, WINDOWS_SERVER_2019)
   }
 
   /**
@@ -2239,7 +2433,7 @@ package appstream {
   }
 
   /**
-    * Describes the credentials for the service account used by the streaming instance to connect to the directory.
+    * Describes the credentials for the service account used by the fleet or image builder to connect to the directory.
     */
   @js.native
   trait ServiceAccountCredentials extends js.Object {
@@ -2315,6 +2509,9 @@ package appstream {
     val values = IndexedSeq(CONNECTED, NOT_CONNECTED)
   }
 
+  /**
+    * Possible values for the state of a streaming session.
+    */
   object SessionStateEnum {
     val ACTIVE  = "ACTIVE"
     val PENDING = "PENDING"
@@ -2352,6 +2549,7 @@ package appstream {
   @js.native
   trait Stack extends js.Object {
     var Name: String
+    var AccessEndpoints: js.UndefOr[AccessEndpointList]
     var ApplicationSettings: js.UndefOr[ApplicationSettingsResponse]
     var Arn: js.UndefOr[Arn]
     var CreatedTime: js.UndefOr[Timestamp]
@@ -2367,6 +2565,7 @@ package appstream {
   object Stack {
     def apply(
         Name: String,
+        AccessEndpoints: js.UndefOr[AccessEndpointList] = js.undefined,
         ApplicationSettings: js.UndefOr[ApplicationSettingsResponse] = js.undefined,
         Arn: js.UndefOr[Arn] = js.undefined,
         CreatedTime: js.UndefOr[Timestamp] = js.undefined,
@@ -2382,6 +2581,7 @@ package appstream {
         "Name" -> Name.asInstanceOf[js.Any]
       )
 
+      AccessEndpoints.foreach(__v => __obj.update("AccessEndpoints", __v.asInstanceOf[js.Any]))
       ApplicationSettings.foreach(__v => __obj.update("ApplicationSettings", __v.asInstanceOf[js.Any]))
       Arn.foreach(__v => __obj.update("Arn", __v.asInstanceOf[js.Any]))
       CreatedTime.foreach(__v => __obj.update("CreatedTime", __v.asInstanceOf[js.Any]))
@@ -2405,6 +2605,7 @@ package appstream {
     val FEEDBACK_URL                   = "FEEDBACK_URL"
     val THEME_NAME                     = "THEME_NAME"
     val USER_SETTINGS                  = "USER_SETTINGS"
+    val ACCESS_ENDPOINTS               = "ACCESS_ENDPOINTS"
 
     val values = IndexedSeq(
       STORAGE_CONNECTORS,
@@ -2414,7 +2615,8 @@ package appstream {
       REDIRECT_URL,
       FEEDBACK_URL,
       THEME_NAME,
-      USER_SETTINGS
+      USER_SETTINGS,
+      ACCESS_ENDPOINTS
     )
   }
 
@@ -2572,7 +2774,7 @@ package appstream {
   }
 
   /**
-    * Describes a connector to enable persistent storage for users.
+    * Describes a connector that enables persistent storage for users.
     */
   @js.native
   trait StorageConnector extends js.Object {
@@ -2722,6 +2924,7 @@ package appstream {
     var DisplayName: js.UndefOr[DisplayName]
     var DomainJoinInfo: js.UndefOr[DomainJoinInfo]
     var EnableDefaultInternetAccess: js.UndefOr[BooleanObject]
+    var IdleDisconnectTimeoutInSeconds: js.UndefOr[Int]
     var ImageArn: js.UndefOr[Arn]
     var ImageName: js.UndefOr[String]
     var InstanceType: js.UndefOr[String]
@@ -2740,6 +2943,7 @@ package appstream {
         DisplayName: js.UndefOr[DisplayName] = js.undefined,
         DomainJoinInfo: js.UndefOr[DomainJoinInfo] = js.undefined,
         EnableDefaultInternetAccess: js.UndefOr[BooleanObject] = js.undefined,
+        IdleDisconnectTimeoutInSeconds: js.UndefOr[Int] = js.undefined,
         ImageArn: js.UndefOr[Arn] = js.undefined,
         ImageName: js.UndefOr[String] = js.undefined,
         InstanceType: js.UndefOr[String] = js.undefined,
@@ -2756,6 +2960,9 @@ package appstream {
       DisplayName.foreach(__v => __obj.update("DisplayName", __v.asInstanceOf[js.Any]))
       DomainJoinInfo.foreach(__v => __obj.update("DomainJoinInfo", __v.asInstanceOf[js.Any]))
       EnableDefaultInternetAccess.foreach(__v => __obj.update("EnableDefaultInternetAccess", __v.asInstanceOf[js.Any]))
+      IdleDisconnectTimeoutInSeconds.foreach(
+        __v => __obj.update("IdleDisconnectTimeoutInSeconds", __v.asInstanceOf[js.Any])
+      )
       ImageArn.foreach(__v => __obj.update("ImageArn", __v.asInstanceOf[js.Any]))
       ImageName.foreach(__v => __obj.update("ImageName", __v.asInstanceOf[js.Any]))
       InstanceType.foreach(__v => __obj.update("InstanceType", __v.asInstanceOf[js.Any]))
@@ -2819,6 +3026,7 @@ package appstream {
   @js.native
   trait UpdateStackRequest extends js.Object {
     var Name: String
+    var AccessEndpoints: js.UndefOr[AccessEndpointList]
     var ApplicationSettings: js.UndefOr[ApplicationSettings]
     var AttributesToDelete: js.UndefOr[StackAttributes]
     var DeleteStorageConnectors: js.UndefOr[Boolean]
@@ -2833,6 +3041,7 @@ package appstream {
   object UpdateStackRequest {
     def apply(
         Name: String,
+        AccessEndpoints: js.UndefOr[AccessEndpointList] = js.undefined,
         ApplicationSettings: js.UndefOr[ApplicationSettings] = js.undefined,
         AttributesToDelete: js.UndefOr[StackAttributes] = js.undefined,
         DeleteStorageConnectors: js.UndefOr[Boolean] = js.undefined,
@@ -2847,6 +3056,7 @@ package appstream {
         "Name" -> Name.asInstanceOf[js.Any]
       )
 
+      AccessEndpoints.foreach(__v => __obj.update("AccessEndpoints", __v.asInstanceOf[js.Any]))
       ApplicationSettings.foreach(__v => __obj.update("ApplicationSettings", __v.asInstanceOf[js.Any]))
       AttributesToDelete.foreach(__v => __obj.update("AttributesToDelete", __v.asInstanceOf[js.Any]))
       DeleteStorageConnectors.foreach(__v => __obj.update("DeleteStorageConnectors", __v.asInstanceOf[js.Any]))
@@ -2872,6 +3082,47 @@ package appstream {
       val __obj = js.Dictionary.empty[js.Any]
       Stack.foreach(__v => __obj.update("Stack", __v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateStackResult]
+    }
+  }
+
+  object UsageReportExecutionErrorCodeEnum {
+    val RESOURCE_NOT_FOUND     = "RESOURCE_NOT_FOUND"
+    val ACCESS_DENIED          = "ACCESS_DENIED"
+    val INTERNAL_SERVICE_ERROR = "INTERNAL_SERVICE_ERROR"
+
+    val values = IndexedSeq(RESOURCE_NOT_FOUND, ACCESS_DENIED, INTERNAL_SERVICE_ERROR)
+  }
+
+  object UsageReportScheduleEnum {
+    val DAILY = "DAILY"
+
+    val values = IndexedSeq(DAILY)
+  }
+
+  /**
+    * Describes information about the usage report subscription.
+    */
+  @js.native
+  trait UsageReportSubscription extends js.Object {
+    var LastGeneratedReportDate: js.UndefOr[Timestamp]
+    var S3BucketName: js.UndefOr[String]
+    var Schedule: js.UndefOr[UsageReportSchedule]
+    var SubscriptionErrors: js.UndefOr[LastReportGenerationExecutionErrors]
+  }
+
+  object UsageReportSubscription {
+    def apply(
+        LastGeneratedReportDate: js.UndefOr[Timestamp] = js.undefined,
+        S3BucketName: js.UndefOr[String] = js.undefined,
+        Schedule: js.UndefOr[UsageReportSchedule] = js.undefined,
+        SubscriptionErrors: js.UndefOr[LastReportGenerationExecutionErrors] = js.undefined
+    ): UsageReportSubscription = {
+      val __obj = js.Dictionary.empty[js.Any]
+      LastGeneratedReportDate.foreach(__v => __obj.update("LastGeneratedReportDate", __v.asInstanceOf[js.Any]))
+      S3BucketName.foreach(__v => __obj.update("S3BucketName", __v.asInstanceOf[js.Any]))
+      Schedule.foreach(__v => __obj.update("Schedule", __v.asInstanceOf[js.Any]))
+      SubscriptionErrors.foreach(__v => __obj.update("SubscriptionErrors", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UsageReportSubscription]
     }
   }
 

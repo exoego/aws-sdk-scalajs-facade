@@ -29,6 +29,7 @@ package object secretsmanager {
   type NameType                         = String
   type NextTokenType                    = String
   type NonEmptyResourcePolicyType       = String
+  type OwningServiceType                = String
   type PasswordLengthType               = Double
   type RandomPasswordType               = String
   type RecoveryWindowInDaysType         = Double
@@ -320,6 +321,7 @@ package secretsmanager {
     var LastChangedDate: js.UndefOr[LastChangedDateType]
     var LastRotatedDate: js.UndefOr[LastRotatedDateType]
     var Name: js.UndefOr[SecretNameType]
+    var OwningService: js.UndefOr[OwningServiceType]
     var RotationEnabled: js.UndefOr[RotationEnabledType]
     var RotationLambdaARN: js.UndefOr[RotationLambdaARNType]
     var RotationRules: js.UndefOr[RotationRulesType]
@@ -337,6 +339,7 @@ package secretsmanager {
         LastChangedDate: js.UndefOr[LastChangedDateType] = js.undefined,
         LastRotatedDate: js.UndefOr[LastRotatedDateType] = js.undefined,
         Name: js.UndefOr[SecretNameType] = js.undefined,
+        OwningService: js.UndefOr[OwningServiceType] = js.undefined,
         RotationEnabled: js.UndefOr[RotationEnabledType] = js.undefined,
         RotationLambdaARN: js.UndefOr[RotationLambdaARNType] = js.undefined,
         RotationRules: js.UndefOr[RotationRulesType] = js.undefined,
@@ -352,6 +355,7 @@ package secretsmanager {
       LastChangedDate.foreach(__v => __obj.update("LastChangedDate", __v.asInstanceOf[js.Any]))
       LastRotatedDate.foreach(__v => __obj.update("LastRotatedDate", __v.asInstanceOf[js.Any]))
       Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
+      OwningService.foreach(__v => __obj.update("OwningService", __v.asInstanceOf[js.Any]))
       RotationEnabled.foreach(__v => __obj.update("RotationEnabled", __v.asInstanceOf[js.Any]))
       RotationLambdaARN.foreach(__v => __obj.update("RotationLambdaARN", __v.asInstanceOf[js.Any]))
       RotationRules.foreach(__v => __obj.update("RotationRules", __v.asInstanceOf[js.Any]))
@@ -796,6 +800,7 @@ package secretsmanager {
     var LastChangedDate: js.UndefOr[LastChangedDateType]
     var LastRotatedDate: js.UndefOr[LastRotatedDateType]
     var Name: js.UndefOr[SecretNameType]
+    var OwningService: js.UndefOr[OwningServiceType]
     var RotationEnabled: js.UndefOr[RotationEnabledType]
     var RotationLambdaARN: js.UndefOr[RotationLambdaARNType]
     var RotationRules: js.UndefOr[RotationRulesType]
@@ -813,6 +818,7 @@ package secretsmanager {
         LastChangedDate: js.UndefOr[LastChangedDateType] = js.undefined,
         LastRotatedDate: js.UndefOr[LastRotatedDateType] = js.undefined,
         Name: js.UndefOr[SecretNameType] = js.undefined,
+        OwningService: js.UndefOr[OwningServiceType] = js.undefined,
         RotationEnabled: js.UndefOr[RotationEnabledType] = js.undefined,
         RotationLambdaARN: js.UndefOr[RotationLambdaARNType] = js.undefined,
         RotationRules: js.UndefOr[RotationRulesType] = js.undefined,
@@ -828,6 +834,7 @@ package secretsmanager {
       LastChangedDate.foreach(__v => __obj.update("LastChangedDate", __v.asInstanceOf[js.Any]))
       LastRotatedDate.foreach(__v => __obj.update("LastRotatedDate", __v.asInstanceOf[js.Any]))
       Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
+      OwningService.foreach(__v => __obj.update("OwningService", __v.asInstanceOf[js.Any]))
       RotationEnabled.foreach(__v => __obj.update("RotationEnabled", __v.asInstanceOf[js.Any]))
       RotationLambdaARN.foreach(__v => __obj.update("RotationLambdaARN", __v.asInstanceOf[js.Any]))
       RotationRules.foreach(__v => __obj.update("RotationRules", __v.asInstanceOf[js.Any]))

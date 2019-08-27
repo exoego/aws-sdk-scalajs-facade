@@ -31,7 +31,6 @@ package object swf {
   type DurationInDays                                    = String
   type DurationInSeconds                                 = String
   type DurationInSecondsOptional                         = String
-  type ErrorMessage                                      = String
   type EventId                                           = Double
   type EventType                                         = String
   type ExecutionStatus                                   = String
@@ -53,6 +52,10 @@ package object swf {
   type RegistrationStatus                                = String
   type RequestCancelActivityTaskFailedCause              = String
   type RequestCancelExternalWorkflowExecutionFailedCause = String
+  type ResourceTagKey                                    = String
+  type ResourceTagKeyList                                = js.Array[ResourceTagKey]
+  type ResourceTagList                                   = js.Array[ResourceTag]
+  type ResourceTagValue                                  = String
   type ReverseOrder                                      = Boolean
   type ScheduleActivityTaskFailedCause                   = String
   type ScheduleLambdaFunctionFailedCause                 = String
@@ -114,6 +117,8 @@ package object swf {
     def listDomainsFuture(params: ListDomainsInput): Future[DomainInfos] = service.listDomains(params).promise.toFuture
     def listOpenWorkflowExecutionsFuture(params: ListOpenWorkflowExecutionsInput): Future[WorkflowExecutionInfos] =
       service.listOpenWorkflowExecutions(params).promise.toFuture
+    def listTagsForResourceFuture(params: ListTagsForResourceInput): Future[ListTagsForResourceOutput] =
+      service.listTagsForResource(params).promise.toFuture
     def listWorkflowTypesFuture(params: ListWorkflowTypesInput): Future[WorkflowTypeInfos] =
       service.listWorkflowTypes(params).promise.toFuture
     def pollForActivityTaskFuture(params: PollForActivityTaskInput): Future[ActivityTask] =
@@ -142,8 +147,17 @@ package object swf {
       service.signalWorkflowExecution(params).promise.toFuture
     def startWorkflowExecutionFuture(params: StartWorkflowExecutionInput): Future[Run] =
       service.startWorkflowExecution(params).promise.toFuture
+    def tagResourceFuture(params: TagResourceInput): Future[js.Object] = service.tagResource(params).promise.toFuture
     def terminateWorkflowExecutionFuture(params: TerminateWorkflowExecutionInput): Future[js.Object] =
       service.terminateWorkflowExecution(params).promise.toFuture
+    def undeprecateActivityTypeFuture(params: UndeprecateActivityTypeInput): Future[js.Object] =
+      service.undeprecateActivityType(params).promise.toFuture
+    def undeprecateDomainFuture(params: UndeprecateDomainInput): Future[js.Object] =
+      service.undeprecateDomain(params).promise.toFuture
+    def undeprecateWorkflowTypeFuture(params: UndeprecateWorkflowTypeInput): Future[js.Object] =
+      service.undeprecateWorkflowType(params).promise.toFuture
+    def untagResourceFuture(params: UntagResourceInput): Future[js.Object] =
+      service.untagResource(params).promise.toFuture
   }
 }
 
@@ -172,6 +186,7 @@ package swf {
       js.native
     def listDomains(params: ListDomainsInput): Request[DomainInfos]                                          = js.native
     def listOpenWorkflowExecutions(params: ListOpenWorkflowExecutionsInput): Request[WorkflowExecutionInfos] = js.native
+    def listTagsForResource(params: ListTagsForResourceInput): Request[ListTagsForResourceOutput]            = js.native
     def listWorkflowTypes(params: ListWorkflowTypesInput): Request[WorkflowTypeInfos]                        = js.native
     def pollForActivityTask(params: PollForActivityTaskInput): Request[ActivityTask]                         = js.native
     def pollForDecisionTask(params: PollForDecisionTaskInput): Request[DecisionTask]                         = js.native
@@ -186,7 +201,12 @@ package swf {
     def respondDecisionTaskCompleted(params: RespondDecisionTaskCompletedInput): Request[js.Object]          = js.native
     def signalWorkflowExecution(params: SignalWorkflowExecutionInput): Request[js.Object]                    = js.native
     def startWorkflowExecution(params: StartWorkflowExecutionInput): Request[Run]                            = js.native
+    def tagResource(params: TagResourceInput): Request[js.Object]                                            = js.native
     def terminateWorkflowExecution(params: TerminateWorkflowExecutionInput): Request[js.Object]              = js.native
+    def undeprecateActivityType(params: UndeprecateActivityTypeInput): Request[js.Object]                    = js.native
+    def undeprecateDomain(params: UndeprecateDomainInput): Request[js.Object]                                = js.native
+    def undeprecateWorkflowType(params: UndeprecateWorkflowTypeInput): Request[js.Object]                    = js.native
+    def untagResource(params: UntagResourceInput): Request[js.Object]                                        = js.native
   }
 
   /**
@@ -611,7 +631,7 @@ package swf {
     * * Use a <code>Resource</code> element with the domain name to limit the action to only specified domains.
     *  * Use an <code>Action</code> element to allow or deny permission to call this action.
     *  * You cannot use an IAM policy to constrain this action's parameters.
-    * If the caller doesn't have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see [[http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html|Using IAM to Manage Access to Amazon SWF Workflows]] in the <i>Amazon SWF Developer Guide</i>.
+    * If the caller doesn't have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see [[https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html|Using IAM to Manage Access to Amazon SWF Workflows]] in the <i>Amazon SWF Developer Guide</i>.
     */
   @js.native
   trait CancelTimerDecisionAttributes extends js.Object {
@@ -670,7 +690,7 @@ package swf {
     * * Use a <code>Resource</code> element with the domain name to limit the action to only specified domains.
     *  * Use an <code>Action</code> element to allow or deny permission to call this action.
     *  * You cannot use an IAM policy to constrain this action's parameters.
-    * If the caller doesn't have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see [[http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html|Using IAM to Manage Access to Amazon SWF Workflows]] in the <i>Amazon SWF Developer Guide</i>.
+    * If the caller doesn't have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see [[https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html|Using IAM to Manage Access to Amazon SWF Workflows]] in the <i>Amazon SWF Developer Guide</i>.
     */
   @js.native
   trait CancelWorkflowExecutionDecisionAttributes extends js.Object {
@@ -949,7 +969,7 @@ package swf {
     * * Use a <code>Resource</code> element with the domain name to limit the action to only specified domains.
     *  * Use an <code>Action</code> element to allow or deny permission to call this action.
     *  * You cannot use an IAM policy to constrain this action's parameters.
-    * If the caller doesn't have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see [[http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html|Using IAM to Manage Access to Amazon SWF Workflows]] in the <i>Amazon SWF Developer Guide</i>.
+    * If the caller doesn't have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see [[https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html|Using IAM to Manage Access to Amazon SWF Workflows]] in the <i>Amazon SWF Developer Guide</i>.
     */
   @js.native
   trait CompleteWorkflowExecutionDecisionAttributes extends js.Object {
@@ -1006,7 +1026,7 @@ package swf {
     * <li> <code>tag</code> – A tag used to identify the workflow execution
     *  * <code>taskList</code> – String constraint. The key is <code>swf:taskList.name</code>.
     *  * <code>workflowType.version</code> – String constraint. The key is <code>swf:workflowType.version</code>.
-    * </li>If the caller doesn't have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see [[http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html|Using IAM to Manage Access to Amazon SWF Workflows]] in the <i>Amazon SWF Developer Guide</i>.
+    * </li>If the caller doesn't have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see [[https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html|Using IAM to Manage Access to Amazon SWF Workflows]] in the <i>Amazon SWF Developer Guide</i>.
     */
   @js.native
   trait ContinueAsNewWorkflowExecutionDecisionAttributes extends js.Object {
@@ -1215,13 +1235,13 @@ package swf {
     *  * <code>StartChildWorkflowExecution</code> – Requests that a child workflow execution be started and records a <code>StartChildWorkflowExecutionInitiated</code> event in the history. The child workflow execution is a separate workflow execution with its own history.
     *  * <code>StartTimer</code> – Starts a timer for this workflow execution and records a <code>TimerStarted</code> event in the history. This timer fires after the specified delay and record a <code>TimerFired</code> event.
     * ```Access Control```
-    *  If you grant permission to use <code>RespondDecisionTaskCompleted</code>, you can use IAM policies to express permissions for the list of decisions returned by this action as if they were members of the API. Treating decisions as a pseudo API maintains a uniform conceptual model and helps keep policies readable. For details and example IAM policies, see [[http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html|Using IAM to Manage Access to Amazon SWF Workflows]] in the <i>Amazon SWF Developer Guide</i>.
+    *  If you grant permission to use <code>RespondDecisionTaskCompleted</code>, you can use IAM policies to express permissions for the list of decisions returned by this action as if they were members of the API. Treating decisions as a pseudo API maintains a uniform conceptual model and helps keep policies readable. For details and example IAM policies, see [[https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html|Using IAM to Manage Access to Amazon SWF Workflows]] in the <i>Amazon SWF Developer Guide</i>.
     *  ```Decision Failure```
     *  Decisions can fail for several reasons
     * * The ordering of decisions should follow a logical flow. Some decisions might not make sense in the current context of the workflow execution and therefore fails.
     *  * A limit on your account was reached.
     *  * The decision lacks sufficient permissions.
-    * One of the following events might be added to the history to indicate an error. The event attribute's <code>cause</code> parameter indicates the cause. If <code>cause</code> is set to <code>OPERATION_NOT_PERMITTED</code>, the decision failed because it lacked sufficient permissions. For details and example IAM policies, see [[http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html|Using IAM to Manage Access to Amazon SWF Workflows]] in the <i>Amazon SWF Developer Guide</i>.
+    * One of the following events might be added to the history to indicate an error. The event attribute's <code>cause</code> parameter indicates the cause. If <code>cause</code> is set to <code>OPERATION_NOT_PERMITTED</code>, the decision failed because it lacked sufficient permissions. For details and example IAM policies, see [[https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html|Using IAM to Manage Access to Amazon SWF Workflows]] in the <i>Amazon SWF Developer Guide</i>.
     * * <code>ScheduleActivityTaskFailed</code> – A <code>ScheduleActivityTask</code> decision failed. This could happen if the activity type specified in the decision isn't registered, is in a deprecated state, or the decision isn't properly configured.
     *  * <code>RequestCancelActivityTaskFailed</code> – A <code>RequestCancelActivityTask</code> decision failed. This could happen if there is no open activity task with the specified activityId.
     *  * <code>StartTimerFailed</code> – A <code>StartTimer</code> decision failed. This could happen if there is another open timer with the same timerId.
@@ -1520,17 +1540,6 @@ package swf {
     )
   }
 
-  /**
-    * The <code>StartWorkflowExecution</code> API action was called without the required parameters set.
-    *  Some workflow execution parameters, such as the decision <code>taskList</code>, must be set to start the execution. However, these parameters might have been set as defaults when the workflow type was registered. In this case, you can omit these parameters from the <code>StartWorkflowExecution</code> call and Amazon SWF uses the values defined in the workflow type.
-    *
-    * '''Note:'''If these parameters aren't set and no default parameters were defined in the workflow type, this error is displayed.
-    */
-  @js.native
-  trait DefaultUndefinedFaultException extends js.Object {
-    val message: ErrorMessage
-  }
-
   @js.native
   trait DeprecateActivityTypeInput extends js.Object {
     var activityType: ActivityType
@@ -1666,14 +1675,6 @@ package swf {
   }
 
   /**
-    * Returned if the specified domain already exists. You get this fault even if the existing domain is in deprecated status.
-    */
-  @js.native
-  trait DomainAlreadyExistsFaultException extends js.Object {
-    val message: ErrorMessage
-  }
-
-  /**
     * Contains the configuration settings of a domain.
     */
   @js.native
@@ -1691,14 +1692,6 @@ package swf {
 
       __obj.asInstanceOf[DomainConfiguration]
     }
-  }
-
-  /**
-    * Returned when the specified domain has been deprecated.
-    */
-  @js.native
-  trait DomainDeprecatedFaultException extends js.Object {
-    val message: ErrorMessage
   }
 
   /**
@@ -1731,6 +1724,7 @@ package swf {
   trait DomainInfo extends js.Object {
     var name: DomainName
     var status: RegistrationStatus
+    var arn: js.UndefOr[Arn]
     var description: js.UndefOr[Description]
   }
 
@@ -1738,6 +1732,7 @@ package swf {
     def apply(
         name: DomainName,
         status: RegistrationStatus,
+        arn: js.UndefOr[Arn] = js.undefined,
         description: js.UndefOr[Description] = js.undefined
     ): DomainInfo = {
       val __obj = js.Dictionary[js.Any](
@@ -1745,6 +1740,7 @@ package swf {
         "status" -> status.asInstanceOf[js.Any]
       )
 
+      arn.foreach(__v => __obj.update("arn", __v.asInstanceOf[js.Any]))
       description.foreach(__v => __obj.update("description", __v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DomainInfo]
     }
@@ -1970,7 +1966,7 @@ package swf {
     * * Use a <code>Resource</code> element with the domain name to limit the action to only specified domains.
     *  * Use an <code>Action</code> element to allow or deny permission to call this action.
     *  * You cannot use an IAM policy to constrain this action's parameters.
-    * If the caller doesn't have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see [[http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html|Using IAM to Manage Access to Amazon SWF Workflows]] in the <i>Amazon SWF Developer Guide</i>.
+    * If the caller doesn't have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see [[https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html|Using IAM to Manage Access to Amazon SWF Workflows]] in the <i>Amazon SWF Developer Guide</i>.
     */
   @js.native
   trait FailWorkflowExecutionDecisionAttributes extends js.Object {
@@ -2599,14 +2595,6 @@ package swf {
     val values = IndexedSeq(START_TO_CLOSE)
   }
 
-  /**
-    * Returned by any operation if a system imposed limitation has been reached. To address this fault you should either clean up unused resources or increase the limit by contacting AWS.
-    */
-  @js.native
-  trait LimitExceededFaultException extends js.Object {
-    val message: ErrorMessage
-  }
-
   @js.native
   trait ListActivityTypesInput extends js.Object {
     var domain: DomainName
@@ -2748,6 +2736,38 @@ package swf {
   }
 
   @js.native
+  trait ListTagsForResourceInput extends js.Object {
+    var resourceArn: Arn
+  }
+
+  object ListTagsForResourceInput {
+    def apply(
+        resourceArn: Arn
+    ): ListTagsForResourceInput = {
+      val __obj = js.Dictionary[js.Any](
+        "resourceArn" -> resourceArn.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[ListTagsForResourceInput]
+    }
+  }
+
+  @js.native
+  trait ListTagsForResourceOutput extends js.Object {
+    var tags: js.UndefOr[ResourceTagList]
+  }
+
+  object ListTagsForResourceOutput {
+    def apply(
+        tags: js.UndefOr[ResourceTagList] = js.undefined
+    ): ListTagsForResourceOutput = {
+      val __obj = js.Dictionary.empty[js.Any]
+      tags.foreach(__v => __obj.update("tags", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListTagsForResourceOutput]
+    }
+  }
+
+  @js.native
   trait ListWorkflowTypesInput extends js.Object {
     var domain: DomainName
     var registrationStatus: RegistrationStatus
@@ -2803,14 +2823,6 @@ package swf {
       details.foreach(__v => __obj.update("details", __v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[MarkerRecordedEventAttributes]
     }
-  }
-
-  /**
-    * Returned when the caller doesn't have sufficient permissions to invoke the action.
-    */
-  @js.native
-  trait OperationNotPermittedFaultException extends js.Object {
-    val message: ErrorMessage
   }
 
   /**
@@ -2918,7 +2930,7 @@ package swf {
     * * Use a <code>Resource</code> element with the domain name to limit the action to only specified domains.
     *  * Use an <code>Action</code> element to allow or deny permission to call this action.
     *  * You cannot use an IAM policy to constrain this action's parameters.
-    * If the caller doesn't have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see [[http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html|Using IAM to Manage Access to Amazon SWF Workflows]] in the <i>Amazon SWF Developer Guide</i>.
+    * If the caller doesn't have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see [[https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html|Using IAM to Manage Access to Amazon SWF Workflows]] in the <i>Amazon SWF Developer Guide</i>.
     */
   @js.native
   trait RecordMarkerDecisionAttributes extends js.Object {
@@ -3027,13 +3039,15 @@ package swf {
     var name: DomainName
     var workflowExecutionRetentionPeriodInDays: DurationInDays
     var description: js.UndefOr[Description]
+    var tags: js.UndefOr[ResourceTagList]
   }
 
   object RegisterDomainInput {
     def apply(
         name: DomainName,
         workflowExecutionRetentionPeriodInDays: DurationInDays,
-        description: js.UndefOr[Description] = js.undefined
+        description: js.UndefOr[Description] = js.undefined,
+        tags: js.UndefOr[ResourceTagList] = js.undefined
     ): RegisterDomainInput = {
       val __obj = js.Dictionary[js.Any](
         "name"                                   -> name.asInstanceOf[js.Any],
@@ -3041,6 +3055,7 @@ package swf {
       )
 
       description.foreach(__v => __obj.update("description", __v.asInstanceOf[js.Any]))
+      tags.foreach(__v => __obj.update("tags", __v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[RegisterDomainInput]
     }
   }
@@ -3107,7 +3122,7 @@ package swf {
     * * Use a <code>Resource</code> element with the domain name to limit the action to only specified domains.
     *  * Use an <code>Action</code> element to allow or deny permission to call this action.
     *  * You cannot use an IAM policy to constrain this action's parameters.
-    * If the caller doesn't have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see [[http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html|Using IAM to Manage Access to Amazon SWF Workflows]] in the <i>Amazon SWF Developer Guide</i>.
+    * If the caller doesn't have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see [[https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html|Using IAM to Manage Access to Amazon SWF Workflows]] in the <i>Amazon SWF Developer Guide</i>.
     */
   @js.native
   trait RequestCancelActivityTaskDecisionAttributes extends js.Object {
@@ -3166,7 +3181,7 @@ package swf {
     * * Use a <code>Resource</code> element with the domain name to limit the action to only specified domains.
     *  * Use an <code>Action</code> element to allow or deny permission to call this action.
     *  * You cannot use an IAM policy to constrain this action's parameters.
-    * If the caller doesn't have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see [[http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html|Using IAM to Manage Access to Amazon SWF Workflows]] in the <i>Amazon SWF Developer Guide</i>.
+    * If the caller doesn't have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see [[https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html|Using IAM to Manage Access to Amazon SWF Workflows]] in the <i>Amazon SWF Developer Guide</i>.
     */
   @js.native
   trait RequestCancelExternalWorkflowExecutionDecisionAttributes extends js.Object {
@@ -3291,6 +3306,30 @@ package swf {
     }
   }
 
+  /**
+    * Tags are key-value pairs that can be associated with Amazon SWF state machines and activities.
+    *  Tags may only contain unicode letters, digits, whitespace, or these symbols: <code>_ . : / = + - @</code>.
+    */
+  @js.native
+  trait ResourceTag extends js.Object {
+    var key: ResourceTagKey
+    var value: js.UndefOr[ResourceTagValue]
+  }
+
+  object ResourceTag {
+    def apply(
+        key: ResourceTagKey,
+        value: js.UndefOr[ResourceTagValue] = js.undefined
+    ): ResourceTag = {
+      val __obj = js.Dictionary[js.Any](
+        "key" -> key.asInstanceOf[js.Any]
+      )
+
+      value.foreach(__v => __obj.update("value", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ResourceTag]
+    }
+  }
+
   @js.native
   trait RespondActivityTaskCanceledInput extends js.Object {
     var taskToken: TaskToken
@@ -3408,7 +3447,7 @@ package swf {
     * <li> <code>activityType.name</code> – String constraint. The key is <code>swf:activityType.name</code>.
     *  * <code>activityType.version</code> – String constraint. The key is <code>swf:activityType.version</code>.
     *  * <code>taskList</code> – String constraint. The key is <code>swf:taskList.name</code>.
-    * </li>If the caller doesn't have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see [[http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html|Using IAM to Manage Access to Amazon SWF Workflows]] in the <i>Amazon SWF Developer Guide</i>.
+    * </li>If the caller doesn't have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see [[https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html|Using IAM to Manage Access to Amazon SWF Workflows]] in the <i>Amazon SWF Developer Guide</i>.
     */
   @js.native
   trait ScheduleActivityTaskDecisionAttributes extends js.Object {
@@ -3593,7 +3632,7 @@ package swf {
     * * Use a <code>Resource</code> element with the domain name to limit the action to only specified domains.
     *  * Use an <code>Action</code> element to allow or deny permission to call this action.
     *  * You cannot use an IAM policy to constrain this action's parameters.
-    * If the caller doesn't have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see [[http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html|Using IAM to Manage Access to Amazon SWF Workflows]] in the <i>Amazon SWF Developer Guide</i>.
+    * If the caller doesn't have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see [[https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html|Using IAM to Manage Access to Amazon SWF Workflows]] in the <i>Amazon SWF Developer Guide</i>.
     */
   @js.native
   trait SignalExternalWorkflowExecutionDecisionAttributes extends js.Object {
@@ -3746,7 +3785,7 @@ package swf {
     *  * <code>taskList</code> – String constraint. The key is <code>swf:taskList.name</code>.
     *  * <code>workflowType.name</code> – String constraint. The key is <code>swf:workflowType.name</code>.
     *  * <code>workflowType.version</code> – String constraint. The key is <code>swf:workflowType.version</code>.
-    * </li>If the caller doesn't have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see [[http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html|Using IAM to Manage Access to Amazon SWF Workflows]] in the <i>Amazon SWF Developer Guide</i>.
+    * </li>If the caller doesn't have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see [[https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html|Using IAM to Manage Access to Amazon SWF Workflows]] in the <i>Amazon SWF Developer Guide</i>.
     */
   @js.native
   trait StartChildWorkflowExecutionDecisionAttributes extends js.Object {
@@ -3952,7 +3991,7 @@ package swf {
     * * Use a <code>Resource</code> element with the domain name to limit the action to only specified domains.
     *  * Use an <code>Action</code> element to allow or deny permission to call this action.
     *  * You cannot use an IAM policy to constrain this action's parameters.
-    * If the caller doesn't have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see [[http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html|Using IAM to Manage Access to Amazon SWF Workflows]] in the <i>Amazon SWF Developer Guide</i>.
+    * If the caller doesn't have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see [[https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html|Using IAM to Manage Access to Amazon SWF Workflows]] in the <i>Amazon SWF Developer Guide</i>.
     */
   @js.native
   trait StartTimerDecisionAttributes extends js.Object {
@@ -4086,6 +4125,26 @@ package swf {
     }
   }
 
+  @js.native
+  trait TagResourceInput extends js.Object {
+    var resourceArn: Arn
+    var tags: ResourceTagList
+  }
+
+  object TagResourceInput {
+    def apply(
+        resourceArn: Arn,
+        tags: ResourceTagList
+    ): TagResourceInput = {
+      val __obj = js.Dictionary[js.Any](
+        "resourceArn" -> resourceArn.asInstanceOf[js.Any],
+        "tags"        -> tags.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[TagResourceInput]
+    }
+  }
+
   /**
     * Represents a task list.
     */
@@ -4216,28 +4275,81 @@ package swf {
     }
   }
 
-  /**
-    * Returned if the type already exists in the specified domain. You get this fault even if the existing type is in deprecated status. You can specify another version if the intent is to create a new distinct version of the type.
-    */
   @js.native
-  trait TypeAlreadyExistsFaultException extends js.Object {
-    val message: ErrorMessage
+  trait UndeprecateActivityTypeInput extends js.Object {
+    var activityType: ActivityType
+    var domain: DomainName
   }
 
-  /**
-    * Returned when the specified activity or workflow type was already deprecated.
-    */
-  @js.native
-  trait TypeDeprecatedFaultException extends js.Object {
-    val message: ErrorMessage
+  object UndeprecateActivityTypeInput {
+    def apply(
+        activityType: ActivityType,
+        domain: DomainName
+    ): UndeprecateActivityTypeInput = {
+      val __obj = js.Dictionary[js.Any](
+        "activityType" -> activityType.asInstanceOf[js.Any],
+        "domain"       -> domain.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[UndeprecateActivityTypeInput]
+    }
   }
 
-  /**
-    * Returned when the named resource cannot be found with in the scope of this operation (region or domain). This could happen if the named resource was never created or is no longer available for this operation.
-    */
   @js.native
-  trait UnknownResourceFaultException extends js.Object {
-    val message: ErrorMessage
+  trait UndeprecateDomainInput extends js.Object {
+    var name: DomainName
+  }
+
+  object UndeprecateDomainInput {
+    def apply(
+        name: DomainName
+    ): UndeprecateDomainInput = {
+      val __obj = js.Dictionary[js.Any](
+        "name" -> name.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[UndeprecateDomainInput]
+    }
+  }
+
+  @js.native
+  trait UndeprecateWorkflowTypeInput extends js.Object {
+    var domain: DomainName
+    var workflowType: WorkflowType
+  }
+
+  object UndeprecateWorkflowTypeInput {
+    def apply(
+        domain: DomainName,
+        workflowType: WorkflowType
+    ): UndeprecateWorkflowTypeInput = {
+      val __obj = js.Dictionary[js.Any](
+        "domain"       -> domain.asInstanceOf[js.Any],
+        "workflowType" -> workflowType.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[UndeprecateWorkflowTypeInput]
+    }
+  }
+
+  @js.native
+  trait UntagResourceInput extends js.Object {
+    var resourceArn: Arn
+    var tagKeys: ResourceTagKeyList
+  }
+
+  object UntagResourceInput {
+    def apply(
+        resourceArn: Arn,
+        tagKeys: ResourceTagKeyList
+    ): UntagResourceInput = {
+      val __obj = js.Dictionary[js.Any](
+        "resourceArn" -> resourceArn.asInstanceOf[js.Any],
+        "tagKeys"     -> tagKeys.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[UntagResourceInput]
+    }
   }
 
   /**
@@ -4261,14 +4373,6 @@ package swf {
 
       __obj.asInstanceOf[WorkflowExecution]
     }
-  }
-
-  /**
-    * Returned by <a>StartWorkflowExecution</a> when an open execution with the same workflowId is already running in the specified domain.
-    */
-  @js.native
-  trait WorkflowExecutionAlreadyStartedFaultException extends js.Object {
-    val message: ErrorMessage
   }
 
   object WorkflowExecutionCancelRequestedCauseEnum {

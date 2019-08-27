@@ -54,6 +54,7 @@ package object configservice {
   type ConfigurationRecorderNameList           = js.Array[RecorderName]
   type ConfigurationRecorderStatusList         = js.Array[ConfigurationRecorderStatus]
   type ConfigurationStateId                    = String
+  type CosmosPageLimit                         = Int
   type Date                                    = js.Date
   type DeliveryChannelList                     = js.Array[DeliveryChannel]
   type DeliveryChannelNameList                 = js.Array[ChannelName]
@@ -66,6 +67,7 @@ package object configservice {
   type EvaluationResults                       = js.Array[EvaluationResult]
   type Evaluations                             = js.Array[Evaluation]
   type EventSource                             = String
+  type ExcludedAccounts                        = js.Array[AccountId]
   type Expression                              = String
   type FailedRemediationBatches                = js.Array[FailedRemediationBatch]
   type FieldInfoList                           = js.Array[FieldInfo]
@@ -76,10 +78,18 @@ package object configservice {
   type LaterTime                               = js.Date
   type Limit                                   = Int
   type MaximumExecutionFrequency               = String
+  type MemberAccountRuleStatus                 = String
   type MessageType                             = String
   type Name                                    = String
   type NextToken                               = String
   type OrderingTimestamp                       = js.Date
+  type OrganizationConfigRuleDetailedStatus    = js.Array[MemberAccountStatus]
+  type OrganizationConfigRuleNames             = js.Array[StringWithCharLimit64]
+  type OrganizationConfigRuleStatuses          = js.Array[OrganizationConfigRuleStatus]
+  type OrganizationConfigRuleTriggerType       = String
+  type OrganizationConfigRuleTriggerTypes      = js.Array[OrganizationConfigRuleTriggerType]
+  type OrganizationConfigRules                 = js.Array[OrganizationConfigRule]
+  type OrganizationRuleStatus                  = String
   type Owner                                   = String
   type PendingAggregationRequestList           = js.Array[PendingAggregationRequest]
   type RecorderName                            = String
@@ -109,6 +119,7 @@ package object configservice {
   type ResourceType                            = String
   type ResourceTypeList                        = js.Array[ResourceType]
   type ResourceTypes                           = js.Array[StringWithCharLimit256]
+  type ResourceTypesScope                      = js.Array[StringWithCharLimit256]
   type ResourceValueType                       = String
   type Results                                 = js.Array[String]
   type RetentionConfigurationList              = js.Array[RetentionConfiguration]
@@ -120,8 +131,11 @@ package object configservice {
   type StaticParameterValues                   = js.Array[StringWithCharLimit256]
   type StringWithCharLimit1024                 = String
   type StringWithCharLimit128                  = String
+  type StringWithCharLimit2048                 = String
   type StringWithCharLimit256                  = String
+  type StringWithCharLimit256Min0              = String
   type StringWithCharLimit64                   = String
+  type StringWithCharLimit768                  = String
   type SupplementaryConfiguration              = js.Dictionary[SupplementaryConfigurationValue]
   type SupplementaryConfigurationName          = String
   type SupplementaryConfigurationValue         = String
@@ -130,6 +144,7 @@ package object configservice {
   type TagList                                 = js.Array[Tag]
   type TagValue                                = String
   type Tags                                    = js.Dictionary[Value]
+  type TagsList                                = js.Array[Tag]
   type UnprocessedResourceIdentifierList       = js.Array[AggregateResourceIdentifier]
   type Value                                   = String
   type Version                                 = String
@@ -154,6 +169,8 @@ package object configservice {
       service.deleteDeliveryChannel(params).promise.toFuture
     def deleteEvaluationResultsFuture(params: DeleteEvaluationResultsRequest): Future[DeleteEvaluationResultsResponse] =
       service.deleteEvaluationResults(params).promise.toFuture
+    def deleteOrganizationConfigRuleFuture(params: DeleteOrganizationConfigRuleRequest): Future[js.Object] =
+      service.deleteOrganizationConfigRule(params).promise.toFuture
     def deletePendingAggregationRequestFuture(params: DeletePendingAggregationRequestRequest): Future[js.Object] =
       service.deletePendingAggregationRequest(params).promise.toFuture
     def deleteRemediationConfigurationFuture(
@@ -204,6 +221,14 @@ package object configservice {
     def describeDeliveryChannelsFuture(
         params: DescribeDeliveryChannelsRequest
     ): Future[DescribeDeliveryChannelsResponse] = service.describeDeliveryChannels(params).promise.toFuture
+    def describeOrganizationConfigRuleStatusesFuture(
+        params: DescribeOrganizationConfigRuleStatusesRequest
+    ): Future[DescribeOrganizationConfigRuleStatusesResponse] =
+      service.describeOrganizationConfigRuleStatuses(params).promise.toFuture
+    def describeOrganizationConfigRulesFuture(
+        params: DescribeOrganizationConfigRulesRequest
+    ): Future[DescribeOrganizationConfigRulesResponse] =
+      service.describeOrganizationConfigRules(params).promise.toFuture
     def describePendingAggregationRequestsFuture(
         params: DescribePendingAggregationRequestsRequest
     ): Future[DescribePendingAggregationRequestsResponse] =
@@ -251,6 +276,10 @@ package object configservice {
     def getDiscoveredResourceCountsFuture(
         params: GetDiscoveredResourceCountsRequest
     ): Future[GetDiscoveredResourceCountsResponse] = service.getDiscoveredResourceCounts(params).promise.toFuture
+    def getOrganizationConfigRuleDetailedStatusFuture(
+        params: GetOrganizationConfigRuleDetailedStatusRequest
+    ): Future[GetOrganizationConfigRuleDetailedStatusResponse] =
+      service.getOrganizationConfigRuleDetailedStatus(params).promise.toFuture
     def getResourceConfigHistoryFuture(
         params: GetResourceConfigHistoryRequest
     ): Future[GetResourceConfigHistoryResponse] = service.getResourceConfigHistory(params).promise.toFuture
@@ -276,6 +305,9 @@ package object configservice {
       service.putDeliveryChannel(params).promise.toFuture
     def putEvaluationsFuture(params: PutEvaluationsRequest): Future[PutEvaluationsResponse] =
       service.putEvaluations(params).promise.toFuture
+    def putOrganizationConfigRuleFuture(
+        params: PutOrganizationConfigRuleRequest
+    ): Future[PutOrganizationConfigRuleResponse] = service.putOrganizationConfigRule(params).promise.toFuture
     def putRemediationConfigurationsFuture(
         params: PutRemediationConfigurationsRequest
     ): Future[PutRemediationConfigurationsResponse] = service.putRemediationConfigurations(params).promise.toFuture
@@ -318,6 +350,7 @@ package configservice {
     def deleteDeliveryChannel(params: DeleteDeliveryChannelRequest): Request[js.Object]                   = js.native
     def deleteEvaluationResults(params: DeleteEvaluationResultsRequest): Request[DeleteEvaluationResultsResponse] =
       js.native
+    def deleteOrganizationConfigRule(params: DeleteOrganizationConfigRuleRequest): Request[js.Object]       = js.native
     def deletePendingAggregationRequest(params: DeletePendingAggregationRequestRequest): Request[js.Object] = js.native
     def deleteRemediationConfiguration(
         params: DeleteRemediationConfigurationRequest
@@ -357,6 +390,12 @@ package configservice {
     ): Request[DescribeDeliveryChannelStatusResponse] = js.native
     def describeDeliveryChannels(params: DescribeDeliveryChannelsRequest): Request[DescribeDeliveryChannelsResponse] =
       js.native
+    def describeOrganizationConfigRuleStatuses(
+        params: DescribeOrganizationConfigRuleStatusesRequest
+    ): Request[DescribeOrganizationConfigRuleStatusesResponse] = js.native
+    def describeOrganizationConfigRules(
+        params: DescribeOrganizationConfigRulesRequest
+    ): Request[DescribeOrganizationConfigRulesResponse] = js.native
     def describePendingAggregationRequests(
         params: DescribePendingAggregationRequestsRequest
     ): Request[DescribePendingAggregationRequestsResponse] = js.native
@@ -394,6 +433,9 @@ package configservice {
     def getDiscoveredResourceCounts(
         params: GetDiscoveredResourceCountsRequest
     ): Request[GetDiscoveredResourceCountsResponse] = js.native
+    def getOrganizationConfigRuleDetailedStatus(
+        params: GetOrganizationConfigRuleDetailedStatusRequest
+    ): Request[GetOrganizationConfigRuleDetailedStatusResponse] = js.native
     def getResourceConfigHistory(params: GetResourceConfigHistoryRequest): Request[GetResourceConfigHistoryResponse] =
       js.native
     def listAggregateDiscoveredResources(
@@ -412,6 +454,9 @@ package configservice {
     def putConfigurationRecorder(params: PutConfigurationRecorderRequest): Request[js.Object] = js.native
     def putDeliveryChannel(params: PutDeliveryChannelRequest): Request[js.Object]             = js.native
     def putEvaluations(params: PutEvaluationsRequest): Request[PutEvaluationsResponse]        = js.native
+    def putOrganizationConfigRule(
+        params: PutOrganizationConfigRuleRequest
+    ): Request[PutOrganizationConfigRuleResponse] = js.native
     def putRemediationConfigurations(
         params: PutRemediationConfigurationsRequest
     ): Request[PutRemediationConfigurationsResponse] = js.native
@@ -1136,9 +1181,7 @@ package configservice {
 
   /**
     * Provides options for how often AWS Config delivers configuration snapshots to the Amazon S3 bucket in your delivery channel.
-    *
-    * '''Note:'''If you want to create a rule that triggers evaluations for your resources when AWS Config delivers the configuration snapshot, see the following:
-    * The frequency for a rule that triggers evaluations for your resources when AWS Config delivers the configuration snapshot is set by one of two values, depending on which is less frequent:
+    *  The frequency for a rule that triggers evaluations for your resources when AWS Config delivers the configuration snapshot is set by one of two values, depending on which is less frequent:
     * * The value for the <code>deliveryFrequency</code> parameter within the delivery channel configuration, which sets how often AWS Config delivers configuration snapshots. This value also sets how often AWS Config invokes evaluations for AWS Config rules.
     *  * The value for the <code>MaximumExecutionFrequency</code> parameter, which sets the maximum frequency with which AWS Config invokes evaluations for the rule. For more information, see <a>ConfigRule</a>.
     * If the <code>deliveryFrequency</code> value is less frequent than the <code>MaximumExecutionFrequency</code> value for a rule, AWS Config invokes the rule only as often as the <code>deliveryFrequency</code> value.
@@ -1499,6 +1542,23 @@ package configservice {
       val __obj = js.Dictionary.empty[js.Any]
 
       __obj.asInstanceOf[DeleteEvaluationResultsResponse]
+    }
+  }
+
+  @js.native
+  trait DeleteOrganizationConfigRuleRequest extends js.Object {
+    var OrganizationConfigRuleName: StringWithCharLimit64
+  }
+
+  object DeleteOrganizationConfigRuleRequest {
+    def apply(
+        OrganizationConfigRuleName: StringWithCharLimit64
+    ): DeleteOrganizationConfigRuleRequest = {
+      val __obj = js.Dictionary[js.Any](
+        "OrganizationConfigRuleName" -> OrganizationConfigRuleName.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[DeleteOrganizationConfigRuleRequest]
     }
   }
 
@@ -2170,6 +2230,86 @@ package configservice {
       val __obj = js.Dictionary.empty[js.Any]
       DeliveryChannels.foreach(__v => __obj.update("DeliveryChannels", __v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeDeliveryChannelsResponse]
+    }
+  }
+
+  @js.native
+  trait DescribeOrganizationConfigRuleStatusesRequest extends js.Object {
+    var Limit: js.UndefOr[CosmosPageLimit]
+    var NextToken: js.UndefOr[String]
+    var OrganizationConfigRuleNames: js.UndefOr[OrganizationConfigRuleNames]
+  }
+
+  object DescribeOrganizationConfigRuleStatusesRequest {
+    def apply(
+        Limit: js.UndefOr[CosmosPageLimit] = js.undefined,
+        NextToken: js.UndefOr[String] = js.undefined,
+        OrganizationConfigRuleNames: js.UndefOr[OrganizationConfigRuleNames] = js.undefined
+    ): DescribeOrganizationConfigRuleStatusesRequest = {
+      val __obj = js.Dictionary.empty[js.Any]
+      Limit.foreach(__v => __obj.update("Limit", __v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      OrganizationConfigRuleNames.foreach(__v => __obj.update("OrganizationConfigRuleNames", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeOrganizationConfigRuleStatusesRequest]
+    }
+  }
+
+  @js.native
+  trait DescribeOrganizationConfigRuleStatusesResponse extends js.Object {
+    var NextToken: js.UndefOr[String]
+    var OrganizationConfigRuleStatuses: js.UndefOr[OrganizationConfigRuleStatuses]
+  }
+
+  object DescribeOrganizationConfigRuleStatusesResponse {
+    def apply(
+        NextToken: js.UndefOr[String] = js.undefined,
+        OrganizationConfigRuleStatuses: js.UndefOr[OrganizationConfigRuleStatuses] = js.undefined
+    ): DescribeOrganizationConfigRuleStatusesResponse = {
+      val __obj = js.Dictionary.empty[js.Any]
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      OrganizationConfigRuleStatuses.foreach(
+        __v => __obj.update("OrganizationConfigRuleStatuses", __v.asInstanceOf[js.Any])
+      )
+      __obj.asInstanceOf[DescribeOrganizationConfigRuleStatusesResponse]
+    }
+  }
+
+  @js.native
+  trait DescribeOrganizationConfigRulesRequest extends js.Object {
+    var Limit: js.UndefOr[CosmosPageLimit]
+    var NextToken: js.UndefOr[String]
+    var OrganizationConfigRuleNames: js.UndefOr[OrganizationConfigRuleNames]
+  }
+
+  object DescribeOrganizationConfigRulesRequest {
+    def apply(
+        Limit: js.UndefOr[CosmosPageLimit] = js.undefined,
+        NextToken: js.UndefOr[String] = js.undefined,
+        OrganizationConfigRuleNames: js.UndefOr[OrganizationConfigRuleNames] = js.undefined
+    ): DescribeOrganizationConfigRulesRequest = {
+      val __obj = js.Dictionary.empty[js.Any]
+      Limit.foreach(__v => __obj.update("Limit", __v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      OrganizationConfigRuleNames.foreach(__v => __obj.update("OrganizationConfigRuleNames", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeOrganizationConfigRulesRequest]
+    }
+  }
+
+  @js.native
+  trait DescribeOrganizationConfigRulesResponse extends js.Object {
+    var NextToken: js.UndefOr[String]
+    var OrganizationConfigRules: js.UndefOr[OrganizationConfigRules]
+  }
+
+  object DescribeOrganizationConfigRulesResponse {
+    def apply(
+        NextToken: js.UndefOr[String] = js.undefined,
+        OrganizationConfigRules: js.UndefOr[OrganizationConfigRules] = js.undefined
+    ): DescribeOrganizationConfigRulesResponse = {
+      val __obj = js.Dictionary.empty[js.Any]
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      OrganizationConfigRules.foreach(__v => __obj.update("OrganizationConfigRules", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeOrganizationConfigRulesResponse]
     }
   }
 
@@ -2869,6 +3009,52 @@ package configservice {
     }
   }
 
+  @js.native
+  trait GetOrganizationConfigRuleDetailedStatusRequest extends js.Object {
+    var OrganizationConfigRuleName: StringWithCharLimit64
+    var Filters: js.UndefOr[StatusDetailFilters]
+    var Limit: js.UndefOr[CosmosPageLimit]
+    var NextToken: js.UndefOr[String]
+  }
+
+  object GetOrganizationConfigRuleDetailedStatusRequest {
+    def apply(
+        OrganizationConfigRuleName: StringWithCharLimit64,
+        Filters: js.UndefOr[StatusDetailFilters] = js.undefined,
+        Limit: js.UndefOr[CosmosPageLimit] = js.undefined,
+        NextToken: js.UndefOr[String] = js.undefined
+    ): GetOrganizationConfigRuleDetailedStatusRequest = {
+      val __obj = js.Dictionary[js.Any](
+        "OrganizationConfigRuleName" -> OrganizationConfigRuleName.asInstanceOf[js.Any]
+      )
+
+      Filters.foreach(__v => __obj.update("Filters", __v.asInstanceOf[js.Any]))
+      Limit.foreach(__v => __obj.update("Limit", __v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetOrganizationConfigRuleDetailedStatusRequest]
+    }
+  }
+
+  @js.native
+  trait GetOrganizationConfigRuleDetailedStatusResponse extends js.Object {
+    var NextToken: js.UndefOr[String]
+    var OrganizationConfigRuleDetailedStatus: js.UndefOr[OrganizationConfigRuleDetailedStatus]
+  }
+
+  object GetOrganizationConfigRuleDetailedStatusResponse {
+    def apply(
+        NextToken: js.UndefOr[String] = js.undefined,
+        OrganizationConfigRuleDetailedStatus: js.UndefOr[OrganizationConfigRuleDetailedStatus] = js.undefined
+    ): GetOrganizationConfigRuleDetailedStatusResponse = {
+      val __obj = js.Dictionary.empty[js.Any]
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      OrganizationConfigRuleDetailedStatus.foreach(
+        __v => __obj.update("OrganizationConfigRuleDetailedStatus", __v.asInstanceOf[js.Any])
+      )
+      __obj.asInstanceOf[GetOrganizationConfigRuleDetailedStatusResponse]
+    }
+  }
+
   /**
     * The input for the <a>GetResourceConfigHistory</a> action.
     */
@@ -3105,6 +3291,62 @@ package configservice {
     val values = IndexedSeq(One_Hour, Three_Hours, Six_Hours, Twelve_Hours, TwentyFour_Hours)
   }
 
+  object MemberAccountRuleStatusEnum {
+    val CREATE_SUCCESSFUL  = "CREATE_SUCCESSFUL"
+    val CREATE_IN_PROGRESS = "CREATE_IN_PROGRESS"
+    val CREATE_FAILED      = "CREATE_FAILED"
+    val UPDATE_SUCCESSFUL  = "UPDATE_SUCCESSFUL"
+    val UPDATE_FAILED      = "UPDATE_FAILED"
+    val UPDATE_IN_PROGRESS = "UPDATE_IN_PROGRESS"
+    val DELETE_SUCCESSFUL  = "DELETE_SUCCESSFUL"
+    val DELETE_FAILED      = "DELETE_FAILED"
+    val DELETE_IN_PROGRESS = "DELETE_IN_PROGRESS"
+
+    val values = IndexedSeq(
+      CREATE_SUCCESSFUL,
+      CREATE_IN_PROGRESS,
+      CREATE_FAILED,
+      UPDATE_SUCCESSFUL,
+      UPDATE_FAILED,
+      UPDATE_IN_PROGRESS,
+      DELETE_SUCCESSFUL,
+      DELETE_FAILED,
+      DELETE_IN_PROGRESS
+    )
+  }
+
+  @js.native
+  trait MemberAccountStatus extends js.Object {
+    var AccountId: AccountId
+    var ConfigRuleName: StringWithCharLimit64
+    var MemberAccountRuleStatus: MemberAccountRuleStatus
+    var ErrorCode: js.UndefOr[String]
+    var ErrorMessage: js.UndefOr[String]
+    var LastUpdateTime: js.UndefOr[Date]
+  }
+
+  object MemberAccountStatus {
+    def apply(
+        AccountId: AccountId,
+        ConfigRuleName: StringWithCharLimit64,
+        MemberAccountRuleStatus: MemberAccountRuleStatus,
+        ErrorCode: js.UndefOr[String] = js.undefined,
+        ErrorMessage: js.UndefOr[String] = js.undefined,
+        LastUpdateTime: js.UndefOr[Date] = js.undefined
+    ): MemberAccountStatus = {
+      val __obj = js.Dictionary[js.Any](
+        "AccountId"               -> AccountId.asInstanceOf[js.Any],
+        "ConfigRuleName"          -> ConfigRuleName.asInstanceOf[js.Any],
+        "MemberAccountRuleStatus" -> MemberAccountRuleStatus.asInstanceOf[js.Any]
+      )
+
+      ErrorCode.foreach(__v => __obj.update("ErrorCode", __v.asInstanceOf[js.Any]))
+      ErrorMessage.foreach(__v => __obj.update("ErrorMessage", __v.asInstanceOf[js.Any]))
+      LastUpdateTime.foreach(__v => __obj.update("LastUpdateTime", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[MemberAccountStatus]
+    }
+  }
+
   object MessageTypeEnum {
     val ConfigurationItemChangeNotification          = "ConfigurationItemChangeNotification"
     val ConfigurationSnapshotDeliveryCompleted       = "ConfigurationSnapshotDeliveryCompleted"
@@ -3120,7 +3362,7 @@ package configservice {
   }
 
   /**
-    * This object contains regions to setup the aggregator and an IAM role to retrieve organization details.
+    * This object contains regions to set up the aggregator and an IAM role to retrieve organization details.
     */
   @js.native
   trait OrganizationAggregationSource extends js.Object {
@@ -3143,6 +3385,186 @@ package configservice {
       AwsRegions.foreach(__v => __obj.update("AwsRegions", __v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[OrganizationAggregationSource]
     }
+  }
+
+  @js.native
+  trait OrganizationConfigRule extends js.Object {
+    var OrganizationConfigRuleArn: StringWithCharLimit256
+    var OrganizationConfigRuleName: StringWithCharLimit64
+    var ExcludedAccounts: js.UndefOr[ExcludedAccounts]
+    var LastUpdateTime: js.UndefOr[Date]
+    var OrganizationCustomRuleMetadata: js.UndefOr[OrganizationCustomRuleMetadata]
+    var OrganizationManagedRuleMetadata: js.UndefOr[OrganizationManagedRuleMetadata]
+  }
+
+  object OrganizationConfigRule {
+    def apply(
+        OrganizationConfigRuleArn: StringWithCharLimit256,
+        OrganizationConfigRuleName: StringWithCharLimit64,
+        ExcludedAccounts: js.UndefOr[ExcludedAccounts] = js.undefined,
+        LastUpdateTime: js.UndefOr[Date] = js.undefined,
+        OrganizationCustomRuleMetadata: js.UndefOr[OrganizationCustomRuleMetadata] = js.undefined,
+        OrganizationManagedRuleMetadata: js.UndefOr[OrganizationManagedRuleMetadata] = js.undefined
+    ): OrganizationConfigRule = {
+      val __obj = js.Dictionary[js.Any](
+        "OrganizationConfigRuleArn"  -> OrganizationConfigRuleArn.asInstanceOf[js.Any],
+        "OrganizationConfigRuleName" -> OrganizationConfigRuleName.asInstanceOf[js.Any]
+      )
+
+      ExcludedAccounts.foreach(__v => __obj.update("ExcludedAccounts", __v.asInstanceOf[js.Any]))
+      LastUpdateTime.foreach(__v => __obj.update("LastUpdateTime", __v.asInstanceOf[js.Any]))
+      OrganizationCustomRuleMetadata.foreach(
+        __v => __obj.update("OrganizationCustomRuleMetadata", __v.asInstanceOf[js.Any])
+      )
+      OrganizationManagedRuleMetadata.foreach(
+        __v => __obj.update("OrganizationManagedRuleMetadata", __v.asInstanceOf[js.Any])
+      )
+      __obj.asInstanceOf[OrganizationConfigRule]
+    }
+  }
+
+  @js.native
+  trait OrganizationConfigRuleStatus extends js.Object {
+    var OrganizationConfigRuleName: StringWithCharLimit64
+    var OrganizationRuleStatus: OrganizationRuleStatus
+    var ErrorCode: js.UndefOr[String]
+    var ErrorMessage: js.UndefOr[String]
+    var LastUpdateTime: js.UndefOr[Date]
+  }
+
+  object OrganizationConfigRuleStatus {
+    def apply(
+        OrganizationConfigRuleName: StringWithCharLimit64,
+        OrganizationRuleStatus: OrganizationRuleStatus,
+        ErrorCode: js.UndefOr[String] = js.undefined,
+        ErrorMessage: js.UndefOr[String] = js.undefined,
+        LastUpdateTime: js.UndefOr[Date] = js.undefined
+    ): OrganizationConfigRuleStatus = {
+      val __obj = js.Dictionary[js.Any](
+        "OrganizationConfigRuleName" -> OrganizationConfigRuleName.asInstanceOf[js.Any],
+        "OrganizationRuleStatus"     -> OrganizationRuleStatus.asInstanceOf[js.Any]
+      )
+
+      ErrorCode.foreach(__v => __obj.update("ErrorCode", __v.asInstanceOf[js.Any]))
+      ErrorMessage.foreach(__v => __obj.update("ErrorMessage", __v.asInstanceOf[js.Any]))
+      LastUpdateTime.foreach(__v => __obj.update("LastUpdateTime", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[OrganizationConfigRuleStatus]
+    }
+  }
+
+  object OrganizationConfigRuleTriggerTypeEnum {
+    val ConfigurationItemChangeNotification          = "ConfigurationItemChangeNotification"
+    val OversizedConfigurationItemChangeNotification = "OversizedConfigurationItemChangeNotification"
+    val ScheduledNotification                        = "ScheduledNotification"
+
+    val values = IndexedSeq(
+      ConfigurationItemChangeNotification,
+      OversizedConfigurationItemChangeNotification,
+      ScheduledNotification
+    )
+  }
+
+  @js.native
+  trait OrganizationCustomRuleMetadata extends js.Object {
+    var LambdaFunctionArn: StringWithCharLimit256
+    var OrganizationConfigRuleTriggerTypes: OrganizationConfigRuleTriggerTypes
+    var Description: js.UndefOr[StringWithCharLimit256Min0]
+    var InputParameters: js.UndefOr[StringWithCharLimit2048]
+    var MaximumExecutionFrequency: js.UndefOr[MaximumExecutionFrequency]
+    var ResourceIdScope: js.UndefOr[StringWithCharLimit768]
+    var ResourceTypesScope: js.UndefOr[ResourceTypesScope]
+    var TagKeyScope: js.UndefOr[StringWithCharLimit128]
+    var TagValueScope: js.UndefOr[StringWithCharLimit256]
+  }
+
+  object OrganizationCustomRuleMetadata {
+    def apply(
+        LambdaFunctionArn: StringWithCharLimit256,
+        OrganizationConfigRuleTriggerTypes: OrganizationConfigRuleTriggerTypes,
+        Description: js.UndefOr[StringWithCharLimit256Min0] = js.undefined,
+        InputParameters: js.UndefOr[StringWithCharLimit2048] = js.undefined,
+        MaximumExecutionFrequency: js.UndefOr[MaximumExecutionFrequency] = js.undefined,
+        ResourceIdScope: js.UndefOr[StringWithCharLimit768] = js.undefined,
+        ResourceTypesScope: js.UndefOr[ResourceTypesScope] = js.undefined,
+        TagKeyScope: js.UndefOr[StringWithCharLimit128] = js.undefined,
+        TagValueScope: js.UndefOr[StringWithCharLimit256] = js.undefined
+    ): OrganizationCustomRuleMetadata = {
+      val __obj = js.Dictionary[js.Any](
+        "LambdaFunctionArn"                  -> LambdaFunctionArn.asInstanceOf[js.Any],
+        "OrganizationConfigRuleTriggerTypes" -> OrganizationConfigRuleTriggerTypes.asInstanceOf[js.Any]
+      )
+
+      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
+      InputParameters.foreach(__v => __obj.update("InputParameters", __v.asInstanceOf[js.Any]))
+      MaximumExecutionFrequency.foreach(__v => __obj.update("MaximumExecutionFrequency", __v.asInstanceOf[js.Any]))
+      ResourceIdScope.foreach(__v => __obj.update("ResourceIdScope", __v.asInstanceOf[js.Any]))
+      ResourceTypesScope.foreach(__v => __obj.update("ResourceTypesScope", __v.asInstanceOf[js.Any]))
+      TagKeyScope.foreach(__v => __obj.update("TagKeyScope", __v.asInstanceOf[js.Any]))
+      TagValueScope.foreach(__v => __obj.update("TagValueScope", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[OrganizationCustomRuleMetadata]
+    }
+  }
+
+  @js.native
+  trait OrganizationManagedRuleMetadata extends js.Object {
+    var RuleIdentifier: StringWithCharLimit256
+    var Description: js.UndefOr[StringWithCharLimit256Min0]
+    var InputParameters: js.UndefOr[StringWithCharLimit2048]
+    var MaximumExecutionFrequency: js.UndefOr[MaximumExecutionFrequency]
+    var ResourceIdScope: js.UndefOr[StringWithCharLimit768]
+    var ResourceTypesScope: js.UndefOr[ResourceTypesScope]
+    var TagKeyScope: js.UndefOr[StringWithCharLimit128]
+    var TagValueScope: js.UndefOr[StringWithCharLimit256]
+  }
+
+  object OrganizationManagedRuleMetadata {
+    def apply(
+        RuleIdentifier: StringWithCharLimit256,
+        Description: js.UndefOr[StringWithCharLimit256Min0] = js.undefined,
+        InputParameters: js.UndefOr[StringWithCharLimit2048] = js.undefined,
+        MaximumExecutionFrequency: js.UndefOr[MaximumExecutionFrequency] = js.undefined,
+        ResourceIdScope: js.UndefOr[StringWithCharLimit768] = js.undefined,
+        ResourceTypesScope: js.UndefOr[ResourceTypesScope] = js.undefined,
+        TagKeyScope: js.UndefOr[StringWithCharLimit128] = js.undefined,
+        TagValueScope: js.UndefOr[StringWithCharLimit256] = js.undefined
+    ): OrganizationManagedRuleMetadata = {
+      val __obj = js.Dictionary[js.Any](
+        "RuleIdentifier" -> RuleIdentifier.asInstanceOf[js.Any]
+      )
+
+      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
+      InputParameters.foreach(__v => __obj.update("InputParameters", __v.asInstanceOf[js.Any]))
+      MaximumExecutionFrequency.foreach(__v => __obj.update("MaximumExecutionFrequency", __v.asInstanceOf[js.Any]))
+      ResourceIdScope.foreach(__v => __obj.update("ResourceIdScope", __v.asInstanceOf[js.Any]))
+      ResourceTypesScope.foreach(__v => __obj.update("ResourceTypesScope", __v.asInstanceOf[js.Any]))
+      TagKeyScope.foreach(__v => __obj.update("TagKeyScope", __v.asInstanceOf[js.Any]))
+      TagValueScope.foreach(__v => __obj.update("TagValueScope", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[OrganizationManagedRuleMetadata]
+    }
+  }
+
+  object OrganizationRuleStatusEnum {
+    val CREATE_SUCCESSFUL  = "CREATE_SUCCESSFUL"
+    val CREATE_IN_PROGRESS = "CREATE_IN_PROGRESS"
+    val CREATE_FAILED      = "CREATE_FAILED"
+    val UPDATE_SUCCESSFUL  = "UPDATE_SUCCESSFUL"
+    val UPDATE_FAILED      = "UPDATE_FAILED"
+    val UPDATE_IN_PROGRESS = "UPDATE_IN_PROGRESS"
+    val DELETE_SUCCESSFUL  = "DELETE_SUCCESSFUL"
+    val DELETE_FAILED      = "DELETE_FAILED"
+    val DELETE_IN_PROGRESS = "DELETE_IN_PROGRESS"
+
+    val values = IndexedSeq(
+      CREATE_SUCCESSFUL,
+      CREATE_IN_PROGRESS,
+      CREATE_FAILED,
+      UPDATE_SUCCESSFUL,
+      UPDATE_FAILED,
+      UPDATE_IN_PROGRESS,
+      DELETE_SUCCESSFUL,
+      DELETE_FAILED,
+      DELETE_IN_PROGRESS
+    )
   }
 
   object OwnerEnum {
@@ -3177,18 +3599,21 @@ package configservice {
   trait PutAggregationAuthorizationRequest extends js.Object {
     var AuthorizedAccountId: AccountId
     var AuthorizedAwsRegion: AwsRegion
+    var Tags: js.UndefOr[TagsList]
   }
 
   object PutAggregationAuthorizationRequest {
     def apply(
         AuthorizedAccountId: AccountId,
-        AuthorizedAwsRegion: AwsRegion
+        AuthorizedAwsRegion: AwsRegion,
+        Tags: js.UndefOr[TagsList] = js.undefined
     ): PutAggregationAuthorizationRequest = {
       val __obj = js.Dictionary[js.Any](
         "AuthorizedAccountId" -> AuthorizedAccountId.asInstanceOf[js.Any],
         "AuthorizedAwsRegion" -> AuthorizedAwsRegion.asInstanceOf[js.Any]
       )
 
+      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PutAggregationAuthorizationRequest]
     }
   }
@@ -3211,16 +3636,19 @@ package configservice {
   @js.native
   trait PutConfigRuleRequest extends js.Object {
     var ConfigRule: ConfigRule
+    var Tags: js.UndefOr[TagsList]
   }
 
   object PutConfigRuleRequest {
     def apply(
-        ConfigRule: ConfigRule
+        ConfigRule: ConfigRule,
+        Tags: js.UndefOr[TagsList] = js.undefined
     ): PutConfigRuleRequest = {
       val __obj = js.Dictionary[js.Any](
         "ConfigRule" -> ConfigRule.asInstanceOf[js.Any]
       )
 
+      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PutConfigRuleRequest]
     }
   }
@@ -3230,13 +3658,15 @@ package configservice {
     var ConfigurationAggregatorName: ConfigurationAggregatorName
     var AccountAggregationSources: js.UndefOr[AccountAggregationSourceList]
     var OrganizationAggregationSource: js.UndefOr[OrganizationAggregationSource]
+    var Tags: js.UndefOr[TagsList]
   }
 
   object PutConfigurationAggregatorRequest {
     def apply(
         ConfigurationAggregatorName: ConfigurationAggregatorName,
         AccountAggregationSources: js.UndefOr[AccountAggregationSourceList] = js.undefined,
-        OrganizationAggregationSource: js.UndefOr[OrganizationAggregationSource] = js.undefined
+        OrganizationAggregationSource: js.UndefOr[OrganizationAggregationSource] = js.undefined,
+        Tags: js.UndefOr[TagsList] = js.undefined
     ): PutConfigurationAggregatorRequest = {
       val __obj = js.Dictionary[js.Any](
         "ConfigurationAggregatorName" -> ConfigurationAggregatorName.asInstanceOf[js.Any]
@@ -3246,6 +3676,7 @@ package configservice {
       OrganizationAggregationSource.foreach(
         __v => __obj.update("OrganizationAggregationSource", __v.asInstanceOf[js.Any])
       )
+      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PutConfigurationAggregatorRequest]
     }
   }
@@ -3346,6 +3777,51 @@ package configservice {
       val __obj = js.Dictionary.empty[js.Any]
       FailedEvaluations.foreach(__v => __obj.update("FailedEvaluations", __v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PutEvaluationsResponse]
+    }
+  }
+
+  @js.native
+  trait PutOrganizationConfigRuleRequest extends js.Object {
+    var OrganizationConfigRuleName: StringWithCharLimit64
+    var ExcludedAccounts: js.UndefOr[ExcludedAccounts]
+    var OrganizationCustomRuleMetadata: js.UndefOr[OrganizationCustomRuleMetadata]
+    var OrganizationManagedRuleMetadata: js.UndefOr[OrganizationManagedRuleMetadata]
+  }
+
+  object PutOrganizationConfigRuleRequest {
+    def apply(
+        OrganizationConfigRuleName: StringWithCharLimit64,
+        ExcludedAccounts: js.UndefOr[ExcludedAccounts] = js.undefined,
+        OrganizationCustomRuleMetadata: js.UndefOr[OrganizationCustomRuleMetadata] = js.undefined,
+        OrganizationManagedRuleMetadata: js.UndefOr[OrganizationManagedRuleMetadata] = js.undefined
+    ): PutOrganizationConfigRuleRequest = {
+      val __obj = js.Dictionary[js.Any](
+        "OrganizationConfigRuleName" -> OrganizationConfigRuleName.asInstanceOf[js.Any]
+      )
+
+      ExcludedAccounts.foreach(__v => __obj.update("ExcludedAccounts", __v.asInstanceOf[js.Any]))
+      OrganizationCustomRuleMetadata.foreach(
+        __v => __obj.update("OrganizationCustomRuleMetadata", __v.asInstanceOf[js.Any])
+      )
+      OrganizationManagedRuleMetadata.foreach(
+        __v => __obj.update("OrganizationManagedRuleMetadata", __v.asInstanceOf[js.Any])
+      )
+      __obj.asInstanceOf[PutOrganizationConfigRuleRequest]
+    }
+  }
+
+  @js.native
+  trait PutOrganizationConfigRuleResponse extends js.Object {
+    var OrganizationConfigRuleArn: js.UndefOr[StringWithCharLimit256]
+  }
+
+  object PutOrganizationConfigRuleResponse {
+    def apply(
+        OrganizationConfigRuleArn: js.UndefOr[StringWithCharLimit256] = js.undefined
+    ): PutOrganizationConfigRuleResponse = {
+      val __obj = js.Dictionary.empty[js.Any]
+      OrganizationConfigRuleArn.foreach(__v => __obj.update("OrganizationConfigRuleArn", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PutOrganizationConfigRuleResponse]
     }
   }
 
@@ -4174,6 +4650,24 @@ package configservice {
       val __obj = js.Dictionary.empty[js.Any]
       Values.foreach(__v => __obj.update("Values", __v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[StaticValue]
+    }
+  }
+
+  @js.native
+  trait StatusDetailFilters extends js.Object {
+    var AccountId: js.UndefOr[AccountId]
+    var MemberAccountRuleStatus: js.UndefOr[MemberAccountRuleStatus]
+  }
+
+  object StatusDetailFilters {
+    def apply(
+        AccountId: js.UndefOr[AccountId] = js.undefined,
+        MemberAccountRuleStatus: js.UndefOr[MemberAccountRuleStatus] = js.undefined
+    ): StatusDetailFilters = {
+      val __obj = js.Dictionary.empty[js.Any]
+      AccountId.foreach(__v => __obj.update("AccountId", __v.asInstanceOf[js.Any]))
+      MemberAccountRuleStatus.foreach(__v => __obj.update("MemberAccountRuleStatus", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[StatusDetailFilters]
     }
   }
 

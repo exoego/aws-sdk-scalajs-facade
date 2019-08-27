@@ -9,6 +9,8 @@ import facade.amazonaws._
 
 package object mediapackage {
   type AdMarkers                                   = String
+  type AdTriggers                                  = js.Array[__AdTriggersElement]
+  type AdsOnDeliveryRestrictions                   = String
   type EncryptionMethod                            = String
   type ManifestLayout                              = String
   type MaxResults                                  = Int
@@ -17,6 +19,7 @@ package object mediapackage {
   type SegmentTemplateFormat                       = String
   type StreamOrder                                 = String
   type Tags                                        = js.Dictionary[__string]
+  type __AdTriggersElement                         = String
   type __PeriodTriggersElement                     = String
   type __boolean                                   = Boolean
   type __integer                                   = Int
@@ -98,6 +101,25 @@ package mediapackage {
     val PASSTHROUGH     = "PASSTHROUGH"
 
     val values = IndexedSeq(NONE, SCTE35_ENHANCED, PASSTHROUGH)
+  }
+
+  /**
+    * This setting allows the delivery restriction flags on SCTE-35 segmentation descriptors to
+    * determine whether a message signals an ad.  Choosing "NONE" means no SCTE-35 messages become
+    * ads.  Choosing "RESTRICTED" means SCTE-35 messages of the types specified in AdTriggers that
+    * contain delivery restrictions will be treated as ads.  Choosing "UNRESTRICTED" means SCTE-35
+    * messages of the types specified in AdTriggers that do not contain delivery restrictions will
+    * be treated as ads.  Choosing "BOTH" means all SCTE-35 messages of the types specified in
+    * AdTriggers will be treated as ads.  Note that Splice Insert messages do not have these flags
+    * and are always treated as ads if specified in AdTriggers.
+    */
+  object AdsOnDeliveryRestrictionsEnum {
+    val NONE         = "NONE"
+    val RESTRICTED   = "RESTRICTED"
+    val UNRESTRICTED = "UNRESTRICTED"
+    val BOTH         = "BOTH"
+
+    val values = IndexedSeq(NONE, RESTRICTED, UNRESTRICTED, BOTH)
   }
 
   /**
@@ -401,6 +423,8 @@ package mediapackage {
     */
   @js.native
   trait DashPackage extends js.Object {
+    var AdTriggers: js.UndefOr[AdTriggers]
+    var AdsOnDeliveryRestrictions: js.UndefOr[AdsOnDeliveryRestrictions]
     var Encryption: js.UndefOr[DashEncryption]
     var ManifestLayout: js.UndefOr[ManifestLayout]
     var ManifestWindowSeconds: js.UndefOr[__integer]
@@ -416,6 +440,8 @@ package mediapackage {
 
   object DashPackage {
     def apply(
+        AdTriggers: js.UndefOr[AdTriggers] = js.undefined,
+        AdsOnDeliveryRestrictions: js.UndefOr[AdsOnDeliveryRestrictions] = js.undefined,
         Encryption: js.UndefOr[DashEncryption] = js.undefined,
         ManifestLayout: js.UndefOr[ManifestLayout] = js.undefined,
         ManifestWindowSeconds: js.UndefOr[__integer] = js.undefined,
@@ -429,6 +455,8 @@ package mediapackage {
         SuggestedPresentationDelaySeconds: js.UndefOr[__integer] = js.undefined
     ): DashPackage = {
       val __obj = js.Dictionary.empty[js.Any]
+      AdTriggers.foreach(__v => __obj.update("AdTriggers", __v.asInstanceOf[js.Any]))
+      AdsOnDeliveryRestrictions.foreach(__v => __obj.update("AdsOnDeliveryRestrictions", __v.asInstanceOf[js.Any]))
       Encryption.foreach(__v => __obj.update("Encryption", __v.asInstanceOf[js.Any]))
       ManifestLayout.foreach(__v => __obj.update("ManifestLayout", __v.asInstanceOf[js.Any]))
       ManifestWindowSeconds.foreach(__v => __obj.update("ManifestWindowSeconds", __v.asInstanceOf[js.Any]))
@@ -728,6 +756,8 @@ package mediapackage {
   trait HlsManifestCreateOrUpdateParameters extends js.Object {
     var Id: __string
     var AdMarkers: js.UndefOr[AdMarkers]
+    var AdTriggers: js.UndefOr[AdTriggers]
+    var AdsOnDeliveryRestrictions: js.UndefOr[AdsOnDeliveryRestrictions]
     var IncludeIframeOnlyStream: js.UndefOr[__boolean]
     var ManifestName: js.UndefOr[__string]
     var PlaylistType: js.UndefOr[PlaylistType]
@@ -739,6 +769,8 @@ package mediapackage {
     def apply(
         Id: __string,
         AdMarkers: js.UndefOr[AdMarkers] = js.undefined,
+        AdTriggers: js.UndefOr[AdTriggers] = js.undefined,
+        AdsOnDeliveryRestrictions: js.UndefOr[AdsOnDeliveryRestrictions] = js.undefined,
         IncludeIframeOnlyStream: js.UndefOr[__boolean] = js.undefined,
         ManifestName: js.UndefOr[__string] = js.undefined,
         PlaylistType: js.UndefOr[PlaylistType] = js.undefined,
@@ -750,6 +782,8 @@ package mediapackage {
       )
 
       AdMarkers.foreach(__v => __obj.update("AdMarkers", __v.asInstanceOf[js.Any]))
+      AdTriggers.foreach(__v => __obj.update("AdTriggers", __v.asInstanceOf[js.Any]))
+      AdsOnDeliveryRestrictions.foreach(__v => __obj.update("AdsOnDeliveryRestrictions", __v.asInstanceOf[js.Any]))
       IncludeIframeOnlyStream.foreach(__v => __obj.update("IncludeIframeOnlyStream", __v.asInstanceOf[js.Any]))
       ManifestName.foreach(__v => __obj.update("ManifestName", __v.asInstanceOf[js.Any]))
       PlaylistType.foreach(__v => __obj.update("PlaylistType", __v.asInstanceOf[js.Any]))
@@ -767,6 +801,8 @@ package mediapackage {
   @js.native
   trait HlsPackage extends js.Object {
     var AdMarkers: js.UndefOr[AdMarkers]
+    var AdTriggers: js.UndefOr[AdTriggers]
+    var AdsOnDeliveryRestrictions: js.UndefOr[AdsOnDeliveryRestrictions]
     var Encryption: js.UndefOr[HlsEncryption]
     var IncludeIframeOnlyStream: js.UndefOr[__boolean]
     var PlaylistType: js.UndefOr[PlaylistType]
@@ -780,6 +816,8 @@ package mediapackage {
   object HlsPackage {
     def apply(
         AdMarkers: js.UndefOr[AdMarkers] = js.undefined,
+        AdTriggers: js.UndefOr[AdTriggers] = js.undefined,
+        AdsOnDeliveryRestrictions: js.UndefOr[AdsOnDeliveryRestrictions] = js.undefined,
         Encryption: js.UndefOr[HlsEncryption] = js.undefined,
         IncludeIframeOnlyStream: js.UndefOr[__boolean] = js.undefined,
         PlaylistType: js.UndefOr[PlaylistType] = js.undefined,
@@ -791,6 +829,8 @@ package mediapackage {
     ): HlsPackage = {
       val __obj = js.Dictionary.empty[js.Any]
       AdMarkers.foreach(__v => __obj.update("AdMarkers", __v.asInstanceOf[js.Any]))
+      AdTriggers.foreach(__v => __obj.update("AdTriggers", __v.asInstanceOf[js.Any]))
+      AdsOnDeliveryRestrictions.foreach(__v => __obj.update("AdsOnDeliveryRestrictions", __v.asInstanceOf[js.Any]))
       Encryption.foreach(__v => __obj.update("Encryption", __v.asInstanceOf[js.Any]))
       IncludeIframeOnlyStream.foreach(__v => __obj.update("IncludeIframeOnlyStream", __v.asInstanceOf[js.Any]))
       PlaylistType.foreach(__v => __obj.update("PlaylistType", __v.asInstanceOf[js.Any]))
@@ -1161,8 +1201,9 @@ package mediapackage {
   object SegmentTemplateFormatEnum {
     val NUMBER_WITH_TIMELINE = "NUMBER_WITH_TIMELINE"
     val TIME_WITH_TIMELINE   = "TIME_WITH_TIMELINE"
+    val NUMBER_WITH_DURATION = "NUMBER_WITH_DURATION"
 
-    val values = IndexedSeq(NUMBER_WITH_TIMELINE, TIME_WITH_TIMELINE)
+    val values = IndexedSeq(NUMBER_WITH_TIMELINE, TIME_WITH_TIMELINE, NUMBER_WITH_DURATION)
   }
 
   /**
@@ -1418,6 +1459,28 @@ package mediapackage {
       Whitelist.foreach(__v => __obj.update("Whitelist", __v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateOriginEndpointResponse]
     }
+  }
+
+  object __AdTriggersElementEnum {
+    val SPLICE_INSERT                             = "SPLICE_INSERT"
+    val BREAK                                     = "BREAK"
+    val PROVIDER_ADVERTISEMENT                    = "PROVIDER_ADVERTISEMENT"
+    val DISTRIBUTOR_ADVERTISEMENT                 = "DISTRIBUTOR_ADVERTISEMENT"
+    val PROVIDER_PLACEMENT_OPPORTUNITY            = "PROVIDER_PLACEMENT_OPPORTUNITY"
+    val DISTRIBUTOR_PLACEMENT_OPPORTUNITY         = "DISTRIBUTOR_PLACEMENT_OPPORTUNITY"
+    val PROVIDER_OVERLAY_PLACEMENT_OPPORTUNITY    = "PROVIDER_OVERLAY_PLACEMENT_OPPORTUNITY"
+    val DISTRIBUTOR_OVERLAY_PLACEMENT_OPPORTUNITY = "DISTRIBUTOR_OVERLAY_PLACEMENT_OPPORTUNITY"
+
+    val values = IndexedSeq(
+      SPLICE_INSERT,
+      BREAK,
+      PROVIDER_ADVERTISEMENT,
+      DISTRIBUTOR_ADVERTISEMENT,
+      PROVIDER_PLACEMENT_OPPORTUNITY,
+      DISTRIBUTOR_PLACEMENT_OPPORTUNITY,
+      PROVIDER_OVERLAY_PLACEMENT_OPPORTUNITY,
+      DISTRIBUTOR_OVERLAY_PLACEMENT_OPPORTUNITY
+    )
   }
 
   object __PeriodTriggersElementEnum {

@@ -484,19 +484,19 @@ package greengrass {
   @js.native
   trait AssociateRoleToGroupRequest extends js.Object {
     var GroupId: __string
-    var RoleArn: js.UndefOr[__string]
+    var RoleArn: __string
   }
 
   object AssociateRoleToGroupRequest {
     def apply(
         GroupId: __string,
-        RoleArn: js.UndefOr[__string] = js.undefined
+        RoleArn: __string
     ): AssociateRoleToGroupRequest = {
       val __obj = js.Dictionary[js.Any](
-        "GroupId" -> GroupId.asInstanceOf[js.Any]
+        "GroupId" -> GroupId.asInstanceOf[js.Any],
+        "RoleArn" -> RoleArn.asInstanceOf[js.Any]
       )
 
-      RoleArn.foreach(__v => __obj.update("RoleArn", __v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AssociateRoleToGroupRequest]
     }
   }
@@ -518,15 +518,17 @@ package greengrass {
 
   @js.native
   trait AssociateServiceRoleToAccountRequest extends js.Object {
-    var RoleArn: js.UndefOr[__string]
+    var RoleArn: __string
   }
 
   object AssociateServiceRoleToAccountRequest {
     def apply(
-        RoleArn: js.UndefOr[__string] = js.undefined
+        RoleArn: __string
     ): AssociateServiceRoleToAccountRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      RoleArn.foreach(__v => __obj.update("RoleArn", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dictionary[js.Any](
+        "RoleArn" -> RoleArn.asInstanceOf[js.Any]
+      )
+
       __obj.asInstanceOf[AssociateServiceRoleToAccountRequest]
     }
   }
@@ -679,20 +681,22 @@ package greengrass {
     */
   @js.native
   trait Connector extends js.Object {
-    var ConnectorArn: js.UndefOr[__string]
-    var Id: js.UndefOr[__string]
+    var ConnectorArn: __string
+    var Id: __string
     var Parameters: js.UndefOr[__mapOf__string]
   }
 
   object Connector {
     def apply(
-        ConnectorArn: js.UndefOr[__string] = js.undefined,
-        Id: js.UndefOr[__string] = js.undefined,
+        ConnectorArn: __string,
+        Id: __string,
         Parameters: js.UndefOr[__mapOf__string] = js.undefined
     ): Connector = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ConnectorArn.foreach(__v => __obj.update("ConnectorArn", __v.asInstanceOf[js.Any]))
-      Id.foreach(__v => __obj.update("Id", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dictionary[js.Any](
+        "ConnectorArn" -> ConnectorArn.asInstanceOf[js.Any],
+        "Id"           -> Id.asInstanceOf[js.Any]
+      )
+
       Parameters.foreach(__v => __obj.update("Parameters", __v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Connector]
     }
@@ -721,24 +725,26 @@ package greengrass {
     */
   @js.native
   trait Core extends js.Object {
-    var CertificateArn: js.UndefOr[__string]
-    var Id: js.UndefOr[__string]
+    var CertificateArn: __string
+    var Id: __string
+    var ThingArn: __string
     var SyncShadow: js.UndefOr[__boolean]
-    var ThingArn: js.UndefOr[__string]
   }
 
   object Core {
     def apply(
-        CertificateArn: js.UndefOr[__string] = js.undefined,
-        Id: js.UndefOr[__string] = js.undefined,
-        SyncShadow: js.UndefOr[__boolean] = js.undefined,
-        ThingArn: js.UndefOr[__string] = js.undefined
+        CertificateArn: __string,
+        Id: __string,
+        ThingArn: __string,
+        SyncShadow: js.UndefOr[__boolean] = js.undefined
     ): Core = {
-      val __obj = js.Dictionary.empty[js.Any]
-      CertificateArn.foreach(__v => __obj.update("CertificateArn", __v.asInstanceOf[js.Any]))
-      Id.foreach(__v => __obj.update("Id", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dictionary[js.Any](
+        "CertificateArn" -> CertificateArn.asInstanceOf[js.Any],
+        "Id"             -> Id.asInstanceOf[js.Any],
+        "ThingArn"       -> ThingArn.asInstanceOf[js.Any]
+      )
+
       SyncShadow.foreach(__v => __obj.update("SyncShadow", __v.asInstanceOf[js.Any]))
-      ThingArn.foreach(__v => __obj.update("ThingArn", __v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Core]
     }
   }
@@ -974,28 +980,28 @@ package greengrass {
 
   @js.native
   trait CreateDeploymentRequest extends js.Object {
+    var DeploymentType: DeploymentType
     var GroupId: __string
     var AmznClientToken: js.UndefOr[__string]
     var DeploymentId: js.UndefOr[__string]
-    var DeploymentType: js.UndefOr[DeploymentType]
     var GroupVersionId: js.UndefOr[__string]
   }
 
   object CreateDeploymentRequest {
     def apply(
+        DeploymentType: DeploymentType,
         GroupId: __string,
         AmznClientToken: js.UndefOr[__string] = js.undefined,
         DeploymentId: js.UndefOr[__string] = js.undefined,
-        DeploymentType: js.UndefOr[DeploymentType] = js.undefined,
         GroupVersionId: js.UndefOr[__string] = js.undefined
     ): CreateDeploymentRequest = {
       val __obj = js.Dictionary[js.Any](
-        "GroupId" -> GroupId.asInstanceOf[js.Any]
+        "DeploymentType" -> DeploymentType.asInstanceOf[js.Any],
+        "GroupId"        -> GroupId.asInstanceOf[js.Any]
       )
 
       AmznClientToken.foreach(__v => __obj.update("AmznClientToken", __v.asInstanceOf[js.Any]))
       DeploymentId.foreach(__v => __obj.update("DeploymentId", __v.asInstanceOf[js.Any]))
-      DeploymentType.foreach(__v => __obj.update("DeploymentType", __v.asInstanceOf[js.Any]))
       GroupVersionId.foreach(__v => __obj.update("GroupVersionId", __v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateDeploymentRequest]
     }
@@ -1610,35 +1616,35 @@ package greengrass {
 
   @js.native
   trait CreateSoftwareUpdateJobRequest extends js.Object {
+    var S3UrlSignerRole: S3UrlSignerRole
+    var SoftwareToUpdate: SoftwareToUpdate
+    var UpdateTargets: UpdateTargets
+    var UpdateTargetsArchitecture: UpdateTargetsArchitecture
+    var UpdateTargetsOperatingSystem: UpdateTargetsOperatingSystem
     var AmznClientToken: js.UndefOr[__string]
-    var S3UrlSignerRole: js.UndefOr[S3UrlSignerRole]
-    var SoftwareToUpdate: js.UndefOr[SoftwareToUpdate]
     var UpdateAgentLogLevel: js.UndefOr[UpdateAgentLogLevel]
-    var UpdateTargets: js.UndefOr[UpdateTargets]
-    var UpdateTargetsArchitecture: js.UndefOr[UpdateTargetsArchitecture]
-    var UpdateTargetsOperatingSystem: js.UndefOr[UpdateTargetsOperatingSystem]
   }
 
   object CreateSoftwareUpdateJobRequest {
     def apply(
+        S3UrlSignerRole: S3UrlSignerRole,
+        SoftwareToUpdate: SoftwareToUpdate,
+        UpdateTargets: UpdateTargets,
+        UpdateTargetsArchitecture: UpdateTargetsArchitecture,
+        UpdateTargetsOperatingSystem: UpdateTargetsOperatingSystem,
         AmznClientToken: js.UndefOr[__string] = js.undefined,
-        S3UrlSignerRole: js.UndefOr[S3UrlSignerRole] = js.undefined,
-        SoftwareToUpdate: js.UndefOr[SoftwareToUpdate] = js.undefined,
-        UpdateAgentLogLevel: js.UndefOr[UpdateAgentLogLevel] = js.undefined,
-        UpdateTargets: js.UndefOr[UpdateTargets] = js.undefined,
-        UpdateTargetsArchitecture: js.UndefOr[UpdateTargetsArchitecture] = js.undefined,
-        UpdateTargetsOperatingSystem: js.UndefOr[UpdateTargetsOperatingSystem] = js.undefined
+        UpdateAgentLogLevel: js.UndefOr[UpdateAgentLogLevel] = js.undefined
     ): CreateSoftwareUpdateJobRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      AmznClientToken.foreach(__v => __obj.update("AmznClientToken", __v.asInstanceOf[js.Any]))
-      S3UrlSignerRole.foreach(__v => __obj.update("S3UrlSignerRole", __v.asInstanceOf[js.Any]))
-      SoftwareToUpdate.foreach(__v => __obj.update("SoftwareToUpdate", __v.asInstanceOf[js.Any]))
-      UpdateAgentLogLevel.foreach(__v => __obj.update("UpdateAgentLogLevel", __v.asInstanceOf[js.Any]))
-      UpdateTargets.foreach(__v => __obj.update("UpdateTargets", __v.asInstanceOf[js.Any]))
-      UpdateTargetsArchitecture.foreach(__v => __obj.update("UpdateTargetsArchitecture", __v.asInstanceOf[js.Any]))
-      UpdateTargetsOperatingSystem.foreach(
-        __v => __obj.update("UpdateTargetsOperatingSystem", __v.asInstanceOf[js.Any])
+      val __obj = js.Dictionary[js.Any](
+        "S3UrlSignerRole"              -> S3UrlSignerRole.asInstanceOf[js.Any],
+        "SoftwareToUpdate"             -> SoftwareToUpdate.asInstanceOf[js.Any],
+        "UpdateTargets"                -> UpdateTargets.asInstanceOf[js.Any],
+        "UpdateTargetsArchitecture"    -> UpdateTargetsArchitecture.asInstanceOf[js.Any],
+        "UpdateTargetsOperatingSystem" -> UpdateTargetsOperatingSystem.asInstanceOf[js.Any]
       )
+
+      AmznClientToken.foreach(__v => __obj.update("AmznClientToken", __v.asInstanceOf[js.Any]))
+      UpdateAgentLogLevel.foreach(__v => __obj.update("UpdateAgentLogLevel", __v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateSoftwareUpdateJobRequest]
     }
   }
@@ -2083,24 +2089,26 @@ package greengrass {
     */
   @js.native
   trait Device extends js.Object {
-    var CertificateArn: js.UndefOr[__string]
-    var Id: js.UndefOr[__string]
+    var CertificateArn: __string
+    var Id: __string
+    var ThingArn: __string
     var SyncShadow: js.UndefOr[__boolean]
-    var ThingArn: js.UndefOr[__string]
   }
 
   object Device {
     def apply(
-        CertificateArn: js.UndefOr[__string] = js.undefined,
-        Id: js.UndefOr[__string] = js.undefined,
-        SyncShadow: js.UndefOr[__boolean] = js.undefined,
-        ThingArn: js.UndefOr[__string] = js.undefined
+        CertificateArn: __string,
+        Id: __string,
+        ThingArn: __string,
+        SyncShadow: js.UndefOr[__boolean] = js.undefined
     ): Device = {
-      val __obj = js.Dictionary.empty[js.Any]
-      CertificateArn.foreach(__v => __obj.update("CertificateArn", __v.asInstanceOf[js.Any]))
-      Id.foreach(__v => __obj.update("Id", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dictionary[js.Any](
+        "CertificateArn" -> CertificateArn.asInstanceOf[js.Any],
+        "Id"             -> Id.asInstanceOf[js.Any],
+        "ThingArn"       -> ThingArn.asInstanceOf[js.Any]
+      )
+
       SyncShadow.foreach(__v => __obj.update("SyncShadow", __v.asInstanceOf[js.Any]))
-      ThingArn.foreach(__v => __obj.update("ThingArn", __v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Device]
     }
   }
@@ -2215,21 +2223,23 @@ package greengrass {
     */
   @js.native
   trait Function extends js.Object {
+    var Id: __string
     var FunctionArn: js.UndefOr[__string]
     var FunctionConfiguration: js.UndefOr[FunctionConfiguration]
-    var Id: js.UndefOr[__string]
   }
 
   object Function {
     def apply(
+        Id: __string,
         FunctionArn: js.UndefOr[__string] = js.undefined,
-        FunctionConfiguration: js.UndefOr[FunctionConfiguration] = js.undefined,
-        Id: js.UndefOr[__string] = js.undefined
+        FunctionConfiguration: js.UndefOr[FunctionConfiguration] = js.undefined
     ): Function = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dictionary[js.Any](
+        "Id" -> Id.asInstanceOf[js.Any]
+      )
+
       FunctionArn.foreach(__v => __obj.update("FunctionArn", __v.asInstanceOf[js.Any]))
       FunctionConfiguration.foreach(__v => __obj.update("FunctionConfiguration", __v.asInstanceOf[js.Any]))
-      Id.foreach(__v => __obj.update("Id", __v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Function]
     }
   }
@@ -2468,7 +2478,7 @@ package greengrass {
     var CreatedAt: js.UndefOr[__string]
     var ErrorDetails: js.UndefOr[ErrorDetails]
     var ErrorMessage: js.UndefOr[__string]
-    var tags: js.UndefOr[__mapOf__string]
+    var tags: js.UndefOr[Tags]
   }
 
   object GetBulkDeploymentStatusResponse {
@@ -2478,7 +2488,7 @@ package greengrass {
         CreatedAt: js.UndefOr[__string] = js.undefined,
         ErrorDetails: js.UndefOr[ErrorDetails] = js.undefined,
         ErrorMessage: js.UndefOr[__string] = js.undefined,
-        tags: js.UndefOr[__mapOf__string] = js.undefined
+        tags: js.UndefOr[Tags] = js.undefined
     ): GetBulkDeploymentStatusResponse = {
       val __obj = js.Dictionary.empty[js.Any]
       BulkDeploymentMetrics.foreach(__v => __obj.update("BulkDeploymentMetrics", __v.asInstanceOf[js.Any]))
@@ -2552,7 +2562,7 @@ package greengrass {
     var LatestVersion: js.UndefOr[__string]
     var LatestVersionArn: js.UndefOr[__string]
     var Name: js.UndefOr[__string]
-    var tags: js.UndefOr[__mapOf__string]
+    var tags: js.UndefOr[Tags]
   }
 
   object GetConnectorDefinitionResponse {
@@ -2564,7 +2574,7 @@ package greengrass {
         LatestVersion: js.UndefOr[__string] = js.undefined,
         LatestVersionArn: js.UndefOr[__string] = js.undefined,
         Name: js.UndefOr[__string] = js.undefined,
-        tags: js.UndefOr[__mapOf__string] = js.undefined
+        tags: js.UndefOr[Tags] = js.undefined
     ): GetConnectorDefinitionResponse = {
       val __obj = js.Dictionary.empty[js.Any]
       Arn.foreach(__v => __obj.update("Arn", __v.asInstanceOf[js.Any]))
@@ -2658,7 +2668,7 @@ package greengrass {
     var LatestVersion: js.UndefOr[__string]
     var LatestVersionArn: js.UndefOr[__string]
     var Name: js.UndefOr[__string]
-    var tags: js.UndefOr[__mapOf__string]
+    var tags: js.UndefOr[Tags]
   }
 
   object GetCoreDefinitionResponse {
@@ -2670,7 +2680,7 @@ package greengrass {
         LatestVersion: js.UndefOr[__string] = js.undefined,
         LatestVersionArn: js.UndefOr[__string] = js.undefined,
         Name: js.UndefOr[__string] = js.undefined,
-        tags: js.UndefOr[__mapOf__string] = js.undefined
+        tags: js.UndefOr[Tags] = js.undefined
     ): GetCoreDefinitionResponse = {
       val __obj = js.Dictionary.empty[js.Any]
       Arn.foreach(__v => __obj.update("Arn", __v.asInstanceOf[js.Any]))
@@ -2808,7 +2818,7 @@ package greengrass {
     var LatestVersion: js.UndefOr[__string]
     var LatestVersionArn: js.UndefOr[__string]
     var Name: js.UndefOr[__string]
-    var tags: js.UndefOr[__mapOf__string]
+    var tags: js.UndefOr[Tags]
   }
 
   object GetDeviceDefinitionResponse {
@@ -2820,7 +2830,7 @@ package greengrass {
         LatestVersion: js.UndefOr[__string] = js.undefined,
         LatestVersionArn: js.UndefOr[__string] = js.undefined,
         Name: js.UndefOr[__string] = js.undefined,
-        tags: js.UndefOr[__mapOf__string] = js.undefined
+        tags: js.UndefOr[Tags] = js.undefined
     ): GetDeviceDefinitionResponse = {
       val __obj = js.Dictionary.empty[js.Any]
       Arn.foreach(__v => __obj.update("Arn", __v.asInstanceOf[js.Any]))
@@ -2914,7 +2924,7 @@ package greengrass {
     var LatestVersion: js.UndefOr[__string]
     var LatestVersionArn: js.UndefOr[__string]
     var Name: js.UndefOr[__string]
-    var tags: js.UndefOr[__mapOf__string]
+    var tags: js.UndefOr[Tags]
   }
 
   object GetFunctionDefinitionResponse {
@@ -2926,7 +2936,7 @@ package greengrass {
         LatestVersion: js.UndefOr[__string] = js.undefined,
         LatestVersionArn: js.UndefOr[__string] = js.undefined,
         Name: js.UndefOr[__string] = js.undefined,
-        tags: js.UndefOr[__mapOf__string] = js.undefined
+        tags: js.UndefOr[Tags] = js.undefined
     ): GetFunctionDefinitionResponse = {
       val __obj = js.Dictionary.empty[js.Any]
       Arn.foreach(__v => __obj.update("Arn", __v.asInstanceOf[js.Any]))
@@ -3105,7 +3115,7 @@ package greengrass {
     var LatestVersion: js.UndefOr[__string]
     var LatestVersionArn: js.UndefOr[__string]
     var Name: js.UndefOr[__string]
-    var tags: js.UndefOr[__mapOf__string]
+    var tags: js.UndefOr[Tags]
   }
 
   object GetGroupResponse {
@@ -3117,7 +3127,7 @@ package greengrass {
         LatestVersion: js.UndefOr[__string] = js.undefined,
         LatestVersionArn: js.UndefOr[__string] = js.undefined,
         Name: js.UndefOr[__string] = js.undefined,
-        tags: js.UndefOr[__mapOf__string] = js.undefined
+        tags: js.UndefOr[Tags] = js.undefined
     ): GetGroupResponse = {
       val __obj = js.Dictionary.empty[js.Any]
       Arn.foreach(__v => __obj.update("Arn", __v.asInstanceOf[js.Any]))
@@ -3205,7 +3215,7 @@ package greengrass {
     var LatestVersion: js.UndefOr[__string]
     var LatestVersionArn: js.UndefOr[__string]
     var Name: js.UndefOr[__string]
-    var tags: js.UndefOr[__mapOf__string]
+    var tags: js.UndefOr[Tags]
   }
 
   object GetLoggerDefinitionResponse {
@@ -3217,7 +3227,7 @@ package greengrass {
         LatestVersion: js.UndefOr[__string] = js.undefined,
         LatestVersionArn: js.UndefOr[__string] = js.undefined,
         Name: js.UndefOr[__string] = js.undefined,
-        tags: js.UndefOr[__mapOf__string] = js.undefined
+        tags: js.UndefOr[Tags] = js.undefined
     ): GetLoggerDefinitionResponse = {
       val __obj = js.Dictionary.empty[js.Any]
       Arn.foreach(__v => __obj.update("Arn", __v.asInstanceOf[js.Any]))
@@ -3308,7 +3318,7 @@ package greengrass {
     var LatestVersion: js.UndefOr[__string]
     var LatestVersionArn: js.UndefOr[__string]
     var Name: js.UndefOr[__string]
-    var tags: js.UndefOr[__mapOf__string]
+    var tags: js.UndefOr[Tags]
   }
 
   object GetResourceDefinitionResponse {
@@ -3320,7 +3330,7 @@ package greengrass {
         LatestVersion: js.UndefOr[__string] = js.undefined,
         LatestVersionArn: js.UndefOr[__string] = js.undefined,
         Name: js.UndefOr[__string] = js.undefined,
-        tags: js.UndefOr[__mapOf__string] = js.undefined
+        tags: js.UndefOr[Tags] = js.undefined
     ): GetResourceDefinitionResponse = {
       val __obj = js.Dictionary.empty[js.Any]
       Arn.foreach(__v => __obj.update("Arn", __v.asInstanceOf[js.Any]))
@@ -3438,7 +3448,7 @@ package greengrass {
     var LatestVersion: js.UndefOr[__string]
     var LatestVersionArn: js.UndefOr[__string]
     var Name: js.UndefOr[__string]
-    var tags: js.UndefOr[__mapOf__string]
+    var tags: js.UndefOr[Tags]
   }
 
   object GetSubscriptionDefinitionResponse {
@@ -3450,7 +3460,7 @@ package greengrass {
         LatestVersion: js.UndefOr[__string] = js.undefined,
         LatestVersionArn: js.UndefOr[__string] = js.undefined,
         Name: js.UndefOr[__string] = js.undefined,
-        tags: js.UndefOr[__mapOf__string] = js.undefined
+        tags: js.UndefOr[Tags] = js.undefined
     ): GetSubscriptionDefinitionResponse = {
       val __obj = js.Dictionary.empty[js.Any]
       Arn.foreach(__v => __obj.update("Arn", __v.asInstanceOf[js.Any]))
@@ -4427,12 +4437,12 @@ package greengrass {
 
   @js.native
   trait ListTagsForResourceResponse extends js.Object {
-    var tags: js.UndefOr[__mapOf__string]
+    var tags: js.UndefOr[Tags]
   }
 
   object ListTagsForResourceResponse {
     def apply(
-        tags: js.UndefOr[__mapOf__string] = js.undefined
+        tags: js.UndefOr[Tags] = js.undefined
     ): ListTagsForResourceResponse = {
       val __obj = js.Dictionary.empty[js.Any]
       tags.foreach(__v => __obj.update("tags", __v.asInstanceOf[js.Any]))
@@ -4490,27 +4500,29 @@ package greengrass {
     */
   @js.native
   trait Logger extends js.Object {
-    var Component: js.UndefOr[LoggerComponent]
-    var Id: js.UndefOr[__string]
-    var Level: js.UndefOr[LoggerLevel]
+    var Component: LoggerComponent
+    var Id: __string
+    var Level: LoggerLevel
+    var Type: LoggerType
     var Space: js.UndefOr[__integer]
-    var Type: js.UndefOr[LoggerType]
   }
 
   object Logger {
     def apply(
-        Component: js.UndefOr[LoggerComponent] = js.undefined,
-        Id: js.UndefOr[__string] = js.undefined,
-        Level: js.UndefOr[LoggerLevel] = js.undefined,
-        Space: js.UndefOr[__integer] = js.undefined,
-        Type: js.UndefOr[LoggerType] = js.undefined
+        Component: LoggerComponent,
+        Id: __string,
+        Level: LoggerLevel,
+        Type: LoggerType,
+        Space: js.UndefOr[__integer] = js.undefined
     ): Logger = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Component.foreach(__v => __obj.update("Component", __v.asInstanceOf[js.Any]))
-      Id.foreach(__v => __obj.update("Id", __v.asInstanceOf[js.Any]))
-      Level.foreach(__v => __obj.update("Level", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dictionary[js.Any](
+        "Component" -> Component.asInstanceOf[js.Any],
+        "Id"        -> Id.asInstanceOf[js.Any],
+        "Level"     -> Level.asInstanceOf[js.Any],
+        "Type"      -> Type.asInstanceOf[js.Any]
+      )
+
       Space.foreach(__v => __obj.update("Space", __v.asInstanceOf[js.Any]))
-      Type.foreach(__v => __obj.update("Type", __v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Logger]
     }
   }
@@ -4616,21 +4628,23 @@ package greengrass {
     */
   @js.native
   trait Resource extends js.Object {
-    var Id: js.UndefOr[__string]
-    var Name: js.UndefOr[__string]
-    var ResourceDataContainer: js.UndefOr[ResourceDataContainer]
+    var Id: __string
+    var Name: __string
+    var ResourceDataContainer: ResourceDataContainer
   }
 
   object Resource {
     def apply(
-        Id: js.UndefOr[__string] = js.undefined,
-        Name: js.UndefOr[__string] = js.undefined,
-        ResourceDataContainer: js.UndefOr[ResourceDataContainer] = js.undefined
+        Id: __string,
+        Name: __string,
+        ResourceDataContainer: ResourceDataContainer
     ): Resource = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Id.foreach(__v => __obj.update("Id", __v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
-      ResourceDataContainer.foreach(__v => __obj.update("ResourceDataContainer", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dictionary[js.Any](
+        "Id"                    -> Id.asInstanceOf[js.Any],
+        "Name"                  -> Name.asInstanceOf[js.Any],
+        "ResourceDataContainer" -> ResourceDataContainer.asInstanceOf[js.Any]
+      )
+
       __obj.asInstanceOf[Resource]
     }
   }
@@ -4640,18 +4654,20 @@ package greengrass {
     */
   @js.native
   trait ResourceAccessPolicy extends js.Object {
+    var ResourceId: __string
     var Permission: js.UndefOr[Permission]
-    var ResourceId: js.UndefOr[__string]
   }
 
   object ResourceAccessPolicy {
     def apply(
-        Permission: js.UndefOr[Permission] = js.undefined,
-        ResourceId: js.UndefOr[__string] = js.undefined
+        ResourceId: __string,
+        Permission: js.UndefOr[Permission] = js.undefined
     ): ResourceAccessPolicy = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dictionary[js.Any](
+        "ResourceId" -> ResourceId.asInstanceOf[js.Any]
+      )
+
       Permission.foreach(__v => __obj.update("Permission", __v.asInstanceOf[js.Any]))
-      ResourceId.foreach(__v => __obj.update("ResourceId", __v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ResourceAccessPolicy]
     }
   }
@@ -4787,23 +4803,25 @@ package greengrass {
 
   @js.native
   trait StartBulkDeploymentRequest extends js.Object {
+    var ExecutionRoleArn: __string
+    var InputFileUri: __string
     var AmznClientToken: js.UndefOr[__string]
-    var ExecutionRoleArn: js.UndefOr[__string]
-    var InputFileUri: js.UndefOr[__string]
     var tags: js.UndefOr[Tags]
   }
 
   object StartBulkDeploymentRequest {
     def apply(
+        ExecutionRoleArn: __string,
+        InputFileUri: __string,
         AmznClientToken: js.UndefOr[__string] = js.undefined,
-        ExecutionRoleArn: js.UndefOr[__string] = js.undefined,
-        InputFileUri: js.UndefOr[__string] = js.undefined,
         tags: js.UndefOr[Tags] = js.undefined
     ): StartBulkDeploymentRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dictionary[js.Any](
+        "ExecutionRoleArn" -> ExecutionRoleArn.asInstanceOf[js.Any],
+        "InputFileUri"     -> InputFileUri.asInstanceOf[js.Any]
+      )
+
       AmznClientToken.foreach(__v => __obj.update("AmznClientToken", __v.asInstanceOf[js.Any]))
-      ExecutionRoleArn.foreach(__v => __obj.update("ExecutionRoleArn", __v.asInstanceOf[js.Any]))
-      InputFileUri.foreach(__v => __obj.update("InputFileUri", __v.asInstanceOf[js.Any]))
       tags.foreach(__v => __obj.update("tags", __v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[StartBulkDeploymentRequest]
     }
@@ -4861,24 +4879,26 @@ package greengrass {
     */
   @js.native
   trait Subscription extends js.Object {
-    var Id: js.UndefOr[__string]
-    var Source: js.UndefOr[__string]
-    var Subject: js.UndefOr[__string]
-    var Target: js.UndefOr[__string]
+    var Id: __string
+    var Source: __string
+    var Subject: __string
+    var Target: __string
   }
 
   object Subscription {
     def apply(
-        Id: js.UndefOr[__string] = js.undefined,
-        Source: js.UndefOr[__string] = js.undefined,
-        Subject: js.UndefOr[__string] = js.undefined,
-        Target: js.UndefOr[__string] = js.undefined
+        Id: __string,
+        Source: __string,
+        Subject: __string,
+        Target: __string
     ): Subscription = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Id.foreach(__v => __obj.update("Id", __v.asInstanceOf[js.Any]))
-      Source.foreach(__v => __obj.update("Source", __v.asInstanceOf[js.Any]))
-      Subject.foreach(__v => __obj.update("Subject", __v.asInstanceOf[js.Any]))
-      Target.foreach(__v => __obj.update("Target", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dictionary[js.Any](
+        "Id"      -> Id.asInstanceOf[js.Any],
+        "Source"  -> Source.asInstanceOf[js.Any],
+        "Subject" -> Subject.asInstanceOf[js.Any],
+        "Target"  -> Target.asInstanceOf[js.Any]
+      )
+
       __obj.asInstanceOf[Subscription]
     }
   }
@@ -4901,22 +4921,25 @@ package greengrass {
     }
   }
 
+  /**
+    * A map of the key-value pairs for the resource tag.
+    */
   @js.native
   trait TagResourceRequest extends js.Object {
     var ResourceArn: __string
-    var tags: __mapOf__string
+    var tags: js.UndefOr[Tags]
   }
 
   object TagResourceRequest {
     def apply(
         ResourceArn: __string,
-        tags: __mapOf__string
+        tags: js.UndefOr[Tags] = js.undefined
     ): TagResourceRequest = {
       val __obj = js.Dictionary[js.Any](
-        "ResourceArn" -> ResourceArn.asInstanceOf[js.Any],
-        "tags"        -> tags.asInstanceOf[js.Any]
+        "ResourceArn" -> ResourceArn.asInstanceOf[js.Any]
       )
 
+      tags.foreach(__v => __obj.update("tags", __v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[TagResourceRequest]
     }
   }
@@ -5308,8 +5331,9 @@ package greengrass {
     val armv7l  = "armv7l"
     val x86_64  = "x86_64"
     val aarch64 = "aarch64"
+    val openwrt = "openwrt"
 
-    val values = IndexedSeq(armv7l, x86_64, aarch64)
+    val values = IndexedSeq(armv7l, x86_64, aarch64, openwrt)
   }
 
   /**

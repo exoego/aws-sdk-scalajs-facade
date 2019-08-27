@@ -43,6 +43,7 @@ package object cloudwatchlogs {
   type LogEventIndex               = Int
   type LogGroupFieldList           = js.Array[LogGroupField]
   type LogGroupName                = String
+  type LogGroupNames               = js.Array[LogGroupName]
   type LogGroups                   = js.Array[LogGroup]
   type LogRecord                   = js.Dictionary[Value]
   type LogRecordPointer            = String
@@ -1430,7 +1431,7 @@ package cloudwatchlogs {
   }
 
   /**
-    * Indicates how to transform ingested log eventsto metric data in a CloudWatch metric.
+    * Indicates how to transform ingested log events to metric data in a CloudWatch metric.
     */
   @js.native
   trait MetricTransformation extends js.Object {
@@ -1859,28 +1860,31 @@ package cloudwatchlogs {
   @js.native
   trait StartQueryRequest extends js.Object {
     var endTime: Timestamp
-    var logGroupName: LogGroupName
     var queryString: QueryString
     var startTime: Timestamp
     var limit: js.UndefOr[EventsLimit]
+    var logGroupName: js.UndefOr[LogGroupName]
+    var logGroupNames: js.UndefOr[LogGroupNames]
   }
 
   object StartQueryRequest {
     def apply(
         endTime: Timestamp,
-        logGroupName: LogGroupName,
         queryString: QueryString,
         startTime: Timestamp,
-        limit: js.UndefOr[EventsLimit] = js.undefined
+        limit: js.UndefOr[EventsLimit] = js.undefined,
+        logGroupName: js.UndefOr[LogGroupName] = js.undefined,
+        logGroupNames: js.UndefOr[LogGroupNames] = js.undefined
     ): StartQueryRequest = {
       val __obj = js.Dictionary[js.Any](
-        "endTime"      -> endTime.asInstanceOf[js.Any],
-        "logGroupName" -> logGroupName.asInstanceOf[js.Any],
-        "queryString"  -> queryString.asInstanceOf[js.Any],
-        "startTime"    -> startTime.asInstanceOf[js.Any]
+        "endTime"     -> endTime.asInstanceOf[js.Any],
+        "queryString" -> queryString.asInstanceOf[js.Any],
+        "startTime"   -> startTime.asInstanceOf[js.Any]
       )
 
       limit.foreach(__v => __obj.update("limit", __v.asInstanceOf[js.Any]))
+      logGroupName.foreach(__v => __obj.update("logGroupName", __v.asInstanceOf[js.Any]))
+      logGroupNames.foreach(__v => __obj.update("logGroupNames", __v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[StartQueryRequest]
     }
   }

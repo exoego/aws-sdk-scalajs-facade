@@ -8,27 +8,35 @@ import io.scalajs.nodejs
 import facade.amazonaws._
 
 package object kinesisvideoarchivedmedia {
-  type ContainerFormat          = String
-  type ContentType              = String
-  type DiscontinuityMode        = String
-  type DisplayFragmentTimestamp = String
-  type Expires                  = Int
-  type FragmentList             = js.Array[Fragment]
-  type FragmentNumberList       = js.Array[FragmentNumberString]
-  type FragmentNumberString     = String
-  type FragmentSelectorType     = String
-  type HLSFragmentSelectorType  = String
-  type HLSStreamingSessionURL   = String
-  type PageLimit                = Double
+  type ContainerFormat              = String
+  type ContentType                  = String
+  type DASHDisplayFragmentNumber    = String
+  type DASHDisplayFragmentTimestamp = String
+  type DASHFragmentSelectorType     = String
+  type DASHPlaybackMode             = String
+  type DASHStreamingSessionURL      = String
+  type Expires                      = Int
+  type FragmentList                 = js.Array[Fragment]
+  type FragmentNumberList           = js.Array[FragmentNumberString]
+  type FragmentNumberString         = String
+  type FragmentSelectorType         = String
+  type HLSDiscontinuityMode         = String
+  type HLSDisplayFragmentTimestamp  = String
+  type HLSFragmentSelectorType      = String
+  type HLSPlaybackMode              = String
+  type HLSStreamingSessionURL       = String
+  type PageLimit                    = Double
   type Payload =
     nodejs.buffer.Buffer | nodejs.stream.Readable | js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
-  type PlaybackMode = String
-  type ResourceARN  = String
-  type StreamName   = String
-  type Timestamp    = js.Date
+  type ResourceARN = String
+  type StreamName  = String
+  type Timestamp   = js.Date
 
   implicit final class KinesisVideoArchivedMediaOps(val service: KinesisVideoArchivedMedia) extends AnyVal {
 
+    def getDASHStreamingSessionURLFuture(
+        params: GetDASHStreamingSessionURLInput
+    ): Future[GetDASHStreamingSessionURLOutput] = service.getDASHStreamingSessionURL(params).promise.toFuture
     def getHLSStreamingSessionURLFuture(
         params: GetHLSStreamingSessionURLInput
     ): Future[GetHLSStreamingSessionURLOutput] = service.getHLSStreamingSessionURL(params).promise.toFuture
@@ -45,6 +53,8 @@ package kinesisvideoarchivedmedia {
   class KinesisVideoArchivedMedia() extends js.Object {
     def this(config: AWSConfig) = this()
 
+    def getDASHStreamingSessionURL(params: GetDASHStreamingSessionURLInput): Request[GetDASHStreamingSessionURLOutput] =
+      js.native
     def getHLSStreamingSessionURL(params: GetHLSStreamingSessionURLInput): Request[GetHLSStreamingSessionURLOutput] =
       js.native
     def getMediaForFragmentList(params: GetMediaForFragmentListInput): Request[GetMediaForFragmentListOutput] =
@@ -59,18 +69,78 @@ package kinesisvideoarchivedmedia {
     val values = IndexedSeq(FRAGMENTED_MP4, MPEG_TS)
   }
 
-  object DiscontinuityModeEnum {
+  object DASHDisplayFragmentNumberEnum {
     val ALWAYS = "ALWAYS"
     val NEVER  = "NEVER"
 
     val values = IndexedSeq(ALWAYS, NEVER)
   }
 
-  object DisplayFragmentTimestampEnum {
+  object DASHDisplayFragmentTimestampEnum {
     val ALWAYS = "ALWAYS"
     val NEVER  = "NEVER"
 
     val values = IndexedSeq(ALWAYS, NEVER)
+  }
+
+  /**
+    * Contains the range of timestamps for the requested media, and the source of the timestamps.
+    */
+  @js.native
+  trait DASHFragmentSelector extends js.Object {
+    var FragmentSelectorType: js.UndefOr[DASHFragmentSelectorType]
+    var TimestampRange: js.UndefOr[DASHTimestampRange]
+  }
+
+  object DASHFragmentSelector {
+    def apply(
+        FragmentSelectorType: js.UndefOr[DASHFragmentSelectorType] = js.undefined,
+        TimestampRange: js.UndefOr[DASHTimestampRange] = js.undefined
+    ): DASHFragmentSelector = {
+      val __obj = js.Dictionary.empty[js.Any]
+      FragmentSelectorType.foreach(__v => __obj.update("FragmentSelectorType", __v.asInstanceOf[js.Any]))
+      TimestampRange.foreach(__v => __obj.update("TimestampRange", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DASHFragmentSelector]
+    }
+  }
+
+  object DASHFragmentSelectorTypeEnum {
+    val PRODUCER_TIMESTAMP = "PRODUCER_TIMESTAMP"
+    val SERVER_TIMESTAMP   = "SERVER_TIMESTAMP"
+
+    val values = IndexedSeq(PRODUCER_TIMESTAMP, SERVER_TIMESTAMP)
+  }
+
+  object DASHPlaybackModeEnum {
+    val LIVE        = "LIVE"
+    val LIVE_REPLAY = "LIVE_REPLAY"
+    val ON_DEMAND   = "ON_DEMAND"
+
+    val values = IndexedSeq(LIVE, LIVE_REPLAY, ON_DEMAND)
+  }
+
+  /**
+    * The start and end of the timestamp range for the requested media.
+    *  This value should not be present if <code>PlaybackType</code> is <code>LIVE</code>.
+    *
+    * '''Note:'''The values in the <code>DASHimestampRange</code> are inclusive. Fragments that begin before the start time but continue past it, or fragments that begin before the end time but continue past it, are included in the session.
+    */
+  @js.native
+  trait DASHTimestampRange extends js.Object {
+    var EndTimestamp: js.UndefOr[Timestamp]
+    var StartTimestamp: js.UndefOr[Timestamp]
+  }
+
+  object DASHTimestampRange {
+    def apply(
+        EndTimestamp: js.UndefOr[Timestamp] = js.undefined,
+        StartTimestamp: js.UndefOr[Timestamp] = js.undefined
+    ): DASHTimestampRange = {
+      val __obj = js.Dictionary.empty[js.Any]
+      EndTimestamp.foreach(__v => __obj.update("EndTimestamp", __v.asInstanceOf[js.Any]))
+      StartTimestamp.foreach(__v => __obj.update("StartTimestamp", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DASHTimestampRange]
+    }
   }
 
   /**
@@ -142,14 +212,65 @@ package kinesisvideoarchivedmedia {
   }
 
   @js.native
+  trait GetDASHStreamingSessionURLInput extends js.Object {
+    var DASHFragmentSelector: js.UndefOr[DASHFragmentSelector]
+    var DisplayFragmentNumber: js.UndefOr[DASHDisplayFragmentNumber]
+    var DisplayFragmentTimestamp: js.UndefOr[DASHDisplayFragmentTimestamp]
+    var Expires: js.UndefOr[Expires]
+    var MaxManifestFragmentResults: js.UndefOr[PageLimit]
+    var PlaybackMode: js.UndefOr[DASHPlaybackMode]
+    var StreamARN: js.UndefOr[ResourceARN]
+    var StreamName: js.UndefOr[StreamName]
+  }
+
+  object GetDASHStreamingSessionURLInput {
+    def apply(
+        DASHFragmentSelector: js.UndefOr[DASHFragmentSelector] = js.undefined,
+        DisplayFragmentNumber: js.UndefOr[DASHDisplayFragmentNumber] = js.undefined,
+        DisplayFragmentTimestamp: js.UndefOr[DASHDisplayFragmentTimestamp] = js.undefined,
+        Expires: js.UndefOr[Expires] = js.undefined,
+        MaxManifestFragmentResults: js.UndefOr[PageLimit] = js.undefined,
+        PlaybackMode: js.UndefOr[DASHPlaybackMode] = js.undefined,
+        StreamARN: js.UndefOr[ResourceARN] = js.undefined,
+        StreamName: js.UndefOr[StreamName] = js.undefined
+    ): GetDASHStreamingSessionURLInput = {
+      val __obj = js.Dictionary.empty[js.Any]
+      DASHFragmentSelector.foreach(__v => __obj.update("DASHFragmentSelector", __v.asInstanceOf[js.Any]))
+      DisplayFragmentNumber.foreach(__v => __obj.update("DisplayFragmentNumber", __v.asInstanceOf[js.Any]))
+      DisplayFragmentTimestamp.foreach(__v => __obj.update("DisplayFragmentTimestamp", __v.asInstanceOf[js.Any]))
+      Expires.foreach(__v => __obj.update("Expires", __v.asInstanceOf[js.Any]))
+      MaxManifestFragmentResults.foreach(__v => __obj.update("MaxManifestFragmentResults", __v.asInstanceOf[js.Any]))
+      PlaybackMode.foreach(__v => __obj.update("PlaybackMode", __v.asInstanceOf[js.Any]))
+      StreamARN.foreach(__v => __obj.update("StreamARN", __v.asInstanceOf[js.Any]))
+      StreamName.foreach(__v => __obj.update("StreamName", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetDASHStreamingSessionURLInput]
+    }
+  }
+
+  @js.native
+  trait GetDASHStreamingSessionURLOutput extends js.Object {
+    var DASHStreamingSessionURL: js.UndefOr[DASHStreamingSessionURL]
+  }
+
+  object GetDASHStreamingSessionURLOutput {
+    def apply(
+        DASHStreamingSessionURL: js.UndefOr[DASHStreamingSessionURL] = js.undefined
+    ): GetDASHStreamingSessionURLOutput = {
+      val __obj = js.Dictionary.empty[js.Any]
+      DASHStreamingSessionURL.foreach(__v => __obj.update("DASHStreamingSessionURL", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetDASHStreamingSessionURLOutput]
+    }
+  }
+
+  @js.native
   trait GetHLSStreamingSessionURLInput extends js.Object {
     var ContainerFormat: js.UndefOr[ContainerFormat]
-    var DiscontinuityMode: js.UndefOr[DiscontinuityMode]
-    var DisplayFragmentTimestamp: js.UndefOr[DisplayFragmentTimestamp]
+    var DiscontinuityMode: js.UndefOr[HLSDiscontinuityMode]
+    var DisplayFragmentTimestamp: js.UndefOr[HLSDisplayFragmentTimestamp]
     var Expires: js.UndefOr[Expires]
     var HLSFragmentSelector: js.UndefOr[HLSFragmentSelector]
     var MaxMediaPlaylistFragmentResults: js.UndefOr[PageLimit]
-    var PlaybackMode: js.UndefOr[PlaybackMode]
+    var PlaybackMode: js.UndefOr[HLSPlaybackMode]
     var StreamARN: js.UndefOr[ResourceARN]
     var StreamName: js.UndefOr[StreamName]
   }
@@ -157,12 +278,12 @@ package kinesisvideoarchivedmedia {
   object GetHLSStreamingSessionURLInput {
     def apply(
         ContainerFormat: js.UndefOr[ContainerFormat] = js.undefined,
-        DiscontinuityMode: js.UndefOr[DiscontinuityMode] = js.undefined,
-        DisplayFragmentTimestamp: js.UndefOr[DisplayFragmentTimestamp] = js.undefined,
+        DiscontinuityMode: js.UndefOr[HLSDiscontinuityMode] = js.undefined,
+        DisplayFragmentTimestamp: js.UndefOr[HLSDisplayFragmentTimestamp] = js.undefined,
         Expires: js.UndefOr[Expires] = js.undefined,
         HLSFragmentSelector: js.UndefOr[HLSFragmentSelector] = js.undefined,
         MaxMediaPlaylistFragmentResults: js.UndefOr[PageLimit] = js.undefined,
-        PlaybackMode: js.UndefOr[PlaybackMode] = js.undefined,
+        PlaybackMode: js.UndefOr[HLSPlaybackMode] = js.undefined,
         StreamARN: js.UndefOr[ResourceARN] = js.undefined,
         StreamName: js.UndefOr[StreamName] = js.undefined
     ): GetHLSStreamingSessionURLInput = {
@@ -235,6 +356,20 @@ package kinesisvideoarchivedmedia {
     }
   }
 
+  object HLSDiscontinuityModeEnum {
+    val ALWAYS = "ALWAYS"
+    val NEVER  = "NEVER"
+
+    val values = IndexedSeq(ALWAYS, NEVER)
+  }
+
+  object HLSDisplayFragmentTimestampEnum {
+    val ALWAYS = "ALWAYS"
+    val NEVER  = "NEVER"
+
+    val values = IndexedSeq(ALWAYS, NEVER)
+  }
+
   /**
     * Contains the range of timestamps for the requested media, and the source of the timestamps.
     */
@@ -261,6 +396,14 @@ package kinesisvideoarchivedmedia {
     val SERVER_TIMESTAMP   = "SERVER_TIMESTAMP"
 
     val values = IndexedSeq(PRODUCER_TIMESTAMP, SERVER_TIMESTAMP)
+  }
+
+  object HLSPlaybackModeEnum {
+    val LIVE        = "LIVE"
+    val LIVE_REPLAY = "LIVE_REPLAY"
+    val ON_DEMAND   = "ON_DEMAND"
+
+    val values = IndexedSeq(LIVE, LIVE_REPLAY, ON_DEMAND)
   }
 
   /**
@@ -329,13 +472,6 @@ package kinesisvideoarchivedmedia {
       NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListFragmentsOutput]
     }
-  }
-
-  object PlaybackModeEnum {
-    val LIVE      = "LIVE"
-    val ON_DEMAND = "ON_DEMAND"
-
-    val values = IndexedSeq(LIVE, ON_DEMAND)
   }
 
   /**

@@ -9,19 +9,41 @@ import facade.amazonaws._
 
 package object rdsdataservice {
   type Arn                 = String
-  type ArrayValues         = js.Array[Value]
+  type ArrayValueList      = js.Array[Value]
   type Blob                = nodejs.buffer.Buffer | nodejs.stream.Readable | js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
-  type ColumnMetadataList  = js.Array[ColumnMetadata]
+  type BoxedBoolean        = Boolean
+  type BoxedDouble         = Double
+  type BoxedFloat          = Float
+  type BoxedInteger        = Int
+  type BoxedLong           = Double
   type DbName              = String
+  type FieldList           = js.Array[Field]
+  type Id                  = String
+  type Metadata            = js.Array[ColumnMetadata]
+  type ParameterName       = String
   type Records             = js.Array[Record]
+  type RecordsUpdated      = Double
   type Row                 = js.Array[Value]
+  type SqlParameterSets    = js.Array[SqlParametersList]
+  type SqlParametersList   = js.Array[SqlParameter]
+  type SqlRecords          = js.Array[FieldList]
   type SqlStatement        = String
   type SqlStatementResults = js.Array[SqlStatementResult]
+  type TransactionStatus   = String
+  type UpdateResults       = js.Array[UpdateResult]
 
   implicit final class RDSDataServiceOps(val service: RDSDataService) extends AnyVal {
 
-    def executeSqlFuture(params: ExecuteSqlRequest): Future[ExecuteSqlResponse] =
-      service.executeSql(params).promise.toFuture
+    def batchExecuteStatementFuture(params: BatchExecuteStatementRequest): Future[BatchExecuteStatementResponse] =
+      service.batchExecuteStatement(params).promise.toFuture
+    def beginTransactionFuture(params: BeginTransactionRequest): Future[BeginTransactionResponse] =
+      service.beginTransaction(params).promise.toFuture
+    def commitTransactionFuture(params: CommitTransactionRequest): Future[CommitTransactionResponse] =
+      service.commitTransaction(params).promise.toFuture
+    def executeStatementFuture(params: ExecuteStatementRequest): Future[ExecuteStatementResponse] =
+      service.executeStatement(params).promise.toFuture
+    def rollbackTransactionFuture(params: RollbackTransactionRequest): Future[RollbackTransactionResponse] =
+      service.rollbackTransaction(params).promise.toFuture
   }
 }
 
@@ -31,11 +53,125 @@ package rdsdataservice {
   class RDSDataService() extends js.Object {
     def this(config: AWSConfig) = this()
 
-    def executeSql(params: ExecuteSqlRequest): Request[ExecuteSqlResponse] = js.native
+    def batchExecuteStatement(params: BatchExecuteStatementRequest): Request[BatchExecuteStatementResponse] = js.native
+    def beginTransaction(params: BeginTransactionRequest): Request[BeginTransactionResponse]                = js.native
+    def commitTransaction(params: CommitTransactionRequest): Request[CommitTransactionResponse]             = js.native
+    def executeStatement(params: ExecuteStatementRequest): Request[ExecuteStatementResponse]                = js.native
+    def rollbackTransaction(params: RollbackTransactionRequest): Request[RollbackTransactionResponse]       = js.native
+    @deprecated("Deprecated in AWS SDK", "forever") def executeSql(
+        params: ExecuteSqlRequest
+    ): Request[ExecuteSqlResponse] = js.native
   }
 
   /**
-    * Column Metadata
+    * <p>The request parameters represent the input of a SQL statement over an array of
+    *             data.</p>
+    */
+  @js.native
+  trait BatchExecuteStatementRequest extends js.Object {
+    var resourceArn: Arn
+    var secretArn: Arn
+    var sql: SqlStatement
+    var database: js.UndefOr[DbName]
+    var parameterSets: js.UndefOr[SqlParameterSets]
+    var schema: js.UndefOr[DbName]
+    var transactionId: js.UndefOr[Id]
+  }
+
+  object BatchExecuteStatementRequest {
+    def apply(
+        resourceArn: Arn,
+        secretArn: Arn,
+        sql: SqlStatement,
+        database: js.UndefOr[DbName] = js.undefined,
+        parameterSets: js.UndefOr[SqlParameterSets] = js.undefined,
+        schema: js.UndefOr[DbName] = js.undefined,
+        transactionId: js.UndefOr[Id] = js.undefined
+    ): BatchExecuteStatementRequest = {
+      val __obj = js.Dictionary[js.Any](
+        "resourceArn" -> resourceArn.asInstanceOf[js.Any],
+        "secretArn"   -> secretArn.asInstanceOf[js.Any],
+        "sql"         -> sql.asInstanceOf[js.Any]
+      )
+
+      database.foreach(__v => __obj.update("database", __v.asInstanceOf[js.Any]))
+      parameterSets.foreach(__v => __obj.update("parameterSets", __v.asInstanceOf[js.Any]))
+      schema.foreach(__v => __obj.update("schema", __v.asInstanceOf[js.Any]))
+      transactionId.foreach(__v => __obj.update("transactionId", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[BatchExecuteStatementRequest]
+    }
+  }
+
+  /**
+    * <p>The response elements represent the output of a SQL statement over an array of
+    *             data.</p>
+    */
+  @js.native
+  trait BatchExecuteStatementResponse extends js.Object {
+    var updateResults: js.UndefOr[UpdateResults]
+  }
+
+  object BatchExecuteStatementResponse {
+    def apply(
+        updateResults: js.UndefOr[UpdateResults] = js.undefined
+    ): BatchExecuteStatementResponse = {
+      val __obj = js.Dictionary.empty[js.Any]
+      updateResults.foreach(__v => __obj.update("updateResults", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[BatchExecuteStatementResponse]
+    }
+  }
+
+  /**
+    * <p>The request parameters represent the input of a request to start a SQL
+    *             transaction.</p>
+    */
+  @js.native
+  trait BeginTransactionRequest extends js.Object {
+    var resourceArn: Arn
+    var secretArn: Arn
+    var database: js.UndefOr[DbName]
+    var schema: js.UndefOr[DbName]
+  }
+
+  object BeginTransactionRequest {
+    def apply(
+        resourceArn: Arn,
+        secretArn: Arn,
+        database: js.UndefOr[DbName] = js.undefined,
+        schema: js.UndefOr[DbName] = js.undefined
+    ): BeginTransactionRequest = {
+      val __obj = js.Dictionary[js.Any](
+        "resourceArn" -> resourceArn.asInstanceOf[js.Any],
+        "secretArn"   -> secretArn.asInstanceOf[js.Any]
+      )
+
+      database.foreach(__v => __obj.update("database", __v.asInstanceOf[js.Any]))
+      schema.foreach(__v => __obj.update("schema", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[BeginTransactionRequest]
+    }
+  }
+
+  /**
+    * <p>The response elements represent the output of a request to start a SQL
+    *             transaction.</p>
+    */
+  @js.native
+  trait BeginTransactionResponse extends js.Object {
+    var transactionId: js.UndefOr[Id]
+  }
+
+  object BeginTransactionResponse {
+    def apply(
+        transactionId: js.UndefOr[Id] = js.undefined
+    ): BeginTransactionResponse = {
+      val __obj = js.Dictionary.empty[js.Any]
+      transactionId.foreach(__v => __obj.update("transactionId", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[BeginTransactionResponse]
+    }
+  }
+
+  /**
+    * Contains the metadata for a column.
     */
   @js.native
   trait ColumnMetadata extends js.Object {
@@ -92,7 +228,52 @@ package rdsdataservice {
   }
 
   /**
-    * Execute SQL Request
+    * The request parameters represent the input of a commit transaction request.
+    */
+  @js.native
+  trait CommitTransactionRequest extends js.Object {
+    var resourceArn: Arn
+    var secretArn: Arn
+    var transactionId: Id
+  }
+
+  object CommitTransactionRequest {
+    def apply(
+        resourceArn: Arn,
+        secretArn: Arn,
+        transactionId: Id
+    ): CommitTransactionRequest = {
+      val __obj = js.Dictionary[js.Any](
+        "resourceArn"   -> resourceArn.asInstanceOf[js.Any],
+        "secretArn"     -> secretArn.asInstanceOf[js.Any],
+        "transactionId" -> transactionId.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[CommitTransactionRequest]
+    }
+  }
+
+  /**
+    * The response elements represent the output of a commit transaction request.
+    */
+  @js.native
+  trait CommitTransactionResponse extends js.Object {
+    var transactionStatus: js.UndefOr[TransactionStatus]
+  }
+
+  object CommitTransactionResponse {
+    def apply(
+        transactionStatus: js.UndefOr[TransactionStatus] = js.undefined
+    ): CommitTransactionResponse = {
+      val __obj = js.Dictionary.empty[js.Any]
+      transactionStatus.foreach(__v => __obj.update("transactionStatus", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CommitTransactionResponse]
+    }
+  }
+
+  /**
+    * <p>The request parameters represent the input of a request to run one or more SQL
+    *             statements.</p>
     */
   @js.native
   trait ExecuteSqlRequest extends js.Object {
@@ -124,27 +305,132 @@ package rdsdataservice {
   }
 
   /**
-    * Execute SQL response
+    * <p>The response elements represent the output of a request to run one or more SQL
+    *             statements.</p>
     */
   @js.native
   trait ExecuteSqlResponse extends js.Object {
-    var sqlStatementResults: SqlStatementResults
+    var sqlStatementResults: js.UndefOr[SqlStatementResults]
   }
 
   object ExecuteSqlResponse {
     def apply(
-        sqlStatementResults: SqlStatementResults
+        sqlStatementResults: js.UndefOr[SqlStatementResults] = js.undefined
     ): ExecuteSqlResponse = {
-      val __obj = js.Dictionary[js.Any](
-        "sqlStatementResults" -> sqlStatementResults.asInstanceOf[js.Any]
-      )
-
+      val __obj = js.Dictionary.empty[js.Any]
+      sqlStatementResults.foreach(__v => __obj.update("sqlStatementResults", __v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ExecuteSqlResponse]
     }
   }
 
   /**
-    * Row or Record
+    * <p>The request parameters represent the input of a request to run a SQL statement against
+    *             a database.</p>
+    */
+  @js.native
+  trait ExecuteStatementRequest extends js.Object {
+    var resourceArn: Arn
+    var secretArn: Arn
+    var sql: SqlStatement
+    var continueAfterTimeout: js.UndefOr[Boolean]
+    var database: js.UndefOr[DbName]
+    var includeResultMetadata: js.UndefOr[Boolean]
+    var parameters: js.UndefOr[SqlParametersList]
+    var schema: js.UndefOr[DbName]
+    var transactionId: js.UndefOr[Id]
+  }
+
+  object ExecuteStatementRequest {
+    def apply(
+        resourceArn: Arn,
+        secretArn: Arn,
+        sql: SqlStatement,
+        continueAfterTimeout: js.UndefOr[Boolean] = js.undefined,
+        database: js.UndefOr[DbName] = js.undefined,
+        includeResultMetadata: js.UndefOr[Boolean] = js.undefined,
+        parameters: js.UndefOr[SqlParametersList] = js.undefined,
+        schema: js.UndefOr[DbName] = js.undefined,
+        transactionId: js.UndefOr[Id] = js.undefined
+    ): ExecuteStatementRequest = {
+      val __obj = js.Dictionary[js.Any](
+        "resourceArn" -> resourceArn.asInstanceOf[js.Any],
+        "secretArn"   -> secretArn.asInstanceOf[js.Any],
+        "sql"         -> sql.asInstanceOf[js.Any]
+      )
+
+      continueAfterTimeout.foreach(__v => __obj.update("continueAfterTimeout", __v.asInstanceOf[js.Any]))
+      database.foreach(__v => __obj.update("database", __v.asInstanceOf[js.Any]))
+      includeResultMetadata.foreach(__v => __obj.update("includeResultMetadata", __v.asInstanceOf[js.Any]))
+      parameters.foreach(__v => __obj.update("parameters", __v.asInstanceOf[js.Any]))
+      schema.foreach(__v => __obj.update("schema", __v.asInstanceOf[js.Any]))
+      transactionId.foreach(__v => __obj.update("transactionId", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ExecuteStatementRequest]
+    }
+  }
+
+  /**
+    * <p>The response elements represent the output of a request to run a SQL statement against
+    *             a database.</p>
+    */
+  @js.native
+  trait ExecuteStatementResponse extends js.Object {
+    var columnMetadata: js.UndefOr[Metadata]
+    var generatedFields: js.UndefOr[FieldList]
+    var numberOfRecordsUpdated: js.UndefOr[RecordsUpdated]
+    var records: js.UndefOr[SqlRecords]
+  }
+
+  object ExecuteStatementResponse {
+    def apply(
+        columnMetadata: js.UndefOr[Metadata] = js.undefined,
+        generatedFields: js.UndefOr[FieldList] = js.undefined,
+        numberOfRecordsUpdated: js.UndefOr[RecordsUpdated] = js.undefined,
+        records: js.UndefOr[SqlRecords] = js.undefined
+    ): ExecuteStatementResponse = {
+      val __obj = js.Dictionary.empty[js.Any]
+      columnMetadata.foreach(__v => __obj.update("columnMetadata", __v.asInstanceOf[js.Any]))
+      generatedFields.foreach(__v => __obj.update("generatedFields", __v.asInstanceOf[js.Any]))
+      numberOfRecordsUpdated.foreach(__v => __obj.update("numberOfRecordsUpdated", __v.asInstanceOf[js.Any]))
+      records.foreach(__v => __obj.update("records", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ExecuteStatementResponse]
+    }
+  }
+
+  /**
+    * Contains a value.
+    */
+  @js.native
+  trait Field extends js.Object {
+    var blobValue: js.UndefOr[Blob]
+    var booleanValue: js.UndefOr[BoxedBoolean]
+    var doubleValue: js.UndefOr[BoxedDouble]
+    var isNull: js.UndefOr[BoxedBoolean]
+    var longValue: js.UndefOr[BoxedLong]
+    var stringValue: js.UndefOr[String]
+  }
+
+  object Field {
+    def apply(
+        blobValue: js.UndefOr[Blob] = js.undefined,
+        booleanValue: js.UndefOr[BoxedBoolean] = js.undefined,
+        doubleValue: js.UndefOr[BoxedDouble] = js.undefined,
+        isNull: js.UndefOr[BoxedBoolean] = js.undefined,
+        longValue: js.UndefOr[BoxedLong] = js.undefined,
+        stringValue: js.UndefOr[String] = js.undefined
+    ): Field = {
+      val __obj = js.Dictionary.empty[js.Any]
+      blobValue.foreach(__v => __obj.update("blobValue", __v.asInstanceOf[js.Any]))
+      booleanValue.foreach(__v => __obj.update("booleanValue", __v.asInstanceOf[js.Any]))
+      doubleValue.foreach(__v => __obj.update("doubleValue", __v.asInstanceOf[js.Any]))
+      isNull.foreach(__v => __obj.update("isNull", __v.asInstanceOf[js.Any]))
+      longValue.foreach(__v => __obj.update("longValue", __v.asInstanceOf[js.Any]))
+      stringValue.foreach(__v => __obj.update("stringValue", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Field]
+    }
+  }
+
+  /**
+    * A record returned by a call.
     */
   @js.native
   trait Record extends js.Object {
@@ -162,7 +448,7 @@ package rdsdataservice {
   }
 
   /**
-    * Result Frame
+    * The result set returned by a SQL statement.
     */
   @js.native
   trait ResultFrame extends js.Object {
@@ -183,18 +469,18 @@ package rdsdataservice {
   }
 
   /**
-    * List of columns and their types.
+    * The metadata of the result set returned by a SQL statement.
     */
   @js.native
   trait ResultSetMetadata extends js.Object {
     var columnCount: js.UndefOr[Double]
-    var columnMetadata: js.UndefOr[ColumnMetadataList]
+    var columnMetadata: js.UndefOr[Metadata]
   }
 
   object ResultSetMetadata {
     def apply(
         columnCount: js.UndefOr[Double] = js.undefined,
-        columnMetadata: js.UndefOr[ColumnMetadataList] = js.undefined
+        columnMetadata: js.UndefOr[Metadata] = js.undefined
     ): ResultSetMetadata = {
       val __obj = js.Dictionary.empty[js.Any]
       columnCount.foreach(__v => __obj.update("columnCount", __v.asInstanceOf[js.Any]))
@@ -204,17 +490,84 @@ package rdsdataservice {
   }
 
   /**
-    * SQL statement execution result
+    * <p>The request parameters represent the input of a request to perform a rollback of a
+    *             transaction.</p>
+    */
+  @js.native
+  trait RollbackTransactionRequest extends js.Object {
+    var resourceArn: Arn
+    var secretArn: Arn
+    var transactionId: Id
+  }
+
+  object RollbackTransactionRequest {
+    def apply(
+        resourceArn: Arn,
+        secretArn: Arn,
+        transactionId: Id
+    ): RollbackTransactionRequest = {
+      val __obj = js.Dictionary[js.Any](
+        "resourceArn"   -> resourceArn.asInstanceOf[js.Any],
+        "secretArn"     -> secretArn.asInstanceOf[js.Any],
+        "transactionId" -> transactionId.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[RollbackTransactionRequest]
+    }
+  }
+
+  /**
+    * <p>The response elements represent the output of a request to perform a rollback of a
+    *             transaction.</p>
+    */
+  @js.native
+  trait RollbackTransactionResponse extends js.Object {
+    var transactionStatus: js.UndefOr[TransactionStatus]
+  }
+
+  object RollbackTransactionResponse {
+    def apply(
+        transactionStatus: js.UndefOr[TransactionStatus] = js.undefined
+    ): RollbackTransactionResponse = {
+      val __obj = js.Dictionary.empty[js.Any]
+      transactionStatus.foreach(__v => __obj.update("transactionStatus", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[RollbackTransactionResponse]
+    }
+  }
+
+  /**
+    * A parameter used in a SQL statement.
+    */
+  @js.native
+  trait SqlParameter extends js.Object {
+    var name: js.UndefOr[ParameterName]
+    var value: js.UndefOr[Field]
+  }
+
+  object SqlParameter {
+    def apply(
+        name: js.UndefOr[ParameterName] = js.undefined,
+        value: js.UndefOr[Field] = js.undefined
+    ): SqlParameter = {
+      val __obj = js.Dictionary.empty[js.Any]
+      name.foreach(__v => __obj.update("name", __v.asInstanceOf[js.Any]))
+      value.foreach(__v => __obj.update("value", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[SqlParameter]
+    }
+  }
+
+  /**
+    * The result of a SQL statement.
     */
   @js.native
   trait SqlStatementResult extends js.Object {
-    var numberOfRecordsUpdated: js.UndefOr[Double]
+    var numberOfRecordsUpdated: js.UndefOr[RecordsUpdated]
     var resultFrame: js.UndefOr[ResultFrame]
   }
 
   object SqlStatementResult {
     def apply(
-        numberOfRecordsUpdated: js.UndefOr[Double] = js.undefined,
+        numberOfRecordsUpdated: js.UndefOr[RecordsUpdated] = js.undefined,
         resultFrame: js.UndefOr[ResultFrame] = js.undefined
     ): SqlStatementResult = {
       val __obj = js.Dictionary.empty[js.Any]
@@ -225,16 +578,16 @@ package rdsdataservice {
   }
 
   /**
-    * User Defined Type
+    * A structure value returned by a call.
     */
   @js.native
   trait StructValue extends js.Object {
-    var attributes: js.UndefOr[ArrayValues]
+    var attributes: js.UndefOr[ArrayValueList]
   }
 
   object StructValue {
     def apply(
-        attributes: js.UndefOr[ArrayValues] = js.undefined
+        attributes: js.UndefOr[ArrayValueList] = js.undefined
     ): StructValue = {
       val __obj = js.Dictionary.empty[js.Any]
       attributes.foreach(__v => __obj.update("attributes", __v.asInstanceOf[js.Any]))
@@ -243,32 +596,50 @@ package rdsdataservice {
   }
 
   /**
-    * Column value
+    * The response elements represent the results of an update.
+    */
+  @js.native
+  trait UpdateResult extends js.Object {
+    var generatedFields: js.UndefOr[FieldList]
+  }
+
+  object UpdateResult {
+    def apply(
+        generatedFields: js.UndefOr[FieldList] = js.undefined
+    ): UpdateResult = {
+      val __obj = js.Dictionary.empty[js.Any]
+      generatedFields.foreach(__v => __obj.update("generatedFields", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateResult]
+    }
+  }
+
+  /**
+    * Contains the value of a column.
     */
   @js.native
   trait Value extends js.Object {
-    var arrayValues: js.UndefOr[ArrayValues]
-    var bigIntValue: js.UndefOr[Double]
-    var bitValue: js.UndefOr[Boolean]
+    var arrayValues: js.UndefOr[ArrayValueList]
+    var bigIntValue: js.UndefOr[BoxedLong]
+    var bitValue: js.UndefOr[BoxedBoolean]
     var blobValue: js.UndefOr[Blob]
-    var doubleValue: js.UndefOr[Double]
-    var intValue: js.UndefOr[Int]
-    var isNull: js.UndefOr[Boolean]
-    var realValue: js.UndefOr[Float]
+    var doubleValue: js.UndefOr[BoxedDouble]
+    var intValue: js.UndefOr[BoxedInteger]
+    var isNull: js.UndefOr[BoxedBoolean]
+    var realValue: js.UndefOr[BoxedFloat]
     var stringValue: js.UndefOr[String]
     var structValue: js.UndefOr[StructValue]
   }
 
   object Value {
     def apply(
-        arrayValues: js.UndefOr[ArrayValues] = js.undefined,
-        bigIntValue: js.UndefOr[Double] = js.undefined,
-        bitValue: js.UndefOr[Boolean] = js.undefined,
+        arrayValues: js.UndefOr[ArrayValueList] = js.undefined,
+        bigIntValue: js.UndefOr[BoxedLong] = js.undefined,
+        bitValue: js.UndefOr[BoxedBoolean] = js.undefined,
         blobValue: js.UndefOr[Blob] = js.undefined,
-        doubleValue: js.UndefOr[Double] = js.undefined,
-        intValue: js.UndefOr[Int] = js.undefined,
-        isNull: js.UndefOr[Boolean] = js.undefined,
-        realValue: js.UndefOr[Float] = js.undefined,
+        doubleValue: js.UndefOr[BoxedDouble] = js.undefined,
+        intValue: js.UndefOr[BoxedInteger] = js.undefined,
+        isNull: js.UndefOr[BoxedBoolean] = js.undefined,
+        realValue: js.UndefOr[BoxedFloat] = js.undefined,
         stringValue: js.UndefOr[String] = js.undefined,
         structValue: js.UndefOr[StructValue] = js.undefined
     ): Value = {

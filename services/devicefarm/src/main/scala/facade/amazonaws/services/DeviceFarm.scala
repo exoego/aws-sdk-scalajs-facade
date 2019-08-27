@@ -80,6 +80,10 @@ package object devicefarm {
   type SkipAppResign                      = Boolean
   type SshPublicKey                       = String
   type Suites                             = js.Array[Suite]
+  type TagKey                             = String
+  type TagKeyList                         = js.Array[TagKey]
+  type TagList                            = js.Array[Tag]
+  type TagValue                           = String
   type TestParameters                     = js.Dictionary[String]
   type TestType                           = String
   type Tests                              = js.Array[Test]
@@ -190,6 +194,8 @@ package object devicefarm {
       service.listSamples(params).promise.toFuture
     def listSuitesFuture(params: ListSuitesRequest): Future[ListSuitesResult] =
       service.listSuites(params).promise.toFuture
+    def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] =
+      service.listTagsForResource(params).promise.toFuture
     def listTestsFuture(params: ListTestsRequest): Future[ListTestsResult] = service.listTests(params).promise.toFuture
     def listUniqueProblemsFuture(params: ListUniqueProblemsRequest): Future[ListUniqueProblemsResult] =
       service.listUniqueProblems(params).promise.toFuture
@@ -207,6 +213,10 @@ package object devicefarm {
     def stopRemoteAccessSessionFuture(params: StopRemoteAccessSessionRequest): Future[StopRemoteAccessSessionResult] =
       service.stopRemoteAccessSession(params).promise.toFuture
     def stopRunFuture(params: StopRunRequest): Future[StopRunResult] = service.stopRun(params).promise.toFuture
+    def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] =
+      service.tagResource(params).promise.toFuture
+    def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] =
+      service.untagResource(params).promise.toFuture
     def updateDeviceInstanceFuture(params: UpdateDeviceInstanceRequest): Future[UpdateDeviceInstanceResult] =
       service.updateDeviceInstance(params).promise.toFuture
     def updateDevicePoolFuture(params: UpdateDevicePoolRequest): Future[UpdateDevicePoolResult] =
@@ -287,6 +297,7 @@ package devicefarm {
     def listRuns(params: ListRunsRequest): Request[ListRunsResult]                                           = js.native
     def listSamples(params: ListSamplesRequest): Request[ListSamplesResult]                                  = js.native
     def listSuites(params: ListSuitesRequest): Request[ListSuitesResult]                                     = js.native
+    def listTagsForResource(params: ListTagsForResourceRequest): Request[ListTagsForResourceResponse]        = js.native
     def listTests(params: ListTestsRequest): Request[ListTestsResult]                                        = js.native
     def listUniqueProblems(params: ListUniqueProblemsRequest): Request[ListUniqueProblemsResult]             = js.native
     def listUploads(params: ListUploadsRequest): Request[ListUploadsResult]                                  = js.native
@@ -298,6 +309,8 @@ package devicefarm {
     def stopRemoteAccessSession(params: StopRemoteAccessSessionRequest): Request[StopRemoteAccessSessionResult] =
       js.native
     def stopRun(params: StopRunRequest): Request[StopRunResult]                                           = js.native
+    def tagResource(params: TagResourceRequest): Request[TagResourceResponse]                             = js.native
+    def untagResource(params: UntagResourceRequest): Request[UntagResourceResponse]                       = js.native
     def updateDeviceInstance(params: UpdateDeviceInstanceRequest): Request[UpdateDeviceInstanceResult]    = js.native
     def updateDevicePool(params: UpdateDevicePoolRequest): Request[UpdateDevicePoolResult]                = js.native
     def updateInstanceProfile(params: UpdateInstanceProfileRequest): Request[UpdateInstanceProfileResult] = js.native
@@ -3021,6 +3034,38 @@ package devicefarm {
     }
   }
 
+  @js.native
+  trait ListTagsForResourceRequest extends js.Object {
+    var ResourceARN: AmazonResourceName
+  }
+
+  object ListTagsForResourceRequest {
+    def apply(
+        ResourceARN: AmazonResourceName
+    ): ListTagsForResourceRequest = {
+      val __obj = js.Dictionary[js.Any](
+        "ResourceARN" -> ResourceARN.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[ListTagsForResourceRequest]
+    }
+  }
+
+  @js.native
+  trait ListTagsForResourceResponse extends js.Object {
+    var Tags: js.UndefOr[TagList]
+  }
+
+  object ListTagsForResourceResponse {
+    def apply(
+        Tags: js.UndefOr[TagList] = js.undefined
+    ): ListTagsForResourceResponse = {
+      val __obj = js.Dictionary.empty[js.Any]
+      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListTagsForResourceResponse]
+    }
+  }
+
   /**
     * Represents a request to the list tests operation.
     */
@@ -4237,6 +4282,61 @@ package devicefarm {
   }
 
   /**
+    * The metadata that you apply to a resource to help you categorize and organize it. Each tag consists of a key and an optional value, both of which you define. Tag keys can have a maximum character length of 128 characters, and tag values can have a maximum length of 256 characters.
+    */
+  @js.native
+  trait Tag extends js.Object {
+    var Key: TagKey
+    var Value: TagValue
+  }
+
+  object Tag {
+    def apply(
+        Key: TagKey,
+        Value: TagValue
+    ): Tag = {
+      val __obj = js.Dictionary[js.Any](
+        "Key"   -> Key.asInstanceOf[js.Any],
+        "Value" -> Value.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[Tag]
+    }
+  }
+
+  @js.native
+  trait TagResourceRequest extends js.Object {
+    var ResourceARN: AmazonResourceName
+    var Tags: TagList
+  }
+
+  object TagResourceRequest {
+    def apply(
+        ResourceARN: AmazonResourceName,
+        Tags: TagList
+    ): TagResourceRequest = {
+      val __obj = js.Dictionary[js.Any](
+        "ResourceARN" -> ResourceARN.asInstanceOf[js.Any],
+        "Tags"        -> Tags.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[TagResourceRequest]
+    }
+  }
+
+  @js.native
+  trait TagResourceResponse extends js.Object {}
+
+  object TagResourceResponse {
+    def apply(
+        ): TagResourceResponse = {
+      val __obj = js.Dictionary.empty[js.Any]
+
+      __obj.asInstanceOf[TagResourceResponse]
+    }
+  }
+
+  /**
     * Represents a condition that is evaluated.
     */
   @js.native
@@ -4371,6 +4471,38 @@ package devicefarm {
       message.foreach(__v => __obj.update("message", __v.asInstanceOf[js.Any]))
       problems.foreach(__v => __obj.update("problems", __v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UniqueProblem]
+    }
+  }
+
+  @js.native
+  trait UntagResourceRequest extends js.Object {
+    var ResourceARN: AmazonResourceName
+    var TagKeys: TagKeyList
+  }
+
+  object UntagResourceRequest {
+    def apply(
+        ResourceARN: AmazonResourceName,
+        TagKeys: TagKeyList
+    ): UntagResourceRequest = {
+      val __obj = js.Dictionary[js.Any](
+        "ResourceARN" -> ResourceARN.asInstanceOf[js.Any],
+        "TagKeys"     -> TagKeys.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[UntagResourceRequest]
+    }
+  }
+
+  @js.native
+  trait UntagResourceResponse extends js.Object {}
+
+  object UntagResourceResponse {
+    def apply(
+        ): UntagResourceResponse = {
+      val __obj = js.Dictionary.empty[js.Any]
+
+      __obj.asInstanceOf[UntagResourceResponse]
     }
   }
 

@@ -13,6 +13,8 @@ package object workmail {
   type EntityState           = String
   type GroupName             = String
   type Groups                = js.Array[Group]
+  type MailboxQuota          = Int
+  type MailboxSize           = Double
   type MaxResults            = Int
   type MemberType            = String
   type Members               = js.Array[Member]
@@ -78,6 +80,8 @@ package object workmail {
     def disassociateMemberFromGroupFuture(
         params: DisassociateMemberFromGroupRequest
     ): Future[DisassociateMemberFromGroupResponse] = service.disassociateMemberFromGroup(params).promise.toFuture
+    def getMailboxDetailsFuture(params: GetMailboxDetailsRequest): Future[GetMailboxDetailsResponse] =
+      service.getMailboxDetails(params).promise.toFuture
     def listAliasesFuture(params: ListAliasesRequest): Future[ListAliasesResponse] =
       service.listAliases(params).promise.toFuture
     def listGroupMembersFuture(params: ListGroupMembersRequest): Future[ListGroupMembersResponse] =
@@ -100,6 +104,8 @@ package object workmail {
       service.registerToWorkMail(params).promise.toFuture
     def resetPasswordFuture(params: ResetPasswordRequest): Future[ResetPasswordResponse] =
       service.resetPassword(params).promise.toFuture
+    def updateMailboxQuotaFuture(params: UpdateMailboxQuotaRequest): Future[UpdateMailboxQuotaResponse] =
+      service.updateMailboxQuota(params).promise.toFuture
     def updatePrimaryEmailAddressFuture(
         params: UpdatePrimaryEmailAddressRequest
     ): Future[UpdatePrimaryEmailAddressResponse] = service.updatePrimaryEmailAddress(params).promise.toFuture
@@ -140,10 +146,11 @@ package workmail {
     ): Request[DisassociateDelegateFromResourceResponse] = js.native
     def disassociateMemberFromGroup(
         params: DisassociateMemberFromGroupRequest
-    ): Request[DisassociateMemberFromGroupResponse]                                          = js.native
-    def listAliases(params: ListAliasesRequest): Request[ListAliasesResponse]                = js.native
-    def listGroupMembers(params: ListGroupMembersRequest): Request[ListGroupMembersResponse] = js.native
-    def listGroups(params: ListGroupsRequest): Request[ListGroupsResponse]                   = js.native
+    ): Request[DisassociateMemberFromGroupResponse]                                             = js.native
+    def getMailboxDetails(params: GetMailboxDetailsRequest): Request[GetMailboxDetailsResponse] = js.native
+    def listAliases(params: ListAliasesRequest): Request[ListAliasesResponse]                   = js.native
+    def listGroupMembers(params: ListGroupMembersRequest): Request[ListGroupMembersResponse]    = js.native
+    def listGroups(params: ListGroupsRequest): Request[ListGroupsResponse]                      = js.native
     def listMailboxPermissions(params: ListMailboxPermissionsRequest): Request[ListMailboxPermissionsResponse] =
       js.native
     def listOrganizations(params: ListOrganizationsRequest): Request[ListOrganizationsResponse]             = js.native
@@ -153,6 +160,7 @@ package workmail {
     def putMailboxPermissions(params: PutMailboxPermissionsRequest): Request[PutMailboxPermissionsResponse] = js.native
     def registerToWorkMail(params: RegisterToWorkMailRequest): Request[RegisterToWorkMailResponse]          = js.native
     def resetPassword(params: ResetPasswordRequest): Request[ResetPasswordResponse]                         = js.native
+    def updateMailboxQuota(params: UpdateMailboxQuotaRequest): Request[UpdateMailboxQuotaResponse]          = js.native
     def updatePrimaryEmailAddress(
         params: UpdatePrimaryEmailAddressRequest
     ): Request[UpdatePrimaryEmailAddressResponse]                                      = js.native
@@ -920,6 +928,44 @@ package workmail {
     val values = IndexedSeq(ENABLED, DISABLED, DELETED)
   }
 
+  @js.native
+  trait GetMailboxDetailsRequest extends js.Object {
+    var OrganizationId: OrganizationId
+    var UserId: WorkMailIdentifier
+  }
+
+  object GetMailboxDetailsRequest {
+    def apply(
+        OrganizationId: OrganizationId,
+        UserId: WorkMailIdentifier
+    ): GetMailboxDetailsRequest = {
+      val __obj = js.Dictionary[js.Any](
+        "OrganizationId" -> OrganizationId.asInstanceOf[js.Any],
+        "UserId"         -> UserId.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[GetMailboxDetailsRequest]
+    }
+  }
+
+  @js.native
+  trait GetMailboxDetailsResponse extends js.Object {
+    var MailboxQuota: js.UndefOr[MailboxQuota]
+    var MailboxSize: js.UndefOr[MailboxSize]
+  }
+
+  object GetMailboxDetailsResponse {
+    def apply(
+        MailboxQuota: js.UndefOr[MailboxQuota] = js.undefined,
+        MailboxSize: js.UndefOr[MailboxSize] = js.undefined
+    ): GetMailboxDetailsResponse = {
+      val __obj = js.Dictionary.empty[js.Any]
+      MailboxQuota.foreach(__v => __obj.update("MailboxQuota", __v.asInstanceOf[js.Any]))
+      MailboxSize.foreach(__v => __obj.update("MailboxSize", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetMailboxDetailsResponse]
+    }
+  }
+
   /**
     * The representation of an Amazon WorkMail group.
     */
@@ -1538,6 +1584,41 @@ package workmail {
     val EQUIPMENT = "EQUIPMENT"
 
     val values = IndexedSeq(ROOM, EQUIPMENT)
+  }
+
+  @js.native
+  trait UpdateMailboxQuotaRequest extends js.Object {
+    var MailboxQuota: MailboxQuota
+    var OrganizationId: OrganizationId
+    var UserId: WorkMailIdentifier
+  }
+
+  object UpdateMailboxQuotaRequest {
+    def apply(
+        MailboxQuota: MailboxQuota,
+        OrganizationId: OrganizationId,
+        UserId: WorkMailIdentifier
+    ): UpdateMailboxQuotaRequest = {
+      val __obj = js.Dictionary[js.Any](
+        "MailboxQuota"   -> MailboxQuota.asInstanceOf[js.Any],
+        "OrganizationId" -> OrganizationId.asInstanceOf[js.Any],
+        "UserId"         -> UserId.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[UpdateMailboxQuotaRequest]
+    }
+  }
+
+  @js.native
+  trait UpdateMailboxQuotaResponse extends js.Object {}
+
+  object UpdateMailboxQuotaResponse {
+    def apply(
+        ): UpdateMailboxQuotaResponse = {
+      val __obj = js.Dictionary.empty[js.Any]
+
+      __obj.asInstanceOf[UpdateMailboxQuotaResponse]
+    }
   }
 
   @js.native

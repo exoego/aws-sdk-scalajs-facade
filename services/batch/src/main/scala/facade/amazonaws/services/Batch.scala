@@ -17,6 +17,9 @@ package object batch {
   type CRType                       = String
   type ComputeEnvironmentDetailList = js.Array[ComputeEnvironmentDetail]
   type ComputeEnvironmentOrders     = js.Array[ComputeEnvironmentOrder]
+  type DeviceCgroupPermission       = String
+  type DeviceCgroupPermissions      = js.Array[DeviceCgroupPermission]
+  type DevicesList                  = js.Array[Device]
   type EnvironmentVariables         = js.Array[KeyValuePair]
   type JQState                      = String
   type JQStatus                     = String
@@ -469,6 +472,7 @@ package batch {
     var image: js.UndefOr[String]
     var instanceType: js.UndefOr[String]
     var jobRoleArn: js.UndefOr[String]
+    var linuxParameters: js.UndefOr[LinuxParameters]
     var logStreamName: js.UndefOr[String]
     var memory: js.UndefOr[Int]
     var mountPoints: js.UndefOr[MountPoints]
@@ -493,6 +497,7 @@ package batch {
         image: js.UndefOr[String] = js.undefined,
         instanceType: js.UndefOr[String] = js.undefined,
         jobRoleArn: js.UndefOr[String] = js.undefined,
+        linuxParameters: js.UndefOr[LinuxParameters] = js.undefined,
         logStreamName: js.UndefOr[String] = js.undefined,
         memory: js.UndefOr[Int] = js.undefined,
         mountPoints: js.UndefOr[MountPoints] = js.undefined,
@@ -515,6 +520,7 @@ package batch {
       image.foreach(__v => __obj.update("image", __v.asInstanceOf[js.Any]))
       instanceType.foreach(__v => __obj.update("instanceType", __v.asInstanceOf[js.Any]))
       jobRoleArn.foreach(__v => __obj.update("jobRoleArn", __v.asInstanceOf[js.Any]))
+      linuxParameters.foreach(__v => __obj.update("linuxParameters", __v.asInstanceOf[js.Any]))
       logStreamName.foreach(__v => __obj.update("logStreamName", __v.asInstanceOf[js.Any]))
       memory.foreach(__v => __obj.update("memory", __v.asInstanceOf[js.Any]))
       mountPoints.foreach(__v => __obj.update("mountPoints", __v.asInstanceOf[js.Any]))
@@ -575,6 +581,7 @@ package batch {
     var image: js.UndefOr[String]
     var instanceType: js.UndefOr[String]
     var jobRoleArn: js.UndefOr[String]
+    var linuxParameters: js.UndefOr[LinuxParameters]
     var memory: js.UndefOr[Int]
     var mountPoints: js.UndefOr[MountPoints]
     var privileged: js.UndefOr[Boolean]
@@ -593,6 +600,7 @@ package batch {
         image: js.UndefOr[String] = js.undefined,
         instanceType: js.UndefOr[String] = js.undefined,
         jobRoleArn: js.UndefOr[String] = js.undefined,
+        linuxParameters: js.UndefOr[LinuxParameters] = js.undefined,
         memory: js.UndefOr[Int] = js.undefined,
         mountPoints: js.UndefOr[MountPoints] = js.undefined,
         privileged: js.UndefOr[Boolean] = js.undefined,
@@ -609,6 +617,7 @@ package batch {
       image.foreach(__v => __obj.update("image", __v.asInstanceOf[js.Any]))
       instanceType.foreach(__v => __obj.update("instanceType", __v.asInstanceOf[js.Any]))
       jobRoleArn.foreach(__v => __obj.update("jobRoleArn", __v.asInstanceOf[js.Any]))
+      linuxParameters.foreach(__v => __obj.update("linuxParameters", __v.asInstanceOf[js.Any]))
       memory.foreach(__v => __obj.update("memory", __v.asInstanceOf[js.Any]))
       mountPoints.foreach(__v => __obj.update("mountPoints", __v.asInstanceOf[js.Any]))
       privileged.foreach(__v => __obj.update("privileged", __v.asInstanceOf[js.Any]))
@@ -979,7 +988,41 @@ package batch {
   }
 
   /**
-    * The contents of the <code>host</code> parameter determine whether your data volume persists on the host container instance and where it is stored. If the host parameter is empty, then the Docker daemon assigns a host path for your data volume, but the data is not guaranteed to persist after the containers associated with it stop running.
+    * An object representing a container instance host device.
+    */
+  @js.native
+  trait Device extends js.Object {
+    var hostPath: String
+    var containerPath: js.UndefOr[String]
+    var permissions: js.UndefOr[DeviceCgroupPermissions]
+  }
+
+  object Device {
+    def apply(
+        hostPath: String,
+        containerPath: js.UndefOr[String] = js.undefined,
+        permissions: js.UndefOr[DeviceCgroupPermissions] = js.undefined
+    ): Device = {
+      val __obj = js.Dictionary[js.Any](
+        "hostPath" -> hostPath.asInstanceOf[js.Any]
+      )
+
+      containerPath.foreach(__v => __obj.update("containerPath", __v.asInstanceOf[js.Any]))
+      permissions.foreach(__v => __obj.update("permissions", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Device]
+    }
+  }
+
+  object DeviceCgroupPermissionEnum {
+    val READ  = "READ"
+    val WRITE = "WRITE"
+    val MKNOD = "MKNOD"
+
+    val values = IndexedSeq(READ, WRITE, MKNOD)
+  }
+
+  /**
+    * Determine whether your data volume persists on the host container instance and where it is stored. If this parameter is empty, then the Docker daemon assigns a host path for your data volume, but the data is not guaranteed to persist after the containers associated with it stop running.
     */
   @js.native
   trait Host extends js.Object {
@@ -1320,6 +1363,24 @@ package batch {
     }
   }
 
+  /**
+    * Linux-specific modifications that are applied to the container, such as details for device mappings.
+    */
+  @js.native
+  trait LinuxParameters extends js.Object {
+    var devices: js.UndefOr[DevicesList]
+  }
+
+  object LinuxParameters {
+    def apply(
+        devices: js.UndefOr[DevicesList] = js.undefined
+    ): LinuxParameters = {
+      val __obj = js.Dictionary.empty[js.Any]
+      devices.foreach(__v => __obj.update("devices", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[LinuxParameters]
+    }
+  }
+
   @js.native
   trait ListJobsRequest extends js.Object {
     var arrayJobId: js.UndefOr[String]
@@ -1371,7 +1432,7 @@ package batch {
   }
 
   /**
-    * Details on a Docker volume mount point that is used in a job's container properties.
+    * Details on a Docker volume mount point that is used in a job's container properties. This parameter maps to <code>Volumes</code> in the [[https://docs.docker.com/engine/reference/api/docker_remote_api_v1.19/#create-a-container|Create a container]] section of the Docker Remote API and the <code>--volume</code> option to docker run.
     */
   @js.native
   trait MountPoint extends js.Object {

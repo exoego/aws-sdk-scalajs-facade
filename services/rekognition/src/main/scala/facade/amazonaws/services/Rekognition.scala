@@ -509,7 +509,7 @@ package rekognition {
   }
 
   /**
-    * Information about a moderation label detection in a stored video.
+    * Information about an unsafe content label detection in a stored video.
     */
   @js.native
   trait ContentModerationDetection extends js.Object {
@@ -967,7 +967,7 @@ package rekognition {
   }
 
   /**
-    * The emotions detected on the face, and the confidence level in the determination. For example, HAPPY, SAD, and ANGRY.
+    * The emotions that appear to be expressed on the face, and the confidence level in the determination. The API is only making a determination of the physical appearance of a person's face. It is not a determination of the person’s internal emotional state and should not be used in such a way. For example, a person pretending to have a sad face might not be sad emotionally.
     */
   @js.native
   trait Emotion extends js.Object {
@@ -996,8 +996,9 @@ package rekognition {
     val SURPRISED = "SURPRISED"
     val CALM      = "CALM"
     val UNKNOWN   = "UNKNOWN"
+    val FEAR      = "FEAR"
 
-    val values = IndexedSeq(HAPPY, SAD, ANGRY, CONFUSED, DISGUSTED, SURPRISED, CALM, UNKNOWN)
+    val values = IndexedSeq(HAPPY, SAD, ANGRY, CONFUSED, DISGUSTED, SURPRISED, CALM, UNKNOWN, FEAR)
   }
 
   /**
@@ -2068,7 +2069,7 @@ package rekognition {
   }
 
   /**
-    * Provides information about a single type of moderated content found in an image or video. Each type of moderated content has a label within a hierarchical taxonomy. For more information, see Detecting Unsafe Content in the Amazon Rekognition Developer Guide.
+    * Provides information about a single type of unsafe content found in an image or video. Each type of moderated content has a label within a hierarchical taxonomy. For more information, see Detecting Unsafe Content in the Amazon Rekognition Developer Guide.
     */
   @js.native
   trait ModerationLabel extends js.Object {

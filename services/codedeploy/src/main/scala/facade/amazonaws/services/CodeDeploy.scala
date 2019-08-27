@@ -17,6 +17,7 @@ package object codedeploy {
   type ApplicationRevisionSortBy      = String
   type ApplicationsInfoList           = js.Array[ApplicationInfo]
   type ApplicationsList               = js.Array[ApplicationName]
+  type Arn                            = String
   type AutoRollbackEvent              = String
   type AutoRollbackEventsList         = js.Array[AutoRollbackEvent]
   type AutoScalingGroupHook           = String
@@ -86,6 +87,8 @@ package object codedeploy {
   type InstanceTypeList              = js.Array[InstanceType]
   type InstancesList                 = js.Array[InstanceId]
   type Key                           = String
+  type LambdaFunctionAlias           = String
+  type LambdaFunctionName            = String
   type LifecycleErrorCode            = String
   type LifecycleEventHookExecutionId = String
   type LifecycleEventList            = js.Array[LifecycleEvent]
@@ -118,6 +121,7 @@ package object codedeploy {
   type StopStatus                    = String
   type TagFilterList                 = js.Array[TagFilter]
   type TagFilterType                 = String
+  type TagKeyList                    = js.Array[Key]
   type TagList                       = js.Array[Tag]
   type TargetArn                     = String
   type TargetFilterName              = String
@@ -139,6 +143,7 @@ package object codedeploy {
   type TriggerName                   = String
   type TriggerTargetArn              = String
   type Value                         = String
+  type Version                       = String
   type VersionId                     = String
   type WaitTimeInMins                = Int
 
@@ -212,6 +217,8 @@ package object codedeploy {
     ): Future[ListGitHubAccountTokenNamesOutput] = service.listGitHubAccountTokenNames(params).promise.toFuture
     def listOnPremisesInstancesFuture(params: ListOnPremisesInstancesInput): Future[ListOnPremisesInstancesOutput] =
       service.listOnPremisesInstances(params).promise.toFuture
+    def listTagsForResourceFuture(params: ListTagsForResourceInput): Future[ListTagsForResourceOutput] =
+      service.listTagsForResource(params).promise.toFuture
     def putLifecycleEventHookExecutionStatusFuture(
         params: PutLifecycleEventHookExecutionStatusInput
     ): Future[PutLifecycleEventHookExecutionStatusOutput] =
@@ -224,6 +231,10 @@ package object codedeploy {
       service.removeTagsFromOnPremisesInstances(params).promise.toFuture
     def stopDeploymentFuture(params: StopDeploymentInput): Future[StopDeploymentOutput] =
       service.stopDeployment(params).promise.toFuture
+    def tagResourceFuture(params: TagResourceInput): Future[TagResourceOutput] =
+      service.tagResource(params).promise.toFuture
+    def untagResourceFuture(params: UntagResourceInput): Future[UntagResourceOutput] =
+      service.untagResource(params).promise.toFuture
     def updateApplicationFuture(params: UpdateApplicationInput): Future[js.Object] =
       service.updateApplication(params).promise.toFuture
     def updateDeploymentGroupFuture(params: UpdateDeploymentGroupInput): Future[UpdateDeploymentGroupOutput] =
@@ -280,6 +291,7 @@ package codedeploy {
     ): Request[ListGitHubAccountTokenNamesOutput] = js.native
     def listOnPremisesInstances(params: ListOnPremisesInstancesInput): Request[ListOnPremisesInstancesOutput] =
       js.native
+    def listTagsForResource(params: ListTagsForResourceInput): Request[ListTagsForResourceOutput] = js.native
     def putLifecycleEventHookExecutionStatus(
         params: PutLifecycleEventHookExecutionStatusInput
     ): Request[PutLifecycleEventHookExecutionStatusOutput]                                        = js.native
@@ -288,6 +300,8 @@ package codedeploy {
     def removeTagsFromOnPremisesInstances(params: RemoveTagsFromOnPremisesInstancesInput): Request[js.Object] =
       js.native
     def stopDeployment(params: StopDeploymentInput): Request[StopDeploymentOutput]                      = js.native
+    def tagResource(params: TagResourceInput): Request[TagResourceOutput]                               = js.native
+    def untagResource(params: UntagResourceInput): Request[UntagResourceOutput]                         = js.native
     def updateApplication(params: UpdateApplicationInput): Request[js.Object]                           = js.native
     def updateDeploymentGroup(params: UpdateDeploymentGroupInput): Request[UpdateDeploymentGroupOutput] = js.native
     @deprecated("This operation is deprecated, use BatchGetDeploymentTargets instead.", "forever") def batchGetDeploymentInstances(
@@ -792,7 +806,7 @@ package codedeploy {
   }
 
   /**
-    * Information about whether instances in the original environment are terminated when a blue/green deployment is successful.
+    * Information about whether instances in the original environment are terminated when a blue/green deployment is successful. <code>BlueInstanceTerminationOption</code> does not apply to Lambda deployments.
     */
   @js.native
   trait BlueInstanceTerminationOption extends js.Object {
@@ -857,18 +871,21 @@ package codedeploy {
   trait CreateApplicationInput extends js.Object {
     var applicationName: ApplicationName
     var computePlatform: js.UndefOr[ComputePlatform]
+    var tags: js.UndefOr[TagList]
   }
 
   object CreateApplicationInput {
     def apply(
         applicationName: ApplicationName,
-        computePlatform: js.UndefOr[ComputePlatform] = js.undefined
+        computePlatform: js.UndefOr[ComputePlatform] = js.undefined,
+        tags: js.UndefOr[TagList] = js.undefined
     ): CreateApplicationInput = {
       val __obj = js.Dictionary[js.Any](
         "applicationName" -> applicationName.asInstanceOf[js.Any]
       )
 
       computePlatform.foreach(__v => __obj.update("computePlatform", __v.asInstanceOf[js.Any]))
+      tags.foreach(__v => __obj.update("tags", __v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateApplicationInput]
     }
   }
@@ -958,6 +975,7 @@ package codedeploy {
     var loadBalancerInfo: js.UndefOr[LoadBalancerInfo]
     var onPremisesInstanceTagFilters: js.UndefOr[TagFilterList]
     var onPremisesTagSet: js.UndefOr[OnPremisesTagSet]
+    var tags: js.UndefOr[TagList]
     var triggerConfigurations: js.UndefOr[TriggerConfigList]
   }
 
@@ -978,6 +996,7 @@ package codedeploy {
         loadBalancerInfo: js.UndefOr[LoadBalancerInfo] = js.undefined,
         onPremisesInstanceTagFilters: js.UndefOr[TagFilterList] = js.undefined,
         onPremisesTagSet: js.UndefOr[OnPremisesTagSet] = js.undefined,
+        tags: js.UndefOr[TagList] = js.undefined,
         triggerConfigurations: js.UndefOr[TriggerConfigList] = js.undefined
     ): CreateDeploymentGroupInput = {
       val __obj = js.Dictionary[js.Any](
@@ -1002,6 +1021,7 @@ package codedeploy {
         __v => __obj.update("onPremisesInstanceTagFilters", __v.asInstanceOf[js.Any])
       )
       onPremisesTagSet.foreach(__v => __obj.update("onPremisesTagSet", __v.asInstanceOf[js.Any]))
+      tags.foreach(__v => __obj.update("tags", __v.asInstanceOf[js.Any]))
       triggerConfigurations.foreach(__v => __obj.update("triggerConfigurations", __v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateDeploymentGroupInput]
     }
@@ -1798,68 +1818,74 @@ package codedeploy {
   }
 
   object ErrorCodeEnum {
-    val DEPLOYMENT_GROUP_MISSING                    = "DEPLOYMENT_GROUP_MISSING"
+    val AGENT_ISSUE                                 = "AGENT_ISSUE"
+    val ALARM_ACTIVE                                = "ALARM_ACTIVE"
     val APPLICATION_MISSING                         = "APPLICATION_MISSING"
-    val REVISION_MISSING                            = "REVISION_MISSING"
+    val AUTOSCALING_VALIDATION_ERROR                = "AUTOSCALING_VALIDATION_ERROR"
+    val AUTO_SCALING_CONFIGURATION                  = "AUTO_SCALING_CONFIGURATION"
+    val AUTO_SCALING_IAM_ROLE_PERMISSIONS           = "AUTO_SCALING_IAM_ROLE_PERMISSIONS"
+    val CODEDEPLOY_RESOURCE_CANNOT_BE_FOUND         = "CODEDEPLOY_RESOURCE_CANNOT_BE_FOUND"
+    val CUSTOMER_APPLICATION_UNHEALTHY              = "CUSTOMER_APPLICATION_UNHEALTHY"
+    val DEPLOYMENT_GROUP_MISSING                    = "DEPLOYMENT_GROUP_MISSING"
+    val ECS_UPDATE_ERROR                            = "ECS_UPDATE_ERROR"
+    val ELASTIC_LOAD_BALANCING_INVALID              = "ELASTIC_LOAD_BALANCING_INVALID"
+    val ELB_INVALID_INSTANCE                        = "ELB_INVALID_INSTANCE"
+    val HEALTH_CONSTRAINTS                          = "HEALTH_CONSTRAINTS"
+    val HEALTH_CONSTRAINTS_INVALID                  = "HEALTH_CONSTRAINTS_INVALID"
+    val HOOK_EXECUTION_FAILURE                      = "HOOK_EXECUTION_FAILURE"
     val IAM_ROLE_MISSING                            = "IAM_ROLE_MISSING"
     val IAM_ROLE_PERMISSIONS                        = "IAM_ROLE_PERMISSIONS"
-    val NO_EC2_SUBSCRIPTION                         = "NO_EC2_SUBSCRIPTION"
-    val OVER_MAX_INSTANCES                          = "OVER_MAX_INSTANCES"
-    val NO_INSTANCES                                = "NO_INSTANCES"
-    val TIMEOUT                                     = "TIMEOUT"
-    val HEALTH_CONSTRAINTS_INVALID                  = "HEALTH_CONSTRAINTS_INVALID"
-    val HEALTH_CONSTRAINTS                          = "HEALTH_CONSTRAINTS"
     val INTERNAL_ERROR                              = "INTERNAL_ERROR"
-    val THROTTLED                                   = "THROTTLED"
-    val ALARM_ACTIVE                                = "ALARM_ACTIVE"
-    val AGENT_ISSUE                                 = "AGENT_ISSUE"
-    val AUTO_SCALING_IAM_ROLE_PERMISSIONS           = "AUTO_SCALING_IAM_ROLE_PERMISSIONS"
-    val AUTO_SCALING_CONFIGURATION                  = "AUTO_SCALING_CONFIGURATION"
+    val INVALID_ECS_SERVICE                         = "INVALID_ECS_SERVICE"
+    val INVALID_LAMBDA_CONFIGURATION                = "INVALID_LAMBDA_CONFIGURATION"
+    val INVALID_LAMBDA_FUNCTION                     = "INVALID_LAMBDA_FUNCTION"
+    val INVALID_REVISION                            = "INVALID_REVISION"
     val MANUAL_STOP                                 = "MANUAL_STOP"
     val MISSING_BLUE_GREEN_DEPLOYMENT_CONFIGURATION = "MISSING_BLUE_GREEN_DEPLOYMENT_CONFIGURATION"
     val MISSING_ELB_INFORMATION                     = "MISSING_ELB_INFORMATION"
     val MISSING_GITHUB_TOKEN                        = "MISSING_GITHUB_TOKEN"
-    val ELASTIC_LOAD_BALANCING_INVALID              = "ELASTIC_LOAD_BALANCING_INVALID"
-    val ELB_INVALID_INSTANCE                        = "ELB_INVALID_INSTANCE"
-    val INVALID_LAMBDA_CONFIGURATION                = "INVALID_LAMBDA_CONFIGURATION"
-    val INVALID_LAMBDA_FUNCTION                     = "INVALID_LAMBDA_FUNCTION"
-    val HOOK_EXECUTION_FAILURE                      = "HOOK_EXECUTION_FAILURE"
-    val AUTOSCALING_VALIDATION_ERROR                = "AUTOSCALING_VALIDATION_ERROR"
-    val INVALID_ECS_SERVICE                         = "INVALID_ECS_SERVICE"
-    val ECS_UPDATE_ERROR                            = "ECS_UPDATE_ERROR"
-    val INVALID_REVISION                            = "INVALID_REVISION"
+    val NO_EC2_SUBSCRIPTION                         = "NO_EC2_SUBSCRIPTION"
+    val NO_INSTANCES                                = "NO_INSTANCES"
+    val OVER_MAX_INSTANCES                          = "OVER_MAX_INSTANCES"
+    val RESOURCE_LIMIT_EXCEEDED                     = "RESOURCE_LIMIT_EXCEEDED"
+    val REVISION_MISSING                            = "REVISION_MISSING"
+    val THROTTLED                                   = "THROTTLED"
+    val TIMEOUT                                     = "TIMEOUT"
 
     val values = IndexedSeq(
-      DEPLOYMENT_GROUP_MISSING,
+      AGENT_ISSUE,
+      ALARM_ACTIVE,
       APPLICATION_MISSING,
-      REVISION_MISSING,
+      AUTOSCALING_VALIDATION_ERROR,
+      AUTO_SCALING_CONFIGURATION,
+      AUTO_SCALING_IAM_ROLE_PERMISSIONS,
+      CODEDEPLOY_RESOURCE_CANNOT_BE_FOUND,
+      CUSTOMER_APPLICATION_UNHEALTHY,
+      DEPLOYMENT_GROUP_MISSING,
+      ECS_UPDATE_ERROR,
+      ELASTIC_LOAD_BALANCING_INVALID,
+      ELB_INVALID_INSTANCE,
+      HEALTH_CONSTRAINTS,
+      HEALTH_CONSTRAINTS_INVALID,
+      HOOK_EXECUTION_FAILURE,
       IAM_ROLE_MISSING,
       IAM_ROLE_PERMISSIONS,
-      NO_EC2_SUBSCRIPTION,
-      OVER_MAX_INSTANCES,
-      NO_INSTANCES,
-      TIMEOUT,
-      HEALTH_CONSTRAINTS_INVALID,
-      HEALTH_CONSTRAINTS,
       INTERNAL_ERROR,
-      THROTTLED,
-      ALARM_ACTIVE,
-      AGENT_ISSUE,
-      AUTO_SCALING_IAM_ROLE_PERMISSIONS,
-      AUTO_SCALING_CONFIGURATION,
+      INVALID_ECS_SERVICE,
+      INVALID_LAMBDA_CONFIGURATION,
+      INVALID_LAMBDA_FUNCTION,
+      INVALID_REVISION,
       MANUAL_STOP,
       MISSING_BLUE_GREEN_DEPLOYMENT_CONFIGURATION,
       MISSING_ELB_INFORMATION,
       MISSING_GITHUB_TOKEN,
-      ELASTIC_LOAD_BALANCING_INVALID,
-      ELB_INVALID_INSTANCE,
-      INVALID_LAMBDA_CONFIGURATION,
-      INVALID_LAMBDA_FUNCTION,
-      HOOK_EXECUTION_FAILURE,
-      AUTOSCALING_VALIDATION_ERROR,
-      INVALID_ECS_SERVICE,
-      ECS_UPDATE_ERROR,
-      INVALID_REVISION
+      NO_EC2_SUBSCRIPTION,
+      NO_INSTANCES,
+      OVER_MAX_INSTANCES,
+      RESOURCE_LIMIT_EXCEEDED,
+      REVISION_MISSING,
+      THROTTLED,
+      TIMEOUT
     )
   }
 
@@ -2416,11 +2442,42 @@ package codedeploy {
   }
 
   /**
+    * Information about a Lambda function specified in a deployment.
+    */
+  @js.native
+  trait LambdaFunctionInfo extends js.Object {
+    var currentVersion: js.UndefOr[Version]
+    var functionAlias: js.UndefOr[LambdaFunctionAlias]
+    var functionName: js.UndefOr[LambdaFunctionName]
+    var targetVersion: js.UndefOr[Version]
+    var targetVersionWeight: js.UndefOr[TrafficWeight]
+  }
+
+  object LambdaFunctionInfo {
+    def apply(
+        currentVersion: js.UndefOr[Version] = js.undefined,
+        functionAlias: js.UndefOr[LambdaFunctionAlias] = js.undefined,
+        functionName: js.UndefOr[LambdaFunctionName] = js.undefined,
+        targetVersion: js.UndefOr[Version] = js.undefined,
+        targetVersionWeight: js.UndefOr[TrafficWeight] = js.undefined
+    ): LambdaFunctionInfo = {
+      val __obj = js.Dictionary.empty[js.Any]
+      currentVersion.foreach(__v => __obj.update("currentVersion", __v.asInstanceOf[js.Any]))
+      functionAlias.foreach(__v => __obj.update("functionAlias", __v.asInstanceOf[js.Any]))
+      functionName.foreach(__v => __obj.update("functionName", __v.asInstanceOf[js.Any]))
+      targetVersion.foreach(__v => __obj.update("targetVersion", __v.asInstanceOf[js.Any]))
+      targetVersionWeight.foreach(__v => __obj.update("targetVersionWeight", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[LambdaFunctionInfo]
+    }
+  }
+
+  /**
     * Information about the target AWS Lambda function during an AWS Lambda deployment.
     */
   @js.native
   trait LambdaTarget extends js.Object {
     var deploymentId: js.UndefOr[DeploymentId]
+    var lambdaFunctionInfo: js.UndefOr[LambdaFunctionInfo]
     var lastUpdatedAt: js.UndefOr[Time]
     var lifecycleEvents: js.UndefOr[LifecycleEventList]
     var status: js.UndefOr[TargetStatus]
@@ -2431,6 +2488,7 @@ package codedeploy {
   object LambdaTarget {
     def apply(
         deploymentId: js.UndefOr[DeploymentId] = js.undefined,
+        lambdaFunctionInfo: js.UndefOr[LambdaFunctionInfo] = js.undefined,
         lastUpdatedAt: js.UndefOr[Time] = js.undefined,
         lifecycleEvents: js.UndefOr[LifecycleEventList] = js.undefined,
         status: js.UndefOr[TargetStatus] = js.undefined,
@@ -2439,6 +2497,7 @@ package codedeploy {
     ): LambdaTarget = {
       val __obj = js.Dictionary.empty[js.Any]
       deploymentId.foreach(__v => __obj.update("deploymentId", __v.asInstanceOf[js.Any]))
+      lambdaFunctionInfo.foreach(__v => __obj.update("lambdaFunctionInfo", __v.asInstanceOf[js.Any]))
       lastUpdatedAt.foreach(__v => __obj.update("lastUpdatedAt", __v.asInstanceOf[js.Any]))
       lifecycleEvents.foreach(__v => __obj.update("lifecycleEvents", __v.asInstanceOf[js.Any]))
       status.foreach(__v => __obj.update("status", __v.asInstanceOf[js.Any]))
@@ -2943,6 +3002,44 @@ package codedeploy {
     val values = IndexedSeq(include, exclude, ignore)
   }
 
+  @js.native
+  trait ListTagsForResourceInput extends js.Object {
+    var ResourceArn: Arn
+    var NextToken: js.UndefOr[NextToken]
+  }
+
+  object ListTagsForResourceInput {
+    def apply(
+        ResourceArn: Arn,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListTagsForResourceInput = {
+      val __obj = js.Dictionary[js.Any](
+        "ResourceArn" -> ResourceArn.asInstanceOf[js.Any]
+      )
+
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListTagsForResourceInput]
+    }
+  }
+
+  @js.native
+  trait ListTagsForResourceOutput extends js.Object {
+    var NextToken: js.UndefOr[NextToken]
+    var Tags: js.UndefOr[TagList]
+  }
+
+  object ListTagsForResourceOutput {
+    def apply(
+        NextToken: js.UndefOr[NextToken] = js.undefined,
+        Tags: js.UndefOr[TagList] = js.undefined
+    ): ListTagsForResourceOutput = {
+      val __obj = js.Dictionary.empty[js.Any]
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListTagsForResourceOutput]
+    }
+  }
+
   /**
     * Information about the Elastic Load Balancing load balancer or target group used in a deployment.
     */
@@ -3399,6 +3496,38 @@ package codedeploy {
     val values = IndexedSeq(KEY_ONLY, VALUE_ONLY, KEY_AND_VALUE)
   }
 
+  @js.native
+  trait TagResourceInput extends js.Object {
+    var ResourceArn: Arn
+    var Tags: TagList
+  }
+
+  object TagResourceInput {
+    def apply(
+        ResourceArn: Arn,
+        Tags: TagList
+    ): TagResourceInput = {
+      val __obj = js.Dictionary[js.Any](
+        "ResourceArn" -> ResourceArn.asInstanceOf[js.Any],
+        "Tags"        -> Tags.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[TagResourceInput]
+    }
+  }
+
+  @js.native
+  trait TagResourceOutput extends js.Object {}
+
+  object TagResourceOutput {
+    def apply(
+        ): TagResourceOutput = {
+      val __obj = js.Dictionary.empty[js.Any]
+
+      __obj.asInstanceOf[TagResourceOutput]
+    }
+  }
+
   object TargetFilterNameEnum {
     val TargetStatus        = "TargetStatus"
     val ServerInstanceLabel = "ServerInstanceLabel"
@@ -3652,6 +3781,38 @@ package codedeploy {
       InstanceFailure,
       InstanceReady
     )
+  }
+
+  @js.native
+  trait UntagResourceInput extends js.Object {
+    var ResourceArn: Arn
+    var TagKeys: TagKeyList
+  }
+
+  object UntagResourceInput {
+    def apply(
+        ResourceArn: Arn,
+        TagKeys: TagKeyList
+    ): UntagResourceInput = {
+      val __obj = js.Dictionary[js.Any](
+        "ResourceArn" -> ResourceArn.asInstanceOf[js.Any],
+        "TagKeys"     -> TagKeys.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[UntagResourceInput]
+    }
+  }
+
+  @js.native
+  trait UntagResourceOutput extends js.Object {}
+
+  object UntagResourceOutput {
+    def apply(
+        ): UntagResourceOutput = {
+      val __obj = js.Dictionary.empty[js.Any]
+
+      __obj.asInstanceOf[UntagResourceOutput]
+    }
   }
 
   /**

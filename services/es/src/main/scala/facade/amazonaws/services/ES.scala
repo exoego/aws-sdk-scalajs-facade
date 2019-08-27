@@ -861,6 +861,22 @@ package es {
     val `m4.2xlarge.elasticsearch`  = "m4.2xlarge.elasticsearch"
     val `m4.4xlarge.elasticsearch`  = "m4.4xlarge.elasticsearch"
     val `m4.10xlarge.elasticsearch` = "m4.10xlarge.elasticsearch"
+    val `m5.large.elasticsearch`    = "m5.large.elasticsearch"
+    val `m5.xlarge.elasticsearch`   = "m5.xlarge.elasticsearch"
+    val `m5.2xlarge.elasticsearch`  = "m5.2xlarge.elasticsearch"
+    val `m5.4xlarge.elasticsearch`  = "m5.4xlarge.elasticsearch"
+    val `m5.12xlarge.elasticsearch` = "m5.12xlarge.elasticsearch"
+    val `r5.large.elasticsearch`    = "r5.large.elasticsearch"
+    val `r5.xlarge.elasticsearch`   = "r5.xlarge.elasticsearch"
+    val `r5.2xlarge.elasticsearch`  = "r5.2xlarge.elasticsearch"
+    val `r5.4xlarge.elasticsearch`  = "r5.4xlarge.elasticsearch"
+    val `r5.12xlarge.elasticsearch` = "r5.12xlarge.elasticsearch"
+    val `c5.large.elasticsearch`    = "c5.large.elasticsearch"
+    val `c5.xlarge.elasticsearch`   = "c5.xlarge.elasticsearch"
+    val `c5.2xlarge.elasticsearch`  = "c5.2xlarge.elasticsearch"
+    val `c5.4xlarge.elasticsearch`  = "c5.4xlarge.elasticsearch"
+    val `c5.9xlarge.elasticsearch`  = "c5.9xlarge.elasticsearch"
+    val `c5.18xlarge.elasticsearch` = "c5.18xlarge.elasticsearch"
     val `t2.micro.elasticsearch`    = "t2.micro.elasticsearch"
     val `t2.small.elasticsearch`    = "t2.small.elasticsearch"
     val `t2.medium.elasticsearch`   = "t2.medium.elasticsearch"
@@ -903,6 +919,22 @@ package es {
       `m4.2xlarge.elasticsearch`,
       `m4.4xlarge.elasticsearch`,
       `m4.10xlarge.elasticsearch`,
+      `m5.large.elasticsearch`,
+      `m5.xlarge.elasticsearch`,
+      `m5.2xlarge.elasticsearch`,
+      `m5.4xlarge.elasticsearch`,
+      `m5.12xlarge.elasticsearch`,
+      `r5.large.elasticsearch`,
+      `r5.xlarge.elasticsearch`,
+      `r5.2xlarge.elasticsearch`,
+      `r5.4xlarge.elasticsearch`,
+      `r5.12xlarge.elasticsearch`,
+      `c5.large.elasticsearch`,
+      `c5.xlarge.elasticsearch`,
+      `c5.2xlarge.elasticsearch`,
+      `c5.4xlarge.elasticsearch`,
+      `c5.9xlarge.elasticsearch`,
+      `c5.18xlarge.elasticsearch`,
       `t2.micro.elasticsearch`,
       `t2.small.elasticsearch`,
       `t2.medium.elasticsearch`,

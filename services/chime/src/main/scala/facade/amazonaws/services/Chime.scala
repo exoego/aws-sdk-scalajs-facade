@@ -11,6 +11,8 @@ package object chime {
   type AccountList                      = js.Array[Account]
   type AccountName                      = String
   type AccountType                      = String
+  type BotList                          = js.Array[Bot]
+  type BotType                          = String
   type CallingRegion                    = String
   type CallingRegionList                = js.Array[CallingRegion]
   type CpsLimit                         = Int
@@ -44,6 +46,7 @@ package object chime {
   type PhoneNumberOrderStatus           = String
   type PhoneNumberProductType           = String
   type PhoneNumberStatus                = String
+  type PhoneNumberType                  = String
   type Port                             = Int
   type ProfileServiceMaxResults         = Int
   type RegistrationStatus               = String
@@ -51,6 +54,7 @@ package object chime {
   type SensitiveString                  = String
   type SensitiveStringList              = js.Array[SensitiveString]
   type StringList                       = js.Array[String]
+  type TollFreePrefix                   = String
   type UpdatePhoneNumberRequestItemList = js.Array[UpdatePhoneNumberRequestItem]
   type UpdateUserRequestItemList        = js.Array[UpdateUserRequestItem]
   type UserEmailList                    = js.Array[EmailAddress]
@@ -81,12 +85,16 @@ package object chime {
       service.batchUpdateUser(params).promise.toFuture
     def createAccountFuture(params: CreateAccountRequest): Future[CreateAccountResponse] =
       service.createAccount(params).promise.toFuture
+    def createBotFuture(params: CreateBotRequest): Future[CreateBotResponse] =
+      service.createBot(params).promise.toFuture
     def createPhoneNumberOrderFuture(params: CreatePhoneNumberOrderRequest): Future[CreatePhoneNumberOrderResponse] =
       service.createPhoneNumberOrder(params).promise.toFuture
     def createVoiceConnectorFuture(params: CreateVoiceConnectorRequest): Future[CreateVoiceConnectorResponse] =
       service.createVoiceConnector(params).promise.toFuture
     def deleteAccountFuture(params: DeleteAccountRequest): Future[DeleteAccountResponse] =
       service.deleteAccount(params).promise.toFuture
+    def deleteEventsConfigurationFuture(params: DeleteEventsConfigurationRequest): Future[js.Object] =
+      service.deleteEventsConfiguration(params).promise.toFuture
     def deletePhoneNumberFuture(params: DeletePhoneNumberRequest): Future[js.Object] =
       service.deletePhoneNumber(params).promise.toFuture
     def deleteVoiceConnectorFuture(params: DeleteVoiceConnectorRequest): Future[js.Object] =
@@ -110,6 +118,9 @@ package object chime {
       service.getAccount(params).promise.toFuture
     def getAccountSettingsFuture(params: GetAccountSettingsRequest): Future[GetAccountSettingsResponse] =
       service.getAccountSettings(params).promise.toFuture
+    def getBotFuture(params: GetBotRequest): Future[GetBotResponse] = service.getBot(params).promise.toFuture
+    def getEventsConfigurationFuture(params: GetEventsConfigurationRequest): Future[GetEventsConfigurationResponse] =
+      service.getEventsConfiguration(params).promise.toFuture
     def getGlobalSettingsFuture(): Future[GetGlobalSettingsResponse] = service.getGlobalSettings().promise.toFuture
     def getPhoneNumberFuture(params: GetPhoneNumberRequest): Future[GetPhoneNumberResponse] =
       service.getPhoneNumber(params).promise.toFuture
@@ -134,6 +145,7 @@ package object chime {
       service.inviteUsers(params).promise.toFuture
     def listAccountsFuture(params: ListAccountsRequest): Future[ListAccountsResponse] =
       service.listAccounts(params).promise.toFuture
+    def listBotsFuture(params: ListBotsRequest): Future[ListBotsResponse] = service.listBots(params).promise.toFuture
     def listPhoneNumberOrdersFuture(params: ListPhoneNumberOrdersRequest): Future[ListPhoneNumberOrdersResponse] =
       service.listPhoneNumberOrders(params).promise.toFuture
     def listPhoneNumbersFuture(params: ListPhoneNumbersRequest): Future[ListPhoneNumbersResponse] =
@@ -148,6 +160,8 @@ package object chime {
       service.listVoiceConnectors(params).promise.toFuture
     def logoutUserFuture(params: LogoutUserRequest): Future[LogoutUserResponse] =
       service.logoutUser(params).promise.toFuture
+    def putEventsConfigurationFuture(params: PutEventsConfigurationRequest): Future[PutEventsConfigurationResponse] =
+      service.putEventsConfiguration(params).promise.toFuture
     def putVoiceConnectorOriginationFuture(
         params: PutVoiceConnectorOriginationRequest
     ): Future[PutVoiceConnectorOriginationResponse] = service.putVoiceConnectorOrigination(params).promise.toFuture
@@ -157,6 +171,8 @@ package object chime {
     def putVoiceConnectorTerminationFuture(
         params: PutVoiceConnectorTerminationRequest
     ): Future[PutVoiceConnectorTerminationResponse] = service.putVoiceConnectorTermination(params).promise.toFuture
+    def regenerateSecurityTokenFuture(params: RegenerateSecurityTokenRequest): Future[RegenerateSecurityTokenResponse] =
+      service.regenerateSecurityToken(params).promise.toFuture
     def resetPersonalPINFuture(params: ResetPersonalPINRequest): Future[ResetPersonalPINResponse] =
       service.resetPersonalPIN(params).promise.toFuture
     def restorePhoneNumberFuture(params: RestorePhoneNumberRequest): Future[RestorePhoneNumberResponse] =
@@ -168,6 +184,8 @@ package object chime {
       service.updateAccount(params).promise.toFuture
     def updateAccountSettingsFuture(params: UpdateAccountSettingsRequest): Future[UpdateAccountSettingsResponse] =
       service.updateAccountSettings(params).promise.toFuture
+    def updateBotFuture(params: UpdateBotRequest): Future[UpdateBotResponse] =
+      service.updateBot(params).promise.toFuture
     def updateGlobalSettingsFuture(params: UpdateGlobalSettingsRequest): Future[js.Object] =
       service.updateGlobalSettings(params).promise.toFuture
     def updatePhoneNumberFuture(params: UpdatePhoneNumberRequest): Future[UpdatePhoneNumberResponse] =
@@ -201,10 +219,12 @@ package chime {
       js.native
     def batchUpdateUser(params: BatchUpdateUserRequest): Request[BatchUpdateUserResponse] = js.native
     def createAccount(params: CreateAccountRequest): Request[CreateAccountResponse]       = js.native
+    def createBot(params: CreateBotRequest): Request[CreateBotResponse]                   = js.native
     def createPhoneNumberOrder(params: CreatePhoneNumberOrderRequest): Request[CreatePhoneNumberOrderResponse] =
       js.native
     def createVoiceConnector(params: CreateVoiceConnectorRequest): Request[CreateVoiceConnectorResponse]    = js.native
     def deleteAccount(params: DeleteAccountRequest): Request[DeleteAccountResponse]                         = js.native
+    def deleteEventsConfiguration(params: DeleteEventsConfigurationRequest): Request[js.Object]             = js.native
     def deletePhoneNumber(params: DeletePhoneNumberRequest): Request[js.Object]                             = js.native
     def deleteVoiceConnector(params: DeleteVoiceConnectorRequest): Request[js.Object]                       = js.native
     def deleteVoiceConnectorOrigination(params: DeleteVoiceConnectorOriginationRequest): Request[js.Object] = js.native
@@ -217,9 +237,12 @@ package chime {
     ): Request[DisassociatePhoneNumberFromUserResponse] = js.native
     def disassociatePhoneNumbersFromVoiceConnector(
         params: DisassociatePhoneNumbersFromVoiceConnectorRequest
-    ): Request[DisassociatePhoneNumbersFromVoiceConnectorResponse]                                    = js.native
-    def getAccount(params: GetAccountRequest): Request[GetAccountResponse]                            = js.native
-    def getAccountSettings(params: GetAccountSettingsRequest): Request[GetAccountSettingsResponse]    = js.native
+    ): Request[DisassociatePhoneNumbersFromVoiceConnectorResponse]                                 = js.native
+    def getAccount(params: GetAccountRequest): Request[GetAccountResponse]                         = js.native
+    def getAccountSettings(params: GetAccountSettingsRequest): Request[GetAccountSettingsResponse] = js.native
+    def getBot(params: GetBotRequest): Request[GetBotResponse]                                     = js.native
+    def getEventsConfiguration(params: GetEventsConfigurationRequest): Request[GetEventsConfigurationResponse] =
+      js.native
     def getGlobalSettings(): Request[GetGlobalSettingsResponse]                                       = js.native
     def getPhoneNumber(params: GetPhoneNumberRequest): Request[GetPhoneNumberResponse]                = js.native
     def getPhoneNumberOrder(params: GetPhoneNumberOrderRequest): Request[GetPhoneNumberOrderResponse] = js.native
@@ -237,6 +260,7 @@ package chime {
     ): Request[GetVoiceConnectorTerminationHealthResponse]                                                  = js.native
     def inviteUsers(params: InviteUsersRequest): Request[InviteUsersResponse]                               = js.native
     def listAccounts(params: ListAccountsRequest): Request[ListAccountsResponse]                            = js.native
+    def listBots(params: ListBotsRequest): Request[ListBotsResponse]                                        = js.native
     def listPhoneNumberOrders(params: ListPhoneNumberOrdersRequest): Request[ListPhoneNumberOrdersResponse] = js.native
     def listPhoneNumbers(params: ListPhoneNumbersRequest): Request[ListPhoneNumbersResponse]                = js.native
     def listUsers(params: ListUsersRequest): Request[ListUsersResponse]                                     = js.native
@@ -245,6 +269,8 @@ package chime {
     ): Request[ListVoiceConnectorTerminationCredentialsResponse]                                      = js.native
     def listVoiceConnectors(params: ListVoiceConnectorsRequest): Request[ListVoiceConnectorsResponse] = js.native
     def logoutUser(params: LogoutUserRequest): Request[LogoutUserResponse]                            = js.native
+    def putEventsConfiguration(params: PutEventsConfigurationRequest): Request[PutEventsConfigurationResponse] =
+      js.native
     def putVoiceConnectorOrigination(
         params: PutVoiceConnectorOriginationRequest
     ): Request[PutVoiceConnectorOriginationResponse] = js.native
@@ -253,7 +279,9 @@ package chime {
     ): Request[PutVoiceConnectorTerminationResponse] = js.native
     def putVoiceConnectorTerminationCredentials(
         params: PutVoiceConnectorTerminationCredentialsRequest
-    ): Request[js.Object]                                                                          = js.native
+    ): Request[js.Object] = js.native
+    def regenerateSecurityToken(params: RegenerateSecurityTokenRequest): Request[RegenerateSecurityTokenResponse] =
+      js.native
     def resetPersonalPIN(params: ResetPersonalPINRequest): Request[ResetPersonalPINResponse]       = js.native
     def restorePhoneNumber(params: RestorePhoneNumberRequest): Request[RestorePhoneNumberResponse] = js.native
     def searchAvailablePhoneNumbers(
@@ -261,6 +289,7 @@ package chime {
     ): Request[SearchAvailablePhoneNumbersResponse]                                                         = js.native
     def updateAccount(params: UpdateAccountRequest): Request[UpdateAccountResponse]                         = js.native
     def updateAccountSettings(params: UpdateAccountSettingsRequest): Request[UpdateAccountSettingsResponse] = js.native
+    def updateBot(params: UpdateBotRequest): Request[UpdateBotResponse]                                     = js.native
     def updateGlobalSettings(params: UpdateGlobalSettingsRequest): Request[js.Object]                       = js.native
     def updatePhoneNumber(params: UpdatePhoneNumberRequest): Request[UpdatePhoneNumberResponse]             = js.native
     def updateUser(params: UpdateUserRequest): Request[UpdateUserResponse]                                  = js.native
@@ -576,6 +605,54 @@ package chime {
   }
 
   /**
+    * A resource that allows Enterprise account administrators to configure an interface to receive events from Amazon Chime.
+    */
+  @js.native
+  trait Bot extends js.Object {
+    var BotEmail: js.UndefOr[SensitiveString]
+    var BotId: js.UndefOr[String]
+    var BotType: js.UndefOr[BotType]
+    var CreatedTimestamp: js.UndefOr[Iso8601Timestamp]
+    var Disabled: js.UndefOr[NullableBoolean]
+    var DisplayName: js.UndefOr[SensitiveString]
+    var SecurityToken: js.UndefOr[SensitiveString]
+    var UpdatedTimestamp: js.UndefOr[Iso8601Timestamp]
+    var UserId: js.UndefOr[String]
+  }
+
+  object Bot {
+    def apply(
+        BotEmail: js.UndefOr[SensitiveString] = js.undefined,
+        BotId: js.UndefOr[String] = js.undefined,
+        BotType: js.UndefOr[BotType] = js.undefined,
+        CreatedTimestamp: js.UndefOr[Iso8601Timestamp] = js.undefined,
+        Disabled: js.UndefOr[NullableBoolean] = js.undefined,
+        DisplayName: js.UndefOr[SensitiveString] = js.undefined,
+        SecurityToken: js.UndefOr[SensitiveString] = js.undefined,
+        UpdatedTimestamp: js.UndefOr[Iso8601Timestamp] = js.undefined,
+        UserId: js.UndefOr[String] = js.undefined
+    ): Bot = {
+      val __obj = js.Dictionary.empty[js.Any]
+      BotEmail.foreach(__v => __obj.update("BotEmail", __v.asInstanceOf[js.Any]))
+      BotId.foreach(__v => __obj.update("BotId", __v.asInstanceOf[js.Any]))
+      BotType.foreach(__v => __obj.update("BotType", __v.asInstanceOf[js.Any]))
+      CreatedTimestamp.foreach(__v => __obj.update("CreatedTimestamp", __v.asInstanceOf[js.Any]))
+      Disabled.foreach(__v => __obj.update("Disabled", __v.asInstanceOf[js.Any]))
+      DisplayName.foreach(__v => __obj.update("DisplayName", __v.asInstanceOf[js.Any]))
+      SecurityToken.foreach(__v => __obj.update("SecurityToken", __v.asInstanceOf[js.Any]))
+      UpdatedTimestamp.foreach(__v => __obj.update("UpdatedTimestamp", __v.asInstanceOf[js.Any]))
+      UserId.foreach(__v => __obj.update("UserId", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Bot]
+    }
+  }
+
+  object BotTypeEnum {
+    val ChatBot = "ChatBot"
+
+    val values = IndexedSeq(ChatBot)
+  }
+
+  /**
     * The Amazon Chime Business Calling settings for the administrator's AWS account. Includes any Amazon S3 buckets designated for storing call detail records.
     */
   @js.native
@@ -622,6 +699,44 @@ package chime {
       val __obj = js.Dictionary.empty[js.Any]
       Account.foreach(__v => __obj.update("Account", __v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateAccountResponse]
+    }
+  }
+
+  @js.native
+  trait CreateBotRequest extends js.Object {
+    var AccountId: NonEmptyString
+    var DisplayName: SensitiveString
+    var Domain: js.UndefOr[NonEmptyString]
+  }
+
+  object CreateBotRequest {
+    def apply(
+        AccountId: NonEmptyString,
+        DisplayName: SensitiveString,
+        Domain: js.UndefOr[NonEmptyString] = js.undefined
+    ): CreateBotRequest = {
+      val __obj = js.Dictionary[js.Any](
+        "AccountId"   -> AccountId.asInstanceOf[js.Any],
+        "DisplayName" -> DisplayName.asInstanceOf[js.Any]
+      )
+
+      Domain.foreach(__v => __obj.update("Domain", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateBotRequest]
+    }
+  }
+
+  @js.native
+  trait CreateBotResponse extends js.Object {
+    var Bot: js.UndefOr[Bot]
+  }
+
+  object CreateBotResponse {
+    def apply(
+        Bot: js.UndefOr[Bot] = js.undefined
+    ): CreateBotResponse = {
+      val __obj = js.Dictionary.empty[js.Any]
+      Bot.foreach(__v => __obj.update("Bot", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateBotResponse]
     }
   }
 
@@ -742,6 +857,26 @@ package chime {
       val __obj = js.Dictionary.empty[js.Any]
 
       __obj.asInstanceOf[DeleteAccountResponse]
+    }
+  }
+
+  @js.native
+  trait DeleteEventsConfigurationRequest extends js.Object {
+    var AccountId: NonEmptyString
+    var BotId: NonEmptyString
+  }
+
+  object DeleteEventsConfigurationRequest {
+    def apply(
+        AccountId: NonEmptyString,
+        BotId: NonEmptyString
+    ): DeleteEventsConfigurationRequest = {
+      val __obj = js.Dictionary[js.Any](
+        "AccountId" -> AccountId.asInstanceOf[js.Any],
+        "BotId"     -> BotId.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[DeleteEventsConfigurationRequest]
     }
   }
 
@@ -934,6 +1069,30 @@ package chime {
     )
   }
 
+  /**
+    * The configuration that allows a bot to receive outgoing events. Can be either an HTTPS endpoint or a Lambda function ARN.
+    */
+  @js.native
+  trait EventsConfiguration extends js.Object {
+    var BotId: js.UndefOr[String]
+    var LambdaFunctionArn: js.UndefOr[SensitiveString]
+    var OutboundEventsHTTPSEndpoint: js.UndefOr[SensitiveString]
+  }
+
+  object EventsConfiguration {
+    def apply(
+        BotId: js.UndefOr[String] = js.undefined,
+        LambdaFunctionArn: js.UndefOr[SensitiveString] = js.undefined,
+        OutboundEventsHTTPSEndpoint: js.UndefOr[SensitiveString] = js.undefined
+    ): EventsConfiguration = {
+      val __obj = js.Dictionary.empty[js.Any]
+      BotId.foreach(__v => __obj.update("BotId", __v.asInstanceOf[js.Any]))
+      LambdaFunctionArn.foreach(__v => __obj.update("LambdaFunctionArn", __v.asInstanceOf[js.Any]))
+      OutboundEventsHTTPSEndpoint.foreach(__v => __obj.update("OutboundEventsHTTPSEndpoint", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[EventsConfiguration]
+    }
+  }
+
   @js.native
   trait GetAccountRequest extends js.Object {
     var AccountId: NonEmptyString
@@ -995,6 +1154,76 @@ package chime {
       val __obj = js.Dictionary.empty[js.Any]
       AccountSettings.foreach(__v => __obj.update("AccountSettings", __v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetAccountSettingsResponse]
+    }
+  }
+
+  @js.native
+  trait GetBotRequest extends js.Object {
+    var AccountId: NonEmptyString
+    var BotId: NonEmptyString
+  }
+
+  object GetBotRequest {
+    def apply(
+        AccountId: NonEmptyString,
+        BotId: NonEmptyString
+    ): GetBotRequest = {
+      val __obj = js.Dictionary[js.Any](
+        "AccountId" -> AccountId.asInstanceOf[js.Any],
+        "BotId"     -> BotId.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[GetBotRequest]
+    }
+  }
+
+  @js.native
+  trait GetBotResponse extends js.Object {
+    var Bot: js.UndefOr[Bot]
+  }
+
+  object GetBotResponse {
+    def apply(
+        Bot: js.UndefOr[Bot] = js.undefined
+    ): GetBotResponse = {
+      val __obj = js.Dictionary.empty[js.Any]
+      Bot.foreach(__v => __obj.update("Bot", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetBotResponse]
+    }
+  }
+
+  @js.native
+  trait GetEventsConfigurationRequest extends js.Object {
+    var AccountId: NonEmptyString
+    var BotId: NonEmptyString
+  }
+
+  object GetEventsConfigurationRequest {
+    def apply(
+        AccountId: NonEmptyString,
+        BotId: NonEmptyString
+    ): GetEventsConfigurationRequest = {
+      val __obj = js.Dictionary[js.Any](
+        "AccountId" -> AccountId.asInstanceOf[js.Any],
+        "BotId"     -> BotId.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[GetEventsConfigurationRequest]
+    }
+  }
+
+  @js.native
+  trait GetEventsConfigurationResponse extends js.Object {
+    var EventsConfiguration: js.UndefOr[EventsConfiguration]
+  }
+
+  object GetEventsConfigurationResponse {
+    def apply(
+        EventsConfiguration: js.UndefOr[EventsConfiguration] = js.undefined
+    ): GetEventsConfigurationResponse = {
+      val __obj = js.Dictionary.empty[js.Any]
+      EventsConfiguration.foreach(__v => __obj.update("EventsConfiguration", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetEventsConfigurationResponse]
     }
   }
 
@@ -1400,6 +1629,47 @@ package chime {
   }
 
   @js.native
+  trait ListBotsRequest extends js.Object {
+    var AccountId: NonEmptyString
+    var MaxResults: js.UndefOr[ResultMax]
+    var NextToken: js.UndefOr[String]
+  }
+
+  object ListBotsRequest {
+    def apply(
+        AccountId: NonEmptyString,
+        MaxResults: js.UndefOr[ResultMax] = js.undefined,
+        NextToken: js.UndefOr[String] = js.undefined
+    ): ListBotsRequest = {
+      val __obj = js.Dictionary[js.Any](
+        "AccountId" -> AccountId.asInstanceOf[js.Any]
+      )
+
+      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListBotsRequest]
+    }
+  }
+
+  @js.native
+  trait ListBotsResponse extends js.Object {
+    var Bots: js.UndefOr[BotList]
+    var NextToken: js.UndefOr[String]
+  }
+
+  object ListBotsResponse {
+    def apply(
+        Bots: js.UndefOr[BotList] = js.undefined,
+        NextToken: js.UndefOr[String] = js.undefined
+    ): ListBotsResponse = {
+      val __obj = js.Dictionary.empty[js.Any]
+      Bots.foreach(__v => __obj.update("Bots", __v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListBotsResponse]
+    }
+  }
+
+  @js.native
   trait ListPhoneNumberOrdersRequest extends js.Object {
     var MaxResults: js.UndefOr[ResultMax]
     var NextToken: js.UndefOr[String]
@@ -1727,6 +1997,7 @@ package chime {
     var PhoneNumberId: js.UndefOr[String]
     var ProductType: js.UndefOr[PhoneNumberProductType]
     var Status: js.UndefOr[PhoneNumberStatus]
+    var Type: js.UndefOr[PhoneNumberType]
     var UpdatedTimestamp: js.UndefOr[Iso8601Timestamp]
   }
 
@@ -1740,6 +2011,7 @@ package chime {
         PhoneNumberId: js.UndefOr[String] = js.undefined,
         ProductType: js.UndefOr[PhoneNumberProductType] = js.undefined,
         Status: js.UndefOr[PhoneNumberStatus] = js.undefined,
+        Type: js.UndefOr[PhoneNumberType] = js.undefined,
         UpdatedTimestamp: js.UndefOr[Iso8601Timestamp] = js.undefined
     ): PhoneNumber = {
       val __obj = js.Dictionary.empty[js.Any]
@@ -1751,6 +2023,7 @@ package chime {
       PhoneNumberId.foreach(__v => __obj.update("PhoneNumberId", __v.asInstanceOf[js.Any]))
       ProductType.foreach(__v => __obj.update("ProductType", __v.asInstanceOf[js.Any]))
       Status.foreach(__v => __obj.update("Status", __v.asInstanceOf[js.Any]))
+      Type.foreach(__v => __obj.update("Type", __v.asInstanceOf[js.Any]))
       UpdatedTimestamp.foreach(__v => __obj.update("UpdatedTimestamp", __v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PhoneNumber]
     }
@@ -1916,6 +2189,54 @@ package chime {
     )
   }
 
+  object PhoneNumberTypeEnum {
+    val Local    = "Local"
+    val TollFree = "TollFree"
+
+    val values = IndexedSeq(Local, TollFree)
+  }
+
+  @js.native
+  trait PutEventsConfigurationRequest extends js.Object {
+    var AccountId: NonEmptyString
+    var BotId: NonEmptyString
+    var LambdaFunctionArn: js.UndefOr[SensitiveString]
+    var OutboundEventsHTTPSEndpoint: js.UndefOr[SensitiveString]
+  }
+
+  object PutEventsConfigurationRequest {
+    def apply(
+        AccountId: NonEmptyString,
+        BotId: NonEmptyString,
+        LambdaFunctionArn: js.UndefOr[SensitiveString] = js.undefined,
+        OutboundEventsHTTPSEndpoint: js.UndefOr[SensitiveString] = js.undefined
+    ): PutEventsConfigurationRequest = {
+      val __obj = js.Dictionary[js.Any](
+        "AccountId" -> AccountId.asInstanceOf[js.Any],
+        "BotId"     -> BotId.asInstanceOf[js.Any]
+      )
+
+      LambdaFunctionArn.foreach(__v => __obj.update("LambdaFunctionArn", __v.asInstanceOf[js.Any]))
+      OutboundEventsHTTPSEndpoint.foreach(__v => __obj.update("OutboundEventsHTTPSEndpoint", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PutEventsConfigurationRequest]
+    }
+  }
+
+  @js.native
+  trait PutEventsConfigurationResponse extends js.Object {
+    var EventsConfiguration: js.UndefOr[EventsConfiguration]
+  }
+
+  object PutEventsConfigurationResponse {
+    def apply(
+        EventsConfiguration: js.UndefOr[EventsConfiguration] = js.undefined
+    ): PutEventsConfigurationResponse = {
+      val __obj = js.Dictionary.empty[js.Any]
+      EventsConfiguration.foreach(__v => __obj.update("EventsConfiguration", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PutEventsConfigurationResponse]
+    }
+  }
+
   @js.native
   trait PutVoiceConnectorOriginationRequest extends js.Object {
     var Origination: Origination
@@ -2006,6 +2327,41 @@ package chime {
     }
   }
 
+  @js.native
+  trait RegenerateSecurityTokenRequest extends js.Object {
+    var AccountId: NonEmptyString
+    var BotId: NonEmptyString
+  }
+
+  object RegenerateSecurityTokenRequest {
+    def apply(
+        AccountId: NonEmptyString,
+        BotId: NonEmptyString
+    ): RegenerateSecurityTokenRequest = {
+      val __obj = js.Dictionary[js.Any](
+        "AccountId" -> AccountId.asInstanceOf[js.Any],
+        "BotId"     -> BotId.asInstanceOf[js.Any]
+      )
+
+      __obj.asInstanceOf[RegenerateSecurityTokenRequest]
+    }
+  }
+
+  @js.native
+  trait RegenerateSecurityTokenResponse extends js.Object {
+    var Bot: js.UndefOr[Bot]
+  }
+
+  object RegenerateSecurityTokenResponse {
+    def apply(
+        Bot: js.UndefOr[Bot] = js.undefined
+    ): RegenerateSecurityTokenResponse = {
+      val __obj = js.Dictionary.empty[js.Any]
+      Bot.foreach(__v => __obj.update("Bot", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[RegenerateSecurityTokenResponse]
+    }
+  }
+
   object RegistrationStatusEnum {
     val Unregistered = "Unregistered"
     val Registered   = "Registered"
@@ -2089,6 +2445,7 @@ package chime {
     var MaxResults: js.UndefOr[PhoneNumberMaxResults]
     var NextToken: js.UndefOr[String]
     var State: js.UndefOr[String]
+    var TollFreePrefix: js.UndefOr[TollFreePrefix]
   }
 
   object SearchAvailablePhoneNumbersRequest {
@@ -2098,7 +2455,8 @@ package chime {
         Country: js.UndefOr[String] = js.undefined,
         MaxResults: js.UndefOr[PhoneNumberMaxResults] = js.undefined,
         NextToken: js.UndefOr[String] = js.undefined,
-        State: js.UndefOr[String] = js.undefined
+        State: js.UndefOr[String] = js.undefined,
+        TollFreePrefix: js.UndefOr[TollFreePrefix] = js.undefined
     ): SearchAvailablePhoneNumbersRequest = {
       val __obj = js.Dictionary.empty[js.Any]
       AreaCode.foreach(__v => __obj.update("AreaCode", __v.asInstanceOf[js.Any]))
@@ -2107,6 +2465,7 @@ package chime {
       MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
       NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
       State.foreach(__v => __obj.update("State", __v.asInstanceOf[js.Any]))
+      TollFreePrefix.foreach(__v => __obj.update("TollFreePrefix", __v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SearchAvailablePhoneNumbersRequest]
     }
   }
@@ -2267,6 +2626,44 @@ package chime {
       val __obj = js.Dictionary.empty[js.Any]
 
       __obj.asInstanceOf[UpdateAccountSettingsResponse]
+    }
+  }
+
+  @js.native
+  trait UpdateBotRequest extends js.Object {
+    var AccountId: NonEmptyString
+    var BotId: NonEmptyString
+    var Disabled: js.UndefOr[NullableBoolean]
+  }
+
+  object UpdateBotRequest {
+    def apply(
+        AccountId: NonEmptyString,
+        BotId: NonEmptyString,
+        Disabled: js.UndefOr[NullableBoolean] = js.undefined
+    ): UpdateBotRequest = {
+      val __obj = js.Dictionary[js.Any](
+        "AccountId" -> AccountId.asInstanceOf[js.Any],
+        "BotId"     -> BotId.asInstanceOf[js.Any]
+      )
+
+      Disabled.foreach(__v => __obj.update("Disabled", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateBotRequest]
+    }
+  }
+
+  @js.native
+  trait UpdateBotResponse extends js.Object {
+    var Bot: js.UndefOr[Bot]
+  }
+
+  object UpdateBotResponse {
+    def apply(
+        Bot: js.UndefOr[Bot] = js.undefined
+    ): UpdateBotResponse = {
+      val __obj = js.Dictionary.empty[js.Any]
+      Bot.foreach(__v => __obj.update("Bot", __v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateBotResponse]
     }
   }
 
