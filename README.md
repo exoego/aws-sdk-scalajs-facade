@@ -9,10 +9,10 @@ Now with AWS introduced in re:Invent 2018.
 ## Getting Started
 
 ```sbt
-libraryDependencies += "net.exoego" %%% "aws-sdk-scalajs-facade" % "0.24.2-v2-437-0"
+libraryDependencies += "net.exoego" %%% "aws-sdk-scalajs-facade" % "0.25.0-v2-518-0"
 ```
 
-Note) Starting from `0.22.0`, version number includes the version of AWS SDK, as qualifier like `-v2-437-0`,
+Note) Starting from `0.22.0`, version number includes the version of AWS SDK, as qualifier like `-vN-NNN-N`,
 which the facade is built for.
 
 Note) You may reduce Scala.js's `fastOptJS`/`fullOptJS` time by minimizing dependencies. The all-in-one artifact `aws-sdk-scalajs-facade` includes all AWS facade and quite huge. You may depend only minimum dependencies and gain build performance boost. See [the list of separate artifacts](ARTIFACTS.md).
