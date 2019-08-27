@@ -338,14 +338,14 @@ package object amazonaws {
     def FMS(): services.fms.FMS                  = new services.fms.FMS()
     def FMS(config: AWSConfig): services.fms.FMS = new services.fms.FMS(config)
 
-    type forecast = services.forecast.forecast
-    def forecast(): services.forecast.forecast                  = new services.forecast.forecast()
-    def forecast(config: AWSConfig): services.forecast.forecast = new services.forecast.forecast(config)
+    type Forecast = services.forecast.Forecast
+    def Forecast(): services.forecast.Forecast                  = new services.forecast.Forecast()
+    def Forecast(config: AWSConfig): services.forecast.Forecast = new services.forecast.Forecast(config)
 
-    type forecastquery = services.forecastquery.forecastquery
-    def forecastquery(): services.forecastquery.forecastquery = new services.forecastquery.forecastquery()
-    def forecastquery(config: AWSConfig): services.forecastquery.forecastquery =
-      new services.forecastquery.forecastquery(config)
+    type ForecastQuery = services.forecastquery.ForecastQuery
+    def ForecastQuery(): services.forecastquery.ForecastQuery = new services.forecastquery.ForecastQuery()
+    def ForecastQuery(config: AWSConfig): services.forecastquery.ForecastQuery =
+      new services.forecastquery.ForecastQuery(config)
 
     type FSx = services.fsx.FSx
     def FSx(): services.fsx.FSx                  = new services.fsx.FSx()

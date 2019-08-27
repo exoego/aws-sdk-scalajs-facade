@@ -19,7 +19,7 @@ package object forecastquery {
   type TimeSeries     = js.Array[DataPoint]
   type Timestamp      = String
 
-  implicit final class forecastqueryOps(val service: forecastquery) extends AnyVal {
+  implicit final class ForecastQueryOps(val service: ForecastQuery) extends AnyVal {
 
     def queryForecastFuture(params: QueryForecastRequest): Future[QueryForecastResponse] =
       service.queryForecast(params).promise.toFuture
@@ -28,8 +28,8 @@ package object forecastquery {
 
 package forecastquery {
   @js.native
-  @JSImport("aws-sdk", "forecastquery")
-  class forecastquery() extends js.Object {
+  @JSImport("aws-sdk", "ForecastQueryService")
+  class ForecastQuery() extends js.Object {
     def this(config: AWSConfig) = this()
 
     def queryForecast(params: QueryForecastRequest): Request[QueryForecastResponse] = js.native

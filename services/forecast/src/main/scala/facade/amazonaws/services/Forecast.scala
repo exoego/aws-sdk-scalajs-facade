@@ -54,7 +54,7 @@ package object forecast {
   type Values                        = js.Array[Value]
   type WeightedQuantileLosses        = js.Array[WeightedQuantileLoss]
 
-  implicit final class forecastOps(val service: forecast) extends AnyVal {
+  implicit final class ForecastOps(val service: Forecast) extends AnyVal {
 
     def createDatasetFuture(params: CreateDatasetRequest): Future[CreateDatasetResponse] =
       service.createDataset(params).promise.toFuture
@@ -115,8 +115,8 @@ package object forecast {
 
 package forecast {
   @js.native
-  @JSImport("aws-sdk", "forecast")
-  class forecast() extends js.Object {
+  @JSImport("aws-sdk", "ForecastService")
+  class Forecast() extends js.Object {
     def this(config: AWSConfig) = this()
 
     def createDataset(params: CreateDatasetRequest): Request[CreateDatasetResponse]                = js.native

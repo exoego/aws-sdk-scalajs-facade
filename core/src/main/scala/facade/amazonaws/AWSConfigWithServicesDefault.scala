@@ -75,8 +75,8 @@ class AWSConfigWithServicesDefault extends AWSConfig {
   var eventbridge: js.UndefOr[ParamsWithEndpoint]                     = js.undefined
   var firehose: js.UndefOr[ParamsWithEndpoint]                        = js.undefined
   var fms: js.UndefOr[ParamsWithEndpoint]                             = js.undefined
-  var forecast: js.UndefOr[ParamsWithEndpoint]                        = js.undefined
-  var forecastquery: js.UndefOr[ParamsWithEndpoint]                   = js.undefined
+  var forecastqueryservice: js.UndefOr[ParamsWithEndpoint]            = js.undefined
+  var forecastservice: js.UndefOr[ParamsWithEndpoint]                 = js.undefined
   var fsx: js.UndefOr[ParamsWithEndpoint]                             = js.undefined
   var gamelift: js.UndefOr[ParamsWithEndpoint]                        = js.undefined
   var glacier: js.UndefOr[ParamsWithEndpoint]                         = js.undefined
