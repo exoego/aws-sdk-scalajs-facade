@@ -124,6 +124,7 @@ lazy val awsIoT1ClickProjects               = defineAwsProject("IoT1ClickProject
 lazy val awsIoTAnalytics                    = defineAwsProject("IoTAnalytics")
 lazy val awsIotDataPlane                    = defineAwsProject("IotDataPlane")
 lazy val awsIotEvents                       = defineAwsProject("IotEvents")
+lazy val awsIotEventsData                   = defineAwsProject("IotEventsData")
 lazy val awsIoTJobsDataPlane                = defineAwsProject("IoTJobsDataPlane")
 lazy val awsIotThingsGraph                  = defineAwsProject("IotThingsGraph")
 lazy val awsKafka                           = defineAwsProject("Kafka")
@@ -340,6 +341,7 @@ lazy val subProjects: Seq[Project] = Seq(
   awsIoTAnalytics,
   awsIotDataPlane,
   awsIotEvents,
+  awsIotEventsData,
   awsIoTJobsDataPlane,
   awsIotThingsGraph,
   awsKafka,

@@ -435,6 +435,11 @@ package object amazonaws {
     def IoTEvents(): services.iotevents.IoTEvents                  = new services.iotevents.IoTEvents()
     def IoTEvents(config: AWSConfig): services.iotevents.IoTEvents = new services.iotevents.IoTEvents(config)
 
+    type IoTEventsData = services.ioteventsdata.IoTEventsData
+    def IoTEventsData(): services.ioteventsdata.IoTEventsData = new services.ioteventsdata.IoTEventsData()
+    def IoTEventsData(config: AWSConfig): services.ioteventsdata.IoTEventsData =
+      new services.ioteventsdata.IoTEventsData(config)
+
     type IoTThingsGraph = services.iotthingsgraph.IoTThingsGraph
     def IoTThingsGraph(): services.iotthingsgraph.IoTThingsGraph = new services.iotthingsgraph.IoTThingsGraph()
     def IoTThingsGraph(config: AWSConfig): services.iotthingsgraph.IoTThingsGraph =

@@ -95,6 +95,7 @@ class AWSConfigWithServicesDefault extends AWSConfig {
   var iotanalytics: js.UndefOr[ParamsWithEndpoint]                    = js.undefined
   var iotdataplane: js.UndefOr[ParamsWithEndpoint]                    = js.undefined
   var iotevents: js.UndefOr[ParamsWithEndpoint]                       = js.undefined
+  var ioteventsdata: js.UndefOr[ParamsWithEndpoint]                   = js.undefined
   var iotjobsdataplane: js.UndefOr[ParamsWithEndpoint]                = js.undefined
   var iotthingsgraph: js.UndefOr[ParamsWithEndpoint]                  = js.undefined
   var kafka: js.UndefOr[ParamsWithEndpoint]                           = js.undefined
