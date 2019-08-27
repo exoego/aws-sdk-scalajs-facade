@@ -102,7 +102,7 @@ package cloudsearchdomain {
     val `application/json` = "application/json"
     val `application/xml`  = "application/xml"
 
-    val values = IndexedSeq(`application/json`, `application/xml`)
+    val values = js.Object.freeze(js.Array(`application/json`, `application/xml`))
   }
 
   /**
@@ -231,7 +231,7 @@ package cloudsearchdomain {
     val lucene     = "lucene"
     val dismax     = "dismax"
 
-    val values = IndexedSeq(simple, structured, lucene, dismax)
+    val values = js.Object.freeze(js.Array(simple, structured, lucene, dismax))
   }
 
   /**

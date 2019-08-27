@@ -366,14 +366,14 @@ package macie {
   object S3ContinuousClassificationTypeEnum {
     val FULL = "FULL"
 
-    val values = IndexedSeq(FULL)
+    val values = js.Object.freeze(js.Array(FULL))
   }
 
   object S3OneTimeClassificationTypeEnum {
     val FULL = "FULL"
     val NONE = "NONE"
 
-    val values = IndexedSeq(FULL, NONE)
+    val values = js.Object.freeze(js.Array(FULL, NONE))
   }
 
   /**

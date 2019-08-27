@@ -236,7 +236,7 @@ package rekognition {
     val DEFAULT = "DEFAULT"
     val ALL     = "ALL"
 
-    val values = IndexedSeq(DEFAULT, ALL)
+    val values = js.Object.freeze(js.Array(DEFAULT, ALL))
   }
 
   /**
@@ -379,7 +379,7 @@ package rekognition {
     val ID        = "ID"
     val TIMESTAMP = "TIMESTAMP"
 
-    val values = IndexedSeq(ID, TIMESTAMP)
+    val values = js.Object.freeze(js.Array(ID, TIMESTAMP))
   }
 
   /**
@@ -533,7 +533,7 @@ package rekognition {
     val NAME      = "NAME"
     val TIMESTAMP = "TIMESTAMP"
 
-    val values = IndexedSeq(NAME, TIMESTAMP)
+    val values = js.Object.freeze(js.Array(NAME, TIMESTAMP))
   }
 
   @js.native
@@ -998,7 +998,7 @@ package rekognition {
     val UNKNOWN   = "UNKNOWN"
     val FEAR      = "FEAR"
 
-    val values = IndexedSeq(HAPPY, SAD, ANGRY, CONFUSED, DISGUSTED, SURPRISED, CALM, UNKNOWN, FEAR)
+    val values = js.Object.freeze(js.Array(HAPPY, SAD, ANGRY, CONFUSED, DISGUSTED, SURPRISED, CALM, UNKNOWN, FEAR))
   }
 
   /**
@@ -1077,7 +1077,7 @@ package rekognition {
     val DEFAULT = "DEFAULT"
     val ALL     = "ALL"
 
-    val values = IndexedSeq(DEFAULT, ALL)
+    val values = js.Object.freeze(js.Array(DEFAULT, ALL))
   }
 
   /**
@@ -1234,7 +1234,7 @@ package rekognition {
     val INDEX     = "INDEX"
     val TIMESTAMP = "TIMESTAMP"
 
-    val values = IndexedSeq(INDEX, TIMESTAMP)
+    val values = js.Object.freeze(js.Array(INDEX, TIMESTAMP))
   }
 
   /**
@@ -1262,7 +1262,7 @@ package rekognition {
     val Male   = "Male"
     val Female = "Female"
 
-    val values = IndexedSeq(Male, Female)
+    val values = js.Object.freeze(js.Array(Male, Female))
   }
 
   /**
@@ -1856,7 +1856,7 @@ package rekognition {
     val NAME      = "NAME"
     val TIMESTAMP = "TIMESTAMP"
 
-    val values = IndexedSeq(NAME, TIMESTAMP)
+    val values = js.Object.freeze(js.Array(NAME, TIMESTAMP))
   }
 
   /**
@@ -1915,37 +1915,39 @@ package rekognition {
     val midJawlineRight   = "midJawlineRight"
     val upperJawlineRight = "upperJawlineRight"
 
-    val values = IndexedSeq(
-      eyeLeft,
-      eyeRight,
-      nose,
-      mouthLeft,
-      mouthRight,
-      leftEyeBrowLeft,
-      leftEyeBrowRight,
-      leftEyeBrowUp,
-      rightEyeBrowLeft,
-      rightEyeBrowRight,
-      rightEyeBrowUp,
-      leftEyeLeft,
-      leftEyeRight,
-      leftEyeUp,
-      leftEyeDown,
-      rightEyeLeft,
-      rightEyeRight,
-      rightEyeUp,
-      rightEyeDown,
-      noseLeft,
-      noseRight,
-      mouthUp,
-      mouthDown,
-      leftPupil,
-      rightPupil,
-      upperJawlineLeft,
-      midJawlineLeft,
-      chinBottom,
-      midJawlineRight,
-      upperJawlineRight
+    val values = js.Object.freeze(
+      js.Array(
+        eyeLeft,
+        eyeRight,
+        nose,
+        mouthLeft,
+        mouthRight,
+        leftEyeBrowLeft,
+        leftEyeBrowRight,
+        leftEyeBrowUp,
+        rightEyeBrowLeft,
+        rightEyeBrowRight,
+        rightEyeBrowUp,
+        leftEyeLeft,
+        leftEyeRight,
+        leftEyeUp,
+        leftEyeDown,
+        rightEyeLeft,
+        rightEyeRight,
+        rightEyeUp,
+        rightEyeDown,
+        noseLeft,
+        noseRight,
+        mouthUp,
+        mouthDown,
+        leftPupil,
+        rightPupil,
+        upperJawlineLeft,
+        midJawlineLeft,
+        chinBottom,
+        midJawlineRight,
+        upperJawlineRight
+      )
     )
   }
 
@@ -2163,7 +2165,7 @@ package rekognition {
     val ROTATE_180 = "ROTATE_180"
     val ROTATE_270 = "ROTATE_270"
 
-    val values = IndexedSeq(ROTATE_0, ROTATE_90, ROTATE_180, ROTATE_270)
+    val values = js.Object.freeze(js.Array(ROTATE_0, ROTATE_90, ROTATE_180, ROTATE_270))
   }
 
   /**
@@ -2258,7 +2260,7 @@ package rekognition {
     val INDEX     = "INDEX"
     val TIMESTAMP = "TIMESTAMP"
 
-    val values = IndexedSeq(INDEX, TIMESTAMP)
+    val values = js.Object.freeze(js.Array(INDEX, TIMESTAMP))
   }
 
   /**
@@ -2311,7 +2313,7 @@ package rekognition {
     val NONE = "NONE"
     val AUTO = "AUTO"
 
-    val values = IndexedSeq(NONE, AUTO)
+    val values = js.Object.freeze(js.Array(NONE, AUTO))
   }
 
   object ReasonEnum {
@@ -2322,8 +2324,9 @@ package rekognition {
     val LOW_CONFIDENCE     = "LOW_CONFIDENCE"
     val SMALL_BOUNDING_BOX = "SMALL_BOUNDING_BOX"
 
-    val values =
-      IndexedSeq(EXCEEDS_MAX_FACES, EXTREME_POSE, LOW_BRIGHTNESS, LOW_SHARPNESS, LOW_CONFIDENCE, SMALL_BOUNDING_BOX)
+    val values = js.Object.freeze(
+      js.Array(EXCEEDS_MAX_FACES, EXTREME_POSE, LOW_BRIGHTNESS, LOW_SHARPNESS, LOW_CONFIDENCE, SMALL_BOUNDING_BOX)
+    )
   }
 
   @js.native
@@ -2909,7 +2912,7 @@ package rekognition {
     val FAILED   = "FAILED"
     val STOPPING = "STOPPING"
 
-    val values = IndexedSeq(STOPPED, STARTING, RUNNING, FAILED, STOPPING)
+    val values = js.Object.freeze(js.Array(STOPPED, STARTING, RUNNING, FAILED, STOPPING))
   }
 
   /**
@@ -2973,7 +2976,7 @@ package rekognition {
     val LINE = "LINE"
     val WORD = "WORD"
 
-    val values = IndexedSeq(LINE, WORD)
+    val values = js.Object.freeze(js.Array(LINE, WORD))
   }
 
   /**
@@ -3020,7 +3023,7 @@ package rekognition {
     val SUCCEEDED   = "SUCCEEDED"
     val FAILED      = "FAILED"
 
-    val values = IndexedSeq(IN_PROGRESS, SUCCEEDED, FAILED)
+    val values = js.Object.freeze(js.Array(IN_PROGRESS, SUCCEEDED, FAILED))
   }
 
   /**

@@ -712,7 +712,7 @@ package stepfunctions {
     val TIMED_OUT = "TIMED_OUT"
     val ABORTED   = "ABORTED"
 
-    val values = IndexedSeq(RUNNING, SUCCEEDED, FAILED, TIMED_OUT, ABORTED)
+    val values = js.Object.freeze(js.Array(RUNNING, SUCCEEDED, FAILED, TIMED_OUT, ABORTED))
   }
 
   /**
@@ -1025,52 +1025,54 @@ package stepfunctions {
     val WaitStateEntered             = "WaitStateEntered"
     val WaitStateExited              = "WaitStateExited"
 
-    val values = IndexedSeq(
-      ActivityFailed,
-      ActivityScheduleFailed,
-      ActivityScheduled,
-      ActivityStarted,
-      ActivitySucceeded,
-      ActivityTimedOut,
-      ChoiceStateEntered,
-      ChoiceStateExited,
-      TaskFailed,
-      TaskScheduled,
-      TaskStartFailed,
-      TaskStarted,
-      TaskSubmitFailed,
-      TaskSubmitted,
-      TaskSucceeded,
-      TaskTimedOut,
-      ExecutionFailed,
-      ExecutionStarted,
-      ExecutionSucceeded,
-      ExecutionAborted,
-      ExecutionTimedOut,
-      FailStateEntered,
-      LambdaFunctionFailed,
-      LambdaFunctionScheduleFailed,
-      LambdaFunctionScheduled,
-      LambdaFunctionStartFailed,
-      LambdaFunctionStarted,
-      LambdaFunctionSucceeded,
-      LambdaFunctionTimedOut,
-      SucceedStateEntered,
-      SucceedStateExited,
-      TaskStateAborted,
-      TaskStateEntered,
-      TaskStateExited,
-      PassStateEntered,
-      PassStateExited,
-      ParallelStateAborted,
-      ParallelStateEntered,
-      ParallelStateExited,
-      ParallelStateFailed,
-      ParallelStateStarted,
-      ParallelStateSucceeded,
-      WaitStateAborted,
-      WaitStateEntered,
-      WaitStateExited
+    val values = js.Object.freeze(
+      js.Array(
+        ActivityFailed,
+        ActivityScheduleFailed,
+        ActivityScheduled,
+        ActivityStarted,
+        ActivitySucceeded,
+        ActivityTimedOut,
+        ChoiceStateEntered,
+        ChoiceStateExited,
+        TaskFailed,
+        TaskScheduled,
+        TaskStartFailed,
+        TaskStarted,
+        TaskSubmitFailed,
+        TaskSubmitted,
+        TaskSucceeded,
+        TaskTimedOut,
+        ExecutionFailed,
+        ExecutionStarted,
+        ExecutionSucceeded,
+        ExecutionAborted,
+        ExecutionTimedOut,
+        FailStateEntered,
+        LambdaFunctionFailed,
+        LambdaFunctionScheduleFailed,
+        LambdaFunctionScheduled,
+        LambdaFunctionStartFailed,
+        LambdaFunctionStarted,
+        LambdaFunctionSucceeded,
+        LambdaFunctionTimedOut,
+        SucceedStateEntered,
+        SucceedStateExited,
+        TaskStateAborted,
+        TaskStateEntered,
+        TaskStateExited,
+        PassStateEntered,
+        PassStateExited,
+        ParallelStateAborted,
+        ParallelStateEntered,
+        ParallelStateExited,
+        ParallelStateFailed,
+        ParallelStateStarted,
+        ParallelStateSucceeded,
+        WaitStateAborted,
+        WaitStateEntered,
+        WaitStateExited
+      )
     )
   }
 
@@ -1571,7 +1573,7 @@ package stepfunctions {
     val ACTIVE   = "ACTIVE"
     val DELETING = "DELETING"
 
-    val values = IndexedSeq(ACTIVE, DELETING)
+    val values = js.Object.freeze(js.Array(ACTIVE, DELETING))
   }
 
   @js.native

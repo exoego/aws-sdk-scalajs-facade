@@ -264,14 +264,14 @@ package opsworkscm {
     val FAILED      = "FAILED"
     val DELETING    = "DELETING"
 
-    val values = IndexedSeq(IN_PROGRESS, OK, FAILED, DELETING)
+    val values = js.Object.freeze(js.Array(IN_PROGRESS, OK, FAILED, DELETING))
   }
 
   object BackupTypeEnum {
     val AUTOMATED = "AUTOMATED"
     val MANUAL    = "MANUAL"
 
-    val values = IndexedSeq(AUTOMATED, MANUAL)
+    val values = js.Object.freeze(js.Array(AUTOMATED, MANUAL))
   }
 
   @js.native
@@ -738,7 +738,7 @@ package opsworkscm {
     val SUCCESS = "SUCCESS"
     val FAILED  = "FAILED"
 
-    val values = IndexedSeq(SUCCESS, FAILED)
+    val values = js.Object.freeze(js.Array(SUCCESS, FAILED))
   }
 
   /**
@@ -752,7 +752,7 @@ package opsworkscm {
     val FAILED      = "FAILED"
     val IN_PROGRESS = "IN_PROGRESS"
 
-    val values = IndexedSeq(SUCCESS, FAILED, IN_PROGRESS)
+    val values = js.Object.freeze(js.Array(SUCCESS, FAILED, IN_PROGRESS))
   }
 
   @js.native
@@ -919,20 +919,22 @@ package opsworkscm {
     val UNHEALTHY         = "UNHEALTHY"
     val TERMINATED        = "TERMINATED"
 
-    val values = IndexedSeq(
-      BACKING_UP,
-      CONNECTION_LOST,
-      CREATING,
-      DELETING,
-      MODIFYING,
-      FAILED,
-      HEALTHY,
-      RUNNING,
-      RESTORING,
-      SETUP,
-      UNDER_MAINTENANCE,
-      UNHEALTHY,
-      TERMINATED
+    val values = js.Object.freeze(
+      js.Array(
+        BACKING_UP,
+        CONNECTION_LOST,
+        CREATING,
+        DELETING,
+        MODIFYING,
+        FAILED,
+        HEALTHY,
+        RUNNING,
+        RESTORING,
+        SETUP,
+        UNDER_MAINTENANCE,
+        UNHEALTHY,
+        TERMINATED
+      )
     )
   }
 

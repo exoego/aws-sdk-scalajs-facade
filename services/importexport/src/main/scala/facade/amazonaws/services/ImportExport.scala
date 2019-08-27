@@ -488,7 +488,7 @@ package importexport {
     val Import = "Import"
     val Export = "Export"
 
-    val values = IndexedSeq(Import, Export)
+    val values = js.Object.freeze(js.Array(Import, Export))
   }
 
   /**

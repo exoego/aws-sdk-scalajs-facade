@@ -555,7 +555,7 @@ package efs {
     val deleting  = "deleting"
     val deleted   = "deleted"
 
-    val values = IndexedSeq(creating, available, updating, deleting, deleted)
+    val values = js.Object.freeze(js.Array(creating, available, updating, deleting, deleted))
   }
 
   @js.native
@@ -656,7 +656,7 @@ package efs {
     val generalPurpose = "generalPurpose"
     val maxIO          = "maxIO"
 
-    val values = IndexedSeq(generalPurpose, maxIO)
+    val values = js.Object.freeze(js.Array(generalPurpose, maxIO))
   }
 
   @js.native
@@ -706,7 +706,7 @@ package efs {
     val bursting    = "bursting"
     val provisioned = "provisioned"
 
-    val values = IndexedSeq(bursting, provisioned)
+    val values = js.Object.freeze(js.Array(bursting, provisioned))
   }
 
   object TransitionToIARulesEnum {
@@ -715,7 +715,7 @@ package efs {
     val AFTER_60_DAYS = "AFTER_60_DAYS"
     val AFTER_90_DAYS = "AFTER_90_DAYS"
 
-    val values = IndexedSeq(AFTER_14_DAYS, AFTER_30_DAYS, AFTER_60_DAYS, AFTER_90_DAYS)
+    val values = js.Object.freeze(js.Array(AFTER_14_DAYS, AFTER_30_DAYS, AFTER_60_DAYS, AFTER_90_DAYS))
   }
 
   @js.native

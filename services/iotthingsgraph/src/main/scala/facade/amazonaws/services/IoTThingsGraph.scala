@@ -390,7 +390,7 @@ package iotthingsgraph {
   object DefinitionLanguageEnum {
     val GRAPHQL = "GRAPHQL"
 
-    val values = IndexedSeq(GRAPHQL)
+    val values = js.Object.freeze(js.Array(GRAPHQL))
   }
 
   @js.native
@@ -568,7 +568,7 @@ package iotthingsgraph {
     val GREENGRASS = "GREENGRASS"
     val CLOUD      = "CLOUD"
 
-    val values = IndexedSeq(GREENGRASS, CLOUD)
+    val values = js.Object.freeze(js.Array(GREENGRASS, CLOUD))
   }
 
   @js.native
@@ -760,7 +760,7 @@ package iotthingsgraph {
     val SEMANTIC_TYPE_PATH   = "SEMANTIC_TYPE_PATH"
     val REFERENCED_ENTITY_ID = "REFERENCED_ENTITY_ID"
 
-    val values = IndexedSeq(NAME, NAMESPACE, SEMANTIC_TYPE_PATH, REFERENCED_ENTITY_ID)
+    val values = js.Object.freeze(js.Array(NAME, NAMESPACE, SEMANTIC_TYPE_PATH, REFERENCED_ENTITY_ID))
   }
 
   object EntityTypeEnum {
@@ -775,7 +775,9 @@ package iotthingsgraph {
     val MAPPING      = "MAPPING"
     val ENUM         = "ENUM"
 
-    val values = IndexedSeq(DEVICE, SERVICE, DEVICE_MODEL, CAPABILITY, STATE, ACTION, EVENT, PROPERTY, MAPPING, ENUM)
+    val values = js.Object.freeze(
+      js.Array(DEVICE, SERVICE, DEVICE_MODEL, CAPABILITY, STATE, ACTION, EVENT, PROPERTY, MAPPING, ENUM)
+    )
   }
 
   object FlowExecutionEventTypeEnum {
@@ -797,24 +799,26 @@ package iotthingsgraph {
     val THING_ACTION_TASK_SUCCEEDED    = "THING_ACTION_TASK_SUCCEEDED"
     val ACKNOWLEDGE_TASK_MESSAGE       = "ACKNOWLEDGE_TASK_MESSAGE"
 
-    val values = IndexedSeq(
-      EXECUTION_STARTED,
-      EXECUTION_FAILED,
-      EXECUTION_ABORTED,
-      EXECUTION_SUCCEEDED,
-      STEP_STARTED,
-      STEP_FAILED,
-      STEP_SUCCEEDED,
-      ACTIVITY_SCHEDULED,
-      ACTIVITY_STARTED,
-      ACTIVITY_FAILED,
-      ACTIVITY_SUCCEEDED,
-      START_FLOW_EXECUTION_TASK,
-      SCHEDULE_NEXT_READY_STEPS_TASK,
-      THING_ACTION_TASK,
-      THING_ACTION_TASK_FAILED,
-      THING_ACTION_TASK_SUCCEEDED,
-      ACKNOWLEDGE_TASK_MESSAGE
+    val values = js.Object.freeze(
+      js.Array(
+        EXECUTION_STARTED,
+        EXECUTION_FAILED,
+        EXECUTION_ABORTED,
+        EXECUTION_SUCCEEDED,
+        STEP_STARTED,
+        STEP_FAILED,
+        STEP_SUCCEEDED,
+        ACTIVITY_SCHEDULED,
+        ACTIVITY_STARTED,
+        ACTIVITY_FAILED,
+        ACTIVITY_SUCCEEDED,
+        START_FLOW_EXECUTION_TASK,
+        SCHEDULE_NEXT_READY_STEPS_TASK,
+        THING_ACTION_TASK,
+        THING_ACTION_TASK_FAILED,
+        THING_ACTION_TASK_SUCCEEDED,
+        ACKNOWLEDGE_TASK_MESSAGE
+      )
     )
   }
 
@@ -851,7 +855,7 @@ package iotthingsgraph {
     val SUCCEEDED = "SUCCEEDED"
     val FAILED    = "FAILED"
 
-    val values = IndexedSeq(RUNNING, ABORTED, SUCCEEDED, FAILED)
+    val values = js.Object.freeze(js.Array(RUNNING, ABORTED, SUCCEEDED, FAILED))
   }
 
   /**
@@ -937,7 +941,7 @@ package iotthingsgraph {
   object FlowTemplateFilterNameEnum {
     val DEVICE_MODEL_ID = "DEVICE_MODEL_ID"
 
-    val values = IndexedSeq(DEVICE_MODEL_ID)
+    val values = js.Object.freeze(js.Array(DEVICE_MODEL_ID))
   }
 
   /**
@@ -1385,13 +1389,13 @@ package iotthingsgraph {
     val SUCCEEDED   = "SUCCEEDED"
     val FAILED      = "FAILED"
 
-    val values = IndexedSeq(IN_PROGRESS, SUCCEEDED, FAILED)
+    val values = js.Object.freeze(js.Array(IN_PROGRESS, SUCCEEDED, FAILED))
   }
 
   object NamespaceDeletionStatusErrorCodesEnum {
     val VALIDATION_FAILED = "VALIDATION_FAILED"
 
-    val values = IndexedSeq(VALIDATION_FAILED)
+    val values = js.Object.freeze(js.Array(VALIDATION_FAILED))
   }
 
   @js.native
@@ -1662,15 +1666,17 @@ package iotthingsgraph {
     val PENDING_DELETE       = "PENDING_DELETE"
     val DELETED_IN_TARGET    = "DELETED_IN_TARGET"
 
-    val values = IndexedSeq(
-      NOT_DEPLOYED,
-      BOOTSTRAP,
-      DEPLOY_IN_PROGRESS,
-      DEPLOYED_IN_TARGET,
-      UNDEPLOY_IN_PROGRESS,
-      FAILED,
-      PENDING_DELETE,
-      DELETED_IN_TARGET
+    val values = js.Object.freeze(
+      js.Array(
+        NOT_DEPLOYED,
+        BOOTSTRAP,
+        DEPLOY_IN_PROGRESS,
+        DEPLOYED_IN_TARGET,
+        UNDEPLOY_IN_PROGRESS,
+        FAILED,
+        PENDING_DELETE,
+        DELETED_IN_TARGET
+      )
     )
   }
 
@@ -1738,7 +1744,7 @@ package iotthingsgraph {
     val STATUS                = "STATUS"
     val GREENGRASS_GROUP_NAME = "GREENGRASS_GROUP_NAME"
 
-    val values = IndexedSeq(SYSTEM_TEMPLATE_ID, STATUS, GREENGRASS_GROUP_NAME)
+    val values = js.Object.freeze(js.Array(SYSTEM_TEMPLATE_ID, STATUS, GREENGRASS_GROUP_NAME))
   }
 
   /**
@@ -1833,7 +1839,7 @@ package iotthingsgraph {
   object SystemTemplateFilterNameEnum {
     val FLOW_TEMPLATE_ID = "FLOW_TEMPLATE_ID"
 
-    val values = IndexedSeq(FLOW_TEMPLATE_ID)
+    val values = js.Object.freeze(js.Array(FLOW_TEMPLATE_ID))
   }
 
   /**
@@ -2120,6 +2126,6 @@ package iotthingsgraph {
     val SUCCEEDED   = "SUCCEEDED"
     val FAILED      = "FAILED"
 
-    val values = IndexedSeq(IN_PROGRESS, SUCCEEDED, FAILED)
+    val values = js.Object.freeze(js.Array(IN_PROGRESS, SUCCEEDED, FAILED))
   }
 }

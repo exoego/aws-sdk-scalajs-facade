@@ -271,7 +271,7 @@ package elasticache {
     val `single-az` = "single-az"
     val `cross-az`  = "cross-az"
 
-    val values = IndexedSeq(`single-az`, `cross-az`)
+    val values = js.Object.freeze(js.Array(`single-az`, `cross-az`))
   }
 
   /**
@@ -365,7 +365,7 @@ package elasticache {
     val enabling  = "enabling"
     val disabling = "disabling"
 
-    val values = IndexedSeq(enabled, disabled, enabling, disabling)
+    val values = js.Object.freeze(js.Array(enabled, disabled, enabling, disabling))
   }
 
   /**
@@ -955,7 +955,7 @@ package elasticache {
     val immediate         = "immediate"
     val `requires-reboot` = "requires-reboot"
 
-    val values = IndexedSeq(immediate, `requires-reboot`)
+    val values = js.Object.freeze(js.Array(immediate, `requires-reboot`))
   }
 
   /**
@@ -2769,7 +2769,7 @@ package elasticache {
     val system   = "system"
     val customer = "customer"
 
-    val values = IndexedSeq(system, customer)
+    val values = js.Object.freeze(js.Array(system, customer))
   }
 
   object NodeUpdateStatusEnum {
@@ -2780,7 +2780,8 @@ package elasticache {
     val stopped            = "stopped"
     val complete           = "complete"
 
-    val values = IndexedSeq(`not-applied`, `waiting-to-start`, `in-progress`, stopping, stopped, complete)
+    val values =
+      js.Object.freeze(js.Array(`not-applied`, `waiting-to-start`, `in-progress`, stopping, stopped, complete))
   }
 
   /**
@@ -2871,7 +2872,7 @@ package elasticache {
     val enabled  = "enabled"
     val disabled = "disabled"
 
-    val values = IndexedSeq(enabled, disabled)
+    val values = js.Object.freeze(js.Array(enabled, disabled))
   }
 
   /**
@@ -3483,7 +3484,7 @@ package elasticache {
     val medium    = "medium"
     val low       = "low"
 
-    val values = IndexedSeq(critical, important, medium, low)
+    val values = js.Object.freeze(js.Array(critical, important, medium, low))
   }
 
   object ServiceUpdateStatusEnum {
@@ -3491,13 +3492,13 @@ package elasticache {
     val cancelled = "cancelled"
     val expired   = "expired"
 
-    val values = IndexedSeq(available, cancelled, expired)
+    val values = js.Object.freeze(js.Array(available, cancelled, expired))
   }
 
   object ServiceUpdateTypeEnum {
     val `security-update` = "security-update"
 
-    val values = IndexedSeq(`security-update`)
+    val values = js.Object.freeze(js.Array(`security-update`))
   }
 
   @js.native
@@ -3523,7 +3524,7 @@ package elasticache {
     val no    = "no"
     val `n/a` = "n/a"
 
-    val values = IndexedSeq(yes, no, `n/a`)
+    val values = js.Object.freeze(js.Array(yes, no, `n/a`))
   }
 
   /**
@@ -3638,12 +3639,14 @@ package elasticache {
     val `cache-subnet-group`    = "cache-subnet-group"
     val `replication-group`     = "replication-group"
 
-    val values = IndexedSeq(
-      `cache-cluster`,
-      `cache-parameter-group`,
-      `cache-security-group`,
-      `cache-subnet-group`,
-      `replication-group`
+    val values = js.Object.freeze(
+      js.Array(
+        `cache-cluster`,
+        `cache-parameter-group`,
+        `cache-security-group`,
+        `cache-subnet-group`,
+        `replication-group`
+      )
     )
   }
 
@@ -3877,7 +3880,8 @@ package elasticache {
     val stopped            = "stopped"
     val complete           = "complete"
 
-    val values = IndexedSeq(`not-applied`, `waiting-to-start`, `in-progress`, stopping, stopped, complete)
+    val values =
+      js.Object.freeze(js.Array(`not-applied`, `waiting-to-start`, `in-progress`, stopping, stopped, complete))
   }
 
   @js.native

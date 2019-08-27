@@ -119,7 +119,7 @@ package kafka {
   object BrokerAZDistributionEnum {
     val DEFAULT = "DEFAULT"
 
-    val values = IndexedSeq(DEFAULT)
+    val values = js.Object.freeze(js.Array(DEFAULT))
   }
 
   /**
@@ -266,7 +266,7 @@ package kafka {
     val TLS_PLAINTEXT = "TLS_PLAINTEXT"
     val PLAINTEXT     = "PLAINTEXT"
 
-    val values = IndexedSeq(TLS, TLS_PLAINTEXT, PLAINTEXT)
+    val values = js.Object.freeze(js.Array(TLS, TLS_PLAINTEXT, PLAINTEXT))
   }
 
   /**
@@ -384,7 +384,7 @@ package kafka {
     val DELETING = "DELETING"
     val FAILED   = "FAILED"
 
-    val values = IndexedSeq(ACTIVE, CREATING, UPDATING, DELETING, FAILED)
+    val values = js.Object.freeze(js.Array(ACTIVE, CREATING, UPDATING, DELETING, FAILED))
   }
 
   /**
@@ -875,7 +875,7 @@ package kafka {
     val PER_BROKER           = "PER_BROKER"
     val PER_TOPIC_PER_BROKER = "PER_TOPIC_PER_BROKER"
 
-    val values = IndexedSeq(DEFAULT, PER_BROKER, PER_TOPIC_PER_BROKER)
+    val values = js.Object.freeze(js.Array(DEFAULT, PER_BROKER, PER_TOPIC_PER_BROKER))
   }
 
   /**
@@ -1231,7 +1231,7 @@ package kafka {
   object NodeTypeEnum {
     val BROKER = "BROKER"
 
-    val values = IndexedSeq(BROKER)
+    val values = js.Object.freeze(js.Array(BROKER))
   }
 
   /**

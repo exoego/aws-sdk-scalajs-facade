@@ -225,7 +225,7 @@ package mediastoredata {
     val OBJECT = "OBJECT"
     val FOLDER = "FOLDER"
 
-    val values = IndexedSeq(OBJECT, FOLDER)
+    val values = js.Object.freeze(js.Array(OBJECT, FOLDER))
   }
 
   @js.native
@@ -323,13 +323,13 @@ package mediastoredata {
   object StorageClassEnum {
     val TEMPORAL = "TEMPORAL"
 
-    val values = IndexedSeq(TEMPORAL)
+    val values = js.Object.freeze(js.Array(TEMPORAL))
   }
 
   object UploadAvailabilityEnum {
     val STANDARD  = "STANDARD"
     val STREAMING = "STREAMING"
 
-    val values = IndexedSeq(STANDARD, STREAMING)
+    val values = js.Object.freeze(js.Array(STANDARD, STREAMING))
   }
 }

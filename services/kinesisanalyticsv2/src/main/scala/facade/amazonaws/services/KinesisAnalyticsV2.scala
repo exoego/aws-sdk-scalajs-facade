@@ -708,7 +708,8 @@ package kinesisanalyticsv2 {
     val RESTORE_FROM_LATEST_SNAPSHOT = "RESTORE_FROM_LATEST_SNAPSHOT"
     val RESTORE_FROM_CUSTOM_SNAPSHOT = "RESTORE_FROM_CUSTOM_SNAPSHOT"
 
-    val values = IndexedSeq(SKIP_RESTORE_FROM_SNAPSHOT, RESTORE_FROM_LATEST_SNAPSHOT, RESTORE_FROM_CUSTOM_SNAPSHOT)
+    val values =
+      js.Object.freeze(js.Array(SKIP_RESTORE_FROM_SNAPSHOT, RESTORE_FROM_LATEST_SNAPSHOT, RESTORE_FROM_CUSTOM_SNAPSHOT))
   }
 
   /**
@@ -779,7 +780,7 @@ package kinesisanalyticsv2 {
     val RUNNING  = "RUNNING"
     val UPDATING = "UPDATING"
 
-    val values = IndexedSeq(DELETING, STARTING, STOPPING, READY, RUNNING, UPDATING)
+    val values = js.Object.freeze(js.Array(DELETING, STARTING, STOPPING, READY, RUNNING, UPDATING))
   }
 
   /**
@@ -1050,7 +1051,7 @@ package kinesisanalyticsv2 {
     val PLAINTEXT = "PLAINTEXT"
     val ZIPFILE   = "ZIPFILE"
 
-    val values = IndexedSeq(PLAINTEXT, ZIPFILE)
+    val values = js.Object.freeze(js.Array(PLAINTEXT, ZIPFILE))
   }
 
   /**
@@ -1081,7 +1082,7 @@ package kinesisanalyticsv2 {
     val DEFAULT = "DEFAULT"
     val CUSTOM  = "CUSTOM"
 
-    val values = IndexedSeq(DEFAULT, CUSTOM)
+    val values = js.Object.freeze(js.Array(DEFAULT, CUSTOM))
   }
 
   @js.native
@@ -1977,7 +1978,7 @@ package kinesisanalyticsv2 {
     val TRIM_HORIZON       = "TRIM_HORIZON"
     val LAST_STOPPED_POINT = "LAST_STOPPED_POINT"
 
-    val values = IndexedSeq(NOW, TRIM_HORIZON, LAST_STOPPED_POINT)
+    val values = js.Object.freeze(js.Array(NOW, TRIM_HORIZON, LAST_STOPPED_POINT))
   }
 
   /**
@@ -2490,7 +2491,7 @@ package kinesisanalyticsv2 {
     val ERROR = "ERROR"
     val DEBUG = "DEBUG"
 
-    val values = IndexedSeq(INFO, WARN, ERROR, DEBUG)
+    val values = js.Object.freeze(js.Array(INFO, WARN, ERROR, DEBUG))
   }
 
   /**
@@ -2520,7 +2521,7 @@ package kinesisanalyticsv2 {
     val OPERATOR    = "OPERATOR"
     val PARALLELISM = "PARALLELISM"
 
-    val values = IndexedSeq(APPLICATION, TASK, OPERATOR, PARALLELISM)
+    val values = js.Object.freeze(js.Array(APPLICATION, TASK, OPERATOR, PARALLELISM))
   }
 
   /**
@@ -2865,7 +2866,7 @@ package kinesisanalyticsv2 {
     val JSON = "JSON"
     val CSV  = "CSV"
 
-    val values = IndexedSeq(JSON, CSV)
+    val values = js.Object.freeze(js.Array(JSON, CSV))
   }
 
   /**
@@ -3019,7 +3020,7 @@ package kinesisanalyticsv2 {
     val `SQL-1_0`   = "SQL-1_0"
     val `FLINK-1_6` = "FLINK-1_6"
 
-    val values = IndexedSeq(`SQL-1_0`, `FLINK-1_6`)
+    val values = js.Object.freeze(js.Array(`SQL-1_0`, `FLINK-1_6`))
   }
 
   /**
@@ -3225,7 +3226,7 @@ package kinesisanalyticsv2 {
     val DELETING = "DELETING"
     val FAILED   = "FAILED"
 
-    val values = IndexedSeq(CREATING, READY, DELETING, FAILED)
+    val values = js.Object.freeze(js.Array(CREATING, READY, DELETING, FAILED))
   }
 
   /**

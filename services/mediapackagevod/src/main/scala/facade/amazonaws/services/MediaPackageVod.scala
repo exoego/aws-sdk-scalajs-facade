@@ -92,7 +92,7 @@ package mediapackagevod {
     val SCTE35_ENHANCED = "SCTE35_ENHANCED"
     val PASSTHROUGH     = "PASSTHROUGH"
 
-    val values = IndexedSeq(NONE, SCTE35_ENHANCED, PASSTHROUGH)
+    val values = js.Object.freeze(js.Array(NONE, SCTE35_ENHANCED, PASSTHROUGH))
   }
 
   /**
@@ -665,7 +665,7 @@ package mediapackagevod {
     val AES_128    = "AES_128"
     val SAMPLE_AES = "SAMPLE_AES"
 
-    val values = IndexedSeq(AES_128, SAMPLE_AES)
+    val values = js.Object.freeze(js.Array(AES_128, SAMPLE_AES))
   }
 
   /**
@@ -1002,7 +1002,7 @@ package mediapackagevod {
     val NONE      = "NONE"
     val HBBTV_1_5 = "HBBTV_1_5"
 
-    val values = IndexedSeq(NONE, HBBTV_1_5)
+    val values = js.Object.freeze(js.Array(NONE, HBBTV_1_5))
   }
 
   /**
@@ -1036,7 +1036,7 @@ package mediapackagevod {
     val VIDEO_BITRATE_ASCENDING  = "VIDEO_BITRATE_ASCENDING"
     val VIDEO_BITRATE_DESCENDING = "VIDEO_BITRATE_DESCENDING"
 
-    val values = IndexedSeq(ORIGINAL, VIDEO_BITRATE_ASCENDING, VIDEO_BITRATE_DESCENDING)
+    val values = js.Object.freeze(js.Array(ORIGINAL, VIDEO_BITRATE_ASCENDING, VIDEO_BITRATE_DESCENDING))
   }
 
   /**

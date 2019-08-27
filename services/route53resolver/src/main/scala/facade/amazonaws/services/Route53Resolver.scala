@@ -672,17 +672,19 @@ package route53resolver {
     val DELETING                  = "DELETING"
     val DELETE_FAILED_FAS_EXPIRED = "DELETE_FAILED_FAS_EXPIRED"
 
-    val values = IndexedSeq(
-      CREATING,
-      FAILED_CREATION,
-      ATTACHING,
-      ATTACHED,
-      REMAP_DETACHING,
-      REMAP_ATTACHING,
-      DETACHING,
-      FAILED_RESOURCE_GONE,
-      DELETING,
-      DELETE_FAILED_FAS_EXPIRED
+    val values = js.Object.freeze(
+      js.Array(
+        CREATING,
+        FAILED_CREATION,
+        ATTACHING,
+        ATTACHED,
+        REMAP_DETACHING,
+        REMAP_ATTACHING,
+        DETACHING,
+        FAILED_RESOURCE_GONE,
+        DELETING,
+        DELETE_FAILED_FAS_EXPIRED
+      )
     )
   }
 
@@ -1014,7 +1016,7 @@ package route53resolver {
     val INBOUND  = "INBOUND"
     val OUTBOUND = "OUTBOUND"
 
-    val values = IndexedSeq(INBOUND, OUTBOUND)
+    val values = js.Object.freeze(js.Array(INBOUND, OUTBOUND))
   }
 
   object ResolverEndpointStatusEnum {
@@ -1025,7 +1027,7 @@ package route53resolver {
     val ACTION_NEEDED   = "ACTION_NEEDED"
     val DELETING        = "DELETING"
 
-    val values = IndexedSeq(CREATING, OPERATIONAL, UPDATING, AUTO_RECOVERING, ACTION_NEEDED, DELETING)
+    val values = js.Object.freeze(js.Array(CREATING, OPERATIONAL, UPDATING, AUTO_RECOVERING, ACTION_NEEDED, DELETING))
   }
 
   /**
@@ -1119,7 +1121,7 @@ package route53resolver {
     val FAILED     = "FAILED"
     val OVERRIDDEN = "OVERRIDDEN"
 
-    val values = IndexedSeq(CREATING, COMPLETE, DELETING, FAILED, OVERRIDDEN)
+    val values = js.Object.freeze(js.Array(CREATING, COMPLETE, DELETING, FAILED, OVERRIDDEN))
   }
 
   /**
@@ -1152,7 +1154,7 @@ package route53resolver {
     val UPDATING = "UPDATING"
     val FAILED   = "FAILED"
 
-    val values = IndexedSeq(COMPLETE, DELETING, UPDATING, FAILED)
+    val values = js.Object.freeze(js.Array(COMPLETE, DELETING, UPDATING, FAILED))
   }
 
   object RuleTypeOptionEnum {
@@ -1160,7 +1162,7 @@ package route53resolver {
     val SYSTEM    = "SYSTEM"
     val RECURSIVE = "RECURSIVE"
 
-    val values = IndexedSeq(FORWARD, SYSTEM, RECURSIVE)
+    val values = js.Object.freeze(js.Array(FORWARD, SYSTEM, RECURSIVE))
   }
 
   object ShareStatusEnum {
@@ -1168,7 +1170,7 @@ package route53resolver {
     val SHARED_WITH_ME = "SHARED_WITH_ME"
     val SHARED_BY_ME   = "SHARED_BY_ME"
 
-    val values = IndexedSeq(NOT_SHARED, SHARED_WITH_ME, SHARED_BY_ME)
+    val values = js.Object.freeze(js.Array(NOT_SHARED, SHARED_WITH_ME, SHARED_BY_ME))
   }
 
   /**

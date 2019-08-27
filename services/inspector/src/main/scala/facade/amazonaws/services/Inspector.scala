@@ -316,7 +316,7 @@ package inspector {
     val UNHEALTHY = "UNHEALTHY"
     val UNKNOWN   = "UNKNOWN"
 
-    val values = IndexedSeq(HEALTHY, UNHEALTHY, UNKNOWN)
+    val values = js.Object.freeze(js.Array(HEALTHY, UNHEALTHY, UNKNOWN))
   }
 
   object AgentHealthCodeEnum {
@@ -327,7 +327,7 @@ package inspector {
     val THROTTLED = "THROTTLED"
     val UNKNOWN   = "UNKNOWN"
 
-    val values = IndexedSeq(IDLE, RUNNING, SHUTDOWN, UNHEALTHY, THROTTLED, UNKNOWN)
+    val values = js.Object.freeze(js.Array(IDLE, RUNNING, SHUTDOWN, UNHEALTHY, THROTTLED, UNKNOWN))
   }
 
   /**
@@ -549,7 +549,7 @@ package inspector {
     val ACCESS_DENIED        = "ACCESS_DENIED"
     val INTERNAL_ERROR       = "INTERNAL_ERROR"
 
-    val values = IndexedSeq(SUCCESS, TOPIC_DOES_NOT_EXIST, ACCESS_DENIED, INTERNAL_ERROR)
+    val values = js.Object.freeze(js.Array(SUCCESS, TOPIC_DOES_NOT_EXIST, ACCESS_DENIED, INTERNAL_ERROR))
   }
 
   object AssessmentRunStateEnum {
@@ -567,20 +567,22 @@ package inspector {
     val COMPLETED_WITH_ERRORS             = "COMPLETED_WITH_ERRORS"
     val CANCELED                          = "CANCELED"
 
-    val values = IndexedSeq(
-      CREATED,
-      START_DATA_COLLECTION_PENDING,
-      START_DATA_COLLECTION_IN_PROGRESS,
-      COLLECTING_DATA,
-      STOP_DATA_COLLECTION_PENDING,
-      DATA_COLLECTED,
-      START_EVALUATING_RULES_PENDING,
-      EVALUATING_RULES,
-      FAILED,
-      ERROR,
-      COMPLETED,
-      COMPLETED_WITH_ERRORS,
-      CANCELED
+    val values = js.Object.freeze(
+      js.Array(
+        CREATED,
+        START_DATA_COLLECTION_PENDING,
+        START_DATA_COLLECTION_IN_PROGRESS,
+        COLLECTING_DATA,
+        STOP_DATA_COLLECTION_PENDING,
+        DATA_COLLECTED,
+        START_EVALUATING_RULES_PENDING,
+        EVALUATING_RULES,
+        FAILED,
+        ERROR,
+        COMPLETED,
+        COMPLETED_WITH_ERRORS,
+        CANCELED
+      )
     )
   }
 
@@ -769,7 +771,7 @@ package inspector {
   object AssetTypeEnum {
     val `ec2-instance` = "ec2-instance"
 
-    val values = IndexedSeq(`ec2-instance`)
+    val values = js.Object.freeze(js.Array(`ec2-instance`))
   }
 
   /**
@@ -1430,8 +1432,9 @@ package inspector {
     val LIMIT_EXCEEDED      = "LIMIT_EXCEEDED"
     val INTERNAL_ERROR      = "INTERNAL_ERROR"
 
-    val values =
-      IndexedSeq(INVALID_ARN, DUPLICATE_ARN, ITEM_DOES_NOT_EXIST, ACCESS_DENIED, LIMIT_EXCEEDED, INTERNAL_ERROR)
+    val values = js.Object.freeze(
+      js.Array(INVALID_ARN, DUPLICATE_ARN, ITEM_DOES_NOT_EXIST, ACCESS_DENIED, LIMIT_EXCEEDED, INTERNAL_ERROR)
+    )
   }
 
   /**
@@ -1680,12 +1683,8 @@ package inspector {
     val FINDING_REPORTED             = "FINDING_REPORTED"
     val OTHER                        = "OTHER"
 
-    val values = IndexedSeq(
-      ASSESSMENT_RUN_STARTED,
-      ASSESSMENT_RUN_COMPLETED,
-      ASSESSMENT_RUN_STATE_CHANGED,
-      FINDING_REPORTED,
-      OTHER
+    val values = js.Object.freeze(
+      js.Array(ASSESSMENT_RUN_STARTED, ASSESSMENT_RUN_COMPLETED, ASSESSMENT_RUN_STATE_CHANGED, FINDING_REPORTED, OTHER)
     )
   }
 
@@ -2093,7 +2092,7 @@ package inspector {
   object LocaleEnum {
     val EN_US = "EN_US"
 
-    val values = IndexedSeq(EN_US)
+    val values = js.Object.freeze(js.Array(EN_US))
   }
 
   /**
@@ -2188,7 +2187,7 @@ package inspector {
     val WORK_IN_PROGRESS = "WORK_IN_PROGRESS"
     val COMPLETED        = "COMPLETED"
 
-    val values = IndexedSeq(WORK_IN_PROGRESS, COMPLETED)
+    val values = js.Object.freeze(js.Array(WORK_IN_PROGRESS, COMPLETED))
   }
 
   /**
@@ -2270,7 +2269,7 @@ package inspector {
     val HTML = "HTML"
     val PDF  = "PDF"
 
-    val values = IndexedSeq(HTML, PDF)
+    val values = js.Object.freeze(js.Array(HTML, PDF))
   }
 
   object ReportStatusEnum {
@@ -2278,14 +2277,14 @@ package inspector {
     val FAILED           = "FAILED"
     val COMPLETED        = "COMPLETED"
 
-    val values = IndexedSeq(WORK_IN_PROGRESS, FAILED, COMPLETED)
+    val values = js.Object.freeze(js.Array(WORK_IN_PROGRESS, FAILED, COMPLETED))
   }
 
   object ReportTypeEnum {
     val FINDING = "FINDING"
     val FULL    = "FULL"
 
-    val values = IndexedSeq(FINDING, FULL)
+    val values = js.Object.freeze(js.Array(FINDING, FULL))
   }
 
   /**
@@ -2394,7 +2393,7 @@ package inspector {
     val INSTANCE_ID       = "INSTANCE_ID"
     val RULES_PACKAGE_ARN = "RULES_PACKAGE_ARN"
 
-    val values = IndexedSeq(INSTANCE_ID, RULES_PACKAGE_ARN)
+    val values = js.Object.freeze(js.Array(INSTANCE_ID, RULES_PACKAGE_ARN))
   }
 
   /**
@@ -2445,7 +2444,7 @@ package inspector {
     val Informational = "Informational"
     val Undefined     = "Undefined"
 
-    val values = IndexedSeq(Low, Medium, High, Informational, Undefined)
+    val values = js.Object.freeze(js.Array(Low, Medium, High, Informational, Undefined))
   }
 
   @js.native
@@ -2489,7 +2488,7 @@ package inspector {
     val START_EVALUATION = "START_EVALUATION"
     val SKIP_EVALUATION  = "SKIP_EVALUATION"
 
-    val values = IndexedSeq(START_EVALUATION, SKIP_EVALUATION)
+    val values = js.Object.freeze(js.Array(START_EVALUATION, SKIP_EVALUATION))
   }
 
   @js.native

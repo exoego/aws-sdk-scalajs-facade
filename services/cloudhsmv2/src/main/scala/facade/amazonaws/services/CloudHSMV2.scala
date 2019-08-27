@@ -140,7 +140,7 @@ package cloudhsmv2 {
   object BackupPolicyEnum {
     val DEFAULT = "DEFAULT"
 
-    val values = IndexedSeq(DEFAULT)
+    val values = js.Object.freeze(js.Array(DEFAULT))
   }
 
   object BackupStateEnum {
@@ -149,7 +149,7 @@ package cloudhsmv2 {
     val DELETED            = "DELETED"
     val PENDING_DELETION   = "PENDING_DELETION"
 
-    val values = IndexedSeq(CREATE_IN_PROGRESS, READY, DELETED, PENDING_DELETION)
+    val values = js.Object.freeze(js.Array(CREATE_IN_PROGRESS, READY, DELETED, PENDING_DELETION))
   }
 
   /**
@@ -249,16 +249,18 @@ package cloudhsmv2 {
     val DELETED                = "DELETED"
     val DEGRADED               = "DEGRADED"
 
-    val values = IndexedSeq(
-      CREATE_IN_PROGRESS,
-      UNINITIALIZED,
-      INITIALIZE_IN_PROGRESS,
-      INITIALIZED,
-      ACTIVE,
-      UPDATE_IN_PROGRESS,
-      DELETE_IN_PROGRESS,
-      DELETED,
-      DEGRADED
+    val values = js.Object.freeze(
+      js.Array(
+        CREATE_IN_PROGRESS,
+        UNINITIALIZED,
+        INITIALIZE_IN_PROGRESS,
+        INITIALIZED,
+        ACTIVE,
+        UPDATE_IN_PROGRESS,
+        DELETE_IN_PROGRESS,
+        DELETED,
+        DEGRADED
+      )
     )
   }
 
@@ -631,7 +633,7 @@ package cloudhsmv2 {
     val DELETE_IN_PROGRESS = "DELETE_IN_PROGRESS"
     val DELETED            = "DELETED"
 
-    val values = IndexedSeq(CREATE_IN_PROGRESS, ACTIVE, DEGRADED, DELETE_IN_PROGRESS, DELETED)
+    val values = js.Object.freeze(js.Array(CREATE_IN_PROGRESS, ACTIVE, DEGRADED, DELETE_IN_PROGRESS, DELETED))
   }
 
   @js.native

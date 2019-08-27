@@ -191,7 +191,9 @@ package serverlessapplicationrepository {
     val CAPABILITY_AUTO_EXPAND     = "CAPABILITY_AUTO_EXPAND"
     val CAPABILITY_RESOURCE_POLICY = "CAPABILITY_RESOURCE_POLICY"
 
-    val values = IndexedSeq(CAPABILITY_IAM, CAPABILITY_NAMED_IAM, CAPABILITY_AUTO_EXPAND, CAPABILITY_RESOURCE_POLICY)
+    val values = js.Object.freeze(
+      js.Array(CAPABILITY_IAM, CAPABILITY_NAMED_IAM, CAPABILITY_AUTO_EXPAND, CAPABILITY_RESOURCE_POLICY)
+    )
   }
 
   @js.native
@@ -952,7 +954,7 @@ package serverlessapplicationrepository {
     val ACTIVE    = "ACTIVE"
     val EXPIRED   = "EXPIRED"
 
-    val values = IndexedSeq(PREPARING, ACTIVE, EXPIRED)
+    val values = js.Object.freeze(js.Array(PREPARING, ACTIVE, EXPIRED))
   }
 
   /**

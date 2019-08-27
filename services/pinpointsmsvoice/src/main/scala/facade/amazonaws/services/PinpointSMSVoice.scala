@@ -327,7 +327,7 @@ package pinpointsmsvoice {
     val FAILED         = "FAILED"
     val NO_ANSWER      = "NO_ANSWER"
 
-    val values = IndexedSeq(INITIATED_CALL, RINGING, ANSWERED, COMPLETED_CALL, BUSY, FAILED, NO_ANSWER)
+    val values = js.Object.freeze(js.Array(INITIATED_CALL, RINGING, ANSWERED, COMPLETED_CALL, BUSY, FAILED, NO_ANSWER))
   }
 
   @js.native

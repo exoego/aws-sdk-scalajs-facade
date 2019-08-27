@@ -217,7 +217,7 @@ package shield {
     val NETWORK     = "NETWORK"
     val APPLICATION = "APPLICATION"
 
-    val values = IndexedSeq(NETWORK, APPLICATION)
+    val values = js.Object.freeze(js.Array(NETWORK, APPLICATION))
   }
 
   /**
@@ -260,15 +260,17 @@ package shield {
     val WORDPRESS_PINGBACK_REFLECTOR = "WORDPRESS_PINGBACK_REFLECTOR"
     val WORDPRESS_PINGBACK_SOURCE    = "WORDPRESS_PINGBACK_SOURCE"
 
-    val values = IndexedSeq(
-      DESTINATION_URL,
-      REFERRER,
-      SOURCE_ASN,
-      SOURCE_COUNTRY,
-      SOURCE_IP_ADDRESS,
-      SOURCE_USER_AGENT,
-      WORDPRESS_PINGBACK_REFLECTOR,
-      WORDPRESS_PINGBACK_SOURCE
+    val values = js.Object.freeze(
+      js.Array(
+        DESTINATION_URL,
+        REFERRER,
+        SOURCE_ASN,
+        SOURCE_COUNTRY,
+        SOURCE_IP_ADDRESS,
+        SOURCE_USER_AGENT,
+        WORDPRESS_PINGBACK_REFLECTOR,
+        WORDPRESS_PINGBACK_SOURCE
+      )
     )
   }
 
@@ -326,7 +328,7 @@ package shield {
     val ENABLED  = "ENABLED"
     val DISABLED = "DISABLED"
 
-    val values = IndexedSeq(ENABLED, DISABLED)
+    val values = js.Object.freeze(js.Array(ENABLED, DISABLED))
   }
 
   /**
@@ -890,7 +892,7 @@ package shield {
     val IP  = "IP"
     val URL = "URL"
 
-    val values = IndexedSeq(IP, URL)
+    val values = js.Object.freeze(js.Array(IP, URL))
   }
 
   /**
@@ -927,7 +929,7 @@ package shield {
     val ACTIVE   = "ACTIVE"
     val INACTIVE = "INACTIVE"
 
-    val values = IndexedSeq(ACTIVE, INACTIVE)
+    val values = js.Object.freeze(js.Array(ACTIVE, INACTIVE))
   }
 
   /**
@@ -1013,7 +1015,7 @@ package shield {
     val PACKETS  = "PACKETS"
     val REQUESTS = "REQUESTS"
 
-    val values = IndexedSeq(BITS, BYTES, PACKETS, REQUESTS)
+    val values = js.Object.freeze(js.Array(BITS, BYTES, PACKETS, REQUESTS))
   }
 
   @js.native

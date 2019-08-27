@@ -267,14 +267,16 @@ package cloudwatch {
     val LessThanLowerThreshold                   = "LessThanLowerThreshold"
     val GreaterThanUpperThreshold                = "GreaterThanUpperThreshold"
 
-    val values = IndexedSeq(
-      GreaterThanOrEqualToThreshold,
-      GreaterThanThreshold,
-      LessThanThreshold,
-      LessThanOrEqualToThreshold,
-      LessThanLowerOrGreaterThanUpperThreshold,
-      LessThanLowerThreshold,
-      GreaterThanUpperThreshold
+    val values = js.Object.freeze(
+      js.Array(
+        GreaterThanOrEqualToThreshold,
+        GreaterThanThreshold,
+        LessThanThreshold,
+        LessThanOrEqualToThreshold,
+        LessThanLowerOrGreaterThanUpperThreshold,
+        LessThanLowerThreshold,
+        GreaterThanUpperThreshold
+      )
     )
   }
 
@@ -910,7 +912,7 @@ package cloudwatch {
     val StateUpdate         = "StateUpdate"
     val Action              = "Action"
 
-    val values = IndexedSeq(ConfigurationUpdate, StateUpdate, Action)
+    val values = js.Object.freeze(js.Array(ConfigurationUpdate, StateUpdate, Action))
   }
 
   @js.native
@@ -1515,7 +1517,7 @@ package cloudwatch {
     val TimestampDescending = "TimestampDescending"
     val TimestampAscending  = "TimestampAscending"
 
-    val values = IndexedSeq(TimestampDescending, TimestampAscending)
+    val values = js.Object.freeze(js.Array(TimestampDescending, TimestampAscending))
   }
 
   @js.native
@@ -1573,34 +1575,36 @@ package cloudwatch {
     val `Count/Second`     = "Count/Second"
     val None               = "None"
 
-    val values = IndexedSeq(
-      Seconds,
-      Microseconds,
-      Milliseconds,
-      Bytes,
-      Kilobytes,
-      Megabytes,
-      Gigabytes,
-      Terabytes,
-      Bits,
-      Kilobits,
-      Megabits,
-      Gigabits,
-      Terabits,
-      Percent,
-      Count,
-      `Bytes/Second`,
-      `Kilobytes/Second`,
-      `Megabytes/Second`,
-      `Gigabytes/Second`,
-      `Terabytes/Second`,
-      `Bits/Second`,
-      `Kilobits/Second`,
-      `Megabits/Second`,
-      `Gigabits/Second`,
-      `Terabits/Second`,
-      `Count/Second`,
-      None
+    val values = js.Object.freeze(
+      js.Array(
+        Seconds,
+        Microseconds,
+        Milliseconds,
+        Bytes,
+        Kilobytes,
+        Megabytes,
+        Gigabytes,
+        Terabytes,
+        Bits,
+        Kilobits,
+        Megabits,
+        Gigabits,
+        Terabits,
+        Percent,
+        Count,
+        `Bytes/Second`,
+        `Kilobytes/Second`,
+        `Megabytes/Second`,
+        `Gigabytes/Second`,
+        `Terabytes/Second`,
+        `Bits/Second`,
+        `Kilobits/Second`,
+        `Megabits/Second`,
+        `Gigabits/Second`,
+        `Terabits/Second`,
+        `Count/Second`,
+        None
+      )
     )
   }
 
@@ -1609,7 +1613,7 @@ package cloudwatch {
     val ALARM             = "ALARM"
     val INSUFFICIENT_DATA = "INSUFFICIENT_DATA"
 
-    val values = IndexedSeq(OK, ALARM, INSUFFICIENT_DATA)
+    val values = js.Object.freeze(js.Array(OK, ALARM, INSUFFICIENT_DATA))
   }
 
   object StatisticEnum {
@@ -1619,7 +1623,7 @@ package cloudwatch {
     val Minimum     = "Minimum"
     val Maximum     = "Maximum"
 
-    val values = IndexedSeq(SampleCount, Average, Sum, Minimum, Maximum)
+    val values = js.Object.freeze(js.Array(SampleCount, Average, Sum, Minimum, Maximum))
   }
 
   /**
@@ -1656,7 +1660,7 @@ package cloudwatch {
     val InternalError = "InternalError"
     val PartialData   = "PartialData"
 
-    val values = IndexedSeq(Complete, InternalError, PartialData)
+    val values = js.Object.freeze(js.Array(Complete, InternalError, PartialData))
   }
 
   /**

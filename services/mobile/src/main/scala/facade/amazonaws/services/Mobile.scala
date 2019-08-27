@@ -503,7 +503,7 @@ package mobile {
     val ANDROID    = "ANDROID"
     val JAVASCRIPT = "JAVASCRIPT"
 
-    val values = IndexedSeq(OSX, WINDOWS, LINUX, OBJC, SWIFT, ANDROID, JAVASCRIPT)
+    val values = js.Object.freeze(js.Array(OSX, WINDOWS, LINUX, OBJC, SWIFT, ANDROID, JAVASCRIPT))
   }
 
   /**
@@ -553,7 +553,7 @@ package mobile {
     val SYNCING   = "SYNCING"
     val IMPORTING = "IMPORTING"
 
-    val values = IndexedSeq(NORMAL, SYNCING, IMPORTING)
+    val values = js.Object.freeze(js.Array(NORMAL, SYNCING, IMPORTING))
   }
 
   /**

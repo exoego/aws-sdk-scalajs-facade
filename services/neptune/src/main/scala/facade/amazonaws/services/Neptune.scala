@@ -396,7 +396,7 @@ package neptune {
     val immediate        = "immediate"
     val `pending-reboot` = "pending-reboot"
 
-    val values = IndexedSeq(immediate, `pending-reboot`)
+    val values = js.Object.freeze(js.Array(immediate, `pending-reboot`))
   }
 
   @js.native
@@ -4138,13 +4138,15 @@ package neptune {
     val `db-cluster`          = "db-cluster"
     val `db-cluster-snapshot` = "db-cluster-snapshot"
 
-    val values = IndexedSeq(
-      `db-instance`,
-      `db-parameter-group`,
-      `db-security-group`,
-      `db-snapshot`,
-      `db-cluster`,
-      `db-cluster-snapshot`
+    val values = js.Object.freeze(
+      js.Array(
+        `db-instance`,
+        `db-parameter-group`,
+        `db-security-group`,
+        `db-snapshot`,
+        `db-cluster`,
+        `db-cluster-snapshot`
+      )
     )
   }
 

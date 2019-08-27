@@ -117,7 +117,7 @@ package batch {
     val N_TO_N     = "N_TO_N"
     val SEQUENTIAL = "SEQUENTIAL"
 
-    val values = IndexedSeq(N_TO_N, SEQUENTIAL)
+    val values = js.Object.freeze(js.Array(N_TO_N, SEQUENTIAL))
   }
 
   /**
@@ -247,7 +247,7 @@ package batch {
     val ENABLED  = "ENABLED"
     val DISABLED = "DISABLED"
 
-    val values = IndexedSeq(ENABLED, DISABLED)
+    val values = js.Object.freeze(js.Array(ENABLED, DISABLED))
   }
 
   object CEStatusEnum {
@@ -258,21 +258,21 @@ package batch {
     val VALID    = "VALID"
     val INVALID  = "INVALID"
 
-    val values = IndexedSeq(CREATING, UPDATING, DELETING, DELETED, VALID, INVALID)
+    val values = js.Object.freeze(js.Array(CREATING, UPDATING, DELETING, DELETED, VALID, INVALID))
   }
 
   object CETypeEnum {
     val MANAGED   = "MANAGED"
     val UNMANAGED = "UNMANAGED"
 
-    val values = IndexedSeq(MANAGED, UNMANAGED)
+    val values = js.Object.freeze(js.Array(MANAGED, UNMANAGED))
   }
 
   object CRTypeEnum {
     val EC2  = "EC2"
     val SPOT = "SPOT"
 
-    val values = IndexedSeq(EC2, SPOT)
+    val values = js.Object.freeze(js.Array(EC2, SPOT))
   }
 
   @js.native
@@ -1018,7 +1018,7 @@ package batch {
     val WRITE = "WRITE"
     val MKNOD = "MKNOD"
 
-    val values = IndexedSeq(READ, WRITE, MKNOD)
+    val values = js.Object.freeze(js.Array(READ, WRITE, MKNOD))
   }
 
   /**
@@ -1043,7 +1043,7 @@ package batch {
     val ENABLED  = "ENABLED"
     val DISABLED = "DISABLED"
 
-    val values = IndexedSeq(ENABLED, DISABLED)
+    val values = js.Object.freeze(js.Array(ENABLED, DISABLED))
   }
 
   object JQStatusEnum {
@@ -1054,7 +1054,7 @@ package batch {
     val VALID    = "VALID"
     val INVALID  = "INVALID"
 
-    val values = IndexedSeq(CREATING, UPDATING, DELETING, DELETED, VALID, INVALID)
+    val values = js.Object.freeze(js.Array(CREATING, UPDATING, DELETING, DELETED, VALID, INVALID))
   }
 
   /**
@@ -1108,7 +1108,7 @@ package batch {
     val container = "container"
     val multinode = "multinode"
 
-    val values = IndexedSeq(container, multinode)
+    val values = js.Object.freeze(js.Array(container, multinode))
   }
 
   /**
@@ -1250,7 +1250,7 @@ package batch {
     val SUCCEEDED = "SUCCEEDED"
     val FAILED    = "FAILED"
 
-    val values = IndexedSeq(SUBMITTED, PENDING, RUNNABLE, STARTING, RUNNING, SUCCEEDED, FAILED)
+    val values = js.Object.freeze(js.Array(SUBMITTED, PENDING, RUNNABLE, STARTING, RUNNING, SUCCEEDED, FAILED))
   }
 
   /**
@@ -1701,7 +1701,7 @@ package batch {
   object ResourceTypeEnum {
     val GPU = "GPU"
 
-    val values = IndexedSeq(GPU)
+    val values = js.Object.freeze(js.Array(GPU))
   }
 
   /**

@@ -145,7 +145,7 @@ package cognitoidentity {
     val AuthenticatedRole = "AuthenticatedRole"
     val Deny              = "Deny"
 
-    val values = IndexedSeq(AuthenticatedRole, Deny)
+    val values = js.Object.freeze(js.Array(AuthenticatedRole, Deny))
   }
 
   /**
@@ -342,7 +342,7 @@ package cognitoidentity {
     val AccessDenied        = "AccessDenied"
     val InternalServerError = "InternalServerError"
 
-    val values = IndexedSeq(AccessDenied, InternalServerError)
+    val values = js.Object.freeze(js.Array(AccessDenied, InternalServerError))
   }
 
   /**
@@ -886,7 +886,7 @@ package cognitoidentity {
     val StartsWith = "StartsWith"
     val NotEqual   = "NotEqual"
 
-    val values = IndexedSeq(Equals, Contains, StartsWith, NotEqual)
+    val values = js.Object.freeze(js.Array(Equals, Contains, StartsWith, NotEqual))
   }
 
   /**
@@ -966,7 +966,7 @@ package cognitoidentity {
     val Token = "Token"
     val Rules = "Rules"
 
-    val values = IndexedSeq(Token, Rules)
+    val values = js.Object.freeze(js.Array(Token, Rules))
   }
 
   /**

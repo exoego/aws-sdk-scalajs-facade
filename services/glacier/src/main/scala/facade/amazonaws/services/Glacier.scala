@@ -206,7 +206,7 @@ package glacier {
     val InventoryRetrieval = "InventoryRetrieval"
     val Select             = "Select"
 
-    val values = IndexedSeq(ArchiveRetrieval, InventoryRetrieval, Select)
+    val values = js.Object.freeze(js.Array(ArchiveRetrieval, InventoryRetrieval, Select))
   }
 
   /**
@@ -332,14 +332,16 @@ package glacier {
     val `bucket-owner-read`         = "bucket-owner-read"
     val `bucket-owner-full-control` = "bucket-owner-full-control"
 
-    val values = IndexedSeq(
-      `private`,
-      `public-read`,
-      `public-read-write`,
-      `aws-exec-read`,
-      `authenticated-read`,
-      `bucket-owner-read`,
-      `bucket-owner-full-control`
+    val values = js.Object.freeze(
+      js.Array(
+        `private`,
+        `public-read`,
+        `public-read-write`,
+        `aws-exec-read`,
+        `authenticated-read`,
+        `bucket-owner-read`,
+        `bucket-owner-full-control`
+      )
     )
   }
 
@@ -686,13 +688,13 @@ package glacier {
     val `aws:kms` = "aws:kms"
     val AES256    = "AES256"
 
-    val values = IndexedSeq(`aws:kms`, AES256)
+    val values = js.Object.freeze(js.Array(`aws:kms`, AES256))
   }
 
   object ExpressionTypeEnum {
     val SQL = "SQL"
 
-    val values = IndexedSeq(SQL)
+    val values = js.Object.freeze(js.Array(SQL))
   }
 
   object FileHeaderInfoEnum {
@@ -700,7 +702,7 @@ package glacier {
     val IGNORE = "IGNORE"
     val NONE   = "NONE"
 
-    val values = IndexedSeq(USE, IGNORE, NONE)
+    val values = js.Object.freeze(js.Array(USE, IGNORE, NONE))
   }
 
   /**
@@ -1695,7 +1697,7 @@ package glacier {
     val READ         = "READ"
     val READ_ACP     = "READ_ACP"
 
-    val values = IndexedSeq(FULL_CONTROL, WRITE, WRITE_ACP, READ, READ_ACP)
+    val values = js.Object.freeze(js.Array(FULL_CONTROL, WRITE, WRITE_ACP, READ, READ_ACP))
   }
 
   /**
@@ -1758,7 +1760,7 @@ package glacier {
     val ALWAYS   = "ALWAYS"
     val ASNEEDED = "ASNEEDED"
 
-    val values = IndexedSeq(ALWAYS, ASNEEDED)
+    val values = js.Object.freeze(js.Array(ALWAYS, ASNEEDED))
   }
 
   /**
@@ -1933,7 +1935,7 @@ package glacier {
     val Succeeded  = "Succeeded"
     val Failed     = "Failed"
 
-    val values = IndexedSeq(InProgress, Succeeded, Failed)
+    val values = js.Object.freeze(js.Array(InProgress, Succeeded, Failed))
   }
 
   object StorageClassEnum {
@@ -1941,7 +1943,7 @@ package glacier {
     val REDUCED_REDUNDANCY = "REDUCED_REDUNDANCY"
     val STANDARD_IA        = "STANDARD_IA"
 
-    val values = IndexedSeq(STANDARD, REDUCED_REDUNDANCY, STANDARD_IA)
+    val values = js.Object.freeze(js.Array(STANDARD, REDUCED_REDUNDANCY, STANDARD_IA))
   }
 
   object TypeEnum {
@@ -1949,7 +1951,7 @@ package glacier {
     val CanonicalUser         = "CanonicalUser"
     val Group                 = "Group"
 
-    val values = IndexedSeq(AmazonCustomerByEmail, CanonicalUser, Group)
+    val values = js.Object.freeze(js.Array(AmazonCustomerByEmail, CanonicalUser, Group))
   }
 
   /**

@@ -239,7 +239,7 @@ package robomaker {
     val ARM64  = "ARM64"
     val ARMHF  = "ARMHF"
 
-    val values = IndexedSeq(X86_64, ARM64, ARMHF)
+    val values = js.Object.freeze(js.Array(X86_64, ARM64, ARMHF))
   }
 
   @js.native
@@ -1149,24 +1149,26 @@ package robomaker {
     val BadPermissionError                  = "BadPermissionError"
     val InternalServerError                 = "InternalServerError"
 
-    val values = IndexedSeq(
-      ResourceNotFound,
-      EnvironmentSetupError,
-      EtagMismatch,
-      FailureThresholdBreached,
-      RobotDeploymentAborted,
-      RobotDeploymentNoResponse,
-      RobotAgentConnectionTimeout,
-      GreengrassDeploymentFailed,
-      MissingRobotArchitecture,
-      MissingRobotApplicationArchitecture,
-      MissingRobotDeploymentResource,
-      GreengrassGroupVersionDoesNotExist,
-      ExtractingBundleFailure,
-      PreLaunchFileFailure,
-      PostLaunchFileFailure,
-      BadPermissionError,
-      InternalServerError
+    val values = js.Object.freeze(
+      js.Array(
+        ResourceNotFound,
+        EnvironmentSetupError,
+        EtagMismatch,
+        FailureThresholdBreached,
+        RobotDeploymentAborted,
+        RobotDeploymentNoResponse,
+        RobotAgentConnectionTimeout,
+        GreengrassDeploymentFailed,
+        MissingRobotArchitecture,
+        MissingRobotApplicationArchitecture,
+        MissingRobotDeploymentResource,
+        GreengrassGroupVersionDoesNotExist,
+        ExtractingBundleFailure,
+        PreLaunchFileFailure,
+        PostLaunchFileFailure,
+        BadPermissionError,
+        InternalServerError
+      )
     )
   }
 
@@ -1210,7 +1212,7 @@ package robomaker {
     val Succeeded  = "Succeeded"
     val Canceled   = "Canceled"
 
-    val values = IndexedSeq(Pending, Preparing, InProgress, Failed, Succeeded, Canceled)
+    val values = js.Object.freeze(js.Array(Pending, Preparing, InProgress, Failed, Succeeded, Canceled))
   }
 
   @js.native
@@ -1632,7 +1634,7 @@ package robomaker {
     val Fail     = "Fail"
     val Continue = "Continue"
 
-    val values = IndexedSeq(Fail, Continue)
+    val values = js.Object.freeze(js.Array(Fail, Continue))
   }
 
   /**
@@ -2123,7 +2125,7 @@ package robomaker {
   object RenderingEngineTypeEnum {
     val OGRE = "OGRE"
 
-    val values = IndexedSeq(OGRE)
+    val values = js.Object.freeze(js.Array(OGRE))
   }
 
   @js.native
@@ -2297,8 +2299,9 @@ package robomaker {
     val ExecutingPostLaunch   = "ExecutingPostLaunch"
     val Finished              = "Finished"
 
-    val values =
-      IndexedSeq(Validating, DownloadingExtracting, ExecutingPreLaunch, Launching, ExecutingPostLaunch, Finished)
+    val values = js.Object.freeze(
+      js.Array(Validating, DownloadingExtracting, ExecutingPreLaunch, Launching, ExecutingPostLaunch, Finished)
+    )
   }
 
   /**
@@ -2325,14 +2328,14 @@ package robomaker {
   object RobotSoftwareSuiteTypeEnum {
     val ROS = "ROS"
 
-    val values = IndexedSeq(ROS)
+    val values = js.Object.freeze(js.Array(ROS))
   }
 
   object RobotSoftwareSuiteVersionTypeEnum {
     val Kinetic = "Kinetic"
     val Melodic = "Melodic"
 
-    val values = IndexedSeq(Kinetic, Melodic)
+    val values = js.Object.freeze(js.Array(Kinetic, Melodic))
   }
 
   object RobotStatusEnum {
@@ -2344,7 +2347,8 @@ package robomaker {
     val InSync               = "InSync"
     val NoResponse           = "NoResponse"
 
-    val values = IndexedSeq(Available, Registered, PendingNewDeployment, Deploying, Failed, InSync, NoResponse)
+    val values =
+      js.Object.freeze(js.Array(Available, Registered, PendingNewDeployment, Deploying, Failed, InSync, NoResponse))
   }
 
   /**
@@ -2524,30 +2528,32 @@ package robomaker {
     val WrongRegionRobotApplication                = "WrongRegionRobotApplication"
     val WrongRegionSimulationApplication           = "WrongRegionSimulationApplication"
 
-    val values = IndexedSeq(
-      InternalServiceError,
-      RobotApplicationCrash,
-      SimulationApplicationCrash,
-      BadPermissionsRobotApplication,
-      BadPermissionsSimulationApplication,
-      BadPermissionsS3Object,
-      BadPermissionsS3Output,
-      BadPermissionsCloudwatchLogs,
-      SubnetIpLimitExceeded,
-      ENILimitExceeded,
-      BadPermissionsUserCredentials,
-      InvalidBundleRobotApplication,
-      InvalidBundleSimulationApplication,
-      InvalidS3Resource,
-      MismatchedEtag,
-      RobotApplicationVersionMismatchedEtag,
-      SimulationApplicationVersionMismatchedEtag,
-      ResourceNotFound,
-      InvalidInput,
-      WrongRegionS3Bucket,
-      WrongRegionS3Output,
-      WrongRegionRobotApplication,
-      WrongRegionSimulationApplication
+    val values = js.Object.freeze(
+      js.Array(
+        InternalServiceError,
+        RobotApplicationCrash,
+        SimulationApplicationCrash,
+        BadPermissionsRobotApplication,
+        BadPermissionsSimulationApplication,
+        BadPermissionsS3Object,
+        BadPermissionsS3Output,
+        BadPermissionsCloudwatchLogs,
+        SubnetIpLimitExceeded,
+        ENILimitExceeded,
+        BadPermissionsUserCredentials,
+        InvalidBundleRobotApplication,
+        InvalidBundleSimulationApplication,
+        InvalidS3Resource,
+        MismatchedEtag,
+        RobotApplicationVersionMismatchedEtag,
+        SimulationApplicationVersionMismatchedEtag,
+        ResourceNotFound,
+        InvalidInput,
+        WrongRegionS3Bucket,
+        WrongRegionS3Output,
+        WrongRegionRobotApplication,
+        WrongRegionSimulationApplication
+      )
     )
   }
 
@@ -2563,17 +2569,19 @@ package robomaker {
     val Terminated    = "Terminated"
     val Canceled      = "Canceled"
 
-    val values = IndexedSeq(
-      Pending,
-      Preparing,
-      Running,
-      Restarting,
-      Completed,
-      Failed,
-      RunningFailed,
-      Terminating,
-      Terminated,
-      Canceled
+    val values = js.Object.freeze(
+      js.Array(
+        Pending,
+        Preparing,
+        Running,
+        Restarting,
+        Completed,
+        Failed,
+        RunningFailed,
+        Terminating,
+        Terminated,
+        Canceled
+      )
     )
   }
 
@@ -2638,7 +2646,7 @@ package robomaker {
     val Gazebo     = "Gazebo"
     val RosbagPlay = "RosbagPlay"
 
-    val values = IndexedSeq(Gazebo, RosbagPlay)
+    val values = js.Object.freeze(js.Array(Gazebo, RosbagPlay))
   }
 
   /**

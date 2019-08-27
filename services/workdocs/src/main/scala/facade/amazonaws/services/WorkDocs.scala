@@ -377,40 +377,42 @@ package workdocs {
     val FOLDER_SHAREABLE_LINK_PERMISSION_CHANGED   = "FOLDER_SHAREABLE_LINK_PERMISSION_CHANGED"
     val FOLDER_MOVED                               = "FOLDER_MOVED"
 
-    val values = IndexedSeq(
-      DOCUMENT_CHECKED_IN,
-      DOCUMENT_CHECKED_OUT,
-      DOCUMENT_RENAMED,
-      DOCUMENT_VERSION_UPLOADED,
-      DOCUMENT_VERSION_DELETED,
-      DOCUMENT_VERSION_VIEWED,
-      DOCUMENT_VERSION_DOWNLOADED,
-      DOCUMENT_RECYCLED,
-      DOCUMENT_RESTORED,
-      DOCUMENT_REVERTED,
-      DOCUMENT_SHARED,
-      DOCUMENT_UNSHARED,
-      DOCUMENT_SHARE_PERMISSION_CHANGED,
-      DOCUMENT_SHAREABLE_LINK_CREATED,
-      DOCUMENT_SHAREABLE_LINK_REMOVED,
-      DOCUMENT_SHAREABLE_LINK_PERMISSION_CHANGED,
-      DOCUMENT_MOVED,
-      DOCUMENT_COMMENT_ADDED,
-      DOCUMENT_COMMENT_DELETED,
-      DOCUMENT_ANNOTATION_ADDED,
-      DOCUMENT_ANNOTATION_DELETED,
-      FOLDER_CREATED,
-      FOLDER_DELETED,
-      FOLDER_RENAMED,
-      FOLDER_RECYCLED,
-      FOLDER_RESTORED,
-      FOLDER_SHARED,
-      FOLDER_UNSHARED,
-      FOLDER_SHARE_PERMISSION_CHANGED,
-      FOLDER_SHAREABLE_LINK_CREATED,
-      FOLDER_SHAREABLE_LINK_REMOVED,
-      FOLDER_SHAREABLE_LINK_PERMISSION_CHANGED,
-      FOLDER_MOVED
+    val values = js.Object.freeze(
+      js.Array(
+        DOCUMENT_CHECKED_IN,
+        DOCUMENT_CHECKED_OUT,
+        DOCUMENT_RENAMED,
+        DOCUMENT_VERSION_UPLOADED,
+        DOCUMENT_VERSION_DELETED,
+        DOCUMENT_VERSION_VIEWED,
+        DOCUMENT_VERSION_DOWNLOADED,
+        DOCUMENT_RECYCLED,
+        DOCUMENT_RESTORED,
+        DOCUMENT_REVERTED,
+        DOCUMENT_SHARED,
+        DOCUMENT_UNSHARED,
+        DOCUMENT_SHARE_PERMISSION_CHANGED,
+        DOCUMENT_SHAREABLE_LINK_CREATED,
+        DOCUMENT_SHAREABLE_LINK_REMOVED,
+        DOCUMENT_SHAREABLE_LINK_PERMISSION_CHANGED,
+        DOCUMENT_MOVED,
+        DOCUMENT_COMMENT_ADDED,
+        DOCUMENT_COMMENT_DELETED,
+        DOCUMENT_ANNOTATION_ADDED,
+        DOCUMENT_ANNOTATION_DELETED,
+        FOLDER_CREATED,
+        FOLDER_DELETED,
+        FOLDER_RENAMED,
+        FOLDER_RECYCLED,
+        FOLDER_RESTORED,
+        FOLDER_SHARED,
+        FOLDER_UNSHARED,
+        FOLDER_SHARE_PERMISSION_CHANGED,
+        FOLDER_SHAREABLE_LINK_CREATED,
+        FOLDER_SHAREABLE_LINK_REMOVED,
+        FOLDER_SHAREABLE_LINK_PERMISSION_CHANGED,
+        FOLDER_MOVED
+      )
     )
   }
 
@@ -459,7 +461,7 @@ package workdocs {
     val TRUE  = "TRUE"
     val FALSE = "FALSE"
 
-    val values = IndexedSeq(TRUE, FALSE)
+    val values = js.Object.freeze(js.Array(TRUE, FALSE))
   }
 
   /**
@@ -541,14 +543,14 @@ package workdocs {
     val PUBLISHED = "PUBLISHED"
     val DELETED   = "DELETED"
 
-    val values = IndexedSeq(DRAFT, PUBLISHED, DELETED)
+    val values = js.Object.freeze(js.Array(DRAFT, PUBLISHED, DELETED))
   }
 
   object CommentVisibilityTypeEnum {
     val PUBLIC  = "PUBLIC"
     val PRIVATE = "PRIVATE"
 
-    val values = IndexedSeq(PUBLIC, PRIVATE)
+    val values = js.Object.freeze(js.Array(PUBLIC, PRIVATE))
   }
 
   @js.native
@@ -1535,14 +1537,14 @@ package workdocs {
     val ORIGINAL      = "ORIGINAL"
     val WITH_COMMENTS = "WITH_COMMENTS"
 
-    val values = IndexedSeq(ORIGINAL, WITH_COMMENTS)
+    val values = js.Object.freeze(js.Array(ORIGINAL, WITH_COMMENTS))
   }
 
   object DocumentStatusTypeEnum {
     val INITIALIZED = "INITIALIZED"
     val ACTIVE      = "ACTIVE"
 
-    val values = IndexedSeq(INITIALIZED, ACTIVE)
+    val values = js.Object.freeze(js.Array(INITIALIZED, ACTIVE))
   }
 
   object DocumentThumbnailTypeEnum {
@@ -1550,7 +1552,7 @@ package workdocs {
     val SMALL_HQ = "SMALL_HQ"
     val LARGE    = "LARGE"
 
-    val values = IndexedSeq(SMALL, SMALL_HQ, LARGE)
+    val values = js.Object.freeze(js.Array(SMALL, SMALL_HQ, LARGE))
   }
 
   /**
@@ -1610,7 +1612,7 @@ package workdocs {
   object DocumentVersionStatusEnum {
     val ACTIVE = "ACTIVE"
 
-    val values = IndexedSeq(ACTIVE)
+    val values = js.Object.freeze(js.Array(ACTIVE))
   }
 
   object FolderContentTypeEnum {
@@ -1618,7 +1620,7 @@ package workdocs {
     val DOCUMENT = "DOCUMENT"
     val FOLDER   = "FOLDER"
 
-    val values = IndexedSeq(ALL, DOCUMENT, FOLDER)
+    val values = js.Object.freeze(js.Array(ALL, DOCUMENT, FOLDER))
   }
 
   /**
@@ -2056,7 +2058,7 @@ package workdocs {
     val pt_BR   = "pt_BR"
     val default = "default"
 
-    val values = IndexedSeq(en, fr, ko, de, es, ja, ru, zh_CN, zh_TW, pt_BR, default)
+    val values = js.Object.freeze(js.Array(en, fr, ko, de, es, ja, ru, zh_CN, zh_TW, pt_BR, default))
   }
 
   /**
@@ -2084,7 +2086,7 @@ package workdocs {
     val ASCENDING  = "ASCENDING"
     val DESCENDING = "DESCENDING"
 
-    val values = IndexedSeq(ASCENDING, DESCENDING)
+    val values = js.Object.freeze(js.Array(ASCENDING, DESCENDING))
   }
 
   /**
@@ -2160,7 +2162,7 @@ package workdocs {
     val ANONYMOUS    = "ANONYMOUS"
     val ORGANIZATION = "ORGANIZATION"
 
-    val values = IndexedSeq(USER, GROUP, INVITE, ANONYMOUS, ORGANIZATION)
+    val values = js.Object.freeze(js.Array(USER, GROUP, INVITE, ANONYMOUS, ORGANIZATION))
   }
 
   @js.native
@@ -2212,7 +2214,7 @@ package workdocs {
   object ResourceCollectionTypeEnum {
     val SHARED_WITH_ME = "SHARED_WITH_ME"
 
-    val values = IndexedSeq(SHARED_WITH_ME)
+    val values = js.Object.freeze(js.Array(SHARED_WITH_ME))
   }
 
   /**
@@ -2294,7 +2296,7 @@ package workdocs {
     val DATE = "DATE"
     val NAME = "NAME"
 
-    val values = IndexedSeq(DATE, NAME)
+    val values = js.Object.freeze(js.Array(DATE, NAME))
   }
 
   object ResourceStateTypeEnum {
@@ -2303,21 +2305,21 @@ package workdocs {
     val RECYCLING = "RECYCLING"
     val RECYCLED  = "RECYCLED"
 
-    val values = IndexedSeq(ACTIVE, RESTORING, RECYCLING, RECYCLED)
+    val values = js.Object.freeze(js.Array(ACTIVE, RESTORING, RECYCLING, RECYCLED))
   }
 
   object ResourceTypeEnum {
     val FOLDER   = "FOLDER"
     val DOCUMENT = "DOCUMENT"
 
-    val values = IndexedSeq(FOLDER, DOCUMENT)
+    val values = js.Object.freeze(js.Array(FOLDER, DOCUMENT))
   }
 
   object RolePermissionTypeEnum {
     val DIRECT    = "DIRECT"
     val INHERITED = "INHERITED"
 
-    val values = IndexedSeq(DIRECT, INHERITED)
+    val values = js.Object.freeze(js.Array(DIRECT, INHERITED))
   }
 
   object RoleTypeEnum {
@@ -2326,7 +2328,7 @@ package workdocs {
     val OWNER       = "OWNER"
     val COOWNER     = "COOWNER"
 
-    val values = IndexedSeq(VIEWER, CONTRIBUTOR, OWNER, COOWNER)
+    val values = js.Object.freeze(js.Array(VIEWER, CONTRIBUTOR, OWNER, COOWNER))
   }
 
   /**
@@ -2392,7 +2394,7 @@ package workdocs {
     val SUCCESS = "SUCCESS"
     val FAILURE = "FAILURE"
 
-    val values = IndexedSeq(SUCCESS, FAILURE)
+    val values = js.Object.freeze(js.Array(SUCCESS, FAILURE))
   }
 
   /**
@@ -2420,7 +2422,7 @@ package workdocs {
     val UNLIMITED = "UNLIMITED"
     val QUOTA     = "QUOTA"
 
-    val values = IndexedSeq(UNLIMITED, QUOTA)
+    val values = js.Object.freeze(js.Array(UNLIMITED, QUOTA))
   }
 
   /**
@@ -2450,13 +2452,13 @@ package workdocs {
   object SubscriptionProtocolTypeEnum {
     val HTTPS = "HTTPS"
 
-    val values = IndexedSeq(HTTPS)
+    val values = js.Object.freeze(js.Array(HTTPS))
   }
 
   object SubscriptionTypeEnum {
     val ALL = "ALL"
 
-    val values = IndexedSeq(ALL)
+    val values = js.Object.freeze(js.Array(ALL))
   }
 
   @js.native
@@ -2684,7 +2686,7 @@ package workdocs {
     val ALL            = "ALL"
     val ACTIVE_PENDING = "ACTIVE_PENDING"
 
-    val values = IndexedSeq(ALL, ACTIVE_PENDING)
+    val values = js.Object.freeze(js.Array(ALL, ACTIVE_PENDING))
   }
 
   /**
@@ -2724,7 +2726,7 @@ package workdocs {
     val USER_STATUS   = "USER_STATUS"
     val STORAGE_USED  = "STORAGE_USED"
 
-    val values = IndexedSeq(USER_NAME, FULL_NAME, STORAGE_LIMIT, USER_STATUS, STORAGE_USED)
+    val values = js.Object.freeze(js.Array(USER_NAME, FULL_NAME, STORAGE_LIMIT, USER_STATUS, STORAGE_USED))
   }
 
   object UserStatusTypeEnum {
@@ -2732,7 +2734,7 @@ package workdocs {
     val INACTIVE = "INACTIVE"
     val PENDING  = "PENDING"
 
-    val values = IndexedSeq(ACTIVE, INACTIVE, PENDING)
+    val values = js.Object.freeze(js.Array(ACTIVE, INACTIVE, PENDING))
   }
 
   /**
@@ -2763,6 +2765,6 @@ package workdocs {
     val MINIMALUSER    = "MINIMALUSER"
     val WORKSPACESUSER = "WORKSPACESUSER"
 
-    val values = IndexedSeq(USER, ADMIN, POWERUSER, MINIMALUSER, WORKSPACESUSER)
+    val values = js.Object.freeze(js.Array(USER, ADMIN, POWERUSER, MINIMALUSER, WORKSPACESUSER))
   }
 }

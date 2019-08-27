@@ -646,7 +646,7 @@ package greengrass {
     val Stopped      = "Stopped"
     val Failed       = "Failed"
 
-    val values = IndexedSeq(Initializing, Running, Completed, Stopping, Stopped, Failed)
+    val values = js.Object.freeze(js.Array(Initializing, Running, Completed, Stopping, Stopped, Failed))
   }
 
   /**
@@ -2081,7 +2081,7 @@ package greengrass {
     val ResetDeployment      = "ResetDeployment"
     val ForceResetDeployment = "ForceResetDeployment"
 
-    val values = IndexedSeq(NewDeployment, Redeployment, ResetDeployment, ForceResetDeployment)
+    val values = js.Object.freeze(js.Array(NewDeployment, Redeployment, ResetDeployment, ForceResetDeployment))
   }
 
   /**
@@ -2194,7 +2194,7 @@ package greengrass {
     val binary = "binary"
     val json   = "json"
 
-    val values = IndexedSeq(binary, json)
+    val values = js.Object.freeze(js.Array(binary, json))
   }
 
   /**
@@ -2395,7 +2395,7 @@ package greengrass {
     val GreengrassContainer = "GreengrassContainer"
     val NoContainer         = "NoContainer"
 
-    val values = IndexedSeq(GreengrassContainer, NoContainer)
+    val values = js.Object.freeze(js.Array(GreengrassContainer, NoContainer))
   }
 
   /**
@@ -4531,7 +4531,7 @@ package greengrass {
     val GreengrassSystem = "GreengrassSystem"
     val Lambda           = "Lambda"
 
-    val values = IndexedSeq(GreengrassSystem, Lambda)
+    val values = js.Object.freeze(js.Array(GreengrassSystem, Lambda))
   }
 
   /**
@@ -4559,14 +4559,14 @@ package greengrass {
     val ERROR = "ERROR"
     val FATAL = "FATAL"
 
-    val values = IndexedSeq(DEBUG, INFO, WARN, ERROR, FATAL)
+    val values = js.Object.freeze(js.Array(DEBUG, INFO, WARN, ERROR, FATAL))
   }
 
   object LoggerTypeEnum {
     val FileSystem    = "FileSystem"
     val AWSCloudWatch = "AWSCloudWatch"
 
-    val values = IndexedSeq(FileSystem, AWSCloudWatch)
+    val values = js.Object.freeze(js.Array(FileSystem, AWSCloudWatch))
   }
 
   /**
@@ -4576,7 +4576,7 @@ package greengrass {
     val ro = "ro"
     val rw = "rw"
 
-    val values = IndexedSeq(ro, rw)
+    val values = js.Object.freeze(js.Array(ro, rw))
   }
 
   /**
@@ -4798,7 +4798,7 @@ package greengrass {
     val core      = "core"
     val ota_agent = "ota_agent"
 
-    val values = IndexedSeq(core, ota_agent)
+    val values = js.Object.freeze(js.Array(core, ota_agent))
   }
 
   @js.native
@@ -4977,7 +4977,7 @@ package greengrass {
     val ERROR   = "ERROR"
     val FATAL   = "FATAL"
 
-    val values = IndexedSeq(NONE, TRACE, DEBUG, VERBOSE, INFO, WARN, ERROR, FATAL)
+    val values = js.Object.freeze(js.Array(NONE, TRACE, DEBUG, VERBOSE, INFO, WARN, ERROR, FATAL))
   }
 
   /**
@@ -5333,7 +5333,7 @@ package greengrass {
     val aarch64 = "aarch64"
     val openwrt = "openwrt"
 
-    val values = IndexedSeq(armv7l, x86_64, aarch64, openwrt)
+    val values = js.Object.freeze(js.Array(armv7l, x86_64, aarch64, openwrt))
   }
 
   /**
@@ -5344,7 +5344,7 @@ package greengrass {
     val raspbian     = "raspbian"
     val amazon_linux = "amazon_linux"
 
-    val values = IndexedSeq(ubuntu, raspbian, amazon_linux)
+    val values = js.Object.freeze(js.Array(ubuntu, raspbian, amazon_linux))
   }
 
   /**

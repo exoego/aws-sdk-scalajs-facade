@@ -260,7 +260,7 @@ package lakeformation {
     val IN           = "IN"
     val BETWEEN      = "BETWEEN"
 
-    val values = IndexedSeq(EQ, NE, LE, LT, GE, GT, CONTAINS, NOT_CONTAINS, BEGINS_WITH, IN, BETWEEN)
+    val values = js.Object.freeze(js.Array(EQ, NE, LE, LT, GE, GT, CONTAINS, NOT_CONTAINS, BEGINS_WITH, IN, BETWEEN))
   }
 
   /**
@@ -287,7 +287,7 @@ package lakeformation {
     val TABLE         = "TABLE"
     val DATA_LOCATION = "DATA_LOCATION"
 
-    val values = IndexedSeq(CATALOG, DATABASE, TABLE, DATA_LOCATION)
+    val values = js.Object.freeze(js.Array(CATALOG, DATABASE, TABLE, DATA_LOCATION))
   }
 
   /**
@@ -445,7 +445,7 @@ package lakeformation {
     val ROLE_ARN      = "ROLE_ARN"
     val LAST_MODIFIED = "LAST_MODIFIED"
 
-    val values = IndexedSeq(RESOURCE_ARN, ROLE_ARN, LAST_MODIFIED)
+    val values = js.Object.freeze(js.Array(RESOURCE_ARN, ROLE_ARN, LAST_MODIFIED))
   }
 
   /**
@@ -687,8 +687,9 @@ package lakeformation {
     val CREATE_TABLE         = "CREATE_TABLE"
     val DATA_LOCATION_ACCESS = "DATA_LOCATION_ACCESS"
 
-    val values =
-      IndexedSeq(ALL, SELECT, ALTER, DROP, DELETE, INSERT, CREATE_DATABASE, CREATE_TABLE, DATA_LOCATION_ACCESS)
+    val values = js.Object.freeze(
+      js.Array(ALL, SELECT, ALTER, DROP, DELETE, INSERT, CREATE_DATABASE, CREATE_TABLE, DATA_LOCATION_ACCESS)
+    )
   }
 
   /**

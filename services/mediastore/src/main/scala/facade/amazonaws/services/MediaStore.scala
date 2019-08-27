@@ -138,7 +138,7 @@ package mediastore {
     val CREATING = "CREATING"
     val DELETING = "DELETING"
 
-    val values = IndexedSeq(ACTIVE, CREATING, DELETING)
+    val values = js.Object.freeze(js.Array(ACTIVE, CREATING, DELETING))
   }
 
   /**
@@ -534,7 +534,7 @@ package mediastore {
     val DELETE = "DELETE"
     val HEAD   = "HEAD"
 
-    val values = IndexedSeq(PUT, GET, DELETE, HEAD)
+    val values = js.Object.freeze(js.Array(PUT, GET, DELETE, HEAD))
   }
 
   @js.native

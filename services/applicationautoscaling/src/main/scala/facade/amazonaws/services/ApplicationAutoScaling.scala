@@ -102,7 +102,7 @@ package applicationautoscaling {
     val PercentChangeInCapacity = "PercentChangeInCapacity"
     val ExactCapacity           = "ExactCapacity"
 
-    val values = IndexedSeq(ChangeInCapacity, PercentChangeInCapacity, ExactCapacity)
+    val values = js.Object.freeze(js.Array(ChangeInCapacity, PercentChangeInCapacity, ExactCapacity))
   }
 
   /**
@@ -474,7 +474,7 @@ package applicationautoscaling {
     val Minimum = "Minimum"
     val Maximum = "Maximum"
 
-    val values = IndexedSeq(Average, Minimum, Maximum)
+    val values = js.Object.freeze(js.Array(Average, Minimum, Maximum))
   }
 
   /**
@@ -507,7 +507,7 @@ package applicationautoscaling {
     val SampleCount = "SampleCount"
     val Sum         = "Sum"
 
-    val values = IndexedSeq(Average, Minimum, Maximum, SampleCount, Sum)
+    val values = js.Object.freeze(js.Array(Average, Minimum, Maximum, SampleCount, Sum))
   }
 
   object MetricTypeEnum {
@@ -523,18 +523,20 @@ package applicationautoscaling {
     val ECSServiceAverageCPUUtilization          = "ECSServiceAverageCPUUtilization"
     val ECSServiceAverageMemoryUtilization       = "ECSServiceAverageMemoryUtilization"
 
-    val values = IndexedSeq(
-      DynamoDBReadCapacityUtilization,
-      DynamoDBWriteCapacityUtilization,
-      ALBRequestCountPerTarget,
-      RDSReaderAverageCPUUtilization,
-      RDSReaderAverageDatabaseConnections,
-      EC2SpotFleetRequestAverageCPUUtilization,
-      EC2SpotFleetRequestAverageNetworkIn,
-      EC2SpotFleetRequestAverageNetworkOut,
-      SageMakerVariantInvocationsPerInstance,
-      ECSServiceAverageCPUUtilization,
-      ECSServiceAverageMemoryUtilization
+    val values = js.Object.freeze(
+      js.Array(
+        DynamoDBReadCapacityUtilization,
+        DynamoDBWriteCapacityUtilization,
+        ALBRequestCountPerTarget,
+        RDSReaderAverageCPUUtilization,
+        RDSReaderAverageDatabaseConnections,
+        EC2SpotFleetRequestAverageCPUUtilization,
+        EC2SpotFleetRequestAverageNetworkIn,
+        EC2SpotFleetRequestAverageNetworkOut,
+        SageMakerVariantInvocationsPerInstance,
+        ECSServiceAverageCPUUtilization,
+        ECSServiceAverageMemoryUtilization
+      )
     )
   }
 
@@ -542,7 +544,7 @@ package applicationautoscaling {
     val StepScaling           = "StepScaling"
     val TargetTrackingScaling = "TargetTrackingScaling"
 
-    val values = IndexedSeq(StepScaling, TargetTrackingScaling)
+    val values = js.Object.freeze(js.Array(StepScaling, TargetTrackingScaling))
   }
 
   /**
@@ -734,18 +736,20 @@ package applicationautoscaling {
     val `sagemaker:variant:DesiredInstanceCount`       = "sagemaker:variant:DesiredInstanceCount"
     val `custom-resource:ResourceType:Property`        = "custom-resource:ResourceType:Property"
 
-    val values = IndexedSeq(
-      `ecs:service:DesiredCount`,
-      `ec2:spot-fleet-request:TargetCapacity`,
-      `elasticmapreduce:instancegroup:InstanceCount`,
-      `appstream:fleet:DesiredCapacity`,
-      `dynamodb:table:ReadCapacityUnits`,
-      `dynamodb:table:WriteCapacityUnits`,
-      `dynamodb:index:ReadCapacityUnits`,
-      `dynamodb:index:WriteCapacityUnits`,
-      `rds:cluster:ReadReplicaCount`,
-      `sagemaker:variant:DesiredInstanceCount`,
-      `custom-resource:ResourceType:Property`
+    val values = js.Object.freeze(
+      js.Array(
+        `ecs:service:DesiredCount`,
+        `ec2:spot-fleet-request:TargetCapacity`,
+        `elasticmapreduce:instancegroup:InstanceCount`,
+        `appstream:fleet:DesiredCapacity`,
+        `dynamodb:table:ReadCapacityUnits`,
+        `dynamodb:table:WriteCapacityUnits`,
+        `dynamodb:index:ReadCapacityUnits`,
+        `dynamodb:index:WriteCapacityUnits`,
+        `rds:cluster:ReadReplicaCount`,
+        `sagemaker:variant:DesiredInstanceCount`,
+        `custom-resource:ResourceType:Property`
+      )
     )
   }
 
@@ -866,7 +870,7 @@ package applicationautoscaling {
     val Unfulfilled = "Unfulfilled"
     val Failed      = "Failed"
 
-    val values = IndexedSeq(Pending, InProgress, Successful, Overridden, Unfulfilled, Failed)
+    val values = js.Object.freeze(js.Array(Pending, InProgress, Successful, Overridden, Unfulfilled, Failed))
   }
 
   /**
@@ -977,7 +981,8 @@ package applicationautoscaling {
     val sagemaker         = "sagemaker"
     val `custom-resource` = "custom-resource"
 
-    val values = IndexedSeq(ecs, elasticmapreduce, ec2, appstream, dynamodb, rds, sagemaker, `custom-resource`)
+    val values =
+      js.Object.freeze(js.Array(ecs, elasticmapreduce, ec2, appstream, dynamodb, rds, sagemaker, `custom-resource`))
   }
 
   /**

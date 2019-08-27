@@ -559,7 +559,7 @@ package wafregional {
     val INSERT = "INSERT"
     val DELETE = "DELETE"
 
-    val values = IndexedSeq(INSERT, DELETE)
+    val values = js.Object.freeze(js.Array(INSERT, DELETE))
   }
 
   object ChangeTokenStatusEnum {
@@ -567,7 +567,7 @@ package wafregional {
     val PENDING     = "PENDING"
     val INSYNC      = "INSYNC"
 
-    val values = IndexedSeq(PROVISIONED, PENDING, INSYNC)
+    val values = js.Object.freeze(js.Array(PROVISIONED, PENDING, INSYNC))
   }
 
   object ComparisonOperatorEnum {
@@ -578,7 +578,7 @@ package wafregional {
     val GE = "GE"
     val GT = "GT"
 
-    val values = IndexedSeq(EQ, NE, LE, LT, GE, GT)
+    val values = js.Object.freeze(js.Array(EQ, NE, LE, LT, GE, GT))
   }
 
   @js.native
@@ -1670,7 +1670,7 @@ package wafregional {
   object GeoMatchConstraintTypeEnum {
     val Country = "Country"
 
-    val values = IndexedSeq(Country)
+    val values = js.Object.freeze(js.Array(Country))
   }
 
   object GeoMatchConstraintValueEnum {
@@ -1924,256 +1924,258 @@ package wafregional {
     val ZM = "ZM"
     val ZW = "ZW"
 
-    val values = IndexedSeq(
-      AF,
-      AX,
-      AL,
-      DZ,
-      AS,
-      AD,
-      AO,
-      AI,
-      AQ,
-      AG,
-      AR,
-      AM,
-      AW,
-      AU,
-      AT,
-      AZ,
-      BS,
-      BH,
-      BD,
-      BB,
-      BY,
-      BE,
-      BZ,
-      BJ,
-      BM,
-      BT,
-      BO,
-      BQ,
-      BA,
-      BW,
-      BV,
-      BR,
-      IO,
-      BN,
-      BG,
-      BF,
-      BI,
-      KH,
-      CM,
-      CA,
-      CV,
-      KY,
-      CF,
-      TD,
-      CL,
-      CN,
-      CX,
-      CC,
-      CO,
-      KM,
-      CG,
-      CD,
-      CK,
-      CR,
-      CI,
-      HR,
-      CU,
-      CW,
-      CY,
-      CZ,
-      DK,
-      DJ,
-      DM,
-      DO,
-      EC,
-      EG,
-      SV,
-      GQ,
-      ER,
-      EE,
-      ET,
-      FK,
-      FO,
-      FJ,
-      FI,
-      FR,
-      GF,
-      PF,
-      TF,
-      GA,
-      GM,
-      GE,
-      DE,
-      GH,
-      GI,
-      GR,
-      GL,
-      GD,
-      GP,
-      GU,
-      GT,
-      GG,
-      GN,
-      GW,
-      GY,
-      HT,
-      HM,
-      VA,
-      HN,
-      HK,
-      HU,
-      IS,
-      IN,
-      ID,
-      IR,
-      IQ,
-      IE,
-      IM,
-      IL,
-      IT,
-      JM,
-      JP,
-      JE,
-      JO,
-      KZ,
-      KE,
-      KI,
-      KP,
-      KR,
-      KW,
-      KG,
-      LA,
-      LV,
-      LB,
-      LS,
-      LR,
-      LY,
-      LI,
-      LT,
-      LU,
-      MO,
-      MK,
-      MG,
-      MW,
-      MY,
-      MV,
-      ML,
-      MT,
-      MH,
-      MQ,
-      MR,
-      MU,
-      YT,
-      MX,
-      FM,
-      MD,
-      MC,
-      MN,
-      ME,
-      MS,
-      MA,
-      MZ,
-      MM,
-      NA,
-      NR,
-      NP,
-      NL,
-      NC,
-      NZ,
-      NI,
-      NE,
-      NG,
-      NU,
-      NF,
-      MP,
-      NO,
-      OM,
-      PK,
-      PW,
-      PS,
-      PA,
-      PG,
-      PY,
-      PE,
-      PH,
-      PN,
-      PL,
-      PT,
-      PR,
-      QA,
-      RE,
-      RO,
-      RU,
-      RW,
-      BL,
-      SH,
-      KN,
-      LC,
-      MF,
-      PM,
-      VC,
-      WS,
-      SM,
-      ST,
-      SA,
-      SN,
-      RS,
-      SC,
-      SL,
-      SG,
-      SX,
-      SK,
-      SI,
-      SB,
-      SO,
-      ZA,
-      GS,
-      SS,
-      ES,
-      LK,
-      SD,
-      SR,
-      SJ,
-      SZ,
-      SE,
-      CH,
-      SY,
-      TW,
-      TJ,
-      TZ,
-      TH,
-      TL,
-      TG,
-      TK,
-      TO,
-      TT,
-      TN,
-      TR,
-      TM,
-      TC,
-      TV,
-      UG,
-      UA,
-      AE,
-      GB,
-      US,
-      UM,
-      UY,
-      UZ,
-      VU,
-      VE,
-      VN,
-      VG,
-      VI,
-      WF,
-      EH,
-      YE,
-      ZM,
-      ZW
+    val values = js.Object.freeze(
+      js.Array(
+        AF,
+        AX,
+        AL,
+        DZ,
+        AS,
+        AD,
+        AO,
+        AI,
+        AQ,
+        AG,
+        AR,
+        AM,
+        AW,
+        AU,
+        AT,
+        AZ,
+        BS,
+        BH,
+        BD,
+        BB,
+        BY,
+        BE,
+        BZ,
+        BJ,
+        BM,
+        BT,
+        BO,
+        BQ,
+        BA,
+        BW,
+        BV,
+        BR,
+        IO,
+        BN,
+        BG,
+        BF,
+        BI,
+        KH,
+        CM,
+        CA,
+        CV,
+        KY,
+        CF,
+        TD,
+        CL,
+        CN,
+        CX,
+        CC,
+        CO,
+        KM,
+        CG,
+        CD,
+        CK,
+        CR,
+        CI,
+        HR,
+        CU,
+        CW,
+        CY,
+        CZ,
+        DK,
+        DJ,
+        DM,
+        DO,
+        EC,
+        EG,
+        SV,
+        GQ,
+        ER,
+        EE,
+        ET,
+        FK,
+        FO,
+        FJ,
+        FI,
+        FR,
+        GF,
+        PF,
+        TF,
+        GA,
+        GM,
+        GE,
+        DE,
+        GH,
+        GI,
+        GR,
+        GL,
+        GD,
+        GP,
+        GU,
+        GT,
+        GG,
+        GN,
+        GW,
+        GY,
+        HT,
+        HM,
+        VA,
+        HN,
+        HK,
+        HU,
+        IS,
+        IN,
+        ID,
+        IR,
+        IQ,
+        IE,
+        IM,
+        IL,
+        IT,
+        JM,
+        JP,
+        JE,
+        JO,
+        KZ,
+        KE,
+        KI,
+        KP,
+        KR,
+        KW,
+        KG,
+        LA,
+        LV,
+        LB,
+        LS,
+        LR,
+        LY,
+        LI,
+        LT,
+        LU,
+        MO,
+        MK,
+        MG,
+        MW,
+        MY,
+        MV,
+        ML,
+        MT,
+        MH,
+        MQ,
+        MR,
+        MU,
+        YT,
+        MX,
+        FM,
+        MD,
+        MC,
+        MN,
+        ME,
+        MS,
+        MA,
+        MZ,
+        MM,
+        NA,
+        NR,
+        NP,
+        NL,
+        NC,
+        NZ,
+        NI,
+        NE,
+        NG,
+        NU,
+        NF,
+        MP,
+        NO,
+        OM,
+        PK,
+        PW,
+        PS,
+        PA,
+        PG,
+        PY,
+        PE,
+        PH,
+        PN,
+        PL,
+        PT,
+        PR,
+        QA,
+        RE,
+        RO,
+        RU,
+        RW,
+        BL,
+        SH,
+        KN,
+        LC,
+        MF,
+        PM,
+        VC,
+        WS,
+        SM,
+        ST,
+        SA,
+        SN,
+        RS,
+        SC,
+        SL,
+        SG,
+        SX,
+        SK,
+        SI,
+        SB,
+        SO,
+        ZA,
+        GS,
+        SS,
+        ES,
+        LK,
+        SD,
+        SR,
+        SJ,
+        SZ,
+        SE,
+        CH,
+        SY,
+        TW,
+        TJ,
+        TZ,
+        TH,
+        TL,
+        TG,
+        TK,
+        TO,
+        TT,
+        TN,
+        TR,
+        TM,
+        TC,
+        TV,
+        UG,
+        UA,
+        AE,
+        GB,
+        US,
+        UM,
+        UY,
+        UZ,
+        VU,
+        VE,
+        VN,
+        VG,
+        VI,
+        WF,
+        EH,
+        YE,
+        ZM,
+        ZW
+      )
     )
   }
 
@@ -2993,7 +2995,7 @@ package wafregional {
     val IPV4 = "IPV4"
     val IPV6 = "IPV6"
 
-    val values = IndexedSeq(IPV4, IPV6)
+    val values = js.Object.freeze(js.Array(IPV4, IPV6))
   }
 
   /**
@@ -3708,7 +3710,7 @@ package wafregional {
     val SINGLE_QUERY_ARG = "SINGLE_QUERY_ARG"
     val ALL_QUERY_ARGS   = "ALL_QUERY_ARGS"
 
-    val values = IndexedSeq(URI, QUERY_STRING, HEADER, METHOD, BODY, SINGLE_QUERY_ARG, ALL_QUERY_ARGS)
+    val values = js.Object.freeze(js.Array(URI, QUERY_STRING, HEADER, METHOD, BODY, SINGLE_QUERY_ARG, ALL_QUERY_ARGS))
   }
 
   object PositionalConstraintEnum {
@@ -3718,7 +3720,7 @@ package wafregional {
     val CONTAINS      = "CONTAINS"
     val CONTAINS_WORD = "CONTAINS_WORD"
 
-    val values = IndexedSeq(EXACTLY, STARTS_WITH, ENDS_WITH, CONTAINS, CONTAINS_WORD)
+    val values = js.Object.freeze(js.Array(EXACTLY, STARTS_WITH, ENDS_WITH, CONTAINS, CONTAINS_WORD))
   }
 
   /**
@@ -3756,7 +3758,8 @@ package wafregional {
     val XssMatch          = "XssMatch"
     val RegexMatch        = "RegexMatch"
 
-    val values = IndexedSeq(IPMatch, ByteMatch, SqlInjectionMatch, GeoMatch, SizeConstraint, XssMatch, RegexMatch)
+    val values =
+      js.Object.freeze(js.Array(IPMatch, ByteMatch, SqlInjectionMatch, GeoMatch, SizeConstraint, XssMatch, RegexMatch))
   }
 
   @js.native
@@ -3865,7 +3868,7 @@ package wafregional {
   object RateKeyEnum {
     val IP = "IP"
 
-    val values = IndexedSeq(IP)
+    val values = js.Object.freeze(js.Array(IP))
   }
 
   /**
@@ -4044,7 +4047,7 @@ package wafregional {
     val APPLICATION_LOAD_BALANCER = "APPLICATION_LOAD_BALANCER"
     val API_GATEWAY               = "API_GATEWAY"
 
-    val values = IndexedSeq(APPLICATION_LOAD_BALANCER, API_GATEWAY)
+    val values = js.Object.freeze(js.Array(APPLICATION_LOAD_BALANCER, API_GATEWAY))
   }
 
   /**
@@ -4531,7 +4534,8 @@ package wafregional {
     val CMD_LINE             = "CMD_LINE"
     val URL_DECODE           = "URL_DECODE"
 
-    val values = IndexedSeq(NONE, COMPRESS_WHITE_SPACE, HTML_ENTITY_DECODE, LOWERCASE, CMD_LINE, URL_DECODE)
+    val values =
+      js.Object.freeze(js.Array(NONE, COMPRESS_WHITE_SPACE, HTML_ENTITY_DECODE, LOWERCASE, CMD_LINE, URL_DECODE))
   }
 
   /**
@@ -5089,7 +5093,7 @@ package wafregional {
     val ALLOW = "ALLOW"
     val COUNT = "COUNT"
 
-    val values = IndexedSeq(BLOCK, ALLOW, COUNT)
+    val values = js.Object.freeze(js.Array(BLOCK, ALLOW, COUNT))
   }
 
   /**
@@ -5116,7 +5120,7 @@ package wafregional {
     val NONE  = "NONE"
     val COUNT = "COUNT"
 
-    val values = IndexedSeq(NONE, COUNT)
+    val values = js.Object.freeze(js.Array(NONE, COUNT))
   }
 
   object WafRuleTypeEnum {
@@ -5124,7 +5128,7 @@ package wafregional {
     val RATE_BASED = "RATE_BASED"
     val GROUP      = "GROUP"
 
-    val values = IndexedSeq(REGULAR, RATE_BASED, GROUP)
+    val values = js.Object.freeze(js.Array(REGULAR, RATE_BASED, GROUP))
   }
 
   /**

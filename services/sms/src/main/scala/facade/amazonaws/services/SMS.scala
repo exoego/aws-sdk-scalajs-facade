@@ -224,21 +224,23 @@ package sms {
     val TERMINATE_FAILED          = "TERMINATE_FAILED"
     val TERMINATED                = "TERMINATED"
 
-    val values = IndexedSeq(
-      READY_FOR_CONFIGURATION,
-      CONFIGURATION_IN_PROGRESS,
-      CONFIGURATION_INVALID,
-      READY_FOR_LAUNCH,
-      VALIDATION_IN_PROGRESS,
-      LAUNCH_PENDING,
-      LAUNCH_IN_PROGRESS,
-      LAUNCHED,
-      DELTA_LAUNCH_IN_PROGRESS,
-      DELTA_LAUNCH_FAILED,
-      LAUNCH_FAILED,
-      TERMINATE_IN_PROGRESS,
-      TERMINATE_FAILED,
-      TERMINATED
+    val values = js.Object.freeze(
+      js.Array(
+        READY_FOR_CONFIGURATION,
+        CONFIGURATION_IN_PROGRESS,
+        CONFIGURATION_INVALID,
+        READY_FOR_LAUNCH,
+        VALIDATION_IN_PROGRESS,
+        LAUNCH_PENDING,
+        LAUNCH_IN_PROGRESS,
+        LAUNCHED,
+        DELTA_LAUNCH_IN_PROGRESS,
+        DELTA_LAUNCH_FAILED,
+        LAUNCH_FAILED,
+        TERMINATE_IN_PROGRESS,
+        TERMINATE_FAILED,
+        TERMINATED
+      )
     )
   }
 
@@ -259,22 +261,24 @@ package sms {
     val REPLICATION_STOP_FAILED       = "REPLICATION_STOP_FAILED"
     val REPLICATION_STOPPED           = "REPLICATION_STOPPED"
 
-    val values = IndexedSeq(
-      READY_FOR_CONFIGURATION,
-      CONFIGURATION_IN_PROGRESS,
-      CONFIGURATION_INVALID,
-      READY_FOR_REPLICATION,
-      VALIDATION_IN_PROGRESS,
-      REPLICATION_PENDING,
-      REPLICATION_IN_PROGRESS,
-      REPLICATED,
-      DELTA_REPLICATION_IN_PROGRESS,
-      DELTA_REPLICATED,
-      DELTA_REPLICATION_FAILED,
-      REPLICATION_FAILED,
-      REPLICATION_STOPPING,
-      REPLICATION_STOP_FAILED,
-      REPLICATION_STOPPED
+    val values = js.Object.freeze(
+      js.Array(
+        READY_FOR_CONFIGURATION,
+        CONFIGURATION_IN_PROGRESS,
+        CONFIGURATION_INVALID,
+        READY_FOR_REPLICATION,
+        VALIDATION_IN_PROGRESS,
+        REPLICATION_PENDING,
+        REPLICATION_IN_PROGRESS,
+        REPLICATED,
+        DELTA_REPLICATION_IN_PROGRESS,
+        DELTA_REPLICATED,
+        DELTA_REPLICATION_FAILED,
+        REPLICATION_FAILED,
+        REPLICATION_STOPPING,
+        REPLICATION_STOP_FAILED,
+        REPLICATION_STOPPED
+      )
     )
   }
 
@@ -286,7 +290,7 @@ package sms {
     val DELETED       = "DELETED"
     val DELETE_FAILED = "DELETE_FAILED"
 
-    val values = IndexedSeq(CREATING, ACTIVE, UPDATING, DELETING, DELETED, DELETE_FAILED)
+    val values = js.Object.freeze(js.Array(CREATING, ACTIVE, UPDATING, DELETING, DELETED, DELETE_FAILED))
   }
 
   /**
@@ -403,14 +407,14 @@ package sms {
     val `HYPERV-MANAGER`  = "HYPERV-MANAGER"
     val SNAPSHOT_BATCHING = "SNAPSHOT_BATCHING"
 
-    val values = IndexedSeq(VSPHERE, SCVMM, `HYPERV-MANAGER`, SNAPSHOT_BATCHING)
+    val values = js.Object.freeze(js.Array(VSPHERE, SCVMM, `HYPERV-MANAGER`, SNAPSHOT_BATCHING))
   }
 
   object ConnectorStatusEnum {
     val HEALTHY   = "HEALTHY"
     val UNHEALTHY = "UNHEALTHY"
 
-    val values = IndexedSeq(HEALTHY, UNHEALTHY)
+    val values = js.Object.freeze(js.Array(HEALTHY, UNHEALTHY))
   }
 
   @js.native
@@ -1107,7 +1111,7 @@ package sms {
     val AWS  = "AWS"
     val BYOL = "BYOL"
 
-    val values = IndexedSeq(AWS, BYOL)
+    val values = js.Object.freeze(js.Array(AWS, BYOL))
   }
 
   @js.native
@@ -1153,7 +1157,7 @@ package sms {
     val JSON = "JSON"
     val YAML = "YAML"
 
-    val values = IndexedSeq(JSON, YAML)
+    val values = js.Object.freeze(js.Array(JSON, YAML))
   }
 
   @js.native
@@ -1302,7 +1306,8 @@ package sms {
     val PAUSED_ON_FAILURE = "PAUSED_ON_FAILURE"
     val FAILING           = "FAILING"
 
-    val values = IndexedSeq(PENDING, ACTIVE, FAILED, DELETING, DELETED, COMPLETED, PAUSED_ON_FAILURE, FAILING)
+    val values =
+      js.Object.freeze(js.Array(PENDING, ACTIVE, FAILED, DELETING, DELETED, COMPLETED, PAUSED_ON_FAILURE, FAILING))
   }
 
   /**
@@ -1383,14 +1388,14 @@ package sms {
     val DELETING  = "DELETING"
     val DELETED   = "DELETED"
 
-    val values = IndexedSeq(PENDING, MISSED, ACTIVE, FAILED, COMPLETED, DELETING, DELETED)
+    val values = js.Object.freeze(js.Array(PENDING, MISSED, ACTIVE, FAILED, COMPLETED, DELETING, DELETED))
   }
 
   object ReplicationRunTypeEnum {
     val ON_DEMAND = "ON_DEMAND"
     val AUTOMATIC = "AUTOMATIC"
 
-    val values = IndexedSeq(ON_DEMAND, AUTOMATIC)
+    val values = js.Object.freeze(js.Array(ON_DEMAND, AUTOMATIC))
   }
 
   /**
@@ -1451,7 +1456,7 @@ package sms {
     val DELETED      = "DELETED"
     val EXPIRED      = "EXPIRED"
 
-    val values = IndexedSeq(NOT_IMPORTED, IMPORTING, AVAILABLE, DELETED, EXPIRED)
+    val values = js.Object.freeze(js.Array(NOT_IMPORTED, IMPORTING, AVAILABLE, DELETED, EXPIRED))
   }
 
   /**
@@ -1627,7 +1632,7 @@ package sms {
   object ServerTypeEnum {
     val VIRTUAL_MACHINE = "VIRTUAL_MACHINE"
 
-    val values = IndexedSeq(VIRTUAL_MACHINE)
+    val values = js.Object.freeze(js.Array(VIRTUAL_MACHINE))
   }
 
   @js.native
@@ -1894,7 +1899,7 @@ package sms {
     val SCVMM            = "SCVMM"
     val `HYPERV-MANAGER` = "HYPERV-MANAGER"
 
-    val values = IndexedSeq(VSPHERE, SCVMM, `HYPERV-MANAGER`)
+    val values = js.Object.freeze(js.Array(VSPHERE, SCVMM, `HYPERV-MANAGER`))
   }
 
   /**

@@ -421,7 +421,7 @@ package iotanalytics {
     val ACTIVE   = "ACTIVE"
     val DELETING = "DELETING"
 
-    val values = IndexedSeq(CREATING, ACTIVE, DELETING)
+    val values = js.Object.freeze(js.Array(CREATING, ACTIVE, DELETING))
   }
 
   /**
@@ -500,7 +500,7 @@ package iotanalytics {
     val ACU_1 = "ACU_1"
     val ACU_2 = "ACU_2"
 
-    val values = IndexedSeq(ACU_1, ACU_2)
+    val values = js.Object.freeze(js.Array(ACU_1, ACU_2))
   }
 
   /**
@@ -949,7 +949,7 @@ package iotanalytics {
     val QUERY     = "QUERY"
     val CONTAINER = "CONTAINER"
 
-    val values = IndexedSeq(QUERY, CONTAINER)
+    val values = js.Object.freeze(js.Array(QUERY, CONTAINER))
   }
 
   /**
@@ -1003,7 +1003,7 @@ package iotanalytics {
     val SUCCEEDED = "SUCCEEDED"
     val FAILED    = "FAILED"
 
-    val values = IndexedSeq(CREATING, SUCCEEDED, FAILED)
+    val values = js.Object.freeze(js.Array(CREATING, SUCCEEDED, FAILED))
   }
 
   /**
@@ -1100,7 +1100,7 @@ package iotanalytics {
     val ACTIVE   = "ACTIVE"
     val DELETING = "DELETING"
 
-    val values = IndexedSeq(CREATING, ACTIVE, DELETING)
+    val values = js.Object.freeze(js.Array(CREATING, ACTIVE, DELETING))
   }
 
   /**
@@ -1239,7 +1239,7 @@ package iotanalytics {
     val ACTIVE   = "ACTIVE"
     val DELETING = "DELETING"
 
-    val values = IndexedSeq(CREATING, ACTIVE, DELETING)
+    val values = js.Object.freeze(js.Array(CREATING, ACTIVE, DELETING))
   }
 
   /**
@@ -2045,7 +2045,7 @@ package iotanalytics {
   object LoggingLevelEnum {
     val ERROR = "ERROR"
 
-    val values = IndexedSeq(ERROR)
+    val values = js.Object.freeze(js.Array(ERROR))
   }
 
   /**
@@ -2318,7 +2318,7 @@ package iotanalytics {
     val CANCELLED = "CANCELLED"
     val FAILED    = "FAILED"
 
-    val values = IndexedSeq(RUNNING, SUCCEEDED, CANCELLED, FAILED)
+    val values = js.Object.freeze(js.Array(RUNNING, SUCCEEDED, CANCELLED, FAILED))
   }
 
   /**

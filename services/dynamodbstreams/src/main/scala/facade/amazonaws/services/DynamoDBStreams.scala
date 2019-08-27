@@ -315,7 +315,7 @@ package dynamodbstreams {
     val HASH  = "HASH"
     val RANGE = "RANGE"
 
-    val values = IndexedSeq(HASH, RANGE)
+    val values = js.Object.freeze(js.Array(HASH, RANGE))
   }
 
   /**
@@ -376,7 +376,7 @@ package dynamodbstreams {
     val MODIFY = "MODIFY"
     val REMOVE = "REMOVE"
 
-    val values = IndexedSeq(INSERT, MODIFY, REMOVE)
+    val values = js.Object.freeze(js.Array(INSERT, MODIFY, REMOVE))
   }
 
   /**
@@ -474,7 +474,7 @@ package dynamodbstreams {
     val AT_SEQUENCE_NUMBER    = "AT_SEQUENCE_NUMBER"
     val AFTER_SEQUENCE_NUMBER = "AFTER_SEQUENCE_NUMBER"
 
-    val values = IndexedSeq(TRIM_HORIZON, LATEST, AT_SEQUENCE_NUMBER, AFTER_SEQUENCE_NUMBER)
+    val values = js.Object.freeze(js.Array(TRIM_HORIZON, LATEST, AT_SEQUENCE_NUMBER, AFTER_SEQUENCE_NUMBER))
   }
 
   /**
@@ -585,7 +585,7 @@ package dynamodbstreams {
     val DISABLING = "DISABLING"
     val DISABLED  = "DISABLED"
 
-    val values = IndexedSeq(ENABLING, ENABLED, DISABLING, DISABLED)
+    val values = js.Object.freeze(js.Array(ENABLING, ENABLED, DISABLING, DISABLED))
   }
 
   object StreamViewTypeEnum {
@@ -594,7 +594,7 @@ package dynamodbstreams {
     val NEW_AND_OLD_IMAGES = "NEW_AND_OLD_IMAGES"
     val KEYS_ONLY          = "KEYS_ONLY"
 
-    val values = IndexedSeq(NEW_IMAGE, OLD_IMAGE, NEW_AND_OLD_IMAGES, KEYS_ONLY)
+    val values = js.Object.freeze(js.Array(NEW_IMAGE, OLD_IMAGE, NEW_AND_OLD_IMAGES, KEYS_ONLY))
   }
 
   /**

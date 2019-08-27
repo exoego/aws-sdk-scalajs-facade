@@ -397,7 +397,7 @@ package devicefarm {
     val FILE       = "FILE"
     val LOG        = "LOG"
 
-    val values = IndexedSeq(SCREENSHOT, FILE, LOG)
+    val values = js.Object.freeze(js.Array(SCREENSHOT, FILE, LOG))
   }
 
   object ArtifactTypeEnum {
@@ -430,35 +430,37 @@ package devicefarm {
     val CUSTOMER_ARTIFACT_LOG    = "CUSTOMER_ARTIFACT_LOG"
     val TESTSPEC_OUTPUT          = "TESTSPEC_OUTPUT"
 
-    val values = IndexedSeq(
-      UNKNOWN,
-      SCREENSHOT,
-      DEVICE_LOG,
-      MESSAGE_LOG,
-      VIDEO_LOG,
-      RESULT_LOG,
-      SERVICE_LOG,
-      WEBKIT_LOG,
-      INSTRUMENTATION_OUTPUT,
-      EXERCISER_MONKEY_OUTPUT,
-      CALABASH_JSON_OUTPUT,
-      CALABASH_PRETTY_OUTPUT,
-      CALABASH_STANDARD_OUTPUT,
-      CALABASH_JAVA_XML_OUTPUT,
-      AUTOMATION_OUTPUT,
-      APPIUM_SERVER_OUTPUT,
-      APPIUM_JAVA_OUTPUT,
-      APPIUM_JAVA_XML_OUTPUT,
-      APPIUM_PYTHON_OUTPUT,
-      APPIUM_PYTHON_XML_OUTPUT,
-      EXPLORER_EVENT_LOG,
-      EXPLORER_SUMMARY_LOG,
-      APPLICATION_CRASH_REPORT,
-      XCTEST_LOG,
-      VIDEO,
-      CUSTOMER_ARTIFACT,
-      CUSTOMER_ARTIFACT_LOG,
-      TESTSPEC_OUTPUT
+    val values = js.Object.freeze(
+      js.Array(
+        UNKNOWN,
+        SCREENSHOT,
+        DEVICE_LOG,
+        MESSAGE_LOG,
+        VIDEO_LOG,
+        RESULT_LOG,
+        SERVICE_LOG,
+        WEBKIT_LOG,
+        INSTRUMENTATION_OUTPUT,
+        EXERCISER_MONKEY_OUTPUT,
+        CALABASH_JSON_OUTPUT,
+        CALABASH_PRETTY_OUTPUT,
+        CALABASH_STANDARD_OUTPUT,
+        CALABASH_JAVA_XML_OUTPUT,
+        AUTOMATION_OUTPUT,
+        APPIUM_SERVER_OUTPUT,
+        APPIUM_JAVA_OUTPUT,
+        APPIUM_JAVA_XML_OUTPUT,
+        APPIUM_PYTHON_OUTPUT,
+        APPIUM_PYTHON_XML_OUTPUT,
+        EXPLORER_EVENT_LOG,
+        EXPLORER_SUMMARY_LOG,
+        APPLICATION_CRASH_REPORT,
+        XCTEST_LOG,
+        VIDEO,
+        CUSTOMER_ARTIFACT,
+        CUSTOMER_ARTIFACT_LOG,
+        TESTSPEC_OUTPUT
+      )
     )
   }
 
@@ -466,7 +468,7 @@ package devicefarm {
     val METERED   = "METERED"
     val UNMETERED = "UNMETERED"
 
-    val values = IndexedSeq(METERED, UNMETERED)
+    val values = js.Object.freeze(js.Array(METERED, UNMETERED))
   }
 
   /**
@@ -917,7 +919,7 @@ package devicefarm {
   object CurrencyCodeEnum {
     val USD = "USD"
 
-    val values = IndexedSeq(USD)
+    val values = js.Object.freeze(js.Array(USD))
   }
 
   /**
@@ -1301,20 +1303,22 @@ package devicefarm {
     val MODEL                 = "MODEL"
     val AVAILABILITY          = "AVAILABILITY"
 
-    val values = IndexedSeq(
-      ARN,
-      PLATFORM,
-      FORM_FACTOR,
-      MANUFACTURER,
-      REMOTE_ACCESS_ENABLED,
-      REMOTE_DEBUG_ENABLED,
-      APPIUM_VERSION,
-      INSTANCE_ARN,
-      INSTANCE_LABELS,
-      FLEET_TYPE,
-      OS_VERSION,
-      MODEL,
-      AVAILABILITY
+    val values = js.Object.freeze(
+      js.Array(
+        ARN,
+        PLATFORM,
+        FORM_FACTOR,
+        MANUFACTURER,
+        REMOTE_ACCESS_ENABLED,
+        REMOTE_DEBUG_ENABLED,
+        APPIUM_VERSION,
+        INSTANCE_ARN,
+        INSTANCE_LABELS,
+        FLEET_TYPE,
+        OS_VERSION,
+        MODEL,
+        AVAILABILITY
+      )
     )
   }
 
@@ -1324,7 +1328,7 @@ package devicefarm {
     val AVAILABLE               = "AVAILABLE"
     val HIGHLY_AVAILABLE        = "HIGHLY_AVAILABLE"
 
-    val values = IndexedSeq(TEMPORARY_NOT_AVAILABLE, BUSY, AVAILABLE, HIGHLY_AVAILABLE)
+    val values = js.Object.freeze(js.Array(TEMPORARY_NOT_AVAILABLE, BUSY, AVAILABLE, HIGHLY_AVAILABLE))
   }
 
   /**
@@ -1366,19 +1370,21 @@ package devicefarm {
     val INSTANCE_LABELS       = "INSTANCE_LABELS"
     val FLEET_TYPE            = "FLEET_TYPE"
 
-    val values = IndexedSeq(
-      ARN,
-      PLATFORM,
-      OS_VERSION,
-      MODEL,
-      AVAILABILITY,
-      FORM_FACTOR,
-      MANUFACTURER,
-      REMOTE_ACCESS_ENABLED,
-      REMOTE_DEBUG_ENABLED,
-      INSTANCE_ARN,
-      INSTANCE_LABELS,
-      FLEET_TYPE
+    val values = js.Object.freeze(
+      js.Array(
+        ARN,
+        PLATFORM,
+        OS_VERSION,
+        MODEL,
+        AVAILABILITY,
+        FORM_FACTOR,
+        MANUFACTURER,
+        REMOTE_ACCESS_ENABLED,
+        REMOTE_DEBUG_ENABLED,
+        INSTANCE_ARN,
+        INSTANCE_LABELS,
+        FLEET_TYPE
+      )
     )
   }
 
@@ -1386,7 +1392,7 @@ package devicefarm {
     val PHONE  = "PHONE"
     val TABLET = "TABLET"
 
-    val values = IndexedSeq(PHONE, TABLET)
+    val values = js.Object.freeze(js.Array(PHONE, TABLET))
   }
 
   /**
@@ -1450,7 +1456,7 @@ package devicefarm {
     val ANDROID = "ANDROID"
     val IOS     = "IOS"
 
-    val values = IndexedSeq(ANDROID, IOS)
+    val values = js.Object.freeze(js.Array(ANDROID, IOS))
   }
 
   /**
@@ -1514,7 +1520,7 @@ package devicefarm {
     val CURATED = "CURATED"
     val PRIVATE = "PRIVATE"
 
-    val values = IndexedSeq(CURATED, PRIVATE)
+    val values = js.Object.freeze(js.Array(CURATED, PRIVATE))
   }
 
   /**
@@ -1603,14 +1609,14 @@ package devicefarm {
     val ERRORED = "ERRORED"
     val STOPPED = "STOPPED"
 
-    val values = IndexedSeq(PENDING, PASSED, WARNED, FAILED, SKIPPED, ERRORED, STOPPED)
+    val values = js.Object.freeze(js.Array(PENDING, PASSED, WARNED, FAILED, SKIPPED, ERRORED, STOPPED))
   }
 
   object ExecutionResultCodeEnum {
     val PARSING_FAILED            = "PARSING_FAILED"
     val VPC_ENDPOINT_SETUP_FAILED = "VPC_ENDPOINT_SETUP_FAILED"
 
-    val values = IndexedSeq(PARSING_FAILED, VPC_ENDPOINT_SETUP_FAILED)
+    val values = js.Object.freeze(js.Array(PARSING_FAILED, VPC_ENDPOINT_SETUP_FAILED))
   }
 
   object ExecutionStatusEnum {
@@ -1624,16 +1630,18 @@ package devicefarm {
     val COMPLETED           = "COMPLETED"
     val STOPPING            = "STOPPING"
 
-    val values = IndexedSeq(
-      PENDING,
-      PENDING_CONCURRENCY,
-      PENDING_DEVICE,
-      PROCESSING,
-      SCHEDULING,
-      PREPARING,
-      RUNNING,
-      COMPLETED,
-      STOPPING
+    val values = js.Object.freeze(
+      js.Array(
+        PENDING,
+        PENDING_CONCURRENCY,
+        PENDING_DEVICE,
+        PROCESSING,
+        SCHEDULING,
+        PREPARING,
+        RUNNING,
+        COMPLETED,
+        STOPPING
+      )
     )
   }
 
@@ -2338,7 +2346,7 @@ package devicefarm {
     val AVAILABLE     = "AVAILABLE"
     val NOT_AVAILABLE = "NOT_AVAILABLE"
 
-    val values = IndexedSeq(IN_USE, PREPARING, AVAILABLE, NOT_AVAILABLE)
+    val values = js.Object.freeze(js.Array(IN_USE, PREPARING, AVAILABLE, NOT_AVAILABLE))
   }
 
   object InteractionModeEnum {
@@ -2346,7 +2354,7 @@ package devicefarm {
     val NO_VIDEO    = "NO_VIDEO"
     val VIDEO_ONLY  = "VIDEO_ONLY"
 
-    val values = IndexedSeq(INTERACTIVE, NO_VIDEO, VIDEO_ONLY)
+    val values = js.Object.freeze(js.Array(INTERACTIVE, NO_VIDEO, VIDEO_ONLY))
   }
 
   /**
@@ -3337,7 +3345,7 @@ package devicefarm {
     val CURATED = "CURATED"
     val PRIVATE = "PRIVATE"
 
-    val values = IndexedSeq(CURATED, PRIVATE)
+    val values = js.Object.freeze(js.Array(CURATED, PRIVATE))
   }
 
   /**
@@ -3453,13 +3461,13 @@ package devicefarm {
     val RENEW    = "RENEW"
     val SYSTEM   = "SYSTEM"
 
-    val values = IndexedSeq(PURCHASE, RENEW, SYSTEM)
+    val values = js.Object.freeze(js.Array(PURCHASE, RENEW, SYSTEM))
   }
 
   object OfferingTypeEnum {
     val RECURRING = "RECURRING"
 
-    val values = IndexedSeq(RECURRING)
+    val values = js.Object.freeze(js.Array(RECURRING))
   }
 
   /**
@@ -3639,7 +3647,7 @@ package devicefarm {
   object RecurringChargeFrequencyEnum {
     val MONTHLY = "MONTHLY"
 
-    val values = IndexedSeq(MONTHLY)
+    val values = js.Object.freeze(js.Array(MONTHLY))
   }
 
   /**
@@ -3814,8 +3822,9 @@ package devicefarm {
     val NOT_IN                 = "NOT_IN"
     val CONTAINS               = "CONTAINS"
 
-    val values =
-      IndexedSeq(EQUALS, LESS_THAN, LESS_THAN_OR_EQUALS, GREATER_THAN, GREATER_THAN_OR_EQUALS, IN, NOT_IN, CONTAINS)
+    val values = js.Object.freeze(
+      js.Array(EQUALS, LESS_THAN, LESS_THAN_OR_EQUALS, GREATER_THAN, GREATER_THAN_OR_EQUALS, IN, NOT_IN, CONTAINS)
+    )
   }
 
   /**
@@ -3969,24 +3978,26 @@ package devicefarm {
     val OPENGL_AVG_DRAWTIME = "OPENGL_AVG_DRAWTIME"
     val OPENGL_MAX_DRAWTIME = "OPENGL_MAX_DRAWTIME"
 
-    val values = IndexedSeq(
-      CPU,
-      MEMORY,
-      THREADS,
-      RX_RATE,
-      TX_RATE,
-      RX,
-      TX,
-      NATIVE_FRAMES,
-      NATIVE_FPS,
-      NATIVE_MIN_DRAWTIME,
-      NATIVE_AVG_DRAWTIME,
-      NATIVE_MAX_DRAWTIME,
-      OPENGL_FRAMES,
-      OPENGL_FPS,
-      OPENGL_MIN_DRAWTIME,
-      OPENGL_AVG_DRAWTIME,
-      OPENGL_MAX_DRAWTIME
+    val values = js.Object.freeze(
+      js.Array(
+        CPU,
+        MEMORY,
+        THREADS,
+        RX_RATE,
+        TX_RATE,
+        RX,
+        TX,
+        NATIVE_FRAMES,
+        NATIVE_FPS,
+        NATIVE_MIN_DRAWTIME,
+        NATIVE_AVG_DRAWTIME,
+        NATIVE_MAX_DRAWTIME,
+        OPENGL_FRAMES,
+        OPENGL_FPS,
+        OPENGL_MIN_DRAWTIME,
+        OPENGL_AVG_DRAWTIME,
+        OPENGL_MAX_DRAWTIME
+      )
     )
   }
 
@@ -4407,28 +4418,30 @@ package devicefarm {
     val REMOTE_ACCESS_RECORD    = "REMOTE_ACCESS_RECORD"
     val REMOTE_ACCESS_REPLAY    = "REMOTE_ACCESS_REPLAY"
 
-    val values = IndexedSeq(
-      BUILTIN_FUZZ,
-      BUILTIN_EXPLORER,
-      WEB_PERFORMANCE_PROFILE,
-      APPIUM_JAVA_JUNIT,
-      APPIUM_JAVA_TESTNG,
-      APPIUM_PYTHON,
-      APPIUM_NODE,
-      APPIUM_RUBY,
-      APPIUM_WEB_JAVA_JUNIT,
-      APPIUM_WEB_JAVA_TESTNG,
-      APPIUM_WEB_PYTHON,
-      APPIUM_WEB_NODE,
-      APPIUM_WEB_RUBY,
-      CALABASH,
-      INSTRUMENTATION,
-      UIAUTOMATION,
-      UIAUTOMATOR,
-      XCTEST,
-      XCTEST_UI,
-      REMOTE_ACCESS_RECORD,
-      REMOTE_ACCESS_REPLAY
+    val values = js.Object.freeze(
+      js.Array(
+        BUILTIN_FUZZ,
+        BUILTIN_EXPLORER,
+        WEB_PERFORMANCE_PROFILE,
+        APPIUM_JAVA_JUNIT,
+        APPIUM_JAVA_TESTNG,
+        APPIUM_PYTHON,
+        APPIUM_NODE,
+        APPIUM_RUBY,
+        APPIUM_WEB_JAVA_JUNIT,
+        APPIUM_WEB_JAVA_TESTNG,
+        APPIUM_WEB_PYTHON,
+        APPIUM_WEB_NODE,
+        APPIUM_WEB_RUBY,
+        CALABASH,
+        INSTRUMENTATION,
+        UIAUTOMATION,
+        UIAUTOMATOR,
+        XCTEST,
+        XCTEST_UI,
+        REMOTE_ACCESS_RECORD,
+        REMOTE_ACCESS_REPLAY
+      )
     )
   }
 
@@ -4891,7 +4904,7 @@ package devicefarm {
     val CURATED = "CURATED"
     val PRIVATE = "PRIVATE"
 
-    val values = IndexedSeq(CURATED, PRIVATE)
+    val values = js.Object.freeze(js.Array(CURATED, PRIVATE))
   }
 
   object UploadStatusEnum {
@@ -4900,7 +4913,7 @@ package devicefarm {
     val SUCCEEDED   = "SUCCEEDED"
     val FAILED      = "FAILED"
 
-    val values = IndexedSeq(INITIALIZED, PROCESSING, SUCCEEDED, FAILED)
+    val values = js.Object.freeze(js.Array(INITIALIZED, PROCESSING, SUCCEEDED, FAILED))
   }
 
   object UploadTypeEnum {
@@ -4937,39 +4950,41 @@ package devicefarm {
     val INSTRUMENTATION_TEST_SPEC           = "INSTRUMENTATION_TEST_SPEC"
     val XCTEST_UI_TEST_SPEC                 = "XCTEST_UI_TEST_SPEC"
 
-    val values = IndexedSeq(
-      ANDROID_APP,
-      IOS_APP,
-      WEB_APP,
-      EXTERNAL_DATA,
-      APPIUM_JAVA_JUNIT_TEST_PACKAGE,
-      APPIUM_JAVA_TESTNG_TEST_PACKAGE,
-      APPIUM_PYTHON_TEST_PACKAGE,
-      APPIUM_NODE_TEST_PACKAGE,
-      APPIUM_RUBY_TEST_PACKAGE,
-      APPIUM_WEB_JAVA_JUNIT_TEST_PACKAGE,
-      APPIUM_WEB_JAVA_TESTNG_TEST_PACKAGE,
-      APPIUM_WEB_PYTHON_TEST_PACKAGE,
-      APPIUM_WEB_NODE_TEST_PACKAGE,
-      APPIUM_WEB_RUBY_TEST_PACKAGE,
-      CALABASH_TEST_PACKAGE,
-      INSTRUMENTATION_TEST_PACKAGE,
-      UIAUTOMATION_TEST_PACKAGE,
-      UIAUTOMATOR_TEST_PACKAGE,
-      XCTEST_TEST_PACKAGE,
-      XCTEST_UI_TEST_PACKAGE,
-      APPIUM_JAVA_JUNIT_TEST_SPEC,
-      APPIUM_JAVA_TESTNG_TEST_SPEC,
-      APPIUM_PYTHON_TEST_SPEC,
-      APPIUM_NODE_TEST_SPEC,
-      APPIUM_RUBY_TEST_SPEC,
-      APPIUM_WEB_JAVA_JUNIT_TEST_SPEC,
-      APPIUM_WEB_JAVA_TESTNG_TEST_SPEC,
-      APPIUM_WEB_PYTHON_TEST_SPEC,
-      APPIUM_WEB_NODE_TEST_SPEC,
-      APPIUM_WEB_RUBY_TEST_SPEC,
-      INSTRUMENTATION_TEST_SPEC,
-      XCTEST_UI_TEST_SPEC
+    val values = js.Object.freeze(
+      js.Array(
+        ANDROID_APP,
+        IOS_APP,
+        WEB_APP,
+        EXTERNAL_DATA,
+        APPIUM_JAVA_JUNIT_TEST_PACKAGE,
+        APPIUM_JAVA_TESTNG_TEST_PACKAGE,
+        APPIUM_PYTHON_TEST_PACKAGE,
+        APPIUM_NODE_TEST_PACKAGE,
+        APPIUM_RUBY_TEST_PACKAGE,
+        APPIUM_WEB_JAVA_JUNIT_TEST_PACKAGE,
+        APPIUM_WEB_JAVA_TESTNG_TEST_PACKAGE,
+        APPIUM_WEB_PYTHON_TEST_PACKAGE,
+        APPIUM_WEB_NODE_TEST_PACKAGE,
+        APPIUM_WEB_RUBY_TEST_PACKAGE,
+        CALABASH_TEST_PACKAGE,
+        INSTRUMENTATION_TEST_PACKAGE,
+        UIAUTOMATION_TEST_PACKAGE,
+        UIAUTOMATOR_TEST_PACKAGE,
+        XCTEST_TEST_PACKAGE,
+        XCTEST_UI_TEST_PACKAGE,
+        APPIUM_JAVA_JUNIT_TEST_SPEC,
+        APPIUM_JAVA_TESTNG_TEST_SPEC,
+        APPIUM_PYTHON_TEST_SPEC,
+        APPIUM_NODE_TEST_SPEC,
+        APPIUM_RUBY_TEST_SPEC,
+        APPIUM_WEB_JAVA_JUNIT_TEST_SPEC,
+        APPIUM_WEB_JAVA_TESTNG_TEST_SPEC,
+        APPIUM_WEB_PYTHON_TEST_SPEC,
+        APPIUM_WEB_NODE_TEST_SPEC,
+        APPIUM_WEB_RUBY_TEST_SPEC,
+        INSTRUMENTATION_TEST_SPEC,
+        XCTEST_UI_TEST_SPEC
+      )
     )
   }
 

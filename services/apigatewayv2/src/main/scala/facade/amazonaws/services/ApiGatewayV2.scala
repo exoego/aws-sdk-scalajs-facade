@@ -368,7 +368,7 @@ package apigatewayv2 {
     val AWS_IAM = "AWS_IAM"
     val CUSTOM  = "CUSTOM"
 
-    val values = IndexedSeq(NONE, AWS_IAM, CUSTOM)
+    val values = js.Object.freeze(js.Array(NONE, AWS_IAM, CUSTOM))
   }
 
   /**
@@ -426,7 +426,7 @@ package apigatewayv2 {
   object AuthorizerTypeEnum {
     val REQUEST = "REQUEST"
 
-    val values = IndexedSeq(REQUEST)
+    val values = js.Object.freeze(js.Array(REQUEST))
   }
 
   /**
@@ -436,7 +436,7 @@ package apigatewayv2 {
     val INTERNET = "INTERNET"
     val VPC_LINK = "VPC_LINK"
 
-    val values = IndexedSeq(INTERNET, VPC_LINK)
+    val values = js.Object.freeze(js.Array(INTERNET, VPC_LINK))
   }
 
   /**
@@ -446,7 +446,7 @@ package apigatewayv2 {
     val CONVERT_TO_BINARY = "CONVERT_TO_BINARY"
     val CONVERT_TO_TEXT   = "CONVERT_TO_TEXT"
 
-    val values = IndexedSeq(CONVERT_TO_BINARY, CONVERT_TO_TEXT)
+    val values = js.Object.freeze(js.Array(CONVERT_TO_BINARY, CONVERT_TO_TEXT))
   }
 
   @js.native
@@ -1518,7 +1518,7 @@ package apigatewayv2 {
     val FAILED   = "FAILED"
     val DEPLOYED = "DEPLOYED"
 
-    val values = IndexedSeq(PENDING, FAILED, DEPLOYED)
+    val values = js.Object.freeze(js.Array(PENDING, FAILED, DEPLOYED))
   }
 
   /**
@@ -1601,7 +1601,7 @@ package apigatewayv2 {
     val AVAILABLE = "AVAILABLE"
     val UPDATING  = "UPDATING"
 
-    val values = IndexedSeq(AVAILABLE, UPDATING)
+    val values = js.Object.freeze(js.Array(AVAILABLE, UPDATING))
   }
 
   /**
@@ -1611,7 +1611,7 @@ package apigatewayv2 {
     val REGIONAL = "REGIONAL"
     val EDGE     = "EDGE"
 
-    val values = IndexedSeq(REGIONAL, EDGE)
+    val values = js.Object.freeze(js.Array(REGIONAL, EDGE))
   }
 
   @js.native
@@ -2861,7 +2861,7 @@ package apigatewayv2 {
     val HTTP_PROXY = "HTTP_PROXY"
     val AWS_PROXY  = "AWS_PROXY"
 
-    val values = IndexedSeq(AWS, HTTP, MOCK, HTTP_PROXY, AWS_PROXY)
+    val values = js.Object.freeze(js.Array(AWS, HTTP, MOCK, HTTP_PROXY, AWS_PROXY))
   }
 
   /**
@@ -2872,7 +2872,7 @@ package apigatewayv2 {
     val INFO    = "INFO"
     val `false` = "false"
 
-    val values = IndexedSeq(ERROR, INFO, `false`)
+    val values = js.Object.freeze(js.Array(ERROR, INFO, `false`))
   }
 
   /**
@@ -2935,7 +2935,7 @@ package apigatewayv2 {
     val NEVER             = "NEVER"
     val WHEN_NO_TEMPLATES = "WHEN_NO_TEMPLATES"
 
-    val values = IndexedSeq(WHEN_NO_MATCH, NEVER, WHEN_NO_TEMPLATES)
+    val values = js.Object.freeze(js.Array(WHEN_NO_MATCH, NEVER, WHEN_NO_TEMPLATES))
   }
 
   /**
@@ -2944,7 +2944,7 @@ package apigatewayv2 {
   object ProtocolTypeEnum {
     val WEBSOCKET = "WEBSOCKET"
 
-    val values = IndexedSeq(WEBSOCKET)
+    val values = js.Object.freeze(js.Array(WEBSOCKET))
   }
 
   /**
@@ -3071,7 +3071,7 @@ package apigatewayv2 {
     val TLS_1_0 = "TLS_1_0"
     val TLS_1_2 = "TLS_1_2"
 
-    val values = IndexedSeq(TLS_1_0, TLS_1_2)
+    val values = js.Object.freeze(js.Array(TLS_1_0, TLS_1_2))
   }
 
   /**

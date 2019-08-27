@@ -274,6 +274,6 @@ package marketplacemetering {
     val CustomerNotSubscribed = "CustomerNotSubscribed"
     val DuplicateRecord       = "DuplicateRecord"
 
-    val values = IndexedSeq(Success, CustomerNotSubscribed, DuplicateRecord)
+    val values = js.Object.freeze(js.Array(Success, CustomerNotSubscribed, DuplicateRecord))
   }
 }

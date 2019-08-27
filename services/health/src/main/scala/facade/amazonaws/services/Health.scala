@@ -689,13 +689,13 @@ package health {
     val UNIMPAIRED = "UNIMPAIRED"
     val UNKNOWN    = "UNKNOWN"
 
-    val values = IndexedSeq(IMPAIRED, UNIMPAIRED, UNKNOWN)
+    val values = js.Object.freeze(js.Array(IMPAIRED, UNIMPAIRED, UNKNOWN))
   }
 
   object eventAggregateFieldEnum {
     val eventTypeCategory = "eventTypeCategory"
 
-    val values = IndexedSeq(eventTypeCategory)
+    val values = js.Object.freeze(js.Array(eventTypeCategory))
   }
 
   object eventStatusCodeEnum {
@@ -703,7 +703,7 @@ package health {
     val closed   = "closed"
     val upcoming = "upcoming"
 
-    val values = IndexedSeq(open, closed, upcoming)
+    val values = js.Object.freeze(js.Array(open, closed, upcoming))
   }
 
   object eventTypeCategoryEnum {
@@ -712,6 +712,6 @@ package health {
     val scheduledChange     = "scheduledChange"
     val investigation       = "investigation"
 
-    val values = IndexedSeq(issue, accountNotification, scheduledChange, investigation)
+    val values = js.Object.freeze(js.Array(issue, accountNotification, scheduledChange, investigation))
   }
 }

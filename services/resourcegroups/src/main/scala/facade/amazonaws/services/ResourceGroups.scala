@@ -311,7 +311,7 @@ package resourcegroups {
   object GroupFilterNameEnum {
     val `resource-type` = "resource-type"
 
-    val values = IndexedSeq(`resource-type`)
+    val values = js.Object.freeze(js.Array(`resource-type`))
   }
 
   /**
@@ -472,14 +472,14 @@ package resourcegroups {
     val CLOUDFORMATION_STACK_INACTIVE     = "CLOUDFORMATION_STACK_INACTIVE"
     val CLOUDFORMATION_STACK_NOT_EXISTING = "CLOUDFORMATION_STACK_NOT_EXISTING"
 
-    val values = IndexedSeq(CLOUDFORMATION_STACK_INACTIVE, CLOUDFORMATION_STACK_NOT_EXISTING)
+    val values = js.Object.freeze(js.Array(CLOUDFORMATION_STACK_INACTIVE, CLOUDFORMATION_STACK_NOT_EXISTING))
   }
 
   object QueryTypeEnum {
     val TAG_FILTERS_1_0          = "TAG_FILTERS_1_0"
     val CLOUDFORMATION_STACK_1_0 = "CLOUDFORMATION_STACK_1_0"
 
-    val values = IndexedSeq(TAG_FILTERS_1_0, CLOUDFORMATION_STACK_1_0)
+    val values = js.Object.freeze(js.Array(TAG_FILTERS_1_0, CLOUDFORMATION_STACK_1_0))
   }
 
   /**
@@ -508,7 +508,7 @@ package resourcegroups {
   object ResourceFilterNameEnum {
     val `resource-type` = "resource-type"
 
-    val values = IndexedSeq(`resource-type`)
+    val values = js.Object.freeze(js.Array(`resource-type`))
   }
 
   /**

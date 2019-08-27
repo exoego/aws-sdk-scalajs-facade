@@ -233,7 +233,7 @@ package kinesis {
     val DELETING = "DELETING"
     val ACTIVE   = "ACTIVE"
 
-    val values = IndexedSeq(CREATING, DELETING, ACTIVE)
+    val values = js.Object.freeze(js.Array(CREATING, DELETING, ACTIVE))
   }
 
   /**
@@ -526,7 +526,7 @@ package kinesis {
     val NONE = "NONE"
     val KMS  = "KMS"
 
-    val values = IndexedSeq(NONE, KMS)
+    val values = js.Object.freeze(js.Array(NONE, KMS))
   }
 
   /**
@@ -1019,15 +1019,17 @@ package kinesis {
     val IteratorAgeMilliseconds            = "IteratorAgeMilliseconds"
     val ALL                                = "ALL"
 
-    val values = IndexedSeq(
-      IncomingBytes,
-      IncomingRecords,
-      OutgoingBytes,
-      OutgoingRecords,
-      WriteProvisionedThroughputExceeded,
-      ReadProvisionedThroughputExceeded,
-      IteratorAgeMilliseconds,
-      ALL
+    val values = js.Object.freeze(
+      js.Array(
+        IncomingBytes,
+        IncomingRecords,
+        OutgoingBytes,
+        OutgoingRecords,
+        WriteProvisionedThroughputExceeded,
+        ReadProvisionedThroughputExceeded,
+        IteratorAgeMilliseconds,
+        ALL
+      )
     )
   }
 
@@ -1310,7 +1312,7 @@ package kinesis {
   object ScalingTypeEnum {
     val UNIFORM_SCALING = "UNIFORM_SCALING"
 
-    val values = IndexedSeq(UNIFORM_SCALING)
+    val values = js.Object.freeze(js.Array(UNIFORM_SCALING))
   }
 
   /**
@@ -1375,7 +1377,8 @@ package kinesis {
     val LATEST                = "LATEST"
     val AT_TIMESTAMP          = "AT_TIMESTAMP"
 
-    val values = IndexedSeq(AT_SEQUENCE_NUMBER, AFTER_SEQUENCE_NUMBER, TRIM_HORIZON, LATEST, AT_TIMESTAMP)
+    val values =
+      js.Object.freeze(js.Array(AT_SEQUENCE_NUMBER, AFTER_SEQUENCE_NUMBER, TRIM_HORIZON, LATEST, AT_TIMESTAMP))
   }
 
   /**
@@ -1573,7 +1576,7 @@ package kinesis {
     val ACTIVE   = "ACTIVE"
     val UPDATING = "UPDATING"
 
-    val values = IndexedSeq(CREATING, DELETING, ACTIVE, UPDATING)
+    val values = js.Object.freeze(js.Array(CREATING, DELETING, ACTIVE, UPDATING))
   }
 
   /**

@@ -991,15 +991,17 @@ package amplify {
     val REQUESTING_CERTIFICATE = "REQUESTING_CERTIFICATE"
     val UPDATING               = "UPDATING"
 
-    val values = IndexedSeq(
-      PENDING_VERIFICATION,
-      IN_PROGRESS,
-      AVAILABLE,
-      PENDING_DEPLOYMENT,
-      FAILED,
-      CREATING,
-      REQUESTING_CERTIFICATE,
-      UPDATING
+    val values = js.Object.freeze(
+      js.Array(
+        PENDING_VERIFICATION,
+        IN_PROGRESS,
+        AVAILABLE,
+        PENDING_DEPLOYMENT,
+        FAILED,
+        CREATING,
+        REQUESTING_CERTIFICATE,
+        UPDATING
+      )
     )
   }
 
@@ -1238,7 +1240,7 @@ package amplify {
     val CANCELLING   = "CANCELLING"
     val CANCELLED    = "CANCELLED"
 
-    val values = IndexedSeq(PENDING, PROVISIONING, RUNNING, FAILED, SUCCEED, CANCELLING, CANCELLED)
+    val values = js.Object.freeze(js.Array(PENDING, PROVISIONING, RUNNING, FAILED, SUCCEED, CANCELLING, CANCELLED))
   }
 
   /**
@@ -1291,7 +1293,7 @@ package amplify {
     val MANUAL   = "MANUAL"
     val WEB_HOOK = "WEB_HOOK"
 
-    val values = IndexedSeq(RELEASE, RETRY, MANUAL, WEB_HOOK)
+    val values = js.Object.freeze(js.Array(RELEASE, RETRY, MANUAL, WEB_HOOK))
   }
 
   /**
@@ -1578,7 +1580,7 @@ package amplify {
   object PlatformEnum {
     val WEB = "WEB"
 
-    val values = IndexedSeq(WEB)
+    val values = js.Object.freeze(js.Array(WEB))
   }
 
   /**
@@ -1614,7 +1616,7 @@ package amplify {
     val DEVELOPMENT  = "DEVELOPMENT"
     val EXPERIMENTAL = "EXPERIMENTAL"
 
-    val values = IndexedSeq(PRODUCTION, BETA, DEVELOPMENT, EXPERIMENTAL)
+    val values = js.Object.freeze(js.Array(PRODUCTION, BETA, DEVELOPMENT, EXPERIMENTAL))
   }
 
   /**

@@ -1060,7 +1060,7 @@ package iot {
   object AbortActionEnum {
     val CANCEL = "CANCEL"
 
-    val values = IndexedSeq(CANCEL)
+    val values = js.Object.freeze(js.Array(CANCEL))
   }
 
   /**
@@ -1204,7 +1204,7 @@ package iot {
     val RECEIVE   = "RECEIVE"
     val CONNECT   = "CONNECT"
 
-    val values = IndexedSeq(PUBLISH, SUBSCRIBE, RECEIVE, CONNECT)
+    val values = js.Object.freeze(js.Array(PUBLISH, SUBSCRIBE, RECEIVE, CONNECT))
   }
 
   /**
@@ -1370,7 +1370,7 @@ package iot {
   object AlertTargetTypeEnum {
     val SNS = "SNS"
 
-    val values = IndexedSeq(SNS)
+    val values = js.Object.freeze(js.Array(SNS))
   }
 
   /**
@@ -1628,13 +1628,8 @@ package iot {
     val COMPLETED_NON_COMPLIANT     = "COMPLETED_NON_COMPLIANT"
     val FAILED                      = "FAILED"
 
-    val values = IndexedSeq(
-      IN_PROGRESS,
-      WAITING_FOR_DATA_COLLECTION,
-      CANCELED,
-      COMPLETED_COMPLIANT,
-      COMPLETED_NON_COMPLIANT,
-      FAILED
+    val values = js.Object.freeze(
+      js.Array(IN_PROGRESS, WAITING_FOR_DATA_COLLECTION, CANCELED, COMPLETED_COMPLIANT, COMPLETED_NON_COMPLIANT, FAILED)
     )
   }
 
@@ -1689,7 +1684,7 @@ package iot {
     val MEDIUM   = "MEDIUM"
     val LOW      = "LOW"
 
-    val values = IndexedSeq(CRITICAL, HIGH, MEDIUM, LOW)
+    val values = js.Object.freeze(js.Array(CRITICAL, HIGH, MEDIUM, LOW))
   }
 
   object AuditFrequencyEnum {
@@ -1698,7 +1693,7 @@ package iot {
     val BIWEEKLY = "BIWEEKLY"
     val MONTHLY  = "MONTHLY"
 
-    val values = IndexedSeq(DAILY, WEEKLY, BIWEEKLY, MONTHLY)
+    val values = js.Object.freeze(js.Array(DAILY, WEEKLY, BIWEEKLY, MONTHLY))
   }
 
   /**
@@ -1751,7 +1746,7 @@ package iot {
     val SKIPPED     = "SKIPPED"
     val PENDING     = "PENDING"
 
-    val values = IndexedSeq(IN_PROGRESS, COMPLETED, FAILED, CANCELED, SKIPPED, PENDING)
+    val values = js.Object.freeze(js.Array(IN_PROGRESS, COMPLETED, FAILED, CANCELED, SKIPPED, PENDING))
   }
 
   /**
@@ -1784,7 +1779,7 @@ package iot {
     val FAILED      = "FAILED"
     val CANCELED    = "CANCELED"
 
-    val values = IndexedSeq(IN_PROGRESS, COMPLETED, FAILED, CANCELED)
+    val values = js.Object.freeze(js.Array(IN_PROGRESS, COMPLETED, FAILED, CANCELED))
   }
 
   /**
@@ -1840,7 +1835,7 @@ package iot {
   object AuditNotificationTypeEnum {
     val SNS = "SNS"
 
-    val values = IndexedSeq(SNS)
+    val values = js.Object.freeze(js.Array(SNS))
   }
 
   /**
@@ -1873,14 +1868,14 @@ package iot {
     val FAILED      = "FAILED"
     val CANCELED    = "CANCELED"
 
-    val values = IndexedSeq(IN_PROGRESS, COMPLETED, FAILED, CANCELED)
+    val values = js.Object.freeze(js.Array(IN_PROGRESS, COMPLETED, FAILED, CANCELED))
   }
 
   object AuditTaskTypeEnum {
     val ON_DEMAND_AUDIT_TASK = "ON_DEMAND_AUDIT_TASK"
     val SCHEDULED_AUDIT_TASK = "SCHEDULED_AUDIT_TASK"
 
-    val values = IndexedSeq(ON_DEMAND_AUDIT_TASK, SCHEDULED_AUDIT_TASK)
+    val values = js.Object.freeze(js.Array(ON_DEMAND_AUDIT_TASK, SCHEDULED_AUDIT_TASK))
   }
 
   object AuthDecisionEnum {
@@ -1888,7 +1883,7 @@ package iot {
     val EXPLICIT_DENY = "EXPLICIT_DENY"
     val IMPLICIT_DENY = "IMPLICIT_DENY"
 
-    val values = IndexedSeq(ALLOWED, EXPLICIT_DENY, IMPLICIT_DENY)
+    val values = js.Object.freeze(js.Array(ALLOWED, EXPLICIT_DENY, IMPLICIT_DENY))
   }
 
   /**
@@ -1985,7 +1980,7 @@ package iot {
     val ACTIVE   = "ACTIVE"
     val INACTIVE = "INACTIVE"
 
-    val values = IndexedSeq(ACTIVE, INACTIVE)
+    val values = js.Object.freeze(js.Array(ACTIVE, INACTIVE))
   }
 
   /**
@@ -2013,7 +2008,7 @@ package iot {
     val ENABLE  = "ENABLE"
     val DISABLE = "DISABLE"
 
-    val values = IndexedSeq(ENABLE, DISABLE)
+    val values = js.Object.freeze(js.Array(ENABLE, DISABLE))
   }
 
   /**
@@ -2212,13 +2207,13 @@ package iot {
     val ACTIVE   = "ACTIVE"
     val INACTIVE = "INACTIVE"
 
-    val values = IndexedSeq(ACTIVE, INACTIVE)
+    val values = js.Object.freeze(js.Array(ACTIVE, INACTIVE))
   }
 
   object CACertificateUpdateActionEnum {
     val DEACTIVATE = "DEACTIVATE"
 
-    val values = IndexedSeq(DEACTIVATE)
+    val values = js.Object.freeze(js.Array(DEACTIVATE))
   }
 
   @js.native
@@ -2385,15 +2380,17 @@ package iot {
     val `bucket-owner-full-control` = "bucket-owner-full-control"
     val `log-delivery-write`        = "log-delivery-write"
 
-    val values = IndexedSeq(
-      `private`,
-      `public-read`,
-      `public-read-write`,
-      `aws-exec-read`,
-      `authenticated-read`,
-      `bucket-owner-read`,
-      `bucket-owner-full-control`,
-      `log-delivery-write`
+    val values = js.Object.freeze(
+      js.Array(
+        `private`,
+        `public-read`,
+        `public-read-write`,
+        `aws-exec-read`,
+        `authenticated-read`,
+        `bucket-owner-read`,
+        `bucket-owner-full-control`,
+        `log-delivery-write`
+      )
     )
   }
 
@@ -2486,7 +2483,8 @@ package iot {
     val REGISTER_INACTIVE  = "REGISTER_INACTIVE"
     val PENDING_ACTIVATION = "PENDING_ACTIVATION"
 
-    val values = IndexedSeq(ACTIVE, INACTIVE, REVOKED, PENDING_TRANSFER, REGISTER_INACTIVE, PENDING_ACTIVATION)
+    val values =
+      js.Object.freeze(js.Array(ACTIVE, INACTIVE, REVOKED, PENDING_TRANSFER, REGISTER_INACTIVE, PENDING_ACTIVATION))
   }
 
   /**
@@ -2671,15 +2669,17 @@ package iot {
     val `in-port-set`         = "in-port-set"
     val `not-in-port-set`     = "not-in-port-set"
 
-    val values = IndexedSeq(
-      `less-than`,
-      `less-than-equals`,
-      `greater-than`,
-      `greater-than-equals`,
-      `in-cidr-set`,
-      `not-in-cidr-set`,
-      `in-port-set`,
-      `not-in-port-set`
+    val values = js.Object.freeze(
+      js.Array(
+        `less-than`,
+        `less-than-equals`,
+        `greater-than`,
+        `greater-than-equals`,
+        `in-cidr-set`,
+        `not-in-cidr-set`,
+        `in-port-set`,
+        `not-in-port-set`
+      )
     )
   }
 
@@ -3634,7 +3634,7 @@ package iot {
     val FRI = "FRI"
     val SAT = "SAT"
 
-    val values = IndexedSeq(SUN, MON, TUE, WED, THU, FRI, SAT)
+    val values = js.Object.freeze(js.Array(SUN, MON, TUE, WED, THU, FRI, SAT))
   }
 
   @js.native
@@ -5437,7 +5437,7 @@ package iot {
   object DeviceCertificateUpdateActionEnum {
     val DEACTIVATE = "DEACTIVATE"
 
-    val values = IndexedSeq(DEACTIVATE)
+    val values = js.Object.freeze(js.Array(DEACTIVATE))
   }
 
   /**
@@ -5465,7 +5465,7 @@ package iot {
     val BUILDING   = "BUILDING"
     val REBUILDING = "REBUILDING"
 
-    val values = IndexedSeq(ACTIVE, BUILDING, REBUILDING)
+    val values = js.Object.freeze(js.Array(ACTIVE, BUILDING, REBUILDING))
   }
 
   /**
@@ -5549,7 +5549,7 @@ package iot {
     val STRING = "STRING"
     val NUMBER = "NUMBER"
 
-    val values = IndexedSeq(STRING, NUMBER)
+    val values = js.Object.freeze(js.Array(STRING, NUMBER))
   }
 
   /**
@@ -5685,18 +5685,20 @@ package iot {
     val CERTIFICATE            = "CERTIFICATE"
     val CA_CERTIFICATE         = "CA_CERTIFICATE"
 
-    val values = IndexedSeq(
-      THING,
-      THING_GROUP,
-      THING_TYPE,
-      THING_GROUP_MEMBERSHIP,
-      THING_GROUP_HIERARCHY,
-      THING_TYPE_ASSOCIATION,
-      JOB,
-      JOB_EXECUTION,
-      POLICY,
-      CERTIFICATE,
-      CA_CERTIFICATE
+    val values = js.Object.freeze(
+      js.Array(
+        THING,
+        THING_GROUP,
+        THING_TYPE,
+        THING_GROUP_MEMBERSHIP,
+        THING_GROUP_HIERARCHY,
+        THING_TYPE_ASSOCIATION,
+        JOB,
+        JOB_EXECUTION,
+        POLICY,
+        CERTIFICATE,
+        CA_CERTIFICATE
+      )
     )
   }
 
@@ -6269,7 +6271,7 @@ package iot {
     val BUILDING   = "BUILDING"
     val REBUILDING = "REBUILDING"
 
-    val values = IndexedSeq(ACTIVE, BUILDING, REBUILDING)
+    val values = js.Object.freeze(js.Array(ACTIVE, BUILDING, REBUILDING))
   }
 
   /**
@@ -6444,7 +6446,7 @@ package iot {
     val TIMED_OUT = "TIMED_OUT"
     val ALL       = "ALL"
 
-    val values = IndexedSeq(FAILED, REJECTED, TIMED_OUT, ALL)
+    val values = js.Object.freeze(js.Array(FAILED, REJECTED, TIMED_OUT, ALL))
   }
 
   object JobExecutionStatusEnum {
@@ -6457,7 +6459,8 @@ package iot {
     val REMOVED     = "REMOVED"
     val CANCELED    = "CANCELED"
 
-    val values = IndexedSeq(QUEUED, IN_PROGRESS, SUCCEEDED, FAILED, TIMED_OUT, REJECTED, REMOVED, CANCELED)
+    val values =
+      js.Object.freeze(js.Array(QUEUED, IN_PROGRESS, SUCCEEDED, FAILED, TIMED_OUT, REJECTED, REMOVED, CANCELED))
   }
 
   /**
@@ -6619,7 +6622,7 @@ package iot {
     val COMPLETED            = "COMPLETED"
     val DELETION_IN_PROGRESS = "DELETION_IN_PROGRESS"
 
-    val values = IndexedSeq(IN_PROGRESS, CANCELED, COMPLETED, DELETION_IN_PROGRESS)
+    val values = js.Object.freeze(js.Array(IN_PROGRESS, CANCELED, COMPLETED, DELETION_IN_PROGRESS))
   }
 
   /**
@@ -8612,7 +8615,7 @@ package iot {
     val WARN     = "WARN"
     val DISABLED = "DISABLED"
 
-    val values = IndexedSeq(DEBUG, INFO, ERROR, WARN, DISABLED)
+    val values = js.Object.freeze(js.Array(DEBUG, INFO, ERROR, WARN, DISABLED))
   }
 
   /**
@@ -8663,7 +8666,7 @@ package iot {
     val DEFAULT     = "DEFAULT"
     val THING_GROUP = "THING_GROUP"
 
-    val values = IndexedSeq(DEFAULT, THING_GROUP)
+    val values = js.Object.freeze(js.Array(DEFAULT, THING_GROUP))
   }
 
   /**
@@ -8693,7 +8696,7 @@ package iot {
     val RAW  = "RAW"
     val JSON = "JSON"
 
-    val values = IndexedSeq(RAW, JSON)
+    val values = js.Object.freeze(js.Array(RAW, JSON))
   }
 
   /**
@@ -8816,13 +8819,15 @@ package iot {
     val ENABLE_IOT_LOGGING             = "ENABLE_IOT_LOGGING"
     val PUBLISH_FINDING_TO_SNS         = "PUBLISH_FINDING_TO_SNS"
 
-    val values = IndexedSeq(
-      UPDATE_DEVICE_CERTIFICATE,
-      UPDATE_CA_CERTIFICATE,
-      ADD_THINGS_TO_THING_GROUP,
-      REPLACE_DEFAULT_POLICY_VERSION,
-      ENABLE_IOT_LOGGING,
-      PUBLISH_FINDING_TO_SNS
+    val values = js.Object.freeze(
+      js.Array(
+        UPDATE_DEVICE_CERTIFICATE,
+        UPDATE_CA_CERTIFICATE,
+        ADD_THINGS_TO_THING_GROUP,
+        REPLACE_DEFAULT_POLICY_VERSION,
+        ENABLE_IOT_LOGGING,
+        PUBLISH_FINDING_TO_SNS
+      )
     )
   }
 
@@ -8945,7 +8950,7 @@ package iot {
     val CREATE_COMPLETE    = "CREATE_COMPLETE"
     val CREATE_FAILED      = "CREATE_FAILED"
 
-    val values = IndexedSeq(CREATE_PENDING, CREATE_IN_PROGRESS, CREATE_COMPLETE, CREATE_FAILED)
+    val values = js.Object.freeze(js.Array(CREATE_PENDING, CREATE_IN_PROGRESS, CREATE_COMPLETE, CREATE_FAILED))
   }
 
   /**
@@ -9029,7 +9034,7 @@ package iot {
   object PolicyTemplateNameEnum {
     val BLANK_POLICY = "BLANK_POLICY"
 
-    val values = IndexedSeq(BLANK_POLICY)
+    val values = js.Object.freeze(js.Array(BLANK_POLICY))
   }
 
   /**
@@ -9487,7 +9492,7 @@ package iot {
     val ERRORS  = "ERRORS"
     val RESULTS = "RESULTS"
 
-    val values = IndexedSeq(ERRORS, RESULTS)
+    val values = js.Object.freeze(js.Array(ERRORS, RESULTS))
   }
 
   /**
@@ -9557,8 +9562,9 @@ package iot {
     val CLIENT_ID             = "CLIENT_ID"
     val ACCOUNT_SETTINGS      = "ACCOUNT_SETTINGS"
 
-    val values =
-      IndexedSeq(DEVICE_CERTIFICATE, CA_CERTIFICATE, IOT_POLICY, COGNITO_IDENTITY_POOL, CLIENT_ID, ACCOUNT_SETTINGS)
+    val values = js.Object.freeze(
+      js.Array(DEVICE_CERTIFICATE, CA_CERTIFICATE, IOT_POLICY, COGNITO_IDENTITY_POOL, CLIENT_ID, ACCOUNT_SETTINGS)
+    )
   }
 
   /**
@@ -10214,7 +10220,7 @@ package iot {
     val Cancelled  = "Cancelled"
     val Cancelling = "Cancelling"
 
-    val values = IndexedSeq(InProgress, Completed, Failed, Cancelled, Cancelling)
+    val values = js.Object.freeze(js.Array(InProgress, Completed, Failed, Cancelled, Cancelling))
   }
 
   /**
@@ -10437,7 +10443,7 @@ package iot {
     val CONTINUOUS = "CONTINUOUS"
     val SNAPSHOT   = "SNAPSHOT"
 
-    val values = IndexedSeq(CONTINUOUS, SNAPSHOT)
+    val values = js.Object.freeze(js.Array(CONTINUOUS, SNAPSHOT))
   }
 
   /**
@@ -10660,7 +10666,7 @@ package iot {
     val OFF    = "OFF"
     val STATUS = "STATUS"
 
-    val values = IndexedSeq(OFF, STATUS)
+    val values = js.Object.freeze(js.Array(OFF, STATUS))
   }
 
   /**
@@ -10753,7 +10759,7 @@ package iot {
     val OFF = "OFF"
     val ON  = "ON"
 
-    val values = IndexedSeq(OFF, ON)
+    val values = js.Object.freeze(js.Array(OFF, ON))
   }
 
   /**
@@ -10831,7 +10837,7 @@ package iot {
     val REGISTRY            = "REGISTRY"
     val REGISTRY_AND_SHADOW = "REGISTRY_AND_SHADOW"
 
-    val values = IndexedSeq(OFF, REGISTRY, REGISTRY_AND_SHADOW)
+    val values = js.Object.freeze(js.Array(OFF, REGISTRY, REGISTRY_AND_SHADOW))
   }
 
   /**
@@ -11960,6 +11966,6 @@ package iot {
     val `alarm-cleared`     = "alarm-cleared"
     val `alarm-invalidated` = "alarm-invalidated"
 
-    val values = IndexedSeq(`in-alarm`, `alarm-cleared`, `alarm-invalidated`)
+    val values = js.Object.freeze(js.Array(`in-alarm`, `alarm-cleared`, `alarm-invalidated`))
   }
 }

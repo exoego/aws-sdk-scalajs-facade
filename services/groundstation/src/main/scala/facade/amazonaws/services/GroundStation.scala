@@ -146,7 +146,7 @@ package groundstation {
     val DEGREE_ANGLE = "DEGREE_ANGLE"
     val RADIAN       = "RADIAN"
 
-    val values = IndexedSeq(DEGREE_ANGLE, RADIAN)
+    val values = js.Object.freeze(js.Array(DEGREE_ANGLE, RADIAN))
   }
 
   /**
@@ -224,7 +224,7 @@ package groundstation {
     val MHz = "MHz"
     val kHz = "kHz"
 
-    val values = IndexedSeq(GHz, MHz, kHz)
+    val values = js.Object.freeze(js.Array(GHz, MHz, kHz))
   }
 
   /**
@@ -255,13 +255,15 @@ package groundstation {
     val tracking                        = "tracking"
     val `uplink-echo`                   = "uplink-echo"
 
-    val values = IndexedSeq(
-      `antenna-downlink`,
-      `antenna-downlink-demod-decode`,
-      `antenna-uplink`,
-      `dataflow-endpoint`,
-      tracking,
-      `uplink-echo`
+    val values = js.Object.freeze(
+      js.Array(
+        `antenna-downlink`,
+        `antenna-downlink-demod-decode`,
+        `antenna-uplink`,
+        `dataflow-endpoint`,
+        tracking,
+        `uplink-echo`
+      )
     )
   }
 
@@ -434,18 +436,20 @@ package groundstation {
     val SCHEDULED          = "SCHEDULED"
     val SCHEDULING         = "SCHEDULING"
 
-    val values = IndexedSeq(
-      AVAILABLE,
-      AWS_CANCELLED,
-      CANCELLED,
-      COMPLETED,
-      FAILED,
-      FAILED_TO_SCHEDULE,
-      PASS,
-      POSTPASS,
-      PREPASS,
-      SCHEDULED,
-      SCHEDULING
+    val values = js.Object.freeze(
+      js.Array(
+        AVAILABLE,
+        AWS_CANCELLED,
+        CANCELLED,
+        COMPLETED,
+        FAILED,
+        FAILED_TO_SCHEDULE,
+        PASS,
+        POSTPASS,
+        PREPASS,
+        SCHEDULED,
+        SCHEDULING
+      )
     )
   }
 
@@ -545,7 +549,7 @@ package groundstation {
     val REMOVED   = "REMOVED"
     val REQUIRED  = "REQUIRED"
 
-    val values = IndexedSeq(PREFERRED, REMOVED, REQUIRED)
+    val values = js.Object.freeze(js.Array(PREFERRED, REMOVED, REQUIRED))
   }
 
   /**
@@ -831,7 +835,7 @@ package groundstation {
   object EirpUnitsEnum {
     val dBW = "dBW"
 
-    val values = IndexedSeq(dBW)
+    val values = js.Object.freeze(js.Array(dBW))
   }
 
   /**
@@ -885,7 +889,7 @@ package groundstation {
     val deleting = "deleting"
     val failed   = "failed"
 
-    val values = IndexedSeq(created, creating, deleted, deleting, failed)
+    val values = js.Object.freeze(js.Array(created, creating, deleted, deleting, failed))
   }
 
   /**
@@ -939,7 +943,7 @@ package groundstation {
     val MHz = "MHz"
     val kHz = "kHz"
 
-    val values = IndexedSeq(GHz, MHz, kHz)
+    val values = js.Object.freeze(js.Array(GHz, MHz, kHz))
   }
 
   /**
@@ -1610,7 +1614,7 @@ package groundstation {
     val NONE       = "NONE"
     val RIGHT_HAND = "RIGHT_HAND"
 
-    val values = IndexedSeq(LEFT_HAND, NONE, RIGHT_HAND)
+    val values = js.Object.freeze(js.Array(LEFT_HAND, NONE, RIGHT_HAND))
   }
 
   /**

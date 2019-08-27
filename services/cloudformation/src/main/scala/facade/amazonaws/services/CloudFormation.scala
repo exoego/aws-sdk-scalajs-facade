@@ -350,7 +350,7 @@ package cloudformation {
     val FAILED    = "FAILED"
     val SKIPPED   = "SKIPPED"
 
-    val values = IndexedSeq(SUCCEEDED, FAILED, SKIPPED)
+    val values = js.Object.freeze(js.Array(SUCCEEDED, FAILED, SKIPPED))
   }
 
   /**
@@ -402,7 +402,7 @@ package cloudformation {
     val CAPABILITY_NAMED_IAM   = "CAPABILITY_NAMED_IAM"
     val CAPABILITY_AUTO_EXPAND = "CAPABILITY_AUTO_EXPAND"
 
-    val values = IndexedSeq(CAPABILITY_IAM, CAPABILITY_NAMED_IAM, CAPABILITY_AUTO_EXPAND)
+    val values = js.Object.freeze(js.Array(CAPABILITY_IAM, CAPABILITY_NAMED_IAM, CAPABILITY_AUTO_EXPAND))
   }
 
   /**
@@ -431,7 +431,7 @@ package cloudformation {
     val Modify = "Modify"
     val Remove = "Remove"
 
-    val values = IndexedSeq(Add, Modify, Remove)
+    val values = js.Object.freeze(js.Array(Add, Modify, Remove))
   }
 
   object ChangeSetStatusEnum {
@@ -441,7 +441,8 @@ package cloudformation {
     val DELETE_COMPLETE    = "DELETE_COMPLETE"
     val FAILED             = "FAILED"
 
-    val values = IndexedSeq(CREATE_PENDING, CREATE_IN_PROGRESS, CREATE_COMPLETE, DELETE_COMPLETE, FAILED)
+    val values =
+      js.Object.freeze(js.Array(CREATE_PENDING, CREATE_IN_PROGRESS, CREATE_COMPLETE, DELETE_COMPLETE, FAILED))
   }
 
   /**
@@ -490,7 +491,7 @@ package cloudformation {
     val CREATE = "CREATE"
     val UPDATE = "UPDATE"
 
-    val values = IndexedSeq(CREATE, UPDATE)
+    val values = js.Object.freeze(js.Array(CREATE, UPDATE))
   }
 
   object ChangeSourceEnum {
@@ -500,13 +501,15 @@ package cloudformation {
     val DirectModification = "DirectModification"
     val Automatic          = "Automatic"
 
-    val values = IndexedSeq(ResourceReference, ParameterReference, ResourceAttribute, DirectModification, Automatic)
+    val values = js.Object.freeze(
+      js.Array(ResourceReference, ParameterReference, ResourceAttribute, DirectModification, Automatic)
+    )
   }
 
   object ChangeTypeEnum {
     val Resource = "Resource"
 
-    val values = IndexedSeq(Resource)
+    val values = js.Object.freeze(js.Array(Resource))
   }
 
   /**
@@ -1550,7 +1553,7 @@ package cloudformation {
     val REMOVE    = "REMOVE"
     val NOT_EQUAL = "NOT_EQUAL"
 
-    val values = IndexedSeq(ADD, REMOVE, NOT_EQUAL)
+    val values = js.Object.freeze(js.Array(ADD, REMOVE, NOT_EQUAL))
   }
 
   /**
@@ -1599,7 +1602,7 @@ package cloudformation {
     val Static  = "Static"
     val Dynamic = "Dynamic"
 
-    val values = IndexedSeq(Static, Dynamic)
+    val values = js.Object.freeze(js.Array(Static, Dynamic))
   }
 
   /**
@@ -1651,7 +1654,9 @@ package cloudformation {
     val EXECUTE_FAILED      = "EXECUTE_FAILED"
     val OBSOLETE            = "OBSOLETE"
 
-    val values = IndexedSeq(UNAVAILABLE, AVAILABLE, EXECUTE_IN_PROGRESS, EXECUTE_COMPLETE, EXECUTE_FAILED, OBSOLETE)
+    val values = js.Object.freeze(
+      js.Array(UNAVAILABLE, AVAILABLE, EXECUTE_IN_PROGRESS, EXECUTE_COMPLETE, EXECUTE_FAILED, OBSOLETE)
+    )
   }
 
   /**
@@ -2204,7 +2209,7 @@ package cloudformation {
     val ROLLBACK   = "ROLLBACK"
     val DELETE     = "DELETE"
 
-    val values = IndexedSeq(DO_NOTHING, ROLLBACK, DELETE)
+    val values = js.Object.freeze(js.Array(DO_NOTHING, ROLLBACK, DELETE))
   }
 
   /**
@@ -2369,7 +2374,7 @@ package cloudformation {
     val False       = "False"
     val Conditional = "Conditional"
 
-    val values = IndexedSeq(True, False, Conditional)
+    val values = js.Object.freeze(js.Array(True, False, Conditional))
   }
 
   object RequiresRecreationEnum {
@@ -2377,7 +2382,7 @@ package cloudformation {
     val Conditionally = "Conditionally"
     val Always        = "Always"
 
-    val values = IndexedSeq(Never, Conditionally, Always)
+    val values = js.Object.freeze(js.Array(Never, Conditionally, Always))
   }
 
   object ResourceAttributeEnum {
@@ -2388,7 +2393,7 @@ package cloudformation {
     val DeletionPolicy = "DeletionPolicy"
     val Tags           = "Tags"
 
-    val values = IndexedSeq(Properties, Metadata, CreationPolicy, UpdatePolicy, DeletionPolicy, Tags)
+    val values = js.Object.freeze(js.Array(Properties, Metadata, CreationPolicy, UpdatePolicy, DeletionPolicy, Tags))
   }
 
   /**
@@ -2458,7 +2463,7 @@ package cloudformation {
     val SUCCESS = "SUCCESS"
     val FAILURE = "FAILURE"
 
-    val values = IndexedSeq(SUCCESS, FAILURE)
+    val values = js.Object.freeze(js.Array(SUCCESS, FAILURE))
   }
 
   object ResourceStatusEnum {
@@ -2473,17 +2478,19 @@ package cloudformation {
     val UPDATE_FAILED      = "UPDATE_FAILED"
     val UPDATE_COMPLETE    = "UPDATE_COMPLETE"
 
-    val values = IndexedSeq(
-      CREATE_IN_PROGRESS,
-      CREATE_FAILED,
-      CREATE_COMPLETE,
-      DELETE_IN_PROGRESS,
-      DELETE_FAILED,
-      DELETE_COMPLETE,
-      DELETE_SKIPPED,
-      UPDATE_IN_PROGRESS,
-      UPDATE_FAILED,
-      UPDATE_COMPLETE
+    val values = js.Object.freeze(
+      js.Array(
+        CREATE_IN_PROGRESS,
+        CREATE_FAILED,
+        CREATE_COMPLETE,
+        DELETE_IN_PROGRESS,
+        DELETE_FAILED,
+        DELETE_COMPLETE,
+        DELETE_SKIPPED,
+        UPDATE_IN_PROGRESS,
+        UPDATE_FAILED,
+        UPDATE_COMPLETE
+      )
     )
   }
 
@@ -2699,7 +2706,7 @@ package cloudformation {
     val DETECTION_FAILED      = "DETECTION_FAILED"
     val DETECTION_COMPLETE    = "DETECTION_COMPLETE"
 
-    val values = IndexedSeq(DETECTION_IN_PROGRESS, DETECTION_FAILED, DETECTION_COMPLETE)
+    val values = js.Object.freeze(js.Array(DETECTION_IN_PROGRESS, DETECTION_FAILED, DETECTION_COMPLETE))
   }
 
   /**
@@ -2754,7 +2761,7 @@ package cloudformation {
     val UNKNOWN     = "UNKNOWN"
     val NOT_CHECKED = "NOT_CHECKED"
 
-    val values = IndexedSeq(DRIFTED, IN_SYNC, UNKNOWN, NOT_CHECKED)
+    val values = js.Object.freeze(js.Array(DRIFTED, IN_SYNC, UNKNOWN, NOT_CHECKED))
   }
 
   /**
@@ -2848,7 +2855,7 @@ package cloudformation {
     val OUTDATED   = "OUTDATED"
     val INOPERABLE = "INOPERABLE"
 
-    val values = IndexedSeq(CURRENT, OUTDATED, INOPERABLE)
+    val values = js.Object.freeze(js.Array(CURRENT, OUTDATED, INOPERABLE))
   }
 
   /**
@@ -3082,7 +3089,7 @@ package cloudformation {
     val DELETED     = "DELETED"
     val NOT_CHECKED = "NOT_CHECKED"
 
-    val values = IndexedSeq(IN_SYNC, MODIFIED, DELETED, NOT_CHECKED)
+    val values = js.Object.freeze(js.Array(IN_SYNC, MODIFIED, DELETED, NOT_CHECKED))
   }
 
   /**
@@ -3221,7 +3228,7 @@ package cloudformation {
     val UPDATE = "UPDATE"
     val DELETE = "DELETE"
 
-    val values = IndexedSeq(CREATE, UPDATE, DELETE)
+    val values = js.Object.freeze(js.Array(CREATE, UPDATE, DELETE))
   }
 
   /**
@@ -3262,7 +3269,7 @@ package cloudformation {
     val FAILED    = "FAILED"
     val CANCELLED = "CANCELLED"
 
-    val values = IndexedSeq(PENDING, RUNNING, SUCCEEDED, FAILED, CANCELLED)
+    val values = js.Object.freeze(js.Array(PENDING, RUNNING, SUCCEEDED, FAILED, CANCELLED))
   }
 
   /**
@@ -3302,7 +3309,7 @@ package cloudformation {
     val STOPPING  = "STOPPING"
     val STOPPED   = "STOPPED"
 
-    val values = IndexedSeq(RUNNING, SUCCEEDED, FAILED, STOPPING, STOPPED)
+    val values = js.Object.freeze(js.Array(RUNNING, SUCCEEDED, FAILED, STOPPING, STOPPED))
   }
 
   /**
@@ -3339,7 +3346,7 @@ package cloudformation {
     val ACTIVE  = "ACTIVE"
     val DELETED = "DELETED"
 
-    val values = IndexedSeq(ACTIVE, DELETED)
+    val values = js.Object.freeze(js.Array(ACTIVE, DELETED))
   }
 
   /**
@@ -3388,24 +3395,26 @@ package cloudformation {
     val UPDATE_ROLLBACK_COMPLETE                     = "UPDATE_ROLLBACK_COMPLETE"
     val REVIEW_IN_PROGRESS                           = "REVIEW_IN_PROGRESS"
 
-    val values = IndexedSeq(
-      CREATE_IN_PROGRESS,
-      CREATE_FAILED,
-      CREATE_COMPLETE,
-      ROLLBACK_IN_PROGRESS,
-      ROLLBACK_FAILED,
-      ROLLBACK_COMPLETE,
-      DELETE_IN_PROGRESS,
-      DELETE_FAILED,
-      DELETE_COMPLETE,
-      UPDATE_IN_PROGRESS,
-      UPDATE_COMPLETE_CLEANUP_IN_PROGRESS,
-      UPDATE_COMPLETE,
-      UPDATE_ROLLBACK_IN_PROGRESS,
-      UPDATE_ROLLBACK_FAILED,
-      UPDATE_ROLLBACK_COMPLETE_CLEANUP_IN_PROGRESS,
-      UPDATE_ROLLBACK_COMPLETE,
-      REVIEW_IN_PROGRESS
+    val values = js.Object.freeze(
+      js.Array(
+        CREATE_IN_PROGRESS,
+        CREATE_FAILED,
+        CREATE_COMPLETE,
+        ROLLBACK_IN_PROGRESS,
+        ROLLBACK_FAILED,
+        ROLLBACK_COMPLETE,
+        DELETE_IN_PROGRESS,
+        DELETE_FAILED,
+        DELETE_COMPLETE,
+        UPDATE_IN_PROGRESS,
+        UPDATE_COMPLETE_CLEANUP_IN_PROGRESS,
+        UPDATE_COMPLETE,
+        UPDATE_ROLLBACK_IN_PROGRESS,
+        UPDATE_ROLLBACK_FAILED,
+        UPDATE_ROLLBACK_COMPLETE_CLEANUP_IN_PROGRESS,
+        UPDATE_ROLLBACK_COMPLETE,
+        REVIEW_IN_PROGRESS
+      )
     )
   }
 
@@ -3545,7 +3554,7 @@ package cloudformation {
     val Original  = "Original"
     val Processed = "Processed"
 
-    val values = IndexedSeq(Original, Processed)
+    val values = js.Object.freeze(js.Array(Original, Processed))
   }
 
   /**

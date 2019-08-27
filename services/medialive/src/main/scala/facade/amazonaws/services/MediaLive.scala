@@ -411,7 +411,8 @@ package medialive {
     val CODING_MODE_2_0 = "CODING_MODE_2_0"
     val CODING_MODE_5_1 = "CODING_MODE_5_1"
 
-    val values = IndexedSeq(AD_RECEIVER_MIX, CODING_MODE_1_0, CODING_MODE_1_1, CODING_MODE_2_0, CODING_MODE_5_1)
+    val values =
+      js.Object.freeze(js.Array(AD_RECEIVER_MIX, CODING_MODE_1_0, CODING_MODE_1_1, CODING_MODE_2_0, CODING_MODE_5_1))
   }
 
   /**
@@ -421,7 +422,7 @@ package medialive {
     val BROADCASTER_MIXED_AD = "BROADCASTER_MIXED_AD"
     val NORMAL               = "NORMAL"
 
-    val values = IndexedSeq(BROADCASTER_MIXED_AD, NORMAL)
+    val values = js.Object.freeze(js.Array(BROADCASTER_MIXED_AD, NORMAL))
   }
 
   /**
@@ -432,7 +433,7 @@ package medialive {
     val HEV2 = "HEV2"
     val LC   = "LC"
 
-    val values = IndexedSeq(HEV1, HEV2, LC)
+    val values = js.Object.freeze(js.Array(HEV1, HEV2, LC))
   }
 
   /**
@@ -442,7 +443,7 @@ package medialive {
     val CBR = "CBR"
     val VBR = "VBR"
 
-    val values = IndexedSeq(CBR, VBR)
+    val values = js.Object.freeze(js.Array(CBR, VBR))
   }
 
   /**
@@ -452,7 +453,7 @@ package medialive {
     val LATM_LOAS = "LATM_LOAS"
     val NONE      = "NONE"
 
-    val values = IndexedSeq(LATM_LOAS, NONE)
+    val values = js.Object.freeze(js.Array(LATM_LOAS, NONE))
   }
 
   /**
@@ -504,7 +505,7 @@ package medialive {
     val MPEG2 = "MPEG2"
     val MPEG4 = "MPEG4"
 
-    val values = IndexedSeq(MPEG2, MPEG4)
+    val values = js.Object.freeze(js.Array(MPEG2, MPEG4))
   }
 
   /**
@@ -516,7 +517,7 @@ package medialive {
     val MEDIUM_HIGH = "MEDIUM_HIGH"
     val MEDIUM_LOW  = "MEDIUM_LOW"
 
-    val values = IndexedSeq(HIGH, LOW, MEDIUM_HIGH, MEDIUM_LOW)
+    val values = js.Object.freeze(js.Array(HIGH, LOW, MEDIUM_HIGH, MEDIUM_LOW))
   }
 
   /**
@@ -532,15 +533,17 @@ package medialive {
     val VISUALLY_IMPAIRED = "VISUALLY_IMPAIRED"
     val VOICE_OVER        = "VOICE_OVER"
 
-    val values = IndexedSeq(
-      COMMENTARY,
-      COMPLETE_MAIN,
-      DIALOGUE,
-      EMERGENCY,
-      HEARING_IMPAIRED,
-      MUSIC_AND_EFFECTS,
-      VISUALLY_IMPAIRED,
-      VOICE_OVER
+    val values = js.Object.freeze(
+      js.Array(
+        COMMENTARY,
+        COMPLETE_MAIN,
+        DIALOGUE,
+        EMERGENCY,
+        HEARING_IMPAIRED,
+        MUSIC_AND_EFFECTS,
+        VISUALLY_IMPAIRED,
+        VOICE_OVER
+      )
     )
   }
 
@@ -553,7 +556,7 @@ package medialive {
     val CODING_MODE_2_0     = "CODING_MODE_2_0"
     val CODING_MODE_3_2_LFE = "CODING_MODE_3_2_LFE"
 
-    val values = IndexedSeq(CODING_MODE_1_0, CODING_MODE_1_1, CODING_MODE_2_0, CODING_MODE_3_2_LFE)
+    val values = js.Object.freeze(js.Array(CODING_MODE_1_0, CODING_MODE_1_1, CODING_MODE_2_0, CODING_MODE_3_2_LFE))
   }
 
   /**
@@ -563,7 +566,7 @@ package medialive {
     val FILM_STANDARD = "FILM_STANDARD"
     val NONE          = "NONE"
 
-    val values = IndexedSeq(FILM_STANDARD, NONE)
+    val values = js.Object.freeze(js.Array(FILM_STANDARD, NONE))
   }
 
   /**
@@ -573,7 +576,7 @@ package medialive {
     val DISABLED = "DISABLED"
     val ENABLED  = "ENABLED"
 
-    val values = IndexedSeq(DISABLED, ENABLED)
+    val values = js.Object.freeze(js.Array(DISABLED, ENABLED))
   }
 
   /**
@@ -583,7 +586,7 @@ package medialive {
     val FOLLOW_INPUT   = "FOLLOW_INPUT"
     val USE_CONFIGURED = "USE_CONFIGURED"
 
-    val values = IndexedSeq(FOLLOW_INPUT, USE_CONFIGURED)
+    val values = js.Object.freeze(js.Array(FOLLOW_INPUT, USE_CONFIGURED))
   }
 
   /**
@@ -630,7 +633,7 @@ package medialive {
     val FIXED = "FIXED"
     val NONE  = "NONE"
 
-    val values = IndexedSeq(AUTO, FIXED, NONE)
+    val values = js.Object.freeze(js.Array(AUTO, FIXED, NONE))
   }
 
   /**
@@ -837,7 +840,7 @@ package medialive {
     val FOLLOW_INPUT   = "FOLLOW_INPUT"
     val USE_CONFIGURED = "USE_CONFIGURED"
 
-    val values = IndexedSeq(FOLLOW_INPUT, USE_CONFIGURED)
+    val values = js.Object.freeze(js.Array(FOLLOW_INPUT, USE_CONFIGURED))
   }
 
   /**
@@ -847,7 +850,7 @@ package medialive {
     val FOLLOW_INPUT   = "FOLLOW_INPUT"
     val USE_CONFIGURED = "USE_CONFIGURED"
 
-    val values = IndexedSeq(FOLLOW_INPUT, USE_CONFIGURED)
+    val values = js.Object.freeze(js.Array(FOLLOW_INPUT, USE_CONFIGURED))
   }
 
   /**
@@ -880,7 +883,7 @@ package medialive {
     val LOOSE  = "LOOSE"
     val STRICT = "STRICT"
 
-    val values = IndexedSeq(LOOSE, STRICT)
+    val values = js.Object.freeze(js.Array(LOOSE, STRICT))
   }
 
   /**
@@ -890,7 +893,7 @@ package medialive {
     val ITU_1770_1 = "ITU_1770_1"
     val ITU_1770_2 = "ITU_1770_2"
 
-    val values = IndexedSeq(ITU_1770_1, ITU_1770_2)
+    val values = js.Object.freeze(js.Array(ITU_1770_1, ITU_1770_2))
   }
 
   /**
@@ -899,7 +902,7 @@ package medialive {
   object AudioNormalizationAlgorithmControlEnum {
     val CORRECT_AUDIO = "CORRECT_AUDIO"
 
-    val values = IndexedSeq(CORRECT_AUDIO)
+    val values = js.Object.freeze(js.Array(CORRECT_AUDIO))
   }
 
   /**
@@ -959,11 +962,13 @@ package medialive {
     val ALTERNATE_AUDIO_NOT_AUTO_SELECT     = "ALTERNATE_AUDIO_NOT_AUTO_SELECT"
     val AUDIO_ONLY_VARIANT_STREAM           = "AUDIO_ONLY_VARIANT_STREAM"
 
-    val values = IndexedSeq(
-      ALTERNATE_AUDIO_AUTO_SELECT,
-      ALTERNATE_AUDIO_AUTO_SELECT_DEFAULT,
-      ALTERNATE_AUDIO_NOT_AUTO_SELECT,
-      AUDIO_ONLY_VARIANT_STREAM
+    val values = js.Object.freeze(
+      js.Array(
+        ALTERNATE_AUDIO_AUTO_SELECT,
+        ALTERNATE_AUDIO_AUTO_SELECT_DEFAULT,
+        ALTERNATE_AUDIO_NOT_AUTO_SELECT,
+        AUDIO_ONLY_VARIANT_STREAM
+      )
     )
   }
 
@@ -1040,7 +1045,7 @@ package medialive {
     val UNDEFINED                  = "UNDEFINED"
     val VISUAL_IMPAIRED_COMMENTARY = "VISUAL_IMPAIRED_COMMENTARY"
 
-    val values = IndexedSeq(CLEAN_EFFECTS, HEARING_IMPAIRED, UNDEFINED, VISUAL_IMPAIRED_COMMENTARY)
+    val values = js.Object.freeze(js.Array(CLEAN_EFFECTS, HEARING_IMPAIRED, UNDEFINED, VISUAL_IMPAIRED_COMMENTARY))
   }
 
   /**
@@ -1050,7 +1055,7 @@ package medialive {
     val AKAMAI = "AKAMAI"
     val COMMON = "COMMON"
 
-    val values = IndexedSeq(AKAMAI, COMMON)
+    val values = js.Object.freeze(js.Array(AKAMAI, COMMON))
   }
 
   /**
@@ -1081,7 +1086,7 @@ package medialive {
     val DISABLED = "DISABLED"
     val ENABLED  = "ENABLED"
 
-    val values = IndexedSeq(DISABLED, ENABLED)
+    val values = js.Object.freeze(js.Array(DISABLED, ENABLED))
   }
 
   /**
@@ -1287,7 +1292,7 @@ package medialive {
     val DISABLED = "DISABLED"
     val ENABLED  = "ENABLED"
 
-    val values = IndexedSeq(DISABLED, ENABLED)
+    val values = js.Object.freeze(js.Array(DISABLED, ENABLED))
   }
 
   /**
@@ -1297,7 +1302,7 @@ package medialive {
     val DISABLED = "DISABLED"
     val ENABLED  = "ENABLED"
 
-    val values = IndexedSeq(DISABLED, ENABLED)
+    val values = js.Object.freeze(js.Array(DISABLED, ENABLED))
   }
 
   /**
@@ -1308,7 +1313,7 @@ package medialive {
     val LEFT     = "LEFT"
     val SMART    = "SMART"
 
-    val values = IndexedSeq(CENTERED, LEFT, SMART)
+    val values = js.Object.freeze(js.Array(CENTERED, LEFT, SMART))
   }
 
   /**
@@ -1319,7 +1324,7 @@ package medialive {
     val NONE  = "NONE"
     val WHITE = "WHITE"
 
-    val values = IndexedSeq(BLACK, NONE, WHITE)
+    val values = js.Object.freeze(js.Array(BLACK, NONE, WHITE))
   }
 
   /**
@@ -1399,7 +1404,7 @@ package medialive {
     val WHITE  = "WHITE"
     val YELLOW = "YELLOW"
 
-    val values = IndexedSeq(BLACK, BLUE, GREEN, RED, WHITE, YELLOW)
+    val values = js.Object.freeze(js.Array(BLACK, BLUE, GREEN, RED, WHITE, YELLOW))
   }
 
   /**
@@ -1413,7 +1418,7 @@ package medialive {
     val WHITE  = "WHITE"
     val YELLOW = "YELLOW"
 
-    val values = IndexedSeq(BLACK, BLUE, GREEN, RED, WHITE, YELLOW)
+    val values = js.Object.freeze(js.Array(BLACK, BLUE, GREEN, RED, WHITE, YELLOW))
   }
 
   /**
@@ -1424,7 +1429,7 @@ package medialive {
     val NONE  = "NONE"
     val WHITE = "WHITE"
 
-    val values = IndexedSeq(BLACK, NONE, WHITE)
+    val values = js.Object.freeze(js.Array(BLACK, NONE, WHITE))
   }
 
   /**
@@ -1434,7 +1439,7 @@ package medialive {
     val FIXED  = "FIXED"
     val SCALED = "SCALED"
 
-    val values = IndexedSeq(FIXED, SCALED)
+    val values = js.Object.freeze(js.Array(FIXED, SCALED))
   }
 
   /**
@@ -1678,7 +1683,7 @@ package medialive {
     val STANDARD        = "STANDARD"
     val SINGLE_PIPELINE = "SINGLE_PIPELINE"
 
-    val values = IndexedSeq(STANDARD, SINGLE_PIPELINE)
+    val values = js.Object.freeze(js.Array(STANDARD, SINGLE_PIPELINE))
   }
 
   /**
@@ -1715,18 +1720,20 @@ package medialive {
     val UPDATING      = "UPDATING"
     val UPDATE_FAILED = "UPDATE_FAILED"
 
-    val values = IndexedSeq(
-      CREATING,
-      CREATE_FAILED,
-      IDLE,
-      STARTING,
-      RUNNING,
-      RECOVERING,
-      STOPPING,
-      DELETING,
-      DELETED,
-      UPDATING,
-      UPDATE_FAILED
+    val values = js.Object.freeze(
+      js.Array(
+        CREATING,
+        CREATE_FAILED,
+        IDLE,
+        STARTING,
+        RUNNING,
+        RECOVERING,
+        STOPPING,
+        DELETING,
+        DELETED,
+        UPDATING,
+        UPDATE_FAILED
+      )
     )
   }
 
@@ -2721,7 +2728,7 @@ package medialive {
     val SDT_MANUAL            = "SDT_MANUAL"
     val SDT_NONE              = "SDT_NONE"
 
-    val values = IndexedSeq(SDT_FOLLOW, SDT_FOLLOW_IF_PRESENT, SDT_MANUAL, SDT_NONE)
+    val values = js.Object.freeze(js.Array(SDT_FOLLOW, SDT_FOLLOW_IF_PRESENT, SDT_MANUAL, SDT_NONE))
   }
 
   /**
@@ -2759,7 +2766,7 @@ package medialive {
     val LEFT     = "LEFT"
     val SMART    = "SMART"
 
-    val values = IndexedSeq(CENTERED, LEFT, SMART)
+    val values = js.Object.freeze(js.Array(CENTERED, LEFT, SMART))
   }
 
   /**
@@ -2770,7 +2777,7 @@ package medialive {
     val NONE  = "NONE"
     val WHITE = "WHITE"
 
-    val values = IndexedSeq(BLACK, NONE, WHITE)
+    val values = js.Object.freeze(js.Array(BLACK, NONE, WHITE))
   }
 
   /**
@@ -2784,7 +2791,7 @@ package medialive {
     val WHITE  = "WHITE"
     val YELLOW = "YELLOW"
 
-    val values = IndexedSeq(BLACK, BLUE, GREEN, RED, WHITE, YELLOW)
+    val values = js.Object.freeze(js.Array(BLACK, BLUE, GREEN, RED, WHITE, YELLOW))
   }
 
   /**
@@ -2798,7 +2805,7 @@ package medialive {
     val WHITE  = "WHITE"
     val YELLOW = "YELLOW"
 
-    val values = IndexedSeq(BLACK, BLUE, GREEN, RED, WHITE, YELLOW)
+    val values = js.Object.freeze(js.Array(BLACK, BLUE, GREEN, RED, WHITE, YELLOW))
   }
 
   /**
@@ -2875,7 +2882,7 @@ package medialive {
     val NONE  = "NONE"
     val WHITE = "WHITE"
 
-    val values = IndexedSeq(BLACK, NONE, WHITE)
+    val values = js.Object.freeze(js.Array(BLACK, NONE, WHITE))
   }
 
   /**
@@ -2885,7 +2892,7 @@ package medialive {
     val FIXED  = "FIXED"
     val SCALED = "SCALED"
 
-    val values = IndexedSeq(FIXED, SCALED)
+    val values = js.Object.freeze(js.Array(FIXED, SCALED))
   }
 
   /**
@@ -2931,7 +2938,7 @@ package medialive {
     val ATTENUATE_3_DB = "ATTENUATE_3_DB"
     val NONE           = "NONE"
 
-    val values = IndexedSeq(ATTENUATE_3_DB, NONE)
+    val values = js.Object.freeze(js.Array(ATTENUATE_3_DB, NONE))
   }
 
   /**
@@ -2944,7 +2951,7 @@ package medialive {
     val HEARING_IMPAIRED  = "HEARING_IMPAIRED"
     val VISUALLY_IMPAIRED = "VISUALLY_IMPAIRED"
 
-    val values = IndexedSeq(COMMENTARY, COMPLETE_MAIN, EMERGENCY, HEARING_IMPAIRED, VISUALLY_IMPAIRED)
+    val values = js.Object.freeze(js.Array(COMMENTARY, COMPLETE_MAIN, EMERGENCY, HEARING_IMPAIRED, VISUALLY_IMPAIRED))
   }
 
   /**
@@ -2955,7 +2962,7 @@ package medialive {
     val CODING_MODE_2_0 = "CODING_MODE_2_0"
     val CODING_MODE_3_2 = "CODING_MODE_3_2"
 
-    val values = IndexedSeq(CODING_MODE_1_0, CODING_MODE_2_0, CODING_MODE_3_2)
+    val values = js.Object.freeze(js.Array(CODING_MODE_1_0, CODING_MODE_2_0, CODING_MODE_3_2))
   }
 
   /**
@@ -2965,7 +2972,7 @@ package medialive {
     val DISABLED = "DISABLED"
     val ENABLED  = "ENABLED"
 
-    val values = IndexedSeq(DISABLED, ENABLED)
+    val values = js.Object.freeze(js.Array(DISABLED, ENABLED))
   }
 
   /**
@@ -2979,7 +2986,7 @@ package medialive {
     val NONE           = "NONE"
     val SPEECH         = "SPEECH"
 
-    val values = IndexedSeq(FILM_LIGHT, FILM_STANDARD, MUSIC_LIGHT, MUSIC_STANDARD, NONE, SPEECH)
+    val values = js.Object.freeze(js.Array(FILM_LIGHT, FILM_STANDARD, MUSIC_LIGHT, MUSIC_STANDARD, NONE, SPEECH))
   }
 
   /**
@@ -2993,7 +3000,7 @@ package medialive {
     val NONE           = "NONE"
     val SPEECH         = "SPEECH"
 
-    val values = IndexedSeq(FILM_LIGHT, FILM_STANDARD, MUSIC_LIGHT, MUSIC_STANDARD, NONE, SPEECH)
+    val values = js.Object.freeze(js.Array(FILM_LIGHT, FILM_STANDARD, MUSIC_LIGHT, MUSIC_STANDARD, NONE, SPEECH))
   }
 
   /**
@@ -3003,7 +3010,7 @@ package medialive {
     val LFE    = "LFE"
     val NO_LFE = "NO_LFE"
 
-    val values = IndexedSeq(LFE, NO_LFE)
+    val values = js.Object.freeze(js.Array(LFE, NO_LFE))
   }
 
   /**
@@ -3013,7 +3020,7 @@ package medialive {
     val DISABLED = "DISABLED"
     val ENABLED  = "ENABLED"
 
-    val values = IndexedSeq(DISABLED, ENABLED)
+    val values = js.Object.freeze(js.Array(DISABLED, ENABLED))
   }
 
   /**
@@ -3023,7 +3030,7 @@ package medialive {
     val FOLLOW_INPUT   = "FOLLOW_INPUT"
     val USE_CONFIGURED = "USE_CONFIGURED"
 
-    val values = IndexedSeq(FOLLOW_INPUT, USE_CONFIGURED)
+    val values = js.Object.freeze(js.Array(FOLLOW_INPUT, USE_CONFIGURED))
   }
 
   /**
@@ -3033,7 +3040,7 @@ package medialive {
     val NO_PASSTHROUGH = "NO_PASSTHROUGH"
     val WHEN_POSSIBLE  = "WHEN_POSSIBLE"
 
-    val values = IndexedSeq(NO_PASSTHROUGH, WHEN_POSSIBLE)
+    val values = js.Object.freeze(js.Array(NO_PASSTHROUGH, WHEN_POSSIBLE))
   }
 
   /**
@@ -3043,7 +3050,7 @@ package medialive {
     val NO_SHIFT         = "NO_SHIFT"
     val SHIFT_90_DEGREES = "SHIFT_90_DEGREES"
 
-    val values = IndexedSeq(NO_SHIFT, SHIFT_90_DEGREES)
+    val values = js.Object.freeze(js.Array(NO_SHIFT, SHIFT_90_DEGREES))
   }
 
   /**
@@ -3130,7 +3137,7 @@ package medialive {
     val LT_RT         = "LT_RT"
     val NOT_INDICATED = "NOT_INDICATED"
 
-    val values = IndexedSeq(DPL2, LO_RO, LT_RT, NOT_INDICATED)
+    val values = js.Object.freeze(js.Array(DPL2, LO_RO, LT_RT, NOT_INDICATED))
   }
 
   /**
@@ -3141,7 +3148,7 @@ package medialive {
     val ENABLED       = "ENABLED"
     val NOT_INDICATED = "NOT_INDICATED"
 
-    val values = IndexedSeq(DISABLED, ENABLED, NOT_INDICATED)
+    val values = js.Object.freeze(js.Array(DISABLED, ENABLED, NOT_INDICATED))
   }
 
   /**
@@ -3152,7 +3159,7 @@ package medialive {
     val ENABLED       = "ENABLED"
     val NOT_INDICATED = "NOT_INDICATED"
 
-    val values = IndexedSeq(DISABLED, ENABLED, NOT_INDICATED)
+    val values = js.Object.freeze(js.Array(DISABLED, ENABLED, NOT_INDICATED))
   }
 
   /**
@@ -3162,7 +3169,7 @@ package medialive {
     val DISABLED  = "DISABLED"
     val UPCONVERT = "UPCONVERT"
 
-    val values = IndexedSeq(DISABLED, UPCONVERT)
+    val values = js.Object.freeze(js.Array(DISABLED, UPCONVERT))
   }
 
   /**
@@ -3202,7 +3209,7 @@ package medialive {
     val AUTO = "AUTO"
     val OFF  = "OFF"
 
-    val values = IndexedSeq(AUTO, OFF)
+    val values = js.Object.freeze(js.Array(AUTO, OFF))
   }
 
   /**
@@ -3283,7 +3290,7 @@ package medialive {
     val COLUMN         = "COLUMN"
     val COLUMN_AND_ROW = "COLUMN_AND_ROW"
 
-    val values = IndexedSeq(COLUMN, COLUMN_AND_ROW)
+    val values = js.Object.freeze(js.Array(COLUMN, COLUMN_AND_ROW))
   }
 
   /**
@@ -3326,18 +3333,20 @@ package medialive {
     val AFD_1110 = "AFD_1110"
     val AFD_1111 = "AFD_1111"
 
-    val values = IndexedSeq(
-      AFD_0000,
-      AFD_0010,
-      AFD_0011,
-      AFD_0100,
-      AFD_1000,
-      AFD_1001,
-      AFD_1010,
-      AFD_1011,
-      AFD_1101,
-      AFD_1110,
-      AFD_1111
+    val values = js.Object.freeze(
+      js.Array(
+        AFD_0000,
+        AFD_0010,
+        AFD_0011,
+        AFD_0100,
+        AFD_1000,
+        AFD_1001,
+        AFD_1010,
+        AFD_1011,
+        AFD_1101,
+        AFD_1110,
+        AFD_1111
+      )
     )
   }
 
@@ -3391,7 +3400,7 @@ package medialive {
     val END   = "END"
     val START = "START"
 
-    val values = IndexedSeq(END, START)
+    val values = js.Object.freeze(js.Array(END, START))
   }
 
   /**
@@ -3492,7 +3501,7 @@ package medialive {
     val NONE                   = "NONE"
     val SWITCH_AND_LOOP_INPUTS = "SWITCH_AND_LOOP_INPUTS"
 
-    val values = IndexedSeq(NONE, SWITCH_AND_LOOP_INPUTS)
+    val values = js.Object.freeze(js.Array(NONE, SWITCH_AND_LOOP_INPUTS))
   }
 
   /**
@@ -3502,7 +3511,7 @@ package medialive {
     val DISABLED = "DISABLED"
     val ENABLED  = "ENABLED"
 
-    val values = IndexedSeq(DISABLED, ENABLED)
+    val values = js.Object.freeze(js.Array(DISABLED, ENABLED))
   }
 
   /**
@@ -3512,7 +3521,7 @@ package medialive {
     val EPOCH_LOCKING    = "EPOCH_LOCKING"
     val PIPELINE_LOCKING = "PIPELINE_LOCKING"
 
-    val values = IndexedSeq(EPOCH_LOCKING, PIPELINE_LOCKING)
+    val values = js.Object.freeze(js.Array(EPOCH_LOCKING, PIPELINE_LOCKING))
   }
 
   /**
@@ -3522,7 +3531,7 @@ package medialive {
     val INPUT_CLOCK  = "INPUT_CLOCK"
     val SYSTEM_CLOCK = "SYSTEM_CLOCK"
 
-    val values = IndexedSeq(INPUT_CLOCK, SYSTEM_CLOCK)
+    val values = js.Object.freeze(js.Array(INPUT_CLOCK, SYSTEM_CLOCK))
   }
 
   /**
@@ -3536,7 +3545,7 @@ package medialive {
     val MEDIUM = "MEDIUM"
     val OFF    = "OFF"
 
-    val values = IndexedSeq(HIGH, HIGHER, LOW, MAX, MEDIUM, OFF)
+    val values = js.Object.freeze(js.Array(HIGH, HIGHER, LOW, MAX, MEDIUM, OFF))
   }
 
   /**
@@ -3546,7 +3555,7 @@ package medialive {
     val IGNORE = "IGNORE"
     val INSERT = "INSERT"
 
-    val values = IndexedSeq(IGNORE, INSERT)
+    val values = js.Object.freeze(js.Array(IGNORE, INSERT))
   }
 
   /**
@@ -3556,7 +3565,7 @@ package medialive {
     val CABAC = "CABAC"
     val CAVLC = "CAVLC"
 
-    val values = IndexedSeq(CABAC, CAVLC)
+    val values = js.Object.freeze(js.Array(CABAC, CAVLC))
   }
 
   /**
@@ -3566,7 +3575,7 @@ package medialive {
     val DISABLED = "DISABLED"
     val ENABLED  = "ENABLED"
 
-    val values = IndexedSeq(DISABLED, ENABLED)
+    val values = js.Object.freeze(js.Array(DISABLED, ENABLED))
   }
 
   /**
@@ -3576,7 +3585,7 @@ package medialive {
     val INITIALIZE_FROM_SOURCE = "INITIALIZE_FROM_SOURCE"
     val SPECIFIED              = "SPECIFIED"
 
-    val values = IndexedSeq(INITIALIZE_FROM_SOURCE, SPECIFIED)
+    val values = js.Object.freeze(js.Array(INITIALIZE_FROM_SOURCE, SPECIFIED))
   }
 
   /**
@@ -3586,7 +3595,7 @@ package medialive {
     val DISABLED = "DISABLED"
     val ENABLED  = "ENABLED"
 
-    val values = IndexedSeq(DISABLED, ENABLED)
+    val values = js.Object.freeze(js.Array(DISABLED, ENABLED))
   }
 
   /**
@@ -3596,7 +3605,7 @@ package medialive {
     val FRAMES  = "FRAMES"
     val SECONDS = "SECONDS"
 
-    val values = IndexedSeq(FRAMES, SECONDS)
+    val values = js.Object.freeze(js.Array(FRAMES, SECONDS))
   }
 
   /**
@@ -3621,24 +3630,26 @@ package medialive {
     val H264_LEVEL_5_2  = "H264_LEVEL_5_2"
     val H264_LEVEL_AUTO = "H264_LEVEL_AUTO"
 
-    val values = IndexedSeq(
-      H264_LEVEL_1,
-      H264_LEVEL_1_1,
-      H264_LEVEL_1_2,
-      H264_LEVEL_1_3,
-      H264_LEVEL_2,
-      H264_LEVEL_2_1,
-      H264_LEVEL_2_2,
-      H264_LEVEL_3,
-      H264_LEVEL_3_1,
-      H264_LEVEL_3_2,
-      H264_LEVEL_4,
-      H264_LEVEL_4_1,
-      H264_LEVEL_4_2,
-      H264_LEVEL_5,
-      H264_LEVEL_5_1,
-      H264_LEVEL_5_2,
-      H264_LEVEL_AUTO
+    val values = js.Object.freeze(
+      js.Array(
+        H264_LEVEL_1,
+        H264_LEVEL_1_1,
+        H264_LEVEL_1_2,
+        H264_LEVEL_1_3,
+        H264_LEVEL_2,
+        H264_LEVEL_2_1,
+        H264_LEVEL_2_2,
+        H264_LEVEL_3,
+        H264_LEVEL_3_1,
+        H264_LEVEL_3_2,
+        H264_LEVEL_4,
+        H264_LEVEL_4_1,
+        H264_LEVEL_4_2,
+        H264_LEVEL_5,
+        H264_LEVEL_5_1,
+        H264_LEVEL_5_2,
+        H264_LEVEL_AUTO
+      )
     )
   }
 
@@ -3650,7 +3661,7 @@ package medialive {
     val LOW    = "LOW"
     val MEDIUM = "MEDIUM"
 
-    val values = IndexedSeq(HIGH, LOW, MEDIUM)
+    val values = js.Object.freeze(js.Array(HIGH, LOW, MEDIUM))
   }
 
   /**
@@ -3660,7 +3671,7 @@ package medialive {
     val INITIALIZE_FROM_SOURCE = "INITIALIZE_FROM_SOURCE"
     val SPECIFIED              = "SPECIFIED"
 
-    val values = IndexedSeq(INITIALIZE_FROM_SOURCE, SPECIFIED)
+    val values = js.Object.freeze(js.Array(INITIALIZE_FROM_SOURCE, SPECIFIED))
   }
 
   /**
@@ -3674,7 +3685,7 @@ package medialive {
     val HIGH_422_10BIT = "HIGH_422_10BIT"
     val MAIN           = "MAIN"
 
-    val values = IndexedSeq(BASELINE, HIGH, HIGH_10BIT, HIGH_422, HIGH_422_10BIT, MAIN)
+    val values = js.Object.freeze(js.Array(BASELINE, HIGH, HIGH_10BIT, HIGH_422, HIGH_422_10BIT, MAIN))
   }
 
   /**
@@ -3685,7 +3696,7 @@ package medialive {
     val QVBR = "QVBR"
     val VBR  = "VBR"
 
-    val values = IndexedSeq(CBR, QVBR, VBR)
+    val values = js.Object.freeze(js.Array(CBR, QVBR, VBR))
   }
 
   /**
@@ -3695,7 +3706,7 @@ package medialive {
     val INTERLACED  = "INTERLACED"
     val PROGRESSIVE = "PROGRESSIVE"
 
-    val values = IndexedSeq(INTERLACED, PROGRESSIVE)
+    val values = js.Object.freeze(js.Array(INTERLACED, PROGRESSIVE))
   }
 
   /**
@@ -3705,7 +3716,7 @@ package medialive {
     val DISABLED = "DISABLED"
     val ENABLED  = "ENABLED"
 
-    val values = IndexedSeq(DISABLED, ENABLED)
+    val values = js.Object.freeze(js.Array(DISABLED, ENABLED))
   }
 
   /**
@@ -3841,7 +3852,7 @@ package medialive {
     val DISABLED = "DISABLED"
     val ENABLED  = "ENABLED"
 
-    val values = IndexedSeq(DISABLED, ENABLED)
+    val values = js.Object.freeze(js.Array(DISABLED, ENABLED))
   }
 
   /**
@@ -3851,7 +3862,7 @@ package medialive {
     val DYNAMIC = "DYNAMIC"
     val FIXED   = "FIXED"
 
-    val values = IndexedSeq(DYNAMIC, FIXED)
+    val values = js.Object.freeze(js.Array(DYNAMIC, FIXED))
   }
 
   /**
@@ -3861,7 +3872,7 @@ package medialive {
     val DEFAULT = "DEFAULT"
     val RP2027  = "RP2027"
 
-    val values = IndexedSeq(DEFAULT, RP2027)
+    val values = js.Object.freeze(js.Array(DEFAULT, RP2027))
   }
 
   /**
@@ -3871,7 +3882,7 @@ package medialive {
     val DISABLED = "DISABLED"
     val ENABLED  = "ENABLED"
 
-    val values = IndexedSeq(DISABLED, ENABLED)
+    val values = js.Object.freeze(js.Array(DISABLED, ENABLED))
   }
 
   /**
@@ -3881,7 +3892,7 @@ package medialive {
     val DISABLED       = "DISABLED"
     val PIC_TIMING_SEI = "PIC_TIMING_SEI"
 
-    val values = IndexedSeq(DISABLED, PIC_TIMING_SEI)
+    val values = js.Object.freeze(js.Array(DISABLED, PIC_TIMING_SEI))
   }
 
   /**
@@ -3892,7 +3903,7 @@ package medialive {
     val ELEMENTAL        = "ELEMENTAL"
     val ELEMENTAL_SCTE35 = "ELEMENTAL_SCTE35"
 
-    val values = IndexedSeq(ADOBE, ELEMENTAL, ELEMENTAL_SCTE35)
+    val values = js.Object.freeze(js.Array(ADOBE, ELEMENTAL, ELEMENTAL_SCTE35))
   }
 
   /**
@@ -3902,7 +3913,7 @@ package medialive {
     val CHUNKED     = "CHUNKED"
     val NON_CHUNKED = "NON_CHUNKED"
 
-    val values = IndexedSeq(CHUNKED, NON_CHUNKED)
+    val values = js.Object.freeze(js.Array(CHUNKED, NON_CHUNKED))
   }
 
   /**
@@ -3976,7 +3987,7 @@ package medialive {
     val NONE   = "NONE"
     val OMIT   = "OMIT"
 
-    val values = IndexedSeq(INSERT, NONE, OMIT)
+    val values = js.Object.freeze(js.Array(INSERT, NONE, OMIT))
   }
 
   /**
@@ -4013,7 +4024,7 @@ package medialive {
     val DISABLED = "DISABLED"
     val ENABLED  = "ENABLED"
 
-    val values = IndexedSeq(DISABLED, ENABLED)
+    val values = js.Object.freeze(js.Array(DISABLED, ENABLED))
   }
 
   /**
@@ -4023,7 +4034,7 @@ package medialive {
     val RFC_4281 = "RFC_4281"
     val RFC_6381 = "RFC_6381"
 
-    val values = IndexedSeq(RFC_4281, RFC_6381)
+    val values = js.Object.freeze(js.Array(RFC_4281, RFC_6381))
   }
 
   /**
@@ -4033,7 +4044,7 @@ package medialive {
     val SINGLE_DIRECTORY        = "SINGLE_DIRECTORY"
     val SUBDIRECTORY_PER_STREAM = "SUBDIRECTORY_PER_STREAM"
 
-    val values = IndexedSeq(SINGLE_DIRECTORY, SUBDIRECTORY_PER_STREAM)
+    val values = js.Object.freeze(js.Array(SINGLE_DIRECTORY, SUBDIRECTORY_PER_STREAM))
   }
 
   /**
@@ -4043,7 +4054,7 @@ package medialive {
     val AES128     = "AES128"
     val SAMPLE_AES = "SAMPLE_AES"
 
-    val values = IndexedSeq(AES128, SAMPLE_AES)
+    val values = js.Object.freeze(js.Array(AES128, SAMPLE_AES))
   }
 
   /**
@@ -4208,7 +4219,7 @@ package medialive {
     val EXCLUDE = "EXCLUDE"
     val INCLUDE = "INCLUDE"
 
-    val values = IndexedSeq(EXCLUDE, INCLUDE)
+    val values = js.Object.freeze(js.Array(EXCLUDE, INCLUDE))
   }
 
   /**
@@ -4218,7 +4229,7 @@ package medialive {
     val EXPLICIT               = "EXPLICIT"
     val FOLLOWS_SEGMENT_NUMBER = "FOLLOWS_SEGMENT_NUMBER"
 
-    val values = IndexedSeq(EXPLICIT, FOLLOWS_SEGMENT_NUMBER)
+    val values = js.Object.freeze(js.Array(EXPLICIT, FOLLOWS_SEGMENT_NUMBER))
   }
 
   /**
@@ -4228,7 +4239,7 @@ package medialive {
     val GZIP = "GZIP"
     val NONE = "NONE"
 
-    val values = IndexedSeq(GZIP, NONE)
+    val values = js.Object.freeze(js.Array(GZIP, NONE))
   }
 
   /**
@@ -4238,7 +4249,7 @@ package medialive {
     val FLOATING_POINT = "FLOATING_POINT"
     val INTEGER        = "INTEGER"
 
-    val values = IndexedSeq(FLOATING_POINT, INTEGER)
+    val values = js.Object.freeze(js.Array(FLOATING_POINT, INTEGER))
   }
 
   /**
@@ -4277,7 +4288,7 @@ package medialive {
   object HlsMediaStoreStorageClassEnum {
     val TEMPORAL = "TEMPORAL"
 
-    val values = IndexedSeq(TEMPORAL)
+    val values = js.Object.freeze(js.Array(TEMPORAL))
   }
 
   /**
@@ -4287,7 +4298,7 @@ package medialive {
     val LIVE = "LIVE"
     val VOD  = "VOD"
 
-    val values = IndexedSeq(LIVE, VOD)
+    val values = js.Object.freeze(js.Array(LIVE, VOD))
   }
 
   /**
@@ -4297,7 +4308,7 @@ package medialive {
     val MANIFESTS_AND_SEGMENTS = "MANIFESTS_AND_SEGMENTS"
     val SEGMENTS_ONLY          = "SEGMENTS_ONLY"
 
-    val values = IndexedSeq(MANIFESTS_AND_SEGMENTS, SEGMENTS_ONLY)
+    val values = js.Object.freeze(js.Array(MANIFESTS_AND_SEGMENTS, SEGMENTS_ONLY))
   }
 
   /**
@@ -4333,7 +4344,7 @@ package medialive {
     val EXCLUDE = "EXCLUDE"
     val INCLUDE = "INCLUDE"
 
-    val values = IndexedSeq(EXCLUDE, INCLUDE)
+    val values = js.Object.freeze(js.Array(EXCLUDE, INCLUDE))
   }
 
   /**
@@ -4343,7 +4354,7 @@ package medialive {
     val DISABLED = "DISABLED"
     val ENABLED  = "ENABLED"
 
-    val values = IndexedSeq(DISABLED, ENABLED)
+    val values = js.Object.freeze(js.Array(DISABLED, ENABLED))
   }
 
   /**
@@ -4353,7 +4364,7 @@ package medialive {
     val USE_INPUT_SEGMENTATION = "USE_INPUT_SEGMENTATION"
     val USE_SEGMENT_DURATION   = "USE_SEGMENT_DURATION"
 
-    val values = IndexedSeq(USE_INPUT_SEGMENTATION, USE_SEGMENT_DURATION)
+    val values = js.Object.freeze(js.Array(USE_INPUT_SEGMENTATION, USE_SEGMENT_DURATION))
   }
 
   /**
@@ -4384,7 +4395,7 @@ package medialive {
     val EXCLUDE = "EXCLUDE"
     val INCLUDE = "INCLUDE"
 
-    val values = IndexedSeq(EXCLUDE, INCLUDE)
+    val values = js.Object.freeze(js.Array(EXCLUDE, INCLUDE))
   }
 
   /**
@@ -4395,7 +4406,7 @@ package medialive {
     val PRIV = "PRIV"
     val TDRL = "TDRL"
 
-    val values = IndexedSeq(NONE, PRIV, TDRL)
+    val values = js.Object.freeze(js.Array(NONE, PRIV, TDRL))
   }
 
   /**
@@ -4425,7 +4436,7 @@ package medialive {
     val SEGMENTED_FILES = "SEGMENTED_FILES"
     val SINGLE_FILE     = "SINGLE_FILE"
 
-    val values = IndexedSeq(SEGMENTED_FILES, SINGLE_FILE)
+    val values = js.Object.freeze(js.Array(SEGMENTED_FILES, SINGLE_FILE))
   }
 
   /**
@@ -4435,7 +4446,7 @@ package medialive {
     val CHUNKED     = "CHUNKED"
     val NON_CHUNKED = "NON_CHUNKED"
 
-    val values = IndexedSeq(CHUNKED, NON_CHUNKED)
+    val values = js.Object.freeze(js.Array(CHUNKED, NON_CHUNKED))
   }
 
   /**
@@ -4475,7 +4486,7 @@ package medialive {
     val DISABLED = "DISABLED"
     val STANDARD = "STANDARD"
 
-    val values = IndexedSeq(DISABLED, STANDARD)
+    val values = js.Object.freeze(js.Array(DISABLED, STANDARD))
   }
 
   /**
@@ -4604,7 +4615,7 @@ package medialive {
     val STANDARD        = "STANDARD"
     val SINGLE_PIPELINE = "SINGLE_PIPELINE"
 
-    val values = IndexedSeq(STANDARD, SINGLE_PIPELINE)
+    val values = js.Object.freeze(js.Array(STANDARD, SINGLE_PIPELINE))
   }
 
   /**
@@ -4641,7 +4652,7 @@ package medialive {
     val AVC   = "AVC"
     val HEVC  = "HEVC"
 
-    val values = IndexedSeq(MPEG2, AVC, HEVC)
+    val values = js.Object.freeze(js.Array(MPEG2, AVC, HEVC))
   }
 
   /**
@@ -4651,7 +4662,7 @@ package medialive {
     val DISABLED = "DISABLED"
     val ENABLED  = "ENABLED"
 
-    val values = IndexedSeq(DISABLED, ENABLED)
+    val values = js.Object.freeze(js.Array(DISABLED, ENABLED))
   }
 
   /**
@@ -4661,7 +4672,7 @@ package medialive {
     val DISABLED = "DISABLED"
     val ENABLED  = "ENABLED"
 
-    val values = IndexedSeq(DISABLED, ENABLED)
+    val values = js.Object.freeze(js.Array(DISABLED, ENABLED))
   }
 
   /**
@@ -4738,7 +4749,7 @@ package medialive {
     val DISABLED = "DISABLED"
     val FORCED   = "FORCED"
 
-    val values = IndexedSeq(AUTO, DISABLED, FORCED)
+    val values = js.Object.freeze(js.Array(AUTO, DISABLED, FORCED))
   }
 
   /**
@@ -4774,7 +4785,7 @@ package medialive {
     val EMIT_OUTPUT  = "EMIT_OUTPUT"
     val PAUSE_OUTPUT = "PAUSE_OUTPUT"
 
-    val values = IndexedSeq(EMIT_OUTPUT, PAUSE_OUTPUT)
+    val values = js.Object.freeze(js.Array(EMIT_OUTPUT, PAUSE_OUTPUT))
   }
 
   /**
@@ -4784,7 +4795,7 @@ package medialive {
     val EMIT_OUTPUT  = "EMIT_OUTPUT"
     val PAUSE_OUTPUT = "PAUSE_OUTPUT"
 
-    val values = IndexedSeq(EMIT_OUTPUT, PAUSE_OUTPUT)
+    val values = js.Object.freeze(js.Array(EMIT_OUTPUT, PAUSE_OUTPUT))
   }
 
   /**
@@ -4794,7 +4805,7 @@ package medialive {
     val EMIT_OUTPUT  = "EMIT_OUTPUT"
     val PAUSE_OUTPUT = "PAUSE_OUTPUT"
 
-    val values = IndexedSeq(EMIT_OUTPUT, PAUSE_OUTPUT)
+    val values = js.Object.freeze(js.Array(EMIT_OUTPUT, PAUSE_OUTPUT))
   }
 
   /**
@@ -4805,7 +4816,7 @@ package medialive {
     val DROP_TS      = "DROP_TS"
     val EMIT_PROGRAM = "EMIT_PROGRAM"
 
-    val values = IndexedSeq(DROP_PROGRAM, DROP_TS, EMIT_PROGRAM)
+    val values = js.Object.freeze(js.Array(DROP_PROGRAM, DROP_TS, EMIT_PROGRAM))
   }
 
   /**
@@ -4845,7 +4856,7 @@ package medialive {
     val COLOR = "COLOR"
     val SLATE = "SLATE"
 
-    val values = IndexedSeq(COLOR, SLATE)
+    val values = js.Object.freeze(js.Array(COLOR, SLATE))
   }
 
   /**
@@ -4856,7 +4867,7 @@ package medialive {
     val MAX_20_MBPS = "MAX_20_MBPS"
     val MAX_50_MBPS = "MAX_50_MBPS"
 
-    val values = IndexedSeq(MAX_10_MBPS, MAX_20_MBPS, MAX_50_MBPS)
+    val values = js.Object.freeze(js.Array(MAX_10_MBPS, MAX_20_MBPS, MAX_50_MBPS))
   }
 
   /**
@@ -4867,7 +4878,7 @@ package medialive {
     val HD  = "HD"
     val UHD = "UHD"
 
-    val values = IndexedSeq(SD, HD, UHD)
+    val values = js.Object.freeze(js.Array(SD, HD, UHD))
   }
 
   /**
@@ -4912,7 +4923,7 @@ package medialive {
     val UPDATING = "UPDATING"
     val DELETED  = "DELETED"
 
-    val values = IndexedSeq(IDLE, IN_USE, UPDATING, DELETED)
+    val values = js.Object.freeze(js.Array(IDLE, IN_USE, UPDATING, DELETED))
   }
 
   /**
@@ -4988,7 +4999,7 @@ package medialive {
     val CONTINUE = "CONTINUE"
     val LOOP     = "LOOP"
 
-    val values = IndexedSeq(CONTINUE, LOOP)
+    val values = js.Object.freeze(js.Array(CONTINUE, LOOP))
   }
 
   /**
@@ -5024,7 +5035,7 @@ package medialive {
     val STATIC  = "STATIC"
     val DYNAMIC = "DYNAMIC"
 
-    val values = IndexedSeq(STATIC, DYNAMIC)
+    val values = js.Object.freeze(js.Array(STATIC, DYNAMIC))
   }
 
   /**
@@ -5061,7 +5072,7 @@ package medialive {
     val DELETING = "DELETING"
     val DELETED  = "DELETED"
 
-    val values = IndexedSeq(CREATING, DETACHED, ATTACHED, DELETING, DELETED)
+    val values = js.Object.freeze(js.Array(CREATING, DETACHED, ATTACHED, DELETING, DELETED))
   }
 
   /**
@@ -5097,7 +5108,7 @@ package medialive {
     val ZEROBASED = "ZEROBASED"
     val EMBEDDED  = "EMBEDDED"
 
-    val values = IndexedSeq(ZEROBASED, EMBEDDED)
+    val values = js.Object.freeze(js.Array(ZEROBASED, EMBEDDED))
   }
 
   /**
@@ -5112,7 +5123,7 @@ package medialive {
     val MP4_FILE     = "MP4_FILE"
     val MEDIACONNECT = "MEDIACONNECT"
 
-    val values = IndexedSeq(UDP_PUSH, RTP_PUSH, RTMP_PUSH, RTMP_PULL, URL_PULL, MP4_FILE, MEDIACONNECT)
+    val values = js.Object.freeze(js.Array(UDP_PUSH, RTP_PUSH, RTMP_PUSH, RTMP_PULL, URL_PULL, MP4_FILE, MEDIACONNECT))
   }
 
   /**
@@ -5202,7 +5213,7 @@ package medialive {
     val EXCLUDE_LAST_FRAME = "EXCLUDE_LAST_FRAME"
     val INCLUDE_LAST_FRAME = "INCLUDE_LAST_FRAME"
 
-    val values = IndexedSeq(EXCLUDE_LAST_FRAME, INCLUDE_LAST_FRAME)
+    val values = js.Object.freeze(js.Array(EXCLUDE_LAST_FRAME, INCLUDE_LAST_FRAME))
   }
 
   /**
@@ -5514,7 +5525,7 @@ package medialive {
     val DEBUG    = "DEBUG"
     val DISABLED = "DISABLED"
 
-    val values = IndexedSeq(ERROR, WARNING, INFO, DEBUG, DISABLED)
+    val values = js.Object.freeze(js.Array(ERROR, WARNING, INFO, DEBUG, DISABLED))
   }
 
   /**
@@ -5524,7 +5535,7 @@ package medialive {
     val DROP           = "DROP"
     val ENCODE_SILENCE = "ENCODE_SILENCE"
 
-    val values = IndexedSeq(DROP, ENCODE_SILENCE)
+    val values = js.Object.freeze(js.Array(DROP, ENCODE_SILENCE))
   }
 
   /**
@@ -5534,7 +5545,7 @@ package medialive {
     val DISABLED = "DISABLED"
     val ENABLED  = "ENABLED"
 
-    val values = IndexedSeq(DISABLED, ENABLED)
+    val values = js.Object.freeze(js.Array(DISABLED, ENABLED))
   }
 
   /**
@@ -5544,7 +5555,7 @@ package medialive {
     val AUTO           = "AUTO"
     val USE_CONFIGURED = "USE_CONFIGURED"
 
-    val values = IndexedSeq(AUTO, USE_CONFIGURED)
+    val values = js.Object.freeze(js.Array(AUTO, USE_CONFIGURED))
   }
 
   /**
@@ -5554,7 +5565,7 @@ package medialive {
     val ATSC = "ATSC"
     val DVB  = "DVB"
 
-    val values = IndexedSeq(ATSC, DVB)
+    val values = js.Object.freeze(js.Array(ATSC, DVB))
   }
 
   /**
@@ -5564,7 +5575,7 @@ package medialive {
     val VIDEO_AND_FIXED_INTERVALS = "VIDEO_AND_FIXED_INTERVALS"
     val VIDEO_INTERVAL            = "VIDEO_INTERVAL"
 
-    val values = IndexedSeq(VIDEO_AND_FIXED_INTERVALS, VIDEO_INTERVAL)
+    val values = js.Object.freeze(js.Array(VIDEO_AND_FIXED_INTERVALS, VIDEO_INTERVAL))
   }
 
   /**
@@ -5574,7 +5585,7 @@ package medialive {
     val ATSC = "ATSC"
     val DVB  = "DVB"
 
-    val values = IndexedSeq(ATSC, DVB)
+    val values = js.Object.freeze(js.Array(ATSC, DVB))
   }
 
   /**
@@ -5584,7 +5595,7 @@ package medialive {
     val MULTIPLEX = "MULTIPLEX"
     val NONE      = "NONE"
 
-    val values = IndexedSeq(MULTIPLEX, NONE)
+    val values = js.Object.freeze(js.Array(MULTIPLEX, NONE))
   }
 
   /**
@@ -5594,7 +5605,7 @@ package medialive {
     val DISABLED = "DISABLED"
     val ENABLED  = "ENABLED"
 
-    val values = IndexedSeq(DISABLED, ENABLED)
+    val values = js.Object.freeze(js.Array(DISABLED, ENABLED))
   }
 
   /**
@@ -5604,7 +5615,7 @@ package medialive {
     val NONE        = "NONE"
     val PASSTHROUGH = "PASSTHROUGH"
 
-    val values = IndexedSeq(NONE, PASSTHROUGH)
+    val values = js.Object.freeze(js.Array(NONE, PASSTHROUGH))
   }
 
   /**
@@ -5614,7 +5625,7 @@ package medialive {
     val VIDEO_AND_AUDIO_PIDS = "VIDEO_AND_AUDIO_PIDS"
     val VIDEO_PID            = "VIDEO_PID"
 
-    val values = IndexedSeq(VIDEO_AND_AUDIO_PIDS, VIDEO_PID)
+    val values = js.Object.freeze(js.Array(VIDEO_AND_AUDIO_PIDS, VIDEO_PID))
   }
 
   /**
@@ -5624,7 +5635,7 @@ package medialive {
     val EXCLUDE = "EXCLUDE"
     val INCLUDE = "INCLUDE"
 
-    val values = IndexedSeq(EXCLUDE, INCLUDE)
+    val values = js.Object.freeze(js.Array(EXCLUDE, INCLUDE))
   }
 
   /**
@@ -5634,7 +5645,7 @@ package medialive {
     val NONE        = "NONE"
     val PASSTHROUGH = "PASSTHROUGH"
 
-    val values = IndexedSeq(NONE, PASSTHROUGH)
+    val values = js.Object.freeze(js.Array(NONE, PASSTHROUGH))
   }
 
   /**
@@ -5644,7 +5655,7 @@ package medialive {
     val CONFIGURED_PCR_PERIOD = "CONFIGURED_PCR_PERIOD"
     val PCR_EVERY_PES_PACKET  = "PCR_EVERY_PES_PACKET"
 
-    val values = IndexedSeq(CONFIGURED_PCR_PERIOD, PCR_EVERY_PES_PACKET)
+    val values = js.Object.freeze(js.Array(CONFIGURED_PCR_PERIOD, PCR_EVERY_PES_PACKET))
   }
 
   /**
@@ -5654,7 +5665,7 @@ package medialive {
     val CBR = "CBR"
     val VBR = "VBR"
 
-    val values = IndexedSeq(CBR, VBR)
+    val values = js.Object.freeze(js.Array(CBR, VBR))
   }
 
   /**
@@ -5664,7 +5675,7 @@ package medialive {
     val NONE        = "NONE"
     val PASSTHROUGH = "PASSTHROUGH"
 
-    val values = IndexedSeq(NONE, PASSTHROUGH)
+    val values = js.Object.freeze(js.Array(NONE, PASSTHROUGH))
   }
 
   /**
@@ -5678,7 +5689,7 @@ package medialive {
     val RAI_ADAPT    = "RAI_ADAPT"
     val RAI_SEGSTART = "RAI_SEGSTART"
 
-    val values = IndexedSeq(EBP, EBP_LEGACY, NONE, PSI_SEGSTART, RAI_ADAPT, RAI_SEGSTART)
+    val values = js.Object.freeze(js.Array(EBP, EBP_LEGACY, NONE, PSI_SEGSTART, RAI_ADAPT, RAI_SEGSTART))
   }
 
   /**
@@ -5688,7 +5699,7 @@ package medialive {
     val MAINTAIN_CADENCE = "MAINTAIN_CADENCE"
     val RESET_CADENCE    = "RESET_CADENCE"
 
-    val values = IndexedSeq(MAINTAIN_CADENCE, RESET_CADENCE)
+    val values = js.Object.freeze(js.Array(MAINTAIN_CADENCE, RESET_CADENCE))
   }
 
   /**
@@ -5851,7 +5862,7 @@ package medialive {
     val NO_PASSTHROUGH = "NO_PASSTHROUGH"
     val PASSTHROUGH    = "PASSTHROUGH"
 
-    val values = IndexedSeq(NO_PASSTHROUGH, PASSTHROUGH)
+    val values = js.Object.freeze(js.Array(NO_PASSTHROUGH, PASSTHROUGH))
   }
 
   /**
@@ -5861,7 +5872,7 @@ package medialive {
     val CONFIGURED_PCR_PERIOD = "CONFIGURED_PCR_PERIOD"
     val PCR_EVERY_PES_PACKET  = "PCR_EVERY_PES_PACKET"
 
-    val values = IndexedSeq(CONFIGURED_PCR_PERIOD, PCR_EVERY_PES_PACKET)
+    val values = js.Object.freeze(js.Array(CONFIGURED_PCR_PERIOD, PCR_EVERY_PES_PACKET))
   }
 
   /**
@@ -5871,7 +5882,7 @@ package medialive {
     val NO_PASSTHROUGH = "NO_PASSTHROUGH"
     val PASSTHROUGH    = "PASSTHROUGH"
 
-    val values = IndexedSeq(NO_PASSTHROUGH, PASSTHROUGH)
+    val values = js.Object.freeze(js.Array(NO_PASSTHROUGH, PASSTHROUGH))
   }
 
   /**
@@ -5944,7 +5955,7 @@ package medialive {
     val NO_PASSTHROUGH = "NO_PASSTHROUGH"
     val PASSTHROUGH    = "PASSTHROUGH"
 
-    val values = IndexedSeq(NO_PASSTHROUGH, PASSTHROUGH)
+    val values = js.Object.freeze(js.Array(NO_PASSTHROUGH, PASSTHROUGH))
   }
 
   /**
@@ -6043,7 +6054,7 @@ package medialive {
     val CODING_MODE_1_0 = "CODING_MODE_1_0"
     val CODING_MODE_2_0 = "CODING_MODE_2_0"
 
-    val values = IndexedSeq(CODING_MODE_1_0, CODING_MODE_2_0)
+    val values = js.Object.freeze(js.Array(CODING_MODE_1_0, CODING_MODE_2_0))
   }
 
   /**
@@ -6169,7 +6180,7 @@ package medialive {
     val CHECK_CRYPTOGRAPHY_AND_VALIDATE_NAME = "CHECK_CRYPTOGRAPHY_AND_VALIDATE_NAME"
     val CHECK_CRYPTOGRAPHY_ONLY              = "CHECK_CRYPTOGRAPHY_ONLY"
 
-    val values = IndexedSeq(CHECK_CRYPTOGRAPHY_AND_VALIDATE_NAME, CHECK_CRYPTOGRAPHY_ONLY)
+    val values = js.Object.freeze(js.Array(CHECK_CRYPTOGRAPHY_AND_VALIDATE_NAME, CHECK_CRYPTOGRAPHY_ONLY))
   }
 
   /**
@@ -6247,7 +6258,7 @@ package medialive {
   object OfferingDurationUnitsEnum {
     val MONTHS = "MONTHS"
 
-    val values = IndexedSeq(MONTHS)
+    val values = js.Object.freeze(js.Array(MONTHS))
   }
 
   /**
@@ -6256,7 +6267,7 @@ package medialive {
   object OfferingTypeEnum {
     val NO_UPFRONT = "NO_UPFRONT"
 
-    val values = IndexedSeq(NO_UPFRONT)
+    val values = js.Object.freeze(js.Array(NO_UPFRONT))
   }
 
   /**
@@ -6522,7 +6533,7 @@ package medialive {
     val PIPELINE_0 = "PIPELINE_0"
     val PIPELINE_1 = "PIPELINE_1"
 
-    val values = IndexedSeq(PIPELINE_0, PIPELINE_1)
+    val values = js.Object.freeze(js.Array(PIPELINE_0, PIPELINE_1))
   }
 
   /**
@@ -6702,7 +6713,7 @@ package medialive {
     val HEVC  = "HEVC"
     val AUDIO = "AUDIO"
 
-    val values = IndexedSeq(MPEG2, AVC, HEVC, AUDIO)
+    val values = js.Object.freeze(js.Array(MPEG2, AVC, HEVC, AUDIO))
   }
 
   /**
@@ -6713,7 +6724,7 @@ package medialive {
     val MAX_20_MBPS = "MAX_20_MBPS"
     val MAX_50_MBPS = "MAX_50_MBPS"
 
-    val values = IndexedSeq(MAX_10_MBPS, MAX_20_MBPS, MAX_50_MBPS)
+    val values = js.Object.freeze(js.Array(MAX_10_MBPS, MAX_20_MBPS, MAX_50_MBPS))
   }
 
   /**
@@ -6723,7 +6734,7 @@ package medialive {
     val MAX_30_FPS = "MAX_30_FPS"
     val MAX_60_FPS = "MAX_60_FPS"
 
-    val values = IndexedSeq(MAX_30_FPS, MAX_60_FPS)
+    val values = js.Object.freeze(js.Array(MAX_30_FPS, MAX_60_FPS))
   }
 
   /**
@@ -6734,7 +6745,7 @@ package medialive {
     val HD  = "HD"
     val UHD = "UHD"
 
-    val values = IndexedSeq(SD, HD, UHD)
+    val values = js.Object.freeze(js.Array(SD, HD, UHD))
   }
 
   /**
@@ -6784,7 +6795,7 @@ package medialive {
     val OUTPUT  = "OUTPUT"
     val CHANNEL = "CHANNEL"
 
-    val values = IndexedSeq(INPUT, OUTPUT, CHANNEL)
+    val values = js.Object.freeze(js.Array(INPUT, OUTPUT, CHANNEL))
   }
 
   /**
@@ -6794,7 +6805,7 @@ package medialive {
     val ADVANCED_AUDIO      = "ADVANCED_AUDIO"
     val AUDIO_NORMALIZATION = "AUDIO_NORMALIZATION"
 
-    val values = IndexedSeq(ADVANCED_AUDIO, AUDIO_NORMALIZATION)
+    val values = js.Object.freeze(js.Array(ADVANCED_AUDIO, AUDIO_NORMALIZATION))
   }
 
   /**
@@ -6806,7 +6817,7 @@ package medialive {
     val CANCELED = "CANCELED"
     val DELETED  = "DELETED"
 
-    val values = IndexedSeq(ACTIVE, EXPIRED, CANCELED, DELETED)
+    val values = js.Object.freeze(js.Array(ACTIVE, EXPIRED, CANCELED, DELETED))
   }
 
   /**
@@ -6817,7 +6828,7 @@ package medialive {
     val ENHANCED = "ENHANCED"
     val PREMIUM  = "PREMIUM"
 
-    val values = IndexedSeq(STANDARD, ENHANCED, PREMIUM)
+    val values = js.Object.freeze(js.Array(STANDARD, ENHANCED, PREMIUM))
   }
 
   /**
@@ -6827,7 +6838,7 @@ package medialive {
     val DISCONNECT_IMMEDIATELY = "DISCONNECT_IMMEDIATELY"
     val WAIT_FOR_SERVER        = "WAIT_FOR_SERVER"
 
-    val values = IndexedSeq(DISCONNECT_IMMEDIATELY, WAIT_FOR_SERVER)
+    val values = js.Object.freeze(js.Array(DISCONNECT_IMMEDIATELY, WAIT_FOR_SERVER))
   }
 
   /**
@@ -6838,7 +6849,7 @@ package medialive {
     val FIELD1_608            = "FIELD1_608"
     val FIELD1_AND_FIELD2_608 = "FIELD1_AND_FIELD2_608"
 
-    val values = IndexedSeq(ALL, FIELD1_608, FIELD1_AND_FIELD2_608)
+    val values = js.Object.freeze(js.Array(ALL, FIELD1_608, FIELD1_AND_FIELD2_608))
   }
 
   /**
@@ -6896,7 +6907,7 @@ package medialive {
     val SELF_SIGNED         = "SELF_SIGNED"
     val VERIFY_AUTHENTICITY = "VERIFY_AUTHENTICITY"
 
-    val values = IndexedSeq(SELF_SIGNED, VERIFY_AUTHENTICITY)
+    val values = js.Object.freeze(js.Array(SELF_SIGNED, VERIFY_AUTHENTICITY))
   }
 
   /**
@@ -7034,7 +7045,7 @@ package medialive {
     val DISABLED  = "DISABLED"
     val UPCONVERT = "UPCONVERT"
 
-    val values = IndexedSeq(DISABLED, UPCONVERT)
+    val values = js.Object.freeze(js.Array(DISABLED, UPCONVERT))
   }
 
   /**
@@ -7113,7 +7124,7 @@ package medialive {
     val FOLLOW = "FOLLOW"
     val IGNORE = "IGNORE"
 
-    val values = IndexedSeq(FOLLOW, IGNORE)
+    val values = js.Object.freeze(js.Array(FOLLOW, IGNORE))
   }
 
   /**
@@ -7123,7 +7134,7 @@ package medialive {
     val FOLLOW = "FOLLOW"
     val IGNORE = "IGNORE"
 
-    val values = IndexedSeq(FOLLOW, IGNORE)
+    val values = js.Object.freeze(js.Array(FOLLOW, IGNORE))
   }
 
   /**
@@ -7133,7 +7144,7 @@ package medialive {
     val ARCHIVE_NOT_ALLOWED = "ARCHIVE_NOT_ALLOWED"
     val ARCHIVE_ALLOWED     = "ARCHIVE_ALLOWED"
 
-    val values = IndexedSeq(ARCHIVE_NOT_ALLOWED, ARCHIVE_ALLOWED)
+    val values = js.Object.freeze(js.Array(ARCHIVE_NOT_ALLOWED, ARCHIVE_ALLOWED))
   }
 
   /**
@@ -7215,7 +7226,7 @@ package medialive {
     val RESTRICT_GROUP1 = "RESTRICT_GROUP1"
     val RESTRICT_GROUP2 = "RESTRICT_GROUP2"
 
-    val values = IndexedSeq(NONE, RESTRICT_GROUP0, RESTRICT_GROUP1, RESTRICT_GROUP2)
+    val values = js.Object.freeze(js.Array(NONE, RESTRICT_GROUP0, RESTRICT_GROUP1, RESTRICT_GROUP2))
   }
 
   /**
@@ -7225,7 +7236,7 @@ package medialive {
     val REGIONAL_BLACKOUT    = "REGIONAL_BLACKOUT"
     val NO_REGIONAL_BLACKOUT = "NO_REGIONAL_BLACKOUT"
 
-    val values = IndexedSeq(REGIONAL_BLACKOUT, NO_REGIONAL_BLACKOUT)
+    val values = js.Object.freeze(js.Array(REGIONAL_BLACKOUT, NO_REGIONAL_BLACKOUT))
   }
 
   /**
@@ -7255,7 +7266,7 @@ package medialive {
     val SEGMENTATION_EVENT_NOT_CANCELED = "SEGMENTATION_EVENT_NOT_CANCELED"
     val SEGMENTATION_EVENT_CANCELED     = "SEGMENTATION_EVENT_CANCELED"
 
-    val values = IndexedSeq(SEGMENTATION_EVENT_NOT_CANCELED, SEGMENTATION_EVENT_CANCELED)
+    val values = js.Object.freeze(js.Array(SEGMENTATION_EVENT_NOT_CANCELED, SEGMENTATION_EVENT_CANCELED))
   }
 
   /**
@@ -7339,7 +7350,7 @@ package medialive {
     val FOLLOW = "FOLLOW"
     val IGNORE = "IGNORE"
 
-    val values = IndexedSeq(FOLLOW, IGNORE)
+    val values = js.Object.freeze(js.Array(FOLLOW, IGNORE))
   }
 
   /**
@@ -7372,7 +7383,7 @@ package medialive {
     val FOLLOW = "FOLLOW"
     val IGNORE = "IGNORE"
 
-    val values = IndexedSeq(FOLLOW, IGNORE)
+    val values = js.Object.freeze(js.Array(FOLLOW, IGNORE))
   }
 
   /**
@@ -7426,7 +7437,7 @@ package medialive {
     val WEB_DELIVERY_NOT_ALLOWED = "WEB_DELIVERY_NOT_ALLOWED"
     val WEB_DELIVERY_ALLOWED     = "WEB_DELIVERY_ALLOWED"
 
-    val values = IndexedSeq(WEB_DELIVERY_NOT_ALLOWED, WEB_DELIVERY_ALLOWED)
+    val values = js.Object.freeze(js.Array(WEB_DELIVERY_NOT_ALLOWED, WEB_DELIVERY_ALLOWED))
   }
 
   /**
@@ -7436,7 +7447,7 @@ package medialive {
     val PASSTHROUGH          = "PASSTHROUGH"
     val USE_CONFIGURED_CLOCK = "USE_CONFIGURED_CLOCK"
 
-    val values = IndexedSeq(PASSTHROUGH, USE_CONFIGURED_CLOCK)
+    val values = js.Object.freeze(js.Array(PASSTHROUGH, USE_CONFIGURED_CLOCK))
   }
 
   /**
@@ -7446,7 +7457,7 @@ package medialive {
     val SELF_SIGNED         = "SELF_SIGNED"
     val VERIFY_AUTHENTICITY = "VERIFY_AUTHENTICITY"
 
-    val values = IndexedSeq(SELF_SIGNED, VERIFY_AUTHENTICITY)
+    val values = js.Object.freeze(js.Array(SELF_SIGNED, VERIFY_AUTHENTICITY))
   }
 
   /**
@@ -7457,7 +7468,7 @@ package medialive {
     val USE_CONFIGURED = "USE_CONFIGURED"
     val USE_TIMESTAMP  = "USE_TIMESTAMP"
 
-    val values = IndexedSeq(NO_EVENT_ID, USE_CONFIGURED, USE_TIMESTAMP)
+    val values = js.Object.freeze(js.Array(NO_EVENT_ID, USE_CONFIGURED, USE_TIMESTAMP))
   }
 
   /**
@@ -7467,7 +7478,7 @@ package medialive {
     val NONE     = "NONE"
     val SEND_EOS = "SEND_EOS"
 
-    val values = IndexedSeq(NONE, SEND_EOS)
+    val values = js.Object.freeze(js.Array(NONE, SEND_EOS))
   }
 
   /**
@@ -7477,7 +7488,7 @@ package medialive {
     val USE_INPUT_SEGMENTATION = "USE_INPUT_SEGMENTATION"
     val USE_SEGMENT_DURATION   = "USE_SEGMENT_DURATION"
 
-    val values = IndexedSeq(USE_INPUT_SEGMENTATION, USE_SEGMENT_DURATION)
+    val values = js.Object.freeze(js.Array(USE_INPUT_SEGMENTATION, USE_SEGMENT_DURATION))
   }
 
   /**
@@ -7487,7 +7498,7 @@ package medialive {
     val NONE    = "NONE"
     val SCTE_35 = "SCTE_35"
 
-    val values = IndexedSeq(NONE, SCTE_35)
+    val values = js.Object.freeze(js.Array(NONE, SCTE_35))
   }
 
   /**
@@ -7497,7 +7508,7 @@ package medialive {
     val DO_NOT_SEND = "DO_NOT_SEND"
     val SEND        = "SEND"
 
-    val values = IndexedSeq(DO_NOT_SEND, SEND)
+    val values = js.Object.freeze(js.Array(DO_NOT_SEND, SEND))
   }
 
   /**
@@ -7507,7 +7518,7 @@ package medialive {
     val USE_CONFIGURED_OFFSET = "USE_CONFIGURED_OFFSET"
     val USE_EVENT_START_DATE  = "USE_EVENT_START_DATE"
 
-    val values = IndexedSeq(USE_CONFIGURED_OFFSET, USE_EVENT_START_DATE)
+    val values = js.Object.freeze(js.Array(USE_CONFIGURED_OFFSET, USE_EVENT_START_DATE))
   }
 
   /**
@@ -7902,7 +7913,7 @@ package medialive {
     val SYSTEMCLOCK = "SYSTEMCLOCK"
     val ZEROBASED   = "ZEROBASED"
 
-    val values = IndexedSeq(EMBEDDED, SYSTEMCLOCK, ZEROBASED)
+    val values = js.Object.freeze(js.Array(EMBEDDED, SYSTEMCLOCK, ZEROBASED))
   }
 
   /**
@@ -7930,7 +7941,7 @@ package medialive {
     val PASSTHROUGH    = "PASSTHROUGH"
     val USE_CONFIGURED = "USE_CONFIGURED"
 
-    val values = IndexedSeq(PASSTHROUGH, USE_CONFIGURED)
+    val values = js.Object.freeze(js.Array(PASSTHROUGH, USE_CONFIGURED))
   }
 
   /**
@@ -8012,7 +8023,7 @@ package medialive {
     val PRIV = "PRIV"
     val TDRL = "TDRL"
 
-    val values = IndexedSeq(NONE, PRIV, TDRL)
+    val values = js.Object.freeze(js.Array(NONE, PRIV, TDRL))
   }
 
   /**
@@ -8326,7 +8337,7 @@ package medialive {
     val PASSTHROUGH = "PASSTHROUGH"
     val RESPOND     = "RESPOND"
 
-    val values = IndexedSeq(NONE, PASSTHROUGH, RESPOND)
+    val values = js.Object.freeze(js.Array(NONE, PASSTHROUGH, RESPOND))
   }
 
   /**
@@ -8336,7 +8347,7 @@ package medialive {
     val DEFAULT           = "DEFAULT"
     val STRETCH_TO_OUTPUT = "STRETCH_TO_OUTPUT"
 
-    val values = IndexedSeq(DEFAULT, STRETCH_TO_OUTPUT)
+    val values = js.Object.freeze(js.Array(DEFAULT, STRETCH_TO_OUTPUT))
   }
 
   /**
@@ -8371,7 +8382,7 @@ package medialive {
     val REC_601 = "REC_601"
     val REC_709 = "REC_709"
 
-    val values = IndexedSeq(FOLLOW, REC_601, REC_709)
+    val values = js.Object.freeze(js.Array(FOLLOW, REC_601, REC_709))
   }
 
   /**
@@ -8381,7 +8392,7 @@ package medialive {
     val FALLBACK = "FALLBACK"
     val FORCE    = "FORCE"
 
-    val values = IndexedSeq(FALLBACK, FORCE)
+    val values = js.Object.freeze(js.Array(FALLBACK, FORCE))
   }
 
   /**

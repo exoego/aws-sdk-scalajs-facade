@@ -216,14 +216,14 @@ package acmpca {
     val GetCertificate   = "GetCertificate"
     val ListPermissions  = "ListPermissions"
 
-    val values = IndexedSeq(IssueCertificate, GetCertificate, ListPermissions)
+    val values = js.Object.freeze(js.Array(IssueCertificate, GetCertificate, ListPermissions))
   }
 
   object AuditReportResponseFormatEnum {
     val JSON = "JSON"
     val CSV  = "CSV"
 
-    val values = IndexedSeq(JSON, CSV)
+    val values = js.Object.freeze(js.Array(JSON, CSV))
   }
 
   object AuditReportStatusEnum {
@@ -231,7 +231,7 @@ package acmpca {
     val SUCCESS  = "SUCCESS"
     val FAILED   = "FAILED"
 
-    val values = IndexedSeq(CREATING, SUCCESS, FAILED)
+    val values = js.Object.freeze(js.Array(CREATING, SUCCESS, FAILED))
   }
 
   /**
@@ -322,14 +322,14 @@ package acmpca {
     val EXPIRED             = "EXPIRED"
     val FAILED              = "FAILED"
 
-    val values = IndexedSeq(CREATING, PENDING_CERTIFICATE, ACTIVE, DELETED, DISABLED, EXPIRED, FAILED)
+    val values = js.Object.freeze(js.Array(CREATING, PENDING_CERTIFICATE, ACTIVE, DELETED, DISABLED, EXPIRED, FAILED))
   }
 
   object CertificateAuthorityTypeEnum {
     val ROOT        = "ROOT"
     val SUBORDINATE = "SUBORDINATE"
 
-    val values = IndexedSeq(ROOT, SUBORDINATE)
+    val values = js.Object.freeze(js.Array(ROOT, SUBORDINATE))
   }
 
   @js.native
@@ -615,7 +615,7 @@ package acmpca {
     val UNSUPPORTED_ALGORITHM = "UNSUPPORTED_ALGORITHM"
     val OTHER                 = "OTHER"
 
-    val values = IndexedSeq(REQUEST_TIMED_OUT, UNSUPPORTED_ALGORITHM, OTHER)
+    val values = js.Object.freeze(js.Array(REQUEST_TIMED_OUT, UNSUPPORTED_ALGORITHM, OTHER))
   }
 
   @js.native
@@ -799,7 +799,7 @@ package acmpca {
     val EC_prime256v1 = "EC_prime256v1"
     val EC_secp384r1  = "EC_secp384r1"
 
-    val values = IndexedSeq(RSA_2048, RSA_4096, EC_prime256v1, EC_secp384r1)
+    val values = js.Object.freeze(js.Array(RSA_2048, RSA_4096, EC_prime256v1, EC_secp384r1))
   }
 
   @js.native
@@ -998,15 +998,17 @@ package acmpca {
     val PRIVILEGE_WITHDRAWN              = "PRIVILEGE_WITHDRAWN"
     val A_A_COMPROMISE                   = "A_A_COMPROMISE"
 
-    val values = IndexedSeq(
-      UNSPECIFIED,
-      KEY_COMPROMISE,
-      CERTIFICATE_AUTHORITY_COMPROMISE,
-      AFFILIATION_CHANGED,
-      SUPERSEDED,
-      CESSATION_OF_OPERATION,
-      PRIVILEGE_WITHDRAWN,
-      A_A_COMPROMISE
+    val values = js.Object.freeze(
+      js.Array(
+        UNSPECIFIED,
+        KEY_COMPROMISE,
+        CERTIFICATE_AUTHORITY_COMPROMISE,
+        AFFILIATION_CHANGED,
+        SUPERSEDED,
+        CESSATION_OF_OPERATION,
+        PRIVILEGE_WITHDRAWN,
+        A_A_COMPROMISE
+      )
     )
   }
 
@@ -1041,8 +1043,9 @@ package acmpca {
     val SHA384WITHRSA   = "SHA384WITHRSA"
     val SHA512WITHRSA   = "SHA512WITHRSA"
 
-    val values =
-      IndexedSeq(SHA256WITHECDSA, SHA384WITHECDSA, SHA512WITHECDSA, SHA256WITHRSA, SHA384WITHRSA, SHA512WITHRSA)
+    val values = js.Object.freeze(
+      js.Array(SHA256WITHECDSA, SHA384WITHECDSA, SHA512WITHECDSA, SHA256WITHRSA, SHA384WITHRSA, SHA512WITHRSA)
+    )
   }
 
   /**
@@ -1161,6 +1164,6 @@ package acmpca {
     val MONTHS   = "MONTHS"
     val YEARS    = "YEARS"
 
-    val values = IndexedSeq(END_DATE, ABSOLUTE, DAYS, MONTHS, YEARS)
+    val values = js.Object.freeze(js.Array(END_DATE, ABSOLUTE, DAYS, MONTHS, YEARS))
   }
 }

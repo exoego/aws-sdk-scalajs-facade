@@ -374,7 +374,7 @@ package lexmodelbuildingservice {
     val CREATED     = "CREATED"
     val FAILED      = "FAILED"
 
-    val values = IndexedSeq(IN_PROGRESS, CREATED, FAILED)
+    val values = js.Object.freeze(js.Array(IN_PROGRESS, CREATED, FAILED))
   }
 
   object ChannelTypeEnum {
@@ -383,7 +383,7 @@ package lexmodelbuildingservice {
     val `Twilio-Sms` = "Twilio-Sms"
     val Kik          = "Kik"
 
-    val values = IndexedSeq(Facebook, Slack, `Twilio-Sms`, Kik)
+    val values = js.Object.freeze(js.Array(Facebook, Slack, `Twilio-Sms`, Kik))
   }
 
   /**
@@ -414,7 +414,7 @@ package lexmodelbuildingservice {
     val SSML          = "SSML"
     val CustomPayload = "CustomPayload"
 
-    val values = IndexedSeq(PlainText, SSML, CustomPayload)
+    val values = js.Object.freeze(js.Array(PlainText, SSML, CustomPayload))
   }
 
   @js.native
@@ -833,14 +833,14 @@ package lexmodelbuildingservice {
     val READY       = "READY"
     val FAILED      = "FAILED"
 
-    val values = IndexedSeq(IN_PROGRESS, READY, FAILED)
+    val values = js.Object.freeze(js.Array(IN_PROGRESS, READY, FAILED))
   }
 
   object ExportTypeEnum {
     val ALEXA_SKILLS_KIT = "ALEXA_SKILLS_KIT"
     val LEX              = "LEX"
 
-    val values = IndexedSeq(ALEXA_SKILLS_KIT, LEX)
+    val values = js.Object.freeze(js.Array(ALEXA_SKILLS_KIT, LEX))
   }
 
   /**
@@ -896,7 +896,7 @@ package lexmodelbuildingservice {
     val ReturnIntent = "ReturnIntent"
     val CodeHook     = "CodeHook"
 
-    val values = IndexedSeq(ReturnIntent, CodeHook)
+    val values = js.Object.freeze(js.Array(ReturnIntent, CodeHook))
   }
 
   @js.native
@@ -1832,7 +1832,7 @@ package lexmodelbuildingservice {
     val COMPLETE    = "COMPLETE"
     val FAILED      = "FAILED"
 
-    val values = IndexedSeq(IN_PROGRESS, COMPLETE, FAILED)
+    val values = js.Object.freeze(js.Array(IN_PROGRESS, COMPLETE, FAILED))
   }
 
   /**
@@ -1893,14 +1893,14 @@ package lexmodelbuildingservice {
     val `en-GB` = "en-GB"
     val `de-DE` = "de-DE"
 
-    val values = IndexedSeq(`en-US`, `en-GB`, `de-DE`)
+    val values = js.Object.freeze(js.Array(`en-US`, `en-GB`, `de-DE`))
   }
 
   object MergeStrategyEnum {
     val OVERWRITE_LATEST = "OVERWRITE_LATEST"
     val FAIL_ON_CONFLICT = "FAIL_ON_CONFLICT"
 
-    val values = IndexedSeq(OVERWRITE_LATEST, FAIL_ON_CONFLICT)
+    val values = js.Object.freeze(js.Array(OVERWRITE_LATEST, FAIL_ON_CONFLICT))
   }
 
   /**
@@ -1933,7 +1933,7 @@ package lexmodelbuildingservice {
     val SAVE  = "SAVE"
     val BUILD = "BUILD"
 
-    val values = IndexedSeq(SAVE, BUILD)
+    val values = js.Object.freeze(js.Array(SAVE, BUILD))
   }
 
   /**
@@ -2323,7 +2323,7 @@ package lexmodelbuildingservice {
     val INTENT    = "INTENT"
     val SLOT_TYPE = "SLOT_TYPE"
 
-    val values = IndexedSeq(BOT, INTENT, SLOT_TYPE)
+    val values = js.Object.freeze(js.Array(BOT, INTENT, SLOT_TYPE))
   }
 
   /**
@@ -2374,7 +2374,7 @@ package lexmodelbuildingservice {
     val Required = "Required"
     val Optional = "Optional"
 
-    val values = IndexedSeq(Required, Optional)
+    val values = js.Object.freeze(js.Array(Required, Optional))
   }
 
   /**
@@ -2411,7 +2411,7 @@ package lexmodelbuildingservice {
     val ORIGINAL_VALUE = "ORIGINAL_VALUE"
     val TOP_RESOLUTION = "TOP_RESOLUTION"
 
-    val values = IndexedSeq(ORIGINAL_VALUE, TOP_RESOLUTION)
+    val values = js.Object.freeze(js.Array(ORIGINAL_VALUE, TOP_RESOLUTION))
   }
 
   @js.native
@@ -2497,14 +2497,14 @@ package lexmodelbuildingservice {
     val FAILED              = "FAILED"
     val NOT_BUILT           = "NOT_BUILT"
 
-    val values = IndexedSeq(BUILDING, READY, READY_BASIC_TESTING, FAILED, NOT_BUILT)
+    val values = js.Object.freeze(js.Array(BUILDING, READY, READY_BASIC_TESTING, FAILED, NOT_BUILT))
   }
 
   object StatusTypeEnum {
     val Detected = "Detected"
     val Missed   = "Missed"
 
-    val values = IndexedSeq(Detected, Missed)
+    val values = js.Object.freeze(js.Array(Detected, Missed))
   }
 
   /**

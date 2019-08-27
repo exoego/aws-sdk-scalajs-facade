@@ -660,14 +660,14 @@ package configservice {
     val SUCCEEDED = "SUCCEEDED"
     val OUTDATED  = "OUTDATED"
 
-    val values = IndexedSeq(FAILED, SUCCEEDED, OUTDATED)
+    val values = js.Object.freeze(js.Array(FAILED, SUCCEEDED, OUTDATED))
   }
 
   object AggregatedSourceTypeEnum {
     val ACCOUNT      = "ACCOUNT"
     val ORGANIZATION = "ORGANIZATION"
 
-    val values = IndexedSeq(ACCOUNT, ORGANIZATION)
+    val values = js.Object.freeze(js.Array(ACCOUNT, ORGANIZATION))
   }
 
   /**
@@ -835,7 +835,7 @@ package configservice {
     val Reverse = "Reverse"
     val Forward = "Forward"
 
-    val values = IndexedSeq(Reverse, Forward)
+    val values = js.Object.freeze(js.Array(Reverse, Forward))
   }
 
   /**
@@ -976,7 +976,7 @@ package configservice {
     val NOT_APPLICABLE    = "NOT_APPLICABLE"
     val INSUFFICIENT_DATA = "INSUFFICIENT_DATA"
 
-    val values = IndexedSeq(COMPLIANT, NON_COMPLIANT, NOT_APPLICABLE, INSUFFICIENT_DATA)
+    val values = js.Object.freeze(js.Array(COMPLIANT, NON_COMPLIANT, NOT_APPLICABLE, INSUFFICIENT_DATA))
   }
 
   /**
@@ -1114,7 +1114,7 @@ package configservice {
     val ACCOUNT_ID = "ACCOUNT_ID"
     val AWS_REGION = "AWS_REGION"
 
-    val values = IndexedSeq(ACCOUNT_ID, AWS_REGION)
+    val values = js.Object.freeze(js.Array(ACCOUNT_ID, AWS_REGION))
   }
 
   /**
@@ -1176,7 +1176,7 @@ package configservice {
     val DELETING_RESULTS = "DELETING_RESULTS"
     val EVALUATING       = "EVALUATING"
 
-    val values = IndexedSeq(ACTIVE, DELETING, DELETING_RESULTS, EVALUATING)
+    val values = js.Object.freeze(js.Array(ACTIVE, DELETING, DELETING_RESULTS, EVALUATING))
   }
 
   /**
@@ -1347,7 +1347,9 @@ package configservice {
     val ResourceDeleted            = "ResourceDeleted"
     val ResourceDeletedNotRecorded = "ResourceDeletedNotRecorded"
 
-    val values = IndexedSeq(OK, ResourceDiscovered, ResourceNotRecorded, ResourceDeleted, ResourceDeletedNotRecorded)
+    val values = js.Object.freeze(
+      js.Array(OK, ResourceDiscovered, ResourceNotRecorded, ResourceDeleted, ResourceDeletedNotRecorded)
+    )
   }
 
   /**
@@ -1734,7 +1736,7 @@ package configservice {
     val Failure        = "Failure"
     val Not_Applicable = "Not_Applicable"
 
-    val values = IndexedSeq(Success, Failure, Not_Applicable)
+    val values = js.Object.freeze(js.Array(Success, Failure, Not_Applicable))
   }
 
   @js.native
@@ -2576,7 +2578,7 @@ package configservice {
   object EventSourceEnum {
     val `aws.config` = "aws.config"
 
-    val values = IndexedSeq(`aws.config`)
+    val values = js.Object.freeze(js.Array(`aws.config`))
   }
 
   /**
@@ -3288,7 +3290,7 @@ package configservice {
     val Twelve_Hours     = "Twelve_Hours"
     val TwentyFour_Hours = "TwentyFour_Hours"
 
-    val values = IndexedSeq(One_Hour, Three_Hours, Six_Hours, Twelve_Hours, TwentyFour_Hours)
+    val values = js.Object.freeze(js.Array(One_Hour, Three_Hours, Six_Hours, Twelve_Hours, TwentyFour_Hours))
   }
 
   object MemberAccountRuleStatusEnum {
@@ -3302,16 +3304,18 @@ package configservice {
     val DELETE_FAILED      = "DELETE_FAILED"
     val DELETE_IN_PROGRESS = "DELETE_IN_PROGRESS"
 
-    val values = IndexedSeq(
-      CREATE_SUCCESSFUL,
-      CREATE_IN_PROGRESS,
-      CREATE_FAILED,
-      UPDATE_SUCCESSFUL,
-      UPDATE_FAILED,
-      UPDATE_IN_PROGRESS,
-      DELETE_SUCCESSFUL,
-      DELETE_FAILED,
-      DELETE_IN_PROGRESS
+    val values = js.Object.freeze(
+      js.Array(
+        CREATE_SUCCESSFUL,
+        CREATE_IN_PROGRESS,
+        CREATE_FAILED,
+        UPDATE_SUCCESSFUL,
+        UPDATE_FAILED,
+        UPDATE_IN_PROGRESS,
+        DELETE_SUCCESSFUL,
+        DELETE_FAILED,
+        DELETE_IN_PROGRESS
+      )
     )
   }
 
@@ -3353,11 +3357,13 @@ package configservice {
     val ScheduledNotification                        = "ScheduledNotification"
     val OversizedConfigurationItemChangeNotification = "OversizedConfigurationItemChangeNotification"
 
-    val values = IndexedSeq(
-      ConfigurationItemChangeNotification,
-      ConfigurationSnapshotDeliveryCompleted,
-      ScheduledNotification,
-      OversizedConfigurationItemChangeNotification
+    val values = js.Object.freeze(
+      js.Array(
+        ConfigurationItemChangeNotification,
+        ConfigurationSnapshotDeliveryCompleted,
+        ScheduledNotification,
+        OversizedConfigurationItemChangeNotification
+      )
     )
   }
 
@@ -3457,10 +3463,8 @@ package configservice {
     val OversizedConfigurationItemChangeNotification = "OversizedConfigurationItemChangeNotification"
     val ScheduledNotification                        = "ScheduledNotification"
 
-    val values = IndexedSeq(
-      ConfigurationItemChangeNotification,
-      OversizedConfigurationItemChangeNotification,
-      ScheduledNotification
+    val values = js.Object.freeze(
+      js.Array(ConfigurationItemChangeNotification, OversizedConfigurationItemChangeNotification, ScheduledNotification)
     )
   }
 
@@ -3554,16 +3558,18 @@ package configservice {
     val DELETE_FAILED      = "DELETE_FAILED"
     val DELETE_IN_PROGRESS = "DELETE_IN_PROGRESS"
 
-    val values = IndexedSeq(
-      CREATE_SUCCESSFUL,
-      CREATE_IN_PROGRESS,
-      CREATE_FAILED,
-      UPDATE_SUCCESSFUL,
-      UPDATE_FAILED,
-      UPDATE_IN_PROGRESS,
-      DELETE_SUCCESSFUL,
-      DELETE_FAILED,
-      DELETE_IN_PROGRESS
+    val values = js.Object.freeze(
+      js.Array(
+        CREATE_SUCCESSFUL,
+        CREATE_IN_PROGRESS,
+        CREATE_FAILED,
+        UPDATE_SUCCESSFUL,
+        UPDATE_FAILED,
+        UPDATE_IN_PROGRESS,
+        DELETE_SUCCESSFUL,
+        DELETE_FAILED,
+        DELETE_IN_PROGRESS
+      )
     )
   }
 
@@ -3571,7 +3577,7 @@ package configservice {
     val CUSTOM_LAMBDA = "CUSTOM_LAMBDA"
     val AWS           = "AWS"
 
-    val values = IndexedSeq(CUSTOM_LAMBDA, AWS)
+    val values = js.Object.freeze(js.Array(CUSTOM_LAMBDA, AWS))
   }
 
   /**
@@ -3912,7 +3918,7 @@ package configservice {
     val Success = "Success"
     val Failure = "Failure"
 
-    val values = IndexedSeq(Pending, Success, Failure)
+    val values = js.Object.freeze(js.Array(Pending, Success, Failure))
   }
 
   /**
@@ -4014,7 +4020,7 @@ package configservice {
     val SUCCEEDED   = "SUCCEEDED"
     val FAILED      = "FAILED"
 
-    val values = IndexedSeq(QUEUED, IN_PROGRESS, SUCCEEDED, FAILED)
+    val values = js.Object.freeze(js.Array(QUEUED, IN_PROGRESS, SUCCEEDED, FAILED))
   }
 
   /**
@@ -4082,7 +4088,7 @@ package configservice {
     val PENDING   = "PENDING"
     val FAILED    = "FAILED"
 
-    val values = IndexedSeq(SUCCEEDED, PENDING, FAILED)
+    val values = js.Object.freeze(js.Array(SUCCEEDED, PENDING, FAILED))
   }
 
   /**
@@ -4109,7 +4115,7 @@ package configservice {
   object RemediationTargetTypeEnum {
     val SSM_DOCUMENT = "SSM_DOCUMENT"
 
-    val values = IndexedSeq(SSM_DOCUMENT)
+    val values = js.Object.freeze(js.Array(SSM_DOCUMENT))
   }
 
   /**
@@ -4162,7 +4168,7 @@ package configservice {
     val ACCOUNT_ID    = "ACCOUNT_ID"
     val AWS_REGION    = "AWS_REGION"
 
-    val values = IndexedSeq(RESOURCE_TYPE, ACCOUNT_ID, AWS_REGION)
+    val values = js.Object.freeze(js.Array(RESOURCE_TYPE, ACCOUNT_ID, AWS_REGION))
   }
 
   /**
@@ -4308,71 +4314,73 @@ package configservice {
     val `AWS::Config::ResourceCompliance`           = "AWS::Config::ResourceCompliance"
     val `AWS::CodePipeline::Pipeline`               = "AWS::CodePipeline::Pipeline"
 
-    val values = IndexedSeq(
-      `AWS::EC2::CustomerGateway`,
-      `AWS::EC2::EIP`,
-      `AWS::EC2::Host`,
-      `AWS::EC2::Instance`,
-      `AWS::EC2::InternetGateway`,
-      `AWS::EC2::NetworkAcl`,
-      `AWS::EC2::NetworkInterface`,
-      `AWS::EC2::RouteTable`,
-      `AWS::EC2::SecurityGroup`,
-      `AWS::EC2::Subnet`,
-      `AWS::CloudTrail::Trail`,
-      `AWS::EC2::Volume`,
-      `AWS::EC2::VPC`,
-      `AWS::EC2::VPNConnection`,
-      `AWS::EC2::VPNGateway`,
-      `AWS::IAM::Group`,
-      `AWS::IAM::Policy`,
-      `AWS::IAM::Role`,
-      `AWS::IAM::User`,
-      `AWS::ACM::Certificate`,
-      `AWS::RDS::DBInstance`,
-      `AWS::RDS::DBSubnetGroup`,
-      `AWS::RDS::DBSecurityGroup`,
-      `AWS::RDS::DBSnapshot`,
-      `AWS::RDS::EventSubscription`,
-      `AWS::ElasticLoadBalancingV2::LoadBalancer`,
-      `AWS::S3::Bucket`,
-      `AWS::SSM::ManagedInstanceInventory`,
-      `AWS::Redshift::Cluster`,
-      `AWS::Redshift::ClusterSnapshot`,
-      `AWS::Redshift::ClusterParameterGroup`,
-      `AWS::Redshift::ClusterSecurityGroup`,
-      `AWS::Redshift::ClusterSubnetGroup`,
-      `AWS::Redshift::EventSubscription`,
-      `AWS::CloudWatch::Alarm`,
-      `AWS::CloudFormation::Stack`,
-      `AWS::DynamoDB::Table`,
-      `AWS::AutoScaling::AutoScalingGroup`,
-      `AWS::AutoScaling::LaunchConfiguration`,
-      `AWS::AutoScaling::ScalingPolicy`,
-      `AWS::AutoScaling::ScheduledAction`,
-      `AWS::CodeBuild::Project`,
-      `AWS::WAF::RateBasedRule`,
-      `AWS::WAF::Rule`,
-      `AWS::WAF::WebACL`,
-      `AWS::WAFRegional::RateBasedRule`,
-      `AWS::WAFRegional::Rule`,
-      `AWS::WAFRegional::WebACL`,
-      `AWS::CloudFront::Distribution`,
-      `AWS::CloudFront::StreamingDistribution`,
-      `AWS::WAF::RuleGroup`,
-      `AWS::WAFRegional::RuleGroup`,
-      `AWS::Lambda::Function`,
-      `AWS::ElasticBeanstalk::Application`,
-      `AWS::ElasticBeanstalk::ApplicationVersion`,
-      `AWS::ElasticBeanstalk::Environment`,
-      `AWS::ElasticLoadBalancing::LoadBalancer`,
-      `AWS::XRay::EncryptionConfig`,
-      `AWS::SSM::AssociationCompliance`,
-      `AWS::SSM::PatchCompliance`,
-      `AWS::Shield::Protection`,
-      `AWS::ShieldRegional::Protection`,
-      `AWS::Config::ResourceCompliance`,
-      `AWS::CodePipeline::Pipeline`
+    val values = js.Object.freeze(
+      js.Array(
+        `AWS::EC2::CustomerGateway`,
+        `AWS::EC2::EIP`,
+        `AWS::EC2::Host`,
+        `AWS::EC2::Instance`,
+        `AWS::EC2::InternetGateway`,
+        `AWS::EC2::NetworkAcl`,
+        `AWS::EC2::NetworkInterface`,
+        `AWS::EC2::RouteTable`,
+        `AWS::EC2::SecurityGroup`,
+        `AWS::EC2::Subnet`,
+        `AWS::CloudTrail::Trail`,
+        `AWS::EC2::Volume`,
+        `AWS::EC2::VPC`,
+        `AWS::EC2::VPNConnection`,
+        `AWS::EC2::VPNGateway`,
+        `AWS::IAM::Group`,
+        `AWS::IAM::Policy`,
+        `AWS::IAM::Role`,
+        `AWS::IAM::User`,
+        `AWS::ACM::Certificate`,
+        `AWS::RDS::DBInstance`,
+        `AWS::RDS::DBSubnetGroup`,
+        `AWS::RDS::DBSecurityGroup`,
+        `AWS::RDS::DBSnapshot`,
+        `AWS::RDS::EventSubscription`,
+        `AWS::ElasticLoadBalancingV2::LoadBalancer`,
+        `AWS::S3::Bucket`,
+        `AWS::SSM::ManagedInstanceInventory`,
+        `AWS::Redshift::Cluster`,
+        `AWS::Redshift::ClusterSnapshot`,
+        `AWS::Redshift::ClusterParameterGroup`,
+        `AWS::Redshift::ClusterSecurityGroup`,
+        `AWS::Redshift::ClusterSubnetGroup`,
+        `AWS::Redshift::EventSubscription`,
+        `AWS::CloudWatch::Alarm`,
+        `AWS::CloudFormation::Stack`,
+        `AWS::DynamoDB::Table`,
+        `AWS::AutoScaling::AutoScalingGroup`,
+        `AWS::AutoScaling::LaunchConfiguration`,
+        `AWS::AutoScaling::ScalingPolicy`,
+        `AWS::AutoScaling::ScheduledAction`,
+        `AWS::CodeBuild::Project`,
+        `AWS::WAF::RateBasedRule`,
+        `AWS::WAF::Rule`,
+        `AWS::WAF::WebACL`,
+        `AWS::WAFRegional::RateBasedRule`,
+        `AWS::WAFRegional::Rule`,
+        `AWS::WAFRegional::WebACL`,
+        `AWS::CloudFront::Distribution`,
+        `AWS::CloudFront::StreamingDistribution`,
+        `AWS::WAF::RuleGroup`,
+        `AWS::WAFRegional::RuleGroup`,
+        `AWS::Lambda::Function`,
+        `AWS::ElasticBeanstalk::Application`,
+        `AWS::ElasticBeanstalk::ApplicationVersion`,
+        `AWS::ElasticBeanstalk::Environment`,
+        `AWS::ElasticLoadBalancing::LoadBalancer`,
+        `AWS::XRay::EncryptionConfig`,
+        `AWS::SSM::AssociationCompliance`,
+        `AWS::SSM::PatchCompliance`,
+        `AWS::Shield::Protection`,
+        `AWS::ShieldRegional::Protection`,
+        `AWS::Config::ResourceCompliance`,
+        `AWS::CodePipeline::Pipeline`
+      )
     )
   }
 
@@ -4397,7 +4405,7 @@ package configservice {
   object ResourceValueTypeEnum {
     val RESOURCE_ID = "RESOURCE_ID"
 
-    val values = IndexedSeq(RESOURCE_ID)
+    val values = js.Object.freeze(js.Array(RESOURCE_ID))
   }
 
   /**

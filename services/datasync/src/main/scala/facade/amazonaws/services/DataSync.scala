@@ -190,14 +190,14 @@ package datasync {
     val ONLINE  = "ONLINE"
     val OFFLINE = "OFFLINE"
 
-    val values = IndexedSeq(ONLINE, OFFLINE)
+    val values = js.Object.freeze(js.Array(ONLINE, OFFLINE))
   }
 
   object AtimeEnum {
     val NONE        = "NONE"
     val BEST_EFFORT = "BEST_EFFORT"
 
-    val values = IndexedSeq(NONE, BEST_EFFORT)
+    val values = js.Object.freeze(js.Array(NONE, BEST_EFFORT))
   }
 
   @js.native
@@ -995,7 +995,7 @@ package datasync {
     val PUBLIC       = "PUBLIC"
     val PRIVATE_LINK = "PRIVATE_LINK"
 
-    val values = IndexedSeq(PUBLIC, PRIVATE_LINK)
+    val values = js.Object.freeze(js.Array(PUBLIC, PRIVATE_LINK))
   }
 
   /**
@@ -1022,7 +1022,7 @@ package datasync {
   object FilterTypeEnum {
     val SIMPLE_PATTERN = "SIMPLE_PATTERN"
 
-    val values = IndexedSeq(SIMPLE_PATTERN)
+    val values = js.Object.freeze(js.Array(SIMPLE_PATTERN))
   }
 
   object GidEnum {
@@ -1031,7 +1031,7 @@ package datasync {
     val NAME      = "NAME"
     val BOTH      = "BOTH"
 
-    val values = IndexedSeq(NONE, INT_VALUE, NAME, BOTH)
+    val values = js.Object.freeze(js.Array(NONE, INT_VALUE, NAME, BOTH))
   }
 
   @js.native
@@ -1250,7 +1250,7 @@ package datasync {
     val NONE     = "NONE"
     val PRESERVE = "PRESERVE"
 
-    val values = IndexedSeq(NONE, PRESERVE)
+    val values = js.Object.freeze(js.Array(NONE, PRESERVE))
   }
 
   /**
@@ -1277,7 +1277,7 @@ package datasync {
     val NFS4_0    = "NFS4_0"
     val NFS4_1    = "NFS4_1"
 
-    val values = IndexedSeq(AUTOMATIC, NFS3, NFS4_0, NFS4_1)
+    val values = js.Object.freeze(js.Array(AUTOMATIC, NFS3, NFS4_0, NFS4_1))
   }
 
   /**
@@ -1348,7 +1348,7 @@ package datasync {
     val SUCCESS = "SUCCESS"
     val ERROR   = "ERROR"
 
-    val values = IndexedSeq(PENDING, SUCCESS, ERROR)
+    val values = js.Object.freeze(js.Array(PENDING, SUCCESS, ERROR))
   }
 
   object PosixPermissionsEnum {
@@ -1356,21 +1356,21 @@ package datasync {
     val BEST_EFFORT = "BEST_EFFORT"
     val PRESERVE    = "PRESERVE"
 
-    val values = IndexedSeq(NONE, BEST_EFFORT, PRESERVE)
+    val values = js.Object.freeze(js.Array(NONE, BEST_EFFORT, PRESERVE))
   }
 
   object PreserveDeletedFilesEnum {
     val PRESERVE = "PRESERVE"
     val REMOVE   = "REMOVE"
 
-    val values = IndexedSeq(PRESERVE, REMOVE)
+    val values = js.Object.freeze(js.Array(PRESERVE, REMOVE))
   }
 
   object PreserveDevicesEnum {
     val NONE     = "NONE"
     val PRESERVE = "PRESERVE"
 
-    val values = IndexedSeq(NONE, PRESERVE)
+    val values = js.Object.freeze(js.Array(NONE, PRESERVE))
   }
 
   /**
@@ -1444,7 +1444,7 @@ package datasync {
     val SMB2      = "SMB2"
     val SMB3      = "SMB3"
 
-    val values = IndexedSeq(AUTOMATIC, SMB2, SMB3)
+    val values = js.Object.freeze(js.Array(AUTOMATIC, SMB2, SMB3))
   }
 
   @js.native
@@ -1608,7 +1608,7 @@ package datasync {
     val SUCCESS      = "SUCCESS"
     val ERROR        = "ERROR"
 
-    val values = IndexedSeq(LAUNCHING, PREPARING, TRANSFERRING, VERIFYING, SUCCESS, ERROR)
+    val values = js.Object.freeze(js.Array(LAUNCHING, PREPARING, TRANSFERRING, VERIFYING, SUCCESS, ERROR))
   }
 
   /**
@@ -1641,7 +1641,7 @@ package datasync {
     val RUNNING     = "RUNNING"
     val UNAVAILABLE = "UNAVAILABLE"
 
-    val values = IndexedSeq(AVAILABLE, CREATING, RUNNING, UNAVAILABLE)
+    val values = js.Object.freeze(js.Array(AVAILABLE, CREATING, RUNNING, UNAVAILABLE))
   }
 
   object UidEnum {
@@ -1650,7 +1650,7 @@ package datasync {
     val NAME      = "NAME"
     val BOTH      = "BOTH"
 
-    val values = IndexedSeq(NONE, INT_VALUE, NAME, BOTH)
+    val values = js.Object.freeze(js.Array(NONE, INT_VALUE, NAME, BOTH))
   }
 
   @js.native
@@ -1765,6 +1765,6 @@ package datasync {
     val POINT_IN_TIME_CONSISTENT = "POINT_IN_TIME_CONSISTENT"
     val NONE                     = "NONE"
 
-    val values = IndexedSeq(POINT_IN_TIME_CONSISTENT, NONE)
+    val values = js.Object.freeze(js.Array(POINT_IN_TIME_CONSISTENT, NONE))
   }
 }

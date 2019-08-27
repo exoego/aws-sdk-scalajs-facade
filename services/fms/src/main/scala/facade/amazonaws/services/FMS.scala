@@ -105,7 +105,7 @@ package fms {
     val DELETING         = "DELETING"
     val DELETED          = "DELETED"
 
-    val values = IndexedSeq(READY, CREATING, PENDING_DELETION, DELETING, DELETED)
+    val values = js.Object.freeze(js.Array(READY, CREATING, PENDING_DELETION, DELETING, DELETED))
   }
 
   @js.native
@@ -152,7 +152,7 @@ package fms {
   object CustomerPolicyScopeIdTypeEnum {
     val ACCOUNT = "ACCOUNT"
 
-    val values = IndexedSeq(ACCOUNT)
+    val values = js.Object.freeze(js.Array(ACCOUNT))
   }
 
   @js.native
@@ -192,7 +192,7 @@ package fms {
     val AWSWAF             = "AWSWAF"
     val AWSSHIELD_ADVANCED = "AWSSHIELD_ADVANCED"
 
-    val values = IndexedSeq(AWSCONFIG, AWSWAF, AWSSHIELD_ADVANCED)
+    val values = js.Object.freeze(js.Array(AWSCONFIG, AWSWAF, AWSSHIELD_ADVANCED))
   }
 
   @js.native
@@ -656,7 +656,7 @@ package fms {
     val COMPLIANT     = "COMPLIANT"
     val NON_COMPLIANT = "NON_COMPLIANT"
 
-    val values = IndexedSeq(COMPLIANT, NON_COMPLIANT)
+    val values = js.Object.freeze(js.Array(COMPLIANT, NON_COMPLIANT))
   }
 
   /**
@@ -797,7 +797,7 @@ package fms {
     val WAF             = "WAF"
     val SHIELD_ADVANCED = "SHIELD_ADVANCED"
 
-    val values = IndexedSeq(WAF, SHIELD_ADVANCED)
+    val values = js.Object.freeze(js.Array(WAF, SHIELD_ADVANCED))
   }
 
   object ViolationReasonEnum {
@@ -806,11 +806,13 @@ package fms {
     val RESOURCE_INCORRECT_WEB_ACL         = "RESOURCE_INCORRECT_WEB_ACL"
     val RESOURCE_MISSING_SHIELD_PROTECTION = "RESOURCE_MISSING_SHIELD_PROTECTION"
 
-    val values = IndexedSeq(
-      WEB_ACL_MISSING_RULE_GROUP,
-      RESOURCE_MISSING_WEB_ACL,
-      RESOURCE_INCORRECT_WEB_ACL,
-      RESOURCE_MISSING_SHIELD_PROTECTION
+    val values = js.Object.freeze(
+      js.Array(
+        WEB_ACL_MISSING_RULE_GROUP,
+        RESOURCE_MISSING_WEB_ACL,
+        RESOURCE_INCORRECT_WEB_ACL,
+        RESOURCE_MISSING_SHIELD_PROTECTION
+      )
     )
   }
 }

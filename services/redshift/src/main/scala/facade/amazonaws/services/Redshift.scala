@@ -4324,7 +4324,7 @@ package redshift {
     val static  = "static"
     val dynamic = "dynamic"
 
-    val values = IndexedSeq(static, dynamic)
+    val values = js.Object.freeze(js.Array(static, dynamic))
   }
 
   /**
@@ -4571,7 +4571,7 @@ package redshift {
     val Regular    = "Regular"
     val Upgradable = "Upgradable"
 
-    val values = IndexedSeq(Regular, Upgradable)
+    val values = js.Object.freeze(js.Array(Regular, Upgradable))
   }
 
   /**
@@ -5129,7 +5129,7 @@ package redshift {
     val ACTIVE    = "ACTIVE"
     val FAILED    = "FAILED"
 
-    val values = IndexedSeq(MODIFYING, ACTIVE, FAILED)
+    val values = js.Object.freeze(js.Array(MODIFYING, ACTIVE, FAILED))
   }
 
   /**
@@ -5259,7 +5259,7 @@ package redshift {
     val TOTAL_SIZE  = "TOTAL_SIZE"
     val CREATE_TIME = "CREATE_TIME"
 
-    val values = IndexedSeq(SOURCE_TYPE, TOTAL_SIZE, CREATE_TIME)
+    val values = js.Object.freeze(js.Array(SOURCE_TYPE, TOTAL_SIZE, CREATE_TIME))
   }
 
   /**
@@ -5419,7 +5419,7 @@ package redshift {
     val ASC  = "ASC"
     val DESC = "DESC"
 
-    val values = IndexedSeq(ASC, DESC)
+    val values = js.Object.freeze(js.Array(ASC, DESC))
   }
 
   object SourceTypeEnum {
@@ -5428,7 +5428,8 @@ package redshift {
     val `cluster-security-group`  = "cluster-security-group"
     val `cluster-snapshot`        = "cluster-snapshot"
 
-    val values = IndexedSeq(cluster, `cluster-parameter-group`, `cluster-security-group`, `cluster-snapshot`)
+    val values =
+      js.Object.freeze(js.Array(cluster, `cluster-parameter-group`, `cluster-security-group`, `cluster-snapshot`))
   }
 
   /**
@@ -5576,7 +5577,7 @@ package redshift {
     val FAILED      = "FAILED"
     val CANCELED    = "CANCELED"
 
-    val values = IndexedSeq(PENDING, IN_PROGRESS, SUCCEEDED, FAILED, CANCELED)
+    val values = js.Object.freeze(js.Array(PENDING, IN_PROGRESS, SUCCEEDED, FAILED, CANCELED))
   }
 
   /**

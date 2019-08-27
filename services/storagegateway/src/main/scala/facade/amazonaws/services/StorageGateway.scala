@@ -2570,7 +2570,7 @@ package storagegateway {
     val NFS = "NFS"
     val SMB = "SMB"
 
-    val values = IndexedSeq(NFS, SMB)
+    val values = js.Object.freeze(js.Array(NFS, SMB))
   }
 
   /**
@@ -3163,14 +3163,16 @@ package storagegateway {
     val `bucket-owner-full-control` = "bucket-owner-full-control"
     val `aws-exec-read`             = "aws-exec-read"
 
-    val values = IndexedSeq(
-      `private`,
-      `public-read`,
-      `public-read-write`,
-      `authenticated-read`,
-      `bucket-owner-read`,
-      `bucket-owner-full-control`,
-      `aws-exec-read`
+    val values = js.Object.freeze(
+      js.Array(
+        `private`,
+        `public-read`,
+        `public-read-write`,
+        `authenticated-read`,
+        `bucket-owner-read`,
+        `bucket-owner-full-control`,
+        `aws-exec-read`
+      )
     )
   }
 
@@ -3432,7 +3434,7 @@ package storagegateway {
     val MandatorySigning    = "MandatorySigning"
     val MandatoryEncryption = "MandatoryEncryption"
 
-    val values = IndexedSeq(ClientSpecified, MandatorySigning, MandatoryEncryption)
+    val values = js.Object.freeze(js.Array(ClientSpecified, MandatorySigning, MandatoryEncryption))
   }
 
   @js.native

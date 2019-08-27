@@ -377,7 +377,7 @@ package directconnect {
     val ipv4 = "ipv4"
     val ipv6 = "ipv6"
 
-    val values = IndexedSeq(ipv4, ipv6)
+    val values = js.Object.freeze(js.Array(ipv4, ipv6))
   }
 
   @js.native
@@ -661,7 +661,7 @@ package directconnect {
     val deleting  = "deleting"
     val deleted   = "deleted"
 
-    val values = IndexedSeq(verifying, pending, available, deleting, deleted)
+    val values = js.Object.freeze(js.Array(verifying, pending, available, deleting, deleted))
   }
 
   object BGPStatusEnum {
@@ -669,7 +669,7 @@ package directconnect {
     val down    = "down"
     val unknown = "unknown"
 
-    val values = IndexedSeq(up, down, unknown)
+    val values = js.Object.freeze(js.Array(up, down, unknown))
   }
 
   @js.native
@@ -883,7 +883,8 @@ package directconnect {
     val rejected  = "rejected"
     val unknown   = "unknown"
 
-    val values = IndexedSeq(ordering, requested, pending, available, down, deleting, deleted, rejected, unknown)
+    val values =
+      js.Object.freeze(js.Array(ordering, requested, pending, available, down, deleting, deleted, rejected, unknown))
   }
 
   @js.native
@@ -2010,7 +2011,7 @@ package directconnect {
     val accepted  = "accepted"
     val deleted   = "deleted"
 
-    val values = IndexedSeq(requested, accepted, deleted)
+    val values = js.Object.freeze(js.Array(requested, accepted, deleted))
   }
 
   object DirectConnectGatewayAssociationStateEnum {
@@ -2020,7 +2021,7 @@ package directconnect {
     val disassociated  = "disassociated"
     val updating       = "updating"
 
-    val values = IndexedSeq(associating, associated, disassociating, disassociated, updating)
+    val values = js.Object.freeze(js.Array(associating, associated, disassociating, disassociated, updating))
   }
 
   /**
@@ -2067,14 +2068,14 @@ package directconnect {
     val detaching = "detaching"
     val detached  = "detached"
 
-    val values = IndexedSeq(attaching, attached, detaching, detached)
+    val values = js.Object.freeze(js.Array(attaching, attached, detaching, detached))
   }
 
   object DirectConnectGatewayAttachmentTypeEnum {
     val TransitVirtualInterface = "TransitVirtualInterface"
     val PrivateVirtualInterface = "PrivateVirtualInterface"
 
-    val values = IndexedSeq(TransitVirtualInterface, PrivateVirtualInterface)
+    val values = js.Object.freeze(js.Array(TransitVirtualInterface, PrivateVirtualInterface))
   }
 
   object DirectConnectGatewayStateEnum {
@@ -2083,7 +2084,7 @@ package directconnect {
     val deleting  = "deleting"
     val deleted   = "deleted"
 
-    val values = IndexedSeq(pending, available, deleting, deleted)
+    val values = js.Object.freeze(js.Array(pending, available, deleting, deleted))
   }
 
   @js.native
@@ -2110,7 +2111,7 @@ package directconnect {
     val virtualPrivateGateway = "virtualPrivateGateway"
     val transitGateway        = "transitGateway"
 
-    val values = IndexedSeq(virtualPrivateGateway, transitGateway)
+    val values = js.Object.freeze(js.Array(virtualPrivateGateway, transitGateway))
   }
 
   object HasLogicalRedundancyEnum {
@@ -2118,7 +2119,7 @@ package directconnect {
     val yes     = "yes"
     val no      = "no"
 
-    val values = IndexedSeq(unknown, yes, no)
+    val values = js.Object.freeze(js.Array(unknown, yes, no))
   }
 
   /**
@@ -2184,7 +2185,7 @@ package directconnect {
     val deleted   = "deleted"
     val unknown   = "unknown"
 
-    val values = IndexedSeq(requested, pending, available, down, deleting, deleted, unknown)
+    val values = js.Object.freeze(js.Array(requested, pending, available, down, deleting, deleted, unknown))
   }
 
   @js.native
@@ -2274,7 +2275,7 @@ package directconnect {
     val deleted   = "deleted"
     val unknown   = "unknown"
 
-    val values = IndexedSeq(requested, pending, available, down, deleting, deleted, unknown)
+    val values = js.Object.freeze(js.Array(requested, pending, available, down, deleting, deleted, unknown))
   }
 
   @js.native
@@ -2316,7 +2317,7 @@ package directconnect {
   object LoaContentTypeEnum {
     val `application/pdf` = "application/pdf"
 
-    val values = IndexedSeq(`application/pdf`)
+    val values = js.Object.freeze(js.Array(`application/pdf`))
   }
 
   /**
@@ -3005,7 +3006,8 @@ package directconnect {
     val rejected   = "rejected"
     val unknown    = "unknown"
 
-    val values = IndexedSeq(confirming, verifying, pending, available, down, deleting, deleted, rejected, unknown)
+    val values =
+      js.Object.freeze(js.Array(confirming, verifying, pending, available, down, deleting, deleted, rejected, unknown))
   }
 
   @js.native

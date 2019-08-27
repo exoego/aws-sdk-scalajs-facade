@@ -762,7 +762,7 @@ package ram {
     val SELF             = "SELF"
     val `OTHER-ACCOUNTS` = "OTHER-ACCOUNTS"
 
-    val values = IndexedSeq(SELF, `OTHER-ACCOUNTS`)
+    val values = js.Object.freeze(js.Array(SELF, `OTHER-ACCOUNTS`))
   }
 
   /**
@@ -853,14 +853,14 @@ package ram {
     val DISASSOCIATING = "DISASSOCIATING"
     val DISASSOCIATED  = "DISASSOCIATED"
 
-    val values = IndexedSeq(ASSOCIATING, ASSOCIATED, FAILED, DISASSOCIATING, DISASSOCIATED)
+    val values = js.Object.freeze(js.Array(ASSOCIATING, ASSOCIATED, FAILED, DISASSOCIATING, DISASSOCIATED))
   }
 
   object ResourceShareAssociationTypeEnum {
     val PRINCIPAL = "PRINCIPAL"
     val RESOURCE  = "RESOURCE"
 
-    val values = IndexedSeq(PRINCIPAL, RESOURCE)
+    val values = js.Object.freeze(js.Array(PRINCIPAL, RESOURCE))
   }
 
   /**
@@ -908,7 +908,7 @@ package ram {
     val REJECTED = "REJECTED"
     val EXPIRED  = "EXPIRED"
 
-    val values = IndexedSeq(PENDING, ACCEPTED, REJECTED, EXPIRED)
+    val values = js.Object.freeze(js.Array(PENDING, ACCEPTED, REJECTED, EXPIRED))
   }
 
   object ResourceShareStatusEnum {
@@ -918,7 +918,7 @@ package ram {
     val DELETING = "DELETING"
     val DELETED  = "DELETED"
 
-    val values = IndexedSeq(PENDING, ACTIVE, FAILED, DELETING, DELETED)
+    val values = js.Object.freeze(js.Array(PENDING, ACTIVE, FAILED, DELETING, DELETED))
   }
 
   object ResourceStatusEnum {
@@ -927,7 +927,7 @@ package ram {
     val LIMIT_EXCEEDED              = "LIMIT_EXCEEDED"
     val UNAVAILABLE                 = "UNAVAILABLE"
 
-    val values = IndexedSeq(AVAILABLE, ZONAL_RESOURCE_INACCESSIBLE, LIMIT_EXCEEDED, UNAVAILABLE)
+    val values = js.Object.freeze(js.Array(AVAILABLE, ZONAL_RESOURCE_INACCESSIBLE, LIMIT_EXCEEDED, UNAVAILABLE))
   }
 
   /**

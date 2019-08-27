@@ -674,7 +674,7 @@ package servicecatalog {
     val Role    = "Role"
     val User    = "User"
 
-    val values = IndexedSeq(Account, Role, User)
+    val values = js.Object.freeze(js.Array(Account, Role, User))
   }
 
   object AccessStatusEnum {
@@ -682,7 +682,7 @@ package servicecatalog {
     val UNDER_CHANGE = "UNDER_CHANGE"
     val DISABLED     = "DISABLED"
 
-    val values = IndexedSeq(ENABLED, UNDER_CHANGE, DISABLED)
+    val values = js.Object.freeze(js.Array(ENABLED, UNDER_CHANGE, DISABLED))
   }
 
   @js.native
@@ -960,7 +960,7 @@ package servicecatalog {
     val MODIFY = "MODIFY"
     val REMOVE = "REMOVE"
 
-    val values = IndexedSeq(ADD, MODIFY, REMOVE)
+    val values = js.Object.freeze(js.Array(ADD, MODIFY, REMOVE))
   }
 
   /**
@@ -1032,7 +1032,7 @@ package servicecatalog {
   object CopyOptionEnum {
     val CopyTags = "CopyTags"
 
-    val values = IndexedSeq(CopyTags)
+    val values = js.Object.freeze(js.Array(CopyTags))
   }
 
   @js.native
@@ -1092,7 +1092,7 @@ package servicecatalog {
     val IN_PROGRESS = "IN_PROGRESS"
     val FAILED      = "FAILED"
 
-    val values = IndexedSeq(SUCCEEDED, IN_PROGRESS, FAILED)
+    val values = js.Object.freeze(js.Array(SUCCEEDED, IN_PROGRESS, FAILED))
   }
 
   @js.native
@@ -2649,7 +2649,7 @@ package servicecatalog {
     val STATIC  = "STATIC"
     val DYNAMIC = "DYNAMIC"
 
-    val values = IndexedSeq(STATIC, DYNAMIC)
+    val values = js.Object.freeze(js.Array(STATIC, DYNAMIC))
   }
 
   @js.native
@@ -3684,7 +3684,7 @@ package servicecatalog {
     val ORGANIZATIONAL_UNIT = "ORGANIZATIONAL_UNIT"
     val ACCOUNT             = "ACCOUNT"
 
-    val values = IndexedSeq(ORGANIZATION, ORGANIZATIONAL_UNIT, ACCOUNT)
+    val values = js.Object.freeze(js.Array(ORGANIZATION, ORGANIZATIONAL_UNIT, ACCOUNT))
   }
 
   /**
@@ -3743,7 +3743,7 @@ package servicecatalog {
     val AWS_SERVICECATALOG = "AWS_SERVICECATALOG"
     val AWS_ORGANIZATIONS  = "AWS_ORGANIZATIONS"
 
-    val values = IndexedSeq(IMPORTED, AWS_SERVICECATALOG, AWS_ORGANIZATIONS)
+    val values = js.Object.freeze(js.Array(IMPORTED, AWS_SERVICECATALOG, AWS_ORGANIZATIONS))
   }
 
   /**
@@ -3770,20 +3770,20 @@ package servicecatalog {
   object PrincipalTypeEnum {
     val IAM = "IAM"
 
-    val values = IndexedSeq(IAM)
+    val values = js.Object.freeze(js.Array(IAM))
   }
 
   object ProductSourceEnum {
     val ACCOUNT = "ACCOUNT"
 
-    val values = IndexedSeq(ACCOUNT)
+    val values = js.Object.freeze(js.Array(ACCOUNT))
   }
 
   object ProductTypeEnum {
     val CLOUD_FORMATION_TEMPLATE = "CLOUD_FORMATION_TEMPLATE"
     val MARKETPLACE              = "MARKETPLACE"
 
-    val values = IndexedSeq(CLOUD_FORMATION_TEMPLATE, MARKETPLACE)
+    val values = js.Object.freeze(js.Array(CLOUD_FORMATION_TEMPLATE, MARKETPLACE))
   }
 
   /**
@@ -3840,7 +3840,7 @@ package servicecatalog {
     val ProductType     = "ProductType"
     val SourceProductId = "SourceProductId"
 
-    val values = IndexedSeq(FullTextSearch, Owner, ProductType, SourceProductId)
+    val values = js.Object.freeze(js.Array(FullTextSearch, Owner, ProductType, SourceProductId))
   }
 
   object ProductViewSortByEnum {
@@ -3848,7 +3848,7 @@ package servicecatalog {
     val VersionCount = "VersionCount"
     val CreationDate = "CreationDate"
 
-    val values = IndexedSeq(Title, VersionCount, CreationDate)
+    val values = js.Object.freeze(js.Array(Title, VersionCount, CreationDate))
   }
 
   /**
@@ -3902,7 +3902,7 @@ package servicecatalog {
   object PropertyKeyEnum {
     val OWNER = "OWNER"
 
-    val values = IndexedSeq(OWNER)
+    val values = js.Object.freeze(js.Array(OWNER))
   }
 
   @js.native
@@ -4140,13 +4140,8 @@ package servicecatalog {
     val EXECUTE_SUCCESS     = "EXECUTE_SUCCESS"
     val EXECUTE_FAILED      = "EXECUTE_FAILED"
 
-    val values = IndexedSeq(
-      CREATE_IN_PROGRESS,
-      CREATE_SUCCESS,
-      CREATE_FAILED,
-      EXECUTE_IN_PROGRESS,
-      EXECUTE_SUCCESS,
-      EXECUTE_FAILED
+    val values = js.Object.freeze(
+      js.Array(CREATE_IN_PROGRESS, CREATE_SUCCESS, CREATE_FAILED, EXECUTE_IN_PROGRESS, EXECUTE_SUCCESS, EXECUTE_FAILED)
     )
   }
 
@@ -4186,7 +4181,7 @@ package servicecatalog {
   object ProvisionedProductPlanTypeEnum {
     val CLOUDFORMATION = "CLOUDFORMATION"
 
-    val values = IndexedSeq(CLOUDFORMATION)
+    val values = js.Object.freeze(js.Array(CLOUDFORMATION))
   }
 
   object ProvisionedProductStatusEnum {
@@ -4196,13 +4191,13 @@ package servicecatalog {
     val ERROR            = "ERROR"
     val PLAN_IN_PROGRESS = "PLAN_IN_PROGRESS"
 
-    val values = IndexedSeq(AVAILABLE, UNDER_CHANGE, TAINTED, ERROR, PLAN_IN_PROGRESS)
+    val values = js.Object.freeze(js.Array(AVAILABLE, UNDER_CHANGE, TAINTED, ERROR, PLAN_IN_PROGRESS))
   }
 
   object ProvisionedProductViewFilterByEnum {
     val SearchQuery = "SearchQuery"
 
-    val values = IndexedSeq(SearchQuery)
+    val values = js.Object.freeze(js.Array(SearchQuery))
   }
 
   /**
@@ -4275,7 +4270,7 @@ package servicecatalog {
     val DEFAULT    = "DEFAULT"
     val DEPRECATED = "DEPRECATED"
 
-    val values = IndexedSeq(DEFAULT, DEPRECATED)
+    val values = js.Object.freeze(js.Array(DEFAULT, DEPRECATED))
   }
 
   /**
@@ -4368,7 +4363,7 @@ package servicecatalog {
   object ProvisioningArtifactPropertyNameEnum {
     val Id = "Id"
 
-    val values = IndexedSeq(Id)
+    val values = js.Object.freeze(js.Array(Id))
   }
 
   /**
@@ -4408,7 +4403,7 @@ package servicecatalog {
     val MARKETPLACE_AMI          = "MARKETPLACE_AMI"
     val MARKETPLACE_CAR          = "MARKETPLACE_CAR"
 
-    val values = IndexedSeq(CLOUD_FORMATION_TEMPLATE, MARKETPLACE_AMI, MARKETPLACE_CAR)
+    val values = js.Object.freeze(js.Array(CLOUD_FORMATION_TEMPLATE, MARKETPLACE_AMI, MARKETPLACE_CAR))
   }
 
   /**
@@ -4598,7 +4593,7 @@ package servicecatalog {
     val SUCCEEDED            = "SUCCEEDED"
     val FAILED               = "FAILED"
 
-    val values = IndexedSeq(CREATED, IN_PROGRESS, IN_PROGRESS_IN_ERROR, SUCCEEDED, FAILED)
+    val values = js.Object.freeze(js.Array(CREATED, IN_PROGRESS, IN_PROGRESS_IN_ERROR, SUCCEEDED, FAILED))
   }
 
   /**
@@ -4662,7 +4657,7 @@ package servicecatalog {
     val FALSE       = "FALSE"
     val CONDITIONAL = "CONDITIONAL"
 
-    val values = IndexedSeq(TRUE, FALSE, CONDITIONAL)
+    val values = js.Object.freeze(js.Array(TRUE, FALSE, CONDITIONAL))
   }
 
   object RequiresRecreationEnum {
@@ -4670,7 +4665,7 @@ package servicecatalog {
     val CONDITIONALLY = "CONDITIONALLY"
     val ALWAYS        = "ALWAYS"
 
-    val values = IndexedSeq(NEVER, CONDITIONALLY, ALWAYS)
+    val values = js.Object.freeze(js.Array(NEVER, CONDITIONALLY, ALWAYS))
   }
 
   object ResourceAttributeEnum {
@@ -4681,7 +4676,7 @@ package servicecatalog {
     val DELETIONPOLICY = "DELETIONPOLICY"
     val TAGS           = "TAGS"
 
-    val values = IndexedSeq(PROPERTIES, METADATA, CREATIONPOLICY, UPDATEPOLICY, DELETIONPOLICY, TAGS)
+    val values = js.Object.freeze(js.Array(PROPERTIES, METADATA, CREATIONPOLICY, UPDATEPOLICY, DELETIONPOLICY, TAGS))
   }
 
   /**
@@ -5032,7 +5027,8 @@ package servicecatalog {
     val RESOURCE_NOT_FOUND = "RESOURCE_NOT_FOUND"
     val THROTTLING         = "THROTTLING"
 
-    val values = IndexedSeq(DUPLICATE_RESOURCE, INTERNAL_FAILURE, LIMIT_EXCEEDED, RESOURCE_NOT_FOUND, THROTTLING)
+    val values =
+      js.Object.freeze(js.Array(DUPLICATE_RESOURCE, INTERNAL_FAILURE, LIMIT_EXCEEDED, RESOURCE_NOT_FOUND, THROTTLING))
   }
 
   object ServiceActionDefinitionKeyEnum {
@@ -5041,13 +5037,13 @@ package servicecatalog {
     val AssumeRole = "AssumeRole"
     val Parameters = "Parameters"
 
-    val values = IndexedSeq(Name, Version, AssumeRole, Parameters)
+    val values = js.Object.freeze(js.Array(Name, Version, AssumeRole, Parameters))
   }
 
   object ServiceActionDefinitionTypeEnum {
     val SSM_AUTOMATION = "SSM_AUTOMATION"
 
-    val values = IndexedSeq(SSM_AUTOMATION)
+    val values = js.Object.freeze(js.Array(SSM_AUTOMATION))
   }
 
   /**
@@ -5150,14 +5146,14 @@ package servicecatalog {
     val COMPLETED_WITH_ERRORS = "COMPLETED_WITH_ERRORS"
     val ERROR                 = "ERROR"
 
-    val values = IndexedSeq(NOT_STARTED, IN_PROGRESS, COMPLETED, COMPLETED_WITH_ERRORS, ERROR)
+    val values = js.Object.freeze(js.Array(NOT_STARTED, IN_PROGRESS, COMPLETED, COMPLETED_WITH_ERRORS, ERROR))
   }
 
   object SortOrderEnum {
     val ASCENDING  = "ASCENDING"
     val DESCENDING = "DESCENDING"
 
-    val values = IndexedSeq(ASCENDING, DESCENDING)
+    val values = js.Object.freeze(js.Array(ASCENDING, DESCENDING))
   }
 
   /**
@@ -5189,7 +5185,7 @@ package servicecatalog {
     val OUTDATED   = "OUTDATED"
     val INOPERABLE = "INOPERABLE"
 
-    val values = IndexedSeq(CURRENT, OUTDATED, INOPERABLE)
+    val values = js.Object.freeze(js.Array(CURRENT, OUTDATED, INOPERABLE))
   }
 
   object StackSetOperationTypeEnum {
@@ -5197,7 +5193,7 @@ package servicecatalog {
     val UPDATE = "UPDATE"
     val DELETE = "DELETE"
 
-    val values = IndexedSeq(CREATE, UPDATE, DELETE)
+    val values = js.Object.freeze(js.Array(CREATE, UPDATE, DELETE))
   }
 
   object StatusEnum {
@@ -5205,7 +5201,7 @@ package servicecatalog {
     val CREATING  = "CREATING"
     val FAILED    = "FAILED"
 
-    val values = IndexedSeq(AVAILABLE, CREATING, FAILED)
+    val values = js.Object.freeze(js.Array(AVAILABLE, CREATING, FAILED))
   }
 
   /**

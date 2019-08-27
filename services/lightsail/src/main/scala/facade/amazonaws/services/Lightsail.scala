@@ -524,7 +524,7 @@ package lightsail {
     val inbound  = "inbound"
     val outbound = "outbound"
 
-    val values = IndexedSeq(inbound, outbound)
+    val values = js.Object.freeze(js.Array(inbound, outbound))
   }
 
   @js.native
@@ -778,7 +778,7 @@ package lightsail {
     val os  = "os"
     val app = "app"
 
-    val values = IndexedSeq(os, app)
+    val values = js.Object.freeze(js.Array(os, app))
   }
 
   /**
@@ -931,7 +931,7 @@ package lightsail {
   object CloudFormationStackRecordSourceTypeEnum {
     val ExportSnapshotRecord = "ExportSnapshotRecord"
 
-    val values = IndexedSeq(ExportSnapshotRecord)
+    val values = js.Object.freeze(js.Array(ExportSnapshotRecord))
   }
 
   @js.native
@@ -2355,7 +2355,7 @@ package lightsail {
     val error     = "error"
     val unknown   = "unknown"
 
-    val values = IndexedSeq(pending, completed, error, unknown)
+    val values = js.Object.freeze(js.Array(pending, completed, error, unknown))
   }
 
   object DiskStateEnum {
@@ -2365,7 +2365,7 @@ package lightsail {
     val `in-use`  = "in-use"
     val unknown   = "unknown"
 
-    val values = IndexedSeq(pending, error, available, `in-use`, unknown)
+    val values = js.Object.freeze(js.Array(pending, error, available, `in-use`, unknown))
   }
 
   /**
@@ -2552,7 +2552,7 @@ package lightsail {
     val InstanceSnapshot = "InstanceSnapshot"
     val DiskSnapshot     = "DiskSnapshot"
 
-    val values = IndexedSeq(InstanceSnapshot, DiskSnapshot)
+    val values = js.Object.freeze(js.Array(InstanceSnapshot, DiskSnapshot))
   }
 
   @js.native
@@ -4299,7 +4299,7 @@ package lightsail {
     val ssh = "ssh"
     val rdp = "rdp"
 
-    val values = IndexedSeq(ssh, rdp)
+    val values = js.Object.freeze(js.Array(ssh, rdp))
   }
 
   /**
@@ -4371,18 +4371,20 @@ package lightsail {
     val `Instance.InvalidState`             = "Instance.InvalidState"
     val `Instance.IpUnusable`               = "Instance.IpUnusable"
 
-    val values = IndexedSeq(
-      `Lb.RegistrationInProgress`,
-      `Lb.InitialHealthChecking`,
-      `Lb.InternalError`,
-      `Instance.ResponseCodeMismatch`,
-      `Instance.Timeout`,
-      `Instance.FailedHealthChecks`,
-      `Instance.NotRegistered`,
-      `Instance.NotInUse`,
-      `Instance.DeregistrationInProgress`,
-      `Instance.InvalidState`,
-      `Instance.IpUnusable`
+    val values = js.Object.freeze(
+      js.Array(
+        `Lb.RegistrationInProgress`,
+        `Lb.InitialHealthChecking`,
+        `Lb.InternalError`,
+        `Instance.ResponseCodeMismatch`,
+        `Instance.Timeout`,
+        `Instance.FailedHealthChecks`,
+        `Instance.NotRegistered`,
+        `Instance.NotInUse`,
+        `Instance.DeregistrationInProgress`,
+        `Instance.InvalidState`,
+        `Instance.IpUnusable`
+      )
     )
   }
 
@@ -4394,7 +4396,7 @@ package lightsail {
     val draining    = "draining"
     val unavailable = "unavailable"
 
-    val values = IndexedSeq(initial, healthy, unhealthy, unused, draining, unavailable)
+    val values = js.Object.freeze(js.Array(initial, healthy, unhealthy, unused, draining, unavailable))
   }
 
   /**
@@ -4429,13 +4431,15 @@ package lightsail {
     val StatusCheckFailed_Instance = "StatusCheckFailed_Instance"
     val StatusCheckFailed_System   = "StatusCheckFailed_System"
 
-    val values = IndexedSeq(
-      CPUUtilization,
-      NetworkIn,
-      NetworkOut,
-      StatusCheckFailed,
-      StatusCheckFailed_Instance,
-      StatusCheckFailed_System
+    val values = js.Object.freeze(
+      js.Array(
+        CPUUtilization,
+        NetworkIn,
+        NetworkOut,
+        StatusCheckFailed,
+        StatusCheckFailed_Instance,
+        StatusCheckFailed_System
+      )
     )
   }
 
@@ -4464,7 +4468,7 @@ package lightsail {
     val LINUX_UNIX = "LINUX_UNIX"
     val WINDOWS    = "WINDOWS"
 
-    val values = IndexedSeq(LINUX_UNIX, WINDOWS)
+    val values = js.Object.freeze(js.Array(LINUX_UNIX, WINDOWS))
   }
 
   /**
@@ -4619,7 +4623,7 @@ package lightsail {
     val error     = "error"
     val available = "available"
 
-    val values = IndexedSeq(pending, error, available)
+    val values = js.Object.freeze(js.Array(pending, error, available))
   }
 
   /**
@@ -4777,7 +4781,8 @@ package lightsail {
     val SessionStickinessEnabled                   = "SessionStickinessEnabled"
     val SessionStickiness_LB_CookieDurationSeconds = "SessionStickiness_LB_CookieDurationSeconds"
 
-    val values = IndexedSeq(HealthCheckPath, SessionStickinessEnabled, SessionStickiness_LB_CookieDurationSeconds)
+    val values =
+      js.Object.freeze(js.Array(HealthCheckPath, SessionStickinessEnabled, SessionStickiness_LB_CookieDurationSeconds))
   }
 
   object LoadBalancerMetricNameEnum {
@@ -4794,19 +4799,21 @@ package lightsail {
     val RejectedConnectionCount        = "RejectedConnectionCount"
     val RequestCount                   = "RequestCount"
 
-    val values = IndexedSeq(
-      ClientTLSNegotiationErrorCount,
-      HealthyHostCount,
-      UnhealthyHostCount,
-      HTTPCode_LB_4XX_Count,
-      HTTPCode_LB_5XX_Count,
-      HTTPCode_Instance_2XX_Count,
-      HTTPCode_Instance_3XX_Count,
-      HTTPCode_Instance_4XX_Count,
-      HTTPCode_Instance_5XX_Count,
-      InstanceResponseTime,
-      RejectedConnectionCount,
-      RequestCount
+    val values = js.Object.freeze(
+      js.Array(
+        ClientTLSNegotiationErrorCount,
+        HealthyHostCount,
+        UnhealthyHostCount,
+        HTTPCode_LB_4XX_Count,
+        HTTPCode_LB_5XX_Count,
+        HTTPCode_Instance_2XX_Count,
+        HTTPCode_Instance_3XX_Count,
+        HTTPCode_Instance_4XX_Count,
+        HTTPCode_Instance_5XX_Count,
+        InstanceResponseTime,
+        RejectedConnectionCount,
+        RequestCount
+      )
     )
   }
 
@@ -4814,7 +4821,7 @@ package lightsail {
     val HTTP_HTTPS = "HTTP_HTTPS"
     val HTTP       = "HTTP"
 
-    val values = IndexedSeq(HTTP_HTTPS, HTTP)
+    val values = js.Object.freeze(js.Array(HTTP_HTTPS, HTTP))
   }
 
   object LoadBalancerStateEnum {
@@ -4824,7 +4831,7 @@ package lightsail {
     val failed          = "failed"
     val unknown         = "unknown"
 
-    val values = IndexedSeq(active, provisioning, active_impaired, failed, unknown)
+    val values = js.Object.freeze(js.Array(active, provisioning, active_impaired, failed, unknown))
   }
 
   /**
@@ -4923,7 +4930,7 @@ package lightsail {
     val FAILED             = "FAILED"
     val SUCCESS            = "SUCCESS"
 
-    val values = IndexedSeq(PENDING_VALIDATION, FAILED, SUCCESS)
+    val values = js.Object.freeze(js.Array(PENDING_VALIDATION, FAILED, SUCCESS))
   }
 
   /**
@@ -4984,12 +4991,14 @@ package lightsail {
     val INVALID_PUBLIC_DOMAIN            = "INVALID_PUBLIC_DOMAIN"
     val OTHER                            = "OTHER"
 
-    val values = IndexedSeq(
-      NO_AVAILABLE_CONTACTS,
-      ADDITIONAL_VERIFICATION_REQUIRED,
-      DOMAIN_NOT_ALLOWED,
-      INVALID_PUBLIC_DOMAIN,
-      OTHER
+    val values = js.Object.freeze(
+      js.Array(
+        NO_AVAILABLE_CONTACTS,
+        ADDITIONAL_VERIFICATION_REQUIRED,
+        DOMAIN_NOT_ALLOWED,
+        INVALID_PUBLIC_DOMAIN,
+        OTHER
+      )
     )
   }
 
@@ -4999,7 +5008,7 @@ package lightsail {
     val SUCCESS              = "SUCCESS"
     val FAILED               = "FAILED"
 
-    val values = IndexedSeq(PENDING_AUTO_RENEWAL, PENDING_VALIDATION, SUCCESS, FAILED)
+    val values = js.Object.freeze(js.Array(PENDING_AUTO_RENEWAL, PENDING_VALIDATION, SUCCESS, FAILED))
   }
 
   /**
@@ -5035,17 +5044,19 @@ package lightsail {
     val PRIVILEGE_WITHDRAWN    = "PRIVILEGE_WITHDRAWN"
     val A_A_COMPROMISE         = "A_A_COMPROMISE"
 
-    val values = IndexedSeq(
-      UNSPECIFIED,
-      KEY_COMPROMISE,
-      CA_COMPROMISE,
-      AFFILIATION_CHANGED,
-      SUPERCEDED,
-      CESSATION_OF_OPERATION,
-      CERTIFICATE_HOLD,
-      REMOVE_FROM_CRL,
-      PRIVILEGE_WITHDRAWN,
-      A_A_COMPROMISE
+    val values = js.Object.freeze(
+      js.Array(
+        UNSPECIFIED,
+        KEY_COMPROMISE,
+        CA_COMPROMISE,
+        AFFILIATION_CHANGED,
+        SUPERCEDED,
+        CESSATION_OF_OPERATION,
+        CERTIFICATE_HOLD,
+        REMOVE_FROM_CRL,
+        PRIVILEGE_WITHDRAWN,
+        A_A_COMPROMISE
+      )
     )
   }
 
@@ -5059,8 +5070,9 @@ package lightsail {
     val FAILED               = "FAILED"
     val UNKNOWN              = "UNKNOWN"
 
-    val values =
-      IndexedSeq(PENDING_VALIDATION, ISSUED, INACTIVE, EXPIRED, VALIDATION_TIMED_OUT, REVOKED, FAILED, UNKNOWN)
+    val values = js.Object.freeze(
+      js.Array(PENDING_VALIDATION, ISSUED, INACTIVE, EXPIRED, VALIDATION_TIMED_OUT, REVOKED, FAILED, UNKNOWN)
+    )
   }
 
   /**
@@ -5148,7 +5160,7 @@ package lightsail {
     val Average     = "Average"
     val SampleCount = "SampleCount"
 
-    val values = IndexedSeq(Minimum, Maximum, Sum, Average, SampleCount)
+    val values = js.Object.freeze(js.Array(Minimum, Maximum, Sum, Average, SampleCount))
   }
 
   object MetricUnitEnum {
@@ -5180,34 +5192,36 @@ package lightsail {
     val `Count/Second`     = "Count/Second"
     val None               = "None"
 
-    val values = IndexedSeq(
-      Seconds,
-      Microseconds,
-      Milliseconds,
-      Bytes,
-      Kilobytes,
-      Megabytes,
-      Gigabytes,
-      Terabytes,
-      Bits,
-      Kilobits,
-      Megabits,
-      Gigabits,
-      Terabits,
-      Percent,
-      Count,
-      `Bytes/Second`,
-      `Kilobytes/Second`,
-      `Megabytes/Second`,
-      `Gigabytes/Second`,
-      `Terabytes/Second`,
-      `Bits/Second`,
-      `Kilobits/Second`,
-      `Megabits/Second`,
-      `Gigabits/Second`,
-      `Terabits/Second`,
-      `Count/Second`,
-      None
+    val values = js.Object.freeze(
+      js.Array(
+        Seconds,
+        Microseconds,
+        Milliseconds,
+        Bytes,
+        Kilobytes,
+        Megabytes,
+        Gigabytes,
+        Terabytes,
+        Bits,
+        Kilobits,
+        Megabits,
+        Gigabits,
+        Terabits,
+        Percent,
+        Count,
+        `Bytes/Second`,
+        `Kilobytes/Second`,
+        `Megabytes/Second`,
+        `Gigabytes/Second`,
+        `Terabytes/Second`,
+        `Bits/Second`,
+        `Kilobits/Second`,
+        `Megabits/Second`,
+        `Gigabits/Second`,
+        `Terabits/Second`,
+        `Count/Second`,
+        None
+      )
     )
   }
 
@@ -5234,7 +5248,7 @@ package lightsail {
     val all = "all"
     val udp = "udp"
 
-    val values = IndexedSeq(tcp, all, udp)
+    val values = js.Object.freeze(js.Array(tcp, all, udp))
   }
 
   @js.native
@@ -5330,7 +5344,7 @@ package lightsail {
     val Completed  = "Completed"
     val Succeeded  = "Succeeded"
 
-    val values = IndexedSeq(NotStarted, Started, Failed, Completed, Succeeded)
+    val values = js.Object.freeze(js.Array(NotStarted, Started, Failed, Completed, Succeeded))
   }
 
   object OperationTypeEnum {
@@ -5380,52 +5394,54 @@ package lightsail {
     val RebootRelationalDatabase             = "RebootRelationalDatabase"
     val StopRelationalDatabase               = "StopRelationalDatabase"
 
-    val values = IndexedSeq(
-      DeleteKnownHostKeys,
-      DeleteInstance,
-      CreateInstance,
-      StopInstance,
-      StartInstance,
-      RebootInstance,
-      OpenInstancePublicPorts,
-      PutInstancePublicPorts,
-      CloseInstancePublicPorts,
-      AllocateStaticIp,
-      ReleaseStaticIp,
-      AttachStaticIp,
-      DetachStaticIp,
-      UpdateDomainEntry,
-      DeleteDomainEntry,
-      CreateDomain,
-      DeleteDomain,
-      CreateInstanceSnapshot,
-      DeleteInstanceSnapshot,
-      CreateInstancesFromSnapshot,
-      CreateLoadBalancer,
-      DeleteLoadBalancer,
-      AttachInstancesToLoadBalancer,
-      DetachInstancesFromLoadBalancer,
-      UpdateLoadBalancerAttribute,
-      CreateLoadBalancerTlsCertificate,
-      DeleteLoadBalancerTlsCertificate,
-      AttachLoadBalancerTlsCertificate,
-      CreateDisk,
-      DeleteDisk,
-      AttachDisk,
-      DetachDisk,
-      CreateDiskSnapshot,
-      DeleteDiskSnapshot,
-      CreateDiskFromSnapshot,
-      CreateRelationalDatabase,
-      UpdateRelationalDatabase,
-      DeleteRelationalDatabase,
-      CreateRelationalDatabaseFromSnapshot,
-      CreateRelationalDatabaseSnapshot,
-      DeleteRelationalDatabaseSnapshot,
-      UpdateRelationalDatabaseParameters,
-      StartRelationalDatabase,
-      RebootRelationalDatabase,
-      StopRelationalDatabase
+    val values = js.Object.freeze(
+      js.Array(
+        DeleteKnownHostKeys,
+        DeleteInstance,
+        CreateInstance,
+        StopInstance,
+        StartInstance,
+        RebootInstance,
+        OpenInstancePublicPorts,
+        PutInstancePublicPorts,
+        CloseInstancePublicPorts,
+        AllocateStaticIp,
+        ReleaseStaticIp,
+        AttachStaticIp,
+        DetachStaticIp,
+        UpdateDomainEntry,
+        DeleteDomainEntry,
+        CreateDomain,
+        DeleteDomain,
+        CreateInstanceSnapshot,
+        DeleteInstanceSnapshot,
+        CreateInstancesFromSnapshot,
+        CreateLoadBalancer,
+        DeleteLoadBalancer,
+        AttachInstancesToLoadBalancer,
+        DetachInstancesFromLoadBalancer,
+        UpdateLoadBalancerAttribute,
+        CreateLoadBalancerTlsCertificate,
+        DeleteLoadBalancerTlsCertificate,
+        AttachLoadBalancerTlsCertificate,
+        CreateDisk,
+        DeleteDisk,
+        AttachDisk,
+        DetachDisk,
+        CreateDiskSnapshot,
+        DeleteDiskSnapshot,
+        CreateDiskFromSnapshot,
+        CreateRelationalDatabase,
+        UpdateRelationalDatabase,
+        DeleteRelationalDatabase,
+        CreateRelationalDatabaseFromSnapshot,
+        CreateRelationalDatabaseSnapshot,
+        DeleteRelationalDatabaseSnapshot,
+        UpdateRelationalDatabaseParameters,
+        StartRelationalDatabase,
+        RebootRelationalDatabase,
+        StopRelationalDatabase
+      )
     )
   }
 
@@ -5529,7 +5545,7 @@ package lightsail {
     val Public  = "Public"
     val Private = "Private"
 
-    val values = IndexedSeq(Public, Private)
+    val values = js.Object.freeze(js.Array(Public, Private))
   }
 
   /**
@@ -5562,14 +5578,14 @@ package lightsail {
     val NONE     = "NONE"
     val CLOSED   = "CLOSED"
 
-    val values = IndexedSeq(DEFAULT, INSTANCE, NONE, CLOSED)
+    val values = js.Object.freeze(js.Array(DEFAULT, INSTANCE, NONE, CLOSED))
   }
 
   object PortStateEnum {
     val open   = "open"
     val closed = "closed"
 
-    val values = IndexedSeq(open, closed)
+    val values = js.Object.freeze(js.Array(open, closed))
   }
 
   @js.native
@@ -5676,7 +5692,7 @@ package lightsail {
     val Succeeded = "Succeeded"
     val Failed    = "Failed"
 
-    val values = IndexedSeq(Started, Succeeded, Failed)
+    val values = js.Object.freeze(js.Array(Started, Succeeded, Failed))
   }
 
   /**
@@ -5730,21 +5746,23 @@ package lightsail {
     val `ap-northeast-1` = "ap-northeast-1"
     val `ap-northeast-2` = "ap-northeast-2"
 
-    val values = IndexedSeq(
-      `us-east-1`,
-      `us-east-2`,
-      `us-west-1`,
-      `us-west-2`,
-      `eu-west-1`,
-      `eu-west-2`,
-      `eu-west-3`,
-      `eu-central-1`,
-      `ca-central-1`,
-      `ap-south-1`,
-      `ap-southeast-1`,
-      `ap-southeast-2`,
-      `ap-northeast-1`,
-      `ap-northeast-2`
+    val values = js.Object.freeze(
+      js.Array(
+        `us-east-1`,
+        `us-east-2`,
+        `us-west-1`,
+        `us-west-2`,
+        `eu-west-1`,
+        `eu-west-2`,
+        `eu-west-3`,
+        `eu-central-1`,
+        `ca-central-1`,
+        `ap-south-1`,
+        `ap-southeast-1`,
+        `ap-southeast-2`,
+        `ap-northeast-1`,
+        `ap-northeast-2`
+      )
     )
   }
 
@@ -5939,7 +5957,7 @@ package lightsail {
   object RelationalDatabaseEngineEnum {
     val mysql = "mysql"
 
-    val values = IndexedSeq(mysql)
+    val values = js.Object.freeze(js.Array(mysql))
   }
 
   /**
@@ -6001,13 +6019,15 @@ package lightsail {
     val NetworkReceiveThroughput  = "NetworkReceiveThroughput"
     val NetworkTransmitThroughput = "NetworkTransmitThroughput"
 
-    val values = IndexedSeq(
-      CPUUtilization,
-      DatabaseConnections,
-      DiskQueueDepth,
-      FreeStorageSpace,
-      NetworkReceiveThroughput,
-      NetworkTransmitThroughput
+    val values = js.Object.freeze(
+      js.Array(
+        CPUUtilization,
+        DatabaseConnections,
+        DiskQueueDepth,
+        FreeStorageSpace,
+        NetworkReceiveThroughput,
+        NetworkTransmitThroughput
+      )
     )
   }
 
@@ -6055,7 +6075,7 @@ package lightsail {
     val PREVIOUS = "PREVIOUS"
     val PENDING  = "PENDING"
 
-    val values = IndexedSeq(CURRENT, PREVIOUS, PENDING)
+    val values = js.Object.freeze(js.Array(CURRENT, PREVIOUS, PENDING))
   }
 
   /**
@@ -6191,21 +6211,23 @@ package lightsail {
     val ExportSnapshotRecord       = "ExportSnapshotRecord"
     val CloudFormationStackRecord  = "CloudFormationStackRecord"
 
-    val values = IndexedSeq(
-      Instance,
-      StaticIp,
-      KeyPair,
-      InstanceSnapshot,
-      Domain,
-      PeeredVpc,
-      LoadBalancer,
-      LoadBalancerTlsCertificate,
-      Disk,
-      DiskSnapshot,
-      RelationalDatabase,
-      RelationalDatabaseSnapshot,
-      ExportSnapshotRecord,
-      CloudFormationStackRecord
+    val values = js.Object.freeze(
+      js.Array(
+        Instance,
+        StaticIp,
+        KeyPair,
+        InstanceSnapshot,
+        Domain,
+        PeeredVpc,
+        LoadBalancer,
+        LoadBalancerTlsCertificate,
+        Disk,
+        DiskSnapshot,
+        RelationalDatabase,
+        RelationalDatabaseSnapshot,
+        ExportSnapshotRecord,
+        CloudFormationStackRecord
+      )
     )
   }
 

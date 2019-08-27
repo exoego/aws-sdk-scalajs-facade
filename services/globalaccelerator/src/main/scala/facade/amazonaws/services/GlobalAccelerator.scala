@@ -172,14 +172,14 @@ package globalaccelerator {
     val DEPLOYED    = "DEPLOYED"
     val IN_PROGRESS = "IN_PROGRESS"
 
-    val values = IndexedSeq(DEPLOYED, IN_PROGRESS)
+    val values = js.Object.freeze(js.Array(DEPLOYED, IN_PROGRESS))
   }
 
   object ClientAffinityEnum {
     val NONE      = "NONE"
     val SOURCE_IP = "SOURCE_IP"
 
-    val values = IndexedSeq(NONE, SOURCE_IP)
+    val values = js.Object.freeze(js.Array(NONE, SOURCE_IP))
   }
 
   @js.native
@@ -598,7 +598,7 @@ package globalaccelerator {
     val HTTP  = "HTTP"
     val HTTPS = "HTTPS"
 
-    val values = IndexedSeq(TCP, HTTP, HTTPS)
+    val values = js.Object.freeze(js.Array(TCP, HTTP, HTTPS))
   }
 
   object HealthStateEnum {
@@ -606,13 +606,13 @@ package globalaccelerator {
     val HEALTHY   = "HEALTHY"
     val UNHEALTHY = "UNHEALTHY"
 
-    val values = IndexedSeq(INITIAL, HEALTHY, UNHEALTHY)
+    val values = js.Object.freeze(js.Array(INITIAL, HEALTHY, UNHEALTHY))
   }
 
   object IpAddressTypeEnum {
     val IPV4 = "IPV4"
 
-    val values = IndexedSeq(IPV4)
+    val values = js.Object.freeze(js.Array(IPV4))
   }
 
   /**
@@ -806,7 +806,7 @@ package globalaccelerator {
     val TCP = "TCP"
     val UDP = "UDP"
 
-    val values = IndexedSeq(TCP, UDP)
+    val values = js.Object.freeze(js.Array(TCP, UDP))
   }
 
   @js.native

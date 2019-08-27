@@ -102,7 +102,7 @@ package signer {
   object CategoryEnum {
     val AWSIoT = "AWSIoT"
 
-    val values = IndexedSeq(AWSIoT)
+    val values = js.Object.freeze(js.Array(AWSIoT))
   }
 
   @js.native
@@ -195,7 +195,7 @@ package signer {
     val RSA   = "RSA"
     val ECDSA = "ECDSA"
 
-    val values = IndexedSeq(RSA, ECDSA)
+    val values = js.Object.freeze(js.Array(RSA, ECDSA))
   }
 
   /**
@@ -325,7 +325,7 @@ package signer {
     val SHA1   = "SHA1"
     val SHA256 = "SHA256"
 
-    val values = IndexedSeq(SHA1, SHA256)
+    val values = js.Object.freeze(js.Array(SHA1, SHA256))
   }
 
   /**
@@ -354,7 +354,7 @@ package signer {
   object ImageFormatEnum {
     val JSON = "JSON"
 
-    val values = IndexedSeq(JSON)
+    val values = js.Object.freeze(js.Array(JSON))
   }
 
   @js.native
@@ -827,7 +827,7 @@ package signer {
     val Active   = "Active"
     val Canceled = "Canceled"
 
-    val values = IndexedSeq(Active, Canceled)
+    val values = js.Object.freeze(js.Array(Active, Canceled))
   }
 
   object SigningStatusEnum {
@@ -835,7 +835,7 @@ package signer {
     val Failed     = "Failed"
     val Succeeded  = "Succeeded"
 
-    val values = IndexedSeq(InProgress, Failed, Succeeded)
+    val values = js.Object.freeze(js.Array(InProgress, Failed, Succeeded))
   }
 
   /**

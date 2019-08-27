@@ -602,7 +602,7 @@ package sagemaker {
     val Name         = "Name"
     val CreationTime = "CreationTime"
 
-    val values = IndexedSeq(Name, CreationTime)
+    val values = js.Object.freeze(js.Array(Name, CreationTime))
   }
 
   /**
@@ -642,7 +642,7 @@ package sagemaker {
     val Failed     = "Failed"
     val Deleting   = "Deleting"
 
-    val values = IndexedSeq(Pending, InProgress, Completed, Failed, Deleting)
+    val values = js.Object.freeze(js.Array(Pending, InProgress, Completed, Failed, Deleting))
   }
 
   /**
@@ -798,21 +798,21 @@ package sagemaker {
     val None = "None"
     val Line = "Line"
 
-    val values = IndexedSeq(None, Line)
+    val values = js.Object.freeze(js.Array(None, Line))
   }
 
   object BatchStrategyEnum {
     val MultiRecord  = "MultiRecord"
     val SingleRecord = "SingleRecord"
 
-    val values = IndexedSeq(MultiRecord, SingleRecord)
+    val values = js.Object.freeze(js.Array(MultiRecord, SingleRecord))
   }
 
   object BooleanOperatorEnum {
     val And = "And"
     val Or  = "Or"
 
-    val values = IndexedSeq(And, Or)
+    val values = js.Object.freeze(js.Array(And, Or))
   }
 
   /**
@@ -959,14 +959,14 @@ package sagemaker {
     val CreationTime     = "CreationTime"
     val LastModifiedTime = "LastModifiedTime"
 
-    val values = IndexedSeq(Name, CreationTime, LastModifiedTime)
+    val values = js.Object.freeze(js.Array(Name, CreationTime, LastModifiedTime))
   }
 
   object CodeRepositorySortOrderEnum {
     val Ascending  = "Ascending"
     val Descending = "Descending"
 
-    val values = IndexedSeq(Ascending, Descending)
+    val values = js.Object.freeze(js.Array(Ascending, Descending))
   }
 
   /**
@@ -1035,7 +1035,7 @@ package sagemaker {
     val STOPPING   = "STOPPING"
     val STOPPED    = "STOPPED"
 
-    val values = IndexedSeq(INPROGRESS, COMPLETED, FAILED, STARTING, STOPPING, STOPPED)
+    val values = js.Object.freeze(js.Array(INPROGRESS, COMPLETED, FAILED, STARTING, STOPPING, STOPPED))
   }
 
   /**
@@ -1083,7 +1083,7 @@ package sagemaker {
     val None = "None"
     val Gzip = "Gzip"
 
-    val values = IndexedSeq(None, Gzip)
+    val values = js.Object.freeze(js.Array(None, Gzip))
   }
 
   /**
@@ -1120,7 +1120,7 @@ package sagemaker {
     val FreeOfPersonallyIdentifiableInformation = "FreeOfPersonallyIdentifiableInformation"
     val FreeOfAdultContent                      = "FreeOfAdultContent"
 
-    val values = IndexedSeq(FreeOfPersonallyIdentifiableInformation, FreeOfAdultContent)
+    val values = js.Object.freeze(js.Array(FreeOfPersonallyIdentifiableInformation, FreeOfAdultContent))
   }
 
   /**
@@ -3201,7 +3201,7 @@ package sagemaker {
     val Completed  = "Completed"
     val Failed     = "Failed"
 
-    val values = IndexedSeq(NotStarted, InProgress, Completed, Failed)
+    val values = js.Object.freeze(js.Array(NotStarted, InProgress, Completed, Failed))
   }
 
   object DetailedModelPackageStatusEnum {
@@ -3210,21 +3210,21 @@ package sagemaker {
     val Completed  = "Completed"
     val Failed     = "Failed"
 
-    val values = IndexedSeq(NotStarted, InProgress, Completed, Failed)
+    val values = js.Object.freeze(js.Array(NotStarted, InProgress, Completed, Failed))
   }
 
   object DirectInternetAccessEnum {
     val Enabled  = "Enabled"
     val Disabled = "Disabled"
 
-    val values = IndexedSeq(Enabled, Disabled)
+    val values = js.Object.freeze(js.Array(Enabled, Disabled))
   }
 
   object EndpointConfigSortKeyEnum {
     val Name         = "Name"
     val CreationTime = "CreationTime"
 
-    val values = IndexedSeq(Name, CreationTime)
+    val values = js.Object.freeze(js.Array(Name, CreationTime))
   }
 
   /**
@@ -3258,7 +3258,7 @@ package sagemaker {
     val CreationTime = "CreationTime"
     val Status       = "Status"
 
-    val values = IndexedSeq(Name, CreationTime, Status)
+    val values = js.Object.freeze(js.Array(Name, CreationTime, Status))
   }
 
   object EndpointStatusEnum {
@@ -3271,7 +3271,9 @@ package sagemaker {
     val Deleting       = "Deleting"
     val Failed         = "Failed"
 
-    val values = IndexedSeq(OutOfService, Creating, Updating, SystemUpdating, RollingBack, InService, Deleting, Failed)
+    val values = js.Object.freeze(
+      js.Array(OutOfService, Creating, Updating, SystemUpdating, RollingBack, InService, Deleting, Failed)
+    )
   }
 
   /**
@@ -3310,7 +3312,7 @@ package sagemaker {
     val rw = "rw"
     val ro = "ro"
 
-    val values = IndexedSeq(rw, ro)
+    val values = js.Object.freeze(js.Array(rw, ro))
   }
 
   /**
@@ -3346,7 +3348,7 @@ package sagemaker {
     val EFS       = "EFS"
     val FSxLustre = "FSxLustre"
 
-    val values = IndexedSeq(EFS, FSxLustre)
+    val values = js.Object.freeze(js.Array(EFS, FSxLustre))
   }
 
   /**
@@ -3425,7 +3427,7 @@ package sagemaker {
     val PYTORCH    = "PYTORCH"
     val XGBOOST    = "XGBOOST"
 
-    val values = IndexedSeq(TENSORFLOW, MXNET, ONNX, PYTORCH, XGBOOST)
+    val values = js.Object.freeze(js.Array(TENSORFLOW, MXNET, ONNX, PYTORCH, XGBOOST))
   }
 
   @js.native
@@ -3597,7 +3599,7 @@ package sagemaker {
     val Logarithmic        = "Logarithmic"
     val ReverseLogarithmic = "ReverseLogarithmic"
 
-    val values = IndexedSeq(Auto, Linear, Logarithmic, ReverseLogarithmic)
+    val values = js.Object.freeze(js.Array(Auto, Linear, Logarithmic, ReverseLogarithmic))
   }
 
   /**
@@ -3809,7 +3811,7 @@ package sagemaker {
     val Maximize = "Maximize"
     val Minimize = "Minimize"
 
-    val values = IndexedSeq(Maximize, Minimize)
+    val values = js.Object.freeze(js.Array(Maximize, Minimize))
   }
 
   object HyperParameterTuningJobSortByOptionsEnum {
@@ -3817,7 +3819,7 @@ package sagemaker {
     val Status       = "Status"
     val CreationTime = "CreationTime"
 
-    val values = IndexedSeq(Name, Status, CreationTime)
+    val values = js.Object.freeze(js.Array(Name, Status, CreationTime))
   }
 
   object HyperParameterTuningJobStatusEnum {
@@ -3827,7 +3829,7 @@ package sagemaker {
     val Stopped    = "Stopped"
     val Stopping   = "Stopping"
 
-    val values = IndexedSeq(Completed, InProgress, Failed, Stopped, Stopping)
+    val values = js.Object.freeze(js.Array(Completed, InProgress, Failed, Stopped, Stopping))
   }
 
   /**
@@ -3837,7 +3839,7 @@ package sagemaker {
     val Bayesian = "Bayesian"
     val Random   = "Random"
 
-    val values = IndexedSeq(Bayesian, Random)
+    val values = js.Object.freeze(js.Array(Bayesian, Random))
   }
 
   /**
@@ -3917,7 +3919,7 @@ package sagemaker {
     val IdenticalDataAndAlgorithm = "IdenticalDataAndAlgorithm"
     val TransferLearning          = "TransferLearning"
 
-    val values = IndexedSeq(IdenticalDataAndAlgorithm, TransferLearning)
+    val values = js.Object.freeze(js.Array(IdenticalDataAndAlgorithm, TransferLearning))
   }
 
   /**
@@ -4018,45 +4020,47 @@ package sagemaker {
     val `ml.p3.8xlarge`   = "ml.p3.8xlarge"
     val `ml.p3.16xlarge`  = "ml.p3.16xlarge"
 
-    val values = IndexedSeq(
-      `ml.t2.medium`,
-      `ml.t2.large`,
-      `ml.t2.xlarge`,
-      `ml.t2.2xlarge`,
-      `ml.t3.medium`,
-      `ml.t3.large`,
-      `ml.t3.xlarge`,
-      `ml.t3.2xlarge`,
-      `ml.m4.xlarge`,
-      `ml.m4.2xlarge`,
-      `ml.m4.4xlarge`,
-      `ml.m4.10xlarge`,
-      `ml.m4.16xlarge`,
-      `ml.m5.xlarge`,
-      `ml.m5.2xlarge`,
-      `ml.m5.4xlarge`,
-      `ml.m5.12xlarge`,
-      `ml.m5.24xlarge`,
-      `ml.c4.xlarge`,
-      `ml.c4.2xlarge`,
-      `ml.c4.4xlarge`,
-      `ml.c4.8xlarge`,
-      `ml.c5.xlarge`,
-      `ml.c5.2xlarge`,
-      `ml.c5.4xlarge`,
-      `ml.c5.9xlarge`,
-      `ml.c5.18xlarge`,
-      `ml.c5d.xlarge`,
-      `ml.c5d.2xlarge`,
-      `ml.c5d.4xlarge`,
-      `ml.c5d.9xlarge`,
-      `ml.c5d.18xlarge`,
-      `ml.p2.xlarge`,
-      `ml.p2.8xlarge`,
-      `ml.p2.16xlarge`,
-      `ml.p3.2xlarge`,
-      `ml.p3.8xlarge`,
-      `ml.p3.16xlarge`
+    val values = js.Object.freeze(
+      js.Array(
+        `ml.t2.medium`,
+        `ml.t2.large`,
+        `ml.t2.xlarge`,
+        `ml.t2.2xlarge`,
+        `ml.t3.medium`,
+        `ml.t3.large`,
+        `ml.t3.xlarge`,
+        `ml.t3.2xlarge`,
+        `ml.m4.xlarge`,
+        `ml.m4.2xlarge`,
+        `ml.m4.4xlarge`,
+        `ml.m4.10xlarge`,
+        `ml.m4.16xlarge`,
+        `ml.m5.xlarge`,
+        `ml.m5.2xlarge`,
+        `ml.m5.4xlarge`,
+        `ml.m5.12xlarge`,
+        `ml.m5.24xlarge`,
+        `ml.c4.xlarge`,
+        `ml.c4.2xlarge`,
+        `ml.c4.4xlarge`,
+        `ml.c4.8xlarge`,
+        `ml.c5.xlarge`,
+        `ml.c5.2xlarge`,
+        `ml.c5.4xlarge`,
+        `ml.c5.9xlarge`,
+        `ml.c5.18xlarge`,
+        `ml.c5d.xlarge`,
+        `ml.c5d.2xlarge`,
+        `ml.c5d.4xlarge`,
+        `ml.c5d.9xlarge`,
+        `ml.c5d.18xlarge`,
+        `ml.p2.xlarge`,
+        `ml.p2.8xlarge`,
+        `ml.p2.16xlarge`,
+        `ml.p3.2xlarge`,
+        `ml.p3.8xlarge`,
+        `ml.p3.16xlarge`
+      )
     )
   }
 
@@ -4116,7 +4120,7 @@ package sagemaker {
     val Input = "Input"
     val None  = "None"
 
-    val values = IndexedSeq(Input, None)
+    val values = js.Object.freeze(js.Array(Input, None))
   }
 
   /**
@@ -4390,7 +4394,7 @@ package sagemaker {
     val Stopping   = "Stopping"
     val Stopped    = "Stopped"
 
-    val values = IndexedSeq(InProgress, Completed, Failed, Stopping, Stopped)
+    val values = js.Object.freeze(js.Array(InProgress, Completed, Failed, Stopping, Stopped))
   }
 
   /**
@@ -4650,7 +4654,7 @@ package sagemaker {
     val CreationTime = "CreationTime"
     val Status       = "Status"
 
-    val values = IndexedSeq(Name, CreationTime, Status)
+    val values = js.Object.freeze(js.Array(Name, CreationTime, Status))
   }
 
   @js.native
@@ -4891,7 +4895,7 @@ package sagemaker {
   object ListLabelingJobsForWorkteamSortByOptionsEnum {
     val CreationTime = "CreationTime"
 
-    val values = IndexedSeq(CreationTime)
+    val values = js.Object.freeze(js.Array(CreationTime))
   }
 
   @js.native
@@ -5503,7 +5507,7 @@ package sagemaker {
     val Name       = "Name"
     val CreateDate = "CreateDate"
 
-    val values = IndexedSeq(Name, CreateDate)
+    val values = js.Object.freeze(js.Array(Name, CreateDate))
   }
 
   /**
@@ -5627,7 +5631,7 @@ package sagemaker {
     val Name         = "Name"
     val CreationTime = "CreationTime"
 
-    val values = IndexedSeq(Name, CreationTime)
+    val values = js.Object.freeze(js.Array(Name, CreationTime))
   }
 
   object ModelPackageStatusEnum {
@@ -5637,7 +5641,7 @@ package sagemaker {
     val Failed     = "Failed"
     val Deleting   = "Deleting"
 
-    val values = IndexedSeq(Pending, InProgress, Completed, Failed, Deleting)
+    val values = js.Object.freeze(js.Array(Pending, InProgress, Completed, Failed, Deleting))
   }
 
   /**
@@ -5772,7 +5776,7 @@ package sagemaker {
     val Name         = "Name"
     val CreationTime = "CreationTime"
 
-    val values = IndexedSeq(Name, CreationTime)
+    val values = js.Object.freeze(js.Array(Name, CreationTime))
   }
 
   /**
@@ -5833,7 +5837,7 @@ package sagemaker {
     val `ml.eia1.large`  = "ml.eia1.large"
     val `ml.eia1.xlarge` = "ml.eia1.xlarge"
 
-    val values = IndexedSeq(`ml.eia1.medium`, `ml.eia1.large`, `ml.eia1.xlarge`)
+    val values = js.Object.freeze(js.Array(`ml.eia1.medium`, `ml.eia1.large`, `ml.eia1.xlarge`))
   }
 
   object NotebookInstanceLifecycleConfigSortKeyEnum {
@@ -5841,14 +5845,14 @@ package sagemaker {
     val CreationTime     = "CreationTime"
     val LastModifiedTime = "LastModifiedTime"
 
-    val values = IndexedSeq(Name, CreationTime, LastModifiedTime)
+    val values = js.Object.freeze(js.Array(Name, CreationTime, LastModifiedTime))
   }
 
   object NotebookInstanceLifecycleConfigSortOrderEnum {
     val Ascending  = "Ascending"
     val Descending = "Descending"
 
-    val values = IndexedSeq(Ascending, Descending)
+    val values = js.Object.freeze(js.Array(Ascending, Descending))
   }
 
   /**
@@ -5908,14 +5912,14 @@ package sagemaker {
     val CreationTime = "CreationTime"
     val Status       = "Status"
 
-    val values = IndexedSeq(Name, CreationTime, Status)
+    val values = js.Object.freeze(js.Array(Name, CreationTime, Status))
   }
 
   object NotebookInstanceSortOrderEnum {
     val Ascending  = "Ascending"
     val Descending = "Descending"
 
-    val values = IndexedSeq(Ascending, Descending)
+    val values = js.Object.freeze(js.Array(Ascending, Descending))
   }
 
   object NotebookInstanceStatusEnum {
@@ -5927,7 +5931,7 @@ package sagemaker {
     val Deleting  = "Deleting"
     val Updating  = "Updating"
 
-    val values = IndexedSeq(Pending, InService, Stopping, Stopped, Failed, Deleting, Updating)
+    val values = js.Object.freeze(js.Array(Pending, InService, Stopping, Stopped, Failed, Deleting, Updating))
   }
 
   /**
@@ -6002,7 +6006,7 @@ package sagemaker {
     val Pending   = "Pending"
     val Failed    = "Failed"
 
-    val values = IndexedSeq(Succeeded, Pending, Failed)
+    val values = js.Object.freeze(js.Array(Succeeded, Pending, Failed))
   }
 
   /**
@@ -6038,14 +6042,16 @@ package sagemaker {
     val LessThanOrEqualTo    = "LessThanOrEqualTo"
     val Contains             = "Contains"
 
-    val values = IndexedSeq(Equals, NotEquals, GreaterThan, GreaterThanOrEqualTo, LessThan, LessThanOrEqualTo, Contains)
+    val values = js.Object.freeze(
+      js.Array(Equals, NotEquals, GreaterThan, GreaterThanOrEqualTo, LessThan, LessThanOrEqualTo, Contains)
+    )
   }
 
   object OrderKeyEnum {
     val Ascending  = "Ascending"
     val Descending = "Descending"
 
-    val values = IndexedSeq(Ascending, Descending)
+    val values = js.Object.freeze(js.Array(Ascending, Descending))
   }
 
   /**
@@ -6156,7 +6162,7 @@ package sagemaker {
     val Categorical = "Categorical"
     val FreeText    = "FreeText"
 
-    val values = IndexedSeq(Integer, Continuous, Categorical, FreeText)
+    val values = js.Object.freeze(js.Array(Integer, Continuous, Categorical, FreeText))
   }
 
   /**
@@ -6217,7 +6223,7 @@ package sagemaker {
     val `ml.eia1.large`  = "ml.eia1.large"
     val `ml.eia1.xlarge` = "ml.eia1.xlarge"
 
-    val values = IndexedSeq(`ml.eia1.medium`, `ml.eia1.large`, `ml.eia1.xlarge`)
+    val values = js.Object.freeze(js.Array(`ml.eia1.medium`, `ml.eia1.large`, `ml.eia1.xlarge`))
   }
 
   object ProductionVariantInstanceTypeEnum {
@@ -6254,39 +6260,41 @@ package sagemaker {
     val `ml.c5.9xlarge`  = "ml.c5.9xlarge"
     val `ml.c5.18xlarge` = "ml.c5.18xlarge"
 
-    val values = IndexedSeq(
-      `ml.t2.medium`,
-      `ml.t2.large`,
-      `ml.t2.xlarge`,
-      `ml.t2.2xlarge`,
-      `ml.m4.xlarge`,
-      `ml.m4.2xlarge`,
-      `ml.m4.4xlarge`,
-      `ml.m4.10xlarge`,
-      `ml.m4.16xlarge`,
-      `ml.m5.large`,
-      `ml.m5.xlarge`,
-      `ml.m5.2xlarge`,
-      `ml.m5.4xlarge`,
-      `ml.m5.12xlarge`,
-      `ml.m5.24xlarge`,
-      `ml.c4.large`,
-      `ml.c4.xlarge`,
-      `ml.c4.2xlarge`,
-      `ml.c4.4xlarge`,
-      `ml.c4.8xlarge`,
-      `ml.p2.xlarge`,
-      `ml.p2.8xlarge`,
-      `ml.p2.16xlarge`,
-      `ml.p3.2xlarge`,
-      `ml.p3.8xlarge`,
-      `ml.p3.16xlarge`,
-      `ml.c5.large`,
-      `ml.c5.xlarge`,
-      `ml.c5.2xlarge`,
-      `ml.c5.4xlarge`,
-      `ml.c5.9xlarge`,
-      `ml.c5.18xlarge`
+    val values = js.Object.freeze(
+      js.Array(
+        `ml.t2.medium`,
+        `ml.t2.large`,
+        `ml.t2.xlarge`,
+        `ml.t2.2xlarge`,
+        `ml.m4.xlarge`,
+        `ml.m4.2xlarge`,
+        `ml.m4.4xlarge`,
+        `ml.m4.10xlarge`,
+        `ml.m4.16xlarge`,
+        `ml.m5.large`,
+        `ml.m5.xlarge`,
+        `ml.m5.2xlarge`,
+        `ml.m5.4xlarge`,
+        `ml.m5.12xlarge`,
+        `ml.m5.24xlarge`,
+        `ml.c4.large`,
+        `ml.c4.xlarge`,
+        `ml.c4.2xlarge`,
+        `ml.c4.4xlarge`,
+        `ml.c4.8xlarge`,
+        `ml.p2.xlarge`,
+        `ml.p2.8xlarge`,
+        `ml.p2.16xlarge`,
+        `ml.p3.2xlarge`,
+        `ml.p3.8xlarge`,
+        `ml.p3.16xlarge`,
+        `ml.c5.large`,
+        `ml.c5.xlarge`,
+        `ml.c5.2xlarge`,
+        `ml.c5.4xlarge`,
+        `ml.c5.9xlarge`,
+        `ml.c5.18xlarge`
+      )
     )
   }
 
@@ -6422,7 +6430,7 @@ package sagemaker {
     val None     = "None"
     val RecordIO = "RecordIO"
 
-    val values = IndexedSeq(None, RecordIO)
+    val values = js.Object.freeze(js.Array(None, RecordIO))
   }
 
   @js.native
@@ -6566,21 +6574,21 @@ package sagemaker {
   object ResourceTypeEnum {
     val TrainingJob = "TrainingJob"
 
-    val values = IndexedSeq(TrainingJob)
+    val values = js.Object.freeze(js.Array(TrainingJob))
   }
 
   object RootAccessEnum {
     val Enabled  = "Enabled"
     val Disabled = "Disabled"
 
-    val values = IndexedSeq(Enabled, Disabled)
+    val values = js.Object.freeze(js.Array(Enabled, Disabled))
   }
 
   object S3DataDistributionEnum {
     val FullyReplicated = "FullyReplicated"
     val ShardedByS3Key  = "ShardedByS3Key"
 
-    val values = IndexedSeq(FullyReplicated, ShardedByS3Key)
+    val values = js.Object.freeze(js.Array(FullyReplicated, ShardedByS3Key))
   }
 
   /**
@@ -6617,7 +6625,7 @@ package sagemaker {
     val S3Prefix              = "S3Prefix"
     val AugmentedManifestFile = "AugmentedManifestFile"
 
-    val values = IndexedSeq(ManifestFile, S3Prefix, AugmentedManifestFile)
+    val values = js.Object.freeze(js.Array(ManifestFile, S3Prefix, AugmentedManifestFile))
   }
 
   /**
@@ -6724,7 +6732,7 @@ package sagemaker {
     val Ascending  = "Ascending"
     val Descending = "Descending"
 
-    val values = IndexedSeq(Ascending, Descending)
+    val values = js.Object.freeze(js.Array(Ascending, Descending))
   }
 
   object SecondaryStatusEnum {
@@ -6743,21 +6751,23 @@ package sagemaker {
     val Interrupted              = "Interrupted"
     val MaxWaitTimeExceeded      = "MaxWaitTimeExceeded"
 
-    val values = IndexedSeq(
-      Starting,
-      LaunchingMLInstances,
-      PreparingTrainingStack,
-      Downloading,
-      DownloadingTrainingImage,
-      Training,
-      Uploading,
-      Stopping,
-      Stopped,
-      MaxRuntimeExceeded,
-      Completed,
-      Failed,
-      Interrupted,
-      MaxWaitTimeExceeded
+    val values = js.Object.freeze(
+      js.Array(
+        Starting,
+        LaunchingMLInstances,
+        PreparingTrainingStack,
+        Downloading,
+        DownloadingTrainingImage,
+        Training,
+        Uploading,
+        Stopping,
+        Stopped,
+        MaxRuntimeExceeded,
+        Completed,
+        Failed,
+        Interrupted,
+        MaxWaitTimeExceeded
+      )
     )
   }
 
@@ -6817,14 +6827,14 @@ package sagemaker {
     val CreationTime = "CreationTime"
     val Status       = "Status"
 
-    val values = IndexedSeq(Name, CreationTime, Status)
+    val values = js.Object.freeze(js.Array(Name, CreationTime, Status))
   }
 
   object SortOrderEnum {
     val Ascending  = "Ascending"
     val Descending = "Descending"
 
-    val values = IndexedSeq(Ascending, Descending)
+    val values = js.Object.freeze(js.Array(Ascending, Descending))
   }
 
   /**
@@ -6876,7 +6886,7 @@ package sagemaker {
     val RecordIO = "RecordIO"
     val TFRecord = "TFRecord"
 
-    val values = IndexedSeq(None, Line, RecordIO, TFRecord)
+    val values = js.Object.freeze(js.Array(None, Line, RecordIO, TFRecord))
   }
 
   @js.native
@@ -7116,25 +7126,27 @@ package sagemaker {
     val qcs605      = "qcs605"
     val qcs603      = "qcs603"
 
-    val values = IndexedSeq(
-      lambda,
-      ml_m4,
-      ml_m5,
-      ml_c4,
-      ml_c5,
-      ml_p2,
-      ml_p3,
-      jetson_tx1,
-      jetson_tx2,
-      jetson_nano,
-      rasp3b,
-      deeplens,
-      rk3399,
-      rk3288,
-      aisage,
-      sbe_c,
-      qcs605,
-      qcs603
+    val values = js.Object.freeze(
+      js.Array(
+        lambda,
+        ml_m4,
+        ml_m5,
+        ml_c4,
+        ml_c5,
+        ml_p2,
+        ml_p3,
+        jetson_tx1,
+        jetson_tx2,
+        jetson_nano,
+        rasp3b,
+        deeplens,
+        rk3399,
+        rk3288,
+        aisage,
+        sbe_c,
+        qcs605,
+        qcs603
+      )
     )
   }
 
@@ -7142,7 +7154,7 @@ package sagemaker {
     val Pipe = "Pipe"
     val File = "File"
 
-    val values = IndexedSeq(Pipe, File)
+    val values = js.Object.freeze(js.Array(Pipe, File))
   }
 
   object TrainingInstanceTypeEnum {
@@ -7174,34 +7186,36 @@ package sagemaker {
     val `ml.c5.18xlarge`   = "ml.c5.18xlarge"
     val `ml.p3dn.24xlarge` = "ml.p3dn.24xlarge"
 
-    val values = IndexedSeq(
-      `ml.m4.xlarge`,
-      `ml.m4.2xlarge`,
-      `ml.m4.4xlarge`,
-      `ml.m4.10xlarge`,
-      `ml.m4.16xlarge`,
-      `ml.m5.large`,
-      `ml.m5.xlarge`,
-      `ml.m5.2xlarge`,
-      `ml.m5.4xlarge`,
-      `ml.m5.12xlarge`,
-      `ml.m5.24xlarge`,
-      `ml.c4.xlarge`,
-      `ml.c4.2xlarge`,
-      `ml.c4.4xlarge`,
-      `ml.c4.8xlarge`,
-      `ml.p2.xlarge`,
-      `ml.p2.8xlarge`,
-      `ml.p2.16xlarge`,
-      `ml.p3.2xlarge`,
-      `ml.p3.8xlarge`,
-      `ml.p3.16xlarge`,
-      `ml.c5.xlarge`,
-      `ml.c5.2xlarge`,
-      `ml.c5.4xlarge`,
-      `ml.c5.9xlarge`,
-      `ml.c5.18xlarge`,
-      `ml.p3dn.24xlarge`
+    val values = js.Object.freeze(
+      js.Array(
+        `ml.m4.xlarge`,
+        `ml.m4.2xlarge`,
+        `ml.m4.4xlarge`,
+        `ml.m4.10xlarge`,
+        `ml.m4.16xlarge`,
+        `ml.m5.large`,
+        `ml.m5.xlarge`,
+        `ml.m5.2xlarge`,
+        `ml.m5.4xlarge`,
+        `ml.m5.12xlarge`,
+        `ml.m5.24xlarge`,
+        `ml.c4.xlarge`,
+        `ml.c4.2xlarge`,
+        `ml.c4.4xlarge`,
+        `ml.c4.8xlarge`,
+        `ml.p2.xlarge`,
+        `ml.p2.8xlarge`,
+        `ml.p2.16xlarge`,
+        `ml.p3.2xlarge`,
+        `ml.p3.8xlarge`,
+        `ml.p3.16xlarge`,
+        `ml.c5.xlarge`,
+        `ml.c5.2xlarge`,
+        `ml.c5.4xlarge`,
+        `ml.c5.9xlarge`,
+        `ml.c5.18xlarge`,
+        `ml.p3dn.24xlarge`
+      )
     )
   }
 
@@ -7336,7 +7350,7 @@ package sagemaker {
     val Off  = "Off"
     val Auto = "Auto"
 
-    val values = IndexedSeq(Off, Auto)
+    val values = js.Object.freeze(js.Array(Off, Auto))
   }
 
   object TrainingJobSortByOptionsEnum {
@@ -7345,7 +7359,7 @@ package sagemaker {
     val Status                    = "Status"
     val FinalObjectiveMetricValue = "FinalObjectiveMetricValue"
 
-    val values = IndexedSeq(Name, CreationTime, Status, FinalObjectiveMetricValue)
+    val values = js.Object.freeze(js.Array(Name, CreationTime, Status, FinalObjectiveMetricValue))
   }
 
   object TrainingJobStatusEnum {
@@ -7355,7 +7369,7 @@ package sagemaker {
     val Stopping   = "Stopping"
     val Stopped    = "Stopped"
 
-    val values = IndexedSeq(InProgress, Completed, Failed, Stopping, Stopped)
+    val values = js.Object.freeze(js.Array(InProgress, Completed, Failed, Stopping, Stopped))
   }
 
   /**
@@ -7543,33 +7557,35 @@ package sagemaker {
     val `ml.m5.12xlarge` = "ml.m5.12xlarge"
     val `ml.m5.24xlarge` = "ml.m5.24xlarge"
 
-    val values = IndexedSeq(
-      `ml.m4.xlarge`,
-      `ml.m4.2xlarge`,
-      `ml.m4.4xlarge`,
-      `ml.m4.10xlarge`,
-      `ml.m4.16xlarge`,
-      `ml.c4.xlarge`,
-      `ml.c4.2xlarge`,
-      `ml.c4.4xlarge`,
-      `ml.c4.8xlarge`,
-      `ml.p2.xlarge`,
-      `ml.p2.8xlarge`,
-      `ml.p2.16xlarge`,
-      `ml.p3.2xlarge`,
-      `ml.p3.8xlarge`,
-      `ml.p3.16xlarge`,
-      `ml.c5.xlarge`,
-      `ml.c5.2xlarge`,
-      `ml.c5.4xlarge`,
-      `ml.c5.9xlarge`,
-      `ml.c5.18xlarge`,
-      `ml.m5.large`,
-      `ml.m5.xlarge`,
-      `ml.m5.2xlarge`,
-      `ml.m5.4xlarge`,
-      `ml.m5.12xlarge`,
-      `ml.m5.24xlarge`
+    val values = js.Object.freeze(
+      js.Array(
+        `ml.m4.xlarge`,
+        `ml.m4.2xlarge`,
+        `ml.m4.4xlarge`,
+        `ml.m4.10xlarge`,
+        `ml.m4.16xlarge`,
+        `ml.c4.xlarge`,
+        `ml.c4.2xlarge`,
+        `ml.c4.4xlarge`,
+        `ml.c4.8xlarge`,
+        `ml.p2.xlarge`,
+        `ml.p2.8xlarge`,
+        `ml.p2.16xlarge`,
+        `ml.p3.2xlarge`,
+        `ml.p3.8xlarge`,
+        `ml.p3.16xlarge`,
+        `ml.c5.xlarge`,
+        `ml.c5.2xlarge`,
+        `ml.c5.4xlarge`,
+        `ml.c5.9xlarge`,
+        `ml.c5.18xlarge`,
+        `ml.m5.large`,
+        `ml.m5.xlarge`,
+        `ml.m5.2xlarge`,
+        `ml.m5.4xlarge`,
+        `ml.m5.12xlarge`,
+        `ml.m5.24xlarge`
+      )
     )
   }
 
@@ -7618,7 +7634,7 @@ package sagemaker {
     val Stopping   = "Stopping"
     val Stopped    = "Stopped"
 
-    val values = IndexedSeq(InProgress, Completed, Failed, Stopping, Stopped)
+    val values = js.Object.freeze(js.Array(InProgress, Completed, Failed, Stopping, Stopped))
   }
 
   /**

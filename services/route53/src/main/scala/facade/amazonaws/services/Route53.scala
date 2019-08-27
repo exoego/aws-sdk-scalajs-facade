@@ -417,12 +417,14 @@ package route53 {
     val MAX_REUSABLE_DELEGATION_SETS_BY_OWNER = "MAX_REUSABLE_DELEGATION_SETS_BY_OWNER"
     val MAX_TRAFFIC_POLICIES_BY_OWNER         = "MAX_TRAFFIC_POLICIES_BY_OWNER"
 
-    val values = IndexedSeq(
-      MAX_HEALTH_CHECKS_BY_OWNER,
-      MAX_HOSTED_ZONES_BY_OWNER,
-      MAX_TRAFFIC_POLICY_INSTANCES_BY_OWNER,
-      MAX_REUSABLE_DELEGATION_SETS_BY_OWNER,
-      MAX_TRAFFIC_POLICIES_BY_OWNER
+    val values = js.Object.freeze(
+      js.Array(
+        MAX_HEALTH_CHECKS_BY_OWNER,
+        MAX_HOSTED_ZONES_BY_OWNER,
+        MAX_TRAFFIC_POLICY_INSTANCES_BY_OWNER,
+        MAX_REUSABLE_DELEGATION_SETS_BY_OWNER,
+        MAX_TRAFFIC_POLICIES_BY_OWNER
+      )
     )
   }
 
@@ -552,7 +554,7 @@ package route53 {
     val DELETE = "DELETE"
     val UPSERT = "UPSERT"
 
-    val values = IndexedSeq(CREATE, DELETE, UPSERT)
+    val values = js.Object.freeze(js.Array(CREATE, DELETE, UPSERT))
   }
 
   /**
@@ -654,7 +656,7 @@ package route53 {
     val PENDING = "PENDING"
     val INSYNC  = "INSYNC"
 
-    val values = IndexedSeq(PENDING, INSYNC)
+    val values = js.Object.freeze(js.Array(PENDING, INSYNC))
   }
 
   /**
@@ -765,28 +767,30 @@ package route53 {
     val `cn-northwest-1` = "cn-northwest-1"
     val `cn-north-1`     = "cn-north-1"
 
-    val values = IndexedSeq(
-      `us-east-1`,
-      `us-east-2`,
-      `us-west-1`,
-      `us-west-2`,
-      `ca-central-1`,
-      `eu-central-1`,
-      `eu-west-1`,
-      `eu-west-2`,
-      `eu-west-3`,
-      `ap-east-1`,
-      `me-south-1`,
-      `ap-south-1`,
-      `ap-southeast-1`,
-      `ap-southeast-2`,
-      `ap-northeast-1`,
-      `ap-northeast-2`,
-      `ap-northeast-3`,
-      `eu-north-1`,
-      `sa-east-1`,
-      `cn-northwest-1`,
-      `cn-north-1`
+    val values = js.Object.freeze(
+      js.Array(
+        `us-east-1`,
+        `us-east-2`,
+        `us-west-1`,
+        `us-west-2`,
+        `ca-central-1`,
+        `eu-central-1`,
+        `eu-west-1`,
+        `eu-west-2`,
+        `eu-west-3`,
+        `ap-east-1`,
+        `me-south-1`,
+        `ap-south-1`,
+        `ap-southeast-1`,
+        `ap-southeast-2`,
+        `ap-northeast-1`,
+        `ap-northeast-2`,
+        `ap-northeast-3`,
+        `eu-north-1`,
+        `sa-east-1`,
+        `cn-northwest-1`,
+        `cn-north-1`
+      )
     )
   }
 
@@ -796,8 +800,9 @@ package route53 {
     val LessThanThreshold             = "LessThanThreshold"
     val LessThanOrEqualToThreshold    = "LessThanOrEqualToThreshold"
 
-    val values =
-      IndexedSeq(GreaterThanOrEqualToThreshold, GreaterThanThreshold, LessThanThreshold, LessThanOrEqualToThreshold)
+    val values = js.Object.freeze(
+      js.Array(GreaterThanOrEqualToThreshold, GreaterThanThreshold, LessThanThreshold, LessThanOrEqualToThreshold)
+    )
   }
 
   /**
@@ -2414,15 +2419,17 @@ package route53 {
     val `ap-northeast-1` = "ap-northeast-1"
     val `sa-east-1`      = "sa-east-1"
 
-    val values = IndexedSeq(
-      `us-east-1`,
-      `us-west-1`,
-      `us-west-2`,
-      `eu-west-1`,
-      `ap-southeast-1`,
-      `ap-southeast-2`,
-      `ap-northeast-1`,
-      `sa-east-1`
+    val values = js.Object.freeze(
+      js.Array(
+        `us-east-1`,
+        `us-west-1`,
+        `us-west-2`,
+        `eu-west-1`,
+        `ap-southeast-1`,
+        `ap-southeast-2`,
+        `ap-northeast-1`,
+        `sa-east-1`
+      )
     )
   }
 
@@ -2435,7 +2442,8 @@ package route53 {
     val CALCULATED        = "CALCULATED"
     val CLOUDWATCH_METRIC = "CLOUDWATCH_METRIC"
 
-    val values = IndexedSeq(HTTP, HTTPS, HTTP_STR_MATCH, HTTPS_STR_MATCH, TCP, CALCULATED, CLOUDWATCH_METRIC)
+    val values =
+      js.Object.freeze(js.Array(HTTP, HTTPS, HTTP_STR_MATCH, HTTPS_STR_MATCH, TCP, CALCULATED, CLOUDWATCH_METRIC))
   }
 
   /**
@@ -2521,7 +2529,7 @@ package route53 {
     val MAX_RRSETS_BY_ZONE          = "MAX_RRSETS_BY_ZONE"
     val MAX_VPCS_ASSOCIATED_BY_ZONE = "MAX_VPCS_ASSOCIATED_BY_ZONE"
 
-    val values = IndexedSeq(MAX_RRSETS_BY_ZONE, MAX_VPCS_ASSOCIATED_BY_ZONE)
+    val values = js.Object.freeze(js.Array(MAX_RRSETS_BY_ZONE, MAX_VPCS_ASSOCIATED_BY_ZONE))
   }
 
   object InsufficientDataHealthStatusEnum {
@@ -2529,7 +2537,7 @@ package route53 {
     val Unhealthy       = "Unhealthy"
     val LastKnownStatus = "LastKnownStatus"
 
-    val values = IndexedSeq(Healthy, Unhealthy, LastKnownStatus)
+    val values = js.Object.freeze(js.Array(Healthy, Unhealthy, LastKnownStatus))
   }
 
   /**
@@ -3444,7 +3452,7 @@ package route53 {
     val AAAA  = "AAAA"
     val CAA   = "CAA"
 
-    val values = IndexedSeq(SOA, A, TXT, NS, CNAME, MX, NAPTR, PTR, SRV, SPF, AAAA, CAA)
+    val values = js.Object.freeze(js.Array(SOA, A, TXT, NS, CNAME, MX, NAPTR, PTR, SRV, SPF, AAAA, CAA))
   }
 
   object ResettableElementNameEnum {
@@ -3453,7 +3461,7 @@ package route53 {
     val ResourcePath             = "ResourcePath"
     val ChildHealthChecks        = "ChildHealthChecks"
 
-    val values = IndexedSeq(FullyQualifiedDomainName, Regions, ResourcePath, ChildHealthChecks)
+    val values = js.Object.freeze(js.Array(FullyQualifiedDomainName, Regions, ResourcePath, ChildHealthChecks))
   }
 
   /**
@@ -3538,7 +3546,7 @@ package route53 {
     val PRIMARY   = "PRIMARY"
     val SECONDARY = "SECONDARY"
 
-    val values = IndexedSeq(PRIMARY, SECONDARY)
+    val values = js.Object.freeze(js.Array(PRIMARY, SECONDARY))
   }
 
   object ResourceRecordSetRegionEnum {
@@ -3564,28 +3572,30 @@ package route53 {
     val `me-south-1`     = "me-south-1"
     val `ap-south-1`     = "ap-south-1"
 
-    val values = IndexedSeq(
-      `us-east-1`,
-      `us-east-2`,
-      `us-west-1`,
-      `us-west-2`,
-      `ca-central-1`,
-      `eu-west-1`,
-      `eu-west-2`,
-      `eu-west-3`,
-      `eu-central-1`,
-      `ap-southeast-1`,
-      `ap-southeast-2`,
-      `ap-northeast-1`,
-      `ap-northeast-2`,
-      `ap-northeast-3`,
-      `eu-north-1`,
-      `sa-east-1`,
-      `cn-north-1`,
-      `cn-northwest-1`,
-      `ap-east-1`,
-      `me-south-1`,
-      `ap-south-1`
+    val values = js.Object.freeze(
+      js.Array(
+        `us-east-1`,
+        `us-east-2`,
+        `us-west-1`,
+        `us-west-2`,
+        `ca-central-1`,
+        `eu-west-1`,
+        `eu-west-2`,
+        `eu-west-3`,
+        `eu-central-1`,
+        `ap-southeast-1`,
+        `ap-southeast-2`,
+        `ap-northeast-1`,
+        `ap-northeast-2`,
+        `ap-northeast-3`,
+        `eu-north-1`,
+        `sa-east-1`,
+        `cn-north-1`,
+        `cn-northwest-1`,
+        `ap-east-1`,
+        `me-south-1`,
+        `ap-south-1`
+      )
     )
   }
 
@@ -3639,7 +3649,7 @@ package route53 {
   object ReusableDelegationSetLimitTypeEnum {
     val MAX_ZONES_BY_REUSABLE_DELEGATION_SET = "MAX_ZONES_BY_REUSABLE_DELEGATION_SET"
 
-    val values = IndexedSeq(MAX_ZONES_BY_REUSABLE_DELEGATION_SET)
+    val values = js.Object.freeze(js.Array(MAX_ZONES_BY_REUSABLE_DELEGATION_SET))
   }
 
   object StatisticEnum {
@@ -3649,7 +3659,7 @@ package route53 {
     val Maximum     = "Maximum"
     val Minimum     = "Minimum"
 
-    val values = IndexedSeq(Average, Sum, SampleCount, Maximum, Minimum)
+    val values = js.Object.freeze(js.Array(Average, Sum, SampleCount, Maximum, Minimum))
   }
 
   /**
@@ -3698,7 +3708,7 @@ package route53 {
     val healthcheck = "healthcheck"
     val hostedzone  = "hostedzone"
 
-    val values = IndexedSeq(healthcheck, hostedzone)
+    val values = js.Object.freeze(js.Array(healthcheck, hostedzone))
   }
 
   /**
@@ -4153,27 +4163,29 @@ package route53 {
     val `ca-central-1`   = "ca-central-1"
     val `cn-north-1`     = "cn-north-1"
 
-    val values = IndexedSeq(
-      `us-east-1`,
-      `us-east-2`,
-      `us-west-1`,
-      `us-west-2`,
-      `eu-west-1`,
-      `eu-west-2`,
-      `eu-west-3`,
-      `eu-central-1`,
-      `ap-east-1`,
-      `me-south-1`,
-      `ap-southeast-1`,
-      `ap-southeast-2`,
-      `ap-south-1`,
-      `ap-northeast-1`,
-      `ap-northeast-2`,
-      `ap-northeast-3`,
-      `eu-north-1`,
-      `sa-east-1`,
-      `ca-central-1`,
-      `cn-north-1`
+    val values = js.Object.freeze(
+      js.Array(
+        `us-east-1`,
+        `us-east-2`,
+        `us-west-1`,
+        `us-west-2`,
+        `eu-west-1`,
+        `eu-west-2`,
+        `eu-west-3`,
+        `eu-central-1`,
+        `ap-east-1`,
+        `me-south-1`,
+        `ap-southeast-1`,
+        `ap-southeast-2`,
+        `ap-south-1`,
+        `ap-northeast-1`,
+        `ap-northeast-2`,
+        `ap-northeast-3`,
+        `eu-north-1`,
+        `sa-east-1`,
+        `ca-central-1`,
+        `cn-north-1`
+      )
     )
   }
 }

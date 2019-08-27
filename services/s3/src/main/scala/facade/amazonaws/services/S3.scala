@@ -806,7 +806,7 @@ package s3 {
   object AnalyticsS3ExportFileFormatEnum {
     val CSV = "CSV"
 
-    val values = IndexedSeq(CSV)
+    val values = js.Object.freeze(js.Array(CSV))
   }
 
   /**
@@ -834,7 +834,7 @@ package s3 {
     val Enabled   = "Enabled"
     val Suspended = "Suspended"
 
-    val values = IndexedSeq(Enabled, Suspended)
+    val values = js.Object.freeze(js.Array(Enabled, Suspended))
   }
 
   object BucketCannedACLEnum {
@@ -843,7 +843,7 @@ package s3 {
     val `public-read-write`  = "public-read-write"
     val `authenticated-read` = "authenticated-read"
 
-    val values = IndexedSeq(`private`, `public-read`, `public-read-write`, `authenticated-read`)
+    val values = js.Object.freeze(js.Array(`private`, `public-read`, `public-read-write`, `authenticated-read`))
   }
 
   /**
@@ -879,18 +879,20 @@ package s3 {
     val `cn-north-1`     = "cn-north-1"
     val `eu-central-1`   = "eu-central-1"
 
-    val values = IndexedSeq(
-      EU,
-      `eu-west-1`,
-      `us-west-1`,
-      `us-west-2`,
-      `ap-south-1`,
-      `ap-southeast-1`,
-      `ap-southeast-2`,
-      `ap-northeast-1`,
-      `sa-east-1`,
-      `cn-north-1`,
-      `eu-central-1`
+    val values = js.Object.freeze(
+      js.Array(
+        EU,
+        `eu-west-1`,
+        `us-west-1`,
+        `us-west-2`,
+        `ap-south-1`,
+        `ap-southeast-1`,
+        `ap-southeast-2`,
+        `ap-northeast-1`,
+        `sa-east-1`,
+        `cn-north-1`,
+        `eu-central-1`
+      )
     )
   }
 
@@ -917,14 +919,14 @@ package s3 {
     val READ         = "READ"
     val WRITE        = "WRITE"
 
-    val values = IndexedSeq(FULL_CONTROL, READ, WRITE)
+    val values = js.Object.freeze(js.Array(FULL_CONTROL, READ, WRITE))
   }
 
   object BucketVersioningStatusEnum {
     val Enabled   = "Enabled"
     val Suspended = "Suspended"
 
-    val values = IndexedSeq(Enabled, Suspended)
+    val values = js.Object.freeze(js.Array(Enabled, Suspended))
   }
 
   /**
@@ -1205,7 +1207,7 @@ package s3 {
     val GZIP  = "GZIP"
     val BZIP2 = "BZIP2"
 
-    val values = IndexedSeq(NONE, GZIP, BZIP2)
+    val values = js.Object.freeze(js.Array(NONE, GZIP, BZIP2))
   }
 
   /**
@@ -1964,7 +1966,7 @@ package s3 {
     val Enabled  = "Enabled"
     val Disabled = "Disabled"
 
-    val values = IndexedSeq(Enabled, Disabled)
+    val values = js.Object.freeze(js.Array(Enabled, Disabled))
   }
 
   @js.native
@@ -2190,7 +2192,7 @@ package s3 {
   object EncodingTypeEnum {
     val url = "url"
 
-    val values = IndexedSeq(url)
+    val values = js.Object.freeze(js.Array(url))
   }
 
   /**
@@ -2315,18 +2317,20 @@ package s3 {
     val `s3:ObjectRestore:Post`                    = "s3:ObjectRestore:Post"
     val `s3:ObjectRestore:Completed`               = "s3:ObjectRestore:Completed"
 
-    val values = IndexedSeq(
-      `s3:ReducedRedundancyLostObject`,
-      `s3:ObjectCreated:*`,
-      `s3:ObjectCreated:Put`,
-      `s3:ObjectCreated:Post`,
-      `s3:ObjectCreated:Copy`,
-      `s3:ObjectCreated:CompleteMultipartUpload`,
-      `s3:ObjectRemoved:*`,
-      `s3:ObjectRemoved:Delete`,
-      `s3:ObjectRemoved:DeleteMarkerCreated`,
-      `s3:ObjectRestore:Post`,
-      `s3:ObjectRestore:Completed`
+    val values = js.Object.freeze(
+      js.Array(
+        `s3:ReducedRedundancyLostObject`,
+        `s3:ObjectCreated:*`,
+        `s3:ObjectCreated:Put`,
+        `s3:ObjectCreated:Post`,
+        `s3:ObjectCreated:Copy`,
+        `s3:ObjectCreated:CompleteMultipartUpload`,
+        `s3:ObjectRemoved:*`,
+        `s3:ObjectRemoved:Delete`,
+        `s3:ObjectRemoved:DeleteMarkerCreated`,
+        `s3:ObjectRestore:Post`,
+        `s3:ObjectRestore:Completed`
+      )
     )
   }
 
@@ -2334,13 +2338,13 @@ package s3 {
     val Enabled  = "Enabled"
     val Disabled = "Disabled"
 
-    val values = IndexedSeq(Enabled, Disabled)
+    val values = js.Object.freeze(js.Array(Enabled, Disabled))
   }
 
   object ExpressionTypeEnum {
     val SQL = "SQL"
 
-    val values = IndexedSeq(SQL)
+    val values = js.Object.freeze(js.Array(SQL))
   }
 
   object FileHeaderInfoEnum {
@@ -2348,7 +2352,7 @@ package s3 {
     val IGNORE = "IGNORE"
     val NONE   = "NONE"
 
-    val values = IndexedSeq(USE, IGNORE, NONE)
+    val values = js.Object.freeze(js.Array(USE, IGNORE, NONE))
   }
 
   /**
@@ -2376,7 +2380,7 @@ package s3 {
     val prefix = "prefix"
     val suffix = "suffix"
 
-    val values = IndexedSeq(prefix, suffix)
+    val values = js.Object.freeze(js.Array(prefix, suffix))
   }
 
   @js.native
@@ -3866,21 +3870,21 @@ package s3 {
     val ORC     = "ORC"
     val Parquet = "Parquet"
 
-    val values = IndexedSeq(CSV, ORC, Parquet)
+    val values = js.Object.freeze(js.Array(CSV, ORC, Parquet))
   }
 
   object InventoryFrequencyEnum {
     val Daily  = "Daily"
     val Weekly = "Weekly"
 
-    val values = IndexedSeq(Daily, Weekly)
+    val values = js.Object.freeze(js.Array(Daily, Weekly))
   }
 
   object InventoryIncludedObjectVersionsEnum {
     val All     = "All"
     val Current = "Current"
 
-    val values = IndexedSeq(All, Current)
+    val values = js.Object.freeze(js.Array(All, Current))
   }
 
   object InventoryOptionalFieldEnum {
@@ -3895,17 +3899,19 @@ package s3 {
     val ObjectLockMode            = "ObjectLockMode"
     val ObjectLockLegalHoldStatus = "ObjectLockLegalHoldStatus"
 
-    val values = IndexedSeq(
-      Size,
-      LastModifiedDate,
-      StorageClass,
-      ETag,
-      IsMultipartUploaded,
-      ReplicationStatus,
-      EncryptionStatus,
-      ObjectLockRetainUntilDate,
-      ObjectLockMode,
-      ObjectLockLegalHoldStatus
+    val values = js.Object.freeze(
+      js.Array(
+        Size,
+        LastModifiedDate,
+        StorageClass,
+        ETag,
+        IsMultipartUploaded,
+        ReplicationStatus,
+        EncryptionStatus,
+        ObjectLockRetainUntilDate,
+        ObjectLockMode,
+        ObjectLockLegalHoldStatus
+      )
     )
   }
 
@@ -4001,7 +4007,7 @@ package s3 {
     val DOCUMENT = "DOCUMENT"
     val LINES    = "LINES"
 
-    val values = IndexedSeq(DOCUMENT, LINES)
+    val values = js.Object.freeze(js.Array(DOCUMENT, LINES))
   }
 
   /**
@@ -4771,21 +4777,21 @@ package s3 {
     val Enabled  = "Enabled"
     val Disabled = "Disabled"
 
-    val values = IndexedSeq(Enabled, Disabled)
+    val values = js.Object.freeze(js.Array(Enabled, Disabled))
   }
 
   object MFADeleteStatusEnum {
     val Enabled  = "Enabled"
     val Disabled = "Disabled"
 
-    val values = IndexedSeq(Enabled, Disabled)
+    val values = js.Object.freeze(js.Array(Enabled, Disabled))
   }
 
   object MetadataDirectiveEnum {
     val COPY    = "COPY"
     val REPLACE = "REPLACE"
 
-    val values = IndexedSeq(COPY, REPLACE)
+    val values = js.Object.freeze(js.Array(COPY, REPLACE))
   }
 
   /**
@@ -5056,14 +5062,16 @@ package s3 {
     val `bucket-owner-read`         = "bucket-owner-read"
     val `bucket-owner-full-control` = "bucket-owner-full-control"
 
-    val values = IndexedSeq(
-      `private`,
-      `public-read`,
-      `public-read-write`,
-      `authenticated-read`,
-      `aws-exec-read`,
-      `bucket-owner-read`,
-      `bucket-owner-full-control`
+    val values = js.Object.freeze(
+      js.Array(
+        `private`,
+        `public-read`,
+        `public-read-write`,
+        `authenticated-read`,
+        `aws-exec-read`,
+        `bucket-owner-read`,
+        `bucket-owner-full-control`
+      )
     )
   }
 
@@ -5114,7 +5122,7 @@ package s3 {
   object ObjectLockEnabledEnum {
     val Enabled = "Enabled"
 
-    val values = IndexedSeq(Enabled)
+    val values = js.Object.freeze(js.Array(Enabled))
   }
 
   /**
@@ -5139,14 +5147,14 @@ package s3 {
     val ON  = "ON"
     val OFF = "OFF"
 
-    val values = IndexedSeq(ON, OFF)
+    val values = js.Object.freeze(js.Array(ON, OFF))
   }
 
   object ObjectLockModeEnum {
     val GOVERNANCE = "GOVERNANCE"
     val COMPLIANCE = "COMPLIANCE"
 
-    val values = IndexedSeq(GOVERNANCE, COMPLIANCE)
+    val values = js.Object.freeze(js.Array(GOVERNANCE, COMPLIANCE))
   }
 
   /**
@@ -5174,7 +5182,7 @@ package s3 {
     val GOVERNANCE = "GOVERNANCE"
     val COMPLIANCE = "COMPLIANCE"
 
-    val values = IndexedSeq(GOVERNANCE, COMPLIANCE)
+    val values = js.Object.freeze(js.Array(GOVERNANCE, COMPLIANCE))
   }
 
   /**
@@ -5204,8 +5212,9 @@ package s3 {
     val INTELLIGENT_TIERING = "INTELLIGENT_TIERING"
     val DEEP_ARCHIVE        = "DEEP_ARCHIVE"
 
-    val values =
-      IndexedSeq(STANDARD, REDUCED_REDUNDANCY, GLACIER, STANDARD_IA, ONEZONE_IA, INTELLIGENT_TIERING, DEEP_ARCHIVE)
+    val values = js.Object.freeze(
+      js.Array(STANDARD, REDUCED_REDUNDANCY, GLACIER, STANDARD_IA, ONEZONE_IA, INTELLIGENT_TIERING, DEEP_ARCHIVE)
+    )
   }
 
   /**
@@ -5250,7 +5259,7 @@ package s3 {
   object ObjectVersionStorageClassEnum {
     val STANDARD = "STANDARD"
 
-    val values = IndexedSeq(STANDARD)
+    val values = js.Object.freeze(js.Array(STANDARD))
   }
 
   /**
@@ -5316,7 +5325,7 @@ package s3 {
   object OwnerOverrideEnum {
     val Destination = "Destination"
 
-    val values = IndexedSeq(Destination)
+    val values = js.Object.freeze(js.Array(Destination))
   }
 
   /**
@@ -5365,7 +5374,7 @@ package s3 {
     val Requester   = "Requester"
     val BucketOwner = "BucketOwner"
 
-    val values = IndexedSeq(Requester, BucketOwner)
+    val values = js.Object.freeze(js.Array(Requester, BucketOwner))
   }
 
   object PermissionEnum {
@@ -5375,7 +5384,7 @@ package s3 {
     val READ         = "READ"
     val READ_ACP     = "READ_ACP"
 
-    val values = IndexedSeq(FULL_CONTROL, WRITE, WRITE_ACP, READ, READ_ACP)
+    val values = js.Object.freeze(js.Array(FULL_CONTROL, WRITE, WRITE_ACP, READ, READ_ACP))
   }
 
   /**
@@ -5442,7 +5451,7 @@ package s3 {
     val http  = "http"
     val https = "https"
 
-    val values = IndexedSeq(http, https)
+    val values = js.Object.freeze(js.Array(http, https))
   }
 
   /**
@@ -6382,7 +6391,7 @@ package s3 {
     val ALWAYS   = "ALWAYS"
     val ASNEEDED = "ASNEEDED"
 
-    val values = IndexedSeq(ALWAYS, ASNEEDED)
+    val values = js.Object.freeze(js.Array(ALWAYS, ASNEEDED))
   }
 
   /**
@@ -6569,7 +6578,7 @@ package s3 {
     val Enabled  = "Enabled"
     val Disabled = "Disabled"
 
-    val values = IndexedSeq(Enabled, Disabled)
+    val values = js.Object.freeze(js.Array(Enabled, Disabled))
   }
 
   object ReplicationStatusEnum {
@@ -6578,7 +6587,7 @@ package s3 {
     val FAILED   = "FAILED"
     val REPLICA  = "REPLICA"
 
-    val values = IndexedSeq(COMPLETE, PENDING, FAILED, REPLICA)
+    val values = js.Object.freeze(js.Array(COMPLETE, PENDING, FAILED, REPLICA))
   }
 
   /**
@@ -6587,7 +6596,7 @@ package s3 {
   object RequestChargedEnum {
     val requester = "requester"
 
-    val values = IndexedSeq(requester)
+    val values = js.Object.freeze(js.Array(requester))
   }
 
   /**
@@ -6596,7 +6605,7 @@ package s3 {
   object RequestPayerEnum {
     val requester = "requester"
 
-    val values = IndexedSeq(requester)
+    val values = js.Object.freeze(js.Array(requester))
   }
 
   /**
@@ -6723,7 +6732,7 @@ package s3 {
   object RestoreRequestTypeEnum {
     val SELECT = "SELECT"
 
-    val values = IndexedSeq(SELECT)
+    val values = js.Object.freeze(js.Array(SELECT))
   }
 
   /**
@@ -7011,7 +7020,7 @@ package s3 {
     val AES256    = "AES256"
     val `aws:kms` = "aws:kms"
 
-    val values = IndexedSeq(AES256, `aws:kms`)
+    val values = js.Object.freeze(js.Array(AES256, `aws:kms`))
   }
 
   /**
@@ -7119,7 +7128,7 @@ package s3 {
     val Enabled  = "Enabled"
     val Disabled = "Disabled"
 
-    val values = IndexedSeq(Enabled, Disabled)
+    val values = js.Object.freeze(js.Array(Enabled, Disabled))
   }
 
   /**
@@ -7173,8 +7182,9 @@ package s3 {
     val GLACIER             = "GLACIER"
     val DEEP_ARCHIVE        = "DEEP_ARCHIVE"
 
-    val values =
-      IndexedSeq(STANDARD, REDUCED_REDUNDANCY, STANDARD_IA, ONEZONE_IA, INTELLIGENT_TIERING, GLACIER, DEEP_ARCHIVE)
+    val values = js.Object.freeze(
+      js.Array(STANDARD, REDUCED_REDUNDANCY, STANDARD_IA, ONEZONE_IA, INTELLIGENT_TIERING, GLACIER, DEEP_ARCHIVE)
+    )
   }
 
   /**
@@ -7221,7 +7231,7 @@ package s3 {
   object StorageClassAnalysisSchemaVersionEnum {
     val V_1 = "V_1"
 
-    val values = IndexedSeq(V_1)
+    val values = js.Object.freeze(js.Array(V_1))
   }
 
   /**
@@ -7271,7 +7281,7 @@ package s3 {
     val COPY    = "COPY"
     val REPLACE = "REPLACE"
 
-    val values = IndexedSeq(COPY, REPLACE)
+    val values = js.Object.freeze(js.Array(COPY, REPLACE))
   }
 
   /**
@@ -7300,7 +7310,7 @@ package s3 {
     val Bulk      = "Bulk"
     val Expedited = "Expedited"
 
-    val values = IndexedSeq(Standard, Bulk, Expedited)
+    val values = js.Object.freeze(js.Array(Standard, Bulk, Expedited))
   }
 
   /**
@@ -7390,7 +7400,7 @@ package s3 {
     val INTELLIGENT_TIERING = "INTELLIGENT_TIERING"
     val DEEP_ARCHIVE        = "DEEP_ARCHIVE"
 
-    val values = IndexedSeq(GLACIER, STANDARD_IA, ONEZONE_IA, INTELLIGENT_TIERING, DEEP_ARCHIVE)
+    val values = js.Object.freeze(js.Array(GLACIER, STANDARD_IA, ONEZONE_IA, INTELLIGENT_TIERING, DEEP_ARCHIVE))
   }
 
   object TypeEnum {
@@ -7398,7 +7408,7 @@ package s3 {
     val AmazonCustomerByEmail = "AmazonCustomerByEmail"
     val Group                 = "Group"
 
-    val values = IndexedSeq(CanonicalUser, AmazonCustomerByEmail, Group)
+    val values = js.Object.freeze(js.Array(CanonicalUser, AmazonCustomerByEmail, Group))
   }
 
   @js.native

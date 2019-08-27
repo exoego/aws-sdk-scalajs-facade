@@ -100,7 +100,7 @@ package mediapackage {
     val SCTE35_ENHANCED = "SCTE35_ENHANCED"
     val PASSTHROUGH     = "PASSTHROUGH"
 
-    val values = IndexedSeq(NONE, SCTE35_ENHANCED, PASSTHROUGH)
+    val values = js.Object.freeze(js.Array(NONE, SCTE35_ENHANCED, PASSTHROUGH))
   }
 
   /**
@@ -119,7 +119,7 @@ package mediapackage {
     val UNRESTRICTED = "UNRESTRICTED"
     val BOTH         = "BOTH"
 
-    val values = IndexedSeq(NONE, RESTRICTED, UNRESTRICTED, BOTH)
+    val values = js.Object.freeze(js.Array(NONE, RESTRICTED, UNRESTRICTED, BOTH))
   }
 
   /**
@@ -651,7 +651,7 @@ package mediapackage {
     val AES_128    = "AES_128"
     val SAMPLE_AES = "SAMPLE_AES"
 
-    val values = IndexedSeq(AES_128, SAMPLE_AES)
+    val values = js.Object.freeze(js.Array(AES_128, SAMPLE_AES))
   }
 
   /**
@@ -983,7 +983,7 @@ package mediapackage {
     val FULL    = "FULL"
     val COMPACT = "COMPACT"
 
-    val values = IndexedSeq(FULL, COMPACT)
+    val values = js.Object.freeze(js.Array(FULL, COMPACT))
   }
 
   /**
@@ -1095,14 +1095,14 @@ package mediapackage {
     val EVENT = "EVENT"
     val VOD   = "VOD"
 
-    val values = IndexedSeq(NONE, EVENT, VOD)
+    val values = js.Object.freeze(js.Array(NONE, EVENT, VOD))
   }
 
   object ProfileEnum {
     val NONE      = "NONE"
     val HBBTV_1_5 = "HBBTV_1_5"
 
-    val values = IndexedSeq(NONE, HBBTV_1_5)
+    val values = js.Object.freeze(js.Array(NONE, HBBTV_1_5))
   }
 
   @deprecated("Deprecated in AWS SDK", "forever")
@@ -1203,7 +1203,7 @@ package mediapackage {
     val TIME_WITH_TIMELINE   = "TIME_WITH_TIMELINE"
     val NUMBER_WITH_DURATION = "NUMBER_WITH_DURATION"
 
-    val values = IndexedSeq(NUMBER_WITH_TIMELINE, TIME_WITH_TIMELINE, NUMBER_WITH_DURATION)
+    val values = js.Object.freeze(js.Array(NUMBER_WITH_TIMELINE, TIME_WITH_TIMELINE, NUMBER_WITH_DURATION))
   }
 
   /**
@@ -1243,7 +1243,7 @@ package mediapackage {
     val VIDEO_BITRATE_ASCENDING  = "VIDEO_BITRATE_ASCENDING"
     val VIDEO_BITRATE_DESCENDING = "VIDEO_BITRATE_DESCENDING"
 
-    val values = IndexedSeq(ORIGINAL, VIDEO_BITRATE_ASCENDING, VIDEO_BITRATE_DESCENDING)
+    val values = js.Object.freeze(js.Array(ORIGINAL, VIDEO_BITRATE_ASCENDING, VIDEO_BITRATE_DESCENDING))
   }
 
   /**
@@ -1471,21 +1471,23 @@ package mediapackage {
     val PROVIDER_OVERLAY_PLACEMENT_OPPORTUNITY    = "PROVIDER_OVERLAY_PLACEMENT_OPPORTUNITY"
     val DISTRIBUTOR_OVERLAY_PLACEMENT_OPPORTUNITY = "DISTRIBUTOR_OVERLAY_PLACEMENT_OPPORTUNITY"
 
-    val values = IndexedSeq(
-      SPLICE_INSERT,
-      BREAK,
-      PROVIDER_ADVERTISEMENT,
-      DISTRIBUTOR_ADVERTISEMENT,
-      PROVIDER_PLACEMENT_OPPORTUNITY,
-      DISTRIBUTOR_PLACEMENT_OPPORTUNITY,
-      PROVIDER_OVERLAY_PLACEMENT_OPPORTUNITY,
-      DISTRIBUTOR_OVERLAY_PLACEMENT_OPPORTUNITY
+    val values = js.Object.freeze(
+      js.Array(
+        SPLICE_INSERT,
+        BREAK,
+        PROVIDER_ADVERTISEMENT,
+        DISTRIBUTOR_ADVERTISEMENT,
+        PROVIDER_PLACEMENT_OPPORTUNITY,
+        DISTRIBUTOR_PLACEMENT_OPPORTUNITY,
+        PROVIDER_OVERLAY_PLACEMENT_OPPORTUNITY,
+        DISTRIBUTOR_OVERLAY_PLACEMENT_OPPORTUNITY
+      )
     )
   }
 
   object __PeriodTriggersElementEnum {
     val ADS = "ADS"
 
-    val values = IndexedSeq(ADS)
+    val values = js.Object.freeze(js.Array(ADS))
   }
 }

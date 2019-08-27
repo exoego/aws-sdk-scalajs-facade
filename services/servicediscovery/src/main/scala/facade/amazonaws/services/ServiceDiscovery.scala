@@ -307,7 +307,7 @@ package servicediscovery {
     val HEALTHY   = "HEALTHY"
     val UNHEALTHY = "UNHEALTHY"
 
-    val values = IndexedSeq(HEALTHY, UNHEALTHY)
+    val values = js.Object.freeze(js.Array(HEALTHY, UNHEALTHY))
   }
 
   @js.native
@@ -542,7 +542,7 @@ package servicediscovery {
     val IN      = "IN"
     val BETWEEN = "BETWEEN"
 
-    val values = IndexedSeq(EQ, IN, BETWEEN)
+    val values = js.Object.freeze(js.Array(EQ, IN, BETWEEN))
   }
 
   @js.native
@@ -802,7 +802,7 @@ package servicediscovery {
     val HTTPS = "HTTPS"
     val TCP   = "TCP"
 
-    val values = IndexedSeq(HTTP, HTTPS, TCP)
+    val values = js.Object.freeze(js.Array(HTTP, HTTPS, TCP))
   }
 
   object HealthStatusEnum {
@@ -810,7 +810,7 @@ package servicediscovery {
     val UNHEALTHY = "UNHEALTHY"
     val UNKNOWN   = "UNKNOWN"
 
-    val values = IndexedSeq(HEALTHY, UNHEALTHY, UNKNOWN)
+    val values = js.Object.freeze(js.Array(HEALTHY, UNHEALTHY, UNKNOWN))
   }
 
   object HealthStatusFilterEnum {
@@ -818,7 +818,7 @@ package servicediscovery {
     val UNHEALTHY = "UNHEALTHY"
     val ALL       = "ALL"
 
-    val values = IndexedSeq(HEALTHY, UNHEALTHY, ALL)
+    val values = js.Object.freeze(js.Array(HEALTHY, UNHEALTHY, ALL))
   }
 
   /**
@@ -1145,7 +1145,7 @@ package servicediscovery {
   object NamespaceFilterNameEnum {
     val TYPE = "TYPE"
 
-    val values = IndexedSeq(TYPE)
+    val values = js.Object.freeze(js.Array(TYPE))
   }
 
   /**
@@ -1213,7 +1213,7 @@ package servicediscovery {
     val DNS_PRIVATE = "DNS_PRIVATE"
     val HTTP        = "HTTP"
 
-    val values = IndexedSeq(DNS_PUBLIC, DNS_PRIVATE, HTTP)
+    val values = js.Object.freeze(js.Array(DNS_PUBLIC, DNS_PRIVATE, HTTP))
   }
 
   /**
@@ -1288,7 +1288,7 @@ package servicediscovery {
     val TYPE         = "TYPE"
     val UPDATE_DATE  = "UPDATE_DATE"
 
-    val values = IndexedSeq(NAMESPACE_ID, SERVICE_ID, STATUS, TYPE, UPDATE_DATE)
+    val values = js.Object.freeze(js.Array(NAMESPACE_ID, SERVICE_ID, STATUS, TYPE, UPDATE_DATE))
   }
 
   object OperationStatusEnum {
@@ -1297,7 +1297,7 @@ package servicediscovery {
     val SUCCESS   = "SUCCESS"
     val FAIL      = "FAIL"
 
-    val values = IndexedSeq(SUBMITTED, PENDING, SUCCESS, FAIL)
+    val values = js.Object.freeze(js.Array(SUBMITTED, PENDING, SUCCESS, FAIL))
   }
 
   /**
@@ -1326,7 +1326,7 @@ package servicediscovery {
     val SERVICE   = "SERVICE"
     val INSTANCE  = "INSTANCE"
 
-    val values = IndexedSeq(NAMESPACE, SERVICE, INSTANCE)
+    val values = js.Object.freeze(js.Array(NAMESPACE, SERVICE, INSTANCE))
   }
 
   object OperationTypeEnum {
@@ -1336,7 +1336,9 @@ package servicediscovery {
     val REGISTER_INSTANCE   = "REGISTER_INSTANCE"
     val DEREGISTER_INSTANCE = "DEREGISTER_INSTANCE"
 
-    val values = IndexedSeq(CREATE_NAMESPACE, DELETE_NAMESPACE, UPDATE_SERVICE, REGISTER_INSTANCE, DEREGISTER_INSTANCE)
+    val values = js.Object.freeze(
+      js.Array(CREATE_NAMESPACE, DELETE_NAMESPACE, UPDATE_SERVICE, REGISTER_INSTANCE, DEREGISTER_INSTANCE)
+    )
   }
 
   object RecordTypeEnum {
@@ -1345,7 +1347,7 @@ package servicediscovery {
     val AAAA  = "AAAA"
     val CNAME = "CNAME"
 
-    val values = IndexedSeq(SRV, A, AAAA, CNAME)
+    val values = js.Object.freeze(js.Array(SRV, A, AAAA, CNAME))
   }
 
   @js.native
@@ -1393,7 +1395,7 @@ package servicediscovery {
     val MULTIVALUE = "MULTIVALUE"
     val WEIGHTED   = "WEIGHTED"
 
-    val values = IndexedSeq(MULTIVALUE, WEIGHTED)
+    val values = js.Object.freeze(js.Array(MULTIVALUE, WEIGHTED))
   }
 
   /**
@@ -1499,7 +1501,7 @@ package servicediscovery {
   object ServiceFilterNameEnum {
     val NAMESPACE_ID = "NAMESPACE_ID"
 
-    val values = IndexedSeq(NAMESPACE_ID)
+    val values = js.Object.freeze(js.Array(NAMESPACE_ID))
   }
 
   /**

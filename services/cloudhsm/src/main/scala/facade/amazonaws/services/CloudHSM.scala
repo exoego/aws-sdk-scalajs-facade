@@ -158,7 +158,7 @@ package cloudhsm {
     val `5.1` = "5.1"
     val `5.3` = "5.3"
 
-    val values = IndexedSeq(`5.1`, `5.3`)
+    val values = js.Object.freeze(js.Array(`5.1`, `5.3`))
   }
 
   /**
@@ -172,7 +172,7 @@ package cloudhsm {
     val UPDATING = "UPDATING"
     val DEGRADED = "DEGRADED"
 
-    val values = IndexedSeq(READY, UPDATING, DEGRADED)
+    val values = js.Object.freeze(js.Array(READY, UPDATING, DEGRADED))
   }
 
   /**
@@ -695,7 +695,7 @@ package cloudhsm {
     val TERMINATED  = "TERMINATED"
     val DEGRADED    = "DEGRADED"
 
-    val values = IndexedSeq(PENDING, RUNNING, UPDATING, SUSPENDED, TERMINATING, TERMINATED, DEGRADED)
+    val values = js.Object.freeze(js.Array(PENDING, RUNNING, UPDATING, SUSPENDED, TERMINATING, TERMINATED, DEGRADED))
   }
 
   /**
@@ -1045,7 +1045,7 @@ package cloudhsm {
   object SubscriptionTypeEnum {
     val PRODUCTION = "PRODUCTION"
 
-    val values = IndexedSeq(PRODUCTION)
+    val values = js.Object.freeze(js.Array(PRODUCTION))
   }
 
   /**

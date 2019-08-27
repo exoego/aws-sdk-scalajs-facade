@@ -310,7 +310,7 @@ package mediatailor {
     val SINGLE_PERIOD = "SINGLE_PERIOD"
     val MULTI_PERIOD  = "MULTI_PERIOD"
 
-    val values = IndexedSeq(SINGLE_PERIOD, MULTI_PERIOD)
+    val values = js.Object.freeze(js.Array(SINGLE_PERIOD, MULTI_PERIOD))
   }
 
   /**

@@ -1007,19 +1007,21 @@ package iam {
     val date        = "date"
     val dateList    = "dateList"
 
-    val values = IndexedSeq(
-      string,
-      stringList,
-      numeric,
-      numericList,
-      boolean,
-      booleanList,
-      ip,
-      ipList,
-      binary,
-      binaryList,
-      date,
-      dateList
+    val values = js.Object.freeze(
+      js.Array(
+        string,
+        stringList,
+        numeric,
+        numericList,
+        boolean,
+        booleanList,
+        ip,
+        ipList,
+        binary,
+        binaryList,
+        date,
+        dateList
+      )
     )
   }
 
@@ -2037,7 +2039,7 @@ package iam {
     val FAILED      = "FAILED"
     val NOT_STARTED = "NOT_STARTED"
 
-    val values = IndexedSeq(SUCCEEDED, IN_PROGRESS, FAILED, NOT_STARTED)
+    val values = js.Object.freeze(js.Array(SUCCEEDED, IN_PROGRESS, FAILED, NOT_STARTED))
   }
 
   @js.native
@@ -2190,7 +2192,7 @@ package iam {
     val LocalManagedPolicy = "LocalManagedPolicy"
     val AWSManagedPolicy   = "AWSManagedPolicy"
 
-    val values = IndexedSeq(User, Role, Group, LocalManagedPolicy, AWSManagedPolicy)
+    val values = js.Object.freeze(js.Array(User, Role, Group, LocalManagedPolicy, AWSManagedPolicy))
   }
 
   /**
@@ -4981,7 +4983,7 @@ package iam {
   object PermissionsBoundaryAttachmentTypeEnum {
     val PermissionsBoundaryPolicy = "PermissionsBoundaryPolicy"
 
-    val values = IndexedSeq(PermissionsBoundaryPolicy)
+    val values = js.Object.freeze(js.Array(PermissionsBoundaryPolicy))
   }
 
   /**
@@ -5063,7 +5065,7 @@ package iam {
     val explicitDeny = "explicitDeny"
     val implicitDeny = "implicitDeny"
 
-    val values = IndexedSeq(allowed, explicitDeny, implicitDeny)
+    val values = js.Object.freeze(js.Array(allowed, explicitDeny, implicitDeny))
   }
 
   /**
@@ -5154,7 +5156,7 @@ package iam {
     val resource       = "resource"
     val none           = "none"
 
-    val values = IndexedSeq(user, group, role, `aws-managed`, `user-managed`, resource, none)
+    val values = js.Object.freeze(js.Array(user, group, role, `aws-managed`, `user-managed`, resource, none))
   }
 
   /**
@@ -5165,7 +5167,7 @@ package iam {
     val PermissionsPolicy   = "PermissionsPolicy"
     val PermissionsBoundary = "PermissionsBoundary"
 
-    val values = IndexedSeq(PermissionsPolicy, PermissionsBoundary)
+    val values = js.Object.freeze(js.Array(PermissionsPolicy, PermissionsBoundary))
   }
 
   /**
@@ -5414,7 +5416,7 @@ package iam {
   object ReportFormatTypeEnum {
     val `text/csv` = "text/csv"
 
-    val values = IndexedSeq(`text/csv`)
+    val values = js.Object.freeze(js.Array(`text/csv`))
   }
 
   object ReportStateTypeEnum {
@@ -5422,7 +5424,7 @@ package iam {
     val INPROGRESS = "INPROGRESS"
     val COMPLETE   = "COMPLETE"
 
-    val values = IndexedSeq(STARTED, INPROGRESS, COMPLETE)
+    val values = js.Object.freeze(js.Array(STARTED, INPROGRESS, COMPLETE))
   }
 
   @js.native
@@ -6836,21 +6838,21 @@ package iam {
     val Unassigned = "Unassigned"
     val Any        = "Any"
 
-    val values = IndexedSeq(Assigned, Unassigned, Any)
+    val values = js.Object.freeze(js.Array(Assigned, Unassigned, Any))
   }
 
   object encodingTypeEnum {
     val SSH = "SSH"
     val PEM = "PEM"
 
-    val values = IndexedSeq(SSH, PEM)
+    val values = js.Object.freeze(js.Array(SSH, PEM))
   }
 
   object globalEndpointTokenVersionEnum {
     val v1Token = "v1Token"
     val v2Token = "v2Token"
 
-    val values = IndexedSeq(v1Token, v2Token)
+    val values = js.Object.freeze(js.Array(v1Token, v2Token))
   }
 
   object jobStatusTypeEnum {
@@ -6858,7 +6860,7 @@ package iam {
     val COMPLETED   = "COMPLETED"
     val FAILED      = "FAILED"
 
-    val values = IndexedSeq(IN_PROGRESS, COMPLETED, FAILED)
+    val values = js.Object.freeze(js.Array(IN_PROGRESS, COMPLETED, FAILED))
   }
 
   object policyOwnerEntityTypeEnum {
@@ -6866,7 +6868,7 @@ package iam {
     val ROLE  = "ROLE"
     val GROUP = "GROUP"
 
-    val values = IndexedSeq(USER, ROLE, GROUP)
+    val values = js.Object.freeze(js.Array(USER, ROLE, GROUP))
   }
 
   object policyScopeTypeEnum {
@@ -6874,14 +6876,14 @@ package iam {
     val AWS   = "AWS"
     val Local = "Local"
 
-    val values = IndexedSeq(All, AWS, Local)
+    val values = js.Object.freeze(js.Array(All, AWS, Local))
   }
 
   object policyTypeEnum {
     val INLINE  = "INLINE"
     val MANAGED = "MANAGED"
 
-    val values = IndexedSeq(INLINE, MANAGED)
+    val values = js.Object.freeze(js.Array(INLINE, MANAGED))
   }
 
   object sortKeyTypeEnum {
@@ -6890,11 +6892,13 @@ package iam {
     val LAST_AUTHENTICATED_TIME_ASCENDING  = "LAST_AUTHENTICATED_TIME_ASCENDING"
     val LAST_AUTHENTICATED_TIME_DESCENDING = "LAST_AUTHENTICATED_TIME_DESCENDING"
 
-    val values = IndexedSeq(
-      SERVICE_NAMESPACE_ASCENDING,
-      SERVICE_NAMESPACE_DESCENDING,
-      LAST_AUTHENTICATED_TIME_ASCENDING,
-      LAST_AUTHENTICATED_TIME_DESCENDING
+    val values = js.Object.freeze(
+      js.Array(
+        SERVICE_NAMESPACE_ASCENDING,
+        SERVICE_NAMESPACE_DESCENDING,
+        LAST_AUTHENTICATED_TIME_ASCENDING,
+        LAST_AUTHENTICATED_TIME_DESCENDING
+      )
     )
   }
 
@@ -6902,7 +6906,7 @@ package iam {
     val Active   = "Active"
     val Inactive = "Inactive"
 
-    val values = IndexedSeq(Active, Inactive)
+    val values = js.Object.freeze(js.Array(Active, Inactive))
   }
 
   object summaryKeyTypeEnum {
@@ -6933,33 +6937,35 @@ package iam {
     val VersionsPerPolicyQuota            = "VersionsPerPolicyQuota"
     val GlobalEndpointTokenVersion        = "GlobalEndpointTokenVersion"
 
-    val values = IndexedSeq(
-      Users,
-      UsersQuota,
-      Groups,
-      GroupsQuota,
-      ServerCertificates,
-      ServerCertificatesQuota,
-      UserPolicySizeQuota,
-      GroupPolicySizeQuota,
-      GroupsPerUserQuota,
-      SigningCertificatesPerUserQuota,
-      AccessKeysPerUserQuota,
-      MFADevices,
-      MFADevicesInUse,
-      AccountMFAEnabled,
-      AccountAccessKeysPresent,
-      AccountSigningCertificatesPresent,
-      AttachedPoliciesPerGroupQuota,
-      AttachedPoliciesPerRoleQuota,
-      AttachedPoliciesPerUserQuota,
-      Policies,
-      PoliciesQuota,
-      PolicySizeQuota,
-      PolicyVersionsInUse,
-      PolicyVersionsInUseQuota,
-      VersionsPerPolicyQuota,
-      GlobalEndpointTokenVersion
+    val values = js.Object.freeze(
+      js.Array(
+        Users,
+        UsersQuota,
+        Groups,
+        GroupsQuota,
+        ServerCertificates,
+        ServerCertificatesQuota,
+        UserPolicySizeQuota,
+        GroupPolicySizeQuota,
+        GroupsPerUserQuota,
+        SigningCertificatesPerUserQuota,
+        AccessKeysPerUserQuota,
+        MFADevices,
+        MFADevicesInUse,
+        AccountMFAEnabled,
+        AccountAccessKeysPresent,
+        AccountSigningCertificatesPresent,
+        AttachedPoliciesPerGroupQuota,
+        AttachedPoliciesPerRoleQuota,
+        AttachedPoliciesPerUserQuota,
+        Policies,
+        PoliciesQuota,
+        PolicySizeQuota,
+        PolicyVersionsInUse,
+        PolicyVersionsInUseQuota,
+        VersionsPerPolicyQuota,
+        GlobalEndpointTokenVersion
+      )
     )
   }
 }

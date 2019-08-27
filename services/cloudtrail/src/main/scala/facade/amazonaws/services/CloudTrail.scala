@@ -650,8 +650,9 @@ package cloudtrail {
     val EventSource  = "EventSource"
     val AccessKeyId  = "AccessKeyId"
 
-    val values =
-      IndexedSeq(EventId, EventName, ReadOnly, Username, ResourceType, ResourceName, EventSource, AccessKeyId)
+    val values = js.Object.freeze(
+      js.Array(EventId, EventName, ReadOnly, Username, ResourceType, ResourceName, EventSource, AccessKeyId)
+    )
   }
 
   /**
@@ -775,7 +776,7 @@ package cloudtrail {
     val WriteOnly = "WriteOnly"
     val All       = "All"
 
-    val values = IndexedSeq(ReadOnly, WriteOnly, All)
+    val values = js.Object.freeze(js.Array(ReadOnly, WriteOnly, All))
   }
 
   /**

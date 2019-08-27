@@ -238,11 +238,13 @@ package servicequotas {
     val DEPENDENCY_SERVICE_ERROR          = "DEPENDENCY_SERVICE_ERROR"
     val SERVICE_QUOTA_NOT_AVAILABLE_ERROR = "SERVICE_QUOTA_NOT_AVAILABLE_ERROR"
 
-    val values = IndexedSeq(
-      DEPENDENCY_ACCESS_DENIED_ERROR,
-      DEPENDENCY_THROTTLING_ERROR,
-      DEPENDENCY_SERVICE_ERROR,
-      SERVICE_QUOTA_NOT_AVAILABLE_ERROR
+    val values = js.Object.freeze(
+      js.Array(
+        DEPENDENCY_ACCESS_DENIED_ERROR,
+        DEPENDENCY_THROTTLING_ERROR,
+        DEPENDENCY_SERVICE_ERROR,
+        SERVICE_QUOTA_NOT_AVAILABLE_ERROR
+      )
     )
   }
 
@@ -727,7 +729,7 @@ package servicequotas {
     val DAY         = "DAY"
     val WEEK        = "WEEK"
 
-    val values = IndexedSeq(MICROSECOND, MILLISECOND, SECOND, MINUTE, HOUR, DAY, WEEK)
+    val values = js.Object.freeze(js.Array(MICROSECOND, MILLISECOND, SECOND, MINUTE, HOUR, DAY, WEEK))
   }
 
   @js.native
@@ -839,7 +841,7 @@ package servicequotas {
     val DENIED      = "DENIED"
     val CASE_CLOSED = "CASE_CLOSED"
 
-    val values = IndexedSeq(PENDING, CASE_OPENED, APPROVED, DENIED, CASE_CLOSED)
+    val values = js.Object.freeze(js.Array(PENDING, CASE_OPENED, APPROVED, DENIED, CASE_CLOSED))
   }
 
   /**
@@ -1014,6 +1016,6 @@ package servicequotas {
     val ASSOCIATED    = "ASSOCIATED"
     val DISASSOCIATED = "DISASSOCIATED"
 
-    val values = IndexedSeq(ASSOCIATED, DISASSOCIATED)
+    val values = js.Object.freeze(js.Array(ASSOCIATED, DISASSOCIATED))
   }
 }

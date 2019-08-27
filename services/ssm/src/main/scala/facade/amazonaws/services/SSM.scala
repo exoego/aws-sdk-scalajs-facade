@@ -1174,7 +1174,7 @@ package ssm {
     val LOW         = "LOW"
     val UNSPECIFIED = "UNSPECIFIED"
 
-    val values = IndexedSeq(CRITICAL, HIGH, MEDIUM, LOW, UNSPECIFIED)
+    val values = js.Object.freeze(js.Array(CRITICAL, HIGH, MEDIUM, LOW, UNSPECIFIED))
   }
 
   /**
@@ -1324,7 +1324,7 @@ package ssm {
     val Status      = "Status"
     val CreatedTime = "CreatedTime"
 
-    val values = IndexedSeq(ExecutionId, Status, CreatedTime)
+    val values = js.Object.freeze(js.Array(ExecutionId, Status, CreatedTime))
   }
 
   /**
@@ -1397,7 +1397,7 @@ package ssm {
     val ResourceId   = "ResourceId"
     val ResourceType = "ResourceType"
 
-    val values = IndexedSeq(Status, ResourceId, ResourceType)
+    val values = js.Object.freeze(js.Array(Status, ResourceId, ResourceType))
   }
 
   /**
@@ -1432,14 +1432,16 @@ package ssm {
     val LastExecutedAfter     = "LastExecutedAfter"
     val AssociationName       = "AssociationName"
 
-    val values = IndexedSeq(
-      InstanceId,
-      Name,
-      AssociationId,
-      AssociationStatusName,
-      LastExecutedBefore,
-      LastExecutedAfter,
-      AssociationName
+    val values = js.Object.freeze(
+      js.Array(
+        InstanceId,
+        Name,
+        AssociationId,
+        AssociationStatusName,
+        LastExecutedBefore,
+        LastExecutedAfter,
+        AssociationName
+      )
     )
   }
 
@@ -1448,7 +1450,7 @@ package ssm {
     val LESS_THAN    = "LESS_THAN"
     val GREATER_THAN = "GREATER_THAN"
 
-    val values = IndexedSeq(EQUAL, LESS_THAN, GREATER_THAN)
+    val values = js.Object.freeze(js.Array(EQUAL, LESS_THAN, GREATER_THAN))
   }
 
   /**
@@ -1511,7 +1513,7 @@ package ssm {
     val Success = "Success"
     val Failed  = "Failed"
 
-    val values = IndexedSeq(Pending, Success, Failed)
+    val values = js.Object.freeze(js.Array(Pending, Success, Failed))
   }
 
   /**
@@ -1601,7 +1603,7 @@ package ssm {
   object AttachmentHashTypeEnum {
     val Sha256 = "Sha256"
 
-    val values = IndexedSeq(Sha256)
+    val values = js.Object.freeze(js.Array(Sha256))
   }
 
   /**
@@ -1646,7 +1648,7 @@ package ssm {
   object AttachmentsSourceKeyEnum {
     val SourceUrl = "SourceUrl"
 
-    val values = IndexedSeq(SourceUrl)
+    val values = js.Object.freeze(js.Array(SourceUrl))
   }
 
   /**
@@ -1772,15 +1774,17 @@ package ssm {
     val StartTimeAfter     = "StartTimeAfter"
     val AutomationType     = "AutomationType"
 
-    val values = IndexedSeq(
-      DocumentNamePrefix,
-      ExecutionStatus,
-      ExecutionId,
-      ParentExecutionId,
-      CurrentAction,
-      StartTimeBefore,
-      StartTimeAfter,
-      AutomationType
+    val values = js.Object.freeze(
+      js.Array(
+        DocumentNamePrefix,
+        ExecutionStatus,
+        ExecutionId,
+        ParentExecutionId,
+        CurrentAction,
+        StartTimeBefore,
+        StartTimeAfter,
+        AutomationType
+      )
     )
   }
 
@@ -1875,14 +1879,15 @@ package ssm {
     val Cancelled  = "Cancelled"
     val Failed     = "Failed"
 
-    val values = IndexedSeq(Pending, InProgress, Waiting, Success, TimedOut, Cancelling, Cancelled, Failed)
+    val values =
+      js.Object.freeze(js.Array(Pending, InProgress, Waiting, Success, TimedOut, Cancelling, Cancelled, Failed))
   }
 
   object AutomationTypeEnum {
     val CrossAccount = "CrossAccount"
     val Local        = "Local"
 
-    val values = IndexedSeq(CrossAccount, Local)
+    val values = js.Object.freeze(js.Array(CrossAccount, Local))
   }
 
   /**
@@ -2090,7 +2095,7 @@ package ssm {
     val ExecutionStage = "ExecutionStage"
     val DocumentName   = "DocumentName"
 
-    val values = IndexedSeq(InvokedAfter, InvokedBefore, Status, ExecutionStage, DocumentName)
+    val values = js.Object.freeze(js.Array(InvokedAfter, InvokedBefore, Status, ExecutionStage, DocumentName))
   }
 
   /**
@@ -2166,7 +2171,8 @@ package ssm {
     val Failed     = "Failed"
     val Cancelling = "Cancelling"
 
-    val values = IndexedSeq(Pending, InProgress, Delayed, Success, Cancelled, TimedOut, Failed, Cancelling)
+    val values =
+      js.Object.freeze(js.Array(Pending, InProgress, Delayed, Success, Cancelled, TimedOut, Failed, Cancelling))
   }
 
   /**
@@ -2228,7 +2234,7 @@ package ssm {
     val Cancelled  = "Cancelled"
     val Failed     = "Failed"
 
-    val values = IndexedSeq(Pending, InProgress, Success, TimedOut, Cancelled, Failed)
+    val values = js.Object.freeze(js.Array(Pending, InProgress, Success, TimedOut, Cancelled, Failed))
   }
 
   object CommandStatusEnum {
@@ -2240,7 +2246,7 @@ package ssm {
     val TimedOut   = "TimedOut"
     val Cancelling = "Cancelling"
 
-    val values = IndexedSeq(Pending, InProgress, Success, Cancelled, Failed, TimedOut, Cancelling)
+    val values = js.Object.freeze(js.Array(Pending, InProgress, Success, Cancelled, Failed, TimedOut, Cancelling))
   }
 
   /**
@@ -2350,7 +2356,7 @@ package ssm {
     val LESS_THAN    = "LESS_THAN"
     val GREATER_THAN = "GREATER_THAN"
 
-    val values = IndexedSeq(EQUAL, NOT_EQUAL, BEGIN_WITH, LESS_THAN, GREATER_THAN)
+    val values = js.Object.freeze(js.Array(EQUAL, NOT_EQUAL, BEGIN_WITH, LESS_THAN, GREATER_THAN))
   }
 
   object ComplianceSeverityEnum {
@@ -2361,14 +2367,14 @@ package ssm {
     val INFORMATIONAL = "INFORMATIONAL"
     val UNSPECIFIED   = "UNSPECIFIED"
 
-    val values = IndexedSeq(CRITICAL, HIGH, MEDIUM, LOW, INFORMATIONAL, UNSPECIFIED)
+    val values = js.Object.freeze(js.Array(CRITICAL, HIGH, MEDIUM, LOW, INFORMATIONAL, UNSPECIFIED))
   }
 
   object ComplianceStatusEnum {
     val COMPLIANT     = "COMPLIANT"
     val NON_COMPLIANT = "NON_COMPLIANT"
 
-    val values = IndexedSeq(COMPLIANT, NON_COMPLIANT)
+    val values = js.Object.freeze(js.Array(COMPLIANT, NON_COMPLIANT))
   }
 
   /**
@@ -2444,7 +2450,7 @@ package ssm {
     val Connected    = "Connected"
     val NotConnected = "NotConnected"
 
-    val values = IndexedSeq(Connected, NotConnected)
+    val values = js.Object.freeze(js.Array(Connected, NotConnected))
   }
 
   @js.native
@@ -3399,7 +3405,7 @@ package ssm {
     val DefaultInstanceName = "DefaultInstanceName"
     val IamRole             = "IamRole"
 
-    val values = IndexedSeq(ActivationIds, DefaultInstanceName, IamRole)
+    val values = js.Object.freeze(js.Array(ActivationIds, DefaultInstanceName, IamRole))
   }
 
   @js.native
@@ -4911,21 +4917,21 @@ package ssm {
     val PlatformTypes = "PlatformTypes"
     val DocumentType  = "DocumentType"
 
-    val values = IndexedSeq(Name, Owner, PlatformTypes, DocumentType)
+    val values = js.Object.freeze(js.Array(Name, Owner, PlatformTypes, DocumentType))
   }
 
   object DocumentFormatEnum {
     val YAML = "YAML"
     val JSON = "JSON"
 
-    val values = IndexedSeq(YAML, JSON)
+    val values = js.Object.freeze(js.Array(YAML, JSON))
   }
 
   object DocumentHashTypeEnum {
     val Sha256 = "Sha256"
     val Sha1   = "Sha1"
 
-    val values = IndexedSeq(Sha256, Sha1)
+    val values = js.Object.freeze(js.Array(Sha256, Sha1))
   }
 
   /**
@@ -5034,13 +5040,13 @@ package ssm {
     val String     = "String"
     val StringList = "StringList"
 
-    val values = IndexedSeq(String, StringList)
+    val values = js.Object.freeze(js.Array(String, StringList))
   }
 
   object DocumentPermissionTypeEnum {
     val Share = "Share"
 
-    val values = IndexedSeq(Share)
+    val values = js.Object.freeze(js.Array(Share))
   }
 
   /**
@@ -5053,7 +5059,7 @@ package ssm {
     val Deleting = "Deleting"
     val Failed   = "Failed"
 
-    val values = IndexedSeq(Creating, Active, Updating, Deleting, Failed)
+    val values = js.Object.freeze(js.Array(Creating, Active, Updating, Deleting, Failed))
   }
 
   object DocumentTypeEnum {
@@ -5063,7 +5069,7 @@ package ssm {
     val Session    = "Session"
     val Package    = "Package"
 
-    val values = IndexedSeq(Command, Policy, Automation, Session, Package)
+    val values = js.Object.freeze(js.Array(Command, Policy, Automation, Session, Package))
   }
 
   /**
@@ -5130,7 +5136,7 @@ package ssm {
     val Auto        = "Auto"
     val Interactive = "Interactive"
 
-    val values = IndexedSeq(Auto, Interactive)
+    val values = js.Object.freeze(js.Array(Auto, Interactive))
   }
 
   /**
@@ -5186,7 +5192,7 @@ package ssm {
     val Server  = "Server"
     val Unknown = "Unknown"
 
-    val values = IndexedSeq(Client, Server, Unknown)
+    val values = js.Object.freeze(js.Array(Client, Server, Unknown))
   }
 
   @js.native
@@ -6555,15 +6561,17 @@ package ssm {
     val ResourceType      = "ResourceType"
     val AssociationStatus = "AssociationStatus"
 
-    val values = IndexedSeq(
-      InstanceIds,
-      AgentVersion,
-      PingStatus,
-      PlatformTypes,
-      ActivationIds,
-      IamRole,
-      ResourceType,
-      AssociationStatus
+    val values = js.Object.freeze(
+      js.Array(
+        InstanceIds,
+        AgentVersion,
+        PingStatus,
+        PlatformTypes,
+        ActivationIds,
+        IamRole,
+        ResourceType,
+        AssociationStatus
+      )
     )
   }
 
@@ -6689,7 +6697,7 @@ package ssm {
     val LessThan    = "LessThan"
     val GreaterThan = "GreaterThan"
 
-    val values = IndexedSeq(Equal, NotEqual, LessThan, GreaterThan)
+    val values = js.Object.freeze(js.Array(Equal, NotEqual, LessThan, GreaterThan))
   }
 
   /**
@@ -6720,14 +6728,14 @@ package ssm {
     val string = "string"
     val number = "number"
 
-    val values = IndexedSeq(string, number)
+    val values = js.Object.freeze(js.Array(string, number))
   }
 
   object InventoryDeletionStatusEnum {
     val InProgress = "InProgress"
     val Complete   = "Complete"
 
-    val values = IndexedSeq(InProgress, Complete)
+    val values = js.Object.freeze(js.Array(InProgress, Complete))
   }
 
   /**
@@ -6958,7 +6966,7 @@ package ssm {
     val GreaterThan = "GreaterThan"
     val Exists      = "Exists"
 
-    val values = IndexedSeq(Equal, NotEqual, BeginWith, LessThan, GreaterThan, Exists)
+    val values = js.Object.freeze(js.Array(Equal, NotEqual, BeginWith, LessThan, GreaterThan, Exists))
   }
 
   /**
@@ -7018,7 +7026,7 @@ package ssm {
     val DisableSchema = "DisableSchema"
     val DeleteSchema  = "DeleteSchema"
 
-    val values = IndexedSeq(DisableSchema, DeleteSchema)
+    val values = js.Object.freeze(js.Array(DisableSchema, DeleteSchema))
   }
 
   @js.native
@@ -7064,7 +7072,7 @@ package ssm {
     val Failed     = "Failed"
     val InProgress = "InProgress"
 
-    val values = IndexedSeq(Successful, Failed, InProgress)
+    val values = js.Object.freeze(js.Array(Successful, Failed, InProgress))
   }
 
   @js.native
@@ -7670,8 +7678,9 @@ package ssm {
     val CANCELLED           = "CANCELLED"
     val SKIPPED_OVERLAPPING = "SKIPPED_OVERLAPPING"
 
-    val values =
-      IndexedSeq(PENDING, IN_PROGRESS, SUCCESS, FAILED, TIMED_OUT, CANCELLING, CANCELLED, SKIPPED_OVERLAPPING)
+    val values = js.Object.freeze(
+      js.Array(PENDING, IN_PROGRESS, SUCCESS, FAILED, TIMED_OUT, CANCELLING, CANCELLED, SKIPPED_OVERLAPPING)
+    )
   }
 
   /**
@@ -7887,7 +7896,7 @@ package ssm {
     val INSTANCE       = "INSTANCE"
     val RESOURCE_GROUP = "RESOURCE_GROUP"
 
-    val values = IndexedSeq(INSTANCE, RESOURCE_GROUP)
+    val values = js.Object.freeze(js.Array(INSTANCE, RESOURCE_GROUP))
   }
 
   /**
@@ -8104,7 +8113,7 @@ package ssm {
     val STEP_FUNCTIONS = "STEP_FUNCTIONS"
     val LAMBDA         = "LAMBDA"
 
-    val values = IndexedSeq(RUN_COMMAND, AUTOMATION, STEP_FUNCTIONS, LAMBDA)
+    val values = js.Object.freeze(js.Array(RUN_COMMAND, AUTOMATION, STEP_FUNCTIONS, LAMBDA))
   }
 
   @js.native
@@ -8198,14 +8207,14 @@ package ssm {
     val Cancelled  = "Cancelled"
     val Failed     = "Failed"
 
-    val values = IndexedSeq(All, InProgress, Success, TimedOut, Cancelled, Failed)
+    val values = js.Object.freeze(js.Array(All, InProgress, Success, TimedOut, Cancelled, Failed))
   }
 
   object NotificationTypeEnum {
     val Command    = "Command"
     val Invocation = "Invocation"
 
-    val values = IndexedSeq(Command, Invocation)
+    val values = js.Object.freeze(js.Array(Command, Invocation))
   }
 
   object OperatingSystemEnum {
@@ -8217,7 +8226,8 @@ package ssm {
     val SUSE                    = "SUSE"
     val CENTOS                  = "CENTOS"
 
-    val values = IndexedSeq(WINDOWS, AMAZON_LINUX, AMAZON_LINUX_2, UBUNTU, REDHAT_ENTERPRISE_LINUX, SUSE, CENTOS)
+    val values =
+      js.Object.freeze(js.Array(WINDOWS, AMAZON_LINUX, AMAZON_LINUX_2, UBUNTU, REDHAT_ENTERPRISE_LINUX, SUSE, CENTOS))
   }
 
   /**
@@ -8326,7 +8336,7 @@ package ssm {
     val GreaterThan = "GreaterThan"
     val Exists      = "Exists"
 
-    val values = IndexedSeq(Equal, NotEqual, BeginWith, LessThan, GreaterThan, Exists)
+    val values = js.Object.freeze(js.Array(Equal, NotEqual, BeginWith, LessThan, GreaterThan, Exists))
   }
 
   /**
@@ -8390,7 +8400,7 @@ package ssm {
     val SearchableString = "SearchableString"
     val String           = "String"
 
-    val values = IndexedSeq(SearchableString, String)
+    val values = js.Object.freeze(js.Array(SearchableString, String))
   }
 
   /**
@@ -8455,20 +8465,22 @@ package ssm {
     val ResourceId           = "ResourceId"
     val AutomationId         = "AutomationId"
 
-    val values = IndexedSeq(
-      Status,
-      CreatedBy,
-      Source,
-      Priority,
-      Title,
-      OpsItemId,
-      CreatedTime,
-      LastModifiedTime,
-      OperationalData,
-      OperationalDataKey,
-      OperationalDataValue,
-      ResourceId,
-      AutomationId
+    val values = js.Object.freeze(
+      js.Array(
+        Status,
+        CreatedBy,
+        Source,
+        Priority,
+        Title,
+        OpsItemId,
+        CreatedTime,
+        LastModifiedTime,
+        OperationalData,
+        OperationalDataKey,
+        OperationalDataValue,
+        ResourceId,
+        AutomationId
+      )
     )
   }
 
@@ -8478,7 +8490,7 @@ package ssm {
     val GreaterThan = "GreaterThan"
     val LessThan    = "LessThan"
 
-    val values = IndexedSeq(Equal, Contains, GreaterThan, LessThan)
+    val values = js.Object.freeze(js.Array(Equal, Contains, GreaterThan, LessThan))
   }
 
   /**
@@ -8504,7 +8516,7 @@ package ssm {
     val InProgress = "InProgress"
     val Resolved   = "Resolved"
 
-    val values = IndexedSeq(Open, InProgress, Resolved)
+    val values = js.Object.freeze(js.Array(Open, InProgress, Resolved))
   }
 
   /**
@@ -8765,7 +8777,7 @@ package ssm {
     val Advanced              = "Advanced"
     val `Intelligent-Tiering` = "Intelligent-Tiering"
 
-    val values = IndexedSeq(Standard, Advanced, `Intelligent-Tiering`)
+    val values = js.Object.freeze(js.Array(Standard, Advanced, `Intelligent-Tiering`))
   }
 
   object ParameterTypeEnum {
@@ -8773,7 +8785,7 @@ package ssm {
     val StringList   = "StringList"
     val SecureString = "SecureString"
 
-    val values = IndexedSeq(String, StringList, SecureString)
+    val values = js.Object.freeze(js.Array(String, StringList, SecureString))
   }
 
   /**
@@ -8804,7 +8816,7 @@ package ssm {
     val Type  = "Type"
     val KeyId = "KeyId"
 
-    val values = IndexedSeq(Name, Type, KeyId)
+    val values = js.Object.freeze(js.Array(Name, Type, KeyId))
   }
 
   /**
@@ -8865,7 +8877,7 @@ package ssm {
     val ALLOW_AS_DEPENDENCY = "ALLOW_AS_DEPENDENCY"
     val BLOCK               = "BLOCK"
 
-    val values = IndexedSeq(ALLOW_AS_DEPENDENCY, BLOCK)
+    val values = js.Object.freeze(js.Array(ALLOW_AS_DEPENDENCY, BLOCK))
   }
 
   /**
@@ -8941,7 +8953,8 @@ package ssm {
     val NOT_APPLICABLE     = "NOT_APPLICABLE"
     val FAILED             = "FAILED"
 
-    val values = IndexedSeq(INSTALLED, INSTALLED_OTHER, INSTALLED_REJECTED, MISSING, NOT_APPLICABLE, FAILED)
+    val values =
+      js.Object.freeze(js.Array(INSTALLED, INSTALLED_OTHER, INSTALLED_REJECTED, MISSING, NOT_APPLICABLE, FAILED))
   }
 
   object PatchComplianceLevelEnum {
@@ -8952,7 +8965,7 @@ package ssm {
     val INFORMATIONAL = "INFORMATIONAL"
     val UNSPECIFIED   = "UNSPECIFIED"
 
-    val values = IndexedSeq(CRITICAL, HIGH, MEDIUM, LOW, INFORMATIONAL, UNSPECIFIED)
+    val values = js.Object.freeze(js.Array(CRITICAL, HIGH, MEDIUM, LOW, INFORMATIONAL, UNSPECIFIED))
   }
 
   object PatchDeploymentStatusEnum {
@@ -8961,7 +8974,7 @@ package ssm {
     val EXPLICIT_APPROVED = "EXPLICIT_APPROVED"
     val EXPLICIT_REJECTED = "EXPLICIT_REJECTED"
 
-    val values = IndexedSeq(APPROVED, PENDING_APPROVAL, EXPLICIT_APPROVED, EXPLICIT_REJECTED)
+    val values = js.Object.freeze(js.Array(APPROVED, PENDING_APPROVAL, EXPLICIT_APPROVED, EXPLICIT_REJECTED))
   }
 
   /**
@@ -9020,16 +9033,8 @@ package ssm {
     val PRIORITY       = "PRIORITY"
     val SEVERITY       = "SEVERITY"
 
-    val values = IndexedSeq(
-      PATCH_SET,
-      PRODUCT,
-      PRODUCT_FAMILY,
-      CLASSIFICATION,
-      MSRC_SEVERITY,
-      PATCH_ID,
-      SECTION,
-      PRIORITY,
-      SEVERITY
+    val values = js.Object.freeze(
+      js.Array(PATCH_SET, PRODUCT, PRODUCT_FAMILY, CLASSIFICATION, MSRC_SEVERITY, PATCH_ID, SECTION, PRIORITY, SEVERITY)
     )
   }
 
@@ -9058,7 +9063,7 @@ package ssm {
     val Scan    = "Scan"
     val Install = "Install"
 
-    val values = IndexedSeq(Scan, Install)
+    val values = js.Object.freeze(js.Array(Scan, Install))
   }
 
   /**
@@ -9090,7 +9095,7 @@ package ssm {
     val PRIORITY       = "PRIORITY"
     val SEVERITY       = "SEVERITY"
 
-    val values = IndexedSeq(PRODUCT, PRODUCT_FAMILY, CLASSIFICATION, MSRC_SEVERITY, PRIORITY, SEVERITY)
+    val values = js.Object.freeze(js.Array(PRODUCT, PRODUCT_FAMILY, CLASSIFICATION, MSRC_SEVERITY, PRIORITY, SEVERITY))
   }
 
   /**
@@ -9146,7 +9151,7 @@ package ssm {
     val OS          = "OS"
     val APPLICATION = "APPLICATION"
 
-    val values = IndexedSeq(OS, APPLICATION)
+    val values = js.Object.freeze(js.Array(OS, APPLICATION))
   }
 
   /**
@@ -9204,14 +9209,14 @@ package ssm {
     val ConnectionLost = "ConnectionLost"
     val Inactive       = "Inactive"
 
-    val values = IndexedSeq(Online, ConnectionLost, Inactive)
+    val values = js.Object.freeze(js.Array(Online, ConnectionLost, Inactive))
   }
 
   object PlatformTypeEnum {
     val Windows = "Windows"
     val Linux   = "Linux"
 
-    val values = IndexedSeq(Windows, Linux)
+    val values = js.Object.freeze(js.Array(Windows, Linux))
   }
 
   /**
@@ -9797,7 +9802,7 @@ package ssm {
   object ResourceDataSyncS3FormatEnum {
     val JsonSerDe = "JsonSerDe"
 
-    val values = IndexedSeq(JsonSerDe)
+    val values = js.Object.freeze(js.Array(JsonSerDe))
   }
 
   object ResourceTypeEnum {
@@ -9805,7 +9810,7 @@ package ssm {
     val Document        = "Document"
     val EC2Instance     = "EC2Instance"
 
-    val values = IndexedSeq(ManagedInstance, Document, EC2Instance)
+    val values = js.Object.freeze(js.Array(ManagedInstance, Document, EC2Instance))
   }
 
   object ResourceTypeForTaggingEnum {
@@ -9816,7 +9821,8 @@ package ssm {
     val PatchBaseline     = "PatchBaseline"
     val OpsItem           = "OpsItem"
 
-    val values = IndexedSeq(Document, ManagedInstance, MaintenanceWindow, Parameter, PatchBaseline, OpsItem)
+    val values =
+      js.Object.freeze(js.Array(Document, ManagedInstance, MaintenanceWindow, Parameter, PatchBaseline, OpsItem))
   }
 
   /**
@@ -10165,7 +10171,7 @@ package ssm {
     val Owner         = "Owner"
     val Status        = "Status"
 
-    val values = IndexedSeq(InvokedAfter, InvokedBefore, Target, Owner, Status)
+    val values = js.Object.freeze(js.Array(InvokedAfter, InvokedBefore, Target, Owner, Status))
   }
 
   /**
@@ -10193,7 +10199,7 @@ package ssm {
     val Active  = "Active"
     val History = "History"
 
-    val values = IndexedSeq(Active, History)
+    val values = js.Object.freeze(js.Array(Active, History))
   }
 
   object SessionStatusEnum {
@@ -10204,7 +10210,7 @@ package ssm {
     val Terminating  = "Terminating"
     val Failed       = "Failed"
 
-    val values = IndexedSeq(Connected, Connecting, Disconnected, Terminated, Terminating, Failed)
+    val values = js.Object.freeze(js.Array(Connected, Connecting, Disconnected, Terminated, Terminating, Failed))
   }
 
   /**
@@ -10247,7 +10253,7 @@ package ssm {
     val StopStep  = "StopStep"
     val Resume    = "Resume"
 
-    val values = IndexedSeq(Approve, Reject, StartStep, StopStep, Resume)
+    val values = js.Object.freeze(js.Array(Approve, Reject, StartStep, StopStep, Resume))
   }
 
   @js.native
@@ -10497,7 +10503,9 @@ package ssm {
     val StepName            = "StepName"
     val Action              = "Action"
 
-    val values = IndexedSeq(StartTimeBefore, StartTimeAfter, StepExecutionStatus, StepExecutionId, StepName, Action)
+    val values = js.Object.freeze(
+      js.Array(StartTimeBefore, StartTimeAfter, StepExecutionStatus, StepExecutionId, StepName, Action)
+    )
   }
 
   @js.native
@@ -10536,7 +10544,7 @@ package ssm {
     val Complete = "Complete"
     val Cancel   = "Cancel"
 
-    val values = IndexedSeq(Complete, Cancel)
+    val values = js.Object.freeze(js.Array(Complete, Cancel))
   }
 
   /**

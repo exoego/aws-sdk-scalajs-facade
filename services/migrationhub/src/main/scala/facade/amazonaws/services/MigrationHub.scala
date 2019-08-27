@@ -135,7 +135,7 @@ package migrationhub {
     val IN_PROGRESS = "IN_PROGRESS"
     val COMPLETED   = "COMPLETED"
 
-    val values = IndexedSeq(NOT_STARTED, IN_PROGRESS, COMPLETED)
+    val values = js.Object.freeze(js.Array(NOT_STARTED, IN_PROGRESS, COMPLETED))
   }
 
   @js.native
@@ -943,17 +943,19 @@ package migrationhub {
     val BIOS_ID                     = "BIOS_ID"
     val MOTHERBOARD_SERIAL_NUMBER   = "MOTHERBOARD_SERIAL_NUMBER"
 
-    val values = IndexedSeq(
-      IPV4_ADDRESS,
-      IPV6_ADDRESS,
-      MAC_ADDRESS,
-      FQDN,
-      VM_MANAGER_ID,
-      VM_MANAGED_OBJECT_REFERENCE,
-      VM_NAME,
-      VM_PATH,
-      BIOS_ID,
-      MOTHERBOARD_SERIAL_NUMBER
+    val values = js.Object.freeze(
+      js.Array(
+        IPV4_ADDRESS,
+        IPV6_ADDRESS,
+        MAC_ADDRESS,
+        FQDN,
+        VM_MANAGER_ID,
+        VM_MANAGED_OBJECT_REFERENCE,
+        VM_NAME,
+        VM_PATH,
+        BIOS_ID,
+        MOTHERBOARD_SERIAL_NUMBER
+      )
     )
   }
 
@@ -979,7 +981,7 @@ package migrationhub {
     val FAILED      = "FAILED"
     val COMPLETED   = "COMPLETED"
 
-    val values = IndexedSeq(NOT_STARTED, IN_PROGRESS, FAILED, COMPLETED)
+    val values = js.Object.freeze(js.Array(NOT_STARTED, IN_PROGRESS, FAILED, COMPLETED))
   }
 
   /**

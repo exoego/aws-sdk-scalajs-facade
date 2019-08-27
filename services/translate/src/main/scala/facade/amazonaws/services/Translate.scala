@@ -120,7 +120,7 @@ package translate {
   object EncryptionKeyTypeEnum {
     val KMS = "KMS"
 
-    val values = IndexedSeq(KMS)
+    val values = js.Object.freeze(js.Array(KMS))
   }
 
   @js.native
@@ -244,7 +244,7 @@ package translate {
   object MergeStrategyEnum {
     val OVERWRITE = "OVERWRITE"
 
-    val values = IndexedSeq(OVERWRITE)
+    val values = js.Object.freeze(js.Array(OVERWRITE))
   }
 
   /**
@@ -295,7 +295,7 @@ package translate {
     val CSV = "CSV"
     val TMX = "TMX"
 
-    val values = IndexedSeq(CSV, TMX)
+    val values = js.Object.freeze(js.Array(CSV, TMX))
   }
 
   /**

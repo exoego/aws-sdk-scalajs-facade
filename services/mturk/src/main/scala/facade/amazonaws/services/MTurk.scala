@@ -346,7 +346,7 @@ package mturk {
     val Approved  = "Approved"
     val Rejected  = "Rejected"
 
-    val values = IndexedSeq(Submitted, Approved, Rejected)
+    val values = js.Object.freeze(js.Array(Submitted, Approved, Rejected))
   }
 
   @js.native
@@ -429,17 +429,19 @@ package mturk {
     val In                   = "In"
     val NotIn                = "NotIn"
 
-    val values = IndexedSeq(
-      LessThan,
-      LessThanOrEqualTo,
-      GreaterThan,
-      GreaterThanOrEqualTo,
-      EqualTo,
-      NotEqualTo,
-      Exists,
-      DoesNotExist,
-      In,
-      NotIn
+    val values = js.Object.freeze(
+      js.Array(
+        LessThan,
+        LessThanOrEqualTo,
+        GreaterThan,
+        GreaterThanOrEqualTo,
+        EqualTo,
+        NotEqualTo,
+        Exists,
+        DoesNotExist,
+        In,
+        NotIn
+      )
     )
   }
 
@@ -894,19 +896,21 @@ package mturk {
     val HITDisposed         = "HITDisposed"
     val Ping                = "Ping"
 
-    val values = IndexedSeq(
-      AssignmentAccepted,
-      AssignmentAbandoned,
-      AssignmentReturned,
-      AssignmentSubmitted,
-      AssignmentRejected,
-      AssignmentApproved,
-      HITCreated,
-      HITExpired,
-      HITReviewable,
-      HITExtended,
-      HITDisposed,
-      Ping
+    val values = js.Object.freeze(
+      js.Array(
+        AssignmentAccepted,
+        AssignmentAbandoned,
+        AssignmentReturned,
+        AssignmentSubmitted,
+        AssignmentRejected,
+        AssignmentApproved,
+        HITCreated,
+        HITExpired,
+        HITReviewable,
+        HITExtended,
+        HITDisposed,
+        Ping
+      )
     )
   }
 
@@ -1196,7 +1200,7 @@ package mturk {
     val PreviewAndAccept         = "PreviewAndAccept"
     val DiscoverPreviewAndAccept = "DiscoverPreviewAndAccept"
 
-    val values = IndexedSeq(Accept, PreviewAndAccept, DiscoverPreviewAndAccept)
+    val values = js.Object.freeze(js.Array(Accept, PreviewAndAccept, DiscoverPreviewAndAccept))
   }
 
   /**
@@ -1228,7 +1232,7 @@ package mturk {
     val ReviewedAppropriate   = "ReviewedAppropriate"
     val ReviewedInappropriate = "ReviewedInappropriate"
 
-    val values = IndexedSeq(NotReviewed, MarkedForReview, ReviewedAppropriate, ReviewedInappropriate)
+    val values = js.Object.freeze(js.Array(NotReviewed, MarkedForReview, ReviewedAppropriate, ReviewedInappropriate))
   }
 
   object HITStatusEnum {
@@ -1238,7 +1242,7 @@ package mturk {
     val Reviewing    = "Reviewing"
     val Disposed     = "Disposed"
 
-    val values = IndexedSeq(Assignable, Unassignable, Reviewable, Reviewing, Disposed)
+    val values = js.Object.freeze(js.Array(Assignable, Unassignable, Reviewable, Reviewing, Disposed))
   }
 
   @js.native
@@ -1758,14 +1762,14 @@ package mturk {
     val SQS   = "SQS"
     val SNS   = "SNS"
 
-    val values = IndexedSeq(Email, SQS, SNS)
+    val values = js.Object.freeze(js.Array(Email, SQS, SNS))
   }
 
   object NotifyWorkersFailureCodeEnum {
     val SoftFailure = "SoftFailure"
     val HardFailure = "HardFailure"
 
-    val values = IndexedSeq(SoftFailure, HardFailure)
+    val values = js.Object.freeze(js.Array(SoftFailure, HardFailure))
   }
 
   /**
@@ -1982,7 +1986,7 @@ package mturk {
     val Granted = "Granted"
     val Revoked = "Revoked"
 
-    val values = IndexedSeq(Granted, Revoked)
+    val values = js.Object.freeze(js.Array(Granted, Revoked))
   }
 
   /**
@@ -2043,7 +2047,7 @@ package mturk {
     val Active   = "Active"
     val Inactive = "Inactive"
 
-    val values = IndexedSeq(Active, Inactive)
+    val values = js.Object.freeze(js.Array(Active, Inactive))
   }
 
   @js.native
@@ -2164,7 +2168,7 @@ package mturk {
     val Failed    = "Failed"
     val Cancelled = "Cancelled"
 
-    val values = IndexedSeq(Intended, Succeeded, Failed, Cancelled)
+    val values = js.Object.freeze(js.Array(Intended, Succeeded, Failed, Cancelled))
   }
 
   /**
@@ -2194,7 +2198,7 @@ package mturk {
     val Assignment = "Assignment"
     val HIT        = "HIT"
 
-    val values = IndexedSeq(Assignment, HIT)
+    val values = js.Object.freeze(js.Array(Assignment, HIT))
   }
 
   /**
@@ -2255,7 +2259,7 @@ package mturk {
     val Reviewable = "Reviewable"
     val Reviewing  = "Reviewing"
 
-    val values = IndexedSeq(Reviewable, Reviewing)
+    val values = js.Object.freeze(js.Array(Reviewable, Reviewing))
   }
 
   @js.native

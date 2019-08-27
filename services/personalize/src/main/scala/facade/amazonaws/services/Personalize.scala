@@ -2276,7 +2276,7 @@ package personalize {
   object RecipeProviderEnum {
     val SERVICE = "SERVICE"
 
-    val values = IndexedSeq(SERVICE)
+    val values = js.Object.freeze(js.Array(SERVICE))
   }
 
   /**

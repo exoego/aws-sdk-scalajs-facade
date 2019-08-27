@@ -320,7 +320,7 @@ package pinpointemail {
     val USE_DEFAULT_VALUE = "USE_DEFAULT_VALUE"
     val REJECT_MESSAGE    = "REJECT_MESSAGE"
 
-    val values = IndexedSeq(USE_DEFAULT_VALUE, REJECT_MESSAGE)
+    val values = js.Object.freeze(js.Array(USE_DEFAULT_VALUE, REJECT_MESSAGE))
   }
 
   /**
@@ -871,7 +871,7 @@ package pinpointemail {
     val PENDING_EXPIRATION = "PENDING_EXPIRATION"
     val DISABLED           = "DISABLED"
 
-    val values = IndexedSeq(ACTIVE, PENDING_EXPIRATION, DISABLED)
+    val values = js.Object.freeze(js.Array(ACTIVE, PENDING_EXPIRATION, DISABLED))
   }
 
   /**
@@ -914,7 +914,7 @@ package pinpointemail {
     val IN_PROGRESS = "IN_PROGRESS"
     val COMPLETED   = "COMPLETED"
 
-    val values = IndexedSeq(IN_PROGRESS, COMPLETED)
+    val values = js.Object.freeze(js.Array(IN_PROGRESS, COMPLETED))
   }
 
   /**
@@ -970,7 +970,7 @@ package pinpointemail {
     val EMAIL_HEADER = "EMAIL_HEADER"
     val LINK_TAG     = "LINK_TAG"
 
-    val values = IndexedSeq(MESSAGE_TAG, EMAIL_HEADER, LINK_TAG)
+    val values = js.Object.freeze(js.Array(MESSAGE_TAG, EMAIL_HEADER, LINK_TAG))
   }
 
   /**
@@ -1012,7 +1012,7 @@ package pinpointemail {
     val TEMPORARY_FAILURE = "TEMPORARY_FAILURE"
     val NOT_STARTED       = "NOT_STARTED"
 
-    val values = IndexedSeq(PENDING, SUCCESS, FAILED, TEMPORARY_FAILURE, NOT_STARTED)
+    val values = js.Object.freeze(js.Array(PENDING, SUCCESS, FAILED, TEMPORARY_FAILURE, NOT_STARTED))
   }
 
   /**
@@ -1233,7 +1233,7 @@ package pinpointemail {
     val CLICK             = "CLICK"
     val RENDERING_FAILURE = "RENDERING_FAILURE"
 
-    val values = IndexedSeq(SEND, REJECT, BOUNCE, COMPLAINT, DELIVERY, OPEN, CLICK, RENDERING_FAILURE)
+    val values = js.Object.freeze(js.Array(SEND, REJECT, BOUNCE, COMPLAINT, DELIVERY, OPEN, CLICK, RENDERING_FAILURE))
   }
 
   /**
@@ -1775,7 +1775,7 @@ package pinpointemail {
     val DOMAIN         = "DOMAIN"
     val MANAGED_DOMAIN = "MANAGED_DOMAIN"
 
-    val values = IndexedSeq(EMAIL_ADDRESS, DOMAIN, MANAGED_DOMAIN)
+    val values = js.Object.freeze(js.Array(EMAIL_ADDRESS, DOMAIN, MANAGED_DOMAIN))
   }
 
   /**
@@ -2141,7 +2141,7 @@ package pinpointemail {
     val FAILED            = "FAILED"
     val TEMPORARY_FAILURE = "TEMPORARY_FAILURE"
 
-    val values = IndexedSeq(PENDING, SUCCESS, FAILED, TEMPORARY_FAILURE)
+    val values = js.Object.freeze(js.Array(PENDING, SUCCESS, FAILED, TEMPORARY_FAILURE))
   }
 
   /**
@@ -2943,7 +2943,7 @@ package pinpointemail {
     val REQUIRE  = "REQUIRE"
     val OPTIONAL = "OPTIONAL"
 
-    val values = IndexedSeq(REQUIRE, OPTIONAL)
+    val values = js.Object.freeze(js.Array(REQUIRE, OPTIONAL))
   }
 
   /**
@@ -3074,6 +3074,6 @@ package pinpointemail {
     val IN_PROGRESS = "IN_PROGRESS"
     val DONE        = "DONE"
 
-    val values = IndexedSeq(IN_PROGRESS, DONE)
+    val values = js.Object.freeze(js.Array(IN_PROGRESS, DONE))
   }
 }

@@ -140,7 +140,7 @@ package pricing {
   object FilterTypeEnum {
     val TERM_MATCH = "TERM_MATCH"
 
-    val values = IndexedSeq(TERM_MATCH)
+    val values = js.Object.freeze(js.Array(TERM_MATCH))
   }
 
   @js.native

@@ -422,7 +422,7 @@ package kinesisanalytics {
     val RUNNING  = "RUNNING"
     val UPDATING = "UPDATING"
 
-    val values = IndexedSeq(DELETING, STARTING, STOPPING, READY, RUNNING, UPDATING)
+    val values = js.Object.freeze(js.Array(DELETING, STARTING, STOPPING, READY, RUNNING, UPDATING))
   }
 
   /**
@@ -1244,7 +1244,7 @@ package kinesisanalytics {
     val TRIM_HORIZON       = "TRIM_HORIZON"
     val LAST_STOPPED_POINT = "LAST_STOPPED_POINT"
 
-    val values = IndexedSeq(NOW, TRIM_HORIZON, LAST_STOPPED_POINT)
+    val values = js.Object.freeze(js.Array(NOW, TRIM_HORIZON, LAST_STOPPED_POINT))
   }
 
   /**
@@ -1908,7 +1908,7 @@ package kinesisanalytics {
     val JSON = "JSON"
     val CSV  = "CSV"
 
-    val values = IndexedSeq(JSON, CSV)
+    val values = js.Object.freeze(js.Array(JSON, CSV))
   }
 
   /**

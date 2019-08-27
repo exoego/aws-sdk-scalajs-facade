@@ -884,21 +884,21 @@ package alexaforbusiness {
     val NO_SUCH_BUCKET   = "NO_SUCH_BUCKET"
     val INTERNAL_FAILURE = "INTERNAL_FAILURE"
 
-    val values = IndexedSeq(ACCESS_DENIED, NO_SUCH_BUCKET, INTERNAL_FAILURE)
+    val values = js.Object.freeze(js.Array(ACCESS_DENIED, NO_SUCH_BUCKET, INTERNAL_FAILURE))
   }
 
   object BusinessReportFormatEnum {
     val CSV     = "CSV"
     val CSV_ZIP = "CSV_ZIP"
 
-    val values = IndexedSeq(CSV, CSV_ZIP)
+    val values = js.Object.freeze(js.Array(CSV, CSV_ZIP))
   }
 
   object BusinessReportIntervalEnum {
     val ONE_DAY  = "ONE_DAY"
     val ONE_WEEK = "ONE_WEEK"
 
-    val values = IndexedSeq(ONE_DAY, ONE_WEEK)
+    val values = js.Object.freeze(js.Array(ONE_DAY, ONE_WEEK))
   }
 
   /**
@@ -984,7 +984,7 @@ package alexaforbusiness {
     val SUCCEEDED = "SUCCEEDED"
     val FAILED    = "FAILED"
 
-    val values = IndexedSeq(RUNNING, SUCCEEDED, FAILED)
+    val values = js.Object.freeze(js.Array(RUNNING, SUCCEEDED, FAILED))
   }
 
   /**
@@ -1013,7 +1013,7 @@ package alexaforbusiness {
     val SIPS = "SIPS"
     val H323 = "H323"
 
-    val values = IndexedSeq(SIP, SIPS, H323)
+    val values = js.Object.freeze(js.Array(SIP, SIPS, H323))
   }
 
   /**
@@ -1081,15 +1081,16 @@ package alexaforbusiness {
     val ZOOM               = "ZOOM"
     val CUSTOM             = "CUSTOM"
 
-    val values =
-      IndexedSeq(CHIME, BLUEJEANS, FUZE, GOOGLE_HANGOUTS, POLYCOM, RINGCENTRAL, SKYPE_FOR_BUSINESS, WEBEX, ZOOM, CUSTOM)
+    val values = js.Object.freeze(
+      js.Array(CHIME, BLUEJEANS, FUZE, GOOGLE_HANGOUTS, POLYCOM, RINGCENTRAL, SKYPE_FOR_BUSINESS, WEBEX, ZOOM, CUSTOM)
+    )
   }
 
   object ConnectionStatusEnum {
     val ONLINE  = "ONLINE"
     val OFFLINE = "OFFLINE"
 
-    val values = IndexedSeq(ONLINE, OFFLINE)
+    val values = js.Object.freeze(js.Array(ONLINE, OFFLINE))
   }
 
   /**
@@ -2230,7 +2231,7 @@ package alexaforbusiness {
     val CONNECTION_STATUS = "CONNECTION_STATUS"
     val DEVICE_STATUS     = "DEVICE_STATUS"
 
-    val values = IndexedSeq(CONNECTION_STATUS, DEVICE_STATUS)
+    val values = js.Object.freeze(js.Array(CONNECTION_STATUS, DEVICE_STATUS))
   }
 
   /**
@@ -2264,7 +2265,7 @@ package alexaforbusiness {
     val DEREGISTERED = "DEREGISTERED"
     val FAILED       = "FAILED"
 
-    val values = IndexedSeq(READY, PENDING, WAS_OFFLINE, DEREGISTERED, FAILED)
+    val values = js.Object.freeze(js.Array(READY, PENDING, WAS_OFFLINE, DEREGISTERED, FAILED))
   }
 
   /**
@@ -2305,22 +2306,24 @@ package alexaforbusiness {
     val INVALID_PASSWORD_STATE             = "INVALID_PASSWORD_STATE"
     val PASSWORD_NOT_FOUND                 = "PASSWORD_NOT_FOUND"
 
-    val values = IndexedSeq(
-      DEVICE_SOFTWARE_UPDATE_NEEDED,
-      DEVICE_WAS_OFFLINE,
-      CREDENTIALS_ACCESS_FAILURE,
-      TLS_VERSION_MISMATCH,
-      ASSOCIATION_REJECTION,
-      AUTHENTICATION_FAILURE,
-      DHCP_FAILURE,
-      INTERNET_UNAVAILABLE,
-      DNS_FAILURE,
-      UNKNOWN_FAILURE,
-      CERTIFICATE_ISSUING_LIMIT_EXCEEDED,
-      INVALID_CERTIFICATE_AUTHORITY,
-      NETWORK_PROFILE_NOT_FOUND,
-      INVALID_PASSWORD_STATE,
-      PASSWORD_NOT_FOUND
+    val values = js.Object.freeze(
+      js.Array(
+        DEVICE_SOFTWARE_UPDATE_NEEDED,
+        DEVICE_WAS_OFFLINE,
+        CREDENTIALS_ACCESS_FAILURE,
+        TLS_VERSION_MISMATCH,
+        ASSOCIATION_REJECTION,
+        AUTHENTICATION_FAILURE,
+        DHCP_FAILURE,
+        INTERNET_UNAVAILABLE,
+        DNS_FAILURE,
+        UNKNOWN_FAILURE,
+        CERTIFICATE_ISSUING_LIMIT_EXCEEDED,
+        INVALID_CERTIFICATE_AUTHORITY,
+        NETWORK_PROFILE_NOT_FOUND,
+        INVALID_PASSWORD_STATE,
+        PASSWORD_NOT_FOUND
+      )
     )
   }
 
@@ -2348,7 +2351,7 @@ package alexaforbusiness {
   object DeviceUsageTypeEnum {
     val VOICE = "VOICE"
 
-    val values = IndexedSeq(VOICE)
+    val values = js.Object.freeze(js.Array(VOICE))
   }
 
   @js.native
@@ -2505,21 +2508,21 @@ package alexaforbusiness {
     val METRIC   = "METRIC"
     val IMPERIAL = "IMPERIAL"
 
-    val values = IndexedSeq(METRIC, IMPERIAL)
+    val values = js.Object.freeze(js.Array(METRIC, IMPERIAL))
   }
 
   object EnablementTypeEnum {
     val ENABLED = "ENABLED"
     val PENDING = "PENDING"
 
-    val values = IndexedSeq(ENABLED, PENDING)
+    val values = js.Object.freeze(js.Array(ENABLED, PENDING))
   }
 
   object EnablementTypeFilterEnum {
     val ENABLED = "ENABLED"
     val PENDING = "PENDING"
 
-    val values = IndexedSeq(ENABLED, PENDING)
+    val values = js.Object.freeze(js.Array(ENABLED, PENDING))
   }
 
   object EnrollmentStatusEnum {
@@ -2529,7 +2532,7 @@ package alexaforbusiness {
     val DISASSOCIATING = "DISASSOCIATING"
     val DEREGISTERING  = "DEREGISTERING"
 
-    val values = IndexedSeq(INITIALIZED, PENDING, REGISTERED, DISASSOCIATING, DEREGISTERING)
+    val values = js.Object.freeze(js.Array(INITIALIZED, PENDING, REGISTERED, DISASSOCIATING, DEREGISTERING))
   }
 
   object FeatureEnum {
@@ -2542,7 +2545,8 @@ package alexaforbusiness {
     val SETTINGS        = "SETTINGS"
     val ALL             = "ALL"
 
-    val values = IndexedSeq(BLUETOOTH, VOLUME, NOTIFICATIONS, LISTS, SKILLS, NETWORK_PROFILE, SETTINGS, ALL)
+    val values =
+      js.Object.freeze(js.Array(BLUETOOTH, VOLUME, NOTIFICATIONS, LISTS, SKILLS, NETWORK_PROFILE, SETTINGS, ALL))
   }
 
   /**
@@ -3536,7 +3540,7 @@ package alexaforbusiness {
   object LocaleEnum {
     val `en-US` = "en-US"
 
-    val values = IndexedSeq(`en-US`)
+    val values = js.Object.freeze(js.Array(`en-US`))
   }
 
   /**
@@ -3565,7 +3569,7 @@ package alexaforbusiness {
   object NetworkEapMethodEnum {
     val EAP_TLS = "EAP_TLS"
 
-    val values = IndexedSeq(EAP_TLS)
+    val values = js.Object.freeze(js.Array(EAP_TLS))
   }
 
   /**
@@ -3656,7 +3660,7 @@ package alexaforbusiness {
     val WPA2_PSK        = "WPA2_PSK"
     val WPA2_ENTERPRISE = "WPA2_ENTERPRISE"
 
-    val values = IndexedSeq(OPEN, WEP, WPA_PSK, WPA2_PSK, WPA2_ENTERPRISE)
+    val values = js.Object.freeze(js.Array(OPEN, WEP, WPA_PSK, WPA2_PSK, WPA2_ENTERPRISE))
   }
 
   /**
@@ -3716,7 +3720,7 @@ package alexaforbusiness {
     val WORK   = "WORK"
     val HOME   = "HOME"
 
-    val values = IndexedSeq(MOBILE, WORK, HOME)
+    val values = js.Object.freeze(js.Array(MOBILE, WORK, HOME))
   }
 
   /**
@@ -4027,7 +4031,7 @@ package alexaforbusiness {
     val NO       = "NO"
     val OPTIONAL = "OPTIONAL"
 
-    val values = IndexedSeq(YES, NO, OPTIONAL)
+    val values = js.Object.freeze(js.Array(YES, NO, OPTIONAL))
   }
 
   @js.native
@@ -4641,7 +4645,7 @@ package alexaforbusiness {
   object SipTypeEnum {
     val WORK = "WORK"
 
-    val values = IndexedSeq(WORK)
+    val values = js.Object.freeze(js.Array(WORK))
   }
 
   /**
@@ -4773,7 +4777,7 @@ package alexaforbusiness {
     val PUBLIC  = "PUBLIC"
     val PRIVATE = "PRIVATE"
 
-    val values = IndexedSeq(PUBLIC, PRIVATE)
+    val values = js.Object.freeze(js.Array(PUBLIC, PRIVATE))
   }
 
   object SkillTypeFilterEnum {
@@ -4781,7 +4785,7 @@ package alexaforbusiness {
     val PRIVATE = "PRIVATE"
     val ALL     = "ALL"
 
-    val values = IndexedSeq(PUBLIC, PRIVATE, ALL)
+    val values = js.Object.freeze(js.Array(PUBLIC, PRIVATE, ALL))
   }
 
   /**
@@ -4871,7 +4875,7 @@ package alexaforbusiness {
     val ASC  = "ASC"
     val DESC = "DESC"
 
-    val values = IndexedSeq(ASC, DESC)
+    val values = js.Object.freeze(js.Array(ASC, DESC))
   }
 
   /**
@@ -5020,7 +5024,7 @@ package alexaforbusiness {
     val FAHRENHEIT = "FAHRENHEIT"
     val CELSIUS    = "CELSIUS"
 
-    val values = IndexedSeq(FAHRENHEIT, CELSIUS)
+    val values = js.Object.freeze(js.Array(FAHRENHEIT, CELSIUS))
   }
 
   /**
@@ -5566,6 +5570,6 @@ package alexaforbusiness {
     val ECHO     = "ECHO"
     val COMPUTER = "COMPUTER"
 
-    val values = IndexedSeq(ALEXA, AMAZON, ECHO, COMPUTER)
+    val values = js.Object.freeze(js.Array(ALEXA, AMAZON, ECHO, COMPUTER))
   }
 }

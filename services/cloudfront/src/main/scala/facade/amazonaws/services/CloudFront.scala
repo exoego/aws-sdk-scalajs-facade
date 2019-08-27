@@ -510,7 +510,7 @@ package cloudfront {
     val iam        = "iam"
     val acm        = "acm"
 
-    val values = IndexedSeq(cloudfront, iam, acm)
+    val values = js.Object.freeze(js.Array(cloudfront, iam, acm))
   }
 
   /**
@@ -1733,7 +1733,7 @@ package cloudfront {
     val `origin-request`  = "origin-request"
     val `origin-response` = "origin-response"
 
-    val values = IndexedSeq(`viewer-request`, `viewer-response`, `origin-request`, `origin-response`)
+    val values = js.Object.freeze(js.Array(`viewer-request`, `viewer-response`, `origin-request`, `origin-response`))
   }
 
   /**
@@ -1994,7 +1994,7 @@ package cloudfront {
   object FormatEnum {
     val URLEncoded = "URLEncoded"
 
-    val values = IndexedSeq(URLEncoded)
+    val values = js.Object.freeze(js.Array(URLEncoded))
   }
 
   /**
@@ -2057,7 +2057,7 @@ package cloudfront {
     val whitelist = "whitelist"
     val none      = "none"
 
-    val values = IndexedSeq(blacklist, whitelist, none)
+    val values = js.Object.freeze(js.Array(blacklist, whitelist, none))
   }
 
   /**
@@ -2591,7 +2591,7 @@ package cloudfront {
     val `http1.1` = "http1.1"
     val http2     = "http2"
 
-    val values = IndexedSeq(`http1.1`, http2)
+    val values = js.Object.freeze(js.Array(`http1.1`, http2))
   }
 
   object ICPRecordalStatusEnum {
@@ -2599,7 +2599,7 @@ package cloudfront {
     val SUSPENDED = "SUSPENDED"
     val PENDING   = "PENDING"
 
-    val values = IndexedSeq(APPROVED, SUSPENDED, PENDING)
+    val values = js.Object.freeze(js.Array(APPROVED, SUSPENDED, PENDING))
   }
 
   /**
@@ -2720,7 +2720,7 @@ package cloudfront {
     val whitelist = "whitelist"
     val all       = "all"
 
-    val values = IndexedSeq(none, whitelist, all)
+    val values = js.Object.freeze(js.Array(none, whitelist, all))
   }
 
   /**
@@ -3184,7 +3184,7 @@ package cloudfront {
     val OPTIONS = "OPTIONS"
     val DELETE  = "DELETE"
 
-    val values = IndexedSeq(GET, HEAD, POST, PUT, PATCH, OPTIONS, DELETE)
+    val values = js.Object.freeze(js.Array(GET, HEAD, POST, PUT, PATCH, OPTIONS, DELETE))
   }
 
   object MinimumProtocolVersionEnum {
@@ -3194,7 +3194,7 @@ package cloudfront {
     val `TLSv1.1_2016` = "TLSv1.1_2016"
     val `TLSv1.2_2018` = "TLSv1.2_2018"
 
-    val values = IndexedSeq(SSLv3, TLSv1, TLSv1_2016, `TLSv1.1_2016`, `TLSv1.2_2018`)
+    val values = js.Object.freeze(js.Array(SSLv3, TLSv1, TLSv1_2016, `TLSv1.1_2016`, `TLSv1.2_2018`))
   }
 
   /**
@@ -3373,7 +3373,7 @@ package cloudfront {
     val `match-viewer` = "match-viewer"
     val `https-only`   = "https-only"
 
-    val values = IndexedSeq(`http-only`, `match-viewer`, `https-only`)
+    val values = js.Object.freeze(js.Array(`http-only`, `match-viewer`, `https-only`))
   }
 
   /**
@@ -3450,7 +3450,7 @@ package cloudfront {
     val PriceClass_200 = "PriceClass_200"
     val PriceClass_All = "PriceClass_All"
 
-    val values = IndexedSeq(PriceClass_100, PriceClass_200, PriceClass_All)
+    val values = js.Object.freeze(js.Array(PriceClass_100, PriceClass_200, PriceClass_All))
   }
 
   /**
@@ -3728,7 +3728,7 @@ package cloudfront {
     val `sni-only` = "sni-only"
     val vip        = "vip"
 
-    val values = IndexedSeq(`sni-only`, vip)
+    val values = js.Object.freeze(js.Array(`sni-only`, vip))
   }
 
   /**
@@ -3758,7 +3758,7 @@ package cloudfront {
     val `TLSv1.1` = "TLSv1.1"
     val `TLSv1.2` = "TLSv1.2"
 
-    val values = IndexedSeq(SSLv3, TLSv1, `TLSv1.1`, `TLSv1.2`)
+    val values = js.Object.freeze(js.Array(SSLv3, TLSv1, `TLSv1.1`, `TLSv1.2`))
   }
 
   /**
@@ -4449,6 +4449,6 @@ package cloudfront {
     val `https-only`        = "https-only"
     val `redirect-to-https` = "redirect-to-https"
 
-    val values = IndexedSeq(`allow-all`, `https-only`, `redirect-to-https`)
+    val values = js.Object.freeze(js.Array(`allow-all`, `https-only`, `redirect-to-https`))
   }
 }

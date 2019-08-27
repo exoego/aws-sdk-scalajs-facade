@@ -388,13 +388,13 @@ package managedblockchain {
     val STARTER  = "STARTER"
     val STANDARD = "STANDARD"
 
-    val values = IndexedSeq(STARTER, STANDARD)
+    val values = js.Object.freeze(js.Array(STARTER, STANDARD))
   }
 
   object FrameworkEnum {
     val HYPERLEDGER_FABRIC = "HYPERLEDGER_FABRIC"
 
-    val values = IndexedSeq(HYPERLEDGER_FABRIC)
+    val values = js.Object.freeze(js.Array(HYPERLEDGER_FABRIC))
   }
 
   @js.native
@@ -574,7 +574,7 @@ package managedblockchain {
     val REJECTED  = "REJECTED"
     val EXPIRED   = "EXPIRED"
 
-    val values = IndexedSeq(PENDING, ACCEPTED, ACCEPTING, REJECTED, EXPIRED)
+    val values = js.Object.freeze(js.Array(PENDING, ACCEPTED, ACCEPTING, REJECTED, EXPIRED))
   }
 
   /**
@@ -1009,7 +1009,7 @@ package managedblockchain {
     val DELETING      = "DELETING"
     val DELETED       = "DELETED"
 
-    val values = IndexedSeq(CREATING, AVAILABLE, CREATE_FAILED, DELETING, DELETED)
+    val values = js.Object.freeze(js.Array(CREATING, AVAILABLE, CREATE_FAILED, DELETING, DELETED))
   }
 
   /**
@@ -1174,7 +1174,7 @@ package managedblockchain {
     val DELETING      = "DELETING"
     val DELETED       = "DELETED"
 
-    val values = IndexedSeq(CREATING, AVAILABLE, CREATE_FAILED, DELETING, DELETED)
+    val values = js.Object.freeze(js.Array(CREATING, AVAILABLE, CREATE_FAILED, DELETING, DELETED))
   }
 
   /**
@@ -1322,7 +1322,7 @@ package managedblockchain {
     val DELETED       = "DELETED"
     val FAILED        = "FAILED"
 
-    val values = IndexedSeq(CREATING, AVAILABLE, CREATE_FAILED, DELETING, DELETED, FAILED)
+    val values = js.Object.freeze(js.Array(CREATING, AVAILABLE, CREATE_FAILED, DELETING, DELETED, FAILED))
   }
 
   /**
@@ -1434,7 +1434,7 @@ package managedblockchain {
     val EXPIRED       = "EXPIRED"
     val ACTION_FAILED = "ACTION_FAILED"
 
-    val values = IndexedSeq(IN_PROGRESS, APPROVED, REJECTED, EXPIRED, ACTION_FAILED)
+    val values = js.Object.freeze(js.Array(IN_PROGRESS, APPROVED, REJECTED, EXPIRED, ACTION_FAILED))
   }
 
   /**
@@ -1526,7 +1526,7 @@ package managedblockchain {
     val GREATER_THAN             = "GREATER_THAN"
     val GREATER_THAN_OR_EQUAL_TO = "GREATER_THAN_OR_EQUAL_TO"
 
-    val values = IndexedSeq(GREATER_THAN, GREATER_THAN_OR_EQUAL_TO)
+    val values = js.Object.freeze(js.Array(GREATER_THAN, GREATER_THAN_OR_EQUAL_TO))
   }
 
   @js.native
@@ -1595,7 +1595,7 @@ package managedblockchain {
     val YES = "YES"
     val NO  = "NO"
 
-    val values = IndexedSeq(YES, NO)
+    val values = js.Object.freeze(js.Array(YES, NO))
   }
 
   /**

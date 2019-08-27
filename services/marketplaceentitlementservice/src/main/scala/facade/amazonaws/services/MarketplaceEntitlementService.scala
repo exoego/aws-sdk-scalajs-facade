@@ -95,7 +95,7 @@ package marketplaceentitlementservice {
     val CUSTOMER_IDENTIFIER = "CUSTOMER_IDENTIFIER"
     val DIMENSION           = "DIMENSION"
 
-    val values = IndexedSeq(CUSTOMER_IDENTIFIER, DIMENSION)
+    val values = js.Object.freeze(js.Array(CUSTOMER_IDENTIFIER, DIMENSION))
   }
 
   /**

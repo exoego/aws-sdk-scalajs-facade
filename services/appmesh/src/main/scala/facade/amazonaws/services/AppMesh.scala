@@ -975,7 +975,7 @@ package appmesh {
     val ALLOW_ALL = "ALLOW_ALL"
     val DROP_ALL  = "DROP_ALL"
 
-    val values = IndexedSeq(ALLOW_ALL, DROP_ALL)
+    val values = js.Object.freeze(js.Array(ALLOW_ALL, DROP_ALL))
   }
 
   /**
@@ -1077,7 +1077,7 @@ package appmesh {
     val PUT     = "PUT"
     val TRACE   = "TRACE"
 
-    val values = IndexedSeq(CONNECT, DELETE, GET, HEAD, OPTIONS, PATCH, POST, PUT, TRACE)
+    val values = js.Object.freeze(js.Array(CONNECT, DELETE, GET, HEAD, OPTIONS, PATCH, POST, PUT, TRACE))
   }
 
   /**
@@ -1184,7 +1184,7 @@ package appmesh {
     val http  = "http"
     val https = "https"
 
-    val values = IndexedSeq(http, https)
+    val values = js.Object.freeze(js.Array(http, https))
   }
 
   /**
@@ -1636,7 +1636,7 @@ package appmesh {
     val DELETED  = "DELETED"
     val INACTIVE = "INACTIVE"
 
-    val values = IndexedSeq(ACTIVE, DELETED, INACTIVE)
+    val values = js.Object.freeze(js.Array(ACTIVE, DELETED, INACTIVE))
   }
 
   /**
@@ -1666,7 +1666,7 @@ package appmesh {
     val http = "http"
     val tcp  = "tcp"
 
-    val values = IndexedSeq(http, tcp)
+    val values = js.Object.freeze(js.Array(http, tcp))
   }
 
   /**
@@ -1814,7 +1814,7 @@ package appmesh {
     val DELETED  = "DELETED"
     val INACTIVE = "INACTIVE"
 
-    val values = IndexedSeq(ACTIVE, DELETED, INACTIVE)
+    val values = js.Object.freeze(js.Array(ACTIVE, DELETED, INACTIVE))
   }
 
   /**
@@ -2356,7 +2356,7 @@ package appmesh {
     val DELETED  = "DELETED"
     val INACTIVE = "INACTIVE"
 
-    val values = IndexedSeq(ACTIVE, DELETED, INACTIVE)
+    val values = js.Object.freeze(js.Array(ACTIVE, DELETED, INACTIVE))
   }
 
   /**
@@ -2500,7 +2500,7 @@ package appmesh {
     val DELETED  = "DELETED"
     val INACTIVE = "INACTIVE"
 
-    val values = IndexedSeq(ACTIVE, DELETED, INACTIVE)
+    val values = js.Object.freeze(js.Array(ACTIVE, DELETED, INACTIVE))
   }
 
   /**
@@ -2645,7 +2645,7 @@ package appmesh {
     val DELETED  = "DELETED"
     val INACTIVE = "INACTIVE"
 
-    val values = IndexedSeq(ACTIVE, DELETED, INACTIVE)
+    val values = js.Object.freeze(js.Array(ACTIVE, DELETED, INACTIVE))
   }
 
   /**

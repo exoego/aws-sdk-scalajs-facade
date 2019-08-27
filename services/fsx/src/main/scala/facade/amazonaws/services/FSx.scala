@@ -209,7 +209,7 @@ package fsx {
     val DELETED   = "DELETED"
     val FAILED    = "FAILED"
 
-    val values = IndexedSeq(AVAILABLE, CREATING, DELETED, FAILED)
+    val values = js.Object.freeze(js.Array(AVAILABLE, CREATING, DELETED, FAILED))
   }
 
   /**
@@ -219,7 +219,7 @@ package fsx {
     val AUTOMATIC      = "AUTOMATIC"
     val USER_INITIATED = "USER_INITIATED"
 
-    val values = IndexedSeq(AUTOMATIC, USER_INITIATED)
+    val values = js.Object.freeze(js.Array(AUTOMATIC, USER_INITIATED))
   }
 
   /**
@@ -797,7 +797,7 @@ package fsx {
     val MISCONFIGURED = "MISCONFIGURED"
     val UPDATING      = "UPDATING"
 
-    val values = IndexedSeq(AVAILABLE, CREATING, FAILED, DELETING, MISCONFIGURED, UPDATING)
+    val values = js.Object.freeze(js.Array(AVAILABLE, CREATING, FAILED, DELETING, MISCONFIGURED, UPDATING))
   }
 
   /**
@@ -807,7 +807,7 @@ package fsx {
     val PATCHING   = "PATCHING"
     val BACKING_UP = "BACKING_UP"
 
-    val values = IndexedSeq(PATCHING, BACKING_UP)
+    val values = js.Object.freeze(js.Array(PATCHING, BACKING_UP))
   }
 
   /**
@@ -817,7 +817,7 @@ package fsx {
     val WINDOWS = "WINDOWS"
     val LUSTRE  = "LUSTRE"
 
-    val values = IndexedSeq(WINDOWS, LUSTRE)
+    val values = js.Object.freeze(js.Array(WINDOWS, LUSTRE))
   }
 
   /**
@@ -848,7 +848,7 @@ package fsx {
     val `file-system-id` = "file-system-id"
     val `backup-type`    = "backup-type"
 
-    val values = IndexedSeq(`file-system-id`, `backup-type`)
+    val values = js.Object.freeze(js.Array(`file-system-id`, `backup-type`))
   }
 
   /**

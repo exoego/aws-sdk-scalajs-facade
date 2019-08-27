@@ -249,7 +249,8 @@ package acm {
     val REVOKED              = "REVOKED"
     val FAILED               = "FAILED"
 
-    val values = IndexedSeq(PENDING_VALIDATION, ISSUED, INACTIVE, EXPIRED, VALIDATION_TIMED_OUT, REVOKED, FAILED)
+    val values =
+      js.Object.freeze(js.Array(PENDING_VALIDATION, ISSUED, INACTIVE, EXPIRED, VALIDATION_TIMED_OUT, REVOKED, FAILED))
   }
 
   /**
@@ -277,7 +278,7 @@ package acm {
     val ENABLED  = "ENABLED"
     val DISABLED = "DISABLED"
 
-    val values = IndexedSeq(ENABLED, DISABLED)
+    val values = js.Object.freeze(js.Array(ENABLED, DISABLED))
   }
 
   object CertificateTypeEnum {
@@ -285,7 +286,7 @@ package acm {
     val AMAZON_ISSUED = "AMAZON_ISSUED"
     val PRIVATE       = "PRIVATE"
 
-    val values = IndexedSeq(IMPORTED, AMAZON_ISSUED, PRIVATE)
+    val values = js.Object.freeze(js.Array(IMPORTED, AMAZON_ISSUED, PRIVATE))
   }
 
   @js.native
@@ -342,7 +343,7 @@ package acm {
     val SUCCESS            = "SUCCESS"
     val FAILED             = "FAILED"
 
-    val values = IndexedSeq(PENDING_VALIDATION, SUCCESS, FAILED)
+    val values = js.Object.freeze(js.Array(PENDING_VALIDATION, SUCCESS, FAILED))
   }
 
   /**
@@ -479,19 +480,21 @@ package acm {
     val NONE                          = "NONE"
     val CUSTOM                        = "CUSTOM"
 
-    val values = IndexedSeq(
-      TLS_WEB_SERVER_AUTHENTICATION,
-      TLS_WEB_CLIENT_AUTHENTICATION,
-      CODE_SIGNING,
-      EMAIL_PROTECTION,
-      TIME_STAMPING,
-      OCSP_SIGNING,
-      IPSEC_END_SYSTEM,
-      IPSEC_TUNNEL,
-      IPSEC_USER,
-      ANY,
-      NONE,
-      CUSTOM
+    val values = js.Object.freeze(
+      js.Array(
+        TLS_WEB_SERVER_AUTHENTICATION,
+        TLS_WEB_CLIENT_AUTHENTICATION,
+        CODE_SIGNING,
+        EMAIL_PROTECTION,
+        TIME_STAMPING,
+        OCSP_SIGNING,
+        IPSEC_END_SYSTEM,
+        IPSEC_TUNNEL,
+        IPSEC_USER,
+        ANY,
+        NONE,
+        CUSTOM
+      )
     )
   }
 
@@ -512,22 +515,24 @@ package acm {
     val PCA_ACCESS_DENIED                = "PCA_ACCESS_DENIED"
     val OTHER                            = "OTHER"
 
-    val values = IndexedSeq(
-      NO_AVAILABLE_CONTACTS,
-      ADDITIONAL_VERIFICATION_REQUIRED,
-      DOMAIN_NOT_ALLOWED,
-      INVALID_PUBLIC_DOMAIN,
-      DOMAIN_VALIDATION_DENIED,
-      CAA_ERROR,
-      PCA_LIMIT_EXCEEDED,
-      PCA_INVALID_ARN,
-      PCA_INVALID_STATE,
-      PCA_REQUEST_FAILED,
-      PCA_RESOURCE_NOT_FOUND,
-      PCA_INVALID_ARGS,
-      PCA_INVALID_DURATION,
-      PCA_ACCESS_DENIED,
-      OTHER
+    val values = js.Object.freeze(
+      js.Array(
+        NO_AVAILABLE_CONTACTS,
+        ADDITIONAL_VERIFICATION_REQUIRED,
+        DOMAIN_NOT_ALLOWED,
+        INVALID_PUBLIC_DOMAIN,
+        DOMAIN_VALIDATION_DENIED,
+        CAA_ERROR,
+        PCA_LIMIT_EXCEEDED,
+        PCA_INVALID_ARN,
+        PCA_INVALID_STATE,
+        PCA_REQUEST_FAILED,
+        PCA_RESOURCE_NOT_FOUND,
+        PCA_INVALID_ARGS,
+        PCA_INVALID_DURATION,
+        PCA_ACCESS_DENIED,
+        OTHER
+      )
     )
   }
 
@@ -639,7 +644,7 @@ package acm {
     val EC_secp384r1  = "EC_secp384r1"
     val EC_secp521r1  = "EC_secp521r1"
 
-    val values = IndexedSeq(RSA_2048, RSA_1024, RSA_4096, EC_prime256v1, EC_secp384r1, EC_secp521r1)
+    val values = js.Object.freeze(js.Array(RSA_2048, RSA_1024, RSA_4096, EC_prime256v1, EC_secp384r1, EC_secp521r1))
   }
 
   /**
@@ -673,18 +678,20 @@ package acm {
     val ANY                 = "ANY"
     val CUSTOM              = "CUSTOM"
 
-    val values = IndexedSeq(
-      DIGITAL_SIGNATURE,
-      NON_REPUDIATION,
-      KEY_ENCIPHERMENT,
-      DATA_ENCIPHERMENT,
-      KEY_AGREEMENT,
-      CERTIFICATE_SIGNING,
-      CRL_SIGNING,
-      ENCIPHER_ONLY,
-      DECIPHER_ONLY,
-      ANY,
-      CUSTOM
+    val values = js.Object.freeze(
+      js.Array(
+        DIGITAL_SIGNATURE,
+        NON_REPUDIATION,
+        KEY_ENCIPHERMENT,
+        DATA_ENCIPHERMENT,
+        KEY_AGREEMENT,
+        CERTIFICATE_SIGNING,
+        CRL_SIGNING,
+        ENCIPHER_ONLY,
+        DECIPHER_ONLY,
+        ANY,
+        CUSTOM
+      )
     )
   }
 
@@ -765,7 +772,7 @@ package acm {
   object RecordTypeEnum {
     val CNAME = "CNAME"
 
-    val values = IndexedSeq(CNAME)
+    val values = js.Object.freeze(js.Array(CNAME))
   }
 
   @js.native
@@ -809,7 +816,7 @@ package acm {
     val ELIGIBLE   = "ELIGIBLE"
     val INELIGIBLE = "INELIGIBLE"
 
-    val values = IndexedSeq(ELIGIBLE, INELIGIBLE)
+    val values = js.Object.freeze(js.Array(ELIGIBLE, INELIGIBLE))
   }
 
   object RenewalStatusEnum {
@@ -818,7 +825,7 @@ package acm {
     val SUCCESS              = "SUCCESS"
     val FAILED               = "FAILED"
 
-    val values = IndexedSeq(PENDING_AUTO_RENEWAL, PENDING_VALIDATION, SUCCESS, FAILED)
+    val values = js.Object.freeze(js.Array(PENDING_AUTO_RENEWAL, PENDING_VALIDATION, SUCCESS, FAILED))
   }
 
   /**
@@ -961,17 +968,19 @@ package acm {
     val PRIVILEGE_WITHDRAWN    = "PRIVILEGE_WITHDRAWN"
     val A_A_COMPROMISE         = "A_A_COMPROMISE"
 
-    val values = IndexedSeq(
-      UNSPECIFIED,
-      KEY_COMPROMISE,
-      CA_COMPROMISE,
-      AFFILIATION_CHANGED,
-      SUPERCEDED,
-      CESSATION_OF_OPERATION,
-      CERTIFICATE_HOLD,
-      REMOVE_FROM_CRL,
-      PRIVILEGE_WITHDRAWN,
-      A_A_COMPROMISE
+    val values = js.Object.freeze(
+      js.Array(
+        UNSPECIFIED,
+        KEY_COMPROMISE,
+        CA_COMPROMISE,
+        AFFILIATION_CHANGED,
+        SUPERCEDED,
+        CESSATION_OF_OPERATION,
+        CERTIFICATE_HOLD,
+        REMOVE_FROM_CRL,
+        PRIVILEGE_WITHDRAWN,
+        A_A_COMPROMISE
+      )
     )
   }
 
@@ -1022,6 +1031,6 @@ package acm {
     val EMAIL = "EMAIL"
     val DNS   = "DNS"
 
-    val values = IndexedSeq(EMAIL, DNS)
+    val values = js.Object.freeze(js.Array(EMAIL, DNS))
   }
 }

@@ -223,7 +223,9 @@ package mq {
     val RUNNING              = "RUNNING"
     val REBOOT_IN_PROGRESS   = "REBOOT_IN_PROGRESS"
 
-    val values = IndexedSeq(CREATION_IN_PROGRESS, CREATION_FAILED, DELETION_IN_PROGRESS, RUNNING, REBOOT_IN_PROGRESS)
+    val values = js.Object.freeze(
+      js.Array(CREATION_IN_PROGRESS, CREATION_FAILED, DELETION_IN_PROGRESS, RUNNING, REBOOT_IN_PROGRESS)
+    )
   }
 
   /**
@@ -270,7 +272,7 @@ package mq {
     val UPDATE = "UPDATE"
     val DELETE = "DELETE"
 
-    val values = IndexedSeq(CREATE, UPDATE, DELETE)
+    val values = js.Object.freeze(js.Array(CREATE, UPDATE, DELETE))
   }
 
   /**
@@ -595,7 +597,7 @@ package mq {
     val SATURDAY  = "SATURDAY"
     val SUNDAY    = "SUNDAY"
 
-    val values = IndexedSeq(MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY, SATURDAY, SUNDAY)
+    val values = js.Object.freeze(js.Array(MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY, SATURDAY, SUNDAY))
   }
 
   @js.native
@@ -689,7 +691,7 @@ package mq {
     val SINGLE_INSTANCE         = "SINGLE_INSTANCE"
     val ACTIVE_STANDBY_MULTI_AZ = "ACTIVE_STANDBY_MULTI_AZ"
 
-    val values = IndexedSeq(SINGLE_INSTANCE, ACTIVE_STANDBY_MULTI_AZ)
+    val values = js.Object.freeze(js.Array(SINGLE_INSTANCE, ACTIVE_STANDBY_MULTI_AZ))
   }
 
   @js.native
@@ -1047,7 +1049,7 @@ package mq {
   object EngineTypeEnum {
     val ACTIVEMQ = "ACTIVEMQ"
 
-    val values = IndexedSeq(ACTIVEMQ)
+    val values = js.Object.freeze(js.Array(ACTIVEMQ))
   }
 
   /**
@@ -1402,7 +1404,9 @@ package mq {
     val DISALLOWED_ATTRIBUTE_REMOVED    = "DISALLOWED_ATTRIBUTE_REMOVED"
     val INVALID_ATTRIBUTE_VALUE_REMOVED = "INVALID_ATTRIBUTE_VALUE_REMOVED"
 
-    val values = IndexedSeq(DISALLOWED_ELEMENT_REMOVED, DISALLOWED_ATTRIBUTE_REMOVED, INVALID_ATTRIBUTE_VALUE_REMOVED)
+    val values = js.Object.freeze(
+      js.Array(DISALLOWED_ELEMENT_REMOVED, DISALLOWED_ATTRIBUTE_REMOVED, INVALID_ATTRIBUTE_VALUE_REMOVED)
+    )
   }
 
   /**

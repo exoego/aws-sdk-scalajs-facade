@@ -925,7 +925,7 @@ package workmail {
     val DISABLED = "DISABLED"
     val DELETED  = "DELETED"
 
-    val values = IndexedSeq(ENABLED, DISABLED, DELETED)
+    val values = js.Object.freeze(js.Array(ENABLED, DISABLED, DELETED))
   }
 
   @js.native
@@ -1371,7 +1371,7 @@ package workmail {
     val GROUP = "GROUP"
     val USER  = "USER"
 
-    val values = IndexedSeq(GROUP, USER)
+    val values = js.Object.freeze(js.Array(GROUP, USER))
   }
 
   /**
@@ -1432,7 +1432,7 @@ package workmail {
     val SEND_AS        = "SEND_AS"
     val SEND_ON_BEHALF = "SEND_ON_BEHALF"
 
-    val values = IndexedSeq(FULL_ACCESS, SEND_AS, SEND_ON_BEHALF)
+    val values = js.Object.freeze(js.Array(FULL_ACCESS, SEND_AS, SEND_ON_BEHALF))
   }
 
   @js.native
@@ -1583,7 +1583,7 @@ package workmail {
     val ROOM      = "ROOM"
     val EQUIPMENT = "EQUIPMENT"
 
-    val values = IndexedSeq(ROOM, EQUIPMENT)
+    val values = js.Object.freeze(js.Array(ROOM, EQUIPMENT))
   }
 
   @js.native
@@ -1738,6 +1738,6 @@ package workmail {
     val RESOURCE    = "RESOURCE"
     val SYSTEM_USER = "SYSTEM_USER"
 
-    val values = IndexedSeq(USER, RESOURCE, SYSTEM_USER)
+    val values = js.Object.freeze(js.Array(USER, RESOURCE, SYSTEM_USER))
   }
 }

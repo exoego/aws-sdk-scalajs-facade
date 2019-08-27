@@ -313,7 +313,8 @@ package elbv2 {
     val redirect               = "redirect"
     val `fixed-response`       = "fixed-response"
 
-    val values = IndexedSeq(forward, `authenticate-oidc`, `authenticate-cognito`, redirect, `fixed-response`)
+    val values =
+      js.Object.freeze(js.Array(forward, `authenticate-oidc`, `authenticate-cognito`, redirect, `fixed-response`))
   }
 
   @js.native
@@ -388,7 +389,7 @@ package elbv2 {
     val allow        = "allow"
     val authenticate = "authenticate"
 
-    val values = IndexedSeq(deny, allow, authenticate)
+    val values = js.Object.freeze(js.Array(deny, allow, authenticate))
   }
 
   /**
@@ -440,7 +441,7 @@ package elbv2 {
     val allow        = "allow"
     val authenticate = "authenticate"
 
-    val values = IndexedSeq(deny, allow, authenticate)
+    val values = js.Object.freeze(js.Array(deny, allow, authenticate))
   }
 
   /**
@@ -1432,7 +1433,7 @@ package elbv2 {
     val ipv4      = "ipv4"
     val dualstack = "dualstack"
 
-    val values = IndexedSeq(ipv4, dualstack)
+    val values = js.Object.freeze(js.Array(ipv4, dualstack))
   }
 
   /**
@@ -1589,7 +1590,7 @@ package elbv2 {
     val `internet-facing` = "internet-facing"
     val internal          = "internal"
 
-    val values = IndexedSeq(`internet-facing`, internal)
+    val values = js.Object.freeze(js.Array(`internet-facing`, internal))
   }
 
   /**
@@ -1619,14 +1620,14 @@ package elbv2 {
     val active_impaired = "active_impaired"
     val failed          = "failed"
 
-    val values = IndexedSeq(active, provisioning, active_impaired, failed)
+    val values = js.Object.freeze(js.Array(active, provisioning, active_impaired, failed))
   }
 
   object LoadBalancerTypeEnumEnum {
     val application = "application"
     val network     = "network"
 
-    val values = IndexedSeq(application, network)
+    val values = js.Object.freeze(js.Array(application, network))
   }
 
   /**
@@ -1889,7 +1890,7 @@ package elbv2 {
     val UDP     = "UDP"
     val TCP_UDP = "TCP_UDP"
 
-    val values = IndexedSeq(HTTP, HTTPS, TCP, TLS, UDP, TCP_UDP)
+    val values = js.Object.freeze(js.Array(HTTP, HTTPS, TCP, TLS, UDP, TCP_UDP))
   }
 
   /**
@@ -1979,7 +1980,7 @@ package elbv2 {
     val HTTP_301 = "HTTP_301"
     val HTTP_302 = "HTTP_302"
 
-    val values = IndexedSeq(HTTP_301, HTTP_302)
+    val values = js.Object.freeze(js.Array(HTTP_301, HTTP_302))
   }
 
   @js.native
@@ -2588,19 +2589,21 @@ package elbv2 {
     val `Target.HealthCheckDisabled`      = "Target.HealthCheckDisabled"
     val `Elb.InternalError`               = "Elb.InternalError"
 
-    val values = IndexedSeq(
-      `Elb.RegistrationInProgress`,
-      `Elb.InitialHealthChecking`,
-      `Target.ResponseCodeMismatch`,
-      `Target.Timeout`,
-      `Target.FailedHealthChecks`,
-      `Target.NotRegistered`,
-      `Target.NotInUse`,
-      `Target.DeregistrationInProgress`,
-      `Target.InvalidState`,
-      `Target.IpUnusable`,
-      `Target.HealthCheckDisabled`,
-      `Elb.InternalError`
+    val values = js.Object.freeze(
+      js.Array(
+        `Elb.RegistrationInProgress`,
+        `Elb.InitialHealthChecking`,
+        `Target.ResponseCodeMismatch`,
+        `Target.Timeout`,
+        `Target.FailedHealthChecks`,
+        `Target.NotRegistered`,
+        `Target.NotInUse`,
+        `Target.DeregistrationInProgress`,
+        `Target.InvalidState`,
+        `Target.IpUnusable`,
+        `Target.HealthCheckDisabled`,
+        `Elb.InternalError`
+      )
     )
   }
 
@@ -2612,7 +2615,7 @@ package elbv2 {
     val draining    = "draining"
     val unavailable = "unavailable"
 
-    val values = IndexedSeq(initial, healthy, unhealthy, unused, draining, unavailable)
+    val values = js.Object.freeze(js.Array(initial, healthy, unhealthy, unused, draining, unavailable))
   }
 
   object TargetTypeEnumEnum {
@@ -2620,6 +2623,6 @@ package elbv2 {
     val ip       = "ip"
     val lambda   = "lambda"
 
-    val values = IndexedSeq(instance, ip, lambda)
+    val values = js.Object.freeze(js.Array(instance, ip, lambda))
   }
 }

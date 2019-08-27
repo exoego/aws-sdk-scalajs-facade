@@ -583,7 +583,7 @@ package iotevents {
     val PAUSED     = "PAUSED"
     val FAILED     = "FAILED"
 
-    val values = IndexedSeq(ACTIVE, ACTIVATING, INACTIVE, DEPRECATED, DRAFT, PAUSED, FAILED)
+    val values = js.Object.freeze(js.Array(ACTIVE, ACTIVATING, INACTIVE, DEPRECATED, DRAFT, PAUSED, FAILED))
   }
 
   /**
@@ -753,7 +753,7 @@ package iotevents {
     val ACTIVE   = "ACTIVE"
     val DELETING = "DELETING"
 
-    val values = IndexedSeq(CREATING, UPDATING, ACTIVE, DELETING)
+    val values = js.Object.freeze(js.Array(CREATING, UPDATING, ACTIVE, DELETING))
   }
 
   /**
@@ -1001,7 +1001,7 @@ package iotevents {
     val INFO  = "INFO"
     val DEBUG = "DEBUG"
 
-    val values = IndexedSeq(ERROR, INFO, DEBUG)
+    val values = js.Object.freeze(js.Array(ERROR, INFO, DEBUG))
   }
 
   /**

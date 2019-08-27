@@ -198,7 +198,7 @@ package kms {
     val RSAES_OAEP_SHA_1   = "RSAES_OAEP_SHA_1"
     val RSAES_OAEP_SHA_256 = "RSAES_OAEP_SHA_256"
 
-    val values = IndexedSeq(RSAES_PKCS1_V1_5, RSAES_OAEP_SHA_1, RSAES_OAEP_SHA_256)
+    val values = js.Object.freeze(js.Array(RSAES_PKCS1_V1_5, RSAES_OAEP_SHA_1, RSAES_OAEP_SHA_256))
   }
 
   /**
@@ -294,13 +294,15 @@ package kms {
     val INSUFFICIENT_CLOUDHSM_HSMS = "INSUFFICIENT_CLOUDHSM_HSMS"
     val USER_LOCKED_OUT            = "USER_LOCKED_OUT"
 
-    val values = IndexedSeq(
-      INVALID_CREDENTIALS,
-      CLUSTER_NOT_FOUND,
-      NETWORK_ERRORS,
-      INTERNAL_ERROR,
-      INSUFFICIENT_CLOUDHSM_HSMS,
-      USER_LOCKED_OUT
+    val values = js.Object.freeze(
+      js.Array(
+        INVALID_CREDENTIALS,
+        CLUSTER_NOT_FOUND,
+        NETWORK_ERRORS,
+        INTERNAL_ERROR,
+        INSUFFICIENT_CLOUDHSM_HSMS,
+        USER_LOCKED_OUT
+      )
     )
   }
 
@@ -311,7 +313,7 @@ package kms {
     val DISCONNECTED  = "DISCONNECTED"
     val DISCONNECTING = "DISCONNECTING"
 
-    val values = IndexedSeq(CONNECTED, CONNECTING, FAILED, DISCONNECTED, DISCONNECTING)
+    val values = js.Object.freeze(js.Array(CONNECTED, CONNECTING, FAILED, DISCONNECTED, DISCONNECTING))
   }
 
   @js.native
@@ -518,7 +520,7 @@ package kms {
     val AES_256 = "AES_256"
     val AES_128 = "AES_128"
 
-    val values = IndexedSeq(AES_256, AES_128)
+    val values = js.Object.freeze(js.Array(AES_256, AES_128))
   }
 
   @js.native
@@ -850,7 +852,7 @@ package kms {
     val KEY_MATERIAL_EXPIRES         = "KEY_MATERIAL_EXPIRES"
     val KEY_MATERIAL_DOES_NOT_EXPIRE = "KEY_MATERIAL_DOES_NOT_EXPIRE"
 
-    val values = IndexedSeq(KEY_MATERIAL_EXPIRES, KEY_MATERIAL_DOES_NOT_EXPIRE)
+    val values = js.Object.freeze(js.Array(KEY_MATERIAL_EXPIRES, KEY_MATERIAL_DOES_NOT_EXPIRE))
   }
 
   @js.native
@@ -1182,16 +1184,18 @@ package kms {
     val RetireGrant                     = "RetireGrant"
     val DescribeKey                     = "DescribeKey"
 
-    val values = IndexedSeq(
-      Decrypt,
-      Encrypt,
-      GenerateDataKey,
-      GenerateDataKeyWithoutPlaintext,
-      ReEncryptFrom,
-      ReEncryptTo,
-      CreateGrant,
-      RetireGrant,
-      DescribeKey
+    val values = js.Object.freeze(
+      js.Array(
+        Decrypt,
+        Encrypt,
+        GenerateDataKey,
+        GenerateDataKeyWithoutPlaintext,
+        ReEncryptFrom,
+        ReEncryptTo,
+        CreateGrant,
+        RetireGrant,
+        DescribeKey
+      )
     )
   }
 
@@ -1261,7 +1265,7 @@ package kms {
     val AWS      = "AWS"
     val CUSTOMER = "CUSTOMER"
 
-    val values = IndexedSeq(AWS, CUSTOMER)
+    val values = js.Object.freeze(js.Array(AWS, CUSTOMER))
   }
 
   /**
@@ -1334,13 +1338,13 @@ package kms {
     val PendingImport   = "PendingImport"
     val Unavailable     = "Unavailable"
 
-    val values = IndexedSeq(Enabled, Disabled, PendingDeletion, PendingImport, Unavailable)
+    val values = js.Object.freeze(js.Array(Enabled, Disabled, PendingDeletion, PendingImport, Unavailable))
   }
 
   object KeyUsageTypeEnum {
     val ENCRYPT_DECRYPT = "ENCRYPT_DECRYPT"
 
-    val values = IndexedSeq(ENCRYPT_DECRYPT)
+    val values = js.Object.freeze(js.Array(ENCRYPT_DECRYPT))
   }
 
   @js.native
@@ -1584,7 +1588,7 @@ package kms {
     val EXTERNAL     = "EXTERNAL"
     val AWS_CLOUDHSM = "AWS_CLOUDHSM"
 
-    val values = IndexedSeq(AWS_KMS, EXTERNAL, AWS_CLOUDHSM)
+    val values = js.Object.freeze(js.Array(AWS_KMS, EXTERNAL, AWS_CLOUDHSM))
   }
 
   @js.native
@@ -1891,6 +1895,6 @@ package kms {
   object WrappingKeySpecEnum {
     val RSA_2048 = "RSA_2048"
 
-    val values = IndexedSeq(RSA_2048)
+    val values = js.Object.freeze(js.Array(RSA_2048))
   }
 }

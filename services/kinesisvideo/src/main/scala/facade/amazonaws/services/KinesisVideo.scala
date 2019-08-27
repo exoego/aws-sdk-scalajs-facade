@@ -80,20 +80,22 @@ package kinesisvideo {
     val GET_HLS_STREAMING_SESSION_URL  = "GET_HLS_STREAMING_SESSION_URL"
     val GET_DASH_STREAMING_SESSION_URL = "GET_DASH_STREAMING_SESSION_URL"
 
-    val values = IndexedSeq(
-      PUT_MEDIA,
-      GET_MEDIA,
-      LIST_FRAGMENTS,
-      GET_MEDIA_FOR_FRAGMENT_LIST,
-      GET_HLS_STREAMING_SESSION_URL,
-      GET_DASH_STREAMING_SESSION_URL
+    val values = js.Object.freeze(
+      js.Array(
+        PUT_MEDIA,
+        GET_MEDIA,
+        LIST_FRAGMENTS,
+        GET_MEDIA_FOR_FRAGMENT_LIST,
+        GET_HLS_STREAMING_SESSION_URL,
+        GET_DASH_STREAMING_SESSION_URL
+      )
     )
   }
 
   object ComparisonOperatorEnum {
     val BEGINS_WITH = "BEGINS_WITH"
 
-    val values = IndexedSeq(BEGINS_WITH)
+    val values = js.Object.freeze(js.Array(BEGINS_WITH))
   }
 
   @js.native
@@ -330,7 +332,7 @@ package kinesisvideo {
     val UPDATING = "UPDATING"
     val DELETING = "DELETING"
 
-    val values = IndexedSeq(CREATING, ACTIVE, UPDATING, DELETING)
+    val values = js.Object.freeze(js.Array(CREATING, ACTIVE, UPDATING, DELETING))
   }
 
   /**
@@ -499,7 +501,7 @@ package kinesisvideo {
     val INCREASE_DATA_RETENTION = "INCREASE_DATA_RETENTION"
     val DECREASE_DATA_RETENTION = "DECREASE_DATA_RETENTION"
 
-    val values = IndexedSeq(INCREASE_DATA_RETENTION, DECREASE_DATA_RETENTION)
+    val values = js.Object.freeze(js.Array(INCREASE_DATA_RETENTION, DECREASE_DATA_RETENTION))
   }
 
   @js.native
