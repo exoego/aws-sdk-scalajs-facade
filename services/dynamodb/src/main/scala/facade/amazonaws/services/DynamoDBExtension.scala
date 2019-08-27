@@ -19,7 +19,7 @@ object AttributeValueMapper {
   implicit def AttributeValueTypeMapT[T: AttributeValueMapper]: AttributeValueMapper[Map[String, T]] =
     AttributeValueMapper(
       "M",
-      (seq: Map[String, T]) => js.Dictionary(seq.mapValues(implicitly[AttributeValueMapper[T]]).toSeq: _*)
+      (seq: Map[String, T]) => js.Dictionary(seq.view.mapValues(implicitly[AttributeValueMapper[T]]).toSeq: _*)
     )
 
   implicit def AttributeValueTypeSeqT[T: AttributeValueMapper]: AttributeValueMapper[Seq[T]] =
