@@ -2,7 +2,7 @@
 
 A complete set of [Scala.js](https://www.scala-js.org/) type facade for [aws/aws-sdk-js](https://github.com/aws/aws-sdk-js/).
 
-**190 AWS** from popular ones to obscure ones, as of 2019-08-27 and keep updating.
+**188 AWS** from popular ones to obscure ones, as of 2019-08-27 and keep updating.
 
 
 ## Getting Started
