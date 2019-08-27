@@ -16,11 +16,13 @@ object AttributeValueMapper {
   implicit val AttributeValueTypeList: AttributeValueMapper[ListAttributeValue] =
     AttributeValueMapper("L", identity[ListAttributeValue])
 
-  implicit def AttributeValueTypeMapT[T: AttributeValueMapper]: AttributeValueMapper[Map[String, T]] =
+  implicit def AttributeValueTypeMapT[T: AttributeValueMapper]: AttributeValueMapper[Map[String, T]] = {
+    import scala.collection.compat._
     AttributeValueMapper(
       "M",
       (seq: Map[String, T]) => js.Dictionary(seq.view.mapValues(implicitly[AttributeValueMapper[T]]).toSeq: _*)
     )
+  }
 
   implicit def AttributeValueTypeSeqT[T: AttributeValueMapper]: AttributeValueMapper[Seq[T]] =
     AttributeValueMapper("L", (seq: Seq[T]) => js.Array(seq.map(implicitly[AttributeValueMapper[T]]): _*))
