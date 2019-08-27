@@ -7,7 +7,7 @@ import scala.concurrent.Future
 import io.scalajs.nodejs
 import facade.amazonaws._
 
-package object iotdataplane {
+package object iotdata {
   type ErrorMessage = String
   type JsonDocument =
     nodejs.buffer.Buffer | nodejs.stream.Readable | js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
@@ -18,7 +18,7 @@ package object iotdataplane {
   type Topic        = String
   type errorMessage = String
 
-  implicit final class IoTDataPlaneOps(val service: IoTDataPlane) extends AnyVal {
+  implicit final class IotDataOps(val service: IotData) extends AnyVal {
 
     def deleteThingShadowFuture(params: DeleteThingShadowRequest): Future[DeleteThingShadowResponse] =
       service.deleteThingShadow(params).promise.toFuture
@@ -30,10 +30,10 @@ package object iotdataplane {
   }
 }
 
-package iotdataplane {
+package iotdata {
   @js.native
-  @JSImport("aws-sdk", "IoTDataPlane")
-  class IoTDataPlane() extends js.Object {
+  @JSImport("aws-sdk", "IotData")
+  class IotData() extends js.Object {
     def this(config: AWSConfig) = this()
 
     def deleteThingShadow(params: DeleteThingShadowRequest): Request[DeleteThingShadowResponse] = js.native

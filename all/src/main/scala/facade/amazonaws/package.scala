@@ -403,10 +403,9 @@ package object amazonaws {
     def Iot(): services.iot.Iot                  = new services.iot.Iot()
     def Iot(config: AWSConfig): services.iot.Iot = new services.iot.Iot(config)
 
-    type IoTDataPlane = services.iotdataplane.IoTDataPlane
-    def IoTDataPlane(): services.iotdataplane.IoTDataPlane = new services.iotdataplane.IoTDataPlane()
-    def IoTDataPlane(config: AWSConfig): services.iotdataplane.IoTDataPlane =
-      new services.iotdataplane.IoTDataPlane(config)
+    type IotData = services.iotdata.IotData
+    def IotData(): services.iotdata.IotData                  = new services.iotdata.IotData()
+    def IotData(config: AWSConfig): services.iotdata.IotData = new services.iotdata.IotData(config)
 
     type IoTJobsDataPlane = services.iotjobsdataplane.IoTJobsDataPlane
     def IoTJobsDataPlane(): services.iotjobsdataplane.IoTJobsDataPlane =

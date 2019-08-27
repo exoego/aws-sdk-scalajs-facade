@@ -93,7 +93,7 @@ class AWSConfigWithServicesDefault extends AWSConfig {
   var iot1clickdevicesservice: js.UndefOr[ParamsWithEndpoint]         = js.undefined
   var iot1clickprojects: js.UndefOr[ParamsWithEndpoint]               = js.undefined
   var iotanalytics: js.UndefOr[ParamsWithEndpoint]                    = js.undefined
-  var iotdataplane: js.UndefOr[ParamsWithEndpoint]                    = js.undefined
+  var iotdata: js.UndefOr[ParamsWithEndpoint]                         = js.undefined
   var iotevents: js.UndefOr[ParamsWithEndpoint]                       = js.undefined
   var ioteventsdata: js.UndefOr[ParamsWithEndpoint]                   = js.undefined
   var iotjobsdataplane: js.UndefOr[ParamsWithEndpoint]                = js.undefined

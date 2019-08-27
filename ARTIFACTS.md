@@ -101,7 +101,7 @@ libraryDependencies ++= Seq(
     "net.exoego" %%% "aws-sdk-scalajs-facade-iot1clickdevicesservice" % awsSdkScalajsFacadeVersion,
     "net.exoego" %%% "aws-sdk-scalajs-facade-iot1clickprojects" % awsSdkScalajsFacadeVersion,
     "net.exoego" %%% "aws-sdk-scalajs-facade-iotanalytics" % awsSdkScalajsFacadeVersion,
-    "net.exoego" %%% "aws-sdk-scalajs-facade-iotdataplane" % awsSdkScalajsFacadeVersion,
+    "net.exoego" %%% "aws-sdk-scalajs-facade-iotdata" % awsSdkScalajsFacadeVersion,
     "net.exoego" %%% "aws-sdk-scalajs-facade-iotevents" % awsSdkScalajsFacadeVersion,
     "net.exoego" %%% "aws-sdk-scalajs-facade-iotjobsdataplane" % awsSdkScalajsFacadeVersion,
     "net.exoego" %%% "aws-sdk-scalajs-facade-iotthingsgraph" % awsSdkScalajsFacadeVersion,
