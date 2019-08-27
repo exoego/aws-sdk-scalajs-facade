@@ -986,7 +986,7 @@ package guardduty {
     val ENABLED  = "ENABLED"
     val DISABLED = "DISABLED"
 
-    val values = IndexedSeq(ENABLED, DISABLED)
+    val values = js.Object.freeze(js.Array(ENABLED, DISABLED))
   }
 
   @js.native
@@ -1113,14 +1113,14 @@ package guardduty {
     val USEFUL     = "USEFUL"
     val NOT_USEFUL = "NOT_USEFUL"
 
-    val values = IndexedSeq(USEFUL, NOT_USEFUL)
+    val values = js.Object.freeze(js.Array(USEFUL, NOT_USEFUL))
   }
 
   object FilterActionEnum {
     val NOOP    = "NOOP"
     val ARCHIVE = "ARCHIVE"
 
-    val values = IndexedSeq(NOOP, ARCHIVE)
+    val values = js.Object.freeze(js.Array(NOOP, ARCHIVE))
   }
 
   /**
@@ -1208,13 +1208,13 @@ package guardduty {
     val ONE_HOUR        = "ONE_HOUR"
     val SIX_HOURS       = "SIX_HOURS"
 
-    val values = IndexedSeq(FIFTEEN_MINUTES, ONE_HOUR, SIX_HOURS)
+    val values = js.Object.freeze(js.Array(FIFTEEN_MINUTES, ONE_HOUR, SIX_HOURS))
   }
 
   object FindingStatisticTypeEnum {
     val COUNT_BY_SEVERITY = "COUNT_BY_SEVERITY"
 
-    val values = IndexedSeq(COUNT_BY_SEVERITY)
+    val values = js.Object.freeze(js.Array(COUNT_BY_SEVERITY))
   }
 
   /**
@@ -1786,7 +1786,7 @@ package guardduty {
     val PROOF_POINT = "PROOF_POINT"
     val FIRE_EYE    = "FIRE_EYE"
 
-    val values = IndexedSeq(TXT, STIX, OTX_CSV, ALIEN_VAULT, PROOF_POINT, FIRE_EYE)
+    val values = js.Object.freeze(js.Array(TXT, STIX, OTX_CSV, ALIEN_VAULT, PROOF_POINT, FIRE_EYE))
   }
 
   object IpSetStatusEnum {
@@ -1798,7 +1798,7 @@ package guardduty {
     val DELETE_PENDING = "DELETE_PENDING"
     val DELETED        = "DELETED"
 
-    val values = IndexedSeq(INACTIVE, ACTIVATING, ACTIVE, DEACTIVATING, ERROR, DELETE_PENDING, DELETED)
+    val values = js.Object.freeze(js.Array(INACTIVE, ACTIVATING, ACTIVE, DEACTIVATING, ERROR, DELETE_PENDING, DELETED))
   }
 
   @js.native
@@ -2297,7 +2297,7 @@ package guardduty {
     val ASC  = "ASC"
     val DESC = "DESC"
 
-    val values = IndexedSeq(ASC, DESC)
+    val values = js.Object.freeze(js.Array(ASC, DESC))
   }
 
   /**
@@ -2708,7 +2708,7 @@ package guardduty {
     val PROOF_POINT = "PROOF_POINT"
     val FIRE_EYE    = "FIRE_EYE"
 
-    val values = IndexedSeq(TXT, STIX, OTX_CSV, ALIEN_VAULT, PROOF_POINT, FIRE_EYE)
+    val values = js.Object.freeze(js.Array(TXT, STIX, OTX_CSV, ALIEN_VAULT, PROOF_POINT, FIRE_EYE))
   }
 
   object ThreatIntelSetStatusEnum {
@@ -2720,7 +2720,7 @@ package guardduty {
     val DELETE_PENDING = "DELETE_PENDING"
     val DELETED        = "DELETED"
 
-    val values = IndexedSeq(INACTIVE, ACTIVATING, ACTIVE, DEACTIVATING, ERROR, DELETE_PENDING, DELETED)
+    val values = js.Object.freeze(js.Array(INACTIVE, ACTIVATING, ACTIVE, DEACTIVATING, ERROR, DELETE_PENDING, DELETED))
   }
 
   /**

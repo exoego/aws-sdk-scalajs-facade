@@ -159,7 +159,7 @@ package forecast {
     val float     = "float"
     val timestamp = "timestamp"
 
-    val values = IndexedSeq(string, integer, float, timestamp)
+    val values = js.Object.freeze(js.Array(string, integer, float, timestamp))
   }
 
   /**
@@ -616,7 +616,7 @@ package forecast {
     val RELATED_TIME_SERIES = "RELATED_TIME_SERIES"
     val ITEM_METADATA       = "ITEM_METADATA"
 
-    val values = IndexedSeq(TARGET_TIME_SERIES, RELATED_TIME_SERIES, ITEM_METADATA)
+    val values = js.Object.freeze(js.Array(TARGET_TIME_SERIES, RELATED_TIME_SERIES, ITEM_METADATA))
   }
 
   @js.native
@@ -1090,7 +1090,8 @@ package forecast {
     val WEB_TRAFFIC        = "WEB_TRAFFIC"
     val METRICS            = "METRICS"
 
-    val values = IndexedSeq(RETAIL, CUSTOM, INVENTORY_PLANNING, EC2_CAPACITY, WORK_FORCE, WEB_TRAFFIC, METRICS)
+    val values =
+      js.Object.freeze(js.Array(RETAIL, CUSTOM, INVENTORY_PLANNING, EC2_CAPACITY, WORK_FORCE, WEB_TRAFFIC, METRICS))
   }
 
   /**
@@ -1163,7 +1164,7 @@ package forecast {
     val SUMMARY  = "SUMMARY"
     val COMPUTED = "COMPUTED"
 
-    val values = IndexedSeq(SUMMARY, COMPUTED)
+    val values = js.Object.freeze(js.Array(SUMMARY, COMPUTED))
   }
 
   /**
@@ -1258,7 +1259,7 @@ package forecast {
   object FeaturizationMethodNameEnum {
     val filling = "filling"
 
-    val values = IndexedSeq(filling)
+    val values = js.Object.freeze(js.Array(filling))
   }
 
   /**
@@ -1291,7 +1292,7 @@ package forecast {
     val IS     = "IS"
     val IS_NOT = "IS_NOT"
 
-    val values = IndexedSeq(IS, IS_NOT)
+    val values = js.Object.freeze(js.Array(IS, IS_NOT))
   }
 
   /**
@@ -1814,7 +1815,7 @@ package forecast {
     val Logarithmic        = "Logarithmic"
     val ReverseLogarithmic = "ReverseLogarithmic"
 
-    val values = IndexedSeq(Auto, Linear, Logarithmic, ReverseLogarithmic)
+    val values = js.Object.freeze(js.Array(Auto, Linear, Logarithmic, ReverseLogarithmic))
   }
 
   /**

@@ -293,14 +293,14 @@ package ecs {
     val UPDATED  = "UPDATED"
     val FAILED   = "FAILED"
 
-    val values = IndexedSeq(PENDING, STAGING, STAGED, UPDATING, UPDATED, FAILED)
+    val values = js.Object.freeze(js.Array(PENDING, STAGING, STAGED, UPDATING, UPDATED, FAILED))
   }
 
   object AssignPublicIpEnum {
     val ENABLED  = "ENABLED"
     val DISABLED = "DISABLED"
 
-    val values = IndexedSeq(ENABLED, DISABLED)
+    val values = js.Object.freeze(js.Array(ENABLED, DISABLED))
   }
 
   /**
@@ -459,7 +459,7 @@ package ecs {
     val STATISTICS = "STATISTICS"
     val TAGS       = "TAGS"
 
-    val values = IndexedSeq(STATISTICS, TAGS)
+    val values = js.Object.freeze(js.Array(STATISTICS, TAGS))
   }
 
   /**
@@ -486,21 +486,21 @@ package ecs {
   object ClusterSettingNameEnum {
     val containerInsights = "containerInsights"
 
-    val values = IndexedSeq(containerInsights)
+    val values = js.Object.freeze(js.Array(containerInsights))
   }
 
   object CompatibilityEnum {
     val EC2     = "EC2"
     val FARGATE = "FARGATE"
 
-    val values = IndexedSeq(EC2, FARGATE)
+    val values = js.Object.freeze(js.Array(EC2, FARGATE))
   }
 
   object ConnectivityEnum {
     val CONNECTED    = "CONNECTED"
     val DISCONNECTED = "DISCONNECTED"
 
-    val values = IndexedSeq(CONNECTED, DISCONNECTED)
+    val values = js.Object.freeze(js.Array(CONNECTED, DISCONNECTED))
   }
 
   /**
@@ -563,7 +563,7 @@ package ecs {
     val SUCCESS  = "SUCCESS"
     val HEALTHY  = "HEALTHY"
 
-    val values = IndexedSeq(START, COMPLETE, SUCCESS, HEALTHY)
+    val values = js.Object.freeze(js.Array(START, COMPLETE, SUCCESS, HEALTHY))
   }
 
   /**
@@ -784,7 +784,7 @@ package ecs {
   object ContainerInstanceFieldEnum {
     val TAGS = "TAGS"
 
-    val values = IndexedSeq(TAGS)
+    val values = js.Object.freeze(js.Array(TAGS))
   }
 
   object ContainerInstanceStatusEnum {
@@ -794,7 +794,7 @@ package ecs {
     val DEREGISTERING       = "DEREGISTERING"
     val REGISTRATION_FAILED = "REGISTRATION_FAILED"
 
-    val values = IndexedSeq(ACTIVE, DRAINING, REGISTERING, DEREGISTERING, REGISTRATION_FAILED)
+    val values = js.Object.freeze(js.Array(ACTIVE, DRAINING, REGISTERING, DEREGISTERING, REGISTRATION_FAILED))
   }
 
   /**
@@ -1327,7 +1327,7 @@ package ecs {
     val CODE_DEPLOY = "CODE_DEPLOY"
     val EXTERNAL    = "EXTERNAL"
 
-    val values = IndexedSeq(ECS, CODE_DEPLOY, EXTERNAL)
+    val values = js.Object.freeze(js.Array(ECS, CODE_DEPLOY, EXTERNAL))
   }
 
   @js.native
@@ -1643,7 +1643,7 @@ package ecs {
     val PENDING = "PENDING"
     val STOPPED = "STOPPED"
 
-    val values = IndexedSeq(RUNNING, PENDING, STOPPED)
+    val values = js.Object.freeze(js.Array(RUNNING, PENDING, STOPPED))
   }
 
   /**
@@ -1677,7 +1677,7 @@ package ecs {
     val write = "write"
     val mknod = "mknod"
 
-    val values = IndexedSeq(read, write, mknod)
+    val values = js.Object.freeze(js.Array(read, write, mknod))
   }
 
   @js.native
@@ -1808,7 +1808,7 @@ package ecs {
     val UNHEALTHY = "UNHEALTHY"
     val UNKNOWN   = "UNKNOWN"
 
-    val values = IndexedSeq(HEALTHY, UNHEALTHY, UNKNOWN)
+    val values = js.Object.freeze(js.Array(HEALTHY, UNHEALTHY, UNKNOWN))
   }
 
   /**
@@ -1857,7 +1857,7 @@ package ecs {
     val task = "task"
     val none = "none"
 
-    val values = IndexedSeq(host, task, none)
+    val values = js.Object.freeze(js.Array(host, task, none))
   }
 
   /**
@@ -1906,7 +1906,7 @@ package ecs {
     val EC2     = "EC2"
     val FARGATE = "FARGATE"
 
-    val values = IndexedSeq(EC2, FARGATE)
+    val values = js.Object.freeze(js.Array(EC2, FARGATE))
   }
 
   /**
@@ -2410,7 +2410,7 @@ package ecs {
     val awslogs     = "awslogs"
     val splunk      = "splunk"
 
-    val values = IndexedSeq(`json-file`, syslog, journald, gelf, fluentd, awslogs, splunk)
+    val values = js.Object.freeze(js.Array(`json-file`, syslog, journald, gelf, fluentd, awslogs, splunk))
   }
 
   /**
@@ -2512,14 +2512,14 @@ package ecs {
     val awsvpc = "awsvpc"
     val none   = "none"
 
-    val values = IndexedSeq(bridge, host, awsvpc, none)
+    val values = js.Object.freeze(js.Array(bridge, host, awsvpc, none))
   }
 
   object PidModeEnum {
     val host = "host"
     val task = "task"
 
-    val values = IndexedSeq(host, task)
+    val values = js.Object.freeze(js.Array(host, task))
   }
 
   /**
@@ -2547,7 +2547,7 @@ package ecs {
     val distinctInstance = "distinctInstance"
     val memberOf         = "memberOf"
 
-    val values = IndexedSeq(distinctInstance, memberOf)
+    val values = js.Object.freeze(js.Array(distinctInstance, memberOf))
   }
 
   /**
@@ -2576,7 +2576,7 @@ package ecs {
     val spread  = "spread"
     val binpack = "binpack"
 
-    val values = IndexedSeq(random, spread, binpack)
+    val values = js.Object.freeze(js.Array(random, spread, binpack))
   }
 
   /**
@@ -2605,7 +2605,7 @@ package ecs {
   object PlatformDeviceTypeEnum {
     val GPU = "GPU"
 
-    val values = IndexedSeq(GPU)
+    val values = js.Object.freeze(js.Array(GPU))
   }
 
   /**
@@ -2638,7 +2638,7 @@ package ecs {
     val TASK_DEFINITION = "TASK_DEFINITION"
     val SERVICE         = "SERVICE"
 
-    val values = IndexedSeq(TASK_DEFINITION, SERVICE)
+    val values = js.Object.freeze(js.Array(TASK_DEFINITION, SERVICE))
   }
 
   /**
@@ -2672,7 +2672,7 @@ package ecs {
   object ProxyConfigurationTypeEnum {
     val APPMESH = "APPMESH"
 
-    val values = IndexedSeq(APPMESH)
+    val values = js.Object.freeze(js.Array(APPMESH))
   }
 
   @js.native
@@ -2992,7 +2992,7 @@ package ecs {
   object ResourceTypeEnum {
     val GPU = "GPU"
 
-    val values = IndexedSeq(GPU)
+    val values = js.Object.freeze(js.Array(GPU))
   }
 
   @js.native
@@ -3093,21 +3093,21 @@ package ecs {
   object ScaleUnitEnum {
     val PERCENT = "PERCENT"
 
-    val values = IndexedSeq(PERCENT)
+    val values = js.Object.freeze(js.Array(PERCENT))
   }
 
   object SchedulingStrategyEnum {
     val REPLICA = "REPLICA"
     val DAEMON  = "DAEMON"
 
-    val values = IndexedSeq(REPLICA, DAEMON)
+    val values = js.Object.freeze(js.Array(REPLICA, DAEMON))
   }
 
   object ScopeEnum {
     val task   = "task"
     val shared = "shared"
 
-    val values = IndexedSeq(task, shared)
+    val values = js.Object.freeze(js.Array(task, shared))
   }
 
   /**
@@ -3264,7 +3264,7 @@ package ecs {
   object ServiceFieldEnum {
     val TAGS = "TAGS"
 
-    val values = IndexedSeq(TAGS)
+    val values = js.Object.freeze(js.Array(TAGS))
   }
 
   /**
@@ -3325,12 +3325,14 @@ package ecs {
     val awsvpcTrunking                 = "awsvpcTrunking"
     val containerInsights              = "containerInsights"
 
-    val values = IndexedSeq(
-      serviceLongArnFormat,
-      taskLongArnFormat,
-      containerInstanceLongArnFormat,
-      awsvpcTrunking,
-      containerInsights
+    val values = js.Object.freeze(
+      js.Array(
+        serviceLongArnFormat,
+        taskLongArnFormat,
+        containerInstanceLongArnFormat,
+        awsvpcTrunking,
+        containerInsights
+      )
     )
   }
 
@@ -3338,14 +3340,14 @@ package ecs {
     val ASC  = "ASC"
     val DESC = "DESC"
 
-    val values = IndexedSeq(ASC, DESC)
+    val values = js.Object.freeze(js.Array(ASC, DESC))
   }
 
   object StabilityStatusEnum {
     val STEADY_STATE = "STEADY_STATE"
     val STABILIZING  = "STABILIZING"
 
-    val values = IndexedSeq(STEADY_STATE, STABILIZING)
+    val values = js.Object.freeze(js.Array(STEADY_STATE, STABILIZING))
   }
 
   @js.native
@@ -3673,7 +3675,7 @@ package ecs {
   object TargetTypeEnum {
     val `container-instance` = "container-instance"
 
-    val values = IndexedSeq(`container-instance`)
+    val values = js.Object.freeze(js.Array(`container-instance`))
   }
 
   /**
@@ -3852,13 +3854,13 @@ package ecs {
     val INACTIVE = "INACTIVE"
     val ALL      = "ALL"
 
-    val values = IndexedSeq(ACTIVE, INACTIVE, ALL)
+    val values = js.Object.freeze(js.Array(ACTIVE, INACTIVE, ALL))
   }
 
   object TaskDefinitionFieldEnum {
     val TAGS = "TAGS"
 
-    val values = IndexedSeq(TAGS)
+    val values = js.Object.freeze(js.Array(TAGS))
   }
 
   /**
@@ -3887,20 +3889,20 @@ package ecs {
   object TaskDefinitionPlacementConstraintTypeEnum {
     val memberOf = "memberOf"
 
-    val values = IndexedSeq(memberOf)
+    val values = js.Object.freeze(js.Array(memberOf))
   }
 
   object TaskDefinitionStatusEnum {
     val ACTIVE   = "ACTIVE"
     val INACTIVE = "INACTIVE"
 
-    val values = IndexedSeq(ACTIVE, INACTIVE)
+    val values = js.Object.freeze(js.Array(ACTIVE, INACTIVE))
   }
 
   object TaskFieldEnum {
     val TAGS = "TAGS"
 
-    val values = IndexedSeq(TAGS)
+    val values = js.Object.freeze(js.Array(TAGS))
   }
 
   /**
@@ -4010,7 +4012,7 @@ package ecs {
     val EssentialContainerExited = "EssentialContainerExited"
     val UserInitiated            = "UserInitiated"
 
-    val values = IndexedSeq(TaskFailedToStart, EssentialContainerExited, UserInitiated)
+    val values = js.Object.freeze(js.Array(TaskFailedToStart, EssentialContainerExited, UserInitiated))
   }
 
   /**
@@ -4043,7 +4045,7 @@ package ecs {
     val tcp = "tcp"
     val udp = "udp"
 
-    val values = IndexedSeq(tcp, udp)
+    val values = js.Object.freeze(js.Array(tcp, udp))
   }
 
   /**
@@ -4089,22 +4091,24 @@ package ecs {
     val sigpending = "sigpending"
     val stack      = "stack"
 
-    val values = IndexedSeq(
-      core,
-      cpu,
-      data,
-      fsize,
-      locks,
-      memlock,
-      msgqueue,
-      nice,
-      nofile,
-      nproc,
-      rss,
-      rtprio,
-      rttime,
-      sigpending,
-      stack
+    val values = js.Object.freeze(
+      js.Array(
+        core,
+        cpu,
+        data,
+        fsize,
+        locks,
+        memlock,
+        msgqueue,
+        nice,
+        nofile,
+        nproc,
+        rss,
+        rtprio,
+        rttime,
+        sigpending,
+        stack
+      )
     )
   }
 

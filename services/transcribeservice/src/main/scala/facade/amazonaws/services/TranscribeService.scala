@@ -252,23 +252,25 @@ package transcribeservice {
     val `ru-RU` = "ru-RU"
     val `zh-CN` = "zh-CN"
 
-    val values = IndexedSeq(
-      `en-US`,
-      `es-US`,
-      `en-AU`,
-      `fr-CA`,
-      `en-GB`,
-      `de-DE`,
-      `pt-BR`,
-      `fr-FR`,
-      `it-IT`,
-      `ko-KR`,
-      `es-ES`,
-      `en-IN`,
-      `hi-IN`,
-      `ar-SA`,
-      `ru-RU`,
-      `zh-CN`
+    val values = js.Object.freeze(
+      js.Array(
+        `en-US`,
+        `es-US`,
+        `en-AU`,
+        `fr-CA`,
+        `en-GB`,
+        `de-DE`,
+        `pt-BR`,
+        `fr-FR`,
+        `it-IT`,
+        `ko-KR`,
+        `es-ES`,
+        `en-IN`,
+        `hi-IN`,
+        `ar-SA`,
+        `ru-RU`,
+        `zh-CN`
+      )
     )
   }
 
@@ -386,14 +388,14 @@ package transcribeservice {
     val wav  = "wav"
     val flac = "flac"
 
-    val values = IndexedSeq(mp3, mp4, wav, flac)
+    val values = js.Object.freeze(js.Array(mp3, mp4, wav, flac))
   }
 
   object OutputLocationTypeEnum {
     val CUSTOMER_BUCKET = "CUSTOMER_BUCKET"
     val SERVICE_BUCKET  = "SERVICE_BUCKET"
 
-    val values = IndexedSeq(CUSTOMER_BUCKET, SERVICE_BUCKET)
+    val values = js.Object.freeze(js.Array(CUSTOMER_BUCKET, SERVICE_BUCKET))
   }
 
   /**
@@ -544,7 +546,7 @@ package transcribeservice {
     val FAILED      = "FAILED"
     val COMPLETED   = "COMPLETED"
 
-    val values = IndexedSeq(IN_PROGRESS, FAILED, COMPLETED)
+    val values = js.Object.freeze(js.Array(IN_PROGRESS, FAILED, COMPLETED))
   }
 
   /**
@@ -665,6 +667,6 @@ package transcribeservice {
     val READY   = "READY"
     val FAILED  = "FAILED"
 
-    val values = IndexedSeq(PENDING, READY, FAILED)
+    val values = js.Object.freeze(js.Array(PENDING, READY, FAILED))
   }
 }

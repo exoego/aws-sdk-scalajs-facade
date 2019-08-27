@@ -66,21 +66,21 @@ package kinesisvideoarchivedmedia {
     val FRAGMENTED_MP4 = "FRAGMENTED_MP4"
     val MPEG_TS        = "MPEG_TS"
 
-    val values = IndexedSeq(FRAGMENTED_MP4, MPEG_TS)
+    val values = js.Object.freeze(js.Array(FRAGMENTED_MP4, MPEG_TS))
   }
 
   object DASHDisplayFragmentNumberEnum {
     val ALWAYS = "ALWAYS"
     val NEVER  = "NEVER"
 
-    val values = IndexedSeq(ALWAYS, NEVER)
+    val values = js.Object.freeze(js.Array(ALWAYS, NEVER))
   }
 
   object DASHDisplayFragmentTimestampEnum {
     val ALWAYS = "ALWAYS"
     val NEVER  = "NEVER"
 
-    val values = IndexedSeq(ALWAYS, NEVER)
+    val values = js.Object.freeze(js.Array(ALWAYS, NEVER))
   }
 
   /**
@@ -108,7 +108,7 @@ package kinesisvideoarchivedmedia {
     val PRODUCER_TIMESTAMP = "PRODUCER_TIMESTAMP"
     val SERVER_TIMESTAMP   = "SERVER_TIMESTAMP"
 
-    val values = IndexedSeq(PRODUCER_TIMESTAMP, SERVER_TIMESTAMP)
+    val values = js.Object.freeze(js.Array(PRODUCER_TIMESTAMP, SERVER_TIMESTAMP))
   }
 
   object DASHPlaybackModeEnum {
@@ -116,7 +116,7 @@ package kinesisvideoarchivedmedia {
     val LIVE_REPLAY = "LIVE_REPLAY"
     val ON_DEMAND   = "ON_DEMAND"
 
-    val values = IndexedSeq(LIVE, LIVE_REPLAY, ON_DEMAND)
+    val values = js.Object.freeze(js.Array(LIVE, LIVE_REPLAY, ON_DEMAND))
   }
 
   /**
@@ -208,7 +208,7 @@ package kinesisvideoarchivedmedia {
     val PRODUCER_TIMESTAMP = "PRODUCER_TIMESTAMP"
     val SERVER_TIMESTAMP   = "SERVER_TIMESTAMP"
 
-    val values = IndexedSeq(PRODUCER_TIMESTAMP, SERVER_TIMESTAMP)
+    val values = js.Object.freeze(js.Array(PRODUCER_TIMESTAMP, SERVER_TIMESTAMP))
   }
 
   @js.native
@@ -360,14 +360,14 @@ package kinesisvideoarchivedmedia {
     val ALWAYS = "ALWAYS"
     val NEVER  = "NEVER"
 
-    val values = IndexedSeq(ALWAYS, NEVER)
+    val values = js.Object.freeze(js.Array(ALWAYS, NEVER))
   }
 
   object HLSDisplayFragmentTimestampEnum {
     val ALWAYS = "ALWAYS"
     val NEVER  = "NEVER"
 
-    val values = IndexedSeq(ALWAYS, NEVER)
+    val values = js.Object.freeze(js.Array(ALWAYS, NEVER))
   }
 
   /**
@@ -395,7 +395,7 @@ package kinesisvideoarchivedmedia {
     val PRODUCER_TIMESTAMP = "PRODUCER_TIMESTAMP"
     val SERVER_TIMESTAMP   = "SERVER_TIMESTAMP"
 
-    val values = IndexedSeq(PRODUCER_TIMESTAMP, SERVER_TIMESTAMP)
+    val values = js.Object.freeze(js.Array(PRODUCER_TIMESTAMP, SERVER_TIMESTAMP))
   }
 
   object HLSPlaybackModeEnum {
@@ -403,7 +403,7 @@ package kinesisvideoarchivedmedia {
     val LIVE_REPLAY = "LIVE_REPLAY"
     val ON_DEMAND   = "ON_DEMAND"
 
-    val values = IndexedSeq(LIVE, LIVE_REPLAY, ON_DEMAND)
+    val values = js.Object.freeze(js.Array(LIVE, LIVE_REPLAY, ON_DEMAND))
   }
 
   /**

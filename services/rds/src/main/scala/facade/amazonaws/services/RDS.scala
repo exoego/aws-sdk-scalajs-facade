@@ -630,7 +630,7 @@ package rds {
     val sync  = "sync"
     val async = "async"
 
-    val values = IndexedSeq(sync, async)
+    val values = js.Object.freeze(js.Array(sync, async))
   }
 
   object ActivityStreamStatusEnum {
@@ -639,7 +639,7 @@ package rds {
     val started  = "started"
     val stopping = "stopping"
 
-    val values = IndexedSeq(stopped, starting, started, stopping)
+    val values = js.Object.freeze(js.Array(stopped, starting, started, stopping))
   }
 
   @js.native
@@ -753,7 +753,7 @@ package rds {
     val immediate        = "immediate"
     val `pending-reboot` = "pending-reboot"
 
-    val values = IndexedSeq(immediate, `pending-reboot`)
+    val values = js.Object.freeze(js.Array(immediate, `pending-reboot`))
   }
 
   /**
@@ -8509,13 +8509,15 @@ package rds {
     val `db-cluster`          = "db-cluster"
     val `db-cluster-snapshot` = "db-cluster-snapshot"
 
-    val values = IndexedSeq(
-      `db-instance`,
-      `db-parameter-group`,
-      `db-security-group`,
-      `db-snapshot`,
-      `db-cluster`,
-      `db-cluster-snapshot`
+    val values = js.Object.freeze(
+      js.Array(
+        `db-instance`,
+        `db-parameter-group`,
+        `db-security-group`,
+        `db-snapshot`,
+        `db-cluster`,
+        `db-cluster-snapshot`
+      )
     )
   }
 

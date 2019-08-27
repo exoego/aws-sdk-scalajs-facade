@@ -910,7 +910,7 @@ package pinpoint {
     val DEEP_LINK = "DEEP_LINK"
     val URL       = "URL"
 
-    val values = IndexedSeq(OPEN_APP, DEEP_LINK, URL)
+    val values = js.Object.freeze(js.Array(OPEN_APP, DEEP_LINK, URL))
   }
 
   /**
@@ -1169,7 +1169,7 @@ package pinpoint {
     val INCLUSIVE = "INCLUSIVE"
     val EXCLUSIVE = "EXCLUSIVE"
 
-    val values = IndexedSeq(INCLUSIVE, EXCLUSIVE)
+    val values = js.Object.freeze(js.Array(INCLUSIVE, EXCLUSIVE))
   }
 
   /**
@@ -1625,7 +1625,7 @@ package pinpoint {
     val PAUSED           = "PAUSED"
     val DELETED          = "DELETED"
 
-    val values = IndexedSeq(SCHEDULED, EXECUTING, PENDING_NEXT_RUN, COMPLETED, PAUSED, DELETED)
+    val values = js.Object.freeze(js.Array(SCHEDULED, EXECUTING, PENDING_NEXT_RUN, COMPLETED, PAUSED, DELETED))
   }
 
   /**
@@ -1706,8 +1706,9 @@ package pinpoint {
     val BAIDU             = "BAIDU"
     val CUSTOM            = "CUSTOM"
 
-    val values =
-      IndexedSeq(GCM, APNS, APNS_SANDBOX, APNS_VOIP, APNS_VOIP_SANDBOX, ADM, SMS, VOICE, EMAIL, BAIDU, CUSTOM)
+    val values = js.Object.freeze(
+      js.Array(GCM, APNS, APNS_SANDBOX, APNS_VOIP, APNS_VOIP_SANDBOX, ADM, SMS, VOICE, EMAIL, BAIDU, CUSTOM)
+    )
   }
 
   /**
@@ -2557,15 +2558,16 @@ package pinpoint {
     val OPT_OUT           = "OPT_OUT"
     val DUPLICATE         = "DUPLICATE"
 
-    val values =
-      IndexedSeq(SUCCESSFUL, THROTTLED, TEMPORARY_FAILURE, PERMANENT_FAILURE, UNKNOWN_FAILURE, OPT_OUT, DUPLICATE)
+    val values = js.Object.freeze(
+      js.Array(SUCCESSFUL, THROTTLED, TEMPORARY_FAILURE, PERMANENT_FAILURE, UNKNOWN_FAILURE, OPT_OUT, DUPLICATE)
+    )
   }
 
   object DimensionTypeEnum {
     val INCLUSIVE = "INCLUSIVE"
     val EXCLUSIVE = "EXCLUSIVE"
 
-    val values = IndexedSeq(INCLUSIVE, EXCLUSIVE)
+    val values = js.Object.freeze(js.Array(INCLUSIVE, EXCLUSIVE))
   }
 
   /**
@@ -2618,7 +2620,7 @@ package pinpoint {
     val DAY_14 = "DAY_14"
     val DAY_30 = "DAY_30"
 
-    val values = IndexedSeq(HR_24, DAY_7, DAY_14, DAY_30)
+    val values = js.Object.freeze(js.Array(HR_24, DAY_7, DAY_14, DAY_30))
   }
 
   /**
@@ -3458,14 +3460,14 @@ package pinpoint {
     val SYSTEM   = "SYSTEM"
     val ENDPOINT = "ENDPOINT"
 
-    val values = IndexedSeq(SYSTEM, ENDPOINT)
+    val values = js.Object.freeze(js.Array(SYSTEM, ENDPOINT))
   }
 
   object FormatEnum {
     val CSV  = "CSV"
     val JSON = "JSON"
 
-    val values = IndexedSeq(CSV, JSON)
+    val values = js.Object.freeze(js.Array(CSV, JSON))
   }
 
   object FrequencyEnum {
@@ -3476,7 +3478,7 @@ package pinpoint {
     val MONTHLY = "MONTHLY"
     val EVENT   = "EVENT"
 
-    val values = IndexedSeq(ONCE, HOURLY, DAILY, WEEKLY, MONTHLY, EVENT)
+    val values = js.Object.freeze(js.Array(ONCE, HOURLY, DAILY, WEEKLY, MONTHLY, EVENT))
   }
 
   /**
@@ -5119,7 +5121,7 @@ package pinpoint {
     val ANY  = "ANY"
     val NONE = "NONE"
 
-    val values = IndexedSeq(ALL, ANY, NONE)
+    val values = js.Object.freeze(js.Array(ALL, ANY, NONE))
   }
 
   /**
@@ -5152,7 +5154,7 @@ package pinpoint {
     val FAILING      = "FAILING"
     val FAILED       = "FAILED"
 
-    val values = IndexedSeq(CREATED, INITIALIZING, PROCESSING, COMPLETING, COMPLETED, FAILING, FAILED)
+    val values = js.Object.freeze(js.Array(CREATED, INITIALIZING, PROCESSING, COMPLETING, COMPLETED, FAILING, FAILED))
   }
 
   @js.native
@@ -5394,7 +5396,7 @@ package pinpoint {
     val TRANSACTIONAL = "TRANSACTIONAL"
     val PROMOTIONAL   = "PROMOTIONAL"
 
-    val values = IndexedSeq(TRANSACTIONAL, PROMOTIONAL)
+    val values = js.Object.freeze(js.Array(TRANSACTIONAL, PROMOTIONAL))
   }
 
   /**
@@ -5424,7 +5426,7 @@ package pinpoint {
     val DELIVERY = "DELIVERY"
     val FILTER   = "FILTER"
 
-    val values = IndexedSeq(DELIVERY, FILTER)
+    val values = js.Object.freeze(js.Array(DELIVERY, FILTER))
   }
 
   /**
@@ -5727,7 +5729,7 @@ package pinpoint {
     val ACTIVE   = "ACTIVE"
     val INACTIVE = "INACTIVE"
 
-    val values = IndexedSeq(ACTIVE, INACTIVE)
+    val values = js.Object.freeze(js.Array(ACTIVE, INACTIVE))
   }
 
   @js.native
@@ -6245,7 +6247,7 @@ package pinpoint {
     val DIMENSIONAL = "DIMENSIONAL"
     val IMPORT      = "IMPORT"
 
-    val values = IndexedSeq(DIMENSIONAL, IMPORT)
+    val values = js.Object.freeze(js.Array(DIMENSIONAL, IMPORT))
   }
 
   /**
@@ -6502,7 +6504,7 @@ package pinpoint {
     val ANY  = "ANY"
     val NONE = "NONE"
 
-    val values = IndexedSeq(ALL, ANY, NONE)
+    val values = js.Object.freeze(js.Array(ALL, ANY, NONE))
   }
 
   @js.native
@@ -6588,7 +6590,7 @@ package pinpoint {
     val ANY  = "ANY"
     val NONE = "NONE"
 
-    val values = IndexedSeq(ALL, ANY, NONE)
+    val values = js.Object.freeze(js.Array(ALL, ANY, NONE))
   }
 
   @js.native

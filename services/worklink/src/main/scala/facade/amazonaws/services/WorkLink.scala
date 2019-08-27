@@ -323,7 +323,7 @@ package worklink {
   object AuthorizationProviderTypeEnum {
     val SAML = "SAML"
 
-    val values = IndexedSeq(SAML)
+    val values = js.Object.freeze(js.Array(SAML))
   }
 
   @js.native
@@ -736,7 +736,7 @@ package worklink {
     val ACTIVE     = "ACTIVE"
     val SIGNED_OUT = "SIGNED_OUT"
 
-    val values = IndexedSeq(ACTIVE, SIGNED_OUT)
+    val values = js.Object.freeze(js.Array(ACTIVE, SIGNED_OUT))
   }
 
   /**
@@ -866,15 +866,17 @@ package worklink {
     val FAILED_TO_ASSOCIATE    = "FAILED_TO_ASSOCIATE"
     val FAILED_TO_DISASSOCIATE = "FAILED_TO_DISASSOCIATE"
 
-    val values = IndexedSeq(
-      PENDING_VALIDATION,
-      ASSOCIATING,
-      ACTIVE,
-      INACTIVE,
-      DISASSOCIATING,
-      DISASSOCIATED,
-      FAILED_TO_ASSOCIATE,
-      FAILED_TO_DISASSOCIATE
+    val values = js.Object.freeze(
+      js.Array(
+        PENDING_VALIDATION,
+        ASSOCIATING,
+        ACTIVE,
+        INACTIVE,
+        DISASSOCIATING,
+        DISASSOCIATED,
+        FAILED_TO_ASSOCIATE,
+        FAILED_TO_DISASSOCIATE
+      )
     )
   }
 
@@ -915,7 +917,7 @@ package worklink {
     val FAILED_TO_CREATE = "FAILED_TO_CREATE"
     val FAILED_TO_DELETE = "FAILED_TO_DELETE"
 
-    val values = IndexedSeq(CREATING, ACTIVE, DELETING, DELETED, FAILED_TO_CREATE, FAILED_TO_DELETE)
+    val values = js.Object.freeze(js.Array(CREATING, ACTIVE, DELETING, DELETED, FAILED_TO_CREATE, FAILED_TO_DELETE))
   }
 
   /**
@@ -957,7 +959,7 @@ package worklink {
   object IdentityProviderTypeEnum {
     val SAML = "SAML"
 
-    val values = IndexedSeq(SAML)
+    val values = js.Object.freeze(js.Array(SAML))
   }
 
   @js.native

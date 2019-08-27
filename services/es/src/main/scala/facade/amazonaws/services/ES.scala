@@ -521,7 +521,7 @@ package es {
     val NOT_ELIGIBLE   = "NOT_ELIGIBLE"
     val ELIGIBLE       = "ELIGIBLE"
 
-    val values = IndexedSeq(PENDING_UPDATE, IN_PROGRESS, COMPLETED, NOT_ELIGIBLE, ELIGIBLE)
+    val values = js.Object.freeze(js.Array(PENDING_UPDATE, IN_PROGRESS, COMPLETED, NOT_ELIGIBLE, ELIGIBLE))
   }
 
   /**
@@ -909,63 +909,65 @@ package es {
     val `i3.8xlarge.elasticsearch`  = "i3.8xlarge.elasticsearch"
     val `i3.16xlarge.elasticsearch` = "i3.16xlarge.elasticsearch"
 
-    val values = IndexedSeq(
-      `m3.medium.elasticsearch`,
-      `m3.large.elasticsearch`,
-      `m3.xlarge.elasticsearch`,
-      `m3.2xlarge.elasticsearch`,
-      `m4.large.elasticsearch`,
-      `m4.xlarge.elasticsearch`,
-      `m4.2xlarge.elasticsearch`,
-      `m4.4xlarge.elasticsearch`,
-      `m4.10xlarge.elasticsearch`,
-      `m5.large.elasticsearch`,
-      `m5.xlarge.elasticsearch`,
-      `m5.2xlarge.elasticsearch`,
-      `m5.4xlarge.elasticsearch`,
-      `m5.12xlarge.elasticsearch`,
-      `r5.large.elasticsearch`,
-      `r5.xlarge.elasticsearch`,
-      `r5.2xlarge.elasticsearch`,
-      `r5.4xlarge.elasticsearch`,
-      `r5.12xlarge.elasticsearch`,
-      `c5.large.elasticsearch`,
-      `c5.xlarge.elasticsearch`,
-      `c5.2xlarge.elasticsearch`,
-      `c5.4xlarge.elasticsearch`,
-      `c5.9xlarge.elasticsearch`,
-      `c5.18xlarge.elasticsearch`,
-      `t2.micro.elasticsearch`,
-      `t2.small.elasticsearch`,
-      `t2.medium.elasticsearch`,
-      `r3.large.elasticsearch`,
-      `r3.xlarge.elasticsearch`,
-      `r3.2xlarge.elasticsearch`,
-      `r3.4xlarge.elasticsearch`,
-      `r3.8xlarge.elasticsearch`,
-      `i2.xlarge.elasticsearch`,
-      `i2.2xlarge.elasticsearch`,
-      `d2.xlarge.elasticsearch`,
-      `d2.2xlarge.elasticsearch`,
-      `d2.4xlarge.elasticsearch`,
-      `d2.8xlarge.elasticsearch`,
-      `c4.large.elasticsearch`,
-      `c4.xlarge.elasticsearch`,
-      `c4.2xlarge.elasticsearch`,
-      `c4.4xlarge.elasticsearch`,
-      `c4.8xlarge.elasticsearch`,
-      `r4.large.elasticsearch`,
-      `r4.xlarge.elasticsearch`,
-      `r4.2xlarge.elasticsearch`,
-      `r4.4xlarge.elasticsearch`,
-      `r4.8xlarge.elasticsearch`,
-      `r4.16xlarge.elasticsearch`,
-      `i3.large.elasticsearch`,
-      `i3.xlarge.elasticsearch`,
-      `i3.2xlarge.elasticsearch`,
-      `i3.4xlarge.elasticsearch`,
-      `i3.8xlarge.elasticsearch`,
-      `i3.16xlarge.elasticsearch`
+    val values = js.Object.freeze(
+      js.Array(
+        `m3.medium.elasticsearch`,
+        `m3.large.elasticsearch`,
+        `m3.xlarge.elasticsearch`,
+        `m3.2xlarge.elasticsearch`,
+        `m4.large.elasticsearch`,
+        `m4.xlarge.elasticsearch`,
+        `m4.2xlarge.elasticsearch`,
+        `m4.4xlarge.elasticsearch`,
+        `m4.10xlarge.elasticsearch`,
+        `m5.large.elasticsearch`,
+        `m5.xlarge.elasticsearch`,
+        `m5.2xlarge.elasticsearch`,
+        `m5.4xlarge.elasticsearch`,
+        `m5.12xlarge.elasticsearch`,
+        `r5.large.elasticsearch`,
+        `r5.xlarge.elasticsearch`,
+        `r5.2xlarge.elasticsearch`,
+        `r5.4xlarge.elasticsearch`,
+        `r5.12xlarge.elasticsearch`,
+        `c5.large.elasticsearch`,
+        `c5.xlarge.elasticsearch`,
+        `c5.2xlarge.elasticsearch`,
+        `c5.4xlarge.elasticsearch`,
+        `c5.9xlarge.elasticsearch`,
+        `c5.18xlarge.elasticsearch`,
+        `t2.micro.elasticsearch`,
+        `t2.small.elasticsearch`,
+        `t2.medium.elasticsearch`,
+        `r3.large.elasticsearch`,
+        `r3.xlarge.elasticsearch`,
+        `r3.2xlarge.elasticsearch`,
+        `r3.4xlarge.elasticsearch`,
+        `r3.8xlarge.elasticsearch`,
+        `i2.xlarge.elasticsearch`,
+        `i2.2xlarge.elasticsearch`,
+        `d2.xlarge.elasticsearch`,
+        `d2.2xlarge.elasticsearch`,
+        `d2.4xlarge.elasticsearch`,
+        `d2.8xlarge.elasticsearch`,
+        `c4.large.elasticsearch`,
+        `c4.xlarge.elasticsearch`,
+        `c4.2xlarge.elasticsearch`,
+        `c4.4xlarge.elasticsearch`,
+        `c4.8xlarge.elasticsearch`,
+        `r4.large.elasticsearch`,
+        `r4.xlarge.elasticsearch`,
+        `r4.2xlarge.elasticsearch`,
+        `r4.4xlarge.elasticsearch`,
+        `r4.8xlarge.elasticsearch`,
+        `r4.16xlarge.elasticsearch`,
+        `i3.large.elasticsearch`,
+        `i3.xlarge.elasticsearch`,
+        `i3.2xlarge.elasticsearch`,
+        `i3.4xlarge.elasticsearch`,
+        `i3.8xlarge.elasticsearch`,
+        `i3.16xlarge.elasticsearch`
+      )
     )
   }
 
@@ -1620,7 +1622,7 @@ package es {
     val SEARCH_SLOW_LOGS    = "SEARCH_SLOW_LOGS"
     val ES_APPLICATION_LOGS = "ES_APPLICATION_LOGS"
 
-    val values = IndexedSeq(INDEX_SLOW_LOGS, SEARCH_SLOW_LOGS, ES_APPLICATION_LOGS)
+    val values = js.Object.freeze(js.Array(INDEX_SLOW_LOGS, SEARCH_SLOW_LOGS, ES_APPLICATION_LOGS))
   }
 
   /**
@@ -1674,7 +1676,7 @@ package es {
     val Processing             = "Processing"
     val Active                 = "Active"
 
-    val values = IndexedSeq(RequiresIndexDocuments, Processing, Active)
+    val values = js.Object.freeze(js.Array(RequiresIndexDocuments, Processing, Active))
   }
 
   /**
@@ -1906,7 +1908,7 @@ package es {
     val PARTIAL_UPFRONT = "PARTIAL_UPFRONT"
     val NO_UPFRONT      = "NO_UPFRONT"
 
-    val values = IndexedSeq(ALL_UPFRONT, PARTIAL_UPFRONT, NO_UPFRONT)
+    val values = js.Object.freeze(js.Array(ALL_UPFRONT, PARTIAL_UPFRONT, NO_UPFRONT))
   }
 
   /**
@@ -2239,7 +2241,7 @@ package es {
     val SUCCEEDED_WITH_ISSUES = "SUCCEEDED_WITH_ISSUES"
     val FAILED                = "FAILED"
 
-    val values = IndexedSeq(IN_PROGRESS, SUCCEEDED, SUCCEEDED_WITH_ISSUES, FAILED)
+    val values = js.Object.freeze(js.Array(IN_PROGRESS, SUCCEEDED, SUCCEEDED_WITH_ISSUES, FAILED))
   }
 
   object UpgradeStepEnum {
@@ -2247,7 +2249,7 @@ package es {
     val SNAPSHOT          = "SNAPSHOT"
     val UPGRADE           = "UPGRADE"
 
-    val values = IndexedSeq(PRE_UPGRADE_CHECK, SNAPSHOT, UPGRADE)
+    val values = js.Object.freeze(js.Array(PRE_UPGRADE_CHECK, SNAPSHOT, UPGRADE))
   }
 
   /**
@@ -2356,7 +2358,7 @@ package es {
     val gp2      = "gp2"
     val io1      = "io1"
 
-    val values = IndexedSeq(standard, gp2, io1)
+    val values = js.Object.freeze(js.Array(standard, gp2, io1))
   }
 
   /**

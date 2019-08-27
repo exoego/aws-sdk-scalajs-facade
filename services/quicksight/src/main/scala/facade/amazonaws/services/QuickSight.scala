@@ -554,7 +554,7 @@ package quicksight {
     val IAM        = "IAM"
     val QUICKSIGHT = "QUICKSIGHT"
 
-    val values = IndexedSeq(IAM, QUICKSIGHT)
+    val values = js.Object.freeze(js.Array(IAM, QUICKSIGHT))
   }
 
   @js.native
@@ -965,6 +965,6 @@ package quicksight {
     val RESTRICTED_AUTHOR = "RESTRICTED_AUTHOR"
     val RESTRICTED_READER = "RESTRICTED_READER"
 
-    val values = IndexedSeq(ADMIN, AUTHOR, READER, RESTRICTED_AUTHOR, RESTRICTED_READER)
+    val values = js.Object.freeze(js.Array(ADMIN, AUTHOR, READER, RESTRICTED_AUTHOR, RESTRICTED_READER))
   }
 }

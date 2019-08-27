@@ -1223,7 +1223,7 @@ package glue {
     val DISABLED  = "DISABLED"
     val `SSE-KMS` = "SSE-KMS"
 
-    val values = IndexedSeq(DISABLED, `SSE-KMS`)
+    val values = js.Object.freeze(js.Array(DISABLED, `SSE-KMS`))
   }
 
   /**
@@ -1349,7 +1349,7 @@ package glue {
     val DISABLED  = "DISABLED"
     val `SSE-KMS` = "SSE-KMS"
 
-    val values = IndexedSeq(DISABLED, `SSE-KMS`)
+    val values = js.Object.freeze(js.Array(DISABLED, `SSE-KMS`))
   }
 
   /**
@@ -1469,7 +1469,7 @@ package glue {
     val GREATER_THAN_EQUALS = "GREATER_THAN_EQUALS"
     val LESS_THAN_EQUALS    = "LESS_THAN_EQUALS"
 
-    val values = IndexedSeq(EQUALS, GREATER_THAN, LESS_THAN, GREATER_THAN_EQUALS, LESS_THAN_EQUALS)
+    val values = js.Object.freeze(js.Array(EQUALS, GREATER_THAN, LESS_THAN, GREATER_THAN_EQUALS, LESS_THAN_EQUALS))
   }
 
   /**
@@ -1651,20 +1651,22 @@ package glue {
     val JDBC_CONNECTION_URL    = "JDBC_CONNECTION_URL"
     val JDBC_ENFORCE_SSL       = "JDBC_ENFORCE_SSL"
 
-    val values = IndexedSeq(
-      HOST,
-      PORT,
-      USERNAME,
-      PASSWORD,
-      ENCRYPTED_PASSWORD,
-      JDBC_DRIVER_JAR_URI,
-      JDBC_DRIVER_CLASS_NAME,
-      JDBC_ENGINE,
-      JDBC_ENGINE_VERSION,
-      CONFIG_FILES,
-      INSTANCE_ID,
-      JDBC_CONNECTION_URL,
-      JDBC_ENFORCE_SSL
+    val values = js.Object.freeze(
+      js.Array(
+        HOST,
+        PORT,
+        USERNAME,
+        PASSWORD,
+        ENCRYPTED_PASSWORD,
+        JDBC_DRIVER_JAR_URI,
+        JDBC_DRIVER_CLASS_NAME,
+        JDBC_ENGINE,
+        JDBC_ENGINE_VERSION,
+        CONFIG_FILES,
+        INSTANCE_ID,
+        JDBC_CONNECTION_URL,
+        JDBC_ENFORCE_SSL
+      )
     )
   }
 
@@ -1672,7 +1674,7 @@ package glue {
     val JDBC = "JDBC"
     val SFTP = "SFTP"
 
-    val values = IndexedSeq(JDBC, SFTP)
+    val values = js.Object.freeze(js.Array(JDBC, SFTP))
   }
 
   /**
@@ -1732,7 +1734,7 @@ package glue {
     val CANCELLED = "CANCELLED"
     val FAILED    = "FAILED"
 
-    val values = IndexedSeq(RUNNING, SUCCEEDED, CANCELLED, FAILED)
+    val values = js.Object.freeze(js.Array(RUNNING, SUCCEEDED, CANCELLED, FAILED))
   }
 
   /**
@@ -1865,7 +1867,7 @@ package glue {
     val RUNNING  = "RUNNING"
     val STOPPING = "STOPPING"
 
-    val values = IndexedSeq(READY, RUNNING, STOPPING)
+    val values = js.Object.freeze(js.Array(READY, RUNNING, STOPPING))
   }
 
   /**
@@ -2775,7 +2777,7 @@ package glue {
     val PRESENT = "PRESENT"
     val ABSENT  = "ABSENT"
 
-    val values = IndexedSeq(UNKNOWN, PRESENT, ABSENT)
+    val values = js.Object.freeze(js.Array(UNKNOWN, PRESENT, ABSENT))
   }
 
   /**
@@ -2895,7 +2897,7 @@ package glue {
     val DELETE_FROM_DATABASE  = "DELETE_FROM_DATABASE"
     val DEPRECATE_IN_DATABASE = "DEPRECATE_IN_DATABASE"
 
-    val values = IndexedSeq(LOG, DELETE_FROM_DATABASE, DEPRECATE_IN_DATABASE)
+    val values = js.Object.freeze(js.Array(LOG, DELETE_FROM_DATABASE, DEPRECATE_IN_DATABASE))
   }
 
   @js.native
@@ -3642,7 +3644,7 @@ package glue {
     val NOT_EXIST  = "NOT_EXIST"
     val NONE       = "NONE"
 
-    val values = IndexedSeq(MUST_EXIST, NOT_EXIST, NONE)
+    val values = js.Object.freeze(js.Array(MUST_EXIST, NOT_EXIST, NONE))
   }
 
   /**
@@ -5747,7 +5749,7 @@ package glue {
     val DISABLED  = "DISABLED"
     val `CSE-KMS` = "CSE-KMS"
 
-    val values = IndexedSeq(DISABLED, `CSE-KMS`)
+    val values = js.Object.freeze(js.Array(DISABLED, `CSE-KMS`))
   }
 
   /**
@@ -5882,7 +5884,7 @@ package glue {
     val FAILED    = "FAILED"
     val TIMEOUT   = "TIMEOUT"
 
-    val values = IndexedSeq(STARTING, RUNNING, STOPPING, STOPPED, SUCCEEDED, FAILED, TIMEOUT)
+    val values = js.Object.freeze(js.Array(STARTING, RUNNING, STOPPING, STOPPED, SUCCEEDED, FAILED, TIMEOUT))
   }
 
   /**
@@ -6002,7 +6004,7 @@ package glue {
     val PYTHON = "PYTHON"
     val SCALA  = "SCALA"
 
-    val values = IndexedSeq(PYTHON, SCALA)
+    val values = js.Object.freeze(js.Array(PYTHON, SCALA))
   }
 
   /**
@@ -6043,7 +6045,7 @@ package glue {
     val CANCELLED = "CANCELLED"
     val FAILED    = "FAILED"
 
-    val values = IndexedSeq(SUCCEEDED, CANCELLED, FAILED)
+    val values = js.Object.freeze(js.Array(SUCCEEDED, CANCELLED, FAILED))
   }
 
   @js.native
@@ -6269,13 +6271,13 @@ package glue {
     val AND = "AND"
     val ANY = "ANY"
 
-    val values = IndexedSeq(AND, ANY)
+    val values = js.Object.freeze(js.Array(AND, ANY))
   }
 
   object LogicalOperatorEnum {
     val EQUALS = "EQUALS"
 
-    val values = IndexedSeq(EQUALS)
+    val values = js.Object.freeze(js.Array(EQUALS))
   }
 
   /**
@@ -6415,7 +6417,7 @@ package glue {
     val JOB     = "JOB"
     val TRIGGER = "TRIGGER"
 
-    val values = IndexedSeq(CRAWLER, JOB, TRIGGER)
+    val values = js.Object.freeze(js.Array(CRAWLER, JOB, TRIGGER))
   }
 
   /**
@@ -6580,8 +6582,9 @@ package glue {
     val CREATE_TABLE         = "CREATE_TABLE"
     val DATA_LOCATION_ACCESS = "DATA_LOCATION_ACCESS"
 
-    val values =
-      IndexedSeq(ALL, SELECT, ALTER, DROP, DELETE, INSERT, CREATE_DATABASE, CREATE_TABLE, DATA_LOCATION_ACCESS)
+    val values = js.Object.freeze(
+      js.Array(ALL, SELECT, ALTER, DROP, DELETE, INSERT, CREATE_DATABASE, CREATE_TABLE, DATA_LOCATION_ACCESS)
+    )
   }
 
   /**
@@ -6676,7 +6679,7 @@ package glue {
     val ROLE  = "ROLE"
     val GROUP = "GROUP"
 
-    val values = IndexedSeq(USER, ROLE, GROUP)
+    val values = js.Object.freeze(js.Array(USER, ROLE, GROUP))
   }
 
   /**
@@ -6848,7 +6851,7 @@ package glue {
     val FILE    = "FILE"
     val ARCHIVE = "ARCHIVE"
 
-    val values = IndexedSeq(JAR, FILE, ARCHIVE)
+    val values = js.Object.freeze(js.Array(JAR, FILE, ARCHIVE))
   }
 
   /**
@@ -6898,7 +6901,7 @@ package glue {
     val `SSE-KMS` = "SSE-KMS"
     val `SSE-S3`  = "SSE-S3"
 
-    val values = IndexedSeq(DISABLED, `SSE-KMS`, `SSE-S3`)
+    val values = js.Object.freeze(js.Array(DISABLED, `SSE-KMS`, `SSE-S3`))
   }
 
   /**
@@ -6948,7 +6951,7 @@ package glue {
     val NOT_SCHEDULED = "NOT_SCHEDULED"
     val TRANSITIONING = "TRANSITIONING"
 
-    val values = IndexedSeq(SCHEDULED, NOT_SCHEDULED, TRANSITIONING)
+    val values = js.Object.freeze(js.Array(SCHEDULED, NOT_SCHEDULED, TRANSITIONING))
   }
 
   /**
@@ -7142,7 +7145,7 @@ package glue {
     val ASC  = "ASC"
     val DESC = "DESC"
 
-    val values = IndexedSeq(ASC, DESC)
+    val values = js.Object.freeze(js.Array(ASC, DESC))
   }
 
   @js.native
@@ -7167,7 +7170,7 @@ package glue {
     val DESCENDING = "DESCENDING"
     val ASCENDING  = "ASCENDING"
 
-    val values = IndexedSeq(DESCENDING, ASCENDING)
+    val values = js.Object.freeze(js.Array(DESCENDING, ASCENDING))
   }
 
   @js.native
@@ -7968,7 +7971,7 @@ package glue {
     val STATUS        = "STATUS"
     val STARTED       = "STARTED"
 
-    val values = IndexedSeq(TASK_RUN_TYPE, STATUS, STARTED)
+    val values = js.Object.freeze(js.Array(TASK_RUN_TYPE, STATUS, STARTED))
   }
 
   /**
@@ -8003,7 +8006,7 @@ package glue {
     val FAILED    = "FAILED"
     val TIMEOUT   = "TIMEOUT"
 
-    val values = IndexedSeq(STARTING, RUNNING, STOPPING, STOPPED, SUCCEEDED, FAILED, TIMEOUT)
+    val values = js.Object.freeze(js.Array(STARTING, RUNNING, STOPPING, STOPPED, SUCCEEDED, FAILED, TIMEOUT))
   }
 
   object TaskTypeEnum {
@@ -8013,7 +8016,8 @@ package glue {
     val EXPORT_LABELS           = "EXPORT_LABELS"
     val FIND_MATCHES            = "FIND_MATCHES"
 
-    val values = IndexedSeq(EVALUATION, LABELING_SET_GENERATION, IMPORT_LABELS, EXPORT_LABELS, FIND_MATCHES)
+    val values =
+      js.Object.freeze(js.Array(EVALUATION, LABELING_SET_GENERATION, IMPORT_LABELS, EXPORT_LABELS, FIND_MATCHES))
   }
 
   /**
@@ -8085,7 +8089,7 @@ package glue {
     val CREATED        = "CREATED"
     val LAST_MODIFIED  = "LAST_MODIFIED"
 
-    val values = IndexedSeq(NAME, TRANSFORM_TYPE, STATUS, CREATED, LAST_MODIFIED)
+    val values = js.Object.freeze(js.Array(NAME, TRANSFORM_TYPE, STATUS, CREATED, LAST_MODIFIED))
   }
 
   /**
@@ -8116,13 +8120,13 @@ package glue {
     val READY     = "READY"
     val DELETING  = "DELETING"
 
-    val values = IndexedSeq(NOT_READY, READY, DELETING)
+    val values = js.Object.freeze(js.Array(NOT_READY, READY, DELETING))
   }
 
   object TransformTypeEnum {
     val FIND_MATCHES = "FIND_MATCHES"
 
-    val values = IndexedSeq(FIND_MATCHES)
+    val values = js.Object.freeze(js.Array(FIND_MATCHES))
   }
 
   /**
@@ -8195,7 +8199,9 @@ package glue {
     val DELETING     = "DELETING"
     val UPDATING     = "UPDATING"
 
-    val values = IndexedSeq(CREATING, CREATED, ACTIVATING, ACTIVATED, DEACTIVATING, DEACTIVATED, DELETING, UPDATING)
+    val values = js.Object.freeze(
+      js.Array(CREATING, CREATED, ACTIVATING, ACTIVATED, DEACTIVATING, DEACTIVATED, DELETING, UPDATING)
+    )
   }
 
   object TriggerTypeEnum {
@@ -8203,7 +8209,7 @@ package glue {
     val CONDITIONAL = "CONDITIONAL"
     val ON_DEMAND   = "ON_DEMAND"
 
-    val values = IndexedSeq(SCHEDULED, CONDITIONAL, ON_DEMAND)
+    val values = js.Object.freeze(js.Array(SCHEDULED, CONDITIONAL, ON_DEMAND))
   }
 
   /**
@@ -8272,7 +8278,7 @@ package glue {
     val LOG                = "LOG"
     val UPDATE_IN_DATABASE = "UPDATE_IN_DATABASE"
 
-    val values = IndexedSeq(LOG, UPDATE_IN_DATABASE)
+    val values = js.Object.freeze(js.Array(LOG, UPDATE_IN_DATABASE))
   }
 
   @js.native
@@ -8992,7 +8998,7 @@ package glue {
     val `G.1X`   = "G.1X"
     val `G.2X`   = "G.2X"
 
-    val values = IndexedSeq(Standard, `G.1X`, `G.2X`)
+    val values = js.Object.freeze(js.Array(Standard, `G.1X`, `G.2X`))
   }
 
   /**
@@ -9128,7 +9134,7 @@ package glue {
     val RUNNING   = "RUNNING"
     val COMPLETED = "COMPLETED"
 
-    val values = IndexedSeq(RUNNING, COMPLETED)
+    val values = js.Object.freeze(js.Array(RUNNING, COMPLETED))
   }
 
   /**

@@ -279,7 +279,7 @@ package dynamodb {
     val PUT    = "PUT"
     val DELETE = "DELETE"
 
-    val values = IndexedSeq(ADD, PUT, DELETE)
+    val values = js.Object.freeze(js.Array(ADD, PUT, DELETE))
   }
 
   /**
@@ -650,7 +650,7 @@ package dynamodb {
     val DELETED   = "DELETED"
     val AVAILABLE = "AVAILABLE"
 
-    val values = IndexedSeq(CREATING, DELETED, AVAILABLE)
+    val values = js.Object.freeze(js.Array(CREATING, DELETED, AVAILABLE))
   }
 
   /**
@@ -703,7 +703,7 @@ package dynamodb {
     val SYSTEM     = "SYSTEM"
     val AWS_BACKUP = "AWS_BACKUP"
 
-    val values = IndexedSeq(USER, SYSTEM, AWS_BACKUP)
+    val values = js.Object.freeze(js.Array(USER, SYSTEM, AWS_BACKUP))
   }
 
   object BackupTypeFilterEnum {
@@ -712,7 +712,7 @@ package dynamodb {
     val AWS_BACKUP = "AWS_BACKUP"
     val ALL        = "ALL"
 
-    val values = IndexedSeq(USER, SYSTEM, AWS_BACKUP, ALL)
+    val values = js.Object.freeze(js.Array(USER, SYSTEM, AWS_BACKUP, ALL))
   }
 
   /**
@@ -816,7 +816,7 @@ package dynamodb {
     val PROVISIONED     = "PROVISIONED"
     val PAY_PER_REQUEST = "PAY_PER_REQUEST"
 
-    val values = IndexedSeq(PROVISIONED, PAY_PER_REQUEST)
+    val values = js.Object.freeze(js.Array(PROVISIONED, PAY_PER_REQUEST))
   }
 
   /**
@@ -881,7 +881,9 @@ package dynamodb {
     val NOT_CONTAINS = "NOT_CONTAINS"
     val BEGINS_WITH  = "BEGINS_WITH"
 
-    val values = IndexedSeq(EQ, NE, IN, LE, LT, GE, GT, BETWEEN, NOT_NULL, NULL, CONTAINS, NOT_CONTAINS, BEGINS_WITH)
+    val values = js.Object.freeze(
+      js.Array(EQ, NE, IN, LE, LT, GE, GT, BETWEEN, NOT_NULL, NULL, CONTAINS, NOT_CONTAINS, BEGINS_WITH)
+    )
   }
 
   /**
@@ -952,7 +954,7 @@ package dynamodb {
     val AND = "AND"
     val OR  = "OR"
 
-    val values = IndexedSeq(AND, OR)
+    val values = js.Object.freeze(js.Array(AND, OR))
   }
 
   /**
@@ -1020,7 +1022,7 @@ package dynamodb {
     val ENABLED  = "ENABLED"
     val DISABLED = "DISABLED"
 
-    val values = IndexedSeq(ENABLED, DISABLED)
+    val values = js.Object.freeze(js.Array(ENABLED, DISABLED))
   }
 
   @js.native
@@ -2074,7 +2076,7 @@ package dynamodb {
     val DELETING = "DELETING"
     val UPDATING = "UPDATING"
 
-    val values = IndexedSeq(CREATING, ACTIVE, DELETING, UPDATING)
+    val values = js.Object.freeze(js.Array(CREATING, ACTIVE, DELETING, UPDATING))
   }
 
   object IndexStatusEnum {
@@ -2083,7 +2085,7 @@ package dynamodb {
     val DELETING = "DELETING"
     val ACTIVE   = "ACTIVE"
 
-    val values = IndexedSeq(CREATING, UPDATING, DELETING, ACTIVE)
+    val values = js.Object.freeze(js.Array(CREATING, UPDATING, DELETING, ACTIVE))
   }
 
   /**
@@ -2154,7 +2156,7 @@ package dynamodb {
     val HASH  = "HASH"
     val RANGE = "RANGE"
 
-    val values = IndexedSeq(HASH, RANGE)
+    val values = js.Object.freeze(js.Array(HASH, RANGE))
   }
 
   /**
@@ -2492,7 +2494,7 @@ package dynamodb {
     val ENABLED  = "ENABLED"
     val DISABLED = "DISABLED"
 
-    val values = IndexedSeq(ENABLED, DISABLED)
+    val values = js.Object.freeze(js.Array(ENABLED, DISABLED))
   }
 
   /**
@@ -2521,7 +2523,7 @@ package dynamodb {
     val KEYS_ONLY = "KEYS_ONLY"
     val INCLUDE   = "INCLUDE"
 
-    val values = IndexedSeq(ALL, KEYS_ONLY, INCLUDE)
+    val values = js.Object.freeze(js.Array(ALL, KEYS_ONLY, INCLUDE))
   }
 
   /**
@@ -3007,7 +3009,7 @@ package dynamodb {
     val DELETING = "DELETING"
     val ACTIVE   = "ACTIVE"
 
-    val values = IndexedSeq(CREATING, UPDATING, DELETING, ACTIVE)
+    val values = js.Object.freeze(js.Array(CREATING, UPDATING, DELETING, ACTIVE))
   }
 
   /**
@@ -3151,14 +3153,14 @@ package dynamodb {
     val TOTAL   = "TOTAL"
     val NONE    = "NONE"
 
-    val values = IndexedSeq(INDEXES, TOTAL, NONE)
+    val values = js.Object.freeze(js.Array(INDEXES, TOTAL, NONE))
   }
 
   object ReturnItemCollectionMetricsEnum {
     val SIZE = "SIZE"
     val NONE = "NONE"
 
-    val values = IndexedSeq(SIZE, NONE)
+    val values = js.Object.freeze(js.Array(SIZE, NONE))
   }
 
   object ReturnValueEnum {
@@ -3168,14 +3170,14 @@ package dynamodb {
     val ALL_NEW     = "ALL_NEW"
     val UPDATED_NEW = "UPDATED_NEW"
 
-    val values = IndexedSeq(NONE, ALL_OLD, UPDATED_OLD, ALL_NEW, UPDATED_NEW)
+    val values = js.Object.freeze(js.Array(NONE, ALL_OLD, UPDATED_OLD, ALL_NEW, UPDATED_NEW))
   }
 
   object ReturnValuesOnConditionCheckFailureEnum {
     val ALL_OLD = "ALL_OLD"
     val NONE    = "NONE"
 
-    val values = IndexedSeq(ALL_OLD, NONE)
+    val values = js.Object.freeze(js.Array(ALL_OLD, NONE))
   }
 
   /**
@@ -3233,14 +3235,14 @@ package dynamodb {
     val DISABLED  = "DISABLED"
     val UPDATING  = "UPDATING"
 
-    val values = IndexedSeq(ENABLING, ENABLED, DISABLING, DISABLED, UPDATING)
+    val values = js.Object.freeze(js.Array(ENABLING, ENABLED, DISABLING, DISABLED, UPDATING))
   }
 
   object SSETypeEnum {
     val AES256 = "AES256"
     val KMS    = "KMS"
 
-    val values = IndexedSeq(AES256, KMS)
+    val values = js.Object.freeze(js.Array(AES256, KMS))
   }
 
   object ScalarAttributeTypeEnum {
@@ -3248,7 +3250,7 @@ package dynamodb {
     val N = "N"
     val B = "B"
 
-    val values = IndexedSeq(S, N, B)
+    val values = js.Object.freeze(js.Array(S, N, B))
   }
 
   /**
@@ -3352,7 +3354,7 @@ package dynamodb {
     val SPECIFIC_ATTRIBUTES      = "SPECIFIC_ATTRIBUTES"
     val COUNT                    = "COUNT"
 
-    val values = IndexedSeq(ALL_ATTRIBUTES, ALL_PROJECTED_ATTRIBUTES, SPECIFIC_ATTRIBUTES, COUNT)
+    val values = js.Object.freeze(js.Array(ALL_ATTRIBUTES, ALL_PROJECTED_ATTRIBUTES, SPECIFIC_ATTRIBUTES, COUNT))
   }
 
   /**
@@ -3456,7 +3458,7 @@ package dynamodb {
     val NEW_AND_OLD_IMAGES = "NEW_AND_OLD_IMAGES"
     val KEYS_ONLY          = "KEYS_ONLY"
 
-    val values = IndexedSeq(NEW_IMAGE, OLD_IMAGE, NEW_AND_OLD_IMAGES, KEYS_ONLY)
+    val values = js.Object.freeze(js.Array(NEW_IMAGE, OLD_IMAGE, NEW_AND_OLD_IMAGES, KEYS_ONLY))
   }
 
   /**
@@ -3534,7 +3536,7 @@ package dynamodb {
     val DELETING = "DELETING"
     val ACTIVE   = "ACTIVE"
 
-    val values = IndexedSeq(CREATING, UPDATING, DELETING, ACTIVE)
+    val values = js.Object.freeze(js.Array(CREATING, UPDATING, DELETING, ACTIVE))
   }
 
   /**
@@ -3632,7 +3634,7 @@ package dynamodb {
     val ENABLED   = "ENABLED"
     val DISABLED  = "DISABLED"
 
-    val values = IndexedSeq(ENABLING, DISABLING, ENABLED, DISABLED)
+    val values = js.Object.freeze(js.Array(ENABLING, DISABLING, ENABLED, DISABLED))
   }
 
   /**

@@ -88,13 +88,13 @@ package lexruntime {
     val Confirmed = "Confirmed"
     val Denied    = "Denied"
 
-    val values = IndexedSeq(None, Confirmed, Denied)
+    val values = js.Object.freeze(js.Array(None, Confirmed, Denied))
   }
 
   object ContentTypeEnum {
     val `application/vnd.amazonaws.card.generic` = "application/vnd.amazonaws.card.generic"
 
-    val values = IndexedSeq(`application/vnd.amazonaws.card.generic`)
+    val values = js.Object.freeze(js.Array(`application/vnd.amazonaws.card.generic`))
   }
 
   @js.native
@@ -189,7 +189,7 @@ package lexruntime {
     val Close         = "Close"
     val Delegate      = "Delegate"
 
-    val values = IndexedSeq(ElicitIntent, ConfirmIntent, ElicitSlot, Close, Delegate)
+    val values = js.Object.freeze(js.Array(ElicitIntent, ConfirmIntent, ElicitSlot, Close, Delegate))
   }
 
   object DialogStateEnum {
@@ -200,7 +200,8 @@ package lexruntime {
     val ReadyForFulfillment = "ReadyForFulfillment"
     val Failed              = "Failed"
 
-    val values = IndexedSeq(ElicitIntent, ConfirmIntent, ElicitSlot, Fulfilled, ReadyForFulfillment, Failed)
+    val values =
+      js.Object.freeze(js.Array(ElicitIntent, ConfirmIntent, ElicitSlot, Fulfilled, ReadyForFulfillment, Failed))
   }
 
   object FulfillmentStateEnum {
@@ -208,7 +209,7 @@ package lexruntime {
     val Failed              = "Failed"
     val ReadyForFulfillment = "ReadyForFulfillment"
 
-    val values = IndexedSeq(Fulfilled, Failed, ReadyForFulfillment)
+    val values = js.Object.freeze(js.Array(Fulfilled, Failed, ReadyForFulfillment))
   }
 
   /**
@@ -329,7 +330,7 @@ package lexruntime {
     val SSML          = "SSML"
     val Composite     = "Composite"
 
-    val values = IndexedSeq(PlainText, CustomPayload, SSML, Composite)
+    val values = js.Object.freeze(js.Array(PlainText, CustomPayload, SSML, Composite))
   }
 
   @js.native

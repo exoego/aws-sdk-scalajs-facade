@@ -1954,7 +1954,8 @@ package comprehend {
     val TITLE           = "TITLE"
     val OTHER           = "OTHER"
 
-    val values = IndexedSeq(PERSON, LOCATION, ORGANIZATION, COMMERCIAL_ITEM, EVENT, DATE, QUANTITY, TITLE, OTHER)
+    val values =
+      js.Object.freeze(js.Array(PERSON, LOCATION, ORGANIZATION, COMMERCIAL_ITEM, EVENT, DATE, QUANTITY, TITLE, OTHER))
   }
 
   /**
@@ -2028,7 +2029,7 @@ package comprehend {
     val ONE_DOC_PER_FILE = "ONE_DOC_PER_FILE"
     val ONE_DOC_PER_LINE = "ONE_DOC_PER_LINE"
 
-    val values = IndexedSeq(ONE_DOC_PER_FILE, ONE_DOC_PER_LINE)
+    val values = js.Object.freeze(js.Array(ONE_DOC_PER_FILE, ONE_DOC_PER_LINE))
   }
 
   object JobStatusEnum {
@@ -2039,7 +2040,7 @@ package comprehend {
     val STOP_REQUESTED = "STOP_REQUESTED"
     val STOPPED        = "STOPPED"
 
-    val values = IndexedSeq(SUBMITTED, IN_PROGRESS, COMPLETED, FAILED, STOP_REQUESTED, STOPPED)
+    val values = js.Object.freeze(js.Array(SUBMITTED, IN_PROGRESS, COMPLETED, FAILED, STOP_REQUESTED, STOPPED))
   }
 
   /**
@@ -2155,7 +2156,7 @@ package comprehend {
     val it = "it"
     val pt = "pt"
 
-    val values = IndexedSeq(en, es, fr, de, it, pt)
+    val values = js.Object.freeze(js.Array(en, es, fr, de, it, pt))
   }
 
   @js.native
@@ -2531,7 +2532,7 @@ package comprehend {
     val IN_ERROR       = "IN_ERROR"
     val TRAINED        = "TRAINED"
 
-    val values = IndexedSeq(SUBMITTED, TRAINING, DELETING, STOP_REQUESTED, STOPPED, IN_ERROR, TRAINED)
+    val values = js.Object.freeze(js.Array(SUBMITTED, TRAINING, DELETING, STOP_REQUESTED, STOPPED, IN_ERROR, TRAINED))
   }
 
   /**
@@ -2599,8 +2600,9 @@ package comprehend {
     val SYM   = "SYM"
     val VERB  = "VERB"
 
-    val values =
-      IndexedSeq(ADJ, ADP, ADV, AUX, CONJ, CCONJ, DET, INTJ, NOUN, NUM, O, PART, PRON, PROPN, PUNCT, SCONJ, SYM, VERB)
+    val values = js.Object.freeze(
+      js.Array(ADJ, ADP, ADV, AUX, CONJ, CCONJ, DET, INTJ, NOUN, NUM, O, PART, PRON, PROPN, PUNCT, SCONJ, SYM, VERB)
+    )
   }
 
   /**
@@ -2714,7 +2716,7 @@ package comprehend {
     val NEUTRAL  = "NEUTRAL"
     val MIXED    = "MIXED"
 
-    val values = IndexedSeq(POSITIVE, NEGATIVE, NEUTRAL, MIXED)
+    val values = js.Object.freeze(js.Array(POSITIVE, NEGATIVE, NEUTRAL, MIXED))
   }
 
   @js.native
@@ -3259,7 +3261,7 @@ package comprehend {
     val it = "it"
     val pt = "pt"
 
-    val values = IndexedSeq(en, es, fr, de, it, pt)
+    val values = js.Object.freeze(js.Array(en, es, fr, de, it, pt))
   }
 
   /**

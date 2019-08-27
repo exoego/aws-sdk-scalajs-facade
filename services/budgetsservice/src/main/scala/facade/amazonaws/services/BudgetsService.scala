@@ -194,7 +194,7 @@ package budgetsservice {
     val RI_UTILIZATION = "RI_UTILIZATION"
     val RI_COVERAGE    = "RI_COVERAGE"
 
-    val values = IndexedSeq(USAGE, COST, RI_UTILIZATION, RI_COVERAGE)
+    val values = js.Object.freeze(js.Array(USAGE, COST, RI_UTILIZATION, RI_COVERAGE))
   }
 
   /**
@@ -254,7 +254,7 @@ package budgetsservice {
     val LESS_THAN    = "LESS_THAN"
     val EQUAL_TO     = "EQUAL_TO"
 
-    val values = IndexedSeq(GREATER_THAN, LESS_THAN, EQUAL_TO)
+    val values = js.Object.freeze(js.Array(GREATER_THAN, LESS_THAN, EQUAL_TO))
   }
 
   /**
@@ -840,7 +840,7 @@ package budgetsservice {
     val OK    = "OK"
     val ALARM = "ALARM"
 
-    val values = IndexedSeq(OK, ALARM)
+    val values = js.Object.freeze(js.Array(OK, ALARM))
   }
 
   /**
@@ -850,7 +850,7 @@ package budgetsservice {
     val ACTUAL     = "ACTUAL"
     val FORECASTED = "FORECASTED"
 
-    val values = IndexedSeq(ACTUAL, FORECASTED)
+    val values = js.Object.freeze(js.Array(ACTUAL, FORECASTED))
   }
 
   /**
@@ -935,7 +935,7 @@ package budgetsservice {
     val SNS   = "SNS"
     val EMAIL = "EMAIL"
 
-    val values = IndexedSeq(SNS, EMAIL)
+    val values = js.Object.freeze(js.Array(SNS, EMAIL))
   }
 
   /**
@@ -945,7 +945,7 @@ package budgetsservice {
     val PERCENTAGE     = "PERCENTAGE"
     val ABSOLUTE_VALUE = "ABSOLUTE_VALUE"
 
-    val values = IndexedSeq(PERCENTAGE, ABSOLUTE_VALUE)
+    val values = js.Object.freeze(js.Array(PERCENTAGE, ABSOLUTE_VALUE))
   }
 
   /**
@@ -978,7 +978,7 @@ package budgetsservice {
     val QUARTERLY = "QUARTERLY"
     val ANNUALLY  = "ANNUALLY"
 
-    val values = IndexedSeq(DAILY, MONTHLY, QUARTERLY, ANNUALLY)
+    val values = js.Object.freeze(js.Array(DAILY, MONTHLY, QUARTERLY, ANNUALLY))
   }
 
   /**

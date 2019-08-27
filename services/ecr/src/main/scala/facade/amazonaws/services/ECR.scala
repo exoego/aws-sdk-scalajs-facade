@@ -893,7 +893,7 @@ package ecr {
   object ImageActionTypeEnum {
     val EXPIRE = "EXPIRE"
 
-    val values = IndexedSeq(EXPIRE)
+    val values = js.Object.freeze(js.Array(EXPIRE))
   }
 
   /**
@@ -960,8 +960,9 @@ package ecr {
     val ImageNotFound              = "ImageNotFound"
     val MissingDigestAndTag        = "MissingDigestAndTag"
 
-    val values =
-      IndexedSeq(InvalidImageDigest, InvalidImageTag, ImageTagDoesNotMatchDigest, ImageNotFound, MissingDigestAndTag)
+    val values = js.Object.freeze(
+      js.Array(InvalidImageDigest, InvalidImageTag, ImageTagDoesNotMatchDigest, ImageNotFound, MissingDigestAndTag)
+    )
   }
 
   /**
@@ -989,7 +990,7 @@ package ecr {
     val MUTABLE   = "MUTABLE"
     val IMMUTABLE = "IMMUTABLE"
 
-    val values = IndexedSeq(MUTABLE, IMMUTABLE)
+    val values = js.Object.freeze(js.Array(MUTABLE, IMMUTABLE))
   }
 
   @js.native
@@ -1061,7 +1062,7 @@ package ecr {
     val AVAILABLE   = "AVAILABLE"
     val UNAVAILABLE = "UNAVAILABLE"
 
-    val values = IndexedSeq(AVAILABLE, UNAVAILABLE)
+    val values = js.Object.freeze(js.Array(AVAILABLE, UNAVAILABLE))
   }
 
   /**
@@ -1092,7 +1093,7 @@ package ecr {
     val InvalidLayerDigest = "InvalidLayerDigest"
     val MissingLayerDigest = "MissingLayerDigest"
 
-    val values = IndexedSeq(InvalidLayerDigest, MissingLayerDigest)
+    val values = js.Object.freeze(js.Array(InvalidLayerDigest, MissingLayerDigest))
   }
 
   /**
@@ -1149,7 +1150,7 @@ package ecr {
     val EXPIRED     = "EXPIRED"
     val FAILED      = "FAILED"
 
-    val values = IndexedSeq(IN_PROGRESS, COMPLETE, EXPIRED, FAILED)
+    val values = js.Object.freeze(js.Array(IN_PROGRESS, COMPLETE, EXPIRED, FAILED))
   }
 
   /**
@@ -1599,7 +1600,7 @@ package ecr {
     val UNTAGGED = "UNTAGGED"
     val ANY      = "ANY"
 
-    val values = IndexedSeq(TAGGED, UNTAGGED, ANY)
+    val values = js.Object.freeze(js.Array(TAGGED, UNTAGGED, ANY))
   }
 
   @js.native

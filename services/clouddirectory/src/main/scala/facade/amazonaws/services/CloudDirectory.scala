@@ -1811,20 +1811,22 @@ package clouddirectory {
     val LimitExceededException          = "LimitExceededException"
     val InternalServiceException        = "InternalServiceException"
 
-    val values = IndexedSeq(
-      ValidationException,
-      InvalidArnException,
-      ResourceNotFoundException,
-      InvalidNextTokenException,
-      AccessDeniedException,
-      NotNodeException,
-      FacetValidationException,
-      CannotListParentOfRootException,
-      NotIndexException,
-      NotPolicyException,
-      DirectoryNotEnabledException,
-      LimitExceededException,
-      InternalServiceException
+    val values = js.Object.freeze(
+      js.Array(
+        ValidationException,
+        InvalidArnException,
+        ResourceNotFoundException,
+        InvalidNextTokenException,
+        AccessDeniedException,
+        NotNodeException,
+        FacetValidationException,
+        CannotListParentOfRootException,
+        NotIndexException,
+        NotPolicyException,
+        DirectoryNotEnabledException,
+        LimitExceededException,
+        InternalServiceException
+      )
     )
   }
 
@@ -2277,7 +2279,7 @@ package clouddirectory {
     val SERIALIZABLE = "SERIALIZABLE"
     val EVENTUAL     = "EVENTUAL"
 
-    val values = IndexedSeq(SERIALIZABLE, EVENTUAL)
+    val values = js.Object.freeze(js.Array(SERIALIZABLE, EVENTUAL))
   }
 
   @js.native
@@ -2844,7 +2846,7 @@ package clouddirectory {
     val DISABLED = "DISABLED"
     val DELETED  = "DELETED"
 
-    val values = IndexedSeq(ENABLED, DISABLED, DELETED)
+    val values = js.Object.freeze(js.Array(ENABLED, DISABLED, DELETED))
   }
 
   @js.native
@@ -3028,7 +3030,7 @@ package clouddirectory {
     val DATETIME = "DATETIME"
     val VARIANT  = "VARIANT"
 
-    val values = IndexedSeq(STRING, BINARY, BOOLEAN, NUMBER, DATETIME, VARIANT)
+    val values = js.Object.freeze(js.Array(STRING, BINARY, BOOLEAN, NUMBER, DATETIME, VARIANT))
   }
 
   /**
@@ -3056,7 +3058,7 @@ package clouddirectory {
     val STATIC  = "STATIC"
     val DYNAMIC = "DYNAMIC"
 
-    val values = IndexedSeq(STATIC, DYNAMIC)
+    val values = js.Object.freeze(js.Array(STATIC, DYNAMIC))
   }
 
   @js.native
@@ -4472,7 +4474,7 @@ package clouddirectory {
     val POLICY    = "POLICY"
     val INDEX     = "INDEX"
 
-    val values = IndexedSeq(NODE, LEAF_NODE, POLICY, INDEX)
+    val values = js.Object.freeze(js.Array(NODE, LEAF_NODE, POLICY, INDEX))
   }
 
   /**
@@ -4624,7 +4626,7 @@ package clouddirectory {
     val INCLUSIVE                  = "INCLUSIVE"
     val EXCLUSIVE                  = "EXCLUSIVE"
 
-    val values = IndexedSeq(FIRST, LAST, LAST_BEFORE_MISSING_VALUES, INCLUSIVE, EXCLUSIVE)
+    val values = js.Object.freeze(js.Array(FIRST, LAST, LAST_BEFORE_MISSING_VALUES, INCLUSIVE, EXCLUSIVE))
   }
 
   @js.native
@@ -4666,7 +4668,7 @@ package clouddirectory {
     val REQUIRED_ALWAYS = "REQUIRED_ALWAYS"
     val NOT_REQUIRED    = "NOT_REQUIRED"
 
-    val values = IndexedSeq(REQUIRED_ALWAYS, NOT_REQUIRED)
+    val values = js.Object.freeze(js.Array(REQUIRED_ALWAYS, NOT_REQUIRED))
   }
 
   /**
@@ -4696,7 +4698,7 @@ package clouddirectory {
     val STRING_FROM_SET   = "STRING_FROM_SET"
     val STRING_LENGTH     = "STRING_LENGTH"
 
-    val values = IndexedSeq(BINARY_LENGTH, NUMBER_COMPARISON, STRING_FROM_SET, STRING_LENGTH)
+    val values = js.Object.freeze(js.Array(BINARY_LENGTH, NUMBER_COMPARISON, STRING_FROM_SET, STRING_LENGTH))
   }
 
   /**
@@ -5027,7 +5029,7 @@ package clouddirectory {
     val CREATE_OR_UPDATE = "CREATE_OR_UPDATE"
     val DELETE           = "DELETE"
 
-    val values = IndexedSeq(CREATE_OR_UPDATE, DELETE)
+    val values = js.Object.freeze(js.Array(CREATE_OR_UPDATE, DELETE))
   }
 
   @js.native

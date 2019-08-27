@@ -178,7 +178,7 @@ package cloudsearch {
     val light   = "light"
     val full    = "full"
 
-    val values = IndexedSeq(none, minimal, light, full)
+    val values = js.Object.freeze(js.Array(none, minimal, light, full))
   }
 
   /**
@@ -279,42 +279,44 @@ package cloudsearch {
     val `zh-Hans` = "zh-Hans"
     val `zh-Hant` = "zh-Hant"
 
-    val values = IndexedSeq(
-      ar,
-      bg,
-      ca,
-      cs,
-      da,
-      de,
-      el,
-      en,
-      es,
-      eu,
-      fa,
-      fi,
-      fr,
-      ga,
-      gl,
-      he,
-      hi,
-      hu,
-      hy,
-      id,
-      it,
-      ja,
-      ko,
-      lv,
-      mul,
-      nl,
-      no,
-      pt,
-      ro,
-      ru,
-      sv,
-      th,
-      tr,
-      `zh-Hans`,
-      `zh-Hant`
+    val values = js.Object.freeze(
+      js.Array(
+        ar,
+        bg,
+        ca,
+        cs,
+        da,
+        de,
+        el,
+        en,
+        es,
+        eu,
+        fa,
+        fi,
+        fr,
+        ga,
+        gl,
+        he,
+        hi,
+        hu,
+        hy,
+        id,
+        it,
+        ja,
+        ko,
+        lv,
+        mul,
+        nl,
+        no,
+        pt,
+        ro,
+        ru,
+        sv,
+        th,
+        tr,
+        `zh-Hans`,
+        `zh-Hant`
+      )
     )
   }
 
@@ -1570,18 +1572,20 @@ package cloudsearch {
     val `text-array`    = "text-array"
     val `date-array`    = "date-array"
 
-    val values = IndexedSeq(
-      int,
-      double,
-      literal,
-      text,
-      date,
-      latlon,
-      `int-array`,
-      `double-array`,
-      `literal-array`,
-      `text-array`,
-      `date-array`
+    val values = js.Object.freeze(
+      js.Array(
+        int,
+        double,
+        literal,
+        text,
+        date,
+        latlon,
+        `int-array`,
+        `double-array`,
+        `literal-array`,
+        `text-array`,
+        `date-array`
+      )
     )
   }
 
@@ -1813,7 +1817,7 @@ package cloudsearch {
     val Active                 = "Active"
     val FailedToValidate       = "FailedToValidate"
 
-    val values = IndexedSeq(RequiresIndexDocuments, Processing, Active, FailedToValidate)
+    val values = js.Object.freeze(js.Array(RequiresIndexDocuments, Processing, Active, FailedToValidate))
   }
 
   /**
@@ -1861,15 +1865,17 @@ package cloudsearch {
     val `search.m3.xlarge`  = "search.m3.xlarge"
     val `search.m3.2xlarge` = "search.m3.2xlarge"
 
-    val values = IndexedSeq(
-      `search.m1.small`,
-      `search.m1.large`,
-      `search.m2.xlarge`,
-      `search.m2.2xlarge`,
-      `search.m3.medium`,
-      `search.m3.large`,
-      `search.m3.xlarge`,
-      `search.m3.2xlarge`
+    val values = js.Object.freeze(
+      js.Array(
+        `search.m1.small`,
+        `search.m1.large`,
+        `search.m2.xlarge`,
+        `search.m2.2xlarge`,
+        `search.m3.medium`,
+        `search.m3.large`,
+        `search.m3.xlarge`,
+        `search.m3.2xlarge`
+      )
     )
   }
 
@@ -1972,7 +1978,7 @@ package cloudsearch {
     val low  = "low"
     val high = "high"
 
-    val values = IndexedSeq(none, low, high)
+    val values = js.Object.freeze(js.Array(none, low, high))
   }
 
   /**

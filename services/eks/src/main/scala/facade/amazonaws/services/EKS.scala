@@ -137,7 +137,7 @@ package eks {
     val DELETING = "DELETING"
     val FAILED   = "FAILED"
 
-    val values = IndexedSeq(CREATING, ACTIVE, DELETING, FAILED)
+    val values = js.Object.freeze(js.Array(CREATING, ACTIVE, DELETING, FAILED))
   }
 
   @js.native
@@ -296,15 +296,17 @@ package eks {
     val VpcIdNotFound         = "VpcIdNotFound"
     val Unknown               = "Unknown"
 
-    val values = IndexedSeq(
-      SubnetNotFound,
-      SecurityGroupNotFound,
-      EniLimitReached,
-      IpNotAvailable,
-      AccessDenied,
-      OperationNotPermitted,
-      VpcIdNotFound,
-      Unknown
+    val values = js.Object.freeze(
+      js.Array(
+        SubnetNotFound,
+        SecurityGroupNotFound,
+        EniLimitReached,
+        IpNotAvailable,
+        AccessDenied,
+        OperationNotPermitted,
+        VpcIdNotFound,
+        Unknown
+      )
     )
   }
 
@@ -437,7 +439,7 @@ package eks {
     val controllerManager = "controllerManager"
     val scheduler         = "scheduler"
 
-    val values = IndexedSeq(api, audit, authenticator, controllerManager, scheduler)
+    val values = js.Object.freeze(js.Array(api, audit, authenticator, controllerManager, scheduler))
   }
 
   /**
@@ -598,7 +600,8 @@ package eks {
     val EndpointPublicAccess  = "EndpointPublicAccess"
     val ClusterLogging        = "ClusterLogging"
 
-    val values = IndexedSeq(Version, PlatformVersion, EndpointPrivateAccess, EndpointPublicAccess, ClusterLogging)
+    val values =
+      js.Object.freeze(js.Array(Version, PlatformVersion, EndpointPrivateAccess, EndpointPublicAccess, ClusterLogging))
   }
 
   object UpdateStatusEnum {
@@ -607,7 +610,7 @@ package eks {
     val Cancelled  = "Cancelled"
     val Successful = "Successful"
 
-    val values = IndexedSeq(InProgress, Failed, Cancelled, Successful)
+    val values = js.Object.freeze(js.Array(InProgress, Failed, Cancelled, Successful))
   }
 
   object UpdateTypeEnum {
@@ -615,7 +618,7 @@ package eks {
     val EndpointAccessUpdate = "EndpointAccessUpdate"
     val LoggingUpdate        = "LoggingUpdate"
 
-    val values = IndexedSeq(VersionUpdate, EndpointAccessUpdate, LoggingUpdate)
+    val values = js.Object.freeze(js.Array(VersionUpdate, EndpointAccessUpdate, LoggingUpdate))
   }
 
   /**

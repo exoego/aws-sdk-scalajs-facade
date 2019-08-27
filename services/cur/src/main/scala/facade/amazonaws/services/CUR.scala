@@ -72,18 +72,20 @@ package cur {
     val `ap-northeast-3` = "ap-northeast-3"
     val `ap-east-1`      = "ap-east-1"
 
-    val values = IndexedSeq(
-      `us-east-1`,
-      `us-west-1`,
-      `us-west-2`,
-      `eu-central-1`,
-      `eu-west-1`,
-      `ap-southeast-1`,
-      `ap-southeast-2`,
-      `ap-northeast-1`,
-      `eu-north-1`,
-      `ap-northeast-3`,
-      `ap-east-1`
+    val values = js.Object.freeze(
+      js.Array(
+        `us-east-1`,
+        `us-west-1`,
+        `us-west-2`,
+        `eu-central-1`,
+        `eu-west-1`,
+        `ap-southeast-1`,
+        `ap-southeast-2`,
+        `ap-northeast-1`,
+        `eu-north-1`,
+        `ap-northeast-3`,
+        `ap-east-1`
+      )
     )
   }
 
@@ -95,7 +97,7 @@ package cur {
     val QUICKSIGHT = "QUICKSIGHT"
     val ATHENA     = "ATHENA"
 
-    val values = IndexedSeq(REDSHIFT, QUICKSIGHT, ATHENA)
+    val values = js.Object.freeze(js.Array(REDSHIFT, QUICKSIGHT, ATHENA))
   }
 
   /**
@@ -106,7 +108,7 @@ package cur {
     val GZIP    = "GZIP"
     val Parquet = "Parquet"
 
-    val values = IndexedSeq(ZIP, GZIP, Parquet)
+    val values = js.Object.freeze(js.Array(ZIP, GZIP, Parquet))
   }
 
   /**
@@ -311,14 +313,14 @@ package cur {
     val textORcsv = "textORcsv"
     val Parquet   = "Parquet"
 
-    val values = IndexedSeq(textORcsv, Parquet)
+    val values = js.Object.freeze(js.Array(textORcsv, Parquet))
   }
 
   object ReportVersioningEnum {
     val CREATE_NEW_REPORT = "CREATE_NEW_REPORT"
     val OVERWRITE_REPORT  = "OVERWRITE_REPORT"
 
-    val values = IndexedSeq(CREATE_NEW_REPORT, OVERWRITE_REPORT)
+    val values = js.Object.freeze(js.Array(CREATE_NEW_REPORT, OVERWRITE_REPORT))
   }
 
   /**
@@ -327,7 +329,7 @@ package cur {
   object SchemaElementEnum {
     val RESOURCES = "RESOURCES"
 
-    val values = IndexedSeq(RESOURCES)
+    val values = js.Object.freeze(js.Array(RESOURCES))
   }
 
   /**
@@ -337,6 +339,6 @@ package cur {
     val HOURLY = "HOURLY"
     val DAILY  = "DAILY"
 
-    val values = IndexedSeq(HOURLY, DAILY)
+    val values = js.Object.freeze(js.Array(HOURLY, DAILY))
   }
 }

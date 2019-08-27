@@ -168,14 +168,14 @@ package polly {
     val standard = "standard"
     val neural   = "neural"
 
-    val values = IndexedSeq(standard, neural)
+    val values = js.Object.freeze(js.Array(standard, neural))
   }
 
   object GenderEnum {
     val Female = "Female"
     val Male   = "Male"
 
-    val values = IndexedSeq(Female, Male)
+    val values = js.Object.freeze(js.Array(Female, Male))
   }
 
   @js.native
@@ -276,36 +276,38 @@ package polly {
     val `sv-SE`     = "sv-SE"
     val `tr-TR`     = "tr-TR"
 
-    val values = IndexedSeq(
-      arb,
-      `cmn-CN`,
-      `cy-GB`,
-      `da-DK`,
-      `de-DE`,
-      `en-AU`,
-      `en-GB`,
-      `en-GB-WLS`,
-      `en-IN`,
-      `en-US`,
-      `es-ES`,
-      `es-MX`,
-      `es-US`,
-      `fr-CA`,
-      `fr-FR`,
-      `is-IS`,
-      `it-IT`,
-      `ja-JP`,
-      `hi-IN`,
-      `ko-KR`,
-      `nb-NO`,
-      `nl-NL`,
-      `pl-PL`,
-      `pt-BR`,
-      `pt-PT`,
-      `ro-RO`,
-      `ru-RU`,
-      `sv-SE`,
-      `tr-TR`
+    val values = js.Object.freeze(
+      js.Array(
+        arb,
+        `cmn-CN`,
+        `cy-GB`,
+        `da-DK`,
+        `de-DE`,
+        `en-AU`,
+        `en-GB`,
+        `en-GB-WLS`,
+        `en-IN`,
+        `en-US`,
+        `es-ES`,
+        `es-MX`,
+        `es-US`,
+        `fr-CA`,
+        `fr-FR`,
+        `is-IS`,
+        `it-IT`,
+        `ja-JP`,
+        `hi-IN`,
+        `ko-KR`,
+        `nb-NO`,
+        `nl-NL`,
+        `pl-PL`,
+        `pt-BR`,
+        `pt-PT`,
+        `ro-RO`,
+        `ru-RU`,
+        `sv-SE`,
+        `tr-TR`
+      )
     )
   }
 
@@ -462,7 +464,7 @@ package polly {
     val ogg_vorbis = "ogg_vorbis"
     val pcm        = "pcm"
 
-    val values = IndexedSeq(json, mp3, ogg_vorbis, pcm)
+    val values = js.Object.freeze(js.Array(json, mp3, ogg_vorbis, pcm))
   }
 
   @js.native
@@ -503,7 +505,7 @@ package polly {
     val viseme   = "viseme"
     val word     = "word"
 
-    val values = IndexedSeq(sentence, ssml, viseme, word)
+    val values = js.Object.freeze(js.Array(sentence, ssml, viseme, word))
   }
 
   @js.native
@@ -699,14 +701,14 @@ package polly {
     val completed  = "completed"
     val failed     = "failed"
 
-    val values = IndexedSeq(scheduled, inProgress, completed, failed)
+    val values = js.Object.freeze(js.Array(scheduled, inProgress, completed, failed))
   }
 
   object TextTypeEnum {
     val ssml = "ssml"
     val text = "text"
 
-    val values = IndexedSeq(ssml, text)
+    val values = js.Object.freeze(js.Array(ssml, text))
   }
 
   /**
@@ -805,65 +807,67 @@ package polly {
     val Zeina     = "Zeina"
     val Zhiyu     = "Zhiyu"
 
-    val values = IndexedSeq(
-      Aditi,
-      Amy,
-      Astrid,
-      Bianca,
-      Brian,
-      Carla,
-      Carmen,
-      Celine,
-      Chantal,
-      Conchita,
-      Cristiano,
-      Dora,
-      Emma,
-      Enrique,
-      Ewa,
-      Filiz,
-      Geraint,
-      Giorgio,
-      Gwyneth,
-      Hans,
-      Ines,
-      Ivy,
-      Jacek,
-      Jan,
-      Joanna,
-      Joey,
-      Justin,
-      Karl,
-      Kendra,
-      Kimberly,
-      Lea,
-      Liv,
-      Lotte,
-      Lucia,
-      Mads,
-      Maja,
-      Marlene,
-      Mathieu,
-      Matthew,
-      Maxim,
-      Mia,
-      Miguel,
-      Mizuki,
-      Naja,
-      Nicole,
-      Penelope,
-      Raveena,
-      Ricardo,
-      Ruben,
-      Russell,
-      Salli,
-      Seoyeon,
-      Takumi,
-      Tatyana,
-      Vicki,
-      Vitoria,
-      Zeina,
-      Zhiyu
+    val values = js.Object.freeze(
+      js.Array(
+        Aditi,
+        Amy,
+        Astrid,
+        Bianca,
+        Brian,
+        Carla,
+        Carmen,
+        Celine,
+        Chantal,
+        Conchita,
+        Cristiano,
+        Dora,
+        Emma,
+        Enrique,
+        Ewa,
+        Filiz,
+        Geraint,
+        Giorgio,
+        Gwyneth,
+        Hans,
+        Ines,
+        Ivy,
+        Jacek,
+        Jan,
+        Joanna,
+        Joey,
+        Justin,
+        Karl,
+        Kendra,
+        Kimberly,
+        Lea,
+        Liv,
+        Lotte,
+        Lucia,
+        Mads,
+        Maja,
+        Marlene,
+        Mathieu,
+        Matthew,
+        Maxim,
+        Mia,
+        Miguel,
+        Mizuki,
+        Naja,
+        Nicole,
+        Penelope,
+        Raveena,
+        Ricardo,
+        Ruben,
+        Russell,
+        Salli,
+        Seoyeon,
+        Takumi,
+        Tatyana,
+        Vicki,
+        Vitoria,
+        Zeina,
+        Zhiyu
+      )
     )
   }
 }

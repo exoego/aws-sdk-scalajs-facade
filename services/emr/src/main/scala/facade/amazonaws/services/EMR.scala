@@ -222,7 +222,7 @@ package emr {
     val CANCEL_AND_WAIT    = "CANCEL_AND_WAIT"
     val CONTINUE           = "CONTINUE"
 
-    val values = IndexedSeq(TERMINATE_JOB_FLOW, TERMINATE_CLUSTER, CANCEL_AND_WAIT, CONTINUE)
+    val values = js.Object.freeze(js.Array(TERMINATE_JOB_FLOW, TERMINATE_CLUSTER, CANCEL_AND_WAIT, CONTINUE))
   }
 
   @js.native
@@ -391,7 +391,7 @@ package emr {
     val PERCENT_CHANGE_IN_CAPACITY = "PERCENT_CHANGE_IN_CAPACITY"
     val EXACT_CAPACITY             = "EXACT_CAPACITY"
 
-    val values = IndexedSeq(CHANGE_IN_CAPACITY, PERCENT_CHANGE_IN_CAPACITY, EXACT_CAPACITY)
+    val values = js.Object.freeze(js.Array(CHANGE_IN_CAPACITY, PERCENT_CHANGE_IN_CAPACITY, EXACT_CAPACITY))
   }
 
   /**
@@ -477,7 +477,7 @@ package emr {
     val DETACHED  = "DETACHED"
     val FAILED    = "FAILED"
 
-    val values = IndexedSeq(PENDING, ATTACHING, ATTACHED, DETACHING, DETACHED, FAILED)
+    val values = js.Object.freeze(js.Array(PENDING, ATTACHING, ATTACHED, DETACHING, DETACHED, FAILED))
   }
 
   /**
@@ -506,7 +506,7 @@ package emr {
     val PROVISION_FAILURE = "PROVISION_FAILURE"
     val CLEANUP_FAILURE   = "CLEANUP_FAILURE"
 
-    val values = IndexedSeq(USER_REQUEST, PROVISION_FAILURE, CLEANUP_FAILURE)
+    val values = js.Object.freeze(js.Array(USER_REQUEST, PROVISION_FAILURE, CLEANUP_FAILURE))
   }
 
   /**
@@ -686,7 +686,7 @@ package emr {
     val SUBMITTED = "SUBMITTED"
     val FAILED    = "FAILED"
 
-    val values = IndexedSeq(SUBMITTED, FAILED)
+    val values = js.Object.freeze(js.Array(SUBMITTED, FAILED))
   }
 
   /**
@@ -832,7 +832,9 @@ package emr {
     val TERMINATED             = "TERMINATED"
     val TERMINATED_WITH_ERRORS = "TERMINATED_WITH_ERRORS"
 
-    val values = IndexedSeq(STARTING, BOOTSTRAPPING, RUNNING, WAITING, TERMINATING, TERMINATED, TERMINATED_WITH_ERRORS)
+    val values = js.Object.freeze(
+      js.Array(STARTING, BOOTSTRAPPING, RUNNING, WAITING, TERMINATING, TERMINATED, TERMINATED_WITH_ERRORS)
+    )
   }
 
   /**
@@ -866,15 +868,17 @@ package emr {
     val STEP_FAILURE           = "STEP_FAILURE"
     val ALL_STEPS_COMPLETED    = "ALL_STEPS_COMPLETED"
 
-    val values = IndexedSeq(
-      INTERNAL_ERROR,
-      VALIDATION_ERROR,
-      INSTANCE_FAILURE,
-      INSTANCE_FLEET_TIMEOUT,
-      BOOTSTRAP_FAILURE,
-      USER_REQUEST,
-      STEP_FAILURE,
-      ALL_STEPS_COMPLETED
+    val values = js.Object.freeze(
+      js.Array(
+        INTERNAL_ERROR,
+        VALIDATION_ERROR,
+        INSTANCE_FAILURE,
+        INSTANCE_FLEET_TIMEOUT,
+        BOOTSTRAP_FAILURE,
+        USER_REQUEST,
+        STEP_FAILURE,
+        ALL_STEPS_COMPLETED
+      )
     )
   }
 
@@ -983,7 +987,7 @@ package emr {
     val LESS_THAN             = "LESS_THAN"
     val LESS_THAN_OR_EQUAL    = "LESS_THAN_OR_EQUAL"
 
-    val values = IndexedSeq(GREATER_THAN_OR_EQUAL, GREATER_THAN, LESS_THAN, LESS_THAN_OR_EQUAL)
+    val values = js.Object.freeze(js.Array(GREATER_THAN_OR_EQUAL, GREATER_THAN, LESS_THAN, LESS_THAN_OR_EQUAL))
   }
 
   /**
@@ -1553,7 +1557,7 @@ package emr {
     val INSTANCE_FLEET = "INSTANCE_FLEET"
     val INSTANCE_GROUP = "INSTANCE_GROUP"
 
-    val values = IndexedSeq(INSTANCE_FLEET, INSTANCE_GROUP)
+    val values = js.Object.freeze(js.Array(INSTANCE_FLEET, INSTANCE_GROUP))
   }
 
   /**
@@ -1699,7 +1703,8 @@ package emr {
     val TERMINATING   = "TERMINATING"
     val TERMINATED    = "TERMINATED"
 
-    val values = IndexedSeq(PROVISIONING, BOOTSTRAPPING, RUNNING, RESIZING, SUSPENDED, TERMINATING, TERMINATED)
+    val values =
+      js.Object.freeze(js.Array(PROVISIONING, BOOTSTRAPPING, RUNNING, RESIZING, SUSPENDED, TERMINATING, TERMINATED))
   }
 
   /**
@@ -1731,7 +1736,7 @@ package emr {
     val INSTANCE_FAILURE   = "INSTANCE_FAILURE"
     val CLUSTER_TERMINATED = "CLUSTER_TERMINATED"
 
-    val values = IndexedSeq(INTERNAL_ERROR, VALIDATION_ERROR, INSTANCE_FAILURE, CLUSTER_TERMINATED)
+    val values = js.Object.freeze(js.Array(INTERNAL_ERROR, VALIDATION_ERROR, INSTANCE_FAILURE, CLUSTER_TERMINATED))
   }
 
   /**
@@ -1791,7 +1796,7 @@ package emr {
     val CORE   = "CORE"
     val TASK   = "TASK"
 
-    val values = IndexedSeq(MASTER, CORE, TASK)
+    val values = js.Object.freeze(js.Array(MASTER, CORE, TASK))
   }
 
   /**
@@ -2012,18 +2017,20 @@ package emr {
     val SHUTTING_DOWN = "SHUTTING_DOWN"
     val ENDED         = "ENDED"
 
-    val values = IndexedSeq(
-      PROVISIONING,
-      BOOTSTRAPPING,
-      RUNNING,
-      RECONFIGURING,
-      RESIZING,
-      SUSPENDED,
-      TERMINATING,
-      TERMINATED,
-      ARRESTED,
-      SHUTTING_DOWN,
-      ENDED
+    val values = js.Object.freeze(
+      js.Array(
+        PROVISIONING,
+        BOOTSTRAPPING,
+        RUNNING,
+        RECONFIGURING,
+        RESIZING,
+        SUSPENDED,
+        TERMINATING,
+        TERMINATED,
+        ARRESTED,
+        SHUTTING_DOWN,
+        ENDED
+      )
     )
   }
 
@@ -2054,7 +2061,7 @@ package emr {
     val INSTANCE_FAILURE   = "INSTANCE_FAILURE"
     val CLUSTER_TERMINATED = "CLUSTER_TERMINATED"
 
-    val values = IndexedSeq(INTERNAL_ERROR, VALIDATION_ERROR, INSTANCE_FAILURE, CLUSTER_TERMINATED)
+    val values = js.Object.freeze(js.Array(INTERNAL_ERROR, VALIDATION_ERROR, INSTANCE_FAILURE, CLUSTER_TERMINATED))
   }
 
   /**
@@ -2110,7 +2117,7 @@ package emr {
     val CORE   = "CORE"
     val TASK   = "TASK"
 
-    val values = IndexedSeq(MASTER, CORE, TASK)
+    val values = js.Object.freeze(js.Array(MASTER, CORE, TASK))
   }
 
   /**
@@ -2142,7 +2149,7 @@ package emr {
     val CORE   = "CORE"
     val TASK   = "TASK"
 
-    val values = IndexedSeq(MASTER, CORE, TASK)
+    val values = js.Object.freeze(js.Array(MASTER, CORE, TASK))
   }
 
   object InstanceStateEnum {
@@ -2152,7 +2159,7 @@ package emr {
     val RUNNING              = "RUNNING"
     val TERMINATED           = "TERMINATED"
 
-    val values = IndexedSeq(AWAITING_FULFILLMENT, PROVISIONING, BOOTSTRAPPING, RUNNING, TERMINATED)
+    val values = js.Object.freeze(js.Array(AWAITING_FULFILLMENT, PROVISIONING, BOOTSTRAPPING, RUNNING, TERMINATED))
   }
 
   /**
@@ -2183,7 +2190,9 @@ package emr {
     val BOOTSTRAP_FAILURE  = "BOOTSTRAP_FAILURE"
     val CLUSTER_TERMINATED = "CLUSTER_TERMINATED"
 
-    val values = IndexedSeq(INTERNAL_ERROR, VALIDATION_ERROR, INSTANCE_FAILURE, BOOTSTRAP_FAILURE, CLUSTER_TERMINATED)
+    val values = js.Object.freeze(
+      js.Array(INTERNAL_ERROR, VALIDATION_ERROR, INSTANCE_FAILURE, BOOTSTRAP_FAILURE, CLUSTER_TERMINATED)
+    )
   }
 
   /**
@@ -2385,7 +2394,9 @@ package emr {
     val COMPLETED     = "COMPLETED"
     val FAILED        = "FAILED"
 
-    val values = IndexedSeq(STARTING, BOOTSTRAPPING, RUNNING, WAITING, SHUTTING_DOWN, TERMINATED, COMPLETED, FAILED)
+    val values = js.Object.freeze(
+      js.Array(STARTING, BOOTSTRAPPING, RUNNING, WAITING, SHUTTING_DOWN, TERMINATED, COMPLETED, FAILED)
+    )
   }
 
   /**
@@ -2928,7 +2939,7 @@ package emr {
     val ON_DEMAND = "ON_DEMAND"
     val SPOT      = "SPOT"
 
-    val values = IndexedSeq(ON_DEMAND, SPOT)
+    val values = js.Object.freeze(js.Array(ON_DEMAND, SPOT))
   }
 
   /**
@@ -3184,7 +3195,7 @@ package emr {
     val SECURITY = "SECURITY"
     val NONE     = "NONE"
 
-    val values = IndexedSeq(SECURITY, NONE)
+    val values = js.Object.freeze(js.Array(SECURITY, NONE))
   }
 
   /**
@@ -3295,7 +3306,7 @@ package emr {
     val TERMINATE_AT_INSTANCE_HOUR   = "TERMINATE_AT_INSTANCE_HOUR"
     val TERMINATE_AT_TASK_COMPLETION = "TERMINATE_AT_TASK_COMPLETION"
 
-    val values = IndexedSeq(TERMINATE_AT_INSTANCE_HOUR, TERMINATE_AT_TASK_COMPLETION)
+    val values = js.Object.freeze(js.Array(TERMINATE_AT_INSTANCE_HOUR, TERMINATE_AT_TASK_COMPLETION))
   }
 
   /**
@@ -3563,7 +3574,7 @@ package emr {
     val SWITCH_TO_ON_DEMAND = "SWITCH_TO_ON_DEMAND"
     val TERMINATE_CLUSTER   = "TERMINATE_CLUSTER"
 
-    val values = IndexedSeq(SWITCH_TO_ON_DEMAND, TERMINATE_CLUSTER)
+    val values = js.Object.freeze(js.Array(SWITCH_TO_ON_DEMAND, TERMINATE_CLUSTER))
   }
 
   object StatisticEnum {
@@ -3573,7 +3584,7 @@ package emr {
     val MINIMUM      = "MINIMUM"
     val MAXIMUM      = "MAXIMUM"
 
-    val values = IndexedSeq(SAMPLE_COUNT, AVERAGE, SUM, MINIMUM, MAXIMUM)
+    val values = js.Object.freeze(js.Array(SAMPLE_COUNT, AVERAGE, SUM, MINIMUM, MAXIMUM))
   }
 
   /**
@@ -3664,7 +3675,7 @@ package emr {
     val FAILED      = "FAILED"
     val INTERRUPTED = "INTERRUPTED"
 
-    val values = IndexedSeq(PENDING, RUNNING, CONTINUE, COMPLETED, CANCELLED, FAILED, INTERRUPTED)
+    val values = js.Object.freeze(js.Array(PENDING, RUNNING, CONTINUE, COMPLETED, CANCELLED, FAILED, INTERRUPTED))
   }
 
   /**
@@ -3708,7 +3719,7 @@ package emr {
     val FAILED         = "FAILED"
     val INTERRUPTED    = "INTERRUPTED"
 
-    val values = IndexedSeq(PENDING, CANCEL_PENDING, RUNNING, COMPLETED, CANCELLED, FAILED, INTERRUPTED)
+    val values = js.Object.freeze(js.Array(PENDING, CANCEL_PENDING, RUNNING, COMPLETED, CANCELLED, FAILED, INTERRUPTED))
   }
 
   /**
@@ -3735,7 +3746,7 @@ package emr {
   object StepStateChangeReasonCodeEnum {
     val NONE = "NONE"
 
-    val values = IndexedSeq(NONE)
+    val values = js.Object.freeze(js.Array(NONE))
   }
 
   /**
@@ -3910,34 +3921,36 @@ package emr {
     val TERA_BITS_PER_SECOND  = "TERA_BITS_PER_SECOND"
     val COUNT_PER_SECOND      = "COUNT_PER_SECOND"
 
-    val values = IndexedSeq(
-      NONE,
-      SECONDS,
-      MICRO_SECONDS,
-      MILLI_SECONDS,
-      BYTES,
-      KILO_BYTES,
-      MEGA_BYTES,
-      GIGA_BYTES,
-      TERA_BYTES,
-      BITS,
-      KILO_BITS,
-      MEGA_BITS,
-      GIGA_BITS,
-      TERA_BITS,
-      PERCENT,
-      COUNT,
-      BYTES_PER_SECOND,
-      KILO_BYTES_PER_SECOND,
-      MEGA_BYTES_PER_SECOND,
-      GIGA_BYTES_PER_SECOND,
-      TERA_BYTES_PER_SECOND,
-      BITS_PER_SECOND,
-      KILO_BITS_PER_SECOND,
-      MEGA_BITS_PER_SECOND,
-      GIGA_BITS_PER_SECOND,
-      TERA_BITS_PER_SECOND,
-      COUNT_PER_SECOND
+    val values = js.Object.freeze(
+      js.Array(
+        NONE,
+        SECONDS,
+        MICRO_SECONDS,
+        MILLI_SECONDS,
+        BYTES,
+        KILO_BYTES,
+        MEGA_BYTES,
+        GIGA_BYTES,
+        TERA_BYTES,
+        BITS,
+        KILO_BITS,
+        MEGA_BITS,
+        GIGA_BITS,
+        TERA_BITS,
+        PERCENT,
+        COUNT,
+        BYTES_PER_SECOND,
+        KILO_BYTES_PER_SECOND,
+        MEGA_BYTES_PER_SECOND,
+        GIGA_BYTES_PER_SECOND,
+        TERA_BYTES_PER_SECOND,
+        BITS_PER_SECOND,
+        KILO_BITS_PER_SECOND,
+        MEGA_BITS_PER_SECOND,
+        GIGA_BITS_PER_SECOND,
+        TERA_BITS_PER_SECOND,
+        COUNT_PER_SECOND
+      )
     )
   }
 

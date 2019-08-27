@@ -62,7 +62,7 @@ package resourcegroupstaggingapi {
     val InternalServiceException  = "InternalServiceException"
     val InvalidParameterException = "InvalidParameterException"
 
-    val values = IndexedSeq(InternalServiceException, InvalidParameterException)
+    val values = js.Object.freeze(js.Array(InternalServiceException, InvalidParameterException))
   }
 
   /**

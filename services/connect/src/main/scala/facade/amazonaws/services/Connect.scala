@@ -154,13 +154,13 @@ package connect {
   object ChannelEnum {
     val VOICE = "VOICE"
 
-    val values = IndexedSeq(VOICE)
+    val values = js.Object.freeze(js.Array(VOICE))
   }
 
   object ComparisonEnum {
     val LT = "LT"
 
-    val values = IndexedSeq(LT)
+    val values = js.Object.freeze(js.Array(LT))
   }
 
   @js.native
@@ -306,17 +306,19 @@ package connect {
     val OLDEST_CONTACT_AGE        = "OLDEST_CONTACT_AGE"
     val CONTACTS_SCHEDULED        = "CONTACTS_SCHEDULED"
 
-    val values = IndexedSeq(
-      AGENTS_ONLINE,
-      AGENTS_AVAILABLE,
-      AGENTS_ON_CALL,
-      AGENTS_NON_PRODUCTIVE,
-      AGENTS_AFTER_CONTACT_WORK,
-      AGENTS_ERROR,
-      AGENTS_STAFFED,
-      CONTACTS_IN_QUEUE,
-      OLDEST_CONTACT_AGE,
-      CONTACTS_SCHEDULED
+    val values = js.Object.freeze(
+      js.Array(
+        AGENTS_ONLINE,
+        AGENTS_AVAILABLE,
+        AGENTS_ON_CALL,
+        AGENTS_NON_PRODUCTIVE,
+        AGENTS_AFTER_CONTACT_WORK,
+        AGENTS_ERROR,
+        AGENTS_STAFFED,
+        CONTACTS_IN_QUEUE,
+        OLDEST_CONTACT_AGE,
+        CONTACTS_SCHEDULED
+      )
     )
   }
 
@@ -685,7 +687,7 @@ package connect {
     val QUEUE   = "QUEUE"
     val CHANNEL = "CHANNEL"
 
-    val values = IndexedSeq(QUEUE, CHANNEL)
+    val values = js.Object.freeze(js.Array(QUEUE, CHANNEL))
   }
 
   /**
@@ -904,32 +906,34 @@ package connect {
     val INTERACTION_AND_HOLD_TIME           = "INTERACTION_AND_HOLD_TIME"
     val SERVICE_LEVEL                       = "SERVICE_LEVEL"
 
-    val values = IndexedSeq(
-      CONTACTS_QUEUED,
-      CONTACTS_HANDLED,
-      CONTACTS_ABANDONED,
-      CONTACTS_CONSULTED,
-      CONTACTS_AGENT_HUNG_UP_FIRST,
-      CONTACTS_HANDLED_INCOMING,
-      CONTACTS_HANDLED_OUTBOUND,
-      CONTACTS_HOLD_ABANDONS,
-      CONTACTS_TRANSFERRED_IN,
-      CONTACTS_TRANSFERRED_OUT,
-      CONTACTS_TRANSFERRED_IN_FROM_QUEUE,
-      CONTACTS_TRANSFERRED_OUT_FROM_QUEUE,
-      CONTACTS_MISSED,
-      CALLBACK_CONTACTS_HANDLED,
-      API_CONTACTS_HANDLED,
-      OCCUPANCY,
-      HANDLE_TIME,
-      AFTER_CONTACT_WORK_TIME,
-      QUEUED_TIME,
-      ABANDON_TIME,
-      QUEUE_ANSWER_TIME,
-      HOLD_TIME,
-      INTERACTION_TIME,
-      INTERACTION_AND_HOLD_TIME,
-      SERVICE_LEVEL
+    val values = js.Object.freeze(
+      js.Array(
+        CONTACTS_QUEUED,
+        CONTACTS_HANDLED,
+        CONTACTS_ABANDONED,
+        CONTACTS_CONSULTED,
+        CONTACTS_AGENT_HUNG_UP_FIRST,
+        CONTACTS_HANDLED_INCOMING,
+        CONTACTS_HANDLED_OUTBOUND,
+        CONTACTS_HOLD_ABANDONS,
+        CONTACTS_TRANSFERRED_IN,
+        CONTACTS_TRANSFERRED_OUT,
+        CONTACTS_TRANSFERRED_IN_FROM_QUEUE,
+        CONTACTS_TRANSFERRED_OUT_FROM_QUEUE,
+        CONTACTS_MISSED,
+        CALLBACK_CONTACTS_HANDLED,
+        API_CONTACTS_HANDLED,
+        OCCUPANCY,
+        HANDLE_TIME,
+        AFTER_CONTACT_WORK_TIME,
+        QUEUED_TIME,
+        ABANDON_TIME,
+        QUEUE_ANSWER_TIME,
+        HOLD_TIME,
+        INTERACTION_TIME,
+        INTERACTION_AND_HOLD_TIME,
+        SERVICE_LEVEL
+      )
     )
   }
 
@@ -1124,7 +1128,7 @@ package connect {
     val SOFT_PHONE = "SOFT_PHONE"
     val DESK_PHONE = "DESK_PHONE"
 
-    val values = IndexedSeq(SOFT_PHONE, DESK_PHONE)
+    val values = js.Object.freeze(js.Array(SOFT_PHONE, DESK_PHONE))
   }
 
   /**
@@ -1251,7 +1255,7 @@ package connect {
     val MAX = "MAX"
     val AVG = "AVG"
 
-    val values = IndexedSeq(SUM, MAX, AVG)
+    val values = js.Object.freeze(js.Array(SUM, MAX, AVG))
   }
 
   @js.native
@@ -1312,7 +1316,7 @@ package connect {
     val COUNT   = "COUNT"
     val PERCENT = "PERCENT"
 
-    val values = IndexedSeq(SECONDS, COUNT, PERCENT)
+    val values = js.Object.freeze(js.Array(SECONDS, COUNT, PERCENT))
   }
 
   @js.native

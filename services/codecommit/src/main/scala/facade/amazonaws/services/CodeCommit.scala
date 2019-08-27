@@ -573,7 +573,7 @@ package codecommit {
     val M = "M"
     val D = "D"
 
-    val values = IndexedSeq(A, M, D)
+    val values = js.Object.freeze(js.Array(A, M, D))
   }
 
   /**
@@ -751,7 +751,7 @@ package codecommit {
     val FILE_LEVEL = "FILE_LEVEL"
     val LINE_LEVEL = "LINE_LEVEL"
 
-    val values = IndexedSeq(FILE_LEVEL, LINE_LEVEL)
+    val values = js.Object.freeze(js.Array(FILE_LEVEL, LINE_LEVEL))
   }
 
   /**
@@ -829,7 +829,7 @@ package codecommit {
     val ACCEPT_DESTINATION = "ACCEPT_DESTINATION"
     val AUTOMERGE          = "AUTOMERGE"
 
-    val values = IndexedSeq(NONE, ACCEPT_SOURCE, ACCEPT_DESTINATION, AUTOMERGE)
+    val values = js.Object.freeze(js.Array(NONE, ACCEPT_SOURCE, ACCEPT_DESTINATION, AUTOMERGE))
   }
 
   /**
@@ -1478,7 +1478,7 @@ package codecommit {
     val NORMAL     = "NORMAL"
     val SYMLINK    = "SYMLINK"
 
-    val values = IndexedSeq(EXECUTABLE, NORMAL, SYMLINK)
+    val values = js.Object.freeze(js.Array(EXECUTABLE, NORMAL, SYMLINK))
   }
 
   /**
@@ -2768,7 +2768,7 @@ package codecommit {
     val SQUASH_MERGE       = "SQUASH_MERGE"
     val THREE_WAY_MERGE    = "THREE_WAY_MERGE"
 
-    val values = IndexedSeq(FAST_FORWARD_MERGE, SQUASH_MERGE, THREE_WAY_MERGE)
+    val values = js.Object.freeze(js.Array(FAST_FORWARD_MERGE, SQUASH_MERGE, THREE_WAY_MERGE))
   }
 
   @js.native
@@ -2933,7 +2933,7 @@ package codecommit {
     val GIT_LINK      = "GIT_LINK"
     val SYMBOLIC_LINK = "SYMBOLIC_LINK"
 
-    val values = IndexedSeq(FILE, DIRECTORY, GIT_LINK, SYMBOLIC_LINK)
+    val values = js.Object.freeze(js.Array(FILE, DIRECTORY, GIT_LINK, SYMBOLIC_LINK))
   }
 
   /**
@@ -2964,7 +2964,7 @@ package codecommit {
     val ascending  = "ascending"
     val descending = "descending"
 
-    val values = IndexedSeq(ascending, descending)
+    val values = js.Object.freeze(js.Array(ascending, descending))
   }
 
   @js.native
@@ -3265,11 +3265,13 @@ package codecommit {
     val PULL_REQUEST_SOURCE_REFERENCE_UPDATED = "PULL_REQUEST_SOURCE_REFERENCE_UPDATED"
     val PULL_REQUEST_MERGE_STATE_CHANGED      = "PULL_REQUEST_MERGE_STATE_CHANGED"
 
-    val values = IndexedSeq(
-      PULL_REQUEST_CREATED,
-      PULL_REQUEST_STATUS_CHANGED,
-      PULL_REQUEST_SOURCE_REFERENCE_UPDATED,
-      PULL_REQUEST_MERGE_STATE_CHANGED
+    val values = js.Object.freeze(
+      js.Array(
+        PULL_REQUEST_CREATED,
+        PULL_REQUEST_STATUS_CHANGED,
+        PULL_REQUEST_SOURCE_REFERENCE_UPDATED,
+        PULL_REQUEST_MERGE_STATE_CHANGED
+      )
     )
   }
 
@@ -3346,7 +3348,7 @@ package codecommit {
     val OPEN   = "OPEN"
     val CLOSED = "CLOSED"
 
-    val values = IndexedSeq(OPEN, CLOSED)
+    val values = js.Object.freeze(js.Array(OPEN, CLOSED))
   }
 
   /**
@@ -3523,7 +3525,7 @@ package codecommit {
     val BEFORE = "BEFORE"
     val AFTER  = "AFTER"
 
-    val values = IndexedSeq(BEFORE, AFTER)
+    val values = js.Object.freeze(js.Array(BEFORE, AFTER))
   }
 
   /**
@@ -3561,7 +3563,7 @@ package codecommit {
     val KEEP_DESTINATION = "KEEP_DESTINATION"
     val USE_NEW_CONTENT  = "USE_NEW_CONTENT"
 
-    val values = IndexedSeq(KEEP_BASE, KEEP_SOURCE, KEEP_DESTINATION, USE_NEW_CONTENT)
+    val values = js.Object.freeze(js.Array(KEEP_BASE, KEEP_SOURCE, KEEP_DESTINATION, USE_NEW_CONTENT))
   }
 
   /**
@@ -3668,7 +3670,7 @@ package codecommit {
     val createReference = "createReference"
     val deleteReference = "deleteReference"
 
-    val values = IndexedSeq(all, updateReference, createReference, deleteReference)
+    val values = js.Object.freeze(js.Array(all, updateReference, createReference, deleteReference))
   }
 
   /**
@@ -3719,7 +3721,7 @@ package codecommit {
     val repositoryName   = "repositoryName"
     val lastModifiedDate = "lastModifiedDate"
 
-    val values = IndexedSeq(repositoryName, lastModifiedDate)
+    val values = js.Object.freeze(js.Array(repositoryName, lastModifiedDate))
   }
 
   /**

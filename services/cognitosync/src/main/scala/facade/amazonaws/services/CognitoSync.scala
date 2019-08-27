@@ -163,7 +163,7 @@ package cognitosync {
     val FAILED      = "FAILED"
     val SUCCEEDED   = "SUCCEEDED"
 
-    val values = IndexedSeq(NOT_STARTED, IN_PROGRESS, FAILED, SUCCEEDED)
+    val values = js.Object.freeze(js.Array(NOT_STARTED, IN_PROGRESS, FAILED, SUCCEEDED))
   }
 
   /**
@@ -838,7 +838,7 @@ package cognitosync {
     val replace = "replace"
     val remove  = "remove"
 
-    val values = IndexedSeq(replace, remove)
+    val values = js.Object.freeze(js.Array(replace, remove))
   }
 
   object PlatformEnum {
@@ -847,7 +847,7 @@ package cognitosync {
     val GCM          = "GCM"
     val ADM          = "ADM"
 
-    val values = IndexedSeq(APNS, APNS_SANDBOX, GCM, ADM)
+    val values = js.Object.freeze(js.Array(APNS, APNS_SANDBOX, GCM, ADM))
   }
 
   /**
@@ -1077,7 +1077,7 @@ package cognitosync {
     val ENABLED  = "ENABLED"
     val DISABLED = "DISABLED"
 
-    val values = IndexedSeq(ENABLED, DISABLED)
+    val values = js.Object.freeze(js.Array(ENABLED, DISABLED))
   }
 
   /**

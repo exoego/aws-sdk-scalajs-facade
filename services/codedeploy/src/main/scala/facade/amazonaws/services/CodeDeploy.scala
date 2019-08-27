@@ -442,7 +442,7 @@ package codedeploy {
     val firstUsedTime = "firstUsedTime"
     val lastUsedTime  = "lastUsedTime"
 
-    val values = IndexedSeq(registerTime, firstUsedTime, lastUsedTime)
+    val values = js.Object.freeze(js.Array(registerTime, firstUsedTime, lastUsedTime))
   }
 
   /**
@@ -471,7 +471,7 @@ package codedeploy {
     val DEPLOYMENT_STOP_ON_ALARM   = "DEPLOYMENT_STOP_ON_ALARM"
     val DEPLOYMENT_STOP_ON_REQUEST = "DEPLOYMENT_STOP_ON_REQUEST"
 
-    val values = IndexedSeq(DEPLOYMENT_FAILURE, DEPLOYMENT_STOP_ON_ALARM, DEPLOYMENT_STOP_ON_REQUEST)
+    val values = js.Object.freeze(js.Array(DEPLOYMENT_FAILURE, DEPLOYMENT_STOP_ON_ALARM, DEPLOYMENT_STOP_ON_REQUEST))
   }
 
   /**
@@ -835,7 +835,7 @@ package codedeploy {
     val YAML = "YAML"
     val JSON = "JSON"
 
-    val values = IndexedSeq(tar, tgz, zip, YAML, JSON)
+    val values = js.Object.freeze(js.Array(tar, tgz, zip, YAML, JSON))
   }
 
   object ComputePlatformEnum {
@@ -843,7 +843,7 @@ package codedeploy {
     val Lambda = "Lambda"
     val ECS    = "ECS"
 
-    val values = IndexedSeq(Server, Lambda, ECS)
+    val values = js.Object.freeze(js.Array(Server, Lambda, ECS))
   }
 
   @js.native
@@ -1267,7 +1267,7 @@ package codedeploy {
     val autoscaling        = "autoscaling"
     val codeDeployRollback = "codeDeployRollback"
 
-    val values = IndexedSeq(user, autoscaling, codeDeployRollback)
+    val values = js.Object.freeze(js.Array(user, autoscaling, codeDeployRollback))
   }
 
   /**
@@ -1460,7 +1460,7 @@ package codedeploy {
     val WITH_TRAFFIC_CONTROL    = "WITH_TRAFFIC_CONTROL"
     val WITHOUT_TRAFFIC_CONTROL = "WITHOUT_TRAFFIC_CONTROL"
 
-    val values = IndexedSeq(WITH_TRAFFIC_CONTROL, WITHOUT_TRAFFIC_CONTROL)
+    val values = js.Object.freeze(js.Array(WITH_TRAFFIC_CONTROL, WITHOUT_TRAFFIC_CONTROL))
   }
 
   /**
@@ -1500,7 +1500,7 @@ package codedeploy {
     val CONTINUE_DEPLOYMENT = "CONTINUE_DEPLOYMENT"
     val STOP_DEPLOYMENT     = "STOP_DEPLOYMENT"
 
-    val values = IndexedSeq(CONTINUE_DEPLOYMENT, STOP_DEPLOYMENT)
+    val values = js.Object.freeze(js.Array(CONTINUE_DEPLOYMENT, STOP_DEPLOYMENT))
   }
 
   /**
@@ -1533,7 +1533,7 @@ package codedeploy {
     val Stopped    = "Stopped"
     val Ready      = "Ready"
 
-    val values = IndexedSeq(Created, Queued, InProgress, Succeeded, Failed, Stopped, Ready)
+    val values = js.Object.freeze(js.Array(Created, Queued, InProgress, Succeeded, Failed, Stopped, Ready))
   }
 
   /**
@@ -1589,21 +1589,21 @@ package codedeploy {
     val LambdaTarget   = "LambdaTarget"
     val ECSTarget      = "ECSTarget"
 
-    val values = IndexedSeq(InstanceTarget, LambdaTarget, ECSTarget)
+    val values = js.Object.freeze(js.Array(InstanceTarget, LambdaTarget, ECSTarget))
   }
 
   object DeploymentTypeEnum {
     val IN_PLACE   = "IN_PLACE"
     val BLUE_GREEN = "BLUE_GREEN"
 
-    val values = IndexedSeq(IN_PLACE, BLUE_GREEN)
+    val values = js.Object.freeze(js.Array(IN_PLACE, BLUE_GREEN))
   }
 
   object DeploymentWaitTypeEnum {
     val READY_WAIT       = "READY_WAIT"
     val TERMINATION_WAIT = "TERMINATION_WAIT"
 
-    val values = IndexedSeq(READY_WAIT, TERMINATION_WAIT)
+    val values = js.Object.freeze(js.Array(READY_WAIT, TERMINATION_WAIT))
   }
 
   /**
@@ -1682,7 +1682,7 @@ package codedeploy {
     val VALUE_ONLY    = "VALUE_ONLY"
     val KEY_AND_VALUE = "KEY_AND_VALUE"
 
-    val values = IndexedSeq(KEY_ONLY, VALUE_ONLY, KEY_AND_VALUE)
+    val values = js.Object.freeze(js.Array(KEY_ONLY, VALUE_ONLY, KEY_AND_VALUE))
   }
 
   /**
@@ -1852,40 +1852,42 @@ package codedeploy {
     val THROTTLED                                   = "THROTTLED"
     val TIMEOUT                                     = "TIMEOUT"
 
-    val values = IndexedSeq(
-      AGENT_ISSUE,
-      ALARM_ACTIVE,
-      APPLICATION_MISSING,
-      AUTOSCALING_VALIDATION_ERROR,
-      AUTO_SCALING_CONFIGURATION,
-      AUTO_SCALING_IAM_ROLE_PERMISSIONS,
-      CODEDEPLOY_RESOURCE_CANNOT_BE_FOUND,
-      CUSTOMER_APPLICATION_UNHEALTHY,
-      DEPLOYMENT_GROUP_MISSING,
-      ECS_UPDATE_ERROR,
-      ELASTIC_LOAD_BALANCING_INVALID,
-      ELB_INVALID_INSTANCE,
-      HEALTH_CONSTRAINTS,
-      HEALTH_CONSTRAINTS_INVALID,
-      HOOK_EXECUTION_FAILURE,
-      IAM_ROLE_MISSING,
-      IAM_ROLE_PERMISSIONS,
-      INTERNAL_ERROR,
-      INVALID_ECS_SERVICE,
-      INVALID_LAMBDA_CONFIGURATION,
-      INVALID_LAMBDA_FUNCTION,
-      INVALID_REVISION,
-      MANUAL_STOP,
-      MISSING_BLUE_GREEN_DEPLOYMENT_CONFIGURATION,
-      MISSING_ELB_INFORMATION,
-      MISSING_GITHUB_TOKEN,
-      NO_EC2_SUBSCRIPTION,
-      NO_INSTANCES,
-      OVER_MAX_INSTANCES,
-      RESOURCE_LIMIT_EXCEEDED,
-      REVISION_MISSING,
-      THROTTLED,
-      TIMEOUT
+    val values = js.Object.freeze(
+      js.Array(
+        AGENT_ISSUE,
+        ALARM_ACTIVE,
+        APPLICATION_MISSING,
+        AUTOSCALING_VALIDATION_ERROR,
+        AUTO_SCALING_CONFIGURATION,
+        AUTO_SCALING_IAM_ROLE_PERMISSIONS,
+        CODEDEPLOY_RESOURCE_CANNOT_BE_FOUND,
+        CUSTOMER_APPLICATION_UNHEALTHY,
+        DEPLOYMENT_GROUP_MISSING,
+        ECS_UPDATE_ERROR,
+        ELASTIC_LOAD_BALANCING_INVALID,
+        ELB_INVALID_INSTANCE,
+        HEALTH_CONSTRAINTS,
+        HEALTH_CONSTRAINTS_INVALID,
+        HOOK_EXECUTION_FAILURE,
+        IAM_ROLE_MISSING,
+        IAM_ROLE_PERMISSIONS,
+        INTERNAL_ERROR,
+        INVALID_ECS_SERVICE,
+        INVALID_LAMBDA_CONFIGURATION,
+        INVALID_LAMBDA_FUNCTION,
+        INVALID_REVISION,
+        MANUAL_STOP,
+        MISSING_BLUE_GREEN_DEPLOYMENT_CONFIGURATION,
+        MISSING_ELB_INFORMATION,
+        MISSING_GITHUB_TOKEN,
+        NO_EC2_SUBSCRIPTION,
+        NO_INSTANCES,
+        OVER_MAX_INSTANCES,
+        RESOURCE_LIMIT_EXCEEDED,
+        REVISION_MISSING,
+        THROTTLED,
+        TIMEOUT
+      )
     )
   }
 
@@ -1915,7 +1917,7 @@ package codedeploy {
     val OVERWRITE = "OVERWRITE"
     val RETAIN    = "RETAIN"
 
-    val values = IndexedSeq(DISALLOW, OVERWRITE, RETAIN)
+    val values = js.Object.freeze(js.Array(DISALLOW, OVERWRITE, RETAIN))
   }
 
   /**
@@ -2287,7 +2289,7 @@ package codedeploy {
     val DISCOVER_EXISTING       = "DISCOVER_EXISTING"
     val COPY_AUTO_SCALING_GROUP = "COPY_AUTO_SCALING_GROUP"
 
-    val values = IndexedSeq(DISCOVER_EXISTING, COPY_AUTO_SCALING_GROUP)
+    val values = js.Object.freeze(js.Array(DISCOVER_EXISTING, COPY_AUTO_SCALING_GROUP))
   }
 
   /**
@@ -2312,7 +2314,7 @@ package codedeploy {
     val TERMINATE  = "TERMINATE"
     val KEEP_ALIVE = "KEEP_ALIVE"
 
-    val values = IndexedSeq(TERMINATE, KEEP_ALIVE)
+    val values = js.Object.freeze(js.Array(TERMINATE, KEEP_ALIVE))
   }
 
   /**
@@ -2361,7 +2363,7 @@ package codedeploy {
     val Unknown    = "Unknown"
     val Ready      = "Ready"
 
-    val values = IndexedSeq(Pending, InProgress, Succeeded, Failed, Skipped, Unknown, Ready)
+    val values = js.Object.freeze(js.Array(Pending, InProgress, Succeeded, Failed, Skipped, Unknown, Ready))
   }
 
   /**
@@ -2438,7 +2440,7 @@ package codedeploy {
     val Blue  = "Blue"
     val Green = "Green"
 
-    val values = IndexedSeq(Blue, Green)
+    val values = js.Object.freeze(js.Array(Blue, Green))
   }
 
   /**
@@ -2542,7 +2544,9 @@ package codedeploy {
     val ScriptFailed        = "ScriptFailed"
     val UnknownError        = "UnknownError"
 
-    val values = IndexedSeq(Success, ScriptMissing, ScriptNotExecutable, ScriptTimedOut, ScriptFailed, UnknownError)
+    val values = js.Object.freeze(
+      js.Array(Success, ScriptMissing, ScriptNotExecutable, ScriptTimedOut, ScriptFailed, UnknownError)
+    )
   }
 
   /**
@@ -2583,7 +2587,7 @@ package codedeploy {
     val Skipped    = "Skipped"
     val Unknown    = "Unknown"
 
-    val values = IndexedSeq(Pending, InProgress, Succeeded, Failed, Skipped, Unknown)
+    val values = js.Object.freeze(js.Array(Pending, InProgress, Succeeded, Failed, Skipped, Unknown))
   }
 
   /**
@@ -2999,7 +3003,7 @@ package codedeploy {
     val exclude = "exclude"
     val ignore  = "ignore"
 
-    val values = IndexedSeq(include, exclude, ignore)
+    val values = js.Object.freeze(js.Array(include, exclude, ignore))
   }
 
   @js.native
@@ -3089,7 +3093,7 @@ package codedeploy {
     val HOST_COUNT    = "HOST_COUNT"
     val FLEET_PERCENT = "FLEET_PERCENT"
 
-    val values = IndexedSeq(HOST_COUNT, FLEET_PERCENT)
+    val values = js.Object.freeze(js.Array(HOST_COUNT, FLEET_PERCENT))
   }
 
   /**
@@ -3228,7 +3232,7 @@ package codedeploy {
     val Registered   = "Registered"
     val Deregistered = "Deregistered"
 
-    val values = IndexedSeq(Registered, Deregistered)
+    val values = js.Object.freeze(js.Array(Registered, Deregistered))
   }
 
   /**
@@ -3311,7 +3315,7 @@ package codedeploy {
     val String         = "String"
     val AppSpecContent = "AppSpecContent"
 
-    val values = IndexedSeq(S3, GitHub, String, AppSpecContent)
+    val values = js.Object.freeze(js.Array(S3, GitHub, String, AppSpecContent))
   }
 
   /**
@@ -3389,7 +3393,7 @@ package codedeploy {
     val ascending  = "ascending"
     val descending = "descending"
 
-    val values = IndexedSeq(ascending, descending)
+    val values = js.Object.freeze(js.Array(ascending, descending))
   }
 
   /**
@@ -3440,7 +3444,7 @@ package codedeploy {
     val Pending   = "Pending"
     val Succeeded = "Succeeded"
 
-    val values = IndexedSeq(Pending, Succeeded)
+    val values = js.Object.freeze(js.Array(Pending, Succeeded))
   }
 
   /**
@@ -3493,7 +3497,7 @@ package codedeploy {
     val VALUE_ONLY    = "VALUE_ONLY"
     val KEY_AND_VALUE = "KEY_AND_VALUE"
 
-    val values = IndexedSeq(KEY_ONLY, VALUE_ONLY, KEY_AND_VALUE)
+    val values = js.Object.freeze(js.Array(KEY_ONLY, VALUE_ONLY, KEY_AND_VALUE))
   }
 
   @js.native
@@ -3532,7 +3536,7 @@ package codedeploy {
     val TargetStatus        = "TargetStatus"
     val ServerInstanceLabel = "ServerInstanceLabel"
 
-    val values = IndexedSeq(TargetStatus, ServerInstanceLabel)
+    val values = js.Object.freeze(js.Array(TargetStatus, ServerInstanceLabel))
   }
 
   /**
@@ -3605,7 +3609,7 @@ package codedeploy {
     val Blue  = "Blue"
     val Green = "Green"
 
-    val values = IndexedSeq(Blue, Green)
+    val values = js.Object.freeze(js.Array(Blue, Green))
   }
 
   object TargetStatusEnum {
@@ -3617,7 +3621,7 @@ package codedeploy {
     val Unknown    = "Unknown"
     val Ready      = "Ready"
 
-    val values = IndexedSeq(Pending, InProgress, Succeeded, Failed, Skipped, Unknown, Ready)
+    val values = js.Object.freeze(js.Array(Pending, InProgress, Succeeded, Failed, Skipped, Unknown, Ready))
   }
 
   /**
@@ -3730,7 +3734,7 @@ package codedeploy {
     val TimeBasedLinear = "TimeBasedLinear"
     val AllAtOnce       = "AllAtOnce"
 
-    val values = IndexedSeq(TimeBasedCanary, TimeBasedLinear, AllAtOnce)
+    val values = js.Object.freeze(js.Array(TimeBasedCanary, TimeBasedLinear, AllAtOnce))
   }
 
   /**
@@ -3769,17 +3773,19 @@ package codedeploy {
     val InstanceFailure    = "InstanceFailure"
     val InstanceReady      = "InstanceReady"
 
-    val values = IndexedSeq(
-      DeploymentStart,
-      DeploymentSuccess,
-      DeploymentFailure,
-      DeploymentStop,
-      DeploymentRollback,
-      DeploymentReady,
-      InstanceStart,
-      InstanceSuccess,
-      InstanceFailure,
-      InstanceReady
+    val values = js.Object.freeze(
+      js.Array(
+        DeploymentStart,
+        DeploymentSuccess,
+        DeploymentFailure,
+        DeploymentStop,
+        DeploymentRollback,
+        DeploymentReady,
+        InstanceStart,
+        InstanceSuccess,
+        InstanceFailure,
+        InstanceReady
+      )
     )
   }
 

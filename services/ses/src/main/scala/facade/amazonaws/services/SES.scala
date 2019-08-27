@@ -463,7 +463,7 @@ package ses {
     val UseDefaultValue = "UseDefaultValue"
     val RejectMessage   = "RejectMessage"
 
-    val values = IndexedSeq(UseDefaultValue, RejectMessage)
+    val values = js.Object.freeze(js.Array(UseDefaultValue, RejectMessage))
   }
 
   /**
@@ -528,7 +528,9 @@ package ses {
     val Undefined        = "Undefined"
     val TemporaryFailure = "TemporaryFailure"
 
-    val values = IndexedSeq(DoesNotExist, MessageTooLarge, ExceededQuota, ContentRejected, Undefined, TemporaryFailure)
+    val values = js.Object.freeze(
+      js.Array(DoesNotExist, MessageTooLarge, ExceededQuota, ContentRejected, Undefined, TemporaryFailure)
+    )
   }
 
   /**
@@ -627,21 +629,23 @@ package ses {
     val TransientFailure              = "TransientFailure"
     val Failed                        = "Failed"
 
-    val values = IndexedSeq(
-      Success,
-      MessageRejected,
-      MailFromDomainNotVerified,
-      ConfigurationSetDoesNotExist,
-      TemplateDoesNotExist,
-      AccountSuspended,
-      AccountThrottled,
-      AccountDailyQuotaExceeded,
-      InvalidSendingPoolName,
-      AccountSendingPaused,
-      ConfigurationSetSendingPaused,
-      InvalidParameterValue,
-      TransientFailure,
-      Failed
+    val values = js.Object.freeze(
+      js.Array(
+        Success,
+        MessageRejected,
+        MailFromDomainNotVerified,
+        ConfigurationSetDoesNotExist,
+        TemplateDoesNotExist,
+        AccountSuspended,
+        AccountThrottled,
+        AccountDailyQuotaExceeded,
+        InvalidSendingPoolName,
+        AccountSendingPaused,
+        ConfigurationSetSendingPaused,
+        InvalidParameterValue,
+        TransientFailure,
+        Failed
+      )
     )
   }
 
@@ -758,7 +762,7 @@ package ses {
     val deliveryOptions   = "deliveryOptions"
     val reputationOptions = "reputationOptions"
 
-    val values = IndexedSeq(eventDestinations, trackingOptions, deliveryOptions, reputationOptions)
+    val values = js.Object.freeze(js.Array(eventDestinations, trackingOptions, deliveryOptions, reputationOptions))
   }
 
   /**
@@ -1080,7 +1084,7 @@ package ses {
     val Failed           = "Failed"
     val TemporaryFailure = "TemporaryFailure"
 
-    val values = IndexedSeq(Pending, Success, Failed, TemporaryFailure)
+    val values = js.Object.freeze(js.Array(Pending, Success, Failed, TemporaryFailure))
   }
 
   /**
@@ -1696,7 +1700,7 @@ package ses {
     val emailHeader = "emailHeader"
     val linkTag     = "linkTag"
 
-    val values = IndexedSeq(messageTag, emailHeader, linkTag)
+    val values = js.Object.freeze(js.Array(messageTag, emailHeader, linkTag))
   }
 
   object DsnActionEnum {
@@ -1706,7 +1710,7 @@ package ses {
     val relayed   = "relayed"
     val expanded  = "expanded"
 
-    val values = IndexedSeq(failed, delayed, delivered, relayed, expanded)
+    val values = js.Object.freeze(js.Array(failed, delayed, delivered, relayed, expanded))
   }
 
   /**
@@ -1757,7 +1761,7 @@ package ses {
     val click            = "click"
     val renderingFailure = "renderingFailure"
 
-    val values = IndexedSeq(send, reject, bounce, complaint, delivery, open, click, renderingFailure)
+    val values = js.Object.freeze(js.Array(send, reject, bounce, complaint, delivery, open, click, renderingFailure))
   }
 
   /**
@@ -2232,7 +2236,7 @@ package ses {
     val EmailAddress = "EmailAddress"
     val Domain       = "Domain"
 
-    val values = IndexedSeq(EmailAddress, Domain)
+    val values = js.Object.freeze(js.Array(EmailAddress, Domain))
   }
 
   /**
@@ -2262,7 +2266,7 @@ package ses {
     val Event           = "Event"
     val RequestResponse = "RequestResponse"
 
-    val values = IndexedSeq(Event, RequestResponse)
+    val values = js.Object.freeze(js.Array(Event, RequestResponse))
   }
 
   /**
@@ -2696,7 +2700,7 @@ package ses {
     val Complaint = "Complaint"
     val Delivery  = "Delivery"
 
-    val values = IndexedSeq(Bounce, Complaint, Delivery)
+    val values = js.Object.freeze(js.Array(Bounce, Complaint, Delivery))
   }
 
   /**
@@ -2863,7 +2867,7 @@ package ses {
     val Block = "Block"
     val Allow = "Allow"
 
-    val values = IndexedSeq(Block, Allow)
+    val values = js.Object.freeze(js.Array(Block, Allow))
   }
 
   /**
@@ -3114,7 +3118,7 @@ package ses {
     val `UTF-8` = "UTF-8"
     val Base64  = "Base64"
 
-    val values = IndexedSeq(`UTF-8`, Base64)
+    val values = js.Object.freeze(js.Array(`UTF-8`, Base64))
   }
 
   /**
@@ -3824,7 +3828,7 @@ package ses {
   object StopScopeEnum {
     val RuleSet = "RuleSet"
 
-    val values = IndexedSeq(RuleSet)
+    val values = js.Object.freeze(js.Array(RuleSet))
   }
 
   /**
@@ -3916,7 +3920,7 @@ package ses {
     val Require  = "Require"
     val Optional = "Optional"
 
-    val values = IndexedSeq(Require, Optional)
+    val values = js.Object.freeze(js.Array(Require, Optional))
   }
 
   /**
@@ -4187,7 +4191,7 @@ package ses {
     val TemporaryFailure = "TemporaryFailure"
     val NotStarted       = "NotStarted"
 
-    val values = IndexedSeq(Pending, Success, Failed, TemporaryFailure, NotStarted)
+    val values = js.Object.freeze(js.Array(Pending, Success, Failed, TemporaryFailure, NotStarted))
   }
 
   /**

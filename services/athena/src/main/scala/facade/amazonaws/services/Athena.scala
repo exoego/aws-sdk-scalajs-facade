@@ -244,7 +244,7 @@ package athena {
     val NULLABLE = "NULLABLE"
     val UNKNOWN  = "UNKNOWN"
 
-    val values = IndexedSeq(NOT_NULL, NULLABLE, UNKNOWN)
+    val values = js.Object.freeze(js.Array(NOT_NULL, NULLABLE, UNKNOWN))
   }
 
   @js.native
@@ -439,7 +439,7 @@ package athena {
     val SSE_KMS = "SSE_KMS"
     val CSE_KMS = "CSE_KMS"
 
-    val values = IndexedSeq(SSE_S3, SSE_KMS, CSE_KMS)
+    val values = js.Object.freeze(js.Array(SSE_S3, SSE_KMS, CSE_KMS))
   }
 
   @js.native
@@ -836,7 +836,7 @@ package athena {
     val FAILED    = "FAILED"
     val CANCELLED = "CANCELLED"
 
-    val values = IndexedSeq(QUEUED, RUNNING, SUCCEEDED, FAILED, CANCELLED)
+    val values = js.Object.freeze(js.Array(QUEUED, RUNNING, SUCCEEDED, FAILED, CANCELLED))
   }
 
   /**
@@ -1043,7 +1043,7 @@ package athena {
     val DML     = "DML"
     val UTILITY = "UTILITY"
 
-    val values = IndexedSeq(DDL, DML, UTILITY)
+    val values = js.Object.freeze(js.Array(DDL, DML, UTILITY))
   }
 
   @js.native
@@ -1355,7 +1355,7 @@ package athena {
     val ENABLED  = "ENABLED"
     val DISABLED = "DISABLED"
 
-    val values = IndexedSeq(ENABLED, DISABLED)
+    val values = js.Object.freeze(js.Array(ENABLED, DISABLED))
   }
 
   /**

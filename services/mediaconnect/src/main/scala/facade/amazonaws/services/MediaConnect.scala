@@ -183,7 +183,7 @@ package mediaconnect {
     val aes192 = "aes192"
     val aes256 = "aes256"
 
-    val values = IndexedSeq(aes128, aes192, aes256)
+    val values = js.Object.freeze(js.Array(aes128, aes192, aes256))
   }
 
   /**
@@ -499,7 +499,7 @@ package mediaconnect {
     val speke        = "speke"
     val `static-key` = "static-key"
 
-    val values = IndexedSeq(speke, `static-key`)
+    val values = js.Object.freeze(js.Array(speke, `static-key`))
   }
 
   @js.native
@@ -734,7 +734,7 @@ package mediaconnect {
     val rtp         = "rtp"
     val `zixi-pull` = "zixi-pull"
 
-    val values = IndexedSeq(`zixi-push`, `rtp-fec`, rtp, `zixi-pull`)
+    val values = js.Object.freeze(js.Array(`zixi-push`, `rtp-fec`, rtp, `zixi-pull`))
   }
 
   @js.native
@@ -906,7 +906,7 @@ package mediaconnect {
     val OWNED    = "OWNED"
     val ENTITLED = "ENTITLED"
 
-    val values = IndexedSeq(OWNED, ENTITLED)
+    val values = js.Object.freeze(js.Array(OWNED, ENTITLED))
   }
 
   @js.native
@@ -953,7 +953,7 @@ package mediaconnect {
     val STOPPING = "STOPPING"
     val ERROR    = "ERROR"
 
-    val values = IndexedSeq(STANDBY, ACTIVE, UPDATING, DELETING, STARTING, STOPPING, ERROR)
+    val values = js.Object.freeze(js.Array(STANDBY, ACTIVE, UPDATING, DELETING, STARTING, STOPPING, ERROR))
   }
 
   @js.native

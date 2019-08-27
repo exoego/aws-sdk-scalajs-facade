@@ -395,14 +395,14 @@ package dms {
     val mongodb_cr  = "mongodb_cr"
     val scram_sha_1 = "scram_sha_1"
 
-    val values = IndexedSeq(default, mongodb_cr, scram_sha_1)
+    val values = js.Object.freeze(js.Array(default, mongodb_cr, scram_sha_1))
   }
 
   object AuthTypeValueEnum {
     val no       = "no"
     val password = "password"
 
-    val values = IndexedSeq(no, password)
+    val values = js.Object.freeze(js.Array(no, password))
   }
 
   /**
@@ -472,7 +472,7 @@ package dms {
     val none = "none"
     val gzip = "gzip"
 
-    val values = IndexedSeq(none, gzip)
+    val values = js.Object.freeze(js.Array(none, gzip))
   }
 
   /**
@@ -865,7 +865,7 @@ package dms {
     val csv     = "csv"
     val parquet = "parquet"
 
-    val values = IndexedSeq(csv, parquet)
+    val values = js.Object.freeze(js.Array(csv, parquet))
   }
 
   @js.native
@@ -1915,7 +1915,7 @@ package dms {
     val `verify-ca`   = "verify-ca"
     val `verify-full` = "verify-full"
 
-    val values = IndexedSeq(none, require, `verify-ca`, `verify-full`)
+    val values = js.Object.freeze(js.Array(none, require, `verify-ca`, `verify-full`))
   }
 
   /**
@@ -1993,14 +1993,14 @@ package dms {
     val `plain-dictionary` = "plain-dictionary"
     val `rle-dictionary`   = "rle-dictionary"
 
-    val values = IndexedSeq(plain, `plain-dictionary`, `rle-dictionary`)
+    val values = js.Object.freeze(js.Array(plain, `plain-dictionary`, `rle-dictionary`))
   }
 
   object EncryptionModeValueEnum {
     val `sse-s3`  = "sse-s3"
     val `sse-kms` = "sse-kms"
 
-    val values = IndexedSeq(`sse-s3`, `sse-kms`)
+    val values = js.Object.freeze(js.Array(`sse-s3`, `sse-kms`))
   }
 
   /**
@@ -2312,7 +2312,7 @@ package dms {
   object MessageFormatValueEnum {
     val json = "json"
 
-    val values = IndexedSeq(json)
+    val values = js.Object.freeze(js.Array(json))
   }
 
   object MigrationTypeValueEnum {
@@ -2320,7 +2320,7 @@ package dms {
     val cdc                 = "cdc"
     val `full-load-and-cdc` = "full-load-and-cdc"
 
-    val values = IndexedSeq(`full-load`, cdc, `full-load-and-cdc`)
+    val values = js.Object.freeze(js.Array(`full-load`, cdc, `full-load-and-cdc`))
   }
 
   /**
@@ -2701,7 +2701,7 @@ package dms {
     val none = "none"
     val one  = "one"
 
-    val values = IndexedSeq(none, one)
+    val values = js.Object.freeze(js.Array(none, one))
   }
 
   /**
@@ -2750,7 +2750,7 @@ package dms {
     val `parquet-1-0` = "parquet-1-0"
     val `parquet-2-0` = "parquet-2-0"
 
-    val values = IndexedSeq(`parquet-1-0`, `parquet-2-0`)
+    val values = js.Object.freeze(js.Array(`parquet-1-0`, `parquet-2-0`))
   }
 
   /**
@@ -2989,20 +2989,20 @@ package dms {
     val failed     = "failed"
     val refreshing = "refreshing"
 
-    val values = IndexedSeq(successful, failed, refreshing)
+    val values = js.Object.freeze(js.Array(successful, failed, refreshing))
   }
 
   object ReleaseStatusValuesEnum {
     val beta = "beta"
 
-    val values = IndexedSeq(beta)
+    val values = js.Object.freeze(js.Array(beta))
   }
 
   object ReloadOptionValueEnum {
     val `data-reload`   = "data-reload"
     val `validate-only` = "validate-only"
 
-    val values = IndexedSeq(`data-reload`, `validate-only`)
+    val values = js.Object.freeze(js.Array(`data-reload`, `validate-only`))
   }
 
   @js.native
@@ -3085,7 +3085,7 @@ package dms {
     val source = "source"
     val target = "target"
 
-    val values = IndexedSeq(source, target)
+    val values = js.Object.freeze(js.Array(source, target))
   }
 
   /**
@@ -3506,7 +3506,7 @@ package dms {
   object SourceTypeEnum {
     val `replication-instance` = "replication-instance"
 
-    val values = IndexedSeq(`replication-instance`)
+    val values = js.Object.freeze(js.Array(`replication-instance`))
   }
 
   /**
@@ -3602,7 +3602,7 @@ package dms {
     val `resume-processing` = "resume-processing"
     val `reload-target`     = "reload-target"
 
-    val values = IndexedSeq(`start-replication`, `resume-processing`, `reload-target`)
+    val values = js.Object.freeze(js.Array(`start-replication`, `resume-processing`, `reload-target`))
   }
 
   /**

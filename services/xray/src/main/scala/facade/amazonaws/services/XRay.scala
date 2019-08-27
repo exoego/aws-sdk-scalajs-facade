@@ -525,14 +525,14 @@ package xray {
     val UPDATING = "UPDATING"
     val ACTIVE   = "ACTIVE"
 
-    val values = IndexedSeq(UPDATING, ACTIVE)
+    val values = js.Object.freeze(js.Array(UPDATING, ACTIVE))
   }
 
   object EncryptionTypeEnum {
     val NONE = "NONE"
     val KMS  = "KMS"
 
-    val values = IndexedSeq(NONE, KMS)
+    val values = js.Object.freeze(js.Array(NONE, KMS))
   }
 
   /**
@@ -1693,7 +1693,7 @@ package xray {
     val PartialScan = "PartialScan"
     val FixedRate   = "FixedRate"
 
-    val values = IndexedSeq(PartialScan, FixedRate)
+    val values = js.Object.freeze(js.Array(PartialScan, FixedRate))
   }
 
   /**
@@ -1898,7 +1898,7 @@ package xray {
     val TraceId = "TraceId"
     val Event   = "Event"
 
-    val values = IndexedSeq(TraceId, Event)
+    val values = js.Object.freeze(js.Array(TraceId, Event))
   }
 
   /**

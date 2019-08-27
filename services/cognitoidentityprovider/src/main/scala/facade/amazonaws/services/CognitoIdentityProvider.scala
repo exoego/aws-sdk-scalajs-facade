@@ -571,7 +571,7 @@ package cognitoidentityprovider {
     val MFA_REQUIRED      = "MFA_REQUIRED"
     val NO_ACTION         = "NO_ACTION"
 
-    val values = IndexedSeq(BLOCK, MFA_IF_CONFIGURED, MFA_REQUIRED, NO_ACTION)
+    val values = js.Object.freeze(js.Array(BLOCK, MFA_IF_CONFIGURED, MFA_REQUIRED, NO_ACTION))
   }
 
   /**
@@ -1737,7 +1737,7 @@ package cognitoidentityprovider {
     val AUDIT    = "AUDIT"
     val ENFORCED = "ENFORCED"
 
-    val values = IndexedSeq(OFF, AUDIT, ENFORCED)
+    val values = js.Object.freeze(js.Array(OFF, AUDIT, ENFORCED))
   }
 
   object AliasAttributeTypeEnum {
@@ -1745,7 +1745,7 @@ package cognitoidentityprovider {
     val email              = "email"
     val preferred_username = "preferred_username"
 
-    val values = IndexedSeq(phone_number, email, preferred_username)
+    val values = js.Object.freeze(js.Array(phone_number, email, preferred_username))
   }
 
   /**
@@ -1838,7 +1838,7 @@ package cognitoidentityprovider {
     val DateTime = "DateTime"
     val Boolean  = "Boolean"
 
-    val values = IndexedSeq(String, Number, DateTime, Boolean)
+    val values = js.Object.freeze(js.Array(String, Number, DateTime, Boolean))
   }
 
   /**
@@ -1911,8 +1911,9 @@ package cognitoidentityprovider {
     val ADMIN_NO_SRP_AUTH  = "ADMIN_NO_SRP_AUTH"
     val USER_PASSWORD_AUTH = "USER_PASSWORD_AUTH"
 
-    val values =
-      IndexedSeq(USER_SRP_AUTH, REFRESH_TOKEN_AUTH, REFRESH_TOKEN, CUSTOM_AUTH, ADMIN_NO_SRP_AUTH, USER_PASSWORD_AUTH)
+    val values = js.Object.freeze(
+      js.Array(USER_SRP_AUTH, REFRESH_TOKEN_AUTH, REFRESH_TOKEN, CUSTOM_AUTH, ADMIN_NO_SRP_AUTH, USER_PASSWORD_AUTH)
+    )
   }
 
   /**
@@ -1952,7 +1953,7 @@ package cognitoidentityprovider {
     val Password = "Password"
     val Mfa      = "Mfa"
 
-    val values = IndexedSeq(Password, Mfa)
+    val values = js.Object.freeze(js.Array(Password, Mfa))
   }
 
   object ChallengeNameTypeEnum {
@@ -1967,17 +1968,19 @@ package cognitoidentityprovider {
     val ADMIN_NO_SRP_AUTH        = "ADMIN_NO_SRP_AUTH"
     val NEW_PASSWORD_REQUIRED    = "NEW_PASSWORD_REQUIRED"
 
-    val values = IndexedSeq(
-      SMS_MFA,
-      SOFTWARE_TOKEN_MFA,
-      SELECT_MFA_TYPE,
-      MFA_SETUP,
-      PASSWORD_VERIFIER,
-      CUSTOM_CHALLENGE,
-      DEVICE_SRP_AUTH,
-      DEVICE_PASSWORD_VERIFIER,
-      ADMIN_NO_SRP_AUTH,
-      NEW_PASSWORD_REQUIRED
+    val values = js.Object.freeze(
+      js.Array(
+        SMS_MFA,
+        SOFTWARE_TOKEN_MFA,
+        SELECT_MFA_TYPE,
+        MFA_SETUP,
+        PASSWORD_VERIFIER,
+        CUSTOM_CHALLENGE,
+        DEVICE_SRP_AUTH,
+        DEVICE_PASSWORD_VERIFIER,
+        ADMIN_NO_SRP_AUTH,
+        NEW_PASSWORD_REQUIRED
+      )
     )
   }
 
@@ -1985,7 +1988,7 @@ package cognitoidentityprovider {
     val Success = "Success"
     val Failure = "Failure"
 
-    val values = IndexedSeq(Success, Failure)
+    val values = js.Object.freeze(js.Array(Success, Failure))
   }
 
   /**
@@ -2098,7 +2101,7 @@ package cognitoidentityprovider {
     val BLOCK     = "BLOCK"
     val NO_ACTION = "NO_ACTION"
 
-    val values = IndexedSeq(BLOCK, NO_ACTION)
+    val values = js.Object.freeze(js.Array(BLOCK, NO_ACTION))
   }
 
   /**
@@ -2725,7 +2728,7 @@ package cognitoidentityprovider {
     val CONFIRM_WITH_LINK = "CONFIRM_WITH_LINK"
     val CONFIRM_WITH_CODE = "CONFIRM_WITH_CODE"
 
-    val values = IndexedSeq(CONFIRM_WITH_LINK, CONFIRM_WITH_CODE)
+    val values = js.Object.freeze(js.Array(CONFIRM_WITH_LINK, CONFIRM_WITH_CODE))
   }
 
   @js.native
@@ -2925,7 +2928,7 @@ package cognitoidentityprovider {
     val SMS   = "SMS"
     val EMAIL = "EMAIL"
 
-    val values = IndexedSeq(SMS, EMAIL)
+    val values = js.Object.freeze(js.Array(SMS, EMAIL))
   }
 
   @js.native
@@ -3220,7 +3223,7 @@ package cognitoidentityprovider {
     val remembered     = "remembered"
     val not_remembered = "not_remembered"
 
-    val values = IndexedSeq(remembered, not_remembered)
+    val values = js.Object.freeze(js.Array(remembered, not_remembered))
   }
 
   /**
@@ -3320,7 +3323,7 @@ package cognitoidentityprovider {
     val ACTIVE   = "ACTIVE"
     val FAILED   = "FAILED"
 
-    val values = IndexedSeq(CREATING, DELETING, UPDATING, ACTIVE, FAILED)
+    val values = js.Object.freeze(js.Array(CREATING, DELETING, UPDATING, ACTIVE, FAILED))
   }
 
   /**
@@ -3351,7 +3354,7 @@ package cognitoidentityprovider {
     val COGNITO_DEFAULT = "COGNITO_DEFAULT"
     val DEVELOPER       = "DEVELOPER"
 
-    val values = IndexedSeq(COGNITO_DEFAULT, DEVELOPER)
+    val values = js.Object.freeze(js.Array(COGNITO_DEFAULT, DEVELOPER))
   }
 
   /**
@@ -3415,14 +3418,14 @@ package cognitoidentityprovider {
     val PASSWORD_CHANGE = "PASSWORD_CHANGE"
     val SIGN_UP         = "SIGN_UP"
 
-    val values = IndexedSeq(SIGN_IN, PASSWORD_CHANGE, SIGN_UP)
+    val values = js.Object.freeze(js.Array(SIGN_IN, PASSWORD_CHANGE, SIGN_UP))
   }
 
   object EventResponseTypeEnum {
     val Success = "Success"
     val Failure = "Failure"
 
-    val values = IndexedSeq(Success, Failure)
+    val values = js.Object.freeze(js.Array(Success, Failure))
   }
 
   /**
@@ -3451,7 +3454,7 @@ package cognitoidentityprovider {
     val SignUp         = "SignUp"
     val ForgotPassword = "ForgotPassword"
 
-    val values = IndexedSeq(SignIn, SignUp, ForgotPassword)
+    val values = js.Object.freeze(js.Array(SignIn, SignUp, ForgotPassword))
   }
 
   object ExplicitAuthFlowsTypeEnum {
@@ -3459,14 +3462,14 @@ package cognitoidentityprovider {
     val CUSTOM_AUTH_FLOW_ONLY = "CUSTOM_AUTH_FLOW_ONLY"
     val USER_PASSWORD_AUTH    = "USER_PASSWORD_AUTH"
 
-    val values = IndexedSeq(ADMIN_NO_SRP_AUTH, CUSTOM_AUTH_FLOW_ONLY, USER_PASSWORD_AUTH)
+    val values = js.Object.freeze(js.Array(ADMIN_NO_SRP_AUTH, CUSTOM_AUTH_FLOW_ONLY, USER_PASSWORD_AUTH))
   }
 
   object FeedbackValueTypeEnum {
     val Valid   = "Valid"
     val Invalid = "Invalid"
 
-    val values = IndexedSeq(Valid, Invalid)
+    val values = js.Object.freeze(js.Array(Valid, Invalid))
   }
 
   /**
@@ -4044,7 +4047,7 @@ package cognitoidentityprovider {
     val LoginWithAmazon = "LoginWithAmazon"
     val OIDC            = "OIDC"
 
-    val values = IndexedSeq(SAML, Facebook, Google, LoginWithAmazon, OIDC)
+    val values = js.Object.freeze(js.Array(SAML, Facebook, Google, LoginWithAmazon, OIDC))
   }
 
   /**
@@ -4620,7 +4623,7 @@ package cognitoidentityprovider {
     val RESEND   = "RESEND"
     val SUPPRESS = "SUPPRESS"
 
-    val values = IndexedSeq(RESEND, SUPPRESS)
+    val values = js.Object.freeze(js.Array(RESEND, SUPPRESS))
   }
 
   /**
@@ -4755,7 +4758,7 @@ package cognitoidentityprovider {
     val `implicit`         = "implicit"
     val client_credentials = "client_credentials"
 
-    val values = IndexedSeq(code, `implicit`, client_credentials)
+    val values = js.Object.freeze(js.Array(code, `implicit`, client_credentials))
   }
 
   /**
@@ -5048,7 +5051,7 @@ package cognitoidentityprovider {
     val AccountTakeover = "AccountTakeover"
     val Block           = "Block"
 
-    val values = IndexedSeq(NoRisk, AccountTakeover, Block)
+    val values = js.Object.freeze(js.Array(NoRisk, AccountTakeover, Block))
   }
 
   /**
@@ -5077,7 +5080,7 @@ package cognitoidentityprovider {
     val Medium = "Medium"
     val High   = "High"
 
-    val values = IndexedSeq(Low, Medium, High)
+    val values = js.Object.freeze(js.Array(Low, Medium, High))
   }
 
   /**
@@ -5549,7 +5552,7 @@ package cognitoidentityprovider {
     val Enabled  = "Enabled"
     val Disabled = "Disabled"
 
-    val values = IndexedSeq(Enabled, Disabled)
+    val values = js.Object.freeze(js.Array(Enabled, Disabled))
   }
 
   /**
@@ -6204,7 +6207,7 @@ package cognitoidentityprovider {
     val Failed     = "Failed"
     val Succeeded  = "Succeeded"
 
-    val values = IndexedSeq(Created, Pending, InProgress, Stopping, Expired, Stopped, Failed, Succeeded)
+    val values = js.Object.freeze(js.Array(Created, Pending, InProgress, Stopping, Expired, Stopped, Failed, Succeeded))
   }
 
   /**
@@ -6414,7 +6417,7 @@ package cognitoidentityprovider {
     val ON       = "ON"
     val OPTIONAL = "OPTIONAL"
 
-    val values = IndexedSeq(OFF, ON, OPTIONAL)
+    val values = js.Object.freeze(js.Array(OFF, ON, OPTIONAL))
   }
 
   /**
@@ -6546,8 +6549,9 @@ package cognitoidentityprovider {
     val RESET_REQUIRED        = "RESET_REQUIRED"
     val FORCE_CHANGE_PASSWORD = "FORCE_CHANGE_PASSWORD"
 
-    val values =
-      IndexedSeq(UNCONFIRMED, CONFIRMED, ARCHIVED, COMPROMISED, UNKNOWN, RESET_REQUIRED, FORCE_CHANGE_PASSWORD)
+    val values = js.Object.freeze(
+      js.Array(UNCONFIRMED, CONFIRMED, ARCHIVED, COMPROMISED, UNKNOWN, RESET_REQUIRED, FORCE_CHANGE_PASSWORD)
+    )
   }
 
   /**
@@ -6590,7 +6594,7 @@ package cognitoidentityprovider {
     val phone_number = "phone_number"
     val email        = "email"
 
-    val values = IndexedSeq(phone_number, email)
+    val values = js.Object.freeze(js.Array(phone_number, email))
   }
 
   /**
@@ -6630,7 +6634,7 @@ package cognitoidentityprovider {
     val phone_number = "phone_number"
     val email        = "email"
 
-    val values = IndexedSeq(phone_number, email)
+    val values = js.Object.freeze(js.Array(phone_number, email))
   }
 
   @js.native
@@ -6681,7 +6685,7 @@ package cognitoidentityprovider {
     val SUCCESS = "SUCCESS"
     val ERROR   = "ERROR"
 
-    val values = IndexedSeq(SUCCESS, ERROR)
+    val values = js.Object.freeze(js.Array(SUCCESS, ERROR))
   }
 
   /**

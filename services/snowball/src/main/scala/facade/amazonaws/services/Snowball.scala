@@ -301,7 +301,7 @@ package snowball {
     val Complete       = "Complete"
     val Cancelled      = "Cancelled"
 
-    val values = IndexedSeq(AwaitingQuorum, Pending, InUse, Complete, Cancelled)
+    val values = js.Object.freeze(js.Array(AwaitingQuorum, Pending, InUse, Complete, Cancelled))
   }
 
   /**
@@ -944,20 +944,22 @@ package snowball {
     val Listing                = "Listing"
     val Pending                = "Pending"
 
-    val values = IndexedSeq(
-      New,
-      PreparingAppliance,
-      PreparingShipment,
-      InTransitToCustomer,
-      WithCustomer,
-      InTransitToAWS,
-      WithAWSSortingFacility,
-      WithAWS,
-      InProgress,
-      Complete,
-      Cancelled,
-      Listing,
-      Pending
+    val values = js.Object.freeze(
+      js.Array(
+        New,
+        PreparingAppliance,
+        PreparingShipment,
+        InTransitToCustomer,
+        WithCustomer,
+        InTransitToAWS,
+        WithAWSSortingFacility,
+        WithAWS,
+        InProgress,
+        Complete,
+        Cancelled,
+        Listing,
+        Pending
+      )
     )
   }
 
@@ -966,7 +968,7 @@ package snowball {
     val EXPORT    = "EXPORT"
     val LOCAL_USE = "LOCAL_USE"
 
-    val values = IndexedSeq(IMPORT, EXPORT, LOCAL_USE)
+    val values = js.Object.freeze(js.Array(IMPORT, EXPORT, LOCAL_USE))
   }
 
   /**
@@ -1257,7 +1259,7 @@ package snowball {
     val EXPRESS    = "EXPRESS"
     val STANDARD   = "STANDARD"
 
-    val values = IndexedSeq(SECOND_DAY, NEXT_DAY, EXPRESS, STANDARD)
+    val values = js.Object.freeze(js.Array(SECOND_DAY, NEXT_DAY, EXPRESS, STANDARD))
   }
 
   object SnowballCapacityEnum {
@@ -1267,7 +1269,7 @@ package snowball {
     val T42          = "T42"
     val NoPreference = "NoPreference"
 
-    val values = IndexedSeq(T50, T80, T100, T42, NoPreference)
+    val values = js.Object.freeze(js.Array(T50, T80, T100, T42, NoPreference))
   }
 
   object SnowballTypeEnum {
@@ -1276,7 +1278,7 @@ package snowball {
     val EDGE_C   = "EDGE_C"
     val EDGE_CG  = "EDGE_CG"
 
-    val values = IndexedSeq(STANDARD, EDGE, EDGE_C, EDGE_CG)
+    val values = js.Object.freeze(js.Array(STANDARD, EDGE, EDGE_C, EDGE_CG))
   }
 
   @js.native

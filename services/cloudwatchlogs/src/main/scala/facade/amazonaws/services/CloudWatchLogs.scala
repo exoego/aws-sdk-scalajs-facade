@@ -874,7 +874,7 @@ package cloudwatchlogs {
     val Random      = "Random"
     val ByLogStream = "ByLogStream"
 
-    val values = IndexedSeq(Random, ByLogStream)
+    val values = js.Object.freeze(js.Array(Random, ByLogStream))
   }
 
   /**
@@ -969,7 +969,7 @@ package cloudwatchlogs {
     val PENDING_CANCEL = "PENDING_CANCEL"
     val RUNNING        = "RUNNING"
 
-    val values = IndexedSeq(CANCELLED, COMPLETED, FAILED, PENDING, PENDING_CANCEL, RUNNING)
+    val values = js.Object.freeze(js.Array(CANCELLED, COMPLETED, FAILED, PENDING, PENDING_CANCEL, RUNNING))
   }
 
   @js.native
@@ -1463,7 +1463,7 @@ package cloudwatchlogs {
     val LogStreamName = "LogStreamName"
     val LastEventTime = "LastEventTime"
 
-    val values = IndexedSeq(LogStreamName, LastEventTime)
+    val values = js.Object.freeze(js.Array(LogStreamName, LastEventTime))
   }
 
   /**
@@ -1764,7 +1764,7 @@ package cloudwatchlogs {
     val Failed    = "Failed"
     val Cancelled = "Cancelled"
 
-    val values = IndexedSeq(Scheduled, Running, Complete, Failed, Cancelled)
+    val values = js.Object.freeze(js.Array(Scheduled, Running, Complete, Failed, Cancelled))
   }
 
   /**

@@ -139,14 +139,14 @@ package costexplorer {
     val PAYER  = "PAYER"
     val LINKED = "LINKED"
 
-    val values = IndexedSeq(PAYER, LINKED)
+    val values = js.Object.freeze(js.Array(PAYER, LINKED))
   }
 
   object ContextEnum {
     val COST_AND_USAGE = "COST_AND_USAGE"
     val RESERVATIONS   = "RESERVATIONS"
 
-    val values = IndexedSeq(COST_AND_USAGE, RESERVATIONS)
+    val values = js.Object.freeze(js.Array(COST_AND_USAGE, RESERVATIONS))
   }
 
   /**
@@ -368,30 +368,32 @@ package costexplorer {
     val RESERVATION_ID       = "RESERVATION_ID"
     val RIGHTSIZING_TYPE     = "RIGHTSIZING_TYPE"
 
-    val values = IndexedSeq(
-      AZ,
-      INSTANCE_TYPE,
-      LINKED_ACCOUNT,
-      OPERATION,
-      PURCHASE_TYPE,
-      REGION,
-      SERVICE,
-      USAGE_TYPE,
-      USAGE_TYPE_GROUP,
-      RECORD_TYPE,
-      OPERATING_SYSTEM,
-      TENANCY,
-      SCOPE,
-      PLATFORM,
-      SUBSCRIPTION_ID,
-      LEGAL_ENTITY_NAME,
-      DEPLOYMENT_OPTION,
-      DATABASE_ENGINE,
-      CACHE_ENGINE,
-      INSTANCE_TYPE_FAMILY,
-      BILLING_ENTITY,
-      RESERVATION_ID,
-      RIGHTSIZING_TYPE
+    val values = js.Object.freeze(
+      js.Array(
+        AZ,
+        INSTANCE_TYPE,
+        LINKED_ACCOUNT,
+        OPERATION,
+        PURCHASE_TYPE,
+        REGION,
+        SERVICE,
+        USAGE_TYPE,
+        USAGE_TYPE_GROUP,
+        RECORD_TYPE,
+        OPERATING_SYSTEM,
+        TENANCY,
+        SCOPE,
+        PLATFORM,
+        SUBSCRIPTION_ID,
+        LEGAL_ENTITY_NAME,
+        DEPLOYMENT_OPTION,
+        DATABASE_ENGINE,
+        CACHE_ENGINE,
+        INSTANCE_TYPE_FAMILY,
+        BILLING_ENTITY,
+        RESERVATION_ID,
+        RIGHTSIZING_TYPE
+      )
     )
   }
 
@@ -1178,7 +1180,7 @@ package costexplorer {
     val MONTHLY = "MONTHLY"
     val HOURLY  = "HOURLY"
 
-    val values = IndexedSeq(DAILY, MONTHLY, HOURLY)
+    val values = js.Object.freeze(js.Array(DAILY, MONTHLY, HOURLY))
   }
 
   /**
@@ -1227,7 +1229,7 @@ package costexplorer {
     val DIMENSION = "DIMENSION"
     val TAG       = "TAG"
 
-    val values = IndexedSeq(DIMENSION, TAG)
+    val values = js.Object.freeze(js.Array(DIMENSION, TAG))
   }
 
   /**
@@ -1265,7 +1267,7 @@ package costexplorer {
     val THIRTY_DAYS = "THIRTY_DAYS"
     val SIXTY_DAYS  = "SIXTY_DAYS"
 
-    val values = IndexedSeq(SEVEN_DAYS, THIRTY_DAYS, SIXTY_DAYS)
+    val values = js.Object.freeze(js.Array(SEVEN_DAYS, THIRTY_DAYS, SIXTY_DAYS))
   }
 
   object MetricEnum {
@@ -1277,14 +1279,16 @@ package costexplorer {
     val USAGE_QUANTITY          = "USAGE_QUANTITY"
     val NORMALIZED_USAGE_AMOUNT = "NORMALIZED_USAGE_AMOUNT"
 
-    val values = IndexedSeq(
-      BLENDED_COST,
-      UNBLENDED_COST,
-      AMORTIZED_COST,
-      NET_UNBLENDED_COST,
-      NET_AMORTIZED_COST,
-      USAGE_QUANTITY,
-      NORMALIZED_USAGE_AMOUNT
+    val values = js.Object.freeze(
+      js.Array(
+        BLENDED_COST,
+        UNBLENDED_COST,
+        AMORTIZED_COST,
+        NET_UNBLENDED_COST,
+        NET_AMORTIZED_COST,
+        USAGE_QUANTITY,
+        NORMALIZED_USAGE_AMOUNT
+      )
     )
   }
 
@@ -1331,7 +1335,7 @@ package costexplorer {
     val STANDARD    = "STANDARD"
     val CONVERTIBLE = "CONVERTIBLE"
 
-    val values = IndexedSeq(STANDARD, CONVERTIBLE)
+    val values = js.Object.freeze(js.Array(STANDARD, CONVERTIBLE))
   }
 
   object PaymentOptionEnum {
@@ -1342,8 +1346,9 @@ package costexplorer {
     val MEDIUM_UTILIZATION = "MEDIUM_UTILIZATION"
     val HEAVY_UTILIZATION  = "HEAVY_UTILIZATION"
 
-    val values =
-      IndexedSeq(NO_UPFRONT, PARTIAL_UPFRONT, ALL_UPFRONT, LIGHT_UTILIZATION, MEDIUM_UTILIZATION, HEAVY_UTILIZATION)
+    val values = js.Object.freeze(
+      js.Array(NO_UPFRONT, PARTIAL_UPFRONT, ALL_UPFRONT, LIGHT_UTILIZATION, MEDIUM_UTILIZATION, HEAVY_UTILIZATION)
+    )
   }
 
   /**
@@ -1860,7 +1865,7 @@ package costexplorer {
     val TERMINATE = "TERMINATE"
     val MODIFY    = "MODIFY"
 
-    val values = IndexedSeq(TERMINATE, MODIFY)
+    val values = js.Object.freeze(js.Array(TERMINATE, MODIFY))
   }
 
   /**
@@ -1939,7 +1944,7 @@ package costexplorer {
     val ONE_YEAR    = "ONE_YEAR"
     val THREE_YEARS = "THREE_YEARS"
 
-    val values = IndexedSeq(ONE_YEAR, THREE_YEARS)
+    val values = js.Object.freeze(js.Array(ONE_YEAR, THREE_YEARS))
   }
 
   /**

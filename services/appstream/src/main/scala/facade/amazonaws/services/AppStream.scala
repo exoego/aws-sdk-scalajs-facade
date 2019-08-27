@@ -293,7 +293,7 @@ package appstream {
   object AccessEndpointTypeEnum {
     val STREAMING = "STREAMING"
 
-    val values = IndexedSeq(STREAMING)
+    val values = js.Object.freeze(js.Array(STREAMING))
   }
 
   object ActionEnum {
@@ -303,12 +303,14 @@ package appstream {
     val FILE_DOWNLOAD                    = "FILE_DOWNLOAD"
     val PRINTING_TO_LOCAL_DEVICE         = "PRINTING_TO_LOCAL_DEVICE"
 
-    val values = IndexedSeq(
-      CLIPBOARD_COPY_FROM_LOCAL_DEVICE,
-      CLIPBOARD_COPY_TO_LOCAL_DEVICE,
-      FILE_UPLOAD,
-      FILE_DOWNLOAD,
-      PRINTING_TO_LOCAL_DEVICE
+    val values = js.Object.freeze(
+      js.Array(
+        CLIPBOARD_COPY_FROM_LOCAL_DEVICE,
+        CLIPBOARD_COPY_TO_LOCAL_DEVICE,
+        FILE_UPLOAD,
+        FILE_DOWNLOAD,
+        PRINTING_TO_LOCAL_DEVICE
+      )
     )
   }
 
@@ -432,7 +434,7 @@ package appstream {
     val SAML     = "SAML"
     val USERPOOL = "USERPOOL"
 
-    val values = IndexedSeq(API, SAML, USERPOOL)
+    val values = js.Object.freeze(js.Array(API, SAML, USERPOOL))
   }
 
   @js.native
@@ -1899,7 +1901,7 @@ package appstream {
     val VPC_CONFIGURATION_SECURITY_GROUP_IDS = "VPC_CONFIGURATION_SECURITY_GROUP_IDS"
     val DOMAIN_JOIN_INFO                     = "DOMAIN_JOIN_INFO"
 
-    val values = IndexedSeq(VPC_CONFIGURATION, VPC_CONFIGURATION_SECURITY_GROUP_IDS, DOMAIN_JOIN_INFO)
+    val values = js.Object.freeze(js.Array(VPC_CONFIGURATION, VPC_CONFIGURATION_SECURITY_GROUP_IDS, DOMAIN_JOIN_INFO))
   }
 
   /**
@@ -1953,34 +1955,36 @@ package appstream {
     val DOMAIN_JOIN_NERR_PASSWORD_EXPIRED                   = "DOMAIN_JOIN_NERR_PASSWORD_EXPIRED"
     val DOMAIN_JOIN_INTERNAL_SERVICE_ERROR                  = "DOMAIN_JOIN_INTERNAL_SERVICE_ERROR"
 
-    val values = IndexedSeq(
-      IAM_SERVICE_ROLE_MISSING_ENI_DESCRIBE_ACTION,
-      IAM_SERVICE_ROLE_MISSING_ENI_CREATE_ACTION,
-      IAM_SERVICE_ROLE_MISSING_ENI_DELETE_ACTION,
-      NETWORK_INTERFACE_LIMIT_EXCEEDED,
-      INTERNAL_SERVICE_ERROR,
-      IAM_SERVICE_ROLE_IS_MISSING,
-      STS_DISABLED_IN_REGION,
-      SUBNET_HAS_INSUFFICIENT_IP_ADDRESSES,
-      IAM_SERVICE_ROLE_MISSING_DESCRIBE_SUBNET_ACTION,
-      SUBNET_NOT_FOUND,
-      IMAGE_NOT_FOUND,
-      INVALID_SUBNET_CONFIGURATION,
-      SECURITY_GROUPS_NOT_FOUND,
-      IGW_NOT_ATTACHED,
-      IAM_SERVICE_ROLE_MISSING_DESCRIBE_SECURITY_GROUPS_ACTION,
-      DOMAIN_JOIN_ERROR_FILE_NOT_FOUND,
-      DOMAIN_JOIN_ERROR_ACCESS_DENIED,
-      DOMAIN_JOIN_ERROR_LOGON_FAILURE,
-      DOMAIN_JOIN_ERROR_INVALID_PARAMETER,
-      DOMAIN_JOIN_ERROR_MORE_DATA,
-      DOMAIN_JOIN_ERROR_NO_SUCH_DOMAIN,
-      DOMAIN_JOIN_ERROR_NOT_SUPPORTED,
-      DOMAIN_JOIN_NERR_INVALID_WORKGROUP_NAME,
-      DOMAIN_JOIN_NERR_WORKSTATION_NOT_STARTED,
-      DOMAIN_JOIN_ERROR_DS_MACHINE_ACCOUNT_QUOTA_EXCEEDED,
-      DOMAIN_JOIN_NERR_PASSWORD_EXPIRED,
-      DOMAIN_JOIN_INTERNAL_SERVICE_ERROR
+    val values = js.Object.freeze(
+      js.Array(
+        IAM_SERVICE_ROLE_MISSING_ENI_DESCRIBE_ACTION,
+        IAM_SERVICE_ROLE_MISSING_ENI_CREATE_ACTION,
+        IAM_SERVICE_ROLE_MISSING_ENI_DELETE_ACTION,
+        NETWORK_INTERFACE_LIMIT_EXCEEDED,
+        INTERNAL_SERVICE_ERROR,
+        IAM_SERVICE_ROLE_IS_MISSING,
+        STS_DISABLED_IN_REGION,
+        SUBNET_HAS_INSUFFICIENT_IP_ADDRESSES,
+        IAM_SERVICE_ROLE_MISSING_DESCRIBE_SUBNET_ACTION,
+        SUBNET_NOT_FOUND,
+        IMAGE_NOT_FOUND,
+        INVALID_SUBNET_CONFIGURATION,
+        SECURITY_GROUPS_NOT_FOUND,
+        IGW_NOT_ATTACHED,
+        IAM_SERVICE_ROLE_MISSING_DESCRIBE_SECURITY_GROUPS_ACTION,
+        DOMAIN_JOIN_ERROR_FILE_NOT_FOUND,
+        DOMAIN_JOIN_ERROR_ACCESS_DENIED,
+        DOMAIN_JOIN_ERROR_LOGON_FAILURE,
+        DOMAIN_JOIN_ERROR_INVALID_PARAMETER,
+        DOMAIN_JOIN_ERROR_MORE_DATA,
+        DOMAIN_JOIN_ERROR_NO_SUCH_DOMAIN,
+        DOMAIN_JOIN_ERROR_NOT_SUPPORTED,
+        DOMAIN_JOIN_NERR_INVALID_WORKGROUP_NAME,
+        DOMAIN_JOIN_NERR_WORKSTATION_NOT_STARTED,
+        DOMAIN_JOIN_ERROR_DS_MACHINE_ACCOUNT_QUOTA_EXCEEDED,
+        DOMAIN_JOIN_NERR_PASSWORD_EXPIRED,
+        DOMAIN_JOIN_INTERNAL_SERVICE_ERROR
+      )
     )
   }
 
@@ -1990,14 +1994,14 @@ package appstream {
     val STOPPING = "STOPPING"
     val STOPPED  = "STOPPED"
 
-    val values = IndexedSeq(STARTING, RUNNING, STOPPING, STOPPED)
+    val values = js.Object.freeze(js.Array(STARTING, RUNNING, STOPPING, STOPPED))
   }
 
   object FleetTypeEnum {
     val ALWAYS_ON = "ALWAYS_ON"
     val ON_DEMAND = "ON_DEMAND"
 
-    val values = IndexedSeq(ALWAYS_ON, ON_DEMAND)
+    val values = js.Object.freeze(js.Array(ALWAYS_ON, ON_DEMAND))
   }
 
   /**
@@ -2144,8 +2148,9 @@ package appstream {
     val DELETING       = "DELETING"
     val FAILED         = "FAILED"
 
-    val values =
-      IndexedSeq(PENDING, UPDATING_AGENT, RUNNING, STOPPING, STOPPED, REBOOTING, SNAPSHOTTING, DELETING, FAILED)
+    val values = js.Object.freeze(
+      js.Array(PENDING, UPDATING_AGENT, RUNNING, STOPPING, STOPPED, REBOOTING, SNAPSHOTTING, DELETING, FAILED)
+    )
   }
 
   /**
@@ -2173,7 +2178,7 @@ package appstream {
     val INTERNAL_ERROR    = "INTERNAL_ERROR"
     val IMAGE_UNAVAILABLE = "IMAGE_UNAVAILABLE"
 
-    val values = IndexedSeq(INTERNAL_ERROR, IMAGE_UNAVAILABLE)
+    val values = js.Object.freeze(js.Array(INTERNAL_ERROR, IMAGE_UNAVAILABLE))
   }
 
   /**
@@ -2204,7 +2209,7 @@ package appstream {
     val COPYING   = "COPYING"
     val DELETING  = "DELETING"
 
-    val values = IndexedSeq(PENDING, AVAILABLE, FAILED, COPYING, DELETING)
+    val values = js.Object.freeze(js.Array(PENDING, AVAILABLE, FAILED, COPYING, DELETING))
   }
 
   /**
@@ -2233,7 +2238,7 @@ package appstream {
     val IMAGE_BUILDER_NOT_AVAILABLE = "IMAGE_BUILDER_NOT_AVAILABLE"
     val IMAGE_COPY_FAILURE          = "IMAGE_COPY_FAILURE"
 
-    val values = IndexedSeq(INTERNAL_ERROR, IMAGE_BUILDER_NOT_AVAILABLE, IMAGE_COPY_FAILURE)
+    val values = js.Object.freeze(js.Array(INTERNAL_ERROR, IMAGE_BUILDER_NOT_AVAILABLE, IMAGE_COPY_FAILURE))
   }
 
   /**
@@ -2369,7 +2374,7 @@ package appstream {
     val SUPPRESS = "SUPPRESS"
     val RESEND   = "RESEND"
 
-    val values = IndexedSeq(SUPPRESS, RESEND)
+    val values = js.Object.freeze(js.Array(SUPPRESS, RESEND))
   }
 
   /**
@@ -2397,7 +2402,7 @@ package appstream {
     val ENABLED  = "ENABLED"
     val DISABLED = "DISABLED"
 
-    val values = IndexedSeq(ENABLED, DISABLED)
+    val values = js.Object.freeze(js.Array(ENABLED, DISABLED))
   }
 
   object PlatformTypeEnum {
@@ -2405,7 +2410,7 @@ package appstream {
     val WINDOWS_SERVER_2016 = "WINDOWS_SERVER_2016"
     val WINDOWS_SERVER_2019 = "WINDOWS_SERVER_2019"
 
-    val values = IndexedSeq(WINDOWS, WINDOWS_SERVER_2016, WINDOWS_SERVER_2019)
+    val values = js.Object.freeze(js.Array(WINDOWS, WINDOWS_SERVER_2016, WINDOWS_SERVER_2019))
   }
 
   /**
@@ -2506,7 +2511,7 @@ package appstream {
     val CONNECTED     = "CONNECTED"
     val NOT_CONNECTED = "NOT_CONNECTED"
 
-    val values = IndexedSeq(CONNECTED, NOT_CONNECTED)
+    val values = js.Object.freeze(js.Array(CONNECTED, NOT_CONNECTED))
   }
 
   /**
@@ -2517,7 +2522,7 @@ package appstream {
     val PENDING = "PENDING"
     val EXPIRED = "EXPIRED"
 
-    val values = IndexedSeq(ACTIVE, PENDING, EXPIRED)
+    val values = js.Object.freeze(js.Array(ACTIVE, PENDING, EXPIRED))
   }
 
   /**
@@ -2607,16 +2612,18 @@ package appstream {
     val USER_SETTINGS                  = "USER_SETTINGS"
     val ACCESS_ENDPOINTS               = "ACCESS_ENDPOINTS"
 
-    val values = IndexedSeq(
-      STORAGE_CONNECTORS,
-      STORAGE_CONNECTOR_HOMEFOLDERS,
-      STORAGE_CONNECTOR_GOOGLE_DRIVE,
-      STORAGE_CONNECTOR_ONE_DRIVE,
-      REDIRECT_URL,
-      FEEDBACK_URL,
-      THEME_NAME,
-      USER_SETTINGS,
-      ACCESS_ENDPOINTS
+    val values = js.Object.freeze(
+      js.Array(
+        STORAGE_CONNECTORS,
+        STORAGE_CONNECTOR_HOMEFOLDERS,
+        STORAGE_CONNECTOR_GOOGLE_DRIVE,
+        STORAGE_CONNECTOR_ONE_DRIVE,
+        REDIRECT_URL,
+        FEEDBACK_URL,
+        THEME_NAME,
+        USER_SETTINGS,
+        ACCESS_ENDPOINTS
+      )
     )
   }
 
@@ -2645,7 +2652,7 @@ package appstream {
     val STORAGE_CONNECTOR_ERROR = "STORAGE_CONNECTOR_ERROR"
     val INTERNAL_SERVICE_ERROR  = "INTERNAL_SERVICE_ERROR"
 
-    val values = IndexedSeq(STORAGE_CONNECTOR_ERROR, INTERNAL_SERVICE_ERROR)
+    val values = js.Object.freeze(js.Array(STORAGE_CONNECTOR_ERROR, INTERNAL_SERVICE_ERROR))
   }
 
   @js.native
@@ -2807,7 +2814,7 @@ package appstream {
     val GOOGLE_DRIVE = "GOOGLE_DRIVE"
     val ONE_DRIVE    = "ONE_DRIVE"
 
-    val values = IndexedSeq(HOMEFOLDERS, GOOGLE_DRIVE, ONE_DRIVE)
+    val values = js.Object.freeze(js.Array(HOMEFOLDERS, GOOGLE_DRIVE, ONE_DRIVE))
   }
 
   @js.native
@@ -3090,13 +3097,13 @@ package appstream {
     val ACCESS_DENIED          = "ACCESS_DENIED"
     val INTERNAL_SERVICE_ERROR = "INTERNAL_SERVICE_ERROR"
 
-    val values = IndexedSeq(RESOURCE_NOT_FOUND, ACCESS_DENIED, INTERNAL_SERVICE_ERROR)
+    val values = js.Object.freeze(js.Array(RESOURCE_NOT_FOUND, ACCESS_DENIED, INTERNAL_SERVICE_ERROR))
   }
 
   object UsageReportScheduleEnum {
     val DAILY = "DAILY"
 
-    val values = IndexedSeq(DAILY)
+    val values = js.Object.freeze(js.Array(DAILY))
   }
 
   /**
@@ -3248,7 +3255,7 @@ package appstream {
     val USER_NAME_NOT_FOUND = "USER_NAME_NOT_FOUND"
     val INTERNAL_ERROR      = "INTERNAL_ERROR"
 
-    val values = IndexedSeq(STACK_NOT_FOUND, USER_NAME_NOT_FOUND, INTERNAL_ERROR)
+    val values = js.Object.freeze(js.Array(STACK_NOT_FOUND, USER_NAME_NOT_FOUND, INTERNAL_ERROR))
   }
 
   object VisibilityTypeEnum {
@@ -3256,7 +3263,7 @@ package appstream {
     val PRIVATE = "PRIVATE"
     val SHARED  = "SHARED"
 
-    val values = IndexedSeq(PUBLIC, PRIVATE, SHARED)
+    val values = js.Object.freeze(js.Array(PUBLIC, PRIVATE, SHARED))
   }
 
   /**

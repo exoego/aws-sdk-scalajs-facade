@@ -382,7 +382,7 @@ package workspaces {
     val POWERPRO    = "POWERPRO"
     val GRAPHICSPRO = "GRAPHICSPRO"
 
-    val values = IndexedSeq(VALUE, STANDARD, PERFORMANCE, POWER, GRAPHICS, POWERPRO, GRAPHICSPRO)
+    val values = js.Object.freeze(js.Array(VALUE, STANDARD, PERFORMANCE, POWER, GRAPHICS, POWERPRO, GRAPHICSPRO))
   }
 
   /**
@@ -408,7 +408,7 @@ package workspaces {
     val DISCONNECTED = "DISCONNECTED"
     val UNKNOWN      = "UNKNOWN"
 
-    val values = IndexedSeq(CONNECTED, DISCONNECTED, UNKNOWN)
+    val values = js.Object.freeze(js.Array(CONNECTED, DISCONNECTED, UNKNOWN))
   }
 
   @js.native
@@ -568,20 +568,20 @@ package workspaces {
     val COMPLETED = "COMPLETED"
     val FAILED    = "FAILED"
 
-    val values = IndexedSeq(PENDING, COMPLETED, FAILED)
+    val values = js.Object.freeze(js.Array(PENDING, COMPLETED, FAILED))
   }
 
   object DedicatedTenancySupportEnumEnum {
     val ENABLED = "ENABLED"
 
-    val values = IndexedSeq(ENABLED)
+    val values = js.Object.freeze(js.Array(ENABLED))
   }
 
   object DedicatedTenancySupportResultEnumEnum {
     val ENABLED  = "ENABLED"
     val DISABLED = "DISABLED"
 
-    val values = IndexedSeq(ENABLED, DISABLED)
+    val values = js.Object.freeze(js.Array(ENABLED, DISABLED))
   }
 
   /**
@@ -1263,7 +1263,7 @@ package workspaces {
     val USER_VOLUME  = "USER_VOLUME"
     val COMPUTE_TYPE = "COMPUTE_TYPE"
 
-    val values = IndexedSeq(ROOT_VOLUME, USER_VOLUME, COMPUTE_TYPE)
+    val values = js.Object.freeze(js.Array(ROOT_VOLUME, USER_VOLUME, COMPUTE_TYPE))
   }
 
   /**
@@ -1291,7 +1291,7 @@ package workspaces {
     val UPDATE_INITIATED   = "UPDATE_INITIATED"
     val UPDATE_IN_PROGRESS = "UPDATE_IN_PROGRESS"
 
-    val values = IndexedSeq(UPDATE_INITIATED, UPDATE_IN_PROGRESS)
+    val values = js.Object.freeze(js.Array(UPDATE_INITIATED, UPDATE_IN_PROGRESS))
   }
 
   @js.native
@@ -1444,7 +1444,7 @@ package workspaces {
     val WINDOWS = "WINDOWS"
     val LINUX   = "LINUX"
 
-    val values = IndexedSeq(WINDOWS, LINUX)
+    val values = js.Object.freeze(js.Array(WINDOWS, LINUX))
   }
 
   /**
@@ -1555,7 +1555,7 @@ package workspaces {
     val ENABLED  = "ENABLED"
     val DISABLED = "DISABLED"
 
-    val values = IndexedSeq(ENABLED, DISABLED)
+    val values = js.Object.freeze(js.Array(ENABLED, DISABLED))
   }
 
   @js.native
@@ -1612,7 +1612,7 @@ package workspaces {
     val AUTO_STOP = "AUTO_STOP"
     val ALWAYS_ON = "ALWAYS_ON"
 
-    val values = IndexedSeq(AUTO_STOP, ALWAYS_ON)
+    val values = js.Object.freeze(js.Array(AUTO_STOP, ALWAYS_ON))
   }
 
   /**
@@ -1742,7 +1742,7 @@ package workspaces {
     val AVAILABLE         = "AVAILABLE"
     val ADMIN_MAINTENANCE = "ADMIN_MAINTENANCE"
 
-    val values = IndexedSeq(AVAILABLE, ADMIN_MAINTENANCE)
+    val values = js.Object.freeze(js.Array(AVAILABLE, ADMIN_MAINTENANCE))
   }
 
   /**
@@ -2035,14 +2035,14 @@ package workspaces {
     val DEREGISTERED  = "DEREGISTERED"
     val ERROR         = "ERROR"
 
-    val values = IndexedSeq(REGISTERING, REGISTERED, DEREGISTERING, DEREGISTERED, ERROR)
+    val values = js.Object.freeze(js.Array(REGISTERING, REGISTERED, DEREGISTERING, DEREGISTERED, ERROR))
   }
 
   object WorkspaceDirectoryTypeEnum {
     val SIMPLE_AD    = "SIMPLE_AD"
     val AD_CONNECTOR = "AD_CONNECTOR"
 
-    val values = IndexedSeq(SIMPLE_AD, AD_CONNECTOR)
+    val values = js.Object.freeze(js.Array(SIMPLE_AD, AD_CONNECTOR))
   }
 
   /**
@@ -2089,14 +2089,14 @@ package workspaces {
     val BYOL_GRAPHICS    = "BYOL_GRAPHICS"
     val BYOL_GRAPHICSPRO = "BYOL_GRAPHICSPRO"
 
-    val values = IndexedSeq(BYOL_REGULAR, BYOL_GRAPHICS, BYOL_GRAPHICSPRO)
+    val values = js.Object.freeze(js.Array(BYOL_REGULAR, BYOL_GRAPHICS, BYOL_GRAPHICSPRO))
   }
 
   object WorkspaceImageRequiredTenancyEnum {
     val DEFAULT   = "DEFAULT"
     val DEDICATED = "DEDICATED"
 
-    val values = IndexedSeq(DEFAULT, DEDICATED)
+    val values = js.Object.freeze(js.Array(DEFAULT, DEDICATED))
   }
 
   object WorkspaceImageStateEnum {
@@ -2104,7 +2104,7 @@ package workspaces {
     val PENDING   = "PENDING"
     val ERROR     = "ERROR"
 
-    val values = IndexedSeq(AVAILABLE, PENDING, ERROR)
+    val values = js.Object.freeze(js.Array(AVAILABLE, PENDING, ERROR))
   }
 
   /**
@@ -2198,23 +2198,25 @@ package workspaces {
     val STOPPED           = "STOPPED"
     val ERROR             = "ERROR"
 
-    val values = IndexedSeq(
-      PENDING,
-      AVAILABLE,
-      IMPAIRED,
-      UNHEALTHY,
-      REBOOTING,
-      STARTING,
-      REBUILDING,
-      MAINTENANCE,
-      ADMIN_MAINTENANCE,
-      TERMINATING,
-      TERMINATED,
-      SUSPENDED,
-      UPDATING,
-      STOPPING,
-      STOPPED,
-      ERROR
+    val values = js.Object.freeze(
+      js.Array(
+        PENDING,
+        AVAILABLE,
+        IMPAIRED,
+        UNHEALTHY,
+        REBOOTING,
+        STARTING,
+        REBUILDING,
+        MAINTENANCE,
+        ADMIN_MAINTENANCE,
+        TERMINATING,
+        TERMINATED,
+        SUSPENDED,
+        UPDATING,
+        STOPPING,
+        STOPPED,
+        ERROR
+      )
     )
   }
 

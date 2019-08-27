@@ -197,7 +197,7 @@ package firehose {
     val ZIP          = "ZIP"
     val Snappy       = "Snappy"
 
-    val values = IndexedSeq(UNCOMPRESSED, GZIP, ZIP, Snappy)
+    val values = js.Object.freeze(js.Array(UNCOMPRESSED, GZIP, ZIP, Snappy))
   }
 
   /**
@@ -424,7 +424,7 @@ package firehose {
     val DISABLED  = "DISABLED"
     val DISABLING = "DISABLING"
 
-    val values = IndexedSeq(ENABLED, ENABLING, DISABLED, DISABLING)
+    val values = js.Object.freeze(js.Array(ENABLED, ENABLING, DISABLED, DISABLING))
   }
 
   object DeliveryStreamStatusEnum {
@@ -432,14 +432,14 @@ package firehose {
     val DELETING = "DELETING"
     val ACTIVE   = "ACTIVE"
 
-    val values = IndexedSeq(CREATING, DELETING, ACTIVE)
+    val values = js.Object.freeze(js.Array(CREATING, DELETING, ACTIVE))
   }
 
   object DeliveryStreamTypeEnum {
     val DirectPut             = "DirectPut"
     val KinesisStreamAsSource = "KinesisStreamAsSource"
 
-    val values = IndexedSeq(DirectPut, KinesisStreamAsSource)
+    val values = js.Object.freeze(js.Array(DirectPut, KinesisStreamAsSource))
   }
 
   @js.native
@@ -717,7 +717,7 @@ package firehose {
     val OneWeek    = "OneWeek"
     val OneMonth   = "OneMonth"
 
-    val values = IndexedSeq(NoRotation, OneHour, OneDay, OneWeek, OneMonth)
+    val values = js.Object.freeze(js.Array(NoRotation, OneHour, OneDay, OneWeek, OneMonth))
   }
 
   /**
@@ -742,7 +742,7 @@ package firehose {
     val FailedDocumentsOnly = "FailedDocumentsOnly"
     val AllDocuments        = "AllDocuments"
 
-    val values = IndexedSeq(FailedDocumentsOnly, AllDocuments)
+    val values = js.Object.freeze(js.Array(FailedDocumentsOnly, AllDocuments))
   }
 
   /**
@@ -933,7 +933,7 @@ package firehose {
     val Raw   = "Raw"
     val Event = "Event"
 
-    val values = IndexedSeq(Raw, Event)
+    val values = js.Object.freeze(js.Array(Raw, Event))
   }
 
   /**
@@ -1128,7 +1128,7 @@ package firehose {
   object NoEncryptionConfigEnum {
     val NoEncryption = "NoEncryption"
 
-    val values = IndexedSeq(NoEncryption)
+    val values = js.Object.freeze(js.Array(NoEncryption))
   }
 
   /**
@@ -1162,14 +1162,14 @@ package firehose {
     val ZLIB   = "ZLIB"
     val SNAPPY = "SNAPPY"
 
-    val values = IndexedSeq(NONE, ZLIB, SNAPPY)
+    val values = js.Object.freeze(js.Array(NONE, ZLIB, SNAPPY))
   }
 
   object OrcFormatVersionEnum {
     val V0_11 = "V0_11"
     val V0_12 = "V0_12"
 
-    val values = IndexedSeq(V0_11, V0_12)
+    val values = js.Object.freeze(js.Array(V0_11, V0_12))
   }
 
   /**
@@ -1242,7 +1242,7 @@ package firehose {
     val GZIP         = "GZIP"
     val SNAPPY       = "SNAPPY"
 
-    val values = IndexedSeq(UNCOMPRESSED, GZIP, SNAPPY)
+    val values = js.Object.freeze(js.Array(UNCOMPRESSED, GZIP, SNAPPY))
   }
 
   /**
@@ -1282,7 +1282,7 @@ package firehose {
     val V1 = "V1"
     val V2 = "V2"
 
-    val values = IndexedSeq(V1, V2)
+    val values = js.Object.freeze(js.Array(V1, V2))
   }
 
   /**
@@ -1359,13 +1359,14 @@ package firehose {
     val BufferSizeInMBs         = "BufferSizeInMBs"
     val BufferIntervalInSeconds = "BufferIntervalInSeconds"
 
-    val values = IndexedSeq(LambdaArn, NumberOfRetries, RoleArn, BufferSizeInMBs, BufferIntervalInSeconds)
+    val values =
+      js.Object.freeze(js.Array(LambdaArn, NumberOfRetries, RoleArn, BufferSizeInMBs, BufferIntervalInSeconds))
   }
 
   object ProcessorTypeEnum {
     val Lambda = "Lambda"
 
-    val values = IndexedSeq(Lambda)
+    val values = js.Object.freeze(js.Array(Lambda))
   }
 
   @js.native
@@ -1662,14 +1663,14 @@ package firehose {
     val Disabled = "Disabled"
     val Enabled  = "Enabled"
 
-    val values = IndexedSeq(Disabled, Enabled)
+    val values = js.Object.freeze(js.Array(Disabled, Enabled))
   }
 
   object S3BackupModeEnum {
     val Disabled = "Disabled"
     val Enabled  = "Enabled"
 
-    val values = IndexedSeq(Disabled, Enabled)
+    val values = js.Object.freeze(js.Array(Disabled, Enabled))
   }
 
   /**
@@ -2023,7 +2024,7 @@ package firehose {
     val FailedEventsOnly = "FailedEventsOnly"
     val AllEvents        = "AllEvents"
 
-    val values = IndexedSeq(FailedEventsOnly, AllEvents)
+    val values = js.Object.freeze(js.Array(FailedEventsOnly, AllEvents))
   }
 
   @js.native

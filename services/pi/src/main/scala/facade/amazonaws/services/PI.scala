@@ -370,6 +370,6 @@ package pi {
   object ServiceTypeEnum {
     val RDS = "RDS"
 
-    val values = IndexedSeq(RDS)
+    val values = js.Object.freeze(js.Array(RDS))
   }
 }

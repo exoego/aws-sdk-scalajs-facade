@@ -791,7 +791,7 @@ package lambda {
     val LATEST       = "LATEST"
     val AT_TIMESTAMP = "AT_TIMESTAMP"
 
-    val values = IndexedSeq(TRIM_HORIZON, LATEST, AT_TIMESTAMP)
+    val values = js.Object.freeze(js.Array(TRIM_HORIZON, LATEST, AT_TIMESTAMP))
   }
 
   /**
@@ -920,7 +920,7 @@ package lambda {
   object FunctionVersionEnum {
     val ALL = "ALL"
 
-    val values = IndexedSeq(ALL)
+    val values = js.Object.freeze(js.Array(ALL))
   }
 
   @js.native
@@ -1267,7 +1267,7 @@ package lambda {
     val RequestResponse = "RequestResponse"
     val DryRun          = "DryRun"
 
-    val values = IndexedSeq(Event, RequestResponse, DryRun)
+    val values = js.Object.freeze(js.Array(Event, RequestResponse, DryRun))
   }
 
   @deprecated("Deprecated in AWS SDK", "forever")
@@ -1730,7 +1730,7 @@ package lambda {
     val None = "None"
     val Tail = "Tail"
 
-    val values = IndexedSeq(None, Tail)
+    val values = js.Object.freeze(js.Array(None, Tail))
   }
 
   @js.native
@@ -1914,23 +1914,25 @@ package lambda {
     val `ruby2.5`        = "ruby2.5"
     val provided         = "provided"
 
-    val values = IndexedSeq(
-      nodejs,
-      `nodejs4.3`,
-      `nodejs6.10`,
-      `nodejs8.10`,
-      `nodejs10.x`,
-      java8,
-      `python2.7`,
-      `python3.6`,
-      `python3.7`,
-      `dotnetcore1.0`,
-      `dotnetcore2.0`,
-      `dotnetcore2.1`,
-      `nodejs4.3-edge`,
-      `go1.x`,
-      `ruby2.5`,
-      provided
+    val values = js.Object.freeze(
+      js.Array(
+        nodejs,
+        `nodejs4.3`,
+        `nodejs6.10`,
+        `nodejs8.10`,
+        `nodejs10.x`,
+        java8,
+        `python2.7`,
+        `python3.6`,
+        `python3.7`,
+        `dotnetcore1.0`,
+        `dotnetcore2.0`,
+        `dotnetcore2.1`,
+        `nodejs4.3-edge`,
+        `go1.x`,
+        `ruby2.5`,
+        provided
+      )
     )
   }
 
@@ -1994,7 +1996,7 @@ package lambda {
     val Active      = "Active"
     val PassThrough = "PassThrough"
 
-    val values = IndexedSeq(Active, PassThrough)
+    val values = js.Object.freeze(js.Array(Active, PassThrough))
   }
 
   @js.native

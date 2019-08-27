@@ -552,7 +552,7 @@ package apigateway {
     val HEADER     = "HEADER"
     val AUTHORIZER = "AUTHORIZER"
 
-    val values = IndexedSeq(HEADER, AUTHORIZER)
+    val values = js.Object.freeze(js.Array(HEADER, AUTHORIZER))
   }
 
   /**
@@ -584,7 +584,7 @@ package apigateway {
   object ApiKeysFormatEnum {
     val csv = "csv"
 
-    val values = IndexedSeq(csv)
+    val values = js.Object.freeze(js.Array(csv))
   }
 
   /**
@@ -670,7 +670,7 @@ package apigateway {
     val REQUEST            = "REQUEST"
     val COGNITO_USER_POOLS = "COGNITO_USER_POOLS"
 
-    val values = IndexedSeq(TOKEN, REQUEST, COGNITO_USER_POOLS)
+    val values = js.Object.freeze(js.Array(TOKEN, REQUEST, COGNITO_USER_POOLS))
   }
 
   /**
@@ -758,7 +758,7 @@ package apigateway {
     val `118`  = "118"
     val `237`  = "237"
 
-    val values = IndexedSeq(`0.5`, `1.6`, `6.1`, `13.5`, `28.4`, `58.2`, `118`, `237`)
+    val values = js.Object.freeze(js.Array(`0.5`, `1.6`, `6.1`, `13.5`, `28.4`, `58.2`, `118`, `237`))
   }
 
   /**
@@ -771,7 +771,8 @@ package apigateway {
     val NOT_AVAILABLE      = "NOT_AVAILABLE"
     val FLUSH_IN_PROGRESS  = "FLUSH_IN_PROGRESS"
 
-    val values = IndexedSeq(CREATE_IN_PROGRESS, AVAILABLE, DELETE_IN_PROGRESS, NOT_AVAILABLE, FLUSH_IN_PROGRESS)
+    val values =
+      js.Object.freeze(js.Array(CREATE_IN_PROGRESS, AVAILABLE, DELETE_IN_PROGRESS, NOT_AVAILABLE, FLUSH_IN_PROGRESS))
   }
 
   /**
@@ -863,14 +864,14 @@ package apigateway {
     val INTERNET = "INTERNET"
     val VPC_LINK = "VPC_LINK"
 
-    val values = IndexedSeq(INTERNET, VPC_LINK)
+    val values = js.Object.freeze(js.Array(INTERNET, VPC_LINK))
   }
 
   object ContentHandlingStrategyEnum {
     val CONVERT_TO_BINARY = "CONVERT_TO_BINARY"
     val CONVERT_TO_TEXT   = "CONVERT_TO_TEXT"
 
-    val values = IndexedSeq(CONVERT_TO_BINARY, CONVERT_TO_TEXT)
+    val values = js.Object.freeze(js.Array(CONVERT_TO_BINARY, CONVERT_TO_TEXT))
   }
 
   /**
@@ -2071,19 +2072,21 @@ package apigateway {
     val RESPONSE_HEADER = "RESPONSE_HEADER"
     val RESPONSE_BODY   = "RESPONSE_BODY"
 
-    val values = IndexedSeq(
-      API,
-      AUTHORIZER,
-      MODEL,
-      RESOURCE,
-      METHOD,
-      PATH_PARAMETER,
-      QUERY_PARAMETER,
-      REQUEST_HEADER,
-      REQUEST_BODY,
-      RESPONSE,
-      RESPONSE_HEADER,
-      RESPONSE_BODY
+    val values = js.Object.freeze(
+      js.Array(
+        API,
+        AUTHORIZER,
+        MODEL,
+        RESOURCE,
+        METHOD,
+        PATH_PARAMETER,
+        QUERY_PARAMETER,
+        REQUEST_HEADER,
+        REQUEST_BODY,
+        RESPONSE,
+        RESPONSE_HEADER,
+        RESPONSE_BODY
+      )
     )
   }
 
@@ -2229,7 +2232,7 @@ package apigateway {
     val UPDATING  = "UPDATING"
     val PENDING   = "PENDING"
 
-    val values = IndexedSeq(AVAILABLE, UPDATING, PENDING)
+    val values = js.Object.freeze(js.Array(AVAILABLE, UPDATING, PENDING))
   }
 
   /**
@@ -2281,7 +2284,7 @@ package apigateway {
     val EDGE     = "EDGE"
     val PRIVATE  = "PRIVATE"
 
-    val values = IndexedSeq(REGIONAL, EDGE, PRIVATE)
+    val values = js.Object.freeze(js.Array(REGIONAL, EDGE, PRIVATE))
   }
 
   /**
@@ -2418,27 +2421,29 @@ package apigateway {
     val THROTTLED                      = "THROTTLED"
     val QUOTA_EXCEEDED                 = "QUOTA_EXCEEDED"
 
-    val values = IndexedSeq(
-      DEFAULT_4XX,
-      DEFAULT_5XX,
-      RESOURCE_NOT_FOUND,
-      UNAUTHORIZED,
-      INVALID_API_KEY,
-      ACCESS_DENIED,
-      AUTHORIZER_FAILURE,
-      AUTHORIZER_CONFIGURATION_ERROR,
-      INVALID_SIGNATURE,
-      EXPIRED_TOKEN,
-      MISSING_AUTHENTICATION_TOKEN,
-      INTEGRATION_FAILURE,
-      INTEGRATION_TIMEOUT,
-      API_CONFIGURATION_ERROR,
-      UNSUPPORTED_MEDIA_TYPE,
-      BAD_REQUEST_PARAMETERS,
-      BAD_REQUEST_BODY,
-      REQUEST_TOO_LARGE,
-      THROTTLED,
-      QUOTA_EXCEEDED
+    val values = js.Object.freeze(
+      js.Array(
+        DEFAULT_4XX,
+        DEFAULT_5XX,
+        RESOURCE_NOT_FOUND,
+        UNAUTHORIZED,
+        INVALID_API_KEY,
+        ACCESS_DENIED,
+        AUTHORIZER_FAILURE,
+        AUTHORIZER_CONFIGURATION_ERROR,
+        INVALID_SIGNATURE,
+        EXPIRED_TOKEN,
+        MISSING_AUTHENTICATION_TOKEN,
+        INTEGRATION_FAILURE,
+        INTEGRATION_TIMEOUT,
+        API_CONFIGURATION_ERROR,
+        UNSUPPORTED_MEDIA_TYPE,
+        BAD_REQUEST_PARAMETERS,
+        BAD_REQUEST_BODY,
+        REQUEST_TOO_LARGE,
+        THROTTLED,
+        QUOTA_EXCEEDED
+      )
     )
   }
 
@@ -3813,14 +3818,14 @@ package apigateway {
     val HTTP_PROXY = "HTTP_PROXY"
     val AWS_PROXY  = "AWS_PROXY"
 
-    val values = IndexedSeq(HTTP, AWS, MOCK, HTTP_PROXY, AWS_PROXY)
+    val values = js.Object.freeze(js.Array(HTTP, AWS, MOCK, HTTP_PROXY, AWS_PROXY))
   }
 
   object LocationStatusTypeEnum {
     val DOCUMENTED   = "DOCUMENTED"
     val UNDOCUMENTED = "UNDOCUMENTED"
 
-    val values = IndexedSeq(DOCUMENTED, UNDOCUMENTED)
+    val values = js.Object.freeze(js.Array(DOCUMENTED, UNDOCUMENTED))
   }
 
   /**
@@ -4051,7 +4056,7 @@ package apigateway {
     val copy    = "copy"
     val test    = "test"
 
-    val values = IndexedSeq(add, remove, replace, move, copy, test)
+    val values = js.Object.freeze(js.Array(add, remove, replace, move, copy, test))
   }
 
   /**
@@ -4308,7 +4313,7 @@ package apigateway {
     val merge     = "merge"
     val overwrite = "overwrite"
 
-    val values = IndexedSeq(merge, overwrite)
+    val values = js.Object.freeze(js.Array(merge, overwrite))
   }
 
   /**
@@ -4348,7 +4353,7 @@ package apigateway {
     val WEEK  = "WEEK"
     val MONTH = "MONTH"
 
-    val values = IndexedSeq(DAY, WEEK, MONTH)
+    val values = js.Object.freeze(js.Array(DAY, WEEK, MONTH))
   }
 
   /**
@@ -4666,7 +4671,7 @@ package apigateway {
     val TLS_1_0 = "TLS_1_0"
     val TLS_1_2 = "TLS_1_2"
 
-    val values = IndexedSeq(TLS_1_0, TLS_1_2)
+    val values = js.Object.freeze(js.Array(TLS_1_0, TLS_1_2))
   }
 
   /**
@@ -5021,7 +5026,8 @@ package apigateway {
     val SUCCEED_WITH_RESPONSE_HEADER    = "SUCCEED_WITH_RESPONSE_HEADER"
     val SUCCEED_WITHOUT_RESPONSE_HEADER = "SUCCEED_WITHOUT_RESPONSE_HEADER"
 
-    val values = IndexedSeq(FAIL_WITH_403, SUCCEED_WITH_RESPONSE_HEADER, SUCCEED_WITHOUT_RESPONSE_HEADER)
+    val values =
+      js.Object.freeze(js.Array(FAIL_WITH_403, SUCCEED_WITH_RESPONSE_HEADER, SUCCEED_WITHOUT_RESPONSE_HEADER))
   }
 
   /**
@@ -5805,7 +5811,7 @@ package apigateway {
     val DELETING  = "DELETING"
     val FAILED    = "FAILED"
 
-    val values = IndexedSeq(AVAILABLE, PENDING, DELETING, FAILED)
+    val values = js.Object.freeze(js.Array(AVAILABLE, PENDING, DELETING, FAILED))
   }
 
   /**

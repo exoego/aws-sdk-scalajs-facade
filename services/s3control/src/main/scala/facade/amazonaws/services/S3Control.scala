@@ -395,14 +395,14 @@ package s3control {
     val Key       = "Key"
     val VersionId = "VersionId"
 
-    val values = IndexedSeq(Ignore, Bucket, Key, VersionId)
+    val values = js.Object.freeze(js.Array(Ignore, Bucket, Key, VersionId))
   }
 
   object JobManifestFormatEnum {
     val S3BatchOperations_CSV_20180820 = "S3BatchOperations_CSV_20180820"
     val S3InventoryReport_CSV_20161130 = "S3InventoryReport_CSV_20161130"
 
-    val values = IndexedSeq(S3BatchOperations_CSV_20180820, S3InventoryReport_CSV_20161130)
+    val values = js.Object.freeze(js.Array(S3BatchOperations_CSV_20180820, S3InventoryReport_CSV_20161130))
   }
 
   /**
@@ -543,14 +543,14 @@ package s3control {
   object JobReportFormatEnum {
     val Report_CSV_20180820 = "Report_CSV_20180820"
 
-    val values = IndexedSeq(Report_CSV_20180820)
+    val values = js.Object.freeze(js.Array(Report_CSV_20180820))
   }
 
   object JobReportScopeEnum {
     val AllTasks        = "AllTasks"
     val FailedTasksOnly = "FailedTasksOnly"
 
-    val values = IndexedSeq(AllTasks, FailedTasksOnly)
+    val values = js.Object.freeze(js.Array(AllTasks, FailedTasksOnly))
   }
 
   object JobStatusEnum {
@@ -568,20 +568,22 @@ package s3control {
     val Ready      = "Ready"
     val Suspended  = "Suspended"
 
-    val values = IndexedSeq(
-      Active,
-      Cancelled,
-      Cancelling,
-      Complete,
-      Completing,
-      Failed,
-      Failing,
-      New,
-      Paused,
-      Pausing,
-      Preparing,
-      Ready,
-      Suspended
+    val values = js.Object.freeze(
+      js.Array(
+        Active,
+        Cancelled,
+        Cancelling,
+        Complete,
+        Completing,
+        Failed,
+        Failing,
+        New,
+        Paused,
+        Pausing,
+        Preparing,
+        Ready,
+        Suspended
+      )
     )
   }
 
@@ -654,7 +656,9 @@ package s3control {
     val S3PutObjectTagging      = "S3PutObjectTagging"
     val S3InitiateRestoreObject = "S3InitiateRestoreObject"
 
-    val values = IndexedSeq(LambdaInvoke, S3PutObjectCopy, S3PutObjectAcl, S3PutObjectTagging, S3InitiateRestoreObject)
+    val values = js.Object.freeze(
+      js.Array(LambdaInvoke, S3PutObjectCopy, S3PutObjectAcl, S3PutObjectTagging, S3InitiateRestoreObject)
+    )
   }
 
   /**
@@ -708,7 +712,7 @@ package s3control {
     val Cancelled = "Cancelled"
     val Ready     = "Ready"
 
-    val values = IndexedSeq(Cancelled, Ready)
+    val values = js.Object.freeze(js.Array(Cancelled, Ready))
   }
 
   /**
@@ -764,14 +768,16 @@ package s3control {
     val `bucket-owner-read`         = "bucket-owner-read"
     val `bucket-owner-full-control` = "bucket-owner-full-control"
 
-    val values = IndexedSeq(
-      `private`,
-      `public-read`,
-      `public-read-write`,
-      `aws-exec-read`,
-      `authenticated-read`,
-      `bucket-owner-read`,
-      `bucket-owner-full-control`
+    val values = js.Object.freeze(
+      js.Array(
+        `private`,
+        `public-read`,
+        `public-read-write`,
+        `aws-exec-read`,
+        `authenticated-read`,
+        `bucket-owner-read`,
+        `bucket-owner-full-control`
+      )
     )
   }
 
@@ -842,7 +848,7 @@ package s3control {
     val BULK     = "BULK"
     val STANDARD = "STANDARD"
 
-    val values = IndexedSeq(BULK, STANDARD)
+    val values = js.Object.freeze(js.Array(BULK, STANDARD))
   }
 
   /**
@@ -895,7 +901,7 @@ package s3control {
     val emailAddress = "emailAddress"
     val uri          = "uri"
 
-    val values = IndexedSeq(id, emailAddress, uri)
+    val values = js.Object.freeze(js.Array(id, emailAddress, uri))
   }
 
   /**
@@ -923,21 +929,21 @@ package s3control {
     val COPY    = "COPY"
     val REPLACE = "REPLACE"
 
-    val values = IndexedSeq(COPY, REPLACE)
+    val values = js.Object.freeze(js.Array(COPY, REPLACE))
   }
 
   object S3ObjectLockLegalHoldStatusEnum {
     val OFF = "OFF"
     val ON  = "ON"
 
-    val values = IndexedSeq(OFF, ON)
+    val values = js.Object.freeze(js.Array(OFF, ON))
   }
 
   object S3ObjectLockModeEnum {
     val COMPLIANCE = "COMPLIANCE"
     val GOVERNANCE = "GOVERNANCE"
 
-    val values = IndexedSeq(COMPLIANCE, GOVERNANCE)
+    val values = js.Object.freeze(js.Array(COMPLIANCE, GOVERNANCE))
   }
 
   /**
@@ -1016,14 +1022,14 @@ package s3control {
     val READ_ACP     = "READ_ACP"
     val WRITE_ACP    = "WRITE_ACP"
 
-    val values = IndexedSeq(FULL_CONTROL, READ, WRITE, READ_ACP, WRITE_ACP)
+    val values = js.Object.freeze(js.Array(FULL_CONTROL, READ, WRITE, READ_ACP, WRITE_ACP))
   }
 
   object S3SSEAlgorithmEnum {
     val AES256 = "AES256"
     val KMS    = "KMS"
 
-    val values = IndexedSeq(AES256, KMS)
+    val values = js.Object.freeze(js.Array(AES256, KMS))
   }
 
   /**
@@ -1070,7 +1076,8 @@ package s3control {
     val INTELLIGENT_TIERING = "INTELLIGENT_TIERING"
     val DEEP_ARCHIVE        = "DEEP_ARCHIVE"
 
-    val values = IndexedSeq(STANDARD, STANDARD_IA, ONEZONE_IA, GLACIER, INTELLIGENT_TIERING, DEEP_ARCHIVE)
+    val values =
+      js.Object.freeze(js.Array(STANDARD, STANDARD_IA, ONEZONE_IA, GLACIER, INTELLIGENT_TIERING, DEEP_ARCHIVE))
   }
 
   /**

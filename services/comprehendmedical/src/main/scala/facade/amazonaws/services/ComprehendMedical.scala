@@ -81,7 +81,7 @@ package comprehendmedical {
     val DIAGNOSIS = "DIAGNOSIS"
     val NEGATION  = "NEGATION"
 
-    val values = IndexedSeq(SIGN, SYMPTOM, DIAGNOSIS, NEGATION)
+    val values = js.Object.freeze(js.Array(SIGN, SYMPTOM, DIAGNOSIS, NEGATION))
   }
 
   @js.native
@@ -233,35 +233,37 @@ package comprehendmedical {
     val QUALITY           = "QUALITY"
     val QUANTITY          = "QUANTITY"
 
-    val values = IndexedSeq(
-      NAME,
-      DOSAGE,
-      ROUTE_OR_MODE,
-      FORM,
-      FREQUENCY,
-      DURATION,
-      GENERIC_NAME,
-      BRAND_NAME,
-      STRENGTH,
-      RATE,
-      ACUITY,
-      TEST_NAME,
-      TEST_VALUE,
-      TEST_UNITS,
-      PROCEDURE_NAME,
-      TREATMENT_NAME,
-      DATE,
-      AGE,
-      CONTACT_POINT,
-      EMAIL,
-      IDENTIFIER,
-      URL,
-      ADDRESS,
-      PROFESSION,
-      SYSTEM_ORGAN_SITE,
-      DIRECTION,
-      QUALITY,
-      QUANTITY
+    val values = js.Object.freeze(
+      js.Array(
+        NAME,
+        DOSAGE,
+        ROUTE_OR_MODE,
+        FORM,
+        FREQUENCY,
+        DURATION,
+        GENERIC_NAME,
+        BRAND_NAME,
+        STRENGTH,
+        RATE,
+        ACUITY,
+        TEST_NAME,
+        TEST_VALUE,
+        TEST_UNITS,
+        PROCEDURE_NAME,
+        TREATMENT_NAME,
+        DATE,
+        AGE,
+        CONTACT_POINT,
+        EMAIL,
+        IDENTIFIER,
+        URL,
+        ADDRESS,
+        PROFESSION,
+        SYSTEM_ORGAN_SITE,
+        DIRECTION,
+        QUALITY,
+        QUANTITY
+      )
     )
   }
 
@@ -272,8 +274,9 @@ package comprehendmedical {
     val TEST_TREATMENT_PROCEDURE     = "TEST_TREATMENT_PROCEDURE"
     val ANATOMY                      = "ANATOMY"
 
-    val values =
-      IndexedSeq(MEDICATION, MEDICAL_CONDITION, PROTECTED_HEALTH_INFORMATION, TEST_TREATMENT_PROCEDURE, ANATOMY)
+    val values = js.Object.freeze(
+      js.Array(MEDICATION, MEDICAL_CONDITION, PROTECTED_HEALTH_INFORMATION, TEST_TREATMENT_PROCEDURE, ANATOMY)
+    )
   }
 
   /**

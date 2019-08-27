@@ -621,7 +621,7 @@ package datapipeline {
     val GE      = "GE"
     val BETWEEN = "BETWEEN"
 
-    val values = IndexedSeq(EQ, REF_EQ, LE, GE, BETWEEN)
+    val values = js.Object.freeze(js.Array(EQ, REF_EQ, LE, GE, BETWEEN))
   }
 
   /**
@@ -1245,7 +1245,7 @@ package datapipeline {
     val FAILED   = "FAILED"
     val FALSE    = "FALSE"
 
-    val values = IndexedSeq(FINISHED, FAILED, FALSE)
+    val values = js.Object.freeze(js.Array(FINISHED, FAILED, FALSE))
   }
 
   /**

@@ -2334,20 +2334,22 @@ package autoscaling {
     val EnteringStandby       = "EnteringStandby"
     val Standby               = "Standby"
 
-    val values = IndexedSeq(
-      Pending,
-      `Pending:Wait`,
-      `Pending:Proceed`,
-      Quarantined,
-      InService,
-      Terminating,
-      `Terminating:Wait`,
-      `Terminating:Proceed`,
-      Terminated,
-      Detaching,
-      Detached,
-      EnteringStandby,
-      Standby
+    val values = js.Object.freeze(
+      js.Array(
+        Pending,
+        `Pending:Wait`,
+        `Pending:Proceed`,
+        Quarantined,
+        InService,
+        Terminating,
+        `Terminating:Wait`,
+        `Terminating:Proceed`,
+        Terminated,
+        Detaching,
+        Detached,
+        EnteringStandby,
+        Standby
+      )
     )
   }
 
@@ -2462,7 +2464,7 @@ package autoscaling {
     val SampleCount = "SampleCount"
     val Sum         = "Sum"
 
-    val values = IndexedSeq(Average, Minimum, Maximum, SampleCount, Sum)
+    val values = js.Object.freeze(js.Array(Average, Minimum, Maximum, SampleCount, Sum))
   }
 
   object MetricTypeEnum {
@@ -2471,8 +2473,9 @@ package autoscaling {
     val ASGAverageNetworkOut     = "ASGAverageNetworkOut"
     val ALBRequestCountPerTarget = "ALBRequestCountPerTarget"
 
-    val values =
-      IndexedSeq(ASGAverageCPUUtilization, ASGAverageNetworkIn, ASGAverageNetworkOut, ALBRequestCountPerTarget)
+    val values = js.Object.freeze(
+      js.Array(ASGAverageCPUUtilization, ASGAverageNetworkIn, ASGAverageNetworkOut, ALBRequestCountPerTarget)
+    )
   }
 
   /**
@@ -2835,19 +2838,21 @@ package autoscaling {
     val Failed                          = "Failed"
     val Cancelled                       = "Cancelled"
 
-    val values = IndexedSeq(
-      PendingSpotBidPlacement,
-      WaitingForSpotInstanceRequestId,
-      WaitingForSpotInstanceId,
-      WaitingForInstanceId,
-      PreInService,
-      InProgress,
-      WaitingForELBConnectionDraining,
-      MidLifecycleAction,
-      WaitingForInstanceWarmup,
-      Successful,
-      Failed,
-      Cancelled
+    val values = js.Object.freeze(
+      js.Array(
+        PendingSpotBidPlacement,
+        WaitingForSpotInstanceRequestId,
+        WaitingForSpotInstanceId,
+        WaitingForInstanceId,
+        PreInService,
+        InProgress,
+        WaitingForELBConnectionDraining,
+        MidLifecycleAction,
+        WaitingForInstanceWarmup,
+        Successful,
+        Failed,
+        Cancelled
+      )
     )
   }
 

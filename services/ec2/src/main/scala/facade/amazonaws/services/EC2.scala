@@ -2284,7 +2284,7 @@ package ec2 {
     val `supported-platforms` = "supported-platforms"
     val `default-vpc`         = "default-vpc"
 
-    val values = IndexedSeq(`supported-platforms`, `default-vpc`)
+    val values = js.Object.freeze(js.Array(`supported-platforms`, `default-vpc`))
   }
 
   /**
@@ -2338,7 +2338,7 @@ package ec2 {
     val pending_termination = "pending_termination"
     val fulfilled           = "fulfilled"
 
-    val values = IndexedSeq(error, pending_fulfillment, pending_termination, fulfilled)
+    val values = js.Object.freeze(js.Array(error, pending_fulfillment, pending_termination, fulfilled))
   }
 
   /**
@@ -2425,7 +2425,7 @@ package ec2 {
     val default = "default"
     val host    = "host"
 
-    val values = IndexedSeq(default, host)
+    val values = js.Object.freeze(js.Array(default, host))
   }
 
   @js.native
@@ -2537,8 +2537,9 @@ package ec2 {
     val `released-permanent-failure` = "released-permanent-failure"
     val pending                      = "pending"
 
-    val values =
-      IndexedSeq(available, `under-assessment`, `permanent-failure`, released, `released-permanent-failure`, pending)
+    val values = js.Object.freeze(
+      js.Array(available, `under-assessment`, `permanent-failure`, released, `released-permanent-failure`, pending)
+    )
   }
 
   object AllocationStrategyEnum {
@@ -2546,7 +2547,7 @@ package ec2 {
     val diversified       = "diversified"
     val capacityOptimized = "capacityOptimized"
 
-    val values = IndexedSeq(lowestPrice, diversified, capacityOptimized)
+    val values = js.Object.freeze(js.Array(lowestPrice, diversified, capacityOptimized))
   }
 
   /**
@@ -2616,7 +2617,7 @@ package ec2 {
     val x86_64 = "x86_64"
     val arm64  = "arm64"
 
-    val values = IndexedSeq(i386, x86_64, arm64)
+    val values = js.Object.freeze(js.Array(i386, x86_64, arm64))
   }
 
   @js.native
@@ -3040,7 +3041,7 @@ package ec2 {
   object AssociatedNetworkTypeEnum {
     val vpc = "vpc"
 
-    val values = IndexedSeq(vpc)
+    val values = js.Object.freeze(js.Array(vpc))
   }
 
   /**
@@ -3092,7 +3093,8 @@ package ec2 {
     val disassociating       = "disassociating"
     val disassociated        = "disassociated"
 
-    val values = IndexedSeq(associating, associated, `association-failed`, disassociating, disassociated)
+    val values =
+      js.Object.freeze(js.Array(associating, associated, `association-failed`, disassociating, disassociated))
   }
 
   @js.native
@@ -3285,7 +3287,7 @@ package ec2 {
     val detaching = "detaching"
     val detached  = "detached"
 
-    val values = IndexedSeq(attaching, attached, detaching, detached)
+    val values = js.Object.freeze(js.Array(attaching, attached, detaching, detached))
   }
 
   /**
@@ -3494,14 +3496,14 @@ package ec2 {
     val enable  = "enable"
     val disable = "disable"
 
-    val values = IndexedSeq(enable, disable)
+    val values = js.Object.freeze(js.Array(enable, disable))
   }
 
   object AutoPlacementEnum {
     val on  = "on"
     val off = "off"
 
-    val values = IndexedSeq(on, off)
+    val values = js.Object.freeze(js.Array(on, off))
   }
 
   /**
@@ -3558,7 +3560,7 @@ package ec2 {
     val impaired    = "impaired"
     val unavailable = "unavailable"
 
-    val values = IndexedSeq(available, information, impaired, unavailable)
+    val values = js.Object.freeze(js.Array(available, information, impaired, unavailable))
   }
 
   /**
@@ -3591,7 +3593,9 @@ package ec2 {
     val cancelled_terminating = "cancelled_terminating"
     val modifying             = "modifying"
 
-    val values = IndexedSeq(submitted, active, cancelled, failed, cancelled_running, cancelled_terminating, modifying)
+    val values = js.Object.freeze(
+      js.Array(submitted, active, cancelled, failed, cancelled_running, cancelled_terminating, modifying)
+    )
   }
 
   @js.native
@@ -3749,7 +3753,8 @@ package ec2 {
     val complete               = "complete"
     val failed                 = "failed"
 
-    val values = IndexedSeq(pending, `waiting-for-shutdown`, bundling, storing, cancelling, complete, failed)
+    val values =
+      js.Object.freeze(js.Array(pending, `waiting-for-shutdown`, bundling, storing, cancelling, complete, failed))
   }
 
   /**
@@ -3788,14 +3793,16 @@ package ec2 {
     val `pending-provision`   = "pending-provision"
     val provisioned           = "provisioned"
 
-    val values = IndexedSeq(
-      advertised,
-      deprovisioned,
-      `failed-deprovision`,
-      `failed-provision`,
-      `pending-deprovision`,
-      `pending-provision`,
-      provisioned
+    val values = js.Object.freeze(
+      js.Array(
+        advertised,
+        deprovisioned,
+        `failed-deprovision`,
+        `failed-provision`,
+        `pending-deprovision`,
+        `pending-provision`,
+        provisioned
+      )
     )
   }
 
@@ -3805,11 +3812,8 @@ package ec2 {
     val fleetRequestNotInCancellableState = "fleetRequestNotInCancellableState"
     val unexpectedError                   = "unexpectedError"
 
-    val values = IndexedSeq(
-      fleetRequestIdDoesNotExist,
-      fleetRequestIdMalformed,
-      fleetRequestNotInCancellableState,
-      unexpectedError
+    val values = js.Object.freeze(
+      js.Array(fleetRequestIdDoesNotExist, fleetRequestIdMalformed, fleetRequestNotInCancellableState, unexpectedError)
     )
   }
 
@@ -4133,7 +4137,7 @@ package ec2 {
     val cancelled = "cancelled"
     val completed = "completed"
 
-    val values = IndexedSeq(active, open, closed, cancelled, completed)
+    val values = js.Object.freeze(js.Array(active, open, closed, cancelled, completed))
   }
 
   /**
@@ -4282,18 +4286,20 @@ package ec2 {
     val `Linux with SQL Server Web`          = "Linux with SQL Server Web"
     val `Linux with SQL Server Enterprise`   = "Linux with SQL Server Enterprise"
 
-    val values = IndexedSeq(
-      `Linux/UNIX`,
-      `Red Hat Enterprise Linux`,
-      `SUSE Linux`,
-      Windows,
-      `Windows with SQL Server`,
-      `Windows with SQL Server Enterprise`,
-      `Windows with SQL Server Standard`,
-      `Windows with SQL Server Web`,
-      `Linux with SQL Server Standard`,
-      `Linux with SQL Server Web`,
-      `Linux with SQL Server Enterprise`
+    val values = js.Object.freeze(
+      js.Array(
+        `Linux/UNIX`,
+        `Red Hat Enterprise Linux`,
+        `SUSE Linux`,
+        Windows,
+        `Windows with SQL Server`,
+        `Windows with SQL Server Enterprise`,
+        `Windows with SQL Server Standard`,
+        `Windows with SQL Server Web`,
+        `Linux with SQL Server Standard`,
+        `Linux with SQL Server Web`,
+        `Linux with SQL Server Enterprise`
+      )
     )
   }
 
@@ -4301,7 +4307,7 @@ package ec2 {
     val open = "open"
     val none = "none"
 
-    val values = IndexedSeq(open, none)
+    val values = js.Object.freeze(js.Array(open, none))
   }
 
   /**
@@ -4358,7 +4364,7 @@ package ec2 {
     val pending   = "pending"
     val failed    = "failed"
 
-    val values = IndexedSeq(active, expired, cancelled, pending, failed)
+    val values = js.Object.freeze(js.Array(active, expired, cancelled, pending, failed))
   }
 
   /**
@@ -4401,7 +4407,7 @@ package ec2 {
     val default   = "default"
     val dedicated = "dedicated"
 
-    val values = IndexedSeq(default, dedicated)
+    val values = js.Object.freeze(js.Array(default, dedicated))
   }
 
   /**
@@ -4592,7 +4598,7 @@ package ec2 {
     val pending = "pending"
     val active  = "active"
 
-    val values = IndexedSeq(pending, active)
+    val values = js.Object.freeze(js.Array(pending, active))
   }
 
   /**
@@ -4674,7 +4680,7 @@ package ec2 {
     val `certificate-authentication`       = "certificate-authentication"
     val `directory-service-authentication` = "directory-service-authentication"
 
-    val values = IndexedSeq(`certificate-authentication`, `directory-service-authentication`)
+    val values = js.Object.freeze(js.Array(`certificate-authentication`, `directory-service-authentication`))
   }
 
   /**
@@ -4704,7 +4710,7 @@ package ec2 {
     val failed      = "failed"
     val revoking    = "revoking"
 
-    val values = IndexedSeq(authorizing, active, failed, revoking)
+    val values = js.Object.freeze(js.Array(authorizing, active, failed, revoking))
   }
 
   /**
@@ -4788,7 +4794,7 @@ package ec2 {
     val terminating           = "terminating"
     val terminated            = "terminated"
 
-    val values = IndexedSeq(active, `failed-to-terminate`, terminating, terminated)
+    val values = js.Object.freeze(js.Array(active, `failed-to-terminate`, terminating, terminated))
   }
 
   /**
@@ -4881,7 +4887,7 @@ package ec2 {
     val deleting            = "deleting"
     val deleted             = "deleted"
 
-    val values = IndexedSeq(`pending-associate`, available, deleting, deleted)
+    val values = js.Object.freeze(js.Array(`pending-associate`, available, deleting, deleted))
   }
 
   /**
@@ -4947,7 +4953,7 @@ package ec2 {
     val failed   = "failed"
     val deleting = "deleting"
 
-    val values = IndexedSeq(creating, active, failed, deleting)
+    val values = js.Object.freeze(js.Array(creating, active, failed, deleting))
   }
 
   @js.native
@@ -5079,19 +5085,19 @@ package ec2 {
     val Enabled  = "Enabled"
     val Disabled = "Disabled"
 
-    val values = IndexedSeq(Enabled, Disabled)
+    val values = js.Object.freeze(js.Array(Enabled, Disabled))
   }
 
   object ConnectionNotificationTypeEnum {
     val Topic = "Topic"
 
-    val values = IndexedSeq(Topic)
+    val values = js.Object.freeze(js.Array(Topic))
   }
 
   object ContainerFormatEnum {
     val ova = "ova"
 
-    val values = IndexedSeq(ova)
+    val values = js.Object.freeze(js.Array(ova))
   }
 
   /**
@@ -5136,7 +5142,7 @@ package ec2 {
     val cancelled  = "cancelled"
     val completed  = "completed"
 
-    val values = IndexedSeq(active, cancelling, cancelled, completed)
+    val values = js.Object.freeze(js.Array(active, cancelling, cancelled, completed))
   }
 
   @js.native
@@ -5307,7 +5313,7 @@ package ec2 {
   object CopyTagsFromSourceEnum {
     val volume = "volume"
 
-    val values = IndexedSeq(volume)
+    val values = js.Object.freeze(js.Array(volume))
   }
 
   /**
@@ -7748,7 +7754,7 @@ package ec2 {
   object CurrencyCodeValuesEnum {
     val USD = "USD"
 
-    val values = IndexedSeq(USD)
+    val values = js.Object.freeze(js.Array(USD))
   }
 
   /**
@@ -7791,28 +7797,28 @@ package ec2 {
     val Active   = "Active"
     val Inactive = "Inactive"
 
-    val values = IndexedSeq(Active, Inactive)
+    val values = js.Object.freeze(js.Array(Active, Inactive))
   }
 
   object DefaultRouteTableAssociationValueEnum {
     val enable  = "enable"
     val disable = "disable"
 
-    val values = IndexedSeq(enable, disable)
+    val values = js.Object.freeze(js.Array(enable, disable))
   }
 
   object DefaultRouteTablePropagationValueEnum {
     val enable  = "enable"
     val disable = "disable"
 
-    val values = IndexedSeq(enable, disable)
+    val values = js.Object.freeze(js.Array(enable, disable))
   }
 
   object DefaultTargetCapacityTypeEnum {
     val spot        = "spot"
     val `on-demand` = "on-demand"
 
-    val values = IndexedSeq(spot, `on-demand`)
+    val values = js.Object.freeze(js.Array(spot, `on-demand`))
   }
 
   @js.native
@@ -7996,7 +8002,8 @@ package ec2 {
     val fleetNotInDeletableState = "fleetNotInDeletableState"
     val unexpectedError          = "unexpectedError"
 
-    val values = IndexedSeq(fleetIdDoesNotExist, fleetIdMalformed, fleetNotInDeletableState, unexpectedError)
+    val values =
+      js.Object.freeze(js.Array(fleetIdDoesNotExist, fleetIdMalformed, fleetNotInDeletableState, unexpectedError))
   }
 
   /**
@@ -13908,7 +13915,7 @@ package ec2 {
     val ebs              = "ebs"
     val `instance-store` = "instance-store"
 
-    val values = IndexedSeq(ebs, `instance-store`)
+    val values = js.Object.freeze(js.Array(ebs, `instance-store`))
   }
 
   /**
@@ -14460,7 +14467,7 @@ package ec2 {
     val RAW  = "RAW"
     val VHD  = "VHD"
 
-    val values = IndexedSeq(VMDK, RAW, VHD)
+    val values = js.Object.freeze(js.Array(VMDK, RAW, VHD))
   }
 
   /**
@@ -14530,14 +14537,14 @@ package ec2 {
     val enable  = "enable"
     val disable = "disable"
 
-    val values = IndexedSeq(enable, disable)
+    val values = js.Object.freeze(js.Array(enable, disable))
   }
 
   object DomainTypeEnum {
     val vpc      = "vpc"
     val standard = "standard"
 
-    val values = IndexedSeq(vpc, standard)
+    val values = js.Object.freeze(js.Array(vpc, standard))
   }
 
   /**
@@ -14731,14 +14738,14 @@ package ec2 {
   object ElasticGpuStateEnum {
     val ATTACHED = "ATTACHED"
 
-    val values = IndexedSeq(ATTACHED)
+    val values = js.Object.freeze(js.Array(ATTACHED))
   }
 
   object ElasticGpuStatusEnum {
     val OK       = "OK"
     val IMPAIRED = "IMPAIRED"
 
-    val values = IndexedSeq(OK, IMPAIRED)
+    val values = js.Object.freeze(js.Array(OK, IMPAIRED))
   }
 
   /**
@@ -15012,7 +15019,7 @@ package ec2 {
     val unlimited = "unlimited"
     val limited   = "limited"
 
-    val values = IndexedSeq(unlimited, limited)
+    val values = js.Object.freeze(js.Array(unlimited, limited))
   }
 
   object EventCodeEnum {
@@ -15022,8 +15029,9 @@ package ec2 {
     val `instance-retirement` = "instance-retirement"
     val `instance-stop`       = "instance-stop"
 
-    val values =
-      IndexedSeq(`instance-reboot`, `system-reboot`, `system-maintenance`, `instance-retirement`, `instance-stop`)
+    val values = js.Object.freeze(
+      js.Array(`instance-reboot`, `system-reboot`, `system-maintenance`, `instance-retirement`, `instance-stop`)
+    )
   }
 
   /**
@@ -15056,14 +15064,14 @@ package ec2 {
     val error              = "error"
     val information        = "information"
 
-    val values = IndexedSeq(instanceChange, fleetRequestChange, error, information)
+    val values = js.Object.freeze(js.Array(instanceChange, fleetRequestChange, error, information))
   }
 
   object ExcessCapacityTerminationPolicyEnum {
     val noTermination = "noTermination"
     val default       = "default"
 
-    val values = IndexedSeq(noTermination, default)
+    val values = js.Object.freeze(js.Array(noTermination, default))
   }
 
   @js.native
@@ -15144,7 +15152,7 @@ package ec2 {
     val vmware    = "vmware"
     val microsoft = "microsoft"
 
-    val values = IndexedSeq(citrix, vmware, microsoft)
+    val values = js.Object.freeze(js.Array(citrix, vmware, microsoft))
   }
 
   @js.native
@@ -15340,7 +15348,7 @@ package ec2 {
     val cancelled  = "cancelled"
     val completed  = "completed"
 
-    val values = IndexedSeq(active, cancelling, cancelled, completed)
+    val values = js.Object.freeze(js.Array(active, cancelling, cancelled, completed))
   }
 
   /**
@@ -15475,7 +15483,7 @@ package ec2 {
     val `pending-termination` = "pending-termination"
     val fulfilled             = "fulfilled"
 
-    val values = IndexedSeq(error, `pending-fulfillment`, `pending-termination`, fulfilled)
+    val values = js.Object.freeze(js.Array(error, `pending-fulfillment`, `pending-termination`, fulfilled))
   }
 
   /**
@@ -15562,14 +15570,14 @@ package ec2 {
     val `fleet-change`    = "fleet-change"
     val `service-error`   = "service-error"
 
-    val values = IndexedSeq(`instance-change`, `fleet-change`, `service-error`)
+    val values = js.Object.freeze(js.Array(`instance-change`, `fleet-change`, `service-error`))
   }
 
   object FleetExcessCapacityTerminationPolicyEnum {
     val `no-termination` = "no-termination"
     val termination      = "termination"
 
-    val values = IndexedSeq(`no-termination`, termination)
+    val values = js.Object.freeze(js.Array(`no-termination`, termination))
   }
 
   /**
@@ -15738,7 +15746,7 @@ package ec2 {
     val `lowest-price` = "lowest-price"
     val prioritized    = "prioritized"
 
-    val values = IndexedSeq(`lowest-price`, prioritized)
+    val values = js.Object.freeze(js.Array(`lowest-price`, prioritized))
   }
 
   object FleetStateCodeEnum {
@@ -15750,7 +15758,9 @@ package ec2 {
     val `deleted-terminating` = "deleted-terminating"
     val modifying             = "modifying"
 
-    val values = IndexedSeq(submitted, active, deleted, failed, `deleted-running`, `deleted-terminating`, modifying)
+    val values = js.Object.freeze(
+      js.Array(submitted, active, deleted, failed, `deleted-running`, `deleted-terminating`, modifying)
+    )
   }
 
   object FleetTypeEnum {
@@ -15758,7 +15768,7 @@ package ec2 {
     val maintain = "maintain"
     val instant  = "instant"
 
-    val values = IndexedSeq(request, maintain, instant)
+    val values = js.Object.freeze(js.Array(request, maintain, instant))
   }
 
   /**
@@ -15814,7 +15824,7 @@ package ec2 {
     val Subnet           = "Subnet"
     val NetworkInterface = "NetworkInterface"
 
-    val values = IndexedSeq(VPC, Subnet, NetworkInterface)
+    val values = js.Object.freeze(js.Array(VPC, Subnet, NetworkInterface))
   }
 
   /**
@@ -15913,7 +15923,7 @@ package ec2 {
     val loadPermission = "loadPermission"
     val productCodes   = "productCodes"
 
-    val values = IndexedSeq(description, name, loadPermission, productCodes)
+    val values = js.Object.freeze(js.Array(description, name, loadPermission, productCodes))
   }
 
   /**
@@ -15943,13 +15953,13 @@ package ec2 {
     val available   = "available"
     val unavailable = "unavailable"
 
-    val values = IndexedSeq(pending, failed, available, unavailable)
+    val values = js.Object.freeze(js.Array(pending, failed, available, unavailable))
   }
 
   object GatewayTypeEnum {
     val `ipsec.1` = "ipsec.1"
 
-    val values = IndexedSeq(`ipsec.1`)
+    val values = js.Object.freeze(js.Array(`ipsec.1`))
   }
 
   @js.native
@@ -16740,7 +16750,7 @@ package ec2 {
     val on  = "on"
     val off = "off"
 
-    val values = IndexedSeq(on, off)
+    val values = js.Object.freeze(js.Array(on, off))
   }
 
   /**
@@ -16804,14 +16814,14 @@ package ec2 {
     val dedicated = "dedicated"
     val host      = "host"
 
-    val values = IndexedSeq(dedicated, host)
+    val values = js.Object.freeze(js.Array(dedicated, host))
   }
 
   object HypervisorTypeEnum {
     val ovm = "ovm"
     val xen = "xen"
 
-    val values = IndexedSeq(ovm, xen)
+    val values = js.Object.freeze(js.Array(ovm, xen))
   }
 
   /**
@@ -16871,7 +16881,7 @@ package ec2 {
     val disassociating = "disassociating"
     val disassociated  = "disassociated"
 
-    val values = IndexedSeq(associating, associated, disassociating, disassociated)
+    val values = js.Object.freeze(js.Array(associating, associated, disassociating, disassociated))
   }
 
   /**
@@ -17075,8 +17085,9 @@ package ec2 {
     val blockDeviceMapping = "blockDeviceMapping"
     val sriovNetSupport    = "sriovNetSupport"
 
-    val values =
-      IndexedSeq(description, kernel, ramdisk, launchPermission, productCodes, blockDeviceMapping, sriovNetSupport)
+    val values = js.Object.freeze(
+      js.Array(description, kernel, ramdisk, launchPermission, productCodes, blockDeviceMapping, sriovNetSupport)
+    )
   }
 
   /**
@@ -17121,7 +17132,7 @@ package ec2 {
     val failed       = "failed"
     val error        = "error"
 
-    val values = IndexedSeq(pending, available, invalid, deregistered, transient, failed, error)
+    val values = js.Object.freeze(js.Array(pending, available, invalid, deregistered, transient, failed, error))
   }
 
   object ImageTypeValuesEnum {
@@ -17129,7 +17140,7 @@ package ec2 {
     val kernel  = "kernel"
     val ramdisk = "ramdisk"
 
-    val values = IndexedSeq(machine, kernel, ramdisk)
+    val values = js.Object.freeze(js.Array(machine, kernel, ramdisk))
   }
 
   @js.native
@@ -17908,21 +17919,23 @@ package ec2 {
     val sriovNetSupport                   = "sriovNetSupport"
     val enaSupport                        = "enaSupport"
 
-    val values = IndexedSeq(
-      instanceType,
-      kernel,
-      ramdisk,
-      userData,
-      disableApiTermination,
-      instanceInitiatedShutdownBehavior,
-      rootDeviceName,
-      blockDeviceMapping,
-      productCodes,
-      sourceDestCheck,
-      groupSet,
-      ebsOptimized,
-      sriovNetSupport,
-      enaSupport
+    val values = js.Object.freeze(
+      js.Array(
+        instanceType,
+        kernel,
+        ramdisk,
+        userData,
+        disableApiTermination,
+        instanceInitiatedShutdownBehavior,
+        rootDeviceName,
+        blockDeviceMapping,
+        productCodes,
+        sourceDestCheck,
+        groupSet,
+        ebsOptimized,
+        sriovNetSupport,
+        enaSupport
+      )
     )
   }
 
@@ -18086,7 +18099,7 @@ package ec2 {
     val healthy   = "healthy"
     val unhealthy = "unhealthy"
 
-    val values = IndexedSeq(healthy, unhealthy)
+    val values = js.Object.freeze(js.Array(healthy, unhealthy))
   }
 
   object InstanceInterruptionBehaviorEnum {
@@ -18094,7 +18107,7 @@ package ec2 {
     val stop      = "stop"
     val terminate = "terminate"
 
-    val values = IndexedSeq(hibernate, stop, terminate)
+    val values = js.Object.freeze(js.Array(hibernate, stop, terminate))
   }
 
   /**
@@ -18137,14 +18150,14 @@ package ec2 {
     val spot        = "spot"
     val `on-demand` = "on-demand"
 
-    val values = IndexedSeq(spot, `on-demand`)
+    val values = js.Object.freeze(js.Array(spot, `on-demand`))
   }
 
   object InstanceLifecycleTypeEnum {
     val spot      = "spot"
     val scheduled = "scheduled"
 
-    val values = IndexedSeq(spot, scheduled)
+    val values = js.Object.freeze(js.Array(spot, scheduled))
   }
 
   /**
@@ -18172,7 +18185,7 @@ package ec2 {
     val open     = "open"
     val targeted = "targeted"
 
-    val values = IndexedSeq(open, targeted)
+    val values = js.Object.freeze(js.Array(open, targeted))
   }
 
   /**
@@ -18470,7 +18483,7 @@ package ec2 {
     val stopping        = "stopping"
     val stopped         = "stopped"
 
-    val values = IndexedSeq(pending, running, `shutting-down`, terminated, stopping, stopped)
+    val values = js.Object.freeze(js.Array(pending, running, `shutting-down`, terminated, stopping, stopped))
   }
 
   /**
@@ -18809,230 +18822,232 @@ package ec2 {
     val `a1.2xlarge`    = "a1.2xlarge"
     val `a1.4xlarge`    = "a1.4xlarge"
 
-    val values = IndexedSeq(
-      `t1.micro`,
-      `t2.nano`,
-      `t2.micro`,
-      `t2.small`,
-      `t2.medium`,
-      `t2.large`,
-      `t2.xlarge`,
-      `t2.2xlarge`,
-      `t3.nano`,
-      `t3.micro`,
-      `t3.small`,
-      `t3.medium`,
-      `t3.large`,
-      `t3.xlarge`,
-      `t3.2xlarge`,
-      `t3a.nano`,
-      `t3a.micro`,
-      `t3a.small`,
-      `t3a.medium`,
-      `t3a.large`,
-      `t3a.xlarge`,
-      `t3a.2xlarge`,
-      `m1.small`,
-      `m1.medium`,
-      `m1.large`,
-      `m1.xlarge`,
-      `m3.medium`,
-      `m3.large`,
-      `m3.xlarge`,
-      `m3.2xlarge`,
-      `m4.large`,
-      `m4.xlarge`,
-      `m4.2xlarge`,
-      `m4.4xlarge`,
-      `m4.10xlarge`,
-      `m4.16xlarge`,
-      `m2.xlarge`,
-      `m2.2xlarge`,
-      `m2.4xlarge`,
-      `cr1.8xlarge`,
-      `r3.large`,
-      `r3.xlarge`,
-      `r3.2xlarge`,
-      `r3.4xlarge`,
-      `r3.8xlarge`,
-      `r4.large`,
-      `r4.xlarge`,
-      `r4.2xlarge`,
-      `r4.4xlarge`,
-      `r4.8xlarge`,
-      `r4.16xlarge`,
-      `r5.large`,
-      `r5.xlarge`,
-      `r5.2xlarge`,
-      `r5.4xlarge`,
-      `r5.8xlarge`,
-      `r5.12xlarge`,
-      `r5.16xlarge`,
-      `r5.24xlarge`,
-      `r5.metal`,
-      `r5a.large`,
-      `r5a.xlarge`,
-      `r5a.2xlarge`,
-      `r5a.4xlarge`,
-      `r5a.8xlarge`,
-      `r5a.12xlarge`,
-      `r5a.16xlarge`,
-      `r5a.24xlarge`,
-      `r5d.large`,
-      `r5d.xlarge`,
-      `r5d.2xlarge`,
-      `r5d.4xlarge`,
-      `r5d.8xlarge`,
-      `r5d.12xlarge`,
-      `r5d.16xlarge`,
-      `r5d.24xlarge`,
-      `r5d.metal`,
-      `r5ad.large`,
-      `r5ad.xlarge`,
-      `r5ad.2xlarge`,
-      `r5ad.4xlarge`,
-      `r5ad.8xlarge`,
-      `r5ad.12xlarge`,
-      `r5ad.16xlarge`,
-      `r5ad.24xlarge`,
-      `x1.16xlarge`,
-      `x1.32xlarge`,
-      `x1e.xlarge`,
-      `x1e.2xlarge`,
-      `x1e.4xlarge`,
-      `x1e.8xlarge`,
-      `x1e.16xlarge`,
-      `x1e.32xlarge`,
-      `i2.xlarge`,
-      `i2.2xlarge`,
-      `i2.4xlarge`,
-      `i2.8xlarge`,
-      `i3.large`,
-      `i3.xlarge`,
-      `i3.2xlarge`,
-      `i3.4xlarge`,
-      `i3.8xlarge`,
-      `i3.16xlarge`,
-      `i3.metal`,
-      `i3en.large`,
-      `i3en.xlarge`,
-      `i3en.2xlarge`,
-      `i3en.3xlarge`,
-      `i3en.6xlarge`,
-      `i3en.12xlarge`,
-      `i3en.24xlarge`,
-      `i3en.metal`,
-      `hi1.4xlarge`,
-      `hs1.8xlarge`,
-      `c1.medium`,
-      `c1.xlarge`,
-      `c3.large`,
-      `c3.xlarge`,
-      `c3.2xlarge`,
-      `c3.4xlarge`,
-      `c3.8xlarge`,
-      `c4.large`,
-      `c4.xlarge`,
-      `c4.2xlarge`,
-      `c4.4xlarge`,
-      `c4.8xlarge`,
-      `c5.large`,
-      `c5.xlarge`,
-      `c5.2xlarge`,
-      `c5.4xlarge`,
-      `c5.9xlarge`,
-      `c5.12xlarge`,
-      `c5.18xlarge`,
-      `c5.24xlarge`,
-      `c5.metal`,
-      `c5d.large`,
-      `c5d.xlarge`,
-      `c5d.2xlarge`,
-      `c5d.4xlarge`,
-      `c5d.9xlarge`,
-      `c5d.18xlarge`,
-      `c5n.large`,
-      `c5n.xlarge`,
-      `c5n.2xlarge`,
-      `c5n.4xlarge`,
-      `c5n.9xlarge`,
-      `c5n.18xlarge`,
-      `cc1.4xlarge`,
-      `cc2.8xlarge`,
-      `g2.2xlarge`,
-      `g2.8xlarge`,
-      `g3.4xlarge`,
-      `g3.8xlarge`,
-      `g3.16xlarge`,
-      `g3s.xlarge`,
-      `cg1.4xlarge`,
-      `p2.xlarge`,
-      `p2.8xlarge`,
-      `p2.16xlarge`,
-      `p3.2xlarge`,
-      `p3.8xlarge`,
-      `p3.16xlarge`,
-      `p3dn.24xlarge`,
-      `d2.xlarge`,
-      `d2.2xlarge`,
-      `d2.4xlarge`,
-      `d2.8xlarge`,
-      `f1.2xlarge`,
-      `f1.4xlarge`,
-      `f1.16xlarge`,
-      `m5.large`,
-      `m5.xlarge`,
-      `m5.2xlarge`,
-      `m5.4xlarge`,
-      `m5.8xlarge`,
-      `m5.12xlarge`,
-      `m5.16xlarge`,
-      `m5.24xlarge`,
-      `m5.metal`,
-      `m5a.large`,
-      `m5a.xlarge`,
-      `m5a.2xlarge`,
-      `m5a.4xlarge`,
-      `m5a.8xlarge`,
-      `m5a.12xlarge`,
-      `m5a.16xlarge`,
-      `m5a.24xlarge`,
-      `m5d.large`,
-      `m5d.xlarge`,
-      `m5d.2xlarge`,
-      `m5d.4xlarge`,
-      `m5d.8xlarge`,
-      `m5d.12xlarge`,
-      `m5d.16xlarge`,
-      `m5d.24xlarge`,
-      `m5d.metal`,
-      `m5ad.large`,
-      `m5ad.xlarge`,
-      `m5ad.2xlarge`,
-      `m5ad.4xlarge`,
-      `m5ad.8xlarge`,
-      `m5ad.12xlarge`,
-      `m5ad.16xlarge`,
-      `m5ad.24xlarge`,
-      `h1.2xlarge`,
-      `h1.4xlarge`,
-      `h1.8xlarge`,
-      `h1.16xlarge`,
-      `z1d.large`,
-      `z1d.xlarge`,
-      `z1d.2xlarge`,
-      `z1d.3xlarge`,
-      `z1d.6xlarge`,
-      `z1d.12xlarge`,
-      `z1d.metal`,
-      `u-6tb1.metal`,
-      `u-9tb1.metal`,
-      `u-12tb1.metal`,
-      `a1.medium`,
-      `a1.large`,
-      `a1.xlarge`,
-      `a1.2xlarge`,
-      `a1.4xlarge`
+    val values = js.Object.freeze(
+      js.Array(
+        `t1.micro`,
+        `t2.nano`,
+        `t2.micro`,
+        `t2.small`,
+        `t2.medium`,
+        `t2.large`,
+        `t2.xlarge`,
+        `t2.2xlarge`,
+        `t3.nano`,
+        `t3.micro`,
+        `t3.small`,
+        `t3.medium`,
+        `t3.large`,
+        `t3.xlarge`,
+        `t3.2xlarge`,
+        `t3a.nano`,
+        `t3a.micro`,
+        `t3a.small`,
+        `t3a.medium`,
+        `t3a.large`,
+        `t3a.xlarge`,
+        `t3a.2xlarge`,
+        `m1.small`,
+        `m1.medium`,
+        `m1.large`,
+        `m1.xlarge`,
+        `m3.medium`,
+        `m3.large`,
+        `m3.xlarge`,
+        `m3.2xlarge`,
+        `m4.large`,
+        `m4.xlarge`,
+        `m4.2xlarge`,
+        `m4.4xlarge`,
+        `m4.10xlarge`,
+        `m4.16xlarge`,
+        `m2.xlarge`,
+        `m2.2xlarge`,
+        `m2.4xlarge`,
+        `cr1.8xlarge`,
+        `r3.large`,
+        `r3.xlarge`,
+        `r3.2xlarge`,
+        `r3.4xlarge`,
+        `r3.8xlarge`,
+        `r4.large`,
+        `r4.xlarge`,
+        `r4.2xlarge`,
+        `r4.4xlarge`,
+        `r4.8xlarge`,
+        `r4.16xlarge`,
+        `r5.large`,
+        `r5.xlarge`,
+        `r5.2xlarge`,
+        `r5.4xlarge`,
+        `r5.8xlarge`,
+        `r5.12xlarge`,
+        `r5.16xlarge`,
+        `r5.24xlarge`,
+        `r5.metal`,
+        `r5a.large`,
+        `r5a.xlarge`,
+        `r5a.2xlarge`,
+        `r5a.4xlarge`,
+        `r5a.8xlarge`,
+        `r5a.12xlarge`,
+        `r5a.16xlarge`,
+        `r5a.24xlarge`,
+        `r5d.large`,
+        `r5d.xlarge`,
+        `r5d.2xlarge`,
+        `r5d.4xlarge`,
+        `r5d.8xlarge`,
+        `r5d.12xlarge`,
+        `r5d.16xlarge`,
+        `r5d.24xlarge`,
+        `r5d.metal`,
+        `r5ad.large`,
+        `r5ad.xlarge`,
+        `r5ad.2xlarge`,
+        `r5ad.4xlarge`,
+        `r5ad.8xlarge`,
+        `r5ad.12xlarge`,
+        `r5ad.16xlarge`,
+        `r5ad.24xlarge`,
+        `x1.16xlarge`,
+        `x1.32xlarge`,
+        `x1e.xlarge`,
+        `x1e.2xlarge`,
+        `x1e.4xlarge`,
+        `x1e.8xlarge`,
+        `x1e.16xlarge`,
+        `x1e.32xlarge`,
+        `i2.xlarge`,
+        `i2.2xlarge`,
+        `i2.4xlarge`,
+        `i2.8xlarge`,
+        `i3.large`,
+        `i3.xlarge`,
+        `i3.2xlarge`,
+        `i3.4xlarge`,
+        `i3.8xlarge`,
+        `i3.16xlarge`,
+        `i3.metal`,
+        `i3en.large`,
+        `i3en.xlarge`,
+        `i3en.2xlarge`,
+        `i3en.3xlarge`,
+        `i3en.6xlarge`,
+        `i3en.12xlarge`,
+        `i3en.24xlarge`,
+        `i3en.metal`,
+        `hi1.4xlarge`,
+        `hs1.8xlarge`,
+        `c1.medium`,
+        `c1.xlarge`,
+        `c3.large`,
+        `c3.xlarge`,
+        `c3.2xlarge`,
+        `c3.4xlarge`,
+        `c3.8xlarge`,
+        `c4.large`,
+        `c4.xlarge`,
+        `c4.2xlarge`,
+        `c4.4xlarge`,
+        `c4.8xlarge`,
+        `c5.large`,
+        `c5.xlarge`,
+        `c5.2xlarge`,
+        `c5.4xlarge`,
+        `c5.9xlarge`,
+        `c5.12xlarge`,
+        `c5.18xlarge`,
+        `c5.24xlarge`,
+        `c5.metal`,
+        `c5d.large`,
+        `c5d.xlarge`,
+        `c5d.2xlarge`,
+        `c5d.4xlarge`,
+        `c5d.9xlarge`,
+        `c5d.18xlarge`,
+        `c5n.large`,
+        `c5n.xlarge`,
+        `c5n.2xlarge`,
+        `c5n.4xlarge`,
+        `c5n.9xlarge`,
+        `c5n.18xlarge`,
+        `cc1.4xlarge`,
+        `cc2.8xlarge`,
+        `g2.2xlarge`,
+        `g2.8xlarge`,
+        `g3.4xlarge`,
+        `g3.8xlarge`,
+        `g3.16xlarge`,
+        `g3s.xlarge`,
+        `cg1.4xlarge`,
+        `p2.xlarge`,
+        `p2.8xlarge`,
+        `p2.16xlarge`,
+        `p3.2xlarge`,
+        `p3.8xlarge`,
+        `p3.16xlarge`,
+        `p3dn.24xlarge`,
+        `d2.xlarge`,
+        `d2.2xlarge`,
+        `d2.4xlarge`,
+        `d2.8xlarge`,
+        `f1.2xlarge`,
+        `f1.4xlarge`,
+        `f1.16xlarge`,
+        `m5.large`,
+        `m5.xlarge`,
+        `m5.2xlarge`,
+        `m5.4xlarge`,
+        `m5.8xlarge`,
+        `m5.12xlarge`,
+        `m5.16xlarge`,
+        `m5.24xlarge`,
+        `m5.metal`,
+        `m5a.large`,
+        `m5a.xlarge`,
+        `m5a.2xlarge`,
+        `m5a.4xlarge`,
+        `m5a.8xlarge`,
+        `m5a.12xlarge`,
+        `m5a.16xlarge`,
+        `m5a.24xlarge`,
+        `m5d.large`,
+        `m5d.xlarge`,
+        `m5d.2xlarge`,
+        `m5d.4xlarge`,
+        `m5d.8xlarge`,
+        `m5d.12xlarge`,
+        `m5d.16xlarge`,
+        `m5d.24xlarge`,
+        `m5d.metal`,
+        `m5ad.large`,
+        `m5ad.xlarge`,
+        `m5ad.2xlarge`,
+        `m5ad.4xlarge`,
+        `m5ad.8xlarge`,
+        `m5ad.12xlarge`,
+        `m5ad.16xlarge`,
+        `m5ad.24xlarge`,
+        `h1.2xlarge`,
+        `h1.4xlarge`,
+        `h1.8xlarge`,
+        `h1.16xlarge`,
+        `z1d.large`,
+        `z1d.xlarge`,
+        `z1d.2xlarge`,
+        `z1d.3xlarge`,
+        `z1d.6xlarge`,
+        `z1d.12xlarge`,
+        `z1d.metal`,
+        `u-6tb1.metal`,
+        `u-9tb1.metal`,
+        `u-12tb1.metal`,
+        `a1.medium`,
+        `a1.large`,
+        `a1.xlarge`,
+        `a1.2xlarge`,
+        `a1.4xlarge`
+      )
     )
   }
 
@@ -19061,7 +19076,7 @@ package ec2 {
     val `INSTANCE-ATTACH` = "INSTANCE-ATTACH"
     val `EIP-ASSOCIATE`   = "EIP-ASSOCIATE"
 
-    val values = IndexedSeq(`INSTANCE-ATTACH`, `EIP-ASSOCIATE`)
+    val values = js.Object.freeze(js.Array(`INSTANCE-ATTACH`, `EIP-ASSOCIATE`))
   }
 
   /**
@@ -19212,7 +19227,7 @@ package ec2 {
     val enable  = "enable"
     val disable = "disable"
 
-    val values = IndexedSeq(enable, disable)
+    val values = js.Object.freeze(js.Array(enable, disable))
   }
 
   /**
@@ -19700,13 +19715,15 @@ package ec2 {
     val launchTemplateVersionDoesNotExist = "launchTemplateVersionDoesNotExist"
     val unexpectedError                   = "unexpectedError"
 
-    val values = IndexedSeq(
-      launchTemplateIdDoesNotExist,
-      launchTemplateIdMalformed,
-      launchTemplateNameDoesNotExist,
-      launchTemplateNameMalformed,
-      launchTemplateVersionDoesNotExist,
-      unexpectedError
+    val values = js.Object.freeze(
+      js.Array(
+        launchTemplateIdDoesNotExist,
+        launchTemplateIdMalformed,
+        launchTemplateNameDoesNotExist,
+        launchTemplateNameMalformed,
+        launchTemplateVersionDoesNotExist,
+        unexpectedError
+      )
     )
   }
 
@@ -20324,7 +20341,7 @@ package ec2 {
     val cancelled = "cancelled"
     val pending   = "pending"
 
-    val values = IndexedSeq(available, sold, cancelled, pending)
+    val values = js.Object.freeze(js.Array(available, sold, cancelled, pending))
   }
 
   object ListingStatusEnum {
@@ -20333,7 +20350,7 @@ package ec2 {
     val cancelled = "cancelled"
     val closed    = "closed"
 
-    val values = IndexedSeq(active, pending, cancelled, closed)
+    val values = js.Object.freeze(js.Array(active, pending, cancelled, closed))
   }
 
   /**
@@ -20424,13 +20441,13 @@ package ec2 {
     val `cloud-watch-logs` = "cloud-watch-logs"
     val s3                 = "s3"
 
-    val values = IndexedSeq(`cloud-watch-logs`, s3)
+    val values = js.Object.freeze(js.Array(`cloud-watch-logs`, s3))
   }
 
   object MarketTypeEnum {
     val spot = "spot"
 
-    val values = IndexedSeq(spot)
+    val values = js.Object.freeze(js.Array(spot))
   }
 
   @js.native
@@ -22007,7 +22024,7 @@ package ec2 {
     val enabled   = "enabled"
     val pending   = "pending"
 
-    val values = IndexedSeq(disabled, disabling, enabled, pending)
+    val values = js.Object.freeze(js.Array(disabled, disabling, enabled, pending))
   }
 
   @js.native
@@ -22052,7 +22069,7 @@ package ec2 {
     val movingToVpc        = "movingToVpc"
     val restoringToClassic = "restoringToClassic"
 
-    val values = IndexedSeq(movingToVpc, restoringToClassic)
+    val values = js.Object.freeze(js.Array(movingToVpc, restoringToClassic))
   }
 
   /**
@@ -22158,7 +22175,7 @@ package ec2 {
     val deleting  = "deleting"
     val deleted   = "deleted"
 
-    val values = IndexedSeq(pending, failed, available, deleting, deleted)
+    val values = js.Object.freeze(js.Array(pending, failed, available, deleting, deleted))
   }
 
   /**
@@ -22428,13 +22445,13 @@ package ec2 {
     val sourceDestCheck = "sourceDestCheck"
     val attachment      = "attachment"
 
-    val values = IndexedSeq(description, groupSet, sourceDestCheck, attachment)
+    val values = js.Object.freeze(js.Array(description, groupSet, sourceDestCheck, attachment))
   }
 
   object NetworkInterfaceCreationTypeEnum {
     val efa = "efa"
 
-    val values = IndexedSeq(efa)
+    val values = js.Object.freeze(js.Array(efa))
   }
 
   /**
@@ -22517,7 +22534,7 @@ package ec2 {
     val revoking = "revoking"
     val revoked  = "revoked"
 
-    val values = IndexedSeq(pending, granted, revoking, revoked)
+    val values = js.Object.freeze(js.Array(pending, granted, revoking, revoked))
   }
 
   /**
@@ -22554,7 +22571,7 @@ package ec2 {
     val `in-use`   = "in-use"
     val detaching  = "detaching"
 
-    val values = IndexedSeq(available, associated, attaching, `in-use`, detaching)
+    val values = js.Object.freeze(js.Array(available, associated, attaching, `in-use`, detaching))
   }
 
   object NetworkInterfaceTypeEnum {
@@ -22562,7 +22579,7 @@ package ec2 {
     val natGateway = "natGateway"
     val efa        = "efa"
 
-    val values = IndexedSeq(interface, natGateway, efa)
+    val values = js.Object.freeze(js.Array(interface, natGateway, efa))
   }
 
   @js.native
@@ -22587,7 +22604,7 @@ package ec2 {
     val standard    = "standard"
     val convertible = "convertible"
 
-    val values = IndexedSeq(standard, convertible)
+    val values = js.Object.freeze(js.Array(standard, convertible))
   }
 
   object OfferingTypeValuesEnum {
@@ -22598,13 +22615,15 @@ package ec2 {
     val `Partial Upfront`    = "Partial Upfront"
     val `All Upfront`        = "All Upfront"
 
-    val values = IndexedSeq(
-      `Heavy Utilization`,
-      `Medium Utilization`,
-      `Light Utilization`,
-      `No Upfront`,
-      `Partial Upfront`,
-      `All Upfront`
+    val values = js.Object.freeze(
+      js.Array(
+        `Heavy Utilization`,
+        `Medium Utilization`,
+        `Light Utilization`,
+        `No Upfront`,
+        `Partial Upfront`,
+        `All Upfront`
+      )
     )
   }
 
@@ -22612,7 +22631,7 @@ package ec2 {
     val lowestPrice = "lowestPrice"
     val prioritized = "prioritized"
 
-    val values = IndexedSeq(lowestPrice, prioritized)
+    val values = js.Object.freeze(js.Array(lowestPrice, prioritized))
   }
 
   /**
@@ -22679,7 +22698,7 @@ package ec2 {
     val add    = "add"
     val remove = "remove"
 
-    val values = IndexedSeq(add, remove)
+    val values = js.Object.freeze(js.Array(add, remove))
   }
 
   object PaymentOptionEnum {
@@ -22687,7 +22706,7 @@ package ec2 {
     val PartialUpfront = "PartialUpfront"
     val NoUpfront      = "NoUpfront"
 
-    val values = IndexedSeq(AllUpfront, PartialUpfront, NoUpfront)
+    val values = js.Object.freeze(js.Array(AllUpfront, PartialUpfront, NoUpfront))
   }
 
   /**
@@ -22780,7 +22799,7 @@ package ec2 {
   object PermissionGroupEnum {
     val all = "all"
 
-    val values = IndexedSeq(all)
+    val values = js.Object.freeze(js.Array(all))
   }
 
   /**
@@ -22852,7 +22871,7 @@ package ec2 {
     val deleting  = "deleting"
     val deleted   = "deleted"
 
-    val values = IndexedSeq(pending, available, deleting, deleted)
+    val values = js.Object.freeze(js.Array(pending, available, deleting, deleted))
   }
 
   /**
@@ -22878,13 +22897,13 @@ package ec2 {
     val spread    = "spread"
     val partition = "partition"
 
-    val values = IndexedSeq(cluster, spread, partition)
+    val values = js.Object.freeze(js.Array(cluster, spread, partition))
   }
 
   object PlatformValuesEnum {
     val Windows = "Windows"
 
-    val values = IndexedSeq(Windows)
+    val values = js.Object.freeze(js.Array(Windows))
   }
 
   /**
@@ -23054,7 +23073,7 @@ package ec2 {
     val User             = "User"
     val Role             = "Role"
 
-    val values = IndexedSeq(All, Service, OrganizationUnit, Account, User, Role)
+    val values = js.Object.freeze(js.Array(All, Service, OrganizationUnit, Account, User, Role))
   }
 
   /**
@@ -23103,7 +23122,7 @@ package ec2 {
     val devpay      = "devpay"
     val marketplace = "marketplace"
 
-    val values = IndexedSeq(devpay, marketplace)
+    val values = js.Object.freeze(js.Array(devpay, marketplace))
   }
 
   /**
@@ -23467,7 +23486,7 @@ package ec2 {
     val Windows                   = "Windows"
     val `Windows (Amazon VPC)`    = "Windows (Amazon VPC)"
 
-    val values = IndexedSeq(`Linux/UNIX`, `Linux/UNIX (Amazon VPC)`, Windows, `Windows (Amazon VPC)`)
+    val values = js.Object.freeze(js.Array(`Linux/UNIX`, `Linux/UNIX (Amazon VPC)`, Windows, `Windows (Amazon VPC)`))
   }
 
   @js.native
@@ -23514,7 +23533,7 @@ package ec2 {
   object RecurringChargeFrequencyEnum {
     val Hourly = "Hourly"
 
-    val values = IndexedSeq(Hourly)
+    val values = js.Object.freeze(js.Array(Hourly))
   }
 
   /**
@@ -24038,16 +24057,18 @@ package ec2 {
     val `performance-other`          = "performance-other"
     val other                        = "other"
 
-    val values = IndexedSeq(
-      `instance-stuck-in-state`,
-      unresponsive,
-      `not-accepting-credentials`,
-      `password-not-available`,
-      `performance-network`,
-      `performance-instance-store`,
-      `performance-ebs-volume`,
-      `performance-other`,
-      other
+    val values = js.Object.freeze(
+      js.Array(
+        `instance-stuck-in-state`,
+        unresponsive,
+        `not-accepting-credentials`,
+        `password-not-available`,
+        `performance-network`,
+        `performance-instance-store`,
+        `performance-ebs-volume`,
+        `performance-other`,
+        other
+      )
     )
   }
 
@@ -24090,7 +24111,7 @@ package ec2 {
     val ok       = "ok"
     val impaired = "impaired"
 
-    val values = IndexedSeq(ok, impaired)
+    val values = js.Object.freeze(js.Array(ok, impaired))
   }
 
   /**
@@ -24401,7 +24422,7 @@ package ec2 {
     val active            = "active"
     val retired           = "retired"
 
-    val values = IndexedSeq(`payment-pending`, `payment-failed`, active, retired)
+    val values = js.Object.freeze(js.Array(`payment-pending`, `payment-failed`, active, retired))
   }
 
   /**
@@ -24476,7 +24497,7 @@ package ec2 {
     val `payment-failed`  = "payment-failed"
     val retired           = "retired"
 
-    val values = IndexedSeq(`payment-pending`, active, `payment-failed`, retired)
+    val values = js.Object.freeze(js.Array(`payment-pending`, active, `payment-failed`, retired))
   }
 
   /**
@@ -24799,7 +24820,7 @@ package ec2 {
   object ResetFpgaImageAttributeNameEnum {
     val loadPermission = "loadPermission"
 
-    val values = IndexedSeq(loadPermission)
+    val values = js.Object.freeze(js.Array(loadPermission))
   }
 
   @js.native
@@ -24843,7 +24864,7 @@ package ec2 {
   object ResetImageAttributeNameEnum {
     val launchPermission = "launchPermission"
 
-    val values = IndexedSeq(launchPermission)
+    val values = js.Object.freeze(js.Array(launchPermission))
   }
 
   /**
@@ -24981,39 +25002,41 @@ package ec2 {
     val `vpn-connection`              = "vpn-connection"
     val `vpn-gateway`                 = "vpn-gateway"
 
-    val values = IndexedSeq(
-      `client-vpn-endpoint`,
-      `customer-gateway`,
-      `dedicated-host`,
-      `dhcp-options`,
-      `elastic-ip`,
-      fleet,
-      `fpga-image`,
-      `host-reservation`,
-      image,
-      instance,
-      `internet-gateway`,
-      `launch-template`,
-      natgateway,
-      `network-acl`,
-      `network-interface`,
-      `reserved-instances`,
-      `route-table`,
-      `security-group`,
-      snapshot,
-      `spot-instances-request`,
-      subnet,
-      `traffic-mirror-filter`,
-      `traffic-mirror-session`,
-      `traffic-mirror-target`,
-      `transit-gateway`,
-      `transit-gateway-attachment`,
-      `transit-gateway-route-table`,
-      volume,
-      vpc,
-      `vpc-peering-connection`,
-      `vpn-connection`,
-      `vpn-gateway`
+    val values = js.Object.freeze(
+      js.Array(
+        `client-vpn-endpoint`,
+        `customer-gateway`,
+        `dedicated-host`,
+        `dhcp-options`,
+        `elastic-ip`,
+        fleet,
+        `fpga-image`,
+        `host-reservation`,
+        image,
+        instance,
+        `internet-gateway`,
+        `launch-template`,
+        natgateway,
+        `network-acl`,
+        `network-interface`,
+        `reserved-instances`,
+        `route-table`,
+        `security-group`,
+        snapshot,
+        `spot-instances-request`,
+        subnet,
+        `traffic-mirror-filter`,
+        `traffic-mirror-session`,
+        `traffic-mirror-target`,
+        `transit-gateway`,
+        `transit-gateway-attachment`,
+        `transit-gateway-route-table`,
+        volume,
+        vpc,
+        `vpc-peering-connection`,
+        `vpn-connection`,
+        `vpn-gateway`
+      )
     )
   }
 
@@ -25359,14 +25382,14 @@ package ec2 {
     val CreateRoute               = "CreateRoute"
     val EnableVgwRoutePropagation = "EnableVgwRoutePropagation"
 
-    val values = IndexedSeq(CreateRouteTable, CreateRoute, EnableVgwRoutePropagation)
+    val values = js.Object.freeze(js.Array(CreateRouteTable, CreateRoute, EnableVgwRoutePropagation))
   }
 
   object RouteStateEnum {
     val active    = "active"
     val blackhole = "blackhole"
 
-    val values = IndexedSeq(active, blackhole)
+    val values = js.Object.freeze(js.Array(active, blackhole))
   }
 
   /**
@@ -25436,7 +25459,7 @@ package ec2 {
     val allow = "allow"
     val deny  = "deny"
 
-    val values = IndexedSeq(allow, deny)
+    val values = js.Object.freeze(js.Array(allow, deny))
   }
 
   /**
@@ -26361,14 +26384,14 @@ package ec2 {
     val Deleted   = "Deleted"
     val Failed    = "Failed"
 
-    val values = IndexedSeq(Pending, Available, Deleting, Deleted, Failed)
+    val values = js.Object.freeze(js.Array(Pending, Available, Deleting, Deleted, Failed))
   }
 
   object ServiceTypeEnum {
     val Interface = "Interface"
     val Gateway   = "Gateway"
 
-    val values = IndexedSeq(Interface, Gateway)
+    val values = js.Object.freeze(js.Array(Interface, Gateway))
   }
 
   /**
@@ -26393,7 +26416,7 @@ package ec2 {
     val stop      = "stop"
     val terminate = "terminate"
 
-    val values = IndexedSeq(stop, terminate)
+    val values = js.Object.freeze(js.Array(stop, terminate))
   }
 
   /**
@@ -26501,7 +26524,7 @@ package ec2 {
     val productCodes           = "productCodes"
     val createVolumePermission = "createVolumePermission"
 
-    val values = IndexedSeq(productCodes, createVolumePermission)
+    val values = js.Object.freeze(js.Array(productCodes, createVolumePermission))
   }
 
   /**
@@ -26626,7 +26649,7 @@ package ec2 {
     val completed = "completed"
     val error     = "error"
 
-    val values = IndexedSeq(pending, completed, error)
+    val values = js.Object.freeze(js.Array(pending, completed, error))
   }
 
   /**
@@ -26682,7 +26705,7 @@ package ec2 {
     val diversified          = "diversified"
     val `capacity-optimized` = "capacity-optimized"
 
-    val values = IndexedSeq(`lowest-price`, diversified, `capacity-optimized`)
+    val values = js.Object.freeze(js.Array(`lowest-price`, diversified, `capacity-optimized`))
   }
 
   /**
@@ -26947,7 +26970,7 @@ package ec2 {
     val stop      = "stop"
     val terminate = "terminate"
 
-    val values = IndexedSeq(hibernate, stop, terminate)
+    val values = js.Object.freeze(js.Array(hibernate, stop, terminate))
   }
 
   /**
@@ -27031,7 +27054,7 @@ package ec2 {
     val cancelled = "cancelled"
     val failed    = "failed"
 
-    val values = IndexedSeq(open, active, closed, cancelled, failed)
+    val values = js.Object.freeze(js.Array(open, active, closed, cancelled, failed))
   }
 
   /**
@@ -27083,7 +27106,7 @@ package ec2 {
     val `one-time` = "one-time"
     val persistent = "persistent"
 
-    val values = IndexedSeq(`one-time`, persistent)
+    val values = js.Object.freeze(js.Array(`one-time`, persistent))
   }
 
   /**
@@ -27362,7 +27385,8 @@ package ec2 {
     val Failed            = "Failed"
     val Expired           = "Expired"
 
-    val values = IndexedSeq(PendingAcceptance, Pending, Available, Deleting, Deleted, Rejected, Failed, Expired)
+    val values =
+      js.Object.freeze(js.Array(PendingAcceptance, Pending, Available, Deleting, Deleted, Rejected, Failed, Expired))
   }
 
   /**
@@ -27391,13 +27415,13 @@ package ec2 {
     val InVpc          = "InVpc"
     val InClassic      = "InClassic"
 
-    val values = IndexedSeq(MoveInProgress, InVpc, InClassic)
+    val values = js.Object.freeze(js.Array(MoveInProgress, InVpc, InClassic))
   }
 
   object StatusNameEnum {
     val reachability = "reachability"
 
-    val values = IndexedSeq(reachability)
+    val values = js.Object.freeze(js.Array(reachability))
   }
 
   object StatusTypeEnum {
@@ -27406,7 +27430,7 @@ package ec2 {
     val `insufficient-data` = "insufficient-data"
     val initializing        = "initializing"
 
-    val values = IndexedSeq(passed, failed, `insufficient-data`, initializing)
+    val values = js.Object.freeze(js.Array(passed, failed, `insufficient-data`, initializing))
   }
 
   @js.native
@@ -27575,7 +27599,7 @@ package ec2 {
     val failing        = "failing"
     val failed         = "failed"
 
-    val values = IndexedSeq(associating, associated, disassociating, disassociated, failing, failed)
+    val values = js.Object.freeze(js.Array(associating, associated, disassociating, disassociated, failing, failed))
   }
 
   /**
@@ -27606,7 +27630,7 @@ package ec2 {
     val pending   = "pending"
     val available = "available"
 
-    val values = IndexedSeq(pending, available)
+    val values = js.Object.freeze(js.Array(pending, available))
   }
 
   /**
@@ -27634,7 +27658,7 @@ package ec2 {
     val `not-applicable`    = "not-applicable"
     val initializing        = "initializing"
 
-    val values = IndexedSeq(ok, impaired, `insufficient-data`, `not-applicable`, initializing)
+    val values = js.Object.freeze(js.Array(ok, impaired, `insufficient-data`, `not-applicable`, initializing))
   }
 
   /**
@@ -27902,7 +27926,7 @@ package ec2 {
     val UP   = "UP"
     val DOWN = "DOWN"
 
-    val values = IndexedSeq(UP, DOWN)
+    val values = js.Object.freeze(js.Array(UP, DOWN))
   }
 
   object TenancyEnum {
@@ -27910,7 +27934,7 @@ package ec2 {
     val dedicated = "dedicated"
     val host      = "host"
 
-    val values = IndexedSeq(default, dedicated, host)
+    val values = js.Object.freeze(js.Array(default, dedicated, host))
   }
 
   @js.native
@@ -28023,7 +28047,7 @@ package ec2 {
     val ingress = "ingress"
     val egress  = "egress"
 
-    val values = IndexedSeq(ingress, egress)
+    val values = js.Object.freeze(js.Array(ingress, egress))
   }
 
   /**
@@ -28113,13 +28137,13 @@ package ec2 {
     val protocol                 = "protocol"
     val description              = "description"
 
-    val values = IndexedSeq(`destination-port-range`, `source-port-range`, protocol, description)
+    val values = js.Object.freeze(js.Array(`destination-port-range`, `source-port-range`, protocol, description))
   }
 
   object TrafficMirrorNetworkServiceEnum {
     val `amazon-dns` = "amazon-dns"
 
-    val values = IndexedSeq(`amazon-dns`)
+    val values = js.Object.freeze(js.Array(`amazon-dns`))
   }
 
   /**
@@ -28168,7 +28192,7 @@ package ec2 {
     val accept = "accept"
     val reject = "reject"
 
-    val values = IndexedSeq(accept, reject)
+    val values = js.Object.freeze(js.Array(accept, reject))
   }
 
   /**
@@ -28221,7 +28245,7 @@ package ec2 {
     val description          = "description"
     val `virtual-network-id` = "virtual-network-id"
 
-    val values = IndexedSeq(`packet-length`, description, `virtual-network-id`)
+    val values = js.Object.freeze(js.Array(`packet-length`, description, `virtual-network-id`))
   }
 
   /**
@@ -28264,7 +28288,7 @@ package ec2 {
     val `network-interface`     = "network-interface"
     val `network-load-balancer` = "network-load-balancer"
 
-    val values = IndexedSeq(`network-interface`, `network-load-balancer`)
+    val values = js.Object.freeze(js.Array(`network-interface`, `network-load-balancer`))
   }
 
   object TrafficTypeEnum {
@@ -28272,7 +28296,7 @@ package ec2 {
     val REJECT = "REJECT"
     val ALL    = "ALL"
 
-    val values = IndexedSeq(ACCEPT, REJECT, ALL)
+    val values = js.Object.freeze(js.Array(ACCEPT, REJECT, ALL))
   }
 
   /**
@@ -28350,7 +28374,7 @@ package ec2 {
     val disassociating = "disassociating"
     val disassociated  = "disassociated"
 
-    val values = IndexedSeq(associating, associated, disassociating, disassociated)
+    val values = js.Object.freeze(js.Array(associating, associated, disassociating, disassociated))
   }
 
   /**
@@ -28445,7 +28469,7 @@ package ec2 {
     val vpn                      = "vpn"
     val `direct-connect-gateway` = "direct-connect-gateway"
 
-    val values = IndexedSeq(vpc, vpn, `direct-connect-gateway`)
+    val values = js.Object.freeze(js.Array(vpc, vpn, `direct-connect-gateway`))
   }
 
   object TransitGatewayAttachmentStateEnum {
@@ -28461,18 +28485,20 @@ package ec2 {
     val rejecting         = "rejecting"
     val failing           = "failing"
 
-    val values = IndexedSeq(
-      pendingAcceptance,
-      rollingBack,
-      pending,
-      available,
-      modifying,
-      deleting,
-      deleted,
-      failed,
-      rejected,
-      rejecting,
-      failing
+    val values = js.Object.freeze(
+      js.Array(
+        pendingAcceptance,
+        rollingBack,
+        pending,
+        available,
+        modifying,
+        deleting,
+        deleted,
+        failed,
+        rejected,
+        rejecting,
+        failing
+      )
     )
   }
 
@@ -28559,7 +28585,7 @@ package ec2 {
     val disabling = "disabling"
     val disabled  = "disabled"
 
-    val values = IndexedSeq(enabling, enabled, disabling, disabled)
+    val values = js.Object.freeze(js.Array(enabling, enabled, disabling, disabled))
   }
 
   /**
@@ -28657,7 +28683,7 @@ package ec2 {
     val deleting  = "deleting"
     val deleted   = "deleted"
 
-    val values = IndexedSeq(pending, active, blackhole, deleting, deleted)
+    val values = js.Object.freeze(js.Array(pending, active, blackhole, deleting, deleted))
   }
 
   /**
@@ -28760,14 +28786,14 @@ package ec2 {
     val deleting  = "deleting"
     val deleted   = "deleted"
 
-    val values = IndexedSeq(pending, available, deleting, deleted)
+    val values = js.Object.freeze(js.Array(pending, available, deleting, deleted))
   }
 
   object TransitGatewayRouteTypeEnum {
     val static     = "static"
     val propagated = "propagated"
 
-    val values = IndexedSeq(static, propagated)
+    val values = js.Object.freeze(js.Array(static, propagated))
   }
 
   object TransitGatewayStateEnum {
@@ -28777,7 +28803,7 @@ package ec2 {
     val deleting  = "deleting"
     val deleted   = "deleted"
 
-    val values = IndexedSeq(pending, available, modifying, deleting, deleted)
+    val values = js.Object.freeze(js.Array(pending, available, modifying, deleting, deleted))
   }
 
   /**
@@ -28847,7 +28873,7 @@ package ec2 {
     val tcp = "tcp"
     val udp = "udp"
 
-    val values = IndexedSeq(tcp, udp)
+    val values = js.Object.freeze(js.Array(tcp, udp))
   }
 
   @js.native
@@ -28952,11 +28978,13 @@ package ec2 {
     val IncorrectInstanceState                     = "IncorrectInstanceState"
     val `InstanceCreditSpecification.NotSupported` = "InstanceCreditSpecification.NotSupported"
 
-    val values = IndexedSeq(
-      `InvalidInstanceID.Malformed`,
-      `InvalidInstanceID.NotFound`,
-      IncorrectInstanceState,
-      `InstanceCreditSpecification.NotSupported`
+    val values = js.Object.freeze(
+      js.Array(
+        `InvalidInstanceID.Malformed`,
+        `InvalidInstanceID.NotFound`,
+        IncorrectInstanceState,
+        `InstanceCreditSpecification.NotSupported`
+      )
     )
   }
 
@@ -29259,7 +29287,7 @@ package ec2 {
     val hvm         = "hvm"
     val paravirtual = "paravirtual"
 
-    val values = IndexedSeq(hvm, paravirtual)
+    val values = js.Object.freeze(js.Array(hvm, paravirtual))
   }
 
   /**
@@ -29353,14 +29381,14 @@ package ec2 {
     val detached  = "detached"
     val busy      = "busy"
 
-    val values = IndexedSeq(attaching, attached, detaching, detached, busy)
+    val values = js.Object.freeze(js.Array(attaching, attached, detaching, detached, busy))
   }
 
   object VolumeAttributeNameEnum {
     val autoEnableIO = "autoEnableIO"
     val productCodes = "productCodes"
 
-    val values = IndexedSeq(autoEnableIO, productCodes)
+    val values = js.Object.freeze(js.Array(autoEnableIO, productCodes))
   }
 
   /**
@@ -29441,7 +29469,7 @@ package ec2 {
     val completed  = "completed"
     val failed     = "failed"
 
-    val values = IndexedSeq(modifying, optimizing, completed, failed)
+    val values = js.Object.freeze(js.Array(modifying, optimizing, completed, failed))
   }
 
   object VolumeStateEnum {
@@ -29452,7 +29480,7 @@ package ec2 {
     val deleted   = "deleted"
     val error     = "error"
 
-    val values = IndexedSeq(creating, available, `in-use`, deleting, deleted, error)
+    val values = js.Object.freeze(js.Array(creating, available, `in-use`, deleting, deleted, error))
   }
 
   /**
@@ -29559,7 +29587,7 @@ package ec2 {
     val impaired            = "impaired"
     val `insufficient-data` = "insufficient-data"
 
-    val values = IndexedSeq(ok, impaired, `insufficient-data`)
+    val values = js.Object.freeze(js.Array(ok, impaired, `insufficient-data`))
   }
 
   /**
@@ -29596,7 +29624,7 @@ package ec2 {
     val `io-enabled`     = "io-enabled"
     val `io-performance` = "io-performance"
 
-    val values = IndexedSeq(`io-enabled`, `io-performance`)
+    val values = js.Object.freeze(js.Array(`io-enabled`, `io-performance`))
   }
 
   object VolumeTypeEnum {
@@ -29606,7 +29634,7 @@ package ec2 {
     val sc1      = "sc1"
     val st1      = "st1"
 
-    val values = IndexedSeq(standard, io1, gp2, sc1, st1)
+    val values = js.Object.freeze(js.Array(standard, io1, gp2, sc1, st1))
   }
 
   /**
@@ -29679,7 +29707,7 @@ package ec2 {
     val enableDnsSupport   = "enableDnsSupport"
     val enableDnsHostnames = "enableDnsHostnames"
 
-    val values = IndexedSeq(enableDnsSupport, enableDnsHostnames)
+    val values = js.Object.freeze(js.Array(enableDnsSupport, enableDnsHostnames))
   }
 
   /**
@@ -29735,7 +29763,7 @@ package ec2 {
     val failing        = "failing"
     val failed         = "failed"
 
-    val values = IndexedSeq(associating, associated, disassociating, disassociated, failing, failed)
+    val values = js.Object.freeze(js.Array(associating, associated, disassociating, disassociated, failing, failed))
   }
 
   /**
@@ -29865,7 +29893,7 @@ package ec2 {
     val Interface = "Interface"
     val Gateway   = "Gateway"
 
-    val values = IndexedSeq(Interface, Gateway)
+    val values = js.Object.freeze(js.Array(Interface, Gateway))
   }
 
   /**
@@ -29987,16 +30015,18 @@ package ec2 {
     val provisioning         = "provisioning"
     val deleting             = "deleting"
 
-    val values = IndexedSeq(
-      `initiating-request`,
-      `pending-acceptance`,
-      active,
-      deleted,
-      rejected,
-      failed,
-      expired,
-      provisioning,
-      deleting
+    val values = js.Object.freeze(
+      js.Array(
+        `initiating-request`,
+        `pending-acceptance`,
+        active,
+        deleted,
+        rejected,
+        failed,
+        expired,
+        provisioning,
+        deleting
+      )
     )
   }
 
@@ -30040,13 +30070,13 @@ package ec2 {
     val pending   = "pending"
     val available = "available"
 
-    val values = IndexedSeq(pending, available)
+    val values = js.Object.freeze(js.Array(pending, available))
   }
 
   object VpcTenancyEnum {
     val default = "default"
 
-    val values = IndexedSeq(default)
+    val values = js.Object.freeze(js.Array(default))
   }
 
   /**
@@ -30145,7 +30175,7 @@ package ec2 {
     val enable  = "enable"
     val disable = "disable"
 
-    val values = IndexedSeq(enable, disable)
+    val values = js.Object.freeze(js.Array(enable, disable))
   }
 
   /**
@@ -30187,7 +30217,7 @@ package ec2 {
   object VpnProtocolEnum {
     val openvpn = "openvpn"
 
-    val values = IndexedSeq(openvpn)
+    val values = js.Object.freeze(js.Array(openvpn))
   }
 
   object VpnStateEnum {
@@ -30196,7 +30226,7 @@ package ec2 {
     val deleting  = "deleting"
     val deleted   = "deleted"
 
-    val values = IndexedSeq(pending, available, deleting, deleted)
+    val values = js.Object.freeze(js.Array(pending, available, deleting, deleted))
   }
 
   /**
@@ -30226,7 +30256,7 @@ package ec2 {
   object VpnStaticRouteSourceEnum {
     val Static = "Static"
 
-    val values = IndexedSeq(Static)
+    val values = js.Object.freeze(js.Array(Static))
   }
 
   /**
@@ -30289,6 +30319,6 @@ package ec2 {
     val `Availability Zone` = "Availability Zone"
     val Region              = "Region"
 
-    val values = IndexedSeq(`Availability Zone`, Region)
+    val values = js.Object.freeze(js.Array(`Availability Zone`, Region))
   }
 }

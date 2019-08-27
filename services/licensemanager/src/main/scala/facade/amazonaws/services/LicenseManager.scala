@@ -381,7 +381,7 @@ package licensemanager {
     val BEGINS_WITH = "BEGINS_WITH"
     val CONTAINS    = "CONTAINS"
 
-    val values = IndexedSeq(EQUALS, NOT_EQUALS, BEGINS_WITH, CONTAINS)
+    val values = js.Object.freeze(js.Array(EQUALS, NOT_EQUALS, BEGINS_WITH, CONTAINS))
   }
 
   /**
@@ -469,7 +469,7 @@ package licensemanager {
     val AVAILABLE = "AVAILABLE"
     val DISABLED  = "DISABLED"
 
-    val values = IndexedSeq(AVAILABLE, DISABLED)
+    val values = js.Object.freeze(js.Array(AVAILABLE, DISABLED))
   }
 
   /**
@@ -511,7 +511,7 @@ package licensemanager {
     val Core     = "Core"
     val Socket   = "Socket"
 
-    val values = IndexedSeq(vCPU, Instance, Core, Socket)
+    val values = js.Object.freeze(js.Array(vCPU, Instance, Core, Socket))
   }
 
   /**
@@ -856,7 +856,7 @@ package licensemanager {
     val EC2_HOST     = "EC2_HOST"
     val EC2_AMI      = "EC2_AMI"
 
-    val values = IndexedSeq(EC2_INSTANCE, EC2_HOST, EC2_AMI)
+    val values = js.Object.freeze(js.Array(EC2_INSTANCE, EC2_HOST, EC2_AMI))
   }
 
   /**

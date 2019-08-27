@@ -453,7 +453,7 @@ package transfer {
     val PUBLIC       = "PUBLIC"
     val VPC_ENDPOINT = "VPC_ENDPOINT"
 
-    val values = IndexedSeq(PUBLIC, VPC_ENDPOINT)
+    val values = js.Object.freeze(js.Array(PUBLIC, VPC_ENDPOINT))
   }
 
   /**
@@ -484,7 +484,7 @@ package transfer {
     val SERVICE_MANAGED = "SERVICE_MANAGED"
     val API_GATEWAY     = "API_GATEWAY"
 
-    val values = IndexedSeq(SERVICE_MANAGED, API_GATEWAY)
+    val values = js.Object.freeze(js.Array(SERVICE_MANAGED, API_GATEWAY))
   }
 
   @js.native
@@ -789,7 +789,7 @@ package transfer {
     val START_FAILED = "START_FAILED"
     val STOP_FAILED  = "STOP_FAILED"
 
-    val values = IndexedSeq(OFFLINE, ONLINE, STARTING, STOPPING, START_FAILED, STOP_FAILED)
+    val values = js.Object.freeze(js.Array(OFFLINE, ONLINE, STARTING, STOPPING, START_FAILED, STOP_FAILED))
   }
 
   @js.native

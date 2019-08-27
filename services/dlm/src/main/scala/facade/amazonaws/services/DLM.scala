@@ -238,13 +238,13 @@ package dlm {
     val DISABLED = "DISABLED"
     val ERROR    = "ERROR"
 
-    val values = IndexedSeq(ENABLED, DISABLED, ERROR)
+    val values = js.Object.freeze(js.Array(ENABLED, DISABLED, ERROR))
   }
 
   object IntervalUnitValuesEnum {
     val HOURS = "HOURS"
 
-    val values = IndexedSeq(HOURS)
+    val values = js.Object.freeze(js.Array(HOURS))
   }
 
   /**
@@ -358,14 +358,14 @@ package dlm {
   object PolicyTypeValuesEnum {
     val EBS_SNAPSHOT_MANAGEMENT = "EBS_SNAPSHOT_MANAGEMENT"
 
-    val values = IndexedSeq(EBS_SNAPSHOT_MANAGEMENT)
+    val values = js.Object.freeze(js.Array(EBS_SNAPSHOT_MANAGEMENT))
   }
 
   object ResourceTypeValuesEnum {
     val VOLUME   = "VOLUME"
     val INSTANCE = "INSTANCE"
 
-    val values = IndexedSeq(VOLUME, INSTANCE)
+    val values = js.Object.freeze(js.Array(VOLUME, INSTANCE))
   }
 
   /**
@@ -425,7 +425,7 @@ package dlm {
     val ENABLED  = "ENABLED"
     val DISABLED = "DISABLED"
 
-    val values = IndexedSeq(ENABLED, DISABLED)
+    val values = js.Object.freeze(js.Array(ENABLED, DISABLED))
   }
 
   /**

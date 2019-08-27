@@ -372,7 +372,8 @@ package autoscalingplans {
     val ScheduledActionMinCapacity = "ScheduledActionMinCapacity"
     val ScheduledActionMaxCapacity = "ScheduledActionMaxCapacity"
 
-    val values = IndexedSeq(CapacityForecast, LoadForecast, ScheduledActionMinCapacity, ScheduledActionMaxCapacity)
+    val values =
+      js.Object.freeze(js.Array(CapacityForecast, LoadForecast, ScheduledActionMinCapacity, ScheduledActionMaxCapacity))
   }
 
   @js.native
@@ -436,7 +437,9 @@ package autoscalingplans {
     val ASGTotalNetworkOut         = "ASGTotalNetworkOut"
     val ALBTargetGroupRequestCount = "ALBTargetGroupRequestCount"
 
-    val values = IndexedSeq(ASGTotalCPUUtilization, ASGTotalNetworkIn, ASGTotalNetworkOut, ALBTargetGroupRequestCount)
+    val values = js.Object.freeze(
+      js.Array(ASGTotalCPUUtilization, ASGTotalNetworkIn, ASGTotalNetworkOut, ALBTargetGroupRequestCount)
+    )
   }
 
   /**
@@ -469,13 +472,13 @@ package autoscalingplans {
     val SampleCount = "SampleCount"
     val Sum         = "Sum"
 
-    val values = IndexedSeq(Average, Minimum, Maximum, SampleCount, Sum)
+    val values = js.Object.freeze(js.Array(Average, Minimum, Maximum, SampleCount, Sum))
   }
 
   object PolicyTypeEnum {
     val TargetTrackingScaling = "TargetTrackingScaling"
 
-    val values = IndexedSeq(TargetTrackingScaling)
+    val values = js.Object.freeze(js.Array(TargetTrackingScaling))
   }
 
   /**
@@ -529,10 +532,8 @@ package autoscalingplans {
     val SetMaxCapacityToForecastCapacity    = "SetMaxCapacityToForecastCapacity"
     val SetMaxCapacityAboveForecastCapacity = "SetMaxCapacityAboveForecastCapacity"
 
-    val values = IndexedSeq(
-      SetForecastCapacityToMaxCapacity,
-      SetMaxCapacityToForecastCapacity,
-      SetMaxCapacityAboveForecastCapacity
+    val values = js.Object.freeze(
+      js.Array(SetForecastCapacityToMaxCapacity, SetMaxCapacityToForecastCapacity, SetMaxCapacityAboveForecastCapacity)
     )
   }
 
@@ -540,7 +541,7 @@ package autoscalingplans {
     val ForecastAndScale = "ForecastAndScale"
     val ForecastOnly     = "ForecastOnly"
 
-    val values = IndexedSeq(ForecastAndScale, ForecastOnly)
+    val values = js.Object.freeze(js.Array(ForecastAndScale, ForecastOnly))
   }
 
   object ScalableDimensionEnum {
@@ -553,15 +554,17 @@ package autoscalingplans {
     val `dynamodb:index:ReadCapacityUnits`             = "dynamodb:index:ReadCapacityUnits"
     val `dynamodb:index:WriteCapacityUnits`            = "dynamodb:index:WriteCapacityUnits"
 
-    val values = IndexedSeq(
-      `autoscaling:autoScalingGroup:DesiredCapacity`,
-      `ecs:service:DesiredCount`,
-      `ec2:spot-fleet-request:TargetCapacity`,
-      `rds:cluster:ReadReplicaCount`,
-      `dynamodb:table:ReadCapacityUnits`,
-      `dynamodb:table:WriteCapacityUnits`,
-      `dynamodb:index:ReadCapacityUnits`,
-      `dynamodb:index:WriteCapacityUnits`
+    val values = js.Object.freeze(
+      js.Array(
+        `autoscaling:autoScalingGroup:DesiredCapacity`,
+        `ecs:service:DesiredCount`,
+        `ec2:spot-fleet-request:TargetCapacity`,
+        `rds:cluster:ReadReplicaCount`,
+        `dynamodb:table:ReadCapacityUnits`,
+        `dynamodb:table:WriteCapacityUnits`,
+        `dynamodb:index:ReadCapacityUnits`,
+        `dynamodb:index:WriteCapacityUnits`
+      )
     )
   }
 
@@ -652,20 +655,22 @@ package autoscalingplans {
     val EC2SpotFleetRequestAverageNetworkIn      = "EC2SpotFleetRequestAverageNetworkIn"
     val EC2SpotFleetRequestAverageNetworkOut     = "EC2SpotFleetRequestAverageNetworkOut"
 
-    val values = IndexedSeq(
-      ASGAverageCPUUtilization,
-      ASGAverageNetworkIn,
-      ASGAverageNetworkOut,
-      DynamoDBReadCapacityUtilization,
-      DynamoDBWriteCapacityUtilization,
-      ECSServiceAverageCPUUtilization,
-      ECSServiceAverageMemoryUtilization,
-      ALBRequestCountPerTarget,
-      RDSReaderAverageCPUUtilization,
-      RDSReaderAverageDatabaseConnections,
-      EC2SpotFleetRequestAverageCPUUtilization,
-      EC2SpotFleetRequestAverageNetworkIn,
-      EC2SpotFleetRequestAverageNetworkOut
+    val values = js.Object.freeze(
+      js.Array(
+        ASGAverageCPUUtilization,
+        ASGAverageNetworkIn,
+        ASGAverageNetworkOut,
+        DynamoDBReadCapacityUtilization,
+        DynamoDBWriteCapacityUtilization,
+        ECSServiceAverageCPUUtilization,
+        ECSServiceAverageMemoryUtilization,
+        ALBRequestCountPerTarget,
+        RDSReaderAverageCPUUtilization,
+        RDSReaderAverageDatabaseConnections,
+        EC2SpotFleetRequestAverageCPUUtilization,
+        EC2SpotFleetRequestAverageNetworkIn,
+        EC2SpotFleetRequestAverageNetworkOut
+      )
     )
   }
 
@@ -761,15 +766,17 @@ package autoscalingplans {
     val UpdateInProgress   = "UpdateInProgress"
     val UpdateFailed       = "UpdateFailed"
 
-    val values = IndexedSeq(
-      Active,
-      ActiveWithProblems,
-      CreationInProgress,
-      CreationFailed,
-      DeletionInProgress,
-      DeletionFailed,
-      UpdateInProgress,
-      UpdateFailed
+    val values = js.Object.freeze(
+      js.Array(
+        Active,
+        ActiveWithProblems,
+        CreationInProgress,
+        CreationFailed,
+        DeletionInProgress,
+        DeletionFailed,
+        UpdateInProgress,
+        UpdateFailed
+      )
     )
   }
 
@@ -803,7 +810,7 @@ package autoscalingplans {
     val KeepExternalPolicies    = "KeepExternalPolicies"
     val ReplaceExternalPolicies = "ReplaceExternalPolicies"
 
-    val values = IndexedSeq(KeepExternalPolicies, ReplaceExternalPolicies)
+    val values = js.Object.freeze(js.Array(KeepExternalPolicies, ReplaceExternalPolicies))
   }
 
   object ScalingStatusCodeEnum {
@@ -811,7 +818,7 @@ package autoscalingplans {
     val PartiallyActive = "PartiallyActive"
     val Active          = "Active"
 
-    val values = IndexedSeq(Inactive, PartiallyActive, Active)
+    val values = js.Object.freeze(js.Array(Inactive, PartiallyActive, Active))
   }
 
   object ServiceNamespaceEnum {
@@ -821,7 +828,7 @@ package autoscalingplans {
     val rds         = "rds"
     val dynamodb    = "dynamodb"
 
-    val values = IndexedSeq(autoscaling, ecs, ec2, rds, dynamodb)
+    val values = js.Object.freeze(js.Array(autoscaling, ecs, ec2, rds, dynamodb))
   }
 
   /**

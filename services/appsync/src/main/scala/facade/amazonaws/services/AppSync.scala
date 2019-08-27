@@ -229,7 +229,7 @@ package appsync {
     val AMAZON_COGNITO_USER_POOLS = "AMAZON_COGNITO_USER_POOLS"
     val OPENID_CONNECT            = "OPENID_CONNECT"
 
-    val values = IndexedSeq(API_KEY, AWS_IAM, AMAZON_COGNITO_USER_POOLS, OPENID_CONNECT)
+    val values = js.Object.freeze(js.Array(API_KEY, AWS_IAM, AMAZON_COGNITO_USER_POOLS, OPENID_CONNECT))
   }
 
   /**
@@ -258,7 +258,7 @@ package appsync {
   object AuthorizationTypeEnum {
     val AWS_IAM = "AWS_IAM"
 
-    val values = IndexedSeq(AWS_IAM)
+    val values = js.Object.freeze(js.Array(AWS_IAM))
   }
 
   /**
@@ -651,14 +651,15 @@ package appsync {
     val HTTP                 = "HTTP"
     val RELATIONAL_DATABASE  = "RELATIONAL_DATABASE"
 
-    val values = IndexedSeq(AWS_LAMBDA, AMAZON_DYNAMODB, AMAZON_ELASTICSEARCH, NONE, HTTP, RELATIONAL_DATABASE)
+    val values =
+      js.Object.freeze(js.Array(AWS_LAMBDA, AMAZON_DYNAMODB, AMAZON_ELASTICSEARCH, NONE, HTTP, RELATIONAL_DATABASE))
   }
 
   object DefaultActionEnum {
     val ALLOW = "ALLOW"
     val DENY  = "DENY"
 
-    val values = IndexedSeq(ALLOW, DENY)
+    val values = js.Object.freeze(js.Array(ALLOW, DENY))
   }
 
   @js.native
@@ -907,7 +908,7 @@ package appsync {
     val ERROR = "ERROR"
     val ALL   = "ALL"
 
-    val values = IndexedSeq(NONE, ERROR, ALL)
+    val values = js.Object.freeze(js.Array(NONE, ERROR, ALL))
   }
 
   /**
@@ -1670,7 +1671,7 @@ package appsync {
     val SDL  = "SDL"
     val JSON = "JSON"
 
-    val values = IndexedSeq(SDL, JSON)
+    val values = js.Object.freeze(js.Array(SDL, JSON))
   }
 
   /**
@@ -1747,7 +1748,7 @@ package appsync {
   object RelationalDatabaseSourceTypeEnum {
     val RDS_HTTP_ENDPOINT = "RDS_HTTP_ENDPOINT"
 
-    val values = IndexedSeq(RDS_HTTP_ENDPOINT)
+    val values = js.Object.freeze(js.Array(RDS_HTTP_ENDPOINT))
   }
 
   /**
@@ -1793,7 +1794,7 @@ package appsync {
     val UNIT     = "UNIT"
     val PIPELINE = "PIPELINE"
 
-    val values = IndexedSeq(UNIT, PIPELINE)
+    val values = js.Object.freeze(js.Array(UNIT, PIPELINE))
   }
 
   object SchemaStatusEnum {
@@ -1804,7 +1805,7 @@ package appsync {
     val SUCCESS        = "SUCCESS"
     val NOT_APPLICABLE = "NOT_APPLICABLE"
 
-    val values = IndexedSeq(PROCESSING, ACTIVE, DELETING, FAILED, SUCCESS, NOT_APPLICABLE)
+    val values = js.Object.freeze(js.Array(PROCESSING, ACTIVE, DELETING, FAILED, SUCCESS, NOT_APPLICABLE))
   }
 
   @js.native
@@ -1908,7 +1909,7 @@ package appsync {
     val SDL  = "SDL"
     val JSON = "JSON"
 
-    val values = IndexedSeq(SDL, JSON)
+    val values = js.Object.freeze(js.Array(SDL, JSON))
   }
 
   @js.native

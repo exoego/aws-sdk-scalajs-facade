@@ -217,7 +217,8 @@ package iotjobsdataplane {
     val REMOVED     = "REMOVED"
     val CANCELED    = "CANCELED"
 
-    val values = IndexedSeq(QUEUED, IN_PROGRESS, SUCCEEDED, FAILED, TIMED_OUT, REJECTED, REMOVED, CANCELED)
+    val values =
+      js.Object.freeze(js.Array(QUEUED, IN_PROGRESS, SUCCEEDED, FAILED, TIMED_OUT, REJECTED, REMOVED, CANCELED))
   }
 
   /**

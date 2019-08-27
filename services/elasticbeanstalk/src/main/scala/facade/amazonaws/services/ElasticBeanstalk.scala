@@ -385,7 +385,7 @@ package elasticbeanstalk {
     val Failed    = "Failed"
     val Unknown   = "Unknown"
 
-    val values = IndexedSeq(Completed, Failed, Unknown)
+    val values = js.Object.freeze(js.Array(Completed, Failed, Unknown))
   }
 
   object ActionStatusEnum {
@@ -394,7 +394,7 @@ package elasticbeanstalk {
     val Running   = "Running"
     val Unknown   = "Unknown"
 
-    val values = IndexedSeq(Scheduled, Pending, Running, Unknown)
+    val values = js.Object.freeze(js.Array(Scheduled, Pending, Running, Unknown))
   }
 
   object ActionTypeEnum {
@@ -402,7 +402,7 @@ package elasticbeanstalk {
     val PlatformUpdate  = "PlatformUpdate"
     val Unknown         = "Unknown"
 
-    val values = IndexedSeq(InstanceRefresh, PlatformUpdate, Unknown)
+    val values = js.Object.freeze(js.Array(InstanceRefresh, PlatformUpdate, Unknown))
   }
 
   /**
@@ -659,7 +659,7 @@ package elasticbeanstalk {
     val Processing  = "Processing"
     val Building    = "Building"
 
-    val values = IndexedSeq(Processed, Unprocessed, Failed, Processing, Building)
+    val values = js.Object.freeze(js.Array(Processed, Unprocessed, Failed, Processing, Building))
   }
 
   /**
@@ -892,7 +892,7 @@ package elasticbeanstalk {
     val BUILD_GENERAL1_MEDIUM = "BUILD_GENERAL1_MEDIUM"
     val BUILD_GENERAL1_LARGE  = "BUILD_GENERAL1_LARGE"
 
-    val values = IndexedSeq(BUILD_GENERAL1_SMALL, BUILD_GENERAL1_MEDIUM, BUILD_GENERAL1_LARGE)
+    val values = js.Object.freeze(js.Array(BUILD_GENERAL1_SMALL, BUILD_GENERAL1_MEDIUM, BUILD_GENERAL1_LARGE))
   }
 
   object ConfigurationDeploymentStatusEnum {
@@ -900,7 +900,7 @@ package elasticbeanstalk {
     val pending  = "pending"
     val failed   = "failed"
 
-    val values = IndexedSeq(deployed, pending, failed)
+    val values = js.Object.freeze(js.Array(deployed, pending, failed))
   }
 
   /**
@@ -982,7 +982,7 @@ package elasticbeanstalk {
     val Scalar = "Scalar"
     val List   = "List"
 
-    val values = IndexedSeq(Scalar, List)
+    val values = js.Object.freeze(js.Array(Scalar, List))
   }
 
   /**
@@ -2075,7 +2075,7 @@ package elasticbeanstalk {
     val Red    = "Red"
     val Grey   = "Grey"
 
-    val values = IndexedSeq(Green, Yellow, Red, Grey)
+    val values = js.Object.freeze(js.Array(Green, Yellow, Red, Grey))
   }
 
   object EnvironmentHealthAttributeEnum {
@@ -2088,7 +2088,9 @@ package elasticbeanstalk {
     val HealthStatus       = "HealthStatus"
     val RefreshedAt        = "RefreshedAt"
 
-    val values = IndexedSeq(Status, Color, Causes, ApplicationMetrics, InstancesHealth, All, HealthStatus, RefreshedAt)
+    val values = js.Object.freeze(
+      js.Array(Status, Color, Causes, ApplicationMetrics, InstancesHealth, All, HealthStatus, RefreshedAt)
+    )
   }
 
   object EnvironmentHealthStatusEnum {
@@ -2102,7 +2104,7 @@ package elasticbeanstalk {
     val Severe    = "Severe"
     val Suspended = "Suspended"
 
-    val values = IndexedSeq(NoData, Unknown, Pending, Ok, Info, Warning, Degraded, Severe, Suspended)
+    val values = js.Object.freeze(js.Array(NoData, Unknown, Pending, Ok, Info, Warning, Degraded, Severe, Suspended))
   }
 
   /**
@@ -2136,7 +2138,7 @@ package elasticbeanstalk {
     val tail   = "tail"
     val bundle = "bundle"
 
-    val values = IndexedSeq(tail, bundle)
+    val values = js.Object.freeze(js.Array(tail, bundle))
   }
 
   /**
@@ -2242,7 +2244,7 @@ package elasticbeanstalk {
     val Terminating = "Terminating"
     val Terminated  = "Terminated"
 
-    val values = IndexedSeq(Launching, Updating, Ready, Terminating, Terminated)
+    val values = js.Object.freeze(js.Array(Launching, Updating, Ready, Terminating, Terminated))
   }
 
   /**
@@ -2340,7 +2342,7 @@ package elasticbeanstalk {
     val ERROR = "ERROR"
     val FATAL = "FATAL"
 
-    val values = IndexedSeq(TRACE, DEBUG, INFO, WARN, ERROR, FATAL)
+    val values = js.Object.freeze(js.Array(TRACE, DEBUG, INFO, WARN, ERROR, FATAL))
   }
 
   object FailureTypeEnum {
@@ -2352,14 +2354,16 @@ package elasticbeanstalk {
     val InvalidEnvironmentState = "InvalidEnvironmentState"
     val PermissionsError        = "PermissionsError"
 
-    val values = IndexedSeq(
-      UpdateCancelled,
-      CancellationFailed,
-      RollbackFailed,
-      RollbackSuccessful,
-      InternalFailure,
-      InvalidEnvironmentState,
-      PermissionsError
+    val values = js.Object.freeze(
+      js.Array(
+        UpdateCancelled,
+        CancellationFailed,
+        RollbackFailed,
+        RollbackSuccessful,
+        InternalFailure,
+        InvalidEnvironmentState,
+        PermissionsError
+      )
     )
   }
 
@@ -2433,18 +2437,20 @@ package elasticbeanstalk {
     val InstanceType       = "InstanceType"
     val All                = "All"
 
-    val values = IndexedSeq(
-      HealthStatus,
-      Color,
-      Causes,
-      ApplicationMetrics,
-      RefreshedAt,
-      LaunchedAt,
-      System,
-      Deployment,
-      AvailabilityZone,
-      InstanceType,
-      All
+    val values = js.Object.freeze(
+      js.Array(
+        HealthStatus,
+        Color,
+        Causes,
+        ApplicationMetrics,
+        RefreshedAt,
+        LaunchedAt,
+        System,
+        Deployment,
+        AvailabilityZone,
+        InstanceType,
+        All
+      )
     )
   }
 
@@ -2973,7 +2979,7 @@ package elasticbeanstalk {
     val Deleting = "Deleting"
     val Deleted  = "Deleted"
 
-    val values = IndexedSeq(Creating, Failed, Ready, Deleting, Deleted)
+    val values = js.Object.freeze(js.Array(Creating, Failed, Ready, Deleting, Deleted))
   }
 
   /**
@@ -3352,14 +3358,14 @@ package elasticbeanstalk {
     val CodeCommit = "CodeCommit"
     val S3         = "S3"
 
-    val values = IndexedSeq(CodeCommit, S3)
+    val values = js.Object.freeze(js.Array(CodeCommit, S3))
   }
 
   object SourceTypeEnum {
     val Git = "Git"
     val Zip = "Zip"
 
-    val values = IndexedSeq(Git, Zip)
+    val values = js.Object.freeze(js.Array(Git, Zip))
   }
 
   /**
@@ -3738,6 +3744,6 @@ package elasticbeanstalk {
     val error   = "error"
     val warning = "warning"
 
-    val values = IndexedSeq(error, warning)
+    val values = js.Object.freeze(js.Array(error, warning))
   }
 }

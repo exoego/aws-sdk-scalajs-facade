@@ -278,7 +278,7 @@ package applicationdiscovery {
     val BLACKLISTED = "BLACKLISTED"
     val SHUTDOWN    = "SHUTDOWN"
 
-    val values = IndexedSeq(HEALTHY, UNHEALTHY, RUNNING, UNKNOWN, BLACKLISTED, SHUTDOWN)
+    val values = js.Object.freeze(js.Array(HEALTHY, UNHEALTHY, RUNNING, UNKNOWN, BLACKLISTED, SHUTDOWN))
   }
 
   @js.native
@@ -342,7 +342,7 @@ package applicationdiscovery {
     val INTERNAL_SERVER_ERROR = "INTERNAL_SERVER_ERROR"
     val OVER_LIMIT            = "OVER_LIMIT"
 
-    val values = IndexedSeq(NOT_FOUND, INTERNAL_SERVER_ERROR, OVER_LIMIT)
+    val values = js.Object.freeze(js.Array(NOT_FOUND, INTERNAL_SERVER_ERROR, OVER_LIMIT))
   }
 
   @js.native
@@ -383,7 +383,7 @@ package applicationdiscovery {
     val CONNECTION  = "CONNECTION"
     val APPLICATION = "APPLICATION"
 
-    val values = IndexedSeq(SERVER, PROCESS, CONNECTION, APPLICATION)
+    val values = js.Object.freeze(js.Array(SERVER, PROCESS, CONNECTION, APPLICATION))
   }
 
   /**
@@ -464,7 +464,9 @@ package applicationdiscovery {
     val STOP_FAILED       = "STOP_FAILED"
     val INACTIVE          = "INACTIVE"
 
-    val values = IndexedSeq(START_IN_PROGRESS, START_FAILED, ACTIVE, ERROR, STOP_IN_PROGRESS, STOP_FAILED, INACTIVE)
+    val values = js.Object.freeze(
+      js.Array(START_IN_PROGRESS, START_FAILED, ACTIVE, ERROR, STOP_IN_PROGRESS, STOP_FAILED, INACTIVE)
+    )
   }
 
   @js.native
@@ -613,7 +615,7 @@ package applicationdiscovery {
   object DataSourceEnum {
     val AGENT = "AGENT"
 
-    val values = IndexedSeq(AGENT)
+    val values = js.Object.freeze(js.Array(AGENT))
   }
 
   @js.native
@@ -1000,7 +1002,7 @@ package applicationdiscovery {
     val CSV     = "CSV"
     val GRAPHML = "GRAPHML"
 
-    val values = IndexedSeq(CSV, GRAPHML)
+    val values = js.Object.freeze(js.Array(CSV, GRAPHML))
   }
 
   /**
@@ -1075,7 +1077,7 @@ package applicationdiscovery {
     val SUCCEEDED   = "SUCCEEDED"
     val IN_PROGRESS = "IN_PROGRESS"
 
-    val values = IndexedSeq(FAILED, SUCCEEDED, IN_PROGRESS)
+    val values = js.Object.freeze(js.Array(FAILED, SUCCEEDED, IN_PROGRESS))
   }
 
   /**
@@ -1160,18 +1162,20 @@ package applicationdiscovery {
     val DELETE_FAILED_LIMIT_EXCEEDED        = "DELETE_FAILED_LIMIT_EXCEEDED"
     val INTERNAL_ERROR                      = "INTERNAL_ERROR"
 
-    val values = IndexedSeq(
-      IMPORT_IN_PROGRESS,
-      IMPORT_COMPLETE,
-      IMPORT_COMPLETE_WITH_ERRORS,
-      IMPORT_FAILED,
-      IMPORT_FAILED_SERVER_LIMIT_EXCEEDED,
-      IMPORT_FAILED_RECORD_LIMIT_EXCEEDED,
-      DELETE_IN_PROGRESS,
-      DELETE_COMPLETE,
-      DELETE_FAILED,
-      DELETE_FAILED_LIMIT_EXCEEDED,
-      INTERNAL_ERROR
+    val values = js.Object.freeze(
+      js.Array(
+        IMPORT_IN_PROGRESS,
+        IMPORT_COMPLETE,
+        IMPORT_COMPLETE_WITH_ERRORS,
+        IMPORT_FAILED,
+        IMPORT_FAILED_SERVER_LIMIT_EXCEEDED,
+        IMPORT_FAILED_RECORD_LIMIT_EXCEEDED,
+        DELETE_IN_PROGRESS,
+        DELETE_COMPLETE,
+        DELETE_FAILED,
+        DELETE_FAILED_LIMIT_EXCEEDED,
+        INTERNAL_ERROR
+      )
     )
   }
 
@@ -1257,7 +1261,7 @@ package applicationdiscovery {
     val STATUS         = "STATUS"
     val NAME           = "NAME"
 
-    val values = IndexedSeq(IMPORT_TASK_ID, STATUS, NAME)
+    val values = js.Object.freeze(js.Array(IMPORT_TASK_ID, STATUS, NAME))
   }
 
   @js.native
@@ -1714,6 +1718,6 @@ package applicationdiscovery {
     val ASC  = "ASC"
     val DESC = "DESC"
 
-    val values = IndexedSeq(ASC, DESC)
+    val values = js.Object.freeze(js.Array(ASC, DESC))
   }
 }

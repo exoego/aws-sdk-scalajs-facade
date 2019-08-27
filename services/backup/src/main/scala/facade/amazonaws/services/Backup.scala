@@ -292,7 +292,7 @@ package backup {
     val FAILED    = "FAILED"
     val EXPIRED   = "EXPIRED"
 
-    val values = IndexedSeq(CREATED, PENDING, RUNNING, ABORTING, ABORTED, COMPLETED, FAILED, EXPIRED)
+    val values = js.Object.freeze(js.Array(CREATED, PENDING, RUNNING, ABORTING, ABORTED, COMPLETED, FAILED, EXPIRED))
   }
 
   /**
@@ -551,14 +551,16 @@ package backup {
     val BACKUP_PLAN_CREATED     = "BACKUP_PLAN_CREATED"
     val BACKUP_PLAN_MODIFIED    = "BACKUP_PLAN_MODIFIED"
 
-    val values = IndexedSeq(
-      BACKUP_JOB_STARTED,
-      BACKUP_JOB_COMPLETED,
-      RESTORE_JOB_STARTED,
-      RESTORE_JOB_COMPLETED,
-      RECOVERY_POINT_MODIFIED,
-      BACKUP_PLAN_CREATED,
-      BACKUP_PLAN_MODIFIED
+    val values = js.Object.freeze(
+      js.Array(
+        BACKUP_JOB_STARTED,
+        BACKUP_JOB_COMPLETED,
+        RESTORE_JOB_STARTED,
+        RESTORE_JOB_COMPLETED,
+        RECOVERY_POINT_MODIFIED,
+        BACKUP_PLAN_CREATED,
+        BACKUP_PLAN_MODIFIED
+      )
     )
   }
 
@@ -647,7 +649,7 @@ package backup {
   object ConditionTypeEnum {
     val STRINGEQUALS = "STRINGEQUALS"
 
-    val values = IndexedSeq(STRINGEQUALS)
+    val values = js.Object.freeze(js.Array(STRINGEQUALS))
   }
 
   @js.native
@@ -2240,7 +2242,7 @@ package backup {
     val DELETING  = "DELETING"
     val EXPIRED   = "EXPIRED"
 
-    val values = IndexedSeq(COMPLETED, PARTIAL, DELETING, EXPIRED)
+    val values = js.Object.freeze(js.Array(COMPLETED, PARTIAL, DELETING, EXPIRED))
   }
 
   object RestoreJobStatusEnum {
@@ -2250,7 +2252,7 @@ package backup {
     val ABORTED   = "ABORTED"
     val FAILED    = "FAILED"
 
-    val values = IndexedSeq(PENDING, RUNNING, COMPLETED, ABORTED, FAILED)
+    val values = js.Object.freeze(js.Array(PENDING, RUNNING, COMPLETED, ABORTED, FAILED))
   }
 
   /**
@@ -2428,7 +2430,7 @@ package backup {
     val COLD    = "COLD"
     val DELETED = "DELETED"
 
-    val values = IndexedSeq(WARM, COLD, DELETED)
+    val values = js.Object.freeze(js.Array(WARM, COLD, DELETED))
   }
 
   @js.native

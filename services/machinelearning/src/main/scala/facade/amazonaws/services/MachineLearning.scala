@@ -232,7 +232,7 @@ package machinelearning {
   object AlgorithmEnum {
     val sgd = "sgd"
 
-    val values = IndexedSeq(sgd)
+    val values = js.Object.freeze(js.Array(sgd))
   }
 
   /**
@@ -319,7 +319,8 @@ package machinelearning {
     val DataSourceId  = "DataSourceId"
     val DataURI       = "DataURI"
 
-    val values = IndexedSeq(CreatedAt, LastUpdatedAt, Status, Name, IAMUser, MLModelId, DataSourceId, DataURI)
+    val values =
+      js.Object.freeze(js.Array(CreatedAt, LastUpdatedAt, Status, Name, IAMUser, MLModelId, DataSourceId, DataURI))
   }
 
   @js.native
@@ -738,7 +739,7 @@ package machinelearning {
     val DataLocationS3 = "DataLocationS3"
     val IAMUser        = "IAMUser"
 
-    val values = IndexedSeq(CreatedAt, LastUpdatedAt, Status, Name, DataLocationS3, IAMUser)
+    val values = js.Object.freeze(js.Array(CreatedAt, LastUpdatedAt, Status, Name, DataLocationS3, IAMUser))
   }
 
   @js.native
@@ -1282,7 +1283,7 @@ package machinelearning {
     val PredictiveModelType = "PredictiveModelType"
     val Algorithm           = "Algorithm"
 
-    val values = IndexedSeq(PredictiveModelType, Algorithm)
+    val values = js.Object.freeze(js.Array(PredictiveModelType, Algorithm))
   }
 
   /**
@@ -1300,7 +1301,7 @@ package machinelearning {
     val COMPLETED  = "COMPLETED"
     val DELETED    = "DELETED"
 
-    val values = IndexedSeq(PENDING, INPROGRESS, FAILED, COMPLETED, DELETED)
+    val values = js.Object.freeze(js.Array(PENDING, INPROGRESS, FAILED, COMPLETED, DELETED))
   }
 
   /**
@@ -1381,7 +1382,8 @@ package machinelearning {
     val DataSourceId  = "DataSourceId"
     val DataURI       = "DataURI"
 
-    val values = IndexedSeq(CreatedAt, LastUpdatedAt, Status, Name, IAMUser, MLModelId, DataSourceId, DataURI)
+    val values =
+      js.Object.freeze(js.Array(CreatedAt, LastUpdatedAt, Status, Name, IAMUser, MLModelId, DataSourceId, DataURI))
   }
 
   @js.native
@@ -1863,17 +1865,19 @@ package machinelearning {
     val Algorithm              = "Algorithm"
     val TrainingDataURI        = "TrainingDataURI"
 
-    val values = IndexedSeq(
-      CreatedAt,
-      LastUpdatedAt,
-      Status,
-      Name,
-      IAMUser,
-      TrainingDataSourceId,
-      RealtimeEndpointStatus,
-      MLModelType,
-      Algorithm,
-      TrainingDataURI
+    val values = js.Object.freeze(
+      js.Array(
+        CreatedAt,
+        LastUpdatedAt,
+        Status,
+        Name,
+        IAMUser,
+        TrainingDataSourceId,
+        RealtimeEndpointStatus,
+        MLModelType,
+        Algorithm,
+        TrainingDataURI
+      )
     )
   }
 
@@ -1882,7 +1886,7 @@ package machinelearning {
     val BINARY     = "BINARY"
     val MULTICLASS = "MULTICLASS"
 
-    val values = IndexedSeq(REGRESSION, BINARY, MULTICLASS)
+    val values = js.Object.freeze(js.Array(REGRESSION, BINARY, MULTICLASS))
   }
 
   /**
@@ -2146,7 +2150,7 @@ package machinelearning {
     val UPDATING = "UPDATING"
     val FAILED   = "FAILED"
 
-    val values = IndexedSeq(NONE, READY, UPDATING, FAILED)
+    val values = js.Object.freeze(js.Array(NONE, READY, UPDATING, FAILED))
   }
 
   /**
@@ -2304,7 +2308,7 @@ package machinelearning {
     val asc = "asc"
     val dsc = "dsc"
 
-    val values = IndexedSeq(asc, dsc)
+    val values = js.Object.freeze(js.Array(asc, dsc))
   }
 
   /**
@@ -2339,7 +2343,7 @@ package machinelearning {
     val Evaluation      = "Evaluation"
     val MLModel         = "MLModel"
 
-    val values = IndexedSeq(BatchPrediction, DataSource, Evaluation, MLModel)
+    val values = js.Object.freeze(js.Array(BatchPrediction, DataSource, Evaluation, MLModel))
   }
 
   @js.native

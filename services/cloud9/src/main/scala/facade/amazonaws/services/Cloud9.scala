@@ -412,7 +412,7 @@ package cloud9 {
     val DELETING      = "DELETING"
     val DELETE_FAILED = "DELETE_FAILED"
 
-    val values = IndexedSeq(CREATED, DELETING, DELETE_FAILED)
+    val values = js.Object.freeze(js.Array(CREATED, DELETING, DELETE_FAILED))
   }
 
   /**
@@ -454,14 +454,14 @@ package cloud9 {
     val stopped    = "stopped"
     val deleting   = "deleting"
 
-    val values = IndexedSeq(error, creating, connecting, ready, stopping, stopped, deleting)
+    val values = js.Object.freeze(js.Array(error, creating, connecting, ready, stopping, stopped, deleting))
   }
 
   object EnvironmentTypeEnum {
     val ssh = "ssh"
     val ec2 = "ec2"
 
-    val values = IndexedSeq(ssh, ec2)
+    val values = js.Object.freeze(js.Array(ssh, ec2))
   }
 
   @js.native
@@ -504,7 +504,7 @@ package cloud9 {
     val `read-write` = "read-write"
     val `read-only`  = "read-only"
 
-    val values = IndexedSeq(`read-write`, `read-only`)
+    val values = js.Object.freeze(js.Array(`read-write`, `read-only`))
   }
 
   object PermissionsEnum {
@@ -512,7 +512,7 @@ package cloud9 {
     val `read-write` = "read-write"
     val `read-only`  = "read-only"
 
-    val values = IndexedSeq(owner, `read-write`, `read-only`)
+    val values = js.Object.freeze(js.Array(owner, `read-write`, `read-only`))
   }
 
   @js.native

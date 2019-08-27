@@ -373,7 +373,7 @@ package codepipeline {
     val Invoke   = "Invoke"
     val Approval = "Approval"
 
-    val values = IndexedSeq(Source, Build, Deploy, Test, Invoke, Approval)
+    val values = js.Object.freeze(js.Array(Source, Build, Deploy, Test, Invoke, Approval))
   }
 
   /**
@@ -437,7 +437,7 @@ package codepipeline {
     val Number  = "Number"
     val Boolean = "Boolean"
 
-    val values = IndexedSeq(String, Number, Boolean)
+    val values = js.Object.freeze(js.Array(String, Number, Boolean))
   }
 
   /**
@@ -687,7 +687,7 @@ package codepipeline {
     val Succeeded  = "Succeeded"
     val Failed     = "Failed"
 
-    val values = IndexedSeq(InProgress, Succeeded, Failed)
+    val values = js.Object.freeze(js.Array(InProgress, Succeeded, Failed))
   }
 
   object ActionOwnerEnum {
@@ -695,7 +695,7 @@ package codepipeline {
     val ThirdParty = "ThirdParty"
     val Custom     = "Custom"
 
-    val values = IndexedSeq(AWS, ThirdParty, Custom)
+    val values = js.Object.freeze(js.Array(AWS, ThirdParty, Custom))
   }
 
   /**
@@ -871,7 +871,7 @@ package codepipeline {
     val Approved = "Approved"
     val Rejected = "Rejected"
 
-    val values = IndexedSeq(Approved, Rejected)
+    val values = js.Object.freeze(js.Array(Approved, Rejected))
   }
 
   /**
@@ -966,7 +966,7 @@ package codepipeline {
   object ArtifactLocationTypeEnum {
     val S3 = "S3"
 
-    val values = IndexedSeq(S3)
+    val values = js.Object.freeze(js.Array(S3))
   }
 
   /**
@@ -1031,7 +1031,7 @@ package codepipeline {
   object ArtifactStoreTypeEnum {
     val S3 = "S3"
 
-    val values = IndexedSeq(S3)
+    val values = js.Object.freeze(js.Array(S3))
   }
 
   /**
@@ -1060,7 +1060,7 @@ package codepipeline {
   object BlockerTypeEnum {
     val Schedule = "Schedule"
 
-    val values = IndexedSeq(Schedule)
+    val values = js.Object.freeze(js.Array(Schedule))
   }
 
   /**
@@ -1383,7 +1383,7 @@ package codepipeline {
   object EncryptionKeyTypeEnum {
     val KMS = "KMS"
 
-    val values = IndexedSeq(KMS)
+    val values = js.Object.freeze(js.Array(KMS))
   }
 
   /**
@@ -1465,13 +1465,15 @@ package codepipeline {
     val RevisionUnavailable = "RevisionUnavailable"
     val SystemUnavailable   = "SystemUnavailable"
 
-    val values = IndexedSeq(
-      JobFailed,
-      ConfigurationError,
-      PermissionError,
-      RevisionOutOfSync,
-      RevisionUnavailable,
-      SystemUnavailable
+    val values = js.Object.freeze(
+      js.Array(
+        JobFailed,
+        ConfigurationError,
+        PermissionError,
+        RevisionOutOfSync,
+        RevisionUnavailable,
+        SystemUnavailable
+      )
     )
   }
 
@@ -1808,7 +1810,7 @@ package codepipeline {
     val Succeeded  = "Succeeded"
     val Failed     = "Failed"
 
-    val values = IndexedSeq(Created, Queued, Dispatched, InProgress, TimedOut, Succeeded, Failed)
+    val values = js.Object.freeze(js.Array(Created, Queued, Dispatched, InProgress, TimedOut, Succeeded, Failed))
   }
 
   @js.native
@@ -2223,7 +2225,7 @@ package codepipeline {
     val Superseded = "Superseded"
     val Failed     = "Failed"
 
-    val values = IndexedSeq(InProgress, Succeeded, Superseded, Failed)
+    val values = js.Object.freeze(js.Array(InProgress, Succeeded, Superseded, Failed))
   }
 
   /**
@@ -2856,13 +2858,13 @@ package codepipeline {
     val Failed     = "Failed"
     val Succeeded  = "Succeeded"
 
-    val values = IndexedSeq(InProgress, Failed, Succeeded)
+    val values = js.Object.freeze(js.Array(InProgress, Failed, Succeeded))
   }
 
   object StageRetryModeEnum {
     val FAILED_ACTIONS = "FAILED_ACTIONS"
 
-    val values = IndexedSeq(FAILED_ACTIONS)
+    val values = js.Object.freeze(js.Array(FAILED_ACTIONS))
   }
 
   /**
@@ -2896,7 +2898,7 @@ package codepipeline {
     val Inbound  = "Inbound"
     val Outbound = "Outbound"
 
-    val values = IndexedSeq(Inbound, Outbound)
+    val values = js.Object.freeze(js.Array(Inbound, Outbound))
   }
 
   /**
@@ -3202,7 +3204,7 @@ package codepipeline {
     val IP              = "IP"
     val UNAUTHENTICATED = "UNAUTHENTICATED"
 
-    val values = IndexedSeq(GITHUB_HMAC, IP, UNAUTHENTICATED)
+    val values = js.Object.freeze(js.Array(GITHUB_HMAC, IP, UNAUTHENTICATED))
   }
 
   /**

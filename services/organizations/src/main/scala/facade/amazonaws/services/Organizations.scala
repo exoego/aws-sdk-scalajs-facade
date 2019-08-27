@@ -323,14 +323,14 @@ package organizations {
     val INVITED = "INVITED"
     val CREATED = "CREATED"
 
-    val values = IndexedSeq(INVITED, CREATED)
+    val values = js.Object.freeze(js.Array(INVITED, CREATED))
   }
 
   object AccountStatusEnum {
     val ACTIVE    = "ACTIVE"
     val SUSPENDED = "SUSPENDED"
 
-    val values = IndexedSeq(ACTIVE, SUSPENDED)
+    val values = js.Object.freeze(js.Array(ACTIVE, SUSPENDED))
   }
 
   object ActionTypeEnum {
@@ -339,7 +339,9 @@ package organizations {
     val APPROVE_ALL_FEATURES                  = "APPROVE_ALL_FEATURES"
     val ADD_ORGANIZATIONS_SERVICE_LINKED_ROLE = "ADD_ORGANIZATIONS_SERVICE_LINKED_ROLE"
 
-    val values = IndexedSeq(INVITE, ENABLE_ALL_FEATURES, APPROVE_ALL_FEATURES, ADD_ORGANIZATIONS_SERVICE_LINKED_ROLE)
+    val values = js.Object.freeze(
+      js.Array(INVITE, ENABLE_ALL_FEATURES, APPROVE_ALL_FEATURES, ADD_ORGANIZATIONS_SERVICE_LINKED_ROLE)
+    )
   }
 
   @js.native
@@ -419,7 +421,7 @@ package organizations {
     val ACCOUNT             = "ACCOUNT"
     val ORGANIZATIONAL_UNIT = "ORGANIZATIONAL_UNIT"
 
-    val values = IndexedSeq(ACCOUNT, ORGANIZATIONAL_UNIT)
+    val values = js.Object.freeze(js.Array(ACCOUNT, ORGANIZATIONAL_UNIT))
   }
 
   object CreateAccountFailureReasonEnum {
@@ -430,13 +432,15 @@ package organizations {
     val CONCURRENT_ACCOUNT_MODIFICATION = "CONCURRENT_ACCOUNT_MODIFICATION"
     val INTERNAL_FAILURE                = "INTERNAL_FAILURE"
 
-    val values = IndexedSeq(
-      ACCOUNT_LIMIT_EXCEEDED,
-      EMAIL_ALREADY_EXISTS,
-      INVALID_ADDRESS,
-      INVALID_EMAIL,
-      CONCURRENT_ACCOUNT_MODIFICATION,
-      INTERNAL_FAILURE
+    val values = js.Object.freeze(
+      js.Array(
+        ACCOUNT_LIMIT_EXCEEDED,
+        EMAIL_ALREADY_EXISTS,
+        INVALID_ADDRESS,
+        INVALID_EMAIL,
+        CONCURRENT_ACCOUNT_MODIFICATION,
+        INTERNAL_FAILURE
+      )
     )
   }
 
@@ -486,7 +490,7 @@ package organizations {
     val SUCCEEDED   = "SUCCEEDED"
     val FAILED      = "FAILED"
 
-    val values = IndexedSeq(IN_PROGRESS, SUCCEEDED, FAILED)
+    val values = js.Object.freeze(js.Array(IN_PROGRESS, SUCCEEDED, FAILED))
   }
 
   /**
@@ -1177,7 +1181,7 @@ package organizations {
     val ORGANIZATION = "ORGANIZATION"
     val EMAIL        = "EMAIL"
 
-    val values = IndexedSeq(ACCOUNT, ORGANIZATION, EMAIL)
+    val values = js.Object.freeze(js.Array(ACCOUNT, ORGANIZATION, EMAIL))
   }
 
   /**
@@ -1214,15 +1218,17 @@ package organizations {
     val NOTES                    = "NOTES"
     val PARENT_HANDSHAKE         = "PARENT_HANDSHAKE"
 
-    val values = IndexedSeq(
-      ACCOUNT,
-      ORGANIZATION,
-      ORGANIZATION_FEATURE_SET,
-      EMAIL,
-      MASTER_EMAIL,
-      MASTER_NAME,
-      NOTES,
-      PARENT_HANDSHAKE
+    val values = js.Object.freeze(
+      js.Array(
+        ACCOUNT,
+        ORGANIZATION,
+        ORGANIZATION_FEATURE_SET,
+        EMAIL,
+        MASTER_EMAIL,
+        MASTER_NAME,
+        NOTES,
+        PARENT_HANDSHAKE
+      )
     )
   }
 
@@ -1234,14 +1240,14 @@ package organizations {
     val DECLINED  = "DECLINED"
     val EXPIRED   = "EXPIRED"
 
-    val values = IndexedSeq(REQUESTED, OPEN, CANCELED, ACCEPTED, DECLINED, EXPIRED)
+    val values = js.Object.freeze(js.Array(REQUESTED, OPEN, CANCELED, ACCEPTED, DECLINED, EXPIRED))
   }
 
   object IAMUserAccessToBillingEnum {
     val ALLOW = "ALLOW"
     val DENY  = "DENY"
 
-    val values = IndexedSeq(ALLOW, DENY)
+    val values = js.Object.freeze(js.Array(ALLOW, DENY))
   }
 
   @js.native
@@ -1898,7 +1904,7 @@ package organizations {
     val ALL                  = "ALL"
     val CONSOLIDATED_BILLING = "CONSOLIDATED_BILLING"
 
-    val values = IndexedSeq(ALL, CONSOLIDATED_BILLING)
+    val values = js.Object.freeze(js.Array(ALL, CONSOLIDATED_BILLING))
   }
 
   /**
@@ -1950,7 +1956,7 @@ package organizations {
     val ROOT                = "ROOT"
     val ORGANIZATIONAL_UNIT = "ORGANIZATIONAL_UNIT"
 
-    val values = IndexedSeq(ROOT, ORGANIZATIONAL_UNIT)
+    val values = js.Object.freeze(js.Array(ROOT, ORGANIZATIONAL_UNIT))
   }
 
   /**
@@ -2037,7 +2043,7 @@ package organizations {
   object PolicyTypeEnum {
     val SERVICE_CONTROL_POLICY = "SERVICE_CONTROL_POLICY"
 
-    val values = IndexedSeq(SERVICE_CONTROL_POLICY)
+    val values = js.Object.freeze(js.Array(SERVICE_CONTROL_POLICY))
   }
 
   object PolicyTypeStatusEnum {
@@ -2045,7 +2051,7 @@ package organizations {
     val PENDING_ENABLE  = "PENDING_ENABLE"
     val PENDING_DISABLE = "PENDING_DISABLE"
 
-    val values = IndexedSeq(ENABLED, PENDING_ENABLE, PENDING_DISABLE)
+    val values = js.Object.freeze(js.Array(ENABLED, PENDING_ENABLE, PENDING_DISABLE))
   }
 
   /**
@@ -2161,7 +2167,7 @@ package organizations {
     val ORGANIZATIONAL_UNIT = "ORGANIZATIONAL_UNIT"
     val ROOT                = "ROOT"
 
-    val values = IndexedSeq(ACCOUNT, ORGANIZATIONAL_UNIT, ROOT)
+    val values = js.Object.freeze(js.Array(ACCOUNT, ORGANIZATIONAL_UNIT, ROOT))
   }
 
   @js.native

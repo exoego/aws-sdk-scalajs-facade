@@ -125,7 +125,7 @@ package dax {
     val IMMEDIATE       = "IMMEDIATE"
     val REQUIRES_REBOOT = "REQUIRES_REBOOT"
 
-    val values = IndexedSeq(IMMEDIATE, REQUIRES_REBOOT)
+    val values = js.Object.freeze(js.Array(IMMEDIATE, REQUIRES_REBOOT))
   }
 
   /**
@@ -811,7 +811,7 @@ package dax {
     val FALSE       = "FALSE"
     val CONDITIONAL = "CONDITIONAL"
 
-    val values = IndexedSeq(TRUE, FALSE, CONDITIONAL)
+    val values = js.Object.freeze(js.Array(TRUE, FALSE, CONDITIONAL))
   }
 
   @js.native
@@ -1042,7 +1042,7 @@ package dax {
     val DEFAULT            = "DEFAULT"
     val NODE_TYPE_SPECIFIC = "NODE_TYPE_SPECIFIC"
 
-    val values = IndexedSeq(DEFAULT, NODE_TYPE_SPECIFIC)
+    val values = js.Object.freeze(js.Array(DEFAULT, NODE_TYPE_SPECIFIC))
   }
 
   @js.native
@@ -1124,7 +1124,7 @@ package dax {
     val DISABLING = "DISABLING"
     val DISABLED  = "DISABLED"
 
-    val values = IndexedSeq(ENABLING, ENABLED, DISABLING, DISABLED)
+    val values = js.Object.freeze(js.Array(ENABLING, ENABLED, DISABLING, DISABLED))
   }
 
   /**
@@ -1153,7 +1153,7 @@ package dax {
     val PARAMETER_GROUP = "PARAMETER_GROUP"
     val SUBNET_GROUP    = "SUBNET_GROUP"
 
-    val values = IndexedSeq(CLUSTER, PARAMETER_GROUP, SUBNET_GROUP)
+    val values = js.Object.freeze(js.Array(CLUSTER, PARAMETER_GROUP, SUBNET_GROUP))
   }
 
   /**

@@ -731,14 +731,16 @@ package sqs {
     val MessageDeduplicationId           = "MessageDeduplicationId"
     val MessageGroupId                   = "MessageGroupId"
 
-    val values = IndexedSeq(
-      SenderId,
-      SentTimestamp,
-      ApproximateReceiveCount,
-      ApproximateFirstReceiveTimestamp,
-      SequenceNumber,
-      MessageDeduplicationId,
-      MessageGroupId
+    val values = js.Object.freeze(
+      js.Array(
+        SenderId,
+        SentTimestamp,
+        ApproximateReceiveCount,
+        ApproximateFirstReceiveTimestamp,
+        SequenceNumber,
+        MessageDeduplicationId,
+        MessageGroupId
+      )
     )
   }
 
@@ -782,25 +784,27 @@ package sqs {
     val KmsMasterKeyId                        = "KmsMasterKeyId"
     val KmsDataKeyReusePeriodSeconds          = "KmsDataKeyReusePeriodSeconds"
 
-    val values = IndexedSeq(
-      All,
-      Policy,
-      VisibilityTimeout,
-      MaximumMessageSize,
-      MessageRetentionPeriod,
-      ApproximateNumberOfMessages,
-      ApproximateNumberOfMessagesNotVisible,
-      CreatedTimestamp,
-      LastModifiedTimestamp,
-      QueueArn,
-      ApproximateNumberOfMessagesDelayed,
-      DelaySeconds,
-      ReceiveMessageWaitTimeSeconds,
-      RedrivePolicy,
-      FifoQueue,
-      ContentBasedDeduplication,
-      KmsMasterKeyId,
-      KmsDataKeyReusePeriodSeconds
+    val values = js.Object.freeze(
+      js.Array(
+        All,
+        Policy,
+        VisibilityTimeout,
+        MaximumMessageSize,
+        MessageRetentionPeriod,
+        ApproximateNumberOfMessages,
+        ApproximateNumberOfMessagesNotVisible,
+        CreatedTimestamp,
+        LastModifiedTimestamp,
+        QueueArn,
+        ApproximateNumberOfMessagesDelayed,
+        DelaySeconds,
+        ReceiveMessageWaitTimeSeconds,
+        RedrivePolicy,
+        FifoQueue,
+        ContentBasedDeduplication,
+        KmsMasterKeyId,
+        KmsDataKeyReusePeriodSeconds
+      )
     )
   }
 

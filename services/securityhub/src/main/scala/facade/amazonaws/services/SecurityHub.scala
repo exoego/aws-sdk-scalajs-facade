@@ -356,7 +356,7 @@ package securityhub {
     val Active   = "Active"
     val Inactive = "Inactive"
 
-    val values = IndexedSeq(Active, Inactive)
+    val values = js.Object.freeze(js.Array(Active, Inactive))
   }
 
   /**
@@ -909,7 +909,7 @@ package securityhub {
     val FAILED        = "FAILED"
     val NOT_AVAILABLE = "NOT_AVAILABLE"
 
-    val values = IndexedSeq(PASSED, WARNING, FAILED, NOT_AVAILABLE)
+    val values = js.Object.freeze(js.Array(PASSED, WARNING, FAILED, NOT_AVAILABLE))
   }
 
   /**
@@ -1097,7 +1097,7 @@ package securityhub {
   object DateRangeUnitEnum {
     val DAYS = "DAYS"
 
-    val values = IndexedSeq(DAYS)
+    val values = js.Object.freeze(js.Array(DAYS))
   }
 
   @js.native
@@ -2158,7 +2158,7 @@ package securityhub {
     val REMOVAL_FAILED = "REMOVAL_FAILED"
     val REMOVED        = "REMOVED"
 
-    val values = IndexedSeq(OBSERVED, REMOVAL_FAILED, REMOVED)
+    val values = js.Object.freeze(js.Array(OBSERVED, REMOVAL_FAILED, REMOVED))
   }
 
   object MalwareTypeEnum {
@@ -2178,22 +2178,24 @@ package securityhub {
     val VIRUS                = "VIRUS"
     val WORM                 = "WORM"
 
-    val values = IndexedSeq(
-      ADWARE,
-      BLENDED_THREAT,
-      BOTNET_AGENT,
-      COIN_MINER,
-      EXPLOIT_KIT,
-      KEYLOGGER,
-      MACRO,
-      POTENTIALLY_UNWANTED,
-      SPYWARE,
-      RANSOMWARE,
-      REMOTE_ACCESS,
-      ROOTKIT,
-      TROJAN,
-      VIRUS,
-      WORM
+    val values = js.Object.freeze(
+      js.Array(
+        ADWARE,
+        BLENDED_THREAT,
+        BOTNET_AGENT,
+        COIN_MINER,
+        EXPLOIT_KIT,
+        KEYLOGGER,
+        MACRO,
+        POTENTIALLY_UNWANTED,
+        SPYWARE,
+        RANSOMWARE,
+        REMOTE_ACCESS,
+        ROOTKIT,
+        TROJAN,
+        VIRUS,
+        WORM
+      )
     )
   }
 
@@ -2224,7 +2226,7 @@ package securityhub {
   object MapFilterComparisonEnum {
     val EQUALS = "EQUALS"
 
-    val values = IndexedSeq(EQUALS)
+    val values = js.Object.freeze(js.Array(EQUALS))
   }
 
   /**
@@ -2312,7 +2314,7 @@ package securityhub {
     val IN  = "IN"
     val OUT = "OUT"
 
-    val values = IndexedSeq(IN, OUT)
+    val values = js.Object.freeze(js.Array(IN, OUT))
   }
 
   /**
@@ -2393,7 +2395,7 @@ package securityhub {
     val `aws-cn`     = "aws-cn"
     val `aws-us-gov` = "aws-us-gov"
 
-    val values = IndexedSeq(aws, `aws-cn`, `aws-us-gov`)
+    val values = js.Object.freeze(js.Array(aws, `aws-cn`, `aws-us-gov`))
   }
 
   /**
@@ -2497,7 +2499,7 @@ package securityhub {
     val ACTIVE   = "ACTIVE"
     val ARCHIVED = "ARCHIVED"
 
-    val values = IndexedSeq(ACTIVE, ARCHIVED)
+    val values = js.Object.freeze(js.Array(ACTIVE, ARCHIVED))
   }
 
   /**
@@ -2675,7 +2677,7 @@ package securityhub {
     val asc  = "asc"
     val desc = "desc"
 
-    val values = IndexedSeq(asc, desc)
+    val values = js.Object.freeze(js.Array(asc, desc))
   }
 
   object StandardsStatusEnum {
@@ -2685,7 +2687,7 @@ package securityhub {
     val DELETING   = "DELETING"
     val INCOMPLETE = "INCOMPLETE"
 
-    val values = IndexedSeq(PENDING, READY, FAILED, DELETING, INCOMPLETE)
+    val values = js.Object.freeze(js.Array(PENDING, READY, FAILED, DELETING, INCOMPLETE))
   }
 
   /**
@@ -2765,7 +2767,7 @@ package securityhub {
     val EQUALS = "EQUALS"
     val PREFIX = "PREFIX"
 
-    val values = IndexedSeq(EQUALS, PREFIX)
+    val values = js.Object.freeze(js.Array(EQUALS, PREFIX))
   }
 
   @js.native
@@ -2841,7 +2843,8 @@ package securityhub {
     val EXPLOIT_SITE        = "EXPLOIT_SITE"
     val KEYLOGGER           = "KEYLOGGER"
 
-    val values = IndexedSeq(BACKDOOR, CARD_STEALER, COMMAND_AND_CONTROL, DROP_SITE, EXPLOIT_SITE, KEYLOGGER)
+    val values =
+      js.Object.freeze(js.Array(BACKDOOR, CARD_STEALER, COMMAND_AND_CONTROL, DROP_SITE, EXPLOIT_SITE, KEYLOGGER))
   }
 
   object ThreatIntelIndicatorTypeEnum {
@@ -2857,18 +2860,20 @@ package securityhub {
     val PROCESS       = "PROCESS"
     val URL           = "URL"
 
-    val values = IndexedSeq(
-      DOMAIN,
-      EMAIL_ADDRESS,
-      HASH_MD5,
-      HASH_SHA1,
-      HASH_SHA256,
-      HASH_SHA512,
-      IPV4_ADDRESS,
-      IPV6_ADDRESS,
-      MUTEX,
-      PROCESS,
-      URL
+    val values = js.Object.freeze(
+      js.Array(
+        DOMAIN,
+        EMAIL_ADDRESS,
+        HASH_MD5,
+        HASH_SHA1,
+        HASH_SHA256,
+        HASH_SHA512,
+        IPV4_ADDRESS,
+        IPV6_ADDRESS,
+        MUTEX,
+        PROCESS,
+        URL
+      )
     )
   }
 
@@ -3018,7 +3023,7 @@ package securityhub {
     val FALSE_POSITIVE  = "FALSE_POSITIVE"
     val BENIGN_POSITIVE = "BENIGN_POSITIVE"
 
-    val values = IndexedSeq(UNKNOWN, TRUE_POSITIVE, FALSE_POSITIVE, BENIGN_POSITIVE)
+    val values = js.Object.freeze(js.Array(UNKNOWN, TRUE_POSITIVE, FALSE_POSITIVE, BENIGN_POSITIVE))
   }
 
   object WorkflowStateEnum {
@@ -3028,6 +3033,6 @@ package securityhub {
     val DEFERRED    = "DEFERRED"
     val RESOLVED    = "RESOLVED"
 
-    val values = IndexedSeq(NEW, ASSIGNED, IN_PROGRESS, DEFERRED, RESOLVED)
+    val values = js.Object.freeze(js.Array(NEW, ASSIGNED, IN_PROGRESS, DEFERRED, RESOLVED))
   }
 }

@@ -362,7 +362,7 @@ package chime {
     val EnterpriseLWA       = "EnterpriseLWA"
     val EnterpriseOIDC      = "EnterpriseOIDC"
 
-    val values = IndexedSeq(Team, EnterpriseDirectory, EnterpriseLWA, EnterpriseOIDC)
+    val values = js.Object.freeze(js.Array(Team, EnterpriseDirectory, EnterpriseLWA, EnterpriseOIDC))
   }
 
   @js.native
@@ -649,7 +649,7 @@ package chime {
   object BotTypeEnum {
     val ChatBot = "ChatBot"
 
-    val values = IndexedSeq(ChatBot)
+    val values = js.Object.freeze(js.Array(ChatBot))
   }
 
   /**
@@ -1040,7 +1040,7 @@ package chime {
     val Sent    = "Sent"
     val Failed  = "Failed"
 
-    val values = IndexedSeq(NotSent, Sent, Failed)
+    val values = js.Object.freeze(js.Array(NotSent, Sent, Failed))
   }
 
   object ErrorCodeEnum {
@@ -1055,17 +1055,19 @@ package chime {
     val Throttled          = "Throttled"
     val PreconditionFailed = "PreconditionFailed"
 
-    val values = IndexedSeq(
-      Unauthorized,
-      Forbidden,
-      NotFound,
-      BadRequest,
-      Conflict,
-      ServiceFailure,
-      ServiceUnavailable,
-      Unprocessable,
-      Throttled,
-      PreconditionFailed
+    val values = js.Object.freeze(
+      js.Array(
+        Unauthorized,
+        Forbidden,
+        NotFound,
+        BadRequest,
+        Conflict,
+        ServiceFailure,
+        ServiceUnavailable,
+        Unprocessable,
+        Throttled,
+        PreconditionFailed
+      )
     )
   }
 
@@ -1539,7 +1541,7 @@ package chime {
     val Accepted = "Accepted"
     val Failed   = "Failed"
 
-    val values = IndexedSeq(Pending, Accepted, Failed)
+    val values = js.Object.freeze(js.Array(Pending, Accepted, Failed))
   }
 
   @js.native
@@ -1583,7 +1585,7 @@ package chime {
     val Pro      = "Pro"
     val ProTrial = "ProTrial"
 
-    val values = IndexedSeq(Basic, Plus, Pro, ProTrial)
+    val values = js.Object.freeze(js.Array(Basic, Plus, Pro, ProTrial))
   }
 
   @js.native
@@ -1923,7 +1925,7 @@ package chime {
     val Acquired   = "Acquired"
     val Failed     = "Failed"
 
-    val values = IndexedSeq(Processing, Acquired, Failed)
+    val values = js.Object.freeze(js.Array(Processing, Acquired, Failed))
   }
 
   /**
@@ -1981,7 +1983,7 @@ package chime {
     val TCP = "TCP"
     val UDP = "UDP"
 
-    val values = IndexedSeq(TCP, UDP)
+    val values = js.Object.freeze(js.Array(TCP, UDP))
   }
 
   /**
@@ -2058,7 +2060,7 @@ package chime {
     val UserId           = "UserId"
     val VoiceConnectorId = "VoiceConnectorId"
 
-    val values = IndexedSeq(AccountId, UserId, VoiceConnectorId)
+    val values = js.Object.freeze(js.Array(AccountId, UserId, VoiceConnectorId))
   }
 
   /**
@@ -2157,14 +2159,14 @@ package chime {
     val Failed     = "Failed"
     val Partial    = "Partial"
 
-    val values = IndexedSeq(Processing, Successful, Failed, Partial)
+    val values = js.Object.freeze(js.Array(Processing, Successful, Failed, Partial))
   }
 
   object PhoneNumberProductTypeEnum {
     val BusinessCalling = "BusinessCalling"
     val VoiceConnector  = "VoiceConnector"
 
-    val values = IndexedSeq(BusinessCalling, VoiceConnector)
+    val values = js.Object.freeze(js.Array(BusinessCalling, VoiceConnector))
   }
 
   object PhoneNumberStatusEnum {
@@ -2177,15 +2179,17 @@ package chime {
     val ReleaseFailed     = "ReleaseFailed"
     val DeleteFailed      = "DeleteFailed"
 
-    val values = IndexedSeq(
-      AcquireInProgress,
-      AcquireFailed,
-      Unassigned,
-      Assigned,
-      ReleaseInProgress,
-      DeleteInProgress,
-      ReleaseFailed,
-      DeleteFailed
+    val values = js.Object.freeze(
+      js.Array(
+        AcquireInProgress,
+        AcquireFailed,
+        Unassigned,
+        Assigned,
+        ReleaseInProgress,
+        DeleteInProgress,
+        ReleaseFailed,
+        DeleteFailed
+      )
     )
   }
 
@@ -2193,7 +2197,7 @@ package chime {
     val Local    = "Local"
     val TollFree = "TollFree"
 
-    val values = IndexedSeq(Local, TollFree)
+    val values = js.Object.freeze(js.Array(Local, TollFree))
   }
 
   @js.native
@@ -2367,7 +2371,7 @@ package chime {
     val Registered   = "Registered"
     val Suspended    = "Suspended"
 
-    val values = IndexedSeq(Unregistered, Registered, Suspended)
+    val values = js.Object.freeze(js.Array(Unregistered, Registered, Suspended))
   }
 
   @js.native

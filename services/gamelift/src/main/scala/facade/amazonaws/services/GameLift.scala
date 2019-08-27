@@ -446,7 +446,7 @@ package gamelift {
     val ACCEPT = "ACCEPT"
     val REJECT = "REJECT"
 
-    val values = IndexedSeq(ACCEPT, REJECT)
+    val values = js.Object.freeze(js.Array(ACCEPT, REJECT))
   }
 
   /**
@@ -546,7 +546,7 @@ package gamelift {
     val AUTOMATIC = "AUTOMATIC"
     val MANUAL    = "MANUAL"
 
-    val values = IndexedSeq(AUTOMATIC, MANUAL)
+    val values = js.Object.freeze(js.Array(AUTOMATIC, MANUAL))
   }
 
   /**
@@ -596,7 +596,7 @@ package gamelift {
     val READY       = "READY"
     val FAILED      = "FAILED"
 
-    val values = IndexedSeq(INITIALIZED, READY, FAILED)
+    val values = js.Object.freeze(js.Array(INITIALIZED, READY, FAILED))
   }
 
   object ComparisonOperatorTypeEnum {
@@ -605,8 +605,9 @@ package gamelift {
     val LessThanThreshold             = "LessThanThreshold"
     val LessThanOrEqualToThreshold    = "LessThanOrEqualToThreshold"
 
-    val values =
-      IndexedSeq(GreaterThanOrEqualToThreshold, GreaterThanThreshold, LessThanThreshold, LessThanOrEqualToThreshold)
+    val values = js.Object.freeze(
+      js.Array(GreaterThanOrEqualToThreshold, GreaterThanThreshold, LessThanThreshold, LessThanOrEqualToThreshold)
+    )
   }
 
   /**
@@ -2579,41 +2580,43 @@ package gamelift {
     val `m4.4xlarge`  = "m4.4xlarge"
     val `m4.10xlarge` = "m4.10xlarge"
 
-    val values = IndexedSeq(
-      `t2.micro`,
-      `t2.small`,
-      `t2.medium`,
-      `t2.large`,
-      `c3.large`,
-      `c3.xlarge`,
-      `c3.2xlarge`,
-      `c3.4xlarge`,
-      `c3.8xlarge`,
-      `c4.large`,
-      `c4.xlarge`,
-      `c4.2xlarge`,
-      `c4.4xlarge`,
-      `c4.8xlarge`,
-      `r3.large`,
-      `r3.xlarge`,
-      `r3.2xlarge`,
-      `r3.4xlarge`,
-      `r3.8xlarge`,
-      `r4.large`,
-      `r4.xlarge`,
-      `r4.2xlarge`,
-      `r4.4xlarge`,
-      `r4.8xlarge`,
-      `r4.16xlarge`,
-      `m3.medium`,
-      `m3.large`,
-      `m3.xlarge`,
-      `m3.2xlarge`,
-      `m4.large`,
-      `m4.xlarge`,
-      `m4.2xlarge`,
-      `m4.4xlarge`,
-      `m4.10xlarge`
+    val values = js.Object.freeze(
+      js.Array(
+        `t2.micro`,
+        `t2.small`,
+        `t2.medium`,
+        `t2.large`,
+        `c3.large`,
+        `c3.xlarge`,
+        `c3.2xlarge`,
+        `c3.4xlarge`,
+        `c3.8xlarge`,
+        `c4.large`,
+        `c4.xlarge`,
+        `c4.2xlarge`,
+        `c4.4xlarge`,
+        `c4.8xlarge`,
+        `r3.large`,
+        `r3.xlarge`,
+        `r3.2xlarge`,
+        `r3.4xlarge`,
+        `r3.8xlarge`,
+        `r4.large`,
+        `r4.xlarge`,
+        `r4.2xlarge`,
+        `r4.4xlarge`,
+        `r4.8xlarge`,
+        `r4.16xlarge`,
+        `m3.medium`,
+        `m3.large`,
+        `m3.xlarge`,
+        `m3.2xlarge`,
+        `m4.large`,
+        `m4.xlarge`,
+        `m4.2xlarge`,
+        `m4.4xlarge`,
+        `m4.10xlarge`
+      )
     )
   }
 
@@ -2685,47 +2688,49 @@ package gamelift {
     val FLEET_VPC_PEERING_DELETED                        = "FLEET_VPC_PEERING_DELETED"
     val INSTANCE_INTERRUPTED                             = "INSTANCE_INTERRUPTED"
 
-    val values = IndexedSeq(
-      GENERIC_EVENT,
-      FLEET_CREATED,
-      FLEET_DELETED,
-      FLEET_SCALING_EVENT,
-      FLEET_STATE_DOWNLOADING,
-      FLEET_STATE_VALIDATING,
-      FLEET_STATE_BUILDING,
-      FLEET_STATE_ACTIVATING,
-      FLEET_STATE_ACTIVE,
-      FLEET_STATE_ERROR,
-      FLEET_INITIALIZATION_FAILED,
-      FLEET_BINARY_DOWNLOAD_FAILED,
-      FLEET_VALIDATION_LAUNCH_PATH_NOT_FOUND,
-      FLEET_VALIDATION_EXECUTABLE_RUNTIME_FAILURE,
-      FLEET_VALIDATION_TIMED_OUT,
-      FLEET_ACTIVATION_FAILED,
-      FLEET_ACTIVATION_FAILED_NO_INSTANCES,
-      FLEET_NEW_GAME_SESSION_PROTECTION_POLICY_UPDATED,
-      SERVER_PROCESS_INVALID_PATH,
-      SERVER_PROCESS_SDK_INITIALIZATION_TIMEOUT,
-      SERVER_PROCESS_PROCESS_READY_TIMEOUT,
-      SERVER_PROCESS_CRASHED,
-      SERVER_PROCESS_TERMINATED_UNHEALTHY,
-      SERVER_PROCESS_FORCE_TERMINATED,
-      SERVER_PROCESS_PROCESS_EXIT_TIMEOUT,
-      GAME_SESSION_ACTIVATION_TIMEOUT,
-      FLEET_CREATION_EXTRACTING_BUILD,
-      FLEET_CREATION_RUNNING_INSTALLER,
-      FLEET_CREATION_VALIDATING_RUNTIME_CONFIG,
-      FLEET_VPC_PEERING_SUCCEEDED,
-      FLEET_VPC_PEERING_FAILED,
-      FLEET_VPC_PEERING_DELETED,
-      INSTANCE_INTERRUPTED
+    val values = js.Object.freeze(
+      js.Array(
+        GENERIC_EVENT,
+        FLEET_CREATED,
+        FLEET_DELETED,
+        FLEET_SCALING_EVENT,
+        FLEET_STATE_DOWNLOADING,
+        FLEET_STATE_VALIDATING,
+        FLEET_STATE_BUILDING,
+        FLEET_STATE_ACTIVATING,
+        FLEET_STATE_ACTIVE,
+        FLEET_STATE_ERROR,
+        FLEET_INITIALIZATION_FAILED,
+        FLEET_BINARY_DOWNLOAD_FAILED,
+        FLEET_VALIDATION_LAUNCH_PATH_NOT_FOUND,
+        FLEET_VALIDATION_EXECUTABLE_RUNTIME_FAILURE,
+        FLEET_VALIDATION_TIMED_OUT,
+        FLEET_ACTIVATION_FAILED,
+        FLEET_ACTIVATION_FAILED_NO_INSTANCES,
+        FLEET_NEW_GAME_SESSION_PROTECTION_POLICY_UPDATED,
+        SERVER_PROCESS_INVALID_PATH,
+        SERVER_PROCESS_SDK_INITIALIZATION_TIMEOUT,
+        SERVER_PROCESS_PROCESS_READY_TIMEOUT,
+        SERVER_PROCESS_CRASHED,
+        SERVER_PROCESS_TERMINATED_UNHEALTHY,
+        SERVER_PROCESS_FORCE_TERMINATED,
+        SERVER_PROCESS_PROCESS_EXIT_TIMEOUT,
+        GAME_SESSION_ACTIVATION_TIMEOUT,
+        FLEET_CREATION_EXTRACTING_BUILD,
+        FLEET_CREATION_RUNNING_INSTALLER,
+        FLEET_CREATION_VALIDATING_RUNTIME_CONFIG,
+        FLEET_VPC_PEERING_SUCCEEDED,
+        FLEET_VPC_PEERING_FAILED,
+        FLEET_VPC_PEERING_DELETED,
+        INSTANCE_INTERRUPTED
+      )
     )
   }
 
   object FleetActionEnum {
     val AUTO_SCALING = "AUTO_SCALING"
 
-    val values = IndexedSeq(AUTO_SCALING)
+    val values = js.Object.freeze(js.Array(AUTO_SCALING))
   }
 
   /**
@@ -2880,14 +2885,16 @@ package gamelift {
     val ERROR       = "ERROR"
     val TERMINATED  = "TERMINATED"
 
-    val values = IndexedSeq(NEW, DOWNLOADING, VALIDATING, BUILDING, ACTIVATING, ACTIVE, DELETING, ERROR, TERMINATED)
+    val values = js.Object.freeze(
+      js.Array(NEW, DOWNLOADING, VALIDATING, BUILDING, ACTIVATING, ACTIVE, DELETING, ERROR, TERMINATED)
+    )
   }
 
   object FleetTypeEnum {
     val ON_DEMAND = "ON_DEMAND"
     val SPOT      = "SPOT"
 
-    val values = IndexedSeq(ON_DEMAND, SPOT)
+    val values = js.Object.freeze(js.Array(ON_DEMAND, SPOT))
   }
 
   /**
@@ -3163,7 +3170,7 @@ package gamelift {
     val CANCELLED = "CANCELLED"
     val TIMED_OUT = "TIMED_OUT"
 
-    val values = IndexedSeq(PENDING, FULFILLED, CANCELLED, TIMED_OUT)
+    val values = js.Object.freeze(js.Array(PENDING, FULFILLED, CANCELLED, TIMED_OUT))
   }
 
   /**
@@ -3232,13 +3239,13 @@ package gamelift {
     val TERMINATING = "TERMINATING"
     val ERROR       = "ERROR"
 
-    val values = IndexedSeq(ACTIVE, ACTIVATING, TERMINATED, TERMINATING, ERROR)
+    val values = js.Object.freeze(js.Array(ACTIVE, ACTIVATING, TERMINATED, TERMINATING, ERROR))
   }
 
   object GameSessionStatusReasonEnum {
     val INTERRUPTED = "INTERRUPTED"
 
-    val values = IndexedSeq(INTERRUPTED)
+    val values = js.Object.freeze(js.Array(INTERRUPTED))
   }
 
   /**
@@ -3412,7 +3419,7 @@ package gamelift {
     val ACTIVE      = "ACTIVE"
     val TERMINATING = "TERMINATING"
 
-    val values = IndexedSeq(PENDING, ACTIVE, TERMINATING)
+    val values = js.Object.freeze(js.Array(PENDING, ACTIVE, TERMINATING))
   }
 
   /**
@@ -3448,7 +3455,7 @@ package gamelift {
     val TCP = "TCP"
     val UDP = "UDP"
 
-    val values = IndexedSeq(TCP, UDP)
+    val values = js.Object.freeze(js.Array(TCP, UDP))
   }
 
   /**
@@ -3717,7 +3724,9 @@ package gamelift {
     val SEARCHING           = "SEARCHING"
     val TIMED_OUT           = "TIMED_OUT"
 
-    val values = IndexedSeq(CANCELLED, COMPLETED, FAILED, PLACING, QUEUED, REQUIRES_ACCEPTANCE, SEARCHING, TIMED_OUT)
+    val values = js.Object.freeze(
+      js.Array(CANCELLED, COMPLETED, FAILED, PLACING, QUEUED, REQUIRES_ACCEPTANCE, SEARCHING, TIMED_OUT)
+    )
   }
 
   /**
@@ -3809,18 +3818,20 @@ package gamelift {
     val QueueDepth                   = "QueueDepth"
     val WaitTime                     = "WaitTime"
 
-    val values = IndexedSeq(
-      ActivatingGameSessions,
-      ActiveGameSessions,
-      ActiveInstances,
-      AvailableGameSessions,
-      AvailablePlayerSessions,
-      CurrentPlayerSessions,
-      IdleInstances,
-      PercentAvailableGameSessions,
-      PercentIdleInstances,
-      QueueDepth,
-      WaitTime
+    val values = js.Object.freeze(
+      js.Array(
+        ActivatingGameSessions,
+        ActiveGameSessions,
+        ActiveInstances,
+        AvailableGameSessions,
+        AvailablePlayerSessions,
+        CurrentPlayerSessions,
+        IdleInstances,
+        PercentAvailableGameSessions,
+        PercentIdleInstances,
+        QueueDepth,
+        WaitTime
+      )
     )
   }
 
@@ -3828,7 +3839,7 @@ package gamelift {
     val WINDOWS_2012 = "WINDOWS_2012"
     val AMAZON_LINUX = "AMAZON_LINUX"
 
-    val values = IndexedSeq(WINDOWS_2012, AMAZON_LINUX)
+    val values = js.Object.freeze(js.Array(WINDOWS_2012, AMAZON_LINUX))
   }
 
   /**
@@ -3996,7 +4007,7 @@ package gamelift {
     val ACCEPT_ALL = "ACCEPT_ALL"
     val DENY_ALL   = "DENY_ALL"
 
-    val values = IndexedSeq(ACCEPT_ALL, DENY_ALL)
+    val values = js.Object.freeze(js.Array(ACCEPT_ALL, DENY_ALL))
   }
 
   object PlayerSessionStatusEnum {
@@ -4005,21 +4016,21 @@ package gamelift {
     val COMPLETED = "COMPLETED"
     val TIMEDOUT  = "TIMEDOUT"
 
-    val values = IndexedSeq(RESERVED, ACTIVE, COMPLETED, TIMEDOUT)
+    val values = js.Object.freeze(js.Array(RESERVED, ACTIVE, COMPLETED, TIMEDOUT))
   }
 
   object PolicyTypeEnum {
     val RuleBased   = "RuleBased"
     val TargetBased = "TargetBased"
 
-    val values = IndexedSeq(RuleBased, TargetBased)
+    val values = js.Object.freeze(js.Array(RuleBased, TargetBased))
   }
 
   object ProtectionPolicyEnum {
     val NoProtection   = "NoProtection"
     val FullProtection = "FullProtection"
 
-    val values = IndexedSeq(NoProtection, FullProtection)
+    val values = js.Object.freeze(js.Array(NoProtection, FullProtection))
   }
 
   /**
@@ -4222,7 +4233,7 @@ package gamelift {
     val SIMPLE   = "SIMPLE"
     val TERMINAL = "TERMINAL"
 
-    val values = IndexedSeq(SIMPLE, TERMINAL)
+    val values = js.Object.freeze(js.Array(SIMPLE, TERMINAL))
   }
 
   /**
@@ -4307,7 +4318,7 @@ package gamelift {
     val ExactCapacity           = "ExactCapacity"
     val PercentChangeInCapacity = "PercentChangeInCapacity"
 
-    val values = IndexedSeq(ChangeInCapacity, ExactCapacity, PercentChangeInCapacity)
+    val values = js.Object.freeze(js.Array(ChangeInCapacity, ExactCapacity, PercentChangeInCapacity))
   }
 
   /**
@@ -4378,7 +4389,8 @@ package gamelift {
     val DELETED          = "DELETED"
     val ERROR            = "ERROR"
 
-    val values = IndexedSeq(ACTIVE, UPDATE_REQUESTED, UPDATING, DELETE_REQUESTED, DELETING, DELETED, ERROR)
+    val values =
+      js.Object.freeze(js.Array(ACTIVE, UPDATE_REQUESTED, UPDATING, DELETE_REQUESTED, DELETING, DELETED, ERROR))
   }
 
   /**

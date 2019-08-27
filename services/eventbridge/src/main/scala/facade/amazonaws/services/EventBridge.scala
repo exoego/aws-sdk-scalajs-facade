@@ -204,7 +204,7 @@ package eventbridge {
     val ENABLED  = "ENABLED"
     val DISABLED = "DISABLED"
 
-    val values = IndexedSeq(ENABLED, DISABLED)
+    val values = js.Object.freeze(js.Array(ENABLED, DISABLED))
   }
 
   /**
@@ -786,7 +786,7 @@ package eventbridge {
     val ACTIVE  = "ACTIVE"
     val DELETED = "DELETED"
 
-    val values = IndexedSeq(PENDING, ACTIVE, DELETED)
+    val values = js.Object.freeze(js.Array(PENDING, ACTIVE, DELETED))
   }
 
   /**
@@ -836,7 +836,7 @@ package eventbridge {
     val EC2     = "EC2"
     val FARGATE = "FARGATE"
 
-    val values = IndexedSeq(EC2, FARGATE)
+    val values = js.Object.freeze(js.Array(EC2, FARGATE))
   }
 
   @js.native
@@ -1689,7 +1689,7 @@ package eventbridge {
     val ENABLED  = "ENABLED"
     val DISABLED = "DISABLED"
 
-    val values = IndexedSeq(ENABLED, DISABLED)
+    val values = js.Object.freeze(js.Array(ENABLED, DISABLED))
   }
 
   /**

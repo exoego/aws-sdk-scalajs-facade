@@ -1634,7 +1634,7 @@ package directoryservice {
     val Enterprise = "Enterprise"
     val Standard   = "Standard"
 
-    val values = IndexedSeq(Enterprise, Standard)
+    val values = js.Object.freeze(js.Array(Enterprise, Standard))
   }
 
   /**
@@ -1695,7 +1695,7 @@ package directoryservice {
     val Small = "Small"
     val Large = "Large"
 
-    val values = IndexedSeq(Small, Large)
+    val values = js.Object.freeze(js.Array(Small, Large))
   }
 
   object DirectoryStageEnum {
@@ -1711,18 +1711,20 @@ package directoryservice {
     val Deleted       = "Deleted"
     val Failed        = "Failed"
 
-    val values = IndexedSeq(
-      Requested,
-      Creating,
-      Created,
-      Active,
-      Inoperable,
-      Impaired,
-      Restoring,
-      RestoreFailed,
-      Deleting,
-      Deleted,
-      Failed
+    val values = js.Object.freeze(
+      js.Array(
+        Requested,
+        Creating,
+        Created,
+        Active,
+        Inoperable,
+        Impaired,
+        Restoring,
+        RestoreFailed,
+        Deleting,
+        Deleted,
+        Failed
+      )
     )
   }
 
@@ -1732,7 +1734,7 @@ package directoryservice {
     val MicrosoftAD       = "MicrosoftAD"
     val SharedMicrosoftAD = "SharedMicrosoftAD"
 
-    val values = IndexedSeq(SimpleAD, ADConnector, MicrosoftAD, SharedMicrosoftAD)
+    val values = js.Object.freeze(js.Array(SimpleAD, ADConnector, MicrosoftAD, SharedMicrosoftAD))
   }
 
   /**
@@ -1915,7 +1917,7 @@ package directoryservice {
     val Deleted   = "Deleted"
     val Failed    = "Failed"
 
-    val values = IndexedSeq(Creating, Active, Impaired, Restoring, Deleting, Deleted, Failed)
+    val values = js.Object.freeze(js.Array(Creating, Active, Impaired, Restoring, Deleting, Deleted, Failed))
   }
 
   /**
@@ -2160,7 +2162,7 @@ package directoryservice {
     val AddFailed    = "AddFailed"
     val RemoveFailed = "RemoveFailed"
 
-    val values = IndexedSeq(Adding, Added, Removing, Removed, AddFailed, RemoveFailed)
+    val values = js.Object.freeze(js.Array(Adding, Added, Removing, Removed, AddFailed, RemoveFailed))
   }
 
   @js.native
@@ -2388,7 +2390,7 @@ package directoryservice {
     val `MS-CHAPv1` = "MS-CHAPv1"
     val `MS-CHAPv2` = "MS-CHAPv2"
 
-    val values = IndexedSeq(PAP, CHAP, `MS-CHAPv1`, `MS-CHAPv2`)
+    val values = js.Object.freeze(js.Array(PAP, CHAP, `MS-CHAPv1`, `MS-CHAPv2`))
   }
 
   /**
@@ -2435,7 +2437,7 @@ package directoryservice {
     val Completed = "Completed"
     val Failed    = "Failed"
 
-    val values = IndexedSeq(Creating, Completed, Failed)
+    val values = js.Object.freeze(js.Array(Creating, Completed, Failed))
   }
 
   /**
@@ -2575,7 +2577,7 @@ package directoryservice {
   object ReplicationScopeEnum {
     val Domain = "Domain"
 
-    val values = IndexedSeq(Domain)
+    val values = js.Object.freeze(js.Array(Domain))
   }
 
   @js.native
@@ -2695,16 +2697,18 @@ package directoryservice {
     val Failed             = "Failed"
     val Completed          = "Completed"
 
-    val values = IndexedSeq(
-      Initializing,
-      CreatingSnapshot,
-      UpdatingSchema,
-      Replicating,
-      CancelInProgress,
-      RollbackInProgress,
-      Cancelled,
-      Failed,
-      Completed
+    val values = js.Object.freeze(
+      js.Array(
+        Initializing,
+        CreatingSnapshot,
+        UpdatingSchema,
+        Replicating,
+        CancelInProgress,
+        RollbackInProgress,
+        Cancelled,
+        Failed,
+        Completed
+      )
     )
   }
 
@@ -2712,7 +2716,7 @@ package directoryservice {
     val Enabled  = "Enabled"
     val Disabled = "Disabled"
 
-    val values = IndexedSeq(Enabled, Disabled)
+    val values = js.Object.freeze(js.Array(Enabled, Disabled))
   }
 
   @js.native
@@ -2760,7 +2764,7 @@ package directoryservice {
     val ORGANIZATIONS = "ORGANIZATIONS"
     val HANDSHAKE     = "HANDSHAKE"
 
-    val values = IndexedSeq(ORGANIZATIONS, HANDSHAKE)
+    val values = js.Object.freeze(js.Array(ORGANIZATIONS, HANDSHAKE))
   }
 
   object ShareStatusEnum {
@@ -2774,8 +2778,9 @@ package directoryservice {
     val Deleted           = "Deleted"
     val Deleting          = "Deleting"
 
-    val values =
-      IndexedSeq(Shared, PendingAcceptance, Rejected, Rejecting, RejectFailed, Sharing, ShareFailed, Deleted, Deleting)
+    val values = js.Object.freeze(
+      js.Array(Shared, PendingAcceptance, Rejected, Rejecting, RejectFailed, Sharing, ShareFailed, Deleted, Deleting)
+    )
   }
 
   /**
@@ -2905,14 +2910,14 @@ package directoryservice {
     val Completed = "Completed"
     val Failed    = "Failed"
 
-    val values = IndexedSeq(Creating, Completed, Failed)
+    val values = js.Object.freeze(js.Array(Creating, Completed, Failed))
   }
 
   object SnapshotTypeEnum {
     val Auto   = "Auto"
     val Manual = "Manual"
 
-    val values = IndexedSeq(Auto, Manual)
+    val values = js.Object.freeze(js.Array(Auto, Manual))
   }
 
   @js.native
@@ -2982,7 +2987,7 @@ package directoryservice {
   object TargetTypeEnum {
     val ACCOUNT = "ACCOUNT"
 
-    val values = IndexedSeq(ACCOUNT)
+    val values = js.Object.freeze(js.Array(ACCOUNT))
   }
 
   object TopicStatusEnum {
@@ -2991,7 +2996,7 @@ package directoryservice {
     val Failed            = "Failed"
     val Deleted           = "Deleted"
 
-    val values = IndexedSeq(Registered, `Topic not found`, Failed, Deleted)
+    val values = js.Object.freeze(js.Array(Registered, `Topic not found`, Failed, Deleted))
   }
 
   /**
@@ -3047,7 +3052,7 @@ package directoryservice {
     val `One-Way: Incoming` = "One-Way: Incoming"
     val `Two-Way`           = "Two-Way"
 
-    val values = IndexedSeq(`One-Way: Outgoing`, `One-Way: Incoming`, `Two-Way`)
+    val values = js.Object.freeze(js.Array(`One-Way: Outgoing`, `One-Way: Incoming`, `Two-Way`))
   }
 
   object TrustStateEnum {
@@ -3063,18 +3068,20 @@ package directoryservice {
     val Deleted      = "Deleted"
     val Failed       = "Failed"
 
-    val values = IndexedSeq(
-      Creating,
-      Created,
-      Verifying,
-      VerifyFailed,
-      Verified,
-      Updating,
-      UpdateFailed,
-      Updated,
-      Deleting,
-      Deleted,
-      Failed
+    val values = js.Object.freeze(
+      js.Array(
+        Creating,
+        Created,
+        Verifying,
+        VerifyFailed,
+        Verified,
+        Updating,
+        UpdateFailed,
+        Updated,
+        Deleting,
+        Deleted,
+        Failed
+      )
     )
   }
 
@@ -3082,7 +3089,7 @@ package directoryservice {
     val Forest   = "Forest"
     val External = "External"
 
-    val values = IndexedSeq(Forest, External)
+    val values = js.Object.freeze(js.Array(Forest, External))
   }
 
   @js.native

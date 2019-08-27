@@ -501,7 +501,7 @@ package mediaconvert {
     val BROADCASTER_MIXED_AD = "BROADCASTER_MIXED_AD"
     val NORMAL               = "NORMAL"
 
-    val values = IndexedSeq(BROADCASTER_MIXED_AD, NORMAL)
+    val values = js.Object.freeze(js.Array(BROADCASTER_MIXED_AD, NORMAL))
   }
 
   /**
@@ -512,7 +512,7 @@ package mediaconvert {
     val HEV1 = "HEV1"
     val HEV2 = "HEV2"
 
-    val values = IndexedSeq(LC, HEV1, HEV2)
+    val values = js.Object.freeze(js.Array(LC, HEV1, HEV2))
   }
 
   /**
@@ -525,7 +525,8 @@ package mediaconvert {
     val CODING_MODE_2_0 = "CODING_MODE_2_0"
     val CODING_MODE_5_1 = "CODING_MODE_5_1"
 
-    val values = IndexedSeq(AD_RECEIVER_MIX, CODING_MODE_1_0, CODING_MODE_1_1, CODING_MODE_2_0, CODING_MODE_5_1)
+    val values =
+      js.Object.freeze(js.Array(AD_RECEIVER_MIX, CODING_MODE_1_0, CODING_MODE_1_1, CODING_MODE_2_0, CODING_MODE_5_1))
   }
 
   /**
@@ -535,7 +536,7 @@ package mediaconvert {
     val CBR = "CBR"
     val VBR = "VBR"
 
-    val values = IndexedSeq(CBR, VBR)
+    val values = js.Object.freeze(js.Array(CBR, VBR))
   }
 
   /**
@@ -545,7 +546,7 @@ package mediaconvert {
     val LATM_LOAS = "LATM_LOAS"
     val NONE      = "NONE"
 
-    val values = IndexedSeq(LATM_LOAS, NONE)
+    val values = js.Object.freeze(js.Array(LATM_LOAS, NONE))
   }
 
   /**
@@ -599,7 +600,7 @@ package mediaconvert {
     val MPEG2 = "MPEG2"
     val MPEG4 = "MPEG4"
 
-    val values = IndexedSeq(MPEG2, MPEG4)
+    val values = js.Object.freeze(js.Array(MPEG2, MPEG4))
   }
 
   /**
@@ -611,7 +612,7 @@ package mediaconvert {
     val MEDIUM_HIGH = "MEDIUM_HIGH"
     val HIGH        = "HIGH"
 
-    val values = IndexedSeq(LOW, MEDIUM_LOW, MEDIUM_HIGH, HIGH)
+    val values = js.Object.freeze(js.Array(LOW, MEDIUM_LOW, MEDIUM_HIGH, HIGH))
   }
 
   /**
@@ -627,15 +628,17 @@ package mediaconvert {
     val VISUALLY_IMPAIRED = "VISUALLY_IMPAIRED"
     val VOICE_OVER        = "VOICE_OVER"
 
-    val values = IndexedSeq(
-      COMPLETE_MAIN,
-      COMMENTARY,
-      DIALOGUE,
-      EMERGENCY,
-      HEARING_IMPAIRED,
-      MUSIC_AND_EFFECTS,
-      VISUALLY_IMPAIRED,
-      VOICE_OVER
+    val values = js.Object.freeze(
+      js.Array(
+        COMPLETE_MAIN,
+        COMMENTARY,
+        DIALOGUE,
+        EMERGENCY,
+        HEARING_IMPAIRED,
+        MUSIC_AND_EFFECTS,
+        VISUALLY_IMPAIRED,
+        VOICE_OVER
+      )
     )
   }
 
@@ -648,7 +651,7 @@ package mediaconvert {
     val CODING_MODE_2_0     = "CODING_MODE_2_0"
     val CODING_MODE_3_2_LFE = "CODING_MODE_3_2_LFE"
 
-    val values = IndexedSeq(CODING_MODE_1_0, CODING_MODE_1_1, CODING_MODE_2_0, CODING_MODE_3_2_LFE)
+    val values = js.Object.freeze(js.Array(CODING_MODE_1_0, CODING_MODE_1_1, CODING_MODE_2_0, CODING_MODE_3_2_LFE))
   }
 
   /**
@@ -658,7 +661,7 @@ package mediaconvert {
     val FILM_STANDARD = "FILM_STANDARD"
     val NONE          = "NONE"
 
-    val values = IndexedSeq(FILM_STANDARD, NONE)
+    val values = js.Object.freeze(js.Array(FILM_STANDARD, NONE))
   }
 
   /**
@@ -668,7 +671,7 @@ package mediaconvert {
     val ENABLED  = "ENABLED"
     val DISABLED = "DISABLED"
 
-    val values = IndexedSeq(ENABLED, DISABLED)
+    val values = js.Object.freeze(js.Array(ENABLED, DISABLED))
   }
 
   /**
@@ -678,7 +681,7 @@ package mediaconvert {
     val FOLLOW_INPUT   = "FOLLOW_INPUT"
     val USE_CONFIGURED = "USE_CONFIGURED"
 
-    val values = IndexedSeq(FOLLOW_INPUT, USE_CONFIGURED)
+    val values = js.Object.freeze(js.Array(FOLLOW_INPUT, USE_CONFIGURED))
   }
 
   /**
@@ -729,7 +732,7 @@ package mediaconvert {
     val DISABLED = "DISABLED"
     val ENABLED  = "ENABLED"
 
-    val values = IndexedSeq(DISABLED, ENABLED)
+    val values = js.Object.freeze(js.Array(DISABLED, ENABLED))
   }
 
   /**
@@ -760,7 +763,7 @@ package mediaconvert {
     val AUTO  = "AUTO"
     val FIXED = "FIXED"
 
-    val values = IndexedSeq(NONE, AUTO, FIXED)
+    val values = js.Object.freeze(js.Array(NONE, AUTO, FIXED))
   }
 
   /**
@@ -814,7 +817,7 @@ package mediaconvert {
     val DISABLED = "DISABLED"
     val ENABLED  = "ENABLED"
 
-    val values = IndexedSeq(DISABLED, ENABLED)
+    val values = js.Object.freeze(js.Array(DISABLED, ENABLED))
   }
 
   @js.native
@@ -859,7 +862,7 @@ package mediaconvert {
     val EAC3_ATMOS  = "EAC3_ATMOS"
     val PASSTHROUGH = "PASSTHROUGH"
 
-    val values = IndexedSeq(AAC, MP2, WAV, AIFF, AC3, EAC3, EAC3_ATMOS, PASSTHROUGH)
+    val values = js.Object.freeze(js.Array(AAC, MP2, WAV, AIFF, AC3, EAC3, EAC3_ATMOS, PASSTHROUGH))
   }
 
   /**
@@ -908,7 +911,7 @@ package mediaconvert {
     val DEFAULT     = "DEFAULT"
     val NOT_DEFAULT = "NOT_DEFAULT"
 
-    val values = IndexedSeq(DEFAULT, NOT_DEFAULT)
+    val values = js.Object.freeze(js.Array(DEFAULT, NOT_DEFAULT))
   }
 
   /**
@@ -963,7 +966,7 @@ package mediaconvert {
     val FOLLOW_INPUT   = "FOLLOW_INPUT"
     val USE_CONFIGURED = "USE_CONFIGURED"
 
-    val values = IndexedSeq(FOLLOW_INPUT, USE_CONFIGURED)
+    val values = js.Object.freeze(js.Array(FOLLOW_INPUT, USE_CONFIGURED))
   }
 
   /**
@@ -975,7 +978,7 @@ package mediaconvert {
     val ITU_BS_1770_3 = "ITU_BS_1770_3"
     val ITU_BS_1770_4 = "ITU_BS_1770_4"
 
-    val values = IndexedSeq(ITU_BS_1770_1, ITU_BS_1770_2, ITU_BS_1770_3, ITU_BS_1770_4)
+    val values = js.Object.freeze(js.Array(ITU_BS_1770_1, ITU_BS_1770_2, ITU_BS_1770_3, ITU_BS_1770_4))
   }
 
   /**
@@ -985,7 +988,7 @@ package mediaconvert {
     val CORRECT_AUDIO = "CORRECT_AUDIO"
     val MEASURE_ONLY  = "MEASURE_ONLY"
 
-    val values = IndexedSeq(CORRECT_AUDIO, MEASURE_ONLY)
+    val values = js.Object.freeze(js.Array(CORRECT_AUDIO, MEASURE_ONLY))
   }
 
   /**
@@ -995,7 +998,7 @@ package mediaconvert {
     val LOG      = "LOG"
     val DONT_LOG = "DONT_LOG"
 
-    val values = IndexedSeq(LOG, DONT_LOG)
+    val values = js.Object.freeze(js.Array(LOG, DONT_LOG))
   }
 
   /**
@@ -1005,7 +1008,7 @@ package mediaconvert {
     val TRUE_PEAK = "TRUE_PEAK"
     val NONE      = "NONE"
 
-    val values = IndexedSeq(TRUE_PEAK, NONE)
+    val values = js.Object.freeze(js.Array(TRUE_PEAK, NONE))
   }
 
   /**
@@ -1116,7 +1119,7 @@ package mediaconvert {
     val TRACK         = "TRACK"
     val LANGUAGE_CODE = "LANGUAGE_CODE"
 
-    val values = IndexedSeq(PID, TRACK, LANGUAGE_CODE)
+    val values = js.Object.freeze(js.Array(PID, TRACK, LANGUAGE_CODE))
   }
 
   /**
@@ -1126,7 +1129,7 @@ package mediaconvert {
     val FOLLOW_INPUT   = "FOLLOW_INPUT"
     val USE_CONFIGURED = "USE_CONFIGURED"
 
-    val values = IndexedSeq(FOLLOW_INPUT, USE_CONFIGURED)
+    val values = js.Object.freeze(js.Array(FOLLOW_INPUT, USE_CONFIGURED))
   }
 
   /**
@@ -1155,7 +1158,7 @@ package mediaconvert {
     val PRESET       = "PRESET"
     val JOB_TEMPLATE = "JOB_TEMPLATE"
 
-    val values = IndexedSeq(QUEUE, PRESET, JOB_TEMPLATE)
+    val values = js.Object.freeze(js.Array(QUEUE, PRESET, JOB_TEMPLATE))
   }
 
   /**
@@ -1231,7 +1234,7 @@ package mediaconvert {
     val CENTERED = "CENTERED"
     val LEFT     = "LEFT"
 
-    val values = IndexedSeq(CENTERED, LEFT)
+    val values = js.Object.freeze(js.Array(CENTERED, LEFT))
   }
 
   /**
@@ -1243,7 +1246,7 @@ package mediaconvert {
     val BLACK = "BLACK"
     val WHITE = "WHITE"
 
-    val values = IndexedSeq(NONE, BLACK, WHITE)
+    val values = js.Object.freeze(js.Array(NONE, BLACK, WHITE))
   }
 
   /**
@@ -1257,7 +1260,7 @@ package mediaconvert {
     val GREEN  = "GREEN"
     val BLUE   = "BLUE"
 
-    val values = IndexedSeq(WHITE, BLACK, YELLOW, RED, GREEN, BLUE)
+    val values = js.Object.freeze(js.Array(WHITE, BLACK, YELLOW, RED, GREEN, BLUE))
   }
 
   /**
@@ -1271,7 +1274,7 @@ package mediaconvert {
     val GREEN  = "GREEN"
     val BLUE   = "BLUE"
 
-    val values = IndexedSeq(BLACK, WHITE, YELLOW, RED, GREEN, BLUE)
+    val values = js.Object.freeze(js.Array(BLACK, WHITE, YELLOW, RED, GREEN, BLUE))
   }
 
   /**
@@ -1283,7 +1286,7 @@ package mediaconvert {
     val BLACK = "BLACK"
     val WHITE = "WHITE"
 
-    val values = IndexedSeq(NONE, BLACK, WHITE)
+    val values = js.Object.freeze(js.Array(NONE, BLACK, WHITE))
   }
 
   /**
@@ -1293,7 +1296,7 @@ package mediaconvert {
     val FIXED_GRID   = "FIXED_GRID"
     val PROPORTIONAL = "PROPORTIONAL"
 
-    val values = IndexedSeq(FIXED_GRID, PROPORTIONAL)
+    val values = js.Object.freeze(js.Array(FIXED_GRID, PROPORTIONAL))
   }
 
   @js.native
@@ -1434,18 +1437,20 @@ package mediaconvert {
     val TTML                 = "TTML"
     val WEBVTT               = "WEBVTT"
 
-    val values = IndexedSeq(
-      BURN_IN,
-      DVB_SUB,
-      EMBEDDED,
-      EMBEDDED_PLUS_SCTE20,
-      SCTE20_PLUS_EMBEDDED,
-      SCC,
-      SRT,
-      SMI,
-      TELETEXT,
-      TTML,
-      WEBVTT
+    val values = js.Object.freeze(
+      js.Array(
+        BURN_IN,
+        DVB_SUB,
+        EMBEDDED,
+        EMBEDDED_PLUS_SCTE20,
+        SCTE20_PLUS_EMBEDDED,
+        SCC,
+        SRT,
+        SMI,
+        TELETEXT,
+        TTML,
+        WEBVTT
+      )
     )
   }
 
@@ -1526,7 +1531,9 @@ package mediaconvert {
     val NULL_SOURCE = "NULL_SOURCE"
     val IMSC        = "IMSC"
 
-    val values = IndexedSeq(ANCILLARY, DVB_SUB, EMBEDDED, SCTE20, SCC, TTML, STL, SRT, SMI, TELETEXT, NULL_SOURCE, IMSC)
+    val values = js.Object.freeze(
+      js.Array(ANCILLARY, DVB_SUB, EMBEDDED, SCTE20, SCC, TTML, STL, SRT, SMI, TELETEXT, NULL_SOURCE, IMSC)
+    )
   }
 
   /**
@@ -1554,7 +1561,7 @@ package mediaconvert {
     val DISABLED = "DISABLED"
     val ENABLED  = "ENABLED"
 
-    val values = IndexedSeq(DISABLED, ENABLED)
+    val values = js.Object.freeze(js.Array(DISABLED, ENABLED))
   }
 
   /**
@@ -1564,7 +1571,7 @@ package mediaconvert {
     val RFC_6381 = "RFC_6381"
     val RFC_4281 = "RFC_4281"
 
-    val values = IndexedSeq(RFC_6381, RFC_4281)
+    val values = js.Object.freeze(js.Array(RFC_6381, RFC_4281))
   }
 
   /**
@@ -1610,7 +1617,7 @@ package mediaconvert {
   object CmafEncryptionTypeEnum {
     val SAMPLE_AES = "SAMPLE_AES"
 
-    val values = IndexedSeq(SAMPLE_AES)
+    val values = js.Object.freeze(js.Array(SAMPLE_AES))
   }
 
   /**
@@ -1683,7 +1690,7 @@ package mediaconvert {
     val INCLUDE = "INCLUDE"
     val EXCLUDE = "EXCLUDE"
 
-    val values = IndexedSeq(INCLUDE, EXCLUDE)
+    val values = js.Object.freeze(js.Array(INCLUDE, EXCLUDE))
   }
 
   /**
@@ -1693,7 +1700,7 @@ package mediaconvert {
     val SPEKE      = "SPEKE"
     val STATIC_KEY = "STATIC_KEY"
 
-    val values = IndexedSeq(SPEKE, STATIC_KEY)
+    val values = js.Object.freeze(js.Array(SPEKE, STATIC_KEY))
   }
 
   /**
@@ -1703,7 +1710,7 @@ package mediaconvert {
     val GZIP = "GZIP"
     val NONE = "NONE"
 
-    val values = IndexedSeq(GZIP, NONE)
+    val values = js.Object.freeze(js.Array(GZIP, NONE))
   }
 
   /**
@@ -1713,7 +1720,7 @@ package mediaconvert {
     val FLOATING_POINT = "FLOATING_POINT"
     val INTEGER        = "INTEGER"
 
-    val values = IndexedSeq(FLOATING_POINT, INTEGER)
+    val values = js.Object.freeze(js.Array(FLOATING_POINT, INTEGER))
   }
 
   /**
@@ -1723,7 +1730,7 @@ package mediaconvert {
     val SINGLE_FILE     = "SINGLE_FILE"
     val SEGMENTED_FILES = "SEGMENTED_FILES"
 
-    val values = IndexedSeq(SINGLE_FILE, SEGMENTED_FILES)
+    val values = js.Object.freeze(js.Array(SINGLE_FILE, SEGMENTED_FILES))
   }
 
   /**
@@ -1733,7 +1740,7 @@ package mediaconvert {
     val INCLUDE = "INCLUDE"
     val EXCLUDE = "EXCLUDE"
 
-    val values = IndexedSeq(INCLUDE, EXCLUDE)
+    val values = js.Object.freeze(js.Array(INCLUDE, EXCLUDE))
   }
 
   /**
@@ -1743,7 +1750,7 @@ package mediaconvert {
     val DISABLED = "DISABLED"
     val ENABLED  = "ENABLED"
 
-    val values = IndexedSeq(DISABLED, ENABLED)
+    val values = js.Object.freeze(js.Array(DISABLED, ENABLED))
   }
 
   /**
@@ -1753,7 +1760,7 @@ package mediaconvert {
     val DISABLED = "DISABLED"
     val ENABLED  = "ENABLED"
 
-    val values = IndexedSeq(DISABLED, ENABLED)
+    val values = js.Object.freeze(js.Array(DISABLED, ENABLED))
   }
 
   /**
@@ -1796,7 +1803,7 @@ package mediaconvert {
     val IGNORE = "IGNORE"
     val INSERT = "INSERT"
 
-    val values = IndexedSeq(IGNORE, INSERT)
+    val values = js.Object.freeze(js.Array(IGNORE, INSERT))
   }
 
   /**
@@ -1809,7 +1816,7 @@ package mediaconvert {
     val HDR10    = "HDR10"
     val HLG_2020 = "HLG_2020"
 
-    val values = IndexedSeq(FOLLOW, REC_601, REC_709, HDR10, HLG_2020)
+    val values = js.Object.freeze(js.Array(FOLLOW, REC_601, REC_709, HDR10, HLG_2020))
   }
 
   /**
@@ -1822,7 +1829,7 @@ package mediaconvert {
     val FORCE_HDR10    = "FORCE_HDR10"
     val FORCE_HLG_2020 = "FORCE_HLG_2020"
 
-    val values = IndexedSeq(NONE, FORCE_601, FORCE_709, FORCE_HDR10, FORCE_HLG_2020)
+    val values = js.Object.freeze(js.Array(NONE, FORCE_601, FORCE_709, FORCE_HDR10, FORCE_HLG_2020))
   }
 
   /**
@@ -1832,7 +1839,7 @@ package mediaconvert {
     val FORCE    = "FORCE"
     val FALLBACK = "FALLBACK"
 
-    val values = IndexedSeq(FORCE, FALLBACK)
+    val values = js.Object.freeze(js.Array(FORCE, FALLBACK))
   }
 
   /**
@@ -1841,7 +1848,7 @@ package mediaconvert {
   object CommitmentEnum {
     val ONE_YEAR = "ONE_YEAR"
 
-    val values = IndexedSeq(ONE_YEAR)
+    val values = js.Object.freeze(js.Array(ONE_YEAR))
   }
 
   /**
@@ -1892,7 +1899,7 @@ package mediaconvert {
     val MXF  = "MXF"
     val RAW  = "RAW"
 
-    val values = IndexedSeq(F4V, ISMV, M2TS, M3U8, CMFC, MOV, MP4, MPD, MXF, RAW)
+    val values = js.Object.freeze(js.Array(F4V, ISMV, M2TS, M3U8, CMFC, MOV, MP4, MPD, MXF, RAW))
   }
 
   @js.native
@@ -2176,7 +2183,7 @@ package mediaconvert {
     val HBBTV_1_5 = "HBBTV_1_5"
     val NONE      = "NONE"
 
-    val values = IndexedSeq(HBBTV_1_5, NONE)
+    val values = js.Object.freeze(js.Array(HBBTV_1_5, NONE))
   }
 
   /**
@@ -2186,7 +2193,7 @@ package mediaconvert {
     val CENC_V1         = "CENC_V1"
     val UNENCRYPTED_SEI = "UNENCRYPTED_SEI"
 
-    val values = IndexedSeq(CENC_V1, UNENCRYPTED_SEI)
+    val values = js.Object.freeze(js.Array(CENC_V1, UNENCRYPTED_SEI))
   }
 
   /**
@@ -2196,7 +2203,7 @@ package mediaconvert {
     val SINGLE_FILE     = "SINGLE_FILE"
     val SEGMENTED_FILES = "SEGMENTED_FILES"
 
-    val values = IndexedSeq(SINGLE_FILE, SEGMENTED_FILES)
+    val values = js.Object.freeze(js.Array(SINGLE_FILE, SEGMENTED_FILES))
   }
 
   /**
@@ -2206,7 +2213,7 @@ package mediaconvert {
     val ENABLED  = "ENABLED"
     val DISABLED = "DISABLED"
 
-    val values = IndexedSeq(ENABLED, DISABLED)
+    val values = js.Object.freeze(js.Array(ENABLED, DISABLED))
   }
 
   /**
@@ -2217,7 +2224,7 @@ package mediaconvert {
     val AES_CBC = "AES_CBC"
     val AES_GCM = "AES_GCM"
 
-    val values = IndexedSeq(AES_CTR, AES_CBC, AES_GCM)
+    val values = js.Object.freeze(js.Array(AES_CTR, AES_CBC, AES_GCM))
   }
 
   /**
@@ -2229,7 +2236,7 @@ package mediaconvert {
     val BLEND              = "BLEND"
     val BLEND_TICKER       = "BLEND_TICKER"
 
-    val values = IndexedSeq(INTERPOLATE, INTERPOLATE_TICKER, BLEND, BLEND_TICKER)
+    val values = js.Object.freeze(js.Array(INTERPOLATE, INTERPOLATE_TICKER, BLEND, BLEND_TICKER))
   }
 
   /**
@@ -2263,7 +2270,7 @@ package mediaconvert {
     val FORCE_ALL_FRAMES = "FORCE_ALL_FRAMES"
     val NORMAL           = "NORMAL"
 
-    val values = IndexedSeq(FORCE_ALL_FRAMES, NORMAL)
+    val values = js.Object.freeze(js.Array(FORCE_ALL_FRAMES, NORMAL))
   }
 
   /**
@@ -2274,7 +2281,7 @@ package mediaconvert {
     val INVERSE_TELECINE = "INVERSE_TELECINE"
     val ADAPTIVE         = "ADAPTIVE"
 
-    val values = IndexedSeq(DEINTERLACE, INVERSE_TELECINE, ADAPTIVE)
+    val values = js.Object.freeze(js.Array(DEINTERLACE, INVERSE_TELECINE, ADAPTIVE))
   }
 
   @js.native
@@ -2371,7 +2378,7 @@ package mediaconvert {
     val DEFAULT  = "DEFAULT"
     val GET_ONLY = "GET_ONLY"
 
-    val values = IndexedSeq(DEFAULT, GET_ONLY)
+    val values = js.Object.freeze(js.Array(DEFAULT, GET_ONLY))
   }
 
   /**
@@ -2470,7 +2477,7 @@ package mediaconvert {
     val DISABLED = "DISABLED"
     val ENABLED  = "ENABLED"
 
-    val values = IndexedSeq(DISABLED, ENABLED)
+    val values = js.Object.freeze(js.Array(DISABLED, ENABLED))
   }
 
   /**
@@ -2615,7 +2622,7 @@ package mediaconvert {
     val CENTERED = "CENTERED"
     val LEFT     = "LEFT"
 
-    val values = IndexedSeq(CENTERED, LEFT)
+    val values = js.Object.freeze(js.Array(CENTERED, LEFT))
   }
 
   /**
@@ -2627,7 +2634,7 @@ package mediaconvert {
     val BLACK = "BLACK"
     val WHITE = "WHITE"
 
-    val values = IndexedSeq(NONE, BLACK, WHITE)
+    val values = js.Object.freeze(js.Array(NONE, BLACK, WHITE))
   }
 
   /**
@@ -2641,7 +2648,7 @@ package mediaconvert {
     val GREEN  = "GREEN"
     val BLUE   = "BLUE"
 
-    val values = IndexedSeq(WHITE, BLACK, YELLOW, RED, GREEN, BLUE)
+    val values = js.Object.freeze(js.Array(WHITE, BLACK, YELLOW, RED, GREEN, BLUE))
   }
 
   /**
@@ -2655,7 +2662,7 @@ package mediaconvert {
     val GREEN  = "GREEN"
     val BLUE   = "BLUE"
 
-    val values = IndexedSeq(BLACK, WHITE, YELLOW, RED, GREEN, BLUE)
+    val values = js.Object.freeze(js.Array(BLACK, WHITE, YELLOW, RED, GREEN, BLUE))
   }
 
   /**
@@ -2667,7 +2674,7 @@ package mediaconvert {
     val BLACK = "BLACK"
     val WHITE = "WHITE"
 
-    val values = IndexedSeq(NONE, BLACK, WHITE)
+    val values = js.Object.freeze(js.Array(NONE, BLACK, WHITE))
   }
 
   /**
@@ -2677,7 +2684,7 @@ package mediaconvert {
     val FIXED_GRID   = "FIXED_GRID"
     val PROPORTIONAL = "PROPORTIONAL"
 
-    val values = IndexedSeq(FIXED_GRID, PROPORTIONAL)
+    val values = js.Object.freeze(js.Array(FIXED_GRID, PROPORTIONAL))
   }
 
   /**
@@ -2704,7 +2711,7 @@ package mediaconvert {
   object Eac3AtmosBitstreamModeEnum {
     val COMPLETE_MAIN = "COMPLETE_MAIN"
 
-    val values = IndexedSeq(COMPLETE_MAIN)
+    val values = js.Object.freeze(js.Array(COMPLETE_MAIN))
   }
 
   /**
@@ -2713,7 +2720,7 @@ package mediaconvert {
   object Eac3AtmosCodingModeEnum {
     val CODING_MODE_9_1_6 = "CODING_MODE_9_1_6"
 
-    val values = IndexedSeq(CODING_MODE_9_1_6)
+    val values = js.Object.freeze(js.Array(CODING_MODE_9_1_6))
   }
 
   /**
@@ -2723,7 +2730,7 @@ package mediaconvert {
     val ENABLED  = "ENABLED"
     val DISABLED = "DISABLED"
 
-    val values = IndexedSeq(ENABLED, DISABLED)
+    val values = js.Object.freeze(js.Array(ENABLED, DISABLED))
   }
 
   /**
@@ -2737,7 +2744,7 @@ package mediaconvert {
     val MUSIC_LIGHT    = "MUSIC_LIGHT"
     val SPEECH         = "SPEECH"
 
-    val values = IndexedSeq(NONE, FILM_STANDARD, FILM_LIGHT, MUSIC_STANDARD, MUSIC_LIGHT, SPEECH)
+    val values = js.Object.freeze(js.Array(NONE, FILM_STANDARD, FILM_LIGHT, MUSIC_STANDARD, MUSIC_LIGHT, SPEECH))
   }
 
   /**
@@ -2751,7 +2758,7 @@ package mediaconvert {
     val MUSIC_LIGHT    = "MUSIC_LIGHT"
     val SPEECH         = "SPEECH"
 
-    val values = IndexedSeq(NONE, FILM_STANDARD, FILM_LIGHT, MUSIC_STANDARD, MUSIC_LIGHT, SPEECH)
+    val values = js.Object.freeze(js.Array(NONE, FILM_STANDARD, FILM_LIGHT, MUSIC_STANDARD, MUSIC_LIGHT, SPEECH))
   }
 
   /**
@@ -2764,7 +2771,7 @@ package mediaconvert {
     val ITU_BS_1770_3 = "ITU_BS_1770_3"
     val ITU_BS_1770_4 = "ITU_BS_1770_4"
 
-    val values = IndexedSeq(LEQ_A, ITU_BS_1770_1, ITU_BS_1770_2, ITU_BS_1770_3, ITU_BS_1770_4)
+    val values = js.Object.freeze(js.Array(LEQ_A, ITU_BS_1770_1, ITU_BS_1770_2, ITU_BS_1770_3, ITU_BS_1770_4))
   }
 
   /**
@@ -2836,7 +2843,7 @@ package mediaconvert {
     val SURROUND      = "SURROUND"
     val DPL2          = "DPL2"
 
-    val values = IndexedSeq(NOT_INDICATED, STEREO, SURROUND, DPL2)
+    val values = js.Object.freeze(js.Array(NOT_INDICATED, STEREO, SURROUND, DPL2))
   }
 
   /**
@@ -2847,7 +2854,7 @@ package mediaconvert {
     val ENABLED       = "ENABLED"
     val DISABLED      = "DISABLED"
 
-    val values = IndexedSeq(NOT_INDICATED, ENABLED, DISABLED)
+    val values = js.Object.freeze(js.Array(NOT_INDICATED, ENABLED, DISABLED))
   }
 
   /**
@@ -2857,7 +2864,7 @@ package mediaconvert {
     val ATTENUATE_3_DB = "ATTENUATE_3_DB"
     val NONE           = "NONE"
 
-    val values = IndexedSeq(ATTENUATE_3_DB, NONE)
+    val values = js.Object.freeze(js.Array(ATTENUATE_3_DB, NONE))
   }
 
   /**
@@ -2870,7 +2877,7 @@ package mediaconvert {
     val HEARING_IMPAIRED  = "HEARING_IMPAIRED"
     val VISUALLY_IMPAIRED = "VISUALLY_IMPAIRED"
 
-    val values = IndexedSeq(COMPLETE_MAIN, COMMENTARY, EMERGENCY, HEARING_IMPAIRED, VISUALLY_IMPAIRED)
+    val values = js.Object.freeze(js.Array(COMPLETE_MAIN, COMMENTARY, EMERGENCY, HEARING_IMPAIRED, VISUALLY_IMPAIRED))
   }
 
   /**
@@ -2881,7 +2888,7 @@ package mediaconvert {
     val CODING_MODE_2_0 = "CODING_MODE_2_0"
     val CODING_MODE_3_2 = "CODING_MODE_3_2"
 
-    val values = IndexedSeq(CODING_MODE_1_0, CODING_MODE_2_0, CODING_MODE_3_2)
+    val values = js.Object.freeze(js.Array(CODING_MODE_1_0, CODING_MODE_2_0, CODING_MODE_3_2))
   }
 
   /**
@@ -2891,7 +2898,7 @@ package mediaconvert {
     val ENABLED  = "ENABLED"
     val DISABLED = "DISABLED"
 
-    val values = IndexedSeq(ENABLED, DISABLED)
+    val values = js.Object.freeze(js.Array(ENABLED, DISABLED))
   }
 
   /**
@@ -2905,7 +2912,7 @@ package mediaconvert {
     val MUSIC_LIGHT    = "MUSIC_LIGHT"
     val SPEECH         = "SPEECH"
 
-    val values = IndexedSeq(NONE, FILM_STANDARD, FILM_LIGHT, MUSIC_STANDARD, MUSIC_LIGHT, SPEECH)
+    val values = js.Object.freeze(js.Array(NONE, FILM_STANDARD, FILM_LIGHT, MUSIC_STANDARD, MUSIC_LIGHT, SPEECH))
   }
 
   /**
@@ -2919,7 +2926,7 @@ package mediaconvert {
     val MUSIC_LIGHT    = "MUSIC_LIGHT"
     val SPEECH         = "SPEECH"
 
-    val values = IndexedSeq(NONE, FILM_STANDARD, FILM_LIGHT, MUSIC_STANDARD, MUSIC_LIGHT, SPEECH)
+    val values = js.Object.freeze(js.Array(NONE, FILM_STANDARD, FILM_LIGHT, MUSIC_STANDARD, MUSIC_LIGHT, SPEECH))
   }
 
   /**
@@ -2929,7 +2936,7 @@ package mediaconvert {
     val LFE    = "LFE"
     val NO_LFE = "NO_LFE"
 
-    val values = IndexedSeq(LFE, NO_LFE)
+    val values = js.Object.freeze(js.Array(LFE, NO_LFE))
   }
 
   /**
@@ -2939,7 +2946,7 @@ package mediaconvert {
     val ENABLED  = "ENABLED"
     val DISABLED = "DISABLED"
 
-    val values = IndexedSeq(ENABLED, DISABLED)
+    val values = js.Object.freeze(js.Array(ENABLED, DISABLED))
   }
 
   /**
@@ -2949,7 +2956,7 @@ package mediaconvert {
     val FOLLOW_INPUT   = "FOLLOW_INPUT"
     val USE_CONFIGURED = "USE_CONFIGURED"
 
-    val values = IndexedSeq(FOLLOW_INPUT, USE_CONFIGURED)
+    val values = js.Object.freeze(js.Array(FOLLOW_INPUT, USE_CONFIGURED))
   }
 
   /**
@@ -2959,7 +2966,7 @@ package mediaconvert {
     val WHEN_POSSIBLE  = "WHEN_POSSIBLE"
     val NO_PASSTHROUGH = "NO_PASSTHROUGH"
 
-    val values = IndexedSeq(WHEN_POSSIBLE, NO_PASSTHROUGH)
+    val values = js.Object.freeze(js.Array(WHEN_POSSIBLE, NO_PASSTHROUGH))
   }
 
   /**
@@ -2969,7 +2976,7 @@ package mediaconvert {
     val SHIFT_90_DEGREES = "SHIFT_90_DEGREES"
     val NO_SHIFT         = "NO_SHIFT"
 
-    val values = IndexedSeq(SHIFT_90_DEGREES, NO_SHIFT)
+    val values = js.Object.freeze(js.Array(SHIFT_90_DEGREES, NO_SHIFT))
   }
 
   /**
@@ -3059,7 +3066,7 @@ package mediaconvert {
     val LT_RT         = "LT_RT"
     val DPL2          = "DPL2"
 
-    val values = IndexedSeq(NOT_INDICATED, LO_RO, LT_RT, DPL2)
+    val values = js.Object.freeze(js.Array(NOT_INDICATED, LO_RO, LT_RT, DPL2))
   }
 
   /**
@@ -3070,7 +3077,7 @@ package mediaconvert {
     val ENABLED       = "ENABLED"
     val DISABLED      = "DISABLED"
 
-    val values = IndexedSeq(NOT_INDICATED, ENABLED, DISABLED)
+    val values = js.Object.freeze(js.Array(NOT_INDICATED, ENABLED, DISABLED))
   }
 
   /**
@@ -3081,7 +3088,7 @@ package mediaconvert {
     val ENABLED       = "ENABLED"
     val DISABLED      = "DISABLED"
 
-    val values = IndexedSeq(NOT_INDICATED, ENABLED, DISABLED)
+    val values = js.Object.freeze(js.Array(NOT_INDICATED, ENABLED, DISABLED))
   }
 
   /**
@@ -3091,7 +3098,7 @@ package mediaconvert {
     val UPCONVERT = "UPCONVERT"
     val DISABLED  = "DISABLED"
 
-    val values = IndexedSeq(UPCONVERT, DISABLED)
+    val values = js.Object.freeze(js.Array(UPCONVERT, DISABLED))
   }
 
   /**
@@ -3228,7 +3235,7 @@ package mediaconvert {
     val PROGRESSIVE_DOWNLOAD = "PROGRESSIVE_DOWNLOAD"
     val NORMAL               = "NORMAL"
 
-    val values = IndexedSeq(PROGRESSIVE_DOWNLOAD, NORMAL)
+    val values = js.Object.freeze(js.Array(PROGRESSIVE_DOWNLOAD, NORMAL))
   }
 
   /**
@@ -3277,7 +3284,7 @@ package mediaconvert {
     val UPCONVERT = "UPCONVERT"
     val DISABLED  = "DISABLED"
 
-    val values = IndexedSeq(UPCONVERT, DISABLED)
+    val values = js.Object.freeze(js.Array(UPCONVERT, DISABLED))
   }
 
   /**
@@ -3312,7 +3319,7 @@ package mediaconvert {
     val HANS      = "HANS"
     val HANT      = "HANT"
 
-    val values = IndexedSeq(AUTOMATIC, HANS, HANT)
+    val values = js.Object.freeze(js.Array(AUTOMATIC, HANS, HANT))
   }
 
   /**
@@ -3481,7 +3488,7 @@ package mediaconvert {
     val HIGHER = "HIGHER"
     val MAX    = "MAX"
 
-    val values = IndexedSeq(OFF, LOW, MEDIUM, HIGH, HIGHER, MAX)
+    val values = js.Object.freeze(js.Array(OFF, LOW, MEDIUM, HIGH, HIGHER, MAX))
   }
 
   /**
@@ -3506,24 +3513,26 @@ package mediaconvert {
     val LEVEL_5_1 = "LEVEL_5_1"
     val LEVEL_5_2 = "LEVEL_5_2"
 
-    val values = IndexedSeq(
-      AUTO,
-      LEVEL_1,
-      LEVEL_1_1,
-      LEVEL_1_2,
-      LEVEL_1_3,
-      LEVEL_2,
-      LEVEL_2_1,
-      LEVEL_2_2,
-      LEVEL_3,
-      LEVEL_3_1,
-      LEVEL_3_2,
-      LEVEL_4,
-      LEVEL_4_1,
-      LEVEL_4_2,
-      LEVEL_5,
-      LEVEL_5_1,
-      LEVEL_5_2
+    val values = js.Object.freeze(
+      js.Array(
+        AUTO,
+        LEVEL_1,
+        LEVEL_1_1,
+        LEVEL_1_2,
+        LEVEL_1_3,
+        LEVEL_2,
+        LEVEL_2_1,
+        LEVEL_2_2,
+        LEVEL_3,
+        LEVEL_3_1,
+        LEVEL_3_2,
+        LEVEL_4,
+        LEVEL_4_1,
+        LEVEL_4_2,
+        LEVEL_5,
+        LEVEL_5_1,
+        LEVEL_5_2
+      )
     )
   }
 
@@ -3538,7 +3547,7 @@ package mediaconvert {
     val HIGH_422_10BIT = "HIGH_422_10BIT"
     val MAIN           = "MAIN"
 
-    val values = IndexedSeq(BASELINE, HIGH, HIGH_10BIT, HIGH_422, HIGH_422_10BIT, MAIN)
+    val values = js.Object.freeze(js.Array(BASELINE, HIGH, HIGH_10BIT, HIGH_422, HIGH_422_10BIT, MAIN))
   }
 
   /**
@@ -3548,7 +3557,7 @@ package mediaconvert {
     val ADAPTIVE = "ADAPTIVE"
     val STATIC   = "STATIC"
 
-    val values = IndexedSeq(ADAPTIVE, STATIC)
+    val values = js.Object.freeze(js.Array(ADAPTIVE, STATIC))
   }
 
   /**
@@ -3558,7 +3567,7 @@ package mediaconvert {
     val CABAC = "CABAC"
     val CAVLC = "CAVLC"
 
-    val values = IndexedSeq(CABAC, CAVLC)
+    val values = js.Object.freeze(js.Array(CABAC, CAVLC))
   }
 
   /**
@@ -3568,7 +3577,7 @@ package mediaconvert {
     val PAFF        = "PAFF"
     val FORCE_FIELD = "FORCE_FIELD"
 
-    val values = IndexedSeq(PAFF, FORCE_FIELD)
+    val values = js.Object.freeze(js.Array(PAFF, FORCE_FIELD))
   }
 
   /**
@@ -3578,7 +3587,7 @@ package mediaconvert {
     val DISABLED = "DISABLED"
     val ENABLED  = "ENABLED"
 
-    val values = IndexedSeq(DISABLED, ENABLED)
+    val values = js.Object.freeze(js.Array(DISABLED, ENABLED))
   }
 
   /**
@@ -3588,7 +3597,7 @@ package mediaconvert {
     val INITIALIZE_FROM_SOURCE = "INITIALIZE_FROM_SOURCE"
     val SPECIFIED              = "SPECIFIED"
 
-    val values = IndexedSeq(INITIALIZE_FROM_SOURCE, SPECIFIED)
+    val values = js.Object.freeze(js.Array(INITIALIZE_FROM_SOURCE, SPECIFIED))
   }
 
   /**
@@ -3598,7 +3607,7 @@ package mediaconvert {
     val DUPLICATE_DROP = "DUPLICATE_DROP"
     val INTERPOLATE    = "INTERPOLATE"
 
-    val values = IndexedSeq(DUPLICATE_DROP, INTERPOLATE)
+    val values = js.Object.freeze(js.Array(DUPLICATE_DROP, INTERPOLATE))
   }
 
   /**
@@ -3608,7 +3617,7 @@ package mediaconvert {
     val DISABLED = "DISABLED"
     val ENABLED  = "ENABLED"
 
-    val values = IndexedSeq(DISABLED, ENABLED)
+    val values = js.Object.freeze(js.Array(DISABLED, ENABLED))
   }
 
   /**
@@ -3618,7 +3627,7 @@ package mediaconvert {
     val FRAMES  = "FRAMES"
     val SECONDS = "SECONDS"
 
-    val values = IndexedSeq(FRAMES, SECONDS)
+    val values = js.Object.freeze(js.Array(FRAMES, SECONDS))
   }
 
   /**
@@ -3633,7 +3642,7 @@ package mediaconvert {
     val FOLLOW_TOP_FIELD    = "FOLLOW_TOP_FIELD"
     val FOLLOW_BOTTOM_FIELD = "FOLLOW_BOTTOM_FIELD"
 
-    val values = IndexedSeq(PROGRESSIVE, TOP_FIELD, BOTTOM_FIELD, FOLLOW_TOP_FIELD, FOLLOW_BOTTOM_FIELD)
+    val values = js.Object.freeze(js.Array(PROGRESSIVE, TOP_FIELD, BOTTOM_FIELD, FOLLOW_TOP_FIELD, FOLLOW_BOTTOM_FIELD))
   }
 
   /**
@@ -3643,7 +3652,7 @@ package mediaconvert {
     val INITIALIZE_FROM_SOURCE = "INITIALIZE_FROM_SOURCE"
     val SPECIFIED              = "SPECIFIED"
 
-    val values = IndexedSeq(INITIALIZE_FROM_SOURCE, SPECIFIED)
+    val values = js.Object.freeze(js.Array(INITIALIZE_FROM_SOURCE, SPECIFIED))
   }
 
   /**
@@ -3654,7 +3663,7 @@ package mediaconvert {
     val SINGLE_PASS_HQ = "SINGLE_PASS_HQ"
     val MULTI_PASS_HQ  = "MULTI_PASS_HQ"
 
-    val values = IndexedSeq(SINGLE_PASS, SINGLE_PASS_HQ, MULTI_PASS_HQ)
+    val values = js.Object.freeze(js.Array(SINGLE_PASS, SINGLE_PASS_HQ, MULTI_PASS_HQ))
   }
 
   /**
@@ -3686,7 +3695,7 @@ package mediaconvert {
     val CBR  = "CBR"
     val QVBR = "QVBR"
 
-    val values = IndexedSeq(VBR, CBR, QVBR)
+    val values = js.Object.freeze(js.Array(VBR, CBR, QVBR))
   }
 
   /**
@@ -3696,7 +3705,7 @@ package mediaconvert {
     val DISABLED = "DISABLED"
     val ENABLED  = "ENABLED"
 
-    val values = IndexedSeq(DISABLED, ENABLED)
+    val values = js.Object.freeze(js.Array(DISABLED, ENABLED))
   }
 
   /**
@@ -3707,7 +3716,7 @@ package mediaconvert {
     val ENABLED              = "ENABLED"
     val TRANSITION_DETECTION = "TRANSITION_DETECTION"
 
-    val values = IndexedSeq(DISABLED, ENABLED, TRANSITION_DETECTION)
+    val values = js.Object.freeze(js.Array(DISABLED, ENABLED, TRANSITION_DETECTION))
   }
 
   /**
@@ -3857,7 +3866,7 @@ package mediaconvert {
     val DISABLED = "DISABLED"
     val ENABLED  = "ENABLED"
 
-    val values = IndexedSeq(DISABLED, ENABLED)
+    val values = js.Object.freeze(js.Array(DISABLED, ENABLED))
   }
 
   /**
@@ -3867,7 +3876,7 @@ package mediaconvert {
     val DISABLED = "DISABLED"
     val ENABLED  = "ENABLED"
 
-    val values = IndexedSeq(DISABLED, ENABLED)
+    val values = js.Object.freeze(js.Array(DISABLED, ENABLED))
   }
 
   /**
@@ -3877,7 +3886,7 @@ package mediaconvert {
     val DEFAULT = "DEFAULT"
     val RP2027  = "RP2027"
 
-    val values = IndexedSeq(DEFAULT, RP2027)
+    val values = js.Object.freeze(js.Array(DEFAULT, RP2027))
   }
 
   /**
@@ -3888,7 +3897,7 @@ package mediaconvert {
     val SOFT = "SOFT"
     val HARD = "HARD"
 
-    val values = IndexedSeq(NONE, SOFT, HARD)
+    val values = js.Object.freeze(js.Array(NONE, SOFT, HARD))
   }
 
   /**
@@ -3898,7 +3907,7 @@ package mediaconvert {
     val DISABLED = "DISABLED"
     val ENABLED  = "ENABLED"
 
-    val values = IndexedSeq(DISABLED, ENABLED)
+    val values = js.Object.freeze(js.Array(DISABLED, ENABLED))
   }
 
   /**
@@ -3908,7 +3917,7 @@ package mediaconvert {
     val DISABLED = "DISABLED"
     val ENABLED  = "ENABLED"
 
-    val values = IndexedSeq(DISABLED, ENABLED)
+    val values = js.Object.freeze(js.Array(DISABLED, ENABLED))
   }
 
   /**
@@ -3922,7 +3931,7 @@ package mediaconvert {
     val HIGHER = "HIGHER"
     val MAX    = "MAX"
 
-    val values = IndexedSeq(OFF, LOW, MEDIUM, HIGH, HIGHER, MAX)
+    val values = js.Object.freeze(js.Array(OFF, LOW, MEDIUM, HIGH, HIGHER, MAX))
   }
 
   /**
@@ -3932,7 +3941,7 @@ package mediaconvert {
     val DISABLED = "DISABLED"
     val ENABLED  = "ENABLED"
 
-    val values = IndexedSeq(DISABLED, ENABLED)
+    val values = js.Object.freeze(js.Array(DISABLED, ENABLED))
   }
 
   /**
@@ -3954,21 +3963,23 @@ package mediaconvert {
     val LEVEL_6_1 = "LEVEL_6_1"
     val LEVEL_6_2 = "LEVEL_6_2"
 
-    val values = IndexedSeq(
-      AUTO,
-      LEVEL_1,
-      LEVEL_2,
-      LEVEL_2_1,
-      LEVEL_3,
-      LEVEL_3_1,
-      LEVEL_4,
-      LEVEL_4_1,
-      LEVEL_5,
-      LEVEL_5_1,
-      LEVEL_5_2,
-      LEVEL_6,
-      LEVEL_6_1,
-      LEVEL_6_2
+    val values = js.Object.freeze(
+      js.Array(
+        AUTO,
+        LEVEL_1,
+        LEVEL_2,
+        LEVEL_2_1,
+        LEVEL_3,
+        LEVEL_3_1,
+        LEVEL_4,
+        LEVEL_4_1,
+        LEVEL_5,
+        LEVEL_5_1,
+        LEVEL_5_2,
+        LEVEL_6,
+        LEVEL_6_1,
+        LEVEL_6_2
+      )
     )
   }
 
@@ -3985,15 +3996,17 @@ package mediaconvert {
     val MAIN_422_10BIT_MAIN = "MAIN_422_10BIT_MAIN"
     val MAIN_422_10BIT_HIGH = "MAIN_422_10BIT_HIGH"
 
-    val values = IndexedSeq(
-      MAIN_MAIN,
-      MAIN_HIGH,
-      MAIN10_MAIN,
-      MAIN10_HIGH,
-      MAIN_422_8BIT_MAIN,
-      MAIN_422_8BIT_HIGH,
-      MAIN_422_10BIT_MAIN,
-      MAIN_422_10BIT_HIGH
+    val values = js.Object.freeze(
+      js.Array(
+        MAIN_MAIN,
+        MAIN_HIGH,
+        MAIN10_MAIN,
+        MAIN10_HIGH,
+        MAIN_422_8BIT_MAIN,
+        MAIN_422_8BIT_HIGH,
+        MAIN_422_10BIT_MAIN,
+        MAIN_422_10BIT_HIGH
+      )
     )
   }
 
@@ -4004,7 +4017,7 @@ package mediaconvert {
     val ADAPTIVE = "ADAPTIVE"
     val STATIC   = "STATIC"
 
-    val values = IndexedSeq(ADAPTIVE, STATIC)
+    val values = js.Object.freeze(js.Array(ADAPTIVE, STATIC))
   }
 
   /**
@@ -4014,7 +4027,7 @@ package mediaconvert {
     val DISABLED = "DISABLED"
     val ENABLED  = "ENABLED"
 
-    val values = IndexedSeq(DISABLED, ENABLED)
+    val values = js.Object.freeze(js.Array(DISABLED, ENABLED))
   }
 
   /**
@@ -4024,7 +4037,7 @@ package mediaconvert {
     val INITIALIZE_FROM_SOURCE = "INITIALIZE_FROM_SOURCE"
     val SPECIFIED              = "SPECIFIED"
 
-    val values = IndexedSeq(INITIALIZE_FROM_SOURCE, SPECIFIED)
+    val values = js.Object.freeze(js.Array(INITIALIZE_FROM_SOURCE, SPECIFIED))
   }
 
   /**
@@ -4034,7 +4047,7 @@ package mediaconvert {
     val DUPLICATE_DROP = "DUPLICATE_DROP"
     val INTERPOLATE    = "INTERPOLATE"
 
-    val values = IndexedSeq(DUPLICATE_DROP, INTERPOLATE)
+    val values = js.Object.freeze(js.Array(DUPLICATE_DROP, INTERPOLATE))
   }
 
   /**
@@ -4044,7 +4057,7 @@ package mediaconvert {
     val DISABLED = "DISABLED"
     val ENABLED  = "ENABLED"
 
-    val values = IndexedSeq(DISABLED, ENABLED)
+    val values = js.Object.freeze(js.Array(DISABLED, ENABLED))
   }
 
   /**
@@ -4054,7 +4067,7 @@ package mediaconvert {
     val FRAMES  = "FRAMES"
     val SECONDS = "SECONDS"
 
-    val values = IndexedSeq(FRAMES, SECONDS)
+    val values = js.Object.freeze(js.Array(FRAMES, SECONDS))
   }
 
   /**
@@ -4067,7 +4080,7 @@ package mediaconvert {
     val FOLLOW_TOP_FIELD    = "FOLLOW_TOP_FIELD"
     val FOLLOW_BOTTOM_FIELD = "FOLLOW_BOTTOM_FIELD"
 
-    val values = IndexedSeq(PROGRESSIVE, TOP_FIELD, BOTTOM_FIELD, FOLLOW_TOP_FIELD, FOLLOW_BOTTOM_FIELD)
+    val values = js.Object.freeze(js.Array(PROGRESSIVE, TOP_FIELD, BOTTOM_FIELD, FOLLOW_TOP_FIELD, FOLLOW_BOTTOM_FIELD))
   }
 
   /**
@@ -4077,7 +4090,7 @@ package mediaconvert {
     val INITIALIZE_FROM_SOURCE = "INITIALIZE_FROM_SOURCE"
     val SPECIFIED              = "SPECIFIED"
 
-    val values = IndexedSeq(INITIALIZE_FROM_SOURCE, SPECIFIED)
+    val values = js.Object.freeze(js.Array(INITIALIZE_FROM_SOURCE, SPECIFIED))
   }
 
   /**
@@ -4088,7 +4101,7 @@ package mediaconvert {
     val SINGLE_PASS_HQ = "SINGLE_PASS_HQ"
     val MULTI_PASS_HQ  = "MULTI_PASS_HQ"
 
-    val values = IndexedSeq(SINGLE_PASS, SINGLE_PASS_HQ, MULTI_PASS_HQ)
+    val values = js.Object.freeze(js.Array(SINGLE_PASS, SINGLE_PASS_HQ, MULTI_PASS_HQ))
   }
 
   /**
@@ -4120,7 +4133,7 @@ package mediaconvert {
     val CBR  = "CBR"
     val QVBR = "QVBR"
 
-    val values = IndexedSeq(VBR, CBR, QVBR)
+    val values = js.Object.freeze(js.Array(VBR, CBR, QVBR))
   }
 
   /**
@@ -4131,7 +4144,7 @@ package mediaconvert {
     val ADAPTIVE = "ADAPTIVE"
     val OFF      = "OFF"
 
-    val values = IndexedSeq(DEFAULT, ADAPTIVE, OFF)
+    val values = js.Object.freeze(js.Array(DEFAULT, ADAPTIVE, OFF))
   }
 
   /**
@@ -4142,7 +4155,7 @@ package mediaconvert {
     val ENABLED              = "ENABLED"
     val TRANSITION_DETECTION = "TRANSITION_DETECTION"
 
-    val values = IndexedSeq(DISABLED, ENABLED, TRANSITION_DETECTION)
+    val values = js.Object.freeze(js.Array(DISABLED, ENABLED, TRANSITION_DETECTION))
   }
 
   /**
@@ -4296,7 +4309,7 @@ package mediaconvert {
     val DISABLED = "DISABLED"
     val ENABLED  = "ENABLED"
 
-    val values = IndexedSeq(DISABLED, ENABLED)
+    val values = js.Object.freeze(js.Array(DISABLED, ENABLED))
   }
 
   /**
@@ -4306,7 +4319,7 @@ package mediaconvert {
     val DISABLED = "DISABLED"
     val ENABLED  = "ENABLED"
 
-    val values = IndexedSeq(DISABLED, ENABLED)
+    val values = js.Object.freeze(js.Array(DISABLED, ENABLED))
   }
 
   /**
@@ -4317,7 +4330,7 @@ package mediaconvert {
     val SOFT = "SOFT"
     val HARD = "HARD"
 
-    val values = IndexedSeq(NONE, SOFT, HARD)
+    val values = js.Object.freeze(js.Array(NONE, SOFT, HARD))
   }
 
   /**
@@ -4327,7 +4340,7 @@ package mediaconvert {
     val DISABLED = "DISABLED"
     val ENABLED  = "ENABLED"
 
-    val values = IndexedSeq(DISABLED, ENABLED)
+    val values = js.Object.freeze(js.Array(DISABLED, ENABLED))
   }
 
   /**
@@ -4337,7 +4350,7 @@ package mediaconvert {
     val DISABLED = "DISABLED"
     val ENABLED  = "ENABLED"
 
-    val values = IndexedSeq(DISABLED, ENABLED)
+    val values = js.Object.freeze(js.Array(DISABLED, ENABLED))
   }
 
   /**
@@ -4347,7 +4360,7 @@ package mediaconvert {
     val DISABLED = "DISABLED"
     val ENABLED  = "ENABLED"
 
-    val values = IndexedSeq(DISABLED, ENABLED)
+    val values = js.Object.freeze(js.Array(DISABLED, ENABLED))
   }
 
   /**
@@ -4357,7 +4370,7 @@ package mediaconvert {
     val DISABLED = "DISABLED"
     val ENABLED  = "ENABLED"
 
-    val values = IndexedSeq(DISABLED, ENABLED)
+    val values = js.Object.freeze(js.Array(DISABLED, ENABLED))
   }
 
   /**
@@ -4367,7 +4380,7 @@ package mediaconvert {
     val HVC1 = "HVC1"
     val HEV1 = "HEV1"
 
-    val values = IndexedSeq(HVC1, HEV1)
+    val values = js.Object.freeze(js.Array(HVC1, HEV1))
   }
 
   /**
@@ -4425,7 +4438,7 @@ package mediaconvert {
     val ELEMENTAL        = "ELEMENTAL"
     val ELEMENTAL_SCTE35 = "ELEMENTAL_SCTE35"
 
-    val values = IndexedSeq(ELEMENTAL, ELEMENTAL_SCTE35)
+    val values = js.Object.freeze(js.Array(ELEMENTAL, ELEMENTAL_SCTE35))
   }
 
   /**
@@ -4435,7 +4448,7 @@ package mediaconvert {
     val AUTOMATIC = "AUTOMATIC"
     val M2TS      = "M2TS"
 
-    val values = IndexedSeq(AUTOMATIC, M2TS)
+    val values = js.Object.freeze(js.Array(AUTOMATIC, M2TS))
   }
 
   /**
@@ -4447,11 +4460,13 @@ package mediaconvert {
     val ALTERNATE_AUDIO_NOT_AUTO_SELECT     = "ALTERNATE_AUDIO_NOT_AUTO_SELECT"
     val AUDIO_ONLY_VARIANT_STREAM           = "AUDIO_ONLY_VARIANT_STREAM"
 
-    val values = IndexedSeq(
-      ALTERNATE_AUDIO_AUTO_SELECT_DEFAULT,
-      ALTERNATE_AUDIO_AUTO_SELECT,
-      ALTERNATE_AUDIO_NOT_AUTO_SELECT,
-      AUDIO_ONLY_VARIANT_STREAM
+    val values = js.Object.freeze(
+      js.Array(
+        ALTERNATE_AUDIO_AUTO_SELECT_DEFAULT,
+        ALTERNATE_AUDIO_AUTO_SELECT,
+        ALTERNATE_AUDIO_NOT_AUTO_SELECT,
+        AUDIO_ONLY_VARIANT_STREAM
+      )
     )
   }
 
@@ -4490,7 +4505,7 @@ package mediaconvert {
     val OMIT   = "OMIT"
     val NONE   = "NONE"
 
-    val values = IndexedSeq(INSERT, OMIT, NONE)
+    val values = js.Object.freeze(js.Array(INSERT, OMIT, NONE))
   }
 
   /**
@@ -4500,7 +4515,7 @@ package mediaconvert {
     val DISABLED = "DISABLED"
     val ENABLED  = "ENABLED"
 
-    val values = IndexedSeq(DISABLED, ENABLED)
+    val values = js.Object.freeze(js.Array(DISABLED, ENABLED))
   }
 
   /**
@@ -4510,7 +4525,7 @@ package mediaconvert {
     val RFC_6381 = "RFC_6381"
     val RFC_4281 = "RFC_4281"
 
-    val values = IndexedSeq(RFC_6381, RFC_4281)
+    val values = js.Object.freeze(js.Array(RFC_6381, RFC_4281))
   }
 
   /**
@@ -4520,7 +4535,7 @@ package mediaconvert {
     val SINGLE_DIRECTORY        = "SINGLE_DIRECTORY"
     val SUBDIRECTORY_PER_STREAM = "SUBDIRECTORY_PER_STREAM"
 
-    val values = IndexedSeq(SINGLE_DIRECTORY, SUBDIRECTORY_PER_STREAM)
+    val values = js.Object.freeze(js.Array(SINGLE_DIRECTORY, SUBDIRECTORY_PER_STREAM))
   }
 
   /**
@@ -4570,7 +4585,7 @@ package mediaconvert {
     val AES128     = "AES128"
     val SAMPLE_AES = "SAMPLE_AES"
 
-    val values = IndexedSeq(AES128, SAMPLE_AES)
+    val values = js.Object.freeze(js.Array(AES128, SAMPLE_AES))
   }
 
   /**
@@ -4667,7 +4682,7 @@ package mediaconvert {
     val INCLUDE = "INCLUDE"
     val EXCLUDE = "EXCLUDE"
 
-    val values = IndexedSeq(INCLUDE, EXCLUDE)
+    val values = js.Object.freeze(js.Array(INCLUDE, EXCLUDE))
   }
 
   /**
@@ -4677,7 +4692,7 @@ package mediaconvert {
     val INCLUDE = "INCLUDE"
     val EXCLUDE = "EXCLUDE"
 
-    val values = IndexedSeq(INCLUDE, EXCLUDE)
+    val values = js.Object.freeze(js.Array(INCLUDE, EXCLUDE))
   }
 
   /**
@@ -4687,7 +4702,7 @@ package mediaconvert {
     val SPEKE      = "SPEKE"
     val STATIC_KEY = "STATIC_KEY"
 
-    val values = IndexedSeq(SPEKE, STATIC_KEY)
+    val values = js.Object.freeze(js.Array(SPEKE, STATIC_KEY))
   }
 
   /**
@@ -4697,7 +4712,7 @@ package mediaconvert {
     val GZIP = "GZIP"
     val NONE = "NONE"
 
-    val values = IndexedSeq(GZIP, NONE)
+    val values = js.Object.freeze(js.Array(GZIP, NONE))
   }
 
   /**
@@ -4707,7 +4722,7 @@ package mediaconvert {
     val FLOATING_POINT = "FLOATING_POINT"
     val INTEGER        = "INTEGER"
 
-    val values = IndexedSeq(FLOATING_POINT, INTEGER)
+    val values = js.Object.freeze(js.Array(FLOATING_POINT, INTEGER))
   }
 
   /**
@@ -4717,7 +4732,7 @@ package mediaconvert {
     val ENABLED  = "ENABLED"
     val DISABLED = "DISABLED"
 
-    val values = IndexedSeq(ENABLED, DISABLED)
+    val values = js.Object.freeze(js.Array(ENABLED, DISABLED))
   }
 
   /**
@@ -4727,7 +4742,7 @@ package mediaconvert {
     val MANIFESTS_AND_SEGMENTS = "MANIFESTS_AND_SEGMENTS"
     val SEGMENTS_ONLY          = "SEGMENTS_ONLY"
 
-    val values = IndexedSeq(MANIFESTS_AND_SEGMENTS, SEGMENTS_ONLY)
+    val values = js.Object.freeze(js.Array(MANIFESTS_AND_SEGMENTS, SEGMENTS_ONLY))
   }
 
   /**
@@ -4737,7 +4752,7 @@ package mediaconvert {
     val INCLUDE = "INCLUDE"
     val EXCLUDE = "EXCLUDE"
 
-    val values = IndexedSeq(INCLUDE, EXCLUDE)
+    val values = js.Object.freeze(js.Array(INCLUDE, EXCLUDE))
   }
 
   /**
@@ -4747,7 +4762,7 @@ package mediaconvert {
     val SINGLE_FILE     = "SINGLE_FILE"
     val SEGMENTED_FILES = "SEGMENTED_FILES"
 
-    val values = IndexedSeq(SINGLE_FILE, SEGMENTED_FILES)
+    val values = js.Object.freeze(js.Array(SINGLE_FILE, SEGMENTED_FILES))
   }
 
   /**
@@ -4790,7 +4805,7 @@ package mediaconvert {
     val INCLUDE = "INCLUDE"
     val EXCLUDE = "EXCLUDE"
 
-    val values = IndexedSeq(INCLUDE, EXCLUDE)
+    val values = js.Object.freeze(js.Array(INCLUDE, EXCLUDE))
   }
 
   /**
@@ -4801,7 +4816,7 @@ package mediaconvert {
     val PRIV = "PRIV"
     val TDRL = "TDRL"
 
-    val values = IndexedSeq(NONE, PRIV, TDRL)
+    val values = js.Object.freeze(js.Array(NONE, PRIV, TDRL))
   }
 
   /**
@@ -4944,7 +4959,7 @@ package mediaconvert {
     val ENABLED  = "ENABLED"
     val DISABLED = "DISABLED"
 
-    val values = IndexedSeq(ENABLED, DISABLED)
+    val values = js.Object.freeze(js.Array(ENABLED, DISABLED))
   }
 
   /**
@@ -4981,7 +4996,7 @@ package mediaconvert {
     val ENABLED  = "ENABLED"
     val DISABLED = "DISABLED"
 
-    val values = IndexedSeq(ENABLED, DISABLED)
+    val values = js.Object.freeze(js.Array(ENABLED, DISABLED))
   }
 
   /**
@@ -4992,7 +5007,7 @@ package mediaconvert {
     val DISABLE = "DISABLE"
     val FORCE   = "FORCE"
 
-    val values = IndexedSeq(AUTO, DISABLE, FORCE)
+    val values = js.Object.freeze(js.Array(AUTO, DISABLE, FORCE))
   }
 
   /**
@@ -5002,7 +5017,7 @@ package mediaconvert {
     val IGNORE_PSI = "IGNORE_PSI"
     val USE_PSI    = "USE_PSI"
 
-    val values = IndexedSeq(IGNORE_PSI, USE_PSI)
+    val values = js.Object.freeze(js.Array(IGNORE_PSI, USE_PSI))
   }
 
   /**
@@ -5015,7 +5030,7 @@ package mediaconvert {
     val DEGREES_270 = "DEGREES_270"
     val AUTO        = "AUTO"
 
-    val values = IndexedSeq(DEGREE_0, DEGREES_90, DEGREES_180, DEGREES_270, AUTO)
+    val values = js.Object.freeze(js.Array(DEGREE_0, DEGREES_90, DEGREES_180, DEGREES_270, AUTO))
   }
 
   /**
@@ -5086,7 +5101,7 @@ package mediaconvert {
     val ZEROBASED      = "ZEROBASED"
     val SPECIFIEDSTART = "SPECIFIEDSTART"
 
-    val values = IndexedSeq(EMBEDDED, ZEROBASED, SPECIFIEDSTART)
+    val values = js.Object.freeze(js.Array(EMBEDDED, ZEROBASED, SPECIFIEDSTART))
   }
 
   /**
@@ -5222,7 +5237,7 @@ package mediaconvert {
     val TRANSCODING = "TRANSCODING"
     val UPLOADING   = "UPLOADING"
 
-    val values = IndexedSeq(PROBING, TRANSCODING, UPLOADING)
+    val values = js.Object.freeze(js.Array(PROBING, TRANSCODING, UPLOADING))
   }
 
   /**
@@ -5277,7 +5292,7 @@ package mediaconvert {
     val CANCELED    = "CANCELED"
     val ERROR       = "ERROR"
 
-    val values = IndexedSeq(SUBMITTED, PROGRESSING, COMPLETE, CANCELED, ERROR)
+    val values = js.Object.freeze(js.Array(SUBMITTED, PROGRESSING, COMPLETE, CANCELED, ERROR))
   }
 
   /**
@@ -5341,7 +5356,7 @@ package mediaconvert {
     val CREATION_DATE = "CREATION_DATE"
     val SYSTEM        = "SYSTEM"
 
-    val values = IndexedSeq(NAME, CREATION_DATE, SYSTEM)
+    val values = js.Object.freeze(js.Array(NAME, CREATION_DATE, SYSTEM))
   }
 
   /**
@@ -5582,198 +5597,200 @@ package mediaconvert {
     val QPC = "QPC"
     val TNG = "TNG"
 
-    val values = IndexedSeq(
-      ENG,
-      SPA,
-      FRA,
-      DEU,
-      GER,
-      ZHO,
-      ARA,
-      HIN,
-      JPN,
-      RUS,
-      POR,
-      ITA,
-      URD,
-      VIE,
-      KOR,
-      PAN,
-      ABK,
-      AAR,
-      AFR,
-      AKA,
-      SQI,
-      AMH,
-      ARG,
-      HYE,
-      ASM,
-      AVA,
-      AVE,
-      AYM,
-      AZE,
-      BAM,
-      BAK,
-      EUS,
-      BEL,
-      BEN,
-      BIH,
-      BIS,
-      BOS,
-      BRE,
-      BUL,
-      MYA,
-      CAT,
-      KHM,
-      CHA,
-      CHE,
-      NYA,
-      CHU,
-      CHV,
-      COR,
-      COS,
-      CRE,
-      HRV,
-      CES,
-      DAN,
-      DIV,
-      NLD,
-      DZO,
-      ENM,
-      EPO,
-      EST,
-      EWE,
-      FAO,
-      FIJ,
-      FIN,
-      FRM,
-      FUL,
-      GLA,
-      GLG,
-      LUG,
-      KAT,
-      ELL,
-      GRN,
-      GUJ,
-      HAT,
-      HAU,
-      HEB,
-      HER,
-      HMO,
-      HUN,
-      ISL,
-      IDO,
-      IBO,
-      IND,
-      INA,
-      ILE,
-      IKU,
-      IPK,
-      GLE,
-      JAV,
-      KAL,
-      KAN,
-      KAU,
-      KAS,
-      KAZ,
-      KIK,
-      KIN,
-      KIR,
-      KOM,
-      KON,
-      KUA,
-      KUR,
-      LAO,
-      LAT,
-      LAV,
-      LIM,
-      LIN,
-      LIT,
-      LUB,
-      LTZ,
-      MKD,
-      MLG,
-      MSA,
-      MAL,
-      MLT,
-      GLV,
-      MRI,
-      MAR,
-      MAH,
-      MON,
-      NAU,
-      NAV,
-      NDE,
-      NBL,
-      NDO,
-      NEP,
-      SME,
-      NOR,
-      NOB,
-      NNO,
-      OCI,
-      OJI,
-      ORI,
-      ORM,
-      OSS,
-      PLI,
-      FAS,
-      POL,
-      PUS,
-      QUE,
-      QAA,
-      RON,
-      ROH,
-      RUN,
-      SMO,
-      SAG,
-      SAN,
-      SRD,
-      SRB,
-      SNA,
-      III,
-      SND,
-      SIN,
-      SLK,
-      SLV,
-      SOM,
-      SOT,
-      SUN,
-      SWA,
-      SSW,
-      SWE,
-      TGL,
-      TAH,
-      TGK,
-      TAM,
-      TAT,
-      TEL,
-      THA,
-      BOD,
-      TIR,
-      TON,
-      TSO,
-      TSN,
-      TUR,
-      TUK,
-      TWI,
-      UIG,
-      UKR,
-      UZB,
-      VEN,
-      VOL,
-      WLN,
-      CYM,
-      FRY,
-      WOL,
-      XHO,
-      YID,
-      YOR,
-      ZHA,
-      ZUL,
-      ORJ,
-      QPC,
-      TNG
+    val values = js.Object.freeze(
+      js.Array(
+        ENG,
+        SPA,
+        FRA,
+        DEU,
+        GER,
+        ZHO,
+        ARA,
+        HIN,
+        JPN,
+        RUS,
+        POR,
+        ITA,
+        URD,
+        VIE,
+        KOR,
+        PAN,
+        ABK,
+        AAR,
+        AFR,
+        AKA,
+        SQI,
+        AMH,
+        ARG,
+        HYE,
+        ASM,
+        AVA,
+        AVE,
+        AYM,
+        AZE,
+        BAM,
+        BAK,
+        EUS,
+        BEL,
+        BEN,
+        BIH,
+        BIS,
+        BOS,
+        BRE,
+        BUL,
+        MYA,
+        CAT,
+        KHM,
+        CHA,
+        CHE,
+        NYA,
+        CHU,
+        CHV,
+        COR,
+        COS,
+        CRE,
+        HRV,
+        CES,
+        DAN,
+        DIV,
+        NLD,
+        DZO,
+        ENM,
+        EPO,
+        EST,
+        EWE,
+        FAO,
+        FIJ,
+        FIN,
+        FRM,
+        FUL,
+        GLA,
+        GLG,
+        LUG,
+        KAT,
+        ELL,
+        GRN,
+        GUJ,
+        HAT,
+        HAU,
+        HEB,
+        HER,
+        HMO,
+        HUN,
+        ISL,
+        IDO,
+        IBO,
+        IND,
+        INA,
+        ILE,
+        IKU,
+        IPK,
+        GLE,
+        JAV,
+        KAL,
+        KAN,
+        KAU,
+        KAS,
+        KAZ,
+        KIK,
+        KIN,
+        KIR,
+        KOM,
+        KON,
+        KUA,
+        KUR,
+        LAO,
+        LAT,
+        LAV,
+        LIM,
+        LIN,
+        LIT,
+        LUB,
+        LTZ,
+        MKD,
+        MLG,
+        MSA,
+        MAL,
+        MLT,
+        GLV,
+        MRI,
+        MAR,
+        MAH,
+        MON,
+        NAU,
+        NAV,
+        NDE,
+        NBL,
+        NDO,
+        NEP,
+        SME,
+        NOR,
+        NOB,
+        NNO,
+        OCI,
+        OJI,
+        ORI,
+        ORM,
+        OSS,
+        PLI,
+        FAS,
+        POL,
+        PUS,
+        QUE,
+        QAA,
+        RON,
+        ROH,
+        RUN,
+        SMO,
+        SAG,
+        SAN,
+        SRD,
+        SRB,
+        SNA,
+        III,
+        SND,
+        SIN,
+        SLK,
+        SLV,
+        SOM,
+        SOT,
+        SUN,
+        SWA,
+        SSW,
+        SWE,
+        TGL,
+        TAH,
+        TGK,
+        TAM,
+        TAT,
+        TEL,
+        THA,
+        BOD,
+        TIR,
+        TON,
+        TSO,
+        TSN,
+        TUR,
+        TUK,
+        TWI,
+        UIG,
+        UKR,
+        UZB,
+        VEN,
+        VOL,
+        WLN,
+        CYM,
+        FRY,
+        WOL,
+        XHO,
+        YID,
+        YOR,
+        ZHA,
+        ZUL,
+        ORJ,
+        QPC,
+        TNG
+      )
     )
   }
 
@@ -5993,7 +6010,7 @@ package mediaconvert {
     val DVB  = "DVB"
     val ATSC = "ATSC"
 
-    val values = IndexedSeq(DVB, ATSC)
+    val values = js.Object.freeze(js.Array(DVB, ATSC))
   }
 
   /**
@@ -6003,7 +6020,7 @@ package mediaconvert {
     val MULTIPLEX = "MULTIPLEX"
     val NONE      = "NONE"
 
-    val values = IndexedSeq(MULTIPLEX, NONE)
+    val values = js.Object.freeze(js.Array(MULTIPLEX, NONE))
   }
 
   /**
@@ -6013,7 +6030,7 @@ package mediaconvert {
     val VIDEO_AND_FIXED_INTERVALS = "VIDEO_AND_FIXED_INTERVALS"
     val VIDEO_INTERVAL            = "VIDEO_INTERVAL"
 
-    val values = IndexedSeq(VIDEO_AND_FIXED_INTERVALS, VIDEO_INTERVAL)
+    val values = js.Object.freeze(js.Array(VIDEO_AND_FIXED_INTERVALS, VIDEO_INTERVAL))
   }
 
   /**
@@ -6023,7 +6040,7 @@ package mediaconvert {
     val VIDEO_AND_AUDIO_PIDS = "VIDEO_AND_AUDIO_PIDS"
     val VIDEO_PID            = "VIDEO_PID"
 
-    val values = IndexedSeq(VIDEO_AND_AUDIO_PIDS, VIDEO_PID)
+    val values = js.Object.freeze(js.Array(VIDEO_AND_AUDIO_PIDS, VIDEO_PID))
   }
 
   /**
@@ -6033,7 +6050,7 @@ package mediaconvert {
     val INCLUDE = "INCLUDE"
     val EXCLUDE = "EXCLUDE"
 
-    val values = IndexedSeq(INCLUDE, EXCLUDE)
+    val values = js.Object.freeze(js.Array(INCLUDE, EXCLUDE))
   }
 
   /**
@@ -6043,7 +6060,7 @@ package mediaconvert {
     val FORCE   = "FORCE"
     val DEFAULT = "DEFAULT"
 
-    val values = IndexedSeq(FORCE, DEFAULT)
+    val values = js.Object.freeze(js.Array(FORCE, DEFAULT))
   }
 
   /**
@@ -6053,7 +6070,7 @@ package mediaconvert {
     val INSERT = "INSERT"
     val NONE   = "NONE"
 
-    val values = IndexedSeq(INSERT, NONE)
+    val values = js.Object.freeze(js.Array(INSERT, NONE))
   }
 
   /**
@@ -6063,7 +6080,7 @@ package mediaconvert {
     val PCR_EVERY_PES_PACKET  = "PCR_EVERY_PES_PACKET"
     val CONFIGURED_PCR_PERIOD = "CONFIGURED_PCR_PERIOD"
 
-    val values = IndexedSeq(PCR_EVERY_PES_PACKET, CONFIGURED_PCR_PERIOD)
+    val values = js.Object.freeze(js.Array(PCR_EVERY_PES_PACKET, CONFIGURED_PCR_PERIOD))
   }
 
   /**
@@ -6073,7 +6090,7 @@ package mediaconvert {
     val VBR = "VBR"
     val CBR = "CBR"
 
-    val values = IndexedSeq(VBR, CBR)
+    val values = js.Object.freeze(js.Array(VBR, CBR))
   }
 
   /**
@@ -6101,7 +6118,7 @@ package mediaconvert {
     val PASSTHROUGH = "PASSTHROUGH"
     val NONE        = "NONE"
 
-    val values = IndexedSeq(PASSTHROUGH, NONE)
+    val values = js.Object.freeze(js.Array(PASSTHROUGH, NONE))
   }
 
   /**
@@ -6115,7 +6132,7 @@ package mediaconvert {
     val EBP          = "EBP"
     val EBP_LEGACY   = "EBP_LEGACY"
 
-    val values = IndexedSeq(NONE, RAI_SEGSTART, RAI_ADAPT, PSI_SEGSTART, EBP, EBP_LEGACY)
+    val values = js.Object.freeze(js.Array(NONE, RAI_SEGSTART, RAI_ADAPT, PSI_SEGSTART, EBP, EBP_LEGACY))
   }
 
   /**
@@ -6125,7 +6142,7 @@ package mediaconvert {
     val MAINTAIN_CADENCE = "MAINTAIN_CADENCE"
     val RESET_CADENCE    = "RESET_CADENCE"
 
-    val values = IndexedSeq(MAINTAIN_CADENCE, RESET_CADENCE)
+    val values = js.Object.freeze(js.Array(MAINTAIN_CADENCE, RESET_CADENCE))
   }
 
   /**
@@ -6258,7 +6275,7 @@ package mediaconvert {
     val INSERT = "INSERT"
     val NONE   = "NONE"
 
-    val values = IndexedSeq(INSERT, NONE)
+    val values = js.Object.freeze(js.Array(INSERT, NONE))
   }
 
   /**
@@ -6268,7 +6285,7 @@ package mediaconvert {
     val PCR_EVERY_PES_PACKET  = "PCR_EVERY_PES_PACKET"
     val CONFIGURED_PCR_PERIOD = "CONFIGURED_PCR_PERIOD"
 
-    val values = IndexedSeq(PCR_EVERY_PES_PACKET, CONFIGURED_PCR_PERIOD)
+    val values = js.Object.freeze(js.Array(PCR_EVERY_PES_PACKET, CONFIGURED_PCR_PERIOD))
   }
 
   /**
@@ -6278,7 +6295,7 @@ package mediaconvert {
     val PASSTHROUGH = "PASSTHROUGH"
     val NONE        = "NONE"
 
-    val values = IndexedSeq(PASSTHROUGH, NONE)
+    val values = js.Object.freeze(js.Array(PASSTHROUGH, NONE))
   }
 
   /**
@@ -6405,7 +6422,7 @@ package mediaconvert {
     val MOV = "MOV"
     val PNG = "PNG"
 
-    val values = IndexedSeq(MOV, PNG)
+    val values = js.Object.freeze(js.Array(MOV, PNG))
   }
 
   /**
@@ -6436,7 +6453,7 @@ package mediaconvert {
     val ONCE   = "ONCE"
     val REPEAT = "REPEAT"
 
-    val values = IndexedSeq(ONCE, REPEAT)
+    val values = js.Object.freeze(js.Array(ONCE, REPEAT))
   }
 
   /**
@@ -6446,7 +6463,7 @@ package mediaconvert {
     val INCLUDE = "INCLUDE"
     val EXCLUDE = "EXCLUDE"
 
-    val values = IndexedSeq(INCLUDE, EXCLUDE)
+    val values = js.Object.freeze(js.Array(INCLUDE, EXCLUDE))
   }
 
   /**
@@ -6456,7 +6473,7 @@ package mediaconvert {
     val INCLUDE = "INCLUDE"
     val EXCLUDE = "EXCLUDE"
 
-    val values = IndexedSeq(INCLUDE, EXCLUDE)
+    val values = js.Object.freeze(js.Array(INCLUDE, EXCLUDE))
   }
 
   /**
@@ -6466,7 +6483,7 @@ package mediaconvert {
     val XDCAM = "XDCAM"
     val MPEG  = "MPEG"
 
-    val values = IndexedSeq(XDCAM, MPEG)
+    val values = js.Object.freeze(js.Array(XDCAM, MPEG))
   }
 
   /**
@@ -6476,7 +6493,7 @@ package mediaconvert {
     val OMNEON = "OMNEON"
     val NONE   = "NONE"
 
-    val values = IndexedSeq(OMNEON, NONE)
+    val values = js.Object.freeze(js.Array(OMNEON, NONE))
   }
 
   /**
@@ -6486,7 +6503,7 @@ package mediaconvert {
     val SELF_CONTAINED = "SELF_CONTAINED"
     val EXTERNAL       = "EXTERNAL"
 
-    val values = IndexedSeq(SELF_CONTAINED, EXTERNAL)
+    val values = js.Object.freeze(js.Array(SELF_CONTAINED, EXTERNAL))
   }
 
   /**
@@ -6550,7 +6567,7 @@ package mediaconvert {
     val INCLUDE = "INCLUDE"
     val EXCLUDE = "EXCLUDE"
 
-    val values = IndexedSeq(INCLUDE, EXCLUDE)
+    val values = js.Object.freeze(js.Array(INCLUDE, EXCLUDE))
   }
 
   /**
@@ -6560,7 +6577,7 @@ package mediaconvert {
     val INCLUDE = "INCLUDE"
     val EXCLUDE = "EXCLUDE"
 
-    val values = IndexedSeq(INCLUDE, EXCLUDE)
+    val values = js.Object.freeze(js.Array(INCLUDE, EXCLUDE))
   }
 
   /**
@@ -6570,7 +6587,7 @@ package mediaconvert {
     val PROGRESSIVE_DOWNLOAD = "PROGRESSIVE_DOWNLOAD"
     val NORMAL               = "NORMAL"
 
-    val values = IndexedSeq(PROGRESSIVE_DOWNLOAD, NORMAL)
+    val values = js.Object.freeze(js.Array(PROGRESSIVE_DOWNLOAD, NORMAL))
   }
 
   /**
@@ -6609,7 +6626,7 @@ package mediaconvert {
     val MEDIUM = "MEDIUM"
     val HIGH   = "HIGH"
 
-    val values = IndexedSeq(OFF, LOW, MEDIUM, HIGH)
+    val values = js.Object.freeze(js.Array(OFF, LOW, MEDIUM, HIGH))
   }
 
   /**
@@ -6622,7 +6639,7 @@ package mediaconvert {
     val HIGH1440 = "HIGH1440"
     val HIGH     = "HIGH"
 
-    val values = IndexedSeq(AUTO, LOW, MAIN, HIGH1440, HIGH)
+    val values = js.Object.freeze(js.Array(AUTO, LOW, MAIN, HIGH1440, HIGH))
   }
 
   /**
@@ -6632,7 +6649,7 @@ package mediaconvert {
     val MAIN        = "MAIN"
     val PROFILE_422 = "PROFILE_422"
 
-    val values = IndexedSeq(MAIN, PROFILE_422)
+    val values = js.Object.freeze(js.Array(MAIN, PROFILE_422))
   }
 
   /**
@@ -6642,7 +6659,7 @@ package mediaconvert {
     val ADAPTIVE = "ADAPTIVE"
     val STATIC   = "STATIC"
 
-    val values = IndexedSeq(ADAPTIVE, STATIC)
+    val values = js.Object.freeze(js.Array(ADAPTIVE, STATIC))
   }
 
   /**
@@ -6652,7 +6669,7 @@ package mediaconvert {
     val INITIALIZE_FROM_SOURCE = "INITIALIZE_FROM_SOURCE"
     val SPECIFIED              = "SPECIFIED"
 
-    val values = IndexedSeq(INITIALIZE_FROM_SOURCE, SPECIFIED)
+    val values = js.Object.freeze(js.Array(INITIALIZE_FROM_SOURCE, SPECIFIED))
   }
 
   /**
@@ -6662,7 +6679,7 @@ package mediaconvert {
     val DUPLICATE_DROP = "DUPLICATE_DROP"
     val INTERPOLATE    = "INTERPOLATE"
 
-    val values = IndexedSeq(DUPLICATE_DROP, INTERPOLATE)
+    val values = js.Object.freeze(js.Array(DUPLICATE_DROP, INTERPOLATE))
   }
 
   /**
@@ -6672,7 +6689,7 @@ package mediaconvert {
     val FRAMES  = "FRAMES"
     val SECONDS = "SECONDS"
 
-    val values = IndexedSeq(FRAMES, SECONDS)
+    val values = js.Object.freeze(js.Array(FRAMES, SECONDS))
   }
 
   /**
@@ -6687,7 +6704,7 @@ package mediaconvert {
     val FOLLOW_TOP_FIELD    = "FOLLOW_TOP_FIELD"
     val FOLLOW_BOTTOM_FIELD = "FOLLOW_BOTTOM_FIELD"
 
-    val values = IndexedSeq(PROGRESSIVE, TOP_FIELD, BOTTOM_FIELD, FOLLOW_TOP_FIELD, FOLLOW_BOTTOM_FIELD)
+    val values = js.Object.freeze(js.Array(PROGRESSIVE, TOP_FIELD, BOTTOM_FIELD, FOLLOW_TOP_FIELD, FOLLOW_BOTTOM_FIELD))
   }
 
   /**
@@ -6700,8 +6717,9 @@ package mediaconvert {
     val INTRA_DC_PRECISION_10 = "INTRA_DC_PRECISION_10"
     val INTRA_DC_PRECISION_11 = "INTRA_DC_PRECISION_11"
 
-    val values =
-      IndexedSeq(AUTO, INTRA_DC_PRECISION_8, INTRA_DC_PRECISION_9, INTRA_DC_PRECISION_10, INTRA_DC_PRECISION_11)
+    val values = js.Object.freeze(
+      js.Array(AUTO, INTRA_DC_PRECISION_8, INTRA_DC_PRECISION_9, INTRA_DC_PRECISION_10, INTRA_DC_PRECISION_11)
+    )
   }
 
   /**
@@ -6711,7 +6729,7 @@ package mediaconvert {
     val INITIALIZE_FROM_SOURCE = "INITIALIZE_FROM_SOURCE"
     val SPECIFIED              = "SPECIFIED"
 
-    val values = IndexedSeq(INITIALIZE_FROM_SOURCE, SPECIFIED)
+    val values = js.Object.freeze(js.Array(INITIALIZE_FROM_SOURCE, SPECIFIED))
   }
 
   /**
@@ -6721,7 +6739,7 @@ package mediaconvert {
     val SINGLE_PASS = "SINGLE_PASS"
     val MULTI_PASS  = "MULTI_PASS"
 
-    val values = IndexedSeq(SINGLE_PASS, MULTI_PASS)
+    val values = js.Object.freeze(js.Array(SINGLE_PASS, MULTI_PASS))
   }
 
   /**
@@ -6731,7 +6749,7 @@ package mediaconvert {
     val VBR = "VBR"
     val CBR = "CBR"
 
-    val values = IndexedSeq(VBR, CBR)
+    val values = js.Object.freeze(js.Array(VBR, CBR))
   }
 
   /**
@@ -6741,7 +6759,7 @@ package mediaconvert {
     val DISABLED = "DISABLED"
     val ENABLED  = "ENABLED"
 
-    val values = IndexedSeq(DISABLED, ENABLED)
+    val values = js.Object.freeze(js.Array(DISABLED, ENABLED))
   }
 
   /**
@@ -6867,7 +6885,7 @@ package mediaconvert {
     val DISABLED = "DISABLED"
     val ENABLED  = "ENABLED"
 
-    val values = IndexedSeq(DISABLED, ENABLED)
+    val values = js.Object.freeze(js.Array(DISABLED, ENABLED))
   }
 
   /**
@@ -6877,7 +6895,7 @@ package mediaconvert {
     val DISABLED = "DISABLED"
     val ENABLED  = "ENABLED"
 
-    val values = IndexedSeq(DISABLED, ENABLED)
+    val values = js.Object.freeze(js.Array(DISABLED, ENABLED))
   }
 
   /**
@@ -6887,7 +6905,7 @@ package mediaconvert {
     val DEFAULT = "DEFAULT"
     val D_10    = "D_10"
 
-    val values = IndexedSeq(DEFAULT, D_10)
+    val values = js.Object.freeze(js.Array(DEFAULT, D_10))
   }
 
   /**
@@ -6898,7 +6916,7 @@ package mediaconvert {
     val SOFT = "SOFT"
     val HARD = "HARD"
 
-    val values = IndexedSeq(NONE, SOFT, HARD)
+    val values = js.Object.freeze(js.Array(NONE, SOFT, HARD))
   }
 
   /**
@@ -6908,7 +6926,7 @@ package mediaconvert {
     val DISABLED = "DISABLED"
     val ENABLED  = "ENABLED"
 
-    val values = IndexedSeq(DISABLED, ENABLED)
+    val values = js.Object.freeze(js.Array(DISABLED, ENABLED))
   }
 
   /**
@@ -6918,7 +6936,7 @@ package mediaconvert {
     val COMBINE_DUPLICATE_STREAMS = "COMBINE_DUPLICATE_STREAMS"
     val NONE                      = "NONE"
 
-    val values = IndexedSeq(COMBINE_DUPLICATE_STREAMS, NONE)
+    val values = js.Object.freeze(js.Array(COMBINE_DUPLICATE_STREAMS, NONE))
   }
 
   /**
@@ -6979,7 +6997,7 @@ package mediaconvert {
     val UTF8  = "UTF8"
     val UTF16 = "UTF16"
 
-    val values = IndexedSeq(UTF8, UTF16)
+    val values = js.Object.freeze(js.Array(UTF8, UTF16))
   }
 
   /**
@@ -7043,7 +7061,7 @@ package mediaconvert {
     val SPATIAL   = "SPATIAL"
     val TEMPORAL  = "TEMPORAL"
 
-    val values = IndexedSeq(BILATERAL, MEAN, GAUSSIAN, LANCZOS, SHARPEN, CONSERVE, SPATIAL, TEMPORAL)
+    val values = js.Object.freeze(js.Array(BILATERAL, MEAN, GAUSSIAN, LANCZOS, SHARPEN, CONSERVE, SPATIAL, TEMPORAL))
   }
 
   /**
@@ -7119,7 +7137,7 @@ package mediaconvert {
     val ASCENDING  = "ASCENDING"
     val DESCENDING = "DESCENDING"
 
-    val values = IndexedSeq(ASCENDING, DESCENDING)
+    val values = js.Object.freeze(js.Array(ASCENDING, DESCENDING))
   }
 
   /**
@@ -7288,12 +7306,14 @@ package mediaconvert {
     val MS_SMOOTH_GROUP_SETTINGS = "MS_SMOOTH_GROUP_SETTINGS"
     val CMAF_GROUP_SETTINGS      = "CMAF_GROUP_SETTINGS"
 
-    val values = IndexedSeq(
-      HLS_GROUP_SETTINGS,
-      DASH_ISO_GROUP_SETTINGS,
-      FILE_GROUP_SETTINGS,
-      MS_SMOOTH_GROUP_SETTINGS,
-      CMAF_GROUP_SETTINGS
+    val values = js.Object.freeze(
+      js.Array(
+        HLS_GROUP_SETTINGS,
+        DASH_ISO_GROUP_SETTINGS,
+        FILE_GROUP_SETTINGS,
+        MS_SMOOTH_GROUP_SETTINGS,
+        CMAF_GROUP_SETTINGS
+      )
     )
   }
 
@@ -7306,7 +7326,7 @@ package mediaconvert {
     val SDT_MANUAL            = "SDT_MANUAL"
     val SDT_NONE              = "SDT_NONE"
 
-    val values = IndexedSeq(SDT_FOLLOW, SDT_FOLLOW_IF_PRESENT, SDT_MANUAL, SDT_NONE)
+    val values = js.Object.freeze(js.Array(SDT_FOLLOW, SDT_FOLLOW_IF_PRESENT, SDT_MANUAL, SDT_NONE))
   }
 
   /**
@@ -7376,7 +7396,7 @@ package mediaconvert {
     val CREATION_DATE = "CREATION_DATE"
     val SYSTEM        = "SYSTEM"
 
-    val values = IndexedSeq(NAME, CREATION_DATE, SYSTEM)
+    val values = js.Object.freeze(js.Array(NAME, CREATION_DATE, SYSTEM))
   }
 
   /**
@@ -7413,7 +7433,7 @@ package mediaconvert {
     val ON_DEMAND = "ON_DEMAND"
     val RESERVED  = "RESERVED"
 
-    val values = IndexedSeq(ON_DEMAND, RESERVED)
+    val values = js.Object.freeze(js.Array(ON_DEMAND, RESERVED))
   }
 
   /**
@@ -7425,7 +7445,8 @@ package mediaconvert {
     val APPLE_PRORES_422_LT    = "APPLE_PRORES_422_LT"
     val APPLE_PRORES_422_PROXY = "APPLE_PRORES_422_PROXY"
 
-    val values = IndexedSeq(APPLE_PRORES_422, APPLE_PRORES_422_HQ, APPLE_PRORES_422_LT, APPLE_PRORES_422_PROXY)
+    val values =
+      js.Object.freeze(js.Array(APPLE_PRORES_422, APPLE_PRORES_422_HQ, APPLE_PRORES_422_LT, APPLE_PRORES_422_PROXY))
   }
 
   /**
@@ -7435,7 +7456,7 @@ package mediaconvert {
     val INITIALIZE_FROM_SOURCE = "INITIALIZE_FROM_SOURCE"
     val SPECIFIED              = "SPECIFIED"
 
-    val values = IndexedSeq(INITIALIZE_FROM_SOURCE, SPECIFIED)
+    val values = js.Object.freeze(js.Array(INITIALIZE_FROM_SOURCE, SPECIFIED))
   }
 
   /**
@@ -7445,7 +7466,7 @@ package mediaconvert {
     val DUPLICATE_DROP = "DUPLICATE_DROP"
     val INTERPOLATE    = "INTERPOLATE"
 
-    val values = IndexedSeq(DUPLICATE_DROP, INTERPOLATE)
+    val values = js.Object.freeze(js.Array(DUPLICATE_DROP, INTERPOLATE))
   }
 
   /**
@@ -7460,7 +7481,7 @@ package mediaconvert {
     val FOLLOW_TOP_FIELD    = "FOLLOW_TOP_FIELD"
     val FOLLOW_BOTTOM_FIELD = "FOLLOW_BOTTOM_FIELD"
 
-    val values = IndexedSeq(PROGRESSIVE, TOP_FIELD, BOTTOM_FIELD, FOLLOW_TOP_FIELD, FOLLOW_BOTTOM_FIELD)
+    val values = js.Object.freeze(js.Array(PROGRESSIVE, TOP_FIELD, BOTTOM_FIELD, FOLLOW_TOP_FIELD, FOLLOW_BOTTOM_FIELD))
   }
 
   /**
@@ -7470,7 +7491,7 @@ package mediaconvert {
     val INITIALIZE_FROM_SOURCE = "INITIALIZE_FROM_SOURCE"
     val SPECIFIED              = "SPECIFIED"
 
-    val values = IndexedSeq(INITIALIZE_FROM_SOURCE, SPECIFIED)
+    val values = js.Object.freeze(js.Array(INITIALIZE_FROM_SOURCE, SPECIFIED))
   }
 
   /**
@@ -7530,7 +7551,7 @@ package mediaconvert {
     val DISABLED = "DISABLED"
     val ENABLED  = "ENABLED"
 
-    val values = IndexedSeq(DISABLED, ENABLED)
+    val values = js.Object.freeze(js.Array(DISABLED, ENABLED))
   }
 
   /**
@@ -7540,7 +7561,7 @@ package mediaconvert {
     val NONE = "NONE"
     val HARD = "HARD"
 
-    val values = IndexedSeq(NONE, HARD)
+    val values = js.Object.freeze(js.Array(NONE, HARD))
   }
 
   /**
@@ -7600,7 +7621,7 @@ package mediaconvert {
     val NAME          = "NAME"
     val CREATION_DATE = "CREATION_DATE"
 
-    val values = IndexedSeq(NAME, CREATION_DATE)
+    val values = js.Object.freeze(js.Array(NAME, CREATION_DATE))
   }
 
   /**
@@ -7610,7 +7631,7 @@ package mediaconvert {
     val ACTIVE = "ACTIVE"
     val PAUSED = "PAUSED"
 
-    val values = IndexedSeq(ACTIVE, PAUSED)
+    val values = js.Object.freeze(js.Array(ACTIVE, PAUSED))
   }
 
   /**
@@ -7671,7 +7692,7 @@ package mediaconvert {
     val AUTO_RENEW = "AUTO_RENEW"
     val EXPIRE     = "EXPIRE"
 
-    val values = IndexedSeq(AUTO_RENEW, EXPIRE)
+    val values = js.Object.freeze(js.Array(AUTO_RENEW, EXPIRE))
   }
 
   /**
@@ -7740,7 +7761,7 @@ package mediaconvert {
     val ACTIVE  = "ACTIVE"
     val EXPIRED = "EXPIRED"
 
-    val values = IndexedSeq(ACTIVE, EXPIRED)
+    val values = js.Object.freeze(js.Array(ACTIVE, EXPIRED))
   }
 
   /**
@@ -7772,7 +7793,7 @@ package mediaconvert {
     val RESPOND     = "RESPOND"
     val PASSTHROUGH = "PASSTHROUGH"
 
-    val values = IndexedSeq(NONE, RESPOND, PASSTHROUGH)
+    val values = js.Object.freeze(js.Array(NONE, RESPOND, PASSTHROUGH))
   }
 
   /**
@@ -7825,7 +7846,7 @@ package mediaconvert {
     val SERVER_SIDE_ENCRYPTION_S3  = "SERVER_SIDE_ENCRYPTION_S3"
     val SERVER_SIDE_ENCRYPTION_KMS = "SERVER_SIDE_ENCRYPTION_KMS"
 
-    val values = IndexedSeq(SERVER_SIDE_ENCRYPTION_S3, SERVER_SIDE_ENCRYPTION_KMS)
+    val values = js.Object.freeze(js.Array(SERVER_SIDE_ENCRYPTION_S3, SERVER_SIDE_ENCRYPTION_KMS))
   }
 
   /**
@@ -7835,7 +7856,7 @@ package mediaconvert {
     val DEFAULT           = "DEFAULT"
     val STRETCH_TO_OUTPUT = "STRETCH_TO_OUTPUT"
 
-    val values = IndexedSeq(DEFAULT, STRETCH_TO_OUTPUT)
+    val values = js.Object.freeze(js.Array(DEFAULT, STRETCH_TO_OUTPUT))
   }
 
   /**
@@ -7847,7 +7868,9 @@ package mediaconvert {
     val FRAMERATE_29_97_DROPFRAME     = "FRAMERATE_29_97_DROPFRAME"
     val FRAMERATE_29_97_NON_DROPFRAME = "FRAMERATE_29_97_NON_DROPFRAME"
 
-    val values = IndexedSeq(FRAMERATE_23_97, FRAMERATE_24, FRAMERATE_29_97_DROPFRAME, FRAMERATE_29_97_NON_DROPFRAME)
+    val values = js.Object.freeze(
+      js.Array(FRAMERATE_23_97, FRAMERATE_24, FRAMERATE_29_97_DROPFRAME, FRAMERATE_29_97_NON_DROPFRAME)
+    )
   }
 
   /**
@@ -7974,22 +7997,24 @@ package mediaconvert {
     val SECONDS_540 = "SECONDS_540"
     val SECONDS_600 = "SECONDS_600"
 
-    val values = IndexedSeq(
-      SECONDS_10,
-      SECONDS_12,
-      SECONDS_15,
-      SECONDS_20,
-      SECONDS_30,
-      SECONDS_60,
-      SECONDS_120,
-      SECONDS_180,
-      SECONDS_240,
-      SECONDS_300,
-      SECONDS_360,
-      SECONDS_420,
-      SECONDS_480,
-      SECONDS_540,
-      SECONDS_600
+    val values = js.Object.freeze(
+      js.Array(
+        SECONDS_10,
+        SECONDS_12,
+        SECONDS_15,
+        SECONDS_20,
+        SECONDS_30,
+        SECONDS_60,
+        SECONDS_120,
+        SECONDS_180,
+        SECONDS_240,
+        SECONDS_300,
+        SECONDS_360,
+        SECONDS_420,
+        SECONDS_480,
+        SECONDS_540,
+        SECONDS_600
+      )
     )
   }
 
@@ -8056,12 +8081,14 @@ package mediaconvert {
     val PAGE_TYPE_PROGRAM_SCHEDULE          = "PAGE_TYPE_PROGRAM_SCHEDULE"
     val PAGE_TYPE_HEARING_IMPAIRED_SUBTITLE = "PAGE_TYPE_HEARING_IMPAIRED_SUBTITLE"
 
-    val values = IndexedSeq(
-      PAGE_TYPE_INITIAL,
-      PAGE_TYPE_SUBTITLE,
-      PAGE_TYPE_ADDL_INFO,
-      PAGE_TYPE_PROGRAM_SCHEDULE,
-      PAGE_TYPE_HEARING_IMPAIRED_SUBTITLE
+    val values = js.Object.freeze(
+      js.Array(
+        PAGE_TYPE_INITIAL,
+        PAGE_TYPE_SUBTITLE,
+        PAGE_TYPE_ADDL_INFO,
+        PAGE_TYPE_PROGRAM_SCHEDULE,
+        PAGE_TYPE_HEARING_IMPAIRED_SUBTITLE
+      )
     )
   }
 
@@ -8121,16 +8148,18 @@ package mediaconvert {
     val BOTTOM_CENTER = "BOTTOM_CENTER"
     val BOTTOM_RIGHT  = "BOTTOM_RIGHT"
 
-    val values = IndexedSeq(
-      TOP_CENTER,
-      TOP_LEFT,
-      TOP_RIGHT,
-      MIDDLE_LEFT,
-      MIDDLE_CENTER,
-      MIDDLE_RIGHT,
-      BOTTOM_LEFT,
-      BOTTOM_CENTER,
-      BOTTOM_RIGHT
+    val values = js.Object.freeze(
+      js.Array(
+        TOP_CENTER,
+        TOP_LEFT,
+        TOP_RIGHT,
+        MIDDLE_LEFT,
+        MIDDLE_CENTER,
+        MIDDLE_RIGHT,
+        BOTTOM_LEFT,
+        BOTTOM_CENTER,
+        BOTTOM_RIGHT
+      )
     )
   }
 
@@ -8169,7 +8198,7 @@ package mediaconvert {
     val ZEROBASED      = "ZEROBASED"
     val SPECIFIEDSTART = "SPECIFIEDSTART"
 
-    val values = IndexedSeq(EMBEDDED, ZEROBASED, SPECIFIEDSTART)
+    val values = js.Object.freeze(js.Array(EMBEDDED, ZEROBASED, SPECIFIEDSTART))
   }
 
   /**
@@ -8179,7 +8208,7 @@ package mediaconvert {
     val PASSTHROUGH = "PASSTHROUGH"
     val NONE        = "NONE"
 
-    val values = IndexedSeq(PASSTHROUGH, NONE)
+    val values = js.Object.freeze(js.Array(PASSTHROUGH, NONE))
   }
 
   /**
@@ -8267,14 +8296,14 @@ package mediaconvert {
     val ENABLED  = "ENABLED"
     val DISABLED = "DISABLED"
 
-    val values = IndexedSeq(ENABLED, DISABLED)
+    val values = js.Object.freeze(js.Array(ENABLED, DISABLED))
   }
 
   object TypeEnum {
     val SYSTEM = "SYSTEM"
     val CUSTOM = "CUSTOM"
 
-    val values = IndexedSeq(SYSTEM, CUSTOM)
+    val values = js.Object.freeze(js.Array(SYSTEM, CUSTOM))
   }
 
   @js.native
@@ -8454,7 +8483,7 @@ package mediaconvert {
     val MPEG2         = "MPEG2"
     val PRORES        = "PRORES"
 
-    val values = IndexedSeq(FRAME_CAPTURE, H_264, H_265, MPEG2, PRORES)
+    val values = js.Object.freeze(js.Array(FRAME_CAPTURE, H_264, H_265, MPEG2, PRORES))
   }
 
   /**
@@ -8641,7 +8670,7 @@ package mediaconvert {
     val DISABLED       = "DISABLED"
     val PIC_TIMING_SEI = "PIC_TIMING_SEI"
 
-    val values = IndexedSeq(DISABLED, PIC_TIMING_SEI)
+    val values = js.Object.freeze(js.Array(DISABLED, PIC_TIMING_SEI))
   }
 
   /**
@@ -8651,7 +8680,7 @@ package mediaconvert {
     val RIFF = "RIFF"
     val RF64 = "RF64"
 
-    val values = IndexedSeq(RIFF, RF64)
+    val values = js.Object.freeze(js.Array(RIFF, RF64))
   }
 
   /**

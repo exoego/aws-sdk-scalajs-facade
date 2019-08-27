@@ -179,7 +179,7 @@ package textract {
     val CELL              = "CELL"
     val SELECTION_ELEMENT = "SELECTION_ELEMENT"
 
-    val values = IndexedSeq(KEY_VALUE_SET, PAGE, LINE, WORD, TABLE, CELL, SELECTION_ELEMENT)
+    val values = js.Object.freeze(js.Array(KEY_VALUE_SET, PAGE, LINE, WORD, TABLE, CELL, SELECTION_ELEMENT))
   }
 
   /**
@@ -313,14 +313,14 @@ package textract {
     val KEY   = "KEY"
     val VALUE = "VALUE"
 
-    val values = IndexedSeq(KEY, VALUE)
+    val values = js.Object.freeze(js.Array(KEY, VALUE))
   }
 
   object FeatureTypeEnum {
     val TABLES = "TABLES"
     val FORMS  = "FORMS"
 
-    val values = IndexedSeq(TABLES, FORMS)
+    val values = js.Object.freeze(js.Array(TABLES, FORMS))
   }
 
   /**
@@ -456,7 +456,7 @@ package textract {
     val FAILED          = "FAILED"
     val PARTIAL_SUCCESS = "PARTIAL_SUCCESS"
 
-    val values = IndexedSeq(IN_PROGRESS, SUCCEEDED, FAILED, PARTIAL_SUCCESS)
+    val values = js.Object.freeze(js.Array(IN_PROGRESS, SUCCEEDED, FAILED, PARTIAL_SUCCESS))
   }
 
   /**
@@ -530,7 +530,7 @@ package textract {
     val VALUE = "VALUE"
     val CHILD = "CHILD"
 
-    val values = IndexedSeq(VALUE, CHILD)
+    val values = js.Object.freeze(js.Array(VALUE, CHILD))
   }
 
   /**
@@ -563,7 +563,7 @@ package textract {
     val SELECTED     = "SELECTED"
     val NOT_SELECTED = "NOT_SELECTED"
 
-    val values = IndexedSeq(SELECTED, NOT_SELECTED)
+    val values = js.Object.freeze(js.Array(SELECTED, NOT_SELECTED))
   }
 
   @js.native
