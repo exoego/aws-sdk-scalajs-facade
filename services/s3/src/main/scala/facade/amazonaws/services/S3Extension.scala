@@ -6,8 +6,12 @@ import scala.scalajs.js.{JSON, JavaScriptException}
 
 object S3Extension {
   implicit class S3Ops(s3: S3) {
+    @deprecated("Use getSignedUrlFuture instead", "0.25.0")
     def getSignedUrl(operation: String, params: scalajs.js.Object, expires: Int = 900): Future[String] =
-      S3Extension.getSignedUrl(s3, operation, params, expires)
+      S3Extension.getSignedUrlFuture(s3, operation, params, expires)
+
+    def getSignedUrlFuture(operation: String, params: scalajs.js.Object, expires: Int = 900): Future[String] =
+      S3Extension.getSignedUrlFuture(s3, operation, params, expires)
   }
 
   /**
@@ -19,7 +23,7 @@ object S3Extension {
     * @param expires The number of seconds to expire the pre-signed URL operation in. Defaults to 900 seconds (15 minutes).
     * @return Future of the signed URL
     */
-  def getSignedUrl(s3: S3, operation: String, params: js.Object, expires: Int = 900): Future[String] = {
+  def getSignedUrlFuture(s3: S3, operation: String, params: js.Object, expires: Int = 900): Future[String] = {
     val paramsWithExpires = if (params.hasOwnProperty("Expires") || expires == 900) {
       params
 
@@ -45,4 +49,8 @@ object S3Extension {
       )
     getSignedUrlPromise.future
   }
+
+  @deprecated("Use getSignedUrlFuture instead", "0.25.0")
+  def getSignedUrl(s3: S3, operation: String, params: js.Object, expires: Int = 900): Future[String] =
+    getSignedUrlFuture(s3, operation, params, expires)
 }
