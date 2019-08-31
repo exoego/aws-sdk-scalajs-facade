@@ -9,13 +9,35 @@ object AWS extends js.Object {
   var config: AWSConfigWithServicesDefault = js.native
 }
 
-class ParamsWithEndpoint(
-    var params: js.UndefOr[AWSConfig] = js.undefined,
-    var endpoint: js.UndefOr[String] = js.undefined
-) extends js.Object
+trait ParamsWithEndpoint extends js.Object {
+  var params: js.UndefOr[AWSConfig] = js.undefined
+  var endpoint: js.UndefOr[String]  = js.undefined
+}
+object ParamsWithEndpoint {
+  def apply(
+      params: js.UndefOr[AWSConfig] = js.undefined,
+      endpoint: js.UndefOr[String] = js.undefined
+  ): ParamsWithEndpoint = {
+    val __obj = js.Dynamic.literal()
+    params.foreach(v => __obj.updateDynamic("params")(v))
+    endpoint.foreach(v => __obj.updateDynamic("endpoint")(v))
+    __obj.asInstanceOf[ParamsWithEndpoint]
+  }
+}
 
-class S3ParamsWithEndpoint(
-    params: js.UndefOr[AWSConfig] = js.undefined,
-    endpoint: js.UndefOr[String] = js.undefined,
-    var useDualstack: js.UndefOr[Boolean] = js.undefined
-) extends ParamsWithEndpoint(params, endpoint)
+trait S3ParamsWithEndpoint extends ParamsWithEndpoint {
+  var useDualstack: js.UndefOr[Boolean] = js.undefined
+}
+object S3ParamsWithEndpoint {
+  def apply(
+      params: js.UndefOr[AWSConfig] = js.undefined,
+      endpoint: js.UndefOr[String] = js.undefined,
+      useDualstack: js.UndefOr[Boolean] = js.undefined
+  ): ParamsWithEndpoint = {
+    val __obj = js.Dynamic.literal()
+    params.foreach(v => __obj.updateDynamic("params")(v))
+    endpoint.foreach(v => __obj.updateDynamic("endpoint")(v))
+    useDualstack.foreach(v => __obj.updateDynamic("useDualstack")(v))
+    __obj.asInstanceOf[ParamsWithEndpoint]
+  }
+}
