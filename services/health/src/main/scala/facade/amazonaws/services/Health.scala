@@ -60,19 +60,20 @@ package object health {
 
   implicit final class HealthOps(private val service: Health) extends AnyVal {
 
-    def describeAffectedEntitiesFuture(
+    @inline def describeAffectedEntitiesFuture(
         params: DescribeAffectedEntitiesRequest
     ): Future[DescribeAffectedEntitiesResponse] = service.describeAffectedEntities(params).promise.toFuture
-    def describeEntityAggregatesFuture(
+    @inline def describeEntityAggregatesFuture(
         params: DescribeEntityAggregatesRequest
     ): Future[DescribeEntityAggregatesResponse] = service.describeEntityAggregates(params).promise.toFuture
-    def describeEventAggregatesFuture(params: DescribeEventAggregatesRequest): Future[DescribeEventAggregatesResponse] =
-      service.describeEventAggregates(params).promise.toFuture
-    def describeEventDetailsFuture(params: DescribeEventDetailsRequest): Future[DescribeEventDetailsResponse] =
+    @inline def describeEventAggregatesFuture(
+        params: DescribeEventAggregatesRequest
+    ): Future[DescribeEventAggregatesResponse] = service.describeEventAggregates(params).promise.toFuture
+    @inline def describeEventDetailsFuture(params: DescribeEventDetailsRequest): Future[DescribeEventDetailsResponse] =
       service.describeEventDetails(params).promise.toFuture
-    def describeEventTypesFuture(params: DescribeEventTypesRequest): Future[DescribeEventTypesResponse] =
+    @inline def describeEventTypesFuture(params: DescribeEventTypesRequest): Future[DescribeEventTypesResponse] =
       service.describeEventTypes(params).promise.toFuture
-    def describeEventsFuture(params: DescribeEventsRequest): Future[DescribeEventsResponse] =
+    @inline def describeEventsFuture(params: DescribeEventsRequest): Future[DescribeEventsResponse] =
       service.describeEvents(params).promise.toFuture
   }
 }

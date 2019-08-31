@@ -70,79 +70,83 @@ package object personalize {
 
   implicit final class PersonalizeOps(private val service: Personalize) extends AnyVal {
 
-    def createCampaignFuture(params: CreateCampaignRequest): Future[CreateCampaignResponse] =
+    @inline def createCampaignFuture(params: CreateCampaignRequest): Future[CreateCampaignResponse] =
       service.createCampaign(params).promise.toFuture
-    def createDatasetFuture(params: CreateDatasetRequest): Future[CreateDatasetResponse] =
+    @inline def createDatasetFuture(params: CreateDatasetRequest): Future[CreateDatasetResponse] =
       service.createDataset(params).promise.toFuture
-    def createDatasetGroupFuture(params: CreateDatasetGroupRequest): Future[CreateDatasetGroupResponse] =
+    @inline def createDatasetGroupFuture(params: CreateDatasetGroupRequest): Future[CreateDatasetGroupResponse] =
       service.createDatasetGroup(params).promise.toFuture
-    def createDatasetImportJobFuture(params: CreateDatasetImportJobRequest): Future[CreateDatasetImportJobResponse] =
-      service.createDatasetImportJob(params).promise.toFuture
-    def createEventTrackerFuture(params: CreateEventTrackerRequest): Future[CreateEventTrackerResponse] =
+    @inline def createDatasetImportJobFuture(
+        params: CreateDatasetImportJobRequest
+    ): Future[CreateDatasetImportJobResponse] = service.createDatasetImportJob(params).promise.toFuture
+    @inline def createEventTrackerFuture(params: CreateEventTrackerRequest): Future[CreateEventTrackerResponse] =
       service.createEventTracker(params).promise.toFuture
-    def createSchemaFuture(params: CreateSchemaRequest): Future[CreateSchemaResponse] =
+    @inline def createSchemaFuture(params: CreateSchemaRequest): Future[CreateSchemaResponse] =
       service.createSchema(params).promise.toFuture
-    def createSolutionFuture(params: CreateSolutionRequest): Future[CreateSolutionResponse] =
+    @inline def createSolutionFuture(params: CreateSolutionRequest): Future[CreateSolutionResponse] =
       service.createSolution(params).promise.toFuture
-    def createSolutionVersionFuture(params: CreateSolutionVersionRequest): Future[CreateSolutionVersionResponse] =
-      service.createSolutionVersion(params).promise.toFuture
-    def deleteCampaignFuture(params: DeleteCampaignRequest): Future[js.Object] =
+    @inline def createSolutionVersionFuture(
+        params: CreateSolutionVersionRequest
+    ): Future[CreateSolutionVersionResponse] = service.createSolutionVersion(params).promise.toFuture
+    @inline def deleteCampaignFuture(params: DeleteCampaignRequest): Future[js.Object] =
       service.deleteCampaign(params).promise.toFuture
-    def deleteDatasetFuture(params: DeleteDatasetRequest): Future[js.Object] =
+    @inline def deleteDatasetFuture(params: DeleteDatasetRequest): Future[js.Object] =
       service.deleteDataset(params).promise.toFuture
-    def deleteDatasetGroupFuture(params: DeleteDatasetGroupRequest): Future[js.Object] =
+    @inline def deleteDatasetGroupFuture(params: DeleteDatasetGroupRequest): Future[js.Object] =
       service.deleteDatasetGroup(params).promise.toFuture
-    def deleteEventTrackerFuture(params: DeleteEventTrackerRequest): Future[js.Object] =
+    @inline def deleteEventTrackerFuture(params: DeleteEventTrackerRequest): Future[js.Object] =
       service.deleteEventTracker(params).promise.toFuture
-    def deleteSchemaFuture(params: DeleteSchemaRequest): Future[js.Object] =
+    @inline def deleteSchemaFuture(params: DeleteSchemaRequest): Future[js.Object] =
       service.deleteSchema(params).promise.toFuture
-    def deleteSolutionFuture(params: DeleteSolutionRequest): Future[js.Object] =
+    @inline def deleteSolutionFuture(params: DeleteSolutionRequest): Future[js.Object] =
       service.deleteSolution(params).promise.toFuture
-    def describeAlgorithmFuture(params: DescribeAlgorithmRequest): Future[DescribeAlgorithmResponse] =
+    @inline def describeAlgorithmFuture(params: DescribeAlgorithmRequest): Future[DescribeAlgorithmResponse] =
       service.describeAlgorithm(params).promise.toFuture
-    def describeCampaignFuture(params: DescribeCampaignRequest): Future[DescribeCampaignResponse] =
+    @inline def describeCampaignFuture(params: DescribeCampaignRequest): Future[DescribeCampaignResponse] =
       service.describeCampaign(params).promise.toFuture
-    def describeDatasetFuture(params: DescribeDatasetRequest): Future[DescribeDatasetResponse] =
+    @inline def describeDatasetFuture(params: DescribeDatasetRequest): Future[DescribeDatasetResponse] =
       service.describeDataset(params).promise.toFuture
-    def describeDatasetGroupFuture(params: DescribeDatasetGroupRequest): Future[DescribeDatasetGroupResponse] =
+    @inline def describeDatasetGroupFuture(params: DescribeDatasetGroupRequest): Future[DescribeDatasetGroupResponse] =
       service.describeDatasetGroup(params).promise.toFuture
-    def describeDatasetImportJobFuture(
+    @inline def describeDatasetImportJobFuture(
         params: DescribeDatasetImportJobRequest
     ): Future[DescribeDatasetImportJobResponse] = service.describeDatasetImportJob(params).promise.toFuture
-    def describeEventTrackerFuture(params: DescribeEventTrackerRequest): Future[DescribeEventTrackerResponse] =
+    @inline def describeEventTrackerFuture(params: DescribeEventTrackerRequest): Future[DescribeEventTrackerResponse] =
       service.describeEventTracker(params).promise.toFuture
-    def describeFeatureTransformationFuture(
+    @inline def describeFeatureTransformationFuture(
         params: DescribeFeatureTransformationRequest
     ): Future[DescribeFeatureTransformationResponse] = service.describeFeatureTransformation(params).promise.toFuture
-    def describeRecipeFuture(params: DescribeRecipeRequest): Future[DescribeRecipeResponse] =
+    @inline def describeRecipeFuture(params: DescribeRecipeRequest): Future[DescribeRecipeResponse] =
       service.describeRecipe(params).promise.toFuture
-    def describeSchemaFuture(params: DescribeSchemaRequest): Future[DescribeSchemaResponse] =
+    @inline def describeSchemaFuture(params: DescribeSchemaRequest): Future[DescribeSchemaResponse] =
       service.describeSchema(params).promise.toFuture
-    def describeSolutionFuture(params: DescribeSolutionRequest): Future[DescribeSolutionResponse] =
+    @inline def describeSolutionFuture(params: DescribeSolutionRequest): Future[DescribeSolutionResponse] =
       service.describeSolution(params).promise.toFuture
-    def describeSolutionVersionFuture(params: DescribeSolutionVersionRequest): Future[DescribeSolutionVersionResponse] =
-      service.describeSolutionVersion(params).promise.toFuture
-    def getSolutionMetricsFuture(params: GetSolutionMetricsRequest): Future[GetSolutionMetricsResponse] =
+    @inline def describeSolutionVersionFuture(
+        params: DescribeSolutionVersionRequest
+    ): Future[DescribeSolutionVersionResponse] = service.describeSolutionVersion(params).promise.toFuture
+    @inline def getSolutionMetricsFuture(params: GetSolutionMetricsRequest): Future[GetSolutionMetricsResponse] =
       service.getSolutionMetrics(params).promise.toFuture
-    def listCampaignsFuture(params: ListCampaignsRequest): Future[ListCampaignsResponse] =
+    @inline def listCampaignsFuture(params: ListCampaignsRequest): Future[ListCampaignsResponse] =
       service.listCampaigns(params).promise.toFuture
-    def listDatasetGroupsFuture(params: ListDatasetGroupsRequest): Future[ListDatasetGroupsResponse] =
+    @inline def listDatasetGroupsFuture(params: ListDatasetGroupsRequest): Future[ListDatasetGroupsResponse] =
       service.listDatasetGroups(params).promise.toFuture
-    def listDatasetImportJobsFuture(params: ListDatasetImportJobsRequest): Future[ListDatasetImportJobsResponse] =
-      service.listDatasetImportJobs(params).promise.toFuture
-    def listDatasetsFuture(params: ListDatasetsRequest): Future[ListDatasetsResponse] =
+    @inline def listDatasetImportJobsFuture(
+        params: ListDatasetImportJobsRequest
+    ): Future[ListDatasetImportJobsResponse] = service.listDatasetImportJobs(params).promise.toFuture
+    @inline def listDatasetsFuture(params: ListDatasetsRequest): Future[ListDatasetsResponse] =
       service.listDatasets(params).promise.toFuture
-    def listEventTrackersFuture(params: ListEventTrackersRequest): Future[ListEventTrackersResponse] =
+    @inline def listEventTrackersFuture(params: ListEventTrackersRequest): Future[ListEventTrackersResponse] =
       service.listEventTrackers(params).promise.toFuture
-    def listRecipesFuture(params: ListRecipesRequest): Future[ListRecipesResponse] =
+    @inline def listRecipesFuture(params: ListRecipesRequest): Future[ListRecipesResponse] =
       service.listRecipes(params).promise.toFuture
-    def listSchemasFuture(params: ListSchemasRequest): Future[ListSchemasResponse] =
+    @inline def listSchemasFuture(params: ListSchemasRequest): Future[ListSchemasResponse] =
       service.listSchemas(params).promise.toFuture
-    def listSolutionVersionsFuture(params: ListSolutionVersionsRequest): Future[ListSolutionVersionsResponse] =
+    @inline def listSolutionVersionsFuture(params: ListSolutionVersionsRequest): Future[ListSolutionVersionsResponse] =
       service.listSolutionVersions(params).promise.toFuture
-    def listSolutionsFuture(params: ListSolutionsRequest): Future[ListSolutionsResponse] =
+    @inline def listSolutionsFuture(params: ListSolutionsRequest): Future[ListSolutionsResponse] =
       service.listSolutions(params).promise.toFuture
-    def updateCampaignFuture(params: UpdateCampaignRequest): Future[UpdateCampaignResponse] =
+    @inline def updateCampaignFuture(params: UpdateCampaignRequest): Future[UpdateCampaignResponse] =
       service.updateCampaign(params).promise.toFuture
   }
 }

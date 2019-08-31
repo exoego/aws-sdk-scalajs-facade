@@ -68,43 +68,47 @@ package object codebuild {
 
   implicit final class CodeBuildOps(private val service: CodeBuild) extends AnyVal {
 
-    def batchDeleteBuildsFuture(params: BatchDeleteBuildsInput): Future[BatchDeleteBuildsOutput] =
+    @inline def batchDeleteBuildsFuture(params: BatchDeleteBuildsInput): Future[BatchDeleteBuildsOutput] =
       service.batchDeleteBuilds(params).promise.toFuture
-    def batchGetBuildsFuture(params: BatchGetBuildsInput): Future[BatchGetBuildsOutput] =
+    @inline def batchGetBuildsFuture(params: BatchGetBuildsInput): Future[BatchGetBuildsOutput] =
       service.batchGetBuilds(params).promise.toFuture
-    def batchGetProjectsFuture(params: BatchGetProjectsInput): Future[BatchGetProjectsOutput] =
+    @inline def batchGetProjectsFuture(params: BatchGetProjectsInput): Future[BatchGetProjectsOutput] =
       service.batchGetProjects(params).promise.toFuture
-    def createProjectFuture(params: CreateProjectInput): Future[CreateProjectOutput] =
+    @inline def createProjectFuture(params: CreateProjectInput): Future[CreateProjectOutput] =
       service.createProject(params).promise.toFuture
-    def createWebhookFuture(params: CreateWebhookInput): Future[CreateWebhookOutput] =
+    @inline def createWebhookFuture(params: CreateWebhookInput): Future[CreateWebhookOutput] =
       service.createWebhook(params).promise.toFuture
-    def deleteProjectFuture(params: DeleteProjectInput): Future[DeleteProjectOutput] =
+    @inline def deleteProjectFuture(params: DeleteProjectInput): Future[DeleteProjectOutput] =
       service.deleteProject(params).promise.toFuture
-    def deleteSourceCredentialsFuture(params: DeleteSourceCredentialsInput): Future[DeleteSourceCredentialsOutput] =
-      service.deleteSourceCredentials(params).promise.toFuture
-    def deleteWebhookFuture(params: DeleteWebhookInput): Future[DeleteWebhookOutput] =
+    @inline def deleteSourceCredentialsFuture(
+        params: DeleteSourceCredentialsInput
+    ): Future[DeleteSourceCredentialsOutput] = service.deleteSourceCredentials(params).promise.toFuture
+    @inline def deleteWebhookFuture(params: DeleteWebhookInput): Future[DeleteWebhookOutput] =
       service.deleteWebhook(params).promise.toFuture
-    def importSourceCredentialsFuture(params: ImportSourceCredentialsInput): Future[ImportSourceCredentialsOutput] =
-      service.importSourceCredentials(params).promise.toFuture
-    def invalidateProjectCacheFuture(params: InvalidateProjectCacheInput): Future[InvalidateProjectCacheOutput] =
-      service.invalidateProjectCache(params).promise.toFuture
-    def listBuildsForProjectFuture(params: ListBuildsForProjectInput): Future[ListBuildsForProjectOutput] =
+    @inline def importSourceCredentialsFuture(
+        params: ImportSourceCredentialsInput
+    ): Future[ImportSourceCredentialsOutput] = service.importSourceCredentials(params).promise.toFuture
+    @inline def invalidateProjectCacheFuture(
+        params: InvalidateProjectCacheInput
+    ): Future[InvalidateProjectCacheOutput] = service.invalidateProjectCache(params).promise.toFuture
+    @inline def listBuildsForProjectFuture(params: ListBuildsForProjectInput): Future[ListBuildsForProjectOutput] =
       service.listBuildsForProject(params).promise.toFuture
-    def listBuildsFuture(params: ListBuildsInput): Future[ListBuildsOutput] =
+    @inline def listBuildsFuture(params: ListBuildsInput): Future[ListBuildsOutput] =
       service.listBuilds(params).promise.toFuture
-    def listCuratedEnvironmentImagesFuture(
+    @inline def listCuratedEnvironmentImagesFuture(
         params: ListCuratedEnvironmentImagesInput
     ): Future[ListCuratedEnvironmentImagesOutput] = service.listCuratedEnvironmentImages(params).promise.toFuture
-    def listProjectsFuture(params: ListProjectsInput): Future[ListProjectsOutput] =
+    @inline def listProjectsFuture(params: ListProjectsInput): Future[ListProjectsOutput] =
       service.listProjects(params).promise.toFuture
-    def listSourceCredentialsFuture(params: ListSourceCredentialsInput): Future[ListSourceCredentialsOutput] =
+    @inline def listSourceCredentialsFuture(params: ListSourceCredentialsInput): Future[ListSourceCredentialsOutput] =
       service.listSourceCredentials(params).promise.toFuture
-    def startBuildFuture(params: StartBuildInput): Future[StartBuildOutput] =
+    @inline def startBuildFuture(params: StartBuildInput): Future[StartBuildOutput] =
       service.startBuild(params).promise.toFuture
-    def stopBuildFuture(params: StopBuildInput): Future[StopBuildOutput] = service.stopBuild(params).promise.toFuture
-    def updateProjectFuture(params: UpdateProjectInput): Future[UpdateProjectOutput] =
+    @inline def stopBuildFuture(params: StopBuildInput): Future[StopBuildOutput] =
+      service.stopBuild(params).promise.toFuture
+    @inline def updateProjectFuture(params: UpdateProjectInput): Future[UpdateProjectOutput] =
       service.updateProject(params).promise.toFuture
-    def updateWebhookFuture(params: UpdateWebhookInput): Future[UpdateWebhookOutput] =
+    @inline def updateWebhookFuture(params: UpdateWebhookInput): Future[UpdateWebhookOutput] =
       service.updateWebhook(params).promise.toFuture
   }
 }

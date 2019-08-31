@@ -36,38 +36,38 @@ package object budgetsservice {
 
   implicit final class BudgetsServiceOps(private val service: BudgetsService) extends AnyVal {
 
-    def createBudgetFuture(params: CreateBudgetRequest): Future[CreateBudgetResponse] =
+    @inline def createBudgetFuture(params: CreateBudgetRequest): Future[CreateBudgetResponse] =
       service.createBudget(params).promise.toFuture
-    def createNotificationFuture(params: CreateNotificationRequest): Future[CreateNotificationResponse] =
+    @inline def createNotificationFuture(params: CreateNotificationRequest): Future[CreateNotificationResponse] =
       service.createNotification(params).promise.toFuture
-    def createSubscriberFuture(params: CreateSubscriberRequest): Future[CreateSubscriberResponse] =
+    @inline def createSubscriberFuture(params: CreateSubscriberRequest): Future[CreateSubscriberResponse] =
       service.createSubscriber(params).promise.toFuture
-    def deleteBudgetFuture(params: DeleteBudgetRequest): Future[DeleteBudgetResponse] =
+    @inline def deleteBudgetFuture(params: DeleteBudgetRequest): Future[DeleteBudgetResponse] =
       service.deleteBudget(params).promise.toFuture
-    def deleteNotificationFuture(params: DeleteNotificationRequest): Future[DeleteNotificationResponse] =
+    @inline def deleteNotificationFuture(params: DeleteNotificationRequest): Future[DeleteNotificationResponse] =
       service.deleteNotification(params).promise.toFuture
-    def deleteSubscriberFuture(params: DeleteSubscriberRequest): Future[DeleteSubscriberResponse] =
+    @inline def deleteSubscriberFuture(params: DeleteSubscriberRequest): Future[DeleteSubscriberResponse] =
       service.deleteSubscriber(params).promise.toFuture
-    def describeBudgetFuture(params: DescribeBudgetRequest): Future[DescribeBudgetResponse] =
+    @inline def describeBudgetFuture(params: DescribeBudgetRequest): Future[DescribeBudgetResponse] =
       service.describeBudget(params).promise.toFuture
-    def describeBudgetPerformanceHistoryFuture(
+    @inline def describeBudgetPerformanceHistoryFuture(
         params: DescribeBudgetPerformanceHistoryRequest
     ): Future[DescribeBudgetPerformanceHistoryResponse] =
       service.describeBudgetPerformanceHistory(params).promise.toFuture
-    def describeBudgetsFuture(params: DescribeBudgetsRequest): Future[DescribeBudgetsResponse] =
+    @inline def describeBudgetsFuture(params: DescribeBudgetsRequest): Future[DescribeBudgetsResponse] =
       service.describeBudgets(params).promise.toFuture
-    def describeNotificationsForBudgetFuture(
+    @inline def describeNotificationsForBudgetFuture(
         params: DescribeNotificationsForBudgetRequest
     ): Future[DescribeNotificationsForBudgetResponse] = service.describeNotificationsForBudget(params).promise.toFuture
-    def describeSubscribersForNotificationFuture(
+    @inline def describeSubscribersForNotificationFuture(
         params: DescribeSubscribersForNotificationRequest
     ): Future[DescribeSubscribersForNotificationResponse] =
       service.describeSubscribersForNotification(params).promise.toFuture
-    def updateBudgetFuture(params: UpdateBudgetRequest): Future[UpdateBudgetResponse] =
+    @inline def updateBudgetFuture(params: UpdateBudgetRequest): Future[UpdateBudgetResponse] =
       service.updateBudget(params).promise.toFuture
-    def updateNotificationFuture(params: UpdateNotificationRequest): Future[UpdateNotificationResponse] =
+    @inline def updateNotificationFuture(params: UpdateNotificationRequest): Future[UpdateNotificationResponse] =
       service.updateNotification(params).promise.toFuture
-    def updateSubscriberFuture(params: UpdateSubscriberRequest): Future[UpdateSubscriberResponse] =
+    @inline def updateSubscriberFuture(params: UpdateSubscriberRequest): Future[UpdateSubscriberResponse] =
       service.updateSubscriber(params).promise.toFuture
   }
 }

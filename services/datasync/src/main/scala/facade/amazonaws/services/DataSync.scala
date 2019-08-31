@@ -70,59 +70,60 @@ package object datasync {
 
   implicit final class DataSyncOps(private val service: DataSync) extends AnyVal {
 
-    def cancelTaskExecutionFuture(params: CancelTaskExecutionRequest): Future[CancelTaskExecutionResponse] =
+    @inline def cancelTaskExecutionFuture(params: CancelTaskExecutionRequest): Future[CancelTaskExecutionResponse] =
       service.cancelTaskExecution(params).promise.toFuture
-    def createAgentFuture(params: CreateAgentRequest): Future[CreateAgentResponse] =
+    @inline def createAgentFuture(params: CreateAgentRequest): Future[CreateAgentResponse] =
       service.createAgent(params).promise.toFuture
-    def createLocationEfsFuture(params: CreateLocationEfsRequest): Future[CreateLocationEfsResponse] =
+    @inline def createLocationEfsFuture(params: CreateLocationEfsRequest): Future[CreateLocationEfsResponse] =
       service.createLocationEfs(params).promise.toFuture
-    def createLocationNfsFuture(params: CreateLocationNfsRequest): Future[CreateLocationNfsResponse] =
+    @inline def createLocationNfsFuture(params: CreateLocationNfsRequest): Future[CreateLocationNfsResponse] =
       service.createLocationNfs(params).promise.toFuture
-    def createLocationS3Future(params: CreateLocationS3Request): Future[CreateLocationS3Response] =
+    @inline def createLocationS3Future(params: CreateLocationS3Request): Future[CreateLocationS3Response] =
       service.createLocationS3(params).promise.toFuture
-    def createLocationSmbFuture(params: CreateLocationSmbRequest): Future[CreateLocationSmbResponse] =
+    @inline def createLocationSmbFuture(params: CreateLocationSmbRequest): Future[CreateLocationSmbResponse] =
       service.createLocationSmb(params).promise.toFuture
-    def createTaskFuture(params: CreateTaskRequest): Future[CreateTaskResponse] =
+    @inline def createTaskFuture(params: CreateTaskRequest): Future[CreateTaskResponse] =
       service.createTask(params).promise.toFuture
-    def deleteAgentFuture(params: DeleteAgentRequest): Future[DeleteAgentResponse] =
+    @inline def deleteAgentFuture(params: DeleteAgentRequest): Future[DeleteAgentResponse] =
       service.deleteAgent(params).promise.toFuture
-    def deleteLocationFuture(params: DeleteLocationRequest): Future[DeleteLocationResponse] =
+    @inline def deleteLocationFuture(params: DeleteLocationRequest): Future[DeleteLocationResponse] =
       service.deleteLocation(params).promise.toFuture
-    def deleteTaskFuture(params: DeleteTaskRequest): Future[DeleteTaskResponse] =
+    @inline def deleteTaskFuture(params: DeleteTaskRequest): Future[DeleteTaskResponse] =
       service.deleteTask(params).promise.toFuture
-    def describeAgentFuture(params: DescribeAgentRequest): Future[DescribeAgentResponse] =
+    @inline def describeAgentFuture(params: DescribeAgentRequest): Future[DescribeAgentResponse] =
       service.describeAgent(params).promise.toFuture
-    def describeLocationEfsFuture(params: DescribeLocationEfsRequest): Future[DescribeLocationEfsResponse] =
+    @inline def describeLocationEfsFuture(params: DescribeLocationEfsRequest): Future[DescribeLocationEfsResponse] =
       service.describeLocationEfs(params).promise.toFuture
-    def describeLocationNfsFuture(params: DescribeLocationNfsRequest): Future[DescribeLocationNfsResponse] =
+    @inline def describeLocationNfsFuture(params: DescribeLocationNfsRequest): Future[DescribeLocationNfsResponse] =
       service.describeLocationNfs(params).promise.toFuture
-    def describeLocationS3Future(params: DescribeLocationS3Request): Future[DescribeLocationS3Response] =
+    @inline def describeLocationS3Future(params: DescribeLocationS3Request): Future[DescribeLocationS3Response] =
       service.describeLocationS3(params).promise.toFuture
-    def describeLocationSmbFuture(params: DescribeLocationSmbRequest): Future[DescribeLocationSmbResponse] =
+    @inline def describeLocationSmbFuture(params: DescribeLocationSmbRequest): Future[DescribeLocationSmbResponse] =
       service.describeLocationSmb(params).promise.toFuture
-    def describeTaskExecutionFuture(params: DescribeTaskExecutionRequest): Future[DescribeTaskExecutionResponse] =
-      service.describeTaskExecution(params).promise.toFuture
-    def describeTaskFuture(params: DescribeTaskRequest): Future[DescribeTaskResponse] =
+    @inline def describeTaskExecutionFuture(
+        params: DescribeTaskExecutionRequest
+    ): Future[DescribeTaskExecutionResponse] = service.describeTaskExecution(params).promise.toFuture
+    @inline def describeTaskFuture(params: DescribeTaskRequest): Future[DescribeTaskResponse] =
       service.describeTask(params).promise.toFuture
-    def listAgentsFuture(params: ListAgentsRequest): Future[ListAgentsResponse] =
+    @inline def listAgentsFuture(params: ListAgentsRequest): Future[ListAgentsResponse] =
       service.listAgents(params).promise.toFuture
-    def listLocationsFuture(params: ListLocationsRequest): Future[ListLocationsResponse] =
+    @inline def listLocationsFuture(params: ListLocationsRequest): Future[ListLocationsResponse] =
       service.listLocations(params).promise.toFuture
-    def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] =
+    @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] =
       service.listTagsForResource(params).promise.toFuture
-    def listTaskExecutionsFuture(params: ListTaskExecutionsRequest): Future[ListTaskExecutionsResponse] =
+    @inline def listTaskExecutionsFuture(params: ListTaskExecutionsRequest): Future[ListTaskExecutionsResponse] =
       service.listTaskExecutions(params).promise.toFuture
-    def listTasksFuture(params: ListTasksRequest): Future[ListTasksResponse] =
+    @inline def listTasksFuture(params: ListTasksRequest): Future[ListTasksResponse] =
       service.listTasks(params).promise.toFuture
-    def startTaskExecutionFuture(params: StartTaskExecutionRequest): Future[StartTaskExecutionResponse] =
+    @inline def startTaskExecutionFuture(params: StartTaskExecutionRequest): Future[StartTaskExecutionResponse] =
       service.startTaskExecution(params).promise.toFuture
-    def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] =
+    @inline def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] =
       service.tagResource(params).promise.toFuture
-    def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] =
+    @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] =
       service.untagResource(params).promise.toFuture
-    def updateAgentFuture(params: UpdateAgentRequest): Future[UpdateAgentResponse] =
+    @inline def updateAgentFuture(params: UpdateAgentRequest): Future[UpdateAgentResponse] =
       service.updateAgent(params).promise.toFuture
-    def updateTaskFuture(params: UpdateTaskRequest): Future[UpdateTaskResponse] =
+    @inline def updateTaskFuture(params: UpdateTaskRequest): Future[UpdateTaskResponse] =
       service.updateTask(params).promise.toFuture
   }
 }

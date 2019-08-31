@@ -41,76 +41,80 @@ package object appsync {
 
   implicit final class AppSyncOps(private val service: AppSync) extends AnyVal {
 
-    def createApiKeyFuture(params: CreateApiKeyRequest): Future[CreateApiKeyResponse] =
+    @inline def createApiKeyFuture(params: CreateApiKeyRequest): Future[CreateApiKeyResponse] =
       service.createApiKey(params).promise.toFuture
-    def createDataSourceFuture(params: CreateDataSourceRequest): Future[CreateDataSourceResponse] =
+    @inline def createDataSourceFuture(params: CreateDataSourceRequest): Future[CreateDataSourceResponse] =
       service.createDataSource(params).promise.toFuture
-    def createFunctionFuture(params: CreateFunctionRequest): Future[CreateFunctionResponse] =
+    @inline def createFunctionFuture(params: CreateFunctionRequest): Future[CreateFunctionResponse] =
       service.createFunction(params).promise.toFuture
-    def createGraphqlApiFuture(params: CreateGraphqlApiRequest): Future[CreateGraphqlApiResponse] =
+    @inline def createGraphqlApiFuture(params: CreateGraphqlApiRequest): Future[CreateGraphqlApiResponse] =
       service.createGraphqlApi(params).promise.toFuture
-    def createResolverFuture(params: CreateResolverRequest): Future[CreateResolverResponse] =
+    @inline def createResolverFuture(params: CreateResolverRequest): Future[CreateResolverResponse] =
       service.createResolver(params).promise.toFuture
-    def createTypeFuture(params: CreateTypeRequest): Future[CreateTypeResponse] =
+    @inline def createTypeFuture(params: CreateTypeRequest): Future[CreateTypeResponse] =
       service.createType(params).promise.toFuture
-    def deleteApiKeyFuture(params: DeleteApiKeyRequest): Future[DeleteApiKeyResponse] =
+    @inline def deleteApiKeyFuture(params: DeleteApiKeyRequest): Future[DeleteApiKeyResponse] =
       service.deleteApiKey(params).promise.toFuture
-    def deleteDataSourceFuture(params: DeleteDataSourceRequest): Future[DeleteDataSourceResponse] =
+    @inline def deleteDataSourceFuture(params: DeleteDataSourceRequest): Future[DeleteDataSourceResponse] =
       service.deleteDataSource(params).promise.toFuture
-    def deleteFunctionFuture(params: DeleteFunctionRequest): Future[DeleteFunctionResponse] =
+    @inline def deleteFunctionFuture(params: DeleteFunctionRequest): Future[DeleteFunctionResponse] =
       service.deleteFunction(params).promise.toFuture
-    def deleteGraphqlApiFuture(params: DeleteGraphqlApiRequest): Future[DeleteGraphqlApiResponse] =
+    @inline def deleteGraphqlApiFuture(params: DeleteGraphqlApiRequest): Future[DeleteGraphqlApiResponse] =
       service.deleteGraphqlApi(params).promise.toFuture
-    def deleteResolverFuture(params: DeleteResolverRequest): Future[DeleteResolverResponse] =
+    @inline def deleteResolverFuture(params: DeleteResolverRequest): Future[DeleteResolverResponse] =
       service.deleteResolver(params).promise.toFuture
-    def deleteTypeFuture(params: DeleteTypeRequest): Future[DeleteTypeResponse] =
+    @inline def deleteTypeFuture(params: DeleteTypeRequest): Future[DeleteTypeResponse] =
       service.deleteType(params).promise.toFuture
-    def getDataSourceFuture(params: GetDataSourceRequest): Future[GetDataSourceResponse] =
+    @inline def getDataSourceFuture(params: GetDataSourceRequest): Future[GetDataSourceResponse] =
       service.getDataSource(params).promise.toFuture
-    def getFunctionFuture(params: GetFunctionRequest): Future[GetFunctionResponse] =
+    @inline def getFunctionFuture(params: GetFunctionRequest): Future[GetFunctionResponse] =
       service.getFunction(params).promise.toFuture
-    def getGraphqlApiFuture(params: GetGraphqlApiRequest): Future[GetGraphqlApiResponse] =
+    @inline def getGraphqlApiFuture(params: GetGraphqlApiRequest): Future[GetGraphqlApiResponse] =
       service.getGraphqlApi(params).promise.toFuture
-    def getIntrospectionSchemaFuture(params: GetIntrospectionSchemaRequest): Future[GetIntrospectionSchemaResponse] =
-      service.getIntrospectionSchema(params).promise.toFuture
-    def getResolverFuture(params: GetResolverRequest): Future[GetResolverResponse] =
+    @inline def getIntrospectionSchemaFuture(
+        params: GetIntrospectionSchemaRequest
+    ): Future[GetIntrospectionSchemaResponse] = service.getIntrospectionSchema(params).promise.toFuture
+    @inline def getResolverFuture(params: GetResolverRequest): Future[GetResolverResponse] =
       service.getResolver(params).promise.toFuture
-    def getSchemaCreationStatusFuture(params: GetSchemaCreationStatusRequest): Future[GetSchemaCreationStatusResponse] =
-      service.getSchemaCreationStatus(params).promise.toFuture
-    def getTypeFuture(params: GetTypeRequest): Future[GetTypeResponse] = service.getType(params).promise.toFuture
-    def listApiKeysFuture(params: ListApiKeysRequest): Future[ListApiKeysResponse] =
+    @inline def getSchemaCreationStatusFuture(
+        params: GetSchemaCreationStatusRequest
+    ): Future[GetSchemaCreationStatusResponse] = service.getSchemaCreationStatus(params).promise.toFuture
+    @inline def getTypeFuture(params: GetTypeRequest): Future[GetTypeResponse] =
+      service.getType(params).promise.toFuture
+    @inline def listApiKeysFuture(params: ListApiKeysRequest): Future[ListApiKeysResponse] =
       service.listApiKeys(params).promise.toFuture
-    def listDataSourcesFuture(params: ListDataSourcesRequest): Future[ListDataSourcesResponse] =
+    @inline def listDataSourcesFuture(params: ListDataSourcesRequest): Future[ListDataSourcesResponse] =
       service.listDataSources(params).promise.toFuture
-    def listFunctionsFuture(params: ListFunctionsRequest): Future[ListFunctionsResponse] =
+    @inline def listFunctionsFuture(params: ListFunctionsRequest): Future[ListFunctionsResponse] =
       service.listFunctions(params).promise.toFuture
-    def listGraphqlApisFuture(params: ListGraphqlApisRequest): Future[ListGraphqlApisResponse] =
+    @inline def listGraphqlApisFuture(params: ListGraphqlApisRequest): Future[ListGraphqlApisResponse] =
       service.listGraphqlApis(params).promise.toFuture
-    def listResolversByFunctionFuture(params: ListResolversByFunctionRequest): Future[ListResolversByFunctionResponse] =
-      service.listResolversByFunction(params).promise.toFuture
-    def listResolversFuture(params: ListResolversRequest): Future[ListResolversResponse] =
+    @inline def listResolversByFunctionFuture(
+        params: ListResolversByFunctionRequest
+    ): Future[ListResolversByFunctionResponse] = service.listResolversByFunction(params).promise.toFuture
+    @inline def listResolversFuture(params: ListResolversRequest): Future[ListResolversResponse] =
       service.listResolvers(params).promise.toFuture
-    def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] =
+    @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] =
       service.listTagsForResource(params).promise.toFuture
-    def listTypesFuture(params: ListTypesRequest): Future[ListTypesResponse] =
+    @inline def listTypesFuture(params: ListTypesRequest): Future[ListTypesResponse] =
       service.listTypes(params).promise.toFuture
-    def startSchemaCreationFuture(params: StartSchemaCreationRequest): Future[StartSchemaCreationResponse] =
+    @inline def startSchemaCreationFuture(params: StartSchemaCreationRequest): Future[StartSchemaCreationResponse] =
       service.startSchemaCreation(params).promise.toFuture
-    def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] =
+    @inline def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] =
       service.tagResource(params).promise.toFuture
-    def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] =
+    @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] =
       service.untagResource(params).promise.toFuture
-    def updateApiKeyFuture(params: UpdateApiKeyRequest): Future[UpdateApiKeyResponse] =
+    @inline def updateApiKeyFuture(params: UpdateApiKeyRequest): Future[UpdateApiKeyResponse] =
       service.updateApiKey(params).promise.toFuture
-    def updateDataSourceFuture(params: UpdateDataSourceRequest): Future[UpdateDataSourceResponse] =
+    @inline def updateDataSourceFuture(params: UpdateDataSourceRequest): Future[UpdateDataSourceResponse] =
       service.updateDataSource(params).promise.toFuture
-    def updateFunctionFuture(params: UpdateFunctionRequest): Future[UpdateFunctionResponse] =
+    @inline def updateFunctionFuture(params: UpdateFunctionRequest): Future[UpdateFunctionResponse] =
       service.updateFunction(params).promise.toFuture
-    def updateGraphqlApiFuture(params: UpdateGraphqlApiRequest): Future[UpdateGraphqlApiResponse] =
+    @inline def updateGraphqlApiFuture(params: UpdateGraphqlApiRequest): Future[UpdateGraphqlApiResponse] =
       service.updateGraphqlApi(params).promise.toFuture
-    def updateResolverFuture(params: UpdateResolverRequest): Future[UpdateResolverResponse] =
+    @inline def updateResolverFuture(params: UpdateResolverRequest): Future[UpdateResolverResponse] =
       service.updateResolver(params).promise.toFuture
-    def updateTypeFuture(params: UpdateTypeRequest): Future[UpdateTypeResponse] =
+    @inline def updateTypeFuture(params: UpdateTypeRequest): Future[UpdateTypeResponse] =
       service.updateType(params).promise.toFuture
   }
 }

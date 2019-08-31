@@ -53,38 +53,40 @@ package object iotevents {
 
   implicit final class IoTEventsOps(private val service: IoTEvents) extends AnyVal {
 
-    def createDetectorModelFuture(params: CreateDetectorModelRequest): Future[CreateDetectorModelResponse] =
+    @inline def createDetectorModelFuture(params: CreateDetectorModelRequest): Future[CreateDetectorModelResponse] =
       service.createDetectorModel(params).promise.toFuture
-    def createInputFuture(params: CreateInputRequest): Future[CreateInputResponse] =
+    @inline def createInputFuture(params: CreateInputRequest): Future[CreateInputResponse] =
       service.createInput(params).promise.toFuture
-    def deleteDetectorModelFuture(params: DeleteDetectorModelRequest): Future[DeleteDetectorModelResponse] =
+    @inline def deleteDetectorModelFuture(params: DeleteDetectorModelRequest): Future[DeleteDetectorModelResponse] =
       service.deleteDetectorModel(params).promise.toFuture
-    def deleteInputFuture(params: DeleteInputRequest): Future[DeleteInputResponse] =
+    @inline def deleteInputFuture(params: DeleteInputRequest): Future[DeleteInputResponse] =
       service.deleteInput(params).promise.toFuture
-    def describeDetectorModelFuture(params: DescribeDetectorModelRequest): Future[DescribeDetectorModelResponse] =
-      service.describeDetectorModel(params).promise.toFuture
-    def describeInputFuture(params: DescribeInputRequest): Future[DescribeInputResponse] =
+    @inline def describeDetectorModelFuture(
+        params: DescribeDetectorModelRequest
+    ): Future[DescribeDetectorModelResponse] = service.describeDetectorModel(params).promise.toFuture
+    @inline def describeInputFuture(params: DescribeInputRequest): Future[DescribeInputResponse] =
       service.describeInput(params).promise.toFuture
-    def describeLoggingOptionsFuture(params: DescribeLoggingOptionsRequest): Future[DescribeLoggingOptionsResponse] =
-      service.describeLoggingOptions(params).promise.toFuture
-    def listDetectorModelVersionsFuture(
+    @inline def describeLoggingOptionsFuture(
+        params: DescribeLoggingOptionsRequest
+    ): Future[DescribeLoggingOptionsResponse] = service.describeLoggingOptions(params).promise.toFuture
+    @inline def listDetectorModelVersionsFuture(
         params: ListDetectorModelVersionsRequest
     ): Future[ListDetectorModelVersionsResponse] = service.listDetectorModelVersions(params).promise.toFuture
-    def listDetectorModelsFuture(params: ListDetectorModelsRequest): Future[ListDetectorModelsResponse] =
+    @inline def listDetectorModelsFuture(params: ListDetectorModelsRequest): Future[ListDetectorModelsResponse] =
       service.listDetectorModels(params).promise.toFuture
-    def listInputsFuture(params: ListInputsRequest): Future[ListInputsResponse] =
+    @inline def listInputsFuture(params: ListInputsRequest): Future[ListInputsResponse] =
       service.listInputs(params).promise.toFuture
-    def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] =
+    @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] =
       service.listTagsForResource(params).promise.toFuture
-    def putLoggingOptionsFuture(params: PutLoggingOptionsRequest): Future[js.Object] =
+    @inline def putLoggingOptionsFuture(params: PutLoggingOptionsRequest): Future[js.Object] =
       service.putLoggingOptions(params).promise.toFuture
-    def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] =
+    @inline def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] =
       service.tagResource(params).promise.toFuture
-    def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] =
+    @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] =
       service.untagResource(params).promise.toFuture
-    def updateDetectorModelFuture(params: UpdateDetectorModelRequest): Future[UpdateDetectorModelResponse] =
+    @inline def updateDetectorModelFuture(params: UpdateDetectorModelRequest): Future[UpdateDetectorModelResponse] =
       service.updateDetectorModel(params).promise.toFuture
-    def updateInputFuture(params: UpdateInputRequest): Future[UpdateInputResponse] =
+    @inline def updateInputFuture(params: UpdateInputRequest): Future[UpdateInputResponse] =
       service.updateInput(params).promise.toFuture
   }
 }

@@ -177,219 +177,233 @@ package object alexaforbusiness {
 
   implicit final class AlexaForBusinessOps(private val service: AlexaForBusiness) extends AnyVal {
 
-    def approveSkillFuture(params: ApproveSkillRequest): Future[ApproveSkillResponse] =
+    @inline def approveSkillFuture(params: ApproveSkillRequest): Future[ApproveSkillResponse] =
       service.approveSkill(params).promise.toFuture
-    def associateContactWithAddressBookFuture(
+    @inline def associateContactWithAddressBookFuture(
         params: AssociateContactWithAddressBookRequest
     ): Future[AssociateContactWithAddressBookResponse] =
       service.associateContactWithAddressBook(params).promise.toFuture
-    def associateDeviceWithNetworkProfileFuture(
+    @inline def associateDeviceWithNetworkProfileFuture(
         params: AssociateDeviceWithNetworkProfileRequest
     ): Future[AssociateDeviceWithNetworkProfileResponse] =
       service.associateDeviceWithNetworkProfile(params).promise.toFuture
-    def associateDeviceWithRoomFuture(params: AssociateDeviceWithRoomRequest): Future[AssociateDeviceWithRoomResponse] =
-      service.associateDeviceWithRoom(params).promise.toFuture
-    def associateSkillGroupWithRoomFuture(
+    @inline def associateDeviceWithRoomFuture(
+        params: AssociateDeviceWithRoomRequest
+    ): Future[AssociateDeviceWithRoomResponse] = service.associateDeviceWithRoom(params).promise.toFuture
+    @inline def associateSkillGroupWithRoomFuture(
         params: AssociateSkillGroupWithRoomRequest
     ): Future[AssociateSkillGroupWithRoomResponse] = service.associateSkillGroupWithRoom(params).promise.toFuture
-    def associateSkillWithSkillGroupFuture(
+    @inline def associateSkillWithSkillGroupFuture(
         params: AssociateSkillWithSkillGroupRequest
     ): Future[AssociateSkillWithSkillGroupResponse] = service.associateSkillWithSkillGroup(params).promise.toFuture
-    def associateSkillWithUsersFuture(params: AssociateSkillWithUsersRequest): Future[AssociateSkillWithUsersResponse] =
-      service.associateSkillWithUsers(params).promise.toFuture
-    def createAddressBookFuture(params: CreateAddressBookRequest): Future[CreateAddressBookResponse] =
+    @inline def associateSkillWithUsersFuture(
+        params: AssociateSkillWithUsersRequest
+    ): Future[AssociateSkillWithUsersResponse] = service.associateSkillWithUsers(params).promise.toFuture
+    @inline def createAddressBookFuture(params: CreateAddressBookRequest): Future[CreateAddressBookResponse] =
       service.createAddressBook(params).promise.toFuture
-    def createBusinessReportScheduleFuture(
+    @inline def createBusinessReportScheduleFuture(
         params: CreateBusinessReportScheduleRequest
     ): Future[CreateBusinessReportScheduleResponse] = service.createBusinessReportSchedule(params).promise.toFuture
-    def createConferenceProviderFuture(
+    @inline def createConferenceProviderFuture(
         params: CreateConferenceProviderRequest
     ): Future[CreateConferenceProviderResponse] = service.createConferenceProvider(params).promise.toFuture
-    def createContactFuture(params: CreateContactRequest): Future[CreateContactResponse] =
+    @inline def createContactFuture(params: CreateContactRequest): Future[CreateContactResponse] =
       service.createContact(params).promise.toFuture
-    def createGatewayGroupFuture(params: CreateGatewayGroupRequest): Future[CreateGatewayGroupResponse] =
+    @inline def createGatewayGroupFuture(params: CreateGatewayGroupRequest): Future[CreateGatewayGroupResponse] =
       service.createGatewayGroup(params).promise.toFuture
-    def createNetworkProfileFuture(params: CreateNetworkProfileRequest): Future[CreateNetworkProfileResponse] =
+    @inline def createNetworkProfileFuture(params: CreateNetworkProfileRequest): Future[CreateNetworkProfileResponse] =
       service.createNetworkProfile(params).promise.toFuture
-    def createProfileFuture(params: CreateProfileRequest): Future[CreateProfileResponse] =
+    @inline def createProfileFuture(params: CreateProfileRequest): Future[CreateProfileResponse] =
       service.createProfile(params).promise.toFuture
-    def createRoomFuture(params: CreateRoomRequest): Future[CreateRoomResponse] =
+    @inline def createRoomFuture(params: CreateRoomRequest): Future[CreateRoomResponse] =
       service.createRoom(params).promise.toFuture
-    def createSkillGroupFuture(params: CreateSkillGroupRequest): Future[CreateSkillGroupResponse] =
+    @inline def createSkillGroupFuture(params: CreateSkillGroupRequest): Future[CreateSkillGroupResponse] =
       service.createSkillGroup(params).promise.toFuture
-    def createUserFuture(params: CreateUserRequest): Future[CreateUserResponse] =
+    @inline def createUserFuture(params: CreateUserRequest): Future[CreateUserResponse] =
       service.createUser(params).promise.toFuture
-    def deleteAddressBookFuture(params: DeleteAddressBookRequest): Future[DeleteAddressBookResponse] =
+    @inline def deleteAddressBookFuture(params: DeleteAddressBookRequest): Future[DeleteAddressBookResponse] =
       service.deleteAddressBook(params).promise.toFuture
-    def deleteBusinessReportScheduleFuture(
+    @inline def deleteBusinessReportScheduleFuture(
         params: DeleteBusinessReportScheduleRequest
     ): Future[DeleteBusinessReportScheduleResponse] = service.deleteBusinessReportSchedule(params).promise.toFuture
-    def deleteConferenceProviderFuture(
+    @inline def deleteConferenceProviderFuture(
         params: DeleteConferenceProviderRequest
     ): Future[DeleteConferenceProviderResponse] = service.deleteConferenceProvider(params).promise.toFuture
-    def deleteContactFuture(params: DeleteContactRequest): Future[DeleteContactResponse] =
+    @inline def deleteContactFuture(params: DeleteContactRequest): Future[DeleteContactResponse] =
       service.deleteContact(params).promise.toFuture
-    def deleteDeviceFuture(params: DeleteDeviceRequest): Future[DeleteDeviceResponse] =
+    @inline def deleteDeviceFuture(params: DeleteDeviceRequest): Future[DeleteDeviceResponse] =
       service.deleteDevice(params).promise.toFuture
-    def deleteDeviceUsageDataFuture(params: DeleteDeviceUsageDataRequest): Future[DeleteDeviceUsageDataResponse] =
-      service.deleteDeviceUsageData(params).promise.toFuture
-    def deleteGatewayGroupFuture(params: DeleteGatewayGroupRequest): Future[DeleteGatewayGroupResponse] =
+    @inline def deleteDeviceUsageDataFuture(
+        params: DeleteDeviceUsageDataRequest
+    ): Future[DeleteDeviceUsageDataResponse] = service.deleteDeviceUsageData(params).promise.toFuture
+    @inline def deleteGatewayGroupFuture(params: DeleteGatewayGroupRequest): Future[DeleteGatewayGroupResponse] =
       service.deleteGatewayGroup(params).promise.toFuture
-    def deleteNetworkProfileFuture(params: DeleteNetworkProfileRequest): Future[DeleteNetworkProfileResponse] =
+    @inline def deleteNetworkProfileFuture(params: DeleteNetworkProfileRequest): Future[DeleteNetworkProfileResponse] =
       service.deleteNetworkProfile(params).promise.toFuture
-    def deleteProfileFuture(params: DeleteProfileRequest): Future[DeleteProfileResponse] =
+    @inline def deleteProfileFuture(params: DeleteProfileRequest): Future[DeleteProfileResponse] =
       service.deleteProfile(params).promise.toFuture
-    def deleteRoomFuture(params: DeleteRoomRequest): Future[DeleteRoomResponse] =
+    @inline def deleteRoomFuture(params: DeleteRoomRequest): Future[DeleteRoomResponse] =
       service.deleteRoom(params).promise.toFuture
-    def deleteRoomSkillParameterFuture(
+    @inline def deleteRoomSkillParameterFuture(
         params: DeleteRoomSkillParameterRequest
     ): Future[DeleteRoomSkillParameterResponse] = service.deleteRoomSkillParameter(params).promise.toFuture
-    def deleteSkillAuthorizationFuture(
+    @inline def deleteSkillAuthorizationFuture(
         params: DeleteSkillAuthorizationRequest
     ): Future[DeleteSkillAuthorizationResponse] = service.deleteSkillAuthorization(params).promise.toFuture
-    def deleteSkillGroupFuture(params: DeleteSkillGroupRequest): Future[DeleteSkillGroupResponse] =
+    @inline def deleteSkillGroupFuture(params: DeleteSkillGroupRequest): Future[DeleteSkillGroupResponse] =
       service.deleteSkillGroup(params).promise.toFuture
-    def deleteUserFuture(params: DeleteUserRequest): Future[DeleteUserResponse] =
+    @inline def deleteUserFuture(params: DeleteUserRequest): Future[DeleteUserResponse] =
       service.deleteUser(params).promise.toFuture
-    def disassociateContactFromAddressBookFuture(
+    @inline def disassociateContactFromAddressBookFuture(
         params: DisassociateContactFromAddressBookRequest
     ): Future[DisassociateContactFromAddressBookResponse] =
       service.disassociateContactFromAddressBook(params).promise.toFuture
-    def disassociateDeviceFromRoomFuture(
+    @inline def disassociateDeviceFromRoomFuture(
         params: DisassociateDeviceFromRoomRequest
     ): Future[DisassociateDeviceFromRoomResponse] = service.disassociateDeviceFromRoom(params).promise.toFuture
-    def disassociateSkillFromSkillGroupFuture(
+    @inline def disassociateSkillFromSkillGroupFuture(
         params: DisassociateSkillFromSkillGroupRequest
     ): Future[DisassociateSkillFromSkillGroupResponse] =
       service.disassociateSkillFromSkillGroup(params).promise.toFuture
-    def disassociateSkillFromUsersFuture(
+    @inline def disassociateSkillFromUsersFuture(
         params: DisassociateSkillFromUsersRequest
     ): Future[DisassociateSkillFromUsersResponse] = service.disassociateSkillFromUsers(params).promise.toFuture
-    def disassociateSkillGroupFromRoomFuture(
+    @inline def disassociateSkillGroupFromRoomFuture(
         params: DisassociateSkillGroupFromRoomRequest
     ): Future[DisassociateSkillGroupFromRoomResponse] = service.disassociateSkillGroupFromRoom(params).promise.toFuture
-    def forgetSmartHomeAppliancesFuture(
+    @inline def forgetSmartHomeAppliancesFuture(
         params: ForgetSmartHomeAppliancesRequest
     ): Future[ForgetSmartHomeAppliancesResponse] = service.forgetSmartHomeAppliances(params).promise.toFuture
-    def getAddressBookFuture(params: GetAddressBookRequest): Future[GetAddressBookResponse] =
+    @inline def getAddressBookFuture(params: GetAddressBookRequest): Future[GetAddressBookResponse] =
       service.getAddressBook(params).promise.toFuture
-    def getConferencePreferenceFuture(params: GetConferencePreferenceRequest): Future[GetConferencePreferenceResponse] =
-      service.getConferencePreference(params).promise.toFuture
-    def getConferenceProviderFuture(params: GetConferenceProviderRequest): Future[GetConferenceProviderResponse] =
-      service.getConferenceProvider(params).promise.toFuture
-    def getContactFuture(params: GetContactRequest): Future[GetContactResponse] =
+    @inline def getConferencePreferenceFuture(
+        params: GetConferencePreferenceRequest
+    ): Future[GetConferencePreferenceResponse] = service.getConferencePreference(params).promise.toFuture
+    @inline def getConferenceProviderFuture(
+        params: GetConferenceProviderRequest
+    ): Future[GetConferenceProviderResponse] = service.getConferenceProvider(params).promise.toFuture
+    @inline def getContactFuture(params: GetContactRequest): Future[GetContactResponse] =
       service.getContact(params).promise.toFuture
-    def getDeviceFuture(params: GetDeviceRequest): Future[GetDeviceResponse] =
+    @inline def getDeviceFuture(params: GetDeviceRequest): Future[GetDeviceResponse] =
       service.getDevice(params).promise.toFuture
-    def getGatewayFuture(params: GetGatewayRequest): Future[GetGatewayResponse] =
+    @inline def getGatewayFuture(params: GetGatewayRequest): Future[GetGatewayResponse] =
       service.getGateway(params).promise.toFuture
-    def getGatewayGroupFuture(params: GetGatewayGroupRequest): Future[GetGatewayGroupResponse] =
+    @inline def getGatewayGroupFuture(params: GetGatewayGroupRequest): Future[GetGatewayGroupResponse] =
       service.getGatewayGroup(params).promise.toFuture
-    def getInvitationConfigurationFuture(
+    @inline def getInvitationConfigurationFuture(
         params: GetInvitationConfigurationRequest
     ): Future[GetInvitationConfigurationResponse] = service.getInvitationConfiguration(params).promise.toFuture
-    def getNetworkProfileFuture(params: GetNetworkProfileRequest): Future[GetNetworkProfileResponse] =
+    @inline def getNetworkProfileFuture(params: GetNetworkProfileRequest): Future[GetNetworkProfileResponse] =
       service.getNetworkProfile(params).promise.toFuture
-    def getProfileFuture(params: GetProfileRequest): Future[GetProfileResponse] =
+    @inline def getProfileFuture(params: GetProfileRequest): Future[GetProfileResponse] =
       service.getProfile(params).promise.toFuture
-    def getRoomFuture(params: GetRoomRequest): Future[GetRoomResponse] = service.getRoom(params).promise.toFuture
-    def getRoomSkillParameterFuture(params: GetRoomSkillParameterRequest): Future[GetRoomSkillParameterResponse] =
-      service.getRoomSkillParameter(params).promise.toFuture
-    def getSkillGroupFuture(params: GetSkillGroupRequest): Future[GetSkillGroupResponse] =
+    @inline def getRoomFuture(params: GetRoomRequest): Future[GetRoomResponse] =
+      service.getRoom(params).promise.toFuture
+    @inline def getRoomSkillParameterFuture(
+        params: GetRoomSkillParameterRequest
+    ): Future[GetRoomSkillParameterResponse] = service.getRoomSkillParameter(params).promise.toFuture
+    @inline def getSkillGroupFuture(params: GetSkillGroupRequest): Future[GetSkillGroupResponse] =
       service.getSkillGroup(params).promise.toFuture
-    def listBusinessReportSchedulesFuture(
+    @inline def listBusinessReportSchedulesFuture(
         params: ListBusinessReportSchedulesRequest
     ): Future[ListBusinessReportSchedulesResponse] = service.listBusinessReportSchedules(params).promise.toFuture
-    def listConferenceProvidersFuture(params: ListConferenceProvidersRequest): Future[ListConferenceProvidersResponse] =
-      service.listConferenceProviders(params).promise.toFuture
-    def listDeviceEventsFuture(params: ListDeviceEventsRequest): Future[ListDeviceEventsResponse] =
+    @inline def listConferenceProvidersFuture(
+        params: ListConferenceProvidersRequest
+    ): Future[ListConferenceProvidersResponse] = service.listConferenceProviders(params).promise.toFuture
+    @inline def listDeviceEventsFuture(params: ListDeviceEventsRequest): Future[ListDeviceEventsResponse] =
       service.listDeviceEvents(params).promise.toFuture
-    def listGatewayGroupsFuture(params: ListGatewayGroupsRequest): Future[ListGatewayGroupsResponse] =
+    @inline def listGatewayGroupsFuture(params: ListGatewayGroupsRequest): Future[ListGatewayGroupsResponse] =
       service.listGatewayGroups(params).promise.toFuture
-    def listGatewaysFuture(params: ListGatewaysRequest): Future[ListGatewaysResponse] =
+    @inline def listGatewaysFuture(params: ListGatewaysRequest): Future[ListGatewaysResponse] =
       service.listGateways(params).promise.toFuture
-    def listSkillsFuture(params: ListSkillsRequest): Future[ListSkillsResponse] =
+    @inline def listSkillsFuture(params: ListSkillsRequest): Future[ListSkillsResponse] =
       service.listSkills(params).promise.toFuture
-    def listSkillsStoreCategoriesFuture(
+    @inline def listSkillsStoreCategoriesFuture(
         params: ListSkillsStoreCategoriesRequest
     ): Future[ListSkillsStoreCategoriesResponse] = service.listSkillsStoreCategories(params).promise.toFuture
-    def listSkillsStoreSkillsByCategoryFuture(
+    @inline def listSkillsStoreSkillsByCategoryFuture(
         params: ListSkillsStoreSkillsByCategoryRequest
     ): Future[ListSkillsStoreSkillsByCategoryResponse] =
       service.listSkillsStoreSkillsByCategory(params).promise.toFuture
-    def listSmartHomeAppliancesFuture(params: ListSmartHomeAppliancesRequest): Future[ListSmartHomeAppliancesResponse] =
-      service.listSmartHomeAppliances(params).promise.toFuture
-    def listTagsFuture(params: ListTagsRequest): Future[ListTagsResponse] = service.listTags(params).promise.toFuture
-    def putConferencePreferenceFuture(params: PutConferencePreferenceRequest): Future[PutConferencePreferenceResponse] =
-      service.putConferencePreference(params).promise.toFuture
-    def putInvitationConfigurationFuture(
+    @inline def listSmartHomeAppliancesFuture(
+        params: ListSmartHomeAppliancesRequest
+    ): Future[ListSmartHomeAppliancesResponse] = service.listSmartHomeAppliances(params).promise.toFuture
+    @inline def listTagsFuture(params: ListTagsRequest): Future[ListTagsResponse] =
+      service.listTags(params).promise.toFuture
+    @inline def putConferencePreferenceFuture(
+        params: PutConferencePreferenceRequest
+    ): Future[PutConferencePreferenceResponse] = service.putConferencePreference(params).promise.toFuture
+    @inline def putInvitationConfigurationFuture(
         params: PutInvitationConfigurationRequest
     ): Future[PutInvitationConfigurationResponse] = service.putInvitationConfiguration(params).promise.toFuture
-    def putRoomSkillParameterFuture(params: PutRoomSkillParameterRequest): Future[PutRoomSkillParameterResponse] =
-      service.putRoomSkillParameter(params).promise.toFuture
-    def putSkillAuthorizationFuture(params: PutSkillAuthorizationRequest): Future[PutSkillAuthorizationResponse] =
-      service.putSkillAuthorization(params).promise.toFuture
-    def registerAVSDeviceFuture(params: RegisterAVSDeviceRequest): Future[RegisterAVSDeviceResponse] =
+    @inline def putRoomSkillParameterFuture(
+        params: PutRoomSkillParameterRequest
+    ): Future[PutRoomSkillParameterResponse] = service.putRoomSkillParameter(params).promise.toFuture
+    @inline def putSkillAuthorizationFuture(
+        params: PutSkillAuthorizationRequest
+    ): Future[PutSkillAuthorizationResponse] = service.putSkillAuthorization(params).promise.toFuture
+    @inline def registerAVSDeviceFuture(params: RegisterAVSDeviceRequest): Future[RegisterAVSDeviceResponse] =
       service.registerAVSDevice(params).promise.toFuture
-    def rejectSkillFuture(params: RejectSkillRequest): Future[RejectSkillResponse] =
+    @inline def rejectSkillFuture(params: RejectSkillRequest): Future[RejectSkillResponse] =
       service.rejectSkill(params).promise.toFuture
-    def resolveRoomFuture(params: ResolveRoomRequest): Future[ResolveRoomResponse] =
+    @inline def resolveRoomFuture(params: ResolveRoomRequest): Future[ResolveRoomResponse] =
       service.resolveRoom(params).promise.toFuture
-    def revokeInvitationFuture(params: RevokeInvitationRequest): Future[RevokeInvitationResponse] =
+    @inline def revokeInvitationFuture(params: RevokeInvitationRequest): Future[RevokeInvitationResponse] =
       service.revokeInvitation(params).promise.toFuture
-    def searchAddressBooksFuture(params: SearchAddressBooksRequest): Future[SearchAddressBooksResponse] =
+    @inline def searchAddressBooksFuture(params: SearchAddressBooksRequest): Future[SearchAddressBooksResponse] =
       service.searchAddressBooks(params).promise.toFuture
-    def searchContactsFuture(params: SearchContactsRequest): Future[SearchContactsResponse] =
+    @inline def searchContactsFuture(params: SearchContactsRequest): Future[SearchContactsResponse] =
       service.searchContacts(params).promise.toFuture
-    def searchDevicesFuture(params: SearchDevicesRequest): Future[SearchDevicesResponse] =
+    @inline def searchDevicesFuture(params: SearchDevicesRequest): Future[SearchDevicesResponse] =
       service.searchDevices(params).promise.toFuture
-    def searchNetworkProfilesFuture(params: SearchNetworkProfilesRequest): Future[SearchNetworkProfilesResponse] =
-      service.searchNetworkProfiles(params).promise.toFuture
-    def searchProfilesFuture(params: SearchProfilesRequest): Future[SearchProfilesResponse] =
+    @inline def searchNetworkProfilesFuture(
+        params: SearchNetworkProfilesRequest
+    ): Future[SearchNetworkProfilesResponse] = service.searchNetworkProfiles(params).promise.toFuture
+    @inline def searchProfilesFuture(params: SearchProfilesRequest): Future[SearchProfilesResponse] =
       service.searchProfiles(params).promise.toFuture
-    def searchRoomsFuture(params: SearchRoomsRequest): Future[SearchRoomsResponse] =
+    @inline def searchRoomsFuture(params: SearchRoomsRequest): Future[SearchRoomsResponse] =
       service.searchRooms(params).promise.toFuture
-    def searchSkillGroupsFuture(params: SearchSkillGroupsRequest): Future[SearchSkillGroupsResponse] =
+    @inline def searchSkillGroupsFuture(params: SearchSkillGroupsRequest): Future[SearchSkillGroupsResponse] =
       service.searchSkillGroups(params).promise.toFuture
-    def searchUsersFuture(params: SearchUsersRequest): Future[SearchUsersResponse] =
+    @inline def searchUsersFuture(params: SearchUsersRequest): Future[SearchUsersResponse] =
       service.searchUsers(params).promise.toFuture
-    def sendAnnouncementFuture(params: SendAnnouncementRequest): Future[SendAnnouncementResponse] =
+    @inline def sendAnnouncementFuture(params: SendAnnouncementRequest): Future[SendAnnouncementResponse] =
       service.sendAnnouncement(params).promise.toFuture
-    def sendInvitationFuture(params: SendInvitationRequest): Future[SendInvitationResponse] =
+    @inline def sendInvitationFuture(params: SendInvitationRequest): Future[SendInvitationResponse] =
       service.sendInvitation(params).promise.toFuture
-    def startDeviceSyncFuture(params: StartDeviceSyncRequest): Future[StartDeviceSyncResponse] =
+    @inline def startDeviceSyncFuture(params: StartDeviceSyncRequest): Future[StartDeviceSyncResponse] =
       service.startDeviceSync(params).promise.toFuture
-    def startSmartHomeApplianceDiscoveryFuture(
+    @inline def startSmartHomeApplianceDiscoveryFuture(
         params: StartSmartHomeApplianceDiscoveryRequest
     ): Future[StartSmartHomeApplianceDiscoveryResponse] =
       service.startSmartHomeApplianceDiscovery(params).promise.toFuture
-    def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] =
+    @inline def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] =
       service.tagResource(params).promise.toFuture
-    def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] =
+    @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] =
       service.untagResource(params).promise.toFuture
-    def updateAddressBookFuture(params: UpdateAddressBookRequest): Future[UpdateAddressBookResponse] =
+    @inline def updateAddressBookFuture(params: UpdateAddressBookRequest): Future[UpdateAddressBookResponse] =
       service.updateAddressBook(params).promise.toFuture
-    def updateBusinessReportScheduleFuture(
+    @inline def updateBusinessReportScheduleFuture(
         params: UpdateBusinessReportScheduleRequest
     ): Future[UpdateBusinessReportScheduleResponse] = service.updateBusinessReportSchedule(params).promise.toFuture
-    def updateConferenceProviderFuture(
+    @inline def updateConferenceProviderFuture(
         params: UpdateConferenceProviderRequest
     ): Future[UpdateConferenceProviderResponse] = service.updateConferenceProvider(params).promise.toFuture
-    def updateContactFuture(params: UpdateContactRequest): Future[UpdateContactResponse] =
+    @inline def updateContactFuture(params: UpdateContactRequest): Future[UpdateContactResponse] =
       service.updateContact(params).promise.toFuture
-    def updateDeviceFuture(params: UpdateDeviceRequest): Future[UpdateDeviceResponse] =
+    @inline def updateDeviceFuture(params: UpdateDeviceRequest): Future[UpdateDeviceResponse] =
       service.updateDevice(params).promise.toFuture
-    def updateGatewayFuture(params: UpdateGatewayRequest): Future[UpdateGatewayResponse] =
+    @inline def updateGatewayFuture(params: UpdateGatewayRequest): Future[UpdateGatewayResponse] =
       service.updateGateway(params).promise.toFuture
-    def updateGatewayGroupFuture(params: UpdateGatewayGroupRequest): Future[UpdateGatewayGroupResponse] =
+    @inline def updateGatewayGroupFuture(params: UpdateGatewayGroupRequest): Future[UpdateGatewayGroupResponse] =
       service.updateGatewayGroup(params).promise.toFuture
-    def updateNetworkProfileFuture(params: UpdateNetworkProfileRequest): Future[UpdateNetworkProfileResponse] =
+    @inline def updateNetworkProfileFuture(params: UpdateNetworkProfileRequest): Future[UpdateNetworkProfileResponse] =
       service.updateNetworkProfile(params).promise.toFuture
-    def updateProfileFuture(params: UpdateProfileRequest): Future[UpdateProfileResponse] =
+    @inline def updateProfileFuture(params: UpdateProfileRequest): Future[UpdateProfileResponse] =
       service.updateProfile(params).promise.toFuture
-    def updateRoomFuture(params: UpdateRoomRequest): Future[UpdateRoomResponse] =
+    @inline def updateRoomFuture(params: UpdateRoomRequest): Future[UpdateRoomResponse] =
       service.updateRoom(params).promise.toFuture
-    def updateSkillGroupFuture(params: UpdateSkillGroupRequest): Future[UpdateSkillGroupResponse] =
+    @inline def updateSkillGroupFuture(params: UpdateSkillGroupRequest): Future[UpdateSkillGroupResponse] =
       service.updateSkillGroup(params).promise.toFuture
   }
 }

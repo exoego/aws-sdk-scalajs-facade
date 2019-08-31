@@ -37,16 +37,19 @@ package object dlm {
 
   implicit final class DLMOps(private val service: DLM) extends AnyVal {
 
-    def createLifecyclePolicyFuture(params: CreateLifecyclePolicyRequest): Future[CreateLifecyclePolicyResponse] =
-      service.createLifecyclePolicy(params).promise.toFuture
-    def deleteLifecyclePolicyFuture(params: DeleteLifecyclePolicyRequest): Future[DeleteLifecyclePolicyResponse] =
-      service.deleteLifecyclePolicy(params).promise.toFuture
-    def getLifecyclePoliciesFuture(params: GetLifecyclePoliciesRequest): Future[GetLifecyclePoliciesResponse] =
+    @inline def createLifecyclePolicyFuture(
+        params: CreateLifecyclePolicyRequest
+    ): Future[CreateLifecyclePolicyResponse] = service.createLifecyclePolicy(params).promise.toFuture
+    @inline def deleteLifecyclePolicyFuture(
+        params: DeleteLifecyclePolicyRequest
+    ): Future[DeleteLifecyclePolicyResponse] = service.deleteLifecyclePolicy(params).promise.toFuture
+    @inline def getLifecyclePoliciesFuture(params: GetLifecyclePoliciesRequest): Future[GetLifecyclePoliciesResponse] =
       service.getLifecyclePolicies(params).promise.toFuture
-    def getLifecyclePolicyFuture(params: GetLifecyclePolicyRequest): Future[GetLifecyclePolicyResponse] =
+    @inline def getLifecyclePolicyFuture(params: GetLifecyclePolicyRequest): Future[GetLifecyclePolicyResponse] =
       service.getLifecyclePolicy(params).promise.toFuture
-    def updateLifecyclePolicyFuture(params: UpdateLifecyclePolicyRequest): Future[UpdateLifecyclePolicyResponse] =
-      service.updateLifecyclePolicy(params).promise.toFuture
+    @inline def updateLifecyclePolicyFuture(
+        params: UpdateLifecyclePolicyRequest
+    ): Future[UpdateLifecyclePolicyResponse] = service.updateLifecyclePolicy(params).promise.toFuture
   }
 }
 

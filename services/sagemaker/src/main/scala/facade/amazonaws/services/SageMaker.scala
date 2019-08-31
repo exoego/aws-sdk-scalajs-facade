@@ -282,172 +282,181 @@ package object sagemaker {
 
   implicit final class SageMakerOps(private val service: SageMaker) extends AnyVal {
 
-    def addTagsFuture(params: AddTagsInput): Future[AddTagsOutput] = service.addTags(params).promise.toFuture
-    def createAlgorithmFuture(params: CreateAlgorithmInput): Future[CreateAlgorithmOutput] =
+    @inline def addTagsFuture(params: AddTagsInput): Future[AddTagsOutput] = service.addTags(params).promise.toFuture
+    @inline def createAlgorithmFuture(params: CreateAlgorithmInput): Future[CreateAlgorithmOutput] =
       service.createAlgorithm(params).promise.toFuture
-    def createCodeRepositoryFuture(params: CreateCodeRepositoryInput): Future[CreateCodeRepositoryOutput] =
+    @inline def createCodeRepositoryFuture(params: CreateCodeRepositoryInput): Future[CreateCodeRepositoryOutput] =
       service.createCodeRepository(params).promise.toFuture
-    def createCompilationJobFuture(params: CreateCompilationJobRequest): Future[CreateCompilationJobResponse] =
+    @inline def createCompilationJobFuture(params: CreateCompilationJobRequest): Future[CreateCompilationJobResponse] =
       service.createCompilationJob(params).promise.toFuture
-    def createEndpointConfigFuture(params: CreateEndpointConfigInput): Future[CreateEndpointConfigOutput] =
+    @inline def createEndpointConfigFuture(params: CreateEndpointConfigInput): Future[CreateEndpointConfigOutput] =
       service.createEndpointConfig(params).promise.toFuture
-    def createEndpointFuture(params: CreateEndpointInput): Future[CreateEndpointOutput] =
+    @inline def createEndpointFuture(params: CreateEndpointInput): Future[CreateEndpointOutput] =
       service.createEndpoint(params).promise.toFuture
-    def createHyperParameterTuningJobFuture(
+    @inline def createHyperParameterTuningJobFuture(
         params: CreateHyperParameterTuningJobRequest
     ): Future[CreateHyperParameterTuningJobResponse] = service.createHyperParameterTuningJob(params).promise.toFuture
-    def createLabelingJobFuture(params: CreateLabelingJobRequest): Future[CreateLabelingJobResponse] =
+    @inline def createLabelingJobFuture(params: CreateLabelingJobRequest): Future[CreateLabelingJobResponse] =
       service.createLabelingJob(params).promise.toFuture
-    def createModelFuture(params: CreateModelInput): Future[CreateModelOutput] =
+    @inline def createModelFuture(params: CreateModelInput): Future[CreateModelOutput] =
       service.createModel(params).promise.toFuture
-    def createModelPackageFuture(params: CreateModelPackageInput): Future[CreateModelPackageOutput] =
+    @inline def createModelPackageFuture(params: CreateModelPackageInput): Future[CreateModelPackageOutput] =
       service.createModelPackage(params).promise.toFuture
-    def createNotebookInstanceFuture(params: CreateNotebookInstanceInput): Future[CreateNotebookInstanceOutput] =
-      service.createNotebookInstance(params).promise.toFuture
-    def createNotebookInstanceLifecycleConfigFuture(
+    @inline def createNotebookInstanceFuture(
+        params: CreateNotebookInstanceInput
+    ): Future[CreateNotebookInstanceOutput] = service.createNotebookInstance(params).promise.toFuture
+    @inline def createNotebookInstanceLifecycleConfigFuture(
         params: CreateNotebookInstanceLifecycleConfigInput
     ): Future[CreateNotebookInstanceLifecycleConfigOutput] =
       service.createNotebookInstanceLifecycleConfig(params).promise.toFuture
-    def createPresignedNotebookInstanceUrlFuture(
+    @inline def createPresignedNotebookInstanceUrlFuture(
         params: CreatePresignedNotebookInstanceUrlInput
     ): Future[CreatePresignedNotebookInstanceUrlOutput] =
       service.createPresignedNotebookInstanceUrl(params).promise.toFuture
-    def createTrainingJobFuture(params: CreateTrainingJobRequest): Future[CreateTrainingJobResponse] =
+    @inline def createTrainingJobFuture(params: CreateTrainingJobRequest): Future[CreateTrainingJobResponse] =
       service.createTrainingJob(params).promise.toFuture
-    def createTransformJobFuture(params: CreateTransformJobRequest): Future[CreateTransformJobResponse] =
+    @inline def createTransformJobFuture(params: CreateTransformJobRequest): Future[CreateTransformJobResponse] =
       service.createTransformJob(params).promise.toFuture
-    def createWorkteamFuture(params: CreateWorkteamRequest): Future[CreateWorkteamResponse] =
+    @inline def createWorkteamFuture(params: CreateWorkteamRequest): Future[CreateWorkteamResponse] =
       service.createWorkteam(params).promise.toFuture
-    def deleteAlgorithmFuture(params: DeleteAlgorithmInput): Future[js.Object] =
+    @inline def deleteAlgorithmFuture(params: DeleteAlgorithmInput): Future[js.Object] =
       service.deleteAlgorithm(params).promise.toFuture
-    def deleteCodeRepositoryFuture(params: DeleteCodeRepositoryInput): Future[js.Object] =
+    @inline def deleteCodeRepositoryFuture(params: DeleteCodeRepositoryInput): Future[js.Object] =
       service.deleteCodeRepository(params).promise.toFuture
-    def deleteEndpointConfigFuture(params: DeleteEndpointConfigInput): Future[js.Object] =
+    @inline def deleteEndpointConfigFuture(params: DeleteEndpointConfigInput): Future[js.Object] =
       service.deleteEndpointConfig(params).promise.toFuture
-    def deleteEndpointFuture(params: DeleteEndpointInput): Future[js.Object] =
+    @inline def deleteEndpointFuture(params: DeleteEndpointInput): Future[js.Object] =
       service.deleteEndpoint(params).promise.toFuture
-    def deleteModelFuture(params: DeleteModelInput): Future[js.Object] = service.deleteModel(params).promise.toFuture
-    def deleteModelPackageFuture(params: DeleteModelPackageInput): Future[js.Object] =
+    @inline def deleteModelFuture(params: DeleteModelInput): Future[js.Object] =
+      service.deleteModel(params).promise.toFuture
+    @inline def deleteModelPackageFuture(params: DeleteModelPackageInput): Future[js.Object] =
       service.deleteModelPackage(params).promise.toFuture
-    def deleteNotebookInstanceFuture(params: DeleteNotebookInstanceInput): Future[js.Object] =
+    @inline def deleteNotebookInstanceFuture(params: DeleteNotebookInstanceInput): Future[js.Object] =
       service.deleteNotebookInstance(params).promise.toFuture
-    def deleteNotebookInstanceLifecycleConfigFuture(
+    @inline def deleteNotebookInstanceLifecycleConfigFuture(
         params: DeleteNotebookInstanceLifecycleConfigInput
     ): Future[js.Object] = service.deleteNotebookInstanceLifecycleConfig(params).promise.toFuture
-    def deleteTagsFuture(params: DeleteTagsInput): Future[DeleteTagsOutput] =
+    @inline def deleteTagsFuture(params: DeleteTagsInput): Future[DeleteTagsOutput] =
       service.deleteTags(params).promise.toFuture
-    def deleteWorkteamFuture(params: DeleteWorkteamRequest): Future[DeleteWorkteamResponse] =
+    @inline def deleteWorkteamFuture(params: DeleteWorkteamRequest): Future[DeleteWorkteamResponse] =
       service.deleteWorkteam(params).promise.toFuture
-    def describeAlgorithmFuture(params: DescribeAlgorithmInput): Future[DescribeAlgorithmOutput] =
+    @inline def describeAlgorithmFuture(params: DescribeAlgorithmInput): Future[DescribeAlgorithmOutput] =
       service.describeAlgorithm(params).promise.toFuture
-    def describeCodeRepositoryFuture(params: DescribeCodeRepositoryInput): Future[DescribeCodeRepositoryOutput] =
-      service.describeCodeRepository(params).promise.toFuture
-    def describeCompilationJobFuture(params: DescribeCompilationJobRequest): Future[DescribeCompilationJobResponse] =
-      service.describeCompilationJob(params).promise.toFuture
-    def describeEndpointConfigFuture(params: DescribeEndpointConfigInput): Future[DescribeEndpointConfigOutput] =
-      service.describeEndpointConfig(params).promise.toFuture
-    def describeEndpointFuture(params: DescribeEndpointInput): Future[DescribeEndpointOutput] =
+    @inline def describeCodeRepositoryFuture(
+        params: DescribeCodeRepositoryInput
+    ): Future[DescribeCodeRepositoryOutput] = service.describeCodeRepository(params).promise.toFuture
+    @inline def describeCompilationJobFuture(
+        params: DescribeCompilationJobRequest
+    ): Future[DescribeCompilationJobResponse] = service.describeCompilationJob(params).promise.toFuture
+    @inline def describeEndpointConfigFuture(
+        params: DescribeEndpointConfigInput
+    ): Future[DescribeEndpointConfigOutput] = service.describeEndpointConfig(params).promise.toFuture
+    @inline def describeEndpointFuture(params: DescribeEndpointInput): Future[DescribeEndpointOutput] =
       service.describeEndpoint(params).promise.toFuture
-    def describeHyperParameterTuningJobFuture(
+    @inline def describeHyperParameterTuningJobFuture(
         params: DescribeHyperParameterTuningJobRequest
     ): Future[DescribeHyperParameterTuningJobResponse] =
       service.describeHyperParameterTuningJob(params).promise.toFuture
-    def describeLabelingJobFuture(params: DescribeLabelingJobRequest): Future[DescribeLabelingJobResponse] =
+    @inline def describeLabelingJobFuture(params: DescribeLabelingJobRequest): Future[DescribeLabelingJobResponse] =
       service.describeLabelingJob(params).promise.toFuture
-    def describeModelFuture(params: DescribeModelInput): Future[DescribeModelOutput] =
+    @inline def describeModelFuture(params: DescribeModelInput): Future[DescribeModelOutput] =
       service.describeModel(params).promise.toFuture
-    def describeModelPackageFuture(params: DescribeModelPackageInput): Future[DescribeModelPackageOutput] =
+    @inline def describeModelPackageFuture(params: DescribeModelPackageInput): Future[DescribeModelPackageOutput] =
       service.describeModelPackage(params).promise.toFuture
-    def describeNotebookInstanceFuture(params: DescribeNotebookInstanceInput): Future[DescribeNotebookInstanceOutput] =
-      service.describeNotebookInstance(params).promise.toFuture
-    def describeNotebookInstanceLifecycleConfigFuture(
+    @inline def describeNotebookInstanceFuture(
+        params: DescribeNotebookInstanceInput
+    ): Future[DescribeNotebookInstanceOutput] = service.describeNotebookInstance(params).promise.toFuture
+    @inline def describeNotebookInstanceLifecycleConfigFuture(
         params: DescribeNotebookInstanceLifecycleConfigInput
     ): Future[DescribeNotebookInstanceLifecycleConfigOutput] =
       service.describeNotebookInstanceLifecycleConfig(params).promise.toFuture
-    def describeSubscribedWorkteamFuture(
+    @inline def describeSubscribedWorkteamFuture(
         params: DescribeSubscribedWorkteamRequest
     ): Future[DescribeSubscribedWorkteamResponse] = service.describeSubscribedWorkteam(params).promise.toFuture
-    def describeTrainingJobFuture(params: DescribeTrainingJobRequest): Future[DescribeTrainingJobResponse] =
+    @inline def describeTrainingJobFuture(params: DescribeTrainingJobRequest): Future[DescribeTrainingJobResponse] =
       service.describeTrainingJob(params).promise.toFuture
-    def describeTransformJobFuture(params: DescribeTransformJobRequest): Future[DescribeTransformJobResponse] =
+    @inline def describeTransformJobFuture(params: DescribeTransformJobRequest): Future[DescribeTransformJobResponse] =
       service.describeTransformJob(params).promise.toFuture
-    def describeWorkteamFuture(params: DescribeWorkteamRequest): Future[DescribeWorkteamResponse] =
+    @inline def describeWorkteamFuture(params: DescribeWorkteamRequest): Future[DescribeWorkteamResponse] =
       service.describeWorkteam(params).promise.toFuture
-    def getSearchSuggestionsFuture(params: GetSearchSuggestionsRequest): Future[GetSearchSuggestionsResponse] =
+    @inline def getSearchSuggestionsFuture(params: GetSearchSuggestionsRequest): Future[GetSearchSuggestionsResponse] =
       service.getSearchSuggestions(params).promise.toFuture
-    def listAlgorithmsFuture(params: ListAlgorithmsInput): Future[ListAlgorithmsOutput] =
+    @inline def listAlgorithmsFuture(params: ListAlgorithmsInput): Future[ListAlgorithmsOutput] =
       service.listAlgorithms(params).promise.toFuture
-    def listCodeRepositoriesFuture(params: ListCodeRepositoriesInput): Future[ListCodeRepositoriesOutput] =
+    @inline def listCodeRepositoriesFuture(params: ListCodeRepositoriesInput): Future[ListCodeRepositoriesOutput] =
       service.listCodeRepositories(params).promise.toFuture
-    def listCompilationJobsFuture(params: ListCompilationJobsRequest): Future[ListCompilationJobsResponse] =
+    @inline def listCompilationJobsFuture(params: ListCompilationJobsRequest): Future[ListCompilationJobsResponse] =
       service.listCompilationJobs(params).promise.toFuture
-    def listEndpointConfigsFuture(params: ListEndpointConfigsInput): Future[ListEndpointConfigsOutput] =
+    @inline def listEndpointConfigsFuture(params: ListEndpointConfigsInput): Future[ListEndpointConfigsOutput] =
       service.listEndpointConfigs(params).promise.toFuture
-    def listEndpointsFuture(params: ListEndpointsInput): Future[ListEndpointsOutput] =
+    @inline def listEndpointsFuture(params: ListEndpointsInput): Future[ListEndpointsOutput] =
       service.listEndpoints(params).promise.toFuture
-    def listHyperParameterTuningJobsFuture(
+    @inline def listHyperParameterTuningJobsFuture(
         params: ListHyperParameterTuningJobsRequest
     ): Future[ListHyperParameterTuningJobsResponse] = service.listHyperParameterTuningJobs(params).promise.toFuture
-    def listLabelingJobsForWorkteamFuture(
+    @inline def listLabelingJobsForWorkteamFuture(
         params: ListLabelingJobsForWorkteamRequest
     ): Future[ListLabelingJobsForWorkteamResponse] = service.listLabelingJobsForWorkteam(params).promise.toFuture
-    def listLabelingJobsFuture(params: ListLabelingJobsRequest): Future[ListLabelingJobsResponse] =
+    @inline def listLabelingJobsFuture(params: ListLabelingJobsRequest): Future[ListLabelingJobsResponse] =
       service.listLabelingJobs(params).promise.toFuture
-    def listModelPackagesFuture(params: ListModelPackagesInput): Future[ListModelPackagesOutput] =
+    @inline def listModelPackagesFuture(params: ListModelPackagesInput): Future[ListModelPackagesOutput] =
       service.listModelPackages(params).promise.toFuture
-    def listModelsFuture(params: ListModelsInput): Future[ListModelsOutput] =
+    @inline def listModelsFuture(params: ListModelsInput): Future[ListModelsOutput] =
       service.listModels(params).promise.toFuture
-    def listNotebookInstanceLifecycleConfigsFuture(
+    @inline def listNotebookInstanceLifecycleConfigsFuture(
         params: ListNotebookInstanceLifecycleConfigsInput
     ): Future[ListNotebookInstanceLifecycleConfigsOutput] =
       service.listNotebookInstanceLifecycleConfigs(params).promise.toFuture
-    def listNotebookInstancesFuture(params: ListNotebookInstancesInput): Future[ListNotebookInstancesOutput] =
+    @inline def listNotebookInstancesFuture(params: ListNotebookInstancesInput): Future[ListNotebookInstancesOutput] =
       service.listNotebookInstances(params).promise.toFuture
-    def listSubscribedWorkteamsFuture(params: ListSubscribedWorkteamsRequest): Future[ListSubscribedWorkteamsResponse] =
-      service.listSubscribedWorkteams(params).promise.toFuture
-    def listTagsFuture(params: ListTagsInput): Future[ListTagsOutput] = service.listTags(params).promise.toFuture
-    def listTrainingJobsForHyperParameterTuningJobFuture(
+    @inline def listSubscribedWorkteamsFuture(
+        params: ListSubscribedWorkteamsRequest
+    ): Future[ListSubscribedWorkteamsResponse] = service.listSubscribedWorkteams(params).promise.toFuture
+    @inline def listTagsFuture(params: ListTagsInput): Future[ListTagsOutput] =
+      service.listTags(params).promise.toFuture
+    @inline def listTrainingJobsForHyperParameterTuningJobFuture(
         params: ListTrainingJobsForHyperParameterTuningJobRequest
     ): Future[ListTrainingJobsForHyperParameterTuningJobResponse] =
       service.listTrainingJobsForHyperParameterTuningJob(params).promise.toFuture
-    def listTrainingJobsFuture(params: ListTrainingJobsRequest): Future[ListTrainingJobsResponse] =
+    @inline def listTrainingJobsFuture(params: ListTrainingJobsRequest): Future[ListTrainingJobsResponse] =
       service.listTrainingJobs(params).promise.toFuture
-    def listTransformJobsFuture(params: ListTransformJobsRequest): Future[ListTransformJobsResponse] =
+    @inline def listTransformJobsFuture(params: ListTransformJobsRequest): Future[ListTransformJobsResponse] =
       service.listTransformJobs(params).promise.toFuture
-    def listWorkteamsFuture(params: ListWorkteamsRequest): Future[ListWorkteamsResponse] =
+    @inline def listWorkteamsFuture(params: ListWorkteamsRequest): Future[ListWorkteamsResponse] =
       service.listWorkteams(params).promise.toFuture
-    def renderUiTemplateFuture(params: RenderUiTemplateRequest): Future[RenderUiTemplateResponse] =
+    @inline def renderUiTemplateFuture(params: RenderUiTemplateRequest): Future[RenderUiTemplateResponse] =
       service.renderUiTemplate(params).promise.toFuture
-    def searchFuture(params: SearchRequest): Future[SearchResponse] = service.search(params).promise.toFuture
-    def startNotebookInstanceFuture(params: StartNotebookInstanceInput): Future[js.Object] =
+    @inline def searchFuture(params: SearchRequest): Future[SearchResponse] = service.search(params).promise.toFuture
+    @inline def startNotebookInstanceFuture(params: StartNotebookInstanceInput): Future[js.Object] =
       service.startNotebookInstance(params).promise.toFuture
-    def stopCompilationJobFuture(params: StopCompilationJobRequest): Future[js.Object] =
+    @inline def stopCompilationJobFuture(params: StopCompilationJobRequest): Future[js.Object] =
       service.stopCompilationJob(params).promise.toFuture
-    def stopHyperParameterTuningJobFuture(params: StopHyperParameterTuningJobRequest): Future[js.Object] =
+    @inline def stopHyperParameterTuningJobFuture(params: StopHyperParameterTuningJobRequest): Future[js.Object] =
       service.stopHyperParameterTuningJob(params).promise.toFuture
-    def stopLabelingJobFuture(params: StopLabelingJobRequest): Future[js.Object] =
+    @inline def stopLabelingJobFuture(params: StopLabelingJobRequest): Future[js.Object] =
       service.stopLabelingJob(params).promise.toFuture
-    def stopNotebookInstanceFuture(params: StopNotebookInstanceInput): Future[js.Object] =
+    @inline def stopNotebookInstanceFuture(params: StopNotebookInstanceInput): Future[js.Object] =
       service.stopNotebookInstance(params).promise.toFuture
-    def stopTrainingJobFuture(params: StopTrainingJobRequest): Future[js.Object] =
+    @inline def stopTrainingJobFuture(params: StopTrainingJobRequest): Future[js.Object] =
       service.stopTrainingJob(params).promise.toFuture
-    def stopTransformJobFuture(params: StopTransformJobRequest): Future[js.Object] =
+    @inline def stopTransformJobFuture(params: StopTransformJobRequest): Future[js.Object] =
       service.stopTransformJob(params).promise.toFuture
-    def updateCodeRepositoryFuture(params: UpdateCodeRepositoryInput): Future[UpdateCodeRepositoryOutput] =
+    @inline def updateCodeRepositoryFuture(params: UpdateCodeRepositoryInput): Future[UpdateCodeRepositoryOutput] =
       service.updateCodeRepository(params).promise.toFuture
-    def updateEndpointFuture(params: UpdateEndpointInput): Future[UpdateEndpointOutput] =
+    @inline def updateEndpointFuture(params: UpdateEndpointInput): Future[UpdateEndpointOutput] =
       service.updateEndpoint(params).promise.toFuture
-    def updateEndpointWeightsAndCapacitiesFuture(
+    @inline def updateEndpointWeightsAndCapacitiesFuture(
         params: UpdateEndpointWeightsAndCapacitiesInput
     ): Future[UpdateEndpointWeightsAndCapacitiesOutput] =
       service.updateEndpointWeightsAndCapacities(params).promise.toFuture
-    def updateNotebookInstanceFuture(params: UpdateNotebookInstanceInput): Future[UpdateNotebookInstanceOutput] =
-      service.updateNotebookInstance(params).promise.toFuture
-    def updateNotebookInstanceLifecycleConfigFuture(
+    @inline def updateNotebookInstanceFuture(
+        params: UpdateNotebookInstanceInput
+    ): Future[UpdateNotebookInstanceOutput] = service.updateNotebookInstance(params).promise.toFuture
+    @inline def updateNotebookInstanceLifecycleConfigFuture(
         params: UpdateNotebookInstanceLifecycleConfigInput
     ): Future[UpdateNotebookInstanceLifecycleConfigOutput] =
       service.updateNotebookInstanceLifecycleConfig(params).promise.toFuture
-    def updateWorkteamFuture(params: UpdateWorkteamRequest): Future[UpdateWorkteamResponse] =
+    @inline def updateWorkteamFuture(params: UpdateWorkteamRequest): Future[UpdateWorkteamResponse] =
       service.updateWorkteam(params).promise.toFuture
   }
 }

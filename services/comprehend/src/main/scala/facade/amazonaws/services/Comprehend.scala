@@ -63,127 +63,135 @@ package object comprehend {
 
   implicit final class ComprehendOps(private val service: Comprehend) extends AnyVal {
 
-    def batchDetectDominantLanguageFuture(
+    @inline def batchDetectDominantLanguageFuture(
         params: BatchDetectDominantLanguageRequest
     ): Future[BatchDetectDominantLanguageResponse] = service.batchDetectDominantLanguage(params).promise.toFuture
-    def batchDetectEntitiesFuture(params: BatchDetectEntitiesRequest): Future[BatchDetectEntitiesResponse] =
+    @inline def batchDetectEntitiesFuture(params: BatchDetectEntitiesRequest): Future[BatchDetectEntitiesResponse] =
       service.batchDetectEntities(params).promise.toFuture
-    def batchDetectKeyPhrasesFuture(params: BatchDetectKeyPhrasesRequest): Future[BatchDetectKeyPhrasesResponse] =
-      service.batchDetectKeyPhrases(params).promise.toFuture
-    def batchDetectSentimentFuture(params: BatchDetectSentimentRequest): Future[BatchDetectSentimentResponse] =
+    @inline def batchDetectKeyPhrasesFuture(
+        params: BatchDetectKeyPhrasesRequest
+    ): Future[BatchDetectKeyPhrasesResponse] = service.batchDetectKeyPhrases(params).promise.toFuture
+    @inline def batchDetectSentimentFuture(params: BatchDetectSentimentRequest): Future[BatchDetectSentimentResponse] =
       service.batchDetectSentiment(params).promise.toFuture
-    def batchDetectSyntaxFuture(params: BatchDetectSyntaxRequest): Future[BatchDetectSyntaxResponse] =
+    @inline def batchDetectSyntaxFuture(params: BatchDetectSyntaxRequest): Future[BatchDetectSyntaxResponse] =
       service.batchDetectSyntax(params).promise.toFuture
-    def createDocumentClassifierFuture(
+    @inline def createDocumentClassifierFuture(
         params: CreateDocumentClassifierRequest
     ): Future[CreateDocumentClassifierResponse] = service.createDocumentClassifier(params).promise.toFuture
-    def createEntityRecognizerFuture(params: CreateEntityRecognizerRequest): Future[CreateEntityRecognizerResponse] =
-      service.createEntityRecognizer(params).promise.toFuture
-    def deleteDocumentClassifierFuture(
+    @inline def createEntityRecognizerFuture(
+        params: CreateEntityRecognizerRequest
+    ): Future[CreateEntityRecognizerResponse] = service.createEntityRecognizer(params).promise.toFuture
+    @inline def deleteDocumentClassifierFuture(
         params: DeleteDocumentClassifierRequest
     ): Future[DeleteDocumentClassifierResponse] = service.deleteDocumentClassifier(params).promise.toFuture
-    def deleteEntityRecognizerFuture(params: DeleteEntityRecognizerRequest): Future[DeleteEntityRecognizerResponse] =
-      service.deleteEntityRecognizer(params).promise.toFuture
-    def describeDocumentClassificationJobFuture(
+    @inline def deleteEntityRecognizerFuture(
+        params: DeleteEntityRecognizerRequest
+    ): Future[DeleteEntityRecognizerResponse] = service.deleteEntityRecognizer(params).promise.toFuture
+    @inline def describeDocumentClassificationJobFuture(
         params: DescribeDocumentClassificationJobRequest
     ): Future[DescribeDocumentClassificationJobResponse] =
       service.describeDocumentClassificationJob(params).promise.toFuture
-    def describeDocumentClassifierFuture(
+    @inline def describeDocumentClassifierFuture(
         params: DescribeDocumentClassifierRequest
     ): Future[DescribeDocumentClassifierResponse] = service.describeDocumentClassifier(params).promise.toFuture
-    def describeDominantLanguageDetectionJobFuture(
+    @inline def describeDominantLanguageDetectionJobFuture(
         params: DescribeDominantLanguageDetectionJobRequest
     ): Future[DescribeDominantLanguageDetectionJobResponse] =
       service.describeDominantLanguageDetectionJob(params).promise.toFuture
-    def describeEntitiesDetectionJobFuture(
+    @inline def describeEntitiesDetectionJobFuture(
         params: DescribeEntitiesDetectionJobRequest
     ): Future[DescribeEntitiesDetectionJobResponse] = service.describeEntitiesDetectionJob(params).promise.toFuture
-    def describeEntityRecognizerFuture(
+    @inline def describeEntityRecognizerFuture(
         params: DescribeEntityRecognizerRequest
     ): Future[DescribeEntityRecognizerResponse] = service.describeEntityRecognizer(params).promise.toFuture
-    def describeKeyPhrasesDetectionJobFuture(
+    @inline def describeKeyPhrasesDetectionJobFuture(
         params: DescribeKeyPhrasesDetectionJobRequest
     ): Future[DescribeKeyPhrasesDetectionJobResponse] = service.describeKeyPhrasesDetectionJob(params).promise.toFuture
-    def describeSentimentDetectionJobFuture(
+    @inline def describeSentimentDetectionJobFuture(
         params: DescribeSentimentDetectionJobRequest
     ): Future[DescribeSentimentDetectionJobResponse] = service.describeSentimentDetectionJob(params).promise.toFuture
-    def describeTopicsDetectionJobFuture(
+    @inline def describeTopicsDetectionJobFuture(
         params: DescribeTopicsDetectionJobRequest
     ): Future[DescribeTopicsDetectionJobResponse] = service.describeTopicsDetectionJob(params).promise.toFuture
-    def detectDominantLanguageFuture(params: DetectDominantLanguageRequest): Future[DetectDominantLanguageResponse] =
-      service.detectDominantLanguage(params).promise.toFuture
-    def detectEntitiesFuture(params: DetectEntitiesRequest): Future[DetectEntitiesResponse] =
+    @inline def detectDominantLanguageFuture(
+        params: DetectDominantLanguageRequest
+    ): Future[DetectDominantLanguageResponse] = service.detectDominantLanguage(params).promise.toFuture
+    @inline def detectEntitiesFuture(params: DetectEntitiesRequest): Future[DetectEntitiesResponse] =
       service.detectEntities(params).promise.toFuture
-    def detectKeyPhrasesFuture(params: DetectKeyPhrasesRequest): Future[DetectKeyPhrasesResponse] =
+    @inline def detectKeyPhrasesFuture(params: DetectKeyPhrasesRequest): Future[DetectKeyPhrasesResponse] =
       service.detectKeyPhrases(params).promise.toFuture
-    def detectSentimentFuture(params: DetectSentimentRequest): Future[DetectSentimentResponse] =
+    @inline def detectSentimentFuture(params: DetectSentimentRequest): Future[DetectSentimentResponse] =
       service.detectSentiment(params).promise.toFuture
-    def detectSyntaxFuture(params: DetectSyntaxRequest): Future[DetectSyntaxResponse] =
+    @inline def detectSyntaxFuture(params: DetectSyntaxRequest): Future[DetectSyntaxResponse] =
       service.detectSyntax(params).promise.toFuture
-    def listDocumentClassificationJobsFuture(
+    @inline def listDocumentClassificationJobsFuture(
         params: ListDocumentClassificationJobsRequest
     ): Future[ListDocumentClassificationJobsResponse] = service.listDocumentClassificationJobs(params).promise.toFuture
-    def listDocumentClassifiersFuture(params: ListDocumentClassifiersRequest): Future[ListDocumentClassifiersResponse] =
-      service.listDocumentClassifiers(params).promise.toFuture
-    def listDominantLanguageDetectionJobsFuture(
+    @inline def listDocumentClassifiersFuture(
+        params: ListDocumentClassifiersRequest
+    ): Future[ListDocumentClassifiersResponse] = service.listDocumentClassifiers(params).promise.toFuture
+    @inline def listDominantLanguageDetectionJobsFuture(
         params: ListDominantLanguageDetectionJobsRequest
     ): Future[ListDominantLanguageDetectionJobsResponse] =
       service.listDominantLanguageDetectionJobs(params).promise.toFuture
-    def listEntitiesDetectionJobsFuture(
+    @inline def listEntitiesDetectionJobsFuture(
         params: ListEntitiesDetectionJobsRequest
     ): Future[ListEntitiesDetectionJobsResponse] = service.listEntitiesDetectionJobs(params).promise.toFuture
-    def listEntityRecognizersFuture(params: ListEntityRecognizersRequest): Future[ListEntityRecognizersResponse] =
-      service.listEntityRecognizers(params).promise.toFuture
-    def listKeyPhrasesDetectionJobsFuture(
+    @inline def listEntityRecognizersFuture(
+        params: ListEntityRecognizersRequest
+    ): Future[ListEntityRecognizersResponse] = service.listEntityRecognizers(params).promise.toFuture
+    @inline def listKeyPhrasesDetectionJobsFuture(
         params: ListKeyPhrasesDetectionJobsRequest
     ): Future[ListKeyPhrasesDetectionJobsResponse] = service.listKeyPhrasesDetectionJobs(params).promise.toFuture
-    def listSentimentDetectionJobsFuture(
+    @inline def listSentimentDetectionJobsFuture(
         params: ListSentimentDetectionJobsRequest
     ): Future[ListSentimentDetectionJobsResponse] = service.listSentimentDetectionJobs(params).promise.toFuture
-    def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] =
+    @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] =
       service.listTagsForResource(params).promise.toFuture
-    def listTopicsDetectionJobsFuture(params: ListTopicsDetectionJobsRequest): Future[ListTopicsDetectionJobsResponse] =
-      service.listTopicsDetectionJobs(params).promise.toFuture
-    def startDocumentClassificationJobFuture(
+    @inline def listTopicsDetectionJobsFuture(
+        params: ListTopicsDetectionJobsRequest
+    ): Future[ListTopicsDetectionJobsResponse] = service.listTopicsDetectionJobs(params).promise.toFuture
+    @inline def startDocumentClassificationJobFuture(
         params: StartDocumentClassificationJobRequest
     ): Future[StartDocumentClassificationJobResponse] = service.startDocumentClassificationJob(params).promise.toFuture
-    def startDominantLanguageDetectionJobFuture(
+    @inline def startDominantLanguageDetectionJobFuture(
         params: StartDominantLanguageDetectionJobRequest
     ): Future[StartDominantLanguageDetectionJobResponse] =
       service.startDominantLanguageDetectionJob(params).promise.toFuture
-    def startEntitiesDetectionJobFuture(
+    @inline def startEntitiesDetectionJobFuture(
         params: StartEntitiesDetectionJobRequest
     ): Future[StartEntitiesDetectionJobResponse] = service.startEntitiesDetectionJob(params).promise.toFuture
-    def startKeyPhrasesDetectionJobFuture(
+    @inline def startKeyPhrasesDetectionJobFuture(
         params: StartKeyPhrasesDetectionJobRequest
     ): Future[StartKeyPhrasesDetectionJobResponse] = service.startKeyPhrasesDetectionJob(params).promise.toFuture
-    def startSentimentDetectionJobFuture(
+    @inline def startSentimentDetectionJobFuture(
         params: StartSentimentDetectionJobRequest
     ): Future[StartSentimentDetectionJobResponse] = service.startSentimentDetectionJob(params).promise.toFuture
-    def startTopicsDetectionJobFuture(params: StartTopicsDetectionJobRequest): Future[StartTopicsDetectionJobResponse] =
-      service.startTopicsDetectionJob(params).promise.toFuture
-    def stopDominantLanguageDetectionJobFuture(
+    @inline def startTopicsDetectionJobFuture(
+        params: StartTopicsDetectionJobRequest
+    ): Future[StartTopicsDetectionJobResponse] = service.startTopicsDetectionJob(params).promise.toFuture
+    @inline def stopDominantLanguageDetectionJobFuture(
         params: StopDominantLanguageDetectionJobRequest
     ): Future[StopDominantLanguageDetectionJobResponse] =
       service.stopDominantLanguageDetectionJob(params).promise.toFuture
-    def stopEntitiesDetectionJobFuture(
+    @inline def stopEntitiesDetectionJobFuture(
         params: StopEntitiesDetectionJobRequest
     ): Future[StopEntitiesDetectionJobResponse] = service.stopEntitiesDetectionJob(params).promise.toFuture
-    def stopKeyPhrasesDetectionJobFuture(
+    @inline def stopKeyPhrasesDetectionJobFuture(
         params: StopKeyPhrasesDetectionJobRequest
     ): Future[StopKeyPhrasesDetectionJobResponse] = service.stopKeyPhrasesDetectionJob(params).promise.toFuture
-    def stopSentimentDetectionJobFuture(
+    @inline def stopSentimentDetectionJobFuture(
         params: StopSentimentDetectionJobRequest
     ): Future[StopSentimentDetectionJobResponse] = service.stopSentimentDetectionJob(params).promise.toFuture
-    def stopTrainingDocumentClassifierFuture(
+    @inline def stopTrainingDocumentClassifierFuture(
         params: StopTrainingDocumentClassifierRequest
     ): Future[StopTrainingDocumentClassifierResponse] = service.stopTrainingDocumentClassifier(params).promise.toFuture
-    def stopTrainingEntityRecognizerFuture(
+    @inline def stopTrainingEntityRecognizerFuture(
         params: StopTrainingEntityRecognizerRequest
     ): Future[StopTrainingEntityRecognizerResponse] = service.stopTrainingEntityRecognizer(params).promise.toFuture
-    def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] =
+    @inline def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] =
       service.tagResource(params).promise.toFuture
-    def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] =
+    @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] =
       service.untagResource(params).promise.toFuture
   }
 }

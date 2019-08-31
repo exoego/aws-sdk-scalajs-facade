@@ -17,9 +17,10 @@ package object personalizeruntime {
 
   implicit final class PersonalizeRuntimeOps(private val service: PersonalizeRuntime) extends AnyVal {
 
-    def getPersonalizedRankingFuture(params: GetPersonalizedRankingRequest): Future[GetPersonalizedRankingResponse] =
-      service.getPersonalizedRanking(params).promise.toFuture
-    def getRecommendationsFuture(params: GetRecommendationsRequest): Future[GetRecommendationsResponse] =
+    @inline def getPersonalizedRankingFuture(
+        params: GetPersonalizedRankingRequest
+    ): Future[GetPersonalizedRankingResponse] = service.getPersonalizedRanking(params).promise.toFuture
+    @inline def getRecommendationsFuture(params: GetRecommendationsRequest): Future[GetRecommendationsResponse] =
       service.getRecommendations(params).promise.toFuture
   }
 }

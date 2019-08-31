@@ -57,41 +57,44 @@ package object support {
 
   implicit final class SupportOps(private val service: Support) extends AnyVal {
 
-    def addAttachmentsToSetFuture(params: AddAttachmentsToSetRequest): Future[AddAttachmentsToSetResponse] =
+    @inline def addAttachmentsToSetFuture(params: AddAttachmentsToSetRequest): Future[AddAttachmentsToSetResponse] =
       service.addAttachmentsToSet(params).promise.toFuture
-    def addCommunicationToCaseFuture(params: AddCommunicationToCaseRequest): Future[AddCommunicationToCaseResponse] =
-      service.addCommunicationToCase(params).promise.toFuture
-    def createCaseFuture(params: CreateCaseRequest): Future[CreateCaseResponse] =
+    @inline def addCommunicationToCaseFuture(
+        params: AddCommunicationToCaseRequest
+    ): Future[AddCommunicationToCaseResponse] = service.addCommunicationToCase(params).promise.toFuture
+    @inline def createCaseFuture(params: CreateCaseRequest): Future[CreateCaseResponse] =
       service.createCase(params).promise.toFuture
-    def describeAttachmentFuture(params: DescribeAttachmentRequest): Future[DescribeAttachmentResponse] =
+    @inline def describeAttachmentFuture(params: DescribeAttachmentRequest): Future[DescribeAttachmentResponse] =
       service.describeAttachment(params).promise.toFuture
-    def describeCasesFuture(params: DescribeCasesRequest): Future[DescribeCasesResponse] =
+    @inline def describeCasesFuture(params: DescribeCasesRequest): Future[DescribeCasesResponse] =
       service.describeCases(params).promise.toFuture
-    def describeCommunicationsFuture(params: DescribeCommunicationsRequest): Future[DescribeCommunicationsResponse] =
-      service.describeCommunications(params).promise.toFuture
-    def describeServicesFuture(params: DescribeServicesRequest): Future[DescribeServicesResponse] =
+    @inline def describeCommunicationsFuture(
+        params: DescribeCommunicationsRequest
+    ): Future[DescribeCommunicationsResponse] = service.describeCommunications(params).promise.toFuture
+    @inline def describeServicesFuture(params: DescribeServicesRequest): Future[DescribeServicesResponse] =
       service.describeServices(params).promise.toFuture
-    def describeSeverityLevelsFuture(params: DescribeSeverityLevelsRequest): Future[DescribeSeverityLevelsResponse] =
-      service.describeSeverityLevels(params).promise.toFuture
-    def describeTrustedAdvisorCheckRefreshStatusesFuture(
+    @inline def describeSeverityLevelsFuture(
+        params: DescribeSeverityLevelsRequest
+    ): Future[DescribeSeverityLevelsResponse] = service.describeSeverityLevels(params).promise.toFuture
+    @inline def describeTrustedAdvisorCheckRefreshStatusesFuture(
         params: DescribeTrustedAdvisorCheckRefreshStatusesRequest
     ): Future[DescribeTrustedAdvisorCheckRefreshStatusesResponse] =
       service.describeTrustedAdvisorCheckRefreshStatuses(params).promise.toFuture
-    def describeTrustedAdvisorCheckResultFuture(
+    @inline def describeTrustedAdvisorCheckResultFuture(
         params: DescribeTrustedAdvisorCheckResultRequest
     ): Future[DescribeTrustedAdvisorCheckResultResponse] =
       service.describeTrustedAdvisorCheckResult(params).promise.toFuture
-    def describeTrustedAdvisorCheckSummariesFuture(
+    @inline def describeTrustedAdvisorCheckSummariesFuture(
         params: DescribeTrustedAdvisorCheckSummariesRequest
     ): Future[DescribeTrustedAdvisorCheckSummariesResponse] =
       service.describeTrustedAdvisorCheckSummaries(params).promise.toFuture
-    def describeTrustedAdvisorChecksFuture(
+    @inline def describeTrustedAdvisorChecksFuture(
         params: DescribeTrustedAdvisorChecksRequest
     ): Future[DescribeTrustedAdvisorChecksResponse] = service.describeTrustedAdvisorChecks(params).promise.toFuture
-    def refreshTrustedAdvisorCheckFuture(
+    @inline def refreshTrustedAdvisorCheckFuture(
         params: RefreshTrustedAdvisorCheckRequest
     ): Future[RefreshTrustedAdvisorCheckResponse] = service.refreshTrustedAdvisorCheck(params).promise.toFuture
-    def resolveCaseFuture(params: ResolveCaseRequest): Future[ResolveCaseResponse] =
+    @inline def resolveCaseFuture(params: ResolveCaseRequest): Future[ResolveCaseResponse] =
       service.resolveCase(params).promise.toFuture
   }
 }

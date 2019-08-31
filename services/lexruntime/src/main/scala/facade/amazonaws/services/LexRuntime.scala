@@ -35,14 +35,15 @@ package object lexruntime {
 
   implicit final class LexRuntimeOps(private val service: LexRuntime) extends AnyVal {
 
-    def deleteSessionFuture(params: DeleteSessionRequest): Future[DeleteSessionResponse] =
+    @inline def deleteSessionFuture(params: DeleteSessionRequest): Future[DeleteSessionResponse] =
       service.deleteSession(params).promise.toFuture
-    def getSessionFuture(params: GetSessionRequest): Future[GetSessionResponse] =
+    @inline def getSessionFuture(params: GetSessionRequest): Future[GetSessionResponse] =
       service.getSession(params).promise.toFuture
-    def postContentFuture(params: PostContentRequest): Future[PostContentResponse] =
+    @inline def postContentFuture(params: PostContentRequest): Future[PostContentResponse] =
       service.postContent(params).promise.toFuture
-    def postTextFuture(params: PostTextRequest): Future[PostTextResponse] = service.postText(params).promise.toFuture
-    def putSessionFuture(params: PutSessionRequest): Future[PutSessionResponse] =
+    @inline def postTextFuture(params: PostTextRequest): Future[PostTextResponse] =
+      service.postText(params).promise.toFuture
+    @inline def putSessionFuture(params: PutSessionRequest): Future[PutSessionResponse] =
       service.putSession(params).promise.toFuture
   }
 }

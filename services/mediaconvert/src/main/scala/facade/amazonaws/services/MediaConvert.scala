@@ -410,52 +410,55 @@ package object mediaconvert {
 
   implicit final class MediaConvertOps(private val service: MediaConvert) extends AnyVal {
 
-    def associateCertificateFuture(params: AssociateCertificateRequest): Future[AssociateCertificateResponse] =
+    @inline def associateCertificateFuture(params: AssociateCertificateRequest): Future[AssociateCertificateResponse] =
       service.associateCertificate(params).promise.toFuture
-    def cancelJobFuture(params: CancelJobRequest): Future[CancelJobResponse] =
+    @inline def cancelJobFuture(params: CancelJobRequest): Future[CancelJobResponse] =
       service.cancelJob(params).promise.toFuture
-    def createJobFuture(params: CreateJobRequest): Future[CreateJobResponse] =
+    @inline def createJobFuture(params: CreateJobRequest): Future[CreateJobResponse] =
       service.createJob(params).promise.toFuture
-    def createJobTemplateFuture(params: CreateJobTemplateRequest): Future[CreateJobTemplateResponse] =
+    @inline def createJobTemplateFuture(params: CreateJobTemplateRequest): Future[CreateJobTemplateResponse] =
       service.createJobTemplate(params).promise.toFuture
-    def createPresetFuture(params: CreatePresetRequest): Future[CreatePresetResponse] =
+    @inline def createPresetFuture(params: CreatePresetRequest): Future[CreatePresetResponse] =
       service.createPreset(params).promise.toFuture
-    def createQueueFuture(params: CreateQueueRequest): Future[CreateQueueResponse] =
+    @inline def createQueueFuture(params: CreateQueueRequest): Future[CreateQueueResponse] =
       service.createQueue(params).promise.toFuture
-    def deleteJobTemplateFuture(params: DeleteJobTemplateRequest): Future[DeleteJobTemplateResponse] =
+    @inline def deleteJobTemplateFuture(params: DeleteJobTemplateRequest): Future[DeleteJobTemplateResponse] =
       service.deleteJobTemplate(params).promise.toFuture
-    def deletePresetFuture(params: DeletePresetRequest): Future[DeletePresetResponse] =
+    @inline def deletePresetFuture(params: DeletePresetRequest): Future[DeletePresetResponse] =
       service.deletePreset(params).promise.toFuture
-    def deleteQueueFuture(params: DeleteQueueRequest): Future[DeleteQueueResponse] =
+    @inline def deleteQueueFuture(params: DeleteQueueRequest): Future[DeleteQueueResponse] =
       service.deleteQueue(params).promise.toFuture
-    def describeEndpointsFuture(params: DescribeEndpointsRequest): Future[DescribeEndpointsResponse] =
+    @inline def describeEndpointsFuture(params: DescribeEndpointsRequest): Future[DescribeEndpointsResponse] =
       service.describeEndpoints(params).promise.toFuture
-    def disassociateCertificateFuture(params: DisassociateCertificateRequest): Future[DisassociateCertificateResponse] =
-      service.disassociateCertificate(params).promise.toFuture
-    def getJobFuture(params: GetJobRequest): Future[GetJobResponse] = service.getJob(params).promise.toFuture
-    def getJobTemplateFuture(params: GetJobTemplateRequest): Future[GetJobTemplateResponse] =
+    @inline def disassociateCertificateFuture(
+        params: DisassociateCertificateRequest
+    ): Future[DisassociateCertificateResponse]                              = service.disassociateCertificate(params).promise.toFuture
+    @inline def getJobFuture(params: GetJobRequest): Future[GetJobResponse] = service.getJob(params).promise.toFuture
+    @inline def getJobTemplateFuture(params: GetJobTemplateRequest): Future[GetJobTemplateResponse] =
       service.getJobTemplate(params).promise.toFuture
-    def getPresetFuture(params: GetPresetRequest): Future[GetPresetResponse] =
+    @inline def getPresetFuture(params: GetPresetRequest): Future[GetPresetResponse] =
       service.getPreset(params).promise.toFuture
-    def getQueueFuture(params: GetQueueRequest): Future[GetQueueResponse] = service.getQueue(params).promise.toFuture
-    def listJobTemplatesFuture(params: ListJobTemplatesRequest): Future[ListJobTemplatesResponse] =
+    @inline def getQueueFuture(params: GetQueueRequest): Future[GetQueueResponse] =
+      service.getQueue(params).promise.toFuture
+    @inline def listJobTemplatesFuture(params: ListJobTemplatesRequest): Future[ListJobTemplatesResponse] =
       service.listJobTemplates(params).promise.toFuture
-    def listJobsFuture(params: ListJobsRequest): Future[ListJobsResponse] = service.listJobs(params).promise.toFuture
-    def listPresetsFuture(params: ListPresetsRequest): Future[ListPresetsResponse] =
+    @inline def listJobsFuture(params: ListJobsRequest): Future[ListJobsResponse] =
+      service.listJobs(params).promise.toFuture
+    @inline def listPresetsFuture(params: ListPresetsRequest): Future[ListPresetsResponse] =
       service.listPresets(params).promise.toFuture
-    def listQueuesFuture(params: ListQueuesRequest): Future[ListQueuesResponse] =
+    @inline def listQueuesFuture(params: ListQueuesRequest): Future[ListQueuesResponse] =
       service.listQueues(params).promise.toFuture
-    def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] =
+    @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] =
       service.listTagsForResource(params).promise.toFuture
-    def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] =
+    @inline def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] =
       service.tagResource(params).promise.toFuture
-    def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] =
+    @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] =
       service.untagResource(params).promise.toFuture
-    def updateJobTemplateFuture(params: UpdateJobTemplateRequest): Future[UpdateJobTemplateResponse] =
+    @inline def updateJobTemplateFuture(params: UpdateJobTemplateRequest): Future[UpdateJobTemplateResponse] =
       service.updateJobTemplate(params).promise.toFuture
-    def updatePresetFuture(params: UpdatePresetRequest): Future[UpdatePresetResponse] =
+    @inline def updatePresetFuture(params: UpdatePresetRequest): Future[UpdatePresetResponse] =
       service.updatePreset(params).promise.toFuture
-    def updateQueueFuture(params: UpdateQueueRequest): Future[UpdateQueueResponse] =
+    @inline def updateQueueFuture(params: UpdateQueueRequest): Future[UpdateQueueResponse] =
       service.updateQueue(params).promise.toFuture
   }
 }

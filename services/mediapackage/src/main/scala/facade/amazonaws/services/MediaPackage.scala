@@ -35,34 +35,36 @@ package object mediapackage {
 
   implicit final class MediaPackageOps(private val service: MediaPackage) extends AnyVal {
 
-    def createChannelFuture(params: CreateChannelRequest): Future[CreateChannelResponse] =
+    @inline def createChannelFuture(params: CreateChannelRequest): Future[CreateChannelResponse] =
       service.createChannel(params).promise.toFuture
-    def createOriginEndpointFuture(params: CreateOriginEndpointRequest): Future[CreateOriginEndpointResponse] =
+    @inline def createOriginEndpointFuture(params: CreateOriginEndpointRequest): Future[CreateOriginEndpointResponse] =
       service.createOriginEndpoint(params).promise.toFuture
-    def deleteChannelFuture(params: DeleteChannelRequest): Future[DeleteChannelResponse] =
+    @inline def deleteChannelFuture(params: DeleteChannelRequest): Future[DeleteChannelResponse] =
       service.deleteChannel(params).promise.toFuture
-    def deleteOriginEndpointFuture(params: DeleteOriginEndpointRequest): Future[DeleteOriginEndpointResponse] =
+    @inline def deleteOriginEndpointFuture(params: DeleteOriginEndpointRequest): Future[DeleteOriginEndpointResponse] =
       service.deleteOriginEndpoint(params).promise.toFuture
-    def describeChannelFuture(params: DescribeChannelRequest): Future[DescribeChannelResponse] =
+    @inline def describeChannelFuture(params: DescribeChannelRequest): Future[DescribeChannelResponse] =
       service.describeChannel(params).promise.toFuture
-    def describeOriginEndpointFuture(params: DescribeOriginEndpointRequest): Future[DescribeOriginEndpointResponse] =
-      service.describeOriginEndpoint(params).promise.toFuture
-    def listChannelsFuture(params: ListChannelsRequest): Future[ListChannelsResponse] =
+    @inline def describeOriginEndpointFuture(
+        params: DescribeOriginEndpointRequest
+    ): Future[DescribeOriginEndpointResponse] = service.describeOriginEndpoint(params).promise.toFuture
+    @inline def listChannelsFuture(params: ListChannelsRequest): Future[ListChannelsResponse] =
       service.listChannels(params).promise.toFuture
-    def listOriginEndpointsFuture(params: ListOriginEndpointsRequest): Future[ListOriginEndpointsResponse] =
+    @inline def listOriginEndpointsFuture(params: ListOriginEndpointsRequest): Future[ListOriginEndpointsResponse] =
       service.listOriginEndpoints(params).promise.toFuture
-    def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] =
+    @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] =
       service.listTagsForResource(params).promise.toFuture
-    def rotateIngestEndpointCredentialsFuture(
+    @inline def rotateIngestEndpointCredentialsFuture(
         params: RotateIngestEndpointCredentialsRequest
     ): Future[RotateIngestEndpointCredentialsResponse] =
       service.rotateIngestEndpointCredentials(params).promise.toFuture
-    def tagResourceFuture(params: TagResourceRequest): Future[js.Object] = service.tagResource(params).promise.toFuture
-    def untagResourceFuture(params: UntagResourceRequest): Future[js.Object] =
+    @inline def tagResourceFuture(params: TagResourceRequest): Future[js.Object] =
+      service.tagResource(params).promise.toFuture
+    @inline def untagResourceFuture(params: UntagResourceRequest): Future[js.Object] =
       service.untagResource(params).promise.toFuture
-    def updateChannelFuture(params: UpdateChannelRequest): Future[UpdateChannelResponse] =
+    @inline def updateChannelFuture(params: UpdateChannelRequest): Future[UpdateChannelResponse] =
       service.updateChannel(params).promise.toFuture
-    def updateOriginEndpointFuture(params: UpdateOriginEndpointRequest): Future[UpdateOriginEndpointResponse] =
+    @inline def updateOriginEndpointFuture(params: UpdateOriginEndpointRequest): Future[UpdateOriginEndpointResponse] =
       service.updateOriginEndpoint(params).promise.toFuture
   }
 }

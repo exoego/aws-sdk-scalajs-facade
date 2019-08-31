@@ -92,31 +92,33 @@ package object firehose {
 
   implicit final class FirehoseOps(private val service: Firehose) extends AnyVal {
 
-    def createDeliveryStreamFuture(params: CreateDeliveryStreamInput): Future[CreateDeliveryStreamOutput] =
+    @inline def createDeliveryStreamFuture(params: CreateDeliveryStreamInput): Future[CreateDeliveryStreamOutput] =
       service.createDeliveryStream(params).promise.toFuture
-    def deleteDeliveryStreamFuture(params: DeleteDeliveryStreamInput): Future[DeleteDeliveryStreamOutput] =
+    @inline def deleteDeliveryStreamFuture(params: DeleteDeliveryStreamInput): Future[DeleteDeliveryStreamOutput] =
       service.deleteDeliveryStream(params).promise.toFuture
-    def describeDeliveryStreamFuture(params: DescribeDeliveryStreamInput): Future[DescribeDeliveryStreamOutput] =
-      service.describeDeliveryStream(params).promise.toFuture
-    def listDeliveryStreamsFuture(params: ListDeliveryStreamsInput): Future[ListDeliveryStreamsOutput] =
+    @inline def describeDeliveryStreamFuture(
+        params: DescribeDeliveryStreamInput
+    ): Future[DescribeDeliveryStreamOutput] = service.describeDeliveryStream(params).promise.toFuture
+    @inline def listDeliveryStreamsFuture(params: ListDeliveryStreamsInput): Future[ListDeliveryStreamsOutput] =
       service.listDeliveryStreams(params).promise.toFuture
-    def listTagsForDeliveryStreamFuture(
+    @inline def listTagsForDeliveryStreamFuture(
         params: ListTagsForDeliveryStreamInput
     ): Future[ListTagsForDeliveryStreamOutput] = service.listTagsForDeliveryStream(params).promise.toFuture
-    def putRecordBatchFuture(params: PutRecordBatchInput): Future[PutRecordBatchOutput] =
+    @inline def putRecordBatchFuture(params: PutRecordBatchInput): Future[PutRecordBatchOutput] =
       service.putRecordBatch(params).promise.toFuture
-    def putRecordFuture(params: PutRecordInput): Future[PutRecordOutput] = service.putRecord(params).promise.toFuture
-    def startDeliveryStreamEncryptionFuture(
+    @inline def putRecordFuture(params: PutRecordInput): Future[PutRecordOutput] =
+      service.putRecord(params).promise.toFuture
+    @inline def startDeliveryStreamEncryptionFuture(
         params: StartDeliveryStreamEncryptionInput
     ): Future[StartDeliveryStreamEncryptionOutput] = service.startDeliveryStreamEncryption(params).promise.toFuture
-    def stopDeliveryStreamEncryptionFuture(
+    @inline def stopDeliveryStreamEncryptionFuture(
         params: StopDeliveryStreamEncryptionInput
     ): Future[StopDeliveryStreamEncryptionOutput] = service.stopDeliveryStreamEncryption(params).promise.toFuture
-    def tagDeliveryStreamFuture(params: TagDeliveryStreamInput): Future[TagDeliveryStreamOutput] =
+    @inline def tagDeliveryStreamFuture(params: TagDeliveryStreamInput): Future[TagDeliveryStreamOutput] =
       service.tagDeliveryStream(params).promise.toFuture
-    def untagDeliveryStreamFuture(params: UntagDeliveryStreamInput): Future[UntagDeliveryStreamOutput] =
+    @inline def untagDeliveryStreamFuture(params: UntagDeliveryStreamInput): Future[UntagDeliveryStreamOutput] =
       service.untagDeliveryStream(params).promise.toFuture
-    def updateDestinationFuture(params: UpdateDestinationInput): Future[UpdateDestinationOutput] =
+    @inline def updateDestinationFuture(params: UpdateDestinationInput): Future[UpdateDestinationOutput] =
       service.updateDestination(params).promise.toFuture
   }
 }

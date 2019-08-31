@@ -103,54 +103,66 @@ package object amplify {
 
   implicit final class AmplifyOps(private val service: Amplify) extends AnyVal {
 
-    def createAppFuture(params: CreateAppRequest): Future[CreateAppResult] = service.createApp(params).promise.toFuture
-    def createBranchFuture(params: CreateBranchRequest): Future[CreateBranchResult] =
+    @inline def createAppFuture(params: CreateAppRequest): Future[CreateAppResult] =
+      service.createApp(params).promise.toFuture
+    @inline def createBranchFuture(params: CreateBranchRequest): Future[CreateBranchResult] =
       service.createBranch(params).promise.toFuture
-    def createDeploymentFuture(params: CreateDeploymentRequest): Future[CreateDeploymentResult] =
+    @inline def createDeploymentFuture(params: CreateDeploymentRequest): Future[CreateDeploymentResult] =
       service.createDeployment(params).promise.toFuture
-    def createDomainAssociationFuture(params: CreateDomainAssociationRequest): Future[CreateDomainAssociationResult] =
-      service.createDomainAssociation(params).promise.toFuture
-    def createWebhookFuture(params: CreateWebhookRequest): Future[CreateWebhookResult] =
+    @inline def createDomainAssociationFuture(
+        params: CreateDomainAssociationRequest
+    ): Future[CreateDomainAssociationResult] = service.createDomainAssociation(params).promise.toFuture
+    @inline def createWebhookFuture(params: CreateWebhookRequest): Future[CreateWebhookResult] =
       service.createWebhook(params).promise.toFuture
-    def deleteAppFuture(params: DeleteAppRequest): Future[DeleteAppResult] = service.deleteApp(params).promise.toFuture
-    def deleteBranchFuture(params: DeleteBranchRequest): Future[DeleteBranchResult] =
+    @inline def deleteAppFuture(params: DeleteAppRequest): Future[DeleteAppResult] =
+      service.deleteApp(params).promise.toFuture
+    @inline def deleteBranchFuture(params: DeleteBranchRequest): Future[DeleteBranchResult] =
       service.deleteBranch(params).promise.toFuture
-    def deleteDomainAssociationFuture(params: DeleteDomainAssociationRequest): Future[DeleteDomainAssociationResult] =
-      service.deleteDomainAssociation(params).promise.toFuture
-    def deleteJobFuture(params: DeleteJobRequest): Future[DeleteJobResult] = service.deleteJob(params).promise.toFuture
-    def deleteWebhookFuture(params: DeleteWebhookRequest): Future[DeleteWebhookResult] =
+    @inline def deleteDomainAssociationFuture(
+        params: DeleteDomainAssociationRequest
+    ): Future[DeleteDomainAssociationResult] = service.deleteDomainAssociation(params).promise.toFuture
+    @inline def deleteJobFuture(params: DeleteJobRequest): Future[DeleteJobResult] =
+      service.deleteJob(params).promise.toFuture
+    @inline def deleteWebhookFuture(params: DeleteWebhookRequest): Future[DeleteWebhookResult] =
       service.deleteWebhook(params).promise.toFuture
-    def getAppFuture(params: GetAppRequest): Future[GetAppResult]          = service.getApp(params).promise.toFuture
-    def getBranchFuture(params: GetBranchRequest): Future[GetBranchResult] = service.getBranch(params).promise.toFuture
-    def getDomainAssociationFuture(params: GetDomainAssociationRequest): Future[GetDomainAssociationResult] =
+    @inline def getAppFuture(params: GetAppRequest): Future[GetAppResult] = service.getApp(params).promise.toFuture
+    @inline def getBranchFuture(params: GetBranchRequest): Future[GetBranchResult] =
+      service.getBranch(params).promise.toFuture
+    @inline def getDomainAssociationFuture(params: GetDomainAssociationRequest): Future[GetDomainAssociationResult] =
       service.getDomainAssociation(params).promise.toFuture
-    def getJobFuture(params: GetJobRequest): Future[GetJobResult] = service.getJob(params).promise.toFuture
-    def getWebhookFuture(params: GetWebhookRequest): Future[GetWebhookResult] =
+    @inline def getJobFuture(params: GetJobRequest): Future[GetJobResult] = service.getJob(params).promise.toFuture
+    @inline def getWebhookFuture(params: GetWebhookRequest): Future[GetWebhookResult] =
       service.getWebhook(params).promise.toFuture
-    def listAppsFuture(params: ListAppsRequest): Future[ListAppsResult] = service.listApps(params).promise.toFuture
-    def listBranchesFuture(params: ListBranchesRequest): Future[ListBranchesResult] =
+    @inline def listAppsFuture(params: ListAppsRequest): Future[ListAppsResult] =
+      service.listApps(params).promise.toFuture
+    @inline def listBranchesFuture(params: ListBranchesRequest): Future[ListBranchesResult] =
       service.listBranches(params).promise.toFuture
-    def listDomainAssociationsFuture(params: ListDomainAssociationsRequest): Future[ListDomainAssociationsResult] =
-      service.listDomainAssociations(params).promise.toFuture
-    def listJobsFuture(params: ListJobsRequest): Future[ListJobsResult] = service.listJobs(params).promise.toFuture
-    def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] =
+    @inline def listDomainAssociationsFuture(
+        params: ListDomainAssociationsRequest
+    ): Future[ListDomainAssociationsResult] = service.listDomainAssociations(params).promise.toFuture
+    @inline def listJobsFuture(params: ListJobsRequest): Future[ListJobsResult] =
+      service.listJobs(params).promise.toFuture
+    @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] =
       service.listTagsForResource(params).promise.toFuture
-    def listWebhooksFuture(params: ListWebhooksRequest): Future[ListWebhooksResult] =
+    @inline def listWebhooksFuture(params: ListWebhooksRequest): Future[ListWebhooksResult] =
       service.listWebhooks(params).promise.toFuture
-    def startDeploymentFuture(params: StartDeploymentRequest): Future[StartDeploymentResult] =
+    @inline def startDeploymentFuture(params: StartDeploymentRequest): Future[StartDeploymentResult] =
       service.startDeployment(params).promise.toFuture
-    def startJobFuture(params: StartJobRequest): Future[StartJobResult] = service.startJob(params).promise.toFuture
-    def stopJobFuture(params: StopJobRequest): Future[StopJobResult]    = service.stopJob(params).promise.toFuture
-    def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] =
+    @inline def startJobFuture(params: StartJobRequest): Future[StartJobResult] =
+      service.startJob(params).promise.toFuture
+    @inline def stopJobFuture(params: StopJobRequest): Future[StopJobResult] = service.stopJob(params).promise.toFuture
+    @inline def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] =
       service.tagResource(params).promise.toFuture
-    def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] =
+    @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] =
       service.untagResource(params).promise.toFuture
-    def updateAppFuture(params: UpdateAppRequest): Future[UpdateAppResult] = service.updateApp(params).promise.toFuture
-    def updateBranchFuture(params: UpdateBranchRequest): Future[UpdateBranchResult] =
+    @inline def updateAppFuture(params: UpdateAppRequest): Future[UpdateAppResult] =
+      service.updateApp(params).promise.toFuture
+    @inline def updateBranchFuture(params: UpdateBranchRequest): Future[UpdateBranchResult] =
       service.updateBranch(params).promise.toFuture
-    def updateDomainAssociationFuture(params: UpdateDomainAssociationRequest): Future[UpdateDomainAssociationResult] =
-      service.updateDomainAssociation(params).promise.toFuture
-    def updateWebhookFuture(params: UpdateWebhookRequest): Future[UpdateWebhookResult] =
+    @inline def updateDomainAssociationFuture(
+        params: UpdateDomainAssociationRequest
+    ): Future[UpdateDomainAssociationResult] = service.updateDomainAssociation(params).promise.toFuture
+    @inline def updateWebhookFuture(params: UpdateWebhookRequest): Future[UpdateWebhookResult] =
       service.updateWebhook(params).promise.toFuture
   }
 }

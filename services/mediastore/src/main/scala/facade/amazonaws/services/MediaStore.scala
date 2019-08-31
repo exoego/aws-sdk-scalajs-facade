@@ -35,41 +35,41 @@ package object mediastore {
 
   implicit final class MediaStoreOps(private val service: MediaStore) extends AnyVal {
 
-    def createContainerFuture(params: CreateContainerInput): Future[CreateContainerOutput] =
+    @inline def createContainerFuture(params: CreateContainerInput): Future[CreateContainerOutput] =
       service.createContainer(params).promise.toFuture
-    def deleteContainerFuture(params: DeleteContainerInput): Future[DeleteContainerOutput] =
+    @inline def deleteContainerFuture(params: DeleteContainerInput): Future[DeleteContainerOutput] =
       service.deleteContainer(params).promise.toFuture
-    def deleteContainerPolicyFuture(params: DeleteContainerPolicyInput): Future[DeleteContainerPolicyOutput] =
+    @inline def deleteContainerPolicyFuture(params: DeleteContainerPolicyInput): Future[DeleteContainerPolicyOutput] =
       service.deleteContainerPolicy(params).promise.toFuture
-    def deleteCorsPolicyFuture(params: DeleteCorsPolicyInput): Future[DeleteCorsPolicyOutput] =
+    @inline def deleteCorsPolicyFuture(params: DeleteCorsPolicyInput): Future[DeleteCorsPolicyOutput] =
       service.deleteCorsPolicy(params).promise.toFuture
-    def deleteLifecyclePolicyFuture(params: DeleteLifecyclePolicyInput): Future[DeleteLifecyclePolicyOutput] =
+    @inline def deleteLifecyclePolicyFuture(params: DeleteLifecyclePolicyInput): Future[DeleteLifecyclePolicyOutput] =
       service.deleteLifecyclePolicy(params).promise.toFuture
-    def describeContainerFuture(params: DescribeContainerInput): Future[DescribeContainerOutput] =
+    @inline def describeContainerFuture(params: DescribeContainerInput): Future[DescribeContainerOutput] =
       service.describeContainer(params).promise.toFuture
-    def getContainerPolicyFuture(params: GetContainerPolicyInput): Future[GetContainerPolicyOutput] =
+    @inline def getContainerPolicyFuture(params: GetContainerPolicyInput): Future[GetContainerPolicyOutput] =
       service.getContainerPolicy(params).promise.toFuture
-    def getCorsPolicyFuture(params: GetCorsPolicyInput): Future[GetCorsPolicyOutput] =
+    @inline def getCorsPolicyFuture(params: GetCorsPolicyInput): Future[GetCorsPolicyOutput] =
       service.getCorsPolicy(params).promise.toFuture
-    def getLifecyclePolicyFuture(params: GetLifecyclePolicyInput): Future[GetLifecyclePolicyOutput] =
+    @inline def getLifecyclePolicyFuture(params: GetLifecyclePolicyInput): Future[GetLifecyclePolicyOutput] =
       service.getLifecyclePolicy(params).promise.toFuture
-    def listContainersFuture(params: ListContainersInput): Future[ListContainersOutput] =
+    @inline def listContainersFuture(params: ListContainersInput): Future[ListContainersOutput] =
       service.listContainers(params).promise.toFuture
-    def listTagsForResourceFuture(params: ListTagsForResourceInput): Future[ListTagsForResourceOutput] =
+    @inline def listTagsForResourceFuture(params: ListTagsForResourceInput): Future[ListTagsForResourceOutput] =
       service.listTagsForResource(params).promise.toFuture
-    def putContainerPolicyFuture(params: PutContainerPolicyInput): Future[PutContainerPolicyOutput] =
+    @inline def putContainerPolicyFuture(params: PutContainerPolicyInput): Future[PutContainerPolicyOutput] =
       service.putContainerPolicy(params).promise.toFuture
-    def putCorsPolicyFuture(params: PutCorsPolicyInput): Future[PutCorsPolicyOutput] =
+    @inline def putCorsPolicyFuture(params: PutCorsPolicyInput): Future[PutCorsPolicyOutput] =
       service.putCorsPolicy(params).promise.toFuture
-    def putLifecyclePolicyFuture(params: PutLifecyclePolicyInput): Future[PutLifecyclePolicyOutput] =
+    @inline def putLifecyclePolicyFuture(params: PutLifecyclePolicyInput): Future[PutLifecyclePolicyOutput] =
       service.putLifecyclePolicy(params).promise.toFuture
-    def startAccessLoggingFuture(params: StartAccessLoggingInput): Future[StartAccessLoggingOutput] =
+    @inline def startAccessLoggingFuture(params: StartAccessLoggingInput): Future[StartAccessLoggingOutput] =
       service.startAccessLogging(params).promise.toFuture
-    def stopAccessLoggingFuture(params: StopAccessLoggingInput): Future[StopAccessLoggingOutput] =
+    @inline def stopAccessLoggingFuture(params: StopAccessLoggingInput): Future[StopAccessLoggingOutput] =
       service.stopAccessLogging(params).promise.toFuture
-    def tagResourceFuture(params: TagResourceInput): Future[TagResourceOutput] =
+    @inline def tagResourceFuture(params: TagResourceInput): Future[TagResourceOutput] =
       service.tagResource(params).promise.toFuture
-    def untagResourceFuture(params: UntagResourceInput): Future[UntagResourceOutput] =
+    @inline def untagResourceFuture(params: UntagResourceInput): Future[UntagResourceOutput] =
       service.untagResource(params).promise.toFuture
   }
 }

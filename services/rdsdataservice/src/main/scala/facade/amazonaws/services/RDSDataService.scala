@@ -34,15 +34,16 @@ package object rdsdataservice {
 
   implicit final class RDSDataServiceOps(private val service: RDSDataService) extends AnyVal {
 
-    def batchExecuteStatementFuture(params: BatchExecuteStatementRequest): Future[BatchExecuteStatementResponse] =
-      service.batchExecuteStatement(params).promise.toFuture
-    def beginTransactionFuture(params: BeginTransactionRequest): Future[BeginTransactionResponse] =
+    @inline def batchExecuteStatementFuture(
+        params: BatchExecuteStatementRequest
+    ): Future[BatchExecuteStatementResponse] = service.batchExecuteStatement(params).promise.toFuture
+    @inline def beginTransactionFuture(params: BeginTransactionRequest): Future[BeginTransactionResponse] =
       service.beginTransaction(params).promise.toFuture
-    def commitTransactionFuture(params: CommitTransactionRequest): Future[CommitTransactionResponse] =
+    @inline def commitTransactionFuture(params: CommitTransactionRequest): Future[CommitTransactionResponse] =
       service.commitTransaction(params).promise.toFuture
-    def executeStatementFuture(params: ExecuteStatementRequest): Future[ExecuteStatementResponse] =
+    @inline def executeStatementFuture(params: ExecuteStatementRequest): Future[ExecuteStatementResponse] =
       service.executeStatement(params).promise.toFuture
-    def rollbackTransactionFuture(params: RollbackTransactionRequest): Future[RollbackTransactionResponse] =
+    @inline def rollbackTransactionFuture(params: RollbackTransactionRequest): Future[RollbackTransactionResponse] =
       service.rollbackTransaction(params).promise.toFuture
   }
 }

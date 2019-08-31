@@ -65,19 +65,21 @@ package object s3control {
 
   implicit final class S3ControlOps(private val service: S3Control) extends AnyVal {
 
-    def createJobFuture(params: CreateJobRequest): Future[CreateJobResult] = service.createJob(params).promise.toFuture
-    def deletePublicAccessBlockFuture(params: DeletePublicAccessBlockRequest): Future[js.Object] =
+    @inline def createJobFuture(params: CreateJobRequest): Future[CreateJobResult] =
+      service.createJob(params).promise.toFuture
+    @inline def deletePublicAccessBlockFuture(params: DeletePublicAccessBlockRequest): Future[js.Object] =
       service.deletePublicAccessBlock(params).promise.toFuture
-    def describeJobFuture(params: DescribeJobRequest): Future[DescribeJobResult] =
+    @inline def describeJobFuture(params: DescribeJobRequest): Future[DescribeJobResult] =
       service.describeJob(params).promise.toFuture
-    def getPublicAccessBlockFuture(params: GetPublicAccessBlockRequest): Future[GetPublicAccessBlockOutput] =
+    @inline def getPublicAccessBlockFuture(params: GetPublicAccessBlockRequest): Future[GetPublicAccessBlockOutput] =
       service.getPublicAccessBlock(params).promise.toFuture
-    def listJobsFuture(params: ListJobsRequest): Future[ListJobsResult] = service.listJobs(params).promise.toFuture
-    def putPublicAccessBlockFuture(params: PutPublicAccessBlockRequest): Future[js.Object] =
+    @inline def listJobsFuture(params: ListJobsRequest): Future[ListJobsResult] =
+      service.listJobs(params).promise.toFuture
+    @inline def putPublicAccessBlockFuture(params: PutPublicAccessBlockRequest): Future[js.Object] =
       service.putPublicAccessBlock(params).promise.toFuture
-    def updateJobPriorityFuture(params: UpdateJobPriorityRequest): Future[UpdateJobPriorityResult] =
+    @inline def updateJobPriorityFuture(params: UpdateJobPriorityRequest): Future[UpdateJobPriorityResult] =
       service.updateJobPriority(params).promise.toFuture
-    def updateJobStatusFuture(params: UpdateJobStatusRequest): Future[UpdateJobStatusResult] =
+    @inline def updateJobStatusFuture(params: UpdateJobStatusRequest): Future[UpdateJobStatusResult] =
       service.updateJobStatus(params).promise.toFuture
   }
 }

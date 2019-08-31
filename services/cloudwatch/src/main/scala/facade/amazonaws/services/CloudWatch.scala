@@ -96,50 +96,53 @@ package object cloudwatch {
 
   implicit final class CloudWatchOps(private val service: CloudWatch) extends AnyVal {
 
-    def deleteAlarmsFuture(params: DeleteAlarmsInput): Future[js.Object] = service.deleteAlarms(params).promise.toFuture
-    def deleteAnomalyDetectorFuture(params: DeleteAnomalyDetectorInput): Future[DeleteAnomalyDetectorOutput] =
+    @inline def deleteAlarmsFuture(params: DeleteAlarmsInput): Future[js.Object] =
+      service.deleteAlarms(params).promise.toFuture
+    @inline def deleteAnomalyDetectorFuture(params: DeleteAnomalyDetectorInput): Future[DeleteAnomalyDetectorOutput] =
       service.deleteAnomalyDetector(params).promise.toFuture
-    def deleteDashboardsFuture(params: DeleteDashboardsInput): Future[DeleteDashboardsOutput] =
+    @inline def deleteDashboardsFuture(params: DeleteDashboardsInput): Future[DeleteDashboardsOutput] =
       service.deleteDashboards(params).promise.toFuture
-    def describeAlarmHistoryFuture(params: DescribeAlarmHistoryInput): Future[DescribeAlarmHistoryOutput] =
+    @inline def describeAlarmHistoryFuture(params: DescribeAlarmHistoryInput): Future[DescribeAlarmHistoryOutput] =
       service.describeAlarmHistory(params).promise.toFuture
-    def describeAlarmsForMetricFuture(params: DescribeAlarmsForMetricInput): Future[DescribeAlarmsForMetricOutput] =
-      service.describeAlarmsForMetric(params).promise.toFuture
-    def describeAlarmsFuture(params: DescribeAlarmsInput): Future[DescribeAlarmsOutput] =
+    @inline def describeAlarmsForMetricFuture(
+        params: DescribeAlarmsForMetricInput
+    ): Future[DescribeAlarmsForMetricOutput] = service.describeAlarmsForMetric(params).promise.toFuture
+    @inline def describeAlarmsFuture(params: DescribeAlarmsInput): Future[DescribeAlarmsOutput] =
       service.describeAlarms(params).promise.toFuture
-    def describeAnomalyDetectorsFuture(params: DescribeAnomalyDetectorsInput): Future[DescribeAnomalyDetectorsOutput] =
-      service.describeAnomalyDetectors(params).promise.toFuture
-    def disableAlarmActionsFuture(params: DisableAlarmActionsInput): Future[js.Object] =
+    @inline def describeAnomalyDetectorsFuture(
+        params: DescribeAnomalyDetectorsInput
+    ): Future[DescribeAnomalyDetectorsOutput] = service.describeAnomalyDetectors(params).promise.toFuture
+    @inline def disableAlarmActionsFuture(params: DisableAlarmActionsInput): Future[js.Object] =
       service.disableAlarmActions(params).promise.toFuture
-    def enableAlarmActionsFuture(params: EnableAlarmActionsInput): Future[js.Object] =
+    @inline def enableAlarmActionsFuture(params: EnableAlarmActionsInput): Future[js.Object] =
       service.enableAlarmActions(params).promise.toFuture
-    def getDashboardFuture(params: GetDashboardInput): Future[GetDashboardOutput] =
+    @inline def getDashboardFuture(params: GetDashboardInput): Future[GetDashboardOutput] =
       service.getDashboard(params).promise.toFuture
-    def getMetricDataFuture(params: GetMetricDataInput): Future[GetMetricDataOutput] =
+    @inline def getMetricDataFuture(params: GetMetricDataInput): Future[GetMetricDataOutput] =
       service.getMetricData(params).promise.toFuture
-    def getMetricStatisticsFuture(params: GetMetricStatisticsInput): Future[GetMetricStatisticsOutput] =
+    @inline def getMetricStatisticsFuture(params: GetMetricStatisticsInput): Future[GetMetricStatisticsOutput] =
       service.getMetricStatistics(params).promise.toFuture
-    def getMetricWidgetImageFuture(params: GetMetricWidgetImageInput): Future[GetMetricWidgetImageOutput] =
+    @inline def getMetricWidgetImageFuture(params: GetMetricWidgetImageInput): Future[GetMetricWidgetImageOutput] =
       service.getMetricWidgetImage(params).promise.toFuture
-    def listDashboardsFuture(params: ListDashboardsInput): Future[ListDashboardsOutput] =
+    @inline def listDashboardsFuture(params: ListDashboardsInput): Future[ListDashboardsOutput] =
       service.listDashboards(params).promise.toFuture
-    def listMetricsFuture(params: ListMetricsInput): Future[ListMetricsOutput] =
+    @inline def listMetricsFuture(params: ListMetricsInput): Future[ListMetricsOutput] =
       service.listMetrics(params).promise.toFuture
-    def listTagsForResourceFuture(params: ListTagsForResourceInput): Future[ListTagsForResourceOutput] =
+    @inline def listTagsForResourceFuture(params: ListTagsForResourceInput): Future[ListTagsForResourceOutput] =
       service.listTagsForResource(params).promise.toFuture
-    def putAnomalyDetectorFuture(params: PutAnomalyDetectorInput): Future[PutAnomalyDetectorOutput] =
+    @inline def putAnomalyDetectorFuture(params: PutAnomalyDetectorInput): Future[PutAnomalyDetectorOutput] =
       service.putAnomalyDetector(params).promise.toFuture
-    def putDashboardFuture(params: PutDashboardInput): Future[PutDashboardOutput] =
+    @inline def putDashboardFuture(params: PutDashboardInput): Future[PutDashboardOutput] =
       service.putDashboard(params).promise.toFuture
-    def putMetricAlarmFuture(params: PutMetricAlarmInput): Future[js.Object] =
+    @inline def putMetricAlarmFuture(params: PutMetricAlarmInput): Future[js.Object] =
       service.putMetricAlarm(params).promise.toFuture
-    def putMetricDataFuture(params: PutMetricDataInput): Future[js.Object] =
+    @inline def putMetricDataFuture(params: PutMetricDataInput): Future[js.Object] =
       service.putMetricData(params).promise.toFuture
-    def setAlarmStateFuture(params: SetAlarmStateInput): Future[js.Object] =
+    @inline def setAlarmStateFuture(params: SetAlarmStateInput): Future[js.Object] =
       service.setAlarmState(params).promise.toFuture
-    def tagResourceFuture(params: TagResourceInput): Future[TagResourceOutput] =
+    @inline def tagResourceFuture(params: TagResourceInput): Future[TagResourceOutput] =
       service.tagResource(params).promise.toFuture
-    def untagResourceFuture(params: UntagResourceInput): Future[UntagResourceOutput] =
+    @inline def untagResourceFuture(params: UntagResourceInput): Future[UntagResourceOutput] =
       service.untagResource(params).promise.toFuture
   }
 }

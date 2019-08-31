@@ -289,69 +289,72 @@ package object medialive {
 
   implicit final class MediaLiveOps(private val service: MediaLive) extends AnyVal {
 
-    def batchUpdateScheduleFuture(params: BatchUpdateScheduleRequest): Future[BatchUpdateScheduleResponse] =
+    @inline def batchUpdateScheduleFuture(params: BatchUpdateScheduleRequest): Future[BatchUpdateScheduleResponse] =
       service.batchUpdateSchedule(params).promise.toFuture
-    def createChannelFuture(params: CreateChannelRequest): Future[CreateChannelResponse] =
+    @inline def createChannelFuture(params: CreateChannelRequest): Future[CreateChannelResponse] =
       service.createChannel(params).promise.toFuture
-    def createInputFuture(params: CreateInputRequest): Future[CreateInputResponse] =
+    @inline def createInputFuture(params: CreateInputRequest): Future[CreateInputResponse] =
       service.createInput(params).promise.toFuture
-    def createInputSecurityGroupFuture(
+    @inline def createInputSecurityGroupFuture(
         params: CreateInputSecurityGroupRequest
-    ): Future[CreateInputSecurityGroupResponse]                        = service.createInputSecurityGroup(params).promise.toFuture
-    def createTagsFuture(params: CreateTagsRequest): Future[js.Object] = service.createTags(params).promise.toFuture
-    def deleteChannelFuture(params: DeleteChannelRequest): Future[DeleteChannelResponse] =
+    ): Future[CreateInputSecurityGroupResponse] = service.createInputSecurityGroup(params).promise.toFuture
+    @inline def createTagsFuture(params: CreateTagsRequest): Future[js.Object] =
+      service.createTags(params).promise.toFuture
+    @inline def deleteChannelFuture(params: DeleteChannelRequest): Future[DeleteChannelResponse] =
       service.deleteChannel(params).promise.toFuture
-    def deleteInputFuture(params: DeleteInputRequest): Future[DeleteInputResponse] =
+    @inline def deleteInputFuture(params: DeleteInputRequest): Future[DeleteInputResponse] =
       service.deleteInput(params).promise.toFuture
-    def deleteInputSecurityGroupFuture(
+    @inline def deleteInputSecurityGroupFuture(
         params: DeleteInputSecurityGroupRequest
     ): Future[DeleteInputSecurityGroupResponse] = service.deleteInputSecurityGroup(params).promise.toFuture
-    def deleteReservationFuture(params: DeleteReservationRequest): Future[DeleteReservationResponse] =
+    @inline def deleteReservationFuture(params: DeleteReservationRequest): Future[DeleteReservationResponse] =
       service.deleteReservation(params).promise.toFuture
-    def deleteScheduleFuture(params: DeleteScheduleRequest): Future[DeleteScheduleResponse] =
+    @inline def deleteScheduleFuture(params: DeleteScheduleRequest): Future[DeleteScheduleResponse] =
       service.deleteSchedule(params).promise.toFuture
-    def deleteTagsFuture(params: DeleteTagsRequest): Future[js.Object] = service.deleteTags(params).promise.toFuture
-    def describeChannelFuture(params: DescribeChannelRequest): Future[DescribeChannelResponse] =
+    @inline def deleteTagsFuture(params: DeleteTagsRequest): Future[js.Object] =
+      service.deleteTags(params).promise.toFuture
+    @inline def describeChannelFuture(params: DescribeChannelRequest): Future[DescribeChannelResponse] =
       service.describeChannel(params).promise.toFuture
-    def describeInputFuture(params: DescribeInputRequest): Future[DescribeInputResponse] =
+    @inline def describeInputFuture(params: DescribeInputRequest): Future[DescribeInputResponse] =
       service.describeInput(params).promise.toFuture
-    def describeInputSecurityGroupFuture(
+    @inline def describeInputSecurityGroupFuture(
         params: DescribeInputSecurityGroupRequest
     ): Future[DescribeInputSecurityGroupResponse] = service.describeInputSecurityGroup(params).promise.toFuture
-    def describeOfferingFuture(params: DescribeOfferingRequest): Future[DescribeOfferingResponse] =
+    @inline def describeOfferingFuture(params: DescribeOfferingRequest): Future[DescribeOfferingResponse] =
       service.describeOffering(params).promise.toFuture
-    def describeReservationFuture(params: DescribeReservationRequest): Future[DescribeReservationResponse] =
+    @inline def describeReservationFuture(params: DescribeReservationRequest): Future[DescribeReservationResponse] =
       service.describeReservation(params).promise.toFuture
-    def describeScheduleFuture(params: DescribeScheduleRequest): Future[DescribeScheduleResponse] =
+    @inline def describeScheduleFuture(params: DescribeScheduleRequest): Future[DescribeScheduleResponse] =
       service.describeSchedule(params).promise.toFuture
-    def listChannelsFuture(params: ListChannelsRequest): Future[ListChannelsResponse] =
+    @inline def listChannelsFuture(params: ListChannelsRequest): Future[ListChannelsResponse] =
       service.listChannels(params).promise.toFuture
-    def listInputSecurityGroupsFuture(params: ListInputSecurityGroupsRequest): Future[ListInputSecurityGroupsResponse] =
-      service.listInputSecurityGroups(params).promise.toFuture
-    def listInputsFuture(params: ListInputsRequest): Future[ListInputsResponse] =
+    @inline def listInputSecurityGroupsFuture(
+        params: ListInputSecurityGroupsRequest
+    ): Future[ListInputSecurityGroupsResponse] = service.listInputSecurityGroups(params).promise.toFuture
+    @inline def listInputsFuture(params: ListInputsRequest): Future[ListInputsResponse] =
       service.listInputs(params).promise.toFuture
-    def listOfferingsFuture(params: ListOfferingsRequest): Future[ListOfferingsResponse] =
+    @inline def listOfferingsFuture(params: ListOfferingsRequest): Future[ListOfferingsResponse] =
       service.listOfferings(params).promise.toFuture
-    def listReservationsFuture(params: ListReservationsRequest): Future[ListReservationsResponse] =
+    @inline def listReservationsFuture(params: ListReservationsRequest): Future[ListReservationsResponse] =
       service.listReservations(params).promise.toFuture
-    def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] =
+    @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] =
       service.listTagsForResource(params).promise.toFuture
-    def purchaseOfferingFuture(params: PurchaseOfferingRequest): Future[PurchaseOfferingResponse] =
+    @inline def purchaseOfferingFuture(params: PurchaseOfferingRequest): Future[PurchaseOfferingResponse] =
       service.purchaseOffering(params).promise.toFuture
-    def startChannelFuture(params: StartChannelRequest): Future[StartChannelResponse] =
+    @inline def startChannelFuture(params: StartChannelRequest): Future[StartChannelResponse] =
       service.startChannel(params).promise.toFuture
-    def stopChannelFuture(params: StopChannelRequest): Future[StopChannelResponse] =
+    @inline def stopChannelFuture(params: StopChannelRequest): Future[StopChannelResponse] =
       service.stopChannel(params).promise.toFuture
-    def updateChannelClassFuture(params: UpdateChannelClassRequest): Future[UpdateChannelClassResponse] =
+    @inline def updateChannelClassFuture(params: UpdateChannelClassRequest): Future[UpdateChannelClassResponse] =
       service.updateChannelClass(params).promise.toFuture
-    def updateChannelFuture(params: UpdateChannelRequest): Future[UpdateChannelResponse] =
+    @inline def updateChannelFuture(params: UpdateChannelRequest): Future[UpdateChannelResponse] =
       service.updateChannel(params).promise.toFuture
-    def updateInputFuture(params: UpdateInputRequest): Future[UpdateInputResponse] =
+    @inline def updateInputFuture(params: UpdateInputRequest): Future[UpdateInputResponse] =
       service.updateInput(params).promise.toFuture
-    def updateInputSecurityGroupFuture(
+    @inline def updateInputSecurityGroupFuture(
         params: UpdateInputSecurityGroupRequest
     ): Future[UpdateInputSecurityGroupResponse] = service.updateInputSecurityGroup(params).promise.toFuture
-    def updateReservationFuture(params: UpdateReservationRequest): Future[UpdateReservationResponse] =
+    @inline def updateReservationFuture(params: UpdateReservationRequest): Future[UpdateReservationResponse] =
       service.updateReservation(params).promise.toFuture
   }
 }

@@ -92,92 +92,95 @@ package object workdocs {
 
   implicit final class WorkDocsOps(private val service: WorkDocs) extends AnyVal {
 
-    def abortDocumentVersionUploadFuture(params: AbortDocumentVersionUploadRequest): Future[js.Object] =
+    @inline def abortDocumentVersionUploadFuture(params: AbortDocumentVersionUploadRequest): Future[js.Object] =
       service.abortDocumentVersionUpload(params).promise.toFuture
-    def activateUserFuture(params: ActivateUserRequest): Future[ActivateUserResponse] =
+    @inline def activateUserFuture(params: ActivateUserRequest): Future[ActivateUserResponse] =
       service.activateUser(params).promise.toFuture
-    def addResourcePermissionsFuture(params: AddResourcePermissionsRequest): Future[AddResourcePermissionsResponse] =
-      service.addResourcePermissions(params).promise.toFuture
-    def createCommentFuture(params: CreateCommentRequest): Future[CreateCommentResponse] =
+    @inline def addResourcePermissionsFuture(
+        params: AddResourcePermissionsRequest
+    ): Future[AddResourcePermissionsResponse] = service.addResourcePermissions(params).promise.toFuture
+    @inline def createCommentFuture(params: CreateCommentRequest): Future[CreateCommentResponse] =
       service.createComment(params).promise.toFuture
-    def createCustomMetadataFuture(params: CreateCustomMetadataRequest): Future[CreateCustomMetadataResponse] =
+    @inline def createCustomMetadataFuture(params: CreateCustomMetadataRequest): Future[CreateCustomMetadataResponse] =
       service.createCustomMetadata(params).promise.toFuture
-    def createFolderFuture(params: CreateFolderRequest): Future[CreateFolderResponse] =
+    @inline def createFolderFuture(params: CreateFolderRequest): Future[CreateFolderResponse] =
       service.createFolder(params).promise.toFuture
-    def createLabelsFuture(params: CreateLabelsRequest): Future[CreateLabelsResponse] =
+    @inline def createLabelsFuture(params: CreateLabelsRequest): Future[CreateLabelsResponse] =
       service.createLabels(params).promise.toFuture
-    def createNotificationSubscriptionFuture(
+    @inline def createNotificationSubscriptionFuture(
         params: CreateNotificationSubscriptionRequest
     ): Future[CreateNotificationSubscriptionResponse] = service.createNotificationSubscription(params).promise.toFuture
-    def createUserFuture(params: CreateUserRequest): Future[CreateUserResponse] =
+    @inline def createUserFuture(params: CreateUserRequest): Future[CreateUserResponse] =
       service.createUser(params).promise.toFuture
-    def deactivateUserFuture(params: DeactivateUserRequest): Future[js.Object] =
+    @inline def deactivateUserFuture(params: DeactivateUserRequest): Future[js.Object] =
       service.deactivateUser(params).promise.toFuture
-    def deleteCommentFuture(params: DeleteCommentRequest): Future[js.Object] =
+    @inline def deleteCommentFuture(params: DeleteCommentRequest): Future[js.Object] =
       service.deleteComment(params).promise.toFuture
-    def deleteCustomMetadataFuture(params: DeleteCustomMetadataRequest): Future[DeleteCustomMetadataResponse] =
+    @inline def deleteCustomMetadataFuture(params: DeleteCustomMetadataRequest): Future[DeleteCustomMetadataResponse] =
       service.deleteCustomMetadata(params).promise.toFuture
-    def deleteDocumentFuture(params: DeleteDocumentRequest): Future[js.Object] =
+    @inline def deleteDocumentFuture(params: DeleteDocumentRequest): Future[js.Object] =
       service.deleteDocument(params).promise.toFuture
-    def deleteFolderContentsFuture(params: DeleteFolderContentsRequest): Future[js.Object] =
+    @inline def deleteFolderContentsFuture(params: DeleteFolderContentsRequest): Future[js.Object] =
       service.deleteFolderContents(params).promise.toFuture
-    def deleteFolderFuture(params: DeleteFolderRequest): Future[js.Object] =
+    @inline def deleteFolderFuture(params: DeleteFolderRequest): Future[js.Object] =
       service.deleteFolder(params).promise.toFuture
-    def deleteLabelsFuture(params: DeleteLabelsRequest): Future[DeleteLabelsResponse] =
+    @inline def deleteLabelsFuture(params: DeleteLabelsRequest): Future[DeleteLabelsResponse] =
       service.deleteLabels(params).promise.toFuture
-    def deleteNotificationSubscriptionFuture(params: DeleteNotificationSubscriptionRequest): Future[js.Object] =
+    @inline def deleteNotificationSubscriptionFuture(params: DeleteNotificationSubscriptionRequest): Future[js.Object] =
       service.deleteNotificationSubscription(params).promise.toFuture
-    def deleteUserFuture(params: DeleteUserRequest): Future[js.Object] = service.deleteUser(params).promise.toFuture
-    def describeActivitiesFuture(params: DescribeActivitiesRequest): Future[DescribeActivitiesResponse] =
+    @inline def deleteUserFuture(params: DeleteUserRequest): Future[js.Object] =
+      service.deleteUser(params).promise.toFuture
+    @inline def describeActivitiesFuture(params: DescribeActivitiesRequest): Future[DescribeActivitiesResponse] =
       service.describeActivities(params).promise.toFuture
-    def describeCommentsFuture(params: DescribeCommentsRequest): Future[DescribeCommentsResponse] =
+    @inline def describeCommentsFuture(params: DescribeCommentsRequest): Future[DescribeCommentsResponse] =
       service.describeComments(params).promise.toFuture
-    def describeDocumentVersionsFuture(
+    @inline def describeDocumentVersionsFuture(
         params: DescribeDocumentVersionsRequest
     ): Future[DescribeDocumentVersionsResponse] = service.describeDocumentVersions(params).promise.toFuture
-    def describeFolderContentsFuture(params: DescribeFolderContentsRequest): Future[DescribeFolderContentsResponse] =
-      service.describeFolderContents(params).promise.toFuture
-    def describeGroupsFuture(params: DescribeGroupsRequest): Future[DescribeGroupsResponse] =
+    @inline def describeFolderContentsFuture(
+        params: DescribeFolderContentsRequest
+    ): Future[DescribeFolderContentsResponse] = service.describeFolderContents(params).promise.toFuture
+    @inline def describeGroupsFuture(params: DescribeGroupsRequest): Future[DescribeGroupsResponse] =
       service.describeGroups(params).promise.toFuture
-    def describeNotificationSubscriptionsFuture(
+    @inline def describeNotificationSubscriptionsFuture(
         params: DescribeNotificationSubscriptionsRequest
     ): Future[DescribeNotificationSubscriptionsResponse] =
       service.describeNotificationSubscriptions(params).promise.toFuture
-    def describeResourcePermissionsFuture(
+    @inline def describeResourcePermissionsFuture(
         params: DescribeResourcePermissionsRequest
     ): Future[DescribeResourcePermissionsResponse] = service.describeResourcePermissions(params).promise.toFuture
-    def describeRootFoldersFuture(params: DescribeRootFoldersRequest): Future[DescribeRootFoldersResponse] =
+    @inline def describeRootFoldersFuture(params: DescribeRootFoldersRequest): Future[DescribeRootFoldersResponse] =
       service.describeRootFolders(params).promise.toFuture
-    def describeUsersFuture(params: DescribeUsersRequest): Future[DescribeUsersResponse] =
+    @inline def describeUsersFuture(params: DescribeUsersRequest): Future[DescribeUsersResponse] =
       service.describeUsers(params).promise.toFuture
-    def getCurrentUserFuture(params: GetCurrentUserRequest): Future[GetCurrentUserResponse] =
+    @inline def getCurrentUserFuture(params: GetCurrentUserRequest): Future[GetCurrentUserResponse] =
       service.getCurrentUser(params).promise.toFuture
-    def getDocumentFuture(params: GetDocumentRequest): Future[GetDocumentResponse] =
+    @inline def getDocumentFuture(params: GetDocumentRequest): Future[GetDocumentResponse] =
       service.getDocument(params).promise.toFuture
-    def getDocumentPathFuture(params: GetDocumentPathRequest): Future[GetDocumentPathResponse] =
+    @inline def getDocumentPathFuture(params: GetDocumentPathRequest): Future[GetDocumentPathResponse] =
       service.getDocumentPath(params).promise.toFuture
-    def getDocumentVersionFuture(params: GetDocumentVersionRequest): Future[GetDocumentVersionResponse] =
+    @inline def getDocumentVersionFuture(params: GetDocumentVersionRequest): Future[GetDocumentVersionResponse] =
       service.getDocumentVersion(params).promise.toFuture
-    def getFolderFuture(params: GetFolderRequest): Future[GetFolderResponse] =
+    @inline def getFolderFuture(params: GetFolderRequest): Future[GetFolderResponse] =
       service.getFolder(params).promise.toFuture
-    def getFolderPathFuture(params: GetFolderPathRequest): Future[GetFolderPathResponse] =
+    @inline def getFolderPathFuture(params: GetFolderPathRequest): Future[GetFolderPathResponse] =
       service.getFolderPath(params).promise.toFuture
-    def getResourcesFuture(params: GetResourcesRequest): Future[GetResourcesResponse] =
+    @inline def getResourcesFuture(params: GetResourcesRequest): Future[GetResourcesResponse] =
       service.getResources(params).promise.toFuture
-    def initiateDocumentVersionUploadFuture(
+    @inline def initiateDocumentVersionUploadFuture(
         params: InitiateDocumentVersionUploadRequest
     ): Future[InitiateDocumentVersionUploadResponse] = service.initiateDocumentVersionUpload(params).promise.toFuture
-    def removeAllResourcePermissionsFuture(params: RemoveAllResourcePermissionsRequest): Future[js.Object] =
+    @inline def removeAllResourcePermissionsFuture(params: RemoveAllResourcePermissionsRequest): Future[js.Object] =
       service.removeAllResourcePermissions(params).promise.toFuture
-    def removeResourcePermissionFuture(params: RemoveResourcePermissionRequest): Future[js.Object] =
+    @inline def removeResourcePermissionFuture(params: RemoveResourcePermissionRequest): Future[js.Object] =
       service.removeResourcePermission(params).promise.toFuture
-    def updateDocumentFuture(params: UpdateDocumentRequest): Future[js.Object] =
+    @inline def updateDocumentFuture(params: UpdateDocumentRequest): Future[js.Object] =
       service.updateDocument(params).promise.toFuture
-    def updateDocumentVersionFuture(params: UpdateDocumentVersionRequest): Future[js.Object] =
+    @inline def updateDocumentVersionFuture(params: UpdateDocumentVersionRequest): Future[js.Object] =
       service.updateDocumentVersion(params).promise.toFuture
-    def updateFolderFuture(params: UpdateFolderRequest): Future[js.Object] =
+    @inline def updateFolderFuture(params: UpdateFolderRequest): Future[js.Object] =
       service.updateFolder(params).promise.toFuture
-    def updateUserFuture(params: UpdateUserRequest): Future[UpdateUserResponse] =
+    @inline def updateUserFuture(params: UpdateUserRequest): Future[UpdateUserResponse] =
       service.updateUser(params).promise.toFuture
   }
 }

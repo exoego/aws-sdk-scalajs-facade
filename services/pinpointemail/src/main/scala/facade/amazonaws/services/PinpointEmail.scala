@@ -92,124 +92,129 @@ package object pinpointemail {
 
   implicit final class PinpointEmailOps(private val service: PinpointEmail) extends AnyVal {
 
-    def createConfigurationSetEventDestinationFuture(
+    @inline def createConfigurationSetEventDestinationFuture(
         params: CreateConfigurationSetEventDestinationRequest
     ): Future[CreateConfigurationSetEventDestinationResponse] =
       service.createConfigurationSetEventDestination(params).promise.toFuture
-    def createConfigurationSetFuture(params: CreateConfigurationSetRequest): Future[CreateConfigurationSetResponse] =
-      service.createConfigurationSet(params).promise.toFuture
-    def createDedicatedIpPoolFuture(params: CreateDedicatedIpPoolRequest): Future[CreateDedicatedIpPoolResponse] =
-      service.createDedicatedIpPool(params).promise.toFuture
-    def createDeliverabilityTestReportFuture(
+    @inline def createConfigurationSetFuture(
+        params: CreateConfigurationSetRequest
+    ): Future[CreateConfigurationSetResponse] = service.createConfigurationSet(params).promise.toFuture
+    @inline def createDedicatedIpPoolFuture(
+        params: CreateDedicatedIpPoolRequest
+    ): Future[CreateDedicatedIpPoolResponse] = service.createDedicatedIpPool(params).promise.toFuture
+    @inline def createDeliverabilityTestReportFuture(
         params: CreateDeliverabilityTestReportRequest
     ): Future[CreateDeliverabilityTestReportResponse] = service.createDeliverabilityTestReport(params).promise.toFuture
-    def createEmailIdentityFuture(params: CreateEmailIdentityRequest): Future[CreateEmailIdentityResponse] =
+    @inline def createEmailIdentityFuture(params: CreateEmailIdentityRequest): Future[CreateEmailIdentityResponse] =
       service.createEmailIdentity(params).promise.toFuture
-    def deleteConfigurationSetEventDestinationFuture(
+    @inline def deleteConfigurationSetEventDestinationFuture(
         params: DeleteConfigurationSetEventDestinationRequest
     ): Future[DeleteConfigurationSetEventDestinationResponse] =
       service.deleteConfigurationSetEventDestination(params).promise.toFuture
-    def deleteConfigurationSetFuture(params: DeleteConfigurationSetRequest): Future[DeleteConfigurationSetResponse] =
-      service.deleteConfigurationSet(params).promise.toFuture
-    def deleteDedicatedIpPoolFuture(params: DeleteDedicatedIpPoolRequest): Future[DeleteDedicatedIpPoolResponse] =
-      service.deleteDedicatedIpPool(params).promise.toFuture
-    def deleteEmailIdentityFuture(params: DeleteEmailIdentityRequest): Future[DeleteEmailIdentityResponse] =
+    @inline def deleteConfigurationSetFuture(
+        params: DeleteConfigurationSetRequest
+    ): Future[DeleteConfigurationSetResponse] = service.deleteConfigurationSet(params).promise.toFuture
+    @inline def deleteDedicatedIpPoolFuture(
+        params: DeleteDedicatedIpPoolRequest
+    ): Future[DeleteDedicatedIpPoolResponse] = service.deleteDedicatedIpPool(params).promise.toFuture
+    @inline def deleteEmailIdentityFuture(params: DeleteEmailIdentityRequest): Future[DeleteEmailIdentityResponse] =
       service.deleteEmailIdentity(params).promise.toFuture
-    def getAccountFuture(params: GetAccountRequest): Future[GetAccountResponse] =
+    @inline def getAccountFuture(params: GetAccountRequest): Future[GetAccountResponse] =
       service.getAccount(params).promise.toFuture
-    def getBlacklistReportsFuture(params: GetBlacklistReportsRequest): Future[GetBlacklistReportsResponse] =
+    @inline def getBlacklistReportsFuture(params: GetBlacklistReportsRequest): Future[GetBlacklistReportsResponse] =
       service.getBlacklistReports(params).promise.toFuture
-    def getConfigurationSetEventDestinationsFuture(
+    @inline def getConfigurationSetEventDestinationsFuture(
         params: GetConfigurationSetEventDestinationsRequest
     ): Future[GetConfigurationSetEventDestinationsResponse] =
       service.getConfigurationSetEventDestinations(params).promise.toFuture
-    def getConfigurationSetFuture(params: GetConfigurationSetRequest): Future[GetConfigurationSetResponse] =
+    @inline def getConfigurationSetFuture(params: GetConfigurationSetRequest): Future[GetConfigurationSetResponse] =
       service.getConfigurationSet(params).promise.toFuture
-    def getDedicatedIpFuture(params: GetDedicatedIpRequest): Future[GetDedicatedIpResponse] =
+    @inline def getDedicatedIpFuture(params: GetDedicatedIpRequest): Future[GetDedicatedIpResponse] =
       service.getDedicatedIp(params).promise.toFuture
-    def getDedicatedIpsFuture(params: GetDedicatedIpsRequest): Future[GetDedicatedIpsResponse] =
+    @inline def getDedicatedIpsFuture(params: GetDedicatedIpsRequest): Future[GetDedicatedIpsResponse] =
       service.getDedicatedIps(params).promise.toFuture
-    def getDeliverabilityDashboardOptionsFuture(
+    @inline def getDeliverabilityDashboardOptionsFuture(
         params: GetDeliverabilityDashboardOptionsRequest
     ): Future[GetDeliverabilityDashboardOptionsResponse] =
       service.getDeliverabilityDashboardOptions(params).promise.toFuture
-    def getDeliverabilityTestReportFuture(
+    @inline def getDeliverabilityTestReportFuture(
         params: GetDeliverabilityTestReportRequest
     ): Future[GetDeliverabilityTestReportResponse] = service.getDeliverabilityTestReport(params).promise.toFuture
-    def getDomainDeliverabilityCampaignFuture(
+    @inline def getDomainDeliverabilityCampaignFuture(
         params: GetDomainDeliverabilityCampaignRequest
     ): Future[GetDomainDeliverabilityCampaignResponse] =
       service.getDomainDeliverabilityCampaign(params).promise.toFuture
-    def getDomainStatisticsReportFuture(
+    @inline def getDomainStatisticsReportFuture(
         params: GetDomainStatisticsReportRequest
     ): Future[GetDomainStatisticsReportResponse] = service.getDomainStatisticsReport(params).promise.toFuture
-    def getEmailIdentityFuture(params: GetEmailIdentityRequest): Future[GetEmailIdentityResponse] =
+    @inline def getEmailIdentityFuture(params: GetEmailIdentityRequest): Future[GetEmailIdentityResponse] =
       service.getEmailIdentity(params).promise.toFuture
-    def listConfigurationSetsFuture(params: ListConfigurationSetsRequest): Future[ListConfigurationSetsResponse] =
-      service.listConfigurationSets(params).promise.toFuture
-    def listDedicatedIpPoolsFuture(params: ListDedicatedIpPoolsRequest): Future[ListDedicatedIpPoolsResponse] =
+    @inline def listConfigurationSetsFuture(
+        params: ListConfigurationSetsRequest
+    ): Future[ListConfigurationSetsResponse] = service.listConfigurationSets(params).promise.toFuture
+    @inline def listDedicatedIpPoolsFuture(params: ListDedicatedIpPoolsRequest): Future[ListDedicatedIpPoolsResponse] =
       service.listDedicatedIpPools(params).promise.toFuture
-    def listDeliverabilityTestReportsFuture(
+    @inline def listDeliverabilityTestReportsFuture(
         params: ListDeliverabilityTestReportsRequest
     ): Future[ListDeliverabilityTestReportsResponse] = service.listDeliverabilityTestReports(params).promise.toFuture
-    def listDomainDeliverabilityCampaignsFuture(
+    @inline def listDomainDeliverabilityCampaignsFuture(
         params: ListDomainDeliverabilityCampaignsRequest
     ): Future[ListDomainDeliverabilityCampaignsResponse] =
       service.listDomainDeliverabilityCampaigns(params).promise.toFuture
-    def listEmailIdentitiesFuture(params: ListEmailIdentitiesRequest): Future[ListEmailIdentitiesResponse] =
+    @inline def listEmailIdentitiesFuture(params: ListEmailIdentitiesRequest): Future[ListEmailIdentitiesResponse] =
       service.listEmailIdentities(params).promise.toFuture
-    def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] =
+    @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] =
       service.listTagsForResource(params).promise.toFuture
-    def putAccountDedicatedIpWarmupAttributesFuture(
+    @inline def putAccountDedicatedIpWarmupAttributesFuture(
         params: PutAccountDedicatedIpWarmupAttributesRequest
     ): Future[PutAccountDedicatedIpWarmupAttributesResponse] =
       service.putAccountDedicatedIpWarmupAttributes(params).promise.toFuture
-    def putAccountSendingAttributesFuture(
+    @inline def putAccountSendingAttributesFuture(
         params: PutAccountSendingAttributesRequest
     ): Future[PutAccountSendingAttributesResponse] = service.putAccountSendingAttributes(params).promise.toFuture
-    def putConfigurationSetDeliveryOptionsFuture(
+    @inline def putConfigurationSetDeliveryOptionsFuture(
         params: PutConfigurationSetDeliveryOptionsRequest
     ): Future[PutConfigurationSetDeliveryOptionsResponse] =
       service.putConfigurationSetDeliveryOptions(params).promise.toFuture
-    def putConfigurationSetReputationOptionsFuture(
+    @inline def putConfigurationSetReputationOptionsFuture(
         params: PutConfigurationSetReputationOptionsRequest
     ): Future[PutConfigurationSetReputationOptionsResponse] =
       service.putConfigurationSetReputationOptions(params).promise.toFuture
-    def putConfigurationSetSendingOptionsFuture(
+    @inline def putConfigurationSetSendingOptionsFuture(
         params: PutConfigurationSetSendingOptionsRequest
     ): Future[PutConfigurationSetSendingOptionsResponse] =
       service.putConfigurationSetSendingOptions(params).promise.toFuture
-    def putConfigurationSetTrackingOptionsFuture(
+    @inline def putConfigurationSetTrackingOptionsFuture(
         params: PutConfigurationSetTrackingOptionsRequest
     ): Future[PutConfigurationSetTrackingOptionsResponse] =
       service.putConfigurationSetTrackingOptions(params).promise.toFuture
-    def putDedicatedIpInPoolFuture(params: PutDedicatedIpInPoolRequest): Future[PutDedicatedIpInPoolResponse] =
+    @inline def putDedicatedIpInPoolFuture(params: PutDedicatedIpInPoolRequest): Future[PutDedicatedIpInPoolResponse] =
       service.putDedicatedIpInPool(params).promise.toFuture
-    def putDedicatedIpWarmupAttributesFuture(
+    @inline def putDedicatedIpWarmupAttributesFuture(
         params: PutDedicatedIpWarmupAttributesRequest
     ): Future[PutDedicatedIpWarmupAttributesResponse] = service.putDedicatedIpWarmupAttributes(params).promise.toFuture
-    def putDeliverabilityDashboardOptionFuture(
+    @inline def putDeliverabilityDashboardOptionFuture(
         params: PutDeliverabilityDashboardOptionRequest
     ): Future[PutDeliverabilityDashboardOptionResponse] =
       service.putDeliverabilityDashboardOption(params).promise.toFuture
-    def putEmailIdentityDkimAttributesFuture(
+    @inline def putEmailIdentityDkimAttributesFuture(
         params: PutEmailIdentityDkimAttributesRequest
     ): Future[PutEmailIdentityDkimAttributesResponse] = service.putEmailIdentityDkimAttributes(params).promise.toFuture
-    def putEmailIdentityFeedbackAttributesFuture(
+    @inline def putEmailIdentityFeedbackAttributesFuture(
         params: PutEmailIdentityFeedbackAttributesRequest
     ): Future[PutEmailIdentityFeedbackAttributesResponse] =
       service.putEmailIdentityFeedbackAttributes(params).promise.toFuture
-    def putEmailIdentityMailFromAttributesFuture(
+    @inline def putEmailIdentityMailFromAttributesFuture(
         params: PutEmailIdentityMailFromAttributesRequest
     ): Future[PutEmailIdentityMailFromAttributesResponse] =
       service.putEmailIdentityMailFromAttributes(params).promise.toFuture
-    def sendEmailFuture(params: SendEmailRequest): Future[SendEmailResponse] =
+    @inline def sendEmailFuture(params: SendEmailRequest): Future[SendEmailResponse] =
       service.sendEmail(params).promise.toFuture
-    def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] =
+    @inline def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] =
       service.tagResource(params).promise.toFuture
-    def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] =
+    @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] =
       service.untagResource(params).promise.toFuture
-    def updateConfigurationSetEventDestinationFuture(
+    @inline def updateConfigurationSetEventDestinationFuture(
         params: UpdateConfigurationSetEventDestinationRequest
     ): Future[UpdateConfigurationSetEventDestinationResponse] =
       service.updateConfigurationSetEventDestination(params).promise.toFuture

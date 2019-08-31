@@ -40,35 +40,38 @@ package object efs {
 
   implicit final class EFSOps(private val service: EFS) extends AnyVal {
 
-    def createFileSystemFuture(params: CreateFileSystemRequest): Future[FileSystemDescription] =
+    @inline def createFileSystemFuture(params: CreateFileSystemRequest): Future[FileSystemDescription] =
       service.createFileSystem(params).promise.toFuture
-    def createMountTargetFuture(params: CreateMountTargetRequest): Future[MountTargetDescription] =
+    @inline def createMountTargetFuture(params: CreateMountTargetRequest): Future[MountTargetDescription] =
       service.createMountTarget(params).promise.toFuture
-    def createTagsFuture(params: CreateTagsRequest): Future[js.Object] = service.createTags(params).promise.toFuture
-    def deleteFileSystemFuture(params: DeleteFileSystemRequest): Future[js.Object] =
+    @inline def createTagsFuture(params: CreateTagsRequest): Future[js.Object] =
+      service.createTags(params).promise.toFuture
+    @inline def deleteFileSystemFuture(params: DeleteFileSystemRequest): Future[js.Object] =
       service.deleteFileSystem(params).promise.toFuture
-    def deleteMountTargetFuture(params: DeleteMountTargetRequest): Future[js.Object] =
+    @inline def deleteMountTargetFuture(params: DeleteMountTargetRequest): Future[js.Object] =
       service.deleteMountTarget(params).promise.toFuture
-    def deleteTagsFuture(params: DeleteTagsRequest): Future[js.Object] = service.deleteTags(params).promise.toFuture
-    def describeFileSystemsFuture(params: DescribeFileSystemsRequest): Future[DescribeFileSystemsResponse] =
+    @inline def deleteTagsFuture(params: DeleteTagsRequest): Future[js.Object] =
+      service.deleteTags(params).promise.toFuture
+    @inline def describeFileSystemsFuture(params: DescribeFileSystemsRequest): Future[DescribeFileSystemsResponse] =
       service.describeFileSystems(params).promise.toFuture
-    def describeLifecycleConfigurationFuture(
+    @inline def describeLifecycleConfigurationFuture(
         params: DescribeLifecycleConfigurationRequest
     ): Future[LifecycleConfigurationDescription] = service.describeLifecycleConfiguration(params).promise.toFuture
-    def describeMountTargetSecurityGroupsFuture(
+    @inline def describeMountTargetSecurityGroupsFuture(
         params: DescribeMountTargetSecurityGroupsRequest
     ): Future[DescribeMountTargetSecurityGroupsResponse] =
       service.describeMountTargetSecurityGroups(params).promise.toFuture
-    def describeMountTargetsFuture(params: DescribeMountTargetsRequest): Future[DescribeMountTargetsResponse] =
+    @inline def describeMountTargetsFuture(params: DescribeMountTargetsRequest): Future[DescribeMountTargetsResponse] =
       service.describeMountTargets(params).promise.toFuture
-    def describeTagsFuture(params: DescribeTagsRequest): Future[DescribeTagsResponse] =
+    @inline def describeTagsFuture(params: DescribeTagsRequest): Future[DescribeTagsResponse] =
       service.describeTags(params).promise.toFuture
-    def modifyMountTargetSecurityGroupsFuture(params: ModifyMountTargetSecurityGroupsRequest): Future[js.Object] =
-      service.modifyMountTargetSecurityGroups(params).promise.toFuture
-    def putLifecycleConfigurationFuture(
+    @inline def modifyMountTargetSecurityGroupsFuture(
+        params: ModifyMountTargetSecurityGroupsRequest
+    ): Future[js.Object] = service.modifyMountTargetSecurityGroups(params).promise.toFuture
+    @inline def putLifecycleConfigurationFuture(
         params: PutLifecycleConfigurationRequest
     ): Future[LifecycleConfigurationDescription] = service.putLifecycleConfiguration(params).promise.toFuture
-    def updateFileSystemFuture(params: UpdateFileSystemRequest): Future[FileSystemDescription] =
+    @inline def updateFileSystemFuture(params: UpdateFileSystemRequest): Future[FileSystemDescription] =
       service.updateFileSystem(params).promise.toFuture
   }
 }

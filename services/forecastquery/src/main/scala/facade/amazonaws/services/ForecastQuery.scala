@@ -21,7 +21,7 @@ package object forecastquery {
 
   implicit final class ForecastQueryOps(private val service: ForecastQuery) extends AnyVal {
 
-    def queryForecastFuture(params: QueryForecastRequest): Future[QueryForecastResponse] =
+    @inline def queryForecastFuture(params: QueryForecastRequest): Future[QueryForecastResponse] =
       service.queryForecast(params).promise.toFuture
   }
 }

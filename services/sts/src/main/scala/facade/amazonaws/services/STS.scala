@@ -41,23 +41,23 @@ package object sts {
 
   implicit final class STSOps(private val service: STS) extends AnyVal {
 
-    def assumeRoleFuture(params: AssumeRoleRequest): Future[AssumeRoleResponse] =
+    @inline def assumeRoleFuture(params: AssumeRoleRequest): Future[AssumeRoleResponse] =
       service.assumeRole(params).promise.toFuture
-    def assumeRoleWithSAMLFuture(params: AssumeRoleWithSAMLRequest): Future[AssumeRoleWithSAMLResponse] =
+    @inline def assumeRoleWithSAMLFuture(params: AssumeRoleWithSAMLRequest): Future[AssumeRoleWithSAMLResponse] =
       service.assumeRoleWithSAML(params).promise.toFuture
-    def assumeRoleWithWebIdentityFuture(
+    @inline def assumeRoleWithWebIdentityFuture(
         params: AssumeRoleWithWebIdentityRequest
     ): Future[AssumeRoleWithWebIdentityResponse] = service.assumeRoleWithWebIdentity(params).promise.toFuture
-    def decodeAuthorizationMessageFuture(
+    @inline def decodeAuthorizationMessageFuture(
         params: DecodeAuthorizationMessageRequest
     ): Future[DecodeAuthorizationMessageResponse] = service.decodeAuthorizationMessage(params).promise.toFuture
-    def getAccessKeyInfoFuture(params: GetAccessKeyInfoRequest): Future[GetAccessKeyInfoResponse] =
+    @inline def getAccessKeyInfoFuture(params: GetAccessKeyInfoRequest): Future[GetAccessKeyInfoResponse] =
       service.getAccessKeyInfo(params).promise.toFuture
-    def getCallerIdentityFuture(params: GetCallerIdentityRequest): Future[GetCallerIdentityResponse] =
+    @inline def getCallerIdentityFuture(params: GetCallerIdentityRequest): Future[GetCallerIdentityResponse] =
       service.getCallerIdentity(params).promise.toFuture
-    def getFederationTokenFuture(params: GetFederationTokenRequest): Future[GetFederationTokenResponse] =
+    @inline def getFederationTokenFuture(params: GetFederationTokenRequest): Future[GetFederationTokenResponse] =
       service.getFederationToken(params).promise.toFuture
-    def getSessionTokenFuture(params: GetSessionTokenRequest): Future[GetSessionTokenResponse] =
+    @inline def getSessionTokenFuture(params: GetSessionTokenRequest): Future[GetSessionTokenResponse] =
       service.getSessionToken(params).promise.toFuture
   }
 }

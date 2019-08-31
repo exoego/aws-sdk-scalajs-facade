@@ -100,67 +100,69 @@ package object emr {
 
   implicit final class EMROps(private val service: EMR) extends AnyVal {
 
-    def addInstanceFleetFuture(params: AddInstanceFleetInput): Future[AddInstanceFleetOutput] =
+    @inline def addInstanceFleetFuture(params: AddInstanceFleetInput): Future[AddInstanceFleetOutput] =
       service.addInstanceFleet(params).promise.toFuture
-    def addInstanceGroupsFuture(params: AddInstanceGroupsInput): Future[AddInstanceGroupsOutput] =
+    @inline def addInstanceGroupsFuture(params: AddInstanceGroupsInput): Future[AddInstanceGroupsOutput] =
       service.addInstanceGroups(params).promise.toFuture
-    def addJobFlowStepsFuture(params: AddJobFlowStepsInput): Future[AddJobFlowStepsOutput] =
+    @inline def addJobFlowStepsFuture(params: AddJobFlowStepsInput): Future[AddJobFlowStepsOutput] =
       service.addJobFlowSteps(params).promise.toFuture
-    def addTagsFuture(params: AddTagsInput): Future[AddTagsOutput] = service.addTags(params).promise.toFuture
-    def cancelStepsFuture(params: CancelStepsInput): Future[CancelStepsOutput] =
+    @inline def addTagsFuture(params: AddTagsInput): Future[AddTagsOutput] = service.addTags(params).promise.toFuture
+    @inline def cancelStepsFuture(params: CancelStepsInput): Future[CancelStepsOutput] =
       service.cancelSteps(params).promise.toFuture
-    def createSecurityConfigurationFuture(
+    @inline def createSecurityConfigurationFuture(
         params: CreateSecurityConfigurationInput
     ): Future[CreateSecurityConfigurationOutput] = service.createSecurityConfiguration(params).promise.toFuture
-    def deleteSecurityConfigurationFuture(
+    @inline def deleteSecurityConfigurationFuture(
         params: DeleteSecurityConfigurationInput
     ): Future[DeleteSecurityConfigurationOutput] = service.deleteSecurityConfiguration(params).promise.toFuture
-    def describeClusterFuture(params: DescribeClusterInput): Future[DescribeClusterOutput] =
+    @inline def describeClusterFuture(params: DescribeClusterInput): Future[DescribeClusterOutput] =
       service.describeCluster(params).promise.toFuture
-    def describeSecurityConfigurationFuture(
+    @inline def describeSecurityConfigurationFuture(
         params: DescribeSecurityConfigurationInput
     ): Future[DescribeSecurityConfigurationOutput] = service.describeSecurityConfiguration(params).promise.toFuture
-    def describeStepFuture(params: DescribeStepInput): Future[DescribeStepOutput] =
+    @inline def describeStepFuture(params: DescribeStepInput): Future[DescribeStepOutput] =
       service.describeStep(params).promise.toFuture
-    def getBlockPublicAccessConfigurationFuture(
+    @inline def getBlockPublicAccessConfigurationFuture(
         params: GetBlockPublicAccessConfigurationInput
     ): Future[GetBlockPublicAccessConfigurationOutput] =
       service.getBlockPublicAccessConfiguration(params).promise.toFuture
-    def listBootstrapActionsFuture(params: ListBootstrapActionsInput): Future[ListBootstrapActionsOutput] =
+    @inline def listBootstrapActionsFuture(params: ListBootstrapActionsInput): Future[ListBootstrapActionsOutput] =
       service.listBootstrapActions(params).promise.toFuture
-    def listClustersFuture(params: ListClustersInput): Future[ListClustersOutput] =
+    @inline def listClustersFuture(params: ListClustersInput): Future[ListClustersOutput] =
       service.listClusters(params).promise.toFuture
-    def listInstanceFleetsFuture(params: ListInstanceFleetsInput): Future[ListInstanceFleetsOutput] =
+    @inline def listInstanceFleetsFuture(params: ListInstanceFleetsInput): Future[ListInstanceFleetsOutput] =
       service.listInstanceFleets(params).promise.toFuture
-    def listInstanceGroupsFuture(params: ListInstanceGroupsInput): Future[ListInstanceGroupsOutput] =
+    @inline def listInstanceGroupsFuture(params: ListInstanceGroupsInput): Future[ListInstanceGroupsOutput] =
       service.listInstanceGroups(params).promise.toFuture
-    def listInstancesFuture(params: ListInstancesInput): Future[ListInstancesOutput] =
+    @inline def listInstancesFuture(params: ListInstancesInput): Future[ListInstancesOutput] =
       service.listInstances(params).promise.toFuture
-    def listSecurityConfigurationsFuture(
+    @inline def listSecurityConfigurationsFuture(
         params: ListSecurityConfigurationsInput
-    ): Future[ListSecurityConfigurationsOutput]                          = service.listSecurityConfigurations(params).promise.toFuture
-    def listStepsFuture(params: ListStepsInput): Future[ListStepsOutput] = service.listSteps(params).promise.toFuture
-    def modifyInstanceFleetFuture(params: ModifyInstanceFleetInput): Future[js.Object] =
+    ): Future[ListSecurityConfigurationsOutput] = service.listSecurityConfigurations(params).promise.toFuture
+    @inline def listStepsFuture(params: ListStepsInput): Future[ListStepsOutput] =
+      service.listSteps(params).promise.toFuture
+    @inline def modifyInstanceFleetFuture(params: ModifyInstanceFleetInput): Future[js.Object] =
       service.modifyInstanceFleet(params).promise.toFuture
-    def modifyInstanceGroupsFuture(params: ModifyInstanceGroupsInput): Future[js.Object] =
+    @inline def modifyInstanceGroupsFuture(params: ModifyInstanceGroupsInput): Future[js.Object] =
       service.modifyInstanceGroups(params).promise.toFuture
-    def putAutoScalingPolicyFuture(params: PutAutoScalingPolicyInput): Future[PutAutoScalingPolicyOutput] =
+    @inline def putAutoScalingPolicyFuture(params: PutAutoScalingPolicyInput): Future[PutAutoScalingPolicyOutput] =
       service.putAutoScalingPolicy(params).promise.toFuture
-    def putBlockPublicAccessConfigurationFuture(
+    @inline def putBlockPublicAccessConfigurationFuture(
         params: PutBlockPublicAccessConfigurationInput
     ): Future[PutBlockPublicAccessConfigurationOutput] =
       service.putBlockPublicAccessConfiguration(params).promise.toFuture
-    def removeAutoScalingPolicyFuture(params: RemoveAutoScalingPolicyInput): Future[RemoveAutoScalingPolicyOutput] =
-      service.removeAutoScalingPolicy(params).promise.toFuture
-    def removeTagsFuture(params: RemoveTagsInput): Future[RemoveTagsOutput] =
+    @inline def removeAutoScalingPolicyFuture(
+        params: RemoveAutoScalingPolicyInput
+    ): Future[RemoveAutoScalingPolicyOutput] = service.removeAutoScalingPolicy(params).promise.toFuture
+    @inline def removeTagsFuture(params: RemoveTagsInput): Future[RemoveTagsOutput] =
       service.removeTags(params).promise.toFuture
-    def runJobFlowFuture(params: RunJobFlowInput): Future[RunJobFlowOutput] =
+    @inline def runJobFlowFuture(params: RunJobFlowInput): Future[RunJobFlowOutput] =
       service.runJobFlow(params).promise.toFuture
-    def setTerminationProtectionFuture(params: SetTerminationProtectionInput): Future[js.Object] =
+    @inline def setTerminationProtectionFuture(params: SetTerminationProtectionInput): Future[js.Object] =
       service.setTerminationProtection(params).promise.toFuture
-    def setVisibleToAllUsersFuture(params: SetVisibleToAllUsersInput): Future[js.Object] =
+    @inline def setVisibleToAllUsersFuture(params: SetVisibleToAllUsersInput): Future[js.Object] =
       service.setVisibleToAllUsers(params).promise.toFuture
-    def terminateJobFlowsFuture(params: TerminateJobFlowsInput): Future[js.Object] =
+    @inline def terminateJobFlowsFuture(params: TerminateJobFlowsInput): Future[js.Object] =
       service.terminateJobFlows(params).promise.toFuture
   }
 }

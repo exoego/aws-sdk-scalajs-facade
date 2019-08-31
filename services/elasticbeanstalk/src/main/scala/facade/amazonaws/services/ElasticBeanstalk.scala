@@ -167,110 +167,115 @@ package object elasticbeanstalk {
 
   implicit final class ElasticBeanstalkOps(private val service: ElasticBeanstalk) extends AnyVal {
 
-    def abortEnvironmentUpdateFuture(params: AbortEnvironmentUpdateMessage): Future[js.Object] =
+    @inline def abortEnvironmentUpdateFuture(params: AbortEnvironmentUpdateMessage): Future[js.Object] =
       service.abortEnvironmentUpdate(params).promise.toFuture
-    def applyEnvironmentManagedActionFuture(
+    @inline def applyEnvironmentManagedActionFuture(
         params: ApplyEnvironmentManagedActionRequest
     ): Future[ApplyEnvironmentManagedActionResult] = service.applyEnvironmentManagedAction(params).promise.toFuture
-    def checkDNSAvailabilityFuture(params: CheckDNSAvailabilityMessage): Future[CheckDNSAvailabilityResultMessage] =
-      service.checkDNSAvailability(params).promise.toFuture
-    def composeEnvironmentsFuture(params: ComposeEnvironmentsMessage): Future[EnvironmentDescriptionsMessage] =
+    @inline def checkDNSAvailabilityFuture(
+        params: CheckDNSAvailabilityMessage
+    ): Future[CheckDNSAvailabilityResultMessage] = service.checkDNSAvailability(params).promise.toFuture
+    @inline def composeEnvironmentsFuture(params: ComposeEnvironmentsMessage): Future[EnvironmentDescriptionsMessage] =
       service.composeEnvironments(params).promise.toFuture
-    def createApplicationFuture(params: CreateApplicationMessage): Future[ApplicationDescriptionMessage] =
+    @inline def createApplicationFuture(params: CreateApplicationMessage): Future[ApplicationDescriptionMessage] =
       service.createApplication(params).promise.toFuture
-    def createApplicationVersionFuture(
+    @inline def createApplicationVersionFuture(
         params: CreateApplicationVersionMessage
     ): Future[ApplicationVersionDescriptionMessage] = service.createApplicationVersion(params).promise.toFuture
-    def createConfigurationTemplateFuture(
+    @inline def createConfigurationTemplateFuture(
         params: CreateConfigurationTemplateMessage
     ): Future[ConfigurationSettingsDescription] = service.createConfigurationTemplate(params).promise.toFuture
-    def createEnvironmentFuture(params: CreateEnvironmentMessage): Future[EnvironmentDescription] =
+    @inline def createEnvironmentFuture(params: CreateEnvironmentMessage): Future[EnvironmentDescription] =
       service.createEnvironment(params).promise.toFuture
-    def createPlatformVersionFuture(params: CreatePlatformVersionRequest): Future[CreatePlatformVersionResult] =
+    @inline def createPlatformVersionFuture(params: CreatePlatformVersionRequest): Future[CreatePlatformVersionResult] =
       service.createPlatformVersion(params).promise.toFuture
-    def createStorageLocationFuture(): Future[CreateStorageLocationResultMessage] =
+    @inline def createStorageLocationFuture(): Future[CreateStorageLocationResultMessage] =
       service.createStorageLocation().promise.toFuture
-    def deleteApplicationFuture(params: DeleteApplicationMessage): Future[js.Object] =
+    @inline def deleteApplicationFuture(params: DeleteApplicationMessage): Future[js.Object] =
       service.deleteApplication(params).promise.toFuture
-    def deleteApplicationVersionFuture(params: DeleteApplicationVersionMessage): Future[js.Object] =
+    @inline def deleteApplicationVersionFuture(params: DeleteApplicationVersionMessage): Future[js.Object] =
       service.deleteApplicationVersion(params).promise.toFuture
-    def deleteConfigurationTemplateFuture(params: DeleteConfigurationTemplateMessage): Future[js.Object] =
+    @inline def deleteConfigurationTemplateFuture(params: DeleteConfigurationTemplateMessage): Future[js.Object] =
       service.deleteConfigurationTemplate(params).promise.toFuture
-    def deleteEnvironmentConfigurationFuture(params: DeleteEnvironmentConfigurationMessage): Future[js.Object] =
+    @inline def deleteEnvironmentConfigurationFuture(params: DeleteEnvironmentConfigurationMessage): Future[js.Object] =
       service.deleteEnvironmentConfiguration(params).promise.toFuture
-    def deletePlatformVersionFuture(params: DeletePlatformVersionRequest): Future[DeletePlatformVersionResult] =
+    @inline def deletePlatformVersionFuture(params: DeletePlatformVersionRequest): Future[DeletePlatformVersionResult] =
       service.deletePlatformVersion(params).promise.toFuture
-    def describeAccountAttributesFuture(): Future[DescribeAccountAttributesResult] =
+    @inline def describeAccountAttributesFuture(): Future[DescribeAccountAttributesResult] =
       service.describeAccountAttributes().promise.toFuture
-    def describeApplicationVersionsFuture(
+    @inline def describeApplicationVersionsFuture(
         params: DescribeApplicationVersionsMessage
     ): Future[ApplicationVersionDescriptionsMessage] = service.describeApplicationVersions(params).promise.toFuture
-    def describeApplicationsFuture(params: DescribeApplicationsMessage): Future[ApplicationDescriptionsMessage] =
-      service.describeApplications(params).promise.toFuture
-    def describeConfigurationOptionsFuture(
+    @inline def describeApplicationsFuture(
+        params: DescribeApplicationsMessage
+    ): Future[ApplicationDescriptionsMessage] = service.describeApplications(params).promise.toFuture
+    @inline def describeConfigurationOptionsFuture(
         params: DescribeConfigurationOptionsMessage
     ): Future[ConfigurationOptionsDescription] = service.describeConfigurationOptions(params).promise.toFuture
-    def describeConfigurationSettingsFuture(
+    @inline def describeConfigurationSettingsFuture(
         params: DescribeConfigurationSettingsMessage
     ): Future[ConfigurationSettingsDescriptions] = service.describeConfigurationSettings(params).promise.toFuture
-    def describeEnvironmentHealthFuture(
+    @inline def describeEnvironmentHealthFuture(
         params: DescribeEnvironmentHealthRequest
     ): Future[DescribeEnvironmentHealthResult] = service.describeEnvironmentHealth(params).promise.toFuture
-    def describeEnvironmentManagedActionHistoryFuture(
+    @inline def describeEnvironmentManagedActionHistoryFuture(
         params: DescribeEnvironmentManagedActionHistoryRequest
     ): Future[DescribeEnvironmentManagedActionHistoryResult] =
       service.describeEnvironmentManagedActionHistory(params).promise.toFuture
-    def describeEnvironmentManagedActionsFuture(
+    @inline def describeEnvironmentManagedActionsFuture(
         params: DescribeEnvironmentManagedActionsRequest
     ): Future[DescribeEnvironmentManagedActionsResult] =
       service.describeEnvironmentManagedActions(params).promise.toFuture
-    def describeEnvironmentResourcesFuture(
+    @inline def describeEnvironmentResourcesFuture(
         params: DescribeEnvironmentResourcesMessage
     ): Future[EnvironmentResourceDescriptionsMessage] = service.describeEnvironmentResources(params).promise.toFuture
-    def describeEnvironmentsFuture(params: DescribeEnvironmentsMessage): Future[EnvironmentDescriptionsMessage] =
-      service.describeEnvironments(params).promise.toFuture
-    def describeEventsFuture(params: DescribeEventsMessage): Future[EventDescriptionsMessage] =
+    @inline def describeEnvironmentsFuture(
+        params: DescribeEnvironmentsMessage
+    ): Future[EnvironmentDescriptionsMessage] = service.describeEnvironments(params).promise.toFuture
+    @inline def describeEventsFuture(params: DescribeEventsMessage): Future[EventDescriptionsMessage] =
       service.describeEvents(params).promise.toFuture
-    def describeInstancesHealthFuture(params: DescribeInstancesHealthRequest): Future[DescribeInstancesHealthResult] =
-      service.describeInstancesHealth(params).promise.toFuture
-    def describePlatformVersionFuture(params: DescribePlatformVersionRequest): Future[DescribePlatformVersionResult] =
-      service.describePlatformVersion(params).promise.toFuture
-    def listAvailableSolutionStacksFuture(): Future[ListAvailableSolutionStacksResultMessage] =
+    @inline def describeInstancesHealthFuture(
+        params: DescribeInstancesHealthRequest
+    ): Future[DescribeInstancesHealthResult] = service.describeInstancesHealth(params).promise.toFuture
+    @inline def describePlatformVersionFuture(
+        params: DescribePlatformVersionRequest
+    ): Future[DescribePlatformVersionResult] = service.describePlatformVersion(params).promise.toFuture
+    @inline def listAvailableSolutionStacksFuture(): Future[ListAvailableSolutionStacksResultMessage] =
       service.listAvailableSolutionStacks().promise.toFuture
-    def listPlatformVersionsFuture(params: ListPlatformVersionsRequest): Future[ListPlatformVersionsResult] =
+    @inline def listPlatformVersionsFuture(params: ListPlatformVersionsRequest): Future[ListPlatformVersionsResult] =
       service.listPlatformVersions(params).promise.toFuture
-    def listTagsForResourceFuture(params: ListTagsForResourceMessage): Future[ResourceTagsDescriptionMessage] =
+    @inline def listTagsForResourceFuture(params: ListTagsForResourceMessage): Future[ResourceTagsDescriptionMessage] =
       service.listTagsForResource(params).promise.toFuture
-    def rebuildEnvironmentFuture(params: RebuildEnvironmentMessage): Future[js.Object] =
+    @inline def rebuildEnvironmentFuture(params: RebuildEnvironmentMessage): Future[js.Object] =
       service.rebuildEnvironment(params).promise.toFuture
-    def requestEnvironmentInfoFuture(params: RequestEnvironmentInfoMessage): Future[js.Object] =
+    @inline def requestEnvironmentInfoFuture(params: RequestEnvironmentInfoMessage): Future[js.Object] =
       service.requestEnvironmentInfo(params).promise.toFuture
-    def restartAppServerFuture(params: RestartAppServerMessage): Future[js.Object] =
+    @inline def restartAppServerFuture(params: RestartAppServerMessage): Future[js.Object] =
       service.restartAppServer(params).promise.toFuture
-    def retrieveEnvironmentInfoFuture(
+    @inline def retrieveEnvironmentInfoFuture(
         params: RetrieveEnvironmentInfoMessage
     ): Future[RetrieveEnvironmentInfoResultMessage] = service.retrieveEnvironmentInfo(params).promise.toFuture
-    def swapEnvironmentCNAMEsFuture(params: SwapEnvironmentCNAMEsMessage): Future[js.Object] =
+    @inline def swapEnvironmentCNAMEsFuture(params: SwapEnvironmentCNAMEsMessage): Future[js.Object] =
       service.swapEnvironmentCNAMEs(params).promise.toFuture
-    def terminateEnvironmentFuture(params: TerminateEnvironmentMessage): Future[EnvironmentDescription] =
+    @inline def terminateEnvironmentFuture(params: TerminateEnvironmentMessage): Future[EnvironmentDescription] =
       service.terminateEnvironment(params).promise.toFuture
-    def updateApplicationFuture(params: UpdateApplicationMessage): Future[ApplicationDescriptionMessage] =
+    @inline def updateApplicationFuture(params: UpdateApplicationMessage): Future[ApplicationDescriptionMessage] =
       service.updateApplication(params).promise.toFuture
-    def updateApplicationResourceLifecycleFuture(
+    @inline def updateApplicationResourceLifecycleFuture(
         params: UpdateApplicationResourceLifecycleMessage
     ): Future[ApplicationResourceLifecycleDescriptionMessage] =
       service.updateApplicationResourceLifecycle(params).promise.toFuture
-    def updateApplicationVersionFuture(
+    @inline def updateApplicationVersionFuture(
         params: UpdateApplicationVersionMessage
     ): Future[ApplicationVersionDescriptionMessage] = service.updateApplicationVersion(params).promise.toFuture
-    def updateConfigurationTemplateFuture(
+    @inline def updateConfigurationTemplateFuture(
         params: UpdateConfigurationTemplateMessage
     ): Future[ConfigurationSettingsDescription] = service.updateConfigurationTemplate(params).promise.toFuture
-    def updateEnvironmentFuture(params: UpdateEnvironmentMessage): Future[EnvironmentDescription] =
+    @inline def updateEnvironmentFuture(params: UpdateEnvironmentMessage): Future[EnvironmentDescription] =
       service.updateEnvironment(params).promise.toFuture
-    def updateTagsForResourceFuture(params: UpdateTagsForResourceMessage): Future[js.Object] =
+    @inline def updateTagsForResourceFuture(params: UpdateTagsForResourceMessage): Future[js.Object] =
       service.updateTagsForResource(params).promise.toFuture
-    def validateConfigurationSettingsFuture(
+    @inline def validateConfigurationSettingsFuture(
         params: ValidateConfigurationSettingsMessage
     ): Future[ConfigurationSettingsValidationMessages] = service.validateConfigurationSettings(params).promise.toFuture
   }

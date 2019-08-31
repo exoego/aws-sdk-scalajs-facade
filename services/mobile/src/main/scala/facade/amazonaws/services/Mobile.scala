@@ -42,23 +42,23 @@ package object mobile {
 
   implicit final class MobileOps(private val service: Mobile) extends AnyVal {
 
-    def createProjectFuture(params: CreateProjectRequest): Future[CreateProjectResult] =
+    @inline def createProjectFuture(params: CreateProjectRequest): Future[CreateProjectResult] =
       service.createProject(params).promise.toFuture
-    def deleteProjectFuture(params: DeleteProjectRequest): Future[DeleteProjectResult] =
+    @inline def deleteProjectFuture(params: DeleteProjectRequest): Future[DeleteProjectResult] =
       service.deleteProject(params).promise.toFuture
-    def describeBundleFuture(params: DescribeBundleRequest): Future[DescribeBundleResult] =
+    @inline def describeBundleFuture(params: DescribeBundleRequest): Future[DescribeBundleResult] =
       service.describeBundle(params).promise.toFuture
-    def describeProjectFuture(params: DescribeProjectRequest): Future[DescribeProjectResult] =
+    @inline def describeProjectFuture(params: DescribeProjectRequest): Future[DescribeProjectResult] =
       service.describeProject(params).promise.toFuture
-    def exportBundleFuture(params: ExportBundleRequest): Future[ExportBundleResult] =
+    @inline def exportBundleFuture(params: ExportBundleRequest): Future[ExportBundleResult] =
       service.exportBundle(params).promise.toFuture
-    def exportProjectFuture(params: ExportProjectRequest): Future[ExportProjectResult] =
+    @inline def exportProjectFuture(params: ExportProjectRequest): Future[ExportProjectResult] =
       service.exportProject(params).promise.toFuture
-    def listBundlesFuture(params: ListBundlesRequest): Future[ListBundlesResult] =
+    @inline def listBundlesFuture(params: ListBundlesRequest): Future[ListBundlesResult] =
       service.listBundles(params).promise.toFuture
-    def listProjectsFuture(params: ListProjectsRequest): Future[ListProjectsResult] =
+    @inline def listProjectsFuture(params: ListProjectsRequest): Future[ListProjectsResult] =
       service.listProjects(params).promise.toFuture
-    def updateProjectFuture(params: UpdateProjectRequest): Future[UpdateProjectResult] =
+    @inline def updateProjectFuture(params: UpdateProjectRequest): Future[UpdateProjectResult] =
       service.updateProject(params).promise.toFuture
   }
 }

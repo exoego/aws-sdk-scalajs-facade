@@ -42,18 +42,19 @@ package object textract {
 
   implicit final class TextractOps(private val service: Textract) extends AnyVal {
 
-    def analyzeDocumentFuture(params: AnalyzeDocumentRequest): Future[AnalyzeDocumentResponse] =
+    @inline def analyzeDocumentFuture(params: AnalyzeDocumentRequest): Future[AnalyzeDocumentResponse] =
       service.analyzeDocument(params).promise.toFuture
-    def detectDocumentTextFuture(params: DetectDocumentTextRequest): Future[DetectDocumentTextResponse] =
+    @inline def detectDocumentTextFuture(params: DetectDocumentTextRequest): Future[DetectDocumentTextResponse] =
       service.detectDocumentText(params).promise.toFuture
-    def getDocumentAnalysisFuture(params: GetDocumentAnalysisRequest): Future[GetDocumentAnalysisResponse] =
+    @inline def getDocumentAnalysisFuture(params: GetDocumentAnalysisRequest): Future[GetDocumentAnalysisResponse] =
       service.getDocumentAnalysis(params).promise.toFuture
-    def getDocumentTextDetectionFuture(
+    @inline def getDocumentTextDetectionFuture(
         params: GetDocumentTextDetectionRequest
     ): Future[GetDocumentTextDetectionResponse] = service.getDocumentTextDetection(params).promise.toFuture
-    def startDocumentAnalysisFuture(params: StartDocumentAnalysisRequest): Future[StartDocumentAnalysisResponse] =
-      service.startDocumentAnalysis(params).promise.toFuture
-    def startDocumentTextDetectionFuture(
+    @inline def startDocumentAnalysisFuture(
+        params: StartDocumentAnalysisRequest
+    ): Future[StartDocumentAnalysisResponse] = service.startDocumentAnalysis(params).promise.toFuture
+    @inline def startDocumentTextDetectionFuture(
         params: StartDocumentTextDetectionRequest
     ): Future[StartDocumentTextDetectionResponse] = service.startDocumentTextDetection(params).promise.toFuture
   }

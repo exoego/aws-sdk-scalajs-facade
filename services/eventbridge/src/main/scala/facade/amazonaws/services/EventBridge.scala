@@ -74,66 +74,72 @@ package object eventbridge {
 
   implicit final class EventBridgeOps(private val service: EventBridge) extends AnyVal {
 
-    def activateEventSourceFuture(params: ActivateEventSourceRequest): Future[js.Object] =
+    @inline def activateEventSourceFuture(params: ActivateEventSourceRequest): Future[js.Object] =
       service.activateEventSource(params).promise.toFuture
-    def createEventBusFuture(params: CreateEventBusRequest): Future[CreateEventBusResponse] =
+    @inline def createEventBusFuture(params: CreateEventBusRequest): Future[CreateEventBusResponse] =
       service.createEventBus(params).promise.toFuture
-    def createPartnerEventSourceFuture(
+    @inline def createPartnerEventSourceFuture(
         params: CreatePartnerEventSourceRequest
     ): Future[CreatePartnerEventSourceResponse] = service.createPartnerEventSource(params).promise.toFuture
-    def deactivateEventSourceFuture(params: DeactivateEventSourceRequest): Future[js.Object] =
+    @inline def deactivateEventSourceFuture(params: DeactivateEventSourceRequest): Future[js.Object] =
       service.deactivateEventSource(params).promise.toFuture
-    def deleteEventBusFuture(params: DeleteEventBusRequest): Future[js.Object] =
+    @inline def deleteEventBusFuture(params: DeleteEventBusRequest): Future[js.Object] =
       service.deleteEventBus(params).promise.toFuture
-    def deletePartnerEventSourceFuture(params: DeletePartnerEventSourceRequest): Future[js.Object] =
+    @inline def deletePartnerEventSourceFuture(params: DeletePartnerEventSourceRequest): Future[js.Object] =
       service.deletePartnerEventSource(params).promise.toFuture
-    def deleteRuleFuture(params: DeleteRuleRequest): Future[js.Object] = service.deleteRule(params).promise.toFuture
-    def describeEventBusFuture(params: DescribeEventBusRequest): Future[DescribeEventBusResponse] =
+    @inline def deleteRuleFuture(params: DeleteRuleRequest): Future[js.Object] =
+      service.deleteRule(params).promise.toFuture
+    @inline def describeEventBusFuture(params: DescribeEventBusRequest): Future[DescribeEventBusResponse] =
       service.describeEventBus(params).promise.toFuture
-    def describeEventSourceFuture(params: DescribeEventSourceRequest): Future[DescribeEventSourceResponse] =
+    @inline def describeEventSourceFuture(params: DescribeEventSourceRequest): Future[DescribeEventSourceResponse] =
       service.describeEventSource(params).promise.toFuture
-    def describePartnerEventSourceFuture(
+    @inline def describePartnerEventSourceFuture(
         params: DescribePartnerEventSourceRequest
     ): Future[DescribePartnerEventSourceResponse] = service.describePartnerEventSource(params).promise.toFuture
-    def describeRuleFuture(params: DescribeRuleRequest): Future[DescribeRuleResponse] =
+    @inline def describeRuleFuture(params: DescribeRuleRequest): Future[DescribeRuleResponse] =
       service.describeRule(params).promise.toFuture
-    def disableRuleFuture(params: DisableRuleRequest): Future[js.Object] = service.disableRule(params).promise.toFuture
-    def enableRuleFuture(params: EnableRuleRequest): Future[js.Object]   = service.enableRule(params).promise.toFuture
-    def listEventBusesFuture(params: ListEventBusesRequest): Future[ListEventBusesResponse] =
+    @inline def disableRuleFuture(params: DisableRuleRequest): Future[js.Object] =
+      service.disableRule(params).promise.toFuture
+    @inline def enableRuleFuture(params: EnableRuleRequest): Future[js.Object] =
+      service.enableRule(params).promise.toFuture
+    @inline def listEventBusesFuture(params: ListEventBusesRequest): Future[ListEventBusesResponse] =
       service.listEventBuses(params).promise.toFuture
-    def listEventSourcesFuture(params: ListEventSourcesRequest): Future[ListEventSourcesResponse] =
+    @inline def listEventSourcesFuture(params: ListEventSourcesRequest): Future[ListEventSourcesResponse] =
       service.listEventSources(params).promise.toFuture
-    def listPartnerEventSourceAccountsFuture(
+    @inline def listPartnerEventSourceAccountsFuture(
         params: ListPartnerEventSourceAccountsRequest
     ): Future[ListPartnerEventSourceAccountsResponse] = service.listPartnerEventSourceAccounts(params).promise.toFuture
-    def listPartnerEventSourcesFuture(params: ListPartnerEventSourcesRequest): Future[ListPartnerEventSourcesResponse] =
-      service.listPartnerEventSources(params).promise.toFuture
-    def listRuleNamesByTargetFuture(params: ListRuleNamesByTargetRequest): Future[ListRuleNamesByTargetResponse] =
-      service.listRuleNamesByTarget(params).promise.toFuture
-    def listRulesFuture(params: ListRulesRequest): Future[ListRulesResponse] =
+    @inline def listPartnerEventSourcesFuture(
+        params: ListPartnerEventSourcesRequest
+    ): Future[ListPartnerEventSourcesResponse] = service.listPartnerEventSources(params).promise.toFuture
+    @inline def listRuleNamesByTargetFuture(
+        params: ListRuleNamesByTargetRequest
+    ): Future[ListRuleNamesByTargetResponse] = service.listRuleNamesByTarget(params).promise.toFuture
+    @inline def listRulesFuture(params: ListRulesRequest): Future[ListRulesResponse] =
       service.listRules(params).promise.toFuture
-    def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] =
+    @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] =
       service.listTagsForResource(params).promise.toFuture
-    def listTargetsByRuleFuture(params: ListTargetsByRuleRequest): Future[ListTargetsByRuleResponse] =
+    @inline def listTargetsByRuleFuture(params: ListTargetsByRuleRequest): Future[ListTargetsByRuleResponse] =
       service.listTargetsByRule(params).promise.toFuture
-    def putEventsFuture(params: PutEventsRequest): Future[PutEventsResponse] =
+    @inline def putEventsFuture(params: PutEventsRequest): Future[PutEventsResponse] =
       service.putEvents(params).promise.toFuture
-    def putPartnerEventsFuture(params: PutPartnerEventsRequest): Future[PutPartnerEventsResponse] =
+    @inline def putPartnerEventsFuture(params: PutPartnerEventsRequest): Future[PutPartnerEventsResponse] =
       service.putPartnerEvents(params).promise.toFuture
-    def putPermissionFuture(params: PutPermissionRequest): Future[js.Object] =
+    @inline def putPermissionFuture(params: PutPermissionRequest): Future[js.Object] =
       service.putPermission(params).promise.toFuture
-    def putRuleFuture(params: PutRuleRequest): Future[PutRuleResponse] = service.putRule(params).promise.toFuture
-    def putTargetsFuture(params: PutTargetsRequest): Future[PutTargetsResponse] =
+    @inline def putRuleFuture(params: PutRuleRequest): Future[PutRuleResponse] =
+      service.putRule(params).promise.toFuture
+    @inline def putTargetsFuture(params: PutTargetsRequest): Future[PutTargetsResponse] =
       service.putTargets(params).promise.toFuture
-    def removePermissionFuture(params: RemovePermissionRequest): Future[js.Object] =
+    @inline def removePermissionFuture(params: RemovePermissionRequest): Future[js.Object] =
       service.removePermission(params).promise.toFuture
-    def removeTargetsFuture(params: RemoveTargetsRequest): Future[RemoveTargetsResponse] =
+    @inline def removeTargetsFuture(params: RemoveTargetsRequest): Future[RemoveTargetsResponse] =
       service.removeTargets(params).promise.toFuture
-    def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] =
+    @inline def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] =
       service.tagResource(params).promise.toFuture
-    def testEventPatternFuture(params: TestEventPatternRequest): Future[TestEventPatternResponse] =
+    @inline def testEventPatternFuture(params: TestEventPatternRequest): Future[TestEventPatternResponse] =
       service.testEventPattern(params).promise.toFuture
-    def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] =
+    @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] =
       service.untagResource(params).promise.toFuture
   }
 }

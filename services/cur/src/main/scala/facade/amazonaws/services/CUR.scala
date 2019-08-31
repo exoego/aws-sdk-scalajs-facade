@@ -28,14 +28,16 @@ package object cur {
 
   implicit final class CUROps(private val service: CUR) extends AnyVal {
 
-    def deleteReportDefinitionFuture(params: DeleteReportDefinitionRequest): Future[DeleteReportDefinitionResponse] =
-      service.deleteReportDefinition(params).promise.toFuture
-    def describeReportDefinitionsFuture(
+    @inline def deleteReportDefinitionFuture(
+        params: DeleteReportDefinitionRequest
+    ): Future[DeleteReportDefinitionResponse] = service.deleteReportDefinition(params).promise.toFuture
+    @inline def describeReportDefinitionsFuture(
         params: DescribeReportDefinitionsRequest
     ): Future[DescribeReportDefinitionsResponse] = service.describeReportDefinitions(params).promise.toFuture
-    def modifyReportDefinitionFuture(params: ModifyReportDefinitionRequest): Future[ModifyReportDefinitionResponse] =
-      service.modifyReportDefinition(params).promise.toFuture
-    def putReportDefinitionFuture(params: PutReportDefinitionRequest): Future[PutReportDefinitionResponse] =
+    @inline def modifyReportDefinitionFuture(
+        params: ModifyReportDefinitionRequest
+    ): Future[ModifyReportDefinitionResponse] = service.modifyReportDefinition(params).promise.toFuture
+    @inline def putReportDefinitionFuture(params: PutReportDefinitionRequest): Future[PutReportDefinitionResponse] =
       service.putReportDefinition(params).promise.toFuture
   }
 }

@@ -41,9 +41,10 @@ package object cloudsearchdomain {
 
   implicit final class CloudSearchDomainOps(private val service: CloudSearchDomain) extends AnyVal {
 
-    def searchFuture(params: SearchRequest): Future[SearchResponse]    = service.search(params).promise.toFuture
-    def suggestFuture(params: SuggestRequest): Future[SuggestResponse] = service.suggest(params).promise.toFuture
-    def uploadDocumentsFuture(params: UploadDocumentsRequest): Future[UploadDocumentsResponse] =
+    @inline def searchFuture(params: SearchRequest): Future[SearchResponse] = service.search(params).promise.toFuture
+    @inline def suggestFuture(params: SuggestRequest): Future[SuggestResponse] =
+      service.suggest(params).promise.toFuture
+    @inline def uploadDocumentsFuture(params: UploadDocumentsRequest): Future[UploadDocumentsResponse] =
       service.uploadDocuments(params).promise.toFuture
   }
 }

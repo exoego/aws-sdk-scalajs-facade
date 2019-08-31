@@ -92,107 +92,111 @@ package object appstream {
 
   implicit final class AppStreamOps(private val service: AppStream) extends AnyVal {
 
-    def associateFleetFuture(params: AssociateFleetRequest): Future[AssociateFleetResult] =
+    @inline def associateFleetFuture(params: AssociateFleetRequest): Future[AssociateFleetResult] =
       service.associateFleet(params).promise.toFuture
-    def batchAssociateUserStackFuture(params: BatchAssociateUserStackRequest): Future[BatchAssociateUserStackResult] =
-      service.batchAssociateUserStack(params).promise.toFuture
-    def batchDisassociateUserStackFuture(
+    @inline def batchAssociateUserStackFuture(
+        params: BatchAssociateUserStackRequest
+    ): Future[BatchAssociateUserStackResult] = service.batchAssociateUserStack(params).promise.toFuture
+    @inline def batchDisassociateUserStackFuture(
         params: BatchDisassociateUserStackRequest
     ): Future[BatchDisassociateUserStackResult] = service.batchDisassociateUserStack(params).promise.toFuture
-    def copyImageFuture(params: CopyImageRequest): Future[CopyImageResponse] =
+    @inline def copyImageFuture(params: CopyImageRequest): Future[CopyImageResponse] =
       service.copyImage(params).promise.toFuture
-    def createDirectoryConfigFuture(params: CreateDirectoryConfigRequest): Future[CreateDirectoryConfigResult] =
+    @inline def createDirectoryConfigFuture(params: CreateDirectoryConfigRequest): Future[CreateDirectoryConfigResult] =
       service.createDirectoryConfig(params).promise.toFuture
-    def createFleetFuture(params: CreateFleetRequest): Future[CreateFleetResult] =
+    @inline def createFleetFuture(params: CreateFleetRequest): Future[CreateFleetResult] =
       service.createFleet(params).promise.toFuture
-    def createImageBuilderFuture(params: CreateImageBuilderRequest): Future[CreateImageBuilderResult] =
+    @inline def createImageBuilderFuture(params: CreateImageBuilderRequest): Future[CreateImageBuilderResult] =
       service.createImageBuilder(params).promise.toFuture
-    def createImageBuilderStreamingURLFuture(
+    @inline def createImageBuilderStreamingURLFuture(
         params: CreateImageBuilderStreamingURLRequest
     ): Future[CreateImageBuilderStreamingURLResult] = service.createImageBuilderStreamingURL(params).promise.toFuture
-    def createStackFuture(params: CreateStackRequest): Future[CreateStackResult] =
+    @inline def createStackFuture(params: CreateStackRequest): Future[CreateStackResult] =
       service.createStack(params).promise.toFuture
-    def createStreamingURLFuture(params: CreateStreamingURLRequest): Future[CreateStreamingURLResult] =
+    @inline def createStreamingURLFuture(params: CreateStreamingURLRequest): Future[CreateStreamingURLResult] =
       service.createStreamingURL(params).promise.toFuture
-    def createUsageReportSubscriptionFuture(
+    @inline def createUsageReportSubscriptionFuture(
         params: CreateUsageReportSubscriptionRequest
     ): Future[CreateUsageReportSubscriptionResult] = service.createUsageReportSubscription(params).promise.toFuture
-    def createUserFuture(params: CreateUserRequest): Future[CreateUserResult] =
+    @inline def createUserFuture(params: CreateUserRequest): Future[CreateUserResult] =
       service.createUser(params).promise.toFuture
-    def deleteDirectoryConfigFuture(params: DeleteDirectoryConfigRequest): Future[DeleteDirectoryConfigResult] =
+    @inline def deleteDirectoryConfigFuture(params: DeleteDirectoryConfigRequest): Future[DeleteDirectoryConfigResult] =
       service.deleteDirectoryConfig(params).promise.toFuture
-    def deleteFleetFuture(params: DeleteFleetRequest): Future[DeleteFleetResult] =
+    @inline def deleteFleetFuture(params: DeleteFleetRequest): Future[DeleteFleetResult] =
       service.deleteFleet(params).promise.toFuture
-    def deleteImageBuilderFuture(params: DeleteImageBuilderRequest): Future[DeleteImageBuilderResult] =
+    @inline def deleteImageBuilderFuture(params: DeleteImageBuilderRequest): Future[DeleteImageBuilderResult] =
       service.deleteImageBuilder(params).promise.toFuture
-    def deleteImageFuture(params: DeleteImageRequest): Future[DeleteImageResult] =
+    @inline def deleteImageFuture(params: DeleteImageRequest): Future[DeleteImageResult] =
       service.deleteImage(params).promise.toFuture
-    def deleteImagePermissionsFuture(params: DeleteImagePermissionsRequest): Future[DeleteImagePermissionsResult] =
-      service.deleteImagePermissions(params).promise.toFuture
-    def deleteStackFuture(params: DeleteStackRequest): Future[DeleteStackResult] =
+    @inline def deleteImagePermissionsFuture(
+        params: DeleteImagePermissionsRequest
+    ): Future[DeleteImagePermissionsResult] = service.deleteImagePermissions(params).promise.toFuture
+    @inline def deleteStackFuture(params: DeleteStackRequest): Future[DeleteStackResult] =
       service.deleteStack(params).promise.toFuture
-    def deleteUsageReportSubscriptionFuture(
+    @inline def deleteUsageReportSubscriptionFuture(
         params: DeleteUsageReportSubscriptionRequest
     ): Future[DeleteUsageReportSubscriptionResult] = service.deleteUsageReportSubscription(params).promise.toFuture
-    def deleteUserFuture(params: DeleteUserRequest): Future[DeleteUserResult] =
+    @inline def deleteUserFuture(params: DeleteUserRequest): Future[DeleteUserResult] =
       service.deleteUser(params).promise.toFuture
-    def describeDirectoryConfigsFuture(
+    @inline def describeDirectoryConfigsFuture(
         params: DescribeDirectoryConfigsRequest
     ): Future[DescribeDirectoryConfigsResult] = service.describeDirectoryConfigs(params).promise.toFuture
-    def describeFleetsFuture(params: DescribeFleetsRequest): Future[DescribeFleetsResult] =
+    @inline def describeFleetsFuture(params: DescribeFleetsRequest): Future[DescribeFleetsResult] =
       service.describeFleets(params).promise.toFuture
-    def describeImageBuildersFuture(params: DescribeImageBuildersRequest): Future[DescribeImageBuildersResult] =
+    @inline def describeImageBuildersFuture(params: DescribeImageBuildersRequest): Future[DescribeImageBuildersResult] =
       service.describeImageBuilders(params).promise.toFuture
-    def describeImagePermissionsFuture(
+    @inline def describeImagePermissionsFuture(
         params: DescribeImagePermissionsRequest
     ): Future[DescribeImagePermissionsResult] = service.describeImagePermissions(params).promise.toFuture
-    def describeImagesFuture(params: DescribeImagesRequest): Future[DescribeImagesResult] =
+    @inline def describeImagesFuture(params: DescribeImagesRequest): Future[DescribeImagesResult] =
       service.describeImages(params).promise.toFuture
-    def describeSessionsFuture(params: DescribeSessionsRequest): Future[DescribeSessionsResult] =
+    @inline def describeSessionsFuture(params: DescribeSessionsRequest): Future[DescribeSessionsResult] =
       service.describeSessions(params).promise.toFuture
-    def describeStacksFuture(params: DescribeStacksRequest): Future[DescribeStacksResult] =
+    @inline def describeStacksFuture(params: DescribeStacksRequest): Future[DescribeStacksResult] =
       service.describeStacks(params).promise.toFuture
-    def describeUsageReportSubscriptionsFuture(
+    @inline def describeUsageReportSubscriptionsFuture(
         params: DescribeUsageReportSubscriptionsRequest
     ): Future[DescribeUsageReportSubscriptionsResult] =
       service.describeUsageReportSubscriptions(params).promise.toFuture
-    def describeUserStackAssociationsFuture(
+    @inline def describeUserStackAssociationsFuture(
         params: DescribeUserStackAssociationsRequest
     ): Future[DescribeUserStackAssociationsResult] = service.describeUserStackAssociations(params).promise.toFuture
-    def describeUsersFuture(params: DescribeUsersRequest): Future[DescribeUsersResult] =
+    @inline def describeUsersFuture(params: DescribeUsersRequest): Future[DescribeUsersResult] =
       service.describeUsers(params).promise.toFuture
-    def disableUserFuture(params: DisableUserRequest): Future[DisableUserResult] =
+    @inline def disableUserFuture(params: DisableUserRequest): Future[DisableUserResult] =
       service.disableUser(params).promise.toFuture
-    def disassociateFleetFuture(params: DisassociateFleetRequest): Future[DisassociateFleetResult] =
+    @inline def disassociateFleetFuture(params: DisassociateFleetRequest): Future[DisassociateFleetResult] =
       service.disassociateFleet(params).promise.toFuture
-    def enableUserFuture(params: EnableUserRequest): Future[EnableUserResult] =
+    @inline def enableUserFuture(params: EnableUserRequest): Future[EnableUserResult] =
       service.enableUser(params).promise.toFuture
-    def expireSessionFuture(params: ExpireSessionRequest): Future[ExpireSessionResult] =
+    @inline def expireSessionFuture(params: ExpireSessionRequest): Future[ExpireSessionResult] =
       service.expireSession(params).promise.toFuture
-    def listAssociatedFleetsFuture(params: ListAssociatedFleetsRequest): Future[ListAssociatedFleetsResult] =
+    @inline def listAssociatedFleetsFuture(params: ListAssociatedFleetsRequest): Future[ListAssociatedFleetsResult] =
       service.listAssociatedFleets(params).promise.toFuture
-    def listAssociatedStacksFuture(params: ListAssociatedStacksRequest): Future[ListAssociatedStacksResult] =
+    @inline def listAssociatedStacksFuture(params: ListAssociatedStacksRequest): Future[ListAssociatedStacksResult] =
       service.listAssociatedStacks(params).promise.toFuture
-    def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] =
+    @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] =
       service.listTagsForResource(params).promise.toFuture
-    def startFleetFuture(params: StartFleetRequest): Future[StartFleetResult] =
+    @inline def startFleetFuture(params: StartFleetRequest): Future[StartFleetResult] =
       service.startFleet(params).promise.toFuture
-    def startImageBuilderFuture(params: StartImageBuilderRequest): Future[StartImageBuilderResult] =
+    @inline def startImageBuilderFuture(params: StartImageBuilderRequest): Future[StartImageBuilderResult] =
       service.startImageBuilder(params).promise.toFuture
-    def stopFleetFuture(params: StopFleetRequest): Future[StopFleetResult] = service.stopFleet(params).promise.toFuture
-    def stopImageBuilderFuture(params: StopImageBuilderRequest): Future[StopImageBuilderResult] =
+    @inline def stopFleetFuture(params: StopFleetRequest): Future[StopFleetResult] =
+      service.stopFleet(params).promise.toFuture
+    @inline def stopImageBuilderFuture(params: StopImageBuilderRequest): Future[StopImageBuilderResult] =
       service.stopImageBuilder(params).promise.toFuture
-    def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] =
+    @inline def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] =
       service.tagResource(params).promise.toFuture
-    def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] =
+    @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] =
       service.untagResource(params).promise.toFuture
-    def updateDirectoryConfigFuture(params: UpdateDirectoryConfigRequest): Future[UpdateDirectoryConfigResult] =
+    @inline def updateDirectoryConfigFuture(params: UpdateDirectoryConfigRequest): Future[UpdateDirectoryConfigResult] =
       service.updateDirectoryConfig(params).promise.toFuture
-    def updateFleetFuture(params: UpdateFleetRequest): Future[UpdateFleetResult] =
+    @inline def updateFleetFuture(params: UpdateFleetRequest): Future[UpdateFleetResult] =
       service.updateFleet(params).promise.toFuture
-    def updateImagePermissionsFuture(params: UpdateImagePermissionsRequest): Future[UpdateImagePermissionsResult] =
-      service.updateImagePermissions(params).promise.toFuture
-    def updateStackFuture(params: UpdateStackRequest): Future[UpdateStackResult] =
+    @inline def updateImagePermissionsFuture(
+        params: UpdateImagePermissionsRequest
+    ): Future[UpdateImagePermissionsResult] = service.updateImagePermissions(params).promise.toFuture
+    @inline def updateStackFuture(params: UpdateStackRequest): Future[UpdateStackResult] =
       service.updateStack(params).promise.toFuture
   }
 }

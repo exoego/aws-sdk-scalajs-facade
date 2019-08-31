@@ -28,37 +28,40 @@ package object quicksight {
 
   implicit final class QuickSightOps(private val service: QuickSight) extends AnyVal {
 
-    def createGroupFuture(params: CreateGroupRequest): Future[CreateGroupResponse] =
+    @inline def createGroupFuture(params: CreateGroupRequest): Future[CreateGroupResponse] =
       service.createGroup(params).promise.toFuture
-    def createGroupMembershipFuture(params: CreateGroupMembershipRequest): Future[CreateGroupMembershipResponse] =
-      service.createGroupMembership(params).promise.toFuture
-    def deleteGroupFuture(params: DeleteGroupRequest): Future[DeleteGroupResponse] =
+    @inline def createGroupMembershipFuture(
+        params: CreateGroupMembershipRequest
+    ): Future[CreateGroupMembershipResponse] = service.createGroupMembership(params).promise.toFuture
+    @inline def deleteGroupFuture(params: DeleteGroupRequest): Future[DeleteGroupResponse] =
       service.deleteGroup(params).promise.toFuture
-    def deleteGroupMembershipFuture(params: DeleteGroupMembershipRequest): Future[DeleteGroupMembershipResponse] =
-      service.deleteGroupMembership(params).promise.toFuture
-    def deleteUserByPrincipalIdFuture(params: DeleteUserByPrincipalIdRequest): Future[DeleteUserByPrincipalIdResponse] =
-      service.deleteUserByPrincipalId(params).promise.toFuture
-    def deleteUserFuture(params: DeleteUserRequest): Future[DeleteUserResponse] =
+    @inline def deleteGroupMembershipFuture(
+        params: DeleteGroupMembershipRequest
+    ): Future[DeleteGroupMembershipResponse] = service.deleteGroupMembership(params).promise.toFuture
+    @inline def deleteUserByPrincipalIdFuture(
+        params: DeleteUserByPrincipalIdRequest
+    ): Future[DeleteUserByPrincipalIdResponse] = service.deleteUserByPrincipalId(params).promise.toFuture
+    @inline def deleteUserFuture(params: DeleteUserRequest): Future[DeleteUserResponse] =
       service.deleteUser(params).promise.toFuture
-    def describeGroupFuture(params: DescribeGroupRequest): Future[DescribeGroupResponse] =
+    @inline def describeGroupFuture(params: DescribeGroupRequest): Future[DescribeGroupResponse] =
       service.describeGroup(params).promise.toFuture
-    def describeUserFuture(params: DescribeUserRequest): Future[DescribeUserResponse] =
+    @inline def describeUserFuture(params: DescribeUserRequest): Future[DescribeUserResponse] =
       service.describeUser(params).promise.toFuture
-    def getDashboardEmbedUrlFuture(params: GetDashboardEmbedUrlRequest): Future[GetDashboardEmbedUrlResponse] =
+    @inline def getDashboardEmbedUrlFuture(params: GetDashboardEmbedUrlRequest): Future[GetDashboardEmbedUrlResponse] =
       service.getDashboardEmbedUrl(params).promise.toFuture
-    def listGroupMembershipsFuture(params: ListGroupMembershipsRequest): Future[ListGroupMembershipsResponse] =
+    @inline def listGroupMembershipsFuture(params: ListGroupMembershipsRequest): Future[ListGroupMembershipsResponse] =
       service.listGroupMemberships(params).promise.toFuture
-    def listGroupsFuture(params: ListGroupsRequest): Future[ListGroupsResponse] =
+    @inline def listGroupsFuture(params: ListGroupsRequest): Future[ListGroupsResponse] =
       service.listGroups(params).promise.toFuture
-    def listUserGroupsFuture(params: ListUserGroupsRequest): Future[ListUserGroupsResponse] =
+    @inline def listUserGroupsFuture(params: ListUserGroupsRequest): Future[ListUserGroupsResponse] =
       service.listUserGroups(params).promise.toFuture
-    def listUsersFuture(params: ListUsersRequest): Future[ListUsersResponse] =
+    @inline def listUsersFuture(params: ListUsersRequest): Future[ListUsersResponse] =
       service.listUsers(params).promise.toFuture
-    def registerUserFuture(params: RegisterUserRequest): Future[RegisterUserResponse] =
+    @inline def registerUserFuture(params: RegisterUserRequest): Future[RegisterUserResponse] =
       service.registerUser(params).promise.toFuture
-    def updateGroupFuture(params: UpdateGroupRequest): Future[UpdateGroupResponse] =
+    @inline def updateGroupFuture(params: UpdateGroupRequest): Future[UpdateGroupResponse] =
       service.updateGroup(params).promise.toFuture
-    def updateUserFuture(params: UpdateUserRequest): Future[UpdateUserResponse] =
+    @inline def updateUserFuture(params: UpdateUserRequest): Future[UpdateUserResponse] =
       service.updateUser(params).promise.toFuture
   }
 }

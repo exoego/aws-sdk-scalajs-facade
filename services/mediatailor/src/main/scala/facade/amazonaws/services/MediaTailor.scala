@@ -17,22 +17,23 @@ package object mediatailor {
 
   implicit final class MediaTailorOps(private val service: MediaTailor) extends AnyVal {
 
-    def deletePlaybackConfigurationFuture(
+    @inline def deletePlaybackConfigurationFuture(
         params: DeletePlaybackConfigurationRequest
     ): Future[DeletePlaybackConfigurationResponse] = service.deletePlaybackConfiguration(params).promise.toFuture
-    def getPlaybackConfigurationFuture(
+    @inline def getPlaybackConfigurationFuture(
         params: GetPlaybackConfigurationRequest
     ): Future[GetPlaybackConfigurationResponse] = service.getPlaybackConfiguration(params).promise.toFuture
-    def listPlaybackConfigurationsFuture(
+    @inline def listPlaybackConfigurationsFuture(
         params: ListPlaybackConfigurationsRequest
     ): Future[ListPlaybackConfigurationsResponse] = service.listPlaybackConfigurations(params).promise.toFuture
-    def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] =
+    @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] =
       service.listTagsForResource(params).promise.toFuture
-    def putPlaybackConfigurationFuture(
+    @inline def putPlaybackConfigurationFuture(
         params: PutPlaybackConfigurationRequest
-    ): Future[PutPlaybackConfigurationResponse]                          = service.putPlaybackConfiguration(params).promise.toFuture
-    def tagResourceFuture(params: TagResourceRequest): Future[js.Object] = service.tagResource(params).promise.toFuture
-    def untagResourceFuture(params: UntagResourceRequest): Future[js.Object] =
+    ): Future[PutPlaybackConfigurationResponse] = service.putPlaybackConfiguration(params).promise.toFuture
+    @inline def tagResourceFuture(params: TagResourceRequest): Future[js.Object] =
+      service.tagResource(params).promise.toFuture
+    @inline def untagResourceFuture(params: UntagResourceRequest): Future[js.Object] =
       service.untagResource(params).promise.toFuture
   }
 }

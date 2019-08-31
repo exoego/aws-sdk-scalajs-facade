@@ -46,29 +46,33 @@ package object applicationautoscaling {
 
   implicit final class ApplicationAutoScalingOps(private val service: ApplicationAutoScaling) extends AnyVal {
 
-    def deleteScalingPolicyFuture(params: DeleteScalingPolicyRequest): Future[DeleteScalingPolicyResponse] =
+    @inline def deleteScalingPolicyFuture(params: DeleteScalingPolicyRequest): Future[DeleteScalingPolicyResponse] =
       service.deleteScalingPolicy(params).promise.toFuture
-    def deleteScheduledActionFuture(params: DeleteScheduledActionRequest): Future[DeleteScheduledActionResponse] =
-      service.deleteScheduledAction(params).promise.toFuture
-    def deregisterScalableTargetFuture(
+    @inline def deleteScheduledActionFuture(
+        params: DeleteScheduledActionRequest
+    ): Future[DeleteScheduledActionResponse] = service.deleteScheduledAction(params).promise.toFuture
+    @inline def deregisterScalableTargetFuture(
         params: DeregisterScalableTargetRequest
     ): Future[DeregisterScalableTargetResponse] = service.deregisterScalableTarget(params).promise.toFuture
-    def describeScalableTargetsFuture(params: DescribeScalableTargetsRequest): Future[DescribeScalableTargetsResponse] =
-      service.describeScalableTargets(params).promise.toFuture
-    def describeScalingActivitiesFuture(
+    @inline def describeScalableTargetsFuture(
+        params: DescribeScalableTargetsRequest
+    ): Future[DescribeScalableTargetsResponse] = service.describeScalableTargets(params).promise.toFuture
+    @inline def describeScalingActivitiesFuture(
         params: DescribeScalingActivitiesRequest
     ): Future[DescribeScalingActivitiesResponse] = service.describeScalingActivities(params).promise.toFuture
-    def describeScalingPoliciesFuture(params: DescribeScalingPoliciesRequest): Future[DescribeScalingPoliciesResponse] =
-      service.describeScalingPolicies(params).promise.toFuture
-    def describeScheduledActionsFuture(
+    @inline def describeScalingPoliciesFuture(
+        params: DescribeScalingPoliciesRequest
+    ): Future[DescribeScalingPoliciesResponse] = service.describeScalingPolicies(params).promise.toFuture
+    @inline def describeScheduledActionsFuture(
         params: DescribeScheduledActionsRequest
     ): Future[DescribeScheduledActionsResponse] = service.describeScheduledActions(params).promise.toFuture
-    def putScalingPolicyFuture(params: PutScalingPolicyRequest): Future[PutScalingPolicyResponse] =
+    @inline def putScalingPolicyFuture(params: PutScalingPolicyRequest): Future[PutScalingPolicyResponse] =
       service.putScalingPolicy(params).promise.toFuture
-    def putScheduledActionFuture(params: PutScheduledActionRequest): Future[PutScheduledActionResponse] =
+    @inline def putScheduledActionFuture(params: PutScheduledActionRequest): Future[PutScheduledActionResponse] =
       service.putScheduledAction(params).promise.toFuture
-    def registerScalableTargetFuture(params: RegisterScalableTargetRequest): Future[RegisterScalableTargetResponse] =
-      service.registerScalableTarget(params).promise.toFuture
+    @inline def registerScalableTargetFuture(
+        params: RegisterScalableTargetRequest
+    ): Future[RegisterScalableTargetResponse] = service.registerScalableTarget(params).promise.toFuture
   }
 }
 

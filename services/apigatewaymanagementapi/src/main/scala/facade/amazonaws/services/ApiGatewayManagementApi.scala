@@ -13,7 +13,7 @@ package object apigatewaymanagementapi {
 
   implicit final class ApiGatewayManagementApiOps(private val service: ApiGatewayManagementApi) extends AnyVal {
 
-    def postToConnectionFuture(params: PostToConnectionRequest): Future[js.Object] =
+    @inline def postToConnectionFuture(params: PostToConnectionRequest): Future[js.Object] =
       service.postToConnection(params).promise.toFuture
   }
 }

@@ -44,23 +44,23 @@ package object signer {
 
   implicit final class SignerOps(private val service: Signer) extends AnyVal {
 
-    def cancelSigningProfileFuture(params: CancelSigningProfileRequest): Future[js.Object] =
+    @inline def cancelSigningProfileFuture(params: CancelSigningProfileRequest): Future[js.Object] =
       service.cancelSigningProfile(params).promise.toFuture
-    def describeSigningJobFuture(params: DescribeSigningJobRequest): Future[DescribeSigningJobResponse] =
+    @inline def describeSigningJobFuture(params: DescribeSigningJobRequest): Future[DescribeSigningJobResponse] =
       service.describeSigningJob(params).promise.toFuture
-    def getSigningPlatformFuture(params: GetSigningPlatformRequest): Future[GetSigningPlatformResponse] =
+    @inline def getSigningPlatformFuture(params: GetSigningPlatformRequest): Future[GetSigningPlatformResponse] =
       service.getSigningPlatform(params).promise.toFuture
-    def getSigningProfileFuture(params: GetSigningProfileRequest): Future[GetSigningProfileResponse] =
+    @inline def getSigningProfileFuture(params: GetSigningProfileRequest): Future[GetSigningProfileResponse] =
       service.getSigningProfile(params).promise.toFuture
-    def listSigningJobsFuture(params: ListSigningJobsRequest): Future[ListSigningJobsResponse] =
+    @inline def listSigningJobsFuture(params: ListSigningJobsRequest): Future[ListSigningJobsResponse] =
       service.listSigningJobs(params).promise.toFuture
-    def listSigningPlatformsFuture(params: ListSigningPlatformsRequest): Future[ListSigningPlatformsResponse] =
+    @inline def listSigningPlatformsFuture(params: ListSigningPlatformsRequest): Future[ListSigningPlatformsResponse] =
       service.listSigningPlatforms(params).promise.toFuture
-    def listSigningProfilesFuture(params: ListSigningProfilesRequest): Future[ListSigningProfilesResponse] =
+    @inline def listSigningProfilesFuture(params: ListSigningProfilesRequest): Future[ListSigningProfilesResponse] =
       service.listSigningProfiles(params).promise.toFuture
-    def putSigningProfileFuture(params: PutSigningProfileRequest): Future[PutSigningProfileResponse] =
+    @inline def putSigningProfileFuture(params: PutSigningProfileRequest): Future[PutSigningProfileResponse] =
       service.putSigningProfile(params).promise.toFuture
-    def startSigningJobFuture(params: StartSigningJobRequest): Future[StartSigningJobResponse] =
+    @inline def startSigningJobFuture(params: StartSigningJobRequest): Future[StartSigningJobResponse] =
       service.startSigningJob(params).promise.toFuture
   }
 }

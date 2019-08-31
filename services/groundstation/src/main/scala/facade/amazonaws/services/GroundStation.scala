@@ -45,59 +45,59 @@ package object groundstation {
 
   implicit final class GroundStationOps(private val service: GroundStation) extends AnyVal {
 
-    def cancelContactFuture(params: CancelContactRequest): Future[ContactIdResponse] =
+    @inline def cancelContactFuture(params: CancelContactRequest): Future[ContactIdResponse] =
       service.cancelContact(params).promise.toFuture
-    def createConfigFuture(params: CreateConfigRequest): Future[ConfigIdResponse] =
+    @inline def createConfigFuture(params: CreateConfigRequest): Future[ConfigIdResponse] =
       service.createConfig(params).promise.toFuture
-    def createDataflowEndpointGroupFuture(
+    @inline def createDataflowEndpointGroupFuture(
         params: CreateDataflowEndpointGroupRequest
     ): Future[DataflowEndpointGroupIdResponse] = service.createDataflowEndpointGroup(params).promise.toFuture
-    def createMissionProfileFuture(params: CreateMissionProfileRequest): Future[MissionProfileIdResponse] =
+    @inline def createMissionProfileFuture(params: CreateMissionProfileRequest): Future[MissionProfileIdResponse] =
       service.createMissionProfile(params).promise.toFuture
-    def deleteConfigFuture(params: DeleteConfigRequest): Future[ConfigIdResponse] =
+    @inline def deleteConfigFuture(params: DeleteConfigRequest): Future[ConfigIdResponse] =
       service.deleteConfig(params).promise.toFuture
-    def deleteDataflowEndpointGroupFuture(
+    @inline def deleteDataflowEndpointGroupFuture(
         params: DeleteDataflowEndpointGroupRequest
     ): Future[DataflowEndpointGroupIdResponse] = service.deleteDataflowEndpointGroup(params).promise.toFuture
-    def deleteMissionProfileFuture(params: DeleteMissionProfileRequest): Future[MissionProfileIdResponse] =
+    @inline def deleteMissionProfileFuture(params: DeleteMissionProfileRequest): Future[MissionProfileIdResponse] =
       service.deleteMissionProfile(params).promise.toFuture
-    def describeContactFuture(params: DescribeContactRequest): Future[DescribeContactResponse] =
+    @inline def describeContactFuture(params: DescribeContactRequest): Future[DescribeContactResponse] =
       service.describeContact(params).promise.toFuture
-    def getConfigFuture(params: GetConfigRequest): Future[GetConfigResponse] =
+    @inline def getConfigFuture(params: GetConfigRequest): Future[GetConfigResponse] =
       service.getConfig(params).promise.toFuture
-    def getDataflowEndpointGroupFuture(
+    @inline def getDataflowEndpointGroupFuture(
         params: GetDataflowEndpointGroupRequest
     ): Future[GetDataflowEndpointGroupResponse] = service.getDataflowEndpointGroup(params).promise.toFuture
-    def getMinuteUsageFuture(params: GetMinuteUsageRequest): Future[GetMinuteUsageResponse] =
+    @inline def getMinuteUsageFuture(params: GetMinuteUsageRequest): Future[GetMinuteUsageResponse] =
       service.getMinuteUsage(params).promise.toFuture
-    def getMissionProfileFuture(params: GetMissionProfileRequest): Future[GetMissionProfileResponse] =
+    @inline def getMissionProfileFuture(params: GetMissionProfileRequest): Future[GetMissionProfileResponse] =
       service.getMissionProfile(params).promise.toFuture
-    def getSatelliteFuture(params: GetSatelliteRequest): Future[GetSatelliteResponse] =
+    @inline def getSatelliteFuture(params: GetSatelliteRequest): Future[GetSatelliteResponse] =
       service.getSatellite(params).promise.toFuture
-    def listConfigsFuture(params: ListConfigsRequest): Future[ListConfigsResponse] =
+    @inline def listConfigsFuture(params: ListConfigsRequest): Future[ListConfigsResponse] =
       service.listConfigs(params).promise.toFuture
-    def listContactsFuture(params: ListContactsRequest): Future[ListContactsResponse] =
+    @inline def listContactsFuture(params: ListContactsRequest): Future[ListContactsResponse] =
       service.listContacts(params).promise.toFuture
-    def listDataflowEndpointGroupsFuture(
+    @inline def listDataflowEndpointGroupsFuture(
         params: ListDataflowEndpointGroupsRequest
     ): Future[ListDataflowEndpointGroupsResponse] = service.listDataflowEndpointGroups(params).promise.toFuture
-    def listGroundStationsFuture(params: ListGroundStationsRequest): Future[ListGroundStationsResponse] =
+    @inline def listGroundStationsFuture(params: ListGroundStationsRequest): Future[ListGroundStationsResponse] =
       service.listGroundStations(params).promise.toFuture
-    def listMissionProfilesFuture(params: ListMissionProfilesRequest): Future[ListMissionProfilesResponse] =
+    @inline def listMissionProfilesFuture(params: ListMissionProfilesRequest): Future[ListMissionProfilesResponse] =
       service.listMissionProfiles(params).promise.toFuture
-    def listSatellitesFuture(params: ListSatellitesRequest): Future[ListSatellitesResponse] =
+    @inline def listSatellitesFuture(params: ListSatellitesRequest): Future[ListSatellitesResponse] =
       service.listSatellites(params).promise.toFuture
-    def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] =
+    @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] =
       service.listTagsForResource(params).promise.toFuture
-    def reserveContactFuture(params: ReserveContactRequest): Future[ContactIdResponse] =
+    @inline def reserveContactFuture(params: ReserveContactRequest): Future[ContactIdResponse] =
       service.reserveContact(params).promise.toFuture
-    def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] =
+    @inline def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] =
       service.tagResource(params).promise.toFuture
-    def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] =
+    @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] =
       service.untagResource(params).promise.toFuture
-    def updateConfigFuture(params: UpdateConfigRequest): Future[ConfigIdResponse] =
+    @inline def updateConfigFuture(params: UpdateConfigRequest): Future[ConfigIdResponse] =
       service.updateConfig(params).promise.toFuture
-    def updateMissionProfileFuture(params: UpdateMissionProfileRequest): Future[MissionProfileIdResponse] =
+    @inline def updateMissionProfileFuture(params: UpdateMissionProfileRequest): Future[MissionProfileIdResponse] =
       service.updateMissionProfile(params).promise.toFuture
   }
 }

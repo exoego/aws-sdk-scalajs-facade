@@ -132,160 +132,176 @@ package object storagegateway {
 
   implicit final class StorageGatewayOps(private val service: StorageGateway) extends AnyVal {
 
-    def activateGatewayFuture(params: ActivateGatewayInput): Future[ActivateGatewayOutput] =
+    @inline def activateGatewayFuture(params: ActivateGatewayInput): Future[ActivateGatewayOutput] =
       service.activateGateway(params).promise.toFuture
-    def addCacheFuture(params: AddCacheInput): Future[AddCacheOutput] = service.addCache(params).promise.toFuture
-    def addTagsToResourceFuture(params: AddTagsToResourceInput): Future[AddTagsToResourceOutput] =
+    @inline def addCacheFuture(params: AddCacheInput): Future[AddCacheOutput] =
+      service.addCache(params).promise.toFuture
+    @inline def addTagsToResourceFuture(params: AddTagsToResourceInput): Future[AddTagsToResourceOutput] =
       service.addTagsToResource(params).promise.toFuture
-    def addUploadBufferFuture(params: AddUploadBufferInput): Future[AddUploadBufferOutput] =
+    @inline def addUploadBufferFuture(params: AddUploadBufferInput): Future[AddUploadBufferOutput] =
       service.addUploadBuffer(params).promise.toFuture
-    def addWorkingStorageFuture(params: AddWorkingStorageInput): Future[AddWorkingStorageOutput] =
+    @inline def addWorkingStorageFuture(params: AddWorkingStorageInput): Future[AddWorkingStorageOutput] =
       service.addWorkingStorage(params).promise.toFuture
-    def assignTapePoolFuture(params: AssignTapePoolInput): Future[AssignTapePoolOutput] =
+    @inline def assignTapePoolFuture(params: AssignTapePoolInput): Future[AssignTapePoolOutput] =
       service.assignTapePool(params).promise.toFuture
-    def attachVolumeFuture(params: AttachVolumeInput): Future[AttachVolumeOutput] =
+    @inline def attachVolumeFuture(params: AttachVolumeInput): Future[AttachVolumeOutput] =
       service.attachVolume(params).promise.toFuture
-    def cancelArchivalFuture(params: CancelArchivalInput): Future[CancelArchivalOutput] =
+    @inline def cancelArchivalFuture(params: CancelArchivalInput): Future[CancelArchivalOutput] =
       service.cancelArchival(params).promise.toFuture
-    def cancelRetrievalFuture(params: CancelRetrievalInput): Future[CancelRetrievalOutput] =
+    @inline def cancelRetrievalFuture(params: CancelRetrievalInput): Future[CancelRetrievalOutput] =
       service.cancelRetrieval(params).promise.toFuture
-    def createCachediSCSIVolumeFuture(params: CreateCachediSCSIVolumeInput): Future[CreateCachediSCSIVolumeOutput] =
-      service.createCachediSCSIVolume(params).promise.toFuture
-    def createNFSFileShareFuture(params: CreateNFSFileShareInput): Future[CreateNFSFileShareOutput] =
+    @inline def createCachediSCSIVolumeFuture(
+        params: CreateCachediSCSIVolumeInput
+    ): Future[CreateCachediSCSIVolumeOutput] = service.createCachediSCSIVolume(params).promise.toFuture
+    @inline def createNFSFileShareFuture(params: CreateNFSFileShareInput): Future[CreateNFSFileShareOutput] =
       service.createNFSFileShare(params).promise.toFuture
-    def createSMBFileShareFuture(params: CreateSMBFileShareInput): Future[CreateSMBFileShareOutput] =
+    @inline def createSMBFileShareFuture(params: CreateSMBFileShareInput): Future[CreateSMBFileShareOutput] =
       service.createSMBFileShare(params).promise.toFuture
-    def createSnapshotFromVolumeRecoveryPointFuture(
+    @inline def createSnapshotFromVolumeRecoveryPointFuture(
         params: CreateSnapshotFromVolumeRecoveryPointInput
     ): Future[CreateSnapshotFromVolumeRecoveryPointOutput] =
       service.createSnapshotFromVolumeRecoveryPoint(params).promise.toFuture
-    def createSnapshotFuture(params: CreateSnapshotInput): Future[CreateSnapshotOutput] =
+    @inline def createSnapshotFuture(params: CreateSnapshotInput): Future[CreateSnapshotOutput] =
       service.createSnapshot(params).promise.toFuture
-    def createStorediSCSIVolumeFuture(params: CreateStorediSCSIVolumeInput): Future[CreateStorediSCSIVolumeOutput] =
-      service.createStorediSCSIVolume(params).promise.toFuture
-    def createTapeWithBarcodeFuture(params: CreateTapeWithBarcodeInput): Future[CreateTapeWithBarcodeOutput] =
+    @inline def createStorediSCSIVolumeFuture(
+        params: CreateStorediSCSIVolumeInput
+    ): Future[CreateStorediSCSIVolumeOutput] = service.createStorediSCSIVolume(params).promise.toFuture
+    @inline def createTapeWithBarcodeFuture(params: CreateTapeWithBarcodeInput): Future[CreateTapeWithBarcodeOutput] =
       service.createTapeWithBarcode(params).promise.toFuture
-    def createTapesFuture(params: CreateTapesInput): Future[CreateTapesOutput] =
+    @inline def createTapesFuture(params: CreateTapesInput): Future[CreateTapesOutput] =
       service.createTapes(params).promise.toFuture
-    def deleteBandwidthRateLimitFuture(params: DeleteBandwidthRateLimitInput): Future[DeleteBandwidthRateLimitOutput] =
-      service.deleteBandwidthRateLimit(params).promise.toFuture
-    def deleteChapCredentialsFuture(params: DeleteChapCredentialsInput): Future[DeleteChapCredentialsOutput] =
+    @inline def deleteBandwidthRateLimitFuture(
+        params: DeleteBandwidthRateLimitInput
+    ): Future[DeleteBandwidthRateLimitOutput] = service.deleteBandwidthRateLimit(params).promise.toFuture
+    @inline def deleteChapCredentialsFuture(params: DeleteChapCredentialsInput): Future[DeleteChapCredentialsOutput] =
       service.deleteChapCredentials(params).promise.toFuture
-    def deleteFileShareFuture(params: DeleteFileShareInput): Future[DeleteFileShareOutput] =
+    @inline def deleteFileShareFuture(params: DeleteFileShareInput): Future[DeleteFileShareOutput] =
       service.deleteFileShare(params).promise.toFuture
-    def deleteGatewayFuture(params: DeleteGatewayInput): Future[DeleteGatewayOutput] =
+    @inline def deleteGatewayFuture(params: DeleteGatewayInput): Future[DeleteGatewayOutput] =
       service.deleteGateway(params).promise.toFuture
-    def deleteSnapshotScheduleFuture(params: DeleteSnapshotScheduleInput): Future[DeleteSnapshotScheduleOutput] =
-      service.deleteSnapshotSchedule(params).promise.toFuture
-    def deleteTapeArchiveFuture(params: DeleteTapeArchiveInput): Future[DeleteTapeArchiveOutput] =
+    @inline def deleteSnapshotScheduleFuture(
+        params: DeleteSnapshotScheduleInput
+    ): Future[DeleteSnapshotScheduleOutput] = service.deleteSnapshotSchedule(params).promise.toFuture
+    @inline def deleteTapeArchiveFuture(params: DeleteTapeArchiveInput): Future[DeleteTapeArchiveOutput] =
       service.deleteTapeArchive(params).promise.toFuture
-    def deleteTapeFuture(params: DeleteTapeInput): Future[DeleteTapeOutput] =
+    @inline def deleteTapeFuture(params: DeleteTapeInput): Future[DeleteTapeOutput] =
       service.deleteTape(params).promise.toFuture
-    def deleteVolumeFuture(params: DeleteVolumeInput): Future[DeleteVolumeOutput] =
+    @inline def deleteVolumeFuture(params: DeleteVolumeInput): Future[DeleteVolumeOutput] =
       service.deleteVolume(params).promise.toFuture
-    def describeBandwidthRateLimitFuture(
+    @inline def describeBandwidthRateLimitFuture(
         params: DescribeBandwidthRateLimitInput
     ): Future[DescribeBandwidthRateLimitOutput] = service.describeBandwidthRateLimit(params).promise.toFuture
-    def describeCacheFuture(params: DescribeCacheInput): Future[DescribeCacheOutput] =
+    @inline def describeCacheFuture(params: DescribeCacheInput): Future[DescribeCacheOutput] =
       service.describeCache(params).promise.toFuture
-    def describeCachediSCSIVolumesFuture(
+    @inline def describeCachediSCSIVolumesFuture(
         params: DescribeCachediSCSIVolumesInput
     ): Future[DescribeCachediSCSIVolumesOutput] = service.describeCachediSCSIVolumes(params).promise.toFuture
-    def describeChapCredentialsFuture(params: DescribeChapCredentialsInput): Future[DescribeChapCredentialsOutput] =
-      service.describeChapCredentials(params).promise.toFuture
-    def describeGatewayInformationFuture(
+    @inline def describeChapCredentialsFuture(
+        params: DescribeChapCredentialsInput
+    ): Future[DescribeChapCredentialsOutput] = service.describeChapCredentials(params).promise.toFuture
+    @inline def describeGatewayInformationFuture(
         params: DescribeGatewayInformationInput
     ): Future[DescribeGatewayInformationOutput] = service.describeGatewayInformation(params).promise.toFuture
-    def describeMaintenanceStartTimeFuture(
+    @inline def describeMaintenanceStartTimeFuture(
         params: DescribeMaintenanceStartTimeInput
     ): Future[DescribeMaintenanceStartTimeOutput] = service.describeMaintenanceStartTime(params).promise.toFuture
-    def describeNFSFileSharesFuture(params: DescribeNFSFileSharesInput): Future[DescribeNFSFileSharesOutput] =
+    @inline def describeNFSFileSharesFuture(params: DescribeNFSFileSharesInput): Future[DescribeNFSFileSharesOutput] =
       service.describeNFSFileShares(params).promise.toFuture
-    def describeSMBFileSharesFuture(params: DescribeSMBFileSharesInput): Future[DescribeSMBFileSharesOutput] =
+    @inline def describeSMBFileSharesFuture(params: DescribeSMBFileSharesInput): Future[DescribeSMBFileSharesOutput] =
       service.describeSMBFileShares(params).promise.toFuture
-    def describeSMBSettingsFuture(params: DescribeSMBSettingsInput): Future[DescribeSMBSettingsOutput] =
+    @inline def describeSMBSettingsFuture(params: DescribeSMBSettingsInput): Future[DescribeSMBSettingsOutput] =
       service.describeSMBSettings(params).promise.toFuture
-    def describeSnapshotScheduleFuture(params: DescribeSnapshotScheduleInput): Future[DescribeSnapshotScheduleOutput] =
-      service.describeSnapshotSchedule(params).promise.toFuture
-    def describeStorediSCSIVolumesFuture(
+    @inline def describeSnapshotScheduleFuture(
+        params: DescribeSnapshotScheduleInput
+    ): Future[DescribeSnapshotScheduleOutput] = service.describeSnapshotSchedule(params).promise.toFuture
+    @inline def describeStorediSCSIVolumesFuture(
         params: DescribeStorediSCSIVolumesInput
     ): Future[DescribeStorediSCSIVolumesOutput] = service.describeStorediSCSIVolumes(params).promise.toFuture
-    def describeTapeArchivesFuture(params: DescribeTapeArchivesInput): Future[DescribeTapeArchivesOutput] =
+    @inline def describeTapeArchivesFuture(params: DescribeTapeArchivesInput): Future[DescribeTapeArchivesOutput] =
       service.describeTapeArchives(params).promise.toFuture
-    def describeTapeRecoveryPointsFuture(
+    @inline def describeTapeRecoveryPointsFuture(
         params: DescribeTapeRecoveryPointsInput
     ): Future[DescribeTapeRecoveryPointsOutput] = service.describeTapeRecoveryPoints(params).promise.toFuture
-    def describeTapesFuture(params: DescribeTapesInput): Future[DescribeTapesOutput] =
+    @inline def describeTapesFuture(params: DescribeTapesInput): Future[DescribeTapesOutput] =
       service.describeTapes(params).promise.toFuture
-    def describeUploadBufferFuture(params: DescribeUploadBufferInput): Future[DescribeUploadBufferOutput] =
+    @inline def describeUploadBufferFuture(params: DescribeUploadBufferInput): Future[DescribeUploadBufferOutput] =
       service.describeUploadBuffer(params).promise.toFuture
-    def describeVTLDevicesFuture(params: DescribeVTLDevicesInput): Future[DescribeVTLDevicesOutput] =
+    @inline def describeVTLDevicesFuture(params: DescribeVTLDevicesInput): Future[DescribeVTLDevicesOutput] =
       service.describeVTLDevices(params).promise.toFuture
-    def describeWorkingStorageFuture(params: DescribeWorkingStorageInput): Future[DescribeWorkingStorageOutput] =
-      service.describeWorkingStorage(params).promise.toFuture
-    def detachVolumeFuture(params: DetachVolumeInput): Future[DetachVolumeOutput] =
+    @inline def describeWorkingStorageFuture(
+        params: DescribeWorkingStorageInput
+    ): Future[DescribeWorkingStorageOutput] = service.describeWorkingStorage(params).promise.toFuture
+    @inline def detachVolumeFuture(params: DetachVolumeInput): Future[DetachVolumeOutput] =
       service.detachVolume(params).promise.toFuture
-    def disableGatewayFuture(params: DisableGatewayInput): Future[DisableGatewayOutput] =
+    @inline def disableGatewayFuture(params: DisableGatewayInput): Future[DisableGatewayOutput] =
       service.disableGateway(params).promise.toFuture
-    def joinDomainFuture(params: JoinDomainInput): Future[JoinDomainOutput] =
+    @inline def joinDomainFuture(params: JoinDomainInput): Future[JoinDomainOutput] =
       service.joinDomain(params).promise.toFuture
-    def listFileSharesFuture(params: ListFileSharesInput): Future[ListFileSharesOutput] =
+    @inline def listFileSharesFuture(params: ListFileSharesInput): Future[ListFileSharesOutput] =
       service.listFileShares(params).promise.toFuture
-    def listGatewaysFuture(params: ListGatewaysInput): Future[ListGatewaysOutput] =
+    @inline def listGatewaysFuture(params: ListGatewaysInput): Future[ListGatewaysOutput] =
       service.listGateways(params).promise.toFuture
-    def listLocalDisksFuture(params: ListLocalDisksInput): Future[ListLocalDisksOutput] =
+    @inline def listLocalDisksFuture(params: ListLocalDisksInput): Future[ListLocalDisksOutput] =
       service.listLocalDisks(params).promise.toFuture
-    def listTagsForResourceFuture(params: ListTagsForResourceInput): Future[ListTagsForResourceOutput] =
+    @inline def listTagsForResourceFuture(params: ListTagsForResourceInput): Future[ListTagsForResourceOutput] =
       service.listTagsForResource(params).promise.toFuture
-    def listTapesFuture(params: ListTapesInput): Future[ListTapesOutput] = service.listTapes(params).promise.toFuture
-    def listVolumeInitiatorsFuture(params: ListVolumeInitiatorsInput): Future[ListVolumeInitiatorsOutput] =
+    @inline def listTapesFuture(params: ListTapesInput): Future[ListTapesOutput] =
+      service.listTapes(params).promise.toFuture
+    @inline def listVolumeInitiatorsFuture(params: ListVolumeInitiatorsInput): Future[ListVolumeInitiatorsOutput] =
       service.listVolumeInitiators(params).promise.toFuture
-    def listVolumeRecoveryPointsFuture(params: ListVolumeRecoveryPointsInput): Future[ListVolumeRecoveryPointsOutput] =
-      service.listVolumeRecoveryPoints(params).promise.toFuture
-    def listVolumesFuture(params: ListVolumesInput): Future[ListVolumesOutput] =
+    @inline def listVolumeRecoveryPointsFuture(
+        params: ListVolumeRecoveryPointsInput
+    ): Future[ListVolumeRecoveryPointsOutput] = service.listVolumeRecoveryPoints(params).promise.toFuture
+    @inline def listVolumesFuture(params: ListVolumesInput): Future[ListVolumesOutput] =
       service.listVolumes(params).promise.toFuture
-    def notifyWhenUploadedFuture(params: NotifyWhenUploadedInput): Future[NotifyWhenUploadedOutput] =
+    @inline def notifyWhenUploadedFuture(params: NotifyWhenUploadedInput): Future[NotifyWhenUploadedOutput] =
       service.notifyWhenUploaded(params).promise.toFuture
-    def refreshCacheFuture(params: RefreshCacheInput): Future[RefreshCacheOutput] =
+    @inline def refreshCacheFuture(params: RefreshCacheInput): Future[RefreshCacheOutput] =
       service.refreshCache(params).promise.toFuture
-    def removeTagsFromResourceFuture(params: RemoveTagsFromResourceInput): Future[RemoveTagsFromResourceOutput] =
-      service.removeTagsFromResource(params).promise.toFuture
-    def resetCacheFuture(params: ResetCacheInput): Future[ResetCacheOutput] =
+    @inline def removeTagsFromResourceFuture(
+        params: RemoveTagsFromResourceInput
+    ): Future[RemoveTagsFromResourceOutput] = service.removeTagsFromResource(params).promise.toFuture
+    @inline def resetCacheFuture(params: ResetCacheInput): Future[ResetCacheOutput] =
       service.resetCache(params).promise.toFuture
-    def retrieveTapeArchiveFuture(params: RetrieveTapeArchiveInput): Future[RetrieveTapeArchiveOutput] =
+    @inline def retrieveTapeArchiveFuture(params: RetrieveTapeArchiveInput): Future[RetrieveTapeArchiveOutput] =
       service.retrieveTapeArchive(params).promise.toFuture
-    def retrieveTapeRecoveryPointFuture(
+    @inline def retrieveTapeRecoveryPointFuture(
         params: RetrieveTapeRecoveryPointInput
     ): Future[RetrieveTapeRecoveryPointOutput] = service.retrieveTapeRecoveryPoint(params).promise.toFuture
-    def setLocalConsolePasswordFuture(params: SetLocalConsolePasswordInput): Future[SetLocalConsolePasswordOutput] =
-      service.setLocalConsolePassword(params).promise.toFuture
-    def setSMBGuestPasswordFuture(params: SetSMBGuestPasswordInput): Future[SetSMBGuestPasswordOutput] =
+    @inline def setLocalConsolePasswordFuture(
+        params: SetLocalConsolePasswordInput
+    ): Future[SetLocalConsolePasswordOutput] = service.setLocalConsolePassword(params).promise.toFuture
+    @inline def setSMBGuestPasswordFuture(params: SetSMBGuestPasswordInput): Future[SetSMBGuestPasswordOutput] =
       service.setSMBGuestPassword(params).promise.toFuture
-    def shutdownGatewayFuture(params: ShutdownGatewayInput): Future[ShutdownGatewayOutput] =
+    @inline def shutdownGatewayFuture(params: ShutdownGatewayInput): Future[ShutdownGatewayOutput] =
       service.shutdownGateway(params).promise.toFuture
-    def startGatewayFuture(params: StartGatewayInput): Future[StartGatewayOutput] =
+    @inline def startGatewayFuture(params: StartGatewayInput): Future[StartGatewayOutput] =
       service.startGateway(params).promise.toFuture
-    def updateBandwidthRateLimitFuture(params: UpdateBandwidthRateLimitInput): Future[UpdateBandwidthRateLimitOutput] =
-      service.updateBandwidthRateLimit(params).promise.toFuture
-    def updateChapCredentialsFuture(params: UpdateChapCredentialsInput): Future[UpdateChapCredentialsOutput] =
+    @inline def updateBandwidthRateLimitFuture(
+        params: UpdateBandwidthRateLimitInput
+    ): Future[UpdateBandwidthRateLimitOutput] = service.updateBandwidthRateLimit(params).promise.toFuture
+    @inline def updateChapCredentialsFuture(params: UpdateChapCredentialsInput): Future[UpdateChapCredentialsOutput] =
       service.updateChapCredentials(params).promise.toFuture
-    def updateGatewayInformationFuture(params: UpdateGatewayInformationInput): Future[UpdateGatewayInformationOutput] =
-      service.updateGatewayInformation(params).promise.toFuture
-    def updateGatewaySoftwareNowFuture(params: UpdateGatewaySoftwareNowInput): Future[UpdateGatewaySoftwareNowOutput] =
-      service.updateGatewaySoftwareNow(params).promise.toFuture
-    def updateMaintenanceStartTimeFuture(
+    @inline def updateGatewayInformationFuture(
+        params: UpdateGatewayInformationInput
+    ): Future[UpdateGatewayInformationOutput] = service.updateGatewayInformation(params).promise.toFuture
+    @inline def updateGatewaySoftwareNowFuture(
+        params: UpdateGatewaySoftwareNowInput
+    ): Future[UpdateGatewaySoftwareNowOutput] = service.updateGatewaySoftwareNow(params).promise.toFuture
+    @inline def updateMaintenanceStartTimeFuture(
         params: UpdateMaintenanceStartTimeInput
     ): Future[UpdateMaintenanceStartTimeOutput] = service.updateMaintenanceStartTime(params).promise.toFuture
-    def updateNFSFileShareFuture(params: UpdateNFSFileShareInput): Future[UpdateNFSFileShareOutput] =
+    @inline def updateNFSFileShareFuture(params: UpdateNFSFileShareInput): Future[UpdateNFSFileShareOutput] =
       service.updateNFSFileShare(params).promise.toFuture
-    def updateSMBFileShareFuture(params: UpdateSMBFileShareInput): Future[UpdateSMBFileShareOutput] =
+    @inline def updateSMBFileShareFuture(params: UpdateSMBFileShareInput): Future[UpdateSMBFileShareOutput] =
       service.updateSMBFileShare(params).promise.toFuture
-    def updateSMBSecurityStrategyFuture(
+    @inline def updateSMBSecurityStrategyFuture(
         params: UpdateSMBSecurityStrategyInput
     ): Future[UpdateSMBSecurityStrategyOutput] = service.updateSMBSecurityStrategy(params).promise.toFuture
-    def updateSnapshotScheduleFuture(params: UpdateSnapshotScheduleInput): Future[UpdateSnapshotScheduleOutput] =
-      service.updateSnapshotSchedule(params).promise.toFuture
-    def updateVTLDeviceTypeFuture(params: UpdateVTLDeviceTypeInput): Future[UpdateVTLDeviceTypeOutput] =
+    @inline def updateSnapshotScheduleFuture(
+        params: UpdateSnapshotScheduleInput
+    ): Future[UpdateSnapshotScheduleOutput] = service.updateSnapshotSchedule(params).promise.toFuture
+    @inline def updateVTLDeviceTypeFuture(params: UpdateVTLDeviceTypeInput): Future[UpdateVTLDeviceTypeOutput] =
       service.updateVTLDeviceType(params).promise.toFuture
   }
 }

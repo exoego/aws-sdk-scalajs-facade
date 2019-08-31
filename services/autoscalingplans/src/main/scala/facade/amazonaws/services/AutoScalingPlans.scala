@@ -56,20 +56,20 @@ package object autoscalingplans {
 
   implicit final class AutoScalingPlansOps(private val service: AutoScalingPlans) extends AnyVal {
 
-    def createScalingPlanFuture(params: CreateScalingPlanRequest): Future[CreateScalingPlanResponse] =
+    @inline def createScalingPlanFuture(params: CreateScalingPlanRequest): Future[CreateScalingPlanResponse] =
       service.createScalingPlan(params).promise.toFuture
-    def deleteScalingPlanFuture(params: DeleteScalingPlanRequest): Future[DeleteScalingPlanResponse] =
+    @inline def deleteScalingPlanFuture(params: DeleteScalingPlanRequest): Future[DeleteScalingPlanResponse] =
       service.deleteScalingPlan(params).promise.toFuture
-    def describeScalingPlanResourcesFuture(
+    @inline def describeScalingPlanResourcesFuture(
         params: DescribeScalingPlanResourcesRequest
     ): Future[DescribeScalingPlanResourcesResponse] = service.describeScalingPlanResources(params).promise.toFuture
-    def describeScalingPlansFuture(params: DescribeScalingPlansRequest): Future[DescribeScalingPlansResponse] =
+    @inline def describeScalingPlansFuture(params: DescribeScalingPlansRequest): Future[DescribeScalingPlansResponse] =
       service.describeScalingPlans(params).promise.toFuture
-    def getScalingPlanResourceForecastDataFuture(
+    @inline def getScalingPlanResourceForecastDataFuture(
         params: GetScalingPlanResourceForecastDataRequest
     ): Future[GetScalingPlanResourceForecastDataResponse] =
       service.getScalingPlanResourceForecastData(params).promise.toFuture
-    def updateScalingPlanFuture(params: UpdateScalingPlanRequest): Future[UpdateScalingPlanResponse] =
+    @inline def updateScalingPlanFuture(params: UpdateScalingPlanRequest): Future[UpdateScalingPlanResponse] =
       service.updateScalingPlan(params).promise.toFuture
   }
 }

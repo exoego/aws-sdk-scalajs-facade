@@ -67,49 +67,52 @@ package object connect {
 
   implicit final class ConnectOps(private val service: Connect) extends AnyVal {
 
-    def createUserFuture(params: CreateUserRequest): Future[CreateUserResponse] =
+    @inline def createUserFuture(params: CreateUserRequest): Future[CreateUserResponse] =
       service.createUser(params).promise.toFuture
-    def deleteUserFuture(params: DeleteUserRequest): Future[js.Object] = service.deleteUser(params).promise.toFuture
-    def describeUserFuture(params: DescribeUserRequest): Future[DescribeUserResponse] =
+    @inline def deleteUserFuture(params: DeleteUserRequest): Future[js.Object] =
+      service.deleteUser(params).promise.toFuture
+    @inline def describeUserFuture(params: DescribeUserRequest): Future[DescribeUserResponse] =
       service.describeUser(params).promise.toFuture
-    def describeUserHierarchyGroupFuture(
+    @inline def describeUserHierarchyGroupFuture(
         params: DescribeUserHierarchyGroupRequest
     ): Future[DescribeUserHierarchyGroupResponse] = service.describeUserHierarchyGroup(params).promise.toFuture
-    def describeUserHierarchyStructureFuture(
+    @inline def describeUserHierarchyStructureFuture(
         params: DescribeUserHierarchyStructureRequest
     ): Future[DescribeUserHierarchyStructureResponse] = service.describeUserHierarchyStructure(params).promise.toFuture
-    def getContactAttributesFuture(params: GetContactAttributesRequest): Future[GetContactAttributesResponse] =
+    @inline def getContactAttributesFuture(params: GetContactAttributesRequest): Future[GetContactAttributesResponse] =
       service.getContactAttributes(params).promise.toFuture
-    def getCurrentMetricDataFuture(params: GetCurrentMetricDataRequest): Future[GetCurrentMetricDataResponse] =
+    @inline def getCurrentMetricDataFuture(params: GetCurrentMetricDataRequest): Future[GetCurrentMetricDataResponse] =
       service.getCurrentMetricData(params).promise.toFuture
-    def getFederationTokenFuture(params: GetFederationTokenRequest): Future[GetFederationTokenResponse] =
+    @inline def getFederationTokenFuture(params: GetFederationTokenRequest): Future[GetFederationTokenResponse] =
       service.getFederationToken(params).promise.toFuture
-    def getMetricDataFuture(params: GetMetricDataRequest): Future[GetMetricDataResponse] =
+    @inline def getMetricDataFuture(params: GetMetricDataRequest): Future[GetMetricDataResponse] =
       service.getMetricData(params).promise.toFuture
-    def listRoutingProfilesFuture(params: ListRoutingProfilesRequest): Future[ListRoutingProfilesResponse] =
+    @inline def listRoutingProfilesFuture(params: ListRoutingProfilesRequest): Future[ListRoutingProfilesResponse] =
       service.listRoutingProfiles(params).promise.toFuture
-    def listSecurityProfilesFuture(params: ListSecurityProfilesRequest): Future[ListSecurityProfilesResponse] =
+    @inline def listSecurityProfilesFuture(params: ListSecurityProfilesRequest): Future[ListSecurityProfilesResponse] =
       service.listSecurityProfiles(params).promise.toFuture
-    def listUserHierarchyGroupsFuture(params: ListUserHierarchyGroupsRequest): Future[ListUserHierarchyGroupsResponse] =
-      service.listUserHierarchyGroups(params).promise.toFuture
-    def listUsersFuture(params: ListUsersRequest): Future[ListUsersResponse] =
+    @inline def listUserHierarchyGroupsFuture(
+        params: ListUserHierarchyGroupsRequest
+    ): Future[ListUserHierarchyGroupsResponse] = service.listUserHierarchyGroups(params).promise.toFuture
+    @inline def listUsersFuture(params: ListUsersRequest): Future[ListUsersResponse] =
       service.listUsers(params).promise.toFuture
-    def startOutboundVoiceContactFuture(
+    @inline def startOutboundVoiceContactFuture(
         params: StartOutboundVoiceContactRequest
     ): Future[StartOutboundVoiceContactResponse] = service.startOutboundVoiceContact(params).promise.toFuture
-    def stopContactFuture(params: StopContactRequest): Future[StopContactResponse] =
+    @inline def stopContactFuture(params: StopContactRequest): Future[StopContactResponse] =
       service.stopContact(params).promise.toFuture
-    def updateContactAttributesFuture(params: UpdateContactAttributesRequest): Future[UpdateContactAttributesResponse] =
-      service.updateContactAttributes(params).promise.toFuture
-    def updateUserHierarchyFuture(params: UpdateUserHierarchyRequest): Future[js.Object] =
+    @inline def updateContactAttributesFuture(
+        params: UpdateContactAttributesRequest
+    ): Future[UpdateContactAttributesResponse] = service.updateContactAttributes(params).promise.toFuture
+    @inline def updateUserHierarchyFuture(params: UpdateUserHierarchyRequest): Future[js.Object] =
       service.updateUserHierarchy(params).promise.toFuture
-    def updateUserIdentityInfoFuture(params: UpdateUserIdentityInfoRequest): Future[js.Object] =
+    @inline def updateUserIdentityInfoFuture(params: UpdateUserIdentityInfoRequest): Future[js.Object] =
       service.updateUserIdentityInfo(params).promise.toFuture
-    def updateUserPhoneConfigFuture(params: UpdateUserPhoneConfigRequest): Future[js.Object] =
+    @inline def updateUserPhoneConfigFuture(params: UpdateUserPhoneConfigRequest): Future[js.Object] =
       service.updateUserPhoneConfig(params).promise.toFuture
-    def updateUserRoutingProfileFuture(params: UpdateUserRoutingProfileRequest): Future[js.Object] =
+    @inline def updateUserRoutingProfileFuture(params: UpdateUserRoutingProfileRequest): Future[js.Object] =
       service.updateUserRoutingProfile(params).promise.toFuture
-    def updateUserSecurityProfilesFuture(params: UpdateUserSecurityProfilesRequest): Future[js.Object] =
+    @inline def updateUserSecurityProfilesFuture(params: UpdateUserSecurityProfilesRequest): Future[js.Object] =
       service.updateUserSecurityProfiles(params).promise.toFuture
   }
 }

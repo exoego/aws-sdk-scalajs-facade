@@ -39,77 +39,82 @@ package object workmail {
 
   implicit final class WorkMailOps(private val service: WorkMail) extends AnyVal {
 
-    def associateDelegateToResourceFuture(
+    @inline def associateDelegateToResourceFuture(
         params: AssociateDelegateToResourceRequest
     ): Future[AssociateDelegateToResourceResponse] = service.associateDelegateToResource(params).promise.toFuture
-    def associateMemberToGroupFuture(params: AssociateMemberToGroupRequest): Future[AssociateMemberToGroupResponse] =
-      service.associateMemberToGroup(params).promise.toFuture
-    def createAliasFuture(params: CreateAliasRequest): Future[CreateAliasResponse] =
+    @inline def associateMemberToGroupFuture(
+        params: AssociateMemberToGroupRequest
+    ): Future[AssociateMemberToGroupResponse] = service.associateMemberToGroup(params).promise.toFuture
+    @inline def createAliasFuture(params: CreateAliasRequest): Future[CreateAliasResponse] =
       service.createAlias(params).promise.toFuture
-    def createGroupFuture(params: CreateGroupRequest): Future[CreateGroupResponse] =
+    @inline def createGroupFuture(params: CreateGroupRequest): Future[CreateGroupResponse] =
       service.createGroup(params).promise.toFuture
-    def createResourceFuture(params: CreateResourceRequest): Future[CreateResourceResponse] =
+    @inline def createResourceFuture(params: CreateResourceRequest): Future[CreateResourceResponse] =
       service.createResource(params).promise.toFuture
-    def createUserFuture(params: CreateUserRequest): Future[CreateUserResponse] =
+    @inline def createUserFuture(params: CreateUserRequest): Future[CreateUserResponse] =
       service.createUser(params).promise.toFuture
-    def deleteAliasFuture(params: DeleteAliasRequest): Future[DeleteAliasResponse] =
+    @inline def deleteAliasFuture(params: DeleteAliasRequest): Future[DeleteAliasResponse] =
       service.deleteAlias(params).promise.toFuture
-    def deleteGroupFuture(params: DeleteGroupRequest): Future[DeleteGroupResponse] =
+    @inline def deleteGroupFuture(params: DeleteGroupRequest): Future[DeleteGroupResponse] =
       service.deleteGroup(params).promise.toFuture
-    def deleteMailboxPermissionsFuture(
+    @inline def deleteMailboxPermissionsFuture(
         params: DeleteMailboxPermissionsRequest
     ): Future[DeleteMailboxPermissionsResponse] = service.deleteMailboxPermissions(params).promise.toFuture
-    def deleteResourceFuture(params: DeleteResourceRequest): Future[DeleteResourceResponse] =
+    @inline def deleteResourceFuture(params: DeleteResourceRequest): Future[DeleteResourceResponse] =
       service.deleteResource(params).promise.toFuture
-    def deleteUserFuture(params: DeleteUserRequest): Future[DeleteUserResponse] =
+    @inline def deleteUserFuture(params: DeleteUserRequest): Future[DeleteUserResponse] =
       service.deleteUser(params).promise.toFuture
-    def deregisterFromWorkMailFuture(params: DeregisterFromWorkMailRequest): Future[DeregisterFromWorkMailResponse] =
-      service.deregisterFromWorkMail(params).promise.toFuture
-    def describeGroupFuture(params: DescribeGroupRequest): Future[DescribeGroupResponse] =
+    @inline def deregisterFromWorkMailFuture(
+        params: DeregisterFromWorkMailRequest
+    ): Future[DeregisterFromWorkMailResponse] = service.deregisterFromWorkMail(params).promise.toFuture
+    @inline def describeGroupFuture(params: DescribeGroupRequest): Future[DescribeGroupResponse] =
       service.describeGroup(params).promise.toFuture
-    def describeOrganizationFuture(params: DescribeOrganizationRequest): Future[DescribeOrganizationResponse] =
+    @inline def describeOrganizationFuture(params: DescribeOrganizationRequest): Future[DescribeOrganizationResponse] =
       service.describeOrganization(params).promise.toFuture
-    def describeResourceFuture(params: DescribeResourceRequest): Future[DescribeResourceResponse] =
+    @inline def describeResourceFuture(params: DescribeResourceRequest): Future[DescribeResourceResponse] =
       service.describeResource(params).promise.toFuture
-    def describeUserFuture(params: DescribeUserRequest): Future[DescribeUserResponse] =
+    @inline def describeUserFuture(params: DescribeUserRequest): Future[DescribeUserResponse] =
       service.describeUser(params).promise.toFuture
-    def disassociateDelegateFromResourceFuture(
+    @inline def disassociateDelegateFromResourceFuture(
         params: DisassociateDelegateFromResourceRequest
     ): Future[DisassociateDelegateFromResourceResponse] =
       service.disassociateDelegateFromResource(params).promise.toFuture
-    def disassociateMemberFromGroupFuture(
+    @inline def disassociateMemberFromGroupFuture(
         params: DisassociateMemberFromGroupRequest
     ): Future[DisassociateMemberFromGroupResponse] = service.disassociateMemberFromGroup(params).promise.toFuture
-    def getMailboxDetailsFuture(params: GetMailboxDetailsRequest): Future[GetMailboxDetailsResponse] =
+    @inline def getMailboxDetailsFuture(params: GetMailboxDetailsRequest): Future[GetMailboxDetailsResponse] =
       service.getMailboxDetails(params).promise.toFuture
-    def listAliasesFuture(params: ListAliasesRequest): Future[ListAliasesResponse] =
+    @inline def listAliasesFuture(params: ListAliasesRequest): Future[ListAliasesResponse] =
       service.listAliases(params).promise.toFuture
-    def listGroupMembersFuture(params: ListGroupMembersRequest): Future[ListGroupMembersResponse] =
+    @inline def listGroupMembersFuture(params: ListGroupMembersRequest): Future[ListGroupMembersResponse] =
       service.listGroupMembers(params).promise.toFuture
-    def listGroupsFuture(params: ListGroupsRequest): Future[ListGroupsResponse] =
+    @inline def listGroupsFuture(params: ListGroupsRequest): Future[ListGroupsResponse] =
       service.listGroups(params).promise.toFuture
-    def listMailboxPermissionsFuture(params: ListMailboxPermissionsRequest): Future[ListMailboxPermissionsResponse] =
-      service.listMailboxPermissions(params).promise.toFuture
-    def listOrganizationsFuture(params: ListOrganizationsRequest): Future[ListOrganizationsResponse] =
+    @inline def listMailboxPermissionsFuture(
+        params: ListMailboxPermissionsRequest
+    ): Future[ListMailboxPermissionsResponse] = service.listMailboxPermissions(params).promise.toFuture
+    @inline def listOrganizationsFuture(params: ListOrganizationsRequest): Future[ListOrganizationsResponse] =
       service.listOrganizations(params).promise.toFuture
-    def listResourceDelegatesFuture(params: ListResourceDelegatesRequest): Future[ListResourceDelegatesResponse] =
-      service.listResourceDelegates(params).promise.toFuture
-    def listResourcesFuture(params: ListResourcesRequest): Future[ListResourcesResponse] =
+    @inline def listResourceDelegatesFuture(
+        params: ListResourceDelegatesRequest
+    ): Future[ListResourceDelegatesResponse] = service.listResourceDelegates(params).promise.toFuture
+    @inline def listResourcesFuture(params: ListResourcesRequest): Future[ListResourcesResponse] =
       service.listResources(params).promise.toFuture
-    def listUsersFuture(params: ListUsersRequest): Future[ListUsersResponse] =
+    @inline def listUsersFuture(params: ListUsersRequest): Future[ListUsersResponse] =
       service.listUsers(params).promise.toFuture
-    def putMailboxPermissionsFuture(params: PutMailboxPermissionsRequest): Future[PutMailboxPermissionsResponse] =
-      service.putMailboxPermissions(params).promise.toFuture
-    def registerToWorkMailFuture(params: RegisterToWorkMailRequest): Future[RegisterToWorkMailResponse] =
+    @inline def putMailboxPermissionsFuture(
+        params: PutMailboxPermissionsRequest
+    ): Future[PutMailboxPermissionsResponse] = service.putMailboxPermissions(params).promise.toFuture
+    @inline def registerToWorkMailFuture(params: RegisterToWorkMailRequest): Future[RegisterToWorkMailResponse] =
       service.registerToWorkMail(params).promise.toFuture
-    def resetPasswordFuture(params: ResetPasswordRequest): Future[ResetPasswordResponse] =
+    @inline def resetPasswordFuture(params: ResetPasswordRequest): Future[ResetPasswordResponse] =
       service.resetPassword(params).promise.toFuture
-    def updateMailboxQuotaFuture(params: UpdateMailboxQuotaRequest): Future[UpdateMailboxQuotaResponse] =
+    @inline def updateMailboxQuotaFuture(params: UpdateMailboxQuotaRequest): Future[UpdateMailboxQuotaResponse] =
       service.updateMailboxQuota(params).promise.toFuture
-    def updatePrimaryEmailAddressFuture(
+    @inline def updatePrimaryEmailAddressFuture(
         params: UpdatePrimaryEmailAddressRequest
     ): Future[UpdatePrimaryEmailAddressResponse] = service.updatePrimaryEmailAddress(params).promise.toFuture
-    def updateResourceFuture(params: UpdateResourceRequest): Future[UpdateResourceResponse] =
+    @inline def updateResourceFuture(params: UpdateResourceRequest): Future[UpdateResourceResponse] =
       service.updateResource(params).promise.toFuture
   }
 }

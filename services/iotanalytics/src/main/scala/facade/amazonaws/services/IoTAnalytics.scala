@@ -99,75 +99,76 @@ package object iotanalytics {
 
   implicit final class IoTAnalyticsOps(private val service: IoTAnalytics) extends AnyVal {
 
-    def batchPutMessageFuture(params: BatchPutMessageRequest): Future[BatchPutMessageResponse] =
+    @inline def batchPutMessageFuture(params: BatchPutMessageRequest): Future[BatchPutMessageResponse] =
       service.batchPutMessage(params).promise.toFuture
-    def cancelPipelineReprocessingFuture(
+    @inline def cancelPipelineReprocessingFuture(
         params: CancelPipelineReprocessingRequest
     ): Future[CancelPipelineReprocessingResponse] = service.cancelPipelineReprocessing(params).promise.toFuture
-    def createChannelFuture(params: CreateChannelRequest): Future[CreateChannelResponse] =
+    @inline def createChannelFuture(params: CreateChannelRequest): Future[CreateChannelResponse] =
       service.createChannel(params).promise.toFuture
-    def createDatasetContentFuture(params: CreateDatasetContentRequest): Future[CreateDatasetContentResponse] =
+    @inline def createDatasetContentFuture(params: CreateDatasetContentRequest): Future[CreateDatasetContentResponse] =
       service.createDatasetContent(params).promise.toFuture
-    def createDatasetFuture(params: CreateDatasetRequest): Future[CreateDatasetResponse] =
+    @inline def createDatasetFuture(params: CreateDatasetRequest): Future[CreateDatasetResponse] =
       service.createDataset(params).promise.toFuture
-    def createDatastoreFuture(params: CreateDatastoreRequest): Future[CreateDatastoreResponse] =
+    @inline def createDatastoreFuture(params: CreateDatastoreRequest): Future[CreateDatastoreResponse] =
       service.createDatastore(params).promise.toFuture
-    def createPipelineFuture(params: CreatePipelineRequest): Future[CreatePipelineResponse] =
+    @inline def createPipelineFuture(params: CreatePipelineRequest): Future[CreatePipelineResponse] =
       service.createPipeline(params).promise.toFuture
-    def deleteChannelFuture(params: DeleteChannelRequest): Future[js.Object] =
+    @inline def deleteChannelFuture(params: DeleteChannelRequest): Future[js.Object] =
       service.deleteChannel(params).promise.toFuture
-    def deleteDatasetContentFuture(params: DeleteDatasetContentRequest): Future[js.Object] =
+    @inline def deleteDatasetContentFuture(params: DeleteDatasetContentRequest): Future[js.Object] =
       service.deleteDatasetContent(params).promise.toFuture
-    def deleteDatasetFuture(params: DeleteDatasetRequest): Future[js.Object] =
+    @inline def deleteDatasetFuture(params: DeleteDatasetRequest): Future[js.Object] =
       service.deleteDataset(params).promise.toFuture
-    def deleteDatastoreFuture(params: DeleteDatastoreRequest): Future[js.Object] =
+    @inline def deleteDatastoreFuture(params: DeleteDatastoreRequest): Future[js.Object] =
       service.deleteDatastore(params).promise.toFuture
-    def deletePipelineFuture(params: DeletePipelineRequest): Future[js.Object] =
+    @inline def deletePipelineFuture(params: DeletePipelineRequest): Future[js.Object] =
       service.deletePipeline(params).promise.toFuture
-    def describeChannelFuture(params: DescribeChannelRequest): Future[DescribeChannelResponse] =
+    @inline def describeChannelFuture(params: DescribeChannelRequest): Future[DescribeChannelResponse] =
       service.describeChannel(params).promise.toFuture
-    def describeDatasetFuture(params: DescribeDatasetRequest): Future[DescribeDatasetResponse] =
+    @inline def describeDatasetFuture(params: DescribeDatasetRequest): Future[DescribeDatasetResponse] =
       service.describeDataset(params).promise.toFuture
-    def describeDatastoreFuture(params: DescribeDatastoreRequest): Future[DescribeDatastoreResponse] =
+    @inline def describeDatastoreFuture(params: DescribeDatastoreRequest): Future[DescribeDatastoreResponse] =
       service.describeDatastore(params).promise.toFuture
-    def describeLoggingOptionsFuture(params: DescribeLoggingOptionsRequest): Future[DescribeLoggingOptionsResponse] =
-      service.describeLoggingOptions(params).promise.toFuture
-    def describePipelineFuture(params: DescribePipelineRequest): Future[DescribePipelineResponse] =
+    @inline def describeLoggingOptionsFuture(
+        params: DescribeLoggingOptionsRequest
+    ): Future[DescribeLoggingOptionsResponse] = service.describeLoggingOptions(params).promise.toFuture
+    @inline def describePipelineFuture(params: DescribePipelineRequest): Future[DescribePipelineResponse] =
       service.describePipeline(params).promise.toFuture
-    def getDatasetContentFuture(params: GetDatasetContentRequest): Future[GetDatasetContentResponse] =
+    @inline def getDatasetContentFuture(params: GetDatasetContentRequest): Future[GetDatasetContentResponse] =
       service.getDatasetContent(params).promise.toFuture
-    def listChannelsFuture(params: ListChannelsRequest): Future[ListChannelsResponse] =
+    @inline def listChannelsFuture(params: ListChannelsRequest): Future[ListChannelsResponse] =
       service.listChannels(params).promise.toFuture
-    def listDatasetContentsFuture(params: ListDatasetContentsRequest): Future[ListDatasetContentsResponse] =
+    @inline def listDatasetContentsFuture(params: ListDatasetContentsRequest): Future[ListDatasetContentsResponse] =
       service.listDatasetContents(params).promise.toFuture
-    def listDatasetsFuture(params: ListDatasetsRequest): Future[ListDatasetsResponse] =
+    @inline def listDatasetsFuture(params: ListDatasetsRequest): Future[ListDatasetsResponse] =
       service.listDatasets(params).promise.toFuture
-    def listDatastoresFuture(params: ListDatastoresRequest): Future[ListDatastoresResponse] =
+    @inline def listDatastoresFuture(params: ListDatastoresRequest): Future[ListDatastoresResponse] =
       service.listDatastores(params).promise.toFuture
-    def listPipelinesFuture(params: ListPipelinesRequest): Future[ListPipelinesResponse] =
+    @inline def listPipelinesFuture(params: ListPipelinesRequest): Future[ListPipelinesResponse] =
       service.listPipelines(params).promise.toFuture
-    def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] =
+    @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] =
       service.listTagsForResource(params).promise.toFuture
-    def putLoggingOptionsFuture(params: PutLoggingOptionsRequest): Future[js.Object] =
+    @inline def putLoggingOptionsFuture(params: PutLoggingOptionsRequest): Future[js.Object] =
       service.putLoggingOptions(params).promise.toFuture
-    def runPipelineActivityFuture(params: RunPipelineActivityRequest): Future[RunPipelineActivityResponse] =
+    @inline def runPipelineActivityFuture(params: RunPipelineActivityRequest): Future[RunPipelineActivityResponse] =
       service.runPipelineActivity(params).promise.toFuture
-    def sampleChannelDataFuture(params: SampleChannelDataRequest): Future[SampleChannelDataResponse] =
+    @inline def sampleChannelDataFuture(params: SampleChannelDataRequest): Future[SampleChannelDataResponse] =
       service.sampleChannelData(params).promise.toFuture
-    def startPipelineReprocessingFuture(
+    @inline def startPipelineReprocessingFuture(
         params: StartPipelineReprocessingRequest
     ): Future[StartPipelineReprocessingResponse] = service.startPipelineReprocessing(params).promise.toFuture
-    def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] =
+    @inline def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] =
       service.tagResource(params).promise.toFuture
-    def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] =
+    @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] =
       service.untagResource(params).promise.toFuture
-    def updateChannelFuture(params: UpdateChannelRequest): Future[js.Object] =
+    @inline def updateChannelFuture(params: UpdateChannelRequest): Future[js.Object] =
       service.updateChannel(params).promise.toFuture
-    def updateDatasetFuture(params: UpdateDatasetRequest): Future[js.Object] =
+    @inline def updateDatasetFuture(params: UpdateDatasetRequest): Future[js.Object] =
       service.updateDataset(params).promise.toFuture
-    def updateDatastoreFuture(params: UpdateDatastoreRequest): Future[js.Object] =
+    @inline def updateDatastoreFuture(params: UpdateDatastoreRequest): Future[js.Object] =
       service.updateDatastore(params).promise.toFuture
-    def updatePipelineFuture(params: UpdatePipelineRequest): Future[js.Object] =
+    @inline def updatePipelineFuture(params: UpdatePipelineRequest): Future[js.Object] =
       service.updatePipeline(params).promise.toFuture
   }
 }

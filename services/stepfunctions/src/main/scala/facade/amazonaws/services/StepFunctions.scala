@@ -38,51 +38,51 @@ package object stepfunctions {
 
   implicit final class StepFunctionsOps(private val service: StepFunctions) extends AnyVal {
 
-    def createActivityFuture(params: CreateActivityInput): Future[CreateActivityOutput] =
+    @inline def createActivityFuture(params: CreateActivityInput): Future[CreateActivityOutput] =
       service.createActivity(params).promise.toFuture
-    def createStateMachineFuture(params: CreateStateMachineInput): Future[CreateStateMachineOutput] =
+    @inline def createStateMachineFuture(params: CreateStateMachineInput): Future[CreateStateMachineOutput] =
       service.createStateMachine(params).promise.toFuture
-    def deleteActivityFuture(params: DeleteActivityInput): Future[DeleteActivityOutput] =
+    @inline def deleteActivityFuture(params: DeleteActivityInput): Future[DeleteActivityOutput] =
       service.deleteActivity(params).promise.toFuture
-    def deleteStateMachineFuture(params: DeleteStateMachineInput): Future[DeleteStateMachineOutput] =
+    @inline def deleteStateMachineFuture(params: DeleteStateMachineInput): Future[DeleteStateMachineOutput] =
       service.deleteStateMachine(params).promise.toFuture
-    def describeActivityFuture(params: DescribeActivityInput): Future[DescribeActivityOutput] =
+    @inline def describeActivityFuture(params: DescribeActivityInput): Future[DescribeActivityOutput] =
       service.describeActivity(params).promise.toFuture
-    def describeExecutionFuture(params: DescribeExecutionInput): Future[DescribeExecutionOutput] =
+    @inline def describeExecutionFuture(params: DescribeExecutionInput): Future[DescribeExecutionOutput] =
       service.describeExecution(params).promise.toFuture
-    def describeStateMachineForExecutionFuture(
+    @inline def describeStateMachineForExecutionFuture(
         params: DescribeStateMachineForExecutionInput
     ): Future[DescribeStateMachineForExecutionOutput] =
       service.describeStateMachineForExecution(params).promise.toFuture
-    def describeStateMachineFuture(params: DescribeStateMachineInput): Future[DescribeStateMachineOutput] =
+    @inline def describeStateMachineFuture(params: DescribeStateMachineInput): Future[DescribeStateMachineOutput] =
       service.describeStateMachine(params).promise.toFuture
-    def getActivityTaskFuture(params: GetActivityTaskInput): Future[GetActivityTaskOutput] =
+    @inline def getActivityTaskFuture(params: GetActivityTaskInput): Future[GetActivityTaskOutput] =
       service.getActivityTask(params).promise.toFuture
-    def getExecutionHistoryFuture(params: GetExecutionHistoryInput): Future[GetExecutionHistoryOutput] =
+    @inline def getExecutionHistoryFuture(params: GetExecutionHistoryInput): Future[GetExecutionHistoryOutput] =
       service.getExecutionHistory(params).promise.toFuture
-    def listActivitiesFuture(params: ListActivitiesInput): Future[ListActivitiesOutput] =
+    @inline def listActivitiesFuture(params: ListActivitiesInput): Future[ListActivitiesOutput] =
       service.listActivities(params).promise.toFuture
-    def listExecutionsFuture(params: ListExecutionsInput): Future[ListExecutionsOutput] =
+    @inline def listExecutionsFuture(params: ListExecutionsInput): Future[ListExecutionsOutput] =
       service.listExecutions(params).promise.toFuture
-    def listStateMachinesFuture(params: ListStateMachinesInput): Future[ListStateMachinesOutput] =
+    @inline def listStateMachinesFuture(params: ListStateMachinesInput): Future[ListStateMachinesOutput] =
       service.listStateMachines(params).promise.toFuture
-    def listTagsForResourceFuture(params: ListTagsForResourceInput): Future[ListTagsForResourceOutput] =
+    @inline def listTagsForResourceFuture(params: ListTagsForResourceInput): Future[ListTagsForResourceOutput] =
       service.listTagsForResource(params).promise.toFuture
-    def sendTaskFailureFuture(params: SendTaskFailureInput): Future[SendTaskFailureOutput] =
+    @inline def sendTaskFailureFuture(params: SendTaskFailureInput): Future[SendTaskFailureOutput] =
       service.sendTaskFailure(params).promise.toFuture
-    def sendTaskHeartbeatFuture(params: SendTaskHeartbeatInput): Future[SendTaskHeartbeatOutput] =
+    @inline def sendTaskHeartbeatFuture(params: SendTaskHeartbeatInput): Future[SendTaskHeartbeatOutput] =
       service.sendTaskHeartbeat(params).promise.toFuture
-    def sendTaskSuccessFuture(params: SendTaskSuccessInput): Future[SendTaskSuccessOutput] =
+    @inline def sendTaskSuccessFuture(params: SendTaskSuccessInput): Future[SendTaskSuccessOutput] =
       service.sendTaskSuccess(params).promise.toFuture
-    def startExecutionFuture(params: StartExecutionInput): Future[StartExecutionOutput] =
+    @inline def startExecutionFuture(params: StartExecutionInput): Future[StartExecutionOutput] =
       service.startExecution(params).promise.toFuture
-    def stopExecutionFuture(params: StopExecutionInput): Future[StopExecutionOutput] =
+    @inline def stopExecutionFuture(params: StopExecutionInput): Future[StopExecutionOutput] =
       service.stopExecution(params).promise.toFuture
-    def tagResourceFuture(params: TagResourceInput): Future[TagResourceOutput] =
+    @inline def tagResourceFuture(params: TagResourceInput): Future[TagResourceOutput] =
       service.tagResource(params).promise.toFuture
-    def untagResourceFuture(params: UntagResourceInput): Future[UntagResourceOutput] =
+    @inline def untagResourceFuture(params: UntagResourceInput): Future[UntagResourceOutput] =
       service.untagResource(params).promise.toFuture
-    def updateStateMachineFuture(params: UpdateStateMachineInput): Future[UpdateStateMachineOutput] =
+    @inline def updateStateMachineFuture(params: UpdateStateMachineInput): Future[UpdateStateMachineOutput] =
       service.updateStateMachine(params).promise.toFuture
   }
 }

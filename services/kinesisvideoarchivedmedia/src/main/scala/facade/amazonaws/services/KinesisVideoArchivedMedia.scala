@@ -34,15 +34,16 @@ package object kinesisvideoarchivedmedia {
 
   implicit final class KinesisVideoArchivedMediaOps(private val service: KinesisVideoArchivedMedia) extends AnyVal {
 
-    def getDASHStreamingSessionURLFuture(
+    @inline def getDASHStreamingSessionURLFuture(
         params: GetDASHStreamingSessionURLInput
     ): Future[GetDASHStreamingSessionURLOutput] = service.getDASHStreamingSessionURL(params).promise.toFuture
-    def getHLSStreamingSessionURLFuture(
+    @inline def getHLSStreamingSessionURLFuture(
         params: GetHLSStreamingSessionURLInput
     ): Future[GetHLSStreamingSessionURLOutput] = service.getHLSStreamingSessionURL(params).promise.toFuture
-    def getMediaForFragmentListFuture(params: GetMediaForFragmentListInput): Future[GetMediaForFragmentListOutput] =
-      service.getMediaForFragmentList(params).promise.toFuture
-    def listFragmentsFuture(params: ListFragmentsInput): Future[ListFragmentsOutput] =
+    @inline def getMediaForFragmentListFuture(
+        params: GetMediaForFragmentListInput
+    ): Future[GetMediaForFragmentListOutput] = service.getMediaForFragmentList(params).promise.toFuture
+    @inline def listFragmentsFuture(params: ListFragmentsInput): Future[ListFragmentsOutput] =
       service.listFragments(params).promise.toFuture
   }
 }

@@ -19,9 +19,9 @@ package object comprehendmedical {
 
   implicit final class ComprehendMedicalOps(private val service: ComprehendMedical) extends AnyVal {
 
-    def detectEntitiesFuture(params: DetectEntitiesRequest): Future[DetectEntitiesResponse] =
+    @inline def detectEntitiesFuture(params: DetectEntitiesRequest): Future[DetectEntitiesResponse] =
       service.detectEntities(params).promise.toFuture
-    def detectPHIFuture(params: DetectPHIRequest): Future[DetectPHIResponse] =
+    @inline def detectPHIFuture(params: DetectPHIRequest): Future[DetectPHIResponse] =
       service.detectPHI(params).promise.toFuture
   }
 }

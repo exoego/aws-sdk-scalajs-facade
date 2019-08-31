@@ -27,33 +27,34 @@ package object mediapackagevod {
 
   implicit final class MediaPackageVodOps(private val service: MediaPackageVod) extends AnyVal {
 
-    def createAssetFuture(params: CreateAssetRequest): Future[CreateAssetResponse] =
+    @inline def createAssetFuture(params: CreateAssetRequest): Future[CreateAssetResponse] =
       service.createAsset(params).promise.toFuture
-    def createPackagingConfigurationFuture(
+    @inline def createPackagingConfigurationFuture(
         params: CreatePackagingConfigurationRequest
     ): Future[CreatePackagingConfigurationResponse] = service.createPackagingConfiguration(params).promise.toFuture
-    def createPackagingGroupFuture(params: CreatePackagingGroupRequest): Future[CreatePackagingGroupResponse] =
+    @inline def createPackagingGroupFuture(params: CreatePackagingGroupRequest): Future[CreatePackagingGroupResponse] =
       service.createPackagingGroup(params).promise.toFuture
-    def deleteAssetFuture(params: DeleteAssetRequest): Future[DeleteAssetResponse] =
+    @inline def deleteAssetFuture(params: DeleteAssetRequest): Future[DeleteAssetResponse] =
       service.deleteAsset(params).promise.toFuture
-    def deletePackagingConfigurationFuture(
+    @inline def deletePackagingConfigurationFuture(
         params: DeletePackagingConfigurationRequest
     ): Future[DeletePackagingConfigurationResponse] = service.deletePackagingConfiguration(params).promise.toFuture
-    def deletePackagingGroupFuture(params: DeletePackagingGroupRequest): Future[DeletePackagingGroupResponse] =
+    @inline def deletePackagingGroupFuture(params: DeletePackagingGroupRequest): Future[DeletePackagingGroupResponse] =
       service.deletePackagingGroup(params).promise.toFuture
-    def describeAssetFuture(params: DescribeAssetRequest): Future[DescribeAssetResponse] =
+    @inline def describeAssetFuture(params: DescribeAssetRequest): Future[DescribeAssetResponse] =
       service.describeAsset(params).promise.toFuture
-    def describePackagingConfigurationFuture(
+    @inline def describePackagingConfigurationFuture(
         params: DescribePackagingConfigurationRequest
     ): Future[DescribePackagingConfigurationResponse] = service.describePackagingConfiguration(params).promise.toFuture
-    def describePackagingGroupFuture(params: DescribePackagingGroupRequest): Future[DescribePackagingGroupResponse] =
-      service.describePackagingGroup(params).promise.toFuture
-    def listAssetsFuture(params: ListAssetsRequest): Future[ListAssetsResponse] =
+    @inline def describePackagingGroupFuture(
+        params: DescribePackagingGroupRequest
+    ): Future[DescribePackagingGroupResponse] = service.describePackagingGroup(params).promise.toFuture
+    @inline def listAssetsFuture(params: ListAssetsRequest): Future[ListAssetsResponse] =
       service.listAssets(params).promise.toFuture
-    def listPackagingConfigurationsFuture(
+    @inline def listPackagingConfigurationsFuture(
         params: ListPackagingConfigurationsRequest
     ): Future[ListPackagingConfigurationsResponse] = service.listPackagingConfigurations(params).promise.toFuture
-    def listPackagingGroupsFuture(params: ListPackagingGroupsRequest): Future[ListPackagingGroupsResponse] =
+    @inline def listPackagingGroupsFuture(params: ListPackagingGroupsRequest): Future[ListPackagingGroupsResponse] =
       service.listPackagingGroups(params).promise.toFuture
   }
 }

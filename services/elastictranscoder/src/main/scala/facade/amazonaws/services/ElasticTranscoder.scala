@@ -110,37 +110,38 @@ package object elastictranscoder {
 
   implicit final class ElasticTranscoderOps(private val service: ElasticTranscoder) extends AnyVal {
 
-    def cancelJobFuture(params: CancelJobRequest): Future[CancelJobResponse] =
+    @inline def cancelJobFuture(params: CancelJobRequest): Future[CancelJobResponse] =
       service.cancelJob(params).promise.toFuture
-    def createJobFuture(params: CreateJobRequest): Future[CreateJobResponse] =
+    @inline def createJobFuture(params: CreateJobRequest): Future[CreateJobResponse] =
       service.createJob(params).promise.toFuture
-    def createPipelineFuture(params: CreatePipelineRequest): Future[CreatePipelineResponse] =
+    @inline def createPipelineFuture(params: CreatePipelineRequest): Future[CreatePipelineResponse] =
       service.createPipeline(params).promise.toFuture
-    def createPresetFuture(params: CreatePresetRequest): Future[CreatePresetResponse] =
+    @inline def createPresetFuture(params: CreatePresetRequest): Future[CreatePresetResponse] =
       service.createPreset(params).promise.toFuture
-    def deletePipelineFuture(params: DeletePipelineRequest): Future[DeletePipelineResponse] =
+    @inline def deletePipelineFuture(params: DeletePipelineRequest): Future[DeletePipelineResponse] =
       service.deletePipeline(params).promise.toFuture
-    def deletePresetFuture(params: DeletePresetRequest): Future[DeletePresetResponse] =
+    @inline def deletePresetFuture(params: DeletePresetRequest): Future[DeletePresetResponse] =
       service.deletePreset(params).promise.toFuture
-    def listJobsByPipelineFuture(params: ListJobsByPipelineRequest): Future[ListJobsByPipelineResponse] =
+    @inline def listJobsByPipelineFuture(params: ListJobsByPipelineRequest): Future[ListJobsByPipelineResponse] =
       service.listJobsByPipeline(params).promise.toFuture
-    def listJobsByStatusFuture(params: ListJobsByStatusRequest): Future[ListJobsByStatusResponse] =
+    @inline def listJobsByStatusFuture(params: ListJobsByStatusRequest): Future[ListJobsByStatusResponse] =
       service.listJobsByStatus(params).promise.toFuture
-    def listPipelinesFuture(params: ListPipelinesRequest): Future[ListPipelinesResponse] =
+    @inline def listPipelinesFuture(params: ListPipelinesRequest): Future[ListPipelinesResponse] =
       service.listPipelines(params).promise.toFuture
-    def listPresetsFuture(params: ListPresetsRequest): Future[ListPresetsResponse] =
+    @inline def listPresetsFuture(params: ListPresetsRequest): Future[ListPresetsResponse] =
       service.listPresets(params).promise.toFuture
-    def readJobFuture(params: ReadJobRequest): Future[ReadJobResponse] = service.readJob(params).promise.toFuture
-    def readPipelineFuture(params: ReadPipelineRequest): Future[ReadPipelineResponse] =
+    @inline def readJobFuture(params: ReadJobRequest): Future[ReadJobResponse] =
+      service.readJob(params).promise.toFuture
+    @inline def readPipelineFuture(params: ReadPipelineRequest): Future[ReadPipelineResponse] =
       service.readPipeline(params).promise.toFuture
-    def readPresetFuture(params: ReadPresetRequest): Future[ReadPresetResponse] =
+    @inline def readPresetFuture(params: ReadPresetRequest): Future[ReadPresetResponse] =
       service.readPreset(params).promise.toFuture
-    def updatePipelineFuture(params: UpdatePipelineRequest): Future[UpdatePipelineResponse] =
+    @inline def updatePipelineFuture(params: UpdatePipelineRequest): Future[UpdatePipelineResponse] =
       service.updatePipeline(params).promise.toFuture
-    def updatePipelineNotificationsFuture(
+    @inline def updatePipelineNotificationsFuture(
         params: UpdatePipelineNotificationsRequest
     ): Future[UpdatePipelineNotificationsResponse] = service.updatePipelineNotifications(params).promise.toFuture
-    def updatePipelineStatusFuture(params: UpdatePipelineStatusRequest): Future[UpdatePipelineStatusResponse] =
+    @inline def updatePipelineStatusFuture(params: UpdatePipelineStatusRequest): Future[UpdatePipelineStatusResponse] =
       service.updatePipelineStatus(params).promise.toFuture
   }
 }

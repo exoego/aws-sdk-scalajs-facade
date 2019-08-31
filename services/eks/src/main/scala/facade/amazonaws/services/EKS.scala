@@ -27,21 +27,21 @@ package object eks {
 
   implicit final class EKSOps(private val service: EKS) extends AnyVal {
 
-    def createClusterFuture(params: CreateClusterRequest): Future[CreateClusterResponse] =
+    @inline def createClusterFuture(params: CreateClusterRequest): Future[CreateClusterResponse] =
       service.createCluster(params).promise.toFuture
-    def deleteClusterFuture(params: DeleteClusterRequest): Future[DeleteClusterResponse] =
+    @inline def deleteClusterFuture(params: DeleteClusterRequest): Future[DeleteClusterResponse] =
       service.deleteCluster(params).promise.toFuture
-    def describeClusterFuture(params: DescribeClusterRequest): Future[DescribeClusterResponse] =
+    @inline def describeClusterFuture(params: DescribeClusterRequest): Future[DescribeClusterResponse] =
       service.describeCluster(params).promise.toFuture
-    def describeUpdateFuture(params: DescribeUpdateRequest): Future[DescribeUpdateResponse] =
+    @inline def describeUpdateFuture(params: DescribeUpdateRequest): Future[DescribeUpdateResponse] =
       service.describeUpdate(params).promise.toFuture
-    def listClustersFuture(params: ListClustersRequest): Future[ListClustersResponse] =
+    @inline def listClustersFuture(params: ListClustersRequest): Future[ListClustersResponse] =
       service.listClusters(params).promise.toFuture
-    def listUpdatesFuture(params: ListUpdatesRequest): Future[ListUpdatesResponse] =
+    @inline def listUpdatesFuture(params: ListUpdatesRequest): Future[ListUpdatesResponse] =
       service.listUpdates(params).promise.toFuture
-    def updateClusterConfigFuture(params: UpdateClusterConfigRequest): Future[UpdateClusterConfigResponse] =
+    @inline def updateClusterConfigFuture(params: UpdateClusterConfigRequest): Future[UpdateClusterConfigResponse] =
       service.updateClusterConfig(params).promise.toFuture
-    def updateClusterVersionFuture(params: UpdateClusterVersionRequest): Future[UpdateClusterVersionResponse] =
+    @inline def updateClusterVersionFuture(params: UpdateClusterVersionRequest): Future[UpdateClusterVersionResponse] =
       service.updateClusterVersion(params).promise.toFuture
   }
 }

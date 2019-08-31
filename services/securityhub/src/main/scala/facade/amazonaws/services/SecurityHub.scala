@@ -69,86 +69,88 @@ package object securityhub {
 
   implicit final class SecurityHubOps(private val service: SecurityHub) extends AnyVal {
 
-    def acceptInvitationFuture(params: AcceptInvitationRequest): Future[AcceptInvitationResponse] =
+    @inline def acceptInvitationFuture(params: AcceptInvitationRequest): Future[AcceptInvitationResponse] =
       service.acceptInvitation(params).promise.toFuture
-    def batchDisableStandardsFuture(params: BatchDisableStandardsRequest): Future[BatchDisableStandardsResponse] =
-      service.batchDisableStandards(params).promise.toFuture
-    def batchEnableStandardsFuture(params: BatchEnableStandardsRequest): Future[BatchEnableStandardsResponse] =
+    @inline def batchDisableStandardsFuture(
+        params: BatchDisableStandardsRequest
+    ): Future[BatchDisableStandardsResponse] = service.batchDisableStandards(params).promise.toFuture
+    @inline def batchEnableStandardsFuture(params: BatchEnableStandardsRequest): Future[BatchEnableStandardsResponse] =
       service.batchEnableStandards(params).promise.toFuture
-    def batchImportFindingsFuture(params: BatchImportFindingsRequest): Future[BatchImportFindingsResponse] =
+    @inline def batchImportFindingsFuture(params: BatchImportFindingsRequest): Future[BatchImportFindingsResponse] =
       service.batchImportFindings(params).promise.toFuture
-    def createActionTargetFuture(params: CreateActionTargetRequest): Future[CreateActionTargetResponse] =
+    @inline def createActionTargetFuture(params: CreateActionTargetRequest): Future[CreateActionTargetResponse] =
       service.createActionTarget(params).promise.toFuture
-    def createInsightFuture(params: CreateInsightRequest): Future[CreateInsightResponse] =
+    @inline def createInsightFuture(params: CreateInsightRequest): Future[CreateInsightResponse] =
       service.createInsight(params).promise.toFuture
-    def createMembersFuture(params: CreateMembersRequest): Future[CreateMembersResponse] =
+    @inline def createMembersFuture(params: CreateMembersRequest): Future[CreateMembersResponse] =
       service.createMembers(params).promise.toFuture
-    def declineInvitationsFuture(params: DeclineInvitationsRequest): Future[DeclineInvitationsResponse] =
+    @inline def declineInvitationsFuture(params: DeclineInvitationsRequest): Future[DeclineInvitationsResponse] =
       service.declineInvitations(params).promise.toFuture
-    def deleteActionTargetFuture(params: DeleteActionTargetRequest): Future[DeleteActionTargetResponse] =
+    @inline def deleteActionTargetFuture(params: DeleteActionTargetRequest): Future[DeleteActionTargetResponse] =
       service.deleteActionTarget(params).promise.toFuture
-    def deleteInsightFuture(params: DeleteInsightRequest): Future[DeleteInsightResponse] =
+    @inline def deleteInsightFuture(params: DeleteInsightRequest): Future[DeleteInsightResponse] =
       service.deleteInsight(params).promise.toFuture
-    def deleteInvitationsFuture(params: DeleteInvitationsRequest): Future[DeleteInvitationsResponse] =
+    @inline def deleteInvitationsFuture(params: DeleteInvitationsRequest): Future[DeleteInvitationsResponse] =
       service.deleteInvitations(params).promise.toFuture
-    def deleteMembersFuture(params: DeleteMembersRequest): Future[DeleteMembersResponse] =
+    @inline def deleteMembersFuture(params: DeleteMembersRequest): Future[DeleteMembersResponse] =
       service.deleteMembers(params).promise.toFuture
-    def describeActionTargetsFuture(params: DescribeActionTargetsRequest): Future[DescribeActionTargetsResponse] =
-      service.describeActionTargets(params).promise.toFuture
-    def describeHubFuture(params: DescribeHubRequest): Future[DescribeHubResponse] =
+    @inline def describeActionTargetsFuture(
+        params: DescribeActionTargetsRequest
+    ): Future[DescribeActionTargetsResponse] = service.describeActionTargets(params).promise.toFuture
+    @inline def describeHubFuture(params: DescribeHubRequest): Future[DescribeHubResponse] =
       service.describeHub(params).promise.toFuture
-    def describeProductsFuture(params: DescribeProductsRequest): Future[DescribeProductsResponse] =
+    @inline def describeProductsFuture(params: DescribeProductsRequest): Future[DescribeProductsResponse] =
       service.describeProducts(params).promise.toFuture
-    def disableImportFindingsForProductFuture(
+    @inline def disableImportFindingsForProductFuture(
         params: DisableImportFindingsForProductRequest
     ): Future[DisableImportFindingsForProductResponse] =
       service.disableImportFindingsForProduct(params).promise.toFuture
-    def disableSecurityHubFuture(params: DisableSecurityHubRequest): Future[DisableSecurityHubResponse] =
+    @inline def disableSecurityHubFuture(params: DisableSecurityHubRequest): Future[DisableSecurityHubResponse] =
       service.disableSecurityHub(params).promise.toFuture
-    def disassociateFromMasterAccountFuture(
+    @inline def disassociateFromMasterAccountFuture(
         params: DisassociateFromMasterAccountRequest
     ): Future[DisassociateFromMasterAccountResponse] = service.disassociateFromMasterAccount(params).promise.toFuture
-    def disassociateMembersFuture(params: DisassociateMembersRequest): Future[DisassociateMembersResponse] =
+    @inline def disassociateMembersFuture(params: DisassociateMembersRequest): Future[DisassociateMembersResponse] =
       service.disassociateMembers(params).promise.toFuture
-    def enableImportFindingsForProductFuture(
+    @inline def enableImportFindingsForProductFuture(
         params: EnableImportFindingsForProductRequest
     ): Future[EnableImportFindingsForProductResponse] = service.enableImportFindingsForProduct(params).promise.toFuture
-    def enableSecurityHubFuture(params: EnableSecurityHubRequest): Future[EnableSecurityHubResponse] =
+    @inline def enableSecurityHubFuture(params: EnableSecurityHubRequest): Future[EnableSecurityHubResponse] =
       service.enableSecurityHub(params).promise.toFuture
-    def getEnabledStandardsFuture(params: GetEnabledStandardsRequest): Future[GetEnabledStandardsResponse] =
+    @inline def getEnabledStandardsFuture(params: GetEnabledStandardsRequest): Future[GetEnabledStandardsResponse] =
       service.getEnabledStandards(params).promise.toFuture
-    def getFindingsFuture(params: GetFindingsRequest): Future[GetFindingsResponse] =
+    @inline def getFindingsFuture(params: GetFindingsRequest): Future[GetFindingsResponse] =
       service.getFindings(params).promise.toFuture
-    def getInsightResultsFuture(params: GetInsightResultsRequest): Future[GetInsightResultsResponse] =
+    @inline def getInsightResultsFuture(params: GetInsightResultsRequest): Future[GetInsightResultsResponse] =
       service.getInsightResults(params).promise.toFuture
-    def getInsightsFuture(params: GetInsightsRequest): Future[GetInsightsResponse] =
+    @inline def getInsightsFuture(params: GetInsightsRequest): Future[GetInsightsResponse] =
       service.getInsights(params).promise.toFuture
-    def getInvitationsCountFuture(params: GetInvitationsCountRequest): Future[GetInvitationsCountResponse] =
+    @inline def getInvitationsCountFuture(params: GetInvitationsCountRequest): Future[GetInvitationsCountResponse] =
       service.getInvitationsCount(params).promise.toFuture
-    def getMasterAccountFuture(params: GetMasterAccountRequest): Future[GetMasterAccountResponse] =
+    @inline def getMasterAccountFuture(params: GetMasterAccountRequest): Future[GetMasterAccountResponse] =
       service.getMasterAccount(params).promise.toFuture
-    def getMembersFuture(params: GetMembersRequest): Future[GetMembersResponse] =
+    @inline def getMembersFuture(params: GetMembersRequest): Future[GetMembersResponse] =
       service.getMembers(params).promise.toFuture
-    def inviteMembersFuture(params: InviteMembersRequest): Future[InviteMembersResponse] =
+    @inline def inviteMembersFuture(params: InviteMembersRequest): Future[InviteMembersResponse] =
       service.inviteMembers(params).promise.toFuture
-    def listEnabledProductsForImportFuture(
+    @inline def listEnabledProductsForImportFuture(
         params: ListEnabledProductsForImportRequest
     ): Future[ListEnabledProductsForImportResponse] = service.listEnabledProductsForImport(params).promise.toFuture
-    def listInvitationsFuture(params: ListInvitationsRequest): Future[ListInvitationsResponse] =
+    @inline def listInvitationsFuture(params: ListInvitationsRequest): Future[ListInvitationsResponse] =
       service.listInvitations(params).promise.toFuture
-    def listMembersFuture(params: ListMembersRequest): Future[ListMembersResponse] =
+    @inline def listMembersFuture(params: ListMembersRequest): Future[ListMembersResponse] =
       service.listMembers(params).promise.toFuture
-    def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] =
+    @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] =
       service.listTagsForResource(params).promise.toFuture
-    def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] =
+    @inline def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] =
       service.tagResource(params).promise.toFuture
-    def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] =
+    @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] =
       service.untagResource(params).promise.toFuture
-    def updateActionTargetFuture(params: UpdateActionTargetRequest): Future[UpdateActionTargetResponse] =
+    @inline def updateActionTargetFuture(params: UpdateActionTargetRequest): Future[UpdateActionTargetResponse] =
       service.updateActionTarget(params).promise.toFuture
-    def updateFindingsFuture(params: UpdateFindingsRequest): Future[UpdateFindingsResponse] =
+    @inline def updateFindingsFuture(params: UpdateFindingsRequest): Future[UpdateFindingsResponse] =
       service.updateFindings(params).promise.toFuture
-    def updateInsightFuture(params: UpdateInsightRequest): Future[UpdateInsightResponse] =
+    @inline def updateInsightFuture(params: UpdateInsightRequest): Future[UpdateInsightResponse] =
       service.updateInsight(params).promise.toFuture
   }
 }

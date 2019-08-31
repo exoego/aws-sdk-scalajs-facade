@@ -37,44 +37,47 @@ package object sqs {
 
   implicit final class SQSOps(private val service: SQS) extends AnyVal {
 
-    def addPermissionFuture(params: AddPermissionRequest): Future[js.Object] =
+    @inline def addPermissionFuture(params: AddPermissionRequest): Future[js.Object] =
       service.addPermission(params).promise.toFuture
-    def changeMessageVisibilityBatchFuture(
+    @inline def changeMessageVisibilityBatchFuture(
         params: ChangeMessageVisibilityBatchRequest
     ): Future[ChangeMessageVisibilityBatchResult] = service.changeMessageVisibilityBatch(params).promise.toFuture
-    def changeMessageVisibilityFuture(params: ChangeMessageVisibilityRequest): Future[js.Object] =
+    @inline def changeMessageVisibilityFuture(params: ChangeMessageVisibilityRequest): Future[js.Object] =
       service.changeMessageVisibility(params).promise.toFuture
-    def createQueueFuture(params: CreateQueueRequest): Future[CreateQueueResult] =
+    @inline def createQueueFuture(params: CreateQueueRequest): Future[CreateQueueResult] =
       service.createQueue(params).promise.toFuture
-    def deleteMessageBatchFuture(params: DeleteMessageBatchRequest): Future[DeleteMessageBatchResult] =
+    @inline def deleteMessageBatchFuture(params: DeleteMessageBatchRequest): Future[DeleteMessageBatchResult] =
       service.deleteMessageBatch(params).promise.toFuture
-    def deleteMessageFuture(params: DeleteMessageRequest): Future[js.Object] =
+    @inline def deleteMessageFuture(params: DeleteMessageRequest): Future[js.Object] =
       service.deleteMessage(params).promise.toFuture
-    def deleteQueueFuture(params: DeleteQueueRequest): Future[js.Object] = service.deleteQueue(params).promise.toFuture
-    def getQueueAttributesFuture(params: GetQueueAttributesRequest): Future[GetQueueAttributesResult] =
+    @inline def deleteQueueFuture(params: DeleteQueueRequest): Future[js.Object] =
+      service.deleteQueue(params).promise.toFuture
+    @inline def getQueueAttributesFuture(params: GetQueueAttributesRequest): Future[GetQueueAttributesResult] =
       service.getQueueAttributes(params).promise.toFuture
-    def getQueueUrlFuture(params: GetQueueUrlRequest): Future[GetQueueUrlResult] =
+    @inline def getQueueUrlFuture(params: GetQueueUrlRequest): Future[GetQueueUrlResult] =
       service.getQueueUrl(params).promise.toFuture
-    def listDeadLetterSourceQueuesFuture(
+    @inline def listDeadLetterSourceQueuesFuture(
         params: ListDeadLetterSourceQueuesRequest
     ): Future[ListDeadLetterSourceQueuesResult] = service.listDeadLetterSourceQueues(params).promise.toFuture
-    def listQueueTagsFuture(params: ListQueueTagsRequest): Future[ListQueueTagsResult] =
+    @inline def listQueueTagsFuture(params: ListQueueTagsRequest): Future[ListQueueTagsResult] =
       service.listQueueTags(params).promise.toFuture
-    def listQueuesFuture(params: ListQueuesRequest): Future[ListQueuesResult] =
+    @inline def listQueuesFuture(params: ListQueuesRequest): Future[ListQueuesResult] =
       service.listQueues(params).promise.toFuture
-    def purgeQueueFuture(params: PurgeQueueRequest): Future[js.Object] = service.purgeQueue(params).promise.toFuture
-    def receiveMessageFuture(params: ReceiveMessageRequest): Future[ReceiveMessageResult] =
+    @inline def purgeQueueFuture(params: PurgeQueueRequest): Future[js.Object] =
+      service.purgeQueue(params).promise.toFuture
+    @inline def receiveMessageFuture(params: ReceiveMessageRequest): Future[ReceiveMessageResult] =
       service.receiveMessage(params).promise.toFuture
-    def removePermissionFuture(params: RemovePermissionRequest): Future[js.Object] =
+    @inline def removePermissionFuture(params: RemovePermissionRequest): Future[js.Object] =
       service.removePermission(params).promise.toFuture
-    def sendMessageBatchFuture(params: SendMessageBatchRequest): Future[SendMessageBatchResult] =
+    @inline def sendMessageBatchFuture(params: SendMessageBatchRequest): Future[SendMessageBatchResult] =
       service.sendMessageBatch(params).promise.toFuture
-    def sendMessageFuture(params: SendMessageRequest): Future[SendMessageResult] =
+    @inline def sendMessageFuture(params: SendMessageRequest): Future[SendMessageResult] =
       service.sendMessage(params).promise.toFuture
-    def setQueueAttributesFuture(params: SetQueueAttributesRequest): Future[js.Object] =
+    @inline def setQueueAttributesFuture(params: SetQueueAttributesRequest): Future[js.Object] =
       service.setQueueAttributes(params).promise.toFuture
-    def tagQueueFuture(params: TagQueueRequest): Future[js.Object]     = service.tagQueue(params).promise.toFuture
-    def untagQueueFuture(params: UntagQueueRequest): Future[js.Object] = service.untagQueue(params).promise.toFuture
+    @inline def tagQueueFuture(params: TagQueueRequest): Future[js.Object] = service.tagQueue(params).promise.toFuture
+    @inline def untagQueueFuture(params: UntagQueueRequest): Future[js.Object] =
+      service.untagQueue(params).promise.toFuture
   }
 }
 

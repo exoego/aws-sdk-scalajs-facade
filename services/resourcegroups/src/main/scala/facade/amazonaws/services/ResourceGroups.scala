@@ -38,25 +38,26 @@ package object resourcegroups {
 
   implicit final class ResourceGroupsOps(private val service: ResourceGroups) extends AnyVal {
 
-    def createGroupFuture(params: CreateGroupInput): Future[CreateGroupOutput] =
+    @inline def createGroupFuture(params: CreateGroupInput): Future[CreateGroupOutput] =
       service.createGroup(params).promise.toFuture
-    def deleteGroupFuture(params: DeleteGroupInput): Future[DeleteGroupOutput] =
+    @inline def deleteGroupFuture(params: DeleteGroupInput): Future[DeleteGroupOutput] =
       service.deleteGroup(params).promise.toFuture
-    def getGroupFuture(params: GetGroupInput): Future[GetGroupOutput] = service.getGroup(params).promise.toFuture
-    def getGroupQueryFuture(params: GetGroupQueryInput): Future[GetGroupQueryOutput] =
+    @inline def getGroupFuture(params: GetGroupInput): Future[GetGroupOutput] =
+      service.getGroup(params).promise.toFuture
+    @inline def getGroupQueryFuture(params: GetGroupQueryInput): Future[GetGroupQueryOutput] =
       service.getGroupQuery(params).promise.toFuture
-    def getTagsFuture(params: GetTagsInput): Future[GetTagsOutput] = service.getTags(params).promise.toFuture
-    def listGroupResourcesFuture(params: ListGroupResourcesInput): Future[ListGroupResourcesOutput] =
+    @inline def getTagsFuture(params: GetTagsInput): Future[GetTagsOutput] = service.getTags(params).promise.toFuture
+    @inline def listGroupResourcesFuture(params: ListGroupResourcesInput): Future[ListGroupResourcesOutput] =
       service.listGroupResources(params).promise.toFuture
-    def listGroupsFuture(params: ListGroupsInput): Future[ListGroupsOutput] =
+    @inline def listGroupsFuture(params: ListGroupsInput): Future[ListGroupsOutput] =
       service.listGroups(params).promise.toFuture
-    def searchResourcesFuture(params: SearchResourcesInput): Future[SearchResourcesOutput] =
+    @inline def searchResourcesFuture(params: SearchResourcesInput): Future[SearchResourcesOutput] =
       service.searchResources(params).promise.toFuture
-    def tagFuture(params: TagInput): Future[TagOutput]       = service.tag(params).promise.toFuture
-    def untagFuture(params: UntagInput): Future[UntagOutput] = service.untag(params).promise.toFuture
-    def updateGroupFuture(params: UpdateGroupInput): Future[UpdateGroupOutput] =
+    @inline def tagFuture(params: TagInput): Future[TagOutput]       = service.tag(params).promise.toFuture
+    @inline def untagFuture(params: UntagInput): Future[UntagOutput] = service.untag(params).promise.toFuture
+    @inline def updateGroupFuture(params: UpdateGroupInput): Future[UpdateGroupOutput] =
       service.updateGroup(params).promise.toFuture
-    def updateGroupQueryFuture(params: UpdateGroupQueryInput): Future[UpdateGroupQueryOutput] =
+    @inline def updateGroupQueryFuture(params: UpdateGroupQueryInput): Future[UpdateGroupQueryOutput] =
       service.updateGroupQuery(params).promise.toFuture
   }
 }

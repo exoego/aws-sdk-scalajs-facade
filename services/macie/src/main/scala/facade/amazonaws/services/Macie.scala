@@ -27,19 +27,20 @@ package object macie {
 
   implicit final class MacieOps(private val service: Macie) extends AnyVal {
 
-    def associateMemberAccountFuture(params: AssociateMemberAccountRequest): Future[js.Object] =
+    @inline def associateMemberAccountFuture(params: AssociateMemberAccountRequest): Future[js.Object] =
       service.associateMemberAccount(params).promise.toFuture
-    def associateS3ResourcesFuture(params: AssociateS3ResourcesRequest): Future[AssociateS3ResourcesResult] =
+    @inline def associateS3ResourcesFuture(params: AssociateS3ResourcesRequest): Future[AssociateS3ResourcesResult] =
       service.associateS3Resources(params).promise.toFuture
-    def disassociateMemberAccountFuture(params: DisassociateMemberAccountRequest): Future[js.Object] =
+    @inline def disassociateMemberAccountFuture(params: DisassociateMemberAccountRequest): Future[js.Object] =
       service.disassociateMemberAccount(params).promise.toFuture
-    def disassociateS3ResourcesFuture(params: DisassociateS3ResourcesRequest): Future[DisassociateS3ResourcesResult] =
-      service.disassociateS3Resources(params).promise.toFuture
-    def listMemberAccountsFuture(params: ListMemberAccountsRequest): Future[ListMemberAccountsResult] =
+    @inline def disassociateS3ResourcesFuture(
+        params: DisassociateS3ResourcesRequest
+    ): Future[DisassociateS3ResourcesResult] = service.disassociateS3Resources(params).promise.toFuture
+    @inline def listMemberAccountsFuture(params: ListMemberAccountsRequest): Future[ListMemberAccountsResult] =
       service.listMemberAccounts(params).promise.toFuture
-    def listS3ResourcesFuture(params: ListS3ResourcesRequest): Future[ListS3ResourcesResult] =
+    @inline def listS3ResourcesFuture(params: ListS3ResourcesRequest): Future[ListS3ResourcesResult] =
       service.listS3Resources(params).promise.toFuture
-    def updateS3ResourcesFuture(params: UpdateS3ResourcesRequest): Future[UpdateS3ResourcesResult] =
+    @inline def updateS3ResourcesFuture(params: UpdateS3ResourcesRequest): Future[UpdateS3ResourcesResult] =
       service.updateS3Resources(params).promise.toFuture
   }
 }

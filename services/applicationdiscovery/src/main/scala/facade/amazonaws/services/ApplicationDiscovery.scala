@@ -77,58 +77,61 @@ package object applicationdiscovery {
 
   implicit final class ApplicationDiscoveryOps(private val service: ApplicationDiscovery) extends AnyVal {
 
-    def associateConfigurationItemsToApplicationFuture(
+    @inline def associateConfigurationItemsToApplicationFuture(
         params: AssociateConfigurationItemsToApplicationRequest
     ): Future[AssociateConfigurationItemsToApplicationResponse] =
       service.associateConfigurationItemsToApplication(params).promise.toFuture
-    def batchDeleteImportDataFuture(params: BatchDeleteImportDataRequest): Future[BatchDeleteImportDataResponse] =
-      service.batchDeleteImportData(params).promise.toFuture
-    def createApplicationFuture(params: CreateApplicationRequest): Future[CreateApplicationResponse] =
+    @inline def batchDeleteImportDataFuture(
+        params: BatchDeleteImportDataRequest
+    ): Future[BatchDeleteImportDataResponse] = service.batchDeleteImportData(params).promise.toFuture
+    @inline def createApplicationFuture(params: CreateApplicationRequest): Future[CreateApplicationResponse] =
       service.createApplication(params).promise.toFuture
-    def createTagsFuture(params: CreateTagsRequest): Future[CreateTagsResponse] =
+    @inline def createTagsFuture(params: CreateTagsRequest): Future[CreateTagsResponse] =
       service.createTags(params).promise.toFuture
-    def deleteApplicationsFuture(params: DeleteApplicationsRequest): Future[DeleteApplicationsResponse] =
+    @inline def deleteApplicationsFuture(params: DeleteApplicationsRequest): Future[DeleteApplicationsResponse] =
       service.deleteApplications(params).promise.toFuture
-    def deleteTagsFuture(params: DeleteTagsRequest): Future[DeleteTagsResponse] =
+    @inline def deleteTagsFuture(params: DeleteTagsRequest): Future[DeleteTagsResponse] =
       service.deleteTags(params).promise.toFuture
-    def describeAgentsFuture(params: DescribeAgentsRequest): Future[DescribeAgentsResponse] =
+    @inline def describeAgentsFuture(params: DescribeAgentsRequest): Future[DescribeAgentsResponse] =
       service.describeAgents(params).promise.toFuture
-    def describeConfigurationsFuture(params: DescribeConfigurationsRequest): Future[DescribeConfigurationsResponse] =
-      service.describeConfigurations(params).promise.toFuture
-    def describeContinuousExportsFuture(
+    @inline def describeConfigurationsFuture(
+        params: DescribeConfigurationsRequest
+    ): Future[DescribeConfigurationsResponse] = service.describeConfigurations(params).promise.toFuture
+    @inline def describeContinuousExportsFuture(
         params: DescribeContinuousExportsRequest
     ): Future[DescribeContinuousExportsResponse] = service.describeContinuousExports(params).promise.toFuture
-    def describeExportTasksFuture(params: DescribeExportTasksRequest): Future[DescribeExportTasksResponse] =
+    @inline def describeExportTasksFuture(params: DescribeExportTasksRequest): Future[DescribeExportTasksResponse] =
       service.describeExportTasks(params).promise.toFuture
-    def describeImportTasksFuture(params: DescribeImportTasksRequest): Future[DescribeImportTasksResponse] =
+    @inline def describeImportTasksFuture(params: DescribeImportTasksRequest): Future[DescribeImportTasksResponse] =
       service.describeImportTasks(params).promise.toFuture
-    def describeTagsFuture(params: DescribeTagsRequest): Future[DescribeTagsResponse] =
+    @inline def describeTagsFuture(params: DescribeTagsRequest): Future[DescribeTagsResponse] =
       service.describeTags(params).promise.toFuture
-    def disassociateConfigurationItemsFromApplicationFuture(
+    @inline def disassociateConfigurationItemsFromApplicationFuture(
         params: DisassociateConfigurationItemsFromApplicationRequest
     ): Future[DisassociateConfigurationItemsFromApplicationResponse] =
       service.disassociateConfigurationItemsFromApplication(params).promise.toFuture
-    def getDiscoverySummaryFuture(params: GetDiscoverySummaryRequest): Future[GetDiscoverySummaryResponse] =
+    @inline def getDiscoverySummaryFuture(params: GetDiscoverySummaryRequest): Future[GetDiscoverySummaryResponse] =
       service.getDiscoverySummary(params).promise.toFuture
-    def listConfigurationsFuture(params: ListConfigurationsRequest): Future[ListConfigurationsResponse] =
+    @inline def listConfigurationsFuture(params: ListConfigurationsRequest): Future[ListConfigurationsResponse] =
       service.listConfigurations(params).promise.toFuture
-    def listServerNeighborsFuture(params: ListServerNeighborsRequest): Future[ListServerNeighborsResponse] =
+    @inline def listServerNeighborsFuture(params: ListServerNeighborsRequest): Future[ListServerNeighborsResponse] =
       service.listServerNeighbors(params).promise.toFuture
-    def startContinuousExportFuture(params: StartContinuousExportRequest): Future[StartContinuousExportResponse] =
-      service.startContinuousExport(params).promise.toFuture
-    def startDataCollectionByAgentIdsFuture(
+    @inline def startContinuousExportFuture(
+        params: StartContinuousExportRequest
+    ): Future[StartContinuousExportResponse] = service.startContinuousExport(params).promise.toFuture
+    @inline def startDataCollectionByAgentIdsFuture(
         params: StartDataCollectionByAgentIdsRequest
     ): Future[StartDataCollectionByAgentIdsResponse] = service.startDataCollectionByAgentIds(params).promise.toFuture
-    def startExportTaskFuture(params: StartExportTaskRequest): Future[StartExportTaskResponse] =
+    @inline def startExportTaskFuture(params: StartExportTaskRequest): Future[StartExportTaskResponse] =
       service.startExportTask(params).promise.toFuture
-    def startImportTaskFuture(params: StartImportTaskRequest): Future[StartImportTaskResponse] =
+    @inline def startImportTaskFuture(params: StartImportTaskRequest): Future[StartImportTaskResponse] =
       service.startImportTask(params).promise.toFuture
-    def stopContinuousExportFuture(params: StopContinuousExportRequest): Future[StopContinuousExportResponse] =
+    @inline def stopContinuousExportFuture(params: StopContinuousExportRequest): Future[StopContinuousExportResponse] =
       service.stopContinuousExport(params).promise.toFuture
-    def stopDataCollectionByAgentIdsFuture(
+    @inline def stopDataCollectionByAgentIdsFuture(
         params: StopDataCollectionByAgentIdsRequest
     ): Future[StopDataCollectionByAgentIdsResponse] = service.stopDataCollectionByAgentIds(params).promise.toFuture
-    def updateApplicationFuture(params: UpdateApplicationRequest): Future[UpdateApplicationResponse] =
+    @inline def updateApplicationFuture(params: UpdateApplicationRequest): Future[UpdateApplicationResponse] =
       service.updateApplication(params).promise.toFuture
   }
 }

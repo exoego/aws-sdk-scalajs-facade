@@ -101,172 +101,186 @@ package object wafregional {
 
   implicit final class WAFRegionalOps(private val service: WAFRegional) extends AnyVal {
 
-    def associateWebACLFuture(params: AssociateWebACLRequest): Future[AssociateWebACLResponse] =
+    @inline def associateWebACLFuture(params: AssociateWebACLRequest): Future[AssociateWebACLResponse] =
       service.associateWebACL(params).promise.toFuture
-    def createByteMatchSetFuture(params: CreateByteMatchSetRequest): Future[CreateByteMatchSetResponse] =
+    @inline def createByteMatchSetFuture(params: CreateByteMatchSetRequest): Future[CreateByteMatchSetResponse] =
       service.createByteMatchSet(params).promise.toFuture
-    def createGeoMatchSetFuture(params: CreateGeoMatchSetRequest): Future[CreateGeoMatchSetResponse] =
+    @inline def createGeoMatchSetFuture(params: CreateGeoMatchSetRequest): Future[CreateGeoMatchSetResponse] =
       service.createGeoMatchSet(params).promise.toFuture
-    def createIPSetFuture(params: CreateIPSetRequest): Future[CreateIPSetResponse] =
+    @inline def createIPSetFuture(params: CreateIPSetRequest): Future[CreateIPSetResponse] =
       service.createIPSet(params).promise.toFuture
-    def createRateBasedRuleFuture(params: CreateRateBasedRuleRequest): Future[CreateRateBasedRuleResponse] =
+    @inline def createRateBasedRuleFuture(params: CreateRateBasedRuleRequest): Future[CreateRateBasedRuleResponse] =
       service.createRateBasedRule(params).promise.toFuture
-    def createRegexMatchSetFuture(params: CreateRegexMatchSetRequest): Future[CreateRegexMatchSetResponse] =
+    @inline def createRegexMatchSetFuture(params: CreateRegexMatchSetRequest): Future[CreateRegexMatchSetResponse] =
       service.createRegexMatchSet(params).promise.toFuture
-    def createRegexPatternSetFuture(params: CreateRegexPatternSetRequest): Future[CreateRegexPatternSetResponse] =
-      service.createRegexPatternSet(params).promise.toFuture
-    def createRuleFuture(params: CreateRuleRequest): Future[CreateRuleResponse] =
+    @inline def createRegexPatternSetFuture(
+        params: CreateRegexPatternSetRequest
+    ): Future[CreateRegexPatternSetResponse] = service.createRegexPatternSet(params).promise.toFuture
+    @inline def createRuleFuture(params: CreateRuleRequest): Future[CreateRuleResponse] =
       service.createRule(params).promise.toFuture
-    def createRuleGroupFuture(params: CreateRuleGroupRequest): Future[CreateRuleGroupResponse] =
+    @inline def createRuleGroupFuture(params: CreateRuleGroupRequest): Future[CreateRuleGroupResponse] =
       service.createRuleGroup(params).promise.toFuture
-    def createSizeConstraintSetFuture(params: CreateSizeConstraintSetRequest): Future[CreateSizeConstraintSetResponse] =
-      service.createSizeConstraintSet(params).promise.toFuture
-    def createSqlInjectionMatchSetFuture(
+    @inline def createSizeConstraintSetFuture(
+        params: CreateSizeConstraintSetRequest
+    ): Future[CreateSizeConstraintSetResponse] = service.createSizeConstraintSet(params).promise.toFuture
+    @inline def createSqlInjectionMatchSetFuture(
         params: CreateSqlInjectionMatchSetRequest
     ): Future[CreateSqlInjectionMatchSetResponse] = service.createSqlInjectionMatchSet(params).promise.toFuture
-    def createWebACLFuture(params: CreateWebACLRequest): Future[CreateWebACLResponse] =
+    @inline def createWebACLFuture(params: CreateWebACLRequest): Future[CreateWebACLResponse] =
       service.createWebACL(params).promise.toFuture
-    def createXssMatchSetFuture(params: CreateXssMatchSetRequest): Future[CreateXssMatchSetResponse] =
+    @inline def createXssMatchSetFuture(params: CreateXssMatchSetRequest): Future[CreateXssMatchSetResponse] =
       service.createXssMatchSet(params).promise.toFuture
-    def deleteByteMatchSetFuture(params: DeleteByteMatchSetRequest): Future[DeleteByteMatchSetResponse] =
+    @inline def deleteByteMatchSetFuture(params: DeleteByteMatchSetRequest): Future[DeleteByteMatchSetResponse] =
       service.deleteByteMatchSet(params).promise.toFuture
-    def deleteGeoMatchSetFuture(params: DeleteGeoMatchSetRequest): Future[DeleteGeoMatchSetResponse] =
+    @inline def deleteGeoMatchSetFuture(params: DeleteGeoMatchSetRequest): Future[DeleteGeoMatchSetResponse] =
       service.deleteGeoMatchSet(params).promise.toFuture
-    def deleteIPSetFuture(params: DeleteIPSetRequest): Future[DeleteIPSetResponse] =
+    @inline def deleteIPSetFuture(params: DeleteIPSetRequest): Future[DeleteIPSetResponse] =
       service.deleteIPSet(params).promise.toFuture
-    def deleteLoggingConfigurationFuture(
+    @inline def deleteLoggingConfigurationFuture(
         params: DeleteLoggingConfigurationRequest
     ): Future[DeleteLoggingConfigurationResponse] = service.deleteLoggingConfiguration(params).promise.toFuture
-    def deletePermissionPolicyFuture(params: DeletePermissionPolicyRequest): Future[DeletePermissionPolicyResponse] =
-      service.deletePermissionPolicy(params).promise.toFuture
-    def deleteRateBasedRuleFuture(params: DeleteRateBasedRuleRequest): Future[DeleteRateBasedRuleResponse] =
+    @inline def deletePermissionPolicyFuture(
+        params: DeletePermissionPolicyRequest
+    ): Future[DeletePermissionPolicyResponse] = service.deletePermissionPolicy(params).promise.toFuture
+    @inline def deleteRateBasedRuleFuture(params: DeleteRateBasedRuleRequest): Future[DeleteRateBasedRuleResponse] =
       service.deleteRateBasedRule(params).promise.toFuture
-    def deleteRegexMatchSetFuture(params: DeleteRegexMatchSetRequest): Future[DeleteRegexMatchSetResponse] =
+    @inline def deleteRegexMatchSetFuture(params: DeleteRegexMatchSetRequest): Future[DeleteRegexMatchSetResponse] =
       service.deleteRegexMatchSet(params).promise.toFuture
-    def deleteRegexPatternSetFuture(params: DeleteRegexPatternSetRequest): Future[DeleteRegexPatternSetResponse] =
-      service.deleteRegexPatternSet(params).promise.toFuture
-    def deleteRuleFuture(params: DeleteRuleRequest): Future[DeleteRuleResponse] =
+    @inline def deleteRegexPatternSetFuture(
+        params: DeleteRegexPatternSetRequest
+    ): Future[DeleteRegexPatternSetResponse] = service.deleteRegexPatternSet(params).promise.toFuture
+    @inline def deleteRuleFuture(params: DeleteRuleRequest): Future[DeleteRuleResponse] =
       service.deleteRule(params).promise.toFuture
-    def deleteRuleGroupFuture(params: DeleteRuleGroupRequest): Future[DeleteRuleGroupResponse] =
+    @inline def deleteRuleGroupFuture(params: DeleteRuleGroupRequest): Future[DeleteRuleGroupResponse] =
       service.deleteRuleGroup(params).promise.toFuture
-    def deleteSizeConstraintSetFuture(params: DeleteSizeConstraintSetRequest): Future[DeleteSizeConstraintSetResponse] =
-      service.deleteSizeConstraintSet(params).promise.toFuture
-    def deleteSqlInjectionMatchSetFuture(
+    @inline def deleteSizeConstraintSetFuture(
+        params: DeleteSizeConstraintSetRequest
+    ): Future[DeleteSizeConstraintSetResponse] = service.deleteSizeConstraintSet(params).promise.toFuture
+    @inline def deleteSqlInjectionMatchSetFuture(
         params: DeleteSqlInjectionMatchSetRequest
     ): Future[DeleteSqlInjectionMatchSetResponse] = service.deleteSqlInjectionMatchSet(params).promise.toFuture
-    def deleteWebACLFuture(params: DeleteWebACLRequest): Future[DeleteWebACLResponse] =
+    @inline def deleteWebACLFuture(params: DeleteWebACLRequest): Future[DeleteWebACLResponse] =
       service.deleteWebACL(params).promise.toFuture
-    def deleteXssMatchSetFuture(params: DeleteXssMatchSetRequest): Future[DeleteXssMatchSetResponse] =
+    @inline def deleteXssMatchSetFuture(params: DeleteXssMatchSetRequest): Future[DeleteXssMatchSetResponse] =
       service.deleteXssMatchSet(params).promise.toFuture
-    def disassociateWebACLFuture(params: DisassociateWebACLRequest): Future[DisassociateWebACLResponse] =
+    @inline def disassociateWebACLFuture(params: DisassociateWebACLRequest): Future[DisassociateWebACLResponse] =
       service.disassociateWebACL(params).promise.toFuture
-    def getByteMatchSetFuture(params: GetByteMatchSetRequest): Future[GetByteMatchSetResponse] =
+    @inline def getByteMatchSetFuture(params: GetByteMatchSetRequest): Future[GetByteMatchSetResponse] =
       service.getByteMatchSet(params).promise.toFuture
-    def getChangeTokenFuture(params: GetChangeTokenRequest): Future[GetChangeTokenResponse] =
+    @inline def getChangeTokenFuture(params: GetChangeTokenRequest): Future[GetChangeTokenResponse] =
       service.getChangeToken(params).promise.toFuture
-    def getChangeTokenStatusFuture(params: GetChangeTokenStatusRequest): Future[GetChangeTokenStatusResponse] =
+    @inline def getChangeTokenStatusFuture(params: GetChangeTokenStatusRequest): Future[GetChangeTokenStatusResponse] =
       service.getChangeTokenStatus(params).promise.toFuture
-    def getGeoMatchSetFuture(params: GetGeoMatchSetRequest): Future[GetGeoMatchSetResponse] =
+    @inline def getGeoMatchSetFuture(params: GetGeoMatchSetRequest): Future[GetGeoMatchSetResponse] =
       service.getGeoMatchSet(params).promise.toFuture
-    def getIPSetFuture(params: GetIPSetRequest): Future[GetIPSetResponse] = service.getIPSet(params).promise.toFuture
-    def getLoggingConfigurationFuture(params: GetLoggingConfigurationRequest): Future[GetLoggingConfigurationResponse] =
-      service.getLoggingConfiguration(params).promise.toFuture
-    def getPermissionPolicyFuture(params: GetPermissionPolicyRequest): Future[GetPermissionPolicyResponse] =
+    @inline def getIPSetFuture(params: GetIPSetRequest): Future[GetIPSetResponse] =
+      service.getIPSet(params).promise.toFuture
+    @inline def getLoggingConfigurationFuture(
+        params: GetLoggingConfigurationRequest
+    ): Future[GetLoggingConfigurationResponse] = service.getLoggingConfiguration(params).promise.toFuture
+    @inline def getPermissionPolicyFuture(params: GetPermissionPolicyRequest): Future[GetPermissionPolicyResponse] =
       service.getPermissionPolicy(params).promise.toFuture
-    def getRateBasedRuleFuture(params: GetRateBasedRuleRequest): Future[GetRateBasedRuleResponse] =
+    @inline def getRateBasedRuleFuture(params: GetRateBasedRuleRequest): Future[GetRateBasedRuleResponse] =
       service.getRateBasedRule(params).promise.toFuture
-    def getRateBasedRuleManagedKeysFuture(
+    @inline def getRateBasedRuleManagedKeysFuture(
         params: GetRateBasedRuleManagedKeysRequest
     ): Future[GetRateBasedRuleManagedKeysResponse] = service.getRateBasedRuleManagedKeys(params).promise.toFuture
-    def getRegexMatchSetFuture(params: GetRegexMatchSetRequest): Future[GetRegexMatchSetResponse] =
+    @inline def getRegexMatchSetFuture(params: GetRegexMatchSetRequest): Future[GetRegexMatchSetResponse] =
       service.getRegexMatchSet(params).promise.toFuture
-    def getRegexPatternSetFuture(params: GetRegexPatternSetRequest): Future[GetRegexPatternSetResponse] =
+    @inline def getRegexPatternSetFuture(params: GetRegexPatternSetRequest): Future[GetRegexPatternSetResponse] =
       service.getRegexPatternSet(params).promise.toFuture
-    def getRuleFuture(params: GetRuleRequest): Future[GetRuleResponse] = service.getRule(params).promise.toFuture
-    def getRuleGroupFuture(params: GetRuleGroupRequest): Future[GetRuleGroupResponse] =
+    @inline def getRuleFuture(params: GetRuleRequest): Future[GetRuleResponse] =
+      service.getRule(params).promise.toFuture
+    @inline def getRuleGroupFuture(params: GetRuleGroupRequest): Future[GetRuleGroupResponse] =
       service.getRuleGroup(params).promise.toFuture
-    def getSampledRequestsFuture(params: GetSampledRequestsRequest): Future[GetSampledRequestsResponse] =
+    @inline def getSampledRequestsFuture(params: GetSampledRequestsRequest): Future[GetSampledRequestsResponse] =
       service.getSampledRequests(params).promise.toFuture
-    def getSizeConstraintSetFuture(params: GetSizeConstraintSetRequest): Future[GetSizeConstraintSetResponse] =
+    @inline def getSizeConstraintSetFuture(params: GetSizeConstraintSetRequest): Future[GetSizeConstraintSetResponse] =
       service.getSizeConstraintSet(params).promise.toFuture
-    def getSqlInjectionMatchSetFuture(params: GetSqlInjectionMatchSetRequest): Future[GetSqlInjectionMatchSetResponse] =
-      service.getSqlInjectionMatchSet(params).promise.toFuture
-    def getWebACLForResourceFuture(params: GetWebACLForResourceRequest): Future[GetWebACLForResourceResponse] =
+    @inline def getSqlInjectionMatchSetFuture(
+        params: GetSqlInjectionMatchSetRequest
+    ): Future[GetSqlInjectionMatchSetResponse] = service.getSqlInjectionMatchSet(params).promise.toFuture
+    @inline def getWebACLForResourceFuture(params: GetWebACLForResourceRequest): Future[GetWebACLForResourceResponse] =
       service.getWebACLForResource(params).promise.toFuture
-    def getWebACLFuture(params: GetWebACLRequest): Future[GetWebACLResponse] =
+    @inline def getWebACLFuture(params: GetWebACLRequest): Future[GetWebACLResponse] =
       service.getWebACL(params).promise.toFuture
-    def getXssMatchSetFuture(params: GetXssMatchSetRequest): Future[GetXssMatchSetResponse] =
+    @inline def getXssMatchSetFuture(params: GetXssMatchSetRequest): Future[GetXssMatchSetResponse] =
       service.getXssMatchSet(params).promise.toFuture
-    def listActivatedRulesInRuleGroupFuture(
+    @inline def listActivatedRulesInRuleGroupFuture(
         params: ListActivatedRulesInRuleGroupRequest
     ): Future[ListActivatedRulesInRuleGroupResponse] = service.listActivatedRulesInRuleGroup(params).promise.toFuture
-    def listByteMatchSetsFuture(params: ListByteMatchSetsRequest): Future[ListByteMatchSetsResponse] =
+    @inline def listByteMatchSetsFuture(params: ListByteMatchSetsRequest): Future[ListByteMatchSetsResponse] =
       service.listByteMatchSets(params).promise.toFuture
-    def listGeoMatchSetsFuture(params: ListGeoMatchSetsRequest): Future[ListGeoMatchSetsResponse] =
+    @inline def listGeoMatchSetsFuture(params: ListGeoMatchSetsRequest): Future[ListGeoMatchSetsResponse] =
       service.listGeoMatchSets(params).promise.toFuture
-    def listIPSetsFuture(params: ListIPSetsRequest): Future[ListIPSetsResponse] =
+    @inline def listIPSetsFuture(params: ListIPSetsRequest): Future[ListIPSetsResponse] =
       service.listIPSets(params).promise.toFuture
-    def listLoggingConfigurationsFuture(
+    @inline def listLoggingConfigurationsFuture(
         params: ListLoggingConfigurationsRequest
     ): Future[ListLoggingConfigurationsResponse] = service.listLoggingConfigurations(params).promise.toFuture
-    def listRateBasedRulesFuture(params: ListRateBasedRulesRequest): Future[ListRateBasedRulesResponse] =
+    @inline def listRateBasedRulesFuture(params: ListRateBasedRulesRequest): Future[ListRateBasedRulesResponse] =
       service.listRateBasedRules(params).promise.toFuture
-    def listRegexMatchSetsFuture(params: ListRegexMatchSetsRequest): Future[ListRegexMatchSetsResponse] =
+    @inline def listRegexMatchSetsFuture(params: ListRegexMatchSetsRequest): Future[ListRegexMatchSetsResponse] =
       service.listRegexMatchSets(params).promise.toFuture
-    def listRegexPatternSetsFuture(params: ListRegexPatternSetsRequest): Future[ListRegexPatternSetsResponse] =
+    @inline def listRegexPatternSetsFuture(params: ListRegexPatternSetsRequest): Future[ListRegexPatternSetsResponse] =
       service.listRegexPatternSets(params).promise.toFuture
-    def listResourcesForWebACLFuture(params: ListResourcesForWebACLRequest): Future[ListResourcesForWebACLResponse] =
-      service.listResourcesForWebACL(params).promise.toFuture
-    def listRuleGroupsFuture(params: ListRuleGroupsRequest): Future[ListRuleGroupsResponse] =
+    @inline def listResourcesForWebACLFuture(
+        params: ListResourcesForWebACLRequest
+    ): Future[ListResourcesForWebACLResponse] = service.listResourcesForWebACL(params).promise.toFuture
+    @inline def listRuleGroupsFuture(params: ListRuleGroupsRequest): Future[ListRuleGroupsResponse] =
       service.listRuleGroups(params).promise.toFuture
-    def listRulesFuture(params: ListRulesRequest): Future[ListRulesResponse] =
+    @inline def listRulesFuture(params: ListRulesRequest): Future[ListRulesResponse] =
       service.listRules(params).promise.toFuture
-    def listSizeConstraintSetsFuture(params: ListSizeConstraintSetsRequest): Future[ListSizeConstraintSetsResponse] =
-      service.listSizeConstraintSets(params).promise.toFuture
-    def listSqlInjectionMatchSetsFuture(
+    @inline def listSizeConstraintSetsFuture(
+        params: ListSizeConstraintSetsRequest
+    ): Future[ListSizeConstraintSetsResponse] = service.listSizeConstraintSets(params).promise.toFuture
+    @inline def listSqlInjectionMatchSetsFuture(
         params: ListSqlInjectionMatchSetsRequest
     ): Future[ListSqlInjectionMatchSetsResponse] = service.listSqlInjectionMatchSets(params).promise.toFuture
-    def listSubscribedRuleGroupsFuture(
+    @inline def listSubscribedRuleGroupsFuture(
         params: ListSubscribedRuleGroupsRequest
     ): Future[ListSubscribedRuleGroupsResponse] = service.listSubscribedRuleGroups(params).promise.toFuture
-    def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] =
+    @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] =
       service.listTagsForResource(params).promise.toFuture
-    def listWebACLsFuture(params: ListWebACLsRequest): Future[ListWebACLsResponse] =
+    @inline def listWebACLsFuture(params: ListWebACLsRequest): Future[ListWebACLsResponse] =
       service.listWebACLs(params).promise.toFuture
-    def listXssMatchSetsFuture(params: ListXssMatchSetsRequest): Future[ListXssMatchSetsResponse] =
+    @inline def listXssMatchSetsFuture(params: ListXssMatchSetsRequest): Future[ListXssMatchSetsResponse] =
       service.listXssMatchSets(params).promise.toFuture
-    def putLoggingConfigurationFuture(params: PutLoggingConfigurationRequest): Future[PutLoggingConfigurationResponse] =
-      service.putLoggingConfiguration(params).promise.toFuture
-    def putPermissionPolicyFuture(params: PutPermissionPolicyRequest): Future[PutPermissionPolicyResponse] =
+    @inline def putLoggingConfigurationFuture(
+        params: PutLoggingConfigurationRequest
+    ): Future[PutLoggingConfigurationResponse] = service.putLoggingConfiguration(params).promise.toFuture
+    @inline def putPermissionPolicyFuture(params: PutPermissionPolicyRequest): Future[PutPermissionPolicyResponse] =
       service.putPermissionPolicy(params).promise.toFuture
-    def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] =
+    @inline def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] =
       service.tagResource(params).promise.toFuture
-    def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] =
+    @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] =
       service.untagResource(params).promise.toFuture
-    def updateByteMatchSetFuture(params: UpdateByteMatchSetRequest): Future[UpdateByteMatchSetResponse] =
+    @inline def updateByteMatchSetFuture(params: UpdateByteMatchSetRequest): Future[UpdateByteMatchSetResponse] =
       service.updateByteMatchSet(params).promise.toFuture
-    def updateGeoMatchSetFuture(params: UpdateGeoMatchSetRequest): Future[UpdateGeoMatchSetResponse] =
+    @inline def updateGeoMatchSetFuture(params: UpdateGeoMatchSetRequest): Future[UpdateGeoMatchSetResponse] =
       service.updateGeoMatchSet(params).promise.toFuture
-    def updateIPSetFuture(params: UpdateIPSetRequest): Future[UpdateIPSetResponse] =
+    @inline def updateIPSetFuture(params: UpdateIPSetRequest): Future[UpdateIPSetResponse] =
       service.updateIPSet(params).promise.toFuture
-    def updateRateBasedRuleFuture(params: UpdateRateBasedRuleRequest): Future[UpdateRateBasedRuleResponse] =
+    @inline def updateRateBasedRuleFuture(params: UpdateRateBasedRuleRequest): Future[UpdateRateBasedRuleResponse] =
       service.updateRateBasedRule(params).promise.toFuture
-    def updateRegexMatchSetFuture(params: UpdateRegexMatchSetRequest): Future[UpdateRegexMatchSetResponse] =
+    @inline def updateRegexMatchSetFuture(params: UpdateRegexMatchSetRequest): Future[UpdateRegexMatchSetResponse] =
       service.updateRegexMatchSet(params).promise.toFuture
-    def updateRegexPatternSetFuture(params: UpdateRegexPatternSetRequest): Future[UpdateRegexPatternSetResponse] =
-      service.updateRegexPatternSet(params).promise.toFuture
-    def updateRuleFuture(params: UpdateRuleRequest): Future[UpdateRuleResponse] =
+    @inline def updateRegexPatternSetFuture(
+        params: UpdateRegexPatternSetRequest
+    ): Future[UpdateRegexPatternSetResponse] = service.updateRegexPatternSet(params).promise.toFuture
+    @inline def updateRuleFuture(params: UpdateRuleRequest): Future[UpdateRuleResponse] =
       service.updateRule(params).promise.toFuture
-    def updateRuleGroupFuture(params: UpdateRuleGroupRequest): Future[UpdateRuleGroupResponse] =
+    @inline def updateRuleGroupFuture(params: UpdateRuleGroupRequest): Future[UpdateRuleGroupResponse] =
       service.updateRuleGroup(params).promise.toFuture
-    def updateSizeConstraintSetFuture(params: UpdateSizeConstraintSetRequest): Future[UpdateSizeConstraintSetResponse] =
-      service.updateSizeConstraintSet(params).promise.toFuture
-    def updateSqlInjectionMatchSetFuture(
+    @inline def updateSizeConstraintSetFuture(
+        params: UpdateSizeConstraintSetRequest
+    ): Future[UpdateSizeConstraintSetResponse] = service.updateSizeConstraintSet(params).promise.toFuture
+    @inline def updateSqlInjectionMatchSetFuture(
         params: UpdateSqlInjectionMatchSetRequest
     ): Future[UpdateSqlInjectionMatchSetResponse] = service.updateSqlInjectionMatchSet(params).promise.toFuture
-    def updateWebACLFuture(params: UpdateWebACLRequest): Future[UpdateWebACLResponse] =
+    @inline def updateWebACLFuture(params: UpdateWebACLRequest): Future[UpdateWebACLResponse] =
       service.updateWebACL(params).promise.toFuture
-    def updateXssMatchSetFuture(params: UpdateXssMatchSetRequest): Future[UpdateXssMatchSetResponse] =
+    @inline def updateXssMatchSetFuture(params: UpdateXssMatchSetRequest): Future[UpdateXssMatchSetResponse] =
       service.updateXssMatchSet(params).promise.toFuture
   }
 }

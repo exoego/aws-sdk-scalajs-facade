@@ -69,59 +69,65 @@ package object ecr {
 
   implicit final class ECROps(private val service: ECR) extends AnyVal {
 
-    def batchCheckLayerAvailabilityFuture(
+    @inline def batchCheckLayerAvailabilityFuture(
         params: BatchCheckLayerAvailabilityRequest
     ): Future[BatchCheckLayerAvailabilityResponse] = service.batchCheckLayerAvailability(params).promise.toFuture
-    def batchDeleteImageFuture(params: BatchDeleteImageRequest): Future[BatchDeleteImageResponse] =
+    @inline def batchDeleteImageFuture(params: BatchDeleteImageRequest): Future[BatchDeleteImageResponse] =
       service.batchDeleteImage(params).promise.toFuture
-    def batchGetImageFuture(params: BatchGetImageRequest): Future[BatchGetImageResponse] =
+    @inline def batchGetImageFuture(params: BatchGetImageRequest): Future[BatchGetImageResponse] =
       service.batchGetImage(params).promise.toFuture
-    def completeLayerUploadFuture(params: CompleteLayerUploadRequest): Future[CompleteLayerUploadResponse] =
+    @inline def completeLayerUploadFuture(params: CompleteLayerUploadRequest): Future[CompleteLayerUploadResponse] =
       service.completeLayerUpload(params).promise.toFuture
-    def createRepositoryFuture(params: CreateRepositoryRequest): Future[CreateRepositoryResponse] =
+    @inline def createRepositoryFuture(params: CreateRepositoryRequest): Future[CreateRepositoryResponse] =
       service.createRepository(params).promise.toFuture
-    def deleteLifecyclePolicyFuture(params: DeleteLifecyclePolicyRequest): Future[DeleteLifecyclePolicyResponse] =
-      service.deleteLifecyclePolicy(params).promise.toFuture
-    def deleteRepositoryFuture(params: DeleteRepositoryRequest): Future[DeleteRepositoryResponse] =
+    @inline def deleteLifecyclePolicyFuture(
+        params: DeleteLifecyclePolicyRequest
+    ): Future[DeleteLifecyclePolicyResponse] = service.deleteLifecyclePolicy(params).promise.toFuture
+    @inline def deleteRepositoryFuture(params: DeleteRepositoryRequest): Future[DeleteRepositoryResponse] =
       service.deleteRepository(params).promise.toFuture
-    def deleteRepositoryPolicyFuture(params: DeleteRepositoryPolicyRequest): Future[DeleteRepositoryPolicyResponse] =
-      service.deleteRepositoryPolicy(params).promise.toFuture
-    def describeImagesFuture(params: DescribeImagesRequest): Future[DescribeImagesResponse] =
+    @inline def deleteRepositoryPolicyFuture(
+        params: DeleteRepositoryPolicyRequest
+    ): Future[DeleteRepositoryPolicyResponse] = service.deleteRepositoryPolicy(params).promise.toFuture
+    @inline def describeImagesFuture(params: DescribeImagesRequest): Future[DescribeImagesResponse] =
       service.describeImages(params).promise.toFuture
-    def describeRepositoriesFuture(params: DescribeRepositoriesRequest): Future[DescribeRepositoriesResponse] =
+    @inline def describeRepositoriesFuture(params: DescribeRepositoriesRequest): Future[DescribeRepositoriesResponse] =
       service.describeRepositories(params).promise.toFuture
-    def getAuthorizationTokenFuture(params: GetAuthorizationTokenRequest): Future[GetAuthorizationTokenResponse] =
-      service.getAuthorizationToken(params).promise.toFuture
-    def getDownloadUrlForLayerFuture(params: GetDownloadUrlForLayerRequest): Future[GetDownloadUrlForLayerResponse] =
-      service.getDownloadUrlForLayer(params).promise.toFuture
-    def getLifecyclePolicyFuture(params: GetLifecyclePolicyRequest): Future[GetLifecyclePolicyResponse] =
+    @inline def getAuthorizationTokenFuture(
+        params: GetAuthorizationTokenRequest
+    ): Future[GetAuthorizationTokenResponse] = service.getAuthorizationToken(params).promise.toFuture
+    @inline def getDownloadUrlForLayerFuture(
+        params: GetDownloadUrlForLayerRequest
+    ): Future[GetDownloadUrlForLayerResponse] = service.getDownloadUrlForLayer(params).promise.toFuture
+    @inline def getLifecyclePolicyFuture(params: GetLifecyclePolicyRequest): Future[GetLifecyclePolicyResponse] =
       service.getLifecyclePolicy(params).promise.toFuture
-    def getLifecyclePolicyPreviewFuture(
+    @inline def getLifecyclePolicyPreviewFuture(
         params: GetLifecyclePolicyPreviewRequest
     ): Future[GetLifecyclePolicyPreviewResponse] = service.getLifecyclePolicyPreview(params).promise.toFuture
-    def getRepositoryPolicyFuture(params: GetRepositoryPolicyRequest): Future[GetRepositoryPolicyResponse] =
+    @inline def getRepositoryPolicyFuture(params: GetRepositoryPolicyRequest): Future[GetRepositoryPolicyResponse] =
       service.getRepositoryPolicy(params).promise.toFuture
-    def initiateLayerUploadFuture(params: InitiateLayerUploadRequest): Future[InitiateLayerUploadResponse] =
+    @inline def initiateLayerUploadFuture(params: InitiateLayerUploadRequest): Future[InitiateLayerUploadResponse] =
       service.initiateLayerUpload(params).promise.toFuture
-    def listImagesFuture(params: ListImagesRequest): Future[ListImagesResponse] =
+    @inline def listImagesFuture(params: ListImagesRequest): Future[ListImagesResponse] =
       service.listImages(params).promise.toFuture
-    def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] =
+    @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] =
       service.listTagsForResource(params).promise.toFuture
-    def putImageFuture(params: PutImageRequest): Future[PutImageResponse] = service.putImage(params).promise.toFuture
-    def putImageTagMutabilityFuture(params: PutImageTagMutabilityRequest): Future[PutImageTagMutabilityResponse] =
-      service.putImageTagMutability(params).promise.toFuture
-    def putLifecyclePolicyFuture(params: PutLifecyclePolicyRequest): Future[PutLifecyclePolicyResponse] =
+    @inline def putImageFuture(params: PutImageRequest): Future[PutImageResponse] =
+      service.putImage(params).promise.toFuture
+    @inline def putImageTagMutabilityFuture(
+        params: PutImageTagMutabilityRequest
+    ): Future[PutImageTagMutabilityResponse] = service.putImageTagMutability(params).promise.toFuture
+    @inline def putLifecyclePolicyFuture(params: PutLifecyclePolicyRequest): Future[PutLifecyclePolicyResponse] =
       service.putLifecyclePolicy(params).promise.toFuture
-    def setRepositoryPolicyFuture(params: SetRepositoryPolicyRequest): Future[SetRepositoryPolicyResponse] =
+    @inline def setRepositoryPolicyFuture(params: SetRepositoryPolicyRequest): Future[SetRepositoryPolicyResponse] =
       service.setRepositoryPolicy(params).promise.toFuture
-    def startLifecyclePolicyPreviewFuture(
+    @inline def startLifecyclePolicyPreviewFuture(
         params: StartLifecyclePolicyPreviewRequest
     ): Future[StartLifecyclePolicyPreviewResponse] = service.startLifecyclePolicyPreview(params).promise.toFuture
-    def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] =
+    @inline def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] =
       service.tagResource(params).promise.toFuture
-    def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] =
+    @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] =
       service.untagResource(params).promise.toFuture
-    def uploadLayerPartFuture(params: UploadLayerPartRequest): Future[UploadLayerPartResponse] =
+    @inline def uploadLayerPartFuture(params: UploadLayerPartRequest): Future[UploadLayerPartResponse] =
       service.uploadLayerPart(params).promise.toFuture
   }
 }

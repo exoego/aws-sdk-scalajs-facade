@@ -56,31 +56,32 @@ package object acm {
 
   implicit final class ACMOps(private val service: ACM) extends AnyVal {
 
-    def addTagsToCertificateFuture(params: AddTagsToCertificateRequest): Future[js.Object] =
+    @inline def addTagsToCertificateFuture(params: AddTagsToCertificateRequest): Future[js.Object] =
       service.addTagsToCertificate(params).promise.toFuture
-    def deleteCertificateFuture(params: DeleteCertificateRequest): Future[js.Object] =
+    @inline def deleteCertificateFuture(params: DeleteCertificateRequest): Future[js.Object] =
       service.deleteCertificate(params).promise.toFuture
-    def describeCertificateFuture(params: DescribeCertificateRequest): Future[DescribeCertificateResponse] =
+    @inline def describeCertificateFuture(params: DescribeCertificateRequest): Future[DescribeCertificateResponse] =
       service.describeCertificate(params).promise.toFuture
-    def exportCertificateFuture(params: ExportCertificateRequest): Future[ExportCertificateResponse] =
+    @inline def exportCertificateFuture(params: ExportCertificateRequest): Future[ExportCertificateResponse] =
       service.exportCertificate(params).promise.toFuture
-    def getCertificateFuture(params: GetCertificateRequest): Future[GetCertificateResponse] =
+    @inline def getCertificateFuture(params: GetCertificateRequest): Future[GetCertificateResponse] =
       service.getCertificate(params).promise.toFuture
-    def importCertificateFuture(params: ImportCertificateRequest): Future[ImportCertificateResponse] =
+    @inline def importCertificateFuture(params: ImportCertificateRequest): Future[ImportCertificateResponse] =
       service.importCertificate(params).promise.toFuture
-    def listCertificatesFuture(params: ListCertificatesRequest): Future[ListCertificatesResponse] =
+    @inline def listCertificatesFuture(params: ListCertificatesRequest): Future[ListCertificatesResponse] =
       service.listCertificates(params).promise.toFuture
-    def listTagsForCertificateFuture(params: ListTagsForCertificateRequest): Future[ListTagsForCertificateResponse] =
-      service.listTagsForCertificate(params).promise.toFuture
-    def removeTagsFromCertificateFuture(params: RemoveTagsFromCertificateRequest): Future[js.Object] =
+    @inline def listTagsForCertificateFuture(
+        params: ListTagsForCertificateRequest
+    ): Future[ListTagsForCertificateResponse] = service.listTagsForCertificate(params).promise.toFuture
+    @inline def removeTagsFromCertificateFuture(params: RemoveTagsFromCertificateRequest): Future[js.Object] =
       service.removeTagsFromCertificate(params).promise.toFuture
-    def renewCertificateFuture(params: RenewCertificateRequest): Future[js.Object] =
+    @inline def renewCertificateFuture(params: RenewCertificateRequest): Future[js.Object] =
       service.renewCertificate(params).promise.toFuture
-    def requestCertificateFuture(params: RequestCertificateRequest): Future[RequestCertificateResponse] =
+    @inline def requestCertificateFuture(params: RequestCertificateRequest): Future[RequestCertificateResponse] =
       service.requestCertificate(params).promise.toFuture
-    def resendValidationEmailFuture(params: ResendValidationEmailRequest): Future[js.Object] =
+    @inline def resendValidationEmailFuture(params: ResendValidationEmailRequest): Future[js.Object] =
       service.resendValidationEmail(params).promise.toFuture
-    def updateCertificateOptionsFuture(params: UpdateCertificateOptionsRequest): Future[js.Object] =
+    @inline def updateCertificateOptionsFuture(params: UpdateCertificateOptionsRequest): Future[js.Object] =
       service.updateCertificateOptions(params).promise.toFuture
   }
 }

@@ -49,38 +49,40 @@ package object managedblockchain {
 
   implicit final class ManagedBlockchainOps(private val service: ManagedBlockchain) extends AnyVal {
 
-    def createMemberFuture(params: CreateMemberInput): Future[CreateMemberOutput] =
+    @inline def createMemberFuture(params: CreateMemberInput): Future[CreateMemberOutput] =
       service.createMember(params).promise.toFuture
-    def createNetworkFuture(params: CreateNetworkInput): Future[CreateNetworkOutput] =
+    @inline def createNetworkFuture(params: CreateNetworkInput): Future[CreateNetworkOutput] =
       service.createNetwork(params).promise.toFuture
-    def createNodeFuture(params: CreateNodeInput): Future[CreateNodeOutput] =
+    @inline def createNodeFuture(params: CreateNodeInput): Future[CreateNodeOutput] =
       service.createNode(params).promise.toFuture
-    def createProposalFuture(params: CreateProposalInput): Future[CreateProposalOutput] =
+    @inline def createProposalFuture(params: CreateProposalInput): Future[CreateProposalOutput] =
       service.createProposal(params).promise.toFuture
-    def deleteMemberFuture(params: DeleteMemberInput): Future[DeleteMemberOutput] =
+    @inline def deleteMemberFuture(params: DeleteMemberInput): Future[DeleteMemberOutput] =
       service.deleteMember(params).promise.toFuture
-    def deleteNodeFuture(params: DeleteNodeInput): Future[DeleteNodeOutput] =
+    @inline def deleteNodeFuture(params: DeleteNodeInput): Future[DeleteNodeOutput] =
       service.deleteNode(params).promise.toFuture
-    def getMemberFuture(params: GetMemberInput): Future[GetMemberOutput] = service.getMember(params).promise.toFuture
-    def getNetworkFuture(params: GetNetworkInput): Future[GetNetworkOutput] =
+    @inline def getMemberFuture(params: GetMemberInput): Future[GetMemberOutput] =
+      service.getMember(params).promise.toFuture
+    @inline def getNetworkFuture(params: GetNetworkInput): Future[GetNetworkOutput] =
       service.getNetwork(params).promise.toFuture
-    def getNodeFuture(params: GetNodeInput): Future[GetNodeOutput] = service.getNode(params).promise.toFuture
-    def getProposalFuture(params: GetProposalInput): Future[GetProposalOutput] =
+    @inline def getNodeFuture(params: GetNodeInput): Future[GetNodeOutput] = service.getNode(params).promise.toFuture
+    @inline def getProposalFuture(params: GetProposalInput): Future[GetProposalOutput] =
       service.getProposal(params).promise.toFuture
-    def listInvitationsFuture(params: ListInvitationsInput): Future[ListInvitationsOutput] =
+    @inline def listInvitationsFuture(params: ListInvitationsInput): Future[ListInvitationsOutput] =
       service.listInvitations(params).promise.toFuture
-    def listMembersFuture(params: ListMembersInput): Future[ListMembersOutput] =
+    @inline def listMembersFuture(params: ListMembersInput): Future[ListMembersOutput] =
       service.listMembers(params).promise.toFuture
-    def listNetworksFuture(params: ListNetworksInput): Future[ListNetworksOutput] =
+    @inline def listNetworksFuture(params: ListNetworksInput): Future[ListNetworksOutput] =
       service.listNetworks(params).promise.toFuture
-    def listNodesFuture(params: ListNodesInput): Future[ListNodesOutput] = service.listNodes(params).promise.toFuture
-    def listProposalVotesFuture(params: ListProposalVotesInput): Future[ListProposalVotesOutput] =
+    @inline def listNodesFuture(params: ListNodesInput): Future[ListNodesOutput] =
+      service.listNodes(params).promise.toFuture
+    @inline def listProposalVotesFuture(params: ListProposalVotesInput): Future[ListProposalVotesOutput] =
       service.listProposalVotes(params).promise.toFuture
-    def listProposalsFuture(params: ListProposalsInput): Future[ListProposalsOutput] =
+    @inline def listProposalsFuture(params: ListProposalsInput): Future[ListProposalsOutput] =
       service.listProposals(params).promise.toFuture
-    def rejectInvitationFuture(params: RejectInvitationInput): Future[RejectInvitationOutput] =
+    @inline def rejectInvitationFuture(params: RejectInvitationInput): Future[RejectInvitationOutput] =
       service.rejectInvitation(params).promise.toFuture
-    def voteOnProposalFuture(params: VoteOnProposalInput): Future[VoteOnProposalOutput] =
+    @inline def voteOnProposalFuture(params: VoteOnProposalInput): Future[VoteOnProposalOutput] =
       service.voteOnProposal(params).promise.toFuture
   }
 }

@@ -85,86 +85,92 @@ package object robomaker {
 
   implicit final class RoboMakerOps(private val service: RoboMaker) extends AnyVal {
 
-    def batchDescribeSimulationJobFuture(
+    @inline def batchDescribeSimulationJobFuture(
         params: BatchDescribeSimulationJobRequest
     ): Future[BatchDescribeSimulationJobResponse] = service.batchDescribeSimulationJob(params).promise.toFuture
-    def cancelDeploymentJobFuture(params: CancelDeploymentJobRequest): Future[CancelDeploymentJobResponse] =
+    @inline def cancelDeploymentJobFuture(params: CancelDeploymentJobRequest): Future[CancelDeploymentJobResponse] =
       service.cancelDeploymentJob(params).promise.toFuture
-    def cancelSimulationJobFuture(params: CancelSimulationJobRequest): Future[CancelSimulationJobResponse] =
+    @inline def cancelSimulationJobFuture(params: CancelSimulationJobRequest): Future[CancelSimulationJobResponse] =
       service.cancelSimulationJob(params).promise.toFuture
-    def createDeploymentJobFuture(params: CreateDeploymentJobRequest): Future[CreateDeploymentJobResponse] =
+    @inline def createDeploymentJobFuture(params: CreateDeploymentJobRequest): Future[CreateDeploymentJobResponse] =
       service.createDeploymentJob(params).promise.toFuture
-    def createFleetFuture(params: CreateFleetRequest): Future[CreateFleetResponse] =
+    @inline def createFleetFuture(params: CreateFleetRequest): Future[CreateFleetResponse] =
       service.createFleet(params).promise.toFuture
-    def createRobotApplicationFuture(params: CreateRobotApplicationRequest): Future[CreateRobotApplicationResponse] =
-      service.createRobotApplication(params).promise.toFuture
-    def createRobotApplicationVersionFuture(
+    @inline def createRobotApplicationFuture(
+        params: CreateRobotApplicationRequest
+    ): Future[CreateRobotApplicationResponse] = service.createRobotApplication(params).promise.toFuture
+    @inline def createRobotApplicationVersionFuture(
         params: CreateRobotApplicationVersionRequest
     ): Future[CreateRobotApplicationVersionResponse] = service.createRobotApplicationVersion(params).promise.toFuture
-    def createRobotFuture(params: CreateRobotRequest): Future[CreateRobotResponse] =
+    @inline def createRobotFuture(params: CreateRobotRequest): Future[CreateRobotResponse] =
       service.createRobot(params).promise.toFuture
-    def createSimulationApplicationFuture(
+    @inline def createSimulationApplicationFuture(
         params: CreateSimulationApplicationRequest
     ): Future[CreateSimulationApplicationResponse] = service.createSimulationApplication(params).promise.toFuture
-    def createSimulationApplicationVersionFuture(
+    @inline def createSimulationApplicationVersionFuture(
         params: CreateSimulationApplicationVersionRequest
     ): Future[CreateSimulationApplicationVersionResponse] =
       service.createSimulationApplicationVersion(params).promise.toFuture
-    def createSimulationJobFuture(params: CreateSimulationJobRequest): Future[CreateSimulationJobResponse] =
+    @inline def createSimulationJobFuture(params: CreateSimulationJobRequest): Future[CreateSimulationJobResponse] =
       service.createSimulationJob(params).promise.toFuture
-    def deleteFleetFuture(params: DeleteFleetRequest): Future[DeleteFleetResponse] =
+    @inline def deleteFleetFuture(params: DeleteFleetRequest): Future[DeleteFleetResponse] =
       service.deleteFleet(params).promise.toFuture
-    def deleteRobotApplicationFuture(params: DeleteRobotApplicationRequest): Future[DeleteRobotApplicationResponse] =
-      service.deleteRobotApplication(params).promise.toFuture
-    def deleteRobotFuture(params: DeleteRobotRequest): Future[DeleteRobotResponse] =
+    @inline def deleteRobotApplicationFuture(
+        params: DeleteRobotApplicationRequest
+    ): Future[DeleteRobotApplicationResponse] = service.deleteRobotApplication(params).promise.toFuture
+    @inline def deleteRobotFuture(params: DeleteRobotRequest): Future[DeleteRobotResponse] =
       service.deleteRobot(params).promise.toFuture
-    def deleteSimulationApplicationFuture(
+    @inline def deleteSimulationApplicationFuture(
         params: DeleteSimulationApplicationRequest
     ): Future[DeleteSimulationApplicationResponse] = service.deleteSimulationApplication(params).promise.toFuture
-    def deregisterRobotFuture(params: DeregisterRobotRequest): Future[DeregisterRobotResponse] =
+    @inline def deregisterRobotFuture(params: DeregisterRobotRequest): Future[DeregisterRobotResponse] =
       service.deregisterRobot(params).promise.toFuture
-    def describeDeploymentJobFuture(params: DescribeDeploymentJobRequest): Future[DescribeDeploymentJobResponse] =
-      service.describeDeploymentJob(params).promise.toFuture
-    def describeFleetFuture(params: DescribeFleetRequest): Future[DescribeFleetResponse] =
+    @inline def describeDeploymentJobFuture(
+        params: DescribeDeploymentJobRequest
+    ): Future[DescribeDeploymentJobResponse] = service.describeDeploymentJob(params).promise.toFuture
+    @inline def describeFleetFuture(params: DescribeFleetRequest): Future[DescribeFleetResponse] =
       service.describeFleet(params).promise.toFuture
-    def describeRobotApplicationFuture(
+    @inline def describeRobotApplicationFuture(
         params: DescribeRobotApplicationRequest
     ): Future[DescribeRobotApplicationResponse] = service.describeRobotApplication(params).promise.toFuture
-    def describeRobotFuture(params: DescribeRobotRequest): Future[DescribeRobotResponse] =
+    @inline def describeRobotFuture(params: DescribeRobotRequest): Future[DescribeRobotResponse] =
       service.describeRobot(params).promise.toFuture
-    def describeSimulationApplicationFuture(
+    @inline def describeSimulationApplicationFuture(
         params: DescribeSimulationApplicationRequest
     ): Future[DescribeSimulationApplicationResponse] = service.describeSimulationApplication(params).promise.toFuture
-    def describeSimulationJobFuture(params: DescribeSimulationJobRequest): Future[DescribeSimulationJobResponse] =
-      service.describeSimulationJob(params).promise.toFuture
-    def listDeploymentJobsFuture(params: ListDeploymentJobsRequest): Future[ListDeploymentJobsResponse] =
+    @inline def describeSimulationJobFuture(
+        params: DescribeSimulationJobRequest
+    ): Future[DescribeSimulationJobResponse] = service.describeSimulationJob(params).promise.toFuture
+    @inline def listDeploymentJobsFuture(params: ListDeploymentJobsRequest): Future[ListDeploymentJobsResponse] =
       service.listDeploymentJobs(params).promise.toFuture
-    def listFleetsFuture(params: ListFleetsRequest): Future[ListFleetsResponse] =
+    @inline def listFleetsFuture(params: ListFleetsRequest): Future[ListFleetsResponse] =
       service.listFleets(params).promise.toFuture
-    def listRobotApplicationsFuture(params: ListRobotApplicationsRequest): Future[ListRobotApplicationsResponse] =
-      service.listRobotApplications(params).promise.toFuture
-    def listRobotsFuture(params: ListRobotsRequest): Future[ListRobotsResponse] =
+    @inline def listRobotApplicationsFuture(
+        params: ListRobotApplicationsRequest
+    ): Future[ListRobotApplicationsResponse] = service.listRobotApplications(params).promise.toFuture
+    @inline def listRobotsFuture(params: ListRobotsRequest): Future[ListRobotsResponse] =
       service.listRobots(params).promise.toFuture
-    def listSimulationApplicationsFuture(
+    @inline def listSimulationApplicationsFuture(
         params: ListSimulationApplicationsRequest
     ): Future[ListSimulationApplicationsResponse] = service.listSimulationApplications(params).promise.toFuture
-    def listSimulationJobsFuture(params: ListSimulationJobsRequest): Future[ListSimulationJobsResponse] =
+    @inline def listSimulationJobsFuture(params: ListSimulationJobsRequest): Future[ListSimulationJobsResponse] =
       service.listSimulationJobs(params).promise.toFuture
-    def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] =
+    @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] =
       service.listTagsForResource(params).promise.toFuture
-    def registerRobotFuture(params: RegisterRobotRequest): Future[RegisterRobotResponse] =
+    @inline def registerRobotFuture(params: RegisterRobotRequest): Future[RegisterRobotResponse] =
       service.registerRobot(params).promise.toFuture
-    def restartSimulationJobFuture(params: RestartSimulationJobRequest): Future[RestartSimulationJobResponse] =
+    @inline def restartSimulationJobFuture(params: RestartSimulationJobRequest): Future[RestartSimulationJobResponse] =
       service.restartSimulationJob(params).promise.toFuture
-    def syncDeploymentJobFuture(params: SyncDeploymentJobRequest): Future[SyncDeploymentJobResponse] =
+    @inline def syncDeploymentJobFuture(params: SyncDeploymentJobRequest): Future[SyncDeploymentJobResponse] =
       service.syncDeploymentJob(params).promise.toFuture
-    def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] =
+    @inline def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] =
       service.tagResource(params).promise.toFuture
-    def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] =
+    @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] =
       service.untagResource(params).promise.toFuture
-    def updateRobotApplicationFuture(params: UpdateRobotApplicationRequest): Future[UpdateRobotApplicationResponse] =
-      service.updateRobotApplication(params).promise.toFuture
-    def updateSimulationApplicationFuture(
+    @inline def updateRobotApplicationFuture(
+        params: UpdateRobotApplicationRequest
+    ): Future[UpdateRobotApplicationResponse] = service.updateRobotApplication(params).promise.toFuture
+    @inline def updateSimulationApplicationFuture(
         params: UpdateSimulationApplicationRequest
     ): Future[UpdateSimulationApplicationResponse] = service.updateSimulationApplication(params).promise.toFuture
   }

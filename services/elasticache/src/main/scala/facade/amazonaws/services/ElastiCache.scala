@@ -76,114 +76,124 @@ package object elasticache {
 
   implicit final class ElastiCacheOps(private val service: ElastiCache) extends AnyVal {
 
-    def addTagsToResourceFuture(params: AddTagsToResourceMessage): Future[TagListMessage] =
+    @inline def addTagsToResourceFuture(params: AddTagsToResourceMessage): Future[TagListMessage] =
       service.addTagsToResource(params).promise.toFuture
-    def authorizeCacheSecurityGroupIngressFuture(
+    @inline def authorizeCacheSecurityGroupIngressFuture(
         params: AuthorizeCacheSecurityGroupIngressMessage
     ): Future[AuthorizeCacheSecurityGroupIngressResult] =
       service.authorizeCacheSecurityGroupIngress(params).promise.toFuture
-    def batchApplyUpdateActionFuture(params: BatchApplyUpdateActionMessage): Future[UpdateActionResultsMessage] =
-      service.batchApplyUpdateAction(params).promise.toFuture
-    def batchStopUpdateActionFuture(params: BatchStopUpdateActionMessage): Future[UpdateActionResultsMessage] =
+    @inline def batchApplyUpdateActionFuture(
+        params: BatchApplyUpdateActionMessage
+    ): Future[UpdateActionResultsMessage] = service.batchApplyUpdateAction(params).promise.toFuture
+    @inline def batchStopUpdateActionFuture(params: BatchStopUpdateActionMessage): Future[UpdateActionResultsMessage] =
       service.batchStopUpdateAction(params).promise.toFuture
-    def copySnapshotFuture(params: CopySnapshotMessage): Future[CopySnapshotResult] =
+    @inline def copySnapshotFuture(params: CopySnapshotMessage): Future[CopySnapshotResult] =
       service.copySnapshot(params).promise.toFuture
-    def createCacheClusterFuture(params: CreateCacheClusterMessage): Future[CreateCacheClusterResult] =
+    @inline def createCacheClusterFuture(params: CreateCacheClusterMessage): Future[CreateCacheClusterResult] =
       service.createCacheCluster(params).promise.toFuture
-    def createCacheParameterGroupFuture(
+    @inline def createCacheParameterGroupFuture(
         params: CreateCacheParameterGroupMessage
     ): Future[CreateCacheParameterGroupResult] = service.createCacheParameterGroup(params).promise.toFuture
-    def createCacheSecurityGroupFuture(
+    @inline def createCacheSecurityGroupFuture(
         params: CreateCacheSecurityGroupMessage
     ): Future[CreateCacheSecurityGroupResult] = service.createCacheSecurityGroup(params).promise.toFuture
-    def createCacheSubnetGroupFuture(params: CreateCacheSubnetGroupMessage): Future[CreateCacheSubnetGroupResult] =
-      service.createCacheSubnetGroup(params).promise.toFuture
-    def createReplicationGroupFuture(params: CreateReplicationGroupMessage): Future[CreateReplicationGroupResult] =
-      service.createReplicationGroup(params).promise.toFuture
-    def createSnapshotFuture(params: CreateSnapshotMessage): Future[CreateSnapshotResult] =
+    @inline def createCacheSubnetGroupFuture(
+        params: CreateCacheSubnetGroupMessage
+    ): Future[CreateCacheSubnetGroupResult] = service.createCacheSubnetGroup(params).promise.toFuture
+    @inline def createReplicationGroupFuture(
+        params: CreateReplicationGroupMessage
+    ): Future[CreateReplicationGroupResult] = service.createReplicationGroup(params).promise.toFuture
+    @inline def createSnapshotFuture(params: CreateSnapshotMessage): Future[CreateSnapshotResult] =
       service.createSnapshot(params).promise.toFuture
-    def decreaseReplicaCountFuture(params: DecreaseReplicaCountMessage): Future[DecreaseReplicaCountResult] =
+    @inline def decreaseReplicaCountFuture(params: DecreaseReplicaCountMessage): Future[DecreaseReplicaCountResult] =
       service.decreaseReplicaCount(params).promise.toFuture
-    def deleteCacheClusterFuture(params: DeleteCacheClusterMessage): Future[DeleteCacheClusterResult] =
+    @inline def deleteCacheClusterFuture(params: DeleteCacheClusterMessage): Future[DeleteCacheClusterResult] =
       service.deleteCacheCluster(params).promise.toFuture
-    def deleteCacheParameterGroupFuture(params: DeleteCacheParameterGroupMessage): Future[js.Object] =
+    @inline def deleteCacheParameterGroupFuture(params: DeleteCacheParameterGroupMessage): Future[js.Object] =
       service.deleteCacheParameterGroup(params).promise.toFuture
-    def deleteCacheSecurityGroupFuture(params: DeleteCacheSecurityGroupMessage): Future[js.Object] =
+    @inline def deleteCacheSecurityGroupFuture(params: DeleteCacheSecurityGroupMessage): Future[js.Object] =
       service.deleteCacheSecurityGroup(params).promise.toFuture
-    def deleteCacheSubnetGroupFuture(params: DeleteCacheSubnetGroupMessage): Future[js.Object] =
+    @inline def deleteCacheSubnetGroupFuture(params: DeleteCacheSubnetGroupMessage): Future[js.Object] =
       service.deleteCacheSubnetGroup(params).promise.toFuture
-    def deleteReplicationGroupFuture(params: DeleteReplicationGroupMessage): Future[DeleteReplicationGroupResult] =
-      service.deleteReplicationGroup(params).promise.toFuture
-    def deleteSnapshotFuture(params: DeleteSnapshotMessage): Future[DeleteSnapshotResult] =
+    @inline def deleteReplicationGroupFuture(
+        params: DeleteReplicationGroupMessage
+    ): Future[DeleteReplicationGroupResult] = service.deleteReplicationGroup(params).promise.toFuture
+    @inline def deleteSnapshotFuture(params: DeleteSnapshotMessage): Future[DeleteSnapshotResult] =
       service.deleteSnapshot(params).promise.toFuture
-    def describeCacheClustersFuture(params: DescribeCacheClustersMessage): Future[CacheClusterMessage] =
+    @inline def describeCacheClustersFuture(params: DescribeCacheClustersMessage): Future[CacheClusterMessage] =
       service.describeCacheClusters(params).promise.toFuture
-    def describeCacheEngineVersionsFuture(
+    @inline def describeCacheEngineVersionsFuture(
         params: DescribeCacheEngineVersionsMessage
     ): Future[CacheEngineVersionMessage] = service.describeCacheEngineVersions(params).promise.toFuture
-    def describeCacheParameterGroupsFuture(
+    @inline def describeCacheParameterGroupsFuture(
         params: DescribeCacheParameterGroupsMessage
     ): Future[CacheParameterGroupsMessage] = service.describeCacheParameterGroups(params).promise.toFuture
-    def describeCacheParametersFuture(params: DescribeCacheParametersMessage): Future[CacheParameterGroupDetails] =
-      service.describeCacheParameters(params).promise.toFuture
-    def describeCacheSecurityGroupsFuture(
+    @inline def describeCacheParametersFuture(
+        params: DescribeCacheParametersMessage
+    ): Future[CacheParameterGroupDetails] = service.describeCacheParameters(params).promise.toFuture
+    @inline def describeCacheSecurityGroupsFuture(
         params: DescribeCacheSecurityGroupsMessage
     ): Future[CacheSecurityGroupMessage] = service.describeCacheSecurityGroups(params).promise.toFuture
-    def describeCacheSubnetGroupsFuture(params: DescribeCacheSubnetGroupsMessage): Future[CacheSubnetGroupMessage] =
-      service.describeCacheSubnetGroups(params).promise.toFuture
-    def describeEngineDefaultParametersFuture(
+    @inline def describeCacheSubnetGroupsFuture(
+        params: DescribeCacheSubnetGroupsMessage
+    ): Future[CacheSubnetGroupMessage] = service.describeCacheSubnetGroups(params).promise.toFuture
+    @inline def describeEngineDefaultParametersFuture(
         params: DescribeEngineDefaultParametersMessage
     ): Future[DescribeEngineDefaultParametersResult] = service.describeEngineDefaultParameters(params).promise.toFuture
-    def describeEventsFuture(params: DescribeEventsMessage): Future[EventsMessage] =
+    @inline def describeEventsFuture(params: DescribeEventsMessage): Future[EventsMessage] =
       service.describeEvents(params).promise.toFuture
-    def describeReplicationGroupsFuture(params: DescribeReplicationGroupsMessage): Future[ReplicationGroupMessage] =
-      service.describeReplicationGroups(params).promise.toFuture
-    def describeReservedCacheNodesFuture(params: DescribeReservedCacheNodesMessage): Future[ReservedCacheNodeMessage] =
-      service.describeReservedCacheNodes(params).promise.toFuture
-    def describeReservedCacheNodesOfferingsFuture(
+    @inline def describeReplicationGroupsFuture(
+        params: DescribeReplicationGroupsMessage
+    ): Future[ReplicationGroupMessage] = service.describeReplicationGroups(params).promise.toFuture
+    @inline def describeReservedCacheNodesFuture(
+        params: DescribeReservedCacheNodesMessage
+    ): Future[ReservedCacheNodeMessage] = service.describeReservedCacheNodes(params).promise.toFuture
+    @inline def describeReservedCacheNodesOfferingsFuture(
         params: DescribeReservedCacheNodesOfferingsMessage
     ): Future[ReservedCacheNodesOfferingMessage] = service.describeReservedCacheNodesOfferings(params).promise.toFuture
-    def describeServiceUpdatesFuture(params: DescribeServiceUpdatesMessage): Future[ServiceUpdatesMessage] =
+    @inline def describeServiceUpdatesFuture(params: DescribeServiceUpdatesMessage): Future[ServiceUpdatesMessage] =
       service.describeServiceUpdates(params).promise.toFuture
-    def describeSnapshotsFuture(params: DescribeSnapshotsMessage): Future[DescribeSnapshotsListMessage] =
+    @inline def describeSnapshotsFuture(params: DescribeSnapshotsMessage): Future[DescribeSnapshotsListMessage] =
       service.describeSnapshots(params).promise.toFuture
-    def describeUpdateActionsFuture(params: DescribeUpdateActionsMessage): Future[UpdateActionsMessage] =
+    @inline def describeUpdateActionsFuture(params: DescribeUpdateActionsMessage): Future[UpdateActionsMessage] =
       service.describeUpdateActions(params).promise.toFuture
-    def increaseReplicaCountFuture(params: IncreaseReplicaCountMessage): Future[IncreaseReplicaCountResult] =
+    @inline def increaseReplicaCountFuture(params: IncreaseReplicaCountMessage): Future[IncreaseReplicaCountResult] =
       service.increaseReplicaCount(params).promise.toFuture
-    def listAllowedNodeTypeModificationsFuture(
+    @inline def listAllowedNodeTypeModificationsFuture(
         params: ListAllowedNodeTypeModificationsMessage
     ): Future[AllowedNodeTypeModificationsMessage] = service.listAllowedNodeTypeModifications(params).promise.toFuture
-    def listTagsForResourceFuture(params: ListTagsForResourceMessage): Future[TagListMessage] =
+    @inline def listTagsForResourceFuture(params: ListTagsForResourceMessage): Future[TagListMessage] =
       service.listTagsForResource(params).promise.toFuture
-    def modifyCacheClusterFuture(params: ModifyCacheClusterMessage): Future[ModifyCacheClusterResult] =
+    @inline def modifyCacheClusterFuture(params: ModifyCacheClusterMessage): Future[ModifyCacheClusterResult] =
       service.modifyCacheCluster(params).promise.toFuture
-    def modifyCacheParameterGroupFuture(
+    @inline def modifyCacheParameterGroupFuture(
         params: ModifyCacheParameterGroupMessage
     ): Future[CacheParameterGroupNameMessage] = service.modifyCacheParameterGroup(params).promise.toFuture
-    def modifyCacheSubnetGroupFuture(params: ModifyCacheSubnetGroupMessage): Future[ModifyCacheSubnetGroupResult] =
-      service.modifyCacheSubnetGroup(params).promise.toFuture
-    def modifyReplicationGroupFuture(params: ModifyReplicationGroupMessage): Future[ModifyReplicationGroupResult] =
-      service.modifyReplicationGroup(params).promise.toFuture
-    def modifyReplicationGroupShardConfigurationFuture(
+    @inline def modifyCacheSubnetGroupFuture(
+        params: ModifyCacheSubnetGroupMessage
+    ): Future[ModifyCacheSubnetGroupResult] = service.modifyCacheSubnetGroup(params).promise.toFuture
+    @inline def modifyReplicationGroupFuture(
+        params: ModifyReplicationGroupMessage
+    ): Future[ModifyReplicationGroupResult] = service.modifyReplicationGroup(params).promise.toFuture
+    @inline def modifyReplicationGroupShardConfigurationFuture(
         params: ModifyReplicationGroupShardConfigurationMessage
     ): Future[ModifyReplicationGroupShardConfigurationResult] =
       service.modifyReplicationGroupShardConfiguration(params).promise.toFuture
-    def purchaseReservedCacheNodesOfferingFuture(
+    @inline def purchaseReservedCacheNodesOfferingFuture(
         params: PurchaseReservedCacheNodesOfferingMessage
     ): Future[PurchaseReservedCacheNodesOfferingResult] =
       service.purchaseReservedCacheNodesOffering(params).promise.toFuture
-    def rebootCacheClusterFuture(params: RebootCacheClusterMessage): Future[RebootCacheClusterResult] =
+    @inline def rebootCacheClusterFuture(params: RebootCacheClusterMessage): Future[RebootCacheClusterResult] =
       service.rebootCacheCluster(params).promise.toFuture
-    def removeTagsFromResourceFuture(params: RemoveTagsFromResourceMessage): Future[TagListMessage] =
+    @inline def removeTagsFromResourceFuture(params: RemoveTagsFromResourceMessage): Future[TagListMessage] =
       service.removeTagsFromResource(params).promise.toFuture
-    def resetCacheParameterGroupFuture(
+    @inline def resetCacheParameterGroupFuture(
         params: ResetCacheParameterGroupMessage
     ): Future[CacheParameterGroupNameMessage] = service.resetCacheParameterGroup(params).promise.toFuture
-    def revokeCacheSecurityGroupIngressFuture(
+    @inline def revokeCacheSecurityGroupIngressFuture(
         params: RevokeCacheSecurityGroupIngressMessage
     ): Future[RevokeCacheSecurityGroupIngressResult] = service.revokeCacheSecurityGroupIngress(params).promise.toFuture
-    def testFailoverFuture(params: TestFailoverMessage): Future[TestFailoverResult] =
+    @inline def testFailoverFuture(params: TestFailoverMessage): Future[TestFailoverResult] =
       service.testFailover(params).promise.toFuture
   }
 }

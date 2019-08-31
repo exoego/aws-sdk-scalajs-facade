@@ -30,23 +30,25 @@ package object transcribeservice {
 
   implicit final class TranscribeServiceOps(private val service: TranscribeService) extends AnyVal {
 
-    def createVocabularyFuture(params: CreateVocabularyRequest): Future[CreateVocabularyResponse] =
+    @inline def createVocabularyFuture(params: CreateVocabularyRequest): Future[CreateVocabularyResponse] =
       service.createVocabulary(params).promise.toFuture
-    def deleteTranscriptionJobFuture(params: DeleteTranscriptionJobRequest): Future[js.Object] =
+    @inline def deleteTranscriptionJobFuture(params: DeleteTranscriptionJobRequest): Future[js.Object] =
       service.deleteTranscriptionJob(params).promise.toFuture
-    def deleteVocabularyFuture(params: DeleteVocabularyRequest): Future[js.Object] =
+    @inline def deleteVocabularyFuture(params: DeleteVocabularyRequest): Future[js.Object] =
       service.deleteVocabulary(params).promise.toFuture
-    def getTranscriptionJobFuture(params: GetTranscriptionJobRequest): Future[GetTranscriptionJobResponse] =
+    @inline def getTranscriptionJobFuture(params: GetTranscriptionJobRequest): Future[GetTranscriptionJobResponse] =
       service.getTranscriptionJob(params).promise.toFuture
-    def getVocabularyFuture(params: GetVocabularyRequest): Future[GetVocabularyResponse] =
+    @inline def getVocabularyFuture(params: GetVocabularyRequest): Future[GetVocabularyResponse] =
       service.getVocabulary(params).promise.toFuture
-    def listTranscriptionJobsFuture(params: ListTranscriptionJobsRequest): Future[ListTranscriptionJobsResponse] =
-      service.listTranscriptionJobs(params).promise.toFuture
-    def listVocabulariesFuture(params: ListVocabulariesRequest): Future[ListVocabulariesResponse] =
+    @inline def listTranscriptionJobsFuture(
+        params: ListTranscriptionJobsRequest
+    ): Future[ListTranscriptionJobsResponse] = service.listTranscriptionJobs(params).promise.toFuture
+    @inline def listVocabulariesFuture(params: ListVocabulariesRequest): Future[ListVocabulariesResponse] =
       service.listVocabularies(params).promise.toFuture
-    def startTranscriptionJobFuture(params: StartTranscriptionJobRequest): Future[StartTranscriptionJobResponse] =
-      service.startTranscriptionJob(params).promise.toFuture
-    def updateVocabularyFuture(params: UpdateVocabularyRequest): Future[UpdateVocabularyResponse] =
+    @inline def startTranscriptionJobFuture(
+        params: StartTranscriptionJobRequest
+    ): Future[StartTranscriptionJobResponse] = service.startTranscriptionJob(params).promise.toFuture
+    @inline def updateVocabularyFuture(params: UpdateVocabularyRequest): Future[UpdateVocabularyResponse] =
       service.updateVocabulary(params).promise.toFuture
   }
 }

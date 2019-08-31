@@ -37,13 +37,13 @@ package object ioteventsdata {
 
   implicit final class IoTEventsDataOps(private val service: IoTEventsData) extends AnyVal {
 
-    def batchPutMessageFuture(params: BatchPutMessageRequest): Future[BatchPutMessageResponse] =
+    @inline def batchPutMessageFuture(params: BatchPutMessageRequest): Future[BatchPutMessageResponse] =
       service.batchPutMessage(params).promise.toFuture
-    def batchUpdateDetectorFuture(params: BatchUpdateDetectorRequest): Future[BatchUpdateDetectorResponse] =
+    @inline def batchUpdateDetectorFuture(params: BatchUpdateDetectorRequest): Future[BatchUpdateDetectorResponse] =
       service.batchUpdateDetector(params).promise.toFuture
-    def describeDetectorFuture(params: DescribeDetectorRequest): Future[DescribeDetectorResponse] =
+    @inline def describeDetectorFuture(params: DescribeDetectorRequest): Future[DescribeDetectorResponse] =
       service.describeDetector(params).promise.toFuture
-    def listDetectorsFuture(params: ListDetectorsRequest): Future[ListDetectorsResponse] =
+    @inline def listDetectorsFuture(params: ListDetectorsRequest): Future[ListDetectorsResponse] =
       service.listDetectors(params).promise.toFuture
   }
 }

@@ -89,196 +89,210 @@ package object redshift {
 
   implicit final class RedshiftOps(private val service: Redshift) extends AnyVal {
 
-    def acceptReservedNodeExchangeFuture(
+    @inline def acceptReservedNodeExchangeFuture(
         params: AcceptReservedNodeExchangeInputMessage
     ): Future[AcceptReservedNodeExchangeOutputMessage] = service.acceptReservedNodeExchange(params).promise.toFuture
-    def authorizeClusterSecurityGroupIngressFuture(
+    @inline def authorizeClusterSecurityGroupIngressFuture(
         params: AuthorizeClusterSecurityGroupIngressMessage
     ): Future[AuthorizeClusterSecurityGroupIngressResult] =
       service.authorizeClusterSecurityGroupIngress(params).promise.toFuture
-    def authorizeSnapshotAccessFuture(params: AuthorizeSnapshotAccessMessage): Future[AuthorizeSnapshotAccessResult] =
-      service.authorizeSnapshotAccess(params).promise.toFuture
-    def batchDeleteClusterSnapshotsFuture(
+    @inline def authorizeSnapshotAccessFuture(
+        params: AuthorizeSnapshotAccessMessage
+    ): Future[AuthorizeSnapshotAccessResult] = service.authorizeSnapshotAccess(params).promise.toFuture
+    @inline def batchDeleteClusterSnapshotsFuture(
         params: BatchDeleteClusterSnapshotsRequest
     ): Future[BatchDeleteClusterSnapshotsResult] = service.batchDeleteClusterSnapshots(params).promise.toFuture
-    def batchModifyClusterSnapshotsFuture(
+    @inline def batchModifyClusterSnapshotsFuture(
         params: BatchModifyClusterSnapshotsMessage
     ): Future[BatchModifyClusterSnapshotsOutputMessage] = service.batchModifyClusterSnapshots(params).promise.toFuture
-    def cancelResizeFuture(params: CancelResizeMessage): Future[ResizeProgressMessage] =
+    @inline def cancelResizeFuture(params: CancelResizeMessage): Future[ResizeProgressMessage] =
       service.cancelResize(params).promise.toFuture
-    def copyClusterSnapshotFuture(params: CopyClusterSnapshotMessage): Future[CopyClusterSnapshotResult] =
+    @inline def copyClusterSnapshotFuture(params: CopyClusterSnapshotMessage): Future[CopyClusterSnapshotResult] =
       service.copyClusterSnapshot(params).promise.toFuture
-    def createClusterFuture(params: CreateClusterMessage): Future[CreateClusterResult] =
+    @inline def createClusterFuture(params: CreateClusterMessage): Future[CreateClusterResult] =
       service.createCluster(params).promise.toFuture
-    def createClusterParameterGroupFuture(
+    @inline def createClusterParameterGroupFuture(
         params: CreateClusterParameterGroupMessage
     ): Future[CreateClusterParameterGroupResult] = service.createClusterParameterGroup(params).promise.toFuture
-    def createClusterSecurityGroupFuture(
+    @inline def createClusterSecurityGroupFuture(
         params: CreateClusterSecurityGroupMessage
     ): Future[CreateClusterSecurityGroupResult] = service.createClusterSecurityGroup(params).promise.toFuture
-    def createClusterSnapshotFuture(params: CreateClusterSnapshotMessage): Future[CreateClusterSnapshotResult] =
+    @inline def createClusterSnapshotFuture(params: CreateClusterSnapshotMessage): Future[CreateClusterSnapshotResult] =
       service.createClusterSnapshot(params).promise.toFuture
-    def createClusterSubnetGroupFuture(
+    @inline def createClusterSubnetGroupFuture(
         params: CreateClusterSubnetGroupMessage
     ): Future[CreateClusterSubnetGroupResult] = service.createClusterSubnetGroup(params).promise.toFuture
-    def createEventSubscriptionFuture(params: CreateEventSubscriptionMessage): Future[CreateEventSubscriptionResult] =
-      service.createEventSubscription(params).promise.toFuture
-    def createHsmClientCertificateFuture(
+    @inline def createEventSubscriptionFuture(
+        params: CreateEventSubscriptionMessage
+    ): Future[CreateEventSubscriptionResult] = service.createEventSubscription(params).promise.toFuture
+    @inline def createHsmClientCertificateFuture(
         params: CreateHsmClientCertificateMessage
     ): Future[CreateHsmClientCertificateResult] = service.createHsmClientCertificate(params).promise.toFuture
-    def createHsmConfigurationFuture(params: CreateHsmConfigurationMessage): Future[CreateHsmConfigurationResult] =
-      service.createHsmConfiguration(params).promise.toFuture
-    def createSnapshotCopyGrantFuture(params: CreateSnapshotCopyGrantMessage): Future[CreateSnapshotCopyGrantResult] =
-      service.createSnapshotCopyGrant(params).promise.toFuture
-    def createSnapshotScheduleFuture(params: CreateSnapshotScheduleMessage): Future[SnapshotSchedule] =
+    @inline def createHsmConfigurationFuture(
+        params: CreateHsmConfigurationMessage
+    ): Future[CreateHsmConfigurationResult] = service.createHsmConfiguration(params).promise.toFuture
+    @inline def createSnapshotCopyGrantFuture(
+        params: CreateSnapshotCopyGrantMessage
+    ): Future[CreateSnapshotCopyGrantResult] = service.createSnapshotCopyGrant(params).promise.toFuture
+    @inline def createSnapshotScheduleFuture(params: CreateSnapshotScheduleMessage): Future[SnapshotSchedule] =
       service.createSnapshotSchedule(params).promise.toFuture
-    def createTagsFuture(params: CreateTagsMessage): Future[js.Object] = service.createTags(params).promise.toFuture
-    def deleteClusterFuture(params: DeleteClusterMessage): Future[DeleteClusterResult] =
+    @inline def createTagsFuture(params: CreateTagsMessage): Future[js.Object] =
+      service.createTags(params).promise.toFuture
+    @inline def deleteClusterFuture(params: DeleteClusterMessage): Future[DeleteClusterResult] =
       service.deleteCluster(params).promise.toFuture
-    def deleteClusterParameterGroupFuture(params: DeleteClusterParameterGroupMessage): Future[js.Object] =
+    @inline def deleteClusterParameterGroupFuture(params: DeleteClusterParameterGroupMessage): Future[js.Object] =
       service.deleteClusterParameterGroup(params).promise.toFuture
-    def deleteClusterSecurityGroupFuture(params: DeleteClusterSecurityGroupMessage): Future[js.Object] =
+    @inline def deleteClusterSecurityGroupFuture(params: DeleteClusterSecurityGroupMessage): Future[js.Object] =
       service.deleteClusterSecurityGroup(params).promise.toFuture
-    def deleteClusterSnapshotFuture(params: DeleteClusterSnapshotMessage): Future[DeleteClusterSnapshotResult] =
+    @inline def deleteClusterSnapshotFuture(params: DeleteClusterSnapshotMessage): Future[DeleteClusterSnapshotResult] =
       service.deleteClusterSnapshot(params).promise.toFuture
-    def deleteClusterSubnetGroupFuture(params: DeleteClusterSubnetGroupMessage): Future[js.Object] =
+    @inline def deleteClusterSubnetGroupFuture(params: DeleteClusterSubnetGroupMessage): Future[js.Object] =
       service.deleteClusterSubnetGroup(params).promise.toFuture
-    def deleteEventSubscriptionFuture(params: DeleteEventSubscriptionMessage): Future[js.Object] =
+    @inline def deleteEventSubscriptionFuture(params: DeleteEventSubscriptionMessage): Future[js.Object] =
       service.deleteEventSubscription(params).promise.toFuture
-    def deleteHsmClientCertificateFuture(params: DeleteHsmClientCertificateMessage): Future[js.Object] =
+    @inline def deleteHsmClientCertificateFuture(params: DeleteHsmClientCertificateMessage): Future[js.Object] =
       service.deleteHsmClientCertificate(params).promise.toFuture
-    def deleteHsmConfigurationFuture(params: DeleteHsmConfigurationMessage): Future[js.Object] =
+    @inline def deleteHsmConfigurationFuture(params: DeleteHsmConfigurationMessage): Future[js.Object] =
       service.deleteHsmConfiguration(params).promise.toFuture
-    def deleteSnapshotCopyGrantFuture(params: DeleteSnapshotCopyGrantMessage): Future[js.Object] =
+    @inline def deleteSnapshotCopyGrantFuture(params: DeleteSnapshotCopyGrantMessage): Future[js.Object] =
       service.deleteSnapshotCopyGrant(params).promise.toFuture
-    def deleteSnapshotScheduleFuture(params: DeleteSnapshotScheduleMessage): Future[js.Object] =
+    @inline def deleteSnapshotScheduleFuture(params: DeleteSnapshotScheduleMessage): Future[js.Object] =
       service.deleteSnapshotSchedule(params).promise.toFuture
-    def deleteTagsFuture(params: DeleteTagsMessage): Future[js.Object] = service.deleteTags(params).promise.toFuture
-    def describeAccountAttributesFuture(params: DescribeAccountAttributesMessage): Future[AccountAttributeList] =
-      service.describeAccountAttributes(params).promise.toFuture
-    def describeClusterDbRevisionsFuture(params: DescribeClusterDbRevisionsMessage): Future[ClusterDbRevisionsMessage] =
-      service.describeClusterDbRevisions(params).promise.toFuture
-    def describeClusterParameterGroupsFuture(
+    @inline def deleteTagsFuture(params: DeleteTagsMessage): Future[js.Object] =
+      service.deleteTags(params).promise.toFuture
+    @inline def describeAccountAttributesFuture(
+        params: DescribeAccountAttributesMessage
+    ): Future[AccountAttributeList] = service.describeAccountAttributes(params).promise.toFuture
+    @inline def describeClusterDbRevisionsFuture(
+        params: DescribeClusterDbRevisionsMessage
+    ): Future[ClusterDbRevisionsMessage] = service.describeClusterDbRevisions(params).promise.toFuture
+    @inline def describeClusterParameterGroupsFuture(
         params: DescribeClusterParameterGroupsMessage
     ): Future[ClusterParameterGroupsMessage] = service.describeClusterParameterGroups(params).promise.toFuture
-    def describeClusterParametersFuture(
+    @inline def describeClusterParametersFuture(
         params: DescribeClusterParametersMessage
     ): Future[ClusterParameterGroupDetails] = service.describeClusterParameters(params).promise.toFuture
-    def describeClusterSecurityGroupsFuture(
+    @inline def describeClusterSecurityGroupsFuture(
         params: DescribeClusterSecurityGroupsMessage
     ): Future[ClusterSecurityGroupMessage] = service.describeClusterSecurityGroups(params).promise.toFuture
-    def describeClusterSnapshotsFuture(params: DescribeClusterSnapshotsMessage): Future[SnapshotMessage] =
+    @inline def describeClusterSnapshotsFuture(params: DescribeClusterSnapshotsMessage): Future[SnapshotMessage] =
       service.describeClusterSnapshots(params).promise.toFuture
-    def describeClusterSubnetGroupsFuture(
+    @inline def describeClusterSubnetGroupsFuture(
         params: DescribeClusterSubnetGroupsMessage
     ): Future[ClusterSubnetGroupMessage] = service.describeClusterSubnetGroups(params).promise.toFuture
-    def describeClusterTracksFuture(params: DescribeClusterTracksMessage): Future[TrackListMessage] =
+    @inline def describeClusterTracksFuture(params: DescribeClusterTracksMessage): Future[TrackListMessage] =
       service.describeClusterTracks(params).promise.toFuture
-    def describeClusterVersionsFuture(params: DescribeClusterVersionsMessage): Future[ClusterVersionsMessage] =
+    @inline def describeClusterVersionsFuture(params: DescribeClusterVersionsMessage): Future[ClusterVersionsMessage] =
       service.describeClusterVersions(params).promise.toFuture
-    def describeClustersFuture(params: DescribeClustersMessage): Future[ClustersMessage] =
+    @inline def describeClustersFuture(params: DescribeClustersMessage): Future[ClustersMessage] =
       service.describeClusters(params).promise.toFuture
-    def describeDefaultClusterParametersFuture(
+    @inline def describeDefaultClusterParametersFuture(
         params: DescribeDefaultClusterParametersMessage
     ): Future[DescribeDefaultClusterParametersResult] =
       service.describeDefaultClusterParameters(params).promise.toFuture
-    def describeEventCategoriesFuture(params: DescribeEventCategoriesMessage): Future[EventCategoriesMessage] =
+    @inline def describeEventCategoriesFuture(params: DescribeEventCategoriesMessage): Future[EventCategoriesMessage] =
       service.describeEventCategories(params).promise.toFuture
-    def describeEventSubscriptionsFuture(params: DescribeEventSubscriptionsMessage): Future[EventSubscriptionsMessage] =
-      service.describeEventSubscriptions(params).promise.toFuture
-    def describeEventsFuture(params: DescribeEventsMessage): Future[EventsMessage] =
+    @inline def describeEventSubscriptionsFuture(
+        params: DescribeEventSubscriptionsMessage
+    ): Future[EventSubscriptionsMessage] = service.describeEventSubscriptions(params).promise.toFuture
+    @inline def describeEventsFuture(params: DescribeEventsMessage): Future[EventsMessage] =
       service.describeEvents(params).promise.toFuture
-    def describeHsmClientCertificatesFuture(
+    @inline def describeHsmClientCertificatesFuture(
         params: DescribeHsmClientCertificatesMessage
     ): Future[HsmClientCertificateMessage] = service.describeHsmClientCertificates(params).promise.toFuture
-    def describeHsmConfigurationsFuture(params: DescribeHsmConfigurationsMessage): Future[HsmConfigurationMessage] =
-      service.describeHsmConfigurations(params).promise.toFuture
-    def describeLoggingStatusFuture(params: DescribeLoggingStatusMessage): Future[LoggingStatus] =
+    @inline def describeHsmConfigurationsFuture(
+        params: DescribeHsmConfigurationsMessage
+    ): Future[HsmConfigurationMessage] = service.describeHsmConfigurations(params).promise.toFuture
+    @inline def describeLoggingStatusFuture(params: DescribeLoggingStatusMessage): Future[LoggingStatus] =
       service.describeLoggingStatus(params).promise.toFuture
-    def describeOrderableClusterOptionsFuture(
+    @inline def describeOrderableClusterOptionsFuture(
         params: DescribeOrderableClusterOptionsMessage
     ): Future[OrderableClusterOptionsMessage] = service.describeOrderableClusterOptions(params).promise.toFuture
-    def describeReservedNodeOfferingsFuture(
+    @inline def describeReservedNodeOfferingsFuture(
         params: DescribeReservedNodeOfferingsMessage
     ): Future[ReservedNodeOfferingsMessage] = service.describeReservedNodeOfferings(params).promise.toFuture
-    def describeReservedNodesFuture(params: DescribeReservedNodesMessage): Future[ReservedNodesMessage] =
+    @inline def describeReservedNodesFuture(params: DescribeReservedNodesMessage): Future[ReservedNodesMessage] =
       service.describeReservedNodes(params).promise.toFuture
-    def describeResizeFuture(params: DescribeResizeMessage): Future[ResizeProgressMessage] =
+    @inline def describeResizeFuture(params: DescribeResizeMessage): Future[ResizeProgressMessage] =
       service.describeResize(params).promise.toFuture
-    def describeSnapshotCopyGrantsFuture(params: DescribeSnapshotCopyGrantsMessage): Future[SnapshotCopyGrantMessage] =
-      service.describeSnapshotCopyGrants(params).promise.toFuture
-    def describeSnapshotSchedulesFuture(
+    @inline def describeSnapshotCopyGrantsFuture(
+        params: DescribeSnapshotCopyGrantsMessage
+    ): Future[SnapshotCopyGrantMessage] = service.describeSnapshotCopyGrants(params).promise.toFuture
+    @inline def describeSnapshotSchedulesFuture(
         params: DescribeSnapshotSchedulesMessage
-    ): Future[DescribeSnapshotSchedulesOutputMessage]           = service.describeSnapshotSchedules(params).promise.toFuture
-    def describeStorageFuture(): Future[CustomerStorageMessage] = service.describeStorage().promise.toFuture
-    def describeTableRestoreStatusFuture(params: DescribeTableRestoreStatusMessage): Future[TableRestoreStatusMessage] =
-      service.describeTableRestoreStatus(params).promise.toFuture
-    def describeTagsFuture(params: DescribeTagsMessage): Future[TaggedResourceListMessage] =
+    ): Future[DescribeSnapshotSchedulesOutputMessage]                   = service.describeSnapshotSchedules(params).promise.toFuture
+    @inline def describeStorageFuture(): Future[CustomerStorageMessage] = service.describeStorage().promise.toFuture
+    @inline def describeTableRestoreStatusFuture(
+        params: DescribeTableRestoreStatusMessage
+    ): Future[TableRestoreStatusMessage] = service.describeTableRestoreStatus(params).promise.toFuture
+    @inline def describeTagsFuture(params: DescribeTagsMessage): Future[TaggedResourceListMessage] =
       service.describeTags(params).promise.toFuture
-    def disableLoggingFuture(params: DisableLoggingMessage): Future[LoggingStatus] =
+    @inline def disableLoggingFuture(params: DisableLoggingMessage): Future[LoggingStatus] =
       service.disableLogging(params).promise.toFuture
-    def disableSnapshotCopyFuture(params: DisableSnapshotCopyMessage): Future[DisableSnapshotCopyResult] =
+    @inline def disableSnapshotCopyFuture(params: DisableSnapshotCopyMessage): Future[DisableSnapshotCopyResult] =
       service.disableSnapshotCopy(params).promise.toFuture
-    def enableLoggingFuture(params: EnableLoggingMessage): Future[LoggingStatus] =
+    @inline def enableLoggingFuture(params: EnableLoggingMessage): Future[LoggingStatus] =
       service.enableLogging(params).promise.toFuture
-    def enableSnapshotCopyFuture(params: EnableSnapshotCopyMessage): Future[EnableSnapshotCopyResult] =
+    @inline def enableSnapshotCopyFuture(params: EnableSnapshotCopyMessage): Future[EnableSnapshotCopyResult] =
       service.enableSnapshotCopy(params).promise.toFuture
-    def getClusterCredentialsFuture(params: GetClusterCredentialsMessage): Future[ClusterCredentials] =
+    @inline def getClusterCredentialsFuture(params: GetClusterCredentialsMessage): Future[ClusterCredentials] =
       service.getClusterCredentials(params).promise.toFuture
-    def getReservedNodeExchangeOfferingsFuture(
+    @inline def getReservedNodeExchangeOfferingsFuture(
         params: GetReservedNodeExchangeOfferingsInputMessage
     ): Future[GetReservedNodeExchangeOfferingsOutputMessage] =
       service.getReservedNodeExchangeOfferings(params).promise.toFuture
-    def modifyClusterDbRevisionFuture(params: ModifyClusterDbRevisionMessage): Future[ModifyClusterDbRevisionResult] =
-      service.modifyClusterDbRevision(params).promise.toFuture
-    def modifyClusterFuture(params: ModifyClusterMessage): Future[ModifyClusterResult] =
+    @inline def modifyClusterDbRevisionFuture(
+        params: ModifyClusterDbRevisionMessage
+    ): Future[ModifyClusterDbRevisionResult] = service.modifyClusterDbRevision(params).promise.toFuture
+    @inline def modifyClusterFuture(params: ModifyClusterMessage): Future[ModifyClusterResult] =
       service.modifyCluster(params).promise.toFuture
-    def modifyClusterIamRolesFuture(params: ModifyClusterIamRolesMessage): Future[ModifyClusterIamRolesResult] =
+    @inline def modifyClusterIamRolesFuture(params: ModifyClusterIamRolesMessage): Future[ModifyClusterIamRolesResult] =
       service.modifyClusterIamRoles(params).promise.toFuture
-    def modifyClusterMaintenanceFuture(
+    @inline def modifyClusterMaintenanceFuture(
         params: ModifyClusterMaintenanceMessage
     ): Future[ModifyClusterMaintenanceResult] = service.modifyClusterMaintenance(params).promise.toFuture
-    def modifyClusterParameterGroupFuture(
+    @inline def modifyClusterParameterGroupFuture(
         params: ModifyClusterParameterGroupMessage
     ): Future[ClusterParameterGroupNameMessage] = service.modifyClusterParameterGroup(params).promise.toFuture
-    def modifyClusterSnapshotFuture(params: ModifyClusterSnapshotMessage): Future[ModifyClusterSnapshotResult] =
+    @inline def modifyClusterSnapshotFuture(params: ModifyClusterSnapshotMessage): Future[ModifyClusterSnapshotResult] =
       service.modifyClusterSnapshot(params).promise.toFuture
-    def modifyClusterSnapshotScheduleFuture(params: ModifyClusterSnapshotScheduleMessage): Future[js.Object] =
+    @inline def modifyClusterSnapshotScheduleFuture(params: ModifyClusterSnapshotScheduleMessage): Future[js.Object] =
       service.modifyClusterSnapshotSchedule(params).promise.toFuture
-    def modifyClusterSubnetGroupFuture(
+    @inline def modifyClusterSubnetGroupFuture(
         params: ModifyClusterSubnetGroupMessage
     ): Future[ModifyClusterSubnetGroupResult] = service.modifyClusterSubnetGroup(params).promise.toFuture
-    def modifyEventSubscriptionFuture(params: ModifyEventSubscriptionMessage): Future[ModifyEventSubscriptionResult] =
-      service.modifyEventSubscription(params).promise.toFuture
-    def modifySnapshotCopyRetentionPeriodFuture(
+    @inline def modifyEventSubscriptionFuture(
+        params: ModifyEventSubscriptionMessage
+    ): Future[ModifyEventSubscriptionResult] = service.modifyEventSubscription(params).promise.toFuture
+    @inline def modifySnapshotCopyRetentionPeriodFuture(
         params: ModifySnapshotCopyRetentionPeriodMessage
     ): Future[ModifySnapshotCopyRetentionPeriodResult] =
       service.modifySnapshotCopyRetentionPeriod(params).promise.toFuture
-    def modifySnapshotScheduleFuture(params: ModifySnapshotScheduleMessage): Future[SnapshotSchedule] =
+    @inline def modifySnapshotScheduleFuture(params: ModifySnapshotScheduleMessage): Future[SnapshotSchedule] =
       service.modifySnapshotSchedule(params).promise.toFuture
-    def purchaseReservedNodeOfferingFuture(
+    @inline def purchaseReservedNodeOfferingFuture(
         params: PurchaseReservedNodeOfferingMessage
     ): Future[PurchaseReservedNodeOfferingResult] = service.purchaseReservedNodeOffering(params).promise.toFuture
-    def rebootClusterFuture(params: RebootClusterMessage): Future[RebootClusterResult] =
+    @inline def rebootClusterFuture(params: RebootClusterMessage): Future[RebootClusterResult] =
       service.rebootCluster(params).promise.toFuture
-    def resetClusterParameterGroupFuture(
+    @inline def resetClusterParameterGroupFuture(
         params: ResetClusterParameterGroupMessage
     ): Future[ClusterParameterGroupNameMessage] = service.resetClusterParameterGroup(params).promise.toFuture
-    def resizeClusterFuture(params: ResizeClusterMessage): Future[ResizeClusterResult] =
+    @inline def resizeClusterFuture(params: ResizeClusterMessage): Future[ResizeClusterResult] =
       service.resizeCluster(params).promise.toFuture
-    def restoreFromClusterSnapshotFuture(
+    @inline def restoreFromClusterSnapshotFuture(
         params: RestoreFromClusterSnapshotMessage
     ): Future[RestoreFromClusterSnapshotResult] = service.restoreFromClusterSnapshot(params).promise.toFuture
-    def restoreTableFromClusterSnapshotFuture(
+    @inline def restoreTableFromClusterSnapshotFuture(
         params: RestoreTableFromClusterSnapshotMessage
     ): Future[RestoreTableFromClusterSnapshotResult] = service.restoreTableFromClusterSnapshot(params).promise.toFuture
-    def revokeClusterSecurityGroupIngressFuture(
+    @inline def revokeClusterSecurityGroupIngressFuture(
         params: RevokeClusterSecurityGroupIngressMessage
     ): Future[RevokeClusterSecurityGroupIngressResult] =
       service.revokeClusterSecurityGroupIngress(params).promise.toFuture
-    def revokeSnapshotAccessFuture(params: RevokeSnapshotAccessMessage): Future[RevokeSnapshotAccessResult] =
+    @inline def revokeSnapshotAccessFuture(params: RevokeSnapshotAccessMessage): Future[RevokeSnapshotAccessResult] =
       service.revokeSnapshotAccess(params).promise.toFuture
-    def rotateEncryptionKeyFuture(params: RotateEncryptionKeyMessage): Future[RotateEncryptionKeyResult] =
+    @inline def rotateEncryptionKeyFuture(params: RotateEncryptionKeyMessage): Future[RotateEncryptionKeyResult] =
       service.rotateEncryptionKey(params).promise.toFuture
   }
 }

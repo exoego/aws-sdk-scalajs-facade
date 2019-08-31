@@ -30,15 +30,15 @@ package object translate {
 
   implicit final class TranslateOps(private val service: Translate) extends AnyVal {
 
-    def deleteTerminologyFuture(params: DeleteTerminologyRequest): Future[js.Object] =
+    @inline def deleteTerminologyFuture(params: DeleteTerminologyRequest): Future[js.Object] =
       service.deleteTerminology(params).promise.toFuture
-    def getTerminologyFuture(params: GetTerminologyRequest): Future[GetTerminologyResponse] =
+    @inline def getTerminologyFuture(params: GetTerminologyRequest): Future[GetTerminologyResponse] =
       service.getTerminology(params).promise.toFuture
-    def importTerminologyFuture(params: ImportTerminologyRequest): Future[ImportTerminologyResponse] =
+    @inline def importTerminologyFuture(params: ImportTerminologyRequest): Future[ImportTerminologyResponse] =
       service.importTerminology(params).promise.toFuture
-    def listTerminologiesFuture(params: ListTerminologiesRequest): Future[ListTerminologiesResponse] =
+    @inline def listTerminologiesFuture(params: ListTerminologiesRequest): Future[ListTerminologiesResponse] =
       service.listTerminologies(params).promise.toFuture
-    def translateTextFuture(params: TranslateTextRequest): Future[TranslateTextResponse] =
+    @inline def translateTextFuture(params: TranslateTextRequest): Future[TranslateTextResponse] =
       service.translateText(params).promise.toFuture
   }
 }

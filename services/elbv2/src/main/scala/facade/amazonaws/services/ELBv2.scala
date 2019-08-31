@@ -138,78 +138,79 @@ package object elbv2 {
 
   implicit final class ELBv2Ops(private val service: ELBv2) extends AnyVal {
 
-    def addListenerCertificatesFuture(params: AddListenerCertificatesInput): Future[AddListenerCertificatesOutput] =
-      service.addListenerCertificates(params).promise.toFuture
-    def addTagsFuture(params: AddTagsInput): Future[AddTagsOutput] = service.addTags(params).promise.toFuture
-    def createListenerFuture(params: CreateListenerInput): Future[CreateListenerOutput] =
+    @inline def addListenerCertificatesFuture(
+        params: AddListenerCertificatesInput
+    ): Future[AddListenerCertificatesOutput]                               = service.addListenerCertificates(params).promise.toFuture
+    @inline def addTagsFuture(params: AddTagsInput): Future[AddTagsOutput] = service.addTags(params).promise.toFuture
+    @inline def createListenerFuture(params: CreateListenerInput): Future[CreateListenerOutput] =
       service.createListener(params).promise.toFuture
-    def createLoadBalancerFuture(params: CreateLoadBalancerInput): Future[CreateLoadBalancerOutput] =
+    @inline def createLoadBalancerFuture(params: CreateLoadBalancerInput): Future[CreateLoadBalancerOutput] =
       service.createLoadBalancer(params).promise.toFuture
-    def createRuleFuture(params: CreateRuleInput): Future[CreateRuleOutput] =
+    @inline def createRuleFuture(params: CreateRuleInput): Future[CreateRuleOutput] =
       service.createRule(params).promise.toFuture
-    def createTargetGroupFuture(params: CreateTargetGroupInput): Future[CreateTargetGroupOutput] =
+    @inline def createTargetGroupFuture(params: CreateTargetGroupInput): Future[CreateTargetGroupOutput] =
       service.createTargetGroup(params).promise.toFuture
-    def deleteListenerFuture(params: DeleteListenerInput): Future[DeleteListenerOutput] =
+    @inline def deleteListenerFuture(params: DeleteListenerInput): Future[DeleteListenerOutput] =
       service.deleteListener(params).promise.toFuture
-    def deleteLoadBalancerFuture(params: DeleteLoadBalancerInput): Future[DeleteLoadBalancerOutput] =
+    @inline def deleteLoadBalancerFuture(params: DeleteLoadBalancerInput): Future[DeleteLoadBalancerOutput] =
       service.deleteLoadBalancer(params).promise.toFuture
-    def deleteRuleFuture(params: DeleteRuleInput): Future[DeleteRuleOutput] =
+    @inline def deleteRuleFuture(params: DeleteRuleInput): Future[DeleteRuleOutput] =
       service.deleteRule(params).promise.toFuture
-    def deleteTargetGroupFuture(params: DeleteTargetGroupInput): Future[DeleteTargetGroupOutput] =
+    @inline def deleteTargetGroupFuture(params: DeleteTargetGroupInput): Future[DeleteTargetGroupOutput] =
       service.deleteTargetGroup(params).promise.toFuture
-    def deregisterTargetsFuture(params: DeregisterTargetsInput): Future[DeregisterTargetsOutput] =
+    @inline def deregisterTargetsFuture(params: DeregisterTargetsInput): Future[DeregisterTargetsOutput] =
       service.deregisterTargets(params).promise.toFuture
-    def describeAccountLimitsFuture(params: DescribeAccountLimitsInput): Future[DescribeAccountLimitsOutput] =
+    @inline def describeAccountLimitsFuture(params: DescribeAccountLimitsInput): Future[DescribeAccountLimitsOutput] =
       service.describeAccountLimits(params).promise.toFuture
-    def describeListenerCertificatesFuture(
+    @inline def describeListenerCertificatesFuture(
         params: DescribeListenerCertificatesInput
     ): Future[DescribeListenerCertificatesOutput] = service.describeListenerCertificates(params).promise.toFuture
-    def describeListenersFuture(params: DescribeListenersInput): Future[DescribeListenersOutput] =
+    @inline def describeListenersFuture(params: DescribeListenersInput): Future[DescribeListenersOutput] =
       service.describeListeners(params).promise.toFuture
-    def describeLoadBalancerAttributesFuture(
+    @inline def describeLoadBalancerAttributesFuture(
         params: DescribeLoadBalancerAttributesInput
     ): Future[DescribeLoadBalancerAttributesOutput] = service.describeLoadBalancerAttributes(params).promise.toFuture
-    def describeLoadBalancersFuture(params: DescribeLoadBalancersInput): Future[DescribeLoadBalancersOutput] =
+    @inline def describeLoadBalancersFuture(params: DescribeLoadBalancersInput): Future[DescribeLoadBalancersOutput] =
       service.describeLoadBalancers(params).promise.toFuture
-    def describeRulesFuture(params: DescribeRulesInput): Future[DescribeRulesOutput] =
+    @inline def describeRulesFuture(params: DescribeRulesInput): Future[DescribeRulesOutput] =
       service.describeRules(params).promise.toFuture
-    def describeSSLPoliciesFuture(params: DescribeSSLPoliciesInput): Future[DescribeSSLPoliciesOutput] =
+    @inline def describeSSLPoliciesFuture(params: DescribeSSLPoliciesInput): Future[DescribeSSLPoliciesOutput] =
       service.describeSSLPolicies(params).promise.toFuture
-    def describeTagsFuture(params: DescribeTagsInput): Future[DescribeTagsOutput] =
+    @inline def describeTagsFuture(params: DescribeTagsInput): Future[DescribeTagsOutput] =
       service.describeTags(params).promise.toFuture
-    def describeTargetGroupAttributesFuture(
+    @inline def describeTargetGroupAttributesFuture(
         params: DescribeTargetGroupAttributesInput
     ): Future[DescribeTargetGroupAttributesOutput] = service.describeTargetGroupAttributes(params).promise.toFuture
-    def describeTargetGroupsFuture(params: DescribeTargetGroupsInput): Future[DescribeTargetGroupsOutput] =
+    @inline def describeTargetGroupsFuture(params: DescribeTargetGroupsInput): Future[DescribeTargetGroupsOutput] =
       service.describeTargetGroups(params).promise.toFuture
-    def describeTargetHealthFuture(params: DescribeTargetHealthInput): Future[DescribeTargetHealthOutput] =
+    @inline def describeTargetHealthFuture(params: DescribeTargetHealthInput): Future[DescribeTargetHealthOutput] =
       service.describeTargetHealth(params).promise.toFuture
-    def modifyListenerFuture(params: ModifyListenerInput): Future[ModifyListenerOutput] =
+    @inline def modifyListenerFuture(params: ModifyListenerInput): Future[ModifyListenerOutput] =
       service.modifyListener(params).promise.toFuture
-    def modifyLoadBalancerAttributesFuture(
+    @inline def modifyLoadBalancerAttributesFuture(
         params: ModifyLoadBalancerAttributesInput
     ): Future[ModifyLoadBalancerAttributesOutput] = service.modifyLoadBalancerAttributes(params).promise.toFuture
-    def modifyRuleFuture(params: ModifyRuleInput): Future[ModifyRuleOutput] =
+    @inline def modifyRuleFuture(params: ModifyRuleInput): Future[ModifyRuleOutput] =
       service.modifyRule(params).promise.toFuture
-    def modifyTargetGroupAttributesFuture(
+    @inline def modifyTargetGroupAttributesFuture(
         params: ModifyTargetGroupAttributesInput
     ): Future[ModifyTargetGroupAttributesOutput] = service.modifyTargetGroupAttributes(params).promise.toFuture
-    def modifyTargetGroupFuture(params: ModifyTargetGroupInput): Future[ModifyTargetGroupOutput] =
+    @inline def modifyTargetGroupFuture(params: ModifyTargetGroupInput): Future[ModifyTargetGroupOutput] =
       service.modifyTargetGroup(params).promise.toFuture
-    def registerTargetsFuture(params: RegisterTargetsInput): Future[RegisterTargetsOutput] =
+    @inline def registerTargetsFuture(params: RegisterTargetsInput): Future[RegisterTargetsOutput] =
       service.registerTargets(params).promise.toFuture
-    def removeListenerCertificatesFuture(
+    @inline def removeListenerCertificatesFuture(
         params: RemoveListenerCertificatesInput
     ): Future[RemoveListenerCertificatesOutput] = service.removeListenerCertificates(params).promise.toFuture
-    def removeTagsFuture(params: RemoveTagsInput): Future[RemoveTagsOutput] =
+    @inline def removeTagsFuture(params: RemoveTagsInput): Future[RemoveTagsOutput] =
       service.removeTags(params).promise.toFuture
-    def setIpAddressTypeFuture(params: SetIpAddressTypeInput): Future[SetIpAddressTypeOutput] =
+    @inline def setIpAddressTypeFuture(params: SetIpAddressTypeInput): Future[SetIpAddressTypeOutput] =
       service.setIpAddressType(params).promise.toFuture
-    def setRulePrioritiesFuture(params: SetRulePrioritiesInput): Future[SetRulePrioritiesOutput] =
+    @inline def setRulePrioritiesFuture(params: SetRulePrioritiesInput): Future[SetRulePrioritiesOutput] =
       service.setRulePriorities(params).promise.toFuture
-    def setSecurityGroupsFuture(params: SetSecurityGroupsInput): Future[SetSecurityGroupsOutput] =
+    @inline def setSecurityGroupsFuture(params: SetSecurityGroupsInput): Future[SetSecurityGroupsOutput] =
       service.setSecurityGroups(params).promise.toFuture
-    def setSubnetsFuture(params: SetSubnetsInput): Future[SetSubnetsOutput] =
+    @inline def setSubnetsFuture(params: SetSubnetsInput): Future[SetSubnetsOutput] =
       service.setSubnets(params).promise.toFuture
   }
 }

@@ -52,43 +52,44 @@ package object athena {
 
   implicit final class AthenaOps(private val service: Athena) extends AnyVal {
 
-    def batchGetNamedQueryFuture(params: BatchGetNamedQueryInput): Future[BatchGetNamedQueryOutput] =
+    @inline def batchGetNamedQueryFuture(params: BatchGetNamedQueryInput): Future[BatchGetNamedQueryOutput] =
       service.batchGetNamedQuery(params).promise.toFuture
-    def batchGetQueryExecutionFuture(params: BatchGetQueryExecutionInput): Future[BatchGetQueryExecutionOutput] =
-      service.batchGetQueryExecution(params).promise.toFuture
-    def createNamedQueryFuture(params: CreateNamedQueryInput): Future[CreateNamedQueryOutput] =
+    @inline def batchGetQueryExecutionFuture(
+        params: BatchGetQueryExecutionInput
+    ): Future[BatchGetQueryExecutionOutput] = service.batchGetQueryExecution(params).promise.toFuture
+    @inline def createNamedQueryFuture(params: CreateNamedQueryInput): Future[CreateNamedQueryOutput] =
       service.createNamedQuery(params).promise.toFuture
-    def createWorkGroupFuture(params: CreateWorkGroupInput): Future[CreateWorkGroupOutput] =
+    @inline def createWorkGroupFuture(params: CreateWorkGroupInput): Future[CreateWorkGroupOutput] =
       service.createWorkGroup(params).promise.toFuture
-    def deleteNamedQueryFuture(params: DeleteNamedQueryInput): Future[DeleteNamedQueryOutput] =
+    @inline def deleteNamedQueryFuture(params: DeleteNamedQueryInput): Future[DeleteNamedQueryOutput] =
       service.deleteNamedQuery(params).promise.toFuture
-    def deleteWorkGroupFuture(params: DeleteWorkGroupInput): Future[DeleteWorkGroupOutput] =
+    @inline def deleteWorkGroupFuture(params: DeleteWorkGroupInput): Future[DeleteWorkGroupOutput] =
       service.deleteWorkGroup(params).promise.toFuture
-    def getNamedQueryFuture(params: GetNamedQueryInput): Future[GetNamedQueryOutput] =
+    @inline def getNamedQueryFuture(params: GetNamedQueryInput): Future[GetNamedQueryOutput] =
       service.getNamedQuery(params).promise.toFuture
-    def getQueryExecutionFuture(params: GetQueryExecutionInput): Future[GetQueryExecutionOutput] =
+    @inline def getQueryExecutionFuture(params: GetQueryExecutionInput): Future[GetQueryExecutionOutput] =
       service.getQueryExecution(params).promise.toFuture
-    def getQueryResultsFuture(params: GetQueryResultsInput): Future[GetQueryResultsOutput] =
+    @inline def getQueryResultsFuture(params: GetQueryResultsInput): Future[GetQueryResultsOutput] =
       service.getQueryResults(params).promise.toFuture
-    def getWorkGroupFuture(params: GetWorkGroupInput): Future[GetWorkGroupOutput] =
+    @inline def getWorkGroupFuture(params: GetWorkGroupInput): Future[GetWorkGroupOutput] =
       service.getWorkGroup(params).promise.toFuture
-    def listNamedQueriesFuture(params: ListNamedQueriesInput): Future[ListNamedQueriesOutput] =
+    @inline def listNamedQueriesFuture(params: ListNamedQueriesInput): Future[ListNamedQueriesOutput] =
       service.listNamedQueries(params).promise.toFuture
-    def listQueryExecutionsFuture(params: ListQueryExecutionsInput): Future[ListQueryExecutionsOutput] =
+    @inline def listQueryExecutionsFuture(params: ListQueryExecutionsInput): Future[ListQueryExecutionsOutput] =
       service.listQueryExecutions(params).promise.toFuture
-    def listTagsForResourceFuture(params: ListTagsForResourceInput): Future[ListTagsForResourceOutput] =
+    @inline def listTagsForResourceFuture(params: ListTagsForResourceInput): Future[ListTagsForResourceOutput] =
       service.listTagsForResource(params).promise.toFuture
-    def listWorkGroupsFuture(params: ListWorkGroupsInput): Future[ListWorkGroupsOutput] =
+    @inline def listWorkGroupsFuture(params: ListWorkGroupsInput): Future[ListWorkGroupsOutput] =
       service.listWorkGroups(params).promise.toFuture
-    def startQueryExecutionFuture(params: StartQueryExecutionInput): Future[StartQueryExecutionOutput] =
+    @inline def startQueryExecutionFuture(params: StartQueryExecutionInput): Future[StartQueryExecutionOutput] =
       service.startQueryExecution(params).promise.toFuture
-    def stopQueryExecutionFuture(params: StopQueryExecutionInput): Future[StopQueryExecutionOutput] =
+    @inline def stopQueryExecutionFuture(params: StopQueryExecutionInput): Future[StopQueryExecutionOutput] =
       service.stopQueryExecution(params).promise.toFuture
-    def tagResourceFuture(params: TagResourceInput): Future[TagResourceOutput] =
+    @inline def tagResourceFuture(params: TagResourceInput): Future[TagResourceOutput] =
       service.tagResource(params).promise.toFuture
-    def untagResourceFuture(params: UntagResourceInput): Future[UntagResourceOutput] =
+    @inline def untagResourceFuture(params: UntagResourceInput): Future[UntagResourceOutput] =
       service.untagResource(params).promise.toFuture
-    def updateWorkGroupFuture(params: UpdateWorkGroupInput): Future[UpdateWorkGroupOutput] =
+    @inline def updateWorkGroupFuture(params: UpdateWorkGroupInput): Future[UpdateWorkGroupOutput] =
       service.updateWorkGroup(params).promise.toFuture
   }
 }

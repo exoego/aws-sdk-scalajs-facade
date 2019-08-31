@@ -37,43 +37,46 @@ package object kafka {
 
   implicit final class KafkaOps(private val service: Kafka) extends AnyVal {
 
-    def createClusterFuture(params: CreateClusterRequest): Future[CreateClusterResponse] =
+    @inline def createClusterFuture(params: CreateClusterRequest): Future[CreateClusterResponse] =
       service.createCluster(params).promise.toFuture
-    def createConfigurationFuture(params: CreateConfigurationRequest): Future[CreateConfigurationResponse] =
+    @inline def createConfigurationFuture(params: CreateConfigurationRequest): Future[CreateConfigurationResponse] =
       service.createConfiguration(params).promise.toFuture
-    def deleteClusterFuture(params: DeleteClusterRequest): Future[DeleteClusterResponse] =
+    @inline def deleteClusterFuture(params: DeleteClusterRequest): Future[DeleteClusterResponse] =
       service.deleteCluster(params).promise.toFuture
-    def describeClusterFuture(params: DescribeClusterRequest): Future[DescribeClusterResponse] =
+    @inline def describeClusterFuture(params: DescribeClusterRequest): Future[DescribeClusterResponse] =
       service.describeCluster(params).promise.toFuture
-    def describeClusterOperationFuture(
+    @inline def describeClusterOperationFuture(
         params: DescribeClusterOperationRequest
     ): Future[DescribeClusterOperationResponse] = service.describeClusterOperation(params).promise.toFuture
-    def describeConfigurationFuture(params: DescribeConfigurationRequest): Future[DescribeConfigurationResponse] =
-      service.describeConfiguration(params).promise.toFuture
-    def describeConfigurationRevisionFuture(
+    @inline def describeConfigurationFuture(
+        params: DescribeConfigurationRequest
+    ): Future[DescribeConfigurationResponse] = service.describeConfiguration(params).promise.toFuture
+    @inline def describeConfigurationRevisionFuture(
         params: DescribeConfigurationRevisionRequest
     ): Future[DescribeConfigurationRevisionResponse] = service.describeConfigurationRevision(params).promise.toFuture
-    def getBootstrapBrokersFuture(params: GetBootstrapBrokersRequest): Future[GetBootstrapBrokersResponse] =
+    @inline def getBootstrapBrokersFuture(params: GetBootstrapBrokersRequest): Future[GetBootstrapBrokersResponse] =
       service.getBootstrapBrokers(params).promise.toFuture
-    def listClusterOperationsFuture(params: ListClusterOperationsRequest): Future[ListClusterOperationsResponse] =
-      service.listClusterOperations(params).promise.toFuture
-    def listClustersFuture(params: ListClustersRequest): Future[ListClustersResponse] =
+    @inline def listClusterOperationsFuture(
+        params: ListClusterOperationsRequest
+    ): Future[ListClusterOperationsResponse] = service.listClusterOperations(params).promise.toFuture
+    @inline def listClustersFuture(params: ListClustersRequest): Future[ListClustersResponse] =
       service.listClusters(params).promise.toFuture
-    def listConfigurationRevisionsFuture(
+    @inline def listConfigurationRevisionsFuture(
         params: ListConfigurationRevisionsRequest
     ): Future[ListConfigurationRevisionsResponse] = service.listConfigurationRevisions(params).promise.toFuture
-    def listConfigurationsFuture(params: ListConfigurationsRequest): Future[ListConfigurationsResponse] =
+    @inline def listConfigurationsFuture(params: ListConfigurationsRequest): Future[ListConfigurationsResponse] =
       service.listConfigurations(params).promise.toFuture
-    def listNodesFuture(params: ListNodesRequest): Future[ListNodesResponse] =
+    @inline def listNodesFuture(params: ListNodesRequest): Future[ListNodesResponse] =
       service.listNodes(params).promise.toFuture
-    def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] =
+    @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] =
       service.listTagsForResource(params).promise.toFuture
-    def tagResourceFuture(params: TagResourceRequest): Future[js.Object] = service.tagResource(params).promise.toFuture
-    def untagResourceFuture(params: UntagResourceRequest): Future[js.Object] =
+    @inline def tagResourceFuture(params: TagResourceRequest): Future[js.Object] =
+      service.tagResource(params).promise.toFuture
+    @inline def untagResourceFuture(params: UntagResourceRequest): Future[js.Object] =
       service.untagResource(params).promise.toFuture
-    def updateBrokerStorageFuture(params: UpdateBrokerStorageRequest): Future[UpdateBrokerStorageResponse] =
+    @inline def updateBrokerStorageFuture(params: UpdateBrokerStorageRequest): Future[UpdateBrokerStorageResponse] =
       service.updateBrokerStorage(params).promise.toFuture
-    def updateClusterConfigurationFuture(
+    @inline def updateClusterConfigurationFuture(
         params: UpdateClusterConfigurationRequest
     ): Future[UpdateClusterConfigurationResponse] = service.updateClusterConfiguration(params).promise.toFuture
   }

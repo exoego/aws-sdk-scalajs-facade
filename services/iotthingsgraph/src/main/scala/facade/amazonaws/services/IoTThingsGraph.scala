@@ -75,81 +75,88 @@ package object iotthingsgraph {
 
   implicit final class IoTThingsGraphOps(private val service: IoTThingsGraph) extends AnyVal {
 
-    def associateEntityToThingFuture(params: AssociateEntityToThingRequest): Future[AssociateEntityToThingResponse] =
-      service.associateEntityToThing(params).promise.toFuture
-    def createFlowTemplateFuture(params: CreateFlowTemplateRequest): Future[CreateFlowTemplateResponse] =
+    @inline def associateEntityToThingFuture(
+        params: AssociateEntityToThingRequest
+    ): Future[AssociateEntityToThingResponse] = service.associateEntityToThing(params).promise.toFuture
+    @inline def createFlowTemplateFuture(params: CreateFlowTemplateRequest): Future[CreateFlowTemplateResponse] =
       service.createFlowTemplate(params).promise.toFuture
-    def createSystemInstanceFuture(params: CreateSystemInstanceRequest): Future[CreateSystemInstanceResponse] =
+    @inline def createSystemInstanceFuture(params: CreateSystemInstanceRequest): Future[CreateSystemInstanceResponse] =
       service.createSystemInstance(params).promise.toFuture
-    def createSystemTemplateFuture(params: CreateSystemTemplateRequest): Future[CreateSystemTemplateResponse] =
+    @inline def createSystemTemplateFuture(params: CreateSystemTemplateRequest): Future[CreateSystemTemplateResponse] =
       service.createSystemTemplate(params).promise.toFuture
-    def deleteFlowTemplateFuture(params: DeleteFlowTemplateRequest): Future[DeleteFlowTemplateResponse] =
+    @inline def deleteFlowTemplateFuture(params: DeleteFlowTemplateRequest): Future[DeleteFlowTemplateResponse] =
       service.deleteFlowTemplate(params).promise.toFuture
-    def deleteNamespaceFuture(params: DeleteNamespaceRequest): Future[DeleteNamespaceResponse] =
+    @inline def deleteNamespaceFuture(params: DeleteNamespaceRequest): Future[DeleteNamespaceResponse] =
       service.deleteNamespace(params).promise.toFuture
-    def deleteSystemInstanceFuture(params: DeleteSystemInstanceRequest): Future[DeleteSystemInstanceResponse] =
+    @inline def deleteSystemInstanceFuture(params: DeleteSystemInstanceRequest): Future[DeleteSystemInstanceResponse] =
       service.deleteSystemInstance(params).promise.toFuture
-    def deleteSystemTemplateFuture(params: DeleteSystemTemplateRequest): Future[DeleteSystemTemplateResponse] =
+    @inline def deleteSystemTemplateFuture(params: DeleteSystemTemplateRequest): Future[DeleteSystemTemplateResponse] =
       service.deleteSystemTemplate(params).promise.toFuture
-    def deploySystemInstanceFuture(params: DeploySystemInstanceRequest): Future[DeploySystemInstanceResponse] =
+    @inline def deploySystemInstanceFuture(params: DeploySystemInstanceRequest): Future[DeploySystemInstanceResponse] =
       service.deploySystemInstance(params).promise.toFuture
-    def deprecateFlowTemplateFuture(params: DeprecateFlowTemplateRequest): Future[DeprecateFlowTemplateResponse] =
-      service.deprecateFlowTemplate(params).promise.toFuture
-    def deprecateSystemTemplateFuture(params: DeprecateSystemTemplateRequest): Future[DeprecateSystemTemplateResponse] =
-      service.deprecateSystemTemplate(params).promise.toFuture
-    def describeNamespaceFuture(params: DescribeNamespaceRequest): Future[DescribeNamespaceResponse] =
+    @inline def deprecateFlowTemplateFuture(
+        params: DeprecateFlowTemplateRequest
+    ): Future[DeprecateFlowTemplateResponse] = service.deprecateFlowTemplate(params).promise.toFuture
+    @inline def deprecateSystemTemplateFuture(
+        params: DeprecateSystemTemplateRequest
+    ): Future[DeprecateSystemTemplateResponse] = service.deprecateSystemTemplate(params).promise.toFuture
+    @inline def describeNamespaceFuture(params: DescribeNamespaceRequest): Future[DescribeNamespaceResponse] =
       service.describeNamespace(params).promise.toFuture
-    def dissociateEntityFromThingFuture(
+    @inline def dissociateEntityFromThingFuture(
         params: DissociateEntityFromThingRequest
     ): Future[DissociateEntityFromThingResponse] = service.dissociateEntityFromThing(params).promise.toFuture
-    def getEntitiesFuture(params: GetEntitiesRequest): Future[GetEntitiesResponse] =
+    @inline def getEntitiesFuture(params: GetEntitiesRequest): Future[GetEntitiesResponse] =
       service.getEntities(params).promise.toFuture
-    def getFlowTemplateFuture(params: GetFlowTemplateRequest): Future[GetFlowTemplateResponse] =
+    @inline def getFlowTemplateFuture(params: GetFlowTemplateRequest): Future[GetFlowTemplateResponse] =
       service.getFlowTemplate(params).promise.toFuture
-    def getFlowTemplateRevisionsFuture(
+    @inline def getFlowTemplateRevisionsFuture(
         params: GetFlowTemplateRevisionsRequest
     ): Future[GetFlowTemplateRevisionsResponse] = service.getFlowTemplateRevisions(params).promise.toFuture
-    def getNamespaceDeletionStatusFuture(
+    @inline def getNamespaceDeletionStatusFuture(
         params: GetNamespaceDeletionStatusRequest
     ): Future[GetNamespaceDeletionStatusResponse] = service.getNamespaceDeletionStatus(params).promise.toFuture
-    def getSystemInstanceFuture(params: GetSystemInstanceRequest): Future[GetSystemInstanceResponse] =
+    @inline def getSystemInstanceFuture(params: GetSystemInstanceRequest): Future[GetSystemInstanceResponse] =
       service.getSystemInstance(params).promise.toFuture
-    def getSystemTemplateFuture(params: GetSystemTemplateRequest): Future[GetSystemTemplateResponse] =
+    @inline def getSystemTemplateFuture(params: GetSystemTemplateRequest): Future[GetSystemTemplateResponse] =
       service.getSystemTemplate(params).promise.toFuture
-    def getSystemTemplateRevisionsFuture(
+    @inline def getSystemTemplateRevisionsFuture(
         params: GetSystemTemplateRevisionsRequest
     ): Future[GetSystemTemplateRevisionsResponse] = service.getSystemTemplateRevisions(params).promise.toFuture
-    def getUploadStatusFuture(params: GetUploadStatusRequest): Future[GetUploadStatusResponse] =
+    @inline def getUploadStatusFuture(params: GetUploadStatusRequest): Future[GetUploadStatusResponse] =
       service.getUploadStatus(params).promise.toFuture
-    def listFlowExecutionMessagesFuture(
+    @inline def listFlowExecutionMessagesFuture(
         params: ListFlowExecutionMessagesRequest
     ): Future[ListFlowExecutionMessagesResponse] = service.listFlowExecutionMessages(params).promise.toFuture
-    def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] =
+    @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] =
       service.listTagsForResource(params).promise.toFuture
-    def searchEntitiesFuture(params: SearchEntitiesRequest): Future[SearchEntitiesResponse] =
+    @inline def searchEntitiesFuture(params: SearchEntitiesRequest): Future[SearchEntitiesResponse] =
       service.searchEntities(params).promise.toFuture
-    def searchFlowExecutionsFuture(params: SearchFlowExecutionsRequest): Future[SearchFlowExecutionsResponse] =
+    @inline def searchFlowExecutionsFuture(params: SearchFlowExecutionsRequest): Future[SearchFlowExecutionsResponse] =
       service.searchFlowExecutions(params).promise.toFuture
-    def searchFlowTemplatesFuture(params: SearchFlowTemplatesRequest): Future[SearchFlowTemplatesResponse] =
+    @inline def searchFlowTemplatesFuture(params: SearchFlowTemplatesRequest): Future[SearchFlowTemplatesResponse] =
       service.searchFlowTemplates(params).promise.toFuture
-    def searchSystemInstancesFuture(params: SearchSystemInstancesRequest): Future[SearchSystemInstancesResponse] =
-      service.searchSystemInstances(params).promise.toFuture
-    def searchSystemTemplatesFuture(params: SearchSystemTemplatesRequest): Future[SearchSystemTemplatesResponse] =
-      service.searchSystemTemplates(params).promise.toFuture
-    def searchThingsFuture(params: SearchThingsRequest): Future[SearchThingsResponse] =
+    @inline def searchSystemInstancesFuture(
+        params: SearchSystemInstancesRequest
+    ): Future[SearchSystemInstancesResponse] = service.searchSystemInstances(params).promise.toFuture
+    @inline def searchSystemTemplatesFuture(
+        params: SearchSystemTemplatesRequest
+    ): Future[SearchSystemTemplatesResponse] = service.searchSystemTemplates(params).promise.toFuture
+    @inline def searchThingsFuture(params: SearchThingsRequest): Future[SearchThingsResponse] =
       service.searchThings(params).promise.toFuture
-    def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] =
+    @inline def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] =
       service.tagResource(params).promise.toFuture
-    def undeploySystemInstanceFuture(params: UndeploySystemInstanceRequest): Future[UndeploySystemInstanceResponse] =
-      service.undeploySystemInstance(params).promise.toFuture
-    def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] =
+    @inline def undeploySystemInstanceFuture(
+        params: UndeploySystemInstanceRequest
+    ): Future[UndeploySystemInstanceResponse] = service.undeploySystemInstance(params).promise.toFuture
+    @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] =
       service.untagResource(params).promise.toFuture
-    def updateFlowTemplateFuture(params: UpdateFlowTemplateRequest): Future[UpdateFlowTemplateResponse] =
+    @inline def updateFlowTemplateFuture(params: UpdateFlowTemplateRequest): Future[UpdateFlowTemplateResponse] =
       service.updateFlowTemplate(params).promise.toFuture
-    def updateSystemTemplateFuture(params: UpdateSystemTemplateRequest): Future[UpdateSystemTemplateResponse] =
+    @inline def updateSystemTemplateFuture(params: UpdateSystemTemplateRequest): Future[UpdateSystemTemplateResponse] =
       service.updateSystemTemplate(params).promise.toFuture
-    def uploadEntityDefinitionsFuture(params: UploadEntityDefinitionsRequest): Future[UploadEntityDefinitionsResponse] =
-      service.uploadEntityDefinitions(params).promise.toFuture
+    @inline def uploadEntityDefinitionsFuture(
+        params: UploadEntityDefinitionsRequest
+    ): Future[UploadEntityDefinitionsResponse] = service.uploadEntityDefinitions(params).promise.toFuture
   }
 }
 

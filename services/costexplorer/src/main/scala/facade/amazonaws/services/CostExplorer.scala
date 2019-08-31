@@ -87,26 +87,28 @@ package object costexplorer {
 
   implicit final class CostExplorerOps(private val service: CostExplorer) extends AnyVal {
 
-    def getCostAndUsageFuture(params: GetCostAndUsageRequest): Future[GetCostAndUsageResponse] =
+    @inline def getCostAndUsageFuture(params: GetCostAndUsageRequest): Future[GetCostAndUsageResponse] =
       service.getCostAndUsage(params).promise.toFuture
-    def getCostForecastFuture(params: GetCostForecastRequest): Future[GetCostForecastResponse] =
+    @inline def getCostForecastFuture(params: GetCostForecastRequest): Future[GetCostForecastResponse] =
       service.getCostForecast(params).promise.toFuture
-    def getDimensionValuesFuture(params: GetDimensionValuesRequest): Future[GetDimensionValuesResponse] =
+    @inline def getDimensionValuesFuture(params: GetDimensionValuesRequest): Future[GetDimensionValuesResponse] =
       service.getDimensionValues(params).promise.toFuture
-    def getReservationCoverageFuture(params: GetReservationCoverageRequest): Future[GetReservationCoverageResponse] =
-      service.getReservationCoverage(params).promise.toFuture
-    def getReservationPurchaseRecommendationFuture(
+    @inline def getReservationCoverageFuture(
+        params: GetReservationCoverageRequest
+    ): Future[GetReservationCoverageResponse] = service.getReservationCoverage(params).promise.toFuture
+    @inline def getReservationPurchaseRecommendationFuture(
         params: GetReservationPurchaseRecommendationRequest
     ): Future[GetReservationPurchaseRecommendationResponse] =
       service.getReservationPurchaseRecommendation(params).promise.toFuture
-    def getReservationUtilizationFuture(
+    @inline def getReservationUtilizationFuture(
         params: GetReservationUtilizationRequest
     ): Future[GetReservationUtilizationResponse] = service.getReservationUtilization(params).promise.toFuture
-    def getRightsizingRecommendationFuture(
+    @inline def getRightsizingRecommendationFuture(
         params: GetRightsizingRecommendationRequest
-    ): Future[GetRightsizingRecommendationResponse]                    = service.getRightsizingRecommendation(params).promise.toFuture
-    def getTagsFuture(params: GetTagsRequest): Future[GetTagsResponse] = service.getTags(params).promise.toFuture
-    def getUsageForecastFuture(params: GetUsageForecastRequest): Future[GetUsageForecastResponse] =
+    ): Future[GetRightsizingRecommendationResponse] = service.getRightsizingRecommendation(params).promise.toFuture
+    @inline def getTagsFuture(params: GetTagsRequest): Future[GetTagsResponse] =
+      service.getTags(params).promise.toFuture
+    @inline def getUsageForecastFuture(params: GetUsageForecastRequest): Future[GetUsageForecastResponse] =
       service.getUsageForecast(params).promise.toFuture
   }
 }

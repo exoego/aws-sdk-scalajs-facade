@@ -22,13 +22,13 @@ package object marketplacemetering {
 
   implicit final class MarketplaceMeteringOps(private val service: MarketplaceMetering) extends AnyVal {
 
-    def batchMeterUsageFuture(params: BatchMeterUsageRequest): Future[BatchMeterUsageResult] =
+    @inline def batchMeterUsageFuture(params: BatchMeterUsageRequest): Future[BatchMeterUsageResult] =
       service.batchMeterUsage(params).promise.toFuture
-    def meterUsageFuture(params: MeterUsageRequest): Future[MeterUsageResult] =
+    @inline def meterUsageFuture(params: MeterUsageRequest): Future[MeterUsageResult] =
       service.meterUsage(params).promise.toFuture
-    def registerUsageFuture(params: RegisterUsageRequest): Future[RegisterUsageResult] =
+    @inline def registerUsageFuture(params: RegisterUsageRequest): Future[RegisterUsageResult] =
       service.registerUsage(params).promise.toFuture
-    def resolveCustomerFuture(params: ResolveCustomerRequest): Future[ResolveCustomerResult] =
+    @inline def resolveCustomerFuture(params: ResolveCustomerRequest): Future[ResolveCustomerResult] =
       service.resolveCustomer(params).promise.toFuture
   }
 }

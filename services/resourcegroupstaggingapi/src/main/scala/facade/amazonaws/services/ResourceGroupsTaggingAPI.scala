@@ -32,15 +32,15 @@ package object resourcegroupstaggingapi {
 
   implicit final class ResourceGroupsTaggingAPIOps(private val service: ResourceGroupsTaggingAPI) extends AnyVal {
 
-    def getResourcesFuture(params: GetResourcesInput): Future[GetResourcesOutput] =
+    @inline def getResourcesFuture(params: GetResourcesInput): Future[GetResourcesOutput] =
       service.getResources(params).promise.toFuture
-    def getTagKeysFuture(params: GetTagKeysInput): Future[GetTagKeysOutput] =
+    @inline def getTagKeysFuture(params: GetTagKeysInput): Future[GetTagKeysOutput] =
       service.getTagKeys(params).promise.toFuture
-    def getTagValuesFuture(params: GetTagValuesInput): Future[GetTagValuesOutput] =
+    @inline def getTagValuesFuture(params: GetTagValuesInput): Future[GetTagValuesOutput] =
       service.getTagValues(params).promise.toFuture
-    def tagResourcesFuture(params: TagResourcesInput): Future[TagResourcesOutput] =
+    @inline def tagResourcesFuture(params: TagResourcesInput): Future[TagResourcesOutput] =
       service.tagResources(params).promise.toFuture
-    def untagResourcesFuture(params: UntagResourcesInput): Future[UntagResourcesOutput] =
+    @inline def untagResourcesFuture(params: UntagResourcesInput): Future[UntagResourcesOutput] =
       service.untagResources(params).promise.toFuture
   }
 }

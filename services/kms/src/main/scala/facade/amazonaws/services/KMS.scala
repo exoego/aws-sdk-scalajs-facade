@@ -62,79 +62,93 @@ package object kms {
 
   implicit final class KMSOps(private val service: KMS) extends AnyVal {
 
-    def cancelKeyDeletionFuture(params: CancelKeyDeletionRequest): Future[CancelKeyDeletionResponse] =
+    @inline def cancelKeyDeletionFuture(params: CancelKeyDeletionRequest): Future[CancelKeyDeletionResponse] =
       service.cancelKeyDeletion(params).promise.toFuture
-    def connectCustomKeyStoreFuture(params: ConnectCustomKeyStoreRequest): Future[ConnectCustomKeyStoreResponse] =
-      service.connectCustomKeyStore(params).promise.toFuture
-    def createAliasFuture(params: CreateAliasRequest): Future[js.Object] = service.createAlias(params).promise.toFuture
-    def createCustomKeyStoreFuture(params: CreateCustomKeyStoreRequest): Future[CreateCustomKeyStoreResponse] =
+    @inline def connectCustomKeyStoreFuture(
+        params: ConnectCustomKeyStoreRequest
+    ): Future[ConnectCustomKeyStoreResponse] = service.connectCustomKeyStore(params).promise.toFuture
+    @inline def createAliasFuture(params: CreateAliasRequest): Future[js.Object] =
+      service.createAlias(params).promise.toFuture
+    @inline def createCustomKeyStoreFuture(params: CreateCustomKeyStoreRequest): Future[CreateCustomKeyStoreResponse] =
       service.createCustomKeyStore(params).promise.toFuture
-    def createGrantFuture(params: CreateGrantRequest): Future[CreateGrantResponse] =
+    @inline def createGrantFuture(params: CreateGrantRequest): Future[CreateGrantResponse] =
       service.createGrant(params).promise.toFuture
-    def createKeyFuture(params: CreateKeyRequest): Future[CreateKeyResponse] =
+    @inline def createKeyFuture(params: CreateKeyRequest): Future[CreateKeyResponse] =
       service.createKey(params).promise.toFuture
-    def decryptFuture(params: DecryptRequest): Future[DecryptResponse]   = service.decrypt(params).promise.toFuture
-    def deleteAliasFuture(params: DeleteAliasRequest): Future[js.Object] = service.deleteAlias(params).promise.toFuture
-    def deleteCustomKeyStoreFuture(params: DeleteCustomKeyStoreRequest): Future[DeleteCustomKeyStoreResponse] =
+    @inline def decryptFuture(params: DecryptRequest): Future[DecryptResponse] =
+      service.decrypt(params).promise.toFuture
+    @inline def deleteAliasFuture(params: DeleteAliasRequest): Future[js.Object] =
+      service.deleteAlias(params).promise.toFuture
+    @inline def deleteCustomKeyStoreFuture(params: DeleteCustomKeyStoreRequest): Future[DeleteCustomKeyStoreResponse] =
       service.deleteCustomKeyStore(params).promise.toFuture
-    def deleteImportedKeyMaterialFuture(params: DeleteImportedKeyMaterialRequest): Future[js.Object] =
+    @inline def deleteImportedKeyMaterialFuture(params: DeleteImportedKeyMaterialRequest): Future[js.Object] =
       service.deleteImportedKeyMaterial(params).promise.toFuture
-    def describeCustomKeyStoresFuture(params: DescribeCustomKeyStoresRequest): Future[DescribeCustomKeyStoresResponse] =
-      service.describeCustomKeyStores(params).promise.toFuture
-    def describeKeyFuture(params: DescribeKeyRequest): Future[DescribeKeyResponse] =
+    @inline def describeCustomKeyStoresFuture(
+        params: DescribeCustomKeyStoresRequest
+    ): Future[DescribeCustomKeyStoresResponse] = service.describeCustomKeyStores(params).promise.toFuture
+    @inline def describeKeyFuture(params: DescribeKeyRequest): Future[DescribeKeyResponse] =
       service.describeKey(params).promise.toFuture
-    def disableKeyFuture(params: DisableKeyRequest): Future[js.Object] = service.disableKey(params).promise.toFuture
-    def disableKeyRotationFuture(params: DisableKeyRotationRequest): Future[js.Object] =
+    @inline def disableKeyFuture(params: DisableKeyRequest): Future[js.Object] =
+      service.disableKey(params).promise.toFuture
+    @inline def disableKeyRotationFuture(params: DisableKeyRotationRequest): Future[js.Object] =
       service.disableKeyRotation(params).promise.toFuture
-    def disconnectCustomKeyStoreFuture(
+    @inline def disconnectCustomKeyStoreFuture(
         params: DisconnectCustomKeyStoreRequest
-    ): Future[DisconnectCustomKeyStoreResponse]                      = service.disconnectCustomKeyStore(params).promise.toFuture
-    def enableKeyFuture(params: EnableKeyRequest): Future[js.Object] = service.enableKey(params).promise.toFuture
-    def enableKeyRotationFuture(params: EnableKeyRotationRequest): Future[js.Object] =
+    ): Future[DisconnectCustomKeyStoreResponse] = service.disconnectCustomKeyStore(params).promise.toFuture
+    @inline def enableKeyFuture(params: EnableKeyRequest): Future[js.Object] =
+      service.enableKey(params).promise.toFuture
+    @inline def enableKeyRotationFuture(params: EnableKeyRotationRequest): Future[js.Object] =
       service.enableKeyRotation(params).promise.toFuture
-    def encryptFuture(params: EncryptRequest): Future[EncryptResponse] = service.encrypt(params).promise.toFuture
-    def generateDataKeyFuture(params: GenerateDataKeyRequest): Future[GenerateDataKeyResponse] =
+    @inline def encryptFuture(params: EncryptRequest): Future[EncryptResponse] =
+      service.encrypt(params).promise.toFuture
+    @inline def generateDataKeyFuture(params: GenerateDataKeyRequest): Future[GenerateDataKeyResponse] =
       service.generateDataKey(params).promise.toFuture
-    def generateDataKeyWithoutPlaintextFuture(
+    @inline def generateDataKeyWithoutPlaintextFuture(
         params: GenerateDataKeyWithoutPlaintextRequest
     ): Future[GenerateDataKeyWithoutPlaintextResponse] =
       service.generateDataKeyWithoutPlaintext(params).promise.toFuture
-    def generateRandomFuture(params: GenerateRandomRequest): Future[GenerateRandomResponse] =
+    @inline def generateRandomFuture(params: GenerateRandomRequest): Future[GenerateRandomResponse] =
       service.generateRandom(params).promise.toFuture
-    def getKeyPolicyFuture(params: GetKeyPolicyRequest): Future[GetKeyPolicyResponse] =
+    @inline def getKeyPolicyFuture(params: GetKeyPolicyRequest): Future[GetKeyPolicyResponse] =
       service.getKeyPolicy(params).promise.toFuture
-    def getKeyRotationStatusFuture(params: GetKeyRotationStatusRequest): Future[GetKeyRotationStatusResponse] =
+    @inline def getKeyRotationStatusFuture(params: GetKeyRotationStatusRequest): Future[GetKeyRotationStatusResponse] =
       service.getKeyRotationStatus(params).promise.toFuture
-    def getParametersForImportFuture(params: GetParametersForImportRequest): Future[GetParametersForImportResponse] =
-      service.getParametersForImport(params).promise.toFuture
-    def importKeyMaterialFuture(params: ImportKeyMaterialRequest): Future[ImportKeyMaterialResponse] =
+    @inline def getParametersForImportFuture(
+        params: GetParametersForImportRequest
+    ): Future[GetParametersForImportResponse] = service.getParametersForImport(params).promise.toFuture
+    @inline def importKeyMaterialFuture(params: ImportKeyMaterialRequest): Future[ImportKeyMaterialResponse] =
       service.importKeyMaterial(params).promise.toFuture
-    def listAliasesFuture(params: ListAliasesRequest): Future[ListAliasesResponse] =
+    @inline def listAliasesFuture(params: ListAliasesRequest): Future[ListAliasesResponse] =
       service.listAliases(params).promise.toFuture
-    def listGrantsFuture(params: ListGrantsRequest): Future[ListGrantsResponse] =
+    @inline def listGrantsFuture(params: ListGrantsRequest): Future[ListGrantsResponse] =
       service.listGrants(params).promise.toFuture
-    def listKeyPoliciesFuture(params: ListKeyPoliciesRequest): Future[ListKeyPoliciesResponse] =
+    @inline def listKeyPoliciesFuture(params: ListKeyPoliciesRequest): Future[ListKeyPoliciesResponse] =
       service.listKeyPolicies(params).promise.toFuture
-    def listKeysFuture(params: ListKeysRequest): Future[ListKeysResponse] = service.listKeys(params).promise.toFuture
-    def listResourceTagsFuture(params: ListResourceTagsRequest): Future[ListResourceTagsResponse] =
+    @inline def listKeysFuture(params: ListKeysRequest): Future[ListKeysResponse] =
+      service.listKeys(params).promise.toFuture
+    @inline def listResourceTagsFuture(params: ListResourceTagsRequest): Future[ListResourceTagsResponse] =
       service.listResourceTags(params).promise.toFuture
-    def listRetirableGrantsFuture(params: ListRetirableGrantsRequest): Future[ListGrantsResponse] =
+    @inline def listRetirableGrantsFuture(params: ListRetirableGrantsRequest): Future[ListGrantsResponse] =
       service.listRetirableGrants(params).promise.toFuture
-    def putKeyPolicyFuture(params: PutKeyPolicyRequest): Future[js.Object] =
+    @inline def putKeyPolicyFuture(params: PutKeyPolicyRequest): Future[js.Object] =
       service.putKeyPolicy(params).promise.toFuture
-    def reEncryptFuture(params: ReEncryptRequest): Future[ReEncryptResponse] =
+    @inline def reEncryptFuture(params: ReEncryptRequest): Future[ReEncryptResponse] =
       service.reEncrypt(params).promise.toFuture
-    def retireGrantFuture(params: RetireGrantRequest): Future[js.Object] = service.retireGrant(params).promise.toFuture
-    def revokeGrantFuture(params: RevokeGrantRequest): Future[js.Object] = service.revokeGrant(params).promise.toFuture
-    def scheduleKeyDeletionFuture(params: ScheduleKeyDeletionRequest): Future[ScheduleKeyDeletionResponse] =
+    @inline def retireGrantFuture(params: RetireGrantRequest): Future[js.Object] =
+      service.retireGrant(params).promise.toFuture
+    @inline def revokeGrantFuture(params: RevokeGrantRequest): Future[js.Object] =
+      service.revokeGrant(params).promise.toFuture
+    @inline def scheduleKeyDeletionFuture(params: ScheduleKeyDeletionRequest): Future[ScheduleKeyDeletionResponse] =
       service.scheduleKeyDeletion(params).promise.toFuture
-    def tagResourceFuture(params: TagResourceRequest): Future[js.Object] = service.tagResource(params).promise.toFuture
-    def untagResourceFuture(params: UntagResourceRequest): Future[js.Object] =
+    @inline def tagResourceFuture(params: TagResourceRequest): Future[js.Object] =
+      service.tagResource(params).promise.toFuture
+    @inline def untagResourceFuture(params: UntagResourceRequest): Future[js.Object] =
       service.untagResource(params).promise.toFuture
-    def updateAliasFuture(params: UpdateAliasRequest): Future[js.Object] = service.updateAlias(params).promise.toFuture
-    def updateCustomKeyStoreFuture(params: UpdateCustomKeyStoreRequest): Future[UpdateCustomKeyStoreResponse] =
+    @inline def updateAliasFuture(params: UpdateAliasRequest): Future[js.Object] =
+      service.updateAlias(params).promise.toFuture
+    @inline def updateCustomKeyStoreFuture(params: UpdateCustomKeyStoreRequest): Future[UpdateCustomKeyStoreResponse] =
       service.updateCustomKeyStore(params).promise.toFuture
-    def updateKeyDescriptionFuture(params: UpdateKeyDescriptionRequest): Future[js.Object] =
+    @inline def updateKeyDescriptionFuture(params: UpdateKeyDescriptionRequest): Future[js.Object] =
       service.updateKeyDescription(params).promise.toFuture
   }
 }

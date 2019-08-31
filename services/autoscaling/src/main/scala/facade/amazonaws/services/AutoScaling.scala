@@ -127,123 +127,130 @@ package object autoscaling {
 
   implicit final class AutoScalingOps(private val service: AutoScaling) extends AnyVal {
 
-    def attachInstancesFuture(params: AttachInstancesQuery): Future[js.Object] =
+    @inline def attachInstancesFuture(params: AttachInstancesQuery): Future[js.Object] =
       service.attachInstances(params).promise.toFuture
-    def attachLoadBalancerTargetGroupsFuture(
+    @inline def attachLoadBalancerTargetGroupsFuture(
         params: AttachLoadBalancerTargetGroupsType
     ): Future[AttachLoadBalancerTargetGroupsResultType] =
       service.attachLoadBalancerTargetGroups(params).promise.toFuture
-    def attachLoadBalancersFuture(params: AttachLoadBalancersType): Future[AttachLoadBalancersResultType] =
+    @inline def attachLoadBalancersFuture(params: AttachLoadBalancersType): Future[AttachLoadBalancersResultType] =
       service.attachLoadBalancers(params).promise.toFuture
-    def batchDeleteScheduledActionFuture(
+    @inline def batchDeleteScheduledActionFuture(
         params: BatchDeleteScheduledActionType
     ): Future[BatchDeleteScheduledActionAnswer] = service.batchDeleteScheduledAction(params).promise.toFuture
-    def batchPutScheduledUpdateGroupActionFuture(
+    @inline def batchPutScheduledUpdateGroupActionFuture(
         params: BatchPutScheduledUpdateGroupActionType
     ): Future[BatchPutScheduledUpdateGroupActionAnswer] =
       service.batchPutScheduledUpdateGroupAction(params).promise.toFuture
-    def completeLifecycleActionFuture(params: CompleteLifecycleActionType): Future[CompleteLifecycleActionAnswer] =
-      service.completeLifecycleAction(params).promise.toFuture
-    def createAutoScalingGroupFuture(params: CreateAutoScalingGroupType): Future[js.Object] =
+    @inline def completeLifecycleActionFuture(
+        params: CompleteLifecycleActionType
+    ): Future[CompleteLifecycleActionAnswer] = service.completeLifecycleAction(params).promise.toFuture
+    @inline def createAutoScalingGroupFuture(params: CreateAutoScalingGroupType): Future[js.Object] =
       service.createAutoScalingGroup(params).promise.toFuture
-    def createLaunchConfigurationFuture(params: CreateLaunchConfigurationType): Future[js.Object] =
+    @inline def createLaunchConfigurationFuture(params: CreateLaunchConfigurationType): Future[js.Object] =
       service.createLaunchConfiguration(params).promise.toFuture
-    def createOrUpdateTagsFuture(params: CreateOrUpdateTagsType): Future[js.Object] =
+    @inline def createOrUpdateTagsFuture(params: CreateOrUpdateTagsType): Future[js.Object] =
       service.createOrUpdateTags(params).promise.toFuture
-    def deleteAutoScalingGroupFuture(params: DeleteAutoScalingGroupType): Future[js.Object] =
+    @inline def deleteAutoScalingGroupFuture(params: DeleteAutoScalingGroupType): Future[js.Object] =
       service.deleteAutoScalingGroup(params).promise.toFuture
-    def deleteLaunchConfigurationFuture(params: LaunchConfigurationNameType): Future[js.Object] =
+    @inline def deleteLaunchConfigurationFuture(params: LaunchConfigurationNameType): Future[js.Object] =
       service.deleteLaunchConfiguration(params).promise.toFuture
-    def deleteLifecycleHookFuture(params: DeleteLifecycleHookType): Future[DeleteLifecycleHookAnswer] =
+    @inline def deleteLifecycleHookFuture(params: DeleteLifecycleHookType): Future[DeleteLifecycleHookAnswer] =
       service.deleteLifecycleHook(params).promise.toFuture
-    def deleteNotificationConfigurationFuture(params: DeleteNotificationConfigurationType): Future[js.Object] =
+    @inline def deleteNotificationConfigurationFuture(params: DeleteNotificationConfigurationType): Future[js.Object] =
       service.deleteNotificationConfiguration(params).promise.toFuture
-    def deletePolicyFuture(params: DeletePolicyType): Future[js.Object] = service.deletePolicy(params).promise.toFuture
-    def deleteScheduledActionFuture(params: DeleteScheduledActionType): Future[js.Object] =
+    @inline def deletePolicyFuture(params: DeletePolicyType): Future[js.Object] =
+      service.deletePolicy(params).promise.toFuture
+    @inline def deleteScheduledActionFuture(params: DeleteScheduledActionType): Future[js.Object] =
       service.deleteScheduledAction(params).promise.toFuture
-    def deleteTagsFuture(params: DeleteTagsType): Future[js.Object] = service.deleteTags(params).promise.toFuture
-    def describeAccountLimitsFuture(): Future[DescribeAccountLimitsAnswer] =
+    @inline def deleteTagsFuture(params: DeleteTagsType): Future[js.Object] =
+      service.deleteTags(params).promise.toFuture
+    @inline def describeAccountLimitsFuture(): Future[DescribeAccountLimitsAnswer] =
       service.describeAccountLimits().promise.toFuture
-    def describeAdjustmentTypesFuture(): Future[DescribeAdjustmentTypesAnswer] =
+    @inline def describeAdjustmentTypesFuture(): Future[DescribeAdjustmentTypesAnswer] =
       service.describeAdjustmentTypes().promise.toFuture
-    def describeAutoScalingGroupsFuture(params: AutoScalingGroupNamesType): Future[AutoScalingGroupsType] =
+    @inline def describeAutoScalingGroupsFuture(params: AutoScalingGroupNamesType): Future[AutoScalingGroupsType] =
       service.describeAutoScalingGroups(params).promise.toFuture
-    def describeAutoScalingInstancesFuture(params: DescribeAutoScalingInstancesType): Future[AutoScalingInstancesType] =
-      service.describeAutoScalingInstances(params).promise.toFuture
-    def describeAutoScalingNotificationTypesFuture(): Future[DescribeAutoScalingNotificationTypesAnswer] =
+    @inline def describeAutoScalingInstancesFuture(
+        params: DescribeAutoScalingInstancesType
+    ): Future[AutoScalingInstancesType] = service.describeAutoScalingInstances(params).promise.toFuture
+    @inline def describeAutoScalingNotificationTypesFuture(): Future[DescribeAutoScalingNotificationTypesAnswer] =
       service.describeAutoScalingNotificationTypes().promise.toFuture
-    def describeLaunchConfigurationsFuture(params: LaunchConfigurationNamesType): Future[LaunchConfigurationsType] =
-      service.describeLaunchConfigurations(params).promise.toFuture
-    def describeLifecycleHookTypesFuture(): Future[DescribeLifecycleHookTypesAnswer] =
+    @inline def describeLaunchConfigurationsFuture(
+        params: LaunchConfigurationNamesType
+    ): Future[LaunchConfigurationsType] = service.describeLaunchConfigurations(params).promise.toFuture
+    @inline def describeLifecycleHookTypesFuture(): Future[DescribeLifecycleHookTypesAnswer] =
       service.describeLifecycleHookTypes().promise.toFuture
-    def describeLifecycleHooksFuture(params: DescribeLifecycleHooksType): Future[DescribeLifecycleHooksAnswer] =
+    @inline def describeLifecycleHooksFuture(params: DescribeLifecycleHooksType): Future[DescribeLifecycleHooksAnswer] =
       service.describeLifecycleHooks(params).promise.toFuture
-    def describeLoadBalancerTargetGroupsFuture(
+    @inline def describeLoadBalancerTargetGroupsFuture(
         params: DescribeLoadBalancerTargetGroupsRequest
     ): Future[DescribeLoadBalancerTargetGroupsResponse] =
       service.describeLoadBalancerTargetGroups(params).promise.toFuture
-    def describeLoadBalancersFuture(params: DescribeLoadBalancersRequest): Future[DescribeLoadBalancersResponse] =
-      service.describeLoadBalancers(params).promise.toFuture
-    def describeMetricCollectionTypesFuture(): Future[DescribeMetricCollectionTypesAnswer] =
+    @inline def describeLoadBalancersFuture(
+        params: DescribeLoadBalancersRequest
+    ): Future[DescribeLoadBalancersResponse] = service.describeLoadBalancers(params).promise.toFuture
+    @inline def describeMetricCollectionTypesFuture(): Future[DescribeMetricCollectionTypesAnswer] =
       service.describeMetricCollectionTypes().promise.toFuture
-    def describeNotificationConfigurationsFuture(
+    @inline def describeNotificationConfigurationsFuture(
         params: DescribeNotificationConfigurationsType
     ): Future[DescribeNotificationConfigurationsAnswer] =
       service.describeNotificationConfigurations(params).promise.toFuture
-    def describePoliciesFuture(params: DescribePoliciesType): Future[PoliciesType] =
+    @inline def describePoliciesFuture(params: DescribePoliciesType): Future[PoliciesType] =
       service.describePolicies(params).promise.toFuture
-    def describeScalingActivitiesFuture(params: DescribeScalingActivitiesType): Future[ActivitiesType] =
+    @inline def describeScalingActivitiesFuture(params: DescribeScalingActivitiesType): Future[ActivitiesType] =
       service.describeScalingActivities(params).promise.toFuture
-    def describeScalingProcessTypesFuture(): Future[ProcessesType] =
+    @inline def describeScalingProcessTypesFuture(): Future[ProcessesType] =
       service.describeScalingProcessTypes().promise.toFuture
-    def describeScheduledActionsFuture(params: DescribeScheduledActionsType): Future[ScheduledActionsType] =
+    @inline def describeScheduledActionsFuture(params: DescribeScheduledActionsType): Future[ScheduledActionsType] =
       service.describeScheduledActions(params).promise.toFuture
-    def describeTagsFuture(params: DescribeTagsType): Future[TagsType] = service.describeTags(params).promise.toFuture
-    def describeTerminationPolicyTypesFuture(): Future[DescribeTerminationPolicyTypesAnswer] =
+    @inline def describeTagsFuture(params: DescribeTagsType): Future[TagsType] =
+      service.describeTags(params).promise.toFuture
+    @inline def describeTerminationPolicyTypesFuture(): Future[DescribeTerminationPolicyTypesAnswer] =
       service.describeTerminationPolicyTypes().promise.toFuture
-    def detachInstancesFuture(params: DetachInstancesQuery): Future[DetachInstancesAnswer] =
+    @inline def detachInstancesFuture(params: DetachInstancesQuery): Future[DetachInstancesAnswer] =
       service.detachInstances(params).promise.toFuture
-    def detachLoadBalancerTargetGroupsFuture(
+    @inline def detachLoadBalancerTargetGroupsFuture(
         params: DetachLoadBalancerTargetGroupsType
     ): Future[DetachLoadBalancerTargetGroupsResultType] =
       service.detachLoadBalancerTargetGroups(params).promise.toFuture
-    def detachLoadBalancersFuture(params: DetachLoadBalancersType): Future[DetachLoadBalancersResultType] =
+    @inline def detachLoadBalancersFuture(params: DetachLoadBalancersType): Future[DetachLoadBalancersResultType] =
       service.detachLoadBalancers(params).promise.toFuture
-    def disableMetricsCollectionFuture(params: DisableMetricsCollectionQuery): Future[js.Object] =
+    @inline def disableMetricsCollectionFuture(params: DisableMetricsCollectionQuery): Future[js.Object] =
       service.disableMetricsCollection(params).promise.toFuture
-    def enableMetricsCollectionFuture(params: EnableMetricsCollectionQuery): Future[js.Object] =
+    @inline def enableMetricsCollectionFuture(params: EnableMetricsCollectionQuery): Future[js.Object] =
       service.enableMetricsCollection(params).promise.toFuture
-    def enterStandbyFuture(params: EnterStandbyQuery): Future[EnterStandbyAnswer] =
+    @inline def enterStandbyFuture(params: EnterStandbyQuery): Future[EnterStandbyAnswer] =
       service.enterStandby(params).promise.toFuture
-    def executePolicyFuture(params: ExecutePolicyType): Future[js.Object] =
+    @inline def executePolicyFuture(params: ExecutePolicyType): Future[js.Object] =
       service.executePolicy(params).promise.toFuture
-    def exitStandbyFuture(params: ExitStandbyQuery): Future[ExitStandbyAnswer] =
+    @inline def exitStandbyFuture(params: ExitStandbyQuery): Future[ExitStandbyAnswer] =
       service.exitStandby(params).promise.toFuture
-    def putLifecycleHookFuture(params: PutLifecycleHookType): Future[PutLifecycleHookAnswer] =
+    @inline def putLifecycleHookFuture(params: PutLifecycleHookType): Future[PutLifecycleHookAnswer] =
       service.putLifecycleHook(params).promise.toFuture
-    def putNotificationConfigurationFuture(params: PutNotificationConfigurationType): Future[js.Object] =
+    @inline def putNotificationConfigurationFuture(params: PutNotificationConfigurationType): Future[js.Object] =
       service.putNotificationConfiguration(params).promise.toFuture
-    def putScalingPolicyFuture(params: PutScalingPolicyType): Future[PolicyARNType] =
+    @inline def putScalingPolicyFuture(params: PutScalingPolicyType): Future[PolicyARNType] =
       service.putScalingPolicy(params).promise.toFuture
-    def putScheduledUpdateGroupActionFuture(params: PutScheduledUpdateGroupActionType): Future[js.Object] =
+    @inline def putScheduledUpdateGroupActionFuture(params: PutScheduledUpdateGroupActionType): Future[js.Object] =
       service.putScheduledUpdateGroupAction(params).promise.toFuture
-    def recordLifecycleActionHeartbeatFuture(
+    @inline def recordLifecycleActionHeartbeatFuture(
         params: RecordLifecycleActionHeartbeatType
     ): Future[RecordLifecycleActionHeartbeatAnswer] = service.recordLifecycleActionHeartbeat(params).promise.toFuture
-    def resumeProcessesFuture(params: ScalingProcessQuery): Future[js.Object] =
+    @inline def resumeProcessesFuture(params: ScalingProcessQuery): Future[js.Object] =
       service.resumeProcesses(params).promise.toFuture
-    def setDesiredCapacityFuture(params: SetDesiredCapacityType): Future[js.Object] =
+    @inline def setDesiredCapacityFuture(params: SetDesiredCapacityType): Future[js.Object] =
       service.setDesiredCapacity(params).promise.toFuture
-    def setInstanceHealthFuture(params: SetInstanceHealthQuery): Future[js.Object] =
+    @inline def setInstanceHealthFuture(params: SetInstanceHealthQuery): Future[js.Object] =
       service.setInstanceHealth(params).promise.toFuture
-    def setInstanceProtectionFuture(params: SetInstanceProtectionQuery): Future[SetInstanceProtectionAnswer] =
+    @inline def setInstanceProtectionFuture(params: SetInstanceProtectionQuery): Future[SetInstanceProtectionAnswer] =
       service.setInstanceProtection(params).promise.toFuture
-    def suspendProcessesFuture(params: ScalingProcessQuery): Future[js.Object] =
+    @inline def suspendProcessesFuture(params: ScalingProcessQuery): Future[js.Object] =
       service.suspendProcesses(params).promise.toFuture
-    def terminateInstanceInAutoScalingGroupFuture(
+    @inline def terminateInstanceInAutoScalingGroupFuture(
         params: TerminateInstanceInAutoScalingGroupType
     ): Future[ActivityType] = service.terminateInstanceInAutoScalingGroup(params).promise.toFuture
-    def updateAutoScalingGroupFuture(params: UpdateAutoScalingGroupType): Future[js.Object] =
+    @inline def updateAutoScalingGroupFuture(params: UpdateAutoScalingGroupType): Future[js.Object] =
       service.updateAutoScalingGroup(params).promise.toFuture
   }
 }

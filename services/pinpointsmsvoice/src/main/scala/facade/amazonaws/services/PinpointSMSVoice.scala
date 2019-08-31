@@ -19,27 +19,30 @@ package object pinpointsmsvoice {
 
   implicit final class PinpointSMSVoiceOps(private val service: PinpointSMSVoice) extends AnyVal {
 
-    def createConfigurationSetEventDestinationFuture(
+    @inline def createConfigurationSetEventDestinationFuture(
         params: CreateConfigurationSetEventDestinationRequest
     ): Future[CreateConfigurationSetEventDestinationResponse] =
       service.createConfigurationSetEventDestination(params).promise.toFuture
-    def createConfigurationSetFuture(params: CreateConfigurationSetRequest): Future[CreateConfigurationSetResponse] =
-      service.createConfigurationSet(params).promise.toFuture
-    def deleteConfigurationSetEventDestinationFuture(
+    @inline def createConfigurationSetFuture(
+        params: CreateConfigurationSetRequest
+    ): Future[CreateConfigurationSetResponse] = service.createConfigurationSet(params).promise.toFuture
+    @inline def deleteConfigurationSetEventDestinationFuture(
         params: DeleteConfigurationSetEventDestinationRequest
     ): Future[DeleteConfigurationSetEventDestinationResponse] =
       service.deleteConfigurationSetEventDestination(params).promise.toFuture
-    def deleteConfigurationSetFuture(params: DeleteConfigurationSetRequest): Future[DeleteConfigurationSetResponse] =
-      service.deleteConfigurationSet(params).promise.toFuture
-    def getConfigurationSetEventDestinationsFuture(
+    @inline def deleteConfigurationSetFuture(
+        params: DeleteConfigurationSetRequest
+    ): Future[DeleteConfigurationSetResponse] = service.deleteConfigurationSet(params).promise.toFuture
+    @inline def getConfigurationSetEventDestinationsFuture(
         params: GetConfigurationSetEventDestinationsRequest
     ): Future[GetConfigurationSetEventDestinationsResponse] =
       service.getConfigurationSetEventDestinations(params).promise.toFuture
-    def listConfigurationSetsFuture(params: ListConfigurationSetsRequest): Future[ListConfigurationSetsResponse] =
-      service.listConfigurationSets(params).promise.toFuture
-    def sendVoiceMessageFuture(params: SendVoiceMessageRequest): Future[SendVoiceMessageResponse] =
+    @inline def listConfigurationSetsFuture(
+        params: ListConfigurationSetsRequest
+    ): Future[ListConfigurationSetsResponse] = service.listConfigurationSets(params).promise.toFuture
+    @inline def sendVoiceMessageFuture(params: SendVoiceMessageRequest): Future[SendVoiceMessageResponse] =
       service.sendVoiceMessage(params).promise.toFuture
-    def updateConfigurationSetEventDestinationFuture(
+    @inline def updateConfigurationSetEventDestinationFuture(
         params: UpdateConfigurationSetEventDestinationRequest
     ): Future[UpdateConfigurationSetEventDestinationResponse] =
       service.updateConfigurationSetEventDestination(params).promise.toFuture

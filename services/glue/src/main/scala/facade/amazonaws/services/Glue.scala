@@ -221,263 +221,274 @@ package object glue {
 
   implicit final class GlueOps(private val service: Glue) extends AnyVal {
 
-    def batchCreatePartitionFuture(params: BatchCreatePartitionRequest): Future[BatchCreatePartitionResponse] =
+    @inline def batchCreatePartitionFuture(params: BatchCreatePartitionRequest): Future[BatchCreatePartitionResponse] =
       service.batchCreatePartition(params).promise.toFuture
-    def batchDeleteConnectionFuture(params: BatchDeleteConnectionRequest): Future[BatchDeleteConnectionResponse] =
-      service.batchDeleteConnection(params).promise.toFuture
-    def batchDeletePartitionFuture(params: BatchDeletePartitionRequest): Future[BatchDeletePartitionResponse] =
+    @inline def batchDeleteConnectionFuture(
+        params: BatchDeleteConnectionRequest
+    ): Future[BatchDeleteConnectionResponse] = service.batchDeleteConnection(params).promise.toFuture
+    @inline def batchDeletePartitionFuture(params: BatchDeletePartitionRequest): Future[BatchDeletePartitionResponse] =
       service.batchDeletePartition(params).promise.toFuture
-    def batchDeleteTableFuture(params: BatchDeleteTableRequest): Future[BatchDeleteTableResponse] =
+    @inline def batchDeleteTableFuture(params: BatchDeleteTableRequest): Future[BatchDeleteTableResponse] =
       service.batchDeleteTable(params).promise.toFuture
-    def batchDeleteTableVersionFuture(params: BatchDeleteTableVersionRequest): Future[BatchDeleteTableVersionResponse] =
-      service.batchDeleteTableVersion(params).promise.toFuture
-    def batchGetCrawlersFuture(params: BatchGetCrawlersRequest): Future[BatchGetCrawlersResponse] =
+    @inline def batchDeleteTableVersionFuture(
+        params: BatchDeleteTableVersionRequest
+    ): Future[BatchDeleteTableVersionResponse] = service.batchDeleteTableVersion(params).promise.toFuture
+    @inline def batchGetCrawlersFuture(params: BatchGetCrawlersRequest): Future[BatchGetCrawlersResponse] =
       service.batchGetCrawlers(params).promise.toFuture
-    def batchGetDevEndpointsFuture(params: BatchGetDevEndpointsRequest): Future[BatchGetDevEndpointsResponse] =
+    @inline def batchGetDevEndpointsFuture(params: BatchGetDevEndpointsRequest): Future[BatchGetDevEndpointsResponse] =
       service.batchGetDevEndpoints(params).promise.toFuture
-    def batchGetJobsFuture(params: BatchGetJobsRequest): Future[BatchGetJobsResponse] =
+    @inline def batchGetJobsFuture(params: BatchGetJobsRequest): Future[BatchGetJobsResponse] =
       service.batchGetJobs(params).promise.toFuture
-    def batchGetPartitionFuture(params: BatchGetPartitionRequest): Future[BatchGetPartitionResponse] =
+    @inline def batchGetPartitionFuture(params: BatchGetPartitionRequest): Future[BatchGetPartitionResponse] =
       service.batchGetPartition(params).promise.toFuture
-    def batchGetTriggersFuture(params: BatchGetTriggersRequest): Future[BatchGetTriggersResponse] =
+    @inline def batchGetTriggersFuture(params: BatchGetTriggersRequest): Future[BatchGetTriggersResponse] =
       service.batchGetTriggers(params).promise.toFuture
-    def batchGetWorkflowsFuture(params: BatchGetWorkflowsRequest): Future[BatchGetWorkflowsResponse] =
+    @inline def batchGetWorkflowsFuture(params: BatchGetWorkflowsRequest): Future[BatchGetWorkflowsResponse] =
       service.batchGetWorkflows(params).promise.toFuture
-    def batchStopJobRunFuture(params: BatchStopJobRunRequest): Future[BatchStopJobRunResponse] =
+    @inline def batchStopJobRunFuture(params: BatchStopJobRunRequest): Future[BatchStopJobRunResponse] =
       service.batchStopJobRun(params).promise.toFuture
-    def cancelMLTaskRunFuture(params: CancelMLTaskRunRequest): Future[CancelMLTaskRunResponse] =
+    @inline def cancelMLTaskRunFuture(params: CancelMLTaskRunRequest): Future[CancelMLTaskRunResponse] =
       service.cancelMLTaskRun(params).promise.toFuture
-    def createClassifierFuture(params: CreateClassifierRequest): Future[CreateClassifierResponse] =
+    @inline def createClassifierFuture(params: CreateClassifierRequest): Future[CreateClassifierResponse] =
       service.createClassifier(params).promise.toFuture
-    def createConnectionFuture(params: CreateConnectionRequest): Future[CreateConnectionResponse] =
+    @inline def createConnectionFuture(params: CreateConnectionRequest): Future[CreateConnectionResponse] =
       service.createConnection(params).promise.toFuture
-    def createCrawlerFuture(params: CreateCrawlerRequest): Future[CreateCrawlerResponse] =
+    @inline def createCrawlerFuture(params: CreateCrawlerRequest): Future[CreateCrawlerResponse] =
       service.createCrawler(params).promise.toFuture
-    def createDatabaseFuture(params: CreateDatabaseRequest): Future[CreateDatabaseResponse] =
+    @inline def createDatabaseFuture(params: CreateDatabaseRequest): Future[CreateDatabaseResponse] =
       service.createDatabase(params).promise.toFuture
-    def createDevEndpointFuture(params: CreateDevEndpointRequest): Future[CreateDevEndpointResponse] =
+    @inline def createDevEndpointFuture(params: CreateDevEndpointRequest): Future[CreateDevEndpointResponse] =
       service.createDevEndpoint(params).promise.toFuture
-    def createJobFuture(params: CreateJobRequest): Future[CreateJobResponse] =
+    @inline def createJobFuture(params: CreateJobRequest): Future[CreateJobResponse] =
       service.createJob(params).promise.toFuture
-    def createMLTransformFuture(params: CreateMLTransformRequest): Future[CreateMLTransformResponse] =
+    @inline def createMLTransformFuture(params: CreateMLTransformRequest): Future[CreateMLTransformResponse] =
       service.createMLTransform(params).promise.toFuture
-    def createPartitionFuture(params: CreatePartitionRequest): Future[CreatePartitionResponse] =
+    @inline def createPartitionFuture(params: CreatePartitionRequest): Future[CreatePartitionResponse] =
       service.createPartition(params).promise.toFuture
-    def createScriptFuture(params: CreateScriptRequest): Future[CreateScriptResponse] =
+    @inline def createScriptFuture(params: CreateScriptRequest): Future[CreateScriptResponse] =
       service.createScript(params).promise.toFuture
-    def createSecurityConfigurationFuture(
+    @inline def createSecurityConfigurationFuture(
         params: CreateSecurityConfigurationRequest
     ): Future[CreateSecurityConfigurationResponse] = service.createSecurityConfiguration(params).promise.toFuture
-    def createTableFuture(params: CreateTableRequest): Future[CreateTableResponse] =
+    @inline def createTableFuture(params: CreateTableRequest): Future[CreateTableResponse] =
       service.createTable(params).promise.toFuture
-    def createTriggerFuture(params: CreateTriggerRequest): Future[CreateTriggerResponse] =
+    @inline def createTriggerFuture(params: CreateTriggerRequest): Future[CreateTriggerResponse] =
       service.createTrigger(params).promise.toFuture
-    def createUserDefinedFunctionFuture(
+    @inline def createUserDefinedFunctionFuture(
         params: CreateUserDefinedFunctionRequest
     ): Future[CreateUserDefinedFunctionResponse] = service.createUserDefinedFunction(params).promise.toFuture
-    def createWorkflowFuture(params: CreateWorkflowRequest): Future[CreateWorkflowResponse] =
+    @inline def createWorkflowFuture(params: CreateWorkflowRequest): Future[CreateWorkflowResponse] =
       service.createWorkflow(params).promise.toFuture
-    def deleteClassifierFuture(params: DeleteClassifierRequest): Future[DeleteClassifierResponse] =
+    @inline def deleteClassifierFuture(params: DeleteClassifierRequest): Future[DeleteClassifierResponse] =
       service.deleteClassifier(params).promise.toFuture
-    def deleteConnectionFuture(params: DeleteConnectionRequest): Future[DeleteConnectionResponse] =
+    @inline def deleteConnectionFuture(params: DeleteConnectionRequest): Future[DeleteConnectionResponse] =
       service.deleteConnection(params).promise.toFuture
-    def deleteCrawlerFuture(params: DeleteCrawlerRequest): Future[DeleteCrawlerResponse] =
+    @inline def deleteCrawlerFuture(params: DeleteCrawlerRequest): Future[DeleteCrawlerResponse] =
       service.deleteCrawler(params).promise.toFuture
-    def deleteDatabaseFuture(params: DeleteDatabaseRequest): Future[DeleteDatabaseResponse] =
+    @inline def deleteDatabaseFuture(params: DeleteDatabaseRequest): Future[DeleteDatabaseResponse] =
       service.deleteDatabase(params).promise.toFuture
-    def deleteDevEndpointFuture(params: DeleteDevEndpointRequest): Future[DeleteDevEndpointResponse] =
+    @inline def deleteDevEndpointFuture(params: DeleteDevEndpointRequest): Future[DeleteDevEndpointResponse] =
       service.deleteDevEndpoint(params).promise.toFuture
-    def deleteJobFuture(params: DeleteJobRequest): Future[DeleteJobResponse] =
+    @inline def deleteJobFuture(params: DeleteJobRequest): Future[DeleteJobResponse] =
       service.deleteJob(params).promise.toFuture
-    def deleteMLTransformFuture(params: DeleteMLTransformRequest): Future[DeleteMLTransformResponse] =
+    @inline def deleteMLTransformFuture(params: DeleteMLTransformRequest): Future[DeleteMLTransformResponse] =
       service.deleteMLTransform(params).promise.toFuture
-    def deletePartitionFuture(params: DeletePartitionRequest): Future[DeletePartitionResponse] =
+    @inline def deletePartitionFuture(params: DeletePartitionRequest): Future[DeletePartitionResponse] =
       service.deletePartition(params).promise.toFuture
-    def deleteResourcePolicyFuture(params: DeleteResourcePolicyRequest): Future[DeleteResourcePolicyResponse] =
+    @inline def deleteResourcePolicyFuture(params: DeleteResourcePolicyRequest): Future[DeleteResourcePolicyResponse] =
       service.deleteResourcePolicy(params).promise.toFuture
-    def deleteSecurityConfigurationFuture(
+    @inline def deleteSecurityConfigurationFuture(
         params: DeleteSecurityConfigurationRequest
     ): Future[DeleteSecurityConfigurationResponse] = service.deleteSecurityConfiguration(params).promise.toFuture
-    def deleteTableFuture(params: DeleteTableRequest): Future[DeleteTableResponse] =
+    @inline def deleteTableFuture(params: DeleteTableRequest): Future[DeleteTableResponse] =
       service.deleteTable(params).promise.toFuture
-    def deleteTableVersionFuture(params: DeleteTableVersionRequest): Future[DeleteTableVersionResponse] =
+    @inline def deleteTableVersionFuture(params: DeleteTableVersionRequest): Future[DeleteTableVersionResponse] =
       service.deleteTableVersion(params).promise.toFuture
-    def deleteTriggerFuture(params: DeleteTriggerRequest): Future[DeleteTriggerResponse] =
+    @inline def deleteTriggerFuture(params: DeleteTriggerRequest): Future[DeleteTriggerResponse] =
       service.deleteTrigger(params).promise.toFuture
-    def deleteUserDefinedFunctionFuture(
+    @inline def deleteUserDefinedFunctionFuture(
         params: DeleteUserDefinedFunctionRequest
     ): Future[DeleteUserDefinedFunctionResponse] = service.deleteUserDefinedFunction(params).promise.toFuture
-    def deleteWorkflowFuture(params: DeleteWorkflowRequest): Future[DeleteWorkflowResponse] =
+    @inline def deleteWorkflowFuture(params: DeleteWorkflowRequest): Future[DeleteWorkflowResponse] =
       service.deleteWorkflow(params).promise.toFuture
-    def getCatalogImportStatusFuture(params: GetCatalogImportStatusRequest): Future[GetCatalogImportStatusResponse] =
-      service.getCatalogImportStatus(params).promise.toFuture
-    def getClassifierFuture(params: GetClassifierRequest): Future[GetClassifierResponse] =
+    @inline def getCatalogImportStatusFuture(
+        params: GetCatalogImportStatusRequest
+    ): Future[GetCatalogImportStatusResponse] = service.getCatalogImportStatus(params).promise.toFuture
+    @inline def getClassifierFuture(params: GetClassifierRequest): Future[GetClassifierResponse] =
       service.getClassifier(params).promise.toFuture
-    def getClassifiersFuture(params: GetClassifiersRequest): Future[GetClassifiersResponse] =
+    @inline def getClassifiersFuture(params: GetClassifiersRequest): Future[GetClassifiersResponse] =
       service.getClassifiers(params).promise.toFuture
-    def getConnectionFuture(params: GetConnectionRequest): Future[GetConnectionResponse] =
+    @inline def getConnectionFuture(params: GetConnectionRequest): Future[GetConnectionResponse] =
       service.getConnection(params).promise.toFuture
-    def getConnectionsFuture(params: GetConnectionsRequest): Future[GetConnectionsResponse] =
+    @inline def getConnectionsFuture(params: GetConnectionsRequest): Future[GetConnectionsResponse] =
       service.getConnections(params).promise.toFuture
-    def getCrawlerFuture(params: GetCrawlerRequest): Future[GetCrawlerResponse] =
+    @inline def getCrawlerFuture(params: GetCrawlerRequest): Future[GetCrawlerResponse] =
       service.getCrawler(params).promise.toFuture
-    def getCrawlerMetricsFuture(params: GetCrawlerMetricsRequest): Future[GetCrawlerMetricsResponse] =
+    @inline def getCrawlerMetricsFuture(params: GetCrawlerMetricsRequest): Future[GetCrawlerMetricsResponse] =
       service.getCrawlerMetrics(params).promise.toFuture
-    def getCrawlersFuture(params: GetCrawlersRequest): Future[GetCrawlersResponse] =
+    @inline def getCrawlersFuture(params: GetCrawlersRequest): Future[GetCrawlersResponse] =
       service.getCrawlers(params).promise.toFuture
-    def getDataCatalogEncryptionSettingsFuture(
+    @inline def getDataCatalogEncryptionSettingsFuture(
         params: GetDataCatalogEncryptionSettingsRequest
     ): Future[GetDataCatalogEncryptionSettingsResponse] =
       service.getDataCatalogEncryptionSettings(params).promise.toFuture
-    def getDatabaseFuture(params: GetDatabaseRequest): Future[GetDatabaseResponse] =
+    @inline def getDatabaseFuture(params: GetDatabaseRequest): Future[GetDatabaseResponse] =
       service.getDatabase(params).promise.toFuture
-    def getDatabasesFuture(params: GetDatabasesRequest): Future[GetDatabasesResponse] =
+    @inline def getDatabasesFuture(params: GetDatabasesRequest): Future[GetDatabasesResponse] =
       service.getDatabases(params).promise.toFuture
-    def getDataflowGraphFuture(params: GetDataflowGraphRequest): Future[GetDataflowGraphResponse] =
+    @inline def getDataflowGraphFuture(params: GetDataflowGraphRequest): Future[GetDataflowGraphResponse] =
       service.getDataflowGraph(params).promise.toFuture
-    def getDevEndpointFuture(params: GetDevEndpointRequest): Future[GetDevEndpointResponse] =
+    @inline def getDevEndpointFuture(params: GetDevEndpointRequest): Future[GetDevEndpointResponse] =
       service.getDevEndpoint(params).promise.toFuture
-    def getDevEndpointsFuture(params: GetDevEndpointsRequest): Future[GetDevEndpointsResponse] =
+    @inline def getDevEndpointsFuture(params: GetDevEndpointsRequest): Future[GetDevEndpointsResponse] =
       service.getDevEndpoints(params).promise.toFuture
-    def getJobBookmarkFuture(params: GetJobBookmarkRequest): Future[GetJobBookmarkResponse] =
+    @inline def getJobBookmarkFuture(params: GetJobBookmarkRequest): Future[GetJobBookmarkResponse] =
       service.getJobBookmark(params).promise.toFuture
-    def getJobFuture(params: GetJobRequest): Future[GetJobResponse] = service.getJob(params).promise.toFuture
-    def getJobRunFuture(params: GetJobRunRequest): Future[GetJobRunResponse] =
+    @inline def getJobFuture(params: GetJobRequest): Future[GetJobResponse] = service.getJob(params).promise.toFuture
+    @inline def getJobRunFuture(params: GetJobRunRequest): Future[GetJobRunResponse] =
       service.getJobRun(params).promise.toFuture
-    def getJobRunsFuture(params: GetJobRunsRequest): Future[GetJobRunsResponse] =
+    @inline def getJobRunsFuture(params: GetJobRunsRequest): Future[GetJobRunsResponse] =
       service.getJobRuns(params).promise.toFuture
-    def getJobsFuture(params: GetJobsRequest): Future[GetJobsResponse] = service.getJobs(params).promise.toFuture
-    def getMLTaskRunFuture(params: GetMLTaskRunRequest): Future[GetMLTaskRunResponse] =
+    @inline def getJobsFuture(params: GetJobsRequest): Future[GetJobsResponse] =
+      service.getJobs(params).promise.toFuture
+    @inline def getMLTaskRunFuture(params: GetMLTaskRunRequest): Future[GetMLTaskRunResponse] =
       service.getMLTaskRun(params).promise.toFuture
-    def getMLTaskRunsFuture(params: GetMLTaskRunsRequest): Future[GetMLTaskRunsResponse] =
+    @inline def getMLTaskRunsFuture(params: GetMLTaskRunsRequest): Future[GetMLTaskRunsResponse] =
       service.getMLTaskRuns(params).promise.toFuture
-    def getMLTransformFuture(params: GetMLTransformRequest): Future[GetMLTransformResponse] =
+    @inline def getMLTransformFuture(params: GetMLTransformRequest): Future[GetMLTransformResponse] =
       service.getMLTransform(params).promise.toFuture
-    def getMLTransformsFuture(params: GetMLTransformsRequest): Future[GetMLTransformsResponse] =
+    @inline def getMLTransformsFuture(params: GetMLTransformsRequest): Future[GetMLTransformsResponse] =
       service.getMLTransforms(params).promise.toFuture
-    def getMappingFuture(params: GetMappingRequest): Future[GetMappingResponse] =
+    @inline def getMappingFuture(params: GetMappingRequest): Future[GetMappingResponse] =
       service.getMapping(params).promise.toFuture
-    def getPartitionFuture(params: GetPartitionRequest): Future[GetPartitionResponse] =
+    @inline def getPartitionFuture(params: GetPartitionRequest): Future[GetPartitionResponse] =
       service.getPartition(params).promise.toFuture
-    def getPartitionsFuture(params: GetPartitionsRequest): Future[GetPartitionsResponse] =
+    @inline def getPartitionsFuture(params: GetPartitionsRequest): Future[GetPartitionsResponse] =
       service.getPartitions(params).promise.toFuture
-    def getPlanFuture(params: GetPlanRequest): Future[GetPlanResponse] = service.getPlan(params).promise.toFuture
-    def getResourcePolicyFuture(params: GetResourcePolicyRequest): Future[GetResourcePolicyResponse] =
+    @inline def getPlanFuture(params: GetPlanRequest): Future[GetPlanResponse] =
+      service.getPlan(params).promise.toFuture
+    @inline def getResourcePolicyFuture(params: GetResourcePolicyRequest): Future[GetResourcePolicyResponse] =
       service.getResourcePolicy(params).promise.toFuture
-    def getSecurityConfigurationFuture(
+    @inline def getSecurityConfigurationFuture(
         params: GetSecurityConfigurationRequest
     ): Future[GetSecurityConfigurationResponse] = service.getSecurityConfiguration(params).promise.toFuture
-    def getSecurityConfigurationsFuture(
+    @inline def getSecurityConfigurationsFuture(
         params: GetSecurityConfigurationsRequest
-    ): Future[GetSecurityConfigurationsResponse]                          = service.getSecurityConfigurations(params).promise.toFuture
-    def getTableFuture(params: GetTableRequest): Future[GetTableResponse] = service.getTable(params).promise.toFuture
-    def getTableVersionFuture(params: GetTableVersionRequest): Future[GetTableVersionResponse] =
+    ): Future[GetSecurityConfigurationsResponse] = service.getSecurityConfigurations(params).promise.toFuture
+    @inline def getTableFuture(params: GetTableRequest): Future[GetTableResponse] =
+      service.getTable(params).promise.toFuture
+    @inline def getTableVersionFuture(params: GetTableVersionRequest): Future[GetTableVersionResponse] =
       service.getTableVersion(params).promise.toFuture
-    def getTableVersionsFuture(params: GetTableVersionsRequest): Future[GetTableVersionsResponse] =
+    @inline def getTableVersionsFuture(params: GetTableVersionsRequest): Future[GetTableVersionsResponse] =
       service.getTableVersions(params).promise.toFuture
-    def getTablesFuture(params: GetTablesRequest): Future[GetTablesResponse] =
+    @inline def getTablesFuture(params: GetTablesRequest): Future[GetTablesResponse] =
       service.getTables(params).promise.toFuture
-    def getTagsFuture(params: GetTagsRequest): Future[GetTagsResponse] = service.getTags(params).promise.toFuture
-    def getTriggerFuture(params: GetTriggerRequest): Future[GetTriggerResponse] =
+    @inline def getTagsFuture(params: GetTagsRequest): Future[GetTagsResponse] =
+      service.getTags(params).promise.toFuture
+    @inline def getTriggerFuture(params: GetTriggerRequest): Future[GetTriggerResponse] =
       service.getTrigger(params).promise.toFuture
-    def getTriggersFuture(params: GetTriggersRequest): Future[GetTriggersResponse] =
+    @inline def getTriggersFuture(params: GetTriggersRequest): Future[GetTriggersResponse] =
       service.getTriggers(params).promise.toFuture
-    def getUserDefinedFunctionFuture(params: GetUserDefinedFunctionRequest): Future[GetUserDefinedFunctionResponse] =
-      service.getUserDefinedFunction(params).promise.toFuture
-    def getUserDefinedFunctionsFuture(params: GetUserDefinedFunctionsRequest): Future[GetUserDefinedFunctionsResponse] =
-      service.getUserDefinedFunctions(params).promise.toFuture
-    def getWorkflowFuture(params: GetWorkflowRequest): Future[GetWorkflowResponse] =
+    @inline def getUserDefinedFunctionFuture(
+        params: GetUserDefinedFunctionRequest
+    ): Future[GetUserDefinedFunctionResponse] = service.getUserDefinedFunction(params).promise.toFuture
+    @inline def getUserDefinedFunctionsFuture(
+        params: GetUserDefinedFunctionsRequest
+    ): Future[GetUserDefinedFunctionsResponse] = service.getUserDefinedFunctions(params).promise.toFuture
+    @inline def getWorkflowFuture(params: GetWorkflowRequest): Future[GetWorkflowResponse] =
       service.getWorkflow(params).promise.toFuture
-    def getWorkflowRunFuture(params: GetWorkflowRunRequest): Future[GetWorkflowRunResponse] =
+    @inline def getWorkflowRunFuture(params: GetWorkflowRunRequest): Future[GetWorkflowRunResponse] =
       service.getWorkflowRun(params).promise.toFuture
-    def getWorkflowRunPropertiesFuture(
+    @inline def getWorkflowRunPropertiesFuture(
         params: GetWorkflowRunPropertiesRequest
     ): Future[GetWorkflowRunPropertiesResponse] = service.getWorkflowRunProperties(params).promise.toFuture
-    def getWorkflowRunsFuture(params: GetWorkflowRunsRequest): Future[GetWorkflowRunsResponse] =
+    @inline def getWorkflowRunsFuture(params: GetWorkflowRunsRequest): Future[GetWorkflowRunsResponse] =
       service.getWorkflowRuns(params).promise.toFuture
-    def importCatalogToGlueFuture(params: ImportCatalogToGlueRequest): Future[ImportCatalogToGlueResponse] =
+    @inline def importCatalogToGlueFuture(params: ImportCatalogToGlueRequest): Future[ImportCatalogToGlueResponse] =
       service.importCatalogToGlue(params).promise.toFuture
-    def listCrawlersFuture(params: ListCrawlersRequest): Future[ListCrawlersResponse] =
+    @inline def listCrawlersFuture(params: ListCrawlersRequest): Future[ListCrawlersResponse] =
       service.listCrawlers(params).promise.toFuture
-    def listDevEndpointsFuture(params: ListDevEndpointsRequest): Future[ListDevEndpointsResponse] =
+    @inline def listDevEndpointsFuture(params: ListDevEndpointsRequest): Future[ListDevEndpointsResponse] =
       service.listDevEndpoints(params).promise.toFuture
-    def listJobsFuture(params: ListJobsRequest): Future[ListJobsResponse] = service.listJobs(params).promise.toFuture
-    def listTriggersFuture(params: ListTriggersRequest): Future[ListTriggersResponse] =
+    @inline def listJobsFuture(params: ListJobsRequest): Future[ListJobsResponse] =
+      service.listJobs(params).promise.toFuture
+    @inline def listTriggersFuture(params: ListTriggersRequest): Future[ListTriggersResponse] =
       service.listTriggers(params).promise.toFuture
-    def listWorkflowsFuture(params: ListWorkflowsRequest): Future[ListWorkflowsResponse] =
+    @inline def listWorkflowsFuture(params: ListWorkflowsRequest): Future[ListWorkflowsResponse] =
       service.listWorkflows(params).promise.toFuture
-    def putDataCatalogEncryptionSettingsFuture(
+    @inline def putDataCatalogEncryptionSettingsFuture(
         params: PutDataCatalogEncryptionSettingsRequest
     ): Future[PutDataCatalogEncryptionSettingsResponse] =
       service.putDataCatalogEncryptionSettings(params).promise.toFuture
-    def putResourcePolicyFuture(params: PutResourcePolicyRequest): Future[PutResourcePolicyResponse] =
+    @inline def putResourcePolicyFuture(params: PutResourcePolicyRequest): Future[PutResourcePolicyResponse] =
       service.putResourcePolicy(params).promise.toFuture
-    def putWorkflowRunPropertiesFuture(
+    @inline def putWorkflowRunPropertiesFuture(
         params: PutWorkflowRunPropertiesRequest
     ): Future[PutWorkflowRunPropertiesResponse] = service.putWorkflowRunProperties(params).promise.toFuture
-    def resetJobBookmarkFuture(params: ResetJobBookmarkRequest): Future[ResetJobBookmarkResponse] =
+    @inline def resetJobBookmarkFuture(params: ResetJobBookmarkRequest): Future[ResetJobBookmarkResponse] =
       service.resetJobBookmark(params).promise.toFuture
-    def searchTablesFuture(params: SearchTablesRequest): Future[SearchTablesResponse] =
+    @inline def searchTablesFuture(params: SearchTablesRequest): Future[SearchTablesResponse] =
       service.searchTables(params).promise.toFuture
-    def startCrawlerFuture(params: StartCrawlerRequest): Future[StartCrawlerResponse] =
+    @inline def startCrawlerFuture(params: StartCrawlerRequest): Future[StartCrawlerResponse] =
       service.startCrawler(params).promise.toFuture
-    def startCrawlerScheduleFuture(params: StartCrawlerScheduleRequest): Future[StartCrawlerScheduleResponse] =
+    @inline def startCrawlerScheduleFuture(params: StartCrawlerScheduleRequest): Future[StartCrawlerScheduleResponse] =
       service.startCrawlerSchedule(params).promise.toFuture
-    def startExportLabelsTaskRunFuture(
+    @inline def startExportLabelsTaskRunFuture(
         params: StartExportLabelsTaskRunRequest
     ): Future[StartExportLabelsTaskRunResponse] = service.startExportLabelsTaskRun(params).promise.toFuture
-    def startImportLabelsTaskRunFuture(
+    @inline def startImportLabelsTaskRunFuture(
         params: StartImportLabelsTaskRunRequest
     ): Future[StartImportLabelsTaskRunResponse] = service.startImportLabelsTaskRun(params).promise.toFuture
-    def startJobRunFuture(params: StartJobRunRequest): Future[StartJobRunResponse] =
+    @inline def startJobRunFuture(params: StartJobRunRequest): Future[StartJobRunResponse] =
       service.startJobRun(params).promise.toFuture
-    def startMLEvaluationTaskRunFuture(
+    @inline def startMLEvaluationTaskRunFuture(
         params: StartMLEvaluationTaskRunRequest
     ): Future[StartMLEvaluationTaskRunResponse] = service.startMLEvaluationTaskRun(params).promise.toFuture
-    def startMLLabelingSetGenerationTaskRunFuture(
+    @inline def startMLLabelingSetGenerationTaskRunFuture(
         params: StartMLLabelingSetGenerationTaskRunRequest
     ): Future[StartMLLabelingSetGenerationTaskRunResponse] =
       service.startMLLabelingSetGenerationTaskRun(params).promise.toFuture
-    def startTriggerFuture(params: StartTriggerRequest): Future[StartTriggerResponse] =
+    @inline def startTriggerFuture(params: StartTriggerRequest): Future[StartTriggerResponse] =
       service.startTrigger(params).promise.toFuture
-    def startWorkflowRunFuture(params: StartWorkflowRunRequest): Future[StartWorkflowRunResponse] =
+    @inline def startWorkflowRunFuture(params: StartWorkflowRunRequest): Future[StartWorkflowRunResponse] =
       service.startWorkflowRun(params).promise.toFuture
-    def stopCrawlerFuture(params: StopCrawlerRequest): Future[StopCrawlerResponse] =
+    @inline def stopCrawlerFuture(params: StopCrawlerRequest): Future[StopCrawlerResponse] =
       service.stopCrawler(params).promise.toFuture
-    def stopCrawlerScheduleFuture(params: StopCrawlerScheduleRequest): Future[StopCrawlerScheduleResponse] =
+    @inline def stopCrawlerScheduleFuture(params: StopCrawlerScheduleRequest): Future[StopCrawlerScheduleResponse] =
       service.stopCrawlerSchedule(params).promise.toFuture
-    def stopTriggerFuture(params: StopTriggerRequest): Future[StopTriggerResponse] =
+    @inline def stopTriggerFuture(params: StopTriggerRequest): Future[StopTriggerResponse] =
       service.stopTrigger(params).promise.toFuture
-    def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] =
+    @inline def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] =
       service.tagResource(params).promise.toFuture
-    def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] =
+    @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] =
       service.untagResource(params).promise.toFuture
-    def updateClassifierFuture(params: UpdateClassifierRequest): Future[UpdateClassifierResponse] =
+    @inline def updateClassifierFuture(params: UpdateClassifierRequest): Future[UpdateClassifierResponse] =
       service.updateClassifier(params).promise.toFuture
-    def updateConnectionFuture(params: UpdateConnectionRequest): Future[UpdateConnectionResponse] =
+    @inline def updateConnectionFuture(params: UpdateConnectionRequest): Future[UpdateConnectionResponse] =
       service.updateConnection(params).promise.toFuture
-    def updateCrawlerFuture(params: UpdateCrawlerRequest): Future[UpdateCrawlerResponse] =
+    @inline def updateCrawlerFuture(params: UpdateCrawlerRequest): Future[UpdateCrawlerResponse] =
       service.updateCrawler(params).promise.toFuture
-    def updateCrawlerScheduleFuture(params: UpdateCrawlerScheduleRequest): Future[UpdateCrawlerScheduleResponse] =
-      service.updateCrawlerSchedule(params).promise.toFuture
-    def updateDatabaseFuture(params: UpdateDatabaseRequest): Future[UpdateDatabaseResponse] =
+    @inline def updateCrawlerScheduleFuture(
+        params: UpdateCrawlerScheduleRequest
+    ): Future[UpdateCrawlerScheduleResponse] = service.updateCrawlerSchedule(params).promise.toFuture
+    @inline def updateDatabaseFuture(params: UpdateDatabaseRequest): Future[UpdateDatabaseResponse] =
       service.updateDatabase(params).promise.toFuture
-    def updateDevEndpointFuture(params: UpdateDevEndpointRequest): Future[UpdateDevEndpointResponse] =
+    @inline def updateDevEndpointFuture(params: UpdateDevEndpointRequest): Future[UpdateDevEndpointResponse] =
       service.updateDevEndpoint(params).promise.toFuture
-    def updateJobFuture(params: UpdateJobRequest): Future[UpdateJobResponse] =
+    @inline def updateJobFuture(params: UpdateJobRequest): Future[UpdateJobResponse] =
       service.updateJob(params).promise.toFuture
-    def updateMLTransformFuture(params: UpdateMLTransformRequest): Future[UpdateMLTransformResponse] =
+    @inline def updateMLTransformFuture(params: UpdateMLTransformRequest): Future[UpdateMLTransformResponse] =
       service.updateMLTransform(params).promise.toFuture
-    def updatePartitionFuture(params: UpdatePartitionRequest): Future[UpdatePartitionResponse] =
+    @inline def updatePartitionFuture(params: UpdatePartitionRequest): Future[UpdatePartitionResponse] =
       service.updatePartition(params).promise.toFuture
-    def updateTableFuture(params: UpdateTableRequest): Future[UpdateTableResponse] =
+    @inline def updateTableFuture(params: UpdateTableRequest): Future[UpdateTableResponse] =
       service.updateTable(params).promise.toFuture
-    def updateTriggerFuture(params: UpdateTriggerRequest): Future[UpdateTriggerResponse] =
+    @inline def updateTriggerFuture(params: UpdateTriggerRequest): Future[UpdateTriggerResponse] =
       service.updateTrigger(params).promise.toFuture
-    def updateUserDefinedFunctionFuture(
+    @inline def updateUserDefinedFunctionFuture(
         params: UpdateUserDefinedFunctionRequest
     ): Future[UpdateUserDefinedFunctionResponse] = service.updateUserDefinedFunction(params).promise.toFuture
-    def updateWorkflowFuture(params: UpdateWorkflowRequest): Future[UpdateWorkflowResponse] =
+    @inline def updateWorkflowFuture(params: UpdateWorkflowRequest): Future[UpdateWorkflowResponse] =
       service.updateWorkflow(params).promise.toFuture
   }
 }

@@ -151,183 +151,189 @@ package object configservice {
 
   implicit final class ConfigServiceOps(private val service: ConfigService) extends AnyVal {
 
-    def batchGetAggregateResourceConfigFuture(
+    @inline def batchGetAggregateResourceConfigFuture(
         params: BatchGetAggregateResourceConfigRequest
     ): Future[BatchGetAggregateResourceConfigResponse] =
       service.batchGetAggregateResourceConfig(params).promise.toFuture
-    def batchGetResourceConfigFuture(params: BatchGetResourceConfigRequest): Future[BatchGetResourceConfigResponse] =
-      service.batchGetResourceConfig(params).promise.toFuture
-    def deleteAggregationAuthorizationFuture(params: DeleteAggregationAuthorizationRequest): Future[js.Object] =
+    @inline def batchGetResourceConfigFuture(
+        params: BatchGetResourceConfigRequest
+    ): Future[BatchGetResourceConfigResponse] = service.batchGetResourceConfig(params).promise.toFuture
+    @inline def deleteAggregationAuthorizationFuture(params: DeleteAggregationAuthorizationRequest): Future[js.Object] =
       service.deleteAggregationAuthorization(params).promise.toFuture
-    def deleteConfigRuleFuture(params: DeleteConfigRuleRequest): Future[js.Object] =
+    @inline def deleteConfigRuleFuture(params: DeleteConfigRuleRequest): Future[js.Object] =
       service.deleteConfigRule(params).promise.toFuture
-    def deleteConfigurationAggregatorFuture(params: DeleteConfigurationAggregatorRequest): Future[js.Object] =
+    @inline def deleteConfigurationAggregatorFuture(params: DeleteConfigurationAggregatorRequest): Future[js.Object] =
       service.deleteConfigurationAggregator(params).promise.toFuture
-    def deleteConfigurationRecorderFuture(params: DeleteConfigurationRecorderRequest): Future[js.Object] =
+    @inline def deleteConfigurationRecorderFuture(params: DeleteConfigurationRecorderRequest): Future[js.Object] =
       service.deleteConfigurationRecorder(params).promise.toFuture
-    def deleteDeliveryChannelFuture(params: DeleteDeliveryChannelRequest): Future[js.Object] =
+    @inline def deleteDeliveryChannelFuture(params: DeleteDeliveryChannelRequest): Future[js.Object] =
       service.deleteDeliveryChannel(params).promise.toFuture
-    def deleteEvaluationResultsFuture(params: DeleteEvaluationResultsRequest): Future[DeleteEvaluationResultsResponse] =
-      service.deleteEvaluationResults(params).promise.toFuture
-    def deleteOrganizationConfigRuleFuture(params: DeleteOrganizationConfigRuleRequest): Future[js.Object] =
+    @inline def deleteEvaluationResultsFuture(
+        params: DeleteEvaluationResultsRequest
+    ): Future[DeleteEvaluationResultsResponse] = service.deleteEvaluationResults(params).promise.toFuture
+    @inline def deleteOrganizationConfigRuleFuture(params: DeleteOrganizationConfigRuleRequest): Future[js.Object] =
       service.deleteOrganizationConfigRule(params).promise.toFuture
-    def deletePendingAggregationRequestFuture(params: DeletePendingAggregationRequestRequest): Future[js.Object] =
-      service.deletePendingAggregationRequest(params).promise.toFuture
-    def deleteRemediationConfigurationFuture(
+    @inline def deletePendingAggregationRequestFuture(
+        params: DeletePendingAggregationRequestRequest
+    ): Future[js.Object] = service.deletePendingAggregationRequest(params).promise.toFuture
+    @inline def deleteRemediationConfigurationFuture(
         params: DeleteRemediationConfigurationRequest
     ): Future[DeleteRemediationConfigurationResponse] = service.deleteRemediationConfiguration(params).promise.toFuture
-    def deleteRetentionConfigurationFuture(params: DeleteRetentionConfigurationRequest): Future[js.Object] =
+    @inline def deleteRetentionConfigurationFuture(params: DeleteRetentionConfigurationRequest): Future[js.Object] =
       service.deleteRetentionConfiguration(params).promise.toFuture
-    def deliverConfigSnapshotFuture(params: DeliverConfigSnapshotRequest): Future[DeliverConfigSnapshotResponse] =
-      service.deliverConfigSnapshot(params).promise.toFuture
-    def describeAggregateComplianceByConfigRulesFuture(
+    @inline def deliverConfigSnapshotFuture(
+        params: DeliverConfigSnapshotRequest
+    ): Future[DeliverConfigSnapshotResponse] = service.deliverConfigSnapshot(params).promise.toFuture
+    @inline def describeAggregateComplianceByConfigRulesFuture(
         params: DescribeAggregateComplianceByConfigRulesRequest
     ): Future[DescribeAggregateComplianceByConfigRulesResponse] =
       service.describeAggregateComplianceByConfigRules(params).promise.toFuture
-    def describeAggregationAuthorizationsFuture(
+    @inline def describeAggregationAuthorizationsFuture(
         params: DescribeAggregationAuthorizationsRequest
     ): Future[DescribeAggregationAuthorizationsResponse] =
       service.describeAggregationAuthorizations(params).promise.toFuture
-    def describeComplianceByConfigRuleFuture(
+    @inline def describeComplianceByConfigRuleFuture(
         params: DescribeComplianceByConfigRuleRequest
     ): Future[DescribeComplianceByConfigRuleResponse] = service.describeComplianceByConfigRule(params).promise.toFuture
-    def describeComplianceByResourceFuture(
+    @inline def describeComplianceByResourceFuture(
         params: DescribeComplianceByResourceRequest
     ): Future[DescribeComplianceByResourceResponse] = service.describeComplianceByResource(params).promise.toFuture
-    def describeConfigRuleEvaluationStatusFuture(
+    @inline def describeConfigRuleEvaluationStatusFuture(
         params: DescribeConfigRuleEvaluationStatusRequest
     ): Future[DescribeConfigRuleEvaluationStatusResponse] =
       service.describeConfigRuleEvaluationStatus(params).promise.toFuture
-    def describeConfigRulesFuture(params: DescribeConfigRulesRequest): Future[DescribeConfigRulesResponse] =
+    @inline def describeConfigRulesFuture(params: DescribeConfigRulesRequest): Future[DescribeConfigRulesResponse] =
       service.describeConfigRules(params).promise.toFuture
-    def describeConfigurationAggregatorSourcesStatusFuture(
+    @inline def describeConfigurationAggregatorSourcesStatusFuture(
         params: DescribeConfigurationAggregatorSourcesStatusRequest
     ): Future[DescribeConfigurationAggregatorSourcesStatusResponse] =
       service.describeConfigurationAggregatorSourcesStatus(params).promise.toFuture
-    def describeConfigurationAggregatorsFuture(
+    @inline def describeConfigurationAggregatorsFuture(
         params: DescribeConfigurationAggregatorsRequest
     ): Future[DescribeConfigurationAggregatorsResponse] =
       service.describeConfigurationAggregators(params).promise.toFuture
-    def describeConfigurationRecorderStatusFuture(
+    @inline def describeConfigurationRecorderStatusFuture(
         params: DescribeConfigurationRecorderStatusRequest
     ): Future[DescribeConfigurationRecorderStatusResponse] =
       service.describeConfigurationRecorderStatus(params).promise.toFuture
-    def describeConfigurationRecordersFuture(
+    @inline def describeConfigurationRecordersFuture(
         params: DescribeConfigurationRecordersRequest
     ): Future[DescribeConfigurationRecordersResponse] = service.describeConfigurationRecorders(params).promise.toFuture
-    def describeDeliveryChannelStatusFuture(
+    @inline def describeDeliveryChannelStatusFuture(
         params: DescribeDeliveryChannelStatusRequest
     ): Future[DescribeDeliveryChannelStatusResponse] = service.describeDeliveryChannelStatus(params).promise.toFuture
-    def describeDeliveryChannelsFuture(
+    @inline def describeDeliveryChannelsFuture(
         params: DescribeDeliveryChannelsRequest
     ): Future[DescribeDeliveryChannelsResponse] = service.describeDeliveryChannels(params).promise.toFuture
-    def describeOrganizationConfigRuleStatusesFuture(
+    @inline def describeOrganizationConfigRuleStatusesFuture(
         params: DescribeOrganizationConfigRuleStatusesRequest
     ): Future[DescribeOrganizationConfigRuleStatusesResponse] =
       service.describeOrganizationConfigRuleStatuses(params).promise.toFuture
-    def describeOrganizationConfigRulesFuture(
+    @inline def describeOrganizationConfigRulesFuture(
         params: DescribeOrganizationConfigRulesRequest
     ): Future[DescribeOrganizationConfigRulesResponse] =
       service.describeOrganizationConfigRules(params).promise.toFuture
-    def describePendingAggregationRequestsFuture(
+    @inline def describePendingAggregationRequestsFuture(
         params: DescribePendingAggregationRequestsRequest
     ): Future[DescribePendingAggregationRequestsResponse] =
       service.describePendingAggregationRequests(params).promise.toFuture
-    def describeRemediationConfigurationsFuture(
+    @inline def describeRemediationConfigurationsFuture(
         params: DescribeRemediationConfigurationsRequest
     ): Future[DescribeRemediationConfigurationsResponse] =
       service.describeRemediationConfigurations(params).promise.toFuture
-    def describeRemediationExecutionStatusFuture(
+    @inline def describeRemediationExecutionStatusFuture(
         params: DescribeRemediationExecutionStatusRequest
     ): Future[DescribeRemediationExecutionStatusResponse] =
       service.describeRemediationExecutionStatus(params).promise.toFuture
-    def describeRetentionConfigurationsFuture(
+    @inline def describeRetentionConfigurationsFuture(
         params: DescribeRetentionConfigurationsRequest
     ): Future[DescribeRetentionConfigurationsResponse] =
       service.describeRetentionConfigurations(params).promise.toFuture
-    def getAggregateComplianceDetailsByConfigRuleFuture(
+    @inline def getAggregateComplianceDetailsByConfigRuleFuture(
         params: GetAggregateComplianceDetailsByConfigRuleRequest
     ): Future[GetAggregateComplianceDetailsByConfigRuleResponse] =
       service.getAggregateComplianceDetailsByConfigRule(params).promise.toFuture
-    def getAggregateConfigRuleComplianceSummaryFuture(
+    @inline def getAggregateConfigRuleComplianceSummaryFuture(
         params: GetAggregateConfigRuleComplianceSummaryRequest
     ): Future[GetAggregateConfigRuleComplianceSummaryResponse] =
       service.getAggregateConfigRuleComplianceSummary(params).promise.toFuture
-    def getAggregateDiscoveredResourceCountsFuture(
+    @inline def getAggregateDiscoveredResourceCountsFuture(
         params: GetAggregateDiscoveredResourceCountsRequest
     ): Future[GetAggregateDiscoveredResourceCountsResponse] =
       service.getAggregateDiscoveredResourceCounts(params).promise.toFuture
-    def getAggregateResourceConfigFuture(
+    @inline def getAggregateResourceConfigFuture(
         params: GetAggregateResourceConfigRequest
     ): Future[GetAggregateResourceConfigResponse] = service.getAggregateResourceConfig(params).promise.toFuture
-    def getComplianceDetailsByConfigRuleFuture(
+    @inline def getComplianceDetailsByConfigRuleFuture(
         params: GetComplianceDetailsByConfigRuleRequest
     ): Future[GetComplianceDetailsByConfigRuleResponse] =
       service.getComplianceDetailsByConfigRule(params).promise.toFuture
-    def getComplianceDetailsByResourceFuture(
+    @inline def getComplianceDetailsByResourceFuture(
         params: GetComplianceDetailsByResourceRequest
     ): Future[GetComplianceDetailsByResourceResponse] = service.getComplianceDetailsByResource(params).promise.toFuture
-    def getComplianceSummaryByConfigRuleFuture(): Future[GetComplianceSummaryByConfigRuleResponse] =
+    @inline def getComplianceSummaryByConfigRuleFuture(): Future[GetComplianceSummaryByConfigRuleResponse] =
       service.getComplianceSummaryByConfigRule().promise.toFuture
-    def getComplianceSummaryByResourceTypeFuture(
+    @inline def getComplianceSummaryByResourceTypeFuture(
         params: GetComplianceSummaryByResourceTypeRequest
     ): Future[GetComplianceSummaryByResourceTypeResponse] =
       service.getComplianceSummaryByResourceType(params).promise.toFuture
-    def getDiscoveredResourceCountsFuture(
+    @inline def getDiscoveredResourceCountsFuture(
         params: GetDiscoveredResourceCountsRequest
     ): Future[GetDiscoveredResourceCountsResponse] = service.getDiscoveredResourceCounts(params).promise.toFuture
-    def getOrganizationConfigRuleDetailedStatusFuture(
+    @inline def getOrganizationConfigRuleDetailedStatusFuture(
         params: GetOrganizationConfigRuleDetailedStatusRequest
     ): Future[GetOrganizationConfigRuleDetailedStatusResponse] =
       service.getOrganizationConfigRuleDetailedStatus(params).promise.toFuture
-    def getResourceConfigHistoryFuture(
+    @inline def getResourceConfigHistoryFuture(
         params: GetResourceConfigHistoryRequest
     ): Future[GetResourceConfigHistoryResponse] = service.getResourceConfigHistory(params).promise.toFuture
-    def listAggregateDiscoveredResourcesFuture(
+    @inline def listAggregateDiscoveredResourcesFuture(
         params: ListAggregateDiscoveredResourcesRequest
     ): Future[ListAggregateDiscoveredResourcesResponse] =
       service.listAggregateDiscoveredResources(params).promise.toFuture
-    def listDiscoveredResourcesFuture(params: ListDiscoveredResourcesRequest): Future[ListDiscoveredResourcesResponse] =
-      service.listDiscoveredResources(params).promise.toFuture
-    def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] =
+    @inline def listDiscoveredResourcesFuture(
+        params: ListDiscoveredResourcesRequest
+    ): Future[ListDiscoveredResourcesResponse] = service.listDiscoveredResources(params).promise.toFuture
+    @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] =
       service.listTagsForResource(params).promise.toFuture
-    def putAggregationAuthorizationFuture(
+    @inline def putAggregationAuthorizationFuture(
         params: PutAggregationAuthorizationRequest
     ): Future[PutAggregationAuthorizationResponse] = service.putAggregationAuthorization(params).promise.toFuture
-    def putConfigRuleFuture(params: PutConfigRuleRequest): Future[js.Object] =
+    @inline def putConfigRuleFuture(params: PutConfigRuleRequest): Future[js.Object] =
       service.putConfigRule(params).promise.toFuture
-    def putConfigurationAggregatorFuture(
+    @inline def putConfigurationAggregatorFuture(
         params: PutConfigurationAggregatorRequest
     ): Future[PutConfigurationAggregatorResponse] = service.putConfigurationAggregator(params).promise.toFuture
-    def putConfigurationRecorderFuture(params: PutConfigurationRecorderRequest): Future[js.Object] =
+    @inline def putConfigurationRecorderFuture(params: PutConfigurationRecorderRequest): Future[js.Object] =
       service.putConfigurationRecorder(params).promise.toFuture
-    def putDeliveryChannelFuture(params: PutDeliveryChannelRequest): Future[js.Object] =
+    @inline def putDeliveryChannelFuture(params: PutDeliveryChannelRequest): Future[js.Object] =
       service.putDeliveryChannel(params).promise.toFuture
-    def putEvaluationsFuture(params: PutEvaluationsRequest): Future[PutEvaluationsResponse] =
+    @inline def putEvaluationsFuture(params: PutEvaluationsRequest): Future[PutEvaluationsResponse] =
       service.putEvaluations(params).promise.toFuture
-    def putOrganizationConfigRuleFuture(
+    @inline def putOrganizationConfigRuleFuture(
         params: PutOrganizationConfigRuleRequest
     ): Future[PutOrganizationConfigRuleResponse] = service.putOrganizationConfigRule(params).promise.toFuture
-    def putRemediationConfigurationsFuture(
+    @inline def putRemediationConfigurationsFuture(
         params: PutRemediationConfigurationsRequest
     ): Future[PutRemediationConfigurationsResponse] = service.putRemediationConfigurations(params).promise.toFuture
-    def putRetentionConfigurationFuture(
+    @inline def putRetentionConfigurationFuture(
         params: PutRetentionConfigurationRequest
     ): Future[PutRetentionConfigurationResponse] = service.putRetentionConfiguration(params).promise.toFuture
-    def selectResourceConfigFuture(params: SelectResourceConfigRequest): Future[SelectResourceConfigResponse] =
+    @inline def selectResourceConfigFuture(params: SelectResourceConfigRequest): Future[SelectResourceConfigResponse] =
       service.selectResourceConfig(params).promise.toFuture
-    def startConfigRulesEvaluationFuture(
+    @inline def startConfigRulesEvaluationFuture(
         params: StartConfigRulesEvaluationRequest
     ): Future[StartConfigRulesEvaluationResponse] = service.startConfigRulesEvaluation(params).promise.toFuture
-    def startConfigurationRecorderFuture(params: StartConfigurationRecorderRequest): Future[js.Object] =
+    @inline def startConfigurationRecorderFuture(params: StartConfigurationRecorderRequest): Future[js.Object] =
       service.startConfigurationRecorder(params).promise.toFuture
-    def startRemediationExecutionFuture(
+    @inline def startRemediationExecutionFuture(
         params: StartRemediationExecutionRequest
     ): Future[StartRemediationExecutionResponse] = service.startRemediationExecution(params).promise.toFuture
-    def stopConfigurationRecorderFuture(params: StopConfigurationRecorderRequest): Future[js.Object] =
+    @inline def stopConfigurationRecorderFuture(params: StopConfigurationRecorderRequest): Future[js.Object] =
       service.stopConfigurationRecorder(params).promise.toFuture
-    def tagResourceFuture(params: TagResourceRequest): Future[js.Object] = service.tagResource(params).promise.toFuture
-    def untagResourceFuture(params: UntagResourceRequest): Future[js.Object] =
+    @inline def tagResourceFuture(params: TagResourceRequest): Future[js.Object] =
+      service.tagResource(params).promise.toFuture
+    @inline def untagResourceFuture(params: UntagResourceRequest): Future[js.Object] =
       service.untagResource(params).promise.toFuture
   }
 }

@@ -38,49 +38,51 @@ package object dax {
 
   implicit final class DAXOps(private val service: DAX) extends AnyVal {
 
-    def createClusterFuture(params: CreateClusterRequest): Future[CreateClusterResponse] =
+    @inline def createClusterFuture(params: CreateClusterRequest): Future[CreateClusterResponse] =
       service.createCluster(params).promise.toFuture
-    def createParameterGroupFuture(params: CreateParameterGroupRequest): Future[CreateParameterGroupResponse] =
+    @inline def createParameterGroupFuture(params: CreateParameterGroupRequest): Future[CreateParameterGroupResponse] =
       service.createParameterGroup(params).promise.toFuture
-    def createSubnetGroupFuture(params: CreateSubnetGroupRequest): Future[CreateSubnetGroupResponse] =
+    @inline def createSubnetGroupFuture(params: CreateSubnetGroupRequest): Future[CreateSubnetGroupResponse] =
       service.createSubnetGroup(params).promise.toFuture
-    def decreaseReplicationFactorFuture(
+    @inline def decreaseReplicationFactorFuture(
         params: DecreaseReplicationFactorRequest
     ): Future[DecreaseReplicationFactorResponse] = service.decreaseReplicationFactor(params).promise.toFuture
-    def deleteClusterFuture(params: DeleteClusterRequest): Future[DeleteClusterResponse] =
+    @inline def deleteClusterFuture(params: DeleteClusterRequest): Future[DeleteClusterResponse] =
       service.deleteCluster(params).promise.toFuture
-    def deleteParameterGroupFuture(params: DeleteParameterGroupRequest): Future[DeleteParameterGroupResponse] =
+    @inline def deleteParameterGroupFuture(params: DeleteParameterGroupRequest): Future[DeleteParameterGroupResponse] =
       service.deleteParameterGroup(params).promise.toFuture
-    def deleteSubnetGroupFuture(params: DeleteSubnetGroupRequest): Future[DeleteSubnetGroupResponse] =
+    @inline def deleteSubnetGroupFuture(params: DeleteSubnetGroupRequest): Future[DeleteSubnetGroupResponse] =
       service.deleteSubnetGroup(params).promise.toFuture
-    def describeClustersFuture(params: DescribeClustersRequest): Future[DescribeClustersResponse] =
+    @inline def describeClustersFuture(params: DescribeClustersRequest): Future[DescribeClustersResponse] =
       service.describeClusters(params).promise.toFuture
-    def describeDefaultParametersFuture(
+    @inline def describeDefaultParametersFuture(
         params: DescribeDefaultParametersRequest
     ): Future[DescribeDefaultParametersResponse] = service.describeDefaultParameters(params).promise.toFuture
-    def describeEventsFuture(params: DescribeEventsRequest): Future[DescribeEventsResponse] =
+    @inline def describeEventsFuture(params: DescribeEventsRequest): Future[DescribeEventsResponse] =
       service.describeEvents(params).promise.toFuture
-    def describeParameterGroupsFuture(params: DescribeParameterGroupsRequest): Future[DescribeParameterGroupsResponse] =
-      service.describeParameterGroups(params).promise.toFuture
-    def describeParametersFuture(params: DescribeParametersRequest): Future[DescribeParametersResponse] =
+    @inline def describeParameterGroupsFuture(
+        params: DescribeParameterGroupsRequest
+    ): Future[DescribeParameterGroupsResponse] = service.describeParameterGroups(params).promise.toFuture
+    @inline def describeParametersFuture(params: DescribeParametersRequest): Future[DescribeParametersResponse] =
       service.describeParameters(params).promise.toFuture
-    def describeSubnetGroupsFuture(params: DescribeSubnetGroupsRequest): Future[DescribeSubnetGroupsResponse] =
+    @inline def describeSubnetGroupsFuture(params: DescribeSubnetGroupsRequest): Future[DescribeSubnetGroupsResponse] =
       service.describeSubnetGroups(params).promise.toFuture
-    def increaseReplicationFactorFuture(
+    @inline def increaseReplicationFactorFuture(
         params: IncreaseReplicationFactorRequest
-    ): Future[IncreaseReplicationFactorResponse]                          = service.increaseReplicationFactor(params).promise.toFuture
-    def listTagsFuture(params: ListTagsRequest): Future[ListTagsResponse] = service.listTags(params).promise.toFuture
-    def rebootNodeFuture(params: RebootNodeRequest): Future[RebootNodeResponse] =
+    ): Future[IncreaseReplicationFactorResponse] = service.increaseReplicationFactor(params).promise.toFuture
+    @inline def listTagsFuture(params: ListTagsRequest): Future[ListTagsResponse] =
+      service.listTags(params).promise.toFuture
+    @inline def rebootNodeFuture(params: RebootNodeRequest): Future[RebootNodeResponse] =
       service.rebootNode(params).promise.toFuture
-    def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] =
+    @inline def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] =
       service.tagResource(params).promise.toFuture
-    def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] =
+    @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] =
       service.untagResource(params).promise.toFuture
-    def updateClusterFuture(params: UpdateClusterRequest): Future[UpdateClusterResponse] =
+    @inline def updateClusterFuture(params: UpdateClusterRequest): Future[UpdateClusterResponse] =
       service.updateCluster(params).promise.toFuture
-    def updateParameterGroupFuture(params: UpdateParameterGroupRequest): Future[UpdateParameterGroupResponse] =
+    @inline def updateParameterGroupFuture(params: UpdateParameterGroupRequest): Future[UpdateParameterGroupResponse] =
       service.updateParameterGroup(params).promise.toFuture
-    def updateSubnetGroupFuture(params: UpdateSubnetGroupRequest): Future[UpdateSubnetGroupResponse] =
+    @inline def updateSubnetGroupFuture(params: UpdateSubnetGroupRequest): Future[UpdateSubnetGroupResponse] =
       service.updateSubnetGroup(params).promise.toFuture
   }
 }

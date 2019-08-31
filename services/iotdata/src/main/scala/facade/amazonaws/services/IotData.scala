@@ -20,12 +20,12 @@ package object iotdata {
 
   implicit final class IotDataOps(private val service: IotData) extends AnyVal {
 
-    def deleteThingShadowFuture(params: DeleteThingShadowRequest): Future[DeleteThingShadowResponse] =
+    @inline def deleteThingShadowFuture(params: DeleteThingShadowRequest): Future[DeleteThingShadowResponse] =
       service.deleteThingShadow(params).promise.toFuture
-    def getThingShadowFuture(params: GetThingShadowRequest): Future[GetThingShadowResponse] =
+    @inline def getThingShadowFuture(params: GetThingShadowRequest): Future[GetThingShadowResponse] =
       service.getThingShadow(params).promise.toFuture
-    def publishFuture(params: PublishRequest): Future[js.Object] = service.publish(params).promise.toFuture
-    def updateThingShadowFuture(params: UpdateThingShadowRequest): Future[UpdateThingShadowResponse] =
+    @inline def publishFuture(params: PublishRequest): Future[js.Object] = service.publish(params).promise.toFuture
+    @inline def updateThingShadowFuture(params: UpdateThingShadowRequest): Future[UpdateThingShadowResponse] =
       service.updateThingShadow(params).promise.toFuture
   }
 }

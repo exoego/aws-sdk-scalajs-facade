@@ -32,24 +32,25 @@ package object kinesisvideo {
 
   implicit final class KinesisVideoOps(private val service: KinesisVideo) extends AnyVal {
 
-    def createStreamFuture(params: CreateStreamInput): Future[CreateStreamOutput] =
+    @inline def createStreamFuture(params: CreateStreamInput): Future[CreateStreamOutput] =
       service.createStream(params).promise.toFuture
-    def deleteStreamFuture(params: DeleteStreamInput): Future[DeleteStreamOutput] =
+    @inline def deleteStreamFuture(params: DeleteStreamInput): Future[DeleteStreamOutput] =
       service.deleteStream(params).promise.toFuture
-    def describeStreamFuture(params: DescribeStreamInput): Future[DescribeStreamOutput] =
+    @inline def describeStreamFuture(params: DescribeStreamInput): Future[DescribeStreamOutput] =
       service.describeStream(params).promise.toFuture
-    def getDataEndpointFuture(params: GetDataEndpointInput): Future[GetDataEndpointOutput] =
+    @inline def getDataEndpointFuture(params: GetDataEndpointInput): Future[GetDataEndpointOutput] =
       service.getDataEndpoint(params).promise.toFuture
-    def listStreamsFuture(params: ListStreamsInput): Future[ListStreamsOutput] =
+    @inline def listStreamsFuture(params: ListStreamsInput): Future[ListStreamsOutput] =
       service.listStreams(params).promise.toFuture
-    def listTagsForStreamFuture(params: ListTagsForStreamInput): Future[ListTagsForStreamOutput] =
+    @inline def listTagsForStreamFuture(params: ListTagsForStreamInput): Future[ListTagsForStreamOutput] =
       service.listTagsForStream(params).promise.toFuture
-    def tagStreamFuture(params: TagStreamInput): Future[TagStreamOutput] = service.tagStream(params).promise.toFuture
-    def untagStreamFuture(params: UntagStreamInput): Future[UntagStreamOutput] =
+    @inline def tagStreamFuture(params: TagStreamInput): Future[TagStreamOutput] =
+      service.tagStream(params).promise.toFuture
+    @inline def untagStreamFuture(params: UntagStreamInput): Future[UntagStreamOutput] =
       service.untagStream(params).promise.toFuture
-    def updateDataRetentionFuture(params: UpdateDataRetentionInput): Future[UpdateDataRetentionOutput] =
+    @inline def updateDataRetentionFuture(params: UpdateDataRetentionInput): Future[UpdateDataRetentionOutput] =
       service.updateDataRetention(params).promise.toFuture
-    def updateStreamFuture(params: UpdateStreamInput): Future[UpdateStreamOutput] =
+    @inline def updateStreamFuture(params: UpdateStreamInput): Future[UpdateStreamOutput] =
       service.updateStream(params).promise.toFuture
   }
 }

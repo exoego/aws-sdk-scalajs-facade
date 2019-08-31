@@ -44,40 +44,44 @@ package object batch {
 
   implicit final class BatchOps(private val service: Batch) extends AnyVal {
 
-    def cancelJobFuture(params: CancelJobRequest): Future[CancelJobResponse] =
+    @inline def cancelJobFuture(params: CancelJobRequest): Future[CancelJobResponse] =
       service.cancelJob(params).promise.toFuture
-    def createComputeEnvironmentFuture(
+    @inline def createComputeEnvironmentFuture(
         params: CreateComputeEnvironmentRequest
     ): Future[CreateComputeEnvironmentResponse] = service.createComputeEnvironment(params).promise.toFuture
-    def createJobQueueFuture(params: CreateJobQueueRequest): Future[CreateJobQueueResponse] =
+    @inline def createJobQueueFuture(params: CreateJobQueueRequest): Future[CreateJobQueueResponse] =
       service.createJobQueue(params).promise.toFuture
-    def deleteComputeEnvironmentFuture(
+    @inline def deleteComputeEnvironmentFuture(
         params: DeleteComputeEnvironmentRequest
     ): Future[DeleteComputeEnvironmentResponse] = service.deleteComputeEnvironment(params).promise.toFuture
-    def deleteJobQueueFuture(params: DeleteJobQueueRequest): Future[DeleteJobQueueResponse] =
+    @inline def deleteJobQueueFuture(params: DeleteJobQueueRequest): Future[DeleteJobQueueResponse] =
       service.deleteJobQueue(params).promise.toFuture
-    def deregisterJobDefinitionFuture(params: DeregisterJobDefinitionRequest): Future[DeregisterJobDefinitionResponse] =
-      service.deregisterJobDefinition(params).promise.toFuture
-    def describeComputeEnvironmentsFuture(
+    @inline def deregisterJobDefinitionFuture(
+        params: DeregisterJobDefinitionRequest
+    ): Future[DeregisterJobDefinitionResponse] = service.deregisterJobDefinition(params).promise.toFuture
+    @inline def describeComputeEnvironmentsFuture(
         params: DescribeComputeEnvironmentsRequest
     ): Future[DescribeComputeEnvironmentsResponse] = service.describeComputeEnvironments(params).promise.toFuture
-    def describeJobDefinitionsFuture(params: DescribeJobDefinitionsRequest): Future[DescribeJobDefinitionsResponse] =
-      service.describeJobDefinitions(params).promise.toFuture
-    def describeJobQueuesFuture(params: DescribeJobQueuesRequest): Future[DescribeJobQueuesResponse] =
+    @inline def describeJobDefinitionsFuture(
+        params: DescribeJobDefinitionsRequest
+    ): Future[DescribeJobDefinitionsResponse] = service.describeJobDefinitions(params).promise.toFuture
+    @inline def describeJobQueuesFuture(params: DescribeJobQueuesRequest): Future[DescribeJobQueuesResponse] =
       service.describeJobQueues(params).promise.toFuture
-    def describeJobsFuture(params: DescribeJobsRequest): Future[DescribeJobsResponse] =
+    @inline def describeJobsFuture(params: DescribeJobsRequest): Future[DescribeJobsResponse] =
       service.describeJobs(params).promise.toFuture
-    def listJobsFuture(params: ListJobsRequest): Future[ListJobsResponse] = service.listJobs(params).promise.toFuture
-    def registerJobDefinitionFuture(params: RegisterJobDefinitionRequest): Future[RegisterJobDefinitionResponse] =
-      service.registerJobDefinition(params).promise.toFuture
-    def submitJobFuture(params: SubmitJobRequest): Future[SubmitJobResponse] =
+    @inline def listJobsFuture(params: ListJobsRequest): Future[ListJobsResponse] =
+      service.listJobs(params).promise.toFuture
+    @inline def registerJobDefinitionFuture(
+        params: RegisterJobDefinitionRequest
+    ): Future[RegisterJobDefinitionResponse] = service.registerJobDefinition(params).promise.toFuture
+    @inline def submitJobFuture(params: SubmitJobRequest): Future[SubmitJobResponse] =
       service.submitJob(params).promise.toFuture
-    def terminateJobFuture(params: TerminateJobRequest): Future[TerminateJobResponse] =
+    @inline def terminateJobFuture(params: TerminateJobRequest): Future[TerminateJobResponse] =
       service.terminateJob(params).promise.toFuture
-    def updateComputeEnvironmentFuture(
+    @inline def updateComputeEnvironmentFuture(
         params: UpdateComputeEnvironmentRequest
     ): Future[UpdateComputeEnvironmentResponse] = service.updateComputeEnvironment(params).promise.toFuture
-    def updateJobQueueFuture(params: UpdateJobQueueRequest): Future[UpdateJobQueueResponse] =
+    @inline def updateJobQueueFuture(params: UpdateJobQueueRequest): Future[UpdateJobQueueResponse] =
       service.updateJobQueue(params).promise.toFuture
   }
 }

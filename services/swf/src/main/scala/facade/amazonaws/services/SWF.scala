@@ -85,78 +85,85 @@ package object swf {
 
   implicit final class SWFOps(private val service: SWF) extends AnyVal {
 
-    def countClosedWorkflowExecutionsFuture(
+    @inline def countClosedWorkflowExecutionsFuture(
         params: CountClosedWorkflowExecutionsInput
     ): Future[WorkflowExecutionCount] = service.countClosedWorkflowExecutions(params).promise.toFuture
-    def countOpenWorkflowExecutionsFuture(params: CountOpenWorkflowExecutionsInput): Future[WorkflowExecutionCount] =
-      service.countOpenWorkflowExecutions(params).promise.toFuture
-    def countPendingActivityTasksFuture(params: CountPendingActivityTasksInput): Future[PendingTaskCount] =
+    @inline def countOpenWorkflowExecutionsFuture(
+        params: CountOpenWorkflowExecutionsInput
+    ): Future[WorkflowExecutionCount] = service.countOpenWorkflowExecutions(params).promise.toFuture
+    @inline def countPendingActivityTasksFuture(params: CountPendingActivityTasksInput): Future[PendingTaskCount] =
       service.countPendingActivityTasks(params).promise.toFuture
-    def countPendingDecisionTasksFuture(params: CountPendingDecisionTasksInput): Future[PendingTaskCount] =
+    @inline def countPendingDecisionTasksFuture(params: CountPendingDecisionTasksInput): Future[PendingTaskCount] =
       service.countPendingDecisionTasks(params).promise.toFuture
-    def deprecateActivityTypeFuture(params: DeprecateActivityTypeInput): Future[js.Object] =
+    @inline def deprecateActivityTypeFuture(params: DeprecateActivityTypeInput): Future[js.Object] =
       service.deprecateActivityType(params).promise.toFuture
-    def deprecateDomainFuture(params: DeprecateDomainInput): Future[js.Object] =
+    @inline def deprecateDomainFuture(params: DeprecateDomainInput): Future[js.Object] =
       service.deprecateDomain(params).promise.toFuture
-    def deprecateWorkflowTypeFuture(params: DeprecateWorkflowTypeInput): Future[js.Object] =
+    @inline def deprecateWorkflowTypeFuture(params: DeprecateWorkflowTypeInput): Future[js.Object] =
       service.deprecateWorkflowType(params).promise.toFuture
-    def describeActivityTypeFuture(params: DescribeActivityTypeInput): Future[ActivityTypeDetail] =
+    @inline def describeActivityTypeFuture(params: DescribeActivityTypeInput): Future[ActivityTypeDetail] =
       service.describeActivityType(params).promise.toFuture
-    def describeDomainFuture(params: DescribeDomainInput): Future[DomainDetail] =
+    @inline def describeDomainFuture(params: DescribeDomainInput): Future[DomainDetail] =
       service.describeDomain(params).promise.toFuture
-    def describeWorkflowExecutionFuture(params: DescribeWorkflowExecutionInput): Future[WorkflowExecutionDetail] =
-      service.describeWorkflowExecution(params).promise.toFuture
-    def describeWorkflowTypeFuture(params: DescribeWorkflowTypeInput): Future[WorkflowTypeDetail] =
+    @inline def describeWorkflowExecutionFuture(
+        params: DescribeWorkflowExecutionInput
+    ): Future[WorkflowExecutionDetail] = service.describeWorkflowExecution(params).promise.toFuture
+    @inline def describeWorkflowTypeFuture(params: DescribeWorkflowTypeInput): Future[WorkflowTypeDetail] =
       service.describeWorkflowType(params).promise.toFuture
-    def getWorkflowExecutionHistoryFuture(params: GetWorkflowExecutionHistoryInput): Future[History] =
+    @inline def getWorkflowExecutionHistoryFuture(params: GetWorkflowExecutionHistoryInput): Future[History] =
       service.getWorkflowExecutionHistory(params).promise.toFuture
-    def listActivityTypesFuture(params: ListActivityTypesInput): Future[ActivityTypeInfos] =
+    @inline def listActivityTypesFuture(params: ListActivityTypesInput): Future[ActivityTypeInfos] =
       service.listActivityTypes(params).promise.toFuture
-    def listClosedWorkflowExecutionsFuture(params: ListClosedWorkflowExecutionsInput): Future[WorkflowExecutionInfos] =
-      service.listClosedWorkflowExecutions(params).promise.toFuture
-    def listDomainsFuture(params: ListDomainsInput): Future[DomainInfos] = service.listDomains(params).promise.toFuture
-    def listOpenWorkflowExecutionsFuture(params: ListOpenWorkflowExecutionsInput): Future[WorkflowExecutionInfos] =
-      service.listOpenWorkflowExecutions(params).promise.toFuture
-    def listTagsForResourceFuture(params: ListTagsForResourceInput): Future[ListTagsForResourceOutput] =
+    @inline def listClosedWorkflowExecutionsFuture(
+        params: ListClosedWorkflowExecutionsInput
+    ): Future[WorkflowExecutionInfos] = service.listClosedWorkflowExecutions(params).promise.toFuture
+    @inline def listDomainsFuture(params: ListDomainsInput): Future[DomainInfos] =
+      service.listDomains(params).promise.toFuture
+    @inline def listOpenWorkflowExecutionsFuture(
+        params: ListOpenWorkflowExecutionsInput
+    ): Future[WorkflowExecutionInfos] = service.listOpenWorkflowExecutions(params).promise.toFuture
+    @inline def listTagsForResourceFuture(params: ListTagsForResourceInput): Future[ListTagsForResourceOutput] =
       service.listTagsForResource(params).promise.toFuture
-    def listWorkflowTypesFuture(params: ListWorkflowTypesInput): Future[WorkflowTypeInfos] =
+    @inline def listWorkflowTypesFuture(params: ListWorkflowTypesInput): Future[WorkflowTypeInfos] =
       service.listWorkflowTypes(params).promise.toFuture
-    def pollForActivityTaskFuture(params: PollForActivityTaskInput): Future[ActivityTask] =
+    @inline def pollForActivityTaskFuture(params: PollForActivityTaskInput): Future[ActivityTask] =
       service.pollForActivityTask(params).promise.toFuture
-    def pollForDecisionTaskFuture(params: PollForDecisionTaskInput): Future[DecisionTask] =
+    @inline def pollForDecisionTaskFuture(params: PollForDecisionTaskInput): Future[DecisionTask] =
       service.pollForDecisionTask(params).promise.toFuture
-    def recordActivityTaskHeartbeatFuture(params: RecordActivityTaskHeartbeatInput): Future[ActivityTaskStatus] =
-      service.recordActivityTaskHeartbeat(params).promise.toFuture
-    def registerActivityTypeFuture(params: RegisterActivityTypeInput): Future[js.Object] =
+    @inline def recordActivityTaskHeartbeatFuture(
+        params: RecordActivityTaskHeartbeatInput
+    ): Future[ActivityTaskStatus] = service.recordActivityTaskHeartbeat(params).promise.toFuture
+    @inline def registerActivityTypeFuture(params: RegisterActivityTypeInput): Future[js.Object] =
       service.registerActivityType(params).promise.toFuture
-    def registerDomainFuture(params: RegisterDomainInput): Future[js.Object] =
+    @inline def registerDomainFuture(params: RegisterDomainInput): Future[js.Object] =
       service.registerDomain(params).promise.toFuture
-    def registerWorkflowTypeFuture(params: RegisterWorkflowTypeInput): Future[js.Object] =
+    @inline def registerWorkflowTypeFuture(params: RegisterWorkflowTypeInput): Future[js.Object] =
       service.registerWorkflowType(params).promise.toFuture
-    def requestCancelWorkflowExecutionFuture(params: RequestCancelWorkflowExecutionInput): Future[js.Object] =
+    @inline def requestCancelWorkflowExecutionFuture(params: RequestCancelWorkflowExecutionInput): Future[js.Object] =
       service.requestCancelWorkflowExecution(params).promise.toFuture
-    def respondActivityTaskCanceledFuture(params: RespondActivityTaskCanceledInput): Future[js.Object] =
+    @inline def respondActivityTaskCanceledFuture(params: RespondActivityTaskCanceledInput): Future[js.Object] =
       service.respondActivityTaskCanceled(params).promise.toFuture
-    def respondActivityTaskCompletedFuture(params: RespondActivityTaskCompletedInput): Future[js.Object] =
+    @inline def respondActivityTaskCompletedFuture(params: RespondActivityTaskCompletedInput): Future[js.Object] =
       service.respondActivityTaskCompleted(params).promise.toFuture
-    def respondActivityTaskFailedFuture(params: RespondActivityTaskFailedInput): Future[js.Object] =
+    @inline def respondActivityTaskFailedFuture(params: RespondActivityTaskFailedInput): Future[js.Object] =
       service.respondActivityTaskFailed(params).promise.toFuture
-    def respondDecisionTaskCompletedFuture(params: RespondDecisionTaskCompletedInput): Future[js.Object] =
+    @inline def respondDecisionTaskCompletedFuture(params: RespondDecisionTaskCompletedInput): Future[js.Object] =
       service.respondDecisionTaskCompleted(params).promise.toFuture
-    def signalWorkflowExecutionFuture(params: SignalWorkflowExecutionInput): Future[js.Object] =
+    @inline def signalWorkflowExecutionFuture(params: SignalWorkflowExecutionInput): Future[js.Object] =
       service.signalWorkflowExecution(params).promise.toFuture
-    def startWorkflowExecutionFuture(params: StartWorkflowExecutionInput): Future[Run] =
+    @inline def startWorkflowExecutionFuture(params: StartWorkflowExecutionInput): Future[Run] =
       service.startWorkflowExecution(params).promise.toFuture
-    def tagResourceFuture(params: TagResourceInput): Future[js.Object] = service.tagResource(params).promise.toFuture
-    def terminateWorkflowExecutionFuture(params: TerminateWorkflowExecutionInput): Future[js.Object] =
+    @inline def tagResourceFuture(params: TagResourceInput): Future[js.Object] =
+      service.tagResource(params).promise.toFuture
+    @inline def terminateWorkflowExecutionFuture(params: TerminateWorkflowExecutionInput): Future[js.Object] =
       service.terminateWorkflowExecution(params).promise.toFuture
-    def undeprecateActivityTypeFuture(params: UndeprecateActivityTypeInput): Future[js.Object] =
+    @inline def undeprecateActivityTypeFuture(params: UndeprecateActivityTypeInput): Future[js.Object] =
       service.undeprecateActivityType(params).promise.toFuture
-    def undeprecateDomainFuture(params: UndeprecateDomainInput): Future[js.Object] =
+    @inline def undeprecateDomainFuture(params: UndeprecateDomainInput): Future[js.Object] =
       service.undeprecateDomain(params).promise.toFuture
-    def undeprecateWorkflowTypeFuture(params: UndeprecateWorkflowTypeInput): Future[js.Object] =
+    @inline def undeprecateWorkflowTypeFuture(params: UndeprecateWorkflowTypeInput): Future[js.Object] =
       service.undeprecateWorkflowType(params).promise.toFuture
-    def untagResourceFuture(params: UntagResourceInput): Future[js.Object] =
+    @inline def untagResourceFuture(params: UntagResourceInput): Future[js.Object] =
       service.untagResource(params).promise.toFuture
   }
 }

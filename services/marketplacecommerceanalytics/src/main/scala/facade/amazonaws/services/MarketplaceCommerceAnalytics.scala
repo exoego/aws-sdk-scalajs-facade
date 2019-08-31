@@ -25,10 +25,11 @@ package object marketplacecommerceanalytics {
   implicit final class MarketplaceCommerceAnalyticsOps(private val service: MarketplaceCommerceAnalytics)
       extends AnyVal {
 
-    def generateDataSetFuture(params: GenerateDataSetRequest): Future[GenerateDataSetResult] =
+    @inline def generateDataSetFuture(params: GenerateDataSetRequest): Future[GenerateDataSetResult] =
       service.generateDataSet(params).promise.toFuture
-    def startSupportDataExportFuture(params: StartSupportDataExportRequest): Future[StartSupportDataExportResult] =
-      service.startSupportDataExport(params).promise.toFuture
+    @inline def startSupportDataExportFuture(
+        params: StartSupportDataExportRequest
+    ): Future[StartSupportDataExportResult] = service.startSupportDataExport(params).promise.toFuture
   }
 }
 

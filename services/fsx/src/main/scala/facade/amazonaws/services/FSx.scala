@@ -64,28 +64,28 @@ package object fsx {
 
   implicit final class FSxOps(private val service: FSx) extends AnyVal {
 
-    def createBackupFuture(params: CreateBackupRequest): Future[CreateBackupResponse] =
+    @inline def createBackupFuture(params: CreateBackupRequest): Future[CreateBackupResponse] =
       service.createBackup(params).promise.toFuture
-    def createFileSystemFromBackupFuture(
+    @inline def createFileSystemFromBackupFuture(
         params: CreateFileSystemFromBackupRequest
     ): Future[CreateFileSystemFromBackupResponse] = service.createFileSystemFromBackup(params).promise.toFuture
-    def createFileSystemFuture(params: CreateFileSystemRequest): Future[CreateFileSystemResponse] =
+    @inline def createFileSystemFuture(params: CreateFileSystemRequest): Future[CreateFileSystemResponse] =
       service.createFileSystem(params).promise.toFuture
-    def deleteBackupFuture(params: DeleteBackupRequest): Future[DeleteBackupResponse] =
+    @inline def deleteBackupFuture(params: DeleteBackupRequest): Future[DeleteBackupResponse] =
       service.deleteBackup(params).promise.toFuture
-    def deleteFileSystemFuture(params: DeleteFileSystemRequest): Future[DeleteFileSystemResponse] =
+    @inline def deleteFileSystemFuture(params: DeleteFileSystemRequest): Future[DeleteFileSystemResponse] =
       service.deleteFileSystem(params).promise.toFuture
-    def describeBackupsFuture(params: DescribeBackupsRequest): Future[DescribeBackupsResponse] =
+    @inline def describeBackupsFuture(params: DescribeBackupsRequest): Future[DescribeBackupsResponse] =
       service.describeBackups(params).promise.toFuture
-    def describeFileSystemsFuture(params: DescribeFileSystemsRequest): Future[DescribeFileSystemsResponse] =
+    @inline def describeFileSystemsFuture(params: DescribeFileSystemsRequest): Future[DescribeFileSystemsResponse] =
       service.describeFileSystems(params).promise.toFuture
-    def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] =
+    @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] =
       service.listTagsForResource(params).promise.toFuture
-    def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] =
+    @inline def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] =
       service.tagResource(params).promise.toFuture
-    def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] =
+    @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] =
       service.untagResource(params).promise.toFuture
-    def updateFileSystemFuture(params: UpdateFileSystemRequest): Future[UpdateFileSystemResponse] =
+    @inline def updateFileSystemFuture(params: UpdateFileSystemRequest): Future[UpdateFileSystemResponse] =
       service.updateFileSystem(params).promise.toFuture
   }
 }
